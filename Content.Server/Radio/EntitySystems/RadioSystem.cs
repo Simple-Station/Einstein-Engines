@@ -7,61 +7,37 @@ using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Language;
 using Content.Shared.Radio;
-using Content.Shared.Radio.Components;
-using Content.Shared.Speech;
-using Robust.Shared.Map;
-using Robust.Shared.Network;
-using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
-using Robust.Shared.Replays;
-using Robust.Shared.Utility;
+using JetBrains.Annotations;
+using Content.Shared.Interaction;
 
-namespace Content.Server.Radio.EntitySystems;
-
-/// <summary>
-///     This system handles intrinsic radios and the general process of converting radio messages into chat messages.
-/// </summary>
-public sealed class RadioSystem : EntitySystem
+namespace Content.Server.Radio.EntitySystems
 {
-    [Dependency] private readonly INetManager _netMan = default!;
-    [Dependency] private readonly IReplayRecordingManager _replay = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly LanguageSystem _language = default!;
-
-    // set used to prevent radio feedback loops.
-    private readonly HashSet<string> _messages = new();
-
-    public override void Initialize()
+    [UsedImplicitly]
+    public sealed class RadioSystem : EntitySystem
     {
-        base.Initialize();
-        SubscribeLocalEvent<IntrinsicRadioReceiverComponent, RadioReceiveEvent>(OnIntrinsicReceive);
-        SubscribeLocalEvent<IntrinsicRadioTransmitterComponent, EntitySpokeEvent>(OnIntrinsicSpeak);
-    }
+        private readonly List<string> _messages = new();
 
-    private void OnIntrinsicSpeak(EntityUid uid, IntrinsicRadioTransmitterComponent component, EntitySpokeEvent args)
-    {
-        if (args.Channel != null && component.Channels.Contains(args.Channel.ID))
+        public override void Initialize()
         {
-            SendRadioMessage(uid, args.Message, args.Channel, uid, args.Language);
-            args.Channel = null; // prevent duplicate messages from other listeners.
+            base.Initialize();
+            SubscribeLocalEvent<HandheldRadioComponent, ExaminedEvent>(OnExamine);
+            SubscribeLocalEvent<HandheldRadioComponent, ActivateInWorldEvent>(OnActivate);
         }
-    }
 
-    private void OnIntrinsicReceive(EntityUid uid, IntrinsicRadioReceiverComponent component, ref RadioReceiveEvent args)
-    {
-        if (TryComp(uid, out ActorComponent? actor))
+        private void OnActivate(EntityUid uid, HandheldRadioComponent component, ActivateInWorldEvent args)
         {
-            // Einstein-Engines - languages mechanic
-            var listener = component.Owner;
-            var msg = args.OriginalChatMsg;
-            if (listener != null && !_language.CanUnderstand(listener, args.Language.ID))
-                msg = args.LanguageObfuscatedChatMsg;
+            if (args.Handled)
+                return;
 
-            _netMan.ServerSendMessage(new MsgChatMessage { Message = msg}, actor.PlayerSession.Channel);
+            args.Handled = true;
+            component.Use(args.User);
+        }
+
+        private void OnExamine(EntityUid uid, HandheldRadioComponent component, ExaminedEvent args)
+        {
+            if (!args.IsInDetailsRange)
+                return;
+            args.PushMarkup(Loc.GetString("handheld-radio-component-on-examine",("frequency", component.BroadcastFrequency)));
         }
     }
 
