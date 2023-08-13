@@ -6,6 +6,7 @@
     - Xeno
     - PetsNT
     - Zombie
+<<<<<<< HEAD
     - Revolutionary
     - GladiabotFFA
     - GladiabotRed
@@ -14,10 +15,31 @@
     - GladiabotYellow
     - SAN
     - Changeling
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+=======
+    - Blob
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
+- type: npcFaction
+  id: Blob
+  hostile:
+    - NanoTrasen
+    - Syndicate
+    - Xeno
+    - PetsNT
+    - Zombie
+    - Dragon
+    #- RatPassive
+    #- RatHostile
+    #- Pet
+    #- FleshHuman
+    #- Flesh
+    #- MalfunctioningRobot
+    
 - type: npcFaction
   id: NanoTrasen
   hostile:
+<<<<<<< HEAD
     - SimpleHostile
     - Syndicate
     - Xeno
@@ -25,6 +47,18 @@
     - Revolutionary
     - Dragon
     - SAN
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+=======
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Blob
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
 - type: npcFaction
   id: Mouse
@@ -37,16 +71,30 @@
 - type: npcFaction
   id: PetsNT
   hostile:
+<<<<<<< HEAD
     - Mouse
     - SimpleHostile
     - Zombie
     - Xeno
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+  - Mouse
+  - SimpleHostile
+  - Zombie
+  - Xeno
+=======
+  - Mouse
+  - SimpleHostile
+  - Zombie
+  - Xeno
+  - Blob
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
 - type: npcFaction
   id: SimpleHostile
   friendly:
   - AnimalFriend
   hostile:
+<<<<<<< HEAD
     - NanoTrasen
     - Syndicate
     - Passive
@@ -61,6 +109,20 @@
     - GladiabotYellow
     - SAN
     - Changeling
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+=======
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+  - Blob
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
 - type: npcFaction
   id: SimpleNeutral
@@ -68,6 +130,7 @@
 - type: npcFaction
   id: Syndicate
   hostile:
+<<<<<<< HEAD
     - NanoTrasen
     - SimpleHostile
     - Xeno
@@ -75,10 +138,25 @@
     - Zombie
     - SAN
     - Changeling
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+  - NanoTrasen
+  - SimpleHostile
+  - Xeno
+  - PetsNT
+  - Zombie
+=======
+  - NanoTrasen
+  - SimpleHostile
+  - Xeno
+  - PetsNT
+  - Zombie
+  - Blob
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
 - type: npcFaction
   id: Xeno
   hostile:
+<<<<<<< HEAD
     - NanoTrasen
     - Syndicate
     - Passive
@@ -92,6 +170,20 @@
     - GladiabotYellow
     - SAN
     - Changeling
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+=======
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+  - Blob
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
 - type: npcFaction
   id: Zombie
@@ -225,6 +317,7 @@
   - Mouse
   - Passive
   - PetsNT
+<<<<<<< HEAD
   - SimpleHostile
   - SimpleNeutral
   - Syndicate
@@ -237,3 +330,7 @@
 #  - Blob # Goobstation - Blob
 # - Wizard # goob edit - wizard
 #  - PirateFaction # goob - pirates
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+=======
+  - Blob
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))

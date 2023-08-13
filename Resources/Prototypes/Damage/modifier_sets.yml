@@ -196,6 +196,70 @@
     Shock: 1.2
 
 - type: damageModifierSet
+<<<<<<< HEAD
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+  id: Arachnid # Don't do too well with high temperatures, venomous (well some kinds anyways) and have an exo-skeleton (so probably harder to stab but easier to... break?)
+  coefficients:
+    Blunt: 1.15
+    Piercing: 1.15
+    Slash: 0.85
+    Heat: 1.25
+    Poison: 0.8 
+
+- type: damageModifierSet
+=======
+  id: Arachnid # Don't do too well with high temperatures, venomous (well some kinds anyways) and have an exo-skeleton (so probably harder to stab but easier to... break?)
+  coefficients:
+    Blunt: 1.15
+    Piercing: 1.15
+    Slash: 0.85
+    Heat: 1.25
+    Poison: 0.8
+
+- type: damageModifierSet
+  id: BaseBlob # ReactiveSpines
+  coefficients:
+    Blunt: 0.25
+    Slash: 0.25
+    Piercing: 0.25
+    Heat: 2.00
+
+- type: damageModifierSet
+  id: ElectromagneticWebBlob # Explosive Lattice
+  coefficients:
+    Blunt: 0.50
+    Slash: 0.50
+    Piercing: 0.50
+    Heat: 2.50
+    Shock: 0.50
+
+- type: damageModifierSet
+  id: ExplosiveLatticeBlob # Explosive Lattice
+  coefficients:
+    Blunt: 0.25
+    Slash: 0.25
+    Piercing: 0.25
+    Heat: 3.00
+    Shock: 1.50
+
+- type: damageModifierSet
+  id: BlobMob # Blob mobs
+  coefficients:
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.5
+    Heat: 1.5
+
+- type: damageModifierSet
+  id: BlobReflective # If it reflects lasers, then it must be fragile?
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.9
+    Piercing: 0.9
+    Heat: 1.5
+
+- type: damageModifierSet
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
   id: Moth # Slightly worse at everything but cold
   coefficients:
     Cold: 0.7

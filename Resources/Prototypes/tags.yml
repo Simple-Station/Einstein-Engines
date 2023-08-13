@@ -32,7 +32,16 @@
   id: ATVKeys
 
 - type: Tag
+<<<<<<< HEAD
   id: Balloon
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+  id: Baguette
+=======
+  id: BlobMob
+
+- type: Tag
+  id: Baguette
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
 - type: Tag
   id: Banana

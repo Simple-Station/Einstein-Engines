@@ -24,6 +24,7 @@ roles-antag-nuclear-operative-agent-objective = Like default operative, the team
 
 roles-antag-nuclear-operative-name = Nuclear operative
 roles-antag-nuclear-operative-objective = Find the nuke disk and blow up the station.
+<<<<<<< HEAD
 
 roles-antag-subverted-silicon-name = Subverted silicon
 roles-antag-subverted-silicon-objective = Follow your new laws and do bad unto the station.
@@ -36,3 +37,9 @@ roles-antag-thief-objective = Add some NT property to your personal collection w
 
 roles-antag-dragon-name = Space Dragon
 roles-antag-dragon-objective = Create a carp army to take over this quadrant.
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+=======
+
+roles-antag-blob-name = Blob
+roles-antag-blob-objective = Take over the station.
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))

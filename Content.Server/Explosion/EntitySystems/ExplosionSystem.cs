@@ -127,6 +127,7 @@ public sealed partial class ExplosionSystem : EntitySystem
         _pathfindingSystem.PauseUpdating = false;
     }
 
+<<<<<<< HEAD
     private void RelayedResistance(EntityUid uid, ExplosionResistanceComponent component,
         InventoryRelayedEvent<GetExplosionResistanceEvent> args)
     {
@@ -135,6 +136,21 @@ public sealed partial class ExplosionSystem : EntitySystem
     }
 
     private void OnGetResistance(EntityUid uid, ExplosionResistanceComponent component, ref GetExplosionResistanceEvent args)
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+    private void OnGetResistance(EntityUid uid, ExplosionResistanceComponent component, GetExplosionResistanceEvent args)
+=======
+    public void SetExplosionResistance(EntityUid entityUid, float newCoefficient, ExplosionResistanceComponent? component = null)
+    {
+        if (!Resolve(entityUid, ref component))
+            return;
+
+        component.DamageCoefficient = newCoefficient;
+
+        Dirty(component);
+    }
+
+    private void OnGetResistance(EntityUid uid, ExplosionResistanceComponent component, GetExplosionResistanceEvent args)
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
     {
         args.DamageCoefficient *= component.DamageCoefficient;
         if (component.Modifiers.TryGetValue(args.ExplosionPrototype, out var modifier))

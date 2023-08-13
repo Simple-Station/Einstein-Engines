@@ -138,7 +138,20 @@
       - MindRoleNukeops
 
 - type: entity
+<<<<<<< HEAD
   abstract: true
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+  id: Traitor
+=======
+  id: Blob
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+    - type: BlobRule
+
+- type: entity
+  id: Traitor
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
   parent: BaseGameRule
   id: BaseTraitorRule
   components:

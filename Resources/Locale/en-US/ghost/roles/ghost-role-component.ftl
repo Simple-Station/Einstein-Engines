@@ -220,6 +220,7 @@ ghost-role-information-loneop-rules = You are a syndicate operative tasked with 
 ghost-role-information-behonker-name = Behonker
 ghost-role-information-behonker-description = You are an antagonist, bring death and honks to those who do not follow the honkmother.
 
+<<<<<<< HEAD
 ghost-role-information-hellspawn-name = Hellspawn
 ghost-role-information-hellspawn-description = You are an antagonist, bring death to those who do not follow the great god Nar'Sie.
 
@@ -281,3 +282,16 @@ ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =
       Enact your eldritch whims.
       Forcibly activate your nodes for good or for evil.
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+ghost-role-information-taxibot-name = TaxiBot
+ghost-role-information-taxibot-description = Drive the station crew to their destination.
+=======
+ghost-role-information-taxibot-name = TaxiBot
+ghost-role-information-taxibot-description = Drive the station crew to their destination.
+
+ghost-role-information-blobbernaut-name = Blobbernaut
+ghost-role-information-blobbernaut-description = You are a Blobbernaut. You must defend blob core.
+
+ghost-role-information-blob-name = Blob
+ghost-role-information-blob-description = You are a Blob. You must consume the station.
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))

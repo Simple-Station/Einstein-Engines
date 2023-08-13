@@ -9,31 +9,62 @@ namespace Content.Shared.DrawDepth
         /// <summary>
         ///     This is for sub-floors, the floors you see after prying off a tile.
         /// </summary>
+<<<<<<< HEAD
         LowFloors = DrawDepthTag.Default - 14,
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+        LowFloors = DrawDepthTag.Default - 11,
+=======
+        LowFloors = DrawDepthTag.Default - 13,
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
         // various entity types that require different
         // draw depths, as to avoid hiding
         #region SubfloorEntities
+<<<<<<< HEAD
         ThickPipe = DrawDepthTag.Default - 13,
         ThickWire = DrawDepthTag.Default - 12,
         ThinPipe = DrawDepthTag.Default - 11,
         ThinWire = DrawDepthTag.Default - 10,
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+        ThickPipe = DrawDepthTag.Default - 10,
+        ThickWire = DrawDepthTag.Default - 9,
+        ThinPipe = DrawDepthTag.Default - 8,
+        ThinWire = DrawDepthTag.Default - 7,
+=======
+        ThickPipe = DrawDepthTag.Default - 12,
+        ThickWire = DrawDepthTag.Default - 11,
+        ThinPipe = DrawDepthTag.Default - 10,
+        ThinWire = DrawDepthTag.Default - 9,
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
         #endregion
 
         /// <summary>
         ///     Things that are beneath regular floors.
         /// </summary>
+<<<<<<< HEAD
         BelowFloor = DrawDepthTag.Default - 9,
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+        BelowFloor = DrawDepthTag.Default - 7,
+=======
+        BelowFloor = DrawDepthTag.Default - 8,
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
         /// <summary>
         ///     Used for entities like carpets.
         /// </summary>
+<<<<<<< HEAD
         FloorTiles = DrawDepthTag.Default - 8,
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+        FloorTiles = DrawDepthTag.Default - 6,
+=======
+        FloorTiles = DrawDepthTag.Default - 7,
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
         /// <summary>
         ///     Things that are actually right on the floor, like ice crust or atmos devices. This does not mean objects like
         ///     tables, even though they are technically "on the floor".
         /// </summary>
+<<<<<<< HEAD
         FloorObjects = DrawDepthTag.Default - 7,
 
         /// <summary>
@@ -45,6 +76,13 @@ namespace Content.Shared.DrawDepth
         //     Objects that are on the floor, but should render above puddles. This includes kudzu, holopads, telepads and levers.
         /// </summary>
         HighFloorObjects = DrawDepthTag.Default - 5,
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+        FloorObjects = DrawDepthTag.Default - 5,
+=======
+        FloorObjects = DrawDepthTag.Default - 6,
+
+        BlobTiles = DrawDepthTag.Default - 5,
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
         DeadMobs = DrawDepthTag.Default - 4,
 

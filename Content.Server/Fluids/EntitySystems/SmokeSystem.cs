@@ -1,8 +1,19 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+<<<<<<< HEAD
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.EntityEffects.Effects;
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+using Content.Server.Chemistry.Components;
+using Content.Server.Chemistry.EntitySystems;
+using Content.Server.Chemistry.ReactionEffects;
+=======
+using Content.Server.Chemistry.Components;
+using Content.Server.Chemistry.EntitySystems;
+using Content.Server.Chemistry.ReactionEffects;
+using Content.Server.Explosion.EntitySystems;
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 using Content.Server.Spreader;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
@@ -13,11 +24,19 @@ using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Smoking;
 using Robust.Server.GameObjects;
+<<<<<<< HEAD
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+using Robust.Shared.Map;
+=======
+using Robust.Shared.Audio;
+using Robust.Shared.GameStates;
+using Robust.Shared.Map;
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -43,6 +62,7 @@ public sealed class SmokeSystem : EntitySystem
     [Dependency] private readonly BloodstreamSystem _blood = default!;
     [Dependency] private readonly InternalsSystem _internals = default!;
     [Dependency] private readonly ReactiveSystem _reactive = default!;
+<<<<<<< HEAD
     [Dependency] private readonly SharedBroadphaseSystem _broadphase = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
@@ -50,6 +70,12 @@ public sealed class SmokeSystem : EntitySystem
 
     private EntityQuery<SmokeComponent> _smokeQuery;
     private EntityQuery<SmokeAffectedComponent> _smokeAffectedQuery;
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+    [Dependency] private readonly SolutionContainerSystem _solutionSystem = default!;
+=======
+    [Dependency] private readonly SolutionContainerSystem _solutionSystem = default!;
+    [Dependency] private readonly AudioSystem _audioSystem = default!;
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -64,6 +90,24 @@ public sealed class SmokeSystem : EntitySystem
         SubscribeLocalEvent<SmokeComponent, ReactionAttemptEvent>(OnReactionAttempt);
         SubscribeLocalEvent<SmokeComponent, SolutionRelayEvent<ReactionAttemptEvent>>(OnReactionAttempt);
         SubscribeLocalEvent<SmokeComponent, SpreadNeighborsEvent>(OnSmokeSpread);
+<<<<<<< HEAD
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+        SubscribeLocalEvent<SmokeDissipateSpawnComponent, TimedDespawnEvent>(OnSmokeDissipate);
+        SubscribeLocalEvent<SpreadGroupUpdateRate>(OnSpreadUpdateRate);
+=======
+        SubscribeLocalEvent<SmokeDissipateSpawnComponent, TimedDespawnEvent>(OnSmokeDissipate);
+        SubscribeLocalEvent<SpreadGroupUpdateRate>(OnSpreadUpdateRate);
+        SubscribeLocalEvent<SmokeOnTriggerComponent, TriggerEvent>(HandleSmokeTrigger);
+        SubscribeLocalEvent<SmokeComponent, ComponentGetState>(OnGetState);
+    }
+
+    private void OnGetState(EntityUid uid, SmokeComponent component, ref ComponentGetState args)
+    {
+        args.State = new SmokeComponentState()
+        {
+            Color = component.Color
+        };
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
     }
 
     /// <inheritdoc/>
@@ -147,10 +191,27 @@ public sealed class SmokeSystem : EntitySystem
         var smokePerSpread = entity.Comp.SpreadAmount / Math.Max(1, args.NeighborFreeTiles.Count);
         foreach (var neighbor in args.NeighborFreeTiles)
         {
+<<<<<<< HEAD
             var coords = _map.GridTileToLocal(neighbor.Tile.GridUid, neighbor.Grid, neighbor.Tile.GridIndices);
             var ent = Spawn(prototype.ID, coords);
             var spreadAmount = Math.Max(0, smokePerSpread);
             entity.Comp.SpreadAmount -= args.NeighborFreeTiles.Count;
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+            var coords = neighbor.Grid.GridTileToLocal(neighbor.Tile);
+            var ent = Spawn(prototype.ID, coords.SnapToGrid());
+            var neighborSmoke = EnsureComp<SmokeComponent>(ent);
+            neighborSmoke.SpreadAmount = Math.Max(0, smokePerSpread - 1);
+            args.Updates--;
+=======
+            var coords = neighbor.Grid.GridTileToLocal(neighbor.Tile);
+            var ent = Spawn(prototype.ID, coords.SnapToGrid());
+            var neighborSmoke = EnsureComp<SmokeComponent>(ent);
+            neighborSmoke.Color = component.SmokeColor;
+            neighborSmoke.SmokeColor = component.SmokeColor;
+            Dirty(neighborSmoke);
+            neighborSmoke.SpreadAmount = Math.Max(0, smokePerSpread - 1);
+            args.Updates--;
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
             StartSmoke(ent, solution.Clone(), timer?.Lifetime ?? entity.Comp.Duration, spreadAmount);
 
@@ -326,6 +387,25 @@ public sealed class SmokeSystem : EntitySystem
             var reagent = _prototype.Index<ReagentPrototype>(reagentQuantity.Reagent.Prototype);
             reagent.ReactionTile(tile, reagentQuantity.Quantity);
         }
+    }
+
+    private void HandleSmokeTrigger(EntityUid uid, SmokeOnTriggerComponent comp, TriggerEvent args)
+    {
+        var xform = Transform(uid);
+        var smokeEnt = Spawn("Smoke", xform.Coordinates);
+        var smoke = EnsureComp<SmokeComponent>(smokeEnt);
+        smoke.Color = comp.SmokeColor;
+        smoke.SmokeColor = comp.SmokeColor;
+        Dirty(smoke);
+        smoke.SpreadAmount = comp.SpreadAmount;
+        var solution = new Solution();
+        foreach (var reagent in comp.SmokeReagents)
+        {
+            solution.AddReagent(reagent.ReagentId, reagent.Quantity);
+        }
+        Start(smokeEnt, smoke, solution, comp.Time);
+        _audioSystem.PlayPvs(comp.Sound, xform.Coordinates, AudioParams.Default.WithVariation(0.125f));
+        args.Handled = true;
     }
 
     /// <summary>

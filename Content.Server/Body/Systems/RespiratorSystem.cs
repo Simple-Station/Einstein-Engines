@@ -90,7 +90,38 @@ public sealed class RespiratorSystem : EntitySystem
             if (_gameTiming.CurTime < respirator.NextUpdate)
                 continue;
 
+<<<<<<< HEAD
             respirator.NextUpdate += respirator.UpdateInterval;
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+            // We want to process lung reagents before we inhale new reagents.
+            UpdatesAfter.Add(typeof(MetabolizerSystem));
+            SubscribeLocalEvent<RespiratorComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
+        }
+=======
+            // We want to process lung reagents before we inhale new reagents.
+            UpdatesAfter.Add(typeof(MetabolizerSystem));
+            SubscribeLocalEvent<RespiratorComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
+
+            SubscribeLocalEvent<RespiratorImmunityComponent, ComponentInit>(OnPressureImmuneInit);
+            SubscribeLocalEvent<RespiratorImmunityComponent, ComponentRemove>(OnPressureImmuneRemove);
+        }
+
+        private void OnPressureImmuneInit(EntityUid uid, RespiratorImmunityComponent pressureImmunity, ComponentInit args)
+        {
+            if (TryComp<RespiratorComponent>(uid, out var respirator))
+            {
+                respirator.HasImmunity = true;
+            }
+        }
+
+        private void OnPressureImmuneRemove(EntityUid uid, RespiratorImmunityComponent pressureImmunity, ComponentRemove args)
+        {
+            if (TryComp<RespiratorComponent>(uid, out var respirator))
+            {
+                respirator.HasImmunity = false;
+            }
+        }
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
 
             if (_mobState.IsDead(uid) || HasComp<BreathingImmunityComponent>(uid)) // Shitmed: BreathingImmunity
                 continue;
@@ -331,7 +362,32 @@ public sealed class RespiratorSystem : EntitySystem
         var organs = _bodySystem.GetBodyOrganComponents<LungComponent>(ent);
         foreach (var (comp, _) in organs)
         {
+<<<<<<< HEAD
             _alertsSystem.ClearAlert(ent, comp.Alert);
+||||||| parent of 7fe67c7209 (Blob try 2 (#176))
+            if (respirator.SuffocationCycles == 2)
+                _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(uid):entity} started suffocating");
+
+            if (respirator.SuffocationCycles >= respirator.SuffocationCycleThreshold)
+            {
+                _alertsSystem.ShowAlert(uid, AlertType.LowOxygen);
+            }
+
+            _damageableSys.TryChangeDamage(uid, respirator.Damage, true, false);
+=======
+            if (respirator.HasImmunity)
+                return;
+
+            if (respirator.SuffocationCycles == 2)
+                _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(uid):entity} started suffocating");
+
+            if (respirator.SuffocationCycles >= respirator.SuffocationCycleThreshold)
+            {
+                _alertsSystem.ShowAlert(uid, AlertType.LowOxygen);
+            }
+
+            _damageableSys.TryChangeDamage(uid, respirator.Damage, true, false);
+>>>>>>> 7fe67c7209 (Blob try 2 (#176))
         }
 
         _damageableSys.TryChangeDamage(ent, ent.Comp.DamageRecovery);
