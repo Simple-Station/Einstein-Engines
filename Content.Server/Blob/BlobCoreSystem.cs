@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server.AlertLevel;
 using Content.Server.Chat.Managers;
 using Content.Server.Explosion.Components;
 using Content.Server.Explosion.EntitySystems;
@@ -9,6 +10,8 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
 using Content.Server.Roles;
+using Content.Server.RoundEnd;
+using Content.Server.Station.Systems;
 using Content.Shared.Alert;
 using Content.Shared.Blob;
 using Content.Shared.Damage;
@@ -38,6 +41,9 @@ public sealed class BlobCoreSystem : EntitySystem
     [Dependency] private readonly BlobObserverSystem _blobObserver = default!;
     [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly StationSystem _stationSystem = default!;
+    [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
+    [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
 
     public override void Initialize()
     {
@@ -214,6 +220,33 @@ public sealed class BlobCoreSystem : EntitySystem
             blobTileComponent.Color = Color.White;
             Dirty(blobTileComponent);
         }
+
+        var stationUid = _stationSystem.GetOwningStation(uid);
+        var blobCoreQuery = EntityQueryEnumerator<BlobCoreComponent>();
+        var isAllDie = 0;
+        while (blobCoreQuery.MoveNext(out var ent, out var comp))
+        {
+            if (TerminatingOrDeleted(ent))
+            {
+                continue;
+            }
+            isAllDie++;
+        }
+
+        if (isAllDie <= 1)
+        {
+            var blobFactoryQuery = EntityQueryEnumerator<BlobRuleComponent>();
+            while (blobFactoryQuery.MoveNext(out var blobRuleUid, out var blobRuleComp))
+            {
+                if (blobRuleComp.Stage == BlobStage.Critical ||
+                    blobRuleComp.Stage == BlobStage.Begin)
+                {
+                    _alertLevelSystem.SetLevel(stationUid!.Value, "green", true, true, true, false);
+                    _roundEndSystem.CancelRoundEndCountdown(null, false);
+                }
+            }
+        }
+        QueueDel(uid);
     }
 
     private void ChangeBlobEntChem(EntityUid uid, BlobChemType oldChem, BlobChemType newChem)
