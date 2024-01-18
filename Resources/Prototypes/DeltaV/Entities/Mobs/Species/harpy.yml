@@ -119,8 +119,8 @@
           False:  {visible: false}
           True:  {visible: true}
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 5.0
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5.5
   - type: Inventory
     speciesId: harpy
     templateId: digitigrade
@@ -139,7 +139,6 @@
     understands:
     - GalacticCommon
     - SolCommon
-
 - type: entity
   save: false
   name: Urist McHands

@@ -70,7 +70,7 @@ namespace Content.Shared.Movement.Components
 
         public const float LerpTime = 1.0f;
 
-        public bool Sprinting => (HeldMoveButtons & MoveButtons.Walk) == 0x0;
+        public bool Sprinting => (HeldMoveButtons & MoveButtons.Walk) != 0x0;
 
         [ViewVariables(VVAccess.ReadWrite)]
         public bool CanMove = true;
