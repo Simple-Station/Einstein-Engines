@@ -132,19 +132,19 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// <summary>
     /// The minimum height for this species
     /// </summary>
-    [DataField("minHeight")]
+    [DataField]
     public float MinHeight = 0.75f;
 
     /// <summary>
     /// The maximum height for this species
     /// </summary>
-    [DataField("maxHeight")]
+    [DataField]
     public float MaxHeight = 1.25f;
 
     /// <summary>
     /// The default height for this species
     /// </summary>
-    [DataField("defaultHeight")]
+    [DataField]
     public float DefaultHeight = 1f;
     // Parkstation-HeightSlider End
 }
