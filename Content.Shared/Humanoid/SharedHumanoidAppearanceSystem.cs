@@ -3,6 +3,7 @@ using Content.Shared.Decals;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
+using Content.Shared.SimpleStation14.HeightAdjust;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -23,6 +24,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] private readonly HeightAdjustSystem _heightAdjust = default!;
 
     [ValidatePrototypeId<SpeciesPrototype>]
     public const string DefaultSpecies = "Human";
@@ -328,7 +330,10 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         humanoid.Age = profile.Age;
-		humanoid.Height = profile.Height; // Parkstation-HeightSlider
+        // Parkstation-HeightSlider Start
+		humanoid.Height = profile.Height;
+        _heightAdjust.SetScale(uid, profile.Height);
+        // Parkstation-HeightSlider End
 
         humanoid.LastProfileLoaded = profile; // DeltaV - let paradox anomaly be cloned
 

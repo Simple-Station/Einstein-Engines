@@ -133,13 +133,13 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// The minimum height for this species
     /// </summary>
     [DataField("minHeight")]
-    public float MinHeight = 0.7f;
+    public float MinHeight = 0.75f;
 
     /// <summary>
     /// The maximum height for this species
     /// </summary>
     [DataField("maxHeight")]
-    public float MaxHeight = 1.5f;
+    public float MaxHeight = 1.25f;
 
     /// <summary>
     /// The default height for this species
