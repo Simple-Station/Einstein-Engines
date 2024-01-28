@@ -7,6 +7,11 @@
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
   skinColoration: HumanToned
+  # Parkstation-HeightSlider Start
+  minHeight: 0.6
+  defaultHeight: 0.8
+  maxHeight: 1.1
+  # Parkstation-HeightSlider End
 
 - type: speciesBaseSprites
   id: MobHarpySprites
