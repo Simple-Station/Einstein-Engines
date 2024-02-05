@@ -4,7 +4,6 @@ using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Client.GameObjects;
-using Robust.Client.Console;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -14,8 +13,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
 
     public override void Initialize()
     {

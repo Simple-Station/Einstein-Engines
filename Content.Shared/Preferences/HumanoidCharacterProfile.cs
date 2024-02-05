@@ -224,6 +224,7 @@ namespace Content.Shared.Preferences
 
         public string Name { get; private set; }
         public string FlavorText { get; private set; }
+        [DataField("species")] // Parkstation-HeightSlider // :)
         public string Species { get; private set; }
 
         [DataField("height")]

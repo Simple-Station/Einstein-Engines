@@ -226,7 +226,8 @@ namespace Content.Client.Preferences.UI
                 prototype = _speciesList.Find(x => x.ID == Profile.Species) ?? _speciesList.First(); // Just in case
 
                 var value = Math.Clamp(args.Value, prototype.MinHeight, prototype.MaxHeight);
-                CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", Profile.Height.ToString().Remove(4)));
+                var height = value.ToString(CultureInfo.InvariantCulture);
+                CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", height.Length > 4 ? height[..4] : height));
                 SetProfileHeight(value);
             };
 
@@ -1168,7 +1169,9 @@ namespace Content.Client.Preferences.UI
             _heightSlider.MinValue = species.MinHeight;
             _heightSlider.Value = Profile.Height;
             _heightSlider.MaxValue = species.MaxHeight;
-            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", Profile.Height.ToString().Remove(4)));
+
+            var height = Profile.Height.ToString(CultureInfo.InvariantCulture);
+            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", height.Length > 4 ? height[..4] : height));
         }
         // Parkstation-HeightSlider End
 

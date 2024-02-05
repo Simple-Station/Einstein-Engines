@@ -1,3 +1,4 @@
+using Content.Shared.Humanoid;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Shared.Physics;
@@ -9,6 +10,7 @@ public sealed class HeightAdjustSystem : EntitySystem
 {
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedContentEyeSystem _eye = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _appearance = default!;
 
 
     /// <summary>
@@ -16,7 +18,7 @@ public sealed class HeightAdjustSystem : EntitySystem
     /// </summary>
     /// <param name="uid">The entity to modify values for</param>
     /// <param name="scale">The scale to multiply values by</param>
-    /// <returns>True if both operations succeeded</returns>
+    /// <returns>True if all operations succeeded</returns>
     public bool SetScale(EntityUid uid, float scale)
     {
         var succeeded = true;
@@ -26,9 +28,18 @@ public sealed class HeightAdjustSystem : EntitySystem
             succeeded = false;
 
         if (EntityManager.TryGetComponent<FixturesComponent>(uid, out var fixtures))
+        {
             foreach (var fixture in fixtures.Fixtures)
-                // _physics.SetDensity(uid, fixture.Key, fixture.Value, fixture.Value.Density * scale); // If you want to do the same thing without changing size
+            {
+                // _physics.SetDensity(uid, fixture.Key, fixture.Value, fixture.Value.Density * scale); // This does the same thing as below, just without modifying the fixture size
                 _physics.SetRadius(uid, fixture.Key, fixture.Value, fixture.Value.Shape, fixture.Value.Shape.Radius * scale);
+            }
+        }
+        else
+            succeeded = false;
+
+        if (EntityManager.HasComponent<HumanoidAppearanceComponent>(uid))
+            _appearance.SetHeight(uid, scale);
         else
             succeeded = false;
 

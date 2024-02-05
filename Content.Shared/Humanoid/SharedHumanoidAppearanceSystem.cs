@@ -250,6 +250,26 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
     }
 
+    // Parkstation-HeightSlider Start
+    /// <summary>
+    ///     Set a humanoid mob's sex. This will not change their gender.
+    /// </summary>
+    /// <param name="uid">The humanoid mob's UID.</param>
+    /// <param name="height">The height to set the mob to.</param>
+    /// <param name="sync">Whether to immediately synchronize this to the humanoid mob, or not.</param>
+    /// <param name="humanoid">Humanoid component of the entity</param>
+    public void SetHeight(EntityUid uid, float height, bool sync = true, HumanoidAppearanceComponent? humanoid = null)
+    {
+        if (!Resolve(uid, ref humanoid) || Math.Abs(humanoid.Height - height) < 0.01f)
+            return;
+
+        humanoid.Height = height;
+
+        if (sync)
+            Dirty(humanoid);
+    }
+    // Parkstation-HeightSlider End
+
     /// <summary>
     ///     Loads a humanoid character profile directly onto this humanoid mob.
     /// </summary>
@@ -330,10 +350,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         humanoid.Age = profile.Age;
-        // Parkstation-HeightSlider Start
-		humanoid.Height = profile.Height;
-        _heightAdjust.SetScale(uid, profile.Height);
-        // Parkstation-HeightSlider End
+        _heightAdjust.SetScale(uid, profile.Height); // Parkstation-HeightSlider
 
         humanoid.LastProfileLoaded = profile; // DeltaV - let paradox anomaly be cloned
 
