@@ -36,6 +36,7 @@ namespace Content.Shared.Preferences
             string flavortext,
             string species,
             float height, // Parkstation-HeightSlider
+            float width, // Parkstation-HeightSlider
             int age,
             Sex sex,
             Gender gender,
@@ -53,6 +54,7 @@ namespace Content.Shared.Preferences
             FlavorText = flavortext;
             Species = species;
             Height = height; // Parkstation-HeightSlider
+            Width = width; // Parkstation-HeightSlider
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -74,7 +76,7 @@ namespace Content.Shared.Preferences
             List<string> antagPreferences,
             List<string> traitPreferences,
             List<string> loadoutPreferences)
-            : this(other.Name, other.FlavorText, other.Species, other.Height, other.Age, other.Sex, other.Gender, other.Appearance,
+            : this(other.Name, other.FlavorText, other.Species, other.Height, other.Width, other.Age, other.Sex, other.Gender, other.Appearance,
                 other.Clothing, other.Backpack, other.SpawnPriority, jobPriorities, other.PreferenceUnavailable,
                 antagPreferences, traitPreferences, loadoutPreferences)
         {
@@ -93,6 +95,7 @@ namespace Content.Shared.Preferences
             string flavortext,
             string species,
             float height, // Parkstation-HeightSlider
+            float width, // Parkstation-HeightSlider
             int age,
             Sex sex,
             Gender gender,
@@ -105,7 +108,7 @@ namespace Content.Shared.Preferences
             IReadOnlyList<string> antagPreferences,
             IReadOnlyList<string> traitPreferences,
             IReadOnlyList<string> loadoutPreferences)
-            : this(name, flavortext, species, height, age, sex, gender, appearance, clothing, backpack, spawnPriority,
+            : this(name, flavortext, species, height, width, age, sex, gender, appearance, clothing, backpack, spawnPriority,
                 new Dictionary<string, JobPriority>(jobPriorities), preferenceUnavailable,
                 new List<string>(antagPreferences), new List<string>(traitPreferences),
                 new List<string>(loadoutPreferences))
@@ -121,6 +124,7 @@ namespace Content.Shared.Preferences
             "John Doe",
             "",
             SharedHumanoidAppearanceSystem.DefaultSpecies,
+            1f, // Parkstation-HeightSlider
             1f, // Parkstation-HeightSlider
             18,
             Sex.Male,
@@ -151,6 +155,7 @@ namespace Content.Shared.Preferences
                 "John Doe",
                 "",
                 species,
+                1f, // Parkstation-HeightSlider
                 1f, // Parkstation-HeightSlider
                 18,
                 Sex.Male,
@@ -192,11 +197,13 @@ namespace Content.Shared.Preferences
             var sex = Sex.Unsexed;
             var age = 18;
             var height = 1f; // Parkstation-HeightSlider
+            var width = 1f; // Parkstation-HeightSlider
             if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
             {
                 sex = random.Pick(speciesPrototype.Sexes);
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
                 height = random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight); // Parkstation-HeightSlider
+                width = random.NextFloat(speciesPrototype.MinWidth, speciesPrototype.MaxWidth); // Parkstation-HeightSlider
             }
 
             var gender = Gender.Epicene;
@@ -213,7 +220,7 @@ namespace Content.Shared.Preferences
 
             var name = GetName(species, gender);
 
-            return new HumanoidCharacterProfile(name, "", species, height, age, sex, gender,
+            return new HumanoidCharacterProfile(name, "", species, height, width, age, sex, gender,
                 HumanoidCharacterAppearance.Random(species, sex), ClothingPreference.Jumpsuit,
                 BackpackPreference.Backpack, SpawnPriorityPreference.None,
                 new Dictionary<string, JobPriority>
@@ -227,8 +234,13 @@ namespace Content.Shared.Preferences
         [DataField("species")] // Parkstation-HeightSlider // :)
         public string Species { get; private set; }
 
+        // Parkstation-HeightSlider Start
         [DataField("height")]
-        public float Height { get; private set; } // Parkstation-HeightSlider
+        public float Height { get; private set; }
+
+        [DataField("width")]
+        public float Width { get; private set; }
+        // Parkstation-HeightSlider End
 
         [DataField("age")]
         public int Age { get; private set; }
@@ -286,6 +298,11 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithHeight(float height)
         {
             return new(this) { Height = height };
+        }
+
+        public HumanoidCharacterProfile WithWidth(float width)
+        {
+            return new(this) { Width = width };
         }
         // Parkstation-HeightSlider End
 
@@ -414,6 +431,7 @@ namespace Content.Shared.Preferences
                 Name != other.Name ||
                 Age != other.Age ||
                 Height != other.Height ||
+                Width != other.Width ||
                 Sex != other.Sex ||
                 Gender != other.Gender ||
                 PreferenceUnavailable != other.PreferenceUnavailable ||
@@ -425,7 +443,6 @@ namespace Content.Shared.Preferences
                 !_traitPreferences.SequenceEqual(other._traitPreferences) ||
                 !_loadoutPreferences.SequenceEqual(other._loadoutPreferences))
                 return false;
-
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
@@ -517,6 +534,10 @@ namespace Content.Shared.Preferences
             var height = Height;
             if (speciesPrototype != null)
                 height = Math.Clamp(Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+
+            var width = Width;
+            if (speciesPrototype != null)
+                width = Math.Clamp(Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
             // Parkstation-HeightSlider End
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
@@ -590,6 +611,7 @@ namespace Content.Shared.Preferences
             FlavorText = flavortext;
             Age = age;
             Height = height; // Parkstation-HeightSlider
+            Width = width; // Parkstation-HeightSlider
             Sex = sex;
             Gender = gender;
             Appearance = appearance;
@@ -650,7 +672,8 @@ namespace Content.Shared.Preferences
                     Backpack
                 ),
                 SpawnPriority,
-                Height, // Parkstation-HeightSlider
+                Height,
+                Width,
                 PreferenceUnavailable,
                 _jobPriorities,
                 _antagPreferences,

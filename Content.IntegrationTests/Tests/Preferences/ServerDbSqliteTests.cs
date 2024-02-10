@@ -41,7 +41,8 @@ namespace Content.IntegrationTests.Tests.Preferences
                 "Charlie Charlieson",
                 "The biggest boy around.",
                 "Human",
-                1,
+                1, // Parkstation-HeightSlider
+                1, // Parkstation-HeightSlider
                 21,
                 Sex.Male,
                 Gender.Epicene,

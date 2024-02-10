@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    [Migration("20230711102028_Height")]
-    partial class Height
+    [Migration("20230711102028_HeightWidth")]
+    partial class HeightWidth
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -591,6 +591,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<float>("Height")
                         .HasColumnType("REAL")
                         .HasColumnName("height");
+
+                    b.Property<float>("Width")
+                        .HasColumnType("REAL")
+                        .HasColumnName("width");
 
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")

@@ -811,10 +811,16 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("hair_name");
-						
-					b.Property<float>("Height")
+
+					// Parkstation-HeightSlider Start
+                    b.Property<float>("Height")
                         .HasColumnType("real")
                         .HasColumnName("height");
+
+                    b.Property<float>("Width")
+                        .HasColumnType("real")
+                        .HasColumnName("width");
+                    // Parkstation-HeightSlider End
 
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")

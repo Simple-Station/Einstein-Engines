@@ -33,9 +33,13 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         // Parkstation-HeightSlider Start
         var speciesPrototype = _prototypeManager.Index(component.Species);
+
         var height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
-        sprite.Scale = new Vector2(height, height);
+        var width = Math.Clamp(component.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
         component.Height = height;
+        component.Width = width;
+
+        sprite.Scale = new Vector2(width, height);
         // Parkstation-HeightSlider End
 
         sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
@@ -202,7 +206,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.Species = profile.Species;
         humanoid.SkinColor = profile.Appearance.SkinColor;
         humanoid.EyeColor = profile.Appearance.EyeColor;
-        humanoid.Height = profile.Height;
+        humanoid.Height = profile.Height; // Parkstation-HeightSlider
+        humanoid.Width = profile.Width; // Parkstation-HeightSlider
 
         UpdateSprite(humanoid, Comp<SpriteComponent>(uid));
     }

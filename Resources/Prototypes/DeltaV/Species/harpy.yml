@@ -11,6 +11,9 @@
   minHeight: 0.6
   defaultHeight: 0.8
   maxHeight: 1.1
+  minWidth: 0.55
+  defaultWidth: 0.8
+  maxWidth: 1.15
   # Parkstation-HeightSlider End
 
 - type: speciesBaseSprites

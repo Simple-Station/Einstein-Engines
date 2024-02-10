@@ -14,8 +14,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    [Migration("20230711102742_Height")]
-    partial class Height
+    [Migration("20230711102742_HeightWidth")]
+    partial class HeightWidth
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -637,6 +637,10 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<float>("Height")
                         .HasColumnType("real")
                         .HasColumnName("height");
+
+                    b.Property<float>("Width")
+                        .HasColumnType("real")
+                        .HasColumnName("width");
 
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")
