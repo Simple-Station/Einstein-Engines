@@ -943,6 +943,8 @@ namespace Content.Client.Preferences.UI
             OnSkinColorOnValueChanged(); // Species may have special color prefs, make sure to update it.
             CMarkings.SetSpecies(newSpecies); // Repopulate the markings tab as well.
             UpdateSexControls(); // update sex for new species
+            UpdateHeightControls(); // Parkstation-HeightSlider - Changing species provides inaccurate sliders
+            UpdateWidthControls(); // Parkstation-HeightSlider - Changing species provides inaccurate sliders
             RebuildSpriteView(); // they might have different inv so we need a new dummy
             UpdateSpeciesGuidebookIcon();
             IsDirty = true;
