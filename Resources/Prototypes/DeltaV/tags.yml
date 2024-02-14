@@ -6,6 +6,9 @@
   id: BeltSlotNotBelt #not a 'belt'
 
 - type: Tag
+  id: BulletBB
+
+- type: Tag
   id: CartridgeSpecial # For the .38 special ammo and revolver
 
 - type: Tag
@@ -16,6 +19,9 @@
 
 - type: Tag
   id: HandLabeler
+
+- type: Tag
+  id: HidesHarpyWings
 
 - type: Tag
   id: MagazinePistolSpecial # For the .38 special ammo and pistol
@@ -34,3 +40,9 @@
 
 - type: Tag
   id: Wheat
+
+- type: Tag
+  id: PaperSlip
+
+- type: Tag
+  id: Skirt

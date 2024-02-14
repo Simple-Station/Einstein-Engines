@@ -183,8 +183,15 @@
     drawdepth: SmallMobs
     sprite: Mobs/Animals/mouse.rsi
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: mouse-3
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: mouse-moving-3
+    noMovementLayers:
+      movement:
+        state: mouse-3
   - type: Physics
     bodyType: KinematicController
   - type: Fixtures
@@ -267,6 +274,9 @@
     guides:
     - MinorAntagonists
   - type: FelinidFood # Nyanotrasen - Felinid, ability to eat rat, see Content.Server/Nyanotrasen/Abilities/Felinid/FelinidSystem.cs
+  - type: Food
+  - type: Item
+    size: Tiny # Delta V - Make them eatable and pickable.
 
 - type: weightedRandomEntity
   id: RatKingLoot

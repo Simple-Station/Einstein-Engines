@@ -60,6 +60,8 @@
   components:
   - type: NukeopsRule
     faction: Syndicate
+  - type: ThiefRule #the thieves come as an extension of another gamemode
+    ruleChance: 0.5
 
 - type: entity
   id: Pirates
@@ -74,6 +76,8 @@
   noSpawn: true
   components:
   - type: TraitorRule
+  - type: ThiefRule #the thieves come as an extension of another gamemode
+    ruleChance: 0.5
 
 - type: entity
   id: Revolutionary
@@ -81,7 +85,10 @@
   noSpawn: true
   components:
   - type: RevolutionaryRule
-    maxHeadRevs: 1 # DeltaV
+    maxHeadRevs: 2 # DeltaV
+    playersPerHeadRev: 30 # DeltaV - need highpop readied up for multiple headrevs
+  - type: ThiefRule #the thieves come as an extension of another gamemode
+    ruleChance: 0.5
 
 - type: entity
   id: Sandbox
@@ -118,3 +125,22 @@
   noSpawn: true
   components:
   - type: RampingStationEventScheduler
+
+# variation passes
+- type: entity
+  id: BasicRoundstartVariation
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: RoundstartStationVariationRule
+    rules:
+    - id: BasicPoweredLightVariationPass
+    - id: BasicTrashVariationPass
+    - id: SolidWallRustingVariationPass
+    - id: ReinforcedWallRustingVariationPass
+    - id: BasicPuddleMessVariationPass
+      prob: 0.99
+      orGroup: puddleMess
+    - id: BloodbathPuddleMessVariationPass
+      prob: 0.01
+      orGroup: puddleMess
