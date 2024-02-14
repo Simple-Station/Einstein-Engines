@@ -132,9 +132,6 @@
       - ClothMade
       - Gauze
       - RawMaterial
-  - type: Construction
-    graph: WebObjects # not sure if I should either keep this here or just make another prototype. Will keep it here just in case.
-    node: cloth
 
 - type: entity
   parent: MaterialCloth
