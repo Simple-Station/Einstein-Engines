@@ -252,6 +252,13 @@ namespace Content.Server.Database
 
         #endregion
 
+        #region Rules
+
+        Task<DateTimeOffset?> GetLastReadRules(NetUserId player);
+        Task SetLastReadRules(NetUserId player, DateTimeOffset time);
+
+        #endregion
+
         #region Admin Notes
 
         Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime);
@@ -274,27 +281,7 @@ namespace Content.Server.Database
         Task DeleteAdminMessage(int id, Guid deletedBy, DateTimeOffset deletedAt);
         Task HideServerBanFromNotes(int id, Guid deletedBy, DateTimeOffset deletedAt);
         Task HideServerRoleBanFromNotes(int id, Guid deletedBy, DateTimeOffset deletedAt);
-
-        /// <summary>
-        /// Mark an admin message as being seen by the target player.
-        /// </summary>
-        /// <param name="id">The database ID of the admin message.</param>
-        /// <param name="dismissedToo">
-        /// If true, the message is "permanently dismissed" and will not be shown to the player again when they join.
-        /// </param>
-        Task MarkMessageAsSeen(int id, bool dismissedToo);
-
-        #endregion
-
-        #region Job Whitelists
-
-        Task AddJobWhitelist(Guid player, ProtoId<JobPrototype> job);
-
-
-        Task<List<string>> GetJobWhitelists(Guid player, CancellationToken cancel = default);
-        Task<bool> IsJobWhitelisted(Guid player, ProtoId<JobPrototype> job);
-
-        Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job);
+        Task MarkMessageAsSeen(int id);
 
         #endregion
     }
@@ -700,6 +687,18 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.PurgeUploadedResourceLogAsync(days));
         }
 
+        public Task<DateTimeOffset?> GetLastReadRules(NetUserId player)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetLastReadRules(player));
+        }
+
+        public Task SetLastReadRules(NetUserId player, DateTimeOffset time)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetLastReadRules(player, time));
+        }
+
         public Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime)
         {
             DbWriteOpsMetric.Inc();
@@ -787,7 +786,7 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.GetServerRoleBanAsNoteAsync(id));
         }
 
-        public Task<List<IAdminRemarksRecord>> GetAllAdminRemarks(Guid player)
+    public Task<List<IAdminRemarksRecord>> GetAllAdminRemarks(Guid player)
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetAllAdminRemarks(player));

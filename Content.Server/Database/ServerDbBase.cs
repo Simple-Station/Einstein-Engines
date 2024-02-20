@@ -1001,6 +1001,30 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
+        public async Task<DateTimeOffset?> GetLastReadRules(NetUserId player)
+        {
+            await using var db = await GetDb();
+
+            return NormalizeDatabaseTime(await db.DbContext.Player
+                .Where(dbPlayer => dbPlayer.UserId == player)
+                .Select(dbPlayer => dbPlayer.LastReadRules)
+                .SingleOrDefaultAsync());
+        }
+
+        public async Task SetLastReadRules(NetUserId player, DateTimeOffset date)
+        {
+            await using var db = await GetDb();
+
+            var dbPlayer = await db.DbContext.Player.Where(dbPlayer => dbPlayer.UserId == player).SingleOrDefaultAsync();
+            if (dbPlayer == null)
+            {
+                return;
+            }
+
+            dbPlayer.LastReadRules = date.UtcDateTime;
+            await db.DbContext.SaveChangesAsync();
+        }
+
         #endregion
 
         #region Uploaded Resources Logs
@@ -1217,7 +1241,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 ban.LastEditedAt,
                 ban.ExpirationTime,
                 ban.Hidden,
-                new[] { ban.RoleId.Replace(BanManager.JobPrefix, null) },
+                new [] { ban.RoleId.Replace(BanManager.JobPrefix, null) },
                 MakePlayerRecord(unbanningAdmin),
                 ban.Unban?.UnbanTime);
         }
@@ -1381,10 +1405,10 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         protected async Task<List<AdminWatchlistRecord>> GetActiveWatchlistsImpl(DbGuard db, Guid player)
         {
             var entities = await (from watchlist in db.DbContext.AdminWatchlists
-                                  where watchlist.PlayerUserId == player &&
-                                        !watchlist.Deleted &&
-                                        (watchlist.ExpirationTime == null || DateTime.UtcNow < watchlist.ExpirationTime)
-                                  select watchlist)
+                          where watchlist.PlayerUserId == player &&
+                                !watchlist.Deleted &&
+                                (watchlist.ExpirationTime == null || DateTime.UtcNow < watchlist.ExpirationTime)
+                          select watchlist)
                 .Include(note => note.Round)
                 .ThenInclude(r => r!.Server)
                 .Include(note => note.CreatedBy)
@@ -1409,9 +1433,9 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         protected async Task<List<AdminMessageRecord>> GetMessagesImpl(DbGuard db, Guid player)
         {
             var entities = await (from message in db.DbContext.AdminMessages
-                                  where message.PlayerUserId == player && !message.Deleted &&
-                                        (message.ExpirationTime == null || DateTime.UtcNow < message.ExpirationTime)
-                                  select message).Include(note => note.Round)
+                        where message.PlayerUserId == player && !message.Deleted &&
+                              (message.ExpirationTime == null || DateTime.UtcNow < message.ExpirationTime)
+                        select message).Include(note => note.Round)
                     .ThenInclude(r => r!.Server)
                     .Include(note => note.CreatedBy)
                     .Include(note => note.LastEditedBy)
@@ -1537,15 +1561,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return time != null ? NormalizeDatabaseTime(time.Value) : time;
         }
 
-        public async Task<bool> HasPendingModelChanges()
-        {
-            await using var db = await GetDb();
-            return db.DbContext.Database.HasPendingModelChanges();
-        }
-
-        protected abstract Task<DbGuard> GetDb(
-            CancellationToken cancel = default,
-            [CallerMemberName] string? name = null);
+        protected abstract Task<DbGuard> GetDb([CallerMemberName] string? name = null);
 
         protected void LogDbOp(string? name)
         {
