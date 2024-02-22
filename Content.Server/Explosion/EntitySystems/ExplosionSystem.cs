@@ -128,6 +128,32 @@ public sealed partial class ExplosionSystem : EntitySystem
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| parent of 4a141ca68b (Blob gamemode, Vampirs mid round (#484))
+    //start-backmen:blob
+    public void SetExplosionResistance(EntityUid entityUid, float newCoefficient, ExplosionResistanceComponent? component = null)
+    {
+        if (!Resolve(entityUid, ref component))
+            return;
+
+        component.DamageCoefficient = newCoefficient;
+
+        Dirty(entityUid, component);
+    }
+    //end-backmen:blob
+
+=======
+    // start-backmen: blob
+    public void SetExplosionResistance(EntityUid entityUid, float newCoefficient, ExplosionResistanceComponent? component = null)
+    {
+        if (!Resolve(entityUid, ref component))
+            return;
+
+        component.DamageCoefficient = newCoefficient;
+    }
+    // end-backmen: blob
+
+>>>>>>> 4a141ca68b (Blob gamemode, Vampirs mid round (#484))
     private void RelayedResistance(EntityUid uid, ExplosionResistanceComponent component,
         InventoryRelayedEvent<GetExplosionResistanceEvent> args)
     {

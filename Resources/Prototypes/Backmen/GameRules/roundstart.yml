@@ -1,0 +1,84 @@
+﻿- type: entity
+  id: FleshCult
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+    - type: FleshCultRule
+      faction: Flesh
+
+- type: entity
+  id: BlobGameMode
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: BlobGameRule
+
+- type: entity
+  id: VampiresGameRule
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: BloodsuckerRule
+
+- type: entity
+  id: VampireObjective
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: BloodsuckerObjective
+
+- type: entity
+  id: VampireOutbreak
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    earliestStart: 50
+    minimumPlayers: 15
+    weight: 5
+    duration: 1
+  - type: BloodsuckerRule
+
+- type: entity
+  id: Shipwrecked
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+    - type: ShipwreckedRule
+      shuttlePath: /Maps/Backmen/Shuttles/adventurer.yml
+      spawnPointTraveller: SpawnPointShipwreckTraveller
+      availableJobs:
+        - Explorer
+        - Freelancer
+        - Student
+      destinations:
+        - DesertWastes
+        - FrozenWastes
+        - Jungle
+        - Continental
+        - Lava
+        - RuinedMegacity
+      spawnPointHecate: SpawnPointShipwreckHecate
+      hecatePrototype: MobQuestHecateShipwrecked
+      eventSchedule:
+        - 13: AnnounceTransit
+        - 9: ShowHecate
+        - 1: IntroduceHecate
+        - 160: EncounterTurbulence
+        - 10: ShiftParallax
+        - 60: MidFlightDamage
+        - 1: Alert
+        - 8: DecoupleEngine
+        - 14: SendDistressSignal
+        - 8: InterstellarBody
+        - 8: EnteringAtmosphere
+        - 6: Crash
+        - 6: AfterCrash
+        - 12: Sitrep
+
+- type: gameMapPool
+  id: ShipwreckedPool
+  maps:
+    - ShwrAdventurer
+    - ShwrBig
+    - shwrDust

@@ -63,6 +63,7 @@
       rootTask:
         task: BlobPodCompound
     - type: BlobMob
+    - type: BlobSpeak
     - type: ReplacementAccent
       accent: genericAggressive
     - type: CombatMode
@@ -131,6 +132,7 @@
       rules: You are an antagonist, defend your blob core!
     - type: GhostTakeoverAvailable
     - type: Blobbernaut
+    - type: BlobSpeak
     - type: Physics
     - type: InputMover
     - type: MobMover
@@ -321,6 +323,9 @@
         acts: [ "Destruction" ]
   - type: BlobTile
     tileType: Core
+  - type: BlobSpeak
+  - type: ReplacementAccent
+    accent: genericAggressive
   - type: BlobCore
   - type: BlobNode
   - type: BlobResource
@@ -580,7 +585,10 @@
           type: BlobChemSwapBoundUserInterface
     - type: Actions
     - type: Alerts
+    - type: ReplacementAccent
+      accent: genericAggressive
     - type: BlobObserver
+    - type: BlobSpeak
     - type: Visibility
       layer: 2
     - type: ContentEye
