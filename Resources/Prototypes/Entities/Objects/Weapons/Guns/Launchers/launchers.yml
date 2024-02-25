@@ -33,6 +33,7 @@
       collection: MetalThud
   - type: DamageOtherOnHit
     staminaCost: 14
+  - type: Execution
 
 - type: entity
   name: china lake

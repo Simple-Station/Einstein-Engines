@@ -50,3 +50,4 @@
       collection: MetalThud
   - type: DamageOtherOnHit
     staminaCost: 4.5
+  - type: Execution
