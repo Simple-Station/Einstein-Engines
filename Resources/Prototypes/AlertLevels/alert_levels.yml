@@ -5,7 +5,6 @@
     green:
       announcement: alert-level-green-announcement
       color: Green
-      sound: /Audio/Announcements/Alerts/code_green.ogg
       shuttleTime: 600
     blue:
       announcement: alert-level-blue-announcement
