@@ -12,7 +12,7 @@
   cost:
     Telecrystal: 3
   categories:
-  - UplinkWeapons
+  - UplinkWeaponry
 
 - type: listing
   id: UplinkRevolverPython
@@ -25,7 +25,7 @@
   cost:
     Telecrystal: 8 # Originally was 13 TC but was not used due to high cost
   categories:
-  - UplinkWeapons
+  - UplinkWeaponry
 
 # Inbuilt suppressor so it's sneaky + more expensive.
 - type: listing
@@ -39,7 +39,7 @@
   cost:
     Telecrystal: 4
   categories:
-  - UplinkWeapons
+  - UplinkWeaponry
 
 # Poor accuracy, slow to fire, cheap option
 - type: listing
@@ -50,7 +50,7 @@
   cost:
     Telecrystal: 1
   categories:
-  - UplinkWeapons
+  - UplinkWeaponry
 
 - type: listing
   id: UplinkEsword
@@ -64,7 +64,7 @@
   cost:
     Telecrystal: 8
   categories:
-  - UplinkWeapons
+  - UplinkWeaponry
 
 - type: listing
   id: UplinkEnergyDagger
@@ -78,7 +78,7 @@
   cost:
     Telecrystal: 2
   categories:
-  - UplinkWeapons
+  - UplinkWeaponry
 
 - type: listing
   id: UplinkThrowingKnivesKit
@@ -92,7 +92,21 @@
   cost:
     Telecrystal: 6
   categories:
-    - UplinkWeapons
+    - UplinkWeaponry
+
+- type: listing
+  id: UplinkThrowingKnivesKit
+  name: uplink-knives-kit-name
+  description: uplink-knives-kit-desc
+  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: throwing_knives }
+  productEntity: ThrowingKnivesKit
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 6
+  categories:
+    - UplinkWeaponry
 
 - type: listing
   id: UplinkGlovesNorthStar
@@ -105,7 +119,7 @@
   cost:
     Telecrystal: 8
   categories:
-  - UplinkWeapons
+  - UplinkWeaponry
 
 - type: listing
   id: UplinkDisposableTurret
@@ -118,7 +132,7 @@
   cost:
     Telecrystal: 6
   categories:
-  - UplinkWeapons
+  - UplinkWeaponry
   conditions:
     - !type:StoreWhitelistCondition
       blacklist:
@@ -770,11 +784,11 @@
   - UplinkDeception
 
 - type: listing
-  id: UplinkBinaryTranslatorKey
-  name: uplink-binary-translator-key-name
-  description: uplink-binary-translator-key-desc
-  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: rd_label }
-  productEntity: EncryptionKeyBinary
+  id: UplinkMobCatMicrobomb
+  name: uplink-mobcat-microbomb-name
+  description: uplink-mobcat-microbomb-desc
+  icon: { sprite: /Textures/Mobs/Pets/cat.rsi, state: syndicat }
+  productEntity: MobCatSyndy
   cost:
     Telecrystal: 1
   categories:
@@ -1339,7 +1353,7 @@
         components:
           - SurplusBundle
 
-# Bundles
+# Wearables
 
 - type: listing
   id: UplinkJetpack
@@ -1381,7 +1395,7 @@
   cost:
     Telecrystal: 4
   categories:
-  - UplinkBundles
+    - UplinkWearables
 
 - type: listing
   id: UplinkClothingNoSlipsShoes
@@ -1392,8 +1406,9 @@
   discountDownTo:
     Telecrystal: 1
   cost:
-    Telecrystal: 6
+    Telecrystal: 2
   categories:
+  - UplinkWearables
   - UplinkWearables
 
 - type: listing
@@ -1406,7 +1421,9 @@
     Telecrystal: 2
   cost:
     Telecrystal: 4
+    Telecrystal: 4
   categories:
+  - UplinkWearables
   - UplinkWearables
 
 - type: listing
@@ -1418,9 +1435,9 @@
   discountDownTo:
     Telecrystal: 1
   cost:
-    Telecrystal: 12
+    Telecrystal: 3
   categories:
-  - UplinkBundles
+  - UplinkWearables
 
 - type: listing
   id: UplinkClothingShoesBootsMagSyndie
@@ -1431,9 +1448,9 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 17
+    Telecrystal: 4
   categories:
-  - UplinkBundles
+  - UplinkWearables
 
 - type: listing
   id: UplinkEVASyndie
@@ -1445,9 +1462,9 @@
   discountDownTo:
     Telecrystal: 1
   cost:
-    Telecrystal: 20
+    Telecrystal: 2
   categories:
-  - UplinkBundles
+  - UplinkWearables
 
 - type: listing
   id: UplinkHardsuitCarp
@@ -1459,9 +1476,9 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 25
+    Telecrystal: 8
   categories:
-  - UplinkBundles
+  - UplinkWearables
 
 - type: listing
   id: UplinkHardsuitSyndie
@@ -1473,17 +1490,17 @@
   discountDownTo:
     Telecrystal: 4
   cost:
-    Telecrystal: 30
+    Telecrystal: 10
   categories:
-  - UplinkBundles
+  - UplinkWearables
 
 - type: listing
-  id: UplinkSurplusBundle
-  name: uplink-surplus-bundle-name
-  description: uplink-surplus-bundle-desc
-  productEntity: CrateSyndicateSurplusBundle
+  id: UplinkClothingConductingGloves
+  name: uplink-clothing-conducting-gloves-name
+  description: uplink-clothing-conducting-gloves-desc
+  productEntity: ClothingHandsGlovesConducting
   cost:
-    Telecrystal: 20
+    Telecrystal: 2
   categories:
   - UplinkBundles
   conditions:
@@ -1507,7 +1524,7 @@
   discountDownTo:
     Telecrystal: 7
   cost:
-    Telecrystal: 40
+    Telecrystal: 1
   categories:
   - UplinkWearables
 
@@ -1556,14 +1573,9 @@
   discountDownTo:
     Telecrystal: 1
   cost:
-    Telecrystal: 8
+    Telecrystal: 1
   categories:
-  - UplinkTools
-  conditions:
-    - !type:BuyerWhitelistCondition
-      blacklist:
-        components:
-          - SurplusBundle
+  - UplinkPointless
 
 # Job Specific
 

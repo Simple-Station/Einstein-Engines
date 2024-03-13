@@ -5,16 +5,16 @@
   - type: Store
     name: store-preset-name-uplink
     categories:
-    - UplinkWeapons
+    - UplinkWeaponry
     - UplinkAmmo
     - UplinkExplosives
-    - UplinkMisc
-    - UplinkBundles
-    - UplinkTools
-    - UplinkUtility
+    - UplinkWearables
+    - UplinkChemicals
+    - UplinkDeception
+    - UplinkDisruption
     - UplinkImplants
     - UplinkJob
-    - UplinkArmor
+    - UplinkAllies
     - UplinkPointless
     - UplinkSales
     currencyWhitelist:
