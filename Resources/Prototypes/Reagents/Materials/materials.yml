@@ -134,3 +134,11 @@
   icon: { sprite: Objects/Materials/materials.rsi, state: normality }
   color: "#53a9ff"
   price: 7.5
+
+- type: material
+  id: Gunpowder
+  name: materials-gunpowder
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Misc/reagent_fillings.rsi, state: powderpile }
+  color: "#A9A9A9"
+  price: 0
