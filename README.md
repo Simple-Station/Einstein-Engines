@@ -6,6 +6,11 @@ Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://githu
 
 As a Hard Fork, any code sourced from a different upstream cannot ever be merged directly here, and must instead be ported. All code present in this repository is subject to change as desired by the council of maintainers.
 
+## "Official Server Policy"
+#### No Official Servers will ever be made for Einstein-Engines.
+
+In order to prevent a potential conflict of interest, we will never open any server directly using the Einstein-Engines upstream itself. Any server claiming to be an official representation of this fork is not endorsed in any way by this organization. We however would like to invite anyone wishing to create a server to make a fork of Einstein-Engines.
+
 ## Links
 
 #### Einstein Engines & Simplestation 14
