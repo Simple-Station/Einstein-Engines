@@ -68,3 +68,39 @@
   id: RevenantAbilities
   name: store-category-abilities
 
+#ert
+
+- type: storeCategory
+  id: ertWeapons
+  name: store-category-weapons
+  priority: 0
+
+- type: storeCategory
+  id: ertAmmo
+  name: store-category-ammo
+  priority: 1
+
+- type: storeCategory
+  id: ertMisc
+  name: store-category-misc
+  priority: 2
+
+- type: storeCategory
+  id: ertBundles
+  name: store-category-bundles
+  priority: 3
+
+- type: storeCategory
+  id: ertTools
+  name: store-category-tools
+  priority: 4
+
+- type: storeCategory
+  id: ertImplants
+  name: store-category-implants
+  priority: 5
+
+- type: storeCategory
+  id: ertArmor
+  name: store-category-armor
+  priority: 6
