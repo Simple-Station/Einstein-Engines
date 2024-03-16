@@ -15,5 +15,8 @@ ertstore-lasercarbine-desc = Favoured by Nanotrasen Security for being cheap and
 ertstore-mateba-name = Mateba
 ertstore-mateba-desc = An overpriced sidearm favored by ERT commanders. Uses .45 magnum ammo.
 
-ertstore--name = IK-30
-ertstore--desc = An magazine-fed predecessor to the IK-60. Uses .20 energy ammo.
+ertstore-ik30-name = IK-30
+ertstore-ik30-desc = An magazine-fed predecessor to the IK-60. Uses laser magazines.
+
+ertstore-multiimmolator-name = Multi Lens Immolator Cannon
+ertstore-multiimmolator-desc = A modified laser gun, shooting highly concentrated beams with higher intensity that ignites the target with multiple fire modes. Generally seen on highly expensive ERTs.
