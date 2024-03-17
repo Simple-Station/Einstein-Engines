@@ -5,7 +5,8 @@
   name: medal
   description: not given to anyone
   components:
-  - tags: null
+  - type: Tag
+    - WhitelistChameleon
   
 - type: entity
   parent: ClothingNeckMedalBase
