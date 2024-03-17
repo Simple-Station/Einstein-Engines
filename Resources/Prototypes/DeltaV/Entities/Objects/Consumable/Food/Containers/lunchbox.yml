@@ -14,7 +14,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_generic.rsi
-    #heldPrefix: box
+    heldPrefix: box
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -118,7 +118,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_command.rsi
-    #heldPrefix: box-command
+    heldPrefix: box-command
 
 - type: entity
   parent: LunchboxGenericFilledRandom
@@ -135,7 +135,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox.rsi
-    #heldPrefix: box-command
+    heldPrefix: box-command
 
 - type: entity
   parent: LunchboxGeneric
@@ -152,7 +152,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_security.rsi
-    #heldPrefix: box-security
+    heldPrefix: box-security
     
 - type: entity
   parent: LunchboxGenericFilledRandom
@@ -169,7 +169,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_security.rsi
-    #heldPrefix: box-security
+    heldPrefix: box-security
     
 - type: entity
   parent: LunchboxGeneric
@@ -186,7 +186,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_medical.rsi
-    #heldPrefix: box-medical
+    #eldPrefix: box-medical
     
 - type: entity
   parent: LunchboxGenericFilledRandom
@@ -203,7 +203,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_medical.rsi
-    #heldPrefix: box-medical
+    heldPrefix: box-medical
 
 - type: entity
   parent: LunchboxGeneric
@@ -220,7 +220,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_logistics.rsi
-    #heldPrefix: box-logistics
+    heldPrefix: box-logistics
 
 - type: entity
   parent: LunchboxGenericFilledRandom
@@ -237,7 +237,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_logistics.rsi
-    #heldPrefix: box
+    heldPrefix: box
 
 - type: entity
   parent: LunchboxGeneric
@@ -254,7 +254,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_engineering.rsi
-    #heldPrefix: box-engineering
+    heldPrefix: box-engineering
 
 - type: entity
   parent: LunchboxGenericFilledRandom
@@ -271,7 +271,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_engineering.rsi
-    #heldPrefix: box-engineering
+    heldPrefix: box-engineering
 
 - type: entity
   parent: LunchboxGeneric
@@ -288,7 +288,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_epistemics.rsi
-    #heldPrefix: box-epistemics
+    heldPrefix: box-epistemics
 
 - type: entity
   parent: LunchboxGenericFilledRandom
@@ -305,7 +305,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_epistemics.rsi
-    #heldPrefix: box-epistemics
+    heldPrefix: box-epistemics
 
 
 - type: entity
@@ -323,7 +323,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_service.rsi
-    #heldPrefix: box-service
+    heldPrefix: box-service
 
 - type: entity
   parent: LunchboxGenericFilledRandom
@@ -340,7 +340,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_service.rsi
-    #heldPrefix: box-service
+    heldPrefix: box-service
 
 - type: entity
   parent: LunchboxGeneric
@@ -357,7 +357,7 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_syndicate.rsi
-    #heldPrefix: box-syndicate
+    heldPrefix: box-syndicate
     
 - type: entity
   parent: LunchboxGenericFilledRandom
@@ -374,4 +374,4 @@
     size: Normal
     shape: null
     sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_syndicate.rsi
-    #heldPrefix: box-syndicate
+    heldPrefix: box-syndicate
