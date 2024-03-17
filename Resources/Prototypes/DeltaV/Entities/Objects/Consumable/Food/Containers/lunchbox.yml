@@ -1,0 +1,377 @@
+- type: entity
+  id: LunchboxGeneric
+  parent: [ BoxCardboard, BaseBagOpenClose ]
+  name: lunchbox
+  description: For on-the-go meal carrying needs.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_generic.rsi
+    layers:
+    - state: box
+    - state: box-open
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_generic.rsi
+    #heldPrefix: box
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,1,1
+    - 3,0,1,1
+    - 4,0,4,2
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 2
+    soundHit:
+      path: "/Audio/Weapons/click.ogg"
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxGenericFilledRandom
+  suffix: Filled, Random
+  name: pre-packed lunchbox
+  description: Packed with love.
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodPizzaArnoldSlice
+      orGroup: HealthyOrUnhealthyMain
+      prob: 0.5
+      amount: 2
+    - id: FoodApple
+      orGroup: HealthyOrUnhealthyMain
+      prob: 0.5
+    - id: DrinkWaterBottleFull
+      orGroup: HealthyOrUnhealthyDrink
+      prob: 0.5
+    - id: DrinkCartonOrange
+      orGroup: HealthyOrUnhealthyDrink
+      prob: 0.5
+    - id: FoodSnackCheesie
+      orGroup: HealthyOrUnhealthySnack
+      prob: 0.25
+    - id: FoodSnackChocolate
+      orGroup: HealthyOrUnhealthySnack
+      prob: 0.25
+    - id: FoodCarrot
+      orGroup: HealthyOrUnhealthySnack
+      prob: 0.5
+    - id: PaperWrittenNoteFromMumGeneric
+      prob: 0.1
+
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxGenericFilledHealthy
+  suffix: Filled, Healthy
+  name: pre-packed lunchbox
+  description: Packed with healthy love.
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodApple
+    - id: DrinkWaterBottleFull
+    - id: FoodCarrot
+    - id: PaperWrittenNoteFromMumHealthy
+      prob: 0.1
+    
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxGenericFilledUnhealthy
+  suffix: Filled, Unhealthy
+  name: pre-packed lunchbox
+  description: Packed with love.
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodPizzaArnoldSlice
+      amount: 2
+    - id: DrinkCartonOrange
+    - id: FoodSnackCheesie
+      orGroup: UnhealthySnack
+      prob: 0.25
+    - id: FoodSnackChocolate
+      orGroup: UnhealthySnack
+      prob: 0.25
+    - id: PaperWrittenNoteFromMumUnhealthy
+      prob: 0.1
+
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxCommand
+  suffix: Command
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_command.rsi
+    layers:
+    - state: box-command
+    - state: box-open-command
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_command.rsi
+    #heldPrefix: box-command
+
+- type: entity
+  parent: LunchboxGenericFilledRandom
+  id: LunchboxCommandFilledRandom
+  suffix: Command, Filled, Random
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_command.rsi
+    layers:
+    - state: box-command
+    - state: box-open-command
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox.rsi
+    #heldPrefix: box-command
+
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxSecurity
+  suffix: Security
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_security.rsi
+    layers:
+    - state: box-security
+    - state: box-open-security
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_security.rsi
+    #heldPrefix: box-security
+    
+- type: entity
+  parent: LunchboxGenericFilledRandom
+  id: LunchboxSecurityFilledRandom
+  suffix: Security, Filled, Random
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_security.rsi
+    layers:
+    - state: box-security
+    - state: box-open-security
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_security.rsi
+    #heldPrefix: box-security
+    
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxMedical
+  suffix: Medical
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_medical.rsi
+    layers:
+    - state: box-medical
+    - state: box-open-medical
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_medical.rsi
+    #heldPrefix: box-medical
+    
+- type: entity
+  parent: LunchboxGenericFilledRandom
+  id: LunchboxMedicalFilledRandom
+  suffix: Medical, Filled, Random
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_medical.rsi
+    layers:
+    - state: box-medical
+    - state: box-open-medical
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_medical.rsi
+    #heldPrefix: box-medical
+
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxLogistics
+  suffix: Logistics
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_logistics.rsi
+    layers:
+    - state: box-logistics
+    - state: box-open-logistics
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_logistics.rsi
+    #heldPrefix: box-logistics
+
+- type: entity
+  parent: LunchboxGenericFilledRandom
+  id: LunchboxLogisticsFilledRandom
+  suffix: Logistics, Filled, Random
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_logistics.rsi
+    layers:
+    - state: box-logistics
+    - state: box-open-logistics
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_logistics.rsi
+    #heldPrefix: box
+
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxEngineering
+  suffix: Engineering
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_engineering.rsi
+    layers:
+    - state: box-engineering
+    - state: box-open-engineering
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_engineering.rsi
+    #heldPrefix: box-engineering
+
+- type: entity
+  parent: LunchboxGenericFilledRandom
+  id: LunchboxEngineeringFilledRandom
+  suffix: Engineering, Filled, Random
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_engineering.rsi
+    layers:
+    - state: box-engineering
+    - state: box-open-engineering
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_engineering.rsi
+    #heldPrefix: box-engineering
+
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxEpistemics
+  suffix: Epistemics
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_epistemics.rsi
+    layers:
+    - state: box-epistemics
+    - state: box-open-epistemics
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_epistemics.rsi
+    #heldPrefix: box-epistemics
+
+- type: entity
+  parent: LunchboxGenericFilledRandom
+  id: LunchboxEpistemicsFilledRandom
+  suffix: Epistemics, Filled, Random
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_epistemics.rsi
+    layers:
+    - state: box-epistemics
+    - state: box-open-epistemics
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_epistemics.rsi
+    #heldPrefix: box-epistemics
+
+
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxService
+  suffix: Service
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_service.rsi
+    layers:
+    - state: box-service
+    - state: box-open-service
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_service.rsi
+    #heldPrefix: box-service
+
+- type: entity
+  parent: LunchboxGenericFilledRandom
+  id: LunchboxServiceFilledRandom
+  suffix: Service, Filled, Random
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_service.rsi
+    layers:
+    - state: box-service
+    - state: box-open-service
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_service.rsi
+    #heldPrefix: box-service
+
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxSyndicate
+  suffix: Syndicate
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_syndicate.rsi
+    layers:
+    - state: box-syndicate
+    - state: box-open-syndicate
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_syndicate.rsi
+    #heldPrefix: box-syndicate
+    
+- type: entity
+  parent: LunchboxGenericFilledRandom
+  id: LunchboxSyndicateFilledRandom
+  suffix: Syndicate, Filled, Random
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_syndicate.rsi
+    layers:
+    - state: box-syndicate
+    - state: box-open-syndicate
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: DeltaV/Objects/Storage/Lunchbox/lunchbox_syndicate.rsi
+    #heldPrefix: box-syndicate
