@@ -276,6 +276,12 @@
     controlsLocked: true
     randomMode: false
     mode: SensorCords
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - PrisonUniform
+    - Skirt # Delta-V - Skirt Tag so Harpies can wear it.
 
 - type: entity
   parent: ClothingUniformSkirtBase
