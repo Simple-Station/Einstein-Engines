@@ -1185,6 +1185,13 @@
   id: Torch
 
 - type: Tag
+  id: ToyRubberDuck
+
+- type: Tag
+  id: ToySidearm
+
+- type: Tag
+>>>>>>> 6694f92171 (Adds craftable ducky slippers (#26138))
   id: Trash
 
 - type: Tag
