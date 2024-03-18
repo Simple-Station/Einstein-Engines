@@ -6,7 +6,7 @@ using Content.Server.Zombies;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Species.Systems;
+namespace Content.Server.Species.Diona.Systems;
 
 public sealed partial class NymphSystem : EntitySystem
 {

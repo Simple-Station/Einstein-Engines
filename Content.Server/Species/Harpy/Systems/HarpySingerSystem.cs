@@ -21,7 +21,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared.DeltaV.Harpy.Components;
 
-namespace Content.Server.DeltaV.Harpy
+namespace Content.Server.Species.Harpy.Systems
 {
     public sealed class HarpySingerSystem : EntitySystem
     {

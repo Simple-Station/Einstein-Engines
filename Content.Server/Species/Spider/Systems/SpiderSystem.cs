@@ -5,7 +5,7 @@ using Content.Shared.Maps;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 
-namespace Content.Server.Spider;
+namespace Content.Server.Species.Spider.Systems;
 
 public sealed class SpiderSystem : SharedSpiderSystem
 {
