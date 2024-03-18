@@ -13,7 +13,10 @@ In order to prevent a potential conflict of interest, we will never open any ser
 
 ## Links
 
-#### Einstein Engines & Simplestation 14
+#### Einstein Engines
+[Discord](https://discord.gg/zgQVdEPJ8w)
+
+#### Simplestation 14
 [Website](https://simplestation.org/) | [Wiki](Pending) | [Discord](https://discord.gg/49KeKwXc8g)
 
 #### Space Station 14
