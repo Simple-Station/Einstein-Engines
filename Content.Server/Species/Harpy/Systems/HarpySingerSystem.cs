@@ -19,7 +19,7 @@ using Content.Shared.Zombies;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Content.Shared.DeltaV.Harpy.Components;
+using Content.Shared.Species.Harpy.Components;
 
 namespace Content.Server.Species.Harpy.Systems
 {

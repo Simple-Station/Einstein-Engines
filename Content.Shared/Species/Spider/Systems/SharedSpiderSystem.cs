@@ -1,8 +1,9 @@
 using Content.Shared.Actions;
+using Content.Shared.Species.Spider.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Random;
 
-namespace Content.Shared.Spider;
+namespace Content.Shared.Species.Spider.Systems;
 
 public abstract class SharedSpiderSystem : EntitySystem
 {

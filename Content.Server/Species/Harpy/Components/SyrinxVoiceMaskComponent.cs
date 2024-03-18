@@ -1,4 +1,4 @@
-namespace Content.Server.VoiceMask;
+namespace Content.Server.Species.Harpy.Components;
 
 [RegisterComponent]
 public sealed partial class SyrinxVoiceMaskComponent : Component

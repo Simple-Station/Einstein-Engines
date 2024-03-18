@@ -1,8 +1,9 @@
 using Content.Shared.Actions;
+using Content.Shared.Species.Harpy.Components;
 
 namespace Content.Shared.DeltaV.Harpy
 {
-    public class HarpySingerSystem : EntitySystem
+    public sealed class HarpySingerSystem : EntitySystem
     {
         [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
 

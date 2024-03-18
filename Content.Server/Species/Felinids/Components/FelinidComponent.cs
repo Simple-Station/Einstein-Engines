@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Actions;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Abilities.Felinid;
+namespace Content.Server.Species.Felinids.Components;
 
 [RegisterComponent]
 public sealed partial class FelinidComponent : Component

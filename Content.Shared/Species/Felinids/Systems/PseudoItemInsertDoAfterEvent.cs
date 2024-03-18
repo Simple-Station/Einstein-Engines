@@ -1,7 +1,7 @@
 using Robust.Shared.Serialization;
 using Content.Shared.DoAfter;
 
-namespace Content.Shared.Item.PseudoItem;
+namespace Content.Shared.Species.Felinids.Systems;
 
 
 [Serializable, NetSerializable]

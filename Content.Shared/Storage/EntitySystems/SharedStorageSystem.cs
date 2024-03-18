@@ -11,7 +11,7 @@ using Content.Shared.Implants.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.Lock;
-using Content.Shared.Nyanotrasen.Item.PseudoItem;
+using Content.Shared.Species.Felinids.Components;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;

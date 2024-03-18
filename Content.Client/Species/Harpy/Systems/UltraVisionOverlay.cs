@@ -4,7 +4,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Content.Shared.Abilities;
 
-namespace Content.Client.DeltaV.Overlays;
+namespace Content.Client.Species.Harpy.Systems;
 
 public sealed partial class UltraVisionOverlay : Overlay
 {

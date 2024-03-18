@@ -1,4 +1,4 @@
-using Content.Shared.Species.Components;
+using Content.Shared.Species.Diona.Components;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.Popups;
@@ -10,7 +10,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
-namespace Content.Shared.Species;
+namespace Content.Shared.Species.Diona.Systems;
 
 public sealed partial class ReformSystem : EntitySystem
 {
@@ -89,7 +89,7 @@ public sealed partial class ReformSystem : EntitySystem
             return;
 
         // Spawn a new entity
-        // This is, to an extent, taken from polymorph. I don't use polymorph for various reasons- most notably that this is permanent. 
+        // This is, to an extent, taken from polymorph. I don't use polymorph for various reasons- most notably that this is permanent.
         var child = Spawn(comp.ReformPrototype, Transform(uid).Coordinates);
 
         // This transfers the mind to the new entity
@@ -105,8 +105,8 @@ public sealed partial class ReformSystem : EntitySystem
         _actionsSystem.RemoveAction(uid, comp.ActionEntity); // Zombies can't reform
     }
 
-    public sealed partial class ReformEvent : InstantActionEvent { } 
-    
+    public sealed partial class ReformEvent : InstantActionEvent { }
+
     [Serializable, NetSerializable]
     public sealed partial class ReformDoAfterEvent : SimpleDoAfterEvent { }
 }

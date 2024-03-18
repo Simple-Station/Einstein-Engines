@@ -1,13 +1,14 @@
+using Content.Server.Species.Oni.Components;
 using Content.Server.Tools;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Tools.Components;
 using Content.Shared.Damage.Events;
-using Content.Shared.Nyanotrasen.Abilities.Oni;
+using Content.Shared.Species.Oni.Systems;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Containers;
 
-namespace Content.Server.Abilities.Oni
+namespace Content.Server.Species.Oni.Systems
 {
     public sealed class OniSystem : SharedOniSystem
     {

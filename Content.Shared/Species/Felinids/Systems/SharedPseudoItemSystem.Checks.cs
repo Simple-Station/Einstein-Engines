@@ -1,7 +1,8 @@
 ﻿using Content.Shared.Item;
 using Content.Shared.Storage;
+using Content.Shared.Species.Felinids.Components;
 
-namespace Content.Shared.Nyanotrasen.Item.PseudoItem;
+namespace Content.Shared.Species.Felinids.Systems;
 
 /// <summary>
 /// Almost all of this is code taken from other systems, but adapted to use PseudoItem.

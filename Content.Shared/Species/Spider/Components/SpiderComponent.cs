@@ -1,9 +1,10 @@
 using Content.Shared.Actions;
+using Content.Shared.Species.Spider.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Shared.Spider;
+namespace Content.Shared.Species.Spider.Components;
 
 [RegisterComponent, NetworkedComponent]
 [Access(typeof(SharedSpiderSystem))]

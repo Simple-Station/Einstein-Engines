@@ -1,5 +1,5 @@
 using Content.Server.Mind;
-using Content.Shared.Species.Components;
+using Content.Shared.Species.Diona.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Zombies;
 using Content.Server.Zombies;

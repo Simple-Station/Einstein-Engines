@@ -1,5 +1,5 @@
 using Robust.Shared.GameStates;
-namespace Content.Shared.Abilities;
+namespace Content.Shared.Species.Vulpkanin.Components;
 
 [RegisterComponent]
 [NetworkedComponent]

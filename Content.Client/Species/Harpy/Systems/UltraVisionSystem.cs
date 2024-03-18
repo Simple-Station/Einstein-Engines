@@ -3,7 +3,7 @@ using Content.Shared.DeltaV.CCVars;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 
-namespace Content.Client.DeltaV.Overlays;
+namespace Content.Client.Species.Harpy.Systems;
 
 public sealed partial class UltraVisionSystem : EntitySystem
 {

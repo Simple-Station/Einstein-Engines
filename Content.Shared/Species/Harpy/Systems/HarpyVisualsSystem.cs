@@ -1,3 +1,4 @@
+using Content.Shared.Species.Harpy.Components;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Tag;
 using Content.Shared.Humanoid;

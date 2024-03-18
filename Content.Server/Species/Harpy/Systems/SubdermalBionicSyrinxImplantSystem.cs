@@ -1,7 +1,9 @@
 ﻿using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
+using Content.Server.Implants;
 using Content.Server.Popups;
 using Content.Server.VoiceMask;
+using Content.Server.Species.Harpy.Components;
 using Content.Shared.Database;
 using Content.Shared.Implants;
 using Content.Shared.Implants.Components;
@@ -12,7 +14,7 @@ using Content.Shared.VoiceMask;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 
-namespace Content.Server.Implants;
+namespace Content.Server.Species.Harpy.Systems;
 
 public sealed class SubdermalBionicSyrinxImplantSystem : EntitySystem
 {

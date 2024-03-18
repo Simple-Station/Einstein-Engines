@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Spider;
+namespace Content.Shared.Species.Spider.Components;
 
 [Serializable, NetSerializable]
 public enum SpiderWebVisuals

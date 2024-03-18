@@ -1,4 +1,4 @@
-﻿namespace Content.Shared.Nyanotrasen.Abilities.Oni;
+﻿namespace Content.Shared.Species.Oni.Systems;
 
 public abstract class SharedOniSystem : EntitySystem
 {

@@ -4,13 +4,13 @@ using Content.Server.Storage.EntitySystems;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Item;
-using Content.Shared.Item.PseudoItem;
-using Content.Shared.Nyanotrasen.Item.PseudoItem;
+using Content.Shared.Species.Felinids.Components;
+using Content.Shared.Species.Felinids.Systems;
 using Content.Shared.Storage;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
 
-namespace Content.Server.Nyanotrasen.Item.PseudoItem;
+namespace Content.Server.Species.Felinids.Systems;
 
 public sealed class PseudoItemSystem : SharedPseudoItemSystem
 {

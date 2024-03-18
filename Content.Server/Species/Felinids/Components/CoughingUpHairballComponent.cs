@@ -1,4 +1,4 @@
-namespace Content.Server.Abilities.Felinid;
+namespace Content.Server.Species.Felinids.Components;
 
 [RegisterComponent]
 public sealed partial class CoughingUpHairballComponent : Component

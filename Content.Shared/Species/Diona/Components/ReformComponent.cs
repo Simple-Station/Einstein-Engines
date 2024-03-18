@@ -1,8 +1,8 @@
-    using Robust.Shared.Prototypes;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Species.Components;
+namespace Content.Shared.Species.Diona.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class ReformComponent : Component
@@ -13,7 +13,7 @@ public sealed partial class ReformComponent : Component
     [DataField(required: true)]
     public EntProtoId ActionPrototype = default!;
 
-    [DataField, AutoNetworkedField] 
+    [DataField, AutoNetworkedField]
     public EntityUid? ActionEntity;
 
     /// <summary>

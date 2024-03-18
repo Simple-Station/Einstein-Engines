@@ -9,6 +9,7 @@ using Content.Shared.Hands;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Species.Felinids.Systems;
 using Content.Server.Body.Components;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Medical;
@@ -16,6 +17,7 @@ using Content.Server.Nutrition.EntitySystems;
 using Content.Server.Nutrition.Components;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Popups;
+using Content.Server.Species.Felinids.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -23,7 +25,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Abilities.Felinid;
+namespace Content.Server.Species.Felinids.Systems;
 
 public sealed partial class FelinidSystem : EntitySystem
 {

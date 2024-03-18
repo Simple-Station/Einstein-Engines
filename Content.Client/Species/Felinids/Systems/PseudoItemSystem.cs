@@ -1,4 +1,4 @@
-﻿using Content.Shared.Nyanotrasen.Item.PseudoItem;
+﻿using Content.Shared.Species.Felinids.Systems;
 
 namespace Content.Client.Nyanotrasen.Item.PseudoItem;
 

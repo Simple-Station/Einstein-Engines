@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.DeltaV.Harpy
+namespace Content.Shared.Species.Harpy.Components
 {
     [RegisterComponent, NetworkedComponent]
     public sealed partial class HarpySingerComponent : Component

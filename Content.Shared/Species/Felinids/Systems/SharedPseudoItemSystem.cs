@@ -3,14 +3,14 @@ using Content.Shared.Hands;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
-using Content.Shared.Item.PseudoItem;
+using Content.Shared.Species.Felinids.Components;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 
-namespace Content.Shared.Nyanotrasen.Item.PseudoItem;
+namespace Content.Shared.Species.Felinids.Systems;
 
 public abstract partial class SharedPseudoItemSystem : EntitySystem
 {

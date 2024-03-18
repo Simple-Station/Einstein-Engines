@@ -1,7 +1,7 @@
 using Content.Shared.Item;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Nyanotrasen.Item.PseudoItem;
+namespace Content.Shared.Species.Felinids.Components;
 
     /// <summary>
     /// For entities that behave like an item under certain conditions,

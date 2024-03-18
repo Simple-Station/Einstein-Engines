@@ -1,9 +1,9 @@
-using Content.Shared.Abilities;
+using Content.Shared.Species.Vulpkanin.Components;
 using Content.Shared.DeltaV.CCVars;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 
-namespace Content.Client.Nyanotrasen.Overlays;
+namespace Content.Client.Species.Vulpkanin.Systems;
 
 public sealed partial class DogVisionSystem : EntitySystem
 {

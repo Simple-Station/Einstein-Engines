@@ -1,5 +1,5 @@
 using Content.Shared.Damage;
-using Content.Shared.Nyanotrasen.Abilities.Oni;
+using Content.Shared.Species.Oni.Systems;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
