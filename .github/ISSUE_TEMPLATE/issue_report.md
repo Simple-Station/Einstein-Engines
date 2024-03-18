@@ -1,20 +1,55 @@
 ---
 name: Report an Issue
-about: "..."
+about: "Any general issues you have during play or with the codebase"
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-## Description
-<!-- Explain your issue in detail. Issues without proper explanation are liable to be closed by maintainers. -->
+<!--
+This is a loose format, write this however you need to
+Remove these comments before submitting
+-->
 
-**Reproduction**
-<!-- Include the steps to reproduce if applicable. -->
+# Description
+<!--
+Explain your issue in detail
+Issues without proper explanation are liable to be closed by maintainers
+-->
 
-**Screenshots**
-<!-- If applicable, add screenshots to help explain your problem. -->
+Description
 
-**Additional context**
-<!-- Add any other context about the problem here. Anything you think is related to the issue. -->
+# Reproduction
+<!--
+Include the steps to reproduce if applicable
+Try to be as descriptive as possible
+-->
+
+1. Open game
+2. Game doesn't open
+
+# Expected behavior
+<!--
+What should happen?
+Why might this not be happening? / Possible solutions  (if you know)
+-->
+
+1. Open game
+2. Game opens
+
+# Media
+<!--
+If applicable, add screenshots to help explain your problem
+A video of the reproduction would also be useful
+-->
+
+![Example Screenshot](https://example.com/thisimageisntreal.png)
+
+# Additional context
+<!--
+Add any other context about the problem here
+Anything you think is related to the issue
+-->
+
+There's a ghost in my computer
