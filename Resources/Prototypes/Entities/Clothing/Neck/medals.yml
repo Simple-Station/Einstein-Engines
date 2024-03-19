@@ -6,6 +6,7 @@
   description: not given to anyone
   components:
   - type: Tag
+    tags:
     - WhitelistChameleon
   
 - type: entity
