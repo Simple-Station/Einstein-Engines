@@ -198,12 +198,33 @@
   category: Fun
   group: market
 
-#- type: cargoProduct
-#  id: FunCrateGambling
-#  icon:
-#    sprite: Objects/Economy/cash.rsi
-#    state: cash_1000000
-#  product: CrateCargoGambling
-#  cost: 10000
-#  category: Fun
-#  group: market
+- type: cargoProduct
+  id: FunCrateGambling
+  icon:
+    sprite: Objects/Economy/cash.rsi
+    state: cash_1000000
+  product: CrateCargoGambling
+  cost: 10000
+  category: Fun
+  group: market
+
+- type: cargoProduct
+  id: CrateFunBBGun
+  icon:
+    sprite: Objects/Weapons/Guns/Pistols/water_pistol.rsi
+    state: display
+  product: CrateFunBBGun
+  cost: 1000
+  category: Fun
+  group: market
+
+- type: cargoProduct
+  id: CapGunSet
+  icon:
+    sprite: Objects/Fun/caps.rsi
+    state: icon
+  product: CrateCapGunSet
+  cost: 1000
+  category: Fun
+  group: market
+
