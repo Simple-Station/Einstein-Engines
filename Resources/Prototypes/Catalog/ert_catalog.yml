@@ -1,61 +1,11 @@
 # Weapons
 
 - type: listing
-  id: ertstoreDisabler
-  name: ertstore-disabler-name
-  description: ertstore-disabler-desc
+  id: ertPistolDisabler
+  name: ert-pistol-disabler-name
+  description: ert-pistol-disabler-desc
   productEntity: WeaponDisabler
   cost:
     Speso: 1000
   categories:
-  - ertWeapons
-  
-- type: listing
-  id: ertstoreEnergyGunMini
-  name: ertstore-energygunmini-name
-  description: ertstore-energygunmini-desc
-  productEntity: WeaponEnergyGunMini
-  cost: 
-    Speso: 2000
-  categories:
-  - ertWeapons
-  
-- type: listing
-  id: ertstoreEnergyGun
-  name: ertstore-energygun-name
-  description: ertstore-energygun-desc
-  productEntity: WeaponEnergyGun
-  cost:
-    Speso: 3000
-  categories:
-  - ertWeapons
-  
-- type: listing
-  id: ertstoreGunLaserCarbine
-  name: ertstore-lasercarbine-name
-  description: ertstore-lasercarbine-desc
-  productEntity: WeaponLaserCarbine
-  cost:
-    Speso: 3000
-  categories:
-  - ertWeapons
-  
-- type: listing
-  id: ertstoreGunMateba
-  name: ertstore-mateba-name
-  description: ertstore-mateba-desc
-  productEntity: WeaponRevolverMateba
-  cost:
-    Speso: 5000
-  categories:
-  - ertWeapons
-  
-- type: listing
-  id: ertstoreGunIK30
-  name: ertstore-IK30-name
-  description: ertstore-IK30-desc
-  productEntity: WeaponRifleIK30
-  cost:
-    Speso: 10000
-  categories:
-  - ertWeapons
+  - UplinkWeapons
