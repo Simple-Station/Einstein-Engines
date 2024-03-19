@@ -2,79 +2,158 @@
 
 - type: entity
   parent: ClothingBeltStorageBase
-  id: ClothingBeltUtility
-  name: utility belt
-  description: Can hold various things.
+  id: ClothingBeltAssault
+  name: assault belt
+  description: A tactical assault belt.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/utility.rsi
+    sprite: Clothing/Belt/assault.rsi
   - type: Clothing
-    sprite: Clothing/Belt/utility.rsi
+    sprite: Clothing/Belt/assault.rsi
   - type: Storage
-    maxItemSize: Normal
-    # TODO: Fill this out more.
     whitelist:
       tags:
-        - Powerdrill
-        - Wirecutter
-        - Crowbar
-        - Screwdriver
-        - Flashlight
-        - Wrench
-        - GeigerCounter
-        - Flare
-        - CableCoil
         - CigPack
-        - Radio
-        - HolofanProjector
-        - Multitool
-        - AppraisalTool
-        - JawsOfLife
-        - GPS
+        - Taser
       components:
-        - SprayPainter
-        - NetworkConfigurator
-        - RCD
-        - RCDAmmo
-        - Welder
-        - PowerCell
-        - Geiger
-        - TrayScanner
-        - GasAnalyzer
+        - Stunbaton
+        - FlashOnTrigger
+        - SmokeOnTrigger
+        - Flash
+        - Handcuff
+        - BallisticAmmoProvider
+        - Ammo
   - type: ItemMapper
     mapLayers:
-      drill:
+      flashbang:
+        whitelist:
+          components:
+          - FlashOnTrigger
+      stunbaton:
+        whitelist:
+          components:
+          - Stunbaton
+      tear_gas_grenade:
+        whitelist:
+          components:
+          - SmokeOnTrigger
+    sprite: Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltCeremonial
+  name: ceremonial belt
+  description: A blue-and-white belt with assorted pockets and pouches.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Clothing/Belt/ceremonial.rsi
+  - type: Clothing
+    sprite: DeltaV/Clothing/Belt/ceremonial.rsi
+  - type: Storage
+    whitelist:
+      tags:
+        - CigPack
+        - Taser
+        - SecBeltEquip
+        - Radio
+        - Flashlight
+      components:
+        - Stunbaton
+        - FlashOnTrigger
+        - Flash
+        - Handcuff
+        - BallisticAmmoProvider
+        - Ammo
+        - PowerCell
+        - OnUseTimerTrigger
+  - type: ItemMapper
+    mapLayers:
+      flashbang:
+        whitelist:
+          components:
+          - FlashOnTrigger
+      stunbaton:
+        whitelist:
+          components:
+          - Stunbaton
+    sprite: Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltChef
+  name: chef belt
+  description: A belt used to hold kitchen knives and condiments for quick access.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/chef.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/chef.rsi
+  - type: Storage
+    whitelist:
+      tags:
+        - KitchenKnife
+        - Cleaver
+        - RollingPin
+        - Coldsauce
+        - Enzyme
+        - Hotsauce
+        - Ketchup
+        - BBQsauce
+        - SaltShaker
+        - PepperShaker
+        - CigPack
+        - Packet
+        - Skewer
+        - MonkeyCube
+        - Mayo
+      components:
+        - Mousetrap
+        - Smokable
+        - Utensil
+  - type: ItemMapper
+    mapLayers:
+      kitchenknife:
         whitelist:
           tags:
-          - Powerdrill
-      cutters_red:
+          - KitchenKnife
+      cleaver:
         whitelist:
           tags:
-          - Wirecutter
-      crowbar:
+          - Cleaver
+      rollingpin:
         whitelist:
           tags:
-          - Crowbar
-      crowbar_red:
+          - RollingPin
+      coldsauce:
         whitelist:
           tags:
-          - CrowbarRed
-      jaws:
+          - Coldsauce
+      enzyme:
         whitelist:
           tags:
-          - JawsOfLife
-      screwdriver_nuke:
+          - Enzyme
+      hotsauce:
         whitelist:
           tags:
-          - Screwdriver
-      wrench:
+          - Hotsauce
+      ketchup:
         whitelist:
           tags:
-          - Wrench
-      multitool:
+          - Ketchup
+      bbqsauce:
         whitelist:
           tags:
-            - Multitool
+          - BBQsauce
+      saltshaker:
+        whitelist:
+          tags:
+          - SaltShaker
+      peppershaker:
+        whitelist:
+          tags:
+          - PepperShaker
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
 
@@ -155,46 +234,6 @@
         whitelist:
           tags:
           - Wrench
-    sprite: Clothing/Belt/belt_overlay.rsi
-  - type: Appearance
-
-- type: entity
-  parent: ClothingBeltStorageBase
-  id: ClothingBeltAssault
-  name: assault belt
-  description: A tactical assault belt.
-  components:
-  - type: Sprite
-    sprite: Clothing/Belt/assault.rsi
-  - type: Clothing
-    sprite: Clothing/Belt/assault.rsi
-  - type: Storage
-    whitelist:
-      tags:
-        - CigPack
-        - Taser
-      components:
-        - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
-        - Flash
-        - Handcuff
-        - BallisticAmmoProvider
-        - Ammo
-  - type: ItemMapper
-    mapLayers:
-      flashbang:
-        whitelist:
-          components:
-          - FlashOnTrigger
-      stunbaton:
-        whitelist:
-          components:
-          - Stunbaton
-      tear_gas_grenade:
-        whitelist:
-          components:
-          - SmokeOnTrigger
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
 
@@ -305,6 +344,33 @@
   - type: Appearance
 
 - type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltSuspendersBlack
+  name: suspenders
+  description: For holding your pants up.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Clothing/Belt/suspendersblack.rsi
+    state: icon
+  - type: Clothing
+    sprite: DeltaV/Clothing/Belt/suspendersblack.rsi
+    quickEquip: true
+  - type: Tag
+    tags:
+      - BeltSlotNotBelt
+
+      - type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltCorpsmanWebbing
+  name: corpsman webbing
+  description: A set of security webbing with blue corpsman highlights.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Clothing/Belt/corpsman.rsi
+  - type: Clothing
+    sprite: DeltaV/Clothing/Belt/corpsman.rsi
+
+- type: entity
   parent: ClothingBeltMedical
   id: ClothingBeltMedicalEMT
   name: EMT belt
@@ -367,83 +433,6 @@
         whitelist:
           tags:
           - Bottle
-    sprite: Clothing/Belt/belt_overlay.rsi
-  - type: Appearance
-
-- type: entity
-  parent: ClothingBeltStorageBase
-  id: ClothingBeltChef
-  name: chef belt
-  description: A belt used to hold kitchen knives and condiments for quick access.
-  components:
-  - type: Sprite
-    sprite: Clothing/Belt/chef.rsi
-  - type: Clothing
-    sprite: Clothing/Belt/chef.rsi
-  - type: Storage
-    whitelist:
-      tags:
-        - KitchenKnife
-        - Cleaver
-        - RollingPin
-        - Coldsauce
-        - Enzyme
-        - Hotsauce
-        - Ketchup
-        - BBQsauce
-        - SaltShaker
-        - PepperShaker
-        - CigPack
-        - Packet
-        - Skewer
-        - MonkeyCube
-        - Mayo
-      components:
-        - Mousetrap
-        - Smokable
-        - Utensil
-  - type: ItemMapper
-    mapLayers:
-      kitchenknife:
-        whitelist:
-          tags:
-          - KitchenKnife
-      cleaver:
-        whitelist:
-          tags:
-          - Cleaver
-      rollingpin:
-        whitelist:
-          tags:
-          - RollingPin
-      coldsauce:
-        whitelist:
-          tags:
-          - Coldsauce
-      enzyme:
-        whitelist:
-          tags:
-          - Enzyme
-      hotsauce:
-        whitelist:
-          tags:
-          - Hotsauce
-      ketchup:
-        whitelist:
-          tags:
-          - Ketchup
-      bbqsauce:
-        whitelist:
-          tags:
-          - BBQsauce
-      saltshaker:
-        whitelist:
-          tags:
-          - SaltShaker
-      peppershaker:
-        whitelist:
-          tags:
-          - PepperShaker
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
 
@@ -667,6 +656,85 @@
   - type: Clothing
     sprite: Clothing/Belt/suspenders.rsi
     quickEquip: true
+
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltUtility
+  name: utility belt
+  description: Can hold various things.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/utility.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/utility.rsi
+  - type: Storage
+    maxItemSize: Normal
+    # TODO: Fill this out more.
+    whitelist:
+      tags:
+        - Powerdrill
+        - Wirecutter
+        - Crowbar
+        - Screwdriver
+        - Flashlight
+        - Wrench
+        - GeigerCounter
+        - Flare
+        - CableCoil
+        - CigPack
+        - Radio
+        - HolofanProjector
+        - Multitool
+        - AppraisalTool
+        - JawsOfLife
+        - GPS
+      components:
+        - SprayPainter
+        - NetworkConfigurator
+        - RCD
+        - RCDAmmo
+        - Welder
+        - PowerCell
+        - Geiger
+        - TrayScanner
+        - GasAnalyzer
+  - type: ItemMapper
+    mapLayers:
+      drill:
+        whitelist:
+          tags:
+          - Powerdrill
+      cutters_red:
+        whitelist:
+          tags:
+          - Wirecutter
+      crowbar:
+        whitelist:
+          tags:
+          - Crowbar
+      crowbar_red:
+        whitelist:
+          tags:
+          - CrowbarRed
+      jaws:
+        whitelist:
+          tags:
+          - JawsOfLife
+      screwdriver_nuke:
+        whitelist:
+          tags:
+          - Screwdriver
+      wrench:
+        whitelist:
+          tags:
+          - Wrench
+      multitool:
+        whitelist:
+          tags:
+            - Multitool
+    sprite: Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
 
 - type: entity
   parent: ClothingBeltStorageBase
