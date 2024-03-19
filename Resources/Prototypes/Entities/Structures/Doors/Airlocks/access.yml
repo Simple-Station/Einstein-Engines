@@ -1310,3 +1310,18 @@
   - type: AccessReader
     access: [["SyndicateAgent"]]
 
+- type: entity
+  parent: AirlockScience
+  id: AirlockMantisLocked
+  suffix: Mantis, Locked
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
+
+- type: entity
+  parent: AirlockScienceGlass
+  id: AirlockMantisGlassLocked
+  suffix: Mantis, Locked
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
