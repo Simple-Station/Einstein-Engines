@@ -86,6 +86,21 @@
 
 - type: entity
   parent: ClothingEyesBase
+  id: ClothingEyesGlassesChemist
+  name: safety glasses
+  description: Glasses made for chemists and other workers dealing with caustic reagents.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/safetyglasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/safetyglasses.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85
+
+- type: entity
+  parent: ClothingEyesBase
   id: ClothingEyesGlassesJensen
   name: jensen glasses
   description: A pair of yellow tinted folding glasses. You never asked for these.
@@ -227,3 +242,4 @@
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
+
