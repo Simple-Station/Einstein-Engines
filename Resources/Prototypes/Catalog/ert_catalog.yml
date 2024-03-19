@@ -6,7 +6,7 @@
   description: ertstore-disabler-desc
   productEntity: WeaponDisabler
   cost:
-    Speso: 1500
+    Speso: 1000
   categories:
   - ertWeapons
   
@@ -16,7 +16,7 @@
   description: ertstore-energygunmini-desc
   productEntity: WeaponEnergyGunMini
   cost: 
-    Speso: 3000
+    Speso: 2000
   categories:
   - ertWeapons
   
@@ -26,7 +26,7 @@
   description: ertstore-energygun-desc
   productEntity: WeaponEnergyGun
   cost:
-    Speso: 5000
+    Speso: 3000
   categories:
   - ertWeapons
   
@@ -36,7 +36,7 @@
   description: ertstore-lasercarbine-desc
   productEntity: WeaponLaserCarbine
   cost:
-    Speso: 5000
+    Speso: 3000
   categories:
   - ertWeapons
   
@@ -73,16 +73,6 @@
 # Ammo
 
 - type: listing
-  id: ertstoreSpeedLoaderMagnum
-  name: ertstore-speedloadermagnum-name
-  description: ertstore-speedloadermagnum-desc
-  productEntity: 
-  cost:
-    Speso: 500
-  categories:
-  - ertAmmo
-
-- type: listing
   id: ertstoreMagazineLaserRifle
   name: ertstore-magazinelaserrifle-name
   description: ertstore-magazinelaserrifle-desc
@@ -91,7 +81,17 @@
     Speso: 1000
   categories:
   - ertAmmo
-   
+  
+- type: listing
+  id: ertstoreSpeedLoaderMagnum
+  name: ertstore-speedloadermagnum-name
+  description: ertstore-speedloadermagnum-desc
+  productEntity: 
+  cost:
+    Speso: 500
+  categories:
+  - ertAmmo
+  
 - type: listing
   id: ertstoreTurboItemRecharger
   name: ertstore-turborecharger-name
@@ -101,45 +101,3 @@
     Speso: 1000
   categories:
   - ertAmmo
-  
-# Misc
-
-- type: listing
-  id: ertstoreCombatMedicKit
-  name: uplink-combat-medkit-name
-  description: uplink-combat-medkit-desc
-  productEntity: MedkitCombatFilled
-  cost:
-    Speso: 2500
-  categories:
-  - ertMisc
-
-- type: listing
-  id: ertstore
-  name: ertstore--name
-  description: ertstore--desc
-  productEntity: 
-  cost:
-    Speso: 
-  categories:
-  - ertMisc
-- type: listing
-  id: ertstore
-  name: ertstore--name
-  description: ertstore--desc
-  productEntity: 
-  cost:
-    Speso: 
-  categories:
-  - ertMisc
-
-- type: listing
-  id: ertstore
-  name: ertstore--name
-  description: ertstore--desc
-  productEntity: 
-  cost:
-    Speso: 
-  categories:
-  - ertMisc
-

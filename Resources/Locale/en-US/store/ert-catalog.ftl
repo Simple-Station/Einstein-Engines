@@ -32,22 +32,5 @@ ertstore-speedloadermagnum-desc = Revolver speedloader with 6 cartridges, used b
 ertstore-turborecharger-name = Turbo Recharger
 ertstore-turborecharger-desc = A fast recharger which can recharge all the guns and batteries that you need. Generator not included.
 
-# Misc
-
-ertstore--name = 
-ertstore--desc = 
-
-ertstore--name = 
-ertstore--desc = 
-
-ertstore--name = 
-ertstore--desc = 
-
-ertstore--name = 
-ertstore--desc = 
-
-ertstore--name = 
-ertstore--desc = 
-
 ertstore--name = 
 ertstore--desc = 
