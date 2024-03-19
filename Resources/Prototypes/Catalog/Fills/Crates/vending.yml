@@ -256,3 +256,11 @@
     contents:
       - id: VendingMachineRestockDonut
         amount: 2
+
+- type: entity
+  id: CrateVendingMachineRestockPrideFilled
+  parent: CratePlastic
+  components:
+  - type: StorageFill
+    contents:
+      - id: VendingMachineRestockPride
