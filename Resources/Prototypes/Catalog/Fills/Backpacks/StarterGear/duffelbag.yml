@@ -1,3 +1,5 @@
+# TODO in a later PR: Fix this to be alphabetic.
+
 - type: entity
   noSpawn: true
   parent: ClothingBackpackDuffel
@@ -42,6 +44,16 @@
 
 - type: entity
   noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelLawyerFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: RubberStampLawyer
+
+- type: entity
+  noSpawn: true
   parent: ClothingBackpackDuffelBrigmedic
   id: ClothingBackpackDuffelBrigmedicFilled
   components:
@@ -61,12 +73,34 @@
 - type: entity
   noSpawn: true
   parent: ClothingBackpackDuffelMedical
+  id: ClothingBackpackDuffelParamedicFilledDV # TODO: Just change this to not be dumb.
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalMedical
+      - id: EmergencyRollerBedSpawnFolded
+      - id: BodyBag_Folded
+      - id: Portafib
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelMedical
   id: ClothingBackpackDuffelParamedicFilled
   components:
   - type: StorageFill
     contents:
       - id: BoxSurvivalMedical
       - id: EmergencyRollerBedSpawnFolded
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelMedical
+  id: ClothingBackpackDuffelPsychologistFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalMedical
+      - id: RubberStampPsychologist
 
 - type: entity
   noSpawn: true
