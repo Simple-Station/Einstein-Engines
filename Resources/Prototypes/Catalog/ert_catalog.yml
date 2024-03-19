@@ -52,20 +52,10 @@
   
 - type: listing
   id: ertstoreGunIK30
-  name: ertstore-ik30-name
-  description: ertstore-ik30-desc
+  name: ertstore-IK30-name
+  description: ertstore-IK30-desc
   productEntity: WeaponRifleIK30
   cost:
     Speso: 10000
-  categories:
-  - ertWeapons
-  
-- type: listing
-  id: ertstoreGunMultiImmolator
-  name: ertstore-multiimmolator-name
-  description: ertstore-multiimmolator-desc
-  productEntity: WeaponMultiImmolatorCannon
-  cost:
-    Speso: 20000
   categories:
   - ertWeapons
