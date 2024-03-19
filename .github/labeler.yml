@@ -1,6 +1,15 @@
 ﻿"Changes: C#":
   - "**/*.cs"
 
+"Changes: Config":
+  - "**/*.toml"
+  - "**/*.config"
+  - "*.json"
+  - ".github/*.yml"
+  - ".github/*.json"
+  - ".vscode/*.json"
+  - ".editorconfig"
+
 "Changes: Documentation":
   - "**/*.xml"
   - "**/*.md"
@@ -22,3 +31,6 @@
 "Changes: YML":
   - any: ["**/*.yml"]
     all: ["!Resources/Maps/**/*.yml", "!Resources/Prototypes/Maps/**/*.yml"]
+
+"Changes: Workflow":
+  - ".github/workflows/*.yml"
