@@ -90,8 +90,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             new RemoveEmbeddedProjectileEvent(), eventTarget: uid, target: uid)
         {
             DistanceThreshold = SharedInteractionSystem.InteractionRange,
-            BreakOnUserMove = true,
-            BreakOnTargetMove = true,
+            BreakOnMove = true,
             NeedHand = true,
         });
     }

@@ -161,6 +161,57 @@ public sealed partial class PuddleSystem
         args.Cancel("pacified-cannot-throw-spill");
     }
 
+    private void AddSpillVerb(Entity<SpillableComponent> entity, ref GetVerbsEvent<Verb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract)
+            return;
+
+        if (!_solutionContainerSystem.TryGetSolution(args.Target, entity.Comp.SolutionName, out var soln, out var solution))
+            return;
+
+        if (_openable.IsClosed(args.Target))
+            return;
+
+        if (solution.Volume == FixedPoint2.Zero)
+            return;
+
+        if (_entityManager.HasComponent<PreventSpillerComponent>(args.User))
+            return;
+
+
+        Verb verb = new()
+        {
+            Text = Loc.GetString("spill-target-verb-get-data-text")
+        };
+
+        // TODO VERB ICONS spill icon? pouring out a glass/beaker?
+        if (entity.Comp.SpillDelay == null)
+        {
+            var target = args.Target;
+            verb.Act = () =>
+            {
+                var puddleSolution = _solutionContainerSystem.SplitSolution(soln.Value, solution.Volume);
+                TrySpillAt(Transform(target).Coordinates, puddleSolution, out _);
+            };
+        }
+        else
+        {
+            var user = args.User;
+            verb.Act = () =>
+            {
+                _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, user, entity.Comp.SpillDelay ?? 0, new SpillDoAfterEvent(), entity.Owner, target: entity.Owner)
+                {
+                    BreakOnDamage = true,
+                    BreakOnMove = true,
+                    NeedHand = true,
+                });
+            };
+        }
+        verb.Impact = LogImpact.Medium; // dangerous reagent reaction are logged separately.
+        verb.DoContactInteraction = true;
+        args.Verbs.Add(verb);
+    }
+
     private void OnDoAfter(Entity<SpillableComponent> entity, ref SpillDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Args.Target == null)

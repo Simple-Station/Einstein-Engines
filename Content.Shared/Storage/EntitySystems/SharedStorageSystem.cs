@@ -430,7 +430,7 @@ public abstract class SharedStorageSystem : EntitySystem
                 var doAfterArgs = new DoAfterArgs(EntityManager, args.User, delay, new AreaPickupDoAfterEvent(GetNetEntityList(_entList)), uid, target: uid)
                 {
                     BreakOnDamage = true,
-                    BreakOnUserMove = true,
+                    BreakOnMove = true,
                     NeedHand = true
                 };
 

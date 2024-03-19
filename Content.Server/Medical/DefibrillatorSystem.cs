@@ -142,16 +142,14 @@ public sealed class DefibrillatorSystem : EntitySystem
         _audio.PlayPvs(component.ChargeSound, uid);
         return _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, component.DoAfterDuration, new DefibrillatorZapDoAfterEvent(),
             uid, target, uid)
-        {
-            NeedHand = true,
-            BreakOnMove = !component.AllowDoAfterMovement
-        });
+            {
+                BlockDuplicate = true,
+                BreakOnHandChange = true,
+                NeedHand = true
+            });
     }
 
-    /// <summary>
-    ///     Tries to defibrillate the target with the given defibrillator.
-    /// </summary>
-    public void Zap(EntityUid uid, EntityUid target, EntityUid user, DefibrillatorComponent? component = null)
+    public void Zap(EntityUid uid, EntityUid target, EntityUid user, DefibrillatorComponent? component = null, MobStateComponent? mob = null, MobThresholdsComponent? thresholds = null)
     {
         if (!Resolve(uid, ref component))
             return;

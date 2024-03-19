@@ -89,10 +89,10 @@ public sealed partial class MechSystem : SharedMechSystem
 
         if (TryComp<ToolComponent>(args.Used, out var tool) && tool.Qualities.Contains("Prying") && component.BatterySlot.ContainedEntity != null)
         {
-            var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.BatteryRemovalDelay, new RemoveBatteryEvent(), uid, target: uid, used: args.Target)
+            var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.BatteryRemovalDelay,
+                new RemoveBatteryEvent(), uid, target: uid, used: args.Target)
             {
-                BreakOnTargetMove = true,
-                BreakOnUserMove = true,
+                BreakOnMove = true
             };
 
             _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -179,7 +179,7 @@ public sealed partial class MechSystem : SharedMechSystem
                 {
                     var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.EntryDelay, new MechEntryEvent(), uid, target: uid)
                     {
-                        BreakOnUserMove = true,
+                        BreakOnMove = true,
                     };
 
                     _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -207,11 +207,8 @@ public sealed partial class MechSystem : SharedMechSystem
                         return;
                     }
 
-                    var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.ExitDelay, new MechExitEvent(), uid, target: uid)
-                    {
-                        BreakOnUserMove = true,
-                        BreakOnTargetMove = true,
-                    };
+                    var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.ExitDelay,
+                        new MechExitEvent(), uid, target: uid);
 
                     _doAfter.TryStartDoAfter(doAfterEventArgs);
                 }
