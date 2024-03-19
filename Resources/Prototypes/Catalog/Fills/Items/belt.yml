@@ -186,7 +186,7 @@
     - id: FoodShakerSalt
     - id: FoodShakerPepper
 
-- type: entity #ERT gear
+- type: entity
   id: ClothingBeltJanitorAdvanced
   parent: ClothingBeltJanitor
   suffix: Filled
