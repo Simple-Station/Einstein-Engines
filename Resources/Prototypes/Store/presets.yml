@@ -15,17 +15,3 @@
   - UplinkPointless
   currencyWhitelist:
   - Telecrystal
-  
-- type: storePreset
-  id: StorePresetERT
-  storeName: Nanotrasen Company Store
-  categories:
-  - ertWeapons
-  - ertAmmo
-  - ertMisc
-  - ertBundles
-  - ertTools
-  - ertImplants
-  - ertArmor
-  currencyWhitelist:
-  - SpaceCash
