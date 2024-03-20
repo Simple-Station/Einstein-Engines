@@ -47,6 +47,6 @@ jobs:
         with:
           commit-message: Update Credits
           title: Update Credits
-          body: This is an automated Pull Request. This PR updates the github contributors in the credits section.
-          author: DeltaV-Bot <github@delta-v.org>
+          body: This is an automated Pull Request. This PR updates the GitHub contributors in the credits section.
+          author: ${{ vars.CHANGELOG_USER }} <${{ vars.CHANGELOG_EMAIL }}>
           branch: automated/credits-${{env.NOW}}
