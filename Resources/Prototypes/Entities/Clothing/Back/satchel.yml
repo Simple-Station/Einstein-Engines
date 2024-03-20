@@ -123,22 +123,22 @@
   - type: Sprite
     sprite: Clothing/Back/Satchels/brigmedic.rsi
 
-- type: entity
-  noSpawn: true
-  parent: ClothingBackpackSatchelBrigmedic
-  id: ClothingBackpackSatchelBrigmedicFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalSecurity
-      - id: EmergencyRollerBedSpawnFolded
-      - id: BodyBag_Folded
-      - id: Portafib
-    #  - id: Flash
-      - id: BruteAutoInjector
-        amount: 2
-      - id: BurnAutoInjector
-        amount: 2
+#- type: entity   - TODO: FIGURE OUT WHERE THIS IS DUPLICATED TO CAUSE THE .YML ERROR
+#  noSpawn: true
+#  parent: ClothingBackpackSatchelBrigmedic
+#  id: ClothingBackpackSatchelBrigmedicFilled
+#  components:
+#  - type: StorageFill
+#    contents:
+#      - id: BoxSurvivalSecurity
+#      - id: EmergencyRollerBedSpawnFolded
+#      - id: BodyBag_Folded
+#      - id: Portafib
+#    #  - id: Flash
+#      - id: BruteAutoInjector
+#        amount: 2
+#      - id: BurnAutoInjector
+#        amount: 2
 
 - type: entity
   parent: ClothingBackpackSatchel
