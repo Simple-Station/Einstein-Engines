@@ -112,6 +112,8 @@
       types:
         Blunt: 10
     bluntStaminaDamageFactor: 2.0 # DeltaV - seclite is now a viable nonlethal takedown tool against unarmoured targets.
+    soundHit:
+      collection: MetalThud
   - type: Item
     sprite: Objects/Tools/seclite.rsi
   - type: PointLight
