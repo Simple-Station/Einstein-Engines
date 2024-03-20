@@ -68,7 +68,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
     private void OnStationInit(StationGridAddedEvent ev)
     {
         var comp = EnsureComp<NavMapComponent>(ev.GridId);
-        RefreshGrid(comp, Comp<MapGridComponent>(ev.GridId));
+        RefreshGrid(ev.GridId, comp, Comp<MapGridComponent>(ev.GridId));
     }
 
     #region: Grid change event handling
