@@ -81,22 +81,22 @@
   - type: Sprite
     sprite: Clothing/Back/Duffels/brigmedic.rsi
 
-- type: entity
-  noSpawn: true
-  parent: ClothingBackpackDuffelBrigmedic
-  id: ClothingBackpackDuffelBrigmedicFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalSecurity
-      - id: EmergencyRollerBedSpawnFolded
-      - id: BodyBag_Folded
-      - id: Portafib
-    #  - id: Flash
-      - id: BruteAutoInjector
-        amount: 2
-      - id: BurnAutoInjector
-        amount: 2
+#- type: entity
+#  noSpawn: true
+#  parent: ClothingBackpackDuffelBrigmedic
+#  id: ClothingBackpackDuffelBrigmedicFilled
+#  components:
+#  - type: StorageFill
+#    contents:
+#      - id: BoxSurvivalSecurity
+#      - id: EmergencyRollerBedSpawnFolded
+#      - id: BodyBag_Folded
+#      - id: Portafib
+#    #  - id: Flash
+#      - id: BruteAutoInjector
+#        amount: 2
+#      - id: BurnAutoInjector
+#        amount: 2
 
 - type: entity
   parent: ClothingBackpackDuffel

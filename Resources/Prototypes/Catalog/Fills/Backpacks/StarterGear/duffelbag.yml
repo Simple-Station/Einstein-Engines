@@ -52,14 +52,14 @@
       - id: BoxSurvival
       - id: RubberStampLawyer
 
-- type: entity
-  noSpawn: true
-  parent: ClothingBackpackDuffelBrigmedic
-  id: ClothingBackpackDuffelBrigmedicFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: Flash
+#- type: entity
+#  noSpawn: true
+#  parent: ClothingBackpackDuffelBrigmedic
+#  id: ClothingBackpackDuffelBrigmedicFilled
+#  components:
+#  - type: StorageFill
+#    contents:
+#      - id: Flash
 
 - type: entity
   noSpawn: true
