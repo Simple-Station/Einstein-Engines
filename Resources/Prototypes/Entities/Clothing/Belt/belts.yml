@@ -359,7 +359,7 @@
     tags:
       - BeltSlotNotBelt
 
-      - type: entity
+- type: entity
   parent: ClothingBeltStorageBase
   id: ClothingBeltCorpsmanWebbing
   name: corpsman webbing
