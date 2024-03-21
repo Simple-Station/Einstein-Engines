@@ -276,11 +276,6 @@
     controlsLocked: true
     randomMode: false
     mode: SensorCords
-  - type: Tag
-    tags:
-    - ClothMade
-    - WhitelistChameleon
-    - PrisonUniform
 
 - type: entity
   parent: ClothingUniformSkirtBase
