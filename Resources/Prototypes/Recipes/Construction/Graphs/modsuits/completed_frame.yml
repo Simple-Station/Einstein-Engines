@@ -1,0 +1,46 @@
+- type: constructionGraph
+  id: ModsuitFrame
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: modsuitframe
+          steps:
+            - tag: MODcoreframe
+              name: A Standard MOD Core Frame
+              amount: 1
+              icon:
+                sprite: Objects/Specific/Modsuits/core.rsi
+                state: coreframe
+              doAfter: 5
+            - tag: MODchestplate
+              name: A MOD Chestplate
+              amount: 1
+              icon:
+                sprite: Objects/Specific/Modsuits/chestplate.rsi
+                state: icon
+              doAfter: 5
+            - tag: MODgauntlets
+              name: MOD Gauntlets
+              amount: 1
+              icon:
+                sprite: Objects/Specific/Modsuits/gauntlets.rsi
+                state: icon
+              doAfter: 5
+            - tag: MODhelmet
+              name: A MOD Helmet
+              amount: 1
+              icon:
+                sprite: Objects/Specific/Modsuits/helmet.rsi
+                state: icon
+              doAfter: 5
+            - tag: MODboots
+              name: MOD Boots
+              amount: 1
+              icon:
+                sprite: Objects/Specific/Modsuits/boots.rsi
+                state: icon
+              doAfter: 5
+
+    - node: modsuitframe
+      entity: ModsuitCoreFrameCompleted

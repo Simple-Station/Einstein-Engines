@@ -1,0 +1,32 @@
+- type: construction
+  name: modsuit
+  id: ClothingOuterModsuitStandard
+  graph: Modsuit
+  startNode: start
+  targetNode: modsuit
+  category: construction-category-clothing
+  description: A Modular Outerwear Devices Hardsuit, or MODsuit.
+  icon: { sprite: Clothing/OuterClothing/Modsuits/standard.rsi, state: icon }
+  objectType: Item
+
+- type: construction
+  name: modsuit shell
+  id: ModsuitCoreFrameCompleted
+  graph: ModsuitFrame
+  startNode: start
+  targetNode: modsuitframe
+  category: construction-category-clothing
+  description: A completed shell used to create a MODsuit.
+  icon: { sprite: Objects/Specific/Modsuits/completed_frame.rsi, state: icon }
+  objectType: Item
+
+- type: construction
+  name: modsuit core frame
+  id: ModsuitCoreFrame
+  graph: ModsuitCoreFrame
+  startNode: start
+  targetNode: modsuitcoreframe
+  category: construction-category-clothing
+  description: A completed frame for the core of a MODsuit.
+  icon: { sprite: Objects/Specific/Modsuits/core.rsi, state: coreframe }
+  objectType: Item

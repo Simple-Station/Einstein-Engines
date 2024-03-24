@@ -138,7 +138,7 @@
   - type: Item
     size: Huge
 
-type: entity
+- type: entity
   abstract: true
   parent: [ClothingOuterBase, GeigerCounterClothing]
   id: ClothingOuterModsuitBase

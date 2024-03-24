@@ -1,0 +1,264 @@
+# PARTS
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: ModsuitItemBase
+  description: A component of MODsuit creation.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/core.rsi
+  - type: Item
+    sprite: Objects/Specific/Modsuits/core.rsi
+    size: Normal
+  - type: StaticPrice
+    price: 0
+  - type: Tag
+    tags:
+    - MODcomponent
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitCoreFrame
+  name: standard MOD core frame
+  description: A completed MOD core frame, used to create a MODsuit shell.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/core.rsi
+    state: coreframe
+  - type: Item
+    sprite: Objects/Specific/Modsuits/core.rsi
+    size: Normal
+    state: coreframe
+  - type: Construction
+    graph: ModsuitCoreFrame
+    node: modsuitcoreframe
+  - type: Tag
+    tags:
+    - MODcoreframe
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitCoreStandard
+  name: standard MOD core
+  description: A marvel of robotics, used to create MODsuits.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/modcore.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Specific/Modsuits/modcore.rsi
+    size: Normal
+    state: icon
+  - type: Tag
+    tags:
+    - MODcore
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitHelmet
+  name: MOD helmet
+  description: A helmet involved in MODsuit creation.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/helmet.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Specific/Modsuits/helmet.rsi
+    size: Normal
+    state: icon
+  - type: Tag
+    tags:
+    - MODhelmet
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitChestplate
+  name: MOD chestplate
+  description: A chestplate involved in MODsuit creation.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/chestplate.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Specific/Modsuits/chestplate.rsi
+    size: Normal
+    state: icon
+  - type: Tag
+    tags:
+    - MODchestplate
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitGauntlets
+  name: MOD gauntlets
+  description: Gauntlets involved in MODsuit creation.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/gauntlets.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Specific/Modsuits/gauntlets.rsi
+    size: Normal
+    state: icon
+  - type: Tag
+    tags:
+    - MODgauntlets
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitBoots
+  name: MOD boots
+  description: Boots involved in MODsuit creation.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/boots.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Specific/Modsuits/boots.rsi
+    size: Normal
+    state: icon
+  - type: Tag
+    tags:
+    - MODboots
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitCoreShell
+  name: MOD core shell
+  description: The shell of MODsuit creation, with a slot for a MOD core.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/core.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Specific/Modsuits/core.rsi
+    size: Normal
+    state: icon
+  - type: Tag
+    tags:
+    - MODcoreshell
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitCoreFrameCompleted
+  name: completed MODsuit frame
+  description: A completed MODsuit frame, used to create a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/completed_frame.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Specific/Modsuits/completed_frame.rsi
+    size: icon
+    state: coreframe
+  - type: Construction
+    graph: ModsuitFrame
+    node: modsuitframe
+  - type: Tag
+    tags:
+    - MODsuitframe
+
+# PLATINGS
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitPlatingStandard
+  name: MODsuit standard plating
+  description: Standard plating for Modsuits
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    state: standard
+  - type: Item
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    size: Normal
+    state: standard
+  - type: Tag
+    tags:
+    - MODplatingStandard
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitPlatingEngineering
+  name: MODsuit engineering plating
+  description: Engineering plating for Modsuits
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    state: engineering
+  - type: Item
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    size: Normal
+    state: engineering
+  - type: Tag
+    tags:
+    - MODplatingEngineering
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitPlatingAtmos
+  name: MODsuit atmospheric plating
+  description: Atmospheric plating for Modsuits
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    state: atmos
+  - type: Item
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    size: Normal
+    state: atmos
+  - type: Tag
+    tags:
+    - MODplatingAtmos
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitPlatingSecurity
+  name: MODsuit security plating
+  description: Security plating for Modsuits
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    state: security
+  - type: Item
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    size: Normal
+    state: security
+  - type: Tag
+    tags:
+    - MODplatingSecurity
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitPlatingMedical
+  name: MODsuit medical plating
+  description: Medical plating for Modsuits
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    state: medical
+  - type: Item
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    size: Normal
+    state: medical
+  - type: Tag
+    tags:
+    - MODplatingMedical
+
+- type: entity
+  parent: ModsuitItemBase
+  id: ModsuitPlatingClown
+  name: MODsuit cosmohonk plating
+  description: Cosmohonk plating for Modsuits
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    state: clown
+  - type: Item
+    sprite: Objects/Specific/Modsuits/platings.rsi
+    size: Normal
+    state: clown
+  - type: Tag
+    tags:
+    - MODplatingClown

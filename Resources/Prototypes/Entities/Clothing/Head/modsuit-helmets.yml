@@ -3,7 +3,7 @@
 #STANDARD MODSUITS
 #Standard MODsuit
 - type: entity
-  parent: ClothingHeadModsuitWithLightBase
+  parent: ClothingHeadModsuitBase
   id: ClothingHeadHelmetModsuitStandard
   name: standard MODsuit helmet
   description: A civilian class suit by Nakamura Engineering, doesn't offer much other than slightly quicker movement.
@@ -16,3 +16,21 @@
   - type: Tag
     tags:
     - HidesNose
+    - HidesHair
+
+#Engineering MODsuit
+- type: entity
+  parent: ClothingHeadModsuitBase
+  id: ClothingHeadHelmetModsuitEngineering
+  name: engineering MODsuit helmet
+  description: An engineer-fit suit with heat and shock resistance. Nakamura Engineering's classic.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Clothing/Head/Modsuits/engineering.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Modsuits/engineering.rsi
+  - type: Tag
+    tags:
+    - HidesNose
+    - HidesHair
