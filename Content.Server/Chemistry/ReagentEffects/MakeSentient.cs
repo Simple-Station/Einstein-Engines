@@ -1,6 +1,9 @@
+using System.Linq;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Speech.Components;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Language;
+using Content.Shared.Language.Systems;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Prototypes;
 using Content.Server.Psionics; //Nyano - Summary: pulls in the ability for the sentient creature to become psionic.
@@ -23,6 +26,20 @@ public sealed partial class MakeSentient : ReagentEffect
         // We call this before the mind check to allow things like player-controlled mice to be able to benefit from the effect
         entityManager.RemoveComponent<ReplacementAccentComponent>(uid);
         entityManager.RemoveComponent<MonkeyAccentComponent>(uid);
+
+        var speaker = entityManager.EnsureComponent<LanguageSpeakerComponent>(uid);
+        var gc = SharedLanguageSystem.GalacticCommon.ID;
+
+        if (!speaker.UnderstoodLanguages.Contains(gc))
+            speaker.UnderstoodLanguages.Add(gc);
+
+        if (!speaker.SpokenLanguages.Contains(gc))
+        {
+            speaker.CurrentLanguage = gc;
+            speaker.SpokenLanguages.Add(gc);
+
+            args.EntityManager.EventBus.RaiseLocalEvent(uid, new SharedLanguageSystem.LanguagesUpdateEvent(), true);
+        }
 
         // Stops from adding a ghost role to things like people who already have a mind
         if (entityManager.TryGetComponent<MindContainerComponent>(uid, out var mindContainer) && mindContainer.HasMind)
@@ -47,7 +64,7 @@ public sealed partial class MakeSentient : ReagentEffect
 
         ghostRole = entityManager.AddComponent<GhostRoleComponent>(uid);
         entityManager.EnsureComponent<GhostTakeoverAvailableComponent>(uid);
-        entityManager.EnsureComponent<PotentialPsionicComponent>(uid); //Nyano - Summary:. Makes the animated body able to get psionics. 
+        entityManager.EnsureComponent<PotentialPsionicComponent>(uid); //Nyano - Summary:. Makes the animated body able to get psionics.
 
         var entityData = entityManager.GetComponent<MetaDataComponent>(uid);
         ghostRole.RoleName = entityData.EntityName;

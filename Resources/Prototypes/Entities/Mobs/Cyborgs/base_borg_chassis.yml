@@ -213,6 +213,13 @@
     visMask:
       - PsionicInvisibility
       - Normal
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - RobotTalk
+    understands:
+    - GalacticCommon
+    - RobotTalk
 
 - type: entity
   id: BaseBorgChassisNT
