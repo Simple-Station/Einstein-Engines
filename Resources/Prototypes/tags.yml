@@ -851,6 +851,9 @@
   id: ModularReceiver
 
 - type: Tag
+  id: MODsuit
+
+- type: Tag
   id: MonkeyCube
 
 - type: Tag
