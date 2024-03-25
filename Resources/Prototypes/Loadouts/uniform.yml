@@ -16,6 +16,7 @@
   id: LoadoutUniformJumpsuitColorBlack
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorBlack
 
@@ -23,6 +24,7 @@
   id: LoadoutUniformJumpskirtColorBlack
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorBlack
 
@@ -30,6 +32,7 @@
   id: LoadoutUniformJumpsuitColorBlue
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorBlue
 
@@ -37,6 +40,7 @@
   id: LoadoutUniformJumpskirtColorBlue
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorBlue
 
@@ -44,6 +48,7 @@
   id: LoadoutUniformJumpsuitColorGreen
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorGreen
 
@@ -51,6 +56,7 @@
   id: LoadoutUniformJumpskirtColorGreen
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorGreen
 
@@ -58,6 +64,7 @@
   id: LoadoutUniformJumpsuitColorOrange
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorOrange
 
@@ -65,6 +72,7 @@
   id: LoadoutUniformJumpskirtColorOrange
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorOrange
 
@@ -72,6 +80,7 @@
   id: LoadoutUniformJumpsuitColorPink
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorPink
 
@@ -79,6 +88,7 @@
   id: LoadoutUniformJumpskirtColorPink
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorPink
 
@@ -86,6 +96,7 @@
   id: LoadoutUniformJumpsuitColorRed
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorRed
 
@@ -93,6 +104,7 @@
   id: LoadoutUniformJumpskirtColorRed
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorRed
 
@@ -100,6 +112,7 @@
   id: LoadoutUniformJumpsuitColorWhite
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorWhite
 
@@ -107,6 +120,7 @@
   id: LoadoutUniformJumpskirtColorWhite
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorWhite
 
@@ -114,6 +128,7 @@
   id: LoadoutUniformJumpsuitColorYellow
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorYellow
 
@@ -121,6 +136,7 @@
   id: LoadoutUniformJumpskirtColorYellow
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorYellow
 
@@ -128,6 +144,7 @@
   id: LoadoutUniformJumpsuitColorDarkBlue
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorDarkBlue
 
@@ -135,6 +152,7 @@
   id: LoadoutUniformJumpskirtColorDarkBlue
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorDarkBlue
 
@@ -142,6 +160,7 @@
   id: LoadoutUniformJumpsuitColorTeal
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorTeal
 
@@ -149,6 +168,7 @@
   id: LoadoutUniformJumpskirtColorTeal
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorTeal
 
@@ -156,6 +176,7 @@
   id: LoadoutUniformJumpsuitColorPurple
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorPurple
 
@@ -163,6 +184,7 @@
   id: LoadoutUniformJumpskirtColorPurple
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorPurple
 
@@ -170,6 +192,7 @@
   id: LoadoutUniformJumpsuitColorDarkGreen
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorDarkGreen
 
@@ -177,6 +200,7 @@
   id: LoadoutUniformJumpskirtColorDarkGreen
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorDarkGreen
 
@@ -184,6 +208,7 @@
   id: LoadoutUniformJumpsuitColorLightBrown
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorLightBrown
 
@@ -191,6 +216,7 @@
   id: LoadoutUniformJumpskirtColorLightBrown
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorLightBrown
 
@@ -198,6 +224,7 @@
   id: LoadoutUniformJumpsuitColorBrown
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorBrown
 
@@ -205,6 +232,7 @@
   id: LoadoutUniformJumpskirtColorBrown
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorBrown
 
@@ -212,6 +240,7 @@
   id: LoadoutUniformJumpsuitColorMaroon
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpsuitColorMaroon
 
@@ -219,6 +248,7 @@
   id: LoadoutUniformJumpskirtColorMaroon
   category: Uniform
   cost: 2
+  exclusive: true
   items:
     - ClothingUniformJumpskirtColorMaroon
 
@@ -226,12 +256,6 @@
   id: LoadoutUniformJumpsuitColorRainbow
   category: Uniform
   cost: 2
-  items:
-    - ClothingUniformColorRainbow
-
-- type: loadout
-  id: LoadoutUniformJumpskirtColorRainbow
-  category: Uniform
-  cost: 2
+  exclusive: true
   items:
     - ClothingUniformColorRainbow

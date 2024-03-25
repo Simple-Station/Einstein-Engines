@@ -30,4 +30,3 @@ loadout-description-LoadoutUniformJumpskirtColorBrown = A brown jumpskirt.
 loadout-description-LoadoutUniformJumpsuitColorMaroon = A maroon jumpsuit.
 loadout-description-LoadoutUniformJumpskirtColorMaroon = A maroon jumpskirt.
 loadout-description-LoadoutUniformJumpsuitColorRainbow = A rainbow jumpsuit.
-loadout-description-LoadoutUniformJumpskirtColorRainbow = A rainbow jumpskirt.
