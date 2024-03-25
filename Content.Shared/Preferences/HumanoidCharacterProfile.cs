@@ -81,7 +81,7 @@ namespace Content.Shared.Preferences
         /// <summary>Copy constructor</summary>
         private HumanoidCharacterProfile(HumanoidCharacterProfile other)
             : this(other, new Dictionary<string, JobPriority>(other.JobPriorities),
-                [..other.AntagPreferences], [..other.TraitPreferences], [])
+                [..other.AntagPreferences], [..other.TraitPreferences], [..other.LoadoutPreferences])
         {
         }
 
@@ -103,7 +103,7 @@ namespace Content.Shared.Preferences
             IReadOnlyList<string> loadoutPreferences)
             : this(name, flavortext, species, age, sex, gender, appearance, clothing, backpack, spawnPriority,
                 new Dictionary<string, JobPriority>(jobPriorities), preferenceUnavailable,
-                [..antagPreferences], [..traitPreferences], [])
+                [..antagPreferences], [..traitPreferences], [..loadoutPreferences])
         {
         }
 
