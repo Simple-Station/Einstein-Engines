@@ -1,6 +1,6 @@
 # Einstein Engines
 
-<p align="center"><img src="https://raw.githubusercontent.com/Simple-Station/Einstein-Engines/master/Resources/Textures/Logo/logo.png" width="1080px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Simple-Station/Einstein-Engines/master/Resources/Textures/Logo/splashlogo.png" width="512px" /></p>
 
 ---
 
@@ -23,7 +23,7 @@ We however would like to invite anyone wishing to create a server to make a fork
 
 ## Links
 
-[Website](https://simplestation.org) | [Discord](https://discord.gg/X4QEXxUrsJ) | [Steam](https://store.steampowered.com/app/2585480/Space_Station_Multiverse/) | [Standalone](https://spacestationmultiverse.com/downloads/)
+[Website](https://simplestation.org) | [Discord](https://discord.gg/X4QEXxUrsJ) | [Steam(SSMV Launcher)](https://store.steampowered.com/app/2585480/Space_Station_Multiverse/) | [Steam(WizDen Launcher)](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone](https://spacestationmultiverse.com/downloads/)
 
 ## Contributing
 
