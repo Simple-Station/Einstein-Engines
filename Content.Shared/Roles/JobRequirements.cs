@@ -102,10 +102,9 @@ namespace Content.Shared.Roles
             IEntityManager entManager,
             IPrototypeManager prototypes,
             bool isWhitelisted,
-            string? localePrefix = null)
+            string? localePrefix = "role-timer-")
         {
             reason = null;
-            localePrefix ??= "role-timer-";
 
             switch (requirement)
             {
