@@ -106,7 +106,7 @@ public sealed class LoadoutSystem : EntitySystem
 
 
                 // Equip the loadout
-                if (!_inventory.TryEquip(uid, item, slot, false, !string.IsNullOrEmpty(slot), true))
+                if (!_inventory.TryEquip(uid, item, slot, true, !string.IsNullOrEmpty(slot), true))
                     failedLoadouts.Add(item);
             }
         }

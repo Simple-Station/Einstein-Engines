@@ -43,7 +43,7 @@ public sealed class LoadoutSystem : EntitySystem
         {
             if (EntityManager.TryGetComponent<ItemComponent>(loadout, out var itemComp) &&
                 _storage.CanInsert(item.Value, loadout, out _, inventory, itemComp))
-                _storage.Insert(item.Value, loadout, out _);
+                _storage.Insert(item.Value, loadout, out _, playSound: false);
         }
     }
 }
