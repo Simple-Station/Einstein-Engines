@@ -1133,17 +1133,22 @@ namespace Content.Server.Database.Migrations.Sqlite
                     .ValueGeneratedOnAdd()
                     .HasColumnType("INTEGER")
                     .HasColumnName("loadout_id");
+
                 b.Property<int>("ProfileId")
                     .HasColumnType("INTEGER")
                     .HasColumnName("profile_id");
+
                 b.Property<string>("LoadoutName")
                     .IsRequired()
                     .HasColumnType("TEXT")
                     .HasColumnName("loadout_name");
+
                 b.HasKey("Id")
                     .HasName("PK_loadout");
+
                 b.HasIndex("ProfileId")
                     .HasDatabaseName("IX_loadout_profile_id");
+
                 b.ToTable("loadout", (string)null);
             });
 

@@ -1195,25 +1195,31 @@ namespace Content.Server.Database.Migrations.Postgres
                 });
 
             modelBuilder.Entity("Content.Server.Database.Loadout", b =>
-            {
-                b.Property<int>("Id")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("integer")
-                    .HasColumnName("loadout_id");
-                NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-                b.Property<int>("ProfileId")
-                    .HasColumnType("integer")
-                    .HasColumnName("profile_id");
-                b.Property<string>("LoadoutName")
-                    .IsRequired()
-                    .HasColumnType("text")
-                    .HasColumnName("loadout_name");
-                b.HasKey("Id")
-                    .HasName("PK_loadout");
-                b.HasIndex("ProfileId")
-                    .HasDatabaseName("IX_loadout_profile_id");
-                b.ToTable("loadout", (string)null);
-            });
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("loadout_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_id");
+
+                    b.Property<string>("LoadoutName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("loadout_name");
+
+                    b.HasKey("Id")
+                        .HasName("PK_loadout");
+
+                    b.HasIndex("ProfileId")
+                        .HasDatabaseName("IX_loadout_profile_id");
+
+                    b.ToTable("loadout", (string)null);
+                });
 
             modelBuilder.Entity("Content.Server.Database.UploadedResourceLog", b =>
                 {
