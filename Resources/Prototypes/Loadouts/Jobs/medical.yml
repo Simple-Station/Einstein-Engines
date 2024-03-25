@@ -1,0 +1,197 @@
+- type: loadout
+  id: LoadoutMedicalGlovesNitrile
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+  items:
+    - ClothingHandsGlovesNitrile
+
+- type: loadout
+  id: LoadoutMedicalOuterLabcoat
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+  items:
+    - ClothingOuterCoatLab
+
+- type: loadout
+  id: LoadoutMedicalNeckStethoscope
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+  items:
+    - ClothingNeckStethoscope
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsBlue
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - UniformScrubsColorBlue
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsGreen
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - UniformScrubsColorGreen
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsPurple
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - UniformScrubsColorPurple
+
+- type: loadout
+  id: LoadoutMedicalOuterLabcoatChem
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - ClothingOuterCoatLabChem
+
+- type: loadout
+  id: LoadoutMedicalItemHandLabeler
+  category: Jobs
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - HandLabeler
+
+- type: loadout
+  id: LoadoutMedicalUniformParamedicJumpsuit
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingUniformJumpsuitParamedic
+
+- type: loadout
+  id: LoadoutMedicalUniformParamedicJumpskirt
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingUniformJumpskirtParamedic
+
+- type: loadout
+  id: LoadoutMedicalUniformJumpskirtSenior
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobChemist
+      min: 21600 # 6 hours
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobMedicalDoctor
+      min: 21600 # 6 hours
+    - !type:LoadoutDepartmentTimeRequirement
+      department: Medical
+      min: 216000 # 60 hours
+  items:
+    - ClothingUniformJumpskirtSeniorPhysician
+
+- type: loadout
+  id: LoadoutMedicalUniformJumpsuitSenior
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobChemist
+      min: 21600 # 6 hours
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobMedicalDoctor
+      min: 21600 # 6 hours
+    - !type:LoadoutDepartmentTimeRequirement
+      department: Medical
+      min: 216000 # 60 hours
+  items:
+    - ClothingUniformJumpsuitSeniorPhysician
+
+- type: loadout
+  id: LoadoutMedicalHeadNurse
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingHeadNurseHat
+
+- type: loadout
+  id: LoadoutMedicalHeadBeretSeniorPhysician
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobChemist
+      min: 21600 # 6 hours
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobMedicalDoctor
+      min: 21600 # 6 hours
+    - !type:LoadoutDepartmentTimeRequirement
+      department: Medical
+      min: 216000 # 60 hours
+  items:
+    - ClothingHeadHatBeretSeniorPhysician

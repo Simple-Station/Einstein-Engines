@@ -1,0 +1,148 @@
+- type: loadout
+  id: LoadoutCommandCapNeckMantle
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingNeckMantleCap
+
+- type: loadout
+  id: LoadoutCommandCapNeckCloak
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingNeckCloakCap
+
+- type: loadout
+  id: LoadoutCommandCapNeckCloakFormal
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingNeckCloakCapFormal
+
+- type: loadout
+  id: LoadoutCommandCapJumpsuitFormal
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingUniformJumpsuitCapFormal
+
+- type: loadout
+  id: LoadoutCommandCapJumpskirtFormal
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingUniformJumpskirtCapFormalDress
+
+- type: loadout
+  id: LoadoutCommandCapOuterWinter
+  category: Jobs
+  cost: 2
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingOuterWinterCap
+
+- type: loadout
+  id: LoadoutCommandCapGloves
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHandsGlovesCaptain
+
+- type: loadout
+  id: LoadoutCommandCapHat
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHeadHatCaptain
+
+- type: loadout
+  id: LoadoutCommandCapHatCapcap
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHeadHatCapcap
+
+- type: loadout
+  id: LoadoutCommandCapHatBeret
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHeadHatBeretCap
+
+- type: loadout
+  id: LoadoutCommandCapMaskGas
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingMaskGasCaptain
+
+- type: loadout
+  id: LoadoutCommandCapShoesBootsWinter
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingShoesBootsWinterCap
+
+- type: loadout
+  id: LoadoutCommandCapItemDrinkFlask
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Captain
+  items:
+    - DrinkFlask

@@ -1,0 +1,71 @@
+# What? This isn't a thing?? :(
+# - type: loadout
+#   id: LoadoutCommandQMNeckMantle
+#   category: Jobs
+#   cost: 2
+#   exclusive: true
+#   requirements:
+#     - !type:LoadoutJobRequirement
+#       jobs:
+#         - Quartermaster
+#   items:
+#     - ClothingNeckMantleQM
+
+- type: loadout
+  id: LoadoutCommandQMNeckCloak
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - ClothingNeckCloakQm
+
+- type: loadout
+  id: LoadoutCommandQMUniformTurtleneck
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - ClothingUniformJumpsuitQMTurtleneck
+
+- type: loadout
+  id: LoadoutCommandQMUniformTurtleneckSkirt
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - ClothingUniformJumpskirtQMTurtleneck
+
+- type: loadout
+  id: LoadoutCommandQMHeadSoft
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - ClothingHeadHatQMsoft
+
+- type: loadout
+  id: LoadoutCommandQMShoesBootsWinter
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - ClothingShoesBootsWinterLogisticsOfficer

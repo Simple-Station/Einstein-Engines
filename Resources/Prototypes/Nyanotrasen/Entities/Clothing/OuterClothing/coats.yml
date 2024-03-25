@@ -32,3 +32,5 @@
     modifiers:
       coefficients:
         Caustic: 0.75
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHoodMysta

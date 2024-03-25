@@ -1,0 +1,125 @@
+- type: loadout
+  id: LoadoutHeadBeaverHat
+  category: Accessories
+  cost: 2
+  items:
+    - ClothingHeadHatBeaverHat
+
+- type: loadout
+  id: LoadoutHeadTophat
+  category: Accessories
+  cost: 2
+  items:
+    - ClothingHeadHatTophat
+
+- type: loadout
+  id: LoadoutHeadHatBluesoft
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatBluesoft
+
+- type: loadout
+  id: LoadoutHeadHatBluesoftFlipped
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatBluesoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatCorpsoft
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatCorpsoft
+
+- type: loadout
+  id: LoadoutHeadHatCorpsoftFlipped
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatCorpsoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatGreensoft
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatGreensoft
+
+- type: loadout
+  id: LoadoutHeadHatGreensoftFlipped
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatGreensoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatGreysoft
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatGreysoft
+
+- type: loadout
+  id: LoadoutHeadHatGreysoftFlipped
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatGreysoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatOrangesoft
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatOrangesoft
+
+- type: loadout
+  id: LoadoutHeadHatOrangesoftFlipped
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatOrangesoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatPurplesoft
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatPurplesoft
+
+- type: loadout
+  id: LoadoutHeadHatPurplesoftFlipped
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatPurplesoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatRedsoft
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatRedsoft
+
+- type: loadout
+  id: LoadoutHeadHatRedsoftFlipped
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatRedsoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatYellowsoft
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatYellowsoft
+
+- type: loadout
+  id: LoadoutHeadHatYellowsoftFlipped
+  category: Accessories
+  cost: 1
+  items:
+    - ClothingHeadHatYellowsoftFlipped

@@ -1,0 +1,46 @@
+- type: loadout
+  id: LoadoutCommandCENeckMantle
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingNeckMantleCE
+
+- type: loadout
+  id: LoadoutCommandCENeckCloak
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingNeckCloakCe
+
+- type: loadout
+  id: LoadoutCommandCEOuterWinter
+  category: Jobs
+  cost: 2
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingOuterWinterCE
+
+- type: loadout
+  id: LoadoutCommandCEShoesBootsWinter
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingShoesBootsWinterChiefEngineer

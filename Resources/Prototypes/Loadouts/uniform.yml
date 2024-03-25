@@ -1,0 +1,237 @@
+- type: loadout
+  id: LoadoutUniformAncientJumpsuit
+  category: Uniform
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Passenger
+  items:
+    - ClothingUniformJumpsuitAncient
+
+# Colored jumpsuits
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorBlack
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorBlack
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorBlack
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorBlack
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorBlue
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorBlue
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorBlue
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorBlue
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorGreen
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorGreen
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorGreen
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorGreen
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorOrange
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorOrange
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorOrange
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorOrange
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorPink
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorPink
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorPink
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorPink
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorRed
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorRed
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorRed
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorRed
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorWhite
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorWhite
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorWhite
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorWhite
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorYellow
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorYellow
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorYellow
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorYellow
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorDarkBlue
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorDarkBlue
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorDarkBlue
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorDarkBlue
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorTeal
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorTeal
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorTeal
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorTeal
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorPurple
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorPurple
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorPurple
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorPurple
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorDarkGreen
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorDarkGreen
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorDarkGreen
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorDarkGreen
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorLightBrown
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorLightBrown
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorLightBrown
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorLightBrown
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorBrown
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorBrown
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorBrown
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorBrown
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorMaroon
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpsuitColorMaroon
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorMaroon
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformJumpskirtColorMaroon
+
+- type: loadout
+  id: LoadoutUniformJumpsuitColorRainbow
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformColorRainbow
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorRainbow
+  category: Uniform
+  cost: 2
+  items:
+    - ClothingUniformColorRainbow
