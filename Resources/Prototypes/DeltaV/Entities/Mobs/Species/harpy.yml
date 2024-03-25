@@ -122,12 +122,19 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 5.0
-  - type: Inventory 
+  - type: Inventory
     speciesId: harpy
     templateId: digitigrade
   - type: HarpyVisuals
   - type: UltraVision
-    
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - SolCommon
+    understands:
+    - GalacticCommon
+    - SolCommon
+
 - type: entity
   save: false
   name: Urist McHands
@@ -138,7 +145,7 @@
   components:
   - type: HumanoidAppearance
     species: Harpy
-  - type: Inventory 
+  - type: Inventory
     speciesId: harpy
   - type: Sprite
     scale: 0.9, 0.9
