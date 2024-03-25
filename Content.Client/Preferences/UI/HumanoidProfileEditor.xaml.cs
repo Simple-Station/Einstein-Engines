@@ -491,9 +491,6 @@ namespace Content.Client.Preferences.UI
             ShowLoadouts.Visible = loadoutsEnabled;
             _configurationManager.OnValueChanged(CCVars.GameLoadoutsEnabled, enabled => LoadoutsChanged(enabled));
 
-
-
-
             _loadoutsShowUnusableButton.OnToggled += args => UpdateLoadouts(args.Pressed);
 
             #endregion
@@ -1817,9 +1814,7 @@ namespace Content.Client.Preferences.UI
 
 
                 // Get requirement reasons
-                loadoutSystem.CheckRequirementsValid(loadout.Requirements, highJob, profile,
-                    new Dictionary<string, TimeSpan>(), entityManager, prototypeManager, configManager,
-                    out var reasons);
+                loadoutSystem.CheckRequirementsValid(loadout.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(), entityManager, prototypeManager, configManager, out var reasons);
 
                 // Add requirement reasons to the tooltip
                 foreach (var reason in reasons)

@@ -1,3 +1,4 @@
+using Content.Shared.Clothing.Loadouts.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
@@ -8,7 +9,7 @@ namespace Content.Shared.Clothing.Loadouts.Prototypes;
 public sealed class LoadoutPrototype : IPrototype
 {
     /// <summary>
-    ///     Formatted like "Loadout<Department><CommonClothingSlot><SimplifiedClothingId>", example: "LoadoutScienceOuterLabcoatSeniorResearcher"
+    ///     Formatted like "Loadout[Department/ShortHeadName][CommonClothingSlot][SimplifiedClothingId]", example: "LoadoutScienceOuterLabcoatSeniorResearcher"
     /// </summary>
     [IdDataField]
     public string ID { get; } = default!;
@@ -40,5 +41,5 @@ public sealed class LoadoutPrototype : IPrototype
 
 
     [DataField]
-    public List<Systems.LoadoutRequirement> Requirements = new();
+    public List<LoadoutRequirement> Requirements = new();
 }

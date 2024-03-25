@@ -117,7 +117,7 @@ public sealed class LoadoutSystem : EntitySystem
     }
 
 
-    public bool CheckRequirementsValid(List<Systems.LoadoutRequirement> requirements, JobPrototype job,
+    public bool CheckRequirementsValid(List<LoadoutRequirement> requirements, JobPrototype job,
         HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager,
         IPrototypeManager prototypeManager, IConfigurationManager configManager, out List<FormattedMessage> reasons)
     {
@@ -126,7 +126,7 @@ public sealed class LoadoutSystem : EntitySystem
 
         foreach (var requirement in requirements)
         {
-            // set valid to false if the requirement is invalid and not inverted, if it's inverted set it to true when it's valid
+            // Set valid to false if the requirement is invalid and not inverted, if it's inverted set it to true when it's valid
             if (!requirement.IsValid(job, profile, playTimes, entityManager, prototypeManager, configManager, out var reason))
             {
                 if (valid)
