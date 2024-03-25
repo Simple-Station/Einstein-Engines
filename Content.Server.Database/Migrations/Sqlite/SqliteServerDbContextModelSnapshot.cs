@@ -1590,6 +1590,17 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.Loadout", b =>
+            {
+                b.HasOne("Content.Server.Database.Profile", "Profile")
+                    .WithMany("Loadouts")
+                    .HasForeignKey("ProfileId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired()
+                    .HasConstraintName("FK_loadout_profile_profile_id");
+                b.Navigation("Profile");
+            });
+
             modelBuilder.Entity("PlayerRound", b =>
                 {
                     b.HasOne("Content.Server.Database.Player", null)
