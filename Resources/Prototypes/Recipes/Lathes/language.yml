@@ -177,13 +177,13 @@
     Gold: 50
     Silver: 50
 
-# - type: latheRecipe
-#   id: AnimalTranslator
-#   result: AnimalTranslator
-#   completetime: 2
-#   materials:
-#     Steel: 200
-#     Plastic: 50
-#     Gold: 50
-#     Plasma: 50
-#     Silver: 5
+- type: latheRecipe
+  id: AnimalTranslator
+  result: AnimalTranslator
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 50
+    Gold: 50
+    Plasma: 50
+    Silver: 5

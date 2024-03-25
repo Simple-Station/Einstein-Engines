@@ -347,4 +347,147 @@
   - dis
   - e
 
+- type: language
+  id: RobotTalk
+  obfuscateSyllables: true
+  replacement:
+  - 0
+  - 1
+  - 01
+  - 10
+  - 001
+  - 100
+  - 011
+  - 110
+  - 101
+  - 010
+
 # Languages spoken by various critters.
+- type: language
+  id: Cat
+  obfuscateSyllables: true
+  replacement:
+  - murr
+  - meow
+  - purr
+  - mrow
+
+- type: language
+  id: Dog
+  obfuscateSyllables: true
+  replacement:
+  - woof
+  - bark
+  - ruff
+  - bork
+  - raff
+  - garr
+
+- type: language
+  id: Fox
+  obfuscateSyllables: true
+  replacement:
+  - bark
+  - gecker
+  - ruff
+  - raff
+  - garr
+
+- type: language
+  id: Xeno
+  obfuscateSyllables: true
+  replacement:
+  - sss
+  - sSs
+  - SSS
+
+- type: language
+  id: Monkey
+  obfuscateSyllables: true
+  replacement:
+  - ok
+  - ook
+  - oook
+  - ooook
+  - oooook
+
+- type: language
+  id: Mouse
+  obfuscateSyllables: true
+  replacement:
+  - Squeak
+  - Piep
+  - Chuu
+  - Eeee
+  - Pip
+  - Fwiep
+  - Heep
+
+- type: language
+  id: Chicken
+  obfuscateSyllables: true
+  replacement:
+  - Coo
+  - Coot
+  - Cooot
+
+- type: language
+  id: Duck
+  obfuscateSyllables: true
+  replacement:
+  - Quack
+  - Quack quack
+
+- type: language
+  id: Cow
+  obfuscateSyllables: true
+  replacement:
+  - Moo
+  - Mooo
+
+- type: language
+  id: Sheep
+  obfuscateSyllables: true
+  replacement:
+  - Ba
+  - Baa
+  - Baaa
+
+- type: language
+  id: Kangaroo
+  obfuscateSyllables: true
+  replacement:
+  - Shreak
+  - Chuu
+
+- type: language
+  id: Pig
+  obfuscateSyllables: true
+  replacement:
+  - Oink
+  - Oink oink
+
+- type: language
+  id: Crab
+  obfuscateSyllables: true
+  replacement:
+  - Click
+  - Click-clack
+  - Clack
+  - Tipi-tap
+  - Clik-tap
+  - Cliliick
+
+- type: language
+  id: Kobold
+  obfuscateSyllables: true
+  replacement:
+  - Yip
+  - Grrar.
+  - Yap
+  - Bip
+  - Screet
+  - Gronk
+  - Hiss
+  - Eeee
+  - Yip

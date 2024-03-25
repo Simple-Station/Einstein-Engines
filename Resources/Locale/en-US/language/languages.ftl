@@ -24,3 +24,48 @@ language-Canilunzt-description = The guttural language spoken and utilized by th
 
 language-Moffic-name = Moffic
 language-Moffic-description = The language of the mothpeople borders on complete unintelligibility.
+
+language-RobotTalk-name = RobotTalk
+language-RobotTalk-description = Beep-Boop
+
+language-Cat-name = Cat
+language-Cat-description = Meow
+
+language-Dog-name = Dog
+language-Dog-description = Bark!
+
+language-Fox-name = Fox
+language-Fox-description = Yeeps!
+
+language-Xeno-name = Xeno
+language-Xeno-description = Sssss!
+
+language-Monkey-name = Monkey
+language-Monkey-description = oooook!
+
+language-Mouse-name = Mouse
+language-Mouse-description = Squeeek!
+
+language-Chicken-name = Chicken
+language-Chicken-description = Coot!
+
+language-Duck-name = Duck
+language-Duck-description = Quack!
+
+language-Cow-name = Cow
+language-Cow-description = Moooo!
+
+language-Sheep-name = Sheep
+language-Sheep-description = Baaah!
+
+language-Kangaroo-name = Kangaroo
+language-Kangaroo-description = Chuu!
+
+language-Pig-name = Pig
+language-Pig-description = Oink!
+
+language-Crab-name = Crab
+language-Crab-description = Click!
+
+language-Kobold-name = Kobold
+language-Kobold-description = Hiss!

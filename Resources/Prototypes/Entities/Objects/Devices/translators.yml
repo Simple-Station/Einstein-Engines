@@ -191,27 +191,27 @@
     requires:
     - GalacticCommon
 
-# TODO: Animals Languages...
-# - type: entity
-#   id: AnimalTranslator
-#   parent: [ TranslatorEmtpy ]
-#   name: Animal translator
-#   description: "Translates all the cutes nosies that animals make into a more understandable form!"
-#   components:
-#   - type: HandheldTranslator
-#     understood:
-#     - Cat
-#     - Dog
-#     - Mothroach
-#     - Monkey
-#     - Bee
-#     - Mouse
-#     - Chicken
-#     - Duck
-#     - Cow
-#     - Sheep
-#     - Kangaroo
-#     - Pig
-#     requires:
-#     - GalacticCommon
-#     requires-all: false
+- type: entity
+  id: AnimalTranslator
+  parent: [ TranslatorEmtpy ]
+  name: Animal translator
+  description: "Translates all the cutes nosies that animals make into a more understandable form!"
+  components:
+  - type: HandheldTranslator
+    understood:
+    - Cat
+    - Dog
+    - Fox
+    - Monkey
+    - Mouse
+    - Chicken
+    - Duck
+    - Cow
+    - Sheep
+    - Kangaroo
+    - Pig
+    - Crab
+    - Kobold
+    requires:
+    - GalacticCommon
+    requires-all: false
