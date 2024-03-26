@@ -81,7 +81,8 @@ namespace Content.Shared.Preferences
         /// <summary>Copy constructor</summary>
         private HumanoidCharacterProfile(HumanoidCharacterProfile other)
             : this(other, new Dictionary<string, JobPriority>(other.JobPriorities),
-                [..other.AntagPreferences], [..other.TraitPreferences], [..other.LoadoutPreferences])
+                new List<string>(other.AntagPreferences), new List<string>(other.TraitPreferences),
+                new List<string>(other.LoadoutPreferences))
         {
         }
 
@@ -103,7 +104,8 @@ namespace Content.Shared.Preferences
             IReadOnlyList<string> loadoutPreferences)
             : this(name, flavortext, species, age, sex, gender, appearance, clothing, backpack, spawnPriority,
                 new Dictionary<string, JobPriority>(jobPriorities), preferenceUnavailable,
-                [..antagPreferences], [..traitPreferences], [..loadoutPreferences])
+                new List<string>(antagPreferences), new List<string>(traitPreferences),
+                new List<string>(loadoutPreferences))
         {
         }
 
@@ -128,9 +130,9 @@ namespace Content.Shared.Preferences
                 {SharedGameTicker.FallbackOverflowJob, JobPriority.High}
             },
             PreferenceUnavailableMode.SpawnAsOverflow,
-            [],
-            [],
-            [])
+            new List<string>(),
+            new List<string>(),
+            new List<string>())
         {
         }
 
@@ -157,9 +159,9 @@ namespace Content.Shared.Preferences
                     {SharedGameTicker.FallbackOverflowJob, JobPriority.High}
                 },
                 PreferenceUnavailableMode.SpawnAsOverflow,
-                [],
-                [],
-                []);
+                new List<string>(),
+                new List<string>(),
+                new List<string>());
         }
 
         // TODO: This should eventually not be a visual change only.
@@ -210,7 +212,7 @@ namespace Content.Shared.Preferences
                 new Dictionary<string, JobPriority>
                 {
                     {SharedGameTicker.FallbackOverflowJob, JobPriority.High},
-                }, PreferenceUnavailableMode.StayInLobby, [], [], []);
+                }, PreferenceUnavailableMode.StayInLobby, new List<string>(), new List<string>(), new List<string>());
         }
 
         public string Name { get; private set; }
