@@ -1,0 +1,25 @@
+- type: constructionGraph
+  id: ModsuitCoreFrame
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: modsuitcoreframe
+          steps:
+            - tag: MODcore
+              name: A Standard MOD Core
+              amount: 1
+              icon:
+                sprite: Objects/Specific/Modsuits/modcore.rsi
+                state: icon
+              doAfter: 3.5
+            - tag: MODcoreshell
+              name: A MOD Core shell
+              amount: 1
+              icon:
+                sprite: Objects/Specific/Modsuits/core.rsi
+                state: icon
+              doAfter: 3.5
+
+    - node: modsuitcoreframe
+      entity: ModsuitCoreFrame

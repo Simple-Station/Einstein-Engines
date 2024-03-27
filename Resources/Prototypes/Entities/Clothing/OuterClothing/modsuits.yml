@@ -1,0 +1,62 @@
+#When adding new modsuits, please try to keep the organization consistent with modsuits-helmets.yml (if possible.)
+
+#STANDARD MODSUITS
+#Standard MODsuit
+- type: entity
+  parent: ClothingOuterModsuitBase
+  id: ClothingOuterModsuitStandard
+  name: standard MODsuit
+  description: A civilian class suit by Nakamura Engineering, doesn't offer much other than slightly quicker movement.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Modsuits/standard.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Modsuits/standard.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Caustic: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.80
+  - type: HeldSpeedModifier
+  - type: Construction
+    graph: Modsuit
+    node: modsuit
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetModsuitStandard
+
+#Engineering MODsuit
+- type: entity
+  parent: ClothingOuterModsuitBase
+  id: ClothingOuterModsuitEngineering
+  name: engineering MODsuit
+  description: An engineer-fit suit with heat and shock resistance. Nakamura Engineering's classic.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Modsuits/engineering.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Modsuits/engineering.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Caustic: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.80
+  - type: HeldSpeedModifier
+  - type: Construction
+    graph: Modsuit
+    node: modsuit
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetModsuitEngineering

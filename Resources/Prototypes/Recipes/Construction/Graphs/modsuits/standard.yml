@@ -1,0 +1,26 @@
+- type: constructionGraph
+  id: Modsuit
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: modsuit
+          steps:
+            - tag: MODsuitframe
+              name: A Standard MOD Core Frame
+              amount: 1
+              icon:
+                sprite: Objects/Specific/Modsuits/completed_frame.rsi
+                state: icon
+              doAfter: 2.5
+            
+            - tag: MODplatingStandard
+              name: Standard MODsuit Plating
+              amount: 1
+              icon:
+                sprite: Objects/Specific/Modsuits/platings.rsi
+                state: standard
+              doAfter: 2.5
+
+    - node: modsuit
+      entity: ClothingOuterModsuitStandard

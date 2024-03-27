@@ -851,6 +851,54 @@
   id: ModularReceiver
 
 - type: Tag
+  id: MODboots
+
+- type: Tag
+  id: MODchestplate
+
+- type: Tag
+  id: MODcomponent
+
+- type: Tag
+  id: MODcore
+
+- type: Tag
+  id: MODcoreframe
+
+- type: Tag
+  id: MODcoreshell
+
+- type: Tag
+  id: MODgauntlets
+
+- type: Tag
+  id: MODhelmet
+
+- type: Tag
+  id: MODplatingAtmos
+
+- type: Tag
+  id: MODplatingClown
+
+- type: Tag
+  id: MODplatingEngineering
+
+- type: Tag
+  id: MODplatingMedical
+
+- type: Tag
+  id: MODplatingSecurity
+
+- type: Tag
+  id: MODplatingStandard
+
+- type: Tag
+  id: MODsuit
+
+- type: Tag
+  id: MODsuitframe
+
+- type: Tag
   id: MonkeyCube
 
 - type: Tag
