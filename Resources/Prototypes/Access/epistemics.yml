@@ -6,9 +6,14 @@
   id: Research
   name: id-card-access-level-research
 
+- type: accessLevel
+  id: Mantis
+  name: id-card-access-level-mantis # Custom access level for the Mantis so they can have their own locker and maybe doors
+
+
 - type: accessGroup
   id: Research
   tags:
   - ResearchDirector
   - Research
-  - Mantis # DeltaV - Psionic Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
+  - Mantis

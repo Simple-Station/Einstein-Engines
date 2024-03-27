@@ -67,11 +67,29 @@
 - type: entity
   parent: ClothingBackpack
   id: ClothingBackpackBrigmedic
-  name: corpsman backpack # DeltaV - rename brig medic to corpsman
+  name: corpsman backpack
   description: It's a very sterile backpack.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Back/Backpacks/brigmedic.rsi # DeltaV - resprite
+    sprite: Clothing/Back/Backpacks/brigmedic.rsi
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackBrigmedic
+  id: ClothingBackpackBrigmedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalSecurity
+      - id: EmergencyRollerBedSpawnFolded
+      - id: BodyBag_Folded
+      - id: Portafib
+    #  - id: Flash
+      - id: BruteAutoInjector
+        amount: 2
+      - id: BurnAutoInjector
+        amount: 2
+
 
 - type: entity
   parent: ClothingBackpack

@@ -10,11 +10,15 @@
   id: Salvage
   name: id-card-access-level-salvage
 
+- type: accessLevel
+  id: Orders
+  name: id-card-access-level-orders # Custom access level that allows the approval of orders
+
 - type: accessGroup
   id: Cargo
   tags:
   - Quartermaster
   - Salvage
   - Cargo
-  - Mail # Nyanotrasen - MailCarrier, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail-carrier.yml
-  - Orders # Delta V - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
+  - Mail
+  - Orders

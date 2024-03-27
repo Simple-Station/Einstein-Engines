@@ -1,3 +1,5 @@
+# TODO in later PR: Organise this alphabetically or something. Who the fuck made clown backpack like this?
+
 - type: entity
   parent: ClothingBackpack
   id: ClothingBackpackFilled
@@ -59,6 +61,17 @@
     contents:
       - id: BoxSurvivalMedical
       - id: EmergencyRollerBedSpawnFolded
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackMedical
+  id: ClothingBackpackPsychologistFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalMedical
+      - id: RubberStampPsychologist
+
 
 - type: entity
   noSpawn: true
@@ -136,6 +149,17 @@
       - id: BoxSurvivalSecurity
       - id: Flash
       - id: MagazinePistol
+  
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpack
+  id: ClothingBackpackLawyerFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: RubberStampLawyer
+
 
 - type: entity
   noSpawn: true
@@ -194,6 +218,18 @@
 
 - type: entity
   noSpawn: true
+  parent: ClothingBackpackMedical
+  id: ClothingBackpackParamedicFilledDV # TODO: Take out the stupid DV tag in the ID.
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalMedical
+      - id: EmergencyRollerBedSpawnFolded
+      - id: BodyBag_Folded
+      - id: Portafib
+
+- type: entity
+  noSpawn: true
   parent: ClothingBackpack
   id: ClothingBackpackChaplainFilled
   components:
@@ -236,6 +272,8 @@
       - id: CigPackBlack
       - id: HandLabeler
       - id: BoxForensicPad
+
+
 
 # ERT
 
@@ -378,3 +416,19 @@
         - id: Cutlass
         - id: WeaponRevolverPirate
         - id: ClothingEyesEyepatch
+
+
+# Mafia ?
+
+- type: entity
+  parent: ClothingBackpackSatchelLeather
+  id: ClothingBackpackMafiaFilled
+  suffix: Filled, Mafia
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: WeaponSubMachineGunTypewriter
+      - id: WeaponPistolViperWood
+      - id: MagazinePistol
+      - id: BaseBallBat

@@ -227,3 +227,14 @@
   cost: 5000
   category: Livestock
   group: market
+
+- type: cargoProduct
+  id: LivestockSecDog
+  icon:
+    sprite: DeltaV/Mobs/Pets/secdog.rsi
+    state: secdog
+  product: CrateNPCSecDog
+  cost: 3500
+  category: Livestock
+  group: market
+

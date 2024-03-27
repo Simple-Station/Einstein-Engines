@@ -56,7 +56,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakRd
-  name: mystagogue's cloak # DeltaV - Epistemics Department replacing Science
+  name: mystagogue's cloak
   description: A white cloak with violet stripes, showing your status as the arbiter of cutting-edge technology.
   components:
   - type: Sprite
@@ -67,7 +67,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakQm
-  name: logistics officer's cloak # DeltaV - Logistics Department replacing Cargo
+  name: logistics officer's cloak 
   description: A strong brown cloak with a reflective stripe, while not as fancy as others, it does show your managing skills.
   components:
   - type: Sprite
@@ -272,3 +272,36 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/pan.rsi
 
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakMystagogue
+  name: mystagogue's cloak
+  suffix: Delta-V
+  description: A comfy white and purple cloak, perfect for those sleepless nights when you're haunted by the yet unsolved mysteries of the universe.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/mystacloak.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Cloaks/mystacloak.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakBoat
+  name: NanoTrasen boat cloak
+  description: A regal blue durathread boat cloak with a red felt lining and gold trim. Somehow, it's even more expensive than it looks.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/boatcloak.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Cloaks/boatcloak.rsi    
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSalvager
+  name: salvager's cloak
+  description: Worn by dangerous people who've deconstructed stations with ease.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/salvage.rsi 
+  - type: Clothing
+    sprite: Clothing/Neck/Cloaks/salvage.rsi  

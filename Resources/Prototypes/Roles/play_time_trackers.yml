@@ -83,6 +83,9 @@
   id: JobMedicalIntern
 
 - type: playTimeTracker
+  id: JobMedicalBorg
+
+- type: playTimeTracker
   id: JobMime
 
 - type: playTimeTracker
@@ -120,6 +123,9 @@
 
 - type: playTimeTracker
   id: JobSecurityOfficer
+
+- type: playTimeTracker
+  id: JobBrigmedic
 
 - type: playTimeTracker
   id: JobSeniorEngineer
