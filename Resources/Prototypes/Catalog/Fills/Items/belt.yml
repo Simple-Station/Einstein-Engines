@@ -185,3 +185,16 @@
     contents:
     - id: FoodShakerSalt
     - id: FoodShakerPepper
+
+- type: entity
+  id: ClothingBeltJanitorAdvanced
+  parent: ClothingBeltJanitor
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Soap 
+      - id: SprayBottleSpaceCleaner
+      - id: WetFloorSign
+      - id: Holoprojector
+      - id: FlashlightLantern

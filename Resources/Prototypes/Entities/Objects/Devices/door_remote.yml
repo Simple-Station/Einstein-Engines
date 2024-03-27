@@ -163,7 +163,7 @@
 - type: entity
   parent: DoorRemoteDefault
   id: DoorRemoteAll
-  name: super door remote
+  name: omni door remote
   suffix: Admeme
   components:
   - type: Sprite
