@@ -48,8 +48,11 @@
     flavorKind: station-event-random-sentience-flavor-organic
   - type: Bloodstream
     bloodMaxVolume: 50
-  - type: ReplacementAccent
-    accent: mouse
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Effects/bite.ogg
@@ -229,8 +232,11 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEgg
-  - type: ReplacementAccent
-    accent: chicken
+  - type: LanguageSpeaker
+    speaks:
+    - Chicken
+    understands:
+    - Chicken
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -504,8 +510,11 @@
       prob: 0.5
   - type: Extractable
     grindableSolutionName: food
-  - type: ReplacementAccent
-    accent: mothroach
+  - type: LanguageSpeaker
+    speaks:
+    - Moffic
+    understands:
+    - Moffic
   - type: ZombieAccentOverride
     accent: zombieMoth
   - type: Vocal
@@ -601,8 +610,11 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEgg
-  - type: ReplacementAccent
-    accent: duck
+  - type: LanguageSpeaker
+    speaks:
+    - Duck
+    understands:
+    - Duck
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -839,8 +851,11 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
-  - type: ReplacementAccent
-    accent: crab
+  - type: LanguageSpeaker
+    speaks:
+    - Crab
+    understands:
+    - Crab
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CopperBlood
@@ -1074,8 +1089,11 @@
   - type: Inventory
     speciesId: kangaroo
     templateId: kangaroo
-  - type: ReplacementAccent
-    accent: kangaroo
+  - type: LanguageSpeaker
+    speaks:
+    - Kangaroo
+    understands:
+    - Kangaroo
   - type: InventorySlots
   - type: Strippable
   - type: Butcherable
@@ -1255,7 +1273,12 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: MonkeyAccent
+  - type: LanguageSpeaker
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - Kobold
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
   - type: AlwaysRevolutionaryConvertible
@@ -1289,7 +1312,13 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: MonkeyAccent
+  - type: LanguageSpeaker
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - Kobold
+    - GalacticCommon
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -1328,8 +1357,13 @@
   - type: NameIdentifier
     group: Kobold
   - type: LizardAccent
-  - type: ReplacementAccent
-    accent: kobold
+  - type: LanguageSpeaker
+    speaks:
+    - Kobold
+    - Monkey
+    understands:
+    - Kobold
+    - Monkey
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
@@ -1556,8 +1590,11 @@
     spawned:
     - id: FoodMeatRat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: Tag
     tags:
     - Trash
@@ -2121,8 +2158,11 @@
   - type: MeleeChemicalInjector
     transferAmount: 0.75
     solution: melee
-  - type: ReplacementAccent
-    accent: xeno
+  - type: LanguageSpeaker
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-tarantula
@@ -2437,6 +2477,11 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageSpeaker
+    speaks:
+    - Fox
+    understands:
+    - Fox
 
 - type: entity
   name: corgi
@@ -2483,8 +2528,11 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: ReplacementAccent
-    accent: dog
+  - type: LanguageSpeaker
+    speaks:
+    - Dog
+    understands:
+    - Dog
   - type: InteractionPopup
     interactSuccessString: petting-success-dog
     interactFailureString: petting-failure-generic
@@ -2636,8 +2684,11 @@
     spawned:
     - id: FoodMeat
       amount: 3
-  - type: ReplacementAccent
-    accent: cat
+  - type: LanguageSpeaker
+    speaks:
+    - Cat
+    understands:
+    - Cat
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-cat
@@ -2704,6 +2755,12 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+  - type: LanguageSpeaker
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - GalacticCommon
 
 - type: entity
   name: space cat
@@ -2999,8 +3056,11 @@
     spawned:
     - id: FoodMeat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: Tag
     tags:
     - VimPilot
@@ -3106,8 +3166,11 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: ReplacementAccent
-    accent: pig
+  - type: LanguageSpeaker
+    speaks:
+    - Pig
+    understands:
+    - Pig
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -3193,6 +3256,12 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
+  - type: LanguageSpeaker
+    speaks:
+    - RootSpeak
+    understands:
+    - GalacticCommon
+    - RootSpeak
 
 - type: entity
   parent: MobDionaNymph
@@ -3201,4 +3270,3 @@
   components:
   - type: ReplacementAccent
     accent: nymph
-    

@@ -99,6 +99,11 @@
     makeSentient: true
     allowMovement: true
     allowSpeech: true
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    understands:
+    - GalacticCommon
 
 - type: entity
   parent: WelderExperimental
