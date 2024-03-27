@@ -254,19 +254,15 @@
     # .35 Caseless Pistol
     - MagazinePistolCaselessRiflePractice # EE
     - MagazinePistolCaselessRifle # EE
-    - MagazinePistolCaselessRifleRubber # EE
     # .35 Caseless (Civilian) Rifle
     - MagazineCaselessRifleShortPractice # EE
     - MagazineCaselessRifleShort # EE
-    - MagazineCaselessRifleShortRubber # EE
     # .35 Caseless (Military) Rifle
     - MagazineCaselessRiflePractice # EE
     - MagazineCaselessRifle # EE
-    - MagazineCaselessRifleRubber # EE
     # .35 Caseless (Box Mag) Rifle
     - MagazineBoxCaselessRiflePractice # EE
     - MagazineBoxCaselessRifle # EE
-    - MagazineBoxCaselessRifleRubber # EE
     - MagazineMagnumEmpty # Goobstation
     - MagazineMagnum # Goobstation
     - MagazineMagnumLeverRifleEmpty # Goobstation
@@ -955,19 +951,15 @@
     # .35 Caseless Pistol
     - MagazinePistolCaselessRiflePractice # EE
     - MagazinePistolCaselessRifle # EE
-    - MagazinePistolCaselessRifleRubber # EE
     # .35 Caseless (Civilian) Rifle
     - MagazineCaselessRifleShortPractice # EE
     - MagazineCaselessRifleShort # EE
-    - MagazineCaselessRifleShortRubber # EE
     # .35 Caseless (Military) Rifle
     - MagazineCaselessRiflePractice # EE
     - MagazineCaselessRifle # EE
-    - MagazineCaselessRifleRubber # EE
     # .35 Caseless (Box Mag) Rifle
     - MagazineBoxCaselessRiflePractice # EE
     - MagazineBoxCaselessRifle # EE
-    - MagazineBoxCaselessRifleRubber # EE
     - MagazineMagnum
     - MagazineMagnumEmpty
     - MagazineRifle
@@ -1021,33 +1013,11 @@
     - CartridgeSaline # Goobstation
     - SecHypo # Goobstation
     - BoxBeanbag
-    - CartridgePistolRubber
-    - CartridgeMagnumRubber
-    - CartridgeLightRifleRubber
-    - CartridgeRifleRubber
-    - MagazineRifleRubber
-    - MagazinePistolRubber
-    - MagazinePistolSubMachineGunRubber
-    - MagazineMagnumRubber
-    - MagazineLightRifleRubber
-    - SpeedLoaderMagnumRubber
-    - MagazineBoxPistolRubber
-    - MagazineBoxMagnumRubber
-    - MagazineBoxLightRifleRubber
-    - MagazineBoxRifleRubber
-    - CartridgeSpecialRubber
-    - MagazineBoxSpecialRubber
-    - MagazineBoxLightRifleRubber # Frontier
-    - MagazineBoxMagnumRubber # Frontier
-    - MagazineBoxPistolRubber # Frontier
-    - MagazineBoxRifleRubber # Frontier
-    - SpeedLoaderRifleHeavyRubber
     - BoxShotgunBirdshot
     - BoxShotgun00Buckshot
     - BoxShotgun0000Buckshot
     - MagazineUniversalMagnumEmpty
     - MagazineUniversalMagnum
-    - MagazineUniversalMagnumRubber
     - MagazineLightRifleMarkOneEmpty
     - MagazineLightRifleMarkOne
     dynamicRecipes:
@@ -1242,19 +1212,15 @@
     # .35 Caseless Pistol
     - MagazinePistolCaselessRiflePractice # EE
     - MagazinePistolCaselessRifle # EE
-    - MagazinePistolCaselessRifleRubber # EE
     # .35 Caseless (Civilian) Rifle
     - MagazineCaselessRifleShortPractice # EE
     - MagazineCaselessRifleShort # EE
-    - MagazineCaselessRifleShortRubber # EE
     # .35 Caseless (Military) Rifle
     - MagazineCaselessRiflePractice # EE
     - MagazineCaselessRifle # EE
-    - MagazineCaselessRifleRubber # EE
     # .35 Caseless (Box Mag) Rifle
     - MagazineBoxCaselessRiflePractice # EE
     - MagazineBoxCaselessRifle # EE
-    - MagazineBoxCaselessRifleRubber # EE
     - MagazineLightRifleMarkOneEmpty
     - MagazineLightRifleMarkOne
   - type: MaterialStorage
