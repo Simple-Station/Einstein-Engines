@@ -123,3 +123,8 @@
   id: Ethereal
   kind: source
   path: "/Textures/Shaders/ethereal.swsl"
+# Jank
+- type: shader
+  id: Mesons
+  kind: source
+  path: "/Textures/Shaders/mesons.swsl"
