@@ -61,7 +61,7 @@ namespace Content.Server.DeltaV.Lamiae
                 if (segment.segment.SegmentNumber == 1)
                 {
                     Transform(segmentUid).Coordinates = Transform(attachedUid).Coordinates;
-                    var revoluteJoint = _jointSystem.CreateWeldJoint(attachedUid, segmentUid, id: ("Segment" + segment.segment.SegmentNumber + segment.segment.Lamia));
+                    var revoluteJoint = _jointSystem.CreateWeldJoint(attachedUid, segmentUid, id: "Segment" + segment.segment.SegmentNumber + segment.segment.Lamia);
                     revoluteJoint.CollideConnected = false;
                 }
                 if (segment.segment.SegmentNumber < segment.segment.MaxSegments)
@@ -144,7 +144,7 @@ namespace Content.Server.DeltaV.Lamiae
 
         private void OnJointRemoved(EntityUid uid, LamiaComponent component, JointRemovedEvent args)
         {
-            if (!component.Segments.Contains(args.OtherBody.Owner))
+            if (!component.Segments.Contains(args.OtherEntity))
                 return;
 
             if (HasComp<PortalTimeoutComponent>(uid)) return;
@@ -199,7 +199,7 @@ namespace Content.Server.DeltaV.Lamiae
 
         private EntityUid AddSegment(EntityUid uid, EntityUid lamia, LamiaComponent lamiaComponent, int segmentNumber)
         {
-            LamiaSegmentComponent segmentComponent = new();
+            EnsureComp<LamiaSegmentComponent>(uid, out var segmentComponent);
             segmentComponent.MaxSegments = lamiaComponent.NumberOfSegments;
             segmentComponent.BulletPassover = lamiaComponent.BulletPassover;
             segmentComponent.Lamia = lamia;
@@ -219,7 +219,8 @@ namespace Content.Server.DeltaV.Lamiae
             {
                 segmentComponent.OffsetSwitching = lamiaComponent.StaticOffset * MathF.Pow(lamiaComponent.OffsetConstant, segmentNumber - taperConstant);
                 segmentComponent.ScaleFactor = lamiaComponent.StaticScale * MathF.Pow(1f / lamiaComponent.OffsetConstant, segmentNumber - taperConstant);
-            } else
+            }
+            else
             {
                 segmentComponent.OffsetSwitching = lamiaComponent.StaticOffset;
                 segmentComponent.ScaleFactor = lamiaComponent.StaticScale;
@@ -229,12 +230,10 @@ namespace Content.Server.DeltaV.Lamiae
                 segmentComponent.OffsetSwitching *= -1;
             }
 
-            segmentComponent.Owner = segment;
             segmentComponent.SegmentNumber = segmentNumber;
-            EntityManager.AddComponent(segment, segmentComponent, true);
 
             _segments.Enqueue((segmentComponent, lamia));
-            lamiaComponent.Segments.Add(segmentComponent.Owner);
+            lamiaComponent.Segments.Add(uid);
             return segment;
         }
 
