@@ -66,6 +66,8 @@
   - type: Tag
     tags:
     - SecDogWearable # DeltaV - let Laika wear meson goggles
+  - type: Meson
+    mesonType: Walls
 
 - type: entity
   parent: ClothingEyesBase
