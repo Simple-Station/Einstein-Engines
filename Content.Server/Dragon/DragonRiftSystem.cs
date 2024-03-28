@@ -72,9 +72,10 @@ public sealed class DragonRiftSystem : EntitySystem
                 comp.State = DragonRiftState.AlmostFinished;
                 Dirty(comp);
 
-                var location = xform.LocalPosition;
-                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("CarpRift"), Filter.Broadcast(),
-                    "carp-rift-warning", colorOverride: Color.Red, localeArgs: ("location", location));
+                var msg = Loc.GetString("carp-rift-warning",
+                    ("location", FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((uid, xform)))));
+                _chat.DispatchGlobalAnnouncement(msg, playSound: false, colorOverride: Color.Red);
+                _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), true);
                 _navMap.SetBeaconEnabled(uid, true);
             }
 

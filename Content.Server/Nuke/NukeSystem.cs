@@ -460,15 +460,12 @@ public sealed class NukeSystem : EntitySystem
         // We are collapsing the randomness here, otherwise we would get separate random song picks for checking duration and when actually playing the song afterwards
         _selectedNukeSong = _audio.GetSound(component.ArmMusic);
 
-        _announcer.SendAnnouncementMessage(
-            _announcer.GetAnnouncementId("NukeArm"),
-            "nuke-component-announcement-armed",
-            Loc.GetString("nuke-component-announcement-sender"),
-            Color.Red,
-            stationUid ?? uid,
-            null,
-            ("time", (int) component.RemainingTime), ("position", posText)
-        );
+        // warn a crew
+        var announcement = Loc.GetString("nuke-component-announcement-armed",
+            ("time", (int) component.RemainingTime),
+            ("location", FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((uid, nukeXform)))));
+        var sender = Loc.GetString("nuke-component-announcement-sender");
+        _chatSystem.DispatchStationAnnouncement(stationUid ?? uid, announcement, sender, false, null, Color.Red);
 
         _sound.PlayGlobalOnStation(uid, _audio.GetSound(component.ArmSound));
         _nukeSongLength = (float) _audio.GetAudioLength(_selectedNukeSong).TotalSeconds;

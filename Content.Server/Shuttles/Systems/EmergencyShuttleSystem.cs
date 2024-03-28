@@ -320,12 +320,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         else
         {
             var location = FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((stationShuttle.EmergencyShuttle.Value, xform)));
-            _announcer.SendAnnouncementMessage(
-                    _announcer.GetAnnouncementId("ShuttleNearby"),
-                    "emergency-shuttle-nearby",
-                    null, null, null, null,
-                    ("direction", location)
-                );
+            _chatSystem.DispatchStationAnnouncement(stationUid, Loc.GetString("emergency-shuttle-nearby", ("direction", location)), playDefaultSound: false);
 
             _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle {ToPrettyString(stationUid)} unable to find a valid docking port for {ToPrettyString(stationUid)}");
             _announcer.SendAnnouncementAudio(_announcer.GetAnnouncementId("ShuttleNearby"), Filter.Broadcast());
