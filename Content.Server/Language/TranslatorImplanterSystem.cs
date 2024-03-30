@@ -5,6 +5,7 @@ using Content.Shared.Database;
 using Content.Shared.Interaction;
 using Content.Shared.Language;
 using Content.Shared.Language.Components;
+using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using Content.Shared.Mobs.Components;
 
@@ -36,7 +37,7 @@ public sealed class TranslatorImplanterSystem : SharedTranslatorImplanterSystem
             return;
         }
 
-        var (_, understood) = _language.GetAllLanguages(target);
+        var understood = _language.GetAllLanguages(target).understood;
         if (component.RequiredLanguages.Count > 0 && !component.RequiredLanguages.Any(lang => understood.Contains(lang)))
         {
             RefusesPopup(implanter, target);
@@ -60,7 +61,7 @@ public sealed class TranslatorImplanterSystem : SharedTranslatorImplanterSystem
             + $"\nSpoken: {string.Join(", ", component.SpokenLanguages)}; Understood: {string.Join(", ", component.UnderstoodLanguages)}");
 
         OnAppearanceChange(implanter, component);
-        RaiseLocalEvent(target, new SharedLanguageSystem.LanguagesUpdateEvent(), true);
+        RaiseLocalEvent(target, new LanguagesUpdateEvent(), true);
     }
 
     private void RefusesPopup(EntityUid implanter, EntityUid target)

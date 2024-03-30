@@ -30,15 +30,6 @@ public sealed class LanguageSelectorButton : ChatPopupButton<LanguageSelectorPop
         IoCManager.Resolve<IUserInterfaceManager>().GetUIController<LanguageMenuUIController>().LanguagesUpdatedHook += UpdateLanguage;
     }
 
-    private void UpdateLanguage((string current, List<string> spoken, List<string> understood) args)
-    {
-        Popup.SetLanguages(args.spoken);
-
-        // Kill me please
-        SelectedLanguage = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>().GetLanguage(args.current);
-        Text = LanguageSelectorName(SelectedLanguage!);
-    }
-
     protected override UIBox2 GetPopupPosition()
     {
         var globalLeft = GlobalPosition.X;
@@ -46,6 +37,30 @@ public sealed class LanguageSelectorButton : ChatPopupButton<LanguageSelectorPop
         return UIBox2.FromDimensions(
             new Vector2(globalLeft, globalBot),
             new Vector2(SizeBox.Width, SelectorDropdownOffset));
+    }
+
+    public static string LanguageSelectorName(LanguagePrototype language, bool full = false)
+    {
+        var name = language.Name;
+
+        // if the language name is short enough, just return it
+        if (full || name.Length < 5)
+            return name;
+
+        // If the language name is multi-word, collect first letters and capitalize them
+        if (name.Contains(' '))
+        {
+            var result = name
+                .Split(" ") // split by words
+                .Select(it => it.FirstOrNull()) // take the first letter from each
+                .Where(it => it != null) // ignore empty words (double spaces)
+                .Select(it => char.ToUpper(it!.Value)); // capitalize
+
+            return new string(result.ToArray());
+        }
+
+        // Alternatively, take the first 5 letters
+        return name[..5];
     }
 
     public void Select(LanguagePrototype language)
@@ -63,27 +78,12 @@ public sealed class LanguageSelectorButton : ChatPopupButton<LanguageSelectorPop
         Text = LanguageSelectorName(language);
     }
 
-    public static string LanguageSelectorName(LanguagePrototype language, bool full = false)
+    private void UpdateLanguage((string current, List<string> spoken, List<string> understood) args)
     {
-        var name = language.LocalizedName;
+        Popup.SetLanguages(args.spoken);
 
-        // if the language name is short enough, just return it
-        if (full || name.Length < 5)
-            return name;
-
-        // If the language name is multi-word, collect first letters and capitalize them
-        if (name.Contains(' '))
-        {
-            var result = name
-                .Split(" ")
-                .Select(it => it.FirstOrNull())
-                .Where(it => it != null)
-                .Select(it => char.ToUpper(it!.Value));
-
-            return new string(result.ToArray());
-        }
-
-        // Alternatively, take the first 5 letters
-        return name[..5];
+        // Kill me please
+        SelectedLanguage = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>().GetLanguage(args.current);
+        Text = LanguageSelectorName(SelectedLanguage!);
     }
 }

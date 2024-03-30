@@ -8,9 +8,9 @@ namespace Content.Server.Language.Commands;
 [AnyCommand]
 public sealed class SayLanguageCommand : IConsoleCommand
 {
-    public string Command => "lsay";
-    public string Description => "Send chat languages to the local channel or a specific chat channel, in a specific language.";
-    public string Help => "lsay <language id> <text>";
+    public string Command => "saylang";
+    public string Description => Loc.GetString("command-saylang-desc");
+    public string Help => Loc.GetString("command-saylang-help", ("command", Command));
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {

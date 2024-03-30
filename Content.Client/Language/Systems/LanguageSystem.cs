@@ -1,4 +1,5 @@
 using Content.Shared.Language;
+using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Console;
@@ -7,10 +8,11 @@ namespace Content.Client.Language.Systems;
 
 /// <summary>
 ///   Client-side language system.
-///
+/// </summary>
+/// <remarks>
 ///   Unlike the server, the client is not aware of other entities' languages; it's only notified about the entity that it posesses.
 ///   Due to that, this system stores such information in a static manner.
-/// </summary>
+/// </remarks>
 public sealed class LanguageSystem : SharedLanguageSystem
 {
     /// <summary>
@@ -51,7 +53,7 @@ public sealed class LanguageSystem : SharedLanguageSystem
             return;
 
         // (This is dumb. This is very dumb. It should be a message instead.)
-        _consoleHost.ExecuteCommand("lsselectlang " + language.ID);
+        _consoleHost.ExecuteCommand("languageselect " + language.ID);
 
         // So to reduce the probability of desync, we replicate the change locally too
         if (SpokenLanguages.Contains(language.ID))

@@ -8,9 +8,9 @@ namespace Content.Server.Language.Commands;
 [AnyCommand]
 public sealed class SelectLanguageCommand : IConsoleCommand
 {
-    public string Command => "lsselectlang";
-    public string Description => "Open a menu to select a language to speak.";
-    public string Help => "lsselectlang";
+    public string Command => "languageselect";
+    public string Description => Loc.GetString("command-language-select-desc");
+    public string Help => Loc.GetString("command-language-select-help", ("command", Command));
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {

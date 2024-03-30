@@ -1,6 +1,3 @@
-using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Language.Components;
@@ -19,14 +16,12 @@ public abstract partial class BaseTranslatorComponent : Component
     ///   The list of additional languages this translator allows the wielder to speak.
     /// </summary>
     [DataField("spoken", customTypeSerializer: typeof(PrototypeIdListSerializer<LanguagePrototype>))]
-    [ViewVariables(VVAccess.ReadWrite)]
     public List<string> SpokenLanguages = new();
 
     /// <summary>
     ///   The list of additional languages this translator allows the wielder to understand.
     /// </summary>
     [DataField("understood", customTypeSerializer: typeof(PrototypeIdListSerializer<LanguagePrototype>))]
-    [ViewVariables(VVAccess.ReadWrite)]
     public List<string> UnderstoodLanguages = new();
 
     /// <summary>
@@ -34,7 +29,6 @@ public abstract partial class BaseTranslatorComponent : Component
     ///   The field [RequiresAllLanguages] indicates whether all of them are required, or just one.
     /// </summary>
     [DataField("requires", customTypeSerializer: typeof(PrototypeIdListSerializer<LanguagePrototype>))]
-    [ViewVariables(VVAccess.ReadWrite)]
     public List<string> RequiredLanguages = new();
 
     /// <summary>
@@ -47,7 +41,7 @@ public abstract partial class BaseTranslatorComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public bool RequiresAllLanguages = false;
 
-    [DataField("enabled")]
+    [DataField("enabled"), ViewVariables(VVAccess.ReadWrite)]
     public bool Enabled = true;
 }
 

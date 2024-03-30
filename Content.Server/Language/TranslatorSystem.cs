@@ -8,6 +8,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Language;
 using Content.Shared.Language.Components;
+using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using Content.Shared.PowerCell;
 using static Content.Server.Language.LanguageSystem;
@@ -33,22 +34,19 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         _sawmill = Logger.GetSawmill("translator");
 
         // I wanna die. But my death won't help us discover polymorphism.
-        SubscribeLocalEvent<IntrinsicTranslatorComponent, DetermineEntityLanguagesEvent>(ApplyTranslation);
-        SubscribeLocalEvent<HoldsTranslatorComponent, DetermineEntityLanguagesEvent>(ApplyTranslation);
-        SubscribeLocalEvent<ImplantedTranslatorComponent, DetermineEntityLanguagesEvent>(ApplyTranslation);
-        // TODO: make this thing draw power
-        // SubscribeLocalEvent<HoldsTranslatorComponent, ListenEvent>(...);
+        SubscribeLocalEvent<IntrinsicTranslatorComponent, DetermineEntityLanguagesEvent>(OnDetermineLanguages);
+        SubscribeLocalEvent<HoldsTranslatorComponent, DetermineEntityLanguagesEvent>(OnDetermineLanguages);
+        SubscribeLocalEvent<ImplantedTranslatorComponent, DetermineEntityLanguagesEvent>(OnDetermineLanguages);
 
         SubscribeLocalEvent<HandheldTranslatorComponent, ActivateInWorldEvent>(OnTranslatorToggle);
         SubscribeLocalEvent<HandheldTranslatorComponent, PowerCellSlotEmptyEvent>(OnPowerCellSlotEmpty);
 
-        SubscribeLocalEvent<HandheldTranslatorComponent, InteractHandEvent>(
-            (uid, component, args) => TranslatorEquipped(args.User, uid, component));
-        SubscribeLocalEvent<HandheldTranslatorComponent, DroppedEvent>(
-            (uid, component, args) => TranslatorUnequipped(args.User, uid, component));
+        // TODO: why does this use InteractHandEvent??
+        SubscribeLocalEvent<HandheldTranslatorComponent, InteractHandEvent>(OnTranslatorInteract);
+        SubscribeLocalEvent<HandheldTranslatorComponent, DroppedEvent>(OnTranslatorDropped);
     }
 
-    private void ApplyTranslation(EntityUid uid, IntrinsicTranslatorComponent component,
+    private void OnDetermineLanguages(EntityUid uid, IntrinsicTranslatorComponent component,
         DetermineEntityLanguagesEvent ev)
     {
         if (!component.Enabled)
@@ -111,19 +109,21 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         }
     }
 
-    private void TranslatorEquipped(EntityUid holder, EntityUid translator, HandheldTranslatorComponent component)
+    private void OnTranslatorInteract( EntityUid translator, HandheldTranslatorComponent component, InteractHandEvent args)
     {
+        var holder = args.User;
         if (!EntityManager.HasComponent<LanguageSpeakerComponent>(holder))
             return;
 
-        var intrinsic = EntityManager.EnsureComponent<HoldsTranslatorComponent>(holder);
+        var intrinsic = EnsureComp<HoldsTranslatorComponent>(holder);
         UpdateBoundIntrinsicComp(component, intrinsic, component.Enabled);
 
         UpdatedLanguages(holder);
     }
 
-    private void TranslatorUnequipped(EntityUid holder, EntityUid translator, HandheldTranslatorComponent component)
+    private void OnTranslatorDropped(EntityUid translator, HandheldTranslatorComponent component, DroppedEvent args)
     {
+        var holder = args.User;
         if (!EntityManager.TryGetComponent<HoldsTranslatorComponent>(holder, out var intrinsic))
             return;
 
@@ -131,7 +131,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         {
 
             intrinsic.Enabled = false;
-            EntityManager.RemoveComponent(holder, intrinsic);
+            RemCompDeferred(holder, intrinsic);
         }
 
         _language.EnsureValidLanguage(holder);
@@ -149,7 +149,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         if (Transform(args.Target).ParentUid is { Valid: true } holder && EntityManager.HasComponent<LanguageSpeakerComponent>(holder))
         {
             // This translator is held by a language speaker and thus has an intrinsic counterpart bound to it. Make sure it's up-to-date.
-            var intrinsic = EntityManager.EnsureComponent<HoldsTranslatorComponent>(holder);
+            var intrinsic = EnsureComp<HoldsTranslatorComponent>(holder);
             var isEnabled = !component.Enabled;
             if (intrinsic.Issuer != component)
             {
@@ -238,6 +238,6 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
 
     private void UpdatedLanguages(EntityUid uid)
     {
-        RaiseLocalEvent(uid, new SharedLanguageSystem.LanguagesUpdateEvent(), true);
+        RaiseLocalEvent(uid, new LanguagesUpdateEvent(), true);
     }
 }

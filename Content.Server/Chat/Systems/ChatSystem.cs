@@ -422,7 +422,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         name = FormattedMessage.EscapeText(name);
         var wrappedMessage = WrapPublicMessage(source, name, message);
-        var obfuscated = _language.ObfuscateSpeech(source, message, language);
+        var obfuscated = _language.ObfuscateSpeech(message, language);
         var wrappedObfuscated = WrapPublicMessage(source, name, obfuscated);
 
         SendInVoiceRange(ChatChannel.Local, name, message, wrappedMessage, obfuscated, wrappedObfuscated, source, range, languageOverride: language);
@@ -488,7 +488,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         name = FormattedMessage.EscapeText(name);
 
         var language = languageOverride ?? _language.GetLanguage(source);
-        var languageObfuscatedMessage = _language.ObfuscateSpeech(source, message, language);
+        var languageObfuscatedMessage = _language.ObfuscateSpeech(message, language);
 
 
         foreach (var (session, data) in GetRecipients(source, WhisperMuffledRange))

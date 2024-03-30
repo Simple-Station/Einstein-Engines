@@ -8,9 +8,9 @@ namespace Content.Server.Language.Commands;
 [AnyCommand]
 public sealed class ListLanguagesCommand : IConsoleCommand
 {
-    public string Command => "lslangs";
-    public string Description => "List languages your current entity can speak at the current moment.";
-    public string Help => "lslangs";
+    public string Command => "languagelist";
+    public string Description => Loc.GetString("command-list-langs-desc");
+    public string Help => Loc.GetString("command-list-langs-help", ("command", Command));
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
@@ -33,7 +33,7 @@ public sealed class ListLanguagesCommand : IConsoleCommand
 
         var (spokenLangs, knownLangs) = languages.GetAllLanguages(playerEntity);
 
-        shell.WriteLine("Spoken: " + string.Join(", ", spokenLangs));
-        shell.WriteLine("Understood: " + string.Join(", ", knownLangs));
+        shell.WriteLine("Spoken:\n" + string.Join("\n", spokenLangs));
+        shell.WriteLine("Understood:\n" + string.Join("\n", knownLangs));
     }
 }

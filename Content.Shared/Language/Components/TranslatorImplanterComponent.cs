@@ -24,7 +24,7 @@ public sealed partial class TranslatorImplanterComponent : Component
     /// <summary>
     ///   If true, only allows to use this implanter on mobs.
     /// </summary>
-    [DataField("mobs-only")]
+    [DataField("mobsOnly")]
     public bool MobsOnly = true;
 
     /// <summary>

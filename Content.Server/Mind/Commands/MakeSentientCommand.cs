@@ -63,9 +63,7 @@ namespace Content.Server.Mind.Commands
                 var speaker = entityManager.EnsureComponent<LanguageSpeakerComponent>(uid);
                 // The logic is simple, if the speaker knows any language (like monkey or robot), it should keep speaking that language
                 if (speaker.SpokenLanguages.Count == 0)
-                {
-                    language.AddLanguage(speaker, SharedLanguageSystem.GalacticCommon.ID);
-                }
+                    language.AddLanguage(speaker, SharedLanguageSystem.FallbackLanguagePrototype);
             }
 
             entityManager.EnsureComponent<ExaminerComponent>(uid);

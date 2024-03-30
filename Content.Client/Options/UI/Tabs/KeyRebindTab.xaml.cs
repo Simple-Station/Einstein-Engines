@@ -209,10 +209,10 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.CycleChatChannelForward);
             AddButton(ContentKeyFunctions.CycleChatChannelBackward);
             AddButton(ContentKeyFunctions.OpenCharacterMenu);
-            AddButton(ContentKeyFunctions.OpenLanguageMenu);
             AddButton(ContentKeyFunctions.OpenCraftingMenu);
             AddButton(ContentKeyFunctions.OpenGuidebook);
             AddButton(ContentKeyFunctions.OpenInventoryMenu);
+            AddButton(ContentKeyFunctions.OpenLanguageMenu);
             AddButton(ContentKeyFunctions.OpenAHelp);
             AddButton(ContentKeyFunctions.OpenActionsMenu);
             AddButton(ContentKeyFunctions.OpenEntitySpawnWindow);

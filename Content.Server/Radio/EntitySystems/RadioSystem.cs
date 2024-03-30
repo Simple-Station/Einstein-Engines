@@ -56,8 +56,8 @@ public sealed class RadioSystem : EntitySystem
     private void OnIntrinsicReceive(EntityUid uid, IntrinsicRadioReceiverComponent component, ref RadioReceiveEvent args)
     {
         if (TryComp(uid, out ActorComponent? actor))
-            {
-            // Frontier - languages mechanic
+        {
+            // Einstein-Engines - languages mechanic
             var listener = component.Owner;
             var msg = args.UnderstoodChatMsg;
             if (listener != null && !_language.CanUnderstand(listener, args.Language))
@@ -85,9 +85,7 @@ public sealed class RadioSystem : EntitySystem
     public void SendRadioMessage(EntityUid messageSource, string message, RadioChannelPrototype channel, EntityUid radioSource, LanguagePrototype? language = null, bool escapeMarkup = true)
     {
         if (language == null)
-        {
             language = _language.GetLanguage(messageSource);
-        }
 
         // TODO if radios ever garble / modify messages, feedback-prevention needs to be handled better than this.
         if (!_messages.Add(message))
@@ -123,7 +121,7 @@ public sealed class RadioSystem : EntitySystem
         var msg = new ChatMessage(ChatChannel.Radio, content, wrappedMessage, NetEntity.Invalid, null);
 
         // ... you guess it
-        var obfuscated = _language.ObfuscateSpeech(null, content, language);
+        var obfuscated = _language.ObfuscateSpeech(content, language);
         var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated);
         var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, NetEntity.Invalid, null);
 

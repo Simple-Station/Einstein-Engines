@@ -21,14 +21,12 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
     {
         RobustXamlLoader.Load(this);
         _clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
-
-        Title = Loc.GetString("language-menu-window-title");
     }
 
     public void UpdateState(string currentLanguage, List<string> spokenLanguages)
     {
-        var langName = LanguagePrototype.GetLocalizedName(currentLanguage);
-        CurrentLanguageLabel.Text = Loc.GetString("language-menu-current-language", ("language", langName ?? "<error>"));
+        var langName = Loc.GetString($"language-{currentLanguage}-name");
+        CurrentLanguageLabel.Text = Loc.GetString("language-menu-current-language", ("language", langName));
 
         OptionsList.RemoveAllChildren();
         _entries.Clear();
@@ -64,7 +62,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
             header.SeparationOverride = 2;
 
             var name = new Label();
-            name.Text = proto?.LocalizedName ?? "<error>";
+            name.Text = proto?.Name ?? "<error>";
             name.MinWidth = 50;
             name.HorizontalExpand = true;
 
@@ -86,7 +84,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
             body.Margin = new Thickness(4f, 4f);
 
             var description = new RichTextLabel();
-            description.SetMessage(proto?.LocalizedDescription ?? "<error>");
+            description.SetMessage(proto?.Description ?? "<error>");
             description.HorizontalExpand = true;
 
             body.AddChild(description);
