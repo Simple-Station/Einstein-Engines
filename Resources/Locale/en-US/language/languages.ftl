@@ -2,13 +2,13 @@ language-Universal-name = Universal
 language-Universal-description = What are you?
 
 language-GalacticCommon-name = Galactic common
-language-GalacticCommon-description = Commonly used for inter-species communications and official purposes.
+language-GalacticCommon-description = The standard Galatic language, most commonly used for inter-species communications and legal work.
 
 language-Bubblish-name = Bubblish
-language-Bubblish-description = The language of slimes. It's a mixture of bubbling noises and pops. Very difficult to speak without mechanical aid for humans.
+language-Bubblish-description = The language of Slimes. Being a mixture of bubbling noises and pops it's very difficult to speak for huamns without the use of mechanical aids.
 
 language-RootSpeak-name = Rootspeak
-language-RootSpeak-description = Strange whistling language spoken by the diona.
+language-RootSpeak-description = The strange whistling-style language spoken by the Diona.
 
 language-Nekomimetic-name = Nekomimetic
 language-Nekomimetic-description = To the casual observer, this langauge is an incomprehensible mess of broken Japanese. To the felinids, it's somehow comprehensible.
@@ -17,10 +17,10 @@ language-Draconic-name = Draconic
 language-Draconic-description = The common language of lizard-people, composed of sibilant hisses and rattles.
 
 language-SolCommon-name = Sol common
-language-SolCommon-description = The language species from the Sol System use between each other.
+language-SolCommon-description = The language common to species from the Sol System.
 
 language-Canilunzt-name = Canilunzt
-language-Canilunzt-description = The guttural language spoken and utilized by the inhabitants of Vazzend system, composed of growls, barks, yaps, and heavy utilization of ears and tail movements, Vulpkanin speak this language with ease.
+language-Canilunzt-description = The guttural language spoken and utilized by the inhabitants of the Vazzend system, composed of growls, barks, yaps, and heavy utilization of ears and tail movements. Vulpkanin speak this language with ease.
 
 language-Moffic-name = Moffic
 language-Moffic-description = The language of the mothpeople borders on complete unintelligibility.
