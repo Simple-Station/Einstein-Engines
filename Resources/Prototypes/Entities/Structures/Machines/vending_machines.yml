@@ -1598,9 +1598,6 @@
     snap:
     - Wallmount
   components:
-  - type: Physics
-    canCollide: false
-  - type: Fixtures
   - type: Sprite
     drawdepth: WallMountedItems
     snapCardinals: false
