@@ -98,6 +98,17 @@
   objectType: Item
 
 - type: construction
+  name: security glasses
+  id: ClothingEyesGlassesSecurity
+  graph: GlassesSecHUD
+  startNode: start
+  targetNode: glassesSec
+  category: construction-category-clothing
+  description: A pair of sunglasses, modified to have a built-in security HUD.
+  icon: { sprite: Clothing/Eyes/Glasses/secglasses.rsi, state: icon }
+  objectType: Item
+
+- type: construction
   name: cloth wraps
   id: ClothingClothWrap
   graph: ClothingClothWrap
