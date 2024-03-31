@@ -262,5 +262,5 @@
   - CanilunztTranslatorImplanter
   - SolCommonTranslatorImplanter
   - RootSpeakTranslatorImplanter
-  #- AnimalTranslator
+  - AnimalTranslator
   - MofficTranslatorImplanter

@@ -1,4 +1,5 @@
 - type: entity
+  abstract: true
   id: TranslatorUnpowered
   parent: [ BaseItem ]
   name: Translator
@@ -24,6 +25,7 @@
     enabled: false
 
 - type: entity
+  abstract: true
   id: Translator
   parent: [ TranslatorUnpowered, PowerCellSlotMediumItem ]
   suffix: Powered
@@ -32,6 +34,7 @@
     drawRate: 1
 
 - type: entity
+  abstract: true
   id: TranslatorEmtpy
   parent: [ Translator ]
   suffix: Empty
