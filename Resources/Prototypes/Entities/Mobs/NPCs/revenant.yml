@@ -107,3 +107,6 @@
     powersToAdd:
       - XenoglossyPower
       - TelepathyPower
+  - type: Tag
+    tags:
+      - NoPaint
