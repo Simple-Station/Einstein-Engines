@@ -36,7 +36,7 @@ trait-name-NormalVisionHarpy = Trichromat Modification
 trait-description-NormalVisionHarpy = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
 
 trait-name-Southern = Southern Drawl
-trait-description-Southern = Are you wonderin' what this does?
+trait-description-Southern = You have a different way of speakin'.
 
 trait-name-NormalVisionVulpkanin = Trichromat Modification
 trait-description-NormalVisionVulpkanin = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
