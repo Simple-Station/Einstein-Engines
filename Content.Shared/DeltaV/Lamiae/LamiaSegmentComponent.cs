@@ -15,15 +15,17 @@ namespace Content.Shared.DeltaV.Lamiae
     [NetworkedComponent]
     public sealed partial class LamiaSegmentComponent : Component
     {
+        [DataField("AttachedToUid")]
         public EntityUid AttachedToUid = default!;
         public float DamageModifyFactor = default!;
         public float OffsetSwitching = default!;
         public float ScaleFactor = default!;
+        [DataField("DamageModifierCoefficient")]
         public float DamageModifierCoefficient = default!;
         public float ExplosiveModifyFactor = default!;
         public float OffsetConstant = default!;
+        [DataField("Lamia")]
         public EntityUid Lamia = default!;
-        public bool BulletPassover = default!;
         public int MaxSegments = default!;
         public int SegmentNumber = default!;
         public float DamageModifierConstant = default!;

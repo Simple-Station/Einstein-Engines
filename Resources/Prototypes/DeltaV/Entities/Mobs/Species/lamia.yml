@@ -138,13 +138,13 @@
       0: Alive
       200: Critical #these values aren't final'
       300: Dead #these values aren't final'
-  - type: SlowOnDamage 
+  - type: SlowOnDamage
     speedModifierThresholds: #these values aren't final, adjust accordingly with thresholds above'
       60: 0.9
       80: 0.8
       100: 0.7
       120: 0.6
-      140: 0.5  
+      140: 0.5
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Generic_mob_burning
@@ -195,7 +195,7 @@
         layer:
         - MobLayer
   - type: Lamia
-    numberOfSegments: 30
+    numberOfSegments: 18
   - type: Speech
     speechSounds: Alto
   - type: Vocal

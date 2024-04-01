@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Shared.Ghost;
-using Content.Shared.DeltaV.Lamiae; //DeltaV
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Pulling;
@@ -84,6 +83,9 @@ public abstract class SharedPortalSystem : EntitySystem
 
     private void OnCollide(EntityUid uid, PortalComponent component, ref StartCollideEvent args)
     {
+        if (HasComp<PortalExemptComponent>(args.OtherEntity))
+            return;
+
         if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId, args.OurFixture, args.OtherFixture))
             return;
 
@@ -104,13 +106,6 @@ public abstract class SharedPortalSystem : EntitySystem
         {
             _pulling.TryStopPull(subjectPulling);
         }
-
-        //Start DeltaV Code: Prevent Lamia Segments from entering portals
-        if (HasComp<LamiaSegmentComponent>(subject))
-        {
-            return;
-        }
-        //End DeltaV Code
 
         // if they came from another portal, just return and wait for them to exit the portal
         if (HasComp<PortalTimeoutComponent>(subject))

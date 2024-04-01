@@ -1,9 +1,3 @@
-/*
-* Delta-V - This file is licensed under AGPLv3
-* Copyright (c) 2024 Delta-V Contributors
-* See AGPLv3.txt for details.
-*/
-
 using Robust.Shared.Physics;
 using Content.Shared.Damage;
 using Content.Shared.Explosion;
@@ -14,7 +8,6 @@ using Content.Server.Humanoid;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Tag;
 using Content.Shared.Teleportation.Components;
-using Content.Shared.Standing;
 using Content.Shared.Storage.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
@@ -22,6 +15,10 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
 using Content.Shared.DeltaV.Lamiae;
+using Robust.Shared.Physics.Events;
+using Content.Shared.Projectiles;
+using Content.Shared.Weapons.Ranged.Events;
+using System.Linq;
 
 namespace Content.Server.DeltaV.Lamiae
 {
@@ -32,7 +29,6 @@ namespace Content.Server.DeltaV.Lamiae
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-        [Dependency] private readonly StandingStateSystem _standing = default!;
 
         [ValidatePrototypeId<TagPrototype>]
         private const string LamiaHardsuitTag = "AllowLamiaHardsuit";
@@ -64,7 +60,7 @@ namespace Content.Server.DeltaV.Lamiae
                     var revoluteJoint = _jointSystem.CreateWeldJoint(attachedUid, segmentUid, id: "Segment" + segment.segment.SegmentNumber + segment.segment.Lamia);
                     revoluteJoint.CollideConnected = false;
                 }
-                if (segment.segment.SegmentNumber < segment.segment.MaxSegments)
+                if (segment.segment.SegmentNumber <= segment.segment.MaxSegments)
                     Transform(segmentUid).Coordinates = Transform(attachedUid).Coordinates.Offset(new Vector2(0, segment.segment.OffsetSwitching));
                 else
                     Transform(segmentUid).Coordinates = Transform(attachedUid).Coordinates.Offset(new Vector2(0, segment.segment.OffsetSwitching));
@@ -82,6 +78,7 @@ namespace Content.Server.DeltaV.Lamiae
             SubscribeLocalEvent<LamiaComponent, ComponentShutdown>(OnShutdown);
             SubscribeLocalEvent<LamiaComponent, JointRemovedEvent>(OnJointRemoved);
             SubscribeLocalEvent<LamiaComponent, EntGotRemovedFromContainerMessage>(OnRemovedFromContainer);
+            SubscribeLocalEvent<LamiaComponent, HitScanAfterRayCastEvent>(OnShootHitscan);
             SubscribeLocalEvent<LamiaSegmentComponent, SegmentSpawnedEvent>(OnSegmentSpawned);
             SubscribeLocalEvent<LamiaSegmentComponent, DamageChangedEvent>(HandleDamageTransfer);
             SubscribeLocalEvent<LamiaSegmentComponent, DamageModifyEvent>(HandleSegmentDamage);
@@ -89,8 +86,8 @@ namespace Content.Server.DeltaV.Lamiae
             SubscribeLocalEvent<LamiaSegmentComponent, InsertIntoEntityStorageAttemptEvent>(OnSegmentStorageInsertAttempt);
             SubscribeLocalEvent<LamiaComponent, DidEquipEvent>(OnDidEquipEvent);
             SubscribeLocalEvent<LamiaComponent, DidUnequipEvent>(OnDidUnequipEvent);
-            SubscribeLocalEvent<LamiaSegmentComponent, StandAttemptEvent>(TailCantStand);
             SubscribeLocalEvent<LamiaSegmentComponent, GetExplosionResistanceEvent>(OnSnekBoom);
+            SubscribeLocalEvent<LamiaSegmentComponent, PreventCollideEvent>(PreventShootSelf);
         }
 
         /// <summary>
@@ -104,8 +101,6 @@ namespace Content.Server.DeltaV.Lamiae
         private void OnSegmentSpawned(EntityUid uid, LamiaSegmentComponent component, SegmentSpawnedEvent args)
         {
             component.Lamia = args.Lamia;
-            if (component.BulletPassover == true)
-                _standing.Down(uid, false);
 
             if (!TryComp<HumanoidAppearanceComponent>(uid, out var species)) return;
             if (!TryComp<HumanoidAppearanceComponent>(args.Lamia, out var humanoid)) return;
@@ -127,7 +122,7 @@ namespace Content.Server.DeltaV.Lamiae
 
         private void OnInit(EntityUid uid, LamiaComponent component, ComponentInit args)
         {
-            Math.Clamp(component.NumberOfSegments, 2, 30);
+            Math.Clamp(component.NumberOfSegments, 2, 18);
             Math.Clamp(component.TaperOffset, 1, component.NumberOfSegments - 1);
             SpawnSegments(uid, component);
         }
@@ -146,8 +141,6 @@ namespace Content.Server.DeltaV.Lamiae
         {
             if (!component.Segments.Contains(args.OtherEntity))
                 return;
-
-            if (HasComp<PortalTimeoutComponent>(uid)) return;
 
             foreach (var segment in component.Segments)
                 QueueDel(segment);
@@ -179,17 +172,11 @@ namespace Content.Server.DeltaV.Lamiae
             _damageableSystem.TryChangeDamage(component.Lamia, args.DamageDelta);
         }
 
-        private void TailCantStand(EntityUid uid, LamiaSegmentComponent component, StandAttemptEvent args)
-        {
-            if (component.BulletPassover == true)
-                args.Cancel();
-        }
-
         public void SpawnSegments(EntityUid uid, LamiaComponent component)
         {
             int i = 1;
             var addTo = uid;
-            while (i < component.NumberOfSegments + 1)
+            while (i <= component.NumberOfSegments + 1)
             {
                 var segment = AddSegment(addTo, uid, component, i);
                 addTo = segment;
@@ -197,24 +184,22 @@ namespace Content.Server.DeltaV.Lamiae
             }
         }
 
-        private EntityUid AddSegment(EntityUid uid, EntityUid lamia, LamiaComponent lamiaComponent, int segmentNumber)
+        private EntityUid AddSegment(EntityUid segmentuid, EntityUid parentuid, LamiaComponent lamiaComponent, int segmentNumber)
         {
-            EnsureComp<LamiaSegmentComponent>(uid, out var segmentComponent);
-            segmentComponent.MaxSegments = lamiaComponent.NumberOfSegments;
-            segmentComponent.BulletPassover = lamiaComponent.BulletPassover;
-            segmentComponent.Lamia = lamia;
-            segmentComponent.AttachedToUid = uid;
+            LamiaSegmentComponent segmentComponent = new();
+            segmentComponent.Lamia = parentuid;
+            segmentComponent.AttachedToUid = segmentuid;
             segmentComponent.DamageModifierConstant = lamiaComponent.NumberOfSegments * lamiaComponent.DamageModifierOffset;
-            float taperConstant = lamiaComponent.NumberOfSegments - lamiaComponent.TaperOffset;
             float damageModifyCoefficient = segmentComponent.DamageModifierConstant / lamiaComponent.NumberOfSegments;
             segmentComponent.DamageModifyFactor = segmentComponent.DamageModifierConstant * damageModifyCoefficient;
             segmentComponent.ExplosiveModifyFactor = 1 / segmentComponent.DamageModifyFactor / (lamiaComponent.NumberOfSegments * lamiaComponent.ExplosiveModifierOffset);
 
+            float taperConstant = lamiaComponent.NumberOfSegments - lamiaComponent.TaperOffset;
             EntityUid segment;
             if (segmentNumber == 1)
-                segment = EntityManager.SpawnEntity(lamiaComponent.InitialSegmentId, Transform(uid).Coordinates);
+                segment = EntityManager.SpawnEntity(lamiaComponent.InitialSegmentId, Transform(segmentuid).Coordinates);
             else
-                segment = EntityManager.SpawnEntity(lamiaComponent.SegmentId, Transform(uid).Coordinates);
+                segment = EntityManager.SpawnEntity(lamiaComponent.SegmentId, Transform(segmentuid).Coordinates);
             if (segmentNumber >= taperConstant && lamiaComponent.UseTaperSystem == true)
             {
                 segmentComponent.OffsetSwitching = lamiaComponent.StaticOffset * MathF.Pow(lamiaComponent.OffsetConstant, segmentNumber - taperConstant);
@@ -230,10 +215,12 @@ namespace Content.Server.DeltaV.Lamiae
                 segmentComponent.OffsetSwitching *= -1;
             }
 
+            segmentComponent.Owner = segment;
             segmentComponent.SegmentNumber = segmentNumber;
-
-            _segments.Enqueue((segmentComponent, lamia));
-            lamiaComponent.Segments.Add(uid);
+            EntityManager.AddComponent(segment, segmentComponent, true);
+            EnsureComp<PortalExemptComponent>(segment);
+            _segments.Enqueue((segmentComponent, parentuid));
+            lamiaComponent.Segments.Add(segment);
             return segment;
         }
 
@@ -277,6 +264,29 @@ namespace Content.Server.DeltaV.Lamiae
                     _appearance.SetData(uid, LamiaSegmentVisualLayers.Armor, false, appearance);
                 }
             }
+        }
+
+        private void PreventShootSelf(EntityUid uid, LamiaSegmentComponent component, ref PreventCollideEvent args)
+        {
+            if (!TryComp<ProjectileComponent>(args.OtherEntity, out var projectileComponent)) return;
+
+            if (projectileComponent.Shooter == component.Lamia)
+            {
+                args.Cancelled = true;
+            }
+        }
+
+        private void OnShootHitscan(EntityUid uid, LamiaComponent component, ref HitScanAfterRayCastEvent args)
+        {
+            if (args.RayCastResults == null) return;
+
+            var entityList = new List<RayCastResults>();
+            foreach (var entity in args.RayCastResults)
+            {
+                if (!component.Segments.Contains(entity.HitEntity))
+                    entityList.Add(entity);
+            }
+            args.RayCastResults = entityList;
         }
     }
 }

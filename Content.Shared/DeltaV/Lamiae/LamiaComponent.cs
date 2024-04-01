@@ -15,6 +15,7 @@ namespace Content.Shared.DeltaV.Lamiae
         /// <summary>
         /// A list of each UID attached to the Lamia, in order of spawn
         /// </summary>
+        [DataField("segments")]
         public List<EntityUid> Segments = new();
 
         /// <summary>
