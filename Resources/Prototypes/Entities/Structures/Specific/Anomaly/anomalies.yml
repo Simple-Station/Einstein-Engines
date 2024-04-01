@@ -21,6 +21,7 @@
     anchored: false
   - type: Physics
     bodyType: Static
+    bodyStatus: InAir
   - type: Fixtures
     fixtures:
       fix1:
@@ -48,8 +49,11 @@
     sound:
       path: /Audio/Effects/teleport_arrival.ogg
   - type: Psionic #Nyano - Summary: makes psionic on creation.
-  - type: GlimmerSource #Nyano - Summary: makes this a potential source of Glimmer. 
+  - type: GlimmerSource #Nyano - Summary: makes this a potential source of Glimmer.
     active: false
+  - type: SecretDataAnomaly
+    randomStartSecretMin: 0
+    randomStartSecretMax: 2
 
 - type: entity
   id: AnomalyPyroclastic
@@ -601,7 +605,7 @@
     color: "#6270bb"
   - type: Anomaly
     animationTime: 6
-    offset: 0.05, 0
+    offset: 0, 0
     corePrototype: AnomalyCoreFlora
     coreInertPrototype: AnomalyCoreFloraInert
     anomalyContactDamage:
