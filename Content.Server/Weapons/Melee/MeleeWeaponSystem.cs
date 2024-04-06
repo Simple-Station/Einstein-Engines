@@ -154,43 +154,17 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         PopupSystem.PopupEntity(msgOther, user, filterOther, true);
         PopupSystem.PopupEntity(msgUser, target, user);
 
-        Audio.PlayPvs(combatMode.DisarmSuccessSound, user, AudioParams.Default.WithVariation(0.025f).WithVolume(5f));
+        _audio.PlayPvs(combatMode.DisarmSuccessSound, user, AudioParams.Default.WithVariation(0.025f).WithVolume(5f));
         AdminLogger.Add(LogType.DisarmedAction, $"{ToPrettyString(user):user} used disarm on {ToPrettyString(target):target}");
-
+q
         var eventArgs = new DisarmedEvent { Target = target, Source = user, PushProbability = 1 - chance };
         RaiseLocalEvent(target, eventArgs);
 
         if (!eventArgs.Handled)
-        {
             return false;
-        }
 
         _audio.PlayPvs(combatMode.DisarmSuccessSound, user, AudioParams.Default.WithVariation(0.025f).WithVolume(5f));
         AdminLogger.Add(LogType.DisarmedAction, $"{ToPrettyString(user):user} used disarm on {ToPrettyString(target):target}");
-
-        var targetEnt = Identity.Entity(target, EntityManager);
-        var userEnt = Identity.Entity(user, EntityManager);
-
-        var msgOther = Loc.GetString(
-                eventArgs.PopupPrefix + "popup-message-other-clients",
-                ("performerName", userEnt),
-                ("targetName", targetEnt));
-
-        var msgUser = Loc.GetString(eventArgs.PopupPrefix + "popup-message-cursor", ("targetName", targetEnt));
-
-        var filterOther = Filter.PvsExcept(user, entityManager: EntityManager);
-
-        PopupSystem.PopupEntity(msgOther, user, filterOther, true);
-        PopupSystem.PopupEntity(msgUser, target, user);
-
-        if (eventArgs.IsStunned)
-        {
-
-            PopupSystem.PopupEntity(Loc.GetString("stunned-component-disarm-success-others", ("source", userEnt), ("target", targetEnt)), targetEnt, Filter.PvsExcept(user), true, PopupType.LargeCaution);
-            PopupSystem.PopupCursor(Loc.GetString("stunned-component-disarm-success", ("target", targetEnt)), user, PopupType.Large);
-
-            AdminLogger.Add(LogType.DisarmedKnockdown, LogImpact.Medium, $"{ToPrettyString(user):user} knocked down {ToPrettyString(target):target}");
-        }
 
         return true;
     }
