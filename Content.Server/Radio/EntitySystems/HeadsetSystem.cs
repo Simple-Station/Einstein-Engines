@@ -109,7 +109,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
             var canUnderstand = _language.CanUnderstand(parent, args.Language);
             var msg = new MsgChatMessage
             {
-                Message = canUnderstand ? args.UnderstoodChatMsg : args.NotUnderstoodChatMsg
+                Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
             };
             _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
         }
