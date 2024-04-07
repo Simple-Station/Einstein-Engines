@@ -1,6 +1,7 @@
 using Content.Shared.Examine;
 using Content.Shared.Language.Components;
 using Content.Shared.Toggleable;
+using HandheldTranslatorComponent = Content.Shared.Language.Components.Translators.HandheldTranslatorComponent;
 
 namespace Content.Shared.Language.Systems;
 

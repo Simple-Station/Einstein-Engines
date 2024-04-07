@@ -12,9 +12,10 @@ using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using Content.Shared.PowerCell;
 using static Content.Server.Language.LanguageSystem;
-using HandheldTranslatorComponent = Content.Shared.Language.Components.HandheldTranslatorComponent;
-using HoldsTranslatorComponent = Content.Shared.Language.Components.HoldsTranslatorComponent;
-using IntrinsicTranslatorComponent = Content.Shared.Language.Components.IntrinsicTranslatorComponent;
+using HandheldTranslatorComponent = Content.Shared.Language.Components.Translators.HandheldTranslatorComponent;
+using HoldsTranslatorComponent = Content.Shared.Language.Components.Translators.HoldsTranslatorComponent;
+using ImplantedTranslatorComponent = Content.Shared.Language.Components.Translators.ImplantedTranslatorComponent;
+using IntrinsicTranslatorComponent = Content.Shared.Language.Components.Translators.IntrinsicTranslatorComponent;
 
 namespace Content.Server.Language;
 

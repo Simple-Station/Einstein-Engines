@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
-namespace Content.Shared.Language.Components;
+namespace Content.Shared.Language.Components.Translators;
 
 public abstract partial class BaseTranslatorComponent : Component
 {
@@ -43,45 +43,4 @@ public abstract partial class BaseTranslatorComponent : Component
 
     [DataField("enabled"), ViewVariables(VVAccess.ReadWrite)]
     public bool Enabled = true;
-}
-
-/// <summary>
-///   A translator that must be held in a hand or a pocket of an entity in order ot have effect.
-/// </summary>
-[RegisterComponent]
-public sealed partial class HandheldTranslatorComponent : BaseTranslatorComponent
-{
-    /// <summary>
-    ///   Whether or not interacting with this translator
-    ///   toggles it on or off.
-    /// </summary>
-    [DataField("toggleOnInteract")]
-    public bool ToggleOnInteract = true;
-}
-
-/// <summary>
-///   A translator attached to an entity that translates its speech.
-///   An example is a translator implant that allows the speaker to speak another language.
-/// </summary>
-[RegisterComponent, Virtual]
-public partial class IntrinsicTranslatorComponent : BaseTranslatorComponent
-{
-}
-
-/// <summary>
-///   Applied internally to the holder of [HandheldTranslatorComponent].
-///   Do not use directly. Use [HandheldTranslatorComponent] instead.
-/// </summary>
-[RegisterComponent]
-public sealed partial class HoldsTranslatorComponent : IntrinsicTranslatorComponent
-{
-    public Component? Issuer = null;
-}
-
-/// <summary>
-///   Applied to entities who were injected with a translator implant.
-/// </summary>
-[RegisterComponent]
-public sealed partial class ImplantedTranslatorComponent : IntrinsicTranslatorComponent
-{
 }

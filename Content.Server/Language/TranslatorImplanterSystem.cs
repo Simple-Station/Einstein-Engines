@@ -8,6 +8,7 @@ using Content.Shared.Language.Components;
 using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using Content.Shared.Mobs.Components;
+using ImplantedTranslatorComponent = Content.Shared.Language.Components.Translators.ImplantedTranslatorComponent;
 
 namespace Content.Server.Language;
 
