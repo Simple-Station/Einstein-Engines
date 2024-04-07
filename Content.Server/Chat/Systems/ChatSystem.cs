@@ -48,7 +48,6 @@ namespace Content.Server.Chat.Systems;
 /// </summary>
 public sealed partial class ChatSystem : SharedChatSystem
 {
-    public const float DefaultObfuscationFactor = 0.2f;
     [Dependency] private readonly IReplayRecordingManager _replay = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
@@ -73,6 +72,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
+    public const float DefaultObfuscationFactor = 0.2f; // Einstein Engines - percentage of symbols in a whispered message that can be seen even by "far" listeners
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
@@ -395,6 +395,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
 
+        // The original message
         var message = TransformSpeech(source, FormattedMessage.RemoveMarkup(originalMessage));
 
         if (message.Length == 0)
@@ -421,8 +422,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         var language = languageOverride ?? _language.GetLanguage(source);
 
         name = FormattedMessage.EscapeText(name);
+        // The chat message wrapped in a "x says y" string
         var wrappedMessage = WrapPublicMessage(source, name, message);
+        // The chat message obfuscated via language obfuscation
         var obfuscated = _language.ObfuscateSpeech(message, language);
+        // The language-obfuscated message wrapped in a "x says y" string
         var wrappedObfuscated = WrapPublicMessage(source, name, obfuscated);
 
         SendInVoiceRange(ChatChannel.Local, name, message, wrappedMessage, obfuscated, wrappedObfuscated, source, range, languageOverride: language);
@@ -490,7 +494,6 @@ public sealed partial class ChatSystem : SharedChatSystem
         var language = languageOverride ?? _language.GetLanguage(source);
         var languageObfuscatedMessage = _language.ObfuscateSpeech(message, language);
 
-
         foreach (var (session, data) in GetRecipients(source, WhisperMuffledRange))
         {
             if (session.AttachedEntity is not { Valid: true } listener)
@@ -499,38 +502,38 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
-            var canUnderstand = _language.CanUnderstand(listener, language);
-            var finalMessage = canUnderstand ? message : languageObfuscatedMessage;
+            var canUnderstandLanguage = _language.CanUnderstand(listener, language);
+            // How the entity perceives the message depends on whether it can understand its language
+            var perceivedMessage = canUnderstandLanguage ? message : languageObfuscatedMessage;
 
+            // Result is the intermediate message derived from the perceived one via obfuscation
+            // Wrapped message is the result wrapped in an "x says y" string
+            string result, wrappedMessage;
             if (data.Range <= WhisperClearRange)
             {
-                var wrappedResult = Loc.GetString("chat-manager-entity-whisper-wrap-message",
+                // Scenario 1: the listener can clearly understand the message
+                result = perceivedMessage;
+                wrappedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message",
                     ("entityName", name),
-                    ("message", FormattedMessage.EscapeText(finalMessage)));
-
-                // If the listener is in the clear range, do not perform further obfuscations
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, finalMessage, wrappedResult, source, false, session.Channel);
+                    ("message", FormattedMessage.EscapeText(result)));
             }
             else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange, Shared.Physics.CollisionGroup.Opaque))
             {
-
-                // If the listener is too far, they only hear fragments of the message
+                // Scenerio 2: if the listener is too far, they only hear fragments of the message
                 // Collisiongroup.Opaque is not ideal for this use. Preferably, there should be a check specifically with "Can Ent1 see Ent2" in mind
-                var result = ObfuscateMessageReadability(finalMessage);
-                var wrappedResult = Loc.GetString("chat-manager-entity-whisper-wrap-message",
+                result = ObfuscateMessageReadability(perceivedMessage);
+                wrappedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message",
                     ("entityName", nameIdentity), ("message", FormattedMessage.EscapeText(result)));
-
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedResult, source, false, session.Channel);
             }
             else
             {
-                //If listener is too far and has no line of sight, they can't identify the whisperer's identity
-                var result = ObfuscateMessageReadability(finalMessage);
-                var wrappedResult = Loc.GetString("chat-manager-entity-whisper-unknown-wrap-message",
+                // Scenario 3: If listener is too far and has no line of sight, they can't identify the whisperer's identity
+                result = ObfuscateMessageReadability(perceivedMessage);
+                wrappedMessage = Loc.GetString("chat-manager-entity-whisper-unknown-wrap-message",
                     ("message", FormattedMessage.EscapeText(result)));
-
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedResult, source, false, session.Channel);
             }
+
+            _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedMessage, source, false, session.Channel);
         }
 
         var replayWrap = Loc.GetString("chat-manager-entity-whisper-wrap-message",
@@ -713,6 +716,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             EntityUid listener = session.AttachedEntity.Value;
 
 
+            // If the channel does not support languages, or the entity can understand the message, send the original message, otherwise send the obfuscated version
             if (channel == ChatChannel.LOOC || channel == ChatChannel.Emotes || _language.CanUnderstand(listener, language))
             {
                 _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.Channel, author: author);
@@ -830,6 +834,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         return msg;
     }
 
+    /// <summary>
+    ///     Wraps a message sent by the specified entity into an "x says y" string.
+    /// </summary>
     public string WrapPublicMessage(EntityUid source, string name, string message)
     {
         var speech = GetSpeechVerb(source, message);
