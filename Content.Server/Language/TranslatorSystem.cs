@@ -1,21 +1,13 @@
 using System.Linq;
 using Content.Server.Popups;
 using Content.Server.PowerCell;
-using Content.Shared.Hands;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Inventory;
-using Content.Shared.Inventory.Events;
 using Content.Shared.Language;
-using Content.Shared.Language.Components;
 using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using Content.Shared.PowerCell;
-using static Content.Server.Language.LanguageSystem;
-using HandheldTranslatorComponent = Content.Shared.Language.Components.Translators.HandheldTranslatorComponent;
-using HoldsTranslatorComponent = Content.Shared.Language.Components.Translators.HoldsTranslatorComponent;
-using ImplantedTranslatorComponent = Content.Shared.Language.Components.Translators.ImplantedTranslatorComponent;
-using IntrinsicTranslatorComponent = Content.Shared.Language.Components.Translators.IntrinsicTranslatorComponent;
+using Content.Shared.Language.Components.Translators;
 
 namespace Content.Server.Language;
 
