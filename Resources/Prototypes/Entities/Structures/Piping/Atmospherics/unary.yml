@@ -307,7 +307,6 @@
   suffix: Enabled
   components:
   - type: GasThermoMachine
-    enabled: true
   - type: ApcPowerReceiver
     powerDisabled: false
 
@@ -352,7 +351,6 @@
   suffix: Enabled
   components:
   - type: GasThermoMachine
-    enabled: true
   - type: ApcPowerReceiver
     powerDisabled: false
 
