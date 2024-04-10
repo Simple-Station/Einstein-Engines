@@ -62,7 +62,6 @@ namespace Content.Server.IoC
             IoCManager.Register<ServerDbEntryManager>();
             IoCManager.Register<JoinQueueManager>();
             IoCManager.Register<DiscordAuthManager>();
-            IoCManager.Register<ServerApi>();
         }
     }
 }
