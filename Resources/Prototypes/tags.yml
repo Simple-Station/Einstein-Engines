@@ -516,6 +516,9 @@
   id: DoorElectronics
 
 - type: Tag
+  id: DoorElectronicsConfigurator
+
+- type: Tag
   id: DonkPocket
 
 - type: Tag
