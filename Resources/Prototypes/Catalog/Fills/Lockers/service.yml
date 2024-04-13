@@ -21,8 +21,6 @@
         amount: 2
       - id: RagItem
         amount: 2
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
 
 #- type: entity
 #  id: LockerFormalFilled
@@ -54,8 +52,6 @@
       - id: DrinkMilkCarton
         amount: 2
       - id: DrinkSoyMilkCarton
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
 
 - type: entity
   id: ClosetJanitorFilled
@@ -81,8 +77,6 @@
         amount: 2
       - id: Plunger
         amount: 2
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
 
 - type: entity
   id: ClosetLegalFilled
@@ -117,8 +111,6 @@
       - id: ClothingUniformOveralls
       - id: ClothingHeadHatTrucker
         prob: 0.1
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
 
 - type: entity
   id: LockerBotanistLoot
