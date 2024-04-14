@@ -122,10 +122,6 @@ namespace Content.Server.Database
             modelBuilder.Entity<Round>()
                 .HasIndex(round => round.StartDate);
 
-            modelBuilder.Entity<Round>()
-                .Property(round => round.StartDate)
-                .HasDefaultValue(default(DateTime));
-
             modelBuilder.Entity<AdminLogPlayer>()
                 .HasKey(logPlayer => new {logPlayer.RoundId, logPlayer.LogId, logPlayer.PlayerUserId});
 
@@ -510,7 +506,7 @@ namespace Content.Server.Database
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         public List<Player> Players { get; set; } = default!;
 
