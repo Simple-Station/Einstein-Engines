@@ -2367,6 +2367,8 @@
     screenState: screen
   - type: Advertise
     pack: FitnessVendAds
+  - type: SpeakOnUIClosed
+    pack: FitnessVendGoodbyes
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -2409,6 +2411,8 @@
     rotateWhilePulling: true
   - type: Advertise
     pack: HotfoodAds
+  - type: SpeakOnUIClosed
+    pack: HotfoodGoodbyes
   - type: PointLight
     radius: 2
     energy: 1.6
@@ -2442,6 +2446,8 @@
     denyState: deny-unshaded
   - type: Advertise
     pack: SolsnackAds
+  - type: SpeakOnUIClosed
+    pack: SolsnackGoodbyes
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -2481,6 +2487,8 @@
     ejectState: eject-unshaded
   - type: Advertise
     pack: WeebVendAds
+  - type: SpeakOnUIClosed
+    pack: WeebVendGoodbyes
   - type: Transform
     noRot: false
   - type: Rotatable

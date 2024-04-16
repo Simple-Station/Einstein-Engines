@@ -276,7 +276,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (!Resolve(uid, ref humanoid) || MathHelper.CloseTo(humanoid.Height, height, 0.001f))
             return;
 
-        var species = _prototypeManager.Index(humanoid.Species);
+        var species = _proto.Index(humanoid.Species);
         humanoid.Height = Math.Clamp(height, species.MinHeight, species.MaxHeight);
 
         if (sync)
@@ -295,7 +295,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (!Resolve(uid, ref humanoid) || MathHelper.CloseTo(humanoid.Width, width, 0.001f))
             return;
 
-        var species = _prototypeManager.Index(humanoid.Species);
+        var species = _proto.Index(humanoid.Species);
         humanoid.Width = Math.Clamp(width, species.MinWidth, species.MaxWidth);
 
         if (sync)
@@ -314,7 +314,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (!Resolve(uid, ref humanoid))
             return;
 
-        var species = _prototypeManager.Index(humanoid.Species);
+        var species = _proto.Index(humanoid.Species);
         humanoid.Height = Math.Clamp(scale.Y, species.MinHeight, species.MaxHeight);
         humanoid.Width = Math.Clamp(scale.X, species.MinWidth, species.MaxWidth);
 

@@ -24,8 +24,7 @@
 
 - type: trait
   id: Southern
-  name: trait-southern-name
-  description: trait-southern-desc
+  category: Speech
   components:
     - type: SouthernAccent
 
