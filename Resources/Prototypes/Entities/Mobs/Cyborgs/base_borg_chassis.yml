@@ -239,7 +239,8 @@
     - AllAccessBorg
   - type: AccessReader
     access: [["Command"], ["Research"]]
-  - type: ShowSecurityIcons
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
 
 - type: entity
   id: BaseBorgChassisSyndicate
