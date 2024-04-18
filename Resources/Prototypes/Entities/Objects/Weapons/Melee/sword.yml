@@ -25,7 +25,7 @@
     angle: 80
   - type: Reflect
     enabled: true
-    reflectProb: .5
+    reflectProb: .1
     spread: 90
   - type: Item
     size: Normal
