@@ -222,7 +222,7 @@ namespace Content.Client.Inventory
 
             if (entity == null)
             {
-                button.SpriteView.SetEntity(null);
+                button.SetEntity(null);
                 return;
             }
 
@@ -234,7 +234,7 @@ namespace Content.Client.Inventory
             else
                 return;
 
-            button.SpriteView.SetEntity(viewEnt);
+            button.SetEntity(viewEnt);
         }
     }
 }
