@@ -195,6 +195,8 @@ namespace Content.Server.RoundEnd
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
+
+            // TODO full game saves
             Timer.Spawn(countdownTime, _shuttle.CallEmergencyShuttle, _countdownTokenSource.Token);
 
             ActivateCooldown();
@@ -347,6 +349,8 @@ namespace Content.Server.RoundEnd
         {
             _cooldownTokenSource?.Cancel();
             _cooldownTokenSource = new();
+
+            // TODO full game saves
             Timer.Spawn(DefaultCooldownDuration, () =>
             {
                 _cooldownTokenSource.Cancel();
