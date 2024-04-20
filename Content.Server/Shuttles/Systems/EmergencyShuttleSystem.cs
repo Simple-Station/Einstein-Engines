@@ -426,6 +426,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             }
 
             component.MapEntity = otherComp.MapEntity;
+            component.Entity = otherComp.Entity;
             component.ShuttleIndex = otherComp.ShuttleIndex;
             return;
         }
