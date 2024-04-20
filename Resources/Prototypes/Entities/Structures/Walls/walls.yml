@@ -348,20 +348,20 @@
 
 - type: entity
   parent: BaseWall
-  id: WallPlasma
-  name: plasma wall
+  id: WallPhoron
+  name: phoron wall
   components:
   - type: Tag
     tags:
       - Wall
       - RCDDeconstructWhitelist
   - type: Sprite
-    sprite: Structures/Walls/plasma.rsi
+    sprite: Structures/Walls/phoron.rsi
   - type: Icon
-    sprite: Structures/Walls/plasma.rsi
+    sprite: Structures/Walls/phoron.rsi
   - type: Construction
     graph: Girder
-    node: plasmaWall
+    node: phoronWall
   - type: Destructible
     thresholds:
     - trigger:
@@ -386,7 +386,7 @@
         acts: ["Destruction"]
   - type: IconSmooth
     key: walls
-    base: plasma
+    base: phoron
   - type: RadiationBlocker
     resistance: 5
 

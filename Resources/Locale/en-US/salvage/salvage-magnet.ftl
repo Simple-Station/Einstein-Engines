@@ -14,7 +14,7 @@ salvage-magnet-resources = {$resource ->
     [OreSalt] Salt
     [OreGold] Gold
     [OreSilver] Silver
-    [OrePlasma] Plasma
+    [OrePhoron] Phoron
     [OreUranium] Uranium
     [OreArtifactFragment] Artifact fragments
     *[other] {$resource}
@@ -49,8 +49,8 @@ salvage-map-proto-SmallParty = Birthday Party
 salvage-map-proto-SmallSyndicate = Ruined Syndicate Ship
 salvage-map-proto-SmallTesla = Tesla Containment
 
-salvage-map-proto-SmallA1 = Asteroid Plasmafire
-salvage-map-proto-Medium1 = Plasma-Trapped Cache
+salvage-map-proto-SmallA1 = Asteroid Phoronfire
+salvage-map-proto-Medium1 = Phoron-Trapped Cache
 salvage-map-proto-MediumVault1 = Vault
 salvage-map-proto-MediumOrchestra = Silent Orchestra
 salvage-map-proto-MediumLibraryWreck = Abandoned Library

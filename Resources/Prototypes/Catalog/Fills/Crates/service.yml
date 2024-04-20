@@ -314,7 +314,7 @@
           prob: 0.1
         - id: Syringe
           prob: 0.1
-        - id: ShardGlassPlasma
+        - id: ShardGlassPhoron
           prob: 0.1
 
 - type: entity

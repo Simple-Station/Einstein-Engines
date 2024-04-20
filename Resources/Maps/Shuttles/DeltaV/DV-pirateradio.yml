@@ -5156,7 +5156,7 @@ entities:
       pos: 4.5,-3.5
       parent: 1
     - type: Emagged
-- proto: ReinforcedPlasmaWindow
+- proto: ReinforcedPhoronWindow
   entities:
   - uid: 789
     components:

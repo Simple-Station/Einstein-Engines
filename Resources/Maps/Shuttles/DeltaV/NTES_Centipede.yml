@@ -12381,7 +12381,7 @@ entities:
     - type: Transform
       pos: -9.5,-7.5
       parent: 1
-- proto: TablePlasmaGlass
+- proto: TablePhoronGlass
   entities:
   - uid: 941
     components:

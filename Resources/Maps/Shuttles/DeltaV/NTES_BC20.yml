@@ -10019,7 +10019,7 @@ entities:
     - type: Transform
       pos: 9.5,-22.5
       parent: 1
-- proto: ReinforcedPlasmaWindow
+- proto: ReinforcedPhoronWindow
   entities:
   - uid: 650
     components:

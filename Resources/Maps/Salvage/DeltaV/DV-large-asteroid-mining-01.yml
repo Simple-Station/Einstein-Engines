@@ -153,7 +153,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: SpreaderGrid
-- proto: AtmosFixInstantPlasmaFireMarker
+- proto: AtmosFixInstantPhoronFireMarker
   entities:
   - uid: 292
     components:
@@ -872,7 +872,7 @@ entities:
     - type: Transform
       pos: 10.500248,-12.6178875
       parent: 298
-- proto: PlasmaOre1
+- proto: PhoronOre1
   entities:
   - uid: 240
     components:

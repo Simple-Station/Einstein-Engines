@@ -58,12 +58,12 @@
 - type: entity
   noSpawn: true
   parent: BaseMail
-  id: MailMedicalSheetPlasma
-  suffix: sheetplasma
+  id: MailMedicalSheetPhoron
+  suffix: sheetphoron
   components:
   - type: Mail
     contents:
-    - id: SheetPlasma1
+    - id: SheetPhoron1
 
 #- type: entity
 #  noSpawn: true

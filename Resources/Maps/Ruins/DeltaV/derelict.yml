@@ -1363,7 +1363,7 @@ entities:
     - type: Transform
       pos: 28.936926,46.54969
       parent: 2
-- proto: AtmosFixInstantPlasmaFireMarker
+- proto: AtmosFixInstantPhoronFireMarker
   entities:
   - uid: 2377
     components:
@@ -4539,7 +4539,7 @@ entities:
     - type: Transform
       pos: 32.441956,33.61885
       parent: 2
-- proto: PlasmaCanister
+- proto: PhoronCanister
   entities:
   - uid: 2063
     components:

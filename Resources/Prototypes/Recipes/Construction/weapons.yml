@@ -43,14 +43,14 @@
   objectType: Item
 
 - type: construction
-  name: plasma shiv
-  id: PlasmaShiv
-  graph: PlasmaShiv
+  name: phoron shiv
+  id: PhoronShiv
+  graph: PhoronShiv
   startNode: start
   targetNode: icon
   category: construction-category-weapons
-  description: A plasma shard with a piece of cloth wrapped around it.
-  icon: { sprite: Objects/Weapons/Melee/plasma_shiv.rsi, state: icon }
+  description: A phoron shard with a piece of cloth wrapped around it.
+  icon: { sprite: Objects/Weapons/Melee/phoron_shiv.rsi, state: icon }
   objectType: Item
 
 - type: construction
@@ -87,14 +87,14 @@
   objectType: Item
 
 - type: construction
-  name: crude plasma spear
-  id: SpearPlasma
-  graph: SpearPlasma
+  name: crude phoron spear
+  id: SpearPhoron
+  graph: SpearPhoron
   startNode: start
   targetNode: spear
   category: construction-category-weapons
-  description: A crude plasma spear for when you need to put holes in somebody.
-  icon: { sprite: Objects/Weapons/Melee/plasma_spear.rsi, state: spear }
+  description: A crude phoron spear for when you need to put holes in somebody.
+  icon: { sprite: Objects/Weapons/Melee/phoron_spear.rsi, state: spear }
   objectType: Item
 
 - type: construction

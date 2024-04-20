@@ -6718,7 +6718,7 @@ entities:
     - type: Transform
       pos: -36.5,-41.5
       parent: 34
-- proto: AtmosFixPlasmaMarker
+- proto: AtmosFixPhoronMarker
   entities:
   - uid: 1873
     components:
@@ -37944,7 +37944,7 @@ entities:
   - uid: 1434
     components:
     - type: MetaData
-      name: plasma mixer
+      name: phoron mixer
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -43.5,-44.5
@@ -54583,7 +54583,7 @@ entities:
   - uid: 1425
     components:
     - type: MetaData
-      name: plasma pump
+      name: phoron pump
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -40.5,-44.5
@@ -64079,7 +64079,7 @@ entities:
     - type: Transform
       pos: 37.5,-34.5
       parent: 34
-- proto: PlasmaCanister
+- proto: PhoronCanister
   entities:
   - uid: 12323
     components:
@@ -64088,7 +64088,7 @@ entities:
       parent: 34
     - type: AtmosDevice
       joinedGrid: 34
-- proto: PlasmaReinforcedWindowDirectional
+- proto: PhoronReinforcedWindowDirectional
   entities:
   - uid: 13338
     components:
@@ -68531,7 +68531,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 61.5,-29.5
       parent: 34
-- proto: ReinforcedPlasmaWindow
+- proto: ReinforcedPhoronWindow
   entities:
   - uid: 1464
     components:
@@ -70598,14 +70598,14 @@ entities:
     - type: Transform
       pos: -32.350746,-27.221853
       parent: 34
-- proto: SheetPlasma
+- proto: SheetPhoron
   entities:
   - uid: 11132
     components:
     - type: Transform
       pos: -34.59602,1.5904913
       parent: 34
-- proto: SheetPlasma1
+- proto: SheetPhoron1
   entities:
   - uid: 6248
     components:
@@ -76188,7 +76188,7 @@ entities:
     - type: Transform
       pos: 22.5,-14.5
       parent: 34
-- proto: TablePlasmaGlass
+- proto: TablePhoronGlass
   entities:
   - uid: 2953
     components:
@@ -85895,12 +85895,12 @@ entities:
     - type: Transform
       pos: -39.5,-42.5
       parent: 34
-- proto: WarningPlasma
+- proto: WarningPhoron
   entities:
   - uid: 1201
     components:
     - type: MetaData
-      name: plasma warning sign
+      name: phoron warning sign
     - type: Transform
       pos: -39.5,-44.5
       parent: 34

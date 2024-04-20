@@ -3967,7 +3967,7 @@ entities:
     - type: Transform
       pos: 2.5,-0.5
       parent: 778
-- proto: SheetPlasma
+- proto: SheetPhoron
   entities:
   - uid: 313
     components:

@@ -7651,14 +7651,14 @@ entities:
     - type: Transform
       pos: 24.34895,16.173763
       parent: 1653
-- proto: PlasmaCanister
+- proto: PhoronCanister
   entities:
   - uid: 833
     components:
     - type: Transform
       pos: 16.5,27.5
       parent: 1653
-- proto: PlasmaReinforcedWindowDirectional
+- proto: PhoronReinforcedWindowDirectional
   entities:
   - uid: 645
     components:
@@ -7706,7 +7706,7 @@ entities:
     - type: Transform
       pos: 34.5,36.5
       parent: 1653
-- proto: PlasmaTankFilled
+- proto: PhoronTankFilled
   entities:
   - uid: 1473
     components:

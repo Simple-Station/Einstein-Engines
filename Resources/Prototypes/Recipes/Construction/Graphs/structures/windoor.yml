@@ -45,12 +45,12 @@
         amount: 5
         doAfter: 1
 
-    #to plasma
+    #to phoron
     - to: pglass
       conditions:
       - !type:EntityAnchored {}
       steps:
-      - material: PlasmaGlass
+      - material: PhoronGlass
         amount: 5
         doAfter: 1
 
@@ -151,9 +151,9 @@
       - tool: Anchoring
         doAfter: 1
 
-  #plasma windoor node
+  #phoron windoor node
   - node: pglass
-    entity: WindoorAssemblyPlasma
+    entity: WindoorAssemblyPhoron
     edges:
     - to: pwired
       conditions:
@@ -175,7 +175,7 @@
         doAfter: 2
 
   - node: pwired
-    entity: WindoorAssemblyPlasma
+    entity: WindoorAssemblyPhoron
     edges:
     - to: pelectronics
       conditions:
@@ -198,7 +198,7 @@
         doAfter: 1
 
   - node: pelectronics
-    entity: WindoorAssemblyPlasma
+    entity: WindoorAssemblyPhoron
     edges:
     - to: pwindoor
       conditions:
@@ -208,7 +208,7 @@
         doAfter: 2
 
   - node: pwindoor
-    entity: WindoorPlasma
+    entity: WindoorPhoron
     edges:
     - to: pwired
       conditions:
@@ -315,12 +315,12 @@
         amount: 5
         doAfter: 1
 
-    #to secure plasma
+    #to secure phoron
     - to: pglassSecure
       conditions:
       - !type:EntityAnchored { }
       steps:
-      - material: ReinforcedPlasmaGlass
+      - material: ReinforcedPhoronGlass
         amount: 5
         doAfter: 1
 
@@ -521,9 +521,9 @@
       - tool: Anchoring
         doAfter: 4
 
-  #secure plasma node
+  #secure phoron node
   - node: pglassSecure
-    entity: WindoorAssemblySecurePlasma
+    entity: WindoorAssemblySecurePhoron
     edges:
     - to: pwiredSecure
       conditions:
@@ -546,7 +546,7 @@
         doAfter: 4
 
   - node: pwiredSecure
-    entity: WindoorAssemblySecurePlasma
+    entity: WindoorAssemblySecurePhoron
     edges:
     - to: pelectronicsSecure
       conditions:
@@ -569,7 +569,7 @@
         doAfter: 3
 
   - node: pelectronicsSecure
-    entity: WindoorAssemblySecurePlasma
+    entity: WindoorAssemblySecurePhoron
     edges:
     - to: pwindoorSecure
       conditions:
@@ -579,7 +579,7 @@
         doAfter: 4
 
   - node: pwindoorSecure
-    entity: WindoorSecurePlasma
+    entity: WindoorSecurePhoron
     edges:
     - to: pwiredSecure
       conditions:

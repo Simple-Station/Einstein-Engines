@@ -912,7 +912,7 @@ Entries:
   url: https://api.github.com/repos/space-wizards/space-station-14/pulls/24097
 - author: Flareguy
   changes:
-    - message: Made lava & liquid plasma significantly less lethal.
+    - message: Made lava & liquid phoron significantly less lethal.
       type: Tweak
   id: 5715
   time: '2024-01-15T06:33:05.0000000+00:00'
@@ -959,7 +959,7 @@ Entries:
   url: https://api.github.com/repos/space-wizards/space-station-14/pulls/24050
 - author: Boaz1111
   changes:
-    - message: Reinforced Glass and Reinforced Plasma Glass no longer bubble randomly
+    - message: Reinforced Glass and Reinforced Phoron Glass no longer bubble randomly
       type: Fix
   id: 5720
   time: '2024-01-16T03:43:18.0000000+00:00'
@@ -1082,7 +1082,7 @@ Entries:
   url: https://api.github.com/repos/space-wizards/space-station-14/pulls/24193
 - author: Volotomite
   changes:
-    - message: Flippo can burn plasma now!
+    - message: Flippo can burn phoron now!
       type: Fix
   id: 5735
   time: '2024-01-18T00:28:32.0000000+00:00'
@@ -3489,7 +3489,7 @@ Entries:
 - author: Sphiral
   changes:
     - message: >-
-        NT has finally perfected methods for infusing Plasma/Uranium into Glass!
+        NT has finally perfected methods for infusing Phoron/Uranium into Glass!
         Windoors now have such varients! And Uranium Slim Windows exist!
       type: Add
   id: 6039
@@ -3602,7 +3602,7 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/25678
 - author: Cojoke-dot
   changes:
-    - message: E-sword now lights plasma fires
+    - message: E-sword now lights phoron fires
       type: Tweak
   id: 6051
   time: '2024-02-28T21:59:35.0000000+00:00'
@@ -3726,7 +3726,7 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/25719
 - author: MACMAN2003
   changes:
-    - message: There are now more ways to craft reinforced plasma/uranium glass.
+    - message: There are now more ways to craft reinforced phoron/uranium glass.
       type: Tweak
   id: 6066
   time: '2024-02-29T22:57:18.0000000+00:00'
@@ -3786,7 +3786,7 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/24899
 - author: Errant
   changes:
-    - message: Breathing tritium or plasma now displays a HUD alert.
+    - message: Breathing tritium or phoron now displays a HUD alert.
       type: Add
   id: 6074
   time: '2024-03-02T14:07:05.0000000+00:00'

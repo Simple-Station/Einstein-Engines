@@ -2069,7 +2069,7 @@ entities:
     - type: Transform
       pos: -3.5,-0.5
       parent: 373
-- proto: TablePlasmaGlass
+- proto: TablePhoronGlass
   entities:
   - uid: 82
     components:

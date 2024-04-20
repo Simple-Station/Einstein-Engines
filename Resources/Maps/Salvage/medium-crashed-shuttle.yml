@@ -557,7 +557,7 @@ entities:
     - type: Transform
       pos: 3.5,3.5
       parent: 166
-- proto: AsteroidRockPlasma
+- proto: AsteroidRockPhoron
   entities:
   - uid: 35
     components:

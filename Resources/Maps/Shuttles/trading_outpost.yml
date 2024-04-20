@@ -4330,7 +4330,7 @@ entities:
     - type: Transform
       pos: 9.341236,-16.909695
       parent: 2
-- proto: PlasmaReinforcedWindowDirectional
+- proto: PhoronReinforcedWindowDirectional
   entities:
   - uid: 388
     components:

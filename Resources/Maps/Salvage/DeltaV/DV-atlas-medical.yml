@@ -3028,7 +3028,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,-7.5
       parent: 549
-- proto: ReinforcedPlasmaWindow
+- proto: ReinforcedPhoronWindow
   entities:
   - uid: 301
     components:
@@ -3224,7 +3224,7 @@ entities:
     - type: Transform
       pos: -5.334782,0.38485345
       parent: 549
-- proto: SheetPlasma
+- proto: SheetPhoron
   entities:
   - uid: 223
     components:
@@ -3459,7 +3459,7 @@ entities:
     - type: Transform
       pos: -2.5,-6.5
       parent: 549
-- proto: TablePlasmaGlass
+- proto: TablePhoronGlass
   entities:
   - uid: 304
     components:

@@ -2000,7 +2000,7 @@ entities:
     - type: Transform
       pos: -6.820592,5.657404
       parent: 2
-- proto: PlasmaCanister
+- proto: PhoronCanister
   entities:
   - uid: 77
     components:

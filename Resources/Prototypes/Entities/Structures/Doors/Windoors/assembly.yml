@@ -100,15 +100,15 @@
     graph: Windoor
     node: assemblyClockwork
 
-#plasma windoor assemblies
+#phoron windoor assemblies
 - type: entity
-  id: WindoorAssemblyPlasma
-  name: Plasma windoor assembly
+  id: WindoorAssemblyPhoron
+  name: Phoron windoor assembly
   description: It opens, it closes, and you can see through it! This one looks purp-, no, pink. Wait...
   parent: WindoorAssembly
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: Structures/Doors/Windoors/phoron.rsi
     layers:
     - state: assembly
   - type: Destructible
@@ -132,13 +132,13 @@
     node: pglass
 
 - type: entity
-  id: WindoorAssemblySecurePlasma
-  name: Secure Plasma windoor assembly
+  id: WindoorAssemblySecurePhoron
+  name: Secure Phoron windoor assembly
   description: It opens, it closes, and you can see through it! This one looks strong and pin-, no, purple. Hold on...
   parent: WindoorAssembly
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: Structures/Doors/Windoors/phoron.rsi
     layers:
     - state: secure_underlay
     - state: assembly

@@ -96,7 +96,7 @@
     - id: OxygenCanister
       prob: 0.001
       orGroup: Canister
-    - id: PlasmaCanister
+    - id: PhoronCanister
       prob: 0.001
       orGroup: Canister
     - id: TritiumCanister

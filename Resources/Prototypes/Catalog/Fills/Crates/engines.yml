@@ -48,12 +48,12 @@
   id: CrateEngineeringSingularityCollector
   parent: CrateEngineeringSecure
   name: radiation collector crate
-  description: A radiation collector, best used for singularity engines. Plasma is included.
+  description: A radiation collector, best used for singularity engines. Phoron is included.
   components:
   - type: StorageFill
     contents:
       - id: RadiationCollectorFlatpack
-      - id: PlasmaTankFilled
+      - id: PhoronTankFilled
 
 - type: entity
   id: CrateEngineeringSingularityContainment

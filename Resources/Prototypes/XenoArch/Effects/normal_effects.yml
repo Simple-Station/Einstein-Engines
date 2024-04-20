@@ -206,7 +206,7 @@
   - type: FoamArtifact
     reagents:
     - Oxygen
-    - Plasma
+    - Phoron
     - Blood
     - SpaceCleaner
     - Nutriment
@@ -322,7 +322,7 @@
     - id: SilverOre1
       prob: 0.3
       maxAmount: 3
-    - id: PlasmaOre1
+    - id: PhoronOre1
       prob: 0.3
       maxAmount: 3
     - id: GoldOre1
@@ -450,7 +450,7 @@
   - type: GasArtifact
     possibleGas:
     - CarbonDioxide
-    - Plasma
+    - Phoron
     - Tritium
     - Ammonia
     - NitrousOxide
@@ -594,7 +594,7 @@
     maxFoamAmount: 30
     reagents:
     - Tritium
-    - Plasma
+    - Phoron
     - SulfuricAcid
     - SpaceDrugs
     - Nocturine

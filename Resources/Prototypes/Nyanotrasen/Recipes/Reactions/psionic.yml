@@ -5,7 +5,7 @@
 #      amount: 1
 #    Cognizine:
 #      amount: 1
-#    Plasma:
+#    Phoron:
 #      amount: 5
 #      catalyst: true
 #  products:
@@ -25,7 +25,7 @@
       amount: 5 # DeltaV - Change from 10 to 5 to fit the guidebook recipe
     Ectoplasm:
       amount: 5 # DeltaV - Make Normality Crystals need only 5 Ectoplasm, was 10.
-    Plasma:
+    Phoron:
       amount: 5 # DeltaV - Change from 10 to 5 to fit the guidebook recipe
       catalyst: true
   effects:

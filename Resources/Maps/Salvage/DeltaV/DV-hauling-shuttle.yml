@@ -692,7 +692,7 @@ entities:
         - 0
         - 0
         - 0
-- proto: CratePlasma
+- proto: CratePhoron
   entities:
   - uid: 191
     components:

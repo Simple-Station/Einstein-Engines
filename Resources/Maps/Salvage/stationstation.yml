@@ -1641,7 +1641,7 @@ entities:
     - type: Transform
       pos: -14.727282,-5.4793034
       parent: 179
-- proto: PlasmaTankFilled
+- proto: PhoronTankFilled
   entities:
   - uid: 688
     components:

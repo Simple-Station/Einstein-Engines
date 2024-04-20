@@ -51,7 +51,7 @@
   materials:
     Steel: 200  #Cheaper Due to Needing Bluespace
     Plastic: 200
-    Plasma: 50
+    Phoron: 50
     Silver: 50
     Bluespace: 100 #DeltaV: Bluespace
 
@@ -63,7 +63,7 @@
     Steel: 100  #Cheaper Due to Needing Bluespace
     Plastic: 100
     Glass: 200
-    Plasma: 50
+    Phoron: 50
     Bluespace: 100 #DeltaV: Bluespace
    #Silver: 50
 

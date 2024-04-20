@@ -16662,7 +16662,7 @@ entities:
     - type: Transform
       pos: 0.37494278,22.603415
       parent: 2
-- proto: PlasmaCanister
+- proto: PhoronCanister
   entities:
   - uid: 2187
     components:
@@ -16671,7 +16671,7 @@ entities:
       parent: 2
     - type: AtmosDevice
       joinedGrid: 2
-- proto: PlasmaReinforcedWindowDirectional
+- proto: PhoronReinforcedWindowDirectional
   entities:
   - uid: 2188
     components:
@@ -18708,7 +18708,7 @@ entities:
     - type: Transform
       pos: 27.5,32.5
       parent: 2
-- proto: ReinforcedPlasmaWindow
+- proto: ReinforcedPhoronWindow
   entities:
   - uid: 2557
     components:
@@ -19269,7 +19269,7 @@ entities:
     - type: Transform
       pos: -24.48496,20.505053
       parent: 2
-- proto: SheetPlasma
+- proto: SheetPhoron
   entities:
   - uid: 2661
     components:

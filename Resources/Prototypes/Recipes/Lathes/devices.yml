@@ -64,7 +64,7 @@
     Steel: 100
     Plastic: 100
     Glass: 50
-    Plasma: 50
+    Phoron: 50
     Silver: 50
 
 - type: latheRecipe
@@ -85,7 +85,7 @@
   materials:
     Steel: 100
     Plastic: 200
-    Plasma: 100
+    Phoron: 100
 
 - type: latheRecipe
   id: AnomalyLocator
@@ -132,7 +132,7 @@
     Steel: 1500
     Plastic: 300
     Glass: 500
-    Plasma: 500
+    Phoron: 500
     Silver: 250
 
 - type: latheRecipe
@@ -142,7 +142,7 @@
   materials:
     Steel: 2000
     Silver: 750
-    Plasma: 1250 #Higher Plasma due to it needing less bluespace
+    Phoron: 1250 #Higher Phoron due to it needing less bluespace
     Uranium: 150
     Bluespace: 300 #DeltaV: Bluespace Exists
 
@@ -153,7 +153,7 @@
   materials:
     Steel: 2000
     Silver: 750
-    Plasma: 1250 #Higher Plasma due to it needing less bluespace
+    Phoron: 1250 #Higher Phoron due to it needing less bluespace
     Uranium: 150
     Bluespace: 300 #DeltaV: Bluespace Exists
 
@@ -164,7 +164,7 @@
   materials:
     Steel: 2000
     Silver: 750
-    Plasma: 1250 #Higher Plasma due to it needing less bluespace
+    Phoron: 1250 #Higher Phoron due to it needing less bluespace
     Uranium: 150
     Bluespace: 300 #DeltaV: Bluespace Exists
 
@@ -175,7 +175,7 @@
   materials:
     Steel: 2000
     Silver: 750
-    Plasma: 1000 #DeltaV: Bluespace Exists so less plasma used, no uranium
+    Phoron: 1000 #DeltaV: Bluespace Exists so less phoron used, no uranium
     Bluespace: 200 #DeltaV: Bluespace Exists
 
 #- type: latheRecipe #DeltaV - LRP

@@ -17,15 +17,15 @@
   description: It's a sturdy window and a sliding door. Wow!
 
 - type: entity
-  id: WindoorPlasma
-  parent: BasePlasmaWindoor
-  name: Plasma Windoor
+  id: WindoorPhoron
+  parent: BasePhoronWindoor
+  name: Phoron Windoor
   description: It's a pink window *and* a sliding door. Amazing!
 
 - type: entity
-  id: WindoorSecurePlasma
-  parent: BaseSecurePlasmaWindoor
-  name: Secure Plasma Windoor
+  id: WindoorSecurePhoron
+  parent: BaseSecurePhoronWindoor
+  name: Secure Phoron Windoor
   description: It's a sturdy purple window *and* a sliding door. Spectacular!
 
 - type: entity
@@ -92,9 +92,9 @@
     access: [["Janitor"]]
 
 - type: entity
-  parent: WindoorPlasma
-  id: PlasmaWindoorJanitorLocked
-  suffix: Janitor, Locked, Plasma
+  parent: WindoorPhoron
+  id: PhoronWindoorJanitorLocked
+  suffix: Janitor, Locked, Phoron
   components:
   - type: AccessReader
     access: [["Janitor"]]
@@ -191,9 +191,9 @@
     access: [["Chemistry"]]
 
 - type: entity
-  parent: WindoorSecurePlasma
-  id: PlasmaWindoorSecureChemistryLocked
-  suffix: Chemistry, Locked, Plasma
+  parent: WindoorSecurePhoron
+  id: PhoronWindoorSecureChemistryLocked
+  suffix: Chemistry, Locked, Phoron
   components:
   - type: AccessReader
     access: [["Chemistry"]]
@@ -207,9 +207,9 @@
     access: [["CentralCommand"]]
 
 - type: entity
-  parent: WindoorSecurePlasma
-  id: PlasmaWindoorSecureCentralCommandLocked
-  suffix: Central Command, Locked, Plasma
+  parent: WindoorSecurePhoron
+  id: PhoronWindoorSecureCentralCommandLocked
+  suffix: Central Command, Locked, Phoron
   components:
   - type: AccessReader
     access: [["CentralCommand"]]
@@ -247,9 +247,9 @@
     access: [["Engineering"]]
 
 - type: entity
-  parent: WindoorSecurePlasma
-  id: PlasmaWindoorSecureEngineeringLocked
-  suffix: Engineering, Locked, Plasma
+  parent: WindoorSecurePhoron
+  id: PhoronWindoorSecureEngineeringLocked
+  suffix: Engineering, Locked, Phoron
   components:
   - type: AccessReader
     access: [["Engineering"]]
@@ -279,9 +279,9 @@
     access: [["Janitor"]]
 
 - type: entity
-  parent: WindoorSecurePlasma
-  id: PlasmaWindoorSecureJanitorLocked
-  suffix: Janitor, Locked, Plasma
+  parent: WindoorSecurePhoron
+  id: PhoronWindoorSecureJanitorLocked
+  suffix: Janitor, Locked, Phoron
   components:
   - type: AccessReader
     access: [["Janitor"]]
@@ -335,9 +335,9 @@
     access: [["Research"]]
 
 - type: entity
-  parent: WindoorSecurePlasma
-  id: PlasmaWindoorSecureScienceLocked
-  suffix: Science, Locked, Plasma
+  parent: WindoorSecurePhoron
+  id: PhoronWindoorSecureScienceLocked
+  suffix: Science, Locked, Phoron
   components:
   - type: AccessReader
     access: [["Research"]]

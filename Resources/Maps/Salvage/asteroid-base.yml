@@ -1849,14 +1849,14 @@ entities:
     - type: Transform
       pos: 8.530472,8.534576
       parent: 407
-- proto: PlasmaOre1
+- proto: PhoronOre1
   entities:
   - uid: 397
     components:
     - type: Transform
       pos: -9.462246,2.5242848
       parent: 407
-- proto: PlasmaWindow
+- proto: PhoronWindow
   entities:
   - uid: 76
     components:
@@ -1997,7 +1997,7 @@ entities:
     - type: Transform
       pos: 11.5,-5.5
       parent: 407
-- proto: ReinforcedPlasmaWindow
+- proto: ReinforcedPhoronWindow
   entities:
   - uid: 185
     components:
@@ -2038,7 +2038,7 @@ entities:
     - type: Transform
       pos: 8.5,-4.5
       parent: 407
-- proto: SheetPlasma1
+- proto: SheetPhoron1
   entities:
   - uid: 384
     components:
@@ -2288,7 +2288,7 @@ entities:
     - type: Transform
       pos: 11.5,-8.5
       parent: 407
-- proto: WarningPlasma
+- proto: WarningPhoron
   entities:
   - uid: 395
     components:

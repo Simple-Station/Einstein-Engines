@@ -195,7 +195,7 @@
     state: plain
 
 - type: marking
-  id: MothAntennasClassicPlasmafire
+  id: MothAntennasClassicPhoronfire
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
@@ -207,7 +207,7 @@
           color: "#FFFFFF"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/Moth/moth_antennas.rsi
-    state: plasmafire
+    state: phoronfire
 
 - type: marking
   id: MothAntennasClassicPoison
@@ -571,7 +571,7 @@
     state: plain
 
 - type: marking
-  id: MothWingsClassicPlasmafire
+  id: MothWingsClassicPhoronfire
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
@@ -583,7 +583,7 @@
           color: "#FFFFFF"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/Moth/moth_wings.rsi
-    state: plasmafire
+    state: phoronfire
 
 - type: marking
   id: MothWingsClassicPoison

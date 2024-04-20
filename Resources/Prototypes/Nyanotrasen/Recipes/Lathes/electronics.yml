@@ -41,7 +41,7 @@
   materials:
     Steel: 100
     Glass: 300
-    Plasma: 200
+    Phoron: 200
 
 - type: latheRecipe
   id: DeepFryerMachineCircuitboard

@@ -2,7 +2,7 @@
   name: energy sword
   parent: BaseItem
   id: EnergySword
-  description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
+  description: A very loud & dangerous sword with a beam made of pure, concentrated phoron. Cuts through unarmored targets like butter.
   components:
   - type: EnergySword
   - type: ItemToggle
@@ -181,7 +181,7 @@
   name: energy cutlass
   parent: EnergySword
   id: EnergyCutlass
-  description: An exotic energy weapon, brutal blade crackling with crudely harnessed plasma. #DeltaV - nicer description.
+  description: An exotic energy weapon, brutal blade crackling with crudely harnessed phoron. #DeltaV - nicer description.
   components:
   - type: EnergySword
   - type: ItemToggleMeleeWeapon

@@ -1105,7 +1105,7 @@ entities:
     - type: Transform
       pos: -1.5,-3.5
       parent: 16
-- proto: AtmosFixPlasmaMarker
+- proto: AtmosFixPhoronMarker
   entities:
   - uid: 55
     components:

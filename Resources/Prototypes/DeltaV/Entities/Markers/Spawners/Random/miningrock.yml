@@ -54,7 +54,7 @@
   - type: RandomSpawner
     prototypes:
       - WallRockGold
-      - WallRockPlasma
+      - WallRockPhoron
       - WallRockQuartz
       - WallRockSilver
       - WallRockTin
@@ -75,7 +75,7 @@
   - type: RandomSpawner
     prototypes:
       - WallRockBasaltGold
-      - WallRockBasaltPlasma
+      - WallRockBasaltPhoron
       - WallRockBasaltQuartz
       - WallRockBasaltSilver
       - WallRockBasaltTin

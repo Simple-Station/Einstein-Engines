@@ -157,7 +157,7 @@
   time: 10
   solids:
     FoodBreadBun: 1
-    SheetPlasma1: 2
+    SheetPhoron1: 2
 
 - type: microwaveMealRecipe
   id: RecipeCarpBurger
@@ -1722,7 +1722,7 @@
   reagents:
     Sugar: 30
     Nitrogen: 10
-    Plasma: 10
+    Phoron: 10
 
 # Kebabs
 - type: microwaveMealRecipe

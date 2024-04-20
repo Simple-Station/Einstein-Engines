@@ -6465,7 +6465,7 @@ entities:
       parent: 60
     - type: AtmosDevice
       joinedGrid: 60
-- proto: PlasmaReinforcedWindowDirectional
+- proto: PhoronReinforcedWindowDirectional
   entities:
   - uid: 170
     components:

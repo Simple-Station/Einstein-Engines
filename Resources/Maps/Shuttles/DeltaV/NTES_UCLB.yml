@@ -7018,7 +7018,7 @@ entities:
     - type: Transform
       pos: -3.3392568,2.2526383
       parent: 1
-- proto: PlasmaReinforcedWindowDirectional
+- proto: PhoronReinforcedWindowDirectional
   entities:
   - uid: 179
     components:
@@ -7645,7 +7645,7 @@ entities:
     - type: Transform
       pos: 14.5,-13.5
       parent: 1
-- proto: ReinforcedPlasmaWindow
+- proto: ReinforcedPhoronWindow
   entities:
   - uid: 175
     components:
@@ -8157,7 +8157,7 @@ entities:
     - type: Transform
       pos: -6.5,-3.5
       parent: 1
-- proto: TablePlasmaGlass
+- proto: TablePhoronGlass
   entities:
   - uid: 1045
     components:

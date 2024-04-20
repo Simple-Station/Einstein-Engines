@@ -56,7 +56,7 @@
       MailMedicalChemistrySupplement: 2
       MailMedicalEmergencyPens: 3
       MailMedicalMedicinePills: 2
-      MailMedicalSheetPlasma: 1
+      MailMedicalSheetPhoron: 1
       # MailMedicalSpaceacillin: 1
       MailMedicalStabilizers: 2
     Engineering:
@@ -93,7 +93,7 @@
     ChiefMedicalOfficer:
       MailMedicalEmergencyPens: 2
       MailMedicalMedicinePills: 3
-      MailMedicalSheetPlasma: 2
+      MailMedicalSheetPhoron: 2
     Clown:
       MailClownGildedBikeHorn: 0.5
       MailClownHonkSupplement: 3

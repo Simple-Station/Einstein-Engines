@@ -249,7 +249,7 @@
   parent: PosterBase
   id: PosterLegitSafetyMothFires
   name: Safety Moth - Fires
-  description: Safety Moth™ promotes safe handling of plasma and to keep firefighting equipment within hand reach.
+  description: Safety Moth™ promotes safe handling of phoron and to keep firefighting equipment within hand reach.
   components:
   - type: Sprite
     sprite: Nyanotrasen/Structures/Wallmounts/Posters/safetymoth.rsi

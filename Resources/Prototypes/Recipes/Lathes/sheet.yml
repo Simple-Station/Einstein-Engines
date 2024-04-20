@@ -53,7 +53,7 @@
   completetime: 2
   materials:
     RawQuartz: 3000
-    RawPlasma: 3000
+    RawPhoron: 3000
 
 - type: latheRecipe
   id: SheetRPGlass30
@@ -61,23 +61,23 @@
   completetime: 2
   materials:
     RawQuartz: 3000
-    RawPlasma: 3000
+    RawPhoron: 3000
     RawIron: 1500
     Coal: 500
 
 - type: latheRecipe
-  id: SheetPlasma30
-  result: SheetPlasma
+  id: SheetPhoron30
+  result: SheetPhoron
   completetime: 2
   materials:
-    RawPlasma: 3000
+    RawPhoron: 3000
 
 - type: latheRecipe
   id: SheetPlasteel30
   result: SheetPlasteel
   completetime: 5
   materials:
-    RawPlasma: 3000
+    RawPhoron: 3000
     RawIron: 6000 #Twice as durable as steel, Twice the material cost
     Coal: 1000
 

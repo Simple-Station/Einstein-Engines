@@ -196,14 +196,14 @@
   - type: StaticPrice
     price: 200
 
-#Plasma Windoors
+#Phoron Windoors
 - type: entity
-  id: BasePlasmaWindoor
+  id: BasePhoronWindoor
   parent: BaseWindoor
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: Structures/Doors/Windoors/phoron.rsi
     layers:
     - state: closed
       map: [ "enum.DoorVisualLayers.Base" ]
@@ -235,7 +235,7 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
-          ShardGlassPlasma:
+          ShardGlassPhoron:
             min: 1
             max: 2
           SheetSteel1:
@@ -252,12 +252,12 @@
     resistance: 2
 
 - type: entity
-  id: BaseSecurePlasmaWindoor
+  id: BaseSecurePhoronWindoor
   parent: BaseWindoor
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: Structures/Doors/Windoors/phoron.rsi
     layers:
     - state: secure_underlay
     - state: closed
@@ -290,7 +290,7 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
-          ShardGlassPlasma:
+          ShardGlassPhoron:
             min: 1
             max: 2
           SheetPlasteel1:

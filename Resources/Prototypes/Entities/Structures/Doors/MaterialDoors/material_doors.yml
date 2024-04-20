@@ -134,13 +134,13 @@
     node: paperDoor
 
 - type: entity
-  id: PlasmaDoor
-  name: plasma door
+  id: PhoronDoor
+  name: phoron door
   parent: BaseMaterialDoorNavMap
   description: A door, where will it lead?
   components:
   - type: Sprite
-    sprite: Structures/Doors/MineralDoors/plasma_door.rsi
+    sprite: Structures/Doors/MineralDoors/phoron_door.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -157,7 +157,7 @@
         acts: ["Destruction"]
   - type: Construction
     graph: DoorGraph
-    node: plasmaDoor
+    node: phoronDoor
 
 - type: entity
   id: GoldDoor

@@ -198,7 +198,7 @@
     solutions:
       plasteel:
         reagents:
-        - ReagentId: Plasma
+        - ReagentId: Phoron
           Quantity: 10
         - ReagentId: Iron
           Quantity: 9

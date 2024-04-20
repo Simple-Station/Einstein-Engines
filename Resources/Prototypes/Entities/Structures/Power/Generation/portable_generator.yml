@@ -132,10 +132,10 @@
   name: P.A.C.M.A.N.-type portable generator
   description: |-
     A flexible backup generator for powering a variety of equipment.
-    Runs off solid plasma sheets and is rated for up to 30 kW.
+    Runs off solid phoron sheets and is rated for up to 30 kW.
   parent: PortableGeneratorSwitchableBase
   id: PortableGeneratorPacman
-  suffix: Plasma, 30 kW
+  suffix: Phoron, 30 kW
   components:
     - type: Sprite
       layers:
@@ -167,16 +167,16 @@
       # a decent curve that goes up to about an hour at 5 kW.
       fuelEfficiencyConstant: 0.75
     - type: SolidFuelGeneratorAdapter
-      fuelMaterial: Plasma
+      fuelMaterial: Phoron
       multiplier: 0.01
     - type: MaterialStorage
       storageLimit: 3000
-      materialWhiteList: [Plasma]
+      materialWhiteList: [Phoron]
     - type: PortableGenerator
       startChance: 0.8
     - type: GeneratorExhaustGas
       gasType: CarbonDioxide
-      # 2 moles of gas for every sheet of plasma.
+      # 2 moles of gas for every sheet of phoron.
       moleRatio: 2
     - type: PowerMonitoringDevice
       group: Generator
