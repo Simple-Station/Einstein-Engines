@@ -338,16 +338,6 @@
      Gold: 100
 
 - type: latheRecipe
-  id: TraversalDistorterMachineCircuitboard
-  result: TraversalDistorterMachineCircuitboard
-  category: Circuitry
-  completetime: 4
-  materials:
-     Steel: 100
-     Glass: 900
-     Gold: 100
-
-- type: latheRecipe
   id: ArtifactCrusherMachineCircuitboard
   result: ArtifactCrusherMachineCircuitboard
   category: Circuitry
