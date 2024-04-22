@@ -273,6 +273,8 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         if (clear && value.Equals(Vector2.Zero))
         {
             steering.CurrentPath.Clear();
+            Array.Clear(steering.Interest);
+            Array.Clear(steering.Danger);
         }
 
         component.CurTickSprintMovement = value;
