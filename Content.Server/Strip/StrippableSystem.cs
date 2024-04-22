@@ -225,8 +225,7 @@ namespace Content.Server.Strip
                 Hidden = ev.Stealth,
                 AttemptFrequency = AttemptFrequency.EveryTick,
                 BreakOnDamage = true,
-                BreakOnTargetMove = true,
-                BreakOnUserMove = true,
+                BreakOnMove = true,
                 NeedHand = true,
                 DuplicateCondition = DuplicateConditions.SameTool // Block any other DoAfters featuring this same entity.
             };
@@ -300,8 +299,7 @@ namespace Content.Server.Strip
                 Hidden = ev.Stealth,
                 AttemptFrequency = AttemptFrequency.EveryTick,
                 BreakOnDamage = true,
-                BreakOnTargetMove = true,
-                BreakOnUserMove = true,
+                BreakOnMove = true,
                 NeedHand = true,
                 DuplicateCondition = DuplicateConditions.SameTool
             };
@@ -362,8 +360,7 @@ namespace Content.Server.Strip
                 Hidden = ev.Stealth,
                 AttemptFrequency = AttemptFrequency.EveryTick,
                 BreakOnDamage = true,
-                BreakOnTargetMove = true,
-                BreakOnUserMove = true,
+                BreakOnMove = true,
                 NeedHand = true,
                 BreakOnHandChange = false, // allow simultaneously removing multiple items.
                 DuplicateCondition = DuplicateConditions.SameTool
@@ -440,8 +437,7 @@ namespace Content.Server.Strip
                 Hidden = ev.Stealth,
                 AttemptFrequency = AttemptFrequency.EveryTick,
                 BreakOnDamage = true,
-                BreakOnTargetMove = true,
-                BreakOnUserMove = true,
+                BreakOnMove = true,
                 NeedHand = true,
                 BreakOnHandChange = false, // allow simultaneously removing multiple items.
                 DuplicateCondition = DuplicateConditions.SameTool
