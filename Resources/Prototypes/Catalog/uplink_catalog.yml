@@ -984,14 +984,30 @@
   description: uplink-power-sink-desc
   productEntity: PowerSink
   cost:
-    Telecrystal: 8
+    Telecrystal: 6
   categories:
   - UplinkTools
   conditions:
     - !type:BuyerWhitelistCondition
       blacklist:
-        components:
-          - SurplusBundle
+        tags:
+          - NukeOpsUplink
+
+- type: listing
+  id: UplinkReinforcementRadioSyndicateMonkeyNukeops # Version for Nukeops that spawns a syndicate monkey with the NukeOperative component.
+  name: uplink-reinforcement-radio-monkey-name
+  description: uplink-reinforcement-radio-monkey-desc
+  productEntity: ReinforcementRadioSyndicateMonkeyNukeops
+  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio }
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkAllies
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: UplinkCarpDehydrated
