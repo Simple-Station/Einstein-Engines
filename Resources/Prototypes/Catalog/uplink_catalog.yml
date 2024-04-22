@@ -766,11 +766,6 @@
     Telecrystal: 2
   categories:
     - UplinkUtility
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - NukeOpsUplink
 
 - type: listing
   id: UplinkRadioJammer
