@@ -125,7 +125,13 @@ namespace Content.Server.Strip
 
         private void AddStripVerb(EntityUid uid, StrippableComponent component, GetVerbsEvent<Verb> args)
         {
-            if (args.Hands == null || !args.CanAccess || !args.CanInteract || args.Target == args.User)
+            if (args.Session.AttachedEntity is not { Valid: true } user ||
+                !TryComp<HandsComponent>(user, out var userHands))
+                return;
+
+            if (args.IsHand)
+            {
+                StripHand((user, userHands), (strippable.Owner, null), args.Slot, strippable);
                 return;
 
             if (!HasComp<ActorComponent>(args.User))
@@ -369,7 +375,46 @@ namespace Content.Server.Strip
                 DuplicateCondition = DuplicateConditions.SameTool
             };
 
-            if (!ev.Stealth && Check())
+            _doAfterSystem.TryStartDoAfter(doAfterArgs);
+        }
+
+        /// <summary>
+        ///     Places the item in the user's active hand into one of the target's hands.
+        /// </summary>
+        private void StripInsertHand(
+            Entity<HandsComponent?> user,
+            Entity<HandsComponent?> target,
+            EntityUid held,
+            string handName,
+            bool stealth)
+        {
+            if (!Resolve(user, ref user.Comp) ||
+                !Resolve(target, ref target.Comp))
+                return;
+
+            if (!CanStripInsertHand(user, target, held, handName))
+                return;
+
+            _handsSystem.TryDrop(user, checkActionBlocker: false, handsComp: user.Comp);
+            _handsSystem.TryPickup(target, held, handName, checkActionBlocker: false, animateUser: stealth, animate: stealth, handsComp: target.Comp);
+            _adminLogger.Add(LogType.Stripping, LogImpact.Medium, $"{ToPrettyString(user):actor} has placed the item {ToPrettyString(held):item} in {ToPrettyString(target):target}'s hands");
+
+            // Hand update will trigger strippable update.
+        }
+
+        /// <summary>
+        ///     Checks whether the item is in the target's hand and whether it can be dropped.
+        /// </summary>
+        private bool CanStripRemoveHand(
+            EntityUid user,
+            Entity<HandsComponent?> target,
+            EntityUid item,
+            string handName)
+        {
+            if (!Resolve(target, ref target.Comp))
+                return false;
+
+            if (!_handsSystem.TryGetHand(target, handName, out var handSlot, target.Comp))
             {
                 if (slotDef.StripHidden)
                 {
@@ -409,25 +454,8 @@ namespace Content.Server.Strip
             var hands = Comp<HandsComponent>(target);
             var userHands = Comp<HandsComponent>(user);
 
-            bool Check()
-            {
-                if (!_handsSystem.TryGetHand(target, handName, out var hand, hands) || hand.HeldEntity != item)
-                {
-                    _popup.PopupCursor(Loc.GetString("strippable-component-item-slot-free-message",("owner", target)), user);
-                    return false;
-                }
-
-                if (HasComp<VirtualItemComponent>(hand.HeldEntity))
-                    return false;
-
-                if (!_handsSystem.CanDropHeld(target, hand, false))
-                {
-                    _popup.PopupCursor(Loc.GetString("strippable-component-cannot-drop-message",("owner", target)), user);
-                    return false;
-                }
-
-                return true;
-            }
+            if (!stealth)
+                _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner", ("user", Identity.Entity(user, EntityManager)), ("item", item)), target, target);
 
             var userEv = new BeforeStripEvent(strippable.Comp.HandStripDelay);
             RaiseLocalEvent(user, userEv);
@@ -447,7 +475,49 @@ namespace Content.Server.Strip
                 DuplicateCondition = DuplicateConditions.SameTool
             };
 
-            if (!ev.Stealth && Check() && _handsSystem.TryGetHand(target, handName, out var handSlot, hands) && handSlot.HeldEntity != null)
+            _doAfterSystem.TryStartDoAfter(doAfterArgs);
+        }
+
+        /// <summary>
+        ///     Takes the item from the target's hand and inserts it in the user's active hand.
+        /// </summary>
+        private void StripRemoveHand(
+            Entity<HandsComponent?> user,
+            Entity<HandsComponent?> target,
+            EntityUid item,
+            string handName,
+            bool stealth)
+        {
+            if (!Resolve(user, ref user.Comp) ||
+                !Resolve(target, ref target.Comp))
+                return;
+
+            if (!CanStripRemoveHand(user, target, item, handName))
+                return;
+
+            _handsSystem.TryDrop(target, item, checkActionBlocker: false, handsComp: target.Comp);
+            _handsSystem.PickupOrDrop(user, item, animateUser: stealth, animate: stealth, handsComp: user.Comp);
+            _adminLogger.Add(LogType.Stripping, LogImpact.Medium, $"{ToPrettyString(user):actor} has stripped the item {ToPrettyString(item):item} from {ToPrettyString(target):target}'s hands");
+
+            // Hand update will trigger strippable update.
+        }
+
+        private void OnStrippableDoAfterRunning(Entity<HandsComponent> entity, ref DoAfterAttemptEvent<StrippableDoAfterEvent> ev)
+        {
+            var args = ev.DoAfter.Args;
+
+            DebugTools.Assert(entity.Owner == args.User);
+            DebugTools.Assert(args.Target != null);
+            DebugTools.Assert(args.Used != null);
+            DebugTools.Assert(ev.Event.SlotOrHandName != null);
+
+            if (ev.Event.InventoryOrHand)
+            {
+                if ( ev.Event.InsertOrRemove && !CanStripInsertInventory((entity.Owner, entity.Comp), args.Target.Value, args.Used.Value, ev.Event.SlotOrHandName) ||
+                    !ev.Event.InsertOrRemove && !CanStripRemoveInventory(entity.Owner, args.Target.Value, args.Used.Value, ev.Event.SlotOrHandName))
+                        ev.Cancel();
+            }
+            else
             {
                 _popup.PopupEntity(
                     Loc.GetString("strippable-component-alert-owner",
@@ -464,11 +534,18 @@ namespace Content.Server.Strip
             if (result != DoAfterStatus.Finished)
                 return;
 
-            _handsSystem.TryDrop(target, item, checkActionBlocker: false, handsComp: hands);
-            _handsSystem.PickupOrDrop(user, item, animateUser: !ev.Stealth, animate: !ev.Stealth, handsComp: userHands);
-            // hand update will trigger strippable update
-            _adminLogger.Add(LogType.Stripping, LogImpact.Medium,
-                $"{ToPrettyString(user):actor} has stripped the item {ToPrettyString(item):item} from {ToPrettyString(target):target}'s hands");
+            if (ev.InventoryOrHand)
+            {
+                if (ev.InsertOrRemove)
+                        StripInsertInventory((entity.Owner, entity.Comp), ev.Target.Value, ev.Used.Value, ev.SlotOrHandName);
+                else    StripRemoveInventory(entity.Owner, ev.Target.Value, ev.Used.Value, ev.SlotOrHandName, ev.Args.Hidden);
+            }
+            else
+            {
+                if (ev.InsertOrRemove)
+                        StripInsertHand((entity.Owner, entity.Comp), ev.Target.Value, ev.Used.Value, ev.SlotOrHandName, ev.Args.Hidden);
+                else    StripRemoveHand((entity.Owner, entity.Comp), ev.Target.Value, ev.Used.Value, ev.SlotOrHandName, ev.Args.Hidden);
+            }
         }
     }
 }

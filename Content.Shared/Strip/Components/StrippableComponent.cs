@@ -37,18 +37,12 @@ namespace Content.Shared.Strip.Components
     [NetSerializable, Serializable]
     public sealed class StrippingEnsnareButtonPressed : BoundUserInterfaceMessage
     {
-        public StrippingEnsnareButtonPressed()
-        {
-        }
-    }
-
-    public abstract class BaseBeforeStripEvent : EntityEventArgs, IInventoryRelayEvent
-    {
-        public readonly float InitialTime;
-        public float Time => MathF.Max(InitialTime * Multiplier + Additive, 0f);
-        public float Additive = 0;
+        public readonly TimeSpan InitialTime = initialTime;
         public float Multiplier = 1f;
-        public bool Stealth;
+        public TimeSpan Additive = TimeSpan.Zero;
+        public bool Stealth = stealth;
+
+        public TimeSpan Time => TimeSpan.FromSeconds(MathF.Max(InitialTime.Seconds * Multiplier + Additive.Seconds, 0f));
 
         public SlotFlags TargetSlots { get; } = SlotFlags.GLOVES;
 
