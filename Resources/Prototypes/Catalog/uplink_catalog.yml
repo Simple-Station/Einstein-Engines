@@ -764,14 +764,16 @@
   - UplinkBundles
 
 - type: listing
-  id: UplinkEmpKit
-  name: uplink-emp-kit-name
-  description: uplink-emp-kit-desc
-  productEntity: ElectricalDisruptionKit
+  id: UplinkSyndicateBombFake
+  name: uplink-exploding-syndicate-bomb-fake-name
+  description: uplink-exploding-syndicate-bomb-fake-desc
+  productEntity: SyndicateBombFake
   cost:
-    Telecrystal: 6
+    Telecrystal: 4
   categories:
-    - UplinkBundles
+  - UplinkDeception
+
+# Disruption
 
 - type: listing
   id: UplinkAmmoBundle
