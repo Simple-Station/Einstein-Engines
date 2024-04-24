@@ -26,7 +26,7 @@ language-Moffic-name = Moffic
 language-Moffic-description = The language of the mothpeople borders on complete unintelligibility.
 
 language-RobotTalk-name = RobotTalk
-language-RobotTalk-description = Beep-Boop
+language-RobotTalk-description = A language consisting of harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
 
 language-Cat-name = Cat
 language-Cat-description = Meow
