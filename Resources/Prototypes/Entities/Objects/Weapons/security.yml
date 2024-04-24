@@ -109,6 +109,9 @@
     heavyStaminaCost: 10
   - type: Item
     size: Normal
+  - type: Tag
+    tags: 
+    - Truncheon
   - type: Clothing
     sprite: Objects/Weapons/Melee/truncheon.rsi
     quickEquip: false
