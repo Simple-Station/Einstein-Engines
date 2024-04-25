@@ -26,7 +26,7 @@ entities:
   - uid: 1668
     components:
     - type: MetaData
-      name: Central Command
+      name: High Command
     - type: Transform
       parent: invalid
     - type: MapGrid
@@ -27184,13 +27184,6 @@ entities:
     components:
     - type: Transform
       pos: -25.604141,8.625723
-      parent: 1668
-- proto: HandheldCrewMonitor
-  entities:
-  - uid: 1461
-    components:
-    - type: Transform
-      pos: 13.504195,-12.438507
       parent: 1668
 - proto: HandLabeler
   entities:
