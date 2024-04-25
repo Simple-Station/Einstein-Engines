@@ -77,7 +77,6 @@ reagent-physical-desc-sickly = sickly
 reagent-physical-desc-skunky = skunky
 reagent-physical-desc-slimy = slimy
 reagent-physical-desc-soapy = soapy
-reagent-physical-desc-soapy = soapy
 reagent-physical-desc-soothing = soothing
 reagent-physical-desc-sour = sour
 reagent-physical-desc-spicy = spicy
