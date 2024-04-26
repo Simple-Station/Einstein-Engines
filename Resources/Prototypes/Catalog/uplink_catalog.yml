@@ -489,17 +489,6 @@
   - UplinkAmmo
 
 - type: listing
-  id: UplinkPistol9mmMagazineRubber
-  name: uplink-pistol-magazine-rubber-name
-  description: uplink-pistol-magazine-rubber-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi, state: rubber }
-  productEntity: MagazinePistolRubber
-  cost:
-    Telecrystal: 5
-  categories:
-  - UplinkAmmo
-
-- type: listing
   id: UplinkPistol9mmMagazineIncendiary
   name: uplink-pistol-magazine-incendiary-name
   description: uplink-pistol-magazine-incendiary-desc
@@ -528,17 +517,6 @@
   description: uplink-pistol-magazine-c20r-desc
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: red-icon }
   productEntity: MagazinePistolSubMachineGun
-  cost:
-    Telecrystal: 10
-  categories:
-  - UplinkAmmo
-
-- type: listing
-  id: UplinkMagazinePistolSubMachineGunRubber
-  name: uplink-pistol-magazine-c20r-rubber-name
-  description: uplink-pistol-magazine-c20r-rubber-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: rubber }
-  productEntity: MagazinePistolSubMachineGunRubber
   cost:
     Telecrystal: 10
   categories:
@@ -579,17 +557,6 @@
   - UplinkAmmo
 
 - type: listing
-  id: UplinkMagazinePistolCaselessRifleRubber
-  name: uplink-pistol-magazine-caseless-rubber-name
-  description: uplink-pistol-magazine-caseless-rubber-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi, state: rubber }
-  productEntity: MagazinePistolCaselessRifleRubber
-  cost:
-    Telecrystal: 5
-  categories:
-  - UplinkAmmo
-
-- type: listing
   id: UplinkMagazinePistolCaselessRifleIncendiary
   name: uplink-pistol-magazine-caseless-incendiary-name
   description: uplink-pistol-magazine-caseless-incendiary-desc
@@ -617,17 +584,6 @@
   description: uplink-magazine-caseless-desc
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi, state: red }
   productEntity: MagazineCaselessRifle
-  cost:
-    Telecrystal: 10
-  categories:
-  - UplinkAmmo
-
-- type: listing
-  id: UplinkMagazineCaselessRifleRubber
-  name: uplink-magazine-caseless-rubber-name
-  description: uplink-magazine-caseless-rubber-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi, state: rubber }
-  productEntity: MagazineCaselessRifleRubber
   cost:
     Telecrystal: 10
   categories:
@@ -720,29 +676,6 @@
     blacklist:
       components:
       - SurplusBundle
-
-- type: listing
-  id: UplinkAmmoBundleRubber
-  name: uplink-ammo-bundle-rubber-name
-  description: uplink-ammo-bundle-rubber-desc
-  productEntity: ClothingBackpackDuffelSyndicateAmmoFilledRubber
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 35
-  cost:
-    Telecrystal: 75
-  categories:
-  - UplinkAmmo
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
-  - !type:BuyerWhitelistCondition
-    blacklist:
-      components:
-      - SurplusBundle
-
 
 - type: listing
   id: UplinkAmmoBundleIncendiary

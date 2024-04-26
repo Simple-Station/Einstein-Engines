@@ -327,8 +327,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
-    outerClothing:
-    - state: GENE-equipped-OUTERCLOTHING
+      outerClothing:
+      - state: GENE-equipped-OUTERCLOTHING
   - type: Armor
     modifiers:
       coefficients:

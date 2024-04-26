@@ -118,3 +118,17 @@ VendingMachineRestockSalvageEquipment: null
 
 # 2025-04-05 Dear Maintainer, say nothing about this.
 AntiPsychicKnife: null
+
+# 2025-06-06
+MagazineUniversalMagnumRubber: MagazineUniversalMagnum
+WeaponPistolUniversalNonLethal: WeaponPistolUniversal
+WeaponPistolUniversalSecurityNonLethal: WeaponPistolUniversalSecurity
+MagazineBoxSpecialRubber: MagazineBoxSpecial
+CartridgeSpecialRubber: CartridgeSpecial
+MagazinePistolSpecialRubber: MagazinePistolSpecial
+BulletSpecialRubber: BulletSpecial
+SpeedLoaderSpecialRubber: SpeedLoaderSpecial
+WeaponPistolPollockNonlethalSecurity: WeaponPistolPollockSecurity
+WeaponRevolverSnubNonlethalSecurity: WeaponRevolverSnubSecurity
+WeaponRevolverK38MasterNonlethalSecurity: WeaponRevolverK38MasterSecurity
+WeaponRevolverFitzNonlethalSecurity: WeaponRevolverFitzSecurity
