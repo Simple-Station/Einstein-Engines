@@ -74400,9 +74400,6 @@ entities:
     - type: Transform
       pos: -25.5,-33.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: AtmosDevice
       joinedGrid: 2
     - type: AtmosPipeColor
