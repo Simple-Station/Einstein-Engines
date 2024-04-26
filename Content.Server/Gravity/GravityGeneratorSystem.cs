@@ -134,13 +134,13 @@ namespace Content.Server.Gravity
         }
 
         private void SetSwitchedOn(EntityUid uid, GravityGeneratorComponent component, bool on,
-            ApcPowerReceiverComponent? powerReceiver = null, ICommonSession? session = null)
+            ApcPowerReceiverComponent? powerReceiver = null, EntityUid? user = null)
         {
             if (!Resolve(uid, ref powerReceiver))
                 return;
 
-            if (session is { AttachedEntity: { } })
-                _adminLogger.Add(LogType.Action, on ? LogImpact.Medium : LogImpact.High, $"{session:player} set ${ToPrettyString(uid):target} to {(on ? "on" : "off")}");
+            if (user != null)
+                _adminLogger.Add(LogType.Action, on ? LogImpact.Medium : LogImpact.High, $"{ToPrettyString(user)} set ${ToPrettyString(uid):target} to {(on ? "on" : "off")}");
 
             component.SwitchedOn = on;
             UpdatePowerState(component, powerReceiver);
@@ -157,7 +157,7 @@ namespace Content.Server.Gravity
         private void UpdateUI(Entity<GravityGeneratorComponent, ApcPowerReceiverComponent> ent, float chargeRate)
         {
             var (_, component, powerReceiver) = ent;
-            if (!_uiSystem.IsUiOpen(ent, SharedGravityGeneratorComponent.GravityGeneratorUiKey.Key))
+            if (!_uiSystem.IsUiOpen(ent.Owner, SharedGravityGeneratorComponent.GravityGeneratorUiKey.Key))
                 return;
 
             var chargeTarget = chargeRate < 0 ? 0 : component.MaxCharge;
@@ -192,8 +192,8 @@ namespace Content.Server.Gravity
                 chargeEta
             );
 
-            _uiSystem.TrySetUiState(
-                ent,
+            _uiSystem.SetUiState(
+                ent.Owner,
                 SharedGravityGeneratorComponent.GravityGeneratorUiKey.Key,
                 state);
 
@@ -212,9 +212,6 @@ namespace Content.Server.Gravity
 
         private void OnInteractHand(EntityUid uid, GravityGeneratorComponent component, InteractHandEvent args)
         {
-            if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))
-                return;
-
             ApcPowerReceiverComponent? powerReceiver = default!;
             if (!Resolve(uid, ref powerReceiver))
                 return;
@@ -223,7 +220,7 @@ namespace Content.Server.Gravity
             if (!component.Intact || powerReceiver.PowerReceived < component.IdlePowerUse)
                 return;
 
-            _uiSystem.TryOpen(uid, SharedGravityGeneratorComponent.GravityGeneratorUiKey.Key, actor.PlayerSession);
+            _uiSystem.OpenUi(uid, SharedGravityGeneratorComponent.GravityGeneratorUiKey.Key, args.User);
             component.NeedUIUpdate = true;
         }
 
@@ -290,7 +287,7 @@ namespace Content.Server.Gravity
             GravityGeneratorComponent component,
             SharedGravityGeneratorComponent.SwitchGeneratorMessage args)
         {
-            SetSwitchedOn(uid, component, args.On, session:args.Session);
+            SetSwitchedOn(uid, component, args.On, user: args.Actor);
         }
 
         private void OnEmpPulse(EntityUid uid, GravityGeneratorComponent component, EmpPulseEvent args)

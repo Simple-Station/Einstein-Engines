@@ -130,8 +130,8 @@
     layoutId: Airlock
   - type: UserInterface
     interfaces:
-    - key: enum.WiresUiKey.Key
-      type: WiresBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Appearance
   - type: WiresVisuals
   - type: Airtight
