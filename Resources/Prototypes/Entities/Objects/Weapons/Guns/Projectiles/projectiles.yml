@@ -133,28 +133,6 @@
         Blunt: 1
 
 - type: entity
-  id: BaseBulletRubber
-  name: base bullet rubber
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-    - state: rubber
-  - type: Projectile
-    damage:
-      types:
-        Blunt: 3
-    soundHit:
-      path: /Audio/Weapons/Guns/Hits/snap.ogg
-  - type: StaminaDamageOnCollide
-    damage: 22 # 5 hits to stun sounds reasonable
-  - type: Tag
-    tags:
-    - BulletRubber
-
-- type: entity
   id: BaseBulletIncendiary
   name: base bullet incendiary
   parent: BaseBullet
@@ -274,7 +252,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Opaque # WWDP allow shooting through windows
+        - Opaque
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
@@ -356,7 +334,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Opaque # WWDP allow shooting through windows
+        - Opaque
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
@@ -394,7 +372,7 @@
         mask:
         - Opaque
       fly-by: *flybyfixture
-  - type: Reflective # Goobstation - Make emitter bolts reflect as energy
+  - type: Reflective
     reflective:
     - Energy
   - type: Projectile
@@ -489,11 +467,11 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 40 # Lavaland Change - TOTAL PKA VICTORY
-        Structural: 30 # Lavaland/Eris change: Yes easy break ins
+        Blunt: 40
+        Structural: 30
   # Short lifespan
   - type: TimedDespawn
-    lifetime: 0.170 # Lavaland Change
+    lifetime: 0.170
 
 - type: entity
   id: BulletKineticShuttle
@@ -540,7 +518,7 @@
         shader: unshaded
   - type: GatheringProjectile
   - type: DamageMarkerOnCollide
-    onlyWorkOnFauna: true # Lavaland Change
+    onlyWorkOnFauna: true
     whitelist:
       components:
         - MobState
@@ -929,7 +907,7 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
-      - state: grenade
+    - state: grenade
   - type: Projectile
     damage:
       types:
@@ -1101,7 +1079,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Opaque # WWDP allow shooting through windows
+        - Opaque
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
@@ -1223,10 +1201,6 @@
     tags:
       - HideContextMenu
 
-# DeltaV projectiles
-# For whatever magical reasons, I cannot put those in the DeltaV folders without having errors.
-
-# Because Hitscan lasers aren't fun to shoot in my opinion, we give the HoS pistol a special lethal laser that moves
 - type: entity
   name: energy bolt
   id: BulletEnergyGunLaser
@@ -1295,7 +1269,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Opaque # WWDP allow shooting through windows
+        - Opaque
       fly-by: *flybyfixture
   - type: Ammo
   - type: Projectile
@@ -1363,7 +1337,7 @@
     count: 3 # bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
     spread: 9
 
-- type: entity # Goobstation, put here so the X-01 stuff isnt spread everywhere.
+- type: entity
   name: magnum bolt
   id: BulletEnergyGunMagnum
   parent: BaseBullet
@@ -1402,7 +1376,7 @@
     soundHit:
       collection: MeatLaserImpact
 
-- type: entity #Goobstation, put here so the X-01 stuff isnt spread everywhere.
+- type: entity
   name: ion bolt
   id: BulletEnergyGunIon
   parent: BaseBullet

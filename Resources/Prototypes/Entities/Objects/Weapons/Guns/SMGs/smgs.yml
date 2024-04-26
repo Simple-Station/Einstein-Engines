@@ -155,14 +155,14 @@
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolSubMachineGun
+          - MagazinePistolSubMachineGun
       gun_chamber:
         name: Chamber
         startingItem: null
         priority: 1
         whitelist:
           tags:
-            - CartridgePistol
+          - CartridgePistol
 
 - type: entity
   name: antique C-20r submachine gun
@@ -170,8 +170,8 @@
   id: WeaponSubMachineGunC20rHoS
   description: This heavily worn submachine gun is engraved with the words, "Remember Mars".
   components:
-    - type: StealTarget
-      stealGroup: HoSAntiqueWeapon
+  - type: StealTarget
+    stealGroup: HoSAntiqueWeapon
 
 - type: entity
   name: Drozd
@@ -179,53 +179,53 @@
   id: WeaponSubMachineGunDrozd
   description: An excellent fully automatic Heavy SMG.
   components:
-    - type: Sprite
-      sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
-      layers:
-        - state: base
-          map: ["enum.GunVisualLayers.Base"]
-        - state: mag-0
-          map: ["enum.GunVisualLayers.Mag"]
-    - type: Clothing
-      sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
-    - type: Wieldable
-      unwieldOnUse: false
-    - type: GunWieldBonus
-      minAngle: -19
-      maxAngle: -16
-    - type: Gun
-      minAngle: 21
-      maxAngle: 32
-      fireRate: 12
-      burstFireRate: 12
-      selectedMode: FullAuto
-      soundGunshot:
-        path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
-      availableModes:
-        - FullAuto
-    - type: ItemSlots
-      slots:
-        gun_magazine:
-          name: Magazine
-          startingItem: MagazinePistolSubMachineGun
-          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-          priority: 2
-          whitelist:
-            tags:
-              - MagazinePistolSubMachineGun
-        gun_chamber:
-          name: Chamber
-          startingItem: CartridgePistol
-          priority: 1
-          whitelist:
-            tags:
-              - CartridgePistol
-    - type: MagazineVisuals
-      magState: mag
-      steps: 1
-      zeroVisible: true
-    - type: Appearance
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -19
+    maxAngle: -16
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 12
+    burstFireRate: 12
+    selectedMode: FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+    availableModes:
+    - FullAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistolSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
 
 #Commented out the Vector, as it is deprecated.
 # - type: entity
@@ -344,58 +344,5 @@
   parent: WeaponSubMachineGunWt550
   description: A prized possession of the station's Head of Security. The smell of dried blood lingers on this weapon's muzzle. A small torch with 24 stars surrounding it has been engraved on the grip.
   components:
-    - type: StealTarget
-      stealGroup: HoSAntiqueWeapon
-
-
-# Rubber
-- type: entity
-  name: Drozd
-  parent: WeaponSubMachineGunDrozd
-  id: WeaponSubMachineGunDrozdRubber
-  suffix: Non-Lethal
-  components:
-    - type: ItemSlots
-      slots:
-        gun_magazine:
-          name: Magazine
-          startingItem: MagazinePistolSubMachineGunRubber
-          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-          priority: 2
-          whitelist:
-            tags:
-              - MagazinePistolSubMachineGun
-        gun_chamber:
-          name: Chamber
-          startingItem: CartridgePistolRubber
-          priority: 1
-          whitelist:
-            tags:
-              - CartridgePistol
-
-#- type: entity
-#  name: Vector
-#  parent: WeaponSubMachineGunVector
-#  id: WeaponSubMachineGunVectorRubber
-#  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
-#  suffix: Non-Lethal
-#  components:
-#  - type: ItemSlots
-#    slots:
-#      gun_magazine:
-#        name: Magazine
-#        startingItem: MagazineMagnumSubMachineGunRubber
-#        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-#        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-#        priority: 2
-#        whitelist:
-#          tags:
-#            - MagazineMagnumSubMachineGun
-#      gun_chamber:
-#        name: Chamber
-#        startingItem: CartridgeMagnumRubber
-#        priority: 1
-#        whitelist:
-#          tags:
-#            - CartridgeMagnum
+  - type: StealTarget
+    stealGroup: HoSAntiqueWeapon
