@@ -125,6 +125,7 @@
       - Binary
       - Common
     - type: Speech
+      speechVerb: IPC
       speechSounds: IPC
     - type: Vocal
       sounds:

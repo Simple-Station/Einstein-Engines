@@ -135,3 +135,11 @@
   - chat-speech-verb-electricity-1
   - chat-speech-verb-electricity-2
   - chat-speech-verb-electricity-3
+
+- type: speechVerb
+  id: IPC
+  speechVerbStrings:
+  - chat-speech-verb-ipc-1
+  - chat-speech-verb-ipc-2
+  - chat-speech-verb-ipc-3
+  - chat-speech-verb-ipc-4

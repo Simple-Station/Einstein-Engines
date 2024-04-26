@@ -1,9 +1,9 @@
 ## Traitor
 
 traitor-round-end-codewords = The codewords were: [color=White]{$codewords}[/color]
-traitor-round-end-agent-name = traitor
+traitor-round-end-agent-name = Terragov Agent
 
-objective-issuer-syndicate = [color=crimson]The Syndicate[/color]
+objective-issuer-syndicate = [color=darkgreen]Terragov[/color]
 
 # Shown at the end of a round of Traitor
 
@@ -23,10 +23,10 @@ traitor-death-match-end-round-description-entry = {$originalName}'s PDA, with {$
 
 # TraitorRole
 traitor-role-greeting =
-    You are a syndicate agent.
+    You are a terragov agent.
     Your objectives and codewords are listed in the character menu.
     Use the uplink loaded into your PDA to buy the tools you'll need for this mission.
-    Death to Nanotrasen!
+    Glory to Terragov!
 traitor-role-codewords =
     The codewords are:
     {$codewords}.

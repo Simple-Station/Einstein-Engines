@@ -127,8 +127,8 @@
 - type: speechSounds
   id: IPC
   saySound:
-    path: /Audio/Voice/Talk/pai.ogg
+    path: /Audio/Voice/Talk/syndieborg.ogg
   askSound:
-    path: /Audio/Voice/Talk/pai_ask.ogg
+    path: /Audio/Voice/Talk/syndieborg_ask.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/pai_exclaim.ogg
+    path: /Audio/Voice/Talk/syndieborg_exclaim.ogg

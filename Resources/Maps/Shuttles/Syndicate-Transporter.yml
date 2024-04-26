@@ -13,10 +13,8 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: grid
     - type: Transform
-      pos: -1.1116635,0.37235177
-      parent: 6
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -164,18 +162,6 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-  - uid: 6
-    components:
-    - type: MetaData
-      name: map 2
-    - type: Transform
-    - type: Map
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
-    - type: LoadedMap
 - proto: AirlockHatchSyndicate
   entities:
   - uid: 42

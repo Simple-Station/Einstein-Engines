@@ -87,3 +87,17 @@
     nameSegments:
     - names_ninja_title
     - names_ninja
+
+- type: entity
+  save: false
+  name: Urist McHands
+  parent: BaseMobHuman
+  id: MobUristAgent
+  components:
+    - type: Loadout
+      prototypes:
+        - SyndicateFootsoldierGearRuin
+    - type: GhostRole
+      name: Syndicate Clone Soldier
+      description: Urist Squad has been activated, work with your brothers and complete your objective.
+    - type: GhostTakeoverAvailable
