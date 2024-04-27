@@ -288,3 +288,134 @@
     containers:
       mech-battery-slot:
       - PowerCellHigh
+
+# Combat Mechs
+
+- type: entity
+  parent: BaseMech
+  id: MechMarauder
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: marauder
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    baseState: marauder
+    openState: marauder-open
+    brokenState: marauder-broken
+    airtight: true
+    maxIntegrity: 500
+    mechToPilotDamageMultiplier: 0.35
+  - type: Reflect # Smol chance to reflect bullets/lasers
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 0.70 #Big slow arms
+    damage:
+      types:
+        Blunt: 50 #THWACK
+        Structural: 55
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FireResStrongMetallic # Yes this thing is also fire resistant
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.0
+    baseSprintSpeed: 3.0
+
+- type: entity
+  parent: MechMarauder
+  id: MechMarauderBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  parent: BaseMech
+  id: MechDarkGygax
+  components:
+  - type: Magboots
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: darkgygax
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    baseState: darkgygax
+    openState: darkgygax-open
+    brokenState: darkgygax-broken
+    airtight: true
+    maxIntegrity: 300
+    mechToPilotDamageMultiplier: 0.35
+  - type: Reflect # Smol chance to reflect bullets/lasers
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 0.90 #Big slow arms
+    damage:
+      types:
+        Blunt: 35 #THWACK
+        Structural: 40
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FireResStrongMetallic # Yes this thing is also fire resistant
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+
+- type: entity
+  parent: MechDarkGygax
+  id: MechDarkGygaxBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  parent: BaseMech
+  id: MechMauler
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: mauler
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    baseState: mauler
+    openState: mauler-open
+    brokenState: mauler-broken
+    airtight: true
+    maxIntegrity: 500
+    mechToPilotDamageMultiplier: 0.35
+  - type: Reflect # Smol chance to reflect bullets/lasers
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 0.70 #Big slow arms
+    damage:
+      types:
+        Blunt: 50 #THWACK
+        Structural: 55
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FireResStrongMetallic # Yes this thing is also fire resistant
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.0
+    baseSprintSpeed: 3.0
