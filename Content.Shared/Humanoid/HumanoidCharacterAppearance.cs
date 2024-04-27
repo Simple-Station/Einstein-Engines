@@ -104,8 +104,9 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance
             HumanoidSkinColor.HumanToned => Humanoid.SkinColor.HumanSkinTone(speciesPrototype.DefaultHumanSkinTone),
             HumanoidSkinColor.Hues => speciesPrototype.DefaultSkinTone,
             HumanoidSkinColor.TintedHues => Humanoid.SkinColor.TintedHues(speciesPrototype.DefaultSkinTone),
+            HumanoidSkinColor.VoxFeathers => Humanoid.SkinColor.ClosestVoxColor(speciesPrototype.DefaultSkinTone),
             HumanoidSkinColor.TintedHuesSkin => Humanoid.SkinColor.TintedHuesSkin(speciesPrototype.DefaultSkinTone, speciesPrototype.DefaultSkinTone),
-            _ => Humanoid.SkinColor.ValidHumanSkinTone
+            _ => Humanoid.SkinColor.ValidHumanSkinTone,
         };
 
         return new(
@@ -171,7 +172,10 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance
             case HumanoidSkinColor.TintedHuesSkin:
                 newSkinColor = Humanoid.SkinColor.ValidTintedHuesSkinTone(skinTone, newSkinColor);
                 break;
-            }
+            case HumanoidSkinColor.VoxFeathers:
+                newSkinColor = Humanoid.SkinColor.ProportionalVoxColor(newSkinColor);
+                break;
+        }
 
         return new HumanoidCharacterAppearance(newHairStyle, newHairColor, newFacialHairStyle, newHairColor, newEyeColor, newSkinColor, new ());
 
