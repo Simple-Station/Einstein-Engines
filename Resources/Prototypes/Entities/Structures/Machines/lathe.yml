@@ -720,22 +720,32 @@
       - Stunbaton
       - ForensicPad
       - RiotShield
+      - BoxLethalshot
       - ShellShotgun
       - ShellShotgunSlug
       - ShellShotgunFlare
       - ShellTranquilizer
       - MagazinePistol
+      - MagazinePistolEmpty
       - MagazinePistolSubMachineGun
+      - MagazinePistolSubMachineGunEmpty
       - MagazinePistolSubMachineGunTopMounted
+      - MagazinePistolSubMachineGunTopMountedEmpty
       - MagazineRifle
+      - MagazineRifleEmpty
       - MagazineLightRifle
+      - MagazineLightRifleEmpty
+      - MagazineShotgunEmpty
+      - MagazineShotgun
+      - MagazineShotgunSlug
       - MagazineBoxPistol
       - MagazineBoxMagnum
       - MagazineBoxRifle
       - MagazineBoxLightRifle
       - SpeedLoaderMagnum
-      - ClothingOuterArmorPlateCarrier # DeltaV - plate carrier body armour
-      - ClothingOuterArmorDuraVest # DeltaV - stabproof vest body armour
+      - SpeedLoaderMagnumEmpty
+      - ClothingOuterArmorPlateCarrier
+      - ClothingOuterArmorDuraVest
       - TargetHuman
       - TargetSyndicate
       - TargetClown
@@ -743,17 +753,26 @@
       - MagazineBoxMagnumPractice
       - MagazineBoxPistolPractice
       - MagazineBoxRiflePractice
-      - ShellShotgunPractice
       - WeaponLaserCarbinePractice
       - WeaponDisablerPractice
+      - BoxShotgunPractice
       - ShockCollar
-      # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
       - MagazineBoxSpecial
       - MagazineBoxSpecialPractice
       - SpeedLoaderSpecial
       - MagazinePistolSpecial
-      # End of modified code
     dynamicRecipes:
+      - MagazineLightRifleIncendiary
+      - SpeedLoaderMagnumIncendiary
+      - MagazinePistolIncendiary
+      - MagazineRifleIncendiary
+      - MagazineShotgunIncendiary
+      - MagazineLightRifleUranium
+      - SpeedLoaderMagnumUranium
+      - MagazinePistolUranium
+      - MagazineRifleUranium
+      - MagazineShotgunBeanbag
+      - ShellTranquilizer
       - EncryptionKeySyndie # Nyano
       - CartridgeLightRifleIncendiary
       - CartridgeMagnumIncendiary
@@ -775,11 +794,14 @@
       - MagazineBoxMagnumIncendiary
       - MagazineBoxPistolIncendiary
       - MagazineBoxRifleIncendiary
+      - BoxShotgunIncendiary
       - MagazineBoxLightRifleUranium
       - MagazineBoxMagnumUranium
       - MagazineBoxPistolUranium
       - MagazineBoxRifleUranium
-      - ShellSoulbreaker # Nyanotrasen - Shotgun shell to get rid of psionics
+      - BoxShotgunUranium
+      - BoxBeanbag
+      - ShellSoulbreaker
       - MagazineBoxLightRifleRubber
       - MagazineBoxMagnumRubber
       - MagazineBoxPistolRubber
@@ -787,17 +809,14 @@
       - MagazineGrenadeEmpty
       - GrenadeEMP
       - GrenadeFlash
-      - ShellShotgunBeanbag
-      - ShellShotgunIncendiary
-      - ShellShotgunUranium
       - Signaller
       - SignalTrigger
       - TelescopicShield
       - TimerTrigger
       - Truncheon
       - VoiceTrigger
-      - WeaponDisablerPractice
       - WeaponAdvancedLaser
+      - WeaponDisabler
       - WeaponDisablerSMG
       - WeaponLaserCannon
       - WeaponLaserCarbine
