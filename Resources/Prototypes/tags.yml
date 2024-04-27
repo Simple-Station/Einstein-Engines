@@ -260,6 +260,9 @@
   id: CableCoil
 
 - type: Tag
+  id: CaneBlade
+
+- type: Tag
   id: CapacitorStockPart
 
 - type: Tag
@@ -1330,5 +1333,3 @@
 
 - type: Tag
   id: WriteIgnoreStamps
-
-# PUT YOUR TAGS IN ALPHABETICAL ORDER
