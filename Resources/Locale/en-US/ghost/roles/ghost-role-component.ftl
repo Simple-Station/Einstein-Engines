@@ -4,17 +4,6 @@ ghost-role-component-default-rules = All normal rules apply unless an administra
                                      You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                      You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
-# Delta V soft antag rule
-deltav-ghost-role-information-softantag-rules = You are allowed to attack the crew without provocation.
-                                                You are allowed to coexist with the crew.
-                                                The crew is allowed to kill you without warning.
-
-# Delta V salvage antag rule
-deltav-ghost-role-information-salvageantag-rules =  You are a salvage mob.
-                                                    You are allowed to attack salvagers without provocation. DO NOT GIB THEIR CORPSES!
-                                                    You are allowed to attack the salvage shuttle.
-                                                    You are NOT allowed to go to the station. If the salvagers go to the station, you can't follow them.
-
 ghost-role-information-mouse-name = Mouse
 ghost-role-information-mouse-description = A hungry and mischievous mouse.
 
@@ -40,16 +29,13 @@ ghost-role-information-angry-slimes-description = Everyone around you irritates 
 
 ghost-role-information-smile-name = Smile the Slime
 ghost-role-information-smile-description = The sweetest creature in the world. Smile Slime!
-ghost-role-information-smile-rules = You are a crew-aligned pet. You can defend yourself and even attack threats to the station, but you generally should not attack the station's crew nor destroy their property.
 
 ghost-role-information-punpun-name = Pun Pun
 ghost-role-information-punpun-description = An honorable member of the monkey society in charge of the bar and helping the bartenders in any way he can.
 
 ghost-role-information-xeno-name = Xeno
 ghost-role-information-xeno-description = You are a xeno, co-operate with your hive to kill all crewmembers!
-ghost-role-information-xeno-rules = You are a xeno.
-                                    Your objective is to cooperate with your fellow xenos and kill all the crew.
-                                    Strike fast, make them fear the shadows.
+ghost-role-information-xeno-rules = You are an antagonist, smack, slash, and wack!
 
 ghost-role-information-revenant-name = Revenant
 ghost-role-information-revenant-description = You are a Revenant. Use your powers to harvest souls and unleash chaos upon the crew. Unlock new abilities with the essence you harvest.
@@ -161,7 +147,7 @@ ghost-role-information-skeleton-biker-name = Skeleton Biker
 ghost-role-information-skeleton-biker-description = Ride around on your sweet ride.
 
 ghost-role-information-closet-skeleton-name = Closet Skeleton
-ghost-role-information-closet-skeleton-description = You are a closet skeleton! You are a primordial force of chaos with no allegiance! You can either join the crew and use your skeletal antics to help them, or be a a prankster, and hinder their efforts!
+ghost-role-information-closet-skeleton-description = Wreak havoc! You are a primordial force with no allegiance. Live happily with the crew or wage sweet skeletal war.
 
 ghost-role-information-onestar-mecha-name = Onestar Mecha
 ghost-role-information-onestar-mecha-description = You are an experimental mecha created by who-knows-what, all you know is that you have weapons and you detect fleshy moving targets nearby...
@@ -225,14 +211,6 @@ ghost-role-information-Cak-rules = You are a living edible sweet cat. Your task 
 ghost-role-information-BreadDog-name = BreadDog
 ghost-role-information-BreadDog-description = You are the chef's favorite child. You're a living bread dog.
 ghost-role-information-BreadDog-rules = You're an edible dog made of bread. Your task is to find your place in this world where everything wants to eat you.
-
-ghost-role-information-Shiva-name = Shiva
-ghost-role-information-Shiva-description = Shiva, the stations first defender. Help the Head of Security in their work
-ghost-role-information-Shiva-rules = Protect security staff and the crew from danger. Stay with Security staff or around the Security department, try to disable criminals and not kill them if the situation allows for it.
-
-ghost-role-information-exterminator-name = Exterminator
-ghost-role-information-exterminator-description = You been been sent back in time to terminate a target with high importance to the future.
-ghost-role-information-exterminator-rules = You are an antagonist and may kill anyone that tries to stop you, but killing the target is always your top priority.
 
 ghost-role-information-space-ninja-name = Space Ninja
 ghost-role-information-space-ninja-description = Use stealth and deception to sabotage the station.
