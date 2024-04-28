@@ -129,7 +129,7 @@
 
 - type: entity
   parent: BaseMechEquipment
-  id: WeaponTeslaGun
+  id: WeaponMechTeslaGun
   name: MKI Tesla Cannon
   description: The power of the primordial element of lightning, now attatched to your mech.
   components:

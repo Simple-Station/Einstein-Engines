@@ -294,6 +294,8 @@
 - type: entity
   parent: BaseMech
   id: MechMarauder
+  name: Marauder
+  description: A robust, heavily armored exosuit used by Terragov's most elite operatives. If you can read this, you're probably too close.
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -340,6 +342,8 @@
 - type: entity
   parent: BaseMech
   id: MechDarkGygax
+  name: Dark Gygax
+  description: A light exosuit used by the Syndicate. The sleek black finish strikes fear into even the bravest Terragov marines.
   components:
   - type: Magboots
   - type: Sprite
@@ -387,6 +391,8 @@
 - type: entity
   parent: BaseMech
   id: MechMauler
+  name: Mauler
+  description: A heavy exosuit used by The Syndicate, modeled after the Marauder. If you're reading this, you're WAY too close.
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -419,3 +425,13 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.0
     baseSprintSpeed: 3.0
+
+- type: entity
+  parent: MechMauler
+  id: MechMaulerBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh

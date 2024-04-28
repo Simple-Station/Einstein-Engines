@@ -63,7 +63,7 @@
     - type: HumanoidAppearance
       species: IPC
     - type: Damageable
-      damageContainer: Inorganic
+      damageContainer: Synth
       damageModifierSet: Synth
     - type: Icon
       sprite: Mobs/Species/IPC/parts.rsi
@@ -116,14 +116,13 @@
         70: 0.6
         90: 0.4
     # Misc
+    - type: IntrinsicRadioReceiver
     - type: IntrinsicRadioTransmitter
       channels:
       - Binary
-      - Common
     - type: ActiveRadio
       channels:
       - Binary
-      - Common
     - type: Speech
       speechVerb: IPC
       speechSounds: IPC
