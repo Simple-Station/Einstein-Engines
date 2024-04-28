@@ -61,9 +61,9 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - BoxBeanbag
-  - ShellShotgunBeanbag
+  - MagazineShotgunBeanbag
   - ShellTranquilizer
+  - BoxBeanbag
   - CartridgePistolRubber
   - CartridgeMagnumRubber
   - CartridgeLightRifleRubber

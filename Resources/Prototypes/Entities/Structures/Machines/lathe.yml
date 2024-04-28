@@ -163,58 +163,66 @@
       - ClothingHeadHatWelding
   - type: EmagLatheRecipes
     emagStaticRecipes:
-       - CartridgePistol
-       - CartridgeMagnum
-       - ShellShotgun
-       - ShellShotgunFlare
-       - ShellTranquilizer
-       - CartridgeLightRifle
-       - CartridgeRifle
-       - CombatKnife
-       - MagazineBoxPistol
-       - MagazineBoxMagnum
-       - MagazineBoxRifle
-       - MagazineBoxLightRifle
-       - GrenadeBlast
-       # DeltaV - .38 special ammo - Add .38 special lethals to emagged autolathe
-       - CartridgeSpecial
-       - MagazineBoxSpecial
-       # End of modified code
+      - BoxLethalshot
+      - BoxShotgunFlare
+      - GrenadeBlast
+      - MagazineBoxLightRifle
+      - MagazineBoxMagnum
+      - MagazineBoxPistol
+      - MagazineBoxRifle
+      - MagazineLightRifle
+      - MagazineLightRifleEmpty
+      - MagazinePistol
+      - MagazinePistolEmpty
+      - MagazinePistolSubMachineGun
+      - MagazinePistolSubMachineGunEmpty
+      - MagazineRifle
+      - MagazineRifleEmpty
+      - MagazineShotgun
+      - MagazineShotgunEmpty
+      - ShellTranquilizer
+      - SpeedLoaderMagnum
+      - SpeedLoaderMagnumEmpty
+      - CombatKnife
+      - CartridgeSpecial
+      - MagazineBoxSpecial
     emagDynamicRecipes:
+      - BoxBeanbag
+      - BoxShotgunIncendiary
+      - BoxShotgunUranium
+      - GrenadeEMP
+      - GrenadeFlash
+      - MagazineBoxLightRifleIncendiary
+      - MagazineBoxLightRifleUranium
+      - MagazineBoxMagnumIncendiary
+      - MagazineBoxMagnumUranium
       - CartridgePistolRubber
       - CartridgeMagnumRubber
-      - ShellShotgunBeanbag
       - CartridgeRifleRubber
       - CartridgeLightRifleRubber
       - MagazineBoxPistolRubber
       - MagazineBoxMagnumRubber
       - MagazineBoxRifleRubber
       - MagazineBoxLightRifleRubber
-      - ShellShotgunIncendiary
-      - CartridgePistolIncendiary
-      - CartridgeMagnumIncendiary
-      - CartridgeLightRifleIncendiary
-      - CartridgeRifleIncendiary
       - MagazineBoxPistolIncendiary
-      - MagazineBoxMagnumIncendiary
-      - MagazineBoxLightRifleIncendiary
-      - MagazineBoxRifleIncendiary
-      - ShellShotgunUranium
-      - CartridgePistolUranium
-      - CartridgeMagnumUranium
-      - CartridgeLightRifleUranium
-      - CartridgeRifleUranium
       - MagazineBoxPistolUranium
-      - MagazineBoxMagnumUranium
-      - MagazineBoxLightRifleUranium
+      - MagazineBoxRifleIncendiary
       - MagazineBoxRifleUranium
-      - PowerCageSmall
-      - PowerCageMedium
-      - PowerCageHigh
       - MagazineGrenadeEmpty
-      - GrenadeEMP
-      - GrenadeFlash
-      # DeltaV - .38 special ammo - Add various .38 special ammo to emagged autolathe
+      - MagazineLightRifleIncendiary
+      - MagazineLightRifleUranium
+      - MagazinePistolIncendiary
+      - MagazinePistolUranium
+      - MagazineRifleIncendiary
+      - MagazineRifleUranium
+      - MagazineShotgunBeanbag
+      - MagazineShotgunIncendiary
+      - MagazineShotgunIncendiary
+      - PowerCageHigh
+      - PowerCageMedium
+      - PowerCageSmall
+      - SpeedLoaderMagnumIncendiary
+      - SpeedLoaderMagnumUranium
       - CartridgeSpecialRubber
       - CartridgeSpecialIncendiary
       - CartridgeSpecialUranium
@@ -223,7 +231,6 @@
       - MagazineBoxSpecialIncendiary
       - MagazineBoxSpecialUranium
       - MagazineBoxSpecialMindbreaker
-      # End of modified code
 
 - type: entity
   id: AutolatheHyperConvection
@@ -712,19 +719,29 @@
     idleState: icon
     runningState: icon
     staticRecipes:
+      - BoxLethalshot
+      - BoxShotgunFlare
+      - BoxShotgunPractice
+      - BoxShotgunSlug
       - ClothingEyesHudSecurity
       - CombatKnife
       - Flash
-      - Handcuffs
-      - Zipties
-      - Stunbaton
       - ForensicPad
-      - RiotShield
-      - BoxLethalshot
+      - Handcuffs
       - ShellShotgun
       - ShellShotgunSlug
       - ShellShotgunFlare
       - ShellTranquilizer
+      - MagazineBoxLightRifle
+      - MagazineBoxLightRiflePractice
+      - MagazineBoxMagnum
+      - MagazineBoxMagnumPractice
+      - MagazineBoxPistol
+      - MagazineBoxPistolPractice
+      - MagazineBoxRifle
+      - MagazineBoxRiflePractice
+      - MagazineLightRifle
+      - MagazineLightRifleEmpty
       - MagazinePistol
       - MagazinePistolEmpty
       - MagazinePistolSubMachineGun
@@ -733,47 +750,31 @@
       - MagazinePistolSubMachineGunTopMountedEmpty
       - MagazineRifle
       - MagazineRifleEmpty
-      - MagazineLightRifle
-      - MagazineLightRifleEmpty
-      - MagazineShotgunEmpty
       - MagazineShotgun
+      - MagazineShotgunEmpty
       - MagazineShotgunSlug
-      - MagazineBoxPistol
-      - MagazineBoxMagnum
-      - MagazineBoxRifle
-      - MagazineBoxLightRifle
+      - RiotShield
       - SpeedLoaderMagnum
       - SpeedLoaderMagnumEmpty
+      - Stunbaton
+      - TargetClown
       - ClothingOuterArmorPlateCarrier
       - ClothingOuterArmorDuraVest
       - TargetHuman
       - TargetSyndicate
-      - TargetClown
-      - MagazineBoxLightRiflePractice
-      - MagazineBoxMagnumPractice
-      - MagazineBoxPistolPractice
-      - MagazineBoxRiflePractice
-      - WeaponLaserCarbinePractice
       - WeaponDisablerPractice
-      - BoxShotgunPractice
+      - WeaponLaserCarbinePractice
+      - Zipties
       - ShockCollar
       - MagazineBoxSpecial
       - MagazineBoxSpecialPractice
       - SpeedLoaderSpecial
       - MagazinePistolSpecial
     dynamicRecipes:
-      - MagazineLightRifleIncendiary
-      - SpeedLoaderMagnumIncendiary
-      - MagazinePistolIncendiary
-      - MagazineRifleIncendiary
-      - MagazineShotgunIncendiary
-      - MagazineLightRifleUranium
-      - SpeedLoaderMagnumUranium
-      - MagazinePistolUranium
-      - MagazineRifleUranium
-      - MagazineShotgunBeanbag
-      - ShellTranquilizer
-      - EncryptionKeySyndie # Nyano
+      - BoxBeanbag
+      - BoxShotgunIncendiary
+      - BoxShotgunUranium
+      - EncryptionKeySyndie
       - CartridgeLightRifleIncendiary
       - CartridgeMagnumIncendiary
       - CartridgePistolIncendiary
@@ -789,28 +790,43 @@
       - ClothingEyesGlassesSecurity
       - ExplosivePayload
       - FlashPayload
+      - GrenadeEMP
+      - GrenadeFlash
       - HoloprojectorSecurity
       - MagazineBoxLightRifleIncendiary
-      - MagazineBoxMagnumIncendiary
-      - MagazineBoxPistolIncendiary
-      - MagazineBoxRifleIncendiary
-      - BoxShotgunIncendiary
       - MagazineBoxLightRifleUranium
+      - MagazineBoxMagnumIncendiary
       - MagazineBoxMagnumUranium
+      - MagazineBoxPistolIncendiary
       - MagazineBoxPistolUranium
+      - MagazineBoxRifleIncendiary
       - MagazineBoxRifleUranium
-      - BoxShotgunUranium
-      - BoxBeanbag
       - ShellSoulbreaker
       - MagazineBoxLightRifleRubber
       - MagazineBoxMagnumRubber
       - MagazineBoxPistolRubber
       - MagazineBoxRifleRubber
       - MagazineGrenadeEmpty
-      - GrenadeEMP
-      - GrenadeFlash
+      - MagazineLightRifleIncendiary
+      - MagazineLightRifleUranium
+      - MagazinePistolIncendiary
+      - MagazinePistolUranium
+      - MagazineRifleIncendiary
+      - MagazineRifleUranium
+      - MagazineShotgunBeanbag
+      - MagazineShotgunIncendiary
+      - PowerCageHigh
+      - PowerCageMedium
+      - PowerCageSmall
+      - ShellTranquilizer
+      - ShuttleGunDusterCircuitboard
+      - ShuttleGunFriendshipCircuitboard
+      - ShuttleGunPerforatorCircuitboard
+      - ShuttleGunSvalinnMachineGunCircuitboard
       - Signaller
       - SignalTrigger
+      - SpeedLoaderMagnumIncendiary
+      - SpeedLoaderMagnumUranium
       - TelescopicShield
       - TimerTrigger
       - Truncheon
@@ -824,18 +840,10 @@
       - ClothingHeadCage # Nyanotrasen - Insulative headgear
       - ShockCollar # Nyanotrasen - Shock Collar
       - WeaponXrayCannon
-      - PowerCageSmall
-      - PowerCageMedium
-      - PowerCageHigh
-      - ShuttleGunSvalinnMachineGunCircuitboard
-      - ShuttleGunPerforatorCircuitboard
-      - ShuttleGunFriendshipCircuitboard
-      - ShuttleGunDusterCircuitboard
-      - WeaponEnergyGun #DeltaV - Energy Gun
-      - WeaponEnergyGunMini #DeltaV - Energy Gun but miniature
-      - WeaponEnergyGunPistol #DeltaV - Energy Gun Mini but with the power of a normal energy gun
-      - WeaponGunLaserCarbineAutomatic #DeltaV - New Laser Projectiles with a 20 round carbine
-      # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
+      - WeaponEnergyGun
+      - WeaponEnergyGunMini
+      - WeaponEnergyGunPistol
+      - WeaponGunLaserCarbineAutomatic
       - CartridgeSpecialRubber
       - CartridgeSpecialIncendiary
       - CartridgeSpecialUranium
@@ -845,7 +853,6 @@
       - MagazineBoxSpecialIncendiary
       - MagazineBoxSpecialUranium
       - MagazineBoxSpecialMindbreaker
-      # End of modified code
   - type: MaterialStorage
     whitelist:
       tags:
@@ -878,22 +885,27 @@
       idleState: icon
       runningState: icon
       staticRecipes:
-        - CartridgePistol
-        - CartridgeMagnum
-        - ShellShotgun
-        - ShellShotgunSlug
-        - ShellShotgunFlare
-        - ShellTranquilizer
-        - CartridgeLightRifle
-        - CartridgeRifle
-        - MagazineBoxPistol
-        - MagazineBoxMagnum
-        - MagazineBoxRifle
+        - BoxLethalshot
+        - BoxShotgunFlare
+        - BoxShotgunSlug
         - MagazineBoxLightRifle
-        # DeltaV - .38 special ammo - Add lethal .38 special ammo to ammo techfab
+        - MagazineBoxMagnum
+        - MagazineBoxPistol
+        - MagazineBoxRifle
+        - MagazineLightRifle
+        - MagazineLightRifleEmpty
+        - MagazinePistol
+        - MagazinePistolEmpty
+        - MagazineRifle
+        - MagazineRifleEmpty
+        - MagazineShotgun
+        - MagazineShotgunEmpty
+        - MagazineShotgunSlug
+        - ShellTranquilizer
+        - SpeedLoaderMagnum
+        - SpeedLoaderMagnumEmpty
         - CartridgeSpecial
         - MagazineBoxSpecial
-        # End of modified code
     - type: MaterialStorage
       whitelist:
         tags:
