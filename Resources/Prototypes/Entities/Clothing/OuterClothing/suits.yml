@@ -25,6 +25,8 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
     - FullBodyOuter
     - HidesHarpyWings
 
@@ -76,6 +78,8 @@
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: GroupExamine
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
   - type: Tag
     tags:
       - WhitelistChameleon
@@ -107,6 +111,8 @@
       sprintModifier: 0.8
     - type: HeldSpeedModifier
     - type: GroupExamine
+    - type: ClothingRequiredStepTriggerImmune
+      slots: WITHOUT_POCKET
     - type: Tag
       tags:
         - FullBodyOuter
@@ -135,6 +141,8 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
   - type: Tag
     tags:
       - FullBodyOuter
@@ -191,6 +199,8 @@
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
   - type: Tag
     tags:
       - FullBodyOuter
@@ -219,6 +229,8 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
   - type: Tag
     tags:
       - FullBodyOuter
@@ -243,6 +255,8 @@
   - type: Construction
     graph: ClothingOuterSuitIan
     node: suit
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
 
 - type: entity
   parent: ClothingOuterBase

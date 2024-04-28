@@ -147,6 +147,8 @@
     localSoundOnly: true
   - type: StaminaDamageResistance
     coefficient: 0.75 # 25%
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
 
 - type: entity
   abstract: true
@@ -171,6 +173,8 @@
   - type: Clothing
     equipDelay: 1.25 # Softsuits are easier to put on and off
     unequipDelay: 1
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
 
 - type: entity
   parent: ClothingOuterBase
