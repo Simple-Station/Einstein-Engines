@@ -43,7 +43,7 @@ entities:
   - uid: 1668
     components:
     - type: MetaData
-      name: Central Command
+      name: High Command
     - type: Transform
       parent: 434
     - type: MapGrid
