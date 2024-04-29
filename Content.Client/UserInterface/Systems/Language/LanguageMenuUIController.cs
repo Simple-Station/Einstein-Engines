@@ -42,8 +42,9 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     {
         DebugTools.Assert(_languageWindow == null);
 
-        var clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
-        clientLanguageSystem.LanguagesUpdatedHook += LanguagesUpdatedHook;
+        var _IEntitySystemManager = IoCManager.Resolve<IEntitySystemManager>();
+        var _clientLanguageSystem = _IEntitySystemManager.GetEntitySystem<LanguageSystem>();
+        _clientLanguageSystem.LanguagesUpdatedHook += LanguagesUpdatedHook;
 
         _languageWindow = UIManager.CreateWindow<LanguageMenuWindow>();
         LayoutContainer.SetAnchorPreset(_languageWindow, LayoutContainer.LayoutPreset.CenterTop);
