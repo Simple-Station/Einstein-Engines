@@ -604,6 +604,17 @@
   - UplinkUtility
 
 - type: listing
+  id: UplinkSyndicateMartyrModule
+  name: uplink-syndicate-martyr-module-name
+  description: uplink-syndicate-martyr-module-desc
+  productEntity: BorgModuleMartyr
+  icon: { sprite: /Textures/Objects/Specific/Robotics/borgmodule.rsi, state: syndicateborgbomb }
+  cost:
+    Telecrystal: 4
+  categories:
+    - UplinkDisruption
+
+- type: listing
   id: UplinkAgentIDCard
   name: uplink-agent-id-card-name
   description: uplink-agent-id-card-desc
