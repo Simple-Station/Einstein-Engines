@@ -17,6 +17,7 @@
   - type: Speech
     speechSounds: Squeak
     speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
   - type: Fixtures
     fixtures:
       fix1:
@@ -458,6 +459,7 @@
   - type: Speech
     speechVerb: Moth
     speechSounds: Chitter
+    allowedEmotes: ['Chitter']
   - type: FaxableObject
     insertingState: inserting_mothroach
   - type: MothAccent
@@ -869,6 +871,7 @@
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
+    allowedEmotes: ['Click']
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1593,6 +1596,7 @@
   - type: Speech
     speechSounds: Squeak
     speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/mouse.rsi
@@ -2363,6 +2367,7 @@
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
+    allowedEmotes: ['Click']
   - type: Vocal
     sounds:
       Male: UnisexArachnid
@@ -3246,6 +3251,7 @@
   - type: Speech
     speechVerb: SmallMob
     speechSounds: Squeak
+    allowedEmotes: ['Squeak']
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/hamster.rsi

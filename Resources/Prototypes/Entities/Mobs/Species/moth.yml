@@ -23,6 +23,7 @@
     accent: zombieMoth
   - type: Speech
     speechVerb: Moth
+    allowedEmotes: ['Chitter']
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon
