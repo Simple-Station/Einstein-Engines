@@ -90,12 +90,6 @@
     stateDoorClosed: generic_door
   - type: StaticPrice
     price: 50
-  - type: DamageOtherOnHit #If the new atmos update throws a locker at you, you're in for a bad time. Enjoy.
-    damage:
-      types:
-        Blunt: 25
-  - type: StaminaDamageOnCollide
-    damage: 75
 
 # steel closet base (that can be constructed/deconstructed)
 - type: entity
