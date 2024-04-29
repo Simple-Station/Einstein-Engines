@@ -210,16 +210,17 @@ namespace Content.Server.Atmos.EntitySystems
                     AddMovedByPressure(uid, component, physics);
                     // Grid-rotation adjusted direction
                     var dirVec = (direction.ToAngle() + gridWorldRotation).ToWorldVec();
+                    var maxSafeForceForObject = SpaceWindMaxVelocity * physics.Mass;
 
                     // TODO: Technically these directions won't be correct but uhh I'm just here for optimisations buddy not to fix my old bugs.
                     if (throwTarget != EntityCoordinates.Invalid)
                     {
                         var pos = ((throwTarget.ToMap(EntityManager).Position - xform.WorldPosition).Normalized() + dirVec).Normalized();
-                        _physics.ApplyLinearImpulse(uid, pos * moveForce, body: physics);
+                        _physics.ApplyLinearImpulse(uid, pos * Math.Clamp(moveForce, 0, maxSafeForceForObject), body: physics);
                     }
                     else
                     {
-                        _physics.ApplyLinearImpulse(uid, dirVec * moveForce, body: physics);
+                        _physics.ApplyLinearImpulse(uid, dirVec * Math.Clamp(moveForce, 0, maxSafeForceForObject), body: physics);
                     }
 
                     component.LastHighPressureMovementAirCycle = cycle;
