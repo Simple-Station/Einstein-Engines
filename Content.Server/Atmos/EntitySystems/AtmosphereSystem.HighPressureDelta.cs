@@ -68,7 +68,7 @@ namespace Content.Server.Atmos.EntitySystems
             }
         }
 
-        private void AddMobMovedByPressure(EntityUid uid, MovedByPressureComponent component, PhysicsComponent body)
+        private void AddMovedByPressure(EntityUid uid, MovedByPressureComponent component, PhysicsComponent body)
         {
             if (!TryComp<FixturesComponent>(uid, out var fixtures))
                 return;
@@ -179,6 +179,8 @@ namespace Content.Server.Atmos.EntitySystems
             tile.PressureDirection = differenceDirection;
         }
 
+        //The EE version of this function drops pressureResistanceProbDelta, since it's not needed. If you are for whatever reason calling this function
+        //And it isn't working, you've probably still got the ResistancePobDelta line included. 
         public void ExperiencePressureDifference(
             Entity<MovedByPressureComponent> ent,
             int cycle,
@@ -203,7 +205,7 @@ namespace Content.Server.Atmos.EntitySystems
 
                 if (moveForce > physics.Mass)
                 {
-                    AddMobMovedByPressure(uid, component, physics);
+                    AddMovedByPressure(uid, component, physics);
                     // Grid-rotation adjusted direction
                     var dirVec = (direction.ToAngle() + gridWorldRotation).ToWorldVec();
 
