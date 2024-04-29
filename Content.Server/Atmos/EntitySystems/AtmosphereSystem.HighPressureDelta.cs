@@ -180,7 +180,7 @@ namespace Content.Server.Atmos.EntitySystems
         }
 
         //The EE version of this function drops pressureResistanceProbDelta, since it's not needed. If you are for whatever reason calling this function
-        //And it isn't working, you've probably still got the ResistancePobDelta line included. 
+        //And it isn't working, you've probably still got the ResistancePobDelta line included.
         public void ExperiencePressureDifference(
             Entity<MovedByPressureComponent> ent,
             int cycle,
@@ -199,7 +199,9 @@ namespace Content.Server.Atmos.EntitySystems
                 return;
 
             // Can we yeet the thing (due to probability, strength, etc.)
-            if (physics.BodyType != BodyType.Static && !float.IsPositiveInfinity(component.MoveResist))
+            if (physics.BodyType != BodyType.Static
+                && !float.IsPositiveInfinity(component.MoveResist)
+                && physics.Mass != 0)
             {
                 var moveForce = pressureDifference / physics.Mass;
 
