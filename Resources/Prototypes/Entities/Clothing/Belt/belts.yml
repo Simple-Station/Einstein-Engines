@@ -612,7 +612,7 @@
     sprite: Clothing/Belt/securitywebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/securitywebbing.rsi
-  
+
 - type: entity
   parent: ClothingBeltSecurityWebbing
   id: ClothingBeltSecurityWebbingFilled
