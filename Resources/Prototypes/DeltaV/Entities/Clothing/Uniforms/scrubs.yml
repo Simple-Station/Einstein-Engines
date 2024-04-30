@@ -63,3 +63,8 @@
     sprite: DeltaV/Clothing/Uniforms/Scrubs/cybersun.rsi
   - type: Clothing
     sprite: DeltaV/Clothing/Uniforms/Scrubs/cybersun.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+    - ClothMade
+    - WhitelistChameleon
