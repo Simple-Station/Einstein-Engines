@@ -219,6 +219,12 @@
   - deathgasp
 
 - type: emote
+  id: MonkeyDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Actions/scream.png
+  chatMessages: ["chat-emote-msg-deathgasp-monkey"]
+
+- type: emote
   id: SiliconDeathgasp
   chatMessages: ["chat-emote-msg-deathgasp-silicon"]
   chatTriggers:
