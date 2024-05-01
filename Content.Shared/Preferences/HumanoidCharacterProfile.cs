@@ -431,6 +431,7 @@ namespace Content.Shared.Preferences
                 || Width != other.Width
                 || Sex != other.Sex
                 || Gender != other.Gender
+                || Species != other.Species
                 || PreferenceUnavailable != other.PreferenceUnavailable
                 || Clothing != other.Clothing
                 || Backpack != other.Backpack
