@@ -60,9 +60,10 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
             _languageWindow = null;
         }
 
-        var _IEntitySystemManager = IoCManager.Resolve<IEntitySystemManager>();
-        var _clientLanguageSystem = _IEntitySystemManager.GetEntitySystem<LanguageSystem>();
-        _clientLanguageSystem.LanguagesUpdatedHook -= LanguagesUpdatedHook;
+        //var _IEntitySystemManager = IoCManager.Resolve<IEntitySystemManager>();
+        //var _clientLanguageSystem = _IEntitySystemManager.GetEntitySystem<LanguageSystem>();
+        var clientLanguageSystem = entManager.EntitySysManager.GetEntitySystem<LanguageSystem>()
+        clientLanguageSystem.LanguagesUpdatedHook -= LanguagesUpdatedHook;
 
         CommandBinds.Unregister<LanguageMenuUIController>();
     }
