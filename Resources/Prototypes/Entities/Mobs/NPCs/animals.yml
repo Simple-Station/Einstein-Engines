@@ -1428,9 +1428,9 @@
     speechVerb: Reptilian
   - type: Vocal
     sounds:
-      Male: UnisexReptilian
-      Female: UnisexReptilian
-      Unsexed: UnisexReptilian
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
   - type: TypingIndicator
     proto: lizard
   - type: InteractionPopup
@@ -2999,7 +2999,7 @@
         Slash: 6
         Piercing: 6
         Structural: 15
-  - type: LanguageKnowledge
+- type: LanguageKnowledge
     speaks:
     - Cat
     understands:
