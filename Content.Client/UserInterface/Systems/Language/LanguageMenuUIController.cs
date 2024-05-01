@@ -12,6 +12,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BaseButton;
+using Robust.Client.GameObjects;
 
 namespace Content.Client.UserInterface.Systems.Language;
 
@@ -19,6 +20,7 @@ namespace Content.Client.UserInterface.Systems.Language;
 public sealed class LanguageMenuUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
     public LanguageMenuWindow? _languageWindow;
+    private IEntityManager _entManager;
     private MenuButton? LanguageButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.LanguageButton;
 
     /// <summary>
@@ -26,6 +28,11 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     /// This is a dirty workaround and I hate it.
     /// </summary>
     public Action<(string current, List<string> spoken, List<string> understood)>? LanguagesUpdatedHook;
+
+    public LanguageMenuUIController()
+    {
+        _entManager = IoCManager.Resolve<IEntityManager>();
+    }
 
     public override void Initialize()
     {
@@ -42,8 +49,7 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     {
         DebugTools.Assert(_languageWindow == null);
 
-        var entManager = IoCManager.Resolve<IEntityManager>();
-        var clientLanguageSystem = entManager.EntitySysManager.GetEntitySystem<LanguageSystem>();
+        var clientLanguageSystem = _entManager.EntitySysManager.GetEntitySystem<LanguageSystem>();
         clientLanguageSystem.LanguagesUpdatedHook += LanguagesUpdatedHook;
 
         _languageWindow = UIManager.CreateWindow<LanguageMenuWindow>();
@@ -60,8 +66,7 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
             _languageWindow = null;
         }
 
-        var entManager = IoCManager.Resolve<IEntityManager>();
-        var clientLanguageSystem = entManager.EntitySysManager.GetEntitySystem<LanguageSystem>();
+        var clientLanguageSystem = _entManager.EntitySysManager.GetEntitySystem<LanguageSystem>();
         clientLanguageSystem.LanguagesUpdatedHook -= LanguagesUpdatedHook;
 
         CommandBinds.Unregister<LanguageMenuUIController>();
