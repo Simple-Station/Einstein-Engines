@@ -42,6 +42,7 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     {
         DebugTools.Assert(_languageWindow == null);
 
+        var entManager = IoCManager.Resolve<IEntityManager>();
         var clientLanguageSystem = entManager.EntitySysManager.GetEntitySystem<LanguageSystem>();
         clientLanguageSystem.LanguagesUpdatedHook += LanguagesUpdatedHook;
 
@@ -59,6 +60,7 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
             _languageWindow = null;
         }
 
+        var entManager = IoCManager.Resolve<IEntityManager>();
         var clientLanguageSystem = entManager.EntitySysManager.GetEntitySystem<LanguageSystem>();
         clientLanguageSystem.LanguagesUpdatedHook -= LanguagesUpdatedHook;
 
