@@ -170,9 +170,19 @@
    - click
    - click.
    - click!
+   - click?
    - clicks
    - clicks.
    - clicks!
+   - clicks?
+   - clicked
+   - clicked.
+   - clicked!
+   - clicked?
+   - clicking
+   - clicking.
+   - clicking!
+   - clicking?
 
 # hand emotes
 - type: emote
@@ -253,14 +263,18 @@
   chatMessages: [chirps!]
   chatTriggers:
     - chirp
-    - chirp!
     - chirp.
+    - chirp!
+    - chirp?
     - chirps
-    - churps.
+    - chirps.
     - chirps!
+    - chirps?
     - chirped
     - chirped.
     - chirped!
+    - chirped?
     - chirping
     - chirping.
     - chirping!
+    - chirping?
