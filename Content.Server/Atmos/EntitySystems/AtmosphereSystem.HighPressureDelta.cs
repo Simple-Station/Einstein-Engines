@@ -203,7 +203,7 @@ namespace Content.Server.Atmos.EntitySystems
                 && !float.IsPositiveInfinity(component.MoveResist)
                 && physics.Mass != 0)
             {
-                var moveForce = pressureDifference / physics.Mass;
+                var moveForce = pressureDifference * physics.InvMass;
 
                 if (moveForce > physics.Mass)
                 {
