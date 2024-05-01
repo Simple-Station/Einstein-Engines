@@ -200,8 +200,7 @@ namespace Content.Server.Atmos.EntitySystems
 
             // Can we yeet the thing (due to probability, strength, etc.)
             if (physics.BodyType != BodyType.Static
-                && !float.IsPositiveInfinity(component.MoveResist)
-                && physics.Mass != 0)
+                && !float.IsPositiveInfinity(component.MoveResist))
             {
                 var moveForce = pressureDifference * physics.InvMass;
 
