@@ -20,7 +20,6 @@ namespace Content.Client.UserInterface.Systems.Language;
 public sealed class LanguageMenuUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
     public LanguageMenuWindow? _languageWindow;
-    private IEntityManager _entManager;
     private MenuButton? LanguageButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.LanguageButton;
 
     /// <summary>
@@ -28,11 +27,6 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     /// This is a dirty workaround and I hate it.
     /// </summary>
     public Action<(string current, List<string> spoken, List<string> understood)>? LanguagesUpdatedHook;
-
-    public LanguageMenuUIController()
-    {
-        _entManager = IoCManager.Resolve<IEntityManager>();
-    }
 
     public override void Initialize()
     {
@@ -49,8 +43,8 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     {
         DebugTools.Assert(_languageWindow == null);
 
-        var clientLanguageSystem = _entManager.EntitySysManager.GetEntitySystem<LanguageSystem>();
-        clientLanguageSystem.LanguagesUpdatedHook += LanguagesUpdatedHook;
+        var clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
+        clientLanguageSystem.LanguagesUpdatedHook -= LanguagesUpdatedHook;
 
         _languageWindow = UIManager.CreateWindow<LanguageMenuWindow>();
         LayoutContainer.SetAnchorPreset(_languageWindow, LayoutContainer.LayoutPreset.CenterTop);
@@ -66,7 +60,7 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
             _languageWindow = null;
         }
 
-        var clientLanguageSystem = _entManager.EntitySysManager.GetEntitySystem<LanguageSystem>();
+        var clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
         clientLanguageSystem.LanguagesUpdatedHook -= LanguagesUpdatedHook;
 
         CommandBinds.Unregister<LanguageMenuUIController>();
