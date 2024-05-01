@@ -928,7 +928,6 @@ namespace Content.Client.Preferences.UI
             CharacterSlot = _preferencesManager.Preferences.SelectedCharacterIndex;
 
             UpdateAntagRequirements();
-            UpdateRoleRequirements();
             UpdateControls();
             EnsureJobRequirementsValid(); // DeltaV
         }
