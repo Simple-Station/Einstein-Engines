@@ -336,3 +336,50 @@
   flatReductions:
     # can't punch the endoskeleton to death
     Blunt: 5
+
+# Synths
+- type: damageModifierSet
+  id: Synth
+  coefficients:
+    Blunt: 1.0
+    Slash: 0.4
+    Piercing: 1.5
+    Cold: 0.0
+    Heat: 2.5
+    Shock: 3.0
+    Poison: 0.0
+    Radiation: 0.0
+    Asphyxiation: 0.0
+    Bloodloss: 0.0
+    Cellular: 0.0
+  flatReductions:
+    Blunt: 5
+
+# Vatgrown
+- type: damageModifierSet
+  id: Terra
+  coefficients:
+    Blunt: 2.0
+    Slash: 2.0
+    Piercing: 2.0
+    Cold: 1.0
+    Heat: 1.5
+    Shock: 10.0
+    Poison: 5.0
+    Radiation: 1.0
+    Asphyxiation: 2.5
+    Bloodloss: 1.0
+    Cellular: 1.0
+
+# Mechs
+- type: damageModifierSet
+  id: FireRestMetallic
+  parent: Metallic
+  flatReductions:
+    Heat: 1000
+
+- type: damageModifierSet
+  id: FireResStrongMetallic
+  parent: StrongMetallic
+  flatReductions:
+    Heat: 1000

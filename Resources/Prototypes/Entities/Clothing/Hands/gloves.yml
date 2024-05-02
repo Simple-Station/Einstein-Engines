@@ -427,3 +427,30 @@
     fiberMaterial: fibers-durathread
     fiberColor: fibers-black
   - type: FingerprintMask
+
+#Syndicate Station
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesCQC
+  name: Snake Gloves
+  description: Try to remember the basics of CQC...
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/powerglove.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/powerglove.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nanomachines
+  - type: FingerprintMask
+  - type: StaminaDamageOnHit
+    damage: 50 #Stam damage values seem a bit higher than regular damage because of the decay, etc
+    # This needs to be moved to boxinggloves
+    #knockdownSound: /Audio/Weapons/boxingbell.ogg
+  - type: MeleeWeapon
+    attackRate: 0.4
+    damage:
+      types:
+        Blunt: 4
+    soundHit:
+      collection: BoxingHit
+    animation: WeaponArcFist

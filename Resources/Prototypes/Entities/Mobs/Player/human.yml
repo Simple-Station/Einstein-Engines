@@ -88,11 +88,13 @@
     - names_ninja_title
     - names_ninja
 
+# Urist Agent
 - type: entity
   save: false
   name: Urist McHands
   parent: BaseMobHuman
   id: MobUristAgent
+  suffix: Agent
   components:
     - type: Loadout
       prototypes:

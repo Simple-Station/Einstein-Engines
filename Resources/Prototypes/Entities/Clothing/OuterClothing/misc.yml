@@ -374,3 +374,28 @@
     sprite: Clothing/OuterClothing/Misc/red_racoon.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/red_racoon.rsi
+
+# Sons of Mars
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingSoMMedium
+  name: SoM Medium Armor
+  description: The Sons of Mars most produced armor. built to last.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/sonsmedium.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/sonsmedium.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: GroupExamine

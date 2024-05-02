@@ -19,9 +19,9 @@
 - type: startingGear
   id: MedicalInternGear
   equipment:
-    jumpsuit: UniformScrubsColorBlue # DeltaV - Intern starts with blue scrubs
+    jumpsuit: UniformScrubsColorCybersun # Syndicate Station - Interns start with cybersun scrubs
     back: ClothingBackpackMedicalFilled
-    shoes: ClothingShoesColorWhite
+    shoes: ClothingShoesColorBlack
     id: MedicalInternPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalFilled
