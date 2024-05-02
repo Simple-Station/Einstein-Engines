@@ -459,7 +459,7 @@
   - type: Speech
     speechVerb: Moth
     speechSounds: Chitter
-    allowedEmotes: ['Chitter']
+    allowedEmotes: ['Chitter', 'Squeak']
   - type: FaxableObject
     insertingState: inserting_mothroach
   - type: MothAccent
@@ -871,7 +871,7 @@
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
-    allowedEmotes: ['Click']
+    allowedEmotes: ['Click', 'Chitter']
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2369,7 +2369,7 @@
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
-    allowedEmotes: ['Click']
+    allowedEmotes: ['Click', 'Chitter']
   - type: Vocal
     sounds:
       Male: UnisexArachnid
