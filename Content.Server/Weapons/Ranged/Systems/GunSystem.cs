@@ -156,7 +156,7 @@ public sealed partial class GunSystem : SharedGunSystem
                         });
 
                         SetCartridgeSpent(ent.Value, cartridge, true);
-                        MuzzleFlash(gunUid, cartridge, user);
+                        MuzzleFlash(gunUid, cartridge, mapDirection.ToAngle(), user);
                         Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
 
                         if (cartridge.DeleteOnSpawn)
@@ -177,7 +177,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 // Ammo shoots itself
                 case AmmoComponent newAmmo:
                     shotProjectiles.Add(ent!.Value);
-                    MuzzleFlash(gunUid, newAmmo, user);
+                    MuzzleFlash(gunUid, newAmmo, mapDirection.ToAngle(), user);
                     Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
                     ShootOrThrow(ent.Value, mapDirection, gunVelocity, gun, gunUid, user);
                     break;
@@ -336,9 +336,9 @@ public sealed partial class GunSystem : SharedGunSystem
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user) { }
 
-    protected override void CreateEffect(EntityUid uid, MuzzleFlashEvent message, EntityUid? user = null)
+    protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null)
     {
-        var filter = Filter.Pvs(uid, entityManager: EntityManager);
+        var filter = Filter.Pvs(gunUid, entityManager: EntityManager);
 
         if (TryComp<ActorComponent>(user, out var actor))
             filter.RemovePlayer(actor.PlayerSession);
