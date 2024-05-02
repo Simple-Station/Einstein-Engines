@@ -454,3 +454,19 @@
     soundHit:
       collection: BoxingHit
     animation: WeaponArcFist
+
+# Sons of Mars
+
+- type: entity
+  parent: ClothingHandsGlovesColorBlack
+  id: ClothingHandsGlovesSOM
+  name: Martian Combat Gloves
+  description: These tactical gloves are perfect for choking out Terran opressors.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Boxing/somgloves.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Boxing/somgloves.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative

@@ -399,3 +399,26 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingSoMHeavy
+  name: SoM Heavy Armor
+  description: The Sons of Mars most protective armor. Nothing's getting through this.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/sonsheavy.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/sonsheavy.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.3
+        Heat: 0.3
+        Radiation: 0.3
+        Caustic: 0.3
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: GroupExamine

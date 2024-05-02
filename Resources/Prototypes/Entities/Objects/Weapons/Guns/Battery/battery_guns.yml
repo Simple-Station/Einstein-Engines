@@ -706,3 +706,36 @@
   - type: Appearance
   - type: StaticPrice
     price: 750
+
+# Sons of Mars
+
+- type: entity
+  name: VX-32 Charger
+  parent: BaseWeaponBattery
+  id: WeaponVolkiteRifle
+  description: An advanced energy weapon used by the Sons of Mars. Turns Terrans into smoldering piles of ash.
+  components:
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: ClothingSpeedModifier
+      walkModifier: 0.8
+      sprintModifier: 0.8
+    - type: HeldSpeedModifier
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Battery/vol_rifle.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+    - type: Gun
+      fireRate: 1.5
+      soundGunshot:
+        path: /Audio/Weapons/plasma_cutter.ogg
+        params:
+          pitch: 2
+    - type: ProjectileBatteryAmmoProvider
+      proto: BulletEnergyGunVolkite
+      fireCost: 32
+    - type: Battery
+      maxCharge: 1440
+      startingCharge: 1440

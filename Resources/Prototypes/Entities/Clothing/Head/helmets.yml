@@ -402,3 +402,25 @@
   - type: Tag
     tags:
     - HidesHair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetLeaderSOM
+  name: SOM Leader Helmet
+  description: A robust helmet for a robust leader.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/somleaderhelm.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/somleaderhelm.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - HidesHair
