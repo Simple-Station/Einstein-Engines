@@ -541,3 +541,58 @@
           Quantity: 20
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterWeb
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterCsCorporateJacket
+  name: Cybersun Corporate Jacket
+  description: A cozy jacket with the Cybersun logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/WinterCoats/cs_corpo_jacket.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/WinterCoats/cs_corpo_jacket.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterEECorporateJacket
+  name: Einstein Engines Corporate Jacket
+  description: A cozy jacket with the Einstein Engines logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/WinterCoats/ee_corpo_jacket.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/WinterCoats/ee_corpo_jacket.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterHICorporateJacket
+  name: Hephaestus Industries Corporate Jacket
+  description: A cozy jacket with the Hephaestus Industries logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/WinterCoats/hi_corpo_jacket.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/WinterCoats/hi_corpo_jacket.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterHMCorporateJacket
+  name: Hawkmoon Acquisitions Corporate Jacket
+  description: A cozy jacket with the Hawkmoon Acquisitions logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/WinterCoats/hm_corpo_jacket.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/WinterCoats/hm_corpo_jacket.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterIdCorporateJacket
+  name: Interdyne Corporate Jacket
+  description: A cozy jacket with the Interdyne logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/WinterCoats/id_corpo_jacket.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/WinterCoats/id_corpo_jacket.rsi
