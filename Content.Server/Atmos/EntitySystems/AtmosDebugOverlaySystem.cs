@@ -111,8 +111,9 @@ namespace Content.Server.Atmos.EntitySystems
                 tile.BlockedAirflow,
                 tile.ExcitedGroup?.GetHashCode(),
                 tile.Space,
-                false,
-                false);
+                tile.MapAtmosphere,
+                tile.NoGridTile,
+                tile.Air?.Immutable ?? false);
         }
 
         public override void Update(float frameTime)
