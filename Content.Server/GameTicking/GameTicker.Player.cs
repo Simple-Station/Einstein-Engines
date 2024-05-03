@@ -57,7 +57,7 @@ namespace Content.Server.GameTicking
 
                     // Make the player actually join the game.
                     // timer time must be > tick length
-                    Timer.Spawn(0, () => _playerManager.JoinGame(args.Session));
+                    // Timer.Spawn(0, () => _playerManager.JoinGame(args.Session)); // Corvax-Queue // Moved to JoinQueueManager
 
                     var record = await _dbManager.GetPlayerRecordByUserId(args.Session.UserId);
                     var firstConnection = record != null &&
@@ -127,7 +127,8 @@ namespace Content.Server.GameTicking
                         mind.Session = null;
                     }
 
-                    _userDb.ClientDisconnected(session);
+                    if (_playerGameStatuses.ContainsKey(session.UserId)) // Corvax-Queue
+                        _userDb.ClientDisconnected(session);
                     break;
                 }
             }
