@@ -354,3 +354,16 @@
     mask: ClothingMaskGasMerc
     belt: ClothingBeltMercWebbing
 
+# Sons of Mars
+- type: startingGear
+  id: MartianMarineGear
+  equipment:
+    jumpsuit: ClothingUniformSOM
+    outerClothing: ClothingSoMMedium
+    back: ClothingBackpackSatchelLeather
+    shoes: ClothingShoesSOM
+    gloves: ClothingHandsGlovesSOM
+    head: ClothingHeadHelmetSOM
+    id: PassengerPDA
+    ears: ClothingHeadsetFreelance
+    mask: ClothingMaskGasSecurity
