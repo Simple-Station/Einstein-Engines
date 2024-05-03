@@ -77,17 +77,17 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: shuttle
+      state: syndishuttle
     - map: ["computerLayerKeys"]
-      state: generic_keys
+      state: syndie_key
   - type: Computer
     board: ShuttleConsoleCircuitboard
 
 - type: entity
   parent: BaseComputerShuttle
   id: ComputerShuttleSyndie
-  name: syndicate shuttle console
-  description: Used to pilot a syndicate shuttle.
+  name: terragov shuttle console
+  description: Used to pilot a terragov shuttle.
   components:
   - type: Sprite
     layers:
@@ -96,9 +96,9 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: syndishuttle
+      state: shuttle
     - map: ["computerLayerKeys"]
-      state: syndie_key
+      state: generic_keys
   - type: Tag
     tags:
       - Syndicate
@@ -126,9 +126,9 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: shuttle
+      state: syndishuttle
     - map: ["computerLayerKeys"]
-      state: generic_keys
+      state: syndie_key
   - type: DroneConsole
     components:
       - type: CargoShuttle
@@ -156,9 +156,9 @@
         - map: ["computerLayerKeyboard"]
           state: generic_keyboard
         - map: ["computerLayerScreen"]
-          state: shuttle
+          state: syndishuttle
         - map: ["computerLayerKeys"]
-          state: generic_keys
+          state: syndie_key
     - type: DroneConsole
       components:
         - type: SalvageShuttle
@@ -553,9 +553,9 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: comm
+      state: comm_syndie
     - map: ["computerLayerKeys"]
-      state: generic_keys
+      state: syndie_key
   - type: AccessReader
     access: [[ "Command" ]]
   - type: CommunicationsConsole
@@ -581,7 +581,7 @@
 - type: entity
   parent: ComputerComms
   id: SyndicateComputerComms
-  name: syndicate communications computer
+  name: terragov communications computer
   description: A computer capable of remotely hacking into the station's communications systems. Using this to make an announcement will alert the station to your presence.
   components:
   - type: Sprite
@@ -591,9 +591,9 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: comm_syndie
+      state: comm
     - map: ["computerLayerKeys"]
-      state: syndie_key
+      state: generic_keys
   - type: AccessReader
     access: [[ "NuclearOperative" ]]
   - type: CommunicationsConsole
