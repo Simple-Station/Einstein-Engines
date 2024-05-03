@@ -1,12 +1,12 @@
 using Content.Shared.Actions;
+using Content.Shared.Actions.ActionTypes;
 using Content.Shared.Abilities.Psionics;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Popups;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
-using Content.Server.Mind;
-using Content.Shared.Actions.Events;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -18,7 +18,6 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
-        [Dependency] private readonly MindSystem _mindSystem = default!;
 
         public override void Initialize()
         {
@@ -30,24 +29,22 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnInit(EntityUid uid, PyrokinesisPowerComponent component, ComponentInit args)
         {
-            _actions.AddAction(uid, ref component.PyrokinesisActionEntity, component.PyrokinesisActionId );
-            _actions.TryGetActionData( component.PyrokinesisActionEntity, out var actionData );
-            if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.PyrokinesisActionEntity);
+            if (!_prototypeManager.TryIndex<EntityTargetActionPrototype>("Pyrokinesis", out var pyrokinesis))
+                return;
+
+            component.PyrokinesisPowerAction = new EntityTargetAction(pyrokinesis);
+            if (pyrokinesis.UseDelay != null)
+                component.PyrokinesisPowerAction.Cooldown = (_gameTiming.CurTime, _gameTiming.CurTime + (TimeSpan) pyrokinesis.UseDelay);
+            _actions.AddAction(uid, component.PyrokinesisPowerAction, null);
+
             if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
-            {
-                psionic.PsionicAbility = component.PyrokinesisActionEntity;
-                psionic.ActivePowers.Add(component);
-            }
+                psionic.PsionicAbility = component.PyrokinesisPowerAction;
         }
 
         private void OnShutdown(EntityUid uid, PyrokinesisPowerComponent component, ComponentShutdown args)
         {
-            _actions.RemoveAction(uid, component.PyrokinesisActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.ActivePowers.Remove(component);
-            }
+            if (_prototypeManager.TryIndex<EntityTargetActionPrototype>("Pyrokinesis", out var pyrokinesis))
+                _actions.RemoveAction(uid, new EntityTargetAction(pyrokinesis), null);
         }
 
         private void OnPowerUsed(PyrokinesisPowerActionEvent args)
@@ -56,11 +53,13 @@ namespace Content.Server.Abilities.Psionics
                 return;
 
             flammableComponent.FireStacks += 5;
-            _flammableSystem.Ignite(args.Target, args.Target);
+            _flammableSystem.Ignite(args.Target, flammableComponent);
             _popupSystem.PopupEntity(Loc.GetString("pyrokinesis-power-used", ("target", args.Target)), args.Target, Shared.Popups.PopupType.LargeCaution);
 
             _psionics.LogPowerUsed(args.Performer, "pyrokinesis");
             args.Handled = true;
         }
     }
+
+    public sealed class PyrokinesisPowerActionEvent : EntityTargetActionEvent {}
 }
