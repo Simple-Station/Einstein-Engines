@@ -66,12 +66,16 @@ public enum CollisionGroup
     // Birds/other small flyers
     FlyingMobMask = Impassable | HighImpassable | BlobImpassable,
     FlyingMobLayer = Opaque | BulletImpassable,
-    // blob
+
+    // start-backmen: blob
+
     BlobMobMask = Impassable | HighImpassable | MidImpassable | LowImpassable,
     BlobMobLayer = Opaque | BulletImpassable,
-    // blob
+
     FlyingBlobMobMask = Impassable | HighImpassable,
     FlyingBlobMobLayer = Opaque | BulletImpassable,
+
+    // end-backmen: blob
 
     // Mechs
     LargeMobMask = Impassable | HighImpassable | MidImpassable | LowImpassable | BlobImpassable,
@@ -106,7 +110,7 @@ public enum CollisionGroup
     ItemMask = Impassable | HighImpassable | BlobImpassable,
     ThrownItem = Impassable | HighImpassable | BulletImpassable | BlobImpassable,
     WallLayer = Opaque | Impassable | HighImpassable | MidImpassable | LowImpassable | BulletImpassable | InteractImpassable,
-    BlobTileLayer = Opaque | BlobImpassable | BulletImpassable,
+    BlobTileLayer = Opaque | BlobImpassable | BulletImpassable, // backmen: blob
     GlassLayer = Impassable | HighImpassable | MidImpassable | LowImpassable | BulletImpassable | InteractImpassable,
     HalfWallLayer = MidImpassable | LowImpassable,
 

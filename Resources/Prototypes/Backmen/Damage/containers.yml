@@ -1,0 +1,39 @@
+﻿- type: damageContainer
+  id: Blob
+  supportedGroups:
+  - Brute
+  - Burn
+
+- type: damageContainer
+  id: HalfSpirit #Arachne, etc. Immunity to radiation/genetic, weakness to holy
+  supportedGroups:
+    - Burn
+    - Brute
+    - Airloss
+    - Immaterial
+  supportedTypes:
+    - Poison
+
+- type: damageContainer
+  id: Spirit
+  supportedGroups:
+    - Burn
+    - Immaterial
+
+- type: damageContainer
+  id: CorporealSpirit
+  supportedGroups:
+    - Burn
+    - Brute
+    - Immaterial
+
+# Use whenever this isn't BS
+# - type: damageContainer
+#   id: Shadowkin
+#   supportedGroups:
+#     - Brute
+#     - Burn
+#     - Toxin
+#     - Genetic
+#   supportedTypes:
+#     - Bloodloss

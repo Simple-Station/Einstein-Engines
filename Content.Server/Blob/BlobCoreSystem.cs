@@ -176,7 +176,13 @@ public sealed class BlobCoreSystem : EntitySystem
                 if (TryComp<BlobbernautComponent>(blobFactoryComponent.Blobbernaut, out var blobbernautComponent))
                 {
                     blobbernautComponent.Color = component.ChemСolors[newChem];
+<<<<<<< HEAD:Content.Server/Blob/BlobCoreSystem.cs
                     Dirty(blobbernautComponent);
+||||||| parent of b1f1be5a79 (Cleanup (#593)):Content.Server/Backmen/Blob/BlobCoreSystem.cs
+                    Dirty(blobTile, blobbernautComponent);
+=======
+                    Dirty(blobFactoryComponent.Blobbernaut.Value, blobbernautComponent);
+>>>>>>> b1f1be5a79 (Cleanup (#593)):Content.Server/Backmen/Blob/BlobCoreSystem.cs
 
                     if (TryComp<MeleeWeaponComponent>(blobFactoryComponent.Blobbernaut, out var meleeWeaponComponent))
                     {

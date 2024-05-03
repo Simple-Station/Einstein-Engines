@@ -14,6 +14,13 @@
   - type: BlobGameRule
 
 - type: entity
+  id: Blob
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: BlobRule
+
+- type: entity
   id: VampiresGameRule
   parent: BaseGameRule
   noSpawn: true

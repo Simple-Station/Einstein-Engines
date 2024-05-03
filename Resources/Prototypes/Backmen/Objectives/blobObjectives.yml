@@ -1,0 +1,51 @@
+<<<<<<< HEAD:Resources/Prototypes/Objectives/blobObjectives.yml
+- type: objective
+||||||| parent of b1f1be5a79 (Cleanup (#593)):Resources/Prototypes/Objectives/blobObjectives.yml
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseBlobObjective
+  components:
+    - type: Objective
+      issuer: blob
+      unique: true
+      difficulty: 1
+      icon:
+        sprite: Mobs/Aliens/blob.rsi
+        state: blob_nuke_overlay
+    - type: RoleRequirement
+      roles:
+        components:
+          - BlobRole
+
+- type: entity
+  noSpawn: true
+  parent: BaseBlobObjective
+=======
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseBlobObjective
+  components:
+    - type: Objective
+      issuer: blob
+      unique: true
+      difficulty: 1
+      icon:
+        sprite: Backmen/Mobs/Aliens/blob.rsi
+        state: blob_nuke_overlay
+    - type: RoleRequirement
+      roles:
+        components:
+          - BlobRole
+
+- type: entity
+  noSpawn: true
+  parent: BaseBlobObjective
+>>>>>>> b1f1be5a79 (Cleanup (#593)):Resources/Prototypes/Backmen/Objectives/blobObjectives.yml
+  id: BlobCaptureObjective
+  issuer: blob
+  requirements:
+  - !type:BlobRequirement {}
+  conditions:
+  - !type:BlobCaptureCondition {}

@@ -33,6 +33,7 @@
 
 - type: Tag
 <<<<<<< HEAD
+<<<<<<< HEAD
   id: Balloon
 ||||||| parent of 7fe67c7209 (Blob try 2 (#176))
   id: Baguette
@@ -40,6 +41,12 @@
   id: BlobMob
 
 - type: Tag
+||||||| parent of b1f1be5a79 (Cleanup (#593))
+  id: BlobMob
+
+- type: Tag
+=======
+>>>>>>> b1f1be5a79 (Cleanup (#593))
   id: Baguette
 >>>>>>> 7fe67c7209 (Blob try 2 (#176))
 

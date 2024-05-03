@@ -1,6 +1,21 @@
+<<<<<<< HEAD
 using Content.Server.Chat.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Mind;
+||||||| parent of b1f1be5a79 (Cleanup (#593))
+﻿//start-backmen: antag
+using Content.Server.Backmen.EvilTwin;
+using Content.Server.Backmen.Flesh;
+using Content.Server.Backmen.Fugitive;
+//end-backmen: antag
+=======
+﻿//start-backmen: antag
+using Content.Server.Backmen.Blob.Roles;
+using Content.Server.Backmen.EvilTwin;
+using Content.Server.Backmen.Flesh;
+using Content.Server.Backmen.Fugitive;
+//end-backmen: antag
+>>>>>>> b1f1be5a79 (Cleanup (#593))
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 

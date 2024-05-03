@@ -3,6 +3,17 @@ using System.Numerics;
 using Content.Server.Actions;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
+<<<<<<< HEAD:Content.Server/Blob/BlobObserverSystem.cs
+||||||| parent of b1f1be5a79 (Cleanup (#593)):Content.Server/Backmen/Blob/BlobObserverSystem.cs
+using Content.Server.Backmen.Blob.Components;
+using Content.Server.Backmen.GameTicking.Rules.Components;
+using Content.Server.Chat.Managers;
+=======
+using Content.Server.Backmen.Blob.Components;
+using Content.Server.Backmen.Blob.Roles;
+using Content.Server.Backmen.GameTicking.Rules.Components;
+using Content.Server.Chat.Managers;
+>>>>>>> b1f1be5a79 (Cleanup (#593)):Content.Server/Backmen/Blob/BlobObserverSystem.cs
 using Content.Server.Destructible;
 using Content.Server.Emp;
 using Content.Server.Explosion.EntitySystems;

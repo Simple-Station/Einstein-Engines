@@ -81,8 +81,14 @@ namespace Content.Shared.DrawDepth
 =======
         FloorObjects = DrawDepthTag.Default - 6,
 
+<<<<<<< HEAD
         BlobTiles = DrawDepthTag.Default - 5,
 >>>>>>> 7fe67c7209 (Blob try 2 (#176))
+||||||| parent of b1f1be5a79 (Cleanup (#593))
+        BlobTiles = DrawDepthTag.Default - 5,
+=======
+        BlobTiles = DrawDepthTag.Default - 5, // backmen: blob
+>>>>>>> b1f1be5a79 (Cleanup (#593))
 
         DeadMobs = DrawDepthTag.Default - 4,
 

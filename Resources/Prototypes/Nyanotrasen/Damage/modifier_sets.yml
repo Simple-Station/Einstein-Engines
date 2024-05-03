@@ -59,3 +59,105 @@
   flatReductions:
     Blunt: 5
     Heat: 5
+<<<<<<< HEAD:Resources/Prototypes/Nyanotrasen/Damage/modifier_sets.yml
+||||||| parent of b1f1be5a79 (Cleanup (#593)):Resources/Prototypes/Backmen/Damage/modifier_sets.yml
+
+- type: damageModifierSet
+  id: Oni
+  coefficients:
+    Blunt: 0.85
+    Slash: 0.85
+    Piercing: 0.85
+
+- type: damageModifierSet
+  id: Harpy
+  coefficients:
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15
+
+- type: damageModifierSet
+  id: Shadowkin
+  coefficients:
+    Blunt: 0.95
+    Slash: 1.2
+    Piercing: 1.1
+    Asphyxiation: 0
+    Cold: 0.75
+    Heat: 1.2
+    Cellular: 0.25
+    Bloodloss: 1.35
+    Shock: 1.25
+    Radiation: 1.3
+=======
+
+- type: damageModifierSet
+  id: Oni
+  coefficients:
+    Blunt: 0.85
+    Slash: 0.85
+    Piercing: 0.85
+
+- type: damageModifierSet
+  id: Harpy
+  coefficients:
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15
+
+- type: damageModifierSet
+  id: Shadowkin
+  coefficients:
+    Blunt: 0.95
+    Slash: 1.2
+    Piercing: 1.1
+    Asphyxiation: 0
+    Cold: 0.75
+    Heat: 1.2
+    Cellular: 0.25
+    Bloodloss: 1.35
+    Shock: 1.25
+    Radiation: 1.3
+
+- type: damageModifierSet
+  id: BaseBlob # ReactiveSpines
+  coefficients:
+    Blunt: 0.25
+    Slash: 0.25
+    Piercing: 0.25
+    Heat: 2.00
+
+- type: damageModifierSet
+  id: ElectromagneticWebBlob # Explosive Lattice
+  coefficients:
+    Blunt: 0.50
+    Slash: 0.50
+    Piercing: 0.50
+    Heat: 2.50
+    Shock: 0.50
+
+- type: damageModifierSet
+  id: ExplosiveLatticeBlob # Explosive Lattice
+  coefficients:
+    Blunt: 0.25
+    Slash: 0.25
+    Piercing: 0.25
+    Heat: 3.00
+    Shock: 1.50
+
+- type: damageModifierSet
+  id: BlobMob # Blob mobs
+  coefficients:
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.5
+    Heat: 1.5
+
+- type: damageModifierSet
+  id: BlobReflective # If it reflects lasers, then it must be fragile?
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.9
+    Piercing: 0.9
+    Heat: 1.5
+>>>>>>> b1f1be5a79 (Cleanup (#593)):Resources/Prototypes/Backmen/Damage/modifier_sets.yml

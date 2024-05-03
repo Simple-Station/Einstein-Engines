@@ -1,6 +1,19 @@
+<<<<<<< HEAD:Content.Server/NPC/HTN/PrimitiveTasks/Operators/Specific/BlobPodZombifyOperator.cs
 using Content.Server.Blob.NPC.BlobPod;
+||||||| parent of b1f1be5a79 (Cleanup (#593)):Content.Server/NPC/HTN/PrimitiveTasks/Operators/Specific/BlobPodZombifyOperator.cs
+using Content.Server.Backmen.Blob.NPC.BlobPod;
+using Content.Shared.Backmen.Blob.Components;
+using Content.Shared.Backmen.Blob.NPC.BlobPod;
+=======
+using Content.Server.Backmen.Blob.NPC.BlobPod;
+using Content.Server.NPC;
+using Content.Server.NPC.HTN;
+using Content.Server.NPC.HTN.PrimitiveTasks;
+using Content.Shared.Backmen.Blob.Components;
+using Content.Shared.Backmen.Blob.NPC.BlobPod;
+>>>>>>> b1f1be5a79 (Cleanup (#593)):Content.Server/Backmen/NPC/HTN/PrimitiveTasks/Operators/Specific/BlobPodZombifyOperator.cs
 
-namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
+namespace Content.Server.Backmen.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
 public sealed class BlobPodZombifyOperator : HTNOperator
 {

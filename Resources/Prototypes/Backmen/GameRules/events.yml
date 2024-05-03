@@ -1,0 +1,180 @@
+- type: entity
+  id: EvilTwinSpawn
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    weight: 10
+    earliestStart: 15
+    minimumPlayers: 5
+  - type: EvilTwinRule
+
+- type: entity
+  id: FugitiveSpawn
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+    - type: StationEvent
+      weight: 10
+      earliestStart: 30
+      minimumPlayers: 20
+    - type: FugitiveRule
+
+- type: entity
+  id: WageScheduler
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+    - type: WageSchedulerRule
+
+## Regular station events
+- type: entity
+  id: NoosphericStorm
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+    - type: StationEvent
+      startAnnouncement: station-event-noospheric-storm-announcement
+      weight: 5
+      earliestStart: 15
+    - type: NoosphericStormRule
+
+- type: entity
+  id: BlobSpawn
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    weight: 15
+    duration: 1
+    earliestStart: 40
+    minimumPlayers: 20
+  - type: BlobSpawnRule
+    carrierBlobProtos:
+    - MobMouseCancer
+    playersPerCarrierBlob: 30
+    maxCarrierBlob: 3
+
+- type: entity
+  id: BluespaceGoat
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    weight: 5
+    startDelay: 30
+    duration: 35
+  - type: BluespaceGoatRule
+
+# Base glimmer event
+- type: entity
+  id: BaseGlimmerEvent
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+    - type: StationEvent
+      # Favor glimmer events just a little more than regular events.
+      weight: 12
+    - type: GlimmerEvent
+
+## Glimmer events
+- type: entity
+  id: NoosphericZap
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+    - type: NoosphericZapRule
+
+- type: entity
+  id: NoosphericFry
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 300
+      maximumGlimmer: 900
+    - type: NoosphericFryRule
+
+
+- type: entity
+  id: PsionicCatGotYourTongue
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 200
+      maximumGlimmer: 500
+      glimmerBurnLower: 18
+      glimmerBurnUpper: 40
+    - type: PsionicCatGotYourTongueRule
+
+- type: entity
+  id: MassMindSwap
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 900
+      glimmerBurnLower: 50
+      glimmerBurnUpper: 110
+    - type: MassMindSwapRule
+
+- type: entity
+  id: GlimmerWispSpawn
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 300
+      maximumGlimmer: 1000
+      report: glimmer-event-report-signatures
+    - type: GlimmerWispRule
+
+- type: entity
+  id: FreeProber
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 300
+      maximumGlimmer: 1000
+      report: glimmer-event-report-signatures
+    - type: FreeProberRule
+
+## converted upstream events
+- type: entity
+  id: GlimmerRandomSentience
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 300
+      maximumGlimmer: 600
+      report: glimmer-event-report-signatures
+    - type: GlimmerRandomSentienceRule
+
+- type: entity
+  id: GlimmerRevenantSpawn
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 500
+      maximumGlimmer: 900
+      report: glimmer-event-report-signatures
+    - type: GlimmerRevenantRule
+
+- type: entity
+  id: SpiderSpiderVampireSpawn
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+    - type: StationEvent
+      earliestStart: 20
+      minimumPlayers: 15
+      weight: 1
+      duration: 60
+    - type: VentCrittersRule
+      entries:
+        - id: MobGiantSpiderVampireAngry
