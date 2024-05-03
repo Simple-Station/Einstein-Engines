@@ -21,7 +21,6 @@ namespace Content.Client.UserInterface.Systems.Language;
 [UsedImplicitly]
 public sealed class LanguageMenuUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
-    [UISystemDependency] private LanguageSystem? _languageSystem = default!;
     public LanguageMenuWindow? _languageWindow;
     private MenuButton? LanguageButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.LanguageButton;
 
@@ -46,13 +45,8 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     {
         DebugTools.Assert(_languageWindow == null);
 
-        if (LanguagesUpdatedHook == null)
-            return;
-
-        if (_languageSystem == null)
-            return;
-
-        _languageSystem.LanguagesUpdatedHook -= LanguagesUpdatedHook;
+        var clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
+        clientLanguageSystem.LanguagesUpdatedHook -= LanguagesUpdatedHook;
 
         _languageWindow = UIManager.CreateWindow<LanguageMenuWindow>();
         LayoutContainer.SetAnchorPreset(_languageWindow, LayoutContainer.LayoutPreset.CenterTop);
@@ -68,13 +62,8 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
             _languageWindow = null;
         }
 
-        if (LanguagesUpdatedHook == null)
-            return;
-
-        if (_languageSystem == null)
-            return;
-
-        _languageSystem.LanguagesUpdatedHook -= LanguagesUpdatedHook;
+        var clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
+        clientLanguageSystem.LanguagesUpdatedHook -= LanguagesUpdatedHook;
 
         CommandBinds.Unregister<LanguageMenuUIController>();
     }
