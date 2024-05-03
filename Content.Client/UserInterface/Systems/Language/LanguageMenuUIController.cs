@@ -21,7 +21,7 @@ namespace Content.Client.UserInterface.Systems.Language;
 [UsedImplicitly]
 public sealed class LanguageMenuUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
-    [UISystemDependency] private readonly LanguageSystem _languageSystem = default!;
+    [UISystemDependency] private LanguageSystem _languageSystem = default!;
     public LanguageMenuWindow? _languageWindow;
     private MenuButton? LanguageButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.LanguageButton;
 
