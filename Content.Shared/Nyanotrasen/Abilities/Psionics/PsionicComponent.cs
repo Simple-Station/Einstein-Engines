@@ -1,4 +1,3 @@
-using Content.Shared.Actions;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Abilities.Psionics
@@ -15,6 +14,15 @@ namespace Content.Shared.Abilities.Psionics
         public bool Removable = true;
 
         [DataField("activePowers")]
-        public HashSet<Component> ActivePowers = new();
+        public List<Component> ActivePowers = new();
+
+        [DataField("psychicFeedback")]
+        public List<string> PsychicFeedback= new();
+
+        [DataField("amplification")]
+        public float Amplification = 1f;
+
+        [DataField("dampening")]
+        public float Dampening = 1f;
     }
 }
