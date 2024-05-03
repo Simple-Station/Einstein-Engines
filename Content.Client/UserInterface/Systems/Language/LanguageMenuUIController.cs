@@ -3,16 +3,10 @@ using Content.Client.Gameplay;
 using Content.Client.Language.Systems;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Input;
-using Content.Shared.Language;
-using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
-using Robust.Client.UserInterface.Controllers.Implementations;
-using Robust.Shared.Console;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Utility;
-using Robust.Client.GameObjects;
-using static Content.Shared.Language.Systems.SharedLanguageSystem;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 using JetBrains.Annotations;
 
