@@ -1,10 +1,11 @@
 using Content.Shared.Actions;
-using Content.Shared.Actions.ActionTypes;
 using Content.Shared.StatusEffect;
 using Content.Shared.Abilities.Psionics;
-using Content.Server.Mind.Components;
+using Content.Shared.Mind.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Server.Mind;
+using Content.Shared.Actions.Events;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -16,6 +17,7 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly MindSwapPowerSystem _mindSwap = default!;
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
+        [Dependency] private readonly MindSystem _mindSystem = default!;
 
         public override void Initialize()
         {
@@ -28,22 +30,26 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnInit(EntityUid uid, TelegnosisPowerComponent component, ComponentInit args)
         {
-            if (!_prototypeManager.TryIndex<InstantActionPrototype>("Telegnosis", out var telegnosis))
-                return;
-
-            component.TelegnosisPowerAction = new InstantAction(telegnosis);
-            if (telegnosis.UseDelay != null)
-                component.TelegnosisPowerAction.Cooldown = (_gameTiming.CurTime, _gameTiming.CurTime + (TimeSpan) telegnosis.UseDelay);
-            _actions.AddAction(uid, component.TelegnosisPowerAction, null);
-
+            _actions.AddAction(uid, ref component.TelegnosisActionEntity, component.TelegnosisActionId );
+            _actions.TryGetActionData( component.TelegnosisActionEntity, out var actionData );
+            if (actionData is { UseDelay: not null })
+                _actions.StartUseDelay(component.TelegnosisActionEntity);
             if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
-                psionic.PsionicAbility = component.TelegnosisPowerAction;
+            {
+                psionic.PsionicAbility = component.TelegnosisActionEntity;
+                psionic.ActivePowers.Add(component);
+                psionic.PsychicFeedback.Add(component.TelegnosisFeedback);
+            }
         }
 
         private void OnShutdown(EntityUid uid, TelegnosisPowerComponent component, ComponentShutdown args)
         {
-            if (_prototypeManager.TryIndex<InstantActionPrototype>("Telegnosis", out var metapsionic))
-                _actions.RemoveAction(uid, new InstantAction(metapsionic), null);
+            _actions.RemoveAction(uid, component.TelegnosisActionEntity);
+            if (TryComp<PsionicComponent>(uid, out var psionic))
+            {
+                psionic.ActivePowers.Remove(component);
+                psionic.PsychicFeedback.Remove(component.TelegnosisFeedback);
+            }
         }
 
         private void OnPowerUsed(EntityUid uid, TelegnosisPowerComponent component, TelegnosisPowerActionEvent args)
@@ -60,6 +66,4 @@ namespace Content.Server.Abilities.Psionics
             QueueDel(uid);
         }
     }
-
-    public sealed class TelegnosisPowerActionEvent : InstantActionEvent {}
 }
