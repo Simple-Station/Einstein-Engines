@@ -198,7 +198,19 @@ namespace Content.Server.Atmos.EntitySystems
             if (!Resolve(uid, ref xform))
                 return;
 
-            // Can we yeet the thing (due to probability, strength, etc.)
+            // EXPLANATION:
+            // pressureDifference = Force of Air Flow on a given tile
+            // physics.Mass = Mass of the object potentially being thrown
+            // physics.InvMass = 1 divided by said Mass. More CPU efficient way to do division.
+            //
+            // Objects can only be thrown if the force of air flow is greater than the SQUARE of their mass or {SpaceWindMinimumMassThreshold}, whichever is heavier
+            // This means that the heavier an object is, the exponentially more force is required to move it
+            // The force of a throw is equal to the force of air pressure, divided by an object's mass. So not only are heavier objects
+            // less likely to be thrown, they are also harder to throw.
+            // While lighter objects are yeeted easily, and from great distance.
+            //
+            // For a human sized entity with a standard weight of 80kg and a spacing between a hard vacuum and a room pressurized at 101kpa,
+            // The human shall only be moved if he is either very close to the hole, or is standing in a region of high airflow
             if (physics.BodyType != BodyType.Static
                 && !float.IsPositiveInfinity(component.MoveResist))
             {
@@ -211,7 +223,7 @@ namespace Content.Server.Atmos.EntitySystems
                     var dirVec = (direction.ToAngle() + gridWorldRotation).ToWorldVec();
                     var maxSafeForceForObject = SpaceWindMaxVelocity * physics.Mass;
 
-                    // TODO: Technically these directions won't be correct but uhh I'm just here for optimisations buddy not to fix my old bugs.
+                    // TODO: Consider replacing throw target with proper trigonometry angles.
                     if (throwTarget != EntityCoordinates.Invalid)
                     {
                         var pos = ((throwTarget.ToMap(EntityManager).Position - xform.WorldPosition).Normalized() + dirVec).Normalized();
