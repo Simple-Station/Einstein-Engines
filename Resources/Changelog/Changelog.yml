@@ -4038,3 +4038,11 @@ Entries:
       message: Species in the character editor have a shortcut to their guidebook entry
   id: 6105
   time: '2024-03-23T02:09:54.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Tweak
+      message: >-
+        Sectech now says "Crack communist skulls!" instead of "Crack syndicate
+        skulls!"
+  id: 6106
+  time: '2024-04-17T04:07:41.0000000+00:00'
