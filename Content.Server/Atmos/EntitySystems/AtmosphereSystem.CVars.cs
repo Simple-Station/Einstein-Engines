@@ -12,6 +12,7 @@ namespace Content.Server.Atmos.EntitySystems
         public float SpaceWindPressureForceDivisorPush { get; private set; }
         public float SpaceWindMaxVelocity { get; private set; }
         public float SpaceWindMaxPushForce { get; private set; }
+        public float SpaceWindMinimumMassThreshold { get; private set; }
         public bool MonstermosEqualization { get; private set; }
         public bool MonstermosDepressurization { get; private set; }
         public bool MonstermosRipTiles { get; private set; }
@@ -41,6 +42,7 @@ namespace Content.Server.Atmos.EntitySystems
             Subs.CVar(_cfg, CCVars.SpaceWindPressureForceDivisorPush, value => SpaceWindPressureForceDivisorPush = value, true);
             Subs.CVar(_cfg, CCVars.SpaceWindMaxVelocity, value => SpaceWindMaxVelocity = value, true);
             Subs.CVar(_cfg, CCVars.SpaceWindMaxPushForce, value => SpaceWindMaxPushForce = value, true);
+            Subs.CVar(_cfg, CCVars.SpaceWindMinimumMassThreshold, value => SpaceWindMinimumMassThreshold = value, true);
             Subs.CVar(_cfg, CCVars.MonstermosEqualization, value => MonstermosEqualization = value, true);
             Subs.CVar(_cfg, CCVars.MonstermosDepressurization, value => MonstermosDepressurization = value, true);
             Subs.CVar(_cfg, CCVars.MonstermosRipTiles, value => MonstermosRipTiles = value, true);

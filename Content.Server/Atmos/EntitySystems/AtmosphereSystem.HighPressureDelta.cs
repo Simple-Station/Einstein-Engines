@@ -204,7 +204,7 @@ namespace Content.Server.Atmos.EntitySystems
             {
                 var moveForce = pressureDifference * physics.InvMass;
 
-                if (moveForce > physics.Mass)
+                if (moveForce > MathF.MaxMagnitude(physics.Mass, SpaceWindMinimumMassThreshold))
                 {
                     AddMovedByPressure(uid, component, physics);
                     // Grid-rotation adjusted direction

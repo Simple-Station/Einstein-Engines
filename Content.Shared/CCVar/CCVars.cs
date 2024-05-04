@@ -1050,6 +1050,17 @@ namespace Content.Shared.CCVar
             CVarDef.Create("atmos.space_wind_max_push_force", 20f, CVar.SERVERONLY);
 
         /// <summary>
+        ///     If an object's mass is below this number, then this number is used in place of mass to determine whether air pressure can throw an object.
+        ///     This has nothing to do with throwing force, only acting as a way of reducing the odds of tiny 5 gram objects from being yeeted by people's breath
+        /// </summary>
+        /// <remarks>
+        ///     If you are reading this because you want to change it, consider looking into why almost every item in the game weighs only 5 grams
+        ///     And maybe do your part to fix that? :)
+        /// </remarks>
+        public static readonly CVarDef<float> SpaceWindMinimumMassThreshold =
+            CVarDef.Create("atmos.space_wind_minimum_mass_threshold", 10f, CVar.SERVERONLY);
+
+        /// <summary>
         ///     Whether monstermos tile equalization is enabled.
         /// </summary>
         public static readonly CVarDef<bool> MonstermosEqualization =
