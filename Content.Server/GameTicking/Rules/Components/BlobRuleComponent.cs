@@ -13,6 +13,8 @@ public sealed class BlobRuleComponent : Component
 
     [DataField("alertAodio")]
     public SoundSpecifier? AlertAudio = new SoundPathSpecifier("/Audio/Announcements/attention.ogg");
+
+    public float Accumulator = 0f;
 }
 
 

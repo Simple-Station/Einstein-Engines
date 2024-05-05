@@ -26,7 +26,16 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
     [Dependency] private readonly AudioSystem _audioSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly EmpSystem _empSystem = default!;
+<<<<<<< HEAD:Content.Server/Blob/BlobTileSystem.cs
 
+||||||| parent of a2da11302d (cleanup blob (#598)):Content.Server/Backmen/Blob/BlobTileSystem.cs
+    [Dependency] private readonly MapSystem _mapSystem = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+=======
+    [Dependency] private readonly MapSystem _mapSystem = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    private EntityQuery<BlobCoreComponent> _blobCoreQuery;
+>>>>>>> a2da11302d (cleanup blob (#598)):Content.Server/Backmen/Blob/BlobTileSystem.cs
 
     public override void Initialize()
     {
@@ -39,12 +48,23 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
         SubscribeLocalEvent<BlobTileComponent, GetVerbsEvent<Verb>>(AddRemoveVerb);
         SubscribeLocalEvent<BlobTileComponent, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<BlobTileComponent, FlashAttemptEvent>(OnFlashAttempt);
+        SubscribeLocalEvent<BlobTileComponent, EntityTerminatingEvent>(OnTerminate);
+
+        _blobCoreQuery = GetEntityQuery<BlobCoreComponent>();
+    }
+
+    private void OnTerminate(EntityUid uid, BlobTileComponent component, EntityTerminatingEvent args)
+    {
+        if(component.Core == null || TerminatingOrDeleted(component.Core.Value) || !_blobCoreQuery.TryComp(component.Core.Value, out var blobCoreComponent))
+            return;
+        blobCoreComponent.BlobTiles.Remove(uid);
     }
 
     private void OnFlashAttempt(EntityUid uid, BlobTileComponent component, FlashAttemptEvent args)
     {
         if (args.Used == null || MetaData(args.Used.Value).EntityPrototype?.ID != "GrenadeFlashBang")
             return;
+
         if (component.BlobTileType == BlobTileType.Normal)
         {
             _damageableSystem.TryChangeDamage(uid, component.FlashDamage);
@@ -53,7 +73,7 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
 
     private void OnDestruction(EntityUid uid, BlobTileComponent component, DestructionEventArgs args)
     {
-        if (component.Core == null || !TryComp<BlobCoreComponent>(component.Core.Value, out var blobCoreComponent))
+        if (component.Core == null || !_blobCoreQuery.TryComp(component.Core.Value, out var blobCoreComponent))
             return;
 
         var xform = Transform(uid);
@@ -139,7 +159,7 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
 
         if (returnCost > 0)
         {
-            if (TryComp<BlobCoreComponent>(tile.Core, out var blobCoreComponent) && blobCoreComponent.Observer != null)
+            if (_blobCoreQuery.TryComp(tile.Core, out var blobCoreComponent) && blobCoreComponent.Observer != null)
             {
                 _popup.PopupCoordinates(Loc.GetString("blob-get-resource", ("point", returnCost)),
                     xform.Coordinates,
@@ -162,7 +182,7 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
     {
 
         if (!TryComp<BlobTileComponent>(uid, out var blobTileComponent) || blobTileComponent.Core == null ||
-            !TryComp<BlobCoreComponent>(blobTileComponent.Core.Value, out var blobCoreComponent))
+            !_blobCoreQuery.TryComp(blobTileComponent.Core.Value, out var blobCoreComponent))
             return;
 
         if (blobCoreComponent.CurrentChem == BlobChemType.RegenerativeMateria)

@@ -22,6 +22,7 @@
   id: MobBlobPod
   name: Blob pod
   parent: SimpleSpaceMobBase
+  noSpawn: true
   components:
     - type: TriggerOnMobstateChange
       mobState:
@@ -119,6 +120,7 @@
   id: MobBlobBlobbernaut
   name: Blobbernaut
   parent: SimpleSpaceMobBase
+  noSpawn: true
   components:
     - type: Damageable
       damageContainer: Blob
@@ -235,6 +237,13 @@
   parent: BaseBlob
   id: NormalBlobTile
   name: Normal Blob
+<<<<<<< HEAD
+||||||| parent of a2da11302d (cleanup blob (#598))
+  description: An ordinary part of yours required for the construction of more advanced tiles.
+=======
+  noSpawn: true
+  description: An ordinary part of yours required for the construction of more advanced tiles.
+>>>>>>> a2da11302d (cleanup blob (#598))
   components:
   - type: Temperature
     heatDamage:
@@ -298,6 +307,13 @@
   parent: BaseBlob
   id: CoreBlobTile
   name: Core Blob
+<<<<<<< HEAD
+||||||| parent of a2da11302d (cleanup blob (#598))
+  description: The most important part of you. This is the brain and heart of the Blob. You cannot have more than one core (if you have a second one, it is not controlled by you), so you must protect it at all costs, otherwise you will die. The core itself restores health over time; with the regenerative chemical, health is restored 10 times faster. The core produces FIVE resource points per two seconds.
+=======
+  noSpawn: true
+  description: The most important part of you. This is the brain and heart of the Blob. You cannot have more than one core (if you have a second one, it is not controlled by you), so you must protect it at all costs, otherwise you will die. The core itself restores health over time; with the regenerative chemical, health is restored 10 times faster. The core produces FIVE resource points per two seconds.
+>>>>>>> a2da11302d (cleanup blob (#598))
   save: false
   components:
   - type: Temperature
@@ -359,6 +375,13 @@
   parent: BaseBlob
   id: FactoryBlobTile
   name: Factory Blob
+<<<<<<< HEAD
+||||||| parent of a2da11302d (cleanup blob (#598))
+  description: The so-called BlobPods come out of the factory and attack passers-by and zombify the corpses of these same passers-by. One factory produces 3 of these BlobPods; they cannot be placed next to each other at a distance of 7 tiles; one factory can produce only one Blobbernaut.
+=======
+  description: The so-called BlobPods come out of the factory and attack passers-by and zombify the corpses of these same passers-by. One factory produces 3 of these BlobPods; they cannot be placed next to each other at a distance of 7 tiles; one factory can produce only one Blobbernaut.
+  noSpawn: true
+>>>>>>> a2da11302d (cleanup blob (#598))
   components:
     - type: Temperature
       heatDamage:
@@ -399,6 +422,7 @@
   parent: BaseBlob
   id: ResourceBlobTile
   name: Resource Blob
+  noSpawn: true
   components:
     - type: Temperature
       heatDamage:
@@ -439,6 +463,13 @@
   parent: BaseBlob
   id: NodeBlobTile
   name: Node Blob
+<<<<<<< HEAD
+||||||| parent of a2da11302d (cleanup blob (#598))
+  description: The second, but mini, Blob core, near which you can place factories and resource blobs. Required to split the core.
+=======
+  description: The second, but mini, Blob core, near which you can place factories and resource blobs. Required to split the core.
+  noSpawn: true
+>>>>>>> a2da11302d (cleanup blob (#598))
   components:
     - type: Temperature
       heatDamage:
@@ -480,6 +511,13 @@
   parent: BaseBlob
   id: StrongBlobTile
   name: StrongBlobTile
+<<<<<<< HEAD
+||||||| parent of a2da11302d (cleanup blob (#598))
+  description: The basis of defensive positions has not only a strength of 6 times, this tile is also capable of withstanding various gases in order to become an atmospheric technician to protect the core, for example, from plasma that the enemy can set on fire.
+=======
+  description: The basis of defensive positions has not only a strength of 6 times, this tile is also capable of withstanding various gases in order to become an atmospheric technician to protect the core, for example, from plasma that the enemy can set on fire.
+  noSpawn: true
+>>>>>>> a2da11302d (cleanup blob (#598))
   components:
     - type: BlobTile
       tileType: Strong
@@ -507,6 +545,13 @@
   parent: BaseBlob
   id: ReflectiveBlobTile
   name: ReflectiveBlobTile
+<<<<<<< HEAD
+||||||| parent of a2da11302d (cleanup blob (#598))
+  description: Upgrading a fortified cell in which they pay less strength for the ability to reflect only energy projectiles and lasers with a 90% chance.
+=======
+  description: Upgrading a fortified cell in which they pay less strength for the ability to reflect only energy projectiles and lasers with a 90% chance.
+  noSpawn: true
+>>>>>>> a2da11302d (cleanup blob (#598))
   components:
     - type: Damageable
       damageContainer: Blob

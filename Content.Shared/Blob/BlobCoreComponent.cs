@@ -179,7 +179,7 @@ public sealed class BlobCoreComponent : Component
     public EntityUid? Observer = default!;
 
     [ViewVariables(VVAccess.ReadOnly)]
-    public List<EntityUid> BlobTiles = new();
+    public HashSet<EntityUid> BlobTiles = new();
 
     public TimeSpan NextAction = TimeSpan.Zero;
 
