@@ -13,8 +13,7 @@ public sealed class QueueState : State
     [Dependency] private readonly IClientConsoleHost _console = default!;
 
 
-    // TODO Make this the admin new player notification sound or something
-    private const string JoinSoundPath = "/Audio/Effects/voteding.ogg";
+    private const string JoinSoundPath = "/Audio/Effects/newplayerping.ogg";
 
     private QueueGui? _gui;
 
