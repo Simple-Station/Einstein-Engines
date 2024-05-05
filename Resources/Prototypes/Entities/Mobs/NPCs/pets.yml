@@ -625,8 +625,6 @@
     - CannotSuicide
     - Hamster
     - VimPilot
-  - type: StealTarget
-    stealGroup: AnimalHamlet
   - type: LanguageSpeaker
     speaks:
     - Mouse
@@ -805,9 +803,7 @@
     attributes:
       proper: true
       gender: female
-  - type: StealTarget
-    stealGroup: AnimalSmile
-  - type: LanguageSpeaker
+   - type: LanguageSpeaker
     speaks:
     - Bubblish
     understands:
@@ -847,8 +843,6 @@
     attributes:
       proper: true
       gender: male
-  - type: StealTarget
-    stealGroup: AnimalPunPun
   - type: LanguageSpeaker
     speaks:
     - Monkey
