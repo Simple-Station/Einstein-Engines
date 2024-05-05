@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   abstract: true
   parent: BaseItem
   id: GasTankBase
@@ -245,3 +245,6 @@
     outputPressure: 101.3
   - type: Clothing
     sprite: Objects/Tanks/plasma.rsi
+    slots:
+    - Belt
+    - suitStorage
