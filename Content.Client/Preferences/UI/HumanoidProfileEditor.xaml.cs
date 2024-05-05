@@ -1694,6 +1694,13 @@ namespace Content.Client.Preferences.UI
             if (!uncategorized.Children.Any())
                 _loadoutsTabs.SetTabVisible(0, false);
 
+            // Add fake tabs until tab container is happy
+            for (var i = _loadoutsTabs.ChildCount - 1; i < _loadoutsTabs.CurrentTab; i++)
+            {
+                _loadoutsTabs.AddChild(new BoxContainer());
+                _loadoutsTabs.SetTabVisible(i + 1, false);
+            }
+
             UpdateLoadoutPreferences();
         }
 
