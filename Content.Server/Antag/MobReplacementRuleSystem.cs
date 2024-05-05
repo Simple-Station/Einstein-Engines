@@ -20,6 +20,8 @@ using Content.Server.NPC.HTN;
 using Content.Server.NPC;
 using Content.Shared.Weapons.Melee;
 using Content.Server.Advertise;
+using Content.Server.Power.Components;
+using Content.Shared.CombatMode;
 
 namespace Content.Server.Antag;
 
@@ -52,6 +54,9 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
             if (ownerStation == null
                 || ownerStation != stations[0])
                 return;
+
+            if (HasComp<CombatModeComponent>(vendingUid))
+                continue;
 
             spawns.Add((vendingUid, xform.Coordinates));
         }
@@ -128,10 +133,15 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
         htn.Blackboard.SetValue(NPCBlackboard.NavSmash, true);
         _npc.WakeNPC(uid, htn);
 
-        var bark = EnsureComp<AdvertiseComponent>(uid);
-        bark.MinimumWait = 5;
-        bark.MaximumWait = 15;
-        _advertise.SayAdvertisement(uid, bark);
-        _advertise.RefreshTimer(uid, bark);
+        if (TryComp<ApcPowerReceiverComponent>(uid, out var aPC))
+            aPC.NeedsPower = false;
+
+        if (TryComp<AdvertiseComponent>(uid, out var bark))
+        {
+            bark.MinimumWait = 5;
+            bark.MaximumWait = 15;
+            _advertise.SayAdvertisement(uid, bark);
+            _advertise.RefreshTimer(uid, bark);
+        }
     }
 }
