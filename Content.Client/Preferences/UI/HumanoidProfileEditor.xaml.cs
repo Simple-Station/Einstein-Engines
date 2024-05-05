@@ -1502,9 +1502,10 @@ namespace Content.Client.Preferences.UI
             var highJob = _jobPriorities.FirstOrDefault(j => j.Priority == JobPriority.High);
 
             // Get all loadout prototypes
+            var enumeratedLoadouts = _prototypeManager.EnumeratePrototypes<LoadoutPrototype>().ToList();
+
             // If showUnusable is false filter out loadouts that are unusable based on your current character setup
-            // TODO Make unusable loadouts red or something // TODO Make the selectors a toggleable button instead of a checkbox
-            var loadouts = _prototypeManager.EnumeratePrototypes<LoadoutPrototype>().Where(loadout =>
+            var loadouts = enumeratedLoadouts.Where(loadout =>
                 showUnusable || // Ignore everything if this is true
                 _loadoutSystem.CheckRequirementsValid(
                     loadout.Requirements,
@@ -1518,11 +1519,25 @@ namespace Content.Client.Preferences.UI
                 )
             ).ToList();
 
-            // Every loadout except the ones in the previous list
-            var otherLoadouts = _prototypeManager.EnumeratePrototypes<LoadoutPrototype>().Where(loadout => !loadouts.Contains(loadout)).ToList();
+            // Loadouts to highlight red when showUnusable is true
+            var loadoutsUnusable = enumeratedLoadouts.Where(loadout =>
+                _loadoutSystem.CheckRequirementsValid(
+                    loadout.Requirements,
+                    highJob?.Proto ?? new JobPrototype(),
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    new Dictionary<string, TimeSpan>(),
+                    _entMan,
+                    _prototypeManager,
+                    _configurationManager,
+                    out _
+                )
+            ).ToList();
+
+            // Every loadout not in the loadouts list
+            var otherLoadouts = enumeratedLoadouts.Where(loadout => !loadouts.Contains(loadout)).ToList();
 
 
-            if (!loadouts.Any())
+            if (loadouts.Count == 0)
             {
                 _loadoutsTab.AddChild(new Label { Text = Loc.GetString("humanoid-profile-editor-loadouts-no-loadouts") });
                 return;
@@ -1533,7 +1548,7 @@ namespace Content.Client.Preferences.UI
             {
                 Orientation = LayoutOrientation.Vertical,
                 VerticalExpand = true,
-                Name = "Uncategorized_0"
+                Name = "Uncategorized_0",
             };
 
             _loadoutsTabs.AddChild(uncategorized);
@@ -1593,7 +1608,8 @@ namespace Content.Client.Preferences.UI
             foreach (var loadout in loadouts.OrderBy(l => l.ID))
             {
                 var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), _entMan, _prototypeManager,
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    loadoutsUnusable.Contains(loadout) ? "" : "ButtonColorRed", _entMan, _prototypeManager,
                     _configurationManager, _loadoutSystem);
 
                 // Look for an existing loadout category
@@ -1646,7 +1662,7 @@ namespace Content.Client.Preferences.UI
             foreach (var loadout in otherLoadouts.OrderBy(l => l.ID))
             {
                 var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), _entMan, _prototypeManager,
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "", _entMan, _prototypeManager,
                     _configurationManager, _loadoutSystem);
 
                 _loadoutPreferences.Add(selector);
@@ -1725,12 +1741,12 @@ namespace Content.Client.Preferences.UI
         private sealed class TraitPreferenceSelector : Control
         {
             public TraitPrototype Trait { get; }
-            private readonly CheckBox _checkBox;
+            private readonly Button _button;
 
             public bool Preference
             {
-                get => _checkBox.Pressed;
-                set => _checkBox.Pressed = value;
+                get => _button.Pressed;
+                set => _button.Pressed = value;
             }
 
             public event Action<bool>? PreferenceChanged;
@@ -1739,22 +1755,23 @@ namespace Content.Client.Preferences.UI
             {
                 Trait = trait;
 
-                _checkBox = new CheckBox {Text = Loc.GetString(trait.Name)};
-                _checkBox.OnToggled += OnCheckBoxToggled;
+                _button = new Button {Text = Loc.GetString(trait.Name)};
+                _button.ToggleMode = true;
+                _button.OnToggled += OnButtonToggled;
 
                 if (trait.Description is { } desc)
                 {
-                    _checkBox.ToolTip = Loc.GetString(desc);
+                    _button.ToolTip = Loc.GetString(desc);
                 }
 
                 AddChild(new BoxContainer
                 {
                     Orientation = LayoutOrientation.Horizontal,
-                    Children = { _checkBox },
+                    Children = { _button },
                 });
             }
 
-            private void OnCheckBoxToggled(BaseButton.ButtonToggledEventArgs args)
+            private void OnButtonToggled(BaseButton.ButtonToggledEventArgs args)
             {
                 PreferenceChanged?.Invoke(Preference);
             }
@@ -1763,18 +1780,18 @@ namespace Content.Client.Preferences.UI
         private sealed class LoadoutPreferenceSelector : Control
         {
             public LoadoutPrototype Loadout { get; }
-            private readonly CheckBox _checkBox;
+            private readonly Button _button;
 
             public bool Preference
             {
-                get => _checkBox.Pressed;
-                set => _checkBox.Pressed = value;
+                get => _button.Pressed;
+                set => _button.Pressed = value;
             }
 
             public event Action<bool>? PreferenceChanged;
 
             public LoadoutPreferenceSelector(LoadoutPrototype loadout, JobPrototype highJob,
-                HumanoidCharacterProfile profile, IEntityManager entityManager, IPrototypeManager prototypeManager,
+                HumanoidCharacterProfile profile, string style, IEntityManager entityManager, IPrototypeManager prototypeManager,
                 IConfigurationManager configManager, LoadoutSystem loadoutSystem)
             {
                 Loadout = loadout;
@@ -1789,20 +1806,22 @@ namespace Content.Client.Preferences.UI
                     Scale = new Vector2(1, 1),
                     OverrideDirection = Direction.South,
                     VerticalAlignment = VAlignment.Center,
-                    SizeFlagsStretchRatio = 1
+                    SizeFlagsStretchRatio = 1,
                 };
                 previewLoadout.SetEntity(dummyLoadoutItem);
 
 
                 // Create a checkbox to get the loadout
-                _checkBox = new CheckBox
+                _button = new Button
                 {
                     Text = $"[{loadout.Cost}] {(Loc.GetString($"loadout-name-{loadout.ID}") == $"loadout-name-{loadout.ID}"
                         ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName
                         : Loc.GetString($"loadout-name-{loadout.ID}"))}",
-                    VerticalAlignment = VAlignment.Center
+                    VerticalAlignment = VAlignment.Center,
+                    ToggleMode = true,
                 };
-                _checkBox.OnToggled += OnCheckBoxToggled;
+                _button.OnToggled += OnButtonToggled;
+                _button.AddStyleClass(style);
 
                 var tooltip = new StringBuilder();
                 // Add the loadout description to the tooltip if there is one
@@ -1825,7 +1844,7 @@ namespace Content.Client.Preferences.UI
                 {
                     var formattedTooltip = new Tooltip();
                     formattedTooltip.SetMessage(FormattedMessage.FromMarkupPermissive(tooltip.ToString()));
-                    _checkBox.TooltipSupplier = _ => formattedTooltip;
+                    _button.TooltipSupplier = _ => formattedTooltip;
                 }
 
 
@@ -1833,11 +1852,11 @@ namespace Content.Client.Preferences.UI
                 AddChild(new BoxContainer
                 {
                     Orientation = LayoutOrientation.Horizontal,
-                    Children = { previewLoadout, _checkBox },
+                    Children = { previewLoadout, _button },
                 });
             }
 
-            private void OnCheckBoxToggled(BaseButton.ButtonToggledEventArgs args)
+            private void OnButtonToggled(BaseButton.ButtonToggledEventArgs args)
             {
                 PreferenceChanged?.Invoke(Preference);
             }

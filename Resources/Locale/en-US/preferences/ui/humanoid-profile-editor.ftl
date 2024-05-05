@@ -56,8 +56,8 @@ humanoid-profile-editor-loadouts-no-loadouts = No loadouts found
 humanoid-profile-editor-loadouts-points-label = You have {$points}/{$max} points
 humanoid-profile-editor-loadouts-show-unusable-button = Show Unusable
 humanoid-profile-editor-loadouts-show-unusable-button-tooltip =
-    When enabled, loadouts that your current character setup cannot use will be shown.
-    You will still not be able to use the invalid loadouts unless your character setup changes to fit the whitelists.
+    When enabled, loadouts that your current character setup cannot use will be shown highlighted in red.
+    You will still not be able to use the invalid loadouts unless your character setup changes to fit the requirements.
     This may be useful if you like switching between multiple jobs and don't want to have to reselect your loadout every time.
 humanoid-profile-editor-markings-tab = Markings
 humanoid-profile-editor-flavortext-tab = Description
