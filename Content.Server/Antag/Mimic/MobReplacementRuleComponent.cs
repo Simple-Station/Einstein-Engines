@@ -13,6 +13,12 @@ public sealed partial class MobReplacementRuleComponent : Component
     [DataField]
     public EntProtoId Proto = "MobMimic";
 
+    [DataField("numberToReplace")]
+    public int NumberToReplace { get; set; }
+
+    [DataField("announcement")]
+    public string Announcement = "station-event-rampant-intelligence-announcement";
+
     /// <summary>
     /// Chance per-entity.
     /// </summary>

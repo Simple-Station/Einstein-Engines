@@ -29,9 +29,14 @@
         - MachineMask
         layer:
         - MachineLayer
-        density: 200
+        density: 2100
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:EjectVendorItems
     - trigger:
         !type:DamageTrigger
         damage: 100
@@ -41,13 +46,19 @@
       - !type:EjectVendorItems
     - trigger:
         !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:EjectVendorItems
+    - trigger:
+        !type:DamageTrigger
         damage: 200
       behaviors:
+      - !type:EjectVendorItems
       - !type:SpawnEntitiesBehavior
         spawn:
           SheetSteel1:
-            min: 1
-            max: 1
+            min: 2
+            max: 5
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:PlaySoundBehavior
