@@ -9,6 +9,6 @@
         - SalvageSpecialist
     - !type:LoadoutPlaytimeRequirement
       tracker: JobSalvageSpecialist
-      time: 36000 # 10 hours
+      min: 36000 # 10 hours
   items:
     - ClothingNeckCloakGoliathCloak

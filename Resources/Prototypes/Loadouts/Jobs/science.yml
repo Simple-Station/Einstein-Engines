@@ -9,7 +9,7 @@
         - Scientist
     - !type:LoadoutDepartmentTimeRequirement
       department: Science
-      time: 216000 # 60 hours
+      min: 216000 # 60 hours
   items:
     - ClothingUniformJumpskirtSeniorResearcher
 
@@ -24,7 +24,7 @@
         - Scientist
     - !type:LoadoutDepartmentTimeRequirement
       department: Science
-      time: 216000 # 60 hours
+      min: 216000 # 60 hours
   items:
     - ClothingUniformJumpsuitSeniorResearcher
 
@@ -67,7 +67,7 @@
         - Scientist
     - !type:LoadoutDepartmentTimeRequirement
       department: Science
-      time: 216000 # 60 hours
+      min: 216000 # 60 hours
   items:
     - ClothingOuterCoatLabSeniorResearcher
 
