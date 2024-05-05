@@ -1555,7 +1555,7 @@ namespace Content.Client.Preferences.UI
             _loadoutsTabs.SetTabTitle(0, Loc.GetString("humanoid-profile-editor-loadouts-uncategorized-tab"));
 
             // Make categories
-            var currentCategory = 1; // 1 because we already made 0 as Uncategorized, I am not not zero-indexing
+            var currentCategory = 1; // 1 because we already made 0 as Uncategorized, I am not not zero-indexing :)
             foreach (var loadout in loadouts.OrderBy(l => l.Category))
             {
                 // Check for existing category
@@ -1592,11 +1592,11 @@ namespace Content.Client.Preferences.UI
                                 {
                                     Orientation = LayoutOrientation.Vertical,
                                     HorizontalExpand = true,
-                                    VerticalExpand = true
-                                }
-                            }
-                        }
-                    }
+                                    VerticalExpand = true,
+                                },
+                            },
+                        },
+                    },
                 };
 
                 _loadoutsTabs.AddChild(box);
@@ -1825,9 +1825,9 @@ namespace Content.Client.Preferences.UI
 
                 var tooltip = new StringBuilder();
                 // Add the loadout description to the tooltip if there is one
-                var desc = Loc.GetString($"loadout-description-{loadout.ID}") == $"loadout-description-{loadout.ID}"
+                var desc = !Loc.TryGetString($"loadout-description-{loadout.ID}", out var description)
                     ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityDescription
-                    : Loc.GetString($"loadout-description-{loadout.ID}");
+                    : description;
                 if (!string.IsNullOrEmpty(desc))
                     tooltip.Append($"{Loc.GetString(desc)}");
 

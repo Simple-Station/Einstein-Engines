@@ -1,8 +1,8 @@
 loadout-description-LoadoutItemCig = Cool guys always have one.
-loadout-description-LoadoutItemCigsGreen = A pack a day keeps the doctor well paid!
-loadout-description-LoadoutItemCigsRed = A pack a day keeps the doctor well paid!
-loadout-description-LoadoutItemCigsBlue = A pack a day keeps the doctor well paid!
-loadout-description-LoadoutItemCigsBlack = A pack a day keeps the doctor well paid!
+loadout-description-LoadoutItemCigsGreen = A pack a day keeps the doctor well-paid!
+loadout-description-LoadoutItemCigsRed = A pack a day keeps the doctor well-paid!
+loadout-description-LoadoutItemCigsBlue = A pack a day keeps the doctor well-paid!
+loadout-description-LoadoutItemCigsBlack = A pack a day keeps the doctor well-paid!
 loadout-description-LoadoutItemPAI = A little flakey on booting up, but a more loyal friend you won't find.
 loadout-description-LoadoutItemLighter = A basic lighter.
 loadout-description-LoadoutItemLighterCheap = A very basic lighter.
