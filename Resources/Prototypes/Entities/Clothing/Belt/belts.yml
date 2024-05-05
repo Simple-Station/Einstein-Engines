@@ -31,6 +31,7 @@
         - AppraisalTool
         - JawsOfLife
         - GPS
+        - WeldingMask
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -630,7 +631,6 @@
       - id: Stunbaton
       - id: Handcuffs
       - id: Handcuffs
-
 - type: entity
   parent: ClothingBeltStorageBase
   id: ClothingBeltMercWebbing
