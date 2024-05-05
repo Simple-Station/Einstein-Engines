@@ -1,12 +1,14 @@
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace Content.Server.Database.Migrations.Postgres
 {
+    /// <inheritdoc />
     public partial class Loadouts : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -30,11 +32,13 @@ namespace Content.Server.Database.Migrations.Postgres
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_loadout_profile_id",
+                name: "IX_loadout_profile_id_loadout_name",
                 table: "loadout",
-                column: "profile_id");
+                columns: new[] { "profile_id", "loadout_name" },
+                unique: true);
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
