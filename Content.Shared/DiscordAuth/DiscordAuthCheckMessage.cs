@@ -2,7 +2,7 @@ using Lidgren.Network;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Corvax.DiscordAuth;
+namespace Content.Shared.DiscordAuth;
 
 /// <summary>
 ///     Client sends this event to force server check player Discord verification state

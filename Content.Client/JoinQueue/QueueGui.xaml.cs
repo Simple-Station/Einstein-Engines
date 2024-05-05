@@ -3,7 +3,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client.Corvax.JoinQueue;
+namespace Content.Client.JoinQueue;
 
 [GenerateTypedNameReferences]
 public sealed partial class QueueGui : Control

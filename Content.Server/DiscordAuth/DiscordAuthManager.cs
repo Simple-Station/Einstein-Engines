@@ -3,8 +3,8 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Shared.Corvax.CCCVars;
-using Content.Shared.Corvax.DiscordAuth;
+using Content.Shared.CCVar;
+using Content.Shared.DiscordAuth;
 using JetBrains.Annotations;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -12,7 +12,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
-namespace Content.Server.Corvax.DiscordAuth;
+namespace Content.Server.DiscordAuth;
 
 // TODO: Add minimal Discord account age check for panic bunker by extracting timestamp from snowflake received from API secured with key
 
@@ -42,9 +42,9 @@ public sealed class DiscordAuthManager
     {
         _sawmill = Logger.GetSawmill("discord_auth");
 
-        _configuration.OnValueChanged(CCCVars.DiscordAuthEnabled, v => _isEnabled = v, true);
-        _configuration.OnValueChanged(CCCVars.DiscordAuthApiUrl, v => _apiUrl = v, true);
-        _configuration.OnValueChanged(CCCVars.DiscordAuthApiKey, v => _apiKey = v, true);
+        _configuration.OnValueChanged(CCVars.DiscordAuthEnabled, v => _isEnabled = v, true);
+        _configuration.OnValueChanged(CCVars.DiscordAuthApiUrl, v => _apiUrl = v, true);
+        _configuration.OnValueChanged(CCVars.DiscordAuthApiKey, v => _apiKey = v, true);
 
         _net.RegisterNetMessage<DiscordAuthRequiredMessage>();
         _net.RegisterNetMessage<DiscordAuthCheckMessage>(OnAuthCheck);

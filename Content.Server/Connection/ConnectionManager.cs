@@ -4,7 +4,6 @@ using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.Preferences.Managers;
 using Content.Shared.CCVar;
-using Content.Shared.Corvax.CCCVars;
 using Content.Shared.GameTicking;
 using Content.Shared.Players.PlayTimeTracking;
 using Robust.Server.Player;
@@ -17,7 +16,7 @@ namespace Content.Server.Connection
     public interface IConnectionManager
     {
         void Initialize();
-        Task<bool> HasPrivilegedJoin(NetUserId userId); // Corvax-Queue
+        Task<bool> HasPrivilegedJoin(NetUserId userId);
     }
 
     /// <summary>
@@ -159,13 +158,12 @@ namespace Content.Server.Connection
                 }
             }
 
-            // Corvax-Queue-Start
+
             var isPrivileged = await HasPrivilegedJoin(userId);
-            var isQueueEnabled = _cfg.GetCVar(CCCVars.QueueEnabled);
+            var isQueueEnabled = _cfg.GetCVar(CCVars.QueueEnabled);
 
             if (_plyMgr.PlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !isPrivileged && !isQueueEnabled)
                 return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
-            // Corvax-Queue-End
 
 
             var bans = await _db.GetServerBansAsync(addr, userId, hwId, includeUnbanned: false);
@@ -263,7 +261,6 @@ namespace Content.Server.Connection
             }
         }
 
-        // Corvax-Queue-Start // Make these conditions in one place, for checks in the connection and in the queue
         public async Task<bool> HasPrivilegedJoin(NetUserId userId)
         {
             var isAdmin = await _dbManager.GetAdminDataForAsync(userId) != null;
@@ -272,6 +269,5 @@ namespace Content.Server.Connection
                             status == PlayerGameStatus.JoinedGame;
             return isAdmin || wasInGame;
         }
-        // Corvax-Queue-End
     }
 }

@@ -1,8 +1,8 @@
-using Content.Shared.Corvax.DiscordAuth;
+using Content.Shared.DiscordAuth;
 using Robust.Client.State;
 using Robust.Shared.Network;
 
-namespace Content.Client.Corvax.DiscordAuth;
+namespace Content.Client.DiscordAuth;
 
 public sealed class DiscordAuthManager
 {

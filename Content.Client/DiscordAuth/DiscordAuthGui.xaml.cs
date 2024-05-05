@@ -4,7 +4,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client.Corvax.DiscordAuth;
+namespace Content.Client.DiscordAuth;
 
 [GenerateTypedNameReferences]
 public sealed partial class DiscordAuthGui : Control

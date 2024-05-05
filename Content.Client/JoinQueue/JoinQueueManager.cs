@@ -1,8 +1,8 @@
-using Content.Shared.Corvax.JoinQueue;
+using Content.Shared.JoinQueue;
 using Robust.Client.State;
 using Robust.Shared.Network;
 
-namespace Content.Client.Corvax.JoinQueue;
+namespace Content.Client.JoinQueue;
 
 public sealed class JoinQueueManager
 {

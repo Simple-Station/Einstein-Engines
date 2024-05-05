@@ -1,8 +1,8 @@
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
-using Content.Client.Corvax.DiscordAuth;
-using Content.Client.Corvax.JoinQueue;
+using Content.Client.DiscordAuth;
+using Content.Client.JoinQueue;
 using Content.Client.Eui;
 using Content.Client.Flash;
 using Content.Client.Fullscreen;
@@ -72,8 +72,8 @@ namespace Content.Client.Entry
         [Dependency] private readonly IResourceManager _resourceManager = default!;
         [Dependency] private readonly IReplayLoadManager _replayLoad = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
-        [Dependency] private readonly JoinQueueManager _joinQueue = default!; // Corvax-Queue
-        [Dependency] private readonly DiscordAuthManager _discordAuth = default!; // Corvax-DiscordAuth
+        [Dependency] private readonly JoinQueueManager _joinQueue = default!;
+        [Dependency] private readonly DiscordAuthManager _discordAuth = default!;
 
         public override void Init()
         {
@@ -166,8 +166,8 @@ namespace Content.Client.Entry
             _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
             _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
             _documentParsingManager.Initialize();
-            _joinQueue.Initialize(); // Corvax-Queue
-            _discordAuth.Initialize(); // Corvax-DiscordAuth
+            _joinQueue.Initialize();
+            _discordAuth.Initialize();
 
             _baseClient.RunLevelChanged += (_, args) =>
             {

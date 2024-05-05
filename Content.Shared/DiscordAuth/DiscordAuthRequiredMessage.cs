@@ -2,7 +2,7 @@ using Lidgren.Network;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Corvax.DiscordAuth;
+namespace Content.Shared.DiscordAuth;
 
 /// <summary>
 ///     Server sends this event to client on connect if Discord auth is required

@@ -1,11 +1,11 @@
 using System.Threading;
-using Content.Shared.Corvax.DiscordAuth;
+using Content.Shared.DiscordAuth;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared.Network;
 using Timer = Robust.Shared.Timing.Timer;
 
-namespace Content.Client.Corvax.DiscordAuth;
+namespace Content.Client.DiscordAuth;
 
 public sealed class DiscordAuthState : State
 {
