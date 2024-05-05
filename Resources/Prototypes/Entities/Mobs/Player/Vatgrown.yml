@@ -20,5 +20,5 @@
       - names_terra_last
     - type: GhostRole
       name: Terragov Marine
-      description: Terragov has deployed you on a special mission. Complete your task, then return to base.
+      description: Terragov has deployed you on a special mission. Listen to whoever deployed you, and complete your assignment.
     - type: GhostTakeoverAvailable

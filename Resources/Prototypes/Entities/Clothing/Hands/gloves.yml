@@ -443,14 +443,14 @@
     fiberMaterial: fibers-nanomachines
   - type: FingerprintMask
   - type: StaminaDamageOnHit
-    damage: 50 #Stam damage values seem a bit higher than regular damage because of the decay, etc
+    damage: 100 #Stam damage values seem a bit higher than regular damage because of the decay, etc
     # This needs to be moved to boxinggloves
     #knockdownSound: /Audio/Weapons/boxingbell.ogg
   - type: MeleeWeapon
-    attackRate: 0.4
+    attackRate: 0.1
     damage:
       types:
-        Blunt: 4
+        Blunt: 20
     soundHit:
       collection: BoxingHit
     animation: WeaponArcFist

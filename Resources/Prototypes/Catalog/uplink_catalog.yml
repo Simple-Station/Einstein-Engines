@@ -1647,3 +1647,25 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+
+# Terragov Shit
+
+- type: listing
+  id: UplinkVatgrownBundle
+  name: Terragov Vatgrown Reinforcement
+  description: A crate containing 3 vatgrown marines, and a radio encryption key on their headset channel.
+  productEntity: CrateTerragovReinforcementBundle
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkBundles
+
+- type: listing
+  id: UplinkGlovesCQC
+  name: Snake Gloves
+  description: Heavy padded gloves that allow you to knock someone out in one hit, they make you feel a bit sluggish though.
+  productEntity: ClothingHandsGlovesCQC
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkWeapons
