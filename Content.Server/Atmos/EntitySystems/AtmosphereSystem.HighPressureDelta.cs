@@ -180,7 +180,7 @@ namespace Content.Server.Atmos.EntitySystems
         }
 
         //The EE version of this function drops pressureResistanceProbDelta, since it's not needed. If you are for whatever reason calling this function
-        //And it isn't working, you've probably still got the ResistancePobDelta line included.
+        //And it isn't working, you've probably still got the pressureResistanceProbDelta line included.
         public void ExperiencePressureDifference(
             Entity<MovedByPressureComponent> ent,
             int cycle,
@@ -206,8 +206,8 @@ namespace Content.Server.Atmos.EntitySystems
             // Objects can only be thrown if the force of air flow is greater than the SQUARE of their mass or {SpaceWindMinimumMassThreshold}, whichever is heavier
             // This means that the heavier an object is, the exponentially more force is required to move it
             // The force of a throw is equal to the force of air pressure, divided by an object's mass. So not only are heavier objects
-            // less likely to be thrown, they are also harder to throw.
-            // While lighter objects are yeeted easily, and from great distance.
+            // less likely to be thrown, they are also harder to throw,
+            // while lighter objects are yeeted easily, and from great distance.
             //
             // For a human sized entity with a standard weight of 80kg and a spacing between a hard vacuum and a room pressurized at 101kpa,
             // The human shall only be moved if he is either very close to the hole, or is standing in a region of high airflow
