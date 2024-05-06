@@ -232,17 +232,3 @@
     sprite: Clothing/Shoes/Boots/cowboybootsfancy.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/cowboybootsfancy.rsi
-
-# Sons of Mars
-
-- type: entity
-  parent: ClothingShoesBaseButcherable
-  id: ClothingShoesSOM
-  name: Martian Boots
-  description: Fits Terran heads perfectly
-  components:
-  - type: Sprite
-    sprite: Clothing/Shoes/Boots/somboots.rsi
-  - type: Clothing
-    sprite: Clothing/Shoes/Boots/somboots.rsi
-  - type: Matchbox

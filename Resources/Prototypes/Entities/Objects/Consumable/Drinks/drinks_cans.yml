@@ -499,26 +499,3 @@
     sprite: Objects/Consumable/Drinks/wine_can.rsi
   - type: Item
     sprite: Objects/Consumable/Drinks/wine_can.rsi
-
-- type: entity
-  parent: DrinkCanBaseFull
-  id: DrinkRussianCan
-  name: Canned Black Russian
-  description: Sweet, sweet alcoholic coffee in a can. An Urist's favorite drink.
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BlackRussian
-          Quantity: 30
-  - type: Tag
-    tags:
-    - Cola
-    - DrinkCan
-    - Recyclable
-  - type: Sprite
-    sprite: Objects/Consumable/Drinks/beer_can.rsi
-  - type: Item
-    sprite: Objects/Consumable/Drinks/beer_can.rsi

@@ -50,7 +50,6 @@ namespace Content.IntegrationTests.Tests
             "MeteorArena",
             "NukieOutpost",
             "Pebble", //DeltaV
-            "Saltern", //Syndicate Station
             "Edge", //DeltaV
             "Shoukou", //DeltaV
             "Tortuga", //DeltaV

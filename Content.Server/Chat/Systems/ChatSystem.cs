@@ -324,7 +324,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="colorOverride">Optional color for the announcement message</param>
     public void DispatchGlobalAnnouncement(
         string message,
-        string sender = "High Command",
+        string sender = "Central Command",
         bool playSound = true,
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null
@@ -350,7 +350,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public void DispatchStationAnnouncement(
         EntityUid source,
         string message,
-        string sender = "High Command",
+        string sender = "Central Command",
         bool playDefaultSound = true,
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null)

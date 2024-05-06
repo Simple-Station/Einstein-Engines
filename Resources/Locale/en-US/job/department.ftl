@@ -1,8 +1,8 @@
-department-Cargo = Cybersun Industries
-department-Civilian = Donk Company
-department-Command = Syndicate
-department-Engineering = Weathermaker Inc.
-department-Medical = Interdyne Pharmaceutics
-department-Security = Gorlex Marauders
-department-Science = Waffle Corporation
+department-Cargo = Cargo
+department-Civilian = Civilian
+department-Command = Command
+department-Engineering = Engineering
+department-Medical = Medical
+department-Security = Security
+department-Science = Science
 department-Specific = Station specific

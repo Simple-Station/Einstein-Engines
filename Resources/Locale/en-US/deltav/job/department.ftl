@@ -1,2 +1,2 @@
-department-Epistemics = Waffle Co.
-department-Logistics = Cybersun Industries
+department-Epistemics = Epistemics
+department-Logistics = Logistics

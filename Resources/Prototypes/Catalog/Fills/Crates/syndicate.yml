@@ -30,18 +30,3 @@
   components:
     - type: SurplusBundle
       totalPrice: 125
-
-- type: entity
-  id: CrateTerragovReinforcementBundle
-  suffix: Filled
-  parent: CrateGenericSteel
-  name: Terragov Vatgrown Reinforcement Bundle
-  description: Contains 3 Terragov Marines, and a headset key to communicate with them.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MobTerragovAgent
-      - id: MobTerragovAgent
-      - id: MobTerragovAgent
-      - id: EncryptionKeyFreelance
-

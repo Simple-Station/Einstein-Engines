@@ -21,16 +21,3 @@
       interfaces:
         - key: enum.ChameleonUiKey.Key
           type: ChameleonBoundUserInterface
-
-# Sons of Mars
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformSOM
-  name: SOM Uniform
-  description: An intimidating red jumpsuit. Smells like martian soil.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/somuniform.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/somuniform.rsi

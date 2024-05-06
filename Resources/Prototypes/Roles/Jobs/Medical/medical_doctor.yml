@@ -20,14 +20,13 @@
 - type: startingGear
   id: DoctorGear
   equipment:
-    jumpsuit: UniformScrubsColorCybersun
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
     back: ClothingBackpackMedicalFilled
-    shoes: ClothingShoesColorBlack
-    outerClothing: ClothingOuterCoatCybersunWindbreaker
+    shoes: ClothingShoesColorWhite
+    outerClothing: ClothingOuterCoatLab
     id: MedicalPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalFilled
-    head: ClothingHeadHatSurgcapCybersun
-  innerClothingSkirt: UniformScrubsColorCybersun
+  innerClothingSkirt: ClothingUniformJumpskirtMedicalDoctor
   satchel: ClothingBackpackSatchelMedicalFilled
   duffelbag: ClothingBackpackDuffelMedicalFilled

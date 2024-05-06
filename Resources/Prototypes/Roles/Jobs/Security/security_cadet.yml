@@ -28,17 +28,15 @@
 - type: startingGear
   id: SecurityCadetGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSecSummer
+    jumpsuit: ClothingUniformJumpsuitColorRed
     back: ClothingBackpackSecurityFilled
     shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatBeretSecurity
     outerClothing: ClothingOuterArmorDuraVest # DeltaV - ClothingOuterArmorBasic replaced in favour of stab vest. Sucks to suck, cadets
     id: SecurityCadetPDA
     ears: ClothingHeadsetSecurity
-    face: ClothingMaskNeckGaiter
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolViper
-    pocket2: ClothingHeadHatSyndie
-  innerClothingSkirt: ClothingUniformJumpsuitSecSummer
+#    pocket1: WeaponPistolMk58Nonlethal # DeltaV - Security Cadet doesn't spawn with a gun
+    pocket2: BookSecurity
+  innerClothingSkirt: ClothingUniformJumpskirtColorRed
   satchel: ClothingBackpackSatchelSecurityFilled
   duffelbag: ClothingBackpackDuffelSecurityFilled

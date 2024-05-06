@@ -52,9 +52,3 @@
   id: ShadowHaze
   supportedTypes:
     - Heat
-
-- type: damageContainer
-  id: Synth
-  supportedGroups:
-    - Brute
-    - Burn

@@ -409,16 +409,3 @@
     sprite: Clothing/OuterClothing/Coats/expensive_coat.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/expensive_coat.rsi
-
-# Syndicate station
-
-- type: entity
-  parent: ClothingOuterStorageBase
-  id: ClothingOuterCoatHoP
-  name: Head of Personell's Coat
-  description: A strict paperworker's coat for being intimidating during paperwork.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Coats/hop_coat.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Coats/hop_coat.rsi

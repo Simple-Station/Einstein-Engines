@@ -24,11 +24,8 @@
       - id: BoxPDAPrisoner # Delta-V
       - id: ClothingShoesBootsWinterWarden #Delta V: Add departmental winter boots
       - id: BoxEncryptionKeyPrisoner #Delta-V
-<<<<<<< Languages
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
         prob: 0.3
-=======
->>>>>>> master
 
 - type: entity
   id: LockerWardenFilled
@@ -310,26 +307,3 @@
     contents:
     - id: WeaponLaserCarbine
       amount: 3
-
-#Syndicate Station Gorlex Security
-- type: entity
-  parent: GunSafe
-  id: GunSafeC20
-  name: c-20r safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: ClothingBackpackDuffelSyndicateFilledSMG
-      amount: 2
-
-- type: entity
-  parent: GunSafe
-  id: GunSafePistolViper
-  name: viper safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponPistolViper
-      amount: 4
-    - id: MagazinePistol
-      amount: 8

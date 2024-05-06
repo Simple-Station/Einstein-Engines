@@ -1,23 +1,23 @@
-cargo-gifts-event-announcement = It's your lucky day, { $sender } was able to afford sending { $description } to the station's { $dest }. Look for it in your next cargo shipment.
-cargo-gift-default-description = whatever the Urists could scrounge up
-cargo-gift-default-sender = High Command
-cargo-gift-default-dest = Cybersun Department
+cargo-gifts-event-announcement = Congratulations! { $sender } has decided to send { $description } to the station { $dest }. Look for it in your next cargo shipment.
+cargo-gift-default-description = A bundle of gifts
+cargo-gift-default-sender = NanoTrasen
+cargo-gift-default-dest = Logistics Dept.
 
 cargo-gift-dest-bar = bar
-cargo-gift-dest-eng = Weathermaker Dept
-cargo-gift-dest-supp = Cybersun Dept
-cargo-gift-dest-janitor = Donk Co. Dept
-cargo-gift-dest-med = Interdyne Pharmaceutics Dept
-cargo-gift-dest-sec = Gorlex PMC Dept
+cargo-gift-dest-eng = Engineering Dept
+cargo-gift-dest-supp = Logistics Dept
+cargo-gift-dest-janitor = Service Dept
+cargo-gift-dest-med = Medical Dept
+cargo-gift-dest-sec = Security Dept
 
-cargo-gift-pizza-small = A meager pizza delivery
-cargo-gift-pizza-large = A grand pizza delivery
+cargo-gift-pizza-small = A small pizza party
+cargo-gift-pizza-large = A large pizza party
 
-cargo-gift-eng = random junk from disposals
-cargo-gift-vending = busted cans from our vending machines
-cargo-gift-cleaning = cleaning supplies
-cargo-gift-medical-supply = bandages and strange goo
-cargo-gift-space-protection = useless crap
-cargo-gift-fire-protection = fireproof crap
-cargo-gift-security-guns = faulty firearms
-cargo-gift-security-riot = rejected body armor
+cargo-gift-eng = Repair Materials
+cargo-gift-vending = Vending machines refills
+cargo-gift-cleaning = Cleaning equipment
+cargo-gift-medical-supply = Medical supplies
+cargo-gift-space-protection = Space Hazard Protection
+cargo-gift-fire-protection = Fire Protection
+cargo-gift-security-guns = Lethal Weapons
+cargo-gift-security-riot = Riot Gear
