@@ -1,5 +1,4 @@
 ﻿using Content.Shared.Chat;
-using Content.Client.Language.Systems.Chat.Controls;
 using Content.Shared.Input;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
