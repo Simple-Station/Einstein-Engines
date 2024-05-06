@@ -1,7 +1,6 @@
 using Content.Shared.Language;
 using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
-using Content.Shared.Mind.Components;
 using Robust.Shared.Console;
 
 namespace Content.Client.Language.Systems;
@@ -28,8 +27,6 @@ public sealed class LanguageSystem : SharedLanguageSystem
     /// </summary>
     public List<string> UnderstoodLanguages { get; private set; } = new();
 
-    public Action<(string current, List<string> spoken, List<string> understood)>? LanguagesUpdatedHook;
-
     [Dependency] private readonly IConsoleHost _consoleHost = default!;
 
     public override void Initialize()
@@ -53,6 +50,7 @@ public sealed class LanguageSystem : SharedLanguageSystem
             return;
 
         // (This is dumb. This is very dumb. It should be a message instead.)
+        // TODO Change this, soonish
         _consoleHost.ExecuteCommand("languageselect " + language.ID);
 
         // So to reduce the probability of desync, we replicate the change locally too
@@ -65,8 +63,5 @@ public sealed class LanguageSystem : SharedLanguageSystem
         CurrentLanguage = message.CurrentLanguage;
         SpokenLanguages = message.Spoken;
         UnderstoodLanguages = message.Understood;
-
-        // Pleeease do not mutate it inside the hook, or the universe will crash and collapse and I will come to your house at 3 am and then the police will never find your body
-        LanguagesUpdatedHook?.Invoke((CurrentLanguage, SpokenLanguages, UnderstoodLanguages));
     }
 }

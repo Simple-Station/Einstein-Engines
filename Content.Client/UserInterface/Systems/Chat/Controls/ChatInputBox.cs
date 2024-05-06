@@ -1,8 +1,6 @@
 ﻿using Content.Shared.Chat;
 using Content.Client.Language.Systems.Chat.Controls;
-using Content.Client.UserInterface.Systems.Language;
 using Content.Shared.Input;
-using Content.Shared.Language;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
@@ -12,7 +10,6 @@ namespace Content.Client.UserInterface.Systems.Chat.Controls;
 public class ChatInputBox : PanelContainer
 {
     public readonly ChannelSelectorButton ChannelSelector;
-    public readonly LanguageSelectorButton LanguageSelector;
     public readonly HistoryLineEdit Input;
     public readonly ChannelFilterButton FilterButton;
     protected readonly BoxContainer Container;
@@ -35,14 +32,6 @@ public class ChatInputBox : PanelContainer
             MinWidth = 75
         };
         Container.AddChild(ChannelSelector);
-        LanguageSelector = new LanguageSelectorButton
-        {
-            Name = "LanguageSelector",
-            ToggleMode = true,
-            StyleClasses = { "chatSelectorOptionButton" },
-            MinWidth = 75
-        };
-        Container.AddChild(LanguageSelector);
         Input = new HistoryLineEdit
         {
             Name = "Input",
