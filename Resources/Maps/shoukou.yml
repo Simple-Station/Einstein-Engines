@@ -78406,13 +78406,6 @@ entities:
     - type: Transform
       pos: -20.5,-7.5
       parent: 34
-- proto: VendingMachinePride
-  entities:
-  - uid: 61
-    components:
-    - type: Transform
-      pos: -18.5,-10.5
-      parent: 34
 - proto: VendingMachineRepDrobe
   entities:
   - uid: 10053

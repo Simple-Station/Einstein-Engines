@@ -39,9 +39,10 @@
     newItem: null
 
 - type: entity
-  parent: ClothingOuterHardsuitERTLeader
+  parent: ClothingOuterHardsuitSyndie
   id: ClothingOuterHardsuitERTCentcomm
-  name: CentCom hardsuit
+  name: Terragov Hardsuit
+  description: Standard issue Marine combat hardsuit. Smells like freedom.
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertcentcomm.rsi

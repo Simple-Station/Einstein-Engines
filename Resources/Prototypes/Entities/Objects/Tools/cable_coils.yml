@@ -166,6 +166,9 @@
   description: Low-Voltage stack of wires for connecting APCs to machines and other purposes.
   suffix: Full
   components:
+  - type: Tag
+    tags:
+    - Ointment
   - type: Sprite
     state: coillv-30
     layers:
@@ -173,6 +176,18 @@
       map: ["base"]
   - type: Item
     heldPrefix: coillv
+  - type: Healing
+    damageContainers:
+      - Synth
+    damage:
+      types:
+        Heat: -15
+        Cold: -15
+        Shock: -15
+    healingBeginSound:
+      path: "/Audio/Items/screwdriver.ogg"
+    healingEndSound:
+      path: "/Audio/Items/screwdriver2.ogg"
   - type: Stack
     baseLayer: base
     layerStates:

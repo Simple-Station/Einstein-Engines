@@ -322,3 +322,48 @@
     shoes: ClothingShoesClownBanana
     jumpsuit: ClothingUniformJumpsuitClownBanana
     mask: ClothingMaskClownBanana
+
+# Terragov
+- type: startingGear
+  id: TerragovGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    outerClothing: ClothingOuterVestWebMerc
+    back: ClothingBackpackMerc
+    shoes: ClothingShoesBootsMerc
+    gloves: ClothingHandsMercGlovesCombat
+    eyes: ClothingEyesGlassesMercenary
+    head: ClothingHeadHelmetMerc
+    id: PassengerPDA
+    ears: ClothingHeadsetFreelance
+    mask: ClothingMaskGasMerc
+    belt: ClothingBeltMercWebbing
+
+- type: startingGear
+  id: TerragovGearNukie
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    outerClothing: ClothingOuterHardsuitERTCentcomm
+    back: ClothingBackpackMerc
+    shoes: ClothingShoesBootsMerc
+    gloves: ClothingHandsMercGlovesCombat
+    eyes: ClothingEyesGlassesMercenary
+    head: ClothingHeadHelmetMerc
+    id: PassengerPDA
+    ears: ClothingHeadsetFreelance
+    mask: ClothingMaskGasMerc
+    belt: ClothingBeltMercWebbing
+
+# Sons of Mars
+- type: startingGear
+  id: MartianMarineGear
+  equipment:
+    jumpsuit: ClothingUniformSOM
+    outerClothing: ClothingSoMMedium
+    back: ClothingBackpackSatchelLeather
+    shoes: ClothingShoesSOM
+    gloves: ClothingHandsGlovesSOM
+    head: ClothingHeadHelmetSOM
+    id: PassengerPDA
+    ears: ClothingHeadsetFreelance
+    mask: ClothingMaskGasSecurity

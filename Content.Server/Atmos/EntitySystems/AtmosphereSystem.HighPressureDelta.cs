@@ -1,14 +1,11 @@
 using Content.Server.Atmos.Components;
 using Content.Shared.Atmos;
-using Content.Shared.Audio;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Player;
-using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Atmos.EntitySystems
@@ -51,8 +48,7 @@ namespace Content.Server.Atmos.EntitySystems
                 comp.Accumulator = 0f;
                 toRemove.Add(ent);
 
-                if (HasComp<MobStateComponent>(uid) &&
-                    TryComp<PhysicsComponent>(uid, out var body))
+                if (TryComp<PhysicsComponent>(uid, out var body))
                 {
                     _physics.SetBodyStatus(body, BodyStatus.OnGround);
                 }
@@ -72,7 +68,7 @@ namespace Content.Server.Atmos.EntitySystems
             }
         }
 
-        private void AddMobMovedByPressure(EntityUid uid, MovedByPressureComponent component, PhysicsComponent body)
+        private void AddMovedByPressure(EntityUid uid, MovedByPressureComponent component, PhysicsComponent body)
         {
             if (!TryComp<FixturesComponent>(uid, out var fixtures))
                 return;
@@ -162,7 +158,7 @@ namespace Content.Server.Atmos.EntitySystems
                         (entity, pressureMovements),
                         gridAtmosphere.Comp.UpdateCounter,
                         tile.PressureDifference,
-                        tile.PressureDirection, 0,
+                        tile.PressureDirection,
                         tile.PressureSpecificTarget != null ? _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.PressureSpecificTarget.GridIndices) : EntityCoordinates.Invalid,
                         gridWorldRotation,
                         xforms.GetComponent(entity),
@@ -183,12 +179,13 @@ namespace Content.Server.Atmos.EntitySystems
             tile.PressureDirection = differenceDirection;
         }
 
+        //The EE version of this function drops pressureResistanceProbDelta, since it's not needed. If you are for whatever reason calling this function
+        //And it isn't working, you've probably still got the ResistancePobDelta line included.
         public void ExperiencePressureDifference(
             Entity<MovedByPressureComponent> ent,
             int cycle,
             float pressureDifference,
             AtmosDirection direction,
-            float pressureResistanceProbDelta,
             EntityCoordinates throwTarget,
             Angle gridWorldRotation,
             TransformComponent? xform = null,
@@ -201,50 +198,29 @@ namespace Content.Server.Atmos.EntitySystems
             if (!Resolve(uid, ref xform))
                 return;
 
-            // TODO ATMOS stuns?
-
-            var maxForce = MathF.Sqrt(pressureDifference) * 2.25f;
-            var moveProb = 100f;
-
-            if (component.PressureResistance > 0)
-                moveProb = MathF.Abs((pressureDifference / component.PressureResistance * MovedByPressureComponent.ProbabilityBasePercent) -
-                                     MovedByPressureComponent.ProbabilityOffset);
-
             // Can we yeet the thing (due to probability, strength, etc.)
-            if (moveProb > MovedByPressureComponent.ProbabilityOffset && _robustRandom.Prob(MathF.Min(moveProb / 100f, 1f))
-                                                                      && !float.IsPositiveInfinity(component.MoveResist)
-                                                                      && (physics.BodyType != BodyType.Static
-                                                                          && (maxForce >= (component.MoveResist * MovedByPressureComponent.MoveForcePushRatio)))
-                || (physics.BodyType == BodyType.Static && (maxForce >= (component.MoveResist * MovedByPressureComponent.MoveForceForcePushRatio))))
+            if (physics.BodyType != BodyType.Static
+                && !float.IsPositiveInfinity(component.MoveResist)
+                && physics.Mass != 0)
             {
-                if (HasComp<MobStateComponent>(uid))
+                var moveForce = pressureDifference / physics.Mass;
+
+                if (moveForce > physics.Mass)
                 {
-                    AddMobMovedByPressure(uid, component, physics);
-                }
-
-                if (maxForce > MovedByPressureComponent.ThrowForce)
-                {
-                    var moveForce = maxForce;
-                    moveForce /= (throwTarget != EntityCoordinates.Invalid) ? SpaceWindPressureForceDivisorThrow : SpaceWindPressureForceDivisorPush;
-                    moveForce *= MathHelper.Clamp(moveProb, 0, 100);
-
-                    // Apply a sanity clamp to prevent being thrown through objects.
-                    var maxSafeForceForObject = SpaceWindMaxVelocity * physics.Mass;
-                    moveForce = MathF.Min(moveForce, maxSafeForceForObject);
-
+                    AddMovedByPressure(uid, component, physics);
                     // Grid-rotation adjusted direction
                     var dirVec = (direction.ToAngle() + gridWorldRotation).ToWorldVec();
+                    var maxSafeForceForObject = SpaceWindMaxVelocity * physics.Mass;
 
                     // TODO: Technically these directions won't be correct but uhh I'm just here for optimisations buddy not to fix my old bugs.
                     if (throwTarget != EntityCoordinates.Invalid)
                     {
                         var pos = ((throwTarget.ToMap(EntityManager).Position - xform.WorldPosition).Normalized() + dirVec).Normalized();
-                        _physics.ApplyLinearImpulse(uid, pos * moveForce, body: physics);
+                        _physics.ApplyLinearImpulse(uid, pos * Math.Clamp(moveForce, 0, maxSafeForceForObject), body: physics);
                     }
                     else
                     {
-                        moveForce = MathF.Min(moveForce, SpaceWindMaxPushForce);
-                        _physics.ApplyLinearImpulse(uid, dirVec * moveForce, body: physics);
+                        _physics.ApplyLinearImpulse(uid, dirVec * Math.Clamp(moveForce, 0, maxSafeForceForObject), body: physics);
                     }
 
                     component.LastHighPressureMovementAirCycle = cycle;

@@ -87,3 +87,38 @@
     nameSegments:
     - names_ninja_title
     - names_ninja
+
+# Urist Agent
+- type: entity
+  save: false
+  name: Urist McHands
+  parent: BaseMobHuman
+  id: MobUristAgent
+  suffix: Agent
+  components:
+    - type: Loadout
+      prototypes:
+        - SyndicateFootsoldierGearRuin
+    - type: GhostRole
+      name: Syndicate Clone Soldier
+      description: Urist Squad has been activated, work with your brothers and complete your objective.
+    - type: GhostTakeoverAvailable
+
+# Sons of Mars
+- type: entity
+  save: false
+  name: Martian Marine
+  parent: BaseMobHuman
+  id: MobSOMAgent
+  components:
+    - type: Loadout
+      prototypes:
+        - MartianMarineGear
+    - type: RandomMetadata
+      nameSegments:
+      - names_som_first
+      - names_som_last
+    - type: GhostRole
+      name: Martian Marine
+      description: Rise, Son of Mars, and crush the skulls of your Terran opressors!
+    - type: GhostTakeoverAvailable

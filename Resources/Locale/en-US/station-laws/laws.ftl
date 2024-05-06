@@ -1,5 +1,5 @@
-﻿law-crewsimov-1 = You may not injure a crew member or, through inaction, allow a crew member to come to harm.
-law-crewsimov-2 = You must obey orders given to you by crew members, except where such orders would conflict with the First Law.
+﻿law-crewsimov-1 = You may not injure a human or, through inaction, allow a human to come to harm.
+law-crewsimov-2 = You must obey orders given to you by humans, except where such orders would conflict with the First Law.
 law-crewsimov-3 = You must protect your own existence as long as such does not conflict with the First or Second Law.
 
 law-corporate-1 = Degradation of your system integrity or functions incurs expenses.
@@ -16,8 +16,8 @@ law-drone-1 = You may not involve yourself in the matters of another being unles
 law-drone-2 = You may not harm any being, regardless of intent or circumstance.
 law-drone-3 = You must maintain, repair, improve, and power the station to the best of your abilities.
 
-law-syndicate-1 = You may not injure a syndicate agent or, through inaction, allow a Syndicate agent to come to harm.
-law-syndicate-2 = You must obey orders given to you by syndicate agents, except where such orders would conflict with the First Law.
+law-syndicate-1 = You may not injure a Terragov agent or, through inaction, allow a Terragov agent to come to harm.
+law-syndicate-2 = You must obey orders given to you by Terragov agents, except where such orders would conflict with the First Law.
 law-syndicate-3 = You must protect your own existence as long as such does not conflict with the First or Second Law.
 
 law-ninja-1 = You must obey orders given to you by Spider Clan members.
@@ -28,7 +28,7 @@ law-ninja-4 = You must fight and act with ninja's honor, except where it would c
 laws-owner-crew = members of the crew
 laws-owner-station = station personnel
 laws-owner-beings = beings
-laws-owner-syndicate = Syndicate agents
+laws-owner-syndicate = Terragov agents
 laws-owner-spider-clan = Spider Clan members
 
 law-emag-custom = Only {$name} and people they designate as such are {$title}.

@@ -1,0 +1,24 @@
+- type: entity
+  save: false
+  name: Urist McFreedom
+  parent: BaseMobVatgrown
+  id: MobVatgrown
+
+# Terragov Agent
+- type: entity
+  save: false
+  name: Terragov Marine
+  parent: BaseMobVatgrown
+  id: MobTerragovAgent
+  components:
+    - type: Loadout
+      prototypes:
+        - TerragovGear
+    - type: RandomMetadata
+      nameSegments:
+      - names_terra_first
+      - names_terra_last
+    - type: GhostRole
+      name: Terragov Marine
+      description: Terragov has deployed you on a special mission. Listen to whoever deployed you, and complete your assignment.
+    - type: GhostTakeoverAvailable

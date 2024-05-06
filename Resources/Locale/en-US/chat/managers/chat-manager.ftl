@@ -121,3 +121,8 @@ chat-speech-verb-ghost-4 = mutters
 chat-speech-verb-electricity-1 = crackles
 chat-speech-verb-electricity-2 = buzzes
 chat-speech-verb-electricity-3 = screeches
+
+chat-speech-verb-ipc-1 = states
+chat-speech-verb-ipc-2 = utters
+chat-speech-verb-ipc-3 = cogitates
+chat-speech-verb-ipc-4 = beeps
