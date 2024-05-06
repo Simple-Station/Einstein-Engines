@@ -803,7 +803,7 @@
     attributes:
       proper: true
       gender: female
-   - type: LanguageSpeaker
+  - type: LanguageSpeaker
     speaks:
     - Bubblish
     understands:
