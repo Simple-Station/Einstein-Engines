@@ -39,7 +39,7 @@
   id: AdvancedGalaticCommonTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
   name: Advanced Galactic Common translator implant
-  description: "An implant giving the ability to understand and speak Galatic Common."
+  description: "An implant giving the ability to understand and speak Galactic Common."
   components:
   - type: TranslatorImplanter
     spoken:
