@@ -527,7 +527,9 @@ WHERE to_tsvector('english'::regconfig, a.message) @@ websearch_to_tsquery('engl
             return time;
         }
 
-        private async Task<DbGuardImpl> GetDbImpl([CallerMemberName] string? name = null)
+        private async Task<DbGuardImpl> GetDbImpl(
+            CancellationToken cancel = default,
+            [CallerMemberName] string? name = null)
         {
             LogDbOp(name);
 

@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Preferences.Managers;
+using Robust.Server.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
@@ -17,12 +18,11 @@ namespace Content.Server.Database;
 /// </remarks>
 public sealed class UserDbDataManager : IPostInjectInit
 {
+    [Dependency] private readonly IServerPreferencesManager _prefs = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
+    [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
 
     private readonly Dictionary<NetUserId, UserData> _users = new();
-    private readonly List<OnLoadPlayer> _onLoadPlayer = [];
-    private readonly List<OnFinishLoad> _onFinishLoad = [];
-    private readonly List<OnPlayerDisconnect> _onPlayerDisconnect = [];
 
     private ISawmill _sawmill = default!;
 
@@ -63,19 +63,12 @@ public sealed class UserDbDataManager : IPostInjectInit
         // As such, this task must NOT throw a non-cancellation error!
         try
         {
-            var tasks = new List<Task>();
-            foreach (var action in _onLoadPlayer)
-            {
-                tasks.Add(action(session, cancel));
-            }
-
-            await Task.WhenAll(tasks);
+            await Task.WhenAll(
+                _prefs.LoadData(session, cancel),
+                _playTimeTracking.LoadData(session, cancel));
 
             cancel.ThrowIfCancellationRequested();
-            foreach (var action in _onFinishLoad)
-            {
-                action(session);
-            }
+            _prefs.SanitizeData(session);
 
             _sawmill.Verbose($"Load complete for user {session}");
         }

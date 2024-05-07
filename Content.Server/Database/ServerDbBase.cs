@@ -1567,7 +1567,9 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return db.DbContext.Database.HasPendingModelChanges();
         }
 
-        protected abstract Task<DbGuard> GetDb([CallerMemberName] string? name = null);
+        protected abstract Task<DbGuard> GetDb(
+            CancellationToken cancel = default,
+            [CallerMemberName] string? name = null);
 
         protected void LogDbOp(string? name)
         {

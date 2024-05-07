@@ -139,13 +139,16 @@ namespace Content.Server.GameTicking
             async void SpawnWaitDb()
             {
                 try
-                {await _userDb.WaitLoadComplete(session);}
+                {
+                    await _userDb.WaitLoadComplete(session);
+                }
                 catch (OperationCanceledException)
                 {
                     // Bail, user must've disconnected or something.
                     Log.Debug($"Database load cancelled while waiting to spawn {session}");
                     return;
                 }
+
                 SpawnPlayer(session, EntityUid.Invalid);
             }
 

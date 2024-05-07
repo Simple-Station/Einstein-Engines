@@ -514,7 +514,9 @@ namespace Content.Server.Database
             return DateTime.SpecifyKind(time, DateTimeKind.Utc);
         }
 
-        private async Task<DbGuardImpl> GetDbImpl([CallerMemberName] string? name = null)
+        private async Task<DbGuardImpl> GetDbImpl(
+            CancellationToken cancel = default,
+            [CallerMemberName] string? name = null)
         {
             LogDbOp(name);
             await _dbReadyTask;
