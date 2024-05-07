@@ -38,7 +38,7 @@
 - type: entity
   id: AdvancedGalaticCommonTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
-  name: Advanced Galatic Common translator implant
+  name: Advanced Galactic Common translator implant
   description: "An implant giving the ability to understand and speak Galatic Common."
   components:
   - type: TranslatorImplanter
