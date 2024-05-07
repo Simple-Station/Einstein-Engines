@@ -1,4 +1,4 @@
-    using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Audio;
@@ -137,7 +137,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
             component.FryingOilThreshold,
             EntityManager.GetNetEntityArray(component.Storage.ContainedEntities.ToArray()));
 
-        _uiSystem.SetUiState(new Entity<UserInterfaceComponent?>(uid, null), DeepFryerUiKey.Key, state);
+        _uiSystem.SetUiState(uid, DeepFryerUiKey.Key, state);
     }
 
     /// <summary>
@@ -551,12 +551,15 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
             if (!_containerSystem.Remove(removedItem, component.Storage))
                 return;
 
-            var user = EntityManager.GetEntity(args.Entity);
+            var user = args.Actor;
 
-            _handsSystem.TryPickupAnyHand(user, removedItem);
+            if (user != null)
+            {
+                _handsSystem.TryPickupAnyHand(user, removedItem);
 
-            _adminLogManager.Add(LogType.Action, LogImpact.Low,
-                $"{ToPrettyString(user)} took {ToPrettyString(args.Item)} out of {ToPrettyString(uid)}.");
+                _adminLogManager.Add(LogType.Action, LogImpact.Low,
+                    $"{ToPrettyString(user)} took {ToPrettyString(args.Item)} out of {ToPrettyString(uid)}.");
+            }
 
             _audioSystem.PlayPvs(component.SoundRemoveItem, uid, AudioParamsInsertRemove);
 
@@ -604,9 +607,10 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
     private void OnScoopVat(EntityUid uid, DeepFryerComponent component, DeepFryerScoopVatMessage args)
     {
-        var user = EntityManager.GetEntity(args.Entity);
+        var user = args.Actor;
 
-        if (!TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
+        if (user == null ||
+            !TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
                 out var transferAmount))
             return;
 
@@ -625,9 +629,10 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
     private void OnClearSlagStart(EntityUid uid, DeepFryerComponent component, DeepFryerClearSlagMessage args)
     {
-        var user = EntityManager.GetEntity(args.Entity);
+        var user = args.Actor;
 
-        if (!TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
+        if (user == null ||
+            !TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
                 out var transferAmount))
             return;
 
@@ -665,10 +670,13 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         _containerSystem.EmptyContainer(component.Storage);
 
-        var user = EntityManager.GetEntity(args.Entity);
+        var user = args.Actor;
 
-        _adminLogManager.Add(LogType.Action, LogImpact.Low,
-            $"{ToPrettyString(user)} removed all items from {ToPrettyString(uid)}.");
+        if (user != null)
+        {
+            _adminLogManager.Add(LogType.Action, LogImpact.Low,
+                $"{ToPrettyString(user)} removed all items from {ToPrettyString(uid)}.");
+        }
 
         _audioSystem.PlayPvs(component.SoundRemoveItem, uid, AudioParamsInsertRemove);
 
