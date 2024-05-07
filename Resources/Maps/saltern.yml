@@ -5993,13 +5993,6 @@ entities:
     - type: Transform
       pos: 22.3458,13.704067
       parent: 31
-- proto: ArmBlade
-  entities:
-  - uid: 11452
-    components:
-    - type: Transform
-      pos: 4.680908,-42.034756
-      parent: 31
 - proto: AsteroidRock
   entities:
   - uid: 6326
@@ -6736,13 +6729,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 5150
-- proto: BlinkBook
-  entities:
-  - uid: 11436
-    components:
-    - type: Transform
-      pos: -34.565125,-16.576992
-      parent: 31
 - proto: BlockGameArcade
   entities:
   - uid: 9569
@@ -6779,13 +6765,6 @@ entities:
     components:
     - type: Transform
       pos: -17.451027,19.261414
-      parent: 31
-- proto: BookDemonomiconRandom
-  entities:
-  - uid: 10288
-    components:
-    - type: Transform
-      pos: -30.50279,17.556696
       parent: 31
 - proto: BookDetective
   entities:
@@ -26232,11 +26211,6 @@ entities:
     - type: Transform
       pos: -15.5,-38.5
       parent: 31
-  - uid: 11441
-    components:
-    - type: Transform
-      pos: -30.5,17.5
-      parent: 31
 - proto: ChairFolding
   entities:
   - uid: 1042
@@ -27333,13 +27307,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -31.5,-3.5
       parent: 31
-- proto: ClothingBeltAssault
-  entities:
-  - uid: 8299
-    components:
-    - type: Transform
-      pos: 29.474205,-19.672785
-      parent: 31
 - proto: ClothingBeltChampion
   entities:
   - uid: 4197
@@ -27488,16 +27455,6 @@ entities:
       parent: 31
 - proto: ClothingHandsGlovesCombat
   entities:
-  - uid: 2120
-    components:
-    - type: Transform
-      pos: 11.565705,-42.47343
-      parent: 31
-  - uid: 8291
-    components:
-    - type: Transform
-      pos: 29.995155,-19.31341
-      parent: 31
   - uid: 8315
     components:
     - type: Transform
@@ -27681,13 +27638,6 @@ entities:
     - type: Transform
       pos: 48.273617,-26.666399
       parent: 31
-- proto: ClothingHeadHatPurplesoft
-  entities:
-  - uid: 4578
-    components:
-    - type: Transform
-      pos: 29.798035,-19.626842
-      parent: 31
 - proto: ClothingHeadHatUshanka
   entities:
   - uid: 844
@@ -27711,13 +27661,6 @@ entities:
     components:
     - type: Transform
       pos: 43.484886,13.560756
-      parent: 31
-- proto: ClothingHeadHelmetLing
-  entities:
-  - uid: 11453
-    components:
-    - type: Transform
-      pos: 4.602783,-41.253506
       parent: 31
 - proto: ClothingHeadsetGrey
   entities:
@@ -27832,13 +27775,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -19.198872,-5.9850674
       parent: 31
-- proto: ClothingNeckTieDet
-  entities:
-  - uid: 4384
-    components:
-    - type: Transform
-      pos: 29.401482,-19.611217
-      parent: 31
 - proto: ClothingNeckTieRed
   entities:
   - uid: 7109
@@ -27882,13 +27818,6 @@ entities:
     components:
     - type: Transform
       pos: -11.733091,19.297504
-      parent: 31
-- proto: ClothingOuterArmorChangeling
-  entities:
-  - uid: 8737
-    components:
-    - type: Transform
-      pos: 4.5881557,-41.680424
       parent: 31
 - proto: ClothingOuterArmorReflective
   entities:
@@ -28276,13 +28205,6 @@ entities:
     components:
     - type: Transform
       pos: -27.587215,7.5242066
-      parent: 31
-- proto: ClothingUniformJumpsuitCasualPurple
-  entities:
-  - uid: 4532
-    components:
-    - type: Transform
-      pos: 29.19227,-19.452665
       parent: 31
 - proto: ClothingUniformJumpsuitDetective
   entities:
@@ -32772,13 +32694,6 @@ entities:
     - type: Transform
       pos: -15.868861,-39.21571
       parent: 31
-- proto: EldritchBlade
-  entities:
-  - uid: 10702
-    components:
-    - type: Transform
-      pos: 7.4969587,-41.536427
-      parent: 31
 - proto: ElectricGuitarInstrument
   entities:
   - uid: 9275
@@ -33734,7 +33649,7 @@ entities:
       pos: 38.5,-5.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -31538.166
+      secondsUntilStateChange: -32271.234
       state: Closing
   - uid: 4019
     components:
@@ -34560,13 +34475,6 @@ entities:
     - type: Transform
       pos: 38.546303,-20.153606
       parent: 31
-- proto: FleshBlocker
-  entities:
-  - uid: 11443
-    components:
-    - type: Transform
-      pos: -34.5,17.5
-      parent: 31
 - proto: FlippoEngravedLighter
   entities:
   - uid: 3621
@@ -34800,12 +34708,12 @@ entities:
     - type: Transform
       pos: 4.1304145,-33.0152
       parent: 31
-- proto: FloraTreeChristmas02
+- proto: FloraTreeChristmas01
   entities:
-  - uid: 10291
+  - uid: 952
     components:
     - type: Transform
-      pos: 31.455082,-14.50202
+      pos: 31.47334,-14.208912
       parent: 31
 - proto: FloraTreeLarge05
   entities:
@@ -34867,138 +34775,6 @@ entities:
     components:
     - type: Transform
       pos: -19.31693,-7.194507
-      parent: 31
-- proto: FoodBloodTomato
-  entities:
-  - uid: 1104
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 2223
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 3506
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 5198
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 5199
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 5216
-    components:
-    - type: Transform
-      pos: -31.431328,16.499722
-      parent: 31
-  - uid: 5217
-    components:
-    - type: Transform
-      pos: -31.431328,16.499722
-      parent: 31
-  - uid: 5229
-    components:
-    - type: Transform
-      pos: -31.431328,16.499722
-      parent: 31
-  - uid: 5230
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 5609
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 5771
-    components:
-    - type: Transform
-      pos: -31.431328,16.499722
-      parent: 31
-  - uid: 6932
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 7078
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 7357
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 9228
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 10292
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 10293
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 10294
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 10661
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 10699
-    components:
-    - type: Transform
-      pos: -31.446953,16.499722
-      parent: 31
-  - uid: 10700
-    components:
-    - type: Transform
-      pos: -31.431328,16.499722
-      parent: 31
-  - uid: 10701
-    components:
-    - type: Transform
-      pos: -31.431328,16.499722
-      parent: 31
-  - uid: 10707
-    components:
-    - type: Transform
-      pos: -31.431328,16.499722
-      parent: 31
-  - uid: 10794
-    components:
-    - type: Transform
-      pos: -31.431328,16.499722
-      parent: 31
-  - uid: 11134
-    components:
-    - type: Transform
-      pos: -31.431328,16.499722
-      parent: 31
-  - uid: 11137
-    components:
-    - type: Transform
-      pos: -31.431328,16.499722
       parent: 31
 - proto: FoodBowlBig
   entities:
@@ -35525,15 +35301,6 @@ entities:
     components:
     - type: Transform
       pos: 34.5,22.5
-      parent: 31
-    - type: AtmosDevice
-      joinedGrid: 31
-- proto: GasMinerNitrousOxide
-  entities:
-  - uid: 11448
-    components:
-    - type: Transform
-      pos: 38.5,22.5
       parent: 31
     - type: AtmosDevice
       joinedGrid: 31
@@ -50056,13 +49823,6 @@ entities:
       parent: 31
     - type: AtmosDevice
       joinedGrid: 31
-- proto: HellfireFreezerMachineCircuitBoard
-  entities:
-  - uid: 11451
-    components:
-    - type: Transform
-      pos: 50.156376,-22.468735
-      parent: 31
 - proto: HellfireHeaterMachineCircuitBoard
   entities:
   - uid: 11450
@@ -50217,7 +49977,7 @@ entities:
       pos: 8.5,-7.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -13055.236
+      secondsUntilStateChange: -13788.305
       state: Closing
   - uid: 11697
     components:
@@ -51269,23 +51029,6 @@ entities:
     - type: Transform
       pos: -3.5,-43.5
       parent: 31
-- proto: MagazineMagnumRubber
-  entities:
-  - uid: 7425
-    components:
-    - type: Transform
-      pos: -9.579666,-7.8081436
-      parent: 31
-  - uid: 7677
-    components:
-    - type: Transform
-      pos: -9.798416,-7.7300186
-      parent: 31
-  - uid: 11594
-    components:
-    - type: Transform
-      pos: -9.298416,-7.7456436
-      parent: 31
 - proto: MagazinePistolSubMachineGun
   entities:
   - uid: 8753
@@ -51466,13 +51209,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 22.45657,-9.95965
       parent: 31
-- proto: MaterialBones
-  entities:
-  - uid: 11439
-    components:
-    - type: Transform
-      pos: -32.681328,16.359097
-      parent: 31
 - proto: MaterialCloth
   entities:
   - uid: 7605
@@ -51641,13 +51377,6 @@ entities:
     components:
     - type: Transform
       pos: 10.5,-15.5
-      parent: 31
-- proto: MonkeyCubeWrapped
-  entities:
-  - uid: 8871
-    components:
-    - type: Transform
-      pos: -9.196694,-7.814363
       parent: 31
 - proto: MopBucket
   entities:
@@ -51882,34 +51611,8 @@ entities:
     - type: Transform
       pos: 18.5,13.5
       parent: 31
-- proto: OrganArachnidStomach
-  entities:
-  - uid: 7627
-    components:
-    - type: Transform
-      pos: -32.124966,16.461735
-      parent: 31
-- proto: OrganArachnidTongue
-  entities:
-  - uid: 7473
-    components:
-    - type: Transform
-      pos: -32.23434,16.94611
-      parent: 31
-- proto: OrganHumanEyes
-  entities:
-  - uid: 7745
-    components:
-    - type: Transform
-      pos: -32.343716,16.38361
-      parent: 31
 - proto: OrganHumanHeart
   entities:
-  - uid: 7593
-    components:
-    - type: Transform
-      pos: -32.406216,16.91486
-      parent: 31
   - uid: 11714
     components:
     - type: Transform
@@ -51919,13 +51622,6 @@ entities:
     components:
     - type: Transform
       pos: 19.712132,-18.147497
-      parent: 31
-- proto: OrganHumanLungs
-  entities:
-  - uid: 7708
-    components:
-    - type: Transform
-      pos: -32.718716,16.97736
       parent: 31
 - proto: OxygenCanister
   entities:
@@ -52062,11 +51758,25 @@ entities:
       parent: 31
 - proto: Paper
   entities:
+  - uid: 123
+    components:
+    - type: Transform
+      pos: 4.470185,-41.49532
+      parent: 31
+    - type: Paper
+      content: Nuh Uh, kys you dirty metagamer!!!
   - uid: 1071
     components:
     - type: Transform
       pos: -24.037928,-5.9436545
       parent: 31
+  - uid: 1104
+    components:
+    - type: Transform
+      pos: 29.25861,-19.615496
+      parent: 31
+    - type: Paper
+      content: Fuck off and Kys
   - uid: 1132
     components:
     - type: Transform
@@ -52393,30 +52103,10 @@ entities:
       parent: 31
 - proto: PillRomerol
   entities:
-  - uid: 10295
-    components:
-    - type: Transform
-      pos: -36.462017,-16.688375
-      parent: 31
-  - uid: 11135
-    components:
-    - type: Transform
-      pos: 6.682603,-33.59967
-      parent: 31
   - uid: 11447
     components:
     - type: Transform
       pos: 30.459146,-19.492714
-      parent: 31
-  - uid: 11536
-    components:
-    - type: Transform
-      pos: 4.606615,-41.514004
-      parent: 31
-  - uid: 11538
-    components:
-    - type: Transform
-      pos: 4.606615,-41.514004
       parent: 31
 - proto: PillSpaceDrugs
   entities:
@@ -55195,106 +54885,6 @@ entities:
     - type: Transform
       pos: 45.457794,-21.030176
       parent: 31
-  - uid: 11722
-    components:
-    - type: Transform
-      pos: 31.293571,-13.930502
-      parent: 31
-  - uid: 11723
-    components:
-    - type: Transform
-      pos: 31.293571,-13.961752
-      parent: 31
-  - uid: 11724
-    components:
-    - type: Transform
-      pos: 31.356071,-14.071127
-      parent: 31
-  - uid: 11725
-    components:
-    - type: Transform
-      pos: 31.449821,-14.055502
-      parent: 31
-  - uid: 11726
-    components:
-    - type: Transform
-      pos: 31.449821,-13.914877
-      parent: 31
-  - uid: 11727
-    components:
-    - type: Transform
-      pos: 31.215446,-13.821127
-      parent: 31
-  - uid: 11728
-    components:
-    - type: Transform
-      pos: 31.246696,-14.211752
-      parent: 31
-  - uid: 11729
-    components:
-    - type: Transform
-      pos: 31.371696,-14.024252
-      parent: 31
-  - uid: 11730
-    components:
-    - type: Transform
-      pos: 31.402946,-13.914877
-      parent: 31
-  - uid: 11731
-    components:
-    - type: Transform
-      pos: 31.340446,-14.055502
-      parent: 31
-  - uid: 11732
-    components:
-    - type: Transform
-      pos: 31.449821,-13.883627
-      parent: 31
-  - uid: 11733
-    components:
-    - type: Transform
-      pos: 31.293571,-13.805502
-      parent: 31
-  - uid: 11734
-    components:
-    - type: Transform
-      pos: 31.418571,-13.836752
-      parent: 31
-  - uid: 11735
-    components:
-    - type: Transform
-      pos: 31.621696,-14.008627
-      parent: 31
-  - uid: 11736
-    components:
-    - type: Transform
-      pos: 31.731071,-14.180502
-      parent: 31
-  - uid: 11737
-    components:
-    - type: Transform
-      pos: 31.824821,-14.102377
-      parent: 31
-  - uid: 11738
-    components:
-    - type: Transform
-      pos: -30.541328,18.554338
-      parent: 31
-  - uid: 11739
-    components:
-    - type: Transform
-      pos: 31.490519,-13.743002
-      parent: 31
-  - uid: 11740
-    components:
-    - type: Transform
-      pos: 31.474894,-13.961752
-      parent: 31
-  - uid: 11741
-    components:
-    - type: Transform
-      pos: 31.631144,-14.086752
-      parent: 31
 - proto: Protolathe
   entities:
   - uid: 2319
@@ -56097,11 +55687,6 @@ entities:
     components:
     - type: Transform
       pos: -18.5,-32.5
-      parent: 31
-  - uid: 10448
-    components:
-    - type: Transform
-      pos: -36.5,-16.5
       parent: 31
   - uid: 10464
     components:
@@ -57981,13 +57566,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.3445698,-43.14006
       parent: 31
-- proto: RitualDagger
-  entities:
-  - uid: 8220
-    components:
-    - type: Transform
-      pos: -31.06934,16.606253
-      parent: 31
 - proto: RollerBed
   entities:
   - uid: 545
@@ -58323,20 +57901,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 40.728622,-6.9577923
-      parent: 31
-- proto: ShellShotgunSlug
-  entities:
-  - uid: 335
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -29.679539,16.338367
-      parent: 31
-  - uid: 11525
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -29.663914,16.228992
       parent: 31
 - proto: ShuttersNormal
   entities:
@@ -63343,92 +62907,20 @@ entities:
       parent: 31
 - proto: Telecrystal
   entities:
-  - uid: 952
+  - uid: 335
     components:
     - type: Transform
-      pos: 4.5859575,-41.565994
+      pos: -3.5973892,17.912573
       parent: 31
-  - uid: 7049
+  - uid: 2120
     components:
     - type: Transform
-      pos: 29.270395,-19.421415
+      pos: -3.6130142,17.912573
       parent: 31
-  - uid: 7069
+  - uid: 2223
     components:
     - type: Transform
-      pos: 29.270395,-19.421415
-      parent: 31
-  - uid: 7139
-    components:
-    - type: Transform
-      pos: 29.270395,-19.421415
-      parent: 31
-  - uid: 8290
-    components:
-    - type: Transform
-      pos: 29.270395,-19.421415
-      parent: 31
-  - uid: 11537
-    components:
-    - type: Transform
-      pos: 29.270395,-19.421415
-      parent: 31
-  - uid: 11540
-    components:
-    - type: Transform
-      pos: 4.5859575,-41.565994
-      parent: 31
-  - uid: 11541
-    components:
-    - type: Transform
-      pos: 4.6015825,-41.55037
-      parent: 31
-  - uid: 11542
-    components:
-    - type: Transform
-      pos: 4.6484575,-41.565994
-      parent: 31
-  - uid: 11543
-    components:
-    - type: Transform
-      pos: 4.6015825,-41.565994
-      parent: 31
-  - uid: 11544
-    components:
-    - type: Transform
-      pos: 4.552764,-41.597244
-      parent: 31
-  - uid: 11545
-    components:
-    - type: Transform
-      pos: 4.537139,-41.597244
-      parent: 31
-  - uid: 11546
-    components:
-    - type: Transform
-      pos: 4.537139,-41.58162
-      parent: 31
-  - uid: 11547
-    components:
-    - type: Transform
-      pos: 4.537139,-41.58162
-      parent: 31
-  - uid: 11548
-    components:
-    - type: Transform
-      pos: 4.552764,-41.597244
-      parent: 31
-- proto: Telecrystal10
-  entities:
-  - uid: 11549
-    components:
-    - type: Transform
-      pos: -3.7135518,17.110722
-      parent: 31
-  - uid: 11550
-    components:
-    - type: Transform
-      pos: 10.731857,23.367254
+      pos: 10.613397,23.502094
       parent: 31
 - proto: TintedWindow
   entities:
@@ -63627,13 +63119,6 @@ entities:
       materialWhiteList:
       - Cloth
       - Durathread
-- proto: UplinkImplanter
-  entities:
-  - uid: 7046
-    components:
-    - type: Transform
-      pos: 30.034466,-19.28079
-      parent: 31
 - proto: Vaccinator
   entities:
   - uid: 8436
@@ -72542,13 +72027,6 @@ entities:
     - type: Transform
       pos: -14.594447,16.787762
       parent: 31
-- proto: WeaponPistolN1984Nonlethal
-  entities:
-  - uid: 123
-    components:
-    - type: Transform
-      pos: -9.399454,-7.2768936
-      parent: 31
 - proto: WeaponPistolViperWood
   entities:
   - uid: 11473
@@ -72574,14 +72052,6 @@ entities:
     components:
     - type: Transform
       pos: 41.306747,-6.2234173
-      parent: 31
-- proto: WeaponShotgunSawnEmpty
-  entities:
-  - uid: 11528
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -30.085789,16.463367
       parent: 31
 - proto: WeaponSubMachineGunC20r
   entities:
@@ -72680,7 +72150,7 @@ entities:
   - uid: 9677
     components:
     - type: Transform
-      pos: -1.6659715,-42.461594
+      pos: -1.8742585,-42.36134
       parent: 31
 - proto: Windoor
   entities:
