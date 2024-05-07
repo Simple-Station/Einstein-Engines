@@ -134,6 +134,13 @@
     - type: Inventory
       templateId: human
     - type: ZombieImmune
+    - type: LanguageSpeaker
+      speaks:
+      - GalacticCommon
+      - RobotTalk
+      understands:
+      - GalacticCommon
+      - RobotTalk
 
 - type: entity
   name: Urist McIPC
