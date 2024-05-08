@@ -24,4 +24,22 @@ public sealed partial class MobReplacementRuleComponent : Component
     /// </summary>
     [DataField]
     public float Chance = 0.001f;
+
+    [DataField("doAnnouncement")]
+    public bool DoAnnouncement = true;
+
+    [DataField("mimicMeleeDamage")]
+    public float MimicMeleeDamage = 20f;
+
+    [DataField("mimicMoveSpeed")]
+    public float MimicMoveSpeed = 1f;
+
+    [DataField("mimicAIType")]
+    public string MimicAIType = "SimpleHostileCompound";
+
+    [DataField("mimicSmashGlass")]
+    public bool MimicSmashGlass = true;
+
+    [DataField("vendorModify")]
+    public bool VendorModify = true;
 }

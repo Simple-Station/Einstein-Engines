@@ -55,6 +55,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
                 || ownerStation != stations[0])
                 return;
 
+            // Make sure that we aren't running this on something that is already a mimic
             if (HasComp<CombatModeComponent>(vendingUid))
                 continue;
 
@@ -74,7 +75,8 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
                 var spawnLocation = _random.PickAndTake(spawns);
                 BuildAMimicWorkshop(spawnLocation.Entity, component);
 
-                if (k == MathF.MaxMagnitude(component.NumberToReplace, 1))
+                if (k == MathF.MaxMagnitude(component.NumberToReplace, 1)
+                    && component.DoAnnouncement)
                     _chatSystem.DispatchStationAnnouncement(stations[0], Loc.GetString("station-event-rampant-intelligence-announcement"), playDefaultSound: true,
                         colorOverride: Color.Red, sender: "Central Command");
 
@@ -116,7 +118,8 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
 
         SetupMimicNPC(uid, component);
 
-        if (TryComp<AdvertiseComponent>(uid, out var vendor))
+        if (TryComp<AdvertiseComponent>(uid, out var vendor)
+            && component.VendorModify)
         {
             SetupMimicVendor(uid, component, vendor);
         }
@@ -137,17 +140,17 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
         {
             DamageDict = new()
             {
-                { "Blunt", 20 }
+                { "Blunt", component.MimicMeleeDamage }
             }
         };
         melee.Damage = dspec;
 
         var movementSpeed = EnsureComp<MovementSpeedModifierComponent>(uid);
-        (movementSpeed.BaseSprintSpeed, movementSpeed.BaseWalkSpeed) = (1, 1);
+        (movementSpeed.BaseSprintSpeed, movementSpeed.BaseWalkSpeed) = (component.MimicMoveSpeed, component.MimicMoveSpeed);
 
         var htn = EnsureComp<HTNComponent>(uid);
-        htn.RootTask = new HTNCompoundTask() { Task = "SimpleHostileCompound" };
-        htn.Blackboard.SetValue(NPCBlackboard.NavSmash, true);
+        htn.RootTask = new HTNCompoundTask() { Task = component.MimicAIType };
+        htn.Blackboard.SetValue(NPCBlackboard.NavSmash, component.MimicSmashGlass);
         _npc.WakeNPC(uid, htn);
     }
     /// <summary>
