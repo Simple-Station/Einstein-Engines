@@ -8,6 +8,11 @@ using Robust.Shared.Player;
 
 namespace Content.Server.Language;
 
+/// <summary>
+///   LanguageSystem Networking
+///   This is used to update client state when mind change entity.
+/// </summary>
+
 public sealed partial class LanguageSystem
 {
     [Dependency] private readonly MindSystem _mind = default!;

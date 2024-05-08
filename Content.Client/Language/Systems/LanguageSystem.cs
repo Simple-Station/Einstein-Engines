@@ -49,9 +49,7 @@ public sealed class LanguageSystem : SharedLanguageSystem
         if (language.ID == CurrentLanguage)
             return;
 
-        // (This is dumb. This is very dumb. It should be a message instead.)
-        // TODO Change this, soonish
-        _consoleHost.ExecuteCommand("languageselect " + language.ID);
+        RaiseNetworkEvent(new LanguagesSetMessage(language.ID));
 
         // So to reduce the probability of desync, we replicate the change locally too
         if (SpokenLanguages.Contains(language.ID))

@@ -26,6 +26,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     {
         base.Initialize();
 
+        SubscribeNetworkEvent<LanguagesSetMessage>(OnClientSetLanguage);
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentInit>(OnInitLanguageSpeaker);
         SubscribeLocalEvent<RoundStartingEvent>(_ => RandomRoundSeed = _random.Next());
 
@@ -275,6 +276,22 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         seed += RandomRoundSeed;
         var random = ((seed * 1103515245) + 12345) & 0x7fffffff; // Source: http://cs.uccs.edu/~cs591/bufferOverflow/glibc-2.2.4/stdlib/random_r.c
         return random % (max - min) + min;
+    }
+
+    /// <summary>
+    ///   Set CurrentLanguage of the client, the client must be able to Understand the language requested.
+    /// </summary>
+    private void OnClientSetLanguage(LanguagesSetMessage message, EntitySessionEventArgs args)
+    {
+        if (args.SenderSession.AttachedEntity is not {Valid: true} speaker)
+            return;
+
+        var language = GetLanguage(message.CurrentLanguage);
+
+        if (language == null || !CanSpeak(speaker, language.ID))
+            return;
+
+        SetLanguage(speaker, language.ID);
     }
     #endregion
 }
