@@ -73,10 +73,13 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
             {
                 var spawnLocation = _random.PickAndTake(spawns);
                 BuildAMimicWorkshop(spawnLocation.Entity, component);
+
+                if (k == MathF.MaxMagnitude(component.NumberToReplace, 1))
+                    _chatSystem.DispatchStationAnnouncement(stations[0], Loc.GetString("station-event-rampant-intelligence-announcement"), playDefaultSound: true,
+                        colorOverride: Color.Red, sender: "Central Command");
+
                 k--;
             }
-            _chatSystem.DispatchStationAnnouncement(stations[0], Loc.GetString("station-event-rampant-intelligence-announcement"), playDefaultSound: true,
-                colorOverride: Color.Red, sender: "Central Command");
         }
     }
 
@@ -111,6 +114,20 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
         if (xform.Anchored)
             _transform.Unanchor(uid, xform);
 
+        SetupMimicNPC(uid, component);
+
+        if (TryComp<AdvertiseComponent>(uid, out var vendor))
+        {
+            SetupMimicVendor(uid, component, vendor);
+        }
+    }
+    /// <summary>
+    /// This handles getting the entity ready to be a hostile NPC
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    private void SetupMimicNPC(EntityUid uid, MobReplacementRuleComponent component)
+    {
         _physics.SetBodyType(uid, BodyType.KinematicController);
         _npcFaction.AddFaction(uid, "SimpleHostile");
 
@@ -132,16 +149,21 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
         htn.RootTask = new HTNCompoundTask() { Task = "SimpleHostileCompound" };
         htn.Blackboard.SetValue(NPCBlackboard.NavSmash, true);
         _npc.WakeNPC(uid, htn);
+    }
+    /// <summary>
+    /// Handling specific interactions with vending machines
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="mimicComponent"></param>
+    /// <param name="vendorComponent"></param>
+    private void SetupMimicVendor(EntityUid uid, MobReplacementRuleComponent mimicComponent, AdvertiseComponent vendorComponent)
+    {
+        vendorComponent.MinimumWait = 5;
+        vendorComponent.MaximumWait = 15;
+        _advertise.SayAdvertisement(uid, vendorComponent);
+        _advertise.RefreshTimer(uid, vendorComponent);
 
         if (TryComp<ApcPowerReceiverComponent>(uid, out var aPC))
             aPC.NeedsPower = false;
-
-        if (TryComp<AdvertiseComponent>(uid, out var bark))
-        {
-            bark.MinimumWait = 5;
-            bark.MaximumWait = 15;
-            _advertise.SayAdvertisement(uid, bark);
-            _advertise.RefreshTimer(uid, bark);
-        }
     }
 }
