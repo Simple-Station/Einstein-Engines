@@ -1,13 +1,7 @@
 using Robust.Client.Graphics;
 using Robust.Client.Player;
-using Content.Shared.Eye.Blinding.Components;
-using Content.Shared.GameTicking;
-using Content.Shared.Interaction;
-using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Mesons;
-using Robust.Shared.Player;
-using Robust.Shared.Timing;
 
 namespace Content.Client.Mesons;
 
