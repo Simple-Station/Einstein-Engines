@@ -252,13 +252,11 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepHoverBorg
-      params:
-        volume: -6
   - type: FabricateActions
     actions:
     - ActionFabricateLollipop
     - ActionFabricateGumball
-  - type: SiliconLawProvider # Delta-V - Adds custom lawset for Medical cyborg
+  - type: SiliconLawProvider
     laws: Medical
 
 - type: entity
