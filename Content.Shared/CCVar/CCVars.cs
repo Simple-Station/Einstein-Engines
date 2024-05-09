@@ -411,6 +411,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> AllowSlotQuickSwap =
             CVarDef.Create("game.slot_quick_swap", false, CVar.REPLICATED);
 
+        /// <summary>
+        ///     Controls if lobby has an automatic map vote.
+        /// </summary>
+        public static readonly CVarDef<bool>
+            GameAutoMapVote = CVarDef.Create("game.lobby_auto_map_vote", true, CVar.ARCHIVE | CVar.SERVERONLY);
+
 #if EXCEPTION_TOLERANCE
         /// <summary>
         ///     Amount of times round start must fail before the server is shut down.
