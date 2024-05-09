@@ -39,7 +39,6 @@
     - type: GridFill
       path: /Maps/Shuttles/DeltaV/sub_escape_pod.yml
 
-# Delta V: Add Airlocks/upstream roles
 - type: entity
   parent: Airlock
   id: AirlockBoxerLocked
