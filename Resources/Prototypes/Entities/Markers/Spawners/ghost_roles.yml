@@ -92,6 +92,8 @@
     name: ghost-role-information-loneop-name
     description: ghost-role-information-loneop-description
     rules: ghost-role-information-loneop-rules
+    raffle:
+      settings: default
     requirements:
     - !type:CharacterOverallTimeRequirement
       min: 172800 # DeltaV - 48 hours
