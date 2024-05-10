@@ -1,8 +1,8 @@
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
+using Robust.Shared.Prototypes;
 
-namespace Content.Server.HealthExaminable;
+namespace Content.Shared.HealthExaminable;
 
 [RegisterComponent, Access(typeof(HealthExaminableSystem))]
 public sealed partial class HealthExaminableComponent : Component
@@ -14,14 +14,14 @@ public sealed partial class HealthExaminableComponent : Component
     public List<FixedPoint2> Thresholds = new()
         { FixedPoint2.New(0.10), FixedPoint2.New(0.25), FixedPoint2.New(0.50), FixedPoint2.New(0.75) };
 
-    [DataField("examinableTypes", required: true, customTypeSerializer:typeof(PrototypeIdHashSetSerializer<DamageTypePrototype>))]
-    public HashSet<string> ExaminableTypes = default!;
+    [DataField(required: true)]
+    public HashSet<ProtoId<DamageTypePrototype>> ExaminableTypes = default!;
 
     /// <summary>
     ///     Health examine text is automatically generated through creating loc string IDs, in the form:
     ///     `health-examine-[prefix]-[type]-[threshold]`
     ///     This part determines the prefix.
     /// </summary>
-    [DataField("locPrefix")]
+    [DataField]
     public string LocPrefix = "carbon";
 }
