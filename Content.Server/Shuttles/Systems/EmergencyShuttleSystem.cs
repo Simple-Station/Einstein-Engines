@@ -202,10 +202,9 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     /// </summary>
     private void OnEmergencyFTL(EntityUid uid, EmergencyShuttleComponent component, ref FTLStartedEvent args)
     {
-        TimeSpan ftlTime = TimeSpan.FromSeconds
+        var ftlTime = TimeSpan.FromSeconds
         (
-            TryComp<FTLComponent>(uid, out var ftlComp) ?
-            ftlComp.TravelTime : ShuttleSystem.DefaultTravelTime
+            TryComp<FTLComponent>(uid, out var ftlComp) ? ftlComp.TravelTime : _shuttle.DefaultTravelTime
         );
 
         if (TryComp<DeviceNetworkComponent>(uid, out var netComp))
