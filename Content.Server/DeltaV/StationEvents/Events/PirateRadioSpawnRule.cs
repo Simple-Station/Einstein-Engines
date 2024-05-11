@@ -63,13 +63,12 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
         {
             if (!TryComp<MapGridComponent>(id, out var grid)) return;
             var outpostaabb = _entities.GetComponent<TransformComponent>(id).WorldMatrix.TransformBox(grid.LocalAABB);
-            var alpha = _random.NextFloat(250f, 500f);
             var k = 1;
             while (k < debrisCount + 1)
             {
                 var debrisOptions = new MapLoadOptions
                 {
-                    Offset = outpostaabb.Center + alpha * new Vector2(MathF.Cos(theta), MathF.Sin(theta)),
+                    Offset = outpostaabb.Center + _random.NextFloat(250f, 500f) * new Vector2(MathF.Cos(theta), MathF.Sin(theta)),
                     LoadMap = false,
                 };
 
