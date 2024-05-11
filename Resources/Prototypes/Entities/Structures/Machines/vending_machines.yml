@@ -101,6 +101,7 @@
     price: 100
   - type: Appearance
   - type: WiresVisuals
+  - type: Rotatable
 
 - type: entity
   parent: VendingMachine
