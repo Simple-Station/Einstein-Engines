@@ -4046,3 +4046,11 @@ Entries:
         skulls!"
   id: 6106
   time: '2024-04-17T04:07:41.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Glass/Crystal shards and floor tiles now deal damage and embed in
+        victims when colliding with them. 
+  id: 6107
+  time: '2024-05-11T01:23:00.0000000+00:00'
