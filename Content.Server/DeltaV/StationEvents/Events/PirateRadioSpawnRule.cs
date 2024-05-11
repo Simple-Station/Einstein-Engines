@@ -20,6 +20,7 @@ using Content.Shared.Salvage;
 using Content.Shared.Random.Helpers;
 using System.Linq;
 using Content.Shared.CCVar;
+using System.Numerics;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -41,50 +42,40 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
                 x.Grids.Select(x =>
                     xformQuery.GetComponent(x).WorldMatrix.TransformBox(_mapManager.GetGridComp(x).LocalAABB)))
             .ToArray();
-        if (aabbs.Length < 1) return;
-        var aabb = aabbs[0];
 
-        for (var i = 1; i < aabbs.Length; i++)
-        {
-            aabb.Union(aabbs[i]);
-        }
-        var distanceFactorCoefficient = component.SOUSK / aabb.Width;
-        var distanceModifier = Math.Clamp(component.DistanceModifier, 1, 25);
-        var distanceModifierNormalized = distanceModifier * distanceFactorCoefficient;
-        var a = MathF.Max(aabb.Height / 2f, aabb.Width / 2f) * distanceModifierNormalized;
-        var randomoffset = _random.NextVector2(a, a * 2.5f);
+        var theta = _random.NextFloat(0, 2 * MathF.PI);
+        var randomoffset = _random.NextFloat(800f, 1500f) * new Vector2(MathF.Cos(theta), MathF.Sin(theta));
+
         var outpostOptions = new MapLoadOptions
         {
-            Offset = aabb.Center + randomoffset,
+            Offset = aabbs[0].Center + randomoffset,
             LoadMap = false,
         };
         if (!_map.TryLoad(GameTicker.DefaultMap, component.PirateRadioShuttlePath, out var outpostids, outpostOptions)) return;
         //End of Syndicate Listening Outpost spawning system
 
         //Start of Debris Field Generation
-        var debrisSpawner = _confMan.GetCVar<bool>(CCVars.WorldgenEnabled);
-        if (debrisSpawner == true) return;
+        var debrisSpawner = _confMan.GetCVar(CCVars.WorldgenEnabled);
+        if (debrisSpawner == true || component.DebrisCount == 0) return;
         var debrisCount = Math.Clamp(component.DebrisCount, 0, 6);
-        if (debrisCount == 0) return;
-        var debrisDistanceModifier = Math.Clamp(component.DebrisDistanceModifier, 3, 10);
+
         foreach (var id in outpostids)
         {
             if (!TryComp<MapGridComponent>(id, out var grid)) return;
             var outpostaabb = _entities.GetComponent<TransformComponent>(id).WorldMatrix.TransformBox(grid.LocalAABB);
-            var b = MathF.Max(outpostaabb.Height / 2f, aabb.Width / 2f) * debrisDistanceModifier;
+            var alpha = _random.NextFloat(250f, 500f);
             var k = 1;
             while (k < debrisCount + 1)
             {
-                var debrisRandomOffset = _random.NextVector2(b, b * 2.5f);
-                var randomer = _random.NextVector2(b, b * 5f); //Second random vector to ensure the outpost isn't perfectly centered in the debris field
                 var debrisOptions = new MapLoadOptions
                 {
-                    Offset = outpostaabb.Center + debrisRandomOffset + randomer,
+                    Offset = outpostaabb.Center + alpha * new Vector2(MathF.Cos(theta), MathF.Sin(theta)),
                     LoadMap = false,
                 };
 
                 var salvageProto = _random.Pick(_prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList());
                 _map.TryLoad(GameTicker.DefaultMap, salvageProto.MapPath.ToString(), out _, debrisOptions);
+                theta += _random.NextFloat(MathF.PI / 18, MathF.PI / 3);
                 k++;
             }
         }
