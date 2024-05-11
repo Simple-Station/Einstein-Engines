@@ -209,7 +209,7 @@
     denyState: deny-unshaded
   - type: Sprite
     noRot: true
-    sprite: Structures/Machines/VendingMachines/cart.rsi
+    sprite: Structures/Machines/VendingMachines/laptop.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -502,6 +502,10 @@
   components:
   - type: VendingMachine
     pack: SodaInventory
+    offState: off
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/soda.rsi
     layers:
@@ -657,6 +661,7 @@
     brokenState: broken
     normalState: normal-unshaded
     ejectState: eject-unshaded
+    denyState: deny-unshaded
   - type: Advertise
     pack: DinnerwareAds
   - type: Sprite
@@ -690,6 +695,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
   - type: Advertise
     pack: MagiVendAds
   - type: Sprite
@@ -1293,12 +1300,14 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
     initialStockQuality: 0.33
   - type: Advertise
     pack: ChangAds
   - type: Speech
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/changs.rsi
+    sprite: Structures/Machines/VendingMachines/snix.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -1412,6 +1421,7 @@
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
+    ejectState: eject-unshaded
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/VendingMachines/wallmed.rsi
@@ -2092,6 +2102,9 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
+    screenState: screen
   - type: Advertise
     pack: FitnessVendAds
   - type: Transform
@@ -2114,11 +2127,15 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: heater
   - type: VendingMachine
     pack: HotfoodInventory
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
+
   - type: Advertise
     pack: HotfoodAds
   - type: Transform
@@ -2146,6 +2163,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
   - type: Advertise
     pack: SolsnackAds
   - type: Transform
@@ -2168,11 +2187,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: fan
   - type: VendingMachine
     pack: WeebVendInventory
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
   - type: Advertise
     pack: WeebVendAds
   - type: Transform
