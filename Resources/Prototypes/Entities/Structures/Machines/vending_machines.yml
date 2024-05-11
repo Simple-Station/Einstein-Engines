@@ -1794,10 +1794,12 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
   - type: Advertise
     pack: JaniDrobeAds
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/janidrobe.rsi
+    sprite: Structures/Machines/VendingMachines/lavatory.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
