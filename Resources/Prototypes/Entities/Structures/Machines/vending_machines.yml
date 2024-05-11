@@ -102,6 +102,8 @@
   - type: Appearance
   - type: WiresVisuals
   - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
