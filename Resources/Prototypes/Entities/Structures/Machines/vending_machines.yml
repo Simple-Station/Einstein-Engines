@@ -92,7 +92,6 @@
     radius: 1
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-    netsync: false
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200
@@ -222,6 +221,8 @@
     radius: 1
     energy: 1.3
     color: "#ffb0b0"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: AccessReader
     access: [["HeadOfPersonnel"]]
   - type: Transform
@@ -260,6 +261,8 @@
     radius: 1.5
     energy: 1.6
     color: "#4b93ad"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -325,6 +328,8 @@
     radius: 1.8
     energy: 1.6
     color: "#3db83b"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -355,6 +360,8 @@
     radius: 1.8
     energy: 1.6
     color: "#3db83b"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -396,6 +403,8 @@
     radius: 1.5
     energy: 1.3
     color: "#ad7c4b"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -437,6 +446,8 @@
     radius: 1.5
     energy: 1.6
     color: "#3c5eb5"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -462,6 +473,8 @@
     radius: 1.5
     energy: 1.6
     color: "#423438"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineCola
@@ -483,6 +496,8 @@
     radius: 1.5
     energy: 1.6
     color: "#A50824"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -508,6 +523,8 @@
     radius: 1.5
     energy: 1.6
     color: "#44964A"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineCola
@@ -535,6 +552,8 @@
     radius: 1.5
     energy: 1.6
     color: "#CBC6BE"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -565,6 +584,8 @@
     radius: 1.5
     energy: 1.6
     color: "#D3A44D"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: true
 
@@ -602,6 +623,8 @@
     radius: 1.5
     energy: 1.6
     color: "#66538F"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -637,6 +660,8 @@
     radius: 1.5
     energy: 1.6
     color: "#6927C5"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -672,6 +697,8 @@
     radius: 1.5
     energy: 1.6
     color: "#D82929"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -705,6 +732,8 @@
     radius: 1.5
     energy: 1.6
     color: "#4b93ad"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -741,6 +770,8 @@
     radius: 1.5
     energy: 1.6
     color: "#9a18d6"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -778,6 +809,8 @@
     radius: 1.5
     energy: 1.6
     color: "#6148c7"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -809,6 +842,8 @@
     radius: 1.5
     energy: 1.6
     color: "#b89e2a"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -848,6 +883,8 @@
     radius: 1.5
     energy: 1.6
     color: "#9dc5c9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: GuideHelp
     guides:
     - Medical Doctor
@@ -888,6 +925,8 @@
     radius: 1.5
     energy: 1.6
     color: "#326e3f"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -921,6 +960,8 @@
     radius: 1
     energy: 1.2
     color: "#78645c"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: GuideHelp
     guides:
     - Security
@@ -960,6 +1001,8 @@
     radius: 1.5
     energy: 1.6
     color: "#326e3f"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineSeedsUnlocked
@@ -1003,6 +1046,8 @@
     radius: 1.5
     energy: 1.6
     color: "#c73434"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -1038,6 +1083,8 @@
     radius: 1.5
     energy: 1.6
     color: "#737785"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineSnack
@@ -1058,6 +1105,8 @@
     radius: 1.5
     energy: 1.6
     color: "#3c5eb5"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineSnack
@@ -1078,6 +1127,8 @@
     radius: 1.5
     energy: 1.6
     color: "#CE3401"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineSnack
@@ -1098,6 +1149,8 @@
     radius: 1.5
     energy: 1.6
     color: "#5F6A1C"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineSnack
@@ -1118,6 +1171,8 @@
     radius: 1.5
     energy: 1.6
     color: "#207E79"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -1153,6 +1208,8 @@
     radius: 1.5
     energy: 1.6
     color: "#389690"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -1194,6 +1251,8 @@
     radius: 1.5
     energy: 1.6
     color: "#c73434"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -1231,6 +1290,8 @@
     radius: 1.5
     energy: 1.6
     color: "#9dc5c9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -1270,6 +1331,8 @@
     radius: 1.5
     energy: 1.6
     color: "#B0ADA9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -1307,6 +1370,8 @@
     radius: 1.5
     energy: 1.6
     color: "#d4ab33"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -1343,6 +1408,8 @@
     radius: 1.5
     energy: 1.6
     color: "#326e3f"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -1383,6 +1450,8 @@
     radius: 1.5
     energy: 1.6
     color: "#ffe599"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -1415,6 +1484,8 @@
     radius: 1.5
     energy: 1.6
     color: "#9dc5c9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: AccessReader
     access: [["Salvage"]]
   - type: GuideHelp
@@ -1452,6 +1523,8 @@
     radius: 1.5
     energy: 1.6
     color: "#d4ab33"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 # wallmounted machines
 
@@ -1647,6 +1720,8 @@
     radius: 1.5
     energy: 1.6
     color: "#CCCCCC" #The holy C
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -2039,6 +2114,8 @@
     radius: 1.5
     energy: 1.6
     color: "#48CF48"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: AccessReader
     access: [["CentralCommand"]]
 
@@ -2073,6 +2150,8 @@
     radius: 1.5
     energy: 1.6
     color: "#3c5eb5"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Advertise
     pack: HappyHonkAds
   - type: AccessReader
