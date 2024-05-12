@@ -778,8 +778,8 @@ namespace Content.Shared.Interaction
             // No fixtures, e.g. wallmounts.
             else
             {
-                originPos = _transform.GetMapCoordinates(origin, origin);
-                var otherParent = (other.Comp ?? Transform(other)).ParentUid;
+                originPos = _transform.GetMapCoordinates(origin);
+                var otherParent = Transform(other).ParentUid;
                 targetRot = otherParent.IsValid() ? Transform(otherParent).LocalRotation + otherAngle : otherAngle;
             }
 
@@ -926,7 +926,7 @@ namespace Content.Shared.Interaction
             bool popup = false)
         {
             Ignored combinedPredicate = e => e == origin || (predicate?.Invoke(e) ?? false);
-            var originPosition = Transform(origin).MapPosition;
+            var originPosition = _transform.GetMapCoordinates(origin);
             var inRange = InRangeUnobstructed(originPosition, other, range, collisionMask, combinedPredicate, ShouldCheckAccess(origin));
 
             if (!inRange && popup && _gameTiming.IsFirstTimePredicted)

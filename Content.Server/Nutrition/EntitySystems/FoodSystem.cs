@@ -34,6 +34,7 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Nutrition.EntitySystems;
 
@@ -55,6 +56,7 @@ public sealed class FoodSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly StomachSystem _stomach = default!;
     [Dependency] private readonly UtensilSystem _utensil = default!;
@@ -155,7 +157,7 @@ public sealed class FoodSystem : EntitySystem
             return (false, true);
 
         // TODO make do-afters account for fixtures in the range check.
-        if (!Transform(user).MapPosition.InRange(Transform(target).MapPosition, MaxFeedDistance))
+        if (!_transform.GetMapCoordinates(user).InRange(_transform.GetMapCoordinates(target), MaxFeedDistance))
         {
             var message = Loc.GetString("interaction-system-user-interaction-cannot-reach");
             _popup.PopupEntity(message, user, user);

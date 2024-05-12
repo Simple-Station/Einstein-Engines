@@ -3,6 +3,7 @@ using Content.Server.Beam;
 using Content.Server.Beam.Components;
 using Content.Server.Lightning.Components;
 using Content.Shared.Lightning;
+using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 
 namespace Content.Server.Lightning;
@@ -74,11 +75,8 @@ public sealed class LightningSystem : SharedLightningSystem
         //To Do: Remove Hardcode LightningTargetComponent (this should be a parameter of the SharedLightningComponent)
         //To Do: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
         // several hashsets every time
-
-        var userCoords = _transform.GetMapCoordinates(user);
-        var targetEnts = _lookup.GetEntitiesInRange<LightningTargetComponent>(userCoords, range);
-        var targets = targetEnts.Select(x => x.Comp).ToList();
-
+        var mapCoords = _transform.GetMapCoordinates(user)
+        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(mapCoords, range).ToList();
         _random.Shuffle(targets);
         targets.Sort((x, y) => y.Priority.CompareTo(x.Priority));
 

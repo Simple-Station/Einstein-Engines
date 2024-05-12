@@ -216,7 +216,6 @@ public sealed partial class CloningSystem : EntitySystem
             return true;
 
         var mob = FetchAndSpawnMob(uid, clonePod, pref, speciesPrototype, humanoid, bodyToClone, geneticDamage);
-
         var ev = new CloningEvent(bodyToClone, mob);
         RaiseLocalEvent(bodyToClone, ref ev);
 
