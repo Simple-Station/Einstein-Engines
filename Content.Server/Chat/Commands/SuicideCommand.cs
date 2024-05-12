@@ -1,5 +1,6 @@
 using Content.Server.GameTicking;
 using Content.Server.Popups;
+using Content.Server.Popups;
 using Content.Shared.Administration;
 using Content.Shared.Chat;
 using Content.Shared.Mind;
@@ -54,6 +55,7 @@ namespace Content.Server.Chat.Commands
             if (suicideSystem.Suicide(victim))
                 return;
 
+            shell.WriteLine(Loc.GetString("ghost-command-denied"));
             shell.WriteLine(Loc.GetString("ghost-command-denied"));
         }
     }
