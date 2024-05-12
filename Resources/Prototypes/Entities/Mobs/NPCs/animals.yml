@@ -1371,7 +1371,6 @@
   - type: LanguageSpeaker
     speaks:
     - Kobold
-    - Monkey
     understands:
     - Kobold
     - Monkey
@@ -1930,6 +1929,11 @@
       path: /Audio/Animals/parrot_raught.ogg
   - type: Bloodstream
     bloodMaxVolume: 50
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    understands:
+    - GalacticCommon
 
 - type: entity
   name: penguin
