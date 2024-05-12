@@ -46,6 +46,8 @@
     damage:
       types:
         Slash: 2
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/bladeslice.ogg
   - type: Tag
     tags:
     - Trash
