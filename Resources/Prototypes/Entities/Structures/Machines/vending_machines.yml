@@ -14,7 +14,7 @@
       path: /Audio/Ambience/Objects/vending_machine_hum.ogg
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/empty.rsi
-    snapCardinals: true
+    snapCardinals: false
   - type: Physics
     bodyType: Static
   - type: Transform
@@ -89,7 +89,10 @@
   - type: PointLight
     enabled: false
     castShadows: false
-    radius: 1.5
+    radius: 1
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    netsync: false
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200
@@ -101,9 +104,6 @@
     price: 100
   - type: Appearance
   - type: WiresVisuals
-  - type: Rotatable
-    rotateWhileAnchored: false
-    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -226,6 +226,9 @@
     access: [["HeadOfPersonnel"]]
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -289,6 +292,9 @@
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -392,6 +398,9 @@
     color: "#ad7c4b"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -430,6 +439,9 @@
     color: "#3c5eb5"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachineCola
@@ -473,13 +485,15 @@
     color: "#A50824"
 
 - type: entity
-  parent: VendingMachineCola
+  parent: VendingMachine
   id: VendingMachineSpaceUp
   name: Space-Up! Vendor
   description: Indulge in an explosion of flavor.
   components:
   - type: VendingMachine
     pack: SpaceUpInventory
+    offState: off
+    normalState: normal-unshaded
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/spaceup.rsi
     layers:
@@ -507,6 +521,7 @@
     denyState: deny-unshaded
     ejectState: eject-unshaded
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/soda.rsi
     layers:
     - state: "off"
@@ -520,15 +535,22 @@
     radius: 1.5
     energy: 1.6
     color: "#CBC6BE"
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachineCola
+  parent: VendingMachine
   id: VendingMachineStarkist
   name: Star-kist Vendor
   description: The taste of a star in liquid form.
   components:
   - type: VendingMachine
     pack: StarkistInventory
+    offState: off
+    normalState: normal-unshaded
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/starkist.rsi
     layers:
@@ -543,6 +565,8 @@
     radius: 1.5
     energy: 1.6
     color: "#D3A44D"
+  - type: Transform
+    noRot: true
 
 - type: entity
   parent: VendingMachine
@@ -683,6 +707,9 @@
     color: "#4b93ad"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -716,6 +743,9 @@
     color: "#9a18d6"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -781,6 +811,9 @@
     color: "#b89e2a"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -820,6 +853,9 @@
     - Medical Doctor
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -890,6 +926,9 @@
     - Security
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -966,6 +1005,9 @@
     color: "#c73434"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachineSnack
@@ -1113,6 +1155,9 @@
     color: "#389690"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -1151,6 +1196,9 @@
     color: "#c73434"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -1185,6 +1233,9 @@
     color: "#9dc5c9"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -1219,6 +1270,11 @@
     radius: 1.5
     energy: 1.6
     color: "#B0ADA9"
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
   - type: GuideHelp
     guides:
     - Robotics
@@ -1253,6 +1309,9 @@
     color: "#d4ab33"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -1286,6 +1345,9 @@
     color: "#326e3f"
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -1307,6 +1369,7 @@
     pack: ChangAds
   - type: Speech
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/snix.rsi
     layers:
     - state: "off"
@@ -1320,6 +1383,11 @@
     radius: 1.5
     energy: 1.6
     color: "#ffe599"
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -1403,11 +1471,13 @@
   - type: Sprite
     drawdepth: WallMountedItems
     snapCardinals: false
-  - type: Rotatable
   - type: WallMount
     arc: 175
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachineWallmount
@@ -1440,6 +1510,9 @@
     - Medical
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 # job clothing
 
@@ -2110,7 +2183,10 @@
   - type: Advertise
     pack: FitnessVendAds
   - type: Transform
-    noRot: true
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   id: VendingMachineHotfood
@@ -2137,11 +2213,11 @@
     normalState: normal-unshaded
     denyState: deny-unshaded
     ejectState: eject-unshaded
-
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
   - type: Advertise
     pack: HotfoodAds
-  - type: Transform
-    noRot: false
 
 - type: entity
   id: VendingMachineSolsnack
@@ -2171,6 +2247,9 @@
     pack: SolsnackAds
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   id: VendingMachineWeeb
@@ -2201,3 +2280,6 @@
     pack: WeebVendAds
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
