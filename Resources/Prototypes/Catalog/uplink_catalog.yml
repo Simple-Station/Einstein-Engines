@@ -418,7 +418,7 @@
   name: uplink-reinforcement-radio-name
   description: uplink-reinforcement-radio-desc
   productEntity: ReinforcementRadioSyndicate
-  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio }
+  icon: { sprite: Objects/Devices/communication.rsi, state: radio }
   cost:
     Telecrystal: 16
   categories:
@@ -434,7 +434,7 @@
   name: uplink-reinforcement-radio-name
   description: uplink-reinforcement-radio-desc
   productEntity: ReinforcementRadioSyndicateNukeops
-  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio }
+  icon: { sprite: Objects/Devices/communication.rsi, state: radio }
   cost:
     Telecrystal: 16
   categories:
@@ -466,7 +466,7 @@
   name: uplink-reinforcement-radio-monkey-name
   description: uplink-reinforcement-radio-monkey-desc
   productEntity: ReinforcementRadioSyndicateMonkey
-  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio }
+  icon: { sprite: Objects/Devices/communication.rsi, state: radio }
   cost:
     Telecrystal: 8
   categories:
@@ -482,7 +482,7 @@
   name: uplink-reinforcement-radio-monkey-name
   description: uplink-reinforcement-radio-monkey-desc
   productEntity: ReinforcementRadioSyndicateMonkeyNukeops
-  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio }
+  icon: { sprite: Objects/Devices/communication.rsi, state: radio }
   cost:
     Telecrystal: 8
   categories:
@@ -714,7 +714,7 @@
   id: UplinkUplinkImplanter # uplink uplink real
   name: uplink-uplink-implanter-name
   description: uplink-uplink-implanter-desc
-  icon: { sprite: /Textures/Objects/Devices/communication.rsi, state: old-radio }
+  icon: { sprite: /Textures/Objects/Devices/communication.rsi, state: radio }
   productEntity: UplinkImplanter
   cost:
     Telecrystal: 2
