@@ -85,7 +85,7 @@
     rarePrototypes:
       - TraversalDistorterMachineCircuitboard
       - CloningPodMachineCircuitboard
-      # - MetempsychoticMachineCircuitboard
+      - MetempsychoticMachineCircuitboard
       - ReverseEngineeringMachineCircuitboard
       - MedicalScannerMachineCircuitboard
       - DawInstrumentMachineCircuitboard
