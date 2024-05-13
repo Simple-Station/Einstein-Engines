@@ -56,8 +56,12 @@ namespace Content.Server.Database
                 .IsUnique();
 
             modelBuilder.Entity<Trait>()
-                        .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.TraitName})
-                        .IsUnique();
+                .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.TraitName})
+                .IsUnique();
+
+            modelBuilder.Entity<Loadout>()
+                .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.LoadoutName})
+                .IsUnique();
 
             modelBuilder.Entity<Job>()
                 .HasIndex(j => j.ProfileId);
@@ -347,6 +351,7 @@ namespace Content.Server.Database
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
+        public List<Loadout> Loadouts { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
 
@@ -389,6 +394,15 @@ namespace Content.Server.Database
         public int ProfileId { get; set; }
 
         public string TraitName { get; set; } = null!;
+    }
+
+    public class Loadout
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+
+        public string LoadoutName { get; set; } = null!;
     }
 
     public enum DbPreferenceUnavailableMode
