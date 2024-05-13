@@ -49,6 +49,7 @@
         trade:
           addComponents:
           - type: ProtectedGrid
+          # If you comment out the tradestation, make sure to also set cargo.tradestation_spawns_in_ftl_map to TRUE
           - type: TradeStation
           paths:
           - /Maps/Shuttles/trading_outpost.yml

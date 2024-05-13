@@ -53,6 +53,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Occluder
+  - type: BlockWeather
 
 - type: entity
   parent: BaseMaterialDoor

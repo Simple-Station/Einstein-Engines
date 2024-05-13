@@ -279,6 +279,15 @@
       reagents:
       - ReagentId: JuiceThatMakesYouWeh
         Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: JuiceThatMakesYouWeh
+          Quantity: 10
 
 - type: entity
   parent: PlushieLizard
@@ -322,6 +331,15 @@
       reagents:
       - ReagentId: JuiceThatMakesYouWeh
         Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: JuiceThatMakesYouWeh
+          Quantity: 10
 
 - type: entity
   parent: BasePlushie
@@ -1229,7 +1247,7 @@
 - type: entity
   parent: BasePlushie
   id: ToyAmongPequeno
-  name: among pequeno
+  name: among pequeño
   description: sus!
   components:
   - type: Sprite
@@ -1447,6 +1465,9 @@
             Quantity: 100
   - type: TrashOnSolutionEmpty
     solution: drink
+  - type: Tag
+    tags:
+      - DrinkSpaceGlue
 
 - type: entity
   parent: BaseItem
