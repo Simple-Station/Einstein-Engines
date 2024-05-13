@@ -228,6 +228,7 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+  - type: TTS
 
 - type: entity
   save: false

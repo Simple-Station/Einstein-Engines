@@ -491,6 +491,16 @@ namespace Content.Shared.CCVar
 
 
         /*
+         * TTS
+         */
+
+        public static readonly CVarDef<float> TTSVolume =
+            CVarDef.Create("tts.volume", 0.5f, CVar.CLIENTONLY);
+
+        public static readonly CVarDef<bool> TTSEnabled =
+            CVarDef.Create("tts.enabled", false, CVar.SERVERONLY);
+
+        /*
          * Queue
          */
 

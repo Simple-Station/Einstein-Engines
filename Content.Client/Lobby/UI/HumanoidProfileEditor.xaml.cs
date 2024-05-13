@@ -176,6 +176,12 @@ namespace Content.Client.Lobby.UI
 
             #endregion Gender
 
+            #region Voice
+
+            InitializeVoice();
+
+            #endregion
+
             #region Species
 
             RefreshSpecies();
@@ -644,6 +650,7 @@ namespace Content.Client.Lobby.UI
             UpdateAgeEdit();
             UpdateEyePickers();
             UpdateSaveButton();
+            UpdateTTSVoicesControls();
             UpdateMarkings();
             UpdateHairPickers();
             UpdateCMarkingsHair();
@@ -1128,9 +1135,16 @@ namespace Content.Client.Lobby.UI
                     break;
             }
             UpdateGenderControls();
+            UpdateTTSVoicesControls();
             Markings.SetSex(newSex);
             ReloadProfilePreview();
             SetDirty();
+        }
+
+        private void SetVoice(string newVoice)
+        {
+            Profile = Profile?.WithVoice(newVoice);
+            IsDirty = true;
         }
 
         private void SetGender(Gender newGender)
