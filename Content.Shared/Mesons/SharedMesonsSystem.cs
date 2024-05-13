@@ -6,7 +6,6 @@ namespace Content.Shared.Mesons;
 
 public sealed class SharedMesonsSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
 
     public override void Initialize()

@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -17,6 +18,9 @@ public sealed partial class MesonsComponent : Component
 
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public MesonsViewType MesonsType = MesonsViewType.Walls;
+
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
+    public SoundSpecifier EnableSound = new SoundPathSpecifier("/Audio/Items/Mesons/turn_on.ogg");
 }
 
 public enum MesonsViewType

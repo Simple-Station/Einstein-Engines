@@ -411,6 +411,6 @@
   components:
   - type: InstantAction
     icon: { sprite: Clothing/Eyes/Glasses/meson.rsi, state: icon }
-    iconOn: { sprite: Clothing/Eyes/Glasses/meson.rsi, state: icon_enabled }
+    iconOn: { sprite: Clothing/Eyes/Glasses/meson.rsi, state: enabled }
     useDelay: 1
     event: !type:ToggleActionEvent

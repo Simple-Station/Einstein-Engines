@@ -1,6 +1,7 @@
 using Content.Shared.Construction.Components;
 using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Mesons;
+using Robust.Client.Audio;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -34,8 +35,9 @@ public sealed class MesonsOverlay : Overlay
         _greyscaleShader = _prototypeManager.Index<ShaderPrototype>("GreyscaleFullscreen").InstanceUnique();
     }
 
-    public void SetSpritesVisible(bool visible)
+    public void ToggleVisible(bool visible)
     {
+
         var playerEntity = _playerManager.LocalSession?.AttachedEntity;
 
         var query = _entityManager.EntityQueryEnumerator<MesonsNonviewableComponent>();
@@ -54,7 +56,7 @@ public sealed class MesonsOverlay : Overlay
         _lightManager.Enabled = !enabled;
         _enabled = enabled;
 
-        SetSpritesVisible(!enabled);
+        ToggleVisible(!enabled);
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -71,7 +73,7 @@ public sealed class MesonsOverlay : Overlay
             || playerEntity is null)
             draw = false;
 
-        SetSpritesVisible(!draw);
+        ToggleVisible(!draw);
 
         return draw;
     }

@@ -62,15 +62,16 @@
     sprite: Clothing/Eyes/Glasses/meson.rsi
     layers:
     - state: icon
-    - state: icon_enabled
+    - state: enabled
       map: [ "enum.ToggleVisuals.Layer" ]
       visible: false
   - type: GenericVisualizer
     visuals:
       enum.ToggleVisuals.Toggled:
         enum.ToggleVisuals.Layer:
-          True: {visible: true}
-          False: {visible: false}
+          True: { visible: true }
+          False: { visible: false }
+  - type: Appearance
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/meson.rsi
   - type: EyeProtection
