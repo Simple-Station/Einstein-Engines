@@ -208,7 +208,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<DisposalUnitComponent>();
+        var query = AllEntityQuery<DisposalUnitComponent>();
         while (query.MoveNext(out var uid, out var unit))
         {
             Update(uid, unit);
@@ -396,6 +396,9 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
     private void Update(EntityUid uid, SharedDisposalUnitComponent component)
     {
         var metadata = MetaData(uid);
+        if (metadata.EntityPaused)
+            return;
+
         var state = GetState(uid, component, metadata);
 
         // Pressurizing, just check if we need a state update.
