@@ -387,6 +387,19 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<string> RoundEndSoundCollection =
             CVarDef.Create("game.round_end_sound_collection", "RoundEnd", CVar.SERVERONLY);
 
+
+        /*
+         * Queue
+         */
+
+        /// <summary>
+        ///     Controls if the connections queue is enabled
+        ///     If enabled plyaers will be added to a queue instead of being kicked after SoftMaxPlayers is reached
+        /// </summary>
+        public static readonly CVarDef<bool>
+        QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
+
+
         /*
          * Discord
          */
@@ -426,6 +439,24 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> DiscordRoundEndRoleWebhook =
             CVarDef.Create("discord.round_end_role", string.Empty, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Enable Discord linking, show linking button and modal window
+        /// </summary>
+        public static readonly CVarDef<bool> DiscordAuthEnabled =
+            CVarDef.Create("discord.auth_enabled", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     URL of the Discord auth server API
+        /// </summary>
+        public static readonly CVarDef<string> DiscordAuthApiUrl =
+            CVarDef.Create("discord.auth_api_url", "", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Secret key of the Discord auth server API
+        /// </summary>
+        public static readonly CVarDef<string> DiscordAuthApiKey =
+            CVarDef.Create("discord.auth_api_key", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
 
         /*
