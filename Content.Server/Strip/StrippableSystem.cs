@@ -503,7 +503,7 @@ namespace Content.Server.Strip
 
             if (!_handsSystem.TryGetHand(target, handName, out var handSlot, target.Comp))
             {
-                _popupSystem.PopupCursor(Loc.GetString("strippable-component-item-slot-free-message", ("owner", target)), user);
+                _popupSystem.PopupCursor(Loc.GetString("strippable-component-item-slot-free-message", ("owner", Identity.Name(target, EntityManager, user))), user);
                 return false;
             }
 
@@ -518,7 +518,7 @@ namespace Content.Server.Strip
 
             if (!_handsSystem.CanDropHeld(target, handSlot, false))
             {
-                _popupSystem.PopupCursor(Loc.GetString("strippable-component-cannot-drop-message", ("owner", target)), user);
+                _popupSystem.PopupCursor(Loc.GetString("strippable-component-cannot-drop-message", ("owner", Identity.Name(target, EntityManager, user))), user);
                 return false;
             }
 
