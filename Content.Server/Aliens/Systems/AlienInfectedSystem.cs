@@ -71,7 +71,7 @@ public sealed class AlienInfectedSystem : EntitySystem
                 Comp<InsideAlienLarvaComponent>(infected.SpawnedLarva).IsGrown)
             {
                 _container.EmptyContainer(infected.Stomach);
-                _body.GibBody(uid, true);
+                _body.GibBody(uid, true, CompOrNull<BodyComponent>(uid), true, null, 5f);
             }
 
             if (infected.GrowthStage == 5)

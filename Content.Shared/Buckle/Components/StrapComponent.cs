@@ -27,6 +27,14 @@ public sealed partial class StrapComponent : Component
     public EntityWhitelist? AllowedEntities;
 
     /// <summary>
+    /// The amount of time that must pass for this entity to
+    /// be able to unbuckle after recently buckling.
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan Delay = TimeSpan.FromSeconds(0.25f);
+
+    /// <summary>
     /// The change in position to the strapped mob
     /// </summary>
     [DataField, AutoNetworkedField]

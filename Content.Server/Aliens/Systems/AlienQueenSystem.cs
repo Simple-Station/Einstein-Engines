@@ -80,8 +80,11 @@ public sealed class AlienQueenSystem : EntitySystem
         {
             if (Prototype(entity) == null)
                 continue;
-            if (Prototype(entity)!.ID == component.EggPrototype)
-                return;
+            if (Prototype(entity)!.ID != component.EggPrototype)
+                continue;
+            _popup.PopupEntity(Loc.GetString("alien-create-structure-failed"), uid, uid);
+            return;
+
         }
 
         _plasmaVessel.ChangePlasmaAmount(uid, -component.PlasmaCostEgg);

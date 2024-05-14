@@ -1,0 +1,44 @@
+﻿- type: entity
+  name: alien-nest-name
+  description: alien-nest-desc
+  parent: BaseStructure
+  id: AlienNest
+  components:
+  - type: Sprite
+    sprite: Structures/alien_nest.rsi
+    state: full
+    drawdepth: FloorTiles
+  - type: Icon
+    sprite: Structures/alien_nest.rsi
+    state: full
+  - type: IconSmooth
+    key: full
+    base: alien_nest
+  - type: Tag
+    tags: [ Carpet ]
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+        - SlipLayer
+        mask:
+        - ItemMask
+        density: 1000
+        hard: false
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Strap
+    delay: 120

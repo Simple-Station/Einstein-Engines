@@ -1,4 +1,5 @@
-﻿using Content.Server.Popups;
+﻿using System.Numerics;
+using Content.Server.Popups;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Aliens.Components;
@@ -32,6 +33,7 @@ public sealed class ResinSpinnerSystem : EntitySystem
 
         SubscribeLocalEvent<ResinSpinnerComponent, ResinWallDoAfterEvent>(OnWallDoAfter);
         SubscribeLocalEvent<ResinSpinnerComponent, ResinWindowDoAfterEvent>(OnWindowDoAfter);
+        SubscribeLocalEvent<ResinSpinnerComponent, AlienNestDoAfterEvent>(OnNestDoAfter);
     }
 
     private void OnWallDoAfter(EntityUid uid, ResinSpinnerComponent component, ResinWallDoAfterEvent args)
@@ -52,15 +54,26 @@ public sealed class ResinSpinnerSystem : EntitySystem
         args.Handled = true;
     }
 
-    public void CreateStructure(EntityUid uid, ResinSpinnerComponent component, string structurePrototype)
+    private void OnNestDoAfter(EntityUid uid, ResinSpinnerComponent component, AlienNestDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled || component.Deleted)
+            return;
+
+        CreateStructure(uid, component, component.NestPrototype, false);
+        args.Handled = true;
+    }
+
+    public void CreateStructure(EntityUid uid, ResinSpinnerComponent component, string structurePrototype, bool offset = true)
     {
 
         if (_container.IsEntityOrParentInContainer(uid))
             return;
 
         var xform = Transform(uid);
-        // Get the tile in front of the drone
-        var offsetValue = xform.LocalRotation.ToWorldVec();
+        var offsetValue = new Vector2(0, 0);
+        if (offset)
+            offsetValue = xform.LocalRotation.ToWorldVec();
+
         var coords = xform.Coordinates.Offset(offsetValue).SnapToGrid(EntityManager, _mapMan);
         var tile = coords.GetTileRef(EntityManager, _mapMan);
         if (tile == null)
@@ -81,6 +94,16 @@ public sealed class ResinSpinnerSystem : EntitySystem
                 _popupSystem.PopupEntity(Loc.GetString("alien-create-structure-failed"), uid, uid);
                 return;
             }
+        }
+
+        foreach (var entity in _lookupSystem.GetEntitiesInRange(coords, 0.1f))
+        {
+            if (Prototype(entity) == null)
+                continue;
+            if (Prototype(entity)!.ID != structurePrototype)
+                continue;
+            _popupSystem.PopupEntity(Loc.GetString("alien-create-structure-failed"), uid, uid);
+            return;
         }
         // Make sure we set the invisible wall to despawn properly
         Spawn(structurePrototype, _turf.GetTileCenter(tile.Value));

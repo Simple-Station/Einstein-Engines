@@ -67,4 +67,31 @@ public sealed partial class ResinSpinnerComponent : Component
     public string? ResinWindowAction = "ActionWindowResin";
 
     [DataField("resinWindowActionEntity")] public EntityUid? ResinWindowActionEntity;
+
+    /// <summary>
+    /// How long will it take to make.
+    /// </summary>
+    [DataField("productionLengthNest")]
+    [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
+    public float ProductionLengthNest = 1f;
+
+    /// <summary>
+    /// This will subtract (not add, don't get this mixed up) from the current plasma of the mob making structure.
+    /// </summary>
+    [DataField("plasmaCostNest")]
+    [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
+    public float PlasmaCostNest = 30f;
+
+    /// <summary>
+    /// The wall prototype to use.
+    /// </summary>
+    [DataField("nestPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string NestPrototype = "AlienNest";
+
+    [DataField("nestWindowAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string? NestAction = "ActionAlienNest";
+
+    [DataField("nestActionEntity")] public EntityUid? NestActionEntity;
 }

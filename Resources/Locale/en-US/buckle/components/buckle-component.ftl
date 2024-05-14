@@ -5,3 +5,4 @@ buckle-component-cannot-buckle-message = You can't buckle yourself there!
 buckle-component-other-cannot-buckle-message = You can't buckle {$owner} there!
 buckle-component-cannot-fit-message = You can't fit there!
 buckle-component-other-cannot-fit-message = {$owner} can't fit there!
+unbuckling-wait-message = You'll be able to unbuckle in {$delay} seconds.

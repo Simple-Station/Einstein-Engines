@@ -27,12 +27,14 @@ public sealed class SharedResinSpinnerSystem : EntitySystem
 
         SubscribeLocalEvent<ResinSpinnerComponent, ResinWallActionEvent>(OnWall);
         SubscribeLocalEvent<ResinSpinnerComponent, ResinWindowActionEvent>(OnWindow);
+        SubscribeLocalEvent<ResinSpinnerComponent, AlienNestActionEvent>(OnNest);
     }
 
     private void OnComponentInit(EntityUid uid, ResinSpinnerComponent component, ComponentInit args)
     {
         _actionsSystem.AddAction(uid, ref component.ResinWallActionEntity, component.ResinWallAction, uid);
         _actionsSystem.AddAction(uid, ref component.ResinWindowActionEntity, component.ResinWindowAction, uid);
+        _actionsSystem.AddAction(uid, ref component.NestActionEntity, component.NestAction, uid);
     }
 
     private void OnWall(EntityUid uid, ResinSpinnerComponent component, ResinWallActionEvent args)
@@ -43,6 +45,11 @@ public sealed class SharedResinSpinnerSystem : EntitySystem
     private void OnWindow(EntityUid uid, ResinSpinnerComponent component, ResinWindowActionEvent args)
     {
         OnStructureMaking(uid, component.PlasmaCostWindow, component.ProductionLengthWindow, component, new ResinWindowDoAfterEvent());
+    }
+
+    private void OnNest(EntityUid uid, ResinSpinnerComponent component, AlienNestActionEvent args)
+    {
+        OnStructureMaking(uid, component.PlasmaCostNest, component.ProductionLengthNest, component, new AlienNestDoAfterEvent());
     }
 
     private void OnStructureMaking(EntityUid uid, float cost, float productionLength, ResinSpinnerComponent component, DoAfterEvent doAfterEvent)
@@ -70,6 +77,8 @@ public sealed partial class ResinWallActionEvent : InstantActionEvent { }
 
 public sealed partial class ResinWindowActionEvent : InstantActionEvent { }
 
+public sealed partial class AlienNestActionEvent : InstantActionEvent { }
+
 /// <summary>
 /// Is relayed at the end of the making structure.
 /// </summary>
@@ -77,5 +86,7 @@ public sealed partial class ResinWindowActionEvent : InstantActionEvent { }
 public sealed partial class ResinWallDoAfterEvent : SimpleDoAfterEvent { }
 
 [Serializable, NetSerializable]
-
 public sealed partial class ResinWindowDoAfterEvent : SimpleDoAfterEvent { }
+
+[Serializable, NetSerializable]
+public sealed partial class AlienNestDoAfterEvent : SimpleDoAfterEvent { }

@@ -74,6 +74,18 @@
       icon: { sprite : Structures/Windows/resin_membrane.rsi, state: full }
       event: !type:ResinWindowActionEvent
 
+- type: entity
+  id: ActionAlienNest
+  name: action-create-alien-nest-name
+  description: action-create-alien-nest-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 4
+    useDelay: 1
+    icon: { sprite : Structures/alien_nest.rsi, state: full }
+    event: !type:AlienNestActionEvent
+
 # Evolutions
 
 - type: entity

@@ -47,6 +47,8 @@ public sealed class SharedFacehuggerSystem : EntitySystem
                     continue;
                 if(HasComp<AlienInfectedComponent>(entity))
                     continue;
+                if(HasComp<AlienComponent>(entity))
+                    continue;
                 if(!alien.Active)
                     continue;
                 validEntities.TryAdd(uid, entity);
