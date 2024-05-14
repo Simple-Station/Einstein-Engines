@@ -50,7 +50,6 @@ namespace Content.Server.Abilities.Psionics
                 _actions.StartUseDelay(component.PsionicInvisibilityActionEntity);
             if (TryComp<PsionicComponent>(uid, out var psionic))
             {
-                psionic.PsionicAbility = component.PsionicInvisibilityActionEntity;
                 psionic.ActivePowers.Add(component);
                 psionic.PsychicFeedback.Add(component.InvisibilityFeedback);
                 psionic.Amplification += 0.5f;

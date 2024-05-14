@@ -31,9 +31,8 @@ namespace Content.Server.Abilities.Psionics
             _actions.TryGetActionData( component.NoosphericZapActionEntity, out var actionData );
             if (actionData is { UseDelay: not null })
                 _actions.StartUseDelay(component.NoosphericZapActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
+            if (TryComp<PsionicComponent>(uid, out var psionic))
             {
-                psionic.PsionicAbility = component.NoosphericZapActionEntity;
                 psionic.ActivePowers.Add(component);
                 psionic.PsychicFeedback.Add(component.NoosphericZapFeedback);
             }
