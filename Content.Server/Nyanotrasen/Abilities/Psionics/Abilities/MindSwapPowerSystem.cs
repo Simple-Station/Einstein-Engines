@@ -1,5 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics;
 using Content.Shared.Speech;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Mobs.Components;
@@ -10,8 +11,6 @@ using Content.Shared.Mobs.Systems;
 using Content.Server.Popups;
 using Content.Server.Psionics;
 using Content.Server.GameTicking;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
 
@@ -36,9 +35,9 @@ namespace Content.Server.Abilities.Psionics
             SubscribeLocalEvent<MindSwappedComponent, DispelledEvent>(OnDispelled);
             SubscribeLocalEvent<MindSwappedComponent, MobStateChangedEvent>(OnMobStateChanged);
             SubscribeLocalEvent<GhostAttemptHandleEvent>(OnGhostAttempt);
-            //
             SubscribeLocalEvent<MindSwappedComponent, ComponentInit>(OnSwapInit);
             SubscribeLocalEvent<MindSwappedComponent, ComponentShutdown>(OnSwapShutdown);
+            SubscribeLocalEvent<MindSwappedComponent, PsionicInsulationEvent>(OnInsulated);
         }
 
         private void OnInit(EntityUid uid, MindSwapPowerComponent component, ComponentInit args)
@@ -49,7 +48,6 @@ namespace Content.Server.Abilities.Psionics
                 _actions.StartUseDelay(component.MindSwapActionEntity);
             if (TryComp<PsionicComponent>(uid, out var psionic))
             {
-                psionic.PsionicAbility = component.MindSwapActionEntity;
                 psionic.ActivePowers.Add(component);
                 psionic.PsychicFeedback.Add(component.MindSwapFeedback);
                 psionic.Amplification += 1f;
@@ -132,8 +130,8 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnMobStateChanged(EntityUid uid, MindSwappedComponent component, MobStateChangedEvent args)
         {
-            if (args.NewMobState == MobState.Dead)
-                RemComp<MindSwappedComponent>(uid);
+            if (args.NewMobState == MobState.Dead || args.NewMobState == MobState.Critical)
+                Swap(uid, component.OriginalEntity, true);
         }
 
         private void OnGhostAttempt(GhostAttemptHandleEvent args)
@@ -185,11 +183,13 @@ namespace Content.Server.Abilities.Psionics
             MindComponent? targetMind = null;
 
             // This is here to prevent missing MindContainerComponent Resolve errors.
-            if(!_mindSystem.TryGetMind(performer, out var performerMindId, out performerMind)){
+            if (!_mindSystem.TryGetMind(performer, out var performerMindId, out performerMind))
+            {
                 performerMind = null;
             };
 
-            if(!_mindSystem.TryGetMind(target, out var targetMindId, out targetMind)){
+            if (!_mindSystem.TryGetMind(target, out var targetMindId, out targetMind))
+            {
                 targetMind = null;
             };
             //This is a terrible way to 'unattach' minds. I wanted to use UnVisit but in TransferTo's code they say
@@ -239,6 +239,10 @@ namespace Content.Server.Abilities.Psionics
                 _metaDataSystem.SetEntityName(uid, Loc.GetString("telegnostic-trapped-entity-name"));
                 _metaDataSystem.SetEntityDescription(uid, Loc.GetString("telegnostic-trapped-entity-desc"));
             }
+        }
+        public void OnInsulated(EntityUid uid, MindSwappedComponent component, PsionicInsulationEvent args)
+        {
+            Swap(uid, component.OriginalEntity, true);
         }
     }
 }

@@ -131,7 +131,7 @@ namespace Content.Server.Abilities.Psionics
                 true,
                 PopupType.Medium);
 
-            _audioSystem.PlayPvs(component.SoundUse, component.Owner, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
+            _audioSystem.PlayPvs(component.SoundUse, args.Performer, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
             _psionics.LogPowerUsed(args.Performer, "focused metapsionic pulse", (int) MathF.Round(psionic.Amplification / psionic.Dampening * 3), (int) MathF.Round(psionic.Amplification / psionic.Dampening * 6));
             args.Handled = true;
 
