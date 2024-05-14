@@ -135,6 +135,18 @@
     useDelay: 0
     icon: { sprite : Mobs/Aliens/Xenos/alienqueen.rsi, state: alienq }
     event: !type:AlienQueenEvolveActionEvent
+
+- type: entity
+  id: ActionLarvaGrow
+  name: action-larva-grow
+  description: action-larva-grow-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 10
+    useDelay: 0
+    icon: { sprite : Mobs/Aliens/Xenos/alien.rsi, state: larva0 }
+    event: !type:AlienLarvaGrowActionEvent
 # Hunter
 
 - type: entity

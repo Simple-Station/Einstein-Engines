@@ -120,6 +120,15 @@
 
 
 - type: entity
+  parent: MobAlienLarva # Larva that is inside of it's owner
+  id: MobAlienLarvaInside
+  components:
+  - type: TimedPolymorph
+    enabled: false
+  - type: InsideAlienLarva
+    evolutionCooldown: 5
+
+- type: entity
   parent: MobAlienLarva
   id: MobAlienLarvaGrowStageTwo
   components:

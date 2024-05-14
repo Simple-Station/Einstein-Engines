@@ -178,6 +178,16 @@
     allowRepeatedMorphs: true
 
 - type: polymorph
+  id: AlienLarvaGrow
+  configuration:
+    entity: MobAlienLarva
+    forced: true
+    transferName: true
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true
+
+- type: polymorph
   id: AlienEvolutionGrowStageThree
   configuration:
     entity: MobAlienLarvaGrowStageThree

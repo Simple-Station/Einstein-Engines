@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using Content.Shared.StatusIcon;
+using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -18,7 +19,7 @@ public sealed partial class AlienInfectedComponent : Component
     public float GrowTime = 2f;
 
     [DataField]
-    public EntProtoId Prototype = "MobAlienLarva";
+    public EntProtoId Prototype = "MobAlienLarvaInside";
 
     [DataField]
     public EntProtoId OrganProtoId = "AlienLarvaOrgan";
@@ -44,4 +45,8 @@ public sealed partial class AlienInfectedComponent : Component
 
     [DataField]
     public TimeSpan NextGrowRoll = TimeSpan.Zero;
+
+    public Container Stomach = default!;
+
+    public EntityUid SpawnedLarva;
 }
