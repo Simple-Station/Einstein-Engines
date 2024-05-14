@@ -1,0 +1,175 @@
+﻿- type: entity
+  parent: BaseStructureDynamic
+  id: AlienEggGrowing
+  name: alien-egg-name
+  description: alien-egg-desc
+  components:
+    - type: Transform
+      noRot: true
+    - type: Icon
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: egg_growing
+    - type: Sprite
+      noRot: true
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: egg_growing
+    - type: InteractionOutline
+    - type: Physics
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.4,-0.4,0.4,0.4"
+          density: 1000
+          mask:
+          - ItemMask
+          layer:
+          - SlipLayer
+          hard: false
+    - type: PlaceableSurface
+      isPlaceable: false # defaults to closed.
+    - type: Damageable
+      damageContainer: StructuralInorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: blood
+    - type: Appearance
+    - type: ItemSlots
+    - type: StaticPrice
+      price: 1000
+    - type: TimedPolymorph
+      polymorphTime: 240
+      polymorphPrototype: AlienEggGrowth
+
+- type: entity
+  parent: BaseStructureDynamic
+  id: AlienEgg
+  name: alien-egg-name
+  description: alien-egg-desc
+  components:
+    - type: Transform
+      noRot: true
+    - type: Icon
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: egg
+    - type: Sprite
+      noRot: true
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: egg
+    - type: InteractionOutline
+    - type: Physics
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.4,-0.4,0.4,0.4"
+          density: 1000
+          mask:
+          - ItemMask
+          layer:
+          - SlipLayer
+          hard: false
+    - type: PlaceableSurface
+      isPlaceable: false
+    - type: Damageable
+      damageContainer: StructuralInorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: blood
+    - type: Appearance
+    - type: ItemSlots
+    - type: StaticPrice
+      price: 1000
+    - type: AlienEggHatch
+      polymorphPrototype: AlienEggHatch
+
+- type: entity
+  parent: BaseStructureDynamic
+  id: AlienEggHatching
+  name: alien-egg-name
+  description: alien-egg-desc
+  components:
+    - type: Transform
+      noRot: true
+    - type: Icon
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: egg_opening
+    - type: Sprite
+      noRot: true
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: egg_opening
+    - type: TimedDespawn
+      lifetime: 1.5
+    - type: SpawnOnDespawn
+      prototype: AlienEggOpened
+
+- type: entity
+  parent: BaseStructureDynamic
+  id: AlienEggOpened
+  name: alien-egg-name
+  description: alien-egg-desc
+  components:
+    - type: Transform
+      noRot: true
+    - type: Icon
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: egg_hatched
+    - type: Sprite
+      noRot: true
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: egg_hatched
+    - type: InteractionOutline
+    - type: Physics
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.4,-0.4,0.4,0.4"
+          density: 1000
+          mask:
+          - ItemMask
+          layer:
+          - SlipLayer
+          hard: false
+    - type: PlaceableSurface
+      isPlaceable: false
+    - type: Damageable
+      damageContainer: StructuralInorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: blood
+    - type: Appearance
+    - type: ItemSlots
+    - type: StaticPrice
+      price: 1000
+    - type: ConditionalSpawner
+      prototypes:
+      - Facehugger
+

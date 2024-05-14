@@ -1,0 +1,625 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation: https://github.com/tgstation/tgstation/blob/master/icons/mob/nonhuman-player/alien.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "acid"
+    },
+    {
+      "name": "alienother"
+    },
+    {
+      "name": "infected_old"
+    },
+    {
+      "name": "infected0"
+    },
+    {
+      "name": "infected1"
+    },
+    {
+      "name": "infected2"
+    },
+    {
+      "name": "infected3"
+    },
+    {
+      "name": "infected4"
+    },
+    {
+      "name": "infected5"
+    },
+    {
+      "name": "facehugger",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "facehugger_inactive",
+      "directions": 4
+    },
+    {
+      "name": "facehugger_thrown",
+      "directions": 4
+    },
+    {
+      "name": "burst_stand",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "burst_lie",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "bursted_stand",
+      "directions": 4
+    },
+    {
+      "name": "bursted_lie"
+    },
+    {
+      "name": "Hunter Stalking",
+      "directions": 4
+    },
+    {
+      "name": "Hunter Front Half",
+      "directions": 4
+    },
+    {
+      "name": "Hunter Back Half",
+      "directions": 4
+    },
+    {
+      "name": "Drone Front Half",
+      "directions": 4
+    },
+    {
+      "name": "Drone Back Half",
+      "directions": 4
+    },
+    {
+      "name": "Sentinel Front Half",
+      "directions": 4
+    },
+    {
+      "name": "Sentinel Back Half",
+      "directions": 4
+    },
+    {
+      "name": "Praetorian Front Half",
+      "directions": 4
+    },
+    {
+      "name": "Praetorian Back Half",
+      "directions": 4
+    },
+    {
+      "name": "Stand"
+    },
+    {
+      "name": "Crawl"
+    },
+    {
+      "name": "chitin"
+    },
+    {
+      "name": "claw"
+    },
+    {
+      "name": "nestoverlay"
+    },
+    {
+      "name": "egg_growing"
+    },
+    {
+      "name": "egg"
+    },
+    {
+      "name": "egg_opening",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "egg_hatched"
+    },
+    {
+      "name": "alienq",
+      "directions": 4
+    },
+    {
+      "name": "alienq_sleep"
+    },
+    {
+      "name": "alienq_unconscious"
+    },
+    {
+      "name": "alienq_dead"
+    },
+    {
+      "name": "alienq_husked"
+    },
+    {
+      "name": "alien_medal"
+    },
+    {
+        "name": "alien_medal_active"
+    },
+    {
+      "name": "alienh",
+      "directions": 4
+    },
+    {
+      "name": "aliend",
+      "directions": 4
+    },
+    {
+      "name": "aliens",
+      "directions": 4
+    },
+    {
+      "name": "alienh_pounce",
+      "directions": 4
+    },
+    {
+      "name": "aliend_pounce",
+      "directions": 4
+    },
+    {
+      "name": "aliens_pounce",
+      "directions": 4
+    },
+    {
+      "name": "alienh_sleep",
+      "directions": 4
+    },
+    {
+      "name": "aliend_sleep",
+      "directions": 4
+    },
+    {
+      "name": "aliens_sleep",
+      "directions": 4
+    },
+    {
+      "name": "alienh_unconscious"
+    },
+    {
+      "name": "aliend_unconscious"
+    },
+    {
+      "name": "aliens_unconscious"
+    },
+    {
+      "name": "aliens_dead"
+    },
+    {
+      "name": "alienh_dead"
+    },
+    {
+      "name": "aliend_dead"
+    },
+    {
+      "name": "alienh_husked"
+    },
+    {
+      "name": "aliend_husked"
+    },
+    {
+      "name": "aliens_husked"
+    },
+    {
+      "name": "larva0",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "larva0_sleep",
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "larva0_stun",
+      "directions": 4,
+      "delays": [
+        [
+          0.7,
+          0.7
+        ],
+        [
+          0.7,
+          0.7
+        ],
+        [
+          0.7,
+          0.7
+        ],
+        [
+          0.7,
+          0.7
+        ]
+      ]
+    },
+    {
+      "name": "larva0_cuff",
+      "directions": 4
+    },
+    {
+      "name": "larva0_dead"
+    },
+    {
+      "name": "larva1",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "larva1_sleep",
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "larva1_stun",
+      "directions": 4,
+      "delays": [
+        [
+          0.7,
+          0.7
+        ],
+        [
+          0.7,
+          0.7
+        ],
+        [
+          0.7,
+          0.7
+        ],
+        [
+          0.7,
+          0.7
+        ]
+      ]
+    },
+    {
+      "name": "larva1_cuff",
+      "directions": 4
+    },
+    {
+      "name": "larva1_dead"
+    },
+    {
+      "name": "larva2",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "larva2_sleep",
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "larva2_stun",
+      "directions": 4,
+      "delays": [
+        [
+          0.7,
+          0.7
+        ],
+        [
+          0.7,
+          0.7
+        ],
+        [
+          0.7,
+          0.7
+        ],
+        [
+          0.7,
+          0.7
+        ]
+      ]
+    },
+    {
+      "name": "larva2_cuff",
+      "directions": 4
+    },
+    {
+      "name": "larva2_dead"
+    },
+    {
+      "name": "facehugger_dead"
+    },
+    {
+      "name": "facehugger_impregnated"
+    },
+    {
+      "name": "maid",
+      "directions": 4
+    },
+    {
+      "name": "maid_dead"
+    },
+    {
+      "name": "alienspit",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "alienspit_leap",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "aliencuff",
+      "directions": 4
+    },
+      {
+          "name": "tail_lash"
+      }
+  ]
+}

@@ -164,3 +164,107 @@
     revertOnDeath: true
     revertOnCrit: true
     duration: 20
+
+# Alien evolutions
+
+- type: polymorph
+  id: AlienEvolutionGrowStageTwo
+  configuration:
+    entity: MobAlienLarvaGrowStageTwo
+    forced: true
+    transferName: true
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true
+
+- type: polymorph
+  id: AlienEvolutionGrowStageThree
+  configuration:
+    entity: MobAlienLarvaGrowStageThree
+    forced: true
+    transferName: true
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true
+
+- type: polymorph
+  id: AlienEvolutionDrone
+  configuration:
+    entity: MobAlienDrone
+    forced: true
+    transferName: false
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true
+
+- type: polymorph
+  id: AlienEvolutionSentinel
+  configuration:
+    entity: MobAlienSentinel
+    forced: true
+    transferName: false
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true
+
+- type: polymorph
+  id: AlienEvolutionPraetorian
+  configuration:
+    entity: MobAlienPraetorian
+    forced: true
+    transferName: false
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true
+
+- type: polymorph
+  id: AlienEvolutionHunter
+  configuration:
+    entity: MobAlienHunter
+    forced: true
+    transferName: false
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true
+
+- type: polymorph
+  id: AlienEggGrowth
+  configuration:
+    entity: AlienEgg
+    forced: true
+    transferName: false
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true
+
+- type: polymorph
+  id: AlienEggHatch
+  configuration:
+    entity: AlienEggHatching
+    forced: true
+    transferName: false
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true
+
+- type: polymorph
+  id: AlienEvolutionQueen
+  configuration:
+    entity: MobAlienQueen
+    forced: true
+    transferName: false
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true
+
+# Deactivating facehugger
+
+- type: polymorph
+  id: FacehuggerToInactive
+  configuration:
+    entity: FacehuggerInactive
+    forced: true
+    transferName: false
+    revertOnDeath: false
+    revertOnCrit: false
+    allowRepeatedMorphs: true

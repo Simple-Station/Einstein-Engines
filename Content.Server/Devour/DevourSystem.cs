@@ -46,4 +46,3 @@ public sealed class DevourSystem : SharedDevourSystem
         _audioSystem.PlayPvs(component.SoundDevour, uid);
     }
 }
-

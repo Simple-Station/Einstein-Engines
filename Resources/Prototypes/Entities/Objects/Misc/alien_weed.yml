@@ -1,0 +1,88 @@
+﻿- type: entity
+  name: alien-weed-name
+  description: alien-weed-desc
+  parent: BaseStructure
+  id: AlienWeed
+  components:
+      - type: Sprite
+        sprite: Structures/resin_weeds.rsi
+        state: full
+        drawdepth: FloorTiles
+      - type: Icon
+        sprite: Structures/resin_weeds.rsi
+        state: full
+      - type: IconSmooth
+        key: full
+        base: resin-weeds
+      - type: Tag
+        tags: [ Carpet ]
+      - type: Physics
+        canCollide: false
+      - type: Fixtures
+        fixtures:
+          fix1:
+            shape:
+              !type:PhysShapeAabb
+              bounds: "-0.5,-0.5,0.5,0.5"
+            layer:
+            - SlipLayer
+            mask:
+            - ItemMask
+            density: 1000
+            hard: false
+      - type: Damageable
+        damageContainer: StructuralInorganic
+      - type: Destructible
+        thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 15
+          behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - type: PlasmaGainModifier
+
+- type: entity
+  name: alien-node-name
+  description: alien-node-desc
+  parent: BaseStructure
+  id: AlienWeednode
+  components:
+  - type: Sprite
+    sprite: Structures/weednode.rsi
+    state: full
+    drawdepth: FloorTiles
+  - type: Icon
+    sprite: Structures/weednode.rsi
+    state: full
+  - type: AreaSpawner
+    radius: 9
+    spawnPrototype: AlienWeed
+    intervalSeconds: 20
+  - type: Tag
+    tags: [ Carpet ]
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+        - SlipLayer
+        mask:
+        - ItemMask
+        density: 1000
+        hard: false
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PlasmaGainModifier

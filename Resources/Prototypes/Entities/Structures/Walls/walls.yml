@@ -1324,3 +1324,35 @@
   - type: IconSmooth
     key: cobblebricks
     base: cobblebrick
+
+- type: entity
+  parent: BaseWall
+  id: WallResin
+  name: wall-resin-name
+  description: wall-resin-desc
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: blood
+  - type: Tag
+    tags:
+    - Wall
+  - type: Sprite
+    sprite: Structures/Walls/resin.rsi
+  - type: Icon
+    sprite: Structures/Walls/resin.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: gib
+  - type: IconSmooth
+    key: resinwall
+    base: resinwall

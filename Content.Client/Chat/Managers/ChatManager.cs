@@ -72,11 +72,15 @@ namespace Content.Client.Chat.Managers
                     _consoleHost.ExecuteCommand($"tsay \"{CommandParsing.Escape(str)}\"");
                     break;
 
+                case ChatSelectChannel.XenoHivemind:
+                    _consoleHost.ExecuteCommand($"aliensay \"{CommandParsing.Escape(str)}\"");
+                    break;
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(channel), channel, null);
             }
         }
-        //Nyano - Summary: fires off the update permissions script. 
+        //Nyano - Summary: fires off the update permissions script.
         public void UpdatePermissions()
         {
             PermissionsUpdated?.Invoke();

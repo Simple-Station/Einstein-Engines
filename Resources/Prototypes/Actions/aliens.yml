@@ -1,0 +1,202 @@
+﻿# Base actions
+- type: entity
+  id: ActionToggleLightingAlien
+  name: Toggle All Lighting
+  description: Toggle all light rendering to better observe dark areas.
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: Interface/VerbIcons/light.svg.192dpi.png
+      priority: -1
+      clientExclusive: true
+      checkCanInteract: false
+      event: !type:ToggleLightingAlienActionEvent
+
+- type: entity
+  id: ActionVomit
+  name: action-vomit-name
+  description: action-vomit-desc
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: { sprite : Fluids/vomit.rsi, state: vomit-0 }
+      checkCanInteract: false
+      priority: 0
+      event: !type:VomitActionEvent
+
+- type: entity
+  id: ActionMakeAcid
+  name: action-make-acid-name
+  description: action-make-acid-desc
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: { sprite : Mobs/Aliens/Xenos/alien.rsi, state: acid }
+      event: !type:AcidMakeActionEvent
+      priority: 1
+      useDelay: 1
+
+- type: entity
+  id: ActionAlienNode
+  name: action-create-weednode-name
+  description: action-create-weednode-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 2
+    useDelay: 10
+    icon: { sprite: Structures/weednode.rsi, state: full }
+    event: !type:WeednodeActionEvent
+
+# Drone
+
+- type: entity
+  id: ActionAlienDroneWall
+  name: action-create-resin-wall-name
+  description: action-create-resin-wall-desc
+  noSpawn: true
+  components:
+    - type: InstantAction
+      priority: 3
+      useDelay: 1
+      icon: { sprite: Structures/Walls/resin.rsi, state: full }
+      event: !type:ResinWallActionEvent
+
+- type: entity
+  id: ActionWindowResin
+  name: action-create-resin-window-name
+  description: action-create-resin-window-desc
+  noSpawn: true
+  components:
+    - type: InstantAction
+      priority: 4
+      useDelay: 1
+      icon: { sprite : Structures/Windows/resin_membrane.rsi, state: full }
+      event: !type:ResinWindowActionEvent
+
+# Evolutions
+
+- type: entity
+  id: ActionEvolveDrone
+  name: action-evolve-alien-drone
+  description: action-evolve-alien-drone-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 9
+    useDelay: 5
+    icon: { sprite : Mobs/Aliens/Xenos/alien.rsi, state: aliend }
+    event: !type:AlienDroneEvolveActionEvent
+
+- type: entity
+  id: ActionEvolveSentinel
+  name: action-evolve-alien-sentinel
+  description: action-evolve-alien-sentinel-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 11
+    useDelay: 5
+    icon: { sprite : Mobs/Aliens/Xenos/alien.rsi, state: aliens }
+    event: !type:AlienSentinelEvolveActionEvent
+
+- type: entity
+  id: ActionEvolvePraetorian
+  name: action-evolve-alien-praetorian
+  description: action-evolve-alien-praetorian-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 10
+    useDelay: 0
+    icon: { sprite : Mobs/Aliens/Xenos/alienqueen.rsi, state: alienp }
+    event: !type:AlienPraetorianEvolveActionEvent
+
+- type: entity
+  id: ActionEvolveHunter
+  name: action-evolve-alien-hunter
+  description: action-evolve-alien-hunter-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 10
+    useDelay: 0
+    icon: { sprite : Mobs/Aliens/Xenos/alien.rsi, state: alienh }
+    event: !type:AlienHunterEvolveActionEvent
+
+- type: entity
+  id: ActionEvolveQueen
+  name: action-evolve-alien-queen
+  description: action-evolve-alien-queen-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 10
+    useDelay: 0
+    icon: { sprite : Mobs/Aliens/Xenos/alienqueen.rsi, state: alienq }
+    event: !type:AlienQueenEvolveActionEvent
+# Hunter
+
+- type: entity
+  id: ActionStalkAlien
+  name: action-stalk-alien-hunter
+  description: action-stalk-alien-hunter-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 0
+    useDelay: 0
+    icon: { sprite : Interface/Alien/screen_alien.rsi, state: walking }
+    event: !type:AlienStalkActionEvent
+
+# Queen
+
+- type: entity
+  id: ActionAlienEgg
+  name: action-egg-alien
+  description: action-egg-alien-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 0
+    useDelay: 1
+    icon: { sprite : Mobs/Aliens/Xenos/alien.rsi, state: egg }
+    event: !type:AlienEggActionEvent
+
+- type: entity
+  id: ActionAlienRoyalLarva
+  name: action-promotion-alien
+  description: action-promotion-alien-desc
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    priority: 0
+    useDelay: 1
+    icon: { sprite : Mobs/Aliens/Xenos/alien.rsi, state: alien_medal }
+    iconOn: { sprite : Mobs/Aliens/Xenos/alien.rsi, state: alien_medal_active  }
+    event: !type:RoyalLarvaActionEvent
+
+- type: entity
+  id: ActionTailLash
+  name: action-tail-lash
+  description: action-tail-lash-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: 0
+    cooldown: 11
+    icon: { sprite : Mobs/Aliens/Xenos/alien.rsi, state: tail_lash }
+    event: !type:TailLashActionEvent
+
+- type: entity
+  id: ActionAlienTransferPlasma
+  name: action-transfer-plasma-alien
+  description: action-transfer-plasma-alien-desc
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    priority: 0
+    useDelay: 1
+    icon: { sprite : Objects/Materials/Sheets/other.rsi, state: plasma }
+    iconOn: { sprite : Objects/Materials/Sheets/other.rsi, state: plasma_2 }
+    event: !type:TransferPlasmaActionEvent

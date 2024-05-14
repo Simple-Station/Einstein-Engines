@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation on: https://github.com/tgstation/tgstation/blob/master/icons/mob/nonhuman-player/alienqueen.dmi",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "alienq",
+      "directions": 4
+    },
+    {
+      "name": "alienq_running",
+      "directions": 4
+    },
+    {
+      "name": "alienq_sleep"
+    },
+    {
+      "name": "alienq_unconscious"
+    },
+    {
+      "name": "alienq_dead"
+    },
+    {
+      "name": "alienq_husked"
+    },
+    {
+      "name": "alienp",
+      "directions": 4
+    },
+    {
+      "name": "alienp_running",
+      "directions": 4
+    },
+    {
+      "name": "alienp_sleep"
+    },
+    {
+      "name": "alienp_unconscious"
+    },
+    {
+      "name": "alienp_dead"
+    },
+    {
+      "name": "alienp_husked"
+    },
+    {
+      "name": "facehuggerq_r",
+      "directions": 4
+    },
+    {
+      "name": "facehuggerq_l",
+      "directions": 4
+    },
+    {
+      "name": "facehuggerp_r",
+      "directions": 4
+    },
+    {
+      "name": "facehuggerp_l",
+      "directions": 4
+    },
+    {
+      "name": "facehugger_inactiveq_r",
+      "directions": 4
+    },
+    {
+      "name": "facehugger_inactiveq_l",
+      "directions": 4
+    },
+    {
+      "name": "facehugger_inactivep_r",
+      "directions": 4
+    },
+    {
+      "name": "facehugger_inactivep_l",
+      "directions": 4
+    },
+    {
+      "name": "alienqmaid_husked"
+    },
+    {
+      "name": "alienspit_p",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "alienspit_q",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "aliencuff_p",
+      "directions": 4
+    },
+    {
+      "name": "aliencuff_q",
+      "directions": 4
+    }
+  ]
+}

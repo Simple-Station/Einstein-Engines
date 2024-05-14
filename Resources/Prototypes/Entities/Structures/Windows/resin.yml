@@ -1,0 +1,74 @@
+﻿- type: entity
+  id: WindowResin
+  parent: BaseStructure
+  name: resin-membrane-name
+  description: resin-membrane-desc
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Window
+  components:
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          collection: blood
+    - type: WallMount
+      arc: 360 # interact despite grilles
+    - type: Tag
+      tags:
+        - ForceFixRotations
+        - Window
+    - type: Sprite
+      drawdepth: WallTops
+      sprite: Structures/Windows/resin_membrane.rsi
+    - type: Icon
+      sprite: Structures/Windows/resin_membrane.rsi
+      state: full
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb {}
+          mask:
+            - FullTileMask
+          layer:
+            - GlassLayer
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: Glass
+    - type: ExaminableDamage
+      messages: WindowMessages
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 150 #excess damage (nuke?). avoid computational cost of spawning entities.
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: gib
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+        - trigger:
+            !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: gib
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+    - type: Airtight
+    - type: IconSmooth
+      key: resin_membrane
+      base: resin_membrane
+    - type: InteractionPopup
+      interactSuccessString: comp-window-knock
+      messagePerceivedByOthers: comp-window-knock
+      interactSuccessSound:
+        path: /Audio/Effects/glass_knock.ogg
+    - type: Appearance
+    - type: StaticPrice
+      price: 100

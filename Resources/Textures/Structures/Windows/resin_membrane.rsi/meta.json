@@ -1,0 +1,47 @@
+{
+	"version": 1,
+	"size": {
+		"x": 32,
+		"y": 32
+	},
+	"license": "",
+	"copyright": "",
+	"states": [
+		{
+			"name": "resin_membrane0",
+			"directions": 4
+		},
+		{
+			"name": "resin_membrane1",
+			"directions": 4
+		},
+		{
+			"name": "resin_membrane2",
+			"directions": 4
+		},
+		{
+			"name": "resin_membrane3",
+			"directions": 4
+		},
+		{
+			"name": "resin_membrane4",
+			"directions": 4
+		},
+		{
+			"name": "resin_membrane5",
+			"directions": 4
+		},
+		{
+			"name": "resin_membrane6",
+			"directions": 4
+		},
+		{
+			"name": "resin_membrane7",
+			"directions": 4
+		},
+		{
+			"name": "full",
+			"directions": 1
+		}
+	]
+}

@@ -11,6 +11,9 @@
   id: AirSensor
 
 - type: Tag
+  id: AlienItem
+
+- type: Tag
   id: Ambrosia
 
 - type: Tag

@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation on https://github.com/tgstation/tgstation/blob/master/icons/hud/screen_alien.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "suit"
+    },
+    {
+      "name": "pocket"
+    },
+    {
+      "name": "hand_r"
+    },
+    {
+      "name": "hand_l"
+    },
+    {
+      "name": "rhandactive"
+    },
+    {
+      "name": "lhandactive"
+    },
+    {
+      "name": "pull"
+    },
+    {
+      "name": "act_resist"
+    },
+    {
+      "name": "act_drop"
+    },
+    {
+      "name": "act_rest"
+    },
+    {
+      "name": "act_rest0"
+    },
+    {
+      "name": "act_throw_off"
+    },
+    {
+      "name": "act_throw_on"
+    },
+    {
+      "name": "swap_1"
+    },
+    {
+      "name": "swap_2"
+    },
+    {
+      "name": "harm"
+    },
+    {
+      "name": "help"
+    },
+    {
+      "name": "disarm"
+    },
+    {
+      "name": "grab"
+    },
+    {
+      "name": "walking"
+    },
+    {
+      "name": "running"
+    },
+    {
+      "name": "zone_sel"
+    },
+    {
+      "name": "leap_off"
+    },
+    {
+      "name": "leap_on"
+    },
+    {
+      "name": "template"
+    },
+    {
+      "name": "reserved"
+    },
+    {
+      "name": "template_frame"
+    },
+    {
+      "name": "health0"
+    },
+    {
+      "name": "health1"
+    },
+    {
+      "name": "health2"
+    },
+    {
+      "name": "health3"
+    },
+    {
+      "name": "health4"
+    },
+    {
+      "name": "health5"
+    },
+    {
+      "name": "health6",
+      "delays": [
+        [
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "health7"
+    },
+    {
+      "name": "health8"
+    },
+    {
+      "name": "power_display"
+    },
+    {
+      "name": "chest"
+    },
+    {
+      "name": "groin"
+    },
+    {
+      "name": "r_arm"
+    },
+    {
+      "name": "l_arm"
+    },
+    {
+      "name": "r_leg"
+    },
+    {
+      "name": "l_leg"
+    },
+    {
+      "name": "eyes"
+    },
+    {
+      "name": "mouth"
+    },
+    {
+      "name": "head"
+    },
+    {
+      "name": "nightvision0"
+    },
+    {
+      "name": "nightvision1"
+    },
+    {
+      "name": "queen_finder"
+    },
+    {
+      "name": "finder_med",
+      "directions": 8
+    },
+    {
+      "name": "finder_near",
+      "directions": 8
+    },
+    {
+      "name": "finder_center",
+      "delays": [
+        [
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "finder_far",
+      "directions": 8
+    },
+    {
+      "name": "combat_off"
+    },
+    {
+      "name": "combat"
+    },
+    {
+      "name": "scroll_up"
+    },
+    {
+      "name": "scroll_down"
+    }
+  ]
+}

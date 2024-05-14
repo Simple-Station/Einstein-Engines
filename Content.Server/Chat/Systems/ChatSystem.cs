@@ -13,6 +13,7 @@ using Content.Server.Speech.EntitySystems;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Aliens.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Database;
@@ -303,6 +304,38 @@ public sealed partial class ChatSystem : SharedChatSystem
                 break;
             case InGameOOCChatType.Looc:
                 SendLOOC(source, player, message, hideChat);
+                break;
+        }
+    }
+
+    public void TrySendXenoHivemindMessage(
+        EntityUid source,
+        string message,
+        InGameOOCChatType type,
+        bool hideChat,
+        IConsoleShell? shell = null,
+        ICommonSession? player = null
+    )
+    {
+        if (!CanSendInGame(message, shell, player))
+            return;
+
+        if (player != null && !_chatManager.HandleRateLimit(player))
+            return;
+
+        // It doesn't make any sense for a non-player to send in-game OOC messages, whereas non-players may be sending
+        // in-game IC messages.
+        if (player?.AttachedEntity is not { Valid: true } entity || source != entity)
+            return;
+
+        message = SanitizeInGameOOCMessage(message);
+
+        var sendType = type;
+
+        switch (sendType)
+        {
+            case InGameOOCChatType.HiveXeno:
+                SendXenoHivemindChat(source, player, message, hideChat);
                 break;
         }
     }
@@ -619,6 +652,36 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         _chatManager.ChatMessageToMany(ChatChannel.Dead, message, wrappedMessage, source, hideChat, true, clients.ToList(), author: player.UserId);
     }
+
+    private void SendXenoHivemindChat(EntityUid source, ICommonSession player, string message, bool hideChat)
+    {
+        var clients = GetXenoChatClients();
+        var playerName = Name(source);
+        var speech = GetSpeechVerb(source, message);
+        string wrappedMessage;
+        if (!HasComp<AlienQueenComponent>(source))
+        {
+            wrappedMessage = Loc.GetString(speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message",
+                ("entityName", playerName),
+                ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
+                ("fontType", speech.FontId),
+                ("fontSize", speech.FontSize),
+                ("message", FormattedMessage.EscapeText(message)));
+            _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Xeno Hivemind chat from {player:Player}: {message}");
+        }
+        else
+        {
+            wrappedMessage = Loc.GetString(speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message",
+                ("entityName", playerName),
+                ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
+                ("fontType", speech.FontId),
+                ("fontSize", 25),
+                ("message", FormattedMessage.EscapeText(message)));
+            _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Xeno Hivemind chat from queen {player:Player}: {message}");
+        }
+        if (HasComp<AlienComponent>(source))
+            _chatManager.ChatMessageToMany(ChatChannel.XenoHivemind, message, wrappedMessage, source, hideChat, true, clients.ToList(), author: player.UserId);
+    }
     #endregion
 
     #region Utility
@@ -763,6 +826,14 @@ public sealed partial class ChatSystem : SharedChatSystem
             .AddWhereAttachedEntity(HasComp<GhostComponent>)
             .Recipients
             .Union(_adminManager.ActiveAdmins)
+            .Select(p => p.Channel);
+    }
+
+    private IEnumerable<INetChannel> GetXenoChatClients()
+    {
+        return Filter.Empty()
+            .AddWhereAttachedEntity(HasComp<AlienComponent>)
+            .Recipients
             .Select(p => p.Channel);
     }
 
@@ -960,7 +1031,8 @@ public enum InGameICChatType : byte
 public enum InGameOOCChatType : byte
 {
     Looc,
-    Dead
+    Dead,
+    HiveXeno
 }
 
 /// <summary>
