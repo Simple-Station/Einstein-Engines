@@ -66,6 +66,16 @@ namespace Content.Server.Psionics.Abilities
 
         public void RemovePsionics(EntityUid uid)
         {
+            if (RemComp<PotentialPsionicComponent>(uid))
+            {
+                _popups.PopupEntity(Loc.GetString("mindbreaking-feedback", ("entity", uid)),
+                    uid,
+                    // TODO: Use LoS-based Filter when one is available.
+                    Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !ExamineSystemShared.InRangeUnOccluded(uid, entity, ExamineRange, null)),
+                    true,
+                    PopupType.Medium);
+            }
+
             if (!TryComp<PsionicComponent>(uid, out var psionic))
                 return;
 
@@ -92,16 +102,9 @@ namespace Content.Server.Psionics.Abilities
                 }
             }
 
-            _popups.PopupEntity(Loc.GetString("mindbreaking-feedback", ("entity", uid)),
-                uid,
-                // TODO: Use LoS-based Filter when one is available.
-                Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !ExamineSystemShared.InRangeUnOccluded(uid, entity, ExamineRange, null)),
-                true,
-                PopupType.Medium);
-
             _statusEffectsSystem.TryAddStatusEffect(uid, "Stutter", TimeSpan.FromMinutes(5), false, "StutteringAccent");
 
-            _glimmerSystem.Glimmer += _random.Next((int) MathF.Round(psionic.Amplification * psionic.Dampening * -5), (int) MathF.Round(psionic.Amplification * psionic.Dampening * -10));
+            _glimmerSystem.Glimmer += _random.Next((int) MathF.Round(psionic.Amplification * psionic.Dampening * -10), (int) MathF.Round(psionic.Amplification * psionic.Dampening * -5));
             RemComp<PsionicComponent>(uid);
             RemComp<PotentialPsionicComponent>(uid);
         }
