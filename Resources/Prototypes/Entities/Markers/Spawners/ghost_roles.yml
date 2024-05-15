@@ -153,3 +153,22 @@
     - state: green
     - sprite: Mobs/Species/Terminator/parts.rsi
       state: full
+
+- type: entity
+  id: SpawnPointGhostAlienLarva
+  name: ghost role spawn point
+  suffix: alien larva
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: ghost-role-information-alien-larva-name
+    description: ghost-role-information-alien-larva-description
+    rules: ghost-role-information-xeno-rules
+  - type: GhostRoleMobSpawner
+    prototype: MobAlienLarvaGrowStageTwo
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: larva1
