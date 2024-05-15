@@ -48,6 +48,7 @@ namespace Content.Server.Psionics
             SubscribeLocalEvent<AntiPsionicWeaponComponent, StaminaMeleeHitEvent>(OnStamHit);
 
             SubscribeLocalEvent<PsionicComponent, ComponentInit>(OnInit);
+            SubscribeLocalEvent<PsionicComponent, ComponentStartup>(OnStartup);
             SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
         }
 
@@ -81,12 +82,13 @@ namespace Content.Server.Psionics
                     _electrocutionSystem.TryDoElectrocution(args.User, null, 20, TimeSpan.FromSeconds(5), false);
             }
         }
-
-        private void OnInit(EntityUid uid, PsionicComponent component, ComponentInit args)
+        private void OnStartup(EntityUid uid, PsionicComponent component, ComponentStartup args)
         {
             component.Amplification = _random.NextFloat(0.3f, 1.1f);
             component.Dampening = _random.NextFloat(0.3f, 1.1f);
-
+        }
+        private void OnInit(EntityUid uid, PsionicComponent component, ComponentInit args)
+        {
             if (!component.Removable)
                 return;
 
