@@ -79,10 +79,9 @@ namespace Content.Server.Psionics.Abilities
                     }
                 }
 
-                var userVelocity = _physics.GetMapLinearVelocity(args.Performer);
                 var direction = args.Target.Position;
 
-                _gunSystem.ShootProjectile(ent, direction, userVelocity, args.Performer, args.Performer, 20f);
+                _gunSystem.ShootProjectile(ent, direction, new System.Numerics.Vector2(0, 0), args.Performer, args.Performer, 20f);
 
                 _psionics.LogPowerUsed(args.Performer, "pyrokinesis",
                     (int) MathF.Round(6f * psionic.Amplification - psionic.Dampening),
