@@ -32,7 +32,7 @@ public sealed class FacehuggerSystem : EntitySystem
 
     public void OnEquipped(EntityUid uid, FacehuggerComponent component, GotEquippedEvent args)
     {
-        if(!component.Active)
+        if(!component.Active || args.Slot != "mask")
             return;
         _stun.TryParalyze(args.Equipee, TimeSpan.FromSeconds(25), false);
         component.Equipped = true;

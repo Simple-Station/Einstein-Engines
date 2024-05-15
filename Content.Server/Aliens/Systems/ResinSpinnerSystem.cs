@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Linq;
+using System.Numerics;
 using Content.Server.Popups;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
@@ -87,9 +88,9 @@ public sealed class ResinSpinnerSystem : EntitySystem
         }
 
         // Check there are no mobs there
-        foreach (var entity in _lookupSystem.GetLocalEntitiesIntersecting(tile.Value, 0f))
+        if (offset)
         {
-            if (HasComp<MobStateComponent>(entity) && entity != uid)
+            if (_lookupSystem.GetLocalEntitiesIntersecting(tile.Value, 0f).Any(entity => HasComp<MobStateComponent>(entity) && entity != uid))
             {
                 _popupSystem.PopupEntity(Loc.GetString("alien-create-structure-failed"), uid, uid);
                 return;

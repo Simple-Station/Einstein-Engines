@@ -412,7 +412,7 @@ public abstract partial class SharedBuckleSystem
 
             if (_gameTiming.CurTime < buckleComp.BuckleTime + buckleComp.Delay)
             {
-                _popup.PopupEntity(Loc.GetString("unbuckling-wait-message", ("delay", (buckleComp.Delay - _gameTiming.CurTime + buckleComp.BuckleTime).Seconds)), buckleUid, buckleUid);
+                _popup.PopupEntity(Loc.GetString("unbuckling-wait-message", ("delay", Math.Round((buckleComp.Delay - _gameTiming.CurTime + buckleComp.BuckleTime).TotalSeconds))), buckleUid, buckleUid);
                 return false;
             }
 
