@@ -10,7 +10,7 @@ using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Psionics.Glimmer;
 using Content.Server.StationEvents.Components;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Damage;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
