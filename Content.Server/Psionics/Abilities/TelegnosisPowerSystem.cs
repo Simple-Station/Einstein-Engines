@@ -1,5 +1,5 @@
 using Content.Shared.Actions;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Mind.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.Mobs;

@@ -1,6 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using static Content.Shared.Examine.ExamineSystemShared;

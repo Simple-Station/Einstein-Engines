@@ -3,7 +3,7 @@ using Robust.Shared.Player;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.DoAfter;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Actions;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.DoAfter;
