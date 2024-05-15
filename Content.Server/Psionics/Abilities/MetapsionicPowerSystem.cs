@@ -119,7 +119,7 @@ namespace Content.Server.Psionics.Abilities
 
             var ev = new FocusedMetapsionicDoAfterEvent(_gameTiming.CurTime);
 
-            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.Performer, component.UseDelay, ev, args.Performer, args.Target, args.Performer)
+            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.Performer, component.UseDelay - psionic.Amplification, ev, args.Performer, args.Target, args.Performer)
             {
                 BlockDuplicate = true,
                 BreakOnUserMove = true,
@@ -129,7 +129,7 @@ namespace Content.Server.Psionics.Abilities
 
             component.DoAfter = doAfterId;
 
-            _popups.PopupEntity(Loc.GetString("focused-metapsionic-pulse-begin", ("entity", args.Performer)),
+            _popups.PopupEntity(Loc.GetString("focused-metapsionic-pulse-begin", ("entity", args.Target)),
                 args.Performer,
                 // TODO: Use LoS-based Filter when one is available.
                 Filter.Pvs(args.Performer).RemoveWhereAttachedEntity(entity => !ExamineSystemShared.InRangeUnOccluded(args.Performer, entity, ExamineRange, null)),
