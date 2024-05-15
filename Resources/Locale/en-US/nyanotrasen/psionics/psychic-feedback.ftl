@@ -9,10 +9,11 @@ mindswapped-feedback = Cursed flesh! {CAPITALIZE($entity)} dwells within the wro
 noospheric-zap-feedback = {CAPITALIZE($entity)}'s soul writhes with thunder from beyond the veil
 pyrokinesis-feedback = The Secret of Fire dwells within {CAPITALIZE($entity)}
 invisibility-feedback = {CAPITALIZE($entity)}'s wyrd seeks to hide from thine gaze
-telegnosis-feedback = {CAPITALIZE($entity)}'s soul travels across bridges composed of dreamlight.
+telegnosis-feedback = {CAPITALIZE($entity)}'s soul travels across bridges composed of dreamlight
 sophic-grammateus-feedback = SEEKER, YOU NEED ONLY ASK FOR MY WISDOM.
 oracle-feedback = WHY DO YOU BOTHER ME SEEKER? HAVE I NOT MADE MY DESIRES CLEAR?
 metempsychotic-machine-feedback = The sea of fate flows through this machine
+ifrit-feedback = A spirit of Gehenna, bound by the will of a powerful psychic
 
 # Power PVS Messages
 focused-metapsionic-pulse-begin = The air around {CAPITALIZE($entity)} begins to shimmer faintly
