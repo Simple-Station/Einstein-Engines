@@ -16,7 +16,7 @@ using Content.Shared.Popups;
 using Content.Shared.Examine;
 using static Content.Shared.Examine.ExamineSystemShared;
 
-namespace Content.Server.Abilities.Psionics
+namespace Content.Server.Psionics.Abilities
 {
     public sealed class PsionicAbilitiesSystem : EntitySystem
     {

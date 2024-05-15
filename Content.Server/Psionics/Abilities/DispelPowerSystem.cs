@@ -11,7 +11,7 @@ using Robust.Shared.Random;
 using Content.Shared.Actions.Events;
 using Robust.Shared.Audio.Systems;
 
-namespace Content.Server.Abilities.Psionics
+namespace Content.Server.Psionics.Abilities
 {
     public sealed class DispelPowerSystem : EntitySystem
     {
@@ -70,7 +70,7 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(DispelPowerActionEvent args)
         {
-            if (HasComp<PsionicInsulationComponent>(args.Target))
+            if (HasComp<PsionicInsulationComponent>(args.Target) || HasComp<PsionicInsulationComponent>(args.Performer))
                 return;
             if (!TryComp<PsionicComponent>(args.Performer, out var psionic) || !HasComp<PsionicComponent>(args.Target))
                 return;
@@ -81,7 +81,9 @@ namespace Content.Server.Abilities.Psionics
             if (ev.Handled)
             {
                 args.Handled = true;
-                _psionics.LogPowerUsed(args.Performer, "dispel", (int) MathF.Round(psionic.Dampening * -2), (int) MathF.Round(psionic.Dampening * -4));
+                _psionics.LogPowerUsed(args.Performer, "dispel",
+                    (int) MathF.Round(-2 * psionic.Dampening + psionic.Amplification),
+                    (int) MathF.Round(-4 * psionic.Dampening + psionic.Amplification));
             }
         }
 

@@ -1,13 +1,12 @@
 using Content.Shared.Actions;
 using Content.Shared.Abilities.Psionics;
-using Content.Shared.Damage;
 using Content.Shared.StatusEffect;
 using Content.Server.Electrocution;
 using Content.Server.Stunnable;
 using Content.Server.Beam;
 using Content.Shared.Actions.Events;
 
-namespace Content.Server.Abilities.Psionics
+namespace Content.Server.Psionics.Abilities
 {
     public sealed class NoosphericZapPowerSystem : EntitySystem
     {
@@ -16,7 +15,6 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly StunSystem _stunSystem = default!;
         [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
         [Dependency] private readonly BeamSystem _beam = default!;
-        [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly ElectrocutionSystem _electrocution = default!;
 
 
@@ -63,10 +61,17 @@ namespace Content.Server.Abilities.Psionics
                 _beam.TryCreateBeam(args.Performer, args.Target, "LightningNoospheric");
                 _stunSystem.TryParalyze(args.Target, TimeSpan.FromSeconds(1 * psionic.Amplification), false);
 
-                _electrocution.TryDoElectrocution(args.Target, null, (int) MathF.Round(5f * psionic.Amplification), new TimeSpan((long) MathF.Round(1f * psionic.Amplification)), true, ignoreInsulation: true);
+                _electrocution.TryDoElectrocution(args.Target, null,
+                    (int) MathF.Round(5f * psionic.Amplification),
+                    new TimeSpan((long) MathF.Round(1f * psionic.Amplification)),
+                    true,
+                    ignoreInsulation: true);
+
                 _statusEffectsSystem.TryAddStatusEffect(args.Target, "Stutter", TimeSpan.FromSeconds(2 * psionic.Amplification), false, "StutteringAccent");
 
-                _psionics.LogPowerUsed(args.Performer, "noopsheric zap", (int) MathF.Round(psionic.Dampening * -4), (int) MathF.Round(psionic.Dampening * -6));
+                _psionics.LogPowerUsed(args.Performer, "noopsheric zap",
+                    (int) MathF.Round(6 * psionic.Amplification - psionic.Dampening),
+                    (int) MathF.Round(8 * psionic.Amplification - psionic.Dampening));
                 args.Handled = true;
             }
         }

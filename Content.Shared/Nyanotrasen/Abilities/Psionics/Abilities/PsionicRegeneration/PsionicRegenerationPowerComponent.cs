@@ -12,7 +12,7 @@ namespace Content.Shared.Abilities.Psionics
         public DoAfterId? DoAfter;
 
         [DataField("essence")]
-        public float EssenceAmount = 20;
+        public float EssenceAmount = 10;
 
         [DataField("useDelay")]
         public float UseDelay = 8f;
