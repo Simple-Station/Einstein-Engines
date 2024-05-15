@@ -4,16 +4,13 @@ using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Server.EUI;
-using Content.Server.Psionics;
 using Content.Server.Mind;
-using Content.Shared.Mind.Components;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
-using Content.Shared.Examine;
 using static Content.Shared.Examine.ExamineSystemShared;
 
 namespace Content.Server.Psionics.Abilities

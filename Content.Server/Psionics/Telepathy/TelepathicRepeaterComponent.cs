@@ -1,4 +1,4 @@
-namespace Content.Server.Nyanotrasen.Chat
+namespace Content.Server.Psionics.Telepathy
 {
     /// <summary>
     /// Repeats whatever is happening in telepathic chat.

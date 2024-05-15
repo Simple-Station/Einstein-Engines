@@ -11,7 +11,6 @@ using Content.Server.NPC.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Random;
-using Content.Shared.Psionics;
 
 namespace Content.Server.Psionics
 {

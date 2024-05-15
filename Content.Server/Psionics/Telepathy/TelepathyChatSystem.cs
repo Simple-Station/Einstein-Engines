@@ -3,7 +3,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Psionics;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Chat;
 using Content.Shared.Database;
@@ -17,10 +17,10 @@ using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
 
-namespace Content.Server.Nyanotrasen.Chat
+namespace Content.Server.Psionics.Telepathy
 {
     /// <summary>
-    /// Extensions for nyano's chat stuff
+    /// Extensions for Telepathic Chat
     /// </summary>
 
     public sealed class NyanoChatSystem : EntitySystem

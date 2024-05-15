@@ -5,7 +5,7 @@ using Robust.Shared.Console;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 
-namespace Content.Server.Chat.Commands
+namespace Content.Server.Psionics.Telepathy
 {
     [AnyCommand]
     internal sealed class TSayCommand : IConsoleCommand

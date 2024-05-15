@@ -1,9 +1,8 @@
 using Content.Server.Administration;
 using Content.Shared.Administration;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Console;
-using Robust.Server.GameObjects;
 using Content.Shared.Actions;
 using Robust.Shared.Player;
 
