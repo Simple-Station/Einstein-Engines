@@ -1,8 +1,8 @@
 ﻿- type: entity
-  name: alien-larva-name
+  name: Alien larva
   parent: SimpleSpaceMobBase
   id: MobAlienLarva
-  description: alien-larva-desc
+  description: Little and harmless alien
   components:
     - type: ShowInfectedIcons
     - type: Body
@@ -127,6 +127,12 @@
     enabled: false
   - type: InsideAlienLarva
     evolutionCooldown: 5
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-alien-larva-name
+    description: ghost-role-information-alien-larva-inside-description
 
 - type: entity
   parent: MobAlienLarva
@@ -188,7 +194,7 @@
       evolutionCooldown: 50
 
 - type: entity
-  name: mob-alien-drone-name
+  name: Alien drone
   abstract: true
   id: MobAlienBase
   parent: SimpleSpaceMobBase
@@ -389,7 +395,7 @@
     - type: LizardAccent
 
 - type: entity
-  name: mob-alien-drone-name
+  name: Alien drone
   id: MobAlienDrone
   parent: MobAlienBase
   components:
@@ -404,7 +410,7 @@
     - type: PraetorianEvolution
 
 - type: entity
-  name: mob-alien-sentinel-name
+  name: Alien sentinel
   id: MobAlienSentinel
   parent: MobAlienBase
   components:
@@ -475,7 +481,7 @@
     baseSprintSpeed: 5
 
 - type: entity
-  name: mob-alien-praetorian-name
+  name: Alien praetorian
   id: MobAlienPraetorian
   parent: MobAlienBase
   components:
@@ -553,7 +559,7 @@
   - type: TailLash
 
 - type: entity
-  name: mob-alien-hunter-name
+  name: Alien hunter
   id: MobAlienHunter
   parent: MobAlienBase
   components:
@@ -610,7 +616,7 @@
     baseSprintSpeed: 8
 
 - type: entity
-  name: mob-alien-queen-name
+  name: Alien queen
   id: MobAlienQueen
   parent: MobAlienBase
   components:

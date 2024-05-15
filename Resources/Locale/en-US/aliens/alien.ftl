@@ -27,3 +27,5 @@ ghost-role-mob-alien-description = Become a grown alien and spread the infestati
 station-event-alien-infestation-anouncement = Unidentified lifesigns detected coming aboard the station. Secure any exterior access, including ducting and ventilation.
 
 hud-chatbox-select-channel-XenoHivemind = Hivemind
+
+ghost-role-information-alien-larva-inside-description = Become an alien larva that is going to burst out.

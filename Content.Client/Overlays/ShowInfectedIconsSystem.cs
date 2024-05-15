@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Content.Shared.Aliens.Components;
+using Content.Shared.Mobs;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Prototypes;
@@ -24,8 +25,16 @@ public sealed class ShowInfectedIconsSystem : EquipmentHudSystem<ShowInfectedIco
     {
         if (!IsActive)
             return;
+        if (component.GrowthStage <= 5)
+        {
+            if (_prototype.TryIndex(component.InfectedIcons.ElementAt(component.GrowthStage), out var iconPrototype))
+                ev.StatusIcons.Add(iconPrototype);
+        }
+        else
+        {
+            if (_prototype.TryIndex(component.InfectedIcons.ElementAt(5), out var iconPrototype))
+                ev.StatusIcons.Add(iconPrototype);
+        }
 
-        if (_prototype.TryIndex(component.InfectedIcons.ElementAt(component.GrowthStage), out var iconPrototype))
-            ev.StatusIcons.Add(iconPrototype);
     }
 }

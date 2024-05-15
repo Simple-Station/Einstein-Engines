@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": null,
+  "copyright": null,
+  "size": {
+    "x": 8,
+    "y": 9
+  },
+  "states": [
+    {
+      "name": "infected0"
+    },
+      {
+          "name": "infected1"
+      },
+      {
+          "name": "infected2"
+      },
+      {
+          "name": "infected3"
+      },
+      {
+          "name": "infected4"
+      },
+      {
+          "name": "infected5"
+      }
+  ]
+}

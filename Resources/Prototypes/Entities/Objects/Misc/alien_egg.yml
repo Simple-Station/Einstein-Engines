@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: BaseStructureDynamic
   id: AlienEggGrowing
-  name: alien-egg-name
-  description: alien-egg-desc
+  name: Egg
+  description: A large mottled egg
   components:
     - type: Transform
       noRot: true
@@ -53,8 +53,8 @@
 - type: entity
   parent: BaseStructureDynamic
   id: AlienEgg
-  name: alien-egg-name
-  description: alien-egg-desc
+  name: Egg
+  description: A large mottled egg
   components:
     - type: Transform
       noRot: true
@@ -104,8 +104,8 @@
 - type: entity
   parent: BaseStructureDynamic
   id: AlienEggHatching
-  name: alien-egg-name
-  description: alien-egg-desc
+  name: Egg
+  description: A large mottled egg
   components:
     - type: Transform
       noRot: true
@@ -124,8 +124,8 @@
 - type: entity
   parent: BaseStructureDynamic
   id: AlienEggOpened
-  name: alien-egg-name
-  description: alien-egg-desc
+  name: Egg
+  description: A large mottled egg
   components:
     - type: Transform
       noRot: true

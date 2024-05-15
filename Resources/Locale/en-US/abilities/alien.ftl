@@ -57,3 +57,7 @@ alien-node-desc =  It's strangely glowing
 alien-weed-name = Weed
 alien-weed-desc = ""
 
+action-larva-grow = Grow
+action-larva-grow-desc = Escape from your host and start growing.
+
+

@@ -1,8 +1,8 @@
 ﻿- type: entity
-  name: facehugger-name
+  name: Alien
   parent: BaseItem
   id: Facehugger
-  description: facehugger-desc
+  description: "It has some sort of a tube at the end of its tail. [color=red]It seems to be active![/color]"
   components:
   - type: Physics
   - type: Fixtures
@@ -63,7 +63,7 @@
   name: Facehugger
   parent: BaseItem
   id: FacehuggerInactive
-  description: facehugger-desc
+  description: It has some sort of a tube at the end of its tail. It doesn't seem active.
   suffix: Inactive
   components:
     - type: Sprite

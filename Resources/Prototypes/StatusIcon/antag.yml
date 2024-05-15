@@ -42,3 +42,53 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Syndicate
+
+# Infection stages
+
+- type: statusIcon
+  id: AlienInfectedIconStageZero
+  priority: 0
+  locationPreference: Right
+  icon:
+    sprite: /Textures/Interface/Misc/infected.rsi
+    state: infected0
+
+- type: statusIcon
+  id: AlienInfectedIconStageOne
+  priority: 0
+  locationPreference: Right
+  icon:
+    sprite: /Textures/Interface/Misc/infected.rsi
+    state: infected1
+
+- type: statusIcon
+  id: AlienInfectedIconStageTwo
+  priority: 0
+  locationPreference: Right
+  icon:
+    sprite: /Textures/Interface/Misc/infected.rsi
+    state: infected2
+
+- type: statusIcon
+  id: AlienInfectedIconStageThree
+  priority: 0
+  locationPreference: Right
+  icon:
+    sprite: /Textures/Interface/Misc/infected.rsi
+    state: infected3
+
+- type: statusIcon
+  id: AlienInfectedIconStageFour
+  priority: 0
+  locationPreference: Right
+  icon:
+    sprite: /Textures/Interface/Misc/infected.rsi
+    state: infected4
+
+- type: statusIcon
+  id: AlienInfectedIconStageFive
+  priority: 0
+  locationPreference: Right
+  icon:
+    sprite: /Textures/Interface/Misc/infected.rsi
+    state: infected5
