@@ -1,4 +1,4 @@
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.StatusEffect;
 using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Weapons.Melee.Events;

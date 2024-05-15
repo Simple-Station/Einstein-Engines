@@ -1,5 +1,5 @@
 using Content.Shared.Actions;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Server.Atmos.Components;
 using Content.Server.Weapons.Ranged.Systems;
 using Robust.Server.GameObjects;

@@ -1,5 +1,5 @@
 using Content.Shared.Actions;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.StatusEffect;
 using Content.Server.Electrocution;
 using Content.Server.Stunnable;

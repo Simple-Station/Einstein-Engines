@@ -1,5 +1,5 @@
 using Content.Shared.Actions;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Psionics;
 using Content.Shared.Speech;
 using Content.Shared.Stealth.Components;
