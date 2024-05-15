@@ -94,7 +94,7 @@
   description: action-description-pyrokinesis
   noSpawn: true
   components:
-  - type: EntityTargetAction
+  - type: WorldTargetAction
     icon: Nyanotrasen/Interface/VerbIcons/pyrokinesis.png
     useDelay: 50
     range: 6

@@ -2,12 +2,8 @@ using Content.Server.Psionics.Glimmer;
 using Content.Shared.Audio;
 using Content.Shared.Psionics.Glimmer;
 using Robust.Shared.Audio;
-using Robust.Shared.ComponentTrees;
-using Robust.Shared.GameStates;
-using Robust.Shared.Physics;
-using Robust.Shared.Serialization;
 
-namespace Content.Server.Audio
+namespace Content.Server.Psionics.Audio
 {
     [RegisterComponent]
     [Access(typeof(SharedAmbientSoundSystem), typeof(GlimmerReactiveSystem))]

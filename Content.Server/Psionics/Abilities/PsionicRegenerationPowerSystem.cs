@@ -17,7 +17,7 @@ using Robust.Shared.Timing;
 using Content.Shared.Actions.Events;
 using Robust.Server.Audio;
 
-namespace Content.Server.Abilities.Psionics
+namespace Content.Server.Psionics.Abilities
 {
     public sealed class PsionicRegenerationPowerSystem : EntitySystem
     {
@@ -28,7 +28,6 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
-        [Dependency] private readonly ExamineSystemShared _examine = default!;
 
         public override void Initialize()
         {
@@ -51,11 +50,16 @@ namespace Content.Server.Abilities.Psionics
             {
                 psionic.ActivePowers.Add(component);
                 psionic.PsychicFeedback.Add(component.RegenerationFeedback);
+                psionic.Amplification += 0.5f;
+                psionic.Dampening += 0.5f;
             }
         }
 
         private void OnPowerUsed(EntityUid uid, PsionicRegenerationPowerComponent component, PsionicRegenerationPowerActionEvent args)
         {
+            if (!TryComp<PsionicComponent>(uid, out var psionic))
+                return;
+
             var ev = new PsionicRegenerationDoAfterEvent(_gameTiming.CurTime);
             var doAfterArgs = new DoAfterArgs(EntityManager, uid, component.UseDelay, ev, uid);
 
@@ -72,12 +76,16 @@ namespace Content.Server.Abilities.Psionics
             _popupSystem.PopupEntity(Loc.GetString("psionic-regeneration-begin", ("entity", uid)),
                 uid,
                 // TODO: Use LoS-based Filter when one is available.
-                Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !_examine.InRangeUnOccluded(uid, entity, ExamineRange, null)),
+                Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !ExamineSystemShared.InRangeUnOccluded(uid, entity, ExamineRange, null)),
                 true,
                 PopupType.Medium);
 
             _audioSystem.PlayPvs(component.SoundUse, uid, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
-            _psionics.LogPowerUsed(uid, "psionic regeneration");
+
+            _psionics.LogPowerUsed(uid, "psionic regeneration",
+            (int) Math.Round(6 * psionic.Amplification - psionic.Dampening),
+            (int) Math.Round(8 * psionic.Amplification - psionic.Dampening));
+
             args.Handled = true;
         }
 
@@ -90,6 +98,9 @@ namespace Content.Server.Abilities.Psionics
         /// <param name="args"></param>
         private void OnMobStateChangedEvent(EntityUid uid, PsionicRegenerationPowerComponent component, MobStateChangedEvent args)
         {
+            if (!TryComp<PsionicComponent>(uid, out var psionic))
+                return;
+
             if (HasComp<PsionicInsulationComponent>(uid))
                 return;
 
@@ -114,11 +125,15 @@ namespace Content.Server.Abilities.Psionics
                     _popupSystem.PopupEntity(Loc.GetString("psionic-regeneration-self-revive", ("entity", uid)),
                         uid,
                         // TODO: Use LoS-based Filter when one is available.
-                        Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !_examine.InRangeUnOccluded(uid, entity, ExamineRange, null)),
+                        Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !ExamineSystemShared.InRangeUnOccluded(uid, entity, ExamineRange, null)),
                         true,
                         PopupType.MediumCaution);
                     _audioSystem.PlayPvs(component.SoundUse, uid, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
-                    _psionics.LogPowerUsed(uid, "psionic regeneration", 20, 40);
+
+                    _psionics.LogPowerUsed(uid, "psionic regeneration",
+                        (int) Math.Round(10 * psionic.Amplification - 2 * psionic.Dampening),
+                        (int) Math.Round(20 * psionic.Amplification - 2 * psionic.Dampening));
+
                     _actions.StartUseDelay(component.PsionicRegenerationActionEntity);
                 }
             }
@@ -132,6 +147,8 @@ namespace Content.Server.Abilities.Psionics
             {
                 psionic.ActivePowers.Remove(component);
                 psionic.PsychicFeedback.Remove(component.RegenerationFeedback);
+                psionic.Amplification += 0.5f;
+                psionic.Dampening -= 0.5f;
             }
         }
 
@@ -150,6 +167,9 @@ namespace Content.Server.Abilities.Psionics
         {
             component.DoAfter = null;
 
+            if (!TryComp<PsionicComponent>(uid, out var psionic))
+                return;
+
             if (!TryComp<BloodstreamComponent>(uid, out var stream))
                 return;
 
@@ -160,12 +180,12 @@ namespace Content.Server.Abilities.Psionics
             var percentageComplete = Math.Min(1f, (_gameTiming.CurTime - args.StartedAt).TotalSeconds / component.UseDelay);
 
             var solution = new Solution();
-            solution.AddReagent("PsionicRegenerationEssence", FixedPoint2.New(component.EssenceAmount * percentageComplete));
+            solution.AddReagent("PsionicRegenerationEssence", FixedPoint2.New(component.EssenceAmount * percentageComplete + 10f * psionic.Dampening));
             _bloodstreamSystem.TryAddToChemicals(uid, solution, stream);
             if (component.SelfRevive == true)
             {
                 var critSolution = new Solution();
-                critSolution.AddReagent("Epinephrine", 10);
+                critSolution.AddReagent("Epinephrine", MathF.MinMagnitude(5 + 5 * psionic.Dampening, 15));
                 _bloodstreamSystem.TryAddToChemicals(uid, critSolution, stream);
                 component.SelfRevive = false;
             }

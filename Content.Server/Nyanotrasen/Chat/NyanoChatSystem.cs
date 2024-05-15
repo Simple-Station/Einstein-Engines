@@ -64,7 +64,7 @@ namespace Content.Server.Nyanotrasen.Chat
 
         private bool IsEligibleForTelepathy(EntityUid entity)
         {
-            return HasComp<PsionicComponent>(entity)
+            return TryComp<PsionicComponent>(entity, out var psionic) && psionic.Telepath
                 && !HasComp<PsionicsDisabledComponent>(entity)
                 && !HasComp<PsionicInsulationComponent>(entity)
                 && (!TryComp<MobStateComponent>(entity, out var mobstate) || mobstate.CurrentState == MobState.Alive);
@@ -95,9 +95,9 @@ namespace Content.Server.Nyanotrasen.Chat
             if (_random.Prob(0.1f))
                 _glimmerSystem.Glimmer++;
 
-            if (_random.Prob(Math.Min(0.33f + ((float) _glimmerSystem.Glimmer / 1500), 1)))
+            if (_random.Prob(Math.Min(0.33f + (float) _glimmerSystem.Glimmer / 1500, 1)))
             {
-                float obfuscation = (0.25f + (float) _glimmerSystem.Glimmer / 2000);
+                float obfuscation = 0.25f + (float) _glimmerSystem.Glimmer / 2000;
                 var obfuscated = ObfuscateMessageReadability(message, obfuscation);
                 _chatManager.ChatMessageToMany(ChatChannel.Telepathic, obfuscated, messageWrap, source, hideChat, false, GetDreamers(clients), Color.PaleVioletRed);
             }
@@ -114,7 +114,7 @@ namespace Content.Server.Nyanotrasen.Chat
 
             for (var i = 0; i < message.Length; i++)
             {
-                if (char.IsWhiteSpace((modifiedMessage[i])))
+                if (char.IsWhiteSpace(modifiedMessage[i]))
                 {
                     continue;
                 }

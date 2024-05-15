@@ -14,7 +14,7 @@ using Content.Server.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
 
-namespace Content.Server.Abilities.Psionics
+namespace Content.Server.Psionics.Abilities
 {
     public sealed class MindSwapPowerSystem : EntitySystem
     {
@@ -222,7 +222,7 @@ namespace Content.Server.Abilities.Psionics
             perfComp.OriginalEntity = target;
             targetComp.OriginalEntity = performer;
         }
-
+        //It shouldn't actually be possible anymore to get trapped under most circumstances, but for niche edge cases, I am leaving this here
         public void GetTrapped(EntityUid uid)
         {
 
