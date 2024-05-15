@@ -154,6 +154,12 @@ namespace Content.Server.Psionics.Abilities
 
             if (args.Target == null) return;
 
+            if (TryComp<MindSwappedComponent>(args.Target, out var swapped))
+            {
+                _popups.PopupEntity(Loc.GetString(swapped.MindSwappedFeedback, ("entity", args.Target)), uid, uid, PopupType.LargeCaution);
+                return;
+            }
+
             if (args.Target == uid)
             {
                 _popups.PopupEntity(Loc.GetString("metapulse-self", ("entity", args.Target)), uid, uid, PopupType.LargeCaution);

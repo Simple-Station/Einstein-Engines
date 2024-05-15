@@ -36,18 +36,18 @@
     event: !type:DispelPowerActionEvent
 
 - type: entity
-  id: ActionMassSleep
-  name: action-name-mass-sleep
-  description: action-description-mass-sleep
+  id: ActionRegenerativeStasis
+  name: action-name-regenerative-stasis
+  description: action-description-regenerative-stasis
   noSpawn: true
   components:
-  - type: WorldTargetAction
+  - type: EntityTargetAction
     icon: Nyanotrasen/Interface/VerbIcons/mass_sleep.png
     useDelay: 60
     checkCanAccess: false
     range: 8
     itemIconStyle: BigAction
-    event: !type:MassSleepPowerActionEvent
+    event: !type:RegenerativeStasisPowerActionEvent
 
 - type: entity
   id: ActionMindSwap

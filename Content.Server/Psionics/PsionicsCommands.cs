@@ -18,7 +18,8 @@ public sealed class ListPsionicsCommand : IConsoleCommand
     {
         SharedActionsSystem actions = default!;
         var entMan = IoCManager.Resolve<IEntityManager>();
-        foreach (var (actor, mob, psionic, meta) in entMan.EntityQuery<ActorComponent, MobStateComponent, PsionicComponent, MetaDataComponent>()){
+        foreach (var (actor, psionic, meta) in entMan.EntityQuery<ActorComponent, PsionicComponent, MetaDataComponent>())
+        {
             // filter out xenos, etc, with innate telepathy
             actions.TryGetActionData( psionic.PsionicAbility, out var actionData );
             if (actionData == null || actionData.ToString() == null)

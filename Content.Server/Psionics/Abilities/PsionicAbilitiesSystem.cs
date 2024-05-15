@@ -3,8 +3,6 @@ using Content.Shared.Actions;
 using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
-using Content.Server.EUI;
-using Content.Server.Mind;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
@@ -20,11 +18,9 @@ namespace Content.Server.Psionics.Abilities
         [Dependency] private readonly IComponentFactory _componentFactory = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
-        [Dependency] private readonly EuiManager _euiManager = default!;
         [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly MindSystem _mindSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popups = default!;
 
         public override void Initialize()

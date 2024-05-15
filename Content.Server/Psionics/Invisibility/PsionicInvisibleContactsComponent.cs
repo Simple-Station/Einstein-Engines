@@ -1,5 +1,4 @@
 using Content.Shared.Whitelist;
-using Robust.Shared.Timing;
 
 namespace Content.Server.Psionics
 {

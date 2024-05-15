@@ -2,7 +2,6 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
-using Content.Server.Psionics;
 using Content.Shared.Psionics.Abilities;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Chat;

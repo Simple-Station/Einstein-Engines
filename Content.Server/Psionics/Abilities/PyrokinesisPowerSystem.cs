@@ -48,7 +48,7 @@ namespace Content.Server.Psionics.Abilities
             {
                 psionic.ActivePowers.Remove(component);
                 psionic.PsychicFeedback.Remove(component.PyrokinesisFeedback);
-                psionic.Amplification += 1f;
+                psionic.Amplification -= 1f;
             }
         }
 

@@ -40,7 +40,7 @@ namespace Content.Shared.Psionics.Glimmer
             if (glimmer == null)
                 glimmer = Glimmer;
 
-            return (glimmer) switch
+            return glimmer switch
             {
                 <= 49 => GlimmerTier.Minimal,
                 >= 50 and <= 99 => GlimmerTier.Low,
