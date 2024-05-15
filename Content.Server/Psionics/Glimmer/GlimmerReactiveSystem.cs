@@ -1,4 +1,4 @@
-using Content.Server.Audio;
+using Content.Server.Psionics.Audio;
 using Content.Server.Power.Components;
 using Content.Server.Electrocution;
 using Content.Server.Lightning;
