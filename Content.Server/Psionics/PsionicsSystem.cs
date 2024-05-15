@@ -50,9 +50,6 @@ namespace Content.Server.Psionics
 
             SubscribeLocalEvent<PsionicComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
-
-            SubscribeLocalEvent<InnatePsicasterComponent, ComponentInit>(OnInnatePsiInit);
-            SubscribeLocalEvent<InnatePsicasterComponent, ComponentShutdown>(OnInnatePsiShutdown);
         }
 
         private void OnStartup(EntityUid uid, PotentialPsionicComponent component, MapInitEvent args)
@@ -88,15 +85,8 @@ namespace Content.Server.Psionics
 
         private void OnInit(EntityUid uid, PsionicComponent component, ComponentInit args)
         {
-            component.Amplification = _random.NextFloat(0.3f, 1.2f);
-            component.Dampening = _random.NextFloat(0.3f, 1.2f);
-
-            if (TryComp<InnatePsicasterComponent>(uid, out var innatePsicaster))
-            {
-                component.Amplification += innatePsicaster.Amplification;
-                component.Dampening += innatePsicaster.Dampening;
-                component.InnatePsiChecked = true;
-            }
+            component.Amplification = _random.NextFloat(0.3f, 1.1f);
+            component.Dampening = _random.NextFloat(0.3f, 1.1f);
 
             if (!component.Removable)
                 return;
@@ -172,25 +162,6 @@ namespace Content.Server.Psionics
 
             RollPsionics(uid, psionic, multiplier: bonusMuliplier);
             psionic.Rerolled = true;
-        }
-
-        private void OnInnatePsiInit(EntityUid uid, InnatePsicasterComponent component, ComponentInit args)
-        {
-            if (EnsureComp<PsionicComponent>(uid, out var psionic) && !psionic.InnatePsiChecked)
-            {
-                psionic.Amplification += component.Amplification;
-                psionic.Dampening += component.Dampening;
-                psionic.InnatePsiChecked = true;
-            }
-        }
-
-        private void OnInnatePsiShutdown(EntityUid uid, InnatePsicasterComponent component, ComponentShutdown args)
-        {
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.Amplification -= component.Amplification;
-                psionic.Dampening -= component.Amplification;
-            }
         }
     }
 }
