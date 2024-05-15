@@ -17,7 +17,7 @@ namespace Content.Shared.Psionics.Abilities
         public List<Component> ActivePowers = new();
 
         [DataField("psychicFeedback")]
-        public List<string> PsychicFeedback= new();
+        public List<string> PsychicFeedback = new();
 
         [DataField("amplification")]
         public float Amplification = 0.1f;

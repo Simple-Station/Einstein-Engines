@@ -147,7 +147,7 @@ namespace Content.Server.Psionics.Abilities
             {
                 psionic.ActivePowers.Remove(component);
                 psionic.PsychicFeedback.Remove(component.RegenerationFeedback);
-                psionic.Amplification += 0.5f;
+                psionic.Amplification -= 0.5f;
                 psionic.Dampening -= 0.5f;
             }
         }
@@ -173,19 +173,15 @@ namespace Content.Server.Psionics.Abilities
             if (!TryComp<BloodstreamComponent>(uid, out var stream))
                 return;
 
-            // DoAfter has no way to run a callback during the process to give
-            // small doses of the reagent, so we wait until either the action
-            // is cancelled (by being dispelled) or complete to give the
-            // appropriate dose. A timestamp delta is used to accomplish this.
             var percentageComplete = Math.Min(1f, (_gameTiming.CurTime - args.StartedAt).TotalSeconds / component.UseDelay);
 
             var solution = new Solution();
-            solution.AddReagent("PsionicRegenerationEssence", FixedPoint2.New(component.EssenceAmount * percentageComplete + 10f * psionic.Dampening));
+            solution.AddReagent("PsionicRegenerationEssence", FixedPoint2.New(Math.Min(component.EssenceAmount * percentageComplete + 10f * psionic.Dampening, 15f)));
             _bloodstreamSystem.TryAddToChemicals(uid, solution, stream);
             if (component.SelfRevive == true)
             {
                 var critSolution = new Solution();
-                critSolution.AddReagent("Epinephrine", MathF.MinMagnitude(5 + 5 * psionic.Dampening, 15));
+                critSolution.AddReagent("Epinephrine", MathF.Min(5 + 5 * psionic.Dampening, 15));
                 _bloodstreamSystem.TryAddToChemicals(uid, critSolution, stream);
                 component.SelfRevive = false;
             }

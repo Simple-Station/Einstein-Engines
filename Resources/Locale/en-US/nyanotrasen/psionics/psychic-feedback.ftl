@@ -1,6 +1,19 @@
-dispel-feedback = {CAPITALIZE($entity)} projects an aura of normality
+# Feedback messages for Focused Metapsionic Pulse
+metapulse-self = I AM.
 no-powers = {CAPITALIZE($entity)} will never awaken from the dream in this life
 psychic-potential = {CAPITALIZE($entity)} has a slim chance of awakening from the dream
-focused-metapsionic-pulse-begin = The air around {CAPITALIZE($entity)} begins to shimmer faintly, like a heat haze crawling across the endless desert
-psionic-regeneration-self-revive = As {CAPITALIZE($entity)} falls to the floor greviously wounded,
-                                   they begin visibly regenerating!
+dispel-feedback = {CAPITALIZE($entity)} is a mighty stone, standing against the currents of fate
+metasionic-feedback = {CAPITALIZE($entity)} gazes back upon thee
+mind-swap-feedback = {CAPITALIZE($entity)}'s vessel seems fit for other souls
+mindswapped-feedback = Cursed flesh! {CAPITALIZE($entity)} dwells within the wrong vessel!
+noospheric-zap-feedback = {CAPITALIZE($entity)}'s soul writhes with thunder from beyond the veil
+pyrokinesis-feedback = The Secret of Fire dwells within {CAPITALIZE($entity)}
+invisibility-feedback = {CAPITALIZE($entity)}'s wyrd seeks to hide from thine gaze
+telegnosis-feedback = {CAPITALIZE($entity)}'s soul travels across bridges composed of dreamlight.
+sophic-grammateus-feedback = SEEKER, YOU NEED ONLY ASK FOR MY WISDOM.
+oracle-feedback = WHY DO YOU BOTHER ME SEEKER? HAVE I NOT MADE MY DESIRES CLEAR?
+metempsychotic-machine-feedback = The sea of fate flows through this machine
+
+# Power PVS Messages
+focused-metapsionic-pulse-begin = The air around {CAPITALIZE($entity)} begins to shimmer faintly
+psionic-regeneration-self-revive = {CAPITALIZE($entity)} begins to visibly regenerate

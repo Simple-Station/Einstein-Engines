@@ -4,7 +4,6 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Psionics.Glimmer;
-using Content.Shared.Psionics.Abilities;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 
@@ -74,7 +73,7 @@ namespace Content.Shared.Psionics.Abilities
             if (actionData == null)
                 return;
 
-            _actions.SetEnabled(actionData.Owner, IsEligibleForPsionics(uid));
+            _actions.SetEnabled(uid, IsEligibleForPsionics(uid));
         }
 
         private bool IsEligibleForPsionics(EntityUid uid)

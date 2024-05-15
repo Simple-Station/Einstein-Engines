@@ -2,7 +2,6 @@ using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
-using Robust.Shared.Timing;
 
 namespace Content.Server.Psionics
 {
@@ -12,7 +11,6 @@ namespace Content.Server.Psionics
     public sealed class PsionicInvisibleContactsSystem : EntitySystem
     {
         [Dependency] private readonly SharedStealthSystem _stealth = default!;
-        [Dependency] private readonly IGameTiming _gameTiming = default!;
 
         public override void Initialize()
         {

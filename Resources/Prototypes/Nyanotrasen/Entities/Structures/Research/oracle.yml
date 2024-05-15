@@ -17,6 +17,8 @@
   - type: Speech
     speechSounds: Tenor
   - type: Psionic
+    psychicFeedback:
+    - "oracle-feedback"
   - type: SolutionContainerManager
     solutions:
       fountain:

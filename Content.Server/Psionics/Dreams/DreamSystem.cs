@@ -1,6 +1,5 @@
 using Content.Shared.Dataset;
 using Content.Shared.Bed.Sleep;
-using Content.Server.Chat.Systems;
 using Content.Server.Chat.Managers;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
@@ -10,7 +9,6 @@ namespace Content.Server.Psionics.Dreams
 {
     public sealed class DreamsSystem : EntitySystem
     {
-        [Dependency] private readonly ChatSystem _chat = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;

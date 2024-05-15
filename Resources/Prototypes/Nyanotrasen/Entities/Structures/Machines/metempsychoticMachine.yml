@@ -23,3 +23,5 @@
             Gore: { state: pod_1 }
             Idle: { state: pod_0 }
     - type: Psionic
+      psychicFeedback:
+      - "metempsychotic-machine-feedback"
