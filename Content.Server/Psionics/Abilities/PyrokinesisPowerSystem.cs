@@ -75,7 +75,7 @@ namespace Content.Server.Psionics.Abilities
 
                     if (psionic.Amplification > 5 && EnsureComp<IgniteOnCollideComponent>(ent, out var ignite))
                     {
-                        ignite.FireStacks = 0.1f * psionic.Amplification - 0.1f * psionic.Dampening;
+                        ignite.FireStacks = 0.2f * psionic.Amplification - 0.1f * psionic.Dampening;
                     }
                 }
 
