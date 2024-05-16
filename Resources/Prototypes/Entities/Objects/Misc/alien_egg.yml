@@ -173,3 +173,33 @@
       prototypes:
       - Facehugger
 
+- type: entity
+  id: AlienEggSpawner
+  name: alien egg spawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: egg
+  - type: RandomSpawner
+    prototypes:
+    - AlienEgg
+    chance: 1
+
+- type: entity
+  id: AlienEggSpawnerRandom
+  name: alien egg spawner
+  suffix: 20%
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: egg
+  - type: RandomSpawner
+    prototypes:
+    - AlienEgg
+    chance: 0.2
