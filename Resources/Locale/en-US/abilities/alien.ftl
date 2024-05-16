@@ -60,4 +60,9 @@ alien-weed-desc = ""
 action-larva-grow = Grow
 action-larva-grow-desc = Escape from your host and start growing.
 
+alien-create-structure-failed = You can't create it here.
 
+action-alien-jump = Leap
+action-alien-jump-desc = Leap onto your enemies stunning them.
+
+alien-evolution-fail = There is a royal xenomorph alreagy.

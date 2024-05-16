@@ -5,6 +5,7 @@
   id: BaseAlertOrder
   order:
     - category: Health
+    - category: Counter
     - category: Stamina
     - alertType: SuitPower
     - category: Internals
@@ -63,6 +64,37 @@
   maxSeverity: 2
   name: alerts-low-pressure-name
   description: alerts-low-pressure-desc
+
+- type: alert
+  id: PlasmaCounter
+  category: Counter
+  icons:
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display0
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display1
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display2
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display3
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display4
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display5
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display6
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display7
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display8
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display9
+  - sprite: /Textures/Interface/Alerts/plasma_counter.rsi
+    state: power_display10
+  minSeverity: 0
+  maxSeverity: 11
+  name: alerts-plasma-name
+  description: alerts-plasma-desc
 
 - type: alert
   id: HighPressure

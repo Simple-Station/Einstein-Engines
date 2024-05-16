@@ -714,3 +714,52 @@
     speechSounds: Alien
     speechVerb: LargeMob
   - type: TailLash
+
+- type: entity
+  name: Lusty alien maiden
+  description: Don't ask it to lay eggs in you.
+  id: MobAlieMaiden
+  parent: MobAlienBase
+  components:
+  - type: PlasmaVessel
+    plasmaPerSecond: 5
+    plasmaModified: 40
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/Xenos/alien.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: maid
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: aliencuff
+      visible: false
+    - map: [ "clownedon" ] # Dynamically generated
+      sprite: "Effects/creampie.rsi"
+      state: "creampie_human"
+      visible: false
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      208: Dead
+  - type: MeleeWeapon
+    altDisarm: true
+    angle: 0
+    soundHit:
+      collection: AlienClaw
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 25
+      types:
+        Structural: 60
+  - type: DamageStateVisuals
+    rotate: true
+    states:
+      Alive:
+        Base: maid
+      Dead:
+        Base: maid_dead

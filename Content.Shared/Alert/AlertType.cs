@@ -43,6 +43,7 @@ namespace Content.Shared.Alert
         VowOfSilence,
         VowBroken,
         Essence,
+        PlasmaCounter,
         Corporeal,
         Bleed,
         Pacified,

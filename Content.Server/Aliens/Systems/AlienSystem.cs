@@ -58,7 +58,7 @@ public sealed class AlienSystem : EntitySystem
         if (!_tag.HasTag(args.Item, "AlienItem"))
         {
             args.Cancel();
-            _popup.PopupEntity(Loc.GetString("alien-pickup-item-fail"), uid);
+            _popup.PopupEntity(Loc.GetString("alien-pickup-item-fail"), uid, uid);
         }
     }
 

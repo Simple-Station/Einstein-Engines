@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by Kai5",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "power_display0"
+    },
+    {
+      "name": "power_display1"
+    },
+    {
+      "name": "power_display2"
+    },
+    {
+      "name": "power_display3"
+    },
+    {
+      "name": "power_display4"
+    },
+    {
+      "name": "power_display5"
+    },
+    {
+      "name": "power_display6"
+    },
+    {
+      "name": "power_display7"
+    },
+    {
+      "name": "power_display8"
+    },
+    {
+      "name": "power_display9"
+    },
+      {
+          "name": "power_display10"
+      }
+  ]
+}

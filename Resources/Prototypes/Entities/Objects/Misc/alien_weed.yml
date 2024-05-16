@@ -1,6 +1,6 @@
 ﻿- type: entity
-  name: alien-weed-name
-  description: alien-weed-desc
+  name: Weed
+  description: Strange grey weeds.
   parent: BaseStructure
   id: AlienWeed
   components:
@@ -43,8 +43,8 @@
       - type: PlasmaGainModifier
 
 - type: entity
-  name: alien-node-name
-  description: alien-node-desc
+  name: Weed node
+  description: It's strangely glowing.
   parent: BaseStructure
   id: AlienWeednode
   components:

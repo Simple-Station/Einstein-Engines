@@ -14,6 +14,7 @@ public sealed class SharedPlasmaVesselSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
     public override void Initialize()
     {
 
@@ -50,6 +51,8 @@ public sealed class SharedPlasmaVesselSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("alien-left-plasma-part1") + component.Plasma + Loc.GetString("alien-left-plama-part2"),
                 uid);
         }
+
+        _alerts.ShowAlert(uid, AlertType.PlasmaCounter, (short) Math.Clamp(Math.Round(component.Plasma.Float() / 50f), 0, 10));
 
         return true;
     }

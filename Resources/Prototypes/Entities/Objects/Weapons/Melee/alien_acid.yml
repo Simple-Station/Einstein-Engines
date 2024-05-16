@@ -1,0 +1,97 @@
+- type: entity
+  parent: BaseItem
+  id: AlienAcid
+  name: alien-acid-name
+  description: alien-acid-desc
+  components:
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PolygonShape
+            vertices:
+              - -0.20,0.10
+              - -0.10,0.20
+              - 0.20,-0.10
+              - 0.10,-0.20
+          density: 20
+          mask:
+            - ItemMask
+          restitution: 0.3
+          friction: 0.2
+    - type: Sprite
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: acid
+    - type: MeleeWeapon
+      wideAnimationRotation: -45
+      damage:
+        types:
+          Caustic: 100
+      angle: 0
+      animation: WeaponArcThrust
+      soundHit:
+        path: /Audio/Weapons/pierce.ogg
+    - type: Item
+      size: Tiny
+      sprite: Mobs/Aliens/Xenos/alien.rsi
+      state: acid
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Appearance
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 75
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 15
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: WoodDestroy
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: DamageOnHit
+      damage:
+        types:
+          Blunt: 100
+    - type: Unremoveable
+    - type: AlienAcid
+    - type: Tag
+      tags:
+        - AlienItem
+
+- type: entity
+  id: CorrosiveAcid
+  name: alien-acid-name
+  suffix: overlay
+  description: alien-acid-desc
+  components:
+  - type: Sprite
+    sprite: Mobs/Aliens/Xenos/alien.rsi
+    state: acid
+  - type: TimedSpawner
+    prototypes:
+    - CorrodedAcid
+    intervalSeconds: 30
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+
+- type: entity
+  id: CorrodedAcid
+  name: corroded acid
+  suffix: overlay
+  description: alien-acid-desc
+  components:
+  - type: Sprite
+    sprite: Mobs/Aliens/Xenos/alien.rsi
+    state: acid
+  - type: EventHorizon
+    radius: 0.1
+    consumeTiles: false
+    canBreachContainment: true
+  - type: TimedDespawn
+    lifetime: 0.1

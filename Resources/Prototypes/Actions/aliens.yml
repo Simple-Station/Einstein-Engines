@@ -6,7 +6,7 @@
   noSpawn: true
   components:
     - type: InstantAction
-      icon: Interface/VerbIcons/light.svg.192dpi.png
+      icon: { sprite: Interface/Alien/screen_alien.rsi, state: nightvision0 }
       priority: -1
       clientExclusive: true
       checkCanInteract: false
