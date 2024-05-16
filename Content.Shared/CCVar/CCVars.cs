@@ -1040,7 +1040,7 @@ namespace Content.Shared.CCVar
         ///     Useful to prevent clipping through objects.
         /// </summary>
         public static readonly CVarDef<float> SpaceWindMaxVelocity =
-            CVarDef.Create("atmos.space_wind_max_velocity", 30f, CVar.SERVERONLY);
+            CVarDef.Create("atmos.space_wind_max_velocity", 25f, CVar.SERVERONLY);
 
         /// <summary>
         ///     The maximum force that may be applied to an object by pushing (i.e. not throwing) atmospheric pressure differences.
@@ -1057,8 +1057,16 @@ namespace Content.Shared.CCVar
         ///     If you are reading this because you want to change it, consider looking into why almost every item in the game weighs only 5 grams
         ///     And maybe do your part to fix that? :)
         /// </remarks>
-        public static readonly CVarDef<float> SpaceWindMinimumMassThreshold =
-            CVarDef.Create("atmos.space_wind_minimum_mass_threshold", 10f, CVar.SERVERONLY);
+        public static readonly CVarDef<float> SpaceWindMinimumCalculatedMass =
+            CVarDef.Create("atmos.space_wind_minimum_calculated_mass", 10f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Calculated as 1/Mass, where Mass is the physics.Mass of the desired threshold.
+        /// If an object's inverse mass is lower than this, it is capped at this. Basically, an upper limit to how heavy an object can be
+        /// before it stops resisting space wind more.
+        /// </summary>
+        public static readonly CVarDef<float> SpaceWindMaximumCalculatedInverseMass =
+            CVarDef.Create("atmos.space_wind_maximum_calculated_inverse_mass", 0.025f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether monstermos tile equalization is enabled.
@@ -1081,7 +1089,7 @@ namespace Content.Shared.CCVar
 		///     Also looks weird on slow spacing for unrelated reasons. If you do want to enable this, you should probably turn on instaspacing.
         /// </summary>
         public static readonly CVarDef<bool> MonstermosRipTiles =
-            CVarDef.Create("atmos.monstermos_rip_tiles", false, CVar.SERVERONLY);
+            CVarDef.Create("atmos.monstermos_rip_tiles", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether explosive depressurization will cause the grid to gain an impulse.
