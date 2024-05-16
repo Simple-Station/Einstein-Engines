@@ -66,6 +66,10 @@
       thresholds:
         0: Alive
         25: Dead
+      stateAlertDict:
+        Alive: AlienHealth
+        Critical: AlienCrit
+        Dead: AlienDead
     - type: MovementSpeedModifier
       baseWalkSpeed : 5
       baseSprintSpeed : 5
@@ -84,6 +88,7 @@
         - Meat
       wilhelmProbability: 0.001
     - type: CombatMode
+      combatToggleAction: ActionCombatModeToggleAlien
     - type: MeleeWeapon
       soundHit:
         path: /Audio/Weapons/Xeno/alien_claw_flesh1.ogg
@@ -204,6 +209,7 @@
     - type: PlasmaTransfer
     - type: Insulated
     - type: CombatMode
+      combatToggleAction: ActionCombatModeToggleAlien
     - type: InputMover
     - type: MobMover
     - type: MovementSpeedModifier
@@ -279,6 +285,10 @@
         0: Alive
         180: Critical
         280: Dead
+      stateAlertDict:
+        Alive: AlienHealth
+        Critical: AlienCrit
+        Dead: AlienDead
     - type: SlowOnDamage
       speedModifierThresholds:
         25: 0.5

@@ -188,6 +188,43 @@
   maxSeverity: 4
 
 - type: alert
+  id: AlienHealth
+  category: Health
+  icons:
+  - sprite: /Textures/Interface/Alien/screen_alien.rsi
+    state: health0
+  - sprite: /Textures/Interface/Alien/screen_alien.rsi
+    state: health1
+  - sprite: /Textures/Interface/Alien/screen_alien.rsi
+    state: health2
+  - sprite: /Textures/Interface/Alien/screen_alien.rsi
+    state: health3
+  - sprite: /Textures/Interface/Alien/screen_alien.rsi
+    state: health4
+  name: alerts-health-name
+  description: alerts-health-desc
+  minSeverity: 0
+  maxSeverity: 4
+
+- type: alert
+  id: AlienCrit
+  category: Health
+  icons:
+  - sprite: /Textures/Interface/Alien/screen_alien.rsi
+    state: health6
+  name: alerts-crit-name
+  description: alerts-crit-desc
+
+- type: alert
+  id: AlienDead
+  category: Health
+  icons:
+  - sprite: /Textures/Interface/Alien/screen_alien.rsi
+    state: health7
+  name: alerts-dead-name
+  description: alerts-dead-desc
+
+- type: alert
   id: BorgHealth
   category: Health
   icons:

@@ -48,6 +48,20 @@
     icon: { sprite: Structures/weednode.rsi, state: full }
     event: !type:WeednodeActionEvent
 
+- type: entity
+  id: ActionCombatModeToggleAlien
+  name: "[color=red]Combat Mode[/color]"
+  description: Enter combat mode
+  noSpawn: true
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    checkConsciousness: false
+    icon: { sprite: Interface/Alien/screen_alien.rsi, state: combat_off }
+    iconOn: { sprite: Interface/Alien/screen_alien.rsi, state: combat }
+    event: !type:ToggleCombatActionEvent
+    priority: -100
+
 # Drone
 
 - type: entity

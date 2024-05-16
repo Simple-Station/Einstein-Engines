@@ -2,7 +2,7 @@
   id: alien
   slots:
     - name: pocket1
-      slotTexture: pocket
+      slotTexture: "pocket"
       slotFlags: POCKET
       slotGroup: MainHotbar
       stripTime: 3
@@ -11,7 +11,7 @@
       displayName: Pocket 1
       stripHidden: true
     - name: pocket2
-      slotTexture: pocket
+      slotTexture: "pocket"
       slotFlags: POCKET
       slotGroup: MainHotbar
       stripTime: 3
