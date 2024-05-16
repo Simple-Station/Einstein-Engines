@@ -42,3 +42,6 @@
         acts: [ "Destruction" ]
   - type: Strap
     delay: 120
+    position: Down
+    rotation: -90
+

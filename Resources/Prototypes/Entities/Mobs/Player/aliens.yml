@@ -567,6 +567,10 @@
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/alien.rsi
     layers:
+    - map: [ "enum.JumpLayers.Jumping" ]
+      sprite: Mobs/Aliens/Xenos/alien_hunter_jump.rsi
+      state: icon
+      visible: false
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: alienh
     - map: [ "pocket1" ]
@@ -580,6 +584,15 @@
       sprite: "Effects/creampie.rsi"
       state: "creampie_human"
       visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.JumpVisuals.Jumping:
+        enum.JumpLayers.Jumping:
+          True: { visible: true }
+          False: { visible: false }
+        enum.DamageStateVisualLayers.Base:
+          True: { visible: false}
+          False: { visible: true}
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -614,6 +627,10 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 4
     baseSprintSpeed: 8
+  - type: JumpVisuals
+    baseState: alienh
+  - type: AlienJump
+    jumpSprite: Mobs/Aliens/Xenos/alien_hunter_jump.rsi
 
 - type: entity
   name: Alien queen

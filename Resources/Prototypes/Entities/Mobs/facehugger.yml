@@ -2,7 +2,7 @@
   name: Alien
   parent: BaseItem
   id: Facehugger
-  description: "It has some sort of a tube at the end of its tail. [color=red]It seems to be active![/color]"
+  description: It has some sort of a tube at the end of its tail. It seems to be active!
   components:
   - type: Physics
   - type: Fixtures
@@ -60,7 +60,7 @@
   - type: Blindfold
 
 - type: entity
-  name: Facehugger
+  name: Alien
   parent: BaseItem
   id: FacehuggerInactive
   description: It has some sort of a tube at the end of its tail. It doesn't seem active.

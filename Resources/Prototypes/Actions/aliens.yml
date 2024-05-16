@@ -159,7 +159,8 @@
     useDelay: 0
     icon: { sprite : Mobs/Aliens/Xenos/alien.rsi, state: larva0 }
     event: !type:AlienLarvaGrowActionEvent
-# Hunter
+
+# Sentinel
 
 - type: entity
   id: ActionStalkAlien
@@ -172,6 +173,23 @@
     useDelay: 0
     icon: { sprite : Interface/Alien/screen_alien.rsi, state: walking }
     event: !type:AlienStalkActionEvent
+
+# Hunter
+
+- type: entity
+  id: ActionJumpAlien
+  name: action-alien-jump
+  description: action-alien-jump-desc
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    priority: 0
+    useDelay: 3
+    checkCanAccess: false
+    range: 10
+    icon: { sprite : Interface/Alien/screen_alien.rsi, state: leap_off }
+    iconOn: { sprite : Interface/Alien/screen_alien.rsi, state: leap_on }
+    event: !type:AlienJumpActionEvent
 
 # Queen
 
