@@ -1170,6 +1170,13 @@ namespace Content.Shared.CCVar
             CVarDef.Create("atmos.mmos_max_wind", 500f, CVar.SERVERONLY);
 
         /// <summary>
+        /// Increases default airflow calculations to O(n^2) complexity, for use with heavy space wind optimizations. Potato servers BEWARE
+        /// This solves the problem of objects being trapped in an infinite loop of slamming into a wall repeatedly.
+        /// </summary>
+        public static readonly CVarDef<bool> MonstermosUseExpensiveAirflow =
+            CVarDef.Create("atmos.mmos_expensive_airflow", true, CVar.SERVERONLY);
+
+        /// <summary>
         ///     Whether atmos superconduction is enabled.
         /// </summary>
         /// <remarks> Disabled by default, superconduction is awful. </remarks>
