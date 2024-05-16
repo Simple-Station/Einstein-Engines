@@ -232,6 +232,8 @@ namespace Content.Server.Atmos.EntitySystems
                 var moveForce = pressureDifference * MathF.Max(physics.InvMass, SpaceWindMaximumCalculatedInverseMass);
                 if (moveForce > physics.Mass)
                 {
+                    var maxSafeForceForObject = SpaceWindMaxVelocity * physics.Mass;
+                    moveForce = MathF.Min(moveForce, maxSafeForceForObject);
                     AddMovedByPressure(uid, component, physics);
                     // Grid-rotation adjusted direction
                     var dirVec = (direction.ToAngle() + gridWorldRotation).ToWorldVec();
@@ -240,11 +242,11 @@ namespace Content.Server.Atmos.EntitySystems
                     if (throwTarget != EntityCoordinates.Invalid)
                     {
                         var pos = throwTarget.ToMap(EntityManager).Position - xform.WorldPosition + dirVec;
-                        _physics.ApplyLinearImpulse(uid, pos * Math.Clamp(moveForce, 0, SpaceWindMaxVelocity), body: physics);
+                        _physics.ApplyLinearImpulse(uid, pos * moveForce, body: physics);
                     }
                     else
                     {
-                        _physics.ApplyLinearImpulse(uid, dirVec * Math.Clamp(moveForce, 0, SpaceWindMaxVelocity), body: physics);
+                        _physics.ApplyLinearImpulse(uid, dirVec * moveForce, body: physics);
                     }
 
                     component.LastHighPressureMovementAirCycle = cycle;
