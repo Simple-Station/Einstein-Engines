@@ -88,7 +88,8 @@ namespace Content.Server.Atmos.EntitySystems
 
         private void HighPressureMovements(Entity<GridAtmosphereComponent> gridAtmosphere, TileAtmosphere tile, EntityQuery<PhysicsComponent> bodies, EntityQuery<TransformComponent> xforms, EntityQuery<MovedByPressureComponent> pressureQuery, EntityQuery<MetaDataComponent> metas)
         {
-            if (tile.PressureDifference < MathF.Pow(SpaceWindMinimumCalculatedMass, 2))
+            //!MAGIC EXIT CONDITION THAT MAKES ALMOST 200 LINES RUN 1/100TH AS OFTEN.
+            if (tile.PressureDifference < SpaceWindMinimumCalculatedMass * SpaceWindMinimumCalculatedMass)
                 return;
             // TODO ATMOS finish this
 
