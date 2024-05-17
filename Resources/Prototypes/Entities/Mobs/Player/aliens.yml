@@ -728,7 +728,7 @@
 - type: entity
   name: Lusty alien maid
   description: Don't ask it to lay eggs in you.
-  id: MobAlieMaiden
+  id: MobAlienMaid
   parent: MobAlienBase
   components:
   - type: Alien
@@ -775,3 +775,4 @@
         Base: maid
       Dead:
         Base: maid_dead
+  - type: OwOAccent
