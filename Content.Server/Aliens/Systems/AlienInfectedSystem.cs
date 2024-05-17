@@ -14,8 +14,11 @@ using Content.Shared.Ghost.Roles;
 using Content.Shared.Gibbing.Components;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Gibbing.Systems;
+using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs;
 using Content.Shared.Random;
+using Content.Shared.StatusIcon;
+using Content.Shared.StatusIcon.Components;
 using FastAccessors;
 using Robust.Shared.Containers;
 using Robust.Shared.Random;
@@ -33,9 +36,7 @@ public sealed class AlienInfectedSystem : EntitySystem
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly GhostRoleSystem _ghostRole = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] protected readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
     public override void Initialize()
     {
         base.Initialize();

@@ -41,7 +41,8 @@ public sealed partial class AlienComponent : Component
     [DataField("nodeAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string? WeednodeAction = "ActionAlienNode";
 
-
+    [DataField]
+    public string Caste;
 
     [DataField("nodeActionEntity")] public EntityUid? WeednodeActionEntity;
 

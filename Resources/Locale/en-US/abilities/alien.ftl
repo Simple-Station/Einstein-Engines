@@ -43,8 +43,7 @@ action-tail-lash-desc = Stun nearby enemies with your tail.
 action-transfer-plasma-alien = Transfer plasma
 action-transfer-plasma-alien-desc = Transfer 50 plasma to nearby sister.
 
-alien-left-plasma-part1 = You have
-alien-left-plama-part2 = plasma left for use.
+alien-left-plasma = You have {$value} left for use.
 alien-create-structure-failed = You can't create structure here.
 alien-action-fail-plasma = You don't have enough plasma to make this.
 
@@ -66,3 +65,5 @@ action-alien-jump = Leap
 action-alien-jump-desc = Leap onto your enemies stunning them.
 
 alien-evolution-fail = There is a royal xenomorph alreagy.
+
+alerts-promotion-fail = This daughter is already a royal xenomorph.

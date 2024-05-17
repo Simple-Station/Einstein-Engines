@@ -111,6 +111,7 @@
       - Critical
       - Dead
     - type: Alien
+      caste: larva
       weedHeal:
         groups:
           Burn: -5
@@ -351,6 +352,7 @@
       - Critical
       - Dead
     - type: Alien
+      caste: drone
       weedHeal:
         groups:
           Burn: -5
@@ -424,6 +426,8 @@
   id: MobAlienSentinel
   parent: MobAlienBase
   components:
+  - type: Alien
+    caste: sentinel
   - type: AlienStalk
   - type: AcidMaker
     action: ActionMakeAcid
@@ -495,6 +499,8 @@
   id: MobAlienPraetorian
   parent: MobAlienBase
   components:
+  - type: Alien
+    caste: praetorian
   - type: AcidMaker
     action: ActionMakeAcid
     entityProduced: AlienAcid
@@ -573,6 +579,8 @@
   id: MobAlienHunter
   parent: MobAlienBase
   components:
+  - type: Alien
+    caste: hunter
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/alien.rsi
@@ -647,6 +655,8 @@
   id: MobAlienQueen
   parent: MobAlienBase
   components:
+  - type: Alien
+    caste: queen
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/alienqueen.rsi
@@ -716,11 +726,13 @@
   - type: TailLash
 
 - type: entity
-  name: Lusty alien maiden
+  name: Lusty alien maid
   description: Don't ask it to lay eggs in you.
   id: MobAlieMaiden
   parent: MobAlienBase
   components:
+  - type: Alien
+    caste: maid
   - type: PlasmaVessel
     plasmaPerSecond: 5
     plasmaModified: 40

@@ -48,8 +48,7 @@ public sealed class SharedPlasmaVesselSystem : EntitySystem
         }
         if(amount != component.PlasmaUnmodified && amount != component.WeedModifier)
         {
-            _popup.PopupEntity(Loc.GetString("alien-left-plasma-part1") + component.Plasma + Loc.GetString("alien-left-plama-part2"),
-                uid);
+            _popup.PopupEntity(Loc.GetString("alien-plasma-left", ("value", component.Plasma)), uid, uid);
         }
 
         _alerts.ShowAlert(uid, AlertType.PlasmaCounter, (short) Math.Clamp(Math.Round(component.Plasma.Float() / 50f), 0, 10));

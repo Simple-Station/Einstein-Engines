@@ -105,7 +105,7 @@ public sealed class AlienQueenSystem : EntitySystem
             HasComp<QueenEvolutionComponent>(args.Target) ||
             HasComp<AlienQueenComponent>(args.Target))
         {
-            _popup.PopupEntity(Loc.GetString("alien-evolution-fail"), uid, uid);
+            _popup.PopupEntity(Loc.GetString("alien-promotion-fail"), uid, uid);
             return;
         }
 
