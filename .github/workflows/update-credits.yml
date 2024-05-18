@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     # Hey there fork dev! If you like to include your own contributors in this then you can probably just change this to your own repo
     # Do this in dump_github_contributors.ps1 too into your own repo
-    if: github.repository == 'DeltaV-Station/Delta-v'
+    if: github.repository == 'Simple-Station/Einstein-Engines'
 
     steps:
       - uses: actions/checkout@v3.6.0
@@ -47,6 +47,6 @@ jobs:
         with:
           commit-message: Update Credits
           title: Update Credits
-          body: This is an automated Pull Request. This PR updates the github contributors in the credits section.
-          author: DeltaV-Bot <github@delta-v.org>
+          body: This is an automated Pull Request. This PR updates the GitHub contributors in the credits section.
+          author: ${{ vars.CHANGELOG_USER }} <${{ vars.CHANGELOG_EMAIL }}>
           branch: automated/credits-${{env.NOW}}

@@ -1,6 +1,16 @@
-
 - type: entity
   parent: ClothingNeckBase
+  id: ClothingNeckMedalBase
+  abstract: true
+  name: medal
+  description: not given to anyone
+  components:
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  
+- type: entity
+  parent: ClothingNeckMedalBase
   id: ClothingNeckBronzeheart
   name: bronzeheart medal
   description: Given to crewmates for exemplary bravery in the face of danger.
@@ -11,7 +21,7 @@
     sprite: Clothing/Neck/Medals/bronzeheart.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckMedalBase
   id: ClothingNeckGoldmedal
   name: gold medal of crewmanship
   description: Given to crewmates who display excellent crewmanship.
@@ -24,7 +34,7 @@
     stealGroup: ClothingNeckGoldmedal
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckMedalBase
   id: ClothingNeckCargomedal
   name: logistics medal # DeltaV - Logistics Department replacing Cargo
   description: Whether it's for superior accountancy, courageous salvage work, or just being a friendly technician - this medal is to be assigned only for the best work in the logistics department. # DeltaV - Logistics Department replacing Cargo. Updated description for flavour
@@ -35,7 +45,7 @@
     sprite: DeltaV/Clothing/Neck/Medals/cargomedal.rsi # DeltaV - resprite
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckMedalBase
   id: ClothingNeckEngineermedal
   name: engineer medal
   description: Whether it's by keeping the crew breathing, meticulous rewiring and upgrading, or just having plenty of materials on-hand - this medal is to be assigned only for the best work in the engineering department. # DeltaV - Updated description for flavour
@@ -46,7 +56,7 @@
     sprite: DeltaV/Clothing/Neck/Medals/engineermedal.rsi # DeltaV - resprite
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckMedalBase
   id: ClothingNeckMedicalmedal
   name: medical medal
   description: Whether it's being the first on the scene of an accident, the most caring bedside manner, or just making sure the patients don't go mad - this medal is to be assigned only for the best work in the medical department. # DeltaV - Updated description for flavour
@@ -57,7 +67,7 @@
     sprite: DeltaV/Clothing/Neck/Medals/medicalmedal.rsi # DeltaV - resprite
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckMedalBase
   id: ClothingNeckSciencemedal
   name: epistemics medal # DeltaV - Epistemics Department replacing Science
   description: Whether it's pushing the edges of modern science and technology, foraying into the vast expanses of the noosphere, or just fetching the coffee - this medal is to be assigned only for the best work in the epistemics department. # DeltaV - Epistemics Department replacing Science. Updated description for flavour
@@ -68,7 +78,7 @@
     sprite: DeltaV/Clothing/Neck/Medals/sciencemedal.rsi # DeltaV - resprite
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckMedalBase
   id: ClothingNeckSecuritymedal
   name: security medal
   description: Whether it's catching armed terrorists, guarding the crew from alien threats, or just having a conversation in the corridor - this medal is to be assigned only for the best work in the security department. # DeltaV - Updated description for flavour
@@ -79,7 +89,7 @@
     sprite: DeltaV/Clothing/Neck/Medals/securitymedal.rsi # DeltaV - resprite
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckMedalBase
   id: ClothingNeckClownmedal
   name: bravado medal # DeltaV - Updated title so it's not just a joke medal.
   description: Given to crewmates who laugh in the face of death, lift their peers' spirits, and uplift themselves and their friends to success. # DeltaV - Updated description for flavour and to reflect title.

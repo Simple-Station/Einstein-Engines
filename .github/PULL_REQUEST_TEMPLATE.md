@@ -1,43 +1,62 @@
-<!-- Please read these guidelines before opening your PR: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
-<!-- The text between the arrows are comments - they will not be visible on your PR. -->
-
-## About the PR
-<!-- What did you change in this PR? -->
-
-## Why / Balance
-<!-- Why was it changed? Link any discussions or issues here. Please discuss how this would affect game balance. -->
-
-## Technical details
-<!-- If this is a code change, summarize at high level how your new code works. This makes it easier to review. -->
-
-## Media
-<!-- 
-PRs which make ingame changes (adding clothing, items, new features, etc) are required to have media attached that showcase the changes.
-Small fixes/refactors are exempt.
-Any media may be used in SS14 progress reports, with clear credit given.
-
-If you're unsure whether your PR will require media, ask a maintainer.
-
-Check the box below to confirm that you have in fact seen this (put an X in the brackets, like [X]):
+<!--
+This is a semi-strict format, you can add/remove sections as needed but the order/format should be kept the same
+Remove these comments before submitting
 -->
 
-- [ ] I have added screenshots/videos to this PR showcasing its changes ingame, **or** this PR does not require an ingame showcase
+# Description
 
-## Breaking changes
 <!--
-List any breaking changes, including namespace, public class/method/field changes, prototype renames; and provide instructions for fixing them. This will be pasted in #codebase-changes.
+Explain this PR in as much detail as applicable
+
+Some example prompts to consider:
+How might this affect the game? The codebase?
+What might be some alternatives to this?
+How/Who does this benefit/hurt [the game/codebase]?
 -->
 
-**Changelog**
-<!--
-Make players aware of new features and changes that could affect how they play the game by adding a Changelog entry. Please read the Changelog guidelines located at: https://docs.spacestation14.io/en/getting-started/pr-guideline#changelog
--->
+Description.
+
+---
+
+# TODO
 
 <!--
-Make sure to take this Changelog template out of the comment block in order for it to show up.
+A list of everything you have to do before this PR is "complete"
+You probably won't have to complete everything before merging but it's good to leave future references
+-->
+
+- [ ] Task
+- [x] Completed Task
+
+---
+
+<!--
+This is default collapsed, readers click to expand it and see all your media
+The PR media section can get very large at times, so this is a good way to keep it clean
+The title is written using HTML tags
+The title must be within the <summary> tags or you won't see it
+-->
+
+<details><summary><h1>Media</h1></summary>
+<p>
+
+![Example Media Embed](https://example.com/thisimageisntreal.png)
+
+</p>
+</details>
+
+---
+
+# Changelog
+
+<!--
+You can add an author after the `:cl:` to change the name that appears in the changelog (ex: `:cl: Death`)
+Leaving it blank will default to your GitHub display name
+This includes all available types for the changelog
+-->
+
 :cl:
-- add: Added fun!
-- remove: Removed fun!
-- tweak: Changed fun!
+- add: Added fun :D
+- tweak: Tweaked fun
 - fix: Fixed fun!
--->
+- remove: Removed fun :(
