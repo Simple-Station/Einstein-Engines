@@ -77,7 +77,7 @@
     sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
   - type: EmitSoundOnLand
     sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
-# Corvax-Printer-Start
+  # Corvax-Printer-Start
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -172,8 +172,8 @@
   parent: PaperCaptainsThoughts
   suffix: Punpun Note
   components:
-    - type: Paper
-      content: I, Punpun, invoke my right to have all of my clones on the NT family vacation to the meat packaging plant one out of every 15 shifts.
+  - type: Paper
+    content: I, Punpun, invoke my right to have all of my clones on the NT family vacation to the meat packaging plant one out of every 15 shifts.
 
 - type: entity
   name: cargo invoice
@@ -304,156 +304,6 @@
   suffix: Station Only
   components:
   - type: NukeCodePaper
-
-- type: entity
-  parent: Paper
-  id: StationGoalPaper
-  name: station goal
-  description: It looks like you have a lot of work to do.
-  components:
-    - type: Paper
-      stampState: paper_stamp-centcom
-      stampedBy:
-      - stampedName: stamp-component-stamped-name-centcom
-        stampedColor: "#bb3232"
-
-
-- type: entity
-  name: pen
-  parent: BaseItem
-  id: Pen
-  description: 'A dark ink pen.'
-  components:
-  - type: Tag
-    tags:
-    - Write
-    - Pen
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    state: pen
-  - type: Item
-    sprite: Objects/Misc/bureaucracy.rsi
-    heldPrefix: pen
-    size: Tiny
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 25
-  # Shitmed Change
-  - type: Tending
-    speed: 0.55
-  - type: SurgeryTool
-    startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
-    endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/hemostat1.ogg
-  - type: EmbeddableProjectile
-    offset: 0.3,0.0
-    removalTime: 0.0
-  - type: ThrowingAngle
-    angle: 315
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Piercing: 3
-
-- type: entity
-  parent: Pen
-  id: PenEmbeddable
-  abstract: true
-  components:
-  - type: LandAtCursor
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Piercing: 5
-
-#TODO: I want the luxury pen to write a cool font like Merriweather in the future.
-
-- type: entity
-  name: luxury pen
-  parent: Pen
-  id: LuxuryPen
-  description: A fancy and expensive pen that you only deserve to own if you're qualified to handle vast amounts of paperwork.
-  components:
-  - type: Sprite
-    state: luxury_pen
-  - type: Item
-    heldPrefix: luxury_pen
-
-- type: entity
-  name: Cybersun pen
-  parent: PenEmbeddable
-  id: CyberPen
-  description: A high-tech pen straight from Cybersun's legal department, capable of refracting hard-light at impossible angles through its diamond tip in order to write. So powerful, it's even able to rewrite officially stamped documents should the need arise.
-  components:
-  - type: Tag
-    tags:
-    - Write
-    - WriteIgnoreStamps
-    - Pickaxe
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    state: overpriced_pen
-  - type: MeleeWeapon
-    wideAnimationRotation: -45
-    damage:
-      types:
-        Piercing: 15
-    soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Piercing: 15
-  - type: EmbeddableProjectile
-    removalTime: 2
-  - type: EmbedPassiveDamage
-  - type: Tool
-    qualities:
-      - Screwing
-    useSound:
-      collection: Screwdriver
-  - type: Item
-    sprite: Objects/Misc/bureaucracy.rsi
-    heldPrefix: overpriced_pen
-    size: Tiny
-
-- type: entity
-  name: captain's fountain pen
-  parent: PenEmbeddable
-  id: PenCap
-  description: 'A luxurious fountain pen for the captain of the station.'
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    state: pen_cap
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Piercing: 8
-
-- type: entity
-  name: CentCom pen
-  parent: CyberPen
-  id: PenCentcom
-  description: In an attempt to keep up with the "power" of the cybersun bureaucracy, NT made a replica of cyber pen, in their corporate style.
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    state: pen_centcom
-  - type: Item
-    sprite: Objects/Misc/bureaucracy.rsi
-    heldPrefix: pen_centcom
-
-- type: entity
-  name: hop's fountain pen
-  parent: PenEmbeddable
-  id: PenHop
-  description: 'A luxurious fountain pen for the hop of the station.'
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    state: pen_hop
 
 - type: entity
   id: BoxFolderBase
