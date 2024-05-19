@@ -78,8 +78,8 @@ public sealed class SharedFacehuggerSystem : EntitySystem
 
             if (invalidEntities.ContainsKey(entity.Key))
                 continue;
-            _inventory.TryUnequip(entity.Value, "mask");
-            _inventory.TryEquip(entity.Value, entity.Key, "mask");
+            _inventory.TryUnequip(entity.Value, "mask", true);
+            _inventory.TryEquip(entity.Value, entity.Key, "mask", true);
 
 
         }

@@ -33,6 +33,12 @@ public sealed class SharedPlasmaTransferSystem : EntitySystem
 
     public void OnPlasmaTransfer(EntityUid uid, PlasmaTransferComponent component, TransferPlasmaActionEvent args)
     {
+        if (args.Handled)
+        {
+            return;
+        }
+
+        args.Handled = true;
         if (!HasComp<PlasmaVesselComponent>(args.Target))
         {
             _popup.PopupEntity(Loc.GetString("alien-transfer-fail"), uid);
@@ -50,11 +56,10 @@ public sealed class SharedPlasmaTransferSystem : EntitySystem
         {
             _popup.PopupEntity(Loc.GetString("alien-transfer-fail"), uid);
         }
-
     }
 
     /// <summary>
-    /// Takeths away the action to preform making acid from the entity.
+    /// Takeths away the action to preform plasma transfer from the entity.
     /// </summary>
     private void OnCompRemove(EntityUid uid, PlasmaTransferComponent comp, ComponentShutdown args)
     {

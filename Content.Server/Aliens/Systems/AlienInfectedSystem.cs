@@ -80,6 +80,7 @@ public sealed class AlienInfectedSystem : EntitySystem
                 var larva = Spawn(infected.Prototype, Transform(uid).Coordinates);
                 _container.Insert(larva, infected.Stomach);
                 infected.SpawnedLarva = larva;
+                infected.GrowthStage++;
             }
 
             if (_random.Prob(infected.GrowProb))
