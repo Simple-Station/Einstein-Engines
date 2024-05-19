@@ -24,8 +24,8 @@
     - WhitelistChameleon
   - type: StealTarget
     stealGroup: IDCard
-  - type: NanoChatCard # DeltaV
-  - type: MiningPoints # DeltaV
+  - type: NanoChatCard
+  - type: MiningPoints
 
 #IDs with layers
 
@@ -249,7 +249,7 @@
 - type: entity
   parent: IDCardStandard
   id: CargoIDCard
-  name: logistics ID card # DeltaV - Logistics Department replacing Cargo
+  name: logistics ID card
   components:
   - type: Sprite
     layers:
@@ -281,16 +281,16 @@
 - type: entity
   parent: IDCardStandard
   id: QuartermasterIDCard
-  name: logistics officer ID card # DeltaV - Logistics Department replacing Cargo
+  name: logistics officer ID card
   components:
   - type: Sprite
     layers:
-      - state: silver
-      - state: departmenthead
-        color: "#1B67A5"
-      - state: subdepartment
-        color: "#B18644"
-      - state: cargotechnician
+    - state: silver
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#B18644"
+    - state: cargotechnician
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
@@ -467,7 +467,7 @@
 - type: entity
   parent: IDCardStandard
   id: LawyerIDCard
-  name: attorney ID card # DeltaV - Changed Lawyer to Attorney
+  name: attorney ID card
   components:
   - type: Sprite
     layers:
@@ -485,16 +485,16 @@
   id: ChiefJusticeIDCard
   name: chief justice ID card
   components:
-    - type: PresetIdCard
-      job: ChiefJustice
-    - type: Sprite
-      layers:
-      - state: default
-      - state: department
-        color: "#878787"
-      - state: subdepartment
-        color: "#CB0000"
-      - state: lawyer
+  - type: PresetIdCard
+    job: ChiefJustice
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#CB0000"
+    - state: lawyer
 
 
 - type: entity
@@ -502,32 +502,32 @@
   id: ClerkIDCard
   name: clerk ID card
   components:
-    - type: PresetIdCard
-      job: Clerk
-    - type: Sprite
-      layers:
-      - state: default
-      - state: department
-        color: "#878787"
-      - state: subdepartment
-        color: "#CB0000"
-      - state: lawyer
+  - type: PresetIdCard
+    job: Clerk
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#CB0000"
+    - state: lawyer
 
 - type: entity
   parent: IDCardStandard
   id: ProsecutorIDCard
   name: presecutor ID card
   components:
-    - type: PresetIdCard
-      job: Prosecutor
-    - type: Sprite
-      layers:
-      - state: default
-      - state: department
-        color: "#878787"
-      - state: subdepartment
-        color: "#CB0000"
-      - state: lawyer
+  - type: PresetIdCard
+    job: Prosecutor
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#CB0000"
+    - state: lawyer
 
 - type: entity
   parent: IDCardStandard
@@ -586,7 +586,7 @@
 - type: entity
   parent: IDCardStandard
   id: RDIDCard
-  name: mystagogue ID card # DeltaV - Epistemics Department replacing Science
+  name: mystagogue ID card
   components:
   - type: Sprite
     layers:
@@ -622,7 +622,7 @@
 - type: entity
   parent: IDCardStandard
   id: BrigmedicIDCard
-  name: corpsman ID card # DeltaV - rename brigmedic to corpsman
+  name: corpsman ID card
   components:
   - type: Sprite
     layers:
@@ -632,7 +632,7 @@
     - state: subdepartment
       color: "#5B97BC"
     - state: medicaldoctor
-  - type: PresetIdCard # Delta V - Brigmedic, see Prototypes/DeltaV/Roles/Jobs/Security/brigmedic.yml
+  - type: PresetIdCard
     job: Brigmedic
 
 - type: entity
@@ -647,7 +647,7 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CentralCommandOfficial
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -667,7 +667,7 @@
     job: ERTLeader
   - type: Item
     heldPrefix: gold
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -687,7 +687,7 @@
     job: ERTChaplain
   - type: Item
     heldPrefix: blue
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -705,7 +705,7 @@
     - state: stationengineer
   - type: PresetIdCard
     job: ERTEngineer
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -723,7 +723,7 @@
     - state: janitor
   - type: PresetIdCard
     job: ERTJanitor
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -741,7 +741,7 @@
     - state: medicaldoctor
   - type: PresetIdCard
     job: ERTMedical
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -759,7 +759,7 @@
     - state: cc
   - type: PresetIdCard
     job: ERTSecurity
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -817,7 +817,7 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: DeathSquad
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -858,7 +858,7 @@
         type: ChameleonBoundUserInterface
   - type: ClothingAddFaction
     faction: Syndicate
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -910,7 +910,7 @@
     - SyndicateAgent
   - type: ClothingAddFaction
     faction: Syndicate
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -932,7 +932,7 @@
     - SyndicateAgent
   - type: ClothingAddFaction
     faction: Syndicate
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -1033,7 +1033,7 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CBURN
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     listNumber: false
 
 - type: entity
@@ -1135,6 +1135,33 @@
     heldPrefix: silver
   - type: PresetIdCard
     job: AdministrativeAssistant
-  - type: NanoChatCard # DeltaV
+  - type: NanoChatCard
     notificationsMuted: true
     listNumber: false
+
+- type: entity
+  parent: IDCardStandard
+  id: UniversalIDCard
+  name: universal ID card
+  suffix: Admin
+  description: An ID card that gives you access beyond your wildest dreams.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    layers:
+    - state: admin
+    - state: idadmin
+  - type: Clothing
+    sprite: Objects/Misc/id_cards.rsi
+  - type: Item
+    heldPrefix: green
+  - type: IdCard
+    jobTitle: Universal
+    jobIcon: JobIconAdmin
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+    - NuclearOperative
+    - SyndicateAgent

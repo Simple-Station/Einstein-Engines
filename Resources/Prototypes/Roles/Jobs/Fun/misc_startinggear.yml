@@ -202,6 +202,7 @@
     back:
     - GasAnalyzer
     - trayScanner
+    - AccessConfiguratorUniversal
 
 #Gladiator with spear
 - type: startingGear
