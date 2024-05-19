@@ -54,8 +54,14 @@
   - type: Fixtures
     fixtures:
       fix1:
-        hard: false
-      # Goobstation - fishing
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - None
       fishing:
         shape:
           !type:PhysShapeCircle
@@ -66,7 +72,6 @@
         - HighImpassable
         density: 1000
         hard: false
-      # Goobstation - fishing
   - type: Construction
     graph: Toilet
     node: toilet
@@ -91,12 +96,12 @@
         maxVol: 100
       tank:
         maxVol: 500
-  #- type: SolutionRegeneration - Goobstation - laggy, also who uses toilets?
-  #  solution: tank
-  #  generated:
-  #    reagents:
-  #    - ReagentId: Water
-  #      Quantity: 1
+  - type: SolutionRegeneration
+    solution: tank
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 1
   # Goobstation - fishing in toilet is fun
   - type: FishingSpot
     fishList: !type:NestedSelector
