@@ -7,6 +7,8 @@ using Content.Server.Station.Systems;
 using Content.Shared.Paper;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Server.Announcements.Systems;
+using Robust.Shared.Player;
 
 namespace Content.Server.Nuke
 {
@@ -17,6 +19,7 @@ namespace Content.Server.Nuke
         [Dependency] private readonly StationSystem _station = default!;
         [Dependency] private readonly PaperSystem _paper = default!;
         [Dependency] private readonly FaxSystem _faxSystem = default!;
+        [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
         public override void Initialize()
         {
@@ -79,7 +82,8 @@ namespace Content.Server.Nuke
             if (wasSent)
             {
                 var msg = Loc.GetString("nuke-component-announcement-send-codes");
-                _chatSystem.DispatchStationAnnouncement(station, msg, colorOverride: Color.Red);
+                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("NukeCodes"), Filter.Broadcast(), msg,
+                    colorOverride: Color.Red);
             }
 
             return wasSent;
