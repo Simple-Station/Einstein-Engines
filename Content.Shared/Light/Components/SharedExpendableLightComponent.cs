@@ -7,6 +7,7 @@ namespace Content.Shared.Light.Components;
 [NetworkedComponent]
 public abstract partial class SharedExpendableLightComponent : Component
 {
+
     [ViewVariables(VVAccess.ReadOnly)]
     public ExpendableLightState CurrentState { get; set; }
 

@@ -180,7 +180,7 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
 
             var aabbs = EntityQuery<StationDataComponent>().SelectMany(x =>
                     x.Grids.Select(x =>
-                        xformQuery.GetComponent(x).WorldMatrix.TransformBox(_mapManager.GetGridComp(x).LocalAABB)))
+                        xformQuery.GetComponent(x).WorldMatrix.TransformBox(_mapManager.GetGrid(x).LocalAABB)))
                 .ToArray();
 
             var aabb = aabbs[0];
