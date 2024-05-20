@@ -4046,3 +4046,37 @@ Entries:
         skulls!"
   id: 6106
   time: '2024-04-17T04:07:41.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Glass/Crystal shards and floor tiles now deal damage and embed in
+        victims when colliding with them. 
+  id: 6107
+  time: '2024-05-11T01:23:00.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Better looking Vents Sprites!
+  id: 6108
+  time: '2024-05-12T04:26:55.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: >-
+        Added a new character customization tab for selecting items to start
+        your shift with, loadouts!
+    - type: Remove
+      message: Removed some default job equipment in favor of loadouts
+    - type: Remove
+      message: Removed several clothing items from Command lockers in favor of loadouts
+  id: 6109
+  time: '2024-05-13T04:46:57.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: >-
+        Added a queue for players so you don't need to spam reconnect and hope
+        you join when someone leaves.
+  id: 6110
+  time: '2024-05-13T04:58:39.0000000+00:00'
