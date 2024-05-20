@@ -413,8 +413,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (!TryComp<StorageComponent>(uid, out var storageComp))
             return;
 
-        if (!_ui.TryGetUi(uid, StorageComponent.StorageUiKey.Key, out var bui) ||
-            !bui.SubscribedSessions.Contains(args.SenderSession))
+        if (!_ui.IsUiOpen(uid, StorageComponent.StorageUiKey.Key, player))
             return;
 
         if (!Exists(entity))
@@ -456,8 +455,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (!TryComp<StorageComponent>(storageEnt, out var storageComp))
             return;
 
-        if (!_ui.TryGetUi(storageEnt, StorageComponent.StorageUiKey.Key, out var bui) ||
-            !bui.SubscribedSessions.Contains(args.SenderSession))
+        if (!_ui.IsUiOpen(storageEnt, StorageComponent.StorageUiKey.Key, player))
             return;
 
         if (!Exists(itemEnt))
@@ -483,8 +481,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (!TryComp<StorageComponent>(storageEnt, out var storageComp))
             return;
 
-        if (!_ui.TryGetUi(storageEnt, StorageComponent.StorageUiKey.Key, out var bui) ||
-            !bui.SubscribedSessions.Contains(args.SenderSession))
+        if (!_ui.IsUiOpen(storageEnt, StorageComponent.StorageUiKey.Key, player))
             return;
 
         if (!Exists(itemEnt))
@@ -511,8 +508,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (!TryComp<StorageComponent>(storageEnt, out var storageComp))
             return;
 
-        if (!_ui.TryGetUi(storageEnt, StorageComponent.StorageUiKey.Key, out var bui) ||
-            !bui.SubscribedSessions.Contains(args.SenderSession))
+        if (!_ui.IsUiOpen(storageEnt, StorageComponent.StorageUiKey.Key, player))
             return;
 
         if (!Exists(itemEnt))

@@ -34,14 +34,12 @@ public sealed class BlockGameArcadeSystem : EntitySystem
         }
     }
 
-    private void UpdatePlayerStatus(EntityUid uid, ICommonSession session, PlayerBoundUserInterface? bui = null, BlockGameArcadeComponent? blockGame = null)
+    private void UpdatePlayerStatus(EntityUid uid, EntityUid actor, BlockGameArcadeComponent? blockGame = null)
     {
         if (!Resolve(uid, ref blockGame))
             return;
-        if (bui == null && !_uiSystem.TryGetUi(uid, BlockGameUiKey.Key, out bui))
-            return;
 
-        _uiSystem.TrySendUiMessage(bui, new BlockGameMessages.BlockGameUserStatusMessage(blockGame.Player == session), session);
+        _uiSystem.ServerSendUiMessage(uid, BlockGameUiKey.Key, new BlockGameMessages.BlockGameUserStatusMessage(blockGame.Player == actor), actor);
     }
 
     private void OnComponentInit(EntityUid uid, BlockGameArcadeComponent component, ComponentInit args)
