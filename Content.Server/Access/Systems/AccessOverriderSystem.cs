@@ -75,7 +75,7 @@ public sealed class AccessOverriderSystem : SharedAccessOverriderSystem
         if (args.Args.Target != null)
         {
             component.TargetAccessReaderId = args.Args.Target.Value;
-            _userInterface.TryOpen(uid, AccessOverriderUiKey.Key, actor.PlayerSession);
+            _userInterface.OpenUi(uid, AccessOverriderUiKey.Key, actor.PlayerSession);
             UpdateUserInterface(uid, component, args);
         }
 
@@ -92,7 +92,7 @@ public sealed class AccessOverriderSystem : SharedAccessOverriderSystem
 
     private void OnWriteToTargetAccessReaderIdMessage(EntityUid uid, AccessOverriderComponent component, WriteToTargetAccessReaderIdMessage args)
     {
-        if (args.Session.AttachedEntity is not { Valid: true } player)
+        if (args.Actor is not { Valid: true } player)
             return;
 
         TryWriteToTargetAccessReaderId(uid, args.AccessList, player, component);
@@ -149,7 +149,7 @@ public sealed class AccessOverriderSystem : SharedAccessOverriderSystem
             targetLabel,
             targetLabelColor);
 
-        _userInterface.TrySetUiState(uid, AccessOverriderUiKey.Key, newState);
+        _userInterface.SetUiState(uid, AccessOverriderUiKey.Key, newState);
     }
 
     private List<string> ConvertAccessHashSetsToList(List<HashSet<string>> accessHashsets)
