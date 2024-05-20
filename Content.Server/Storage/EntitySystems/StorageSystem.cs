@@ -67,7 +67,7 @@ public sealed partial class StorageSystem : SharedStorageSystem
             return;
 
         // Does this player currently have the storage UI open?
-        var uiOpen = _uiSystem.SessionHasOpenUi(uid, StorageComponent.StorageUiKey.Key, actor.PlayerSession);
+        var uiOpen = _uiSystem.HasUi(uid, StorageComponent.StorageUiKey.Key);
 
         ActivationVerb verb = new()
         {
@@ -75,7 +75,7 @@ public sealed partial class StorageSystem : SharedStorageSystem
             {
                 if (uiOpen)
                 {
-                    _uiSystem.TryClose(uid, StorageComponent.StorageUiKey.Key, actor.PlayerSession);
+                    _uiSystem.CloseUi(uid, StorageComponent.StorageUiKey.Key, actor.PlayerSession);
                 }
                 else
                 {
@@ -100,17 +100,13 @@ public sealed partial class StorageSystem : SharedStorageSystem
 
     private void OnBoundUIClosed(EntityUid uid, StorageComponent storageComp, BoundUIClosedEvent args)
     {
-        if (TryComp<ActorComponent>(args.Session.AttachedEntity, out var actor) && actor?.PlayerSession != null)
-            CloseNestedInterfaces(uid, actor.PlayerSession, storageComp);
+        CloseNestedInterfaces(uid, args.Actor, storageComp);
 
         // If UI is closed for everyone
         if (!_uiSystem.IsUiOpen(uid, args.UiKey))
         {
-            storageComp.IsUiOpen = false;
             UpdateAppearance((uid, storageComp, null));
-
-            if (storageComp.StorageCloseSound is not null)
-                Audio.PlayEntity(storageComp.StorageCloseSound, Filter.Pvs(uid, entityManager: EntityManager), uid, true, storageComp.StorageCloseSound.Params);
+            Audio.PlayPredicted(storageComp.StorageCloseSound, uid, args.Actor);
         }
     }
 
@@ -125,26 +121,21 @@ public sealed partial class StorageSystem : SharedStorageSystem
     /// <param name="entity">The entity to open the UI for</param>
     public override void OpenStorageUI(EntityUid uid, EntityUid entity, StorageComponent? storageComp = null, bool silent = false)
     {
-        if (!Resolve(uid, ref storageComp, false) || !TryComp(entity, out ActorComponent? player))
+        if (!Resolve(uid, ref storageComp, false))
             return;
 
         // prevent spamming bag open / honkerton honk sound
-        silent |= TryComp<UseDelayComponent>(uid, out var useDelay) && _useDelay.IsDelayed((uid, useDelay));
+        silent |= TryComp<UseDelayComponent>(uid, out var useDelay) && UseDelay.IsDelayed((uid, useDelay));
         if (!silent)
         {
-            if (!storageComp.IsUiOpen)
-                _audio.PlayPvs(storageComp.StorageOpenSound, uid);
+            if (!_uiSystem.IsUiOpen(uid, StorageComponent.StorageUiKey.Key))
+                Audio.PlayPredicted(storageComp.StorageOpenSound, uid, entity);
+
             if (useDelay != null)
-                _useDelay.TryResetDelay((uid, useDelay));
+                UseDelay.TryResetDelay((uid, useDelay));
         }
 
-        Log.Debug($"Storage (UID {uid}) \"used\" by player session (UID {player.PlayerSession.AttachedEntity}).");
-
-        var bui = _uiSystem.GetUiOrNull(uid, StorageComponent.StorageUiKey.Key);
-        if (bui == null)
-            return;
-        _uiSystem.OpenUi(bui, player.PlayerSession);
-        _uiSystem.SendUiMessage(bui, new StorageModifyWindowMessage());
+        _uiSystem.OpenUi(uid, StorageComponent.StorageUiKey.Key, entity);
     }
 
     /// <inheritdoc />
@@ -159,7 +150,7 @@ public sealed partial class StorageSystem : SharedStorageSystem
     ///     If the user has nested-UIs open (e.g., PDA UI open when pda is in a backpack), close them.
     /// </summary>
     /// <param name="session"></param>
-    public void CloseNestedInterfaces(EntityUid uid, ICommonSession session, StorageComponent? storageComp = null)
+    private void CloseNestedInterfaces(EntityUid uid, EntityUid actor, StorageComponent? storageComp = null)
     {
         if (!Resolve(uid, ref storageComp))
             return;
@@ -171,13 +162,7 @@ public sealed partial class StorageSystem : SharedStorageSystem
         // close ui
         foreach (var entity in storageComp.Container.ContainedEntities)
         {
-            if (!TryComp(entity, out UserInterfaceComponent? ui))
-                continue;
-
-            foreach (var bui in ui.Interfaces.Values)
-            {
-                _uiSystem.TryClose(entity, bui.UiKey, session, ui);
-            }
+            _uiSystem.CloseUis(entity, actor);
         }
     }
 
