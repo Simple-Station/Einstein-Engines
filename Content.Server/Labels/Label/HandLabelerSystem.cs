@@ -97,16 +97,13 @@ namespace Content.Server.Labels
 
         private void OnHandLabelerLabelChanged(EntityUid uid, HandLabelerComponent handLabeler, HandLabelerLabelChangedMessage args)
         {
-            if (args.Session.AttachedEntity is not {Valid: true} player)
-                return;
-
             var label = args.Label.Trim();
             handLabeler.AssignedLabel = label.Substring(0, Math.Min(handLabeler.MaxLabelChars, label.Length));
             DirtyUI(uid, handLabeler);
 
             // Log label change
             _adminLogger.Add(LogType.Action, LogImpact.Low,
-                $"{ToPrettyString(player):user} set {ToPrettyString(uid):labeler} to apply label \"{handLabeler.AssignedLabel}\"");
+                $"{ToPrettyString(args.Actor):user} set {ToPrettyString(uid):labeler} to apply label \"{handLabeler.AssignedLabel}\"");
 
         }
 
@@ -116,7 +113,7 @@ namespace Content.Server.Labels
             if (!Resolve(uid, ref handLabeler))
                 return;
 
-            _userInterfaceSystem.TrySetUiState(uid, HandLabelerUiKey.Key,
+            _userInterfaceSystem.SetUiState(uid, HandLabelerUiKey.Key,
                 new HandLabelerBoundUserInterfaceState(handLabeler.AssignedLabel));
         }
     }

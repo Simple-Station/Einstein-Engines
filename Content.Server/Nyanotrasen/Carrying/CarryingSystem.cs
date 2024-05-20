@@ -125,10 +125,8 @@ namespace Content.Server.Carrying
 
         private void OnParentChanged(EntityUid uid, CarryingComponent component, ref EntParentChangedMessage args)
         {
-            if (Transform(uid).MapID != args.OldMapId)
-                return;
-
-            DropCarried(uid, component.Carried);
+            if (args.Transform.MapUid != args.OldMapId)
+                DropCarried(uid, component.Carried);
         }
 
         private void OnMobStateChanged(EntityUid uid, CarryingComponent component, MobStateChangedEvent args)

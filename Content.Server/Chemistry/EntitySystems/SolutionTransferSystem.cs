@@ -40,8 +40,7 @@ namespace Content.Server.Chemistry.EntitySystems
             var newTransferAmount = FixedPoint2.Clamp(message.Value, entity.Comp.MinimumTransferAmount, entity.Comp.MaximumTransferAmount);
             entity.Comp.TransferAmount = newTransferAmount;
 
-            if (message.Session.AttachedEntity is { Valid: true } user)
-                _popupSystem.PopupEntity(Loc.GetString("comp-solution-transfer-set-amount", ("amount", newTransferAmount)), entity.Owner, user);
+            _popupSystem.PopupEntity(Loc.GetString("comp-solution-transfer-set-amount", ("amount", newTransferAmount)), entity.Owner, message.Actor);
         }
 
         private void AddSetTransferVerbs(Entity<SolutionTransferComponent> entity, ref GetVerbsEvent<AlternativeVerb> args)
@@ -58,7 +57,7 @@ namespace Content.Server.Chemistry.EntitySystems
             AlternativeVerb custom = new();
             custom.Text = Loc.GetString("comp-solution-transfer-verb-custom-amount");
             custom.Category = VerbCategory.SetTransferAmount;
-            custom.Act = () => _userInterfaceSystem.TryOpen(uid, TransferAmountUiKey.Key, actor.PlayerSession);
+            custom.Act = () => _userInterfaceSystem.OpenUi(uid, TransferAmountUiKey.Key, actor.PlayerSession);
             custom.Priority = 1;
             args.Verbs.Add(custom);
 

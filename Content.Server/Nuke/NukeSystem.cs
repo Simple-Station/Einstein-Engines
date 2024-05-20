@@ -186,7 +186,7 @@ public sealed class NukeSystem : EntitySystem
                     continue;
 
                 var msg = Loc.GetString("nuke-component-cant-anchor-floor");
-                _popups.PopupEntity(msg, uid, args.Session, PopupType.MediumCaution);
+                _popups.PopupEntity(msg, uid, args.Actor, PopupType.MediumCaution);
 
                 return;
             }
@@ -242,10 +242,7 @@ public sealed class NukeSystem : EntitySystem
 
         else
         {
-            if (args.Session.AttachedEntity is not { } user)
-                return;
-
-            DisarmBombDoafter(uid, user, component);
+            DisarmBombDoafter(uid, args.Actor, component);
         }
     }
 
@@ -365,29 +362,30 @@ public sealed class NukeSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        var ui = _ui.GetUiOrNull(uid, NukeUiKey.Key);
-        if (ui == null)
-            return;
-
-        var anchored = Transform(uid).Anchored;
-
-        var allowArm = component.DiskSlot.HasItem &&
-                       (component.Status == NukeStatus.AWAIT_ARM ||
-                        component.Status == NukeStatus.ARMED);
-
-        var state = new NukeUiState
+        if (_ui.HasUi(uid, NukeUiKey.Key))
         {
-            Status = component.Status,
-            RemainingTime = (int) component.RemainingTime,
-            DiskInserted = component.DiskSlot.HasItem,
-            IsAnchored = anchored,
-            AllowArm = allowArm,
-            EnteredCodeLength = component.EnteredCode.Length,
-            MaxCodeLength = component.CodeLength,
-            CooldownTime = (int) component.CooldownTime
-        };
+            var anchored = Transform(uid).Anchored;
 
-        _ui.SetUiState(ui, state);
+            var allowArm = component.DiskSlot.HasItem &&
+                        (component.Status == NukeStatus.AWAIT_ARM ||
+                            component.Status == NukeStatus.ARMED);
+
+            var state = new NukeUiState
+            {
+                Status = component.Status,
+                RemainingTime = (int) component.RemainingTime,
+                DiskInserted = component.DiskSlot.HasItem,
+                IsAnchored = anchored,
+                AllowArm = allowArm,
+                EnteredCodeLength = component.EnteredCode.Length,
+                MaxCodeLength = component.CodeLength,
+                CooldownTime = (int) component.CooldownTime
+            };
+
+            _ui.SetUiState(uid, NukeUiKey.Key, state);
+        }
+
+
     }
 
     private void PlayNukeKeypadSound(EntityUid uid, int number, NukeComponent? component = null)

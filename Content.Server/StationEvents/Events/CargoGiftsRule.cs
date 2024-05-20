@@ -62,13 +62,14 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
             if (!_cargoSystem.AddAndApproveOrder(
                     station!.Value,
                     product.Product,
+                    product.Name,
                     product.Cost,
                     qty,
                     Loc.GetString(component.Sender),
                     Loc.GetString(component.Description),
                     Loc.GetString(component.Dest),
                     cargoDb,
-                    stationData!
+                    (station.Value, stationData)
             ))
             {
                 break;

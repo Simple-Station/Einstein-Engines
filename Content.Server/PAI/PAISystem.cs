@@ -104,7 +104,7 @@ public sealed class PAISystem : SharedPAISystem
         //  before closing
         if (HasComp<ActiveInstrumentComponent>(uid) && TryComp<ActorComponent>(uid, out var actor))
         {
-            _instrumentSystem.ToggleInstrumentUi(uid, actor.PlayerSession);
+            _instrumentSystem.ToggleInstrumentUi(uid, uid);
         }
 
         //  Stop instrument

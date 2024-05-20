@@ -34,6 +34,6 @@ public sealed partial class ParticleAcceleratorStrengthWireAction : ComponentWir
     {
         var paSystem = EntityManager.System<ParticleAcceleratorSystem>();
         var userSession = EntityManager.TryGetComponent<ActorComponent>(user, out var actor) ? actor.PlayerSession : null;
-        paSystem.SetStrength(wire.Owner, (ParticleAcceleratorPowerState) ((int) controller.SelectedStrength + 1), userSession, controller);
+        paSystem.SetStrength(wire.Owner, (ParticleAcceleratorPowerState) ((int) controller.SelectedStrength + 1), user, controller);
     }
 }

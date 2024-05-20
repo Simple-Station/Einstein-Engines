@@ -112,7 +112,7 @@ namespace Content.Server.Paper
                     return;
 
                 paperComp.Mode = PaperAction.Write;
-                _uiSystem.TryOpen(uid, PaperUiKey.Key, actor.PlayerSession);
+                _uiSystem.OpenUi(uid, PaperUiKey.Key, actor.PlayerSession);
                 UpdateUserInterface(uid, paperComp, actor.PlayerSession);
                 args.Handled = true;
                 return;
@@ -157,9 +157,8 @@ namespace Content.Server.Paper
                 if (TryComp<MetaDataComponent>(uid, out var meta))
                     _metaSystem.SetEntityDescription(uid, "", meta);
 
-                if (args.Session.AttachedEntity != null)
-                    _adminLogger.Add(LogType.Chat, LogImpact.Low,
-                        $"{ToPrettyString(args.Session.AttachedEntity.Value):player} has written on {ToPrettyString(uid):entity} the following text: {args.Text}");
+                _adminLogger.Add(LogType.Chat, LogImpact.Low,
+                    $"{ToPrettyString(args.Actor):player} has written on {ToPrettyString(uid):entity} the following text: {args.Text}");
 
                 _audio.PlayPvs(paperComp.Sound, uid);
             }
@@ -218,8 +217,7 @@ namespace Content.Server.Paper
             if (!Resolve(uid, ref paperComp))
                 return;
 
-            if (_uiSystem.TryGetUi(uid, PaperUiKey.Key, out var bui))
-                _uiSystem.SetUiState(bui, new PaperBoundUserInterfaceState(paperComp.Content, paperComp.StampedBy, paperComp.Mode), session);
+            _uiSystem.SetUiState(uid, PaperUiKey.Key, new PaperBoundUserInterfaceState(paperComp.Content, paperComp.StampedBy, paperComp.Mode));
         }
     }
 

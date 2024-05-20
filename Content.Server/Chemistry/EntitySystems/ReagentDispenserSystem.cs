@@ -63,7 +63,7 @@ namespace Content.Server.Chemistry.EntitySystems
             var inventory = GetInventory(reagentDispenser);
 
             var state = new ReagentDispenserBoundUserInterfaceState(outputContainerInfo, GetNetEntity(outputContainer), inventory, reagentDispenser.Comp.DispenseAmount);
-            _userInterfaceSystem.TrySetUiState(reagentDispenser, ReagentDispenserUiKey.Key, state);
+            _userInterfaceSystem.SetUiState(reagentDispenser.Owner, ReagentDispenserUiKey.Key, state);
         }
 
         private ContainerInfo? BuildOutputContainerInfo(EntityUid? container)

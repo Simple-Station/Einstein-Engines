@@ -220,7 +220,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
     #region UI Handlers
     private void OnUiButtonPressed(EntityUid uid, SharedDisposalUnitComponent component, SharedDisposalUnitComponent.UiButtonPressedMessage args)
     {
-        if (args.Session.AttachedEntity is not { Valid: true } player)
+        if (args.Actor is not { Valid: true } player)
         {
             return;
         }
@@ -236,7 +236,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
                 _adminLogger.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(player):player} hit flush button on {ToPrettyString(uid)}, it's now {(component.Engaged ? "on" : "off")}");
                 break;
             case SharedDisposalUnitComponent.UiButton.Power:
-                _power.TogglePower(uid, user: args.Session.AttachedEntity);
+                _power.TogglePower(uid, user: args.Actor);
                 break;
             default:
                 throw new ArgumentOutOfRangeException($"{ToPrettyString(player):player} attempted to hit a nonexistant button on {ToPrettyString(uid)}");
@@ -269,7 +269,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
         }
 
         args.Handled = true;
-        _ui.TryOpen(uid, SharedDisposalUnitComponent.DisposalUnitUiKey.Key, actor.PlayerSession);
+        _ui.OpenUi(uid, SharedDisposalUnitComponent.DisposalUnitUiKey.Key, actor.PlayerSession);
     }
 
     private void OnAfterInteractUsing(EntityUid uid, SharedDisposalUnitComponent component, AfterInteractUsingEvent args)
@@ -594,7 +594,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
         var compState = GetState(uid, component);
         var stateString = Loc.GetString($"disposal-unit-state-{compState}");
         var state = new SharedDisposalUnitComponent.DisposalUnitBoundUserInterfaceState(Name(uid), stateString, EstimatedFullPressure(uid, component), powered, component.Engaged);
-        _ui.TrySetUiState(uid, SharedDisposalUnitComponent.DisposalUnitUiKey.Key, state);
+        _ui.SetUiState(uid, SharedDisposalUnitComponent.DisposalUnitUiKey.Key, state);
 
         var stateUpdatedEvent = new DisposalUnitUIStateUpdatedEvent(state);
         RaiseLocalEvent(uid, stateUpdatedEvent);
@@ -801,7 +801,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
 
         if (TryComp(inserted, out ActorComponent? actor))
         {
-            _ui.TryClose(uid, SharedDisposalUnitComponent.DisposalUnitUiKey.Key, actor.PlayerSession);
+            _ui.CloseUi(uid, SharedDisposalUnitComponent.DisposalUnitUiKey.Key, actor.PlayerSession);
         }
 
         // Maybe do pullable instead? Eh still fine.

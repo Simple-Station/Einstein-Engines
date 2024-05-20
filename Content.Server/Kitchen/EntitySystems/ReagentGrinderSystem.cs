@@ -119,7 +119,7 @@ namespace Content.Server.Kitchen.EntitySystems
                     _solutionContainersSystem.TryAddSolution(containerSoln.Value, solution);
                 }
 
-                _userInterfaceSystem.TrySendUiMessage(uid, ReagentGrinderUiKey.Key,
+                _userInterfaceSystem.ServerSendUiMessage(uid, ReagentGrinderUiKey.Key,
                     new ReagentGrinderWorkCompleteMessage());
 
                 UpdateUiState(uid);
@@ -209,7 +209,7 @@ namespace Content.Server.Kitchen.EntitySystems
                 GetNetEntityArray(inputContainer.ContainedEntities.ToArray()),
                 containerSolution?.Contents.ToArray()
             );
-            _userInterfaceSystem.TrySetUiState(uid, ReagentGrinderUiKey.Key, state);
+            _userInterfaceSystem.SetUiState(uid, ReagentGrinderUiKey.Key, state);
         }
 
         private void OnStartMessage(Entity<ReagentGrinderComponent> entity, ref ReagentGrinderStartMessage message)
@@ -286,7 +286,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
             reagentGrinder.AudioStream = _audioSystem.PlayPvs(sound, uid,
                 AudioParams.Default.WithPitchScale(1 / reagentGrinder.WorkTimeMultiplier)).Value.Entity; //slightly higher pitched
-            _userInterfaceSystem.TrySendUiMessage(uid, ReagentGrinderUiKey.Key,
+            _userInterfaceSystem.ServerSendUiMessage(uid, ReagentGrinderUiKey.Key,
                 new ReagentGrinderWorkStartedMessage(program));
         }
 
