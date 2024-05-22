@@ -12,6 +12,7 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
         [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
+        [Dependency] private readonly SharedMapSystem _mapSystem = default!;
 
         public override void Initialize()
         {
@@ -44,13 +45,8 @@ namespace Content.Server.Atmos.EntitySystems
             var xform = Transform(airtight);
 
             // If the grid is deleting no point updating atmos.
-            if (HasComp<MapGridComponent>(xform.GridUid) &&
-                MetaData(xform.GridUid.Value).EntityLifeStage > EntityLifeStage.MapInitialized)
-            {
-                return;
-            }
-
-            SetAirblocked(airtight, false, xform);
+            if (xform.GridUid != null && LifeStage(xform.GridUid.Value) <= EntityLifeStage.MapInitialized)
+                SetAirblocked(airtight, false, xform);
         }
 
         private void OnAirtightPositionChanged(EntityUid uid, AirtightComponent airtight, ref AnchorStateChangedEvent args)
@@ -62,12 +58,14 @@ namespace Content.Server.Atmos.EntitySystems
 
             var gridId = xform.GridUid;
             var coords = xform.Coordinates;
-
-            var tilePos = grid.TileIndicesFor(coords);
+            var tilePos = _mapSystem.TileIndicesFor(gridId.Value, grid, coords);
 
             // Update and invalidate new position.
             airtight.LastPosition = (gridId.Value, tilePos);
             InvalidatePosition(gridId.Value, tilePos);
+
+            var airtightEv = new AirtightChanged(uid, airtight, false, (gridId.Value, tilePos));
+            RaiseLocalEvent(uid, ref airtightEv, true);
         }
 
         private void OnAirtightReAnchor(EntityUid uid, AirtightComponent airtight, ref ReAnchorEvent args)
@@ -77,9 +75,11 @@ namespace Content.Server.Atmos.EntitySystems
                 // Update and invalidate new position.
                 airtight.LastPosition = (gridId, args.TilePos);
                 InvalidatePosition(gridId, args.TilePos);
+
+                var airtightEv = new AirtightChanged(uid, airtight, false, (gridId, args.TilePos));
+                RaiseLocalEvent(uid, ref airtightEv, true);
             }
         }
-
 
         private void OnAirtightMoved(Entity<AirtightComponent> ent, ref MoveEvent ev)
         {
@@ -148,7 +148,6 @@ namespace Content.Server.Atmos.EntitySystems
             return newAirBlockedDirs;
         }
     }
-
 
     /// <summary>
     /// Raised upon the airtight status being changed via anchoring, movement, etc.

@@ -1,4 +1,4 @@
-using Content.Server.Atmos;
+using Content.Shared.Atmos;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.DoAfter;

@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Server.Atmos;
+using Content.Shared.Atmos;
 using Content.Server.Atmos.Components;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
@@ -152,7 +152,8 @@ public sealed class RadiationCollectorSystem : EntitySystem
         if (!TryGetLoadedGasTank(uid, out var gasTankComponent))
             return;
 
-        args.GasMixtures = new Dictionary<string, GasMixture?> { { Name(uid), gasTankComponent.Air } };
+        args.GasMixtures ??= new List<(string, GasMixture?)>();
+        args.GasMixtures.Add((Name(uid), gasTankComponent.Air));
     }
 
     public void ToggleCollector(EntityUid uid, EntityUid? user = null, RadiationCollectorComponent? component = null)

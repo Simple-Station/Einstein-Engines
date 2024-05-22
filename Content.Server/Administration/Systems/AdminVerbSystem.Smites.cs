@@ -19,6 +19,7 @@ using Content.Server.Storage.EntitySystems;
 using Content.Server.Tabletop;
 using Content.Server.Tabletop.Components;
 using Content.Server.Terminator.Systems;
+using Content.Shared.Atmos;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Components;
 using Content.Shared.Body.Components;
@@ -152,7 +153,7 @@ public sealed partial class AdminVerbSystem
                 Act = () =>
                 {
                     // Fuck you. Burn Forever.
-                    flammable.FireStacks = FlammableSystem.MaximumFireStacks;
+                    flammable.FireStacks = flammable.MaximumFireStacks;
                     _flammableSystem.Ignite(args.Target, args.User);
                     var xform = Transform(args.Target);
                     _popupSystem.PopupEntity(Loc.GetString("admin-smite-set-alight-self"), args.Target,
