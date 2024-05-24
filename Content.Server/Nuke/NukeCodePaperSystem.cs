@@ -114,10 +114,9 @@ namespace Content.Server.Nuke
             foreach (var (nukeUid, nuke) in nukes)
             {
                 if (!onlyCurrentStation &&
-                    (owningStation == null &&
-                    nuke.OriginMapGrid != (transform.MapID, transform.GridUid) ||
-                    nuke.OriginStation != owningStation))
+                     nuke.OriginStation != owningStation)
                 {
+                    DebugTools.Assert(false);
                     continue;
                 }
 

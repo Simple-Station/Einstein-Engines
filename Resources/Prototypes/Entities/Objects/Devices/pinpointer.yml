@@ -62,6 +62,25 @@
   - type: Pinpointer
     component: NukeDisk
     targetName: nuclear authentication disk
+    updateTargetName: true
+  - type: MultiplePinpointer
+    modes:
+    - Off
+    - NukeDisk
+    - NuclearBombSyndicate
+    - NukeOpsShuttle
+
+- type: entity
+  parent: PinpointerSyndicateNuclear
+  id: PinpointerStationNuclear
+  suffix: Station bomb
+  components:
+  - type: MultiplePinpointer
+    modes:
+    - Off
+    - NukeDisk
+    - Nuke
+    - NukeOpsShuttle
 
 - type: entity
   name: universal pinpointer
