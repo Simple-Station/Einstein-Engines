@@ -116,7 +116,6 @@ namespace Content.Server.Nuke
                 if (!onlyCurrentStation &&
                      nuke.OriginStation != owningStation)
                 {
-                    DebugTools.Assert(false);
                     continue;
                 }
 
