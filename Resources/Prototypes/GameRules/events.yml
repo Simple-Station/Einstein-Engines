@@ -368,9 +368,9 @@
         prototype: InitialInfected
 
 - type: entity
-  id: LoneOpsSpawn
-  parent: BaseGameRule
   categories: [ HideSpawnMenu ]
+  parent: BaseNukeopsRule
+  id: LoneOpsSpawn
   components:
   - type: StationEvent
     earliestStart: 35
