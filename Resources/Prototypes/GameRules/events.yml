@@ -402,9 +402,9 @@
         prototype: Nukeops
 
 - type: entity
+  noSpawn: true
+  parent: BaseTraitorRule
   id: SleeperAgentsRule
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     earliestStart: 25
@@ -413,7 +413,6 @@
     reoccurrenceDelay: 30
     startAnnouncement: false
   - type: AlertLevelInterceptionRule
-  - type: TraitorRule
   - type: AntagSelection
     definitions:
     - prefRoles: [ Traitor ]
