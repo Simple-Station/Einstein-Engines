@@ -183,7 +183,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 // Move away from the chair
                 var xformQuery = entityManager.GetEntityQuery<TransformComponent>();
                 var oldWorldPosition = xformSystem.GetWorldPosition(chair, xformQuery);
-                xformSystem.SetWorldPosition(human, oldWorldPosition + new Vector2(1000, 1000), xformQuery);
+                xformSystem.SetWorldPosition(human, oldWorldPosition + new Vector2(1000, 1000));
 
                 // Out of range
 #pragma warning disable NUnit2045 // Interdependent asserts.
@@ -194,7 +194,7 @@ namespace Content.IntegrationTests.Tests.Buckle
 
                 // Move near the chair
                 oldWorldPosition = xformSystem.GetWorldPosition(chair, xformQuery);
-                xformSystem.SetWorldPosition(human, oldWorldPosition + new Vector2(0.5f, 0), xformQuery);
+                xformSystem.SetWorldPosition(human, oldWorldPosition + new Vector2(0.5f, 0));
 
                 // In range
 #pragma warning disable NUnit2045 // Interdependent asserts.
@@ -221,7 +221,7 @@ namespace Content.IntegrationTests.Tests.Buckle
 
                 // Move away from the chair
                 oldWorldPosition = xformSystem.GetWorldPosition(chair, xformQuery);
-                xformSystem.SetWorldPosition(human, oldWorldPosition + new Vector2(1, 0), xformQuery);
+                xformSystem.SetWorldPosition(human, oldWorldPosition + new Vector2(1, 0));
             });
 
             await server.WaitRunTicks(1);
@@ -373,7 +373,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 // Move the buckled entity away
                 var xformQuery = entityManager.GetEntityQuery<TransformComponent>();
                 var oldWorldPosition = xformSystem.GetWorldPosition(chair, xformQuery);
-                xformSystem.SetWorldPosition(human, oldWorldPosition + new Vector2(100, 0), xformQuery);
+                xformSystem.SetWorldPosition(human, oldWorldPosition + new Vector2(100, 0));
             });
 
             await PoolManager.WaitUntil(server, () => !buckle.Buckled, 10);
@@ -385,7 +385,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 // Move the now unbuckled entity back onto the chair
                 var xformQuery = entityManager.GetEntityQuery<TransformComponent>();
                 var oldWorldPosition = xformSystem.GetWorldPosition(chair, xformQuery);
-                xformSystem.SetWorldPosition(human, oldWorldPosition, xformQuery);
+                xformSystem.SetWorldPosition(human, oldWorldPosition);
 
                 // Buckle
                 Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle));

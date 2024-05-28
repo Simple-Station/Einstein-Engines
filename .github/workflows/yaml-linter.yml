@@ -28,7 +28,7 @@ jobs:
         with:
           dotnet-version: 8.0.204
       - name: Install dependencies
-        run: dotnet restore --verbosity d
+        run: dotnet restore
       - name: Build
         run: dotnet build --configuration Release --no-restore /p:WarningsAsErrors= /m
       - name: Run Linter
