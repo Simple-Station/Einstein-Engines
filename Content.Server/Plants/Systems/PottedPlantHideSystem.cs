@@ -1,7 +1,7 @@
 ﻿using Content.Server.Plants.Components;
 using Content.Server.Popups;
-using Content.Server.Storage.Components;
-using Content.Server.Storage.EntitySystems;
+using Content.Shared.Storage.Components;
+using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Audio;
 using Content.Shared.Interaction;
 using Robust.Shared.Audio;

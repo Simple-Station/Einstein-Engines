@@ -1,8 +1,8 @@
 using Content.Server.Body.Systems;
 using Content.Shared.Buckle;
 using Content.Server.Popups;
-using Content.Server.Storage.Components;
-using Content.Server.Storage.EntitySystems;
+using Content.Shared.Storage.Components;
+using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Audio;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
