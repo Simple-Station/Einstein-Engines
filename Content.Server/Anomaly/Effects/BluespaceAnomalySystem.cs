@@ -40,7 +40,7 @@ public sealed class BluespaceAnomalySystem : EntitySystem
         foreach (var ent in allEnts)
         {
             if (xformQuery.TryGetComponent(ent, out var xf))
-                coords.Add(_xform.GetWorldPosition(xf));
+                coords.Add(xf.MapPosition.Position);
         }
 
         _random.Shuffle(coords);
@@ -48,7 +48,7 @@ public sealed class BluespaceAnomalySystem : EntitySystem
         {
 
             _adminLogger.Add(LogType.Teleport, $"{ToPrettyString(allEnts[i])} has been shuffled to {coords[i]} by the {ToPrettyString(uid)} at {xform.Coordinates}");
-            _xform.SetWorldPosition(allEnts[i], coords[i]);
+            _xform.SetWorldPosition(allEnts[i], coords[i], xformQuery);
         }
     }
 
