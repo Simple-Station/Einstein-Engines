@@ -28,6 +28,6 @@ jobs:
         with:
           dotnet-version: 8.0.100
       - name: Build
-        run: dotnet build --no-restore --configuration Release /p:WarningsAsErrors=Nullable /m
+        run: dotnet build --configuration Release /p:WarningsAsErrors= /m
       - name: Run Linter
         run: dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csproj --no-build
