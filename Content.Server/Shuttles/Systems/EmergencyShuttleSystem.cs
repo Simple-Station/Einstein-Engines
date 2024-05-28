@@ -23,6 +23,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.GameTicking;
+using Content.Shared.Localizations;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Events;
 using Content.Shared.Tag;
@@ -291,6 +292,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             if (TryComp(targetGrid.Value, out TransformComponent? targetXform))
             {
                 var angle = _dock.GetAngle(stationShuttle.EmergencyShuttle.Value, xform, targetGrid.Value, targetXform, xformQuery);
+                var direction = ContentLocalizationManager.FormatDirection(angle.GetDir());
                 var location = FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((stationShuttle.EmergencyShuttle.Value, xform)));
                 _announcer.SendAnnouncementMessage(
                     _announcer.GetAnnouncementId("ShuttleDock"),
@@ -301,7 +303,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
                     null,
                     null,
                     ("time", $"{_consoleAccumulator:0}"),
-                    ("direction", angle.GetDir()),
+                    ("direction", direction),
                     ("location", location)
                 );
             }
@@ -331,6 +333,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             if (TryComp<TransformComponent>(targetGrid.Value, out var targetXform))
             {
                 var angle = _dock.GetAngle(stationShuttle.EmergencyShuttle.Value, xform, targetGrid.Value, targetXform, xformQuery);
+                var direction = ContentLocalizationManager.FormatDirection(angle.GetDir());
                 var location = FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((stationShuttle.EmergencyShuttle.Value, xform)));
                 _announcer.SendAnnouncementMessage(
                     _announcer.GetAnnouncementId("ShuttleNearby"),
@@ -341,7 +344,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
                     null,
                     null,
                     ("time", $"{_consoleAccumulator:0}"),
-                    ("direction", angle.GetDir()),
+                    ("direction", direction),
                     ("location", location)
                 );
 
