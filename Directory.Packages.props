@@ -1,5 +1,8 @@
 ﻿<Project>
   <Import Project="RobustToolbox/Directory.Packages.props" />
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally />
+  </PropertyGroup>
   <ItemGroup>
     <!--
     Remove EF Core packages from Robust. They're only used by Robust.Benchmarks anyways.
