@@ -1,0 +1,86 @@
+- type: loadout
+  id: LoadoutScienceUniformJumpskirtSenior
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Scientist
+    - !type:LoadoutDepartmentTimeRequirement
+      department: Epistemics
+      min: 216000 # 60 hours
+  items:
+    - ClothingUniformJumpskirtSeniorResearcher
+
+- type: loadout
+  id: LoadoutScienceUniformJumpsuitSenior
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Scientist
+    - !type:LoadoutDepartmentTimeRequirement
+      department: Epistemics
+      min: 216000 # 60 hours
+  items:
+    - ClothingUniformJumpsuitSeniorResearcher
+
+- type: loadout
+  id: LoadoutScienceOuterCoat
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Scientist
+        - ResearchAssistant
+        - ResearchDirector
+  items:
+    - ClothingOuterCoatRnd
+
+- type: loadout
+  id: LoadoutScienceOuterLabcoat
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Scientist
+        - ResearchAssistant
+        - ResearchDirector
+  items:
+    - ClothingOuterCoatLab
+
+- type: loadout
+  id: LoadoutScienceOuterLabcoatSeniorResearcher
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Scientist
+    - !type:LoadoutDepartmentTimeRequirement
+      department: Epistemics
+      min: 216000 # 60 hours
+  items:
+    - ClothingOuterCoatLabSeniorResearcher
+
+- type: loadout
+  id: LoadoutScienceHatBeret
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Scientist
+        - ResearchAssistant
+        - ResearchDirector
+  items:
+    - ClothingHeadHatBeretRND
