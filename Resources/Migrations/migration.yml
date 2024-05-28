@@ -66,15 +66,6 @@ MagazinePistolSubMachineGunHighVelocity: MagazinePistolSubMachineGun
 MagazineRifleHighVelocity: MagazineRifle
 SpeedLoaderMagnumHighVelocity: SpeedLoaderMagnum
 SpeedLoaderPistolHighVelocity: SpeedLoaderPistol
-#
-# 2023-08-07
-#If the name is anything to go off of, these are presumably just CEV-Eris versions of the snow rock (which we already have.)
-#They are practically never used in this way however, so they're migrated to the basic rock type.
-#MountainRock: AsteroidRock #DeltaV
-#MountainRockMining: AsteroidRockMining #DeltaV
-
-# 2023-08-08
-#WindowTintedDirectional: WindowFrostedDirectional # DeltaV
 
 # 2023-08-10
 SyringeSpaceacillin: null
@@ -139,33 +130,16 @@ DefaultStationBeaconTeslaEngine: null
 FoodBoxDonkpocketGondola: FoodBoxDonkpocketPizza
 
 # 2024-01-31
-#SpawnVehicleWheelchair: null Goobstation - Re-add vehicles
-#SpawnVehicleWheelchairFolded: null Goobstation - Re-add vehicles
-#VehicleWheelchair: null Goobstation - Re-add vehicles
-#VehicleWheelchairFolded: null Goobstation - Re-add vehicles
 VehicleSecwayStealObjective: null
-#VehicleKeyJanicart: null Goobstation - Re-add vehicles
-#VehicleKeySecway: null Goobstation - Re-add vehicles
-#VehicleKeyATV: null Goobstation - Re-add vehicles
 VehicleKeySkeleton: null
-#VehicleKeySyndicateSegway: null Goobstation - Re-add vehicles
 VehicleKeySkeletonMotorcycle: null
-#VehicleSecway: null Goobstation - Re-add vehicles
-#VehicleATV: null Goobstation - Re-add vehicles
-#VehicleSyndicateSegway: null Goobstation - Re-add vehicles
 VehicleSkeletonMotorcycle: null
 VehicleUnicycle: null
 VehicleUnicycleFolded: null
 ActionVehicleHorn: null
-#CrateFunATV: null Goobstation - Re-add vehicles
-#CrateFunSyndicateSegway: null Goobstation - Re-add vehicles
 MobTaxiBot: null
-# MobSupplyBot: null
 SpawnVehicleMotobike: null
 SpawnVehicleATV: null
-#SpawnVehicleSecway: null Goobstation - Re-add vehicles
-#SpawnVehicleJanicart: null Goobstation - Re-add vehicles
-#VehicleJanicart: null Goobstation - Re-add vehicles
 VehicleJanicartDestroyed: null
 
 # 2024-02-01
@@ -390,5 +364,3 @@ AirlockHydroponics: AirlockHydroponicsLocked
 Biogenerator: null
 FloraGreyStalagmite: null
 FelinidCube: TajaranCube
-
-
