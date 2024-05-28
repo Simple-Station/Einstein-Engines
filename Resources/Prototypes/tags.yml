@@ -32,9 +32,6 @@
   id: ATVKeys
 
 - type: Tag
-  id: Baguette
-
-- type: Tag
   id: Balloon
 
 - type: Tag
@@ -261,6 +258,9 @@
 
 - type: Tag
   id: CableCoil
+
+- type: Tag
+  id: Cake
 
 - type: Tag
   id: CaneBlade
@@ -960,6 +960,9 @@
   id: NozzleBackTank
 
 - type: Tag
+  id: Nugget # for chicken nuggets
+
+- type: Tag
   id: NukeOpsUplink
 
 - type: Tag
@@ -1163,6 +1166,9 @@
 
 - type: Tag
   id: Skewer
+
+- type: Tag
+  id: Slice # sliced fruit, vegetables, pizza etc.
 
 - type: Tag
   id: SmallAIChip
