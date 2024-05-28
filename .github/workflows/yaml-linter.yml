@@ -27,9 +27,7 @@ jobs:
         uses: actions/setup-dotnet@v3.2.0
         with:
           dotnet-version: 8.0.100
-      - name: Install dependencies
-        run: dotnet restore --ignore-failed-sources
       - name: Build
-        run: dotnet build --configuration Release --no-restore /p:WarningsAsErrors= /m
+        run: dotnet build --configuration Release /p:WarningsAsErrors= /m
       - name: Run Linter
         run: dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csproj --no-build
