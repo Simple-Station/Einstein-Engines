@@ -246,6 +246,7 @@ public sealed class LockSystem : EntitySystem
         return !userEv.Cancelled;
     }
 
+    // TODO: this should be a helper on AccessReaderSystem since so many systems copy paste it
     private bool HasUserAccess(EntityUid uid, EntityUid user, AccessReaderComponent? reader = null, bool quiet = true)
     {
         // Not having an AccessComponent means you get free access. woo!
