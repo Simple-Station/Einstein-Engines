@@ -973,14 +973,14 @@
   description: uplink-power-sink-desc
   productEntity: PowerSink
   cost:
-    Telecrystal: 6
+    Telecrystal: 8
   categories:
   - UplinkTools
   conditions:
     - !type:BuyerWhitelistCondition
       blacklist:
-        tags:
-          - NukeOpsUplink
+        components:
+          - SurplusBundle
 
 - type: listing
   id: UplinkReinforcementRadioSyndicateMonkeyNukeops # Version for Nukeops that spawns a syndicate monkey with the NukeOperative component.
