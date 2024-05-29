@@ -52,10 +52,8 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
   - type: Occluder
+  - type: BlockWeather
 
 - type: entity
   parent: BaseMaterialDoor
