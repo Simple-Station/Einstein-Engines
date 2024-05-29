@@ -16,5 +16,10 @@
     ClothingNeckLawyerbadge: 2
     ClothingOuterCoatOvercoat: 2 # DeltaV - add overcoat to LawDrobe
     RubberStampLawyer: 1 # DeltaV
+    LuxuryPen: 2
+  contrabandInventory:
+    ClothingOuterRobesJudge: 1
+    ClothingHeadHatPwig: 1
+    SpaceCash100: 2 # "Legally" obtained currency
   emaggedInventory:
     CyberPen: 1
