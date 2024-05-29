@@ -494,7 +494,7 @@
   productEntity: ReinforcementRadioSyndicateMonkeyNukeops
   icon: { sprite: Objects/Devices/communication.rsi, state: radio }
   cost:
-    Telecrystal: 8
+    Telecrystal: 6
   categories:
   - UplinkUtility
   conditions:
