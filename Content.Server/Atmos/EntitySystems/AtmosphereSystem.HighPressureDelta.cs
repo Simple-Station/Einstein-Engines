@@ -1,10 +1,12 @@
 using Content.Server.Atmos.Components;
 using Content.Shared.Atmos;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Atmos.EntitySystems
@@ -49,7 +51,7 @@ namespace Content.Server.Atmos.EntitySystems
 
                 if (TryComp<PhysicsComponent>(uid, out var body))
                 {
-                    _physics.SetBodyStatus(body, BodyStatus.OnGround);
+                    _physics.SetBodyStatus(uid, body, BodyStatus.OnGround);
                 }
 
                 if (TryComp<FixturesComponent>(uid, out var fixtures))
@@ -72,7 +74,7 @@ namespace Content.Server.Atmos.EntitySystems
             if (!TryComp<FixturesComponent>(uid, out var fixtures))
                 return;
 
-            _physics.SetBodyStatus(body, BodyStatus.InAir);
+            _physics.SetBodyStatus(uid, body, BodyStatus.InAir);
 
             foreach (var (id, fixture) in fixtures.Fixtures)
             {
@@ -96,7 +98,7 @@ namespace Content.Server.Atmos.EntitySystems
             // Don't play the space wind sound on tiles that are on fire...
             if (tile.PressureDifference > 15 && !tile.Hotspot.Valid)
             {
-                if(_spaceWindSoundCooldown == 0 && !string.IsNullOrEmpty(SpaceWindSound))
+                if (_spaceWindSoundCooldown == 0 && !string.IsNullOrEmpty(SpaceWindSound))
                 {
                     var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
                     _audio.PlayPvs(SpaceWindSound, coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
