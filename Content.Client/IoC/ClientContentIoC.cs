@@ -2,6 +2,8 @@ using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.Clickable;
+using Content.Client.DiscordAuth;
+using Content.Client.JoinQueue;
 using Content.Client.Options;
 using Content.Client.Eui;
 using Content.Client.GhostKick;
@@ -49,6 +51,8 @@ namespace Content.Client.IoC
             IoCManager.Register<JobRequirementsManager>();
             IoCManager.Register<DocumentParsingManager>();
             IoCManager.Register<ContentReplayPlaybackManager, ContentReplayPlaybackManager>();
+            IoCManager.Register<JoinQueueManager>();
+            IoCManager.Register<DiscordAuthManager>();
         }
     }
 }
