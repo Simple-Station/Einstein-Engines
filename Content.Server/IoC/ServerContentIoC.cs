@@ -5,6 +5,8 @@ using Content.Server.Administration.Notes;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
+using Content.Server.DiscordAuth;
+using Content.Server.JoinQueue;
 using Content.Server.Database;
 using Content.Server.Discord;
 using Content.Server.EUI;
@@ -58,6 +60,8 @@ namespace Content.Server.IoC
             IoCManager.Register<PoissonDiskSampler>();
             IoCManager.Register<DiscordWebhook>();
             IoCManager.Register<ServerDbEntryManager>();
+            IoCManager.Register<JoinQueueManager>();
+            IoCManager.Register<DiscordAuthManager>();
         }
     }
 }
