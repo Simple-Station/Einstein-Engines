@@ -129,12 +129,7 @@ namespace Content.Server.Psionics.Abilities
 
             component.DoAfter = doAfterId;
 
-            _popups.PopupEntity(Loc.GetString("focused-metapsionic-pulse-begin", ("entity", args.Target)),
-                args.Performer,
-                // TODO: Use LoS-based Filter when one is available.
-                Filter.Pvs(args.Performer).RemoveWhereAttachedEntity(entity => !ExamineSystemShared.InRangeUnOccluded(args.Performer, entity, ExamineRange, null)),
-                true,
-                PopupType.Medium);
+            _popups.PopupEntity(Loc.GetString("focused-metapsionic-pulse-begin", ("entity", args.Target)), args.Performer, PopupType.Medium);
 
             _audioSystem.PlayPvs(component.SoundUse, args.Performer, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
             _psionics.LogPowerUsed(args.Performer, "focused metapsionic pulse",

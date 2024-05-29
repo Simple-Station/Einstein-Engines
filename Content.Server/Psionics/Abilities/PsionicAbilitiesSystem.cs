@@ -68,12 +68,7 @@ namespace Content.Server.Psionics.Abilities
         {
             if (RemComp<PotentialPsionicComponent>(uid))
             {
-                _popups.PopupEntity(Loc.GetString("mindbreaking-feedback", ("entity", uid)),
-                    uid,
-                    // TODO: Use LoS-based Filter when one is available.
-                    Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !ExamineSystemShared.InRangeUnOccluded(uid, entity, ExamineRange, null)),
-                    true,
-                    PopupType.Medium);
+                _popups.PopupEntity(Loc.GetString("mindbreaking-feedback", ("entity", uid)), uid, PopupType.Medium);
             }
 
             if (!TryComp<PsionicComponent>(uid, out var psionic))
