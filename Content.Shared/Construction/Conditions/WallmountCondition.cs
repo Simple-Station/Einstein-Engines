@@ -19,9 +19,8 @@ namespace Content.Shared.Construction.Conditions
             var entManager = IoCManager.Resolve<IEntityManager>();
 
             // get blueprint and user position
-            var transformSystem = entManager.System<SharedTransformSystem>();
             var userWorldPosition = entManager.GetComponent<TransformComponent>(user).WorldPosition;
-            var objWorldPosition = location.ToMap(entManager, transformSystem).Position;
+            var objWorldPosition = location.ToMap(entManager).Position;
 
             // find direction from user to blueprint
             var userToObject = (objWorldPosition - userWorldPosition);

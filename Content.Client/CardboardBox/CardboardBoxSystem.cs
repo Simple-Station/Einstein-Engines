@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using Content.Shared.CardboardBox;
 using Content.Shared.CardboardBox.Components;
 using Content.Shared.Examine;
@@ -11,7 +11,6 @@ public sealed class CardboardBoxSystem : SharedCardboardBoxSystem
 {
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly ExamineSystemShared _examine = default!;
 
     public override void Initialize()
     {
@@ -56,7 +55,7 @@ public sealed class CardboardBoxSystem : SharedCardboardBoxSystem
         foreach (var mob in mobMoverEntities)
         {
             var mapPos = _transform.GetMapCoordinates(mob);
-            if (!_examine.InRangeUnOccluded(sourcePos, mapPos, box.Distance, null))
+            if (!ExamineSystemShared.InRangeUnOccluded(sourcePos, mapPos, box.Distance, null))
                 continue;
 
             var ent = Spawn(box.Effect, mapPos);

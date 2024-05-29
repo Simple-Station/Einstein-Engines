@@ -89,7 +89,6 @@
     program: 125
   - type: Item
     size: Small
-    storedRotation: -90
 
 - type: entity
   parent: BaseHandheldInstrument
@@ -119,7 +118,6 @@
   - type: Item
     size: Small
     sprite: Objects/Fun/Instruments/gunpet.rsi
-    storedRotation: -90
   - type: Tag
     tags:
     - Sidearm
@@ -143,7 +141,6 @@
   - type: Item
     sprite: Objects/Fun/Instruments/bike_horn.rsi
     size: Small
-    storedRotation: -90
   - type: Clothing
     sprite: Objects/Fun/Instruments/bike_horn.rsi
     slots: [Belt]

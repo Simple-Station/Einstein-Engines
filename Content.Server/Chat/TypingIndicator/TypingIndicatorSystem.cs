@@ -39,7 +39,7 @@ public sealed class TypingIndicatorSystem : SharedTypingIndicatorSystem
         var uid = args.SenderSession.AttachedEntity;
         if (!Exists(uid))
         {
-            Log.Warning($"Client {args.SenderSession} sent TypingChangedEvent without an attached entity.");
+            Logger.Warning($"Client {args.SenderSession} sent TypingChangedEvent without an attached entity.");
             return;
         }
 

@@ -201,7 +201,7 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
 
             if (!gridId.HasValue)
             {
-                Log.Error($"Gridid was null when loading \"{map}\", aborting.");
+                Logger.ErrorS("pirates", $"Gridid was null when loading \"{map}\", aborting.");
                 foreach (var session in ops)
                 {
                     ev.PlayerPool.Add(session);
@@ -230,7 +230,7 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
             if (spawns.Count == 0)
             {
                 spawns.Add(Transform(pirates.PirateShip).Coordinates);
-                Log.Warning($"Fell back to default spawn for pirates!");
+                Logger.WarningS("pirates", $"Fell back to default spawn for pirates!");
             }
 
             for (var i = 0; i < ops.Length; i++)

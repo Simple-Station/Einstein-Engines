@@ -98,9 +98,6 @@ public partial class ListingData : IEquatable<ListingData>, ICloneable
     [DataField("productEvent")]
     public object? ProductEvent;
 
-    [DataField]
-    public bool RaiseProductEventOnUser;
-
     /// <summary>
     /// used internally for tracking how many times an item was purchased.
     /// </summary>
@@ -123,7 +120,7 @@ public partial class ListingData : IEquatable<ListingData>, ICloneable
             Description != listing.Description ||
             ProductEntity != listing.ProductEntity ||
             ProductAction != listing.ProductAction ||
-            ProductEvent?.GetType() != listing.ProductEvent?.GetType() ||
+            ProductEvent != listing.ProductEvent ||
             RestockTime != listing.RestockTime)
             return false;
 

@@ -66,7 +66,6 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly StationSystem _stations = default!;
         [Dependency] private readonly StationSpawningSystem _spawning = default!;
-        [Dependency] private readonly ExamineSystemShared _examine = default!;
 
         private readonly Dictionary<ICommonSession, List<EditSolutionsEui>> _openSolutionUis = new();
 
@@ -417,7 +416,7 @@ namespace Content.Server.Administration.Systems
                     Act = () =>
                     {
 
-                        var message = _examine.InRangeUnOccluded(args.User, args.Target)
+                        var message = ExamineSystemShared.InRangeUnOccluded(args.User, args.Target)
                             ? Loc.GetString("in-range-unoccluded-verb-on-activate-not-occluded")
                             : Loc.GetString("in-range-unoccluded-verb-on-activate-occluded");
 

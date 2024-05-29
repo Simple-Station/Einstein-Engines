@@ -48,7 +48,6 @@
         - PeaSeeds
         - PumpkinSeeds
         - CottonSeeds
-        - LilySeeds
       chance: 0.95
       offset: 0.0
       rarePrototypes:
@@ -65,6 +64,4 @@
         - LemoonSeeds
         - SteelcapSeeds
         - KoibeanSeeds
-        - SpacemansTrumpetSeeds
-        - LaughinPeaSeeds
       rareChance: 0.05

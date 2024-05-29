@@ -170,7 +170,7 @@ namespace Content.Client.ContextMenu.UI
             if (_combatMode.IsInCombatMode(args.Session?.AttachedEntity))
                 return false;
 
-            var coords = args.Coordinates.ToMap(_entityManager, _xform);
+            var coords = args.Coordinates.ToMap(_entityManager);
 
             if (_verbSystem.TryGetEntityMenuEntities(coords, out var entities))
                 OpenRootMenu(entities);

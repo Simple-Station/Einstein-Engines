@@ -36,7 +36,6 @@
       - BoxCandle
       - BoxCandleSmall
       - BoxDarts
-      - BoxCartridgeBB
     chance: 0.7
     rarePrototypes:
       - BoxHugHealing
@@ -50,7 +49,6 @@
       - PresentRandom
       - BoxHolyWater
       - MysteryFigureBox
-      - BoxCleanerGrenades
     rareChance: 0.05
 
 
@@ -102,8 +100,6 @@
       - BoxMagazineCaselessRifleRubber
       - BoxMagazineUniversalMagnumPractice
       - BoxMagazineUniversalMagnumRubber
-      - MagazineBoxSpecialRubber
-      - MagazineBoxSpecialPractice
     chance: 0.15
     rarePrototypes:
       - BoxMagazinePistolCaselessRifle
@@ -125,8 +121,4 @@
       - BoxShellSoulbreaker
       - BoxMagazineUniversalMagnum
       - BoxSpeedLoaderLightRifle
-      - MagazineBoxSpecial
-      - MagazineBoxSpecialIncendiary
-      - MagazineBoxSpecialUranium
-      - MagazineBoxSpecialMindbreaker
     rareChance: 0.015

@@ -23,7 +23,6 @@ namespace Content.Client.NPC
         [Dependency] private readonly IResourceCache _cache = default!;
         [Dependency] private readonly NPCSteeringSystem _steering = default!;
         [Dependency] private readonly MapSystem _mapSystem = default!;
-        [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
         public PathfindingDebugMode Modes
         {
@@ -40,7 +39,7 @@ namespace Content.Client.NPC
                 }
                 else if (!overlayManager.HasOverlay<PathfindingOverlay>())
                 {
-                    overlayManager.AddOverlay(new PathfindingOverlay(EntityManager, _eyeManager, _inputManager, _mapManager, _cache, this, _mapSystem, _transformSystem));
+                    overlayManager.AddOverlay(new PathfindingOverlay(EntityManager, _eyeManager, _inputManager, _mapManager, _cache, this, _mapSystem));
                 }
 
                 if ((value & PathfindingDebugMode.Steering) != 0x0)
@@ -141,7 +140,6 @@ namespace Content.Client.NPC
         private readonly IMapManager _mapManager;
         private readonly PathfindingSystem _system;
         private readonly MapSystem _mapSystem;
-        private readonly SharedTransformSystem _transformSystem;
 
         public override OverlaySpace Space => OverlaySpace.ScreenSpace | OverlaySpace.WorldSpace;
 
@@ -155,8 +153,7 @@ namespace Content.Client.NPC
             IMapManager mapManager,
             IResourceCache cache,
             PathfindingSystem system,
-            MapSystem mapSystem,
-            SharedTransformSystem transformSystem)
+            MapSystem mapSystem)
         {
             _entManager = entManager;
             _eyeManager = eyeManager;
@@ -164,7 +161,6 @@ namespace Content.Client.NPC
             _mapManager = mapManager;
             _system = system;
             _mapSystem = mapSystem;
-            _transformSystem = transformSystem;
             _font = new VectorFont(cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Regular.ttf"), 10);
         }
 
@@ -484,7 +480,7 @@ namespace Content.Client.NPC
                                     if (neighborPoly.NetEntity != poly.GraphUid)
                                     {
                                         color = Color.Green;
-                                        var neighborMap = _entManager.GetCoordinates(neighborPoly).ToMap(_entManager, _transformSystem);
+                                        var neighborMap = _entManager.GetCoordinates(neighborPoly).ToMap(_entManager);
 
                                         if (neighborMap.MapId != args.MapId)
                                             continue;

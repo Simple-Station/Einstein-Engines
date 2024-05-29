@@ -643,9 +643,6 @@
     requiresSpecialDigestion: true
     useSound:
       path: /Audio/Items/Toys/mousesqueek.ogg
-  - type: Tag
-    tags:
-    - ToyRubberDuck
 
 - type: entity
   parent: BasePlushie

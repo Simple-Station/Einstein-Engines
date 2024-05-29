@@ -20,8 +20,6 @@ namespace Content.Server.Power.EntitySystems
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly AppearanceSystem _appearance = default!;
         [Dependency] private readonly AudioSystem _audio = default!;
-        private EntityQuery<ApcPowerReceiverComponent> _recQuery;
-        private EntityQuery<ApcPowerProviderComponent> _provQuery;
 
         public override void Initialize()
         {
@@ -37,9 +35,6 @@ namespace Content.Server.Power.EntitySystems
 
             SubscribeLocalEvent<ApcPowerReceiverComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
             SubscribeLocalEvent<PowerSwitchComponent, GetVerbsEvent<AlternativeVerb>>(AddSwitchPowerVerb);
-
-            _recQuery = GetEntityQuery<ApcPowerReceiverComponent>();
-            _provQuery = GetEntityQuery<ApcPowerProviderComponent>();
         }
 
         private void OnGetVerbs(EntityUid uid, ApcPowerReceiverComponent component, GetVerbsEvent<Verb> args)
@@ -82,7 +77,7 @@ namespace Content.Server.Power.EntitySystems
         private void OnProviderConnected(Entity<ApcPowerReceiverComponent> receiver, ref ExtensionCableSystem.ProviderConnectedEvent args)
         {
             var providerUid = args.Provider.Owner;
-            if (!_provQuery.TryGetComponent(providerUid, out var provider))
+            if (!EntityManager.TryGetComponent<ApcPowerProviderComponent>(providerUid, out var provider))
                 return;
 
             receiver.Comp.Provider = provider;
@@ -99,7 +94,7 @@ namespace Content.Server.Power.EntitySystems
 
         private void OnReceiverConnected(Entity<ApcPowerProviderComponent> provider, ref ExtensionCableSystem.ReceiverConnectedEvent args)
         {
-            if (_recQuery.TryGetComponent(args.Receiver, out var receiver))
+            if (EntityManager.TryGetComponent(args.Receiver, out ApcPowerReceiverComponent? receiver))
             {
                 provider.Comp.AddReceiver(receiver);
             }
@@ -107,7 +102,7 @@ namespace Content.Server.Power.EntitySystems
 
         private void OnReceiverDisconnected(EntityUid uid, ApcPowerProviderComponent provider, ExtensionCableSystem.ReceiverDisconnectedEvent args)
         {
-            if (_recQuery.TryGetComponent(args.Receiver, out var receiver))
+            if (EntityManager.TryGetComponent(args.Receiver, out ApcPowerReceiverComponent? receiver))
             {
                 provider.RemoveReceiver(receiver);
             }
@@ -121,7 +116,7 @@ namespace Content.Server.Power.EntitySystems
             if (!HasComp<HandsComponent>(args.User))
                 return;
 
-            if (!_recQuery.TryGetComponent(uid, out var receiver))
+            if (!TryComp<ApcPowerReceiverComponent>(uid, out var receiver))
                 return;
 
             if (!receiver.NeedsPower)
@@ -157,7 +152,7 @@ namespace Content.Server.Power.EntitySystems
         /// </summary>
         public bool IsPowered(EntityUid uid, ApcPowerReceiverComponent? receiver = null)
         {
-            if (!_recQuery.Resolve(uid, ref receiver, false))
+            if (!Resolve(uid, ref receiver, false))
                 return true;
 
             return receiver.Powered;
@@ -169,7 +164,7 @@ namespace Content.Server.Power.EntitySystems
         /// </summary>
         public bool TogglePower(EntityUid uid, bool playSwitchSound = true, ApcPowerReceiverComponent? receiver = null, EntityUid? user = null)
         {
-            if (!_recQuery.Resolve(uid, ref receiver, false))
+            if (!Resolve(uid, ref receiver, false))
                 return true;
 
             // it'll save a lot of confusion if 'always powered' means 'always powered'

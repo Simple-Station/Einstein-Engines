@@ -718,21 +718,9 @@ public sealed partial class AdminVerbSystem
                 Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Fun/caps.rsi"), "mag-6"),
                 Act = () =>
                 {
-                    _quickDialog.OpenDialog(player, "Set Bullet Amount", $"Amount (standard {ballisticAmmo.Capacity}):", (string amount) =>
+                    _quickDialog.OpenDialog(player, "Set Bullet Amount", $"Amount (max {ballisticAmmo.Capacity}):", (int amount) =>
                     {
-                        if (!int.TryParse(amount, out var result))
-                            return;
-
-                        if (result > 0)
-                        {
-                            ballisticAmmo.UnspawnedCount = result;
-                        }
-                        else
-                        {
-                            ballisticAmmo.UnspawnedCount = 0;
-                        }
-
-                        _gun.UpdateBallisticAppearance(args.Target, ballisticAmmo);
+                        ballisticAmmo.UnspawnedCount = amount;
                     });
                 },
                 Impact = LogImpact.Medium,

@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Content.Shared.Popups;
 using Robust.Client.Graphics;
@@ -27,8 +26,6 @@ namespace Content.Client.Popups
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
         [Dependency] private readonly IReplayRecordingManager _replayRecording = default!;
-        [Dependency] private readonly ExamineSystemShared _examine = default!;
-        [Dependency] private readonly SharedTransformSystem _transform = default!;
 
         public IReadOnlyList<WorldPopupLabel> WorldLabels => _aliveWorldLabels;
         public IReadOnlyList<CursorPopupLabel> CursorLabels => _aliveCursorLabels;
@@ -54,8 +51,6 @@ namespace Content.Client.Popups
                     _prototype,
                     _uiManager,
                     _uiManager.GetUIController<PopupUIController>(),
-                    _examine,
-                    _transform,
                     this));
         }
 

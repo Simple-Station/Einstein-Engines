@@ -98,8 +98,6 @@
   - type: Tag
     tags:
     - KeyedInstrument
-  - type: Item
-    size: Small
 
 - type: entity
   parent: BaseHandheldInstrument

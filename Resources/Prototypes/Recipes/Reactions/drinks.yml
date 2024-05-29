@@ -454,11 +454,11 @@
   id: IrishCoffee
   reactants:
     Coffee:
-      amount: 1
+      amount: 2
     IrishCream:
-      amount: 1
+      amount: 2
   products:
-    IrishCoffee: 2
+    IrishCoffee: 4
 
 - type: reaction
   id: IrishCream

@@ -351,14 +351,13 @@ namespace Content.Server.DeviceNetwork.Systems
 
             var xform = Transform(packet.Sender);
 
-            var senderPos = _transformSystem.GetWorldPosition(xform);
+            BeforePacketSentEvent beforeEv = new(packet.Sender, xform, _transformSystem.GetWorldPosition(xform));
 
             foreach (var connection in connections)
             {
                 if (connection.Owner == packet.Sender)
                     continue;
 
-                BeforePacketSentEvent beforeEv = new(packet.Sender, xform, senderPos, connection.NetIdEnum.ToString());
                 RaiseLocalEvent(connection.Owner, beforeEv, false);
 
                 if (!beforeEv.Cancelled)
@@ -387,17 +386,11 @@ namespace Content.Server.DeviceNetwork.Systems
         /// </summary>
         public readonly Vector2 SenderPosition;
 
-        /// <summary>
-        /// The network the packet will be sent to.
-        /// </summary>
-        public readonly string NetworkId;
-
-        public BeforePacketSentEvent(EntityUid sender, TransformComponent xform, Vector2 senderPosition, string networkId)
+        public BeforePacketSentEvent(EntityUid sender, TransformComponent xform, Vector2 senderPosition)
         {
             Sender = sender;
             SenderTransform = xform;
             SenderPosition = senderPosition;
-            NetworkId = networkId;
         }
     }
 

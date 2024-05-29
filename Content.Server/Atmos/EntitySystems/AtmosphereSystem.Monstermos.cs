@@ -661,7 +661,7 @@ namespace Content.Server.Atmos.EntitySystems
             // Turns out: no they don't. Temporary debug checks to figure out which caller is causing problems:
             if (tile == null)
             {
-                Log.Error($"Encountered null-tile in {nameof(AdjustEqMovement)}. Trace: {Environment.StackTrace}");
+                Logger.Error($"Encountered null-tile in {nameof(AdjustEqMovement)}. Trace: {Environment.StackTrace}");
                 return;
             }
             var adj = tile.AdjacentTiles[direction.ToIndex()];

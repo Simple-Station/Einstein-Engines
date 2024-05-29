@@ -4,7 +4,7 @@
   abstract: true
   description: You sit in this. Either by will or force.
   placement:
-    mode: PlaceFree
+    mode: SnapgridCenter
   components:
   - type: Clickable
   - type: InteractionOutline
@@ -65,8 +65,6 @@
   id: ChairBase
   abstract: true
   parent: UnanchoredChairBase
-  placement:
-    mode: SnapgridCenter
   components:
   - type: Physics
     bodyType: Static
@@ -89,8 +87,6 @@
   id: StoolBase
   parent: OfficeChairBase
   abstract: true
-  placement:
-    mode: SnapgridCenter
   components:
   - type: Physics
     bodyType: Static
@@ -120,7 +116,7 @@
 - type: entity
   name: stool
   id: Stool
-  parent: UnanchoredChairBase
+  parent: ChairBase
   description: Apply butt.
   components:
   - type: Sprite
@@ -245,7 +241,7 @@
 
 - type: entity
   id: ChairMeat
-  parent: UnanchoredChairBase
+  parent: ChairBase
   name: meat chair
   description: Uncomfortably sweaty.
   components:
@@ -289,7 +285,7 @@
   name: web chair
   id: ChairWeb
   description: For true web developers.
-  parent: UnanchoredChairBase
+  parent: ChairBase
   components:
   - type: Sprite
     sprite: Structures/Web/chair.rsi
@@ -353,6 +349,8 @@
   parent: ChairFolding
   id: ChairFoldingSpawnFolded
   suffix: folded
+  placement:
+    mode: PlaceFree
   components:
   - type: Foldable
     folded: true
