@@ -82,8 +82,8 @@ namespace Content.Server.Psionics.Abilities
             {
                 args.Handled = true;
                 _psionics.LogPowerUsed(args.Performer, "dispel",
-                    (int) MathF.Round(-2 * psionic.Dampening + psionic.Amplification),
-                    (int) MathF.Round(-4 * psionic.Dampening + psionic.Amplification));
+                    (int) MathF.Round(-4 * psionic.Dampening + psionic.Amplification),
+                    (int) MathF.Round(-2 * psionic.Dampening + psionic.Amplification));
             }
         }
 
