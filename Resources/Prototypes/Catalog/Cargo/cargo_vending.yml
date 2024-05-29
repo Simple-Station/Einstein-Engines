@@ -35,6 +35,8 @@
   product: CrateVendingMachineRestockClothesFilled
   cost: 7300
   category: Service
+  cost: 8050
+  category: cargoproduct-category-name-service
   group: market
 
 - type: cargoProduct

@@ -1,0 +1,14 @@
+- type: loadout
+  id: LoadoutCargoNeckGoliathCloak
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SalvageSpecialist
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobSalvageSpecialist
+      min: 36000 # 10 hours
+  items:
+    - ClothingNeckCloakGoliathCloak
