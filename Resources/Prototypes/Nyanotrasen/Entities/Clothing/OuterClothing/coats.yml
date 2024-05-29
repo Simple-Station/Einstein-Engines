@@ -19,7 +19,7 @@
     coefficient: 0.3
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: ClothingOuterStorageToggleableBase
   id: ClothingOuterCoatRndMysta
   name: mystagogue lab coat # Delta V - Mystagogue new coat
   description: Similar to the standard model but with more purple and gold. # Delta V - Mystagogue new coat
@@ -32,3 +32,5 @@
     modifiers:
       coefficients:
         Caustic: 0.75
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHoodMysta
