@@ -1,0 +1,98 @@
+# Colored
+- type: loadout
+  id: LoadoutShoesBlack
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesColorBlack
+
+- type: loadout
+  id: LoadoutShoesBlue
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesColorBlue
+
+- type: loadout
+  id: LoadoutShoesBrown
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesColorBrown
+
+- type: loadout
+  id: LoadoutShoesGreen
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesColorGreen
+
+- type: loadout
+  id: LoadoutShoesOrange
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesColorOrange
+
+- type: loadout
+  id: LoadoutShoesPurple
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesColorPurple
+
+- type: loadout
+  id: LoadoutShoesRed
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesColorRed
+
+- type: loadout
+  id: LoadoutShoesWhite
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesColorWhite
+
+- type: loadout
+  id: LoadoutShoesYellow
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesColorYellow
+
+
+# Miscellaneous
+- type: loadout
+  id: LoadoutShoesSlippersDuck
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoeSlippersDuck
+
+- type: loadout
+  id: LoadoutShoesLeather
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesLeather
+
+- type: loadout
+  id: LoadoutShoesMiscWhite
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesMiscWhite
