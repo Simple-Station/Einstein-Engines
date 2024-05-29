@@ -795,15 +795,15 @@
   - type: Wires
     layoutId: AirlockCommand
 
-- type: entity
-  parent: AirlockSecurityGlass
-  id: AirlockBrigGlassLocked
-  suffix: Brig, Locked
-  components:
-  - type: AccessReader
-    access: [["Brig"]]
-  - type: Wires
-    layoutId: AirlockCommand
+#- type: entity
+#  parent: AirlockSecurityGlass
+#  id: AirlockBrigGlassLocked
+#  suffix: Brig, Locked
+#  components:
+#  - type: AccessReader
+#    access: [["Brig"]]
+#  - type: Wires
+#    layoutId: AirlockCommand
 
 - type: entity
   parent: AirlockSecurityGlass
