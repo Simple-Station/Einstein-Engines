@@ -3,7 +3,7 @@ using Content.Server.Popups;
 using Content.Server.Psionics;
 using Content.Server.StationEvents.Components;
 using Content.Server.Stunnable;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusEffect;

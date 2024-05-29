@@ -1,4 +1,4 @@
-using Content.Server.Abilities.Psionics;
+using Content.Server.Psionics.Abilities;
 using Content.Server.Chat.Systems;
 using Content.Server.Radio.Components;
 using Content.Server.Radio.EntitySystems;

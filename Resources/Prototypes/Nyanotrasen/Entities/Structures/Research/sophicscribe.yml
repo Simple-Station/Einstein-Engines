@@ -29,6 +29,8 @@
     - Science
   - type: PotentialPsionic #this makes her easier to access for glimmer events, dw about it
   - type: Psionic
+    psychicFeedback:
+    - "sophic-grammateus-feedback"
   - type: Grammar
     attributes:
       gender: female
