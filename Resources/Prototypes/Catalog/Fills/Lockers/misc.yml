@@ -112,6 +112,16 @@
           prob: 0.44
         - id: PlushieCarp
           prob: 0.2
+          orGroup: carp
+        - id: PlushieHolocarp
+          prob: 0.05
+          orGroup: carp
+        - id: PlushieMagicarp
+          prob: 0.05
+          orGroup: carp
+        - id: PlushieRainbowCarp
+          prob: 0.03
+          orGroup: carp
         - id: PlushieSlime
           prob: 0.2
         - id: PlushieSnake
@@ -132,6 +142,10 @@
           prob: 0.25
         - id: StrangePill
           prob: 0.20
+        - id: DeathPaint
+          prob: 0.05
+        - id: DeathPaintTwo
+          prob: 0.05
         - id: DrinkMopwataBottleRandom
           prob: 0.20
         - id: ModularReceiver
@@ -205,6 +219,16 @@
           prob: 0.44
         - id: PlushieCarp
           prob: 0.2
+          orGroup: carp
+        - id: PlushieHolocarp
+          prob: 0.05
+          orGroup: carp
+        - id: PlushieMagicarp
+          prob: 0.05
+          orGroup: carp
+        - id: PlushieRainbowCarp
+          prob: 0.03
+          orGroup: carp
         - id: PlushieSlime
           prob: 0.2
         - id: PlushieSnake
