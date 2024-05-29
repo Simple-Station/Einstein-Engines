@@ -73,13 +73,7 @@ namespace Content.Server.Psionics.Abilities
 
             component.DoAfter = doAfterId;
 
-            _popupSystem.PopupEntity(Loc.GetString("psionic-regeneration-begin", ("entity", uid)),
-                uid,
-                // TODO: Use LoS-based Filter when one is available.
-                Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !ExamineSystemShared.InRangeUnOccluded(uid, entity, ExamineRange, null)),
-                true,
-                PopupType.Medium);
-
+            _popupSystem.PopupEntity(Loc.GetString("psionic-regeneration-begin", ("entity", uid)), uid, PopupType.Medium);
             _audioSystem.PlayPvs(component.SoundUse, uid, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
 
             _psionics.LogPowerUsed(uid, "psionic regeneration",
@@ -122,12 +116,7 @@ namespace Content.Server.Psionics.Abilities
                         BreakOnDamage = false,
                         RequireCanInteract = false,
                     });
-                    _popupSystem.PopupEntity(Loc.GetString("psionic-regeneration-self-revive", ("entity", uid)),
-                        uid,
-                        // TODO: Use LoS-based Filter when one is available.
-                        Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !ExamineSystemShared.InRangeUnOccluded(uid, entity, ExamineRange, null)),
-                        true,
-                        PopupType.MediumCaution);
+                    _popupSystem.PopupEntity(Loc.GetString("psionic-regeneration-self-revive", ("entity", uid)), uid, PopupType.MediumCaution);
                     _audioSystem.PlayPvs(component.SoundUse, uid, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
 
                     _psionics.LogPowerUsed(uid, "psionic regeneration",
