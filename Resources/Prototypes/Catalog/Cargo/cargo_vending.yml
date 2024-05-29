@@ -34,7 +34,7 @@
     state: base
   product: CrateVendingMachineRestockClothesFilled
   cost: 8050
-  category: cargoproduct-category-name-service
+  category: Service
   group: market
 
 - type: cargoProduct
