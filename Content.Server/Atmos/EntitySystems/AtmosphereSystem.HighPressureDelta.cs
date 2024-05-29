@@ -243,7 +243,7 @@ namespace Content.Server.Atmos.EntitySystems
                     // TODO: Consider replacing throw target with proper trigonometry angles.
                     if (throwTarget != EntityCoordinates.Invalid)
                     {
-                        var pos = throwTarget.ToMap(EntityManager).Position - xform.WorldPosition + dirVec;
+                        var pos = throwTarget.ToMap(EntityManager, _transformSystem).Position - xform.WorldPosition + dirVec;
                         _physics.ApplyLinearImpulse(uid, pos * moveForce, body: physics);
                     }
                     else
