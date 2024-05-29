@@ -28,27 +28,6 @@ namespace Content.Shared.Maps
             return tile;
         }
 
-        /// <summary>
-        ///     Attempts to get the turf at a certain coordinates or null if no such turf is found.
-        /// </summary>
-        public static TileRef? GetTileRef(this EntityCoordinates coordinates, IEntityManager? entityManager = null, IMapManager? mapManager = null)
-        {
-            entityManager ??= IoCManager.Resolve<IEntityManager>();
-
-            if (!coordinates.IsValid(entityManager))
-                return null;
-
-            mapManager ??= IoCManager.Resolve<IMapManager>();
-            var pos = coordinates.ToMap(entityManager, entityManager.System<SharedTransformSystem>());
-            if (!mapManager.TryFindGridAt(pos, out _, out var grid))
-                return null;
-
-            if (!grid.TryGetTileRef(coordinates, out var tile))
-                return null;
-
-            return tile;
-        }
-
         public static bool TryGetTileRef(this EntityCoordinates coordinates, [NotNullWhen(true)] out TileRef? turf, IEntityManager? entityManager = null, IMapManager? mapManager = null)
         {
             return (turf = coordinates.GetTileRef(entityManager, mapManager)) != null;
@@ -68,7 +47,7 @@ namespace Content.Shared.Maps
         /// </summary>
         public static bool IsSpace(this Tile tile, ITileDefinitionManager? tileDefinitionManager = null)
         {
-            return tile.GetContentTileDefinition(tileDefinitionManager).IsSpace;
+            return tile.GetContentTileDefinition(tileDefinitionManager).MapAtmosphere;
         }
 
         /// <summary>
@@ -114,15 +93,6 @@ namespace Content.Shared.Maps
                 return Enumerable.Empty<EntityUid>();
 
             return GetEntitiesInTile(turf.Value, flags, lookupSystem);
-        }
-
-        /// <summary>
-        ///     Helper that returns all entities in a turf.
-        /// </summary>
-        [Obsolete("Use the lookup system")]
-        public static IEnumerable<EntityUid> GetEntitiesInTile(this Vector2i indices, EntityUid gridId, LookupFlags flags = LookupFlags.Static, EntityLookupSystem? lookupSystem = null)
-        {
-            return GetEntitiesInTile(indices.GetTileRef(gridId), flags, lookupSystem);
         }
 
         /// <summary>
