@@ -4,7 +4,7 @@
     sprite: DeltaV/Clothing/OuterClothing/Armor/platecarrier.rsi # DeltaV - resprite
     state: icon
   product: CrateSecurityArmor
-  cost: 700
+  cost: 800
   category: cargoproduct-category-name-security
   group: market
 
