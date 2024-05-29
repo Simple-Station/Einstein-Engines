@@ -22,6 +22,7 @@ namespace Content.Server.Remotes
         [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
         [Dependency] private readonly DoorSystem _doorSystem = default!;
         [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
+        [Dependency] private readonly ExamineSystemShared _examine = default!;
         // I'm so sorry [Dependency] private readonly SharedAirlockSystem _sharedAirlockSystem = default!;
 
         public override void Initialize()
@@ -67,7 +68,7 @@ namespace Content.Server.Remotes
                 || !TryComp<DoorComponent>(args.Target, out var doorComp) // If it isn't a door we don't use it
                 // Only able to control doors if they are within your vision and within your max range.
                 // Not affected by mobs or machines anymore.
-                || !ExamineSystemShared.InRangeUnOccluded(args.User, args.Target.Value, SharedInteractionSystem.MaxRaycastRange, null))
+                || !_examine.InRangeUnOccluded(args.User, args.Target.Value, SharedInteractionSystem.MaxRaycastRange, null))
             {
                 return;
             }
@@ -80,10 +81,8 @@ namespace Content.Server.Remotes
                 return;
             }
 
-            // Holding the door remote grants you access to the relevant doors IN ADDITION to what ever access you had.
-            // This access is enforced in _doorSystem.HasAccess when it calls _accessReaderSystem.IsAllowed
             if (TryComp<AccessReaderComponent>(args.Target, out var accessComponent)
-                && !_doorSystem.HasAccess(args.Target.Value, args.User, doorComp, accessComponent))
+                && !_doorSystem.HasAccess(args.Target.Value, args.Used, doorComp, accessComponent))
             {
                 _doorSystem.Deny(args.Target.Value, doorComp, args.User);
                 ShowPopupToUser("door-remote-denied", args.User);
@@ -93,10 +92,7 @@ namespace Content.Server.Remotes
             switch (component.Mode)
             {
                 case OperatingMode.OpenClose:
-                    // Note we provide args.User here to TryToggleDoor as the "user"
-                    // This means that the door will look at all access items carryed by the player for access, including
-                    // this remote, but also including anything else they are carrying such as a PDA or ID card.
-                    if (_doorSystem.TryToggleDoor(args.Target.Value, doorComp, args.User))
+                    if (_doorSystem.TryToggleDoor(args.Target.Value, doorComp, args.Used))
                         _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)}: {doorComp.State}");
                     break;
                 case OperatingMode.ToggleBolts:
@@ -104,7 +100,7 @@ namespace Content.Server.Remotes
                     {
                         if (!boltsComp.BoltWireCut)
                         {
-                            _doorSystem.SetBoltsDown((args.Target.Value, boltsComp), !boltsComp.BoltsDown, args.User);
+                            _doorSystem.SetBoltsDown((args.Target.Value, boltsComp), !boltsComp.BoltsDown, args.Used);
                             _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)} to {(boltsComp.BoltsDown ? "" : "un")}bolt it");
                         }
                     }
