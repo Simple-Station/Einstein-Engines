@@ -86,7 +86,7 @@ public sealed class PopupOverlay : Overlay
             var distance = (mapPos.Position - args.WorldBounds.Center).Length();
 
             // Should handle fade here too wyci.
-            if (!args.WorldBounds.Contains(mapPos.Position) || !ExamineSystemShared.InRangeUnOccluded(viewPos, mapPos, distance,
+            if (!args.WorldBounds.Contains(mapPos.Position) || !_examine.InRangeUnOccluded(viewPos, mapPos, distance,
                     e => e == popup.InitialPos.EntityId || e == ourEntity, entMan: _entManager))
                 continue;
 
