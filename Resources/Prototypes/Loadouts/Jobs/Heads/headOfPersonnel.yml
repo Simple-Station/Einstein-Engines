@@ -1,0 +1,104 @@
+- type: loadout
+  id: LoadoutCommandHOPNeckMantle
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingNeckMantleHOP
+
+- type: loadout
+  id: LoadoutCommandHOPNeckCloak
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingNeckCloakHop
+
+- type: loadout
+  id: LoadoutCommandHOPJumpsuitTurtleneckBoatswain
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingUniformJumpsuitBoatswain
+
+- type: loadout
+  id: LoadoutCommandHOPJumpsuitMess
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingUniformJumpsuitHoPMess
+
+- type: loadout
+  id: LoadoutCommandHOPJumpskirtMess
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingUniformJumpskirtHoPMess
+
+- type: loadout
+  id: LoadoutcommandHOPOuterCoatFormal
+  category: Jobs
+  cost: 2
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingOuterCoatHoPFormal
+
+- type: loadout
+  id: LoadoutCommandHOPBackIan
+  category: Jobs
+  cost: 4
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingBackpackIan
+
+- type: loadout
+  id: LoadoutCommandHOPHatCap
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingHeadHatHopcap
+
+- type: loadout
+  id: LoadoutCommandHOPShoesBootsWinter
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingShoesBootsWinterHeadOfPersonel
