@@ -401,9 +401,6 @@
 - type: Tag
   id: CluwneHorn
 
-- type: Tag #Ohioans die happy
-  id: Corn
-
 - type: Tag
   id: Coldsauce
 
@@ -416,7 +413,7 @@
 - type: Tag
   id: ConveyorAssembly
 
-- type: Tag #Ohioans die happy
+- type: Tag
   id: Corn
 
 - type: Tag
