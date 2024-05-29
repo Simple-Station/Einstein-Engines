@@ -4,7 +4,6 @@ using Content.Server.Body.Systems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Shared.Atmos.EntitySystems;
-using Content.Shared.Doors.Components;
 using Content.Shared.Maps;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
@@ -41,9 +40,6 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     private const float ExposedUpdateDelay = 1f;
     private float _exposedTimer = 0f;
 
-    private EntityQuery<GridAtmosphereComponent> _atmosQuery;
-    private EntityQuery<AirtightComponent> _airtightQuery;
-    private EntityQuery<FirelockComponent> _firelockQuery;
     private HashSet<EntityUid> _entSet = new();
 
     public override void Initialize()
@@ -59,9 +55,6 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         InitializeGridAtmosphere();
         InitializeMap();
 
-        _atmosQuery = GetEntityQuery<GridAtmosphereComponent>();
-        _airtightQuery = GetEntityQuery<AirtightComponent>();
-        _firelockQuery = GetEntityQuery<FirelockComponent>();
 
         SubscribeLocalEvent<TileChangedEvent>(OnTileChanged);
 

@@ -41,6 +41,20 @@ public partial class AtmosphereSystem
         _gasTileOverlaySystem.Invalidate(gridUid, tile, comp);
     }
 
+    public bool NeedsVacuumFixing(MapGridComponent mapGrid, Vector2i indices)
+    {
+        var value = false;
+
+        var enumerator = GetObstructingComponentsEnumerator(mapGrid, indices);
+
+        while (enumerator.MoveNext(out var airtight))
+        {
+            value |= airtight.FixVacuum;
+        }
+
+        return value;
+    }
+
     /// <summary>
     ///     Gets the volume in liters for a number of tiles, on a specific grid.
     /// </summary>
@@ -52,44 +66,34 @@ public partial class AtmosphereSystem
         return Atmospherics.CellVolume * mapGrid.TileSize * tiles;
     }
 
-    public readonly record struct AirtightData(AtmosDirection BlockedDirections, bool NoAirWhenBlocked,
-        bool FixVacuum);
-
-    private void UpdateAirtightData(EntityUid uid, GridAtmosphereComponent atmos, MapGridComponent grid, TileAtmosphere tile)
+    /// <summary>
+    ///     Gets all obstructing <see cref="AirtightComponent"/> instances in a specific tile.
+    /// </summary>
+    /// <param name="mapGrid">The grid where to get the tile.</param>
+    /// <param name="tile">The indices of the tile.</param>
+    /// <returns>The enumerator for the airtight components.</returns>
+    public AtmosObstructionEnumerator GetObstructingComponentsEnumerator(MapGridComponent mapGrid, Vector2i tile)
     {
-        var oldBlocked = tile.AirtightData.BlockedDirections;
+        var ancEnumerator = mapGrid.GetAnchoredEntitiesEnumerator(tile);
+        var airQuery = GetEntityQuery<AirtightComponent>();
 
-        tile.AirtightData = tile.NoGridTile
-            ? default
-            : GetAirtightData(uid, grid, tile.GridIndices);
-
-        if (tile.AirtightData.BlockedDirections != oldBlocked && tile.ExcitedGroup != null)
-            ExcitedGroupDispose(atmos, tile.ExcitedGroup);
+        var enumerator = new AtmosObstructionEnumerator(ancEnumerator, airQuery);
+        return enumerator;
     }
 
-    private AirtightData GetAirtightData(EntityUid uid, MapGridComponent grid, Vector2i tile)
+    private AtmosDirection GetBlockedDirections(MapGridComponent mapGrid, Vector2i indices)
     {
-        var blockedDirs = AtmosDirection.Invalid;
-        var noAirWhenBlocked = false;
-        var fixVacuum = false;
+        var value = AtmosDirection.Invalid;
 
-        foreach (var ent in _map.GetAnchoredEntities(uid, grid, tile))
+        var enumerator = GetObstructingComponentsEnumerator(mapGrid, indices);
+
+        while (enumerator.MoveNext(out var airtight))
         {
-            if (!_airtightQuery.TryGetComponent(ent, out var airtight))
-                continue;
-
-            if(!airtight.AirBlocked)
-                continue;
-
-            blockedDirs |= airtight.AirBlockedDirection;
-            noAirWhenBlocked |= airtight.NoAirWhenFullyAirBlocked;
-            fixVacuum |= airtight.FixVacuum;
-
-            if (blockedDirs == AtmosDirection.All && noAirWhenBlocked && fixVacuum)
-                break;
+            if(airtight.AirBlocked)
+                value |= airtight.AirBlockedDirection;
         }
 
-        return new AirtightData(blockedDirs, noAirWhenBlocked, fixVacuum);
+        return value;
     }
 
     /// <summary>

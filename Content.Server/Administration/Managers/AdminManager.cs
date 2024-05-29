@@ -23,7 +23,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Administration.Managers
 {
-    public sealed partial class AdminManager : IAdminManager, IPostInjectInit, IConGroupControllerImplementation
+    public sealed class AdminManager : IAdminManager, IPostInjectInit, IConGroupControllerImplementation
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IServerDbManager _dbManager = default!;
@@ -34,7 +34,6 @@ namespace Content.Server.Administration.Managers
         [Dependency] private readonly IServerConsoleHost _consoleHost = default!;
         [Dependency] private readonly IChatManager _chat = default!;
         [Dependency] private readonly ToolshedManager _toolshed = default!;
-        [Dependency] private readonly ILogManager _logManager = default!;
 
         private readonly Dictionary<ICommonSession, AdminReg> _admins = new();
         private readonly HashSet<NetUserId> _promotedPlayers = new();
@@ -49,8 +48,6 @@ namespace Content.Server.Administration.Managers
 
         private readonly AdminCommandPermissions _commandPermissions = new();
         private readonly AdminCommandPermissions _toolshedCommandPermissions = new();
-
-        private ISawmill _sawmill = default!;
 
         public bool IsAdmin(ICommonSession session, bool includeDeAdmin = false)
         {
@@ -184,8 +181,6 @@ namespace Content.Server.Administration.Managers
 
         public void Initialize()
         {
-            _sawmill = _logManager.GetSawmill("admin");
-
             _netMgr.RegisterNetMessage<MsgUpdateAdminStatus>();
 
             // Cache permissions for loaded console commands with the requisite attributes.
@@ -239,8 +234,6 @@ namespace Content.Server.Administration.Managers
             }
 
             _toolshed.ActivePermissionController = this;
-
-            InitializeMetrics();
         }
 
         public void PromoteHost(ICommonSession player)

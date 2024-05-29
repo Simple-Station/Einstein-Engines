@@ -29,9 +29,6 @@ namespace Content.Server.Atmos.Components
         public Dictionary<Vector2i, TileAtmosphere> Tiles = new(1000);
 
         [ViewVariables]
-        public HashSet<TileAtmosphere> MapTiles = new(1000);
-
-        [ViewVariables]
         public readonly HashSet<TileAtmosphere> ActiveTiles = new(1000);
 
         [ViewVariables]
@@ -83,10 +80,7 @@ namespace Content.Server.Atmos.Components
         public readonly HashSet<Vector2i> InvalidatedCoords = new(1000);
 
         [ViewVariables]
-        public readonly Queue<TileAtmosphere> CurrentRunInvalidatedTiles = new();
-
-        [ViewVariables]
-        public readonly List<TileAtmosphere> PossiblyDisconnectedTiles = new(100);
+        public readonly Queue<Vector2i> CurrentRunInvalidatedCoordinates = new();
 
         [ViewVariables]
         public int InvalidatedCoordsCount => InvalidatedCoords.Count;

@@ -36,18 +36,18 @@
     event: !type:DispelPowerActionEvent
 
 - type: entity
-  id: ActionRegenerativeStasis
-  name: action-name-regenerative-stasis
-  description: action-description-regenerative-stasis
+  id: ActionMassSleep
+  name: action-name-mass-sleep
+  description: action-description-mass-sleep
   noSpawn: true
   components:
-  - type: EntityTargetAction
+  - type: WorldTargetAction
     icon: Nyanotrasen/Interface/VerbIcons/mass_sleep.png
     useDelay: 60
     checkCanAccess: false
     range: 8
     itemIconStyle: BigAction
-    event: !type:RegenerativeStasisPowerActionEvent
+    event: !type:MassSleepPowerActionEvent
 
 - type: entity
   id: ActionMindSwap
@@ -94,7 +94,7 @@
   description: action-description-pyrokinesis
   noSpawn: true
   components:
-  - type: WorldTargetAction
+  - type: EntityTargetAction
     icon: Nyanotrasen/Interface/VerbIcons/pyrokinesis.png
     useDelay: 50
     range: 6
@@ -103,29 +103,15 @@
     event: !type:PyrokinesisPowerActionEvent
 
 - type: entity
-  id: ActionWideMetapsionic
-  name: action-name-widemetapsionic
-  description: action-description-widemetapsionic
+  id: ActionMetapsionic
+  name: action-name-metapsionic
+  description: action-description-metapsionic
   noSpawn: true
   components:
   - type: InstantAction
     icon: Nyanotrasen/Interface/VerbIcons/metapsionic.png
     useDelay: 45
-    event: !type:WideMetapsionicPowerActionEvent
-
-- type: entity
-  id: ActionFocusedMetapsionic
-  name: action-name-focusedmetapsionic
-  description: action-description-focusedmetapsionic
-  noSpawn: true
-  components:
-  - type: EntityTargetAction
-    icon: Nyanotrasen/Interface/VerbIcons/metapsionic.png
-    useDelay: 45
-    range: 3
-    checkCanAccess: false
-    itemIconStyle: BigAction
-    event: !type:FocusedMetapsionicPowerActionEvent
+    event: !type:MetapsionicPowerActionEvent
 
 - type: entity
   id: ActionPsionicRegeneration

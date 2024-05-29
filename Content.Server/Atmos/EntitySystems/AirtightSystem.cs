@@ -2,6 +2,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Atmos;
 using JetBrains.Annotations;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 
 namespace Content.Server.Atmos.EntitySystems
@@ -9,7 +10,7 @@ namespace Content.Server.Atmos.EntitySystems
     [UsedImplicitly]
     public sealed class AirtightSystem : EntitySystem
     {
-        [Dependency] private readonly SharedTransformSystem _transform = default!;
+        [Dependency] private readonly IMapManager _mapManager = default!;
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
         [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
 
@@ -120,16 +121,19 @@ namespace Content.Server.Atmos.EntitySystems
             if (!xform.Anchored || !TryComp(xform.GridUid, out MapGridComponent? grid))
                 return;
 
-            var indices = _transform.GetGridTilePositionOrDefault((ent, xform), grid);
-            airtight.LastPosition = (xform.GridUid.Value, indices);
-            InvalidatePosition((xform.GridUid.Value, grid), indices);
+            airtight.LastPosition = (xform.GridUid.Value, grid.TileIndicesFor(xform.Coordinates));
+            InvalidatePosition(airtight.LastPosition.Item1, airtight.LastPosition.Item2, airtight.FixVacuum && !airtight.AirBlocked);
         }
 
-        public void InvalidatePosition(Entity<MapGridComponent?> grid, Vector2i pos)
+        public void InvalidatePosition(EntityUid gridId, Vector2i pos, bool fixVacuum = false)
         {
+            if (!TryComp(gridId, out MapGridComponent? grid))
+                return;
+
             var query = EntityManager.GetEntityQuery<AirtightComponent>();
-            _explosionSystem.UpdateAirtightMap(grid, pos, grid, query);
-            _atmosphereSystem.InvalidateTile(grid.Owner, pos);
+            _explosionSystem.UpdateAirtightMap(gridId, pos, grid, query);
+            // TODO make atmos system use query
+            _atmosphereSystem.InvalidateTile(gridId, pos);
         }
 
         private AtmosDirection Rotate(AtmosDirection myDirection, Angle myAngle)

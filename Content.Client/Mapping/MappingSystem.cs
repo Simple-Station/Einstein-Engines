@@ -83,7 +83,7 @@ public sealed partial class MappingSystem : EntitySystem
             if (tileDef is not ContentTileDefinition contentTileDef)
                 return;
 
-            var tileIcon = contentTileDef.MapAtmosphere
+            var tileIcon = contentTileDef.IsSpace
                 ? _spaceIcon
                 : new Texture(contentTileDef.Sprite!.Value);
 

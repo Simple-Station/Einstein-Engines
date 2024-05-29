@@ -475,7 +475,7 @@ public sealed partial class ExplosionSystem
         if (_tileDefinitionManager[tileRef.Tile.TypeId] is not ContentTileDefinition tileDef)
             return;
 
-        if (tileDef.MapAtmosphere)
+        if (tileDef.IsSpace)
             canCreateVacuum = true; // is already a vacuum.
 
         int tileBreakages = 0;
@@ -491,7 +491,7 @@ public sealed partial class ExplosionSystem
             if (_tileDefinitionManager[tileDef.BaseTurf] is not ContentTileDefinition newDef)
                 break;
 
-            if (newDef.MapAtmosphere && !canCreateVacuum)
+            if (newDef.IsSpace && !canCreateVacuum)
                 break;
 
             tileDef = newDef;

@@ -27,12 +27,8 @@ public sealed class AutomaticAtmosSystem : EntitySystem
         // Also, these calls are surprisingly slow.
         // TODO: Make tiledefmanager cache the IsSpace property, and turn this lookup-through-two-interfaces into
         // TODO: a simple array lookup, as tile IDs are likely contiguous, and there's at most 2^16 possibilities anyway.
-
-        var oldSpace = ev.OldTile.IsSpace(_tileDefinitionManager);
-        var newSpace = ev.NewTile.IsSpace(_tileDefinitionManager);
-
-        if (!(oldSpace && !newSpace ||
-            !oldSpace && newSpace) ||
+        if (!((ev.OldTile.IsSpace(_tileDefinitionManager) && !ev.NewTile.IsSpace(_tileDefinitionManager)) ||
+            (!ev.OldTile.IsSpace(_tileDefinitionManager) && ev.NewTile.IsSpace(_tileDefinitionManager))) ||
             _atmosphereSystem.HasAtmosphere(ev.Entity))
             return;
 

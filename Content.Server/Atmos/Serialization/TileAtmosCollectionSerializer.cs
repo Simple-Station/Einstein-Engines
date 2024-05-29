@@ -183,7 +183,13 @@ public sealed partial class TileAtmosCollectionSerializer : ITypeSerializer<Dict
         target.Clear();
         foreach (var (key, val) in source)
         {
-            target.Add(key, new TileAtmosphere(val));
+            target.Add(key,
+                new TileAtmosphere(
+                    val.GridIndex,
+                    val.GridIndices,
+                    val.Air?.Clone(),
+                    val.Air?.Immutable ?? false,
+                    val.Space));
         }
     }
 }

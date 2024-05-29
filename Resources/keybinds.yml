@@ -167,7 +167,6 @@ binds:
   type: State
   key: MouseLeft
   canFocus: true
-  priority: 10
 - function: RotateStoredItem
   type: State
   key: MouseRight
