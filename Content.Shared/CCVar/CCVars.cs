@@ -341,6 +341,18 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> DebugCoordinatesAdminOnly =
             CVarDef.Create("game.debug_coordinates_admin_only", true, CVar.SERVER | CVar.REPLICATED);
 
+        /// <summary>
+        /// Whether or not to allow characters to select loadout items.
+        /// </summary>
+        public static readonly CVarDef<bool> GameLoadoutsEnabled =
+            CVarDef.Create("game.loadouts_enabled", true, CVar.REPLICATED);
+
+        /// <summary>
+        /// How many points to give to each player for loadouts.
+        /// </summary>
+        public static readonly CVarDef<int> GameLoadoutsPoints =
+            CVarDef.Create("game.loadouts_points", 14, CVar.REPLICATED);
+
 #if EXCEPTION_TOLERANCE
         /// <summary>
         ///     Amount of times round start must fail before the server is shut down.
@@ -374,6 +386,19 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> RoundEndSoundCollection =
             CVarDef.Create("game.round_end_sound_collection", "RoundEnd", CVar.SERVERONLY);
+
+
+        /*
+         * Queue
+         */
+
+        /// <summary>
+        ///     Controls if the connections queue is enabled
+        ///     If enabled plyaers will be added to a queue instead of being kicked after SoftMaxPlayers is reached
+        /// </summary>
+        public static readonly CVarDef<bool>
+        QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
+
 
         /*
          * Discord
@@ -414,6 +439,24 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> DiscordRoundEndRoleWebhook =
             CVarDef.Create("discord.round_end_role", string.Empty, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Enable Discord linking, show linking button and modal window
+        /// </summary>
+        public static readonly CVarDef<bool> DiscordAuthEnabled =
+            CVarDef.Create("discord.auth_enabled", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     URL of the Discord auth server API
+        /// </summary>
+        public static readonly CVarDef<string> DiscordAuthApiUrl =
+            CVarDef.Create("discord.auth_api_url", "", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Secret key of the Discord auth server API
+        /// </summary>
+        public static readonly CVarDef<string> DiscordAuthApiKey =
+            CVarDef.Create("discord.auth_api_key", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
 
         /*
@@ -771,6 +814,12 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> SeeOwnNotes =
             CVarDef.Create("admin.see_own_notes", false, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
+        /// Should the server play a quick sound to the active admins whenever a new player joins?
+        /// </summary>
+        public static readonly CVarDef<bool> AdminNewPlayerJoinSound =
+            CVarDef.Create("admin.new_player_join_sound", false, CVar.SERVERONLY);
 
         /// <summary>
         /// The amount of days before the note starts fading. It will slowly lose opacity until it reaches stale. Set to 0 to disable.
@@ -1577,6 +1626,13 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> ScreenShakeIntensity =
             CVarDef.Create("accessibility.screen_shake_intensity", 1f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+        /// <summary>
+        /// A generic toggle for various visual effects that are color sensitive.
+        /// As of 2/16/24, only applies to progress bar colors.
+        /// </summary>
+        public static readonly CVarDef<bool> AccessibilityColorblindFriendly =
+            CVarDef.Create("accessibility.colorblind_friendly", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
         /*
          * CHAT
