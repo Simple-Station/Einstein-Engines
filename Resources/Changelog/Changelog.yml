@@ -4094,3 +4094,11 @@ Entries:
         appear on low-pop servers.
   id: 6112
   time: '2024-05-28T23:44:39.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Better wall sprites.
+    - type: Tweak
+      message: Better window sprites.
+  id: 6113
+  time: '2024-05-28T23:59:19.0000000+00:00'
