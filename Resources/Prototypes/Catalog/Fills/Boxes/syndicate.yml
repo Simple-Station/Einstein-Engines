@@ -33,6 +33,23 @@
       - id: SyringeStimulants
 
 - type: entity
+  id: Observationskit
+  parent: BoxCardboard
+  name: observations kit
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: SyndiCrewMonitorEmpty
+        amount: 1
+      - id: PowerCellHigh
+        amount: 1
+      - id: ClothingEyesGlassesHiddenSecurity
+        amount: 1
+      - id: SurveillanceCameraMonitorCircuitboard
+        amount: 1
+
+- type: entity
   parent: BoxCardboard
   id: ThrowingKnivesKit
   name: throwing knives kit
