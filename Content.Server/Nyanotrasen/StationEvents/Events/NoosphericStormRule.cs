@@ -1,9 +1,9 @@
 using Robust.Shared.Random;
-using Content.Server.Abilities.Psionics;
+using Content.Server.Psionics.Abilities;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
 using Content.Server.Psionics;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Zombies;

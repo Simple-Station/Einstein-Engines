@@ -10,7 +10,7 @@ using Content.Shared.Physics;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
-using Content.Shared.Abilities.Psionics; //Nyano - Summary: Makes Mime psionic.
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Speech.Muting;
 
 namespace Content.Server.Abilities.Mime
