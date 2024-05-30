@@ -32,3 +32,97 @@
   cost: 3
   items:
     - ClothingOuterWinterCoat
+
+- type: loadout
+  id: LoadoutOuterCoatHyenhSweater
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatHyenhSweater
+
+- type: loadout
+  id: LoadoutOuterWinterCoatLong
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterWinterCoatLong
+
+- type: loadout
+  id: LoadoutOuterWinterCoatPlaid
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterWinterCoatPlaid
+
+## Letterman Jackets
+- type: loadout
+  id: LoadoutOuterCoatLettermanBlue
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatLettermanBlue
+
+- type: loadout
+  id: LoadoutOuterCoatLettermanRed
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatLettermanRed
+
+## MNK
+- type: loadout
+  id: LoadoutOuterCoatMNKWhiteHoodie
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatMNKWhiteHoodie
+
+- type: loadout
+  id: LoadoutOuterCoatMNKBlackTopCoat
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatMNKBlackTopCoat
+
+- type: loadout
+  id: LoadoutOuterCoatMNKBlackJacket
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatMNKBlackJacket
+
+## Contractor Jackets
+- type: loadout
+  id: LoadoutOuterCsCorporateJacket
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCsCorporateJacket
+
+- type: loadout
+  id: LoadoutOuterCoatEECorporateJacket
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterEECorporateJacket
+
+- type: loadout
+  id: LoadoutOuterHICorporateJacket
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterHICorporateJacket
+
+- type: loadout
+  id: LoadoutOuterHMCorporateJacket
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterHMCorporateJacket
+
+- type: loadout
+  id: LoadoutOuterIdCorporateJacket
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterIdCorporateJacket

@@ -1,5 +1,5 @@
 loadout-age-requirement = You must be within {$min} and {$max} years old
-loadout-species-requirement = You must be a {$species}
+loadout-species-requirement = You must be one of these species: {$species}
 loadout-trait-requirement = You must have the trait {$trait}
 loadout-backpack-type-requirement = You must use a {$type} as your bag
 loadout-clothing-preference-requirement = You must wear a {$type}

@@ -84,3 +84,31 @@
         - ResearchDirector
   items:
     - ClothingHeadHatBeretRND
+
+- type: loadout
+  id: LoadoutScienceEyesHudDiagnostic
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Scientist
+        - ResearchAssistant
+        - ResearchDirector
+  items:
+    - ClothingEyesHudDiagnostic
+
+- type: loadout
+  id: LoadoutScienceEyesEyepatchHudDiag
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Scientist
+        - ResearchAssistant
+        - ResearchDirector
+  items:
+    - ClothingEyesEyepatchHudDiag

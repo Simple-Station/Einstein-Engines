@@ -12,6 +12,9 @@
   id: Outer
 
 - type: loadoutCategory
+  id: Species
+
+- type: loadoutCategory
   id: Uncategorized
 
 - type: loadoutCategory

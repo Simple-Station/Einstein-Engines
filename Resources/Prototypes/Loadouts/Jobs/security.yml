@@ -87,3 +87,184 @@
         - HeadOfSecurity
   items:
     - ClothingShoesBootsJack
+
+## Alt Jumpsuits
+- type: loadout
+  id: LoadoutUniformJumpsuitSecFormal
+  category: Jobs
+  cost: 3
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Detective
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpsuitSecFormal
+
+- type: loadout
+  id: LoadoutUniformJumpsuitWardenBlue
+  category: Jobs
+  cost: 3
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpsuitWardenBlue
+
+- type: loadout
+  id: LoadoutUniformJumpsuitWardenGrey
+  category: Jobs
+  cost: 3
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpsuitWardenGrey
+
+## Alt Jumpskirts
+- type: loadout
+  id: LoadoutUniformJumpskirtWardenBlue
+  category: Jobs
+  cost: 3
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpskirtWardenBlue
+
+- type: loadout
+  id: LoadoutUniformJumpskirtWardenGrey
+  category: Jobs
+  cost: 3
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpskirtWardenGrey
+
+- type: loadout
+  id: LoadoutUniformJumpskirtHoSBlue
+  category: Jobs
+  cost: 3
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHoSBlue
+
+- type: loadout
+  id: LoadoutUniformJumpskirtHoSGrey
+  category: Jobs
+  cost: 3
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHoSGrey
+
+- type: loadout
+  id: LoadoutItemsSpareHandgunMagazine
+  category: Jobs
+  cost: 7
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobSecurityOfficer
+      min: 21600 # 6 hours
+  items:
+    - MagazinePistol
+
+- type: loadout
+  id: LoadoutItemsSpareHandgunMagazineRubber
+  category: Jobs
+  cost: 6
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobSecurityOfficer
+      min: 7200 # 2 hours
+  items:
+    - MagazinePistolRubber
+
+- type: loadout
+  id: LoadoutSecurityEyesHudSecurity
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+  items:
+    - ClothingEyesHudSecurity
+
+- type: loadout
+  id: LoadoutSecurityEyesEyepatchHudSecurity
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+  items:
+    - ClothingEyesEyepatchHudSecurity
+
+- type: loadout
+  id: LoadoutSecurityHeadHatBeret
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+  items:
+    - ClothingHeadHatBeretSecurity
+
+- type: loadout
+  id: LoadoutSecurityEquipmentTruncheon
+  category: Jobs
+  cost: 8
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobSecurityOfficer
+      min: 36000 # 10 hours
+    - !type:LoadoutSpeciesRequirement
+      species:
+        - Oni
+  items:
+    - Truncheon

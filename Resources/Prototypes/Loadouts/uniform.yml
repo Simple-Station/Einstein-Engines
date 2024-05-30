@@ -259,3 +259,144 @@
   exclusive: true
   items:
     - ClothingUniformColorRainbow
+
+## Kendo
+- type: loadout
+  id: LoadoutUniformKendoHakama
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformKendoHakama
+
+- type: loadout
+  id: LoadoutUniformMartialGi
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformMartialGi
+
+## Kimono
+- type: loadout
+  id: LoadoutClothingKimonoBlue
+  category: Uniform
+  cost: 3
+  exclsuive: true
+  items:
+    - ClothingKimonoBlue
+
+- type: loadout
+  id: LoadoutClothingKimonoPink
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingKimonoPink
+
+- type: loadout
+  id: LoadoutClothingKimonoPurple
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingKimonoPurple
+
+- type: loadout
+  id: LoadoutClothingKimonoSky
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingKimonoSky
+
+- type: loadout
+  id: LoadoutClothingKimonoGreen
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingKimonoGreen
+
+## School Uniforms
+- type: loadout
+  id: LoadoutUniformSchoolgirlDusk
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - UniformSchoolgirlDusk
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlBlazerTan
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - UniformSchoolgirlBlazerTan
+
+## Gakuran
+- type: loadout
+  id: LoadoutUniformSchoolGakuranBlack
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformSchoolGakuranBlack
+
+## MNK Uniforms
+- type: loadout
+  id: LoadoutClothingMNKOfficeSkirt
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKOfficeSkirt
+
+- type: loadout
+  id: LoadoutClothingMNKUnderGarment
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKUnderGarment
+
+- type: loadout
+  id: LoadoutClothingMNKGymBra
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKGymBra
+
+- type: loadout
+  id: LoadoutClothingMNKDressBlack
+  category: Uniform
+  cost: 4 #The legendary black dress
+  exclusive: true
+  items:
+    - ClothingUniformMNKDressBlack
+
+- type: loadout
+  id: LoadoutClothingMNKBlackOveralls
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKBlackOveralls
+
+- type: loadout
+  id: LoadoutClothingMNKBlackShoulder
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKBlackShoulder
+
+- type: loadout
+  id: LoadoutClothingMNKTracksuitBlack
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKTracksuitBlack

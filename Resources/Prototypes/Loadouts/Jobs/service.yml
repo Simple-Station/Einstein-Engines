@@ -181,3 +181,14 @@
         - Reporter
   items:
     - ClothingUniformJumpskirtDetective
+
+- type: loadout
+  id: LoadoutItemSynthesizerInstrument
+  category: Jobs
+  cost: 8
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Musician
+  items:
+    - SynthesizerInstrument

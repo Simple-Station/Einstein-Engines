@@ -1,0 +1,38 @@
+- type: loadout
+  id: LoadoutSpeciesEmergencyNitrogenTank
+  category: Species
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:LoadoutSpeciesRequirement
+      species:
+        - SlimePerson
+        - Vox
+  items:
+    - EmergencyNitrogenTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesExtendedEmergencyNitrogenTank
+  category: Species
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutSpeciesRequirement
+      species:
+        - SlimePerson
+        - Vox
+  items:
+    - ExtendedEmergencyNitrogenTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesDoubleEmergencyNitrogenTank
+  category: Species
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:LoadoutSpeciesRequirement
+      species:
+        - SlimePerson
+        - Vox
+  items:
+    - DoubleEmergencyNitrogenTankFilled

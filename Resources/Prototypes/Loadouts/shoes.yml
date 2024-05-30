@@ -71,6 +71,62 @@
   items:
     - ClothingShoesColorYellow
 
+## Boots
+- type: loadout
+  id: LoadoutShoesBootsWork
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesBootsWork
+
+- type: loadout
+  id: LoadoutShoesBootsLaceup
+  category: Accessories
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingShoesBootsLaceup
+
+- type: loadout
+  id: LoadoutShoesBootsWinter
+  category: Accessories
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesBootsWinter
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyBrown
+  category: Accessories
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingShoesBootsCowboyBrown
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyBlack
+  category: Accessories
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingShoesBootsCowboyBlack
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyWhite
+  category: Accessories
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingShoesBootsCowboyWhite
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyFancy
+  category: Accessories
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingShoesBootsCowboyFancy
 
 # Miscellaneous
 - type: loadout

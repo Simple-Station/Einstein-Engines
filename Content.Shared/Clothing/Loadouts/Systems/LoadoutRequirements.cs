@@ -113,15 +113,16 @@ public sealed partial class LoadoutClothingPreferenceRequirement : LoadoutRequir
 public sealed partial class LoadoutSpeciesRequirement : LoadoutRequirement
 {
     [DataField(required: true)]
-    public ProtoId<SpeciesPrototype> Species;
+    public List<ProtoId<SpeciesPrototype>> Species;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
         IConfigurationManager configManager, out FormattedMessage? reason)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("loadout-species-requirement",
-            ("species", Loc.GetString($"species-name-{Species.ToString().ToLower()}"))));
-        return profile.Species == Species;
+        var speciesString = string.Join(", ", Species.Select(j => Loc.GetString(prototypeManager.Index(j).Name)));
+        speciesString = Loc.GetString("loadout-species-requirement", ("species", speciesString));
+        reason = FormattedMessage.FromMarkup(speciesString);
+        return Species.Contains(profile.Species);
     }
 }
 
