@@ -10,6 +10,7 @@
       state: brain
     event: !type:GibActionEvent {}
     checkCanInteract: false
+    checkConsciousness: false
 
 - type: entity
   id: DionaReformAction
