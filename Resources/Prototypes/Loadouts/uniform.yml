@@ -282,7 +282,7 @@
   id: LoadoutClothingKimonoBlue
   category: Uniform
   cost: 3
-  exclsuive: true
+  exclusive: true
   items:
     - ClothingKimonoBlue
 
