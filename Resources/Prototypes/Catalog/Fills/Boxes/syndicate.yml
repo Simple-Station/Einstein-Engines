@@ -38,16 +38,14 @@
   name: observations kit
   suffix: Filled
   components:
-  - type: StorageFill
-    contents:
-      - id: SyndiCrewMonitorEmpty
-        amount: 1
-      - id: PowerCellHigh
-        amount: 1
-      - id: ClothingEyesGlassesHiddenSecurity
-        amount: 1
-      - id: SurveillanceCameraMonitorCircuitboard
-        amount: 1
+    - type: StorageFill
+      contents:
+        - id: SyndiCrewMonitorEmpty
+          amount: 1
+        - id: PowerCellHigh
+          amount: 1
+        - id: ClothingEyesGlassesHiddenSecurity
+          amount: 1
 
 - type: entity
   parent: BoxCardboard
@@ -60,12 +58,12 @@
     - 0,0,3,1
   - type: StorageFill
     contents:
-      - id: ThrowingKnife
-        amount: 4
+    - id: ThrowingKnife
+      amount: 4
   - type: Sprite
     layers:
-      - state: box_of_doom
-      - state: throwing_knives
+    - state: box_of_doom
+    - state: throwing_knives
 
 - type: entity
   parent: BoxCardboard
@@ -75,12 +73,12 @@
   components:
   - type: Sprite
     layers:
-      - state: box_of_doom
-      - state: france
+    - state: box_of_doom
+    - state: france
   - type: StorageFill
     contents:
-      - id: WeaponCroissant
-        amount: 2
-      - id: WeaponBaguette
-      - id: SyndicateMicrowaveMachineCircuitboard
-      - id: PaperWrittenCombatBakeryKit
+    - id: WeaponCroissant
+      amount: 2
+    - id: WeaponBaguette
+    - id: SyndicateMicrowaveMachineCircuitboard
+    - id: PaperWrittenCombatBakeryKit
