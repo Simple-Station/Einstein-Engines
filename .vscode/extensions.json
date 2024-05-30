@@ -1,6 +1,12 @@
 {
     "recommendations": [
         "ms-dotnettools.csharp",
-        "editorconfig.editorconfig"
+        "editorconfig.editorconfig",
+        "aaron-bond.better-comments",
+        "tamasfe.even-better-toml",
+        "slava0135.robust-yaml",
+        "slevesque.shader",
+        "macabeus.vscode-fluent",
+        "redhat.vscode-yaml"
     ]
 }
