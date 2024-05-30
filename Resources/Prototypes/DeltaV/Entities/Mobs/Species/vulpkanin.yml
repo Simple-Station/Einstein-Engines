@@ -76,6 +76,16 @@
         sprite: "DeltaV/Effects/creampie.rsi"
         state: "creampie_vulpkanin"
         visible: false
+      - map: [ "tailcover" ]
+        sprite: "Clothing/tailcover.rsi"
+        state: "tailcover-vulpkanin"
+        visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.TailVisuals.Tailcover:
+        tailcover:
+          True:  {visible: true}
+          False:  {visible: false}
   - type: MeleeWeapon
     hidden: true
     soundHit:
@@ -97,7 +107,12 @@
       Female: FemaleVulpkanin
       Unsexed: MaleVulpkanin
   - type: DogVision
-
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - HidesTail
 - type: entity
   save: false
   name: Vulpkanin Dummy

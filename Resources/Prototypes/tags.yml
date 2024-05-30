@@ -672,6 +672,9 @@
   id: HidesNose # for non-standard noses.
 
 - type: Tag
+  id: HidesTail # Protecc the tails!
+
+- type: Tag
   id: HighRiskItem
 
 - type: Tag

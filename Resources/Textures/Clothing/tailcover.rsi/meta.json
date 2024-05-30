@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "TailCover by gentlebutter (588410099190726656) and ghostprince (115894681304301569)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "tailcover-vulpkanin",
+            "directions": 4
+        },
+        {
+            "name": "tailcover-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "tailcover-felinds",
+            "directions": 4
+        }
+    ]
+}
