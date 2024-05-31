@@ -139,6 +139,7 @@ public abstract partial class InteractionTest
     prototype: Aghost
   - type: DoAfter
   - type: Hands
+  - type: ComplexInteraction
   - type: MindContainer
   - type: Stripping
   - type: Puller
