@@ -38,10 +38,14 @@ public sealed partial class GatherableSystem : EntitySystem
 
     private void OnActivate(EntityUid uid, GatherableComponent component, ActivateInWorldEvent args)
     {
-        if (component.ToolWhitelist?.IsValid(args.User, EntityManager) != true)
+        if (args.Handled || !args.Complex)
             return;
 
-        Gather(uid, args.User, component);
+        if (gatherable.Comp.ToolWhitelist?.IsValid(args.User, EntityManager) != true)
+            return;
+
+        Gather(gatherable.Comp, args.User);
+        args.Handled = true;
     }
 
     public void Gather(EntityUid gatheredUid, EntityUid? gatherer = null, GatherableComponent? component = null)
