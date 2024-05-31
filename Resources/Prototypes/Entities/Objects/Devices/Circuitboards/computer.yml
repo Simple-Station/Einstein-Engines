@@ -19,7 +19,7 @@
         Silicon: 20
     - type: Tag
       tags:
-        - ComputerBoard
+      - ComputerBoard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -36,8 +36,8 @@
   name: atmospheric network monitor board
   description: A computer printed circuit board for an atmospheric network monitor.
   components:
-    - type: ComputerBoard
-      prototype: ComputerAtmosMonitoring
+  - type: ComputerBoard
+    prototype: ComputerAtmosMonitoring
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -49,9 +49,9 @@
       state: cpu_engineering
     - type: ComputerBoard
       prototype: ComputerPowerMonitoring
-    - type: ReverseEngineering # Nyano
+    - type: ReverseEngineering
       recipes:
-        - PowerComputerCircuitboard
+      - PowerComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -81,10 +81,10 @@
   name: psionics registry computer board
   description: A computer printed circuit board for a psionics registry computer.
   components:
-    - type: Sprite
-      state: cpu_science
-    - type: ComputerBoard
-      prototype: ComputerPsionicsRecords
+  - type: Sprite
+    state: cpu_science
+  - type: ComputerBoard
+    prototype: ComputerPsionicsRecords
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -109,6 +109,18 @@
       prototype: ComputerCargoOrders
     - type: StaticPrice
       price: 750
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CargoSaleComputerCircuitboard
+  name: cargo sale computer board
+  description: A computer printed circuit board for a cargo sale computer.
+  components:
+  - type: Sprite
+    state: cpu_supply
+  - type: ComputerBoard
+    prototype: ComputerPalletConsole
+
 
 - type: entity
   id: CargoBountyComputerCircuitboard
@@ -145,10 +157,10 @@
       prototype: ComputerSalvageExpedition
     - type: StealTarget
       stealGroup: SalvageExpeditionsComputerCircuitboard
-    - type: ReverseEngineering # Nyano
+    - type: ReverseEngineering
       difficulty: 2
       recipes:
-        - SalvageExpeditionsComputerCircuitboard
+      - SalvageExpeditionsComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -204,10 +216,10 @@
     - type: Tag
       tags:
         - ComputerTelevisionCircuitboard
-    - type: ReverseEngineering # Nyano
+    - type: ReverseEngineering
       difficulty: 2
       recipes:
-        - ComputerTelevisionCircuitboard
+      - ComputerTelevisionCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -230,10 +242,10 @@
       state: cpu_science
     - type: ComputerBoard
       prototype: ComputerAnalysisConsole
-    - type: ReverseEngineering # Nyano
+    - type: ReverseEngineering
       difficulty: 2
       recipes:
-        - AnalysisComputerCircuitboard
+      - AnalysisComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -245,10 +257,10 @@
     state: cpu_science
   - type: ComputerBoard
     prototype: ComputerTechnologyDiskTerminal
-  - type: ReverseEngineering # Nyano
+  - type: ReverseEngineering
     difficulty: 2
     recipes:
-      - TechDiskComputerCircuitboard
+    - TechDiskComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -258,10 +270,10 @@
   components:
     - type: ComputerBoard
       prototype: ComputerCrewMonitoring
-    - type: ReverseEngineering # Nyano
+    - type: ReverseEngineering
       difficulty: 2
       recipes:
-        - CrewMonitoringComputerCircuitboard
+      - CrewMonitoringComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -318,10 +330,10 @@
   components:
   - type: ComputerBoard
     prototype: ComputerRadar
-  - type: ReverseEngineering # Nyano
+  - type: ReverseEngineering
     difficulty: 2
     recipes:
-       - RadarConsoleCircuitboard
+    - RadarConsoleCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -333,10 +345,10 @@
       state: cpu_engineering
     - type: ComputerBoard
       prototype: ComputerSolarControl
-    - type: ReverseEngineering # Nyano
+    - type: ReverseEngineering
       difficulty: 2
       recipes:
-        - SolarControlComputerCircuitboard
+      - SolarControlComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -375,10 +387,10 @@
   components:
     - type: ComputerBoard
       prototype: ComputerShuttle
-    - type: ReverseEngineering # Nyano
+    - type: ReverseEngineering
       difficulty: 3
       recipes:
-        - ShuttleConsoleCircuitboard
+      - ShuttleConsoleCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -399,10 +411,10 @@
       state: cpu_medical
     - type: ComputerBoard
       prototype: ComputerCloningConsole
-    - type: ReverseEngineering # Nyano
+    - type: ReverseEngineering
       difficulty: 3
       recipes:
-        - CloningConsoleComputerCircuitboard
+      - CloningConsoleComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -465,7 +477,7 @@
   name: station ai upload console board
   description: A computer printed circuit board for a station AI upload console.
   components:
-    - type: Sprite
-      state: cpu_science
-    - type: ComputerBoard
-      prototype: StationAiUploadComputer
+  - type: Sprite
+    state: cpu_science
+  - type: ComputerBoard
+    prototype: StationAiUploadComputer
