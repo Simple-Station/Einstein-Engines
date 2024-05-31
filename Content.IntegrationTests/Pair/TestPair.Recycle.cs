@@ -46,6 +46,8 @@ public sealed partial class TestPair : IAsyncDisposable
             TestMap = null;
         }
 
+        await RevertModifiedCvars();
+
         var usageTime = Watch.Elapsed;
         Watch.Restart();
         await _testOut.WriteLineAsync($"{nameof(CleanReturnAsync)}: Test borrowed pair {Id} for {usageTime.TotalMilliseconds} ms");
