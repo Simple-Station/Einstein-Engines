@@ -392,7 +392,7 @@ public sealed partial class ExplosionSystem
 
         // don't raise BeforeExplodeEvent if the entity is completely immune to explosions
         var thisDamage = GetDamage(uid, prototype, originalDamage);
-        if (!thisDamage.Any())
+        if (thisDamage.Empty)
             return;
 
         _toDamage.Add((uid, thisDamage));
