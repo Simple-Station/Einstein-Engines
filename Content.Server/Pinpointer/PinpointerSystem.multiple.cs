@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Shared.Interaction;
 using Content.Shared.Pinpointer;
 using Robust.Shared.Utility;
@@ -25,7 +24,7 @@ public sealed partial class PinpointerSystem
             SetMultiplePinpointer(uid, multiple, tool);
         else
         {
-            Log.Error($"{MetaData(uid).EntityPrototype?.ID}({uid.Id}) does not have a Pinpointer component");
+            Log.Warning($"{MetaData(uid).EntityPrototype?.ID}({uid.Id}) does not have a Pinpointer component");
             DebugTools.Assert(false);
         }
     }
@@ -43,10 +42,10 @@ public sealed partial class PinpointerSystem
         if (!Resolve(uid, ref multiple))
             return false;
 
-        if (multiple.Modes.Count == 0)
+        if (multiple.Modes.Length == 0)
             return false;
 
-        multiple.CurrentEntry = (uint)((multiple.CurrentEntry + 1) % multiple.Modes.Count);
+        multiple.CurrentEntry = (uint)((multiple.CurrentEntry + 1) % multiple.Modes.Length);
         SetMultiplePinpointer(uid, multiple, user: user);
 
         return true;
@@ -60,11 +59,11 @@ public sealed partial class PinpointerSystem
         if (!Resolve(uid, ref multiple, ref pin))
             return;
 
-        if (multiple.Modes.Count <= multiple.CurrentEntry)
+        if (multiple.Modes.Length <= multiple.CurrentEntry)
             return;
 
-        var current = multiple.Modes.ToArray()[multiple.CurrentEntry];
-        SetDistance(uid, Distance.Unknown);
+        var current = multiple.Modes[multiple.CurrentEntry];
+        SetDistance(uid, Distance.Unknown, pin);
         if (current == "Off")
         {
             SetActive(uid, true, pin);

@@ -60,8 +60,6 @@
   - type: Icon
     state: pinpointer-syndicate
   - type: Pinpointer
-    component: NukeDisk
-    targetName: nuclear authentication disk
     updateTargetName: true
   - type: MultiplePinpointer
     modes:
