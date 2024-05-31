@@ -403,6 +403,8 @@
     tags:
     - WhitelistChameleon
     - HighRiskItem
+    - HidesTail
+    - HidesHarpyWings
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitRd
   - type: StaticPrice
@@ -516,6 +518,8 @@
     - MonkeyWearable
     - Hardsuit
     - WhitelistChameleon
+    - HidesTail
+    - HidesHarpyWings
 
 # Syndicate Medic Hardsuit
 - type: entity
@@ -534,6 +538,8 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - HidesTail
+    - HidesHarpyWings
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -822,6 +828,8 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - HidesTail
+    - HidesHarpyWings
 
 #ERT Janitor Hardsuit
 - type: entity
