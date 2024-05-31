@@ -29,33 +29,39 @@ public sealed partial class PlayerListControl : BoxContainer
 
     public Comparison<PlayerInfo>? Comparison;
     public Func<PlayerInfo, string, string>? OverrideText;
-
-    public PlayerListControl()
-    {
-        _entManager = IoCManager.Resolve<IEntityManager>();
-        _uiManager = IoCManager.Resolve<IUserInterfaceManager>();
-        _adminSystem = _entManager.System<AdminSystem>();
-        RobustXamlLoader.Load(this);
-        // Fill the Option data
-        PlayerListContainer.ItemPressed += PlayerListItemPressed;
-        PlayerListContainer.ItemKeyBindDown += PlayerListItemKeyBindDown;
-        PlayerListContainer.GenerateItem += GenerateButton;
-        PlayerListContainer.NoItemSelected += PlayerListNoItemSelected;
-        PopulateList(_adminSystem.PlayerList);
-        FilterLineEdit.OnTextChanged += _ => FilterList();
-        _adminSystem.PlayerListChanged += PopulateList;
-        BackgroundPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = new Color(32, 32, 40) };
-    }
-
+    public event Action<PlayerInfo?>? OnSelectionChanged;
     public IReadOnlyList<PlayerInfo> PlayerInfo => _playerList;
 
-    public event Action<PlayerInfo?>? OnSelectionChanged;
+    public Func<PlayerInfo, string, string>? OverrideText;
+    public Comparison<PlayerInfo>? Comparison;
 
-    private void PlayerListNoItemSelected()
-    {
-        _selectedPlayer = null;
-        OnSelectionChanged?.Invoke(null);
-    }
+    private IEntityManager _entManager;
+    private IUserInterfaceManager _uiManager;
+
+    private PlayerInfo? _selectedPlayer;
+
+        public PlayerListControl()
+        {
+            _entManager = IoCManager.Resolve<IEntityManager>();
+            _uiManager = IoCManager.Resolve<IUserInterfaceManager>();
+            _adminSystem = _entManager.System<AdminSystem>();
+            RobustXamlLoader.Load(this);
+            // Fill the Option data
+            PlayerListContainer.ItemPressed += PlayerListItemPressed;
+            PlayerListContainer.ItemKeyBindDown += PlayerListItemKeyBindDown;
+            PlayerListContainer.GenerateItem += GenerateButton;
+            PlayerListContainer.NoItemSelected += PlayerListNoItemSelected;
+            PopulateList(_adminSystem.PlayerList);
+            FilterLineEdit.OnTextChanged += _ => FilterList();
+            _adminSystem.PlayerListChanged += PopulateList;
+            BackgroundPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = new Color(32, 32, 40) };
+        }
+
+        private void PlayerListNoItemSelected()
+        {
+            _selectedPlayer = null;
+            OnSelectionChanged?.Invoke(null);
+        }
 
     private void PlayerListItemPressed(BaseButton.ButtonEventArgs? args, ListData? data)
     {
