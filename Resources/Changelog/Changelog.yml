@@ -4086,3 +4086,35 @@ Entries:
       message: Added a number of new corporate coats to the Clothesmate.
   id: 6111
   time: '2024-05-22T03:35:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Syndicate Listening Posts can now appear any time in a round, and can
+        appear on low-pop servers.
+  id: 6112
+  time: '2024-05-28T23:44:39.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Better wall sprites.
+    - type: Tweak
+      message: Better window sprites.
+  id: 6113
+  time: '2024-05-28T23:59:19.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Radio Resprites, Talkwalkies, Beacon, Headset...
+    - type: Tweak
+      message: >-
+        Radio and uplink radio looks the same, make sure to check what freq the
+        radio is on!
+  id: 6114
+  time: '2024-05-29T00:00:50.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: New Tools Sprites!
+  id: 6115
+  time: '2024-05-29T01:06:42.0000000+00:00'
