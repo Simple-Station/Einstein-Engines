@@ -19,6 +19,8 @@
       "Acoustic": {24: 0}
       "Flute": {73: 0}
       "Sax": {66: 0}
+      "Piano": {1: 0}
+      "Church Organ": {19: 0}
   - type: UserInterface
     interfaces:
       - key: enum.InstrumentUiKey.Key
@@ -54,7 +56,6 @@
         visible: false
       - map: [ "id" ]
       - map: [ "gloves" ]
-      - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
@@ -127,6 +128,12 @@
     templateId: digitigrade
   - type: HarpyVisuals
   - type: UltraVision
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - ShoesRequiredStepTriggerImmune
     
 - type: entity
   save: false

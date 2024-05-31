@@ -117,7 +117,25 @@
         - !type:SimpleColoring
   sprites:
     - sprite: DeltaV/Mobs/Customization/Harpy/harpy_tailsx72.rsi
-      state: finch_tail 
+      state: finch_tail
+
+- type: marking
+  id: HarpyTailPeacock
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_tailsx96.rsi
+      state: peacock_tail_feathers
+    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_tailsx96.rsi
+      state: peacock_tail_eyes
 
 - type: marking
   id: HarpyWing2ToneClassic
