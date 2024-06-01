@@ -1,13 +1,12 @@
-# Random humanoids
+## Random humanoids
 
 - type: randomHumanoidSettings
   id: EventHumanoid
-  # Shitmed Change Start
   speciesBlacklist:
+  - Shadowkin
   - Monkey
   - Kobold
   - Abductor
-  # Shitmed Change End
   components:
   - type: RandomHumanoidAppearance
     randomizeName: false
@@ -18,19 +17,7 @@
   parent: EventHumanoid
   components:
   - type: MindShield
-  - type: AntagImmune
-
-# Goobstation start
-#- type: randomHumanoidSettings
-#  id: EventHuman
-#  parent: EventHumanoid
-#  speciesWhitelist: Human
-
-#- type: randomHumanoidSettings
-#  id: EventHumanMindShielded
-#  parent: EventHumanoidMindShielded
-#  speciesWhitelist: Human
-# Goobstation end
+  - type: InitialInfectedExempt
 
 ## Death Squad
 
@@ -39,7 +26,6 @@
   name: Death Squad Agent
   suffix: ERTRole, Death Squad
   components:
-  - type: MindShield
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
     state: icon
@@ -52,26 +38,22 @@
 
 - type: randomHumanoidSettings
   id: DeathSquad
+  parent: EventHumanoidMindShielded
   randomizeName: false
-  speciesBlacklist:
-  - Shadowkin
-  - Monkey # Shitmed Change
-  - Kobold # Shitmed Change
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-Death-Squad-name
     description: ghost-role-information-Death-Squad-description
     rules: ghost-role-information-Death-Squad-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ DeathSquadGear ]
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitaryLeader
     - NamesLastMilitary
+
 
 ## ERT Leader
 
@@ -92,20 +74,15 @@
 
 - type: randomHumanoidSettings
   id: ERTLeader
+  parent: EventHumanoidMindShielded
   randomizeName: false
-  speciesBlacklist:
-  - Shadowkin
-  - Monkey # Shitmed Change
-  - Kobold # Shitmed Change
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-leader-name
     description: ghost-role-information-ert-leader-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ ERTLeaderGear ]
   - type: RandomMetadata
@@ -129,14 +106,12 @@
   id: ERTLeaderEVA
   parent: ERTLeader
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-leader-name
     description: ghost-role-information-ert-leader-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ ERTLeaderGearEVA ]
 
@@ -152,14 +127,12 @@
   id: ERTLeaderEVALecter
   parent: ERTLeaderEVA
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-leader-name
     description: ghost-role-information-ert-leader-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ ERTLeaderGearEVALecter ]
 
@@ -185,14 +158,12 @@
   id: ERTChaplain
   parent: ERTLeader
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-chaplain-name
     description: ghost-role-information-ert-chaplain-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitary
@@ -216,13 +187,11 @@
   id: ERTChaplainEVA
   parent: ERTChaplain
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-chaplain-name
     description: ghost-role-information-ert-chaplain-description
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ ERTChaplainGearEVA ]
 
@@ -248,14 +217,12 @@
   id: ERTJanitor
   parent: ERTLeader
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-janitor-name
     description: ghost-role-information-ert-janitor-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitary
@@ -279,14 +246,12 @@
   id: ERTJanitorEVA
   parent: ERTJanitor
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-janitor-name
     description: ghost-role-information-ert-janitor-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ ERTJanitorGearEVA ]
 
@@ -312,14 +277,12 @@
   id: ERTEngineer
   parent: ERTLeader
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-engineer-name
     description: ghost-role-information-ert-engineer-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitary
@@ -343,14 +306,12 @@
   id: ERTEngineerEVA
   parent: ERTEngineer
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-engineer-name
     description: ghost-role-information-ert-engineer-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ ERTEngineerGearEVA ]
 
@@ -376,13 +337,11 @@
   id: ERTSecurity
   parent: ERTLeader
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-security-name
     description: ghost-role-information-ert-security-description
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitary
@@ -406,14 +365,12 @@
   id: ERTSecurityEVA
   parent: ERTSecurity
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-security-name
     description: ghost-role-information-ert-security-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ ERTSecurityGearEVA ]
 
@@ -429,13 +386,11 @@
   id: ERTSecurityEVALecter
   parent: ERTSecurityEVA
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-security-name
     description: ghost-role-information-ert-security-description
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ ERTSecurityGearEVALecter ]
 
@@ -461,14 +416,12 @@
   id: ERTMedical
   parent: ERTLeader
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-medical-name
     description: ghost-role-information-ert-medical-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitary
@@ -492,14 +445,12 @@
   id: ERTMedicalEVA
   parent: ERTMedical
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-ert-medical-name
     description: ghost-role-information-ert-medical-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ ERTMedicalGearEVA ]
 
@@ -518,12 +469,8 @@
 
 - type: randomHumanoidSettings
   id: CBURNAgent
-  speciesBlacklist:
-  - Shadowkin
-  - Monkey # Shitmed Change
-  - Kobold # Shitmed Change
+  parent: EventHumanoidMindShielded
   components:
-  - type: MindShield
   - type: Loadout
     prototypes: [CBURNGear]
   - type: GhostRole
@@ -532,12 +479,10 @@
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitary
     - NamesLastMilitary
-
 ## Central Command
 
 - type: entity
@@ -552,19 +497,14 @@
 
 - type: randomHumanoidSettings
   id: CentcomOfficial
-  speciesBlacklist:
-  - Shadowkin
-  - Monkey # Shitmed Change
-  - Kobold # Shitmed Change
+  parent: EventHumanoidMindShielded
   components:
-  - type: MindShield
   - type: GhostRole
     name: ghost-role-information-centcom-official-name
     description: ghost-role-information-centcom-official-description
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: default
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ CentcomGear ]
 
@@ -586,8 +526,9 @@
   id: SyndicateAgent
   speciesBlacklist:
   - Shadowkin
-  - Monkey # Shitmed Change
-  - Kobold # Shitmed Change
+  - Monkey
+  - Kobold
+  - Abductor
   components:
   - type: RandomHumanoidAppearance
     randomizeName: false
@@ -608,8 +549,9 @@
   id: NukeOp
   speciesBlacklist:
   - Shadowkin
-  - Monkey # Shitmed Change
-  - Kobold # Shitmed Change
+  - Monkey
+  - Kobold
+  - Abductor
   components:
   - type: RandomHumanoidAppearance
     randomizeName: false
@@ -634,10 +576,7 @@
 
 - type: randomHumanoidSettings
   id: Cluwne
-  speciesBlacklist:
-  - Shadowkin
-  - Monkey # Shitmed Change
-  - Kobold # Shitmed Change
+  parent: EventHumanoid
   randomizeName: false
   components:
   - type: GhostRole
@@ -645,7 +584,6 @@
     description: ghost-role-information-cluwne-description
     raffle:
       settings: default
-  - type: GhostTakeoverAvailable
   - type: Cluwne
 
 ## Lost Cargo technician
@@ -677,7 +615,7 @@
 
 - type: randomHumanoidSettings
   id: LostCargoTechnician
-  randomizeName: false
+  parent: EventHumanoid
   components:
   - type: GhostRole
     name: ghost-role-information-lost-cargo-technical-name
@@ -685,13 +623,8 @@
     rules: ghost-role-information-lost-cargo-technical-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ LostCargoTechGearSuit, LostCargoTechGearCoat ]
-  - type: RandomMetadata
-    nameSegments:
-    - names_first
-    - names_last
 
 # Clown troupe
 
@@ -732,6 +665,7 @@
 
 - type: randomHumanoidSettings
   id: ClownTroupe
+  parent: EventHumanoid
   randomizeName: false
   components:
   - type: GhostRole
@@ -740,7 +674,6 @@
     rules: ghost-role-information-clown-troupe-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ ClownTroupe ]
   - type: RandomMetadata
@@ -749,18 +682,10 @@
 
 - type: randomHumanoidSettings
   id: ClownTroupeBanana
-  randomizeName: false
+  parent: ClownTroupe
   components:
-  - type: GhostRole
-    name: ghost-role-information-clown-troupe-name
-    description: ghost-role-information-clown-troupe-description
-    rules: ghost-role-information-clown-troupe-rules
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ BananaClown ]
-  - type: RandomMetadata
-    nameSegments:
-    - names_clown
 
 # Traveling exotic chef
 
@@ -790,7 +715,7 @@
 
 - type: randomHumanoidSettings
   id: TravelingChef
-  randomizeName: false
+  parent: EventHumanoid
   components:
   - type: GhostRole
     name: ghost-role-information-traveling-chef-name
@@ -798,13 +723,8 @@
     rules: ghost-role-information-traveling-chef-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ TravelingChef ]
-  - type: RandomMetadata
-    nameSegments:
-    - names_first
-    - names_last
 
 # Disaster victim
 
@@ -851,9 +771,11 @@
   - type: RandomHumanoidSpawner
     settings: DisasterVictimCaptain
 
+## Following use EventHumanoidMindShielded since they are heads and probably should have mindshields
+
 - type: randomHumanoidSettings
-  id: DisasterVictimResearchDirector
-  randomizeName: false
+  id: DisasterVictimHead
+  parent: EventHumanoidMindShielded
   components:
   - type: GhostRole
     name: ghost-role-information-disaster-victim-name
@@ -861,49 +783,27 @@
     rules: ghost-role-information-disaster-victim-rules
     raffle:
       settings: default
-  - type: GhostTakeoverAvailable
+
+- type: randomHumanoidSettings
+  id: DisasterVictimResearchDirector
+  parent: DisasterVictimHead
+  components:
   - type: Loadout
     prototypes: [ DisasterVictimRD, DisasterVictimRDAlt ]
-  - type: RandomMetadata
-    nameSegments:
-    - names_first
-    - names_last
 
 - type: randomHumanoidSettings
   id: DisasterVictimCMO
-  randomizeName: false
+  parent: DisasterVictimHead
   components:
-  - type: GhostRole
-    name: ghost-role-information-disaster-victim-name
-    description: ghost-role-information-disaster-victim-description
-    rules: ghost-role-information-disaster-victim-rules
-    raffle:
-      settings: default
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ DisasterVictimCMO, DisasterVictimCMOAlt ]
-  - type: RandomMetadata
-    nameSegments:
-    - names_first
-    - names_last
 
 - type: randomHumanoidSettings
   id: DisasterVictimCaptain
-  randomizeName: false
+  parent: DisasterVictimHead
   components:
-  - type: GhostRole
-    name: ghost-role-information-disaster-victim-name
-    description: ghost-role-information-disaster-victim-description
-    rules: ghost-role-information-disaster-victim-rules
-    raffle:
-      settings: default
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ DisasterVictimCaptain, DisasterVictimCaptainAlt ]
-  - type: RandomMetadata
-    nameSegments:
-    - names_first
-    - names_last
 
 # Syndie Disaster Victim
 
@@ -933,7 +833,7 @@
 
 - type: randomHumanoidSettings
   id: SyndieDisasterVictim
-  randomizeName: false
+  parent: EventHumanoid
   components:
   - type: NpcFactionMember
     factions:
@@ -944,10 +844,5 @@
     rules: ghost-role-information-syndie-disaster-victim-rules
     raffle:
       settings: short
-  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ SyndicateOperativeGearCivilian ]
-  - type: RandomMetadata
-    nameSegments:
-    - names_first
-    - names_last
