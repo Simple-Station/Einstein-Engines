@@ -9,9 +9,10 @@ using Content.Shared.Forensics;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
+using Content.Shared.Popups;
+using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Random;
-using Content.Shared.Inventory.Events;
 
 namespace Content.Server.Forensics
 {
@@ -36,6 +37,8 @@ namespace Content.Server.Forensics
             SubscribeLocalEvent<CleansForensicsComponent, AfterInteractEvent>(OnAfterInteract, after: new[] { typeof(AbsorbentSystem) });
             SubscribeLocalEvent<ForensicsComponent, CleanForensicsDoAfterEvent>(OnCleanForensicsDoAfter);
             SubscribeLocalEvent<DnaComponent, TransferDnaEvent>(OnTransferDnaEvent);
+            SubscribeLocalEvent<CleansForensicsComponent, GetVerbsEvent<UtilityVerb>>(OnUtilityVerb);
+
         }
 
         private void OnInteract(EntityUid uid, FingerprintComponent component, ContactInteractionEvent args)
@@ -61,7 +64,6 @@ namespace Content.Server.Forensics
         private void OnDNAInit(EntityUid uid, DnaComponent component, MapInitEvent args)
         {
             component.DNA = GenerateDNA();
-
         }
 
         private void OnScentInit(EntityUid uid, ScentComponent component, MapInitEvent args)
@@ -87,7 +89,7 @@ namespace Content.Server.Forensics
 
         private void OnMeleeHit(EntityUid uid, ForensicsComponent component, MeleeHitEvent args)
         {
-            if ((args.BaseDamage.DamageDict.TryGetValue("Blunt", out var bluntDamage) && bluntDamage.Value > 0) ||
+            i f((args.BaseDamage.DamageDict.TryGetValue("Blunt", out var bluntDamage) && bluntDamage.Value > 0) ||
                 (args.BaseDamage.DamageDict.TryGetValue("Slash", out var slashDamage) && slashDamage.Value > 0) ||
                 (args.BaseDamage.DamageDict.TryGetValue("Piercing", out var pierceDamage) && pierceDamage.Value > 0))
             {
@@ -129,34 +131,82 @@ namespace Content.Server.Forensics
             }
         }
 
-        private void OnAfterInteract(EntityUid uid, CleansForensicsComponent component, AfterInteractEvent args)
+        private void OnAfterInteract(Entity<CleansForensicsComponent> cleanForensicsEntity, ref AfterInteractEvent args)
         {
-            if (args.Handled || !args.CanReach || !TryComp<ForensicsComponent>(args.Target, out var forensicsComp))
+            if (args.Handled || !args.CanReach  || args.Target == null)
                 return;
 
-            if ((forensicsComp.DNAs.Count <= 0 || !forensicsComp.CanDnaBeCleaned)
-                && forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count <= 0
-                && forensicsComp.Scent == string.Empty)
-                return; // Nothing to do if there is no DNAs, fibers, and scent
+            args.Handled = TryStartCleaning(cleanForensicsEntity, args.User, args.Target.Value);
+        }
 
-            var cleanDelay = component.CleanDelay;
-            if (HasComp<ScentComponent>(args.Target))
-                cleanDelay += 30;
+        private void OnUtilityVerb(Entity<CleansForensicsComponent> entity, ref GetVerbsEvent<UtilityVerb> args)
+        {
+            if (!args.CanInteract || !args.CanAccess)
+                return;
 
-            var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cleanDelay, new CleanForensicsDoAfterEvent(), uid, target: args.Target, used: args.Used)
+            // These need to be set outside for the anonymous method!
+            var user = args.User;
+            var target = args.Target;
+
+            var verb = new UtilityVerb()
             {
-                BreakOnHandChange = true,
-                NeedHand = true,
-                BreakOnDamage = true,
-                BreakOnMove = true,
-                MovementThreshold = 0.01f,
-                DistanceThreshold = forensicsComp.CleanDistance,
+                Act = () => TryStartCleaning(entity, user, target),
+                IconEntity = GetNetEntity(entity),
+                Text = Loc.GetString(Loc.GetString("forensics-verb-text")),
+                Message = Loc.GetString(Loc.GetString("forensics-verb-message")),
+                // This is important because if its true using the cleaning device will count as touching the object.
+                DoContactInteraction = false
             };
 
-            _doAfterSystem.TryStartDoAfter(doAfterArgs);
-            _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning", ("target", args.Target)), args.User, args.User);
+            args.Verbs.Add(verb);
+        }
 
-            args.Handled = true;
+        /// <summary>
+        ///     Attempts to clean the given item with the given CleansForensics entity.
+        /// </summary>
+        /// <param name="cleanForensicsEntity">The entity that is being used to clean the target.</param>
+        /// <param name="user">The user that is using the cleanForensicsEntity.</param>
+        /// <param name="target">The target of the forensics clean.</param>
+        /// <returns>True if the target can be cleaned and has some sort of DNA or fingerprints / fibers and false otherwise.</returns>
+        public bool TryStartCleaning(Entity<CleansForensicsComponent> cleanForensicsEntity, EntityUid user, EntityUid target)
+        {
+            if (!TryComp<ForensicsComponent>(target, out var forensicsComp))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning-cannot-clean", ("target", target)), user, user, PopupType.MediumCaution);
+                return false;
+            }
+
+            var totalPrintsAndFibers = forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count;
+            var hasRemovableDNA = forensicsComp.DNAs.Count > 0 && forensicsComp.CanDnaBeCleaned;
+
+            if (hasRemovableDNA || totalPrintsAndFibers > 0)
+            {
+                var cleanDelay = cleanForensicsEntity.Comp.CleanDelay;
+                if (HasComp<ScentComponent>(target))
+                    cleanDelay += 30;
+
+                var doAfterArgs = new DoAfterArgs(EntityManager, user, cleanDelay, new CleanForensicsDoAfterEvent(), cleanForensicsEntity, target: target, used: cleanForensicsEntity)
+                {
+                    BreakOnHandChange = true,
+                    NeedHand = true,
+                    BreakOnDamage = true,
+                    BreakOnMove = true,
+                    MovementThreshold = 0.01f,
+                    DistanceThreshold = forensicsComp.CleanDistance,
+                };
+
+                _doAfterSystem.TryStartDoAfter(doAfterArgs);
+
+                _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning", ("target", target)), user, user);
+
+                return true;
+            }
+            else
+            {
+                _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning-cannot-clean", ("target", target)), user, user, PopupType.MediumCaution);
+                return false;
+            }
+
         }
 
         private void OnCleanForensicsDoAfter(EntityUid uid, ForensicsComponent component, CleanForensicsDoAfterEvent args)
