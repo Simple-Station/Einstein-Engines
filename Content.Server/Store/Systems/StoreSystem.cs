@@ -5,11 +5,10 @@ using Content.Shared.Implants.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;
-using Content.Shared.Store;
 using JetBrains.Annotations;
-using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Content.Shared.Store.Components;
 using Content.Server.StoreDiscount;
 using Robust.Shared.Utility;
 
@@ -46,7 +45,6 @@ public sealed partial class StoreSystem : EntitySystem
     private void OnMapInit(EntityUid uid, StoreComponent component, MapInitEvent args)
     {
         RefreshAllListings(component);
-        InitializeFromPreset(component.Preset, uid, component);
         component.StartingMap = Transform(uid).MapUid;
     }
 
@@ -56,7 +54,6 @@ public sealed partial class StoreSystem : EntitySystem
         if (MetaData(uid).EntityLifeStage == EntityLifeStage.MapInitialized)
         {
             RefreshAllListings(component);
-            InitializeFromPreset(component.Preset, uid, component);
         }
 
         var ev = new StoreAddedEvent();
