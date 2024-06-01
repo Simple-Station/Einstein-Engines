@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Server.Cargo.Components;
 using Content.Server.Cargo.Systems;
 using Content.Server.GameTicking;
+using Content.Server.GameTicking.Components;
 using Content.Server.Station.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
@@ -20,8 +21,14 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
 
     protected override void Added(EntityUid uid, CargoGiftsRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
-        base.Added(uid, component, gameRule, args);
+        if (!TryComp<StationEventComponent>(uid, out var stationEvent))
+            return;
 
+        var str = Loc.GetString(component.Announce,
+            ("sender", Loc.GetString(component.Sender)), ("description", Loc.GetString(component.Description)), ("dest", Loc.GetString(component.Dest)));
+        stationEvent.StartAnnouncement = str;
+
+        base.Added(uid, component, gameRule, args);
         _announcer.SendAnnouncement(
             _announcer.GetAnnouncementId(args.RuleId),
             Filter.Broadcast(),

@@ -1,3 +1,4 @@
+using Content.Server.GameTicking.Components;
 using Content.Server.StationEvents.Components;
 ﻿using Content.Shared.GameTicking.Components;
 using Robust.Shared.Random;
@@ -12,8 +13,14 @@ public sealed class BluespaceArtifactRule : StationEventSystem<BluespaceArtifact
 
     protected override void Added(EntityUid uid, BluespaceArtifactRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
-        base.Added(uid, component, gameRule, args);
+        if (!TryComp<StationEventComponent>(uid, out var stationEvent))
+            return;
 
+        var str = Loc.GetString("bluespace-artifact-event-announcement",
+            ("sighting", Loc.GetString(RobustRandom.Pick(component.PossibleSighting))));
+        stationEvent.StartAnnouncement = str;
+
+        base.Added(uid, component, gameRule, args);
         _announcer.SendAnnouncement(
             _announcer.GetAnnouncementId(args.RuleId),
             Filter.Broadcast(),

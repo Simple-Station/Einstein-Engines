@@ -1,8 +1,8 @@
 ﻿using System.Linq;
+using Content.Server.GameTicking.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
 using JetBrains.Annotations;
-using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Content.Server.Announcements.Systems;
 
@@ -16,13 +16,19 @@ public sealed class FalseAlarmRule : StationEventSystem<FalseAlarmRuleComponent>
 
     protected override void Started(EntityUid uid, FalseAlarmRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
-        base.Started(uid, component, gameRule, args);
+        if (!TryComp<StationEventComponent>(uid, out var stationEvent))
+            return;
 
         var allEv = _event.AllEvents()
             .Where(p => p.Value.StartAnnouncement)
             .Select(p => p.Key).ToList();
         var picked = RobustRandom.Pick(allEv);
 
+        stationEvent.StartAnnouncement = picked.StartAnnouncement;
+        stationEvent.StartAudio = picked.StartAudio;
+        stationEvent.StartAnnouncementColor = picked.StartAnnouncementColor;
+
+        base.Started(uid, component, gameRule, args);
         _announcer.SendAnnouncement(
             _announcer.GetAnnouncementId(picked.ID),
             Filter.Broadcast(),
