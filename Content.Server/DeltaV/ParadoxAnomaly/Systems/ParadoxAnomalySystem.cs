@@ -1,5 +1,4 @@
 using Content.Server.DeltaV.ParadoxAnomaly.Components;
-using Content.Server.DetailExaminable;
 using Content.Server.GenericAntag;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
@@ -18,6 +17,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.DetailExaminable;
 
 namespace Content.Server.DeltaV.ParadoxAnomaly.Systems;
 
@@ -140,6 +140,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
         {
             var detailCopy = EnsureComp<DetailExaminableComponent>(spawned);
             detailCopy.Content = detail.Content;
+            Dirty(detailCopy);
         }
 
         if (job.StartingGear != null && _proto.TryIndex<StartingGearPrototype>(job.StartingGear, out var gear))
