@@ -19,9 +19,9 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
+    #     - shader: StencilClear
+    #      sprite: Mobs/Species/Human/parts.rsi
+    #      state: l_leg
     - map: [ "enum.HumanoidVisualLayers.Underwear" ]
     - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
     - map: ["jumpsuit"]
@@ -203,11 +203,12 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      # Goobstation - changelings
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
       enum.InstrumentUiKey.Key:
@@ -264,8 +265,7 @@
   id: BaseMobSpeciesOrganic
   abstract: true
   components:
-  - type: Flashable
-  - type: Absorbable # Goobstation - changelings
+  - type: Absorbable
   - type: Barotrauma
     damage:
       types:
@@ -280,28 +280,6 @@
         Heat: -0.07
       groups:
         Brute: -0.07
-  # Organs
-  - type: StatusEffects
-    allowed:
-    - Stun
-    - KnockedDown
-    - SlowedDown
-    - Stutter
-    - SeeingRainbows
-    - Electrocution
-    - ForcedSleep
-    - TemporaryBlindness
-    - Drunk
-    - SlurredSpeech
-    - RatvarianLanguage
-    - PressureImmunity
-    - Muted
-    - Pacified
-    - StaminaModifier
-    - PsionicsDisabled
-    - PsionicallyInsulated
-    - RadiationProtection
-    - Drowsiness
   - type: Blindable
   # Other
   - type: Temperature
@@ -375,9 +353,9 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
+    #     - shader: StencilClear
+    #      sprite: Mobs/Species/Human/parts.rsi
+    #      state: l_leg
     - map: [ "enum.HumanoidVisualLayers.Underwear" ]
     - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
     - map: ["jumpsuit"]
@@ -416,7 +394,7 @@
   - type: Body
     prototype: Human
     requiredLegs: 2
-  - type: Absorbable # Goobstation - changelings
+  - type: Absorbable
   - type: UserInterface
     interfaces:
       enum.HumanoidMarkingModifierKey.Key: # sure, this can go here too
