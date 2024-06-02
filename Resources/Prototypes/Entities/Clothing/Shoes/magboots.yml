@@ -4,12 +4,12 @@
   description: A set of magnetic locks integrated into a suit.
   abstract: true
   components:
-    - type: ToggleClothing
-      action: ActionToggleMagboots
-    - type: Magboots
-      slot: outerClothing
-    - type: ItemToggle
-      onUse: false # can't really wear it like that
+  - type: ToggleClothing
+    action: ActionToggleMagboots
+  - type: Magboots
+    slot: outerClothing
+  - type: ItemToggle
+    onUse: false # can't really wear it like that
 
 - type: entity
   id: BaseIntegratedManeuveringThrusters
@@ -17,32 +17,32 @@
   description: A set of maneuvering thrusters integrated into a suit.
   abstract: true
   components:
-    - type: GasTank
-      outputPressure: 42.6
-      air:
-        # 10 minutes of thrust
-        volume: 3.75
-        temperature: 293.15
-        moles:
-          - 0.769267145 # oxygen
-          - 0.769267145 # nitrogen
-      isInternals: false # So you don't suck on your integrated thrusters
-    - type: ActivatableUI
-      key: enum.SharedGasTankUiKey.Key
-      verbOnly: true
-    - type: UserInterface
-      interfaces:
-        enum.SharedGasTankUiKey.Key:
-          type: GasTankBoundUserInterface
-    - type: Jetpack
-      moleUsage: 0.00085
-    - type: CanMoveInAir
-    - type: InputMover
-      toParent: true
-    - type: MovementSpeedModifier
-      weightlessAcceleration: 1
-      weightlessFriction: 0.3
-      weightlessModifier: 1.2
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 10 minutes of thrust
+      volume: 3.75
+      temperature: 293.15
+      moles:
+      - 0.769267145 # oxygen
+      - 0.769267145 # nitrogen
+    isInternals: false # So you don't suck on your integrated thrusters
+  - type: ActivatableUI
+    key: enum.SharedGasTankUiKey.Key
+    verbOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.SharedGasTankUiKey.Key:
+        type: GasTankBoundUserInterface
+  - type: Jetpack
+    moleUsage: 0.00085
+  - type: CanMoveInAir
+  - type: InputMover
+    toParent: true
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 1
+    weightlessFriction: 0.3
+    weightlessModifier: 1.2
 
 - type: entity
   parent: [ClothingShoesBase, BaseToggleClothing]
@@ -145,8 +145,8 @@
       volume: 0.75
       temperature: 293.15
       moles:
-        - 0.153853429 # oxygen
-        - 0.153853429 # nitrogen
+      - 0.153853429 # oxygen
+      - 0.153853429 # nitrogen
   - type: ActivatableUI
     key: enum.SharedGasTankUiKey.Key
   - type: UserInterface
@@ -167,7 +167,7 @@
     weightlessModifier: 1.2
   - type: Tag
     tags:
-      - WhitelistChameleon
+    - WhitelistChameleon
   - type: Item
     sprite: null
     size: Normal
@@ -249,7 +249,6 @@
   id: ActionToggleMagboots
   name: Toggle Magboots
   description: Toggles the magboots on and off.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: BigItem
