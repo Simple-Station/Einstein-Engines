@@ -14,14 +14,14 @@ public sealed class TagCommand : ToolshedCommand
     private TagSystem? _tag;
 
     [CommandImplementation("list")]
-    public IEnumerable<string> List([PipedArgument] IEnumerable<EntityUid> ent)
+    public IEnumerable<ProtoId<TagPrototype>> List([PipedArgument] IEnumerable<EntityUid> ent)
     {
         return ent.SelectMany(x =>
         {
             if (TryComp<TagComponent>(x, out var tags))
                 // Note: Cast is required for C# to figure out the type signature.
-                return (IEnumerable<string>)tags.Tags;
-            return Array.Empty<string>();
+                return (IEnumerable<ProtoId<TagPrototype>>)tags.Tags;
+            return Array.Empty<ProtoId<TagPrototype>>();
         });
     }
 

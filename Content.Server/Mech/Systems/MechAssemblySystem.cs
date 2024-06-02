@@ -47,7 +47,7 @@ public sealed class MechAssemblySystem : EntitySystem
 
         foreach (var (tag, val) in component.RequiredParts)
         {
-            if (!val && tagComp.Tags.Contains(tag))
+            if (!val && _tag.HasTag(tagComp, tag))
             {
                 component.RequiredParts[tag] = true;
                 _container.Insert(args.Used, component.PartsContainer);
