@@ -5,6 +5,8 @@ using Content.Shared.Interaction;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio;
+using Content.Shared.Whitelist;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -18,6 +20,8 @@ public sealed partial class GatherableSystem : EntitySystem
     [Dependency] private readonly DestructibleSystem _destructible = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     public override void Initialize()
     {
@@ -30,7 +34,7 @@ public sealed partial class GatherableSystem : EntitySystem
 
     private void OnAttacked(EntityUid uid, GatherableComponent component, AttackedEvent args)
     {
-        if (component.ToolWhitelist?.IsValid(args.Used, EntityManager) != true)
+        if (_whitelistSystem.IsWhitelistFailOrNull(gatherable.Comp.ToolWhitelist, args.Used))
             return;
 
         Gather(uid, args.User, component);
@@ -41,7 +45,11 @@ public sealed partial class GatherableSystem : EntitySystem
         if (component.ToolWhitelist?.IsValid(args.User, EntityManager) != true)
             return;
 
-        Gather(uid, args.User, component);
+        if (_whitelistSystem.IsWhitelistFailOrNull(gatherable.Comp.ToolWhitelist, args.User))
+            return;
+
+        Gather(gatherable, args.User);
+        args.Handled = true;
     }
 
     public void Gather(EntityUid gatheredUid, EntityUid? gatherer = null, GatherableComponent? component = null)
