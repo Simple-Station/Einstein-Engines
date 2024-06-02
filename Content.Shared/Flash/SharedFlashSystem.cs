@@ -1,4 +1,4 @@
-using Robust.Shared.GameStates;
+using Content.Shared.StatusEffect;
 
 namespace Content.Shared.Flash
 {

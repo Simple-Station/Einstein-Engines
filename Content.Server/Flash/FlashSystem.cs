@@ -188,6 +188,9 @@ namespace Content.Server.Flash
                 // Check for entites in view
                 // put damagedByFlashingComponent in the predicate because shadow anomalies block vision.
                 if (!_examine.InRangeUnOccluded(entity, mapPosition, range, predicate: (e) => damagedByFlashingQuery.HasComponent(e)))
+                // Check for entites in view
+                // put damagedByFlashingComponent in the predicate because shadow anomalies block vision.
+                if (!_examine.InRangeUnOccluded(entity, mapPosition, range, predicate: (e) => damagedByFlashingQuery.HasComponent(e)))
                     continue;
 
                 // They shouldn't have flash removed in between right?
