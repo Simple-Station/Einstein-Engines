@@ -92,6 +92,7 @@
     - ClothingOuterCoatMNKBlackJacket
 
 ## Contractor Jackets
+- type: loadout
   id: LoadoutOuterCorporateJacket
   category: Outer
   cost: 2
