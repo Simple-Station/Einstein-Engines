@@ -230,7 +230,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (_prototypeManager.TryIndex(jobPrototype.Icon, out var jobIcon))
             _cardSystem.TryChangeJobIcon(cardId, jobIcon, card);
 
-
         var extendedAccess = false;
         if (station != null)
         {

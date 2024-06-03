@@ -25,7 +25,4 @@ public sealed partial class RevolutionaryComponent : Component
     public SoundSpecifier RevStartSound = new SoundPathSpecifier("/Audio/Ambience/Antag/headrev_start.ogg");
 
     public override bool SessionSpecific => true;
-
-    [DataField]
-    public bool IconVisibleToGhost { get; set; }  = true;
 }
