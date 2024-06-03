@@ -8,7 +8,7 @@ namespace Content.Shared.GameTicking.Components;
 /// Component attached to all gamerule entities.
 /// Used to both track the entity as well as store basic data
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, EntityCategory("GameRules")]
 public sealed partial class GameRuleComponent : Component
 {
     /// <summary>
