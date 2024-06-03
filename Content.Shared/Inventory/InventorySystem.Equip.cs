@@ -271,13 +271,8 @@ public abstract partial class InventorySystem
             return false;
         }
 
-        if (slotDefinition.Whitelist != null && !slotDefinition.Whitelist.IsValid(itemUid))
-        {
-            reason = "inventory-component-can-equip-does-not-fit";
-            return false;
-        }
-
-        if (slotDefinition.Blacklist != null && slotDefinition.Blacklist.IsValid(itemUid))
+        if (_whitelistSystem.IsWhitelistFail(slotDefinition.Whitelist, itemUid) ||
+            _whitelistSystem.IsBlacklistPass(slotDefinition.Blacklist, itemUid))
         {
             reason = "inventory-component-can-equip-does-not-fit";
             return false;

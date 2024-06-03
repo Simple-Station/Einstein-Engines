@@ -1,4 +1,4 @@
-﻿using Content.Server.Administration.Logs;
+using Content.Server.Administration.Logs;
 using Content.Server.Interaction.Components;
 using Content.Server.Popups;
 using Content.Shared.Database;
@@ -171,7 +171,7 @@ public sealed class AnimalHusbandrySystem : EntitySystem
         if (!CanReproduce(partner))
             return false;
 
-        return component.PartnerWhitelist.IsValid(partner);
+        return _whitelistSystem.IsWhitelistPass(component.PartnerWhitelist, partner);
     }
 
     /// <summary>
