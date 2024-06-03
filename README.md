@@ -38,34 +38,35 @@ If you would like to translate the game into another language check the #contrib
 Refer to [the Space Wizards' guide](https://docs.spacestation14.com/en/general-development/setup/setting-up-a-development-environment.html) on setting up a development environment for general information, but keep in mind that Einstein Engines is not the same and many things may not apply.
 We provide some scripts shown below to make the job easier.
 
-### Build dependencies
+### Build Dependencies
 
-> - Git
-> - DOTNET SDK 7.0 or higher
-> - python 3.7 or higher
+> - DOTNET SDK 8.0.100 or similar
 
+### Recommended Tools
+
+> - Git (needed)
+> - Python 3.7 or higher
+> - Visual Studio Code (**NOT** Visual Studio)
 
 ### Windows
 
 > 1. Clone this repository
 > 2. Run `RUN_THIS.py` to init submodules and download the engine, or run `git submodule update --init --recursive` in a terminal
-> 3. Run the `Scripts/bat/run1buildDebug.bat`
-> 4. Run the `Scripts/bat/run2configDev.bat` if you need other configurations run other config scripts
-> 5. Run both the `Scripts/bat/run3server.bat` and `Scripts/bat/run4client.bat`
-> 6. Connect to localhost and play
+> 3. Run the `Scripts/bat/buildAllDebug.bat`
+> 4. Run both the `Scripts/bat/runQuickServer.bat` and `Scripts/bat/runQuickClient.bat`
+> 5. Connect to localhost and play
 
 ### Linux
 
 > 1. Clone this repository
 > 2. Run `RUN_THIS.py` to init submodules and download the engine, or run `git submodule update --init --recursive` in a terminal
-> 3. Run the `Scripts/sh/run1buildDebug.sh`
-> 4. Run the `Scripts/sh/run2configDev.sh` if you need other configurations run other config scripts
-> 5. Run both the `Scripts/sh/run3server.bat` and `scripts/sh/run4client.sh`
-> 6. Connect to localhost and play
+> 3. Run the `Scripts/sh/buildAllDebug.sh`
+> 4. Run both the `Scripts/sh/runQuickServer.bat` and `Scripts/sh/runQuickClient.sh`
+> 5. Connect to localhost and play
 
 ### MacOS
 
-> I don't know anybody using MacOS to test this, but it's probably roughly the same steps as Linux
+> I don't know anybody using MacOS to test this, but it's probably roughly the same steps as Linux.
 
 ## License
 
