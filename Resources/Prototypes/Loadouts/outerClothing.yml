@@ -92,37 +92,78 @@
     - ClothingOuterCoatMNKBlackJacket
 
 ## Contractor Jackets
+  id: LoadoutOuterCorporateJacket
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterCorporateJacket
+
 - type: loadout
   id: LoadoutOuterCsCorporateJacket
   category: Outer
-  cost: 3
+  cost: 2
   items:
     - ClothingOuterCsCorporateJacket
 
 - type: loadout
-  id: LoadoutOuterCoatEECorporateJacket
+  id: LoadoutOuterEeCorporateJacket
   category: Outer
-  cost: 3
+  cost: 2
   items:
-    - ClothingOuterEECorporateJacket
+    - ClothingOuterEeCorporateJacket
 
 - type: loadout
-  id: LoadoutOuterHICorporateJacket
+  id: LoadoutOuterHiCorporateJacket
   category: Outer
-  cost: 3
+  cost: 2
   items:
-    - ClothingOuterHICorporateJacket
+    - ClothingOuterHiCorporateJacket
 
 - type: loadout
-  id: LoadoutOuterHMCorporateJacket
+  id: LoadoutOuterHmCorporateJacket
   category: Outer
-  cost: 3
+  cost: 2
   items:
-    - ClothingOuterHMCorporateJacket
+    - ClothingOuterHmCorporateJacket
 
 - type: loadout
   id: LoadoutOuterIdCorporateJacket
   category: Outer
-  cost: 3
+  cost: 2
   items:
     - ClothingOuterIdCorporateJacket
+
+- type: loadout
+  id: LoadoutOuterBcCorporateJacket
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterBcCorporateJacket
+
+- type: loadout
+  id: LoadoutOuterDdCorporateJacket
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterDdCorporateJacket
+
+- type: loadout
+  id: LoadoutOuterFaCorporateJacket
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterFaCorporateJacket
+
+- type: loadout
+  id: LoadoutOuterGeCorporateJacket
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterGeCorporateJacket
+
+- type: loadout
+  id: LoadoutOuterZhCorporateJacket
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterZhCorporateJacket

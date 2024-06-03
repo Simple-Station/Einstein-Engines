@@ -4126,3 +4126,19 @@ Entries:
       message: Resprited gas tanks
   id: 6116
   time: '2024-05-31T00:13:45.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Add
+      message: Added five new coats
+    - type: Add
+      message: Added loadouts
+    - type: Fix
+      message: Fixed the coat handhole
+  id: 6117
+  time: '2024-06-02T00:36:59.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Floors Looks Updated/Resprited.
+  id: 6118
+  time: '2024-06-03T19:23:51.0000000+00:00'
