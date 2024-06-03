@@ -12,23 +12,25 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.Clothing.Loadouts.Systems;
+namespace Content.Shared.Customization.Systems;
+
 
 [ImplicitDataDefinitionForInheritors, MeansImplicitUse]
 [Serializable, NetSerializable]
-public abstract partial class LoadoutRequirement
+public abstract partial class CharacterRequirement
 {
     /// <summary>
     ///     If true valid requirements will be treated as invalid and vice versa
     /// </summary>
     [DataField]
-    public bool Inverted = false;
+    public bool Inverted;
 
     /// <summary>
-    ///     Checks if this loadout requirement is valid for the given parameters
+    ///     Checks if this character requirement is valid for the given parameters
     /// </summary>
     /// <param name="reason">Description for the requirement, shown when not null</param>
     public abstract bool IsValid(
+        IPrototype prototype,
         JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
@@ -47,7 +49,7 @@ public abstract partial class LoadoutRequirement
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class LoadoutAgeRequirement : LoadoutRequirement
+public sealed partial class CharacterAgeRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public int Min;
@@ -55,11 +57,12 @@ public sealed partial class LoadoutAgeRequirement : LoadoutRequirement
     [DataField(required: true)]
     public int Max;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, out FormattedMessage? reason)
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("loadout-age-requirement",
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-age-requirement",
             ("min", Min), ("max", Max)));
         return profile.Age >= Min && profile.Age <= Max;
     }
@@ -70,16 +73,17 @@ public sealed partial class LoadoutAgeRequirement : LoadoutRequirement
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class LoadoutBackpackTypeRequirement : LoadoutRequirement
+public sealed partial class CharacterBackpackTypeRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public BackpackPreference Preference;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, out FormattedMessage? reason)
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("loadout-backpack-type-requirement",
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-backpack-type-requirement",
             ("type", Loc.GetString($"humanoid-profile-editor-preference-{Preference.ToString().ToLower()}"))));
         return profile.Backpack == Preference;
     }
@@ -90,16 +94,17 @@ public sealed partial class LoadoutBackpackTypeRequirement : LoadoutRequirement
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class LoadoutClothingPreferenceRequirement : LoadoutRequirement
+public sealed partial class CharacterClothingPreferenceRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public ClothingPreference Preference;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, out FormattedMessage? reason)
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("loadout-clothing-preference-requirement",
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-clothing-preference-requirement",
             ("preference", Loc.GetString($"humanoid-profile-editor-preference-{Preference.ToString().ToLower()}"))));
         return profile.Clothing == Preference;
     }
@@ -110,16 +115,17 @@ public sealed partial class LoadoutClothingPreferenceRequirement : LoadoutRequir
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class LoadoutSpeciesRequirement : LoadoutRequirement
+public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public ProtoId<SpeciesPrototype> Species;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, out FormattedMessage? reason)
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("loadout-species-requirement",
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-species-requirement",
             ("species", Loc.GetString($"species-name-{Species.ToString().ToLower()}"))));
         return profile.Species == Species;
     }
@@ -130,16 +136,17 @@ public sealed partial class LoadoutSpeciesRequirement : LoadoutRequirement
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class LoadoutTraitRequirement : LoadoutRequirement
+public sealed partial class CharacterTraitRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public ProtoId<TraitPrototype> Trait;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, out FormattedMessage? reason)
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("loadout-trait-requirement",
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-requirement",
             ("trait", Loc.GetString($"trait-{Trait.ToString().ToLower()}-name"))));
         return profile.TraitPreferences.Contains(Trait.ToString());
     }
@@ -154,19 +161,20 @@ public sealed partial class LoadoutTraitRequirement : LoadoutRequirement
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class LoadoutJobRequirement : LoadoutRequirement
+public sealed partial class CharacterJobRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public List<ProtoId<JobPrototype>> Jobs;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, out FormattedMessage? reason)
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
     {
         // Join localized job names with a comma
         var jobsString = string.Join(", ", Jobs.Select(j => Loc.GetString(prototypeManager.Index(j).Name)));
         // Form the reason message
-        jobsString = Loc.GetString("loadout-job-requirement", ("job", jobsString));
+        jobsString = Loc.GetString("character-job-requirement", ("job", jobsString));
 
         reason = FormattedMessage.FromMarkup(jobsString);
         return Jobs.Contains(job.ID);
@@ -178,7 +186,7 @@ public sealed partial class LoadoutJobRequirement : LoadoutRequirement
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class LoadoutDepartmentTimeRequirement : LoadoutRequirement
+public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequirement
 {
     [DataField]
     public TimeSpan Min = TimeSpan.MinValue;
@@ -189,9 +197,10 @@ public sealed partial class LoadoutDepartmentTimeRequirement : LoadoutRequiremen
     [DataField(required: true)]
     public ProtoId<DepartmentPrototype> Department;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, out FormattedMessage? reason)
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
     {
         // Disable the requirement if the role timers are disabled
         if (!configManager.GetCVar(CCVars.GameRoleTimers))
@@ -217,7 +226,7 @@ public sealed partial class LoadoutDepartmentTimeRequirement : LoadoutRequiremen
             // Show the reason if invalid
             reason = Inverted
                 ? null
-                : FormattedMessage.FromMarkup(Loc.GetString("loadout-timer-department-too-high",
+                : FormattedMessage.FromMarkup(Loc.GetString("character-timer-department-too-high",
                     ("time", playtime.Minutes - Max.Minutes),
                     ("department", Loc.GetString($"department-{department.ID}")),
                     ("departmentColor", department.Color)));
@@ -229,7 +238,7 @@ public sealed partial class LoadoutDepartmentTimeRequirement : LoadoutRequiremen
             // Show the reason if invalid
             reason = Inverted
                 ? null
-                : FormattedMessage.FromMarkup(Loc.GetString("loadout-timer-department-insufficient",
+                : FormattedMessage.FromMarkup(Loc.GetString("character-timer-department-insufficient",
                     ("time", Min.Minutes - playtime.Minutes),
                     ("department", Loc.GetString($"department-{department.ID}")),
                     ("departmentColor", department.Color)));
@@ -246,7 +255,7 @@ public sealed partial class LoadoutDepartmentTimeRequirement : LoadoutRequiremen
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class LoadoutOverallTimeRequirement : LoadoutRequirement
+public sealed partial class CharacterOverallTimeRequirement : CharacterRequirement
 {
     [DataField]
     public TimeSpan Min = TimeSpan.MinValue;
@@ -254,9 +263,10 @@ public sealed partial class LoadoutOverallTimeRequirement : LoadoutRequirement
     [DataField]
     public TimeSpan Max = TimeSpan.MaxValue;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, out FormattedMessage? reason)
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
     {
         // Disable the requirement if the role timers are disabled
         if (!configManager.GetCVar(CCVars.GameRoleTimers))
@@ -273,7 +283,7 @@ public sealed partial class LoadoutOverallTimeRequirement : LoadoutRequirement
             // Show the reason if invalid
             reason = Inverted
                 ? null
-                : FormattedMessage.FromMarkup(Loc.GetString("loadout-timer-overall-too-high",
+                : FormattedMessage.FromMarkup(Loc.GetString("character-timer-overall-too-high",
                     ("time", overallTime.Minutes - Max.Minutes)));
             return false;
         }
@@ -283,7 +293,7 @@ public sealed partial class LoadoutOverallTimeRequirement : LoadoutRequirement
             // Show the reason if invalid
             reason = Inverted
                 ? null
-                : FormattedMessage.FromMarkup(Loc.GetString("loadout-timer-overall-insufficient",
+                : FormattedMessage.FromMarkup(Loc.GetString("character-timer-overall-insufficient",
                     ("time", Min.Minutes - overallTime.Minutes)));
             return false;
         }
@@ -298,7 +308,7 @@ public sealed partial class LoadoutOverallTimeRequirement : LoadoutRequirement
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class LoadoutPlaytimeRequirement : LoadoutRequirement
+public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
 {
     [DataField]
     public TimeSpan Min = TimeSpan.MinValue;
@@ -309,9 +319,10 @@ public sealed partial class LoadoutPlaytimeRequirement : LoadoutRequirement
     [DataField(required: true)]
     public ProtoId<PlayTimeTrackerPrototype> Tracker;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, out FormattedMessage? reason)
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
     {
         // Disable the requirement if the role timers are disabled
         if (!configManager.GetCVar(CCVars.GameRoleTimers))
@@ -323,7 +334,7 @@ public sealed partial class LoadoutPlaytimeRequirement : LoadoutRequirement
         // Get SharedJobSystem
         if (!entityManager.EntitySysManager.TryGetEntitySystem(out SharedJobSystem? jobSystem))
         {
-            DebugTools.Assert("LoadoutRequirements: SharedJobSystem not found");
+            DebugTools.Assert("CharacterRequirements: SharedJobSystem not found");
             reason = null;
             return false;
         }
@@ -335,7 +346,7 @@ public sealed partial class LoadoutPlaytimeRequirement : LoadoutRequirement
         if (!jobSystem.TryGetPrimaryDepartment(trackerJob, out var department) &&
             !jobSystem.TryGetDepartment(trackerJob, out department))
         {
-            DebugTools.Assert($"LoadoutRequirements: Department not found for job {trackerJob}");
+            DebugTools.Assert($"CharacterRequirements: Department not found for job {trackerJob}");
             reason = null;
             return false;
         }
@@ -349,7 +360,7 @@ public sealed partial class LoadoutPlaytimeRequirement : LoadoutRequirement
             // Show the reason if invalid
             reason = Inverted
                 ? null
-                : FormattedMessage.FromMarkup(Loc.GetString("loadout-timer-role-too-high",
+                : FormattedMessage.FromMarkup(Loc.GetString("character-timer-role-too-high",
                     ("time", time.Minutes - Max.Minutes),
                     ("job", trackerJob),
                     ("departmentColor", department.Color)));
@@ -361,7 +372,7 @@ public sealed partial class LoadoutPlaytimeRequirement : LoadoutRequirement
             // Show the reason if invalid
             reason = Inverted
                 ? null
-                : FormattedMessage.FromMarkup(Loc.GetString("loadout-timer-role-insufficient",
+                : FormattedMessage.FromMarkup(Loc.GetString("character-timer-role-insufficient",
                     ("time", Min.Minutes - time.Minutes),
                     ("job", trackerJob),
                     ("departmentColor", department.Color)));
