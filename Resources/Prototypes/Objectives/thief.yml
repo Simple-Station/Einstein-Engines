@@ -54,7 +54,6 @@
 # Collections
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealCollectionObjective
   id: FigurineStealCollectionObjective
   components:
@@ -66,7 +65,6 @@
     difficulty: 0.25
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealCollectionObjective
   id: HeadCloakStealCollectionObjective
   components:
@@ -78,7 +76,6 @@
     difficulty: 1.5
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealCollectionObjective
   id: HeadBedsheetStealCollectionObjective
   components:
@@ -90,7 +87,6 @@
     difficulty: 1.0
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealCollectionObjective
   id: StampStealCollectionObjective
   components:
@@ -102,7 +98,6 @@
     difficulty: 1.0
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealCollectionObjective
   id: DoorRemoteStealCollectionObjective
   components:
@@ -114,7 +109,6 @@
     difficulty: 1.5
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealCollectionObjective
   id: TechnologyDiskStealCollectionObjective
   components:
@@ -129,7 +123,6 @@
     difficulty: 0.8
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealCollectionObjective
   id: IDCardsStealCollectionObjective
   components:
@@ -144,7 +137,6 @@
 
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealCollectionObjective
   id: LAMPStealCollectionObjective
   components:
@@ -161,8 +153,7 @@
 
 # steal item
 
-- type: entity                                      #Security subgroup
-  categories: [ HideSpawnMenu ]
+- type: entity
   parent: BaseThiefStealObjective
   id: ForensicScannerStealObjective
   components:
@@ -174,7 +165,6 @@
     difficulty: 1
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealObjective
   id: FlippoEngravedLighterStealObjective
   components:
@@ -186,7 +176,6 @@
     difficulty: 0.8
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealObjective
   id: ClothingHeadHatWardenStealObjective
   components:
@@ -195,8 +184,7 @@
   - type: Objective
     difficulty: 1.2
 
-- type: entity                                      #Medical subgroup
-  categories: [ HideSpawnMenu ]
+- type: entity
   parent: BaseThiefStealObjective
   id: ClothingOuterHardsuitVoidParamedStealObjective
   components:
@@ -208,7 +196,6 @@
     difficulty: 1
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealObjective
   id: MedicalTechFabCircuitboardStealObjective
   components:
@@ -220,7 +207,6 @@
     difficulty: 1
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealObjective
   id: ClothingHeadsetAltMedicalStealObjective
   components:
@@ -231,8 +217,7 @@
   - type: Objective
     difficulty: 1
 
-- type: entity                                      #Engineering subgroup
-  categories: [ HideSpawnMenu ]
+- type: entity
   parent: BaseThiefStealObjective
   id: FireAxeStealObjective
   components:
@@ -244,7 +229,6 @@
     difficulty: 0.8
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealObjective
   id: AmePartFlatpackStealObjective
   components:
@@ -255,8 +239,7 @@
   - type: Objective
     difficulty: 1
 
-- type: entity                                      #Cargo subgroup
-  categories: [ HideSpawnMenu ]
+- type: entity
   parent: BaseThiefStealObjective
   id: ExpeditionsCircuitboardStealObjective
   components:
@@ -268,7 +251,6 @@
     difficulty: 0.7
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealObjective
   id: CargoShuttleCircuitboardStealObjective
   components:
@@ -280,7 +262,6 @@
     difficulty: 0.7
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealObjective
   id: SalvageShuttleCircuitboardStealObjective
   components:
@@ -291,8 +272,7 @@
   - type: Objective
     difficulty: 0.7
 
-- type: entity                                      #Service subgroup
-  categories: [ HideSpawnMenu ]
+- type: entity
   parent: BaseThiefStealObjective
   id: ClothingEyesHudBeerStealObjective
   components:
@@ -304,7 +284,6 @@
     difficulty: 0.3
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealObjective
   id: BibleStealObjective
   components:
@@ -315,8 +294,7 @@
   - type: Objective
     difficulty: 0.4
 
-- type: entity                                      #Other subgroup
-  categories: [ HideSpawnMenu ]
+- type: entity
   parent: BaseThiefStealObjective
   id: ClothingNeckGoldmedalStealObjective
   components:
@@ -328,7 +306,6 @@
     difficulty: 1
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealObjective
   id: ClothingNeckClownmedalStealObjective
   components:
@@ -342,7 +319,6 @@
 # Structures
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealStructureObjective
   id: NuclearBombStealObjective
   components:
@@ -354,7 +330,6 @@
     difficulty: 2.5 #Good luck
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealStructureObjective
   id: FaxMachineCaptainStealObjective
   components:
@@ -366,7 +341,6 @@
     difficulty: 2
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealStructureObjective
   id: ChemDispenserStealObjective
   components:
@@ -378,7 +352,6 @@
     difficulty: 1
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealStructureObjective
   id: XenoArtifactStealObjective
   components:
@@ -390,7 +363,6 @@
     difficulty: 0.5
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealStructureObjective
   id: FreezerHeaterStealObjective
   components:
@@ -402,7 +374,6 @@
     difficulty: 0.5
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealStructureObjective
   id: TegStealObjective
   components:
@@ -414,7 +385,6 @@
     difficulty: 1
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealStructureObjective
   id: BoozeDispenserStealObjective
   components:
@@ -426,7 +396,6 @@
     difficulty: 0.5
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealStructureObjective
   id: AltarNanotrasenStealObjective
   components:
@@ -438,7 +407,6 @@
     difficulty: 0.5
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealStructureObjective
   id: PlantRDStealObjective
   components:
@@ -452,7 +420,6 @@
 # Animal
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealAnimalObjective
   id: IanStealObjective
   components:
@@ -464,7 +431,6 @@
     difficulty: 2.5
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealAnimalObjective
   id: BingusStealObjective
   components:
@@ -474,7 +440,6 @@
     difficulty: 1
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealAnimalObjective
   id: McGriffStealObjective
   components:
@@ -486,7 +451,6 @@
     difficulty: 1
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealAnimalObjective
   id: WalterStealObjective
   components:
@@ -498,7 +462,6 @@
     difficulty: 1
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealAnimalObjective
   id: MortyStealObjective
   components:
@@ -508,7 +471,6 @@
     difficulty: 0.5
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealAnimalObjective
   id: RenaultStealObjective
   components:
@@ -520,7 +482,6 @@
     difficulty: 2
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealAnimalObjective
   id: ShivaStealObjective
   components:
@@ -532,7 +493,6 @@
     difficulty: 2
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseThiefStealAnimalObjective
   id: TropicoStealObjective
   components:
@@ -546,7 +506,6 @@
 # Escape
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: [BaseThiefObjective, BaseLivingObjective]
   id: EscapeThiefShuttleObjective
   name: Escape to centcom alive and unrestrained.

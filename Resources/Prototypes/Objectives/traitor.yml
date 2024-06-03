@@ -34,7 +34,6 @@
     limit: 2 # there is usually only 1 of each steal objective, have 2 max for drama
 
 - type: entity # Head of Security steal objective.
-  categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
   id: HoSAntiqueWeaponStealObjective
   components:
@@ -50,7 +49,6 @@
 # state
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: [BaseTraitorObjective, BaseLivingObjective]
   id: EscapeShuttleObjective
   name: Escape to centcom alive and unrestrained.
@@ -64,7 +62,6 @@
   - type: EscapeShuttleCondition
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseTraitorObjective
   id: DieObjective
   name: Die a glorious death
@@ -83,7 +80,6 @@
   - type: DieCondition
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: [BaseTraitorObjective, BaseLivingObjective]
   id: HijackShuttleObjective
   name: Hijack emergency shuttle
@@ -99,7 +95,6 @@
 # kill
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: [BaseTraitorObjective, BaseKillObjective]
   id: KillRandomPersonObjective
   description: Do it however you like, just make sure they don't make it to centcom.
@@ -112,7 +107,6 @@
   - type: PickRandomPerson
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: [BaseTraitorObjective, BaseKillObjective]
   id: KillRandomHeadObjective
   description: We need this head gone and you probably know why. Good luck, agent.
@@ -133,7 +127,6 @@
 # social
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: [BaseTraitorSocialObjective, BaseKeepAliveObjective]
   id: RandomTraitorAliveObjective
   description: Identify yourself at your own risk. We just need them alive.
@@ -145,7 +138,6 @@
   - type: RandomTraitorAlive
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: [BaseTraitorSocialObjective, BaseHelpProgressObjective]
   id: RandomTraitorProgressObjective
   description: Identify yourself at your own risk. We just need them to succeed.
@@ -171,7 +163,6 @@
     owner: job-name-cmo
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseCMOStealObjective
   id: CMOHyposprayStealObjective
   components:
@@ -181,7 +172,6 @@
 
 # This is going back in Loadouts. Not worth fucking over Paramedics.
 #- type: entity
-#  categories: [ HideSpawnMenu ]
 #  parent: BaseCMOStealObjective
 #  id: CMOCrewMonitorStealObjective
 #  components:
@@ -202,7 +192,6 @@
     owner: job-name-rd
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseRDStealObjective
   id: RDHardsuitStealObjective
   components:
@@ -214,7 +203,6 @@
     difficulty: 3
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseRDStealObjective
   id: HandTeleporterStealObjective
   components:
@@ -225,7 +213,6 @@
 ## ce
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
   id: MagbootsStealObjective
   components:
@@ -239,7 +226,6 @@
 ## qm
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
   id: ClipboardStealObjective
   components:
@@ -253,7 +239,6 @@
 ## hop
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
   id: CorgiMeatStealObjective
   components:
@@ -279,7 +264,6 @@
     job: Captain
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseCaptainObjective
   id: CaptainIDStealObjective
   components:
@@ -288,7 +272,6 @@
     verifyMapExistence: true
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseCaptainObjective
   id: CaptainJetpackStealObjective
   components:
@@ -297,7 +280,6 @@
     verifyMapExistence: true
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseCaptainObjective
   id: CaptainGunStealObjective
   components:
@@ -307,7 +289,6 @@
     verifyMapExistence: true
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseCaptainObjective
   id: NukeDiskStealObjective
   components:
@@ -323,7 +304,6 @@
     owner: objective-condition-steal-station
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
   id: StealSupermatterSliverObjective
   components:
@@ -347,7 +327,6 @@
     job: NanotrasenRepresentative
 
 - type: entity
-  categories: [HideSpawnMenu]
   parent: BaseNTRepObjective
   id: NTRepGunStealObjective
   components:
