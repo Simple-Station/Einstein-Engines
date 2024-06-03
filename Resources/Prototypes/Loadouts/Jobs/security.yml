@@ -300,6 +300,23 @@
   items:
     - ClothingEyesEyepatchHudSecurity
 
+- type: loadout
+  id: LoadoutSecurityEyesHudSecurityPrescription
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+    - !type:LoadoutTraitRequirement
+      trait: Nearsighted
+  items:
+    - ClothingEyesPrescriptionHudSecurity
+
 ## Head
 - type: loadout
   id: LoadoutSecurityHeadHatBeret

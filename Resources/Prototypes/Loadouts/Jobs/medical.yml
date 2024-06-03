@@ -470,3 +470,21 @@
         - Brigmedic
   items:
     - ClothingEyesEyepatchHudMedical
+
+- type: loadout
+  id: LoadoutMedicalEyesEyepatchHudMedical
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+    - !type:LoadoutTraitRequirement
+      trait: Nearsighted
+  items:
+    - ClothingEyesEyepatchHudMedical
