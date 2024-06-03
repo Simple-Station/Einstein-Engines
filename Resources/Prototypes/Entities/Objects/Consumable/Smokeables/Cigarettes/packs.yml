@@ -182,7 +182,7 @@
   id: CigPackSyndicate
   parent: CigPackBase
   name: Interdyne herbals packet
-  description: Premium medicinal cigarettes from the Interdyne Corporation. Not endorced by the Terra-Gov Surgeon General.
+  description: Premium medicinal cigarettes from the Interdyne Corporation. Not endorsed by the Terra-Gov Surgeon General.
   components:
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/syndicate.rsi
