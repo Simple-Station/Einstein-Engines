@@ -587,7 +587,7 @@
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
-      collection: DeathGasp
+      collection: MothDeathGasp
 
 - type: emoteSounds
   id: UnisexIPC
