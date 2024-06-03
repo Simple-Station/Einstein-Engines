@@ -120,7 +120,7 @@
     priority: -20
     icon:
       sprite: Objects/Devices/communication.rsi
-      state: old-radio
+      state: radio
     event: !type:OpenUplinkImplantEvent
 
 - type: entity
