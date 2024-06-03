@@ -1,8 +1,9 @@
+using Content.Shared.Traits.Assorted.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared.Traits.Assorted;
+namespace Content.Shared.Traits.Assorted.Components;
 
 /// <summary>
 /// This component is used for paracusia, which causes auditory hallucinations.
