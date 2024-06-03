@@ -14,10 +14,10 @@
   - Bar
   - Kitchen
   requirements:
-    - !type:CharacterEmployerRequirement
-      inverted: true
-      employers:
-      - Unemployed
+  - !type:CharacterEmployerRequirement
+    inverted: true
+    employers:
+    - Unemployed
 
 - type: startingGear
   id: ServiceWorkerGear
@@ -25,14 +25,14 @@
   - ServiceWorkerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorDarkGreen
-    back: ClothingBackpackFilled
+    back: ClothingBackpack
     shoes: ClothingShoesColorBlack
     id: ServiceWorkerPDA
     ears: ClothingHeadsetService
 
 - type: startingGear
   id: ServiceWorkerPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitColorDarkGreen
     head: ClothingHeadEnvirohelmColorDarkGreen

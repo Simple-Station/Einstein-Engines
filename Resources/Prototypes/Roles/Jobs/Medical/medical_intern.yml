@@ -4,11 +4,11 @@
   description: job-description-intern
   playTimeTracker: JobMedicalIntern
   requirements:
-    - !type:CharacterEmployerRequirement
-      employers:
-      - ZengHuPharmaceuticals
-      - Interdyne
-      - NanoTrasen
+  - !type:CharacterEmployerRequirement
+    employers:
+    - ZengHuPharmaceuticals
+    - Interdyne
+    - NanoTrasen
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
@@ -28,7 +28,7 @@
   - DoctorPlasmamanGear
   equipment:
     jumpsuit: UniformScrubsColorBlue
-    back: ClothingBackpackMedicalFilled
+    back: ClothingBackpackMedical
     shoes: ClothingShoesColorWhite
     id: MedicalInternPDA
     ears: ClothingHeadsetMedical

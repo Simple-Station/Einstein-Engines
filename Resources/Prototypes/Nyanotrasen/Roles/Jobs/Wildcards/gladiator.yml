@@ -33,12 +33,11 @@
     outerClothing: ClothingOuterArmorGladiator
     id: GladiatorPDA
     ears: ClothingHeadsetGrey
-  innerClothingSkirt: UniformShortsRedWithTop
   #any other possessions, spawn in cell
 
 - type: startingGear
   id: GladiatorPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitGladiator
     head: ClothingHeadEnvirohelmGladiator

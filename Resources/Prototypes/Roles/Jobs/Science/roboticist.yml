@@ -25,7 +25,7 @@
   - RoboticistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitRoboticist
-    back: ClothingBackpackRoboticsFilled
+    back: ClothingBackpackRobotics
     shoes: ClothingShoesColorBlack
     outerClothing: ClothingOuterCoatRobo
     id: RoboticsPDA
@@ -34,7 +34,7 @@
 
 - type: startingGear
   id: RoboticistPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitRoboticist
     head: ClothingHeadEnvirohelmRoboticist

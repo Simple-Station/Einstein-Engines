@@ -6,17 +6,17 @@
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - ForeignerLight
-        - Muted
-    - !type:CharacterEmployerRequirement
-      employers:
-      - ZengHuPharmaceuticals
-      - Interdyne
-      - NanoTrasen
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Foreigner
+    - ForeignerLight
+    - Muted
+  - !type:CharacterEmployerRequirement
+    employers:
+    - ZengHuPharmaceuticals
+    - Interdyne
+    - NanoTrasen
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
@@ -38,7 +38,7 @@
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
-      - type: CommandStaff
+    - type: CommandStaff
   - !type:AddComponentSpecial
     components:
     - type: CPRTraining
@@ -56,14 +56,17 @@
   - CMOPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMO
-    back: ClothingBackpackCMOFilled
+    back: ClothingBackpackCMO
     shoes: ClothingShoesColorBrown
     id: CMOPDA
     ears: ClothingHeadsetAltMedical
+  storage:
+    back:
+    - Flash
 
 - type: startingGear
   id: CMOPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitCMO
     head: ClothingHeadEnvirohelmCMO

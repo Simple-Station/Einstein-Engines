@@ -13,10 +13,10 @@
   extendedAccess:
   - Chemistry
   requirements:
-    - !type:CharacterEmployerRequirement
-      employers:
-      - Interdyne
-      - NanoTrasen
+  - !type:CharacterEmployerRequirement
+    employers:
+    - Interdyne
+    - NanoTrasen
 
 - type: startingGear
   id: PsychologistGear
@@ -24,14 +24,17 @@
   - PsychologistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPsychologist
-    back: ClothingBackpackPsychologistFilled
+    back: ClothingBackpackPsychologist
     shoes: ClothingShoesLeather
     id: PsychologistPDA
     ears: ClothingHeadsetMedical
+  storage:
+    back:
+    - RubberStampPsychologist
 
 - type: startingGear
   id: PsychologistPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitEnviroslacksPsychologist
     head: ClothingHeadEnvirohelmMedicalDoctor

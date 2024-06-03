@@ -32,10 +32,14 @@
     mask: ClothingMaskMime
     id: MimePDA
     ears: ClothingHeadsetService
+  storage:
+    back:
+    - BoxSurvival
+    - RubberStampMime
 
 - type: startingGear
   id: MimePlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMime
     head: ClothingHeadEnvirohelmMime

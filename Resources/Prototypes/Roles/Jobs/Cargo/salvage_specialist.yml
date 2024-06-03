@@ -4,14 +4,14 @@
   description: job-description-salvagespec
   playTimeTracker: JobSalvageSpecialist
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Logistics
-      min: 21600
-    - !type:CharacterEmployerRequirement
-      employers:
-      - OrionExpress
-      - PMCG
-      - NanoTrasen
+  - !type:CharacterDepartmentTimeRequirement
+    department: Logistics
+    min: 21600
+  - !type:CharacterEmployerRequirement
+    employers:
+    - OrionExpress
+    - PMCG
+    - NanoTrasen
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm
@@ -27,7 +27,7 @@
   - SalvageSpecialistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
-    back: ClothingBackpackSalvageFilled
+    back: ClothingBackpackSalvage
     shoes: ClothingShoesBootsSalvage
     id: SalvagePDA
     ears: ClothingHeadsetCargo
@@ -35,10 +35,9 @@
 
 - type: startingGear
   id: SalvageSpecialistPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitSalvage
     head: ClothingHeadEnvirohelmSalvage
     gloves: ClothingHandsGlovesEnviroglovesSalvage
     mask: ClothingMaskGasExplorer
-    pocket1: MiningVoucher

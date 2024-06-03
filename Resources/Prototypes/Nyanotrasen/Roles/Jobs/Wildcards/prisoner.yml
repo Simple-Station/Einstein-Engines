@@ -41,11 +41,10 @@
     shoes: ClothingShoesColorBlack
     id: PrisonerPDA
     ears: ClothingHeadsetPrison #deltaV
-  innerClothingSkirt: ClothingUniformJumpsuitPrisoner
 
 - type: startingGear
   id: PrisonerPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitPrisoner
     head: ClothingHeadEnvirohelmPrisoner

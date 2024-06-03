@@ -4,17 +4,17 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - ForeignerLight
-        - Muted
-    - !type:CharacterEmployerRequirement
-      employers:
-      - OrionExpress
-      - IdrisIncorporated
-      - NanoTrasen
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Foreigner
+    - ForeignerLight
+    - Muted
+  - !type:CharacterEmployerRequirement
+    employers:
+    - OrionExpress
+    - IdrisIncorporated
+    - NanoTrasen
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
@@ -35,7 +35,7 @@
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
-      - type: CommandStaff
+    - type: CommandStaff
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 8
@@ -47,16 +47,19 @@
   equipment:
     head: ClothingHeadHatBeretLogi
     jumpsuit: ClothingUniformJumpsuitQM
-    back: ClothingBackpackQuartermasterFilled
+    back: ClothingBackpackQuartermaster
     shoes: ClothingShoesColorBrown
     id: QuartermasterPDA
     ears: ClothingHeadsetAltCargo
     belt: BoxFolderClipboard
     pocket1: AppraisalTool
+  storage:
+    back:
+    - Flash
 
 - type: startingGear
   id: QuartermasterPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitQM
     head: ClothingHeadEnvirohelmQM

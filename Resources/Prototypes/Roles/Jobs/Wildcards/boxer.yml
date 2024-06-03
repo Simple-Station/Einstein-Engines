@@ -21,7 +21,7 @@
   - BoxerPlasmamanGear
   equipment:
     jumpsuit: UniformShortsRed
-    back: ClothingBackpackFilled
+    back: ClothingBackpack
     id: BoxerPDA
     ears: ClothingHeadsetService
     gloves: ClothingHandsGlovesBoxingRed
@@ -30,7 +30,7 @@
 
 - type: startingGear
   id: BoxerPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitBoxing
     head: ClothingHeadEnvirohelmBoxing
