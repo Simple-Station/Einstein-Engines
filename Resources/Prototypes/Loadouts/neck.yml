@@ -1,27 +1,176 @@
 - type: loadout
   id: LoadoutNeckScarfStripedRed
-  category: Accessories
+  category: Neck
   cost: 1
+  exclusive: true
   items:
     - ClothingNeckScarfStripedRed
 
 - type: loadout
   id: LoadoutNeckScarfStripedBlue
-  category: Accessories
+  category: Neck
   cost: 1
+  exclusive: true
   items:
     - ClothingNeckScarfStripedBlue
 
 - type: loadout
   id: LoadoutNeckScarfStripedGreen
-  category: Accessories
+  category: Neck
   cost: 1
+  exclusive: true
   items:
     - ClothingNeckScarfStripedGreen
 
 - type: loadout
   id: LoadoutNeckScarfStripedZebra
-  category: Accessories
+  category: Neck
   cost: 1
+  exclusive: true
   items:
     - ClothingNeckScarfStripedZebra
+
+#Pride Accessories
+- type: loadout
+  id: LoadoutItemsPrideLGBTPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckLGBTPin
+
+- type: loadout
+  id: LoadoutItemsPrideAromanticPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckAromanticPin
+
+- type: loadout
+  id: LoadoutItemsPrideAsexualPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckAsexualPin
+
+- type: loadout
+  id: LoadoutItemsPrideBisexualPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckBisexualPin
+
+- type: loadout
+  id: LoadoutItemsPrideIntersexPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckIntersexPin
+
+- type: loadout
+  id: LoadoutItemsPrideLesbianPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckLesbianPin
+
+- type: loadout
+  id: LoadoutItemsPrideNonBinaryPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckNonBinaryPin
+
+- type: loadout
+  id: LoadoutItemsPridePansexualPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckPansexualPin
+
+- type: loadout
+  id: LoadoutItemsPrideTransPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckTransPin
+
+- type: loadout
+  id: LoadoutItemsPrideCloakTrans
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckCloakTrans
+
+- type: loadout
+  id: LoadoutItemsPrideCloakAro
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckCloakAro
+
+- type: loadout
+  id: LoadoutItemsPrideCloakAce
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckCloakAce
+
+- type: loadout
+  id: LoadoutItemsPrideCloakBi
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckCloakBi
+
+- type: loadout
+  id: LoadoutItemsPrideCloakIntersex
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckCloakIntersex
+
+- type: loadout
+  id: LoadoutItemsPrideCloakEnby
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckCloakEnby
+
+- type: loadout
+  id: LoadoutItemsPrideCloakPan
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckCloakPan
+
+- type: loadout
+  id: LoadoutItemsPrideCloakGay
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckCloakGay
+
+- type: loadout
+  id: LoadoutItemsPrideCloakLesbian
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckCloakLesbian

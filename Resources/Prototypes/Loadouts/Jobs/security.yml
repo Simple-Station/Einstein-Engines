@@ -92,7 +92,8 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSecFormal
   category: Jobs
-  cost: 3
+  cost: 2
+  exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
       jobs:
@@ -106,7 +107,8 @@
 - type: loadout
   id: LoadoutUniformJumpsuitWardenBlue
   category: Jobs
-  cost: 3
+  cost: 2
+  exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
       jobs:
@@ -117,7 +119,8 @@
 - type: loadout
   id: LoadoutUniformJumpsuitWardenGrey
   category: Jobs
-  cost: 3
+  cost: 2
+  exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
       jobs:
@@ -129,7 +132,8 @@
 - type: loadout
   id: LoadoutUniformJumpskirtWardenBlue
   category: Jobs
-  cost: 3
+  cost: 2
+  exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
       jobs:
@@ -140,7 +144,8 @@
 - type: loadout
   id: LoadoutUniformJumpskirtWardenGrey
   category: Jobs
-  cost: 3
+  cost: 2
+  exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
       jobs:
@@ -151,7 +156,8 @@
 - type: loadout
   id: LoadoutUniformJumpskirtHoSBlue
   category: Jobs
-  cost: 3
+  cost: 2
+  exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
       jobs:
@@ -162,7 +168,8 @@
 - type: loadout
   id: LoadoutUniformJumpskirtHoSGrey
   category: Jobs
-  cost: 3
+  cost: 2
+  exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
       jobs:
@@ -207,7 +214,7 @@
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
@@ -222,7 +229,7 @@
 - type: loadout
   id: LoadoutSecurityEyesEyepatchHudSecurity
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
@@ -237,7 +244,7 @@
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
   category: Jobs
-  cost: 3
+  cost: 1
   exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
@@ -268,3 +275,33 @@
         - Oni
   items:
     - Truncheon
+
+- type: loadout
+  id: LoadoutSecurityHeadHelmetInsulated
+  category: Jobs
+  cost: 3
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+  items:
+    - ClothingHeadHelmetInsulated
+
+- type: loadout
+  id: LoadoutSecurityBeltWebbing
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Detective
+        - SecurityOfficer
+        - SecurityCadet
+        - Warden
+        - HeadOfSecurity
+  items:
+    - ClothingBeltSecurityWebbingFilled

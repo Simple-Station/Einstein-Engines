@@ -3,13 +3,31 @@
   id: Accessories
 
 - type: loadoutCategory
+  id: Eyes
+
+- type: loadoutCategory
+  id: Hands
+
+- type: loadoutCategory
+  id: Head
+
+- type: loadoutCategory
   id: Items
 
 - type: loadoutCategory
   id: Jobs
 
 - type: loadoutCategory
+  id: Mask
+
+- type: loadoutCategory
+  id: Neck
+
+- type: loadoutCategory
   id: Outer
+
+- type: loadoutCategory
+  id: Shoes
 
 - type: loadoutCategory
   id: Species
