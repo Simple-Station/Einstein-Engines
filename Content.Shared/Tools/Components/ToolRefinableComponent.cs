@@ -1,15 +1,17 @@
 using Content.Shared.Tools;
 using Content.Shared.Storage;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared.Tools.Systems;
 
-namespace Content.Server.Construction.Components;
+namespace Content.Shared.Tools.Components;
 
 /// <summary>
 /// Used for something that can be refined by welder.
 /// For example, glass shard can be refined to glass sheet.
 /// </summary>
-[RegisterComponent]
-public sealed partial class WelderRefinableComponent : Component
+[RegisterComponent, NetworkedComponent, Access(typeof(ToolRefinableSystem))]
+public sealed partial class ToolRefinableComponent : Component
 {
     [DataField]
     public HashSet<EntitySpawnEntry>? RefineResult;
@@ -18,7 +20,7 @@ public sealed partial class WelderRefinableComponent : Component
     public float RefineTime = 2f;
 
     [DataField]
-    public float RefineFuel;
+    public float RefineFuel = 3f;
 
     [DataField]
     public ProtoId<ToolQualityPrototype> QualityNeeded = "Welding";

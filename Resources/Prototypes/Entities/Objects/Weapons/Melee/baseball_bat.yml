@@ -35,7 +35,7 @@
   - type: Tool
     qualities:
     - Rolling
-    speed: 0.75 # a bit unwieldly but does the job
+    speedModifier: 0.75 # a bit unwieldly but does the job
   - type: Clothing
     quickEquip: false
     slots:
