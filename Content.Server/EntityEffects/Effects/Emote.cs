@@ -9,7 +9,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Server.EntityEffects.Effects;
 
 /// <summary>
-///     Tries to force someone to emote (scream, laugh, etc).
+///     Tries to force someone to emote (scream, laugh, etc). Still respects whitelists/blacklists and other limits of the specified emote unless forced.
 /// </summary>
 [UsedImplicitly]
 public sealed partial class Emote : EntityEffect
@@ -19,6 +19,9 @@ public sealed partial class Emote : EntityEffect
 
     [DataField]
     public bool ShowInChat;
+
+    [DataField]
+    public bool Force = false;
 
     // JUSTIFICATION: Emoting is flavor, so same reason popup messages are not in here.
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
