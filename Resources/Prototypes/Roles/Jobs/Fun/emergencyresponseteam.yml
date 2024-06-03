@@ -20,7 +20,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
-    back: ClothingBackpackERTLeaderFilled
+    back: ClothingBackpackERTLeader
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetERTLeader
     eyes: ClothingEyesGlassesSecurity
@@ -29,8 +29,17 @@
     id: ERTLeaderPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolN1984NonLethal
+    pocket1: WeaponPistolN1984
     pocket2: FlashlightSeclite
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - WeaponDisabler
+    - MedicatedSuture
+    - RegenerativeMesh
+    - BoxZiptie
+    - CrowbarRed
+    - MagazineMagnum
 
 - type: startingGear
   id: ERTLeaderGearEVA
@@ -38,7 +47,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
-    back: ClothingBackpackERTLeaderFilled
+    back: ClothingBackpackERTLeader
     shoes: ClothingShoesBootsMagAdv
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
@@ -48,8 +57,17 @@
     id: ERTLeaderPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolN1984NonLethal
+    pocket1: WeaponPistolN1984
     pocket2: FlashlightSeclite
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - WeaponDisabler
+    - MedicatedSuture
+    - RegenerativeMesh
+    - BoxZiptie
+    - CrowbarRed
+    - MagazineMagnum
 
 - type: startingGear
   id: ERTLeaderGearEVALecter
@@ -58,7 +76,7 @@
   - ERTPlasmamanGearNoTank
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
-    back: ClothingBackpackERTLeaderFilled
+    back: ClothingBackpackERTLeader
     shoes: ClothingShoesBootsMagAdv
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
@@ -70,6 +88,15 @@
     belt: ClothingBeltSecurityFilled
     pocket1: MagazineRifle
     pocket2: MagazineRifle
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - WeaponDisabler
+    - MedicatedSuture
+    - RegenerativeMesh
+    - BoxZiptie
+    - CrowbarRed
+    - MagazineMagnum
 
 # Chaplain
 - type: job
@@ -97,7 +124,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTChaplain
-    back: ClothingBackpackERTChaplainFilled
+    back: ClothingBackpackERTChaplain
     shoes: ClothingShoesLeather
     head: ClothingHeadHatFez
     eyes: ClothingEyesGlasses
@@ -109,6 +136,21 @@
     belt: ClothingBeltStorageWaistbag
     pocket1: Flare
     pocket2: DrinkWaterBottleFull
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - BoxCandle
+    - BoxBodyBag
+    - DrinkWaterMelonJuiceJug
+    - Lantern
+    - Lantern
+    - Bible
+    - CrowbarRed
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - Lighter
 
 - type: startingGear
   id: ERTChaplainGearEVA
@@ -116,7 +158,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTChaplain
-    back: ClothingBackpackERTChaplainFilled
+    back: ClothingBackpackERTChaplain
     shoes: ClothingShoesBootsMagAdv
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlasses
@@ -129,6 +171,21 @@
     belt: ClothingBeltStorageWaistbag
     pocket1: Flare
     pocket2: DrinkWaterBottleFull
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - BoxCandle
+    - BoxBodyBag
+    - DrinkWaterMelonJuiceJug
+    - Lantern
+    - Lantern
+    - Bible
+    - CrowbarRed
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - Lighter
 
 # Engineer
 - type: job
@@ -152,7 +209,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
-    back: ClothingBackpackERTEngineerFilled
+    back: ClothingBackpackERTEngineer
     shoes: ClothingShoesBootsWork
     head: ClothingHeadHelmetERTEngineer
     eyes: ClothingEyesGlassesMeson
@@ -163,6 +220,19 @@
     belt: ClothingBeltChiefEngineerFilled
     pocket1: Flare
     pocket2: GasAnalyzer
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - trayScanner
+    - RCD
+    - RCDAmmo
+    - RCDAmmo
+    - CableMVStack
+    - CableHVStack
+    - CableApcStack
+    - SheetPlasteel
+    - SheetSteel
+    - SheetGlass
 
 - type: startingGear
   id: ERTEngineerGearEVA
@@ -170,7 +240,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
-    back: ClothingBackpackERTEngineerFilled
+    back: ClothingBackpackERTEngineer
     shoes: ClothingShoesBootsMagEng
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesMeson
@@ -182,6 +252,19 @@
     belt: ClothingBeltChiefEngineerFilled
     pocket1: Flare
     pocket2: GasAnalyzer
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - trayScanner
+    - RCD
+    - RCDAmmo
+    - RCDAmmo
+    - CableMVStack
+    - CableHVStack
+    - CableApcStack
+    - SheetPlasteel
+    - SheetSteel
+    - SheetGlass
 
 # Security
 - type: job
@@ -205,7 +288,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
-    back: ClothingBackpackERTSecurityFilled
+    back: ClothingBackpackERTSecurity
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetERTSecurity
     eyes: ClothingEyesGlassesSecurity
@@ -214,8 +297,17 @@
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58Nonlethal
+    pocket1: WeaponPistolMk58
     pocket2: FlashlightSeclite
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - WeaponDisabler
+    - MedicatedSuture
+    - RegenerativeMesh
+    - BoxZiptie
+    - CrowbarRed
+    - MagazinePistol
 
 - type: startingGear
   id: ERTSecurityGearEVA
@@ -223,7 +315,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
-    back: ClothingBackpackERTSecurityFilled
+    back: ClothingBackpackERTSecurity
     shoes: ClothingShoesBootsMagSec
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
@@ -233,8 +325,17 @@
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58Nonlethal
+    pocket1: WeaponPistolMk58
     pocket2: FlashlightSeclite
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - WeaponDisabler
+    - MedicatedSuture
+    - RegenerativeMesh
+    - BoxZiptie
+    - CrowbarRed
+    - MagazinePistol
 
 - type: startingGear
   id: ERTSecurityGearEVALecter
@@ -243,7 +344,7 @@
   - ERTPlasmamanGearNoTank
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
-    back: ClothingBackpackERTSecurityFilled
+    back: ClothingBackpackERTSecurity
     shoes: ClothingShoesBootsMagSec
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
@@ -255,6 +356,15 @@
     belt: ClothingBeltSecurityFilled
     pocket1: MagazineRifle
     pocket2: MagazineRifle
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - WeaponDisabler
+    - MedicatedSuture
+    - RegenerativeMesh
+    - BoxZiptie
+    - CrowbarRed
+    - MagazinePistol
 
 # Medical
 - type: job
@@ -278,7 +388,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
-    back: ClothingBackpackERTMedicalFilled
+    back: ClothingBackpackERTMedical
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetERTMedic
     eyes: ClothingEyesHudMedical
@@ -288,6 +398,15 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltMedicalFilled
     pocket1: Flare
+  storage:
+    back:
+    - BoxSurvivalMedical
+    - Hypospray
+    - MedkitAdvancedFilled
+    - CrowbarRed
+    - OmnizineChemistryBottle
+    - EpinephrineChemistryBottle
+    - EpinephrineChemistryBottle
 
 - type: startingGear
   id: ERTMedicalGearEVA
@@ -295,7 +414,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
-    back: ClothingBackpackERTMedicalFilled
+    back: ClothingBackpackERTMedical
     shoes: ClothingShoesBootsMagSec
     mask: ClothingMaskGasERT
     eyes: ClothingEyesHudMedical
@@ -306,6 +425,15 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltMedicalFilled
     pocket1: Flare
+  storage:
+    back:
+    - BoxSurvivalMedical
+    - Hypospray
+    - MedkitAdvancedFilled
+    - CrowbarRed
+    - OmnizineChemistryBottle
+    - EpinephrineChemistryBottle
+    - EpinephrineChemistryBottle
 
 # Janitor
 - type: job
@@ -329,7 +457,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
-    back: ClothingBackpackERTJanitorFilled
+    back: ClothingBackpackERTJanitor
     shoes: ClothingShoesGaloshes
     head: ClothingHeadHelmetERTJanitor
     gloves: ClothingHandsGlovesColorPurple
@@ -338,6 +466,15 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltJanitorFilled
     pocket1: Flare
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - LightReplacer
+    - BoxLightMixed
+    - BoxLightMixed
+    - Soap
+    - CrowbarRed
+    - AdvMopItem
 
 - type: startingGear
   id: ERTJanitorGearEVA
@@ -345,7 +482,7 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
-    back: ClothingBackpackERTJanitorFilled
+    back: ClothingBackpackERTJanitor
     shoes: ClothingShoesBootsMagSec
     mask: ClothingMaskGasERT
     gloves: ClothingHandsGlovesColorPurple
@@ -355,3 +492,50 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltJanitorFilled
     pocket1: Flare
+  storage:
+    back:
+    - BoxSurvivalEngineering
+    - LightReplacer
+    - BoxLightMixed
+    - BoxLightMixed
+    - Soap
+    - CrowbarRed
+    - AdvMopItem
+
+# Plasmaman
+- type: startingGear
+  id: ERTPlasmamanGearNoTank
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitColorBlack # TODO: ERT envirosuit
+    head: ClothingHeadEnvirohelmColorBlack # TODO: ERT envirohelm
+    mask: ClothingMaskGasERT
+
+- type: startingGear
+  id: ERTPlasmamanGear
+  parent: ERTPlasmamanGearNoTank
+  equipment:
+    suitstorage: PlasmaTankFilled
+
+- type: startingGear
+  id: InhandTankGear
+  subGear:
+  - InhandOxygenTankGear
+  - InhandPlasmaTankGear
+
+- type: startingGear
+  id: InhandOxygenTankGear
+  requirements:
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species: [ Plasmaman ]
+  inhand:
+  - AirTankFilled
+
+- type: startingGear
+  id: InhandPlasmaTankGear
+  requirements:
+  - !type:CharacterSpeciesRequirement
+    species: [ Plasmaman ]
+  inhand:
+  - PlasmaTankFilled

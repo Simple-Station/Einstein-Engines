@@ -22,7 +22,7 @@
   - LawyerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerBlack  # TODO change jumpsuit to randomiser of the 4 variants
-    back: ClothingBackpackLawyerFilled
+    back: ClothingBackpackLawyer
     shoes: ClothingShoesBootsLaceup
     id: LawyerPDA
     ears: ClothingHeadsetSecurity
@@ -30,10 +30,13 @@
     pocket2: BookSpaceLaw
   inhand:
   - BriefcaseBrownFilled
+  storage:
+    back:
+    - RubberStampLawyer
 
 - type: startingGear
   id: LawyerPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitEnviroslacks
     head: ClothingHeadEnvirohelmColorWhite

@@ -23,7 +23,7 @@
 
 # Syndicate Operative Outfit - Barratry
 - type: startingGear
-  id: SyndicateOperativeGearExtremelyBasic
+  id: SyndicateOperativeClothing
   subGear:
   - SyndicatePlasmamanGear
   equipment:
@@ -31,6 +31,18 @@
     back: ClothingBackpackSyndicate
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesColorBlack
+
+- type: startingGear
+  id: SyndicatePlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitOperative
+    head: ClothingHeadEnvirohelmOperative
+    pocket1: DoubleEmergencyPlasmaTankFilled
+
+- type: startingGear
+  id: SyndicateOperativeGearExtremelyBasic
+  parent: SyndicateOperativeClothing
   storage:
     back:
     - BoxSurvivalSyndicate
@@ -39,20 +51,12 @@
     - DeathAcidifierImplanter
 
 - type: startingGear
-  id: SyndicateOperativeClothing
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackSyndicate
-    shoes: ClothingShoesBootsCombatFilled
-    gloves: ClothingHandsGlovesColorBlack
-
-- type: startingGear
   id: SyndicateReinforcementMedic
   parent: SyndicateOperativeClothing
   equipment:
     pocket1: WeaponPistolViper
   inhand:
-    - MedkitCombatFilled
+  - MedkitCombatFilled
   storage:
     back:
     - BoxSurvivalSyndicate
@@ -74,7 +78,7 @@
   equipment:
     pocket1: WeaponPistolViper
   inhand:
-    - ToolboxSyndicateFilled
+  - ToolboxSyndicateFilled
   storage:
     back:
     - BoxSurvivalSyndicate

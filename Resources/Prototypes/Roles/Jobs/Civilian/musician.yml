@@ -21,7 +21,7 @@
   - MusicianPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
-    back: ClothingBackpackMusicianFilled
+    back: ClothingBackpackMusician
     eyes: ClothingEyesGlassesSunglasses
     shoes: ClothingShoesBootsLaceup
     id: MusicianPDA
@@ -29,7 +29,7 @@
 
 - type: startingGear
   id: MusicianPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMusician
     head: ClothingHeadEnvirohelmMusician

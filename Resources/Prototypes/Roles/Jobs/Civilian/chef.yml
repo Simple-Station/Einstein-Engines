@@ -4,14 +4,14 @@
   description: job-description-chef
   playTimeTracker: JobChef
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Civilian
-      min: 3600
-    - !type:CharacterEmployerRequirement
-      employers:
-      - NanoTrasen
-      - OrionExpress
-      - IdrisIncorporated
+  - !type:CharacterDepartmentTimeRequirement
+    department: Civilian
+    min: 3600
+  - !type:CharacterEmployerRequirement
+    employers:
+    - NanoTrasen
+    - OrionExpress
+    - IdrisIncorporated
   startingGear: ChefGear
   icon: "JobIconChef"
   supervisors: job-supervisors-hop
@@ -36,7 +36,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitChef
     head: ClothingHeadHatChef
-    back: ClothingBackpackFilled
+    back: ClothingBackpack
     mask: ClothingMaskItalianMoustache
     shoes: ClothingShoesColorBlack
     id: ChefPDA
@@ -46,7 +46,7 @@
 
 - type: startingGear
   id: ChefPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitChef
     head: ClothingHeadEnvirohelmColorWhite

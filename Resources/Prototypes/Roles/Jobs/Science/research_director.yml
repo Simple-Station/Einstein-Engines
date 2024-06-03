@@ -4,26 +4,26 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsCasterType
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterTraitRequirement
+  - !type:CharacterItemGroupRequirement
+    group: TraitsCasterType
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
       inverted: true
+      species:
+      - IPC
+    - !type:CharacterTraitRequirement
       traits:
-        - Muted
-        - Foreigner
-        - ForeignerLight
-    - !type:CharacterEmployerRequirement
-      employers:
-      - NanoTrasen
+      - AnomalousPositronics
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Muted
+    - Foreigner
+    - ForeignerLight
+  - !type:CharacterEmployerRequirement
+    employers:
+    - NanoTrasen
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -42,17 +42,17 @@
   special:
   - !type:AddComponentSpecial
     components:
-      - type: BibleUser
-      - type: Psionic
-        powerSlots: 3
-        baselinePowerCost: 75
-        nextPowerCost: 75
-      - type: CommandStaff
-      - type: InnatePsionicPowers
-        powersToAdd:
-          - DispelPower
-          - MetapsionicPower
-          - TelepathyPower
+    - type: BibleUser
+    - type: Psionic
+      powerSlots: 3
+      baselinePowerCost: 75
+      nextPowerCost: 75
+    - type: CommandStaff
+    - type: InnatePsionicPowers
+      powersToAdd:
+      - DispelPower
+      - MetapsionicPower
+      - TelepathyPower
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   afterLoadoutSpecial:
@@ -67,16 +67,19 @@
   - ResearchDirectorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
-    back: ClothingBackpackResearchDirectorFilled
+    back: ClothingBackpackResearchDirector
     shoes: ClothingShoesColorBrown
     id: RnDPDA
     ears: ClothingHeadsetAltScience
     pocket1: BookPsionicsGuidebook
     pocket2: BibleMystagogue
+  storage:
+    back:
+    - Flash
 
 - type: startingGear
   id: ResearchDirectorPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitResearchDirector
     head: ClothingHeadEnvirohelmResearchDirector
