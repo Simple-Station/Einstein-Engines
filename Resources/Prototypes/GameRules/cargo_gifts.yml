@@ -15,7 +15,6 @@
 - type: entity
   id: GiftsPizzaPartySmall
   parent: CargoGiftsBase
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 5
@@ -33,7 +32,6 @@
 - type: entity
   id: GiftsPizzaPartyLarge
   parent: CargoGiftsBase
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 2
@@ -51,7 +49,6 @@
 - type: entity
   id: GiftsEngineering
   parent: CargoGiftsBase
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 5
@@ -72,7 +69,6 @@
 - type: entity
   id: GiftsVendingRestock
   parent: CargoGiftsBase
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 4
@@ -93,7 +89,6 @@
 - type: entity
   id: GiftsJanitor
   parent: CargoGiftsBase
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 6
@@ -111,7 +106,6 @@
 - type: entity
   id: GiftsMedical
   parent: CargoGiftsBase
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 8
@@ -131,7 +125,6 @@
 - type: entity
   id: GiftsSpacingSupplies
   parent: CargoGiftsBase
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 4
@@ -151,7 +144,6 @@
 - type: entity
   id: GiftsFireProtection
   parent: CargoGiftsBase
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 4
@@ -171,7 +163,6 @@
 - type: entity
   id: GiftsSecurityGuns
   parent: CargoGiftsBase
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 3
@@ -190,7 +181,6 @@
 - type: entity
   id: GiftsSecurityRiot
   parent: CargoGiftsBase
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 4

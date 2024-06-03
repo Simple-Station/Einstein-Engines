@@ -1,7 +1,6 @@
 - type: entity
   parent: BaseGameRule
   id: LoneAbductorSpawn
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     earliestStart: 15
@@ -74,7 +73,6 @@
 - type: entity
   parent: BaseGameRule
   id: AbductorVictim
-  categories: [ HideSpawnMenu ]
   components:
   - type: AbductorVictimRule
   - type: AntagSelection
@@ -94,7 +92,6 @@
 - type: entity
   parent: BaseGameRule
   id: DuoAbductorSpawn
-  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     earliestStart: 15
