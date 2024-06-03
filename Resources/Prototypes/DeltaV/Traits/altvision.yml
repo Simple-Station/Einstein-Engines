@@ -1,9 +1,11 @@
 - type: trait
   id: UltraVision
+  category: Uncategorized
   components:
     - type: UltraVision
 
 - type: trait
   id: DogVision
+  category: Uncategorized
   components:
     - type: DogVision

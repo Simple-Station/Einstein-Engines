@@ -1,5 +1,6 @@
 - type: trait
   id: Blindness
+  category: A
   # whitelist:
   #   components:
   #     - Blindable
@@ -8,6 +9,7 @@
 
 - type: trait
   id: Narcolepsy
+  category: B
   components:
     - type: Narcolepsy
       timeBetweenIncidents: 300, 600
@@ -15,11 +17,13 @@
 
 - type: trait
   id: Pacifist
+  category: C
   components:
     - type: Pacified
 
 - type: trait
   id: Paracusia
+  category: A
   components:
     - type: Paracusia
       minTimeBetweenIncidents: 0.1
@@ -30,6 +34,7 @@
 
 - type: trait
   id: Muted
+  category: B
   # blacklist:
   #   components:
   #     - BorgChassis
@@ -38,15 +43,18 @@
 
 - type: trait
   id: Uncloneable
+  category: C
   components:
     - type: Uncloneable
 
 - type: trait
   id: FrontalLisp
+  category: A
   components:
     - type: FrontalLisp
 
 - type: trait
   id: Snoring
+  category: B
   components:
     - type: Snoring

@@ -1,10 +1,12 @@
 - type: trait
   id: PirateAccent
+  category: B
   components:
     - type: PirateAccent
 
 - type: trait
   id: Accentless
+  category: C
   components:
   - type: Accentless
     removes:

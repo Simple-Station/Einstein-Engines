@@ -1,5 +1,6 @@
 - type: trait
   id: Nearsighted
+  category: Uncategorized
   components:
     - type: Nearsighted
   # whitelist:

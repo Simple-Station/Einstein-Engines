@@ -1,4 +1,5 @@
 - type: trait
   id: ScottishAccent
+  category: Uncategorized
   components:
     - type: ScottishAccent

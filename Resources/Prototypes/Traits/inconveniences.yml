@@ -1,11 +1,13 @@
 ﻿- type: trait
   id: LightweightDrunk
+  category: C
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 2
 
 - type: trait
   id: SocialAnxiety
+  category: A
   components:
     - type: StutteringAccent
       matchRandomProb: 0.1
