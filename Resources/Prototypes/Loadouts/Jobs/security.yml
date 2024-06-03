@@ -1,7 +1,22 @@
+## Uniforms
 - type: loadout
-  id: LoadoutSecurityUniformGrey
+  id: LoadoutSecurityUniformJumpsuitBlue
   category: Jobs
-  cost: 2
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - SecurityCadet
+        - Warden
+  items:
+    - ClothingUniformJumpsuitSecBlue
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpsuitGrey
+  category: Jobs
+  cost: 1
   exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
@@ -11,6 +26,34 @@
         - Warden
   items:
     - ClothingUniformJumpsuitSecGrey
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpskirtGrey
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - SecurityCadet
+        - Warden
+  items:
+    - ClothingUniformJumpskirtSecGrey
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpskirtBlue
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - SecurityCadet
+        - Warden
+  items:
+    - ClothingUniformJumpskirtSecBlue
 
 - type: loadout
   id: LoadoutSecurityUniformJumpskirtSenior
@@ -61,50 +104,6 @@
     - ClothingUniformJumpsuitSeniorOfficer
 
 - type: loadout
-  id: LoadoutSecurityMaskGasSwat
-  category: Jobs
-  cost: 2
-  exclusive: true
-  requirements:
-    - !type:LoadoutJobRequirement
-      jobs:
-        - Warden
-        - HeadOfSecurity
-  items:
-    - ClothingMaskGasSwat
-
-- type: loadout
-  id: LoadoutSecurityShoesJackboots
-  category: Jobs
-  cost: 1
-  requirements:
-    - !type:LoadoutJobRequirement
-      jobs:
-        - Detective
-        - SecurityOfficer
-        - SecurityCadet
-        - Warden
-        - HeadOfSecurity
-  items:
-    - ClothingShoesBootsJack
-
-## Alt Jumpsuits
-- type: loadout
-  id: LoadoutUniformJumpsuitSecFormal
-  category: Jobs
-  cost: 2
-  exclusive: true
-  requirements:
-    - !type:LoadoutJobRequirement
-      jobs:
-        - Detective
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
-  items:
-    - ClothingUniformJumpsuitSecFormal
-
-- type: loadout
   id: LoadoutUniformJumpsuitWardenBlue
   category: Jobs
   cost: 2
@@ -128,7 +127,6 @@
   items:
     - ClothingUniformJumpsuitWardenGrey
 
-## Alt Jumpskirts
 - type: loadout
   id: LoadoutUniformJumpskirtWardenBlue
   category: Jobs
@@ -178,6 +176,66 @@
     - ClothingUniformJumpskirtHoSGrey
 
 - type: loadout
+  id: LoadoutUniformJumpsuitSecFormal
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Detective
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpsuitSecFormal
+
+- type: loadout
+  id: LoadoutUniformJumpsuitSecSummer
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Detective
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpsuitSecSummer
+## Mask
+- type: loadout
+  id: LoadoutSecurityMaskGasSwat
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Warden
+        - HeadOfSecurity
+  items:
+    - ClothingMaskGasSwat
+
+## Shoes
+- type: loadout
+  id: LoadoutSecurityShoesJackboots
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - Detective
+        - SecurityOfficer
+        - SecurityCadet
+        - Warden
+        - HeadOfSecurity
+  items:
+    - ClothingShoesBootsJack
+
+## Items
+- type: loadout
   id: LoadoutItemsSpareHandgunMagazine
   category: Jobs
   cost: 7
@@ -211,6 +269,7 @@
   items:
     - MagazinePistolRubber
 
+## Eyes
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
   category: Jobs
@@ -241,6 +300,7 @@
   items:
     - ClothingEyesEyepatchHudSecurity
 
+## Head
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
   category: Jobs
@@ -257,26 +317,6 @@
     - ClothingHeadHatBeretSecurity
 
 - type: loadout
-  id: LoadoutSecurityEquipmentTruncheon
-  category: Jobs
-  cost: 8
-  requirements:
-    - !type:LoadoutJobRequirement
-      jobs:
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
-        - Brigmedic
-    - !type:LoadoutPlaytimeRequirement
-      tracker: JobSecurityOfficer
-      min: 36000 # 10 hours
-    - !type:LoadoutSpeciesRequirement
-      species:
-        - Oni
-  items:
-    - Truncheon
-
-- type: loadout
   id: LoadoutSecurityHeadHelmetInsulated
   category: Jobs
   cost: 3
@@ -290,6 +330,7 @@
   items:
     - ClothingHeadHelmetInsulated
 
+## Belt
 - type: loadout
   id: LoadoutSecurityBeltWebbing
   category: Jobs
@@ -305,3 +346,24 @@
         - HeadOfSecurity
   items:
     - ClothingBeltSecurityWebbingFilled
+
+## Species
+- type: loadout
+  id: LoadoutSecurityEquipmentTruncheon
+  category: Jobs
+  cost: 8 ## TODO: Make this replace the secoff handgun, and thus also make it cheaper
+  requirements:
+    - !type:LoadoutJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+    - !type:LoadoutPlaytimeRequirement
+      tracker: JobSecurityOfficer
+      min: 36000 # 10 hours
+    - !type:LoadoutSpeciesRequirement
+      species:
+        - Oni
+  items:
+    - Truncheon
