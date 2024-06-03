@@ -322,11 +322,11 @@ public sealed class ChatUIController : UIController
             $"{size.X.ToString(CultureInfo.InvariantCulture)},{size.Y.ToString(CultureInfo.InvariantCulture)}";
         switch (UIManager.ActiveScreen)
         {
-            case OverlayChatGameScreen _:
-                _config.SetCVar(CCVars.OverlayScreenChatSize, stringSize);
-                break;
             case SeparatedChatGameScreen _:
                 _config.SetCVar(CCVars.SeparatedScreenChatSize, stringSize);
+                break;
+            case OverlayChatGameScreen _:
+                _config.SetCVar(CCVars.OverlayScreenChatSize, stringSize);
                 break;
             default:
                 // do nothing
