@@ -442,7 +442,7 @@
 - type: loadout
   id: LoadoutMedicalEyesHudMedical
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
@@ -458,7 +458,7 @@
 - type: loadout
   id: LoadoutMedicalEyesEyepatchHudMedical
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
@@ -472,9 +472,9 @@
     - ClothingEyesEyepatchHudMedical
 
 - type: loadout
-  id: LoadoutMedicalEyesEyepatchHudMedical
+  id: LoadoutMedicalEyesHudMedicalPrescription
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:LoadoutJobRequirement
@@ -487,4 +487,4 @@
     - !type:LoadoutTraitRequirement
       trait: Nearsighted
   items:
-    - ClothingEyesEyepatchHudMedical
+    - ClothingEyesPrescriptionMedHud
