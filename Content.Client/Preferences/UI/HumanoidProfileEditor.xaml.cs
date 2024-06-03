@@ -1537,8 +1537,9 @@ namespace Content.Client.Preferences.UI
                 BoxContainer? match = null;
                 foreach (var child in _traitsTabs.Children)
                 {
-                    if (match != null || child.Name == null)
+                    if (string.IsNullOrEmpty(child.Name))
                         continue;
+
                     if (child.Name.Split("_")[0] == category.ID)
                         match = (BoxContainer) child;
                 }
@@ -1580,7 +1581,7 @@ namespace Content.Client.Preferences.UI
             }
 
             // Fill categories
-            foreach (var trait in traits.OrderBy(l => l.ID))
+            foreach (var trait in traits.OrderBy(t => Loc.GetString($"trait-{t.ID}-name")))
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1591,7 +1592,7 @@ namespace Content.Client.Preferences.UI
                 BoxContainer? match = null;
                 foreach (var child in _traitsTabs.Children)
                 {
-                    if (match != null || child.Name == null)
+                    if (string.IsNullOrEmpty(child.Name))
                         continue;
 
                     if (child.Name.Split("_")[0] == trait.Category)
@@ -1599,7 +1600,8 @@ namespace Content.Client.Preferences.UI
                 }
 
                 // If there is no category put it in Uncategorized
-                if (match?.Parent?.Parent?.Name == null)
+                if (string.IsNullOrEmpty(match?.Parent?.Parent?.Name)
+                    || match.Parent.Parent.Name.Split("_")[0] != trait.Category)
                     uncategorized.AddChild(selector);
                 else
                     match.AddChild(selector);
@@ -1635,7 +1637,7 @@ namespace Content.Client.Preferences.UI
             }
 
             // Add the selected unusable traits to the point counter
-            foreach (var trait in otherTraits.OrderBy(l => l.ID))
+            foreach (var trait in otherTraits.OrderBy(t => Loc.GetString($"trait-{t.ID}-name")))
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
@@ -1673,8 +1675,7 @@ namespace Content.Client.Preferences.UI
 
 
             // Hide Uncategorized tab if it's empty, other tabs already shouldn't exist if they're empty
-            if (!uncategorized.Children.Any())
-                _traitsTabs.SetTabVisible(0, false);
+            _traitsTabs.SetTabVisible(0, uncategorized.Children.Any());
 
             // Add fake tabs until tab container is happy
             for (var i = _traitsTabs.ChildCount - 1; i < _traitsTabs.CurrentTab; i++)
@@ -1789,8 +1790,9 @@ namespace Content.Client.Preferences.UI
                 BoxContainer? match = null;
                 foreach (var child in _loadoutsTabs.Children)
                 {
-                    if (match != null || child.Name == null)
+                    if (string.IsNullOrEmpty(child.Name))
                         continue;
+
                     if (child.Name.Split("_")[0] == category.ID)
                         match = (BoxContainer) child;
                 }
@@ -1832,7 +1834,7 @@ namespace Content.Client.Preferences.UI
             }
 
             // Fill categories
-            foreach (var loadout in loadouts.OrderBy(l => l.ID))
+            foreach (var loadout in loadouts.OrderBy(l => Loc.GetString($"loadout-{l.ID}-name")))
             {
                 var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1843,7 +1845,7 @@ namespace Content.Client.Preferences.UI
                 BoxContainer? match = null;
                 foreach (var child in _loadoutsTabs.Children)
                 {
-                    if (match != null || child.Name == null)
+                    if (string.IsNullOrEmpty(child.Name))
                         continue;
 
                     if (child.Name.Split("_")[0] == loadout.Category)
@@ -1851,7 +1853,8 @@ namespace Content.Client.Preferences.UI
                 }
 
                 // If there is no category put it in Uncategorized
-                if (match?.Parent?.Parent?.Name == null)
+                if (string.IsNullOrEmpty(match?.Parent?.Parent?.Name)
+                    || match.Parent.Parent.Name.Split("_")[0] != loadout.Category)
                     uncategorized.AddChild(selector);
                 else
                     match.AddChild(selector);
@@ -1887,7 +1890,7 @@ namespace Content.Client.Preferences.UI
             }
 
             // Add the selected unusable loadouts to the point counter
-            foreach (var loadout in otherLoadouts.OrderBy(l => l.ID))
+            foreach (var loadout in otherLoadouts.OrderBy(l => Loc.GetString($"loadout-{l.ID}-name")))
             {
                 var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
@@ -1925,8 +1928,7 @@ namespace Content.Client.Preferences.UI
 
 
             // Hide Uncategorized tab if it's empty, other tabs already shouldn't exist if they're empty
-            if (!uncategorized.Children.Any())
-                _loadoutsTabs.SetTabVisible(0, false);
+            _loadoutsTabs.SetTabVisible(0, uncategorized.Children.Any());
 
             // Add fake tabs until tab container is happy
             for (var i = _loadoutsTabs.ChildCount - 1; i < _loadoutsTabs.CurrentTab; i++)

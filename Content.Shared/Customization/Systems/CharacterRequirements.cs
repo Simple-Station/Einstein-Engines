@@ -352,7 +352,7 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
         }
 
         // Get the time for the tracker
-        playTimes.TryGetValue(Tracker, out var time);
+        var time = playTimes.GetValueOrDefault(Tracker);
         reason = null;
 
         if (time > Max)
