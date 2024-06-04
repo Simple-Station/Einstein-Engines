@@ -16,13 +16,13 @@ public abstract partial class BaseTranslatorComponent : Component
     /// <summary>
     ///   The list of additional languages this translator allows the wielder to speak.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdListSerializer<LanguagePrototype>))]
+    [DataField("spoken", customTypeSerializer: typeof(PrototypeIdListSerializer<LanguagePrototype>))]
     public List<string> SpokenLanguages = new();
 
     /// <summary>
     ///   The list of additional languages this translator allows the wielder to understand.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdListSerializer<LanguagePrototype>))]
+    [DataField("understood", customTypeSerializer: typeof(PrototypeIdListSerializer<LanguagePrototype>))]
     public List<string> UnderstoodLanguages = new();
 
     /// <summary>

@@ -54,52 +54,50 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
 
         var container = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
 
-        // Create and add a header with the name and the button to select the language
+        #region Header
+        var header = new BoxContainer
         {
-            var header = new BoxContainer
-            {
-                Orientation = BoxContainer.LayoutOrientation.Horizontal,
-                HorizontalExpand = true,
-                SeparationOverride = 2
-            };
+            Orientation = BoxContainer.LayoutOrientation.Horizontal,
+            HorizontalExpand = true,
+            SeparationOverride = 2
+        };
 
-            var name = new Label
-            {
-                Text = proto?.Name ?? Loc.GetString("generic-error"),
-                MinWidth = 50,
-                HorizontalExpand = true
-            };
-
-            var button = new Button { Text = "Choose" };
-            button.OnPressed += _ => OnLanguageChosen(language);
-            state.button = button;
-
-            header.AddChild(name);
-            header.AddChild(button);
-
-            container.AddChild(header);
-        }
-
-        // Create and add a collapsible description
+        var name = new Label
         {
-            var body = new CollapsibleBody
-            {
-                HorizontalExpand = true,
-                Margin = new Thickness(4f, 4f)
-            };
+            Text = proto?.Name ?? Loc.GetString("generic-error"),
+            MinWidth = 50,
+            HorizontalExpand = true
+        };
 
-            var description = new RichTextLabel { HorizontalExpand = true };
-            description.SetMessage(proto?.Description ?? Loc.GetString("generic-error"));
-            body.AddChild(description);
+        var button = new Button { Text = "Choose" };
+        button.OnPressed += _ => OnLanguageChosen(language);
+        state.button = button;
 
-            var collapser = new Collapsible(Loc.GetString("language-menu-description-header"), body)
-            {
-                Orientation = BoxContainer.LayoutOrientation.Vertical,
-                HorizontalExpand = true
-            };
+        header.AddChild(name);
+        header.AddChild(button);
 
-            container.AddChild(collapser);
-        }
+        container.AddChild(header);
+        #endregion
+
+        #region Collapsible description
+        var body = new CollapsibleBody
+        {
+            HorizontalExpand = true,
+            Margin = new Thickness(4f, 4f)
+        };
+
+        var description = new RichTextLabel { HorizontalExpand = true };
+        description.SetMessage(proto?.Description ?? Loc.GetString("generic-error"));
+        body.AddChild(description);
+
+        var collapser = new Collapsible(Loc.GetString("language-menu-description-header"), body)
+        {
+            Orientation = BoxContainer.LayoutOrientation.Vertical,
+            HorizontalExpand = true
+        };
+
+        container.AddChild(collapser);
+        #endregion
 
         // Before adding, wrap the new container in a PanelContainer to give it a distinct look
         var wrapper = new PanelContainer();

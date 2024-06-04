@@ -19,12 +19,9 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
 
-    private ISawmill _sawmill = default!;
-
     public override void Initialize()
     {
         base.Initialize();
-        _sawmill = Logger.GetSawmill("translator");
 
         // I wanna die. But my death won't help us discover polymorphism.
         SubscribeLocalEvent<IntrinsicTranslatorComponent, DetermineEntityLanguagesEvent>(OnDetermineLanguages);
@@ -103,7 +100,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         var intrinsic = EnsureComp<HoldsTranslatorComponent>(holder);
         UpdateBoundIntrinsicComp(component, intrinsic, component.Enabled);
 
-        UpdatedLanguages(holder);
+        RaiseLocalEvent(holder, new LanguagesUpdateEvent(), true);
     }
 
     private void OnTranslatorDropped(EntityUid translator, HandheldTranslatorComponent component, DroppedEvent args)
@@ -120,7 +117,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
 
         _language.EnsureValidLanguage(holder);
 
-        UpdatedLanguages(holder);
+        RaiseLocalEvent(holder, new LanguagesUpdateEvent(), true);
     }
 
     private void OnTranslatorToggle(EntityUid translator, HandheldTranslatorComponent component, ActivateInWorldEvent args)
@@ -151,7 +148,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
             _powerCell.SetPowerCellDrawEnabled(translator, isEnabled);
 
             _language.EnsureValidLanguage(holder);
-            UpdatedLanguages(holder);
+            RaiseLocalEvent(holder, new LanguagesUpdateEvent(), true);
         }
         else
         {
@@ -193,7 +190,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
             }
 
             _language.EnsureValidLanguage(holder);
-            UpdatedLanguages(holder);
+            RaiseLocalEvent(holder, new LanguagesUpdateEvent(), true);
         }
     }
 
@@ -224,10 +221,5 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         if (list.Contains(item))
             return;
         list.Add(item);
-    }
-
-    private void UpdatedLanguages(EntityUid uid)
-    {
-        RaiseLocalEvent(uid, new LanguagesUpdateEvent(), true);
     }
 }

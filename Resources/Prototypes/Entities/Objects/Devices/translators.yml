@@ -52,7 +52,6 @@
   description: Translates speech between Canilunzt and Galactic Common.
   components:
   - type: HandheldTranslator
-    default-language: GalacticCommon
     spoken:
     - GalacticCommon
     - Canilunzt
@@ -70,7 +69,6 @@
   description: Translates speech between Bubblish and Galactic Common.
   components:
   - type: HandheldTranslator
-    default-language: GalacticCommon
     spoken:
     - GalacticCommon
     - Bubblish
@@ -88,7 +86,6 @@
   description: Translates speech between Nekomimetic and Galactic Common. Why would you want that?
   components:
   - type: HandheldTranslator
-    default-language: GalacticCommon
     spoken:
     - GalacticCommon
     - Nekomimetic
@@ -106,7 +103,6 @@
   description: Translates speech between Draconic and Galactic Common.
   components:
   - type: HandheldTranslator
-    default-language: GalacticCommon
     spoken:
     - GalacticCommon
     - Draconic
@@ -124,7 +120,6 @@
   description: Translates speech between Sol Common and Galactic Common. Like a true Earthman!
   components:
   - type: HandheldTranslator
-    default-language: GalacticCommon
     spoken:
     - GalacticCommon
     - SolCommon
@@ -142,7 +137,6 @@
   description: Translates speech between RootSpeak and Galactic Common. Like a true plant?
   components:
   - type: HandheldTranslator
-    default-language: GalacticCommon
     spoken:
     - GalacticCommon
     - RootSpeak
@@ -160,7 +154,6 @@
   description: Translates speech between Moffic and Galactic Common. Like a true moth... or bug?
   components:
   - type: HandheldTranslator
-    default-language: GalacticCommon
     spoken:
     - GalacticCommon
     - Moffic
@@ -178,7 +171,6 @@
   description: Translates speech between Xeno and Galactic Common. Not sure if that will help.
   components:
   - type: HandheldTranslator
-    default-language: GalacticCommon
     spoken:
     - GalacticCommon
     - Xeno

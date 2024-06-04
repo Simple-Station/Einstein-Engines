@@ -36,7 +36,7 @@ public sealed partial class LanguageSystem
     private void SendLanguageStateToClient(EntityUid uid, LanguageSpeakerComponent? comp = null)
     {
         // Try to find a mind inside the entity and notify its session
-        if (!_mind.TryGetMind(uid, out var mind, out var mindComp) || mindComp.Session == null)
+        if (!_mind.TryGetMind(uid, out _, out var mindComp) || mindComp.Session == null)
             return;
 
         SendLanguageStateToClient(uid, mindComp.Session, comp);
@@ -54,9 +54,6 @@ public sealed partial class LanguageSystem
     private void SendLanguageStateToClient(EntityUid uid, ICommonSession session, LanguageSpeakerComponent? component = null)
     {
         var langs = GetLanguages(uid, component);
-        if (langs == null)
-            return;
-
         var message = new LanguagesUpdatedMessage(langs.CurrentLanguage, langs.SpokenLanguages, langs.UnderstoodLanguages);
         RaiseNetworkEvent(message, session);
     }
