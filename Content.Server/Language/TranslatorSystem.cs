@@ -85,8 +85,8 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
             foreach (var language in component.SpokenLanguages)
                 AddIfNotExists(ev.SpokenLanguages, language);
 
-            if (component.CurrentSpeechLanguage != null && ev.CurrentLanguage.Length == 0)
-                ev.CurrentLanguage = component.CurrentSpeechLanguage;
+            if (component.DefaultLanguageOverride != null && ev.CurrentLanguage.Length == 0)
+                ev.CurrentLanguage = component.DefaultLanguageOverride;
         }
 
         if (addUnderstood)
@@ -206,13 +206,13 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         {
             intrinsic.SpokenLanguages = new List<string>(comp.SpokenLanguages);
             intrinsic.UnderstoodLanguages = new List<string>(comp.UnderstoodLanguages);
-            intrinsic.CurrentSpeechLanguage = comp.CurrentSpeechLanguage;
+            intrinsic.DefaultLanguageOverride = comp.DefaultLanguageOverride;
         }
         else
         {
             intrinsic.SpokenLanguages.Clear();
             intrinsic.UnderstoodLanguages.Clear();
-            intrinsic.CurrentSpeechLanguage = null;
+            intrinsic.DefaultLanguageOverride = null;
         }
 
         intrinsic.Enabled = isEnabled;

@@ -7,6 +7,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Console;
 using Robust.Shared.Utility;
+using Serilog;
 using static Content.Shared.Language.Systems.SharedLanguageSystem;
 
 namespace Content.Client.Language;
@@ -51,29 +52,26 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
         var proto = _clientLanguageSystem.GetLanguage(language);
         var state = new EntryState { language = language };
 
-        var container = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical }
+        var container = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
 
         // Create and add a header with the name and the button to select the language
         {
             var header = new BoxContainer
             {
-                Orientation = BoxContainer.LayoutOrientation.Horizontal;
-                HorizontalExpand = true;
-                SeparationOverride = 2;
-            }
+                Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                HorizontalExpand = true,
+                SeparationOverride = 2
+            };
 
             var name = new Label
             {
-                Text = proto?.Name ?? Loc.GetString("generic-error");
-                MinWidth = 50;
-                HorizontalExpand = true;
-            }
+                Text = proto?.Name ?? Loc.GetString("generic-error"),
+                MinWidth = 50,
+                HorizontalExpand = true
+            };
 
-            var button = new Button
-            {
-                Text = "Choose";
-                OnPressed += _ => OnLanguageChosen(language);
-            }
+            var button = new Button { Text = "Choose" };
+            button.OnPressed += _ => OnLanguageChosen(language);
             state.button = button;
 
             header.AddChild(name);
@@ -86,23 +84,19 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
         {
             var body = new CollapsibleBody
             {
-                HorizontalExpand = true;
-                Margin = new Thickness(4f, 4f);
-            }
+                HorizontalExpand = true,
+                Margin = new Thickness(4f, 4f)
+            };
 
-            var description = new RichTextLabel
-            {
-                SetMessage(proto?.Description ?? Log.GetString("generic-error"));
-                HorizontalExpand = true;
-            }
-
+            var description = new RichTextLabel { HorizontalExpand = true };
+            description.SetMessage(proto?.Description ?? Loc.GetString("generic-error"));
             body.AddChild(description);
 
             var collapser = new Collapsible(Loc.GetString("language-menu-description-header"), body)
             {
-                Orientation = BoxContainer.LayoutOrientation.Vertical;
-                HorizontalExpand = true;
-            }
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                HorizontalExpand = true
+            };
 
             container.AddChild(collapser);
         }

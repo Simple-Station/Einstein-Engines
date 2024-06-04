@@ -35,7 +35,7 @@
 
 - type: entity
   abstract: true
-  id: TranslatorEmtpy
+  id: TranslatorEmpty
   parent: [ Translator ]
   suffix: Empty
   components:
@@ -47,7 +47,7 @@
 
 - type: entity
   id: CanilunztTranslator
-  parent: [ TranslatorEmtpy ]
+  parent: [ TranslatorEmpty ]
   name: Canilunzt translator
   description: Translates speech between Canilunzt and Galactic Common.
   components:
@@ -62,11 +62,10 @@
     requires:
     - GalacticCommon
     - Canilunzt
-    requires-all: false
 
 - type: entity
   id: BubblishTranslator
-  parent: [ TranslatorEmtpy ]
+  parent: [ TranslatorEmpty ]
   name: Bubblish translator
   description: Translates speech between Bubblish and Galactic Common.
   components:
@@ -81,11 +80,10 @@
     requires:
     - GalacticCommon
     - Bubblish
-    requires-all: false
 
 - type: entity
   id: NekomimeticTranslator
-  parent: [ TranslatorEmtpy ]
+  parent: [ TranslatorEmpty ]
   name: Nekomimetic translator
   description: Translates speech between Nekomimetic and Galactic Common. Why would you want that?
   components:
@@ -100,11 +98,10 @@
     requires:
     - GalacticCommon
     - Nekomimetic
-    requires-all: false
 
 - type: entity
   id: DraconicTranslator
-  parent: [ TranslatorEmtpy ]
+  parent: [ TranslatorEmpty ]
   name: Draconic translator
   description: Translates speech between Draconic and Galactic Common.
   components:
@@ -119,11 +116,10 @@
     requires:
     - GalacticCommon
     - Draconic
-    requires-all: false
 
 - type: entity
   id: SolCommonTranslator
-  parent: [ TranslatorEmtpy ]
+  parent: [ TranslatorEmpty ]
   name: Sol Common translator
   description: Translates speech between Sol Common and Galactic Common. Like a true Earthman!
   components:
@@ -138,11 +134,10 @@
     requires:
     - GalacticCommon
     - SolCommon
-    requires-all: false
 
 - type: entity
   id: RootSpeakTranslator
-  parent: [ TranslatorEmtpy ]
+  parent: [ TranslatorEmpty ]
   name: RootSpeak translator
   description: Translates speech between RootSpeak and Galactic Common. Like a true plant?
   components:
@@ -157,11 +152,10 @@
     requires:
     - GalacticCommon
     - RootSpeak
-    requires-all: false
 
 - type: entity
   id: MofficTranslator
-  parent: [ TranslatorEmtpy ]
+  parent: [ TranslatorEmpty ]
   name: Moffic translator
   description: Translates speech between Moffic and Galactic Common. Like a true moth... or bug?
   components:
@@ -176,11 +170,10 @@
     requires:
     - GalacticCommon
     - Moffic
-    requires-all: false
 
 - type: entity
   id: XenoTranslator
-  parent: [ TranslatorEmtpy ]
+  parent: [ TranslatorEmpty ]
   name: Xeno translator
   description: Translates speech between Xeno and Galactic Common. Not sure if that will help.
   components:
@@ -197,7 +190,7 @@
 
 - type: entity
   id: AnimalTranslator
-  parent: [ TranslatorEmtpy ]
+  parent: [ TranslatorEmpty ]
   name: Animal translator
   description: Translates all the cutes noises that animals make into a more understandable form!
   components:
@@ -218,4 +211,3 @@
     - Kobold
     requires:
     - GalacticCommon
-    requires-all: false
