@@ -25,6 +25,14 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
         _clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
     }
 
+    protected override void Opened()
+    {
+        // Refresh the window when it gets opened.
+        // This actually causes two refreshes: one immediately, and one after the server sends a state message.
+        UpdateState(_clientLanguageSystem.CurrentLanguage, _clientLanguageSystem.SpokenLanguages);
+        _clientLanguageSystem.RequestStateUpdate();
+    }
+
 
     public void UpdateState(string currentLanguage, List<string> spokenLanguages)
     {
@@ -49,7 +57,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
 
     private void AddLanguageEntry(string language)
     {
-        var proto = _clientLanguageSystem.GetLanguage(language);
+        var proto = _clientLanguageSystem.GetLanguagePrototype(language);
         var state = new EntryState { language = language };
 
         var container = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
@@ -112,7 +120,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
 
     private void OnLanguageChosen(string id)
     {
-        var proto = _clientLanguageSystem.GetLanguage(id);
+        var proto = _clientLanguageSystem.GetLanguagePrototype(id);
         if (proto != null)
             _clientLanguageSystem.RequestSetLanguage(proto);
     }

@@ -278,7 +278,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         if (args.SenderSession.AttachedEntity is not {Valid: true} speaker)
             return;
 
-        var language = GetLanguage(message.CurrentLanguage);
+        var language = GetLanguagePrototype(message.CurrentLanguage);
 
         if (language == null || !CanSpeak(speaker, language.ID))
             return;

@@ -36,7 +36,7 @@ public sealed class SelectLanguageCommand : IConsoleCommand
 
         var languages = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
 
-        var language = languages.GetLanguage(languageId);
+        var language = languages.GetLanguagePrototype(languageId);
         if (language == null || !languages.CanSpeak(playerEntity, language.ID))
         {
             shell.WriteError($"Language {languageId} is invalid or you cannot speak it!");
