@@ -6,8 +6,8 @@ namespace Content.Shared.Language;
 public sealed partial class LanguageSpeakerComponent : Component
 {
     /// <summary>
-    ///  The current language the entity may use to speak.
-    ///  Other listeners will hear the entity speak in this language.
+    ///     The current language the entity may use to speak.
+    ///     Other listeners will hear the entity speak in this language.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]

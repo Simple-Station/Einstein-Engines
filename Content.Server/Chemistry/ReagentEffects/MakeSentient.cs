@@ -7,8 +7,8 @@ using Content.Shared.Language.Systems;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Prototypes;
 using Content.Server.Psionics; //Nyano - Summary: pulls in the ability for the sentient creature to become psionic.
-using Content.Shared.Humanoid;
-using Content.Shared.Language.Events; //Delta-V - Banning humanoids from becoming ghost roles.
+using Content.Shared.Humanoid; //Delta-V - Banning humanoids from becoming ghost roles.
+using Content.Shared.Language.Events;
 
 namespace Content.Server.Chemistry.ReagentEffects;
 
@@ -38,9 +38,9 @@ public sealed partial class MakeSentient : ReagentEffect
         {
             speaker.CurrentLanguage = fallback;
             speaker.SpokenLanguages.Add(fallback);
-
-            args.EntityManager.EventBus.RaiseLocalEvent(uid, new LanguagesUpdateEvent(), true);
         }
+
+        args.EntityManager.EventBus.RaiseLocalEvent(uid, new LanguagesUpdateEvent(), true);
 
         // Stops from adding a ghost role to things like people who already have a mind
         if (entityManager.TryGetComponent<MindContainerComponent>(uid, out var mindContainer) && mindContainer.HasMind)

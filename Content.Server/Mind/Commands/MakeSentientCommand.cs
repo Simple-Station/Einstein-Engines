@@ -61,7 +61,8 @@ namespace Content.Server.Mind.Commands
 
                 var language = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
                 var speaker = entityManager.EnsureComponent<LanguageSpeakerComponent>(uid);
-                // The logic is simple, if the speaker knows any language (like monkey or robot), it should keep speaking that language
+                // If the speaker knows any language (like monkey or robot), they keep those
+                // Otherwise, we give them the fallback
                 if (speaker.SpokenLanguages.Count == 0)
                     language.AddLanguage(speaker, SharedLanguageSystem.FallbackLanguagePrototype);
             }

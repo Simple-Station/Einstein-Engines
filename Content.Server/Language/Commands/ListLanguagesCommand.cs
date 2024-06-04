@@ -16,7 +16,7 @@ public sealed class ListLanguagesCommand : IConsoleCommand
     {
         if (shell.Player is not { } player)
         {
-            shell.WriteError("This command cannot be run from the server.");
+            shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
             return;
         }
 
@@ -25,7 +25,7 @@ public sealed class ListLanguagesCommand : IConsoleCommand
 
         if (player.AttachedEntity is not {} playerEntity)
         {
-            shell.WriteError("You don't have an entity!");
+            shell.WriteError(Loc.GetString("shell-must-be-attached-to-entity"));
             return;
         }
 

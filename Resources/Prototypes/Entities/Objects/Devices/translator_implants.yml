@@ -2,8 +2,8 @@
   abstract: true
   id: BaseTranslatorImplanter
   parent: [ BaseItem ]
-  name: Basic translator implant
-  description: "Translates speech."
+  name: basic translator implant
+  description: Translates speech.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/implanter.rsi
@@ -28,8 +28,8 @@
 - type: entity
   id: BasicGalaticCommonTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
-  name: Basic Galatic Common translator implant
-  description: "An implant giving the ability to understand Galatic Common."
+  name: basic Galactic Common translator implant
+  description: An implant giving the ability to understand Galactic Common.
   components:
   - type: TranslatorImplanter
     understood:
@@ -38,8 +38,8 @@
 - type: entity
   id: AdvancedGalaticCommonTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
-  name: Advanced Galactic Common translator implant
-  description: "An implant giving the ability to understand and speak Galactic Common."
+  name: advanced Galactic Common translator implant
+  description: An implant giving the ability to understand and speak Galactic Common.
   components:
   - type: TranslatorImplanter
     spoken:
@@ -51,7 +51,7 @@
   id: BubblishTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
   name: Bubblish translator implant
-  description: "An implant giving the ability to understand and speak Bubblish."
+  description: An implant giving the ability to understand and speak Bubblish.
   components:
   - type: TranslatorImplanter
     spoken:
@@ -63,7 +63,7 @@
   id: NekomimeticTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
   name: Nekomimetic translator implant
-  description: "An implant giving the ability to understand and speak Nekomimetic, Nya~!"
+  description: An implant giving the ability to understand and speak Nekomimetic. Nya~!
   components:
   - type: TranslatorImplanter
     spoken:
@@ -75,7 +75,7 @@
   id: DraconicTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
   name: Draconic translator implant
-  description: "An implant giving the ability to understand and speak Draconic."
+  description: An implant giving the ability to understand and speak Draconic.
   components:
   - type: TranslatorImplanter
     spoken:
@@ -87,7 +87,7 @@
   id: CanilunztTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
   name: Canilunzt translator implant
-  description: "An implant giving the ability to understand and speak Canilunzt, Yeeps!"
+  description: An implant giving the ability to understand and speak Canilunzt. Yeeps!
   components:
   - type: TranslatorImplanter
     spoken:
@@ -99,7 +99,7 @@
   id: SolCommonTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
   name: SolCommon translator implant
-  description: "An implant giving the ability to understand and speak SolCommon, raaagh!"
+  description: An implant giving the ability to understand and speak SolCommon. Raaagh!
   components:
   - type: TranslatorImplanter
     spoken:
@@ -111,7 +111,7 @@
   id: RootSpeakTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
   name: RootSpeak translator implant
-  description: "An implant giving the ability to understand and speak RootSpeak."
+  description: An implant giving the ability to understand and speak RootSpeak.
   components:
   - type: TranslatorImplanter
     spoken:
@@ -123,7 +123,7 @@
   id: MofficTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
   name: Moffic translator implant
-  description: "An implant giving the ability to understand and speak Moffic."
+  description: An implant giving the ability to understand and speak Moffic.
   components:
   - type: TranslatorImplanter
     spoken:

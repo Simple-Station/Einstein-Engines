@@ -186,7 +186,7 @@ binds:
   key: C
 - function: OpenLanguageMenu
   type: State
-  key: M
+  key: L
 - function: TextCursorSelect
   # TextCursorSelect HAS to be above ExamineEntity
   # So that LineEdit receives it correctly.

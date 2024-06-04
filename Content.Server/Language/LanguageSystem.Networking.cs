@@ -17,6 +17,7 @@ public sealed partial class LanguageSystem
 {
     [Dependency] private readonly MindSystem _mind = default!;
 
+
     public void InitializeNet()
     {
         // Refresh the client's state when its mind hops to a different entity
@@ -30,6 +31,7 @@ public sealed partial class LanguageSystem
         SubscribeLocalEvent<LanguageSpeakerComponent, LanguagesUpdateEvent>((uid, comp, _) => SendLanguageStateToClient(uid, comp));
         SubscribeNetworkEvent<RequestLanguagesMessage>((_, session) => SendLanguageStateToClient(session.SenderSession));
     }
+
 
     private void SendLanguageStateToClient(EntityUid uid, LanguageSpeakerComponent? comp = null)
     {

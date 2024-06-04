@@ -17,11 +17,13 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
     private readonly LanguageSystem _clientLanguageSystem;
     private readonly List<EntryState> _entries = new();
 
+
     public LanguageMenuWindow()
     {
         RobustXamlLoader.Load(this);
         _clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
     }
+
 
     public void UpdateState(string currentLanguage, List<string> spokenLanguages)
     {
@@ -49,26 +51,29 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
         var proto = _clientLanguageSystem.GetLanguage(language);
         var state = new EntryState { language = language };
 
-        var container = new BoxContainer();
-        container.Orientation = BoxContainer.LayoutOrientation.Vertical;
+        var container = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical }
 
         // Create and add a header with the name and the button to select the language
         {
-            var header = new BoxContainer();
-            header.Orientation = BoxContainer.LayoutOrientation.Horizontal;
+            var header = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Horizontal;
+                HorizontalExpand = true;
+                SeparationOverride = 2;
+            }
 
-            header.Orientation = BoxContainer.LayoutOrientation.Horizontal;
-            header.HorizontalExpand = true;
-            header.SeparationOverride = 2;
+            var name = new Label
+            {
+                Text = proto?.Name ?? Loc.GetString("generic-error");
+                MinWidth = 50;
+                HorizontalExpand = true;
+            }
 
-            var name = new Label();
-            name.Text = proto?.Name ?? "<error>";
-            name.MinWidth = 50;
-            name.HorizontalExpand = true;
-
-            var button = new Button();
-            button.Text = "Choose";
-            button.OnPressed += _ => OnLanguageChosen(language);
+            var button = new Button
+            {
+                Text = "Choose";
+                OnPressed += _ => OnLanguageChosen(language);
+            }
             state.button = button;
 
             header.AddChild(name);
@@ -79,19 +84,25 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
 
         // Create and add a collapsible description
         {
-            var body = new CollapsibleBody();
-            body.HorizontalExpand = true;
-            body.Margin = new Thickness(4f, 4f);
+            var body = new CollapsibleBody
+            {
+                HorizontalExpand = true;
+                Margin = new Thickness(4f, 4f);
+            }
 
-            var description = new RichTextLabel();
-            description.SetMessage(proto?.Description ?? "<error>");
-            description.HorizontalExpand = true;
+            var description = new RichTextLabel
+            {
+                SetMessage(proto?.Description ?? Log.GetString("generic-error"));
+                HorizontalExpand = true;
+            }
 
             body.AddChild(description);
 
-            var collapser = new Collapsible(Loc.GetString("language-menu-description-header"), body);
-            collapser.Orientation = BoxContainer.LayoutOrientation.Vertical;
-            collapser.HorizontalExpand = true;
+            var collapser = new Collapsible(Loc.GetString("language-menu-description-header"), body)
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical;
+                HorizontalExpand = true;
+            }
 
             container.AddChild(collapser);
         }
@@ -106,12 +117,14 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
         _entries.Add(state);
     }
 
+
     private void OnLanguageChosen(string id)
     {
         var proto = _clientLanguageSystem.GetLanguage(id);
         if (proto != null)
             _clientLanguageSystem.RequestSetLanguage(proto);
     }
+
 
     private struct EntryState
     {

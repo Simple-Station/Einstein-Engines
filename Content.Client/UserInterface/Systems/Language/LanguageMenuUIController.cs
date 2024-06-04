@@ -20,7 +20,8 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
 
     public override void Initialize()
     {
-        SubscribeNetworkEvent((LanguagesUpdatedMessage message, EntitySessionEventArgs args) => _languageWindow?.UpdateState(message.CurrentLanguage, message.Spoken));
+        SubscribeNetworkEvent((LanguagesUpdatedMessage message, EntitySessionEventArgs args) =>
+            _languageWindow?.UpdateState(message.CurrentLanguage, message.Spoken));
     }
 
     public void OnStateEntered(GameplayState state)
@@ -30,7 +31,8 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
         _languageWindow = UIManager.CreateWindow<LanguageMenuWindow>();
         LayoutContainer.SetAnchorPreset(_languageWindow, LayoutContainer.LayoutPreset.CenterTop);
 
-        CommandBinds.Builder.Bind(ContentKeyFunctions.OpenLanguageMenu, InputCmdHandler.FromDelegate(_ => ToggleWindow())).Register<LanguageMenuUIController>();
+        CommandBinds.Builder.Bind(ContentKeyFunctions.OpenLanguageMenu,
+            InputCmdHandler.FromDelegate(_ => ToggleWindow())).Register<LanguageMenuUIController>();
     }
 
     public void OnStateExited(GameplayState state)
@@ -57,16 +59,12 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     public void LoadButton()
     {
         if (LanguageButton == null)
-        {
             return;
-        }
 
         LanguageButton.OnPressed += LanguageButtonPressed;
 
         if (_languageWindow == null)
-        {
             return;
-        }
 
         _languageWindow.OnClose += DeactivateButton;
         _languageWindow.OnOpen += ActivateButton;
@@ -91,17 +89,11 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
             return;
 
         if (LanguageButton != null)
-        {
             LanguageButton.SetClickPressed(!_languageWindow.IsOpen);
-        }
 
         if (_languageWindow.IsOpen)
-        {
             CloseWindow();
-        }
         else
-        {
             _languageWindow.Open();
-        }
     }
 }

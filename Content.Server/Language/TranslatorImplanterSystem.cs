@@ -18,11 +18,14 @@ public sealed class TranslatorImplanterSystem : SharedTranslatorImplanterSystem
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
 
+
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeLocalEvent<TranslatorImplanterComponent, AfterInteractEvent>(OnImplant);
     }
+
 
     private void OnImplant(EntityUid implanter, TranslatorImplanterComponent component, AfterInteractEvent args)
     {
@@ -41,7 +44,8 @@ public sealed class TranslatorImplanterSystem : SharedTranslatorImplanterSystem
         var understood = _language.GetAllLanguages(target).understood;
         if (component.RequiredLanguages.Count > 0 && !component.RequiredLanguages.Any(lang => understood.Contains(lang)))
         {
-            RefusesPopup(implanter, target);
+            _popup.PopupEntity(Loc.GetString("translator-implanter-refuse",
+                ("implanter", implanter), ("target", target)), implanter);
             return;
         }
 
@@ -55,7 +59,8 @@ public sealed class TranslatorImplanterSystem : SharedTranslatorImplanterSystem
             intrinsic.UnderstoodLanguages.Add(lang);
 
         component.Used = true;
-        SuccessPopup(implanter, target);
+        _popup.PopupEntity(Loc.GetString("translator-implanter-success",
+            ("implanter", implanter), ("target", target)), implanter);
 
         _adminLogger.Add(LogType.Action, LogImpact.Medium,
             $"{ToPrettyString(args.User):player} used {ToPrettyString(implanter):implanter} to give {ToPrettyString(target):target} the following languages:"
@@ -63,19 +68,5 @@ public sealed class TranslatorImplanterSystem : SharedTranslatorImplanterSystem
 
         OnAppearanceChange(implanter, component);
         RaiseLocalEvent(target, new LanguagesUpdateEvent(), true);
-    }
-
-    private void RefusesPopup(EntityUid implanter, EntityUid target)
-    {
-        _popup.PopupEntity(
-            Loc.GetString("translator-implanter-refuse", ("implanter", implanter), ("target", target)),
-            implanter);
-    }
-
-    private void SuccessPopup(EntityUid implanter, EntityUid target)
-    {
-        _popup.PopupEntity(
-            Loc.GetString("translator-implanter-success", ("implanter", implanter), ("target", target)),
-            implanter);
     }
 }

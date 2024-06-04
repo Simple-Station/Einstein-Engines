@@ -22,6 +22,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     /// </summary>
     public int RandomRoundSeed { get; private set; }
 
+
     public override void Initialize()
     {
         base.Initialize();
@@ -33,9 +34,10 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         InitializeNet();
     }
 
+
     #region public api
     /// <summary>
-    ///   Obfuscate the speech of the given entity using its default language.
+    ///   Obfuscate a message using an entity's default language.
     /// </summary>
     public string ObfuscateSpeech(EntityUid source, string message)
     {
@@ -50,13 +52,9 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     {
         var builder = new StringBuilder();
         if (language.ObfuscateSyllables)
-        {
             ObfuscateSyllables(builder, message, language);
-        }
         else
-        {
             ObfuscatePhrases(builder, message, language);
-        }
 
         return builder.ToString();
     }
@@ -80,9 +78,10 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         return langs?.Contains(language, StringComparer.Ordinal) ?? false;
     }
 
-    // <summary>
-    //     Returns the current language of the given entity. Assumes Universal if not specified.
-    // </summary>
+    /// <summary>
+    ///     Returns the current language of the given entity.
+    ///     Assumes Universal if not specified.
+    /// </summary>
     public LanguagePrototype GetLanguage(EntityUid speaker, LanguageSpeakerComponent? languageComp = null)
     {
         var id = GetLanguages(speaker, languageComp)?.CurrentLanguage;
@@ -94,9 +93,6 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         return proto ?? Universal;
     }
 
-    // <summary>
-    //     Set the CurrentLanguage of the given entity.
-    // </summary>
     public void SetLanguage(EntityUid speaker, string language, LanguageSpeakerComponent? languageComp = null)
     {
         if (!CanSpeak(speaker, language) || HasComp<UniversalLanguageSpeakerComponent>(speaker))
@@ -127,9 +123,6 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         RaiseLocalEvent(comp.Owner, new LanguagesUpdateEvent(), true);
     }
 
-    /// <summary>
-    ///   Returns a pair of (spoken, understood) languages of the given entity.
-    /// </summary>
     public (List<string> spoken, List<string> understood) GetAllLanguages(EntityUid speaker)
     {
         var languages = GetLanguages(speaker);
@@ -159,9 +152,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     private void OnInitLanguageSpeaker(EntityUid uid, LanguageSpeakerComponent component, ComponentInit args)
     {
         if (string.IsNullOrEmpty(component.CurrentLanguage))
-        {
             component.CurrentLanguage = component.SpokenLanguages.FirstOrDefault(UniversalPrototype);
-        }
     }
     #endregion
 
@@ -196,9 +187,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
                 wordBeginIndex = i + 1;
             }
             else
-            {
                 hashCode = hashCode * 31 + ch;
-            }
         }
     }
 
@@ -240,11 +229,13 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     #region internal api - misc
     /// <summary>
     ///   Dynamically resolves the current language of the entity and the list of all languages it speaks.
-    ///   The returned event is reused and thus must not be held as a reference anywhere but inside the caller function.
     ///
     ///   If the entity is not a language speaker, or is a universal language speaker, then it's assumed to speak Universal,
     ///   aka all languages at once and none at the same time.
     /// </summary>
+    /// <remarks>
+    ///   The returned event is reused and thus must not be held as a reference anywhere but inside the caller function.
+    /// </remarks>
     private DetermineEntityLanguagesEvent GetLanguages(EntityUid speaker, LanguageSpeakerComponent? comp = null)
     {
         // This is a shortcut for ghosts and entities that should not speak normally (admemes)
@@ -267,12 +258,13 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     }
 
     /// <summary>
-    ///   Generates a stable pseudo-random number in the range [min, max) for the given seed. Each input seed corresponds to exactly one random number.
+    ///   Generates a stable pseudo-random number in the range (min, max) for the given seed.
+    ///   Each input seed corresponds to exactly one random number.
     /// </summary>
     private int PseudoRandomNumber(int seed, int min, int max)
     {
-        // This is not a uniform distribution, but it shouldn't matter: given there's 2^31 possible random numbers,
-        // The bias of this function should be so tiny it will never be noticed.
+        // This is not a uniform distribution, but it shouldn't matter given there's 2^31 possible random numbers,
+        //   the bias of this function should be so tiny it will never be noticed.
         seed += RandomRoundSeed;
         var random = ((seed * 1103515245) + 12345) & 0x7fffffff; // Source: http://cs.uccs.edu/~cs591/bufferOverflow/glibc-2.2.4/stdlib/random_r.c
         return random % (max - min) + min;
