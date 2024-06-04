@@ -110,7 +110,6 @@
   - type: Tag
     tags:
     - Trash
-    - SMImmune
   - type: SolutionContainerManager
     solutions:
       food:
@@ -123,6 +122,7 @@
     ignoreEmpty: true
   - type: Extractable
     grindableSolutionName: food
+  - type: SupermatterImmune
 
 - type: entity
   parent: Ash
