@@ -45,7 +45,10 @@ public sealed partial class TestPair
         client = Client;
     }
 
-    public ICommonSession? Player => Server.PlayerMan.Sessions.FirstOrDefault();
+    public ICommonSession? Player => Client.User == null
+        ? null
+        : Server.PlayerMan.SessionsDict.GetValueOrDefault(Client.User.Value);
+
     public ContentPlayerData? PlayerData => Player?.Data.ContentData();
 
     public PoolTestLogHandler ServerLogHandler { get;  private set; } = default!;
