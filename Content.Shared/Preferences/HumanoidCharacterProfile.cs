@@ -31,7 +31,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     /// Job preferences for initial spawn
     [DataField]
-    private Dictionary<string, JobPriority> _jobPriorities = new()
+    private Dictionary<ProtoId<JobPrototype>, JobPriority> _jobPriorities = new()
     {
         {
             SharedGameTicker.FallbackOverflowJob, JobPriority.High
@@ -40,11 +40,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     /// Antags we have opted in to
     [DataField]
-    private HashSet<string> _antagPreferences = new();
+    private HashSet<ProtoId<AntagPrototype>> _antagPreferences = new();
 
     /// Enabled traits
     [DataField]
-    private HashSet<string> _traitPreferences = new();
+    private HashSet<ProtoId<TraitPrototype>> _traitPreferences = new();
 
     /// <see cref="_loadoutPreferences"/>
     public HashSet<LoadoutPreference> LoadoutPreferences => _loadoutPreferences;
@@ -61,7 +61,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     /// Associated <see cref="SpeciesPrototype"/> for this profile
     [DataField]
-    public string Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
+    public ProtoId<SpeciesPrototype> Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
     // EE -- Contractors Change Start
     [DataField]
@@ -118,13 +118,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public SpawnPriorityPreference SpawnPriority { get; private set; } = SpawnPriorityPreference.None;
 
     /// <see cref="_jobPriorities"/>
-    public IReadOnlyDictionary<string, JobPriority> JobPriorities => _jobPriorities;
+    public IReadOnlyDictionary<ProtoId<JobPrototype>, JobPriority> JobPriorities => _jobPriorities;
 
     /// <see cref="_antagPreferences"/>
-    public IReadOnlySet<string> AntagPreferences => _antagPreferences;
+    public IReadOnlySet<ProtoId<AntagPrototype>> AntagPreferences => _antagPreferences;
 
     /// <see cref="_traitPreferences"/>
-    public IReadOnlySet<string> TraitPreferences => _traitPreferences;
+    public IReadOnlySet<ProtoId<TraitPrototype>> TraitPreferences => _traitPreferences;
 
     /// If we're unable to get one of our preferred jobs do we spawn as a fallback job or do we stay in lobby
     [DataField]
@@ -151,12 +151,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string? cyborgName,
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
-        Dictionary<string, JobPriority> jobPriorities,
+        Dictionary<ProtoId<JobPrototype>, JobPriority> jobPriorities,
         ClothingPreference clothing,
         BackpackPreference backpack,
         PreferenceUnavailableMode preferenceUnavailable,
-        HashSet<string> antagPreferences,
-        HashSet<string> traitPreferences,
+        HashSet<ProtoId<AntagPrototype>> antagPreferences,
+        HashSet<ProtoId<TraitPrototype>> traitPreferences,
         HashSet<LoadoutPreference> loadoutPreferences)
     {
         Name = name;
@@ -185,6 +185,20 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         _antagPreferences = antagPreferences;
         _traitPreferences = traitPreferences;
         _loadoutPreferences = loadoutPreferences;
+
+        var hasHighPrority = false;
+        foreach (var (key, value) in _jobPriorities)
+        {
+            if (value == JobPriority.Never)
+                _jobPriorities.Remove(key);
+            else if (value != JobPriority.High)
+                continue;
+
+            if (hasHighPrority)
+                _jobPriorities[key] = JobPriority.Medium;
+
+            hasHighPrority = true;
+        }
     }
 
     /// <summary>Copy constructor</summary>
@@ -209,12 +223,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.CyborgName,
             other.Appearance.Clone(),
             other.SpawnPriority,
-            new Dictionary<string, JobPriority>(other.JobPriorities),
+            new Dictionary<ProtoId<JobPrototype>, JobPriority>(other.JobPriorities),
             other.Clothing,
             other.Backpack,
             other.PreferenceUnavailable,
-            new HashSet<string>(other.AntagPreferences),
-            new HashSet<string>(other.TraitPreferences),
+            new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
+            new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
             new HashSet<LoadoutPreference>(other.LoadoutPreferences))
     {
     }
@@ -336,14 +350,47 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         new(this) { Backpack = backpack };
     public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority) =>
         new(this) { SpawnPriority = spawnPriority };
-    public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<string, JobPriority>> jobPriorities) =>
-        new(this) { _jobPriorities = new Dictionary<string, JobPriority>(jobPriorities) };
 
-    public HumanoidCharacterProfile WithJobPriority(string jobId, JobPriority priority)
+    public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<ProtoId<JobPrototype>, JobPriority>> jobPriorities)
     {
-        var dictionary = new Dictionary<string, JobPriority>(_jobPriorities);
+        var dictionary = new Dictionary<ProtoId<JobPrototype>, JobPriority>(jobPriorities);
+        var hasHighPrority = false;
+
+        foreach (var (key, value) in dictionary)
+        {
+            if (value == JobPriority.Never)
+                dictionary.Remove(key);
+            else if (value != JobPriority.High)
+                continue;
+
+            if (hasHighPrority)
+                dictionary[key] = JobPriority.Medium;
+
+            hasHighPrority = true;
+        }
+
+        return new(this)
+        {
+            _jobPriorities = dictionary
+        };
+    }
+
+    public HumanoidCharacterProfile WithJobPriority(ProtoId<JobPrototype> jobId, JobPriority priority)
+    {
+        var dictionary = new Dictionary<ProtoId<JobPrototype>, JobPriority>(_jobPriorities);
         if (priority == JobPriority.Never)
             dictionary.Remove(jobId);
+        else if (priority == JobPriority.High)
+        {
+            // There can only ever be one high priority job.
+            foreach (var (job, value) in dictionary)
+            {
+                if (value == JobPriority.High)
+                    dictionary[job] = JobPriority.Medium;
+            }
+
+            dictionary[jobId] = priority;
+        }
         else
             dictionary[jobId] = priority;
 
@@ -352,12 +399,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public HumanoidCharacterProfile WithPreferenceUnavailable(PreferenceUnavailableMode mode) =>
         new(this) { PreferenceUnavailable = mode };
-    public HumanoidCharacterProfile WithAntagPreferences(IEnumerable<string> antagPreferences) =>
-        new(this) { _antagPreferences = new HashSet<string>(antagPreferences) };
+    public HumanoidCharacterProfile WithAntagPreferences(IEnumerable<ProtoId<AntagPrototype>> antagPreferences) =>
+        new(this) { _antagPreferences = new HashSet<ProtoId<AntagPrototype>>(antagPreferences) };
 
-    public HumanoidCharacterProfile WithAntagPreference(string antagId, bool pref)
+    public HumanoidCharacterProfile WithAntagPreference(ProtoId<AntagPrototype> antagId, bool pref)
     {
-        var list = new HashSet<string>(_antagPreferences);
+        var list = new HashSet<ProtoId<AntagPrototype>>(_antagPreferences);
         if (pref)
             list.Add(antagId);
         else
@@ -366,9 +413,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return new(this) { _antagPreferences = list };
     }
 
-    public HumanoidCharacterProfile WithTraitPreference(string traitId, bool pref)
+    public HumanoidCharacterProfile WithTraitPreference(ProtoId<TraitPrototype> traitId, bool pref)
     {
-        var list = new HashSet<string>(_traitPreferences);
+        var list = new HashSet<ProtoId<TraitPrototype>>(_traitPreferences);
 
         if (pref)
             list.Add(traitId);
@@ -529,7 +576,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             _ => SpawnPriorityPreference.None // Invalid enum values.
         };
 
-        var priorities = new Dictionary<string, JobPriority>(JobPriorities
+        var priorities = new Dictionary<ProtoId<JobPrototype>, JobPriority>(JobPriorities
             .Where(p => prototypeManager.TryIndex<JobPrototype>(p.Key, out var job) && job.SetPreference && p.Value switch
             {
                 JobPriority.Never => false, // Drop never since that's assumed default.
@@ -538,6 +585,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
                 JobPriority.High => true,
                 _ => false
             }));
+
+        var hasHighPrio = false;
+        foreach (var (key, value) in priorities)
+        {
+            if (value != JobPriority.High)
+                continue;
+
+            if (hasHighPrio)
+                priorities[key] = JobPriority.Medium;
+            hasHighPrio = true;
+        }
 
         var antags = AntagPreferences
             .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)

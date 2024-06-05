@@ -38,6 +38,7 @@ public sealed partial class TestPair : IAsyncDisposable
     {
         await Server.WaitIdleAsync();
         await Client.WaitIdleAsync();
+        await ResetModifiedPreferences();
         await Server.RemoveAllDummySessions();
 
         if (TestMap != null)
@@ -83,6 +84,16 @@ public sealed partial class TestPair : IAsyncDisposable
 
         var returnTime = Watch.Elapsed;
         await _testOut.WriteLineAsync($"{nameof(CleanReturnAsync)}: PoolManager took {returnTime.TotalMilliseconds} ms to put pair {Id} back into the pool");
+    }
+
+    private async Task ResetModifiedPreferences()
+    {
+        var prefMan = Server.ResolveDependency<IServerPreferencesManager>();
+        foreach (var user in _modifiedProfiles)
+        {
+            await Server.WaitPost(() => prefMan.SetProfile(user, 0, new HumanoidCharacterProfile()).Wait());
+        }
+        _modifiedProfiles.Clear();
     }
 
     public async ValueTask CleanReturnAsync()

@@ -256,13 +256,13 @@ namespace Content.IntegrationTests.Tests
                     }
 
                     var comp = entManager.GetComponent<StationJobsComponent>(station);
-                    var jobs = new HashSet<string>(comp.SetupAvailableJobs.Keys);
+                    var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys);
 
                     // Test all availableJobs have spawnPoints
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(x => x.SpawnType == SpawnPointType.Job)
-                        .Select(x => x.Job!.ID);
+                        .Select(x => x.Job!.Value);
 
                     jobs.ExceptWith(spawnPoints);
 

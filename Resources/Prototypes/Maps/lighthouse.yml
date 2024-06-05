@@ -16,8 +16,6 @@
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
       - type: StationJobs
-        overflowJobs:
-        - Passenger
         availableJobs:
         #command
           Captain: [ 1, 1 ]
