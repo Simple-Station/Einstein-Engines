@@ -74,7 +74,7 @@
     maxCharge: 360
     startingCharge: 360
   - type: MachinePart
-    part: PowerCell
+    partType: PowerCell
     rating: 1
   - type: Tag
     tags:
@@ -115,7 +115,7 @@
     maxCharge: 720
     startingCharge: 720
   - type: MachinePart
-    part: PowerCell
+    partType: PowerCell
     rating: 2
 
 - type: entity
@@ -153,7 +153,7 @@
     maxCharge: 1080
     startingCharge: 1080
   - type: MachinePart
-    part: PowerCell
+    partType: PowerCell
     rating: 3
 
 - type: entity
@@ -191,7 +191,7 @@
     maxCharge: 1800
     startingCharge: 1800
   - type: MachinePart
-    part: PowerCell
+    partType: PowerCell
     rating: 4
 
 - type: entity
