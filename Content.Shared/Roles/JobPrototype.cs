@@ -81,8 +81,8 @@ namespace Content.Shared.Roles
         public bool AlwaysUseSpawner { get; } = false;
 
         /// <summary>
-        ///     Whether this job is a head.
-        ///     The job system will try to pick heads before other jobs on the same priority level.
+        ///     The "weight" or importance of this job. If this number is large, the job system will assign this job
+        ///     before assigning other jobs.
         /// </summary>
         [DataField("weight")]
         public int Weight { get; private set; }
@@ -117,7 +117,7 @@ namespace Content.Shared.Roles
         /// <summary>
         ///   A list of requirements that when satisfied, add or replace from the base starting gear.
         /// </summary>
-        [DataField("conditionalStartingGear")]
+        [DataField]
         public List<ConditionalStartingGear>? ConditionalStartingGears { get; private set; }
 
         /// <summary>
@@ -184,7 +184,6 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField(required: true)]
         public ProtoId<StartingGearPrototype> Id { get; private set; }
-
     }
 
     /// <summary>

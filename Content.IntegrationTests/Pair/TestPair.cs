@@ -27,7 +27,8 @@ public sealed partial class TestPair
     public readonly List<string> TestHistory = new();
     public PoolSettings Settings = default!;
     public TestMapData? TestMap;
-    
+    private List<NetUserId> _modifiedProfiles = new();
+
     private int _nextServerSeed;
     private int _nextClientSeed;
 
@@ -45,9 +46,7 @@ public sealed partial class TestPair
         client = Client;
     }
 
-    public ICommonSession? Player => Client.User == null
-        ? null
-        : Server.PlayerMan.SessionsDict.GetValueOrDefault(Client.User.Value);
+    public ICommonSession? Player => Server.PlayerMan.SessionsDict.GetValueOrDefault(Client.User!.Value);
 
     public ContentPlayerData? PlayerData => Player?.Data.ContentData();
 
