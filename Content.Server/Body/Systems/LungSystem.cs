@@ -1,25 +1,24 @@
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
-using Content.Shared.Chemistry.EntitySystems;
+using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server.Power.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Clothing;
-using Content.Shared.Inventory.Events;
 using Content.Shared.Inventory;
-using Content.Server.Power.EntitySystems;
+using Content.Shared.Inventory.Events;
 using Robust.Server.Containers;
 
 namespace Content.Server.Body.Systems;
 
 public sealed class LungSystem : EntitySystem
 {
-    [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
+    [Dependency] private readonly AtmosphereSystem _atmos = default!;
     [Dependency] private readonly InternalsSystem _internals = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; // Goobstation
-
-
 
     public static string LungSolutionName = "Lung";
 
@@ -56,11 +55,9 @@ public sealed class LungSystem : EntitySystem
 
     private void OnComponentInit(Entity<LungComponent> entity, ref ComponentInit args)
     {
-        if (_solutionContainerSystem.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out var solution))
-        {
-            solution.MaxVolume = entity.Comp.MaxVolume;
-            solution.CanReact = entity.Comp.CanReact;
-        }
+        var solution = _solutionContainerSystem.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        solution.MaxVolume = 100.0f;
+        solution.CanReact = false; // No dexalin lungs
     }
 
     // Goobstation - Update component state on component toggle
@@ -79,7 +76,6 @@ public sealed class LungSystem : EntitySystem
         ent.Comp.ConnectedInternalsEntity = parent;
         _internals.ConnectBreathTool((parent.Value, internals), ent);
     }
-
 
     private void OnMaskToggled(Entity<BreathToolComponent> ent, ref ItemMaskToggledEvent args)
     {
