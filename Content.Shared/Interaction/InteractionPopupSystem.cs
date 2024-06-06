@@ -115,8 +115,8 @@ public sealed class InteractionPopupSystem : EntitySystem
             if (component.InteractSuccessSpawn != null)
                 Spawn(component.InteractSuccessSpawn, _transform.GetMapCoordinates(uid));
 
-            var ev = new InteractionSuccessEvent(user);
-            RaiseLocalEvent(target, ref ev);
+            var ev2 = new InteractionSuccessEvent(user);
+            RaiseLocalEvent(target, ref ev2);
         }
         else
         {
