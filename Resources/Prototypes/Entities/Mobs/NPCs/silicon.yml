@@ -77,8 +77,8 @@
     - SiliconMob
   - type: MobState
     allowedStates:
-      - Alive
-      - Dead
+    - Alive
+    - Dead
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -116,6 +116,8 @@
     proto: robot
   - type: ZombieImmune
   - type: StepTriggerImmune
+  - type: NoSlip
+  - type: Insulated
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -159,7 +161,7 @@
           radius: 0.35
         hard: false
         layer:
-          - SlipLayer
+        - SlipLayer
       fix1:
         shape:
           !type:PhysShapeCircle
@@ -245,12 +247,12 @@
     solution: absorbed
     generated:
       reagents:
-        - ReagentId: Water
-          Quantity: 10
+      - ReagentId: Water
+        Quantity: 10
   - type: SolutionPurge
     solution: absorbed
     preserve:
-      - Water
+    - Water
     quantity: 10
   - type: SolutionContainerManager
     solutions:
@@ -259,7 +261,6 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 3
-  - type: NoSlip
   - type: HTN
     rootTask:
       task: CleanbotCompound
@@ -306,7 +307,6 @@
   - type: Construction
     graph: MediBot
     node: bot
-  - type: NoSlip
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-mechanical
   - type: Anchorable
