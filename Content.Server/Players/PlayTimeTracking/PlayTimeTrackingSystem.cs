@@ -236,26 +236,21 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
-            if (job.Requirements != null)
-            {
-                if (_characterRequirements.CheckRequirementsValid(
-                        job.Requirements,
-                        job,
-                        (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter,
-                        playTimes,
-                        isWhitelisted,
-                        job,
-                        EntityManager,
-                        _prototypes,
-                        _cfg,
-                        out _))
-                    continue;
-
-                goto NoRole;
-            }
+            if (job.Requirements == null
+                || _characterRequirements.CheckRequirementsValid(
+                job.Requirements,
+                job,
+                (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter,
+                playTimes,
+                isWhitelisted,
+                job,
+                EntityManager,
+                _prototypes,
+                _cfg,
+                out _))
+                continue;
 
             roles.Add(job.ID);
-            NoRole:;
         }
 
         return roles;
@@ -282,10 +277,8 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
             if (!_prototypes.TryIndex(job, out var jobber) ||
                 jobber.Requirements == null ||
-                jobber.Requirements.Count == 0)
-                continue;
-
-            if (!_characterRequirements.CheckRequirementsValid(
+                jobber.Requirements.Count == 0 ||
+                _characterRequirements.CheckRequirementsValid(
                 jobber.Requirements,
                 jobber,
                 (HumanoidCharacterProfile) _prefs.GetPreferences(userId).SelectedCharacter,
@@ -296,10 +289,10 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                 _prototypes,
                 _cfg,
                 out _))
-            {
-                jobs.RemoveSwap(i);
-                i--;
-            }
+                continue;
+
+            jobs.RemoveSwap(i);
+            i--;
         }
     }
 

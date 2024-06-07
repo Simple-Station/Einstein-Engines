@@ -45,7 +45,7 @@ namespace Content.Shared.Roles
         [ViewVariables(VVAccess.ReadOnly)]
         public string? LocalizedDescription => Description is null ? null : Loc.GetString(Description);
 
-        [DataField("requirements")]
+        [DataField, Access(typeof(SharedRoleSystem), Other = AccessPermissions.None)]
         public List<CharacterRequirement>? Requirements;
 
         [DataField("joinNotifyCrew")]
