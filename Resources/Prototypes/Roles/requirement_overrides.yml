@@ -1,0 +1,16 @@
+- type: jobRequirementOverride
+  id: Reduced
+  jobs:
+    Captain:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Engineering
+      time: 3600 # 1 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Medical
+      time: 3600 # 1 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      time: 3600 # 1 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Command
+      time: 3600 # 1 hour
