@@ -50,7 +50,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
 
         while (query.MoveNext(out var vendingUid, out _, out var xform))
         {
-            var ownerStation = _stationSystem.GetOwningStation(vendingUid);
+            var ownerStation = _station.GetOwningStation(vendingUid);
 
             if (ownerStation == null
                 || ownerStation != stations[0])
@@ -79,7 +79,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
 
                 if (k == MathF.MaxMagnitude(component.NumberToReplace, 1)
                     && component.DoAnnouncement)
-                    _chatSystem.DispatchStationAnnouncement(stations[0], Loc.GetString("station-event-rampant-intelligence-announcement"), playDefaultSound: true,
+                    _chat.DispatchStationAnnouncement(stations[0], Loc.GetString("station-event-rampant-intelligence-announcement"), playDefaultSound: true,
                         colorOverride: Color.Red, sender: "Central Command");
 
                 k--;
@@ -109,7 +109,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
 
         foreach (var name in mimicComponents.Except(vendorComponents))
         {
-            var newComponent = _componentFactory.GetComponent(name);
+            var newComponent = _componentFactory.GetComponent(name.name);
             EntityManager.AddComponent(uid, newComponent);
         }
 
