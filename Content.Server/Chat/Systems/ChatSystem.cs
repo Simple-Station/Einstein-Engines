@@ -72,7 +72,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
-    public const float DefaultObfuscationFactor = 0.2f; // Einstein Engines - percentage of symbols in a whispered message that can be seen even by "far" listeners
+    public const float DefaultObfuscationFactor = 0.2f; // Percentage of symbols in a whispered message that can be seen even by "far" listeners
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
