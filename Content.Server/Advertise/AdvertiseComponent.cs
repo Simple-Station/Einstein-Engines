@@ -9,17 +9,15 @@ namespace Content.Server.Advertise
         /// <summary>
         ///     Minimum time in seconds to wait before saying a new ad, in seconds. Has to be larger than or equal to 1.
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("minWait")]
-        public int MinimumWait { get; set; } = 8 * 60;
+        public int MinimumWait = 8 * 60;
 
         /// <summary>
         ///     Maximum time in seconds to wait before saying a new ad, in seconds. Has to be larger than or equal
         ///     to <see cref="MinimumWait"/>
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("maxWait")]
-        public int MaximumWait { get; set; } = 10 * 60;
+        public int MaximumWait = 10 * 60;
 
         /// <summary>
         ///     The identifier for the advertisements pack prototype.

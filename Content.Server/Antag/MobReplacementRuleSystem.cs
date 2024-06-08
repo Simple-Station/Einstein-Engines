@@ -28,9 +28,9 @@ namespace Content.Server.Antag;
 public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRuleComponent>
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly StationSystem _stationSystem = default!;
+    [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
@@ -38,6 +38,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
     [Dependency] private readonly NPCSystem _npc = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly AdvertiseSystem _advertise = default!;
+
 
     protected override void Started(EntityUid uid, MobReplacementRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -53,7 +54,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
 
             if (ownerStation == null
                 || ownerStation != stations[0])
-                return;
+                continue;
 
             // Make sure that we aren't running this on something that is already a mimic
             if (HasComp<CombatModeComponent>(vendingUid))
@@ -61,14 +62,15 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
 
             spawns.Add((vendingUid, xform.Coordinates));
         }
+
         if (spawns == null)
         {
-            //WTF:THE STATION DOESN'T EXIST, WE MUST BE IN A CONTENT.INTEGRATION TEST! QUICK, PUT A MIMIC AT 0,0!!!
+            //WTF THE STATION DOESN'T EXIST! WE MUST BE IN A TEST! QUICK, PUT A MIMIC AT 0,0!!!
             Spawn(component.Proto, new EntityCoordinates(uid, new Vector2(0, 0)));
         }
         else
         {
-            //This is intentionally not clamped. If a server host wants to replace every vending machine in the entire station with a mimic, who am I to stop them?
+            // This is intentionally not clamped. If a server host wants to replace every vending machine in the entire station with a mimic, who am I to stop them?
             var k = MathF.MaxMagnitude(component.NumberToReplace, 1);
             while (k > 0 && spawns != null)
             {
@@ -86,14 +88,12 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
     }
 
     /// <summary>
-    /// It's like Build a Bear, but MURDER
+    /// 	It's like Build a Bear, but MURDER
     /// </summary>
     /// <param name="uid"></param>
     public void BuildAMimicWorkshop(EntityUid uid, MobReplacementRuleComponent component)
     {
-        if (!TryComp<MetaDataComponent>(uid, out var metaData))
-            return;
-
+        var metaData = MetaData(uid);
         var vendorPrototype = metaData.EntityPrototype;
         var mimicProto = _prototype.Index<EntityPrototype>(component.Proto);
 
@@ -107,11 +107,12 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
             .Select(name => (name, _componentFactory.GetRegistration(name).Type))
             .ToList() ?? new List<(string name, Type type)>();
 
-        foreach (var (name, _) in mimicComponents.Except(vendorComponents))
+        foreach (var name in mimicComponents.Except(vendorComponents))
         {
             var newComponent = _componentFactory.GetComponent(name);
             EntityManager.AddComponent(uid, newComponent);
         }
+
         var xform = Transform(uid);
         if (xform.Anchored)
             _transform.Unanchor(uid, xform);
@@ -120,12 +121,10 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
 
         if (TryComp<AdvertiseComponent>(uid, out var vendor)
             && component.VendorModify)
-        {
             SetupMimicVendor(uid, component, vendor);
-        }
     }
     /// <summary>
-    /// This handles getting the entity ready to be a hostile NPC
+    /// 	This handles getting the entity ready to be a hostile NPC
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="component"></param>
@@ -153,8 +152,10 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
         htn.Blackboard.SetValue(NPCBlackboard.NavSmash, component.MimicSmashGlass);
         _npc.WakeNPC(uid, htn);
     }
+
     /// <summary>
     /// Handling specific interactions with vending machines
+
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="mimicComponent"></param>
