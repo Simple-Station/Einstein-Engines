@@ -4,8 +4,8 @@ using System.Text;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
+using Content.Server.Examine;
 using Content.Server.GameTicking;
-using Content.Server.Players.RateLimiting;
 using Content.Server.Language;
 using Content.Server.Speech.Components;
 using Content.Server.Speech.EntitySystems;
@@ -16,11 +16,11 @@ using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Database;
+using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Content.Shared.Language;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
-using Content.Shared.Language.Systems;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Content.Shared.Players.RateLimiting;
@@ -38,9 +38,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
-using Content.Server.Shuttles.Components;
-using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Dynamics.Joints;
 
 namespace Content.Server.Chat.Systems;
 
@@ -73,6 +70,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly TelepathicChatSystem _telepath = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -529,13 +527,14 @@ public sealed partial class ChatSystem : SharedChatSystem
             // Result is the intermediate message derived from the perceived one via obfuscation
             // Wrapped message is the result wrapped in an "x says y" string
             string result, wrappedMessage;
+            //If listener is too far and has no line of sight, they can't identify the whisperer's identity
             if (data.Range <= WhisperClearRange)
             {
                 // Scenario 1: the listener can clearly understand the message
                 result = perceivedMessage;
                 wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, result, language);
             }
-            else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange, Shared.Physics.CollisionGroup.Opaque))
+            else if (_examineSystem.InRangeUnOccluded(source, listener, WhisperMuffledRange))
             {
                 // Scenario 2: if the listener is too far, they only hear fragments of the message
                 result = ObfuscateMessageReadability(perceivedMessage);
