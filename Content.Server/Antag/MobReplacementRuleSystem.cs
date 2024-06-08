@@ -155,7 +155,6 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
 
     /// <summary>
     /// Handling specific interactions with vending machines
-
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="mimicComponent"></param>
