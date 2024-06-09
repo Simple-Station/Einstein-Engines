@@ -78,9 +78,9 @@ namespace Content.Server.Administration.Systems
             Subs.CVar(_config, CCVars.PanicBunkerDisableWithAdmins, OnPanicBunkerDisableWithAdminsChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerEnableWithoutAdmins, OnPanicBunkerEnableWithoutAdminsChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerCountDeadminnedAdmins, OnPanicBunkerCountDeadminnedAdminsChanged, true);
-            Subs.CVar(_config, CCVars.PanicBunkerShowReason, OnShowReasonChanged, true);
+            Subs.CVar(_config, CCVars.PanicBunkerShowReason, OnPanicBunkerShowReasonChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerMinAccountAge, OnPanicBunkerMinAccountAgeChanged, true);
-            Subs.CVar(_config, CCVars.PanicBunkerMinOverallHours, OnPanicBunkerMinOverallHoursChanged, true);
+            Subs.CVar(_config, CCVars.PanicBunkerMinOverallMinutes, OnPanicBunkerMinOverallMinutesChanged, true);
 
             /*
              * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
@@ -90,8 +90,7 @@ namespace Content.Server.Administration.Systems
             Subs.CVar(_config, CCVars.BabyJailEnabled, OnBabyJailChanged, true);
             Subs.CVar(_config, CCVars.BabyJailShowReason, OnBabyJailShowReasonChanged, true);
             Subs.CVar(_config, CCVars.BabyJailMaxAccountAge, OnBabyJailMaxAccountAgeChanged, true);
-            Subs.CVar(_config, CCVars.BabyJailMaxOverallHours, OnBabyJailMaxOverallHoursChanged, true);
-            Subs.CVar(_config, CCVars.PanicBunkerMinOverallHours, OnPanicBunkerMinOverallHoursChanged, true);
+            Subs.CVar(_config, CCVars.BabyJailMaxOverallMinutes, OnBabyJailMaxOverallMinutesChanged, true);
 
             SubscribeLocalEvent<IdentityChangedEvent>(OnIdentityChanged);
             SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
@@ -164,7 +163,6 @@ namespace Content.Server.Administration.Systems
 
             UpdatePlayerList(session);
         }
-
 
         private void OnAdminPermsChanged(AdminPermsChangedEventArgs obj)
         {
@@ -300,7 +298,7 @@ namespace Content.Server.Administration.Systems
             UpdatePanicBunker();
         }
 
-        private void OnShowReasonChanged(bool enabled)
+        private void OnPanicBunkerShowReasonChanged(bool enabled)
         {
             PanicBunker.ShowReason = enabled;
             SendPanicBunkerStatusAll();
@@ -312,27 +310,27 @@ namespace Content.Server.Administration.Systems
             SendBabyJailStatusAll();
         }
 
-        private void OnPanicBunkerMinAccountAgeChanged(int hours)
+        private void OnPanicBunkerMinAccountAgeChanged(int minutes)
         {
-            PanicBunker.MinAccountAgeHours = hours;
+            PanicBunker.MinAccountAgeMinutes = minutes;
             SendPanicBunkerStatusAll();
         }
 
-        private void OnBabyJailMaxAccountAgeChanged(int hours)
+        private void OnBabyJailMaxAccountAgeChanged(int minutes)
         {
-            BabyJail.MaxOverallHours = hours;
+            BabyJail.MaxAccountAgeMinutes = minutes;
             SendBabyJailStatusAll();
         }
 
-        private void OnPanicBunkerMinOverallHoursChanged(int hours)
+        private void OnPanicBunkerMinOverallMinutesChanged(int minutes)
         {
-            PanicBunker.MinOverallHours = hours;
+            PanicBunker.MinOverallMinutes = minutes;
             SendPanicBunkerStatusAll();
         }
 
-        private void OnBabyJailMaxOverallHoursChanged(int hours)
+        private void OnBabyJailMaxOverallMinutesChanged(int minutes)
         {
-            BabyJail.MaxAccountAgeHours = hours;
+            BabyJail.MaxOverallMinutes = minutes;
             SendBabyJailStatusAll();
         }
 

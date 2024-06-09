@@ -242,9 +242,9 @@ namespace Content.Server.Connection
                             ("reason", Loc.GetString("panic-bunker-account-reason-account", ("hours", minHoursAge)))), null);
                 }
 
-                var minOverallHours = _cfg.GetCVar(CCVars.PanicBunkerMinOverallHours);
+                var minOverallMinutes = _cfg.GetCVar(CCVars.PanicBunkerMinOverallMinutes);
                 var overallTime = ( await _db.GetPlayTimes(e.UserId)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall);
-                var haveMinOverallTime = overallTime != null && overallTime.TimeSpent.TotalHours > minOverallHours;
+                var haveMinOverallTime = overallTime != null && overallTime.TimeSpent.TotalMinutes > minOverallMinutes;
 
                 // Use the custom reason if it exists & they don't have the minimum time
                 if (customReason != string.Empty && !haveMinOverallTime && !bypassAllowed)
@@ -256,7 +256,7 @@ namespace Content.Server.Connection
                 {
                     return (ConnectionDenyReason.Panic,
                         Loc.GetString("panic-bunker-account-denied-reason",
-                            ("reason", Loc.GetString("panic-bunker-account-reason-overall", ("hours", minOverallHours)))), null);
+                            ("reason", Loc.GetString("panic-bunker-account-reason-overall", ("minutes", minOverallMinutes)))), null);
                 }
 
                 if (!validAccountAge || !haveMinOverallTime && !bypassAllowed)
@@ -348,7 +348,7 @@ namespace Content.Server.Connection
             var showReason = _cfg.GetCVar(CCVars.BabyJailShowReason);
             var reason = _cfg.GetCVar(CCVars.BabyJailCustomReason);
             var maxAccountAgeHours = _cfg.GetCVar(CCVars.BabyJailMaxAccountAge);
-            var maxPlaytimeHours = _cfg.GetCVar(CCVars.BabyJailMaxOverallHours);
+            var maxPlaytimeHours = _cfg.GetCVar(CCVars.BabyJailMaxOverallMinutes);
 
             // Wait some time to lookup data
             var record = await _db.GetPlayerRecordByUserId(userId);
