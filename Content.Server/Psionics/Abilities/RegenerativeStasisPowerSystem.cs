@@ -65,7 +65,6 @@ namespace Content.Server.Psionics.Abilities
                 solution.AddReagent("Epinephrine", FixedPoint2.New(MathF.Min(2.5f * psionic.Dampening + psionic.Amplification, 15f)));
                 solution.AddReagent("Nocturine", 10f + (1 * psionic.Amplification + psionic.Dampening));
                 _bloodstreamSystem.TryAddToChemicals(args.Target, solution, stream);
-                EnsureComp<SleepingComponent>(args.Target);
 
                 _psionics.LogPowerUsed(uid, "regenerative stasis",
                 (int) Math.Round(4 * psionic.Amplification - psionic.Dampening),
