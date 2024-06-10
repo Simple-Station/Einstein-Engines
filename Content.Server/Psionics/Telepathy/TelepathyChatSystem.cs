@@ -2,6 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
+using Content.Server.Popups;
 using Content.Shared.Psionics.Abilities;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Chat;
@@ -30,6 +31,7 @@ namespace Content.Server.Psionics.Telepathy
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly ChatSystem _chatSystem = default!;
+        [Dependency] private readonly PopupSystem _popupSystem = default!;
         private IEnumerable<INetChannel> GetPsionicChatClients()
         {
             return Filter.Empty()
@@ -73,6 +75,12 @@ namespace Content.Server.Psionics.Telepathy
         {
             if (!IsEligibleForTelepathy(source))
                 return;
+
+            if (TryComp<PsionicComponent>(source, out var psionic) && psionic.TelepathicMute)
+            {
+                _popupSystem.PopupEntity(Loc.GetString("telepathic-mute-message"), source, source);
+                return;
+            }
 
             var clients = GetPsionicChatClients();
             var admins = GetAdminClients();

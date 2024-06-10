@@ -13,6 +13,8 @@ telegnosis-feedback = {CAPITALIZE($entity)}'s soul travels across bridges compos
 metempsychotic-machine-feedback = The sea of fate flows through this machine
 regeneration-feedback = {CAPITALIZE($entity)} possesses an overwhelming will to live
 regenerative-stasis-feedback = {CAPITALIZE($entity)} possesses an overwhelming will such that others may live
+mime-feedback = A servant of the Silent Dreamer, {CAPITALIZE($entity)} bears His power in exchange for a vow of silence
+mime-broken-feedback = TREASONOUS VERMIN! {CAPITALIZE($entity)} HAS BETRAYED THEIR VOW! THE SILENT DREAMER DEMANDS THEIR HEAD!
 
 # Entity Feedback Messages
 ifrit-feedback = A spirit of Gehenna, bound by the will of a powerful psychic
@@ -40,3 +42,6 @@ anomaly-shadow-feedback = At the end of time, when all suns have set forever, th
 focused-metapsionic-pulse-begin = The air around {CAPITALIZE($entity)} begins to shimmer faintly
 psionic-regeneration-self-revive = {CAPITALIZE($entity)} begins to visibly regenerate
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
+
+# Misc Psionic Messages
+telepathic-mute-message = You strain, but are unable to send your thoughts to the Noosphere

@@ -47,5 +47,17 @@ namespace Content.Server.Abilities.Mime
         /// </summary>
         [DataField("vowCooldown")]
         public TimeSpan VowCooldown = TimeSpan.FromMinutes(5);
+
+        /// <summary
+        /// Psionic Feedback for if a mime with their vow intact is scanned by a Mantis
+        /// </summary>
+        [DataField("mimeFeedback")]
+        public string MimeFeedback = "mime-feedback";
+
+        /// <summary
+        /// Psionic Feedback for if a mime with their vow intact is scanned by a Mantis
+        /// </summary>
+        [DataField("mimeBrokenFeedback")]
+        public string MimeBrokenFeedback = "mime-broken-feedback";
     }
 }
