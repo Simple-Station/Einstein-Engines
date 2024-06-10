@@ -241,6 +241,17 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (string.IsNullOrEmpty(message))
             return;
 
+        // Check is the message is Sign Language, If yes handle it in a special function for it.
+        if (desiredType == InGameICChatType.Speak || desiredType == InGameICChatType.Whisper)
+        {
+            var language = languageOverride ?? _language.GetLanguage(source);
+            if (language.SignLanguage)
+            {
+                SendEntityEmote(source, message, range, nameOverride, ignoreActionBlocker, signLanguage: true);
+                return;
+            }
+        }
+
         // This message may have a radio prefix, and should then be whispered to the resolved radio channel
         if (checkRadioPrefix)
         {
@@ -570,7 +581,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool hideLog = false,
         bool checkEmote = true,
         bool ignoreActionBlocker = false,
-        NetUserId? author = null
+        NetUserId? author = null,
+        bool? signLanguage = false
         )
     {
         if (!_actionBlocker.CanEmote(source) && !ignoreActionBlocker)
@@ -581,14 +593,28 @@ public sealed partial class ChatSystem : SharedChatSystem
         string name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
 
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
-        var wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
+        var wrappedMessage = "";
+        var obfuscatedWrappedMessage = "";
+        if (signLanguage == true)
+        {
+            wrappedMessage = Loc.GetString("chat-manager-entity-signlanguage-message",
+                ("entityName", name),
+                ("message", FormattedMessage.EscapeText(action)));
+
+            obfuscatedWrappedMessage = Loc.GetString("chat-manager-entity-signlanguage-obfuscated",
+                ("entityName", name));
+        }
+        else
+        {
+            wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
             ("entityName", name),
             ("entity", ent),
             ("message", FormattedMessage.RemoveMarkup(action)));
+        }
 
         if (checkEmote)
             TryEmoteChatInput(source, action);
-        SendInVoiceRange(ChatChannel.Emotes, name, action, wrappedMessage, obfuscated: "", obfuscatedWrappedMessage: "", source, range, author);
+        SendInVoiceRange(ChatChannel.Emotes, name, action, wrappedMessage, obfuscated: "", obfuscatedWrappedMessage, source, range, author, null, true);
         if (!hideLog)
             if (name != Name(source))
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Emote from {ToPrettyString(source):user} as {name}: {action}");
@@ -702,7 +728,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <summary>
     ///     Sends a chat message to the given players in range of the source entity.
     /// </summary>
-    private void SendInVoiceRange(ChatChannel channel, string name, string message, string wrappedMessage, string obfuscated, string obfuscatedWrappedMessage, EntityUid source, ChatTransmitRange range, NetUserId? author = null, LanguagePrototype? languageOverride = null)
+    private void SendInVoiceRange(ChatChannel channel, string name, string message, string wrappedMessage, string obfuscated, string obfuscatedWrappedMessage, EntityUid source, ChatTransmitRange range, NetUserId? author = null, LanguagePrototype? languageOverride = null, bool? signLanguage = false)
     {
         var language = languageOverride ?? _language.GetLanguage(source);
         foreach (var (session, data) in GetRecipients(source, VoiceRange))
@@ -715,9 +741,17 @@ public sealed partial class ChatSystem : SharedChatSystem
                 continue;
             EntityUid listener = session.AttachedEntity.Value;
 
+            // Quickly Checking if the Emote is a real one or Sign Language.
+            var notSignLanguage = false;
+            if (channel == ChatChannel.Emotes)
+            {
+                notSignLanguage = true;
+                if (signLanguage == true)
+                    notSignLanguage = false;
+            }
 
             // If the channel does not support languages, or the entity can understand the message, send the original message, otherwise send the obfuscated version
-            if (channel == ChatChannel.LOOC || channel == ChatChannel.Emotes || _language.CanUnderstand(listener, language))
+            if (channel == ChatChannel.LOOC || notSignLanguage || _language.CanUnderstand(listener, language))
             {
                 _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.Channel, author: author);
             }
