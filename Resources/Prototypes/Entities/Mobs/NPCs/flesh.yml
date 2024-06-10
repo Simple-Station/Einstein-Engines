@@ -54,6 +54,11 @@
         Slash: 6
   - type: ReplacementAccent
     accent: genericAggressive
+  - type: Psionic
+    removable: false
+    amplification: 1
+    psychicFeedback:
+    - "flesh-golem-feedback"
 
 - type: entity
   parent: BaseMobFlesh

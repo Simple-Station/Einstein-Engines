@@ -63,6 +63,7 @@ namespace Content.Server.Psionics.Abilities
                 var solution = new Solution();
                 solution.AddReagent("PsionicRegenerationEssence", FixedPoint2.New(MathF.Min(2.5f * psionic.Amplification + psionic.Dampening, 15f)));
                 solution.AddReagent("Epinephrine", FixedPoint2.New(MathF.Min(2.5f * psionic.Dampening + psionic.Amplification, 15f)));
+                solution.AddReagent("Nocturine", 10f + (1 * psionic.Amplification + psionic.Dampening));
                 _bloodstreamSystem.TryAddToChemicals(args.Target, solution, stream);
                 EnsureComp<SleepingComponent>(args.Target);
 

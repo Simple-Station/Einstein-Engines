@@ -24,7 +24,7 @@ namespace Content.Shared.Psionics.Abilities
 
         [DataField("dampening")]
         public float Dampening = 0.1f;
-        public bool Telepath = false;
+        public bool Telepath = true;
         public bool InnatePsiChecked = false;
     }
 }

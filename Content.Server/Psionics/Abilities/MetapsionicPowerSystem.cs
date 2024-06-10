@@ -142,9 +142,6 @@ namespace Content.Server.Psionics.Abilities
 
         private void OnDoAfter(EntityUid uid, MetapsionicPowerComponent component, FocusedMetapsionicDoAfterEvent args)
         {
-            if (!TryComp<PsionicComponent>(args.Target, out var psychic))
-                return;
-
             component.DoAfter = null;
 
             if (args.Target == null) return;
@@ -173,11 +170,13 @@ namespace Content.Server.Psionics.Abilities
                 return;
             }
 
-            foreach (var psychicFeedback in psychic.PsychicFeedback)
+            if (TryComp<PsionicComponent>(args.Target, out var psychic))
             {
-                _popups.PopupEntity(Loc.GetString(psychicFeedback, ("entity", args.Target)), uid, uid, PopupType.LargeCaution);
+                foreach (var psychicFeedback in psychic.PsychicFeedback)
+                {
+                    _popups.PopupEntity(Loc.GetString(psychicFeedback, ("entity", args.Target)), uid, uid, PopupType.LargeCaution);
+                }
             }
-
         }
     }
 }

@@ -4,7 +4,12 @@
   name: glimmer prober
   description: Probes the noösphere to generate research points. Might be worth turning off if glimmer is a problem.
   components:
+  - type: PotentialPsionic
   - type: Psionic
+    removable: false
+    amplification: 10
+    psychicFeedback:
+    - "prober-feedback"
   - type: GlimmerSource
   - type: Construction
     graph: GlimmerDevices
@@ -90,7 +95,12 @@
   name: glimmer drain
   description: Uses electricity to try and sort out the noösphere, reducing its level of entropy.
   components:
+  - type: PotentialPsionic
   - type: Psionic
+    removable: false
+    dampening: 10
+    psychicFeedback:
+    - "drain-feedback"
   - type: GlimmerSource
     addToGlimmer: false
   - type: Construction

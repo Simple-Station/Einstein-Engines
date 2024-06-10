@@ -3,7 +3,7 @@ using Content.Shared.Stealth.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 
-namespace Content.Server.Psionics
+namespace Content.Shared.Psionics
 {
     /// <summary>
     /// Allows an entity to become psionically invisible when touching certain entities.

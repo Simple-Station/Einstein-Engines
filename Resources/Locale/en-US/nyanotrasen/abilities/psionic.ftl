@@ -26,13 +26,10 @@ accept-psionics-window-prompt-text-part = You rolled a psionic power!
                                          Do you still wish to be psionic?
 
 action-name-psionic-invisibility = Psionic Invisibility
-action-description-psionic-invisibility = Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
-
-action-name-psionic-invisibility = Psionic Invisibility
-action-description-psionic-invisibility = Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
+action-description-psionic-invisibility = Telepathically remove yourself from the vision of anyone not psionically insulated.
 
 action-name-psionic-invisibility-off = Turn Off Psionic Invisibility
-action-description-psionic-invisibility-off = Return to visibility, and receive a stun.
+action-description-psionic-invisibility-off = End your invisibility early.
 
 action-name-mind-swap = Mind Swap
 action-description-mind-swap = Swap minds with the target. Either can change back after 20 seconds.

@@ -1,6 +1,4 @@
-using Content.Server.DoAfter;
 using Content.Shared.Actions;
-using Content.Shared.Psionics.Abilities;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Stunnable;
@@ -13,9 +11,9 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Throwing;
 using Robust.Shared.Timing;
-using Content.Shared.Psionics;
+using System.Xml;
 
-namespace Content.Server.Psionics.Abilities
+namespace Content.Shared.Psionics.Abilities
 {
     public sealed class PsionicInvisibilityPowerSystem : EntitySystem
     {
@@ -25,7 +23,7 @@ namespace Content.Server.Psionics.Abilities
         [Dependency] private readonly SharedStealthSystem _stealth = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
-        [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
 
         public override void Initialize()
         {
@@ -80,26 +78,24 @@ namespace Content.Server.Psionics.Abilities
 
             var ev = new PsionicInvisibilityTimerEvent(_gameTiming.CurTime);
             var doAfterArgs = new DoAfterArgs(EntityManager, uid, component.UseTimer, ev, uid) { Hidden = true };
-            _doAfterSystem.TryStartDoAfter(doAfterArgs);
+            if (_doAfterSystem.TryStartDoAfter(doAfterArgs, out var doAfterId))
+            {
+                ToggleInvisibility(args.Performer);
+                if (TryComp<PsionicInvisibilityUsedComponent>(uid, out var invis))
+                {
+                    _actions.AddAction(uid, ref invis.PsionicInvisibilityUsedActionEntity, invis.PsionicInvisibilityUsedActionId);
+                    invis.DoAfter = doAfterId;
+                }
 
-            ToggleInvisibility(args.Performer);
-            var action = Spawn(PsionicInvisibilityUsedComponent.PsionicInvisibilityUsedActionPrototype);
-            _actions.AddAction(uid, action, action);
-            _actions.TryGetActionData(action, out var actionData);
-            if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(action);
-
-            _psionics.LogPowerUsed(uid, "psionic invisibility",
-                (int) MathF.Round(8 * psionic.Amplification - 2 * psionic.Dampening),
-                (int) MathF.Round(12 * psionic.Amplification - 2 * psionic.Dampening));
-            args.Handled = true;
+                _psionics.LogPowerUsed(uid, "psionic invisibility",
+                    (int) MathF.Round(8 * psionic.Amplification - 2 * psionic.Dampening),
+                    (int) MathF.Round(12 * psionic.Amplification - 2 * psionic.Dampening));
+                args.Handled = true;
+            }
         }
 
         private void OnPowerOff(RemovePsionicInvisibilityOffPowerActionEvent args)
         {
-            if (!HasComp<PsionicInvisibilityUsedComponent>(args.Performer))
-                return;
-
             ToggleInvisibility(args.Performer);
             args.Handled = true;
         }
@@ -118,6 +114,7 @@ namespace Content.Server.Psionics.Abilities
             if (Terminating(uid))
                 return;
 
+            _doAfterSystem.Cancel(component.DoAfter);
             RemComp<PsionicallyInvisibleComponent>(uid);
             RemComp<StealthComponent>(uid);
             _audio.PlayPvs("/Audio/Effects/toss.ogg", uid);
@@ -163,7 +160,8 @@ namespace Content.Server.Psionics.Abilities
 
         public void OnDoAfter(EntityUid uid, PsionicInvisibilityPowerComponent component, PsionicInvisibilityTimerEvent args)
         {
-            RemComp<PsionicInvisibilityUsedComponent>(uid);
+            if (!args.Cancelled)
+                RemComp<PsionicInvisibilityUsedComponent>(uid);
         }
 
         private void OnInsulated(EntityUid uid, PsionicInvisibilityUsedComponent component, PsionicInsulationEvent args)
