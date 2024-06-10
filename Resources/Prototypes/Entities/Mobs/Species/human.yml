@@ -16,6 +16,12 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - SolCommon
+    understands:
+    - GalacticCommon
 
 - type: entity
   parent: BaseSpeciesDummy
