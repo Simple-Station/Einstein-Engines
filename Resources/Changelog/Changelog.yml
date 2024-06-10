@@ -4142,3 +4142,9 @@ Entries:
       message: Floors Looks Updated/Resprited.
   id: 6118
   time: '2024-06-03T19:23:51.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: All species can now bring their own cultures and languages
+  id: 6119
+  time: '2024-06-10T20:48:48.0000000+00:00'
