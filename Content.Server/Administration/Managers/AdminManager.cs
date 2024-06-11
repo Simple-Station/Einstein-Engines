@@ -315,7 +315,7 @@ namespace Content.Server.Administration.Managers
 
             _admins.Add(session, reg);
 
-            if (!session.ContentData()!.ExplicitlyDeadminned)
+            if (!session.ContentData()?.ExplicitlyDeadminned ?? false)
             {
                 reg.Data.Active = true;
 
