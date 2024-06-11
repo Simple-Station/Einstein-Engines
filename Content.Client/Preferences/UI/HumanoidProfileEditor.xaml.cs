@@ -1471,8 +1471,7 @@ namespace Content.Client.Preferences.UI
             // Reset trait points so you don't get -14 points or something for no reason
             var points = _configurationManager.GetCVar(CCVars.GameTraitsDefaultPoints);
             _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label", ("points", points));
-            //TODO Make this two centered, flipped, and connected bars that max at the highest +/- points you can get
-            _traitPointsBar.MaxValue = 20;
+            _traitPointsBar.MaxValue = points;
             _traitPointsBar.Value = points;
 
             // Clear current listings
@@ -1673,6 +1672,9 @@ namespace Content.Client.Preferences.UI
 
             void AddSelector(TraitPreferenceSelector selector, int points, string id)
             {
+                if (points > 0)
+                    _traitPointsBar.MaxValue += points;
+
                 _traitPreferences.Add(selector);
                 selector.PreferenceChanged += preference =>
                 {
