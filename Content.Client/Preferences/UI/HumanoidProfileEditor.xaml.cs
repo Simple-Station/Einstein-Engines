@@ -1613,7 +1613,7 @@ namespace Content.Client.Preferences.UI
 
 
             // Fill categories
-            foreach (var trait in traits.OrderBy(t => t.Points).ThenBy(t => Loc.GetString($"trait-{t.ID}-name")))
+            foreach (var trait in traits.OrderBy(t => -t.Points).ThenBy(t => Loc.GetString($"trait-{t.ID}-name")))
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1646,7 +1646,7 @@ namespace Content.Client.Preferences.UI
             }
 
             // Add the selected unusable traits to the point counter
-            foreach (var trait in otherTraits.OrderBy(t => t.Points).ThenBy(t => Loc.GetString($"trait-{t.ID}-name")))
+            foreach (var trait in otherTraits.OrderBy(t => -t.Points).ThenBy(t => Loc.GetString($"trait-{t.ID}-name")))
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
