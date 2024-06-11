@@ -1444,12 +1444,21 @@ namespace Content.Client.Preferences.UI
 
         private void UpdateTraitPreferences()
         {
+            var points = _configurationManager.GetCVar(CCVars.GameTraitsDefaultPoints);
+            _traitPointsBar.Value = points;
+
             foreach (var preferenceSelector in _traitPreferences)
             {
                 var traitId = preferenceSelector.Trait.ID;
                 var preference = Profile?.TraitPreferences.Contains(traitId) ?? false;
 
                 preferenceSelector.Preference = preference;
+
+                if (preference == true)
+                {
+                    points += preferenceSelector.Trait.Points;
+                    _traitPointsBar.Value = points;
+                }
             }
         }
 
@@ -1633,24 +1642,24 @@ namespace Content.Client.Preferences.UI
                 selector.PreferenceChanged += preference =>
                 {
                     // Make sure they have enough trait points
-                    // if (preference)
-                    // {
-                    //     var temp = _traitPointsBar.Value - trait.Points;
-                    //     if (temp < 0)
-                    //         preference = false;
-                    //     else
-                    //     {
-                    //         _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
-                    //             ("points", temp), ("max", _traitPointsBar.MaxValue));
-                    //         _traitPointsBar.Value = temp;
-                    //     }
-                    // }
-                    // else
-                    // {
-                    //     _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
-                    //         ("points", _traitPointsBar.Value), ("max", _traitPointsBar.MaxValue));
-                    //     _traitPointsBar.Value += trait.Points;
-                    // }
+                    if (preference)
+                    {
+                        var temp = _traitPointsBar.Value + trait.Points;
+                        if (temp < 0)
+                            preference = false;
+                        else
+                        {
+                            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
+                                ("points", temp), ("max", _traitPointsBar.MaxValue));
+                            _traitPointsBar.Value = temp;
+                        }
+                    }
+                    else
+                    {
+                        _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
+                            ("points", _traitPointsBar.Value), ("max", _traitPointsBar.MaxValue));
+                        _traitPointsBar.Value += trait.Points;
+                    }
 
                     // Update Preferences
                     Profile = Profile?.WithTraitPreference(trait.ID, preference);
@@ -1670,24 +1679,24 @@ namespace Content.Client.Preferences.UI
                 selector.PreferenceChanged += preference =>
                 {
                     // Make sure they have enough trait points
-                    // if (preference)
-                    // {
-                    //     var temp = _traitPointsBar.Value - trait.Cost;
-                    //     if (temp < 0)
-                    //         preference = false;
-                    //     else
-                    //     {
-                    //         _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
-                    //             ("points", temp), ("max", _traitPointsBar.MaxValue));
-                    //         _traitPointsBar.Value = temp;
-                    //     }
-                    // }
-                    // else
-                    // {
-                    //     _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
-                    //         ("points", _traitPointsBar.Value), ("max", _traitPointsBar.MaxValue));
-                    //     _traitPointsBar.Value += trait.Cost;
-                    // }
+                    if (preference)
+                    {
+                        var temp = _traitPointsBar.Value + trait.Points;
+                        if (temp < 0)
+                            preference = false;
+                        else
+                        {
+                            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
+                                ("points", temp), ("max", _traitPointsBar.MaxValue));
+                            _traitPointsBar.Value = temp;
+                        }
+                    }
+                    else
+                    {
+                        _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
+                            ("points", _traitPointsBar.Value), ("max", _traitPointsBar.MaxValue));
+                        _traitPointsBar.Value += trait.Points;
+                    }
 
                     // Update Preferences
                     Profile = Profile?.WithTraitPreference(trait.ID, preference);
