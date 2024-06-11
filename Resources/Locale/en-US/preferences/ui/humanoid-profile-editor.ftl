@@ -44,12 +44,23 @@ humanoid-profile-editor-department-jobs-label = {$departmentName} jobs
 humanoid-profile-editor-antags-tab = Antags
 humanoid-profile-editor-antag-preference-yes-button = Yes
 humanoid-profile-editor-antag-preference-no-button = No
+
 humanoid-profile-editor-traits-tab = Traits
+humanoid-profile-editor-traits-no-traits = No traits found
+humanoid-profile-editor-traits-points-label = You have {$points} points
+humanoid-profile-editor-traits-show-unusable-button = Show Unusable
+humanoid-profile-editor-traits-show-unusable-button-tooltip =
+    When enabled, traits that your current character setup cannot use will be shown highlighted in red.
+    You will still not be able to use the invalid traits unless your character setup changes to fit the requirements.
+    This is most likely useful only if there's a bug hiding traits you actually can use or if you want to see other species' traits or something.
+
 humanoid-profile-editor-job-priority-high-button = High
 humanoid-profile-editor-job-priority-medium-button = Medium
 humanoid-profile-editor-job-priority-low-button = Low
 humanoid-profile-editor-job-priority-never-button = Never
+
 humanoid-profile-editor-naming-rules-warning = Warning: Offensive or LRP IC names and descriptions will lead to admin intervention on this server. Read our \[Rules\] for more.
+
 humanoid-profile-editor-loadouts-tab = Loadout
 humanoid-profile-editor-loadouts-no-loadouts = No loadouts found
 humanoid-profile-editor-loadouts-points-label = You have {$points}/{$max} points
@@ -58,5 +69,6 @@ humanoid-profile-editor-loadouts-show-unusable-button-tooltip =
     When enabled, loadouts that your current character setup cannot use will be shown highlighted in red.
     You will still not be able to use the invalid loadouts unless your character setup changes to fit the requirements.
     This may be useful if you like switching between multiple jobs and don't want to have to reselect your loadout every time.
+
 humanoid-profile-editor-markings-tab = Markings
 humanoid-profile-editor-flavortext-tab = Description
