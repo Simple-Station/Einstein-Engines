@@ -86,6 +86,7 @@ namespace Content.Client.Preferences.UI
         private BoxContainer _jobList => CJobList;
         private BoxContainer _antagList => CAntagList;
         private Label _traitPointsLabel => TraitPointsLabel;
+        private int _traitCount;
         private ProgressBar _traitPointsBar => TraitPointsBar;
         private Button _traitsShowUnusableButton => TraitsShowUnusableButton;
         private BoxContainer _traitsTab => CTraitsTab;
@@ -1445,6 +1446,7 @@ namespace Content.Client.Preferences.UI
         private void UpdateTraitPreferences()
         {
             var points = _configurationManager.GetCVar(CCVars.GameTraitsDefaultPoints);
+            _traitCount = 0;
 
             foreach (var preferenceSelector in _traitPreferences)
             {
@@ -1457,10 +1459,12 @@ namespace Content.Client.Preferences.UI
                     continue;
 
                 points += preferenceSelector.Trait.Points;
+                _traitCount += 1;
             }
 
             _traitPointsBar.Value = points;
-            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label", ("points", points));
+            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-header",
+                ("points", points), ("traits", _traitCount));
         }
 
         // Yeah this is mostly just copied from UpdateLoadouts
@@ -1470,7 +1474,8 @@ namespace Content.Client.Preferences.UI
         {
             // Reset trait points so you don't get -14 points or something for no reason
             var points = _configurationManager.GetCVar(CCVars.GameTraitsDefaultPoints);
-            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label", ("points", points));
+            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-header",
+                ("points", points), ("traits", 0));
             _traitPointsBar.MaxValue = points;
             _traitPointsBar.Value = points;
 
