@@ -1455,6 +1455,7 @@ namespace Content.Client.Preferences.UI
 
         // Yeah this is mostly just copied from UpdateLoadouts
         // This whole file is bad though and a lot of loadout code came from traits originally
+        //TODO Make this file not hell
         private void UpdateTraits(bool showUnusable)
         {
             // Reset trait points so you don't get -14 points or something for no reason
@@ -1524,6 +1525,25 @@ namespace Content.Client.Preferences.UI
                 Orientation = LayoutOrientation.Vertical,
                 VerticalExpand = true,
                 Name = "Uncategorized_0",
+                // I hate ScrollContainers
+                Children =
+                {
+                    new ScrollContainer
+                    {
+                        HScrollEnabled = false,
+                        HorizontalExpand = true,
+                        VerticalExpand = true,
+                        Children =
+                        {
+                            new BoxContainer
+                            {
+                                Orientation = LayoutOrientation.Vertical,
+                                HorizontalExpand = true,
+                                VerticalExpand = true,
+                            },
+                        },
+                    },
+                },
             };
 
             _traitsTabs.AddChild(uncategorized);
@@ -1595,8 +1615,11 @@ namespace Content.Client.Preferences.UI
                     if (string.IsNullOrEmpty(child.Name))
                         continue;
 
-                    if (child.Name.Split("_")[0] == trait.Category)
-                        match = (BoxContainer) child.Children.First().Children.First();
+                    // This is fucked up
+                    if (child.Name.Split("_")[0] == trait.Category
+                        && child.Children.FirstOrDefault()?.Children.FirstOrDefault(g =>
+                            g.GetType() == typeof(BoxContainer)) is {} g != default)
+                        match = (BoxContainer) g;
                 }
 
                 // If there is no category put it in Uncategorized
@@ -1777,6 +1800,25 @@ namespace Content.Client.Preferences.UI
                 Orientation = LayoutOrientation.Vertical,
                 VerticalExpand = true,
                 Name = "Uncategorized_0",
+                // I hate ScrollContainers
+                Children =
+                {
+                    new ScrollContainer
+                    {
+                        HScrollEnabled = false,
+                        HorizontalExpand = true,
+                        VerticalExpand = true,
+                        Children =
+                        {
+                            new BoxContainer
+                            {
+                                Orientation = LayoutOrientation.Vertical,
+                                HorizontalExpand = true,
+                                VerticalExpand = true,
+                            },
+                        },
+                    },
+                },
             };
 
             _loadoutsTabs.AddChild(uncategorized);
@@ -1793,8 +1835,11 @@ namespace Content.Client.Preferences.UI
                     if (string.IsNullOrEmpty(child.Name))
                         continue;
 
-                    if (child.Name.Split("_")[0] == category.ID)
-                        match = (BoxContainer) child;
+                    // This is fucked up
+                    if (child.Name.Split("_")[0] == category.ID
+                        && child.Children.FirstOrDefault()?.Children.FirstOrDefault(g =>
+                            g.GetType() == typeof(BoxContainer)) is {} g != default)
+                        match = (BoxContainer) g;
                 }
 
                 // If there is a category do nothing
