@@ -7,6 +7,7 @@
 - type: trait
   id: Accentless
   category: C
+  points: 1
   components:
   - type: Accentless
     removes:

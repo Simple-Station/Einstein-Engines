@@ -8,6 +8,7 @@
 - type: trait
   id: SocialAnxiety
   category: A
+  points: 1
   components:
     - type: StutteringAccent
       matchRandomProb: 0.1

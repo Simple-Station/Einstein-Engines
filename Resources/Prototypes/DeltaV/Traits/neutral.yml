@@ -1,5 +1,6 @@
 - type: trait
   id: ScottishAccent
   category: Uncategorized
+  points: 5
   components:
     - type: ScottishAccent
