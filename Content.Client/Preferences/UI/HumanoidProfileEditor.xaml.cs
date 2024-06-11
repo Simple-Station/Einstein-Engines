@@ -1685,6 +1685,8 @@ namespace Content.Client.Preferences.UI
                 {
                     // Make sure they have enough trait points
                     preference = preference ? CheckPoints(points, preference) : CheckPoints(-points, preference);
+                    // Don't allow having too many traits
+                    preference = preference && _traitCount + 1 <= _configurationManager.GetCVar(CCVars.GameTraitsMax);
 
                     // Update Preferences
                     Profile = Profile?.WithTraitPreference(id, preference);
