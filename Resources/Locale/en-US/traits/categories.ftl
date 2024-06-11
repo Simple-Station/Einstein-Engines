@@ -1,5 +1,5 @@
 # Alphabetically ordered
-trait-category-A = A
-trait-category-B = B
-trait-category-C = C
+trait-category-A = AAAAA
+trait-category-B = BBBBB
+trait-category-C = CCCCC
 trait-category-Uncategorized = Uncategorized
