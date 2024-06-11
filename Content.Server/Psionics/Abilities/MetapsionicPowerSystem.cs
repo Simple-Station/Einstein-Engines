@@ -2,16 +2,12 @@ using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
 using Content.Shared.Psionics.Abilities;
 using Content.Shared.DoAfter;
-using Content.Shared.Examine;
-using static Content.Shared.Examine.ExamineSystemShared;
 using Content.Shared.Popups;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
-using Robust.Shared.Player;
 using Content.Server.DoAfter;
 using Content.Shared.Psionics.Events;
-using Content.Server.Psionics;
 
 namespace Content.Server.Psionics.Abilities
 {

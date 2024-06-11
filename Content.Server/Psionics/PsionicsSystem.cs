@@ -134,12 +134,10 @@ namespace Content.Server.Psionics
                 return;
 
             var chance = component.Chance;
-            var warn = true;
             if (TryComp<PsionicBonusChanceComponent>(uid, out var bonus))
             {
                 chance *= bonus.Multiplier;
                 chance += bonus.FlatBonus;
-                warn = bonus.Warn;
             }
 
             if (applyGlimmer)

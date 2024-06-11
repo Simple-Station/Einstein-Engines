@@ -5,7 +5,6 @@ using Content.Server.Weapons.Ranged.Systems;
 using Robust.Server.GameObjects;
 using Content.Shared.Actions.Events;
 using Content.Server.Explosion.Components;
-using Content.Shared.Mobs.Components;
 using Robust.Shared.Map;
 
 namespace Content.Server.Psionics.Abilities
@@ -16,8 +15,6 @@ namespace Content.Server.Psionics.Abilities
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly GunSystem _gunSystem = default!;
-        [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-        [Dependency] private readonly PhysicsSystem _physics = default!;
         [Dependency] private readonly IMapManager _mapManager = default!;
         public override void Initialize()
         {

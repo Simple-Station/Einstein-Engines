@@ -2,11 +2,7 @@ using Content.Server.Body.Systems;
 using Content.Server.Body.Components;
 using Content.Shared.Actions;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Bed.Sleep;
 using Content.Shared.Psionics.Abilities;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
-using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
 using Content.Shared.FixedPoint;
 

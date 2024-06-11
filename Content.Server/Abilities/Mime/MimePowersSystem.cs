@@ -1,5 +1,4 @@
 using Content.Server.Popups;
-using Content.Server.Speech.Muting;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
 using Content.Shared.Alert;
