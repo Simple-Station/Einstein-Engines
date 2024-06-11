@@ -1613,7 +1613,7 @@ namespace Content.Client.Preferences.UI
 
 
             // Fill categories
-            foreach (var trait in traits.OrderBy(t => Loc.GetString($"trait-{t.ID}-name")))
+            foreach (var trait in traits.OrderBy(t => t.Points).ThenBy(t => Loc.GetString($"trait-{t.ID}-name")))
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1646,7 +1646,7 @@ namespace Content.Client.Preferences.UI
             }
 
             // Add the selected unusable traits to the point counter
-            foreach (var trait in otherTraits.OrderBy(t => Loc.GetString($"trait-{t.ID}-name")))
+            foreach (var trait in otherTraits.OrderBy(t => t.Points).ThenBy(t => Loc.GetString($"trait-{t.ID}-name")))
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
@@ -1864,7 +1864,7 @@ namespace Content.Client.Preferences.UI
 
 
             // Fill categories
-            foreach (var loadout in loadouts.OrderBy(l => Loc.GetString($"loadout-{l.ID}-name")))
+            foreach (var loadout in loadouts.OrderBy(l => l.Cost).ThenBy(l => Loc.GetString($"loadout-{l.ID}-name")))
             {
                 var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1894,7 +1894,7 @@ namespace Content.Client.Preferences.UI
             }
 
             // Add the selected unusable loadouts to the point counter
-            foreach (var loadout in otherLoadouts.OrderBy(l => Loc.GetString($"loadout-{l.ID}-name")))
+            foreach (var loadout in otherLoadouts.OrderBy(l => l.Cost).ThenBy(l => Loc.GetString($"loadout-{l.ID}-name")))
             {
                 var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
@@ -1999,10 +1999,28 @@ namespace Content.Client.Preferences.UI
                 // Create a checkbox to get the loadout
                 _button = new Button
                 {
-                    Text = $"[{trait.Points}] {Loc.GetString($"trait-{trait.ID}-name")}",
                     VerticalAlignment = VAlignment.Center,
                     ToggleMode = true,
-                    StyleClasses = { "OpenLeft" },
+                    StyleClasses = { StyleBase.ButtonOpenLeft },
+                    Children =
+                    {
+                        new BoxContainer
+                        {
+                            Children =
+                            {
+                                new Label
+                                {
+                                    Text = trait.Points.ToString(),
+                                    StyleClasses = { StyleBase.StyleClassLabelHeading },
+                                    MinWidth = 32,
+                                    MaxWidth = 32,
+                                    ClipText = true,
+                                    Margin = new Thickness(0, 0, 8, 0),
+                                },
+                                new Label { Text = Loc.GetString($"trait-{trait.ID}-name") },
+                            },
+                        },
+                    },
                 };
                 _button.OnToggled += OnButtonToggled;
                 _button.AddStyleClass(style);
@@ -2084,12 +2102,32 @@ namespace Content.Client.Preferences.UI
                 // Create a checkbox to get the loadout
                 _button = new Button
                 {
-                    Text = $"[{loadout.Cost}] {(Loc.GetString($"loadout-name-{loadout.ID}") == $"loadout-name-{loadout.ID}"
-                        ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName
-                        : Loc.GetString($"loadout-name-{loadout.ID}"))}",
-                    VerticalAlignment = VAlignment.Center,
                     ToggleMode = true,
-                    StyleClasses = { "OpenLeft" },
+                    StyleClasses = { StyleBase.ButtonOpenLeft },
+                    Children =
+                    {
+                        new BoxContainer
+                        {
+                            Children =
+                            {
+                                new Label
+                                {
+                                    Text = loadout.Cost.ToString(),
+                                    StyleClasses = { StyleBase.StyleClassLabelHeading },
+                                    MinWidth = 32,
+                                    MaxWidth = 32,
+                                    ClipText = true,
+                                    Margin = new Thickness(0, 0, 8, 0),
+                                },
+                                new Label
+                                {
+                                    Text = Loc.GetString($"loadout-name-{loadout.ID}") == $"loadout-name-{loadout.ID}"
+                                        ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName
+                                        : Loc.GetString($"loadout-name-{loadout.ID}"),
+                                },
+                            },
+                        },
+                    },
                 };
                 _button.OnToggled += OnButtonToggled;
                 _button.AddStyleClass(style);
