@@ -1445,7 +1445,6 @@ namespace Content.Client.Preferences.UI
         private void UpdateTraitPreferences()
         {
             var points = _configurationManager.GetCVar(CCVars.GameTraitsDefaultPoints);
-            _traitPointsBar.Value = points;
 
             foreach (var preferenceSelector in _traitPreferences)
             {
@@ -1454,12 +1453,14 @@ namespace Content.Client.Preferences.UI
 
                 preferenceSelector.Preference = preference;
 
-                if (preference == true)
-                {
-                    points += preferenceSelector.Trait.Points;
-                    _traitPointsBar.Value = points;
-                }
+                if (!preference)
+                    continue;
+
+                points += preferenceSelector.Trait.Points;
             }
+
+            _traitPointsBar.Value = points;
+            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label", ("points", points));
         }
 
         // Yeah this is mostly just copied from UpdateLoadouts
@@ -1558,6 +1559,7 @@ namespace Content.Client.Preferences.UI
             _traitsTabs.AddChild(uncategorized);
             _traitsTabs.SetTabTitle(0, Loc.GetString("trait-category-Uncategorized"));
 
+
             // Make categories
             var currentCategory = 1; // 1 because we already made 0 as Uncategorized, I am not not zero-indexing :)
             foreach (var category in categories.OrderBy(c => Loc.GetString($"trait-category-{c.ID}")))
@@ -1609,6 +1611,7 @@ namespace Content.Client.Preferences.UI
                 currentCategory++;
             }
 
+
             // Fill categories
             foreach (var trait in traits.OrderBy(t => Loc.GetString($"trait-{t.ID}-name")))
             {
@@ -1638,34 +1641,8 @@ namespace Content.Client.Preferences.UI
                 else
                     match.AddChild(selector);
 
-                _traitPreferences.Add(selector);
-                selector.PreferenceChanged += preference =>
-                {
-                    // Make sure they have enough trait points
-                    if (preference)
-                    {
-                        var temp = _traitPointsBar.Value + trait.Points;
-                        if (temp < 0)
-                            preference = false;
-                        else
-                        {
-                            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
-                                ("points", temp), ("max", _traitPointsBar.MaxValue));
-                            _traitPointsBar.Value = temp;
-                        }
-                    }
-                    else
-                    {
-                        _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
-                            ("points", _traitPointsBar.Value), ("max", _traitPointsBar.MaxValue));
-                        _traitPointsBar.Value += trait.Points;
-                    }
 
-                    // Update Preferences
-                    Profile = Profile?.WithTraitPreference(trait.ID, preference);
-                    IsDirty = true;
-                    UpdateTraitPreferences();
-                };
+                AddSelector(selector, trait.Points, trait.ID);
             }
 
             // Add the selected unusable traits to the point counter
@@ -1675,34 +1652,8 @@ namespace Content.Client.Preferences.UI
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
                     _entMan, _prototypeManager, _configurationManager, _characterRequirementsSystem);
 
-                _traitPreferences.Add(selector);
-                selector.PreferenceChanged += preference =>
-                {
-                    // Make sure they have enough trait points
-                    if (preference)
-                    {
-                        var temp = _traitPointsBar.Value + trait.Points;
-                        if (temp < 0)
-                            preference = false;
-                        else
-                        {
-                            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
-                                ("points", temp), ("max", _traitPointsBar.MaxValue));
-                            _traitPointsBar.Value = temp;
-                        }
-                    }
-                    else
-                    {
-                        _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label",
-                            ("points", _traitPointsBar.Value), ("max", _traitPointsBar.MaxValue));
-                        _traitPointsBar.Value += trait.Points;
-                    }
 
-                    // Update Preferences
-                    Profile = Profile?.WithTraitPreference(trait.ID, preference);
-                    IsDirty = true;
-                    UpdateTraitPreferences();
-                };
+                AddSelector(selector, trait.Points, trait.ID);
             }
 
 
@@ -1717,6 +1668,29 @@ namespace Content.Client.Preferences.UI
             }
 
             UpdateTraitPreferences();
+            return;
+
+
+            void AddSelector(TraitPreferenceSelector selector, int points, string id)
+            {
+                _traitPreferences.Add(selector);
+                selector.PreferenceChanged += preference =>
+                {
+                    // Make sure they have enough trait points
+                    preference = preference ? CheckPoints(points, preference) : CheckPoints(-points, preference);
+
+                    // Update Preferences
+                    Profile = Profile?.WithTraitPreference(id, preference);
+                    IsDirty = true;
+                    UpdateTraitPreferences();
+                };
+            }
+
+            bool CheckPoints(int points, bool preference)
+            {
+                var temp = _traitPointsBar.Value + points;
+                return preference ? !(temp < 0) : temp < 0;
+            }
         }
 
         private void UpdateLoadoutPreferences()
@@ -1833,6 +1807,7 @@ namespace Content.Client.Preferences.UI
             _loadoutsTabs.AddChild(uncategorized);
             _loadoutsTabs.SetTabTitle(0, Loc.GetString("loadout-category-Uncategorized"));
 
+
             // Make categories
             var currentCategory = 1; // 1 because we already made 0 as Uncategorized, I am not not zero-indexing :)
             foreach (var category in categories.OrderBy(c => Loc.GetString($"loadout-category-{c.ID}")))
@@ -1887,6 +1862,7 @@ namespace Content.Client.Preferences.UI
                 currentCategory++;
             }
 
+
             // Fill categories
             foreach (var loadout in loadouts.OrderBy(l => Loc.GetString($"loadout-{l.ID}-name")))
             {
@@ -1913,34 +1889,8 @@ namespace Content.Client.Preferences.UI
                 else
                     match.AddChild(selector);
 
-                _loadoutPreferences.Add(selector);
-                selector.PreferenceChanged += preference =>
-                {
-                    // Make sure they have enough loadout points
-                    if (preference)
-                    {
-                        var temp = _loadoutPointsBar.Value - loadout.Cost;
-                        if (temp < 0)
-                            preference = false;
-                        else
-                        {
-                            _loadoutPointsLabel.Text = Loc.GetString("humanoid-profile-editor-loadouts-points-label",
-                                ("points", temp), ("max", _loadoutPointsBar.MaxValue));
-                            _loadoutPointsBar.Value = temp;
-                        }
-                    }
-                    else
-                    {
-                        _loadoutPointsLabel.Text = Loc.GetString("humanoid-profile-editor-loadouts-points-label",
-                            ("points", _loadoutPointsBar.Value), ("max", _loadoutPointsBar.MaxValue));
-                        _loadoutPointsBar.Value += loadout.Cost;
-                    }
 
-                    // Update Preferences
-                    Profile = Profile?.WithLoadoutPreference(loadout.ID, preference);
-                    IsDirty = true;
-                    UpdateLoadoutPreferences();
-                };
+                AddSelector(selector, loadout.Cost, loadout.ID);
             }
 
             // Add the selected unusable loadouts to the point counter
@@ -1950,34 +1900,8 @@ namespace Content.Client.Preferences.UI
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
                     _entMan, _prototypeManager, _configurationManager, _characterRequirementsSystem);
 
-                _loadoutPreferences.Add(selector);
-                selector.PreferenceChanged += preference =>
-                {
-                    // Make sure they have enough loadout points
-                    if (preference)
-                    {
-                        var temp = _loadoutPointsBar.Value - loadout.Cost;
-                        if (temp < 0)
-                            preference = false;
-                        else
-                        {
-                            _loadoutPointsLabel.Text = Loc.GetString("humanoid-profile-editor-loadouts-points-label",
-                                ("points", temp), ("max", _loadoutPointsBar.MaxValue));
-                            _loadoutPointsBar.Value = temp;
-                        }
-                    }
-                    else
-                    {
-                        _loadoutPointsLabel.Text = Loc.GetString("humanoid-profile-editor-loadouts-points-label",
-                            ("points", _loadoutPointsBar.Value), ("max", _loadoutPointsBar.MaxValue));
-                        _loadoutPointsBar.Value += loadout.Cost;
-                    }
 
-                    // Update Preferences
-                    Profile = Profile?.WithLoadoutPreference(loadout.ID, preference);
-                    IsDirty = true;
-                    UpdateLoadoutPreferences();
-                };
+                AddSelector(selector, loadout.Cost, loadout.ID);
             }
 
 
@@ -1992,6 +1916,29 @@ namespace Content.Client.Preferences.UI
             }
 
             UpdateLoadoutPreferences();
+            return;
+
+
+            void AddSelector(LoadoutPreferenceSelector selector, int points, string id)
+            {
+                _loadoutPreferences.Add(selector);
+                selector.PreferenceChanged += preference =>
+                {
+                    // Make sure they have enough loadout points
+                    preference = preference ? CheckPoints(points, preference) : CheckPoints(-points, preference);
+
+                    // Update Preferences
+                    Profile = Profile?.WithLoadoutPreference(id, preference);
+                    IsDirty = true;
+                    UpdateLoadoutPreferences();
+                };
+            }
+
+            bool CheckPoints(int points, bool preference)
+            {
+                var temp = _loadoutPointsBar.Value + points;
+                return preference ? !(temp < 0) : temp < 0;
+            }
         }
 
 
