@@ -58,6 +58,7 @@
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-species-label'}" />
                                     <Control HorizontalExpand="True"/>
+                                    <TextureButton Name="SpeciesInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"></TextureButton>
                                     <OptionButton Name="CSpeciesButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
                                 <!-- Age -->
@@ -83,6 +84,12 @@
                                     <Label Text="{Loc 'humanoid-profile-editor-clothing'}" />
                                     <Control HorizontalExpand="True"/>
                                     <Button Name="ShowClothes" Pressed="True" ToggleMode="True" Text="{Loc 'humanoid-profile-editor-clothing-show'}" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- Show loadouts -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-loadouts'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <Button Name="ShowLoadouts" Pressed="True" ToggleMode="True" Text="{Loc 'Show'}" HorizontalAlignment="Right" />
                                 </BoxContainer>
                                 <!-- Clothing -->
                                 <BoxContainer HorizontalExpand="True">
@@ -140,6 +147,15 @@
                     <ScrollContainer VerticalExpand="True">
                         <BoxContainer Name="CTraitsList" Orientation="Vertical" />
                     </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Name="CLoadoutsTab" Orientation="Vertical" Margin="10">
+                    <!-- Loadouts -->
+                    <Label Name="LoadoutPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
+                    <ProgressBar Name="LoadoutPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
+
+                    <Button Name="CHideShowUnusableButton" Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}" ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}" ToggleMode="True" Margin="0 0 0 5" />
+
+                    <TabContainer Name="CLoadoutsTabs" VerticalExpand="True" />
                 </BoxContainer>
                 <BoxContainer Name="CMarkingsTab" Orientation="Vertical" Margin="10">
                     <!-- Markings -->

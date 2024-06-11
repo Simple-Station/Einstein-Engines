@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckMedalBase
   id: ClothingNeckBlackStar
   name: black star medal
   description: Given to crewmates that make the greatest of sacrifices in the performance of their duties.

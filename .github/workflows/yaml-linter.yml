@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: YAML Linter
-    if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'DeltaV-Bot'
+    if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.6.0
@@ -26,7 +26,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v3.2.0
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 8.0.100
       - name: Install dependencies
         run: dotnet restore
       - name: Build
