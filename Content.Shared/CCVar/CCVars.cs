@@ -1089,7 +1089,7 @@ namespace Content.Shared.CCVar
         ///     Useful to prevent clipping through objects.
         /// </summary>
         public static readonly CVarDef<float> SpaceWindMaxVelocity =
-            CVarDef.Create("atmos.space_wind_max_velocity", 25f, CVar.SERVERONLY);
+            CVarDef.Create("atmos.space_wind_max_velocity", 15f, CVar.SERVERONLY);
 
         /// <summary>
         ///     The maximum force that may be applied to an object by pushing (i.e. not throwing) atmospheric pressure differences.
@@ -1107,7 +1107,7 @@ namespace Content.Shared.CCVar
         ///     And maybe do your part to fix that? :)
         /// </remarks>
         public static readonly CVarDef<float> SpaceWindMinimumCalculatedMass =
-            CVarDef.Create("atmos.space_wind_minimum_calculated_mass", 6f, CVar.SERVERONLY);
+            CVarDef.Create("atmos.space_wind_minimum_calculated_mass", 10f, CVar.SERVERONLY);
 
         /// <summary>
         /// Calculated as 1/Mass, where Mass is the physics.Mass of the desired threshold.
