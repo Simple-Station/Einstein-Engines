@@ -24,8 +24,8 @@
   - type: Sprite
     layers:
     - state: book_space_law
-  - type: HyperlinkBook
-    url: https://wiki.nyanotrasen.moe/view/Space_Law
+#  - type: HyperlinkBook
+#    url: https://wiki.nyanotrasen.moe/view/Space_Law
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -36,26 +36,26 @@
   - type: Sprite
     layers:
     - state: book_space_law
-  - type: HyperlinkBook
-    url: https://supernannyfanon.fandom.com/wiki/Category:Discipline_Techniques
+#  - type: HyperlinkBook
+#    url: https://supernannyfanon.fandom.com/wiki/Category:Discipline_Techniques
 
-- type: entity
-  parent: BaseHyperlinkBook
-  id: HyperlinkBookGlimmer
-  suffix: GuidebookBook
-  name: A Layman's Guide to the Mind
-  description: A guide on psionics.
-  components:
-  - type: Sprite
-    sprite: SimpleStation14/Objects/Misc/books.rsi
-    layers:
-    - state: book_psionics
-  # - type: HyperlinkBook
-  #   url: https://wiki.nyanotrasen.moe/view/Glimmer
-  - type: GuidebookBook
-    guides:
-    - Psionics
-    - AltarsGolemancy
+#- type: entity
+#  parent: BaseHyperlinkBook
+#  id: HyperlinkBookGlimmer
+#  suffix: GuidebookBook
+#  name: A Layman's Guide to the Mind
+#  description: A guide on psionics.
+#  components:
+#  - type: Sprite
+#    sprite: SimpleStation14/Objects/Misc/books.rsi
+#    layers:
+#    - state: book_psionics
+# - type: HyperlinkBook
+#   url: https://wiki.nyanotrasen.moe/view/Glimmer
+#  - type: GuidebookBook
+#    guides:
+#    - Psionics
+#    - AltarsGolemancy
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -66,8 +66,8 @@
   - type: Sprite
     layers:
     - state: book_chemistry
-  - type: HyperlinkBook
-    url: https://wiki.nyanotrasen.moe/view/Chemistry
+#  - type: HyperlinkBook
+#    url: https://wiki.nyanotrasen.moe/view/Chemistry
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -78,8 +78,8 @@
   - type: Sprite
     layers:
     - state: book_bar
-  - type: HyperlinkBook
-    url: https://wiki.nyanotrasen.moe/view/Drinks
+#  - type: HyperlinkBook
+#    url: https://wiki.nyanotrasen.moe/view/Drinks
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -90,8 +90,8 @@
   - type: Sprite
     layers:
     - state: book_cooking
-  - type: HyperlinkBook
-    url: https://wiki.nyanotrasen.moe/view/Cooking
+#  - type: HyperlinkBook
+#    url: https://wiki.nyanotrasen.moe/view/Cooking
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -102,8 +102,8 @@
   - type: Sprite
     layers:
     - state: book_hydroponics_pod_people
-  - type: HyperlinkBook
-    url: https://wiki.nyanotrasen.moe/view/Hydroponics
+#  - type: HyperlinkBook
+#    url: https://wiki.nyanotrasen.moe/view/Hydroponics
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -114,8 +114,8 @@
   - type: Sprite
     layers:
     - state: book_engineering
-  - type: HyperlinkBook
-    url: https://wiki.nyanotrasen.moe/view/Shuttle_Construction
+#  - type: HyperlinkBook
+#    url: https://wiki.nyanotrasen.moe/view/Shuttle_Construction
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -129,11 +129,11 @@
     - state: book_nuclear
   # - type: HyperlinkBook
   #   url: https://wiki.nyanotrasen.moe/view/Alert_Procedure
-  - type: GuidebookBook
-    guides:
-    - CommonAlerts
-    - SpecificAlerts
-    - CentCommAlerts
+#  - type: GuidebookBook
+#    guides:
+#    - CommonAlerts
+#    - SpecificAlerts
+#    - CentCommAlerts
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -147,9 +147,9 @@
     - state: book_particle_accelerator
   # - type: HyperlinkBook
   #   url: https://wiki.nyanotrasen.moe/view/Standard_Operating_Procedure
-  - type: GuidebookBook
-    guides:
-    - StandardOperatingProcedure
+#  - type: GuidebookBook
+#    guides:
+#    - StandardOperatingProcedure
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -160,8 +160,8 @@
   - type: Sprite
     layers:
     - state: book_engineering2
-  - type: HyperlinkBook
-    url: https://wiki.nyanotrasen.moe/view/Power
+#  - type: HyperlinkBook
+#    url: https://wiki.nyanotrasen.moe/view/Power
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -172,8 +172,8 @@
   - type: Sprite
     layers:
     - state: book_infections
-  - type: HyperlinkBook
-    url: https://wiki.nyanotrasen.moe/view/Medical
+#  - type: HyperlinkBook
+#    url: https://wiki.nyanotrasen.moe/view/Medical
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -184,8 +184,8 @@
   - type: Sprite
     layers:
     - state: book_hacking
-  - type: HyperlinkBook
-    url: https://wiki.nyanotrasen.moe/view/Hacking
+#  - type: HyperlinkBook
+#    url: https://wiki.nyanotrasen.moe/view/Hacking
 
 - type: entity
   parent: BaseHyperlinkBook
@@ -199,6 +199,6 @@
     - state: book_engineering2
   # - type: HyperlinkBook
   #   url: https://wiki.nyanotrasen.moe/view/Atmospheric_Science
-  - type: GuidebookBook
-    guides:
-    - Atmospherics
+#  - type: GuidebookBook
+#    guides:
+#    - Atmospherics
