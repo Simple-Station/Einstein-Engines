@@ -35,7 +35,7 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
-            float height,
+            float height, // Parkstation-HeightSlider
             int age,
             Sex sex,
             Gender gender,
@@ -52,7 +52,7 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Species = species;
-            Height = height;
+            Height = height; // Parkstation-HeightSlider
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -92,7 +92,7 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
-            float height,
+            float height, // Parkstation-HeightSlider
             int age,
             Sex sex,
             Gender gender,
@@ -121,7 +121,7 @@ namespace Content.Shared.Preferences
             "John Doe",
             "",
             SharedHumanoidAppearanceSystem.DefaultSpecies,
-            1f,
+            1f, // Parkstation-HeightSlider
             18,
             Sex.Male,
             Gender.Male,
@@ -151,7 +151,7 @@ namespace Content.Shared.Preferences
                 "John Doe",
                 "",
                 species,
-                1f,
+                1f, // Parkstation-HeightSlider
                 18,
                 Sex.Male,
                 Gender.Male,
@@ -191,12 +191,12 @@ namespace Content.Shared.Preferences
 
             var sex = Sex.Unsexed;
             var age = 18;
-            var height = 1f;
+            var height = 1f; // Parkstation-HeightSlider
             if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
             {
                 sex = random.Pick(speciesPrototype.Sexes);
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
-                height = random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+                height = random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight); // Parkstation-HeightSlider
             }
 
             var gender = Gender.Epicene;
@@ -227,7 +227,7 @@ namespace Content.Shared.Preferences
         public string Species { get; private set; }
 
         [DataField("height")]
-        public float Height { get; private set; }
+        public float Height { get; private set; } // Parkstation-HeightSlider
 
         [DataField("age")]
         public int Age { get; private set; }
@@ -281,10 +281,12 @@ namespace Content.Shared.Preferences
             return new(this) { Species = species };
         }
 
+        // Parkstation-HeightSlider Start
         public HumanoidCharacterProfile WithHeight(float height)
         {
             return new(this) { Height = height };
         }
+        // Parkstation-HeightSlider End
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
@@ -510,9 +512,11 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkup(FlavorText);
             }
 
+            // Parkstation-HeightSlider Start
             var height = Height;
             if (speciesPrototype != null)
-                height = Math.Clamp(MathF.Round(Height, 1), speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+                height = Math.Clamp(Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+            // Parkstation-HeightSlider End
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
@@ -584,7 +588,7 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Age = age;
-            Height = height;
+            Height = height; // Parkstation-HeightSlider
             Sex = sex;
             Gender = gender;
             Appearance = appearance;
@@ -645,7 +649,7 @@ namespace Content.Shared.Preferences
                     Backpack
                 ),
                 SpawnPriority,
-                Height,
+                Height, // Parkstation-HeightSlider
                 PreferenceUnavailable,
                 _jobPriorities,
                 _antagPreferences,

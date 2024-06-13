@@ -3,6 +3,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using Content.Client.Guidebook;
+using System.Text.RegularExpressions;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
@@ -80,7 +81,7 @@ namespace Content.Client.Preferences.UI
         private SingleMarkingPicker _hairPicker => CHairStylePicker;
         private SingleMarkingPicker _facialHairPicker => CFacialHairPicker;
         private EyeColorPicker _eyesPicker => CEyeColorPicker;
-        private LineEdit _heightPicker => CHeight;
+        private Slider _heightSlider => CHeightSlider; // Parkstation-HeightSlider
 
         private TabContainer _tabContainer => CTabContainer;
         private BoxContainer _jobList => CJobList;
@@ -116,8 +117,6 @@ namespace Content.Client.Preferences.UI
         private MarkingSet _markingSet = new(); // storing this here feels iffy but a few things need it this high up
 
         public event Action<HumanoidCharacterProfile, int>? OnProfileChanged;
-
-        private float _defaultHeight = 1f;
 
         public HumanoidProfileEditor(IClientPreferencesManager preferencesManager, IPrototypeManager prototypeManager,
             IEntityManager entityManager, IConfigurationManager configurationManager)
@@ -209,34 +208,37 @@ namespace Content.Client.Preferences.UI
 
             #endregion Species
 
+            // Parkstation-HeightSlider Start
             #region Height
 
+            var prototype = _speciesList.Find(x => x.ID == Profile?.Species) ?? _speciesList.First();
 
-            _heightPicker.OnTextChanged += args =>
+            _heightSlider.MinValue = prototype.MinHeight;
+            _heightSlider.MaxValue = prototype.MaxHeight;
+            _heightSlider.Value = Profile?.Height ?? prototype.DefaultHeight;
+            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", _heightSlider.Value));
+
+            _heightSlider.OnValueChanged += args =>
             {
-                if (Profile is null || !float.TryParse(args.Text, out var newHeight))
+                if (Profile is null)
                     return;
 
-                var prototype = _prototypeManager.Index<SpeciesPrototype>(Profile.Species);
+                prototype = _speciesList.Find(x => x.ID == Profile.Species) ?? _speciesList.First(); // Just in case
 
-                if (newHeight < prototype.MinHeight)
-                    newHeight = prototype.MinHeight;
-
-                if (newHeight > prototype.MaxHeight)
-                    newHeight = prototype.MaxHeight;
-
-                CHeightLabel.Text = MathF.Round(newHeight, 1).ToString("G");
-                SetProfileHeight(MathF.Round(newHeight, 1));
+                var value = Math.Clamp(args.Value, prototype.MinHeight, prototype.MaxHeight);
+                var stringValue = Regex.Replace(value.ToString(CultureInfo.InvariantCulture), @"\.([0-9][0-9]).*", ".$1"); // Hide the extra decimals
+                CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", stringValue));
+                SetProfileHeight(value);
             };
 
             CHeightReset.OnPressed += _ =>
             {
-                _heightPicker.Text = _defaultHeight.ToString(CultureInfo.InvariantCulture);
-                CHeightLabel.Text = _defaultHeight.ToString(CultureInfo.InvariantCulture);
-                SetProfileHeight(_defaultHeight);
+                _heightSlider.Value = prototype.DefaultHeight;
+                SetProfileHeight(prototype.DefaultHeight);
             };
 
             #endregion Height
+            // Parkstation-HeightSlider End
 
             #region Skin
 
@@ -944,11 +946,13 @@ namespace Content.Client.Preferences.UI
             IsDirty = true;
         }
 
+        // Parkstation-HeightSlider Start
         private void SetProfileHeight(float height)
         {
             Profile = Profile?.WithHeight(height);
             IsDirty = true;
         }
+        // Parkstation-HeightSlider End
 
         public void Save()
         {
@@ -1154,20 +1158,21 @@ namespace Content.Client.Preferences.UI
             _spawnPriorityButton.SelectId((int) Profile.SpawnPriority);
         }
 
+        // Parkstation-HeightSlider Start
         private void UpdateHeightControls()
         {
             if (Profile == null)
-            {
                 return;
-            }
 
-            var species = _speciesList.Find(x => x.ID == Profile.Species);
-            if (species != null)
-                _defaultHeight = species.DefaultHeight;
+            var species = _speciesList.Find(x => x.ID == Profile.Species) ?? _speciesList.First();
 
-            _heightPicker.Text = Profile.Height.ToString();
-            CHeightLabel.Text = Profile.Height.ToString();
+            _heightSlider.MinValue = species.MinHeight;
+            _heightSlider.Value = Profile.Height;
+            _heightSlider.MaxValue = species.MaxHeight;
+            var stringValue = Regex.Replace(Profile.Height.ToString(CultureInfo.InvariantCulture), @"\.([0-9][0-9]).*", ".$1"); // Hide the extra decimals
+            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", stringValue));
         }
+        // Parkstation-HeightSlider End
 
         private void UpdateHairPickers()
         {

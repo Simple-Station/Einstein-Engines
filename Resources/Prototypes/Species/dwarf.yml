@@ -7,8 +7,10 @@
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobDwarfDummy
   skinColoration: HumanToned
-  defaultHeight: 0.8
+  # Parkstation-HeightSlider Start
   minHeight: 0.6
+  defaultHeight: 0.8
   maxHeight: 0.8
+  # Parkstation-HeightSlider End
   scaleHeight: false
   scaleWidth: true
