@@ -526,6 +526,7 @@ namespace Content.Server.Cargo.Systems
                         "cargo-console-paper-print-text",
                         ("orderNumber", order.OrderId),
                         ("itemName", MetaData(item).EntityName),
+                        ("orderQuantity", order.OrderQuantity),
                         ("requester", order.Requester),
                         ("reason", order.Reason),
                         ("approver", order.Approver ?? string.Empty)),
