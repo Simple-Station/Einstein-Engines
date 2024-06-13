@@ -7,7 +7,7 @@ in import (builtins.fetchTarball {
 
 let
   dependencies = with pkgs; [
-    dotnetCorePackages.sdk_8_0_1xx
+    dotnetCorePackages.sdk_8_0
     glfw
     SDL2
     libGL

@@ -35,13 +35,6 @@
         - MobLayer
   - type: Stamina
     critThreshold: 115
-  - type: LanguageSpeaker
-    speaks:
-    - GalacticCommon
-    - Nekomimetic
-    understands:
-    - GalacticCommon
-    - Nekomimetic
 
 - type: entity
   save: false

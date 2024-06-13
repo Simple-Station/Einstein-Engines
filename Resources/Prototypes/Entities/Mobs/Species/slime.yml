@@ -74,13 +74,6 @@
       types:
         Asphyxiation: -1.0
     maxSaturation: 15
-  - type: LanguageSpeaker
-    speaks:
-    - GalacticCommon
-    - Bubblish
-    understands:
-    - GalacticCommon
-    - Bubblish
 
 - type: entity
   parent: MobHumanDummy

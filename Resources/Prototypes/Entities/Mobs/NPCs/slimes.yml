@@ -111,11 +111,8 @@
     successChance: 0.5
     interactSuccessString: petting-success-slimes
     interactFailureString: petting-failure-generic
-  - type: LanguageSpeaker
-    speaks:
-    - Bubblish
-    understands:
-    - Bubblish
+  - type: ReplacementAccent
+    accent: slimes
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true

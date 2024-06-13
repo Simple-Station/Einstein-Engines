@@ -98,11 +98,6 @@
     factions:
     - PsionicInterloper
     - NanoTrasen
-  - type: LanguageSpeaker
-    speaks:
-    - GalacticCommon
-    understands:
-    - GalacticCommon
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true
