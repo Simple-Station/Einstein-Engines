@@ -17,9 +17,9 @@ public sealed class LanguagePrototype : IPrototype
     public bool ObfuscateSyllables;
 
     // <summary>
-    // If true, will mark the language as a SignLanguage and will be handled as such, this variable is nullable. (Please do not put SignLanguage = false or i will choke you, this does nothing!)
+    // 	If true, will mark the language as a SignLanguage and will be handled as such.
     // </summary>
-    [DataField(required: false)]
+    [DataField]
     public bool SignLanguage;
 
     /// <summary>

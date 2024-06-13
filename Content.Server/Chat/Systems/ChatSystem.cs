@@ -241,13 +241,14 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (string.IsNullOrEmpty(message))
             return;
 
-        // Check is the message is Sign Language, If yes handle it in a special function for it.
+        // Check if the message is in sign language
         if (desiredType == InGameICChatType.Speak || desiredType == InGameICChatType.Whisper)
         {
             var language = languageOverride ?? _language.GetLanguage(source);
             if (language.SignLanguage)
             {
-                SendEntityEmote(source, message, range, nameOverride, ignoreActionBlocker, signLanguage: true);
+                SendEntityEmote(source, message, range, nameOverride,
+                	ignoreActionBlocker, signLanguage: true);
                 return;
             }
         }
@@ -614,7 +615,8 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (checkEmote)
             TryEmoteChatInput(source, action);
-        SendInVoiceRange(ChatChannel.Emotes, name, action, wrappedMessage, obfuscated: "", obfuscatedWrappedMessage, source, range, author, null, true);
+        SendInVoiceRange(ChatChannel.Emotes, name, action, wrappedMessage, obfuscated: "",
+        	obfuscatedWrappedMessage, source, range, author, null, true);
         if (!hideLog)
             if (name != Name(source))
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Emote from {ToPrettyString(source):user} as {name}: {action}");
