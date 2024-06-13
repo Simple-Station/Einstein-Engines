@@ -2,18 +2,22 @@
 # Do not use otherwise. Try to use the respective component instead of this language.
 - type: language
   id: Universal
-  obfuscateSyllables: false
+  obfuscation:
+    !type:ReplacementObfuscation # Should never be used anyway
   replacement:
   - "*incomprehensible*"
 
 # The common galactic tongue.
 - type: language
   id: GalacticCommon
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
   replacement:
-  - Blah
-  - Blah
-  - Blah
+  - blah
+  - blah
+  - blah
   - dingle-doingle
   - dingle
   - dangle
@@ -34,7 +38,10 @@
 # Spoken by slimes.
 - type: language
   id: Bubblish
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
   replacement:
   - blob
   - plop
@@ -45,7 +52,10 @@
 # Spoken by moths.
 - type: language
   id: Moffic
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2 # Replacements are really short
+    maxSyllables: 4
   replacement:
   - år
   - i
@@ -105,10 +115,13 @@
   - we
   - hön
 
-  # Spoken by dionas.
+# Spoken by dionas.
 - type: language
   id: RootSpeak
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 5
   replacement:
   - hs
   - zt
@@ -119,7 +132,10 @@
 # A mess of broken Japanese, spoken by Felinds and Oni
 - type: language
   id: Nekomimetic
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3 # May be too long even, we'll see.
   replacement:
   - neko
   - nyan
@@ -173,7 +189,10 @@
 # Spoken by the Lizard race.
 - type: language
   id: Draconic
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
   replacement:
   - za
   - az
@@ -263,7 +282,10 @@
 # Spoken by the Vulpkanin race.
 - type: language
   id: Canilunzt
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 4
   replacement:
   - rur
   - ya
@@ -292,7 +314,7 @@
   - vor
   - nic
   - gro
-  - lll
+#  - lll
   - enem
   - zandt
   - tzch
@@ -327,7 +349,10 @@
 # The common language of the Sol system.
 - type: language
   id: SolCommon
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 4
   replacement:
   - tao
   - shi
@@ -349,23 +374,21 @@
 
 - type: language
   id: RobotTalk
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 10 # Crazy
   replacement:
   - 0
   - 1
-  - 01
-  - 10
-  - 001
-  - 100
-  - 011
-  - 110
-  - 101
-  - 010
 
 # Languages spoken by various critters.
 - type: language
   id: Cat
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
   replacement:
   - murr
   - meow
@@ -374,7 +397,10 @@
 
 - type: language
   id: Dog
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
   replacement:
   - woof
   - bark
@@ -385,109 +411,148 @@
 
 - type: language
   id: Fox
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
   replacement:
-  - bark
-  - gecker
   - ruff
   - raff
   - garr
+  - yip
+  - yap
+  - myah
 
 - type: language
   id: Xeno
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 8 # I was crazy once
   replacement:
-  - sss
-  - sSs
-  - SSS
+  - s
+  - S
 
 - type: language
   id: Monkey
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 8 # They locked me in a room...
   replacement:
-  - ok
-  - ook
-  - oook
-  - ooook
-  - oooook
+  - o
+  - k
 
 - type: language
   id: Mouse
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 3
   replacement:
-  - Squeak
-  - Piep
-  - Chuu
-  - Eeee
-  - Pip
-  - Fwiep
-  - Heep
+  - squ
+  - eak
+  - pi
+  - ep
+  - chuu
+  - ee
+  - fwi
+  - he
 
 - type: language
   id: Chicken
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
   replacement:
-  - Coo
-  - Coot
-  - Cooot
+  - co
+  - coo
+  - ot
 
 - type: language
   id: Duck
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
   replacement:
-  - Quack
-  - Quack quack
+  - qu
+  - ack
+  - quack
 
 - type: language
   id: Cow
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
   replacement:
-  - Moo
-  - Mooo
+  - moo
+  - mooo
 
 - type: language
   id: Sheep
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
   replacement:
-  - Ba
-  - Baa
-  - Baaa
+  - ba
+  - baa
+  - aa
 
 - type: language
   id: Kangaroo
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
   replacement:
-  - Shreak
-  - Chuu
+  - shre
+  - ack
+  - chuu
+  - choo
 
 - type: language
   id: Pig
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
   replacement:
-  - Oink
-  - Oink oink
+  - oink # Please someone come up with something better
 
 - type: language
   id: Crab
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
   replacement:
-  - Click
-  - Click-clack
-  - Clack
-  - Tipi-tap
-  - Clik-tap
-  - Cliliick
+  - click
+  - clack
+  - ti
+  - pi
+  - tap
+  - cli
+  - ick
 
 - type: language
   id: Kobold
-  obfuscateSyllables: true
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
   replacement:
-  - Yip
-  - Grrar.
-  - Yap
-  - Bip
-  - Screet
-  - Gronk
-  - Hiss
-  - Eeee
-  - Yip
+  - yip
+  - yap
+  - gar
+  - grr
+  - ar
+  - scre
+  - et
+  - gronk
+  - hiss
+  - ss
+  - ee
