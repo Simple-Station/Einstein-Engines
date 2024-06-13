@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared.Decals;
+using System.Numerics;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
@@ -328,6 +329,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         humanoid.Age = profile.Age;
+		humanoid.Height = profile.Height;
 
         humanoid.LastProfileLoaded = profile; // DeltaV - let paradox anomaly be cloned
 

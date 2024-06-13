@@ -35,6 +35,7 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
+            float height,
             int age,
             Sex sex,
             Gender gender,
@@ -51,6 +52,7 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Species = species;
+            Height = height;
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -72,7 +74,7 @@ namespace Content.Shared.Preferences
             List<string> antagPreferences,
             List<string> traitPreferences,
             List<string> loadoutPreferences)
-            : this(other.Name, other.FlavorText, other.Species, other.Age, other.Sex, other.Gender, other.Appearance,
+            : this(other.Name, other.FlavorText, other.Species, other.Height, other.Age, other.Sex, other.Gender, other.Appearance,
                 other.Clothing, other.Backpack, other.SpawnPriority, jobPriorities, other.PreferenceUnavailable,
                 antagPreferences, traitPreferences, loadoutPreferences)
         {
@@ -90,6 +92,7 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
+            float height,
             int age,
             Sex sex,
             Gender gender,
@@ -102,7 +105,7 @@ namespace Content.Shared.Preferences
             IReadOnlyList<string> antagPreferences,
             IReadOnlyList<string> traitPreferences,
             IReadOnlyList<string> loadoutPreferences)
-            : this(name, flavortext, species, age, sex, gender, appearance, clothing, backpack, spawnPriority,
+            : this(name, flavortext, species, height, age, sex, gender, appearance, clothing, backpack, spawnPriority,
                 new Dictionary<string, JobPriority>(jobPriorities), preferenceUnavailable,
                 new List<string>(antagPreferences), new List<string>(traitPreferences),
                 new List<string>(loadoutPreferences))
@@ -118,6 +121,7 @@ namespace Content.Shared.Preferences
             "John Doe",
             "",
             SharedHumanoidAppearanceSystem.DefaultSpecies,
+            1f,
             18,
             Sex.Male,
             Gender.Male,
@@ -147,6 +151,7 @@ namespace Content.Shared.Preferences
                 "John Doe",
                 "",
                 species,
+                1f,
                 18,
                 Sex.Male,
                 Gender.Male,
@@ -186,10 +191,12 @@ namespace Content.Shared.Preferences
 
             var sex = Sex.Unsexed;
             var age = 18;
+            var height = 1f;
             if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
             {
                 sex = random.Pick(speciesPrototype.Sexes);
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
+                height = random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
             }
 
             var gender = Gender.Epicene;
@@ -206,7 +213,7 @@ namespace Content.Shared.Preferences
 
             var name = GetName(species, gender);
 
-            return new HumanoidCharacterProfile(name, "", species, age, sex, gender,
+            return new HumanoidCharacterProfile(name, "", species, height, age, sex, gender,
                 HumanoidCharacterAppearance.Random(species, sex), ClothingPreference.Jumpsuit,
                 BackpackPreference.Backpack, SpawnPriorityPreference.None,
                 new Dictionary<string, JobPriority>
@@ -218,6 +225,9 @@ namespace Content.Shared.Preferences
         public string Name { get; private set; }
         public string FlavorText { get; private set; }
         public string Species { get; private set; }
+
+        [DataField("height")]
+        public float Height { get; private set; }
 
         [DataField("age")]
         public int Age { get; private set; }
@@ -271,6 +281,10 @@ namespace Content.Shared.Preferences
             return new(this) { Species = species };
         }
 
+        public HumanoidCharacterProfile WithHeight(float height)
+        {
+            return new(this) { Height = height };
+        }
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
@@ -396,6 +410,7 @@ namespace Content.Shared.Preferences
             if (maybeOther is not HumanoidCharacterProfile other ||
                 Name != other.Name ||
                 Age != other.Age ||
+                Height != other.Height ||
                 Sex != other.Sex ||
                 Gender != other.Gender ||
                 PreferenceUnavailable != other.PreferenceUnavailable ||
@@ -495,6 +510,10 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkup(FlavorText);
             }
 
+            var height = Height;
+            if (speciesPrototype != null)
+                height = Math.Clamp(MathF.Round(Height, 1), speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
@@ -565,6 +584,7 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Age = age;
+            Height = height;
             Sex = sex;
             Gender = gender;
             Appearance = appearance;
@@ -625,6 +645,7 @@ namespace Content.Shared.Preferences
                     Backpack
                 ),
                 SpawnPriority,
+                Height,
                 PreferenceUnavailable,
                 _jobPriorities,
                 _antagPreferences,
