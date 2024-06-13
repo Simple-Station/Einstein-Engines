@@ -4148,3 +4148,21 @@ Entries:
       message: All species can now bring their own cultures and languages
   id: 6119
   time: '2024-06-10T20:48:48.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Rust Walls Sprites.
+    - type: Tweak
+      message: Armor, Bulletproof, Riot Suit Resprites.
+    - type: Tweak
+      message: New Banners Sprites.
+    - type: Tweak
+      message: Stunbaton, Fire Extinguisher New Sprites.
+    - type: Tweak
+      message: Rack/WallScreen resprites.
+    - type: Tweak
+      message: Stock Parts new sprites!
+    - type: Tweak
+      message: Radiation Collector has now a new sprite!
+  id: 6120
+  time: '2024-06-11T00:34:02.0000000+00:00'
