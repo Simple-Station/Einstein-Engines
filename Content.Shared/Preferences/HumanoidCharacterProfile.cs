@@ -671,14 +671,16 @@ namespace Content.Shared.Preferences
                     Clothing,
                     Backpack
                 ),
-                SpawnPriority,
-                Height,
-                Width,
-                PreferenceUnavailable,
-                _jobPriorities,
-                _antagPreferences,
-                _traitPreferences,
-                _loadoutPreferences
+                HashCode.Combine(
+                    SpawnPriority,
+                    Height,
+                    Width,
+                    PreferenceUnavailable,
+                    _jobPriorities,
+                    _antagPreferences,
+                    _traitPreferences,
+                    _loadoutPreferences
+                )
             );
         }
     }
