@@ -219,16 +219,16 @@
     Steel: 5
 
 - type: latheRecipe
-  id: ShellTranquilizer
-  result: ShellTranquilizer
+  id: BoxShellTranquilizer
+  result: BoxShellTranquilizer
   category: Ammo
-  completetime: 4
+  completetime: 5
   materials:
-    Plastic: 15
-    Steel: 10
-    Glass: 5
-    Plasma: 10
-    Silver: 5
+    Plastic: 240
+    Steel: 160
+    Glass: 80
+    Plasma: 160
+    Silver: 80
 
 - type: latheRecipe
   id: TargetHuman
@@ -1407,7 +1407,7 @@
   completetime: 6
   materials:
     Steel: 800 #Yes, Steel and not Aluminum, the original M1911 handguns that this is in reference to are steel frame.
-               #For balancing reasons(Steel is way easier to get), it includes other rarer materials.
+    #For balancing reasons(Steel is way easier to get), it includes other rarer materials.
     Plasteel: 100
     Plastic: 250
     Gold: 200
