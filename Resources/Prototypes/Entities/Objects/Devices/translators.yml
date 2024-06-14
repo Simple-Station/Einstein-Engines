@@ -203,3 +203,4 @@
     - Kobold
     requires:
     - GalacticCommon
+    setLanguageOnInteract: false

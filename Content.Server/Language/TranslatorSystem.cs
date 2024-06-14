@@ -8,6 +8,7 @@ using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using Content.Shared.PowerCell;
 using Content.Shared.Language.Components.Translators;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Language;
 
@@ -23,7 +24,6 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
     {
         base.Initialize();
 
-        // I wanna die. But my death won't help us discover polymorphism.
         SubscribeLocalEvent<IntrinsicTranslatorComponent, DetermineEntityLanguagesEvent>(OnDetermineLanguages);
         SubscribeLocalEvent<HoldsTranslatorComponent, DetermineEntityLanguagesEvent>(OnDetermineLanguages);
         SubscribeLocalEvent<ImplantedTranslatorComponent, DetermineEntityLanguagesEvent>(OnDetermineLanguages);
@@ -31,7 +31,6 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         SubscribeLocalEvent<HandheldTranslatorComponent, ActivateInWorldEvent>(OnTranslatorToggle);
         SubscribeLocalEvent<HandheldTranslatorComponent, PowerCellSlotEmptyEvent>(OnPowerCellSlotEmpty);
 
-        // TODO: why does this use InteractHandEvent??
         SubscribeLocalEvent<HandheldTranslatorComponent, InteractHandEvent>(OnTranslatorInteract);
         SubscribeLocalEvent<HandheldTranslatorComponent, DroppedEvent>(OnTranslatorDropped);
     }
@@ -120,54 +119,65 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         RaiseLocalEvent(holder, new LanguagesUpdateEvent(), true);
     }
 
-    private void OnTranslatorToggle(EntityUid translator, HandheldTranslatorComponent component, ActivateInWorldEvent args)
+    private void OnTranslatorToggle(EntityUid translator, HandheldTranslatorComponent translatorComp, ActivateInWorldEvent args)
     {
-        if (!component.ToggleOnInteract)
+        if (!translatorComp.ToggleOnInteract)
             return;
 
+        // This will show a popup if false
         var hasPower = _powerCell.HasDrawCharge(translator);
 
         if (Transform(args.Target).ParentUid is { Valid: true } holder
-            && EntityManager.HasComponent<LanguageSpeakerComponent>(holder))
+            && TryComp<LanguageSpeakerComponent>(holder, out var languageComp))
         {
             // This translator is held by a language speaker and thus has an intrinsic counterpart bound to it.
             // Make sure it's up-to-date.
             var intrinsic = EnsureComp<HoldsTranslatorComponent>(holder);
-            var isEnabled = !component.Enabled;
-            if (intrinsic.Issuer != component)
+            var isEnabled = !translatorComp.Enabled;
+            if (intrinsic.Issuer != translatorComp)
             {
-                // The intrinsic comp wasn't owned by this handheld component, so this comp wasn't the active translator.
-                // Thus it needs to be turned on regardless of its previous state.
-                intrinsic.Issuer = component;
+                // The intrinsic comp wasn't owned by this handheld translator, so this wasn't the active translator.
+                // Thus, the intrinsic comp needs to be turned on regardless of its previous state.
+                intrinsic.Issuer = translatorComp;
                 isEnabled = true;
             }
-
             isEnabled &= hasPower;
-            UpdateBoundIntrinsicComp(component, intrinsic, isEnabled);
-            component.Enabled = isEnabled;
+
+            UpdateBoundIntrinsicComp(translatorComp, intrinsic, isEnabled);
+            translatorComp.Enabled = isEnabled;
             _powerCell.SetPowerCellDrawEnabled(translator, isEnabled);
 
-            _language.EnsureValidLanguage(holder);
+            // Update the current language of the entity if necessary
+            if (isEnabled && translatorComp.SetLanguageOnInteract)
+            {
+                var firstNew = translatorComp.SpokenLanguages.FirstOrDefault(it => !languageComp.SpokenLanguages.Contains(it));
+                if (firstNew != null)
+                    _language.SetLanguage(holder, firstNew, languageComp);
+            }
+
+            if (!isEnabled)
+                _language.EnsureValidLanguage(holder, languageComp);
+
+            // TODO this raises at least 2 disctinct events of this type
             RaiseLocalEvent(holder, new LanguagesUpdateEvent(), true);
         }
         else
         {
             // This is a standalone translator (e.g. lying on the ground), toggle its state.
-            component.Enabled = !component.Enabled && hasPower;
-            _powerCell.SetPowerCellDrawEnabled(translator, !component.Enabled && hasPower);
+            translatorComp.Enabled = !translatorComp.Enabled && hasPower;
+            _powerCell.SetPowerCellDrawEnabled(translator, !translatorComp.Enabled && hasPower);
         }
 
-        OnAppearanceChange(translator, component);
+        OnAppearanceChange(translator, translatorComp);
 
-        // HasPower shows a popup when there's no power, so we do not proceed in that case
         if (hasPower)
         {
             var message = Loc.GetString(
-                component.Enabled
+                translatorComp.Enabled
                     ? "translator-component-turnon"
                     : "translator-component-shutoff",
-                ("translator", component.Owner));
-            _popup.PopupEntity(message, component.Owner, args.User);
+                ("translator", translatorComp.Owner));
+            _popup.PopupEntity(message, translatorComp.Owner, args.User);
         }
     }
 
