@@ -48,10 +48,6 @@ public abstract class SharedLanguageSystem : EntitySystem
         var method = language.Obfuscation;
         method.Obfuscate(builder, message, language, this);
 
-        {
-            Log.Info($"RECEIVED {message} -> {builder.ToString()}");
-        }
-
         return builder.ToString();
     }
 
