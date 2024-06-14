@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Language;
