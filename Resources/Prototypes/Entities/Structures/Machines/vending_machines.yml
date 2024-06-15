@@ -101,7 +101,7 @@
     price: 100
   - type: Appearance
   - type: WiresVisuals
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - RobotTalk

@@ -119,7 +119,7 @@
     attributes:
       gender: male
   - type: PotentialPsionic # Nyano
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Mouse
@@ -296,7 +296,7 @@
   - type: Food
   - type: Item
     size: Tiny # Delta V - Make them eatable and pickable.
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:

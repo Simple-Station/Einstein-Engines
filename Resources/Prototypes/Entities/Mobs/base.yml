@@ -43,6 +43,7 @@
   - type: MovementSpeedModifier
   - type: Polymorphable
   - type: StatusIcon
+  - type: LanguageSpeaker # Einstein Engines. This component is required to support speech, although it does not define known languages.
 
 # Used for mobs that have health and can take damage.
 - type: entity
