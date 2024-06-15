@@ -14,12 +14,6 @@ public sealed class LanguagePrototype : IPrototype
     [DataField("obfuscation")]
     public ObfuscationMethod Obfuscation = ObfuscationMethod.Default;
 
-    /// <summary>
-    ///     A list of replacement phrases used in <see cref="ObfuscationMethod"/>
-    /// </summary>
-    [DataField(required: true)]
-    public List<string> Replacement = [];
-
     #region utility
     /// <summary>
     ///     The in-world name of this language, localized.

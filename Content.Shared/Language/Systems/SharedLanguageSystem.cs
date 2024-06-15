@@ -44,7 +44,7 @@ public abstract class SharedLanguageSystem : EntitySystem
     {
         var builder = new StringBuilder();
         var method = language.Obfuscation;
-        method.Obfuscate(builder, message, language, this);
+        method.Obfuscate(builder, message, this);
 
         return builder.ToString();
     }

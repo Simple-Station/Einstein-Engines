@@ -4,8 +4,8 @@
   id: Universal
   obfuscation:
     !type:ReplacementObfuscation # Should never be used anyway
-  replacement:
-  - "*incomprehensible*"
+    replacement:
+    - "*incomprehensible*"
 
 # The common galactic tongue.
 - type: language
@@ -14,26 +14,26 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-  replacement:
-  - blah
-  - blah
-  - blah
-  - dingle-doingle
-  - dingle
-  - dangle
-  - jibber-jabber
-  - jubber
-  - bleh
-  - zippity
-  - zoop
-  - wibble
-  - wobble
-  - wiggle
-  - yada
-  - meh
-  - neh
-  - nah
-  - wah
+    replacement:
+    - blah
+    - blah
+    - blah
+    - dingle-doingle
+    - dingle
+    - dangle
+    - jibber-jabber
+    - jubber
+    - bleh
+    - zippity
+    - zoop
+    - wibble
+    - wobble
+    - wiggle
+    - yada
+    - meh
+    - neh
+    - nah
+    - wah
 
 # Spoken by slimes.
 - type: language
@@ -42,12 +42,12 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-  replacement:
-  - blob
-  - plop
-  - pop
-  - bop
-  - boop
+    replacement:
+    - blob
+    - plop
+    - pop
+    - bop
+    - boop
 
 # Spoken by moths.
 - type: language
@@ -56,64 +56,64 @@
     !type:SyllableObfuscation
     minSyllables: 2 # Replacements are really short
     maxSyllables: 4
-  replacement:
-  - år
-  - i
-  - går
-  - sek
-  - mo
-  - ff
-  - ok
-  - gj
-  - ø
-  - gå
-  - la
-  - le
-  - lit
-  - ygg
-  - van
-  - dår
-  - næ
-  - møt
-  - idd
-  - hvo
-  - ja
-  - på
-  - han
-  - så
-  - ån
-  - det
-  - att
-  - nå
-  - gö
-  - bra
-  - int
-  - tyc
-  - om
-  - när
-  - två
-  - må
-  - dag
-  - sjä
-  - vii
-  - vuo
-  - eil
-  - tun
-  - käyt
-  - teh
-  - vä
-  - hei
-  - huo
-  - suo
-  - ää
-  - ten
-  - ja
-  - heu
-  - stu
-  - uhr
-  - kön
-  - we
-  - hön
+    replacement:
+    - år
+    - i
+    - går
+    - sek
+    - mo
+    - ff
+    - ok
+    - gj
+    - ø
+    - gå
+    - la
+    - le
+    - lit
+    - ygg
+    - van
+    - dår
+    - næ
+    - møt
+    - idd
+    - hvo
+    - ja
+    - på
+    - han
+    - så
+    - ån
+    - det
+    - att
+    - nå
+    - gö
+    - bra
+    - int
+    - tyc
+    - om
+    - när
+    - två
+    - må
+    - dag
+    - sjä
+    - vii
+    - vuo
+    - eil
+    - tun
+    - käyt
+    - teh
+    - vä
+    - hei
+    - huo
+    - suo
+    - ää
+    - ten
+    - ja
+    - heu
+    - stu
+    - uhr
+    - kön
+    - we
+    - hön
 
 # Spoken by dionas.
 - type: language
@@ -122,12 +122,12 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 5
-  replacement:
-  - hs
-  - zt
-  - kr
-  - st
-  - sh
+    replacement:
+    - hs
+    - zt
+    - kr
+    - st
+    - sh
 
 # A mess of broken Japanese, spoken by Felinds and Oni
 - type: language
@@ -136,55 +136,55 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3 # May be too long even, we'll see.
-  replacement:
-  - neko
-  - nyan
-  - mimi
-  - moe
-  - mofu
-  - fuwa
-  - kyaa
-  - kawaii
-  - poka
-  - munya
-  - puni
-  - munyu
-  - ufufu
-  - icha
-  - doki
-  - kyun
-  - kusu
-  - nya
-  - nyaa
-  - desu
-  - kis
-  - ama
-  - chuu
-  - baka
-  - hewo
-  - boop
-  - gato
-  - kit
-  - sune
-  - yori
-  - sou
-  - baka
-  - chan
-  - san
-  - kun
-  - mahou
-  - yatta
-  - suki
-  - usagi
-  - domo
-  - ori
-  - uwa
-  - zaazaa
-  - shiku
-  - puru
-  - ira
-  - heto
-  - etto
+    replacement:
+    - neko
+    - nyan
+    - mimi
+    - moe
+    - mofu
+    - fuwa
+    - kyaa
+    - kawaii
+    - poka
+    - munya
+    - puni
+    - munyu
+    - ufufu
+    - icha
+    - doki
+    - kyun
+    - kusu
+    - nya
+    - nyaa
+    - desu
+    - kis
+    - ama
+    - chuu
+    - baka
+    - hewo
+    - boop
+    - gato
+    - kit
+    - sune
+    - yori
+    - sou
+    - baka
+    - chan
+    - san
+    - kun
+    - mahou
+    - yatta
+    - suki
+    - usagi
+    - domo
+    - ori
+    - uwa
+    - zaazaa
+    - shiku
+    - puru
+    - ira
+    - heto
+    - etto
 
 # Spoken by the Lizard race.
 - type: language
@@ -193,91 +193,91 @@
     !type:SyllableObfuscation
     minSyllables: 2
     maxSyllables: 4
-  replacement:
-  - za
-  - az
-  - ze
-  - ez
-  - zi
-  - iz
-  - zo
-  - oz
-  - zu
-  - uz
-  - zs
-  - sz
-  - ha
-  - ah
-  - he
-  - eh
-  - hi
-  - ih
-  - ho
-  - oh
-  - hu
-  - uh
-  - hs
-  - sh
-  - la
-  - al
-  - le
-  - el
-  - li
-  - il
-  - lo
-  - ol
-  - lu
-  - ul
-  - ls
-  - sl
-  - ka
-  - ak
-  - ke
-  - ek
-  - ki
-  - ik
-  - ko
-  - ok
-  - ku
-  - uk
-  - ks
-  - sk
-  - sa
-  - as
-  - se
-  - es
-  - si
-  - is
-  - so
-  - os
-  - su
-  - us
-  - ss
-  - ss
-  - ra
-  - ar
-  - re
-  - er
-  - ri
-  - ir
-  - ro
-  - or
-  - ru
-  - ur
-  - rs
-  - sr
-  - a
-  - a
-  - e
-  - e
-  - i
-  - i
-  - o
-  - o
-  - u
-  - u
-  - s
-  - s
+    replacement:
+    - za
+    - az
+    - ze
+    - ez
+    - zi
+    - iz
+    - zo
+    - oz
+    - zu
+    - uz
+    - zs
+    - sz
+    - ha
+    - ah
+    - he
+    - eh
+    - hi
+    - ih
+    - ho
+    - oh
+    - hu
+    - uh
+    - hs
+    - sh
+    - la
+    - al
+    - le
+    - el
+    - li
+    - il
+    - lo
+    - ol
+    - lu
+    - ul
+    - ls
+    - sl
+    - ka
+    - ak
+    - ke
+    - ek
+    - ki
+    - ik
+    - ko
+    - ok
+    - ku
+    - uk
+    - ks
+    - sk
+    - sa
+    - as
+    - se
+    - es
+    - si
+    - is
+    - so
+    - os
+    - su
+    - us
+    - ss
+    - ss
+    - ra
+    - ar
+    - re
+    - er
+    - ri
+    - ir
+    - ro
+    - or
+    - ru
+    - ur
+    - rs
+    - sr
+    - a
+    - a
+    - e
+    - e
+    - i
+    - i
+    - o
+    - o
+    - u
+    - u
+    - s
+    - s
 
 # Spoken by the Vulpkanin race.
 - type: language
@@ -286,65 +286,65 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 4
-  replacement:
-  - rur
-  - ya
-  - cen
-  - rawr
-  - bar
-  - kuk
-  - tek
-  - qat
-  - uk
-  - wu
-  - vuh
-  - tah
-  - tch
-  - schz
-  - auch
-  - ist
-  - ein
-  - entch
-  - zwichs
-  - tut
-  - mir
-  - wo
-  - bis
-  - es
-  - vor
-  - nic
-  - gro
-#  - lll
-  - enem
-  - zandt
-  - tzch
-  - noch
-  - hel
-  - ischt
-  - far
-  - wa
-  - baram
-  - iereng
-  - tech
-  - lach
-  - sam
-  - mak
-  - lich
-  - gen
-  - or
-  - ag
-  - eck
-  - gec
-  - stag
-  - onn
-  - bin
-  - ket
-  - jarl
-  - vulf
-  - einech
-  - cresthz
-  - azunein
-  - ghzth
+    replacement:
+    - rur
+    - ya
+    - cen
+    - rawr
+    - bar
+    - kuk
+    - tek
+    - qat
+    - uk
+    - wu
+    - vuh
+    - tah
+    - tch
+    - schz
+    - auch
+    - ist
+    - ein
+    - entch
+    - zwichs
+    - tut
+    - mir
+    - wo
+    - bis
+    - es
+    - vor
+    - nic
+    - gro
+  #  - lll
+    - enem
+    - zandt
+    - tzch
+    - noch
+    - hel
+    - ischt
+    - far
+    - wa
+    - baram
+    - iereng
+    - tech
+    - lach
+    - sam
+    - mak
+    - lich
+    - gen
+    - or
+    - ag
+    - eck
+    - gec
+    - stag
+    - onn
+    - bin
+    - ket
+    - jarl
+    - vulf
+    - einech
+    - cresthz
+    - azunein
+    - ghzth
 
 # The common language of the Sol system.
 - type: language
@@ -353,24 +353,24 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 4
-  replacement:
-  - tao
-  - shi
-  - tzu
-  - yi
-  - com
-  - be
-  - is
-  - i
-  - op
-  - vi
-  - ed
-  - lec
-  - mo
-  - cle
-  - te
-  - dis
-  - e
+    replacement:
+    - tao
+    - shi
+    - tzu
+    - yi
+    - com
+    - be
+    - is
+    - i
+    - op
+    - vi
+    - ed
+    - lec
+    - mo
+    - cle
+    - te
+    - dis
+    - e
 
 - type: language
   id: RobotTalk
@@ -378,9 +378,9 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 10 # Crazy
-  replacement:
-  - 0
-  - 1
+    replacement:
+    - 0
+    - 1
 
 # Languages spoken by various critters.
 - type: language
@@ -389,11 +389,11 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 2
-  replacement:
-  - murr
-  - meow
-  - purr
-  - mrow
+    replacement:
+    - murr
+    - meow
+    - purr
+    - mrow
 
 - type: language
   id: Dog
@@ -401,13 +401,13 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 2
-  replacement:
-  - woof
-  - bark
-  - ruff
-  - bork
-  - raff
-  - garr
+    replacement:
+    - woof
+    - bark
+    - ruff
+    - bork
+    - raff
+    - garr
 
 - type: language
   id: Fox
@@ -415,13 +415,13 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 2
-  replacement:
-  - ruff
-  - raff
-  - garr
-  - yip
-  - yap
-  - myah
+    replacement:
+    - ruff
+    - raff
+    - garr
+    - yip
+    - yap
+    - myah
 
 - type: language
   id: Xeno
@@ -429,9 +429,9 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 8 # I was crazy once
-  replacement:
-  - s
-  - S
+    replacement:
+    - s
+    - S
 
 - type: language
   id: Monkey
@@ -439,9 +439,9 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 8 # They locked me in a room...
-  replacement:
-  - o
-  - k
+    replacement:
+    - o
+    - k
 
 - type: language
   id: Mouse
@@ -449,15 +449,15 @@
     !type:SyllableObfuscation
     minSyllables: 2
     maxSyllables: 3
-  replacement:
-  - squ
-  - eak
-  - pi
-  - ep
-  - chuu
-  - ee
-  - fwi
-  - he
+    replacement:
+    - squ
+    - eak
+    - pi
+    - ep
+    - chuu
+    - ee
+    - fwi
+    - he
 
 - type: language
   id: Chicken
@@ -465,10 +465,10 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-  replacement:
-  - co
-  - coo
-  - ot
+    replacement:
+    - co
+    - coo
+    - ot
 
 - type: language
   id: Duck
@@ -476,10 +476,10 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-  replacement:
-  - qu
-  - ack
-  - quack
+    replacement:
+    - qu
+    - ack
+    - quack
 
 - type: language
   id: Cow
@@ -487,9 +487,9 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-  replacement:
-  - moo
-  - mooo
+    replacement:
+    - moo
+    - mooo
 
 - type: language
   id: Sheep
@@ -497,10 +497,10 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-  replacement:
-  - ba
-  - baa
-  - aa
+    replacement:
+    - ba
+    - baa
+    - aa
 
 - type: language
   id: Kangaroo
@@ -508,11 +508,11 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-  replacement:
-  - shre
-  - ack
-  - chuu
-  - choo
+    replacement:
+    - shre
+    - ack
+    - chuu
+    - choo
 
 - type: language
   id: Pig
@@ -520,8 +520,8 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-  replacement:
-  - oink # Please someone come up with something better
+    replacement:
+    - oink # Please someone come up with something better
 
 - type: language
   id: Crab
@@ -529,14 +529,14 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-  replacement:
-  - click
-  - clack
-  - ti
-  - pi
-  - tap
-  - cli
-  - ick
+    replacement:
+    - click
+    - clack
+    - ti
+    - pi
+    - tap
+    - cli
+    - ick
 
 - type: language
   id: Kobold
@@ -544,15 +544,15 @@
     !type:SyllableObfuscation
     minSyllables: 2
     maxSyllables: 4
-  replacement:
-  - yip
-  - yap
-  - gar
-  - grr
-  - ar
-  - scre
-  - et
-  - gronk
-  - hiss
-  - ss
-  - ee
+    replacement:
+    - yip
+    - yap
+    - gar
+    - grr
+    - ar
+    - scre
+    - et
+    - gronk
+    - hiss
+    - ss
+    - ee

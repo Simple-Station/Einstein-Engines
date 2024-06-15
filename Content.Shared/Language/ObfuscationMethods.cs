@@ -8,30 +8,36 @@ public abstract partial class ObfuscationMethod
 {
     public static readonly ObfuscationMethod Default = new ReplacementObfuscation();
 
-    internal abstract void Obfuscate(StringBuilder builder, string message, LanguagePrototype language, SharedLanguageSystem context);
+    internal abstract void Obfuscate(StringBuilder builder, string message, SharedLanguageSystem context);
 
     /// <summary>
     ///     Obfuscates the provided message. This method should only be used for debugging purposes.
     ///     For all other purposes, use <see cref="SharedLanguageSystem.ObfuscateSpeech"/> instead.
     /// </summary>
-    public string Obfuscate(string message, LanguagePrototype language)
+    public string Obfuscate(string message)
     {
         var builder = new StringBuilder();
-        Obfuscate(builder, message, language, IoCManager.Resolve<EntitySystemManager>().GetEntitySystem<SharedLanguageSystem>());
+        Obfuscate(builder, message, IoCManager.Resolve<EntitySystemManager>().GetEntitySystem<SharedLanguageSystem>());
         return builder.ToString();
     }
 }
 
 /// <summary>
 ///     The most primitive method of obfuscation - replaces the entire message with one random replacement phrase.
-///     Similar to ReplacementAccent.
+///     Similar to ReplacementAccent. Base for all replacement-based obfuscation methods.
 /// </summary>
-public sealed partial class ReplacementObfuscation : ObfuscationMethod
+public partial class ReplacementObfuscation : ObfuscationMethod
 {
-    internal override void Obfuscate(StringBuilder builder, string message, LanguagePrototype language, SharedLanguageSystem context)
+    /// <summary>
+    ///     A list of replacement phrases used in the obfuscation process.
+    /// </summary>
+    [DataField(required: true)]
+    public List<string> Replacement = [];
+
+    internal override void Obfuscate(StringBuilder builder, string message, SharedLanguageSystem context)
     {
-        var idx = context.PseudoRandomNumber(0, 0, language.Replacement.Count - 1);
-        builder.Append(language.Replacement[idx]);
+        var idx = context.PseudoRandomNumber(0, 0, Replacement.Count - 1);
+        builder.Append(Replacement[idx]);
     }
 }
 
@@ -43,7 +49,7 @@ public sealed partial class ReplacementObfuscation : ObfuscationMethod
 ///     The words are obfuscated in a stable manner, such that every particular word will be obfuscated the same way throughout one round.
 ///     This means that particular words can be memorized within a round, but not across rounds.
 /// </remarks>
-public sealed partial class SyllableObfuscation : ObfuscationMethod
+public sealed partial class SyllableObfuscation : ReplacementObfuscation
 {
     [DataField]
     public int MinSyllables = 1;
@@ -51,7 +57,7 @@ public sealed partial class SyllableObfuscation : ObfuscationMethod
     [DataField]
     public int MaxSyllables = 4;
 
-    internal override void Obfuscate(StringBuilder builder, string message, LanguagePrototype language, SharedLanguageSystem context)
+    internal override void Obfuscate(StringBuilder builder, string message, SharedLanguageSystem context)
     {
         const char eof = (char) 0; // Special character to mark the end of the message in the code below
 
@@ -77,8 +83,8 @@ public sealed partial class SyllableObfuscation : ObfuscationMethod
 
                     for (var j = 0; j < newWordLength; j++)
                     {
-                        var index = context.PseudoRandomNumber(hashCode + j, 0, language.Replacement.Count - 1);
-                        builder.Append(language.Replacement[index]);
+                        var index = context.PseudoRandomNumber(hashCode + j, 0, Replacement.Count - 1);
+                        builder.Append(Replacement[index]);
                     }
                 }
 
@@ -102,7 +108,7 @@ public sealed partial class SyllableObfuscation : ObfuscationMethod
 ///     Obfuscates each sentence in the message by concatenating a number of obfuscation phrases.
 ///     The number of phrases in the obfuscated message is proportional to the length of the original message.
 /// </summary>
-public sealed partial class PhraseObfuscation : ObfuscationMethod
+public sealed partial class PhraseObfuscation : ReplacementObfuscation
 {
     [DataField]
     public int MinPhrases = 1;
@@ -127,7 +133,7 @@ public sealed partial class PhraseObfuscation : ObfuscationMethod
     [DataField]
     public float Proportion = 1f / 3;
 
-    internal override void Obfuscate(StringBuilder builder, string message, LanguagePrototype language, SharedLanguageSystem context)
+    internal override void Obfuscate(StringBuilder builder, string message, SharedLanguageSystem context)
     {
         var sentenceBeginIndex = 0;
         var hashCode = 0;
@@ -148,8 +154,8 @@ public sealed partial class PhraseObfuscation : ObfuscationMethod
 
                 for (var j = 0; j < newLength; j++)
                 {
-                    var phraseIdx = context.PseudoRandomNumber(hashCode + j, 0, language.Replacement.Count - 1);
-                    var phrase = language.Replacement[phraseIdx];
+                    var phraseIdx = context.PseudoRandomNumber(hashCode + j, 0, Replacement.Count - 1);
+                    var phrase = Replacement[phraseIdx];
                     builder.Append(phrase);
                     builder.Append(Separator);
                 }
