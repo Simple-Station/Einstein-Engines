@@ -629,7 +629,9 @@ namespace Content.Shared.Cuffs
                 return;
             }
 
-            var uncuffTime = (isOwner ? cuff.BreakoutTime : cuff.UncuffTime) * (cuff.UncuffEasierWhenLarge ? 1 / _contests.MassContest(user) : _contests.MassContest(user));
+            var ev = new ModifyUncuffDurationEvent(user, target, isOwner ? cuff.BreakoutTime : cuff.UncuffTime);
+            RaiseLocalEvent(user, ref ev);
+            var uncuffTime = ev.Duration;
 
             if (isOwner)
             {
