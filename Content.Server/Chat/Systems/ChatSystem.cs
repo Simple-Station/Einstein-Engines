@@ -502,7 +502,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
-            var canUnderstandLanguage = _language.CanUnderstand(listener, language);
+            var canUnderstandLanguage = _language.CanUnderstand(listener, language.ID);
             // How the entity perceives the message depends on whether it can understand its language
             var perceivedMessage = canUnderstandLanguage ? message : languageObfuscatedMessage;
 
@@ -717,7 +717,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
 
             // If the channel does not support languages, or the entity can understand the message, send the original message, otherwise send the obfuscated version
-            if (channel == ChatChannel.LOOC || channel == ChatChannel.Emotes || _language.CanUnderstand(listener, language))
+            if (channel == ChatChannel.LOOC || channel == ChatChannel.Emotes || _language.CanUnderstand(listener, language.ID))
             {
                 _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.Channel, author: author);
             }

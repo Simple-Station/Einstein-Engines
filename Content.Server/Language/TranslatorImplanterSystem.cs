@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Administration.Logs;
+using Content.Server.Language.Events;
 using Content.Server.Popups;
 using Content.Shared.Database;
 using Content.Shared.Interaction;
@@ -12,6 +13,7 @@ using Content.Shared.Language.Components.Translators;
 
 namespace Content.Server.Language;
 
+// TODO: pending rewrite
 public sealed class TranslatorImplanterSystem : SharedTranslatorImplanterSystem
 {
     [Dependency] private readonly PopupSystem _popup = default!;
@@ -35,13 +37,14 @@ public sealed class TranslatorImplanterSystem : SharedTranslatorImplanterSystem
         if (!TryComp<LanguageSpeakerComponent>(target, out var speaker))
             return;
 
+        // TODO: yes I know this should use whitelist comp, yes this will be changed after rewrite
         if (component.MobsOnly && !HasComp<MobStateComponent>(target))
         {
             _popup.PopupEntity("translator-implanter-refuse", component.Owner);
             return;
         }
 
-        var understood = _language.GetAllLanguages(target).understood;
+        var understood = speaker.UnderstoodLanguages;
         if (component.RequiredLanguages.Count > 0 && !component.RequiredLanguages.Any(lang => understood.Contains(lang)))
         {
             _popup.PopupEntity(Loc.GetString("translator-implanter-refuse",

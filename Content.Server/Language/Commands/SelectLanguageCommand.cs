@@ -36,13 +36,13 @@ public sealed class SelectLanguageCommand : IConsoleCommand
 
         var languages = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
 
-        if (!TryParseLanguageArgument(languages, playerEntity, args[0], out var failReason, out var languageId))
+        if (!TryParseLanguageArgument(languages, playerEntity, args[0], out var failReason, out var language))
         {
             shell.WriteError(failReason);
             return;
         }
 
-        languages.SetLanguage(playerEntity, languageId.ID);
+        languages.SetLanguage(playerEntity, language.ID);
     }
 
     // TODO: find a better place for this method
@@ -63,7 +63,7 @@ public sealed class SelectLanguageCommand : IConsoleCommand
         if (int.TryParse(input, out var num))
         {
             // The argument is a number
-            var (spoken, _) = languageSystem.GetAllLanguages(speaker);
+            var spoken = languageSystem.GetSpokenLanguages(speaker);
             if (num > 0 && num - 1 < spoken.Count)
                 language = languageSystem.GetLanguagePrototype(spoken[num - 1]);
 

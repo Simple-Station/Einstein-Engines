@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Language.Events;
 using Content.Server.Popups;
 using Content.Server.PowerCell;
 using Content.Shared.Interaction;
@@ -35,8 +36,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         SubscribeLocalEvent<HandheldTranslatorComponent, DroppedEvent>(OnTranslatorDropped);
     }
 
-    private void OnDetermineLanguages(EntityUid uid, IntrinsicTranslatorComponent component,
-        DetermineEntityLanguagesEvent ev)
+    private void OnDetermineLanguages(EntityUid uid, IntrinsicTranslatorComponent component, DetermineEntityLanguagesEvent ev)
     {
         if (!component.Enabled)
             return;
@@ -44,6 +44,11 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         if (!_powerCell.HasActivatableCharge(uid))
             return;
 
+        // The idea here is as follows:
+        // Required languages are languages that are required to operate the translator.
+        // The translator has a limited number of languages it can translate to and translate from.
+        // If the wielder understands the language of the translator, they will be able to understand translations provided by it
+        // If the wielder also speaks that language, they will be able to use it to translate their own speech by "speaking" in that language
         var addUnderstood = true;
         var addSpoken = true;
         if (component.RequiredLanguages.Count > 0)
@@ -53,10 +58,10 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
                 // Add langs when the wielder has all of the required languages
                 foreach (var language in component.RequiredLanguages)
                 {
-                    if (!ev.SpokenLanguages.Contains(language, StringComparer.Ordinal))
+                    if (!ev.SpokenLanguages.Contains(language))
                         addSpoken = false;
 
-                    if (!ev.UnderstoodLanguages.Contains(language, StringComparer.Ordinal))
+                    if (!ev.UnderstoodLanguages.Contains(language))
                         addUnderstood = false;
                 }
             }
@@ -67,30 +72,25 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
                 addSpoken = false;
                 foreach (var language in component.RequiredLanguages)
                 {
-                    if (ev.SpokenLanguages.Contains(language, StringComparer.Ordinal))
+                    if (ev.SpokenLanguages.Contains(language))
                         addSpoken = true;
 
-                    if (ev.UnderstoodLanguages.Contains(language, StringComparer.Ordinal))
+                    if (ev.UnderstoodLanguages.Contains(language))
                         addUnderstood = true;
                 }
             }
         }
 
         if (addSpoken)
-        {
             foreach (var language in component.SpokenLanguages)
-                AddIfNotExists(ev.SpokenLanguages, language);
-
-            if (component.DefaultLanguageOverride != null && ev.CurrentLanguage.Length == 0)
-                ev.CurrentLanguage = component.DefaultLanguageOverride;
-        }
+                ev.SpokenLanguages.Add(language);
 
         if (addUnderstood)
             foreach (var language in component.UnderstoodLanguages)
-                AddIfNotExists(ev.UnderstoodLanguages, language);
+                ev.UnderstoodLanguages.Add(language);
     }
 
-    private void OnTranslatorInteract( EntityUid translator, HandheldTranslatorComponent component, InteractHandEvent args)
+    private void OnTranslatorInteract(EntityUid translator, HandheldTranslatorComponent component, InteractHandEvent args)
     {
         var holder = args.User;
         if (!EntityManager.HasComponent<LanguageSpeakerComponent>(holder))
@@ -99,7 +99,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         var intrinsic = EnsureComp<HoldsTranslatorComponent>(holder);
         UpdateBoundIntrinsicComp(component, intrinsic, component.Enabled);
 
-        RaiseLocalEvent(holder, new LanguagesUpdateEvent(), true);
+        _language.UpdateEntityLanguages(holder);
     }
 
     private void OnTranslatorDropped(EntityUid translator, HandheldTranslatorComponent component, DroppedEvent args)
@@ -114,9 +114,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
             RemCompDeferred(holder, intrinsic);
         }
 
-        _language.EnsureValidLanguage(holder);
-
-        RaiseLocalEvent(holder, new LanguagesUpdateEvent(), true);
+        _language.UpdateEntityLanguages(holder);
     }
 
     private void OnTranslatorToggle(EntityUid translator, HandheldTranslatorComponent translatorComp, ActivateInWorldEvent args)
@@ -151,15 +149,11 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
             if (isEnabled && translatorComp.SetLanguageOnInteract)
             {
                 var firstNew = translatorComp.SpokenLanguages.FirstOrDefault(it => !languageComp.SpokenLanguages.Contains(it));
-                if (firstNew != null)
+                if (firstNew is {})
                     _language.SetLanguage(holder, firstNew, languageComp);
             }
 
-            if (!isEnabled)
-                _language.EnsureValidLanguage(holder, languageComp);
-
-            // TODO this raises at least 2 disctinct events of this type
-            RaiseLocalEvent(holder, new LanguagesUpdateEvent(), true);
+            _language.UpdateEntityLanguages(holder, languageComp);
         }
         else
         {
@@ -188,7 +182,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         OnAppearanceChange(translator, component);
 
         if (Transform(translator).ParentUid is { Valid: true } holder
-            && EntityManager.HasComponent<LanguageSpeakerComponent>(holder))
+            && TryComp<LanguageSpeakerComponent>(holder, out var languageComp))
         {
             if (!EntityManager.TryGetComponent<HoldsTranslatorComponent>(holder, out var intrinsic))
                 return;
@@ -196,11 +190,10 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
             if (intrinsic.Issuer == component)
             {
                 intrinsic.Enabled = false;
-                EntityManager.RemoveComponent(holder, intrinsic);
+                RemComp(holder, intrinsic);
             }
 
-            _language.EnsureValidLanguage(holder);
-            RaiseLocalEvent(holder, new LanguagesUpdateEvent(), true);
+            _language.UpdateEntityLanguages(holder, languageComp);
         }
     }
 
@@ -211,8 +204,8 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
     {
         if (isEnabled)
         {
-            intrinsic.SpokenLanguages = new List<string>(comp.SpokenLanguages);
-            intrinsic.UnderstoodLanguages = new List<string>(comp.UnderstoodLanguages);
+            intrinsic.SpokenLanguages = [..comp.SpokenLanguages];
+            intrinsic.UnderstoodLanguages = [..comp.UnderstoodLanguages];
             intrinsic.DefaultLanguageOverride = comp.DefaultLanguageOverride;
         }
         else
@@ -224,12 +217,5 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
 
         intrinsic.Enabled = isEnabled;
         intrinsic.Issuer = comp;
-    }
-
-    private static void AddIfNotExists(List<string> list, string item)
-    {
-        if (list.Contains(item))
-            return;
-        list.Add(item);
     }
 }
