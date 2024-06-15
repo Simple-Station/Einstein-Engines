@@ -177,7 +177,7 @@
     staminaCost: 15
 
 - type: entity
-  parent: ClothingShoesBootsMag
+  parent: [ClothingShoesBootsMag, ClothingShoesMilitaryBase]
   id: ClothingShoesBootsMagSec
   name: combat magboots
   description: Heavy-duty magboots with added protection and a convenient sidearm strap.
@@ -204,15 +204,6 @@
     modifier: 0.8
   - type: ClothingModifyStunTime # Goobstation
     modifier: 0.8
-  - type: Matchbox
-  - type: ItemSlots
-    slots:
-      item:
-        name: clothing-boots-sidearm
-        whitelist:
-          tags:
-          - Knife
-          - Sidearm
   - type: Armor
     modifiers:
       coefficients:
@@ -220,9 +211,6 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
-  - type: ContainerContainer
-    containers:
-      item: !type:ContainerSlot
 
 - type: entity
   id: ActionToggleMagboots
