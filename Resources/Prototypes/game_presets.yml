@@ -1,28 +1,28 @@
 - type: gamePreset
   id: Survival
   alias:
-    - survival
+  - survival
   name: survival-title
   showInVote: true # secret # DeltaV - Me when the survival. Used for periapsis.
   description: survival-description
   rules:
-    - RampingStationEventScheduler
-    - BasicRoundstartVariation
-    - SubGamemodesRule
-    - LavalandStormScheduler # Lavaland Change
+  - RampingStationEventScheduler
+  - BasicRoundstartVariation
+  - SubGamemodesRule
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SurvivalHellshift
   alias:
-    - hellshift
+  - hellshift
   showInVote: true
   name: hellshift-title
   description: hellshift-description
   rules:
-    - HellshiftStationEventScheduler
-    - BasicRoundstartVariation
-    - SubGamemodesRule
-    - LavalandStormScheduler # Lavaland Change
+  - HellshiftStationEventScheduler
+  - BasicRoundstartVariation
+  - SubGamemodesRule
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SurvivalIrregular
@@ -31,9 +31,9 @@
   name: irregular-title
   description: irregular-description
   rules:
-    - IrregularStationEventScheduler
-    - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
+  - IrregularStationEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SurvivalIrregularExtended
@@ -42,9 +42,9 @@
   name: irregular-extended-title
   description: irregular-extended-description
   rules:
-    - IrregularExtendedStationEventScheduler
-    - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
+  - IrregularExtendedStationEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: AllAtOnce
@@ -52,14 +52,14 @@
   description: all-at-once-description
   showInVote: false
   rules:
-    - Nukeops
-    - Traitor
-    - Revolutionary
-    - Zombie
-    - Changeling
-    - BloodCult
-    - RampingStationEventScheduler
-    - LavalandStormScheduler # Lavaland Change
+  - Nukeops
+  - Traitor
+  - Revolutionary
+  - Zombie
+  - Changeling
+  - BloodCult
+  - RampingStationEventScheduler
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Extended
@@ -71,6 +71,7 @@
   description: extended-description
   rules:
   - BasicStationEventScheduler
+  - GameRuleMeteorScheduler
   - BasicRoundstartVariation
   - SubGamemodesRule
   - LavalandStormScheduler # Lavaland Change
@@ -89,26 +90,27 @@
 - type: gamePreset
   id: Secret
   alias:
-    - secret
-    - sekrit
+  - secret
+  - sekrit
   name: secret-title
   showInVote: true
   description: secret-description
   rules:
-    - Secret
-    - LavalandStormScheduler # Lavaland Change
+  - Secret
+  - LavalandStormScheduler # Lavaland Change
 
 
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
   alias:
-    - secretextended
+  - secretextended
   name: secret-title
   showInVote: false #Admin Use
   description: secret-description
   rules:
-    - BasicStationEventScheduler
-    - LavalandStormScheduler # Lavaland Change
+  - BasicStationEventScheduler
+  - GameRuleMeteorScheduler
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
@@ -123,71 +125,74 @@
 - type: gamePreset
   id: Sandbox
   alias:
-    - sandbox
+  - sandbox
   name: sandbox-title
   description: sandbox-description
   showInVote: false # Not suitable for use without admin intervention, since entity spamming can quickly crash a server
   maxPlayers: 5
   rules:
-    - Sandbox
-    - LavalandStormScheduler # Lavaland Change
+  - Sandbox
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Traitor
   alias:
-    - traitor
+  - traitor
   name: traitor-title
   description: traitor-description
   showInVote: true
   rules:
-    - Traitor
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
+  - Traitor
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - GameRuleMeteorScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Deathmatch
   alias:
-    - deathmatch
-    - dm
+  - deathmatch
+  - dm
   name: death-match-title
   description: death-match-description
   #maxPlayers: 15
   showInVote: false # DeltaV - No.
   supportedMaps: DeathMatchMapPool
   rules:
-    - DeathMatch31
+  - DeathMatch31
 
 - type: gamePreset
   id: Nukeops
   alias:
-    - nukeops
+  - nukeops
   name: nukeops-title
   description: nukeops-description
   showInVote: false
   rules:
-    - Nukeops
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
+  - Nukeops
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - GameRuleMeteorScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Revolutionary
   alias:
-    - rev
-    - revs
-    - revolutionaries
+  - rev
+  - revs
+  - revolutionaries
   name: rev-title
   description: rev-description
   showInVote: false
   rules:
-    - Revolutionary
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
+  - Revolutionary
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - GameRuleMeteorScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Zombie
@@ -203,6 +208,7 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
+  - GameRuleMeteorScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
@@ -220,5 +226,6 @@
   - Changeling
   - SubGamemodesRule
   - BasicStationEventScheduler
+  - GameRuleMeteorScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
