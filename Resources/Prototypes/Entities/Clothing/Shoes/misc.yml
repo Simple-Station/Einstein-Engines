@@ -130,8 +130,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
-    itemIconStyle: BigItem
-    event: !type:ToggleActionEvent
+    itemIconStyle: NoItem
+    event: !type:ToggleClothingSpeedEvent
+    icon: { sprite: Clothing/Shoes/Boots/speedboots.rsi, state: icon }
+    iconOn: { sprite: Clothing/Shoes/Boots/speedboots.rsi, state: icon-on }
 
 - type: entity
   parent: ClothingShoesBase
