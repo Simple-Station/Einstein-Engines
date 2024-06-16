@@ -136,12 +136,14 @@
 //         if (args.Forced || args.Cancelled)
 //             return;
 
-//         var query = EntityQueryEnumerator<TestRuleComponent, GameRuleComponent>();
-//         while (query.MoveNext(out _, out _, out var gameRule))
-//         {
-//             var minPlayers = gameRule.MinPlayers;
-//             if (args.Players.Length >= minPlayers)
-//                 continue;
+        // var query = EntityQueryEnumerator<TestRuleComponent, GameRuleComponent>();
+        // while (query.MoveNext(out _, out _, out var gameRule))
+        // {
+        //     var minPlayers = gameRule.MinPlayers;
+        //     if (!gameRule.CancelPresetOnTooFewPlayers)
+        //         continue;
+        //     if (args.Players.Length >= minPlayers)
+        //         continue;
 
 //             args.Cancel();
 //         }
