@@ -25,6 +25,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
 
     private static readonly Regex StationIdRegex = new(@".*-(\d+)$");
 
+    [ValidatePrototypeId<WeightedRandomPrototype>]
     private const string RandomPrototype = "StationGoals";
 
 
