@@ -38,22 +38,16 @@ public sealed class StationGoalPaperSystem : EntitySystem
 
     private void OnRoundStarted(RoundStartedEvent ev)
     {
-        if (_config.GetCVar(CCVars.StationGoalsEnabled))
-        {
-            if (_config.GetCVar(CCVars.StationGoalsRandomNoGoal) && _random.Prob(0.1f))
-            {
-                if (_random.Prob(0.1f))
-                    SendRandomGoal();
-            }
-            else SendRandomGoal();
-        }
+        if (_config.GetCVar(CCVars.StationGoalsEnabled)
+        	&& _random.Prob(_config.GetCVar(CCVars.StationGoalsChance)))
+            SendRandomGoal();
     }
 
     /// <summary>
     ///     Send a random station goal to all faxes which are authorized to receive it
     /// </summary>
     /// <returns>If the fax was successful</returns>
-    /// <exception cref="ConstraintException">Raised when station goal types in the prototype is invalid</exception>
+    /// <exception cref="Exception">Raised when station goal types in the prototype is invalid</exception>
     public bool SendRandomGoal()
     {
         // Get the random station goal list
@@ -80,7 +74,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
         if (_prototype.TryIndex<WeightedRandomPrototype>(goal, out var goalRandom))
             return RecursiveRandom(goalRandom);
 
-        throw new Exception($"StationGoalPaperSystem: Random station goal could not be found from origin prototype {RandomPrototype}");
+        throw new Exception($"StationGoalPaperSystem: Random station goal could not be found from prototypes {RandomPrototype} and {random.ID}");
     }
 
     /// <summary>
@@ -94,8 +88,8 @@ public sealed class StationGoalPaperSystem : EntitySystem
 
         while (enumerator.MoveNext(out var uid, out var fax))
         {
-            if (!fax.ReceiveStationGoal ||
-                !TryComp<MetaDataComponent>(_station.GetOwningStation(uid), out var meta))
+            if (!fax.ReceiveStationGoal
+                || !TryComp<MetaDataComponent>(_station.GetOwningStation(uid), out var meta))
                 continue;
 
             var stationId = StationIdRegex.Match(meta.EntityName).Groups[1].Value;
