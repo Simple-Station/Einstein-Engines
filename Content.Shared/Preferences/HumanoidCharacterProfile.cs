@@ -35,8 +35,8 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
-            float height, // Parkstation-HeightSlider
-            float width, // Parkstation-HeightSlider
+            float height,
+            float width,
             int age,
             Sex sex,
             Gender gender,
@@ -53,8 +53,8 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Species = species;
-            Height = height; // Parkstation-HeightSlider
-            Width = width; // Parkstation-HeightSlider
+            Height = height;
+            Width = width;
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -94,8 +94,8 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
-            float height, // Parkstation-HeightSlider
-            float width, // Parkstation-HeightSlider
+            float height,
+            float width,
             int age,
             Sex sex,
             Gender gender,
@@ -124,8 +124,8 @@ namespace Content.Shared.Preferences
             "John Doe",
             "",
             SharedHumanoidAppearanceSystem.DefaultSpecies,
-            1f, // Parkstation-HeightSlider
-            1f, // Parkstation-HeightSlider
+            1f,
+            1f,
             18,
             Sex.Male,
             Gender.Male,
@@ -155,8 +155,8 @@ namespace Content.Shared.Preferences
                 "John Doe",
                 "",
                 species,
-                1f, // Parkstation-HeightSlider
-                1f, // Parkstation-HeightSlider
+                1f,
+                1f,
                 18,
                 Sex.Male,
                 Gender.Male,
@@ -196,14 +196,14 @@ namespace Content.Shared.Preferences
 
             var sex = Sex.Unsexed;
             var age = 18;
-            var height = 1f; // Parkstation-HeightSlider
-            var width = 1f; // Parkstation-HeightSlider
+            var height = 1f;
+            var width = 1f;
             if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
             {
                 sex = random.Pick(speciesPrototype.Sexes);
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
-                height = random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight); // Parkstation-HeightSlider
-                width = random.NextFloat(speciesPrototype.MinWidth, speciesPrototype.MaxWidth); // Parkstation-HeightSlider
+                height = random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+                width = random.NextFloat(speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
             }
 
             var gender = Gender.Epicene;
@@ -231,16 +231,14 @@ namespace Content.Shared.Preferences
 
         public string Name { get; private set; }
         public string FlavorText { get; private set; }
-        [DataField("species")] // Parkstation-HeightSlider // :)
+        [DataField("species")] // :)
         public string Species { get; private set; }
 
-        // Parkstation-HeightSlider Start
         [DataField("height")]
         public float Height { get; private set; }
 
         [DataField("width")]
         public float Width { get; private set; }
-        // Parkstation-HeightSlider End
 
         [DataField("age")]
         public int Age { get; private set; }
@@ -294,7 +292,6 @@ namespace Content.Shared.Preferences
             return new(this) { Species = species };
         }
 
-        // Parkstation-HeightSlider Start
         public HumanoidCharacterProfile WithHeight(float height)
         {
             return new(this) { Height = height };
@@ -304,7 +301,6 @@ namespace Content.Shared.Preferences
         {
             return new(this) { Width = width };
         }
-        // Parkstation-HeightSlider End
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
@@ -530,7 +526,6 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkup(FlavorText);
             }
 
-            // Parkstation-HeightSlider Start
             var height = Height;
             if (speciesPrototype != null)
                 height = Math.Clamp(Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
@@ -538,7 +533,6 @@ namespace Content.Shared.Preferences
             var width = Width;
             if (speciesPrototype != null)
                 width = Math.Clamp(Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
-            // Parkstation-HeightSlider End
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
@@ -610,8 +604,8 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Age = age;
-            Height = height; // Parkstation-HeightSlider
-            Width = width; // Parkstation-HeightSlider
+            Height = height;
+            Width = width;
             Sex = sex;
             Gender = gender;
             Appearance = appearance;

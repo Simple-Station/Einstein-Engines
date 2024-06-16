@@ -81,8 +81,8 @@ namespace Content.Client.Preferences.UI
         private SingleMarkingPicker _hairPicker => CHairStylePicker;
         private SingleMarkingPicker _facialHairPicker => CFacialHairPicker;
         private EyeColorPicker _eyesPicker => CEyeColorPicker;
-        private Slider _heightSlider => CHeightSlider; // Parkstation-HeightSlider
-        private Slider _widthSlider => CWidthSlider; // Parkstation-HeightSlider
+        private Slider _heightSlider => CHeightSlider;
+        private Slider _widthSlider => CWidthSlider;
 
         private TabContainer _tabContainer => CTabContainer;
         private BoxContainer _jobList => CJobList;
@@ -209,7 +209,6 @@ namespace Content.Client.Preferences.UI
 
             #endregion Species
 
-            // Parkstation-HeightSlider Start
             #region Height
 
             var prototype = _speciesList.Find(x => x.ID == Profile?.Species) ?? _speciesList.First();
@@ -265,7 +264,6 @@ namespace Content.Client.Preferences.UI
             };
 
             #endregion Height
-            // Parkstation-HeightSlider End
 
             #region Skin
 
@@ -943,8 +941,8 @@ namespace Content.Client.Preferences.UI
             OnSkinColorOnValueChanged(); // Species may have special color prefs, make sure to update it.
             CMarkings.SetSpecies(newSpecies); // Repopulate the markings tab as well.
             UpdateSexControls(); // update sex for new species
-            UpdateHeightControls(); // Parkstation-HeightSlider - Changing species provides inaccurate sliders
-            UpdateWidthControls(); // Parkstation-HeightSlider - Changing species provides inaccurate sliders
+            UpdateHeightControls();// - Changing species provides inaccurate sliders
+            UpdateWidthControls();// - Changing species provides inaccurate sliders
             RebuildSpriteView(); // they might have different inv so we need a new dummy
             UpdateSpeciesGuidebookIcon();
             IsDirty = true;
@@ -975,7 +973,6 @@ namespace Content.Client.Preferences.UI
             IsDirty = true;
         }
 
-        // Parkstation-HeightSlider Start
         private void SetProfileHeight(float height)
         {
             Profile = Profile?.WithHeight(height);
@@ -987,7 +984,6 @@ namespace Content.Client.Preferences.UI
             Profile = Profile?.WithWidth(width);
             IsDirty = true;
         }
-        // Parkstation-HeightSlider End
 
         public void Save()
         {
@@ -1193,7 +1189,6 @@ namespace Content.Client.Preferences.UI
             _spawnPriorityButton.SelectId((int) Profile.SpawnPriority);
         }
 
-        // Parkstation-HeightSlider Start
         private void UpdateHeightControls()
         {
             if (Profile == null)
@@ -1223,7 +1218,6 @@ namespace Content.Client.Preferences.UI
             var width = Profile.Width.ToString(CultureInfo.InvariantCulture);
             CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width.Length > 4 ? width[..4] : width));
         }
-        // Parkstation-HeightSlider End
 
         private void UpdateHairPickers()
         {

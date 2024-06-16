@@ -31,7 +31,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         UpdateLayers(component, sprite);
         ApplyMarkingSet(component, sprite);
 
-        // Parkstation-HeightSlider Start
         var speciesPrototype = _prototypeManager.Index(component.Species);
 
         var height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
@@ -40,7 +39,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         component.Width = width;
 
         sprite.Scale = new Vector2(width, height);
-        // Parkstation-HeightSlider End
 
         sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
     }

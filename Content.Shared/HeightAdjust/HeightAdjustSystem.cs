@@ -5,7 +5,7 @@ using Content.Shared.Movement.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 
-namespace Content.Shared.SimpleStation14.HeightAdjust;
+namespace Content.Shared.HeightAdjust;
 
 public sealed class HeightAdjustSystem : EntitySystem
 {
