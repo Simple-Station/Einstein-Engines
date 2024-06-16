@@ -2114,9 +2114,9 @@ namespace Content.Shared.CCVar
             CVarDef.Create("game.station_goals", true, CVar.SERVERONLY);
 
         /// <summary>
-        ///     If enabled, station goals have a 10% chance to not generate
+        ///     Chance for a station goal to be sent
         /// </summary>
-        public static readonly CVarDef<bool> StationGoalsRandomNoGoal =
-            CVarDef.Create("game.station_goals_random_none", false, CVar.SERVERONLY);
+        public static readonly CVarDef<float> StationGoalsChance =
+            CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
     }
 }

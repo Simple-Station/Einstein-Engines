@@ -4,8 +4,6 @@ namespace Content.Server.StationGoal
     ///     Paper with a written station goal in it.
     /// </summary>
     [RegisterComponent]
-    public sealed partial class StationGoalPaperComponent : Component
-    {
-    }
+    public sealed partial class StationGoalPaperComponent : Component { }
 }
 

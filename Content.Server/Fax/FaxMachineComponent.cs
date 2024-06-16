@@ -52,10 +52,9 @@ public sealed partial class FaxMachineComponent : Component
     public bool ReceiveNukeCodes { get; set; } = false;
 
     /// <summary>
-    /// Should that fax receive station goal info
+    /// 	Should this fax receive station goals
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("receiveStationGoal")]
+    [DataField]
     public bool ReceiveStationGoal { get; set; } = false;
 
     /// <summary>
