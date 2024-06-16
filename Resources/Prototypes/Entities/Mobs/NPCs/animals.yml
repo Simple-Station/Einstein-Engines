@@ -2156,8 +2156,6 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
-  - type: Puller
-    needsHands: true
   - type: RandomBark
     barkMultiplier: 1.5
     barks:
@@ -3070,14 +3068,13 @@
   id: MobHamster
   description: A cute, fluffy, robust hamster.
   components:
-  # - type: GhostTakeoverAvailable
-  #   makeSentient: true
-  #   allowSpeech: true
-  #   allowMovement: true
-  #   whitelistRequired: false
-  #   name: ghost-role-information-hamster-name
-  #   description: ghost-role-information-hamster-description
-  # - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-hamster-name
+    description: ghost-role-information-hamster-description
+  - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: SmallMob
     speechSounds: Squeak
