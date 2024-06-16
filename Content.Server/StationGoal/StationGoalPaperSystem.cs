@@ -1,16 +1,16 @@
 using System.Data;
 using System.Text.RegularExpressions;
-using Content.Server.Corvax.GameTicking;
+using Content.Server.GameTicking;
 using Content.Server.Fax;
 using Content.Server.Station.Systems;
-using Content.Shared.Corvax.CCCVars;
+using Content.Shared.CCVar;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server.Corvax.StationGoal;
+namespace Content.Server.StationGoal;
 
 /// <summary>
 ///     System for station goals
@@ -38,7 +38,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
 
     private void OnRoundStarted(RoundStartedEvent ev)
     {
-        if (_config.GetCVar(CCCVars.StationGoalsEnabled))
+        if (_config.GetCVar(CCVars.StationGoalsEnabled))
             SendRandomGoal();
     }
 

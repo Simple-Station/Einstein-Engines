@@ -1,4 +1,4 @@
-﻿namespace Content.Server.Corvax.GameTicking;
+﻿namespace Content.Server.GameTicking;
 
 public sealed class RoundStartedEvent : EntityEventArgs
 {

@@ -4,7 +4,7 @@ using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Corvax.StationGoal
+namespace Content.Server.StationGoal
 {
     [AdminCommand(AdminFlags.Fun)]
     public sealed class StationGoalCommand : IConsoleCommand

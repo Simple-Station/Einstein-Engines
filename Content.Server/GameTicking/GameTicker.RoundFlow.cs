@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Server.Announcements;
-using Content.Server.Corvax.GameTicking;
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
 using Content.Server.Ghost;
