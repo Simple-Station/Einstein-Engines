@@ -25,6 +25,10 @@ public sealed class StationGoalPaperSystem : EntitySystem
 
     private static readonly Regex StationIdRegex = new(@".*-(\d+)$");
 
+    [ValidatePrototypeId<WeightedRandomPrototype>]
+    private const string RandomPrototype = "StationGoals";
+
+
     public override void Initialize()
     {
         base.Initialize();
@@ -48,10 +52,9 @@ public sealed class StationGoalPaperSystem : EntitySystem
     public bool SendRandomGoal()
     {
         // Get the random station goal list
-        var randomPrototype = _config.GetCVar(CCVars.StationGoalsPrototypeId);
-        if (!_prototype.TryIndex<WeightedRandomPrototype>(randomPrototype, out var goals))
+        if (!_prototype.TryIndex<WeightedRandomPrototype>(RandomPrototype, out var goals))
         {
-            Log.Error($"StationGoalPaperSystem: Random station goal prototype '{randomPrototype}' not found");
+            Log.Error($"StationGoalPaperSystem: Random station goal prototype '{RandomPrototype}' not found");
             return false;
         }
 
@@ -72,7 +75,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
         if (_prototype.TryIndex<WeightedRandomPrototype>(goal, out var goalRandom))
             return RecursiveRandom(goalRandom);
 
-        throw new Exception($"StationGoalPaperSystem: Random station goal could not be found from prototypes {random} and {random.ID}");
+        throw new Exception($"StationGoalPaperSystem: Random station goal could not be found from prototypes {RandomPrototype} and {random.ID}");
     }
 
     /// <summary>
