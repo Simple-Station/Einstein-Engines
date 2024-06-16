@@ -13,13 +13,13 @@ station-goal-fax-paper-header =
 
 
 station-goal-xeno=
-    Dear station Command, the purpose of your shift is to build a xenobiology lab and then study exotic life forms.
+    Dear Station Command, the purpose of your shift is to build a Xenobiology Lab and then study exotic life forms.
     Two containment chambers must be constructed according to the following requirements:
-    1. Must be reinforced well;
+    1. Must be well reinforced;
     2. At least one of the chambers must be equipped with a gas supply system;
     3. The entrance should be a cycling airlock system to prevent contamination.
 
-    Get salvage crew to capture at least 2 representatives of life forms (e.g. space carp) and transport them to the above-described chambers.
+    Get the Salvage Team to capture at least 2 representatives of life forms (e.g. space carp) and transport them to the above-described chambers.
 
     Capture requirements:
     1. Exotic fauna should not have critical injuries at the time of placement in the research department;
@@ -33,7 +33,7 @@ station-goal-xeno=
     2. Test activities may include: working with gases, smoke, foam, or injecting experimental reagents (e.g. Cognizine) into captured fauna.
 
 station-goal-museum=
-    Dear command of the station, the purpose of your shift is to build a museum, the exhibits for which will be unique objects collected from the station.
+    Dear Command of the station, the purpose of your shift is to build a museum, the exhibits for which will be unique objects collected from the station.
 
     Below are the requirements for the design of the museum:
     1. The museum must be structurally connected to the station by a space-protected corridor, or be located within it;
@@ -62,7 +62,7 @@ station-goal-museum=
     Upon completion of the museum, it is required to provide the crew with at least 20 minutes of free time from work so that they can visit the museum.
 
 station-goal-area=
-    Dear station Command, the goal of your shift is to increase the effective use of space at the station.
+    Dear Station Command, the goal of your shift is to increase the effective use of space at the station.
 
     It is required to bring the abandoned premises into proper form and find a use for them.
     Each department must equip and effectively use the area of adjacent maintenance tunnels.
@@ -73,7 +73,7 @@ station-goal-area=
 station-goal-bureaucratic-error =
     ACCESS TO THIS DOCUMENT IS PROHIBITED FOR PERSONS WHO DO NOT HAVE LEGAL IMMUNITY
 
-    Dear station Command, we inform you that the purpose of your shift was lost as a result of a bureaucratic error.
+    Dear Station Command, we inform you that the purpose of your shift was lost as a result of a bureaucratic error.
     With this news, Central Command gives you the opportunity to independently assign a new goal for the station.
 
     New goal requirements:
@@ -85,7 +85,7 @@ station-goal-bureaucratic-error =
     Therefore, in order to present a new goal to the crew, the command staff must contact Central Command for approval of your ideas.
 
 station-goal-anomalies=
-    Dear station Command, the purpose of your shift is to provide new information about anomalies to NanoTrasen.
+    Dear Station Command, the purpose of your shift is to provide new information about anomalies to NanoTrasen.
 
     It is necessary to conduct experimental studies aimed at testing the consequences of the collapse of at least 4 unique anomalies.
     During or after the experiments, it is necessary to isolate and document the aforementioned anomalies.
@@ -113,9 +113,9 @@ station-goal-combat=
         Squad members must be recruited from the station's crew.
         Recruitment should be carried out on a voluntary-compulsory basis.
         Composition of the squad:
-            1 field medic;
-            1 field engineer;
-            3 combat operatives.
+            1 Field Medic;
+            1 Field Engineer;
+            3 Combat Operatives.
         All members of the squad must be trained in all the necessary skills to conduct combat and fulfill their role.
     5. Open a public shooting range.
         The shooting range should present all available types of weapons or their training counterparts.
@@ -124,7 +124,7 @@ station-goal-combat=
         If there is no boxing ring, you must create one.
 
 station-goal-shuttle=
-    Dear station Command, the purpose of your shift is to build a space shuttle capable of being piloted.
+    Dear Station Command, the purpose of your shift is to build a space shuttle capable of being piloted.
 
     Shuttle requirements:
     1. The shuttle must have a locked bridge;
