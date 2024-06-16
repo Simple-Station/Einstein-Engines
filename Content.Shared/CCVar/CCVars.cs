@@ -2112,5 +2112,11 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> StationGoalsEnabled =
             CVarDef.Create("game.station_goals", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     If enabled, station goals have a 10% chance to not generate
+        /// </summary>
+        public static readonly CVarDef<bool> StationGoalsRandomNoGoal =
+            CVarDef.Create("game.station_goals_random_none", false, CVar.SERVERONLY);
     }
 }

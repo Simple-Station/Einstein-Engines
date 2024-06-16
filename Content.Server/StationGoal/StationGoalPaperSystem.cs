@@ -39,7 +39,14 @@ public sealed class StationGoalPaperSystem : EntitySystem
     private void OnRoundStarted(RoundStartedEvent ev)
     {
         if (_config.GetCVar(CCVars.StationGoalsEnabled))
-            SendRandomGoal();
+        {
+            if (_config.GetCVar(CCVars.StationGoalsRandomNoGoal) && _random.Prob(0.1f))
+            {
+                if (_random.Prob(0.1f))
+                    SendRandomGoal();
+            }
+            else SendRandomGoal();
+        }
     }
 
     /// <summary>
