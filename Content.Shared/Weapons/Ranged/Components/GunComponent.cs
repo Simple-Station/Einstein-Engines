@@ -229,6 +229,12 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public bool ClumsyProof = false;
+
+    /// <summary>
+    ///     The percentage chance of a given gun to accidentally discharge if violently thrown into a wall or person
+    /// </summary>
+    [DataField]
+    public float Reliability = 0.1f;
 }
 
 [Flags]
