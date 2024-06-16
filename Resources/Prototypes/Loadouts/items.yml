@@ -243,3 +243,10 @@
   cost: 2
   items:
     - ClothingBeltStorageWaistbag
+
+- type: loadout
+  id: LoadoutSolCommonTranslator
+  category: Items
+  cost: 3
+  items:
+    - SolCommonTranslator
