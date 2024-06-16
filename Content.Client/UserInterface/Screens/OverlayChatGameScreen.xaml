@@ -1,4 +1,4 @@
-﻿<screens:DefaultGameScreen
+﻿<screens:OverlayChatGameScreen
     xmlns="https://spacestation14.io"
     xmlns:screens="clr-namespace:Content.Client.UserInterface.Screens"
     xmlns:menuBar="clr-namespace:Content.Client.UserInterface.Systems.MenuBar.Widgets"
@@ -30,4 +30,4 @@
     <hotbar:HotbarGui Name="Hotbar" Access="Protected" />
     <chat:ResizableChatBox Name="Chat" Access="Protected" />
     <alerts:AlertsUI Name="Alerts" Access="Protected" />
-</screens:DefaultGameScreen>
+</screens:OverlayChatGameScreen>
