@@ -32,8 +32,9 @@ public sealed class HeightAdjustSystem : EntitySystem
         {
             foreach (var fixture in fixtures.Fixtures)
             {
+                var scaleClamped = Math.Min(scale, 0.49f); //Prevent radius from going above the diameter of a door
                 // _physics.SetDensity(uid, fixture.Key, fixture.Value, fixture.Value.Density * scale); // This does the same thing as below, just without modifying the fixture size
-                _physics.SetRadius(uid, fixture.Key, fixture.Value, fixture.Value.Shape, fixture.Value.Shape.Radius * scale);
+                _physics.SetRadius(uid, fixture.Key, fixture.Value, fixture.Value.Shape, fixture.Value.Shape.Radius * scaleClamped);
             }
         }
         else
@@ -70,8 +71,9 @@ public sealed class HeightAdjustSystem : EntitySystem
         {
             foreach (var fixture in fixtures.Fixtures)
             {
+                var avgClamped = Math.Min(scale, 0.49f); //Prevent radius from going above the diameter of a door
                 // _physics.SetDensity(uid, fixture.Key, fixture.Value, fixture.Value.Density * avg); // This does the same thing as below, just without modifying the fixture size
-                _physics.SetRadius(uid, fixture.Key, fixture.Value, fixture.Value.Shape, fixture.Value.Shape.Radius * avg);
+                _physics.SetRadius(uid, fixture.Key, fixture.Value, fixture.Value.Shape, fixture.Value.Shape.Radius * avgClamped);
             }
         }
         else
