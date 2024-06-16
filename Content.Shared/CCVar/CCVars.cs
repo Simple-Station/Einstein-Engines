@@ -2118,5 +2118,11 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> StationGoalsChance =
             CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     The prototype ID to be used by the station goals system to fax command
+        /// </summary>
+        public static readonly CVarDef<string> StationGoalsPrototypeId =
+            CVarDef.Create("game.station_goals_prototype_id", "StationGoals", CVar.SERVERONLY);
     }
 }
