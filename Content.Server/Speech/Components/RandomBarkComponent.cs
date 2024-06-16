@@ -6,27 +6,39 @@ namespace Content.Server.Speech.Components;
 [RegisterComponent]
 public sealed partial class RandomBarkComponent : Component
 {
-    // Should the message be sent to the chat log?
+    /// <summary>
+    ///     Should the message be sent to the chat log?
+    /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool ChatLog = false;
 
-    // Minimum time an animal will go without speaking
+    /// <summary>
+    ///     Minimum time an animal will go without speaking
+    /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public int MinTime = 45;
 
-    // Maximum time an animal will go without speaking
+    /// <summary>
+    ///     Maximum time an animal will go without speaking
+    /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public int MaxTime = 350;
 
-    // Counter
+    /// <summary>
+    ///     Accumulator for counting time since the last bark
+    /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float BarkAccumulator = 8f;
 
-    // Multiplier applied to the random time. Good for changing the frequency without having to specify exact values
+    /// <summary>
+    ///     Multiplier applied to the random time. Good for changing the frequency without having to specify exact values
+    /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float BarkMultiplier = 1f;
 
-    // List of things to be said. Filled with garbage to be modified by an accent, but can be specified in the .yml
+    /// <summary>
+    ///     List of things to be said. Filled with garbage to be modified by an accent, but can be specified in the .yml
+    /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public IReadOnlyList<string> Barks = new[]
     {

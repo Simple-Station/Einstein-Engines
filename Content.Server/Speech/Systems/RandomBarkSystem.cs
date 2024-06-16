@@ -3,7 +3,7 @@ using Content.Shared.Mind.Components;
 using Robust.Shared.Random;
 using Content.Server.Speech.Components;
 
-namespace Content.Server.SimpleStation14.Speech.Systems;
+namespace Content.Server.Speech.Systems;
 
 public sealed class RandomBarkSystem : EntitySystem
 {
