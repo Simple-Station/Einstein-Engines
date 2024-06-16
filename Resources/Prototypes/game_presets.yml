@@ -7,6 +7,7 @@
   description: survival-description
   rules:
   - RampingStationEventScheduler
+  - GameRuleMeteorScheduler
   - BasicRoundstartVariation
   - SubGamemodesRule
   - LavalandStormScheduler # Lavaland Change
@@ -59,6 +60,7 @@
   - Changeling
   - BloodCult
   - RampingStationEventScheduler
+  - GameRuleMeteorScheduler
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
@@ -85,6 +87,8 @@
   showInVote: true
   description: greenshift-description
   rules:
+  - BasicRoundstartVariation
+  - GameRuleMeteorScheduler
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
