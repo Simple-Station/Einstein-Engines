@@ -2,6 +2,9 @@
   id: Area
 
 - type: stationGoal
+  id: Anomalies
+
+- type: stationGoal
   id: Artifacts
 
 - type: stationGoal
@@ -36,8 +39,6 @@
 
 - type: stationGoal
   id: Zoo
-
-
 
 - type: weightedRandom
   id: StationGoals
@@ -81,4 +82,5 @@
     Lectures: 1
     Museum: 1
     Shuttle: 1
+    Storage: 1
     Zoo: 1
