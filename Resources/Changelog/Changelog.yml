@@ -4166,3 +4166,11 @@ Entries:
       message: Radiation Collector has now a new sprite!
   id: 6120
   time: '2024-06-11T00:34:02.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        UI layout now defaults to separated, the old one is still available in
+        settings
+  id: 6121
+  time: '2024-06-16T22:38:10.0000000+00:00'
