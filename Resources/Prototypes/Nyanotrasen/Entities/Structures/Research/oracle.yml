@@ -45,3 +45,6 @@
   - type: SpriteFade
   - type: Tag
     tags: []
+  - type: GuideHelp
+    guides:
+    - Psionics
