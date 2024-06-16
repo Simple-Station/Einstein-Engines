@@ -116,7 +116,7 @@
       fallbackTypes:
         - !type:SimpleColoring
   sprites:
-    - sprite: Mobs/Customization/Harpy/harpy_tailsx36.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_tails36x36.rsi
       state: finch_tail
 
 - type: marking
@@ -132,9 +132,9 @@
       fallbackTypes:
         - !type:SimpleColoring
   sprites:
-    - sprite: Mobs/Customization/Harpy/harpy_tailsx48.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_tails48x48.rsi
       state: peacock_tail_feathers
-    - sprite: Mobs/Customization/Harpy/harpy_tailsx48.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_tails48x48.rsi
       state: peacock_tail_eyes
 
 - type: marking
