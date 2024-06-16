@@ -2,7 +2,6 @@
   id: LoadoutSpeciesEmergencyNitrogenTank
   category: Species
   cost: 0
-  exclusive: true
   requirements:
     - !type:LoadoutSpeciesRequirement
       species:
@@ -15,7 +14,6 @@
   id: LoadoutSpeciesExtendedEmergencyNitrogenTank
   category: Species
   cost: 1
-  exclusive: true
   requirements:
     - !type:LoadoutSpeciesRequirement
       species:
@@ -28,7 +26,6 @@
   id: LoadoutSpeciesDoubleEmergencyNitrogenTank
   category: Species
   cost: 3
-  exclusive: true
   requirements:
     - !type:LoadoutSpeciesRequirement
       species:

@@ -202,7 +202,6 @@
   id: LoadoutItemsEmergencyOxygenTank
   category: Items
   cost: 1
-  exclusive: true
   items:
     - EmergencyOxygenTankFilled
 
@@ -210,7 +209,6 @@
   id: LoadoutItemsExtendedEmergencyOxygenTank
   category: Items
   cost: 2
-  exclusive: true
   items:
     - ExtendedEmergencyOxygenTankFilled
 
@@ -218,7 +216,6 @@
   id: LoadoutItemsDoubleEmergencyOxygenTank
   category: Items
   cost: 4
-  exclusive: true
   items:
     - DoubleEmergencyOxygenTankFilled
 
