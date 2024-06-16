@@ -2,7 +2,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 
-namespace Content.Shared.SimpleStation14.Physics;
+namespace Content.Shared.Physics;
 
 public sealed class FrictionRemoverSystem : EntitySystem
 {
@@ -19,7 +19,7 @@ public sealed class FrictionRemoverSystem : EntitySystem
 
     private void RemoveDampening(EntityUid uid, PhysicsComponent component, PhysicsSleepEvent args)
     {
-        _physics.SetAngularDamping(component, 0, false);
-        _physics.SetLinearDamping(component, 0);
+        _physics.SetAngularDamping(uid, component, 0f, false);
+        _physics.SetLinearDamping(uid, component, 0f);
     }
 }
