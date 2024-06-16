@@ -2,8 +2,6 @@ using System.Linq;
 using System.Numerics;
 using Content.Server.Advertise;
 using Content.Server.Cargo.Systems;
-using Content.Server.Chat.Systems;
-using Content.Server.Emp;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.UserInterface;
@@ -51,7 +49,6 @@ namespace Content.Server.VendingMachines
             SubscribeLocalEvent<VendingMachineComponent, GotEmaggedEvent>(OnEmagged);
             SubscribeLocalEvent<VendingMachineComponent, DamageChangedEvent>(OnDamage);
             SubscribeLocalEvent<VendingMachineComponent, PriceCalculationEvent>(OnVendingPrice);
-            SubscribeLocalEvent<VendingMachineComponent, EmpPulseEvent>(OnEmpPulse);
 
             SubscribeLocalEvent<VendingMachineComponent, ActivatableUIOpenAttemptEvent>(OnActivatableUIOpenAttempt);
 
@@ -505,16 +502,6 @@ namespace Content.Server.VendingMachines
             }
 
             args.Price += priceSets.Max();
-        }
-
-        private void OnEmpPulse(EntityUid uid, VendingMachineComponent component, ref EmpPulseEvent args)
-        {
-            if (!component.Broken && this.IsPowered(uid, EntityManager))
-            {
-                args.Affected = true;
-                args.Disabled = true;
-                component.NextEmpEject = _timing.CurTime;
-            }
         }
     }
 }
