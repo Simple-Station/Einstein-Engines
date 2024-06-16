@@ -79,6 +79,9 @@ reagent-desc-tazinide = A highly dangerous metallic mixture which can interfere 
 reagent-name-lipolicide = lipolicide
 reagent-desc-lipolicide = A powerful toxin that will destroy fat cells, massively reducing body weight in a short time. Deadly to those without nutriment in their body.
 
+reagent-name-mechanotoxin = mechanotoxin
+reagent-desc-mechanotoxin = A neurotoxin used as venom by some species of spider. Degrades movement when built up.
+
 reagent-name-soulbreaker-toxin = soulbreaker toxin
 reagent-desc-soulbreaker-toxin = An anti-psionic about 4 times as powerful as mindbreaker toxin.
 
