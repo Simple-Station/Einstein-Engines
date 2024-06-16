@@ -1,0 +1,9 @@
+- type: guideEntry
+  id: Psionics
+  name: guide-entry-psionics
+  text: "/ServerInfo/Guidebook/Psionics.xml"
+
+# - type: guideEntry # When it's added
+#   id: AltarsGolemancy
+#   name: guide-entry-altars-golemancy
+#   text: "/ServerInfo/Nyanotrasen/Guidebook/Epistemics/Altar.xml"
