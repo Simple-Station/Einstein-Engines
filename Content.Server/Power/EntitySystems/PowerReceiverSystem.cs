@@ -12,6 +12,7 @@ using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Utility;
+using Content.Shared.Emp;
 
 namespace Content.Server.Power.EntitySystems
 {
@@ -137,7 +138,7 @@ namespace Content.Server.Power.EntitySystems
             {
                 Act = () =>
                 {
-                    TogglePower(uid, user: args.User);
+                    TryTogglePower(uid, user: args.User);
                 },
                 Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
                 Text = Loc.GetString("power-switch-component-toggle-verb"),
@@ -197,6 +198,14 @@ namespace Content.Server.Power.EntitySystems
             }
 
             return !receiver.PowerDisabled; // i.e. PowerEnabled
+        }
+
+        public bool TryTogglePower(EntityUid uid, bool playSwitchSound = true, ApcPowerReceiverComponent? receiver = null, EntityUid? user = null)
+        {
+            if (TryComp<EmpDisabledComponent>(uid, out var emp))
+                return false;
+
+            return TogglePower(uid, playSwitchSound, receiver, user);
         }
 
         public void SetLoad(ApcPowerReceiverComponent comp, float load)
