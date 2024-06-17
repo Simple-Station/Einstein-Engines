@@ -2,7 +2,7 @@
   "name": "prtitlecase",
   "description": "Converts PR titles to Title Case using title-case package",
   "type": "module",
-  "exports": "./src/index.js",
+  "exports": "./index.js",
   "author": "DEATHB4DEFEAT",
   "license": "MIT",
   "dependencies": {
