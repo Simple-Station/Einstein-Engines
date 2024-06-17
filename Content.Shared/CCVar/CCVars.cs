@@ -1596,10 +1596,10 @@ namespace Content.Shared.CCVar
          */
 
         public static readonly CVarDef<string> UILayout =
-            CVarDef.Create("ui.layout", "Default", CVar.CLIENTONLY | CVar.ARCHIVE);
+            CVarDef.Create("ui.layout", "Separated", CVar.CLIENTONLY | CVar.ARCHIVE);
 
-        public static readonly CVarDef<string> DefaultScreenChatSize =
-            CVarDef.Create("ui.default_chat_size", "", CVar.CLIENTONLY | CVar.ARCHIVE);
+        public static readonly CVarDef<string> OverlayScreenChatSize =
+            CVarDef.Create("ui.overlay_chat_size", "", CVar.CLIENTONLY | CVar.ARCHIVE);
 
         public static readonly CVarDef<string> SeparatedScreenChatSize =
             CVarDef.Create("ui.separated_chat_size", "0.6,0", CVar.CLIENTONLY | CVar.ARCHIVE);
@@ -2106,5 +2106,17 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> PsionicRollsEnabled =
             CVarDef.Create("psionics.rolls_enabled", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Enables station goals
+        /// </summary>
+        public static readonly CVarDef<bool> StationGoalsEnabled =
+            CVarDef.Create("game.station_goals", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Chance for a station goal to be sent
+        /// </summary>
+        public static readonly CVarDef<float> StationGoalsChance =
+            CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
     }
 }
