@@ -6,9 +6,9 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.UserInterface.Screens;
 
 [GenerateTypedNameReferences]
-public sealed partial class DefaultGameScreen : InGameScreen
+public sealed partial class OverlayChatGameScreen : InGameScreen
 {
-    public DefaultGameScreen()
+    public OverlayChatGameScreen()
     {
         RobustXamlLoader.Load(this);
 

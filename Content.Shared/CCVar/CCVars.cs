@@ -1596,10 +1596,10 @@ namespace Content.Shared.CCVar
          */
 
         public static readonly CVarDef<string> UILayout =
-            CVarDef.Create("ui.layout", "Default", CVar.CLIENTONLY | CVar.ARCHIVE);
+            CVarDef.Create("ui.layout", "Separated", CVar.CLIENTONLY | CVar.ARCHIVE);
 
-        public static readonly CVarDef<string> DefaultScreenChatSize =
-            CVarDef.Create("ui.default_chat_size", "", CVar.CLIENTONLY | CVar.ARCHIVE);
+        public static readonly CVarDef<string> OverlayScreenChatSize =
+            CVarDef.Create("ui.overlay_chat_size", "", CVar.CLIENTONLY | CVar.ARCHIVE);
 
         public static readonly CVarDef<string> SeparatedScreenChatSize =
             CVarDef.Create("ui.separated_chat_size", "0.6,0", CVar.CLIENTONLY | CVar.ARCHIVE);
