@@ -1,4 +1,3 @@
-using System.Data;
 using System.Text.RegularExpressions;
 using Content.Server.GameTicking;
 using Content.Server.Fax;
@@ -9,6 +8,7 @@ using Content.Shared.Random.Helpers;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared.Dataset;
 
 namespace Content.Server.StationGoal;
 
@@ -27,7 +27,8 @@ public sealed class StationGoalPaperSystem : EntitySystem
 
     [ValidatePrototypeId<WeightedRandomPrototype>]
     private const string RandomPrototype = "StationGoals";
-
+    [ValidatePrototypeId<DatasetPrototype>]
+    private const string RandomSignature = "names_last";
 
     public override void Initialize()
     {
@@ -86,6 +87,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
     {
         var enumerator = EntityManager.EntityQueryEnumerator<FaxMachineComponent>();
         var wasSent = false;
+        var signerName = _prototype.Index<DatasetPrototype>(RandomSignature);
 
         while (enumerator.MoveNext(out var uid, out var fax))
         {
@@ -99,7 +101,8 @@ public sealed class StationGoalPaperSystem : EntitySystem
                 Loc.GetString("station-goal-fax-paper-header",
                     ("date", DateTime.Now.AddYears(1000).ToString("yyyy MMMM dd")),
                     ("station", string.IsNullOrEmpty(stationId) ? "???" : stationId),
-                    ("content", goal.Text)
+                    ("content", goal.Text),
+                    ("name", _random.Pick(signerName.Values))
                 ),
                 Loc.GetString("station-goal-fax-paper-name"),
                 "StationGoalPaper"

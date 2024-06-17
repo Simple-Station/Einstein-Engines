@@ -5,7 +5,7 @@ station-goal-fax-paper-header =
     ████╗░██║╚══██╔══╝ Form NT-No.{$station}-CC
     ██╔██╗██║░░░██║░░░ Target Order
     ██║╚████║░░░██║░░░ Date: {$date}
-    ██║░╚███║░░░██║░░░
+    ██║░╚███║░░░██║░░░ Signed: CCO-{$name}
     ╚═╝░░╚══╝░░░╚═╝░░░
     ════════════════════════════════════════
     {$content}
@@ -70,7 +70,7 @@ station-goal-area=
     The remaining tunnels should be provided with floor coverings and adequate lighting.
     In addition, it is necessary to provide a public, well-lit corridor connecting all the restored compartments and new bedrooms.
 
-station-goal-bureaucratic-error =
+station-goal-bureaucraticerror =
     ACCESS TO THIS DOCUMENT IS PROHIBITED FOR PERSONS WHO DO NOT HAVE LEGAL IMMUNITY
 
     Dear Station Command, we inform you that the purpose of your shift was lost as a result of a bureaucratic error.
@@ -152,7 +152,7 @@ station-goal-singularity=
     2. The structure must be protected from meteorites and space debris.
     3. The containment field must be able to prevent the loss of a class 3 singularity.
 
-station-goal-solar-panels=
+station-goal-solarpanels=
     Dear station Command, the purpose of your shift is to organize a backup power system.
 
     The following work is required:
