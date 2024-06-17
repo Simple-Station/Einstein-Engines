@@ -731,7 +731,9 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   id: CurtainsBlack
@@ -746,7 +748,9 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked  
 
 - type: construction
   id: CurtainsBlue
@@ -761,7 +765,9 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked  
     
 - type: construction
   id: CurtainsCyan
@@ -776,7 +782,9 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   id: CurtainsGreen
@@ -791,7 +799,9 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   id: CurtainsOrange
@@ -806,7 +816,9 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   id: CurtainsPink
@@ -821,7 +833,9 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   id: CurtainsPurple
@@ -836,7 +850,9 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   id: CurtainsRed
@@ -851,7 +867,9 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked    
 
 - type: construction
   id: CurtainsWhite
@@ -866,7 +884,9 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
 
 - type: construction
   id: Bookshelf

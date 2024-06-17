@@ -11,7 +11,6 @@ public sealed class StepTriggerSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
     [Dependency] private readonly SharedGravitySystem _gravity = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
 
     public override void Initialize()
     {
@@ -41,9 +40,7 @@ public sealed class StepTriggerSystem : EntitySystem
         while (enumerator.MoveNext(out var uid, out var active, out var trigger, out var transform))
         {
             if (!Update(uid, trigger, transform, query))
-            {
                 continue;
-            }
 
             RemCompDeferred(uid, active);
         }
@@ -59,8 +56,7 @@ public sealed class StepTriggerSystem : EntitySystem
 
         if (component.Blacklist != null && TryComp<MapGridComponent>(transform.GridUid, out var grid))
         {
-            var positon = _map.LocalToTile(uid, grid, transform.Coordinates);
-            var anch = _map.GetAnchoredEntitiesEnumerator(uid, grid, positon);
+            var anch = grid.GetAnchoredEntitiesEnumerator(grid.LocalToTile(transform.Coordinates));
 
             while (anch.MoveNext(out var ent))
             {
@@ -113,16 +109,8 @@ public sealed class StepTriggerSystem : EntitySystem
             return;
         }
 
-        if (component.StepOn)
-        {
-            var evStep = new StepTriggeredOnEvent(uid, otherUid);
-            RaiseLocalEvent(uid, ref evStep);
-        }
-        else
-        {
-            var evStep = new StepTriggeredOffEvent(uid, otherUid);
-            RaiseLocalEvent(uid, ref evStep);
-        }
+        var ev = new StepTriggeredEvent { Source = uid, Tripper = otherUid };
+        RaiseLocalEvent(uid, ref ev, true);
 
         component.CurrentlySteppedOn.Add(otherUid);
         Dirty(uid, component);
@@ -142,7 +130,7 @@ public sealed class StepTriggerSystem : EntitySystem
 
         var msg = new StepTriggerAttemptEvent { Source = uid, Tripper = otherUid };
 
-        RaiseLocalEvent(uid, ref msg);
+        RaiseLocalEvent(uid, ref msg, true);
 
         return msg.Continue && !msg.Cancelled;
     }
@@ -174,12 +162,6 @@ public sealed class StepTriggerSystem : EntitySystem
 
         component.CurrentlySteppedOn.Remove(otherUid);
         Dirty(uid, component);
-
-        if (component.StepOn)
-        {
-            var evStepOff = new StepTriggeredOffEvent(uid, otherUid);
-            RaiseLocalEvent(uid, ref evStepOff);
-        }
 
         if (component.Colliding.Count == 0)
         {
@@ -248,14 +230,9 @@ public struct StepTriggerAttemptEvent
     public bool Cancelled;
 }
 
-/// <summary>
-/// Raised when an entity stands on a steptrigger initially (assuming it has both on and off states).
-/// </summary>
 [ByRefEvent]
-public readonly record struct StepTriggeredOnEvent(EntityUid Source, EntityUid Tripper);
-
-/// <summary>
-/// Raised when an entity leaves a steptrigger if it has on and off states OR when an entity intersects a steptrigger.
-/// </summary>
-[ByRefEvent]
-public readonly record struct StepTriggeredOffEvent(EntityUid Source, EntityUid Tripper);
+public struct StepTriggeredEvent
+{
+    public EntityUid Source;
+    public EntityUid Tripper;
+}
