@@ -140,13 +140,6 @@ namespace Content.Shared.SegmentedEntity
 
         private EntityUid AddSegment(EntityUid segmentuid, EntityUid parentuid, SegmentedEntityComponent segmentedComponent, int segmentNumber)
         {
-            SegmentedEntitySegmentComponent segmentComponent = new();
-            segmentComponent.Lamia = parentuid;
-            segmentComponent.AttachedToUid = segmentuid;
-            segmentComponent.DamageModifierConstant = segmentedComponent.NumberOfSegments * segmentedComponent.DamageModifierOffset;
-            float damageModifyCoefficient = segmentComponent.DamageModifierConstant / segmentedComponent.NumberOfSegments;
-            segmentComponent.DamageModifyFactor = segmentComponent.DamageModifierConstant * damageModifyCoefficient;
-            segmentComponent.ExplosiveModifyFactor = 1 / segmentComponent.DamageModifyFactor / (segmentedComponent.NumberOfSegments * segmentedComponent.ExplosiveModifierOffset);
 
             float taperConstant = segmentedComponent.NumberOfSegments - segmentedComponent.TaperOffset;
             EntityUid segment;
@@ -154,6 +147,18 @@ namespace Content.Shared.SegmentedEntity
                 segment = EntityManager.SpawnEntity(segmentedComponent.InitialSegmentId, Transform(segmentuid).Coordinates);
             else
                 segment = EntityManager.SpawnEntity(segmentedComponent.SegmentId, Transform(segmentuid).Coordinates);
+
+            if (EnsureComp<SegmentedEntitySegmentComponent>(segment, out var segmentComponent))
+            {
+                segmentComponent.Lamia = parentuid;
+                segmentComponent.AttachedToUid = segmentuid;
+                segmentComponent.DamageModifierConstant = segmentedComponent.NumberOfSegments * segmentedComponent.DamageModifierOffset;
+                float damageModifyCoefficient = segmentComponent.DamageModifierConstant / segmentedComponent.NumberOfSegments;
+                segmentComponent.DamageModifyFactor = segmentComponent.DamageModifierConstant * damageModifyCoefficient;
+                segmentComponent.ExplosiveModifyFactor = 1 / segmentComponent.DamageModifyFactor / (segmentedComponent.NumberOfSegments * segmentedComponent.ExplosiveModifierOffset);
+            }
+
+
             if (segmentNumber >= taperConstant && segmentedComponent.UseTaperSystem == true)
             {
                 segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset * MathF.Pow(segmentedComponent.OffsetConstant, segmentNumber - taperConstant);
@@ -168,10 +173,7 @@ namespace Content.Shared.SegmentedEntity
             {
                 segmentComponent.OffsetSwitching *= -1;
             }
-
-            segmentComponent.Owner = segment;
             segmentComponent.SegmentNumber = segmentNumber;
-            EntityManager.AddComponent(segment, segmentComponent, true);
             EnsureComp<PortalExemptComponent>(segment);
             _segments.Enqueue((segmentComponent, parentuid));
             segmentedComponent.Segments.Add(segment);
