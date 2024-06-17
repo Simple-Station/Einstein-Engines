@@ -117,7 +117,7 @@
         - !type:SimpleColoring
   sprites:
     - sprite: DeltaV/Mobs/Customization/Harpy/harpy_tailsx72.rsi
-      state: finch_tail 
+      state: finch_tail
 
 - type: marking
   id: HarpyWing2ToneClassic
