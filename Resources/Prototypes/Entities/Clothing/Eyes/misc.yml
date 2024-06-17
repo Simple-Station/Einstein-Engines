@@ -1,4 +1,20 @@
 - type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesBlindfold
+  name: blindfold
+  description: The bind leading the blind.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: Blindfold
+  - type: Construction
+    graph: Blindfold
+    node: blindfold
+  - type: FlashImmunity
+
+- type: entity
   parent: [ClothingEyesBase, FlippableEyesBase]
   id: ClothingEyesEyepatch
   name: eyepatch

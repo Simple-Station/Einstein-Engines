@@ -276,9 +276,6 @@ public abstract class ClothingSystem : EntitySystem
 
     public void SetLayerColor(ClothingComponent clothing, string slot, string mapKey, Color? color)
     {
-        if (clothing.ClothingVisuals == null)
-            return;
-
         foreach (var layer in clothing.ClothingVisuals[slot])
         {
             if (layer.MapKeys == null)
@@ -292,9 +289,6 @@ public abstract class ClothingSystem : EntitySystem
     }
     public void SetLayerState(ClothingComponent clothing, string slot, string mapKey, string state)
     {
-        if (clothing.ClothingVisuals == null)
-            return;
-
         foreach (var layer in clothing.ClothingVisuals[slot])
         {
             if (layer.MapKeys == null)
