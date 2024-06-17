@@ -194,7 +194,7 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Lamia
+  - type: SegmentedEntity
     numberOfSegments: 18
   - type: Speech
     speechSounds: Alto

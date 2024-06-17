@@ -6,14 +6,14 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.DeltaV.Lamiae
+namespace Content.Shared.SegmentedEntity
 {
     /// <summary>
     /// Lamia segment
     /// </summary>
     [RegisterComponent]
     [NetworkedComponent]
-    public sealed partial class LamiaSegmentComponent : Component
+    public sealed partial class SegmentedEntitySegmentComponent : Component
     {
         [DataField("AttachedToUid")]
         public EntityUid AttachedToUid = default!;

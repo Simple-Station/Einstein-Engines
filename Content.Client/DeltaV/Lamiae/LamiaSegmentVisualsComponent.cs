@@ -7,5 +7,5 @@
 namespace Content.Client.DeltaV.Lamiae;
 
 [RegisterComponent]
-public sealed partial class LamiaSegmentVisualsComponent : Component
+public sealed partial class SegmentedEntitySegmentVisualsComponent : Component
 {}

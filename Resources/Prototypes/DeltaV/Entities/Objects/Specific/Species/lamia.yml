@@ -29,7 +29,7 @@
         - MobLayer
   - type: Transform
     anchored: false
-  - type: LamiaSegmentVisuals
+  - type: SegmentedEntitySegmentVisuals
   - type: Tag
     tags:
     - HideContextMenu
@@ -47,7 +47,7 @@
     drawdepth: SmallMobs
     layers:
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "enum.LamiaSegmentVisualLayers.Armor" ]
+    - map: [ "enum.SegmentedEntitySegmentVisualLayers.Armor" ]
       sprite: Clothing/OuterClothing/Hardsuits/basic.rsi
       state: segment
       visible: false

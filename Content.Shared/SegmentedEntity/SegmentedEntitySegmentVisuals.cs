@@ -6,10 +6,10 @@
 
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.DeltaV.Lamiae
+namespace Content.Shared.SegmentedEntity
 {
     [Serializable, NetSerializable]
-    public enum LamiaSegmentVisualLayers
+    public enum SegmentedEntitySegmentVisualLayers
     {
         Tail,
         Armor,

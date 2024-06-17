@@ -4,13 +4,13 @@
 * See AGPLv3.txt for details.
 */
 
-namespace Content.Shared.DeltaV.Lamiae
+namespace Content.Shared.SegmentedEntity
 {
     /// <summary>
     /// Controls initialization of any Multi-segmented entity
     /// </summary>
     [RegisterComponent]
-    public sealed partial class LamiaComponent : Component
+    public sealed partial class SegmentedEntityComponent : Component
     {
         /// <summary>
         /// A list of each UID attached to the Lamia, in order of spawn
