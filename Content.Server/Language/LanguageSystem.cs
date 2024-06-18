@@ -26,7 +26,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         if (language == UniversalPrototype || HasComp<UniversalLanguageSpeakerComponent>(listener))
             return true;
 
-        if (!Resolve(listener, ref component))
+        if (!Resolve(listener, ref component, logMissing: false))
             return false;
 
         return component.UnderstoodLanguages.Contains(language);
@@ -37,7 +37,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         if (HasComp<UniversalLanguageSpeakerComponent>(speaker))
             return true;
 
-        if (!Resolve(speaker, ref component))
+        if (!Resolve(speaker, ref component, logMissing: false))
             return false;
 
         return component.SpokenLanguages.Contains(language);
@@ -48,7 +48,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     /// </summary>
     public LanguagePrototype GetLanguage(EntityUid speaker, LanguageSpeakerComponent? component = null)
     {
-        if (HasComp<UniversalLanguageSpeakerComponent>(speaker) || !Resolve(speaker, ref component))
+        if (HasComp<UniversalLanguageSpeakerComponent>(speaker) || !Resolve(speaker, ref component, logMissing: false))
             return Universal; // Serves both as a fallback and uhhh something (TODO: fix this comment)
 
         if (string.IsNullOrEmpty(component.CurrentLanguage) || !_prototype.TryIndex<LanguagePrototype>(component.CurrentLanguage, out var proto))
@@ -152,7 +152,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     /// <returns>True if the current language was modified, false otherwise.</returns>
     public bool EnsureValidLanguage(EntityUid entity, LanguageSpeakerComponent? comp = null)
     {
-        if (comp == null && !TryComp(entity, out comp))
+        if (!Resolve(entity, ref comp))
             return false;
 
         if (!comp.SpokenLanguages.Contains(comp.CurrentLanguage))
