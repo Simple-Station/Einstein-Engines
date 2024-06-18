@@ -24,6 +24,7 @@
     - category: Thirst
     - alertType: Magboots
     - alertType: Pacified
+    - alertType: Offering
 
 - type: alert
   id: LowOxygen
@@ -149,6 +150,13 @@
   icons: [ /Textures/Interface/Alerts/Buckle/buckled.png ]
   name: alerts-buckled-name
   description: alerts-buckled-desc
+
+- type: alert
+  id: Offering
+  onClick: !type:AcceptingOffer  { }
+  icons: [ /Textures/Interface/Alerts/Offering_item/Offering_item.png ]
+  name: alerts-offering-name
+  description: alerts-offering-desc
 
 - type: alert
   id: HumanCrit

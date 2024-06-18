@@ -255,6 +255,9 @@ binds:
   type: State
   key: V
   mod1: Shift
+- function: OfferingItem
+  type: State
+  key: V
 - function: ShowDebugConsole
   type: State
   key: Tilde
