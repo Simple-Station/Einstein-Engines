@@ -13,8 +13,6 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Language;
 
-// NOTE FOR SELF: MAKE SURE LANGUAGE SWITCHING AFTER EQUIPPING A HANDHELD WORKS
-
 // This does not support holding multiple translators at once.
 // That shouldn't be an issue for now, but it needs to be fixed later.
 public sealed class TranslatorSystem : SharedTranslatorSystem

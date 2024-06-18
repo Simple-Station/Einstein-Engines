@@ -1,6 +1,7 @@
 using Content.Server.Language.Events;
 using Content.Server.Mind;
 using Content.Shared.Language;
+using Content.Shared.Language.Components;
 using Content.Shared.Language.Events;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -60,13 +61,18 @@ public sealed partial class LanguageSystem
         SendLanguageStateToClient(entity, session, comp);
     }
 
+    // TODO this is really stupid and can be avoided if we just make everything shared...
     private void SendLanguageStateToClient(EntityUid uid, ICommonSession session, LanguageSpeakerComponent? component = null)
     {
-        if (!Resolve(uid, ref component))
-            return;
+        var isUniversal = HasComp<UniversalLanguageSpeakerComponent>(uid);
+        if (!isUniversal)
+            Resolve(uid, ref component, logMissing: false);
 
-        // TODO this is really stupid and can be avoided if we just make everything shared...
-        var message = new LanguagesUpdatedMessage(component.CurrentLanguage, component.SpokenLanguages, component.UnderstoodLanguages);
+        // I really don't want to call 3 getter methods here, so we'll just have this slightly hardcoded solution
+        var message = isUniversal || component == null
+            ? new LanguagesUpdatedMessage(UniversalPrototype, [UniversalPrototype], [UniversalPrototype])
+            : new LanguagesUpdatedMessage(component.CurrentLanguage, component.SpokenLanguages, component.UnderstoodLanguages);
+
         RaiseNetworkEvent(message, session);
     }
 }
