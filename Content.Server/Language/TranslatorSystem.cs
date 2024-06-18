@@ -13,6 +13,8 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Language;
 
+// NOTE FOR SELF: MAKE SURE LANGUAGE SWITCHING AFTER EQUIPPING A HANDHELD WORKS
+
 // This does not support holding multiple translators at once.
 // That shouldn't be an issue for now, but it needs to be fixed later.
 public sealed class TranslatorSystem : SharedTranslatorSystem
@@ -38,7 +40,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
 
     private void OnDetermineLanguages(EntityUid uid, IntrinsicTranslatorComponent component, DetermineEntityLanguagesEvent ev)
     {
-        if (!component.Enabled)
+        if (!component.Enabled || !TryComp<LanguageSpeakerComponent>(uid, out var speaker))
             return;
 
         if (!_powerCell.HasActivatableCharge(uid))
@@ -49,37 +51,8 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         // The translator has a limited number of languages it can translate to and translate from.
         // If the wielder understands the language of the translator, they will be able to understand translations provided by it
         // If the wielder also speaks that language, they will be able to use it to translate their own speech by "speaking" in that language
-        var addUnderstood = true;
-        var addSpoken = true;
-        if (component.RequiredLanguages.Count > 0)
-        {
-            if (component.RequiresAllLanguages)
-            {
-                // Add langs when the wielder has all of the required languages
-                foreach (var language in component.RequiredLanguages)
-                {
-                    if (!ev.SpokenLanguages.Contains(language))
-                        addSpoken = false;
-
-                    if (!ev.UnderstoodLanguages.Contains(language))
-                        addUnderstood = false;
-                }
-            }
-            else
-            {
-                // Add langs when the wielder has at least one of the required languages
-                addUnderstood = false;
-                addSpoken = false;
-                foreach (var language in component.RequiredLanguages)
-                {
-                    if (ev.SpokenLanguages.Contains(language))
-                        addSpoken = true;
-
-                    if (ev.UnderstoodLanguages.Contains(language))
-                        addUnderstood = true;
-                }
-            }
-        }
+        var addSpoken = CheckLanguagesMatch(component.RequiredLanguages, speaker.SpokenLanguages, component.RequiresAllLanguages);
+        var addUnderstood = CheckLanguagesMatch(component.RequiredLanguages, speaker.UnderstoodLanguages, component.RequiresAllLanguages);
 
         if (addSpoken)
             foreach (var language in component.SpokenLanguages)
@@ -206,16 +179,27 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         {
             intrinsic.SpokenLanguages = [..comp.SpokenLanguages];
             intrinsic.UnderstoodLanguages = [..comp.UnderstoodLanguages];
-            intrinsic.DefaultLanguageOverride = comp.DefaultLanguageOverride;
         }
         else
         {
             intrinsic.SpokenLanguages.Clear();
             intrinsic.UnderstoodLanguages.Clear();
-            intrinsic.DefaultLanguageOverride = null;
         }
 
         intrinsic.Enabled = isEnabled;
         intrinsic.Issuer = comp;
+    }
+
+    /// <summary>
+    ///     Checks whether any OR all required languages are provided. Used for utility purposes.
+    /// </summary>
+    public static bool CheckLanguagesMatch(ICollection<string> required, ICollection<string> provided, bool requireAll)
+    {
+        if (required.Count == 0)
+            return true;
+
+        return requireAll
+            ? required.All(provided.Contains)
+            : required.Any(provided.Contains);
     }
 }
