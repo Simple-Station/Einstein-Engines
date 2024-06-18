@@ -9,37 +9,37 @@ public sealed partial class RandomBarkComponent : Component
     /// <summary>
     ///     Should the message be sent to the chat log?
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public bool ChatLog = false;
 
     /// <summary>
     ///     Minimum time an animal will go without speaking
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public int MinTime = 45;
 
     /// <summary>
     ///     Maximum time an animal will go without speaking
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public int MaxTime = 350;
 
     /// <summary>
     ///     Accumulator for counting time since the last bark
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float BarkAccumulator = 8f;
 
     /// <summary>
     ///     Multiplier applied to the random time. Good for changing the frequency without having to specify exact values
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float BarkMultiplier = 1f;
 
     /// <summary>
     ///     List of things to be said. Filled with garbage to be modified by an accent, but can be specified in the .yml
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public IReadOnlyList<string> Barks = new[]
     {
         "Bark",
