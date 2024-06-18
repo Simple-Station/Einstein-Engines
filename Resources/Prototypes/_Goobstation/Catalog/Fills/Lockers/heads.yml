@@ -37,6 +37,7 @@
     - id: PinpointerNuclear
     - id: ClothingHandsGlovesCombat
     - id: WeaponEnergyRevolver
+    - id: BlueshieldAmmunitionBoxFilled
 
 - type: entity
   id: LockerBlueshieldOfficerFilled
