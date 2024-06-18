@@ -58,7 +58,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
         if (TryComp<MapGridComponent>(entXform.GridUid, out var grid))
         {
             var gridId = entXform.GridUid.Value;
-            // Floodfill to the nearest tile and use that for audio.
+            // FloodFill to the nearest tile and use that for audio.
             var seed = _mapSystem.GetTileRef(gridId, grid, entXform.Coordinates);
             var frontier = new Queue<TileRef>();
             frontier.Enqueue(seed);
@@ -71,7 +71,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
                 if (!visited.Add(node.GridIndices))
                     continue;
 
-                if (!CanWeatherAffect(grid, node))
+                if (!CanWeatherAffect(entXform.GridUid.Value, grid, node))
                 {
                     // Add neighbors
                     // TODO: Ideally we pick some deterministically random direction and use that
