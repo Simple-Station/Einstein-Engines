@@ -119,6 +119,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
             return;
 
         _clientLanguageSystem.RequestSetLanguage(proto);
+        UpdateState(id, _clientLanguageSystem.SpokenLanguages);
     }
 
 
