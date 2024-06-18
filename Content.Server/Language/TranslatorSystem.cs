@@ -118,15 +118,14 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
             translatorComp.Enabled = isEnabled;
             _powerCell.SetPowerCellDrawEnabled(translator, isEnabled);
 
-            // Update the current language of the entity if necessary
-            if (isEnabled && translatorComp.SetLanguageOnInteract)
-            {
-                var firstNew = translatorComp.SpokenLanguages.FirstOrDefault(it => !languageComp.SpokenLanguages.Contains(it));
-                if (firstNew is {})
-                    _language.SetLanguage(holder, firstNew, languageComp);
-            }
+            // The first new spoken language added by this translator, or null
+            var firstNewLanguage = translatorComp.SpokenLanguages.FirstOrDefault(it => !languageComp.SpokenLanguages.Contains(it));
 
             _language.UpdateEntityLanguages(holder, languageComp);
+
+            // Update the current language of the entity if necessary
+            if (isEnabled && translatorComp.SetLanguageOnInteract && firstNewLanguage is {})
+                _language.SetLanguage(holder, firstNewLanguage, languageComp);
         }
         else
         {
