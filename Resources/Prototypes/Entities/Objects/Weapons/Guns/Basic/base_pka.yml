@@ -22,7 +22,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
-    reliability: 1
+    fireOnDropChance: 1
   - type: AmmoCounter
   - type: Appearance
   - type: GenericVisualizer

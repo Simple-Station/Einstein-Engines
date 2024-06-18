@@ -21,7 +21,7 @@ public sealed class FireOnDropSystem : EntitySystem
 
     private void HandleLand(EntityUid uid, GunComponent component, ref ThrowDoHitEvent args)
     {
-        if (_random.Prob(component.Reliability))
+        if (_random.Prob(component.FireOnDropChance))
             _gun.AttemptShoot(uid, uid, component, Transform(uid).Coordinates.Offset(Transform(uid).LocalRotation.ToVec()));
     }
 }

@@ -53,7 +53,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
-    reliability: 1
+    fireOnDropChance: 1
 
 - type: entity
   name: Hristov
@@ -90,7 +90,7 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    reliability: 1
+    fireOnDropChance: 1
   - type: UseDelayOnShoot
   - type: UseDelay
     delay: 8 #it's a musket
@@ -120,7 +120,7 @@
   - type: Gun
     minAngle: 0
     maxAngle: 30 #miss him entirely because the barrel is smoothbore
-    reliability: 1
+    fireOnDropChance: 1
   - type: Item
     size: Small
     storedRotation: 90

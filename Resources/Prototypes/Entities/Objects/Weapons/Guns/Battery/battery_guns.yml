@@ -18,7 +18,7 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    reliability: 0.15
+    fireOnDropChance: 0.15
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
   - type: Battery
