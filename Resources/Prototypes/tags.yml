@@ -272,6 +272,9 @@
   id: CarpetPurple
 
 - type: Tag
+  id: CarpetSBlue
+
+- type: Tag
   id: CarpetPink
 
 - type: Tag
@@ -648,6 +651,9 @@
   id: Hardsuit # Prevent melee injectors that can't penetrate hardsuits from injecting the wearer (nettles)
 
 - type: Tag
+  id: Haunted
+
+- type: Tag
   id: Head
 
 - type: Tag
@@ -870,6 +876,9 @@
 
 - type: Tag
   id: NoBlockAnchoring
+
+- type: Tag
+  id: NoPaint
 
 - type: Tag
   id: NozzleBackTank
@@ -1140,6 +1149,9 @@
   id: SuitEVA
 
 - type: Tag
+  id: SurgeryTool
+
+- type: Tag
   id: SurveillanceCameraMonitorCircuitboard
 
 - type: Tag
@@ -1177,6 +1189,12 @@
 
 - type: Tag
   id: Torch
+
+- type: Tag
+  id: ToyRubberDuck
+
+- type: Tag
+  id: ToySidearm
 
 - type: Tag
   id: Trash
