@@ -6,14 +6,14 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Enums;
 using Robust.Shared.Utility;
 
-namespace Content.Client.OfferingItem;
+namespace Content.Client.OfferItem;
 
-public sealed class OfferingItemIndicatorsOverlay : Overlay
+public sealed class OfferItemIndicatorsOverlay : Overlay
 {
     private readonly IInputManager _inputManager;
     private readonly IEntityManager _entMan;
     private readonly IEyeManager _eye;
-    private readonly OfferingItemSystem _offer;
+    private readonly OfferItemSystem _offer;
 
     private readonly Texture _sight;
 
@@ -23,8 +23,8 @@ public sealed class OfferingItemIndicatorsOverlay : Overlay
     private readonly Color _strokeColor = Color.Black.WithAlpha(0.5f);
     private readonly float _scale = 0.6f;  // 1 is a little big
 
-    public OfferingItemIndicatorsOverlay(IInputManager input, IEntityManager entMan,
-            IEyeManager eye, OfferingItemSystem offerSys)
+    public OfferItemIndicatorsOverlay(IInputManager input, IEntityManager entMan,
+            IEyeManager eye, OfferItemSystem offerSys)
     {
         _inputManager = input;
         _entMan = entMan;

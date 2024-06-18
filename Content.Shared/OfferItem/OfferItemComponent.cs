@@ -1,10 +1,10 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.OfferingItem;
+namespace Content.Shared.OfferItem;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
-[Access(typeof(SharedOfferingItemSystem))]
-public sealed partial class OfferingItemComponent : Component
+[Access(typeof(SharedOfferItemSystem))]
+public sealed partial class OfferItemComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public bool IsInOfferMode;

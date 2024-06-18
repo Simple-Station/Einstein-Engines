@@ -255,9 +255,10 @@ binds:
   type: State
   key: V
   mod1: Shift
-- function: OfferingItem
+- function: OfferItem
   type: State
   key: V
+  mod1: Control
 - function: ShowDebugConsole
   type: State
   key: Tilde

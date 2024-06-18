@@ -136,7 +136,7 @@ ui-options-function-examine-entity = Examine
 ui-options-function-swap-hands = Swap hands
 ui-options-function-move-stored-item = Move stored item
 ui-options-function-rotate-stored-item = Rotate stored item
-ui-options-function-offering-item = Offer something
+ui-options-function-offer-item = Offer something
 ui-options-static-storage-ui = Lock storage window to hotbar
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack

@@ -309,7 +309,7 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
-  - type: OfferingItem
+  - type: OfferItem
 
 - type: entity
   save: false

@@ -1,11 +1,11 @@
 using Content.Shared.Hands.Components;
 using Content.Shared.Alert;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.OfferingItem;
+using Content.Shared.OfferItem;
 
-namespace Content.Server.OfferingItem;
+namespace Content.Server.OfferItem;
 
-public sealed class OfferingItemSystem : SharedOfferingItemSystem
+public sealed class OfferItemSystem : SharedOfferItemSystem
 {
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
@@ -14,36 +14,36 @@ public sealed class OfferingItemSystem : SharedOfferingItemSystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<OfferingItemComponent>();
-        while (query.MoveNext(out var uid, out var offeringItem))
+        var query = EntityQueryEnumerator<OfferItemComponent>();
+        while (query.MoveNext(out var uid, out var offerItem))
         {
             if (!TryComp<HandsComponent>(uid, out var hands) || hands.ActiveHand == null)
                 continue;
 
-            if (offeringItem.Hand != null &&
-                hands.Hands[offeringItem.Hand].HeldEntity == null)
-                UnOffer(uid, offeringItem);
+            if (offerItem.Hand != null &&
+                hands.Hands[offerItem.Hand].HeldEntity == null)
+                UnOffer(uid, offerItem);
 
-            if (!offeringItem.IsInReceiveMode)
+            if (!offerItem.IsInReceiveMode)
             {
-                _alertsSystem.ClearAlert(uid, AlertType.Offering);
+                _alertsSystem.ClearAlert(uid, AlertType.Offer);
                 continue;
             }
 
-            _alertsSystem.ShowAlert(uid, AlertType.Offering);
+            _alertsSystem.ShowAlert(uid, AlertType.Offer);
         }
     }
 
-    public void Receiving(EntityUid uid, OfferingItemComponent? component = null)
+    public void Receiving(EntityUid uid, OfferItemComponent? component = null)
     {
         if (!Resolve(uid, ref component) ||
-            !TryComp<OfferingItemComponent>(component.Target, out var offeringItem) ||
-            offeringItem.Hand == null ||
+            !TryComp<OfferItemComponent>(component.Target, out var offerItem) ||
+            offerItem.Hand == null ||
             !TryComp<HandsComponent>(uid, out var hands) ||
             !TryComp<HandsComponent>(component.Target, out var handsTarget))
             return;
 
-        var item = handsTarget.Hands[offeringItem.Hand].HeldEntity;
+        var item = handsTarget.Hands[offerItem.Hand].HeldEntity;
         _hands.TryPickup(component.Target.GetValueOrDefault(), item.GetValueOrDefault(), handsComp:hands);
 
         UnOffer(uid, component);
