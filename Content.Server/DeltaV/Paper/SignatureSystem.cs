@@ -16,7 +16,7 @@ public sealed class SignatureSystem : EntitySystem
     [Dependency] private readonly IdCardSystem _idCard = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private readonly TagSystem _tags = default!;
 
     // The sprite used to visualize "signatures" on paper entities.
     private const string SignatureStampState = "paper_stamp-signature";
@@ -31,7 +31,7 @@ public sealed class SignatureSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract)
             return;
 
-        if (args.Using is not {} pen || !_tagSystem.HasTag(pen, "Write"))
+        if (args.Using is not {} pen || !_tags.HasTag(pen, "Write"))
             return;
 
         var user = args.User;
@@ -65,7 +65,7 @@ public sealed class SignatureSystem : EntitySystem
         var stampInfo = new StampDisplayInfo()
         {
             StampedName = signatureName,
-            StampedColor = Color.DarkSlateGray, // TODO: make configurable? Perhaps it should depend on the pen.
+            StampedColor = Color.DarkSlateGray, //TODO Make this configurable depending on the pen.
         };
 
         if (!comp.StampedBy.Contains(stampInfo) && _paper.TryStamp(paper, stampInfo, SignatureStampState, comp))
@@ -96,9 +96,7 @@ public sealed class SignatureSystem : EntitySystem
     {
         // If the entity has an ID, use the name on it.
         if (_idCard.TryFindIdCard(uid, out var id) && !string.IsNullOrWhiteSpace(id.Comp.FullName))
-        {
             return id.Comp.FullName;
-        }
 
         // Alternatively, return the entity name
         return Name(uid);
