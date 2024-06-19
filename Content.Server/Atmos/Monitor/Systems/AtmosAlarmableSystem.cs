@@ -12,6 +12,7 @@ using Content.Shared.Tag;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Atmos.Monitor.Systems;
@@ -87,7 +88,7 @@ public sealed class AtmosAlarmableSystem : EntitySystem
             return;
 
         if (!args.Data.TryGetValue(DeviceNetworkConstants.Command, out string? cmd)
-            || !args.Data.TryGetValue(AlertSource, out HashSet<string>? sourceTags))
+            || !args.Data.TryGetValue(AlertSource, out HashSet<ProtoId<TagPrototype>>? sourceTags))
         {
             return;
         }
