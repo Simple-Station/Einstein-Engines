@@ -210,6 +210,8 @@ public sealed partial class LatheMenu : DefaultWindow
     {
         QueueList.DisposeAllChildren();
 
+        QueueList.DisposeAllChildren();
+
         var idx = 1;
         foreach (var recipe in queue)
         {
