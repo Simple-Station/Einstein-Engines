@@ -72,10 +72,10 @@
   name: chaplain's jumpskirt
   description: It's a black jumpskirt, often worn by religious folk.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/chaplain.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/chaplain.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/chaplain.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/chaplain.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -149,10 +149,10 @@
   name: hard-worn suit
   description: Someone who wears this means business.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/detective.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/detective.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/detective.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/detective.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -160,10 +160,10 @@
   name: noir suit
   description: A hard-boiled private investigator's grey suit, complete with tie clip.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/detective_grey.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/detective_grey.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/detective_grey.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/detective_grey.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -356,10 +356,10 @@
   name: logistics officer's turtleneck # DeltaV - Logistics Department replacing Cargo
   description: A sharp turtleneck made for the hardy work environment of supply.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/qmturtleskirt.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/qmturtleskirt.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/qmturtleskirt.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/qmturtleskirt.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -499,14 +499,14 @@
   name: tacticool jumpskirt
   description: Uniform for subpar operative LARPers performing tactical insulated glove theft in deep space.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/tacticool_s.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/tacticool_s.rsi
-    # Too cool for sensors to be on
-    - type: SuitSensor
-      randomMode: false
-      mode: SensorOff
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/tacticool_s.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/tacticool_s.rsi
+  # Too cool for sensors to be on
+  - type: SuitSensor
+    randomMode: false
+    mode: SensorOff
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -547,10 +547,10 @@
   name: red lawyer suitskirt
   description: A flashy red suitskirt worn by lawyers and show-offs.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/lawyerred.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/lawyerred.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/lawyerred.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/lawyerred.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -558,10 +558,10 @@
   name: blue lawyer suitskirt
   description: A flashy blue suitskirt worn by lawyers and show-offs.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/lawyerblue.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/lawyerblue.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/lawyerblue.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/lawyerblue.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -569,10 +569,10 @@
   name: black lawyer suitskirt
   description: A subtle black suitskirt worn by lawyers and gangsters.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/lawyerblack.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/lawyerblack.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/lawyerblack.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/lawyerblack.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -580,10 +580,10 @@
   name: purple lawyer suitskirt
   description: A stylish purple piece worn by lawyers and show people.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/lawyerpurple.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/lawyerpurple.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/lawyerpurple.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/lawyerpurple.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -591,10 +591,10 @@
   name: good lawyer's suitskirt
   description: A tacky suitskirt perfect for a CRIMINAL lawyer!
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/lawyergood.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/lawyergood.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/lawyergood.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/lawyergood.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -602,10 +602,10 @@
   name: syndicate formal dress
   description: "The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this."
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/syndieformaldress.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/syndieformaldress.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/syndieformaldress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/syndieformaldress.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -613,10 +613,10 @@
   name: tactical maid suitskirt
   description: It is assumed that the best maids should have designer suits.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/tacticalmaid.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/tacticalmaid.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/tacticalmaid.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/tacticalmaid.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -624,10 +624,10 @@
   name: skirt of life
   description: A skirt that symbolizes the joy and positivity of our life.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/skirtoflife.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/skirtoflife.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/skirtoflife.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/skirtoflife.rsi
 
 # Both the light and dark monastic robes have been moved here.
 # They have also had their parent changed to ClothingUniformSkirtBase, and their sprite has likewise been moved to the jumpskirts directory.
@@ -637,10 +637,10 @@
   name: dark monastic robe
   description: It's a dark robe, often worn by religious folk.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_dark.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_dark.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_dark.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_dark.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -648,10 +648,10 @@
   name: light monastic robe
   description: It's a light robe, often worn by religious folk.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_light.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_light.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_light.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_light.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -725,9 +725,9 @@
       amount: 8
   - type: FlavorProfile
     flavors:
-      - cobwebs
+    - cobwebs
     ignoreReagents:
-      - Fiber
+    - Fiber
   - type: SolutionContainerManager
     solutions: # 24 (3 (fiber count of web) * 8 (to craft)) + 6 (magical crafting bonus)
       food:

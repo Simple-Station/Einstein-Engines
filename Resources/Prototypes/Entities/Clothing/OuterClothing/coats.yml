@@ -12,10 +12,10 @@
     coefficient: 0.1
 
 - type: entity
-  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBasic]
   id: ClothingOuterCoatDetective
   name: detective trenchcoat
-  description: A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. Wearing it makes you feel for the plight of the Tibetans.
+  description: An 18th-century multi-purpose trenchcoat. Someone who wears this means serious business.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Coats/detective.rsi
@@ -32,6 +32,19 @@
         Slash: 0.70
         Piercing: 0.70
         Heat: 0.80
+  - type: ExplosionResistance
+    damageCoefficient: 1 #its a coat. it doesnt do shit
+
+- type: entity
+  parent: [ClothingOuterCoatDetectiveLoadout]
+  id: ClothingOuterCoatDetectiveLoadoutGrey
+  name: noir trenchcoat
+  description: Ah, your trusty coat. There's a few tears here and there, giving it a more timely look. Or at least, that's what you told yourself when you found out gettin' it repaired would set you back 200 speos.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/detective_grey.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/detective_grey.rsi
 
 - type: entity
   parent: ClothingOuterCoatDetective
@@ -105,17 +118,6 @@
     sprite: DeltaV/Clothing/OuterClothing/Coats/hos_trenchcoat.rsi # DeltaV - resprite
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/hos_trenchcoat.rsi # DeltaV - resprite
-
-- type: entity
-  parent: ClothingOuterStorageBase
-  id: ClothingOuterCoatInspector
-  name: slim trench coat
-  description: A slim minimalist trench coat best worn unbuttoned.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Coats/insp_coat.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Coats/insp_coat.rsi
 
 - type: entity
   parent: ClothingOuterStorageToggleableBase
