@@ -1257,6 +1257,7 @@ namespace Content.Client.Preferences.UI
                 var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
                 CWeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
             }
+            _previewSpriteView.InvalidateMeasure();
         }
 
         private void UpdateHairPickers()
