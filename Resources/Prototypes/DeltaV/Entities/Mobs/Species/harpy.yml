@@ -152,6 +152,7 @@
     species: Harpy
   - type: Inventory
     speciesId: harpy
+    templateId: digitigrade
   - type: Sprite
     scale: 0.9, 0.9
     layers:
