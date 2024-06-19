@@ -4184,3 +4184,11 @@ Entries:
       message: Moths have way better control in zero gravity environments
   id: 6122
   time: '2024-06-17T07:58:34.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added station goals that get sent to the Command fax machine at the
+        start of every shift
+  id: 6123
+  time: '2024-06-17T21:42:13.0000000+00:00'

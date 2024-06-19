@@ -2107,14 +2107,28 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> PsionicRollsEnabled =
             CVarDef.Create("psionics.rolls_enabled", true, CVar.SERVERONLY);
 
-        /*
-         * Miscellaneous
-         */
-
+        /// <summary>
+        ///     Whether height & width sliders adjust a character's Fixture Component
+        /// </summary>
         public static readonly CVarDef<bool> HeightAdjustModifiesHitbox =
             CVarDef.Create("heightadjust.modifies_hitbox", true, CVar.SERVERONLY);
 
+        /// <summary>
+        ///     Whether height & width sliders adjust a player's view distance
+        /// </summary>
         public static readonly CVarDef<bool> HeightAdjustModifiesZoom =
             CVarDef.Create("heightadjust.modifies_zoom", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Enables station goals
+        /// </summary>
+        public static readonly CVarDef<bool> StationGoalsEnabled =
+            CVarDef.Create("game.station_goals", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Chance for a station goal to be sent
+        /// </summary>
+        public static readonly CVarDef<float> StationGoalsChance =
+            CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
     }
 }
