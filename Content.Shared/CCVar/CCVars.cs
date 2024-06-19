@@ -2106,5 +2106,15 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> PsionicRollsEnabled =
             CVarDef.Create("psionics.rolls_enabled", true, CVar.SERVERONLY);
+
+        /*
+         * Miscellaneous
+         */
+
+        public static readonly CVarDef<bool> HeightAdjustModifiesHitbox =
+            CVarDef.Create("heightadjust.modifies_hitbox", true, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> HeightAdjustModifiesZoom =
+            CVarDef.Create("heightadjust.modifies_zoom", true, CVar.SERVERONLY);
     }
 }

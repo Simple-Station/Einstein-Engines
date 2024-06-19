@@ -162,6 +162,18 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField]
     public float MaxWidth = 1.3f;
+
+    /// <summary>
+    ///     The average height in centimeters for this species, used to calculate player facing height values in UI elements
+    /// </summary>
+    [DataField]
+    public float AverageHeight = 176.1f;
+
+    /// <summary>
+    ///     The average shoulder-to-shoulder width in cm for this species, used to calculate player facing width values in UI elements
+    /// </summary>
+    [DataField]
+    public float AverageWidth = 40f;
 }
 
 public enum SpeciesNaming : byte

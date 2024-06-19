@@ -1,9 +1,7 @@
-using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using Content.Client.Guidebook;
-using System.Text.RegularExpressions;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
@@ -217,7 +215,8 @@ namespace Content.Client.Preferences.UI
             _heightSlider.MinValue = prototype.MinHeight;
             _heightSlider.MaxValue = prototype.MaxHeight;
             _heightSlider.Value = Profile?.Height ?? prototype.DefaultHeight;
-            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", _heightSlider.Value));
+            var height = MathF.Round(prototype.AverageHeight * _heightSlider.Value);
+            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
 
             _heightSlider.OnValueChanged += args =>
             {
@@ -227,8 +226,8 @@ namespace Content.Client.Preferences.UI
                 prototype = _speciesList.Find(x => x.ID == Profile.Species) ?? _speciesList.First(); // Just in case
 
                 var value = Math.Clamp(args.Value, prototype.MinHeight, prototype.MaxHeight);
-                var height = value.ToString(CultureInfo.InvariantCulture);
-                CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", height.Length > 4 ? height[..4] : height));
+                var height = MathF.Round(prototype.AverageHeight * value);
+                CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
                 SetProfileHeight(value);
             };
 
@@ -242,7 +241,8 @@ namespace Content.Client.Preferences.UI
             _widthSlider.MinValue = prototype.MinWidth;
             _widthSlider.MaxValue = prototype.MaxWidth;
             _widthSlider.Value = Profile?.Width ?? prototype.DefaultWidth;
-            CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", _widthSlider.Value));
+            var width = MathF.Round(prototype.AverageWidth * _widthSlider.Value);
+            CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width));
 
             _widthSlider.OnValueChanged += args =>
             {
@@ -252,8 +252,8 @@ namespace Content.Client.Preferences.UI
                 prototype = _speciesList.Find(x => x.ID == Profile.Species) ?? _speciesList.First(); // Just in case
 
                 var value = Math.Clamp(args.Value, prototype.MinWidth, prototype.MaxWidth);
-                var width = value.ToString(CultureInfo.InvariantCulture);
-                CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width.Length > 4 ? width[..4] : width));
+                var width = MathF.Round(prototype.AverageWidth * value);
+                CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width));
                 SetProfileWidth(value);
             };
 
@@ -1200,8 +1200,8 @@ namespace Content.Client.Preferences.UI
             _heightSlider.Value = Profile.Height;
             _heightSlider.MaxValue = species.MaxHeight;
 
-            var height = Profile.Height.ToString(CultureInfo.InvariantCulture);
-            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", height.Length > 4 ? height[..4] : height));
+            var height = MathF.Round(species.AverageHeight * _heightSlider.Value);
+            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
         }
 
         private void UpdateWidthControls()
@@ -1215,8 +1215,8 @@ namespace Content.Client.Preferences.UI
             _widthSlider.Value = Profile.Width;
             _widthSlider.MaxValue = species.MaxWidth;
 
-            var width = Profile.Width.ToString(CultureInfo.InvariantCulture);
-            CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width.Length > 4 ? width[..4] : width));
+            var width = MathF.Round(species.AverageWidth * _widthSlider.Value);
+            CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width));
         }
 
         private void UpdateHairPickers()

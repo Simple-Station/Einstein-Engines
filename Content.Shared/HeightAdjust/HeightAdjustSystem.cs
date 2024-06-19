@@ -1,7 +1,9 @@
 using System.Numerics;
+using Content.Shared.CCVar;
 using Content.Shared.Humanoid;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 
@@ -12,6 +14,7 @@ public sealed class HeightAdjustSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedContentEyeSystem _eye = default!;
     [Dependency] private readonly SharedHumanoidAppearanceSystem _appearance = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
 
     /// <summary>
@@ -23,12 +26,12 @@ public sealed class HeightAdjustSystem : EntitySystem
     public bool SetScale(EntityUid uid, float scale)
     {
         var succeeded = true;
-        if (EntityManager.TryGetComponent<ContentEyeComponent>(uid, out var eye))
+        if (_config.GetCVar(CCVars.HeightAdjustModifiesZoom) && EntityManager.TryGetComponent<ContentEyeComponent>(uid, out var eye))
             _eye.SetMaxZoom(uid, eye.MaxZoom * scale);
         else
             succeeded = false;
 
-        if (EntityManager.TryGetComponent<FixturesComponent>(uid, out var fixtures))
+        if (_config.GetCVar(CCVars.HeightAdjustModifiesHitbox) && EntityManager.TryGetComponent<FixturesComponent>(uid, out var fixtures))
         {
             foreach (var fixture in fixtures.Fixtures)
             {
@@ -61,12 +64,12 @@ public sealed class HeightAdjustSystem : EntitySystem
         var succeeded = true;
         var avg = (scale.X + scale.Y) / 2;
 
-        if (EntityManager.TryGetComponent<ContentEyeComponent>(uid, out var eye))
+        if (_config.GetCVar(CCVars.HeightAdjustModifiesZoom) && EntityManager.TryGetComponent<ContentEyeComponent>(uid, out var eye))
             _eye.SetMaxZoom(uid, eye.MaxZoom * avg);
         else
             succeeded = false;
 
-        if (EntityManager.TryGetComponent<FixturesComponent>(uid, out var fixtures))
+        if (_config.GetCVar(CCVars.HeightAdjustModifiesHitbox) && EntityManager.TryGetComponent<FixturesComponent>(uid, out var fixtures))
         {
             foreach (var fixture in fixtures.Fixtures)
             {

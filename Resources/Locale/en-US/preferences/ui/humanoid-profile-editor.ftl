@@ -12,8 +12,8 @@ humanoid-profile-editor-sex-unsexed-text = None
 humanoid-profile-editor-age-label = Age:
 humanoid-profile-editor-skin-color-label = Skin color:
 # Parkstation-HeightSlider
-humanoid-profile-editor-height-label = Height: {$height}x
-humanoid-profile-editor-width-label = Width: {$width}x
+humanoid-profile-editor-height-label = Height: {$height}cm
+humanoid-profile-editor-width-label = Width: {$width}cm
 humanoid-profile-editor-species-label = Species:
 humanoid-profile-editor-pronouns-label = Pronouns:
 humanoid-profile-editor-pronouns-male-text = He / Him
