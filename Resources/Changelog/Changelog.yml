@@ -4211,3 +4211,9 @@ Entries:
         accidentally discharge when yeeted.
   id: 6125
   time: '2024-06-20T22:17:03.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Animals will no longer be a silent, soulless shell
+  id: 6126
+  time: '2024-06-20T22:24:30.0000000+00:00'
