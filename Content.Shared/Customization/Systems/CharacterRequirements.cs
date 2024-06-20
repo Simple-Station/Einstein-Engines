@@ -64,7 +64,7 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
         out FormattedMessage? reason)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-age-requirement",
-            ("min", Min), ("max", Max)));
+            ("inverted", Inverted), ("min", Min), ("max", Max)));
         return profile.Age >= Min && profile.Age <= Max;
     }
 }
@@ -85,6 +85,7 @@ public sealed partial class CharacterBackpackTypeRequirement : CharacterRequirem
         out FormattedMessage? reason)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-backpack-type-requirement",
+            ("inverted", Inverted),
             ("type", Loc.GetString($"humanoid-profile-editor-preference-{Preference.ToString().ToLower()}"))));
         return profile.Backpack == Preference;
     }
@@ -106,6 +107,7 @@ public sealed partial class CharacterClothingPreferenceRequirement : CharacterRe
         out FormattedMessage? reason)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-clothing-preference-requirement",
+            ("inverted", Inverted),
             ("preference", Loc.GetString($"humanoid-profile-editor-preference-{Preference.ToString().ToLower()}"))));
         return profile.Clothing == Preference;
     }
@@ -127,29 +129,52 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
         out FormattedMessage? reason)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-species-requirement",
+            ("inverted", Inverted),
             ("species", Loc.GetString($"species-name-{Species.ToString().ToLower()}"))));
         return profile.Species == Species;
     }
 }
 
 /// <summary>
-///     Requires the profile to have a certain trait
+///     Requires the profile to have one of the specified traits
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
 public sealed partial class CharacterTraitRequirement : CharacterRequirement
 {
     [DataField(required: true)]
-    public ProtoId<TraitPrototype> Trait;
+    public List<ProtoId<TraitPrototype>> Traits;
 
     public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-requirement",
-            ("trait", Loc.GetString($"trait-name-{Trait.ToString().ToLower()}"))));
-        return profile.TraitPreferences.Contains(Trait.ToString());
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-requirement", ("inverted", Inverted),
+            ("traits", string.Join(", ", Traits.Select(t => Loc.GetString($"trait-name-{t}"))))));
+
+        return Traits.Any(t => profile.TraitPreferences.Contains(t.ToString()));
+    }
+}
+
+/// <summary>
+///     Requires the profile to have one of the specified loadouts
+/// </summary>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public List<ProtoId<LoadoutPrototype>> Loadouts;
+
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
+        IConfigurationManager configManager, out FormattedMessage? reason)
+    {
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-loadout-requirement", ("inverted", Inverted),
+            ("loadouts", string.Join(", ", Loadouts.Select(l => Loc.GetString($"loadout-{l}"))))));
+
+        return Loadouts.Any(l => profile.LoadoutPreferences.Contains(l.ToString()));
     }
 }
 
@@ -158,7 +183,7 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
 #region Jobs
 
 /// <summary>
-///     Requires the selected job to be a certain one
+///     Requires the selected job to be one of the specified jobs
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
@@ -172,13 +197,70 @@ public sealed partial class CharacterJobRequirement : CharacterRequirement
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
-        // Join localized job names with a comma
-        var jobsString = string.Join(", ", Jobs.Select(j => Loc.GetString(prototypeManager.Index(j).Name)));
-        // Form the reason message
-        jobsString = Loc.GetString("character-job-requirement", ("job", jobsString));
+        var jobs = new List<FormattedMessage>();
+
+        // Get the job names and department colors
+        foreach (var j in Jobs)
+        {
+            var jobProto = prototypeManager.Index(j);
+            var color = Color.LightBlue;
+
+            foreach (var dept in prototypeManager.EnumeratePrototypes<DepartmentPrototype>()
+                .OrderBy(d => Loc.GetString($"department-{d.ID}")))
+            {
+                if (!dept.Roles.Contains(j))
+                    continue;
+
+                color = dept.Color;
+                break;
+            }
+
+            jobs.Add(FormattedMessage.FromMarkup($"[color={color.ToHex()}]{Loc.GetString(jobProto.Name)}[/color]"));
+        }
+
+        // Join the job names
+        var jobsList = string.Join(", ", jobs.Select(j => j.ToMarkup()));
+        var jobsString = Loc.GetString("character-job-requirement",
+            ("inverted", Inverted), ("jobs", jobsList));
 
         reason = FormattedMessage.FromMarkup(jobsString);
         return Jobs.Contains(job.ID);
+    }
+}
+
+/// <summary>
+///     Requires the selected job to be in one of the specified departments
+/// </summary>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class CharacterDepartmentRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public List<ProtoId<DepartmentPrototype>> Departments;
+
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
+    {
+        var departments = new List<FormattedMessage>();
+
+        // Get the department names and colors
+        foreach (var d in Departments)
+        {
+            var deptProto = prototypeManager.Index(d);
+            var color = deptProto.Color;
+
+            departments.Add(FormattedMessage.FromMarkup($"[color={color.ToHex()}]{Loc.GetString($"department-{deptProto.ID}")}[/color]"));
+        }
+
+        // Join the department names
+        var departmentsList = string.Join(", ", departments.Select(d => d.ToMarkup()));
+        var departmentsString = Loc.GetString("character-department-requirement",
+            ("inverted", Inverted), ("departments", departmentsList));
+
+        reason = FormattedMessage.FromMarkup(departmentsString);
+        return Departments.Any(d => prototypeManager.Index(d).Roles.Contains(job.ID));
     }
 }
 
@@ -392,7 +474,8 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
 ///     Requires the profile to not have any of the specified traits
 /// </summary>
 /// <remarks>
-///     Works best if you put this prototype in the denied prototypes' requirements too
+///     Only works if you put this prototype in the denied prototypes' requirements too.
+///     Can't be inverted, use <see cref="CharacterTraitRequirement"/>
 /// </remarks>
 [UsedImplicitly]
 [Serializable, NetSerializable]
@@ -411,7 +494,7 @@ public sealed partial class TraitGroupExclusionRequirement : CharacterRequiremen
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-group-exclusion-requirement",
             ("traits", string.Join(", ", Prototypes.Select(t => Loc.GetString($"trait-name-{t}"))))));
 
-        return !invalid;
+        return Inverted ? invalid : !invalid;
     }
 }
 
@@ -419,7 +502,8 @@ public sealed partial class TraitGroupExclusionRequirement : CharacterRequiremen
 ///     Requires the profile to not have any of the specified loadouts
 /// </summary>
 /// <remarks>
-///     Works best if you put this prototype in the denied prototypes' requirements too
+///     Only works if you put this prototype in the denied prototypes' requirements too.
+///     Can't be inverted, use <see cref="CharacterLoadoutRequirement"/>
 /// </remarks>
 [UsedImplicitly]
 [Serializable, NetSerializable]
@@ -438,7 +522,7 @@ public sealed partial class LoadoutGroupExclusionRequirement : CharacterRequirem
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-loadout-group-exclusion-requirement",
             ("loadouts", string.Join(", ", Prototypes.Select(l => Loc.GetString($"loadout-{l}"))))));
 
-        return !invalid;
+        return Inverted ? invalid : !invalid;
     }
 }
 
