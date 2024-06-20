@@ -15,7 +15,10 @@ using Content.Server.Maps;
 using Content.Server.Players.JobWhitelist;
 using Content.Server.MoMMI;
 using Content.Server.NodeContainer.NodeGroups;
+using Content.Server.Players;
+using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
+using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
@@ -60,11 +63,12 @@ namespace Content.Server.IoC
             IoCManager.Register<PoissonDiskSampler>();
             IoCManager.Register<DiscordWebhook>();
             IoCManager.Register<ServerDbEntryManager>();
-            IoCManager.Register<JobWhitelistManager>();
             IoCManager.Register<JoinQueueManager>();
             IoCManager.Register<DiscordAuthManager>();
             IoCManager.Register<ISharedPlaytimeManager, PlayTimeTrackingManager>();
             IoCManager.Register<ServerApi>();
+            IoCManager.Register<JobWhitelistManager>();
+            IoCManager.Register<PlayerRateLimitManager>();
         }
     }
 }
