@@ -170,9 +170,6 @@
   - type: Item
     size: Ginormous
   - type: DisarmMalus
-  - type: Tool
-    qualities:
-      - Prying
   - type: Prying
   # Lavaland Change Start
   - type: MeleeRequiresWield
