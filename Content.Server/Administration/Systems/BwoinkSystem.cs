@@ -10,6 +10,7 @@ using Content.Server.Afk;
 using Content.Server.Database;
 using Content.Server.Discord;
 using Content.Server.GameTicking;
+using Content.Server.Players.RateLimiting;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
@@ -29,6 +30,8 @@ namespace Content.Server.Administration.Systems
     [UsedImplicitly]
     public sealed partial class BwoinkSystem : SharedBwoinkSystem
     {
+        private const string RateLimitKey = "AdminHelp";
+
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly IConfigurationManager _config = default!;
@@ -97,9 +100,8 @@ namespace Content.Server.Administration.Systems
 
             SubscribeLocalEvent<GameRunLevelChangedEvent>(OnGameRunLevelChanged);
             SubscribeNetworkEvent<BwoinkClientTypingUpdated>(OnClientTypingUpdated);
-            SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => _activeConversations.Clear());
 
-        	_rateLimit.Register(
+            _rateLimit.Register(
                 RateLimitKey,
                 new RateLimitRegistration
                 {
@@ -555,6 +557,9 @@ namespace Content.Server.Administration.Systems
                 // Unauthorized bwoink (log?)
                 return;
             }
+
+            if (_rateLimit.CountAction(eventArgs.SenderSession, RateLimitKey) != RateLimitStatus.Allowed)
+                return;
 
             var escapedText = FormattedMessage.EscapeText(message.Text);
 
