@@ -85,6 +85,10 @@ public sealed partial class HandcuffComponent : Component
     [DataField]
     public SoundSpecifier EndUncuffSound = new SoundPathSpecifier("/Audio/Items/Handcuffs/cuff_takeoff_end.ogg");
 
+    /// <summary>
+    ///     Both a bool and a multiplier combined. If it is 0, handcuffs are unaffected by mass contests. The absolute value of any nonzero acts as a multiplier on how much mass affects uncuff speed.
+    ///     A value of 1 provides the full modifier from MassContest. 0.5 is half the effect of mass contests, and so on.
+    /// </summary>
     [DataField]
     public float UncuffMassModifier = 0f;
 }
