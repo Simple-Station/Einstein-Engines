@@ -204,8 +204,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.Species = profile.Species;
         humanoid.SkinColor = profile.Appearance.SkinColor;
         humanoid.EyeColor = profile.Appearance.EyeColor;
-        humanoid.Height = profile.Height; // Parkstation-HeightSlider
-        humanoid.Width = profile.Width; // Parkstation-HeightSlider
+        humanoid.Height = profile.Height;
+        humanoid.Width = profile.Width;
 
         UpdateSprite(humanoid, Comp<SpriteComponent>(uid));
     }

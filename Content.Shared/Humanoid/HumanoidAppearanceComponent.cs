@@ -85,7 +85,6 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public Color? CachedFacialHairColor;
 
-    // Parkstation-HeightSlider Start
     /// <summary>
     /// DeltaV - let paradox anomaly be cloned
     /// </summary>
@@ -101,7 +100,6 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float Width = 1f;
-    // Parkstation-HeightSlider End
 }
 
 [DataDefinition]
