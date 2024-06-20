@@ -1,13 +1,13 @@
 ﻿- type: trait
   id: LightweightDrunk
-  category: C
+  category: Physical
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 2
 
 - type: trait
   id: SocialAnxiety
-  category: A
+  category: Mental
   points: 1
   components:
     - type: StutteringAccent

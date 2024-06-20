@@ -1,6 +1,6 @@
 - type: trait
   id: Blindness
-  category: A
+  category: Visual
   points: -2
   # whitelist:
   #   components:
@@ -10,7 +10,7 @@
 
 - type: trait
   id: Narcolepsy
-  category: B
+  category: Mental
   components:
     - type: Narcolepsy
       timeBetweenIncidents: 300, 600
@@ -18,14 +18,14 @@
 
 - type: trait
   id: Pacifist
-  category: C
+  category: Mental
   points: -1
   components:
     - type: Pacified
 
 - type: trait
   id: Paracusia
-  category: A
+  category: Auditory
   components:
     - type: Paracusia
       minTimeBetweenIncidents: 0.1
@@ -36,7 +36,7 @@
 
 - type: trait
   id: Muted
-  category: B
+  category: Speech
   points: -1
   # blacklist:
   #   components:
@@ -46,19 +46,19 @@
 
 - type: trait
   id: Uncloneable
-  category: C
+  category: Physical
   points: -3
   components:
     - type: Uncloneable
 
 - type: trait
   id: FrontalLisp
-  category: A
+  category: Speech
   components:
     - type: FrontalLisp
 
 - type: trait
   id: Snoring
-  category: B
+  category: Auditory
   components:
     - type: Snoring

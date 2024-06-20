@@ -1,12 +1,12 @@
 - type: trait
   id: PirateAccent
-  category: B
+  category: Speech
   components:
     - type: PirateAccent
 
 - type: trait
   id: Accentless
-  category: C
+  category: Speech
   points: 1
   components:
   - type: Accentless

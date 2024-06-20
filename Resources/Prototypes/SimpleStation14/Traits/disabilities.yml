@@ -1,6 +1,6 @@
 - type: trait
   id: Nearsighted
-  category: Uncategorized
+  category: Visual
   points: 2
   components:
     - type: Nearsighted
