@@ -1619,7 +1619,7 @@ namespace Content.Client.Preferences.UI
 
 
             // Fill categories
-            foreach (var trait in traits.OrderBy(t => -t.Points).ThenBy(t => Loc.GetString($"trait-{t.ID}-name")))
+            foreach (var trait in traits.OrderBy(t => -t.Points).ThenBy(t => Loc.GetString($"trait-name-{t.ID}")))
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1652,7 +1652,7 @@ namespace Content.Client.Preferences.UI
             }
 
             // Add the selected unusable traits to the point counter
-            foreach (var trait in otherTraits.OrderBy(t => -t.Points).ThenBy(t => Loc.GetString($"trait-{t.ID}-name")))
+            foreach (var trait in otherTraits.OrderBy(t => -t.Points).ThenBy(t => Loc.GetString($"trait-name-{t.ID}")))
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
@@ -2028,7 +2028,7 @@ namespace Content.Client.Preferences.UI
                                     ClipText = true,
                                     Margin = new Thickness(0, 0, 8, 0),
                                 },
-                                new Label { Text = Loc.GetString($"trait-{trait.ID}-name") },
+                                new Label { Text = Loc.GetString($"trait-name-{trait.ID}") },
                             },
                         },
                     },
@@ -2038,8 +2038,8 @@ namespace Content.Client.Preferences.UI
 
                 var tooltip = new StringBuilder();
                 // Add the loadout description to the tooltip if there is one
-                var desc = Loc.GetString($"trait-{trait.ID}-desc");
-                if (!string.IsNullOrEmpty(desc) && desc != $"trait-{trait.ID}-desc")
+                var desc = Loc.GetString($"trait-description-{trait.ID}");
+                if (!string.IsNullOrEmpty(desc) && desc != $"trait-description-{trait.ID}")
                     tooltip.Append(desc);
 
 

@@ -147,7 +147,7 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
         out FormattedMessage? reason)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-requirement",
-            ("trait", Loc.GetString($"trait-{Trait.ToString().ToLower()}-name"))));
+            ("trait", Loc.GetString($"trait-name-{Trait.ToString().ToLower()}"))));
         return profile.TraitPreferences.Contains(Trait.ToString());
     }
 }

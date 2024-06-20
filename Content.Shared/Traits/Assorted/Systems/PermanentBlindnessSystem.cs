@@ -28,7 +28,7 @@ public sealed class PermanentBlindnessSystem : EntitySystem
     {
         if (args.IsInDetailsRange && !_net.IsClient)
         {
-            args.PushMarkup(Loc.GetString("trait-Blindness-examined", ("target", Identity.Entity(blindness, EntityManager))));
+            args.PushMarkup(Loc.GetString("trait-examined-Blindness", ("target", Identity.Entity(blindness, EntityManager))));
         }
     }
 
