@@ -4,7 +4,7 @@ using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.IdentityManagement;
 using Robust.Shared.Network;
 
-namespace Content.Shared.Traits.Assorted;
+namespace Content.Shared.Traits.Assorted.Systems;
 
 /// <summary>
 /// This handles permanent blindness, both the examine and the actual effect.
@@ -18,26 +18,26 @@ public sealed class PermanentBlindnessSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<PermanentBlindnessComponent, ComponentStartup>(OnStartup);
-        SubscribeLocalEvent<PermanentBlindnessComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<PermanentBlindnessComponent, EyeDamageChangedEvent>(OnDamageChanged);
-        SubscribeLocalEvent<PermanentBlindnessComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<Components.PermanentBlindnessComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<Components.PermanentBlindnessComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<Components.PermanentBlindnessComponent, EyeDamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<Components.PermanentBlindnessComponent, ExaminedEvent>(OnExamined);
     }
 
-    private void OnExamined(Entity<PermanentBlindnessComponent> blindness, ref ExaminedEvent args)
+    private void OnExamined(Entity<Components.PermanentBlindnessComponent> blindness, ref ExaminedEvent args)
     {
         if (args.IsInDetailsRange && !_net.IsClient)
         {
-            args.PushMarkup(Loc.GetString("permanent-blindness-trait-examined", ("target", Identity.Entity(blindness, EntityManager))));
+            args.PushMarkup(Loc.GetString("trait-examined-Blindness", ("target", Identity.Entity(blindness, EntityManager))));
         }
     }
 
-    private void OnShutdown(Entity<PermanentBlindnessComponent> blindness, ref ComponentShutdown args)
+    private void OnShutdown(Entity<Components.PermanentBlindnessComponent> blindness, ref ComponentShutdown args)
     {
         _blinding.UpdateIsBlind(blindness.Owner);
     }
 
-    private void OnStartup(Entity<PermanentBlindnessComponent> blindness, ref ComponentStartup args)
+    private void OnStartup(Entity<Components.PermanentBlindnessComponent> blindness, ref ComponentStartup args)
     {
         if (!_entityManager.TryGetComponent<BlindableComponent>(blindness, out var blindable))
             return;
@@ -50,7 +50,7 @@ public sealed class PermanentBlindnessSystem : EntitySystem
         _blinding.AdjustEyeDamage(blindness.Owner, damageToDeal);
     }
 
-    private void OnDamageChanged(Entity<PermanentBlindnessComponent> blindness, ref EyeDamageChangedEvent args)
+    private void OnDamageChanged(Entity<Components.PermanentBlindnessComponent> blindness, ref EyeDamageChangedEvent args)
     {
         if (args.Damage >= BlurryVisionComponent.MaxMagnitude)
             return;

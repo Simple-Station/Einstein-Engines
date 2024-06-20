@@ -423,21 +423,21 @@ namespace Content.Shared.Preferences
 
         public bool MemberwiseEquals(ICharacterProfile maybeOther)
         {
-            if (maybeOther is not HumanoidCharacterProfile other ||
-                Name != other.Name ||
-                Age != other.Age ||
-                Height != other.Height ||
-                Width != other.Width ||
-                Sex != other.Sex ||
-                Gender != other.Gender ||
-                PreferenceUnavailable != other.PreferenceUnavailable ||
-                Clothing != other.Clothing ||
-                Backpack != other.Backpack ||
-                SpawnPriority != other.SpawnPriority ||
-                !_jobPriorities.SequenceEqual(other._jobPriorities) ||
-                !_antagPreferences.SequenceEqual(other._antagPreferences) ||
-                !_traitPreferences.SequenceEqual(other._traitPreferences) ||
-                !_loadoutPreferences.SequenceEqual(other._loadoutPreferences))
+            if (maybeOther is not HumanoidCharacterProfile other
+                || Name != other.Name
+                || Age != other.Age
+                || Height != other.Height
+                || Width != other.Width
+                || Sex != other.Sex
+                || Gender != other.Gender
+                || PreferenceUnavailable != other.PreferenceUnavailable
+                || Clothing != other.Clothing
+                || Backpack != other.Backpack
+                || SpawnPriority != other.SpawnPriority
+                || !_jobPriorities.SequenceEqual(other._jobPriorities)
+                || !_antagPreferences.SequenceEqual(other._antagPreferences)
+                || !_traitPreferences.SequenceEqual(other._traitPreferences)
+                || !_loadoutPreferences.SequenceEqual(other._loadoutPreferences))
                 return false;
             return Appearance.MemberwiseEquals(other.Appearance);
         }
@@ -584,22 +584,41 @@ namespace Content.Shared.Preferences
                 .Where(prototypeManager.HasIndex<TraitPrototype>)
                 .ToList();
 
+            var maxTraits = configManager.GetCVar(CCVars.GameTraitsMax);
+            var currentTraits = 0;
+            var traitPoints = configManager.GetCVar(CCVars.GameTraitsDefaultPoints);
+
+            foreach (var trait in traits.OrderBy(t => -prototypeManager.Index<TraitPrototype>(t).Points).ToList())
+            {
+                var proto = prototypeManager.Index<TraitPrototype>(trait);
+
+                if (traitPoints + proto.Points < 0 || currentTraits + 1 > maxTraits)
+                    traits.Remove(trait);
+                else
+                {
+                    traitPoints += proto.Points;
+                    currentTraits++;
+                }
+            }
+
+
             var loadouts = LoadoutPreferences
                 .Where(prototypeManager.HasIndex<LoadoutPrototype>)
                 .ToList();
 
-            var maxLoadouts = configManager.GetCVar(CCVars.GameLoadoutsPoints);
-            var currentLoadouts = 0;
+            var loadoutPoints = configManager.GetCVar(CCVars.GameLoadoutsPoints);
+            var currentPoints = 0;
 
             foreach (var loadout in loadouts.ToList())
             {
                 var proto = prototypeManager.Index<LoadoutPrototype>(loadout);
 
-                if (currentLoadouts + proto.Cost > maxLoadouts)
+                if (currentPoints + proto.Cost > loadoutPoints)
                     loadouts.Remove(loadout);
                 else
-                    currentLoadouts += proto.Cost;
+                    currentPoints += proto.Cost;
             }
+
 
             Name = name;
             FlavorText = flavortext;
