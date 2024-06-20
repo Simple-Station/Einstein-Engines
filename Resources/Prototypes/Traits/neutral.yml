@@ -15,9 +15,9 @@
         - Borg
         - MedicalBorg
   components:
-  - type: Accentless
-    removes:
-    - type: LizardAccent
-    - type: MothAccent
-    - type: ReplacementAccent
-      accent: dwarf
+    - type: Accentless
+      removes:
+      - type: LizardAccent
+      - type: MothAccent
+      - type: ReplacementAccent
+        accent: dwarf
