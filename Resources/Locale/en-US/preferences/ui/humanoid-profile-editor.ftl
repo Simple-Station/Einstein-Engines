@@ -47,11 +47,14 @@ humanoid-profile-editor-antag-preference-no-button = No
 
 humanoid-profile-editor-traits-tab = Traits
 humanoid-profile-editor-traits-header = You have {$points ->
-    [one] 1 point
+    [1] 1 point
     *[other] {$points} points
-} and {$traits ->
-    [one] 1 trait
-    *[other] {$traits} traits
+} and {$maxTraits ->
+    [2147483648] {$traits ->
+        [1] {$traits} trait
+        *[other] {$traits} traits
+    }
+    *[other] {$traits}/{$maxTraits} traits
 }
 humanoid-profile-editor-traits-show-unusable-button = Show Unusable
 humanoid-profile-editor-traits-show-unusable-button-tooltip =

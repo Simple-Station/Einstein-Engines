@@ -1464,7 +1464,8 @@ namespace Content.Client.Preferences.UI
 
             _traitPointsBar.Value = points;
             _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-header",
-                ("points", points), ("traits", _traitCount));
+                ("points", points), ("traits", _traitCount),
+                ("maxTraits", _configurationManager.GetCVar(CCVars.GameTraitsMax)));
         }
 
         // Yeah this is mostly just copied from UpdateLoadouts
@@ -1475,7 +1476,8 @@ namespace Content.Client.Preferences.UI
             // Reset trait points so you don't get -14 points or something for no reason
             var points = _configurationManager.GetCVar(CCVars.GameTraitsDefaultPoints);
             _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-header",
-                ("points", points), ("traits", 0));
+                ("points", points), ("traits", 0),
+                ("maxTraits", _configurationManager.GetCVar(CCVars.GameTraitsMax)));
             _traitPointsBar.MaxValue = points;
             _traitPointsBar.Value = points;
 
