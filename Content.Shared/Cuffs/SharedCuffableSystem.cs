@@ -561,7 +561,7 @@ namespace Content.Shared.Cuffs
                 return;
             }
 
-            var uncuffTime = (isOwner ? cuff.BreakoutTime : cuff.UncuffTime) / (_contests.MassContest(user) * Math.Abs(cuff.UncuffMassModifier));
+            var uncuffTime = (isOwner ? cuff.BreakoutTime : cuff.UncuffTime) * (_contests.MassContest(user) * Math.Abs(cuff.UncuffMassModifier));
 
             if (isOwner)
             {
