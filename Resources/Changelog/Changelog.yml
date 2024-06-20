@@ -4192,3 +4192,9 @@ Entries:
         start of every shift
   id: 6123
   time: '2024-06-17T21:42:13.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Peacock Tails have been added for Harpies
+  id: 6124
+  time: '2024-06-20T22:07:29.0000000+00:00'
