@@ -11,3 +11,6 @@ character-timer-overall-insufficient = You require [color=yellow]{TOSTRING($time
 character-timer-overall-too-high = You require [color=yellow]{TOSTRING($time, "0")}[/color] fewer minutes of playtime
 character-timer-role-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes with [color={$departmentColor}]{$job}[/color]
 character-timer-role-too-high = You require[color=yellow] {TOSTRING($time, "0")}[/color] fewer minutes with [color={$departmentColor}]{$job}[/color]
+
+character-trait-group-exclusion-requirement = You cannot have one of the following traits if you select this: {$traits}
+character-loadout-group-exclusion-requirement = You cannot have one of the following loadouts if you select this: {$loadouts}

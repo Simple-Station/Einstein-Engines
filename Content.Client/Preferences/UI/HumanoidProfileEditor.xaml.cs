@@ -1694,6 +1694,8 @@ namespace Content.Client.Preferences.UI
                     Profile = Profile?.WithTraitPreference(id, preference);
                     IsDirty = true;
                     UpdateTraitPreferences();
+                    UpdateTraits(_traitsShowUnusableButton.Pressed);
+                    UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
                 };
             }
 
@@ -1942,6 +1944,8 @@ namespace Content.Client.Preferences.UI
                     Profile = Profile?.WithLoadoutPreference(id, preference);
                     IsDirty = true;
                     UpdateLoadoutPreferences();
+                    UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
+                    UpdateTraits(_traitsShowUnusableButton.Pressed);
                 };
             }
 

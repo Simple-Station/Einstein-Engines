@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared.CCVar;
+using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Preferences;
@@ -380,6 +381,64 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
         }
 
         return true;
+    }
+}
+
+#endregion
+
+#region Prototype Groups
+
+/// <summary>
+///     Requires the profile to not have any of the specified traits
+/// </summary>
+/// <remarks>
+///     Works best if you put this prototype in the denied prototypes' requirements too
+/// </remarks>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class TraitGroupExclusionRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public List<ProtoId<TraitPrototype>> Prototypes;
+
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
+    {
+        var invalid = profile.TraitPreferences.Any(t => Prototypes.Contains(t));
+
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-group-exclusion-requirement",
+            ("traits", string.Join(", ", Prototypes.Select(t => Loc.GetString($"trait-name-{t}"))))));
+
+        return !invalid;
+    }
+}
+
+/// <summary>
+///     Requires the profile to not have any of the specified loadouts
+/// </summary>
+/// <remarks>
+///     Works best if you put this prototype in the denied prototypes' requirements too
+/// </remarks>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class LoadoutGroupExclusionRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public List<ProtoId<LoadoutPrototype>> Prototypes;
+
+    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
+    {
+        var invalid = profile.LoadoutPreferences.Any(l => Prototypes.Contains(l));
+
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-loadout-group-exclusion-requirement",
+            ("loadouts", string.Join(", ", Prototypes.Select(l => Loc.GetString($"loadout-{l}"))))));
+
+        return !invalid;
     }
 }
 
