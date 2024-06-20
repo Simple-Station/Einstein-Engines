@@ -2,15 +2,24 @@
   id: Blindness
   category: Visual
   points: -2
-  # whitelist:
-  #   components:
-  #     - Blindable
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: PermanentBlindness
 
 - type: trait
   id: Narcolepsy
   category: Mental
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: Narcolepsy
       timeBetweenIncidents: 300, 600
@@ -38,9 +47,12 @@
   id: Muted
   category: Speech
   points: -1
-  # blacklist:
-  #   components:
-  #     - BorgChassis
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: Muted
 
@@ -48,17 +60,35 @@
   id: Uncloneable
   category: Physical
   points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: Uncloneable
 
 - type: trait
   id: FrontalLisp
   category: Speech
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: FrontalLisp
 
 - type: trait
   id: Snoring
   category: Auditory
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: Snoring

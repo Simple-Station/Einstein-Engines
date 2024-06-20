@@ -2,8 +2,11 @@
   id: Nearsighted
   category: Visual
   points: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: Nearsighted
-  # whitelist:
-  #   components:
-  #     - Blindable
