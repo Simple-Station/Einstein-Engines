@@ -19,7 +19,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - SecurityCadet
@@ -61,19 +61,19 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobWarden
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobDetective
       min: 7200 # 2 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobSecurityOfficer
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 216000 # 60 hours
   items:
@@ -85,19 +85,19 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobWarden
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobDetective
       min: 7200 # 2 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobSecurityOfficer
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 216000 # 60 hours
   items:
@@ -211,7 +211,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Warden
         - HeadOfSecurity
@@ -224,7 +224,7 @@
   category: Jobs
   cost: 1
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Detective
         - SecurityOfficer

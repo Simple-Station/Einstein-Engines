@@ -341,14 +341,34 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> DebugCoordinatesAdminOnly =
             CVarDef.Create("game.debug_coordinates_admin_only", true, CVar.SERVER | CVar.REPLICATED);
 
+
         /// <summary>
-        /// Whether or not to allow characters to select loadout items.
+        ///     Whether to allow characters to select traits.
+        /// </summary>
+        public static readonly CVarDef<bool> GameTraitsEnabled =
+            CVarDef.Create("game.traits_enabled", true, CVar.REPLICATED);
+
+        /// <summary>
+        ///     How many traits a character can have at most.
+        /// </summary>
+        public static readonly CVarDef<int> GameTraitsMax =
+            CVarDef.Create("game.traits_max", 5, CVar.REPLICATED);
+
+        /// <summary>
+        ///     How many points a character should start with.
+        /// </summary>
+        public static readonly CVarDef<int> GameTraitsDefaultPoints =
+            CVarDef.Create("game.traits_default_points", 5, CVar.REPLICATED);
+
+
+        /// <summary>
+        ///     Whether to allow characters to select loadout items.
         /// </summary>
         public static readonly CVarDef<bool> GameLoadoutsEnabled =
             CVarDef.Create("game.loadouts_enabled", true, CVar.REPLICATED);
 
         /// <summary>
-        /// How many points to give to each player for loadouts.
+        ///     How many points to give to each player for loadouts.
         /// </summary>
         public static readonly CVarDef<int> GameLoadoutsPoints =
             CVarDef.Create("game.loadouts_points", 14, CVar.REPLICATED);
