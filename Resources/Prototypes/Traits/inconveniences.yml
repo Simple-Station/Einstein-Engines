@@ -14,7 +14,6 @@
 - type: trait
   id: SocialAnxiety
   category: Mental
-  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

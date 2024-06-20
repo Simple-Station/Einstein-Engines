@@ -1,13 +1,13 @@
 - type: trait
   id: UltraVision
   category: Visual
-  points: 1
+  points: -1
   components:
     - type: UltraVision
 
 - type: trait
   id: DogVision
   category: Visual
-  points: 1
+  points: -1
   components:
     - type: DogVision

@@ -1,6 +1,6 @@
 - type: trait
   id: ScottishAccent
   category: Speech
-  points: 5
+  points: 0
   components:
     - type: ScottishAccent
