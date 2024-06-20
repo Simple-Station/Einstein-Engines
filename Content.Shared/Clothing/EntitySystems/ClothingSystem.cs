@@ -96,7 +96,7 @@ public abstract class ClothingSystem : EntitySystem
         foreach (HumanoidVisualLayers layer in layers)
         {
             if (!force && !appearanceLayers.Contains(layer))
-                break;
+                continue;
 
             InventorySystem.InventorySlotEnumerator enumerator = _invSystem.GetSlotEnumerator(equipee);
 
