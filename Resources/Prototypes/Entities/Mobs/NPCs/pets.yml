@@ -115,8 +115,8 @@
   components:
   - type: NpcFactionMember
     factions:
-      - PetsNT
-      - Cat # DeltaV
+    - PetsNT
+    - Cat # DeltaV
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -143,8 +143,8 @@
   components:
   - type: NpcFactionMember
     factions:
-      - PetsNT
-      - Cat # DeltaV
+    - PetsNT
+    - Cat # DeltaV
   - type: Grammar
     attributes:
       proper: true
@@ -612,6 +612,7 @@
     allowMovement: true
     name: ghost-role-information-hamlet-name
     description: ghost-role-information-hamlet-description
+    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: InteractionPopup
     successChance: 1
@@ -662,7 +663,7 @@
       path: /Audio/Animals/snake_hiss.ogg
   - type: NpcFactionMember
     factions:
-      - PetsNT
+    - PetsNT
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -755,6 +756,7 @@
     prob: 0.25
     name: ghost-role-information-willow-name
     description: ghost-role-information-willow-description
+    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ BoxingKangarooGear ]
@@ -836,17 +838,17 @@
   - type: GhostRole
     name: ghost-role-information-smile-name
     description: ghost-role-information-smile-description
-    rules: ghost-role-information-smile-rules
+    rules: ghost-role-information-nonantagonist-rules
   - type: Grammar
     attributes:
       proper: true
       gender: female
   - type: InnatePsionicPowers
     powersToAdd:
-      - XenoglossyPower
-      - TelepathyPower
-      - HealingWordPower
-      - PowerOverwhelming
+    - XenoglossyPower
+    - TelepathyPower
+    - HealingWordPower
+    - PowerOverwhelming
   - type: LanguageSpeaker
   - type: UniversalLanguageSpeaker
   - type: SlowOnDamage
@@ -885,7 +887,7 @@
         type: StorageBoundUserInterface
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
-    
+
 - type: entity
   name: Pun Pun
   parent: MobMonkey
@@ -926,14 +928,15 @@
   id: MobCrabAtmos
   description: The noble and stalwart defender of Atmosia. Viva!
   components:
-#  - type: GhostRole
-#    prob: 1
-#    makeSentient: true
-#    allowSpeech: true
-#    allowMovement: true
-#    name: ghost-role-information-tropico-name
-#    description: ghost-role-information-tropico-description
-#  - type: GhostTakeoverAvailable
+  #  - type: GhostRole
+  #    prob: 1
+  #    makeSentient: true
+  #    allowSpeech: true
+  #    allowMovement: true
+  #    name: ghost-role-information-tropico-name
+  #    description: ghost-role-information-tropico-description
+  #    rules: ghost-role-information-nonantagonist-rules
+  #  - type: GhostTakeoverAvailable
   - type: Tag
     tags:
     - VimPilot
@@ -942,7 +945,7 @@
     attributes:
       proper: true
       gender: male
-#  - type: AlwaysRevolutionaryConvertible
+  #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
     stealGroup: AnimalTropico
   - type: LanguageKnowledge

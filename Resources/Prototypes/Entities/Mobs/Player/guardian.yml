@@ -122,6 +122,7 @@
     makeSentient: true
     name: ghost-role-information-holoparasite-name
     description: ghost-role-information-holoparasite-description
+    rules: ghost-role-information-familiar-rules
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -166,6 +167,7 @@
     makeSentient: true
     name: ghost-role-information-ifrit-wizard-name
     description: ghost-role-information-ifrit-wizard-description
+    rules: ghost-role-information-familiar-rules
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -201,6 +203,7 @@
     makeSentient: true
     name: ghost-role-information-holoclown-name
     description: ghost-role-information-holoclown-description
+    rules: ghost-role-information-familiar-rules
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
