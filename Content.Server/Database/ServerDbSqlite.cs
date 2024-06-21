@@ -85,6 +85,8 @@ namespace Content.Server.Database
             ImmutableArray<ImmutableArray<byte>>? modernHWIds)
         {
             await using var db = await GetDbImpl();
+            var exempt = await GetBanExemptionCore(db, userId);
+            var newPlayer = userId == null || !await PlayerRecordExists(db, userId.Value);
 
             return (await GetServerBanQueryAsync(db, address, userId, hwId, modernHWIds, includeUnbanned: false)).FirstOrDefault();
         }
@@ -110,6 +112,7 @@ namespace Content.Server.Database
             bool includeUnbanned)
         {
             var exempt = await GetBanExemptionCore(db, userId);
+
             var newPlayer = !await db.SqliteDbContext.Player.AnyAsync(p => p.UserId == userId);
 
             // SQLite can't do the net masking stuff we need to match IP address ranges.
@@ -127,6 +130,7 @@ namespace Content.Server.Database
             };
 
             return queryBans
+                .Where(b => BanMatches(b, address, userId, hwId, exempt, newPlayer))
                 .Select(ConvertBan)
                 .Where(b => BanMatcher.BanMatches(b!, playerInfo))!;
         }
@@ -149,6 +153,34 @@ namespace Content.Server.Database
             }
 
             return await query.ToListAsync();
+        }
+
+        private static bool BanMatches(ServerBan ban,
+            IPAddress? address,
+            NetUserId? userId,
+            ImmutableArray<byte>? hwId,
+            ServerBanExemptFlags? exemptFlags,
+            bool newPlayer)
+        {
+            // Any flag to bypass BlacklistedRange bans.
+            var exemptFromBlacklistedRange = exemptFlags != null && exemptFlags.Value != ServerBanExemptFlags.None;
+
+            if (!exemptFlags.GetValueOrDefault(ServerBanExemptFlags.None).HasFlag(ServerBanExemptFlags.IP)
+                && address != null
+                && ban.Address is not null
+                && address.IsInSubnet(ban.Address.ToTuple().Value)
+                && (!ban.ExemptFlags.HasFlag(ServerBanExemptFlags.BlacklistedRange) ||
+                     newPlayer && !exemptFromBlacklistedRange))
+            {
+                return true;
+            }
+
+            if (userId is { } id && ban.PlayerUserId == id.UserId)
+            {
+                return true;
+            }
+
+            return hwId is { Length: > 0 } hwIdVar && hwIdVar.AsSpan().SequenceEqual(ban.HWId);
         }
 
         public override async Task AddServerBanAsync(ServerBanDef serverBan)

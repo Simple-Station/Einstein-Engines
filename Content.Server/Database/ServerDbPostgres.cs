@@ -109,7 +109,7 @@ namespace Content.Server.Database
 
             var exempt = await GetBanExemptionCore(db, userId);
             var newPlayer = !await db.PgDbContext.Player.AnyAsync(p => p.UserId == userId);
-            var query = MakeBanLookupQuery(address, userId, hwId, modernHWIds, db, includeUnbanned, exempt, newPlayer);
+            var query = MakeBanLookupQuery(address, userId, hwId, db, includeUnbanned, exempt, newPlayer);
 
             var queryBans = await query.ToArrayAsync();
             var bans = new List<ServerBanDef>(queryBans.Length);
@@ -134,7 +134,8 @@ namespace Content.Server.Database
             ImmutableArray<ImmutableArray<byte>>? modernHWIds,
             DbGuardImpl db,
             bool includeUnbanned,
-            ServerBanExemptFlags? exemptFlags)
+            ServerBanExemptFlags? exemptFlags,
+            bool newPlayer)
         {
             DebugTools.Assert(!(address == null && userId == null && hwId == null));
 
@@ -155,6 +156,15 @@ namespace Content.Server.Database
                 query = query == null ? newQ : query.Union(newQ);
             }
 
+            if (hwId != null && hwId.Value.Length > 0)
+            {
+                var newQ = db.PgDbContext.Ban
+                    .Include(p => p.Unban)
+                    .Where(b => b.HWId!.SequenceEqual(hwId.Value.ToArray()));
+
+                query = query == null ? newQ : query.Union(newQ);
+            }
+
             DebugTools.Assert(
                 query != null,
                 "At least one filter item (IP/UserID/HWID) must have been given to make query not null.");
@@ -167,6 +177,9 @@ namespace Content.Server.Database
 
             if (exemptFlags is { } exempt)
             {
+                if (exempt != ServerBanExemptFlags.None)
+                    exempt |= ServerBanExemptFlags.BlacklistedRange; // Any kind of exemption should bypass BlacklistedRange
+
                 query = query.Where(b => (b.ExemptFlags & exempt) == 0);
             }
 
