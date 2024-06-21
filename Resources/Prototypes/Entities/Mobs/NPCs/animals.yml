@@ -64,6 +64,7 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
 
 - type: entity
   name: bee
@@ -132,6 +133,13 @@
         - ReagentId: GroundBee
           Quantity: 5
   - type: ZombieImmune
+  - type: RandomBark
+    barks:
+      - Bzzzzz
+      - Bzzz bzzz
+      - Bzzzzzzzzzzzz
+      - Bzz
+    barkMultiplier: 1.5
 
 - type: entity
   name: bee
@@ -242,6 +250,7 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: RandomBark
 
 - type: entity
   parent: MobChicken
@@ -620,6 +629,8 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: RandomBark
+    barkMultiplier: 0.7
 
 - type: entity
   name: white duck #Quack
@@ -799,6 +810,16 @@
   - type: GuideHelp
     guides:
     - Chef
+  - type: RandomBark
+    barks:
+      - Mooooooo
+      - Moo
+      - Huff
+      - Mooooooooooo
+      - Moooooo
+      - Moooo
+    barkMultiplier: 3
+
 
 - type: entity
   name: crab
@@ -867,6 +888,12 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
+  - type: RandomBark
+    barks:
+      - click clack
+      - clack
+      - clickity clack
+      - clack clack
 
 - type: entity
   name: goat
@@ -1479,6 +1506,8 @@
     makeSentient: true
     name: ghost-role-information-kobold-name
     description: ghost-role-information-kobold-description
+  - type: RandomBark
+    barkMultiplier: 0.65
 
 - type: entity
   name: guidebook monkey
@@ -1641,6 +1670,8 @@
   - type: BadFood
   - type: NonSpreaderZombie
   - type: PreventSpiller
+  - type: RandomBark
+    barkMultiplier: 0.3
 
 - type: entity
   parent: MobMouse
@@ -1876,6 +1907,18 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
+    barkMultiplier: 1.3
+    barks:
+      - Croooaaaakkk
+      - Ribbit
+      - Ribbit
+      - Ribbit
+      - Crooaak
+      - Ribbit
+      - Ribbit
+      - Ribbit
+      - Bibbit
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity
@@ -1994,6 +2037,10 @@
     heatDamage:
       types:
         Heat : 0.2 #per second, scales with temperature & other constants
+  - type: RandomBark
+    barks:
+      - Wank
+    barkMultiplier: 0.6
 
 - type: entity
   name: grenade penguin
@@ -2109,6 +2156,14 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
+  - type: RandomBark
+    barkMultiplier: 1.5
+    barks:
+      - Hsssssss
+      - Hss
+      - Hsssss
+      - Hisss
+      - Hshsss
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -2236,6 +2291,7 @@
       groups:
         Brute: -0.07
         Burn: -0.07
+  - type: RandomBark
 
 - type: entity
   name: tarantula
@@ -2588,6 +2644,7 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
 
 - type: entity
   name: corrupted corgi
@@ -2747,6 +2804,7 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
 
 - type: entity
   name: calico cat
@@ -2941,6 +2999,10 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
+    barkMultiplier: 10
+    barks:
+      - Sloth
 
 - type: entity
   name: ferret
@@ -3140,6 +3202,8 @@
   - type: MobPrice
     price: 60
   - type: NonSpreaderZombie
+  - type: RandomBark
+    barkMultiplier: 0.45
 
 - type: entity
   name: pig
@@ -3309,3 +3373,4 @@
   components:
   - type: ReplacementAccent
     accent: nymph
+  - type: RandomBark

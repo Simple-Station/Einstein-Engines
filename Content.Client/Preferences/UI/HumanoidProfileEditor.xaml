@@ -142,18 +142,29 @@
                         <BoxContainer Name="CAntagList" Orientation="Vertical" />
                     </ScrollContainer>
                 </BoxContainer>
-                <BoxContainer Orientation="Vertical" Margin="10">
+                <BoxContainer Name="CTraitsTab" Orientation="Vertical" Margin="10">
                     <!-- Traits -->
-                    <ScrollContainer VerticalExpand="True">
-                        <BoxContainer Name="CTraitsList" Orientation="Vertical" />
-                    </ScrollContainer>
+                    <Label Name="TraitPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
+                    <ProgressBar Name="TraitPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
+
+                    <Button Name="TraitsShowUnusableButton"
+                            Text="{Loc 'humanoid-profile-editor-traits-show-unusable-button'}"
+                            ToolTip="{Loc 'humanoid-profile-editor-traits-show-unusable-button-tooltip'}"
+                            ToggleMode="True"
+                            Margin="0 0 0 5" />
+
+                    <TabContainer Name="CTraitsTabs" VerticalExpand="True" />
                 </BoxContainer>
                 <BoxContainer Name="CLoadoutsTab" Orientation="Vertical" Margin="10">
                     <!-- Loadouts -->
                     <Label Name="LoadoutPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
                     <ProgressBar Name="LoadoutPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
-                    <Button Name="CHideShowUnusableButton" Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}" ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}" ToggleMode="True" Margin="0 0 0 5" />
+                    <Button Name="LoadoutsShowUnusableButton"
+                            Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}"
+                            ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}"
+                            ToggleMode="True"
+                            Margin="0 0 0 5" />
 
                     <TabContainer Name="CLoadoutsTabs" VerticalExpand="True" />
                 </BoxContainer>
