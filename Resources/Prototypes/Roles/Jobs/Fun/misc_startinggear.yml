@@ -114,12 +114,12 @@
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
-#Syndicate Lonoly Operative Outfit - include a special pinpointer
+#Syndicate Lonely Operative Outfit - include a special pinpointer
 - type: startingGear
-  id: SyndicateLonolyOperativeGearFull
+  id: SyndicateLonelyOperativeGearFull
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackDuffelSyndicateLonolyOperative
+    back: ClothingBackpackDuffelSyndicateLonelyOperative
     mask: ClothingMaskGasSyndicate
     eyes: ClothingEyesHudSyndicate
     ears: ClothingHeadsetAltSyndicate
@@ -131,8 +131,8 @@
     pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbing
   innerClothingSkirt: ClothingUniformJumpskirtOperative
-  satchel: ClothingBackpackDuffelSyndicateLonolyOperative
-  duffelbag: ClothingBackpackDuffelSyndicateLonolyOperative
+  satchel: ClothingBackpackDuffelSyndicateLonelyOperative
+  duffelbag: ClothingBackpackDuffelSyndicateLonelyOperative
 
 
 #Nuclear Operative Commander Gear

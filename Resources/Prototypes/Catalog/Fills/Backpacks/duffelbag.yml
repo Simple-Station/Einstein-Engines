@@ -334,7 +334,7 @@
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
-  id: ClothingBackpackDuffelSyndicateLonolyOperative
+  id: ClothingBackpackDuffelSyndicateLonelyOperative
   name: operative duffelbag
   components:
   - type: StorageFill
