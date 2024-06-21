@@ -1,14 +1,17 @@
+using Content.Shared.Popups;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Input;
 using Content.Shared.Hands.Components;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.OfferItem;
 
 public abstract partial class SharedOfferItemSystem
 {
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     private void InitializeInteractions()
     {
@@ -44,7 +47,10 @@ public abstract partial class SharedOfferItemSystem
         if (offerItem.IsInOfferMode == false)
         {
             if (handItem == null)
+            {
+                _popup.PopupEntity(Loc.GetString("offer-item-empty-hand"), uid, uid);
                 return;
+            }
 
             if (offerItem.Hand == null || offerItem.Target == null)
             {
