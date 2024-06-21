@@ -107,6 +107,8 @@ namespace Content.Server.Database
         {
             var exempt = await GetBanExemptionCore(db, userId);
 
+            var newPlayer = !await db.SqliteDbContext.Player.AnyAsync(p => p.UserId == userId);
+
             // SQLite can't do the net masking stuff we need to match IP address ranges.
             // So just pull down the whole list into memory.
             var queryBans = await GetAllBans(db.SqliteDbContext, includeUnbanned, exempt);
