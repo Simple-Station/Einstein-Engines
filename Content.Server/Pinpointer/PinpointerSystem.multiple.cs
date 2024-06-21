@@ -20,13 +20,9 @@ public sealed partial class PinpointerSystem
 
     private void OnMultiplePinpointerStartup(EntityUid uid, MultiplePinpointerComponent multiple, ComponentStartup args)
     {
-        if (EntityManager.TryGetComponent(uid, out PinpointerComponent? tool))
-            SetMultiplePinpointer(uid, multiple, tool);
-        else
-        {
-            Log.Warning($"{MetaData(uid).EntityPrototype?.ID}({uid.Id}) does not have a Pinpointer component");
-            DebugTools.Assert(false);
-        }
+        var pinpointer = EntityManager.EnsureComponent<PinpointerComponent>(uid);
+
+        SetMultiplePinpointer(uid, multiple, pinpointer);
     }
 
     private void OnMultiplePinpointerActivated(EntityUid uid, MultiplePinpointerComponent multiple, ActivateInWorldEvent args)
