@@ -1,6 +1,5 @@
 # Alphabetically ordered, except for Uncategorized since it is always first
 
-loadout-category-Uncategorized = Uncategorized
 loadout-category-Accessories = Accessories
 loadout-category-Eyes = Eyes
 loadout-category-Hands = Hands
