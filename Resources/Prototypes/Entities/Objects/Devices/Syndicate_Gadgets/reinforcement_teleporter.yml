@@ -1,5 +1,3 @@
-
-
 - type: entity
   parent: BaseItem
   id: ReinforcementRadioSyndicate
@@ -94,13 +92,13 @@
   description: Call in a well armed assault cyborg, instantly!
   suffix: NukeOps
   components:
-    - type: GhostRole
-      name: ghost-role-information-syndicate-cyborg-assault-name
-      description: ghost-role-information-syndicate-cyborg-description
-      rules: ghost-role-information-silicon-rules
-      mindRoles:
-      - MindRoleGhostRoleSilicon
-      raffle:
-        settings: default
-    - type: GhostRoleMobSpawner
-      prototype: PlayerBorgSyndicateAssaultBattery
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-assault-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleGhostRoleSilicon
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlayerBorgSyndicateAssaultBattery
