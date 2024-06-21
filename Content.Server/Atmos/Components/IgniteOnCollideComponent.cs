@@ -1,6 +1,8 @@
+using Content.Server.Atmos.EntitySystems;
+
 namespace Content.Server.Atmos.Components;
 
-[RegisterComponent]
+[RegisterComponent, Access(typeof(FlammableSystem))]
 public sealed partial class IgniteOnCollideComponent : Component
 {
     /// <summary>

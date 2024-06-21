@@ -84,10 +84,7 @@
   - type: PotentialPsionic
   - type: Psionic
     removable: false
-    amplification: 4
-    psychicFeedback:
-    - "ifrit-feedback"
-  - type: PyrokinesisPower
+  # - type: PyrokinesisPower # Pending psionic rework
   - type: Grammar
     attributes:
       proper: true
@@ -98,6 +95,11 @@
     factions:
     - PsionicInterloper
     - NanoTrasen
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    understands:
+    - GalacticCommon
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true
@@ -106,7 +108,7 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Epistemics
-      time: 14400
+      time: 14400 # DeltaV - 4 hours
 
 - type: entity
   parent: WelderExperimental

@@ -49,14 +49,8 @@ public sealed partial class StepTriggerComponent : Component
     ///     If this is true, steptrigger will still occur on entities that are in air / weightless. They do not
     ///     by default.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField]
     public bool IgnoreWeightless;
-
-    /// <summary>
-    /// Does this have separate "StepOn" and "StepOff" triggers.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool StepOn = false;
 }
 
 [RegisterComponent]

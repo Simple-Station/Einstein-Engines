@@ -7,24 +7,22 @@
     - !type:OverallPlaytimeRequirement
       time: 18000
     - !type:DepartmentTimeRequirement
-      department: Epistemics
+      department: Epistemics # DeltaV - Epistemics Department replacing Science
       time: 3600
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
-  antagAdvantage: 5
-  canBeAntag: true
+  antagAdvantage: 5 # DeltaV - From 4 to 5
+  canBeAntag: true # DeltaV - Mantis is no longer a Detective
+  # whitelistRequired: true
   access:
   - Research
   - Maintenance
-  - Mantis
+  - Mantis # DeltaV - Psionic Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
   special:
   - !type:AddComponentSpecial
     components:
-    - type: PotentialPsionic
     - type: Psionic
-      amplification: 0.3
-      dampening: 0.3
     - type: MetapsionicPower
 
 - type: startingGear
@@ -36,10 +34,11 @@
     head: ClothingHeadHatFezMantis
     id: ForensicMantisPDA
     eyes: ClothingEyesGlassesSunglasses
-    ears: ClothingHeadsetScience
+    ears: ClothingHeadsetScience # DeltaV - Mantis is part of Epistemics
     gloves: ClothingHandsGlovesColorWhite
     outerClothing: ClothingOuterCoatMantis
     belt: ClothingBeltMantis
+    # pocket2: ForensicScanner # DeltaV - Mantis is no longer a Detective
   innerClothingSkirt: ClothingUniformSkirtMantis
   satchel: ClothingBackpackSatchelMantisFilled
   duffelbag: ClothingBackpackDuffelMantisFilled
