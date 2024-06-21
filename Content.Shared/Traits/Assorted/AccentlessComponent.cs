@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Traits.Assorted.Components;
+namespace Content.Shared.Traits.Assorted;
 
 /// <summary>
 /// This is used for the accentless trait

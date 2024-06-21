@@ -1,11 +1,9 @@
 using Content.Shared.Clothing.Loadouts.Systems;
-using Content.Shared.Customization.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Clothing.Loadouts.Prototypes;
-
 
 [Prototype("loadout")]
 public sealed class LoadoutPrototype : IPrototype
@@ -19,7 +17,7 @@ public sealed class LoadoutPrototype : IPrototype
     /// <summary>
     ///     Which tab category to put this under
     /// </summary>
-    [DataField, ValidatePrototypeId<LoadoutCategoryPrototype>]
+    [DataField(customTypeSerializer:typeof(PrototypeIdSerializer<LoadoutCategoryPrototype>))]
     public string Category = "Uncategorized";
 
     /// <summary>
@@ -43,5 +41,5 @@ public sealed class LoadoutPrototype : IPrototype
 
 
     [DataField]
-    public List<CharacterRequirement> Requirements = new();
+    public List<LoadoutRequirement> Requirements = new();
 }

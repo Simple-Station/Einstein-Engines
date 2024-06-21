@@ -1,7 +1,5 @@
 using Content.Shared.Traits.Assorted;
-using Content.Shared.Traits.Assorted.Systems;
 using Robust.Shared.Audio;
-using Content.Shared.Traits.Assorted.Components;
 
 namespace Content.Server.Traits.Assorted;
 

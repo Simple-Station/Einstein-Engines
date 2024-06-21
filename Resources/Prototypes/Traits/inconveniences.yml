@@ -1,25 +1,15 @@
 ﻿- type: trait
   id: LightweightDrunk
-  category: Physical
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
+  name: trait-lightweight-name
+  description: trait-lightweight-desc
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 2
 
 - type: trait
   id: SocialAnxiety
-  category: Mental
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
+  name: trait-socialanxiety-name
+  description: trait-socialanxiety-desc
   components:
     - type: StutteringAccent
       matchRandomProb: 0.1

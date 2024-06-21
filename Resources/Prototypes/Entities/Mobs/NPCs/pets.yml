@@ -307,8 +307,6 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalMcGriff
-  - type: RandomBark
-    barkMultiplier: 1.3
 
 - type: entity
   name: Paperwork
@@ -408,8 +406,6 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalWalter
-  - type: RandomBark
-    barkMultiplier: 1.1
 
 - type: entity
   name: Morty

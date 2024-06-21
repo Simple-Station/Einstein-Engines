@@ -341,34 +341,14 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> DebugCoordinatesAdminOnly =
             CVarDef.Create("game.debug_coordinates_admin_only", true, CVar.SERVER | CVar.REPLICATED);
 
-
         /// <summary>
-        ///     Whether to allow characters to select traits.
-        /// </summary>
-        public static readonly CVarDef<bool> GameTraitsEnabled =
-            CVarDef.Create("game.traits_enabled", true, CVar.REPLICATED);
-
-        /// <summary>
-        ///     How many traits a character can have at most.
-        /// </summary>
-        public static readonly CVarDef<int> GameTraitsMax =
-            CVarDef.Create("game.traits_max", 5, CVar.REPLICATED);
-
-        /// <summary>
-        ///     How many points a character should start with.
-        /// </summary>
-        public static readonly CVarDef<int> GameTraitsDefaultPoints =
-            CVarDef.Create("game.traits_default_points", 5, CVar.REPLICATED);
-
-
-        /// <summary>
-        ///     Whether to allow characters to select loadout items.
+        /// Whether or not to allow characters to select loadout items.
         /// </summary>
         public static readonly CVarDef<bool> GameLoadoutsEnabled =
             CVarDef.Create("game.loadouts_enabled", true, CVar.REPLICATED);
 
         /// <summary>
-        ///     How many points to give to each player for loadouts.
+        /// How many points to give to each player for loadouts.
         /// </summary>
         public static readonly CVarDef<int> GameLoadoutsPoints =
             CVarDef.Create("game.loadouts_points", 14, CVar.REPLICATED);
@@ -2126,17 +2106,5 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> PsionicRollsEnabled =
             CVarDef.Create("psionics.rolls_enabled", true, CVar.SERVERONLY);
-
-        /// <summary>
-        ///     Enables station goals
-        /// </summary>
-        public static readonly CVarDef<bool> StationGoalsEnabled =
-            CVarDef.Create("game.station_goals", true, CVar.SERVERONLY);
-
-        /// <summary>
-        ///     Chance for a station goal to be sent
-        /// </summary>
-        public static readonly CVarDef<float> StationGoalsChance =
-            CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
     }
 }

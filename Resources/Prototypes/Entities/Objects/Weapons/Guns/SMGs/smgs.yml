@@ -72,7 +72,6 @@
     fireRate: 10
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
-    fireOnDropChance: 0.3
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -97,7 +96,6 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
-    fireOnDropChance: 0.3
   - type: ChamberMagazineAmmoProvider
     autoEject: true
   - type: MagazineVisuals
@@ -128,7 +126,6 @@
         path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
       availableModes:
         - FullAuto
-      fireOnDropChance: 0.2
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -176,7 +173,6 @@
       path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
     availableModes:
     - FullAuto
-    fireOnDropChance: 0.1
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -229,7 +225,6 @@
     selectedMode: FullAuto
     availableModes:
     - FullAuto
-    fireOnDropChance: 0.1
   - type: ItemSlots
     slots:
       gun_magazine:

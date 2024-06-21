@@ -4,7 +4,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterJobRequirement
+    - !type:LoadoutJobRequirement
       jobs:
         - Passenger
   items:

@@ -1,4 +1,6 @@
-namespace Content.Shared.Traits.Assorted.Systems;
+using Robust.Shared.Serialization.Manager;
+
+namespace Content.Shared.Traits.Assorted;
 
 /// <summary>
 /// This handles removing accents when using the accentless trait.
@@ -10,10 +12,10 @@ public sealed class AccentlessSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<Components.AccentlessComponent, ComponentStartup>(RemoveAccents);
+        SubscribeLocalEvent<AccentlessComponent, ComponentStartup>(RemoveAccents);
     }
 
-    private void RemoveAccents(EntityUid uid, Components.AccentlessComponent component, ComponentStartup args)
+    private void RemoveAccents(EntityUid uid, AccentlessComponent component, ComponentStartup args)
     {
         foreach (var accent in component.RemovedAccents.Values)
         {

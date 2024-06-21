@@ -1,26 +1,18 @@
 - type: trait
   id: Blindness
-  category: Visual
-  points: 2
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
+  name: trait-blindness-name
+  description: trait-blindness-desc
+  traitGear: WhiteCane
+  whitelist:
+    components:
+      - Blindable
   components:
     - type: PermanentBlindness
 
 - type: trait
   id: Narcolepsy
-  category: Mental
-  points: 1
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
+  name: trait-narcolepsy-name
+  description: trait-narcolepsy-desc
   components:
     - type: Narcolepsy
       timeBetweenIncidents: 300, 600
@@ -28,15 +20,15 @@
 
 - type: trait
   id: Pacifist
-  category: Mental
-  points: 3
+  name: trait-pacifist-name
+  description: trait-pacifist-desc
   components:
     - type: Pacified
 
 - type: trait
   id: Paracusia
-  category: Auditory
-  points: 1
+  name: trait-paracusia-name
+  description: trait-paracusia-desc
   components:
     - type: Paracusia
       minTimeBetweenIncidents: 0.1
@@ -47,50 +39,24 @@
 
 - type: trait
   id: Muted
-  category: Speech
-  points: 1
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
+  name: trait-muted-name
+  description: trait-muted-desc
+  blacklist:
+    components:
+      - BorgChassis
   components:
     - type: Muted
 
 - type: trait
   id: Uncloneable
-  category: Physical
-  points: 2
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
+  name: trait-uncloneable-name
+  description: trait-uncloneable-desc
   components:
     - type: Uncloneable
 
 - type: trait
   id: FrontalLisp
-  category: Speech
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
+  name: trait-frontal-lisp-name
+  description: trait-frontal-lisp-desc
   components:
     - type: FrontalLisp
-
-- type: trait
-  id: Snoring
-  category: Auditory
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-  components:
-    - type: Snoring

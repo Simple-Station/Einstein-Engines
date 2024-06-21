@@ -1,4 +1,4 @@
-namespace Content.Shared.Traits.Assorted.Systems;
+namespace Content.Shared.Traits.Assorted;
 
 public abstract class SharedParacusiaSystem : EntitySystem
 {

@@ -1,23 +1,18 @@
 - type: trait
   id: PirateAccent
-  category: Speech
+  name: trait-pirate-accent-name
+  description: trait-pirate-accent-desc
   components:
     - type: PirateAccent
 
 - type: trait
   id: Accentless
-  category: Speech
-  points: -1
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
+  name: trait-accentless-name
+  description: trait-accentless-desc
   components:
-    - type: Accentless
-      removes:
-      - type: LizardAccent
-      - type: MothAccent
-      - type: ReplacementAccent
-        accent: dwarf
+  - type: Accentless
+    removes:
+    - type: LizardAccent
+    - type: MothAccent
+    - type: ReplacementAccent
+      accent: dwarf
