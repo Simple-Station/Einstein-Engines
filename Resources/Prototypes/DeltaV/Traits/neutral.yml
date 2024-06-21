@@ -1,7 +1,6 @@
 - type: trait
   id: ScottishAccent
-  name: trait-scottish-accent-name
-  description: trait-scottish-accent-desc
-  traitGear: BagpipeInstrument
+  category: Speech
+  points: 0
   components:
     - type: ScottishAccent

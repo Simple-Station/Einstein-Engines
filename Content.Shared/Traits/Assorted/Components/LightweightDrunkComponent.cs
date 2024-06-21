@@ -1,7 +1,7 @@
-using Robust.Shared.GameStates;
 using Content.Shared.Drunk;
+using Robust.Shared.GameStates;
 
-namespace Content.Shared.Traits.Assorted;
+namespace Content.Shared.Traits.Assorted.Components;
 
 /// <summary>
 /// Used for the lightweight trait. DrunkSystem will check for this component and modify the boozePower accordingly if it finds it.
