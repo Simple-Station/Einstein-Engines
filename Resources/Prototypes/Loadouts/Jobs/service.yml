@@ -193,7 +193,7 @@
   category: Jobs
   cost: 8
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Musician
   items:

@@ -92,7 +92,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -107,7 +107,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -122,7 +122,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -137,7 +137,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -152,7 +152,7 @@
   cost: 3
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -166,7 +166,7 @@
   cost: 5
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -311,7 +311,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -326,7 +326,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -341,7 +341,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -356,7 +356,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -371,7 +371,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -386,7 +386,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -401,7 +401,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -416,7 +416,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -431,7 +431,7 @@
   cost: 3
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -445,7 +445,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Paramedic
@@ -461,7 +461,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Paramedic
@@ -477,14 +477,14 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Paramedic
         - ChiefMedicalOfficer
         - MedicalIntern
         - Brigmedic
-    - !type:LoadoutTraitRequirement
+    - !type:CharacterTraitRequirement
       trait: Nearsighted
   items:
     - ClothingEyesPrescriptionMedHud

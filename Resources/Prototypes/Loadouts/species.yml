@@ -3,7 +3,7 @@
   category: Species
   cost: 0
   requirements:
-    - !type:LoadoutSpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - SlimePerson
         - Vox
@@ -15,7 +15,7 @@
   category: Species
   cost: 1
   requirements:
-    - !type:LoadoutSpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - SlimePerson
         - Vox
@@ -27,7 +27,7 @@
   category: Species
   cost: 3
   requirements:
-    - !type:LoadoutSpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - SlimePerson
         - Vox

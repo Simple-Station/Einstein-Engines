@@ -5,7 +5,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - SecurityCadet
@@ -33,7 +33,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - SecurityCadet
@@ -47,7 +47,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - SecurityCadet
@@ -109,7 +109,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Warden
   items:
@@ -121,7 +121,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Warden
   items:
@@ -133,7 +133,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Warden
   items:
@@ -145,7 +145,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Warden
   items:
@@ -157,7 +157,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
   items:
@@ -169,7 +169,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
   items:
@@ -181,7 +181,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Detective
         - SecurityOfficer
@@ -196,7 +196,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Detective
         - SecurityOfficer
@@ -240,7 +240,7 @@
   category: Jobs
   cost: 7
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - Warden
@@ -257,7 +257,7 @@
   category: Jobs
   cost: 6
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - Warden
@@ -276,7 +276,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - Warden
@@ -291,7 +291,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - Warden
@@ -306,7 +306,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - Warden
@@ -324,7 +324,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - Warden
@@ -338,7 +338,7 @@
   category: Jobs
   cost: 3
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - Warden
@@ -354,7 +354,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Detective
         - SecurityOfficer
@@ -370,16 +370,16 @@
   category: Jobs
   cost: 8 ## TODO: Make this replace the secoff handgun, and thus also make it cheaper
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
         - Warden
         - HeadOfSecurity
         - Brigmedic
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobSecurityOfficer
       min: 36000 # 10 hours
-    - !type:LoadoutSpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Oni
   items:
