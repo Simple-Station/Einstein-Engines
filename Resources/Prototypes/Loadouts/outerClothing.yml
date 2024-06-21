@@ -1,11 +1,4 @@
 - type: loadout
-  id: LoadoutOuterGhostSheet
-  category: Outer
-  cost: 2
-  items:
-    - ClothingOuterGhostSheet
-
-- type: loadout
   id: LoadoutOuterCoatBomberjacket
   category: Outer
   cost: 3
@@ -60,21 +53,6 @@
   cost: 1
   items:
     - ClothingOuterVestValet
-
-## Robes
-- type: loadout
-  id: LoadoutOuterRobeBrown
-  category: Outer
-  cost: 2
-  items:
-    - ClothingOuterRobeBrown
-
-- type: loadout
-  id: LoadoutOuterRobeTechPriest
-  category: Outer
-  cost: 2
-  items:
-    - ClothingOuterRobeTechPriest
 
 ## Letterman Jackets
 - type: loadout

@@ -234,41 +234,6 @@
   items:
     - ClothingShoesBootsJack
 
-## Items
-- type: loadout
-  id: LoadoutItemsSpareHandgunMagazine
-  category: Jobs
-  cost: 7
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
-        - Brigmedic
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobSecurityOfficer
-      min: 21600 # 6 hours
-  items:
-    - MagazinePistol
-
-- type: loadout
-  id: LoadoutItemsSpareHandgunMagazineRubber
-  category: Jobs
-  cost: 6
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
-        - Brigmedic
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobSecurityOfficer
-      min: 7200 # 2 hours
-  items:
-    - MagazinePistolRubber
-
 ## Eyes
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
@@ -366,21 +331,21 @@
     - ClothingBeltSecurityWebbingFilled
 
 ## Species
-- type: loadout
-  id: LoadoutSecurityEquipmentTruncheon
-  category: Jobs
-  cost: 8 ## TODO: Make this replace the secoff handgun, and thus also make it cheaper
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
-        - Brigmedic
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobSecurityOfficer
-      min: 36000 # 10 hours
-    - !type:CharacterSpeciesRequirement
-      species: Oni
-  items:
-    - Truncheon
+#- type: loadout ##Uncomment this and reassess points when we can make it replace the secoff duty pistol
+#  id: LoadoutSecurityEquipmentTruncheon
+#  category: Jobs
+#  cost: 8 ## TODO: Make this replace the secoff handgun, and thus also make it cheaper
+#  requirements:
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - SecurityOfficer
+#        - Warden
+#        - HeadOfSecurity
+#        - Brigmedic
+#    - !type:CharacterPlaytimeRequirement
+#      tracker: JobSecurityOfficer
+#      min: 36000 # 10 hours
+#    - !type:CharacterSpeciesRequirement
+#      species: Oni
+#  items:
+#    - Truncheon

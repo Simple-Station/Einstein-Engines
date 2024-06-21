@@ -140,10 +140,14 @@
 - type: loadout
   id: LoadoutShoesSlippersDuck
   category: Shoes
-  cost: 1
+  cost: 2
   exclusive: true
   items:
     - ClothingShoeSlippersDuck
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
 
 - type: loadout
   id: LoadoutShoesLeather

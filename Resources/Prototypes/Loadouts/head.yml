@@ -271,20 +271,3 @@
   exclusive: true
   items:
     - ClothingHeadBandBrown
-
-## Hoods
-- type: loadout
-  id: LoadoutHeadHoodBrown
-  category: Head
-  cost: 1
-  exclusive: true
-  items:
-    - ClothingHeadHoodBrown
-
-- type: loadout
-  id: LoadoutHeadHoodTechPriest
-  category: Head
-  cost: 1
-  exclusive: true
-  items:
-    - ClothingHeadTechPriest

@@ -1,9 +1,6 @@
 # Alphabetically ordered, except for Uncategorized since it is always first
 
 - type: loadoutCategory
-  id: Accessories
-
-- type: loadoutCategory
   id: Eyes
 
 - type: loadoutCategory
@@ -19,9 +16,6 @@
   id: Jobs
 
 - type: loadoutCategory
-  id: Mask
-
-- type: loadoutCategory
   id: Neck
 
 - type: loadoutCategory
@@ -32,9 +26,6 @@
 
 - type: loadoutCategory
   id: Species
-
-- type: loadoutCategory
-  id: Uncategorized
 
 - type: loadoutCategory
   id: Uniform

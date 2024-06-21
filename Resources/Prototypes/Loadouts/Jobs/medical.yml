@@ -132,21 +132,6 @@
     - UniformScrubsColorPink
 
 - type: loadout
-  id: LoadoutMedicalUniformScrubsRainbow
-  category: Jobs
-  cost: 2
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - MedicalDoctor
-        - Chemist
-        - Paramedic
-        - MedicalIntern
-  items:
-    - UniformScrubsColorRainbow
-
-- type: loadout
   id: LoadoutMedicalUniformScrubsCybersun
   category: Jobs
   cost: 3
@@ -394,21 +379,6 @@
         - MedicalIntern
   items:
     - ClothingHeadHatSurgcapPink
-
-- type: loadout
-  id: LoadoutMedicalHeadSurgcapRainbow
-  category: Jobs
-  cost: 2
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - MedicalDoctor
-        - Chemist
-        - Paramedic
-        - MedicalIntern
-  items:
-    - ClothingHeadHatSurgcapRainbow
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapWhite

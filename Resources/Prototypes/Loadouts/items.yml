@@ -69,49 +69,6 @@
   items:
     - Matchbox
 
-## Plushies
-- type: loadout
-  id: LoadoutItemPlushieSharkBlue
-  category: Items
-  cost: 2
-  items:
-    - PlushieSharkBlue
-
-- type: loadout
-  id: LoadoutItemPlushieSharkPink
-  category: Items
-  cost: 2
-  items:
-    - PlushieSharkPink
-
-- type: loadout
-  id: LoadoutItemPlushieSharkGrey
-  category: Items
-  cost: 2
-  items:
-    - PlushieSharkGrey
-
-- type: loadout
-  id: LoadoutItemPlushieCarp
-  category: Items
-  cost: 2
-  items:
-    - PlushieCarp
-
-- type: loadout
-  id: LoadoutItemPlushieLizard
-  category: Items
-  cost: 2
-  items:
-    - PlushieLizard
-
-- type: loadout
-  id: LoadoutItemPlushieMoth
-  category: Items
-  cost: 2
-  items:
-    - PlushieMoth
-
 ## Instruments
 - type: loadout
   id: LoadoutItemMicrophoneInstrument
@@ -222,7 +179,7 @@
 - type: loadout
   id: LoadoutItemsEmergencyCrowbar
   category: Items
-  cost: 1
+  cost: 3
   items:
     - CrowbarRed
 
