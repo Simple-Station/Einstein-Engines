@@ -70,7 +70,3 @@ action-description-psychokinesis = Bend the fabric of space to instantly move ac
 
 action-name-rf-sensitivity = Toggle RF Sensitivity
 action-desc-rf-sensitivity = Toggle your ability to interpret radio waves on and off.
-
-trait-latent-psychic-desc = Your mind and soul are open to the noosphere, allowing for a limited use of Telepathy.
-                            Thus, you are eligible for potentially receiving psychic powers.
-                            It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.

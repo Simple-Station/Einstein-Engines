@@ -31,3 +31,8 @@ trait-description-SocialAnxiety = You are anxious when you speak and stutter.
 
 trait-name-Snoring = Snoring
 trait-description-Snoring = You will snore while sleeping.
+
+trait-name-LatentPsychic = Latent Psychic
+trait-description-LatentPsychic = Your mind and soul are open to the noosphere, allowing for a limited use of Telepathy.
+                                  Thus, you are eligible for potentially receiving psychic powers.
+                                  It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.

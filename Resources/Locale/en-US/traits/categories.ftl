@@ -6,3 +6,4 @@ trait-category-Mental = Mental
 trait-category-Physical = Physical
 trait-category-Speech = Speech
 trait-category-Visual = Visual
+trait-category-Psionic = Psionic
