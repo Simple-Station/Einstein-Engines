@@ -246,7 +246,7 @@
         - Warden
         - HeadOfSecurity
         - Brigmedic
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobSecurityOfficer
       min: 21600 # 6 hours
   items:
@@ -263,7 +263,7 @@
         - Warden
         - HeadOfSecurity
         - Brigmedic
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobSecurityOfficer
       min: 7200 # 2 hours
   items:
@@ -312,8 +312,9 @@
         - Warden
         - HeadOfSecurity
         - Brigmedic
-    - !type:LoadoutTraitRequirement
-      trait: Nearsighted
+    - !type:CharacterTraitRequirement
+      traits:
+        - Nearsighted
   items:
     - ClothingEyesPrescriptionHudSecurity
 
@@ -380,7 +381,6 @@
       tracker: JobSecurityOfficer
       min: 36000 # 10 hours
     - !type:CharacterSpeciesRequirement
-      species:
-        - Oni
+      species: Oni
   items:
     - Truncheon
