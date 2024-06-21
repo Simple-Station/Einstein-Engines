@@ -4,10 +4,10 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobSalvageSpecialist
       min: 36000 # 10 hours
   items:

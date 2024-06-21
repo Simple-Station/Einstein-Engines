@@ -4,7 +4,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Paramedic
@@ -18,7 +18,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -31,7 +31,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - ChiefMedicalOfficer
@@ -44,7 +44,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
   items:
@@ -56,7 +56,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
   items:
@@ -68,7 +68,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
   items:
@@ -80,7 +80,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Chemist
   items:
@@ -91,7 +91,7 @@
   category: Jobs
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Chemist
   items:
@@ -103,7 +103,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Paramedic
   items:
@@ -115,7 +115,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Paramedic
   items:
@@ -127,16 +127,16 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobChemist
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobMedicalDoctor
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 216000 # 60 hours
   items:
@@ -148,16 +148,16 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobChemist
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobMedicalDoctor
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 216000 # 60 hours
   items:
@@ -169,7 +169,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
   items:
@@ -181,16 +181,16 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobChemist
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobMedicalDoctor
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 216000 # 60 hours
   items:

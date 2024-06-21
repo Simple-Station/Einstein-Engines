@@ -263,15 +263,15 @@ public sealed class ChatUIController : UIController
 
         switch (UIManager.ActiveScreen)
         {
-            case DefaultGameScreen defaultScreen:
-                chatBox = defaultScreen.ChatBox;
-                chatSizeRaw = _config.GetCVar(CCVars.DefaultScreenChatSize);
-                SetChatSizing(chatSizeRaw, defaultScreen, setting);
-                break;
             case SeparatedChatGameScreen separatedScreen:
                 chatBox = separatedScreen.ChatBox;
                 chatSizeRaw = _config.GetCVar(CCVars.SeparatedScreenChatSize);
                 SetChatSizing(chatSizeRaw, separatedScreen, setting);
+                break;
+            case OverlayChatGameScreen overlayScreen:
+                chatBox = overlayScreen.ChatBox;
+                chatSizeRaw = _config.GetCVar(CCVars.OverlayScreenChatSize);
+                SetChatSizing(chatSizeRaw, overlayScreen, setting);
                 break;
             default:
                 // this could be better?
@@ -321,11 +321,11 @@ public sealed class ChatUIController : UIController
             $"{size.X.ToString(CultureInfo.InvariantCulture)},{size.Y.ToString(CultureInfo.InvariantCulture)}";
         switch (UIManager.ActiveScreen)
         {
-            case DefaultGameScreen _:
-                _config.SetCVar(CCVars.DefaultScreenChatSize, stringSize);
-                break;
             case SeparatedChatGameScreen _:
                 _config.SetCVar(CCVars.SeparatedScreenChatSize, stringSize);
+                break;
+            case OverlayChatGameScreen _:
+                _config.SetCVar(CCVars.OverlayScreenChatSize, stringSize);
                 break;
             default:
                 // do nothing
