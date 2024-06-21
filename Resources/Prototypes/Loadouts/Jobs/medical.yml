@@ -485,6 +485,7 @@
         - MedicalIntern
         - Brigmedic
     - !type:CharacterTraitRequirement
-      trait: Nearsighted
+      traits:
+        - Nearsighted
   items:
     - ClothingEyesPrescriptionMedHud
