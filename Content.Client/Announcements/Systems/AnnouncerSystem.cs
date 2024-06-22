@@ -30,7 +30,7 @@ public sealed class AnnouncerSystem : SharedAnnouncerSystem
         AnnouncerVolume = _config.GetCVar(CCVars.AnnouncerVolume) * 100f / ContentAudioSystem.AnnouncerMultiplier;
 
         _config.OnValueChanged(CCVars.AnnouncerVolume, OnAnnouncerVolumeChanged);
-        _config.OnValueChanged(CCVars.AnnouncerDisableMultipleSounds, OnAnnouncerDisableMultipleSounds);
+        _config.OnValueChanged(CCVars.AnnouncerDisableMultipleEnabled, OnAnnouncerDisableMultipleEnabled);
 
         SubscribeNetworkEvent<AnnouncementSendEvent>(OnAnnouncementReceived);
     }
@@ -40,7 +40,7 @@ public sealed class AnnouncerSystem : SharedAnnouncerSystem
         base.Shutdown();
 
         _config.UnsubValueChanged(CCVars.AnnouncerVolume, OnAnnouncerVolumeChanged);
-        _config.UnsubValueChanged(CCVars.AnnouncerDisableMultipleSounds, OnAnnouncerDisableMultipleSounds);
+        _config.UnsubValueChanged(CCVars.AnnouncerDisableMultipleEnabled, OnAnnouncerDisableMultipleEnabled);
     }
 
 
@@ -52,7 +52,7 @@ public sealed class AnnouncerSystem : SharedAnnouncerSystem
             source.Gain = AnnouncerVolume;
     }
 
-    private void OnAnnouncerDisableMultipleSounds(bool value)
+    private void OnAnnouncerDisableMultipleEnabled(bool value)
     {
         if (!value)
             return;
@@ -79,7 +79,7 @@ public sealed class AnnouncerSystem : SharedAnnouncerSystem
         source.Gain = AnnouncerVolume * SharedAudioSystem.VolumeToGain(ev.AudioParams.Volume);
         source.Global = true;
 
-        if (_config.GetCVar(CCVars.AnnouncerDisableMultipleSounds))
+        if (_config.GetCVar(CCVars.AnnouncerDisableMultipleEnabled))
         {
             foreach (var audioSource in AnnouncerSources.ToList())
             {
