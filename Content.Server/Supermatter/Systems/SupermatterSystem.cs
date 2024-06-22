@@ -587,7 +587,7 @@ namespace Content.Server.Supermatter.Systems
             if (!HasComp<SharpComponent>(args.Used))
                 return;
 
-            var dae = new DoAfterArgs(EntityManager, args.User, 30f, new SupermatterDoAfterEvent(), uid)
+            var dae = new DoAfterArgs(EntityManager, args.User, 30f, new SupermatterDoAfterEvent(), args.Target)
             {
                 BreakOnDamage = true,
                 BreakOnHandChange = false,
