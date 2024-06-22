@@ -29,6 +29,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+    fireOnDropChance: 0.5
   - type: UseDelay
     delay: 0.66
   - type: ContainerContainer
@@ -127,6 +128,7 @@
       path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
       params:
         volume: 2.25
+    fireOnDropChance: 0.3
 
 - type: entity
   name: Python
@@ -155,6 +157,7 @@
     sprite: Objects/Weapons/Guns/Revolvers/pirate_revolver.rsi
   - type: Gun
     fireRate: 1
+    fireOnDropChance: 1
   - type: ContainerContainer
     containers:
       revolver-ammo: !type:Container
