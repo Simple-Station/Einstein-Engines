@@ -372,6 +372,10 @@ namespace Content.Server.Supermatter.Systems
                 return;
             }
 
+            // ignore the 0% integrity alarm
+            if (sm.Delamming)
+                return;
+
             // We are not taking consistent damage. Engis not needed.
             if (sm.Damage <= sm.DamageArchived)
                 return;
