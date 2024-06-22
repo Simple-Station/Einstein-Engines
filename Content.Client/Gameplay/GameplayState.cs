@@ -93,16 +93,16 @@ namespace Content.Client.Gameplay
             var screenTypeString = _configurationManager.GetCVar(CCVars.UILayout);
             if (!Enum.TryParse(screenTypeString, out ScreenType screenType))
             {
-                screenType = default;
+                screenType = ScreenType.Separated;
             }
 
             switch (screenType)
             {
-                case ScreenType.Default:
-                    _uiManager.LoadScreen<DefaultGameScreen>();
-                    break;
                 case ScreenType.Separated:
                     _uiManager.LoadScreen<SeparatedChatGameScreen>();
+                    break;
+                case ScreenType.Overlay:
+                    _uiManager.LoadScreen<OverlayChatGameScreen>();
                     break;
             }
 

@@ -1,0 +1,34 @@
+name: PR Title Case
+on:
+  pull_request_target:
+    types: [opened, edited, synchronize]
+
+env:
+  GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+  PR_NUMBER: ${{ github.event.pull_request.number }}
+
+jobs:
+  prtitlecase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Master
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install Dependencies
+        run: |
+          cd "Tools/prtitlecase"
+          npm install
+        shell: bash
+
+      - name: Change Title
+        run: |
+          cd "Tools/prtitlecase"
+          node index.js
+        shell: bash
