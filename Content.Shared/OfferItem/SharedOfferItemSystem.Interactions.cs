@@ -4,7 +4,6 @@ using Content.Shared.Input;
 using Content.Shared.Hands.Components;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.OfferItem;
 
@@ -42,11 +41,11 @@ public abstract partial class SharedOfferItemSystem
         if (!TryComp<HandsComponent>(uid, out var hands) || hands.ActiveHand == null)
             return;
 
-        var handItem = hands.ActiveHand.HeldEntity;
+        offerItem.Item = hands.ActiveHand.HeldEntity;
 
         if (offerItem.IsInOfferMode == false)
         {
-            if (handItem == null)
+            if (offerItem.Item == null)
             {
                 _popup.PopupEntity(Loc.GetString("offer-item-empty-hand"), uid, uid);
                 return;
@@ -60,20 +59,8 @@ public abstract partial class SharedOfferItemSystem
                 Dirty(uid, offerItem);
                 return;
             }
-
-            if (TryComp<OfferItemComponent>(offerItem.Target, out var offerItemTarget))
-            {
-                offerItemTarget.IsInReceiveMode = false;
-                offerItemTarget.Target = null;
-
-                Dirty(offerItem.Target.Value, offerItemTarget);
-            }
         }
 
-        offerItem.Hand = null;
-        offerItem.IsInOfferMode = false;
-        offerItem.Target = null;
-
-        Dirty(uid, offerItem);
+        UnOffer(uid, offerItem);
     }
 }

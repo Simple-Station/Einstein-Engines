@@ -1,7 +1,10 @@
+using Content.Server.Popups;
 using Content.Shared.Hands.Components;
 using Content.Shared.Alert;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.OfferItem;
+using Content.Shared.IdentityManagement;
+using Robust.Shared.Player;
 
 namespace Content.Server.OfferItem;
 
@@ -9,6 +12,7 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
 {
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
 
     public override void Update(float frameTime)
     {
@@ -39,13 +43,30 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
         if (!Resolve(uid, ref component) ||
             !TryComp<OfferItemComponent>(component.Target, out var offerItem) ||
             offerItem.Hand == null ||
-            !TryComp<HandsComponent>(uid, out var hands) ||
-            !TryComp<HandsComponent>(component.Target, out var handsTarget))
+            component.Target == null ||
+            !TryComp<HandsComponent>(uid, out var hands))
             return;
 
-        var item = handsTarget.Hands[offerItem.Hand].HeldEntity;
-        _hands.TryPickup(component.Target.GetValueOrDefault(), item.GetValueOrDefault(), handsComp:hands);
+        if (offerItem.Item != null && !_hands.TryPickup(component.Target.Value, offerItem.Item.Value,
+                handsComp: hands))
+        {
+            _popup.PopupEntity(Loc.GetString("offer-item-full-hand"), component.Target.Value, component.Target.Value);
+            return;
+        }
 
+        if (offerItem.Item != null)
+        {
+            _popup.PopupEntity(Loc.GetString("offer-item-give",
+                ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
+                ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
+            _popup.PopupEntity(Loc.GetString("offer-item-give-other",
+                    ("user", Identity.Entity(component.Target.Value, EntityManager)),
+                    ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
+                    ("target", Identity.Entity(uid, EntityManager)))
+                , component.Target.Value, Filter.PvsExcept(component.Target.Value, entityManager: EntityManager), true);
+        }
+
+        offerItem.Item = null;
         UnOffer(uid, component);
     }
 }

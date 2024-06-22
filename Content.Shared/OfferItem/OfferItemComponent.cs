@@ -16,6 +16,9 @@ public sealed partial class OfferItemComponent : Component
     public string? Hand;
 
     [DataField, AutoNetworkedField]
+    public EntityUid? Item;
+
+    [DataField, AutoNetworkedField]
     public EntityUid? Target;
 
     [DataField]
