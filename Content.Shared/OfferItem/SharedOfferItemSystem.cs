@@ -52,6 +52,9 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         UnOffer(uid, component);
     }
 
+    /// <summary>
+    /// Resets the <see cref="OfferItemComponent"/> of the user and the target
+    /// </summary>
     protected void UnOffer(EntityUid uid, OfferItemComponent component)
     {
         if (!TryComp<HandsComponent>(uid, out var hands) || hands.ActiveHand == null)
@@ -99,6 +102,9 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         Dirty(uid, component);
     }
 
+    /// <summary>
+    /// Returns true if <see cref="OfferItemComponent.IsInOfferMode"/> = true
+    /// </summary>
     protected bool IsInOfferMode(EntityUid? entity, OfferItemComponent? component = null)
     {
         return entity != null && Resolve(entity.Value, ref component, false) && component.IsInOfferMode;

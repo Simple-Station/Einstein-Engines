@@ -38,7 +38,10 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
         }
     }
 
-    public void Receiving(EntityUid uid, OfferItemComponent? component = null)
+    /// <summary>
+    /// Accepting the offer and receive item
+    /// </summary>
+    public void Receive(EntityUid uid, OfferItemComponent? component = null)
     {
         if (!Resolve(uid, ref component) ||
             !TryComp<OfferItemComponent>(component.Target, out var offerItem) ||

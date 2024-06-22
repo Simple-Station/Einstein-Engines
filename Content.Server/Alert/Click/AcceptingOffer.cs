@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 namespace Content.Server.Alert.Click;
 
 /// <summary>
-/// Acceptance of the offer
+/// Accepting the offer and receive item
 /// </summary>
 [UsedImplicitly]
 [DataDefinition]
@@ -18,7 +18,7 @@ public sealed partial class AcceptOffer : IAlertClick
 
         if (entManager.TryGetComponent(player, out OfferItemComponent? offerItem))
         {
-            entManager.System<OfferItemSystem>().Receiving(player, offerItem);
+            entManager.System<OfferItemSystem>().Receive(player, offerItem);
         }
     }
 }
