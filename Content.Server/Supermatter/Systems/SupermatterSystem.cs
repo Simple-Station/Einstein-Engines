@@ -305,7 +305,10 @@ namespace Content.Server.Supermatter.Systems
                 break;
             }
 
-            sm.Damage = Math.Min(sm.DamageArchived + sm.DamageHardcap * sm.DelaminationPoint, totalDamage);
+            var damage = Math.Min(sm.DamageArchived + sm.DamageHardcap * sm.DelaminationPoint, totalDamage);
+
+            // prevent it from going negative
+            sm.Damage = Math.Clamp(damage, 0, float.PositiveInfinity);
         }
 
         /// <summary>
@@ -523,9 +526,17 @@ namespace Content.Server.Supermatter.Systems
 
             var target = args.OtherEntity;
             if (args.OtherBody.BodyType == BodyType.Static
-                || HasComp<SupermatterImmuneComponent>(target)
-                || _container.IsEntityInContainer(uid))
+            || HasComp<SupermatterImmuneComponent>(target)
+            || _container.IsEntityInContainer(uid))
                 return;
+
+            if (!HasComp<ProjectileComponent>(target))
+            {
+                EntityManager.SpawnEntity(sm.CollisionResultPrototypeId, Transform(target).Coordinates);
+                _audio.PlayPvs(sm.DustSound, uid);
+            }
+
+            EntityManager.QueueDeleteEntity(target);
 
             if (TryComp<SupermatterFoodComponent>(target, out var food))
                 sm.Power += food.Energy;
@@ -535,14 +546,6 @@ namespace Content.Server.Supermatter.Systems
                 sm.Power++;
 
             sm.MatterPower += HasComp<MobStateComponent>(target) ? 200 : 0;
-
-            if (!HasComp<ProjectileComponent>(target))
-            {
-                EntityManager.SpawnEntity("Ash", Transform(target).Coordinates);
-                _audio.PlayPvs(sm.DustSound, uid);
-            }
-
-            EntityManager.QueueDeleteEntity(target);
         }
 
         private void OnHandInteract(EntityUid uid, SupermatterComponent sm, ref InteractHandEvent args)
@@ -557,7 +560,7 @@ namespace Content.Server.Supermatter.Systems
 
             sm.MatterPower += 200;
 
-            EntityManager.SpawnEntity("Ash", Transform(target).Coordinates);
+            EntityManager.SpawnEntity(sm.CollisionResultPrototypeId, Transform(target).Coordinates);
             _audio.PlayPvs(sm.DustSound, uid);
             EntityManager.QueueDeleteEntity(target);
         }
