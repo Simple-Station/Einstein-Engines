@@ -154,7 +154,9 @@
 - type: alert
   id: Offer
   onClick: !type:AcceptOffer  { }
-  icons: [ /Textures/Interface/Alerts/Offer_item/Offer_item.png ]
+  icons:
+  - sprite: /Textures/Interface/Alerts/offer_item.rsi
+    state: offer_item
   name: alerts-offer-name
   description: alerts-offer-desc
 
