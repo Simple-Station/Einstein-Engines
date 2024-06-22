@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Physics;
@@ -16,7 +15,6 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Supermatter.Components;
-using Content.Shared.Supermatter.Systems;
 using Content.Server.Lightning;
 using Content.Server.AlertLevel;
 using Content.Server.Station.Systems;
@@ -30,8 +28,7 @@ using System.Linq;
 
 namespace Content.Server.Supermatter.Systems
 {
-    [UsedImplicitly]
-    public sealed class SupermatterSystem : SharedSupermatterSystem
+    public sealed class SupermatterSystem : EntitySystem
     {
         [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
         [Dependency] private readonly ChatSystem _chat = default!;
@@ -56,7 +53,6 @@ namespace Content.Server.Supermatter.Systems
         {
             base.Initialize();
 
-            SubscribeLocalEvent<SupermatterComponent, ComponentRemove>(OnComponentRemove);
             SubscribeLocalEvent<SupermatterComponent, MapInitEvent>(OnMapInit);
 
             SubscribeLocalEvent<SupermatterComponent, StartCollideEvent>(OnCollideEvent);
@@ -69,8 +65,6 @@ namespace Content.Server.Supermatter.Systems
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
-            if (!_gameTiming.IsFirstTimePredicted)
-                return;
 
             foreach (var sm in EntityManager.EntityQuery<SupermatterComponent>())
             {
@@ -297,7 +291,6 @@ namespace Content.Server.Supermatter.Systems
 
                 var integrity = GetIntegrity(sm);
 
-                // this is some magic number shit
                 var factor = integrity switch
                 {
                     < 10 => 0.0005f,
@@ -499,7 +492,7 @@ namespace Content.Server.Supermatter.Systems
                 return;
             }
 
-            var smSound = isDelamming ? SuperMatterSound.Delam : SuperMatterSound.Aggressive;
+            var smSound = isDelamming ? SupermatterSound.Delam : SupermatterSound.Aggressive;
 
             if (sm.SmSound == smSound)
                 return;
@@ -512,14 +505,7 @@ namespace Content.Server.Supermatter.Systems
 
         #region Event Handlers
 
-        private void OnComponentRemove(EntityUid uid, SupermatterComponent component, ComponentRemove args)
-        {
-            // turn off any ambient if component is removed (ex. entity deleted)
-            _ambient.SetAmbience(uid, false);
-            component.AudioStream = _audio.Stop(component.AudioStream);
-        }
-
-        private void OnMapInit(EntityUid uid, SupermatterComponent component, MapInitEvent args)
+        private void OnMapInit(EntityUid uid, SupermatterComponent sm, MapInitEvent args)
         {
             // Set the Sound
             _ambient.SetAmbience(uid, true);

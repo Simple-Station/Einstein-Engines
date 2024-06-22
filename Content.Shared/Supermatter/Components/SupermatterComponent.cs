@@ -1,7 +1,6 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Audio;
 using Content.Shared.Atmos;
-using Content.Shared.Supermatter.Systems;
 using Content.Shared.Whitelist;
 using Content.Shared.DoAfter;
 using Robust.Shared.Serialization;
@@ -51,6 +50,12 @@ public sealed partial class SupermatterComponent : Component
     [DataField("supermatterKudzuSpawnPrototype")]
     public string SupermatterKudzuPrototypeId = "SupermatterKudzu";
 
+    /// <summary>
+    ///     What spawns in the place of an unfortunate entity that got removed by the SM.
+    /// </summary>
+    [DataField("collisionResultPrototype")]
+    public string CollisionResultPrototypeId = "Ash";
+
     [ViewVariables(VVAccess.ReadWrite)]
     public float Power;
 
@@ -82,7 +87,7 @@ public sealed partial class SupermatterComponent : Component
     /// Current stream of SM audio.
     /// </summary>
     public EntityUid? AudioStream;
-    public SharedSupermatterSystem.SuperMatterSound? SmSound;
+    public SupermatterSound? SmSound;
 
     [DataField("dustSound")]
     public SoundSpecifier DustSound = new SoundPathSpecifier("/Audio/Effects/Grenades/Supermatter/supermatter_start.ogg");
@@ -301,7 +306,7 @@ public sealed partial class SupermatterComponent : Component
 
     #endregion SM Threshold
 
-    #region SM Delamm
+    #region SM Delam
 
     public bool DelamAnnounced = false;
 
@@ -370,6 +375,20 @@ public sealed partial class SupermatterComponent : Component
     };
 
     #endregion SM Gas
+}
+
+public enum SupermatterSound : sbyte
+{
+    Aggressive = 0,
+    Delam = 1
+}
+
+public enum DelamType : sbyte
+{
+    Explosion = 0,
+    Singulo = 1,
+    Tesla = 2,
+    Cascade = 3
 }
 
 [Serializable, DataDefinition]
