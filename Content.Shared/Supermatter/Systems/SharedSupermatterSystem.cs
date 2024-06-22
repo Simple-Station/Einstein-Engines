@@ -21,16 +21,22 @@ public abstract class SharedSupermatterSystem : EntitySystem
     {
         Explosion = 0,
         Singulo = 1,
+        Tesla = 2,
+        Cascade = 3
     }
+
     #region Getters/Setters
 
+    // what is this used for?
     public void OnSupermatterStartup(EntityUid uid, SupermatterComponent comp, ComponentStartup args)
     {
+
     }
 
     #endregion Getters/Setters
 
     #region Serialization
+
     /// <summary>
     /// A state wrapper used to sync the supermatter between the server and client.
     /// </summary>
@@ -39,6 +45,7 @@ public abstract class SharedSupermatterSystem : EntitySystem
     {
         public SupermatterComponentState(SupermatterComponent supermatter)
         {
+
         }
     }
 
