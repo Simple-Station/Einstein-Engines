@@ -47,6 +47,7 @@ namespace Content.Server.Database
         public DbSet<AdminMessage> AdminMessages { get; set; } = null!;
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<RoleWhitelist> RoleWhitelists { get; set; } = null!;
+        public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
