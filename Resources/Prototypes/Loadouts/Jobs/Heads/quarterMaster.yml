@@ -5,7 +5,7 @@
 #   cost: 2
 #   exclusive: true
 #   requirements:
-#     - !type:LoadoutJobRequirement
+#     - !type:CharacterJobRequirement
 #       jobs:
 #         - Quartermaster
 #   items:
@@ -17,7 +17,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Quartermaster
   items:
@@ -29,7 +29,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Quartermaster
   items:
@@ -41,7 +41,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Quartermaster
   items:
@@ -52,7 +52,7 @@
   category: Jobs
   cost: 1
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Quartermaster
   items:
@@ -64,7 +64,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Quartermaster
   items:

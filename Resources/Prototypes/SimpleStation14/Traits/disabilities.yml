@@ -1,11 +1,12 @@
 - type: trait
   id: Nearsighted
-  name: trait-nearsighted-name
-  description: You require glasses to see properly.
-  traitGear: ClothingEyesGlasses
+  category: Visual
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: Nearsighted
-  whitelist: # Delta V fix to borgs spawning with it.
-    components:
-      - Blindable
-
