@@ -49,7 +49,7 @@ namespace Content.Server.Carrying
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
         [Dependency] private readonly RespiratorSystem _respirator = default!;
-        [Dependency] private readonly PseudoItemSystem _pseudoItem = default!; // Needed for fitting check
+        [Dependency] private readonly PseudoItemSystem _pseudoItem = default!;
 
         public override void Initialize()
         {
