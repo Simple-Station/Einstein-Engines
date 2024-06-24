@@ -16,6 +16,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
+using System.Net;
 
 namespace Content.Shared.SegmentedEntity
 {
@@ -148,16 +149,16 @@ namespace Content.Shared.SegmentedEntity
             else
                 segment = EntityManager.SpawnEntity(segmentedComponent.SegmentId, Transform(segmentuid).Coordinates);
 
-            if (EnsureComp<SegmentedEntitySegmentComponent>(segment, out var segmentComponent))
-            {
-                segmentComponent.Lamia = parentuid;
-                segmentComponent.AttachedToUid = segmentuid;
-                segmentComponent.DamageModifierConstant = segmentedComponent.NumberOfSegments * segmentedComponent.DamageModifierOffset;
-                float damageModifyCoefficient = segmentComponent.DamageModifierConstant / segmentedComponent.NumberOfSegments;
-                segmentComponent.DamageModifyFactor = segmentComponent.DamageModifierConstant * damageModifyCoefficient;
-                segmentComponent.ExplosiveModifyFactor = 1 / segmentComponent.DamageModifyFactor / (segmentedComponent.NumberOfSegments * segmentedComponent.ExplosiveModifierOffset);
-            }
+            var segmentComponent = EnsureComp<SegmentedEntitySegmentComponent>(segment);
 
+            segmentComponent.Lamia = parentuid;
+            segmentComponent.AttachedToUid = segmentuid;
+            segmentComponent.DamageModifierConstant = segmentedComponent.NumberOfSegments * segmentedComponent.DamageModifierOffset;
+            float damageModifyCoefficient = segmentComponent.DamageModifierConstant / segmentedComponent.NumberOfSegments;
+            segmentComponent.DamageModifyFactor = segmentComponent.DamageModifierConstant * damageModifyCoefficient;
+            segmentComponent.ExplosiveModifyFactor = 1 / segmentComponent.DamageModifyFactor / (segmentedComponent.NumberOfSegments * segmentedComponent.ExplosiveModifierOffset);
+            segmentComponent.SegmentNumber = segmentNumber;
+            segmentComponent.Owner = segment;
 
             if (segmentNumber >= taperConstant && segmentedComponent.UseTaperSystem == true)
             {
@@ -173,7 +174,7 @@ namespace Content.Shared.SegmentedEntity
             {
                 segmentComponent.OffsetSwitching *= -1;
             }
-            segmentComponent.SegmentNumber = segmentNumber;
+
             EnsureComp<PortalExemptComponent>(segment);
             _segments.Enqueue((segmentComponent, parentuid));
             segmentedComponent.Segments.Add(segment);
