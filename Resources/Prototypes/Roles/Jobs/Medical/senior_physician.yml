@@ -21,6 +21,10 @@
   - Medical
   - Maintenance
   - Chemistry
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CPRTraining
 
 - type: startingGear
   id: SeniorPhysicianGear

@@ -1,0 +1,15 @@
+- type: trait
+  id: CPRTraining
+  category: Uncategorized
+  points: -2
+  components:
+    - type: CPRTraining
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - MedicalIntern
+        - Paramedic
+        - ChiefMedicalOfficer

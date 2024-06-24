@@ -9,7 +9,7 @@ namespace Content.Shared.Medical.CPR
     public sealed partial class CPRTrainingComponent : Component
     {
         [DataField]
-        public SoundSpecifier? CPRSound = new SoundPathSpecifier("/Audio/Items/Defib/defib_safety_on.ogg");
+        public SoundSpecifier CPRSound = new SoundPathSpecifier("/Audio/Effects/CPR.ogg");
 
         /// <summary>
         /// How long the doafter for CPR takes
@@ -22,6 +22,7 @@ namespace Content.Shared.Medical.CPR
 
         [DataField]
         public float CrackRibsModifier = 1f;
+        public EntityUid? CPRPlayingStream;
     }
 
     [Serializable, NetSerializable]

@@ -2144,8 +2144,8 @@ namespace Content.Shared.CCVar
         ///     Controls whether the entire CPR system runs. When false, nobody can perform CPR. You should probably remove the trait too
         ///     if you are wishing to permanently disable the system on your server.
         /// </summary>
-        public static readonly CVarDef<bool> DoCPRSystem =
-            CVarDef.Create("cpr.do_cpr_system", true, CVar.REPLICATED | CVar.SERVER);
+        public static readonly CVarDef<bool> EnableCPR =
+            CVarDef.Create("cpr.enable", true, CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
         ///     Toggles whether or not CPR reduces rot timers(As an abstraction of delaying brain death, the IRL actual purpose of CPR)
@@ -2161,11 +2161,11 @@ namespace Content.Shared.CCVar
             CVarDef.Create("cpr.heals_airloss", true, CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
-        ///     Toggles whether or not CPR has a (small) chance to revive a dead person if they are otherwise healthy enough for a defib to work.
-        ///     This isn't very realistic, but people who see CPR in movies and TV will expect CPR to work this way.
+        ///     The chance for a patient to be resuscitated when CPR is successfully performed.
+        ///     Setting this above 0 isn't very realistic, but people who see CPR in movies and TV will expect CPR to work this way.
         /// </summary>
-        public static readonly CVarDef<bool> CPRResuscitate =
-            CVarDef.Create("cpr.do_resuscitate", true, CVar.REPLICATED | CVar.SERVER);
+        public static readonly CVarDef<float> CPRResuscitationChance =
+            CVarDef.Create("cpr.resuscitation_chance", 0.01f, CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
         ///     By default, CPR reduces rot timers by an amount of seconds equal to the time spent performing CPR. This is an optional multiplier that can increase or decrease the amount
