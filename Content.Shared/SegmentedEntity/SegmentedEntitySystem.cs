@@ -41,7 +41,6 @@ namespace Content.Shared.SegmentedEntity
             SubscribeLocalEvent<SegmentedEntityComponent, DidEquipEvent>(OnDidEquipEvent);
             SubscribeLocalEvent<SegmentedEntityComponent, DidUnequipEvent>(OnDidUnequipEvent);
             SubscribeLocalEvent<SegmentedEntitySegmentComponent, GetExplosionResistanceEvent>(OnSnekBoom);
-            SubscribeLocalEvent<SegmentedEntitySegmentComponent, PreventCollideEvent>(PreventShootSelf);
             SubscribeLocalEvent<SegmentedEntitySegmentComponent, DamageChangedEvent>(HandleDamageTransfer);
             SubscribeLocalEvent<SegmentedEntitySegmentComponent, DamageModifyEvent>(HandleSegmentDamage);
             SubscribeLocalEvent<SegmentedEntitySegmentComponent, SegmentSpawnedEvent>(OnSegmentSpawned);
@@ -262,16 +261,6 @@ namespace Content.Shared.SegmentedEntity
                     if (!TryComp<AppearanceComponent>(uid, out var appearance)) return;
                     _appearance.SetData(uid, SegmentedEntitySegmentVisualLayers.Armor, false, appearance);
                 }
-            }
-        }
-
-        private void PreventShootSelf(EntityUid uid, SegmentedEntitySegmentComponent component, ref PreventCollideEvent args)
-        {
-            if (!TryComp<ProjectileComponent>(args.OtherEntity, out var projectileComponent)) return;
-
-            if (projectileComponent.Shooter == component.Lamia)
-            {
-                args.Cancelled = true;
             }
         }
 

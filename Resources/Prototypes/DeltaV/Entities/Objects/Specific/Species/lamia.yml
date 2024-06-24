@@ -33,6 +33,8 @@
   - type: Tag
     tags:
     - HideContextMenu
+  - type: RequireProjectileTarget
+    active: True
 
 - type: entity
   id: LamiaSegment
