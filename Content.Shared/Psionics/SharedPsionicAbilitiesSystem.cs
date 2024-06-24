@@ -82,13 +82,20 @@ namespace Content.Shared.Psionics.Abilities
                 && (!TryComp<MobStateComponent>(uid, out var mobstate) || mobstate.CurrentState == MobState.Alive);
         }
 
-        public void LogPowerUsed(EntityUid uid, string power, int minGlimmer = 8, int maxGlimmer = 12)
+        public void LogPowerUsed(EntityUid uid, string power, PsionicComponent? psionic = null, int minGlimmer = 8, int maxGlimmer = 12, bool overrideGlimmer = false)
         {
             _adminLogger.Add(Database.LogType.Psionics, Database.LogImpact.Medium, $"{ToPrettyString(uid):player} used {power}");
             var ev = new PsionicPowerUsedEvent(uid, power);
             RaiseLocalEvent(uid, ev, false);
 
-            _glimmerSystem.Glimmer += _robustRandom.Next(minGlimmer, maxGlimmer);
+            if (!overrideGlimmer)
+            {
+                if (psionic == null)
+                    _glimmerSystem.Glimmer += _robustRandom.Next(minGlimmer, maxGlimmer);
+                else _glimmerSystem.Glimmer += _robustRandom.Next(
+                    (int) Math.Round(minGlimmer * psionic.Amplification - psionic.Dampening),
+                    (int) Math.Round(maxGlimmer * psionic.Amplification - psionic.Dampening));
+            }
         }
     }
 

@@ -69,9 +69,7 @@ namespace Content.Server.Psionics.Abilities
 
                 _statusEffectsSystem.TryAddStatusEffect(args.Target, "Stutter", TimeSpan.FromSeconds(2 * psionic.Amplification), false, "StutteringAccent");
 
-                _psionics.LogPowerUsed(args.Performer, "noopsheric zap",
-                    (int) MathF.Round(6 * psionic.Amplification - psionic.Dampening),
-                    (int) MathF.Round(8 * psionic.Amplification - psionic.Dampening));
+                _psionics.LogPowerUsed(args.Performer, "noopsheric zap", psionic, 6, 8);
                 args.Handled = true;
             }
         }

@@ -73,9 +73,7 @@ namespace Content.Server.Psionics.Abilities
             _popupSystem.PopupEntity(Loc.GetString("psionic-regeneration-begin", ("entity", uid)), uid, PopupType.Medium);
             _audioSystem.PlayPvs(component.SoundUse, uid, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
 
-            _psionics.LogPowerUsed(uid, "psionic regeneration",
-            (int) Math.Round(6 * psionic.Amplification - psionic.Dampening),
-            (int) Math.Round(8 * psionic.Amplification - psionic.Dampening));
+            _psionics.LogPowerUsed(uid, "psionic regeneration", psionic, 6, 8);
 
             args.Handled = true;
         }
@@ -116,9 +114,7 @@ namespace Content.Server.Psionics.Abilities
                     _popupSystem.PopupEntity(Loc.GetString("psionic-regeneration-self-revive", ("entity", uid)), uid, PopupType.MediumCaution);
                     _audioSystem.PlayPvs(component.SoundUse, uid, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
 
-                    _psionics.LogPowerUsed(uid, "psionic regeneration",
-                        (int) Math.Round(10 * psionic.Amplification - 2 * psionic.Dampening),
-                        (int) Math.Round(20 * psionic.Amplification - 2 * psionic.Dampening));
+                    _psionics.LogPowerUsed(uid, "psionic regeneration", psionic, 10, 20);
 
                     _actions.StartUseDelay(component.PsionicRegenerationActionEntity);
                 }

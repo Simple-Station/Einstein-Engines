@@ -6,7 +6,6 @@ using Content.Shared.Popups;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
-using Content.Server.DoAfter;
 using Content.Shared.Psionics.Events;
 
 namespace Content.Server.Psionics.Abilities
@@ -18,7 +17,7 @@ namespace Content.Server.Psionics.Abilities
         [Dependency] private readonly SharedPopupSystem _popups = default!;
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
-        [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly AudioSystem _audioSystem = default!;
 
 
@@ -95,9 +94,7 @@ namespace Content.Server.Psionics.Abilities
                 }
             }
             _popups.PopupEntity(Loc.GetString("metapsionic-pulse-failure"), uid, uid, PopupType.Large);
-            _psionics.LogPowerUsed(uid, "metapsionic pulse",
-                (int) MathF.Round(2 * psionic.Amplification - psionic.Dampening),
-                (int) MathF.Round(4 * psionic.Amplification - psionic.Dampening));
+            _psionics.LogPowerUsed(uid, "metapsionic pulse", psionic, 2, 4);
             UpdateActions(uid, component);
             args.Handled = true;
         }
@@ -128,7 +125,7 @@ namespace Content.Server.Psionics.Abilities
             _popups.PopupEntity(Loc.GetString("focused-metapsionic-pulse-begin", ("entity", args.Target)), args.Performer, PopupType.Medium);
 
             _audioSystem.PlayPvs(component.SoundUse, args.Performer, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
-            _psionics.LogPowerUsed(args.Performer, "focused metapsionic pulse",
+            _psionics.LogPowerUsed(args.Performer, "focused metapsionic pulse", psionic,
                 (int) MathF.Round(3 * psionic.Amplification - psionic.Dampening),
                 (int) MathF.Round(6 * psionic.Amplification - psionic.Dampening));
             args.Handled = true;

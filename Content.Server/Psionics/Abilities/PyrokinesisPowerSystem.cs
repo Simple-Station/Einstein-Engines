@@ -80,9 +80,7 @@ namespace Content.Server.Psionics.Abilities
 
                 _gunSystem.ShootProjectile(ent, direction, new System.Numerics.Vector2(0, 0), args.Performer, args.Performer, 20f);
 
-                _psionics.LogPowerUsed(args.Performer, "pyrokinesis",
-                    (int) MathF.Round(6f * psionic.Amplification - psionic.Dampening),
-                    (int) MathF.Round(8f * psionic.Amplification - psionic.Dampening));
+                _psionics.LogPowerUsed(args.Performer, "pyrokinesis", psionic, 6, 8);
                 args.Handled = true;
             }
         }

@@ -1,6 +1,7 @@
 using Content.Shared.Actions;
 using Content.Shared.StatusEffect;
 using Content.Shared.Psionics.Abilities;
+using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Damage;
 using Content.Shared.Revenant.Components;
 using Content.Server.Guardian;
@@ -23,6 +24,7 @@ namespace Content.Server.Psionics.Abilities
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
+        [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
 
 
         public override void Initialize()
@@ -81,9 +83,8 @@ namespace Content.Server.Psionics.Abilities
             if (ev.Handled)
             {
                 args.Handled = true;
-                _psionics.LogPowerUsed(args.Performer, "dispel",
-                    (int) MathF.Round(-4 * psionic.Dampening + psionic.Amplification),
-                    (int) MathF.Round(-2 * psionic.Dampening + psionic.Amplification));
+                _psionics.LogPowerUsed(args.Performer, "dispel", psionic, 1, 1, true);
+                _glimmerSystem.Glimmer -= _random.Next((int) Math.Round(2 * psionic.Dampening), (int) Math.Round(4 - psionic.Amplification));
             }
         }
 

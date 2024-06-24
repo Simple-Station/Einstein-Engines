@@ -78,7 +78,7 @@ namespace Content.Server.Psionics.Abilities
 
             Swap(args.Performer, args.Target);
 
-            _psionics.LogPowerUsed(args.Performer, "mind swap", (int) MathF.Round(psionic.Amplification / psionic.Dampening * 8), (int) MathF.Round(psionic.Amplification / psionic.Dampening * 12));
+            _psionics.LogPowerUsed(args.Performer, "mind swap", psionic, 8, 12);
             args.Handled = true;
         }
 

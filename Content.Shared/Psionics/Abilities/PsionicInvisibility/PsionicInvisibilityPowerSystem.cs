@@ -6,6 +6,7 @@ using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Psionics.Events;
 using Content.Shared.Actions.Events;
+using Robust.Shared.Network;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Weapons.Ranged.Events;
@@ -23,6 +24,7 @@ namespace Content.Shared.Psionics.Abilities
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly INetManager _net = default!;
 
         public override void Initialize()
         {
@@ -86,9 +88,7 @@ namespace Content.Shared.Psionics.Abilities
                     invis.DoAfter = doAfterId;
                 }
 
-                _psionics.LogPowerUsed(uid, "psionic invisibility",
-                    (int) MathF.Round(8 * psionic.Amplification - 2 * psionic.Dampening),
-                    (int) MathF.Round(12 * psionic.Amplification - 2 * psionic.Dampening));
+                _psionics.LogPowerUsed(uid, "psionic invisibility", psionic, 8, 12);
                 args.Handled = true;
             }
         }
@@ -104,7 +104,9 @@ namespace Content.Shared.Psionics.Abilities
             EnsureComp<PsionicallyInvisibleComponent>(uid);
             var stealth = EnsureComp<StealthComponent>(uid);
             _stealth.SetVisibility(uid, 0.66f, stealth);
-            _audio.PlayPvs("/Audio/Effects/toss.ogg", uid);
+
+            if (_net.IsServer)
+                _audio.PlayPvs("/Audio/Effects/toss.ogg", uid);
 
         }
 
@@ -116,7 +118,10 @@ namespace Content.Shared.Psionics.Abilities
             _doAfterSystem.Cancel(component.DoAfter);
             RemComp<PsionicallyInvisibleComponent>(uid);
             RemComp<StealthComponent>(uid);
-            _audio.PlayPvs("/Audio/Effects/toss.ogg", uid);
+
+            if (_net.IsServer)
+                _audio.PlayPvs("/Audio/Effects/toss.ogg", uid);
+
             _actions.RemoveAction(uid, component.PsionicInvisibilityUsedActionEntity);
             DirtyEntity(uid);
         }

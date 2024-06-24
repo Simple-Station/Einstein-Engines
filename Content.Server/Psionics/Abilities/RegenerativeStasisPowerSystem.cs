@@ -2,6 +2,7 @@ using Content.Server.Body.Systems;
 using Content.Server.Body.Components;
 using Content.Shared.Actions;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Popups;
 using Content.Shared.Psionics.Abilities;
 using Content.Shared.Actions.Events;
 using Content.Shared.FixedPoint;
@@ -13,6 +14,7 @@ namespace Content.Server.Psionics.Abilities
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
+        [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
         public override void Initialize()
         {
@@ -61,10 +63,8 @@ namespace Content.Server.Psionics.Abilities
                 solution.AddReagent("Epinephrine", FixedPoint2.New(MathF.Min(2.5f * psionic.Dampening + psionic.Amplification, 15f)));
                 solution.AddReagent("Nocturine", 10f + (1 * psionic.Amplification + psionic.Dampening));
                 _bloodstreamSystem.TryAddToChemicals(args.Target, solution, stream);
-
-                _psionics.LogPowerUsed(uid, "regenerative stasis",
-                (int) Math.Round(4 * psionic.Amplification - psionic.Dampening),
-                (int) Math.Round(6 * psionic.Amplification - psionic.Dampening));
+                _popupSystem.PopupEntity(Loc.GetString("regenerative-stasis-begin", ("entity", uid)), uid, PopupType.Medium);
+                _psionics.LogPowerUsed(uid, "regenerative stasis", psionic, 4, 6);
                 args.Handled = true;
             }
         }

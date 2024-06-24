@@ -105,9 +105,7 @@ namespace Content.Server.Abilities.Mime
                 }
             }
             if (TryComp<PsionicComponent>(uid, out var psionic))
-                _psionics.LogPowerUsed(uid, "invisible wall",
-                    (int) Math.Round(4 * psionic.Amplification - psionic.Dampening),
-                    (int) Math.Round(6 * psionic.Amplification - psionic.Dampening));
+                _psionics.LogPowerUsed(uid, "invisible wall", psionic, 4, 6);
 
             _popupSystem.PopupEntity(Loc.GetString("mime-invisible-wall-popup", ("mime", uid)), uid);
             // Make sure we set the invisible wall to despawn properly
