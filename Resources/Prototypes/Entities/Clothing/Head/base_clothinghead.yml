@@ -206,8 +206,6 @@
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.1
-  - type: FireProtection
-    reduction: 0.2
   - type: IgniteFromGasImmunity
     parts:
     - Head
