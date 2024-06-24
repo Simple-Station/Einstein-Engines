@@ -76,7 +76,7 @@ namespace Content.Server.Psionics.Abilities
                     }
                 }
 
-                var direction = args.Target.Position;
+                var direction = args.Target.ToMapPos(EntityManager, _xform) - spawnCoords.ToMapPos(EntityManager, _xform);
 
                 _gunSystem.ShootProjectile(ent, direction, new System.Numerics.Vector2(0, 0), args.Performer, args.Performer, 20f);
 
