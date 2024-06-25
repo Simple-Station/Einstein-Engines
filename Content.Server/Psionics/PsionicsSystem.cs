@@ -84,8 +84,8 @@ namespace Content.Server.Psionics
         }
         private void OnStartup(EntityUid uid, PsionicComponent component, MapInitEvent args)
         {
-            component.Amplification = _random.NextFloat(0.3f, 1.1f);
-            component.Dampening = _random.NextFloat(0.3f, 1.1f);
+            component.Amplification += _random.NextFloat(0.3f, 1.1f);
+            component.Dampening += _random.NextFloat(0.3f, 1.1f);
         }
         private void OnInit(EntityUid uid, PsionicComponent component, ComponentInit args)
         {
