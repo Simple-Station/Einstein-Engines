@@ -4225,3 +4225,9 @@ Entries:
       message: Added categories for traits
   id: 6127
   time: '2024-06-20T23:39:31.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Remove
+      message: Removed Wizden patrons
+  id: 6128
+  time: '2024-06-25T19:54:47.0000000+00:00'
