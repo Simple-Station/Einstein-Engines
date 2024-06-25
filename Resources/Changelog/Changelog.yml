@@ -4239,3 +4239,9 @@ Entries:
         zoom whenever the gravity turns off.
   id: 6129
   time: '2024-06-25T20:19:11.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Mid-round events will occur much less often
+  id: 6130
+  time: '2024-06-25T20:47:09.0000000+00:00'
