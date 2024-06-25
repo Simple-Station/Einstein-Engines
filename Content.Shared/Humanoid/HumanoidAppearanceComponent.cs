@@ -90,6 +90,8 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [ViewVariables]
     public HumanoidCharacterProfile? LastProfileLoaded;
+
+    /// <summary>
     ///     The height of this humanoid.
     /// </summary>
     [DataField, AutoNetworkedField]

@@ -251,7 +251,6 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
     }
 
-    // Parkstation-HeightSlider Start
     /// <summary>
     ///     Set the height of a humanoid mob
     /// </summary>
@@ -309,7 +308,6 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (sync)
             Dirty(humanoid);
     }
-    // Parkstation-HeightSlider End
 
     /// <summary>
     ///     Loads a humanoid character profile directly onto this humanoid mob.
@@ -392,7 +390,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         humanoid.Age = profile.Age;
 
-        _heightAdjust.SetScale(uid, new Vector2(profile.Width, profile.Height)); // Parkstation-HeightSlider
+        _heightAdjust.SetScale(uid, new Vector2(profile.Width, profile.Height));
 
         humanoid.LastProfileLoaded = profile; // DeltaV - let paradox anomaly be cloned
 

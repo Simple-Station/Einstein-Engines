@@ -291,9 +291,6 @@ namespace Content.Client.Preferences.UI
                 CWeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
             }
 
-
-
-
             #endregion Height
 
             #region Skin
@@ -960,8 +957,9 @@ namespace Content.Client.Preferences.UI
             OnSkinColorOnValueChanged(); // Species may have special color prefs, make sure to update it.
             CMarkings.SetSpecies(newSpecies); // Repopulate the markings tab as well.
             UpdateSexControls(); // update sex for new species
-            UpdateHeightControls();// - Changing species provides inaccurate sliders
-            UpdateWidthControls();// - Changing species provides inaccurate sliders
+            // Changing species provides inaccurate sliders without these
+            UpdateHeightControls();
+            UpdateWidthControls();
             UpdateWeight();
             RebuildSpriteView(); // they might have different inv so we need a new dummy
             UpdateSpeciesGuidebookIcon();
@@ -1243,8 +1241,10 @@ namespace Content.Client.Preferences.UI
         {
             if (Profile == null)
                 return;
+
             var species = _speciesList.Find(x => x.ID == Profile.Species) ?? _speciesList.First();
             _prototypeManager.Index(species.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
+
             if (fixture != null)
             {
                 var radius = fixture.Fixtures["fix1"].Shape.Radius;
@@ -1253,6 +1253,7 @@ namespace Content.Client.Preferences.UI
                 var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
                 CWeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
             }
+
             _previewSpriteView.InvalidateMeasure();
         }
 

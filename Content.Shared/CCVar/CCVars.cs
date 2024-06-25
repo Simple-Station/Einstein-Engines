@@ -2134,7 +2134,7 @@ namespace Content.Shared.CCVar
             CVarDef.Create("heightadjust.modifies_hitbox", true, CVar.SERVERONLY);
 
         /// <summary>
-        ///     Whether height & width sliders adjust a player's view distance
+        ///     Whether height & width sliders adjust a player's max view distance
         /// </summary>
         public static readonly CVarDef<bool> HeightAdjustModifiesZoom =
             CVarDef.Create("heightadjust.modifies_zoom", true, CVar.SERVERONLY);
