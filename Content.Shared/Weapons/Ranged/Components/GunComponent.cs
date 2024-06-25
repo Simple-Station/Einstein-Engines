@@ -141,6 +141,12 @@ public sealed partial class GunComponent : Component
     public EntityCoordinates? ShootCoordinates = null;
 
     /// <summary>
+    /// Who the gun is being requested to shoot at directly.
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? Target = null;
+
+    /// <summary>
     ///     The base value for how many shots to fire per burst.
     /// </summary>
     [DataField, AutoNetworkedField]
