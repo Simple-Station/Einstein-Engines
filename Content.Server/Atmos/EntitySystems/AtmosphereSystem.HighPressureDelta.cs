@@ -1,5 +1,6 @@
 using Content.Server.Atmos.Components;
 using Content.Shared.Atmos;
+using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
 using Robust.Shared.Audio;
@@ -223,6 +224,8 @@ namespace Content.Server.Atmos.EntitySystems
                 && !float.IsPositiveInfinity(component.MoveResist))
             {
                 var moveForce = pressureDifference * MathF.Max(physics.InvMass, SpaceWindMaximumCalculatedInverseMass);
+                if (HasComp<HumanoidAppearanceComponent>(ent))
+                    moveForce *= HumanoidThrowMultiplier;
                 if (moveForce > physics.Mass)
                 {
                     var maxSafeForceForObject = SpaceWindMaxVelocity * physics.Mass;
