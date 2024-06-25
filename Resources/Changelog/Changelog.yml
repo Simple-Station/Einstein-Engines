@@ -4231,3 +4231,11 @@ Entries:
       message: Removed Wizden patrons
   id: 6128
   time: '2024-06-25T19:54:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpies remembered that just like moths; they also have wings, and can
+        zoom whenever the gravity turns off.
+  id: 6129
+  time: '2024-06-25T20:19:11.0000000+00:00'
