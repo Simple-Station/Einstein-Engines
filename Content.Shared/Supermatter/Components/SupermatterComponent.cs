@@ -241,7 +241,7 @@ public sealed partial class SupermatterComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     [DataField("powerPenaltyThreshold")]
-    public float PowerPenaltyThreshold = 2500f;
+    public float PowerPenaltyThreshold = 4000f;
 
     /// <summary>
     ///     Maximum safe operational temperature in degrees Celsius. Supermatter begins taking damage above this temperature.
@@ -307,10 +307,23 @@ public sealed partial class SupermatterComponent : Component
     [DataField("explosionPoint")]
     public int DelaminationPoint = 900;
 
-    public bool DelamAnnounced = false;
-
     [ViewVariables(VVAccess.ReadOnly)]
     public bool Delamming = false;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public DelamType PreferredDelamType = DelamType.Explosion;
+
+    #endregion
+
+    #region Announcements
+
+    [DataField("alertCodeYellowId")]
+    public string AlertCodeYellowId = "yellow";
+
+    [DataField("alertCodeDeltaId")]
+    public string AlertCodeDeltaId = "delta";
+
+    public bool DelamAnnounced = false;
 
     #endregion
 
