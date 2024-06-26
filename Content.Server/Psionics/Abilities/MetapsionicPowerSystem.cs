@@ -125,9 +125,7 @@ namespace Content.Server.Psionics.Abilities
             _popups.PopupEntity(Loc.GetString("focused-metapsionic-pulse-begin", ("entity", args.Target)), args.Performer, PopupType.Medium);
 
             _audioSystem.PlayPvs(component.SoundUse, args.Performer, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
-            _psionics.LogPowerUsed(args.Performer, "focused metapsionic pulse", psionic,
-                (int) MathF.Round(3 * psionic.Amplification - psionic.Dampening),
-                (int) MathF.Round(6 * psionic.Amplification - psionic.Dampening));
+            _psionics.LogPowerUsed(args.Performer, "focused metapsionic pulse", psionic, 3, 6);
             args.Handled = true;
 
             UpdateActions(args.Performer, component);
@@ -137,7 +135,8 @@ namespace Content.Server.Psionics.Abilities
         {
             component.DoAfter = null;
 
-            if (args.Target == null) return;
+            if (args.Target == null || args.Cancelled)
+                return;
 
             if (TryComp<MindSwappedComponent>(args.Target, out var swapped))
             {
