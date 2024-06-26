@@ -23,6 +23,7 @@ using Content.Shared.Examine;
 using Content.Server.DoAfter;
 using Content.Server.Popups;
 using System.Linq;
+using Content.Shared.Audio;
 
 namespace Content.Server.Supermatter.Systems;
 
@@ -34,7 +35,7 @@ public sealed class SupermatterSystem : EntitySystem
     [Dependency] private readonly ExplosionSystem _explosion = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly AmbientSoundSystem _ambient = default!;
+    [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
     [Dependency] private readonly LightningSystem _lightning = default!;
     [Dependency] private readonly AlertLevelSystem _alert = default!;
     [Dependency] private readonly StationSystem _station = default!;
@@ -479,24 +480,24 @@ public sealed class SupermatterSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    ///     Swaps out ambience sounds whether the SM is delamming or not.
+    /// </summary>
     private void HandleSoundLoop(EntityUid uid, SupermatterComponent sm)
     {
-        var isAggressive = sm.Damage > sm.WarningPoint;
-        var isDelamming = sm.Damage > sm.DelaminationPoint;
+        var ambient = Comp<AmbientSoundComponent>(uid);
 
-        if (!isAggressive && !isDelamming)
-        {
-            sm.AudioStream = _audio.Stop(sm.AudioStream);
-            return;
-        }
-
-        var smSound = isDelamming ? SupermatterSound.Delam : SupermatterSound.Aggressive;
-
-        if (sm.SmSound == smSound)
+        if (ambient == null)
             return;
 
-        sm.AudioStream = _audio.Stop(sm.AudioStream);
-        sm.SmSound = smSound;
+        if (sm.Delamming && sm.CurrentSoundLoop != sm.DelamSound)
+            sm.CurrentSoundLoop = sm.DelamSound;
+
+        else if (!sm.Delamming && sm.CurrentSoundLoop != sm.CalmSound)
+            sm.CurrentSoundLoop = sm.CalmSound;
+
+        if (ambient.Sound != sm.CurrentSoundLoop)
+            _ambient.SetSound(uid, sm.CurrentSoundLoop, ambient);
     }
 
     #endregion

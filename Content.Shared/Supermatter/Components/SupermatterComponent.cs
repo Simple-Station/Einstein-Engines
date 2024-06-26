@@ -56,17 +56,17 @@ public sealed partial class SupermatterComponent : Component
     [DataField("collisionResultPrototype")]
     public string CollisionResultPrototypeId = "Ash";
 
-    /// <summary>
-    ///     Current audiostream.
-    /// </summary>
-    public EntityUid? AudioStream;
-    public SupermatterSound? SmSound;
-
     [DataField("dustSound")]
     public SoundSpecifier DustSound = new SoundPathSpecifier("/Audio/Effects/Grenades/Supermatter/supermatter_start.ogg");
 
+    [DataField("calmSound")]
+    public SoundSpecifier CalmSound = new SoundPathSpecifier("/Audio/Supermatter/calm.ogg");
+
     [DataField("delamSound")]
     public SoundSpecifier DelamSound = new SoundPathSpecifier("/Audio/Supermatter/delamming.ogg");
+
+    [DataField("currentSoundLoop")]
+    public SoundSpecifier CurrentSoundLoop = new SoundPathSpecifier("/Audio/Supermatter/calm.ogg");
 
     #endregion
 

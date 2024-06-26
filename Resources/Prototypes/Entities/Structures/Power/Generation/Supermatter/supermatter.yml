@@ -68,3 +68,5 @@
     - type: WarpPoint
       follow: true
       location: supermatter
+    - type: SinguloFood
+      energy: 10000
