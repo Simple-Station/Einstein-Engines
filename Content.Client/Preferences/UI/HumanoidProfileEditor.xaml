@@ -109,6 +109,22 @@
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="CSpawnPriorityButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
+								<!-- Height -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Name="CHeightLabel" MinWidth="110" />
+                                    <Slider Name="CHeightSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="5 0 5 0" />
+                                    <Button Name="CHeightReset" Text="{Loc 'ui-options-bind-reset'}" />
+                                </BoxContainer>
+                                <!-- Width -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Name="CWidthLabel" MinWidth="110" />
+                                    <Slider Name="CWidthSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="5 0 5 0" />
+                                    <Button Name="CWidthReset" Text="{Loc 'ui-options-bind-reset'}" />
+                                </BoxContainer>
+                                <!--Weight -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Name="CWeightLabel" />
+                                </BoxContainer>
                             </BoxContainer>
                             <!-- Skin -->
                             <BoxContainer Margin="10" HorizontalExpand="True" Orientation="Vertical">
