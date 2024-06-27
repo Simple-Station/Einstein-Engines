@@ -220,7 +220,6 @@ namespace Content.Client.Preferences.UI
 
             var prototype = _speciesList.Find(x => x.ID == Profile?.Species) ?? _speciesList.First();
 
-
             _heightSlider.MinValue = prototype.MinHeight;
             _heightSlider.MaxValue = prototype.MaxHeight;
             _heightSlider.Value = Profile?.Height ?? prototype.DefaultHeight;
@@ -287,7 +286,7 @@ namespace Content.Client.Preferences.UI
             }
             else
             {
-                //Whelp, the fixture doesn't exist, guesstimate it instead
+                // Whelp, the fixture doesn't exist, guesstimate it instead
                 CWeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
             }
 
