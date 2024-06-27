@@ -5,6 +5,7 @@ using Content.Client.Clickable;
 using Content.Client.DeltaV.NanoChat;
 using Content.Client.DiscordAuth;
 using Content.Client.JoinQueue;
+using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
 using Content.Client.GhostKick;
