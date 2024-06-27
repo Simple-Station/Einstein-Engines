@@ -370,7 +370,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterDexalin
-  suffix: Dexalin, 7
+  suffix: Dexalin 10u, 7
   components:
   - type: Label
     currentLabel: dexalin 10u
@@ -401,7 +401,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterDylovene
-  suffix: Dylovene, 5
+  suffix: Dylovene 10u, 5
   components:
   - type: Label
     currentLabel: dylovene 10u
@@ -432,7 +432,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterHyronalin
-  suffix: Hyronalin, 5
+  suffix: Hyronalin 10u, 5
   components:
   - type: Label
     currentLabel: hyronalin 10u
@@ -525,7 +525,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterCopper
-  suffix: Copper, 5
+  suffix: Copper 10u, 5
   components:
   - type: Label
     currentLabel: copper 10u
@@ -556,7 +556,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterKelotane
-  suffix: Kelotane, 5
+  suffix: Kelotane 10u, 5
   components:
   - type: Label
     currentLabel: kelotane 10u
@@ -587,7 +587,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterDermaline
-  suffix: Dermaline, 5
+  suffix: Dermaline 10u, 5
   components:
   - type: Label
     currentLabel: dermaline 10u
@@ -677,7 +677,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterTricordrazine
-  suffix: Tricordrazine, 5
+  suffix: Tricordrazine 10u, 5
   components:
   - type: Label
     currentLabel: tricordrazine 10u
@@ -708,7 +708,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterBicaridine
-  suffix: Bicaridine, 5
+  suffix: Bicaridine 10u, 5
   components:
   - type: Label
     currentLabel: bicaridine 10u
@@ -739,7 +739,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterCharcoal
-  suffix: Charcoal, 3
+  suffix: Charcoal 10u, 3
   components:
   - type: Label
     currentLabel: charcoal 10u
