@@ -1,11 +1,11 @@
 # The universal language, assumed if the entity has a UniversalLanguageSpeakerComponent.
-# Do not use otherwise. Try to use the respective component instead of this language.
+# Do not use otherwise. Making an entity explicitly understand/speak this language will NOT have the desired effect.
 - type: language
   id: Universal
   obfuscation:
-    !type:ReplacementObfuscation # Should never be used anyway
+    !type:ReplacementObfuscation
     replacement:
-    - "*incomprehensible*"
+    - "*incomprehensible*" # Never actually used
 
 # The common galactic tongue.
 - type: language

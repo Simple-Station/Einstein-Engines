@@ -6,8 +6,18 @@ namespace Content.Shared.Language;
 [ImplicitDataDefinitionForInheritors]
 public abstract partial class ObfuscationMethod
 {
-    public static readonly ObfuscationMethod Default = new ReplacementObfuscation();
+    /// <summary>
+    ///     The fallback obfuscation method, replaces the message with the string "&lt;?&gt;".
+    /// </summary>
+    public static readonly ObfuscationMethod Default = new ReplacementObfuscation
+    {
+        Replacement = new List<string> { "<?>" }
+    };
 
+    /// <summary>
+    ///     Obfuscates the provided message and writes the result into the provided StringBuilder.
+    ///     Implementations should use the context's pseudo-random number generator and provide stable obfuscations.
+    /// </summary>
     internal abstract void Obfuscate(StringBuilder builder, string message, SharedLanguageSystem context);
 
     /// <summary>
@@ -36,7 +46,7 @@ public partial class ReplacementObfuscation : ObfuscationMethod
 
     internal override void Obfuscate(StringBuilder builder, string message, SharedLanguageSystem context)
     {
-        var idx = context.PseudoRandomNumber(0, 0, Replacement.Count - 1);
+        var idx = context.PseudoRandomNumber(message.GetHashCode(), 0, Replacement.Count - 1);
         builder.Append(Replacement[idx]);
     }
 }
