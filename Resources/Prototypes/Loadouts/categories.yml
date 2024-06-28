@@ -28,4 +28,7 @@
   id: Species
 
 - type: loadoutCategory
+  id: Uncategorized
+
+- type: loadoutCategory
   id: Uniform
