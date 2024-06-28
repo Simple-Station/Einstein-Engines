@@ -4245,3 +4245,9 @@ Entries:
       message: Mid-round events will occur much less often
   id: 6130
   time: '2024-06-25T20:47:09.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Height and Width sliders have been added to character creation. '
+  id: 6131
+  time: '2024-06-27T17:46:51.0000000+00:00'
