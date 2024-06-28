@@ -22,7 +22,7 @@ namespace Content.Shared.Psionics.Glimmer
         public float GlimmerInput
         {
             get { return _glimmerInput; }
-            private set { _glimmerInput = _enabled ? Math.Min(value, 0) : 0; }
+            private set { _glimmerInput = _enabled ? Math.Max(value, 0) : 0; }
         }
         private float _glimmerOutput = 0;
 
@@ -36,7 +36,7 @@ namespace Content.Shared.Psionics.Glimmer
         public float GlimmerOutput
         {
             get { return _glimmerOutput; }
-            private set { _glimmerOutput = _enabled ? Math.Min(value, 0) : 0; }
+            private set { _glimmerOutput = _enabled ? Math.Max(value, 0) : 0; }
         }
         private bool _enabled;
         public override void Initialize()
