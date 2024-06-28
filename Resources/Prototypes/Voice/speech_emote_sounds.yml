@@ -32,8 +32,6 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
 
 - type: emoteSounds
   id: FemaleHuman
@@ -68,8 +66,6 @@
       collection: FemaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
 
 - type: emoteSounds
   id: UnisexReptilian
@@ -86,8 +82,6 @@
       collection: Whistles
     Crying:
       collection: MaleCry
-    Weh:
-      collection: Weh
 
 - type: emoteSounds
   id: MaleSlime
@@ -95,9 +89,9 @@
     Squish:
       collection: Squishes
     Scream:
-      collection: SlimeMaleScreams
+      collection: MaleScreams
     Laugh:
-      collection: SlimeMaleLaughs
+      collection: MaleLaugh
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -122,8 +116,6 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
   params:
     variation: 0.125
 
@@ -133,9 +125,9 @@
     Squish:
       collection: Squishes
     Scream:
-      collection: SlimeFemaleScreams
+      collection: FemaleScreams
     Laugh:
-      collection: SlimeFemaleLaughs
+      collection: FemaleLaugh
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -160,21 +152,15 @@
       collection: FemaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
   params:
     variation: 0.125
 
 - type: emoteSounds
   id: UnisexVox
-  sounds:
-    Scream:
-      path: /Audio/Voice/Vox/shriek1.ogg
-    Laugh:
-      path: /Audio/Voice/Vox/vox_laugh.ogg
-  params:
-    variation: 0.125
-    # We need vox sounds for the other emotes
+  sound:
+    path: /Audio/Voice/Vox/shriek1.ogg
+    params:
+      variation: 0.125
 
 - type: emoteSounds
   id: UnisexDiona
@@ -185,10 +171,9 @@
       collection: DionaLaugh
     Honk:
       collection: BikeHorn
-    Weh:
-      collection: Weh
   params:
     variation: 0.125
+
 
 - type: emoteSounds
   id: UnisexArachnid
@@ -203,8 +188,6 @@
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
-    Weh:
-      collection: Weh
 
 - type: emoteSounds
   id: UnisexDwarf
@@ -237,8 +220,6 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
   params:
     variation: 0.125
     pitch: 0.75
@@ -274,8 +255,6 @@
       collection: FemaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
   params:
     variation: 0.125
     pitch: 0.75
@@ -395,6 +374,8 @@
 
 - type: emoteSounds
   id: Nymph
+  params:
+    variation: 0.125
   sounds:
     Chirp:
       path: /Audio/Animals/nymph_chirp.ogg
@@ -405,3 +386,33 @@
     path: /Audio/Animals/parrot_raught.ogg
     params:
       variation: 0.125
+
+- type: emoteSounds
+  id: UnisexIPC
+  params:
+    variation: 0.125
+  sounds:
+    Buzz:
+      path: /Audio/Effects/Cargo/buzz_sigh.ogg
+    Scream:
+      path: /Audio/EstacaoPirata/Voice/IPC/robot-scream.ogg
+    Laugh:
+      path: /Audio/EstacaoPirata/Voice/IPC/robot-laugh_3.ogg
+    Chitter:
+      path: /Audio/Voice/Talk/pai.ogg
+    Squeak:
+      path: /Audio/Voice/Talk/pai.ogg
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      path: /Audio/Effects/Cargo/buzz_two.ogg
+    Sigh:
+      path: /Audio/Voice/Talk/pai.ogg
+    Crying:
+      path: /Audio/EstacaoPirata/Voice/IPC/cry_robot_1.ogg
+    Whistle:
+      path: /Audio/Voice/Talk/pai.ogg

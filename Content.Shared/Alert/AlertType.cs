@@ -54,7 +54,7 @@ namespace Content.Shared.Alert
         BorgHealth,
         BorgCrit,
         BorgDead,
-        Offer,
+        Charge
     }
 
 }

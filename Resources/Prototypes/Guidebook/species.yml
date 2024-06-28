@@ -10,6 +10,7 @@
     - Moth
     - Reptilian
     - SlimePerson
+    - IPCs
 
 - type: guideEntry
   id: Arachnid
@@ -45,3 +46,8 @@
   id: SlimePerson
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
+
+- type: guideEntry
+  id: IPCs
+  name: guide-entry-IPCs
+  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
