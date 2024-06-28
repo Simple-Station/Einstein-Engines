@@ -84,7 +84,7 @@ namespace Content.Server.Psionics.Abilities
             {
                 args.Handled = true;
                 _psionics.LogPowerUsed(args.Performer, "dispel", psionic, 1, 1, true);
-                _glimmerSystem.Glimmer -= _random.Next((int) Math.Round(2 * psionic.Dampening), (int) Math.Round(4 - psionic.Amplification));
+                _glimmerSystem.DeltaGlimmerInput(-_random.NextFloat(2 * psionic.Dampening - psionic.Amplification, 4 * psionic.Dampening - psionic.Amplification));
             }
         }
 

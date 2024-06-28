@@ -91,10 +91,10 @@ namespace Content.Shared.Psionics.Abilities
             if (!overrideGlimmer)
             {
                 if (psionic == null)
-                    _glimmerSystem.Glimmer += _robustRandom.Next(minGlimmer, maxGlimmer);
-                else _glimmerSystem.Glimmer += _robustRandom.Next(
-                    (int) Math.Round(minGlimmer * psionic.Amplification - psionic.Dampening),
-                    (int) Math.Round(maxGlimmer * psionic.Amplification - psionic.Dampening));
+                    _glimmerSystem.DeltaGlimmerInput(_robustRandom.NextFloat(minGlimmer, maxGlimmer));
+                else _glimmerSystem.DeltaGlimmerInput(_robustRandom.NextFloat(
+                    minGlimmer * psionic.Amplification - psionic.Dampening,
+                    maxGlimmer * psionic.Amplification - psionic.Dampening));
             }
         }
     }

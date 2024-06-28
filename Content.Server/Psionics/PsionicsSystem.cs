@@ -141,7 +141,7 @@ namespace Content.Server.Psionics
             }
 
             if (applyGlimmer)
-                chance += (float) _glimmerSystem.Glimmer / 1000;
+                chance += (float) _glimmerSystem.GlimmerOutput / 1000;
 
             chance *= multiplier;
 

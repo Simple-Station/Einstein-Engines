@@ -14,7 +14,7 @@ public sealed class GlimmerShowCommand : IConsoleCommand
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         var entMan = IoCManager.Resolve<IEntityManager>();
-        shell.WriteLine(entMan.EntitySysManager.GetEntitySystem<GlimmerSystem>().Glimmer.ToString());
+        shell.WriteLine(entMan.EntitySysManager.GetEntitySystem<GlimmerSystem>().GlimmerOutput.ToString());
     }
 }
 
@@ -34,6 +34,6 @@ public sealed class GlimmerSetCommand : IConsoleCommand
             return;
 
         var entMan = IoCManager.Resolve<IEntityManager>();
-        entMan.EntitySysManager.GetEntitySystem<GlimmerSystem>().Glimmer = glimmerValue;
+        entMan.EntitySysManager.GetEntitySystem<GlimmerSystem>().SetGlimmerOutput(glimmerValue);
     }
 }

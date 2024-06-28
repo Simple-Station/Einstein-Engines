@@ -44,6 +44,10 @@ focused-metapsionic-pulse-begin = The air around {CAPITALIZE($entity)} begins to
 psionic-regeneration-self-revive = {CAPITALIZE($entity)} begins to visibly regenerate
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
 regenerative-stasis-begin = {CAPITALIZE($entity)} swoons for a moment, then begins visibly regenerating
+pyrokinesis-obvious = A mote of flame dances around {CAPITALIZE($entity)}'s fingers
+pyrokinesis-subtle = You draw upon the Secret of Fire.
+                     Use this action again to throw a fire bolt.
+pyrokinesis-refund-cooldown = You reclaim some of the energy spent drawing forth the Secret of Fire
 
 # Misc Psionic Messages
 telepathic-mute-message = You strain, but are unable to send your thoughts to the Noosphere

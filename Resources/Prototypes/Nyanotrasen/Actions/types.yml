@@ -96,11 +96,23 @@
   components:
   - type: WorldTargetAction
     icon: Nyanotrasen/Interface/VerbIcons/pyrokinesis.png
-    useDelay: 50
-    range: 6
+    useDelay: 1
+    range: 15
     checkCanAccess: false
+    checkCanInteract: true
     itemIconStyle: BigAction
     event: !type:PyrokinesisPowerActionEvent
+
+- type: entity
+  id: ActionPrechargePyrokinesis
+  name: action-name-precharge-pyrokinesis
+  description: action-description-precharge-pyrokinesis
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: Nyanotrasen/Interface/VerbIcons/pyrokinesis.png
+    useDelay: 50
+    event: !type:PyrokinesisPrechargeActionEvent
 
 - type: entity
   id: ActionWideMetapsionic

@@ -47,12 +47,12 @@ namespace Content.Server.Psionics.Glimmer
             // component.
 
             if (TryComp<AnomalyComponent>(uid, out var anomaly))
-                _glimmerSystem.Glimmer += (int) (5f * anomaly.Severity);
+                _glimmerSystem.DeltaGlimmerInput(5f * anomaly.Severity);
         }
 
         private void OnAnomalySupercritical(EntityUid uid, GlimmerSourceComponent component, ref AnomalySupercriticalEvent args)
         {
-            _glimmerSystem.Glimmer += 100;
+            _glimmerSystem.DeltaGlimmerOutput(100);
         }
 
         private void OnMobStateChanged(EntityUid uid, GlimmerSourceComponent component, ref MobStateChangedEvent args)
@@ -79,11 +79,11 @@ namespace Content.Server.Psionics.Glimmer
                     source.Accumulator -= source.SecondsPerGlimmer;
                     if (source.AddToGlimmer)
                     {
-                        _glimmerSystem.Glimmer++;
+                        _glimmerSystem.DeltaGlimmerInput(1);
                     }
                     else
                     {
-                        _glimmerSystem.Glimmer--;
+                        _glimmerSystem.DeltaGlimmerInput(1);
                     }
                 }
             }

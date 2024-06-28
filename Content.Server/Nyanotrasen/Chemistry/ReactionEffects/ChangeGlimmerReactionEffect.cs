@@ -21,6 +21,6 @@ public sealed partial class ChangeGlimmerReactionEffect : ReagentEffect
     {
         var glimmersys = args.EntityManager.EntitySysManager.GetEntitySystem<GlimmerSystem>();
 
-        glimmersys.Glimmer += Count;
+        glimmersys.DeltaGlimmerInput(Count);
     }
 }

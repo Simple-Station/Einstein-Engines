@@ -54,6 +54,6 @@ internal sealed class NoosphericStormRule : StationEventSystem<NoosphericStormRu
         //var glimmerSeverityMod = 1 + (component.GlimmerSeverityCoefficient * (GetSeverityModifier() - 1f));
         var glimmerAdded = (int) baseGlimmerAdd; // Math.Round(baseGlimmerAdd * glimmerSeverityMod);
 
-        _glimmerSystem.Glimmer += glimmerAdded;
+        _glimmerSystem.DeltaGlimmerInput(glimmerAdded);
     }
 }

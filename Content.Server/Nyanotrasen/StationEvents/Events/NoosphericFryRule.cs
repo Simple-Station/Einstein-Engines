@@ -77,7 +77,7 @@ internal sealed class NoosphericFryRule : StationEventSystem<NoosphericFryRuleCo
             damage.DamageDict.Add("Heat", 2.5);
             damage.DamageDict.Add("Shock", 2.5);
 
-            if (_glimmerSystem.Glimmer > 500 && _glimmerSystem.Glimmer < 750)
+            if (_glimmerSystem.GlimmerOutput > 500 && _glimmerSystem.GlimmerOutput < 750)
             {
                 damage *= 2;
                 if (TryComp<FlammableComponent>(pair.wearer, out var flammableComponent))
@@ -85,7 +85,7 @@ internal sealed class NoosphericFryRule : StationEventSystem<NoosphericFryRuleCo
                     flammableComponent.FireStacks += 1;
                     _flammableSystem.Ignite(pair.wearer, pair.wearer, flammableComponent);
                 }
-            } else if (_glimmerSystem.Glimmer > 750)
+            } else if (_glimmerSystem.GlimmerOutput > 750)
             {
                 damage *= 3;
                 if (TryComp<FlammableComponent>(pair.wearer, out var flammableComponent))

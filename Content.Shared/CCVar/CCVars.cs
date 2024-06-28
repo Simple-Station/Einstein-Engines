@@ -2141,11 +2141,11 @@ namespace Content.Shared.CCVar
             CVarDef.Create("glimmer.enabled", true, CVar.REPLICATED);
 
         /// <summary>
-        ///     Passive glimmer drain per second.
-        ///     Note that this is randomized and this is an average value.
+        ///     The rate at which glimmer linearly decays. Since glimmer increases (usually) follow a logistic curve, this means glimmer
+        ///     becomes increasingly harder to raise after ~502 points.
         /// </summary>
-        public static readonly CVarDef<float> GlimmerLostPerSecond =
-            CVarDef.Create("glimmer.passive_drain_per_second", 0.1f, CVar.SERVERONLY);
+        public static readonly CVarDef<float> GlimmerLinearDecayPerMinute =
+            CVarDef.Create("glimmer.linear_decay_per_minute", 6f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether random rolls for psionics are allowed.

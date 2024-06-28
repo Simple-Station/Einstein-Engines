@@ -166,7 +166,7 @@ public sealed class OracleSystem : EntitySystem
             .Where(x => !x.Abstract)
             .Select(x => x.ID).ToList();
 
-        var amount = 20 + _random.Next(1, 30) + _glimmerSystem.Glimmer / 10f;
+        var amount = 20 + _random.Next(1, 30) + _glimmerSystem.GlimmerOutput / 10f;
         amount = (float) Math.Round(amount);
 
         var sol = new Solution();

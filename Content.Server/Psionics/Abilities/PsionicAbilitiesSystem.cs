@@ -58,7 +58,7 @@ namespace Content.Server.Psionics.Abilities
 
             EntityManager.AddComponent(uid, newComponent);
 
-            _glimmerSystem.Glimmer += _random.Next((int) MathF.Round(psionic.Amplification * psionic.Dampening * 1), (int) MathF.Round(psionic.Amplification * psionic.Dampening * 5));
+            _glimmerSystem.DeltaGlimmerInput(_random.NextFloat(psionic.Amplification * psionic.Dampening, psionic.Amplification * psionic.Dampening * 5));
         }
 
         public void RemovePsionics(EntityUid uid)
@@ -96,7 +96,7 @@ namespace Content.Server.Psionics.Abilities
 
             _statusEffectsSystem.TryAddStatusEffect(uid, "Stutter", TimeSpan.FromMinutes(5), false, "StutteringAccent");
 
-            _glimmerSystem.Glimmer += _random.Next((int) MathF.Round(psionic.Amplification * psionic.Dampening * -10), (int) MathF.Round(psionic.Amplification * psionic.Dampening * -5));
+            _glimmerSystem.DeltaGlimmerOutput(-_random.NextFloat((int) MathF.Round(psionic.Amplification * psionic.Dampening * 5), (int) MathF.Round(psionic.Amplification * psionic.Dampening * 10)));
             RemComp<PsionicComponent>(uid);
             RemComp<PotentialPsionicComponent>(uid);
         }
