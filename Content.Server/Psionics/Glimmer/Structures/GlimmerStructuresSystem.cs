@@ -79,11 +79,13 @@ namespace Content.Server.Psionics.Glimmer
                     source.Accumulator -= source.SecondsPerGlimmer;
                     if (source.AddToGlimmer)
                     {
-                        _glimmerSystem.DeltaGlimmerInput(1);
+                        //If we're above the equilibrium point of 500, increase the output of passive glimmer sources to help fight against linear decay
+                        //Even with this, don't expect probers to ever get to mind swap levels of power without any help
+                        _glimmerSystem.DeltaGlimmerInput(_glimmerSystem.GlimmerOutput > 500 ? MathF.Round(_glimmerSystem.GlimmerOutput / 100) : 1f);
                     }
                     else
                     {
-                        _glimmerSystem.DeltaGlimmerInput(1);
+                        _glimmerSystem.DeltaGlimmerInput(-1);
                     }
                 }
             }

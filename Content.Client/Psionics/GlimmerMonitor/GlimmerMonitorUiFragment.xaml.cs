@@ -26,12 +26,14 @@ public sealed partial class GlimmerMonitorUiFragment : BoxContainer
         VerticalExpand = true;
 
         var intervalGroup = new ButtonGroup();
+        IntervalButton6s.Group = intervalGroup;
         IntervalButton1.Group = intervalGroup;
         IntervalButton5.Group = intervalGroup;
         IntervalButton10.Group = intervalGroup;
 
-        IntervalButton1.Pressed = true;
+        IntervalButton6s.Pressed = true;
 
+        IntervalButton6s.OnPressed += _ => UpdateState(_cachedValues);
         IntervalButton1.OnPressed += _ => UpdateState(_cachedValues);
         IntervalButton5.OnPressed += _ => UpdateState(_cachedValues);
         IntervalButton10.OnPressed += _ => UpdateState(_cachedValues);
@@ -62,14 +64,12 @@ public sealed partial class GlimmerMonitorUiFragment : BoxContainer
     {
         var returnList = glimmerValues;
 
-        if (IntervalButton5.Pressed)
-        {
-            returnList = GetAveragedList(glimmerValues, 5);
-        }
-        else if (IntervalButton10.Pressed)
-        {
+        if (IntervalButton1.Pressed)
             returnList = GetAveragedList(glimmerValues, 10);
-        }
+        else if (IntervalButton5.Pressed)
+            returnList = GetAveragedList(glimmerValues, 50);
+        else if (IntervalButton10.Pressed)
+            returnList = GetAveragedList(glimmerValues, 100);
 
         return ClipToFifteen(returnList);
     }
