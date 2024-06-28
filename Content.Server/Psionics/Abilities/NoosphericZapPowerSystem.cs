@@ -56,7 +56,7 @@ namespace Content.Server.Psionics.Abilities
             if (!TryComp<PsionicComponent>(args.Performer, out var psionic))
                 return;
 
-            if (!HasComp<PsionicInsulationComponent>(args.Target) && !HasComp<PsionicInsulationComponent>(args.Performer))
+            if (!HasComp<PsionicInsulationComponent>(args.Performer))
             {
                 _beam.TryCreateBeam(args.Performer, args.Target, "LightningNoospheric");
                 _stunSystem.TryParalyze(args.Target, TimeSpan.FromSeconds(1 * psionic.Amplification), false);

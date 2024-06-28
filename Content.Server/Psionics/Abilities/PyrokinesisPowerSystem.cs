@@ -8,11 +8,8 @@ using Robust.Server.GameObjects;
 using Content.Shared.Actions.Events;
 using Content.Server.Explosion.Components;
 using Robust.Server.Audio;
-using Robust.Shared.Map;
 using Robust.Shared.Timing;
 using Content.Shared.Popups;
-using Content.Shared.Mobs;
-using Linguini.Syntax.Ast;
 using Content.Shared.Psionics.Events;
 
 namespace Content.Server.Psionics.Abilities
