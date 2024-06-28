@@ -73,13 +73,12 @@ namespace Content.Shared.Psionics.Glimmer
             };
         }
 
-        // Ignore the bracket warnings on these, Intellisense is wrong and doesn't understand polynomials.
         public void DeltaGlimmerInput(float delta)
         {
             if (_enabled && delta != 0)
             {
                 GlimmerInput += delta;
-                GlimmerOutput = (2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerInput))) - 1000;
+                GlimmerOutput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerInput)) - 1000;
             }
         }
 
@@ -88,7 +87,7 @@ namespace Content.Shared.Psionics.Glimmer
             if (_enabled && delta != 0)
             {
                 GlimmerOutput += delta;
-                GlimmerInput = (2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput))) - 1000;
+                GlimmerInput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
             }
         }
 
@@ -97,7 +96,7 @@ namespace Content.Shared.Psionics.Glimmer
             if (_enabled && set != 0)
             {
                 GlimmerOutput = set;
-                GlimmerInput = (2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput))) - 1000;
+                GlimmerInput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
             }
         }
 
@@ -106,7 +105,7 @@ namespace Content.Shared.Psionics.Glimmer
             if (_enabled && set != 0)
             {
                 GlimmerInput = set;
-                GlimmerOutput = (2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput))) - 1000;
+                GlimmerOutput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
             }
         }
     }
