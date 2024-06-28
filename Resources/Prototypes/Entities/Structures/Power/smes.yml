@@ -100,7 +100,7 @@
 - type: entity
   parent: BaseSMES
   id: SMESBasic
-  suffix: Basic, 120MW
+  suffix: Basic, 120MJ
   components:
   - type: Battery
     maxCharge: 120000000
