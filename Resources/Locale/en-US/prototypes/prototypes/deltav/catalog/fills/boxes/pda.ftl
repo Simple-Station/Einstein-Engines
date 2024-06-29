@@ -1,0 +1,12 @@
+ent-BoxPDASecurity = security PDA box
+    .desc = A box of spare PDA microcomputers for the security department.
+ent-BoxPDAPrisoner = prisoner PDA box
+    .desc = A box of spare PDA microcomputers for the warden to use for prisoners.
+ent-BoxPDAMedical = medical PDA box
+    .desc = A box of spare PDA microcomputers for the medical department.
+ent-BoxPDAScience = epistemics PDA box
+    .desc = A box of spare PDA microcomputers for the epistemics department.
+ent-BoxPDAEngineering = engineering PDA box
+    .desc = A box of spare PDA microcomputers for the engineering department.
+ent-BoxPDACargo = logistics PDA box
+    .desc = A box of spare PDA microcomputers for the logistics department.

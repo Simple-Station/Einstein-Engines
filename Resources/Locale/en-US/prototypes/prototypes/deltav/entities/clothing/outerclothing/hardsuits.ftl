@@ -1,0 +1,16 @@
+ent-ClothingOuterHardsuitCombatStandard = combat hardsuit
+    .desc = A purpose-built combat suit designed to protect its user against all manner of enemy combatants in low pressure environments.
+ent-ClothingOuterHardsuitCombatOfficer = security combat hardsuit
+    .desc = A purpose-built combat suit designed to protect its user against all manner of enemy combatants in low pressure environments. This one has station security markings.
+ent-ClothingOuterHardsuitCombatMedical = medical combat hardsuit
+    .desc = A purpose-built combat suit designed to allow its user greater mobility for superior support of friendly units in active combat zones.
+ent-ClothingOuterHardsuitCombatCorpsman = corpsman combat hardsuit
+    .desc = A purpose-built combat suit designed to allow its user greater mobility for superior support of friendly units in active combat zones. This one has station security markings.
+ent-ClothingOuterHardsuitCombatRiot = riot combat hardsuit
+    .desc = A purpose-built combat suit designed for crowd control against armed combatants in low pressure environments.
+ent-ClothingOuterHardsuitCombatWarden = warden's riot combat hardsuit
+    .desc = A purpose-built combat suit designed for crowd control against armed combatants in low pressure environments. This one has station security and warden's rank markings.
+ent-ClothingOuterHardsuitCombatAdvanced = advanced combat hardsuit
+    .desc = A purpose-built combat suit of second-generation design, providing unparalleled protection against all manner of kinetic forces in low pressure environments.
+ent-ClothingOuterHardsuitCombatHoS = head of security's advanced combat hardsuit
+    .desc = A purpose-built combat suit of second-generation design, providing unparalleled protection against all manner of kinetic forces in low pressure environments. This one has station security and commander's rank markings.

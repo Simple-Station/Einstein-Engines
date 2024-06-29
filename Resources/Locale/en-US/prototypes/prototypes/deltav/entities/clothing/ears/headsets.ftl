@@ -1,0 +1,10 @@
+ent-ClothingHeadsetHoP = hop headset
+    .desc = A headset used by the head of personnel.
+ent-ClothingHeadsetAltService = head of personnel's over-ear headset
+    .desc = { ent-ClothingHeadsetAlt.desc }
+ent-ClothingHeadsetAltSyndicateListening = blood-red over-ear interception headset
+    .desc = An advanced, modular syndicate interception intercom that fits over the head.
+ent-ClothingHeadsetPrison = prison headset
+    .desc = Headset used by anybody who needs direct contact with prisoners
+ent-ClothingHeadsetPrisonGuard = guard headset
+    .desc = Headset used by prison guards.

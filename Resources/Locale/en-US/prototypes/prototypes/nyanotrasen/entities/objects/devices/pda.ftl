@@ -1,0 +1,12 @@
+ent-PrisonerPDA = prisoner PDA
+    .desc = Clear, so you can make sure there's nothing being smuggled inside.
+ent-GladiatorPDA = gladiator PDA
+    .desc = { ent-PrisonerPDA.desc }
+ent-PrisonGuardPDA = prison guard PDA
+    .desc = Red to hide the stains of prisoner blood.
+ent-MailCarrierPDA = courier PDA
+    .desc = Smells like unopened letters.
+ent-MartialArtistPDA = martial artist PDA
+    .desc = Smells like straw.
+ent-ForensicMantisPDA = psionic mantis PDA
+    .desc = Smells like illegal substances.

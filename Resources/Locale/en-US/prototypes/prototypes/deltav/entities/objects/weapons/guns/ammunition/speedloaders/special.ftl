@@ -1,0 +1,14 @@
+ent-BaseSpeedLoaderSpecial = speed loader (.38 special)
+    .desc = { ent-BaseItem.desc }
+ent-SpeedLoaderSpecial = speed loader (.38 special)
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }
+ent-SpeedLoaderSpecialPractice = speed loader (.38 special practice)
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }
+ent-SpeedLoaderSpecialRubber = speed loader (.38 special rubber)
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }
+ent-SpeedLoaderSpecialUranium = speed loader (.38 special uranium)
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }
+ent-SpeedLoaderSpecialMindbreaker = speed loader (.38 special mindbreaker)
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }
+ent-SpeedLoaderSpecialHoly = speed loader (.38 special holy)
+    .desc = { ent-BaseSpeedLoaderSpecial.desc }

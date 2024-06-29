@@ -1,0 +1,12 @@
+ent-GunSafePistolUniversal = mk32 safe
+    .desc = { ent-GunSafe.desc }
+ent-GunSafeSniperGrand = mark 1 rifle safe
+    .desc = { ent-GunSafe.desc }
+ent-GunSafeVulcanRifle = vulcan safe
+    .desc = { ent-GunSafe.desc }
+ent-GunSafeAdjutantShotgun = adjutant safe
+    .desc = { ent-GunSafe.desc }
+ent-GunSafeEnergyGun = energy gun safe
+    .desc = { ent-GunSafe.desc }
+ent-GunSafeEnergyGunMini = miniature energy gun safe
+    .desc = { ent-GunSafe.desc }

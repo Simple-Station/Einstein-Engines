@@ -1,0 +1,12 @@
+ent-ClothingNeckTieWhite = white tie
+    .desc = An ivory-white tie.
+ent-ClothingNeckTieBlack = black tie
+    .desc = A charcoal-black tie.
+ent-ClothingNeckTieBrown = brown tie
+    .desc = A chocolate-brown tie.
+ent-ClothingNeckTieBlue = blue tie
+    .desc = A cerulean-blue tie.
+ent-ClothingNeckTieGreen = green tie
+    .desc = A grass-green tie.
+ent-ClothingNeckTieChem = chemistry tie
+    .desc = An safety-orange tie.
