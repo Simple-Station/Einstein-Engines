@@ -1,4 +1,8 @@
-# Alphabetically ordered
+# Alphabetically ordered, except for Uncategorized since it is always first
+
+- type: loadoutCategory
+  id: Uncategorized
+
 - type: loadoutCategory
   id: Accessories
 
@@ -10,9 +14,6 @@
 
 - type: loadoutCategory
   id: Outer
-
-- type: loadoutCategory
-  id: Uncategorized
 
 - type: loadoutCategory
   id: Uniform
