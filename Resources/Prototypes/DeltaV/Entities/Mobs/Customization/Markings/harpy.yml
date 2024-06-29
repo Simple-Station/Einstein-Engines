@@ -15,7 +15,7 @@
         - !type:SimpleColoring
           color: "#964b00"
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy
 
 - type: marking
@@ -32,7 +32,7 @@
         - !type:SimpleColoring
           color: "#964b00"
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: classicharpy
 
 - type: marking
@@ -49,7 +49,7 @@
         - !type:SimpleColoring
           color: "#964b00"
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpyfolded
 
 - type: marking
@@ -66,7 +66,7 @@
         - !type:SimpleColoring
           color: "#964b00"
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_ears.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_ears.rsi
       state: harpy_ears_default
 
 - type: marking
@@ -83,7 +83,7 @@
         - !type:SimpleColoring
           color: "#964b00"
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_tails.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_tails.rsi
       state: phoenix_tail
 
 - type: marking
@@ -99,7 +99,7 @@
       fallbackTypes:
         - !type:SimpleColoring
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_tails.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_tails.rsi
       state: rooster_tail
 
 
@@ -116,8 +116,26 @@
       fallbackTypes:
         - !type:SimpleColoring
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_tailsx72.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_tails36x36.rsi
       state: finch_tail
+
+- type: marking
+  id: HarpyTailPeacock
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+  sprites:
+    - sprite: Mobs/Customization/Harpy/harpy_tails48x48.rsi
+      state: peacock_tail_feathers
+    - sprite: Mobs/Customization/Harpy/harpy_tails48x48.rsi
+      state: peacock_tail_eyes
 
 - type: marking
   id: HarpyWing2ToneClassic
@@ -125,9 +143,9 @@
   markingCategory: Arms
   speciesRestriction: [Harpy]
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy2tone1
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy2tone2
 
 - type: marking
@@ -136,11 +154,11 @@
   markingCategory: Arms
   speciesRestriction: [Harpy]
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy3tone1
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy3tone2
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy3tone3
 
 - type: marking
@@ -149,9 +167,9 @@
   markingCategory: Arms
   speciesRestriction: [Harpy]
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpyspeckled1
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpyspeckled2
 
 - type: marking
@@ -160,9 +178,9 @@
   markingCategory: Arms
   speciesRestriction: [Harpy]
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpyundertone1
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpyundertone2
 
 - type: marking
@@ -171,9 +189,9 @@
   markingCategory: Arms
   speciesRestriction: [Harpy]
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpywingtip1
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_wings.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpywingtip2
 
 - type: marking
@@ -190,9 +208,9 @@
         - !type:SimpleColoring
           color: "#964b00"
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_chest.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_chest.rsi
       state: upper
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_chest.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_chest.rsi
       state: lower
 
 - type: marking
@@ -209,7 +227,7 @@
         - !type:SimpleColoring
           color: "#964b00"
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_legs.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_legs.rsi
       state: thighs
 
 - type: marking
@@ -223,7 +241,7 @@
         - !type:SimpleColoring
           color: "#964b00"
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_legs.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_legs.rsi
       state: feet
-    - sprite: DeltaV/Mobs/Customization/Harpy/harpy_legs.rsi
+    - sprite: Mobs/Customization/Harpy/harpy_legs.rsi
       state: talons

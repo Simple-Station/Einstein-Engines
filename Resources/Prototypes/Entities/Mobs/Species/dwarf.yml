@@ -21,7 +21,6 @@
   - type: Sprite
     noRot: true
     drawdepth: Mobs
-    scale: 1, 0.8
   - type: Body
     prototype: Dwarf
     requiredLegs: 2
@@ -64,6 +63,3 @@
   parent: BaseSpeciesDummy
   id: MobDwarfDummy
   noSpawn: true
-  components:
-  - type: Sprite
-    scale: 1, 0.8
