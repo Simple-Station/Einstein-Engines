@@ -18,6 +18,7 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+    fireOnDropChance: 0.15
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
   - type: Battery
@@ -84,6 +85,7 @@
     quickEquip: false
     slots:
     - Belt
+    - suitStorage
 
 - type: entity
   id: BaseWeaponPowerCellSmall
@@ -578,6 +580,7 @@
     tags:
     - HighRiskItem
     - Sidearm
+    - WeaponAntiqueLaser
   - type: StaticPrice
     price: 750
   - type: StealTarget

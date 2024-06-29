@@ -1,0 +1,19 @@
+# Alphabetically ordered, except for Uncategorized since it is always first
+
+- type: loadoutCategory
+  id: Uncategorized
+
+- type: loadoutCategory
+  id: Accessories
+
+- type: loadoutCategory
+  id: Items
+
+- type: loadoutCategory
+  id: Jobs
+
+- type: loadoutCategory
+  id: Outer
+
+- type: loadoutCategory
+  id: Uniform

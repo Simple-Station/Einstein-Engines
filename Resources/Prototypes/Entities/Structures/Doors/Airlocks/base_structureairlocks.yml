@@ -104,7 +104,6 @@
     - key: enum.WiresUiKey.Key
       type: WiresBoundUserInterface
   - type: Airtight
-    fixVacuum: true
     noAirWhenFullyAirBlocked: false
   - type: RadiationBlocker
     resistance: 3
@@ -131,9 +130,6 @@
     - board
   - type: PlacementReplacement
     key: walls
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
   - type: PaintableAirlock
     group: Standard
     department: Civilian
@@ -147,6 +143,7 @@
       - Airlock
       # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
   - type: PryUnpowered
+  - type: BlockWeather
   placement:
     mode: SnapgridCenter
 

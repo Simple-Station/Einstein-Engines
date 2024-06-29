@@ -418,9 +418,9 @@
   noSpawn: true
   components:
   - type: StationEvent
-    earliestStart: 60 # DeltaV - was 45
-    weight: 3 # DeltaV - was 5
-    minimumPlayers: 10
+    earliestStart: 60
+    weight: 3
+    minimumPlayers: 20
     reoccurrenceDelay: 30
     duration: 1
   - type: LoneOpsSpawnRule
@@ -463,7 +463,6 @@
   components:
   - type: StationEvent
     weight: 10
-    earliestStart: 20
     reoccurrenceDelay: 20
     duration: 1
   - type: IonStormRule

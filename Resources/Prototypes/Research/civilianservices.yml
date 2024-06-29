@@ -110,7 +110,10 @@
   cost: 5000
   recipeUnlocks:
   - FauxTileAstroGrass
+  - FauxTileMowedAstroGrass
+  - FauxTileJungleAstroGrass
   - FauxTileAstroIce
+  - FauxTileAstroSnow
 
 - type: technology
   id: BiochemicalStasis
@@ -224,3 +227,43 @@
   recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
+
+- type: technology
+  id: BasicTranslation
+  name: research-technology-basic-translation
+  icon:
+    sprite: Objects/Devices/translator.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - CanilunztTranslator
+  - BubblishTranslator
+  - NekomimeticTranslator
+  - DraconicTranslator
+  - SolCommonTranslator
+  - RootSpeakTranslator
+  - BasicGalaticCommonTranslatorImplanter
+  - MofficTranslator
+
+- type: technology
+  id: AdvancedTranslation
+  name: research-technology-advanced-translation
+  icon:
+    sprite: Objects/Devices/translator.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - XenoTranslator
+  - AdvancedGalaticCommonTranslatorImplanter
+  - BubblishTranslatorImplanter
+  - NekomimeticTranslatorImplanter
+  - DraconicTranslatorImplanter
+  - CanilunztTranslatorImplanter
+  - SolCommonTranslatorImplanter
+  - RootSpeakTranslatorImplanter
+  - AnimalTranslator
+  - MofficTranslatorImplanter

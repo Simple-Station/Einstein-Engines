@@ -4046,3 +4046,208 @@ Entries:
         skulls!"
   id: 6106
   time: '2024-04-17T04:07:41.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Glass/Crystal shards and floor tiles now deal damage and embed in
+        victims when colliding with them. 
+  id: 6107
+  time: '2024-05-11T01:23:00.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Better looking Vents Sprites!
+  id: 6108
+  time: '2024-05-12T04:26:55.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: >-
+        Added a new character customization tab for selecting items to start
+        your shift with, loadouts!
+    - type: Remove
+      message: Removed some default job equipment in favor of loadouts
+    - type: Remove
+      message: Removed several clothing items from Command lockers in favor of loadouts
+  id: 6109
+  time: '2024-05-13T04:46:57.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: >-
+        Added a queue for players so you don't need to spam reconnect and hope
+        you join when someone leaves.
+  id: 6110
+  time: '2024-05-13T04:58:39.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Add
+      message: Added a number of new corporate coats to the Clothesmate.
+  id: 6111
+  time: '2024-05-22T03:35:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Syndicate Listening Posts can now appear any time in a round, and can
+        appear on low-pop servers.
+  id: 6112
+  time: '2024-05-28T23:44:39.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Better wall sprites.
+    - type: Tweak
+      message: Better window sprites.
+  id: 6113
+  time: '2024-05-28T23:59:19.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Radio Resprites, Talkwalkies, Beacon, Headset...
+    - type: Tweak
+      message: >-
+        Radio and uplink radio looks the same, make sure to check what freq the
+        radio is on!
+  id: 6114
+  time: '2024-05-29T00:00:50.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: New Tools Sprites!
+  id: 6115
+  time: '2024-05-29T01:06:42.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Resprited gas canisters
+    - type: Tweak
+      message: Resprited gas tanks
+  id: 6116
+  time: '2024-05-31T00:13:45.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Add
+      message: Added five new coats
+    - type: Add
+      message: Added loadouts
+    - type: Fix
+      message: Fixed the coat handhole
+  id: 6117
+  time: '2024-06-02T00:36:59.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Floors Looks Updated/Resprited.
+  id: 6118
+  time: '2024-06-03T19:23:51.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: All species can now bring their own cultures and languages
+  id: 6119
+  time: '2024-06-10T20:48:48.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Rust Walls Sprites.
+    - type: Tweak
+      message: Armor, Bulletproof, Riot Suit Resprites.
+    - type: Tweak
+      message: New Banners Sprites.
+    - type: Tweak
+      message: Stunbaton, Fire Extinguisher New Sprites.
+    - type: Tweak
+      message: Rack/WallScreen resprites.
+    - type: Tweak
+      message: Stock Parts new sprites!
+    - type: Tweak
+      message: Radiation Collector has now a new sprite!
+  id: 6120
+  time: '2024-06-11T00:34:02.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        UI layout now defaults to separated, the old one is still available in
+        settings
+  id: 6121
+  time: '2024-06-16T22:38:10.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Space has suddenly become less dense (objects don't slow down in space)
+    - type: Remove
+      message: Moths are unable to move in space
+    - type: Tweak
+      message: Moths have way better control in zero gravity environments
+  id: 6122
+  time: '2024-06-17T07:58:34.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added station goals that get sent to the Command fax machine at the
+        start of every shift
+  id: 6123
+  time: '2024-06-17T21:42:13.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Peacock Tails have been added for Harpies
+  id: 6124
+  time: '2024-06-20T22:07:29.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        NanoTrasen has disabled the unneeded safeties on your guns- Make sure
+        you're careful with them!
+    - type: Tweak
+      message: >-
+        All Firearms now have a reliability stat, some are more reliable than
+        others. The more reliable a weapon is, the less likely it is to
+        accidentally discharge when yeeted.
+  id: 6125
+  time: '2024-06-20T22:17:03.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Animals will no longer be a silent, soulless shell
+  id: 6126
+  time: '2024-06-20T22:24:30.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Added trait points
+    - type: Add
+      message: Added categories for traits
+  id: 6127
+  time: '2024-06-20T23:39:31.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Remove
+      message: Removed Wizden patrons
+  id: 6128
+  time: '2024-06-25T19:54:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpies remembered that just like moths; they also have wings, and can
+        zoom whenever the gravity turns off.
+  id: 6129
+  time: '2024-06-25T20:19:11.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Mid-round events will occur much less often
+  id: 6130
+  time: '2024-06-25T20:47:09.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Height and Width sliders have been added to character creation. '
+  id: 6131
+  time: '2024-06-27T17:46:51.0000000+00:00'
