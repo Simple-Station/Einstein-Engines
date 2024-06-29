@@ -44,6 +44,7 @@ namespace Content.Shared.GameTicking
         {
             metadata["roundId"] = new ValueDataNode(RoundId.ToString());
         }
+
         public TimeSpan RoundDuration()
         {
             return _gameTiming.CurTime.Subtract(RoundStartTimeSpan);
