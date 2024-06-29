@@ -61,7 +61,7 @@
   name: engine fodder
   parent: FoodBakingBase
   id: FoodMothEngineFodder
-  description: A common snack for moth engineers, made of seeds, nuts, chocolate, popcorn, and potato chips	designed to be dense with calories and easy to snack on when an extra boost is needed.
+  description: A common snack for moth engineers, made of seeds, nuts, chocolate, popcorn, and potato chips designed to be dense with calories and easy to snack on when an extra boost is needed.
   components:
   - type: FlavorProfile
     flavors:
