@@ -6,9 +6,9 @@ The Authors retain all copyright to their respective work submitted here.
 
 ## Code license
 
-Content contributed to this repository after commit 87c70a89a67d0521a56388e6b1c3f2cb947943e4 is licensed under the GNU Affero General Public License version 3.0 unless otherwise stated. See [LICENSE-AGPLv3](https://github.com/Simple-Station/Einstein-Engines/blob/master/LICENSE-AGPLv3.txt).
+Content contributed to this repository after commit 87c70a89a67d0521a56388e6b1c3f2cb947943e4 is licensed under the GNU Affero General Public License version 3.0 unless otherwise stated. See [LICENSE-AGPLv3](./LICENSE-AGPLv3.txt).
 
-Content contributed to this repository before commit 87c70a89a67d0521a56388e6b1c3f2cb947943e4 is licensed under the MIT license unless otherwise stated. See [LICENSE-MIT](https://github.com/Simple-Station/Einstein-Engines/blob/master/LICENSE-MIT.txt).
+Content contributed to this repository before commit 87c70a89a67d0521a56388e6b1c3f2cb947943e4 is licensed under the MIT license unless otherwise stated. See [LICENSE-MIT](./LICENSE-MIT.txt).
 
 [87c70a89a67d0521a56388e6b1c3f2cb947943e4](https://github.com/Simple-Station/Einstein-Engines/commit/87c70a89a67d0521a56388e6b1c3f2cb947943e4) was pushed on February 17th 2024 at 21:48 UTC
 

@@ -112,14 +112,14 @@ namespace Content.Shared.CCVar
         ///     Close to how long you expect a round to last, so you'll probably have to tweak this on downstreams.
         /// </summary>
         public static readonly CVarDef<float>
-            EventsRampingAverageEndTime = CVarDef.Create("events.ramping_average_end_time", 40f, CVar.ARCHIVE | CVar.SERVERONLY);
+            EventsRampingAverageEndTime = CVarDef.Create("events.ramping_average_end_time", 120f, CVar.ARCHIVE | CVar.SERVERONLY);
 
         /// <summary>
         ///     Average ending chaos modifier for the ramping event scheduler.
         ///     Max chaos chosen for a round will deviate from this
         /// </summary>
         public static readonly CVarDef<float>
-            EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 6f, CVar.ARCHIVE | CVar.SERVERONLY);
+            EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 4f, CVar.ARCHIVE | CVar.SERVERONLY);
 
         /*
          * Game
@@ -172,6 +172,33 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool>
             GameLobbyEnableWin = CVarDef.Create("game.enablewin", true, CVar.ARCHIVE);
+
+        /// <summary>
+        ///     Minimum time between Basic station events in seconds
+        /// </summary>
+        public static readonly CVarDef<int> // 15 Minutes
+            GameEventsBasicMinimumTime = CVarDef.Create("game.events_basic_minimum_time", 900, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Maximum time between Basic station events in seconds
+        /// </summary>
+        public static readonly CVarDef<int> // 35 Minutes
+            GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 2100, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Minimum time between Ramping station events in seconds
+        /// </summary>
+        public static readonly CVarDef<int> // 20 Minutes
+            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 1200, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Maximum time between Ramping station events in seconds
+        /// </summary>
+        public static readonly CVarDef<int> // 45 Minutes
+            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 2700, CVar.SERVERONLY);
+
+        /// <summary>
+        ///
 
         /// <summary>
         ///     Controls the maximum number of character slots a player is allowed to have.
@@ -341,14 +368,34 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> DebugCoordinatesAdminOnly =
             CVarDef.Create("game.debug_coordinates_admin_only", true, CVar.SERVER | CVar.REPLICATED);
 
+
         /// <summary>
-        /// Whether or not to allow characters to select loadout items.
+        ///     Whether to allow characters to select traits.
+        /// </summary>
+        public static readonly CVarDef<bool> GameTraitsEnabled =
+            CVarDef.Create("game.traits_enabled", true, CVar.REPLICATED);
+
+        /// <summary>
+        ///     How many traits a character can have at most.
+        /// </summary>
+        public static readonly CVarDef<int> GameTraitsMax =
+            CVarDef.Create("game.traits_max", 5, CVar.REPLICATED);
+
+        /// <summary>
+        ///     How many points a character should start with.
+        /// </summary>
+        public static readonly CVarDef<int> GameTraitsDefaultPoints =
+            CVarDef.Create("game.traits_default_points", 5, CVar.REPLICATED);
+
+
+        /// <summary>
+        ///     Whether to allow characters to select loadout items.
         /// </summary>
         public static readonly CVarDef<bool> GameLoadoutsEnabled =
             CVarDef.Create("game.loadouts_enabled", true, CVar.REPLICATED);
 
         /// <summary>
-        /// How many points to give to each player for loadouts.
+        ///     How many points to give to each player for loadouts.
         /// </summary>
         public static readonly CVarDef<int> GameLoadoutsPoints =
             CVarDef.Create("game.loadouts_points", 14, CVar.REPLICATED);
@@ -1596,10 +1643,10 @@ namespace Content.Shared.CCVar
          */
 
         public static readonly CVarDef<string> UILayout =
-            CVarDef.Create("ui.layout", "Default", CVar.CLIENTONLY | CVar.ARCHIVE);
+            CVarDef.Create("ui.layout", "Separated", CVar.CLIENTONLY | CVar.ARCHIVE);
 
-        public static readonly CVarDef<string> DefaultScreenChatSize =
-            CVarDef.Create("ui.default_chat_size", "", CVar.CLIENTONLY | CVar.ARCHIVE);
+        public static readonly CVarDef<string> OverlayScreenChatSize =
+            CVarDef.Create("ui.overlay_chat_size", "", CVar.CLIENTONLY | CVar.ARCHIVE);
 
         public static readonly CVarDef<string> SeparatedScreenChatSize =
             CVarDef.Create("ui.separated_chat_size", "0.6,0", CVar.CLIENTONLY | CVar.ARCHIVE);
@@ -2106,5 +2153,29 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> PsionicRollsEnabled =
             CVarDef.Create("psionics.rolls_enabled", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Whether height & width sliders adjust a character's Fixture Component
+        /// </summary>
+        public static readonly CVarDef<bool> HeightAdjustModifiesHitbox =
+            CVarDef.Create("heightadjust.modifies_hitbox", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Whether height & width sliders adjust a player's max view distance
+        /// </summary>
+        public static readonly CVarDef<bool> HeightAdjustModifiesZoom =
+            CVarDef.Create("heightadjust.modifies_zoom", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Enables station goals
+        /// </summary>
+        public static readonly CVarDef<bool> StationGoalsEnabled =
+            CVarDef.Create("game.station_goals", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Chance for a station goal to be sent
+        /// </summary>
+        public static readonly CVarDef<float> StationGoalsChance =
+            CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
     }
 }

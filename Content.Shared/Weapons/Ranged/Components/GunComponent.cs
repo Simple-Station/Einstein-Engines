@@ -141,6 +141,12 @@ public sealed partial class GunComponent : Component
     public EntityCoordinates? ShootCoordinates = null;
 
     /// <summary>
+    /// Who the gun is being requested to shoot at directly.
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? Target = null;
+
+    /// <summary>
     ///     The base value for how many shots to fire per burst.
     /// </summary>
     [DataField, AutoNetworkedField]
@@ -229,6 +235,12 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public bool ClumsyProof = false;
+
+    /// <summary>
+    ///     The percentage chance of a given gun to accidentally discharge if violently thrown into a wall or person
+    /// </summary>
+    [DataField]
+    public float FireOnDropChance = 0.1f;
 }
 
 [Flags]
