@@ -21,7 +21,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         if (!TryComp<OfferItemComponent>(args.User, out var offerItem))
             return;
 
-        if (!TryComp<HandsComponent>(args.User, out _))
+        if (!TryComp<HandsComponent>(uid, out _))
             return;
 
         if (args.User == uid)
