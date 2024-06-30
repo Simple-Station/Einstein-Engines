@@ -4251,3 +4251,9 @@ Entries:
       message: 'Height and Width sliders have been added to character creation. '
   id: 6131
   time: '2024-06-27T17:46:51.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Most items now take time to equip and unequip, especially space suits.
+  id: 6132
+  time: '2024-06-30T18:22:28.0000000+00:00'
