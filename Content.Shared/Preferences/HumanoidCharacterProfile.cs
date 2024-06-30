@@ -18,7 +18,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Preferences;
 
-/// Character profile. Looks immutable, but uses non-immutable semantics internally for serialization/code sanity purposes
+/// <summary>
+/// Character profile. Looks immutable, but uses non-immutable semantics internally for serialization/code sanity purposes.
+/// </summary>
 [DataDefinition]
 [Serializable, NetSerializable]
 public sealed partial class HumanoidCharacterProfile : ICharacterProfile
@@ -584,12 +586,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         }
 
         var antags = AntagPreferences
-            .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)
+            .Where(id => prototypeManager.TryIndex(id, out var antag) && antag.SetPreference)
             .Distinct()
             .ToList();
 
         var traits = TraitPreferences
-            .Where(prototypeManager.HasIndex<TraitPrototype>)
+            .Where(prototypeManager.HasIndex)
             .Distinct()
             .ToList();
 
