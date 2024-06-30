@@ -1318,7 +1318,7 @@
   discountDownTo:
     Telecrystal: 35
   cost:
-    Telecrystal: 80
+    Telecrystal: 70
   categories:
   - UplinkAllies
   conditions:
@@ -1334,7 +1334,7 @@
   productEntity: ReinforcementRadioSyndicateNukeops
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-urist }
   cost:
-    Telecrystal: 80
+    Telecrystal: 175
   categories:
   - UplinkAllies
   conditions:
