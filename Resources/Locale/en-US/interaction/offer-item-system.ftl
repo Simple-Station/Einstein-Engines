@@ -9,5 +9,5 @@ offer-item-give = You handed {THE($item)} to {$target}
 offer-item-give-other = {$user} handed {THE($item)} to {$target}
 offer-item-give-target = {$user} handed you a {THE($item)}
 
-offer-item-no-give = You're no longer offer a {THE($item)} to {$target}
+offer-item-no-give = You're stop offering {THE($item)} to {$target}
 offer-item-no-give-target = {$user} is no longer offer a {THE($item)} to you

@@ -21,6 +21,12 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         if (!TryComp<OfferItemComponent>(args.User, out var offerItem))
             return;
 
+        if (!TryComp<HandsComponent>(args.User, out _))
+            return;
+
+        if (args.User == uid)
+            return;
+
         component.IsInReceiveMode = true;
         component.Target = args.User;
 
