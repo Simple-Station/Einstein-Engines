@@ -3,8 +3,8 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
-using Content.Server.Chemistry.ReagentEffectConditions;
-using Content.Server.Chemistry.ReagentEffects;
+using Content.Server.EntityEffects.EffectConditions;
+using Content.Server.EntityEffects.Effects;
 using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
@@ -15,6 +15,7 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Database;
+using Content.Shared.EntityEffects;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mood;
 using JetBrains.Annotations;
@@ -268,7 +269,7 @@ public sealed class RespiratorSystem : EntitySystem
         // TODO generalize condition checks
         // this is pretty janky, but I just want to bodge a method that checks if an entity can breathe a gas mixture
         // Applying actual reaction effects require a full ReagentEffectArgs struct.
-        bool CanMetabolize(ReagentEffect effect)
+        bool CanMetabolize(EntityEffect effect)
         {
             if (effect.Conditions == null)
                 return true;
