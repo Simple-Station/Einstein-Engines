@@ -4192,3 +4192,62 @@ Entries:
         start of every shift
   id: 6123
   time: '2024-06-17T21:42:13.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Peacock Tails have been added for Harpies
+  id: 6124
+  time: '2024-06-20T22:07:29.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        NanoTrasen has disabled the unneeded safeties on your guns- Make sure
+        you're careful with them!
+    - type: Tweak
+      message: >-
+        All Firearms now have a reliability stat, some are more reliable than
+        others. The more reliable a weapon is, the less likely it is to
+        accidentally discharge when yeeted.
+  id: 6125
+  time: '2024-06-20T22:17:03.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Animals will no longer be a silent, soulless shell
+  id: 6126
+  time: '2024-06-20T22:24:30.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Added trait points
+    - type: Add
+      message: Added categories for traits
+  id: 6127
+  time: '2024-06-20T23:39:31.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Remove
+      message: Removed Wizden patrons
+  id: 6128
+  time: '2024-06-25T19:54:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpies remembered that just like moths; they also have wings, and can
+        zoom whenever the gravity turns off.
+  id: 6129
+  time: '2024-06-25T20:19:11.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Mid-round events will occur much less often
+  id: 6130
+  time: '2024-06-25T20:47:09.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Height and Width sliders have been added to character creation. '
+  id: 6131
+  time: '2024-06-27T17:46:51.0000000+00:00'
