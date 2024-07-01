@@ -160,6 +160,19 @@ namespace Content.Server.Strip
             args.Verbs.Add(verb);
         }
 
+        private void StripPopup(string messageId, ThievingStealth stealth, EntityUid target, EntityUid? user = null, EntityUid? item = null, string slot = "")
+        {
+            bool subtle = (stealth == ThievingStealth.Subtle);
+            PopupType? popupSize = _thieving.GetPopupTypeFromStealth(stealth);
+
+            if (popupSize.HasValue) // We should always have a value if we're not hidden
+                _popup.PopupEntity(Loc.GetString(messageId,
+                ("user", subtle ? Loc.GetString("thieving-component-user") : user ?? EntityUid.Invalid),
+                ("item", subtle ? Loc.GetString("thieving-component-item") : item ?? EntityUid.Invalid),
+                ("slot", slot)),
+                target, target, popupSize.Value);
+        }
+
         private void OnActivateInWorld(EntityUid uid, StrippableComponent component, ActivateInWorldEvent args)
         {
             if (args.Target == args.User)
@@ -235,16 +248,9 @@ namespace Content.Server.Strip
             };
 
             if (!hidden && Check() && userHands.ActiveHandEntity != null)
-            {
-                bool subtle = (ev.Stealth == ThievingStealth.Subtle);
-                PopupType? popupSize = _thieving.GetPopupTypeFromStealth(ev.Stealth);
-
-                if (popupSize.HasValue) // We should always have a value if we're not hidden
-                    _popup.PopupEntity(Loc.GetString("strippable-component-alert-owner-insert",
-                    ("user", subtle ? "Someone" : Identity.Entity(user, EntityManager)),
-                    ("item", subtle ? "something" : userHands.ActiveHandEntity)),
-                    target, target, popupSize.Value);
-            }
+                StripPopup("strippable-component-alert-owner-insert", ev.Stealth, target,
+                    user: Identity.Entity(user, EntityManager),
+                    item: userHands.ActiveHandEntity.Value);
 
             var prefix = hidden ? "stealthily " : "";
             _adminLogger.Add(LogType.Stripping, LogImpact.Low, $"{ToPrettyString(user):actor} is trying to {prefix}place the item {ToPrettyString(held):item} in {ToPrettyString(target):target}'s {slot} slot");
@@ -387,18 +393,11 @@ namespace Content.Server.Strip
 
                 if (popupSize.HasValue) // We should always have a value if we're not hidden
                     if (slotDef.StripHidden)
-                    {
-                        _popup.PopupEntity(Loc.GetString("strippable-component-alert-owner-hidden",
-                            ("slot", slot)),
-                            target, target, popupSize.Value);
-                    }
+                        StripPopup("strippable-component-alert-owner-hidden", ev.Stealth, target, slot: slot);
                     else if (_inventorySystem.TryGetSlotEntity(strippable, slot, out var slotItem))
-                    {
-                        _popup.PopupEntity(Loc.GetString("strippable-component-alert-owner",
-                            ("user", (ev.Stealth == ThievingStealth.Subtle) ? "Someone" : Identity.Entity(user, EntityManager)),
-                            ("item", slotItem)),
-                            target, target, popupSize.Value);
-                    }
+                        StripPopup("strippable-component-alert-owner", ev.Stealth, target,
+                        user: Identity.Entity(user, EntityManager),
+                        item: slotItem);
             }
 
             var prefix = hidden ? "stealthily " : "";
@@ -468,15 +467,9 @@ namespace Content.Server.Strip
             };
 
             if (!hidden && Check() && _handsSystem.TryGetHand(target, handName, out var handSlot, hands) && handSlot.HeldEntity != null)
-            {
-                PopupType? popupSize = _thieving.GetPopupTypeFromStealth(ev.Stealth);
-
-                if (popupSize.HasValue) // We should always have a value if we're not hidden
-                    _popup.PopupEntity(Loc.GetString("strippable-component-alert-owner",
-                    ("user", (ev.Stealth == ThievingStealth.Subtle) ? "Someone" : Identity.Entity(user, EntityManager)),
-                    ("item", item)),
-                    strippable.Owner, strippable.Owner, popupSize.Value);
-            }
+                StripPopup("strippable-component-alert-owner", ev.Stealth, target,
+                    user: Identity.Entity(user, EntityManager),
+                    item: item);
 
             var prefix = hidden ? "stealthily " : "";
             _adminLogger.Add(LogType.Stripping, LogImpact.Low,
