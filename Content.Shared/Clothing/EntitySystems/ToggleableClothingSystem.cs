@@ -27,6 +27,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedStrippableSystem _strippable = default!;
+    [Dependency] private readonly ThievingSystem _thieving = default!;
 
     public override void Initialize()
     {
@@ -114,12 +115,13 @@ public sealed class ToggleableClothingSystem : EntitySystem
 
         if (!hidden)
         {
-            PopupType popupSize = (stealth == ThievingStealth.Subtle) ? PopupType.Small : PopupType.Large;
+            PopupType? popupSize = _thieving.GetPopupTypeFromStealth(stealth);
 
-            _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-interact",
+            if (popupSize.HasValue) // we should always have a value if we're not hidden
+                _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-interact",
                 ("user", (stealth == ThievingStealth.Subtle) ? "Someone" : Identity.Entity(user, EntityManager)),
                 ("item", item)),
-                wearer, wearer, popupSize);
+                wearer, wearer, popupSize.Value);
         }
     }
 

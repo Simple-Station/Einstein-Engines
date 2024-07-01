@@ -1,6 +1,8 @@
 using Content.Shared.Inventory;
+using Content.Shared.Popups;
 using Content.Shared.Strip.Components;
 using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Strip;
 
@@ -20,6 +22,21 @@ public sealed class ThievingSystem : EntitySystem
         args.Stealth = (ThievingStealth) Math.Max(((sbyte) args.Stealth), (sbyte) component.Stealth);
         args.Additive -= component.StripTimeReduction;
         args.Multiplier *= component.StripTimeMultiplier;
+    }
+
+    public PopupType? GetPopupTypeFromStealth(ThievingStealth stealth)
+    {
+        switch (stealth)
+        {
+            case ThievingStealth.Hidden:
+                return null;
+
+            case ThievingStealth.Subtle:
+                return PopupType.Small;
+
+            default:
+                return PopupType.Large;
+        }
     }
 }
 [Serializable, NetSerializable]
