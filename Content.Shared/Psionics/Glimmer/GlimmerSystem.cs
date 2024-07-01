@@ -2,7 +2,6 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Configuration;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
-using Content.Shared.Mobs;
 
 namespace Content.Shared.Psionics.Glimmer
 {
@@ -12,6 +11,7 @@ namespace Content.Shared.Psionics.Glimmer
     public sealed class GlimmerSystem : EntitySystem
     {
         [Dependency] private readonly IConfigurationManager _cfg = default!;
+
         private float _glimmerInput = 0;
         /// <summary>
         ///     GlimmerInput represents the system-facing value of the station's glimmer, and is given by f(y) for this graph: https://www.desmos.com/calculator/posutiq38e
@@ -26,6 +26,19 @@ namespace Content.Shared.Psionics.Glimmer
             private set { _glimmerInput = _enabled ? Math.Max(value, 0) : 0; }
         }
         private float _glimmerOutput = 0;
+
+        /// <summary>
+        ///     This constant is equal to the intersection of the Glimmer Equation(https://www.desmos.com/calculator/posutiq38e) and the line Y = X.
+        /// </summary>
+        private const float _glimmerEquilibrium = 502.941f;
+
+        /// <summary>
+        ///     This constant is equal to the intersection of the Glimmer Equation(https://www.desmos.com/calculator/posutiq38e) and the line Y = X.
+        /// </summary>
+        public float GlimmerEquilibrium
+        {
+            get { return _glimmerEquilibrium; }
+        }
 
         /// <summary>
         ///     Glimmer Output represents the player-facing value of the station's glimmer, and is given by f(x) for this graph: https://www.desmos.com/calculator/posutiq38e
@@ -55,7 +68,8 @@ namespace Content.Shared.Psionics.Glimmer
         }
 
         /// <summary>
-        /// Return an abstracted range of a glimmer count.
+        ///     Return an abstracted range of a glimmer count. This is a legacy system used to support the Prober,
+        ///     and is the lowest form of abstracted glimmer. It's meant more for sprite states than math.
         /// </summary>
         /// <param name="glimmer">What glimmer count to check. Uses the current glimmer by default.</param>
         public GlimmerTier GetGlimmerTier(float? glimmer = null)
@@ -66,14 +80,30 @@ namespace Content.Shared.Psionics.Glimmer
             return glimmer switch
             {
                 <= 49 => GlimmerTier.Minimal,
-                >= 50 and <= 99 => GlimmerTier.Low,
-                >= 100 and <= 299 => GlimmerTier.Moderate,
-                >= 300 and <= 499 => GlimmerTier.High,
-                >= 500 and <= 899 => GlimmerTier.Dangerous,
+                >= 50 and <= 399 => GlimmerTier.Low,
+                >= 400 and <= 599 => GlimmerTier.Moderate,
+                >= 600 and <= 699 => GlimmerTier.High,
+                >= 700 and <= 899 => GlimmerTier.Dangerous,
                 _ => GlimmerTier.Critical,
             };
         }
 
+        /// <summary>
+        ///     Returns a 0 through 10 range of glimmer. Do not divide by this for any reason.
+        /// </summary>
+        /// <returns></returns>
+        public int GetGlimmerOutputInteger()
+        {
+            if (!_enabled)
+                return 1;
+            else return (int) MathF.Round(GlimmerOutput / 1000);
+        }
+
+        /// <summary>
+        ///     This is the public facing function for modifying Glimmer based on the log scale. Simply add or subtract to this with any nonzero number
+        ///     Go through this if you want glimmer to be modified faster if its below 502.941f, and slower if above said equilibrium
+        /// </summary>
+        /// <param name="delta"></param>
         public void DeltaGlimmerInput(float delta)
         {
             if (_enabled && delta != 0)
@@ -83,6 +113,11 @@ namespace Content.Shared.Psionics.Glimmer
             }
         }
 
+        /// <summary>
+        ///     This is the public facing function for modifying Glimmer based on a linear scale. Simply add or subtract to this with any nonzero number.
+        ///     This is primarily intended for load bearing systems such as Probers and Drainers, and should not be called by most things by design.
+        /// </summary>
+        /// <param name="delta"></param>
         public void DeltaGlimmerOutput(float delta)
         {
             if (_enabled && delta != 0)
@@ -92,22 +127,45 @@ namespace Content.Shared.Psionics.Glimmer
             }
         }
 
+        /// <summary>
+        ///     This directly sets the Player-Facing side of Glimmer to a given value, and is not intended to be called by anything other than admin commands.
+        ///     This is clamped between 0 and 999.999f
+        /// </summary>
+        /// <param name="set"></param>
         public void SetGlimmerOutput(float set)
         {
             if (_enabled && set != 0)
             {
-                GlimmerOutput = set;
+                GlimmerOutput = Math.Clamp(set, 0, 999.999f);
                 GlimmerInput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
             }
         }
 
+        /// <summary>
+        ///     This directly sets the code-facing side of Glimmer to a given value, and is not intended to be called by anything other than admin commands.
+        ///     This accepts any positive float input.
+        /// </summary>
+        /// <param name="set"></param>
         public void SetGlimmerInput(float set)
         {
-            if (_enabled && set != 0)
+            if (_enabled && set >= 0)
             {
                 GlimmerInput = set;
                 GlimmerOutput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
             }
+        }
+
+        /// <summary>
+        ///     Outputs the ratio between actual glimmer and glimmer equilibrium(The intersection of the Glimmer Equation and the line y = x).
+        ///     This will return 0.01f if glimmer is 0, and 1 if glimmer is disabled.
+        /// </summary>
+        public float GetGlimmerEquilibriumRatio()
+        {
+            if (!_enabled)
+                return 1;
+            else if (GlimmerOutput == 0)
+                return 0.01f;
+            else return GlimmerOutput / GlimmerEquilibrium;
         }
     }
 
