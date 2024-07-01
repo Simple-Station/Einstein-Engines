@@ -30,15 +30,8 @@ namespace Content.Shared.Psionics.Glimmer
         /// <summary>
         ///     This constant is equal to the intersection of the Glimmer Equation(https://www.desmos.com/calculator/posutiq38e) and the line Y = X.
         /// </summary>
-        private const float _glimmerEquilibrium = 502.941f;
+        public const float GlimmerEquilibrium = 502.941f;
 
-        /// <summary>
-        ///     This constant is equal to the intersection of the Glimmer Equation(https://www.desmos.com/calculator/posutiq38e) and the line Y = X.
-        /// </summary>
-        public float GlimmerEquilibrium
-        {
-            get { return _glimmerEquilibrium; }
-        }
 
         /// <summary>
         ///     Glimmer Output represents the player-facing value of the station's glimmer, and is given by f(x) for this graph: https://www.desmos.com/calculator/posutiq38e

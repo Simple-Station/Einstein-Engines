@@ -118,7 +118,7 @@ namespace Content.Server.Psionics.Abilities
                     fireball.IntensitySlope = 1 * psionicFactor;
                     fireball.TotalIntensity = 25 * psionicFactor;
 
-                    if (_glimmerSystem.GlimmerOutput >= _glimmerSystem.GlimmerEquilibrium)
+                    if (_glimmerSystem.GlimmerOutput >= GlimmerSystem.GlimmerEquilibrium)
                         fireball.CanCreateVacuum = true;
                     else fireball.CanCreateVacuum = false;
 
