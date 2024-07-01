@@ -160,19 +160,6 @@ namespace Content.Server.Strip
             args.Verbs.Add(verb);
         }
 
-        private void StripPopup(string messageId, ThievingStealth stealth, EntityUid target, EntityUid? user = null, EntityUid? item = null, string slot = "")
-        {
-            bool subtle = (stealth == ThievingStealth.Subtle);
-            PopupType? popupSize = _thieving.GetPopupTypeFromStealth(stealth);
-
-            if (popupSize.HasValue) // We should always have a value if we're not hidden
-                _popup.PopupEntity(Loc.GetString(messageId,
-                ("user", subtle ? Loc.GetString("thieving-component-user") : user ?? EntityUid.Invalid),
-                ("item", subtle ? Loc.GetString("thieving-component-item") : item ?? EntityUid.Invalid),
-                ("slot", slot)),
-                target, target, popupSize.Value);
-        }
-
         private void OnActivateInWorld(EntityUid uid, StrippableComponent component, ActivateInWorldEvent args)
         {
             if (args.Target == args.User)

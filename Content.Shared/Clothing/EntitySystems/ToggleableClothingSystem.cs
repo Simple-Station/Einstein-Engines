@@ -114,15 +114,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
             return;
 
         if (!hidden)
-        {
-            PopupType? popupSize = _thieving.GetPopupTypeFromStealth(stealth);
-
-            if (popupSize.HasValue) // we should always have a value if we're not hidden
-                _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-interact",
-                ("user", (stealth == ThievingStealth.Subtle) ? "Someone" : Identity.Entity(user, EntityManager)),
-                ("item", item)),
-                wearer, wearer, popupSize.Value);
-        }
+            _strippable.StripPopup("strippable-component-alert-owner-interact", stealth, wearer, user: Identity.Entity(user, EntityManager), item: item);
     }
 
     private void OnGetAttachedStripVerbsEvent(EntityUid uid, AttachedClothingComponent component, GetVerbsEvent<EquipmentVerb> args)
