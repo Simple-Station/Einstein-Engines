@@ -26,7 +26,16 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
 
             if (offerItem.Hand != null &&
                 hands.Hands[offerItem.Hand].HeldEntity == null)
-                UnOffer(uid, offerItem);
+            {
+                if (offerItem.Target != null)
+                {
+                    UnReceive(offerItem.Target.Value, offerItem: offerItem);
+                    offerItem.IsInOfferMode = false;
+                    Dirty(uid, offerItem);
+                }
+                else
+                    UnOffer(uid, offerItem);
+            }
 
             if (!offerItem.IsInReceiveMode)
             {
@@ -50,15 +59,14 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
             !TryComp<HandsComponent>(uid, out var hands))
             return;
 
-        if (offerItem.Item != null && !_hands.TryPickup(component.Target.Value, offerItem.Item.Value,
-                handsComp: hands))
-        {
-            _popup.PopupEntity(Loc.GetString("offer-item-full-hand"), uid, uid);
-            return;
-        }
-
         if (offerItem.Item != null)
         {
+            if (!_hands.TryPickup(uid, offerItem.Item.Value, handsComp: hands))
+            {
+                _popup.PopupEntity(Loc.GetString("offer-item-full-hand"), uid, uid);
+                return;
+            }
+
             _popup.PopupEntity(Loc.GetString("offer-item-give",
                 ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
                 ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
@@ -69,14 +77,7 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
                 , component.Target.Value, Filter.PvsExcept(component.Target.Value, entityManager: EntityManager), true);
         }
 
-        if (!offerItem.IsInReceiveMode)
-        {
-            offerItem.Target = null;
-            component.Target = null;
-        }
-
         offerItem.Item = null;
-        offerItem.Hand = null;
-        component.IsInReceiveMode = false;
+        UnReceive(uid, component, offerItem);
     }
 }

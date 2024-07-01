@@ -21,10 +21,8 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         if (!TryComp<OfferItemComponent>(args.User, out var offerItem))
             return;
 
-        if (!TryComp<HandsComponent>(uid, out _))
-            return;
-
-        if (args.User == uid)
+        if (args.User == uid || component.IsInReceiveMode ||
+            (offerItem.IsInReceiveMode && offerItem.Target != uid))
             return;
 
         component.IsInReceiveMode = true;
@@ -75,7 +73,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
                 _popup.PopupEntity(Loc.GetString("offer-item-no-give",
                     ("item", Identity.Entity(component.Item.Value, EntityManager)),
                     ("target", Identity.Entity(component.Target.Value, EntityManager))), uid, uid);
-                _popup.PopupEntity(Loc.GetString("offer-item-try-give-target",
+                _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
                     ("user", Identity.Entity(uid, EntityManager)),
                     ("item", Identity.Entity(component.Item.Value, EntityManager))), uid, component.Target.Value);
             }
@@ -85,7 +83,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
                 _popup.PopupEntity(Loc.GetString("offer-item-no-give",
                     ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
                     ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
-                _popup.PopupEntity(Loc.GetString("offer-item-try-give-target",
+                _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
                     ("user", Identity.Entity(component.Target.Value, EntityManager)),
                     ("item", Identity.Entity(offerItem.Item.Value, EntityManager))), component.Target.Value, uid);
             }
@@ -104,6 +102,45 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         component.Hand = null;
         component.Target = null;
         component.Item = null;
+
+        Dirty(uid, component);
+    }
+
+
+    /// <summary>
+    /// Cancels the transfer of the item
+    /// </summary>
+    protected void UnReceive(EntityUid uid, OfferItemComponent? component = null, OfferItemComponent? offerItem = null)
+    {
+        if (component == null && !TryComp(uid, out component))
+            return;
+
+        if (offerItem == null && !TryComp(component.Target, out offerItem))
+            return;
+
+        if (!TryComp<HandsComponent>(uid, out var hands) || hands.ActiveHand == null ||
+            component.Target == null)
+            return;
+
+        if (offerItem.Item != null)
+        {
+            _popup.PopupEntity(Loc.GetString("offer-item-no-give",
+                ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
+                ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
+            _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
+                ("user", Identity.Entity(component.Target.Value, EntityManager)),
+                ("item", Identity.Entity(offerItem.Item.Value, EntityManager))), component.Target.Value, uid);
+        }
+
+        if (!offerItem.IsInReceiveMode)
+        {
+            offerItem.Target = null;
+            component.Target = null;
+        }
+
+        offerItem.Item = null;
+        offerItem.Hand = null;
+        component.IsInReceiveMode = false;
 
         Dirty(uid, component);
     }

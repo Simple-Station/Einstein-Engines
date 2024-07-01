@@ -61,6 +61,14 @@ public abstract partial class SharedOfferItemSystem
             }
         }
 
+        if (offerItem.Target != null)
+        {
+            UnReceive(offerItem.Target.Value, offerItem: offerItem);
+            offerItem.IsInOfferMode = false;
+            Dirty(uid, offerItem);
+            return;
+        }
+
         UnOffer(uid, offerItem);
     }
 }

@@ -14,7 +14,7 @@ binds:
   key: Escape
   priority: 10
 - function: Use
-  type: State
+  type: Stateoff
   key: MouseLeft
   canFocus: true
 - function: UseSecondary
@@ -257,8 +257,7 @@ binds:
   mod1: Shift
 - function: OfferItem
   type: State
-  key: V
-  mod1: Control
+  key: F
 - function: ShowDebugConsole
   type: State
   key: Tilde
