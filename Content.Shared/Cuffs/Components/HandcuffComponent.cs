@@ -86,11 +86,11 @@ public sealed partial class HandcuffComponent : Component
     public SoundSpecifier EndUncuffSound = new SoundPathSpecifier("/Audio/Items/Handcuffs/cuff_takeoff_end.ogg");
 
     /// <summary>
-    ///     Both a bool and a multiplier combined. If it is 0, handcuffs are unaffected by mass contests. The absolute value of any nonzero acts as a multiplier on how much mass affects uncuff speed.
-    ///     A value of 1 provides the full modifier from MassContest. 0.5 is half the effect of mass contests, and so on.
+    ///     Acts as a two-state option for handcuff speed. When true, handcuffs will be easier to get out of if you are larger than average. Representing the use of strength to break things like zipties.
+    ///     When false, handcuffs are easier to get out of if you are smaller than average, representing the use of dexterity to slip the cuffs.
     /// </summary>
     [DataField]
-    public float UncuffMassModifier = 0f;
+    public bool UncuffMassMultiplies = false;
 }
 
 /// <summary>
