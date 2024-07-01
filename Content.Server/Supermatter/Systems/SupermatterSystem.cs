@@ -324,34 +324,22 @@ public sealed class SupermatterSystem : EntitySystem
         {
             var sb = new StringBuilder();
             var loc = string.Empty;
-            var alertLevel = sm.AlertCodeYellowId;
 
             switch (sm.PreferredDelamType)
             {
                 case DelamType.Explosion:
-                default:
-                    loc = "supermatter-delam-explosion";
-                    break;
+                default: loc = "supermatter-delam-explosion"; break;
 
-                case DelamType.Singulo:
-                    loc = "supermatter-delam-overmass";
-                    alertLevel = sm.AlertCodeDeltaId;
-                    break;
+                case DelamType.Singulo: loc = "supermatter-delam-overmass"; break;
 
-                case DelamType.Tesla:
-                    loc = "supermatter-delam-tesla";
-                    alertLevel = sm.AlertCodeDeltaId;
-                    break;
+                case DelamType.Tesla: loc = "supermatter-delam-tesla"; break;
 
-                case DelamType.Cascade:
-                    loc = "supermatter-delam-cascade";
-                    alertLevel = sm.AlertCodeDeltaId;
-                    break;
+                case DelamType.Cascade: loc = "supermatter-delam-cascade"; break;
             }
 
             var station = _station.GetOwningStation(uid);
             if (station != null)
-                _alert.SetLevel((EntityUid) station, alertLevel, true, true, true, false);
+                _alert.SetLevel((EntityUid) station, sm.AlertCodeDeltaId, true, true, true, false);
 
             sb.AppendLine(Loc.GetString(loc));
             sb.AppendLine(Loc.GetString("supermatter-seconds-before-delam", ("seconds", sm.DelamTimer)));
