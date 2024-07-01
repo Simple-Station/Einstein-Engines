@@ -88,7 +88,8 @@ namespace Content.Shared.Psionics.Abilities
             var ev = new PsionicPowerUsedEvent(uid, power);
             RaiseLocalEvent(uid, ev, false);
 
-            if (!overrideGlimmer)
+            //Redundant check for the GlimmerEnabled CVar because I want to skip this math too if its turned off.
+            if (_glimmerSystem.GetGlimmerEnabled() && !overrideGlimmer)
             {
                 if (psionic == null)
                     _glimmerSystem.DeltaGlimmerInput(_robustRandom.NextFloat(minGlimmer, maxGlimmer));

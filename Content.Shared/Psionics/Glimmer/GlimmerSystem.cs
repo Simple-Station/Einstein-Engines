@@ -160,6 +160,14 @@ namespace Content.Shared.Psionics.Glimmer
                 return 0.01f;
             else return GlimmerOutput / GlimmerEquilibrium;
         }
+
+        /// <summary>
+        ///     Returns the GlimmerEnabled CVar, useful for niche early exits in systems that otherwise don't have any calls to CVars.
+        /// </summary>
+        public bool GetGlimmerEnabled()
+        {
+            return _enabled;
+        }
     }
 
     [Serializable, NetSerializable]
