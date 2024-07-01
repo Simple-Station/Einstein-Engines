@@ -239,7 +239,7 @@ namespace Content.Server.Strip
                 bool subtle = (ev.Stealth == ThievingStealth.Subtle);
                 PopupType? popupSize = _thieving.GetPopupTypeFromStealth(ev.Stealth);
 
-                if (popupSize.HasValue) // we should always have a value if we're not hidden
+                if (popupSize.HasValue) // We should always have a value if we're not hidden
                     _popup.PopupEntity(Loc.GetString("strippable-component-alert-owner-insert",
                     ("user", subtle ? "Someone" : Identity.Entity(user, EntityManager)),
                     ("item", subtle ? "something" : userHands.ActiveHandEntity)),
