@@ -1,6 +1,6 @@
 - type: trait
   id: Thieving
-  category: Uncategorized
+  category: Physical
   points: -4
   components:
     - type: Thieving
