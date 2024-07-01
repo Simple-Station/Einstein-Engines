@@ -1,6 +1,6 @@
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
-using Content.Shared.Traits.Assorted;
+using Content.Shared.Traits.Assorted.Components;
 
 namespace Content.Shared.Drunk;
 

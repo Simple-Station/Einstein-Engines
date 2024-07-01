@@ -48,8 +48,11 @@
     flavorKind: station-event-random-sentience-flavor-organic
   - type: Bloodstream
     bloodMaxVolume: 50
-  - type: ReplacementAccent
-    accent: mouse
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Effects/bite.ogg
@@ -61,6 +64,7 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
 
 - type: entity
   name: bee
@@ -129,6 +133,13 @@
         - ReagentId: GroundBee
           Quantity: 5
   - type: ZombieImmune
+  - type: RandomBark
+    barks:
+      - Bzzzzz
+      - Bzzz bzzz
+      - Bzzzzzzzzzzzz
+      - Bzz
+    barkMultiplier: 1.5
 
 - type: entity
   name: bee
@@ -229,13 +240,17 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEgg
-  - type: ReplacementAccent
-    accent: chicken
+  - type: LanguageSpeaker
+    speaks:
+    - Chicken
+    understands:
+    - Chicken
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: RandomBark
 
 - type: entity
   parent: MobChicken
@@ -504,8 +519,11 @@
       prob: 0.5
   - type: Extractable
     grindableSolutionName: food
-  - type: ReplacementAccent
-    accent: mothroach
+  - type: LanguageSpeaker
+    speaks:
+    - Moffic
+    understands:
+    - Moffic
   - type: ZombieAccentOverride
     accent: zombieMoth
   - type: Vocal
@@ -601,13 +619,18 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEgg
-  - type: ReplacementAccent
-    accent: duck
+  - type: LanguageSpeaker
+    speaks:
+    - Duck
+    understands:
+    - Duck
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: RandomBark
+    barkMultiplier: 0.7
 
 - type: entity
   name: white duck #Quack
@@ -787,6 +810,16 @@
   - type: GuideHelp
     guides:
     - Chef
+  - type: RandomBark
+    barks:
+      - Mooooooo
+      - Moo
+      - Huff
+      - Mooooooooooo
+      - Moooooo
+      - Moooo
+    barkMultiplier: 3
+
 
 - type: entity
   name: crab
@@ -839,8 +872,11 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
-  - type: ReplacementAccent
-    accent: crab
+  - type: LanguageSpeaker
+    speaks:
+    - Crab
+    understands:
+    - Crab
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CopperBlood
@@ -852,6 +888,12 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
+  - type: RandomBark
+    barks:
+      - click clack
+      - clack
+      - clickity clack
+      - clack clack
 
 - type: entity
   name: goat
@@ -1076,8 +1118,11 @@
   - type: Inventory
     speciesId: kangaroo
     templateId: kangaroo
-  - type: ReplacementAccent
-    accent: kangaroo
+  - type: LanguageSpeaker
+    speaks:
+    - Kangaroo
+    understands:
+    - Kangaroo
   - type: InventorySlots
   - type: Strippable
   - type: Butcherable
@@ -1266,7 +1311,12 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: MonkeyAccent
+  - type: LanguageSpeaker
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - Kobold
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
   - type: AlwaysRevolutionaryConvertible
@@ -1300,7 +1350,13 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: MonkeyAccent
+  - type: LanguageSpeaker
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - Kobold
+    - GalacticCommon
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -1339,8 +1395,12 @@
   - type: NameIdentifier
     group: Kobold
   - type: LizardAccent
-  - type: ReplacementAccent
-    accent: kobold
+  - type: LanguageSpeaker
+    speaks:
+    - Kobold
+    understands:
+    - Kobold
+    - Monkey
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
@@ -1446,6 +1506,8 @@
     makeSentient: true
     name: ghost-role-information-kobold-name
     description: ghost-role-information-kobold-description
+  - type: RandomBark
+    barkMultiplier: 0.65
 
 - type: entity
   name: guidebook monkey
@@ -1568,8 +1630,11 @@
     spawned:
     - id: FoodMeatRat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: Tag
     tags:
     - Trash
@@ -1605,6 +1670,8 @@
   - type: BadFood
   - type: NonSpreaderZombie
   - type: PreventSpiller
+  - type: RandomBark
+    barkMultiplier: 0.3
 
 - type: entity
   parent: MobMouse
@@ -1840,6 +1907,18 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
+    barkMultiplier: 1.3
+    barks:
+      - Croooaaaakkk
+      - Ribbit
+      - Ribbit
+      - Ribbit
+      - Crooaak
+      - Ribbit
+      - Ribbit
+      - Ribbit
+      - Bibbit
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity
@@ -1894,6 +1973,11 @@
       path: /Audio/Animals/parrot_raught.ogg
   - type: Bloodstream
     bloodMaxVolume: 50
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    understands:
+    - GalacticCommon
 
 - type: entity
   name: penguin
@@ -1953,6 +2037,10 @@
     heatDamage:
       types:
         Heat : 0.2 #per second, scales with temperature & other constants
+  - type: RandomBark
+    barks:
+      - Wank
+    barkMultiplier: 0.6
 
 - type: entity
   name: grenade penguin
@@ -2068,6 +2156,14 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
+  - type: RandomBark
+    barkMultiplier: 1.5
+    barks:
+      - Hsssssss
+      - Hss
+      - Hsssss
+      - Hisss
+      - Hshsss
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -2140,8 +2236,11 @@
   - type: MeleeChemicalInjector
     transferAmount: 0.75
     solution: melee
-  - type: ReplacementAccent
-    accent: xeno
+  - type: LanguageSpeaker
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-tarantula
@@ -2192,6 +2291,7 @@
       groups:
         Brute: -0.07
         Burn: -0.07
+  - type: RandomBark
 
 - type: entity
   name: tarantula
@@ -2472,6 +2572,11 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageSpeaker
+    speaks:
+    - Fox
+    understands:
+    - Fox
 
 - type: entity
   name: corgi
@@ -2518,8 +2623,11 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: ReplacementAccent
-    accent: dog
+  - type: LanguageSpeaker
+    speaks:
+    - Dog
+    understands:
+    - Dog
   - type: InteractionPopup
     interactSuccessString: petting-success-dog
     interactFailureString: petting-failure-generic
@@ -2536,6 +2644,7 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
 
 - type: entity
   name: corrupted corgi
@@ -2671,8 +2780,11 @@
     spawned:
     - id: FoodMeat
       amount: 3
-  - type: ReplacementAccent
-    accent: cat
+  - type: LanguageSpeaker
+    speaks:
+    - Cat
+    understands:
+    - Cat
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-cat
@@ -2692,6 +2804,7 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
 
 - type: entity
   name: calico cat
@@ -2739,6 +2852,12 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+  - type: LanguageSpeaker
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - GalacticCommon
 
 - type: entity
   name: space cat
@@ -2880,6 +2999,10 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
+    barkMultiplier: 10
+    barks:
+      - Sloth
 
 - type: entity
   name: ferret
@@ -3034,8 +3157,11 @@
     spawned:
     - id: FoodMeat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: Tag
     tags:
     - VimPilot
@@ -3076,6 +3202,8 @@
   - type: MobPrice
     price: 60
   - type: NonSpreaderZombie
+  - type: RandomBark
+    barkMultiplier: 0.45
 
 - type: entity
   name: pig
@@ -3141,8 +3269,11 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: ReplacementAccent
-    accent: pig
+  - type: LanguageSpeaker
+    speaks:
+    - Pig
+    understands:
+    - Pig
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -3228,6 +3359,12 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
+  - type: LanguageSpeaker
+    speaks:
+    - RootSpeak
+    understands:
+    - GalacticCommon
+    - RootSpeak
 
 - type: entity
   parent: MobDionaNymph
@@ -3236,3 +3373,4 @@
   components:
   - type: ReplacementAccent
     accent: nymph
+  - type: RandomBark
