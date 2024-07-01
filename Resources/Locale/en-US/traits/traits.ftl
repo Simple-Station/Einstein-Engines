@@ -33,5 +33,6 @@ trait-name-Snoring = Snoring
 trait-description-Snoring = You will snore while sleeping.
 
 trait-name-Thieving = Thieving
-trait-description-Thieving = You are deft with your hands, and talented at convincing people of their belongings.
-                             You can identify pocketed items, steal them quieter, and steal ~33% faster.
+trait-description-Thieving =
+    You are deft with your hands, and talented at convincing people of their belongings.
+    You can identify pocketed items, steal them quieter, and steal ~33% faster.
