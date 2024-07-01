@@ -48,11 +48,11 @@ namespace Content.Shared.Strip.Components
         public float Time => MathF.Max(InitialTime * Multiplier + Additive, 0f);
         public float Additive = 0;
         public float Multiplier = 1f;
-        public bool Stealth;
+        public ThievingStealth Stealth;
 
         public SlotFlags TargetSlots { get; } = SlotFlags.GLOVES;
 
-        public BaseBeforeStripEvent(float initialTime, bool stealth = false)
+        public BaseBeforeStripEvent(float initialTime, ThievingStealth stealth = ThievingStealth.Obvious)
         {
             InitialTime = initialTime;
             Stealth = stealth;
@@ -67,7 +67,7 @@ namespace Content.Shared.Strip.Components
     /// </remarks>
     public sealed class BeforeStripEvent : BaseBeforeStripEvent
     {
-        public BeforeStripEvent(float initialTime, bool stealth = false) : base(initialTime, stealth) { }
+        public BeforeStripEvent(float initialTime, ThievingStealth stealth = ThievingStealth.Obvious) : base(initialTime, stealth) { }
     }
 
     /// <summary>
@@ -78,6 +78,6 @@ namespace Content.Shared.Strip.Components
     /// </remarks>
     public sealed class BeforeGettingStrippedEvent : BaseBeforeStripEvent
     {
-        public BeforeGettingStrippedEvent(float initialTime, bool stealth = false) : base(initialTime, stealth) { }
+        public BeforeGettingStrippedEvent(float initialTime, ThievingStealth stealth = ThievingStealth.Obvious) : base(initialTime, stealth) { }
     }
 }
