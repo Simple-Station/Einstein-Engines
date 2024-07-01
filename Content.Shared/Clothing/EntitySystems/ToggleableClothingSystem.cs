@@ -114,7 +114,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
 
         if (!hidden)
         {
-            PopupType popupSize = (stealth == ThievingStealth.Subtle);
+            PopupType popupSize = (stealth == ThievingStealth.Subtle) ? PopupType.Small : PopupType.Large;
 
             _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-interact",
                 ("user", (stealth == ThievingStealth.Subtle) ? "Someone" : Identity.Entity(user, EntityManager)),
