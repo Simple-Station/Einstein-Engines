@@ -68,8 +68,12 @@ public sealed class NPCConversationTreePrototype : IPrototype, ISerializationHoo
         // Cache the strings mapping to prompts.
         foreach (var topic in Dialogue)
         {
+            if (topic == null)
+                continue;
             foreach (var prompt in topic.Prompts)
             {
+                if (prompt == null)
+                    continue;
                 PromptToTopic[prompt] = topic;
             }
         }
