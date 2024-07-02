@@ -4257,3 +4257,11 @@ Entries:
       message: Most items now take time to equip and unequip, especially space suits.
   id: 6132
   time: '2024-06-30T18:22:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Spent bullet casings now fly away from a shooter in a cinematic manner,
+        rather than fall at their feet. 
+  id: 6133
+  time: '2024-07-01T22:37:29.0000000+00:00'

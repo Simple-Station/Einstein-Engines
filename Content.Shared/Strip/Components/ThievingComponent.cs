@@ -10,7 +10,7 @@ public sealed partial class ThievingComponent : Component
     /// How much the strip time should be shortened by
     /// </summary>
     [DataField]
-    public float StripTimeReduction = 0.5f;
+    public TimeSpan StripTimeReduction = TimeSpan.FromSeconds(0.5f);
 
     /// <summary>
     ///  A multiplier coefficient for strip time

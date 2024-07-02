@@ -1,5 +1,6 @@
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
+using Content.Shared.Strip;
 using Content.Shared.Strip.Components;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -19,7 +20,7 @@ public sealed class ThievingSystem : EntitySystem
 
     private void OnBeforeStrip(EntityUid uid, ThievingComponent component, BeforeStripEvent args)
     {
-        args.Stealth = (ThievingStealth) Math.Max(((sbyte) args.Stealth), (sbyte) component.Stealth);
+        args.Stealth = (ThievingStealth) Math.Max((sbyte) args.Stealth, (sbyte) component.Stealth);
         args.Additive -= component.StripTimeReduction;
         args.Multiplier *= component.StripTimeMultiplier;
     }
