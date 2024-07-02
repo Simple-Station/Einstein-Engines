@@ -278,10 +278,12 @@
         - PillCanister
         - Radio
         - DiscreteHealthAnalyzer
-        - AutoinjectorCartridge #Goobstation - ParamedHypo
-        - Tourniquet #Goobstation - ParamedHypo
+        - SurgeryTool
+        - Dropper
+        - AutoinjectorCartridge
+        - Tourniquet
       components:
-        - SurgeryTool # Shitmed Change
+        - SurgeryTool
         - Hypospray
         - Injector
         - Pill
@@ -319,7 +321,6 @@
           tags:
           - Wrench
     sprite: Clothing/Belt/belt_overlay.rsi
-  # DeltaV - Add medkit slot to medical belts
   - type: ItemSlots
     slots:
       medkit:
@@ -333,7 +334,6 @@
       storagebase: !type:Container
         ents: []
       medkit: !type:ContainerSlot {}
-  # End of DeltaV - Add medkit slot to medical belts.
   - type: Appearance
 
 - type: entity
@@ -360,7 +360,7 @@
   - type: Storage
     whitelist:
       tags:
-        - PlantAnalyzer
+      - PlantAnalyzer
         - PlantSampleTaker
         - BotanyShovel
         - BotanyHoe
@@ -370,6 +370,7 @@
         - Bottle
         - Syringe
         - CigPack
+        - Dropper
       components:
         - Seed
         - Smokable
@@ -490,7 +491,7 @@
     sprite: Clothing/Belt/security.rsi
   - type: Clothing
     sprite: Clothing/Belt/security.rsi
-  - type: ExplosionResistance # Goobstation
+  - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: Storage
     whitelist:
@@ -683,11 +684,11 @@
   components:
   - type: StorageFill
     contents:
-      - id: GrenadeFlashBang
-      - id: TearGasGrenade
-      - id: Stunbaton
-      - id: Handcuffs
-      - id: Handcuffs
+    - id: GrenadeFlashBang
+    - id: TearGasGrenade
+    - id: Stunbaton
+    - id: Handcuffs
+    - id: Handcuffs
 
 - type: entity
   parent: ClothingBeltStorageBase
