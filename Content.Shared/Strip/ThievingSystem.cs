@@ -1,9 +1,7 @@
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
-using Content.Shared.Strip;
 using Content.Shared.Strip.Components;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Strip;
 
