@@ -7,6 +7,7 @@ using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Content.Shared.Popups;
+using Content.Server.MassMedia.Components;
 
 namespace Content.Server.Psionics.Abilities
 {
@@ -37,25 +38,35 @@ namespace Content.Server.Psionics.Abilities
             if (Deleted(uid))
                 return;
 
-            AddRandomPsionicPower(uid);
+            var rollCount = 0;
+            while (rollCount < 3)
+            {
+                if (AddRandomPsionicPower(uid))
+                    break;
+
+                rollCount++;
+            }
+
         }
-        public void AddRandomPsionicPower(EntityUid uid)
+        public bool AddRandomPsionicPower(EntityUid uid)
         {
             EnsureComp<PsionicComponent>(uid, out var psionic);
 
             if (!_prototypeManager.TryIndex<WeightedRandomPrototype>("RandomPsionicPowerPool", out var pool))
             {
                 Logger.Error("Can't index the random psionic power pool!");
-                return;
+                return false;
             }
 
-            // uh oh, stinky!
-            var newComponent = (Component) _componentFactory.GetComponent(pool.Pick());
-            newComponent.Owner = uid;
+            var newComponent = _componentFactory.GetComponent(pool.Pick());
 
-            EntityManager.AddComponent(uid, newComponent);
-
-            _glimmerSystem.DeltaGlimmerInput(_random.NextFloat(psionic.Amplification * psionic.Dampening, psionic.Amplification * psionic.Dampening * 5));
+            if (!EntityManager.HasComponent(uid, newComponent.GetType()))
+            {
+                EntityManager.AddComponent(uid, newComponent);
+                _glimmerSystem.DeltaGlimmerInput(_random.NextFloat(psionic.Amplification * psionic.Dampening, psionic.Amplification * psionic.Dampening * 5));
+                return true;
+            }
+            return false;
         }
 
         public void RemovePsionics(EntityUid uid)
@@ -93,7 +104,7 @@ namespace Content.Server.Psionics.Abilities
 
             _statusEffectsSystem.TryAddStatusEffect(uid, "Stutter", TimeSpan.FromMinutes(5), false, "StutteringAccent");
 
-            _glimmerSystem.DeltaGlimmerOutput(-_random.NextFloat((int) MathF.Round(psionic.Amplification * psionic.Dampening * 5), (int) MathF.Round(psionic.Amplification * psionic.Dampening * 10)));
+            _glimmerSystem.DeltaGlimmerOutput(-_random.NextFloat(psionic.Amplification * psionic.Dampening * 5, psionic.Amplification * psionic.Dampening * 10));
             RemComp<PsionicComponent>(uid);
             RemComp<PotentialPsionicComponent>(uid);
         }
