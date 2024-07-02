@@ -31,3 +31,7 @@ trait-description-SocialAnxiety = You are anxious when you speak and stutter.
 
 trait-name-Snoring = Snoring
 trait-description-Snoring = You will snore while sleeping.
+
+trait-name-CPRTraining = CPR Training
+trait-description-CPRTraining = At some point in your life, you have received training in how to perform CPR.
+                                This trait is automatically given for free to medical doctors, and is intended for non-medical characters
