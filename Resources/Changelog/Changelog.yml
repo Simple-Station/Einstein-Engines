@@ -4265,3 +4265,9 @@ Entries:
         rather than fall at their feet. 
   id: 6133
   time: '2024-07-01T22:37:29.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Fix
+      message: Fixed loadouts becoming uneditable after spending all your points
+  id: 6134
+  time: '2024-07-02T07:18:27.0000000+00:00'
