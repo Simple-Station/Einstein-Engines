@@ -4,11 +4,10 @@ using System.Linq;
 using System.Numerics;
 using Robust.Shared.Utility;
 using Content.Server.Shuttles.Events;
-using Content.Shared.IdentityManagement;
 
 namespace Content.Server.Pinpointer;
 
-public sealed class PinpointerSystem : SharedPinpointerSystem
+public sealed partial class PinpointerSystem : SharedPinpointerSystem
 {
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
@@ -18,6 +17,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeMultiplePinpointer();
         _xformQuery = GetEntityQuery<TransformComponent>();
 
         SubscribeLocalEvent<PinpointerComponent, ActivateInWorldEvent>(OnActivate);
