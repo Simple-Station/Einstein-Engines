@@ -89,7 +89,6 @@
   description: greenshift-description
   rules:
   - BasicRoundstartVariation
-  - GameRuleMeteorScheduler
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
