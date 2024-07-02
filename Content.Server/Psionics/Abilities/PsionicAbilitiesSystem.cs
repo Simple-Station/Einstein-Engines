@@ -37,9 +37,6 @@ namespace Content.Server.Psionics.Abilities
             if (Deleted(uid))
                 return;
 
-            if (HasComp<PsionicComponent>(uid))
-                return;
-
             AddRandomPsionicPower(uid);
         }
         public void AddRandomPsionicPower(EntityUid uid)
