@@ -20,7 +20,7 @@ public sealed class ThievingSystem : EntitySystem
     {
         args.Stealth = (ThievingStealth) Math.Max((sbyte) args.Stealth, (sbyte) component.Stealth);
         args.Additive -= component.StripTimeReduction;
-        args.Multiplier *= component.StripTimeMultiplier;
+        args.Multiplier *= component.StripTimeMultiplier.Seconds;
     }
 
     public PopupType? GetPopupTypeFromStealth(ThievingStealth stealth)
