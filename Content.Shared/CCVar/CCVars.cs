@@ -2204,7 +2204,7 @@ namespace Content.Shared.CCVar
         ///     Setting this above 0 isn't very realistic, but people who see CPR in movies and TV will expect CPR to work this way.
         /// </summary>
         public static readonly CVarDef<float> CPRResuscitationChance =
-            CVarDef.Create("cpr.resuscitation_chance", 0.01f, CVar.REPLICATED | CVar.SERVER);
+            CVarDef.Create("cpr.resuscitation_chance", 0.05f, CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
         ///     By default, CPR reduces rot timers by an amount of seconds equal to the time spent performing CPR. This is an optional multiplier that can increase or decrease the amount
