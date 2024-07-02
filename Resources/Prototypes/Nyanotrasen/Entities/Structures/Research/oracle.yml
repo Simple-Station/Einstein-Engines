@@ -16,7 +16,10 @@
   - type: Oracle
   - type: Speech
     speechSounds: Tenor
+  - type: PotentialPsionic
   - type: Psionic
+    psychicFeedback:
+    - "oracle-feedback"
   - type: SolutionContainerManager
     solutions:
       fountain:
@@ -42,3 +45,6 @@
   - type: SpriteFade
   - type: Tag
     tags: []
+  - type: GuideHelp
+    guides:
+    - Psionics

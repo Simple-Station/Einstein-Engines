@@ -5,16 +5,14 @@ using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Psionics;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Research.Prototypes;
-using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -168,7 +166,7 @@ public sealed class OracleSystem : EntitySystem
             .Where(x => !x.Abstract)
             .Select(x => x.ID).ToList();
 
-        var amount = 20 + _random.Next(1, 30) + _glimmerSystem.Glimmer / 10f;
+        var amount = 20 + _random.Next(1, 30) + _glimmerSystem.GlimmerOutput / 10f;
         amount = (float) Math.Round(amount);
 
         var sol = new Solution();

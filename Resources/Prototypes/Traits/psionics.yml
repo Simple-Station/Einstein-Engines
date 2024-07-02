@@ -1,0 +1,39 @@
+- type: trait
+  id: LatentPsychic
+  category: Psionic
+  points: -1
+  components:
+    - type: PotentialPsionic
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PsionicInsulation
+        - NaturalTelepath
+
+- type: trait
+  id: PsionicInsulation
+  category: Psionic
+  points: -5
+  components:
+    - type: PsionicInsulation
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LatentPsychic
+        - NaturalTelepath
+
+- type: trait
+  id: NaturalTelepath
+  category: Psionic
+  points: -3
+  components:
+    - type: PotentialPsionic
+    - type: Psionic
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LatentPsychic
+        - PsionicInsulation

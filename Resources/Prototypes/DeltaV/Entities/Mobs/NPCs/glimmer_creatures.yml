@@ -24,6 +24,10 @@
           Quantity: 15
   - type: PotentialPsionic
   - type: Psionic
+    removable: false
+    amplification: 1
+    psychicFeedback:
+    - "glimmer-mite-feedback"
   - type: GlimmerSource
   - type: AmbientSound
     range: 6

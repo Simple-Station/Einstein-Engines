@@ -101,6 +101,12 @@
       - SimpleHostile
   - type: Damageable
     damageContainer: StructuralInorganic
+  - type: PotentialPsionic
+  - type: Psionic
+    removable: false
+    dampening: 1
+    psychicFeedback:
+    - "orecrab-feedback"
 
 - type: entity
   parent: MobOreCrab
@@ -292,6 +298,12 @@
     solution: bloodstream
   - type: DrainableSolution
     solution: bloodstream
+  - type: PotentialPsionic
+  - type: Psionic
+    removable: false
+    amplification: 1
+    psychicFeedback:
+    - "reagent-slime-feedback"
 
 - type: entity
   name: Reagent Slime Spawner
@@ -529,3 +541,20 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
         color: "#3e901c"
+
+- type: entity
+  id: ReagentSlimeLoto
+  parent: ReagentSlime
+  suffix: LotophagoiOil
+  components:
+  - type: Bloodstream
+    bloodReagent: LotophagoiOil
+  - type: PointLight
+    color: "#ffbf00"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#ffbf00"

@@ -120,6 +120,9 @@
         Slash: 0.85
         Piercing: 0.95
         Radiation: 0.95
+  - type: GuideHelp
+    guides:
+    - Psionics
 
 - type: entity
   parent: ClothingHeadBase

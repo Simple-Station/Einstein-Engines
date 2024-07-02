@@ -84,7 +84,10 @@
   - type: PotentialPsionic
   - type: Psionic
     removable: false
-  # - type: PyrokinesisPower # Pending psionic rework
+    amplification: 4
+    psychicFeedback:
+    - "ifrit-feedback"
+  - type: PyrokinesisPower
   - type: Grammar
     attributes:
       proper: true
@@ -108,7 +111,7 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Epistemics
-      time: 14400 # DeltaV - 4 hours
+      time: 14400
 
 - type: entity
   parent: WelderExperimental

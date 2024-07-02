@@ -4,7 +4,7 @@ using Content.Server.Psionics;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.StatusEffect;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio.Systems;

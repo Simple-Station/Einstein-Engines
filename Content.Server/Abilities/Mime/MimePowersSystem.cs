@@ -1,5 +1,4 @@
 using Content.Server.Popups;
-using Content.Server.Speech.Muting;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
 using Content.Shared.Alert;
@@ -10,7 +9,7 @@ using Content.Shared.Physics;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
-using Content.Shared.Abilities.Psionics; //Nyano - Summary: Makes Mime psionic.
+using Content.Shared.Psionics.Abilities;
 using Content.Shared.Speech.Muting;
 
 namespace Content.Server.Abilities.Mime
@@ -58,14 +57,21 @@ namespace Content.Server.Abilities.Mime
             EnsureComp<MutedComponent>(uid);
             _alertsSystem.ShowAlert(uid, AlertType.VowOfSilence);
             _actionsSystem.AddAction(uid, ref component.InvisibleWallActionEntity, component.InvisibleWallAction, uid);
-            //Nyano - Summary: Add Psionic Ability to Mime.
-            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
-                psionic.PsionicAbility = component.InvisibleWallActionEntity;
+
+            // Mimes gain their power from a special Vow, but this vow extends to Telepathic speech.
+            if (EnsureComp<PsionicComponent>(uid, out var psionic))
+            {
+                psionic.TelepathicMute = true;
+                psionic.ActivePowers.Add(component);
+                psionic.PsychicFeedback.Add(component.MimeFeedback);
+                psionic.Dampening += 1f;
+            }
         }
 
         /// <summary>
         /// Creates an invisible wall in a free space after some checks.
         /// </summary>
+        // TODO: Consider separating this out from the Mime entirely, and make a standalone "Telekinetic Barricade" power.
         private void OnInvisibleWall(EntityUid uid, MimePowersComponent component, InvisibleWallActionEvent args)
         {
             if (!component.Enabled)
@@ -98,9 +104,9 @@ namespace Content.Server.Abilities.Mime
                     return;
                 }
             }
-            // Begin Nyano-code: mime powers are psionic.
-            _psionics.LogPowerUsed(uid, "invisible wall");
-            // End Nyano-code.
+            if (TryComp<PsionicComponent>(uid, out var psionic))
+                _psionics.LogPowerUsed(uid, "invisible wall", psionic, 4, 6);
+
             _popupSystem.PopupEntity(Loc.GetString("mime-invisible-wall-popup", ("mime", uid)), uid);
             // Make sure we set the invisible wall to despawn properly
             Spawn(component.WallPrototype, _turf.GetTileCenter(tile.Value));
@@ -126,6 +132,14 @@ namespace Content.Server.Abilities.Mime
             _alertsSystem.ClearAlert(uid, AlertType.VowOfSilence);
             _alertsSystem.ShowAlert(uid, AlertType.VowBroken);
             _actionsSystem.RemoveAction(uid, mimePowers.InvisibleWallActionEntity);
+            if (TryComp<PsionicComponent>(uid, out var psionic))
+            {
+                psionic.TelepathicMute = false;
+                psionic.ActivePowers.Remove(mimePowers);
+                psionic.PsychicFeedback.Remove(mimePowers.MimeFeedback);
+                psionic.PsychicFeedback.Add(mimePowers.MimeBrokenFeedback);
+                psionic.Dampening -= 1f;
+            }
         }
 
         /// <summary>
@@ -149,6 +163,14 @@ namespace Content.Server.Abilities.Mime
             _alertsSystem.ClearAlert(uid, AlertType.VowBroken);
             _alertsSystem.ShowAlert(uid, AlertType.VowOfSilence);
             _actionsSystem.AddAction(uid, ref mimePowers.InvisibleWallActionEntity, mimePowers.InvisibleWallAction, uid);
+            if (TryComp<PsionicComponent>(uid, out var psionic))
+            {
+                psionic.TelepathicMute = true;
+                psionic.ActivePowers.Add(mimePowers);
+                psionic.PsychicFeedback.Add(mimePowers.MimeFeedback);
+                psionic.PsychicFeedback.Remove(mimePowers.MimeBrokenFeedback);
+                psionic.Dampening += 1f;
+            }
         }
     }
 }
