@@ -22,6 +22,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -44,6 +45,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -97,6 +99,9 @@
       sprintModifier: 0.8
     - type: HeldSpeedModifier
     - type: GroupExamine
+    - type: Tag
+      tags:
+        - FullBodyOuter
 
 - type: entity
   parent: [ClothingOuterBaseLarge, GeigerCounterClothing]
@@ -120,7 +125,10 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
-      
+  - type: Tag
+    tags:
+      - FullBodyOuter
+
 - type: entity
   parent: ClothingOuterBaseLarge
   id: ClothingOuterSuitSpaceNinja
@@ -171,6 +179,9 @@
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBase
@@ -196,6 +207,9 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBase
