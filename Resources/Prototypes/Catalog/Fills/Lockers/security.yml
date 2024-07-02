@@ -8,7 +8,7 @@
     - id: FlashlightSeclite
     - id: WeaponDisabler
     - id: ClothingBeltSecurityFilled
-    - id: ClothingHandsGlovesKravMaga # Goobstation - Martial Arts
+    - id: ClothingHandsGlovesKravMaga
     - id: Flash
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHeadsetAltSecurity
@@ -18,13 +18,14 @@
     - id: ClothingOuterWinterWarden
     - id: RubberStampWarden
     - id: DoorRemoteArmory
-    - id: ClothingOuterHardsuitCombatWarden # DeltaV - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
+    - id: ClothingOuterHardsuitCombatWarden
     - id: HoloprojectorSecurity
-    - id: BoxPDAPrisoner # Delta-V
-    - id: ClothingShoesBootsWinterWarden #Delta V: Add departmental winter boots
-    - id: BoxEncryptionKeyPrisoner #Delta-V
+    - id: BookSpaceLaw
+    - id: BoxPDAPrisoner
+    - id: ClothingShoesBootsWinterWarden
+    - id: BoxEncryptionKeyPrisoner
     - id: BoxPrisonerHeadset
-    - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
+    - id: LunchboxSecurityFilledRandom
       prob: 0.3
 
 - type: entity
@@ -37,7 +38,7 @@
     - id: FlashlightSeclite
     - id: WeaponDisabler
     - id: ClothingBeltSecurityFilled
-    - id: ClothingHandsGlovesKravMaga # Goobstation - Martial Arts
+    - id: ClothingHandsGlovesKravMaga
     - id: Flash
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHeadsetAltSecurity
@@ -48,11 +49,12 @@
     - id: RubberStampWarden
     - id: DoorRemoteArmory
     - id: HoloprojectorSecurity
-    - id: BoxPDAPrisoner # Delta-V
-    - id: ClothingShoesBootsWinterWarden #Delta V: Add departmental winter boots
-    - id: BoxEncryptionKeyPrisoner #Delta-V
+    - id: BookSpaceLaw
+    - id: BoxPDAPrisoner
+    - id: ClothingShoesBootsWinterWarden
+    - id: BoxEncryptionKeyPrisoner
     - id: BoxPrisonerHeadset
-    - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
+    - id: LunchboxSecurityFilledRandom
       prob: 0.3
 
 - type: entity
@@ -67,31 +69,31 @@
     - id: WeaponDisabler
     - id: ClothingUniformJumpsuitSecGrey
       prob: 0.3
-    - id: ClothingUniformJumpsuitSecBlue # DeltaV - consistency with other sec uniforms
+    - id: ClothingUniformJumpsuitSecBlue
       prob: 0.3
-    - id: ClothingUniformJumpsuitSec # DeltaV - consistency with other sec uniforms
+    - id: ClothingUniformJumpsuitSec
       prob: 0.3
-    - id: ClothingUniformJumpskirtSecGrey # DeltaV - consistency with other sec uniforms
+    - id: ClothingUniformJumpskirtSecGrey
       prob: 0.3
-    - id: ClothingUniformJumpskirtSecBlue # DeltaV - consistency with other sec uniforms
+    - id: ClothingUniformJumpskirtSecBlue
       prob: 0.3
-    - id: ClothingUniformJumpskirtSec # DeltaV - consistency with other sec uniforms
+    - id: ClothingUniformJumpskirtSec
       prob: 0.3
     - id: ClothingHeadHelmetBasic
-    - id: ClothingHeadHelmetInsulated # Nyanotrasen - Insulative headgear
+    - id: ClothingHeadHelmetInsulated
       prob: 0.4
-    - id: ClothingOuterArmorPlateCarrier # DeltaV - ClothingOuterArmorBasic replaced in favour of plate carrier and stabproof vest
+    - id: ClothingOuterArmorPlateCarrier
     - id: ClothingOuterArmorDuraVest
-    - id: ClothingOuterStasecSweater # DeltaV - in case the officers get cold :3
+    - id: ClothingOuterStasecSweater
       prob: 0.75
-    - id: ClothingUniformJumpsuitSecFormal # DeltaV - emergency parade time, Central's coming to visit
+    - id: ClothingUniformJumpsuitSecFormal
       prob: 0.25
     - id: ClothingBeltSecurityFilled
-    - id: ClothingBeltCorporateJudo # Goobstation - Martial Arts
+    - id: ClothingBeltCorporateJudo
     - id: Flash
       prob: 0.5
     - id: ClothingEyesGlassesSecurity
-    - id: ClothingHeadsetAltSecurityRegular # Goobstation
+    - id: ClothingHeadsetAltSecurityRegular
     - id: ClothingHandsGlovesColorBlack
     - id: ClothingShoesBootsJack
     - id: WeaponMeleeNeedle
@@ -99,29 +101,27 @@
     - id: ClothingEyesHudSecurity
     - id: HoloprojectorSecurity
       prob: 0.6
-    - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
+    - id: BookSpaceLaw
+      prob: 0.5
+    - id: LunchboxSecurityFilledRandom
       prob: 0.3
 
 - type: entity
   id: LockerBrigmedicFilled
-  suffix: Corpsman, Filled # DeltaV - rename brigmedic to corpsman
+  suffix: Corpsman, Filled
   parent: LockerBrigmedic
   components:
   - type: StorageFill
     contents:
-    - id: ClothingEyesGlassesCorpsman # DeltaV - Corpsman Glasses
+    - id: ClothingEyesGlassesCorpsman
     - id: WeaponDisabler
     - id: TrackingImplanter
       amount: 2
-    ##      - id: ClothingOuterHardsuitCombatCorpsman # DeltaV - ClothingOuterHardsuitBrigmedic replaced in favour of corpsman's combat hardsuit; removing from standard filled locker to place in hardsuit filled locker.
     - id: BoxSterileMask
-    - id: ClothingHeadHatBeretCorpsman # DeltaV - ClothingHeadHatBeretBrigmedic replaced in favour of corpsman beret.
-    ##      - id: ClothingOuterCoatAMG # DeltaV - removed until I can resprite it or replace it.
+    - id: ClothingHeadHatBeretCorpsman
     - id: ClothingUniformJumpsuitBrigmedic
     - id: ClothingUniformJumpskirtBrigmedic
-    ##      - id: ClothingUniformJumpskirtOfLife # DeltaV - nah
-    ##        prob: 0.1
-    - id: HandheldGPSBasic # Delta V - added it for tracking the implant tracker pop up.
+    - id: HandheldGPSBasic
     - id: MedkitFilled
     - id: MedkitCombatFilled
       prob: 0.6
@@ -135,12 +135,8 @@
       prob: 0.3
     - id: MedkitBurnFilled
       prob: 0.7
-    ##      - id: ClothingNeckCloakMoth #bzzz Moth-pocalypse # DeltaV - why
-    ##        prob: 0.15
-    - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
+    - id: LunchboxSecurityFilledRandom
       prob: 0.3
-
-# DeltaV - adding corpsman locker w/ hardsuit
 
 - type: entity
   id: LockerBrigmedicFilledHardsuit
@@ -149,14 +145,14 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingEyesGlassesCorpsman # DeltaV - Corpsman Glasses
+    - id: ClothingEyesGlassesCorpsman
     - id: WeaponDisabler
     - id: TrackingImplanter
       amount: 2
     - id: ClothingOuterHardsuitCombatCorpsman
     - id: ClothingUniformJumpsuitBrigmedic
     - id: ClothingUniformJumpskirtBrigmedic
-    - id: HandheldGPSBasic # Added GPS because I just think it should be there tbh.
+    - id: HandheldGPSBasic
     - id: MedkitFilled
     - id: MedkitCombatFilled
       prob: 0.6
@@ -170,10 +166,8 @@
       prob: 0.3
     - id: MedkitBurnFilled
       prob: 0.7
-    - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
+    - id: LunchboxSecurityFilledRandom
       prob: 0.3
-
-# DeltaV - end addition
 
 - type: entity
   id: LockerDetectiveFilled
@@ -197,7 +191,7 @@
     - id: RubberStampDetective
     - id: HoloprojectorSecurity
     - id: BoxEvidenceMarkers
-    - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
+    - id: LunchboxSecurityFilledRandom
       prob: 0.3
 
 - type: entity
