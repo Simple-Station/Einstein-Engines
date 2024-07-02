@@ -7,8 +7,17 @@
   components:
     - type: Sprite
       sprite: Objects/Misc/stock_parts.rsi
+      scale: 0.8, 0.8
     - type: Item
       size: Tiny
+    - type: EmitSoundOnPickup
+      sound: /Audio/SimpleStation14/Items/Handling/component_pickup.ogg
+    - type: EmitSoundOnDrop
+      sound: /Audio/SimpleStation14/Items/Handling/component_drop.ogg
+    - type: EmitSoundOnLand
+      sound: /Audio/SimpleStation14/Items/Handling/component_drop.ogg
+
+# Rating 1
 
 - type: entity
   id: CapacitorStockPart

@@ -183,6 +183,13 @@
   - type: Tag
     tags:
     - StringInstrument
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/SimpleStation14/Weapons/Melee/banjohit.ogg
+    damage:
+      types:
+        Blunt: 7
+    bluntStaminaDamageFactor: 1.5
 
 - type: entity
   parent: BaseHandheldInstrument

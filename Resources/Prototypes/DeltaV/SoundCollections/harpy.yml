@@ -19,6 +19,10 @@
     - /Audio/Voice/Moth/moth_scream.ogg
     - /Audio/Voice/Skeleton/skeleton_scream.ogg
     - /Audio/Voice/Reptilian/reptilian_scream.ogg
+    - /Audio/Voice/Slime/slime_scream_m1.ogg
+    - /Audio/Voice/Slime/slime_scream_m2.ogg
+    - /Audio/Voice/Slime/slime_scream_f1.ogg
+    - /Audio/Voice/Slime/slime_scream_f2.ogg
 
 - type: soundCollection
   id: HarpyLaugh
@@ -32,6 +36,9 @@
     - /Audio/Animals/lizard_happy.ogg
     - /Audio/Animals/ferret_happy.ogg
     - /Audio/Voice/Moth/moth_laugh.ogg
+    - /Audio/Voice/Slime/slime_laugh_m1.ogg
+    - /Audio/Voice/Slime/slime_laugh_m2.ogg
+    - /Audio/Voice/Slime/slime_laugh_f1.ogg
 
 - type: soundCollection
   id: HarpyHisses
@@ -217,7 +224,7 @@
 
 - type: soundCollection
   id: HarpyChitter
-  files: 
+  files:
     - /Audio/Voice/Moth/moth_chitter.ogg
     - /Audio/Machines/circuitprinter.ogg
     - /Audio/Machines/diagnoser_printing.ogg
@@ -226,18 +233,18 @@
 
 - type: soundCollection
   id: HarpySqueak
-  files: 
+  files:
     - /Audio/Voice/Moth/moth_squeak.ogg
     - /Audio/Animals/mouse_squeak.ogg
 
 - type: soundCollection
   id: HarpyCaws
-  files: 
+  files:
     - /Audio/DeltaV/Voice/Harpy/caw1.ogg
 
 - type: soundCollection
   id: HarpyChirps
-  files: 
+  files:
     - /Audio/DeltaV/Voice/Harpy/chirp1.ogg
     - /Audio/Voice/Talk/pai.ogg
     - /Audio/Voice/Talk/pai_ask.ogg
