@@ -1,16 +1,13 @@
+using Content.Server.Language.Events;
 using Content.Server.Mind;
 using Content.Shared.Language;
+using Content.Shared.Language.Components;
 using Content.Shared.Language.Events;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Player;
 
 namespace Content.Server.Language;
-
-/// <summary>
-///   LanguageSystem Networking
-///   This is used to update client state when mind change entity.
-/// </summary>
 
 public sealed partial class LanguageSystem
 {
@@ -19,6 +16,11 @@ public sealed partial class LanguageSystem
 
     public void InitializeNet()
     {
+        SubscribeNetworkEvent<LanguagesSetMessage>(OnClientSetLanguage);
+        SubscribeNetworkEvent<RequestLanguagesMessage>((_, session) => SendLanguageStateToClient(session.SenderSession));
+
+        SubscribeLocalEvent<LanguageSpeakerComponent, LanguagesUpdateEvent>((uid, comp, _) => SendLanguageStateToClient(uid, comp));
+
         // Refresh the client's state when its mind hops to a different entity
         SubscribeLocalEvent<MindContainerComponent, MindAddedMessage>((uid, _, _) => SendLanguageStateToClient(uid));
         SubscribeLocalEvent<MindComponent, MindGotRemovedEvent>((_, _, args) =>
@@ -26,11 +28,20 @@ public sealed partial class LanguageSystem
             if (args.Mind.Comp.Session != null)
                 SendLanguageStateToClient(args.Mind.Comp.Session);
         });
-
-        SubscribeLocalEvent<LanguageSpeakerComponent, LanguagesUpdateEvent>((uid, comp, _) => SendLanguageStateToClient(uid, comp));
-        SubscribeNetworkEvent<RequestLanguagesMessage>((_, session) => SendLanguageStateToClient(session.SenderSession));
     }
 
+
+    private void OnClientSetLanguage(LanguagesSetMessage message, EntitySessionEventArgs args)
+    {
+        if (args.SenderSession.AttachedEntity is not { Valid: true } uid)
+            return;
+
+        var language = GetLanguagePrototype(message.CurrentLanguage);
+        if (language == null || !CanSpeak(uid, language.ID))
+            return;
+
+        SetLanguage(uid, language.ID);
+    }
 
     private void SendLanguageStateToClient(EntityUid uid, LanguageSpeakerComponent? comp = null)
     {
@@ -50,10 +61,18 @@ public sealed partial class LanguageSystem
         SendLanguageStateToClient(entity, session, comp);
     }
 
+    // TODO this is really stupid and can be avoided if we just make everything shared...
     private void SendLanguageStateToClient(EntityUid uid, ICommonSession session, LanguageSpeakerComponent? component = null)
     {
-        var langs = GetLanguages(uid, component);
-        var message = new LanguagesUpdatedMessage(langs.CurrentLanguage, langs.SpokenLanguages, langs.UnderstoodLanguages);
+        var isUniversal = HasComp<UniversalLanguageSpeakerComponent>(uid);
+        if (!isUniversal)
+            Resolve(uid, ref component, logMissing: false);
+
+        // I really don't want to call 3 getter methods here, so we'll just have this slightly hardcoded solution
+        var message = isUniversal || component == null
+            ? new LanguagesUpdatedMessage(UniversalPrototype, [UniversalPrototype], [UniversalPrototype])
+            : new LanguagesUpdatedMessage(component.CurrentLanguage, component.SpokenLanguages, component.UnderstoodLanguages);
+
         RaiseNetworkEvent(message, session);
     }
 }

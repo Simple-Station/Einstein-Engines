@@ -48,7 +48,7 @@
     flavorKind: station-event-random-sentience-flavor-organic
   - type: Bloodstream
     bloodMaxVolume: 50
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:
@@ -240,7 +240,7 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEgg
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Chicken
     understands:
@@ -519,7 +519,7 @@
       prob: 0.5
   - type: Extractable
     grindableSolutionName: food
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Moffic
     understands:
@@ -619,7 +619,7 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEgg
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Duck
     understands:
@@ -872,7 +872,7 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Crab
     understands:
@@ -1118,7 +1118,7 @@
   - type: Inventory
     speciesId: kangaroo
     templateId: kangaroo
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Kangaroo
     understands:
@@ -1311,7 +1311,7 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Monkey
     understands:
@@ -1350,7 +1350,7 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Monkey
     understands:
@@ -1395,7 +1395,7 @@
   - type: NameIdentifier
     group: Kobold
   - type: LizardAccent
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Kobold
     understands:
@@ -1630,7 +1630,7 @@
     spawned:
     - id: FoodMeatRat
       amount: 1
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:
@@ -1973,7 +1973,7 @@
       path: /Audio/Animals/parrot_raught.ogg
   - type: Bloodstream
     bloodMaxVolume: 50
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     understands:
@@ -2236,7 +2236,7 @@
   - type: MeleeChemicalInjector
     transferAmount: 0.75
     solution: melee
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Xeno
     understands:
@@ -2572,7 +2572,7 @@
   - type: Tag
     tags:
     - VimPilot
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Fox
     understands:
@@ -2623,7 +2623,7 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Dog
     understands:
@@ -2780,7 +2780,7 @@
     spawned:
     - id: FoodMeat
       amount: 3
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Cat
     understands:
@@ -2852,7 +2852,7 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Xeno
     understands:
@@ -3157,7 +3157,7 @@
     spawned:
     - id: FoodMeat
       amount: 1
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:
@@ -3269,7 +3269,7 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Pig
     understands:
@@ -3359,7 +3359,7 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - RootSpeak
     understands:

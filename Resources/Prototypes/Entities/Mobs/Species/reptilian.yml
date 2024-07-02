@@ -59,7 +59,7 @@
       types:
         Heat : 1.5 #per second, scales with temperature & other constants
   - type: Wagging
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Draconic

@@ -4,15 +4,6 @@ namespace Content.Shared.Language.Components.Translators;
 
 public abstract partial class BaseTranslatorComponent : Component
 {
-    // TODO may need to be removed completely, it's a part of legacy code that never ended up being used.
-    /// <summary>
-    ///   The language this translator changes the speaker's language to when they don't specify one.
-    ///   If null, does not modify the default language.
-    /// </summary>
-    [DataField("defaultLanguage")]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public string? DefaultLanguageOverride = null;
-
     /// <summary>
     ///   The list of additional languages this translator allows the wielder to speak.
     /// </summary>

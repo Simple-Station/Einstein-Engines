@@ -95,7 +95,7 @@
     factions:
     - PsionicInterloper
     - NanoTrasen
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     understands:

@@ -23,7 +23,7 @@
     accent: zombieMoth
   - type: Speech
     speechVerb: Moth
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Moffic

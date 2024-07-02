@@ -213,7 +213,7 @@
     visMask:
       - PsionicInvisibility
       - Normal
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - RobotTalk

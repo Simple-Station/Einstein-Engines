@@ -96,7 +96,7 @@
     spawned:
     - id: FoodMeat
       amount: 1
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:

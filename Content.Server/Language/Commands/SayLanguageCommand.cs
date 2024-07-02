@@ -32,7 +32,6 @@ public sealed class SayLanguageCommand : IConsoleCommand
         if (args.Length < 2)
             return;
 
-        var languageId = args[0];
         var message = string.Join(" ", args, startIndex: 1, count: args.Length - 1).Trim();
 
         if (string.IsNullOrEmpty(message))
@@ -41,10 +40,9 @@ public sealed class SayLanguageCommand : IConsoleCommand
         var languages = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
         var chats = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<ChatSystem>();
 
-        var language = languages.GetLanguagePrototype(languageId);
-        if (language == null || !languages.CanSpeak(playerEntity, language.ID))
+        if (!SelectLanguageCommand.TryParseLanguageArgument(languages, playerEntity, args[0], out var failReason, out var language))
         {
-            shell.WriteError($"Language {languageId} is invalid or you cannot speak it!");
+            shell.WriteError(failReason);
             return;
         }
 

@@ -102,7 +102,7 @@
     actionPrototype: DionaGibAction
     allowedStates:
     - Dead
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - RootSpeak
