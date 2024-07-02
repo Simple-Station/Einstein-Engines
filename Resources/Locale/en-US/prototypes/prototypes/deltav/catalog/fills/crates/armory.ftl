@@ -1,0 +1,10 @@
+ent-CrateArmoryGrand = { ent-CrateWeaponSecure }
+    .desc = { ent-CrateWeaponSecure.desc }
+ent-CrateArmoryUniversal = { ent-CrateWeaponSecure }
+    .desc = { ent-CrateWeaponSecure.desc }
+ent-CrateArmoryAdjutant = { ent-CrateWeaponSecure }
+    .desc = { ent-CrateWeaponSecure.desc }
+ent-CrateArmoryEnergyGun = { ent-CrateWeaponSecure }
+    .desc = { ent-CrateWeaponSecure.desc }
+ent-CrateArmoryEnergyGunMini = { ent-CrateWeaponSecure }
+    .desc = { ent-CrateWeaponSecure.desc }

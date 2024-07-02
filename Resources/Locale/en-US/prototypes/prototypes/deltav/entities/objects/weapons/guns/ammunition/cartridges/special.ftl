@@ -1,0 +1,16 @@
+ent-BaseCartridgeSpecial = cartridge (.38 special)
+    .desc = { ent-BaseCartridge.desc }
+ent-CartridgeSpecial = cartridge (.38 special)
+    .desc = { ent-BaseCartridgeSpecial.desc }
+ent-CartridgeSpecialPractice = cartridge (.38 special practice)
+    .desc = { ent-BaseCartridgeSpecial.desc }
+ent-CartridgeSpecialRubber = cartridge (.38 special rubber)
+    .desc = { ent-BaseCartridgeSpecial.desc }
+ent-CartridgeSpecialIncendiary = cartridge (.38 special incendiary)
+    .desc = { ent-BaseCartridgeSpecial.desc }
+ent-CartridgeSpecialUranium = cartridge (.38 special uranium)
+    .desc = { ent-BaseCartridgeSpecial.desc }
+ent-CartridgeSpecialHoly = cartridge (.38 special holy)
+    .desc = { ent-BaseCartridgeSpecial.desc }
+ent-CartridgeSpecialMindbreaker = cartridge (.38 special mindbreaker)
+    .desc = { ent-BaseCartridgeSpecial.desc }

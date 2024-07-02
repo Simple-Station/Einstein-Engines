@@ -1,0 +1,16 @@
+ent-DrinkHealthViolationGlass = health code violation
+    .desc = Allegedly it's a cocktail. The warning cone motif seems apt.
+ent-DrinkGunmetalGlass = gunmetal glass
+    .desc = A cloudy mix of rum, cream, and... is that welding fuel? Probably tasty.
+ent-DrinkLemonDropGlass = lemon drop
+    .desc = A martini glass filled with a translucent mix of refreshing lemony goodness.
+ent-DrinkGreenGrassGlass = green grass
+    .desc = An odd green cocktail, topped with oranges, ice, and a plastic straw. Curious.
+ent-DrinkDaiquiriGlass = classic daiquiri
+    .desc = Rum, lime, and simple syrup. Such class, such refinement.
+ent-DrinkArsonistsBrewGlass = arsonist's brew
+    .desc = It's probably not concerning that it's glowing faintly. Or bubbling. Or smoking. No, not at all.
+ent-DrinkKvassGlass = kvass glass
+    .desc = A cool refreshing drink with a taste of socialism.
+ent-DrinkMothamphetamineGlass = mothamphetamine
+    .desc = A strangely... Fuzzy drink. It has a chaotic aura.

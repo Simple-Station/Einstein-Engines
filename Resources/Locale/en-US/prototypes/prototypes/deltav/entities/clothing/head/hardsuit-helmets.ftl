@@ -1,0 +1,16 @@
+ent-ClothingHeadHelmetHardsuitCombatStandard = combat hardsuit helmet
+    .desc = An armoured helmet with a yellow visor and dual head-mounted lights.
+ent-ClothingHeadHelmetHardsuitCombatOfficer = security combat hardsuit helmet
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatStandard.desc }
+ent-ClothingHeadHelmetHardsuitCombatMedical = medical combat hardsuit helmet
+    .desc = A lightweight armoured helmet with full-face blue visor and head-mounted light.
+ent-ClothingHeadHelmetHardsuitCombatCorpsman = corpsman combat hardsuit helmet
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatMedical.desc }
+ent-ClothingHeadHelmetHardsuitCombatRiot = riot combat hardsuit helmet
+    .desc = A heavy armoured helmet with a sealed visor with yellow slits and dual head-mounted lights.
+ent-ClothingHeadHelmetHardsuitCombatWarden = warden's riot combat hardsuit helmet
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatRiot.desc }
+ent-ClothingHeadHelmetHardsuitCombatAdvanced = advanced combat hardsuit helmet
+    .desc = A light but durable helmet with full-face protection and four head-mounted lights.
+ent-ClothingHeadHelmetHardsuitCombatHoS = head of security's advanced combat hardsuit helmet
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatAdvanced.desc }

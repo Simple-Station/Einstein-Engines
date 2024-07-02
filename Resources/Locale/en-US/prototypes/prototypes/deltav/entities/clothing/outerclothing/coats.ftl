@@ -1,0 +1,15 @@
+ent-ClothingOuterCoatRyuzo = Delphic coat
+    .desc = In another universe, The Syndicate are known as the good guys.
+    .suffix = ADMIN ONLY, DO NOT MAP
+ent-ClothingOuterCoatHoPArmored = head of personnel's armored coat
+    .desc = A comfortable jacket that offers some protection against acts of god and man.
+ent-ClothingOuterCoatOvercoat = overcoat
+    .desc = A warm, dark overcoat, suitable for formal occasions.
+ent-ClothingOuterCoatGreatcoat = greatcoat
+    .desc = A drab and rugged greatcoat, padded for protection against the elements.
+ent-ClothingOuterCoatLeatherJacket = leather jacket
+    .desc = A rugged leather jacket, for fashion or for utility.
+ent-ClothingOuterCoatCybersunWindbreaker = cybersun windbreaker
+    .desc = A paramedics windbreaker, sporting the official heraldry of Cybersuns meditech division. Its made of sturdy ballistic fiber.
+ent-ClothingOuterCoatHoPFormal = head of personnel's formal jacket
+    .desc = A showy and over-the-top jacket with gold buttons and red trim. More tacky than classy.

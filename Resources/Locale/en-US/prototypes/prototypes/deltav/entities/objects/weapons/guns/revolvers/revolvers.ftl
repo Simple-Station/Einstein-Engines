@@ -1,0 +1,10 @@
+ent-WeaponRevolverSnub = snubbed .45
+    .desc = An old and reliable revolver, modified to be more easily concealed. Uses .45 magnum ammo.
+ent-WeaponRevolverK38Master = k-38 masterpiece
+    .desc = A classic, if not outdated, law enforcement firearm. Uses .38 special ammo.
+ent-WeaponRevolverFitz = fitz special
+    .desc = A compact and concealable self defence snub revolver. Uses .38 special ammo.
+ent-WeaponRevolverLucky = lucky 37
+    .desc = Luck always beats skill, ya weasel. Uses .38 special ammo.
+ent-WeaponRevolverFaith = faith
+    .desc = Delivers blessings in bullet form. Uses .38 special ammo.
