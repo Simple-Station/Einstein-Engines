@@ -231,7 +231,6 @@
   - type: FingerprintMask
   - type: Thieving
     stripTimeReduction: 1
-    stealthy: true
   - type: NinjaGloves
 
 - type: entity
@@ -332,7 +331,6 @@
     tags: [] # ignore "WhitelistChameleon" tag
   - type: Thieving
     stripTimeReduction: 1.5
-    stealthy: true
 
 - type: entity
   parent: ClothingHandsGlovesColorWhite

@@ -20,3 +20,7 @@ strip-verb-get-data-text = Strip
 
 strippable-bound-user-interface-stripping-menu-title = {$ownerName}'s inventory
 strippable-bound-user-interface-stripping-menu-ensnare-button = Remove Leg Restraints
+
+# Stealth
+thieving-component-user = Someone
+thieving-component-item = something
