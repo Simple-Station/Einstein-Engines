@@ -7,7 +7,6 @@ using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Content.Shared.Popups;
-using Content.Server.MassMedia.Components;
 
 namespace Content.Server.Psionics.Abilities
 {
