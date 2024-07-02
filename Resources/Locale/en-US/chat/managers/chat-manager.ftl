@@ -33,6 +33,9 @@ chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
      [true] {$entityName} {$message}[/italic]
     }
 
+chat-manager-entity-signlanguage-message = [italic]{$entityName} signs "[BubbleContent]{$message}[/BubbleContent]"[/italic]
+chat-manager-entity-signlanguage-obfuscated = [italic]{$entityName} signs something.[/italic]
+
 chat-manager-entity-looc-wrap-message = LOOC: {$entityName}: {$message}
 chat-manager-send-ooc-wrap-message = OOC: {$playerName}: {$message}
 chat-manager-send-ooc-patron-wrap-message = OOC: [color={$patronColor}]{$playerName}[/color]: {$message}
