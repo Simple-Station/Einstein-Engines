@@ -14,7 +14,7 @@ binds:
   key: Escape
   priority: 10
 - function: Use
-  type: Stateoff
+  type: State
   key: MouseLeft
   canFocus: true
 - function: UseSecondary
