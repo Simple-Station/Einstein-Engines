@@ -145,7 +145,7 @@
   noSpawn: true
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 500
+      minimumGlimmer: 700
       maximumGlimmer: 900
       report: glimmer-event-report-signatures
     - type: GlimmerRevenantRule
