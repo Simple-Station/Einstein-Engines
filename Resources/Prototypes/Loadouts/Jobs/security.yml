@@ -1,7 +1,22 @@
+## Uniforms
 - type: loadout
-  id: LoadoutSecurityUniformGrey
+  id: LoadoutSecurityUniformJumpsuitBlue
   category: Jobs
-  cost: 2
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - SecurityCadet
+        - Warden
+  items:
+    - ClothingUniformJumpsuitSecBlue
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpsuitGrey
+  category: Jobs
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -11,6 +26,34 @@
         - Warden
   items:
     - ClothingUniformJumpsuitSecGrey
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpskirtGrey
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - SecurityCadet
+        - Warden
+  items:
+    - ClothingUniformJumpskirtSecGrey
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpskirtBlue
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - SecurityCadet
+        - Warden
+  items:
+    - ClothingUniformJumpskirtSecBlue
 
 - type: loadout
   id: LoadoutSecurityUniformJumpskirtSenior
@@ -61,6 +104,108 @@
     - ClothingUniformJumpsuitSeniorOfficer
 
 - type: loadout
+  id: LoadoutUniformJumpsuitWardenBlue
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpsuitWardenBlue
+
+- type: loadout
+  id: LoadoutUniformJumpsuitWardenGrey
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpsuitWardenGrey
+
+- type: loadout
+  id: LoadoutUniformJumpskirtWardenBlue
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpskirtWardenBlue
+
+- type: loadout
+  id: LoadoutUniformJumpskirtWardenGrey
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpskirtWardenGrey
+
+- type: loadout
+  id: LoadoutUniformJumpskirtHoSBlue
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHoSBlue
+
+- type: loadout
+  id: LoadoutUniformJumpskirtHoSGrey
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHoSGrey
+
+- type: loadout
+  id: LoadoutUniformJumpsuitSecFormal
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpsuitSecFormal
+
+- type: loadout
+  id: LoadoutUniformJumpsuitSecSummer
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpsuitSecSummer
+## Mask
+- type: loadout
   id: LoadoutSecurityMaskGasSwat
   category: Jobs
   cost: 2
@@ -73,6 +218,7 @@
   items:
     - ClothingMaskGasSwat
 
+## Shoes
 - type: loadout
   id: LoadoutSecurityShoesJackboots
   category: Jobs
@@ -87,3 +233,119 @@
         - HeadOfSecurity
   items:
     - ClothingShoesBootsJack
+
+## Eyes
+- type: loadout
+  id: LoadoutSecurityEyesHudSecurity
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+  items:
+    - ClothingEyesHudSecurity
+
+- type: loadout
+  id: LoadoutSecurityEyesEyepatchHudSecurity
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+  items:
+    - ClothingEyesEyepatchHudSecurity
+
+- type: loadout
+  id: LoadoutSecurityEyesHudSecurityPrescription
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+    - !type:CharacterTraitRequirement
+      traits:
+        - Nearsighted
+  items:
+    - ClothingEyesPrescriptionHudSecurity
+
+## Head
+- type: loadout
+  id: LoadoutSecurityHeadHatBeret
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+  items:
+    - ClothingHeadHatBeretSecurity
+
+- type: loadout
+  id: LoadoutSecurityHeadHelmetInsulated
+  category: Jobs
+  cost: 3
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Warden
+        - HeadOfSecurity
+        - Brigmedic
+  items:
+    - ClothingHeadHelmetInsulated
+
+## Belt
+- type: loadout
+  id: LoadoutSecurityBeltWebbing
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+        - SecurityOfficer
+        - SecurityCadet
+        - Warden
+        - HeadOfSecurity
+  items:
+    - ClothingBeltSecurityWebbingFilled
+
+## Species
+#- type: loadout ##Uncomment this and reassess points when we can make it replace the secoff duty pistol
+#  id: LoadoutSecurityEquipmentTruncheon
+#  category: Jobs
+#  cost: 8 ## TODO: Make this replace the secoff handgun, and thus also make it cheaper
+#  requirements:
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - SecurityOfficer
+#        - Warden
+#        - HeadOfSecurity
+#        - Brigmedic
+#    - !type:CharacterPlaytimeRequirement
+#      tracker: JobSecurityOfficer
+#      min: 36000 # 10 hours
+#    - !type:CharacterSpeciesRequirement
+#      species: Oni
+#  items:
+#    - Truncheon

@@ -65,19 +65,6 @@
     - ClothingUniformJumpsuitSeniorEngineer
 
 - type: loadout
-  id: LoadoutEngineeringChickenSuit # :)
-  category: Jobs
-  cost: 3
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - AtmosphericTechnician
-  items:
-    - ClothingOuterSuitChicken
-    - ClothingHeadHatChickenhead
-
-- type: loadout
   id: LoadoutEngineeringEyesMeson
   category: Jobs
   cost: 2
