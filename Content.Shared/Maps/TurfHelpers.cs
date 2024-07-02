@@ -3,6 +3,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Content.Shared.Physics;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 
 namespace Content.Shared.Maps
@@ -12,22 +13,17 @@ namespace Content.Shared.Maps
     public static class TurfHelpers
     {
         /// <summary>
-        ///     Attempts to get the turf at a certain coordinates or null if no such turf is found.
+        ///     Attempts to get the turf at map indices with grid id or null if no such turf is found.
         /// </summary>
-        public static TileRef? GetTileRef(this EntityCoordinates coordinates, IEntityManager? entityManager = null, IMapManager? mapManager = null)
+        public static TileRef GetTileRef(this Vector2i vector2i, EntityUid gridId, IEntityManager? entityManager = null)
         {
             entityManager ??= IoCManager.Resolve<IEntityManager>();
 
-            if (!coordinates.IsValid(entityManager))
-                return null;
+            if (!entityManager.TryGetComponent<MapGridComponent>(gridId, out var grid))
+                return default;
 
-            mapManager ??= IoCManager.Resolve<IMapManager>();
-            var pos = coordinates.ToMap(entityManager, entityManager.System<SharedTransformSystem>());
-            if (!mapManager.TryFindGridAt(pos, out _, out var grid))
-                return null;
-
-            if (!grid.TryGetTileRef(coordinates, out var tile))
-                return null;
+            if (!grid.TryGetTileRef(vector2i, out var tile))
+                return default;
 
             return tile;
         }
@@ -119,9 +115,8 @@ namespace Content.Shared.Maps
         private static bool GetWorldTileBox(TileRef turf, out Box2Rotated res)
         {
             var entManager = IoCManager.Resolve<IEntityManager>();
-            var map = IoCManager.Resolve<IMapManager>();
 
-            if (map.TryGetGrid(turf.GridUid, out var tileGrid))
+            if (entManager.TryGetComponent<MapGridComponent>(turf.GridUid, out var tileGrid))
             {
                 var gridRot = entManager.GetComponent<TransformComponent>(turf.GridUid).WorldRotation;
 

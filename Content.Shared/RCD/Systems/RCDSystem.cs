@@ -133,7 +133,7 @@ public sealed class RCDSystem : EntitySystem
                 return;
         }
 
-        var mapGrid = _mapMan.GetGrid(gridId.Value);
+        var mapGrid = Comp<MapGridComponent>(gridId.Value);
         var tile = mapGrid.GetTileRef(location);
 
         if (!IsRCDStillValid(uid, comp, args.Event.User, args.Event.Target, mapGrid, tile, args.Event.StartingMode))
@@ -158,7 +158,7 @@ public sealed class RCDSystem : EntitySystem
                 return;
         }
 
-        var mapGrid = _mapMan.GetGrid(gridId.Value);
+        var mapGrid = Comp<MapGridComponent>(gridId.Value);
         var tile = mapGrid.GetTileRef(location);
         var snapPos = mapGrid.TileIndicesFor(location);
 
