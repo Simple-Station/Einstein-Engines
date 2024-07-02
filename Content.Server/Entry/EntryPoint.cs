@@ -70,7 +70,6 @@ namespace Content.Server.Entry
 
             prototypes.RegisterIgnore("parallax");
             prototypes.RegisterIgnore("guideEntry");
-            prototypes.RegisterIgnore("npcConversationTree");
 
             ServerContentIoC.Register();
 
