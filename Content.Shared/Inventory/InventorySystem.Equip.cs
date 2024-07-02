@@ -176,7 +176,7 @@ public abstract partial class InventorySystem
             };
 
             _doAfter.TryStartDoAfter(args);
-            return false;
+            return true; // Changed to return true even if the item wasn't equipped instantly
         }
 
         if (!_containerSystem.Insert(itemUid, slotContainer))
