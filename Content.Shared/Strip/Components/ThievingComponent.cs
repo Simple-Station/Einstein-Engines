@@ -16,7 +16,7 @@ public sealed partial class ThievingComponent : Component
     ///  A multiplier coefficient for strip time
     /// </summary>
     [DataField]
-    public TimeSpan StripTimeMultiplier = TimeSpan.FromSeconds(1f);
+    public float StripTimeMultiplier = 1f;
 
     /// <summary>
     /// Should it notify the user if they're stripping a pocket?
