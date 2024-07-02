@@ -348,6 +348,7 @@ public abstract partial class SharedBuckleSystem
 
         Appearance.SetData(strap, StrapVisuals.State, true);
         Appearance.SetData(buckle, BuckleVisuals.Buckled, true);
+
         _rotationVisuals.SetHorizontalAngle(buckle.Owner, strap.Comp.Rotation);
 
         var xform = Transform(buckle);
