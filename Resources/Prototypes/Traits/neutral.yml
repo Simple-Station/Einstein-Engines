@@ -21,3 +21,23 @@
       - type: MothAccent
       - type: ReplacementAccent
         accent: dwarf
+
+- type: trait
+  id: NormalVisionHarpy
+  category: Visual
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species: Harpy
+  components:
+    - type: NormalVision
+
+- type: trait
+  id: NormalVisionVulpkanin
+  category: Visual
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species: Vulpkanin
+  components:
+    - type: NormalVision
