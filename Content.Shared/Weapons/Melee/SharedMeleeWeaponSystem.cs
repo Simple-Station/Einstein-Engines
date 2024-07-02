@@ -566,7 +566,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             Audio.PlayPredicted(component.SwingSound, meleeUid, user);
             return true;
         }
-
+        
         // Naughty input
         if (entities.Count > MaxTargets)
         {
