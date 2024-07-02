@@ -1,4 +1,10 @@
 {
     "omnisharp.analyzeOpenDocumentsOnly": true,
-    "dotnet.defaultSolution": "SpaceStation14.sln"
+    "dotnet.defaultSolution": "SpaceStation14.sln",
+    "json.schemas": [
+        {
+            "fileMatch": [ "**/meta.json" ],
+            "url": "https://raw.githubusercontent.com/Simple-Station/Einstein-Engines/master/.github/rsi-schema.json"
+        }
+    ]
 }
