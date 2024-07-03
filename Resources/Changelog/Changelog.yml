@@ -4279,3 +4279,9 @@ Entries:
         suspects and wanted criminals.
   id: 6135
   time: '2024-07-02T08:01:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Equipping clothing using the Z key works correctly again.
+  id: 6136
+  time: '2024-07-03T19:48:29.0000000+00:00'
