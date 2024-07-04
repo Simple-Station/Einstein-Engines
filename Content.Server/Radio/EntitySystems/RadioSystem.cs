@@ -115,12 +115,12 @@ public sealed class RadioSystem : EntitySystem
             ? FormattedMessage.EscapeText(message)
             : message;
 
-        var wrappedMessage = WrapRadioMessage(messageSource, channel, name, content);
+        var wrappedMessage = WrapRadioMessage(messageSource, channel, name, content, language);
         var msg = new ChatMessage(ChatChannel.Radio, content, wrappedMessage, NetEntity.Invalid, null);
 
         // ... you guess it
         var obfuscated = _language.ObfuscateSpeech(content, language);
-        var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated);
+        var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, language);
         var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, NetEntity.Invalid, null);
 
         var ev = new RadioReceiveEvent(messageSource, channel, msg, notUdsMsg, language);
@@ -173,13 +173,14 @@ public sealed class RadioSystem : EntitySystem
         _messages.Remove(message);
     }
 
-    private string WrapRadioMessage(EntityUid source, RadioChannelPrototype channel, string name, string message)
+    private string WrapRadioMessage(EntityUid source, RadioChannelPrototype channel, string name, string message, LanguagePrototype language)
     {
         var speech = _chat.GetSpeechVerb(source, message);
         return Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("color", channel.Color),
-            ("fontType", speech.FontId),
-            ("fontSize", speech.FontSize),
+            ("languageColor", language.Color ?? channel.Color),
+            ("fontType", language.FontId ?? speech.FontId),
+            ("fontSize", language.FontSize ?? speech.FontSize),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
