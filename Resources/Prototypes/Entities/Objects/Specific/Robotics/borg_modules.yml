@@ -424,11 +424,11 @@
     - state: icon-treatment
   - type: ItemBorgModule
     items:
+    - HandheldHealthAnalyzerUnpowered
     - Brutepack10Lingering
     - Ointment10Lingering
     - Gauze10Lingering
     - Bloodpack10Lingering
-    - Syringe
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: treatment-module }
 
