@@ -95,6 +95,7 @@
     tags:
       - CannotSuicide
       - FootstepSound
+      - CanWalk
   - type: NoSlip
   - type: RatKing
     hungerPerArmyUse: 25

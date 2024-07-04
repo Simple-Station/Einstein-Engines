@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.CCVar;
 using Content.Shared.Friction;
@@ -33,6 +34,7 @@ namespace Content.Shared.Movement.Systems
     /// </summary>
     public abstract partial class SharedMoverController : VirtualController
     {
+        [Dependency] private   readonly AlertsSystem _alerts = default!;
         [Dependency] private   readonly IConfigurationManager _configManager = default!;
         [Dependency] protected readonly IGameTiming Timing = default!;
         [Dependency] private   readonly IMapManager _mapManager = default!;
@@ -165,6 +167,17 @@ namespace Content.Shared.Movement.Systems
             var (walkDir, sprintDir) = GetVelocityInput(mover);
             var touching = false;
 
+            if (_tags.HasTag(uid, "CanWalk"))
+            {
+                if (!mover.Sprinting)
+                {
+                    _alerts.ShowAlert(uid, mover.WalkingAlert, 0);
+                } else
+                {
+                    _alerts.ShowAlert(uid, mover.WalkingAlert, 1);
+                }
+            }
+
             // Handle wall-pushes.
             if (weightless)
             {
@@ -283,6 +296,30 @@ namespace Content.Shared.Movement.Systems
 
             // Ensures that players do not spiiiiiiin
             PhysicsSystem.SetAngularVelocity(physicsUid, 0, body: physicsComponent);
+        }
+
+        public void ToggleWalking(EntityUid player)
+        {
+
+            var mover = MoverQuery.GetComponent(player);
+            //var buttons = mover.HeldMoveButtons;
+            bool containsWalk = (mover.HeldMoveButtons & MoveButtons.Walk) == MoveButtons.Walk;
+            //var moveEvent = new MoveInputEvent(mover.Owner, mover, mover.HeldMoveButtons);
+            /*if (!containsWalk)
+            {
+                mover.HeldMoveButtons |= MoveButtons.Walk;
+            }
+            else
+            {
+                mover.HeldMoveButtons &= ~MoveButtons.Walk;
+            }*/
+
+            //RaiseLocalEvent(player, ref moveEvent);
+            //Dirty(mover.Owner, mover);*/
+            HandleRunChange(player, Timing.TickFraction, !containsWalk);
+            //var funcId = InputManager.NetworkBindMap.KeyFunctionID(EngineKeyFunctions.Walk);
+            //var message = new IFullInputCmdMessage(Timing.CurTick, (containsWalk ? BoundKeyState.Up : BoundKeyState.Down), 145, Timing.TickFraction);
+            //await Client.WaitPost(() => InputSystem.HandleInputCommand(ClientSession, key, message));
         }
 
         public void LerpRotation(EntityUid uid, InputMoverComponent mover, float frameTime)
@@ -440,7 +477,7 @@ namespace Content.Shared.Movement.Systems
                 sound = moverModifier.FootstepSoundCollection;
                 return true;
             }
-            
+
             // If got the component in yml and no shoes = no sound. Delta V
             if (_entities.TryGetComponent(uid, out NoShoesSilentFootstepsComponent? _) &
                 !_inventory.TryGetSlotEntity(uid, "shoes", out var _))

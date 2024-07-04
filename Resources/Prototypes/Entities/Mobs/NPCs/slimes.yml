@@ -43,6 +43,7 @@
   - type: Tag
     tags:
     - FootstepSound
+    - CanWalk
   - type: Butcherable
     butcheringType: Knife
     spawned:

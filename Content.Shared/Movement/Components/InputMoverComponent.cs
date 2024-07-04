@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared.Alert;
 using Content.Shared.Movement.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
@@ -74,6 +75,9 @@ namespace Content.Shared.Movement.Components
 
         [ViewVariables(VVAccess.ReadWrite)]
         public bool CanMove = true;
+
+        [DataField]
+        public ProtoId<AlertPrototype> WalkingAlert = "Walking";
     }
 
     [Serializable, NetSerializable]
