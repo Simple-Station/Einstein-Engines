@@ -219,7 +219,7 @@
     price: 1500 # Kidnapping a living person and selling them for cred is a good move.
     deathPenalty: 0.01 # However they really ought to be living and intact, otherwise they're worth 100x less.
   - type: CanEscapeInventory # Carrying system from nyanotrasen.
-  - type: LanguageSpeaker # This is here so all with no LanguageSpeaker at least spawn with the default languages.
+  - type: LanguageKnowledge # This is here so even if species doesn't have a defined language, they at least speak GC
     speaks:
     - GalacticCommon
     understands:

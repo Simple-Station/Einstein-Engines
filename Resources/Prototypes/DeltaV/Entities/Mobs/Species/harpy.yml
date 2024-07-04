@@ -133,7 +133,7 @@
     - FootstepSound
     - DoorBumpOpener
     - ShoesRequiredStepTriggerImmune
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - SolCommon
