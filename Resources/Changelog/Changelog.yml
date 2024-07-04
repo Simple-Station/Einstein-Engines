@@ -4251,3 +4251,37 @@ Entries:
       message: 'Height and Width sliders have been added to character creation. '
   id: 6131
   time: '2024-06-27T17:46:51.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Most items now take time to equip and unequip, especially space suits.
+  id: 6132
+  time: '2024-06-30T18:22:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Spent bullet casings now fly away from a shooter in a cinematic manner,
+        rather than fall at their feet. 
+  id: 6133
+  time: '2024-07-01T22:37:29.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Fix
+      message: Fixed loadouts becoming uneditable after spending all your points
+  id: 6134
+  time: '2024-07-02T07:18:27.0000000+00:00'
+- author: deltanedas
+  changes:
+    - type: Add
+      message: >-
+        Security can find the new SecWatch™ app in their PDAs to see current
+        suspects and wanted criminals.
+  id: 6135
+  time: '2024-07-02T08:01:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Equipping clothing using the Z key works correctly again.
+  id: 6136
+  time: '2024-07-03T19:48:29.0000000+00:00'
