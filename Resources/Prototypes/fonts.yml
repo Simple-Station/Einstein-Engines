@@ -45,3 +45,19 @@
 - type: font
   id: Emoji
   path: /Fonts/NotoEmoji.ttf
+
+- type: font
+  id: RubikBubbles
+  path: /Fonts/RubikBubbles.ttf
+
+- type: font
+  id: Copperplate
+  path: /Fonts/Copperplate.otf
+
+- type: font
+  id: Manga
+  path: /Fonts/Mangat.ttf
+
+- type: font
+  id: Noganas
+  path: /Fonts/Noganas.ttf
