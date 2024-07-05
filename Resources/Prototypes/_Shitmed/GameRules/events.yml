@@ -15,7 +15,8 @@
     objectives:
     - AbductObjective
   - type: AntagLoadProfileRule
-    speciesHardOverride: Abductor
+    speciesOverride: Abductor
+    alwaysUseSpeciesOverride: true
   - type: AntagSelection
     definitions:
     - spawnerPrototype: LoneAbductorSpawner
@@ -106,7 +107,8 @@
     objectives:
     - AbductObjective
   - type: AntagLoadProfileRule
-    speciesHardOverride: Abductor
+    speciesOverride: Abductor
+    alwaysUseSpeciesOverride: true
   - type: AntagSelection
     definitions:
     - spawnerPrototype: AbductorScientistSpawner
