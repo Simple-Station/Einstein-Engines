@@ -4307,3 +4307,9 @@ Entries:
       message: Scientists have discovered that Felinids can sleep in bags.
   id: 6138
   time: '2024-07-05T17:28:44.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: You can now sign paper by alt-clicking it while holding a pen.
+  id: 6139
+  time: '2024-07-05T17:33:39.0000000+00:00'
