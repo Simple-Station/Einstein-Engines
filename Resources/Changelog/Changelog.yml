@@ -4313,3 +4313,13 @@ Entries:
       message: You can now sign paper by alt-clicking it while holding a pen.
   id: 6139
   time: '2024-07-05T17:33:39.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: Added the Thievery trait, which provides various soft stripping bonuses
+    - type: Tweak
+      message: >-
+        Felinids no longer have passive thieving gloves, they instead get the
+        Thievery trait by default
+  id: 6140
+  time: '2024-07-05T17:49:25.0000000+00:00'
