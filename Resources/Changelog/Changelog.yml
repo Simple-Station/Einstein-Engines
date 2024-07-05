@@ -4329,3 +4329,9 @@ Entries:
       message: You can now carry most of the station pets.
   id: 6141
   time: '2024-07-05T17:49:57.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Job requirements are now displayed correctly.
+  id: 6142
+  time: '2024-07-05T19:10:24.0000000+00:00'
