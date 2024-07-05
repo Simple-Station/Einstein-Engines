@@ -1,6 +1,9 @@
 # Alphabetically ordered, except for Uncategorized since it is always first
 
 - type: loadoutCategory
+  id: Uncategorized
+
+- type: loadoutCategory
   id: Eyes
 
 - type: loadoutCategory
@@ -26,9 +29,6 @@
 
 - type: loadoutCategory
   id: Species
-
-- type: loadoutCategory
-  id: Uncategorized
 
 - type: loadoutCategory
   id: Uniform

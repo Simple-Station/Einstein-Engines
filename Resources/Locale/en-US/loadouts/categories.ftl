@@ -1,5 +1,6 @@
 # Alphabetically ordered, except for Uncategorized since it is always first
 
+loadout-category-Uncategorized = Uncategorized
 loadout-category-Accessories = Accessories
 loadout-category-Eyes = Eyes
 loadout-category-Hands = Hands
@@ -11,5 +12,4 @@ loadout-category-Neck = Neck
 loadout-category-Outer = Outer
 loadout-category-Shoes = Shoes
 loadout-category-Species = Species
-loadout-category-Uncategorized = Uncategorized
 loadout-category-Uniform = Uniform
