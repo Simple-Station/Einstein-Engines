@@ -11,6 +11,9 @@ trait-description-Pacifist = You cannot attack or hurt any living beings.
 trait-name-LightweightDrunk = Lightweight Drunk
 trait-description-LightweightDrunk = Alcohol has a stronger effect on you
 
+trait-name-HeavyweightDrunk = Heavyweight Drunk
+trait-description-HeavyweightDrunk = Alcohols are afraid of you
+
 trait-name-Muted = Muted
 trait-description-Muted = You can't speak
 
