@@ -4323,3 +4323,9 @@ Entries:
         Thievery trait by default
   id: 6140
   time: '2024-07-05T17:49:25.0000000+00:00'
+- author: Froffy025
+  changes:
+    - type: Add
+      message: You can now carry most of the station pets.
+  id: 6141
+  time: '2024-07-05T17:49:57.0000000+00:00'
