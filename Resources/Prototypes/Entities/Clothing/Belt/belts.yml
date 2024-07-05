@@ -608,6 +608,20 @@
     sprite: Clothing/Belt/securitywebbing.rsi
 
 - type: entity
+  parent: ClothingBeltSecurityWebbing
+  id: ClothingBeltSecurityWebbingFilled
+  name: security webbing
+  description: Unique and versatile chest rig, can hold security gear.
+  components:
+  - type: StorageFill
+    contents:
+      - id: GrenadeFlashBang
+      - id: TearGasGrenade
+      - id: Stunbaton
+      - id: Handcuffs
+      - id: Handcuffs
+
+- type: entity
   parent: ClothingBeltStorageBase
   id: ClothingBeltMercWebbing
   name: mercenarie webbing
