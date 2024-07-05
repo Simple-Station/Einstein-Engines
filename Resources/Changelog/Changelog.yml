@@ -4351,3 +4351,13 @@ Entries:
         Have fun customizing your characters!
   id: 6144
   time: '2024-07-05T22:53:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Translator implants are now proper implants that can be removed.
+    - type: Tweak
+      message: Animalistic languages should now look less messy.
+    - type: Fix
+      message: Hopefully fixed language menu desync and other issues.
+  id: 6145
+  time: '2024-07-05T23:49:47.0000000+00:00'
