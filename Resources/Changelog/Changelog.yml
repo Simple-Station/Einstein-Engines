@@ -4335,3 +4335,11 @@ Entries:
       message: Job requirements are now displayed correctly.
   id: 6142
   time: '2024-07-05T19:10:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Events should now occur as frequently as before. Note: server owner can
+        configure the frequency on their server manually.
+  id: 6143
+  time: '2024-07-05T21:03:28.0000000+00:00'
