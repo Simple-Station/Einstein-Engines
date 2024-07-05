@@ -4,7 +4,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 12 # DeltaV - was 10
+    weight: 10
     startDelay: 30
     duration: 35
   - type: AnomalySpawnRule
@@ -67,16 +67,16 @@
     duration: 1
   - type: ClericalErrorRule
 
-#- type: entity
-#  parent: BaseGameRule # DeltaV - this shit is busted most of the time
-#  id: ClosetSkeleton
-#  noSpawn: true
-#  components:
-#  - type: StationEvent
-#    weight: 10
-#    duration: 1
-#  - type: RandomEntityStorageSpawnRule
-#    prototype: MobSkeletonCloset
+- type: entity
+  parent: BaseGameRule
+  id: ClosetSkeleton
+  noSpawn: true
+  components:
+  - type: StationEvent
+    weight: 10
+    duration: 1
+  - type: RandomEntityStorageSpawnRule
+    prototype: MobSkeletonCloset
 
 - type: entity
   parent: BaseGameRule
@@ -84,7 +84,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 1 # DeltaV - was 5
+    weight: 1
     duration: 1
     earliestStart: 45
     reoccurrenceDelay: 60
@@ -98,9 +98,9 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 3 # DeltaV - was 10
+    weight: 3
     duration: 1
-    earliestStart: 45 # DeltaV - was 30
+    earliestStart: 45
     reoccurrenceDelay: 60
     minimumPlayers: 40
   - type: NinjaSpawnRule
@@ -136,7 +136,7 @@
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
     startAudio:
-      path: /Audio/Announcements/gas_leak.ogg # DeltaV - custom announcer
+      path: /Audio/Announcements/gas_leak.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
     earliestStart: 10
     minimumPlayers: 5
@@ -165,14 +165,14 @@
   - type: StationEvent
     earliestStart: 30
     weight: 7.5
-    minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
+    minimumPlayers: 10
     startAnnouncement: station-event-meteor-swarm-start-announcement
     endAnnouncement: station-event-meteor-swarm-end-announcement
     startAudio:
       path: /Audio/Announcements/meteors.ogg
       params:
         volume: -4
-    duration: null #ending is handled by MeteorSwarmRule
+    duration: null
     startDelay: 30
   - type: MeteorSwarmRule
 
@@ -241,17 +241,17 @@
     maxDuration: 120
   - type: PowerGridCheckRule
 
-# - type: entity # DeltaV - Removes the random sentience.
-#   id: RandomSentience
-#   parent: BaseGameRule
-#   noSpawn: true
-#   components:
-#   - type: StationEvent
-#     weight: 10
-#     duration: 1
-#     startAudio:
-#       path: /Audio/Announcements/attention.ogg
-#   - type: RandomSentienceRule
+- type: entity
+  id: RandomSentience
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    weight: 10
+    duration: 1
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+  - type: RandomSentienceRule
 
 - type: entity
   parent: BaseGameRule
@@ -376,24 +376,24 @@
     - id: MobGiantSpiderAngry
       prob: 0.05
 
-# - type: entity # DeltaV - Prevent normal spawning of MobClownSpider
-#  id: SpiderClownSpawn
-#  parent: BaseGameRule
-#  noSpawn: true
-#  components:
-#  - type: StationEvent
-#    startAnnouncement: station-event-vent-creatures-start-announcement
-#    startAudio:
-#      path: /Audio/Announcements/attention.ogg
-#    startDelay: 10
-#    earliestStart: 20
-#    minimumPlayers: 15
-#    weight: 1
-#    duration: 60
-#  - type: VentCrittersRule
-#    entries:
-#    - id: MobClownSpider
-#      prob: 0.05
+- type: entity
+  id: SpiderClownSpawn
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    startDelay: 10
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 1
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobClownSpider
+      prob: 0.05
 
 - type: entity
   id: ZombieOutbreak
@@ -401,15 +401,15 @@
   noSpawn: true
   components:
   - type: StationEvent
-    earliestStart: 90 # DeltaV - was 50
+    earliestStart: 90
     minimumPlayers: 15
-    weight: 2.5 # DeltaV - was 5
+    weight: 2.5
     duration: 1
   - type: ZombieRule
-    minStartDelay: 0 #let them know immediately
+    minStartDelay: 0
     maxStartDelay: 10
-    maxInitialInfected: 3 #fewer zombies
-    minInitialInfectedGrace: 300 #less time to prepare
+    maxInitialInfected: 3
+    minInitialInfectedGrace: 300
     maxInitialInfectedGrace: 450
 
 - type: entity
@@ -441,20 +441,20 @@
     sounds:
       collection: Paracusia
 
-#- type: entity # DeltaV - Why does this exist??
-#  id: ImmovableRodSpawn
-#  parent: BaseGameRule
-#  noSpawn: true
-#  components:
-#  - type: StationEvent
-#    startAnnouncement: station-event-immovable-rod-start-announcement
-#    startAudio:
-#      path: /Audio/Announcements/attention.ogg
-#    weight: 5
-#    duration: 1
-#    earliestStart: 45
-#    minimumPlayers: 20
-#  - type: ImmovableRodRule
+- type: entity
+  id: ImmovableRodSpawn
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-immovable-rod-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    weight: 5
+    duration: 1
+    earliestStart: 45
+    minimumPlayers: 20
+  - type: ImmovableRodRule
 
 - type: entity
   noSpawn: true

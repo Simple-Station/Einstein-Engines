@@ -3,16 +3,13 @@
   name: job-name-zookeeper
   description: job-description-zookeeper
   playTimeTracker: JobZookeeper
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 7200 #DeltaV 2 hours
   startingGear: ZookeeperGear
   icon: "JobIconZookeeper"
   supervisors: job-supervisors-hop
   access:
   - Service
   - Maintenance
-  - Zookeeper # DeltaV - Add Zookeeper access
+  - Zookeeper
 
 - type: startingGear
   id: ZookeeperGear

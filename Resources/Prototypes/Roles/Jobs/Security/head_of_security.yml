@@ -3,19 +3,6 @@
   name: job-name-hos
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
-  requirements:
-    - !type:RoleTimeRequirement
-      role: JobWarden
-      time: 14400 #DeltaV 4 hrs
-  #  - !type:RoleTimeRequirement # DeltaV - No Security Officer time requirement - REIMPLEMENT WHEN MORE PEOPLE HAVE IT
-  #    role: JobDetective
-  #    time: 14400 #DeltaV 4 hrs
-    - !type:DepartmentTimeRequirement # DeltaV - Command dept time requirement
-      department: Command
-      time: 36000 # 10 hours
-    - !type:OverallPlaytimeRequirement
-      time: 90000 # DeltaV - 25 hours
-    - !type:WhitelistRequirement # DeltaV - Whitelist requirement
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
@@ -25,14 +12,13 @@
   access:
   - HeadOfSecurity
   - Command
-  #- Brig  # Delta V: Removed
   - Security
   - Armory
   - Maintenance
   - Service
   - External
   - Detective
-  - Corpsman # DeltaV - added Corpsman access
+  - Corpsman
   - Cryogenics
   special:
   - !type:AddImplantSpecial
@@ -42,7 +28,7 @@
       - type: CommandStaff
   - !type:AddComponentSpecial
     components:
-    - type: PsionicBonusChance #Nyano - Summary: makes it more likely to become psionic.
+    - type: PsionicBonusChance
       flatBonus: 0.025
 
 - type: startingGear

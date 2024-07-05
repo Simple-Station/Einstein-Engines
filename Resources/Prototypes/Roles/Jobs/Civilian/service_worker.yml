@@ -3,21 +3,17 @@
   name: job-name-serviceworker
   description: job-description-serviceworker
   playTimeTracker: JobServiceWorker
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 7200 # DeltaV - 2 hours
   startingGear: ServiceWorkerGear
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service
-  canBeAntag: true # DeltaV - Can be antagonist
-  antagAdvantage: 1 # DeltaV - Reduced TC: Accesses
+  canBeAntag: true
   access:
   - Service
   - Maintenance
   extendedAccess:
   - Hydroponics
-  - Bar # DeltaV - moved to extended access
-  - Kitchen # DeltaV - moved to extended access
+  - Bar
+  - Kitchen
 
 - type: startingGear
   id: ServiceWorkerGear
