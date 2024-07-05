@@ -171,10 +171,10 @@ namespace Content.Shared.Movement.Systems
             {
                 if (!mover.Sprinting)
                 {
-                    _alerts.ShowAlert(uid, mover.WalkingAlert, 0);
+                    _alerts.ShowAlert(uid, AlertType.Walking, 0);
                 } else
                 {
-                    _alerts.ShowAlert(uid, mover.WalkingAlert, 1);
+                    _alerts.ShowAlert(uid, AlertType.Walking, 1);
                 }
             }
 
