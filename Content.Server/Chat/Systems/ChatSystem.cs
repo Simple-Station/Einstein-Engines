@@ -846,7 +846,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("verb", verbName),
             ("fontType", speech.FontId),
             ("fontSize", speech.FontSize),
-            ("message", FormattedMessage.EscapeText(message)));
+            ("message", message));
     }
 
     /// <summary>
