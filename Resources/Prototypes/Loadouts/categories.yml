@@ -4,7 +4,13 @@
   id: Uncategorized
 
 - type: loadoutCategory
-  id: Accessories
+  id: Eyes
+
+- type: loadoutCategory
+  id: Hands
+
+- type: loadoutCategory
+  id: Head
 
 - type: loadoutCategory
   id: Items
@@ -13,7 +19,16 @@
   id: Jobs
 
 - type: loadoutCategory
+  id: Neck
+
+- type: loadoutCategory
   id: Outer
+
+- type: loadoutCategory
+  id: Shoes
+
+- type: loadoutCategory
+  id: Species
 
 - type: loadoutCategory
   id: Uniform
