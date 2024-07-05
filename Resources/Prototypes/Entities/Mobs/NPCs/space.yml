@@ -165,7 +165,7 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepBounce
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Kangaroo
     understands:
@@ -251,7 +251,7 @@
   - type: MeleeChemicalInjector
     solution: melee
     transferAmount: 4
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Xeno
     understands:
@@ -357,7 +357,7 @@
     - type: MeleeChemicalInjector
       solution: melee
       transferAmount: 6
-    - type: LanguageSpeaker
+    - type: LanguageKnowledge
       speaks:
       - Xeno
       understands:
