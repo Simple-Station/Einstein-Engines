@@ -4293,3 +4293,17 @@ Entries:
         from being flunged into the void.
   id: 6137
   time: '2024-07-05T16:53:25.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Carrying is less likely to behave erratically or suddenly interrupt now.
+    - type: Add
+      message: >-
+        You can now see when someone is trying to pick you up, and also you can
+        interrupt your attempt at escaping from their hands or inventory.
+    - type: Add
+      message: You can now properly take Felinids out of bags and place them inside.
+    - type: Add
+      message: Scientists have discovered that Felinids can sleep in bags.
+  id: 6138
+  time: '2024-07-05T17:28:44.0000000+00:00'
