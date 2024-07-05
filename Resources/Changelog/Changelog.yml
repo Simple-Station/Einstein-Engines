@@ -4343,3 +4343,11 @@ Entries:
         configure the frequency on their server manually.
   id: 6143
   time: '2024-07-05T21:03:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The catalog of items available via Loadouts has been greatly expanded.
+        Have fun customizing your characters!
+  id: 6144
+  time: '2024-07-05T22:53:36.0000000+00:00'
