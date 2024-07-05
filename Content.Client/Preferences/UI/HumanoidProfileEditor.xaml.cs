@@ -2086,7 +2086,7 @@ namespace Content.Client.Preferences.UI
                 selector.PreferenceChanged += preference =>
                 {
                     // Make sure they have enough loadout points
-                    preference = preference ? CheckPoints(points, preference) : CheckPoints(-points, preference);
+                    preference = preference ? CheckPoints(-points, preference) : CheckPoints(points, preference);
 
                     // Update Preferences
                     Profile = Profile?.WithLoadoutPreference(id, preference);
