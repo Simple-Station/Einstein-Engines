@@ -467,7 +467,7 @@
 - type: loadout
   id: LoadoutClothingMNKDressBlack
   category: Uniform
-  cost: 4 #The legendary black dress
+  cost: 4
   exclusive: true
   items:
     - ClothingUniformMNKDressBlack
