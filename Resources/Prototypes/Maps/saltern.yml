@@ -64,8 +64,35 @@
           #civilian
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
+<<<<<<< HEAD
             Musician: [ 1, 2 ]
             Passenger: [ -1, -1 ]
           #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
+||||||| parent of 54ef38c02d (Fix blob + specforce (#671))
+            Musician: [ 1, 1 ]
+            # backmen
+            Brigmedic: [ 0, 1 ] # backmen-Brigmedic
+            #BKBPLATech: [0, 3] # backmen-BPLA-Silicons
+            #BKBPLAMED: [0, 3] # backmen-BPLAMED-Silicons
+            Deliveryman: [ 0, 1 ]
+            Prisoner: [ 2, 2]
+            SAI: [1, 1] # backmen-SAI
+
+=======
+            Musician: [ 1, 1 ]
+            # backmen
+            Brigmedic: [ 0, 1 ] # backmen-Brigmedic
+            #BKBPLATech: [0, 3] # backmen-BPLA-Silicons
+            #BKBPLAMED: [0, 3] # backmen-BPLAMED-Silicons
+            Deliveryman: [ 0, 1 ]
+            Prisoner: [ 2, 2]
+            SAI: [1, 1] # backmen-SAI
+        # backmen blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # backmen blob-config-end
+>>>>>>> 54ef38c02d (Fix blob + specforce (#671))

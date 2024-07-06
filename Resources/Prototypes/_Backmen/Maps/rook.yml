@@ -1,0 +1,105 @@
+- type: gameMap
+  id: BackmenRook
+  mapName: 'Rook'
+  mapPath: /Maps/Backmen/backmen_rook.yml
+  minPlayers: 0
+  maxPlayers: 25
+  stations:
+    Rook:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Rook {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Backmen/Shuttles/emergency_rook.yml
+        - type: GridSpawn
+          groups:
+            trade: !type:GridSpawnGroup
+              addComponents:
+                - type: ArrivalsProtectGrid
+                - type: ProtectedGrid
+                - type: TradeStation
+              paths:
+                - /Maps/Shuttles/trading_outpost.yml
+            mining: !type:GridSpawnGroup
+              paths:
+              - /Maps/Backmen/Shuttles/nt-bishop.yml # backmen-rook-salvage-shuttle
+            ruin: !type:GridSpawnGroup # backmen-science-ruin
+              hide: true
+              nameGrid: true
+              stationGrid: false
+              paths:
+              - /Maps/Backmen/Grids/ruin_science.yml
+            # Spawn last
+            ruins: !type:GridSpawnGroup
+              hide: true
+              nameGrid: true
+              minCount: 2
+              maxCount: 3
+              stationGrid: false
+              paths:
+              - /Maps/Ruins/biodome_satellite.yml
+              - /Maps/Ruins/derelict.yml
+              - /Maps/Ruins/djstation.yml
+              - /Maps/Ruins/old_ai_sat.yml
+              - /Maps/Ruins/whiteship_ancient.yml
+              - /Maps/Ruins/whiteship_bluespacejumper.yml
+        - type: StationJobs
+          availableJobs:
+          #Service
+            Passenger: [ -1, -1 ]
+            ServiceWorker: [ 1, 1]
+            IAA: [ 1, 1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 1, 1 ]
+            Chef: [ 1, 1 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Musician: [ 1, 1]
+            Mime: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+          #Engineering
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 2, 3 ]
+            TechnicalAssistant: [ 1, 2 ]
+            AtmosphericTechnician: [ 1, 2 ]
+          #Medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Paramedic: [ 1, 1 ]
+            MedicalDoctor: [ 2, 3 ]
+            Chemist: [ 1, 1 ]
+            MedicalIntern: [ 1, 2 ]
+          #Security
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 2, 3 ]
+            Detective: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityCadet: [ 1, 2 ]
+            Brigmedic: [ 1, 1 ]
+            Prisoner: [ 2, 2 ]
+          #Science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 2, 3 ]
+            ResearchAssistant: [ 1, 2 ]
+            Roboticist: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+          #cargo
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 2 ]
+            CargoTechnician: [ 2, 3 ]
+          #silicon
+            SAI: [ 1, 1 ]
+            #BKBPLATech: [0, 2]
+            #BKBPLAMED: [0, 2]
+            Borg: [ 1, 2 ]
+        # backmen blob-config-start LOW
+        - type: StationBlobConfig
+          stageBegin: 15
+          stageCritical: 200
+          stageTheEnd: 400
+          specForceTeam: RXBZZBlobLow
+        # backmen blob-config-end

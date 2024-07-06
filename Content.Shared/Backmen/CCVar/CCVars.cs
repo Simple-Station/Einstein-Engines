@@ -150,4 +150,49 @@ public sealed class CCVars
 
     public static readonly CVarDef<int> BlobPlayersPer =
         CVarDef.Create("blob.players_per", 20, CVar.SERVERONLY);
+<<<<<<< HEAD
+||||||| parent of 54ef38c02d (Fix blob + specforce (#671))
+
+    /*
+     * SpecForces
+     */
+    public static readonly CVarDef<int> SpecForceDelay =
+        CVarDef.Create("specforce.delay", 2, CVar.SERVERONLY);
+
+
+    /*
+     * enabling a roll to enter a ghost role for one player from the vote
+     */
+    public static readonly CVarDef<bool>
+        GhostRollerEnabled = CVarDef.Create("ghost.roller_enabled", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// the time that will be given to throw a number to vote for the ghost role
+    /// </summary>
+    public static readonly CVarDef<int> GhostRollerTime =
+        CVarDef.Create("ghost.roller_time", 20, CVar.REPLICATED | CVar.SERVER);
+=======
+
+    public static readonly CVarDef<bool> BlobCanGrowInSpace =
+        CVarDef.Create("blob.grow_space", true, CVar.REPLICATED);
+
+    /*
+     * SpecForces
+     */
+    public static readonly CVarDef<int> SpecForceDelay =
+        CVarDef.Create("specforce.delay", 2, CVar.SERVERONLY);
+
+
+    /*
+     * enabling a roll to enter a ghost role for one player from the vote
+     */
+    public static readonly CVarDef<bool>
+        GhostRollerEnabled = CVarDef.Create("ghost.roller_enabled", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// the time that will be given to throw a number to vote for the ghost role
+    /// </summary>
+    public static readonly CVarDef<int> GhostRollerTime =
+        CVarDef.Create("ghost.roller_time", 20, CVar.REPLICATED | CVar.SERVER);
+>>>>>>> 54ef38c02d (Fix blob + specforce (#671))
 }

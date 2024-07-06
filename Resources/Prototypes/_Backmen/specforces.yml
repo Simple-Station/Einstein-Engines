@@ -1,0 +1,147 @@
+# СПРАВКА ПО ПОВОДУ РАБОТЫ guaranteedSpawn & specForceSpawn
+#
+# specForceSpawn считает количество ролей для спавна по формуле (Количество игроков + maxRolesAmount) / maxRolesAmount,
+# потому на 20 человек на сервере в обычных условиях заспавнится 3 оперативника.
+#
+# guaranteedSpawn спавнит все роли из своего списка, не смотря на какие-либо ограничения по игрокам.
+#
+# Это значит, что в guaranteedSpawn лучше всего указывать только Уникальные и случайные бонусные роли,
+# и не обязательно повторять сущности из specForcesSpawn (только если вы не делаете спецсилы для ОЧЕНЬ маленького онлайна).
+#
+# Учитывайте это при построении новых прототипов или изменении старых.
+
+# ERT
+- type: specForceTeam
+  id: ERT
+  specForceName: spec-forces-system-ert-name
+  shuttlePath: Maps/Backmen/Shuttles/SpecForces/dart.yml
+  spawnMarker: MarkerSpecforce
+  announcementText: spec-forces-system-ertcall-annonce
+  announcementTitle: spec-forces-system-ertcall-title
+  announcementSoundPath: /Audio/Corvax/Adminbuse/Yesert.ogg
+  maxRolesAmount: 8
+  guaranteedSpawn:
+    - id: SpawnMobHumanERTLeaderEVAV2_1
+    - id: SpawnMobHumanERTEngineerEVAV2_1
+  specForceSpawn:
+    - id: SpawnMobHumanERTSecurityEVAV2_1
+    - id: SpawnMobHumanERTMedicalEVAV2_1
+    - id: SpawnMobHumanERTJunitorEVAV2_1
+
+# BaseRXBZZ
+- type: specForceTeam
+  id: BaseRXBZZ
+  abstract: true
+  specForceName: spec-forces-system-RXBZZ-name
+  shuttlePath: Maps/Backmen/Shuttles/SpecForces/NT-CC-SRV-013.yml
+  spawnMarker: MarkerSpecforce
+  announcementText: spec-forces-system-RXBZZ-annonce
+  announcementTitle: spec-forces-system-RXBZZ-title
+  maxRolesAmount: 8
+
+# Death Squad
+- type: specForceTeam
+  id: DeathSquad
+  specForceName: spec-forces-system-deathsquad-name
+  shuttlePath: Maps/Backmen/Shuttles/SpecForces/Invincible.yml
+  spawnMarker: MarkerSpecforce
+  maxRolesAmount: 6
+  guaranteedSpawn:
+    - id: SpawnMobHumanSpecialReAgentCOM
+    - id: SpawnMobHumanSFOfficer
+      prob: 0.7
+  specForceSpawn:
+    - id: SpawnMobHumanSpecialReAgent
+
+# ERT Alpha
+- type: specForceTeam
+  id: ERTAlpha
+  specForceName: spec-forces-system-alpha-name
+  shuttlePath: Maps/Backmen/Shuttles/SpecForces/NT-CC-Specnaz-013.yml
+  spawnMarker: MarkerSpecforce
+  announcementText: spec-forces-system-ertcall-annonce
+  announcementTitle: spec-forces-system-ertAlpha-title
+  announcementSoundPath: /Audio/Corvax/Adminbuse/Yesert.ogg
+  maxRolesAmount: 6
+  guaranteedSpawn:
+    - id: SpawnMobHumanSFOfficer
+      prob: 0.3
+    - id: SpawnMobHumanERTLeaderAlpha1
+  specForceSpawn:
+    - id: SpawnMobHumanERTOperativeAlpha1
+
+# ERT Epsilon
+- type: specForceTeam
+  id: ERTEpsilon
+  specForceName: spec-forces-system-epsilon-name
+  shuttlePath: Maps/Backmen/Shuttles/SpecForces/NT-DF-Kolibri-011.yml
+  spawnMarker: MarkerSpecforce
+  announcementText: spec-forces-system-ertcall-annonce
+  announcementTitle: spec-forces-system-ertEpsilon-title
+  announcementSoundPath: /Audio/Corvax/Adminbuse/Yesert.ogg
+  maxRolesAmount: 10
+  spawnPerPlayers: 5
+  raffleConfig:
+    settings: short
+  guaranteedSpawn:
+    - id: SpawnMobHumanERTLeaderEpsilon
+  specForceSpawn:
+    - id: SpawnMobHumanERTMedicalEpsilon
+    - id: SpawnMobHumanERTSecurityEpsilon
+    - id: SpawnMobHumanERTEngineerEpsilon
+    - id: SpawnMobHumanERTJanitorEpsilon
+
+# ERT Tay
+- type: specForceTeam
+  id: ERTTay
+  specForceName: spec-forces-system-tay-name
+  shuttlePath: Maps/Backmen/Shuttles/SpecForces/NTMH-Medivak-TH39.yml
+  spawnMarker: MarkerSpecforce
+  announcementText: spec-forces-system-ertcall-annonce
+  announcementTitle: spec-forces-system-ertTay-title
+  announcementSoundPath: /Audio/Corvax/Adminbuse/Yesert.ogg
+  maxRolesAmount: 6
+  guaranteedSpawn:
+    - id: SpawnMobHumanERTLeaderTay39
+    - id: SpawnMobHumanERTMedicTay39
+      amount: 2
+  specForceSpawn:
+    - id: SpawnMobHumanERTSecurityTay39
+
+# RXBZZ teams
+- type: specForceTeam
+  id: RXBZZ
+  parent: BaseRXBZZ
+  guaranteedSpawn:
+    - id: SpawnMobHumanRXBZZLeader
+    - id: SpawnMobHumanRXBZZFlamer
+  specForceSpawn:
+    - id: SpawnMobHumanRXBZZ
+
+- type: specForceTeam
+  id: RXBZZBlobLow
+  parent: BaseRXBZZ
+  guaranteedSpawn:
+    - id: SpawnMobHumanRXBZZLeader
+    - id: SpawnMobHumanRXBZZFlamer
+    - id: SpawnMobHumanRXBZZ
+      amount: 2
+
+- type: specForceTeam
+  id: RXBZZBlobDefault
+  parent: BaseRXBZZ
+  guaranteedSpawn:
+    - id: SpawnMobHumanRXBZZLeader
+    - id: SpawnMobHumanRXBZZFlamer
+    - id: SpawnMobHumanRXBZZ
+      amount: 4
+
+- type: specForceTeam
+  id: RXBZZBlobBig
+  parent: BaseRXBZZ
+  guaranteedSpawn:
+    - id: SpawnMobHumanRXBZZLeader
+    - id: SpawnMobHumanRXBZZFlamer
+      amount: 2
+    - id: SpawnMobHumanRXBZZ
+      amount: 5

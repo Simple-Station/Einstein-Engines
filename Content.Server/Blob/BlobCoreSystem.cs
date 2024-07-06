@@ -1,15 +1,31 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.AlertLevel;
+<<<<<<< HEAD:Content.Server/Blob/BlobCoreSystem.cs
 using Content.Server.Chat.Managers;
+||||||| parent of 54ef38c02d (Fix blob + specforce (#671)):Content.Server/Backmen/Blob/BlobCoreSystem.cs
+using Content.Server.Backmen.Blob.Components;
+using Content.Server.Backmen.GameTicking.Rules.Components;
+using Content.Server.Chat.Managers;
+=======
+using Content.Server.Backmen.Blob.Components;
+using Content.Server.Backmen.GameTicking.Rules.Components;
+using Content.Server.Backmen.Objectives;
+>>>>>>> 54ef38c02d (Fix blob + specforce (#671)):Content.Server/Backmen/Blob/BlobCoreSystem.cs
 using Content.Server.Explosion.Components;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.GameTicking;
+<<<<<<< HEAD:Content.Server/Blob/BlobCoreSystem.cs
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
 using Content.Server.Roles;
+||||||| parent of 54ef38c02d (Fix blob + specforce (#671)):Content.Server/Backmen/Blob/BlobCoreSystem.cs
+using Content.Server.Mind;
+using Content.Server.Objectives.Conditions;
+=======
+>>>>>>> 54ef38c02d (Fix blob + specforce (#671)):Content.Server/Backmen/Blob/BlobCoreSystem.cs
 using Content.Server.RoundEnd;
 using Content.Server.Station.Systems;
 using Content.Shared.Alert;
@@ -53,8 +69,140 @@ public sealed class BlobCoreSystem : EntitySystem
         SubscribeLocalEvent<BlobCoreComponent, DestructionEventArgs>(OnDestruction);
         SubscribeLocalEvent<BlobCoreComponent, DamageChangedEvent>(OnDamaged);
         SubscribeLocalEvent<BlobCoreComponent, PlayerAttachedEvent>(OnPlayerAttached);
+<<<<<<< HEAD:Content.Server/Blob/BlobCoreSystem.cs
+||||||| parent of 54ef38c02d (Fix blob + specforce (#671)):Content.Server/Backmen/Blob/BlobCoreSystem.cs
+        SubscribeLocalEvent<BlobCoreComponent, EntityTerminatingEvent>(OnTerminating);
+
+
+        SubscribeLocalEvent<BlobCaptureConditionComponent, ObjectiveGetProgressEvent>(OnBlobCaptureProgress);
+        SubscribeLocalEvent<BlobCaptureConditionComponent, ObjectiveAfterAssignEvent>(OnBlobCaptureInfo);
+
+        _tile = GetEntityQuery<BlobTileComponent>();
+        _factory = GetEntityQuery<BlobFactoryComponent>();
+=======
+        SubscribeLocalEvent<BlobCoreComponent, EntityTerminatingEvent>(OnTerminating);
+
+
+        SubscribeLocalEvent<BlobCaptureConditionComponent, ObjectiveGetProgressEvent>(OnBlobCaptureProgress);
+        SubscribeLocalEvent<BlobCaptureConditionComponent, ObjectiveAfterAssignEvent>(OnBlobCaptureInfo);
+        SubscribeLocalEvent<BlobCaptureConditionComponent, ObjectiveAssignedEvent>(OnBlobCaptureInfoAdd);
+
+
+        _tile = GetEntityQuery<BlobTileComponent>();
+        _factory = GetEntityQuery<BlobFactoryComponent>();
+>>>>>>> 54ef38c02d (Fix blob + specforce (#671)):Content.Server/Backmen/Blob/BlobCoreSystem.cs
     }
 
+<<<<<<< HEAD:Content.Server/Blob/BlobCoreSystem.cs
+||||||| parent of 54ef38c02d (Fix blob + specforce (#671)):Content.Server/Backmen/Blob/BlobCoreSystem.cs
+    private void OnTerminating(EntityUid uid, BlobCoreComponent component, ref EntityTerminatingEvent args)
+    {
+        if (component.Observer != null && !TerminatingOrDeleted(component.Observer.Value) && !EntityManager.IsQueuedForDeletion(component.Observer.Value))
+        {
+            QueueDel(component.Observer.Value);
+        }
+    }
+
+    #region Objective
+    private void OnBlobCaptureInfo(EntityUid uid, BlobCaptureConditionComponent component, ref ObjectiveAfterAssignEvent args)
+    {
+        _metaDataSystem.SetEntityName(uid,Loc.GetString("objective-condition-blob-capture-title"));
+        _metaDataSystem.SetEntityDescription(uid,Loc.GetString("objective-condition-blob-capture-description", ("count", component.Target)));
+    }
+
+    private void OnBlobCaptureProgress(EntityUid uid, BlobCaptureConditionComponent component, ref ObjectiveGetProgressEvent args)
+    {
+        // prevent divide-by-zero
+        if (component.Target == 0)
+        {
+            args.Progress = 1;
+            return;
+        }
+
+        if (args.Mind?.OwnedEntity == null)
+        {
+            args.Progress = 0;
+            return;
+        }
+
+        if (!TryComp<BlobObserverComponent>(args.Mind.OwnedEntity, out var blobObserverComponent)
+            || !TryComp<BlobCoreComponent>(blobObserverComponent.Core, out var blobCoreComponent))
+        {
+            args.Progress = 0;
+            return;
+        }
+        args.Progress = (float) blobCoreComponent.BlobTiles.Count / (float) component.Target;
+    }
+    #endregion
+
+=======
+    private void OnTerminating(EntityUid uid, BlobCoreComponent component, ref EntityTerminatingEvent args)
+    {
+        if (component.Observer != null && !TerminatingOrDeleted(component.Observer.Value) && !EntityManager.IsQueuedForDeletion(component.Observer.Value))
+        {
+            QueueDel(component.Observer.Value);
+        }
+    }
+
+    #region Objective
+
+    private void OnBlobCaptureInfoAdd(Entity<BlobCaptureConditionComponent> ent, ref ObjectiveAssignedEvent args)
+    {
+        if (args.Mind?.OwnedEntity == null)
+        {
+            args.Cancelled = true;
+            return;
+        }
+        if (!TryComp<BlobObserverComponent>(args.Mind.OwnedEntity, out var blobObserverComponent)
+            || !TryComp<BlobCoreComponent>(blobObserverComponent.Core, out var blobCoreComponent))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
+        var station = _stationSystem.GetOwningStation(blobObserverComponent.Core);
+        if (station == null)
+        {
+            args.Cancelled = true;
+            return;
+        }
+
+        ent.Comp.Target = CompOrNull<StationBlobConfigComponent>(station)?.StageTheEnd ?? StationBlobConfigComponent.DefaultStageEnd;
+    }
+
+    private void OnBlobCaptureInfo(EntityUid uid, BlobCaptureConditionComponent component, ref ObjectiveAfterAssignEvent args)
+    {
+        _metaDataSystem.SetEntityName(uid,Loc.GetString("objective-condition-blob-capture-title"));
+        _metaDataSystem.SetEntityDescription(uid,Loc.GetString("objective-condition-blob-capture-description", ("count", component.Target)));
+    }
+
+    private void OnBlobCaptureProgress(EntityUid uid, BlobCaptureConditionComponent component, ref ObjectiveGetProgressEvent args)
+    {
+        // prevent divide-by-zero
+        if (component.Target == 0)
+        {
+            args.Progress = 1;
+            return;
+        }
+
+        if (args.Mind?.OwnedEntity == null)
+        {
+            args.Progress = 0;
+            return;
+        }
+
+        if (!TryComp<BlobObserverComponent>(args.Mind.OwnedEntity, out var blobObserverComponent)
+            || !TryComp<BlobCoreComponent>(blobObserverComponent.Core, out var blobCoreComponent))
+        {
+            args.Progress = 0;
+            return;
+        }
+
+        args.Progress = (float) blobCoreComponent.BlobTiles.Count / (float) component.Target;
+    }
+    #endregion
+
+>>>>>>> 54ef38c02d (Fix blob + specforce (#671)):Content.Server/Backmen/Blob/BlobCoreSystem.cs
     private void OnPlayerAttached(EntityUid uid, BlobCoreComponent component, PlayerAttachedEvent args)
     {
         var xform = Transform(uid);

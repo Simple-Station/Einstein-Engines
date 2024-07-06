@@ -562,13 +562,13 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 100
+            damage: 125
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
     - type: Reflect
-      reflectProb: 0.9
-      spread: 10
+      reflectProb: 0.6
+      spread: 20
       reflects:
         - Energy
     - type: Airtight

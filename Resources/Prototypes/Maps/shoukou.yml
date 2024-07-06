@@ -71,5 +71,25 @@
             SalvageSpecialist: [ 2, 4 ]
             MailCarrier: [ 1, 2 ]
             CargoTechnician: [ 2, 3 ]
+<<<<<<< HEAD:Resources/Prototypes/Maps/shoukou.yml
           # Silicon
             StationAi: [ 1, 1 ]
+||||||| parent of 54ef38c02d (Fix blob + specforce (#671)):Resources/Prototypes/_Backmen/Maps/shoukou.yml
+          #silicon
+            SAI: [ 1, 1 ]
+            #BKBPLATech: [0, 2]
+            #BKBPLAMED: [0, 2]
+            Borg: [ 3, 3 ]
+=======
+          #silicon
+            SAI: [ 1, 1 ]
+            #BKBPLATech: [0, 2]
+            #BKBPLAMED: [0, 2]
+            Borg: [ 3, 3 ]
+        # backmen blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # backmen blob-config-end
+>>>>>>> 54ef38c02d (Fix blob + specforce (#671)):Resources/Prototypes/_Backmen/Maps/shoukou.yml
