@@ -96,3 +96,14 @@
   description: Comfy, yet haunted by the ghosts of ducks you fed bread to as a child.
   icon: { sprite: Clothing/Shoes/Misc/duck-slippers.rsi, state: icon }
   objectType: Item
+
+- type: construction
+  name: clothwarps
+  id: ClothingsClothwarp
+  graph: ClothingsClothwarp
+  startNode: start
+  targetNode: warps
+  category: construction-category-clothing
+  description: A roll of treated canvas used for wrapping claws or paws.
+  icon: { sprite: Clothing/Shoes/Misc/clothwarp.rsi, state: icon }
+  objectType: Item

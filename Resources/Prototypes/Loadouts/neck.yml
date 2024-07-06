@@ -30,6 +30,30 @@
   items:
     - ClothingNeckScarfStripedZebra
 
+- type: loadout
+  id: LoadoutNeckBellCollar
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckBellCollar
+
+- type: loadout
+  id: LoadoutNeckOldMantle
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckOldMantle
+
+- type: loadout
+  id: LoadoutNeckUnathiMantle
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckUnathiMantle
+
 #Pride Accessories
 - type: loadout
   id: LoadoutItemsPrideLGBTPin

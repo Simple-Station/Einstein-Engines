@@ -93,3 +93,17 @@
   - type: Construction
     graph: flowerwreath
     node: flowerwreath
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckBellCollar
+  name: bell collar
+  description: A way to inform others about your presence, or just to annoy everyone around you!
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/bellcollar.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/bellcollar.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepJester

@@ -1,0 +1,38 @@
+- type: entity
+  parent: Clothing
+  id: ClothingsClothwarp
+  name: clothwarps
+  description: A roll of treated canvas used for wrapping claws or paws.
+  components:
+  - type: Item
+    size: Small
+    storedRotation: -90
+  - type: Sprite
+    state: icon
+    sprite: Clothing/Shoes/Misc/clothwarp.rsi
+  - type: Clothing
+    slots:
+    - gloves
+    - FEET
+    sprite: Clothing/Shoes/Misc/clothwarp.rsi
+  - type: Construction
+    graph: ClothingsClothwarp
+    node: shoes
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialCloth1
+      amount: 1
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon

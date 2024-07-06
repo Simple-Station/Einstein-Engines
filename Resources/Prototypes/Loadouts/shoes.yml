@@ -164,3 +164,11 @@
   exclusive: true
   items:
     - ClothingShoesMiscWhite
+
+- type: loadout
+  id: LoadoutShoesClothwarp
+  category: Shoes
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingsClothwarp

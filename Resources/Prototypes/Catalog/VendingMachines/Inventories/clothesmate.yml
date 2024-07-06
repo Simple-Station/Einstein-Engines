@@ -67,6 +67,7 @@
     ClothingShoesColorOrange: 2
     ClothingShoesColorRed: 2
     ClothingShoesColorPurple: 2
+    ClothingsClothwarp: 4
     ClothingHeadHatGreysoft: 8
     ClothingHeadHatMimesoft: 3
     ClothingHeadHatBluesoft: 2
@@ -111,6 +112,8 @@
     ClothingHandsGlovesColorOrange: 2
     ClothingHandsGlovesColorPurple: 2
     ClothingEyesGlassesCheapSunglasses: 3
+    ClothingNeckOldMantle: 2
+    ClothingNeckUnathiMantle: 2
   contrabandInventory:
     ClothingMaskNeckGaiter: 2
     ClothingUniformJumpsuitTacticool: 1
