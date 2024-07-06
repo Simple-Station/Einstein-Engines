@@ -174,6 +174,33 @@ namespace Content.Shared.CCVar
             GameLobbyEnableWin = CVarDef.Create("game.enablewin", true, CVar.ARCHIVE);
 
         /// <summary>
+        ///     Minimum time between Basic station events in seconds
+        /// </summary>
+        public static readonly CVarDef<int> // 5 Minutes
+            GameEventsBasicMinimumTime = CVarDef.Create("game.events_basic_minimum_time", 300, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Maximum time between Basic station events in seconds
+        /// </summary>
+        public static readonly CVarDef<int> // 25 Minutes
+            GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 1500, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Minimum time between Ramping station events in seconds
+        /// </summary>
+        public static readonly CVarDef<int> // 4 Minutes
+            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 240, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Maximum time between Ramping station events in seconds
+        /// </summary>
+        public static readonly CVarDef<int> // 12 Minutes
+            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 720, CVar.SERVERONLY);
+
+        /// <summary>
+        ///
+
+        /// <summary>
         ///     Controls the maximum number of character slots a player is allowed to have.
         /// </summary>
         public static readonly CVarDef<int>
@@ -782,6 +809,9 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<bool> CombatModeIndicatorsPointShow =
             CVarDef.Create("hud.combat_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+        public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
+            CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 
         public static readonly CVarDef<bool> LoocAboveHeadShow =
             CVarDef.Create("hud.show_looc_above_head", true, CVar.ARCHIVE | CVar.CLIENTONLY);
@@ -2126,6 +2156,18 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> PsionicRollsEnabled =
             CVarDef.Create("psionics.rolls_enabled", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Whether height & width sliders adjust a character's Fixture Component
+        /// </summary>
+        public static readonly CVarDef<bool> HeightAdjustModifiesHitbox =
+            CVarDef.Create("heightadjust.modifies_hitbox", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Whether height & width sliders adjust a player's max view distance
+        /// </summary>
+        public static readonly CVarDef<bool> HeightAdjustModifiesZoom =
+            CVarDef.Create("heightadjust.modifies_zoom", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Enables station goals

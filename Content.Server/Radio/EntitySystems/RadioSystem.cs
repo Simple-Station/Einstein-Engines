@@ -60,7 +60,7 @@ public sealed class RadioSystem : EntitySystem
             // Einstein-Engines - languages mechanic
             var listener = component.Owner;
             var msg = args.OriginalChatMsg;
-            if (listener != null && !_language.CanUnderstand(listener, args.Language))
+            if (listener != null && !_language.CanUnderstand(listener, args.Language.ID))
                 msg = args.LanguageObfuscatedChatMsg;
 
             _netMan.ServerSendMessage(new MsgChatMessage { Message = msg}, actor.PlayerSession.Channel);
@@ -183,7 +183,7 @@ public sealed class RadioSystem : EntitySystem
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
-            ("message", FormattedMessage.EscapeText(message)));
+            ("message", message));
     }
 
     /// <inheritdoc cref="TelecomServerComponent"/>

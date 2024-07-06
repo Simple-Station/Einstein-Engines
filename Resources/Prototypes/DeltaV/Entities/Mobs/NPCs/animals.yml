@@ -66,7 +66,7 @@
   - type: Tag
     tags:
     - VimPilot
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Fox
     understands:
@@ -179,7 +179,7 @@
     tags:
     - DoorBumpOpener
     - VimPilot
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Dog
     understands:
