@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: basic slime
   id: MobAdultSlimes
   parent: [ SimpleMobBase, MobCombat ]
@@ -17,6 +17,7 @@
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: blue_adult_slime
+  - type: Carriable
   - type: Fixtures
     fixtures:
       fix1:
@@ -111,7 +112,7 @@
     successChance: 0.5
     interactSuccessString: petting-success-slimes
     interactFailureString: petting-failure-generic
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Bubblish
     understands:

@@ -4285,3 +4285,85 @@ Entries:
       message: Equipping clothing using the Z key works correctly again.
   id: 6136
   time: '2024-07-03T19:48:29.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Space stations now have a tiny bit of velocity dampening to prevent them
+        from being flunged into the void.
+  id: 6137
+  time: '2024-07-05T16:53:25.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Carrying is less likely to behave erratically or suddenly interrupt now.
+    - type: Add
+      message: >-
+        You can now see when someone is trying to pick you up, and also you can
+        interrupt your attempt at escaping from their hands or inventory.
+    - type: Add
+      message: You can now properly take Felinids out of bags and place them inside.
+    - type: Add
+      message: Scientists have discovered that Felinids can sleep in bags.
+  id: 6138
+  time: '2024-07-05T17:28:44.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: You can now sign paper by alt-clicking it while holding a pen.
+  id: 6139
+  time: '2024-07-05T17:33:39.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: Added the Thievery trait, which provides various soft stripping bonuses
+    - type: Tweak
+      message: >-
+        Felinids no longer have passive thieving gloves, they instead get the
+        Thievery trait by default
+  id: 6140
+  time: '2024-07-05T17:49:25.0000000+00:00'
+- author: Froffy025
+  changes:
+    - type: Add
+      message: You can now carry most of the station pets.
+  id: 6141
+  time: '2024-07-05T17:49:57.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Job requirements are now displayed correctly.
+  id: 6142
+  time: '2024-07-05T19:10:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Events should now occur as frequently as before. Note: server owner can
+        configure the frequency on their server manually.
+  id: 6143
+  time: '2024-07-05T21:03:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The catalog of items available via Loadouts has been greatly expanded.
+        Have fun customizing your characters!
+  id: 6144
+  time: '2024-07-05T22:53:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Translator implants are now proper implants that can be removed.
+    - type: Tweak
+      message: Animalistic languages should now look less messy.
+    - type: Fix
+      message: Hopefully fixed language menu desync and other issues.
+  id: 6145
+  time: '2024-07-05T23:49:47.0000000+00:00'
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added system
+  id: 6146
+  time: '2024-07-06T00:19:35.0000000+00:00'
