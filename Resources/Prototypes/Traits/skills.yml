@@ -16,7 +16,7 @@
     - type: LightweightDrunk
       boozeStrengthMultiplier: 0.5
   
-- type: trair 
+- type: trait
   id: Thieving
   category: Physical
   points: -4
