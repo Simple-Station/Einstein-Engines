@@ -9,7 +9,7 @@ character-species-requirement = You must {$inverted ->
 character-trait-requirement = You must {$inverted ->
     [true] not have
     *[other] have
-} the trait [color=lightblue]{$traits}[/color]
+} one of these traits: [color=lightblue]{$traits}[/color]
 character-backpack-type-requirement = You must {$inverted ->
     [true] not use
     *[other] use
