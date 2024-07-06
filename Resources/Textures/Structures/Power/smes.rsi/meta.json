@@ -41,8 +41,20 @@
       "name": "smes-op1"
     },
     {
+      "name": "smes-op2"
+    },
+    {
       "name": "smes-oc1",
       "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+       "name": "smes-oc2",
+        "delays": [
         [
           0.3,
           0.3
