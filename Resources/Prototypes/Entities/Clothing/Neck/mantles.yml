@@ -82,9 +82,9 @@
   description: A tattered fabric wrap, faded over the years. Smells faintly of cigars.
   components:
   - type: Sprite
-    sprite: Clothing/Neck/Mantles/oldmantle.rsi
+    sprite: Clothing/Neck/mantles/oldmantle.rsi
   - type: Clothing
-    sprite: Clothing/Neck/Mantles/oldmantle.rsi
+    sprite: Clothing/Neck/mantles/oldmantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -93,6 +93,6 @@
   description: A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle.
   components:
   - type: Sprite
-    sprite: Clothing/Neck/Mantles/unathimantle.rsi
+    sprite: Clothing/Neck/mantles/unathimantle.rsi
   - type: Clothing
-    sprite: Clothing/Neck/Mantles/unathimantle.rsi
+    sprite: Clothing/Neck/mantles/unathimantle.rsi
