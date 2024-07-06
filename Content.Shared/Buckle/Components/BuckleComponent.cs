@@ -24,57 +24,64 @@ public sealed partial class BuckleComponent : Component
     [AutoNetworkedField]
     public bool Buckled;
 
+    /// <summary>
+    /// The last entity this component was buckled to.
+    /// </summary>
     [ViewVariables]
     [AutoNetworkedField]
     public EntityUid? LastEntityBuckledTo;
 
     /// <summary>
-    /// Whether or not collisions should be possible with the entity we are strapped to
+    /// Whether or not collisions should be possible with the entity we are strapped to.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField, AutoNetworkedField]
     public bool DontCollide;
 
     /// <summary>
-    /// Whether or not we should be allowed to pull the entity we are strapped to
+    /// Whether or not we should be allowed to pull the entity we are strapped to.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField]
     public bool PullStrap;
 
     /// <summary>
-    /// The amount of time that must pass for this entity to
-    /// be able to unbuckle after recently buckling.
+    /// The delay before the buckle/unbuckle action is completed.
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan Delay = TimeSpan.FromSeconds(0.25f);
 
     /// <summary>
-    /// The time that this entity buckled at.
+    /// The time when the buckle/unbuckle action was initiated.
     /// </summary>
     [ViewVariables]
     public TimeSpan BuckleTime;
 
     /// <summary>
-    /// The strap that this component is buckled to.
+    /// The entity this component is currently buckled to.
     /// </summary>
     [ViewVariables]
     [AutoNetworkedField]
     public EntityUid? BuckledTo;
 
     /// <summary>
-    /// The amount of space that this entity occupies in a
-    /// <see cref="StrapComponent"/>.
+    /// The maximum size of entities that can be buckled to this component.
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public int Size = 100;
 
     /// <summary>
-    /// Used for client rendering
+    /// The original draw depth of the entity before it was buckled.
     /// </summary>
     [ViewVariables] public int? OriginalDrawDepth;
+
+    [DataField]
+
+    [ViewVariables(VVAccess.ReadWrite)]
+
+    public EntityWhitelist? AllowedBuckleTypes;
 }
 
 [ByRefEvent]
@@ -88,3 +95,4 @@ public enum BuckleVisuals
 {
     Buckled
 }
+

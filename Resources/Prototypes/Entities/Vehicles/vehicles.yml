@@ -1,0 +1,26 @@
+- type: entity
+  id: VehicleCar
+  name: Car
+  description: A simple car for transportation.
+  components:
+    - type: Sprite
+      sprite: Vehicles/car.rsi
+    - type: Physics
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3.0
+      baseSprintSpeed: 6.0
+    - type: Vehicle
+      maxOccupants: 4
+      maxDrivers: 1
+    - type: Damageable
+      damageContainer: Vehicle
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+    - type: ContainerContainer
+      containers:
+        vehicle_storage: !type:Container
