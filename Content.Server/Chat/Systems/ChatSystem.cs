@@ -850,7 +850,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("fontType", language.FontId ?? speech.FontId),
             ("fontSize", language.FontSize ?? speech.FontSize),
-            ("message", FormattedMessage.EscapeText(message)));
+            ("message", message));
     }
 
     /// <summary>

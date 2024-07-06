@@ -16,7 +16,7 @@ public sealed class LanguagePrototype : IPrototype
 
     [DataField("fontSize")]
     public int? FontSize;
-
+    
     /// <summary>
     ///     Obfuscation method used by this language. By default, uses <see cref="ObfuscationMethod.Default"/>
     /// </summary>

@@ -31,3 +31,14 @@ trait-description-SocialAnxiety = You are anxious when you speak and stutter.
 
 trait-name-Snoring = Snoring
 trait-description-Snoring = You will snore while sleeping.
+
+trait-name-NormalVisionHarpy = Trichromat Modification
+trait-description-NormalVisionHarpy = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
+
+trait-name-NormalVisionVulpkanin = Trichromat Modification
+trait-description-NormalVisionVulpkanin = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
+
+trait-name-Thieving = Thieving
+trait-description-Thieving =
+    You are deft with your hands, and talented at convincing people of their belongings.
+    You can identify pocketed items, steal them quieter, and steal ~33% faster.
