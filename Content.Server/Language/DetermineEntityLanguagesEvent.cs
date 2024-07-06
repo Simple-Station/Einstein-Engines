@@ -1,29 +1,25 @@
+using Content.Shared.Language;
+
 namespace Content.Server.Language;
 
 /// <summary>
-///   Raised in order to determine the language an entity speaks at the current moment,
-///   as well as the list of all languages the entity may speak and understand.
+///     Raised in order to determine the list of languages the entity can speak and understand at the given moment.
+///     Typically raised on an entity after a language agent (e.g. a translator) has been added to or removed from them.
 /// </summary>
-public sealed class DetermineEntityLanguagesEvent : EntityEventArgs
+[ByRefEvent]
+public record struct DetermineEntityLanguagesEvent
 {
     /// <summary>
-    ///   The default language of this entity. If empty, remain unchanged.
-    ///   This field has no effect if the entity decides to speak in a concrete language.
+    ///     The list of all languages the entity may speak.
+    ///     By default, contains the languages this entity speaks intrinsically.
     /// </summary>
-    public string CurrentLanguage;
-    /// <summary>
-    ///   The list of all languages the entity may speak. Must NOT be held as a reference!
-    /// </summary>
-    public List<string> SpokenLanguages;
-    /// <summary>
-    ///   The list of all languages the entity may understand. Must NOT be held as a reference!
-    /// </summary>
-    public List<string> UnderstoodLanguages;
+    public HashSet<string> SpokenLanguages = new();
 
-    public DetermineEntityLanguagesEvent(string currentLanguage, List<string> spokenLanguages, List<string> understoodLanguages)
-    {
-        CurrentLanguage = currentLanguage;
-        SpokenLanguages = spokenLanguages;
-        UnderstoodLanguages = understoodLanguages;
-    }
+    /// <summary>
+    ///     The list of all languages the entity may understand.
+    ///     By default, contains the languages this entity understands intrinsically.
+    /// </summary>
+    public HashSet<string> UnderstoodLanguages = new();
+
+    public DetermineEntityLanguagesEvent() {}
 }

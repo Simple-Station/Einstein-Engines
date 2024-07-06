@@ -1,13 +1,21 @@
 - type: loadout
   id: LoadoutEyesEyepatch
-  category: Accessories
+  category: Eyes
   cost: 1
   items:
     - ClothingEyesEyepatch
 
 - type: loadout
   id: LoadoutEyesBlindfold
-  category: Accessories
+  category: Eyes
   cost: 2
   items:
     - ClothingEyesBlindfold
+
+- type: loadout
+  id: LoadoutItemSunglasses
+  category: Eyes
+  cost: 5
+  exclusive: true
+  items:
+    - ClothingEyesGlassesSunglasses
