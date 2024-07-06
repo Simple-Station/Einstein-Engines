@@ -67,16 +67,16 @@
     duration: 1
   - type: ClericalErrorRule
 
-- type: entity
-  parent: BaseGameRule
-  id: ClosetSkeleton
-  noSpawn: true
-  components:
-  - type: StationEvent
-    weight: 10
-    duration: 1
-  - type: RandomEntityStorageSpawnRule
-    prototype: MobSkeletonCloset
+#- type: entity
+#  parent: BaseGameRule # DeltaV - this shit is busted most of the time
+#  id: ClosetSkeleton
+#  noSpawn: true
+#  components:
+#  - type: StationEvent
+#    weight: 10
+#    duration: 1
+#  - type: RandomEntityStorageSpawnRule
+#    prototype: MobSkeletonCloset
 
 - type: entity
   parent: BaseGameRule
@@ -165,14 +165,14 @@
   - type: StationEvent
     earliestStart: 30
     weight: 7.5
-    minimumPlayers: 10
+    minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
     startAnnouncement: station-event-meteor-swarm-start-announcement
     endAnnouncement: station-event-meteor-swarm-end-announcement
     startAudio:
       path: /Audio/Announcements/meteors.ogg
       params:
         volume: -4
-    duration: null
+    duration: null #ending is handled by MeteorSwarmRule
     startDelay: 30
   - type: MeteorSwarmRule
 

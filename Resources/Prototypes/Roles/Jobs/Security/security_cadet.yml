@@ -9,6 +9,7 @@
   canBeAntag: false
   access:
   - Security
+  #- Brig # Delta V: Removed
   - Maintenance
   - Service
   - External

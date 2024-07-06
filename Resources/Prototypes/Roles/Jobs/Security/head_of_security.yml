@@ -12,6 +12,7 @@
   access:
   - HeadOfSecurity
   - Command
+  #- Brig  # Delta V: Removed
   - Security
   - Armory
   - Maintenance
