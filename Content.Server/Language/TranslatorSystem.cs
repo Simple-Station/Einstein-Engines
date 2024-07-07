@@ -1,16 +1,12 @@
 using System.Linq;
-using Content.Server.Language.Events;
 using Content.Server.Popups;
 using Content.Server.PowerCell;
-using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Language;
-using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using Content.Shared.PowerCell;
 using Content.Shared.Language.Components.Translators;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Language;
 
@@ -25,7 +21,6 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
     public override void Initialize()
     {
         base.Initialize();
-
 
         SubscribeLocalEvent<IntrinsicTranslatorComponent, DetermineEntityLanguagesEvent>(OnDetermineLanguages);
         SubscribeLocalEvent<HoldsTranslatorComponent, DetermineEntityLanguagesEvent>(OnDetermineLanguages);

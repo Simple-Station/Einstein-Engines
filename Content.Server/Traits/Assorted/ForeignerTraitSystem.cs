@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Server.GameTicking;
 using Content.Server.Hands.Systems;
 using Content.Server.Language;
 using Content.Server.Storage.EntitySystems;
