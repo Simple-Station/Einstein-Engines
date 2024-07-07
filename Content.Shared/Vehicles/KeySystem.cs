@@ -1,12 +1,8 @@
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
-using Content.Shared.Vehicle;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
 using Robust.Shared.Player;
-using Content.Shared.Vehicles.Components;
-using Content.Shared.Interaction.Events;
-
 
 namespace Content.Shared.Vehicle
 {
@@ -17,34 +13,41 @@ namespace Content.Shared.Vehicle
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<KeyRequiredComponent, InteractUsingEvent>(OnInteractUsing);
-            SubscribeLocalEvent<KeyRequiredComponent, AltInteractEvent>(OnAltInteract);
+            SubscribeLocalEvent<KeyComponent, InteractHandEvent>(OnInteractHand);
         }
 
-        private void OnInteractUsing(EntityUid uid, KeyRequiredComponent component, InteractUsingEvent args)
+        private void OnInteractHand(EntityUid uid, KeyComponent component, InteractHandEvent args)
+
         {
+
             if (args.Handled)
+
                 return;
 
-            if (component.InsertedKey == null && args.Used.HasComponent<KeyComponent>())
-            {
-                component.InsertedKey = args.Used;
-                _popupSystem.PopupEntity("You insert the key.", uid, Filter.Entities(args.User));
-                args.Handled = true;
-            }
-        }
 
-        private void OnAltInteract(EntityUid uid, KeyRequiredComponent component, AltInteractEvent args)
-        {
-            if (args.Handled)
-                return;
+            if (component.IsInserted)
 
-            if (component.InsertedKey != null)
             {
-                _popupSystem.PopupEntity("You remove the key.", uid, Filter.Entities(args.User));
-                component.InsertedKey = null;
-                args.Handled = true;
+
+                component.IsInserted = false;
+
+                _popupSystem.PopupEntity("Key removed.", uid, args.User, PopupType.Medium);
+
             }
+
+            else
+
+            {
+
+                component.IsInserted = true;
+
+                _popupSystem.PopupEntity("Key inserted.", uid, args.User, PopupType.Medium);
+
+            }
+
+
+            args.Handled = true;
+
         }
     }
 }

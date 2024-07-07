@@ -5,10 +5,8 @@ using Robust.Shared.ViewVariables;
 namespace Content.Server.Vehicles.Components
 {
     [RegisterComponent]
-    public sealed class VehicleComponent : Component
+    public sealed partial class VehicleComponent : Component
     {
-        public override string Name => "Vehicle";
-
         [DataField("maxOccupants")]
         public int MaxOccupants = 1;
 
