@@ -15,5 +15,8 @@ namespace Content.Shared.Vehicle
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("speed")]
         public float Speed = 5f;
+        [DataField("canMove")]
+
+        public bool CanMove = true;
     }
 }

@@ -1,13 +1,25 @@
 - type: entity
-  name: Secway Spawner
-  id: SpawnVehicleSecway
-  parent: MarkerBase
+  id: VehicleSecway
+  name: Secway
+  description: A simple personal transportation device.
   components:
     - type: Sprite
-      layers:
-        - state: green
-        - sprite: Objects/Vehicles/secway.rsi
-          state: keys
-    - type: ConditionalSpawner
-      prototypes:
-        - VehicleSecway
+      sprite: Objects/Vehicles/secway.rsi
+      state: vehicle
+    - type: Physics
+      bodyType: Dynamic
+    - type: Vehicle
+      maxOccupants: 1
+      maxDrivers: 1
+      speed: 2.0
+    - type: Buckle
+      range: 1.0
+      delay: 0.5
+    - type: Pullable
+    - type: Interactable
+    - type: UseDelay
+      delay: 0.5
+    - type: Item
+      size: Large
+    - type: RiddenVehicle
+      maxRiders: 1

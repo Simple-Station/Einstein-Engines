@@ -35,14 +35,6 @@
       },
       {
         "name": "keys"
-      },
-      {
-        "name": "icon"
-      },
-      {
-        "name": "secway",
-        "directions": 1,
-        "delay": [100]
       }
     ]
   }

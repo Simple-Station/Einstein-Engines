@@ -79,6 +79,7 @@ public abstract partial class SharedBuckleSystem : EntitySystem
         SubscribeLocalEvent<BuckleComponent, ThrowPushbackAttemptEvent>(OnBuckleThrowPushbackAttempt);
         SubscribeLocalEvent<BuckleComponent, UpdateCanMoveEvent>(OnBuckleUpdateCanMove);
     }
+
     public bool ToggleBuckle(EntityUid buckleUid, EntityUid userUid, EntityUid strapUid, BuckleComponent? buckleComp = null, StrapComponent? strapComp = null)
     {
         if (!Resolve(buckleUid, ref buckleComp, false) || !Resolve(strapUid, ref strapComp, false))
@@ -89,64 +90,41 @@ public abstract partial class SharedBuckleSystem : EntitySystem
         else
             return TryBuckle(buckleUid, userUid, strapUid, buckleComp, strapComp);
     }
+
     public bool IsBuckled(EntityUid uid, BuckleComponent? buckleComp = null)
-
     {
-
         if (!Resolve(uid, ref buckleComp, false))
-
             return false;
 
-
         return buckleComp.Buckled;
-
     }
+
     public void StrapSetEnabled(EntityUid uid, bool enabled)
-
     {
-
         if (TryComp<StrapComponent>(uid, out var strap))
-
         {
-
             strap.Enabled = enabled;
-
             Dirty(uid, strap);
-
         }
-
     }
-
 
     private void OnStrapStartup(EntityUid uid, StrapComponent component, ComponentStartup args)
-
     {
-
         UpdateStrapVisuals(uid, component);
 
-
         var buckleQuery = GetEntityQuery<BuckleComponent>();
-
         var xform = Transform(uid);
-
         var buckleEntities = GetEntitiesInRange(uid, component.MaxBuckleDistance);
 
-
         foreach (var entity in buckleEntities)
-
         {
-
             if (buckleQuery.TryGetComponent(entity, out var buckle) && !buckle.Buckled)
-
             {
-
                 TryBuckle(entity, entity, uid, buckle, component);
-
             }
-
         }
-
     }
+
     public IEnumerable<EntityUid> GetEntitiesInRange(EntityUid uid, float range, TransformComponent? xform = null)
     {
         if (!Resolve(uid, ref xform))
@@ -171,46 +149,29 @@ public abstract partial class SharedBuckleSystem : EntitySystem
             }
         }
     }
+
     private void OnStrapShutdown(EntityUid uid, StrapComponent component, ComponentShutdown args)
-
     {
-
         // Unbuckle all entities from this strap
-
         foreach (var buckledEntity in component.BuckledEntities.ToList())
-
         {
-
             TryUnbuckle(buckledEntity, buckledEntity, true);
-
         }
 
-
         // Clear the buckled entities list
-
         component.BuckledEntities.Clear();
-
         component.OccupiedSize = 0;
 
-
         // Update the strap's visual state
-
         UpdateStrapVisuals(uid, component);
-
     }
 
-
     private void UpdateStrapVisuals(EntityUid uid, StrapComponent? strap = null)
-
     {
-
         if (!Resolve(uid, ref strap))
-
             return;
 
-
         Appearance.SetData(uid, StrapVisuals.State, strap.BuckledEntities.Count > 0);
-
     }
 
     private void OnBuckleStartup(EntityUid uid, BuckleComponent component, ComponentStartup args)
@@ -304,150 +265,91 @@ public abstract partial class SharedBuckleSystem : EntitySystem
     }
 
     public bool TryBuckle(EntityUid buckleUid, EntityUid userUid, EntityUid strapUid, BuckleComponent? buckleComp = null, StrapComponent? strapComp = null)
-
     {
-
         if (!Resolve(buckleUid, ref buckleComp, false) || !Resolve(strapUid, ref strapComp, false))
-
             return false;
-
 
         if (buckleComp.Buckled || !CanBuckle(buckleUid, userUid, strapUid, out strapComp, buckleComp))
-
             return false;
 
-
         buckleComp.Buckled = true;
-
         buckleComp.BuckledTo = strapUid;
-
         buckleComp.BuckleTime = _gameTiming.CurTime;
 
-
         strapComp.BuckledEntities.Add(buckleUid);
-
         strapComp.OccupiedSize += buckleComp.Size;
-
 
         ReAttach(buckleUid, strapUid, buckleComp, strapComp);
 
-
         _audio.PlayPredicted(strapComp.BuckleSound, strapUid, userUid);
-
         _alerts.ShowAlert(buckleUid, strapComp.BuckledAlertType);
 
-
         var ev = new BuckleChangeEvent(strapUid, buckleUid, true);
-
         RaiseLocalEvent(buckleUid, ref ev);
-
         RaiseLocalEvent(strapUid, ref ev);
 
-
         return true;
-
     }
+
     public bool TryUnbuckle(EntityUid buckleUid, EntityUid userUid, bool force, BuckleComponent? buckleComp = null, StrapComponent? strapComp = null)
-
     {
-
         if (!Resolve(buckleUid, ref buckleComp, false) || !buckleComp.Buckled || buckleComp.BuckledTo == null || !Resolve(buckleComp.BuckledTo.Value, ref strapComp, false))
-
             return false;
-
 
         if (!force && _gameTiming.CurTime < buckleComp.BuckleTime + buckleComp.Delay)
-
             return false;
-
 
         buckleComp.Buckled = false;
-
         buckleComp.BuckledTo = null!;
 
-
         if (_mobState.IsIncapacitated(buckleUid))
-
             _standing.Down(buckleUid);
 
-
         if (strapComp.BuckledEntities.Remove(buckleUid))
-
         {
-
             strapComp.OccupiedSize -= buckleComp.Size;
-
             Dirty(buckleComp.BuckledTo.Value, strapComp);
-
         }
 
-
         _joints.RefreshRelay(buckleUid);
-
         Appearance.SetData(buckleComp.BuckledTo.Value, StrapVisuals.State, strapComp.BuckledEntities.Count != 0);
 
-
         if (!TerminatingOrDeleted(buckleComp.BuckledTo.Value))
-
             _audio.PlayPredicted(strapComp.UnbuckleSound, buckleComp.BuckledTo.Value, userUid);
 
-
         var ev = new BuckleChangeEvent(buckleComp.BuckledTo.Value, buckleUid, false);
-
         RaiseLocalEvent(buckleUid, ref ev);
-
         RaiseLocalEvent(buckleComp.BuckledTo.Value, ref ev);
 
-
         return true;
-
     }
 
-
     private bool CanBuckle(EntityUid buckleUid, EntityUid userUid, EntityUid strapUid, [NotNullWhen(true)] out StrapComponent? strapComp, BuckleComponent? buckleComp = null)
-
     {
-
         strapComp = null;
 
-
         if (!Resolve(buckleUid, ref buckleComp, false) || !Resolve(strapUid, ref strapComp, false))
-
             return false;
-
 
         if (userUid == strapUid)
-
             return false;
-
 
         if (!ActionBlocker.CanInteract(userUid, strapUid))
-
             return false;
-
 
         if (!IsEntityAllowed(buckleUid, strapComp))
-
             return false;
-
 
         if (!_interaction.InRangeUnobstructed(buckleUid, strapUid, buckleComp.Range))
-
             return false;
-
 
         if (strapComp.OccupiedSize + buckleComp.Size > strapComp.Size)
-
             return false;
-
 
         if (!strapComp.Enabled)
-
             return false;
 
-
         return true;
-
     }
 
     private bool IsEntityAllowed(EntityUid buckleUid, StrapComponent strapComp)
@@ -487,11 +389,9 @@ public abstract partial class SharedBuckleSystem : EntitySystem
                 break;
         }
     }
+
     public enum StrapVisuals
-
     {
-
         State
-
     }
 }

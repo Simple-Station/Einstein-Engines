@@ -1,52 +1,24 @@
 - type: entity
-  id: VehicleCar
-  name: Car
-  description: A simple car for transportation.
-  components:
-    - type: Sprite
-      sprite: Vehicles/car.rsi
-    - type: Physics
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 3.0
-      baseSprintSpeed: 6.0
-    - type: Vehicle
-      maxOccupants: 4
-      maxDrivers: 1
-    - type: Damageable
-      damageContainer: Vehicle
-    - type: Destructible
-      thresholds:
-        - trigger: !type:DamageTrigger
-            damage: 100
-          behaviors:
-            - !type:DoActsBehavior
-              acts: ["Destruction"]
-    - type: ContainerContainer
-      containers:
-        vehicle_storage: !type:Container
-
-- type: entity
   id: VehicleSecway
   name: Secway
   description: A simple personal transportation device.
   components:
     - type: Sprite
       sprite: Objects/Vehicles/secway.rsi
-      state: secway
+      state: vehicle
     - type: Physics
       bodyType: Dynamic
-    - type: Vehicle
-      maxOccupants: 1
-      maxDrivers: 1
+    - type: RiddenVehicle
       speed: 2.0
     - type: Buckle
       range: 1.0
       delay: 0.5
+    - type: Strap
+      position: Stand
+      buckleOffset: "0,0"
+      size: 100
     - type: Pullable
-    - type: Interactable
     - type: UseDelay
       delay: 0.5
     - type: Item
       size: Large
-    - type: RiddenVehicle
-      maxRiders: 1
