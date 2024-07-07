@@ -33,14 +33,14 @@ public sealed partial class ForeignerTraitSystem : EntitySystem
 
         if (!TryComp<LanguageKnowledgeComponent>(entity, out var knowledge))
         {
-            Log.Error($"Entity {entity.Owner} does not have a LanguageKnowledge but has a ForeignerTrait!");
+            Log.Warning($"Entity {entity.Owner} does not have a LanguageKnowledge but has a ForeignerTrait!");
             return;
         }
 
         var alternateLanguage = knowledge.SpokenLanguages.Find(it => it != entity.Comp.BaseLanguage);
         if (alternateLanguage == null)
         {
-            Log.Error($"Entity {entity.Owner} does not have an alternative language to choose from (must have at least one non-GC for ForeignerTrait)!");
+            Log.Warning($"Entity {entity.Owner} does not have an alternative language to choose from (must have at least one non-GC for ForeignerTrait)!");
             return;
         }
 
