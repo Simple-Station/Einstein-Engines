@@ -19,7 +19,6 @@ public sealed partial class ForeignerTraitSystem : EntitySystem
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly LanguageSystem _languages = default!;
-    [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly StorageSystem _storage = default!;
 
     public override void Initialize()
