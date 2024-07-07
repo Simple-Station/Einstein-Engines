@@ -104,6 +104,8 @@
       state: m_foam-north
     - map: [ "enum.EdgeLayer.West" ]
       state: m_foam-west
+  - type: EdgeSpreader
+    id: MetalFoam
   - type: FoamVisuals
     animationTime: 0.6
     animationState: m_foam-dissolve
@@ -162,6 +164,13 @@
   - type: Transform
     anchored: true
   - type: Airtight
+  - type: ReplaceFloorOnSpawn
+    replaceableTiles:
+    - Plating
+    - Lattice
+    - TrainLattice
+    replacementTiles:
+    - FloorMetalFoam
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
