@@ -1,5 +1,10 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Content.Shared.AlertLevel;
+using Robust.Shared.Audio;
+using System.Numerics;
+using Content.Shared.Alert;
+using Content.Shared.Whitelist;
 
 namespace Content.Shared.Buckle.Components;
 
@@ -83,6 +88,19 @@ public sealed partial class StrapComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
     public SoundSpecifier UnbuckleSound = new SoundPathSpecifier("/Audio/Effects/unbuckle.ogg");
+
+    /// <summary>
+    /// The allowed entities that can be buckled to this strap.
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public EntityWhitelist? AllowedEntities;
+
+    /// <summary>
+    /// The clamped buckle offset for this strap.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public Vector2 BuckleOffsetClamped => Vector2.Clamp(BuckleOffset, Vector2.One * -0.5f, Vector2.One * 0.5f);
 }
 
 public enum StrapPosition
