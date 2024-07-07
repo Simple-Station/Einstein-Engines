@@ -1,0 +1,13 @@
+- type: entity
+  name: Secway Spawner
+  id: SpawnVehicleSecway
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+        - sprite: Objects/Vehicles/secway.rsi
+          state: keys
+    - type: ConditionalSpawner
+      prototypes:
+        - VehicleSecway

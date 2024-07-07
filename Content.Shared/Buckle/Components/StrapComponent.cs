@@ -21,6 +21,7 @@ public sealed partial class StrapComponent : Component
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public float MaxBuckleDistance = 1.0f;
 
     /// <summary>
@@ -42,6 +43,7 @@ public sealed partial class StrapComponent : Component
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public int Size = 100;
 
     /// <summary>
@@ -55,6 +57,7 @@ public sealed partial class StrapComponent : Component
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public bool Enabled = true;
 
     /// <summary>
@@ -62,6 +65,7 @@ public sealed partial class StrapComponent : Component
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public AlertType BuckledAlertType = AlertType.Buckled;
 
     /// <summary>
@@ -69,6 +73,7 @@ public sealed partial class StrapComponent : Component
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public SoundSpecifier BuckleSound = new SoundPathSpecifier("/Audio/Effects/buckle.ogg");
 
     /// <summary>
@@ -76,6 +81,7 @@ public sealed partial class StrapComponent : Component
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public SoundSpecifier UnbuckleSound = new SoundPathSpecifier("/Audio/Effects/unbuckle.ogg");
 }
 

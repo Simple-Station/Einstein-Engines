@@ -1,7 +1,8 @@
 using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization.Manager.Attributes;
+using Robust.Shared.ViewVariables;
 
-namespace Content.Shared.Vehicle
+namespace Content.Server.Vehicles.Components
 {
     [RegisterComponent]
     public sealed class VehicleComponent : Component
@@ -11,16 +12,13 @@ namespace Content.Shared.Vehicle
         [DataField("maxOccupants")]
         public int MaxOccupants = 1;
 
-        [DataField("maxDrivers")]
-        public int MaxDrivers = 1;
-
-        [DataField("canMove")]
-        public bool CanMove = true;
-
-        [DataField("keyType")]
-        public string? KeyType;
+        [DataField("speed")]
+        public float Speed = 1.0f;
 
         [ViewVariables]
         public List<EntityUid> Occupants = new();
+
+        [ViewVariables]
+        public EntityUid? Driver;
     }
 }

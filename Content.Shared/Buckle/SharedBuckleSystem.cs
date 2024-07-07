@@ -1,3 +1,11 @@
+using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Verbs;
+using Content.Shared.Physics;
+using Content.Shared.Throwing;
+using Content.Shared.Movement;
+using Content.Shared.Movement.Events;
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
@@ -15,6 +23,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Buckle;
 
@@ -49,6 +58,11 @@ public abstract partial class SharedBuckleSystem : EntitySystem
 
         InitializeBuckle();
         InitializeStrap();
+    }
+
+    private void InitializeStrap()
+    {
+        // Initialization logic for straps...
     }
 
     private void InitializeBuckle()
@@ -159,15 +173,15 @@ public abstract partial class SharedBuckleSystem : EntitySystem
 
         strap.BuckledEntities.Add(uid);
         strap.OccupiedSize += component.Size;
-        Dirty(strap);
+        Dirty(component.BuckledTo.Value, strap);
     }
 
-    private bool TryBuckle(EntityUid buckleUid, EntityUid userUid, EntityUid strapUid, BuckleComponent? buckleComp = null, StrapComponent? strapComp = null)
+    public bool TryBuckle(EntityUid buckleUid, EntityUid userUid, EntityUid strapUid, BuckleComponent? buckleComp = null, StrapComponent? strapComp = null)
     {
         if (!Resolve(buckleUid, ref buckleComp, false) || !Resolve(strapUid, ref strapComp, false))
             return false;
 
-        if (buckleComp.Buckled || !CanBuckle(buckleUid, strapUid, buckleComp, strapComp))
+        if (buckleComp.Buckled || !CanBuckle(buckleUid, userUid, strapUid, out strapComp, buckleComp))
             return false;
 
         buckleComp.Buckled = true;
@@ -189,7 +203,7 @@ public abstract partial class SharedBuckleSystem : EntitySystem
         return true;
     }
 
-    private bool TryUnbuckle(EntityUid buckleUid, EntityUid userUid, bool force, BuckleComponent? buckleComp = null, StrapComponent? strapComp = null)
+    public bool TryUnbuckle(EntityUid buckleUid, EntityUid userUid, bool force, BuckleComponent? buckleComp = null, StrapComponent? strapComp = null)
     {
         if (!Resolve(buckleUid, ref buckleComp, false) || !buckleComp.Buckled || !Resolve(buckleComp.BuckledTo, ref strapComp, false))
             return false;
@@ -206,18 +220,18 @@ public abstract partial class SharedBuckleSystem : EntitySystem
         if (strapComp.BuckledEntities.Remove(buckleUid))
         {
             strapComp.OccupiedSize -= buckleComp.Size;
-            Dirty(strapComp);
+            Dirty(strapComp.Owner, strapComp);
         }
 
         _joints.RefreshRelay(buckleUid);
-        Appearance.SetData(strapUid, StrapVisuals.State, strapComp.BuckledEntities.Count != 0);
+        Appearance.SetData(strapComp.Owner, StrapVisuals.State, strapComp.BuckledEntities.Count != 0);
 
-        if (!TerminatingOrDeleted(strapUid))
-            _audio.PlayPredicted(strapComp.UnbuckleSound, strapUid, userUid);
+        if (!TerminatingOrDeleted(strapComp.Owner))
+            _audio.PlayPredicted(strapComp.UnbuckleSound, strapComp.Owner, userUid);
 
-        var ev = new BuckleChangeEvent(strapUid, buckleUid, false);
+        var ev = new BuckleChangeEvent(strapComp.Owner, buckleUid, false);
         RaiseLocalEvent(buckleUid, ref ev);
-        RaiseLocalEvent(strapUid, ref ev);
+        RaiseLocalEvent(strapComp.Owner, ref ev);
 
         return true;
     }

@@ -24,3 +24,27 @@
     - type: ContainerContainer
       containers:
         vehicle_storage: !type:Container
+
+- type: entity
+  id: VehicleSecway
+  name: Secway
+  description: A simple personal transportation device.
+  components:
+    - type: Sprite
+      sprite: Objects/Vehicles/secway.rsi
+      state: secway
+    - type: Physics
+      bodyType: Dynamic
+    - type: Vehicle
+      maxOccupants: 1
+      maxDrivers: 1
+      speed: 2.0
+    - type: Buckle
+      range: 1.0
+      delay: 0.5
+    - type: Pullable
+    - type: Interactable
+    - type: UseDelay
+      delay: 0.5
+    - type: Item
+      size: Large
