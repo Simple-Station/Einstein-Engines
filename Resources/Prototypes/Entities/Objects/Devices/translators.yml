@@ -23,6 +23,11 @@
           False: { visible: false }
   - type: HandheldTranslator
     enabled: false
+  - type: Clothing # To allow equipping translators on the neck slot
+    slots: [neck, pocket]
+    equipDelay: 0.3
+    unequipDelay: 0.3
+    quickEquip: false # Would conflict
 
 - type: entity
   abstract: true
