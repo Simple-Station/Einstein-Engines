@@ -2,6 +2,7 @@ using Content.Shared.Vehicle;
 using Robust.Client.GameObjects;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
+using Robust.Shared.GameStates;
 
 namespace Content.Client.Vehicle
 {
@@ -21,7 +22,7 @@ namespace Content.Client.Vehicle
                 return;
 
             component.Riders.Clear();
-            component.Riders.AddRange(state.Riders);
+            component.Riders.UnionWith(state.Riders);
         }
     }
 }

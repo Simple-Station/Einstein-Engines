@@ -1,4 +1,5 @@
 using Content.Shared.Buckle;
+using Content.Shared.Buckle.Components;
 
 namespace Content.Server.NPC.HTN.Preconditions;
 
@@ -9,7 +10,7 @@ public sealed partial class BuckledPrecondition : HTNPrecondition
 {
     private SharedBuckleSystem _buckle = default!;
 
-    [ViewVariables(VVAccess.ReadWrite)] [DataField("isBuckled")] public bool IsBuckled = true;
+    [ViewVariables(VVAccess.ReadWrite)][DataField("isBuckled")] public bool IsBuckled = true;
 
     public override void Initialize(IEntitySystemManager sysManager)
     {

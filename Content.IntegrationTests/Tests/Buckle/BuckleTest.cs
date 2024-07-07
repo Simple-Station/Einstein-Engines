@@ -119,9 +119,9 @@ namespace Content.IntegrationTests.Tests.Buckle
                 Assert.That(buckleSystem.TryBuckle(human, human, chair, buckle), Is.False);
 
                 // Trying to unbuckle too quickly fails
-                Assert.That(buckleSystem.TryUnbuckle(human, human, buckleComp: buckle), Is.False);
+                Assert.That(buckleSystem.TryUnbuckle(human, human, false, buckle), Is.False);
                 Assert.That(buckle.Buckled);
-                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle: buckle), Is.False);
+                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle), Is.False);
                 Assert.That(buckle.Buckled);
 #pragma warning restore NUnit2045
             });
@@ -137,7 +137,7 @@ namespace Content.IntegrationTests.Tests.Buckle
 #pragma warning restore NUnit2045
 
                 // Unbuckle
-                Assert.That(buckleSystem.TryUnbuckle(human, human, buckleComp: buckle));
+                Assert.That(buckleSystem.TryUnbuckle(human, human, false, buckle));
                 Assert.Multiple(() =>
                 {
                     Assert.That(buckle.BuckledTo, Is.Null);
@@ -153,15 +153,15 @@ namespace Content.IntegrationTests.Tests.Buckle
 
 #pragma warning disable NUnit2045 // Interdependent asserts.
                 // Re-buckling has no cooldown
-                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle));
+                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckle));
                 Assert.That(buckle.Buckled);
 
                 // On cooldown
-                Assert.That(buckleSystem.TryUnbuckle(human, human, buckleComp: buckle), Is.False);
+                Assert.That(buckleSystem.TryUnbuckle(human, human, false, buckle), Is.False);
                 Assert.That(buckle.Buckled);
-                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle: buckle), Is.False);
+                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle), Is.False);
                 Assert.That(buckle.Buckled);
-                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle: buckle), Is.False);
+                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle), Is.False);
                 Assert.That(buckle.Buckled);
 #pragma warning restore NUnit2045
             });
@@ -176,7 +176,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 Assert.That(buckle.Buckled);
 
                 // Unbuckle
-                Assert.That(buckleSystem.TryUnbuckle(human, human, buckleComp: buckle));
+                Assert.That(buckleSystem.TryUnbuckle(human, human, false, buckle));
                 Assert.That(buckle.Buckled, Is.False);
 #pragma warning restore NUnit2045
 
@@ -187,9 +187,9 @@ namespace Content.IntegrationTests.Tests.Buckle
 
                 // Out of range
 #pragma warning disable NUnit2045 // Interdependent asserts.
-                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle), Is.False);
-                Assert.That(buckleSystem.TryUnbuckle(human, human, buckleComp: buckle), Is.False);
-                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle: buckle), Is.False);
+                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckle), Is.False);
+                Assert.That(buckleSystem.TryUnbuckle(human, human, false, buckle), Is.False);
+                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle), Is.False);
 #pragma warning restore NUnit2045
 
                 // Move near the chair
@@ -198,16 +198,16 @@ namespace Content.IntegrationTests.Tests.Buckle
 
                 // In range
 #pragma warning disable NUnit2045 // Interdependent asserts.
-                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle));
+                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckle));
                 Assert.That(buckle.Buckled);
-                Assert.That(buckleSystem.TryUnbuckle(human, human, buckleComp: buckle), Is.False);
+                Assert.That(buckleSystem.TryUnbuckle(human, human, false, buckle), Is.False);
                 Assert.That(buckle.Buckled);
-                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle: buckle), Is.False);
+                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle), Is.False);
                 Assert.That(buckle.Buckled);
 #pragma warning restore NUnit2045
 
                 // Force unbuckle
-                Assert.That(buckleSystem.TryUnbuckle(human, human, true, buckleComp: buckle));
+                Assert.That(buckleSystem.TryUnbuckle(human, human, true, buckle));
                 Assert.Multiple(() =>
                 {
                     Assert.That(buckle.Buckled, Is.False);
@@ -217,7 +217,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 });
 
                 // Re-buckle
-                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle));
+                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckle));
 
                 // Move away from the chair
                 oldWorldPosition = xformSystem.GetWorldPosition(chair, xformQuery);
@@ -276,7 +276,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 });
 
                 // Buckle
-                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle));
+                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckle));
                 Assert.Multiple(() =>
                 {
                     Assert.That(buckle.BuckledTo, Is.Not.Null);
@@ -328,7 +328,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                     Assert.That(hand.HeldEntity, Is.Null);
                 }
 
-                buckleSystem.TryUnbuckle(human, human, true, buckleComp: buckle);
+                buckleSystem.TryUnbuckle(human, human, true, buckle);
             });
 
             await pair.CleanReturnAsync();
@@ -363,7 +363,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 });
 
                 // Buckle
-                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle));
+                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckle));
                 Assert.Multiple(() =>
                 {
                     Assert.That(buckle.BuckledTo, Is.Not.Null);
@@ -388,7 +388,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 xformSystem.SetWorldPosition(human, oldWorldPosition, xformQuery);
 
                 // Buckle
-                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle));
+                Assert.That(buckleSystem.TryBuckle(human, human, chair, buckle));
                 Assert.Multiple(() =>
                 {
                     Assert.That(buckle.BuckledTo, Is.Not.Null);

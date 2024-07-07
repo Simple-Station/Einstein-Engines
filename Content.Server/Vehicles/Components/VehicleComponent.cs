@@ -4,9 +4,9 @@ using Robust.Shared.Serialization.Manager.Attributes;
 namespace Content.Shared.Vehicle
 {
     [RegisterComponent]
-    public sealed class VehicleComponent : Component
+    public sealed partial class VehicleComponent : Component
     {
-        public override string Name => "Vehicle";
+
 
         [DataField("maxOccupants")]
         public int MaxOccupants = 1;

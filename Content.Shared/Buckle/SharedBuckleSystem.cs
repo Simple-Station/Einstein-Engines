@@ -79,6 +79,44 @@ public abstract partial class SharedBuckleSystem : EntitySystem
         SubscribeLocalEvent<BuckleComponent, ThrowPushbackAttemptEvent>(OnBuckleThrowPushbackAttempt);
         SubscribeLocalEvent<BuckleComponent, UpdateCanMoveEvent>(OnBuckleUpdateCanMove);
     }
+    public bool ToggleBuckle(EntityUid buckleUid, EntityUid userUid, EntityUid strapUid, BuckleComponent? buckleComp = null, StrapComponent? strapComp = null)
+    {
+        if (!Resolve(buckleUid, ref buckleComp, false) || !Resolve(strapUid, ref strapComp, false))
+            return false;
+
+        if (buckleComp.Buckled)
+            return TryUnbuckle(buckleUid, userUid, false, buckleComp, strapComp);
+        else
+            return TryBuckle(buckleUid, userUid, strapUid, buckleComp, strapComp);
+    }
+    public bool IsBuckled(EntityUid uid, BuckleComponent? buckleComp = null)
+
+    {
+
+        if (!Resolve(uid, ref buckleComp, false))
+
+            return false;
+
+
+        return buckleComp.Buckled;
+
+    }
+    public void StrapSetEnabled(EntityUid uid, bool enabled)
+
+    {
+
+        if (TryComp<StrapComponent>(uid, out var strap))
+
+        {
+
+            strap.Enabled = enabled;
+
+            Dirty(uid, strap);
+
+        }
+
+    }
+
 
     private void OnStrapStartup(EntityUid uid, StrapComponent component, ComponentStartup args)
 

@@ -48,3 +48,5 @@
       delay: 0.5
     - type: Item
       size: Large
+    - type: RiddenVehicle
+      maxRiders: 1
