@@ -32,12 +32,12 @@ namespace Content.Shared.Strip.Components
     public sealed class StrippingEnsnareButtonPressed : BoundUserInterfaceMessage;
 
     [ByRefEvent]
-    public abstract class BaseBeforeStripEvent(TimeSpan initialTime, bool stealth = false) : EntityEventArgs, IInventoryRelayEvent
+    public abstract class BaseBeforeStripEvent(TimeSpan initialTime, ThievingStealth stealth = ThievingStealth.Obvious) : EntityEventArgs, IInventoryRelayEvent
     {
         public readonly TimeSpan InitialTime = initialTime;
         public float Multiplier = 1f;
         public TimeSpan Additive = TimeSpan.Zero;
-        public bool Stealth = stealth;
+        public ThievingStealth Stealth = stealth;
 
         public TimeSpan Time => TimeSpan.FromSeconds(MathF.Max(InitialTime.Seconds * Multiplier + Additive.Seconds, 0f));
 
@@ -51,7 +51,7 @@ namespace Content.Shared.Strip.Components
     ///     This is also used by some stripping related interactions, i.e., interactions with items that are currently equipped by another player.
     /// </remarks>
     [ByRefEvent]
-    public sealed class BeforeStripEvent(TimeSpan initialTime, bool stealth = false) : BaseBeforeStripEvent(initialTime, stealth);
+    public sealed class BeforeStripEvent(TimeSpan initialTime, ThievingStealth stealth = ThievingStealth.Obvious) : BaseBeforeStripEvent(initialTime, stealth);
 
     /// <summary>
     ///     Used to modify strip times. Raised directed at the target.
@@ -60,7 +60,7 @@ namespace Content.Shared.Strip.Components
     ///     This is also used by some stripping related interactions, i.e., interactions with items that are currently equipped by another player.
     /// </remarks>
     [ByRefEvent]
-    public sealed class BeforeGettingStrippedEvent(TimeSpan initialTime, bool stealth = false) : BaseBeforeStripEvent(initialTime, stealth);
+    public sealed class BeforeGettingStrippedEvent(TimeSpan initialTime, ThievingStealth stealth = ThievingStealth.Obvious) : BaseBeforeStripEvent(initialTime, stealth);
 
     /// <summary>
     ///     Organizes the behavior of DoAfters for <see cref="StrippableSystem">.

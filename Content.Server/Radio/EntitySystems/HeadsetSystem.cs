@@ -106,7 +106,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
         var parent = Transform(uid).ParentUid;
         if (TryComp(parent, out ActorComponent? actor))
         {
-            var canUnderstand = _language.CanUnderstand(parent, args.Language);
+            var canUnderstand = _language.CanUnderstand(parent, args.Language.ID);
             var msg = new MsgChatMessage
             {
                 Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
