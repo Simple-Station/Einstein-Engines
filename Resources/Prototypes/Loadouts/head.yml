@@ -1,125 +1,273 @@
+## Hats
 - type: loadout
   id: LoadoutHeadBeaverHat
-  category: Accessories
+  category: Head
   cost: 2
+  exclusive: true
   items:
     - ClothingHeadHatBeaverHat
 
 - type: loadout
   id: LoadoutHeadTophat
-  category: Accessories
+  category: Head
   cost: 2
+  exclusive: true
   items:
     - ClothingHeadHatTophat
 
 - type: loadout
+  id: LoadoutHeadFedoraBlack
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatFedoraBlack
+
+- type: loadout
+  id: LoadoutHeadFedoraChoc
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatFedoraChoc
+
+- type: loadout
+  id: LoadoutHeadFedoraWhite
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatFedoraWhite
+
+- type: loadout
+  id: LoadoutHeadFlatBlack
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatFlatBlack
+
+- type: loadout
+  id: LoadoutHeadFlatBrown
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatFlatBrown
+
+- type: loadout
+  id: LoadoutHeadTinfoil
+  category: Head
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingHeadTinfoil
+
+- type: loadout
+  id: LoadoutHeadBellhop
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatBellhop
+## Color Hats
+- type: loadout
   id: LoadoutHeadHatBluesoft
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatBluesoft
 
 - type: loadout
   id: LoadoutHeadHatBluesoftFlipped
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatBluesoftFlipped
 
 - type: loadout
   id: LoadoutHeadHatCorpsoft
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatCorpsoft
 
 - type: loadout
   id: LoadoutHeadHatCorpsoftFlipped
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatCorpsoftFlipped
 
 - type: loadout
   id: LoadoutHeadHatGreensoft
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatGreensoft
 
 - type: loadout
   id: LoadoutHeadHatGreensoftFlipped
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatGreensoftFlipped
 
 - type: loadout
   id: LoadoutHeadHatGreysoft
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatGreysoft
 
 - type: loadout
   id: LoadoutHeadHatGreysoftFlipped
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatGreysoftFlipped
 
 - type: loadout
   id: LoadoutHeadHatOrangesoft
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatOrangesoft
 
 - type: loadout
   id: LoadoutHeadHatOrangesoftFlipped
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatOrangesoftFlipped
 
 - type: loadout
   id: LoadoutHeadHatPurplesoft
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatPurplesoft
 
 - type: loadout
   id: LoadoutHeadHatPurplesoftFlipped
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatPurplesoftFlipped
 
 - type: loadout
   id: LoadoutHeadHatRedsoft
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatRedsoft
 
 - type: loadout
   id: LoadoutHeadHatRedsoftFlipped
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatRedsoftFlipped
 
 - type: loadout
   id: LoadoutHeadHatYellowsoft
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatYellowsoft
 
 - type: loadout
   id: LoadoutHeadHatYellowsoftFlipped
-  category: Accessories
+  category: Head
   cost: 1
+  exclusive: true
   items:
     - ClothingHeadHatYellowsoftFlipped
+
+## Headbands
+- type: loadout
+  id: LoadoutHeadBandBlack
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadBandBlack
+
+- type: loadout
+  id: LoadoutHeadBandBlue
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadBandBlue
+
+- type: loadout
+  id: LoadoutHeadBandGold
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadBandGold
+
+- type: loadout
+  id: LoadoutHeadBandGreen
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadBandGreen
+
+- type: loadout
+  id: LoadoutHeadBandGrey
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadBandGrey
+
+- type: loadout
+  id: LoadoutHeadBandRed
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadBandRed
+
+- type: loadout
+  id: LoadoutHeadBandSkull
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadBandSkull
+
+- type: loadout
+  id: LoadoutHeadBandMerc
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadBandMerc
+
+- type: loadout
+  id: LoadoutHeadBandBrown
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadBandBrown
