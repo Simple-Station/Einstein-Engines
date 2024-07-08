@@ -26,7 +26,7 @@ namespace Content.Shared.Vehicle
         {
             base.Initialize();
             SubscribeLocalEvent<RiddenVehicleComponent, InteractHandEvent>(OnInteractHand);
-            SubscribeLocalEvent<RiddenVehicleComponent, BuckleChangeEvent>(OnBuckleChange);
+            SubscribeLocalEvent<RiddenVehicleComponent, Content.Shared.Buckle.Components.BuckleChangeEvent>(OnBuckleChange);
             SubscribeLocalEvent<RiddenVehicleComponent, MoveInputEvent>(OnMoveInput);
         }
 
@@ -47,7 +47,7 @@ namespace Content.Shared.Vehicle
             args.Handled = true;
         }
 
-        private void OnBuckleChange(EntityUid uid, RiddenVehicleComponent component, BuckleChangeEvent args)
+        private void OnBuckleChange(EntityUid uid, RiddenVehicleComponent component, Content.Shared.Buckle.Components.BuckleChangeEvent args)
         {
             if (args.Buckling)
             {
