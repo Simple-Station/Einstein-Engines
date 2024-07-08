@@ -59,6 +59,7 @@
     baseSprintSpeed: 2
   - type: Tag
     tags:
+    - CanWalk
     - DoorBumpOpener
     - FootstepSound
   - type: Pullable

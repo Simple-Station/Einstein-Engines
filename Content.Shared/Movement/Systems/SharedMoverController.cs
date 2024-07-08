@@ -24,7 +24,8 @@ using Robust.Shared.Physics.Controllers;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.StepTrigger.Components; // Delta V-NoShoesSilentFootstepsComponent
+using Content.Shared.StepTrigger.Components;
+using System.Diagnostics; // Delta V-NoShoesSilentFootstepsComponent
 
 namespace Content.Shared.Movement.Systems
 {
@@ -162,21 +163,13 @@ namespace Content.Shared.Movement.Systems
 
 
             UsedMobMovement[uid] = true;
+            //Logger.Debug($"Beginning movement with {mover.Sprinting} owned by {mover.Owner}. Relative entity is {mover.RelativeEntity} Current UID is {uid}, Physics UID is {physicsUid}");
             // Specifically don't use mover.Owner because that may be different to the actual physics body being moved.
             var weightless = _gravity.IsWeightless(physicsUid, physicsComponent, xform);
             var (walkDir, sprintDir) = GetVelocityInput(mover);
             var touching = false;
 
-            if (_tags.HasTag(uid, "CanWalk"))
-            {
-                if (!mover.Sprinting)
-                {
-                    _alerts.ShowAlert(uid, AlertType.Walking, 0);
-                } else
-                {
-                    _alerts.ShowAlert(uid, AlertType.Walking, 1);
-                }
-            }
+
 
             // Handle wall-pushes.
             if (weightless)
@@ -298,28 +291,17 @@ namespace Content.Shared.Movement.Systems
             PhysicsSystem.SetAngularVelocity(physicsUid, 0, body: physicsComponent);
         }
 
-        public void ToggleWalking(EntityUid player)
-        {
-
-            var mover = MoverQuery.GetComponent(player);
-            //var buttons = mover.HeldMoveButtons;
-            bool containsWalk = (mover.HeldMoveButtons & MoveButtons.Walk) == MoveButtons.Walk;
-            //var moveEvent = new MoveInputEvent(mover.Owner, mover, mover.HeldMoveButtons);
-            /*if (!containsWalk)
+        public void WalkingAlert(EntityUid player, bool walking) {
+            if (_tags.HasTag(player, "CanWalk"))
             {
-                mover.HeldMoveButtons |= MoveButtons.Walk;
+                if (walking)
+                {
+                    _alerts.ShowAlert(player, AlertType.Walking, 0);
+                } else
+                {
+                    _alerts.ShowAlert(player, AlertType.Walking, 1);
+                }
             }
-            else
-            {
-                mover.HeldMoveButtons &= ~MoveButtons.Walk;
-            }*/
-
-            //RaiseLocalEvent(player, ref moveEvent);
-            //Dirty(mover.Owner, mover);*/
-            HandleRunChange(player, Timing.TickFraction, !containsWalk);
-            //var funcId = InputManager.NetworkBindMap.KeyFunctionID(EngineKeyFunctions.Walk);
-            //var message = new IFullInputCmdMessage(Timing.CurTick, (containsWalk ? BoundKeyState.Up : BoundKeyState.Down), 145, Timing.TickFraction);
-            //await Client.WaitPost(() => InputSystem.HandleInputCommand(ClientSession, key, message));
         }
 
         public void LerpRotation(EntityUid uid, InputMoverComponent mover, float frameTime)

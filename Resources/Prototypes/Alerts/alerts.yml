@@ -421,7 +421,6 @@
 
 - type: alert
   id: Walking
-  onClick: !type:ToggleWalking  { }
   icons:
   - sprite: /Textures/Interface/Alerts/walking.rsi
     state: walking0
