@@ -116,6 +116,14 @@
     attackRate: .6666
     damage:
       types:
+        Slash: 12
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 10
         Slash: 9
   - type: ThrowingAngle
     angle: 225
@@ -182,6 +190,7 @@
         Slash: 5
   - type: DamageOtherOnHit
     staminaCost: 5
+  - type: LandAtCursor
   - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
   - type: Sprite
@@ -306,6 +315,9 @@
     damage:
       types:
         Slash: 5
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: LandAtCursor
   - type: DamageOtherOnHit
     ignoreResistances: true
     damage:
