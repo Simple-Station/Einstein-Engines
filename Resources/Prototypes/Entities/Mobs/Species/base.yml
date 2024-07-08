@@ -196,6 +196,9 @@
         type: HumanoidMarkingModifierBoundUserInterface
       - key: enum.StrippingUiKey.Key
         type: StrippableBoundUserInterface
+      # Goobstation - changelings
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -375,6 +378,7 @@
   - type: Body
     prototype: Human
     requiredLegs: 2
+  - type: Absorbable # Goobstation - changelings
   - type: UserInterface
     interfaces:
       - key: enum.HumanoidMarkingModifierKey.Key # sure, this can go here too
