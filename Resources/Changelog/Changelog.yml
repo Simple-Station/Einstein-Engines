@@ -4094,3 +4094,302 @@ Entries:
         appear on low-pop servers.
   id: 6112
   time: '2024-05-28T23:44:39.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Better wall sprites.
+    - type: Tweak
+      message: Better window sprites.
+  id: 6113
+  time: '2024-05-28T23:59:19.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Radio Resprites, Talkwalkies, Beacon, Headset...
+    - type: Tweak
+      message: >-
+        Radio and uplink radio looks the same, make sure to check what freq the
+        radio is on!
+  id: 6114
+  time: '2024-05-29T00:00:50.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: New Tools Sprites!
+  id: 6115
+  time: '2024-05-29T01:06:42.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Resprited gas canisters
+    - type: Tweak
+      message: Resprited gas tanks
+  id: 6116
+  time: '2024-05-31T00:13:45.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Add
+      message: Added five new coats
+    - type: Add
+      message: Added loadouts
+    - type: Fix
+      message: Fixed the coat handhole
+  id: 6117
+  time: '2024-06-02T00:36:59.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Floors Looks Updated/Resprited.
+  id: 6118
+  time: '2024-06-03T19:23:51.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: All species can now bring their own cultures and languages
+  id: 6119
+  time: '2024-06-10T20:48:48.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Rust Walls Sprites.
+    - type: Tweak
+      message: Armor, Bulletproof, Riot Suit Resprites.
+    - type: Tweak
+      message: New Banners Sprites.
+    - type: Tweak
+      message: Stunbaton, Fire Extinguisher New Sprites.
+    - type: Tweak
+      message: Rack/WallScreen resprites.
+    - type: Tweak
+      message: Stock Parts new sprites!
+    - type: Tweak
+      message: Radiation Collector has now a new sprite!
+  id: 6120
+  time: '2024-06-11T00:34:02.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        UI layout now defaults to separated, the old one is still available in
+        settings
+  id: 6121
+  time: '2024-06-16T22:38:10.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Space has suddenly become less dense (objects don't slow down in space)
+    - type: Remove
+      message: Moths are unable to move in space
+    - type: Tweak
+      message: Moths have way better control in zero gravity environments
+  id: 6122
+  time: '2024-06-17T07:58:34.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added station goals that get sent to the Command fax machine at the
+        start of every shift
+  id: 6123
+  time: '2024-06-17T21:42:13.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Peacock Tails have been added for Harpies
+  id: 6124
+  time: '2024-06-20T22:07:29.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        NanoTrasen has disabled the unneeded safeties on your guns- Make sure
+        you're careful with them!
+    - type: Tweak
+      message: >-
+        All Firearms now have a reliability stat, some are more reliable than
+        others. The more reliable a weapon is, the less likely it is to
+        accidentally discharge when yeeted.
+  id: 6125
+  time: '2024-06-20T22:17:03.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Animals will no longer be a silent, soulless shell
+  id: 6126
+  time: '2024-06-20T22:24:30.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Added trait points
+    - type: Add
+      message: Added categories for traits
+  id: 6127
+  time: '2024-06-20T23:39:31.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Remove
+      message: Removed Wizden patrons
+  id: 6128
+  time: '2024-06-25T19:54:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpies remembered that just like moths; they also have wings, and can
+        zoom whenever the gravity turns off.
+  id: 6129
+  time: '2024-06-25T20:19:11.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Mid-round events will occur much less often
+  id: 6130
+  time: '2024-06-25T20:47:09.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Height and Width sliders have been added to character creation. '
+  id: 6131
+  time: '2024-06-27T17:46:51.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Most items now take time to equip and unequip, especially space suits.
+  id: 6132
+  time: '2024-06-30T18:22:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Spent bullet casings now fly away from a shooter in a cinematic manner,
+        rather than fall at their feet. 
+  id: 6133
+  time: '2024-07-01T22:37:29.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Fix
+      message: Fixed loadouts becoming uneditable after spending all your points
+  id: 6134
+  time: '2024-07-02T07:18:27.0000000+00:00'
+- author: deltanedas
+  changes:
+    - type: Add
+      message: >-
+        Security can find the new SecWatch™ app in their PDAs to see current
+        suspects and wanted criminals.
+  id: 6135
+  time: '2024-07-02T08:01:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Equipping clothing using the Z key works correctly again.
+  id: 6136
+  time: '2024-07-03T19:48:29.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Space stations now have a tiny bit of velocity dampening to prevent them
+        from being flunged into the void.
+  id: 6137
+  time: '2024-07-05T16:53:25.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Carrying is less likely to behave erratically or suddenly interrupt now.
+    - type: Add
+      message: >-
+        You can now see when someone is trying to pick you up, and also you can
+        interrupt your attempt at escaping from their hands or inventory.
+    - type: Add
+      message: You can now properly take Felinids out of bags and place them inside.
+    - type: Add
+      message: Scientists have discovered that Felinids can sleep in bags.
+  id: 6138
+  time: '2024-07-05T17:28:44.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: You can now sign paper by alt-clicking it while holding a pen.
+  id: 6139
+  time: '2024-07-05T17:33:39.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: Added the Thievery trait, which provides various soft stripping bonuses
+    - type: Tweak
+      message: >-
+        Felinids no longer have passive thieving gloves, they instead get the
+        Thievery trait by default
+  id: 6140
+  time: '2024-07-05T17:49:25.0000000+00:00'
+- author: Froffy025
+  changes:
+    - type: Add
+      message: You can now carry most of the station pets.
+  id: 6141
+  time: '2024-07-05T17:49:57.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Job requirements are now displayed correctly.
+  id: 6142
+  time: '2024-07-05T19:10:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Events should now occur as frequently as before. Note: server owner can
+        configure the frequency on their server manually.
+  id: 6143
+  time: '2024-07-05T21:03:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The catalog of items available via Loadouts has been greatly expanded.
+        Have fun customizing your characters!
+  id: 6144
+  time: '2024-07-05T22:53:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Translator implants are now proper implants that can be removed.
+    - type: Tweak
+      message: Animalistic languages should now look less messy.
+    - type: Fix
+      message: Hopefully fixed language menu desync and other issues.
+  id: 6145
+  time: '2024-07-05T23:49:47.0000000+00:00'
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added system
+  id: 6146
+  time: '2024-07-06T00:19:35.0000000+00:00'
+- author: Velcroboy
+  changes:
+    - type: Tweak
+      message: Changed asteroids to have more ore...and some danger
+  id: 6147
+  time: '2024-07-08T07:03:39.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Languages are now marked in the chat!
+  id: 6148
+  time: '2024-07-09T19:01:38.0000000+00:00'
+- author: Spatison
+  changes:
+    - type: Fix
+      message: Food and handcuffs can now be given
+  id: 6149
+  time: '2024-07-09T19:32:11.0000000+00:00'
+- author: FoxxoTrrystan
+  changes:
+    - type: Tweak
+      message: >-
+        Power Resprites! (New SMES, APC, Airlarm, Camera, Substation, LightTube,
+        Intercom, FireAlarm and Substation)
+  id: 6150
+  time: '2024-07-09T19:37:03.0000000+00:00'

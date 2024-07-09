@@ -99,6 +99,15 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+  - type: Gun
+    fireRate: 6
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+    fireOnDropChance: 0.3
 
 - type: entity
   name: cobra
@@ -125,6 +134,7 @@
         volume: -14
     availableModes:
     - SemiAuto
+    fireOnDropChance: 0.1
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -169,6 +179,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+    fireOnDropChance: 0.5
 
 - type: entity
   id: WeaponPistolMk58Nonlethal
@@ -198,7 +209,7 @@
   name: N1984
   parent: BaseWeaponPistol
   id: WeaponPistolN1984 # the spaces in description are for formatting.
-  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber. 
+  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
@@ -219,6 +230,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+    fireOnDropChance: 0.6
   - type: ItemSlots
     slots:
       gun_magazine:

@@ -4,7 +4,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - ChiefMedicalOfficer
   items:
@@ -16,7 +16,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - ChiefMedicalOfficer
   items:
@@ -27,7 +27,7 @@
   category: Jobs
   cost: 2
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - ChiefMedicalOfficer
   items:
@@ -38,7 +38,7 @@
   category: Jobs
   cost: 1
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - ChiefMedicalOfficer
   items:
@@ -49,7 +49,7 @@
   category: Jobs
   cost: 1
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - ChiefMedicalOfficer
   items:
@@ -61,7 +61,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - ChiefMedicalOfficer
   items:
