@@ -51,7 +51,7 @@
     accent: dwarf
   - type: Speech
     speechSounds: Bass
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - SolCommon

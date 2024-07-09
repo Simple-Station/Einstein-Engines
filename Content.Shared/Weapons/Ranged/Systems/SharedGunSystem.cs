@@ -443,7 +443,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         {
             Angle ejectAngle = angle.Value;
             ejectAngle += 3.7f; // 212 degrees; casings should eject slightly to the right and behind of a gun
-            ThrowingSystem.TryThrow(entity, ejectAngle.ToVec().Normalized() / 100, 5f);
+            ThrowingSystem.TryThrow(entity, ejectAngle.ToVec(), 625f);
         }
         if (playSound && TryComp<CartridgeAmmoComponent>(entity, out var cartridge))
         {

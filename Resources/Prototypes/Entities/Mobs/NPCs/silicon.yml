@@ -107,7 +107,7 @@
   - type: TypingIndicator
     proto: robot
   - type: ZombieImmune
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - RobotTalk
