@@ -15,6 +15,7 @@ public abstract partial class SharedGunSystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
 
+
     protected virtual void InitializeBallistic()
     {
         SubscribeLocalEvent<BallisticAmmoProviderComponent, ComponentInit>(OnBallisticInit);
@@ -78,7 +79,9 @@ public abstract partial class SharedGunSystem
 
     private void OnBallisticAmmoFillDoAfter(EntityUid uid, BallisticAmmoProviderComponent component, AmmoFillDoAfterEvent args)
     {
-        if (Deleted(args.Target)
+        if (args.Handled
+            || args.Cancelled
+            || Deleted(args.Target)
             || !TryComp(args.Target, out BallisticAmmoProviderComponent? target)
             || target.Whitelist is null)
             return;
