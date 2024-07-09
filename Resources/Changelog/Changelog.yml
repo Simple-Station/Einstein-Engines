@@ -4367,3 +4367,9 @@ Entries:
       message: Added system
   id: 6146
   time: '2024-07-06T00:19:35.0000000+00:00'
+- author: Velcroboy
+  changes:
+    - type: Tweak
+      message: Changed asteroids to have more ore...and some danger
+  id: 6147
+  time: '2024-07-08T07:03:39.0000000+00:00'
