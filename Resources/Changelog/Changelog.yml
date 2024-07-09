@@ -4385,3 +4385,11 @@ Entries:
       message: Food and handcuffs can now be given
   id: 6149
   time: '2024-07-09T19:32:11.0000000+00:00'
+- author: FoxxoTrrystan
+  changes:
+    - type: Tweak
+      message: >-
+        Power Resprites! (New SMES, APC, Airlarm, Camera, Substation, LightTube,
+        Intercom, FireAlarm and Substation)
+  id: 6150
+  time: '2024-07-09T19:37:03.0000000+00:00'
