@@ -2,7 +2,6 @@ using Content.Shared.Language;
 using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using Robust.Client;
-using Robust.Shared.Console;
 
 namespace Content.Client.Language.Systems;
 
