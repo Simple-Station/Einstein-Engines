@@ -230,7 +230,7 @@ namespace Content.Server.GameTicking
                 return false;
             }
 
-            if (HasComp<GhostComponent>(playerEntity))
+            if (TryComp<GhostComponent>(playerEntity, out var comp) && !comp.CanGhostInteract)
                 return false;
 
             if (mind.VisitingEntity != default)
