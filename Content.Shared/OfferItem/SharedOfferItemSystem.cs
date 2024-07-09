@@ -21,7 +21,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         if (!TryComp<OfferItemComponent>(args.User, out var offerItem))
             return;
 
-        if (args.User == uid || component.IsInReceiveMode || offerItem.IsInOfferMode == false ||
+        if (args.User == uid || component.IsInReceiveMode || !offerItem.IsInOfferMode ||
             (offerItem.IsInReceiveMode && offerItem.Target != uid))
             return;
 
