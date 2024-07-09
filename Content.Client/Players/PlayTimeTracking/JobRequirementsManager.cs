@@ -96,7 +96,7 @@ public sealed partial class JobRequirementsManager
         return CheckRoleTime(job.Requirements, out reason);
     }
 
-    public bool CheckRoleTime(HashSet<JobRequirement>? requirements, [NotNullWhen(false)] out FormattedMessage? reason, string? localePrefix = null)
+    public bool CheckRoleTime(HashSet<JobRequirement>? requirements, [NotNullWhen(false)] out FormattedMessage? reason, string? localePrefix = "role-timer-")
     {
         reason = null;
 

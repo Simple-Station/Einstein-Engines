@@ -65,6 +65,7 @@
     deviceNetId: Wireless
     receiveFrequencyId: Fax
     transmitFrequencyId: Fax
+  - type: RequireProjectileTarget
 
 # Special
 - type: entity
@@ -108,5 +109,7 @@
     - type: FaxMachine
       name: "Captain's Office"
       receiveNukeCodes: true
+      receiveStationGoal: true
     - type: StealTarget
       stealGroup: FaxMachineCaptain
+

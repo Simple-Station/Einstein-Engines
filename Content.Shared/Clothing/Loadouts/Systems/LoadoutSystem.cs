@@ -1,5 +1,6 @@
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Customization.Systems;
 using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -17,7 +18,8 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly IConfigurationManager _configuration = default!;
+    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
 
     public override void Initialize()
     {
@@ -66,8 +68,9 @@ public sealed class LoadoutSystem : EntitySystem
                 continue;
 
 
-            if (!CheckRequirementsValid(loadoutProto.Requirements, job, profile,
-                playTimes ?? new Dictionary<string, TimeSpan>(), EntityManager, _prototype, _configurationManager,
+            if (!_characterRequirements.CheckRequirementsValid(loadoutProto, loadoutProto.Requirements, job, profile,
+                playTimes ?? new Dictionary<string, TimeSpan>(),
+                EntityManager, _prototype, _configuration,
                 out _))
                 continue;
 
@@ -114,36 +117,5 @@ public sealed class LoadoutSystem : EntitySystem
         // Return a list of items that couldn't be equipped so the server can handle it if it wants
         // The server has more information about the inventory system than the client does and the client doesn't need to put loadouts in backpacks
         return failedLoadouts;
-    }
-
-
-    public bool CheckRequirementsValid(List<LoadoutRequirement> requirements, JobPrototype job,
-        HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager,
-        IPrototypeManager prototypeManager, IConfigurationManager configManager, out List<FormattedMessage> reasons)
-    {
-        reasons = new List<FormattedMessage>();
-        var valid = true;
-
-        foreach (var requirement in requirements)
-        {
-            // Set valid to false if the requirement is invalid and not inverted, if it's inverted set it to true when it's valid
-            if (!requirement.IsValid(job, profile, playTimes, entityManager, prototypeManager, configManager, out var reason))
-            {
-                if (valid)
-                    valid = requirement.Inverted;
-            }
-            else
-            {
-                if (valid)
-                    valid = !requirement.Inverted;
-            }
-
-            if (reason != null)
-            {
-                reasons.Add(reason);
-            }
-        }
-
-        return valid;
     }
 }
