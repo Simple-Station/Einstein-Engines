@@ -5,6 +5,7 @@
     ClothingBackpackDuffel: 5
     ClothingBackpackSatchel: 3
     ClothingBackpackSatchelLeather: 2
+    ClothingRandomSpawner: 8
     ClothingHeadHatBeret: 4
     ClothingHeadBandBlack: 2
     ClothingHeadBandBlue: 2
@@ -84,6 +85,16 @@
     ClothingOuterCoatLettermanRed: 2 # Nyano - Clothing addition
     ClothingOuterDenimJacket: 2 # DeltaV - Clothing addition
     ClothingOuterCorporateJacket: 2 # DeltaV - Clothing addition
+    ClothingOuterCsCorporateJacket: 2 # Einstein Engines - Clothing addition
+    ClothingOuterEeCorporateJacket: 2 # Einstein Engines - Clothing addition
+    ClothingOuterHiCorporateJacket: 2 # Einstein Engines - Clothing addition
+    ClothingOuterHmCorporateJacket: 2 # Einstein Engines - Clothing addition
+    ClothingOuterIdCorporateJacket: 2 # Einstein Engines - Clothing addition
+    ClothingOuterZhCorporateJacket: 2 # Einstein Engines - Clothing addition
+    ClothingOuterGeCorporateJacket: 2 # Einstein Engines - Clothing addition
+    ClothingOuterFaCorporateJacket: 2 # Einstein Engines - Clothing addition
+    ClothingOuterDdCorporateJacket: 2 # Einstein Engines - Clothing addition
+    ClothingOuterBcCorporateJacket: 2 # Einstein Engines - Clothing addition
     ClothingShoesBootsFishing: 2 # Nyano - Clothing addition
     ClothingHeadTinfoil: 2 # Nyano - Clothing addition
     ClothingHeadFishCap: 2
@@ -99,6 +110,7 @@
     ClothingHandsGlovesColorGreen: 2
     ClothingHandsGlovesColorOrange: 2
     ClothingHandsGlovesColorPurple: 2
+    ClothingEyesGlassesCheapSunglasses: 3
   contrabandInventory:
     ClothingMaskNeckGaiter: 2
     ClothingUniformJumpsuitTacticool: 1

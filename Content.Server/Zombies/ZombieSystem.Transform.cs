@@ -35,8 +35,8 @@ using Content.Shared.Pulling.Components;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Zombies;
 using Content.Shared.Prying.Components;
-using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Traits.Assorted.Components;
 
 namespace Content.Server.Zombies
 {
@@ -141,7 +141,10 @@ namespace Content.Server.Zombies
             var melee = EnsureComp<MeleeWeaponComponent>(target);
             melee.Animation = zombiecomp.AttackAnimation;
             melee.WideAnimation = zombiecomp.AttackAnimation;
+            melee.AltDisarm = false;
             melee.Range = 1.2f;
+            melee.Angle = 0.0f;
+            melee.HitSound = zombiecomp.BiteSound;
 
             if (mobState.CurrentState == MobState.Alive)
             {

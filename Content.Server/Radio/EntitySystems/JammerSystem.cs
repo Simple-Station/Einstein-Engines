@@ -1,7 +1,13 @@
+using Content.Server.DeviceNetwork.Components;
+using Content.Server.DeviceNetwork.Systems;
+using Content.Server.Medical.CrewMonitoring;
+using Content.Server.Medical.SuitSensors;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
 using Content.Server.Radio.Components;
+using Content.Server.Station.Systems;
+using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.PowerCell.Components;
@@ -14,6 +20,8 @@ public sealed class JammerSystem : EntitySystem
     [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly StationSystem _stationSystem = default!;
+    [Dependency] private readonly SingletonDeviceNetServerSystem _singletonServerSystem = default!;
 
     public override void Initialize()
     {
@@ -23,6 +31,7 @@ public sealed class JammerSystem : EntitySystem
         SubscribeLocalEvent<ActiveRadioJammerComponent, PowerCellChangedEvent>(OnPowerCellChanged);
         SubscribeLocalEvent<RadioJammerComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<RadioSendAttemptEvent>(OnRadioSendAttempt);
+        SubscribeLocalEvent<SuitSensorComponent, SuitSensorsSendAttemptEvent>(OnSensorSendAttempt);
     }
 
     public override void Update(float frameTime)
@@ -34,6 +43,7 @@ public sealed class JammerSystem : EntitySystem
                 !_battery.TryUseCharge(batteryUid.Value, jam.Wattage * frameTime, battery))
             {
                 RemComp<ActiveRadioJammerComponent>(uid);
+                RemComp<DeviceNetworkJammerComponent>(uid);
             }
         }
     }
@@ -46,10 +56,19 @@ public sealed class JammerSystem : EntitySystem
         if (activated)
         {
             EnsureComp<ActiveRadioJammerComponent>(uid);
+            var stationId = _stationSystem.GetOwningStation(uid);
+            if (stationId != null && _singletonServerSystem.TryGetActiveServerAddress<CrewMonitoringServerComponent>(stationId.Value, out var netId))
+            {
+                EnsureComp<DeviceNetworkJammerComponent>(uid, out var jammingComp);
+                jammingComp.Range = comp.Range;
+                jammingComp.JammableNetworks.Add(netId);
+                Dirty(uid, jammingComp);
+            }
         }
         else
         {
             RemComp<ActiveRadioJammerComponent>(uid);
+            RemComp<DeviceNetworkJammerComponent>(uid);
         }
         var state = Loc.GetString(activated ? "radio-jammer-component-on-state" : "radio-jammer-component-off-state");
         var message = Loc.GetString("radio-jammer-component-on-use", ("state", state));
@@ -76,15 +95,33 @@ public sealed class JammerSystem : EntitySystem
 
     private void OnRadioSendAttempt(ref RadioSendAttemptEvent args)
     {
-        var source = Transform(args.RadioSource).Coordinates;
+        if (ShouldCancelSend(args.RadioSource))
+        {
+            args.Cancelled = true;
+        }
+    }
+
+    private void OnSensorSendAttempt(EntityUid uid, SuitSensorComponent comp, ref SuitSensorsSendAttemptEvent args)
+    {
+        if (ShouldCancelSend(uid))
+        {
+            args.Cancelled = true;
+        }
+    }
+
+    private bool ShouldCancelSend(EntityUid sourceUid)
+    {
+        var source = Transform(sourceUid).Coordinates;
         var query = EntityQueryEnumerator<ActiveRadioJammerComponent, RadioJammerComponent, TransformComponent>();
+
         while (query.MoveNext(out _, out _, out var jam, out var transform))
         {
             if (source.InRange(EntityManager, _transform, transform.Coordinates, jam.Range))
             {
-                args.Cancelled = true;
-                return;
+                return true;
             }
         }
+
+        return false;
     }
 }

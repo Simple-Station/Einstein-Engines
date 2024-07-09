@@ -21,11 +21,11 @@ chat-manager-whisper-headset-on-message = You can't whisper on the radio!
 chat-manager-server-wrap-message = [bold]{$message}[/bold]
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]{$sender} Announcement:[/font][font size=12]
                                                 {$message}[/bold][/font]
-chat-manager-entity-say-wrap-message = [BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] {$verb}, [font={$fontType} size={$fontSize}]"[BubbleContent]{$message}[/BubbleContent]"[/font]
-chat-manager-entity-say-bold-wrap-message = [BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] {$verb}, [font={$fontType} size={$fontSize}]"[BubbleContent][bold]{$message}[/bold][/BubbleContent]"[/font]
+chat-manager-entity-say-wrap-message = [BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] {$verb}, [font="{$fontType}" size={$fontSize}]"[color={$color}][BubbleContent]{$message}[/BubbleContent][/color]"[/font]
+chat-manager-entity-say-bold-wrap-message = [BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] {$verb}, [font="{$fontType}" size={$fontSize}]"[color={$color}][BubbleContent][bold]{$message}[/bold][/BubbleContent][/color]"[/font]
 
-chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] whispers,"[BubbleContent]{$message}[/BubbleContent]"[/italic][/font]
-chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader]Someone[/BubbleHeader] whispers, "[BubbleContent]{$message}[/BubbleContent]"[/italic][/font]
+chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] whispers,"[color={$color}][BubbleContent]{$message}[/BubbleContent][/color]"[/italic][/font]
+chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader]Someone[/BubbleHeader] whispers, "[color={$color}][BubbleContent]{$message}[/BubbleContent][/color]"[/italic][/font]
 
 # THE() is not used here because the entity and its name can technically be disconnected if a nameOverride is passed...
 chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
@@ -108,6 +108,10 @@ chat-speech-verb-large-mob-2 = growls
 
 chat-speech-verb-monkey-1 = chimpers
 chat-speech-verb-monkey-2 = screeches
+
+chat-speech-verb-parrot-1 = squawks
+chat-speech-verb-parrot-2 = tweets
+chat-speech-verb-parrot-3 = chirps
 
 chat-speech-verb-cluwne-1 = giggles
 chat-speech-verb-cluwne-2 = guffaws

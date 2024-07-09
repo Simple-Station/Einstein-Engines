@@ -60,10 +60,12 @@ namespace Content.Client.Options.UI.Tabs
             ShowLoocAboveHeadCheckBox.OnToggled += OnCheckBoxToggled;
             ShowHeldItemCheckBox.OnToggled += OnCheckBoxToggled;
             ShowCombatModeIndicatorsCheckBox.OnToggled += OnCheckBoxToggled;
+            ShowOfferModeIndicatorsCheckBox.OnToggled += OnCheckBoxToggled;
             OpaqueStorageWindowCheckBox.OnToggled += OnCheckBoxToggled;
             FancySpeechBubblesCheckBox.OnToggled += OnCheckBoxToggled;
             FancyNameBackgroundsCheckBox.OnToggled += OnCheckBoxToggled;
             EnableColorNameCheckBox.OnToggled += OnCheckBoxToggled;
+            ColorblindFriendlyCheckBox.OnToggled += OnCheckBoxToggled;
             ReducedMotionCheckBox.OnToggled += OnCheckBoxToggled;
             ScreenShakeIntensitySlider.OnValueChanged += OnScreenShakeIntensitySliderChanged;
             // ToggleWalk.OnToggled += OnCheckBoxToggled;
@@ -74,10 +76,12 @@ namespace Content.Client.Options.UI.Tabs
             ShowLoocAboveHeadCheckBox.Pressed = _cfg.GetCVar(CCVars.LoocAboveHeadShow);
             ShowHeldItemCheckBox.Pressed = _cfg.GetCVar(CCVars.HudHeldItemShow);
             ShowCombatModeIndicatorsCheckBox.Pressed = _cfg.GetCVar(CCVars.CombatModeIndicatorsPointShow);
+            ShowOfferModeIndicatorsCheckBox.Pressed = _cfg.GetCVar(CCVars.OfferModeIndicatorsPointShow);
             OpaqueStorageWindowCheckBox.Pressed = _cfg.GetCVar(CCVars.OpaqueStorageWindow);
             FancySpeechBubblesCheckBox.Pressed = _cfg.GetCVar(CCVars.ChatEnableFancyBubbles);
             FancyNameBackgroundsCheckBox.Pressed = _cfg.GetCVar(CCVars.ChatFancyNameBackground);
             EnableColorNameCheckBox.Pressed = _cfg.GetCVar(CCVars.ChatEnableColorName);
+            ColorblindFriendlyCheckBox.Pressed = _cfg.GetCVar(CCVars.AccessibilityColorblindFriendly);
             ReducedMotionCheckBox.Pressed = _cfg.GetCVar(CCVars.ReducedMotion);
             ScreenShakeIntensitySlider.Value = _cfg.GetCVar(CCVars.ScreenShakeIntensity) * 100f;
             // ToggleWalk.Pressed = _cfg.GetCVar(CCVars.ToggleWalk);
@@ -118,11 +122,13 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CVars.DiscordEnabled, DiscordRich.Pressed);
             _cfg.SetCVar(CCVars.HudHeldItemShow, ShowHeldItemCheckBox.Pressed);
             _cfg.SetCVar(CCVars.CombatModeIndicatorsPointShow, ShowCombatModeIndicatorsCheckBox.Pressed);
+            _cfg.SetCVar(CCVars.OfferModeIndicatorsPointShow, ShowOfferModeIndicatorsCheckBox.Pressed);
             _cfg.SetCVar(CCVars.OpaqueStorageWindow, OpaqueStorageWindowCheckBox.Pressed);
             _cfg.SetCVar(CCVars.LoocAboveHeadShow, ShowLoocAboveHeadCheckBox.Pressed);
             _cfg.SetCVar(CCVars.ChatEnableFancyBubbles, FancySpeechBubblesCheckBox.Pressed);
             _cfg.SetCVar(CCVars.ChatFancyNameBackground, FancyNameBackgroundsCheckBox.Pressed);
             _cfg.SetCVar(CCVars.ChatEnableColorName, EnableColorNameCheckBox.Pressed);
+            _cfg.SetCVar(CCVars.AccessibilityColorblindFriendly, ColorblindFriendlyCheckBox.Pressed);
             _cfg.SetCVar(CCVars.ReducedMotion, ReducedMotionCheckBox.Pressed);
             _cfg.SetCVar(CCVars.ScreenShakeIntensity, ScreenShakeIntensitySlider.Value / 100f);
             // _cfg.SetCVar(CCVars.ToggleWalk, ToggleWalk.Pressed);
@@ -144,11 +150,13 @@ namespace Content.Client.Options.UI.Tabs
             var isDiscordSame = DiscordRich.Pressed == _cfg.GetCVar(CVars.DiscordEnabled);
             var isShowHeldItemSame = ShowHeldItemCheckBox.Pressed == _cfg.GetCVar(CCVars.HudHeldItemShow);
             var isCombatModeIndicatorsSame = ShowCombatModeIndicatorsCheckBox.Pressed == _cfg.GetCVar(CCVars.CombatModeIndicatorsPointShow);
+            var isOfferModeIndicatorsSame = ShowOfferModeIndicatorsCheckBox.Pressed == _cfg.GetCVar(CCVars.OfferModeIndicatorsPointShow);
             var isOpaqueStorageWindow = OpaqueStorageWindowCheckBox.Pressed == _cfg.GetCVar(CCVars.OpaqueStorageWindow);
             var isLoocShowSame = ShowLoocAboveHeadCheckBox.Pressed == _cfg.GetCVar(CCVars.LoocAboveHeadShow);
             var isFancyChatSame = FancySpeechBubblesCheckBox.Pressed == _cfg.GetCVar(CCVars.ChatEnableFancyBubbles);
             var isFancyBackgroundSame = FancyNameBackgroundsCheckBox.Pressed == _cfg.GetCVar(CCVars.ChatFancyNameBackground);
             var isEnableColorNameSame = EnableColorNameCheckBox.Pressed == _cfg.GetCVar(CCVars.ChatEnableColorName);
+            var isColorblindFriendly = ColorblindFriendlyCheckBox.Pressed == _cfg.GetCVar(CCVars.AccessibilityColorblindFriendly);
             var isReducedMotionSame = ReducedMotionCheckBox.Pressed == _cfg.GetCVar(CCVars.ReducedMotion);
             var isScreenShakeIntensitySame = Math.Abs(ScreenShakeIntensitySlider.Value / 100f - _cfg.GetCVar(CCVars.ScreenShakeIntensity)) < 0.01f;
             // var isToggleWalkSame = ToggleWalk.Pressed == _cfg.GetCVar(CCVars.ToggleWalk);
@@ -159,11 +167,13 @@ namespace Content.Client.Options.UI.Tabs
                                    isDiscordSame &&
                                    isShowHeldItemSame &&
                                    isCombatModeIndicatorsSame &&
+                                   isOfferModeIndicatorsSame &&
                                    isOpaqueStorageWindow &&
                                    isLoocShowSame &&
                                    isFancyChatSame &&
                                    isFancyBackgroundSame &&
                                    isEnableColorNameSame &&
+                                   isColorblindFriendly &&
                                    isReducedMotionSame &&
                                    isScreenShakeIntensitySame &&
                                    // isToggleWalkSame &&
