@@ -163,6 +163,7 @@ public sealed class AtmosMonitorSystem : EntitySystem
                 }
 
                 _deviceNetSystem.QueuePacket(uid, args.SenderAddress, payload);
+                Alert(uid, component.LastAlarmState);
                 break;
         }
     }
