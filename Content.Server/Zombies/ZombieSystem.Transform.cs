@@ -35,8 +35,8 @@ using Content.Shared.Pulling.Components;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Zombies;
 using Content.Shared.Prying.Components;
-using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Traits.Assorted.Components;
 
 namespace Content.Server.Zombies
 {
