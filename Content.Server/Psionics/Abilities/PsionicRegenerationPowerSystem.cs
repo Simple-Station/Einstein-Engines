@@ -39,17 +39,16 @@ namespace Content.Server.Psionics.Abilities
 
         private void OnInit(EntityUid uid, PsionicRegenerationPowerComponent component, ComponentInit args)
         {
-            _actions.AddAction(uid, ref component.PsionicRegenerationActionEntity, component.PsionicRegenerationActionId );
-            _actions.TryGetActionData( component.PsionicRegenerationActionEntity, out var actionData );
+            EnsureComp<PsionicComponent>(uid, out var psionic);
+            _actions.AddAction(uid, ref component.PsionicRegenerationActionEntity, component.PsionicRegenerationActionId);
+            _actions.TryGetActionData(component.PsionicRegenerationActionEntity, out var actionData);
             if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.PsionicRegenerationActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.ActivePowers.Add(component);
-                psionic.PsychicFeedback.Add(component.RegenerationFeedback);
-                psionic.Amplification += 0.5f;
-                psionic.Dampening += 0.5f;
-            }
+                _actions.SetCooldown(component.PsionicRegenerationActionEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
+
+            psionic.ActivePowers.Add(component);
+            psionic.PsychicFeedback.Add(component.RegenerationFeedback);
+            psionic.Amplification += 0.5f;
+            psionic.Dampening += 0.5f;
         }
 
         private void OnPowerUsed(EntityUid uid, PsionicRegenerationPowerComponent component, PsionicRegenerationPowerActionEvent args)
@@ -65,6 +64,9 @@ namespace Content.Server.Psionics.Abilities
             var curTime = _gameTiming.CurTime;
             if (actionData != null && actionData.Cooldown.HasValue && actionData.Cooldown.Value.End > curTime)
                 return;
+
+            if (actionData is { UseDelay: not null })
+                _actions.SetCooldown(component.PsionicRegenerationActionEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
 
             _doAfterSystem.TryStartDoAfter(doAfterArgs, out var doAfterId);
 
@@ -116,7 +118,7 @@ namespace Content.Server.Psionics.Abilities
 
                     _psionics.LogPowerUsed(uid, "psionic regeneration", psionic, 10, 20);
 
-                    _actions.StartUseDelay(component.PsionicRegenerationActionEntity);
+                    _actions.SetCooldown(component.PsionicRegenerationActionEntity, 2 * (actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification)));
                 }
             }
         }

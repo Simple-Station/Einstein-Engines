@@ -23,21 +23,20 @@ namespace Content.Server.Psionics.Abilities
             base.Initialize();
             SubscribeLocalEvent<NoosphericZapPowerComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<NoosphericZapPowerComponent, ComponentShutdown>(OnShutdown);
-            SubscribeLocalEvent<NoosphericZapPowerActionEvent>(OnPowerUsed);
+            SubscribeLocalEvent<NoosphericZapPowerComponent, NoosphericZapPowerActionEvent>(OnPowerUsed);
         }
 
         private void OnInit(EntityUid uid, NoosphericZapPowerComponent component, ComponentInit args)
         {
+            EnsureComp<PsionicComponent>(uid, out var psionic);
             _actions.AddAction(uid, ref component.NoosphericZapActionEntity, component.NoosphericZapActionId );
-            _actions.TryGetActionData( component.NoosphericZapActionEntity, out var actionData );
+            _actions.TryGetActionData(component.NoosphericZapActionEntity, out var actionData);
             if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.NoosphericZapActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.ActivePowers.Add(component);
-                psionic.PsychicFeedback.Add(component.NoosphericZapFeedback);
-                psionic.Amplification += 1f;
-            }
+                _actions.SetCooldown(component.NoosphericZapActionEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
+
+            psionic.ActivePowers.Add(component);
+            psionic.PsychicFeedback.Add(component.NoosphericZapFeedback);
+            psionic.Amplification += 1f;
         }
 
         private void OnShutdown(EntityUid uid, NoosphericZapPowerComponent component, ComponentShutdown args)
@@ -51,13 +50,14 @@ namespace Content.Server.Psionics.Abilities
             }
         }
 
-        private void OnPowerUsed(NoosphericZapPowerActionEvent args)
+        private void OnPowerUsed(EntityUid uid, NoosphericZapPowerComponent component, NoosphericZapPowerActionEvent args)
         {
-            if (!TryComp<PsionicComponent>(args.Performer, out var psionic))
-                return;
-
-            if (!HasComp<PsionicInsulationComponent>(args.Performer))
+            if (_psionics.CheckCanTargetCast(uid, args.Target, out var psionic))
             {
+
+                _actions.TryGetActionData(component.NoosphericZapActionEntity, out var actionData);
+                if (actionData is { UseDelay: not null })
+                    _actions.SetCooldown(component.NoosphericZapActionEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
                 _beam.TryCreateBeam(args.Performer, args.Target, "LightningNoospheric");
                 _stunSystem.TryParalyze(args.Target, TimeSpan.FromSeconds(1 * psionic.Amplification), false);
 

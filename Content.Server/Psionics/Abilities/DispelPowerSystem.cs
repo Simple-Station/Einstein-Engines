@@ -32,7 +32,7 @@ namespace Content.Server.Psionics.Abilities
             base.Initialize();
             SubscribeLocalEvent<DispelPowerComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<DispelPowerComponent, ComponentShutdown>(OnShutdown);
-            SubscribeLocalEvent<DispelPowerActionEvent>(OnPowerUsed);
+            SubscribeLocalEvent<DispelPowerComponent, DispelPowerActionEvent>(OnPowerUsed);
 
             SubscribeLocalEvent<DispellableComponent, DispelledEvent>(OnDispelled);
             SubscribeLocalEvent<DamageOnDispelComponent, DispelledEvent>(OnDmgDispelled);
@@ -44,18 +44,17 @@ namespace Content.Server.Psionics.Abilities
 
         private void OnInit(EntityUid uid, DispelPowerComponent component, ComponentInit args)
         {
-            _actions.AddAction(uid, ref component.DispelActionEntity, component.DispelActionId );
-            _actions.TryGetActionData( component.DispelActionEntity, out var actionData );
+            EnsureComp<PsionicComponent>(uid, out var psionic);
+            _actions.AddAction(uid, ref component.DispelActionEntity, component.DispelActionId);
+            _actions.TryGetActionData(component.DispelActionEntity, out var actionData);
             if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.DispelActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.ActivePowers.Add(component);
-                psionic.PsychicFeedback.Add(component.DispelFeedback);
-                //It's fully intended that Dispel doesn't increase Amplification, and instead heavily spikes Dampening
-                //Antimage archetype.
-                psionic.Dampening += 1f;
-            }
+                _actions.SetCooldown(component.DispelActionEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
+
+            psionic.ActivePowers.Add(component);
+            psionic.PsychicFeedback.Add(component.DispelFeedback);
+            //It's fully intended that Dispel doesn't increase Amplification, and instead heavily spikes Dampening
+            //Antimage archetype.
+            psionic.Dampening += 1f;
         }
 
         private void OnShutdown(EntityUid uid, DispelPowerComponent component, ComponentShutdown args)
@@ -70,11 +69,9 @@ namespace Content.Server.Psionics.Abilities
             }
         }
 
-        private void OnPowerUsed(DispelPowerActionEvent args)
+        private void OnPowerUsed(EntityUid uid, DispelPowerComponent component, DispelPowerActionEvent args)
         {
-            if (HasComp<PsionicInsulationComponent>(args.Target) || HasComp<PsionicInsulationComponent>(args.Performer))
-                return;
-            if (!TryComp<PsionicComponent>(args.Performer, out var psionic) || !HasComp<PsionicComponent>(args.Target))
+            if (!_psionics.CheckCanTargetCast(uid, args.Target, out var psionic))
                 return;
 
             var ev = new DispelledEvent();
@@ -82,6 +79,9 @@ namespace Content.Server.Psionics.Abilities
 
             if (ev.Handled)
             {
+                _actions.TryGetActionData(component.DispelActionEntity, out var actionData);
+                if (actionData is { UseDelay: not null })
+                    _actions.SetCooldown(component.DispelActionEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
                 args.Handled = true;
                 _psionics.LogPowerUsed(args.Performer, "dispel", psionic, 1, 1, true);
 

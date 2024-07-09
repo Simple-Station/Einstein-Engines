@@ -4,10 +4,9 @@ using Content.Shared.Psionics.Abilities;
 using Content.Shared.Psionics.Glimmer;
 using Content.Server.Atmos.Components;
 using Content.Server.Weapons.Ranged.Systems;
-using Robust.Server.GameObjects;
 using Content.Shared.Actions.Events;
 using Content.Server.Explosion.Components;
-using Robust.Server.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 using Content.Shared.Popups;
 using Content.Shared.Psionics.Events;
@@ -17,13 +16,13 @@ namespace Content.Server.Psionics.Abilities
 {
     public sealed class PyrokinesisPowerSystem : EntitySystem
     {
-        [Dependency] private readonly TransformSystem _xform = default!;
+        [Dependency] private readonly SharedTransformSystem _xform = default!;
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly GunSystem _gunSystem = default!;
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
-        [Dependency] private readonly AudioSystem _audioSystem = default!;
+        [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
         [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         public override void Initialize()
@@ -38,28 +37,26 @@ namespace Content.Server.Psionics.Abilities
 
         private void OnInit(EntityUid uid, PyrokinesisPowerComponent component, ComponentInit args)
         {
+            EnsureComp<PsionicComponent>(uid, out var psionic);
             _actions.AddAction(uid, ref component.PyrokinesisPrechargeActionEntity, component.PyrokinesisPrechargeActionId);
             _actions.TryGetActionData(component.PyrokinesisPrechargeActionEntity, out var actionData);
             if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.PyrokinesisPrechargeActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.ActivePowers.Add(component);
-                psionic.PsychicFeedback.Add(component.PyrokinesisFeedback);
-                psionic.Amplification += 1f;
-            }
+                _actions.SetCooldown(component.PyrokinesisPrechargeActionEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
+
+            psionic.ActivePowers.Add(component);
+            psionic.PsychicFeedback.Add(component.PyrokinesisFeedback);
+            psionic.Amplification += 1f;
         }
 
         private void OnPrecharge(PyrokinesisPrechargeActionEvent args)
         {
-            if (!HasComp<PsionicInsulationComponent>(args.Performer)
-                && TryComp<PsionicComponent>(args.Performer, out var psionic)
+            if (_psionics.CheckCanSelfCast(args.Performer, out var psionic)
                 && TryComp<PyrokinesisPowerComponent>(args.Performer, out var pyroComp))
             {
                 _actions.AddAction(args.Performer, ref pyroComp.PyrokinesisActionEntity, pyroComp.PyrokinesisActionId);
                 _actions.TryGetActionData(pyroComp.PyrokinesisActionEntity, out var actionData);
                 if (actionData is { UseDelay: not null })
-                    _actions.StartUseDelay(pyroComp.PyrokinesisActionEntity);
+                    _actions.SetCooldown(pyroComp.PyrokinesisActionEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
                 _actions.TryGetActionData(pyroComp.PyrokinesisPrechargeActionEntity, out var prechargeData);
                 if (prechargeData is { UseDelay: not null })
                     _actions.StartUseDelay(pyroComp.PyrokinesisPrechargeActionEntity);
@@ -100,15 +97,14 @@ namespace Content.Server.Psionics.Abilities
 
         private void OnPowerUsed(PyrokinesisPowerActionEvent args)
         {
-            if (!HasComp<PsionicInsulationComponent>(args.Performer)
-                && TryComp<PsionicComponent>(args.Performer, out var psionic)
+            if (_psionics.CheckCanSelfCast(args.Performer, out var psionic)
                 && TryComp<PyrokinesisPowerComponent>(args.Performer, out var pyroComp))
             {
                 var spawnCoords = Transform(args.Performer).Coordinates;
 
                 var ent = Spawn("ProjectileAnomalyFireball", spawnCoords);
 
-                if (_glimmerSystem.GlimmerOutput >= 25 * psionic.Dampening)
+                if (_glimmerSystem.GlimmerOutput <= 25 * psionic.Dampening)
                     EnsureComp<PsionicallyInvisibleComponent>(ent);
 
                 if (TryComp<ExplosiveComponent>(ent, out var fireball))

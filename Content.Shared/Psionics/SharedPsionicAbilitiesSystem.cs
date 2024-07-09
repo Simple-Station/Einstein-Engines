@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Mobs;
@@ -80,6 +81,23 @@ namespace Content.Shared.Psionics.Abilities
         {
             return !HasComp<PsionicInsulationComponent>(uid)
                 && (!TryComp<MobStateComponent>(uid, out var mobstate) || mobstate.CurrentState == MobState.Alive);
+        }
+
+        public bool CheckCanSelfCast(EntityUid uid, [NotNullWhen(true)] out PsionicComponent? psiComp)
+        {
+            if (!HasComp<PsionicInsulationComponent>(uid))
+                return TryComp(uid, out psiComp);
+            psiComp = null;
+            return false;
+        }
+
+        public bool CheckCanTargetCast(EntityUid performer, EntityUid target, [NotNullWhen(true)] out PsionicComponent? psiComp)
+        {
+            if (!HasComp<PsionicInsulationComponent>(performer)
+                && !HasComp<PsionicInsulationComponent>(target))
+                return TryComp(performer, out psiComp);
+            psiComp = null;
+            return false;
         }
 
         public void LogPowerUsed(EntityUid uid, string power, PsionicComponent? psionic = null, int minGlimmer = 8, int maxGlimmer = 12, bool overrideGlimmer = false)

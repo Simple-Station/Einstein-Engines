@@ -33,32 +33,30 @@ namespace Content.Server.Psionics.Abilities
 
         private void OnInit(EntityUid uid, MetapsionicPowerComponent component, ComponentInit args)
         {
+            EnsureComp<PsionicComponent>(uid, out var psionic);
             if (!TryComp(uid, out ActionsComponent? comp))
                 return;
             _actions.AddAction(uid, ref component.ActionWideMetapsionicEntity, component.ActionWideMetapsionic, component: comp);
             _actions.AddAction(uid, ref component.ActionFocusedMetapsionicEntity, component.ActionFocusedMetapsionic, component: comp);
-            _actions.TryGetActionData(component.ActionWideMetapsionicEntity, out var actionData);
-            if (actionData is { UseDelay: not null })
-            {
-                _actions.StartUseDelay(component.ActionWideMetapsionicEntity);
-                _actions.StartUseDelay(component.ActionFocusedMetapsionicEntity);
-            }
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.ActivePowers.Add(component);
-                psionic.PsychicFeedback.Add(component.MetapsionicFeedback);
-                psionic.Amplification += 0.1f;
-                psionic.Dampening += 0.5f;
-            }
+            UpdateActions(uid, component, psionic);
 
+            psionic.ActivePowers.Add(component);
+            psionic.PsychicFeedback.Add(component.MetapsionicFeedback);
+            psionic.Amplification += 0.1f;
+            psionic.Dampening += 0.5f;
         }
 
-        private void UpdateActions(EntityUid uid, MetapsionicPowerComponent? component = null)
+        private void UpdateActions(EntityUid uid, MetapsionicPowerComponent? component = null, PsionicComponent? psionic = null)
         {
-            if (!Resolve(uid, ref component))
+            if (!Resolve(uid, ref component) || !Resolve(uid, ref psionic)
+            || !_actions.TryGetActionData(component.ActionWideMetapsionicEntity, out var actionData))
                 return;
-            _actions.StartUseDelay(component.ActionWideMetapsionicEntity);
-            _actions.StartUseDelay(component.ActionFocusedMetapsionicEntity);
+
+            if (actionData is { UseDelay: not null })
+            {
+                _actions.SetCooldown(component.ActionWideMetapsionicEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
+                _actions.SetCooldown(component.ActionFocusedMetapsionicEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
+            }
         }
 
         private void OnShutdown(EntityUid uid, MetapsionicPowerComponent component, ComponentShutdown args)
@@ -95,7 +93,7 @@ namespace Content.Server.Psionics.Abilities
             }
             _popups.PopupEntity(Loc.GetString("metapsionic-pulse-failure"), uid, uid, PopupType.Large);
             _psionics.LogPowerUsed(uid, "metapsionic pulse", psionic, 2, 4);
-            UpdateActions(uid, component);
+            UpdateActions(uid, component, psionic);
             args.Handled = true;
         }
 
@@ -128,7 +126,7 @@ namespace Content.Server.Psionics.Abilities
             _psionics.LogPowerUsed(args.Performer, "focused metapsionic pulse", psionic, 3, 6);
             args.Handled = true;
 
-            UpdateActions(args.Performer, component);
+            UpdateActions(args.Performer, component, psionic);
         }
 
         private void OnDoAfter(EntityUid uid, MetapsionicPowerComponent component, FocusedMetapsionicDoAfterEvent args)

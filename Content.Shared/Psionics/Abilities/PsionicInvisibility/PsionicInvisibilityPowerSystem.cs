@@ -40,20 +40,20 @@ namespace Content.Shared.Psionics.Abilities
             SubscribeLocalEvent<PsionicInvisibilityUsedComponent, ShotAttemptedEvent>(OnShootAttempt);
             SubscribeLocalEvent<PsionicInvisibilityUsedComponent, ThrowAttemptEvent>(OnThrowAttempt);
             SubscribeLocalEvent<PsionicInvisibilityUsedComponent, PsionicInsulationEvent>(OnInsulated);
+            SubscribeLocalEvent<PsionicInvisibilityPowerComponent, PsionicInvisibilityTimerEvent>(OnDoAfter);
         }
 
         private void OnInit(EntityUid uid, PsionicInvisibilityPowerComponent component, ComponentInit args)
         {
+            EnsureComp<PsionicComponent>(uid, out var psionic);
             _actions.AddAction(uid, ref component.PsionicInvisibilityActionEntity, component.PsionicInvisibilityActionId);
-            _actions.TryGetActionData( component.PsionicInvisibilityActionEntity, out var actionData);
+            _actions.TryGetActionData(component.PsionicInvisibilityActionEntity, out var actionData);
             if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.PsionicInvisibilityActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.ActivePowers.Add(component);
-                psionic.PsychicFeedback.Add(component.InvisibilityFeedback);
-                psionic.Amplification += 0.5f;
-            }
+                _actions.SetCooldown(component.PsionicInvisibilityActionEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
+
+            psionic.ActivePowers.Add(component);
+            psionic.PsychicFeedback.Add(component.InvisibilityFeedback);
+            psionic.Amplification += 0.5f;
         }
 
         private void OnShutdown(EntityUid uid, PsionicInvisibilityPowerComponent component, ComponentShutdown args)
@@ -71,10 +71,7 @@ namespace Content.Shared.Psionics.Abilities
 
         private void OnPowerUsed(EntityUid uid, PsionicInvisibilityPowerComponent component, PsionicInvisibilityPowerActionEvent args)
         {
-            if (!TryComp<PsionicComponent>(uid, out var psionic))
-                return;
-
-            if (HasComp<PsionicInsulationComponent>(uid))
+            if (!_psionics.CheckCanSelfCast(uid, out var psionic))
                 return;
 
             var ev = new PsionicInvisibilityTimerEvent(_gameTiming.CurTime);
@@ -91,6 +88,10 @@ namespace Content.Shared.Psionics.Abilities
                 _psionics.LogPowerUsed(uid, "psionic invisibility", psionic, 8, 12);
                 args.Handled = true;
             }
+
+            _actions.TryGetActionData(component.PsionicInvisibilityActionEntity, out var actionData);
+            if (actionData is { UseDelay: not null })
+                _actions.SetCooldown(component.PsionicInvisibilityActionEntity, actionData.UseDelay.Value - TimeSpan.FromSeconds(psionic.Dampening + psionic.Amplification));
         }
 
         private void OnPowerOff(RemovePsionicInvisibilityOffPowerActionEvent args)
@@ -162,7 +163,7 @@ namespace Content.Shared.Psionics.Abilities
             }
         }
 
-        public void OnDoAfter(EntityUid uid, PsionicInvisibilityPowerComponent component, PsionicInvisibilityTimerEvent args)
+        private void OnDoAfter(EntityUid uid, PsionicInvisibilityPowerComponent component, PsionicInvisibilityTimerEvent args)
         {
             if (!args.Cancelled)
                 RemComp<PsionicInvisibilityUsedComponent>(uid);
