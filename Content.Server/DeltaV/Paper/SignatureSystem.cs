@@ -1,6 +1,7 @@
 using Content.Server.Access.Systems;
 using Content.Server.Paper;
 using Content.Server.Popups;
+using Content.Shared.DeltaV.Paper;
 using Content.Shared.Paper;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
@@ -31,7 +32,7 @@ public sealed class SignatureSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract)
             return;
 
-        if (args.Using is not {} pen || !_tags.HasTag(pen, "Write"))
+        if (args.Using is not {} pen || !_tagSystem.HasTag(pen, "Write"))
             return;
 
         var user = args.User;
