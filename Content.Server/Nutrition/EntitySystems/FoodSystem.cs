@@ -23,17 +23,18 @@ using Content.Shared.Inventory;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.EntitySystems;
-using Content.Shared.Popups; // Shitmed Change
+using Content.Shared.Popups;
 using Content.Shared.Stacks;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Player; // Shitmed Change
+using Robust.Shared.Player;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry.EntitySystems;
+using Robust.Server.GameObjects;
 using Content.Shared.Whitelist;
 using Robust.Shared.Configuration;
 using Content.Shared.Mood;
@@ -57,13 +58,14 @@ public sealed class FoodSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly StomachSystem _stomach = default!;
     [Dependency] private readonly UtensilSystem _utensil = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     public const float MaxFeedDistance = 1.0f;
 
@@ -104,6 +106,9 @@ public sealed class FoodSystem : EntitySystem
         args.Handled = result.Handled;
     }
 
+    /// <summary>
+    /// Tries to feed the food item to the target entity
+    /// </summary>
     public (bool Success, bool Handled) TryFeed(EntityUid user, EntityUid target, EntityUid food, FoodComponent foodComp)
     {
         //Suppresses eating yourself and alive mobs
@@ -205,9 +210,9 @@ public sealed class FoodSystem : EntitySystem
             BreakOnDamage = true,
             MovementThreshold = 0.01f,
             DistanceThreshold = MaxFeedDistance,
-            // Mice and the like can eat without hands.
-            // TODO maybe set this based on some CanEatWithoutHands event or component?
-            NeedHand = forceFeed
+            // do-after will stop if item is dropped when trying to feed someone else
+            // or if the item started out in the user's own hands
+            NeedHand = forceFeed || _hands.IsHolding(user, food),
         };
 
         // Shitmed Change - track success of doafter to prevent popup on doafter cancel
@@ -220,8 +225,8 @@ public sealed class FoodSystem : EntitySystem
             var foodName = Identity.Entity(food, EntityManager);
             _popup.PopupPredicted(
                 !forceFeed
-                ? Loc.GetString("food-system-eat-broadcasted", ("user", userName), ("food", foodName))
-                : Loc.GetString("food-system-force-feed-broadcasted", ("user", userName), ("target", Identity.Entity(target, EntityManager)), ("food", foodName)),
+                    ? Loc.GetString("food-system-eat-broadcasted", ("user", userName), ("food", foodName))
+                    : Loc.GetString("food-system-force-feed-broadcasted", ("user", userName), ("target", Identity.Entity(target, EntityManager)), ("food", foodName)),
                 user, target, PopupType.SmallCaution);
 
             if (!forceFeed)
@@ -462,7 +467,7 @@ public sealed class FoodSystem : EntitySystem
             if (comp.SpecialDigestible == null)
                 continue;
             // Check if the food is in the whitelist
-            if (_whitelist.IsWhitelistPass(comp.SpecialDigestible, food))
+            if (_whitelistSystem.IsWhitelistPass(comp.SpecialDigestible, food))
                 return true;
 
             // They can only eat whitelist food and the food isn't in the whitelist. It's not edible.
