@@ -13,7 +13,7 @@ namespace Content.Server.Standing;
 public sealed class LayingDownSystem : EntitySystem
 {
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;r
+    [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly Shared.Standing.StandingStateSystem _standing = default!; // WHY IS THERE TWO DIFFERENT STANDING SYSTEMS?!
     [Dependency] private readonly IGameTiming _timing = default!;
