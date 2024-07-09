@@ -9,6 +9,7 @@ using Content.Shared.Maps;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
+using Content.Shared.StepTrigger.Components;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -439,7 +440,7 @@ namespace Content.Shared.Movement.Systems
                 sound = moverModifier.FootstepSoundCollection;
                 return true;
             }
-            
+
             // If got the component in yml and no shoes = no sound. Delta V
             if (_entities.TryGetComponent(uid, out NoShoesSilentFootstepsComponent? _) &
                 !_inventory.TryGetSlotEntity(uid, "shoes", out var _))
