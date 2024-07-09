@@ -5,14 +5,12 @@ using Content.Shared.Announcements.Systems;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 
 namespace Content.Server.Announcements.Systems;
 
 public sealed partial class AnnouncerSystem : SharedAnnouncerSystem
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
 

@@ -2,7 +2,8 @@ using System.Linq;
 using Content.Shared.GameTicking;
 using Content.Shared.Announcements.Prototypes;
 using Content.Shared.CCVar;
-using Robust.Shared.Random;
+using Content.Shared.Random;
+using Content.Shared.Random.Helpers;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Announcements.Systems;
@@ -25,9 +26,14 @@ public sealed partial class AnnouncerSystem
     /// <remarks>Probably not very useful for any other system</remarks>
     public AnnouncerPrototype PickAnnouncer()
     {
-        return _random.Pick(_proto.EnumeratePrototypes<AnnouncerPrototype>()
-            .Where(x => !_config.GetCVar(CCVars.AnnouncerBlacklist).Contains(x.ID))
-            .ToArray());
+        var list = _proto.Index<WeightedRandomPrototype>(_config.GetCVar(CCVars.AnnouncerList));
+        var modWeights = list.Weights.Where(a => !_config.GetCVar(CCVars.AnnouncerBlacklist).Contains(a.Key));
+
+        list = new WeightedRandomPrototype();
+        foreach (var (key, value) in modWeights)
+            list.Weights.Add(key, value);
+
+        return _proto.Index<AnnouncerPrototype>(list.Pick());
     }
 
 
@@ -38,7 +44,7 @@ public sealed partial class AnnouncerSystem
     public void SetAnnouncer(string announcerId)
     {
         if (!_proto.TryIndex<AnnouncerPrototype>(announcerId, out var announcer))
-            DebugTools.Assert("Set announcer does not exist, attempting to use previously set one.");
+            DebugTools.Assert($"Set announcer {announcerId} does not exist, attempting to use previously set one.");
         else
             Announcer = announcer;
     }
