@@ -41,7 +41,7 @@
     damageModifierSet: Scale
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/Weapons/pierce.ogg
+      collection: AlienClaw
     angle: 30
     animation: WeaponArcClaw
     damage:
@@ -59,6 +59,13 @@
       types:
         Heat : 1.5 #per second, scales with temperature & other constants
   - type: Wagging
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Draconic
+    understands:
+    - GalacticCommon
+    - Draconic
 
 - type: entity
   parent: BaseSpeciesDummy

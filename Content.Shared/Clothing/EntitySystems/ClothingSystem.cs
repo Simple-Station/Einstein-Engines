@@ -62,6 +62,11 @@ public abstract class ClothingSystem : EntitySystem
     {
         foreach (var slotDef in userEnt.Comp1.Slots)
         {
+            // Do not attempt to quick-equip clothing in pocket slots.
+            // We should probably add a special flag to SlotDefinition to skip quick equip if more similar slots get added.
+            if (slotDef.SlotFlags.HasFlag(SlotFlags.POCKET))
+                continue;
+
             if (!_invSystem.CanEquip(userEnt, toEquipEnt, slotDef.Name, out _, slotDef, userEnt, toEquipEnt))
                 continue;
 
@@ -215,6 +220,39 @@ public abstract class ClothingSystem : EntitySystem
 
         _itemSys.VisualsChanged(uid);
         Dirty(uid, clothing);
+    }
+
+    public void SetLayerColor(ClothingComponent clothing, string slot, string mapKey, Color? color)
+    {
+        if (clothing.ClothingVisuals == null)
+            return;
+
+        foreach (var layer in clothing.ClothingVisuals[slot])
+        {
+            if (layer.MapKeys == null)
+                return;
+
+            if (!layer.MapKeys.Contains(mapKey))
+                continue;
+
+            layer.Color = color;
+        }
+    }
+    public void SetLayerState(ClothingComponent clothing, string slot, string mapKey, string state)
+    {
+        if (clothing.ClothingVisuals == null)
+            return;
+
+        foreach (var layer in clothing.ClothingVisuals[slot])
+        {
+            if (layer.MapKeys == null)
+                return;
+
+            if (!layer.MapKeys.Contains(mapKey))
+                continue;
+
+            layer.State = state;
+        }
     }
 
     #endregion
