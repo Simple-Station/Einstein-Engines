@@ -54,7 +54,7 @@ public sealed class TypingIndicatorSystem : SharedTypingIndicatorSystem
         SetTypingIndicatorEnabled(uid.Value, ev.IsTyping);
     }
 
-    public void SetTypingIndicatorEnabled(EntityUid uid, bool isEnabled, AppearanceComponent? appearance = null)
+    private void SetTypingIndicatorEnabled(EntityUid uid, bool isEnabled, AppearanceComponent? appearance = null)
     {
         if (!Resolve(uid, ref appearance, false))
             return;
