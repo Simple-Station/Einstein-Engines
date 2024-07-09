@@ -1,0 +1,19 @@
+# Alphabetically ordered, except for Uncategorized since it is always first
+
+- type: traitCategory
+  id: Uncategorized
+
+- type: traitCategory
+  id: Auditory
+
+- type: traitCategory
+  id: Mental
+
+- type: traitCategory
+  id: Physical
+
+- type: traitCategory
+  id: Speech
+
+- type: traitCategory
+  id: Visual

@@ -16,7 +16,10 @@ namespace Content.Shared.Remotes
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly AirlockSystem _airlock = default!;
         [Dependency] private readonly DoorSystem _doorSystem = default!;
+        [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
         [Dependency] private readonly ExamineSystemShared _examine = default!;
+        // I'm so sorry [Dependency] private readonly SharedAirlockSystem _sharedAirlockSystem = default!;
+        
         public override void Initialize()
         {
             base.Initialize();
