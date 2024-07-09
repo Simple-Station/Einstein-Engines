@@ -117,7 +117,9 @@ public abstract class SharedAnnouncerSystem : EntitySystem
     /// </summary>
     /// <param name="announcementId">ID of the announcement from the announcer to get information from</param>
     /// <param name="announcerId">ID of the announcer to get information from</param>
-    public string? GetAnnouncementMessage(string announcementId, string announcerId)
+    /// <param name="localeArgs">Locale arguments to pass to the overwritten announcement</param>
+    public string? GetAnnouncementMessage(string announcementId, string announcerId,
+        params (string, object)[] localeArgs)
     {
         if (!_proto.TryIndex<AnnouncerPrototype>(announcerId, out var announcer))
             return null;
@@ -128,7 +130,7 @@ public abstract class SharedAnnouncerSystem : EntitySystem
             announcer.Announcements.First(a => a.ID == "fallback");
 
         // Return the announcementType.MessageOverride if it exists, otherwise return null
-        return announcementType.MessageOverride != null ? Loc.GetString(announcementType.MessageOverride) : null;
+        return announcementType.MessageOverride != null ? Loc.GetString(announcementType.MessageOverride, localeArgs) : null;
     }
 
     /// <summary>

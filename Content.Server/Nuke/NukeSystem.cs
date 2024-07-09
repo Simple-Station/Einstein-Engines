@@ -463,12 +463,15 @@ public sealed class NukeSystem : EntitySystem
         // We are collapsing the randomness here, otherwise we would get separate random song picks for checking duration and when actually playing the song afterwards
         _selectedNukeSong = _audio.GetSound(component.ArmMusic);
 
-        // warn a crew
-        var announcement = Loc.GetString("nuke-component-announcement-armed",
-            ("time", (int) component.RemainingTime), ("position", posText));
-        var sender = Loc.GetString("nuke-component-announcement-sender");
-        _announcer.SendAnnouncementMessage(_announcer.GetAnnouncementId("NukeArm"), announcement, sender, Color.Red,
-            stationUid ?? uid);
+        _announcer.SendAnnouncementMessage(
+            _announcer.GetAnnouncementId("NukeArm"),
+            "nuke-component-announcement-armed",
+            Loc.GetString("nuke-component-announcement-sender"),
+            Color.Red,
+            stationUid ?? uid,
+            null,
+            ("time", (int) component.RemainingTime), ("position", posText)
+        );
 
         _sound.PlayGlobalOnStation(uid, _audio.GetSound(component.ArmSound));
         _nukeSongLength = (float) _audio.GetAudioLength(_selectedNukeSong).TotalSeconds;
@@ -505,11 +508,12 @@ public sealed class NukeSystem : EntitySystem
         if (stationUid != null)
             _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnDeactivate, true, true, true);
 
-        // warn a crew
-        var announcement = Loc.GetString("nuke-component-announcement-unarmed");
-        var sender = Loc.GetString("nuke-component-announcement-sender");
-        _announcer.SendAnnouncementMessage(_announcer.GetAnnouncementId("NukeDisarm"), announcement, sender,
-            station: stationUid ?? uid);
+        _announcer.SendAnnouncementMessage(
+            _announcer.GetAnnouncementId("NukeDisarm"),
+            "nuke-component-announcement-unarmed",
+            Loc.GetString("nuke-component-announcement-sender"),
+            station: stationUid ?? uid
+        );
 
         component.PlayedNukeSong = false;
         _sound.PlayGlobalOnStation(uid, _audio.GetSound(component.DisarmSound));

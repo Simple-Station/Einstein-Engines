@@ -271,7 +271,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         {
             _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle {ToPrettyString(stationUid)} unable to dock with station {ToPrettyString(stationUid)}");
             _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleGoodLuck"), Filter.Broadcast(),
-                Loc.GetString("emergency-shuttle-good-luck"), colorOverride: DangerColor);
+                "emergency-shuttle-good-luck", colorOverride: DangerColor);
             return;
         }
 
@@ -282,8 +282,13 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             if (TryComp<TransformComponent>(targetGrid.Value, out var targetXform))
             {
                 var angle = _dock.GetAngle(stationShuttle.EmergencyShuttle.Value, xform, targetGrid.Value, targetXform, xformQuery);
-                _announcer.SendAnnouncementMessage(_announcer.GetAnnouncementId("ShuttleDock"),
-                    Loc.GetString("emergency-shuttle-docked", ("time", $"{_consoleAccumulator:0}"), ("direction", angle.GetDir())));
+                _announcer.SendAnnouncementMessage(
+                    _announcer.GetAnnouncementId("ShuttleDock"),
+                    "emergency-shuttle-docked",
+                    null, null, null, null,
+                    ("time", $"{_consoleAccumulator:0}"),
+                        ("direction", angle.GetDir())
+                );
             }
 
             // shuttle timers
@@ -311,8 +316,12 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             if (TryComp<TransformComponent>(targetGrid.Value, out var targetXform))
             {
                 var angle = _dock.GetAngle(stationShuttle.EmergencyShuttle.Value, xform, targetGrid.Value, targetXform, xformQuery);
-                _announcer.SendAnnouncementMessage(_announcer.GetAnnouncementId("ShuttleNearby"),
-                    Loc.GetString("emergency-shuttle-nearby", ("direction", angle.GetDir())));
+                _announcer.SendAnnouncementMessage(
+                    _announcer.GetAnnouncementId("ShuttleNearby"),
+                    "emergency-shuttle-nearby",
+                    null, null, null, null,
+                    ("direction", angle.GetDir())
+                );
             }
 
             _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle {ToPrettyString(stationUid)} unable to find a valid docking port for {ToPrettyString(stationUid)}");

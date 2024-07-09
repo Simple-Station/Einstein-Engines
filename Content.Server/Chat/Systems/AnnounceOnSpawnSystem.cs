@@ -18,9 +18,8 @@ public sealed class AnnounceOnSpawnSystem : EntitySystem
 
     private void OnInit(EntityUid uid, AnnounceOnSpawnComponent comp, MapInitEvent args)
     {
-        var message = Loc.GetString(comp.Message);
         var sender = comp.Sender != null ? Loc.GetString(comp.Sender) : "Central Command";
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("SpawnAnnounceCaptain"), Filter.Broadcast(), message,
-            sender, comp.Color);
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("SpawnAnnounceCaptain"), Filter.Broadcast(),
+            comp.Message, sender, comp.Color);
     }
 }

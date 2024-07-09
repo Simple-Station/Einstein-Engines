@@ -124,18 +124,14 @@ public sealed class AlertLevelSystem : EntitySystem
             || component.AlertLevels == null
             || !component.AlertLevels.Levels.TryGetValue(level, out var detail)
             || component.CurrentLevel == level)
-        {
             return;
-        }
 
         if (!force)
         {
             if (!detail.Selectable
                 || component.CurrentDelay > 0
                 || component.IsLevelLocked)
-            {
                 return;
-            }
 
             component.CurrentDelay = _cfg.GetCVar(CCVars.GameAlertLevelChangeDelay);
             component.ActiveDelay = true;
@@ -144,50 +140,31 @@ public sealed class AlertLevelSystem : EntitySystem
         component.CurrentLevel = level;
         component.IsLevelLocked = locked;
 
-        var stationName = dataComponent.EntityName;
-
         var name = level.ToLower();
-
         if (Loc.TryGetString($"alert-level-{level}", out var locName))
-        {
             name = locName.ToLower();
-        }
 
         // Announcement text. Is passed into announcementFull.
         var announcement = detail.Announcement;
 
         if (Loc.TryGetString(detail.Announcement, out var locAnnouncement))
-        {
             announcement = locAnnouncement;
-        }
-
-        // The full announcement to be spat out into chat.
-        var announcementFull = Loc.GetString("alert-level-announcement", ("name", name), ("announcement", announcement));
 
         var alert = _announcer.GetAnnouncementId($"Alert{level}");
         if (playSound)
             _announcer.SendAnnouncementAudio(alert, _stationSystem.GetInOwningStation(station));
         if (announce)
-            _announcer.SendAnnouncementMessage(alert, announcementFull, colorOverride: detail.Color);
+            _announcer.SendAnnouncementMessage(alert, "alert-level-announcement", null, detail.Color, null, null,
+                ("name", name), ("announcement", announcement));
 
         RaiseLocalEvent(new AlertLevelChangedEvent(station, level));
     }
 }
 
-public sealed class AlertLevelDelayFinishedEvent : EntityEventArgs
-{}
-
-public sealed class AlertLevelPrototypeReloadedEvent : EntityEventArgs
-{}
-
-public sealed class AlertLevelChangedEvent : EntityEventArgs
+public sealed class AlertLevelDelayFinishedEvent : EntityEventArgs;
+public sealed class AlertLevelPrototypeReloadedEvent : EntityEventArgs;
+public sealed class AlertLevelChangedEvent(EntityUid station, string alertLevel) : EntityEventArgs
 {
-    public EntityUid Station { get; }
-    public string AlertLevel { get; }
-
-    public AlertLevelChangedEvent(EntityUid station, string alertLevel)
-    {
-        Station = station;
-        AlertLevel = alertLevel;
-    }
+    public EntityUid Station { get; } = station;
+    public string AlertLevel { get; } = alertLevel;
 }

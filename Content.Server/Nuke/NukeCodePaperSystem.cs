@@ -60,9 +60,7 @@ namespace Content.Server.Nuke
             while (faxes.MoveNext(out var faxEnt, out var fax))
             {
                 if (!fax.ReceiveNukeCodes || !TryGetRelativeNukeCode(faxEnt, out var paperContent, station))
-                {
                     continue;
-                }
 
                 var printout = new FaxPrintout(
                     paperContent,
@@ -80,11 +78,8 @@ namespace Content.Server.Nuke
             }
 
             if (wasSent)
-            {
-                var msg = Loc.GetString("nuke-component-announcement-send-codes");
-                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("NukeCodes"), Filter.Broadcast(), msg,
-                    colorOverride: Color.Red);
-            }
+                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("NukeCodes"), Filter.Broadcast(),
+                    "nuke-component-announcement-send-codes", colorOverride: Color.Red);
 
             return wasSent;
         }

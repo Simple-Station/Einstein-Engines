@@ -602,7 +602,7 @@ namespace Content.Server.GameTicking
             var proto = _robustRandom.Pick(options);
 
             _announcer.SendAnnouncement(_announcer.GetAnnouncementId(proto.ID), Filter.Broadcast(),
-                Loc.GetString(proto.Message ?? "game-ticker-welcome-to-the-station"));
+                proto.Message ?? "game-ticker-welcome-to-the-station");
         }
 
         private async void SendRoundStartedDiscordMessage()

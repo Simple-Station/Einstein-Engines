@@ -83,7 +83,7 @@ public sealed class CommsHackerSystem : SharedCommsHackerSystem
     {
         _gameTicker.StartGameRule(ninjaHackingThreat.Rule, out _);
         _announcer.SendAnnouncement(_announcer.GetAnnouncementId("NinjaHacking"), Filter.Broadcast(),
-            Loc.GetString(ninjaHackingThreat.Announcement), colorOverride: Color.Red);
+            ninjaHackingThreat.Announcement, colorOverride: Color.Red);
     }
 }
 

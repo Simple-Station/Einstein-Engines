@@ -129,7 +129,7 @@ namespace Content.Server.PowerSink
                 return;
 
             _announcer.SendAnnouncement(_announcer.GetAnnouncementId("PowerSinkExplosion"),
-                _station.GetInOwningStation(station.Value), Loc.GetString("powersink-immiment-explosion-announcement"),
+                _station.GetInOwningStation(station.Value), "powersink-immiment-explosion-announcement",
                 colorOverride: Color.Yellow, station: station.Value);
         }
     }

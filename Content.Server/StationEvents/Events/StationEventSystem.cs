@@ -62,9 +62,12 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
 
         if (stationEvent.StartAnnouncement)
         {
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId(args.RuleId), Filter.Broadcast(),
-                Loc.GetString(_announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId))),
-                colorOverride: Color.Gold);
+            _announcer.SendAnnouncement(
+                _announcer.GetAnnouncementId(args.RuleId),
+                Filter.Broadcast(),
+                _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId)),
+                colorOverride: Color.Gold
+            );
         }
 
         if (stationEvent.Duration != null)
@@ -89,8 +92,10 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
 
         if (stationEvent.EndAnnouncement)
         {
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId(args.RuleId, true), Filter.Broadcast(),
-                Loc.GetString(_announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId, true))),
+            _announcer.SendAnnouncement(
+                _announcer.GetAnnouncementId(args.RuleId, true),
+                Filter.Broadcast(),
+                _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId, true)),
                 colorOverride: Color.Gold);
         }
     }

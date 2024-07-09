@@ -180,12 +180,13 @@ namespace Content.Server.RoundEnd
 
             _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleCalled"),
                 Filter.Broadcast(),
-                Loc.GetString(text,
-                    ("time", time),
-                    ("units", Loc.GetString(units))
-                ),
+                text,
                 name,
-                Color.Gold
+                Color.Gold,
+                null,
+                null,
+                ("time", time),
+                    ("units", Loc.GetString(units))
             );
 
             LastCountdownStart = _gameTiming.CurTime;
@@ -229,9 +230,10 @@ namespace Content.Server.RoundEnd
                 _adminLogger.Add(LogType.ShuttleRecalled, LogImpact.High, $"Shuttle recalled");
             }
 
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleRecalled"),
+            _announcer.SendAnnouncement(
+                _announcer.GetAnnouncementId("ShuttleRecalled"),
                 Filter.Broadcast(),
-                Loc.GetString("round-end-system-shuttle-recalled-announcement"),
+                "round-end-system-shuttle-recalled-announcement",
                 Loc.GetString("Station"),
                 Color.Gold
             );
@@ -313,9 +315,10 @@ namespace Content.Server.RoundEnd
                     // Check is shuttle called or not. We should only dispatch announcement if it's already called
                     if (IsRoundEndRequested())
                     {
-                        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleCalled"),
+                        _announcer.SendAnnouncement(
+                            _announcer.GetAnnouncementId("ShuttleCalled"),
                             Filter.Broadcast(),
-                            Loc.GetString(textAnnounce),
+                            textAnnounce,
                             Loc.GetString(sender),
                             Color.Gold
                         );

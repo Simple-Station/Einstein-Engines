@@ -16,11 +16,15 @@ public sealed class AnomalySpawnRule : StationEventSystem<AnomalySpawnRuleCompon
     {
         base.Added(uid, component, gameRule, args);
 
-        var str = Loc.GetString("anomaly-spawn-event-announcement",
-            ("sighting", Loc.GetString($"anomaly-spawn-sighting-{RobustRandom.Next(1, 6)}")));
-
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId(args.RuleId), Filter.Broadcast(), str,
-            colorOverride: Color.FromHex("#18abf5"));
+        _announcer.SendAnnouncement(
+            _announcer.GetAnnouncementId(args.RuleId),
+            Filter.Broadcast(),
+            "anomaly-spawn-event-announcement",
+            null,
+            Color.FromHex("#18abf5"),
+            null, null,
+            ("sighting", Loc.GetString($"anomaly-spawn-sighting-{RobustRandom.Next(1, 6)}"))
+        );
     }
 
     protected override void Started(EntityUid uid, AnomalySpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)

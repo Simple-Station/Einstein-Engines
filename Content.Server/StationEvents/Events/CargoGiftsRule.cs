@@ -22,11 +22,17 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
     {
         base.Added(uid, component, gameRule, args);
 
-        var str = Loc.GetString(component.Announce,
-            ("sender", Loc.GetString(component.Sender)), ("description", Loc.GetString(component.Description)), ("dest", Loc.GetString(component.Dest)));
-
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId(args.RuleId), Filter.Broadcast(), str,
-            colorOverride: Color.FromHex("#18abf5"));
+        _announcer.SendAnnouncement(
+            _announcer.GetAnnouncementId(args.RuleId),
+            Filter.Broadcast(),
+            component.Announce,
+            null,
+            Color.FromHex("#18abf5"),
+            null, null,
+            ("sender", Loc.GetString(component.Sender)),
+                ("description", Loc.GetString(component.Description)),
+                ("dest", Loc.GetString(component.Dest))
+        );
     }
 
     /// <summary>
