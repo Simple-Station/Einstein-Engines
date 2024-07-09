@@ -101,7 +101,7 @@
     - traitor
   name: traitor-title
   description: traitor-description
-  showInVote: true # if people want to antag let it be traitors instead of self-antaggers
+  showInVote: true
   rules:
     - Traitor
     - SubGamemodesRule
