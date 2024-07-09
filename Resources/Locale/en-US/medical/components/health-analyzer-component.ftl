@@ -40,6 +40,8 @@ health-analyzer-window-damage-type-Cellular = Cellular
 
 health-analyzer-window-malnutrition = Severely malnourished
 
+health-analyzer-popup-scan-target = {CAPITALIZE(THE($user))} is trying to scan you!
+
 health-analyzer-window-entity-unrevivable-text = Unique body composition detected! Patient can not be resuscitated by normal means!
 health-analyzer-window-entity-bleeding-text = Patient is bleeding!
 
@@ -47,5 +49,4 @@ health-analyzer-window-scan-mode-text = Scan Mode:
 health-analyzer-window-scan-mode-active = Active
 health-analyzer-window-scan-mode-inactive = Inactive
 
-health-analyzer-popup-scan-target = {CAPITALIZE(THE($user))} is trying to scan you!
 health-analyzer-window-return-button-text = < Return
