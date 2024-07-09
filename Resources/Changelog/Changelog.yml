@@ -4373,3 +4373,9 @@ Entries:
       message: Changed asteroids to have more ore...and some danger
   id: 6147
   time: '2024-07-08T07:03:39.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Languages are now marked in the chat!
+  id: 6148
+  time: '2024-07-09T19:01:38.0000000+00:00'
