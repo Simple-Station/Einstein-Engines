@@ -10,18 +10,18 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<OfferItemComponent, AfterInteractUsingEvent>(SetInReceiveMode);
+        SubscribeLocalEvent<OfferItemComponent, InteractUsingEvent>(SetInReceiveMode);
         SubscribeLocalEvent<OfferItemComponent, MoveEvent>(OnMove);
 
         InitializeInteractions();
     }
 
-    private void SetInReceiveMode(EntityUid uid, OfferItemComponent component, AfterInteractUsingEvent args)
+    private void SetInReceiveMode(EntityUid uid, OfferItemComponent component, InteractUsingEvent args)
     {
         if (!TryComp<OfferItemComponent>(args.User, out var offerItem))
             return;
 
-        if (args.User == uid || component.IsInReceiveMode ||
+        if (args.User == uid || component.IsInReceiveMode || !offerItem.IsInOfferMode ||
             (offerItem.IsInReceiveMode && offerItem.Target != uid))
             return;
 
@@ -44,6 +44,8 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("offer-item-try-give-target",
             ("user", Identity.Entity(component.Target.Value, EntityManager)),
             ("item", Identity.Entity(offerItem.Item.Value, EntityManager))), component.Target.Value, uid);
+
+        args.Handled = true;
     }
 
     private void OnMove(EntityUid uid, OfferItemComponent component, MoveEvent args)
