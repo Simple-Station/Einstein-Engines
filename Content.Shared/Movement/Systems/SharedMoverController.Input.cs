@@ -335,7 +335,6 @@ namespace Content.Shared.Movement.Systems
             component.RelativeEntity = xform.GridUid ?? xform.MapUid;
             component.TargetRelativeRotation = Angle.Zero;
             WalkingAlert(uid, !component.Sprinting);
-
         }
 
         private void HandleRunChange(EntityUid uid, ushort subTick, bool walking)

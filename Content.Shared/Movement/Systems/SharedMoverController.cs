@@ -25,7 +25,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.StepTrigger.Components;
-using System.Diagnostics; // Delta V-NoShoesSilentFootstepsComponent
+using System.Diagnostics;
 
 namespace Content.Shared.Movement.Systems
 {
@@ -163,12 +163,10 @@ namespace Content.Shared.Movement.Systems
 
 
             UsedMobMovement[uid] = true;
-            //Logger.Debug($"Beginning movement with {mover.Sprinting} owned by {mover.Owner}. Relative entity is {mover.RelativeEntity} Current UID is {uid}, Physics UID is {physicsUid}");
             // Specifically don't use mover.Owner because that may be different to the actual physics body being moved.
             var weightless = _gravity.IsWeightless(physicsUid, physicsComponent, xform);
             var (walkDir, sprintDir) = GetVelocityInput(mover);
             var touching = false;
-
 
 
             // Handle wall-pushes.
@@ -294,13 +292,7 @@ namespace Content.Shared.Movement.Systems
         public void WalkingAlert(EntityUid player, bool walking) {
             if (_tags.HasTag(player, "CanWalk"))
             {
-                if (walking)
-                {
-                    _alerts.ShowAlert(player, AlertType.Walking, 0);
-                } else
-                {
-                    _alerts.ShowAlert(player, AlertType.Walking, 1);
-                }
+                _alerts.ShowAlert(player, AlertType.Walking, walking ? 0 : 1);
             }
         }
 
