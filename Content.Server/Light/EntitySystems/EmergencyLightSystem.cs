@@ -71,7 +71,7 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
             args.PushMarkup(
                 Loc.GetString("emergency-light-component-on-examine-alert",
                     ("color", color.ToHex()),
-                    ("level", name)));
+                    ("level", Loc.GetString($"alert-level-{name.ToString().ToLower()}"))));
         }
     }
 
