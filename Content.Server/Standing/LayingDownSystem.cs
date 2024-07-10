@@ -9,7 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Standing;
 
-// Unfortunately cannot be shared because some standing conditions are server-side only
+/// <remarks>Unfortunately cannot be shared because some standing conditions are server-side only</remarks>
 public sealed class LayingDownSystem : EntitySystem
 {
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
@@ -17,6 +17,7 @@ public sealed class LayingDownSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly Shared.Standing.StandingStateSystem _standing = default!; // WHY IS THERE TWO DIFFERENT STANDING SYSTEMS?!
     [Dependency] private readonly IGameTiming _timing = default!;
+
 
     public override void Initialize()
     {
@@ -35,6 +36,7 @@ public sealed class LayingDownSystem : EntitySystem
 
         CommandBinds.Unregister<LayingDownSystem>();
     }
+
 
     private void DoRefreshMovementSpeed(EntityUid uid, LayingDownComponent component, object args)
     {
@@ -77,7 +79,6 @@ public sealed class LayingDownSystem : EntitySystem
     {
         var success = layingDown.CooldownUntil <= _timing.CurTime;
 
-        // Note: &= leads to the right-hand side being evaluated regardless of what's on left-hand, so we use normal assignment here instead.
         if (_standing.IsDown(uid, standingState))
         {
             success = success && _standing.Stand(uid, standingState, force: false);

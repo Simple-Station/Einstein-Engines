@@ -3,9 +3,6 @@ namespace Content.Server.Standing;
 [RegisterComponent]
 public sealed partial class LayingDownComponent : Component
 {
-    /// <summary>
-    ///     Movement speed multiplier when not standing.
-    /// </summary>
     [DataField]
     public float DownedSpeedMultiplier = 0.15f;
 
