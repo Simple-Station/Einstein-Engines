@@ -296,7 +296,7 @@
         - 1.025689525 # oxygen
         - 1.025689525 # nitrogen
 
-#Empty micro - Used in the Cyborg module, visually the same as micro jetpack.
+#Empty micro - Used in the Cyborg module, visually the same as mini jetpack.
 - type: entity
   id: JetpackMicro
   parent: BaseJetpack
@@ -317,10 +317,7 @@
       outputPressure: 42.6
       air:
         volume: 1.5
-    - type: ReverseEngineering # Nyano
-      difficulty: 2
-      recipes:
-        - JetpackMini
+        
 
 # Filled micro
 - type: entity
