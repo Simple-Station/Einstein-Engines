@@ -10,5 +10,5 @@ public sealed partial class LayingDownComponent : Component
     public TimeSpan Cooldown = TimeSpan.FromSeconds(2.5f);
 
     [DataField]
-    public TimeSpan CooldownUntil = TimeSpan.Zero;
+    public TimeSpan NextToggleAttempt = TimeSpan.Zero;
 }

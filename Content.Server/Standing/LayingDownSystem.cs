@@ -60,22 +60,19 @@ public sealed class LayingDownSystem : EntitySystem
                 || !TryComp<LayingDownComponent>(uid, out var layingDown)))
             return;
 
-        var success = ToggleStandingImpl(uid, standingState, layingDown, out var popupBranch);
-
         // If successful, show popup to self and others. Otherwise, only to self.
-        _popups.PopupEntity(Loc.GetString($"laying-comp-{popupBranch}-self", ("entity", uid)), uid, uid);
-
-        if (success)
+        if (ToggleStandingImpl(uid, standingState, layingDown, out var popupBranch))
         {
             _popups.PopupEntity(Loc.GetString($"laying-comp-{popupBranch}-other", ("entity", uid)), uid, Filter.PvsExcept(uid), true);
-
-            layingDown.CooldownUntil = _timing.CurTime + layingDown.Cooldown;
+            layingDown.NextToggleAttempt = _timing.CurTime + layingDown.Cooldown;
         }
+
+        _popups.PopupEntity(Loc.GetString($"laying-comp-{popupBranch}-self", ("entity", uid)), uid, uid);
     }
 
     private bool ToggleStandingImpl(EntityUid uid, StandingStateComponent standingState, LayingDownComponent layingDown, out string popupBranch)
     {
-        var success = layingDown.CooldownUntil <= _timing.CurTime;
+        var success = layingDown.NextToggleAttempt <= _timing.CurTime;
 
         if (_standing.IsDown(uid, standingState))
         {
