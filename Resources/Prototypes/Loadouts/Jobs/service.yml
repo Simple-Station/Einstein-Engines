@@ -1,10 +1,11 @@
+## Clown
 - type: loadout
   id: LoadoutServiceClownOutfitJester
   category: Jobs
   cost: 3
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Clown
   items:
@@ -18,7 +19,7 @@
   cost: 3
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Clown
   items:
@@ -26,37 +27,40 @@
     - ClothingHeadHatJesterAlt
     - ClothingShoesJester
 
+## Bartender
 - type: loadout
   id: LoadoutServiceBartenderUniformPurple
   category: Jobs
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Bartender
   items:
     - ClothingUniformJumpsuitBartenderPurple
 
+## Botanist
 - type: loadout
   id: LoadoutServiceBotanistUniformOveralls
   category: Jobs
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
      jobs:
         - Botanist
   items:
     - ClothingUniformOveralls
 
+## Lawyer
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSuit
   category: Jobs
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
      jobs:
         - Lawyer
   items:
@@ -68,7 +72,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Lawyer
   items:
@@ -80,7 +84,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Lawyer
   items:
@@ -92,7 +96,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Lawyer
   items:
@@ -104,7 +108,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Lawyer
   items:
@@ -116,7 +120,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Lawyer
   items:
@@ -128,7 +132,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Lawyer
   items:
@@ -140,7 +144,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Lawyer
   items:
@@ -152,19 +156,20 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Reporter
   items:
     - ClothingUniformJumpsuitJournalist
 
+## Reporter
 - type: loadout
   id: LoadoutServiceReporterUniformDetectivesuit
   category: Jobs
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Reporter
   items:
@@ -176,8 +181,20 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Reporter
   items:
     - ClothingUniformJumpskirtDetective
+
+## Musician
+- type: loadout
+  id: LoadoutItemSynthesizerInstrument
+  category: Jobs
+  cost: 8
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - SynthesizerInstrument

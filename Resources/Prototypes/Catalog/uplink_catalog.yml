@@ -66,6 +66,17 @@
   - UplinkWeapons
 
 - type: listing
+  id: UplinkThrowingKnivesKit
+  name: uplink-knives-kit-name
+  description: uplink-knives-kit-desc
+  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: throwing_knives }
+  productEntity: ThrowingKnivesKit
+  cost:
+    Telecrystal: 6
+  categories:
+    - UplinkWeapons
+
+- type: listing
   id: UplinkGlovesNorthStar
   name: uplink-gloves-north-star-name
   description: uplink-gloves-north-star-desc
@@ -253,16 +264,6 @@
     whitelist:
       tags:
       - NukeOpsUplink
-
-- type: listing
-  id: UplinkSyndicateBombFake
-  name: uplink-exploding-syndicate-bomb-fake-name
-  description: uplink-exploding-syndicate-bomb-fake-desc
-  productEntity: SyndicateBombFake
-  cost:
-    Telecrystal: 4
-  categories:
-    - UplinkExplosives
 
 - type: listing
   id: UplinkClusterGrenade
@@ -776,7 +777,19 @@
   cost:
     Telecrystal: 6
   categories:
-    - UplinkBundles
+  - UplinkBundles
+
+- type: listing
+  id: UplinkSyndicateBombFake
+  name: uplink-exploding-syndicate-bomb-fake-name
+  description: uplink-exploding-syndicate-bomb-fake-desc
+  productEntity: SyndicateBombFake
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkDeception
+
+# Disruption
 
 - type: listing
   id: UplinkAmmoBundle

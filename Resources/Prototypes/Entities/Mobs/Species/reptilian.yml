@@ -127,6 +127,13 @@
     - FootstepSound
     - DoorBumpOpener
     - HidesTail
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Draconic
+    understands:
+    - GalacticCommon
+    - Draconic
 
 - type: entity
   parent: BaseSpeciesDummy

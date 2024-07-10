@@ -113,6 +113,14 @@
     - FootstepSound
     - DoorBumpOpener
     - HidesTail
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Canilunzt
+    understands:
+    - GalacticCommon
+    - Canilunzt
+
 - type: entity
   save: false
   name: Vulpkanin Dummy
