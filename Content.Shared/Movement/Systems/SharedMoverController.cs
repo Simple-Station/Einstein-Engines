@@ -10,7 +10,7 @@ using Content.Shared.Maps;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
-using Content.Shared.Pulling.Components;
+using Content.Shared.StepTrigger.Components;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -24,8 +24,8 @@ using Robust.Shared.Physics.Controllers;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.StepTrigger.Components;
-using System.Diagnostics;
+using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
+
 
 namespace Content.Shared.Movement.Systems
 {
@@ -58,7 +58,7 @@ namespace Content.Shared.Movement.Systems
         protected EntityQuery<MovementSpeedModifierComponent> ModifierQuery;
         protected EntityQuery<PhysicsComponent> PhysicsQuery;
         protected EntityQuery<RelayInputMoverComponent> RelayQuery;
-        protected EntityQuery<SharedPullableComponent> PullableQuery;
+        protected EntityQuery<PullableComponent> PullableQuery;
         protected EntityQuery<TransformComponent> XformQuery;
         protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery;
         protected EntityQuery<NoRotateOnMoveComponent> NoRotateQuery;
@@ -90,7 +90,7 @@ namespace Content.Shared.Movement.Systems
             RelayTargetQuery = GetEntityQuery<MovementRelayTargetComponent>();
             PhysicsQuery = GetEntityQuery<PhysicsComponent>();
             RelayQuery = GetEntityQuery<RelayInputMoverComponent>();
-            PullableQuery = GetEntityQuery<SharedPullableComponent>();
+            PullableQuery = GetEntityQuery<PullableComponent>();
             XformQuery = GetEntityQuery<TransformComponent>();
             NoRotateQuery = GetEntityQuery<NoRotateOnMoveComponent>();
             CanMoveInAirQuery = GetEntityQuery<CanMoveInAirComponent>();
@@ -389,7 +389,7 @@ namespace Content.Shared.Movement.Systems
                     !otherCollider.CanCollide ||
                     ((collider.CollisionMask & otherCollider.CollisionLayer) == 0 &&
                     (otherCollider.CollisionMask & collider.CollisionLayer) == 0) ||
-                    (TryComp(otherCollider.Owner, out SharedPullableComponent? pullable) && pullable.BeingPulled))
+                    (TryComp(otherCollider.Owner, out PullableComponent? pullable) && pullable.BeingPulled))
                 {
                     continue;
                 }
