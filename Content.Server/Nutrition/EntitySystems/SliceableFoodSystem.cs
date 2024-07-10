@@ -68,8 +68,8 @@ namespace Content.Server.Nutrition.EntitySystems
             FillSlice(sliceUid, lostSolution);
 
             _audio.PlayPvs(component.Sound, transform.Coordinates, AudioParams.Default.WithVolume(-2));
-            var ev = new SliceFoodEvent();
-            RaiseLocalEvent(uid, ref ev);
+            var ev = new SliceFoodEvent(uid, user, usedItem);
+            RaiseLocalEvent(ev);
 
             // Decrease size of item based on count - Could implement in the future
             // Bug with this currently is the size in a container is not updated
