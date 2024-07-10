@@ -26,7 +26,7 @@
       color: "#878787"
     - state: subdepartment
       color: "#878787"
-    - state: adventurer
+    - state: gladiator
   - type: PresetIdCard
     job: Gladiator
 
@@ -75,7 +75,7 @@
       color: "#878787"
     - state: subdepartment
       color: "#878787"
-    - state: corpserunner
+    - state: martialartist
   - type: PresetIdCard
     job: MartialArtist
 
@@ -91,6 +91,6 @@
       color: "#C96DBF"
     - state: subdepartment
       color: "#C96DBF"
-    - state: mantis
+    - state: detective
   - type: PresetIdCard
     job: ForensicMantis

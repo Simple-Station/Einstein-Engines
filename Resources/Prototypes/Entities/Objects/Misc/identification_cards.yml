@@ -336,6 +336,7 @@
     - state: default
     - state: department
       color: "#878787"
+    - state: subdepartment
     - state: mime
   - type: PresetIdCard
     job: Mime
@@ -454,7 +455,7 @@
     layers:
     - state: default
     - state: department
-      color: "#58C800"
+      color: "#878787"
     - state: subdepartment
       color: "#CB0000"
     - state: lawyer
@@ -596,6 +597,14 @@
   id: ERTLeaderIDCard
   name: ERT leader ID card
   components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: captain
   - type: IdCard
     jobTitle: ERT Company Commander
   - type: Item
@@ -938,7 +947,7 @@
       color: "#878787"
     - state: subdepartment
       color: "#878787"
-    - state: corpserunner
+    - state: boxer
   - type: PresetIdCard
     job: Boxer
 
@@ -951,9 +960,9 @@
     layers:
     - state: default
     - state: department
-      color: "#FFE685"
+      color: "#58C800"
     - state: subdepartment
-      color: "#878787"
+      color: "#58C800"
     - state: zookeeper
   - type: PresetIdCard
     job: Zookeeper

@@ -134,9 +134,6 @@
             "name": "geneticist"
         },
         {
-            "name": "corpserunner"
-        },
-        {
             "name": "zookeeper"
         },
         {
@@ -146,16 +143,22 @@
             "name": "senior"
         },
         {
-            "name": "adventurer"
-        },
-        {
-            "name": "mantis"
-        },
-        {
             "name": "mailcarrier"
         },
         {
             "name": "prisonguard"
+        },
+        {
+            "name": "psychologist"
+        },
+        {
+            "name": "boxer"
+        },
+        {
+            "name": "gladiator"
+        },
+        {
+            "name": "martialartist"
         },
         {
             "name": "gold-inhand-left",
