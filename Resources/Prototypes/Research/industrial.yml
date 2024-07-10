@@ -179,6 +179,19 @@
     - BorgModuleAdvancedTool
     - BorgModuleRCD
 
+- type: technology
+  id: MechanizedSalvaging
+  name: research-technology-mechanized-salvaging
+  icon:
+    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+    state: icon
+  discipline: Industrial
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - BorgModulePka
+  - BorgModuleJetpack
+
 # Tier 3
 
 - type: technology
