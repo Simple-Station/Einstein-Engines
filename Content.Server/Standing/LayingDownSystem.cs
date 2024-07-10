@@ -53,11 +53,10 @@ public sealed class LayingDownSystem : EntitySystem
 
     private void ToggleStanding(ICommonSession? session)
     {
-        if (session is not { } playerSession
-            || ((playerSession.AttachedEntity is not { Valid: true } uid
-                || !Exists(uid)))
-            || (!TryComp<StandingStateComponent>(uid, out var standingState)
-                || !TryComp<LayingDownComponent>(uid, out var layingDown)))
+        if (session is not { AttachedEntity: { Valid: true } uid } playerSession
+            || !Exists(uid)
+            || !TryComp<StandingStateComponent>(uid, out var standingState)
+            || !TryComp<LayingDownComponent>(uid, out var layingDown))
             return;
 
         // If successful, show popup to self and others. Otherwise, only to self.
