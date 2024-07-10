@@ -125,7 +125,7 @@
     chance: -2
   - type: Psionic #Nyano - Summary: makes psionic by default.
     removable: false
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Xeno
     understands:
@@ -239,7 +239,7 @@
   - type: Tag
     tags:
     - CannotSuicide
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Xeno

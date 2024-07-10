@@ -23,11 +23,11 @@ public sealed class VoteUIController : UIController
     {
         switch (UIManager.ActiveScreen)
         {
-            case DefaultGameScreen game:
-                _votes.SetPopupContainer(game.VoteMenu);
-                break;
             case SeparatedChatGameScreen separated:
                 _votes.SetPopupContainer(separated.VoteMenu);
+                break;
+            case OverlayChatGameScreen overlay:
+                _votes.SetPopupContainer(overlay.VoteMenu);
                 break;
         }
     }
