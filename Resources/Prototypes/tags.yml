@@ -875,12 +875,6 @@
   id: MicrowaveMachineBoard
 
 - type: Tag
-  id: MimeBelt
-
-- type: Tag
-  id: MimeHappyHonk
-
-- type: Tag
   id: MindShield
 
 - type: Tag
@@ -1173,10 +1167,10 @@
   id: StringInstrument
 
 - type: Tag
-  id: Steak
+  id: StationMapElectronics
 
 - type: Tag
-  id: StringInstrument
+  id: Steak
 
 - type: Tag
   id: SubdermalImplant
@@ -1293,7 +1287,7 @@
   id: Wine
 
 - type: Tag
-  id: Wirecutter
+  id: WizardWand # that evil vvizard vvand
 
 - type: Tag
   id: WizardStaff
