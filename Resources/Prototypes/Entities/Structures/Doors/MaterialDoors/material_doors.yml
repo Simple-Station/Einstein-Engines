@@ -40,7 +40,6 @@
       path: /Audio/Effects/stonedoor_openclose.ogg
   - type: Appearance
   - type: Airtight
-    fixVacuum: true
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -52,9 +51,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
   - type: Occluder
   - type: BlockWeather
 

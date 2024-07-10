@@ -13,6 +13,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: bat
       sprite: Mobs/Animals/bat.rsi
+  - type: Carriable
   - type: Speech
     speechSounds: Squeak
     speechVerb: SmallMob
@@ -48,8 +49,11 @@
     flavorKind: station-event-random-sentience-flavor-organic
   - type: Bloodstream
     bloodMaxVolume: 50
-  - type: ReplacementAccent
-    accent: mouse
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Effects/bite.ogg
@@ -61,6 +65,7 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
 
 - type: entity
   name: bee
@@ -129,6 +134,13 @@
         - ReagentId: GroundBee
           Quantity: 5
   - type: ZombieImmune
+  - type: RandomBark
+    barks:
+      - Bzzzzz
+      - Bzzz bzzz
+      - Bzzzzzzzzzzzz
+      - Bzz
+    barkMultiplier: 1.5
 
 - type: entity
   name: bee
@@ -177,6 +189,8 @@
     noMovementLayers:
       movement:
         state: chicken-0
+  - type: Carriable
+    freeHandsRequired: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -229,13 +243,17 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEgg
-  - type: ReplacementAccent
-    accent: chicken
+  - type: LanguageKnowledge
+    speaks:
+    - Chicken
+    understands:
+    - Chicken
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: RandomBark
 
 - type: entity
   parent: MobChicken
@@ -504,8 +522,11 @@
       prob: 0.5
   - type: Extractable
     grindableSolutionName: food
-  - type: ReplacementAccent
-    accent: mothroach
+  - type: LanguageKnowledge
+    speaks:
+    - Moffic
+    understands:
+    - Moffic
   - type: ZombieAccentOverride
     accent: zombieMoth
   - type: Vocal
@@ -562,6 +583,8 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Carriable
+    freeHandsRequired: 1
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -601,13 +624,18 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEgg
-  - type: ReplacementAccent
-    accent: duck
+  - type: LanguageKnowledge
+    speaks:
+    - Duck
+    understands:
+    - Duck
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: RandomBark
+    barkMultiplier: 0.7
 
 - type: entity
   name: white duck #Quack
@@ -787,6 +815,16 @@
   - type: GuideHelp
     guides:
     - Chef
+  - type: RandomBark
+    barks:
+      - Mooooooo
+      - Moo
+      - Huff
+      - Mooooooooooo
+      - Moooooo
+      - Moooo
+    barkMultiplier: 3
+
 
 - type: entity
   name: crab
@@ -807,6 +845,8 @@
     noMovementLayers:
       movement:
         state: crab
+  - type: Carriable
+    freeHandsRequired: 1
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -839,8 +879,11 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
-  - type: ReplacementAccent
-    accent: crab
+  - type: LanguageKnowledge
+    speaks:
+    - Crab
+    understands:
+    - Crab
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CopperBlood
@@ -852,6 +895,12 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
+  - type: RandomBark
+    barks:
+      - click clack
+      - clack
+      - clickity clack
+      - clack clack
 
 - type: entity
   name: goat
@@ -865,6 +914,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: goat
       sprite: Mobs/Animals/goat.rsi
+  - type: Carriable
   - type: Fixtures
     fixtures:
       fix1:
@@ -957,6 +1007,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: goose
       sprite: Mobs/Animals/goose.rsi
+  - type: Carriable
   - type: Fixtures
     fixtures:
       fix1:
@@ -1076,8 +1127,11 @@
   - type: Inventory
     speciesId: kangaroo
     templateId: kangaroo
-  - type: ReplacementAccent
-    accent: kangaroo
+  - type: LanguageKnowledge
+    speaks:
+    - Kangaroo
+    understands:
+    - Kangaroo
   - type: InventorySlots
   - type: Strippable
   - type: Butcherable
@@ -1200,6 +1254,7 @@
       sprite: "Effects/creampie.rsi"
       state: "creampie_human"
       visible: false
+  - type: Carriable
   - type: Hands
   - type: GenericVisualizer
     visuals:
@@ -1266,7 +1321,12 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: MonkeyAccent
+  - type: LanguageKnowledge
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - Kobold
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
   - type: AlwaysRevolutionaryConvertible
@@ -1300,7 +1360,13 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: MonkeyAccent
+  - type: LanguageKnowledge
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - Kobold
+    - GalacticCommon
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -1339,8 +1405,12 @@
   - type: NameIdentifier
     group: Kobold
   - type: LizardAccent
-  - type: ReplacementAccent
-    accent: kobold
+  - type: LanguageKnowledge
+    speaks:
+    - Kobold
+    understands:
+    - Kobold
+    - Monkey
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
@@ -1446,6 +1516,8 @@
     makeSentient: true
     name: ghost-role-information-kobold-name
     description: ghost-role-information-kobold-description
+  - type: RandomBark
+    barkMultiplier: 0.65
 
 - type: entity
   name: guidebook monkey
@@ -1568,8 +1640,11 @@
     spawned:
     - id: FoodMeatRat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: Tag
     tags:
     - Trash
@@ -1605,6 +1680,8 @@
   - type: BadFood
   - type: NonSpreaderZombie
   - type: PreventSpiller
+  - type: RandomBark
+    barkMultiplier: 0.3
 
 - type: entity
   parent: MobMouse
@@ -1700,6 +1777,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: lizard
       sprite: Mobs/Animals/lizard.rsi
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -1754,6 +1832,8 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: slug
       sprite: Mobs/Animals/slug.rsi
+  - type: Carriable
+    freeHandsRequired: 1
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -1806,6 +1886,7 @@
     noMovementLayers:
       movement:
         state: frog
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -1840,6 +1921,18 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
+    barkMultiplier: 1.3
+    barks:
+      - Croooaaaakkk
+      - Ribbit
+      - Ribbit
+      - Ribbit
+      - Crooaak
+      - Ribbit
+      - Ribbit
+      - Ribbit
+      - Bibbit
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity
@@ -1857,6 +1950,8 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: parrot
       sprite: Mobs/Animals/parrot.rsi
+  - type: Carriable
+    freeHandsRequired: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -1894,6 +1989,11 @@
       path: /Audio/Animals/parrot_raught.ogg
   - type: Bloodstream
     bloodMaxVolume: 50
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    understands:
+    - GalacticCommon
 
 - type: entity
   name: penguin
@@ -1907,6 +2007,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: penguin
       sprite: Mobs/Animals/penguin.rsi
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -1953,6 +2054,10 @@
     heatDamage:
       types:
         Heat : 0.2 #per second, scales with temperature & other constants
+  - type: RandomBark
+    barks:
+      - Wank
+    barkMultiplier: 0.6
 
 - type: entity
   name: grenade penguin
@@ -2036,6 +2141,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: snake
       sprite: Mobs/Animals/snake.rsi
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -2068,6 +2174,14 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
+  - type: RandomBark
+    barkMultiplier: 1.5
+    barks:
+      - Hsssssss
+      - Hss
+      - Hsssss
+      - Hisss
+      - Hshsss
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -2090,6 +2204,7 @@
     noMovementLayers:
       movement:
         state: tarantula
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -2140,8 +2255,11 @@
   - type: MeleeChemicalInjector
     transferAmount: 0.75
     solution: melee
-  - type: ReplacementAccent
-    accent: xeno
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-tarantula
@@ -2192,6 +2310,7 @@
       groups:
         Brute: -0.07
         Burn: -0.07
+  - type: RandomBark
 
 - type: entity
   name: tarantula
@@ -2271,6 +2390,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: possum
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -2346,6 +2466,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: raccoon
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -2410,6 +2531,7 @@
     noMovementLayers:
       movement:
         state: fox
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -2472,6 +2594,11 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge
+    speaks:
+    - Fox
+    understands:
+    - Fox
 
 - type: entity
   name: corgi
@@ -2485,6 +2612,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: corgi
+  - type: Carriable
   - type: Physics
   - type: Speech
     speechVerb: Canine
@@ -2518,8 +2646,11 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: ReplacementAccent
-    accent: dog
+  - type: LanguageKnowledge
+    speaks:
+    - Dog
+    understands:
+    - Dog
   - type: InteractionPopup
     interactSuccessString: petting-success-dog
     interactFailureString: petting-failure-generic
@@ -2536,6 +2667,7 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
 
 - type: entity
   name: corrupted corgi
@@ -2637,6 +2769,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: cat
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -2671,8 +2804,11 @@
     spawned:
     - id: FoodMeat
       amount: 3
-  - type: ReplacementAccent
-    accent: cat
+  - type: LanguageKnowledge
+    speaks:
+    - Cat
+    understands:
+    - Cat
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-cat
@@ -2692,6 +2828,7 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
 
 - type: entity
   name: calico cat
@@ -2739,6 +2876,12 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - GalacticCommon
 
 - type: entity
   name: space cat
@@ -2806,6 +2949,8 @@
         Base: kitten_dead
       Dead:
         Base: kitten_dead
+  - type: Carriable
+    freeHandsRequired: 1
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -2836,6 +2981,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: sloth
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -2880,6 +3026,10 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: RandomBark
+    barkMultiplier: 10
+    barks:
+      - Sloth
 
 - type: entity
   name: ferret
@@ -2893,6 +3043,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: ferret
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -3034,8 +3185,11 @@
     spawned:
     - id: FoodMeat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: Tag
     tags:
     - VimPilot
@@ -3076,6 +3230,8 @@
   - type: MobPrice
     price: 60
   - type: NonSpreaderZombie
+  - type: RandomBark
+    barkMultiplier: 0.45
 
 - type: entity
   name: pig
@@ -3089,6 +3245,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: pig
       sprite: Mobs/Animals/pig.rsi
+  - type: Carriable
   - type: Fixtures
     fixtures:
       fix1:
@@ -3141,8 +3298,11 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: ReplacementAccent
-    accent: pig
+  - type: LanguageKnowledge
+    speaks:
+    - Pig
+    understands:
+    - Pig
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -3161,6 +3321,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: nymph
       sprite: Mobs/Animals/nymph.rsi
+  - type: Carriable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -3228,6 +3389,12 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
+  - type: LanguageKnowledge
+    speaks:
+    - RootSpeak
+    understands:
+    - GalacticCommon
+    - RootSpeak
 
 - type: entity
   parent: MobDionaNymph
@@ -3236,3 +3403,4 @@
   components:
   - type: ReplacementAccent
     accent: nymph
+  - type: RandomBark
