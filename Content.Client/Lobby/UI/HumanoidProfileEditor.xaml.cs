@@ -1359,7 +1359,7 @@ namespace Content.Client.Lobby.UI
             ReloadProfilePreview();
         }
 
-        private bool IsDirty
+        public bool IsDirty
         {
             get => _isDirty;
             set
