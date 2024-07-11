@@ -292,7 +292,7 @@ namespace Content.Shared.Movement.Systems
         public void WalkingAlert(EntityUid player, bool walking) {
             if (_tags.HasTag(player, "CanWalk"))
             {
-                _alerts.ShowAlert(player, AlertType.Walking, walking ? 0 : 1);
+                _alerts.ShowAlert(player, AlertType.Walking, walking ? (short) 0 : (short) 1);
             }
         }
 
