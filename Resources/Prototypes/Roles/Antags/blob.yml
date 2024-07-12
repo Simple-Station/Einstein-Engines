@@ -4,3 +4,14 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-blob-objective
+<<<<<<< HEAD:Resources/Prototypes/Roles/Antags/blob.yml
+||||||| parent of 2b576809d3 (Blob guidebook (#684)):Resources/Prototypes/_Backmen/Roles/Antags/blob.yml
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 54000 # 15h # Corvax-RoleTime
+=======
+  guides: [ Blob ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 54000 # 15h # Corvax-RoleTime
+>>>>>>> 2b576809d3 (Blob guidebook (#684)):Resources/Prototypes/_Backmen/Roles/Antags/blob.yml

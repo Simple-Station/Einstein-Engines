@@ -1,0 +1,79 @@
+﻿- type: guideEntry
+  id: RulesBackmen
+  name: Правила сервера
+  priority: 0
+  ruleEntry: true
+  text: "/ServerInfo/_Backmen/Guidebook/ServerRules/RulesBackmen.xml"
+  children:
+  - BackmenCat1
+  - BackmenCat2
+  - BackmenCat3
+  - BackmenCat4
+  - BackmenCat5
+  - BackmenCat6
+  - BackmenCat7
+  - BackmenCat8
+  - BackmenCat9
+
+- type: guideEntry
+  id: BackmenCat1
+  name: Напутствующие слова
+  priority: 1
+  ruleEntry: true
+  text: "/ServerInfo/_Backmen/Guidebook/ServerRules/Cat1.xml"
+
+- type: guideEntry
+  id: BackmenCat2
+  name: Правила чата
+  priority: 2
+  ruleEntry: true
+  text: "/ServerInfo/_Backmen/Guidebook/ServerRules/Cat2.xml"
+
+- type: guideEntry
+  id: BackmenCat3
+  name: Про игровой процесс
+  priority: 3
+  ruleEntry: true
+  text: "/ServerInfo/_Backmen/Guidebook/ServerRules/Cat3.xml"
+
+- type: guideEntry
+  id: BackmenCat4
+  name: Про командный состав, отделы и роли с пометкой сложности \"выше среднего\"
+  priority: 4
+  ruleEntry: true
+  text: "/ServerInfo/_Backmen/Guidebook/ServerRules/Cat4.xml"
+
+- type: guideEntry
+  id: BackmenCat5
+  name: Про департаменты и спецотряды, которые изначально не появляются на станции
+  priority: 5
+  ruleEntry: true
+  text: "/ServerInfo/_Backmen/Guidebook/ServerRules/Cat5.xml"
+
+- type: guideEntry
+  id: BackmenCat6
+  name: Про синдикат
+  priority: 6
+  ruleEntry: true
+  text: "/ServerInfo/_Backmen/Guidebook/ServerRules/Cat6.xml"
+
+- type: guideEntry
+  id: BackmenCat7
+  name: Про White-List роли
+  priority: 7
+  ruleEntry: true
+  text: "/ServerInfo/_Backmen/Guidebook/ServerRules/Cat7.xml"
+
+- type: guideEntry
+  id: BackmenCat8
+  name: Про AHelp
+  priority: 8
+  ruleEntry: true
+  text: "/ServerInfo/_Backmen/Guidebook/ServerRules/Cat8.xml"
+
+- type: guideEntry
+  id: BackmenCat9
+  name: Про администрацию
+  priority: 9
+  ruleEntry: true
+  text: "/ServerInfo/_Backmen/Guidebook/ServerRules/Cat9.xml"

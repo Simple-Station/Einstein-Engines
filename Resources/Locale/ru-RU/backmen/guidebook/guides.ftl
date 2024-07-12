@@ -1,0 +1,13 @@
+guide-entry-reverse-engineering = Обратное проектирование
+guide-entry-epistemics = Волхвы
+guide-entry-psionics = Псионика
+guide-entry-altars-golemancy = Алтари и големоведение
+guide-entry-psy-chemistry = Химия псиоников
+guide-entry-space-law = Космические законы
+guide-entry-jurisdiction = Юрисдикция
+guide-entry-trial-prodedure = Судебная процедура
+guide-entry-shogi = Сёги
+guide-entry-charges-and-times = Обвинения и вынесение приговора
+guide-entry-blob = Блоб
+guide-entry-backmen-species = Другие расы
+guide-entry-supermatter = Суперматерия

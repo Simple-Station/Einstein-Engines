@@ -1,0 +1,28 @@
+# Nyano Species
+
+- type: guideEntry
+  id: SpeciesArachne
+  name: species-name-ArachneClassic
+  text: "/ServerInfo/_Backmen/Guidebook/Species/NyanoSpecies/Arachne.xml"
+
+- type: guideEntry
+  id: SpeciesFelinid
+  name: species-name-felinid
+  text: "/ServerInfo/_Backmen/Guidebook/Species/NyanoSpecies/Felinid.xml"
+
+- type: guideEntry
+  id: SpeciesOni
+  name: species-name-oni
+  text: "/ServerInfo/_Backmen/Guidebook/Species/NyanoSpecies/Oni.xml"
+
+- type: guideEntry
+  id: SpeciesShadowkin
+  name: species-name-shadowkin
+  text: "/ServerInfo/_Backmen/Guidebook/Species/SimpleStationSpecies/Shadowkin.xml"
+  children:
+  - SpeciesShadowkinLore
+
+- type: guideEntry
+  id: SpeciesShadowkinLore
+  name: guide-entry-shadowkin-lore
+  text: "/ServerInfo/_Backmen/Guidebook/Species/SimpleStationSpecies/Shadowkin.Lore.xml"

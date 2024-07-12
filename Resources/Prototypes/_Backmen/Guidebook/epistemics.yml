@@ -1,0 +1,23 @@
+- type: guideEntry
+  id: Epistemics
+  name: guide-entry-epistemics
+  text: "/ServerInfo/_Backmen/Guidebook/Epistemics/Epistemics.xml"
+  children:
+  - Psionics
+  - AltarsGolemancy
+  - PsyChemistry
+
+- type: guideEntry
+  id: Psionics
+  name: guide-entry-psionics
+  text: "/ServerInfo/_Backmen/Guidebook/Epistemics/Psionics.xml"
+
+- type: guideEntry
+  id: AltarsGolemancy
+  name: guide-entry-altars-golemancy
+  text: "/ServerInfo/_Backmen/Guidebook/Epistemics/Altar.xml"
+
+- type: guideEntry
+  id: PsyChemistry
+  name: guide-entry-psy-chemistry
+  text: "/ServerInfo/_Backmen/Guidebook/Epistemics/PsyChemistry.xml"

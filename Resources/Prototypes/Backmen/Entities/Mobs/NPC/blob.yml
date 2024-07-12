@@ -114,6 +114,9 @@
       drawdepth: Mobs
       sprite: Backmen/Mobs/Aliens/blob.rsi
       state: blobpod
+    - type: GuideHelp 
+      guides:
+      - Blob
 
 
 - type: entity
@@ -198,6 +201,21 @@
         - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
           state: nautdamage
           shader: unshaded
+<<<<<<< HEAD:Resources/Prototypes/Backmen/Entities/Mobs/NPC/blob.yml
+||||||| parent of 2b576809d3 (Blob guidebook (#684)):Resources/Prototypes/_Backmen/Entities/Mobs/NPCs/blob.yml
+    - type: NightVision
+      isToggle: true
+      color: "#808080"
+      playSoundOn: false
+=======
+    - type: NightVision
+      isToggle: true
+      color: "#808080"
+      playSoundOn: false
+    - type: GuideHelp 
+      guides:
+      - Blob
+>>>>>>> 2b576809d3 (Blob guidebook (#684)):Resources/Prototypes/_Backmen/Entities/Mobs/NPCs/blob.yml
 
 - type: entity
   id: BaseBlob
@@ -232,6 +250,9 @@
           layer:
             - BlobTileLayer
           density: 1000
+    - type: GuideHelp 
+      guides:
+      - Blob
 
 - type: entity
   parent: BaseBlob

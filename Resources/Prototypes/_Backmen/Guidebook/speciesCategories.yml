@@ -1,0 +1,9 @@
+- type: guideEntry
+  id: NyanoSpecies
+  name: guide-entry-backmen-species
+  text: "/ServerInfo/_Backmen/Guidebook/Species/NyanoSpecies.xml"
+  children:
+    - SpeciesArachne
+    - SpeciesFelinid
+    - SpeciesOni
+    - SpeciesShadowkin

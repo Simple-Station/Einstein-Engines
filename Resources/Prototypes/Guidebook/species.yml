@@ -10,6 +10,7 @@
     - Oni
     - Reptilian
     - SlimePerson
+<<<<<<< HEAD
     - IPCs
     - Harpy
     - Shadowkin
@@ -19,6 +20,16 @@
     - Xelthia
     # ImpStation additions
     - Thaven
+||||||| parent of 2b576809d3 (Blob guidebook (#684))
+    - NyanoSpecies # backmen
+    - SimpleStationSpecies # backmen
+    - Vulpkanin # Corvax
+    - Vox
+=======
+    - NyanoSpecies # backmen
+    - Vulpkanin # Corvax
+    - Vox
+>>>>>>> 2b576809d3 (Blob guidebook (#684))
 
 - type: guideEntry
   id: Arachnid
