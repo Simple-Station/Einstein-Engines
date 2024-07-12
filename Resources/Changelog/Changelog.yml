@@ -4437,3 +4437,9 @@ Entries:
         potential.
   id: 6156
   time: '2024-07-12T19:02:15.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Added 4 new announcers that will randomly be selected every shift
+  id: 6157
+  time: '2024-07-12T20:13:50.0000000+00:00'
