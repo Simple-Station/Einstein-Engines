@@ -4393,3 +4393,21 @@ Entries:
         Intercom, FireAlarm and Substation)
   id: 6150
   time: '2024-07-09T19:37:03.0000000+00:00'
+- author: CodedCrow
+  changes:
+    - type: Add
+      message: Plushie
+  id: 6151
+  time: '2024-07-11T17:23:58.0000000+00:00'
+- author: osjarw
+  changes:
+    - type: Add
+      message: Wallmount substation electronics can now be created at an autolathe.
+  id: 6152
+  time: '2024-07-11T17:24:30.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: 'Players can now vote on two more gamemodes: Traitors and Hellshift.'
+  id: 6153
+  time: '2024-07-11T17:26:41.0000000+00:00'

@@ -11,7 +11,6 @@ namespace Content.Server.Decals.Commands
     public sealed class RemoveDecalCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _entManager = default!;
-        [Dependency] private readonly IMapManager _mapManager = default!;
 
         public string Command => "rmdecal";
         public string Description => "removes a decal";

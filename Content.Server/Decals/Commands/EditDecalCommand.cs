@@ -11,7 +11,6 @@ namespace Content.Server.Decals;
 public sealed class EditDecalCommand : IConsoleCommand
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
 
     public string Command => "editdecal";
     public string Description => "Edits a decal.";
