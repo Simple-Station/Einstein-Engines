@@ -1,5 +1,5 @@
 - type: entity
-  abstract: true
+  noSpawn: true
   id: TranslatorUnpowered
   parent: BaseItem
   name: translator
@@ -23,9 +23,14 @@
           False: { visible: false }
   - type: HandheldTranslator
     enabled: false
+  - type: Clothing # To allow equipping translators on the neck slot
+    slots: [neck, pocket]
+    equipDelay: 0.3
+    unequipDelay: 0.3
+    quickEquip: false # Would conflict
 
 - type: entity
-  abstract: true
+  noSpawn: true
   id: Translator
   parent: [ TranslatorUnpowered, PowerCellSlotMediumItem ]
   suffix: Powered
@@ -34,7 +39,7 @@
     drawRate: 1
 
 - type: entity
-  abstract: true
+  noSpawn: true
   id: TranslatorEmpty
   parent: Translator
   suffix: Empty
@@ -43,6 +48,13 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  noSpawn: true
+  id: TranslatorForeigner
+  parent: [ Translator, PowerCellSlotHighItem ]
+  name: foreigner's translator
+  description: A special-issue translator that helps foreigner's speak and understand this station's primary language.
 
 
 - type: entity

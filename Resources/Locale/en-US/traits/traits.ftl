@@ -42,3 +42,13 @@ trait-name-Thieving = Thieving
 trait-description-Thieving =
     You are deft with your hands, and talented at convincing people of their belongings.
     You can identify pocketed items, steal them quieter, and steal ~33% faster.
+
+trait-name-ForeignerLight = Foreigner (light)
+trait-description-ForeignerLight =
+    You struggle to learn this station's primary language, and as such, cannot speak it. You can, however, comprehend what others say in that language.
+    To help you overcome this obstacle, you are equipped with a translator that helps you speak in this station's primary language.
+
+trait-name-Foreigner = Foreigner
+trait-description-Foreigner =
+    For one reason or another you do not speak this station's primary language.
+    Instead, you have a translator issued to you that only you can use.
