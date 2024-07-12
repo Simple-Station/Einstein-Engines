@@ -8,6 +8,15 @@ public sealed class LanguagePrototype : IPrototype
     [IdDataField]
     public string ID { get; private set;  } = default!;
 
+    [DataField("color")]
+    public Color? Color;
+
+    [DataField("fontId")]
+    public string? FontId;
+
+    [DataField("fontSize")]
+    public int? FontSize;
+    
     /// <summary>
     ///     Obfuscation method used by this language. By default, uses <see cref="ObfuscationMethod.Default"/>
     /// </summary>
