@@ -61,7 +61,7 @@
   name: captain ID card
   sprite:
     sprite: Objects/Misc/id_cards.rsi
-    state: ert_commander #no one will know the difference.
+    state: gold
 
 - type: stealTargetGroup
   id: JetpackCaptainFilled
