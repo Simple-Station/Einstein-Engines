@@ -436,6 +436,36 @@ namespace Content.Shared.CCVar
 
 
         /*
+         * Announcers
+         */
+
+        /// <summary>
+        ///     Weighted list of announcers to choose from
+        /// </summary>
+        public static readonly CVarDef<string> AnnouncerList =
+            CVarDef.Create("announcer.list", "RandomAnnouncers", CVar.REPLICATED);
+
+        /// <summary>
+        ///     Optionally force set an announcer
+        /// </summary>
+        public static readonly CVarDef<string> Announcer =
+            CVarDef.Create("announcer.announcer", "", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Optionally blacklist announcers
+        ///     List of IDs separated by commas
+        /// </summary>
+        public static readonly CVarDef<string> AnnouncerBlacklist =
+            CVarDef.Create("announcer.blacklist", "", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Changes how loud the announcers are for the client
+        /// </summary>
+        public static readonly CVarDef<float> AnnouncerVolume =
+            CVarDef.Create("announcer.volume", 0.5f, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+
+        /*
          * Queue
          */
 
@@ -443,8 +473,8 @@ namespace Content.Shared.CCVar
         ///     Controls if the connections queue is enabled
         ///     If enabled plyaers will be added to a queue instead of being kicked after SoftMaxPlayers is reached
         /// </summary>
-        public static readonly CVarDef<bool>
-        QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
+        public static readonly CVarDef<bool> QueueEnabled =
+            CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
 
 
         /*
