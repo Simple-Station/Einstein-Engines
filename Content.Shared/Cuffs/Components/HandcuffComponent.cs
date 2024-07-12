@@ -90,7 +90,7 @@ public sealed partial class HandcuffComponent : Component
     ///     When false, handcuffs are easier to get out of if you are smaller than average, representing the use of dexterity to slip the cuffs.
     /// </summary>
     [DataField]
-    public bool UncuffMassMultiplies = false;
+    public bool UncuffEasierWhenLarge = false;
 }
 
 /// <summary>
