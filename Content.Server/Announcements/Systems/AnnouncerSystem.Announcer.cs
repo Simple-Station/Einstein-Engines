@@ -12,6 +12,15 @@ public sealed partial class AnnouncerSystem
 {
     private void OnRoundRestarting(RoundRestartCleanupEvent ev)
     {
+        NewAnnouncer();
+    }
+
+
+    /// <summary>
+    ///     Sets the announcer to a random one or the CVar
+    /// </summary>
+    private void NewAnnouncer()
+    {
         var announcer = _config.GetCVar(CCVars.Announcer);
         if (string.IsNullOrEmpty(announcer))
             SetAnnouncer(PickAnnouncer());
@@ -19,11 +28,9 @@ public sealed partial class AnnouncerSystem
             SetAnnouncer(announcer);
     }
 
-
     /// <summary>
-    ///     Picks a random announcer
+    ///     Picks a random announcer prototype following blacklists
     /// </summary>
-    /// <remarks>Probably not very useful for any other system</remarks>
     public AnnouncerPrototype PickAnnouncer()
     {
         var list = _proto.Index<WeightedRandomPrototype>(_config.GetCVar(CCVars.AnnouncerList));

@@ -25,7 +25,7 @@ public sealed partial class AnnouncerSystem : SharedAnnouncerSystem
     {
         base.Initialize();
 
-        PickAnnouncer();
+        NewAnnouncer();
 
         _config.OnValueChanged(CCVars.Announcer, SetAnnouncer);
 
