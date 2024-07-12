@@ -4367,3 +4367,59 @@ Entries:
       message: Added system
   id: 6146
   time: '2024-07-06T00:19:35.0000000+00:00'
+- author: Velcroboy
+  changes:
+    - type: Tweak
+      message: Changed asteroids to have more ore...and some danger
+  id: 6147
+  time: '2024-07-08T07:03:39.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Languages are now marked in the chat!
+  id: 6148
+  time: '2024-07-09T19:01:38.0000000+00:00'
+- author: Spatison
+  changes:
+    - type: Fix
+      message: Food and handcuffs can now be given
+  id: 6149
+  time: '2024-07-09T19:32:11.0000000+00:00'
+- author: FoxxoTrrystan
+  changes:
+    - type: Tweak
+      message: >-
+        Power Resprites! (New SMES, APC, Airlarm, Camera, Substation, LightTube,
+        Intercom, FireAlarm and Substation)
+  id: 6150
+  time: '2024-07-09T19:37:03.0000000+00:00'
+- author: CodedCrow
+  changes:
+    - type: Add
+      message: Plushie
+  id: 6151
+  time: '2024-07-11T17:23:58.0000000+00:00'
+- author: osjarw
+  changes:
+    - type: Add
+      message: Wallmount substation electronics can now be created at an autolathe.
+  id: 6152
+  time: '2024-07-11T17:24:30.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: 'Players can now vote on two more gamemodes: Traitors and Hellshift.'
+  id: 6153
+  time: '2024-07-11T17:26:41.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added two new foreigner traits that make your character unable to speak
+        Galactic Common and give you a translator instead.
+    - type: Tweak
+      message: >-
+        Translators can now be equipped in the neck slot and display useful info
+        when examined.
+  id: 6154
+  time: '2024-07-12T01:19:09.0000000+00:00'
