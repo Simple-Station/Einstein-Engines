@@ -4411,3 +4411,15 @@ Entries:
       message: 'Players can now vote on two more gamemodes: Traitors and Hellshift.'
   id: 6153
   time: '2024-07-11T17:26:41.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added two new foreigner traits that make your character unable to speak
+        Galactic Common and give you a translator instead.
+    - type: Tweak
+      message: >-
+        Translators can now be equipped in the neck slot and display useful info
+        when examined.
+  id: 6154
+  time: '2024-07-12T01:19:09.0000000+00:00'
