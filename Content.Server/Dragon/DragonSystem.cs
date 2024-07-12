@@ -10,18 +10,16 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Movement.Systems;
-using Robust.Shared.Audio;
+using Content.Shared.Zombies;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.GameStates;
 using Robust.Shared.Map;
-using Robust.Shared.Player;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server.Dragon;
 
 public sealed partial class DragonSystem : EntitySystem
 {
     [Dependency] private readonly CarpRiftsConditionSystem _carpRifts = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
@@ -138,7 +136,7 @@ public sealed partial class DragonSystem : EntitySystem
         var xform = Transform(uid);
 
         // Have to be on a grid fam
-        if (!_mapManager.TryGetGrid(xform.GridUid, out var grid))
+        if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
         {
             _popup.PopupEntity(Loc.GetString("carp-rift-anchor"), uid, uid);
             return;
