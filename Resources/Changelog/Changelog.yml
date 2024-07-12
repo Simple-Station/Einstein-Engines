@@ -4423,3 +4423,9 @@ Entries:
         when examined.
   id: 6154
   time: '2024-07-12T01:19:09.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Foreigner traits now work correctly.
+  id: 6155
+  time: '2024-07-12T17:46:37.0000000+00:00'
