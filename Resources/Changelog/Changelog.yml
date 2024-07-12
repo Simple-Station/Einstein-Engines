@@ -4429,3 +4429,11 @@ Entries:
       message: Foreigner traits now work correctly.
   id: 6155
   time: '2024-07-12T17:46:37.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: >-
+        Added the Heavyweight Drunk trait, which doubles your alcoholism
+        potential.
+  id: 6156
+  time: '2024-07-12T19:02:15.0000000+00:00'
