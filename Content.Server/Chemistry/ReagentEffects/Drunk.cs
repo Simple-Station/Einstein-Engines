@@ -25,7 +25,7 @@ public sealed partial class Drunk : ReagentEffect
     {
         var boozePower = BoozePower;
 
-        boozePower *= args.Scale;
+        boozePower *= Math.Max(args.Scale, 1);
 
         var drunkSys = args.EntityManager.EntitySysManager.GetEntitySystem<SharedDrunkSystem>();
         drunkSys.TryApplyDrunkenness(args.SolutionEntity, boozePower, SlurSpeech);
