@@ -22,7 +22,7 @@ public sealed partial class AnnouncerSystem
     private void NewAnnouncer()
     {
         var announcer = _config.GetCVar(CCVars.Announcer);
-        if (string.IsNullOrEmpty(announcer))
+        if (string.IsNullOrEmpty(announcer) || !_proto.TryIndex<AnnouncerPrototype>(announcer, out _))
             SetAnnouncer(PickAnnouncer());
         else
             SetAnnouncer(announcer);

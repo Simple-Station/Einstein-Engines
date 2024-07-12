@@ -24,10 +24,9 @@ public sealed partial class AnnouncerSystem : SharedAnnouncerSystem
     public override void Initialize()
     {
         base.Initialize();
-
         NewAnnouncer();
 
-        _config.OnValueChanged(CCVars.Announcer, SetAnnouncer);
+        _config.OnValueChanged(CCVars.Announcer, _ => NewAnnouncer());
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestarting);
     }
