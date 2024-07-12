@@ -4,9 +4,9 @@ namespace Content.Shared.Contests
 {
     public sealed partial class ContestsSystem : EntitySystem
     {
-        // Defaulted to the average mass of an adult human
         /// <summary>
         ///     The presumed average mass of a player entity
+        /// 	Defaulted to the average mass of an adult human
         /// </summary>
         private const float AverageMass = 71f;
         public override void Initialize()
@@ -16,13 +16,12 @@ namespace Content.Shared.Contests
             InitializeCVars();
 
         }
-        // REGION
-        // Mass Contests
+        
+        #region Mass Contests
         /// <summary>
         ///     Outputs the ratio of mass between a performer and the average human mass
         /// </summary>
         /// <param name="performerUid">Uid of Performer</param>
-        /// <returns></returns>
         public float MassContest(EntityUid performerUid, float otherMass = AverageMass)
         {
             if (DoMassContests
@@ -35,7 +34,7 @@ namespace Content.Shared.Contests
 
         /// <inheritdoc cref="MassContest(EntityUid, float)"/>
         /// <remarks>
-        ///     MaybeMassContest, for in case your EntityUid can potentially cease existing.
+        ///     MaybeMassContest, in case your entity doesn't exist
         /// </remarks>
         public float MassContest(EntityUid? performerUid, float otherMass = AverageMass)
         {
@@ -53,7 +52,6 @@ namespace Content.Shared.Contests
         ///     If a function already has the performer's physics component, this is faster
         /// </summary>
         /// <param name="performerPhysics"></param>
-        /// <returns></returns>
         public float MassContest(PhysicsComponent performerPhysics, float otherMass = AverageMass)
         {
             if (DoMassContests
@@ -65,11 +63,10 @@ namespace Content.Shared.Contests
 
         /// <summary>
         ///     Outputs the ratio of mass between a performer and a target, accepts either EntityUids or PhysicsComponents in any combination
-        ///     If you have physics components already in your function, use those instead
+        ///     If you have physics components already in your function, use <see cref="MassContest(PhysicsComponent, float)" /> instead
         /// </summary>
         /// <param name="performerUid"></param>
         /// <param name="targetUid"></param>
-        /// <returns></returns>
         public float MassContest(EntityUid performerUid, EntityUid targetUid)
         {
             if (DoMassContests
@@ -116,5 +113,7 @@ namespace Content.Shared.Contests
 
             return 1f;
         }
+        
+        #endregion
     }
 }
