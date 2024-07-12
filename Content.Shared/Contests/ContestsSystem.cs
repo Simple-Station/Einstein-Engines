@@ -33,6 +33,10 @@ namespace Content.Shared.Contests
             return 1f;
         }
 
+        /// <inheritdoc cref="MassContest(EntityUid, float)"/>
+        /// <remarks>
+        ///     MaybeMassContest, for in case your EntityUid can potentially cease existing.
+        /// </remarks>
         public float MassContest(EntityUid? performerUid, float otherMass = AverageMass)
         {
             if (DoMassContests)
