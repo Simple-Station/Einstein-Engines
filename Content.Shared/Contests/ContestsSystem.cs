@@ -10,7 +10,7 @@ namespace Content.Shared.Contests
 
         /// <summary>
         ///     The presumed average mass of a player entity
-        /// 	Defaulted to the average mass of an adult human
+        ///     Defaulted to the average mass of an adult human
         /// </summary>
         private const float AverageMass = 71f;
 
