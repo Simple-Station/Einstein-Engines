@@ -116,7 +116,7 @@
       path: shuttle/dock.ogg
     # - id: shuttleNearby # The shuttle couldn't dock, it's at a specified location
     #   path: shuttle/nearby.ogg
-    # - id: shuttleGodLuck # The shuttle could not find its way to the station, good luck crew
+    # - id: shutlleGoodLuck # The shuttle could not find its way to the station, good luck crew
     #   path: shuttle/good_luck.ogg
     # - id: shuttleAuthAdded # One of few have added their acceptance to early launching
     #   path: shuttle/auth_added.ogg
