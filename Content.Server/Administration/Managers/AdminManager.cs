@@ -101,9 +101,7 @@ namespace Content.Server.Administration.Managers
         public void Stealth(ICommonSession session)
         {
             if (!_admins.TryGetValue(session, out var reg))
-            {
                 throw new ArgumentException($"Player {session} is not an admin");
-            }
 
             if (reg.Data.Stealth)
                 return;
@@ -120,9 +118,7 @@ namespace Content.Server.Administration.Managers
         public void UnStealth(ICommonSession session)
         {
             if (!_admins.TryGetValue(session, out var reg))
-            {
                 throw new ArgumentException($"Player {session} is not an admin");
-            }
 
             if (!reg.Data.Stealth)
                 return;
@@ -217,9 +213,7 @@ namespace Content.Server.Administration.Managers
                 }
 
                 if (player.ContentData()!.Stealthed)
-                {
                     aData.Stealth = true;
-                }
             }
 
             SendPermsChangedEvent(player);
@@ -345,16 +339,11 @@ namespace Content.Server.Administration.Managers
                 if (_admins.Remove(e.Session, out var reg ) && _cfg.GetCVar(CCVars.AdminAnnounceLogout))
                 {
                     if (reg.Data.Stealth)
-                    {
                         _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-logout-message",
                             ("name", e.Session.Name)), flagWhitelist: AdminFlags.Stealth);
-
-                    }
                     else
-                    {
                         _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-logout-message",
                             ("name", e.Session.Name)));
-                    }
                 }
             }
         }
