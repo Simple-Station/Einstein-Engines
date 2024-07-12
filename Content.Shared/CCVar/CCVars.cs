@@ -453,9 +453,10 @@ namespace Content.Shared.CCVar
 
         /// <summary>
         ///     Optionally blacklist announcers
+        ///     List of IDs separated by commas
         /// </summary>
-        public static readonly CVarDef<List<string>> AnnouncerBlacklist =
-            CVarDef.Create("announcer.blacklist", new List<string>(), CVar.SERVERONLY);
+        public static readonly CVarDef<string> AnnouncerBlacklist =
+            CVarDef.Create("announcer.blacklist", "", CVar.SERVERONLY);
 
         /// <summary>
         ///     Changes how loud the announcers are for the client

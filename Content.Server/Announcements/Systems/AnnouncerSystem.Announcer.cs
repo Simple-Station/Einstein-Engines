@@ -34,7 +34,8 @@ public sealed partial class AnnouncerSystem
     public AnnouncerPrototype PickAnnouncer()
     {
         var list = _proto.Index<WeightedRandomPrototype>(_config.GetCVar(CCVars.AnnouncerList));
-        var modWeights = list.Weights.Where(a => !_config.GetCVar(CCVars.AnnouncerBlacklist).Contains(a.Key));
+        var blacklist = _config.GetCVar(CCVars.AnnouncerBlacklist).Split(',').Select(a => a.Trim()).ToList();
+        var modWeights = list.Weights.Where(a => !blacklist.Contains(a.Key));
 
         list = new WeightedRandomPrototype();
         foreach (var (key, value) in modWeights)
