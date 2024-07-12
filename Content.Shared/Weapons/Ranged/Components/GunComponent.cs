@@ -143,7 +143,7 @@ public sealed partial class GunComponent : Component
     /// <summary>
     /// Who the gun is being requested to shoot at directly.
     /// </summary>
-    [ViewVariables, Access(Other = AccessPermissions.ReadWrite)]
+    [ViewVariables]
     public EntityUid? Target = null;
 
     /// <summary>

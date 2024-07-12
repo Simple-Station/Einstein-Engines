@@ -203,7 +203,7 @@ public sealed partial class NPCCombatSystem
                 return;
             }
 
-            gun.Target = comp.Target; // This ensures that the bullet won't fly over the target if it's downed
+            _gun.SetTarget(gun, comp.Target);
             _gun.AttemptShoot(uid, gunUid, gun, targetCordinates);
         }
     }
