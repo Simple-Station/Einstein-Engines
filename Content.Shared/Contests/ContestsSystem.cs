@@ -9,13 +9,6 @@ namespace Content.Shared.Contests
         /// 	Defaulted to the average mass of an adult human
         /// </summary>
         private const float AverageMass = 71f;
-        public override void Initialize()
-        {
-            base.Initialize();
-
-            InitializeCVars();
-
-        }
         
         #region Mass Contests
         /// <summary>
