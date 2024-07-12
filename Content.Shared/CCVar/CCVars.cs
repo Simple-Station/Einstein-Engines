@@ -443,7 +443,7 @@ namespace Content.Shared.CCVar
         ///     Weighted list of announcers to choose from
         /// </summary>
         public static readonly CVarDef<string> AnnouncerList =
-            CVarDef.Create("announcer.list", "RandomAnnouncers", CVar.SERVERONLY | CVar.REPLICATED);
+            CVarDef.Create("announcer.list", "RandomAnnouncers", CVar.REPLICATED);
 
         /// <summary>
         ///     Optionally force set an announcer
