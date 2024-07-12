@@ -63,7 +63,7 @@
   - type: TeslaCoil
     chargeFromLightning: 500000
   - type: LightningTarget
-    priority: 4
+    weighting: 100
     hitProbability: 0.5
     lightningResistance: 10
     lightningExplode: false
@@ -149,7 +149,7 @@
           False: { state: grounding_rod_open }
   - type: LightningSparking
   - type: LightningTarget
-    priority: 3
+    weighting: 300
     lightningResistance: 10
     lightningExplode: false
     damageFromLightning: 0

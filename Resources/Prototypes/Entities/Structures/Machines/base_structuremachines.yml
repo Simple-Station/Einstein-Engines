@@ -51,7 +51,7 @@
     powerLoad: 1000
   - type: ExtensionCableReceiver
   - type: LightningTarget
-    priority: 1
+    weighting: 2
 
 - type: entity
   abstract: true
@@ -69,7 +69,7 @@
     - machine_parts
     - machine_board
   - type: LightningTarget
-    priority: 1
+    weighting: 2
 
 - type: entity
   abstract: true

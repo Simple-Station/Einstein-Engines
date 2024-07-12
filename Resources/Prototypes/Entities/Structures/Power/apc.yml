@@ -138,7 +138,7 @@
     mediumVoltageNode: input
     lowVoltageNode: output
   - type: LightningTarget
-    priority: 1
+    weighting: 2
   - type: StaticPrice
     price: 500
 
