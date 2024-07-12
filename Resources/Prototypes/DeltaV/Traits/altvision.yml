@@ -1,13 +1,35 @@
 - type: trait
   id: UltraVision
-  name: trait-ultravision-name
-  description: trait-ultravision-desc
+  category: Visual
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Vulpkanin
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - DogVision
   components:
     - type: UltraVision
 
 - type: trait
   id: DogVision
-  name: trait-deuteranopia-name
-  description: trait-deuteranopia-desc
+  category: Visual
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Vulpkanin
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - UltraVision
   components:
     - type: DogVision

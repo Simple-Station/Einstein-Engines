@@ -369,7 +369,7 @@ namespace Content.Server.Administration.Managers
             if (session.ContentData()!.Stealthed)
                 reg.Data.Stealth = true;
 
-            if (!session.ContentData()!.ExplicitlyDeadminned)
+            if (!session.ContentData()?.ExplicitlyDeadminned ?? false)
             {
                 reg.Data.Active = true;
 

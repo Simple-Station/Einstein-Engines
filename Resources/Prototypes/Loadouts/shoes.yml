@@ -1,7 +1,7 @@
 # Colored
 - type: loadout
   id: LoadoutShoesBlack
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
@@ -9,7 +9,7 @@
 
 - type: loadout
   id: LoadoutShoesBlue
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
@@ -17,7 +17,7 @@
 
 - type: loadout
   id: LoadoutShoesBrown
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
@@ -25,7 +25,7 @@
 
 - type: loadout
   id: LoadoutShoesGreen
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
@@ -33,7 +33,7 @@
 
 - type: loadout
   id: LoadoutShoesOrange
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
@@ -41,7 +41,7 @@
 
 - type: loadout
   id: LoadoutShoesPurple
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
@@ -49,7 +49,7 @@
 
 - type: loadout
   id: LoadoutShoesRed
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
@@ -57,7 +57,7 @@
 
 - type: loadout
   id: LoadoutShoesWhite
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
@@ -65,25 +65,93 @@
 
 - type: loadout
   id: LoadoutShoesYellow
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
     - ClothingShoesColorYellow
 
+- type: loadout
+  id: LoadoutShoesGeta
+  category: Shoes
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesGeta
+
+## Boots
+- type: loadout
+  id: LoadoutShoesBootsWork
+  category: Shoes
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesBootsWork
+
+- type: loadout
+  id: LoadoutShoesBootsLaceup
+  category: Shoes
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingShoesBootsLaceup
+
+- type: loadout
+  id: LoadoutShoesBootsWinter
+  category: Shoes
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingShoesBootsWinter
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyBrown
+  category: Shoes
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingShoesBootsCowboyBrown
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyBlack
+  category: Shoes
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingShoesBootsCowboyBlack
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyWhite
+  category: Shoes
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingShoesBootsCowboyWhite
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyFancy
+  category: Shoes
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingShoesBootsCowboyFancy
 
 # Miscellaneous
 - type: loadout
   id: LoadoutShoesSlippersDuck
-  category: Accessories
-  cost: 1
+  category: Shoes
+  cost: 2
   exclusive: true
   items:
     - ClothingShoeSlippersDuck
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
 
 - type: loadout
   id: LoadoutShoesLeather
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
@@ -91,7 +159,7 @@
 
 - type: loadout
   id: LoadoutShoesMiscWhite
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
   items:
