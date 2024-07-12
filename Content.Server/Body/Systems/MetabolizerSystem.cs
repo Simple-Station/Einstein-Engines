@@ -193,7 +193,7 @@ namespace Content.Server.Body.Systems
                     var ev = new TryMetabolizeReagent(reagent, proto, quantity);
                     RaiseLocalEvent(actualEntity, ref ev);
 
-                    var args = new ReagentEffectArgs(actualEntity, uid, solution, proto, mostToRemove,
+                    var args = new ReagentEffectArgs(actualEntity, ent, solution, proto, mostToRemove,
                         EntityManager, null, scale * ev.Scale, ev.QuantityMultiplier);
 
                     // do all effects, if conditions apply
