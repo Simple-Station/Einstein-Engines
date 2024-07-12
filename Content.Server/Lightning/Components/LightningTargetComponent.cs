@@ -13,17 +13,10 @@ namespace Content.Server.Lightning.Components;
 public sealed partial class LightningTargetComponent : Component
 {
     /// <summary>
-    /// The probability that this target will not be ignored by a lightning strike. This is necessary for Tesla's balance.
+    /// The probability weighting of being stuck by lightning, compared against other nearby lightning targets.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float HitProbability = 1f;
-
-    /// <summary>
-    /// Priority level for selecting a lightning target. 
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public int Priority;
-
+    public float Weighting = 1f;
     /// <summary>
     /// Lightning has a number of bounces into neighboring targets.
     /// This number controls how many bounces the lightning bolt has left after hitting that target.

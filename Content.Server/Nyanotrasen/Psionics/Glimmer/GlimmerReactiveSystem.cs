@@ -287,7 +287,7 @@ namespace Content.Server.Psionics.Glimmer
             }
 
 
-            _lightning.ShootLightning(prober, target, beamproto);
+            _lightning.ShootLightning(prober, target, 500000, lightningPrototype: beamproto);
             BeamCooldown += 3f;
         }
 
@@ -328,7 +328,11 @@ namespace Content.Server.Psionics.Glimmer
             args.Cancelled = true;
             args.Handled = true;
 
-            _lightning.ShootRandomLightnings(uid, 10, 2, "SuperchargedLightning", 2, false);
+            _lightning.ShootRandomLightnings(uid, 10f, 2, 500000f,
+                lightningPrototype: "SuperchargedLightning",
+                maxArcs: 2,
+                triggerLightningEvents: false
+            );
 
             // Check if the parent of the user is alive, which will be the case if the user is an item and is being held.
             var zapTarget = _transformSystem.GetParentUid(args.User);
