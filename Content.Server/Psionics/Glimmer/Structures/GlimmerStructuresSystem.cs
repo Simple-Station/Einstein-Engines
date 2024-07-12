@@ -25,10 +25,10 @@ namespace Content.Server.Psionics.Glimmer
             SubscribeLocalEvent<GlimmerSourceComponent, AnomalyPulseEvent>(OnAnomalyPulse);
             SubscribeLocalEvent<GlimmerSourceComponent, AnomalySupercriticalEvent>(OnAnomalySupercritical);
             SubscribeLocalEvent<GlimmerSourceComponent, MobStateChangedEvent>(OnMobStateChanged);
-            SubscribeLocalEvent<GlimmerSourceComponent, ComponentInit>(OnInit);
+            SubscribeLocalEvent<GlimmerSourceComponent, ComponentStartup>(OnInit);
         }
 
-        private void OnInit(EntityUid uid, GlimmerSourceComponent component, ComponentInit args)
+        private void OnInit(EntityUid uid, GlimmerSourceComponent component, ComponentStartup args)
         {
             if (component.ResearchPointGeneration != null)
             {

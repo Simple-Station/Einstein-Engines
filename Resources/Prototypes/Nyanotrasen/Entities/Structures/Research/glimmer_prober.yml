@@ -15,6 +15,9 @@
   - type: Construction
     graph: GlimmerDevices
     node: glimmerProber
+  - type: ResearchPointSource
+    pointspersecond: 20
+    active: true
   - type: Sprite
     sprite: DeltaV/Structures/Machines/glimmer_machines.rsi # DeltaV reskin
     noRot: true
