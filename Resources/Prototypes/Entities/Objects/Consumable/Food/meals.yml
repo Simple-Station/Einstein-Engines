@@ -622,7 +622,7 @@
   - type: Sprite
     state: harpywings
   - type: SolutionContainerManager
-    soultions:
+    solutions:
       food:
         maxVol: 25
         reagents:
