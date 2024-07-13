@@ -37,7 +37,7 @@ public sealed class LightningTargetSystem : EntitySystem
 
         if (args.Context.Electrocute(args.Discharge, args.Context))
         {
-            _electrocutionSystem.TryDoElectrocution(uid, args.Context.Invoker, (int) Math.Round(args.Context.ElectrocuteDamage(args.Discharge, args.Context), 0), TimeSpan.FromSeconds(5f), true, ignoreInsulation: args.Context.ElectrocuteIgnoreInsulation(args.Discharge, args.Context));
+            _electrocutionSystem.TryDoElectrocution(uid, args.Context.Invoker, 0, TimeSpan.FromSeconds(5f), true, ignoreInsulation: args.Context.ElectrocuteIgnoreInsulation(args.Discharge, args.Context));
         }
 
         if (args.Context.Explode(args.Discharge, args.Context))
@@ -51,7 +51,8 @@ public sealed class LightningTargetSystem : EntitySystem
             if (!TryComp<ExplosiveComponent>(args.Target, out var bomb))
                 return;
 
-            _explosionSystem.TriggerExplosive(args.Target, bomb, true);
+            // don't delete the target because it looks jarring, the explosion destroys most things anyhow
+            _explosionSystem.TriggerExplosive(args.Target, bomb, false);
         }
     }
 }

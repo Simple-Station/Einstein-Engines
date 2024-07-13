@@ -59,5 +59,10 @@
       board: !type:Container
         ents: []
   - type: LightningTarget
-    weighting: 2
+    weighting: 10
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 1
+    intensitySlope: 5
+    totalIntensity: 5
   - type: RequireProjectileTarget

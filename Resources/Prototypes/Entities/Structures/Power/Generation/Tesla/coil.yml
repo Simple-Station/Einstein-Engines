@@ -63,9 +63,6 @@
   - type: TeslaCoil
   - type: LightningTarget
     weighting: 100
-    hitProbability: 0.5
-    lightningResistance: 10
-    lightningExplode: false
   - type: PowerNetworkBattery
     maxSupply: 1000000
     supplyRampTolerance: 1000000
@@ -149,9 +146,7 @@
   - type: LightningSparking
   - type: LightningTarget
     weighting: 300
-    lightningResistance: 10
-    lightningExplode: false
-    damageFromLightning: 0
+    lightningChargeMultiplier: 0.5 # consume charge when struck
   - type: Anchorable
   - type: Rotatable
   - type: Pullable

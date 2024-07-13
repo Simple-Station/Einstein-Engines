@@ -138,7 +138,12 @@
     mediumVoltageNode: input
     lowVoltageNode: output
   - type: LightningTarget
-    weighting: 2
+    weighting: 25
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 5
+    intensitySlope: 5
+    totalIntensity: 25
   - type: StaticPrice
     price: 500
 
