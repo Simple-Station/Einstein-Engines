@@ -17,9 +17,9 @@ public abstract class SharedContentEyeSystem : EntitySystem
 {
     [Dependency] private readonly ISharedAdminManager _admin = default!;
 
-    public const float ZoomMod = 1.5f;
+    public const float ZoomMod = 1.2f;
     public static readonly Vector2 DefaultZoom = Vector2.One;
-    public static readonly Vector2 MinZoom = DefaultZoom * (float)Math.Pow(ZoomMod, -3);
+    public static readonly Vector2 MinZoom = DefaultZoom * (float)Math.Pow(1.5f, -3); // Using 1.5f because that's what used to be default ZoomMod before.
 
     [Dependency] private readonly SharedEyeSystem _eye = default!;
 
