@@ -61,7 +61,6 @@
   - type: BatteryDischarger
     activeSupplyRate: 15000
   - type: TeslaCoil
-    chargeFromLightning: 500000
   - type: LightningTarget
     weighting: 100
     hitProbability: 0.5

@@ -328,7 +328,7 @@ namespace Content.Server.Psionics.Glimmer
             args.Cancelled = true;
             args.Handled = true;
 
-            _lightning.ShootRandomLightnings(uid, 10f, 2, 500000f,
+            _lightning.ShootRandomLightnings(uid, 10f, 2, 50000f,
                 lightningPrototype: "SuperchargedLightning",
                 maxArcs: 2,
                 triggerLightningEvents: false
