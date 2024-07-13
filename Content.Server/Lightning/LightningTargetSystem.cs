@@ -25,25 +25,31 @@ public sealed class LightningTargetSystem : EntitySystem
         SubscribeLocalEvent<LightningTargetComponent, LightningEffectEvent>(OnLightningEffect);
     }
 
-    private void OnLightningStage(Entity<LightningTargetComponent> uid, ref LightningStageEvent args)
+    private void OnLightningStage(EntityUid uid, LightningTargetComponent comp, LightningStageEvent args)
     {
         // Reduce the number of lightning jumps based on lightning modifiers
-        args.Context.MaxArcs -= uid.Comp.LightningArcReduction;
+        args.Context.MaxArcs -= comp.LightningArcReduction;
     }
-    private void OnLightningEffect(Entity<LightningTargetComponent> uid, ref LightningEffectEvent args)
+
+    private void OnLightningEffect(EntityUid uid, LightningTargetComponent comp, LightningEffectEvent args)
     {
         // Reduce the residual charge of lighting based on lightning modifiers
-        args.Context.Charge -= uid.Comp.LightningChargeReduction;
-        args.Context.Charge *= uid.Comp.LightningChargeMultiplier;
+        args.Context.Charge -= comp.LightningChargeReduction;
+        args.Context.Charge *= comp.LightningChargeMultiplier;
 
+        // TODO - Make checking for insulation actually work
         // Deal damage as specified by lightning
-        if (!args.Context.DamageIgnoreInsulation(args.Discharge, args.Context) && !TryComp<InsulatedComponent>(uid, out var _))
-            _damageable.TryChangeDamage(uid, args.Context.Damage(args.Discharge, args.Context), true);
+        float damageCoefficient = 1f;
+        /*
+        if (!args.Context.DamageIgnoreInsulation(args.Discharge, args.Context) && TryComp<InsulatedComponent>(uid, out var insulated))
+            coefficient = insulated.Coefficient;
+        */
+        _damageable.TryChangeDamage(uid, args.Context.Damage(args.Discharge, args.Context) * damageCoefficient, true);
 
         // Attempt to electrocute the target
         if (args.Context.Electrocute(args.Discharge, args.Context))
         {
-            _electrocutionSystem.TryDoElectrocution(uid, args.Context.Invoker, 0, TimeSpan.FromSeconds(5f), true, ignoreInsulation: args.Context.ElectrocuteIgnoreInsulation(args.Discharge, args.Context));
+            _electrocutionSystem.TryDoElectrocution(uid, args.Context.Invoker, args.Context.ElectrocuteDamage(args.Discharge, args.Context), TimeSpan.FromSeconds(5f), true, ignoreInsulation: args.Context.ElectrocuteIgnoreInsulation(args.Discharge, args.Context));
         }
 
         // Attempt to explode the target, provided that they are explosives

@@ -324,6 +324,7 @@ public struct LightningContext
     public Func<float, LightningContext, DamageSpecifier> Damage;
     public Func<float, LightningContext, bool> DamageIgnoreInsulation;
     public Func<float, LightningContext, bool> Electrocute;
+    public Func<float, LightningContext, int> ElectrocuteDamage; //TODO - make ElectrocutionSystem not parse an !INT! for shock damage
     public Func<float, LightningContext, bool> ElectrocuteIgnoreInsulation;
     public Func<float, LightningContext, bool> Explode;
 
@@ -343,6 +344,7 @@ public struct LightningContext
         Damage = (float discharge, LightningContext context) => { DamageSpecifier _Damage = new DamageSpecifier(); _Damage.DamageDict["Shock"] = discharge * 0.0002f; return _Damage; }; // damage increases by 1 for every 5000J
         DamageIgnoreInsulation = (float discharge, LightningContext context) => false;
         Electrocute = (float discharge, LightningContext context) => true;
+        ElectrocuteDamage = (float discharge, LightningContext context) => 1;
         ElectrocuteIgnoreInsulation = (float discharge, LightningContext context) => false;
         Explode = (float discharge, LightningContext context) => true;
     }
