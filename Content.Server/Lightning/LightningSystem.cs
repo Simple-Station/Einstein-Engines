@@ -63,26 +63,24 @@ public sealed class LightningSystem : SharedLightningSystem
         string lightningPrototype = "Lightning",
         float damage = 15,
         bool electrocute = true,
-        bool triggerLightningEvents = true,
-        ExplosionState explosionState = ExplosionState.AlwaysExplosion
+        bool explode = true
     )
     {
         int id = NextId();
         LightningContext context = new LightningContext
         {
             Id = id,
-            Arcs = [],
             Charge = totalCharge,
+            Arcs = [],
             MaxArcs = maxArcs,
-            ArcRange = arcRange,
-            ArcForks = arcForks,
-            AllowLooping = allowLooping,
             History = [],
-            LightningPrototype = lightningPrototype,
-            Damage = damage,
-            Electrocute = electrocute,
-            TriggerLightningEvents = triggerLightningEvents,
-            ExplosionState = explosionState
+            ArcRange = (LightningContext context) => arcRange,
+            ArcForks = (LightningContext context) => arcForks,
+            AllowLooping = (LightningContext context) => allowLooping,
+            LightningPrototype = (float discharge, LightningContext context) => lightningPrototype,
+            Damage = (float discharge, LightningContext context) => damage,
+            Electrocute = (float discharge, LightningContext context) => electrocute,
+            Explode = (float discharge, LightningContext context) => explode,
         };
         _lightningDict[id] = context;
 
@@ -106,8 +104,7 @@ public sealed class LightningSystem : SharedLightningSystem
         string lightningPrototype = "Lightning",
         float damage = 15,
         bool electrocute = true,
-        bool triggerLightningEvents = true,
-        ExplosionState explosionState = ExplosionState.AlwaysExplosion
+        bool explode = true
     )
     {
         var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), lightningRange).ToList(); // TODO - use collision groups
@@ -126,8 +123,7 @@ public sealed class LightningSystem : SharedLightningSystem
                 lightningPrototype: lightningPrototype,
                 damage: damage,
                 electrocute: electrocute,
-                triggerLightningEvents: triggerLightningEvents,
-                explosionState: explosionState
+                explode: explode
             );
         }
     }
@@ -153,13 +149,13 @@ public sealed class LightningSystem : SharedLightningSystem
         context.Arcs.Add(lightningArc);
 
         // check for any more targets
-        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), context.ArcRange).ToList(); // TODO - use collision groups
+        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), context.ArcRange(context)).ToList(); // TODO - use collision groups
         Dictionary<string, float> weights = targets.ToDictionary(x => x.Owner.Id.ToString() ?? "", x => x.Weighting);
 
         if (!context.History.Contains(user))
             context.History.Add(user);
 
-        if (!context.AllowLooping)
+        if (!context.AllowLooping(context))
         {
             Dictionary<string, float> exception = context.History.ToDictionary(x => x.ToString(), x => 0f);
             weights.Except(exception);
@@ -168,7 +164,7 @@ public sealed class LightningSystem : SharedLightningSystem
             weights.Remove(user.ToString());
 
         // do the bounce
-        for (int i = 0; i < context.ArcForks; i++)
+        for (int i = 0; i < context.ArcForks(context); i++)
         {
             EntityUid nextTarget = EntityUid.Parse(_random.Pick(weights));
             LightningArc nextArc = new LightningArc { User = target, Target = nextTarget, ContextId = context.Id, ArcDepth = arcDepth + 1 };
@@ -220,14 +216,11 @@ public sealed class LightningSystem : SharedLightningSystem
 
             // zap
             var spriteState = LightningRandomizer();
-            _beam.TryCreateBeam(lightningArc.User, lightningArc.Target, context.LightningPrototype, spriteState);
+            _beam.TryCreateBeam(lightningArc.User, lightningArc.Target, context.LightningPrototype(discharge, context), spriteState);
 
             // we may not want to trigger certain lightning events
-            if (context.TriggerLightningEvents)
-            {
-                var ev = new HitByLightningEvent(discharge, context);
-                RaiseLocalEvent(lightningArc.Target, ref ev);
-            }
+            var ev = new HitByLightningEvent(discharge, context);
+            RaiseLocalEvent(lightningArc.Target, ref ev);
 
             if (context.Charge <= 0f)
                 break;
@@ -241,19 +234,23 @@ public record struct LightningArc(
     int ArcDepth
 );
 public record struct LightningContext(
+    // Core data used by the LightningContext, do not touch!
     int Id,
-    List<LightningArc> Arcs,
     float Charge,
+    List<LightningArc> Arcs,
     int MaxArcs,
-    float ArcRange,
-    int ArcForks,
-    bool AllowLooping,
     List<EntityUid> History,
-    string LightningPrototype,
-    float Damage,
-    bool Electrocute,
-    bool TriggerLightningEvents,
-    ExplosionState ExplosionState
+
+    // Staging data before charge is even considered
+    Func<LightningContext, float> ArcRange,
+    Func<LightningContext, int> ArcForks,
+    Func<LightningContext, bool> AllowLooping,
+
+    // Effect data which can take discharge into account
+    Func<float, LightningContext, string> LightningPrototype,
+    Func<float, LightningContext, float> Damage,
+    Func<float, LightningContext, bool> Electrocute,
+    Func<float, LightningContext, bool> Explode
 );
 
 /// <summary>
@@ -263,10 +260,3 @@ public record struct LightningContext(
 /// <param name="Context">The field that encapsulates the data used to make the lightning bolt.</param>
 [ByRefEvent]
 public readonly record struct HitByLightningEvent(float Discharge, LightningContext Context);
-
-public enum ExplosionState : sbyte
-{
-    NoExplosion = 0,
-    ChargeExplosion = 1,
-    AlwaysExplosion = 2
-}
