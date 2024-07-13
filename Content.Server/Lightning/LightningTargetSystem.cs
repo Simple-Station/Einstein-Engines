@@ -1,3 +1,4 @@
+using Content.Server.Electrocution;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Lightning;
 using Content.Server.Lightning.Components;
@@ -12,6 +13,7 @@ public sealed class LightningTargetSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
+    [Dependency] private readonly ElectrocutionSystem _electrocutionSystem = default!;
 
     public override void Initialize()
     {
@@ -22,18 +24,26 @@ public sealed class LightningTargetSystem : EntitySystem
 
     private void OnHitByLightning(Entity<LightningTargetComponent> uid, ref HitByLightningEvent args)
     {
-        DamageSpecifier damage = new();
-        damage.DamageDict.Add("Structural", uid.Comp.DamageFromLightning);
-        _damageable.TryChangeDamage(uid, damage, true);
-
-        if (uid.Comp.LightningExplode)
+        if (args.Context.Electrocute(args.Discharge, args.Context))
         {
-            _explosionSystem.QueueExplosion(
-                Transform(uid).MapPosition,
-                uid.Comp.ExplosionPrototype,
-                uid.Comp.TotalIntensity, uid.Comp.Dropoff,
-                uid.Comp.MaxTileIntensity,
-                canCreateVacuum: false);
+            _electrocutionSystem.TryDoElectrocution(uid, args.Context.Invoker, (int) Math.Round(args.Context.Damage(args.Discharge, args.Context), 0), TimeSpan.FromSeconds(5f), true);
+        }
+
+        if (args.Context.Explode(args.Discharge, args.Context))
+        {
+            DamageSpecifier damage = new();
+            damage.DamageDict.Add("Structural", uid.Comp.DamageFromLightning);
+            _damageable.TryChangeDamage(uid, damage, true);
+
+            if (uid.Comp.LightningExplode)
+            {
+                _explosionSystem.QueueExplosion(
+                    Transform(uid).MapPosition,
+                    uid.Comp.ExplosionPrototype,
+                    uid.Comp.TotalIntensity, uid.Comp.Dropoff,
+                    uid.Comp.MaxTileIntensity,
+                    canCreateVacuum: false);
+            }
         }
     }
 }

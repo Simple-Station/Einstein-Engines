@@ -93,6 +93,7 @@ public sealed class LightningSystem : SharedLightningSystem
     {
         int id = NextId();
         context.Id = id;
+        context.Invoker = user;
         _lightningDict[context.Id] = context;
 
         LightningArc lightningArc = new LightningArc
@@ -268,7 +269,7 @@ public sealed class LightningSystem : SharedLightningSystem
             _beam.TryCreateBeam(lightningArc.User, lightningArc.Target, context.LightningPrototype(discharge, context), spriteState);
 
             // we may not want to trigger certain lightning events
-            var ev = new HitByLightningEvent(discharge, context);
+            var ev = new HitByLightningEvent(discharge, lightningArc.Target, context);
             RaiseLocalEvent(lightningArc.Target, ref ev);
 
             if (context.Charge <= 0f)
@@ -286,6 +287,7 @@ public record struct LightningContext
 {
     // These are not parameters, and are handled by the LightningSystem
     public int Id;
+    public EntityUid Invoker;
     public List<LightningArc> Arcs;
     public List<EntityUid> History;
 
@@ -329,4 +331,4 @@ public record struct LightningContext
 /// <param name="Discharge">The energy (J) that was discharged by the lightning bolt.</param>
 /// <param name="Context">The field that encapsulates the data used to make the lightning bolt.</param>
 [ByRefEvent]
-public readonly record struct HitByLightningEvent(float Discharge, LightningContext Context);
+public readonly record struct HitByLightningEvent(float Discharge, EntityUid Target, LightningContext Context);
