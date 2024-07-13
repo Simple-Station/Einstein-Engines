@@ -5,6 +5,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
 using Content.Shared.Atmos.Piping.Unary.Components;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Contests;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
@@ -58,6 +59,7 @@ namespace Content.Shared.Cuffs
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly UseDelaySystem _delay = default!;
+        [Dependency] private readonly ContestsSystem _contests = default!;
 
         public override void Initialize()
         {
@@ -559,7 +561,7 @@ namespace Content.Shared.Cuffs
                 return;
             }
 
-            var uncuffTime = isOwner ? cuff.BreakoutTime : cuff.UncuffTime;
+            var uncuffTime = (isOwner ? cuff.BreakoutTime : cuff.UncuffTime) * (cuff.UncuffEasierWhenLarge ? 1 / _contests.MassContest(user) : _contests.MassContest(user));
 
             if (isOwner)
             {
