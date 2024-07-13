@@ -149,6 +149,9 @@ public sealed class LightningSystem : SharedLightningSystem
 
         for (int i = 0; i < lightningCount; i++)
         {
+            if (weights.Count <= 0)
+                break;
+
             string stringTarget = _random.Pick(weights);
             weights.Remove(stringTarget);
             EntityUid target = EntityUid.Parse(stringTarget);
