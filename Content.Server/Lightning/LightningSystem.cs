@@ -1,4 +1,6 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Content.Server.Beam;
 using Content.Server.Beam.Components;
 using Content.Server.Lightning.Components;
@@ -6,6 +8,7 @@ using Content.Shared.Lightning;
 using Content.Shared.Random.Helpers;
 using FastAccessors;
 using Robust.Server.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -25,6 +28,7 @@ public sealed class LightningSystem : SharedLightningSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly IEntityManager _entMan = default!;
 
     // a priority queue is required to iterate through Arcs of various depth
     private PriorityQueue<LightningArc, int> _lightningQueue = new PriorityQueue<LightningArc, int>();
@@ -103,7 +107,7 @@ public sealed class LightningSystem : SharedLightningSystem
     /// <summary>
     /// Looks for objects with a LightningTarget component in the radius, and fire lightning at (weighted) random targets
     /// </summary>
-    public void ShootRandomLightnings(EntityUid user, float lightningRange, int lightningCount, float lightningChargePer,
+    public void ShootRandomLightnings(EntityUid user, float lightningRange, int lightningCount, float lightningChargePer, EntityCoordinates? queryPosition = null,
         int maxArcs = 1,
         float arcRange = 5f,
         int arcForks = 1,
@@ -133,10 +137,15 @@ public sealed class LightningSystem : SharedLightningSystem
     /// <summary>
     /// Looks for objects with a LightningTarget component in the radius, and fire lightning at (weighted) random targets
     /// </summary>
-    public void ShootRandomLightnings(EntityUid user, float lightningRange, int lightningCount, LightningContext context)
+    public void ShootRandomLightnings(EntityUid user, float lightningRange, int lightningCount, LightningContext context, EntityCoordinates? queryPosition = null)
     {
-        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), lightningRange).ToList(); // TODO - use collision groups
-        Dictionary<string, float> weights = targets.ToDictionary(x => x.Owner.Id.ToString() ?? "", x => x.Weighting);
+        // default the query location to the user's position
+        if (!queryPosition.HasValue)
+            queryPosition = Transform(user).Coordinates;
+
+        if (!TryGetLightningTargets(queryPosition.Value, lightningRange, out var weights))
+            return;
+
         weights.Remove(user.ToString());
 
         for (int i = 0; i < lightningCount; i++)
@@ -145,6 +154,23 @@ public sealed class LightningSystem : SharedLightningSystem
 
             ShootLightning(user, target, context);
         }
+    }
+
+    private bool TryGetLightningTargets(EntityCoordinates queryPosition, float radius, [NotNullWhen(true)] out Dictionary<string, float>? weights)
+    {
+        weights = null;
+
+        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(
+            //_transform.GetMapCoordinates(Transform(user).MapUid ?? EntityUid.Invalid, Transform(user).Coordinates),
+            queryPosition.ToMap(_entMan, _transform),
+            radius
+        ).ToList(); // TODO - use collision groups
+
+        if (targets.Count == 0)
+            return false;
+
+        weights = targets.ToDictionary(x => x.Owner.Id.ToString() ?? "", x => x.Weighting);
+        return true;
     }
 
     /// <summary>
@@ -168,18 +194,13 @@ public sealed class LightningSystem : SharedLightningSystem
         context.Arcs.Add(lightningArc);
 
         // check for any more targets
-        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), context.ArcRange(context)).ToList(); // TODO - use collision groups
-
-        // if there aren't any more targets, update the context and exit
-        if (targets.Count == 0)
+        if (!TryGetLightningTargets(Transform(target).Coordinates, context.ArcRange(context), out var weights))
         {
             _lightningDict[context.Id] = context;
             NextLightningArc();
             return;
         }
 
-        // otherwise get the weighting of every target to use _random.Pick(Dictionary)
-        Dictionary<string, float> weights = targets.ToDictionary(x => x.Owner.Id.ToString() ?? "", x => x.Weighting);
         if (!context.History.Contains(user))
             context.History.Add(user);
 
