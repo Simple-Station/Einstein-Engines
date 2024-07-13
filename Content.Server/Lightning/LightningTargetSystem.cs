@@ -26,7 +26,7 @@ public sealed class LightningTargetSystem : EntitySystem
     {
         if (args.Context.Electrocute(args.Discharge, args.Context))
         {
-            _electrocutionSystem.TryDoElectrocution(uid, args.Context.Invoker, (int) Math.Round(args.Context.Damage(args.Discharge, args.Context), 0), TimeSpan.FromSeconds(5f), true);
+            _electrocutionSystem.TryDoElectrocution(uid, args.Context.Invoker, (int) Math.Round(args.Context.ElectrocuteDamage(args.Discharge, args.Context), 0), TimeSpan.FromSeconds(5f), true, ignoreInsulation: args.Context.ElectrocuteIgnoreInsulation(args.Discharge, args.Context));
         }
 
         if (args.Context.Explode(args.Discharge, args.Context))

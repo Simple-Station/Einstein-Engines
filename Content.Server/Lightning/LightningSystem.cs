@@ -78,7 +78,6 @@ public sealed class LightningSystem : SharedLightningSystem
             ArcForks = (LightningContext context) => arcForks,
             AllowLooping = (LightningContext context) => allowLooping,
             LightningPrototype = (float discharge, LightningContext context) => lightningPrototype,
-            Damage = (float discharge, LightningContext context) => damage,
             Electrocute = (float discharge, LightningContext context) => electrocute,
             Explode = (float discharge, LightningContext context) => explode,
         };
@@ -114,9 +113,8 @@ public sealed class LightningSystem : SharedLightningSystem
         int arcForks = 1,
         bool allowLooping = false,
         string lightningPrototype = "Lightning",
-        float damage = 15,
         bool electrocute = true,
-        bool explode = true
+        bool explode = false
     )
     {
         LightningContext context = new LightningContext()
@@ -127,7 +125,6 @@ public sealed class LightningSystem : SharedLightningSystem
             ArcForks = (LightningContext context) => arcForks,
             AllowLooping = (LightningContext context) => allowLooping,
             LightningPrototype = (float discharge, LightningContext context) => lightningPrototype,
-            Damage = (float discharge, LightningContext context) => damage,
             Electrocute = (float discharge, LightningContext context) => electrocute,
             Explode = (float discharge, LightningContext context) => explode,
         };
@@ -302,8 +299,9 @@ public record struct LightningContext
 
     // Effect data which can take discharge into account
     public Func<float, LightningContext, string> LightningPrototype;
-    public Func<float, LightningContext, float> Damage;
     public Func<float, LightningContext, bool> Electrocute;
+    public Func<float, LightningContext, float> ElectrocuteDamage;
+    public Func<float, LightningContext, bool> ElectrocuteIgnoreInsulation;
     public Func<float, LightningContext, bool> Explode;
 
     public LightningContext()
@@ -319,8 +317,9 @@ public record struct LightningContext
         AllowLooping = (LightningContext context) => true;
 
         LightningPrototype = (float discharge, LightningContext context) => "Lightning";
-        Damage = (float discharge, LightningContext context) => 15f;
         Electrocute = (float discharge, LightningContext context) => true;
+        ElectrocuteDamage = (float discharge, LightningContext context) => discharge * 0.0002f; // damage increases by 1 for every 5000J
+        ElectrocuteIgnoreInsulation = (float discharge, LightningContext context) => false;
         Explode = (float discharge, LightningContext context) => true;
     }
 };
