@@ -4,6 +4,7 @@ using Content.Server.Explosion.EntitySystems;
 using Content.Server.Lightning;
 using Content.Server.Lightning.Components;
 using Content.Shared.Damage;
+using Content.Shared.Electrocution;
 
 namespace Content.Server.Tesla.EntitySystems;
 
@@ -35,24 +36,24 @@ public sealed class LightningTargetSystem : EntitySystem
         args.Context.Charge -= uid.Comp.LightningChargeReduction;
         args.Context.Charge *= uid.Comp.LightningChargeMultiplier;
 
+        // Deal damage as specified by lightning
+        if (!args.Context.DamageIgnoreInsulation(args.Discharge, args.Context) || !TryComp<InsulatedComponent>(uid, out var _))
+            _damageable.TryChangeDamage(uid, args.Context.Damage(args.Discharge, args.Context), true);
+
+        // Attempt to electrocute the target
         if (args.Context.Electrocute(args.Discharge, args.Context))
         {
             _electrocutionSystem.TryDoElectrocution(uid, args.Context.Invoker, 0, TimeSpan.FromSeconds(5f), true, ignoreInsulation: args.Context.ElectrocuteIgnoreInsulation(args.Discharge, args.Context));
         }
 
+        // Attempt to explode the target, provided that they are explosives
         if (args.Context.Explode(args.Discharge, args.Context))
         {
-            /*
-            DamageSpecifier damage = new();
-            damage.DamageDict.Add("Structural", uid.Comp.DamageFromLightning);
-            _damageable.TryChangeDamage(uid, damage, true);
-            */
-
-            if (!TryComp<ExplosiveComponent>(args.Target, out var bomb))
+            if (!TryComp<ExplosiveComponent>(uid, out var bomb))
                 return;
 
             // don't delete the target because it looks jarring, the explosion destroys most things anyhow
-            _explosionSystem.TriggerExplosive(args.Target, bomb, false);
+            _explosionSystem.TriggerExplosive(uid, bomb, false);
         }
     }
 }

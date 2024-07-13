@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using Content.Server.Beam;
 using Content.Server.Beam.Components;
 using Content.Server.Lightning.Components;
+using Content.Shared.Damage;
 using Content.Shared.Lightning;
 using Content.Shared.Random.Helpers;
 using FastAccessors;
@@ -320,8 +321,9 @@ public struct LightningContext
 
     // Effect data which can take discharge into account
     public Func<float, LightningContext, string> LightningPrototype;
+    public Func<float, LightningContext, DamageSpecifier> Damage;
+    public Func<float, LightningContext, bool> DamageIgnoreInsulation;
     public Func<float, LightningContext, bool> Electrocute;
-    public Func<float, LightningContext, float> ElectrocuteDamage;
     public Func<float, LightningContext, bool> ElectrocuteIgnoreInsulation;
     public Func<float, LightningContext, bool> Explode;
 
@@ -338,8 +340,9 @@ public struct LightningContext
         ArcStacking = (LightningContext context) => false;
 
         LightningPrototype = (float discharge, LightningContext context) => "Lightning";
+        Damage = (float discharge, LightningContext context) => { DamageSpecifier _Damage = new DamageSpecifier(); _Damage.DamageDict["Shock"] = discharge * 0.0002f; return _Damage; }; // damage increases by 1 for every 5000J
+        DamageIgnoreInsulation = (float discharge, LightningContext context) => false;
         Electrocute = (float discharge, LightningContext context) => true;
-        ElectrocuteDamage = (float discharge, LightningContext context) => discharge * 0.0002f; // damage increases by 1 for every 5000J
         ElectrocuteIgnoreInsulation = (float discharge, LightningContext context) => false;
         Explode = (float discharge, LightningContext context) => true;
     }
