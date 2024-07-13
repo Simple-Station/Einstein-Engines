@@ -405,7 +405,8 @@ namespace Content.Server.Kitchen.EntitySystems
             if (_random.Prob(ent.Comp2.LightningChance))
                 _lightning.ShootRandomLightnings(ent, 1.0f, 2, 5000f,
                     lightningPrototype: MalfunctionSpark,
-                    triggerLightningEvents: false
+                    electrocute: false,
+                    explode: false
                 );
         }
 

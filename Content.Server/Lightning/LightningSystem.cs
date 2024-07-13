@@ -32,7 +32,7 @@ public sealed class LightningSystem : SharedLightningSystem
     // a dictionary allows insertation / removal of new lightning bolt data 'infinitely' without throwing errors
     // don't worry, the data gets deleted afterwards
     private Dictionary<int, LightningContext> _lightningDict = new Dictionary<int, LightningContext>();
-    private int _lightningId = 0;
+    private int _lightningId = -1;
     private int NextId() { return _lightningId++; }
 
     public override void Initialize()
@@ -66,14 +66,10 @@ public sealed class LightningSystem : SharedLightningSystem
         bool explode = true
     )
     {
-        int id = NextId();
-        LightningContext context = new LightningContext
+        LightningContext context = new LightningContext()
         {
-            Id = id,
             Charge = totalCharge,
-            Arcs = [],
             MaxArcs = maxArcs,
-            History = [],
             ArcRange = (LightningContext context) => arcRange,
             ArcForks = (LightningContext context) => arcForks,
             AllowLooping = (LightningContext context) => allowLooping,
@@ -82,13 +78,24 @@ public sealed class LightningSystem : SharedLightningSystem
             Electrocute = (float discharge, LightningContext context) => electrocute,
             Explode = (float discharge, LightningContext context) => explode,
         };
-        _lightningDict[id] = context;
+
+        ShootLightning(user, target, context);
+    }
+
+    /// <summary>
+    /// Fires a lightning bolt from one entity to another
+    /// </summary>
+    public void ShootLightning(EntityUid user, EntityUid target, LightningContext context)
+    {
+        int id = NextId();
+        context.Id = id;
+        _lightningDict[context.Id] = context;
 
         LightningArc lightningArc = new LightningArc
         {
             User = user,
             Target = target,
-            ContextId = id,
+            ContextId = context.Id,
         };
         StageLightningArc(lightningArc);
     }
@@ -107,6 +114,27 @@ public sealed class LightningSystem : SharedLightningSystem
         bool explode = true
     )
     {
+        LightningContext context = new LightningContext()
+        {
+            Charge = lightningChargePer,
+            MaxArcs = maxArcs,
+            ArcRange = (LightningContext context) => arcRange,
+            ArcForks = (LightningContext context) => arcForks,
+            AllowLooping = (LightningContext context) => allowLooping,
+            LightningPrototype = (float discharge, LightningContext context) => lightningPrototype,
+            Damage = (float discharge, LightningContext context) => damage,
+            Electrocute = (float discharge, LightningContext context) => electrocute,
+            Explode = (float discharge, LightningContext context) => explode,
+        };
+
+        ShootRandomLightnings(user, lightningRange, lightningCount, context);
+    }
+
+    /// <summary>
+    /// Looks for objects with a LightningTarget component in the radius, and fire lightning at (weighted) random targets
+    /// </summary>
+    public void ShootRandomLightnings(EntityUid user, float lightningRange, int lightningCount, LightningContext context)
+    {
         var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), lightningRange).ToList(); // TODO - use collision groups
         Dictionary<string, float> weights = targets.ToDictionary(x => x.Owner.Id.ToString() ?? "", x => x.Weighting);
         weights.Remove(user.ToString());
@@ -115,16 +143,7 @@ public sealed class LightningSystem : SharedLightningSystem
         {
             EntityUid target = EntityUid.Parse(_random.Pick(weights));
 
-            ShootLightning(user, target, lightningChargePer,
-                maxArcs: maxArcs,
-                arcRange: arcRange,
-                arcForks: arcForks,
-                allowLooping: allowLooping,
-                lightningPrototype: lightningPrototype,
-                damage: damage,
-                electrocute: electrocute,
-                explode: explode
-            );
+            ShootLightning(user, target, context);
         }
     }
 
@@ -139,7 +158,7 @@ public sealed class LightningSystem : SharedLightningSystem
 
         // get the context and check to see if there are any arcs remaining
         if (!_lightningDict.TryGetValue(contextId, out LightningContext context)
-            || context.Arcs.Count() >= context.MaxArcs)
+            || context.Arcs.Count >= context.MaxArcs)
         {
             NextLightningArc();
             return;
@@ -150,11 +169,21 @@ public sealed class LightningSystem : SharedLightningSystem
 
         // check for any more targets
         var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), context.ArcRange(context)).ToList(); // TODO - use collision groups
-        Dictionary<string, float> weights = targets.ToDictionary(x => x.Owner.Id.ToString() ?? "", x => x.Weighting);
 
+        // if there aren't any more targets, update the context and exit
+        if (targets.Count == 0)
+        {
+            _lightningDict[context.Id] = context;
+            NextLightningArc();
+            return;
+        }
+
+        // otherwise get the weighting of every target to use _random.Pick(Dictionary)
+        Dictionary<string, float> weights = targets.ToDictionary(x => x.Owner.Id.ToString() ?? "", x => x.Weighting);
         if (!context.History.Contains(user))
             context.History.Add(user);
 
+        // depending on AllowLooping, remove previously visited entities from the targeting list
         if (!context.AllowLooping(context))
         {
             Dictionary<string, float> exception = context.History.ToDictionary(x => x.ToString(), x => 0f);
@@ -233,25 +262,46 @@ public record struct LightningArc(
     int ContextId,
     int ArcDepth
 );
-public record struct LightningContext(
-    // Core data used by the LightningContext, do not touch!
-    int Id,
-    float Charge,
-    List<LightningArc> Arcs,
-    int MaxArcs,
-    List<EntityUid> History,
+public record struct LightningContext
+{
+    // These are not parameters, and are handled by the LightningSystem
+    public int Id;
+    public List<LightningArc> Arcs;
+    public List<EntityUid> History;
+
+    // Initial data that shouldn't be changed by staging
+    public float Charge;
+    public int MaxArcs;
 
     // Staging data before charge is even considered
-    Func<LightningContext, float> ArcRange,
-    Func<LightningContext, int> ArcForks,
-    Func<LightningContext, bool> AllowLooping,
+    public Func<LightningContext, float> ArcRange;
+    public Func<LightningContext, int> ArcForks;
+    public Func<LightningContext, bool> AllowLooping;
 
     // Effect data which can take discharge into account
-    Func<float, LightningContext, string> LightningPrototype,
-    Func<float, LightningContext, float> Damage,
-    Func<float, LightningContext, bool> Electrocute,
-    Func<float, LightningContext, bool> Explode
-);
+    public Func<float, LightningContext, string> LightningPrototype;
+    public Func<float, LightningContext, float> Damage;
+    public Func<float, LightningContext, bool> Electrocute;
+    public Func<float, LightningContext, bool> Explode;
+
+    public LightningContext()
+    {
+        Arcs = [];
+        History = [];
+
+        Charge = 50000f;
+        MaxArcs = 1;
+
+        ArcRange = (LightningContext context) => 3.5f;
+        ArcForks = (LightningContext context) => 1;
+        AllowLooping = (LightningContext context) => true;
+
+        LightningPrototype = (float discharge, LightningContext context) => "Lightning";
+        Damage = (float discharge, LightningContext context) => 15f;
+        Electrocute = (float discharge, LightningContext context) => true;
+        Explode = (float discharge, LightningContext context) => true;
+    }
+};
 
 /// <summary>
 /// Raised directed on the target when an entity becomes the target of a lightning strike (not when touched)

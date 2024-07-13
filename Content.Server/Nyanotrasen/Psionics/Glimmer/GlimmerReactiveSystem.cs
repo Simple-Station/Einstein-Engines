@@ -331,7 +331,8 @@ namespace Content.Server.Psionics.Glimmer
             _lightning.ShootRandomLightnings(uid, 10f, 2, 50000f,
                 lightningPrototype: "SuperchargedLightning",
                 maxArcs: 2,
-                triggerLightningEvents: false
+                electrocute: false,
+                explode: false
             );
 
             // Check if the parent of the user is alive, which will be the case if the user is an item and is being held.
