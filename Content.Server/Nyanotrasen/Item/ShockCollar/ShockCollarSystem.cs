@@ -33,7 +33,7 @@ public sealed partial class ShockCollarSystem : EntitySystem
             && !_useDelay.TryResetDelay((uid, useDelay), true))
             return;
 
-        _electrocutionSystem.TryDoElectrocution(containerEnt, null, 5, TimeSpan.FromSeconds(2), true);
+        _electrocutionSystem.TryDoElectrocution(containerEnt, null, 1, TimeSpan.FromSeconds(2), true, ignoreInsulation: true);
     }
 }
 
