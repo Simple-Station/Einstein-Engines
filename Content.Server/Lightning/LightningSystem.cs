@@ -149,9 +149,12 @@ public sealed class LightningSystem : SharedLightningSystem
 
         for (int i = 0; i < lightningCount; i++)
         {
-            EntityUid target = EntityUid.Parse(_random.Pick(weights));
+            string stringTarget = _random.Pick(weights);
+            weights.Remove(stringTarget);
+            EntityUid target = EntityUid.Parse(stringTarget);
 
-            ShootLightning(user, target, context);
+            LightningContext clone = context.Clone();
+            ShootLightning(user, target, clone);
         }
     }
 
@@ -194,6 +197,9 @@ public sealed class LightningSystem : SharedLightningSystem
         // add this arc to the pool of arcs
         context.Arcs.Add(lightningArc);
 
+        if (!context.History.Contains(user))
+            context.History.Add(user);
+
         // check for any more targets
         if (!TryGetLightningTargets(Transform(target).Coordinates, context.ArcRange(context), out var weights))
         {
@@ -201,9 +207,6 @@ public sealed class LightningSystem : SharedLightningSystem
             NextLightningArc();
             return;
         }
-
-        if (!context.History.Contains(user))
-            context.History.Add(user);
 
         // depending on AllowLooping, remove previously visited entities from the targeting list
         if (!context.AllowLooping(context))
@@ -280,7 +283,7 @@ public record struct LightningArc(
     int ContextId,
     int ArcDepth
 );
-public record struct LightningContext
+public struct LightningContext
 {
     // These are not parameters, and are handled by the LightningSystem
     public int Id;
@@ -321,6 +324,15 @@ public record struct LightningContext
         ElectrocuteDamage = (float discharge, LightningContext context) => discharge * 0.0002f; // damage increases by 1 for every 5000J
         ElectrocuteIgnoreInsulation = (float discharge, LightningContext context) => false;
         Explode = (float discharge, LightningContext context) => true;
+    }
+
+    public LightningContext Clone()
+    {
+        LightningContext other = (LightningContext) MemberwiseClone();
+        other.Arcs = new List<LightningArc>(Arcs);
+        other.History = new List<EntityUid>(History);
+
+        return other;
     }
 };
 
