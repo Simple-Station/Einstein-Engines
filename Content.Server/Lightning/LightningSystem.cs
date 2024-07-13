@@ -107,7 +107,7 @@ public sealed class LightningSystem : SharedLightningSystem
     /// <summary>
     /// Looks for objects with a LightningTarget component in the radius, and fire lightning at (weighted) random targets
     /// </summary>
-    public void ShootRandomLightnings(EntityUid user, float lightningRange, int lightningCount, float lightningChargePer, EntityCoordinates? queryPosition = null,
+    public void ShootRandomLightnings(EntityUid user, float lightningRadius, int lightningCount, float lightningChargePer, EntityCoordinates? queryPosition = null,
         int maxArcs = 1,
         float arcRange = 5f,
         int arcForks = 1,
@@ -131,21 +131,22 @@ public sealed class LightningSystem : SharedLightningSystem
             Explode = (float discharge, LightningContext context) => explode,
         };
 
-        ShootRandomLightnings(user, lightningRange, lightningCount, context);
+        ShootRandomLightnings(user, lightningRadius, lightningCount, context);
     }
 
     /// <summary>
     /// Looks for objects with a LightningTarget component in the radius, and fire lightning at (weighted) random targets
     /// </summary>
-    public void ShootRandomLightnings(EntityUid user, float lightningRange, int lightningCount, LightningContext context, EntityCoordinates? queryPosition = null)
+    public void ShootRandomLightnings(EntityUid user, float lightningRadius, int lightningCount, LightningContext context, EntityCoordinates? queryPosition = null)
     {
         // default the query location to the user's position
         if (!queryPosition.HasValue)
             queryPosition = Transform(user).Coordinates;
 
-        if (!TryGetLightningTargets(queryPosition.Value, lightningRange, out var weights))
+        if (!TryGetLightningTargets(queryPosition.Value, lightningRadius, out var weights))
             return;
 
+        // remove the user to prevent lightning striking self
         weights.Remove(user.ToString());
 
         for (int i = 0; i < lightningCount; i++)
@@ -156,15 +157,17 @@ public sealed class LightningSystem : SharedLightningSystem
         }
     }
 
+    /// <summary>
+    /// Helper function that gets entities with LightningTarget component in a radius
+    /// </summary>
     private bool TryGetLightningTargets(EntityCoordinates queryPosition, float radius, [NotNullWhen(true)] out Dictionary<string, float>? weights)
     {
         weights = null;
 
         var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(
-            //_transform.GetMapCoordinates(Transform(user).MapUid ?? EntityUid.Invalid, Transform(user).Coordinates),
             queryPosition.ToMap(_entMan, _transform),
             radius
-        ).ToList(); // TODO - use collision groups
+        ).ToList(); // TODO - use collision groups?
 
         if (targets.Count == 0)
             return false;
@@ -211,6 +214,7 @@ public sealed class LightningSystem : SharedLightningSystem
             weights.Except(exception);
         }
         else
+            // remove the user regardless to prevent lightning striking self
             weights.Remove(user.ToString());
 
         // do the bounce
@@ -243,11 +247,6 @@ public sealed class LightningSystem : SharedLightningSystem
         }
 
         LightningArc lightningArc = _lightningQueue.Dequeue();
-        //if (!_lightningDict.TryGetValue(lightningArc.ContextId, out LightningContext context))
-        //{
-        //    NextLightningArc();
-        //    return;
-        //}
         StageLightningArc(lightningArc, lightningArc.ArcDepth);
     }
 
