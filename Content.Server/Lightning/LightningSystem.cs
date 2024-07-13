@@ -63,7 +63,7 @@ public sealed class LightningSystem : SharedLightningSystem
         int maxArcs = 1,
         float arcRange = 5f,
         int arcForks = 1,
-        bool allowLooping = false,
+        bool arcStacking = false,
         string lightningPrototype = "Lightning",
         float damage = 15,
         bool electrocute = true,
@@ -76,7 +76,7 @@ public sealed class LightningSystem : SharedLightningSystem
             MaxArcs = maxArcs,
             ArcRange = (LightningContext context) => arcRange,
             ArcForks = (LightningContext context) => arcForks,
-            AllowLooping = (LightningContext context) => allowLooping,
+            ArcStacking = (LightningContext context) => arcStacking,
             LightningPrototype = (float discharge, LightningContext context) => lightningPrototype,
             Electrocute = (float discharge, LightningContext context) => electrocute,
             Explode = (float discharge, LightningContext context) => explode,
@@ -107,11 +107,11 @@ public sealed class LightningSystem : SharedLightningSystem
     /// <summary>
     /// Looks for objects with a LightningTarget component in the radius, and fire lightning at (weighted) random targets
     /// </summary>
-    public void ShootRandomLightnings(EntityUid user, float lightningRadius, int lightningCount, float lightningChargePer, EntityCoordinates? queryPosition = null,
+    public void ShootRandomLightnings(EntityUid user, float lightningRadius, int lightningCount, float lightningChargePer, EntityCoordinates? queryPosition = null, bool lightningStacking = true,
         int maxArcs = 1,
         float arcRange = 5f,
         int arcForks = 1,
-        bool allowLooping = false,
+        bool arcStacking = false,
         string lightningPrototype = "Lightning",
         bool electrocute = true,
         bool explode = true
@@ -123,19 +123,19 @@ public sealed class LightningSystem : SharedLightningSystem
             MaxArcs = maxArcs,
             ArcRange = (LightningContext context) => arcRange,
             ArcForks = (LightningContext context) => arcForks,
-            AllowLooping = (LightningContext context) => allowLooping,
+            ArcStacking = (LightningContext context) => arcStacking,
             LightningPrototype = (float discharge, LightningContext context) => lightningPrototype,
             Electrocute = (float discharge, LightningContext context) => electrocute,
             Explode = (float discharge, LightningContext context) => explode,
         };
 
-        ShootRandomLightnings(user, lightningRadius, lightningCount, context);
+        ShootRandomLightnings(user, lightningRadius, lightningCount, context, queryPosition, lightningStacking);
     }
 
     /// <summary>
     /// Looks for objects with a LightningTarget component in the radius, and fire lightning at (weighted) random targets
     /// </summary>
-    public void ShootRandomLightnings(EntityUid user, float lightningRadius, int lightningCount, LightningContext context, EntityCoordinates? queryPosition = null)
+    public void ShootRandomLightnings(EntityUid user, float lightningRadius, int lightningCount, LightningContext context, EntityCoordinates? queryPosition = null, bool lightningStacking = true)
     {
         // default the query location to the user's position
         if (!queryPosition.HasValue)
@@ -153,11 +153,13 @@ public sealed class LightningSystem : SharedLightningSystem
                 break;
 
             string stringTarget = _random.Pick(weights);
-            weights.Remove(stringTarget);
             EntityUid target = EntityUid.Parse(stringTarget);
 
             LightningContext clone = context.Clone();
             ShootLightning(user, target, clone);
+
+            if (!lightningStacking)
+                weights.Remove(stringTarget);
         }
     }
 
@@ -215,8 +217,8 @@ public sealed class LightningSystem : SharedLightningSystem
             return;
         }
 
-        // depending on AllowLooping, remove previously visited entities from the targeting list
-        if (!context.AllowLooping(context))
+        // depending on ArcStacking, remove previously visited entities from the targeting list
+        if (!context.ArcStacking(context))
         {
             Dictionary<string, float> exception = context.History.ToDictionary(x => x.ToString(), x => 0f);
             weights.Except(exception);
@@ -228,9 +230,16 @@ public sealed class LightningSystem : SharedLightningSystem
         // do the bounce
         for (int i = 0; i < context.ArcForks(context); i++)
         {
-            EntityUid nextTarget = EntityUid.Parse(_random.Pick(weights));
+            if (weights.Count <= 0)
+                break;
+
+            string stringTarget = _random.Pick(weights);
+            EntityUid nextTarget = EntityUid.Parse(stringTarget);
             LightningArc nextArc = new LightningArc { User = target, Target = nextTarget, ContextId = context.Id, ArcDepth = arcDepth + 1 };
             _lightningQueue.Enqueue(nextArc, arcDepth + 1);
+
+            if (!context.ArcStacking(context))
+                weights.Remove(stringTarget);
         }
 
         // update the context and select the next lightning arc
@@ -305,7 +314,7 @@ public struct LightningContext
     // Staging data before charge is even considered
     public Func<LightningContext, float> ArcRange;
     public Func<LightningContext, int> ArcForks;
-    public Func<LightningContext, bool> AllowLooping;
+    public Func<LightningContext, bool> ArcStacking;
 
     // Effect data which can take discharge into account
     public Func<float, LightningContext, string> LightningPrototype;
@@ -324,7 +333,7 @@ public struct LightningContext
 
         ArcRange = (LightningContext context) => 3.5f;
         ArcForks = (LightningContext context) => 1;
-        AllowLooping = (LightningContext context) => true;
+        ArcStacking = (LightningContext context) => true;
 
         LightningPrototype = (float discharge, LightningContext context) => "Lightning";
         Electrocute = (float discharge, LightningContext context) => true;
