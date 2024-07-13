@@ -11,8 +11,6 @@
       shader: unshaded
   - type: Physics
     canCollide: false
-  - type: Electrified
-    requirePower: false
   - type: Lightning
   - type: PointLight
     enabled: true
@@ -74,9 +72,6 @@
       layers:
         - state: "blue_lightning"
           shader: unshaded
-    - type: Electrified
-      requirePower: false
-      shockDamage: 40
     - type: Lightning
       canArc: true
       lightningPrototype: ChargedLightning
@@ -93,8 +88,6 @@
     layers:
     - state: "lightning_1"
       shader: unshaded
-  - type: Electrified
-    shockDamage: 0
   - type: Lightning
     lightningPrototype: Spark
   - type: PointLight
@@ -120,9 +113,6 @@
       layers:
         - state: "yellow_lightning"
           shader: unshaded
-    - type: Electrified
-      requirePower: false
-      shockDamage: 50
     - type: Lightning
       canArc: true
       lightningPrototype: SuperchargedLightning
@@ -146,9 +136,6 @@
       layers:
         - state: "red_lightning"
           shader: unshaded
-    - type: Electrified
-      requirePower: false
-      shockDamage: 60
     - type: Lightning
       canArc: true
       lightningPrototype: HyperchargedLightning
