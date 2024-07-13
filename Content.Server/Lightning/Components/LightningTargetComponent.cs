@@ -15,7 +15,7 @@ public sealed partial class LightningTargetComponent : Component
     /// <summary>
     /// The probability weighting of being stuck by lightning, compared against other nearby lightning targets.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float Weighting = 1f;
 
     /// <summary>
@@ -23,6 +23,20 @@ public sealed partial class LightningTargetComponent : Component
     /// This number controls how many bounces the lightning bolt has left after hitting that target.
     /// At high values, the lightning will not travel farther than that entity.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public int LightningResistance = 1; //by default, reduces the number of bounces from this target by 1
+    [DataField]
+    public int LightningArcReduction = 1; //by default, reduces the number of bounces from this target by 1
+
+    /// <summary>
+    /// Lightning has a charge that gauges its energy.
+    /// This number subtracts residual charge after absorption.
+    /// </summary>
+    [DataField]
+    public float LightningChargeReduction = 0f;
+
+    /// <summary>
+    /// Lightning has a charge that gauges its energy.
+    /// This number multiplies residual charge after absorption.
+    /// </summary>
+    [DataField]
+    public float LightningChargeMultiplier = 1f;
 }

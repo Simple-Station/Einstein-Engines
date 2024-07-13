@@ -20,11 +20,21 @@ public sealed class LightningTargetSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<LightningTargetComponent, HitByLightningEvent>(OnHitByLightning);
+        SubscribeLocalEvent<LightningTargetComponent, LightningStageEvent>(OnLightningStage);
+        SubscribeLocalEvent<LightningTargetComponent, LightningEffectEvent>(OnLightningEffect);
     }
 
-    private void OnHitByLightning(Entity<LightningTargetComponent> uid, ref HitByLightningEvent args)
+    private void OnLightningStage(Entity<LightningTargetComponent> uid, ref LightningStageEvent args)
     {
+        // Reduce the number of lightning jumps based on lightning modifiers
+        args.Context.MaxArcs -= uid.Comp.LightningArcReduction;
+    }
+    private void OnLightningEffect(Entity<LightningTargetComponent> uid, ref LightningEffectEvent args)
+    {
+        // Reduce the residual charge of lighting based on lightning modifiers
+        args.Context.Charge -= uid.Comp.LightningChargeReduction;
+        args.Context.Charge *= uid.Comp.LightningChargeMultiplier;
+
         if (args.Context.Electrocute(args.Discharge, args.Context))
         {
             _electrocutionSystem.TryDoElectrocution(uid, args.Context.Invoker, (int) Math.Round(args.Context.ElectrocuteDamage(args.Discharge, args.Context), 0), TimeSpan.FromSeconds(5f), true, ignoreInsulation: args.Context.ElectrocuteIgnoreInsulation(args.Discharge, args.Context));
@@ -38,10 +48,10 @@ public sealed class LightningTargetSystem : EntitySystem
             _damageable.TryChangeDamage(uid, damage, true);
             */
 
-            if (!TryComp<ExplosiveComponent>(args.Target, out var comp))
+            if (!TryComp<ExplosiveComponent>(args.Target, out var bomb))
                 return;
 
-            _explosionSystem.TriggerExplosive(args.Target, comp, true);
+            _explosionSystem.TriggerExplosive(args.Target, bomb, true);
         }
     }
 }

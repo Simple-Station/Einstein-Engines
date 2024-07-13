@@ -203,6 +203,10 @@ public sealed class LightningSystem : SharedLightningSystem
         if (!context.History.Contains(user))
             context.History.Add(user);
 
+        // send an event to the staged target to be influenced by resistance
+        var ev = new LightningStageEvent(lightningArc.Target, context);
+        RaiseLocalEvent(lightningArc.Target, ref ev);
+
         // check for any more targets
         if (!TryGetLightningTargets(Transform(target).Coordinates, context.ArcRange(context), out var weights))
         {
@@ -272,7 +276,7 @@ public sealed class LightningSystem : SharedLightningSystem
             _beam.TryCreateBeam(lightningArc.User, lightningArc.Target, context.LightningPrototype(discharge, context), spriteState);
 
             // we may not want to trigger certain lightning events
-            var ev = new HitByLightningEvent(discharge, lightningArc.Target, context);
+            var ev = new LightningEffectEvent(discharge, lightningArc.Target, context);
             RaiseLocalEvent(lightningArc.Target, ref ev);
 
             if (context.Charge <= 0f)
@@ -340,9 +344,27 @@ public struct LightningContext
 };
 
 /// <summary>
-/// Raised directed on the target when an entity becomes the target of a lightning strike (not when touched)
+/// Raised on an entity when it becomes the target of a lightning strike
 /// </summary>
-/// <param name="Discharge">The energy (J) that was discharged by the lightning bolt.</param>
+/// <param name="Target"> The potential target of the lightning strike.</param>
 /// <param name="Context">The field that encapsulates the data used to make the lightning bolt.</param>
 [ByRefEvent]
-public readonly record struct HitByLightningEvent(float Discharge, EntityUid Target, LightningContext Context);
+public struct LightningStageEvent(EntityUid target, LightningContext context)
+{
+    public EntityUid Target = target;
+    public LightningContext Context = context;
+}
+
+/// <summary>
+/// Raised on a target when it is affected by the lightning strike
+/// </summary>
+/// <param name="Discharge">The energy (J) that was discharged by the lightning bolt.</param>
+/// <param name="Target"> The target of the lightning strike.</param>
+/// <param name="Context">The field that encapsulates the data used to make the lightning bolt.</param>
+[ByRefEvent]
+public struct LightningEffectEvent(float discharge, EntityUid target, LightningContext context)
+{
+    public float Discharge = discharge;
+    public EntityUid Target = target;
+    public LightningContext Context = context;
+}
