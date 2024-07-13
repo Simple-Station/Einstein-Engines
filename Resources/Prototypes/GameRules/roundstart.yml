@@ -149,6 +149,10 @@
     - prefRoles: [ Traitor ]
       max: 12
       playerRatio: 10
+      blacklist:
+        components:
+        - AntagImmune
+        - Changeling # Goobstation
       lateJoinAdditional: true
       mindComponents:
       - type: TraitorRole
