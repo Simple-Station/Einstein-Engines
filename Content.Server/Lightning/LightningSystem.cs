@@ -114,7 +114,7 @@ public sealed class LightningSystem : SharedLightningSystem
         bool allowLooping = false,
         string lightningPrototype = "Lightning",
         bool electrocute = true,
-        bool explode = false
+        bool explode = true
     )
     {
         LightningContext context = new LightningContext()

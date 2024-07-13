@@ -1,4 +1,5 @@
 using Content.Server.Electrocution;
+using Content.Server.Explosion.Components;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Lightning;
 using Content.Server.Lightning.Components;
@@ -31,19 +32,16 @@ public sealed class LightningTargetSystem : EntitySystem
 
         if (args.Context.Explode(args.Discharge, args.Context))
         {
+            /*
             DamageSpecifier damage = new();
             damage.DamageDict.Add("Structural", uid.Comp.DamageFromLightning);
             _damageable.TryChangeDamage(uid, damage, true);
+            */
 
-            if (uid.Comp.LightningExplode)
-            {
-                _explosionSystem.QueueExplosion(
-                    Transform(uid).MapPosition,
-                    uid.Comp.ExplosionPrototype,
-                    uid.Comp.TotalIntensity, uid.Comp.Dropoff,
-                    uid.Comp.MaxTileIntensity,
-                    canCreateVacuum: false);
-            }
+            if (!TryComp<ExplosiveComponent>(args.Target, out var comp))
+                return;
+
+            _explosionSystem.TriggerExplosive(args.Target, comp, true);
         }
     }
 }

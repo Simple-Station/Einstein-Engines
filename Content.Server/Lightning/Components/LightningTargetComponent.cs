@@ -17,6 +17,7 @@ public sealed partial class LightningTargetComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float Weighting = 1f;
+
     /// <summary>
     /// Lightning has a number of bounces into neighboring targets.
     /// This number controls how many bounces the lightning bolt has left after hitting that target.
@@ -24,42 +25,4 @@ public sealed partial class LightningTargetComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public int LightningResistance = 1; //by default, reduces the number of bounces from this target by 1
-
-    // BOOM PART
-
-    /// <summary>
-    /// Will the entity explode after being struck by lightning?
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool LightningExplode = true;
-
-    /// <summary>
-    /// The explosion prototype to spawn
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<ExplosionPrototype> ExplosionPrototype = "Default";
-
-    /// <summary>
-    /// The total amount of intensity an explosion can achieve
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float TotalIntensity = 25f;
-
-    /// <summary>
-    /// How quickly does the explosion's power slope? Higher = smaller area and more concentrated damage, lower = larger area and more spread out damage
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float Dropoff = 2f;
-
-    /// <summary>
-    /// How much intensity can be applied per tile?
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MaxTileIntensity = 5f;
-
-    /// <summary>
-    /// how much structural damage the object takes from a lightning strike
-    /// </summary>
-    [DataField]
-    public FixedPoint2 DamageFromLightning = 1;
 }
