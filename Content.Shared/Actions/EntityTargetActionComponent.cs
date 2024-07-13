@@ -4,6 +4,9 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Actions;
 
+/// <summary>
+/// Used on action entities to define an action that triggers when targeting an entity.
+/// </summary>
 [RegisterComponent, NetworkedComponent]
 public sealed partial class EntityTargetActionComponent : BaseTargetActionComponent
 {
@@ -16,9 +19,17 @@ public sealed partial class EntityTargetActionComponent : BaseTargetActionCompon
     [NonSerialized]
     public EntityTargetActionEvent? Event;
 
+    /// <summary>
+    /// Determines which entities are valid targets for this action.
+    /// </summary>
+    /// <remarks>No whitelist check when null.</remarks>
     [DataField] public EntityWhitelist? Whitelist;
+
     [DataField] public EntityWhitelist? Blacklist;
 
+    /// <summary>
+    /// Whether this action considers the user as a valid target entity when using this action.
+    /// </summary>
     [DataField] public bool CanTargetSelf = true;
 }
 
