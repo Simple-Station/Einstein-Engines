@@ -208,6 +208,7 @@ public sealed class LightningSystem : SharedLightningSystem
         // send an event to the staged target to be influenced by resistance
         var ev = new LightningStageEvent(lightningArc.Target, context);
         RaiseLocalEvent(lightningArc.Target, ref ev);
+        context = ev.Context;
 
         // check for any more targets
         if (!TryGetLightningTargets(Transform(target).Coordinates, context.ArcRange(context), out var weights))
@@ -284,9 +285,10 @@ public sealed class LightningSystem : SharedLightningSystem
             var spriteState = LightningRandomizer();
             _beam.TryCreateBeam(lightningArc.User, lightningArc.Target, context.LightningPrototype(discharge, context), spriteState);
 
-            // we may not want to trigger certain lightning events
+            // send an event to the target to be affected by lightning, also inherit information
             var ev = new LightningEffectEvent(discharge, lightningArc.Target, context);
             RaiseLocalEvent(lightningArc.Target, ref ev);
+            context = ev.Context;
 
             if (context.Charge <= 0f)
                 break;
@@ -333,7 +335,7 @@ public struct LightningContext
 
         ArcRange = (LightningContext context) => 3.5f;
         ArcForks = (LightningContext context) => 1;
-        ArcStacking = (LightningContext context) => true;
+        ArcStacking = (LightningContext context) => false;
 
         LightningPrototype = (float discharge, LightningContext context) => "Lightning";
         Electrocute = (float discharge, LightningContext context) => true;

@@ -22,9 +22,10 @@ public sealed partial class LightningTargetComponent : Component
     /// Lightning has a number of bounces into neighboring targets.
     /// This number controls how many bounces the lightning bolt has left after hitting that target.
     /// At high values, the lightning will not travel farther than that entity.
+    /// For the love of god, do not make this number negative.
     /// </summary>
     [DataField]
-    public int LightningArcReduction = 1; //by default, reduces the number of bounces from this target by 1
+    public int LightningArcReduction = 0;
 
     /// <summary>
     /// Lightning has a charge that gauges its energy.
