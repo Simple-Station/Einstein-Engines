@@ -424,15 +424,18 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         if (siemensCoefficient <= 0)
             return false;
 
+        var checkDamage = false;
         if (damageSpecifier != null)
         {
             damageSpecifier *= siemensCoefficient;
             var actual = _damageable.TryChangeDamage(uid, damageSpecifier, origin: sourceUid);
 
-            if (actual != null)
+            if (actual != null && actual.DamageDict.Values.Sum() > FixedPoint2.Zero)
             {
                 _adminLogger.Add(LogType.Electrocution,
                     $"{ToPrettyString(uid):entity} received {actual.GetTotal():damage} powered electrocution damage{(sourceUid != null ? " from " + ToPrettyString(sourceUid.Value) : ""):source}");
+
+                checkDamage = true;
             }
         }
 
@@ -443,10 +446,11 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
             && _statusEffects.TryAddStatusEffect<ElectrocutedComponent>(uid, StatusEffectKey, time, refresh, statusEffects))
         {
             _stun.TryParalyze(uid, time * ParalyzeTimeMultiplier, refresh, statusEffects);
+
             checkStun = true;
         }
 
-        if (damageSpecifier == null || !checkStun)
+        if (!checkDamage && !checkStun)
             return false;
 
         // TODO: Sparks here.
