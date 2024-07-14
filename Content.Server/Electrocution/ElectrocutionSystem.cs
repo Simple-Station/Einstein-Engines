@@ -416,28 +416,13 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
 
         return DoCommonElectrocution(uid, sourceUid, damage, time, refresh, siemensCoefficient, statusEffects);
     }
+
     private bool DoCommonElectrocution(EntityUid uid, EntityUid? sourceUid,
         DamageSpecifier? damageSpecifier, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
         StatusEffectsComponent? statusEffects = null)
     {
         if (siemensCoefficient <= 0)
             return false;
-
-        if (!Resolve(uid, ref statusEffects, false) ||
-            !_statusEffects.CanApplyEffect(uid, StatusEffectKey, statusEffects))
-        {
-            return false;
-        }
-
-        if (!_statusEffects.TryAddStatusEffect<ElectrocutedComponent>(uid, StatusEffectKey, time, refresh, statusEffects))
-            return false;
-
-        var shouldStun = siemensCoefficient > 0.5f;
-
-        if (shouldStun)
-            _stun.TryParalyze(uid, time * ParalyzeTimeMultiplier, refresh, statusEffects);
-
-        // TODO: Sparks here.
 
         if (damageSpecifier != null)
         {
@@ -450,6 +435,21 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
                     $"{ToPrettyString(uid):entity} received {actual.GetTotal():damage} powered electrocution damage{(sourceUid != null ? " from " + ToPrettyString(sourceUid.Value) : ""):source}");
             }
         }
+
+        var checkStun = false;
+        if (siemensCoefficient > 0.5f
+            && Resolve(uid, ref statusEffects, false)
+            && _statusEffects.CanApplyEffect(uid, StatusEffectKey, statusEffects)
+            && _statusEffects.TryAddStatusEffect<ElectrocutedComponent>(uid, StatusEffectKey, time, refresh, statusEffects))
+        {
+            _stun.TryParalyze(uid, time * ParalyzeTimeMultiplier, refresh, statusEffects);
+            checkStun = true;
+        }
+
+        if (damageSpecifier == null || !checkStun)
+            return false;
+
+        // TODO: Sparks here.
 
         _stuttering.DoStutter(uid, time * StutteringTimeMultiplier, refresh, statusEffects);
         _jittering.DoJitter(uid, time * JitterTimeMultiplier, refresh, JitterAmplitude, JitterFrequency, true, statusEffects);
