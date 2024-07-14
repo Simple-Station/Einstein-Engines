@@ -62,7 +62,7 @@
     activeSupplyRate: 15000
   - type: TeslaCoil
   - type: LightningTarget
-    weighting: 100
+    weighting: 200
   - type: PowerNetworkBattery
     maxSupply: 1000000
     supplyRampTolerance: 1000000
@@ -73,6 +73,7 @@
   - type: InteractionOutline
   - type: Damageable
     damageContainer: StructuralInorganic
+    damageModifierSet: ShockAbsorber
   - type: ExaminableDamage
     messages: WindowMessages
   - type: Repairable
@@ -145,7 +146,8 @@
           False: { state: grounding_rod_open }
   - type: LightningSparking
   - type: LightningTarget
-    weighting: 300
+    weighting: 400
+    lightningArcReduction: 1
     lightningChargeMultiplier: 0.5 # consume charge when struck
   - type: Anchorable
   - type: Rotatable
@@ -157,6 +159,7 @@
   - type: Repairable
   - type: Damageable
     damageContainer: StructuralInorganic
+    damageModifierSet: ShockAbsorber
   - type: DamageVisuals
     thresholds: [8, 16, 25]
     damageDivisor: 3.333
