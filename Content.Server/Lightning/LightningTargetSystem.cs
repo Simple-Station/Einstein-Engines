@@ -3,8 +3,6 @@ using Content.Server.Explosion.Components;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Lightning;
 using Content.Server.Lightning.Components;
-using Content.Shared.Damage;
-using Content.Shared.Electrocution;
 
 namespace Content.Server.Tesla.EntitySystems;
 
@@ -13,7 +11,6 @@ namespace Content.Server.Tesla.EntitySystems;
 /// </summary>
 public sealed class LightningTargetSystem : EntitySystem
 {
-    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
     [Dependency] private readonly ElectrocutionSystem _electrocutionSystem = default!;
 
@@ -36,8 +33,6 @@ public sealed class LightningTargetSystem : EntitySystem
         // Reduce the residual charge of lighting based on lightning modifiers
         args.Context.Charge -= comp.LightningChargeReduction;
         args.Context.Charge *= comp.LightningChargeMultiplier;
-
-        // TODO - Add a damage specifier for machines
 
         // Attempt to electrocute the target
         if (args.Context.Electrocute(args.Discharge, args.Context))
