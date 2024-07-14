@@ -37,14 +37,7 @@ public sealed class LightningTargetSystem : EntitySystem
         args.Context.Charge -= comp.LightningChargeReduction;
         args.Context.Charge *= comp.LightningChargeMultiplier;
 
-        // TODO - Make checking for insulation actually work
-        // Deal damage as specified by lightning
-        float damageCoefficient = 1f;
-        /*
-        if (!args.Context.DamageIgnoreInsulation(args.Discharge, args.Context) && TryComp<InsulatedComponent>(uid, out var insulated))
-            coefficient = insulated.Coefficient;
-        */
-        _damageable.TryChangeDamage(uid, args.Context.Damage(args.Discharge, args.Context) * damageCoefficient, true);
+        // TODO - Add a damage specifier for machines
 
         // Attempt to electrocute the target
         if (args.Context.Electrocute(args.Discharge, args.Context))

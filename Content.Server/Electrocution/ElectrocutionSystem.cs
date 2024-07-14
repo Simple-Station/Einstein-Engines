@@ -12,6 +12,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Electrocution;
+using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
@@ -212,7 +213,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         TryDoElectrifiedAct(uid, args.User, siemens, electrified);
     }
 
-    private float CalculateElectrifiedDamageScale(float power)
+    public float CalculateElectrifiedDamageScale(float power)
     {
         // A logarithm allows a curve of damage that grows quickly, but slows down dramatically past a value. This keeps the damage to a reasonable range.
         const float DamageShift = 1.67f; // Shifts the curve for an overall higher or lower damage baseline
@@ -313,13 +314,26 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         }
     }
 
+    public bool TryDoElectrocution(
+        EntityUid uid, EntityUid? sourceUid, FixedPoint2 shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
+        StatusEffectsComponent? statusEffects = null, bool ignoreInsulation = false)
+    {
+        var damage = new DamageSpecifier();
+        damage.DamageDict.Add("Shock", shockDamage.Value);
+
+        return TryDoElectrocution(
+            uid, sourceUid, damage, time, refresh, siemensCoefficient,
+            statusEffects, ignoreInsulation
+        );
+    }
+
     /// <inheritdoc/>
     public override bool TryDoElectrocution(
-        EntityUid uid, EntityUid? sourceUid, int shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
+        EntityUid uid, EntityUid? sourceUid, DamageSpecifier damageSpecifier, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
         StatusEffectsComponent? statusEffects = null, bool ignoreInsulation = false)
     {
         if (!DoCommonElectrocutionAttempt(uid, sourceUid, ref siemensCoefficient, ignoreInsulation)
-            || !DoCommonElectrocution(uid, sourceUid, shockDamage, time, refresh, siemensCoefficient, statusEffects))
+            || !DoCommonElectrocution(uid, sourceUid, damageSpecifier, time, refresh, siemensCoefficient, statusEffects))
             return false;
 
         RaiseLocalEvent(uid, new ElectrocutedEvent(uid, sourceUid, siemensCoefficient), true);
@@ -393,19 +407,21 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
     }
 
     private bool DoCommonElectrocution(EntityUid uid, EntityUid? sourceUid,
-        int? shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
+        FixedPoint2? shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
+        StatusEffectsComponent? statusEffects = null)
+    {
+        var damage = new DamageSpecifier();
+        if (shockDamage.HasValue)
+            damage.DamageDict.Add("Shock", shockDamage.Value);
+
+        return DoCommonElectrocution(uid, sourceUid, damage, time, refresh, siemensCoefficient, statusEffects);
+    }
+    private bool DoCommonElectrocution(EntityUid uid, EntityUid? sourceUid,
+        DamageSpecifier? damageSpecifier, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
         StatusEffectsComponent? statusEffects = null)
     {
         if (siemensCoefficient <= 0)
             return false;
-
-        if (shockDamage != null)
-        {
-            shockDamage = (int) (shockDamage * siemensCoefficient);
-
-            if (shockDamage.Value <= 0)
-                return false;
-        }
 
         if (!Resolve(uid, ref statusEffects, false) ||
             !_statusEffects.CanApplyEffect(uid, StatusEffectKey, statusEffects))
@@ -423,10 +439,10 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
 
         // TODO: Sparks here.
 
-        if (shockDamage is { } dmg)
+        if (damageSpecifier != null)
         {
-            var actual = _damageable.TryChangeDamage(uid,
-                new DamageSpecifier(_prototypeManager.Index<DamageTypePrototype>(DamageType), dmg), origin: sourceUid);
+            damageSpecifier *= siemensCoefficient;
+            var actual = _damageable.TryChangeDamage(uid, damageSpecifier, origin: sourceUid);
 
             if (actual != null)
             {
