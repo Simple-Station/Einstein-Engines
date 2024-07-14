@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Botany;
 using Content.Server.Chat.Managers;
@@ -5,54 +6,62 @@ using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Psionics;
+using Content.Server.Research.Systems;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Psionics.Glimmer;
+using Content.Shared.Random.Helpers;
+using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
-using Robust.Server.GameObjects;
+using Content.Shared.Throwing;
+using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Research.Oracle;
 
 public sealed class OracleSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionSystem = default!;
-    [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
-    [Dependency] private readonly PuddleSystem _puddleSystem = default!;
+    [Dependency] private readonly IChatManager _chatMan = default!;
+    [Dependency] private readonly GlimmerSystem _glimmer = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly PuddleSystem _puddles = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly ResearchSystem _research = default!;
+    [Dependency] private readonly SolutionContainerSystem _solutions = default!;
+    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Update(float frameTime)
     {
-        base.Update(frameTime);
-        foreach (var oracle in EntityQuery<OracleComponent>())
+        var query = EntityQueryEnumerator<OracleComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
-            oracle.Accumulator += frameTime;
-            oracle.BarkAccumulator += frameTime;
-            oracle.RejectAccumulator += frameTime;
-            if (oracle.BarkAccumulator >= oracle.BarkTime.TotalSeconds)
+            if (_timing.CurTime >= comp.NextBarkTime)
             {
-                oracle.BarkAccumulator = 0;
-                var message = Loc.GetString(_random.Pick(oracle.DemandMessages), ("item", oracle.DesiredPrototype.Name))
-                    .ToUpper();
-                _chat.TrySendInGameICMessage(oracle.Owner, message, InGameICChatType.Speak, false);
+                comp.NextBarkTime = _timing.CurTime + comp.BarkDelay;
+
+                var message = Loc.GetString(_random.Pick(comp.DemandMessages), ("item", comp.DesiredPrototype.Name)).ToUpper();
+                _chat.TrySendInGameICMessage(uid, message, InGameICChatType.Speak, false);
             }
 
-            if (oracle.Accumulator >= oracle.ResetTime.TotalSeconds)
+            if (_timing.CurTime >= comp.NextDemandTime)
             {
-                oracle.LastDesiredPrototype = oracle.DesiredPrototype;
-                NextItem(oracle);
+                var last = comp.DesiredPrototype;
+                if (NextItem((uid, comp)))
+                    comp.LastDesiredPrototype = last;
             }
         }
+
+        query.Dispose();
     }
 
     public override void Initialize()
@@ -63,196 +72,222 @@ public sealed class OracleSystem : EntitySystem
         SubscribeLocalEvent<OracleComponent, InteractUsingEvent>(OnInteractUsing);
     }
 
-    private void OnInit(EntityUid uid, OracleComponent component, ComponentInit args)
+    private void OnInit(Entity<OracleComponent> entity, ref ComponentInit args)
     {
-        NextItem(component);
+        NextItem(entity);
     }
 
-    private void OnInteractHand(EntityUid uid, OracleComponent component, InteractHandEvent args)
+    private void OnInteractHand(Entity<OracleComponent> oracle, ref InteractHandEvent args)
     {
-        if (!HasComp<PotentialPsionicComponent>(args.User) || HasComp<PsionicInsulationComponent>(args.User))
+        if (!HasComp<PotentialPsionicComponent>(args.User) || HasComp<PsionicInsulationComponent>(args.User)
+            || !TryComp<ActorComponent>(args.User, out var actor))
             return;
 
-        if (!TryComp<ActorComponent>(args.User, out var actor))
-            return;
+        SendTelepathicInfo(oracle, actor.PlayerSession.Channel,
+            Loc.GetString("oracle-current-item", ("item", oracle.Comp.DesiredPrototype.Name)));
 
-        var message = Loc.GetString("oracle-current-item", ("item", component.DesiredPrototype.Name));
-
-        var messageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message",
-            ("telepathicChannelName", Loc.GetString("chat-manager-telepathic-channel-name")), ("message", message));
-
-        _chatManager.ChatMessageToOne(ChatChannel.Telepathic,
-            message, messageWrap, uid, false, actor.PlayerSession.ConnectedClient, Color.PaleVioletRed);
-
-        if (component.LastDesiredPrototype != null)
-        {
-            var message2 = Loc.GetString("oracle-previous-item", ("item", component.LastDesiredPrototype.Name));
-            var messageWrap2 = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message",
-                ("telepathicChannelName", Loc.GetString("chat-manager-telepathic-channel-name")),
-                ("message", message2));
-
-            _chatManager.ChatMessageToOne(ChatChannel.Telepathic,
-                message2, messageWrap2, uid, false, actor.PlayerSession.ConnectedClient, Color.PaleVioletRed);
-        }
+        if (oracle.Comp.LastDesiredPrototype != null)
+            SendTelepathicInfo(oracle, actor.PlayerSession.Channel,
+                Loc.GetString("oracle-previous-item", ("item", oracle.Comp.LastDesiredPrototype.Name)));
     }
 
-    private void OnInteractUsing(EntityUid uid, OracleComponent component, InteractUsingEvent args)
+    private void OnInteractUsing(Entity<OracleComponent> oracle, ref InteractUsingEvent args)
     {
-        if (HasComp<MobStateComponent>(args.Used))
+        if (args.Handled)
             return;
 
-        if (!TryComp<MetaDataComponent>(args.Used, out var meta))
+        if (HasComp<MobStateComponent>(args.Used) || !TryComp<MetaDataComponent>(args.Used, out var meta) || meta.EntityPrototype == null)
             return;
 
-        if (meta.EntityPrototype == null)
-            return;
+        var requestValid = IsCorrectItem(meta.EntityPrototype, oracle.Comp.DesiredPrototype);
+        var updateRequest = true;
 
-        var validItem = CheckValidity(meta.EntityPrototype, component.DesiredPrototype);
-
-        var nextItem = true;
-
-        if (component.LastDesiredPrototype != null &&
-            CheckValidity(meta.EntityPrototype, component.LastDesiredPrototype))
+        if (oracle.Comp.LastDesiredPrototype != null &&
+            IsCorrectItem(meta.EntityPrototype, oracle.Comp.LastDesiredPrototype))
         {
-            nextItem = false;
-            validItem = true;
-            component.LastDesiredPrototype = null;
+            updateRequest = false;
+            requestValid = true;
+            oracle.Comp.LastDesiredPrototype = null;
         }
 
-        if (!validItem)
+        if (!requestValid)
         {
             if (!HasComp<RefillableSolutionComponent>(args.Used) &&
-                component.RejectAccumulator >= component.RejectTime.TotalSeconds)
+                _timing.CurTime >= oracle.Comp.NextRejectTime)
             {
-                component.RejectAccumulator = 0;
-                _chat.TrySendInGameICMessage(uid, _random.Pick(component.RejectMessages), InGameICChatType.Speak, true);
+                oracle.Comp.NextRejectTime = _timing.CurTime + oracle.Comp.RejectDelay;
+                _chat.TrySendInGameICMessage(oracle, _random.Pick(oracle.Comp.RejectMessages), InGameICChatType.Speak, true);
             }
+
             return;
         }
 
-        EntityManager.QueueDeleteEntity(args.Used);
+        DispenseRewards(oracle, Transform(args.User).Coordinates);
+        QueueDel(args.Used);
 
-        EntityManager.SpawnEntity("ResearchDisk5000", Transform(args.User).Coordinates);
-
-        DispenseLiquidReward(uid, component);
-
-        var i = _random.Next(1, 4);
-
-        while (i != 0)
-        {
-            EntityManager.SpawnEntity("MaterialBluespace1", Transform(args.User).Coordinates);
-            i--;
-        }
-
-        if (nextItem)
-            NextItem(component);
+        if (updateRequest)
+            NextItem(oracle);
     }
 
-    private bool CheckValidity(EntityPrototype given, EntityPrototype target)
+    private void SendTelepathicInfo(Entity<OracleComponent> oracle, INetChannel client, string message)
     {
-        // 1: directly compare Names
-        // name instead of ID because the oracle asks for them by name
-        // this could potentially lead to like, labeller exploits maybe but so far only mob names can be fully player-set.
+        var messageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message",
+            ("telepathicChannelName", Loc.GetString("chat-manager-telepathic-channel-name")),
+            ("message", message));
+
+        _chatMan.ChatMessageToOne(ChatChannel.Telepathic,
+            message, messageWrap, oracle, false, client, Color.PaleVioletRed);
+    }
+
+    private bool IsCorrectItem(EntityPrototype given, EntityPrototype target)
+    {
+        // Nyano, what is this shit?
+        // Why are we comparing by name instead of prototype id?
+        // Why is this ever necessary?
+        // What were you trying to accomplish?!
         if (given.Name == target.Name)
             return true;
 
         return false;
     }
 
-    private void DispenseLiquidReward(EntityUid uid, OracleComponent component)
+    private void DispenseRewards(Entity<OracleComponent> oracle, EntityCoordinates throwTarget)
     {
-        if (!_solutionSystem.TryGetSolution(uid, OracleComponent.SolutionName, out var fountainSol))
+        foreach (var rewardRandom in oracle.Comp.RewardEntities)
+        {
+            // Spawn each reward next to oracle and throw towards the target
+            var rewardProto = _protoMan.Index(rewardRandom).Pick(_random);
+            var reward = EntityManager.SpawnNextToOrDrop(rewardProto, oracle);
+            _throwing.TryThrow(reward, throwTarget, recoil: false);
+        }
+
+        DispenseLiquidReward(oracle);
+    }
+
+    private void DispenseLiquidReward(Entity<OracleComponent> oracle)
+    {
+        if (!_solutions.TryGetSolution(oracle.Owner, OracleComponent.SolutionName, out var fountainSol))
             return;
 
-        var allReagents = _prototypeManager.EnumeratePrototypes<ReagentPrototype>()
-            .Where(x => !x.Abstract)
-            .Select(x => x.ID).ToList();
+        // Why is this hardcoded?
+        var amount = MathF.Round(20 + _random.Next(1, 30) + _glimmer.Glimmer / 10f);
+        var temporarySol = new Solution();
+        var reagent = _protoMan.Index(oracle.Comp.RewardReagents).Pick(_random);
 
-        var amount = 20 + _random.Next(1, 30) + _glimmerSystem.Glimmer / 10f;
-        amount = (float) Math.Round(amount);
+        if (_random.Prob(oracle.Comp.AbnormalReagentChance))
+        {
+            var allReagents = _protoMan.EnumeratePrototypes<ReagentPrototype>()
+                .Where(x => !x.Abstract)
+                .Select(x => x.ID).ToList();
 
-        var sol = new Solution();
-        var reagent = "";
-
-        if (_random.Prob(0.2f))
             reagent = _random.Pick(allReagents);
-        else
-            reagent = _random.Pick(component.RewardReagents);
+        }
 
-        sol.AddReagent(reagent, amount);
-
-        _solutionSystem.TryMixAndOverflow(fountainSol.Value, sol, fountainSol.Value.Comp.Solution.MaxVolume, out var overflowing);
+        temporarySol.AddReagent(reagent, amount);
+        _solutions.TryMixAndOverflow(fountainSol.Value, temporarySol, fountainSol.Value.Comp.Solution.MaxVolume, out var overflowing);
 
         if (overflowing != null && overflowing.Volume > 0)
-            _puddleSystem.TrySpillAt(uid, overflowing, out var _);
+            _puddles.TrySpillAt(oracle, overflowing, out var _);
     }
 
-    private void NextItem(OracleComponent component)
+    private bool NextItem(Entity<OracleComponent> oracle)
     {
-        component.Accumulator = 0;
-        component.BarkAccumulator = 0;
-        component.RejectAccumulator = 0;
-        var protoString = GetDesiredItem(component);
-        if (_prototypeManager.TryIndex<EntityPrototype>(protoString, out var proto))
-            component.DesiredPrototype = proto;
-        else
-            Logger.Error("Oracle can't index prototype " + protoString);
-    }
+        oracle.Comp.NextBarkTime = oracle.Comp.NextRejectTime = TimeSpan.Zero;
+        oracle.Comp.NextDemandTime = _timing.CurTime + oracle.Comp.DemandDelay;
 
-    private string GetDesiredItem(OracleComponent component)
-    {
-        return _random.Pick(GetAllProtos(component));
-    }
-
-
-    public List<string> GetAllProtos(OracleComponent component)
-    {
-        var allTechs = _prototypeManager.EnumeratePrototypes<TechnologyPrototype>();
-        var allRecipes = new List<string>();
-
-        foreach (var tech in allTechs)
+        var protoId = GetDesiredItem(oracle);
+        if (protoId != null && _protoMan.TryIndex<EntityPrototype>(protoId, out var proto))
         {
-            foreach (var recipe in tech.RecipeUnlocks)
-            {
-                var recipeProto = _prototypeManager.Index(recipe);
-                allRecipes.Add(recipeProto.Result);
-            }
+            oracle.Comp.DesiredPrototype = proto;
+            return true;
         }
 
-        var allPlants = _prototypeManager.EnumeratePrototypes<SeedPrototype>().Select(x => x.ProductPrototypes[0])
+        return false;
+    }
+
+    // TODO: find a way to not just use string literals here (weighted random doesn't support enums)
+    private string? GetDesiredItem(Entity<OracleComponent> oracle)
+    {
+        var demand = _protoMan.Index(oracle.Comp.DemandTypes).Pick(_random);
+
+        string? proto;
+        if (demand == "tech" && GetRandomTechProto(oracle, out proto))
+            return proto;
+
+        // This is also a fallback for when there's no research server to form an oracle tech request.
+        if (demand is "plant" or "tech" && GetRandomPlantProto(oracle, out proto))
+            return proto;
+
+        return null;
+    }
+
+    private bool GetRandomTechProto(Entity<OracleComponent> oracle, [NotNullWhen(true)] out string? proto)
+    {
+        // Try to find the most advanced server.
+        var database = _research.GetServerIds()
+            .Select(x => _research.TryGetServerById(x, out var serverUid, out _) ? serverUid : null)
+            .Where(x => x != null && Transform(x.Value).GridUid == Transform(oracle).GridUid)
+            .Select(x =>
+            {
+                TryComp<TechnologyDatabaseComponent>(x!.Value, out var comp);
+                return new Entity<TechnologyDatabaseComponent?>(x.Value, comp);
+            })
+            .Where(x => x.Comp != null)
+            .OrderByDescending(x =>
+                _research.GetDisciplineTiers(x.Comp!).Select(pair => pair.Value).Max())
+            .FirstOrDefault(EntityUid.Invalid);
+
+        if (database.Owner == EntityUid.Invalid)
+        {
+            Log.Warning($"Cannot find an applicable server on grid {Transform(oracle).GridUid} to form an oracle request.");
+            proto = null;
+            return false;
+        }
+
+        // Select a technology that's either already unlocked, or can be unlocked from current research
+        var techs = _protoMan.EnumeratePrototypes<TechnologyPrototype>()
+            .Where(x => !x.Hidden)
+            .Where(x =>
+                _research.IsTechnologyUnlocked(database.Owner, x, database.Comp)
+                || _research.IsTechnologyAvailable(database.Comp!, x))
+            .SelectMany(x => x.RecipeUnlocks)
+            .Select(x => _protoMan.Index(x).Result)
+            .Where(x => IsDemandValid(oracle, x))
             .ToList();
-        var allProtos = allRecipes.Concat(allPlants).ToList();
-        var blacklist = component.BlacklistedPrototypes.ToList();
 
-        foreach (var proto in allProtos)
+        // Unlikely.
+        if (techs.Count == 0)
         {
-            if (!_prototypeManager.TryIndex<EntityPrototype>(proto, out var entityProto))
-            {
-                blacklist.Add(proto);
-                continue;
-            }
-
-            if (!entityProto.Components.ContainsKey("Item"))
-            {
-                blacklist.Add(proto);
-                continue;
-            }
-
-            if (entityProto.Components.ContainsKey("SolutionTransfer"))
-            {
-                blacklist.Add(proto);
-                continue;
-            }
-
-            if (entityProto.Components.ContainsKey("MobState"))
-                blacklist.Add(proto);
+            proto = null;
+            return false;
         }
 
-        foreach (var proto in blacklist)
+        proto = _random.Pick(techs);
+        return true;
+    }
+
+    private bool GetRandomPlantProto(Entity<OracleComponent> oracle, [NotNullWhen(true)] out string? proto)
+    {
+        var allPlants = _protoMan.EnumeratePrototypes<SeedPrototype>()
+            .Select(x => x.ProductPrototypes.FirstOrDefault())
+            .Where(x => IsDemandValid(oracle, x))
+            .ToList();
+
+        if (allPlants.Count == 0)
         {
-            allProtos.Remove(proto);
+            proto = null;
+            return false;
         }
 
-        return allProtos;
+        proto = _random.Pick(allPlants)!;
+        return true;
+    }
+
+    private bool IsDemandValid(Entity<OracleComponent> oracle, ProtoId<EntityPrototype>? id)
+    {
+        if (id == null || oracle.Comp.BlacklistedDemands.Contains(id.Value))
+            return false;
+
+        return _protoMan.TryIndex(id, out var proto) && proto.Components.ContainsKey("Item");
     }
 }

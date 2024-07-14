@@ -1,6 +1,5 @@
-using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Random;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Server.Research.Oracle;
 
@@ -9,37 +8,41 @@ public sealed partial class OracleComponent : Component
 {
     public const string SolutionName = "fountain";
 
-    [ViewVariables]
-    [DataField("accumulator")]
-    public float Accumulator;
+    [DataField(required: true)]
+    public ProtoId<WeightedRandomPrototype> DemandTypes;
 
-    [ViewVariables]
-    [DataField("resetTime")]
-    public TimeSpan ResetTime = TimeSpan.FromMinutes(10);
+    [DataField]
+    public List<ProtoId<EntityPrototype>> BlacklistedDemands = new();
 
-    [DataField("barkAccumulator")]
-    public float BarkAccumulator;
+    [DataField(required: true)]
+    public List<ProtoId<WeightedRandomEntityPrototype>> RewardEntities;
 
-    [DataField("barkTime")]
-    public TimeSpan BarkTime = TimeSpan.FromMinutes(1);
+    [DataField(required: true)]
+    public ProtoId<WeightedRandomPrototype> RewardReagents;
 
-    [DataField("rejectAccumulator")]
-    public float RejectAccumulator;
+    /// <summary>
+    ///     The chance to dispense a completely random chemical instead of what's listed in <see cref="RewardReagents"/>
+    /// </summary>
+    [DataField]
+    public float AbnormalReagentChance = 0.2f;
 
-    [DataField("rejectTime")]
-    public TimeSpan RejectTime = TimeSpan.FromSeconds(5);
+    [DataField]
+    public TimeSpan
+        NextDemandTime = TimeSpan.Zero,
+        NextBarkTime = TimeSpan.Zero,
+        NextRejectTime = TimeSpan.Zero;
+
+    [DataField]
+    public TimeSpan
+        DemandDelay = TimeSpan.FromMinutes(10),
+        BarkDelay = TimeSpan.FromMinutes(2),
+        RejectDelay = TimeSpan.FromSeconds(10);
 
     [ViewVariables(VVAccess.ReadWrite)]
     public EntityPrototype DesiredPrototype = default!;
 
     [ViewVariables(VVAccess.ReadWrite)]
     public EntityPrototype? LastDesiredPrototype = default!;
-
-    [DataField("rewardReagents", customTypeSerializer: typeof(PrototypeIdListSerializer<ReagentPrototype>))]
-    public IReadOnlyList<string> RewardReagents = new[]
-    {
-        "LotophagoiOil", "LotophagoiOil", "LotophagoiOil", "LotophagoiOil", "LotophagoiOil", "Wine", "Blood", "Ichor"
-    };
 
     [DataField("demandMessages")]
     public IReadOnlyList<string> DemandMessages = new[]
@@ -66,22 +69,5 @@ public sealed partial class OracleComponent : Component
         "ἀγνωσία",
         "γήινος",
         "σάκλας"
-    };
-
-    [DataField("blacklistedPrototypes")]
-    [ViewVariables(VVAccess.ReadOnly)]
-    public IReadOnlyList<string> BlacklistedPrototypes = new[]
-    {
-        "Drone",
-        "QSI",
-        "HandTeleporter",
-        "BluespaceBeaker",
-        "ClothingBackpackHolding",
-        "ClothingBackpackSatchelHolding",
-        "ClothingBackpackDuffelHolding",
-        "TrashBagOfHolding",
-        "BluespaceCrystal",
-        "InsulativeHeadcage",
-        "CrystalNormality",
     };
 }

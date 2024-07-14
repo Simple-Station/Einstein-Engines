@@ -37,10 +37,23 @@
   - type: Sprite
     state: bluespace
   - type: Stack
-    stackType: Bluespace
     count: 1
-  - type: Item
-    size: Tiny
+
+- type: entity
+  parent: MaterialBluespace1
+  id: MaterialBluespace3
+  suffix: 3
+  components:
+  - type: Stack
+    count: 3
+
+- type: entity
+  parent: MaterialBluespace1
+  id: MaterialBluespace5
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
 
 - type: entity
   parent: BaseItem
