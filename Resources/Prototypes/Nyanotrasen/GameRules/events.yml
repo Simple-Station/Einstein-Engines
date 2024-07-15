@@ -5,9 +5,7 @@
   noSpawn: true
   components:
     - type: StationEvent
-      startAnnouncement: station-event-noospheric-storm-announcement
-      startAudio:
-        path: /Audio/Announcements/noosphericstorm.ogg
+      startAnnouncement: true
       weight: 5
       earliestStart: 15
     - type: NoosphericStormRule

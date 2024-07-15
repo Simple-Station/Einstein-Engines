@@ -21,11 +21,13 @@ public sealed partial class ForeignerTraitComponent : Component
     /// <summary>
     ///     Whether this trait prevents the entity from understanding the base language.
     /// </summary>
+    [DataField]
     public bool CantUnderstand = true;
 
     /// <summary>
     ///     Whether this trait prevents the entity from speaking the base language.
     /// </summary>
+    [DataField]
     public bool CantSpeak = true;
 
     /// <summary>

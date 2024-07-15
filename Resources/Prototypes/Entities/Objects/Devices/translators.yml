@@ -24,7 +24,7 @@
   - type: HandheldTranslator
     enabled: false
   - type: Clothing # To allow equipping translators on the neck slot
-    slots: [neck, pocket]
+    slots: [neck]
     equipDelay: 0.3
     unequipDelay: 0.3
     quickEquip: false # Would conflict
@@ -52,7 +52,7 @@
 - type: entity
   noSpawn: true
   id: TranslatorForeigner
-  parent: [ Translator, PowerCellSlotHighItem ]
+  parent: [ TranslatorUnpowered, PowerCellSlotHighItem ]
   name: foreigner's translator
   description: A special-issue translator that helps foreigner's speak and understand this station's primary language.
 

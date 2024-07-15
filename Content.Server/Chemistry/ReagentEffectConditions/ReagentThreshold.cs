@@ -31,7 +31,7 @@ namespace Content.Server.Chemistry.ReagentEffectConditions
 
             var quant = FixedPoint2.Zero;
             if (args.Source != null)
-                quant = args.Source.GetTotalPrototypeQuantity(reagent);
+                quant = args.Source.GetTotalPrototypeQuantity(reagent) * args.QuantityMultiplier;
 
             return quant >= Min && quant <= Max;
         }
