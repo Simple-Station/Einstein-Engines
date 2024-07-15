@@ -66,11 +66,11 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
 
                 // Do the swap.
                 _mindSwap.Swap(actor, other);
-                if (!component.IsTemporary)
-                {
-                    _mindSwap.GetTrapped(actor);
-                    _mindSwap.GetTrapped(other);
-                }
+                //if (!component.IsTemporary)
+                //{
+                //    _mindSwap.GetTrapped(actor);
+                //    _mindSwap.GetTrapped(other);
+                //}
             } while (true);
         }
     }

@@ -113,6 +113,8 @@
     sprite: Nyanotrasen/Clothing/Head/Helmets/insulative_skullcap.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Head/Helmets/insulative_skullcap.rsi
+  - type: TinfoilHat
+    destroyOnFry: false
   - type: Armor
     modifiers:
       coefficients:

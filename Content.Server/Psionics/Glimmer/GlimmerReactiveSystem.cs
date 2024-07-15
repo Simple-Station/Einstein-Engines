@@ -374,10 +374,10 @@ namespace Content.Server.Psionics.Glimmer
                     _ghostSystem.MakeVisible(true);
                     _revenantSystem.MakeVisible(true);
                     GhostsVisible = true;
-                    foreach (var reactive in reactives)
-                    {
-                        BeamRandomNearProber(reactive.Owner, 1, 12);
-                    }
+                    //foreach (var reactive in reactives)
+                    //{
+                    //    BeamRandomNearProber(reactive.Owner, 1, 12);
+                    //}
                 } else if (GhostsVisible == true)
                 {
                     _ghostSystem.MakeVisible(false);

@@ -29,6 +29,7 @@
     psychicFeedback:
     - "glimmer-mite-feedback"
   - type: GlimmerSource
+    glimmerExponentOffset: 3
   - type: AmbientSound
     range: 6
     volume: -3
