@@ -304,11 +304,11 @@
   suffix: Empty
   components:
     - type: Item
-      sprite: Objects/Tanks/Jetpacks/micro.rsi
+      sprite: Objects/Tanks/Jetpacks/mini.rsi
     - type: Sprite
-      sprite: Objects/Tanks/Jetpacks/micro.rsi
+      sprite: Objects/Tanks/Jetpacks/mini.rsi
     - type: Clothing
-      sprite: Objects/Tanks/Jetpacks/micro.rsi
+      sprite: Objects/Tanks/Jetpacks/mini.rsi
       slots:
         - Back
         - suitStorage
@@ -317,7 +317,7 @@
       outputPressure: 42.6
       air:
         volume: 1.5
-        
+
 
 # Filled micro
 - type: entity
