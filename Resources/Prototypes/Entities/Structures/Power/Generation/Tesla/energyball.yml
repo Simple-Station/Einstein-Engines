@@ -24,11 +24,6 @@
     color: "#4080FF"
   - type: Appearance
   - type: LightningArcShooter
-    arcDepth: 2
-    maxLightningArc: 1
-    shootMinInterval: 4
-    shootMaxInterval: 10
-    shootRange: 3
     lightningPrototype: Lightning
 
 - type: entity
@@ -73,12 +68,10 @@
       params:
         variation: 0.3
   - type: LightningArcShooter
-    arcDepth: 3
-    maxLightningArc: 4
-    shootMinInterval: 3
-    shootMaxInterval: 5
-    shootRange: 7
-    lightningPrototype: Lightning #To do: change to HyperchargedLightning, after fix beam system
+    maxArcs: 16
+    arcRadius: 6
+    maxBolts: 4
+    boltRadius: 7
   - type: ChasingWalk
     minSpeed: 1
     maxSpeed: 3

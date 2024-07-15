@@ -91,6 +91,9 @@ public sealed class LightningSystem : SharedLightningSystem
     /// </summary>
     public void ShootLightning(EntityUid user, EntityUid target, LightningContext context)
     {
+        if (context.MaxArcs <= 0)
+            return;
+
         int id = NextId();
         context.Id = id;
         context.Invoker = user;
@@ -136,7 +139,10 @@ public sealed class LightningSystem : SharedLightningSystem
     /// <summary>
     /// Looks for objects with a LightningTarget component in the radius, and fire lightning at (weighted) random targets
     /// </summary>
-    public void ShootRandomLightnings(EntityUid user, float lightningRadius, int lightningCount, LightningContext context, EntityCoordinates? queryPosition = null, bool lightningStacking = true)
+    public void ShootRandomLightnings(EntityUid user, float lightningRadius, int lightningCount, LightningContext context, EntityCoordinates? queryPosition = null, bool lightningStacking = true,
+        Func<LightningContext, float>? dynamicCharge = null,
+        Func<LightningContext, int>? dynamicArcs = null
+    )
     {
         // default the query location to the user's position
         if (!queryPosition.HasValue)
@@ -157,6 +163,9 @@ public sealed class LightningSystem : SharedLightningSystem
             EntityUid target = EntityUid.Parse(stringTarget);
 
             LightningContext clone = context.Clone();
+            if (dynamicCharge != null) clone.Charge = dynamicCharge(context);
+            if (dynamicArcs != null) clone.MaxArcs = dynamicArcs(context);
+
             ShootLightning(user, target, clone);
 
             if (!lightningStacking)
