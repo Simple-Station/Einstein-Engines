@@ -4481,3 +4481,9 @@ Entries:
       message: Fixed thieving trait not granting pocket vision
   id: 6161
   time: '2024-07-16T17:41:42.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Many new sound effects have been implemented for items.
+  id: 6162
+  time: '2024-07-16T17:52:03.0000000+00:00'
