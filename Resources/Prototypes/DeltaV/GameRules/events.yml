@@ -4,7 +4,9 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-xeno-vent-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 1
