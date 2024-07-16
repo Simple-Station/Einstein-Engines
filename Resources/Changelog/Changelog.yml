@@ -4487,3 +4487,11 @@ Entries:
       message: Many new sound effects have been implemented for items.
   id: 6162
   time: '2024-07-16T17:52:03.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Added a new icon to the offer item interaction.
+    - type: Fix
+      message: Fixed typos in the offer item prompts.
+  id: 6163
+  time: '2024-07-16T18:18:18.0000000+00:00'
