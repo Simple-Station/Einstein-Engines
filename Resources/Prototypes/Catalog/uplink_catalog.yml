@@ -266,16 +266,6 @@
       - NukeOpsUplink
 
 - type: listing
-  id: UplinkSyndicateBombFake
-  name: uplink-exploding-syndicate-bomb-fake-name
-  description: uplink-exploding-syndicate-bomb-fake-desc
-  productEntity: SyndicateBombFake
-  cost:
-    Telecrystal: 4
-  categories:
-    - UplinkExplosives
-
-- type: listing
   id: UplinkClusterGrenade
   name: uplink-cluster-grenade-name
   description: uplink-cluster-grenade-desc
@@ -787,7 +777,19 @@
   cost:
     Telecrystal: 6
   categories:
-    - UplinkBundles
+  - UplinkBundles
+
+- type: listing
+  id: UplinkSyndicateBombFake
+  name: uplink-exploding-syndicate-bomb-fake-name
+  description: uplink-exploding-syndicate-bomb-fake-desc
+  productEntity: SyndicateBombFake
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkDeception
+
+# Disruption
 
 - type: listing
   id: UplinkAmmoBundle
@@ -1238,6 +1240,16 @@
     - UplinkUtility
 
 # Armor
+
+- type: listing
+  id: UplinkChestRig
+  name: uplink-chest-rig-name
+  description: uplink-chest-rig-desc
+  productEntity: ClothingBeltMilitaryWebbing
+  cost:
+    Telecrystal: 1
+  categories:
+    - UplinkArmor
 
 - type: listing
   id: UplinkChameleon

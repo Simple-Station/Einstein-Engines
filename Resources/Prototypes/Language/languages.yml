@@ -38,6 +38,8 @@
 # Spoken by slimes.
 - type: language
   id: Bubblish
+  color: "#0077aa"
+  fontId: RubikBubbles
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -52,6 +54,8 @@
 # Spoken by moths.
 - type: language
   id: Moffic
+  color: "#869b29"
+  fontId: Copperplate
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2 # Replacements are really short
@@ -118,6 +122,8 @@
 # Spoken by dionas.
 - type: language
   id: RootSpeak
+  color: "#804000"
+  fontId: Noganas
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -132,6 +138,8 @@
 # A mess of broken Japanese, spoken by Felinds and Oni
 - type: language
   id: Nekomimetic
+  color: "#803B56"
+  fontId: Manga
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -189,6 +197,7 @@
 # Spoken by the Lizard race.
 - type: language
   id: Draconic
+  color: "#228b22"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -282,6 +291,7 @@
 # Spoken by the Vulpkanin race.
 - type: language
   id: Canilunzt
+  color: "#b97a57"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -314,7 +324,6 @@
     - vor
     - nic
     - gro
-  #  - lll
     - enem
     - zandt
     - tzch
@@ -349,6 +358,7 @@
 # The common language of the Sol system.
 - type: language
   id: SolCommon
+  color: "#8282fb"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -374,6 +384,7 @@
 
 - type: language
   id: RobotTalk
+  fontId: Monospace
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
