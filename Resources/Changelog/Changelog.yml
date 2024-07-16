@@ -4507,3 +4507,9 @@ Entries:
       message: Added Harpy Wings as a delicious dish.
   id: 6165
   time: '2024-07-16T18:21:27.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Added an alert on the UI for when the user is walking or running.
+  id: 6166
+  time: '2024-07-16T21:39:46.0000000+00:00'
