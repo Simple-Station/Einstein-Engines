@@ -4475,3 +4475,9 @@ Entries:
         deal less damage and ignore insulated gloves.
   id: 6160
   time: '2024-07-14T23:14:03.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Fix
+      message: Fixed thieving trait not granting pocket vision
+  id: 6161
+  time: '2024-07-16T17:41:42.0000000+00:00'
