@@ -4495,3 +4495,9 @@ Entries:
       message: Fixed typos in the offer item prompts.
   id: 6163
   time: '2024-07-16T18:18:18.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: You can now configure your zoom more precisely.
+  id: 6164
+  time: '2024-07-16T18:18:57.0000000+00:00'
