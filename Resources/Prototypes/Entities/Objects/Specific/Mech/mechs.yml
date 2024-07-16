@@ -59,7 +59,6 @@
     baseSprintSpeed: 2
   - type: Tag
     tags:
-    - CanWalk
     - DoorBumpOpener
     - FootstepSound
   - type: Pullable
@@ -96,6 +95,7 @@
   - type: GuideHelp
     guides:
     - Robotics
+  - type: CanWalk
 
 - type: entity
   id: MechRipley

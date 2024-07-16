@@ -302,9 +302,6 @@
   id: CanPilot
 
 - type: Tag
-  id: CanWalk
-
-- type: Tag
   id: CannonBall
 
 - type: Tag

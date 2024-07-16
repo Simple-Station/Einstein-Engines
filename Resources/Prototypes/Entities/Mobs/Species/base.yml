@@ -229,7 +229,7 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
-    - CanWalk
+  - type: CanWalk
 
 - type: entity
   save: false

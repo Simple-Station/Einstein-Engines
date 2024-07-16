@@ -1309,7 +1309,7 @@
     tags:
     - VimPilot
     - DoorBumpOpener
-    - CanWalk
+  - type: CanWalk
 
 - type: entity
   name: monkey

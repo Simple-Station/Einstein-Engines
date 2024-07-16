@@ -292,6 +292,7 @@
     solution: bloodstream
   - type: DrainableSolution
     solution: bloodstream
+  - type: CanWalk
 
 - type: entity
   name: Reagent Slime Spawner

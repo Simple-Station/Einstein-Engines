@@ -205,7 +205,6 @@
     - ShoesRequiredStepTriggerImmune
     - DoorBumpOpener
     - CanPilot
-    - CanWalk
   - type: Emoting
   - type: GuideHelp
     guides:
@@ -221,6 +220,7 @@
     understands:
     - GalacticCommon
     - RobotTalk
+  - type: CanWalk
 
 - type: entity
   id: BaseBorgChassisNT

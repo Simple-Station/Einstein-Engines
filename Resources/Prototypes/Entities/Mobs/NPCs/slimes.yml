@@ -44,7 +44,6 @@
   - type: Tag
     tags:
     - FootstepSound
-    - CanWalk
   - type: Butcherable
     butcheringType: Knife
     spawned:
@@ -129,6 +128,7 @@
     speechSounds: Slime
   - type: TypingIndicator
     proto: slime
+  - type: CanWalk
 
 - type: entity
   name: blue slime

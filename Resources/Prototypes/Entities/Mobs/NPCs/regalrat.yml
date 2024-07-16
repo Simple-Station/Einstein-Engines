@@ -95,7 +95,6 @@
     tags:
       - CannotSuicide
       - FootstepSound
-      - CanWalk
   - type: NoSlip
   - type: RatKing
     hungerPerArmyUse: 25
@@ -127,6 +126,7 @@
     understands:
     - GalacticCommon
     - Mouse
+  - type: CanWalk
 
 - type: entity
   id: MobRatKingBuff
