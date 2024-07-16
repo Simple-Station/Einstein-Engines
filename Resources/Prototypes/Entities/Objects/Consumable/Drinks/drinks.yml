@@ -33,6 +33,12 @@
     interfaces:
     - key: enum.TransferAmountUiKey.Key
       type: TransferAmountBoundUserInterface
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
 
 - type: entity
   parent: DrinkBase
@@ -369,6 +375,9 @@
   - type: Icon
     sprite: Objects/Consumable/Drinks/beerglass.rsi
     state: icon
+  - type: Tag
+    tags:
+    - Beer
 
 - type: entity
   parent: DrinkGlass
@@ -943,6 +952,9 @@
   - type: Icon
     sprite: Objects/Consumable/Drinks/iced_beerglass.rsi
     state: icon
+  - type: Tag
+    tags:
+    - Beer
 
 - type: entity
   parent: DrinkGlass
