@@ -369,7 +369,7 @@
     sprite: Nyanotrasen/Clothing/Misc/under_garments.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformMNKGymBra
   name: MNK gym bra
   description: Maximum performance with MNK sweat blockers.
@@ -405,7 +405,7 @@
     femaleMask: NoMask
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformMNKBlackShoulder
   name: MNK exposed shoulders
   description: A MNK outfit with exposed shoulders.
