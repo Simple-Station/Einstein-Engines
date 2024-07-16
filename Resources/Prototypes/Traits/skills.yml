@@ -24,13 +24,14 @@
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
+      jobs:
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - LightweightDrunk
-  
+
 - type: trait
   id: Thieving
   category: Physical
