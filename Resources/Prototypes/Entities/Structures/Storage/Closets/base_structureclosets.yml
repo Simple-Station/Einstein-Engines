@@ -48,6 +48,10 @@
         layer:
         - MachineLayer
   - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/closet_close.ogg
+    openSound:
+      path: /Audio/Effects/closet_open.ogg
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container
