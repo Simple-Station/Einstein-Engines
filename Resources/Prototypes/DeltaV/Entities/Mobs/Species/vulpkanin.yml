@@ -101,11 +101,9 @@
     speaks:
     - GalacticCommon
     - Canilunzt
-    - SignLanguage
     understands:
     - GalacticCommon
     - Canilunzt
-    - SignLanguage
 
 - type: entity
   save: false
