@@ -304,6 +304,7 @@
     amplification: 1
     psychicFeedback:
     - "reagent-slime-feedback"
+  - type: CanWalk
 
 - type: entity
   name: Reagent Slime Spawner

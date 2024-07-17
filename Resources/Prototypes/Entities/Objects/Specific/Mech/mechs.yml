@@ -95,6 +95,7 @@
   - type: GuideHelp
     guides:
     - Robotics
+  - type: CanWalk
 
 - type: entity
   id: MechRipley
