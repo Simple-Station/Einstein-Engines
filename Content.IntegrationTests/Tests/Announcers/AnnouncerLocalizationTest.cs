@@ -7,17 +7,19 @@ using Robust.Shared.Localization;
 
 namespace Content.IntegrationTests.Tests.Announcers;
 
+/// <summary>
+///     Checks if every station event wanting the announcerSystem to send messages has a localization string
+///     If an event doesn't have startAnnouncement or endAnnouncement set to true
+///      it will be expected for that system to handle the announcements if it wants them
+/// </summary>
 [TestFixture]
 [TestOf(typeof(AnnouncerPrototype))]
 public sealed class AnnouncerLocalizationTest
 {
+    /// <inheritdoc cref="AnnouncerLocalizationTest"/>
     [Test]
     public async Task TestEventLocalization()
     {
-        // Checks if every station event wanting the announcerSystem to send messages has a localization string
-        // If an event doesn't have startAnnouncement or endAnnouncement set to true
-        //  it will be expected for that system to handle the announcements if it wants them
-
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
 

@@ -5,15 +5,17 @@ using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.Announcers;
 
+/// <summary>
+///     Checks if every announcer has a fallback announcement
+/// </summary>
 [TestFixture]
 [TestOf(typeof(AnnouncerPrototype))]
-public sealed class AnnouncerPrototypeTests
+public sealed class AnnouncerPrototypeTest
 {
+    /// <inheritdoc cref="AnnouncerPrototypeTest"/>
     [Test]
     public async Task TestAnnouncerFallbacks()
     {
-        // Checks if every announcer has a fallback announcement
-
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
 
