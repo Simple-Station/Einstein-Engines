@@ -2,7 +2,7 @@
 
 # Ears Markings
 - type: marking
-  id: HarpyWingDefault
+  id: HarpyWingDefaultHuescale
   bodyPart: RArm
   markingCategory: Arms
   speciesRestriction: [Harpy]
@@ -16,7 +16,24 @@
           color: "#964b00"
   sprites:
     - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
-      state: harpy
+      state: huescaleharpy
+
+- type: marking
+  id: HarpyWingDefaultWhitescale
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#964b00"
+  sprites:
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
+      state: whitescaleharpy
 
 - type: marking
   id: HarpyWingClassic
@@ -36,7 +53,7 @@
       state: classicharpy
 
 - type: marking
-  id: HarpyWingFolded
+  id: HarpyWingFoldedHuescale
   bodyPart: RArm
   markingCategory: Arms
   speciesRestriction: [Harpy]
@@ -50,7 +67,58 @@
           color: "#964b00"
   sprites:
     - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
-      state: harpyfolded
+      state: huescaleharpyfolded
+
+- type: marking
+  id: HarpyWingFoldedWhitescale
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#964b00"
+  sprites:
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
+      state: whitescaleharpyfolded
+
+- type: marking
+  id: HarpyWingOwlHuescale
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#964b00"
+  sprites:
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
+      state: huescale_harpy_wing_owl
+
+- type: marking
+  id: HarpyWingOwlWhitescale
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#964b00"
+  sprites:
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
+      state: whitescale_harpy_wing_owl
 
 - type: marking
   id: HarpyEarsDefault
@@ -68,6 +136,23 @@
   sprites:
     - sprite: Mobs/Customization/Harpy/harpy_ears.rsi
       state: harpy_ears_default
+
+- type: marking
+  id: HarpyEarsLarge
+  bodyPart: Head
+  markingCategory: HeadTop
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#964b00"
+  sprites:
+    - sprite: Mobs/Customization/Harpy/harpy_ears.rsi
+      state: harpy_ears_large
 
 - type: marking
   id: HarpyTailPhoenix
@@ -102,6 +187,37 @@
     - sprite: Mobs/Customization/Harpy/harpy_tails.rsi
       state: rooster_tail
 
+- type: marking
+  id: HarpyTailForkedWhitescale
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+  sprites:
+    - sprite: Mobs/Customization/Harpy/harpy_tails.rsi
+      state: whitescale_forked_tailfin
+
+- type: marking
+  id: HarpyTailForkedHuescale
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+  sprites:
+    - sprite: Mobs/Customization/Harpy/harpy_tails.rsi
+      state: huescale_forked_tailfin
 
 - type: marking
   id: HarpyTailFinch

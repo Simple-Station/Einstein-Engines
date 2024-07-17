@@ -1,8 +1,20 @@
-marking-HarpyWingDefault = Basic Wings
-marking-HarpyWingDefault-harpy = Wings
+marking-HarpyWingDefaultHuescale = Basic Wings (Huescale)
+marking-HarpyWingDefaultHuescale-huescaleharpy = Wings
 
-marking-HarpyWingFolded = Folded Wings
-marking-HarpyWingFolded-harpyfolded = Wings
+marking-HarpyWingDefaultWhitescale = Basic Wings (Whitescale)
+marking-HarpyWingDefaultWhitescale-whitescaleharpy = Wings
+
+marking-HarpyWingFoldedHuescale = Folded Wings (Huescale)
+marking-HarpyWingFoldedHuescale-huescaleharpyfolded = Wings
+
+marking-HarpyWingFoldedWhitescale = Folded Wings (Whitescale)
+marking-HarpyWingFoldedWhitescale-whitescaleharpyfolded = Wings
+
+marking-HarpyWingOwlHuescale = Owl Wings (Huescale)
+marking-HarpyWingOwlHuescale-huescale_harpy_wing_owl = Wings
+
+marking-HarpyWingOwlWhitescale = Owl Wings (Whitescale)
+marking-HarpyWingOwlWhitescale-whitescale_harpy_wing_owl = Wings
 
 marking-HarpyWingClassic = Classic Wings
 marking-HarpyWingClassic-classicharpy = Wings
@@ -31,6 +43,9 @@ marking-HarpyWingTipsClassic-harpywingtip2 = Feathertips
 marking-HarpyEarsDefault = Feather Tufts
 marking-HarpyEarsDefault-harpy_ears_default = Tufts
 
+marking-HarpyEarsLarge = Large Feather Tufts
+marking-HarpyEarsLarge-harpy_ears_large = Tufts
+
 marking-HarpyTailPhoenix = Basic Tail
 marking-HarpyTailPhoenix-phoenix_tail = Tail
 
@@ -39,6 +54,12 @@ marking-HarpyTailRooster-rooster_tail = Tail
 
 marking-HarpyTailFinch = Finch Tail
 marking-HarpyTailFinch-finch_tail = Tail
+
+marking-HarpyTailForkedHuescale = Forked Tailfin (Huescale)
+marking-HarpyTailForkedHuescale-huescale_forked_tailfin = Tail
+
+marking-HarpyTailForkedWhitescale = Forked Tailfin (Whitescale)
+marking-HarpyTailForkedWhitescale-whitescale_forked_tailfin = Tail
 
 marking-HarpyTailPeacock = Peacock Tail
 marking-HarpyTailPeacock-peacock_tail_feathers = Feathers
