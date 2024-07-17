@@ -436,6 +436,36 @@ namespace Content.Shared.CCVar
 
 
         /*
+         * Announcers
+         */
+
+        /// <summary>
+        ///     Weighted list of announcers to choose from
+        /// </summary>
+        public static readonly CVarDef<string> AnnouncerList =
+            CVarDef.Create("announcer.list", "RandomAnnouncers", CVar.REPLICATED);
+
+        /// <summary>
+        ///     Optionally force set an announcer
+        /// </summary>
+        public static readonly CVarDef<string> Announcer =
+            CVarDef.Create("announcer.announcer", "", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Optionally blacklist announcers
+        ///     List of IDs separated by commas
+        /// </summary>
+        public static readonly CVarDef<string> AnnouncerBlacklist =
+            CVarDef.Create("announcer.blacklist", "", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Changes how loud the announcers are for the client
+        /// </summary>
+        public static readonly CVarDef<float> AnnouncerVolume =
+            CVarDef.Create("announcer.volume", 0.5f, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+
+        /*
          * Queue
          */
 
@@ -443,8 +473,8 @@ namespace Content.Shared.CCVar
         ///     Controls if the connections queue is enabled
         ///     If enabled plyaers will be added to a queue instead of being kicked after SoftMaxPlayers is reached
         /// </summary>
-        public static readonly CVarDef<bool>
-        QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
+        public static readonly CVarDef<bool> QueueEnabled =
+            CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
 
 
         /*
@@ -1642,6 +1672,23 @@ namespace Content.Shared.CCVar
             CVarDef.Create("viewport.width", 21, CVar.CLIENTONLY | CVar.ARCHIVE);
 
         /*
+         * FOV
+         */
+
+        /// <summary>
+        ///     The number by which the current FOV size is divided for each level.
+        /// </summary>
+        public static readonly CVarDef<float> ZoomLevelStep =
+            CVarDef.Create("fov.zoom_step", 1.2f, CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
+        ///     How many times the player can zoom in until they reach the minimum zoom.
+        ///     This does not affect the maximum zoom.
+        /// </summary>
+        public static readonly CVarDef<int> ZoomLevels =
+            CVarDef.Create("fov.zoom_levels", 7, CVar.SERVER | CVar.REPLICATED);
+
+        /*
          * UI
          */
 
@@ -2180,5 +2227,18 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> StationGoalsChance =
             CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Toggles all MassContest functions. All mass contests output 1f when false
+        /// </summary>
+        public static readonly CVarDef<bool> DoMassContests =
+            CVarDef.Create("contests.do_mass_contests", true, CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
+        ///     The maximum amount that Mass Contests can modify a physics multiplier, given as a +/- percentage
+        ///     Default of 0.25f outputs between * 0.75f and 1.25f
+        /// </summary>
+        public static readonly CVarDef<float> MassContestsMaxPercentage =
+            CVarDef.Create("contests.max_percentage", 0.25f, CVar.REPLICATED | CVar.SERVER);
     }
 }
