@@ -1,16 +1,19 @@
 using System.Collections.Generic;
+using System.Linq;
 using Content.Server.Announcements.Systems;
 using Content.Server.StationEvents;
 using Content.Shared.Announcements.Prototypes;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.GameObjects;
+using Robust.Shared.IoC.Exceptions;
 using Robust.Shared.Localization;
+using Robust.Shared.Prototypes;
+using Serilog;
 
 namespace Content.IntegrationTests.Tests.Announcers;
 
 /// <summary>
 ///     Checks if every station event wanting the announcerSystem to send audios has a sound file
-///     Sound collections are checked elsewhere
 /// </summary>
 [TestFixture]
 [TestOf(typeof(AnnouncerPrototype))]
@@ -25,6 +28,7 @@ public sealed class AnnouncerAudioTest
         var client = pair.Client;
 
         var entSysMan = server.ResolveDependency<IEntitySystemManager>();
+        var proto = server.ResolveDependency<IPrototypeManager>();
         var cache = client.ResolveDependency<IResourceCache>();
         var announcer = entSysMan.GetEntitySystem<AnnouncerSystem>();
         var events = entSysMan.GetEntitySystem<EventManagerSystem>();
@@ -34,43 +38,32 @@ public sealed class AnnouncerAudioTest
             var succeeded = true;
             var why = new List<string>();
 
-            foreach (var ev in events.AllEvents())
+            foreach (var announcerProto in proto.EnumeratePrototypes<AnnouncerPrototype>().OrderBy(a => a.ID))
             {
-                if (ev.Value.StartAnnouncement)
+                foreach (var ev in events.AllEvents())
                 {
-                    var announcementId = announcer.GetAnnouncementId(ev.Key.ID);
-                    var path = announcer.GetAnnouncementPath(announcementId, announcer.Announcer);
-
-                    try
+                    if (ev.Value.StartAnnouncement)
                     {
-                        if (!cache.TryGetResource<AudioResource>(path, out _))
+                        var announcementId = announcer.GetAnnouncementId(ev.Key.ID);
+                        var path = announcer.GetAnnouncementPath(announcementId, announcerProto);
+
+                        if (!cache.ContentFileExists(path))
                         {
                             succeeded = false;
-                            why.Add($"\"{announcementId}\": \"{path}\"");
+                            why.Add($"\"{announcerProto.ID}\", \"{announcementId}\": \"{path}\"");
                         }
                     }
-                    catch (Exception)
-                    {
-                        // Working as intended
-                    }
-                }
 
-                if (ev.Value.EndAnnouncement)
-                {
-                    var announcementId = announcer.GetAnnouncementId(ev.Key.ID, true);
-                    var path = announcer.GetAnnouncementPath(announcementId, announcer.Announcer);
-
-                    try
+                    if (ev.Value.EndAnnouncement)
                     {
-                        if (!cache.TryGetResource<AudioResource>(path, out _))
+                        var announcementId = announcer.GetAnnouncementId(ev.Key.ID, true);
+                        var path = announcer.GetAnnouncementPath(announcementId, announcerProto);
+
+                        if (!cache.ContentFileExists(path))
                         {
                             succeeded = false;
-                            why.Add($"\"{announcementId}\": \"{path}\"");
+                            why.Add($"\"{announcerProto.ID}\", \"{announcementId}\": \"{path}\"");
                         }
-                    }
-                    catch (Exception)
-                    {
-                        // Working as intended
                     }
                 }
             }

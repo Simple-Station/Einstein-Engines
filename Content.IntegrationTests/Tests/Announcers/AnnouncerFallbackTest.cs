@@ -26,13 +26,13 @@ public sealed class AnnouncerPrototypeTest
             var success = true;
             var why = new List<string>();
 
-            foreach (var announcer in prototype.EnumeratePrototypes<AnnouncerPrototype>())
+            foreach (var announcer in prototype.EnumeratePrototypes<AnnouncerPrototype>().OrderBy(a => a.ID))
             {
-                if (announcer.Announcements.All(a => a.ID.ToLower() != "fallback"))
-                {
-                    success = false;
-                    why.Add(announcer.ID);
-                }
+                if (announcer.Announcements.Any(a => a.ID.ToLower() == "fallback"))
+                    continue;
+
+                success = false;
+                why.Add(announcer.ID);
             }
 
             Assert.That(success, Is.True, $"The following announcers do not have a fallback announcement:\n  {string.Join("\n  ", why)}");

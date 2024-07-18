@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
 using Content.Server.Announcements.Systems;
 using Content.Server.StationEvents;
 using Content.Shared.Announcements.Prototypes;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
+using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.Announcers;
 
@@ -25,6 +27,7 @@ public sealed class AnnouncerLocalizationTest
 
         var locale = server.ResolveDependency<ILocalizationManager>();
         var entSysMan = server.ResolveDependency<IEntitySystemManager>();
+        var proto = server.ResolveDependency<IPrototypeManager>();
         var announcer = entSysMan.GetEntitySystem<AnnouncerSystem>();
         var events = entSysMan.GetEntitySystem<EventManagerSystem>();
 
@@ -33,29 +36,34 @@ public sealed class AnnouncerLocalizationTest
             var succeeded = true;
             var why = new List<string>();
 
-            foreach (var ev in events.AllEvents())
+            foreach (var announcerProto in proto.EnumeratePrototypes<AnnouncerPrototype>().OrderBy(a => a.ID))
             {
-                if (ev.Value.StartAnnouncement)
+                foreach (var ev in events.AllEvents())
                 {
-                    var announcementId = announcer.GetAnnouncementId(ev.Key.ID);
-                    var eventLocaleString = announcer.GetEventLocaleString(announcementId);
-
-                    if (locale.GetString(eventLocaleString) == eventLocaleString)
+                    if (ev.Value.StartAnnouncement)
                     {
-                        succeeded = false;
-                        why.Add($"\"{announcementId}\": \"{eventLocaleString}\"");
+                        var announcementId = announcer.GetAnnouncementId(ev.Key.ID);
+                        var eventLocaleString = announcer.GetAnnouncementMessage(announcementId, announcerProto.ID)
+                            ?? announcer.GetEventLocaleString(announcementId);
+
+                        if (locale.GetString(eventLocaleString) == eventLocaleString)
+                        {
+                            succeeded = false;
+                            why.Add($"\"{announcerProto.ID}\", \"{announcementId}\": \"{eventLocaleString}\"");
+                        }
                     }
-                }
 
-                if (ev.Value.EndAnnouncement)
-                {
-                    var announcementId = announcer.GetAnnouncementId(ev.Key.ID, true);
-                    var eventLocaleString = announcer.GetEventLocaleString(announcementId);
-
-                    if (locale.GetString(eventLocaleString) == eventLocaleString)
+                    if (ev.Value.EndAnnouncement)
                     {
-                        succeeded = false;
-                        why.Add($"\"{announcementId}\": \"{eventLocaleString}\"");
+                        var announcementId = announcer.GetAnnouncementId(ev.Key.ID, true);
+                        var eventLocaleString = announcer.GetAnnouncementMessage(announcementId, announcerProto.ID)
+                            ?? announcer.GetEventLocaleString(announcementId);
+
+                        if (locale.GetString(eventLocaleString) == eventLocaleString)
+                        {
+                            succeeded = false;
+                            why.Add($"\"{announcerProto.ID}\", \"{announcementId}\": \"{eventLocaleString}\"");
+                        }
                     }
                 }
             }
