@@ -29,7 +29,7 @@
         - MachineMask
         layer:
         - MachineLayer
-        density: 200
+        density: 1000
   - type: Destructible
     thresholds:
     - trigger:
