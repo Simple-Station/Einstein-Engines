@@ -93,3 +93,11 @@ admin-trick-pause-map-description = Pause the selected map. Note this doesn't en
 admin-trick-snap-joints-description = Remove all physics joints from an object. Unfortunately does not snap every bone in their body.
 admin-trick-minigun-fire-description = Makes the targetted gun fire like a minigun (very fast).
 admin-trick-set-bullet-amount-description = Quickly set the amount of unspawned bullets in a gun.
+
+# Language control
+admin-trick-remove-universal-description = Removes the entities' ability to speak and understand universally. Does not assign them any language by default, so make sure to do that afterwards.
+admin-trick-add-universal-description = Allows the entity to understand everyone and be understood by everyone.
+admin-trick-add-language-description = Adds the given language to the target.
+admin-trick-remove-language-description = Removes the given language from the target.
+admin-trick-edit-translator-description = Edits all properties of the given translator. For each prompt, separate different languages with commas.
+admin-trick-error-no-such-language = Cannot resolve the given language: {$id}.

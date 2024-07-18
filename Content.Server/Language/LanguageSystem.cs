@@ -14,6 +14,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     {
         base.Initialize();
         InitializeNet();
+        InitializeAdmin();
 
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentInit>(OnInitLanguageSpeaker);
     }
