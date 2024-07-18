@@ -133,7 +133,7 @@ public enum QuickDialogEntryType
     /// </summary>
     LongText,
     /// <summary>
-    /// A string that is one of the following: yes, true, no, false.
+    /// A boolean value represented as a yes/no string.
     /// </summary>
     Boolean,
 }
