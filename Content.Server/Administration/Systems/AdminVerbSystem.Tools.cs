@@ -25,6 +25,7 @@ using Content.Shared.Database;
 using Content.Shared.Doors.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Language.Components;
 using Content.Shared.PDA;
 using Content.Shared.Stacks;
 using Content.Shared.Verbs;
@@ -741,6 +742,8 @@ public sealed partial class AdminVerbSystem
             };
             args.Verbs.Add(setCapacity);
         }
+
+
     }
 
     private void RefillEquippedTanks(EntityUid target, Gas plasma)
@@ -886,5 +889,6 @@ public sealed partial class AdminVerbSystem
         SnapJoints = -27,
         MakeMinigun = -28,
         SetBulletAmount = -29,
+        Languages = -30,
     }
 }

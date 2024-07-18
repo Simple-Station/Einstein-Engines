@@ -69,6 +69,7 @@ public sealed partial class DialogWindow : FancyWindow
                 QuickDialogEntryType.Float => (VerifyFloat, "float"),
                 QuickDialogEntryType.ShortText => (VerifyShortText, "short-text"),
                 QuickDialogEntryType.LongText => (VerifyLongText, "long-text"),
+                QuickDialogEntryType.Boolean => (VerifyBoolean, "bool"),
                 _ => throw new ArgumentOutOfRangeException()
             };
             var (valid, name) = pair;
@@ -141,6 +142,11 @@ public sealed partial class DialogWindow : FancyWindow
     private bool VerifyLongText(string input)
     {
         return input.Length <= 2000;
+    }
+
+    private bool VerifyBoolean(string input)
+    {
+        return input is "yes" or "y" or "true" or "no" or "n" or "false";
     }
 
     #endregion

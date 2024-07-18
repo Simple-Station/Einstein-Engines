@@ -132,4 +132,8 @@ public enum QuickDialogEntryType
     /// Maximum of 2,000 characters string.
     /// </summary>
     LongText,
+    /// <summary>
+    /// A string that is one of the following: yes, true, no, false.
+    /// </summary>
+    Boolean,
 }

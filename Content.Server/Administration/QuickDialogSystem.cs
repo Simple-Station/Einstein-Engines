@@ -144,6 +144,17 @@ public sealed partial class QuickDialogSystem : EntitySystem
                 output = (T?) (object?) longString;
                 return output is not null;
             }
+            case QuickDialogEntryType.Boolean:
+            {
+                if (input.ToLower().Trim() is "yes" or "y" or "true")
+                    output = (T?) (object?) true;
+                else if (input.ToLower().Trim() is "no" or "n" or "false")
+                    output = (T?) (object?) false;
+                else
+                    output = default;
+
+                return output is not null;
+            }
             default:
                 throw new ArgumentOutOfRangeException(nameof(entryType), entryType, null);
         }
@@ -162,6 +173,9 @@ public sealed partial class QuickDialogSystem : EntitySystem
 
         if (T == typeof(LongString))
             return QuickDialogEntryType.LongText;
+
+        if (T == typeof(bool))
+            return QuickDialogEntryType.Boolean;
 
         throw new ArgumentException($"Tried to open a dialog with unsupported type {T}.");
     }
