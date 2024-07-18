@@ -42,8 +42,6 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-#pragma warning disable 618
-
 namespace Content.Shared.Interaction
 {
     /// <summary>
@@ -556,11 +554,11 @@ namespace Content.Shared.Interaction
         protected bool ValidateInteractAndFace(EntityUid user, EntityCoordinates coordinates)
         {
             // Verify user is on the same map as the entity they clicked on
-            if (coordinates.GetMapId(EntityManager) != Transform(user).MapID)
+            if (_transform.GetMapId(coordinates) != Transform(user).MapID)
                 return false;
 
             if (!HasComp<NoRotateOnInteractComponent>(user))
-                _rotateToFaceSystem.TryFaceCoordinates(user, coordinates.ToMapPos(EntityManager, _transform));
+                _rotateToFaceSystem.TryFaceCoordinates(user, _transform.ToMapCoordinates(coordinates).Position);
 
             return true;
         }
@@ -893,7 +891,7 @@ namespace Content.Shared.Interaction
             Ignored? predicate = null,
             bool popup = false)
         {
-            return InRangeUnobstructed(origin, other.ToMap(EntityManager, _transform), range, collisionMask, predicate, popup);
+            return InRangeUnobstructed(origin, _transform.ToMapCoordinates(other), range, collisionMask, predicate, popup);
         }
 
         /// <summary>
@@ -1009,7 +1007,7 @@ namespace Content.Shared.Interaction
             bool checkDeletion = false
         )
         {
-            if (target is {Valid: false})
+            if (target is { Valid: false })
                 target = null;
 
             if (checkDeletion && (IsDeleted(user) || IsDeleted(used) || IsDeleted(target)))
