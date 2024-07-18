@@ -4529,3 +4529,9 @@ Entries:
         wear due to having digitigrade legs. 
   id: 6168
   time: '2024-07-18T02:34:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Foreigner translator should now consume power, as intended.
+  id: 6169
+  time: '2024-07-18T08:22:52.0000000+00:00'
