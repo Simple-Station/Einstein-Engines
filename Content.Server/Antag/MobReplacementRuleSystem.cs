@@ -72,7 +72,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
         {
             // This is intentionally not clamped. If a server host wants to replace every vending machine in the entire station with a mimic, who am I to stop them?
             var k = MathF.MaxMagnitude(component.NumberToReplace, 1);
-            while (k > 0 && spawns != null)
+            while (k > 0 && spawns != null && spawns.Count > 1)
             {
                 var spawnLocation = _random.PickAndTake(spawns);
                 BuildAMimicWorkshop(spawnLocation.Entity, component);
@@ -83,6 +83,14 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
                         colorOverride: Color.Red, sender: "Central Command");
 
                 k--;
+            }
+
+            if (spawns != null && spawns.Count == 1)
+            {
+                BuildAMimicWorkshop(spawns[0].Entity, component);
+                if (component.DoAnnouncement)
+                    _chat.DispatchStationAnnouncement(stations[0], Loc.GetString("station-event-rampant-intelligence-announcement"), playDefaultSound: true,
+                        colorOverride: Color.Red, sender: "Central Command");
             }
         }
     }
