@@ -1,0 +1,115 @@
+- type: loadout
+  id: LoadoutHandsColorPurple
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesColorPurple
+
+- type: loadout
+  id: LoadoutHandsColorRed
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesColorRed
+
+- type: loadout
+  id: LoadoutHandsColorBlack
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesColorBlack
+
+- type: loadout
+  id: LoadoutHandsColorBlue
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesColorBlue
+
+- type: loadout
+  id: LoadoutHandsColorBrown
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesColorBrown
+
+- type: loadout
+  id: LoadoutHandsColorGray
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesColorGray
+
+- type: loadout
+  id: LoadoutHandsColorGreen
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesColorGreen
+
+- type: loadout
+  id: LoadoutHandsColorLightBrown
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesColorLightBrown
+
+- type: loadout
+  id: LoadoutHandsColorOrange
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesColorOrange
+
+- type: loadout
+  id: LoadoutHandsColorWhite
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesColorWhite
+
+- type: loadout
+  id: LoadoutHandsColorYellowBudget
+  category: Hands
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
+  items:
+    - ClothingHandsGlovesColorYellowBudget
+
+- type: loadout
+  id: LoadoutHandsGlovesLeather
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesLeather
+
+- type: loadout
+  id: LoadoutHandsGlovesPowerglove
+  category: Hands
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHandsGlovesPowerglove
+
+- type: loadout
+  id: LoadoutHandsGlovesRobohands
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsGlovesRobohands

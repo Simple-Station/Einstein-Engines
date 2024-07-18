@@ -99,6 +99,8 @@
     sprite: Nyanotrasen/Clothing/Head/Hats/cage.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Head/Hats/cage.rsi
+    equipDelay: 0.5
+    unequipDelay: 6
   - type: HeadCage
 
 - type: entity

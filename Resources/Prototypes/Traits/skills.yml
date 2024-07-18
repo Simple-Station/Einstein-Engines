@@ -1,0 +1,32 @@
+- type: trait
+  id: HeavyweightDrunk
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LightweightDrunk
+  components:
+    - type: LightweightDrunk
+      boozeStrengthMultiplier: 0.5
+  
+- type: trait
+  id: Thieving
+  category: Physical
+  points: -4
+  components:
+    - type: Thieving
+      ignoreStripHidden: true
+      stealth: Subtle
+      stripTimeReduction: 0
+      stripTimeMultiplier: 0.667
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Felinid

@@ -4,7 +4,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
   items:
@@ -16,7 +16,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
   items:
@@ -28,7 +28,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
   items:
@@ -40,7 +40,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
   items:
@@ -52,7 +52,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
   items:
@@ -63,7 +63,7 @@
   category: Jobs
   cost: 2
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
   items:
@@ -74,7 +74,7 @@
   category: Jobs
   cost: 4
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
   items:
@@ -85,7 +85,7 @@
   category: Jobs
   cost: 1
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
   items:
@@ -97,7 +97,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
   items:

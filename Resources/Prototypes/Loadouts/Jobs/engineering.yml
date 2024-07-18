@@ -4,7 +4,10 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
   items:
@@ -16,7 +19,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
   items:
@@ -28,16 +31,16 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobAtmosphericTechnician
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobStationEngineer
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Engineering
       min: 216000 # 60 hours
   items:
@@ -49,16 +52,19 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobAtmosphericTechnician
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobStationEngineer
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Engineering
       min: 216000 # 60 hours
   items:
@@ -70,7 +76,7 @@
   cost: 3
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - AtmosphericTechnician
   items:
@@ -83,7 +89,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
         - AtmosphericTechnician
@@ -96,7 +102,7 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
         - AtmosphericTechnician
@@ -110,7 +116,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
         - AtmosphericTechnician
@@ -123,7 +129,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
         - AtmosphericTechnician
@@ -136,7 +142,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
         - AtmosphericTechnician
@@ -149,7 +155,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
         - AtmosphericTechnician
@@ -162,7 +168,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
         - AtmosphericTechnician

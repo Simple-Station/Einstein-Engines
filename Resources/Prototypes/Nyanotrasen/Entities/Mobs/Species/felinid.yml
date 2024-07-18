@@ -9,6 +9,7 @@
     scale: 0.8, 0.8
   - type: HumanoidAppearance
     species: Felinid
+    initial: Felinid
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -64,6 +65,20 @@
       Unsexed: MaleFelinid
   - type: Felinid
   - type: NoShoesSilentFootsteps
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - SolCommon
+    - Nekomimetic
+    understands:
+    - GalacticCommon
+    - SolCommon
+    - Nekomimetic
+  - type: Thieving
+    ignoreStripHidden: true
+    stealth: Subtle
+    stripTimeReduction: 0
+    stripTimeMultiplier: 0.667
 
 - type: entity
   save: false
