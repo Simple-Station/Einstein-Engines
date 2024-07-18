@@ -85,12 +85,14 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
                 k--;
             }
 
-            if (spawns != null && spawns.Count == 1)
+            while (spawns != null && spawns.Count == 1 && k > 0)
             {
                 BuildAMimicWorkshop(spawns[0].Entity, component);
                 if (component.DoAnnouncement)
                     _chat.DispatchStationAnnouncement(stations[0], Loc.GetString("station-event-rampant-intelligence-announcement"), playDefaultSound: true,
                         colorOverride: Color.Red, sender: "Central Command");
+
+                k--;
             }
         }
     }
