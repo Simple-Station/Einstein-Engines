@@ -27,6 +27,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [UISystemDependency] private readonly LoadoutSystem _loadouts = default!;
 
     private LobbyCharacterPanel? _previewPanel;
+    private HumanoidProfileEditor? _profileEditor;
 
     /*
      * Each character profile has its own dummy. There is also a dummy for the lobby screen + character editor
@@ -39,6 +40,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     private EntityUid? _previewDummy;
 
     [Access(typeof(HumanoidProfileEditor))]
+    public bool UpdateClothes = true;
+    [Access(typeof(HumanoidProfileEditor))]
     public bool ShowClothes = true;
     [Access(typeof(HumanoidProfileEditor))]
     public bool ShowLoadouts = true;
@@ -49,11 +52,21 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     public override void Initialize()
     {
         base.Initialize();
+
         _preferencesManager.OnServerDataLoaded += PreferencesDataLoaded;
     }
 
     private void PreferencesDataLoaded()
     {
+        if (_previewDummy != null)
+            EntityManager.DeleteEntity(_previewDummy);
+
+        _previewDummy =
+            EntityManager.SpawnEntity(
+                _prototypeManager.Index<SpeciesPrototype>(HumanoidCharacterProfile.DefaultWithSpecies().Species)
+                    .DollPrototype, MapCoordinates.Nullspace);
+        _previewPanel?.SetSprite(_previewDummy.Value);
+
         UpdateCharacterUI();
     }
 
@@ -73,6 +86,12 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         UpdateCharacterUI();
     }
 
+    public void SetProfileEditor(HumanoidProfileEditor? editor)
+    {
+        _profileEditor = editor;
+        UpdateCharacterUI();
+    }
+
     public void UpdateCharacterUI()
     {
         // Test moment
@@ -89,20 +108,46 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         if (_preferencesManager.Preferences?.SelectedCharacter is not HumanoidCharacterProfile selectedCharacter)
             _previewPanel?.SetSummaryText(string.Empty);
-        else
+        else if (_previewDummy != null)
         {
-            EntityManager.DeleteEntity(_previewDummy);
-            _previewDummy = EntityManager.SpawnEntity(_prototypeManager.Index<SpeciesPrototype>(selectedCharacter.Species).DollPrototype, MapCoordinates.Nullspace);
-            _previewPanel?.SetSprite(_previewDummy.Value);
-            _previewPanel?.SetSummaryText(selectedCharacter.Summary);
-            _humanoid.LoadProfile(_previewDummy.Value, selectedCharacter);
+            var maybeProfile = _profileEditor?.Profile ?? selectedCharacter;
+            _previewPanel?.SetSummaryText(maybeProfile.Summary);
+            _humanoid.LoadProfile(_previewDummy.Value, maybeProfile);
 
-            if (ShowClothes)
-                GiveDummyJobClothes(_previewDummy.Value, GetPreferredJob(selectedCharacter), selectedCharacter);
-            if (ShowLoadouts)
-                GiveDummyLoadouts(_previewDummy.Value, GetPreferredJob(selectedCharacter), selectedCharacter);
+
+            if (UpdateClothes)
+            {
+                RemoveDummyClothes(_previewDummy.Value);
+                if (ShowClothes)
+                    GiveDummyJobClothes(_previewDummy.Value, GetPreferredJob(maybeProfile), maybeProfile);
+                if (ShowLoadouts)
+                    GiveDummyLoadouts(_previewDummy.Value, GetPreferredJob(maybeProfile), maybeProfile);
+                UpdateClothes = false;
+            }
+
             PreviewDummyUpdated?.Invoke(_previewDummy.Value);
         }
+    }
+
+
+    /// <summary>
+    ///     Gets the highest priority job for the profile.
+    /// </summary>
+    public JobPrototype GetPreferredJob(HumanoidCharacterProfile profile)
+    {
+        var highPriorityJob = profile.JobPriorities.FirstOrDefault(p => p.Value == JobPriority.High).Key;
+        // ReSharper disable once NullCoalescingConditionIsAlwaysNotNullAccordingToAPIContract (what is ReSharper smoking?)
+        return _prototypeManager.Index<JobPrototype>(highPriorityJob ?? SharedGameTicker.FallbackOverflowJob);
+    }
+
+    public void RemoveDummyClothes(EntityUid dummy)
+    {
+        if (!_inventory.TryGetSlots(dummy, out var slots))
+            return;
+
+        foreach (var slot in slots)
+            if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
+                EntityManager.DeleteEntity(unequippedItem.Value);
     }
 
     /// <summary>
@@ -113,16 +158,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         var job = GetPreferredJob(profile);
         GiveDummyJobClothes(dummy, job, profile);
         GiveDummyLoadouts(dummy, job, profile);
-    }
-
-    /// <summary>
-    ///     Gets the highest priority job for the profile.
-    /// </summary>
-    public JobPrototype GetPreferredJob(HumanoidCharacterProfile profile)
-    {
-        var highPriorityJob = profile.JobPriorities.FirstOrDefault(p => p.Value == JobPriority.High).Key;
-        // ReSharper disable once NullCoalescingConditionIsAlwaysNotNullAccordingToAPIContract (what is ReSharper smoking?)
-        return _prototypeManager.Index<JobPrototype>(highPriorityJob ?? SharedGameTicker.FallbackOverflowJob);
     }
 
     public void GiveDummyLoadouts(EntityUid dummy, JobPrototype job, HumanoidCharacterProfile profile)

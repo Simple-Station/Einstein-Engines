@@ -114,6 +114,7 @@ namespace Content.Client.Preferences.UI
             _characterRequirementsSystem = EntitySystem.Get<CharacterRequirementsSystem>();
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
 
+            _controller.SetProfileEditor(this);
             _controller.PreviewDummyUpdated += OnDummyUpdate;
             _previewSpriteView.SetEntity(_controller.GetPreviewDummy());
 
@@ -291,6 +292,7 @@ namespace Content.Client.Preferences.UI
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithHairStyleName(newStyle.id));
                 IsDirty = true;
+                UpdatePreview();
             };
 
             _hairPicker.OnColorChanged += newColor =>
@@ -301,6 +303,7 @@ namespace Content.Client.Preferences.UI
                     Profile.Appearance.WithHairColor(newColor.marking.MarkingColors[0]));
                 UpdateCMarkingsHair();
                 IsDirty = true;
+                UpdatePreview();
             };
 
             _facialHairPicker.OnMarkingSelect += newStyle =>
@@ -310,6 +313,7 @@ namespace Content.Client.Preferences.UI
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithFacialHairStyleName(newStyle.id));
                 IsDirty = true;
+                UpdatePreview();
             };
 
             _facialHairPicker.OnColorChanged += newColor =>
@@ -320,6 +324,7 @@ namespace Content.Client.Preferences.UI
                     Profile.Appearance.WithFacialHairColor(newColor.marking.MarkingColors[0]));
                 UpdateCMarkingsFacialHair();
                 IsDirty = true;
+                UpdatePreview();
             };
 
             _hairPicker.OnSlotRemove += _ =>
@@ -332,6 +337,7 @@ namespace Content.Client.Preferences.UI
                 UpdateHairPickers();
                 UpdateCMarkingsHair();
                 IsDirty = true;
+                UpdatePreview();
             };
 
             _facialHairPicker.OnSlotRemove += _ =>
@@ -344,6 +350,7 @@ namespace Content.Client.Preferences.UI
                 UpdateHairPickers();
                 UpdateCMarkingsFacialHair();
                 IsDirty = true;
+                UpdatePreview();
             };
 
             _hairPicker.OnSlotAdd += delegate()
@@ -364,6 +371,7 @@ namespace Content.Client.Preferences.UI
                 UpdateHairPickers();
                 UpdateCMarkingsHair();
                 IsDirty = true;
+                UpdatePreview();
             };
 
             _facialHairPicker.OnSlotAdd += delegate()
@@ -384,6 +392,7 @@ namespace Content.Client.Preferences.UI
                 UpdateHairPickers();
                 UpdateCMarkingsFacialHair();
                 IsDirty = true;
+                UpdatePreview();
             };
 
             #endregion Hair
@@ -440,6 +449,7 @@ namespace Content.Client.Preferences.UI
                     Profile.Appearance.WithEyeColor(newColor));
                 CMarkings.CurrentEyeColor = Profile.Appearance.EyeColor;
                 IsDirty = true;
+                UpdatePreview();
             };
 
             #endregion Eyes
@@ -785,8 +795,8 @@ namespace Content.Client.Preferences.UI
                 return;
 
             Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithMarkings(markings.GetForwardEnumerator().ToList()));
-            UpdatePreview();
             IsDirty = true;
+            UpdatePreview();
         }
 
         private void OnSkinColorOnValueChanged()
@@ -935,6 +945,7 @@ namespace Content.Client.Preferences.UI
         {
             Profile = Profile?.WithClothingPreference(newClothing);
             IsDirty = true;
+            _controller.UpdateClothes = true;
             UpdatePreview();
         }
 
@@ -942,6 +953,7 @@ namespace Content.Client.Preferences.UI
         {
             Profile = Profile?.WithBackpackPreference(newBackpack);
             IsDirty = true;
+            _controller.UpdateClothes = true;
             UpdatePreview();
         }
 
@@ -1590,7 +1602,7 @@ namespace Content.Client.Preferences.UI
 
                     // Update Preferences
                     Profile = Profile?.WithTraitPreference(id, preference);
-                    IsDirty = true;
+                    UpdatePreview();
                     UpdateTraitPreferences();
                     UpdateTraits(_traitsShowUnusableButton.Pressed);
                     UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
@@ -1626,6 +1638,7 @@ namespace Content.Client.Preferences.UI
             }
 
             IsDirty = true;
+            _controller.UpdateClothes = true;
             UpdatePreview();
         }
 
