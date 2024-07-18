@@ -1,26 +1,3 @@
-# Harpy
-- type: emote
-  id: HarpyHonk
-  category: Vocal
-  chatMessages: [honks.]
-  chatTriggers:
-    - honk
-    - honk.
-    - honk!
-    - honk?
-    - honks
-    - honks.
-    - honks!
-    - honks?
-    - honking
-    - honking.
-    - honking!
-    - honking?
-    - honked
-    - honked.
-    - honked!
-    - honked?
-
 - type: emote
   id: HarpyRing
   category: Vocal
@@ -86,28 +63,6 @@
     - banged.
     - banged!
     - banged?
-
-- type: emote
-  id: HarpyBeep
-  category: Vocal
-  chatMessages: [beeps.]
-  chatTriggers:
-    - beep
-    - beep.
-    - beep!
-    - beep?
-    - beeps
-    - beeps.
-    - beeps!
-    - beeps?
-    - beeping
-    - beeping.
-    - beeping!
-    - beeping?
-    - beeped
-    - beeped.
-    - beeped!
-    - beeped?
 
 - type: emote
   id: HarpyRev
