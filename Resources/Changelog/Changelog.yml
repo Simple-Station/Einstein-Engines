@@ -4513,3 +4513,11 @@ Entries:
       message: Added an alert on the UI for when the user is walking or running.
   id: 6166
   time: '2024-07-16T21:39:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now lie down and stand up at will! The default keybind for it is
+        "R", but it can be changed in settings.
+  id: 6167
+  time: '2024-07-18T02:33:16.0000000+00:00'
