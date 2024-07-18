@@ -23,7 +23,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_space_law
+    - state: icon_law
 #  - type: HyperlinkBook
 #    url: https://wiki.nyanotrasen.moe/view/Space_Law
 
@@ -35,7 +35,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_space_law
+    - state: icon_law
 #  - type: HyperlinkBook
 #    url: https://supernannyfanon.fandom.com/wiki/Category:Discipline_Techniques
 
@@ -65,7 +65,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_chemistry
+    - state: icon_law
 #  - type: HyperlinkBook
 #    url: https://wiki.nyanotrasen.moe/view/Chemistry
 
@@ -77,7 +77,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_bar
+    - state: icon_law
 #  - type: HyperlinkBook
 #    url: https://wiki.nyanotrasen.moe/view/Drinks
 
@@ -89,7 +89,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_cooking
+    - state: icon_law
 #  - type: HyperlinkBook
 #    url: https://wiki.nyanotrasen.moe/view/Cooking
 
@@ -101,7 +101,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_hydroponics_pod_people
+    - state: icon_law
 #  - type: HyperlinkBook
 #    url: https://wiki.nyanotrasen.moe/view/Hydroponics
 
@@ -113,7 +113,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_engineering
+    - state: icon_law
 #  - type: HyperlinkBook
 #    url: https://wiki.nyanotrasen.moe/view/Shuttle_Construction
 
@@ -126,7 +126,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_nuclear
+    - state: icon_law
   # - type: HyperlinkBook
   #   url: https://wiki.nyanotrasen.moe/view/Alert_Procedure
 #  - type: GuidebookBook
@@ -144,7 +144,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_particle_accelerator
+    - state: icon_law
   # - type: HyperlinkBook
   #   url: https://wiki.nyanotrasen.moe/view/Standard_Operating_Procedure
 #  - type: GuidebookBook
@@ -159,7 +159,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_engineering2
+    - state: icon_law
 #  - type: HyperlinkBook
 #    url: https://wiki.nyanotrasen.moe/view/Power
 
@@ -171,7 +171,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_infections
+    - state: icon_law
 #  - type: HyperlinkBook
 #    url: https://wiki.nyanotrasen.moe/view/Medical
 
@@ -183,7 +183,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_hacking
+    - state: icon_law
 #  - type: HyperlinkBook
 #    url: https://wiki.nyanotrasen.moe/view/Hacking
 
@@ -196,7 +196,7 @@
   components:
   - type: Sprite
     layers:
-    - state: book_engineering2
+    - state: icon_law
   # - type: HyperlinkBook
   #   url: https://wiki.nyanotrasen.moe/view/Atmospheric_Science
 #  - type: GuidebookBook
