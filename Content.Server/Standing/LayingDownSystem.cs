@@ -54,8 +54,7 @@ public sealed class LayingDownSystem : EntitySystem
     private void OnParentChanged(EntityUid uid, LayingDownComponent component, EntParentChangedMessage args)
     {
         // If the entity is not on a grid, try to make it stand up to avoid issues
-        if (!_standing.IsDown(uid)
-            || !TryComp<StandingStateComponent>(uid, out var standingState)
+        if (!TryComp<StandingStateComponent>(uid, out var standingState)
             || standingState.Standing
             || Transform(uid).GridUid != null)
             return;
