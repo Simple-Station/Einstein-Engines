@@ -1,5 +1,4 @@
 using System.Numerics;
-using Content.Client.Overlays;
 using Content.Shared.Camera;
 using Content.Shared.CCVar;
 using Content.Shared.Contests;
