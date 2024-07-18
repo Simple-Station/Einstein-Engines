@@ -62,12 +62,6 @@
   - type: Tag
     tags:
     - DrinkCan
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
-  - type: EmitSoundOnLand
-    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
 
 - type: entity
   parent: DrinkCanBaseFull
@@ -188,9 +182,6 @@
     sprite: Objects/Consumable/Drinks/rootbeer.rsi
   - type: Item
     sprite: Objects/Consumable/Drinks/rootbeer.rsi
-  - type: Tag
-    tags:
-    - Beer
 
 - type: entity
   parent: DrinkCanBaseFull
@@ -489,9 +480,6 @@
     sprite: Objects/Consumable/Drinks/beer_can.rsi
   - type: Item
     sprite: Objects/Consumable/Drinks/beer_can.rsi
-  - type: Tag
-    tags:
-    - Beer
 
 - type: entity
   parent: DrinkCanBaseFull
@@ -511,6 +499,3 @@
     sprite: Objects/Consumable/Drinks/wine_can.rsi
   - type: Item
     sprite: Objects/Consumable/Drinks/wine_can.rsi
-  - type: Tag
-    tags:
-    - Wine

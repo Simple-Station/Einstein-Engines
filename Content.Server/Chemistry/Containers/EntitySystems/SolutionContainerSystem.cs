@@ -4,6 +4,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Utility;
 using System.Numerics;
 
@@ -11,6 +12,8 @@ namespace Content.Server.Chemistry.Containers.EntitySystems;
 
 public sealed partial class SolutionContainerSystem : SharedSolutionContainerSystem
 {
+    [Dependency] private readonly INetManager _netManager = default!;
+
     public override void Initialize()
     {
         base.Initialize();

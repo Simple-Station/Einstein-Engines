@@ -1,6 +1,5 @@
 using Content.Shared.Construction.Components;
 using Content.Shared.SubFloor;
-using Robust.Shared.Map.Components;
 
 namespace Content.Server.SubFloor;
 
@@ -18,7 +17,7 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
         // No teleporting entities through floor tiles when anchoring them.
         var xform = Transform(uid);
 
-        if (TryComp<MapGridComponent>(xform.GridUid, out var grid)
+        if (MapManager.TryGetGrid(xform.GridUid, out var grid)
             && HasFloorCover(grid, grid.TileIndicesFor(xform.Coordinates)))
         {
             args.Cancel();

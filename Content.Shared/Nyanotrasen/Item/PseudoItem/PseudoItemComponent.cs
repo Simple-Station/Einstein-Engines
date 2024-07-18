@@ -3,10 +3,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Nyanotrasen.Item.PseudoItem;
 
-/// <summary>
-/// For entities that behave like an item under certain conditions,
-/// but not under most conditions.
-/// </summary>
+    /// <summary>
+    /// For entities that behave like an item under certain conditions,
+    /// but not under most conditions.
+    /// </summary>
 [RegisterComponent, AutoGenerateComponentState]
 public sealed partial class PseudoItemComponent : Component
 {
@@ -24,10 +24,4 @@ public sealed partial class PseudoItemComponent : Component
     public Vector2i StoredOffset;
 
     public bool Active = false;
-
-    /// <summary>
-    /// Action for sleeping while inside a container with <see cref="AllowsSleepInsideComponent"/>.
-    /// </summary>
-    [DataField]
-    public EntityUid? SleepAction;
 }

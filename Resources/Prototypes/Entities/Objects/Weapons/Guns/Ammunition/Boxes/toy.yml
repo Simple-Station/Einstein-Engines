@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: BaseMagazineBox
+  parent: BaseItem
   id: BoxDonkSoftBase
   name: foamdart box
   components:

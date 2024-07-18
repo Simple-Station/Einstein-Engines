@@ -32,7 +32,6 @@
   - type: Sprite
     drawdepth: WallTops
     sprite: Structures/Wallmounts/signs.rsi
-    snapCardinals: false
-    noRot: true
+    snapCardinals: true
   - type: StaticPrice
     price: 20

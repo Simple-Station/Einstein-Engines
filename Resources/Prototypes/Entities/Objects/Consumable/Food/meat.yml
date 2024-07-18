@@ -718,7 +718,6 @@
     tags:
     - Cooked
     - Meat
-    - Steak
   - type: Sprite
     layers:
     - state: plain-cooked
@@ -775,7 +774,6 @@
     tags:
     - Cooked
     - Meat
-    - Steak
   - type: Sprite
     layers:
     - state: product-cooked
@@ -944,7 +942,6 @@
     tags:
     - Cooked
     - Meat
-    - Steak
   - type: Sprite
     layers:
     - state: goliath-cooked
@@ -974,7 +971,6 @@
     tags:
     - Cooked
     - Meat
-    - Steak
   - type: Sprite
     layers:
     - state: rouny-cooked
@@ -1000,7 +996,6 @@
     tags:
     - Cooked
     - Meat
-    - Steak
   - type: Sprite
     layers:
     - state: lizard-cooked

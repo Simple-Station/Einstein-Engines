@@ -3,7 +3,7 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Administration;
 using Content.Shared.Atmos;
 using Robust.Shared.Console;
-using Robust.Shared.Map.Components;
+using Robust.Shared.Map;
 
 namespace Content.Server.Atmos.Commands
 {
@@ -11,6 +11,7 @@ namespace Content.Server.Atmos.Commands
     public sealed class DeleteGasCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _entManager = default!;
+        [Dependency] private readonly IMapManager _mapManager = default!;
 
         public string Command => "deletegas";
         public string Description => "Removes all gases from a grid, or just of one type if specified.";
@@ -118,7 +119,7 @@ namespace Content.Server.Atmos.Commands
                     return;
             }
 
-            if (!_entManager.TryGetComponent<MapGridComponent>(gridId, out _))
+            if (!_mapManager.TryGetGrid(gridId, out _))
             {
                 shell.WriteLine($"No grid exists with id {gridId}");
                 return;

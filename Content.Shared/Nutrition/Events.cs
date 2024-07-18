@@ -53,9 +53,3 @@ public sealed partial class VapeDoAfterEvent : DoAfterEvent
 
     public override DoAfterEvent Clone() => this;
 }
-
-/// <summary>
-/// Raised before food is sliced
-/// </summary>
-[ByRefEvent]
-public record struct SliceFoodEvent();

@@ -80,7 +80,7 @@
           - ReagentId: Nicotine
             Quantity: 10
           - ReagentId: Omnizine
-            Quantity: 5
+            Quantity: 30
 
 - type: entity
   id: CigaretteOmnizine

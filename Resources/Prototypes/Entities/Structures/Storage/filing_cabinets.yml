@@ -156,7 +156,6 @@
     node: chestDrawer
   - type: StaticPrice
     price: 15
-  - type: RequireProjectileTarget
 
 - type: entity
   abstract: true

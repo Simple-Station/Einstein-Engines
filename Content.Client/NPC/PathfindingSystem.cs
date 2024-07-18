@@ -289,6 +289,7 @@ namespace Content.Client.NPC
 
                 var invGridMatrix = gridXform.InvWorldMatrix;
                 DebugPathPoly? nearest = null;
+                var nearestDistance = float.MaxValue;
 
                 foreach (var poly in tile)
                 {

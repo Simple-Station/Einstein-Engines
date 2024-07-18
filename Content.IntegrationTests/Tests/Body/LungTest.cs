@@ -9,6 +9,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Maths;
 using System.Linq;
 using System.Numerics;
 
@@ -60,11 +61,12 @@ namespace Content.IntegrationTests.Tests.Body
             var mapManager = server.ResolveDependency<IMapManager>();
             var entityManager = server.ResolveDependency<IEntityManager>();
             var mapLoader = entityManager.System<MapLoaderSystem>();
+            RespiratorSystem respSys = default;
+            MetabolizerSystem metaSys = default;
 
             MapId mapId;
             EntityUid? grid = null;
             BodyComponent body = default;
-            RespiratorComponent resp = default;
             EntityUid human = default;
             GridAtmosphereComponent relevantAtmos = default;
             var startingMoles = 0.0f;
@@ -97,15 +99,17 @@ namespace Content.IntegrationTests.Tests.Body
 
             await server.WaitAssertion(() =>
             {
-                var center = new Vector2(0.5f, 0.5f);
-                var coordinates = new EntityCoordinates(grid.Value, center);
+                var coords = new Vector2(0.5f, -1f);
+                var coordinates = new EntityCoordinates(grid.Value, coords);
                 human = entityManager.SpawnEntity("HumanLungDummy", coordinates);
+                respSys = entityManager.System<RespiratorSystem>();
+                metaSys = entityManager.System<MetabolizerSystem>();
                 relevantAtmos = entityManager.GetComponent<GridAtmosphereComponent>(grid.Value);
-                startingMoles = 100f; // Hardcoded because GetMapMoles returns 900 here for some reason.
+                startingMoles = GetMapMoles();
 
 #pragma warning disable NUnit2045
                 Assert.That(entityManager.TryGetComponent(human, out body), Is.True);
-                Assert.That(entityManager.TryGetComponent(human, out resp), Is.True);
+                Assert.That(entityManager.HasComponent<RespiratorComponent>(human), Is.True);
 #pragma warning restore NUnit2045
             });
 
@@ -114,19 +118,18 @@ namespace Content.IntegrationTests.Tests.Body
             var inhaleCycles = 100;
             for (var i = 0; i < inhaleCycles; i++)
             {
-                // Breathe in
-                await PoolManager.WaitUntil(server, () => resp.Status == RespiratorStatus.Exhaling);
-                Assert.That(
-                    GetMapMoles(), Is.LessThan(startingMoles),
-                    "Did not inhale in any gas"
-                );
+                await server.WaitAssertion(() =>
+                {
+                    // inhale
+                    respSys.Update(2.0f);
+                    Assert.That(GetMapMoles(), Is.LessThan(startingMoles));
 
-                // Breathe out
-                await PoolManager.WaitUntil(server, () => resp.Status == RespiratorStatus.Inhaling);
-                Assert.That(
-                    GetMapMoles(), Is.EqualTo(startingMoles).Within(0.0002),
-                    "Did not exhale as much gas as was inhaled"
-                );
+                    // metabolize + exhale
+                    metaSys.Update(1.0f);
+                    metaSys.Update(1.0f);
+                    respSys.Update(2.0f);
+                    Assert.That(GetMapMoles(), Is.EqualTo(startingMoles).Within(0.0002));
+                });
             }
 
             await pair.CleanReturnAsync();

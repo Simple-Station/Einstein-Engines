@@ -1,5 +1,6 @@
 using Content.Server.UserInterface;
 using Content.Shared.Instruments;
+using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 
 namespace Content.Server.Instruments;

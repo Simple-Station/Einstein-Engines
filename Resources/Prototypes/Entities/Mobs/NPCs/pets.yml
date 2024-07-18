@@ -36,12 +36,6 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalIan
-  - type: LanguageKnowledge
-    speaks:
-    - Dog
-    understands:
-    - GalacticCommon
-    - Dog
 
 - type: entity
   name: Old Ian
@@ -127,12 +121,6 @@
     tags:
     - CannotSuicide
     - VimPilot
-  - type: LanguageKnowledge
-    speaks:
-    - Cat
-    understands:
-    - GalacticCommon
-    - Cat
 
 - type: entity
   name: Exception
@@ -151,12 +139,6 @@
     tags:
     - CannotSuicide
     - VimPilot
-  - type: LanguageKnowledge
-    speaks:
-    - Cat
-    understands:
-    - GalacticCommon
-    - Cat
 
 - type: entity
   name: Floppa
@@ -306,12 +288,8 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: LanguageKnowledge
-    speaks:
-    - Dog
-    understands:
-    - GalacticCommon
-    - Dog
+  - type: ReplacementAccent
+    accent: dog
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-dog
@@ -329,8 +307,6 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalMcGriff
-  - type: RandomBark
-    barkMultiplier: 1.3
 
 - type: entity
   name: Paperwork
@@ -411,12 +387,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
-  - type: LanguageKnowledge
-    speaks:
-    - Dog
-    understands:
-    - GalacticCommon
-    - Dog
+  - type: ReplacementAccent
+    accent: dog
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-dog
@@ -434,8 +406,6 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalWalter
-  - type: RandomBark
-    barkMultiplier: 1.1
 
 - type: entity
   name: Morty
@@ -576,12 +546,6 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalRenault
-  - type: LanguageKnowledge
-    speaks:
-    - Fox
-    understands:
-    - GalacticCommon
-    - Fox
 
 - type: entity
   name: Hamlet
@@ -629,12 +593,6 @@
     - CannotSuicide
     - Hamster
     - VimPilot
-  - type: LanguageKnowledge
-    speaks:
-    - Mouse
-    understands:
-    - GalacticCommon
-    - Mouse
 
 - type: entity
   name: Shiva
@@ -807,12 +765,6 @@
     attributes:
       proper: true
       gender: female
-  - type: LanguageKnowledge
-    speaks:
-    - Bubblish
-    understands:
-    - GalacticCommon
-    - Bubblish
 
 - type: entity
   name: Pun Pun
@@ -847,13 +799,6 @@
     attributes:
       proper: true
       gender: male
-  - type: LanguageKnowledge
-    speaks:
-    - Monkey
-    understands:
-    - GalacticCommon
-    - Monkey
-    - Kobold
 
 - type: entity
   name: Tropico
@@ -881,9 +826,3 @@
 #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
     stealGroup: AnimalTropico
-  - type: LanguageKnowledge
-    speaks:
-    - Crab
-    understands:
-    - GalacticCommon
-    - Crab

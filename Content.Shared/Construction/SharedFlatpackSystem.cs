@@ -114,7 +114,8 @@ public abstract class SharedFlatpackSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp))
             return;
 
-        var machinePrototypeId = new EntProtoId();
+        EntProtoId machinePrototypeId;
+        string? entityPrototype;
         if (TryComp<MachineBoardComponent>(board, out var machineBoard) && machineBoard.Prototype is not null)
             machinePrototypeId = machineBoard.Prototype;
         else if (TryComp<ComputerBoardComponent>(board, out var computerBoard) && computerBoard.Prototype is not null)

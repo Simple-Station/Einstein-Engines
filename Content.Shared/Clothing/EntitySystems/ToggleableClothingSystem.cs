@@ -27,7 +27,6 @@ public sealed class ToggleableClothingSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedStrippableSystem _strippable = default!;
-    [Dependency] private readonly ThievingSystem _thieving = default!;
 
     public override void Initialize()
     {
@@ -96,9 +95,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
         if (component.StripDelay == null)
             return;
 
-        var (time, stealth) = _strippable.GetStripTimeModifiers(user, wearer, component.StripDelay.Value);
-
-        bool hidden = (stealth == ThievingStealth.Hidden);
+        var (time, stealth) = _strippable.GetStripTimeModifiers(user, wearer, (float) component.StripDelay.Value.TotalSeconds);
 
         var args = new DoAfterArgs(EntityManager, user, time, new ToggleClothingDoAfterEvent(), item, wearer, item)
         {
@@ -113,8 +110,11 @@ public sealed class ToggleableClothingSystem : EntitySystem
         if (!_doAfter.TryStartDoAfter(args))
             return;
 
-        if (!hidden)
-            _strippable.StripPopup("strippable-component-alert-owner-interact", stealth, wearer, user: Identity.Entity(user, EntityManager), item: item);
+        if (!stealth)
+        {
+            var popup = Loc.GetString("strippable-component-alert-owner-interact", ("user", Identity.Entity(user, EntityManager)), ("item", item));
+            _popupSystem.PopupEntity(popup, wearer, wearer, PopupType.Large);
+        }
     }
 
     private void OnGetAttachedStripVerbsEvent(EntityUid uid, AttachedClothingComponent component, GetVerbsEvent<EquipmentVerb> args)

@@ -1,6 +1,8 @@
+using Content.Server.Atmos;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.Piping.Components;
 using Content.Shared.Atmos;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using System.Diagnostics.CodeAnalysis;
 
@@ -13,6 +15,7 @@ public sealed class AirFilterSystem : EntitySystem
 {
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly IMapManager _map = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {

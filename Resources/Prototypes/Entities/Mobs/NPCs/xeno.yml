@@ -125,11 +125,6 @@
     chance: -2
   - type: Psionic #Nyano - Summary: makes psionic by default.
     removable: false
-  - type: LanguageKnowledge
-    speaks:
-    - Xeno
-    understands:
-    - Xeno
 
 - type: entity
   name: Praetorian
@@ -239,13 +234,6 @@
   - type: Tag
     tags:
     - CannotSuicide
-  - type: LanguageKnowledge
-    speaks:
-    - GalacticCommon
-    - Xeno
-    understands:
-    - GalacticCommon
-    - Xeno
 
 - type: entity
   name: Ravager

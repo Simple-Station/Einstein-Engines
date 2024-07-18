@@ -13,7 +13,7 @@ public static class ClientPackaging
     /// <summary>
     /// Be advised this can be called from server packaging during a HybridACZ build.
     /// </summary>
-    public static async Task PackageClient(bool skipBuild, string configuration, IPackageLogger logger)
+    public static async Task PackageClient(bool skipBuild, IPackageLogger logger)
     {
         logger.Info("Building client...");
 
@@ -26,7 +26,7 @@ public static class ClientPackaging
                 {
                     "build",
                     Path.Combine("Content.Client", "Content.Client.csproj"),
-                    "-c", configuration,
+                    "-c", "Release",
                     "--nologo",
                     "/v:m",
                     "/t:Rebuild",

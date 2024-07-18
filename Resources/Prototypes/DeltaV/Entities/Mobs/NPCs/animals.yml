@@ -66,11 +66,6 @@
   - type: Tag
     tags:
     - VimPilot
-  - type: LanguageKnowledge
-    speaks:
-    - Fox
-    understands:
-    - Fox
 
 - type: entity
   name: security dog
@@ -159,6 +154,8 @@
     spawned:
     - id: FoodMeat
       amount: 2
+  - type: ReplacementAccent
+    accent: dog
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-dog
@@ -179,9 +176,3 @@
     tags:
     - DoorBumpOpener
     - VimPilot
-  - type: LanguageKnowledge
-    speaks:
-    - Dog
-    understands:
-    - Dog
-    - GalacticCommon

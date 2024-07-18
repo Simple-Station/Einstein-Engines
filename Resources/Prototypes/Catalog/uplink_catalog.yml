@@ -66,17 +66,6 @@
   - UplinkWeapons
 
 - type: listing
-  id: UplinkThrowingKnivesKit
-  name: uplink-knives-kit-name
-  description: uplink-knives-kit-desc
-  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: throwing_knives }
-  productEntity: ThrowingKnivesKit
-  cost:
-    Telecrystal: 6
-  categories:
-    - UplinkWeapons
-
-- type: listing
   id: UplinkGlovesNorthStar
   name: uplink-gloves-north-star-name
   description: uplink-gloves-north-star-desc
@@ -264,6 +253,16 @@
     whitelist:
       tags:
       - NukeOpsUplink
+
+- type: listing
+  id: UplinkSyndicateBombFake
+  name: uplink-exploding-syndicate-bomb-fake-name
+  description: uplink-exploding-syndicate-bomb-fake-desc
+  productEntity: SyndicateBombFake
+  cost:
+    Telecrystal: 4
+  categories:
+    - UplinkExplosives
 
 - type: listing
   id: UplinkClusterGrenade
@@ -777,19 +776,7 @@
   cost:
     Telecrystal: 6
   categories:
-  - UplinkBundles
-
-- type: listing
-  id: UplinkSyndicateBombFake
-  name: uplink-exploding-syndicate-bomb-fake-name
-  description: uplink-exploding-syndicate-bomb-fake-desc
-  productEntity: SyndicateBombFake
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkDeception
-
-# Disruption
+    - UplinkBundles
 
 - type: listing
   id: UplinkAmmoBundle
@@ -1240,16 +1227,6 @@
     - UplinkUtility
 
 # Armor
-
-- type: listing
-  id: UplinkChestRig
-  name: uplink-chest-rig-name
-  description: uplink-chest-rig-desc
-  productEntity: ClothingBeltMilitaryWebbing
-  cost:
-    Telecrystal: 1
-  categories:
-    - UplinkArmor
 
 - type: listing
   id: UplinkChameleon

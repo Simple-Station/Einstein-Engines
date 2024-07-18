@@ -83,6 +83,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Airtight
+    fixVacuum: true
 
 - type: entity
   id: PlasticFlapsAirtightOpaque
@@ -100,3 +101,4 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Airtight
+    fixVacuum: true

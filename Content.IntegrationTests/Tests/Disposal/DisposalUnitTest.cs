@@ -163,6 +163,7 @@ namespace Content.IntegrationTests.Tests.Disposal
             var entityManager = server.ResolveDependency<IEntityManager>();
             var xformSystem = entityManager.System<SharedTransformSystem>();
             var disposalSystem = entityManager.System<DisposalUnitSystem>();
+
             await server.WaitAssertion(() =>
             {
                 // Spawn the entities
@@ -170,7 +171,8 @@ namespace Content.IntegrationTests.Tests.Disposal
                 human = entityManager.SpawnEntity("HumanDisposalDummy", coordinates);
                 wrench = entityManager.SpawnEntity("WrenchDummy", coordinates);
                 disposalUnit = entityManager.SpawnEntity("DisposalUnitDummy", coordinates);
-                disposalTrunk = entityManager.SpawnEntity("DisposalTrunkDummy", coordinates);
+                disposalTrunk = entityManager.SpawnEntity("DisposalTrunkDummy",
+                    entityManager.GetComponent<TransformComponent>(disposalUnit).MapPosition);
 
                 // Test for components existing
                 unitUid = disposalUnit;
@@ -202,10 +204,10 @@ namespace Content.IntegrationTests.Tests.Disposal
 
             await server.WaitAssertion(() =>
             {
-                var worldPos = xformSystem.GetWorldPosition(disposalTrunk);
-
                 // Move the disposal trunk away
-                xformSystem.SetWorldPosition(disposalTrunk, worldPos + new Vector2(1, 0));
+                var xform = entityManager.GetComponent<TransformComponent>(disposalTrunk);
+                var worldPos = xformSystem.GetWorldPosition(disposalTrunk);
+                xformSystem.SetWorldPosition(xform, worldPos + new Vector2(1, 0));
 
                 // Fail to flush with a mob and an item
                 Flush(disposalUnit, unitComponent, false, disposalSystem, human, wrench);
@@ -213,12 +215,10 @@ namespace Content.IntegrationTests.Tests.Disposal
 
             await server.WaitAssertion(() =>
             {
-                var xform = entityManager.GetComponent<TransformComponent>(disposalTrunk);
-                var worldPos = xformSystem.GetWorldPosition(disposalUnit);
-
                 // Move the disposal trunk back
-                xformSystem.SetWorldPosition(disposalTrunk, worldPos);
-                xformSystem.AnchorEntity((disposalTrunk, xform));
+                var xform = entityManager.GetComponent<TransformComponent>(disposalTrunk);
+                var worldPos = xformSystem.GetWorldPosition(disposalTrunk);
+                xformSystem.SetWorldPosition(xform, worldPos - new Vector2(1, 0));
 
                 // Fail to flush with a mob and an item, no power
                 Flush(disposalUnit, unitComponent, false, disposalSystem, human, wrench);
@@ -240,7 +240,6 @@ namespace Content.IntegrationTests.Tests.Disposal
                 // Re-pressurizing
                 Flush(disposalUnit, unitComponent, false, disposalSystem);
             });
-
             await pair.CleanReturnAsync();
         }
     }

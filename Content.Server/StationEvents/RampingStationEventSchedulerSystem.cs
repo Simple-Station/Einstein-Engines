@@ -29,15 +29,15 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
     {
         base.Started(uid, component, gameRule, args);
 
-        var avgChaos = _cfg.GetCVar(CCVars.EventsRampingAverageChaos) * component.ChaosModifier;
-        var avgTime = _cfg.GetCVar(CCVars.EventsRampingAverageEndTime) * component.ShiftLengthModifier;
+        var avgChaos = _cfg.GetCVar(CCVars.EventsRampingAverageChaos);
+        var avgTime = _cfg.GetCVar(CCVars.EventsRampingAverageEndTime);
 
         // Worlds shittiest probability distribution
         // Got a complaint? Send them to
-        component.MaxChaos = avgChaos * _random.NextFloat(0.75f, 1.25f);
+        component.MaxChaos = _random.NextFloat(avgChaos - avgChaos / 4, avgChaos + avgChaos / 4);
         // This is in minutes, so *60 for seconds (for the chaos calc)
-        component.EndTime = avgTime * _random.NextFloat(0.75f, 1.25f) * 60f;
-        component.StartingChaos = component.MaxChaos * component.StartingChaosRatio;
+        component.EndTime = _random.NextFloat(avgTime - avgTime / 4, avgTime + avgTime / 4) * 60f;
+        component.StartingChaos = component.MaxChaos / 10;
 
         PickNextEventTime(uid, component);
     }
@@ -68,10 +68,9 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
 
     private void PickNextEventTime(EntityUid uid, RampingStationEventSchedulerComponent component)
     {
-        component.TimeUntilNextEvent = _random.NextFloat(
-            _cfg.GetCVar(CCVars.GameEventsRampingMinimumTime),
-            _cfg.GetCVar(CCVars.GameEventsRampingMaximumTime));
+        var mod = GetChaosModifier(uid, component);
 
-        component.TimeUntilNextEvent *= component.EventDelayModifier / GetChaosModifier(uid, component);
+        // 4-12 minutes baseline. Will get faster over time as the chaos mod increases.
+        component.TimeUntilNextEvent = _random.NextFloat(240f / mod, 720f / mod);
     }
 }

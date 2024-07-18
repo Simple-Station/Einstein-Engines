@@ -102,13 +102,6 @@
     actionPrototype: DionaGibAction
     allowedStates:
     - Dead
-  - type: LanguageKnowledge
-    speaks:
-    - GalacticCommon
-    - RootSpeak
-    understands:
-    - GalacticCommon
-    - RootSpeak
 
 - type: entity
   parent: BaseSpeciesDummy

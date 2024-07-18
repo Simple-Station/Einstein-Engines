@@ -355,9 +355,6 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/pwinebottle.rsi
   - type: Sealable
-  - type: Tag
-    tags:
-    - Wine
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
@@ -504,9 +501,6 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/winebottle.rsi
   - type: Sealable
-  - type: Tag
-    tags:
-    - Wine
 
 # Small Bottles
 
@@ -529,9 +523,6 @@
     sprite: Objects/Consumable/Drinks/beer.rsi
   - type: Openable
     closeable: false
-  - type: Tag
-    tags:
-    - Beer
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
@@ -552,9 +543,6 @@
     sprite: Objects/Consumable/Drinks/beer.rsi
   - type: Openable
     closeable: false
-  - type: Tag
-    tags:
-    - Beer
 
 
 - type: entity

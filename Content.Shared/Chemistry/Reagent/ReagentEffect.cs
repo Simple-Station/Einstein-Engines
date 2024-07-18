@@ -107,7 +107,6 @@ namespace Content.Shared.Chemistry.Reagent
         FixedPoint2 Quantity,
         IEntityManager EntityManager,
         ReactionMethod? Method,
-        float Scale = 1f,
-        float QuantityMultiplier = 1f
+        float Scale
     );
 }

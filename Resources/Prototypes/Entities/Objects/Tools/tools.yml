@@ -4,10 +4,6 @@
   id: Wirecutter
   description: This kills the wire.
   components:
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/wirecutter_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/wirecutter_drop.ogg
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/wirecutter_drop.ogg
@@ -54,10 +50,6 @@
   id: Screwdriver
   description: Industrial grade torque in a small screwdriving package.
   components:
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/screwdriver_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/screwdriver_drop.ogg
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/screwdriver_drop.ogg
@@ -102,10 +94,6 @@
   id: Wrench
   description: 'A common tool for assembly and disassembly. Remember: righty tighty, lefty loosey.'
   components:
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/wrench_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/wrench_drop.ogg
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/wrench_drop.ogg
@@ -145,10 +133,6 @@
   id: Crowbar
   description: A multipurpose tool to pry open doors and fight interdimensional invaders.
   components:
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/crowbar_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/crowbar_drop.ogg
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/crowbar_drop.ogg
@@ -207,10 +191,6 @@
   id: Multitool
   description: An advanced tool to copy, store, and send electrical pulses and signals through wires and machines
   components:
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/multitool_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/multitool_drop.ogg
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/multitool_drop.ogg

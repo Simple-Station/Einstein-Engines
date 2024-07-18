@@ -1,4 +1,4 @@
-using Content.Server.Atmos.Components;
+﻿using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Chemistry.Containers.EntitySystems;
@@ -26,24 +26,21 @@ public sealed class LungSystem : EntitySystem
         SubscribeLocalEvent<BreathToolComponent, ItemMaskToggledEvent>(OnMaskToggled);
     }
 
-    private void OnGotUnequipped(Entity<BreathToolComponent> ent, ref GotUnequippedEvent args)
+    private void OnGotUnequipped(EntityUid uid, BreathToolComponent component, GotUnequippedEvent args)
     {
-        _atmosphereSystem.DisconnectInternals(ent);
+        _atmosphereSystem.DisconnectInternals(component);
     }
 
-    private void OnGotEquipped(Entity<BreathToolComponent> ent, ref GotEquippedEvent args)
+    private void OnGotEquipped(EntityUid uid, BreathToolComponent component, GotEquippedEvent args)
     {
-        if ((args.SlotFlags & ent.Comp.AllowedSlots) == 0)
-        {
-            return;
-        }
 
-        ent.Comp.IsFunctional = true;
+        if ((args.SlotFlags & component.AllowedSlots) == 0) return;
+        component.IsFunctional = true;
 
         if (TryComp(args.Equipee, out InternalsComponent? internals))
         {
-            ent.Comp.ConnectedInternalsEntity = args.Equipee;
-            _internals.ConnectBreathTool((args.Equipee, internals), ent);
+            component.ConnectedInternalsEntity = args.Equipee;
+            _internals.ConnectBreathTool((args.Equipee, internals), uid);
         }
     }
 
@@ -84,7 +81,7 @@ public sealed class LungSystem : EntitySystem
             if (moles <= 0)
                 continue;
             var reagent = _atmosphereSystem.GasReagents[i];
-            if (reagent is null) continue;
+            if (reagent == null) continue;
 
             var amount = moles * Atmospherics.BreathMolesToReagentMultiplier;
             solution.AddReagent(reagent, amount);

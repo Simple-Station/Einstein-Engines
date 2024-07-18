@@ -50,6 +50,7 @@ public sealed class AmbientSoundSystem : SharedAmbientSoundSystem
     private static AudioParams _params = AudioParams.Default
         .WithVariation(0.01f)
         .WithLoop(true)
+        .WithAttenuation(Attenuation.LinearDistance)
         .WithMaxDistance(7f);
 
     /// <summary>

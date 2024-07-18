@@ -1,4 +1,3 @@
-#Smokes
 - type: loadout
   id: LoadoutItemCig
   category: Items
@@ -35,18 +34,11 @@
     - CigPackBlack
 
 - type: loadout
-  id: LoadoutItemCigsMixed
+  id: LoadoutItemPAI
   category: Items
   cost: 3
   items:
-    - CigPackMixed
-
-- type: loadout
-  id: LoadoutItemCigsSyndicate
-  category: Items
-  cost: 4
-  items:
-    - CigPackSyndicate
+    - PersonalAI
 
 - type: loadout
   id: LoadoutItemLighter
@@ -69,138 +61,30 @@
   items:
     - Matchbox
 
-## Instruments
 - type: loadout
-  id: LoadoutItemMicrophoneInstrument
-  category: Items
-  cost: 4
-  items:
-    - MicrophoneInstrument
-
-- type: loadout
-  id: LoadoutItemKalimbaInstrument
-  category: Items
-  cost: 4
-  items:
-    - KalimbaInstrument
-
-- type: loadout
-  id: LoadoutItemTrumpetInstrument
-  category: Items
-  cost: 6
-  items:
-    - TrumpetInstrument
-
-- type: loadout
-  id: LoadoutItemElectricGuitar
-  category: Items
-  cost: 7
-  items:
-    - ElectricGuitarInstrument
-
-- type: loadout
-  id: LoadoutItemBassGuitar
-  category: Items
-  cost: 7
-  items:
-    - BassGuitarInstrument
-
-- type: loadout
-  id: LoadoutItemRockGuitar
-  category: Items
-  cost: 7
-  items:
-    - RockGuitarInstrument
-
-- type: loadout
-  id: LoadoutItemAcousticGuitar
-  category: Items
-  cost: 7
-  items:
-    - AcousticGuitarInstrument
-
-- type: loadout
-  id: LoadoutItemViolin
-  category: Items
-  cost: 6
-  items:
-    - ViolinInstrument
-
-- type: loadout
-  id: LoadoutItemHarmonica
-  category: Items
-  cost: 3
-  items:
-    - HarmonicaInstrument
-
-- type: loadout
-  id: LoadoutItemAccordion
-  category: Items
-  cost: 6
-  items:
-    - AccordionInstrument
-
-- type: loadout
-  id: LoadoutItemFlute
-  category: Items
-  cost: 4
-  items:
-    - FluteInstrument
-
-- type: loadout
-  id: LoadoutItemOcarina
-  category: Items
-  cost: 3
-  items:
-    - OcarinaInstrument
-
-# Survival Kit
-- type: loadout
-  id: LoadoutItemsEmergencyOxygenTank
-  category: Items
-  cost: 1
-  items:
-    - EmergencyOxygenTankFilled
-
-- type: loadout
-  id: LoadoutItemsExtendedEmergencyOxygenTank
+  id: LoadoutItemPlushieSharkBlue
   category: Items
   cost: 2
   items:
-    - ExtendedEmergencyOxygenTankFilled
+    - PlushieSharkBlue
 
 - type: loadout
-  id: LoadoutItemsDoubleEmergencyOxygenTank
-  category: Items
-  cost: 4
-  items:
-    - DoubleEmergencyOxygenTankFilled
-
-- type: loadout
-  id: LoadoutItemsEmergencyCrowbar
-  category: Items
-  cost: 3
-  items:
-    - CrowbarRed
-
-#Misc Items
-- type: loadout
-  id: LoadoutItemPAI
-  category: Items
-  cost: 3
-  items:
-    - PersonalAI
-
-- type: loadout
-  id: LoadoutItemWaistbag
+  id: LoadoutItemPlushieSharkPink
   category: Items
   cost: 2
   items:
-    - ClothingBeltStorageWaistbag
+    - PlushieSharkPink
 
 - type: loadout
-  id: LoadoutSolCommonTranslator
+  id: LoadoutItemPlushieSharkGrey
   category: Items
-  cost: 3
+  cost: 2
   items:
-    - SolCommonTranslator
+    - PlushieSharkGrey
+
+- type: loadout
+  id: LoadoutItemPlushieCarp
+  category: Items
+  cost: 2
+  items:
+    - PlushieCarp

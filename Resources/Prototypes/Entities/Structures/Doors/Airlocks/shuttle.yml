@@ -57,6 +57,7 @@
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
   - type: Airtight
+    fixVacuum: true
     noAirWhenFullyAirBlocked: false
   - type: Tag
     tags:

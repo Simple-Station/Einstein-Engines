@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: BaseMagazineBox
+  parent: BaseItem
   id: BaseMagazineBoxLightRifle
   name: ammunition box (.30 rifle)
   components:

@@ -11,9 +11,6 @@
       - WhitelistChameleon
   - type: StaticPrice
     price: 15
-  - type: Clothing
-    equipDelay: 0.5
-    unequipDelay: 0.5
 
 - type: entity
   abstract: true

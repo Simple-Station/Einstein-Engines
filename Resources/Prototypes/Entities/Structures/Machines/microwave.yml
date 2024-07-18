@@ -1,6 +1,6 @@
-- type: entity
+﻿- type: entity
   id: KitchenMicrowave
-  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: microwave
   description: It's magic.
   components:

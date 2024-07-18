@@ -8,7 +8,6 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Teleportation.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Collections;
 using Robust.Shared.Random;
 
 namespace Content.Server.Anomaly.Effects;
@@ -36,19 +35,20 @@ public sealed class BluespaceAnomalySystem : EntitySystem
         var range = component.MaxShuffleRadius * args.Severity;
         var mobs = new HashSet<Entity<MobStateComponent>>();
         _lookup.GetEntitiesInRange(xform.Coordinates, range, mobs);
-        var allEnts = new ValueList<EntityUid>(mobs.Select(m => m.Owner)) { uid };
-        var coords = new ValueList<Vector2>();
+        var allEnts = new List<EntityUid>(mobs.Select(m => m.Owner)) { uid };
+        var coords = new List<Vector2>();
         foreach (var ent in allEnts)
         {
-            if (xformQuery.TryGetComponent(ent, out var allXform))
-                coords.Add(_xform.GetWorldPosition(allXform));
+            if (xformQuery.TryGetComponent(ent, out var xf))
+                coords.Add(xf.MapPosition.Position);
         }
 
         _random.Shuffle(coords);
         for (var i = 0; i < allEnts.Count; i++)
         {
+
             _adminLogger.Add(LogType.Teleport, $"{ToPrettyString(allEnts[i])} has been shuffled to {coords[i]} by the {ToPrettyString(uid)} at {xform.Coordinates}");
-            _xform.SetWorldPosition(allEnts[i], coords[i]);
+            _xform.SetWorldPosition(allEnts[i], coords[i], xformQuery);
         }
     }
 

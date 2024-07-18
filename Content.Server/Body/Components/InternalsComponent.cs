@@ -1,3 +1,4 @@
+﻿using System.Threading;
 namespace Content.Server.Body.Components
 {
     /// <summary>
@@ -6,17 +7,14 @@ namespace Content.Server.Body.Components
     [RegisterComponent]
     public sealed partial class InternalsComponent : Component
     {
-        [ViewVariables]
-        public EntityUid? GasTankEntity;
-
-        [ViewVariables]
-        public EntityUid? BreathToolEntity;
+        [ViewVariables] public EntityUid? GasTankEntity { get; set; }
+        [ViewVariables] public EntityUid? BreathToolEntity { get; set; }
 
         /// <summary>
-        /// Toggle Internals delay when the target is not you.
+        /// Toggle Internals delay (seconds) when the target is not you.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField]
-        public TimeSpan Delay = TimeSpan.FromSeconds(3);
+        [DataField("delay")]
+        public float Delay = 3;
     }
 }

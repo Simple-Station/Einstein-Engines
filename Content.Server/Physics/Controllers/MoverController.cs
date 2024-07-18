@@ -6,16 +6,17 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
+using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using DroneConsoleComponent = Content.Server.Shuttles.DroneConsoleComponent;
 using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
-using Robust.Shared.Map.Components;
 
 namespace Content.Server.Physics.Controllers
 {
     public sealed class MoverController : SharedMoverController
     {
+        [Dependency] private readonly IMapManager _mapManager = default!;
         [Dependency] private readonly ThrusterSystem _thruster = default!;
         [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
 
@@ -275,7 +276,7 @@ namespace Content.Server.Physics.Controllers
 
                 var gridId = xform.GridUid;
                 // This tries to see if the grid is a shuttle and if the console should work.
-                if (!TryComp<MapGridComponent>(gridId, out var _) ||
+                if (!_mapManager.TryGetGrid(gridId, out var _) ||
                     !shuttleQuery.TryGetComponent(gridId, out var shuttleComponent) ||
                     !shuttleComponent.Enabled)
                     continue;

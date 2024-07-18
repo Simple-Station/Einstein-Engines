@@ -12,7 +12,6 @@ store-category-implants = Implants
 store-category-job = Job
 store-category-armor = Armor
 store-category-pointless = Pointless
-store-category-deception = Deception
 
 # Revenant
 store-category-abilities = Abilities

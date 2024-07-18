@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [ BaseStructureDynamic, SmallConstructibleMachine ]
+  parent: [ BaseStructureDynamic, ConstructibleMachine ]
   id: SurveillanceWirelessCameraBase
   name: wireless camera
   description: A camera. It's watching you. Kinda.
@@ -23,8 +23,6 @@
           density: 80
           mask:
             - MachineMask
-          layer:
-            - BulletImpassable
     - type: SurveillanceCameraMicrophone
       blacklist:
         components:

@@ -116,7 +116,7 @@ public sealed class FloorTileSystem : EntitySystem
                 }
             }
         }
-        TryComp<MapGridComponent>(location.EntityId, out var mapGrid);
+        _mapManager.TryGetGrid(location.EntityId, out var mapGrid);
 
         foreach (var currentTile in component.OutputTiles)
         {

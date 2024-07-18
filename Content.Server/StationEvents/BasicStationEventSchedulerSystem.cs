@@ -4,9 +4,7 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Administration;
-using Content.Shared.CCVar;
 using JetBrains.Annotations;
-using Robust.Shared.Configuration;
 using Robust.Shared.Random;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Utility;
@@ -22,7 +20,6 @@ namespace Content.Server.StationEvents
     {
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly EventManagerSystem _event = default!;
-        [Dependency] private readonly IConfigurationManager _config = default!;
 
         protected override void Ended(EntityUid uid, BasicStationEventSchedulerComponent component, GameRuleComponent gameRule,
             GameRuleEndedEvent args)
@@ -60,8 +57,8 @@ namespace Content.Server.StationEvents
         /// </summary>
         private void ResetTimer(BasicStationEventSchedulerComponent component)
         {
-            component.TimeUntilNextEvent = _random.Next(_config.GetCVar(CCVars.GameEventsBasicMinimumTime),
-                _config.GetCVar(CCVars.GameEventsBasicMaximumTime));
+            // 5 - 25 minutes. TG does 3-10 but that's pretty frequent
+            component.TimeUntilNextEvent = _random.Next(300, 1500);
         }
     }
 

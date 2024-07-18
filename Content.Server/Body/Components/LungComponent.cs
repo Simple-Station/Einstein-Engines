@@ -1,4 +1,4 @@
-using Content.Server.Atmos;
+﻿using Content.Server.Atmos;
 using Content.Server.Body.Systems;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
@@ -11,7 +11,7 @@ public sealed partial class LungComponent : Component
 {
     [DataField]
     [Access(typeof(LungSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends
-    public GasMixture Air = new()
+    public GasMixture Air { get; set; } = new()
     {
         Volume = 6,
         Temperature = Atmospherics.NormalBodyTemperature

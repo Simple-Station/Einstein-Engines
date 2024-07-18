@@ -1,6 +1,7 @@
 using Content.Server.Objectives.Components;
 using Content.Server.Warps;
 using Content.Shared.Objectives.Components;
+using Content.Shared.Mind;
 using Content.Shared.Ninja.Components;
 using Robust.Shared.Random;
 using Content.Server.Roles;
@@ -15,6 +16,7 @@ public sealed class NinjaConditionsSystem : EntitySystem
 {
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly NumberObjectiveSystem _number = default!;
+    [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()

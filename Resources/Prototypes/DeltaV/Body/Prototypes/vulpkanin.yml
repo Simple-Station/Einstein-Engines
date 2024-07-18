@@ -1,4 +1,4 @@
-- type: body
+﻿- type: body
   name: "vulpkanin"
   id: Vulpkanin
   root: torso
@@ -19,10 +19,10 @@
         liver: OrganAnimalLiver
         kidneys: OrganHumanKidneys
       connections:
-      - right arm
       - left arm
-      - right leg
+      - right arm
       - left leg
+      - right leg
     right arm:
       part: RightArmVulpkanin
       connections:

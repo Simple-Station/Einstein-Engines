@@ -60,4 +60,3 @@
         ents: []
   - type: LightningTarget
     priority: 1
-  - type: RequireProjectileTarget

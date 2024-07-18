@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: BaseMagazineBox
+  parent: BaseItem
   id: BaseMagazineBoxCaselessRifle
   name: ammunition box (.25 caseless)
   components:

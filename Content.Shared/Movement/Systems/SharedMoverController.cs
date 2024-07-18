@@ -1,6 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
-using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.CCVar;
 using Content.Shared.Friction;
@@ -10,7 +9,7 @@ using Content.Shared.Maps;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
-using Content.Shared.StepTrigger.Components;
+using Content.Shared.Pulling.Components;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -24,8 +23,7 @@ using Robust.Shared.Physics.Controllers;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
-
+using Content.Shared.StepTrigger.Components; // Delta V-NoShoesSilentFootstepsComponent
 
 namespace Content.Shared.Movement.Systems
 {
@@ -35,7 +33,6 @@ namespace Content.Shared.Movement.Systems
     /// </summary>
     public abstract partial class SharedMoverController : VirtualController
     {
-        [Dependency] private   readonly AlertsSystem _alerts = default!;
         [Dependency] private   readonly IConfigurationManager _configManager = default!;
         [Dependency] protected readonly IGameTiming Timing = default!;
         [Dependency] private   readonly IMapManager _mapManager = default!;
@@ -58,7 +55,7 @@ namespace Content.Shared.Movement.Systems
         protected EntityQuery<MovementSpeedModifierComponent> ModifierQuery;
         protected EntityQuery<PhysicsComponent> PhysicsQuery;
         protected EntityQuery<RelayInputMoverComponent> RelayQuery;
-        protected EntityQuery<PullableComponent> PullableQuery;
+        protected EntityQuery<SharedPullableComponent> PullableQuery;
         protected EntityQuery<TransformComponent> XformQuery;
         protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery;
         protected EntityQuery<NoRotateOnMoveComponent> NoRotateQuery;
@@ -90,7 +87,7 @@ namespace Content.Shared.Movement.Systems
             RelayTargetQuery = GetEntityQuery<MovementRelayTargetComponent>();
             PhysicsQuery = GetEntityQuery<PhysicsComponent>();
             RelayQuery = GetEntityQuery<RelayInputMoverComponent>();
-            PullableQuery = GetEntityQuery<PullableComponent>();
+            PullableQuery = GetEntityQuery<SharedPullableComponent>();
             XformQuery = GetEntityQuery<TransformComponent>();
             NoRotateQuery = GetEntityQuery<NoRotateOnMoveComponent>();
             CanMoveInAirQuery = GetEntityQuery<CanMoveInAirComponent>();
@@ -167,7 +164,6 @@ namespace Content.Shared.Movement.Systems
             var weightless = _gravity.IsWeightless(physicsUid, physicsComponent, xform);
             var (walkDir, sprintDir) = GetVelocityInput(mover);
             var touching = false;
-
 
             // Handle wall-pushes.
             if (weightless)
@@ -289,14 +285,6 @@ namespace Content.Shared.Movement.Systems
             PhysicsSystem.SetAngularVelocity(physicsUid, 0, body: physicsComponent);
         }
 
-        public void WalkingAlert(EntityUid player, bool walking)
-        {
-            if (HasComp<CanWalkComponent>(player))
-            {
-                _alerts.ShowAlert(player, AlertType.Walking, walking ? (short) 0 : (short) 1);
-            }
-        }
-
         public void LerpRotation(EntityUid uid, InputMoverComponent mover, float frameTime)
         {
             var angleDiff = Angle.ShortestDistance(mover.RelativeRotation, mover.TargetRelativeRotation);
@@ -390,7 +378,7 @@ namespace Content.Shared.Movement.Systems
                     !otherCollider.CanCollide ||
                     ((collider.CollisionMask & otherCollider.CollisionLayer) == 0 &&
                     (otherCollider.CollisionMask & collider.CollisionLayer) == 0) ||
-                    (TryComp(otherCollider.Owner, out PullableComponent? pullable) && pullable.BeingPulled))
+                    (TryComp(otherCollider.Owner, out SharedPullableComponent? pullable) && pullable.BeingPulled))
                 {
                     continue;
                 }
@@ -452,7 +440,7 @@ namespace Content.Shared.Movement.Systems
                 sound = moverModifier.FootstepSoundCollection;
                 return true;
             }
-
+            
             // If got the component in yml and no shoes = no sound. Delta V
             if (_entities.TryGetComponent(uid, out NoShoesSilentFootstepsComponent? _) &
                 !_inventory.TryGetSlotEntity(uid, "shoes", out var _))
@@ -481,7 +469,7 @@ namespace Content.Shared.Movement.Systems
             sound = null;
 
             // Fallback to the map?
-            if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
+            if (!_mapManager.TryGetGrid(xform.GridUid, out var grid))
             {
                 if (TryComp<FootstepModifierComponent>(xform.MapUid, out var modifier))
                 {

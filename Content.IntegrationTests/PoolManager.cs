@@ -306,6 +306,11 @@ public static partial class PoolManager
                 Pairs[fallback!] = true;
             }
 
+            if (fallback == null && _pairId > 8)
+            {
+                var x = 2;
+            }
+
             return fallback;
         }
     }

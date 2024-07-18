@@ -62,11 +62,6 @@ public abstract class ClothingSystem : EntitySystem
     {
         foreach (var slotDef in userEnt.Comp1.Slots)
         {
-            // Do not attempt to quick-equip clothing in pocket slots.
-            // We should probably add a special flag to SlotDefinition to skip quick equip if more similar slots get added.
-            if (slotDef.SlotFlags.HasFlag(SlotFlags.POCKET))
-                continue;
-
             if (!_invSystem.CanEquip(userEnt, toEquipEnt, slotDef.Name, out _, slotDef, userEnt, toEquipEnt))
                 continue;
 

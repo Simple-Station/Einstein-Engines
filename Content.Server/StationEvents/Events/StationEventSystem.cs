@@ -9,9 +9,6 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Content.Server.Announcements.Systems;
-using Robust.Shared.Player;
-using Content.Server.Station.Components;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -26,7 +23,6 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
     [Dependency] protected readonly ChatSystem ChatSystem = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
     [Dependency] protected readonly StationSystem StationSystem = default!;
-    [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
     protected ISawmill Sawmill = default!;
 
@@ -47,6 +43,12 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
 
         AdminLogManager.Add(LogType.EventAnnounced, $"Event added / announced: {ToPrettyString(uid)}");
 
+        if (stationEvent.StartAnnouncement != null)
+        {
+            ChatSystem.DispatchGlobalAnnouncement(Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: Color.Gold);
+        }
+
+        Audio.PlayGlobal(stationEvent.StartAudio, Filter.Broadcast(), true);
         stationEvent.StartTime = Timing.CurTime + stationEvent.StartDelay;
     }
 
@@ -59,16 +61,6 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
             return;
 
         AdminLogManager.Add(LogType.EventStarted, LogImpact.High, $"Event started: {ToPrettyString(uid)}");
-
-        if (stationEvent.StartAnnouncement)
-        {
-            _announcer.SendAnnouncement(
-                _announcer.GetAnnouncementId(args.RuleId),
-                Filter.Broadcast(),
-                _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId)),
-                colorOverride: Color.Gold
-            );
-        }
 
         if (stationEvent.Duration != null)
         {
@@ -90,14 +82,12 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
 
         AdminLogManager.Add(LogType.EventStopped, $"Event ended: {ToPrettyString(uid)}");
 
-        if (stationEvent.EndAnnouncement)
+        if (stationEvent.EndAnnouncement != null)
         {
-            _announcer.SendAnnouncement(
-                _announcer.GetAnnouncementId(args.RuleId, true),
-                Filter.Broadcast(),
-                _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId, true)),
-                colorOverride: Color.Gold);
+            ChatSystem.DispatchGlobalAnnouncement(Loc.GetString(stationEvent.EndAnnouncement), playSound: false, colorOverride: Color.Gold);
         }
+
+        Audio.PlayGlobal(stationEvent.EndAudio, Filter.Broadcast(), true);
     }
 
     /// <summary>

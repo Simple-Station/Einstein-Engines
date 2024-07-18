@@ -202,7 +202,7 @@ namespace Content.Shared.ActionBlocker
         public bool CanShiver(EntityUid uid)
         {
             var ev = new ShiverAttemptEvent(uid);
-            RaiseLocalEvent(uid, ref ev);
+            RaiseLocalEvent(uid, ev);
 
             return !ev.Cancelled;
         }
@@ -210,7 +210,7 @@ namespace Content.Shared.ActionBlocker
         public bool CanSweat(EntityUid uid)
         {
             var ev = new SweatAttemptEvent(uid);
-            RaiseLocalEvent(uid, ref ev);
+            RaiseLocalEvent(uid, ev);
 
             return !ev.Cancelled;
         }

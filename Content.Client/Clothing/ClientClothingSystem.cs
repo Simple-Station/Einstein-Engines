@@ -133,7 +133,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         else if (TryComp(uid, out SpriteComponent? sprite))
             rsi = sprite.BaseRSI;
 
-        if (rsi == null)
+        if (rsi == null || rsi.Path == null)
             return false;
 
         var correctedSlot = slot;

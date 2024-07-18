@@ -127,6 +127,9 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
         return damageState != null && (!component.MobsCanEnter || _mobState.IsDead(entity, damageState));
     }
 
+    /// <summary>
+    /// TODO: Proper prediction
+    /// </summary>
     public abstract void DoInsertDisposalUnit(EntityUid uid, EntityUid toInsert, EntityUid user, SharedDisposalUnitComponent? disposal = null);
 
     [Serializable, NetSerializable]

@@ -85,8 +85,8 @@
     range: 500
   - type: StationLimitedNetwork
   - type: Thieving
-    stripTimeMultiplier: 0
-    ignoreStripHidden: true
+    stripTimeReduction: 9999
+    stealthy: true
   - type: Stripping
   - type: SolutionScanner
   - type: IgnoreUIRange

@@ -22,12 +22,6 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: NukeDisk
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/disk_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg
-  - type: EmitSoundOnLand
-    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg
 
 - type: entity
   name: nuclear authentication disk
@@ -41,9 +35,3 @@
     state: icon
   - type: StaticPrice
     price: 1 # it's worth even less than normal items. Perfection.
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/disk_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg
-  - type: EmitSoundOnLand
-    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg

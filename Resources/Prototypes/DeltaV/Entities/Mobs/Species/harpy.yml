@@ -54,6 +54,7 @@
         visible: false
       - map: [ "id" ]
       - map: [ "gloves" ]
+      - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
@@ -121,26 +122,12 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 5.0
-    weightlessAcceleration: 2.5
-  - type: Inventory
+  - type: Inventory 
     speciesId: harpy
     templateId: digitigrade
   - type: HarpyVisuals
   - type: UltraVision
-  - type: Tag
-    tags:
-    - CanPilot
-    - FootstepSound
-    - DoorBumpOpener
-    - ShoesRequiredStepTriggerImmune
-  - type: LanguageKnowledge
-    speaks:
-    - GalacticCommon
-    - SolCommon
-    understands:
-    - GalacticCommon
-    - SolCommon
-
+    
 - type: entity
   save: false
   name: Urist McHands
@@ -151,9 +138,8 @@
   components:
   - type: HumanoidAppearance
     species: Harpy
-  - type: Inventory
+  - type: Inventory 
     speciesId: harpy
-    templateId: digitigrade
   - type: Sprite
     scale: 0.9, 0.9
     layers:
@@ -174,6 +160,7 @@
       - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: [ "id" ]
       - map: [ "gloves" ]
+      - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]

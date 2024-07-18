@@ -23,13 +23,6 @@
     accent: zombieMoth
   - type: Speech
     speechVerb: Moth
-  - type: LanguageKnowledge
-    speaks:
-    - GalacticCommon
-    - Moffic
-    understands:
-    - GalacticCommon
-    - Moffic
   - type: TypingIndicator
     proto: moth
   - type: Butcherable
@@ -51,7 +44,9 @@
       Female: UnisexMoth
       Unsexed: UnisexMoth
   - type: MovementSpeedModifier
-    weightlessAcceleration: 2.5 # Move around more easily in space.
+    weightlessAcceleration: 1.5 # Move around more easily in space.
+    weightlessFriction: 1
+    weightlessModifier: 1
   - type: Flammable
     damage:
       types:

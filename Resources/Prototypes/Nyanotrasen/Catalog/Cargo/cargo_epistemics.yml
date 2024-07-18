@@ -4,6 +4,6 @@
     sprite: Nyanotrasen/Objects/Consumable/Drinks/flaskholywater.rsi
     state: icon
   product: CrateHolyWaterKit
-  cost: 3000
+  cost: 1000
   category: Epistemics
   group: market

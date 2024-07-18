@@ -13,10 +13,10 @@
     torso:
       part: TorsoHarpy
       connections:
-      - right arm
       - left arm
-      - right leg
+      - right arm
       - left leg
+      - right leg
       organs:
         heart: OrganHumanHeart
         lungs: OrganHarpyLungs
@@ -47,3 +47,4 @@
       part: RightFootHarpy
     left foot:
       part: LeftFootHarpy
+

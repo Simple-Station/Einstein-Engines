@@ -3,6 +3,7 @@ using Content.Server.Xenoarchaeology.XenoArtifacts.Triggers.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Temperature;
 using Content.Shared.Weapons.Melee.Events;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Xenoarchaeology.XenoArtifacts.Triggers.Systems;
 
@@ -10,6 +11,7 @@ public sealed class ArtifactHeatTriggerSystem : EntitySystem
 {
     [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
     [Dependency] private readonly ArtifactSystem _artifactSystem = default!;
+    [Dependency] private readonly TransformSystem _transformSystem = default!;
 
     public override void Initialize()
     {

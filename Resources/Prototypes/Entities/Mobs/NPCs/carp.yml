@@ -22,7 +22,6 @@
       layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
-    - type: Carriable # This one is for you, deltanedas o7
     - type: CombatMode
     - type: Physics
     - type: Fixtures

@@ -4,7 +4,6 @@ using Content.Shared.Administration;
 using Content.Shared.Explosion;
 using Content.Shared.Explosion.Components;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
 
@@ -57,7 +56,7 @@ public sealed partial class ExplosionSystem : EntitySystem
         else if (referenceGrid != null)
         {
             // reference grid defines coordinate system that the explosion in space will use
-            initialTile = Comp<MapGridComponent>(referenceGrid.Value).WorldToTile(epicenter.Position);
+            initialTile = _mapManager.GetGrid(referenceGrid.Value).WorldToTile(epicenter.Position);
         }
         else
         {
@@ -88,7 +87,7 @@ public sealed partial class ExplosionSystem : EntitySystem
         var spaceAngle = Angle.Zero;
         if (referenceGrid != null)
         {
-            var xform = Transform(Comp<MapGridComponent>(referenceGrid.Value).Owner);
+            var xform = Transform(_mapManager.GetGrid(referenceGrid.Value).Owner);
             spaceMatrix = xform.WorldMatrix;
             spaceAngle = xform.WorldRotation;
         }
@@ -103,7 +102,7 @@ public sealed partial class ExplosionSystem : EntitySystem
                 airtightMap = new();
 
             var initialGridData = new ExplosionGridTileFlood(
-                Comp<MapGridComponent>(epicentreGrid.Value),
+                _mapManager.GetGrid(epicentreGrid.Value),
                 airtightMap,
                 maxIntensity,
                 stepSize,
@@ -192,7 +191,7 @@ public sealed partial class ExplosionSystem : EntitySystem
                         airtightMap = new();
 
                     data = new ExplosionGridTileFlood(
-                        Comp<MapGridComponent>(grid),
+                        _mapManager.GetGrid(grid),
                         airtightMap,
                         maxIntensity,
                         stepSize,

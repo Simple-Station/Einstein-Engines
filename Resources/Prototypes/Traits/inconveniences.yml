@@ -1,55 +1,18 @@
 ﻿- type: trait
   id: LightweightDrunk
-  category: Physical
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - HeavyweightDrunk
+  name: trait-lightweight-name
+  description: trait-lightweight-desc
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 2
 
 - type: trait
   id: SocialAnxiety
-  category: Mental
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
+  name: trait-socialanxiety-name
+  description: trait-socialanxiety-desc
   components:
     - type: StutteringAccent
       matchRandomProb: 0.1
       fourRandomProb: 0
       threeRandomProb: 0
       cutRandomProb: 0
-
-- type: trait
-  id: ForeignerLight
-  category: Mental
-  points: 1
-  requirements:
-    - !type:TraitGroupExclusionRequirement
-      prototypes: [ Foreigner ]
-  components:
-    - type: ForeignerTrait
-      cantUnderstand: false # Allows to understand
-      baseTranslator: TranslatorForeigner
-
-- type: trait
-  id: Foreigner
-  category: Mental
-  points: 2
-  requirements: # TODO: Add a requirement to know at least 1 non-gc language
-    - !type:TraitGroupExclusionRequirement
-      prototypes: [ ForeignerLight ]
-  components:
-    - type: ForeignerTrait
-      baseTranslator: TranslatorForeigner

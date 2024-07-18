@@ -93,7 +93,7 @@ public sealed class ItemSystem : SharedItemSystem
         else if (TryComp(uid, out SpriteComponent? sprite))
             rsi = sprite.BaseRSI;
 
-        if (rsi == null)
+        if (rsi == null || rsi.Path == null)
             return false;
 
         var state = (item.HeldPrefix == null)
