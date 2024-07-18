@@ -4521,3 +4521,11 @@ Entries:
         "R", but it can be changed in settings.
   id: 6167
   time: '2024-07-18T02:33:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Harpies can no longer buy Loadout items that are impossible for them to
+        wear due to having digitigrade legs. 
+  id: 6168
+  time: '2024-07-18T02:34:52.0000000+00:00'
