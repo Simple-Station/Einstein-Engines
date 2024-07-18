@@ -141,7 +141,7 @@
     - Pacified
     - StaminaModifier
     - PsionicsDisabled #Nyano - Summary: PCs can have psionics disabled.
-    - PsionicallyInsulated #Nyano - Summary: PCs can be made insulated from psionic powers. 
+    - PsionicallyInsulated #Nyano - Summary: PCs can be made insulated from psionic powers.
   - type: Reflect
     enabled: false
     reflectProb: 0
@@ -218,12 +218,18 @@
   - type: MobPrice
     price: 1500 # Kidnapping a living person and selling them for cred is a good move.
     deathPenalty: 0.01 # However they really ought to be living and intact, otherwise they're worth 100x less.
-  - type: CanEscapeInventory # Carrying system from nyanotrasen.  
+  - type: CanEscapeInventory # Carrying system from nyanotrasen.
+  - type: LanguageKnowledge # This is here so even if species doesn't have a defined language, they at least speak GC
+    speaks:
+    - GalacticCommon
+    understands:
+    - GalacticCommon
   - type: Tag
     tags:
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+  - type: CanWalk
 
 - type: entity
   save: false
@@ -304,6 +310,8 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
+  - type: OfferItem
+  - type: LayingDown
 
 - type: entity
   save: false

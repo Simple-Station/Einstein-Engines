@@ -11,10 +11,10 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.10,-0.05,0.10,0.05"
-        density: 20
+        density: 0.5
         mask:
           - ItemMask
-        restitution: 0.3  # fite me
+        restitution: 0.7  # Small and bouncy
         friction: 0.2
   - type: Tag
     tags:
@@ -23,6 +23,11 @@
     size: Tiny
   - type: SpaceGarbage
   - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Weapons/Guns/Casings/casing_fall_1.ogg
+      params:
+        volume: -1
+  - type: EmitSoundOnCollide
     sound:
       path: /Audio/Weapons/Guns/Casings/casing_fall_2.ogg
       params:

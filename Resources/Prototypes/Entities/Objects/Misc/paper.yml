@@ -70,6 +70,12 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 1
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/paper_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
 
 - type: entity
   name: paper scrap
@@ -254,6 +260,19 @@
   suffix: Station Only
   components:
   - type: NukeCodePaper
+
+- type: entity
+  parent: Paper
+  id: StationGoalPaper
+  name: station goal
+  description: It looks like you have a lot of work to do.
+  components:
+    - type: Paper
+      stampState: paper_stamp-centcom
+      stampedBy:
+      - stampedName: stamp-component-stamped-name-centcom
+        stampedColor: "#bb3232"
+
 
 - type: entity
   name: pen
