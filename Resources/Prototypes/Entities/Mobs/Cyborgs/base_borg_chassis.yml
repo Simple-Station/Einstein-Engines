@@ -223,6 +223,7 @@
     understands:
     - GalacticCommon
     - RobotTalk
+  - type: CanWalk
 
 - type: entity
   id: BaseBorgChassisNT

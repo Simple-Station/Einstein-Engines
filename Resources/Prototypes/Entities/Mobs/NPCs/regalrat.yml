@@ -126,6 +126,7 @@
     understands:
     - GalacticCommon
     - Mouse
+  - type: CanWalk
 
 - type: entity
   id: MobRatKingBuff

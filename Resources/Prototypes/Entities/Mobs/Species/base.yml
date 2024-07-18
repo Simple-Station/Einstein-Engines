@@ -229,6 +229,7 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+  - type: CanWalk
 
 - type: entity
   save: false
@@ -310,6 +311,7 @@
   - type: FireVisuals
     alternateState: Standing
   - type: OfferItem
+  - type: LayingDown
 
 - type: entity
   save: false
