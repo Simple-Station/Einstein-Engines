@@ -4535,3 +4535,11 @@ Entries:
       message: Foreigner translator should now consume power, as intended.
   id: 6169
   time: '2024-07-18T08:22:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Atmospheric "Throws" are now calculated using object mass, and behave
+        accordingly. Tiny objects will shoot out of rooms quite fast!
+  id: 6170
+  time: '2024-07-18T08:24:58.0000000+00:00'
