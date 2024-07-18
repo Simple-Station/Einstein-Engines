@@ -28,6 +28,7 @@ public sealed class LayingDownSystem : EntitySystem
         SubscribeLocalEvent<LayingDownComponent, StoodEvent>(DoRefreshMovementSpeed);
         SubscribeLocalEvent<LayingDownComponent, DownedEvent>(DoRefreshMovementSpeed);
         SubscribeLocalEvent<LayingDownComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
+        SubscribeLocalEvent<LayingDownComponent, EntParentChangedMessage>(OnParentChanged);
     }
 
     public override void Shutdown()
@@ -36,7 +37,6 @@ public sealed class LayingDownSystem : EntitySystem
 
         CommandBinds.Unregister<LayingDownSystem>();
     }
-
 
     private void DoRefreshMovementSpeed(EntityUid uid, LayingDownComponent component, object args)
     {
@@ -49,6 +49,18 @@ public sealed class LayingDownSystem : EntitySystem
             return;
 
         args.ModifySpeed(component.DownedSpeedMultiplier, component.DownedSpeedMultiplier);
+    }
+
+    private void OnParentChanged(EntityUid uid, LayingDownComponent component, EntParentChangedMessage args)
+    {
+        // If the entity is not on a grid, try to make it stand up to avoid issues
+        if (!_standing.IsDown(uid)
+            || !TryComp<StandingStateComponent>(uid, out var standingState)
+            || standingState.Standing
+            || Transform(uid).GridUid != null)
+            return;
+
+        _standing.Stand(uid, standingState);
     }
 
     private void ToggleStanding(ICommonSession? session)
@@ -80,6 +92,7 @@ public sealed class LayingDownSystem : EntitySystem
         }
         else
         {
+            success = success && Transform(uid).GridUid != null; // Do not allow laying down when not on a surface.
             success = success && _standing.Down(uid, standingState: standingState, playSound: true, dropHeldItems: false);
             popupBranch = success ? "lay-success" : "lay-fail";
         }
