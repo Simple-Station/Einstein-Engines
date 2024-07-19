@@ -4529,3 +4529,31 @@ Entries:
         wear due to having digitigrade legs. 
   id: 6168
   time: '2024-07-18T02:34:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Foreigner translator should now consume power, as intended.
+  id: 6169
+  time: '2024-07-18T08:22:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Atmospheric "Throws" are now calculated using object mass, and behave
+        accordingly. Tiny objects will shoot out of rooms quite fast!
+  id: 6170
+  time: '2024-07-18T08:24:58.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Rampant Brand Intelligence has been spotted infesting NT Stations, be on
+        the lookout for highly aggressive vending machines.
+  id: 6171
+  time: '2024-07-18T19:30:00.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Added the ability to speak with Sign Language.
+  id: 6172
+  time: '2024-07-19T17:20:30.0000000+00:00'

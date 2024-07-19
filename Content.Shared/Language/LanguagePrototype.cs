@@ -16,7 +16,13 @@ public sealed class LanguagePrototype : IPrototype
 
     [DataField("fontSize")]
     public int? FontSize;
-    
+
+    /// <summary>
+    /// 	If true, will mark the language as a SignLanguage and will be handled as such.
+    /// </summary>
+    [DataField("signLanguage")]
+    public bool? SignLanguage;
+
     /// <summary>
     ///     Obfuscation method used by this language. By default, uses <see cref="ObfuscationMethod.Default"/>
     /// </summary>
