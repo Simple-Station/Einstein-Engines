@@ -17,6 +17,8 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
 using System.Net;
+using Robust.Shared.Network;
+using System.Net.WebSockets;
 
 namespace Content.Shared.SegmentedEntity
 {
@@ -27,6 +29,7 @@ namespace Content.Shared.SegmentedEntity
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoid = default!;
         [Dependency] private readonly SharedJointSystem _jointSystem = default!;
+        [Dependency] private readonly INetManager _net = default!;
 
         Queue<(SegmentedEntitySegmentComponent segment, EntityUid lamia)> _segments = new();
 
@@ -35,19 +38,23 @@ namespace Content.Shared.SegmentedEntity
         public override void Initialize()
         {
             base.Initialize();
+            //Parent subscriptions
             SubscribeLocalEvent<SegmentedEntityComponent, HitScanAfterRayCastEvent>(OnShootHitscan);
             SubscribeLocalEvent<SegmentedEntityComponent, InsertIntoEntityStorageAttemptEvent>(OnLamiaStorageInsertAttempt);
-            SubscribeLocalEvent<SegmentedEntitySegmentComponent, InsertIntoEntityStorageAttemptEvent>(OnSegmentStorageInsertAttempt);
             SubscribeLocalEvent<SegmentedEntityComponent, DidEquipEvent>(OnDidEquipEvent);
             SubscribeLocalEvent<SegmentedEntityComponent, DidUnequipEvent>(OnDidUnequipEvent);
-            SubscribeLocalEvent<SegmentedEntitySegmentComponent, GetExplosionResistanceEvent>(OnSnekBoom);
-            SubscribeLocalEvent<SegmentedEntitySegmentComponent, DamageChangedEvent>(HandleDamageTransfer);
-            SubscribeLocalEvent<SegmentedEntitySegmentComponent, DamageModifyEvent>(HandleSegmentDamage);
-            SubscribeLocalEvent<SegmentedEntitySegmentComponent, SegmentSpawnedEvent>(OnSegmentSpawned);
             SubscribeLocalEvent<SegmentedEntityComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<SegmentedEntityComponent, ComponentShutdown>(OnShutdown);
             SubscribeLocalEvent<SegmentedEntityComponent, JointRemovedEvent>(OnJointRemoved);
             SubscribeLocalEvent<SegmentedEntityComponent, EntGotRemovedFromContainerMessage>(OnRemovedFromContainer);
+            SubscribeLocalEvent<SegmentedEntityComponent, EntParentChangedMessage>(OnParentChanged);
+
+            //Child subscriptions
+            SubscribeLocalEvent<SegmentedEntitySegmentComponent, InsertIntoEntityStorageAttemptEvent>(OnSegmentStorageInsertAttempt);
+            SubscribeLocalEvent<SegmentedEntitySegmentComponent, GetExplosionResistanceEvent>(OnSnekBoom);
+            SubscribeLocalEvent<SegmentedEntitySegmentComponent, DamageChangedEvent>(HandleDamageTransfer);
+            SubscribeLocalEvent<SegmentedEntitySegmentComponent, DamageModifyEvent>(HandleSegmentDamage);
+            SubscribeLocalEvent<SegmentedEntitySegmentComponent, SegmentSpawnedEvent>(OnSegmentSpawned);
         }
         public override void Update(float frameTime)
         {
@@ -88,6 +95,7 @@ namespace Content.Shared.SegmentedEntity
         }
         private void OnInit(EntityUid uid, SegmentedEntityComponent component, ComponentInit args)
         {
+            EnsureComp<PortalExemptComponent>(uid); //Temporary, remove when Portal handling is added
             Math.Clamp(component.NumberOfSegments, 2, 18);
             Math.Clamp(component.TaperOffset, 1, component.NumberOfSegments - 1);
             SpawnSegments(uid, component);
@@ -95,12 +103,20 @@ namespace Content.Shared.SegmentedEntity
 
         private void OnShutdown(EntityUid uid, SegmentedEntityComponent component, ComponentShutdown args)
         {
+            if (_net.IsClient)
+                return;
+
             foreach (var segment in component.Segments)
             {
                 QueueDel(segment);
             }
 
             component.Segments.Clear();
+        }
+
+        private void SegmentSelfTest(EntityUid uid, SegmentedEntityComponent component)
+        {
+
         }
 
         private void OnJointRemoved(EntityUid uid, SegmentedEntityComponent component, JointRemovedEvent args)
@@ -108,37 +124,55 @@ namespace Content.Shared.SegmentedEntity
             if (!component.Segments.Contains(args.OtherEntity))
                 return;
 
+            RespawnSegments(uid, component);
+        }
+
+        private void OnRemovedFromContainer(EntityUid uid, SegmentedEntityComponent component, EntGotRemovedFromContainerMessage args)
+        {
+            RespawnSegments(uid, component);
+        }
+
+        private void DeleteSegments(SegmentedEntityComponent component)
+        {
+            if (_net.IsClient)
+                return; //Client is not allowed to predict QueueDel, it'll throw an error(but won't crash in Release build)
+
             foreach (var segment in component.Segments)
                 QueueDel(segment);
 
             component.Segments.Clear();
         }
 
-        private void OnRemovedFromContainer(EntityUid uid, SegmentedEntityComponent component, EntGotRemovedFromContainerMessage args)
+        /// <summary>
+        ///     Public call for a SegmentedEntity to reset their tail completely.
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="component"></param>
+        public void RespawnSegments(EntityUid uid, SegmentedEntityComponent component)
         {
-            if (component.Segments.Count != 0)
-            {
-                foreach (var segment in component.Segments)
-                    QueueDel(segment);
-                component.Segments.Clear();
-            }
-
+            DeleteSegments(component);
             SpawnSegments(uid, component);
         }
 
-        public void SpawnSegments(EntityUid uid, SegmentedEntityComponent component)
+        private void SpawnSegments(EntityUid uid, SegmentedEntityComponent component)
         {
+            if (_net.IsClient)
+                return; //Client is not allowed to spawn entities. It won't throw an error, but it'll make fake client entities.
+
+            //Segmented Entities are potentially not humanoids, they could for instance be a giant space worm.
+            var humanoidFactor = TryComp<HumanoidAppearanceComponent>(uid, out var humanoid) ? (humanoid.Height + humanoid.Width) / 2 : 1;
+
             int i = 1;
             var addTo = uid;
             while (i <= component.NumberOfSegments + 1)
             {
-                var segment = AddSegment(addTo, uid, component, i);
+                var segment = AddSegment(addTo, uid, component, i, humanoidFactor);
                 addTo = segment;
                 i++;
             }
         }
 
-        private EntityUid AddSegment(EntityUid segmentuid, EntityUid parentuid, SegmentedEntityComponent segmentedComponent, int segmentNumber)
+        private EntityUid AddSegment(EntityUid segmentuid, EntityUid parentuid, SegmentedEntityComponent segmentedComponent, int segmentNumber, float humanoidFactor)
         {
 
             float taperConstant = segmentedComponent.NumberOfSegments - segmentedComponent.TaperOffset;
@@ -159,22 +193,38 @@ namespace Content.Shared.SegmentedEntity
             segmentComponent.SegmentNumber = segmentNumber;
             segmentComponent.Owner = segment;
 
-            if (segmentNumber >= taperConstant && segmentedComponent.UseTaperSystem == true)
+            if (segmentedComponent.UseTaperSystem == true)
             {
-                segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset * MathF.Pow(segmentedComponent.OffsetConstant, segmentNumber - taperConstant);
-                segmentComponent.ScaleFactor = segmentedComponent.StaticScale * MathF.Pow(1f / segmentedComponent.OffsetConstant, segmentNumber - taperConstant);
+                if (segmentNumber >= taperConstant)
+                {
+                    segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset
+                    * humanoidFactor
+                    * MathF.Pow(segmentedComponent.OffsetConstant, segmentNumber - taperConstant);
+
+                    segmentComponent.ScaleFactor = segmentedComponent.StaticScale
+                    * humanoidFactor
+                    * MathF.Pow(1f / segmentedComponent.OffsetConstant, segmentNumber - taperConstant);
+                }
+                if (segmentNumber < taperConstant)
+                {
+                    segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset * humanoidFactor;
+                    segmentComponent.ScaleFactor = segmentedComponent.StaticScale * humanoidFactor;
+                }
             }
             else
             {
-                segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset;
-                segmentComponent.ScaleFactor = segmentedComponent.StaticScale;
+                segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset * humanoidFactor;
+                segmentComponent.ScaleFactor = segmentedComponent.StaticScale * humanoidFactor;
             }
+
+            // We invert the Y axis offset on every odd numbered tail so that the segmented entity spawns in a neat pile
+            // Rather than stretching across 5 to 10 vertical tiles, and potentially getting trapped in a wall
             if (segmentNumber % 2 != 0)
             {
                 segmentComponent.OffsetSwitching *= -1;
             }
 
-            EnsureComp<PortalExemptComponent>(segment);
+            EnsureComp<PortalExemptComponent>(segment); //Not temporary, segments must never be allowed to go through portals for physics limitation reasons
             _segments.Enqueue((segmentComponent, parentuid));
             segmentedComponent.Segments.Add(segment);
             return segment;
@@ -275,6 +325,14 @@ namespace Content.Shared.SegmentedEntity
                     entityList.Add(entity);
             }
             args.RayCastResults = entityList;
+        }
+
+        private void OnParentChanged(EntityUid uid, SegmentedEntityComponent component, ref EntParentChangedMessage args)
+        {
+            if (Transform(uid).MapID != args.OldMapId)
+                return;
+
+            RespawnSegments(uid, component);
         }
     }
 }

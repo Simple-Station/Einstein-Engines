@@ -214,6 +214,7 @@
     bloodlossHealDamage:
       types:
         Bloodloss: -1
+  - type: PortalExempt
 
 - type: entity
   save: false
