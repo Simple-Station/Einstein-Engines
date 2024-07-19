@@ -5,9 +5,9 @@
   components:
   - type: InteractionPopup
     successChance: 1
-    interactSuccessString: hugging-success-generic
+    interactSuccessString: looking-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
+    messagePerceivedByOthers: looking-success-generic-others
   - type: PotentialPsionic #Nyano - Summary: makes potentially psionic. 
 
 - type: entity
