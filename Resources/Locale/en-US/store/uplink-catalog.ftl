@@ -385,6 +385,9 @@ uplink-hardsuit-syndie-medic-desc = A variant of the "Blood-red" tacsuit that in
 uplink-hardsuit-syndie-commander-name = Blood-red "Commander" Tacsuit
 uplink-hardsuit-syndie-commander-desc = An up-armored variant of the iconic "Blood-red" tacsuit.
 
+uplink-syndie-raid-name = Syndicate Raid Suit
+uplink-syndie-raid-desc = A very durable and reasonably flexible suit of blood-red armor, reinforced against all common forms of damage but not capable of space walks. Comes with a sick helmet.
+
 uplink-hardsuit-syndieelite-name = Syndicate Elite Hardsuit
 uplink-hardsuit-syndieelite-desc = An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
 
