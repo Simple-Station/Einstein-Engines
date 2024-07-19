@@ -1,6 +1,6 @@
 - type: entity
   name: Pen Light
-  parent: PenLightBase
+  parent: pen
   id: PenLight
   description: A pen-sized light, used by medical staff.
   components:
@@ -43,7 +43,7 @@
 
 - type: entity
   name: Chief Medical Officer's Pen Light
-  parent: PenLightBase
+  parent: Pen
   id: CMOPenLight
   description: A pen-sized light, this one belonging to the Chief Medical Officer. When you get promoted you get a better pen.
   components:
