@@ -26,7 +26,7 @@ public sealed partial class LobbyCharacterPanel : Control
 
     public void SetSummaryText(string value)
     {
-        Summary.Text = string.Empty;
+        Summary.Text = value;
     }
 
     public void SetSprite(EntityUid uid)

@@ -61,12 +61,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         if (_previewDummy != null)
             EntityManager.DeleteEntity(_previewDummy);
 
-        _previewDummy =
-            EntityManager.SpawnEntity(
-                _prototypeManager.Index<SpeciesPrototype>(HumanoidCharacterProfile.DefaultWithSpecies().Species)
-                    .DollPrototype, MapCoordinates.Nullspace);
-        _previewPanel?.SetSprite(_previewDummy.Value);
-
         UpdateCharacterUI();
     }
 
@@ -102,6 +96,15 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         {
             _previewPanel?.SetLoaded(false);
             return;
+        }
+
+        if (_previewDummy == null)
+        {
+            _previewDummy =
+                EntityManager.SpawnEntity(
+                    _prototypeManager.Index<SpeciesPrototype>(HumanoidCharacterProfile.DefaultWithSpecies().Species)
+                        .DollPrototype, MapCoordinates.Nullspace);
+            _previewPanel?.SetSprite(_previewDummy.Value);
         }
 
         _previewPanel?.SetLoaded(true);

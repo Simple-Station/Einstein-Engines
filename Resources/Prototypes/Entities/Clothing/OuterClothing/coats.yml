@@ -214,7 +214,7 @@
   name: chief medical officer's lab coat
 
 - type: entity
-  parent: ClothingOuterStorageFoldableBase
+  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatRnd
   name: epistemics lab coat # DeltaV - Epistemics Department replacing Science
   description: A suit that protects against minor chemical spills. Has a purple stripe on the shoulder.
