@@ -15,7 +15,6 @@ public sealed class AdminLanguageCommand : ToolshedCommand
     private LanguageSystem? _languagesField;
     private LanguageSystem Languages => _languagesField ??= GetSys<LanguageSystem>();
 
-
     [CommandImplementation("add")]
     public EntityUid AddLanguage(
         [CommandInvocationContext] IInvocationContext ctx,
