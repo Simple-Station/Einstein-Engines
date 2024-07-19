@@ -22,7 +22,7 @@ public sealed class AdminLanguageCommand : ToolshedCommand
         [CommandArgument] ValueRef<string, Prototype<LanguagePrototype>> @ref,
         [CommandArgument] bool canSpeak = true,
         [CommandArgument] bool canUnderstand = true
-        )
+    )
     {
         var language = @ref.Evaluate(ctx)!;
 
@@ -47,7 +47,7 @@ public sealed class AdminLanguageCommand : ToolshedCommand
         [CommandArgument] ValueRef<string, Prototype<LanguagePrototype>> @ref,
         [CommandArgument] bool removeSpeak = true,
         [CommandArgument] bool removeUnderstand = true
-        )
+    )
     {
         var language = @ref.Evaluate(ctx)!;
         if (language == SharedLanguageSystem.UniversalPrototype && HasComp<UniversalLanguageSpeakerComponent>(input))
