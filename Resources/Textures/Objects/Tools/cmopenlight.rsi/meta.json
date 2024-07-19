@@ -1,17 +1,17 @@
 {
-  "version": 1,
-  "license": null,
-  "copyright": null,
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "world"
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "MistakeNot4892",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "world-on"
-    }
-  ]
+    "states": [
+        {
+            "name": "world"
+        },
+        {
+            "name": "world-on"
+        }
+    ]
 }
