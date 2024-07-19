@@ -59,7 +59,18 @@
     - Changeling
     - BloodCult
     - RampingStationEventScheduler
+<<<<<<< HEAD
     - LavalandStormScheduler # Lavaland Change
+||||||| parent of 37d98b0c48 (Update game_presets.yml (#695))
+    - WageScheduler #backmen: currency
+    - GameRuleMeteorScheduler
+=======
+    - WageScheduler #backmen: currency
+    - GameRuleMeteorScheduler
+    - BlobGameMode # backmen: blob
+    - VampiresGameRule # backmen: vampire
+    - FleshCult # backmen: flesh cult
+>>>>>>> 37d98b0c48 (Update game_presets.yml (#695))
 
 - type: gamePreset
   id: Extended
