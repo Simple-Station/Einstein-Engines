@@ -33,7 +33,7 @@
 - type: loadout
   id: LoadoutNeckBellCollar
   category: Neck
-  cost: 1
+  cost: 2
   exclusive: true
   items:
     - ClothingNeckBellCollar
