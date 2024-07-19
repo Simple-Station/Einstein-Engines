@@ -29,3 +29,6 @@ command-description-translator-rmrequired = Removes a required language from the
 command-description-translator-lsspoken = Lists all spoken languages for the piped translator entity. Example: 'ent 1234 translator:lsspoken'
 command-description-translator-lsunderstood = Lists all understood languages for the piped translator entity. Example: 'ent 1234 translator:lssunderstood'
 command-description-translator-lsrequired = Lists all required languages for the piped translator entity. Example: 'ent 1234 translator:lsrequired'
+
+command-language-error-this-will-not-work = This will not work.
+command-language-error-not-a-translator = Entity {$entity} is not a translator.
