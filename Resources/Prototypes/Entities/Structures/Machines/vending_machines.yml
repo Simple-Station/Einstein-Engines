@@ -29,7 +29,7 @@
         - MachineMask
         layer:
         - MachineLayer
-        density: 200
+        density: 1000
   - type: Destructible
     thresholds:
     - trigger:
@@ -111,6 +111,8 @@
     understands:
     - GalacticCommon
     - RobotTalk
+  - type: VendingMachine
+    soundVend: /Audio/SimpleStation14/Machines/machine_vend.ogg
 
 - type: entity
   parent: VendingMachine

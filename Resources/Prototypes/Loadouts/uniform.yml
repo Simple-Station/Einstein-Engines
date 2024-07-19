@@ -4,6 +4,9 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -20,6 +23,9 @@
   items:
     - ClothingUniformJumpsuitColorBlack
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -44,6 +50,9 @@
   items:
     - ClothingUniformJumpsuitColorBlue
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -68,6 +77,9 @@
   items:
     - ClothingUniformJumpsuitColorGreen
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -92,6 +104,9 @@
   items:
     - ClothingUniformJumpsuitColorOrange
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -116,6 +131,9 @@
   items:
     - ClothingUniformJumpsuitColorPink
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -140,6 +158,9 @@
   items:
     - ClothingUniformJumpsuitColorRed
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -164,6 +185,9 @@
   items:
     - ClothingUniformJumpsuitColorWhite
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -188,6 +212,9 @@
   items:
     - ClothingUniformJumpsuitColorYellow
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -212,6 +239,9 @@
   items:
     - ClothingUniformJumpsuitColorDarkBlue
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -236,6 +266,9 @@
   items:
     - ClothingUniformJumpsuitColorTeal
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -260,6 +293,9 @@
   items:
     - ClothingUniformJumpsuitColorPurple
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -284,6 +320,9 @@
   items:
     - ClothingUniformJumpsuitColorDarkGreen
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -308,6 +347,9 @@
   items:
     - ClothingUniformJumpsuitColorLightBrown
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -332,6 +374,9 @@
   items:
     - ClothingUniformJumpsuitColorBrown
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -356,6 +401,9 @@
   items:
     - ClothingUniformJumpsuitColorMaroon
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
