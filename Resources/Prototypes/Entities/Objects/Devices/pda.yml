@@ -159,7 +159,7 @@
     guides:
     - Medical Doctor
   penSlot: # Pen Lights
-      startingItem: PenLight
+      startingItem: PenLightBase
       priority: -1
       whitelist:
         tags:
@@ -562,7 +562,7 @@
     id: MedicalIDCard
     state: pda-medical
     penSlot: # Pen Lights
-      startingItem: PenLight
+      startingItem: PenLightBase
       priority: -1
       whitelist:
         tags:
@@ -586,7 +586,7 @@
     id: ParamedicIDCard
     state: pda-paramedic
     penSlot: # Pen Lights
-      startingItem: PenLight
+      startingItem: PenLightBase
       priority: -1
       whitelist:
         tags:
@@ -607,7 +607,7 @@
     id: ChemistIDCard
     state: pda-chemistry
     penSlot: # Pen Lights
-      startingItem: PenLight
+      startingItem: PenLightBase
       priority: -1
       whitelist:
         tags:
@@ -947,7 +947,7 @@
     id: PsychologistIDCard
     state: pda-medical
     penSlot: # Pen Lights
-      startingItem: PenLight
+      startingItem: PenLightBase
       priority: -1
       whitelist:
         tags:
@@ -1038,7 +1038,7 @@
     id: BrigmedicIDCard
     state: pda-brigmedic
     penSlot: # Pen Lights
-      startingItem: PenLight
+      startingItem: PenLightBase
       priority: -1
       whitelist:
         tags:
@@ -1121,7 +1121,7 @@
     id: SeniorPhysicianIDCard
     state: pda-seniorphysician
     penSlot: # Pen Lights
-      startingItem: PenLight
+      startingItem: PenLightBase
       priority: -1
       whitelist:
         tags:
@@ -1177,7 +1177,7 @@
     id: SyndicateIDCard
     state: pda-syndi-agent
     penSlot: # Pen Lights
-      startingItem: PenLight
+      startingItem: PenLightBase
       priority: -1
       whitelist:
         tags:
