@@ -8,7 +8,6 @@
   - type: InteractionPopup
     successChance: 1
     interactSuccessString: looking-success-generic
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: looking-success-generic-others
   - type: MindContainer
     showExamineInfo: true
