@@ -20,14 +20,12 @@ public sealed class EmitsSoundOnMoveSystem : EntitySystem
 
     private EntityQuery<InputMoverComponent> _moverQuery;
     private EntityQuery<PhysicsComponent> _physicsQuery;
-    private EntityQuery<TransformComponent> _xformQuery;
     private EntityQuery<ClothingComponent> _clothingQuery;
 
     public override void Initialize()
     {
         _moverQuery = GetEntityQuery<InputMoverComponent>();
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
-        _xformQuery = GetEntityQuery<TransformComponent>();
         _clothingQuery = GetEntityQuery<ClothingComponent>();
 
         SubscribeLocalEvent<EmitsSoundOnMoveComponent, GotEquippedEvent>(OnEquipped);
