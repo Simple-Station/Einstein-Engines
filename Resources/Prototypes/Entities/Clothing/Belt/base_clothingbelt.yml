@@ -10,11 +10,22 @@
   - type: Clothing
     slots: [belt]
     quickEquip: false
+    equipSound:
+      path: /Audio/SimpleStation14/Items/Equip/toolbelt_equip.ogg
+    clothingVisuals:
+      belt2: #there should be a cleaner way to do this tbh
+      - state: equipped-BELT
   - type: PhysicalComposition
     materialComposition:
       Cloth: 50
   - type: StaticPrice
-    price: 25
+    price: 20
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/toolbelt_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/toolbelt_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/toolbelt_drop.ogg
 
 - type: entity
   abstract: true
@@ -49,4 +60,3 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
-

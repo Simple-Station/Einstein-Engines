@@ -4,6 +4,9 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -19,6 +22,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorBlack
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorBlack
@@ -27,6 +37,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorBlack
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorBlue
@@ -35,6 +49,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorBlue
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorBlue
@@ -43,6 +64,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorBlue
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorGreen
@@ -51,6 +76,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorGreen
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorGreen
@@ -59,6 +91,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorGreen
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorOrange
@@ -67,6 +103,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorOrange
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorOrange
@@ -75,6 +118,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorOrange
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorPink
@@ -83,6 +130,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorPink
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorPink
@@ -91,6 +145,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorPink
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorRed
@@ -99,6 +157,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorRed
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorRed
@@ -107,6 +172,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorRed
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorWhite
@@ -115,6 +184,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorWhite
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorWhite
@@ -123,6 +199,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorWhite
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorYellow
@@ -131,6 +211,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorYellow
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorYellow
@@ -139,6 +226,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorYellow
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorDarkBlue
@@ -147,6 +238,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorDarkBlue
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorDarkBlue
@@ -155,6 +253,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorDarkBlue
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorTeal
@@ -163,6 +265,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorTeal
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorTeal
@@ -171,6 +280,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorTeal
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorPurple
@@ -179,6 +292,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorPurple
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorPurple
@@ -187,6 +307,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorPurple
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorDarkGreen
@@ -195,6 +319,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorDarkGreen
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorDarkGreen
@@ -203,6 +334,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorDarkGreen
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorLightBrown
@@ -211,6 +346,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorLightBrown
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorLightBrown
@@ -219,6 +361,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorLightBrown
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorBrown
@@ -227,6 +373,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorBrown
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorBrown
@@ -235,6 +388,10 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorBrown
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorMaroon
@@ -243,6 +400,13 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitColorMaroon
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorMaroon
@@ -251,11 +415,131 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtColorMaroon
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
 
+## Kendo
 - type: loadout
-  id: LoadoutUniformJumpsuitColorRainbow
+  id: LoadoutUniformKendoHakama
   category: Uniform
   cost: 2
   exclusive: true
   items:
-    - ClothingUniformColorRainbow
+    - ClothingUniformKendoHakama
+
+- type: loadout
+  id: LoadoutUniformMartialGi
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformMartialGi
+
+## Kimono
+- type: loadout
+  id: LoadoutClothingKimonoBlue
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingKimonoBlue
+
+- type: loadout
+  id: LoadoutClothingKimonoPink
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingKimonoPink
+
+- type: loadout
+  id: LoadoutClothingKimonoPurple
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingKimonoPurple
+
+- type: loadout
+  id: LoadoutClothingKimonoSky
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingKimonoSky
+
+- type: loadout
+  id: LoadoutClothingKimonoGreen
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingKimonoGreen
+
+## Gakuran
+- type: loadout
+  id: LoadoutUniformSchoolGakuranBlack
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformSchoolGakuranBlack
+
+## MNK Uniforms
+- type: loadout
+  id: LoadoutClothingMNKOfficeSkirt
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKOfficeSkirt
+
+- type: loadout
+  id: LoadoutClothingMNKUnderGarment
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKUnderGarment
+
+- type: loadout
+  id: LoadoutClothingMNKGymBra
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKGymBra
+
+- type: loadout
+  id: LoadoutClothingMNKDressBlack
+  category: Uniform
+  cost: 4
+  exclusive: true
+  items:
+    - ClothingUniformMNKDressBlack
+
+- type: loadout
+  id: LoadoutClothingMNKBlackOveralls
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKBlackOveralls
+
+- type: loadout
+  id: LoadoutClothingMNKBlackShoulder
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKBlackShoulder
+
+- type: loadout
+  id: LoadoutClothingMNKTracksuitBlack
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformMNKTracksuitBlack

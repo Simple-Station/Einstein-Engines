@@ -752,6 +752,34 @@
 
 - type: entity
   parent: BasePlushie
+  id: PlushieArachne
+  name: Arachne plushie
+  description: A plushie of an Arachne, a half human, half spider creature. Why does it look familiar?
+  components:
+  - type: Sprite
+    state: plushie_arachne
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Human/womanlaugh.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Human/female_sigh.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Human/womanlaugh.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Voice/Human/femalescream_4.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Voice/Human/femalescream_2.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Voice/Human/femalescream_5.ogg
+
+- type: entity
+  parent: BasePlushie
   id: PlushieMoth
   name: moth plushie
   description: Cute and fluffy moth plushie. Enjoy, bz!
@@ -1184,7 +1212,6 @@
   description: New Sandy-Cat plastic sword! Comes with realistic sound and full color! Looks almost like the real thing!
   components:
     - type: EnergySword
-      isSharp: false
       colorOptions:
         - DodgerBlue
     - type: ItemToggle
@@ -1318,9 +1345,7 @@
   components:
     - type: Sprite
       sprite: Objects/Fun/rubber_hammer.rsi
-      layers:
-        - state: icon
-          shader: unshaded
+      state: icon
     - type: WeaponRandom
       damageBonus:
           types:
@@ -1432,6 +1457,9 @@
         reagents:
         - ReagentId: Nothing
           Quantity: 100
+  - type: Tag
+    tags:
+    - Banana
 
 - type: entity
   parent: DrinkBase

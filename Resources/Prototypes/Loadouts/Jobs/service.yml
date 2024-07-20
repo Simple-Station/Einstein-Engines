@@ -1,3 +1,4 @@
+## Clown
 - type: loadout
   id: LoadoutServiceClownOutfitJester
   category: Jobs
@@ -26,6 +27,7 @@
     - ClothingHeadHatJesterAlt
     - ClothingShoesJester
 
+## Bartender
 - type: loadout
   id: LoadoutServiceBartenderUniformPurple
   category: Jobs
@@ -38,6 +40,7 @@
   items:
     - ClothingUniformJumpsuitBartenderPurple
 
+## Botanist
 - type: loadout
   id: LoadoutServiceBotanistUniformOveralls
   category: Jobs
@@ -50,12 +53,16 @@
   items:
     - ClothingUniformOveralls
 
+## Lawyer
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSuit
   category: Jobs
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
      jobs:
         - Lawyer
@@ -80,6 +87,9 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -104,6 +114,9 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -128,6 +141,9 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -158,12 +174,16 @@
   items:
     - ClothingUniformJumpsuitJournalist
 
+## Reporter
 - type: loadout
   id: LoadoutServiceReporterUniformDetectivesuit
   category: Jobs
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Reporter
@@ -181,3 +201,15 @@
         - Reporter
   items:
     - ClothingUniformJumpskirtDetective
+
+## Musician
+- type: loadout
+  id: LoadoutItemSynthesizerInstrument
+  category: Jobs
+  cost: 8
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - SynthesizerInstrument

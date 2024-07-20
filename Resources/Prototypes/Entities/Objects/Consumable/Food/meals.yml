@@ -609,3 +609,24 @@
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 4
+
+- type: entity
+  name: harpy wings
+  parent: FoodMealBase
+  id: FoodHarpyWings
+  description: It's a bit stringy.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chicken
+  - type: Sprite
+    state: harpywings
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 13
+        - ReagentId: Protein
+          Quantity: 7

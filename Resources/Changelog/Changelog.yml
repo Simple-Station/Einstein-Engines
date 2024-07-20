@@ -4239,3 +4239,335 @@ Entries:
         zoom whenever the gravity turns off.
   id: 6129
   time: '2024-06-25T20:19:11.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Mid-round events will occur much less often
+  id: 6130
+  time: '2024-06-25T20:47:09.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Height and Width sliders have been added to character creation. '
+  id: 6131
+  time: '2024-06-27T17:46:51.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Most items now take time to equip and unequip, especially space suits.
+  id: 6132
+  time: '2024-06-30T18:22:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Spent bullet casings now fly away from a shooter in a cinematic manner,
+        rather than fall at their feet. 
+  id: 6133
+  time: '2024-07-01T22:37:29.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Fix
+      message: Fixed loadouts becoming uneditable after spending all your points
+  id: 6134
+  time: '2024-07-02T07:18:27.0000000+00:00'
+- author: deltanedas
+  changes:
+    - type: Add
+      message: >-
+        Security can find the new SecWatch™ app in their PDAs to see current
+        suspects and wanted criminals.
+  id: 6135
+  time: '2024-07-02T08:01:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Equipping clothing using the Z key works correctly again.
+  id: 6136
+  time: '2024-07-03T19:48:29.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Space stations now have a tiny bit of velocity dampening to prevent them
+        from being flunged into the void.
+  id: 6137
+  time: '2024-07-05T16:53:25.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Carrying is less likely to behave erratically or suddenly interrupt now.
+    - type: Add
+      message: >-
+        You can now see when someone is trying to pick you up, and also you can
+        interrupt your attempt at escaping from their hands or inventory.
+    - type: Add
+      message: You can now properly take Felinids out of bags and place them inside.
+    - type: Add
+      message: Scientists have discovered that Felinids can sleep in bags.
+  id: 6138
+  time: '2024-07-05T17:28:44.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: You can now sign paper by alt-clicking it while holding a pen.
+  id: 6139
+  time: '2024-07-05T17:33:39.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: Added the Thievery trait, which provides various soft stripping bonuses
+    - type: Tweak
+      message: >-
+        Felinids no longer have passive thieving gloves, they instead get the
+        Thievery trait by default
+  id: 6140
+  time: '2024-07-05T17:49:25.0000000+00:00'
+- author: Froffy025
+  changes:
+    - type: Add
+      message: You can now carry most of the station pets.
+  id: 6141
+  time: '2024-07-05T17:49:57.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Job requirements are now displayed correctly.
+  id: 6142
+  time: '2024-07-05T19:10:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Events should now occur as frequently as before. Note: server owner can
+        configure the frequency on their server manually.
+  id: 6143
+  time: '2024-07-05T21:03:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The catalog of items available via Loadouts has been greatly expanded.
+        Have fun customizing your characters!
+  id: 6144
+  time: '2024-07-05T22:53:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Translator implants are now proper implants that can be removed.
+    - type: Tweak
+      message: Animalistic languages should now look less messy.
+    - type: Fix
+      message: Hopefully fixed language menu desync and other issues.
+  id: 6145
+  time: '2024-07-05T23:49:47.0000000+00:00'
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added system
+  id: 6146
+  time: '2024-07-06T00:19:35.0000000+00:00'
+- author: Velcroboy
+  changes:
+    - type: Tweak
+      message: Changed asteroids to have more ore...and some danger
+  id: 6147
+  time: '2024-07-08T07:03:39.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Languages are now marked in the chat!
+  id: 6148
+  time: '2024-07-09T19:01:38.0000000+00:00'
+- author: Spatison
+  changes:
+    - type: Fix
+      message: Food and handcuffs can now be given
+  id: 6149
+  time: '2024-07-09T19:32:11.0000000+00:00'
+- author: FoxxoTrrystan
+  changes:
+    - type: Tweak
+      message: >-
+        Power Resprites! (New SMES, APC, Airlarm, Camera, Substation, LightTube,
+        Intercom, FireAlarm and Substation)
+  id: 6150
+  time: '2024-07-09T19:37:03.0000000+00:00'
+- author: CodedCrow
+  changes:
+    - type: Add
+      message: Added an Arachne plushie
+  id: 6151
+  time: '2024-07-11T17:23:58.0000000+00:00'
+- author: osjarw
+  changes:
+    - type: Add
+      message: Wallmount substation electronics can now be created at an autolathe.
+  id: 6152
+  time: '2024-07-11T17:24:30.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: 'Players can now vote on two more gamemodes: Traitors and Hellshift.'
+  id: 6153
+  time: '2024-07-11T17:26:41.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added two new foreigner traits that make your character unable to speak
+        Galactic Common and give you a translator instead.
+    - type: Tweak
+      message: >-
+        Translators can now be equipped in the neck slot and display useful info
+        when examined.
+  id: 6154
+  time: '2024-07-12T01:19:09.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Foreigner traits now work correctly.
+  id: 6155
+  time: '2024-07-12T17:46:37.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: >-
+        Added the Heavyweight Drunk trait, which doubles your alcoholism
+        potential.
+  id: 6156
+  time: '2024-07-12T19:02:15.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Added 4 new announcers that will randomly be selected every shift
+  id: 6157
+  time: '2024-07-12T20:13:50.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Mass Contests have returned in a new reworked form. '
+    - type: Add
+      message: >-
+        Weapon Recoil is now resisted by character mass. More massive characters
+        take less recoil, less massive characters take more recoil.
+    - type: Add
+      message: >-
+        Disarm and Shove actions are now modified by relative character mass. It
+        is easier to shove people around if you're bigger than them.
+    - type: Add
+      message: >-
+        Cablecuffs and Zipties are now easier to escape out of if you're
+        smaller. 
+  id: 6158
+  time: '2024-07-13T08:05:52.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: We got new ID Cards the old ones were soo tiny that they were lost.
+  id: 6159
+  time: '2024-07-14T23:12:33.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Shock collars can now be manufactured in the security techfab. They also
+        deal less damage and ignore insulated gloves.
+  id: 6160
+  time: '2024-07-14T23:14:03.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Fix
+      message: Fixed thieving trait not granting pocket vision
+  id: 6161
+  time: '2024-07-16T17:41:42.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Many new sound effects have been implemented for items.
+  id: 6162
+  time: '2024-07-16T17:52:03.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Added a new icon to the offer item interaction.
+    - type: Fix
+      message: Fixed typos in the offer item prompts.
+  id: 6163
+  time: '2024-07-16T18:18:18.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: You can now configure your zoom more precisely.
+  id: 6164
+  time: '2024-07-16T18:18:57.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added Harpy Wings as a delicious dish.
+  id: 6165
+  time: '2024-07-16T18:21:27.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Added an alert on the UI for when the user is walking or running.
+  id: 6166
+  time: '2024-07-16T21:39:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now lie down and stand up at will! The default keybind for it is
+        "R", but it can be changed in settings.
+  id: 6167
+  time: '2024-07-18T02:33:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Harpies can no longer buy Loadout items that are impossible for them to
+        wear due to having digitigrade legs. 
+  id: 6168
+  time: '2024-07-18T02:34:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Foreigner translator should now consume power, as intended.
+  id: 6169
+  time: '2024-07-18T08:22:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Atmospheric "Throws" are now calculated using object mass, and behave
+        accordingly. Tiny objects will shoot out of rooms quite fast!
+  id: 6170
+  time: '2024-07-18T08:24:58.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Rampant Brand Intelligence has been spotted infesting NT Stations, be on
+        the lookout for highly aggressive vending machines.
+  id: 6171
+  time: '2024-07-18T19:30:00.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Added the ability to speak with Sign Language.
+  id: 6172
+  time: '2024-07-19T17:20:30.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpy Update 3, New markings for Harpies, all new species-specific
+        hardsuit & softsuit variations that feature wing sleeves.
+  id: 6173
+  time: '2024-07-20T04:40:01.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Merged ~250-500 WizDen PRs
+  id: 6174
+  time: '2024-07-20T05:24:50.0000000+00:00'

@@ -62,6 +62,11 @@ public abstract class ClothingSystem : EntitySystem
     {
         foreach (var slotDef in userEnt.Comp1.Slots)
         {
+            // Do not attempt to quick-equip clothing in pocket slots.
+            // We should probably add a special flag to SlotDefinition to skip quick equip if more similar slots get added.
+            if (slotDef.SlotFlags.HasFlag(SlotFlags.POCKET))
+                continue;
+
             if (!_invSystem.CanEquip(userEnt, toEquipEnt, slotDef.Name, out _, slotDef, userEnt, toEquipEnt))
                 continue;
 
@@ -91,7 +96,7 @@ public abstract class ClothingSystem : EntitySystem
 
     private void ToggleVisualLayer(EntityUid equipee, HumanoidVisualLayers layer, string tag)
     {
-        InventorySystem.InventorySlotEnumerator enumerator = _invSystem.GetSlotEnumerator(equipee);
+        InventorySystem.InventorySlotEnumerator enumerator = _invSystem.GetSlotEnumerator(equipee, SlotFlags.HEAD ^ SlotFlags.MASK);
         bool shouldLayerShow = true;
 
         while (enumerator.NextItem(out EntityUid item))
@@ -164,7 +169,7 @@ public abstract class ClothingSystem : EntitySystem
     {
         if (args.Handled || args.Cancelled || args.Target is not { } target)
             return;
-        args.Handled = _invSystem.TryEquip(args.User, target, ent, args.Slot, clothing: ent.Comp,  predicted: true, checkDoafter: false);
+        args.Handled = _invSystem.TryEquip(args.User, target, ent, args.Slot, clothing: ent.Comp, predicted: true, checkDoafter: false);
     }
 
     private void OnUnequipDoAfter(Entity<ClothingComponent> ent, ref ClothingUnequipDoAfterEvent args)
