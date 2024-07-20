@@ -381,6 +381,13 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int> GameLoadoutsPoints =
             CVarDef.Create("game.loadouts_points", 14, CVar.REPLICATED);
 
+
+        /// <summary>
+        ///     If the sprint button should instead make you walk
+        /// </summary>
+        public static readonly CVarDef<bool> GameSprintWalks =
+            CVarDef.Create("game.sprint_walks", true, CVar.REPLICATED);
+
 #if EXCEPTION_TOLERANCE
         /// <summary>
         ///     Amount of times round start must fail before the server is shut down.
