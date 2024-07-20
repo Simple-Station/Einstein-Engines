@@ -45,19 +45,20 @@ public sealed class OracleSystem : EntitySystem
         var query = EntityQueryEnumerator<OracleComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
+            if (_timing.CurTime >= comp.NextDemandTime)
+            {
+                // Might be null if this is the first tick. In that case this will simply initialize it.
+                var last = (EntityPrototype?) comp.DesiredPrototype;
+                if (NextItem((uid, comp)))
+                    comp.LastDesiredPrototype = last;
+            }
+
             if (_timing.CurTime >= comp.NextBarkTime)
             {
                 comp.NextBarkTime = _timing.CurTime + comp.BarkDelay;
 
                 var message = Loc.GetString(_random.Pick(comp.DemandMessages), ("item", comp.DesiredPrototype.Name)).ToUpper();
                 _chat.TrySendInGameICMessage(uid, message, InGameICChatType.Speak, false);
-            }
-
-            if (_timing.CurTime >= comp.NextDemandTime)
-            {
-                var last = comp.DesiredPrototype;
-                if (NextItem((uid, comp)))
-                    comp.LastDesiredPrototype = last;
             }
         }
 
@@ -67,14 +68,8 @@ public sealed class OracleSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<OracleComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<OracleComponent, InteractHandEvent>(OnInteractHand);
         SubscribeLocalEvent<OracleComponent, InteractUsingEvent>(OnInteractUsing);
-    }
-
-    private void OnInit(Entity<OracleComponent> entity, ref ComponentInit args)
-    {
-        NextItem(entity);
     }
 
     private void OnInteractHand(Entity<OracleComponent> oracle, ref InteractHandEvent args)
