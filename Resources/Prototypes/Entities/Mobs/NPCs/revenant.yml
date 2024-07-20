@@ -98,6 +98,3 @@
   - type: Speech
     speechVerb: Ghost
   - type: UniversalLanguageSpeaker
-  - type: Tag
-    tags:
-      - NoPaint

@@ -54,7 +54,7 @@
     sprite: Nyanotrasen/Clothing/Uniforms/Costume/maid.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingCostumeBunnySuit
   name: bunny suit
   description: Ready to go with stockings and a bow tie.
@@ -89,10 +89,10 @@
     sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingCostumeNaota
   name: turquoise hoodie and shorts
-  description: A hoodie with a small kangaroo pouch. 
+  description: A hoodie with a small kangaroo pouch.
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Uniforms/Costume/naota.rsi
@@ -113,7 +113,7 @@
     femaleMask: NoMask
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformDressRed
   name: red dress
   description: A voluminous, fancy red dress.
@@ -125,7 +125,7 @@
     femaleMask: NoMask
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformSwimsuitBlue
   name: blue swimsuit
   description: A form-fitting, hydrodynamic blue swimsuit.
@@ -358,7 +358,7 @@
     femaleMask: NoMask
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformMNKUnderGarment
   name: MNK under garment
   description: MNK ensured comfort for the important bits.
@@ -369,7 +369,7 @@
     sprite: Nyanotrasen/Clothing/Misc/under_garments.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformMNKGymBra
   name: MNK gym bra
   description: Maximum performance with MNK sweat blockers.
@@ -381,7 +381,7 @@
     femaleMask: NoMask
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformMNKDressBlack
   name: MNK black dress
   description: A sleek black dress sporting a MNK window.
@@ -405,7 +405,7 @@
     femaleMask: NoMask
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformMNKBlackShoulder
   name: MNK exposed shoulders
   description: A MNK outfit with exposed shoulders.

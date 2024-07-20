@@ -297,6 +297,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
 
         //Add the role to the mind silently (to avoid repeating job assignment)
         _roles.MindAddRole(mind, new InitialInfectedRoleComponent { PrototypeId = component.PatientZeroPrototypeId }, silent: true);
+        EnsureComp<InitialInfectedComponent>(entity);
 
         //Add the zombie components and grace period
         var pending = EnsureComp<PendingZombieComponent>(entity);
