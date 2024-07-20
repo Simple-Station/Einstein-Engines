@@ -69,7 +69,7 @@
   noSpawn: true
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 35
   - type: NukeopsRule
     faction: Syndicate
 
@@ -132,6 +132,16 @@
   components:
   - type: RampingStationEventScheduler
 
+- type: entity
+  id: HellshiftStationEventScheduler
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: RampingStationEventScheduler
+    chaosModifier: 4 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
+    startingChaosRatio: 0.025 # Starts as slow as survival, but quickly ramps up
+    shiftLengthModifier: 2.5
+
 # variation passes
 - type: entity
   id: BasicRoundstartVariation
@@ -144,6 +154,7 @@
     - id: BasicTrashVariationPass
     - id: SolidWallRustingVariationPass
     - id: ReinforcedWallRustingVariationPass
+    - id: CutWireVariationPass
     - id: BasicPuddleMessVariationPass
       prob: 0.99
       orGroup: puddleMess
