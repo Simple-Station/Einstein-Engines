@@ -4557,3 +4557,11 @@ Entries:
       message: Added the ability to speak with Sign Language.
   id: 6172
   time: '2024-07-19T17:20:30.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpy Update 3, New markings for Harpies, all new species-specific
+        hardsuit & softsuit variations that feature wing sleeves.
+  id: 6173
+  time: '2024-07-20T04:40:01.0000000+00:00'
