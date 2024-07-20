@@ -25,6 +25,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - HidesHarpyWings
 
 - type: entity
   parent: ClothingOuterSuitBomb
@@ -63,6 +64,10 @@
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: GroupExamine
+  - type: Tag
+    tags:
+      - WhitelistChameleon
+      - HidesHarpyWings
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -90,6 +95,10 @@
       sprintModifier: 0.8
     - type: HeldSpeedModifier
     - type: GroupExamine
+    - type: Tag
+      tags:
+        - WhitelistChameleon
+        - HidesHarpyWings
 
 - type: entity
   parent: [ClothingOuterBaseLarge, GeigerCounterClothing]
@@ -113,7 +122,11 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
-      
+  - type: Tag
+    tags:
+      - WhitelistChameleon
+      - HidesHarpyWings
+
 - type: entity
   parent: ClothingOuterBaseLarge
   id: ClothingOuterSuitSpaceNinja
