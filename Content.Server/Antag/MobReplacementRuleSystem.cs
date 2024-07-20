@@ -1,4 +1,6 @@
 using System.Numerics;
+using Content.Server.Advertise.Components;
+using Content.Server.Advertise.EntitySystems;
 using Content.Server.Antag.Mimic;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking.Rules;
@@ -19,7 +21,6 @@ using Content.Shared.Damage;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC;
 using Content.Shared.Weapons.Melee;
-using Content.Server.Advertise;
 using Content.Server.Power.Components;
 using Content.Shared.CombatMode;
 
@@ -36,7 +37,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly NPCSystem _npc = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly AdvertiseSystem _advertise = default!;
 
 
@@ -171,7 +172,6 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
         vendorComponent.MinimumWait = 5;
         vendorComponent.MaximumWait = 15;
         _advertise.SayAdvertisement(uid, vendorComponent);
-        _advertise.RefreshTimer(uid, vendorComponent);
 
         if (TryComp<ApcPowerReceiverComponent>(uid, out var aPC))
             aPC.NeedsPower = false;
