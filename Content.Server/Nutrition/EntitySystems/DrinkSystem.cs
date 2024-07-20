@@ -9,6 +9,7 @@ using Content.Server.Nutrition.Components;
 using Content.Server.Popups;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
+using Content.Shared.CCVar;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -29,6 +30,7 @@ using Content.Shared.Throwing;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -56,6 +58,7 @@ public sealed class DrinkSystem : EntitySystem
     [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly StomachSystem _stomach = default!;
     [Dependency] private readonly ForensicsSystem _forensics = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     public override void Initialize()
     {
@@ -399,7 +402,7 @@ public sealed class DrinkSystem : EntitySystem
 
         _forensics.TransferDna(entity, args.Target.Value);
 
-        if (!forceDrink && solution.Volume > 0)
+        if (_config.GetCVar(CCVars.GameAutoEatDrinks) && !forceDrink && solution.Volume > 0)
             args.Repeat = true;
     }
 
