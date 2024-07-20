@@ -76,7 +76,7 @@
       - map: [ "mask" ]
       - map: [ "head" ]
       - map: [ "singingLayer" ]
-        sprite: DeltaV/Effects/harpysinger.rsi
+        sprite: Effects/harpysinger.rsi
         state: singing_music_notes
         visible: false
   - type: HumanoidAppearance

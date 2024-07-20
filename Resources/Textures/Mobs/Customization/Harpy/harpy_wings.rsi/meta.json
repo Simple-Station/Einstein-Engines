@@ -5,62 +5,78 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from S.P.L.U.R.T at commit https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13/commit/285f6f86ac41a6246f250993486effeab8581c2c, edited by @raistlin_jag | harpyfolded by @stillxicarus",
+    "copyright": "classicharpy Taken from S.P.L.U.R.T at commit https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13/commit/285f6f86ac41a6246f250993486effeab8581c2c, edited by @raistlin_jag | harpyfolded, harpy, and owl by @stillxicarus",
     "states": [
         {
-            "name": "harpy",
+            "name": "huescale_harpy",
             "directions": 4
         },
         {
-            "name": "harpyfolded",
+            "name": "whitescale_harpy",
             "directions": 4
         },
         {
-            "name": "harpy2tone1",
+            "name": "huescale_harpy_folded",
             "directions": 4
         },
         {
-            "name": "harpy2tone2",
+            "name": "whitescale_harpy_folded",
             "directions": 4
         },
         {
-            "name": "harpy3tone1",
+            "name": "harpy_2tone_1",
             "directions": 4
         },
         {
-            "name": "harpy3tone2",
+            "name": "harpy_2tone_2",
             "directions": 4
         },
         {
-            "name": "harpy3tone3",
+            "name": "harpy_3tone_1",
             "directions": 4
         },
         {
-            "name": "harpyspeckled1",
+            "name": "harpy_3tone_2",
             "directions": 4
         },
         {
-            "name": "harpyspeckled2",
+            "name": "harpy_3tone_3",
             "directions": 4
         },
         {
-            "name": "harpyundertone1",
+            "name": "harpy_speckled_1",
             "directions": 4
         },
         {
-            "name": "harpyundertone2",
+            "name": "harpy_speckled_2",
             "directions": 4
         },
         {
-            "name": "harpywingtip1",
+            "name": "harpy_undertone_1",
             "directions": 4
         },
         {
-            "name": "harpywingtip2",
+            "name": "harpy_undertone_2",
             "directions": 4
         },
         {
-            "name": "classicharpy",
+            "name": "harpy_wingtip_1",
+            "directions": 4
+        },
+        {
+            "name": "harpy_wingtip_2",
+            "directions": 4
+        },
+        {
+            "name": "classic_harpy",
+            "directions": 4
+        },
+        {
+            "name": "huescale_harpy_wing_owl",
+            "directions": 4
+        },
+        {
+            "name": "whitescale_harpy_wing_owl",
             "directions": 4
         }
     ]
