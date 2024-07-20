@@ -4551,3 +4551,23 @@ Entries:
         the lookout for highly aggressive vending machines.
   id: 6171
   time: '2024-07-18T19:30:00.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Added the ability to speak with Sign Language.
+  id: 6172
+  time: '2024-07-19T17:20:30.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpy Update 3, New markings for Harpies, all new species-specific
+        hardsuit & softsuit variations that feature wing sleeves.
+  id: 6173
+  time: '2024-07-20T04:40:01.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Merged ~250-500 WizDen PRs
+  id: 6174
+  time: '2024-07-20T05:24:50.0000000+00:00'

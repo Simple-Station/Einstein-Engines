@@ -10,7 +10,7 @@
     tags:
       - WhitelistChameleon
   - type: StaticPrice
-    price: 15
+    price: 10
   - type: Clothing
     equipDelay: 0.5
     unequipDelay: 0.5
