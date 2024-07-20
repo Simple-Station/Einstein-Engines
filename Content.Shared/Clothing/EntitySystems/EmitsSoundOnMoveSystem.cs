@@ -56,25 +56,24 @@ public sealed class EmitsSoundOnMoveSystem : EntitySystem
 
     private void UpdateSound(EntityUid uid, EmitsSoundOnMoveComponent component)
     {
-        if (!_xformQuery.TryGetComponent(uid, out var xform) ||
-            !_physicsQuery.TryGetComponent(uid, out var physics))
+        if (!_physicsQuery.TryGetComponent(uid, out var physics))
             return;
 
         // Space does not transmit sound
-        if (xform.GridUid == null)
+        if (Transform(uid).GridUid == null)
             return;
 
-        if (component.RequiresGravity && _gravity.IsWeightless(uid, physics, xform))
+        if (component.RequiresGravity && _gravity.IsWeightless(uid, physics, Transform(uid)))
             return;
 
-        var parent = xform.ParentUid;
+        var parent = Transform(uid).ParentUid;
 
         var isWorn = parent is { Valid: true } &&
                      _clothingQuery.TryGetComponent(uid, out var clothing)
                      && clothing.InSlot != null
                      && component.IsSlotValid;
         // If this entity is worn by another entity, use that entity's coordinates
-        var coordinates = isWorn ? Transform(parent).Coordinates : xform.Coordinates;
+        var coordinates = isWorn ? Transform(parent).Coordinates : Transform(uid).Coordinates;
         var distanceNeeded = (isWorn && _moverQuery.TryGetComponent(parent, out var mover) && mover.Sprinting)
             ? 1.5f // The parent is a mob that is currently sprinting
             : 2f; // The parent is not a mob or is not sprinting
