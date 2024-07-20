@@ -51,3 +51,6 @@ pyrokinesis-refund-cooldown = You reclaim some of the energy spent drawing forth
 
 # Misc Psionic Messages
 telepathic-mute-message = You strain, but are unable to send your thoughts to the Noosphere
+examine-mindbroken-message = Eyes unblinking, staring listfully into the horizon. {CAPITALIZE($entity)} is a sack of meat pretending it has a soul.
+                             There is nothing behind its gaze.
+cloning-console-insulation-error = ERROR: NON-SOPHONT LOADED, NO SOUL FOUND.

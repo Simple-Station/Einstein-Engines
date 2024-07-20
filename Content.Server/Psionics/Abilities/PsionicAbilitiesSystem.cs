@@ -73,6 +73,8 @@ namespace Content.Server.Psionics.Abilities
             if (RemComp<PotentialPsionicComponent>(uid))
             {
                 _popups.PopupEntity(Loc.GetString("mindbreaking-feedback", ("entity", uid)), uid, PopupType.Medium);
+                EnsureComp<PsionicInsulationComponent>(uid, out var insul);
+                insul.MindBroken = true;
             }
 
             if (!TryComp<PsionicComponent>(uid, out var psionic))

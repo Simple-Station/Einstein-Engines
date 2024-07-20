@@ -118,7 +118,6 @@
   - type: Grammar
     attributes:
       gender: male
-  - type: PotentialPsionic # Nyano
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon

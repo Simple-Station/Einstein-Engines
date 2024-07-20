@@ -1,10 +1,12 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Examine;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Psionics.Glimmer;
+using Robust.Shared.Network;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 
@@ -18,6 +20,7 @@ namespace Content.Shared.Psionics.Abilities
         [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly IRobustRandom _robustRandom = default!;
+        [Dependency] private readonly INetManager _net = default!;
 
         public override void Initialize()
         {
@@ -25,6 +28,7 @@ namespace Content.Shared.Psionics.Abilities
             SubscribeLocalEvent<PsionicsDisabledComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<PsionicsDisabledComponent, ComponentShutdown>(OnShutdown);
             SubscribeLocalEvent<PsionicComponent, PsionicPowerUsedEvent>(OnPowerUsed);
+            SubscribeLocalEvent<PsionicInsulationComponent, ExaminedEvent>(OnExamined);
 
             SubscribeLocalEvent<PsionicComponent, MobStateChangedEvent>(OnMobStateChanged);
         }
@@ -75,6 +79,14 @@ namespace Content.Shared.Psionics.Abilities
                 return;
 
             _actions.SetEnabled(uid, IsEligibleForPsionics(uid));
+        }
+
+        private void OnExamined(EntityUid uid, PsionicInsulationComponent component, ExaminedEvent args)
+        {
+            if (!component.MindBroken || !args.IsInDetailsRange)
+                return;
+
+            args.PushMarkup($"[color=mediumpurple]{Loc.GetString("examine-mindbroken-message", ("entity", uid))}[/color]");
         }
 
         private bool IsEligibleForPsionics(EntityUid uid)

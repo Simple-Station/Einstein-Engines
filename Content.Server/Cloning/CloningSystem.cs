@@ -24,6 +24,7 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Roles.Jobs;
+using Content.Shared.Psionics.Abilities;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -200,6 +201,18 @@ namespace Content.Server.Cloning
             if (_configManager.GetCVar(CCVars.BiomassEasyMode))
                 cloningCost = (int) Math.Round(cloningCost * EasyModeCloningCost);
 
+            if (TryComp<PsionicInsulationComponent>(bodyToClone, out var insul))
+            {
+                if (clonePod.ConnectedConsole != null)
+                {
+                    _chatSystem.TrySendInGameICMessage(clonePod.ConnectedConsole.Value,
+                        Loc.GetString("cloning-console-insulation-error"),
+                        InGameICChatType.Speak, false);
+                }
+
+                return false;
+            }
+
             // Check if they have the uncloneable trait
             if (TryComp<UncloneableComponent>(bodyToClone, out _))
             {
@@ -248,7 +261,7 @@ namespace Content.Server.Cloning
             }
             // end of genetic damage checks
 
-            var mob = FetchAndSpawnMob(clonePod, pref, speciesPrototype, humanoid, bodyToClone, karmaBonus); //DeltaV Replaces CloneAppearance with Metem/Clone via FetchAndSpawnMob 
+            var mob = FetchAndSpawnMob(clonePod, pref, speciesPrototype, humanoid, bodyToClone, karmaBonus); //DeltaV Replaces CloneAppearance with Metem/Clone via FetchAndSpawnMob
 
             ///Nyano - Summary: adds the potential psionic trait to the reanimated mob.
             EnsureComp<PotentialPsionicComponent>(mob);

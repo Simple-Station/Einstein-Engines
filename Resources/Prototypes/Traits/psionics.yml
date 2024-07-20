@@ -17,6 +17,7 @@
   points: -5
   components:
     - type: PsionicInsulation
+      mindBroken: true
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
