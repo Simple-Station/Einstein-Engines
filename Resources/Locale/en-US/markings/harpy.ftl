@@ -1,14 +1,14 @@
 marking-HarpyWingDefaultHuescale = Basic Wings (Huescale)
-marking-HarpyWingDefaultHuescale-huescaleharpy = Wings
+marking-HarpyWingDefaultHuescale-huescale_harpy = Wings
 
 marking-HarpyWingDefaultWhitescale = Basic Wings (Whitescale)
-marking-HarpyWingDefaultWhitescale-whitescaleharpy = Wings
+marking-HarpyWingDefaultWhitescale-whitescale_harpy = Wings
 
 marking-HarpyWingFoldedHuescale = Folded Wings (Huescale)
-marking-HarpyWingFoldedHuescale-huescaleharpyfolded = Wings
+marking-HarpyWingFoldedHuescale-huescale_harpy_folded = Wings
 
 marking-HarpyWingFoldedWhitescale = Folded Wings (Whitescale)
-marking-HarpyWingFoldedWhitescale-whitescaleharpyfolded = Wings
+marking-HarpyWingFoldedWhitescale-whitescale_harpy_folded = Wings
 
 marking-HarpyWingOwlHuescale = Owl Wings (Huescale)
 marking-HarpyWingOwlHuescale-huescale_harpy_wing_owl = Wings
@@ -17,28 +17,28 @@ marking-HarpyWingOwlWhitescale = Owl Wings (Whitescale)
 marking-HarpyWingOwlWhitescale-whitescale_harpy_wing_owl = Wings
 
 marking-HarpyWingClassic = Classic Wings
-marking-HarpyWingClassic-classicharpy = Wings
+marking-HarpyWingClassic-classic_harpy = Wings
 
 marking-HarpyWing2ToneClassic = Classic Two Tone Wings
-marking-HarpyWing2ToneClassic-harpy2tone1 = Top Half
-marking-HarpyWing2ToneClassic-harpy2tone2 = Bottom Half
+marking-HarpyWing2ToneClassic-harpy_2tone_1 = Top Half
+marking-HarpyWing2ToneClassic-harpy_2tone_2 = Bottom Half
 
 marking-HarpyWing3ToneClassic = Classic Three Tone Wings
-marking-HarpyWing3ToneClassic-harpy3tone1 = Top Third
-marking-HarpyWing3ToneClassic-harpy3tone2 = Middle Third
-marking-HarpyWing3ToneClassic-harpy3tone3 = Bottom Third
+marking-HarpyWing3ToneClassic-harpy_3tone_1 = Top Third
+marking-HarpyWing3ToneClassic-harpy_3tone_2 = Middle Third
+marking-HarpyWing3ToneClassic-harpy_3tone_3 = Bottom Third
 
 marking-HarpyWingSpeckledClassic = Speckled Classic Wings
-marking-HarpyWingSpeckledClassic-harpyspeckled1 = Main
-marking-HarpyWingSpeckledClassic-harpyspeckled2 = Speckles
+marking-HarpyWingSpeckledClassic-harpy_speckled_1 = Main
+marking-HarpyWingSpeckledClassic-harpy_speckled_2 = Speckles
 
 marking-HarpyWingUndertoneClassic = Classic Wings with Undertone
-marking-HarpyWingUndertoneClassic-harpyundertone1 = Front
-marking-HarpyWingUndertoneClassic-harpyundertone2 = Back
+marking-HarpyWingUndertoneClassic-harpy_undertone_1 = Front
+marking-HarpyWingUndertoneClassic-harpy_undertone_2 = Back
 
 marking-HarpyWingTipsClassic = Classic Wings with Feather Tips
-marking-HarpyWingTipsClassic-harpywingtip1 = Main
-marking-HarpyWingTipsClassic-harpywingtip2 = Feathertips
+marking-HarpyWingTipsClassic-harpy_wingtip_1 = Main
+marking-HarpyWingTipsClassic-harpy_wingtip_2 = Feathertips
 
 marking-HarpyEarsDefault = Feather Tufts
 marking-HarpyEarsDefault-harpy_ears_default = Tufts
