@@ -14,8 +14,8 @@
     - SuitEVA
     - MonkeyWearable
     - WhitelistChameleon
-    - AllowLamiaHardsuit #DeltaV: Used by Lamia to render snek hardsuits
-    - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
+    - AllowLamiaHardsuit
+    - HidesHarpyWings
 
 #Syndicate EVA
 - type: entity
@@ -33,8 +33,8 @@
     - SuitEVA
     - MonkeyWearable
     - WhitelistChameleon
-    - AllowLamiaHardsuit #DeltaV: Used by Lamia to render snek hardsuits
-    - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
+    - AllowLamiaHardsuit
+    - HidesHarpyWings
 
 #Emergency EVA
 - type: entity
@@ -76,8 +76,8 @@
     - SuitEVA
     - MonkeyWearable
     - WhitelistChameleon
-    - AllowLamiaHardsuit #DeltaV: Used by Lamia to render snek hardsuits
-    - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
+    - AllowLamiaHardsuit
+    - HidesHarpyWings
 
 #NTSRA Voidsuit / Ancient Voidsuit
 - type: entity

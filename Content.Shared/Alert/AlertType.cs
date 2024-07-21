@@ -37,6 +37,7 @@ namespace Content.Shared.Alert
         Internals,
         Toxins,
         Muted,
+        Walking,
         VowOfSilence,
         VowBroken,
         Essence,
@@ -52,7 +53,8 @@ namespace Content.Shared.Alert
         SuitPower,
         BorgHealth,
         BorgCrit,
-        BorgDead
+        BorgDead,
+        Offer,
     }
 
 }

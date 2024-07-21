@@ -14056,14 +14056,6 @@ entities:
     - type: Transform
       pos: 11.693138,27.631475
       parent: 100
-- proto: BookFishops
-  entities:
-  - uid: 5268
-    components:
-    - type: Transform
-      parent: 5207
-    - type: Physics
-      canCollide: False
 - proto: BookLeafLoversSecret
   entities:
   - uid: 504
@@ -14122,18 +14114,6 @@ entities:
     - type: Transform
       pos: 11.5,-4.5
       parent: 100
-    - type: Storage
-      storedItems:
-        5268:
-          position: 0,0
-          _rotation: South
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 5268
   - uid: 11782
     components:
     - type: Transform

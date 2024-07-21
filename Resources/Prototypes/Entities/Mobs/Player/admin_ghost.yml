@@ -75,8 +75,6 @@
     followEntity: true
   - type: CargoOrderConsole
   - type: CrewMonitoringConsole
-    snap: false
-    precision: 3
   - type: GeneralStationRecordConsole
   - type: DeviceNetwork
     deviceNetId: Wireless
@@ -85,8 +83,8 @@
     range: 500
   - type: StationLimitedNetwork
   - type: Thieving
-    stripTimeReduction: 9999
-    stealthy: true
+    stripTimeMultiplier: 0
+    ignoreStripHidden: true
   - type: Stripping
   - type: SolutionScanner
   - type: IgnoreUIRange
