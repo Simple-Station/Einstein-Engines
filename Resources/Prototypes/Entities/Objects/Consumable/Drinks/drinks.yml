@@ -118,6 +118,9 @@
     solution: drink
   - type: FitsInDispenser
     solution: drink
+  - type: Tag
+    tags:
+      - DrinkGlass
 
 # Transformable container - normal glass
 - type: entity

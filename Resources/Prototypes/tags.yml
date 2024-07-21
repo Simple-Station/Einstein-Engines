@@ -562,6 +562,9 @@
   id: DrinkCan
 
 - type: Tag
+  id: DrinkGlass
+
+- type: Tag
   id: DrinkSpaceGlue
 
 - type: Tag
@@ -788,6 +791,9 @@
 
 - type: Tag
   id: Igniter
+
+- type: Tag
+  id: Ingredient
 
 - type: Tag #Drop this innate tool instead of deleting it.
   id: InnateDontDelete
