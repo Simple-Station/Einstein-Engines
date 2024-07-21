@@ -3,6 +3,7 @@
   parent: DrinkBase
   id: DrinkBottlePlasticBaseFull
   abstract: true
+  suffix: Full
   components:
   - type: Tag
     tags:
@@ -726,7 +727,7 @@
   parent: DrinkBottlePlasticBaseFull
   id: DrinkSugarJug
   name: sugar jug
-  suffix: for drinks
+  suffix: For Drinks, Full
   description: some people put this in their coffee...
   components:
   - type: SolutionContainerManager
@@ -788,6 +789,23 @@
   - type: Drink
   - type: Label
     currentLabel: ice
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkCoconutWaterJug
+  name: coconut water jug
+  description: It's on the inside of the coconut that counts.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: CoconutWater
+          Quantity: 300
+  - type: Drink
+  - type: Label
+    currentLabel: coconut water
 
 - type: entity
   parent: DrinkBottlePlasticBaseFull

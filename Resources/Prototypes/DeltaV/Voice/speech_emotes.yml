@@ -1,11 +1,3 @@
-# Harpy
-- type: emote
-  id: HarpyHonk
-  category: Vocal
-  chatMessages: [ honks ]
-  chatTriggers:
-    - honks
-
 - type: emote
   id: HarpyRing
   category: Vocal
@@ -27,13 +19,6 @@
   chatMessages: [ bangs ]
   chatTriggers:
     - bangs
-
-- type: emote
-  id: HarpyBeep
-  category: Vocal
-  chatMessages: [ beeps ]
-  chatTriggers:
-    - beeps
 
 - type: emote
   id: HarpyRev

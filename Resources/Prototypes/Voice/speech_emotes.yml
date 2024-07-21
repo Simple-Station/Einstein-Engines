@@ -23,6 +23,8 @@
   id: Honk
   category: Vocal
   chatMessages: [ honks ]
+  chatTriggers:
+    - honks
 
 - type: emote
   id: Sigh
@@ -126,3 +128,32 @@
   chatMessages: [ chirps ]
   chatTriggers:
     - chirps
+
+# Machine Emotes
+- type: emote
+  id: Beep
+  category: Vocal
+  chatMessages: [ beeps ]
+  chatTriggers:
+    - beeps
+
+- type: emote
+  id: Chime
+  category: Vocal
+  chatMessages: [ chimes ]
+  chatTriggers:
+    - chimes
+
+- type: emote
+  id: Buzz-Two
+  category: Vocal
+  chatMessages: [ "buzzes twice" ]
+  chatTriggers:
+    - buzzes twice
+
+- type: emote
+  id: Ping
+  category: Vocal
+  chatMessages: [ pings ]
+  chatTriggers:
+    - pings
