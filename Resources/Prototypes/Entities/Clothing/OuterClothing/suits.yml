@@ -76,6 +76,10 @@
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: GroupExamine
+  - type: Tag
+    tags:
+      - WhitelistChameleon
+      - HidesHarpyWings
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -106,6 +110,7 @@
     - type: Tag
       tags:
         - FullBodyOuter
+        - WhitelistChameleon
         - HidesHarpyWings
 
 - type: entity
@@ -133,6 +138,7 @@
   - type: Tag
     tags:
       - FullBodyOuter
+      - WhitelistChameleon
       - HidesHarpyWings
 
 - type: entity

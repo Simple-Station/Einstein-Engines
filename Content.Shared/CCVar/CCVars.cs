@@ -381,6 +381,19 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int> GameLoadoutsPoints =
             CVarDef.Create("game.loadouts_points", 14, CVar.REPLICATED);
 
+
+        /// <summary>
+        ///     Whether to repeat eating doafters after completion
+        /// </summary>
+        public static readonly CVarDef<bool> GameAutoEatFood =
+            CVarDef.Create("game.auto_eat_food", false, CVar.REPLICATED);
+
+        /// <summary>
+        ///     Whether to repeat drinking doafters after completion
+        /// </summary>
+        public static readonly CVarDef<bool> GameAutoEatDrinks =
+            CVarDef.Create("game.auto_eat_drinks", false, CVar.REPLICATED);
+
 #if EXCEPTION_TOLERANCE
         /// <summary>
         ///     Amount of times round start must fail before the server is shut down.
@@ -2259,7 +2272,7 @@ namespace Content.Shared.CCVar
         ///     Whether height & width sliders adjust a player's max view distance
         /// </summary>
         public static readonly CVarDef<bool> HeightAdjustModifiesZoom =
-            CVarDef.Create("heightadjust.modifies_zoom", true, CVar.SERVERONLY);
+            CVarDef.Create("heightadjust.modifies_zoom", false, CVar.SERVERONLY);
 
         /// <summary>
         ///     Enables station goals
