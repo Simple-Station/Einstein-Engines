@@ -1,4 +1,5 @@
 using System.Collections.Frozen;
+using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -85,7 +86,8 @@ public partial class ChatSystem
         {
             // not all emotes are loc'd, but for the ones that are we pass in entity
             var action = Loc.GetString(_random.Pick(emote.ChatMessages), ("entity", source));
-            SendEntityEmote(source, action, range, nameOverride, hideLog: hideLog, checkEmote: false, ignoreActionBlocker: ignoreActionBlocker);
+            var language = _language.GetLanguage(source);
+            SendEntityEmote(source, action, range, nameOverride, language, hideLog: hideLog, checkEmote: false, ignoreActionBlocker: ignoreActionBlocker);
         }
 
         // do the rest of emote event logic here
