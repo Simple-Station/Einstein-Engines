@@ -85,6 +85,9 @@ public sealed class RadioSystem : EntitySystem
         if (language == null)
             language = _language.GetLanguage(messageSource);
 
+        if (!language.SpeechOverride.AllowRadio)
+            return;
+
         // TODO if radios ever garble / modify messages, feedback-prevention needs to be handled better than this.
         if (!_messages.Add(message))
             return;
@@ -180,7 +183,7 @@ public sealed class RadioSystem : EntitySystem
             ("color", channel.Color),
             ("languageColor", language.SpeechOverride.Color),
             ("fontType", language.SpeechOverride.FontId ?? speech.FontId),
-            ("fontSize", language.SpeechOverride.Color ?? speech.FontSize),
+            ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
