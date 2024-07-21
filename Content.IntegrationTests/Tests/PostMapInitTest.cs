@@ -31,8 +31,7 @@ namespace Content.IntegrationTests.Tests
         {
             "CentCommMain",
             "CentCommHarmony",
-            "Dart",
-            "NukieOutpost"
+            "Dart"
         };
 
         private static readonly string[] Grids =
@@ -51,7 +50,6 @@ namespace Content.IntegrationTests.Tests
             "CentCommMain",
             "CentCommHarmony",
             "MeteorArena",
-            "NukieOutpost",
             "Core", // No current maintainer. In need of a rework...
             "Pebble", // Maintained by Plyushune
             // "Edge", // De-rotated, no current maintainer.
