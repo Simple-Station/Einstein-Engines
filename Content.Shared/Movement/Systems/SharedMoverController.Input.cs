@@ -468,7 +468,7 @@ namespace Content.Shared.Movement.Systems
         {
             // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
             WalkingAlert(entity, walking);
-            SetMoveInput(entity, component, subTick, walking, MoveButtons.Sprint);
+            SetMoveInput(entity, component, subTick, walking, MoveButtons.Walk);
         }
 
         /// <summary>
@@ -620,7 +620,7 @@ namespace Content.Shared.Movement.Systems
         Down = 2,
         Left = 4,
         Right = 8,
-        Sprint = 16,
+        Walk = 16,
         AnyDirection = Up | Down | Left | Right,
     }
 

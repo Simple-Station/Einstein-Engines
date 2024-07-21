@@ -396,10 +396,10 @@ namespace Content.Shared.CCVar
 
 
         /// <summary>
-        ///     If the sprint button should instead make you walk
+        ///     When true, you have to press the change speed button to sprint.
         /// </summary>
-        public static readonly CVarDef<bool> GameSprintWalks =
-            CVarDef.Create("game.sprint_walks", true, CVar.REPLICATED);
+        public static readonly CVarDef<bool> GamePressToSprint =
+            CVarDef.Create("game.press_to_sprint", true, CVar.REPLICATED);
 
 #if EXCEPTION_TOLERANCE
         /// <summary>

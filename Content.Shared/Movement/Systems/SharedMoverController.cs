@@ -291,7 +291,7 @@ namespace Content.Shared.Movement.Systems
 
         private void WalkingAlert(EntityUid player, bool walking)
         {
-            walking = _configManager.GetCVar(CCVars.GameSprintWalks) ? !walking : walking;
+            walking = _configManager.GetCVar(CCVars.GamePressToSprint) ? !walking : walking;
             _alerts.ShowAlert(player, AlertType.Walking, walking ? (short) 0 : (short) 1);
         }
 
