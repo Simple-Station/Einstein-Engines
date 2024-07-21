@@ -255,7 +255,7 @@ public enum InGameICChatType : byte
     Speak,
     Emote,
     Whisper,
-    Telepathic //Nyano - Summary: adds telepathic as a type of message users can receive.
+    Telepathic
 }
 
 /// <summary>
