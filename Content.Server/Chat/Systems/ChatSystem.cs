@@ -428,11 +428,11 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         name = FormattedMessage.EscapeText(name);
         // The chat message wrapped in a "x says y" string
-        var wrappedMessage = WrapPublicMessage(source, name, message, languageOverride: language);
+        var wrappedMessage = WrapPublicMessage(source, name, message, language: language);
         // The chat message obfuscated via language obfuscation
         var obfuscated = SanitizeInGameICMessage(source, _language.ObfuscateSpeech(message, language), out var emoteStr, true, _configurationManager.GetCVar(CCVars.ChatPunctuation), (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en") || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en"));
         // The language-obfuscated message wrapped in a "x says y" string
-        var wrappedObfuscated = WrapPublicMessage(source, name, obfuscated, languageOverride: language);
+        var wrappedObfuscated = WrapPublicMessage(source, name, obfuscated, language: language);
 
         SendInVoiceRange(ChatChannel.Local, name, message, wrappedMessage, obfuscated, wrappedObfuscated, source, range, languageOverride: language);
 
@@ -844,40 +844,40 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <summary>
     ///     Wraps a message sent by the specified entity into an "x says y" string.
     /// </summary>
-    public string WrapPublicMessage(EntityUid source, string name, string message, LanguagePrototype? languageOverride = null)
+    public string WrapPublicMessage(EntityUid source, string name, string message, LanguagePrototype? language = null)
     {
-        // TODO if you ever want to touch this, don't.
-        var language = languageOverride ?? _language.GetLanguage(source);
+        var wrapId = GetSpeechVerb(source, message).Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message";
+        return WrapMessage(wrapId, InGameICChatType.Speak, source, name, message, language);
+    }
+
+    /// <summary>
+    ///     Wraps a message whispered by the specified entity into an "x whispers y" string.
+    /// </summary>
+    public string WrapWhisperMessage(EntityUid source, LocId defaultWrap, string entityName, string message, LanguagePrototype? language = null)
+    {
+        return WrapMessage(defaultWrap, InGameICChatType.Whisper, source, entityName, message, language);
+    }
+
+    /// <summary>
+    ///     Wraps a message sent by the specified entity into the specified wrap string.
+    /// </summary>
+    public string WrapMessage(LocId wrapId, InGameICChatType chatType, EntityUid source, string entityName, string message, LanguagePrototype? language)
+    {
+        language ??= _language.GetLanguage(source);
+        if (language.SpeechOverride.MessageWrapOverrides.TryGetValue(chatType, out var wrapOverride))
+            wrapId = wrapOverride;
+
         var speech = GetSpeechVerb(source, message);
-        var wrapId = language.SpeechOverride.MessageWrapOverrides.TryGetValue(InGameICChatType.Speak, out var wrapOverride)
-            ? wrapOverride.ToString()
-            : speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message";
         var verbId = language.SpeechOverride.SpeechVerbOverrides is { } verbsOverride
             ? _random.Pick(verbsOverride).ToString()
             : _random.Pick(speech.SpeechVerbStrings);
 
         return Loc.GetString(wrapId,
             ("color", language.SpeechOverride.Color),
-            ("entityName", name),
+            ("entityName", entityName),
             ("verb", Loc.GetString(verbId)),
             ("fontType", language.SpeechOverride.FontId ?? speech.FontId),
             ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize),
-            ("message", message));
-    }
-
-    /// <summary>
-    ///     Wraps a message whispered by the specified entity into an "x whispers y" string.
-    /// </summary>
-    public string WrapWhisperMessage(EntityUid source, LocId defaultWrap, string name, string message, LanguagePrototype? languageOverride = null)
-    {
-        var language = languageOverride ?? _language.GetLanguage(source);
-        var wrapId = language.SpeechOverride.MessageWrapOverrides.TryGetValue(InGameICChatType.Whisper, out var wrapOverride)
-            ? wrapOverride
-            : defaultWrap;
-
-        return Loc.GetString(wrapId,
-            ("color", language.SpeechOverride.Color),
-            ("entityName", name),
             ("message", message));
     }
 
