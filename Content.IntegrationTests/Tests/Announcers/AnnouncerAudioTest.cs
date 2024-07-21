@@ -13,7 +13,7 @@ using Serilog;
 namespace Content.IntegrationTests.Tests.Announcers;
 
 /// <summary>
-///     Checks if every station event wanting the announcerSystem to send audios has a sound file
+///     Checks if every station event using the announcerSystem has a valid audio file associated with it
 /// </summary>
 [TestFixture]
 [TestOf(typeof(AnnouncerPrototype))]
