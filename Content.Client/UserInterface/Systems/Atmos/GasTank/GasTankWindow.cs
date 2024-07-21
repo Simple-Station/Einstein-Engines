@@ -10,39 +10,39 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
-namespace Content.Client.UserInterface.Systems.Atmos.GasTank
+namespace Content.Client.UserInterface.Systems.Atmos.GasTank;
+
+public sealed class GasTankWindow
+    : BaseWindow
 {
-    public sealed class GasTankWindow
-        : BaseWindow
+    [Dependency] private readonly IResourceCache _cache = default!;
+
+    private readonly RichTextLabel _lblPressure;
+    private readonly FloatSpinBox _spbPressure;
+    private readonly RichTextLabel _lblInternals;
+    private readonly Button _btnInternals;
+    private readonly Label _topLabel;
+
+    public event Action<float>? OnOutputPressure;
+    public event Action? OnToggleInternals;
+
+    public GasTankWindow()
     {
-        private GasTankBoundUserInterface _owner;
-        private readonly Label _lblName;
-        private readonly BoxContainer _topContainer;
-        private readonly Control _contentContainer;
-
-
-        private readonly IResourceCache _resourceCache = default!;
-        private readonly RichTextLabel _lblPressure;
-        private readonly FloatSpinBox _spbPressure;
-        private readonly RichTextLabel _lblInternals;
-        private readonly Button _btnInternals;
-
-        public GasTankWindow(GasTankBoundUserInterface owner)
-        {
-            TextureButton btnClose;
-            _resourceCache = IoCManager.Resolve<IResourceCache>();
-            _owner = owner;
-            var rootContainer = new LayoutContainer {Name = "GasTankRoot"};
-            AddChild(rootContainer);
+        IoCManager.InjectDependencies(this);
+        Control contentContainer;
+        BoxContainer topContainer;
+        TextureButton btnClose;
+        var rootContainer = new LayoutContainer { Name = "GasTankRoot" };
+        AddChild(rootContainer);
 
             MouseFilter = MouseFilterMode.Stop;
 
-            var panelTex = _resourceCache.GetTexture("/Textures/Interface/Nano/button.svg.96dpi.png");
-            var back = new StyleBoxTexture
-            {
-                Texture = panelTex,
-                Modulate = Color.FromHex("#25252A"),
-            };
+        var panelTex = _cache.GetTexture("/Textures/Interface/Nano/button.svg.96dpi.png");
+        var back = new StyleBoxTexture
+        {
+            Texture = panelTex,
+            Modulate = Color.FromHex("#25252A"),
+        };
 
             back.SetPatchMargin(StyleBox.Margin.All, 10);
 
@@ -84,31 +84,32 @@ namespace Content.Client.UserInterface.Systems.Atmos.GasTank
 
             LayoutContainer.SetAnchorPreset(topContainerWrap, LayoutContainer.LayoutPreset.Wide);
 
-            var font = _resourceCache.GetFont("/Fonts/Boxfont-round/Boxfont Round.ttf", 13);
+        var font = _cache.GetFont("/Fonts/Boxfont-round/Boxfont Round.ttf", 13);
 
-            var topRow = new BoxContainer
+        _topLabel = new Label
+        {
+            FontOverride = font,
+            FontColorOverride = StyleNano.NanoGold,
+            VerticalAlignment = VAlignment.Center,
+            HorizontalExpand = true,
+            HorizontalAlignment = HAlignment.Left,
+            Margin = new Thickness(0, 0, 20, 0),
+        };
+
+        var topRow = new BoxContainer
+        {
+            Orientation = LayoutOrientation.Horizontal,
+            Margin = new Thickness(4, 2, 12, 2),
+            Children =
             {
-                Orientation = LayoutOrientation.Horizontal,
-                Margin = new Thickness(4, 2, 12, 2),
-                Children =
+                _topLabel,
+                (btnClose = new TextureButton
                 {
-                    (_lblName = new Label
-                    {
-                        Text = Loc.GetString("gas-tank-window-label"),
-                        FontOverride = font,
-                        FontColorOverride = StyleNano.NanoGold,
-                        VerticalAlignment = VAlignment.Center,
-                        HorizontalExpand = true,
-                        HorizontalAlignment = HAlignment.Left,
-                        Margin = new Thickness(0, 0, 20, 0),
-                    }),
-                    (btnClose = new TextureButton
-                    {
-                        StyleClasses = {DefaultWindow.StyleClassWindowCloseButton},
-                        VerticalAlignment = VAlignment.Center
-                    })
-                }
-            };
+                    StyleClasses = {DefaultWindow.StyleClassWindowCloseButton},
+                    VerticalAlignment = VAlignment.Center
+                })
+            }
+        };
 
             var middle = new PanelContainer
             {
@@ -171,19 +172,24 @@ namespace Content.Client.UserInterface.Systems.Atmos.GasTank
             };
             _contentContainer.AddChild(_spbPressure);
 
-            // Handlers
-            _spbPressure.OnValueChanged += args =>
-            {
-                _owner.SetOutputPressure(args.Value);
-            };
+        // Handlers
+        _spbPressure.OnValueChanged += args =>
+        {
+            OnOutputPressure?.Invoke(args.Value);
+        };
 
-            _btnInternals.OnPressed += args =>
-            {
-                _owner.ToggleInternals();
-            };
+        _btnInternals.OnPressed += args =>
+        {
+            OnToggleInternals?.Invoke();
+        };
 
-            btnClose.OnPressed += _ => Close();
-        }
+        btnClose.OnPressed += _ => Close();
+    }
+
+    public void SetTitle(string name)
+    {
+        _topLabel.Text = name;
+    }
 
         public void UpdateState(GasTankBoundUserInterfaceState state)
         {
