@@ -4571,3 +4571,12 @@ Entries:
       message: Merged ~250-500 WizDen PRs
   id: 6174
   time: '2024-07-20T05:24:50.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Voice will no longer travel through space. If you are in space, you must
+        either have a radio to communicate with others, or get within hugging
+        distance of someone to talk.
+  id: 6175
+  time: '2024-07-21T06:47:41.0000000+00:00'
