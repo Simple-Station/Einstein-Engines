@@ -4580,3 +4580,11 @@ Entries:
         distance of someone to talk.
   id: 6175
   time: '2024-07-21T06:47:41.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Camera Shake is now affected by character mass. Small characters
+        experience more camera shake. Large characters experience less. 
+  id: 6176
+  time: '2024-07-21T06:50:25.0000000+00:00'
