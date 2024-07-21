@@ -40,7 +40,7 @@ namespace Content.Server.Chat.Systems;
 
 // Dear contributor. When I was introducing changes to this system only god and I knew what I was doing.
 // Now only god knows. Please don't touch this code ever again. If you do have to, increment this counter as a warning for others:
-// TOTAL_HOURS_WASTED_HERE_EE = 15
+// TOTAL_HOURS_WASTED_HERE_EE = 16
 
 // TODO refactor whatever active warzone this class and chatmanager have become
 /// <summary>
