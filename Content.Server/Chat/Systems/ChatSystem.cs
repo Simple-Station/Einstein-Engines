@@ -40,7 +40,7 @@ namespace Content.Server.Chat.Systems;
 
 // Dear contributor. When I was introducing changes to this system only god and I knew what I was doing.
 // Now only god knows. Please don't touch this code ever again. If you do have to, increment this counter as a warning for others:
-// TOTAL_HOURS_WASTED_HERE_EE = 16
+// TOTAL_HOURS_WASTED_HERE_EE = 17
 
 // TODO refactor whatever active warzone this class and chatmanager have become
 /// <summary>
@@ -224,6 +224,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             message = message[1..];
         }
 
+        var language = languageOverride ?? _language.GetLanguage(source);
+
         bool shouldCapitalize = (desiredType != InGameICChatType.Emote);
         bool shouldPunctuate = _configurationManager.GetCVar(CCVars.ChatPunctuation);
         // Capitalizing the word I only happens in English, so we check language here
@@ -235,8 +237,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         // Was there an emote in the message? If so, send it.
         if (player != null && emoteStr != message && emoteStr != null)
         {
-            // We use universal here because tho
-            SendEntityEmote(source, emoteStr, range, nameOverride, SharedLanguageSystem.Universal, ignoreActionBlocker);
+            SendEntityEmote(source, emoteStr, range, nameOverride, language, ignoreActionBlocker);
         }
 
         // This can happen if the entire string is sanitized out.
@@ -244,7 +245,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
         // This is really terrible. I hate myself for doing this.
-        var language = languageOverride ?? _language.GetLanguage(source);
         if (language.SpeechOverride.ChatTypeOverride is { } chatTypeOverride)
             desiredType = chatTypeOverride;
 
