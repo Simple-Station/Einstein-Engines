@@ -23,6 +23,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition;
+using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Stacks;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
@@ -30,6 +31,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
 
 namespace Content.Server.Nutrition.EntitySystems;
 
@@ -54,6 +57,7 @@ public sealed class FoodSystem : EntitySystem
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly StomachSystem _stomach = default!;
     [Dependency] private readonly UtensilSystem _utensil = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     public const float MaxFeedDistance = 1.0f;
 
@@ -286,7 +290,7 @@ public sealed class FoodSystem : EntitySystem
             _utensil.TryBreak(utensil, args.User);
         }
 
-        args.Repeat = !forceFeed;
+        args.Repeat = _config.GetCVar(CCVars.GameAutoEatFood) && !forceFeed;
 
         if (TryComp<StackComponent>(entity, out var stack))
         {

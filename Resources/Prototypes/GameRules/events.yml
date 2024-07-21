@@ -49,7 +49,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-bureaucratic-error-announcement
+    startAnnouncement: true
     minimumPlayers: 25
     weight: 5
     duration: 1
@@ -61,7 +61,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-clerical-error-announcement
+    startAnnouncement: true
     minimumPlayers: 15
     weight: 5
     duration: 1
@@ -134,10 +134,8 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-gas-leak-start-announcement
-    startAudio:
-      path: /Audio/Announcements/gas_leak.ogg # DeltaV - custom announcer
-    endAnnouncement: station-event-gas-leak-end-announcement
+    startAnnouncement: true
+    endAnnouncement: true
     earliestStart: 10
     minimumPlayers: 5
     weight: 10
@@ -166,12 +164,8 @@
     earliestStart: 30
     weight: 7.5
     minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
-    startAnnouncement: station-event-meteor-swarm-start-announcement
-    endAnnouncement: station-event-meteor-swarm-end-announcement
-    startAudio:
-      path: /Audio/Announcements/meteors.ogg
-      params:
-        volume: -4
+    startAnnouncement: true
+    endAnnouncement: true
     duration: null #ending is handled by MeteorSwarmRule
     startDelay: 30
   - type: MeteorSwarmRule
@@ -182,9 +176,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
     startDelay: 10
     earliestStart: 30
     minimumPlayers: 35
@@ -210,9 +202,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
     startDelay: 10
     weight: 5
     duration: 50
@@ -230,12 +220,8 @@
   components:
   - type: StationEvent
     weight: 10
-    startAnnouncement: station-event-power-grid-check-start-announcement
-    endAnnouncement: station-event-power-grid-check-end-announcement
-    startAudio:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-       volume: -4
+    startAnnouncement: true
+    endAnnouncement: true
     startDelay: 24
     duration: 60
     maxDuration: 120
@@ -249,8 +235,6 @@
 #   - type: StationEvent
 #     weight: 10
 #     duration: 1
-#     startAudio:
-#       path: /Audio/Announcements/attention.ogg
 #   - type: RandomSentienceRule
 
 - type: entity
@@ -260,10 +244,8 @@
   components:
   - type: StationEvent
     weight: 10
-    startAnnouncement: station-event-solar-flare-start-announcement
-    endAnnouncement: station-event-solar-flare-end-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
+    endAnnouncement: true
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
@@ -301,9 +283,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-clog-start-announcement
-    startAudio:
-      path: /Audio/Announcements/ventclog.ogg # DeltaV - custom announcer
+    startAnnouncement: true
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -317,9 +297,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
     startDelay: 10
     earliestStart: 15
     minimumPlayers: 15
@@ -340,9 +318,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
@@ -363,9 +339,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
@@ -382,9 +356,7 @@
 #  noSpawn: true
 #  components:
 #  - type: StationEvent
-#    startAnnouncement: station-event-vent-creatures-start-announcement
-#    startAudio:
-#      path: /Audio/Announcements/attention.ogg
+#    startAnnouncement: true
 #    startDelay: 10
 #    earliestStart: 20
 #    minimumPlayers: 15
@@ -447,9 +419,7 @@
 #  noSpawn: true
 #  components:
 #  - type: StationEvent
-#    startAnnouncement: station-event-immovable-rod-start-announcement
-#    startAudio:
-#      path: /Audio/Announcements/attention.ogg
+#    startAnnouncement: true
 #    weight: 5
 #    duration: 1
 #    earliestStart: 45
@@ -477,3 +447,4 @@
       minimumPlayers: 20
       weight: 5
     - type: MobReplacementRule
+      numberToReplace: 1

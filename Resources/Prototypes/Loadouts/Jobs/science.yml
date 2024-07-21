@@ -19,6 +19,9 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Scientist

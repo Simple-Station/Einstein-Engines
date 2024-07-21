@@ -1,4 +1,5 @@
 using System.Collections.Frozen;
+using System.Linq;
 using Content.Shared.Chat.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -9,6 +10,7 @@ namespace Content.Server.Chat.Systems;
 public partial class ChatSystem
 {
     private FrozenDictionary<string, EmotePrototype> _wordEmoteDict = FrozenDictionary<string, EmotePrototype>.Empty;
+    private IReadOnlyList<string> Punctuation { get; } = new List<string> { ",", ".", "!", "?", "-", "~", "'", "\"", };
 
     protected override void OnPrototypeReload(PrototypesReloadedEventArgs obj)
     {
@@ -150,6 +152,10 @@ public partial class ChatSystem
     private void TryEmoteChatInput(EntityUid uid, string textInput)
     {
         var actionLower = textInput.ToLower();
+        // Replace ending punctuation with nothing
+        if (Punctuation.Any(punctuation => actionLower.EndsWith(punctuation)))
+            actionLower = actionLower.Remove(actionLower.Length - 1);
+
         if (!_wordEmoteDict.TryGetValue(actionLower, out var emote))
             return;
 

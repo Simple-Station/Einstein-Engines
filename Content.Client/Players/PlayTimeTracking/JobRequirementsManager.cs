@@ -7,12 +7,13 @@ using Robust.Client;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Players.PlayTimeTracking;
 
-public sealed partial class JobRequirementsManager
+public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
 {
     [Dependency] private readonly IBaseClient _client = default!;
     [Dependency] private readonly IClientNetManager _net = default!;
@@ -21,7 +22,7 @@ public sealed partial class JobRequirementsManager
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
 
-    public readonly Dictionary<string, TimeSpan> PlayTimes = new();
+    private readonly Dictionary<string, TimeSpan> _roles = new();
     private readonly List<string> _roleBans = new();
 
     private ISawmill _sawmill = default!;
@@ -45,7 +46,7 @@ public sealed partial class JobRequirementsManager
         if (e.NewLevel == ClientRunLevel.Initialize)
         {
             // Reset on disconnect, just in case.
-            PlayTimes.Clear();
+            _roles.Clear();
         }
     }
 
@@ -63,12 +64,12 @@ public sealed partial class JobRequirementsManager
 
     private void RxPlayTime(MsgPlayTime message)
     {
-        PlayTimes.Clear();
+        _roles.Clear();
 
         // NOTE: do not assign _roles = message.Trackers due to implicit data sharing in integration tests.
         foreach (var (tracker, time) in message.Trackers)
         {
-            PlayTimes[tracker] = time;
+            _roles[tracker] = time;
         }
 
         /*var sawmill = Logger.GetSawmill("play_time");
@@ -106,7 +107,7 @@ public sealed partial class JobRequirementsManager
         var reasons = new List<string>();
         foreach (var requirement in requirements)
         {
-            if (JobRequirements.TryRequirementMet(requirement, PlayTimes, out var jobReason, _entManager, _prototypes, _whitelisted, localePrefix))
+            if (JobRequirements.TryRequirementMet(requirement, _roles, out var jobReason, _entManager, _prototypes, _whitelisted, localePrefix))
                 continue;
 
             reasons.Add(jobReason.ToMarkup());
@@ -118,7 +119,7 @@ public sealed partial class JobRequirementsManager
 
     public TimeSpan FetchOverallPlaytime()
     {
-        return PlayTimes.TryGetValue("Overall", out var overallPlaytime) ? overallPlaytime : TimeSpan.Zero;
+        return _roles.TryGetValue("Overall", out var overallPlaytime) ? overallPlaytime : TimeSpan.Zero;
     }
 
     public IEnumerable<KeyValuePair<string, TimeSpan>> FetchPlaytimeByRoles()
@@ -127,7 +128,7 @@ public sealed partial class JobRequirementsManager
 
         foreach (var job in jobsToMap)
         {
-            if (PlayTimes.TryGetValue(job.PlayTimeTracker, out var locJobName))
+            if (_roles.TryGetValue(job.PlayTimeTracker, out var locJobName))
             {
                 yield return new KeyValuePair<string, TimeSpan>(job.Name, locJobName);
             }
@@ -135,4 +136,8 @@ public sealed partial class JobRequirementsManager
     }
 
 
+    public IReadOnlyDictionary<string, TimeSpan> GetPlayTimes(ICommonSession session)
+    {
+        return session != _playerManager.LocalSession ? new Dictionary<string, TimeSpan>() : _roles;
+    }
 }

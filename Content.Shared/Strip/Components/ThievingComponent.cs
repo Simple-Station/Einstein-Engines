@@ -1,9 +1,11 @@
+using Robust.Shared.GameStates;
+
 namespace Content.Shared.Strip.Components;
 
 /// <summary>
 /// Give this to an entity when you want to decrease stripping times
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class ThievingComponent : Component
 {
     /// <summary>
@@ -27,6 +29,6 @@ public sealed partial class ThievingComponent : Component
     /// <summary>
     ///  Should the user be able to see hidden items? (i.e pockets)
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool IgnoreStripHidden;
 }

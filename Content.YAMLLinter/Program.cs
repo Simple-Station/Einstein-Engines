@@ -97,7 +97,7 @@ namespace Content.YAMLLinter
                         yamlErrors[kind] = set;
                 }
 
-                fieldErrors = protoMan.ValidateFields(prototypes);
+                fieldErrors = protoMan.ValidateStaticFields(prototypes);
             });
 
             return (yamlErrors, fieldErrors);

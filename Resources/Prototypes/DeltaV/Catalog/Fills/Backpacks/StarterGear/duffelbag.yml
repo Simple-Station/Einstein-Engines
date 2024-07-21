@@ -7,7 +7,7 @@
     contents:
       - id: BoxSurvivalMedical
       - id: EmergencyRollerBedSpawnFolded
-      - id: BodyBag_Folded
+      - id: BodyBagFolded
       - id: Portafib
 
 - type: entity
@@ -20,7 +20,7 @@
       - id: BoxSurvivalMedical
       - id: RubberStampPsychologist
 
-  
+
 - type: entity
   noSpawn: true
   parent: ClothingBackpackDuffel

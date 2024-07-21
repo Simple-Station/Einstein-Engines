@@ -4,6 +4,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesColorBlack
 
@@ -12,6 +16,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesColorBlue
 
@@ -20,6 +28,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesColorBrown
 
@@ -28,6 +40,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesColorGreen
 
@@ -36,6 +52,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesColorOrange
 
@@ -44,6 +64,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesColorPurple
 
@@ -52,6 +76,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesColorRed
 
@@ -60,6 +88,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesColorWhite
 
@@ -68,6 +100,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesColorYellow
 
@@ -76,6 +112,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesGeta
 
@@ -85,6 +125,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesBootsWork
 
@@ -93,6 +137,10 @@
   category: Shoes
   cost: 2
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesBootsLaceup
 
@@ -101,6 +149,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesBootsWinter
 
@@ -109,6 +161,10 @@
   category: Shoes
   cost: 2
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesBootsCowboyBrown
 
@@ -117,6 +173,10 @@
   category: Shoes
   cost: 2
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesBootsCowboyBlack
 
@@ -125,6 +185,10 @@
   category: Shoes
   cost: 2
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesBootsCowboyWhite
 
@@ -133,6 +197,10 @@
   category: Shoes
   cost: 2
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesBootsCowboyFancy
 
@@ -145,6 +213,9 @@
   items:
     - ClothingShoeSlippersDuck
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Clown
@@ -154,6 +225,10 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesLeather
 
@@ -162,5 +237,9 @@
   category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species: Harpy
   items:
     - ClothingShoesMiscWhite

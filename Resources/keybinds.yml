@@ -171,6 +171,9 @@ binds:
 - function: RotateStoredItem
   type: State
   key: MouseRight
+- function: SaveItemLocation
+  type: State
+  key: MouseMiddle
 - function: Drop
   type: State
   key: Q
@@ -258,6 +261,9 @@ binds:
 - function: OfferItem
   type: State
   key: F
+- function: ToggleStanding
+  type: State
+  key: R
 - function: ShowDebugConsole
   type: State
   key: Tilde
