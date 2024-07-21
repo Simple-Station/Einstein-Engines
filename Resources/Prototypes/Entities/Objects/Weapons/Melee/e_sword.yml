@@ -38,9 +38,9 @@
         variation: 0.125
     activatedDamage:
         types:
-            Slash: 12
-            Heat: 15 # Should be significantly stronger than other variants, no clue why it's so weak rn
-            Structural: 45 # its a damn laser sword, let people star wars their way through walls
+          Slash: 12
+          Heat: 15 # Should be significantly stronger than other variants, no clue why it's so weak rn
+          Structural: 45 # its a damn laser sword, let people star wars their way through walls
   - type: ItemToggleDamageOtherOnHit
     activatedStaminaCost: 6
   - type: ItemToggleThrowingAngle
@@ -108,52 +108,51 @@
   id: EnergySwordHoS
   description: An elegant weapon fit for a prince, this otherwise plain silver hilt is engraved with, "My Love".
   components:
-    - type: EnergySword
-      activatedColor: "#00CCFF"
-      colorOptions:
-       - "#00CCFF"
-    - type: StealTarget
-      stealGroup: HoSAntiqueWeapon
+  - type: EnergySword
+    activatedColor: "#00CCFF"
+    colorOptions:
+    - "#00CCFF"
+  - type: StealTarget
+    stealGroup: HoSAntiqueWeapon
 
 - type: entity
-  name: pen
+  name: energy dagger
   parent: EnergySword
-  id: EnergyDagger
-  suffix: E-Dagger
-  description: 'A dark ink pen.'
+  id: EnergyDaggerLoud
+  description: A not as loud and dangerous dagger with a beam made of pure, concentrated plasma. This one is completely undisguised.
   components:
   - type: ItemToggle
     soundActivate:
       path: /Audio/Weapons/ebladeon.ogg
       params:
-        volume: -6
+        volume: -3
     soundDeactivate:
       path: /Audio/Weapons/ebladeoff.ogg
       params:
-        volume: -6
+        volume: -3
   - type: ItemToggleMeleeWeapon
     activatedSoundOnSwing:
       path: /Audio/Weapons/eblademiss.ogg
       params:
-        volume: -6
+        volume: -3
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 4
-            Heat: 8
+            Slash: 10
+            Heat: 10
     deactivatedSecret: true
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Weapons/ebladehum.ogg
       params:
-        volume: -6
+        volume: -3
   - type: ComponentToggler
     components:
     - type: Sharp
     - type: DisarmMalus
       malus: 0.4
   - type: Sprite
-    sprite: Objects/Weapons/Melee/e_dagger.rsi
+    sprite: Objects/Weapons/Melee/e_dagger_loud.rsi
     layers:
       - state: e_sword
       - state: e_sword_blade
@@ -183,7 +182,7 @@
         Blunt: 0
   - type: Item
     size: Tiny
-    sprite: Objects/Weapons/Melee/e_dagger.rsi
+    sprite: Objects/Weapons/Melee/e_dagger_loud.rsi
   - type: UseDelay
     delay: 1.0
   - type: PointLight
@@ -202,12 +201,49 @@
       right:
       - state: inhand-right-blade
         shader: unshaded
+  - type: DisarmMalus
+    malus: 0
+  - type: Tag
+    tags:
+    - NoPaint
+
+- type: entity
+  name: pen
+  parent: EnergyDaggerLoud
+  id: EnergyDagger
+  suffix: E-Dagger
+  description: 'A dark ink pen.'
+  components:
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Weapons/ebladeon.ogg
+      params:
+        volume: -6
+    soundDeactivate:
+      path: /Audio/Weapons/ebladeoff.ogg
+      params:
+        volume: -6
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Weapons/ebladehum.ogg
+      params:
+        volume: -6
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/e_dagger.rsi
+    layers:
+    - state: e_sword
+    - state: e_sword_blade
+      color: "#FFFFFF"
+      visible: false
+      shader: unshaded
+      map: [ "blade" ]
+  - type: Item
+    size: Tiny
+    sprite: Objects/Weapons/Melee/e_dagger.rsi
   - type: Tag
     tags:
     - Write
     - NoPaint
-  - type: DisarmMalus
-    malus: 0
 
 - type: entity
   parent: BaseItem
@@ -257,7 +293,7 @@
         Blunt: 6
   - type: Item
     size: Small
-    sprite: DeltaV/Objects/Weapons/Melee/e_cutlass.rsi #DeltaV
+    sprite: DeltaV/Objects/Weapons/Melee/e_cutlass.rsi
   - type: ToggleableLightVisuals
     spriteLayer: blade
     inhandVisuals:
@@ -279,10 +315,10 @@
     attackRate: 1.25
   - type: ItemToggleMeleeWeapon
     activatedDamage:
-        types:
-            Slash: 5
-            Heat: 12
-            Structural: 20 # "expertly contained to cut through nearly any material" yet it had no structural damage
+      types:
+        Slash: 5
+        Heat: 12
+        Structural: 20 # "expertly contained to cut through nearly any material" yet it had no structural damage
   - type: GuideHelp
     guides: [ SecurityWeapons ]
 
@@ -349,7 +385,7 @@
     minReflectProb: .65
     spread: 75
     reflects:
-      - Energy #DeltaV: 80% Energy Reflection but no ballistics.
+    - Energy #DeltaV: 80% Energy Reflection but no ballistics.
   - type: UseDelay
     delay: 1
   - type: ToggleableLightVisuals
