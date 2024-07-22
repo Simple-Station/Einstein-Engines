@@ -275,8 +275,8 @@ public sealed class SupermatterSystem : EntitySystem
 
         // Check for space tiles next to SM
         // TODO: change moles out for checking if adjacent tiles exist
-        var adjacentMixes = _atmosphere.GetAdjacentTileMixtures(xform.GridUid.Value, indices, false, false);
-        foreach (var ind in adjacentMixes)
+        var enumerator = _atmosphere.GetAdjacentTileMixtures(xform.GridUid.Value, indices, false, false);
+        while (enumerator.MoveNext(out var ind))
         {
             if (ind.TotalMoles != 0)
                 continue;
