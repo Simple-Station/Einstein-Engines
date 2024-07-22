@@ -4588,3 +4588,11 @@ Entries:
         experience more camera shake. Large characters experience less. 
   id: 6176
   time: '2024-07-21T06:50:25.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Head Of Personnel can now hire people onto basic roles for each
+        department by vending PDAs. 
+  id: 6177
+  time: '2024-07-22T19:12:01.0000000+00:00'
