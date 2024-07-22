@@ -97,7 +97,7 @@
       Female: FemaleVulpkanin
       Unsexed: MaleVulpkanin
   - type: DogVision
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Canilunzt

@@ -1,6 +1,5 @@
 using System.Numerics;
 using Content.Server.Inventory;
-using Content.Server.Pulling;
 using Content.Server.Stack;
 using Content.Server.Stunnable;
 using Content.Shared.ActionBlocker;
@@ -11,8 +10,9 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Input;
 using Content.Shared.Inventory.VirtualItem;
-using Content.Shared.Physics.Pull;
-using Content.Shared.Pulling.Components;
+using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Movement.Pulling.Events;
+using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Stacks;
 using Content.Shared.Throwing;
 using Robust.Shared.GameStates;
@@ -71,6 +71,9 @@ namespace Content.Server.Hands.Systems
 
         private void OnExploded(Entity<HandsComponent> ent, ref BeforeExplodeEvent args)
         {
+            if (ent.Comp.DisableExplosionRecursion)
+                return;
+
             foreach (var hand in ent.Comp.Hands.Values)
             {
                 if (hand.HeldEntity is { } uid)
@@ -84,9 +87,8 @@ namespace Content.Server.Hands.Systems
                 return;
 
             // Break any pulls
-            if (TryComp(uid, out SharedPullerComponent? puller) && puller.Pulling is EntityUid pulled &&
-                TryComp(pulled, out SharedPullableComponent? pullable))
-                _pullingSystem.TryStopPull(pullable);
+            if (TryComp(uid, out PullerComponent? puller) && TryComp(puller.Pulling, out PullableComponent? pullable))
+                _pullingSystem.TryStopPull(puller.Pulling.Value, pullable);
 
             if (!_handsSystem.TryDrop(uid, component.ActiveHand!, null, checkActionBlocker: false))
                 return;
@@ -96,17 +98,17 @@ namespace Content.Server.Hands.Systems
 
         private void HandleBodyPartAdded(EntityUid uid, HandsComponent component, ref BodyPartAddedEvent args)
         {
-            if (args.Part.PartType != BodyPartType.Hand)
+            if (args.Part.Comp.PartType != BodyPartType.Hand)
                 return;
 
             // If this annoys you, which it should.
             // Ping Smugleaf.
-            var location = args.Part.Symmetry switch
+            var location = args.Part.Comp.Symmetry switch
             {
                 BodyPartSymmetry.None => HandLocation.Middle,
                 BodyPartSymmetry.Left => HandLocation.Left,
                 BodyPartSymmetry.Right => HandLocation.Right,
-                _ => throw new ArgumentOutOfRangeException(nameof(args.Part.Symmetry))
+                _ => throw new ArgumentOutOfRangeException(nameof(args.Part.Comp.Symmetry))
             };
 
             AddHand(uid, args.Slot, location);
@@ -114,7 +116,7 @@ namespace Content.Server.Hands.Systems
 
         private void HandleBodyPartRemoved(EntityUid uid, HandsComponent component, ref BodyPartRemovedEvent args)
         {
-            if (args.Part.PartType != BodyPartType.Hand)
+            if (args.Part.Comp.PartType != BodyPartType.Hand)
                 return;
 
             RemoveHand(uid, args.Slot);
@@ -124,13 +126,13 @@ namespace Content.Server.Hands.Systems
 
         private void HandlePullStarted(EntityUid uid, HandsComponent component, PullStartedMessage args)
         {
-            if (args.Puller.Owner != uid)
+            if (args.PullerUid != uid)
                 return;
 
-            if (TryComp<SharedPullerComponent>(args.Puller.Owner, out var pullerComp) && !pullerComp.NeedsHands)
+            if (TryComp<PullerComponent>(args.PullerUid, out var pullerComp) && !pullerComp.NeedsHands)
                 return;
 
-            if (!_virtualItemSystem.TrySpawnVirtualItemInHand(args.Pulled.Owner, uid))
+            if (!_virtualItemSystem.TrySpawnVirtualItemInHand(args.PulledUid, uid))
             {
                 DebugTools.Assert("Unable to find available hand when starting pulling??");
             }
@@ -138,7 +140,7 @@ namespace Content.Server.Hands.Systems
 
         private void HandlePullStopped(EntityUid uid, HandsComponent component, PullStoppedMessage args)
         {
-            if (args.Puller.Owner != uid)
+            if (args.PullerUid != uid)
                 return;
 
             // Try find hand that is doing this pull.
@@ -147,10 +149,12 @@ namespace Content.Server.Hands.Systems
             {
                 if (hand.HeldEntity == null
                     || !TryComp(hand.HeldEntity, out VirtualItemComponent? virtualItem)
-                    || virtualItem.BlockingEntity != args.Pulled.Owner)
+                    || virtualItem.BlockingEntity != args.PulledUid)
+                {
                     continue;
+                }
 
-                QueueDel(hand.HeldEntity.Value);
+                TryDrop(args.PullerUid, hand, handsComp: component);
                 break;
             }
         }

@@ -13,6 +13,8 @@ using Robust.Shared.Serialization.Manager;
 using System.Numerics;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Utility;
+using Content.Server.Announcements.Systems;
 
 namespace Content.Server.Dragon;
 
@@ -27,6 +29,7 @@ public sealed class DragonRiftSystem : EntitySystem
     [Dependency] private readonly NavMapSystem _navMap = default!;
     [Dependency] private readonly NPCSystem _npc = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
     public override void Initialize()
     {
@@ -70,8 +73,8 @@ public sealed class DragonRiftSystem : EntitySystem
                 Dirty(comp);
 
                 var location = xform.LocalPosition;
-                _chat.DispatchGlobalAnnouncement(Loc.GetString("carp-rift-warning", ("location", location)), playSound: false, colorOverride: Color.Red);
-                _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), true);
+                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("CarpRift"), Filter.Broadcast(),
+                    "carp-rift-warning", colorOverride: Color.Red, localeArgs: ("location", location));
                 _navMap.SetBeaconEnabled(uid, true);
             }
 

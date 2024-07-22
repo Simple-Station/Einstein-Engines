@@ -87,7 +87,7 @@
       methods: [ Touch ]
       effects:
       - !type:HealthChange
-        scaled: true
+        scaleByQuantity: true
         damage:
           types:
             Heat: 3
@@ -112,7 +112,7 @@
     successChance: 0.5
     interactSuccessString: petting-success-slimes
     interactFailureString: petting-failure-generic
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Bubblish
     understands:
@@ -128,6 +128,7 @@
     speechSounds: Slime
   - type: TypingIndicator
     proto: slime
+  - type: CanWalk
 
 - type: entity
   name: blue slime

@@ -65,7 +65,7 @@
       Unsexed: MaleFelinid
   - type: Felinid
   - type: NoShoesSilentFootsteps
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - SolCommon

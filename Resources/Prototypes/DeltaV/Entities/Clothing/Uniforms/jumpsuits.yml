@@ -234,7 +234,7 @@
     sprite: DeltaV/Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpsuitKilt
   name: kilt
   description: A fine bit o' garb for the lad an' lasses.

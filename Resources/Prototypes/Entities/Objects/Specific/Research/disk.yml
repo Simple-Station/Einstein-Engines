@@ -11,6 +11,12 @@
   - type: GuideHelp
     guides:
     - Science
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/disk_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg
 
 - type: entity
   parent: ResearchDisk
@@ -69,3 +75,9 @@
   components:
   - type: TechnologyDisk
     tierWeightPrototype: RareTechDiskTierWeights
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/disk_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg

@@ -2,72 +2,37 @@
 - type: emote
   id: Hiss
   category: Vocal
-  chatMessages: [hisses.]
+  chatMessages: [ hisses ]
   chatTriggers:
-    - hiss.
-    - hisses.
-    - hisses!
-    - hissing.
-    - hissed.
+    - hisses
 
 - type: emote
   id: Meow
   category: Vocal
-  chatMessages: [meows.]
+  chatMessages: [ meows ]
   chatTriggers:
-    - meow.
-    - meow!
-    - meows.
-    - meows~
-    - meows!
-    - meowing.
-    - meowed.
-    - miau.
-    - miaus.
-    - miaus!
-    - nya.
-    - nyas.
-    - nyas!
-    - mraow.
-    - mraow!
-    - mraow~
-    - mraows.
-    - mraows!
-    - mraows~
+    - meows
+    - miaus
+    - nyas
+    - mraows
 
 - type: emote
   id: Mew
   category: Vocal
-  chatMessages: [mews.]
+  chatMessages: [ mews ]
   chatTriggers:
-    - mew.
-    - mew!
-    - mew~
-    - mews.
-    - mews!
-    - mews~
-    - mewing.
-    - mewed.
+    - mews
 
 - type: emote
   id: Growl
   category: Vocal
-  chatMessages: [growls.]
+  chatMessages: [ growls ]
   chatTriggers:
-    - growl.
-    - growls.
-    - growls!
-    - growling.
-    - growled.
+    - growls
 
 - type: emote
   id: Purr
   category: Vocal
-  chatMessages: [purrs.]
+  chatMessages: [ purrs ]
   chatTriggers:
-    - purr.
-    - purrs.
-    - purrs~
-    - purrs!
-    - purring.
-    - purred.
+    - purrs

@@ -119,13 +119,14 @@
     attributes:
       gender: male
   - type: PotentialPsionic # Nyano
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Mouse
     understands:
     - GalacticCommon
     - Mouse
+  - type: CanWalk
 
 - type: entity
   id: MobRatKingBuff
@@ -298,12 +299,15 @@
   - type: Food
   - type: Item
     size: Tiny # Delta V - Make them eatable and pickable.
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:
     - GalacticCommon
     - Mouse
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
 
 - type: weightedRandomEntity
   id: RatKingLoot

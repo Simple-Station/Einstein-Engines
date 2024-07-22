@@ -6,6 +6,8 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Station.Components;
 using Content.Server.StationEvents.Components;
 using Robust.Shared.Prototypes;
+using Content.Server.Announcements.Systems;
+using Robust.Shared.Player;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -14,14 +16,23 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
     [Dependency] private readonly CargoSystem _cargoSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly GameTicker _ticker = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
     protected override void Added(EntityUid uid, CargoGiftsRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
         base.Added(uid, component, gameRule, args);
 
-        var str = Loc.GetString(component.Announce,
-            ("sender", Loc.GetString(component.Sender)), ("description", Loc.GetString(component.Description)), ("dest", Loc.GetString(component.Dest)));
-        ChatSystem.DispatchGlobalAnnouncement(str, colorOverride: Color.FromHex("#18abf5"));
+        _announcer.SendAnnouncement(
+            _announcer.GetAnnouncementId(args.RuleId),
+            Filter.Broadcast(),
+            component.Announce,
+            null,
+            Color.FromHex("#18abf5"),
+            null, null,
+            ("sender", Loc.GetString(component.Sender)),
+                ("description", Loc.GetString(component.Description)),
+                ("dest", Loc.GetString(component.Dest))
+        );
     }
 
     /// <summary>

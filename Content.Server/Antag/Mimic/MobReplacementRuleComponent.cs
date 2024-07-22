@@ -13,9 +13,33 @@ public sealed partial class MobReplacementRuleComponent : Component
     [DataField]
     public EntProtoId Proto = "MobMimic";
 
+    [DataField]
+    public int NumberToReplace { get; set; }
+
+    [DataField]
+    public string Announcement = "station-event-rampant-intelligence-announcement";
+
     /// <summary>
     /// Chance per-entity.
     /// </summary>
     [DataField]
     public float Chance = 0.001f;
+
+    [DataField]
+    public bool DoAnnouncement = true;
+
+    [DataField]
+    public float MimicMeleeDamage = 20f;
+
+    [DataField]
+    public float MimicMoveSpeed = 1f;
+
+    [DataField]
+    public string MimicAIType = "SimpleHostileCompound";
+
+    [DataField]
+    public bool MimicSmashGlass = true;
+
+    [DataField]
+    public bool VendorModify = true;
 }
