@@ -581,6 +581,7 @@
   id: Sign
   speech:
     allowRadio: false
+    requireSpeech: false
     color: "#dddddd"
     messageWrapOverrides:
       Speak: chat-sign-language-message-wrap

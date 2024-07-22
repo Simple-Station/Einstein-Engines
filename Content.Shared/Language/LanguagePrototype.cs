@@ -38,7 +38,7 @@ public sealed class LanguagePrototype : IPrototype
 public sealed partial class SpeechOverrideInfo
 {
     [DataField]
-    public Color Color = Color.LightGray;
+    public Color Color = Color.White;
 
     [DataField]
     public string? FontId;
@@ -48,6 +48,13 @@ public sealed partial class SpeechOverrideInfo
 
     [DataField]
     public bool AllowRadio = true;
+
+    /// <summary>
+    ///     If false, the entity can use this language even when it's unable to speak (i.e. muffled or muted),
+    ///     and accents are not applied to messages in this language.
+    /// </summary>
+    [DataField]
+    public bool RequireSpeech = true;
 
     /// <summary>
     ///     If not null, all messages in this language will be forced to be spoken in this chat type.
