@@ -5,7 +5,10 @@ namespace Content.Server.Backmen.Blob.Rule;
 
 public sealed class BlobChangeLevelEvent : EntityEventArgs
 {
-    public Entity<BlobCoreComponent> BlobCore;
+    /// <summary>
+    /// List of all cores from one station.
+    /// </summary>
+    public HashSet<Entity<BlobCoreComponent>>? BlobCore;
     public EntityUid Station;
     public BlobStage Level;
 }

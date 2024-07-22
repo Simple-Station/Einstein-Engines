@@ -7,13 +7,15 @@ namespace Content.Server.Backmen.Blob.Components;
 [RegisterComponent]
 public sealed partial class StationBlobConfigComponent : Component
 {
+    public const int DefaultStageBegin = 30;
+    public const int DefaultStageCritical = 400;
     public const int DefaultStageEnd = 800;
 
     [DataField("stageBegin")]
-    public int StageBegin { get; set; } = 30;
+    public int StageBegin { get; set; } = DefaultStageBegin;
 
     [DataField("stageCritical")]
-    public int StageCritical { get; set; } = 400;
+    public int StageCritical { get; set; } = DefaultStageCritical;
 
     [DataField("stageTheEnd")]
     public int StageTheEnd { get; set; } = DefaultStageEnd;
