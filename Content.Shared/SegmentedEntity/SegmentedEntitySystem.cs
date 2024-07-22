@@ -7,18 +7,13 @@ using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Tag;
 using Content.Shared.Storage.Components;
-using Robust.Shared.Physics.Events;
-using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Teleportation.Components;
-using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
-using System.Net;
 using Robust.Shared.Network;
-using System.Net.WebSockets;
 
 namespace Content.Shared.SegmentedEntity
 {
@@ -46,8 +41,8 @@ namespace Content.Shared.SegmentedEntity
             SubscribeLocalEvent<SegmentedEntityComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<SegmentedEntityComponent, ComponentShutdown>(OnShutdown);
             SubscribeLocalEvent<SegmentedEntityComponent, JointRemovedEvent>(OnJointRemoved);
-            SubscribeLocalEvent<SegmentedEntityComponent, EntGotRemovedFromContainerMessage>(OnRemovedFromContainer);
             SubscribeLocalEvent<SegmentedEntityComponent, EntParentChangedMessage>(OnParentChanged);
+            SubscribeLocalEvent<SegmentedEntityComponent, StoreMobInItemContainerAttemptEvent>(OnStoreSnekAttempt);
 
             //Child subscriptions
             SubscribeLocalEvent<SegmentedEntitySegmentComponent, InsertIntoEntityStorageAttemptEvent>(OnSegmentStorageInsertAttempt);
@@ -58,6 +53,7 @@ namespace Content.Shared.SegmentedEntity
         }
         public override void Update(float frameTime)
         {
+            //I HATE THIS, SO MUCH. I AM FORCED TO DEAL WITH THIS MONSTROSITY. PLEASE. SEND HELP.
             base.Update(frameTime);
             foreach (var segment in _segments)
             {
@@ -73,6 +69,10 @@ namespace Content.Shared.SegmentedEntity
                 EnsureComp<PhysicsComponent>(segmentUid);
                 EnsureComp<PhysicsComponent>(attachedUid); // Hello I hate tests
 
+                // This is currently HERE and not somewhere more sane like OnInit because HumanoidAppearanceComponent is for whatever
+                // ungodly reason not initialized when ComponentStartup is called. Kill me.
+                var humanoidFactor = TryComp<HumanoidAppearanceComponent>(segment.segment.Lamia, out var humanoid) ? (humanoid.Height + humanoid.Width) / 2 : 1;
+
                 var ev = new SegmentSpawnedEvent(segment.lamia);
                 RaiseLocalEvent(segmentUid, ev, false);
 
@@ -83,9 +83,9 @@ namespace Content.Shared.SegmentedEntity
                     revoluteJoint.CollideConnected = false;
                 }
                 if (segment.segment.SegmentNumber <= segment.segment.MaxSegments)
-                    Transform(segmentUid).Coordinates = Transform(attachedUid).Coordinates.Offset(new Vector2(0, segment.segment.OffsetSwitching));
+                    Transform(segmentUid).Coordinates = Transform(attachedUid).Coordinates.Offset(new Vector2(0, segment.segment.OffsetSwitching * humanoidFactor));
                 else
-                    Transform(segmentUid).Coordinates = Transform(attachedUid).Coordinates.Offset(new Vector2(0, segment.segment.OffsetSwitching));
+                    Transform(segmentUid).Coordinates = Transform(attachedUid).Coordinates.Offset(new Vector2(0, segment.segment.OffsetSwitching * humanoidFactor));
 
                 var joint = _jointSystem.CreateDistanceJoint(attachedUid, segmentUid, id: ("Segment" + segment.segment.SegmentNumber + segment.segment.Lamia));
                 joint.CollideConnected = false;
@@ -114,9 +114,29 @@ namespace Content.Shared.SegmentedEntity
             component.Segments.Clear();
         }
 
-        private void SegmentSelfTest(EntityUid uid, SegmentedEntityComponent component)
+        /// <summary>
+        ///     TODO: Full Self-Test function that intelligently checks the status of where everything is, and calls whatever
+        ///     functions are appropriate
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="component"></param>
+        public void SegmentSelfTest(EntityUid uid, SegmentedEntityComponent component)
         {
 
+        }
+
+        /// <summary>
+        ///     TODO: Function that ensures clothing visuals, to be called anytime the tail is reset
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="segment"></param>
+        private void EnsureSnekSock(EntityUid uid, SegmentedEntityComponent segment)
+        {
+
+        }
+        public void OnStoreSnekAttempt(EntityUid uid, SegmentedEntityComponent comp, ref StoreMobInItemContainerAttemptEvent args)
+        {
+            args.Cancelled = true;
         }
 
         private void OnJointRemoved(EntityUid uid, SegmentedEntityComponent component, JointRemovedEvent args)
@@ -124,12 +144,7 @@ namespace Content.Shared.SegmentedEntity
             if (!component.Segments.Contains(args.OtherEntity))
                 return;
 
-            RespawnSegments(uid, component);
-        }
-
-        private void OnRemovedFromContainer(EntityUid uid, SegmentedEntityComponent component, EntGotRemovedFromContainerMessage args)
-        {
-            RespawnSegments(uid, component);
+            DeleteSegments(component);
         }
 
         private void DeleteSegments(SegmentedEntityComponent component)
@@ -159,22 +174,18 @@ namespace Content.Shared.SegmentedEntity
             if (_net.IsClient)
                 return; //Client is not allowed to spawn entities. It won't throw an error, but it'll make fake client entities.
 
-            //Segmented Entities are potentially not humanoids, they could for instance be a giant space worm.
-            var humanoidFactor = TryComp<HumanoidAppearanceComponent>(uid, out var humanoid) ? (humanoid.Height + humanoid.Width) / 2 : 1;
-
             int i = 1;
             var addTo = uid;
             while (i <= component.NumberOfSegments + 1)
             {
-                var segment = AddSegment(addTo, uid, component, i, humanoidFactor);
+                var segment = AddSegment(addTo, uid, component, i);
                 addTo = segment;
                 i++;
             }
         }
 
-        private EntityUid AddSegment(EntityUid segmentuid, EntityUid parentuid, SegmentedEntityComponent segmentedComponent, int segmentNumber, float humanoidFactor)
+        private EntityUid AddSegment(EntityUid segmentuid, EntityUid parentuid, SegmentedEntityComponent segmentedComponent, int segmentNumber)
         {
-
             float taperConstant = segmentedComponent.NumberOfSegments - segmentedComponent.TaperOffset;
             EntityUid segment;
             if (segmentNumber == 1)
@@ -198,23 +209,21 @@ namespace Content.Shared.SegmentedEntity
                 if (segmentNumber >= taperConstant)
                 {
                     segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset
-                    * humanoidFactor
                     * MathF.Pow(segmentedComponent.OffsetConstant, segmentNumber - taperConstant);
 
                     segmentComponent.ScaleFactor = segmentedComponent.StaticScale
-                    * humanoidFactor
                     * MathF.Pow(1f / segmentedComponent.OffsetConstant, segmentNumber - taperConstant);
                 }
                 if (segmentNumber < taperConstant)
                 {
-                    segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset * humanoidFactor;
-                    segmentComponent.ScaleFactor = segmentedComponent.StaticScale * humanoidFactor;
+                    segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset;
+                    segmentComponent.ScaleFactor = segmentedComponent.StaticScale;
                 }
             }
             else
             {
-                segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset * humanoidFactor;
-                segmentComponent.ScaleFactor = segmentedComponent.StaticScale * humanoidFactor;
+                segmentComponent.OffsetSwitching = segmentedComponent.StaticOffset;
+                segmentComponent.ScaleFactor = segmentedComponent.StaticScale;
             }
 
             // We invert the Y axis offset on every odd numbered tail so that the segmented entity spawns in a neat pile
@@ -245,8 +254,9 @@ namespace Content.Shared.SegmentedEntity
             if (!TryComp<HumanoidAppearanceComponent>(uid, out var species)) return;
             if (!TryComp<HumanoidAppearanceComponent>(args.Lamia, out var humanoid)) return;
             if (!TryComp<AppearanceComponent>(uid, out var appearance)) return;
+            var humanoidFactor = (humanoid.Height + humanoid.Width) / 2;
 
-            _appearance.SetData(uid, ScaleVisuals.Scale, component.ScaleFactor, appearance);
+            _appearance.SetData(uid, ScaleVisuals.Scale, component.ScaleFactor * humanoidFactor, appearance);
 
             if (humanoid.MarkingSet.TryGetCategory(MarkingCategories.Tail, out var tailMarkings))
             {
@@ -329,10 +339,9 @@ namespace Content.Shared.SegmentedEntity
 
         private void OnParentChanged(EntityUid uid, SegmentedEntityComponent component, ref EntParentChangedMessage args)
         {
-            if (Transform(uid).MapID != args.OldMapId)
-                return;
-
-            RespawnSegments(uid, component);
+            //If the change was NOT to a different map
+            if (args.OldMapId == args.Transform.MapID)
+                RespawnSegments(uid, component);
         }
     }
 }
