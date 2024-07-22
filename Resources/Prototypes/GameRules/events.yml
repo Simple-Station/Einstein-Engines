@@ -4,7 +4,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 10
+    weight: 12 # DeltaV - was 10
     startDelay: 30
     duration: 35
   - type: AnomalySpawnRule
@@ -401,15 +401,15 @@
   noSpawn: true
   components:
   - type: StationEvent
-    earliestStart: 90
+    earliestStart: 90 # EE - was 50
     minimumPlayers: 15
-    weight: 2.5
+    weight: 2.5 # EE - was 5
     duration: 1
   - type: ZombieRule
-    minStartDelay: 0
+    minStartDelay: 0 #let them know immediately
     maxStartDelay: 10
-    maxInitialInfected: 3
-    minInitialInfectedGrace: 300
+    maxInitialInfected: 3 #fewer zombies
+    minInitialInfectedGrace: 300 #less time to prepare
     maxInitialInfectedGrace: 450
 
 - type: entity

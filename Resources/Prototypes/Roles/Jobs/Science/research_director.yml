@@ -15,13 +15,13 @@
   - Command
   - Maintenance
   - ResearchDirector
-  - Mantis
-  - Chapel
+  - Mantis # EE - Psionic Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
+  - Chapel # EE - Chaplain is in Epistemics
   - Cryogenics
   special:
   - !type:AddComponentSpecial
     components:
-    - type: BibleUser
+    - type: BibleUser # EE - required to summon their Ifrit, and perform rituals
     - type: Psionic
     - type: DispelPower
   - !type:AddImplantSpecial
@@ -38,7 +38,7 @@
     shoes: ClothingShoesColorBrown
     id: RnDPDA
     ears: ClothingHeadsetRD
-    belt: BibleMystagogue # Nyanotrasen - Mystagogue book for their Ifrit
+    belt: BibleMystagogue # EE - Mystagogue book for their Ifrit
   innerClothingSkirt: ClothingUniformJumpskirtResearchDirector
   satchel: ClothingBackpackSatchelResearchDirectorFilled
   duffelbag: ClothingBackpackDuffelResearchDirectorFilled
