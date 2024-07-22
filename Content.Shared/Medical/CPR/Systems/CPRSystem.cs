@@ -125,7 +125,7 @@ namespace Content.Shared.Medical.CPR
                 && TryComp<MobStateComponent>(args.Target, out var state)
                 && damageableComponent.TotalDamage < threshold)
             {
-                _mobStateSystem.ChangeMobState((EntityUid) args.Target, MobState.Critical, state, performer);
+                _mobStateSystem.ChangeMobState(args.Target.Value, MobState.Critical, state, performer);
             }
         }
     }
