@@ -237,7 +237,7 @@ namespace Content.Server.Carrying
                 return;
             }
 
-            var length = TimeSpan.FromSeconds(component.CarryingDuration
+            var length = TimeSpan.FromSeconds(component.PickupDuration
             * _contests.MassContest(carried, carrier)
             * (_standingState.IsDown(carried) ? 0.5f : 1));
 
