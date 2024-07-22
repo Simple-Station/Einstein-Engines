@@ -227,15 +227,15 @@
     maxDuration: 120
   - type: PowerGridCheckRule
 
- - type: entity
-   id: RandomSentience
-   parent: BaseGameRule
-   noSpawn: true
-   components:
-   - type: StationEvent
-     weight: 1
-     duration: 1
-   - type: RandomSentienceRule
+- type: entity
+  id: RandomSentience
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    weight: 1
+    duration: 1
+  - type: RandomSentienceRule
 
 - type: entity
   parent: BaseGameRule
@@ -350,7 +350,7 @@
     - id: MobGiantSpiderAngry
       prob: 0.05
 
- - type: entity
+- type: entity
   id: SpiderClownSpawn
   parent: BaseGameRule
   noSpawn: true
