@@ -1,4 +1,5 @@
 using Content.Server.Popups;
+using Content.Shared.Storage.Components;
 using Content.Shared.Storage;
 using Content.Server.Carrying; // Carrying system from Nyanotrasen.
 using Content.Shared.Inventory;

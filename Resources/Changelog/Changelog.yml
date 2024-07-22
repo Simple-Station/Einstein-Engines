@@ -4475,3 +4475,116 @@ Entries:
         deal less damage and ignore insulated gloves.
   id: 6160
   time: '2024-07-14T23:14:03.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Fix
+      message: Fixed thieving trait not granting pocket vision
+  id: 6161
+  time: '2024-07-16T17:41:42.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Many new sound effects have been implemented for items.
+  id: 6162
+  time: '2024-07-16T17:52:03.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Added a new icon to the offer item interaction.
+    - type: Fix
+      message: Fixed typos in the offer item prompts.
+  id: 6163
+  time: '2024-07-16T18:18:18.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: You can now configure your zoom more precisely.
+  id: 6164
+  time: '2024-07-16T18:18:57.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added Harpy Wings as a delicious dish.
+  id: 6165
+  time: '2024-07-16T18:21:27.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Added an alert on the UI for when the user is walking or running.
+  id: 6166
+  time: '2024-07-16T21:39:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now lie down and stand up at will! The default keybind for it is
+        "R", but it can be changed in settings.
+  id: 6167
+  time: '2024-07-18T02:33:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Harpies can no longer buy Loadout items that are impossible for them to
+        wear due to having digitigrade legs. 
+  id: 6168
+  time: '2024-07-18T02:34:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Foreigner translator should now consume power, as intended.
+  id: 6169
+  time: '2024-07-18T08:22:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Atmospheric "Throws" are now calculated using object mass, and behave
+        accordingly. Tiny objects will shoot out of rooms quite fast!
+  id: 6170
+  time: '2024-07-18T08:24:58.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Rampant Brand Intelligence has been spotted infesting NT Stations, be on
+        the lookout for highly aggressive vending machines.
+  id: 6171
+  time: '2024-07-18T19:30:00.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Added the ability to speak with Sign Language.
+  id: 6172
+  time: '2024-07-19T17:20:30.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpy Update 3, New markings for Harpies, all new species-specific
+        hardsuit & softsuit variations that feature wing sleeves.
+  id: 6173
+  time: '2024-07-20T04:40:01.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Merged ~250-500 WizDen PRs
+  id: 6174
+  time: '2024-07-20T05:24:50.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Voice will no longer travel through space. If you are in space, you must
+        either have a radio to communicate with others, or get within hugging
+        distance of someone to talk.
+  id: 6175
+  time: '2024-07-21T06:47:41.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Camera Shake is now affected by character mass. Small characters
+        experience more camera shake. Large characters experience less. 
+  id: 6176
+  time: '2024-07-21T06:50:25.0000000+00:00'

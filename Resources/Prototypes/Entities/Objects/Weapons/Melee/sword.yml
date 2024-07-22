@@ -11,11 +11,11 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 1.5
+    soundHit:
+      path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 17 #cmon, it has to be at least BETTER than the rest.
-    soundHit:
-        path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
     enabled: true
     reflectProb: .5
@@ -43,11 +43,11 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    soundHit:
+      path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 15
-    soundHit:
-        path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Normal
     sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV

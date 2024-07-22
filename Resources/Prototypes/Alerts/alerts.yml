@@ -26,6 +26,14 @@
     - alertType: Pacified
     - alertType: Offer
 
+- type: entity
+  id: AlertSpriteView
+  categories: [ hideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.AlertVisualLayers.Base" ]
+
 - type: alert
   id: LowOxygen
   category: Breathing
@@ -428,6 +436,18 @@
     state: icon
   name: alerts-pacified-name
   description: alerts-pacified-desc
+
+- type: alert
+  id: Walking
+  icons:
+  - sprite: /Textures/Interface/Alerts/walking.rsi
+    state: walking0
+  - sprite: /Textures/Interface/Alerts/walking.rsi
+    state: walking1
+  name: alerts-walking-name
+  description: alerts-walking-desc
+  minSeverity: 0
+  maxSeverity: 1
 
 - type: alert
   id: Debug1
