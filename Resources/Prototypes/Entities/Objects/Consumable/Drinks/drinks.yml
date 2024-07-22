@@ -85,8 +85,8 @@
 
 # Transformable container - normal glass
 - type: entity
-  name: metamorphic glass
-  description: A metamorphic glass that automagically turns into a glass appropriate for the drink within. There's a sanded off patent number on the bottom.
+  name: glass cup
+  description: A glass cup, able to hold a variety of liquids for your drinking pleasure.
   parent: DrinkGlassBase
   id: DrinkGlass
   components:
