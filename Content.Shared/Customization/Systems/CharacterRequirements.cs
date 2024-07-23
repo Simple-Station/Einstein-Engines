@@ -310,7 +310,7 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-department-too-high",
-                    ("time", playtime.Minutes - Max.Minutes),
+                    ("time", playtime.TotalMinutes - Max.TotalMinutes),
                     ("department", Loc.GetString($"department-{department.ID}")),
                     ("departmentColor", department.Color)));
             return false;
@@ -322,7 +322,7 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-department-insufficient",
-                    ("time", Min.Minutes - playtime.Minutes),
+                    ("time", Min.TotalMinutes - playtime.TotalMinutes),
                     ("department", Loc.GetString($"department-{department.ID}")),
                     ("departmentColor", department.Color)));
             return false;
@@ -367,7 +367,7 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-overall-too-high",
-                    ("time", overallTime.Minutes - Max.Minutes)));
+                    ("time", overallTime.TotalMinutes - Max.TotalMinutes)));
             return false;
         }
 
@@ -377,7 +377,7 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-overall-insufficient",
-                    ("time", Min.Minutes - overallTime.Minutes)));
+                    ("time", Min.TotalMinutes - overallTime.TotalMinutes)));
             return false;
         }
 
@@ -424,6 +424,7 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
 
         // Get the JobPrototype of the Tracker
         var trackerJob = jobSystem.GetJobPrototype(Tracker);
+        var jobStr = prototypeManager.Index<JobPrototype>(trackerJob).LocalizedName;
 
         // Get the primary department of the Tracker
         if (!jobSystem.TryGetPrimaryDepartment(trackerJob, out var department) &&
@@ -444,8 +445,8 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-role-too-high",
-                    ("time", time.Minutes - Max.Minutes),
-                    ("job", trackerJob),
+                    ("time", time.TotalMinutes - Max.TotalMinutes),
+                    ("job", jobStr),
                     ("departmentColor", department.Color)));
             return false;
         }
@@ -456,8 +457,8 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-role-insufficient",
-                    ("time", Min.Minutes - time.Minutes),
-                    ("job", trackerJob),
+                    ("time", Min.TotalMinutes - time.TotalMinutes),
+                    ("job", jobStr),
                     ("departmentColor", department.Color)));
             return false;
         }
