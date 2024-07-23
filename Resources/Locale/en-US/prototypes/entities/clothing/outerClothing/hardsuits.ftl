@@ -1,5 +1,5 @@
-ent-ClothingOuterHardsuitBasic = basic hardsuit
-    .desc = A basic, universal hardsuit that protects the wearer against the horrors of life in space. Beats not having a hardsuit, at least.
+ent-ClothingOuterHardsuitBasic = basic vacsuit
+    .desc = A common, colonial-era vacsuit of indeterminate make and model. It's strictly better than nothing, but not by much.
 ent-ClothingOuterHardsuitAtmos = atmos hardsuit
     .desc = A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
 ent-ClothingOuterHardsuitEngineering = engineering hardsuit
@@ -8,7 +8,7 @@ ent-ClothingOuterHardsuitSpatio = spationaut hardsuit
     .desc = A lightweight hardsuit designed for industrial EVA in zero gravity.
 ent-ClothingOuterHardsuitSalvage = mining hardsuit
     .desc = A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
-ent-ClothingOuterHardsuitMaxim = salvager maxim hardsuit
+ent-ClothingOuterHardsuitMaxim = salvager maxim tacsuit
     .desc = Fire. Heat. These things forge great weapons, they also forge great salvagers.
 ent-ClothingOuterHardsuitSecurity = security tacsuit
     .desc = A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
@@ -20,8 +20,10 @@ ent-ClothingOuterHardsuitCap = captain's armored tacsuit
     .desc = A formal armored spacesuit, made for the station's captain.
 ent-ClothingOuterHardsuitEngineeringWhite = chief engineer's hardsuit
     .desc = A special hardsuit that protects against hazardous, low pressure environments, made for the chief engineer of the station.
-ent-ClothingOuterHardsuitMedical = chief medical officer's hardsuit
-    .desc = A special suit that protects against hazardous, low pressure environments. Built with lightweight materials for easier movement.
+ent-ClothingOuterHardsuitMedical = ZhP-25m - "Ōkuninushi" hardsuit
+    .desc = A hardsuit manufactured by Zeng-hu Pharmaceuticals, often purchased for use by Nanotrasen senior medical staff.
+            It features an extraordinarily lightweight, chemical resistant hard plastic shell. With articulated protective layers attached to a silk-lined bodyglove.
+            Though offering no protection from physical trauma, it is favored by medical personel for its incredible agility.
 ent-ClothingOuterHardsuitRd = experimental research hardsuit
     .desc = A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor. Able to be compressed to small sizes.
 ent-ClothingOuterHardsuitSecurityRed = head of security's tacsuit
@@ -36,18 +38,21 @@ ent-ClothingOuterHardsuitSyndieMedic = CSA-51m - "Zhōngyào" tacsuit
             Half of the suit is painted the color of lung-blood, the rest bears galactic-standard medical markings.
 ent-ClothingOuterHardsuitSyndieElite = CSA-54UA - "Shìwèi" tacsuit
     .desc = An "Up-Armored" tactical combat hardsuit produced by the Cybersun-Armaments Corporation.
-            It's flint-black armor menaces with scarlet accents.
+            Compared to the previous Model-51, this suit replaces the traditional steel plating with exotic alloys commonly found in starfighter hulls.
+            This affords the wearer unparalleled agility and protection from energy weaponry, though its protection against ballistics is below average.
 ent-ClothingOuterHardsuitSyndieCommander = CSA-54c - "Tiānmìng" tacsuit
-    .desc = A "Command and Control" tactical combat hardsuit produced by the Cybersun-Armaments Corporation.
-            Its Scarlet armor is enhanced with additional ceramic plating, alongside bulky comms equipment
+    .desc = A "Commander" tactical combat hardsuit produced by the Cybersun-Armaments Corporation.
+            The Tiānmìng favors unparalleled protection against ballistic weaponry.
+            No self respecting fire team leader would ever willingly leave home without a fine suit such as this.
 ent-ClothingOuterHardsuitJuggernaut = CSA-80UA - "Guan Yu" tacsuit
-    .desc = The star of the Cybersun-Armaments Corporation tacsuit offerings. For when no cost is too great for personal protection.
+    .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. For when no cost is too great for personal protection.
             Commonly known by others throughout the galaxy as a "Juggernaut", this tacsuit is feared by all who face it.
+            It features bulky, overlapping layers of composite armor, giving its wearer protection unmatched by any armor short of a mech.
 ent-ClothingOuterHardsuitWizard = wizard hardsuit
     .desc = A bizarre gem-encrusted suit that radiates magical energies.
-ent-ClothingOuterHardsuitLing = organic space suit
+ent-ClothingOuterHardsuitLing = organic vacsuit
     .desc = A spaceworthy biomass of pressure and temperature resistant tissue.
-ent-ClothingOuterHardsuitPirateEVA = deep space EVA suit
+ent-ClothingOuterHardsuitPirateEVA = pirate vacsuit
     .desc = A heavy space suit that provides some basic protection from the cold harsh realities of deep space.
     .suffix = Pirate
 ent-ClothingOuterHardsuitPirateCap = pirate captain's hardsuit
