@@ -58,12 +58,12 @@
       - 4,0,5,4
   - type: LanguageKnowledge
     speaks:
-    - Kitsune
     - GalacticCommon
+    - Kitsune
     - SolCommon
     understands:
-    - Kitsune
     - GalacticCommon
+    - Kitsune
     - SolCommon
 
 
