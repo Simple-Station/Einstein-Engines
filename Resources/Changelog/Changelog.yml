@@ -4604,3 +4604,9 @@ Entries:
         Use a shovel to expose pipes hidden by grass.
   id: 6178
   time: '2024-07-22T19:34:07.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Job playtime requirements for loadouts and traits show correctly
+  id: 6179
+  time: '2024-07-23T14:18:46.0000000+00:00'
