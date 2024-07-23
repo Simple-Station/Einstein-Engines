@@ -1,0 +1,80 @@
+- type: entity
+  save: false
+  name: Urist McKitsune
+  parent: BaseMobHuman
+  id: MobKitsuneBase
+  abstract: true
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+  - type: HumanoidAppearance
+    species: Felinid
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Body
+    prototype: Felinid
+  - type: Damageable
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/hiss.ogg
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Heat: 5
+  - type: Speech
+    speechSounds: Alto
+  - type: Vocal
+    wilhelm: "/Audio/Nyanotrasen/Voice/Felinid/cat_wilhelm.ogg"
+    sounds:
+      Male: MaleFelinid
+      Female: FemalFelinid
+      Unsexed: MaleFelinid
+  - type: Polymorphable
+    innatePolymorphs:
+      - KitsuneMorph
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-soft-floofy-kitsune
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/fox_squeak.ogg
+  - type: Kitsune
+  - type: PseudoItem
+    storedOffset: 0,17
+    shape:
+      - 0,0,1,4
+      - 0,2,3,4
+      - 4,0,5,4
+  - type: LanguageKnowledge
+    speaks:
+    - Kitsune
+    - GalacticCommon
+    - SolCommon
+    understands:
+    - Kitsune
+    - GalacticCommon
+    - SolCommon
+
+
+
+- type: entity
+  save: false
+  name: Urist McKitsune
+  parent: MobHumanDummy
+  id: MobKitsuneDummy
+  noSpawn: true
+  description: A dummy kitsune meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Kitsune
