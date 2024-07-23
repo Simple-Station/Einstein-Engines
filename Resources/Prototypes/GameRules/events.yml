@@ -5,7 +5,7 @@
   components:
   - type: StationEvent
     weight: 12
-    startDelay: 15
+    startDelay: 30
     reoccurrenceDelay: 8
     duration: 35
   - type: AnomalySpawnRule
@@ -17,7 +17,7 @@
   components:
   - type: StationEvent
     weight: 5
-    startDelay: 15
+    startDelay: 30
     reoccurrenceDelay: 5
     duration: 35
   - type: BluespaceArtifactRule
