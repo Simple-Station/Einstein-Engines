@@ -31,7 +31,7 @@ namespace Content.Shared.Contests
                 || performerPhysics.Mass == 0)
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? performerPhysics.Mass / otherMass
                 : Math.Clamp(performerPhysics.Mass / otherMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
@@ -64,7 +64,7 @@ namespace Content.Shared.Contests
                 || performerPhysics.Mass == 0)
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? performerPhysics.Mass / otherMass
                 : Math.Clamp(performerPhysics.Mass / otherMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
@@ -87,7 +87,7 @@ namespace Content.Shared.Contests
                 || targetPhysics.InvMass == 0)
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? performerPhysics.Mass * targetPhysics.InvMass
                 : Math.Clamp(performerPhysics.Mass * targetPhysics.InvMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
@@ -104,7 +104,7 @@ namespace Content.Shared.Contests
                 || targetPhysics.InvMass == 0)
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? performerPhysics.Mass * targetPhysics.InvMass
                 : Math.Clamp(performerPhysics.Mass * targetPhysics.InvMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
@@ -121,7 +121,7 @@ namespace Content.Shared.Contests
                 || targetPhysics.InvMass == 0)
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? performerPhysics.Mass * targetPhysics.InvMass
                 : Math.Clamp(performerPhysics.Mass * targetPhysics.InvMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
@@ -137,7 +137,7 @@ namespace Content.Shared.Contests
                 || targetPhysics.InvMass == 0)
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? performerPhysics.Mass * targetPhysics.InvMass
                 : Math.Clamp(performerPhysics.Mass * targetPhysics.InvMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
@@ -155,7 +155,7 @@ namespace Content.Shared.Contests
                 || perfStamina.StaminaDamage == 0)
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? 1 - perfStamina.StaminaDamage / perfStamina.CritThreshold
                 : 1 - Math.Clamp(perfStamina.StaminaDamage / perfStamina.CritThreshold, 0, 0.25f * rangeFactor);
         }
@@ -166,7 +166,7 @@ namespace Content.Shared.Contests
                 || !_cfg.GetCVar(CCVars.DoStaminaContests))
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? 1 - perfStamina.StaminaDamage / perfStamina.CritThreshold
                 : 1 - Math.Clamp(perfStamina.StaminaDamage / perfStamina.CritThreshold, 0, 0.25f * rangeFactor);
         }
@@ -179,7 +179,7 @@ namespace Content.Shared.Contests
                 || !TryComp<StaminaComponent>(target, out var targetStamina))
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? (1 - perfStamina.StaminaDamage / perfStamina.CritThreshold)
                     / (1 - targetStamina.StaminaDamage / targetStamina.CritThreshold)
                 : (1 - Math.Clamp(perfStamina.StaminaDamage / perfStamina.CritThreshold, 0, 0.25f * rangeFactor))
@@ -198,7 +198,7 @@ namespace Content.Shared.Contests
                 || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.Critical, out var threshold))
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? 1 - damage.TotalDamage.Float() / threshold.Value.Float()
                 : 1 - Math.Clamp(damage.TotalDamage.Float() / threshold.Value.Float(), 0, 0.25f * rangeFactor);
         }
@@ -213,7 +213,7 @@ namespace Content.Shared.Contests
                 || !_mobThreshold.TryGetThresholdForState(target, Mobs.MobState.Critical, out var targetThreshold))
                 return 1f;
 
-            return bypassClamp
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
                 ? (1 - perfDamage.TotalDamage.Float() / perfThreshold.Value.Float())
                     / (1 - targetDamage.TotalDamage.Float() / targetThreshold.Value.Float())
                 : (1 - Math.Clamp(perfDamage.TotalDamage.Float() / perfThreshold.Value.Float(), 0, 0.25f * rangeFactor))

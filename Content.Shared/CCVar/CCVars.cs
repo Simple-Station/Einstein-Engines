@@ -2294,6 +2294,13 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> DoContestsSystem =
             CVarDef.Create("contests.do_contests_system", true, CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
+        ///     Contest functions normally include an optional override to bypass the clamp set by max_percentage.
+        ///     This CVar disables the bypass when false, forcing all implementations to comply with max_percentage.
+        /// </summary>
+        public static readonly CVarDef<bool> AllowClampOverride =
+            CVarDef.Create("contests.allow_clamp_override", true, CVar.REPLICATED | CVar.SERVER);
         /// <summary>
         ///     Toggles all MassContest functions. All mass contests output 1f when false
         /// </summary>
