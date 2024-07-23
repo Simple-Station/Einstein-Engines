@@ -9,13 +9,16 @@ public sealed partial class FabricateActionsSystem : EntitySystem
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
 
+
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeLocalEvent<FabricateActionsComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<FabricateActionsComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<FabricateActionsComponent, FabricateActionEvent>(OnFabricate);
     }
+
 
     private void OnStartup(Entity<FabricateActionsComponent> entity, ref ComponentStartup args)
     {
