@@ -122,22 +122,27 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
         return _roles.TryGetValue("Overall", out var overallPlaytime) ? overallPlaytime : TimeSpan.Zero;
     }
 
-    public IEnumerable<KeyValuePair<string, TimeSpan>> FetchPlaytimeByRoles()
+    public Dictionary<string, TimeSpan> FetchPlaytimeByRoles()
     {
         var jobsToMap = _prototypes.EnumeratePrototypes<JobPrototype>();
+        var ret = new Dictionary<string, TimeSpan>();
 
         foreach (var job in jobsToMap)
-        {
             if (_roles.TryGetValue(job.PlayTimeTracker, out var locJobName))
-            {
-                yield return new KeyValuePair<string, TimeSpan>(job.Name, locJobName);
-            }
-        }
+                ret.Add(job.Name, locJobName);
+
+        return ret;
     }
 
 
-    public IReadOnlyDictionary<string, TimeSpan> GetPlayTimes(ICommonSession session)
+    public Dictionary<string, TimeSpan> GetPlayTimes()
     {
-        return session != _playerManager.LocalSession ? new Dictionary<string, TimeSpan>() : _roles;
+        var dict = new Dictionary<string, TimeSpan>();
+
+        dict.Add(PlayTimeTrackingShared.TrackerOverall, FetchOverallPlaytime());
+        foreach (var role in FetchPlaytimeByRoles())
+            dict.Add(role.Key, role.Value);
+
+        return dict;
     }
 }
