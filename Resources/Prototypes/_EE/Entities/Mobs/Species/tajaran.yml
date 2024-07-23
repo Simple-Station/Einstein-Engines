@@ -113,7 +113,13 @@
         Heat: 2 # poor kitty
   - type: ThermalRegulator
     normalBodyTemperature: 311.76
-
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
 
 - type: entity
   save: false
@@ -125,3 +131,10 @@
   components:
   - type: HumanoidAppearance
     species: Tajaran
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

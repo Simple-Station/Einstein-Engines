@@ -63,6 +63,7 @@
         - Muted
         - Pacified
         - StaminaModifier
+        - Flashed
     - type: Blindable
     - type: ThermalRegulator
       metabolismHeat: 800
@@ -219,10 +220,7 @@
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.7
       baseSprintSpeed: 4.5
-    - type: Flashable
-      eyeDamageChance: 0.3
-      eyeDamage: 1
-      durationMultiplier: 1.5
+    - type: EyeDamageOnFlashing
     - type: Speech
       allowedEmotes: ['Mars', 'Wurble']
     - type: Shadowkin
