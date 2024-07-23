@@ -30,8 +30,6 @@
     spawned:
       - id: FoodMeatSpider
         amount: 5
-  - type: Inventory
-    templateId: arachnid
   - type: Reactive
     reactions:
     - reagents: [Water]
@@ -86,9 +84,6 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
       - map: [ "enum.HumanoidVisualLayers.Underwear" ]
       - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
       - map: ["jumpsuit"]
@@ -130,6 +125,8 @@
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-spider"
     rightBarePrint: "footprint-right-bare-spider"
+  - type: Inventory
+    templateId: arachnid
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -138,5 +135,7 @@
   components:
   - type: HumanoidAppearance
     species: Arachnid
+  - type: Inventory
+    templateId: arachnid
 
-#88w88
+#>88w88<

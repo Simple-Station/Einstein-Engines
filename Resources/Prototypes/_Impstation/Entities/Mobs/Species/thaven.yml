@@ -69,73 +69,6 @@
     hideLayersOnEquip:
     - Hair
     - Snout
-  - type: Inventory
-    templateId: thaven
-    displacements:
-      jumpsuit:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: jumpsuit
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
-      head:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: head
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
-      eyes:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: eyes
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
-      ears:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: head
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
-      mask:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: mask
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
-      neck:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: neck
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
-      outerClothing:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: outerclothing_hardsuit
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
-      gloves:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: hands
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
   - type: UserInterface
     interfaces:
       enum.ThavenMoodsUiKey.Key: # impstation edit
@@ -150,7 +83,81 @@
       # Shitmed
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
-
+  - type: Inventory
+    templateId: thaven
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: jumpsuit
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+      head:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: head
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: eyes
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+      ears:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: head
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+      mask:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: mask
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+      neck:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: neck
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: outerclothing_hardsuit
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: hands
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -163,66 +170,74 @@
     templateId: thaven
     displacements:
       jumpsuit:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: jumpsuit
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: jumpsuit
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
       head:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: head
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: head
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
       eyes:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: eyes
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: eyes
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
       ears:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: head
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: head
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
       mask:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: mask
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: mask
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
       neck:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: neck
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: neck
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
       outerClothing:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: outerclothing_hardsuit
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: outerclothing_hardsuit
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
       gloves:
-        layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
-          state: hands
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+            state: hands
+            copyToShaderParameters:
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
