@@ -14,8 +14,6 @@
     slots:
     - Back
     - suitStorage
-  - type: Wieldable
-  - type: GunRequiresWield
   - type: AmmoCounter
   - type: Gun
     fireRate: 5
@@ -38,6 +36,7 @@
         whitelist:
           tags:
           - MagazineLightRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeLightRifle
@@ -103,6 +102,7 @@
         whitelist:
           tags:
           - MagazineLightRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeLightRifle
@@ -146,6 +146,7 @@
         whitelist:
           tags:
           - MagazineRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeRifle
@@ -193,6 +194,7 @@
         whitelist:
           tags:
           - MagazineRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeRifle
