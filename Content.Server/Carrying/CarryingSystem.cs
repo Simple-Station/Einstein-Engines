@@ -133,7 +133,8 @@ namespace Content.Server.Carrying
         /// </summary>
         private void OnThrow(EntityUid uid, CarryingComponent component, BeforeThrowEvent args)
         {
-            if (!TryComp<VirtualItemComponent>(args.ItemUid, out var virtItem) || !HasComp<CarriableComponent>(virtItem.BlockingEntity))
+            if (!TryComp<VirtualItemComponent>(args.ItemUid, out var virtItem)
+                || !HasComp<CarriableComponent>(virtItem.BlockingEntity))
                 return;
 
             args.ItemUid = virtItem.BlockingEntity;
