@@ -4588,3 +4588,33 @@ Entries:
         experience more camera shake. Large characters experience less. 
   id: 6176
   time: '2024-07-21T06:50:25.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Head Of Personnel can now hire people onto basic roles for each
+        department by vending PDAs. 
+  id: 6177
+  time: '2024-07-22T19:12:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Pipes and Wires are now correctly hidden by grass and asphalt once more.
+        Use a shovel to expose pipes hidden by grass.
+  id: 6178
+  time: '2024-07-22T19:34:07.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Job playtime requirements for loadouts and traits show correctly
+  id: 6179
+  time: '2024-07-23T14:18:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        False alarm event will no longer report events that should not be
+        reported.
+  id: 6180
+  time: '2024-07-24T03:18:56.0000000+00:00'
