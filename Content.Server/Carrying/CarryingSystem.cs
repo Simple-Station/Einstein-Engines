@@ -138,7 +138,8 @@ namespace Content.Server.Carrying
 
             args.ItemUid = virtItem.BlockingEntity;
 
-            var multiplier = _contests.MassContest(uid, virtItem.BlockingEntity, false, 2f);
+            var multiplier = _contests.MassContest(uid, virtItem.BlockingEntity, false, 2f)
+                            * _contests.StaminaContest(uid, virtItem.BlockingEntity);
             args.ThrowStrength = 5f * multiplier;
         }
 
@@ -239,6 +240,7 @@ namespace Content.Server.Carrying
 
             var length = TimeSpan.FromSeconds(component.PickupDuration
             * _contests.MassContest(carried, carrier, false, 2f)
+            * _contests.StaminaContest(carried, carrier)
             * (_standingState.IsDown(carried) ? 0.5f : 1));
 
             component.CancelToken = new CancellationTokenSource();
