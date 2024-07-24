@@ -138,7 +138,7 @@ namespace Content.Server.Carrying
 
             args.ItemUid = virtItem.BlockingEntity;
 
-            var multiplier = _contests.MassContest(uid, virtItem.BlockingEntity);
+            var multiplier = _contests.MassContest(uid, virtItem.BlockingEntity, false, 2f);
             args.ThrowStrength = 5f * multiplier;
         }
 
@@ -182,7 +182,7 @@ namespace Content.Server.Carrying
             if (_actionBlockerSystem.CanInteract(uid, component.Carrier))
             {
                 // Note: the mass contest is inverted because weaker entities are supposed to take longer to escape
-                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, _contests.MassContest(component.Carrier, uid));
+                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, _contests.MassContest(component.Carrier, uid, false, 2f));
             }
         }
 
@@ -231,14 +231,14 @@ namespace Content.Server.Carrying
         {
             if (TryComp<PhysicsComponent>(carrier, out var carrierPhysics)
                 && TryComp<PhysicsComponent>(carried, out var carriedPhysics)
-                && carriedPhysics.Mass > carrierPhysics.Mass * 1.25f)
+                && carriedPhysics.Mass > carrierPhysics.Mass * 2f)
             {
                 _popupSystem.PopupEntity(Loc.GetString("carry-too-heavy"), carried, carrier, Shared.Popups.PopupType.SmallCaution);
                 return;
             }
 
             var length = TimeSpan.FromSeconds(component.PickupDuration
-            * _contests.MassContest(carried, carrier)
+            * _contests.MassContest(carried, carrier, false, 2f)
             * (_standingState.IsDown(carried) ? 0.5f : 1));
 
             component.CancelToken = new CancellationTokenSource();
@@ -287,7 +287,7 @@ namespace Content.Server.Carrying
                 || HasComp<ItemComponent>(carrier)
                 || TryComp<PhysicsComponent>(carrier, out var carrierPhysics)
                 && TryComp<PhysicsComponent>(toCarry, out var toCarryPhysics)
-                && carrierPhysics.Mass < toCarryPhysics.Mass * 1.25f)
+                && carrierPhysics.Mass < toCarryPhysics.Mass * 2f)
                 return false;
 
             Carry(carrier, toCarry);
@@ -310,7 +310,7 @@ namespace Content.Server.Carrying
 
         private void ApplyCarrySlowdown(EntityUid carrier, EntityUid carried)
         {
-            var modifier = _contests.MassContest(carrier, carried);
+            var modifier = _contests.MassContest(carrier, carried, true);
             var slowdownComp = EnsureComp<CarryingSlowdownComponent>(carrier);
             _slowdown.SetModifier(carrier, modifier, modifier, slowdownComp);
         }
