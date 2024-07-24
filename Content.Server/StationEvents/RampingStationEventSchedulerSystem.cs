@@ -25,7 +25,7 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
     /// <param name="startTime"></param>
     /// <param name="endTimeOffset"></param>
     /// <returns></returns>
-    public float EventSchedulerTimeEquation(RampingStationEventSchedulerComponent component, float startTime, float endTimeOffset = 0)
+    public float RampingEventTimeEquation(RampingStationEventSchedulerComponent component, float startTime, float endTimeOffset = 0)
     {
         var endTime = Math.Clamp(endTimeOffset, 0.1f, startTime - 1);
         var shiftLength = Math.Max(1, _cfg.GetCVar(CCVars.EventsRampingAverageEndTime) - component.ShiftLengthOffset);
@@ -94,8 +94,8 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
         // Just in case someone messed up their math, set it to between 6 and 12 seconds. This absolutely isn't ideal
         // Hence the debug assert.
         component.TimeUntilNextEvent = _random.NextFloat(
-            EventSchedulerTimeEquation(component, MathF.Max(0.1f, minimumTime)),
-            EventSchedulerTimeEquation(component, MathF.Max(0.2f, maximumTime)));
+            RampingEventTimeEquation(component, MathF.Max(0.1f, minimumTime)),
+            RampingEventTimeEquation(component, MathF.Max(0.2f, maximumTime)));
 
         component.TimeUntilNextEvent *= component.EventDelayModifier;
     }
