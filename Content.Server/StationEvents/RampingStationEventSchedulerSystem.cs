@@ -88,11 +88,7 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
                                         - _cfg.GetCVar(CCVars.GameEventsRampingMaximumTimeOffset)
                                         - component.MaximumEventTimeOffset);
 
-        if (!component.IgnoreMinimumTimes || minimumTime < 1f || maximumTime < 1f)
-            DebugTools.Assert("double check your event math, an event timer gave a value less than one minute. If this was desired, set your game mode's IgnoreMinimumTimes to true");
-
         // Just in case someone messed up their math, set it to between 6 and 12 seconds. This absolutely isn't ideal
-        // Hence the debug assert.
         component.TimeUntilNextEvent = _random.NextFloat(
             RampingEventTimeEquation(component, MathF.Max(0.1f, minimumTime)),
             RampingEventTimeEquation(component, MathF.Max(0.2f, maximumTime)));
