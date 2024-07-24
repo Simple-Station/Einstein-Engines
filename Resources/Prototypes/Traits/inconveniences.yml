@@ -16,7 +16,7 @@
       boozeStrengthMultiplier: 2
 
 - type: trait
-  id: SocialAnxiety
+  id: Stutter
   category: Mental
   requirements:
     - !type:CharacterJobRequirement
