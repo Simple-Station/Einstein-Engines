@@ -253,10 +253,20 @@ namespace Content.Shared.Contests
 
         #region EVERY CONTESTS
 
-        public float EveryContest(EntityUid performer,
-            bool bypassClampMass = false, bool bypassClampStamina = false, bool bypassClampHealth = false, bool bypassClampMind = false,
-            float rangeFactorMass = 1f, float rangeFactorStamina = 1f, float rangeFactorHealth = 1f, float rangeFactorMind = 1f,
-            float weightMass = 1f, float weightStamina = 1f, float weightHealth = 1f, float weightMind = 1f,
+        public float EveryContest(
+        	EntityUid performer,
+            bool bypassClampMass = false,
+            bool bypassClampStamina = false,
+            bool bypassClampHealth = false,
+            bool bypassClampMind = false,
+            float rangeFactorMass = 1f,
+            float rangeFactorStamina = 1f,
+            float rangeFactorHealth = 1f,
+            float rangeFactorMind = 1f,
+            float weightMass = 1f,
+            float weightStamina = 1f,
+            float weightHealth = 1f,
+            float weightMind = 1f,
             bool sumOrMultiply = false)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem))
@@ -279,10 +289,21 @@ namespace Content.Shared.Contests
                     * MindContest(performer, bypassClampMind, rangeFactorMind) * mindMultiplier;
         }
 
-        public float EveryContest(EntityUid performer, EntityUid target,
-            bool bypassClampMass = false, bool bypassClampStamina = false, bool bypassClampHealth = false, bool bypassClampMind = false,
-            float rangeFactorMass = 1f, float rangeFactorStamina = 1f, float rangeFactorHealth = 1f, float rangeFactorMind = 1f,
-            float weightMass = 1f, float weightStamina = 1f, float weightHealth = 1f, float weightMind = 1f,
+        public float EveryContest(
+        	EntityUid performer,
+        	EntityUid target,
+            bool bypassClampMass = false,
+            bool bypassClampStamina = false,
+            bool bypassClampHealth = false,
+            bool bypassClampMind = false,
+            float rangeFactorMass = 1f,
+            float rangeFactorStamina = 1f,
+            float rangeFactorHealth = 1f,
+            float rangeFactorMind = 1f,
+            float weightMass = 1f,
+            float weightStamina = 1f,
+            float weightHealth = 1f,
+            float weightMind = 1f,
             bool sumOrMultiply = false)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem))
