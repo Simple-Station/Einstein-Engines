@@ -100,7 +100,7 @@ namespace Content.Shared.CCVar
         /*
          * Events
          */
-
+        #region Event Timers
         /// <summary>
         ///     Controls if the game should run station events
         /// </summary>
@@ -112,14 +112,14 @@ namespace Content.Shared.CCVar
         ///     Close to how long you expect a round to last, so you'll probably have to tweak this on downstreams.
         /// </summary>
         public static readonly CVarDef<float>
-            EventsRampingAverageEndTime = CVarDef.Create("events.ramping_average_end_time", 40f, CVar.ARCHIVE | CVar.SERVERONLY);
+            EventsRampingAverageEndTime = CVarDef.Create("events.ramping_average_end_time", 120f, CVar.ARCHIVE | CVar.SERVERONLY);
 
         /// <summary>
         ///     Average ending chaos modifier for the ramping event scheduler.
         ///     Max chaos chosen for a round will deviate from this
         /// </summary>
         public static readonly CVarDef<float>
-            EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 6f, CVar.ARCHIVE | CVar.SERVERONLY);
+            EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 3f, CVar.ARCHIVE | CVar.SERVERONLY);
 
         /*
          * Game
@@ -186,16 +186,20 @@ namespace Content.Shared.CCVar
             GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 1500, CVar.SERVERONLY);
 
         /// <summary>
-        ///     Minimum time between Ramping station events in seconds
+        ///     Minimum time between Ramping station events in seconds. This is before chaos modifiers are applied.
+        ///     Time will eventually approach Minimum Time / Maximum Chaos, so 9 minutes here will become 3 minutes if Max Chaos is 3
         /// </summary>
-        public static readonly CVarDef<int> // 4 Minutes
-            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 240, CVar.SERVERONLY);
+        public static readonly CVarDef<int> // 9 Minutes
+            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 540, CVar.SERVERONLY);
 
         /// <summary>
-        ///     Maximum time between Ramping station events in seconds
+        ///     Maximum time between Ramping station events in seconds. This is before chaos modifiers are applied.
+        ///     Time will eventually approach Maximum Time / Maximum Chaos, so 15 minutes here will become 5 minutes if Max Chaos is 3
         /// </summary>
-        public static readonly CVarDef<int> // 12 Minutes
-            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 720, CVar.SERVERONLY);
+        public static readonly CVarDef<int> // 15 Minutes
+            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 900, CVar.SERVERONLY);
+
+        #endregion
 
         /// <summary>
         ///
