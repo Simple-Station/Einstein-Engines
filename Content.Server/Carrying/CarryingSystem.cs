@@ -230,16 +230,16 @@ namespace Content.Server.Carrying
         }
         private void StartCarryDoAfter(EntityUid carrier, EntityUid carried, CarriableComponent component)
         {
-            if (TryComp<PhysicsComponent>(carrier, out var carrierPhysics)
-                && TryComp<PhysicsComponent>(carried, out var carriedPhysics)
-                && carriedPhysics.Mass > carrierPhysics.Mass * 2f)
+            if (!TryComp<PhysicsComponent>(carrier, out var carrierPhysics)
+                || !TryComp<PhysicsComponent>(carried, out var carriedPhysics)
+                || carriedPhysics.Mass > carrierPhysics.Mass * 2f)
             {
                 _popupSystem.PopupEntity(Loc.GetString("carry-too-heavy"), carried, carrier, Shared.Popups.PopupType.SmallCaution);
                 return;
             }
 
             var length = TimeSpan.FromSeconds(component.PickupDuration
-                        * _contests.MassContest(carried, carrier, false, 2f)
+                        * _contests.MassContest(carriedPhysics, carrierPhysics, false, 2f)
                         * _contests.StaminaContest(carrier, carried)
                         * (_standingState.IsDown(carried) ? 0.5f : 1));
 
