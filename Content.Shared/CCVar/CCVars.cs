@@ -188,7 +188,7 @@ namespace Content.Shared.CCVar
         /// <summary>
         ///     Minimum time between Ramping station events in minutes
         /// </summary>
-        public static readonly CVarDef<float> // 4 Minutes
+        public static readonly CVarDef<float> // 8 Minutes
             GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 8f, CVar.SERVERONLY);
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Content.Shared.CCVar
         /// <summary>
         ///     Maximum time between Ramping station events in minutes
         /// </summary>
-        public static readonly CVarDef<float> // 12 Minutes
+        public static readonly CVarDef<float> // 16 Minutes
             GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 16f, CVar.SERVERONLY);
 
         /// <summary>

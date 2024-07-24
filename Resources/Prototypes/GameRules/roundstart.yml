@@ -147,8 +147,6 @@
   components:
   - type: RampingStationEventScheduler
     shiftChaosModifier: 4 #30 minute HELL SHIFT
-    minimumEventTimeOffset: 2
-    maximumEventTimeOffset: 2
 
 # variation passes
 - type: entity
