@@ -4618,3 +4618,9 @@ Entries:
         reported.
   id: 6180
   time: '2024-07-24T03:18:56.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed the character editor dummy always acting like a human
+  id: 6181
+  time: '2024-07-24T17:13:05.0000000+00:00'
