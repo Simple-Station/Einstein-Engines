@@ -4610,3 +4610,11 @@ Entries:
       message: Job playtime requirements for loadouts and traits show correctly
   id: 6179
   time: '2024-07-23T14:18:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        False alarm event will no longer report events that should not be
+        reported.
+  id: 6180
+  time: '2024-07-24T03:18:56.0000000+00:00'
