@@ -239,9 +239,9 @@ namespace Content.Server.Carrying
             }
 
             var length = TimeSpan.FromSeconds(component.PickupDuration
-            * _contests.MassContest(carried, carrier, false, 2f)
-            * _contests.StaminaContest(carried, carrier)
-            * (_standingState.IsDown(carried) ? 0.5f : 1));
+                        * _contests.MassContest(carried, carrier, false, 2f)
+                        * _contests.StaminaContest(carried, carrier)
+                        * (_standingState.IsDown(carried) ? 0.5f : 1));
 
             component.CancelToken = new CancellationTokenSource();
 
