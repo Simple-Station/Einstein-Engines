@@ -240,7 +240,7 @@ namespace Content.Server.Carrying
             }
 
             var length = TimeSpan.FromSeconds(component.PickupDuration
-                        * _contests.MassContest(carriedPhysics, carrierPhysics, false, 2f)
+                        * _contests.MassContest(carriedPhysics, carrierPhysics, false, 4f)
                         * _contests.StaminaContest(carrier, carried)
                         * (_standingState.IsDown(carried) ? 0.5f : 1));
 
