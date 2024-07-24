@@ -29,8 +29,8 @@ trait-description-Accentless = You don't have the accent that your species would
 trait-name-FrontalLisp = Frontal Lisp
 trait-description-FrontalLisp = You thpeak with a lithp
 
-trait-name-SocialAnxiety = Social Anxiety
-trait-description-SocialAnxiety = You are anxious when you speak and stutter.
+trait-name-Stutter = Stutter
+trait-description-Stutter = You t-t-talk with a bit of a s-s-stutter...
 
 trait-name-Snoring = Snoring
 trait-description-Snoring = You will snore while sleeping.
