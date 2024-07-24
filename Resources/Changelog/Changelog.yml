@@ -4624,3 +4624,17 @@ Entries:
       message: Fixed the character editor dummy always acting like a human
   id: 6181
   time: '2024-07-24T17:13:05.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Most station events were rebalanced to better suit low-pop rounds.
+    - type: Add
+      message: >-
+        Weakened versions of vent critter events can now occur on low-pop
+        rounds.
+    - type: Tweak
+      message: >-
+        After a lot of complaints, the mass mindswap event is no longer
+        permanent.
+  id: 6182
+  time: '2024-07-24T23:27:34.0000000+00:00'
