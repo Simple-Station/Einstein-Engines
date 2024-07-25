@@ -23,12 +23,12 @@
   access:
   - Cargo
   - Salvage
-  - Mail # Nyanotrasen - MailCarrier, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail-carrier.yml
+  - Mail
   - Quartermaster
   - Maintenance
   - Command
-  - Orders # DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
-  - External # DeltaV - for promoting salvage specialists
+  - Orders
+  - External
   - Cryogenics
   special:
   - !type:AddImplantSpecial
@@ -50,12 +50,9 @@
     back: ClothingBackpackQuartermasterFilled
     shoes: ClothingShoesColorBrown
     id: QuartermasterPDA
-    ears: ClothingHeadsetAltCargo # Goobstation
+    ears: ClothingHeadsetAltCargo
     belt: BoxFolderClipboard
     pocket1: AppraisalTool
-  innerClothingSkirt: ClothingUniformJumpskirtQM
-  satchel: ClothingBackpackSatchelQuartermasterFilled
-  duffelbag: ClothingBackpackDuffelQuartermasterFilled
 
 - type: startingGear
   id: QuartermasterPlasmamanGear

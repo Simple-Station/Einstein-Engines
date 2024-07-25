@@ -25,7 +25,6 @@
   canBeAntag: false
   access:
   - Security
-  #- Brig # Delta V: Removed
   - Maintenance
   - Service
   - External
@@ -47,11 +46,8 @@
     jumpsuit: ClothingUniformJumpsuitColorRed
     back: ClothingBackpackSecurity
     shoes: ClothingShoesBootsCombatFilled
-    outerClothing: ClothingOuterArmorDuraVest # DeltaV - ClothingOuterArmorBasic replaced in favour of stab vest. Sucks to suck, cadets
+    outerClothing: ClothingOuterArmorDuraVest
     id: SecurityCadetPDA
-    ears: ClothingHeadsetAltSecurityRegular # Goobstation
+    ears: ClothingHeadsetAltSecurityRegular
     belt: ClothingBeltSecurityFilled
     pocket2: BookSecurity
-  innerClothingSkirt: ClothingUniformJumpskirtColorRed
-  satchel: ClothingBackpackSatchelSecurity
-  duffelbag: ClothingBackpackDuffelSecurity

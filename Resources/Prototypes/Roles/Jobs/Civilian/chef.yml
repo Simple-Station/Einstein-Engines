@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Civilian
-      min: 3600 #DeltaV 1 hour
+      min: 3600
     - !type:CharacterEmployerRequirement
       employers:
       - NanoTrasen
@@ -21,13 +21,13 @@
   - Kitchen
   extendedAccess:
   - Hydroponics
-  - Bar #Nyano - Summary: After this line, Professional Che is a component to be added. Very important.
+  - Bar
   special:
   - !type:AddComponentSpecial
     components:
-    - type: ProfessionalChef #Nyano - End Summary.
-    - type: GrantCqc # Goobstation - Martial Arts
-      isBlocked: true # Goobstation - Martial Arts
+    - type: ProfessionalChef
+    - type: GrantCqc
+      isBlocked: true
 
 - type: startingGear
   id: ChefGear
@@ -43,9 +43,6 @@
     ears: ClothingHeadsetService
     outerClothing: ClothingOuterApronChef
     belt: ClothingBeltChefFilled
-  innerClothingSkirt: ClothingUniformJumpskirtChef
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
 
 - type: startingGear
   id: ChefPlasmamanGear

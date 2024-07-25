@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
-      min: 36000 # DeltaV - 10 hours
+      min: 36000
     - !type:CharacterEmployerRequirement
       employers:
       - HephaestusIndustries
@@ -25,16 +25,12 @@
   id: AtmosphericTechnicianGear
   subGear:
   - AtmosphericTechnicianPlasmamanGear
-
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmos
     back: ClothingBackpackAtmospherics
     shoes: ClothingShoesColorWhite
     id: AtmosPDA
     ears: ClothingHeadsetEngineering
-  innerClothingSkirt: ClothingUniformJumpskirtAtmos
-  satchel: ClothingBackpackSatchelEngineeringFilled
-  duffelbag: ClothingBackpackDuffelEngineeringFilled
 
 - type: startingGear
   id: AtmosphericTechnicianPlasmamanGear

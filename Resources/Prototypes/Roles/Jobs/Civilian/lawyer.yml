@@ -30,9 +30,6 @@
     pocket2: BookSpaceLaw
   inhand:
   - BriefcaseBrownFilled
-  innerClothingSkirt: ClothingUniformJumpskirtLawyerBlack
-  satchel: ClothingBackpackSatchelLawyerFilled
-  duffelbag: ClothingBackpackDuffelLawyerFilled
 
 - type: startingGear
   id: LawyerPlasmamanGear

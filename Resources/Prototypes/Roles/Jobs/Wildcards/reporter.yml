@@ -9,8 +9,8 @@
   access:
   - Service
   - Maintenance
-  - Theatre # DeltaV - Add Theatre access
-  - Reporter # DeltaV - Add Reporter access
+  - Theatre
+  - Reporter
   requirements:
     - !type:CharacterEmployerRequirement
       inverted: true
@@ -27,9 +27,6 @@
     shoes: ClothingShoesColorWhite
     id: ReporterPDA
     ears: ClothingHeadsetService
-  innerClothingSkirt: ClothingUniformJumpsuitJournalist
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
 
 - type: startingGear
   id: ReporterPlasmamanGear

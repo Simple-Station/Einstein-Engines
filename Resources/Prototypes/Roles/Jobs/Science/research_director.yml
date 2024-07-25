@@ -35,18 +35,18 @@
   - Command
   - Maintenance
   - ResearchDirector
-  - Mantis # DeltaV - Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
-  - Chapel # DeltaV - Chaplain is in Epistemics
-  - External # DeltaV - AI satellite access
+  - Mantis
+  - Chapel
+  - External
   - Cryogenics
-  special: # Nyanotrasen - Mystagogue can use the Bible
+  special:
   - !type:AddComponentSpecial
     components:
-      - type: BibleUser # Nyano - Lets them heal with bibles
-      - type: Psionic # Nyano - They start with telepathic chat
+      - type: BibleUser
+      - type: Psionic
         powerSlots: 3
         baselinePowerCost: 75
-        nextPowerCost: 75 # No that's fully intended that he has the "Full" power pull. Have fun with being a crew-aligned wizard/cultist.
+        nextPowerCost: 75
       - type: CommandStaff
       - type: InnatePsionicPowers
         powersToAdd:
@@ -70,12 +70,9 @@
     back: ClothingBackpackResearchDirectorFilled
     shoes: ClothingShoesColorBrown
     id: RnDPDA
-    ears: ClothingHeadsetAltScience # Goobstation
+    ears: ClothingHeadsetAltScience
     pocket1: BookPsionicsGuidebook
     pocket2: BibleMystagogue
-  innerClothingSkirt: ClothingUniformJumpskirtResearchDirector
-  satchel: ClothingBackpackSatchelResearchDirectorFilled
-  duffelbag: ClothingBackpackDuffelResearchDirectorFilled
 
 - type: startingGear
   id: ResearchDirectorPlasmamanGear
