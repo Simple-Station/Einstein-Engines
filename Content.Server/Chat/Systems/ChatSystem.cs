@@ -748,7 +748,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         var language = languageOverride ?? _language.GetLanguage(source);
         foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? 0.3f : VoiceRange))
         {
-            if (session.AttachedEntity != null && Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
+            if (session.AttachedEntity != null
+                && Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
                 && !CheckAttachedGrids(source, session.AttachedEntity.Value))
                 continue;
 
@@ -986,10 +987,9 @@ public sealed partial class ChatSystem : SharedChatSystem
             return false;
 
         foreach (var (id, _) in sourceJoints.GetJoints)
-        {
             if (receiverJoints.GetJoints.ContainsKey(id))
                 return true;
-        }
+
         return false;
     }
 
