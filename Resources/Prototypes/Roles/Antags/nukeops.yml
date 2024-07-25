@@ -22,9 +22,8 @@
   objective: roles-antag-nuclear-operative-commander-objective
   guides: [ NuclearOperatives ]
 
-#Nuclear Operative Gear
 - type: startingGear
-  id: SyndicateOperativeGearFull
+  id: SyndicateOperativeGearFullNoUplink
   subGear:
   - SyndicateOperativePlasmamanGear
   equipment:
@@ -37,7 +36,7 @@
     shoes: ClothingShoesBootsCombatFilled
     id: SyndiPDA
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: BaseUplinkRadio40TC
+    pocket2: PlushieCarp
     belt: ClothingBeltMilitaryWebbing
   storage:
     back:
@@ -53,6 +52,13 @@
     jumpsuit: ClothingUniformEnvirosuitOperative
     head: ClothingHeadEnvirohelmOperative
     pocket1: DoubleEmergencyPlasmaTankFilled
+
+#Nuclear Operative Gear
+- type: startingGear
+  id: SyndicateOperativeGearFull
+  parent: SyndicateOperativeGearFullNoUplink
+  equipment:
+    pocket2: BaseUplinkRadio40TC
 
 #Nuclear Operative Commander Gear
 - type: startingGear
