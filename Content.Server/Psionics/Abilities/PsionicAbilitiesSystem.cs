@@ -7,6 +7,7 @@ using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Content.Shared.Popups;
+using Robust.Shared.Serialization.Manager;
 
 namespace Content.Server.Psionics.Abilities
 {
@@ -19,6 +20,7 @@ namespace Content.Server.Psionics.Abilities
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly SharedPopupSystem _popups = default!;
+        [Dependency] private readonly ISerializationManager _serialization = default!;
 
         public override void Initialize()
         {
@@ -50,7 +52,7 @@ namespace Content.Server.Psionics.Abilities
                 return;
             }
 
-            var newPool = pool;
+            var newPool = _serialization.CreateCopy(pool, null, false, true);
             foreach (var component in pool.Weights.Keys)
             {
                 var checkedComponent = _componentFactory.GetComponent(component);
