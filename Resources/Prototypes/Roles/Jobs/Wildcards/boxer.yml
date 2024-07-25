@@ -8,9 +8,9 @@
   supervisors: job-supervisors-hop
   access:
   - Maintenance
-  - Theatre # DeltaV - Add Theatre access
-  - Boxer # DeltaV - Add Boxer access
-  special: # Nyanotrasen - BoxerComponent, see Content.Server/Nyanotrasen/Abilities/Boxer/Boxer/BoxerComponent.cs
+  - Theatre
+  - Boxer
+  special:
   - !type:AddTraitSpecial
     traits:
     - MartialArtist
@@ -27,9 +27,6 @@
     gloves: ClothingHandsGlovesBoxingRed
     shoes: ClothingShoesColorRed
     belt: ClothingBeltChampion
-  innerClothingSkirt: UniformShortsRedWithTop
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
 
 - type: startingGear
   id: BoxerPlasmamanGear

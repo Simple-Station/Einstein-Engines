@@ -11,7 +11,7 @@
   - Maintenance
   extendedAccess:
   - Salvage
-  - Orders # DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
+  - Orders
   requirements:
     - !type:CharacterEmployerRequirement
       employers:
@@ -30,9 +30,6 @@
     id: CargoPDA
     ears: ClothingHeadsetCargo
     pocket1: AppraisalTool
-  innerClothingSkirt: ClothingUniformJumpskirtCargo
-  satchel: ClothingBackpackSatchelCargoFilled
-  duffelbag: ClothingBackpackDuffelCargoFilled
 
 - type: startingGear
   id: CargoTechPlasmamanGear

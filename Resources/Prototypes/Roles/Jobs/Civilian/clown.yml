@@ -9,7 +9,7 @@
   access:
   - Theatre
   - Maintenance
-  - Clown # DeltaV - Add Clown access
+  - Clown
   special:
   - !type:AddComponentSpecial
     components:
@@ -40,8 +40,6 @@
     pocket2: ClownRecorder
     id: ClownPDA
     ears: ClothingHeadsetService
-  satchel: ClothingBackpackSatchelClownFilled
-  duffelbag: ClothingBackpackDuffelClownFilled
 
 - type: startingGear
   id: ClownPlasmamanGear

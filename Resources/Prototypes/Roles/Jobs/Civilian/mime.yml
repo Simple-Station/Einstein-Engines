@@ -9,7 +9,7 @@
   access:
   - Theatre
   - Maintenance
-  - Mime # DeltaV - Add Mime access
+  - Mime
   special:
   - !type:AddComponentSpecial
     components:
@@ -32,9 +32,6 @@
     mask: ClothingMaskMime
     id: MimePDA
     ears: ClothingHeadsetService
-  innerClothingSkirt: ClothingUniformJumpskirtMime
-  satchel: ClothingBackpackSatchelMimeFilled
-  duffelbag: ClothingBackpackDuffelMimeFilled
 
 - type: startingGear
   id: MimePlasmamanGear

@@ -56,9 +56,6 @@
     ears: ClothingHeadsetScience
     pocket1: BookPsionicsGuidebook
     pocket2: HandLabeler
-  innerClothingSkirt: ClothingUniformJumpskirtLibrarian
-  satchel: ClothingBackpackSatchelLibrarianFilled
-  duffelbag: ClothingBackpackDuffelLibrarianFilled
 
 - type: startingGear
   id: LibrarianPlasmamanGear
