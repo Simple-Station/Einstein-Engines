@@ -124,7 +124,6 @@
       channels:
       - Binary
     - type: Speech
-      speechVerb: IPC
       speechSounds: IPC
     - type: Vocal
       sounds:
@@ -134,7 +133,7 @@
     - type: Inventory
       templateId: human
     - type: ZombieImmune
-    - type: LanguageSpeaker
+    - type: LanguageKnowledge
       speaks:
       - GalacticCommon
       - RobotTalk

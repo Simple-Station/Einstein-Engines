@@ -144,10 +144,8 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-gas-leak-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg # DeltaV - custom announcer REMOVED!
-    endAnnouncement: station-event-gas-leak-end-announcement
+    startAnnouncement: true
+    endAnnouncement: true
     earliestStart: 10
     reoccurrenceDelay: 7
     minimumPlayers: 5
@@ -320,9 +318,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-clog-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg # DeltaV - custom announcer REMOVED!
+    startAnnouncement: true
     earliestStart: 15
     reoccurrenceDelay: 5
     minimumPlayers: 15

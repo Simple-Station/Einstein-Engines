@@ -166,7 +166,8 @@
   - chat-speech-verb-electricity-3
 
 - type: speechVerb
-  id: IPC
+  id: Synth
+  name: chat-speech-verb-name-ipc
   speechVerbStrings:
   - chat-speech-verb-ipc-1
   - chat-speech-verb-ipc-2
