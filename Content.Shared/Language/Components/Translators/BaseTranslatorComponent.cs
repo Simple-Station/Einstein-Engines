@@ -5,14 +5,6 @@ namespace Content.Shared.Language.Components.Translators;
 public abstract partial class BaseTranslatorComponent : Component
 {
     /// <summary>
-    ///   The language this translator changes the speaker's language to when they don't specify one.
-    ///   If null, does not modify the default language.
-    /// </summary>
-    [DataField("default-language")]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public string? CurrentSpeechLanguage = null;
-
-    /// <summary>
     ///   The list of additional languages this translator allows the wielder to speak.
     /// </summary>
     [DataField("spoken", customTypeSerializer: typeof(PrototypeIdListSerializer<LanguagePrototype>))]
@@ -37,7 +29,7 @@ public abstract partial class BaseTranslatorComponent : Component
     ///
     ///   Otherwise, at least one language must be known (or the list must be empty).
     /// </summary>
-    [DataField("requires-all")]
+    [DataField("requiresAll")]
     [ViewVariables(VVAccess.ReadWrite)]
     public bool RequiresAllLanguages = false;
 

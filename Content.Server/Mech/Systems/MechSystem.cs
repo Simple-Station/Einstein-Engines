@@ -21,7 +21,6 @@ using Content.Server.Body.Systems;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
-using Robust.Shared.Map;
 using Robust.Shared.Player;
 
 namespace Content.Server.Mech.Systems;
@@ -34,20 +33,14 @@ public sealed partial class MechSystem : SharedMechSystem
     [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly IMapManager _map = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-
-    private ISawmill _sawmill = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();
-
-        _sawmill = Logger.GetSawmill("mech");
 
         SubscribeLocalEvent<MechComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<MechComponent, EntInsertedIntoContainerMessage>(OnInsertBattery);
@@ -344,7 +337,7 @@ public sealed partial class MechSystem : SharedMechSystem
         _battery.SetCharge(battery!.Value, batteryComp.CurrentCharge + delta.Float(), batteryComp);
         if (batteryComp.CurrentCharge != component.Energy) //if there's a discrepency, we have to resync them
         {
-            _sawmill.Debug($"Battery charge was not equal to mech charge. Battery {batteryComp.CurrentCharge}. Mech {component.Energy}");
+            Log.Debug($"Battery charge was not equal to mech charge. Battery {batteryComp.CurrentCharge}. Mech {component.Energy}");
             component.Energy = batteryComp.CurrentCharge;
             Dirty(component);
         }
@@ -415,14 +408,17 @@ public sealed partial class MechSystem : SharedMechSystem
         if (args.Handled)
             return;
 
-        if (!TryComp<MechComponent>(component.Mech, out var mech) ||
-            !TryComp<MechAirComponent>(component.Mech, out var mechAir))
+        if (!TryComp(component.Mech, out MechComponent? mech))
+            return;
+
+        if (mech.Airtight && TryComp(component.Mech, out MechAirComponent? air))
         {
+            args.Handled = true;
+            args.Gas = air.Air;
             return;
         }
 
-        args.Gas = mech.Airtight ? mechAir.Air : _atmosphere.GetContainingMixture(component.Mech);
-
+        args.Gas =  _atmosphere.GetContainingMixture(component.Mech, excite: args.Excite);
         args.Handled = true;
     }
 

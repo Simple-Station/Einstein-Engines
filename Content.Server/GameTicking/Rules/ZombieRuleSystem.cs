@@ -22,6 +22,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Globalization;
+using Content.Server.Announcements.Systems;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -41,6 +42,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly AntagSelectionSystem _antagSelection = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
     public override void Initialize()
     {
@@ -123,7 +125,9 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
         {
             foreach (var station in _station.GetStations())
             {
-                _chat.DispatchStationAnnouncement(station, Loc.GetString("zombie-shuttle-call"), colorOverride: Color.Crimson);
+                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleCalled"),
+                    _station.GetInOwningStation(station), "zombie-shuttle-call",
+                    colorOverride: Color.Crimson);
             }
             _roundEnd.RequestRoundEnd(null, false);
         }
@@ -249,7 +253,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
             _playerManager.Sessions,
             component.PatientZeroPrototypeId,
             includeAllJobs: false,
-            customExcludeCondition: player => HasComp<ZombieImmuneComponent>(player) || HasComp<InitialInfectedExemptComponent>(player) 
+            customExcludeCondition: player => HasComp<ZombieImmuneComponent>(player) || HasComp<InitialInfectedExemptComponent>(player)
             );
 
         //And get all players, excluding ZombieImmune and roles with CanBeAntag = False - to fill any leftover initial infected slots
@@ -259,7 +263,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
             acceptableAntags: Shared.Antag.AntagAcceptability.All,
             includeAllJobs: false ,
             ignorePreferences: true,
-            customExcludeCondition: HasComp<ZombieImmuneComponent> 
+            customExcludeCondition: HasComp<ZombieImmuneComponent>
             );
 
         //If there are no players to choose, abort
@@ -293,6 +297,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
 
         //Add the role to the mind silently (to avoid repeating job assignment)
         _roles.MindAddRole(mind, new InitialInfectedRoleComponent { PrototypeId = component.PatientZeroPrototypeId }, silent: true);
+        EnsureComp<InitialInfectedComponent>(entity);
 
         //Add the zombie components and grace period
         var pending = EnsureComp<PendingZombieComponent>(entity);

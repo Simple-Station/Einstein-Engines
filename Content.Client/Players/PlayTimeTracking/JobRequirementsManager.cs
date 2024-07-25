@@ -7,12 +7,13 @@ using Robust.Client;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Players.PlayTimeTracking;
 
-public sealed partial class JobRequirementsManager
+public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
 {
     [Dependency] private readonly IBaseClient _client = default!;
     [Dependency] private readonly IClientNetManager _net = default!;
@@ -96,7 +97,7 @@ public sealed partial class JobRequirementsManager
         return CheckRoleTime(job.Requirements, out reason);
     }
 
-    public bool CheckRoleTime(HashSet<JobRequirement>? requirements, [NotNullWhen(false)] out FormattedMessage? reason)
+    public bool CheckRoleTime(HashSet<JobRequirement>? requirements, [NotNullWhen(false)] out FormattedMessage? reason, string? localePrefix = "role-timer-")
     {
         reason = null;
 
@@ -106,7 +107,7 @@ public sealed partial class JobRequirementsManager
         var reasons = new List<string>();
         foreach (var requirement in requirements)
         {
-            if (JobRequirements.TryRequirementMet(requirement, _roles, out var jobReason, _entManager, _prototypes, _whitelisted))
+            if (JobRequirements.TryRequirementMet(requirement, _roles, out var jobReason, _entManager, _prototypes, _whitelisted, localePrefix))
                 continue;
 
             reasons.Add(jobReason.ToMarkup());
@@ -121,18 +122,27 @@ public sealed partial class JobRequirementsManager
         return _roles.TryGetValue("Overall", out var overallPlaytime) ? overallPlaytime : TimeSpan.Zero;
     }
 
-    public IEnumerable<KeyValuePair<string, TimeSpan>> FetchPlaytimeByRoles()
+    public Dictionary<string, TimeSpan> FetchPlaytimeByRoles()
     {
         var jobsToMap = _prototypes.EnumeratePrototypes<JobPrototype>();
+        var ret = new Dictionary<string, TimeSpan>();
 
         foreach (var job in jobsToMap)
-        {
             if (_roles.TryGetValue(job.PlayTimeTracker, out var locJobName))
-            {
-                yield return new KeyValuePair<string, TimeSpan>(job.Name, locJobName);
-            }
-        }
+                ret.Add(job.Name, locJobName);
+
+        return ret;
     }
 
 
+    public Dictionary<string, TimeSpan> GetPlayTimes()
+    {
+        var dict = new Dictionary<string, TimeSpan>();
+
+        dict.Add(PlayTimeTrackingShared.TrackerOverall, FetchOverallPlaytime());
+        foreach (var role in FetchPlaytimeByRoles())
+            dict.Add(role.Key, role.Value);
+
+        return dict;
+    }
 }

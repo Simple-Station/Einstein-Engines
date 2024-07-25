@@ -56,8 +56,12 @@ namespace Content.Server.Database
                 .IsUnique();
 
             modelBuilder.Entity<Trait>()
-                        .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.TraitName})
-                        .IsUnique();
+                .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.TraitName})
+                .IsUnique();
+
+            modelBuilder.Entity<Loadout>()
+                .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.LoadoutName})
+                .IsUnique();
 
             modelBuilder.Entity<Job>()
                 .HasIndex(j => j.ProfileId);
@@ -117,10 +121,6 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<Round>()
                 .HasIndex(round => round.StartDate);
-
-            modelBuilder.Entity<Round>()
-                .Property(round => round.StartDate)
-                .HasDefaultValue(default(DateTime));
 
             modelBuilder.Entity<AdminLogPlayer>()
                 .HasKey(logPlayer => new {logPlayer.RoundId, logPlayer.LogId, logPlayer.PlayerUserId});
@@ -268,6 +268,11 @@ namespace Content.Server.Database
                 .HasPrincipalKey(author => author.UserId)
                 .OnDelete(DeleteBehavior.SetNull);
 
+            // A message cannot be "dismissed" without also being "seen".
+            modelBuilder.Entity<AdminMessage>().ToTable(t =>
+                t.HasCheckConstraint("NotDismissedAndSeen",
+                    "NOT dismissed OR seen"));
+
             modelBuilder.Entity<ServerBan>()
                 .HasOne(ban => ban.CreatedBy)
                 .WithMany(author => author.AdminServerBansCreated)
@@ -329,6 +334,8 @@ namespace Content.Server.Database
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;
         public string Species { get; set; } = null!;
+        public float Height { get; set; } = 1f;
+        public float Width { get; set; } = 1f;
         [Column(TypeName = "jsonb")] public JsonDocument? Markings { get; set; } = null!;
         public string HairName { get; set; } = null!;
         public string HairColor { get; set; } = null!;
@@ -342,6 +349,7 @@ namespace Content.Server.Database
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
+        public List<Loadout> Loadouts { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
 
@@ -384,6 +392,15 @@ namespace Content.Server.Database
         public int ProfileId { get; set; }
 
         public string TraitName { get; set; } = null!;
+    }
+
+    public class Loadout
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+
+        public string LoadoutName { get; set; } = null!;
     }
 
     public enum DbPreferenceUnavailableMode
@@ -489,7 +506,7 @@ namespace Content.Server.Database
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         public List<Player> Players { get; set; } = default!;
 
@@ -874,8 +891,35 @@ namespace Content.Server.Database
         public byte[] Data { get; set; } = default!;
     }
 
+    // Note: this interface isn't used by the game, but it *is* used by SS14.Admin.
+    // Don't remove! Or face the consequences!
+    public interface IAdminRemarksCommon
+    {
+        public int Id { get; }
+
+        public int? RoundId { get; }
+        public Round? Round { get; }
+
+        public Guid? PlayerUserId { get; }
+        public Player? Player { get; }
+        public TimeSpan PlaytimeAtNote { get; }
+
+        public string Message { get; }
+
+        public Player? CreatedBy { get; }
+
+        public DateTime CreatedAt { get; }
+
+        public Player? LastEditedBy { get; }
+
+        public DateTime? LastEditedAt { get; }
+        public DateTime? ExpirationTime { get; }
+
+        public bool Deleted { get; }
+    }
+
     [Index(nameof(PlayerUserId))]
-    public class AdminNote
+    public class AdminNote : IAdminRemarksCommon
     {
         [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; }
 
@@ -909,7 +953,7 @@ namespace Content.Server.Database
     }
 
     [Index(nameof(PlayerUserId))]
-    public class AdminWatchlist
+    public class AdminWatchlist : IAdminRemarksCommon
     {
         [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; }
 
@@ -940,7 +984,7 @@ namespace Content.Server.Database
     }
 
     [Index(nameof(PlayerUserId))]
-    public class AdminMessage
+    public class AdminMessage : IAdminRemarksCommon
     {
         [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; }
 
@@ -969,6 +1013,15 @@ namespace Content.Server.Database
         [ForeignKey("DeletedBy")] public Guid? DeletedById { get; set; }
         public Player? DeletedBy { get; set; }
         public DateTime? DeletedAt { get; set; }
+
+        /// <summary>
+        /// Whether the message has been seen at least once by the player.
+        /// </summary>
         public bool Seen { get; set; }
+
+        /// <summary>
+        /// Whether the message has been dismissed permanently by the player.
+        /// </summary>
+        public bool Dismissed { get; set; }
     }
 }

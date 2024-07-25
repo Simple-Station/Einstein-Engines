@@ -1,7 +1,7 @@
 using Content.Shared.Language;
 using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
-using Robust.Shared.Console;
+using Robust.Client;
 
 namespace Content.Client.Language.Systems;
 
@@ -14,6 +14,8 @@ namespace Content.Client.Language.Systems;
 /// </remarks>
 public sealed class LanguageSystem : SharedLanguageSystem
 {
+    [Dependency] private readonly IBaseClient _client = default!;
+
     /// <summary>
     ///   The current language of the entity currently possessed by the player.
     /// </summary>
@@ -27,11 +29,26 @@ public sealed class LanguageSystem : SharedLanguageSystem
     /// </summary>
     public List<string> UnderstoodLanguages { get; private set; } = new();
 
-    [Dependency] private readonly IConsoleHost _consoleHost = default!;
-
     public override void Initialize()
     {
+        base.Initialize();
+
         SubscribeNetworkEvent<LanguagesUpdatedMessage>(OnLanguagesUpdated);
+        _client.RunLevelChanged += OnRunLevelChanged;
+    }
+
+    private void OnLanguagesUpdated(LanguagesUpdatedMessage message)
+    {
+        CurrentLanguage = message.CurrentLanguage;
+        SpokenLanguages = message.Spoken;
+        UnderstoodLanguages = message.Understood;
+    }
+
+    private void OnRunLevelChanged(object? sender, RunLevelChangedEventArgs args)
+    {
+        // Request an update when entering a game
+        if (args.NewLevel == ClientRunLevel.InGame)
+            RequestStateUpdate();
     }
 
     /// <summary>
@@ -45,23 +62,14 @@ public sealed class LanguageSystem : SharedLanguageSystem
 
     public void RequestSetLanguage(LanguagePrototype language)
     {
-        // May cause some minor desync...
         if (language.ID == CurrentLanguage)
             return;
 
-        // (This is dumb. This is very dumb. It should be a message instead.)
-        // TODO Change this, soonish
-        _consoleHost.ExecuteCommand("languageselect " + language.ID);
+        RaiseNetworkEvent(new LanguagesSetMessage(language.ID));
 
+        // May cause some minor desync...
         // So to reduce the probability of desync, we replicate the change locally too
         if (SpokenLanguages.Contains(language.ID))
             CurrentLanguage = language.ID;
-    }
-
-    private void OnLanguagesUpdated(LanguagesUpdatedMessage message)
-    {
-        CurrentLanguage = message.CurrentLanguage;
-        SpokenLanguages = message.Spoken;
-        UnderstoodLanguages = message.Understood;
     }
 }

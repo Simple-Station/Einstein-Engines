@@ -66,14 +66,14 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// <summary>
     ///     Humanoid species variant used by this entity.
     /// </summary>
-    [DataField(required: true, customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string Prototype { get; private set; } = default!;
+    [DataField(required: true)]
+    public EntProtoId Prototype { get; private set; }
 
     /// <summary>
     /// Prototype used by the species for the dress-up doll in various menus.
     /// </summary>
-    [DataField(required: true, customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string DollPrototype { get; private set; } = default!;
+    [DataField(required: true)]
+    public EntProtoId DollPrototype { get; private set; }
 
     /// <summary>
     /// Method of skin coloration used by the species.
@@ -122,10 +122,52 @@ public sealed partial class SpeciesPrototype : IPrototype
     public int MaxAge = 120;
 
     /// <summary>
-    ///     The Style used for the guidebook info link in the character profile editor
+    ///     The minimum height for this species
     /// </summary>
     [DataField]
-    public string GuideBookIcon = "SpeciesInfoDefault";
+    public float MinHeight = 0.75f;
+
+    /// <summary>
+    ///     The default height for this species
+    /// </summary>
+    [DataField]
+    public float DefaultHeight = 1f;
+
+    /// <summary>
+    ///     The maximum height for this species
+    /// </summary>
+    [DataField]
+    public float MaxHeight = 1.25f;
+
+    /// <summary>
+    ///     The minimum width for this species
+    /// </summary>
+    [DataField]
+    public float MinWidth = 0.7f;
+
+    /// <summary>
+    ///     The default width for this species
+    /// </summary>
+    [DataField]
+    public float DefaultWidth = 1f;
+
+    /// <summary>
+    ///     The maximum width for this species
+    /// </summary>
+    [DataField]
+    public float MaxWidth = 1.3f;
+
+    /// <summary>
+    ///     The average height in centimeters for this species, used to calculate player facing height values in UI elements
+    /// </summary>
+    [DataField]
+    public float AverageHeight = 176.1f;
+
+    /// <summary>
+    ///     The average shoulder-to-shoulder width in cm for this species, used to calculate player facing width values in UI elements
+    /// </summary>
+    [DataField]
+    public float AverageWidth = 40f;
 }
 
 public enum SpeciesNaming : byte

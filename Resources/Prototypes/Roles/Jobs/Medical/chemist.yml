@@ -22,10 +22,10 @@
     back: ClothingBackpackChemistryFilled
     shoes: ClothingShoesColorBlack
     outerClothing: ClothingOuterCoatLabChem
+    shoes: ClothingShoesColorWhite
     id: ChemistryPDA
     ears: ClothingHeadsetMedical
     belt: ChemBag
-    pocket1: HandLabeler
     # the purple glasses?
   innerClothingSkirt: UniformScrubsColorCybersun
   satchel: ClothingBackpackSatchelChemistryFilled

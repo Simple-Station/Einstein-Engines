@@ -24,6 +24,15 @@
     - category: Thirst
     - alertType: Magboots
     - alertType: Pacified
+    - alertType: Offer
+
+- type: entity
+  id: AlertSpriteView
+  categories: [ hideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.AlertVisualLayers.Base" ]
 
 - type: alert
   id: LowOxygen
@@ -149,6 +158,15 @@
   icons: [ /Textures/Interface/Alerts/Buckle/buckled.png ]
   name: alerts-buckled-name
   description: alerts-buckled-desc
+
+- type: alert
+  id: Offer
+  onClick: !type:AcceptOffer  { }
+  icons:
+  - sprite: /Textures/Interface/Alerts/offer_item.rsi
+    state: offer_item
+  name: alerts-offer-name
+  description: alerts-offer-desc
 
 - type: alert
   id: HumanCrit
@@ -418,6 +436,18 @@
     state: icon
   name: alerts-pacified-name
   description: alerts-pacified-desc
+
+- type: alert
+  id: Walking
+  icons:
+  - sprite: /Textures/Interface/Alerts/walking.rsi
+    state: walking0
+  - sprite: /Textures/Interface/Alerts/walking.rsi
+    state: walking1
+  name: alerts-walking-name
+  description: alerts-walking-desc
+  minSeverity: 0
+  maxSeverity: 1
 
 - type: alert
   id: Debug1

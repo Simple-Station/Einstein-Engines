@@ -4,14 +4,17 @@ language-Universal-description = What are you?
 language-GalacticCommon-name = Galactic common
 language-GalacticCommon-description = The standard Galatic language, most commonly used for inter-species communications and legal work.
 
+language-SignLanguage-name = Sign Language
+language-SignLanguage-description = The standard Galactic sign language, used by those that are unable to speak Galactic Common or at all.
+
 language-Bubblish-name = Bubblish
-language-Bubblish-description = The language of Slimes. Being a mixture of bubbling noises and pops it's very difficult to speak for huamns without the use of mechanical aids.
+language-Bubblish-description = The language of Slimes. Being a mixture of bubbling noises and pops it's very difficult to speak for humans without the use of mechanical aids.
 
 language-RootSpeak-name = Rootspeak
 language-RootSpeak-description = The strange whistling-style language spoken by the Diona.
 
 language-Nekomimetic-name = Nekomimetic
-language-Nekomimetic-description = To the casual observer, this langauge is an incomprehensible mess of broken Japanese. To the felinids, it's somehow comprehensible.
+language-Nekomimetic-description = To the casual observer, this language is an incomprehensible mess of broken Japanese. To the felinids, it's somehow comprehensible.
 
 language-Draconic-name = Draconic
 language-Draconic-description = The common language of lizard-people, composed of sibilant hisses and rattles.

@@ -19,6 +19,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Audio;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Utility;
+using Robust.Shared.Configuration;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -27,7 +28,7 @@ public sealed partial class CargoSystem
     /*
      * Handles cargo shuttle / trade mechanics.
      */
-
+    [Dependency] private readonly IConfigurationManager _confMan = default!;
     public MapId? CargoMap { get; private set; }
 
     private static readonly SoundPathSpecifier ApproveSound = new("/Audio/Effects/Cargo/ping.ogg");
@@ -197,13 +198,16 @@ public sealed partial class CargoSystem
     /// </summary>
     private int GetCargoSpace(EntityUid gridUid)
     {
-        var space = GetCargoPallets(gridUid).Count;
+        var space = GetCargoPallets(gridUid, BuySellType.Buy).Count;
         return space;
     }
 
-    private List<(EntityUid Entity, CargoPalletComponent Component, TransformComponent PalletXform)> GetCargoPallets(EntityUid gridUid)
+    /// GetCargoPallets(gridUid, BuySellType.Sell) to return only Sell pads
+    /// GetCargoPallets(gridUid, BuySellType.Buy) to return only Buy pads
+    private List<(EntityUid Entity, CargoPalletComponent Component, TransformComponent PalletXform)> GetCargoPallets(EntityUid gridUid, BuySellType requestType = BuySellType.All)
     {
         _pads.Clear();
+
         var query = AllEntityQuery<CargoPalletComponent, TransformComponent>();
 
         while (query.MoveNext(out var uid, out var comp, out var compXform))
@@ -214,7 +218,13 @@ public sealed partial class CargoSystem
                 continue;
             }
 
+            if ((requestType & comp.PalletType) == 0)
+            {
+                continue;
+            }
+
             _pads.Add((uid, comp, compXform));
+
         }
 
         return _pads;
@@ -245,9 +255,8 @@ public sealed partial class CargoSystem
 
     #region Station
 
-    private bool SellPallets(EntityUid gridUid, EntityUid? station, out double amount)
+    private bool SellPallets(EntityUid gridUid, out double amount)
     {
-        station ??= _station.GetOwningStation(gridUid);
         GetPalletGoods(gridUid, out var toSell, out amount);
 
         Log.Debug($"Cargo sold {toSell.Count} entities for {amount}");
@@ -255,11 +264,9 @@ public sealed partial class CargoSystem
         if (toSell.Count == 0)
             return false;
 
-        if (station != null)
-        {
-            var ev = new EntitySoldEvent(station.Value, toSell);
-            RaiseLocalEvent(ref ev);
-        }
+
+        var ev = new EntitySoldEvent(toSell);
+        RaiseLocalEvent(ref ev);
 
         foreach (var ent in toSell)
         {
@@ -274,7 +281,7 @@ public sealed partial class CargoSystem
         amount = 0;
         toSell = new HashSet<EntityUid>();
 
-        foreach (var (palletUid, _, _) in GetCargoPallets(gridUid))
+        foreach (var (palletUid, _, _) in GetCargoPallets(gridUid, BuySellType.Sell))
         {
             // Containers should already get the sell price of their children so can skip those.
             _setEnts.Clear();
@@ -314,7 +321,7 @@ public sealed partial class CargoSystem
             return false;
         }
 
-        var complete = IsBountyComplete(uid, (EntityUid?) null, out var bountyEntities);
+        var complete = IsBountyComplete(uid, out var bountyEntities);
 
         // Recursively check for mobs at any point.
         var children = xform.ChildEnumerator;
@@ -347,7 +354,7 @@ public sealed partial class CargoSystem
             return;
         }
 
-        if (!SellPallets(gridUid, null, out var price))
+        if (!SellPallets(gridUid, out var price))
             return;
 
         var stackPrototype = _protoMan.Index<StackPrototype>(component.CashType);
@@ -369,7 +376,7 @@ public sealed partial class CargoSystem
         if (!HasComp<StationCargoOrderDatabaseComponent>(args.Station)) // No cargo, L
             return;
 
-        if (_cfgManager.GetCVar(CCVars.GridFill))
+        if (_cfgManager.GetCVar(CCVars.GridFill) && _confMan.GetCVar(CargoCVars.CreateCargoMap))
             SetupTradePost();
     }
 
@@ -439,4 +446,4 @@ public sealed partial class CargoSystem
 /// deleted but after the price has been calculated.
 /// </summary>
 [ByRefEvent]
-public readonly record struct EntitySoldEvent(EntityUid Station, HashSet<EntityUid> Sold);
+public readonly record struct EntitySoldEvent(HashSet<EntityUid> Sold);

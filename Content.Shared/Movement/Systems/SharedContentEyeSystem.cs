@@ -1,9 +1,11 @@
 using System.Numerics;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Managers;
+using Content.Shared.CCVar;
 using Content.Shared.Ghost;
 using Content.Shared.Input;
 using Content.Shared.Movement.Components;
+using Robust.Shared.Configuration;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
@@ -16,10 +18,13 @@ namespace Content.Shared.Movement.Systems;
 public abstract class SharedContentEyeSystem : EntitySystem
 {
     [Dependency] private readonly ISharedAdminManager _admin = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
-    public const float ZoomMod = 1.5f;
-    public static readonly Vector2 DefaultZoom = Vector2.One;
-    public static readonly Vector2 MinZoom = DefaultZoom * (float)Math.Pow(ZoomMod, -3);
+    // Will be overridden according to config.
+    public readonly Vector2 DefaultZoom = Vector2.One;
+    public float ZoomMod { get; private set; } = 1f;
+    public int ZoomLevels { get; private set; } = 1;
+    public Vector2 MinZoom { get; private set; } = Vector2.One;
 
     [Dependency] private readonly SharedEyeSystem _eye = default!;
 
@@ -38,12 +43,28 @@ public abstract class SharedContentEyeSystem : EntitySystem
 
         Log.Level = LogLevel.Info;
         UpdatesOutsidePrediction = true;
+
+        Subs.CVar(_config, CCVars.ZoomLevelStep, value =>
+        {
+            ZoomMod = value;
+            RecalculateZoomLevels();
+        }, true);
+        Subs.CVar(_config, CCVars.ZoomLevels, value =>
+        {
+            ZoomLevels = value;
+            RecalculateZoomLevels();
+        }, true);
     }
 
     public override void Shutdown()
     {
         base.Shutdown();
         CommandBinds.Unregister<SharedContentEyeSystem>();
+    }
+
+    private void RecalculateZoomLevels()
+    {
+        MinZoom = DefaultZoom * (float) Math.Pow(ZoomMod, -ZoomLevels);
     }
 
     private void ResetZoom(ICommonSession? session)
