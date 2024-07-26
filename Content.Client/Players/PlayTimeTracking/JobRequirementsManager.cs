@@ -137,12 +137,8 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
 
     public Dictionary<string, TimeSpan> GetPlayTimes()
     {
-        var dict = new Dictionary<string, TimeSpan>();
-
+        var dict = FetchPlaytimeByRoles();
         dict.Add(PlayTimeTrackingShared.TrackerOverall, FetchOverallPlaytime());
-        foreach (var role in FetchPlaytimeByRoles())
-            dict.Add(role.Key, role.Value);
-
         return dict;
     }
 }

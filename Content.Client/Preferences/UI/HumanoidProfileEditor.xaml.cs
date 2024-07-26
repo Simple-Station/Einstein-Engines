@@ -1416,6 +1416,7 @@ namespace Content.Client.Preferences.UI
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                     _requirements.GetPlayTimes(),
+                    _requirements.IsWhitelisted(),
                     _entityManager,
                     _prototypeManager,
                     _configurationManager,
@@ -1430,6 +1431,7 @@ namespace Content.Client.Preferences.UI
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                     _requirements.GetPlayTimes(),
+                    _requirements.IsWhitelisted(),
                     _entityManager,
                     _prototypeManager,
                     _configurationManager,
@@ -1536,7 +1538,8 @@ namespace Content.Client.Preferences.UI
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                     traitsUnusable.Contains(trait) ? "" : "ButtonColorRed",
-                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem);
+                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
+                    _requirements);
 
                 // Look for an existing trait category
                 BoxContainer? match = null;
@@ -1568,7 +1571,8 @@ namespace Content.Client.Preferences.UI
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
-                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem);
+                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
+                    _requirements);
 
 
                 AddSelector(selector, trait.Points, trait.ID);
@@ -1673,6 +1677,7 @@ namespace Content.Client.Preferences.UI
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                     _requirements.GetPlayTimes(),
+                    _requirements.IsWhitelisted(),
                     _entityManager,
                     _prototypeManager,
                     _configurationManager,
@@ -1687,6 +1692,7 @@ namespace Content.Client.Preferences.UI
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                     _requirements.GetPlayTimes(),
+                    _requirements.IsWhitelisted(),
                     _entityManager,
                     _prototypeManager,
                     _configurationManager,
@@ -1796,7 +1802,8 @@ namespace Content.Client.Preferences.UI
                 var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                     loadoutsUnusable.Contains(loadout) ? "" : "ButtonColorRed",
-                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem);
+                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
+                    _requirements);
 
                 // Look for an existing loadout category
                 BoxContainer? match = null;
@@ -1825,7 +1832,8 @@ namespace Content.Client.Preferences.UI
             {
                 var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
-                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem);
+                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
+                    _requirements);
 
 
                 AddSelector(selector, loadout.Cost, loadout.ID);
