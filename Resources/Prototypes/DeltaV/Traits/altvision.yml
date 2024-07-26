@@ -5,10 +5,9 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Vulpkanin
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species: Harpy
+      species:
+        - Vulpkanin
+        - Harpy
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -23,10 +22,9 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Vulpkanin
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species: Harpy
+      species:
+        - Vulpkanin
+        - Harpy
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
