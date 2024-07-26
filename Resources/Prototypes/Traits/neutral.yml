@@ -34,7 +34,8 @@
   points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: Harpy
+      species:
+        - Harpy
   components:
     - type: NormalVision
 
@@ -44,6 +45,6 @@
   points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: Vulpkanin
+      species: [Vulpkanin]
   components:
     - type: NormalVision

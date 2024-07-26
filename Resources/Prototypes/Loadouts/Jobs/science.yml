@@ -21,7 +21,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Scientist
@@ -116,7 +117,7 @@
   items:
     - ClothingEyesEyepatchHudDiag
 
-## Robes
+# Robes
 - type: loadout
   id: LoadoutOuterRobeTechPriest
   category: Outer

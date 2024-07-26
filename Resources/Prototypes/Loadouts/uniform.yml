@@ -6,7 +6,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -25,7 +26,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -52,7 +54,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -79,7 +82,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -106,7 +110,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -133,7 +138,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -160,7 +166,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -187,7 +194,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -214,7 +222,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -241,7 +250,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -268,7 +278,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -295,7 +306,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -322,7 +334,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -349,7 +362,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -376,7 +390,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -403,7 +418,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -420,7 +436,7 @@
       jobs:
         - Passenger
 
-## Kendo
+# Kendo
 - type: loadout
   id: LoadoutUniformKendoHakama
   category: Uniform
@@ -437,7 +453,7 @@
   items:
     - ClothingUniformMartialGi
 
-## Kimono
+# Kimono
 - type: loadout
   id: LoadoutClothingKimonoBlue
   category: Uniform
@@ -478,7 +494,7 @@
   items:
     - ClothingKimonoGreen
 
-## Gakuran
+# Gakuran
 - type: loadout
   id: LoadoutUniformSchoolGakuranBlack
   category: Uniform
@@ -487,7 +503,7 @@
   items:
     - ClothingUniformSchoolGakuranBlack
 
-## MNK Uniforms
+# MNK Uniforms
 - type: loadout
   id: LoadoutClothingMNKOfficeSkirt
   category: Uniform
