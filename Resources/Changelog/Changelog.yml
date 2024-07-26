@@ -4638,3 +4638,9 @@ Entries:
         permanent.
   id: 6182
   time: '2024-07-24T23:27:34.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed some NEIL announcements not playing audio
+  id: 6183
+  time: '2024-07-26T19:29:37.0000000+00:00'
