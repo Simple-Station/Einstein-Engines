@@ -29,15 +29,15 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
     {
         var endTime = Math.Clamp(endTimeOffset, 0.1f, startTime - 1);
         var shiftLength = Math.Max(1, _cfg.GetCVar(CCVars.EventsRampingAverageEndTime) - component.ShiftLengthOffset);
-        return
-            2 * endTime
-                / (1 + MathF.Exp(_cfg.GetCVar(CCVars.EventsRampingAverageChaos)
-                                * component.ShiftChaosModifier
-                                / shiftLength
-                                * endTime
-                                * (float) _gameTicker.RoundDuration().TotalSeconds / 60
-                                ))
-                + (startTime - endTime);
+        return 2 * endTime
+            / (1
+            	+ MathF.Exp(_cfg.GetCVar(CCVars.EventsRampingAverageChaos)
+	            * component.ShiftChaosModifier
+	            / shiftLength
+	            * endTime
+	            * (float) _gameTicker.RoundDuration().TotalSeconds
+	            / 60))
+                	+ (startTime - endTime);
     }
 
     protected override void Started(EntityUid uid, RampingStationEventSchedulerComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -75,18 +75,16 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
     {
         // In case of server hosts being silly and setting maximum time to be lower than minimum time, sanity check the scheduler inputs and sort them by Min/Max
         var minimumTime = MathF.Min(_cfg.GetCVar(CCVars.GameEventsRampingMinimumTime)
-                                        - _cfg.GetCVar(CCVars.GameEventsRampingMinimumTimeOffset)
-                                        - component.MinimumEventTimeOffset,
-                                    _cfg.GetCVar(CCVars.GameEventsRampingMaximumTime)
-                                        - _cfg.GetCVar(CCVars.GameEventsRampingMaximumTimeOffset)
-                                        - component.MaximumEventTimeOffset);
+	        - _cfg.GetCVar(CCVars.GameEventsRampingMinimumTimeOffset)
+	        - component.MinimumEventTimeOffset, _cfg.GetCVar(CCVars.GameEventsRampingMaximumTime)
+	        - _cfg.GetCVar(CCVars.GameEventsRampingMaximumTimeOffset)
+	        - component.MaximumEventTimeOffset);
 
-        var maximumTime = MathF.Max(_cfg.GetCVar(CCVars.GameEventsRampingMinimumTime)
-                                        - _cfg.GetCVar(CCVars.GameEventsRampingMinimumTimeOffset)
-                                        - component.MinimumEventTimeOffset,
-                                    _cfg.GetCVar(CCVars.GameEventsRampingMaximumTime)
-                                        - _cfg.GetCVar(CCVars.GameEventsRampingMaximumTimeOffset)
-                                        - component.MaximumEventTimeOffset);
+		var maximumTime = MathF.Max(_cfg.GetCVar(CCVars.GameEventsRampingMinimumTime)
+	        - _cfg.GetCVar(CCVars.GameEventsRampingMinimumTimeOffset)
+	        - component.MinimumEventTimeOffset, _cfg.GetCVar(CCVars.GameEventsRampingMaximumTime)
+	        - _cfg.GetCVar(CCVars.GameEventsRampingMaximumTimeOffset)
+	        - component.MaximumEventTimeOffset);
 
         // Just in case someone messed up their math, set it to between 6 and 12 seconds. This absolutely isn't ideal
         component.TimeUntilNextEvent = _random.NextFloat(
