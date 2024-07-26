@@ -16,7 +16,7 @@
       boozeStrengthMultiplier: 2
 
 - type: trait
-  id: SocialAnxiety
+  id: Stutter
   category: Mental
   requirements:
     - !type:CharacterJobRequirement
@@ -36,8 +36,10 @@
   category: Mental
   points: 1
   requirements:
-    - !type:TraitGroupExclusionRequirement
-      prototypes: [ Foreigner ]
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
   components:
     - type: ForeignerTrait
       cantUnderstand: false # Allows to understand
@@ -48,8 +50,10 @@
   category: Mental
   points: 2
   requirements: # TODO: Add a requirement to know at least 1 non-gc language
-    - !type:TraitGroupExclusionRequirement
-      prototypes: [ ForeignerLight ]
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ForeignerLight
   components:
     - type: ForeignerTrait
       baseTranslator: TranslatorForeigner

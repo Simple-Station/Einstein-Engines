@@ -3,31 +3,33 @@ using System.Linq;
 using Content.Server.Announcements.Systems;
 using Content.Server.StationEvents;
 using Content.Shared.Announcements.Prototypes;
+using Robust.Client.ResourceManagement;
 using Robust.Shared.GameObjects;
+using Robust.Shared.IoC.Exceptions;
 using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
+using Serilog;
 
 namespace Content.IntegrationTests.Tests.Announcers;
 
 /// <summary>
-///     Checks if every station event wanting the announcerSystem to send messages has a localization string
-///     If an event doesn't have startAnnouncement or endAnnouncement set to true
-///      it will be expected for that system to handle the announcements if it wants them
+///     Checks if every station event using the announcerSystem has a valid audio file associated with it
 /// </summary>
 [TestFixture]
 [TestOf(typeof(AnnouncerPrototype))]
-public sealed class AnnouncerLocalizationTest
+public sealed class AnnouncerAudioTest
 {
-    /// <inheritdoc cref="AnnouncerLocalizationTest"/>
+    /// <inheritdoc cref="AnnouncerAudioTest" />
     [Test]
-    public async Task TestEventLocalization()
+    public async Task TestEventSounds()
     {
-        await using var pair = await PoolManager.GetServerClient();
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings { Connected = true });
         var server = pair.Server;
+        var client = pair.Client;
 
-        var locale = server.ResolveDependency<ILocalizationManager>();
         var entSysMan = server.ResolveDependency<IEntitySystemManager>();
         var proto = server.ResolveDependency<IPrototypeManager>();
+        var cache = client.ResolveDependency<IResourceCache>();
         var announcer = entSysMan.GetEntitySystem<AnnouncerSystem>();
         var events = entSysMan.GetEntitySystem<EventManagerSystem>();
 
@@ -43,32 +45,30 @@ public sealed class AnnouncerLocalizationTest
                     if (ev.Value.StartAnnouncement)
                     {
                         var announcementId = announcer.GetAnnouncementId(ev.Key.ID);
-                        var eventLocaleString = announcer.GetAnnouncementMessage(announcementId, announcerProto.ID)
-                            ?? announcer.GetEventLocaleString(announcementId);
+                        var path = announcer.GetAnnouncementPath(announcementId, announcerProto);
 
-                        if (locale.GetString(eventLocaleString) == eventLocaleString)
+                        if (!cache.ContentFileExists(path))
                         {
                             succeeded = false;
-                            why.Add($"\"{announcerProto.ID}\", \"{announcementId}\": \"{eventLocaleString}\"");
+                            why.Add($"\"{announcerProto.ID}\", \"{announcementId}\": \"{path}\"");
                         }
                     }
 
                     if (ev.Value.EndAnnouncement)
                     {
                         var announcementId = announcer.GetAnnouncementId(ev.Key.ID, true);
-                        var eventLocaleString = announcer.GetAnnouncementMessage(announcementId, announcerProto.ID)
-                            ?? announcer.GetEventLocaleString(announcementId);
+                        var path = announcer.GetAnnouncementPath(announcementId, announcerProto);
 
-                        if (locale.GetString(eventLocaleString) == eventLocaleString)
+                        if (!cache.ContentFileExists(path))
                         {
                             succeeded = false;
-                            why.Add($"\"{announcerProto.ID}\", \"{announcementId}\": \"{eventLocaleString}\"");
+                            why.Add($"\"{announcerProto.ID}\", \"{announcementId}\": \"{path}\"");
                         }
                     }
                 }
             }
 
-            Assert.That(succeeded, Is.True, $"The following announcements do not have a localization string:\n  {string.Join("\n  ", why)}");
+            Assert.That(succeeded, Is.True, $"The following announcements do not have a valid announcement audio:\n  {string.Join("\n  ", why)}");
         });
 
         await pair.CleanReturnAsync();

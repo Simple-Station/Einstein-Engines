@@ -9,6 +9,7 @@ using Content.Shared.Item;
 using Content.Shared.Tag;
 using Robust.Shared.GameStates;
 using System.Linq;
+using Robust.Shared.Containers;
 
 namespace Content.Shared.Clothing.EntitySystems;
 
@@ -19,6 +20,7 @@ public abstract class ClothingSystem : EntitySystem
     [Dependency] private readonly TagSystem _tagSystem = default!;
     [Dependency] private readonly InventorySystem _invSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+    [Dependency] private readonly SharedContainerSystem _containerSys = default!;
 
     [ValidatePrototypeId<TagPrototype>]
     private const string HairTag = "HidesHair";
@@ -36,6 +38,7 @@ public abstract class ClothingSystem : EntitySystem
         SubscribeLocalEvent<ClothingComponent, GotEquippedEvent>(OnGotEquipped);
         SubscribeLocalEvent<ClothingComponent, GotUnequippedEvent>(OnGotUnequipped);
         SubscribeLocalEvent<ClothingComponent, ItemMaskToggledEvent>(OnMaskToggled);
+        SubscribeLocalEvent<ClothingComponent, GettingPickedUpAttemptEvent>(OnPickedUp);
 
         SubscribeLocalEvent<ClothingComponent, ClothingEquipDoAfterEvent>(OnEquipDoAfter);
         SubscribeLocalEvent<ClothingComponent, ClothingUnequipDoAfterEvent>(OnUnequipDoAfter);
@@ -163,6 +166,18 @@ public abstract class ClothingSystem : EntitySystem
         //TODO: sprites for 'pulled down' state. defaults to invisible due to no sprite with this prefix
         SetEquippedPrefix(ent, args.IsToggled ? args.equippedPrefix : null, ent);
         ToggleVisualLayer(args.Wearer, HumanoidVisualLayers.Snout, NoseTag);
+    }
+
+    private void OnPickedUp(Entity<ClothingComponent> ent, ref GettingPickedUpAttemptEvent args)
+    {
+        // If this clothing is equipped by the performer of this action, and the clothing has an unequip delay, stop the attempt
+        if (ent.Comp.UnequipDelay <= TimeSpan.Zero
+            || !_invSystem.TryGetContainingSlot(ent.Owner, out var slot)
+            || !_containerSys.TryGetContainingContainer(ent, out var container)
+            || container.Owner != args.User)
+            return;
+
+        args.Cancel();
     }
 
     private void OnEquipDoAfter(Entity<ClothingComponent> ent, ref ClothingEquipDoAfterEvent args)
