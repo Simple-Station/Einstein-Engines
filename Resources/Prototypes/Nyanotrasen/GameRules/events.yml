@@ -5,9 +5,7 @@
   noSpawn: true
   components:
     - type: StationEvent
-      startAnnouncement: station-event-noospheric-storm-announcement
-      startAudio:
-        path: /Audio/Announcements/attention.ogg #Delta-V announcer REMOVED!!!!
+      startAnnouncement: true
       weight: 5
       earliestStart: 15
       reoccurrenceDelay: 5

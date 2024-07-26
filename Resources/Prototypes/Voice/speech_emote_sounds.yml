@@ -399,7 +399,7 @@
     Chirp:
       path: /Audio/Animals/nymph_chirp.ogg
       
-      - type: emoteSounds
+- type: emoteSounds
   id: Parrot
   sound:
     path: /Audio/Animals/parrot_raught.ogg
@@ -418,16 +418,6 @@
       path: /Audio/Effects/sparks4.ogg
       params:
         variation: 0.125
-    Ping:
-      path: /Audio/Effects/beep1.ogg
-      params:
-        variation: 0.125
-    Beep:
-      collection: IPCBeeps
-    Boop:
-      collection: IPCBoops
-    Whirr:
-      collection: IPCWhirrs
     Honk:
       collection: BikeHorn
       params:

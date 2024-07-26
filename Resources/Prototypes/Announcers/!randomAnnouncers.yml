@@ -1,8 +1,9 @@
 - type: weightedRandom
   id: RandomAnnouncers
   weights:
-    Intern: 1
+    Intern: 0.35
     MedBot: 0
     Michael: 0
     NEIL: 0
     VoxFem: 0
+    Syndicate: 0.65
