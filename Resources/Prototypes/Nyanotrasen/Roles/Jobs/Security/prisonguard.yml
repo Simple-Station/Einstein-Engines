@@ -8,7 +8,7 @@
       min: 18000
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 14400
+      min: 14400
   startingGear: PrisonGuardGear
   alwaysUseSpawner: true
   canBeAntag: false

@@ -9,7 +9,7 @@
       min: 216000 #60 hrs
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 21600 #6 hrs
+      min: 21600 #6 hrs
   canBeAntag: false
   icon: JobIconMedicalBorg
   supervisors: job-supervisors-cmo
