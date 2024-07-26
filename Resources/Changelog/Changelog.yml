@@ -4604,3 +4604,51 @@ Entries:
         Use a shovel to expose pipes hidden by grass.
   id: 6178
   time: '2024-07-22T19:34:07.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Job playtime requirements for loadouts and traits show correctly
+  id: 6179
+  time: '2024-07-23T14:18:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        False alarm event will no longer report events that should not be
+        reported.
+  id: 6180
+  time: '2024-07-24T03:18:56.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed the character editor dummy always acting like a human
+  id: 6181
+  time: '2024-07-24T17:13:05.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Most station events were rebalanced to better suit low-pop rounds.
+    - type: Add
+      message: >-
+        Weakened versions of vent critter events can now occur on low-pop
+        rounds.
+    - type: Tweak
+      message: >-
+        After a lot of complaints, the mass mindswap event is no longer
+        permanent.
+  id: 6182
+  time: '2024-07-24T23:27:34.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed some NEIL announcements not playing audio
+  id: 6183
+  time: '2024-07-26T19:29:37.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where sound was not traveling over a Shuttle-Docking
+        connection. Attached grids now permit sound to travel through.
+  id: 6184
+  time: '2024-07-26T20:09:52.0000000+00:00'
