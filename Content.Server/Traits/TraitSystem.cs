@@ -40,7 +40,8 @@ public sealed class TraitSystem : EntitySystem
                 return;
             }
 
-            if (!_characterRequirements.CheckRequirementsValid(traitPrototype, traitPrototype.Requirements,
+            if (!_characterRequirements.CheckRequirementsValid(
+                traitPrototype.Requirements,
                 _prototype.Index<JobPrototype>(args.JobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID),
                 args.Profile, _playTimeTracking.GetTrackerTimes(args.Player),
                 EntityManager, _prototype, _configuration,

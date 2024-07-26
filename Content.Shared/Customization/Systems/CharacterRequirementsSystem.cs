@@ -9,7 +9,7 @@ namespace Content.Shared.Customization.Systems;
 
 public sealed class CharacterRequirementsSystem : EntitySystem
 {
-    public bool CheckRequirementsValid(IPrototype prototype, List<CharacterRequirement> requirements, JobPrototype job,
+    public bool CheckRequirementsValid(List<CharacterRequirement> requirements, JobPrototype job,
         HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out List<FormattedMessage> reasons)
@@ -21,7 +21,7 @@ public sealed class CharacterRequirementsSystem : EntitySystem
         {
             // Set valid to false if the requirement is invalid and not inverted
             // If it's inverted set valid to false when it's valid
-            if (!requirement.IsValid(prototype, job, profile, playTimes,
+            if (!requirement.IsValid(job, profile, playTimes,
                 entityManager, prototypeManager, configManager,
                 out var reason))
             {

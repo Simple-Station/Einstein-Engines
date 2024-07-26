@@ -26,8 +26,7 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
     [DataField(required: true)]
     public int Max;
 
-    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -47,8 +46,7 @@ public sealed partial class CharacterBackpackTypeRequirement : CharacterRequirem
     [DataField(required: true)]
     public BackpackPreference Preference;
 
-    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -69,8 +67,7 @@ public sealed partial class CharacterClothingPreferenceRequirement : CharacterRe
     [DataField(required: true)]
     public ClothingPreference Preference;
 
-    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -91,8 +88,7 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<SpeciesPrototype>> Species;
 
-    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -116,8 +112,7 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<TraitPrototype>> Traits;
 
-    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -141,8 +136,7 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<LoadoutPrototype>> Loadouts;
 
-    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {

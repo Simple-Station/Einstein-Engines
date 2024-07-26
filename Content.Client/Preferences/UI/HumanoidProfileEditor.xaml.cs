@@ -1412,7 +1412,6 @@ namespace Content.Client.Preferences.UI
             var traits = enumeratedTraits.Where(trait =>
                 showUnusable || // Ignore everything if this is true
                 _characterRequirementsSystem.CheckRequirementsValid(
-                    trait,
                     trait.Requirements,
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1427,7 +1426,6 @@ namespace Content.Client.Preferences.UI
             // Traits to highlight red when showUnusable is true
             var traitsUnusable = enumeratedTraits.Where(trait =>
                 _characterRequirementsSystem.CheckRequirementsValid(
-                    trait,
                     trait.Requirements,
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1671,7 +1669,6 @@ namespace Content.Client.Preferences.UI
             var loadouts = enumeratedLoadouts.Where(loadout =>
                 showUnusable || // Ignore everything if this is true
                 _characterRequirementsSystem.CheckRequirementsValid(
-                    loadout,
                     loadout.Requirements,
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1686,7 +1683,6 @@ namespace Content.Client.Preferences.UI
             // Loadouts to highlight red when showUnusable is true
             var loadoutsUnusable = enumeratedLoadouts.Where(loadout =>
                 _characterRequirementsSystem.CheckRequirementsValid(
-                    loadout,
                     loadout.Requirements,
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),

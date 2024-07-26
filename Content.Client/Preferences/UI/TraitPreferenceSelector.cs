@@ -71,8 +71,8 @@ public sealed class TraitPreferenceSelector : Control
 
 
         // Get requirement reasons
-        characterRequirementsSystem.CheckRequirementsValid(trait, trait.Requirements, highJob, profile,
-            new Dictionary<string, TimeSpan>(),
+        characterRequirementsSystem.CheckRequirementsValid(
+            trait.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
             entityManager, prototypeManager, configManager,
             out var reasons);
 

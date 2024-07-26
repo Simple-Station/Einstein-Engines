@@ -27,10 +27,10 @@ public abstract partial class CharacterRequirement
     /// </summary>
     /// <param name="reason">Description for the requirement, shown when not null</param>
     public abstract bool IsValid(
-        IPrototype prototype,
         JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,

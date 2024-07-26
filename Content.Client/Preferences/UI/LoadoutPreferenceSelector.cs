@@ -94,8 +94,8 @@ public sealed class LoadoutPreferenceSelector : Control
 
 
         // Get requirement reasons
-        characterRequirementsSystem.CheckRequirementsValid(loadout, loadout.Requirements, highJob, profile,
-            new Dictionary<string, TimeSpan>(),
+        characterRequirementsSystem.CheckRequirementsValid(
+            loadout.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
             entityManager, prototypeManager, configManager,
             out var reasons);
 

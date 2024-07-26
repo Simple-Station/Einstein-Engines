@@ -68,8 +68,8 @@ public sealed class LoadoutSystem : EntitySystem
                 continue;
 
 
-            if (!_characterRequirements.CheckRequirementsValid(loadoutProto, loadoutProto.Requirements, job, profile,
-                playTimes ?? new Dictionary<string, TimeSpan>(),
+            if (!_characterRequirements.CheckRequirementsValid(
+                loadoutProto.Requirements, job, profile, playTimes ?? new Dictionary<string, TimeSpan>(),
                 EntityManager, _prototype, _configuration,
                 out _))
                 continue;
