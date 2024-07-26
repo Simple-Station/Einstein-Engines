@@ -33,11 +33,15 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Network;
+using Robust.Shared.Physics;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+using Content.Server.Shuttles.Components;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Dynamics.Joints;
 
 namespace Content.Server.Chat.Systems;
 
@@ -510,7 +514,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
 
-            if (Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid)
+            if (Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
+                && !CheckAttachedGrids(source, session.AttachedEntity.Value))
                 continue;
 
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
@@ -743,7 +748,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         var language = languageOverride ?? _language.GetLanguage(source);
         foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? 0.3f : VoiceRange))
         {
-            if (session.AttachedEntity != null && Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid)
+            if (session.AttachedEntity != null
+                && Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
+                && !CheckAttachedGrids(source, session.AttachedEntity.Value))
                 continue;
 
             var entRange = MessageRangeCheck(session, data, range);
@@ -971,6 +978,19 @@ public sealed partial class ChatSystem : SharedChatSystem
             sb.Append(_random.Pick(charOptions));
         }
         return sb.ToString();
+    }
+
+    private bool CheckAttachedGrids(EntityUid source, EntityUid receiver)
+    {
+        if (!TryComp<JointComponent>(Transform(source).GridUid, out var sourceJoints)
+            || !TryComp<JointComponent>(Transform(receiver).GridUid, out var receiverJoints))
+            return false;
+
+        foreach (var (id, _) in sourceJoints.GetJoints)
+            if (receiverJoints.GetJoints.ContainsKey(id))
+                return true;
+
+        return false;
     }
 
     #endregion
