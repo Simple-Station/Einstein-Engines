@@ -1,3 +1,4 @@
+using System.Text;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Shared.Configuration;
@@ -39,5 +40,30 @@ public sealed class CharacterRequirementsSystem : EntitySystem
         }
 
         return valid;
+    }
+
+
+    /// <summary>
+    ///     Gets the reason text from <see cref="CheckRequirementsValid"/> as a <see cref="FormattedMessage"/>.
+    /// </summary>
+    public FormattedMessage GetRequirementsText(List<FormattedMessage> reasons)
+    {
+        var text = new StringBuilder();
+        foreach (var reason in reasons)
+            text.Append($"\n{reason.ToMarkup()}");
+
+        return FormattedMessage.FromMarkup(text.ToString().Trim());
+    }
+
+    /// <summary>
+    ///     Gets the reason text from <see cref="CheckRequirementsValid"/> as a markup string.
+    /// </summary>
+    public string GetRequirementsMarkup(List<FormattedMessage> reasons)
+    {
+        var text = new StringBuilder();
+        foreach (var reason in reasons)
+            text.Append($"\n{reason.ToMarkup()}");
+
+        return text.ToString().Trim();
     }
 }
