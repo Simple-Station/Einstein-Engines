@@ -12,6 +12,7 @@ using Content.Shared.Damage;
 using Robust.Shared.Prototypes;
 using Content.Server.Emoting.Systems;
 using Content.Server.Speech.EntitySystems;
+using Content.Shared.Chat;
 using Content.Shared.Cluwne;
 using Content.Shared.Interaction.Components;
 using Robust.Shared.Audio;
