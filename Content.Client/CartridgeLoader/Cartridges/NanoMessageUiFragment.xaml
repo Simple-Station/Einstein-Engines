@@ -1,0 +1,46 @@
+<cartridges:NanoMessageUiFragment xmlns:cartridges="clr-namespace:Content.Client.CartridgeLoader.Cartridges"
+                                   xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                                   xmlns:ui="clr-namespace:Content.Client.CrewManifest.UI"
+                                   xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                                   xmlns="https://spacestation14.io" Margin="1 0 2 0">
+    <PanelContainer StyleClasses="BackgroundDark"></PanelContainer>
+    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+        <!-- Left panel - recipient list -->
+        <PanelContainer VerticalExpand="True">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BorderColor="#000000" BorderThickness="2 2 2 2"/>
+            </PanelContainer.PanelOverride>
+
+            <BoxContainer Orientation="Vertical" VerticalExpand="True">
+                <Label Align="Center" Text="{Loc 'nano-message-label-recipients'}"/>
+
+                <BoxContainer Name="RecipientsContainer" Orientation="Vertical" VerticalExpand="True"/>
+
+                <Button Name="AddRecipientButton" HorizontalExpand="True" Text="{Loc 'nano-message-add-recipient'}"/>
+            </BoxContainer>
+        </PanelContainer>
+
+        <!-- Right panel - chat -->
+        <PanelContainer VerticalExpand="True" HorizontalExpand="True">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BorderColor="#000000" BorderThickness="2 2 2 2"/>
+            </PanelContainer.PanelOverride>
+
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                <RichTextLabel Name="ChatHeaderLabel"/>
+
+                <controls:HLine HorizontalExpand="True"/>
+
+                <ScrollContainer HScrollEnabled="False" VScrollEnabled="True" HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Name="ChatContainer" Orientation="Vertical" HorizontalExpand="True"/>
+                </ScrollContainer>
+
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="true">
+                    <TextEdit Name="ChatFieldEdit" HorizontalExpand="True"/>
+
+                    <Button Name="ChatSendButton" Text="{Loc 'nano-message-send'}"/>
+                </BoxContainer>
+            </BoxContainer>
+        </PanelContainer>
+    </BoxContainer>
+</cartridges:NanoMessageUiFragment>

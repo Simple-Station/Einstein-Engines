@@ -63,6 +63,8 @@
       key_slots: !type:Container
       machine_board: !type:Container
       machine_parts: !type:Container
+  - type: NanoMessageServer
+    priority: 5
 
 - type: entity
   parent: TelecomServer
@@ -80,3 +82,5 @@
       - EncryptionKeySecurity
       - EncryptionKeyService
       - EncryptionKeyCommand
+  - type: NanoMessageServer
+    priority: 100 # In case someone decides to put multiple of those

@@ -19,3 +19,9 @@ log-probe-scan = Downloaded logs from {$device}!
 log-probe-label-time = Time
 log-probe-label-accessor = Accessed by
 log-probe-label-number = #
+
+nano-message-program-name = NanoMessage
+nano-message-label-conversation = Chat with [color=blue]{$otherUser}[/color]
+nano-message-label-recipients = Recipients
+nano-message-add-recipient = Add recipient
+nano-message-send = Send

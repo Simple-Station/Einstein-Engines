@@ -1,0 +1,18 @@
+﻿<BoxContainer xmlns="https://spacestation14.io"
+              xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+              Margin="4"
+              HorizontalExpand="True">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+        <!-- Top part - author name, id, and timestamp -->
+        <BoxContainer>
+            <RichTextLabel Name="AuthorInfoLabel"/>
+
+            <Label Name="TimestampLabel" FontColorOverride="#BBBBCC"/>
+
+            <Label Name="LanguageLabel"/>
+        </BoxContainer>
+
+        <!-- Bottom part - message content -->
+        <RichTextLabel Name="ContentLabel"/>
+    </BoxContainer>
+</BoxContainer>

@@ -93,3 +93,24 @@
     - type: GuideHelp
       guides:
         - Forensics
+
+- type: entity
+  parent: BaseItem
+  id: NanoMessageCartridge
+  name: NanoMessage catridge
+  description: A program for exchanging instant messages with your crewmembers
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Devices/cartridge.rsi # TODO MAKE A CUSTOM SPRITE
+    state: cart-psi
+  - type: Icon
+    sprite: Nyanotrasen/Objects/Devices/cartridge.rsi # TODO MAKE A CUSTOM SPRITE
+    state: cart-psi
+  - type: UIFragment
+    ui: !type:NanoMessageUi
+  - type: Cartridge
+    programName: nano-message-program-name
+    icon:
+      sprite: Nyanotrasen/Icons/psi.rsi # TODO CUSTOM ICON
+      state: psi
+  - type: NanoMessageCartridge
