@@ -57,7 +57,7 @@ We provide some scripts shown below to make the job easier.
 > 1. Clone this repository
 > 2. Run `git submodule update --init --recursive` in a terminal to download the engine
 > 3. Run `Scripts/sh/buildAllDebug.sh` after making any changes to the source
-> 4. Run `Scripts/sh/runQcduickAll.sh` to launch the client and the server
+> 4. Run `Scripts/sh/runQuickAll.sh` to launch the client and the server
 > 5. Connect to localhost in the client and play
 
 ### MacOS
