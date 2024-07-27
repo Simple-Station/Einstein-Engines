@@ -1038,6 +1038,7 @@
     - FoodChiliPepper
   mutationPrototypes:
     - chilly
+    - GhostPepper #Delta-V
   harvestRepeat: Repeat
   lifespan: 25
   maturation: 6
