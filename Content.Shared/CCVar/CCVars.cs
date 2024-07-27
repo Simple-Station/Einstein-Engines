@@ -119,7 +119,7 @@ namespace Content.Shared.CCVar
         ///     Max chaos chosen for a round will deviate from this
         /// </summary>
         public static readonly CVarDef<float>
-            EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 6f, CVar.ARCHIVE | CVar.SERVERONLY);
+            EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 0.8f, CVar.ARCHIVE | CVar.SERVERONLY);
 
         /*
          * Game
@@ -186,16 +186,29 @@ namespace Content.Shared.CCVar
             GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 1500, CVar.SERVERONLY);
 
         /// <summary>
-        ///     Minimum time between Ramping station events in seconds
+        ///     Minimum time between Ramping station events in minutes
         /// </summary>
-        public static readonly CVarDef<int> // 4 Minutes
-            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 240, CVar.SERVERONLY);
+        public static readonly CVarDef<float> // 8 Minutes
+            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 8f, CVar.SERVERONLY);
 
         /// <summary>
-        ///     Maximum time between Ramping station events in seconds
+        ///     After the shift's desired "Endpoint" is reached, the minimum time between events is RampingMinimumTime - Offset.
         /// </summary>
-        public static readonly CVarDef<int> // 12 Minutes
-            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 720, CVar.SERVERONLY);
+
+        public static readonly CVarDef<float>
+            GameEventsRampingMinimumTimeOffset = CVarDef.Create("game.events_ramping_minimum_time_offset", 6f, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Maximum time between Ramping station events in minutes
+        /// </summary>
+        public static readonly CVarDef<float> // 16 Minutes
+            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 16f, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     After the shift's desired "Endpoint" is reached, the maximum time between events is RampingMaximumTime - Offset.
+        /// </summary>
+        public static readonly CVarDef<float>
+            GameEventsRampingMaximumTimeOffset = CVarDef.Create("game.events_ramping_maximum_time_offset", 10f, CVar.SERVERONLY);
 
         /// <summary>
         ///

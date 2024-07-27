@@ -4644,3 +4644,17 @@ Entries:
       message: Fixed some NEIL announcements not playing audio
   id: 6183
   time: '2024-07-26T19:29:37.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where sound was not traveling over a Shuttle-Docking
+        connection. Attached grids now permit sound to travel through.
+  id: 6184
+  time: '2024-07-26T20:09:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Long Survival has been added as a new Game mode.
+  id: 6185
+  time: '2024-07-27T06:00:24.0000000+00:00'
