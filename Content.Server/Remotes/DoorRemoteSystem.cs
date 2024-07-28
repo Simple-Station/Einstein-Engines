@@ -64,8 +64,8 @@ namespace Content.Shared.Remotes
             {
                 case OperatingMode.OpenClose:
                     // Note we provide args.User here to TryToggleDoor as the "user"
-                    // This means that the door will look at all access items carryed by the player for access, including
-                    // this remote, but also including anything else they are carrying such as a PDA or ID card.
+                    // This means that the door will look at all access items carried by the player for access, including
+                    //   this remote, but also including anything else they are carrying such as a PDA or ID card.
                     if (_doorSystem.TryToggleDoor(args.Target.Value, doorComp, args.User))
                         _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)}: {doorComp.State}");
                     break;
