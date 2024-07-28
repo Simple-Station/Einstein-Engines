@@ -57,7 +57,9 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             return;
 
         _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
-        _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
+
+        if (damageSpec * component.HeavyDamageBaseModifier != damageSpec)
+            _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
     }
 
     protected override bool ArcRaySuccessful(EntityUid targetUid, Vector2 position, Angle angle, Angle arcWidth, float range, MapId mapId,
