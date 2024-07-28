@@ -799,20 +799,20 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 meleeWeapon.Damage = itemToggleMelee.ActivatedDamage;
             }
 
-            meleeWeapon.HitSound = itemToggleMelee.ActivatedSoundOnHit;
+            meleeWeapon.SoundHit = itemToggleMelee.ActivatedSoundOnHit;
 
             if (itemToggleMelee.ActivatedSoundOnHitNoDamage != null)
             {
                 //Setting the deactivated sound on no damage hit to the weapon's regular value before changing it.
-                itemToggleMelee.DeactivatedSoundOnHitNoDamage ??= meleeWeapon.NoDamageSound;
-                meleeWeapon.NoDamageSound = itemToggleMelee.ActivatedSoundOnHitNoDamage;
+                itemToggleMelee.DeactivatedSoundOnHitNoDamage ??= meleeWeapon.SoundNoDamage;
+                meleeWeapon.SoundNoDamage = itemToggleMelee.ActivatedSoundOnHitNoDamage;
             }
 
             if (itemToggleMelee.ActivatedSoundOnSwing != null)
             {
                 //Setting the deactivated sound on no damage hit to the weapon's regular value before changing it.
-                itemToggleMelee.DeactivatedSoundOnSwing ??= meleeWeapon.SwingSound;
-                meleeWeapon.SwingSound = itemToggleMelee.ActivatedSoundOnSwing;
+                itemToggleMelee.DeactivatedSoundOnSwing ??= meleeWeapon.SoundSwing;
+                meleeWeapon.SoundSwing = itemToggleMelee.ActivatedSoundOnSwing;
             }
 
             if (itemToggleMelee.DeactivatedSecret)
@@ -823,13 +823,13 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             if (itemToggleMelee.DeactivatedDamage != null)
                 meleeWeapon.Damage = itemToggleMelee.DeactivatedDamage;
 
-            meleeWeapon.HitSound = itemToggleMelee.DeactivatedSoundOnHit;
+            meleeWeapon.SoundHit = itemToggleMelee.DeactivatedSoundOnHit;
 
             if (itemToggleMelee.DeactivatedSoundOnHitNoDamage != null)
-                meleeWeapon.NoDamageSound = itemToggleMelee.DeactivatedSoundOnHitNoDamage;
+                meleeWeapon.SoundNoDamage = itemToggleMelee.DeactivatedSoundOnHitNoDamage;
 
             if (itemToggleMelee.DeactivatedSoundOnSwing != null)
-                meleeWeapon.SwingSound = itemToggleMelee.DeactivatedSoundOnSwing;
+                meleeWeapon.SoundSwing = itemToggleMelee.DeactivatedSoundOnSwing;
 
             if (itemToggleMelee.DeactivatedSecret)
                 meleeWeapon.Hidden = true;

@@ -251,7 +251,7 @@ public sealed class ExecutionSystem : EntitySystem
             return;
 
         _damageableSystem.TryChangeDamage(victim, melee.Damage * DamageModifier, true);
-        _audioSystem.PlayEntity(melee.HitSound, Filter.Pvs(weapon), weapon, true, AudioParams.Default);
+        _audioSystem.PlayEntity(melee.SoundHit, Filter.Pvs(weapon), weapon, true, AudioParams.Default);
 
         if (attacker == victim)
         {

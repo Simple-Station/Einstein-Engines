@@ -20,7 +20,7 @@ public sealed class MeleeSoundSystem : EntitySystem
     /// </summary>
     public void PlaySwingSound(EntityUid userUid, EntityUid weaponUid, MeleeWeaponComponent weaponComponent)
     {
-        _audio.PlayPredicted(weaponComponent.SwingSound, weaponUid, userUid);
+        _audio.PlayPredicted(weaponComponent.SoundSwing, weaponUid, userUid);
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ public sealed class MeleeSoundSystem : EntitySystem
     /// <param name="hitSoundOverride"> A sound can be supplied by the <see cref="MeleeHitEvent"/> itself to override everything else </param>
     public void PlayHitSound(EntityUid targetUid, EntityUid? userUid, string? damageType, SoundSpecifier? hitSoundOverride, MeleeWeaponComponent weaponComponent)
     {
-        var hitSound      = weaponComponent.HitSound;
-        var noDamageSound = weaponComponent.NoDamageSound;
+        var hitSound      = weaponComponent.SoundHit;
+        var noDamageSound = weaponComponent.SoundNoDamage;
 
         var playedSound = false;
 
