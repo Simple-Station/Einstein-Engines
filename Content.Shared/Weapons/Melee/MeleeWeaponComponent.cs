@@ -55,6 +55,11 @@ public sealed partial class MeleeWeaponComponent : Component
     public float AttackRate = 1f;
 
     /// <summary>
+    ///     When power attacking, the swing speed (in attacks per second) is multiplied by this amount
+    /// </summary>
+    [DataField]
+    public float HeavyRateModifier = 1f;
+    /// <summary>
     /// Are we currently holding down the mouse for an attack.
     /// Used so we can't just hold the mouse button and attack constantly.
     /// </summary>
@@ -76,7 +81,7 @@ public sealed partial class MeleeWeaponComponent : Component
 
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public FixedPoint2 BluntStaminaDamageFactor = FixedPoint2.New(0.5f);
+    public FixedPoint2 BluntStaminaDamageFactor = FixedPoint2.New(1f);
 
     /// <summary>
     /// Multiplies damage by this amount for single-target attacks.
@@ -90,6 +95,15 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public float Range = 1.5f;
+
+    /// <summary>
+    ///     Attack range for heavy swings
+    /// </summary>
+    [DataField]
+    public float HeavyRangeModifier = 1f;
+
+    [DataField]
+    public float HeavyDamageBaseModifier = 1f;
 
     /// <summary>
     /// Total width of the angle for wide attacks.
@@ -112,6 +126,9 @@ public sealed partial class MeleeWeaponComponent : Component
 
     [ViewVariables(VVAccess.ReadWrite), DataField]
     public bool SwingLeft;
+
+    [DataField]
+    public float HeavyStaminaCost = 20f;
 
 
     // Sounds

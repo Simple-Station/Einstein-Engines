@@ -245,7 +245,8 @@ public sealed partial class StaminaSystem : EntitySystem
     public void TakeStaminaDamage(EntityUid uid, float value, StaminaComponent? component = null,
         EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null)
     {
-        if (!Resolve(uid, ref component, false))
+        if (!Resolve(uid, ref component, false)
+            || value == 0)
             return;
 
         var ev = new BeforeStaminaDamageEvent(value);
