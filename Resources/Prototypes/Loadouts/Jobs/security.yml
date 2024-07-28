@@ -1,4 +1,4 @@
-## Uniforms
+# Uniforms
 - type: loadout
   id: LoadoutSecurityUniformJumpsuitBlue
   category: Jobs
@@ -7,7 +7,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
@@ -24,7 +25,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
@@ -93,7 +95,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
@@ -120,7 +123,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Warden
@@ -135,7 +139,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Warden
@@ -198,7 +203,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Detective
@@ -216,7 +222,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Detective
@@ -225,7 +232,7 @@
         - HeadOfSecurity
   items:
     - ClothingUniformJumpsuitSecSummer
-## Mask
+# Mask
 - type: loadout
   id: LoadoutSecurityMaskGasSwat
   category: Jobs
@@ -239,7 +246,7 @@
   items:
     - ClothingMaskGasSwat
 
-## Shoes
+# Shoes
 - type: loadout
   id: LoadoutSecurityShoesJackboots
   category: Jobs
@@ -247,7 +254,8 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Harpy
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Detective
@@ -258,7 +266,7 @@
   items:
     - ClothingShoesBootsJack
 
-## Eyes
+# Eyes
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
   category: Jobs
@@ -307,7 +315,7 @@
   items:
     - ClothingEyesPrescriptionHudSecurity
 
-## Head
+# Head
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
   category: Jobs
@@ -337,7 +345,7 @@
   items:
     - ClothingHeadHelmetInsulated
 
-## Belt
+# Belt
 - type: loadout
   id: LoadoutSecurityBeltWebbing
   category: Jobs
@@ -354,22 +362,24 @@
   items:
     - ClothingBeltSecurityWebbingFilled
 
-## Species
-#- type: loadout ##Uncomment this and reassess points when we can make it replace the secoff duty pistol
-#  id: LoadoutSecurityEquipmentTruncheon
-#  category: Jobs
-#  cost: 8 ## TODO: Make this replace the secoff handgun, and thus also make it cheaper
-#  requirements:
-#    - !type:CharacterJobRequirement
-#      jobs:
-#        - SecurityOfficer
-#        - Warden
-#        - HeadOfSecurity
-#        - Brigmedic
-#    - !type:CharacterPlaytimeRequirement
-#      tracker: JobSecurityOfficer
-#      min: 36000 # 10 hours
-#    - !type:CharacterSpeciesRequirement
-#      species: Oni
-#  items:
-#    - Truncheon
+# TODO: Make this replace the secoff handgun and make it cheaper
+# # Species
+# - type: loadout
+#   id: LoadoutSecurityEquipmentTruncheon
+#   category: Jobs
+#   cost: 8
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       jobs:
+#         - SecurityOfficer
+#         - Warden
+#         - HeadOfSecurity
+#         - Brigmedic
+#     - !type:CharacterPlaytimeRequirement
+#       tracker: JobSecurityOfficer
+#       min: 36000 # 10 hours
+#     - !type:CharacterSpeciesRequirement
+#       species:
+#         - Oni
+#   items:
+#     - Truncheon

@@ -1480,7 +1480,7 @@
   - 1.0
   - 1.0
   baseTurf: FloorDirt
-  isSubfloor: true
+  isSubfloor: false
   footstepSounds:
     collection: FootstepTile
   heatCapacity: 10000
@@ -1491,7 +1491,7 @@
   name: tiles-planet-grass-floor
   sprite: /Textures/Tiles/grass.png
   baseTurf: FloorDirt
-  isSubfloor: true
+  isSubfloor: false
   canShovel: true #DV
   footstepSounds:
     collection: FootstepGrass
@@ -1504,7 +1504,7 @@
   name: tiles-jungle-grass-floor
   sprite: /Textures/Tiles/grassjungle.png
   baseTurf: FloorDirt
-  isSubfloor: true
+  isSubfloor: false
   canShovel: true # Delta V
   footstepSounds:
     collection: FootstepGrass
@@ -1523,7 +1523,7 @@
   - 1.0
   - 1.0
   baseTurf: FloorDirt
-  isSubfloor: true
+  isSubfloor: false
   canShovel: true # Delta V
   footstepSounds:
     collection: FootstepGrass
@@ -1542,7 +1542,7 @@
   - 1.0
   - 1.0
   baseTurf: FloorDirt
-  isSubfloor: true
+  isSubfloor: false
   canShovel: true # Delta V
   footstepSounds:
     collection: FootstepGrass

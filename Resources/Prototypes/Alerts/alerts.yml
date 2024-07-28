@@ -26,6 +26,14 @@
     - alertType: Pacified
     - alertType: Offer
 
+- type: entity
+  id: AlertSpriteView
+  categories: [ hideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.AlertVisualLayers.Base" ]
+
 - type: alert
   id: LowOxygen
   category: Breathing

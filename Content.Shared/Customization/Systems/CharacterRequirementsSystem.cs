@@ -34,7 +34,7 @@ public sealed class CharacterRequirementsSystem : EntitySystem
                     valid = !requirement.Inverted;
             }
 
-            if (reason != null) // To appease the compiler
+            if (reason != null)
                 reasons.Add(reason);
         }
 

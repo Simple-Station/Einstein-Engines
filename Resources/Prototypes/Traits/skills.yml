@@ -15,7 +15,7 @@
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 0.5
-  
+
 - type: trait
   id: Thieving
   category: Physical
@@ -29,4 +29,5 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Felinid
+      species:
+        - Felinid
