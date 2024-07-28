@@ -51,7 +51,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] protected readonly IConfigurationManager _config = default!;
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
