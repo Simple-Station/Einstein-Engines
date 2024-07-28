@@ -3,6 +3,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
+using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
 using Content.Shared.Contests;
 using Content.Shared.Damage;
@@ -22,6 +23,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -49,13 +51,9 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
-
-    /// <summary>
-    /// Maximum amount of targets allowed for a wide-attack.
-    /// </summary>
-    public const int MaxTargets = 5;
 
     /// <summary>
     /// If an attack is released within this buffer it's assumed to be full damage.
@@ -577,11 +575,9 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             return true;
         }
 
-        // Naughty input
-        if (entities.Count > MaxTargets)
-        {
-            entities.RemoveRange(MaxTargets, entities.Count - MaxTargets);
-        }
+        var maxTargets = _config.GetCVar(CCVars.MaxMeleeTargets);
+        if (entities.Count > maxTargets)
+            entities.RemoveRange(maxTargets, entities.Count - maxTargets);
 
         // Validate client
         for (var i = entities.Count - 1; i >= 0; i--)

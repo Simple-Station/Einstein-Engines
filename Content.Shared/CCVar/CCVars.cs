@@ -2347,5 +2347,15 @@ namespace Content.Shared.CCVar
             CVarDef.Create("contests.max_percentage", 0.25f, CVar.REPLICATED | CVar.SERVER);
 
         #endregion
+
+        #region Melee System
+
+        /// <summary>
+        ///     The maximum number of entities that can be targeted by a power attack(right click) in melee.
+        /// </summary>
+        public static readonly CVarDef<int> MaxMeleeTargets =
+            CVarDef.Create("melee.max_targets", 5, CVar.REPLICATED);
+
+        #endregion
     }
 }
