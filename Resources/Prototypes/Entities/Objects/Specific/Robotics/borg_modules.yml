@@ -214,11 +214,13 @@
   id: BorgModuleJetpack
   parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
   name: jetpack cyborg module
+  description: A piece of tech that gives cyborgs new abilities. Needs to be loaded by a cyborg before you can refill the jetpack.
   components:
   - type: Sprite
     layers:
     - state: cargo
     - state: icon-jetpack
+  - type: BorgJetpack
   - type: ItemBorgModule
     items:
     - JetpackMicroFilled
