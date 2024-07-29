@@ -4672,3 +4672,9 @@ Entries:
         don't have full host access.
   id: 6187
   time: '2024-07-29T05:54:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Radiation damage no longer interrupts DoAfters.
+  id: 6188
+  time: '2024-07-29T06:00:26.0000000+00:00'
