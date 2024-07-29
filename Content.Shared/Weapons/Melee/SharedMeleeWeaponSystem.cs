@@ -3,7 +3,6 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
-using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
 using Content.Shared.Contests;
 using Content.Shared.Damage;
@@ -23,7 +22,6 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
-using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -51,7 +49,6 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
-    [Dependency] protected readonly IConfigurationManager _config = default!;
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
@@ -575,7 +572,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             return true;
         }
 
-        var maxTargets = _config.GetCVar(CCVars.MaxMeleeTargets);
+        var maxTargets = component.MaxTargets;
         if (entities.Count > maxTargets)
             entities.RemoveRange(maxTargets, entities.Count - maxTargets);
 

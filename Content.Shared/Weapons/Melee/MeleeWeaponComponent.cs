@@ -130,6 +130,9 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public float HeavyStaminaCost = 20f;
 
+    [DataField, AutoNetworkedField]
+    public int MaxTargets = 5;
+
 
     // Sounds
 
