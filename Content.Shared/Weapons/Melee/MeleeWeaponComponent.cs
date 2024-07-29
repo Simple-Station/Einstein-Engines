@@ -56,7 +56,7 @@ public sealed partial class MeleeWeaponComponent : Component
     ///     When power attacking, the swing speed (in attacks per second) is multiplied by this amount
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float HeavyRateModifier = 1f;
+    public float HeavyRateModifier = 0.8f;
     /// <summary>
     /// Are we currently holding down the mouse for an attack.
     /// Used so we can't just hold the mouse button and attack constantly.
@@ -103,7 +103,7 @@ public sealed partial class MeleeWeaponComponent : Component
     ///     Weapon damage is multiplied by this amount for heavy swings
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float HeavyDamageBaseModifier = 1f;
+    public float HeavyDamageBaseModifier = 1.2f;
 
     /// <summary>
     /// Total width of the angle for wide attacks.
