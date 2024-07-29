@@ -4658,3 +4658,9 @@ Entries:
       message: Long Survival has been added as a new Game mode.
   id: 6185
   time: '2024-07-27T06:00:24.0000000+00:00'
+- author: CilliePaint
+  changes:
+    - type: Tweak
+      message: New Box Textures!
+  id: 6186
+  time: '2024-07-29T05:50:43.0000000+00:00'
