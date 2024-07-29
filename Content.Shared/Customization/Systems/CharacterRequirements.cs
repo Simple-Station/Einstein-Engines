@@ -121,17 +121,20 @@ public sealed partial class CharacterClothingPreferenceRequirement : CharacterRe
 public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
 {
     [DataField(required: true)]
-    public ProtoId<SpeciesPrototype> Species;
+    public List<ProtoId<SpeciesPrototype>> Species;
 
     public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
+        const string color = "green";
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-species-requirement",
             ("inverted", Inverted),
-            ("species", Loc.GetString($"species-name-{Species.ToString().ToLower()}"))));
-        return profile.Species == Species;
+            ("species", $"[color={color}]{string.Join($"[/color], [color={color}]",
+                Species.Select(s => Loc.GetString(prototypeManager.Index(s).Name)))}[/color]")));
+
+        return Species.Contains(profile.Species);
     }
 }
 
@@ -150,8 +153,11 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-requirement", ("inverted", Inverted),
-            ("traits", string.Join(", ", Traits.Select(t => Loc.GetString($"trait-name-{t}"))))));
+        const string color = "lightblue";
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-requirement",
+            ("inverted", Inverted),
+            ("traits", $"[color={color}]{string.Join($"[/color], [color={color}]",
+                Traits.Select(t => Loc.GetString($"trait-name-{t}")))}[/color]")));
 
         return Traits.Any(t => profile.TraitPreferences.Contains(t.ToString()));
     }
@@ -168,11 +174,15 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
     public List<ProtoId<LoadoutPrototype>> Loadouts;
 
     public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, out FormattedMessage? reason)
+        Dictionary<string, TimeSpan> playTimes,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-loadout-requirement", ("inverted", Inverted),
-            ("loadouts", string.Join(", ", Loadouts.Select(l => Loc.GetString($"loadout-{l}"))))));
+        const string color = "lightblue";
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-loadout-requirement",
+            ("inverted", Inverted),
+            ("loadouts", $"[color={color}]{string.Join($"[/color], [color={color}]",
+                Loadouts.Select(l => Loc.GetString($"loadout-name-{l}")))}[/color]")));
 
         return Loadouts.Any(l => profile.LoadoutPreferences.Contains(l.ToString()));
     }
@@ -310,7 +320,7 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-department-too-high",
-                    ("time", playtime.Minutes - Max.Minutes),
+                    ("time", playtime.TotalMinutes - Max.TotalMinutes),
                     ("department", Loc.GetString($"department-{department.ID}")),
                     ("departmentColor", department.Color)));
             return false;
@@ -322,7 +332,7 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-department-insufficient",
-                    ("time", Min.Minutes - playtime.Minutes),
+                    ("time", Min.TotalMinutes - playtime.TotalMinutes),
                     ("department", Loc.GetString($"department-{department.ID}")),
                     ("departmentColor", department.Color)));
             return false;
@@ -367,7 +377,7 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-overall-too-high",
-                    ("time", overallTime.Minutes - Max.Minutes)));
+                    ("time", overallTime.TotalMinutes - Max.TotalMinutes)));
             return false;
         }
 
@@ -377,7 +387,7 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-overall-insufficient",
-                    ("time", Min.Minutes - overallTime.Minutes)));
+                    ("time", Min.TotalMinutes - overallTime.TotalMinutes)));
             return false;
         }
 
@@ -424,6 +434,7 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
 
         // Get the JobPrototype of the Tracker
         var trackerJob = jobSystem.GetJobPrototype(Tracker);
+        var jobStr = prototypeManager.Index<JobPrototype>(trackerJob).LocalizedName;
 
         // Get the primary department of the Tracker
         if (!jobSystem.TryGetPrimaryDepartment(trackerJob, out var department) &&
@@ -444,8 +455,8 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-role-too-high",
-                    ("time", time.Minutes - Max.Minutes),
-                    ("job", trackerJob),
+                    ("time", time.TotalMinutes - Max.TotalMinutes),
+                    ("job", jobStr),
                     ("departmentColor", department.Color)));
             return false;
         }
@@ -456,73 +467,13 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
             reason = Inverted
                 ? null
                 : FormattedMessage.FromMarkup(Loc.GetString("character-timer-role-insufficient",
-                    ("time", Min.Minutes - time.Minutes),
-                    ("job", trackerJob),
+                    ("time", Min.TotalMinutes - time.TotalMinutes),
+                    ("job", jobStr),
                     ("departmentColor", department.Color)));
             return false;
         }
 
         return true;
-    }
-}
-
-#endregion
-
-#region Prototype Groups
-
-/// <summary>
-///     Requires the profile to not have any of the specified traits
-/// </summary>
-/// <remarks>
-///     Only works if you put this prototype in the denied prototypes' requirements too.
-///     Can't be inverted, use <see cref="CharacterTraitRequirement"/>
-/// </remarks>
-[UsedImplicitly]
-[Serializable, NetSerializable]
-public sealed partial class TraitGroupExclusionRequirement : CharacterRequirement
-{
-    [DataField(required: true)]
-    public List<ProtoId<TraitPrototype>> Prototypes;
-
-    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
-    {
-        var invalid = profile.TraitPreferences.Any(t => Prototypes.Contains(t));
-
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-group-exclusion-requirement",
-            ("traits", string.Join(", ", Prototypes.Select(t => Loc.GetString($"trait-name-{t}"))))));
-
-        return Inverted ? invalid : !invalid;
-    }
-}
-
-/// <summary>
-///     Requires the profile to not have any of the specified loadouts
-/// </summary>
-/// <remarks>
-///     Only works if you put this prototype in the denied prototypes' requirements too.
-///     Can't be inverted, use <see cref="CharacterLoadoutRequirement"/>
-/// </remarks>
-[UsedImplicitly]
-[Serializable, NetSerializable]
-public sealed partial class LoadoutGroupExclusionRequirement : CharacterRequirement
-{
-    [DataField(required: true)]
-    public List<ProtoId<LoadoutPrototype>> Prototypes;
-
-    public override bool IsValid(IPrototype prototype, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
-    {
-        var invalid = profile.LoadoutPreferences.Any(l => Prototypes.Contains(l));
-
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-loadout-group-exclusion-requirement",
-            ("loadouts", string.Join(", ", Prototypes.Select(l => Loc.GetString($"loadout-{l}"))))));
-
-        return Inverted ? invalid : !invalid;
     }
 }
 

@@ -30,13 +30,13 @@
       collection: HarpyPurrs
     HarpyRing:
       collection: HarpyRings
-    HarpyHonk:
+    Honk:
       collection: HarpyHonks
     HarpyPew:
       collection: HarpyPews
     HarpyBang:
       collection: HarpyBangs
-    HarpyBeep:
+    Beep:
       collection: HarpyBeeps
     HarpyRev:
       collection: HarpyRevs
@@ -58,8 +58,6 @@
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
-    Honk:
-      collection: BikeHorn
     Weh:
       collection: Weh
 

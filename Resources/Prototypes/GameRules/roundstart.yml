@@ -69,7 +69,7 @@
   noSpawn: true
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 35
   - type: NukeopsRule
     faction: Syndicate
 
@@ -132,6 +132,22 @@
   components:
   - type: RampingStationEventScheduler
 
+- type: entity
+  id: LongSurvivalStationEventScheduler
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: RampingStationEventScheduler
+    shiftLengthOffset: -120
+
+- type: entity
+  id: HellshiftStationEventScheduler
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: RampingStationEventScheduler
+    shiftChaosModifier: 4 #30 minute HELL SHIFT
+
 # variation passes
 - type: entity
   id: BasicRoundstartVariation
@@ -144,6 +160,7 @@
     - id: BasicTrashVariationPass
     - id: SolidWallRustingVariationPass
     - id: ReinforcedWallRustingVariationPass
+    - id: CutWireVariationPass
     - id: BasicPuddleMessVariationPass
       prob: 0.99
       orGroup: puddleMess

@@ -10,6 +10,28 @@
     - BasicRoundstartVariation
 
 - type: gamePreset
+  id: SurvivalHellshift
+  alias:
+    - hellshift
+  showInVote: true
+  name: hellshift-title
+  description: hellshift-description
+  rules:
+    - HellshiftStationEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SurvivalLonger
+  alias:
+    - longsurvival
+  showInVote: true
+  name: longsurvival-title
+  description: longsurvival-description
+  rules:
+    - LongSurvivalStationEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
   id: AllAtOnce
   name: all-at-once-title
   description: all-at-once-description
@@ -90,7 +112,7 @@
     - traitor
   name: traitor-title
   description: traitor-description
-  showInVote: false
+  showInVote: true
   rules:
     - Traitor
     - SubGamemodesRule

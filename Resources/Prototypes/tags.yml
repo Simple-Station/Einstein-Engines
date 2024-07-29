@@ -32,7 +32,13 @@
   id: Balloon
 
 - type: Tag
+  id: Banana
+
+- type: Tag
   id: BananaPeel
+
+- type: Tag
+  id: Bandana
 
 - type: Tag
   id: BaseballBat
@@ -41,7 +47,13 @@
   id: BBQsauce
 
 - type: Tag
+  id: Bedsheet
+
+- type: Tag
   id: Bee
+
+- type: Tag
+  id: Beer
 
 - type: Tag
   id: BikeHorn
@@ -203,6 +215,9 @@
   id: Bottle
 
 - type: Tag
+  id: BoxCardboard
+
+- type: Tag
   id: BoxHug
 
 - type: Tag
@@ -348,6 +363,9 @@
   id: ChemDispensable # container that can go into the chem dispenser
 
 - type: Tag
+  id: ChiliBowl
+
+- type: Tag
   id: Cigarette
 
 - type: Tag
@@ -383,11 +401,17 @@
 - type: Tag
   id: CluwneHorn
 
-- type: Tag #Ohioans die happy
+- type: Tag
+  id: Coldsauce
+
+- type: Tag
+  id: CoordinatesDisk
+
+- type: Tag
   id: Corn
 
 - type: Tag
-  id: Coldsauce
+  id: CottonBoll
 
 - type: Tag
   id: Cow
@@ -490,6 +514,9 @@
 
 - type: Tag
   id: DoorElectronics
+
+- type: Tag
+  id: DoorElectronicsConfigurator
 
 - type: Tag
   id: DonkPocket
@@ -678,6 +705,9 @@
   id: HighSecDoor
 
 - type: Tag
+  id: HiViz
+
+- type: Tag
   id: Hoe
 
 - type: Tag
@@ -765,9 +795,6 @@
   id: MacroBomb
 
 - type: Tag
-  id: MicroBomb
-
-- type: Tag
   id: MimeBelt
 
 - type: Tag
@@ -848,6 +875,12 @@
   id: Metal
 
 - type: Tag
+  id: MicroBomb
+
+- type: Tag
+  id: MicrowaveMachineBoard
+
+- type: Tag
   id: MindShield
 
 - type: Tag
@@ -876,9 +909,6 @@
 
 - type: Tag
   id: NoBlockAnchoring
-
-- type: Tag
-  id: NoPaint
 
 - type: Tag
   id: NozzleBackTank
@@ -1002,9 +1032,6 @@
 
 - type: Tag
   id: RawMaterial
-
-- type: Tag
-  id: RCDDeconstructWhitelist
 
 # Give this to something that doesn't need any special recycler behavior and just needs deleting.
 - type: Tag
@@ -1143,6 +1170,9 @@
   id: StationMapElectronics
 
 - type: Tag
+  id: Steak
+
+- type: Tag
   id: SubdermalImplant
 
 - type: Tag
@@ -1212,6 +1242,9 @@
   id: UraniumGlassShard
 
 - type: Tag
+  id: Vegetable
+
+- type: Tag
   id: VimPilot
 
 - type: Tag
@@ -1249,6 +1282,9 @@
 
 - type: Tag
   id: Window
+
+- type: Tag
+  id: Wine
 
 - type: Tag
   id: WizardWand # that evil vvizard vvand

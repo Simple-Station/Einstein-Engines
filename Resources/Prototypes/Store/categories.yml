@@ -63,6 +63,11 @@
   name: store-category-pointless
   priority: 9
 
+- type: storeCategory
+  id: UplinkDeception
+  name: store-category-deception
+  priority: 10
+
 #revenant
 - type: storeCategory
   id: RevenantAbilities

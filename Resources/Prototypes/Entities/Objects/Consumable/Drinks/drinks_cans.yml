@@ -62,6 +62,12 @@
   - type: Tag
     tags:
     - DrinkCan
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
 
 - type: entity
   parent: DrinkCanBaseFull
@@ -182,6 +188,9 @@
     sprite: Objects/Consumable/Drinks/rootbeer.rsi
   - type: Item
     sprite: Objects/Consumable/Drinks/rootbeer.rsi
+  - type: Tag
+    tags:
+    - Beer
 
 - type: entity
   parent: DrinkCanBaseFull
@@ -235,6 +244,24 @@
     sprite: Objects/Consumable/Drinks/space-up.rsi
   - type: Item
     sprite: Objects/Consumable/Drinks/space-up.rsi
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkSolDryCan
+  name: sol dry
+  description: Sweet ginger soda from outer space!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SolDry
+          Quantity: 30
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/sol_dry.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/sol_dry.rsi
 
 - type: entity
   parent: DrinkCanBaseFull
@@ -480,6 +507,9 @@
     sprite: Objects/Consumable/Drinks/beer_can.rsi
   - type: Item
     sprite: Objects/Consumable/Drinks/beer_can.rsi
+  - type: Tag
+    tags:
+    - Beer
 
 - type: entity
   parent: DrinkCanBaseFull
@@ -499,3 +529,6 @@
     sprite: Objects/Consumable/Drinks/wine_can.rsi
   - type: Item
     sprite: Objects/Consumable/Drinks/wine_can.rsi
+  - type: Tag
+    tags:
+    - Wine

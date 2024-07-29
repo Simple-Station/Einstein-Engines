@@ -38,6 +38,9 @@
 # Spoken by slimes.
 - type: language
   id: Bubblish
+  speech:
+    color: "#0077aa"
+    fontId: RubikBubbles
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -52,6 +55,9 @@
 # Spoken by moths.
 - type: language
   id: Moffic
+  speech:
+    color: "#869b29"
+    fontId: Copperplate
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2 # Replacements are really short
@@ -118,6 +124,9 @@
 # Spoken by dionas.
 - type: language
   id: RootSpeak
+  speech:
+    color: "#804000"
+    fontId: Noganas
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -132,6 +141,9 @@
 # A mess of broken Japanese, spoken by Felinds and Oni
 - type: language
   id: Nekomimetic
+  speech:
+    color: "#803B56"
+    fontId: Manga
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -189,6 +201,8 @@
 # Spoken by the Lizard race.
 - type: language
   id: Draconic
+  speech:
+    color: "#228b22"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -282,6 +296,8 @@
 # Spoken by the Vulpkanin race.
 - type: language
   id: Canilunzt
+  speech:
+    color: "#b97a57"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -314,7 +330,6 @@
     - vor
     - nic
     - gro
-  #  - lll
     - enem
     - zandt
     - tzch
@@ -349,6 +364,8 @@
 # The common language of the Sol system.
 - type: language
   id: SolCommon
+  speech:
+    color: "#8282fb"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -374,6 +391,8 @@
 
 - type: language
   id: RobotTalk
+  speech:
+    fontId: Monospace
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -556,3 +575,28 @@
     - hiss
     - ss
     - ee
+
+# Example of a sign language. Not currently used anyhow.
+- type: language
+  id: Sign
+  speech:
+    allowRadio: false
+    requireSpeech: false
+    color: "#dddddd"
+    messageWrapOverrides:
+      Speak: chat-sign-language-message-wrap
+      Whisper: chat-sign-language-whisper-wrap
+    speechVerbOverrides:
+    - chat-speech-verb-sign-1
+    - chat-speech-verb-sign-2
+    - chat-speech-verb-sign-3
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - something
+    - a cryptic message to you
+    - a signal to you
+    - a message
+    - a rude expression to you
+    - a sad expression to you
+    - a happy expression to you

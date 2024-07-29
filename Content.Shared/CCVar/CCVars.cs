@@ -119,7 +119,7 @@ namespace Content.Shared.CCVar
         ///     Max chaos chosen for a round will deviate from this
         /// </summary>
         public static readonly CVarDef<float>
-            EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 6f, CVar.ARCHIVE | CVar.SERVERONLY);
+            EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 0.8f, CVar.ARCHIVE | CVar.SERVERONLY);
 
         /*
          * Game
@@ -186,16 +186,29 @@ namespace Content.Shared.CCVar
             GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 1500, CVar.SERVERONLY);
 
         /// <summary>
-        ///     Minimum time between Ramping station events in seconds
+        ///     Minimum time between Ramping station events in minutes
         /// </summary>
-        public static readonly CVarDef<int> // 4 Minutes
-            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 240, CVar.SERVERONLY);
+        public static readonly CVarDef<float> // 8 Minutes
+            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 8f, CVar.SERVERONLY);
 
         /// <summary>
-        ///     Maximum time between Ramping station events in seconds
+        ///     After the shift's desired "Endpoint" is reached, the minimum time between events is RampingMinimumTime - Offset.
         /// </summary>
-        public static readonly CVarDef<int> // 12 Minutes
-            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 720, CVar.SERVERONLY);
+
+        public static readonly CVarDef<float>
+            GameEventsRampingMinimumTimeOffset = CVarDef.Create("game.events_ramping_minimum_time_offset", 6f, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Maximum time between Ramping station events in minutes
+        /// </summary>
+        public static readonly CVarDef<float> // 16 Minutes
+            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 16f, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     After the shift's desired "Endpoint" is reached, the maximum time between events is RampingMaximumTime - Offset.
+        /// </summary>
+        public static readonly CVarDef<float>
+            GameEventsRampingMaximumTimeOffset = CVarDef.Create("game.events_ramping_maximum_time_offset", 10f, CVar.SERVERONLY);
 
         /// <summary>
         ///
@@ -255,25 +268,6 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool>
             GameCryoSleepRejoining = CVarDef.Create("game.cryo_sleep_rejoining", false, CVar.SERVER | CVar.REPLICATED);
-
-        /// <summary>
-        ///     Whether a random position offset will be applied to the station on roundstart.
-        /// </summary>
-        public static readonly CVarDef<bool> StationOffset =
-            CVarDef.Create("game.station_offset", true);
-
-        /// <summary>
-        /// When the default blueprint is loaded what is the maximum amount it can be offset from 0,0.
-        /// Does nothing without <see cref="StationOffset"/> as true.
-        /// </summary>
-        public static readonly CVarDef<float> MaxStationOffset =
-            CVarDef.Create("game.maxstationoffset", 1000.0f);
-
-        /// <summary>
-        ///     Whether a random rotation will be applied to the station on roundstart.
-        /// </summary>
-        public static readonly CVarDef<bool> StationRotation =
-            CVarDef.Create("game.station_rotation", true);
 
         /// <summary>
         ///     When enabled, guests will be assigned permanent UIDs and will have their preferences stored.
@@ -400,6 +394,19 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int> GameLoadoutsPoints =
             CVarDef.Create("game.loadouts_points", 14, CVar.REPLICATED);
 
+
+        /// <summary>
+        ///     Whether to repeat eating doafters after completion
+        /// </summary>
+        public static readonly CVarDef<bool> GameAutoEatFood =
+            CVarDef.Create("game.auto_eat_food", false, CVar.REPLICATED);
+
+        /// <summary>
+        ///     Whether to repeat drinking doafters after completion
+        /// </summary>
+        public static readonly CVarDef<bool> GameAutoEatDrinks =
+            CVarDef.Create("game.auto_eat_drinks", false, CVar.REPLICATED);
+
 #if EXCEPTION_TOLERANCE
         /// <summary>
         ///     Amount of times round start must fail before the server is shut down.
@@ -436,6 +443,36 @@ namespace Content.Shared.CCVar
 
 
         /*
+         * Announcers
+         */
+
+        /// <summary>
+        ///     Weighted list of announcers to choose from
+        /// </summary>
+        public static readonly CVarDef<string> AnnouncerList =
+            CVarDef.Create("announcer.list", "RandomAnnouncers", CVar.REPLICATED);
+
+        /// <summary>
+        ///     Optionally force set an announcer
+        /// </summary>
+        public static readonly CVarDef<string> Announcer =
+            CVarDef.Create("announcer.announcer", "", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Optionally blacklist announcers
+        ///     List of IDs separated by commas
+        /// </summary>
+        public static readonly CVarDef<string> AnnouncerBlacklist =
+            CVarDef.Create("announcer.blacklist", "", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Changes how loud the announcers are for the client
+        /// </summary>
+        public static readonly CVarDef<float> AnnouncerVolume =
+            CVarDef.Create("announcer.volume", 0.5f, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+
+        /*
          * Queue
          */
 
@@ -443,8 +480,8 @@ namespace Content.Shared.CCVar
         ///     Controls if the connections queue is enabled
         ///     If enabled plyaers will be added to a queue instead of being kicked after SoftMaxPlayers is reached
         /// </summary>
-        public static readonly CVarDef<bool>
-        QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
+        public static readonly CVarDef<bool> QueueEnabled =
+            CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
 
 
         /*
@@ -626,8 +663,8 @@ namespace Content.Shared.CCVar
          * Console
          */
 
-        public static readonly CVarDef<bool>
-            ConsoleLoginLocal = CVarDef.Create("console.loginlocal", true, CVar.ARCHIVE | CVar.SERVERONLY);
+        public static readonly CVarDef<bool> ConsoleLoginLocal =
+            CVarDef.Create("console.loginlocal", true, CVar.ARCHIVE | CVar.SERVERONLY);
 
         /// <summary>
         /// Automatically log in the given user as host, equivalent to the <c>promotehost</c> command.
@@ -860,6 +897,13 @@ namespace Content.Shared.CCVar
             CVarDef.Create("admin.announce_logout", true, CVar.SERVERONLY);
 
         /// <summary>
+        ///     The token used to authenticate with the admin API. Leave empty to disable the admin API. This is a secret! Do not share!
+        /// </summary>
+        public static readonly CVarDef<string> AdminApiToken =
+            CVarDef.Create("admin.api_token", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+
+        /// <summary>
         /// Should users be able to see their own notes? Admins will be able to see and set notes regardless
         /// </summary>
         public static readonly CVarDef<bool> SeeOwnNotes =
@@ -922,6 +966,7 @@ namespace Content.Shared.CCVar
 
         /// <summary>
         ///     Should the ban details in admin channel include PII? (IP, HWID, etc)
+        /// </summary>
         public static readonly CVarDef<bool> AdminShowPIIOnBan =
             CVarDef.Create("admin.show_pii_onban", false, CVar.SERVERONLY);
 
@@ -1139,7 +1184,7 @@ namespace Content.Shared.CCVar
         ///     Useful to prevent clipping through objects.
         /// </summary>
         public static readonly CVarDef<float> SpaceWindMaxVelocity =
-            CVarDef.Create("atmos.space_wind_max_velocity", 30f, CVar.SERVERONLY);
+            CVarDef.Create("atmos.space_wind_max_velocity", 15f, CVar.SERVERONLY);
 
         /// <summary>
         ///     The maximum force that may be applied to an object by pushing (i.e. not throwing) atmospheric pressure differences.
@@ -1147,6 +1192,24 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> SpaceWindMaxPushForce =
             CVarDef.Create("atmos.space_wind_max_push_force", 20f, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     If an object's mass is below this number, then this number is used in place of mass to determine whether air pressure can throw an object.
+        ///     This has nothing to do with throwing force, only acting as a way of reducing the odds of tiny 5 gram objects from being yeeted by people's breath
+        /// </summary>
+        /// <remarks>
+        ///     If you are reading this because you want to change it, consider looking into why almost every item in the game weighs only 5 grams
+        ///     And maybe do your part to fix that? :)
+        /// </remarks>
+        public static readonly CVarDef<float> SpaceWindMinimumCalculatedMass =
+            CVarDef.Create("atmos.space_wind_minimum_calculated_mass", 10f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// 	Calculated as 1/Mass, where Mass is the physics.Mass of the desired threshold.
+        /// 	If an object's inverse mass is lower than this, it is capped at this. Basically, an upper limit to how heavy an object can be before it stops resisting space wind more.
+        /// </summary>
+        public static readonly CVarDef<float> SpaceWindMaximumCalculatedInverseMass =
+            CVarDef.Create("atmos.space_wind_maximum_calculated_inverse_mass", 0.04f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether monstermos tile equalization is enabled.
@@ -1169,7 +1232,21 @@ namespace Content.Shared.CCVar
 		///     Also looks weird on slow spacing for unrelated reasons. If you do want to enable this, you should probably turn on instaspacing.
         /// </summary>
         public static readonly CVarDef<bool> MonstermosRipTiles =
-            CVarDef.Create("atmos.monstermos_rip_tiles", false, CVar.SERVERONLY);
+            CVarDef.Create("atmos.monstermos_rip_tiles", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Taken as the cube of a tile's mass, this acts as a minimum threshold of mass for which air pressure calculates whether or not to rip a tile from the floor
+        ///     This should be set by default to the cube of the game's lowest mass tile as defined in their prototypes, but can be increased for server performance reasons
+        /// </summary>
+        public static readonly CVarDef<float> MonstermosRipTilesMinimumPressure =
+            CVarDef.Create("atmos.monstermos_rip_tiles_min_pressure", 7500f, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Taken after the minimum pressure is checked, the effective pressure is multiplied by this amount.
+        ///		This allows server hosts to finely tune how likely floor tiles are to be ripped apart by air pressure
+        /// </summary>
+        public static readonly CVarDef<float> MonstermosRipTilesPressureOffset =
+            CVarDef.Create("atmos.monstermos_rip_tiles_pressure_offset", 0.44f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether explosive depressurization will cause the grid to gain an impulse.
@@ -1199,6 +1276,13 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> AtmosSpacingMaxWind =
             CVarDef.Create("atmos.mmos_max_wind", 500f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Increases default airflow calculations to O(n^2) complexity, for use with heavy space wind optimizations. Potato servers BEWARE
+        /// This solves the problem of objects being trapped in an infinite loop of slamming into a wall repeatedly.
+        /// </summary>
+        public static readonly CVarDef<bool> MonstermosUseExpensiveAirflow =
+            CVarDef.Create("atmos.mmos_expensive_airflow", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether atmos superconduction is enabled.
@@ -1256,6 +1340,13 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<float> AtmosHeatScale =
             CVarDef.Create("atmos.heat_scale", 8f, CVar.SERVERONLY);
 
+        /// <summary>
+        ///     A multiplier on the amount of force applied to Humanoid entities, as tracked by HumanoidAppearanceComponent
+        ///     This multiplier is added after all other checks are made, and applies to both throwing force, and how easy it is for an entity to be thrown.
+        /// </summary>
+        public static readonly CVarDef<float> AtmosHumanoidThrowMultiplier =
+            CVarDef.Create("atmos.humanoid_throw_multiplier", 2f, CVar.SERVERONLY);
+
         /*
          * MIDI instruments
          */
@@ -1303,6 +1394,9 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> OocEnableDuringRound =
             CVarDef.Create("ooc.enable_during_round", false, CVar.NOTIFY | CVar.REPLICATED | CVar.SERVER);
+
+        public static readonly CVarDef<bool> ShowOocPatronColor =
+            CVarDef.Create("ooc.show_ooc_patron_color", true, CVar.ARCHIVE | CVar.REPLICATED | CVar.CLIENT);
 
         /*
          * LOOC
@@ -1642,6 +1736,23 @@ namespace Content.Shared.CCVar
             CVarDef.Create("viewport.width", 21, CVar.CLIENTONLY | CVar.ARCHIVE);
 
         /*
+         * FOV
+         */
+
+        /// <summary>
+        ///     The number by which the current FOV size is divided for each level.
+        /// </summary>
+        public static readonly CVarDef<float> ZoomLevelStep =
+            CVarDef.Create("fov.zoom_step", 1.2f, CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
+        ///     How many times the player can zoom in until they reach the minimum zoom.
+        ///     This does not affect the maximum zoom.
+        /// </summary>
+        public static readonly CVarDef<int> ZoomLevels =
+            CVarDef.Create("fov.zoom_levels", 7, CVar.SERVER | CVar.REPLICATED);
+
+        /*
          * UI
          */
 
@@ -1658,6 +1769,13 @@ namespace Content.Shared.CCVar
         /*
         * Accessibility
         */
+
+        /// <summary>
+        /// Chat window opacity slider, controlling the alpha of the chat window background.
+        /// Goes from to 0 (completely transparent) to 1 (completely opaque)
+        /// </summary>
+        public static readonly CVarDef<float> ChatWindowOpacity =
+            CVarDef.Create("accessibility.chat_window_transparency", 0.85f, CVar.CLIENTONLY | CVar.ARCHIVE);
 
         /// <summary>
         /// Toggle for visual effects that may potentially cause motion sickness.
@@ -2167,7 +2285,7 @@ namespace Content.Shared.CCVar
         ///     Whether height & width sliders adjust a player's max view distance
         /// </summary>
         public static readonly CVarDef<bool> HeightAdjustModifiesZoom =
-            CVarDef.Create("heightadjust.modifies_zoom", true, CVar.SERVERONLY);
+            CVarDef.Create("heightadjust.modifies_zoom", false, CVar.SERVERONLY);
 
         /// <summary>
         ///     Enables station goals
@@ -2180,5 +2298,54 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> StationGoalsChance =
             CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
+
+        #region Contests System
+
+        /// <summary>
+        ///     The MASTER TOGGLE for the entire Contests System.
+        ///     ALL CONTESTS BELOW, regardless of type or setting will output 1f when false.
+        /// </summary>
+        public static readonly CVarDef<bool> DoContestsSystem =
+            CVarDef.Create("contests.do_contests_system", true, CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
+        ///     Contest functions normally include an optional override to bypass the clamp set by max_percentage.
+        ///     This CVar disables the bypass when false, forcing all implementations to comply with max_percentage.
+        /// </summary>
+        public static readonly CVarDef<bool> AllowClampOverride =
+            CVarDef.Create("contests.allow_clamp_override", true, CVar.REPLICATED | CVar.SERVER);
+        /// <summary>
+        ///     Toggles all MassContest functions. All mass contests output 1f when false
+        /// </summary>
+        public static readonly CVarDef<bool> DoMassContests =
+            CVarDef.Create("contests.do_mass_contests", true, CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
+        ///     Toggles all StaminaContest functions. All stamina contests output 1f when false
+        /// </summary>
+        public static readonly CVarDef<bool> DoStaminaContests =
+            CVarDef.Create("contests.do_stamina_contests", true, CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
+        ///     Toggles all HealthContest functions. All health contests output 1f when false
+        /// </summary>
+        public static readonly CVarDef<bool> DoHealthContests =
+            CVarDef.Create("contests.do_health_contests", true, CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
+        ///     Toggles all MindContest functions. All mind contests output 1f when false.
+        ///     MindContests are not currently implemented, and are awaiting completion of the Psionic Refactor
+        /// </summary>
+        public static readonly CVarDef<bool> DoMindContests =
+            CVarDef.Create("contests.do_mind_contests", true, CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
+        ///     The maximum amount that Mass Contests can modify a physics multiplier, given as a +/- percentage
+        ///     Default of 0.25f outputs between * 0.75f and 1.25f
+        /// </summary>
+        public static readonly CVarDef<float> MassContestsMaxPercentage =
+            CVarDef.Create("contests.max_percentage", 0.25f, CVar.REPLICATED | CVar.SERVER);
+
+        #endregion
     }
 }
