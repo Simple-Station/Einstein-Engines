@@ -36,7 +36,7 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
 
         var deadThreshold = _threshold.GetThresholdForState(uid, Mobs.MobState.Dead, threshold);
         if (deadThreshold != 0)
-            _threshold.SetMobStateThreshold(uid, deadThreshold + component.DeadThresholdModifier, Mobs.MobState.Critical);
+            _threshold.SetMobStateThreshold(uid, deadThreshold + component.DeadThresholdModifier, Mobs.MobState.Dead);
     }
 
     private void OnAdrenalineGetDamage(EntityUid uid, AdrenalineComponent component, ref GetMeleeDamageEvent args)
