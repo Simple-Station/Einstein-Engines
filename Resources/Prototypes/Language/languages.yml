@@ -600,3 +600,114 @@
     - a rude expression to you
     - a sad expression to you
     - a happy expression to you
+
+# Syndicate Code Talk, given only to command members.
+- type: language
+  id: CodeTalk
+  speech:
+    color: "#dc143c"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 1
+    replacement:
+    - Crimson
+    - Mojito
+    - Engineer
+    - Sapphire
+    - Martini
+    - Chemist
+    - Emerald
+    - Espresso
+    - Assistant
+    - Amethyst
+    - Tequila
+    - Geneticist
+    - Ruby
+    - Margarita
+    - Captain
+    - Topaz
+    - Vodka
+    - Security
+    - Cobalt
+    - Whiskey
+    - Detective
+    - Onyx
+    - Bourbon
+    - Clown
+    - Citrine
+    - Daiquiri
+    - Botanist
+    - Indigo
+    - Rum
+    - Bartender
+    - Peridot
+    - Champagne
+    - Head of Personnel
+    - Garnet
+    - Sangria
+    - Quartermaster
+    - Turquoise
+    - Mimosa
+    - Chef
+    - Jade
+    - Cosmopolitan
+    - Janitor
+    - Amber
+    - Piña Colada
+    - Chaplain
+    - Coral
+    - Bloody Mary
+    - Librarian
+    - Pearl
+    - Screwdriver
+    - Scientist
+    - Aquamarine
+    - Long Island Iced Tea
+    - Roboticist
+    - Violet
+    - Mojito
+    - Lawyer
+    - Copper
+    - Bellini
+    - Miner
+    - Gold
+    - Mai Tai
+    - Head of Paperwork
+    - Silver
+    - Irish Coffee
+    - Research Director
+    - Platinum
+    - Moscow Mule
+    - Chief Engineer
+    - Bronze
+    - Hurricane
+    - Chief Medical Officer
+    - Titanium
+    - Piña Colada
+    - Head of Security
+    - Nickel
+    - Black Russian
+    - Detective
+    - Zinc
+    - Tequila Sunrise
+    - Warden
+    - Brass
+    - White Russian
+    - Detective
+    - Aluminum
+    - Margarita
+    - Geneticist
+    - Iron
+    - Mojito
+    - Chemist
+    - Mercury
+    - Manhattan
+    - Chef
+    - Uranium
+    - Mint Julep
+    - Botanist
+    - Neptunium
+    - Old Fashioned
+    - Clown
+    - Plutonium
