@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Client.Humanoid;
 using Content.Client.Inventory;
 using Content.Client.Lobby.UI;
+using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Preferences;
 using Content.Client.Preferences.UI;
 using Content.Shared.Clothing.Loadouts.Systems;
@@ -23,6 +24,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
     [Dependency] private readonly IStateManager _stateManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
     [UISystemDependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [UISystemDependency] private readonly ClientInventorySystem _inventory = default!;
     [UISystemDependency] private readonly LoadoutSystem _loadouts = default!;
@@ -123,7 +125,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             if (ShowClothes)
                 GiveDummyJobClothes(_previewDummy.Value, GetPreferredJob(maybeProfile), maybeProfile);
             if (ShowLoadouts)
-                GiveDummyLoadouts(_previewDummy.Value, GetPreferredJob(maybeProfile), maybeProfile);
+                _loadouts.ApplyCharacterLoadout(_previewDummy.Value, GetPreferredJob(maybeProfile), maybeProfile,
+                    _jobRequirements.GetPlayTimes(), _jobRequirements.IsWhitelisted());
             UpdateClothes = false;
         }
 
@@ -170,12 +173,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     {
         var job = GetPreferredJob(profile);
         GiveDummyJobClothes(dummy, job, profile);
-        GiveDummyLoadouts(dummy, job, profile);
-    }
-
-    public void GiveDummyLoadouts(EntityUid dummy, JobPrototype job, HumanoidCharacterProfile profile)
-    {
-        _loadouts.ApplyCharacterLoadout(dummy, job, profile);
+        _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetPlayTimes(), _jobRequirements.IsWhitelisted());
     }
 
     /// <summary>

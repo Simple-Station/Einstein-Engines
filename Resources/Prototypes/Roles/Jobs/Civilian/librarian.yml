@@ -4,8 +4,8 @@
   description: job-description-librarian
   playTimeTracker: JobLibrarian
   requirements:
-    - !type:OverallPlaytimeRequirement #DeltaV
-      time: 3600 # 1 hr
+    - !type:CharacterOverallTimeRequirement #DeltaV
+      min: 3600 # 1 hr
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-hop

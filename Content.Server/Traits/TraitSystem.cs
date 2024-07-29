@@ -4,6 +4,7 @@ using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Players;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
 using Pidgin.Configuration;
@@ -40,9 +41,10 @@ public sealed class TraitSystem : EntitySystem
                 return;
             }
 
-            if (!_characterRequirements.CheckRequirementsValid(traitPrototype, traitPrototype.Requirements,
+            if (!_characterRequirements.CheckRequirementsValid(
+                traitPrototype.Requirements,
                 _prototype.Index<JobPrototype>(args.JobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID),
-                args.Profile, _playTimeTracking.GetTrackerTimes(args.Player),
+                args.Profile, _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false,
                 EntityManager, _prototype, _configuration,
                 out _))
                 continue;
