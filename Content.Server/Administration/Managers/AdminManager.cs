@@ -279,7 +279,13 @@ namespace Content.Server.Administration.Managers
                 _commandPermissions.LoadPermissionsFromStream(efs);
             }
 
-            if (_res.TryContentFileRead(new ResPath("/toolshedEngineCommandPerms.yml"), out var toolshedPerms))
+            var toolshedPermsPath = new ResPath("/toolshedEngineCommandPerms.yml");
+            if (_res.TryContentFileRead(toolshedPermsPath, out var toolshedPerms))
+            {
+                _commandPermissions.LoadPermissionsFromStream(toolshedPerms);
+            }
+            // This may or may not be necessary. We read the same file again and load the same permissions into a different manager.
+            if (_res.TryContentFileRead(toolshedPermsPath, out toolshedPerms))
             {
                 _toolshedCommandPermissions.LoadPermissionsFromStream(toolshedPerms);
             }
