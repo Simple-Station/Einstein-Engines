@@ -4664,3 +4664,11 @@ Entries:
       message: New Box Textures!
   id: 6186
   time: '2024-07-29T05:50:43.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Fixed toolshed command permissions. This will mostly affect admins who
+        don't have full host access.
+  id: 6187
+  time: '2024-07-29T05:54:01.0000000+00:00'
