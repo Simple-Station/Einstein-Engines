@@ -699,6 +699,9 @@
   id: HidesNose # for non-standard noses.
 
 - type: Tag
+  id: HidesBeard # for full coverage helmet / masks where beard shouldn't show
+
+- type: Tag
   id: HighRiskItem
 
 - type: Tag
