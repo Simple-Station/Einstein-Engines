@@ -329,12 +329,13 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
     {
         var currentTime = GameTiming.CurTime;
 
+        if (!_actionBlockerSystem.CanMove(args.Entity))
+            return;
+
         if (!TryComp(args.Entity, out HandsComponent? hands) ||
             hands.Count == 0 ||
             currentTime < component.LastExitAttempt + ExitAttemptDelay)
-        {
             return;
-        }
 
         component.LastExitAttempt = currentTime;
         Remove(uid, component, args.Entity);
