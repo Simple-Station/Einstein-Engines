@@ -1,4 +1,4 @@
-## Hats
+# Hats
 - type: loadout
   id: LoadoutHeadBeaverHat
   category: Head
@@ -70,7 +70,8 @@
   exclusive: true
   items:
     - ClothingHeadHatBellhop
-## Color Hats
+
+# Color Hats
 - type: loadout
   id: LoadoutHeadHatBluesoft
   category: Head
@@ -199,7 +200,7 @@
   items:
     - ClothingHeadHatYellowsoftFlipped
 
-## Headbands
+# Headbands
 - type: loadout
   id: LoadoutHeadBandBlack
   category: Head

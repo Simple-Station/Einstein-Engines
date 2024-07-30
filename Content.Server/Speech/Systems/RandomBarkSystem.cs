@@ -2,6 +2,7 @@ using Content.Server.Chat.Systems;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Random;
 using Content.Server.Speech.Components;
+using Content.Shared.Chat;
 
 namespace Content.Server.Speech.Systems;
 
