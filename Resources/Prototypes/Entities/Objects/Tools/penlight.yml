@@ -23,7 +23,12 @@
       autoRot: true
       radius: 2
       netsync: false
+    - type: PenLight
     - type: Appearance
+    - type: UserInterface
+      interfaces:
+      - key: enum.PenLightUiKey.Key
+        type: PenLightBoundUserInterface
     - type: ToggleableLightVisuals
     - type: PowerCellSlot
       cellSlotId: cell_slot
@@ -32,9 +37,6 @@
         cell_slot:
           name: power-cell-slot-component-slot-name-default
           startingItem: PowerCellSmall
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot {}
     - type: Tag
       tags:
       - Flashlight
@@ -75,9 +77,6 @@
         cell_slot:
           name: power-cell-slot-component-slot-name-default
           startingItem: PowerCellSmall
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot {}
     - type: Tag
       tags:
       - Flashlight
