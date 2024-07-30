@@ -4,9 +4,9 @@
   cost: 0
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: SlimePerson
-    - !type:CharacterSpeciesRequirement
-      species: Vox
+      species:
+        - SlimePerson
+        - Vox
   items:
     - EmergencyNitrogenTankFilled
 
@@ -16,9 +16,9 @@
   cost: 1
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: SlimePerson
-    - !type:CharacterSpeciesRequirement
-      species: Vox
+      species:
+        - SlimePerson
+        - Vox
   items:
     - ExtendedEmergencyNitrogenTankFilled
 
@@ -28,8 +28,8 @@
   cost: 3
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: SlimePerson
-    - !type:CharacterSpeciesRequirement
-      species: Vox
+      species:
+        - SlimePerson
+        - Vox
   items:
     - DoubleEmergencyNitrogenTankFilled

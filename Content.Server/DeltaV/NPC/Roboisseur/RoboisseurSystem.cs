@@ -7,6 +7,7 @@ using Content.Shared.Random.Helpers;
 using Content.Shared.Kitchen;
 using Robust.Server.GameObjects;
 using Content.Server.Materials;
+using Content.Shared.Chat;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 

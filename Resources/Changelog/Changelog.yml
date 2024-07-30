@@ -4618,3 +4618,63 @@ Entries:
         reported.
   id: 6180
   time: '2024-07-24T03:18:56.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed the character editor dummy always acting like a human
+  id: 6181
+  time: '2024-07-24T17:13:05.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Most station events were rebalanced to better suit low-pop rounds.
+    - type: Add
+      message: >-
+        Weakened versions of vent critter events can now occur on low-pop
+        rounds.
+    - type: Tweak
+      message: >-
+        After a lot of complaints, the mass mindswap event is no longer
+        permanent.
+  id: 6182
+  time: '2024-07-24T23:27:34.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed some NEIL announcements not playing audio
+  id: 6183
+  time: '2024-07-26T19:29:37.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where sound was not traveling over a Shuttle-Docking
+        connection. Attached grids now permit sound to travel through.
+  id: 6184
+  time: '2024-07-26T20:09:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Long Survival has been added as a new Game mode.
+  id: 6185
+  time: '2024-07-27T06:00:24.0000000+00:00'
+- author: CilliePaint
+  changes:
+    - type: Tweak
+      message: New Box Textures!
+  id: 6186
+  time: '2024-07-29T05:50:43.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Fixed toolshed command permissions. This will mostly affect admins who
+        don't have full host access.
+  id: 6187
+  time: '2024-07-29T05:54:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Radiation damage no longer interrupts DoAfters.
+  id: 6188
+  time: '2024-07-29T06:00:26.0000000+00:00'
