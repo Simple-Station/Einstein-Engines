@@ -4678,3 +4678,20 @@ Entries:
       message: Radiation damage no longer interrupts DoAfters.
   id: 6188
   time: '2024-07-29T06:00:26.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Added cybernetic limb markings from Hesphiastos Industries and Bishop
+        Cybernetics.
+  id: 6189
+  time: '2024-07-30T21:33:23.0000000+00:00'
+- author: angelofallars
+  changes:
+    - type: Add
+      message: >-
+        Makeup is finally here: lips, blush, and nail polish! Sashay over to
+        Character Setup in the Markings section, then look at Head/Overlay to
+        give makeovers to your characters!
+  id: 6190
+  time: '2024-07-30T21:34:37.0000000+00:00'
