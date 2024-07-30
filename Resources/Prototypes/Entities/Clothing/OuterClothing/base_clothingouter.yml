@@ -141,6 +141,9 @@
   - type: Clothing
     equipDelay: 2.5 # Hardsuits are heavy and take a while to put on/off.
     unequipDelay: 2.5
+  - type: Geiger
+    attachedToSuit: true
+    localSoundOnly: true
 
 - type: entity
   abstract: true
