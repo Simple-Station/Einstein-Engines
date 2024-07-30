@@ -455,15 +455,15 @@ public sealed class SupermatterSystem : EntitySystem
                 break;
 
             case DelamType.Singulo:
-                Spawn(sm.SingularityPrototypeId, xform.Coordinates);
+                Spawn(sm.SingularitySpawnPrototype, xform.Coordinates);
                 break;
 
             case DelamType.Tesla:
-                Spawn(sm.TeslaPrototypeId, xform.Coordinates);
+                Spawn(sm.TeslaSpawnPrototype, xform.Coordinates);
                 break;
 
             case DelamType.Cascade:
-                Spawn(sm.SupermatterKudzuPrototypeId, xform.Coordinates);
+                Spawn(sm.SupermatterKudzuSpawnPrototype, xform.Coordinates);
                 break;
         }
     }
@@ -516,7 +516,7 @@ public sealed class SupermatterSystem : EntitySystem
 
         if (!HasComp<ProjectileComponent>(target))
         {
-            EntityManager.SpawnEntity(sm.CollisionResultPrototypeId, Transform(target).Coordinates);
+            EntityManager.SpawnEntity(sm.CollisionResultPrototype, Transform(target).Coordinates);
             _audio.PlayPvs(sm.DustSound, uid);
         }
 
@@ -544,7 +544,7 @@ public sealed class SupermatterSystem : EntitySystem
 
         sm.MatterPower += 200;
 
-        EntityManager.SpawnEntity(sm.CollisionResultPrototypeId, Transform(target).Coordinates);
+        EntityManager.SpawnEntity(sm.CollisionResultPrototype, Transform(target).Coordinates);
         _audio.PlayPvs(sm.DustSound, uid);
         EntityManager.QueueDeleteEntity(target);
     }
@@ -586,7 +586,7 @@ public sealed class SupermatterSystem : EntitySystem
         var integrity = GetIntegrity(sm).ToString("0.00");
         SupermatterAnnouncement(uid, Loc.GetString("supermatter-announcement-cc-tamper", ("integrity", integrity)), true, "Central Command");
 
-        Spawn(sm.SliverPrototypeId, _transform.GetMapCoordinates(args.User));
+        Spawn(sm.SupermatterSliverPrototype, _transform.GetMapCoordinates(args.User));
         _popup.PopupClient(Loc.GetString("supermatter-tamper-end"), uid, args.User);
 
         sm.DelamTimer /= 2;
