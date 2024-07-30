@@ -18,6 +18,7 @@ using Content.Server.AlertLevel;
 using Content.Server.Station.Systems;
 using System.Text;
 using Content.Server.Kitchen.Components;
+using Content.Shared.Chat;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Server.DoAfter;
