@@ -98,6 +98,12 @@ public sealed partial class GeigerComponent : Component
     /// </summary>
     [DataField]
     public float RolloffFactorParams = 4f;
+
+    /// <summary>
+    ///     Controls the maximum distance that players can hear geiger counter ticks.
+    /// </summary>
+    [DataField]
+    public float MaxDistanceParams = 10f;
 }
 
 [Serializable, NetSerializable]

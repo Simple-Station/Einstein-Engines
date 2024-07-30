@@ -156,7 +156,10 @@ public sealed class GeigerSystem : SharedGeigerSystem
         if (component.Sounds.TryGetValue(component.DangerLevel, out var sounds))
         {
             var sound = _audio.GetSound(sounds);
-            var param = sounds.Params.WithLoop(true).WithVolume(-4f).WithRolloffFactor(4f);
+            var param = sounds.Params.WithLoop(true)
+                                     .WithVolume(component.VolumeParams)
+                                     .WithRolloffFactor(component.RolloffFactorParams)
+                                     .WithMaxDistance(component.MaxDistanceParams);
 
             if (component.LocalSoundOnly
                 && component.User is not null
