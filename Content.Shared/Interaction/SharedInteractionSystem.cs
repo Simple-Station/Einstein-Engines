@@ -988,7 +988,7 @@ namespace Content.Shared.Interaction
             RaiseLocalEvent(target, interactUsingEvent, true);
             DoContactInteraction(user, used, interactUsingEvent);
             DoContactInteraction(user, target, interactUsingEvent);
-
+            // Contact interactions are currently only used for forensics, so we don't raise used -> target
             if (interactUsingEvent.Handled)
                 return;
 
@@ -1018,6 +1018,8 @@ namespace Content.Shared.Interaction
             DoContactInteraction(user, used, afterInteractEvent);
             if (canReach)
                 DoContactInteraction(user, target, afterInteractEvent);
+                // Contact interactions are currently only used for forensics, so we don't raise used -> target
+            }
 
             if (afterInteractEvent.Handled)
                 return;
@@ -1031,6 +1033,8 @@ namespace Content.Shared.Interaction
             DoContactInteraction(user, used, afterInteractUsingEvent);
             if (canReach)
                 DoContactInteraction(user, target, afterInteractUsingEvent);
+                // Contact interactions are currently only used for forensics, so we don't raise used -> target
+            }
         }
 
         #region ActivateItemInWorld
