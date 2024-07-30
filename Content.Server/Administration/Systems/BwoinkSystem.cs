@@ -61,7 +61,6 @@ namespace Content.Server.Administration.Systems
         private string _serverName = string.Empty;
 
         private readonly Dictionary<NetUserId, DiscordRelayInteraction> _relayMessages = new();
-
         private Dictionary<NetUserId, string> _oldMessageIds = new();
         private readonly Dictionary<NetUserId, Queue<DiscordRelayedData>> _messageQueues = new();
         private readonly HashSet<NetUserId> _processingChannels = new();
@@ -94,7 +93,6 @@ namespace Content.Server.Administration.Systems
             Subs.CVar(_config, CVars.GameHostName, OnServerNameChanged, true);
             Subs.CVar(_config, CCVars.AdminAhelpOverrideClientName, OnOverrideChanged, true);
             _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("AHELP");
-
             var defaultParams = new AHelpMessageParams(
                 string.Empty,
                 string.Empty,
@@ -103,7 +101,7 @@ namespace Content.Server.Administration.Systems
                 _gameTicker.RunLevel,
                 playedSound: false
             );
-            _maxAdditionalChars = GenerateAHelpMessage(defaultParams).Message.Length;
+            _maxAdditionalChars = GenerateAHelpMessage(defaultParams).Length;
             _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
 
             SubscribeLocalEvent<GameRunLevelChangedEvent>(OnGameRunLevelChanged);
@@ -642,7 +640,7 @@ namespace Content.Server.Administration.Systems
         protected override void OnBwoinkTextMessage(BwoinkTextMessage message, EntitySessionEventArgs eventArgs)
         {
             base.OnBwoinkTextMessage(message, eventArgs);
-
+            _activeConversations[message.UserId] = DateTime.Now;
             var senderSession = eventArgs.SenderSession;
 
             // TODO: Sanitize text?
@@ -763,7 +761,7 @@ namespace Content.Server.Administration.Systems
                         overrideMsgText = $"{(message.PlaySound ? "" : "(S) ")}{overrideMsgText}: {escapedText}";
 
                         RaiseNetworkEvent(new BwoinkTextMessage(message.UserId,
-                                senderId,
+                                senderSession.UserId,
                                 overrideMsgText,
                                 playSound: playSound),
                             session.Channel);
