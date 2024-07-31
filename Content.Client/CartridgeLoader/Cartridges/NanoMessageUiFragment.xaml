@@ -6,11 +6,7 @@
     <PanelContainer StyleClasses="BackgroundDark"></PanelContainer>
     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
         <!-- Left panel - recipient list -->
-        <PanelContainer VerticalExpand="True">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BorderColor="#000000" BorderThickness="2 2 2 2"/>
-            </PanelContainer.PanelOverride>
-
+        <PanelContainer VerticalExpand="True" StyleClasses="PdaBorderRect">
             <BoxContainer Orientation="Vertical" VerticalExpand="True">
                 <Label Align="Center" Text="{Loc 'nano-message-label-recipients'}"/>
 
@@ -21,11 +17,7 @@
         </PanelContainer>
 
         <!-- Right panel - chat -->
-        <PanelContainer VerticalExpand="True" HorizontalExpand="True">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BorderColor="#000000" BorderThickness="2 2 2 2"/>
-            </PanelContainer.PanelOverride>
-
+        <PanelContainer VerticalExpand="True" HorizontalExpand="True" StyleClasses="PdaBorderRect">
             <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
                 <RichTextLabel Name="ChatHeaderLabel"/>
 

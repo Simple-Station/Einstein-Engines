@@ -4,6 +4,7 @@ using Content.Server.NanoMessage.Events;
 using Content.Server.Power.Components;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
+using Content.Shared.IdentityManagement;
 
 namespace Content.Server.CartridgeLoader.Cartridges;
 
@@ -67,6 +68,7 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
 
         var state = new NanoMessageUiState
         {
+            ConnectedServerLabel = client.ConnectedServer is { Valid: true } ? Identity.Name(client.ConnectedServer, EntityManager) : null,
             KnownRecipients = ent.Comp.KnownRecipientsData,
             OpenedConversation = currentConvo
         };

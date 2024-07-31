@@ -3,8 +3,12 @@
               Margin="4"
               Orientation="Vertical"
               HorizontalExpand="True">
-    <Label Name="RecipientLabel" HorizontalExpand="True"/>
-    <Label Name="IdLabel" HorizontalExpand="True"/>
+    <ContainerButton Name="Root" Access="Public" HorizontalExpand="True">
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+            <Label Name="RecipientLabel" HorizontalExpand="True"/>
+            <Label Name="IdLabel"/>
+        </BoxContainer>
+    </ContainerButton>
 
     <customControls:HSeparator Margin="0 5 0 5"/>
 </BoxContainer>

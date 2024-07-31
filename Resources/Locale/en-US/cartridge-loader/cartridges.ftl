@@ -21,7 +21,14 @@ log-probe-label-accessor = Accessed by
 log-probe-label-number = #
 
 nano-message-program-name = NanoMessage
-nano-message-label-conversation = Chat with [color=blue]{$otherUser}[/color]
 nano-message-label-recipients = Recipients
 nano-message-add-recipient = Add recipient
 nano-message-send = Send
+nano-message-server-header = NanoMessage - [bold]connected[/bold] to [color=green]{$server}[/color].
+nano-message-no-server-header = NanoMessage - [bold][color=red]connection failed[/color][/bold].
+nano-message-user = [bold][color=blue]{$user}[/color][/bold] (#{$id})
+nano-message-unknown-user = [bold][color=red]Unknown user #{$id}[/color][/bold]
+nano-message-unknown-user-short = <Unknown>
+nano-message-timestamp-now = Just now
+nano-message-timestamp-recent = {$minutes} minutes ago
+nano-message-timestamp-old = {$hours}:{$minutes} shift time

@@ -9,14 +9,16 @@ namespace Content.Client.CartridgeLoader.Cartridges;
 public sealed partial class NanoMessageEntryRecipient : BoxContainer
 {
     public NanoMessageRecipient Recipient;
+    public string RecipientName;
 
-    public NanoMessageEntryRecipient(int index, NanoMessageRecipient recipient)
+    public NanoMessageEntryRecipient(int index, NanoMessageRecipient recipient, string recipientName)
     {
         Recipient = recipient;
+        RecipientName = recipientName;
         RobustXamlLoader.Load(this);
 
         // Placeholder
-        RecipientLabel.Text = index + ". " + (recipient.Name ?? "unknown");
+        RecipientLabel.Text = RecipientName;
         IdLabel.Text = recipient.Id.ToString();
     }
 }

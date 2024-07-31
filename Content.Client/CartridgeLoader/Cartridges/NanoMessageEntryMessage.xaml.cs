@@ -9,16 +9,29 @@ namespace Content.Client.CartridgeLoader.Cartridges;
 public sealed partial class NanoMessageEntryMessage : BoxContainer
 {
     public NanoMessageMessage Message;
+    public string Author;
 
-    public NanoMessageEntryMessage(NanoMessageMessage message)
+    public NanoMessageEntryMessage(NanoMessageMessage message, string author)
     {
         Message = message;
+        Author = author;
+
         RobustXamlLoader.Load(this);
 
-        AuthorInfoLabel.SetMessage("<placeholder name>");
-        TimestampLabel.Text = "00:00";
-        LanguageLabel.Text = "GalacticCommon";
+        AuthorInfoLabel.SetMessage(author);
+        TimestampLabel.Text = FormatTimestamp(message.Timestamp);
+        LanguageLabel.Text = "LANGUAGE PLACEHOLDER";
 
         ContentLabel.SetMessage(message.Message);
+    }
+
+    private string FormatTimestamp(TimeSpan shiftTime)
+    {
+        if (shiftTime.TotalMinutes <= 1)
+            return Loc.GetString("nano-message-timestamp-now");
+        if (shiftTime.TotalMinutes <= 30)
+            return Loc.GetString("nano-message-timestamp-recent", ("minutes", (int) shiftTime.TotalMinutes));
+
+        return Loc.GetString("nano-message-timestamp-old", ("hours", (int) shiftTime.TotalHours), ("minutes", shiftTime.Minutes));
     }
 }
