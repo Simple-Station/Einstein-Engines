@@ -31,6 +31,7 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
+         - Security
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -47,6 +48,7 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
+         - Security
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -211,6 +213,7 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
+         - Security
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -227,6 +230,7 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
+         - Security
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -682,7 +686,6 @@
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
-         - Security
          - Command
 
 - type: loadout
@@ -700,7 +703,6 @@
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
-         - Security
          - Command
 
 - type: loadout
@@ -736,7 +738,6 @@
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
-         - Security
          - Command
 
 - type: loadout
@@ -877,7 +878,6 @@
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
-         - Security
          - Command
 
 - type: loadout
@@ -891,7 +891,6 @@
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
-         - Security
          - Command
 
 - type: loadout
@@ -994,7 +993,6 @@
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
-         - Security
          - Command
 
 - type: loadout
@@ -1108,7 +1106,6 @@
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
-         - Security
          - Command
 
 # Schoolgirl uniform
@@ -1123,7 +1120,6 @@
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
-         - Security
          - Command
 
 - type: loadout
