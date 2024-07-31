@@ -506,6 +506,10 @@
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
   items:
     - ClothingUniformJumpsuitChemShirt
 
@@ -530,6 +534,10 @@
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
   items:
     - ClothingShoesEnclosedChem
 
