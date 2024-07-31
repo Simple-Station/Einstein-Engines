@@ -78,6 +78,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
     public const float DefaultObfuscationFactor = 0.2f; // Percentage of symbols in a whispered message that can be seen even by "far" listeners
+    public readonly Color DefaultSpeakColor = Color.White;
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
@@ -543,10 +544,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedMessage, source, false, session.Channel);
         }
 
-        var replayWrap = Loc.GetString("chat-manager-entity-whisper-wrap-message",
-            ("color", language.SpeechOverride.Color),
-            ("entityName", name),
-            ("message", FormattedMessage.EscapeText(message)));
+        var replayWrap = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, FormattedMessage.EscapeText(message), language);
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, replayWrap, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
         var ev = new EntitySpokeEvent(source, message, channel, true, language);
@@ -881,9 +879,12 @@ public sealed partial class ChatSystem : SharedChatSystem
         var verbId = language.SpeechOverride.SpeechVerbOverrides is { } verbsOverride
             ? _random.Pick(verbsOverride).ToString()
             : _random.Pick(speech.SpeechVerbStrings);
+        var color = DefaultSpeakColor;
+        if (language.SpeechOverride.Color is { } colorOverride)
+            color *= colorOverride;
 
         return Loc.GetString(wrapId,
-            ("color", language.SpeechOverride.Color),
+            ("color", color),
             ("entityName", entityName),
             ("verb", Loc.GetString(verbId)),
             ("fontType", language.SpeechOverride.FontId ?? speech.FontId),

@@ -179,8 +179,9 @@ public sealed class RadioSystem : EntitySystem
     private string WrapRadioMessage(EntityUid source, RadioChannelPrototype channel, string name, string message, LanguagePrototype language)
     {
         var speech = _chat.GetSpeechVerb(source, message);
-        // TODO this is done just to preserve the old look of radio, perhaps we can change it as well?
-        var languageColor = language.SpeechOverride.Color == Color.White ? channel.Color : language.SpeechOverride.Color;
+        var languageColor = channel.Color;
+        if (language.SpeechOverride.Color is { } colorOverride)
+            languageColor *= colorOverride;
 
         return Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("color", channel.Color),

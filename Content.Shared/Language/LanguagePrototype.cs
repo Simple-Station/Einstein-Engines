@@ -37,8 +37,11 @@ public sealed class LanguagePrototype : IPrototype
 [DataDefinition]
 public sealed partial class SpeechOverrideInfo
 {
+    /// <summary>
+    ///     Color mask for text written in this language. If null, text color will not be affected.
+    /// </summary>
     [DataField]
-    public Color Color = Color.White;
+    public Color? Color = null;
 
     [DataField]
     public string? FontId;
