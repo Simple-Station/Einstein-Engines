@@ -508,6 +508,18 @@
   items:
     - ClothingEyesGlassesChemical
 
+- type: loadout
+  id: LoadoutMedicalBedsheetMedical
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - BedsheetMedical
+
 # Chemist PPE gear
 - type: loadout
   id: LoadoutMedicalUniformJumpsuitChemShirt

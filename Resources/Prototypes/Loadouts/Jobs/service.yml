@@ -27,6 +27,31 @@
     - ClothingHeadHatJesterAlt
     - ClothingShoesJester
 
+- type: loadout
+  id: LoadoutServiceClownBedsheetClown
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - BedsheetClown
+
+# Mime
+- type: loadout
+  id: LoadoutServiceMimeBedsheetMime
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - BedsheetMime
+
 # Bartender
 - type: loadout
   id: LoadoutServiceBartenderUniformPurple
