@@ -4709,3 +4709,9 @@ Entries:
       message: 'Lasers no longer function as jetpacks in space. '
   id: 6192
   time: '2024-07-31T22:57:33.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed the Uncategorized category not being hidden when empty
+  id: 6193
+  time: '2024-07-31T23:32:52.0000000+00:00'
