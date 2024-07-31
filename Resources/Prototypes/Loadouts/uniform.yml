@@ -448,6 +448,10 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtCasualBlue
@@ -456,6 +460,12 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtCasualBlue
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitCasualPurple
@@ -469,6 +479,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtCasualPurple
@@ -477,6 +492,12 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtCasualPurple
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitCasualRed
@@ -490,6 +511,10 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtCasualRed
@@ -498,6 +523,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtCasualRed
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitTshirtJeans
@@ -511,6 +541,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitTshirtJeansGray
@@ -524,6 +559,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitTshirtJeansPeach
@@ -537,6 +577,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitJeansGreen
@@ -550,6 +595,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitJeansRed
@@ -563,6 +613,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitJeansBrown
@@ -576,6 +631,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitLostTourist
@@ -589,6 +649,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 # Hawaiian shirts
 - type: loadout
@@ -603,6 +668,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitHawaiBlue
@@ -616,6 +686,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitHawaiRed
@@ -629,6 +704,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitHawaiYellow
@@ -642,6 +722,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 # AutoDrobe clothes
 - type: loadout
@@ -651,6 +736,11 @@
   exclusive: true
   items:
     - ClothingUniformDressRed
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitSober
@@ -664,6 +754,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformSkirtTurtle
@@ -672,6 +767,12 @@
   exclusive: true
   items:
     - ClothingUniformSkirtTurtle
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformGeisha
@@ -680,6 +781,11 @@
   exclusive: true
   items:
     - UniformGeisha
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformCostumeArcDress
@@ -688,6 +794,12 @@
   exclusive: true
   items:
     - ClothingCostumeArcDress
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformCostumeMioSkirt
@@ -696,6 +808,12 @@
   exclusive: true
   items:
     - ClothingCostumeMioSkirt
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformCostumeNaota
@@ -704,6 +822,12 @@
   exclusive: true
   items:
     - ClothingCostumeNaota
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 # Bartender clothes
 - type: loadout
@@ -718,6 +842,11 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtBartender
@@ -726,6 +855,12 @@
   exclusive: true
   items:
     - ClothingUniformJumpskirtBartender
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 # Kendo
 - type: loadout
@@ -735,6 +870,12 @@
   exclusive: true
   items:
     - ClothingUniformKendoHakama
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformMartialGi
@@ -743,6 +884,12 @@
   exclusive: true
   items:
     - ClothingUniformMartialGi
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 # Kimono
 - type: loadout
@@ -752,6 +899,12 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitKimono
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingKimonoBlue
@@ -760,6 +913,12 @@
   exclusive: true
   items:
     - ClothingKimonoBlue
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingKimonoPink
@@ -768,6 +927,12 @@
   exclusive: true
   items:
     - ClothingKimonoPink
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingKimonoPurple
@@ -776,6 +941,12 @@
   exclusive: true
   items:
     - ClothingKimonoPurple
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingKimonoSky
@@ -784,6 +955,12 @@
   exclusive: true
   items:
     - ClothingKimonoSky
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingKimonoGreen
@@ -792,6 +969,12 @@
   exclusive: true
   items:
     - ClothingKimonoGreen
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 # Gakuran
 - type: loadout
@@ -801,6 +984,12 @@
   exclusive: true
   items:
     - ClothingUniformSchoolGakuranBlack
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 # Schoolgirl uniform
 - type: loadout
@@ -810,6 +999,12 @@
   exclusive: true
   items:
     - UniformSchoolgirlBlack
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformSchoolgirlBlue
@@ -818,6 +1013,12 @@
   exclusive: true
   items:
     - UniformSchoolgirlBlue
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformSchoolgirlCyan
@@ -826,6 +1027,12 @@
   exclusive: true
   items:
     - UniformSchoolgirlCyan
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformSchoolgirlGreen
@@ -834,6 +1041,12 @@
   exclusive: true
   items:
     - UniformSchoolgirlGreen
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformSchoolgirlOrange
@@ -842,6 +1055,12 @@
   exclusive: true
   items:
     - UniformSchoolgirlOrange
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformSchoolgirlPink
@@ -850,6 +1069,12 @@
   exclusive: true
   items:
     - UniformSchoolgirlPink
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformSchoolgirlPurple
@@ -858,6 +1083,12 @@
   exclusive: true
   items:
     - UniformSchoolgirlPurple
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformSchoolgirlRed
@@ -866,6 +1097,11 @@
   exclusive: true
   items:
     - UniformSchoolgirlRed
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformSchoolgirlDusk
@@ -874,6 +1110,12 @@
   exclusive: true
   items:
     - UniformSchoolgirlDusk
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutUniformSchoolgirlBlazerTan
@@ -882,6 +1124,12 @@
   exclusive: true
   items:
     - UniformSchoolgirlBlazerTan
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 # MNK Uniforms
 - type: loadout
@@ -891,6 +1139,12 @@
   exclusive: true
   items:
     - ClothingUniformMNKOfficeSkirt
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingMNKUnderGarment
@@ -899,6 +1153,12 @@
   exclusive: true
   items:
     - ClothingUniformMNKUnderGarment
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingMNKGymBra
@@ -907,6 +1167,12 @@
   exclusive: true
   items:
     - ClothingUniformMNKGymBra
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingMNKDressBlack
@@ -915,6 +1181,12 @@
   exclusive: true
   items:
     - ClothingUniformMNKDressBlack
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingMNKBlackOveralls
@@ -923,6 +1195,12 @@
   exclusive: true
   items:
     - ClothingUniformMNKBlackOveralls
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingMNKBlackShoulder
@@ -931,6 +1209,12 @@
   exclusive: true
   items:
     - ClothingUniformMNKBlackShoulder
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
 
 - type: loadout
   id: LoadoutClothingMNKTracksuitBlack
@@ -939,3 +1223,9 @@
   exclusive: true
   items:
     - ClothingUniformMNKTracksuitBlack
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
