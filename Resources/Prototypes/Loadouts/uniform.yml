@@ -722,6 +722,87 @@
   items:
     - ClothingUniformSchoolGakuranBlack
 
+# Schoolgirl uniform
+- type: loadout
+  id: LoadoutUniformSchoolgirlBlack
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformSchoolgirlBlack
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlBlue
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformSchoolgirlBlue
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlCyan
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformSchoolgirlCyan
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlGreen
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformSchoolgirlGreen
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlOrange
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformSchoolgirlOrange
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlPink
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformSchoolgirlPink
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlPurple
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformSchoolgirlPurple
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlRed
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformSchoolgirlRed
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlDusk
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformSchoolgirlDusk
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlBlazerTan
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformSchoolgirlBlazerTan
+
 # MNK Uniforms
 - type: loadout
   id: LoadoutClothingMNKOfficeSkirt

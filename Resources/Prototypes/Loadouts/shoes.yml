@@ -302,3 +302,31 @@
         - Harpy
   items:
     - ClothingShoesHighheelBoots
+
+# Socks
+- type: loadout
+  id: LoadoutShoesUnderSocksCoder
+  category: Shoes
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  items:
+    - ClothingUnderSocksCoder
+
+# Socks
+- type: loadout
+  id: LoadoutShoesUnderSocksBee
+  category: Shoes
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  items:
+    - ClothingUnderSocksBee
