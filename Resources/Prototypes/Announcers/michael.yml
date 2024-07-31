@@ -37,8 +37,8 @@
       path: alerts/red.ogg
     - id: alertGamma # There is a massive immediate threat to the station, listen to Central Command
       path: alerts/gamma.ogg
-    # - id: alertDelta # The station is being or about to be massively destroyed, run for your life
-    #   path: alerts/delta.ogg
+    - id: alertDelta # The station is being or about to be massively destroyed, run for your life
+      path: alerts/delta.ogg
     - id: alertEpsilon # The station has been terminated, good luck survivors!
       path: alerts/epsilon.ogg
       audioParams:
