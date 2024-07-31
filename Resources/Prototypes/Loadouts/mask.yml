@@ -17,7 +17,7 @@
 - type: loadout
   id: LoadoutMaskGas
   category: Mask
-  cost: 3
+  cost: 1
   exclusive: true
   items:
     - ClothingMaskGas
