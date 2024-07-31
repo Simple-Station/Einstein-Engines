@@ -496,6 +496,18 @@
   items:
     - ClothingEyesPrescriptionMedHud
 
+- type: loadout
+  id: LoadoutMedicalEyesGlassesChemical
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+         - Chemist
+  items:
+    - ClothingEyesGlassesChemical
+
 # Chemist PPE gear
 - type: loadout
   id: LoadoutMedicalUniformJumpsuitChemShirt
