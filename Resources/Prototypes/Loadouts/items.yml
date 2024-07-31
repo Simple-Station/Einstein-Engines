@@ -215,7 +215,7 @@
 - type: loadout
   id: LoadoutItemCrayonBox
   category: Items
-  cost: 5
+  cost: 4
   items:
     - CrayonBox
 
