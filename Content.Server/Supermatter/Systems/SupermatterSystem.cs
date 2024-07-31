@@ -1,4 +1,5 @@
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Events;
@@ -25,6 +26,8 @@ using Content.Server.DoAfter;
 using Content.Server.Popups;
 using System.Linq;
 using Content.Shared.Audio;
+using System.Configuration;
+using Content.Shared.CCVar;
 
 namespace Content.Server.Supermatter.Systems;
 
@@ -43,6 +46,7 @@ public sealed class SupermatterSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     public override void Initialize()
     {
@@ -191,7 +195,7 @@ public sealed class SupermatterSystem : EntitySystem
 
         //Radiate stuff
         if (TryComp<RadiationSourceComponent>(uid, out var rad))
-            rad.Intensity = sm.Power * Math.Max(0, 1f + transmissionBonus / 10f) * 0.003f;
+            rad.Intensity = sm.Power * Math.Max(0, 1f + transmissionBonus / 10f) * 0.003f * _config.GetCVar(CCVars.SupermatterRadsModifier);
 
         //Power * 0.55 * a value between 1 and 0.8
         var energy = sm.Power * sm.ReactionPowerModifier;
@@ -405,6 +409,9 @@ public sealed class SupermatterSystem : EntitySystem
     /// </summary>
     public DelamType ChooseDelamType(EntityUid uid, SupermatterComponent sm)
     {
+        if (_config.GetCVar(CCVars.DoForceDelam))
+            return _config.GetCVar(CCVars.ForcedDelamType);
+
         var mix = _atmosphere.GetContainingMixture(uid, true, true);
 
         if (mix is { })
@@ -412,10 +419,12 @@ public sealed class SupermatterSystem : EntitySystem
             var absorbedGas = mix.Remove(sm.GasEfficiency * mix.TotalMoles);
             var moles = absorbedGas.TotalMoles;
 
-            if (moles >= sm.MolePenaltyThreshold)
+            if (_config.GetCVar(CCVars.DoSingulooseDelam)
+                && moles >= sm.MolePenaltyThreshold * _config.GetCVar(CCVars.SingulooseMolesModifier))
                 return DelamType.Singulo;
         }
-        if (sm.Power >= sm.PowerPenaltyThreshold)
+        if (_config.GetCVar(CCVars.DoTeslooseDelam)
+            && sm.Power >= sm.PowerPenaltyThreshold * _config.GetCVar(CCVars.TesloosePowerModifier))
             return DelamType.Tesla;
 
         // TODO: add resonance cascade when there's crazy conditions or a destabilizing crystal
