@@ -102,3 +102,15 @@
         - HeadOfPersonnel
   items:
     - ClothingShoesBootsWinterHeadOfPersonel
+
+- type: loadout
+  id: LoadoutCommandHOPBedsheetIan
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - BedsheetIan
