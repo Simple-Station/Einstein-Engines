@@ -270,7 +270,7 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
         var time = playTimes.GetValueOrDefault(Tracker);
         reason = null;
 
-        if (time > Max)
+        if (time.TotalMinutes > Max.TotalMinutes)
         {
             // Show the reason if invalid
             reason = Inverted
@@ -282,7 +282,7 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
             return false;
         }
 
-        if (time < Min)
+        if (time.TotalMinutes < Min.TotalMinutes)
         {
             // Show the reason if invalid
             reason = Inverted
