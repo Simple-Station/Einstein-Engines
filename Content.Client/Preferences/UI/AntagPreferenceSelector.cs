@@ -45,7 +45,7 @@ public sealed class AntagPreferenceSelector : RequirementsSelector<AntagPrototyp
                 proto.Requirements,
                 highJob,
                 (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                requirements.GetPlayTimes(),
+                requirements.GetRawPlayTimeTrackers(),
                 requirements.IsWhitelisted(),
                 entMan,
                 protoMan,
