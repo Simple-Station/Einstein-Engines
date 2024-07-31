@@ -3,6 +3,7 @@ using Content.Shared.Alert;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
+using Content.Shared.Mind;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -40,24 +41,18 @@ public sealed class MoodSystem : EntitySystem
         if (component.UncategorisedEffects.TryGetValue(args.EffectId, out _))
             RemoveTimedOutEffect(uid, args.EffectId);
         else
-        {
             foreach (var (category, id) in component.CategorisedEffects)
-            {
                 if (id == args.EffectId)
                 {
                     RemoveTimedOutEffect(uid, args.EffectId, category);
                     return;
                 }
-            }
-        }
     }
 
     private void OnRefreshMoveSpeed(EntityUid uid, MoodComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (component.CurrentMoodThreshold is > MoodThreshold.VeryBad and < MoodThreshold.VeryGood or MoodThreshold.Dead)
-            return;
-
-        if (_jetpack.IsUserFlying(uid))
+        if (component.CurrentMoodThreshold is > MoodThreshold.VeryBad and < MoodThreshold.VeryGood or MoodThreshold.Dead
+            || _jetpack.IsUserFlying(uid))
             return;
 
         var modifier = GetMovementThreshold(component.CurrentMoodThreshold) switch
@@ -82,35 +77,27 @@ public sealed class MoodSystem : EntitySystem
     {
         var amount = component.CurrentMoodLevel;
 
-        if (!component.MoodChangeValues.TryGetValue(prototype.MoodChange, out var value))
+        if (!component.MoodChangeValues.TryGetValue(prototype.MoodChange, out var value)
+            || prototype.Category == null)
             return;
 
         //Apply categorised effect
-        if (prototype.Category != null)
+        if (component.CategorisedEffects.TryGetValue(prototype.Category, out var oldPrototypeId)
+            && _prototypeManager.TryIndex<MoodEffectPrototype>(oldPrototypeId, out var oldPrototype)
+            && prototype.ID != oldPrototype.ID
+            && component.MoodChangeValues.TryGetValue(oldPrototype.MoodChange, out var oldValue))
         {
-            if (component.CategorisedEffects.TryGetValue(prototype.Category, out var oldPrototypeId))
-            {
-                if (!_prototypeManager.TryIndex<MoodEffectPrototype>(oldPrototypeId, out var oldPrototype))
-                    return;
-
-                if (prototype.ID != oldPrototype.ID)
-                {
-                    if (!component.MoodChangeValues.TryGetValue(oldPrototype.MoodChange, out var oldValue))
-                        return;
-
-                    amount += (oldPrototype.PositiveEffect ? -oldValue : oldValue) + (prototype.PositiveEffect ? value : -value);
-                    component.CategorisedEffects[prototype.Category] = prototype.ID;
-                }
-            }
-            else
-            {
-                component.CategorisedEffects.Add(prototype.Category, prototype.ID);
-                amount += prototype.PositiveEffect ? value : -value;
-            }
-
-            if (prototype.Timeout != 0)
-                Timer.Spawn(TimeSpan.FromMinutes(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
+            amount += (oldPrototype.PositiveEffect ? -oldValue : oldValue) + (prototype.PositiveEffect ? value : -value);
+            component.CategorisedEffects[prototype.Category] = prototype.ID;
         }
+        else
+        {
+            component.CategorisedEffects.Add(prototype.Category, prototype.ID);
+            amount += prototype.PositiveEffect ? value : -value;
+        }
+
+        if (prototype.Timeout != 0)
+            Timer.Spawn(TimeSpan.FromMinutes(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
         //Apply uncategorised effect
         else
         {
@@ -146,13 +133,10 @@ public sealed class MoodSystem : EntitySystem
         }
         else
         {
-            if (!comp.CategorisedEffects.TryGetValue(category, out var currentProtoId))
-                return;
-            if (currentProtoId != prototypeId)
-                return;
-            if (!_prototypeManager.TryIndex<MoodEffectPrototype>(currentProtoId, out var currentProto))
-                return;
-            if (!comp.MoodChangeValues.TryGetValue(currentProto.MoodChange, out var value))
+            if (!comp.CategorisedEffects.TryGetValue(category, out var currentProtoId)
+                || currentProtoId != prototypeId
+                || !_prototypeManager.TryIndex<MoodEffectPrototype>(currentProtoId, out var currentProto)
+                || !comp.MoodChangeValues.TryGetValue(currentProto.MoodChange, out var value))
                 return;
 
             amount += currentProto.PositiveEffect ? -value : value;
@@ -165,14 +149,10 @@ public sealed class MoodSystem : EntitySystem
     private void OnMobStateChanged(EntityUid uid, MoodComponent component, MobStateChangedEvent args)
     {
         if (args.NewMobState == MobState.Dead && args.OldMobState != MobState.Dead)
-        {
             SetMood(uid, component.MoodThresholds[MoodThreshold.Dead], component, true);
-        }
 
         else if (args.OldMobState == MobState.Dead && args.NewMobState != MobState.Dead)
-        {
             ReapplyAllEffects(uid, component);
-        }
     }
 
     private void ReapplyAllEffects(EntityUid uid, MoodComponent component)
@@ -181,19 +161,15 @@ public sealed class MoodSystem : EntitySystem
 
         foreach (var (_, protoId) in component.CategorisedEffects)
         {
-            if (!_prototypeManager.TryIndex<MoodEffectPrototype>(protoId, out var prototype))
-                return;
-
-            if (!component.MoodChangeValues.TryGetValue(prototype.MoodChange, out var value))
+            if (!_prototypeManager.TryIndex<MoodEffectPrototype>(protoId, out var prototype)
+                || !component.MoodChangeValues.TryGetValue(prototype.MoodChange, out var value))
                 return;
 
             amount += prototype.PositiveEffect ? value : -value;
         }
 
         foreach (var (_, value) in component.UncategorisedEffects)
-        {
             amount += value;
-        }
 
         SetMood(uid, amount, component, refresh: true);
     }
@@ -201,11 +177,8 @@ public sealed class MoodSystem : EntitySystem
     private void OnInit(EntityUid uid, MoodComponent component, ComponentInit args)
     {
         if (TryComp<MobThresholdsComponent>(uid, out var mobThresholdsComponent)
-            && _mobThreshold.TryGetThresholdForState(uid, MobState.Critical,
-                out var critThreshold,mobThresholdsComponent))
-        {
+            && _mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var critThreshold, mobThresholdsComponent))
             component.CritThresholdBeforeModify = critThreshold.Value;
-        }
 
         var amount = component.MoodThresholds[MoodThreshold.Neutral];
         SetMood(uid, amount, component, refresh: true);
@@ -213,10 +186,8 @@ public sealed class MoodSystem : EntitySystem
 
     public void SetMood(EntityUid uid, float amount, MoodComponent? component = null, bool force = false, bool refresh = false)
     {
-        if (!Resolve(uid, ref component))
-            return;
-
-        if (component.CurrentMoodThreshold == MoodThreshold.Dead && !refresh)
+        if (!Resolve(uid, ref component)
+            || component.CurrentMoodThreshold == MoodThreshold.Dead && !refresh)
             return;
 
         if (!force)
@@ -226,9 +197,7 @@ public sealed class MoodSystem : EntitySystem
                 component.MoodThresholds[MoodThreshold.VeryVeryGood]);
         }
         else
-        {
             component.CurrentMoodLevel = amount;
-        }
 
         UpdateCurrentThreshold(uid, component);
     }
@@ -249,13 +218,12 @@ public sealed class MoodSystem : EntitySystem
 
     private void DoMoodThresholdsEffects(EntityUid uid, MoodComponent? component = null, bool force = false)
     {
-        if (!Resolve(uid, ref component))
-            return;
-
-        if (component.CurrentMoodThreshold == component.LastThreshold && !force)
+        if (!Resolve(uid, ref component)
+            || component.CurrentMoodThreshold == component.LastThreshold && !force)
             return;
 
         var modifier = GetMovementThreshold(component.CurrentMoodThreshold);
+
         // Modify mob stats
         if (modifier != GetMovementThreshold(component.LastThreshold))
         {
@@ -266,13 +234,9 @@ public sealed class MoodSystem : EntitySystem
 
         // Modify interface
         if (component.MoodThresholdsAlerts.TryGetValue(component.CurrentMoodThreshold, out var alertId))
-        {
             _alerts.ShowAlert(uid, alertId);
-        }
         else
-        {
             _alerts.ClearAlertCategory(uid, AlertCategory.Mood);
-        }
 
         component.LastThreshold = component.CurrentMoodThreshold;
     }
@@ -280,21 +244,15 @@ public sealed class MoodSystem : EntitySystem
     private void RefreshShaders(EntityUid uid, int modifier)
     {
         if (modifier == -1)
-        {
             EnsureComp<SaturationScaleComponent>(uid);
-        }
         else
-        {
             RemComp<SaturationScaleComponent>(uid);
-        }
     }
 
     private void SetCritThreshold(EntityUid uid, MoodComponent component, int modifier)
     {
-        if (!TryComp<MobThresholdsComponent>(uid, out var mobThresholds))
-            return;
-
-        if (!_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var key))
+        if (!TryComp<MobThresholdsComponent>(uid, out var mobThresholds)
+            || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var key))
             return;
 
         var newKey = modifier switch
@@ -315,13 +273,11 @@ public sealed class MoodSystem : EntitySystem
         var value = component.MoodThresholds[MoodThreshold.VeryVeryGood];
 
         foreach (var threshold in component.MoodThresholds)
-        {
             if (threshold.Value <= value && threshold.Value >= moodLevel)
             {
                 result = threshold.Key;
                 value = threshold.Value;
             }
-        }
 
         return result;
     }
@@ -345,13 +301,11 @@ public sealed class MoodSystem : EntitySystem
         var value = component.HealthMoodEffectsThresholds["HealthNoDamage"];
 
         foreach (var threshold in component.HealthMoodEffectsThresholds)
-        {
             if (threshold.Value <= damage && threshold.Value >= value)
             {
                 protoId = threshold.Key;
                 value = threshold.Value;
             }
-        }
 
         var ev = new MoodEffectEvent(protoId);
         RaiseLocalEvent(uid, ev);
@@ -362,7 +316,7 @@ public sealed class MoodSystem : EntitySystem
 
 [UsedImplicitly]
 [DataDefinition]
-public sealed class ShowMoodEffects : IAlertClick
+public sealed partial class ShowMoodEffects : IAlertClick
 {
     public void AlertClicked(EntityUid uid)
     {
@@ -370,50 +324,46 @@ public sealed class ShowMoodEffects : IAlertClick
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         var chatManager = IoCManager.Resolve<IChatManager>();
 
-        if (!entityManager.TryGetComponent<MoodComponent>(uid, out var comp))
-            return;
-
-        if (comp.CurrentMoodThreshold == MoodThreshold.Dead)
-            return;
-
-        if (!entityManager.TryGetComponent<ActorComponent>(uid, out var actorComp))
+        if (!entityManager.TryGetComponent<MoodComponent>(uid, out var comp)
+            || comp.CurrentMoodThreshold == MoodThreshold.Dead
+            || !entityManager.TryGetComponent<MindComponent>(uid, out var mindComp)
+            || mindComp.Session == null)
             return;
 
         var msgStart = Loc.GetString("mood-show-effects-start");
         chatManager.ChatMessageToOne(ChatChannel.Emotes, msgStart, msgStart, EntityUid.Invalid, false,
-            actorComp.PlayerSession.ConnectedClient);
+            mindComp.Session.Channel);
 
         foreach (var (_, protoId) in comp.CategorisedEffects)
         {
-            if (!prototypeManager.TryIndex<MoodEffectPrototype>(protoId, out var proto))
+            if (!prototypeManager.TryIndex<MoodEffectPrototype>(protoId, out var proto)
+                || proto.Hidden)
                 continue;
 
-            if (proto.Hidden)
-                continue;
-
-            SendDescToChat(proto, actorComp);
+            SendDescToChat(proto, mindComp);
         }
 
         foreach (var (protoId, _) in comp.UncategorisedEffects)
         {
-            if (!prototypeManager.TryIndex<MoodEffectPrototype>(protoId, out var proto))
+            if (!prototypeManager.TryIndex<MoodEffectPrototype>(protoId, out var proto)
+                || proto.Hidden)
                 continue;
 
-            if (proto.Hidden)
-                continue;
-
-            SendDescToChat(proto, actorComp);
+            SendDescToChat(proto, mindComp);
         }
     }
 
-    private void SendDescToChat(MoodEffectPrototype proto, ActorComponent comp)
+    private void SendDescToChat(MoodEffectPrototype proto, MindComponent comp)
     {
+        if (comp.Session == null)
+            return;
+
         var chatManager = IoCManager.Resolve<IChatManager>();
 
         var color = proto.PositiveEffect ? "#008000" : "#BA0000";
         var msg = $"[font size=10][color={color}]{proto.Description}[/color][/font]";
 
         chatManager.ChatMessageToOne(ChatChannel.Emotes, msg, msg, EntityUid.Invalid, false,
-            comp.PlayerSession.ConnectedClient);
+            comp.Session.Channel);
     }
 }
