@@ -151,6 +151,12 @@
   - type: Pda
     id: MedicalInternIDCard
     state: pda-internmed
+    penSlot: # Pen Lights
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#717059"
     accentVColor: "#447987"
@@ -159,12 +165,6 @@
   - type: GuideHelp
     guides:
     - Medical Doctor
-  penSlot: # Pen Lights
-      startingItem: PenLightBase
-      priority: -1
-      whitelist:
-        tags:
-        - Write
 
 - type: entity
   parent: BasePDA

@@ -26,8 +26,8 @@ public sealed partial class PenLightComponent : Component
     /// <summary>
     /// How long the doafter for the exam takes
     /// </summary>
-    [DataField]
-    public TimeSpan DoAfterDuration = TimeSpan.FromSeconds(3);
+    [DataField("examSpeed", required: true)]
+    public float ExamSpeed { get; set; }
 
 }
 

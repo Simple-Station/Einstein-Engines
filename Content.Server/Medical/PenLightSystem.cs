@@ -56,7 +56,7 @@ public sealed class PenLightSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return false;
 
-        return _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, component.DoAfterDuration, new PenLightDoAfterEvent(),
+        return _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, component.ExamSpeed, new PenLightDoAfterEvent(),
             uid, target, uid)
         {
             BlockDuplicate = true,

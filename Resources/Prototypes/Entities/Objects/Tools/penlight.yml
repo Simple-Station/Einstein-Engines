@@ -24,6 +24,7 @@
       radius: 2
       netsync: false
     - type: PenLight
+      examSpeed: 3 #time in seconds
     - type: Appearance
     - type: UserInterface
       interfaces:
@@ -68,6 +69,8 @@
       autoRot: true
       radius: 2
       netsync: false
+    - type: PenLight
+      examSpeed: 1.5 #time in seconds
     - type: Appearance
     - type: ToggleableLightVisuals
     - type: PowerCellSlot
