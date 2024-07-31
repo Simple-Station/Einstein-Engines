@@ -41,52 +41,55 @@ public sealed partial class MoodComponent : Component
     [DataField(customTypeSerializer: typeof(DictionarySerializer<MoodThreshold, float>))]
     public Dictionary<MoodThreshold, float> MoodThresholds = new()
     {
-        { MoodThreshold.VeryVeryGood, 10.0f },
-        { MoodThreshold.VeryGood, 8.0f },
-        { MoodThreshold.Good, 7.0f },
-        { MoodThreshold.Great, 6.0f },
-        { MoodThreshold.Neutral, 5.0f },
-        { MoodThreshold.NotGreat, 4.0f },
-        { MoodThreshold.Bad, 3.0f },
-        { MoodThreshold.VeryBad, 2.0f },
-        { MoodThreshold.VeryVeryBad, 1.0f },
-        { MoodThreshold.Dead, 0.0f }
+        { MoodThreshold.Perfect, 100f },
+        { MoodThreshold.Exceptional, 80f },
+        { MoodThreshold.Great, 70f },
+        { MoodThreshold.Good, 60f },
+        { MoodThreshold.Neutral, 50f },
+        { MoodThreshold.Meh, 40f },
+        { MoodThreshold.Bad, 30f },
+        { MoodThreshold.Terrible, 20f },
+        { MoodThreshold.Horrible, 10f },
+        { MoodThreshold.Dead, 0f }
     };
 
     [DataField(customTypeSerializer: typeof(DictionarySerializer<MoodThreshold, AlertType>))]
     public Dictionary<MoodThreshold, AlertType> MoodThresholdsAlerts = new()
     {
         { MoodThreshold.Dead, AlertType.MoodDead },
-        { MoodThreshold.VeryVeryBad, AlertType.VeryVeryBad },
-        { MoodThreshold.VeryBad, AlertType.VeryBad },
+        { MoodThreshold.Horrible, AlertType.Horrible },
+        { MoodThreshold.Terrible, AlertType.Terrible },
         { MoodThreshold.Bad, AlertType.Bad },
-        { MoodThreshold.NotGreat, AlertType.NotGreat },
+        { MoodThreshold.Meh, AlertType.Meh },
         { MoodThreshold.Neutral, AlertType.Neutral },
-        { MoodThreshold.Great, AlertType.Great },
         { MoodThreshold.Good, AlertType.Good },
-        { MoodThreshold.VeryGood, AlertType.VeryGood },
-        { MoodThreshold.VeryVeryGood, AlertType.VeryVeryGood },
+        { MoodThreshold.Great, AlertType.Great },
+        { MoodThreshold.Exceptional, AlertType.Exceptional },
+        { MoodThreshold.Perfect, AlertType.Perfect },
         { MoodThreshold.Insane, AlertType.Insane }
     };
 
     [DataField(customTypeSerializer: typeof(DictionarySerializer<Enum, float>))]
     public Dictionary<Enum, float> MoodChangeValues = new()
     {
-        { MoodChangeLevel.None , 0.0f },
-        { MoodChangeLevel.Small , 0.3f },
-        { MoodChangeLevel.Medium , 0.7f },
-        { MoodChangeLevel.Big , 1.0f },
-        { MoodChangeLevel.Huge , 1.3f },
-        { MoodChangeLevel.Large , 2f }
+        { MoodChangeLevel.None , 0f },
+        { MoodChangeLevel.Small , 3f },
+        { MoodChangeLevel.Medium , 7f },
+        { MoodChangeLevel.Big , 10f },
+        { MoodChangeLevel.Huge , 13f },
+        { MoodChangeLevel.Large , 20f }
     };
 
+    /// <summary>
+    ///     These thresholds represent a percentage of Crit-Threshold, 0.8 corresponding with 80%.
+    /// </summary>
     [DataField(customTypeSerializer: typeof(DictionarySerializer<string, float>))]
     public Dictionary<string, float> HealthMoodEffectsThresholds = new()
     {
-        { "HealthHeavyDamage", 80f },
-        { "HealthSevereDamage", 50f },
-        { "HealthLightDamage", 10f },
-        { "HealthNoDamage", 5f }
+        { "HealthHeavyDamage", 0.8f },
+        { "HealthSevereDamage", 0.5f },
+        { "HealthLightDamage", 0.1f },
+        { "HealthNoDamage", 0.05f }
     };
 }
 
@@ -94,14 +97,14 @@ public sealed partial class MoodComponent : Component
 public enum MoodThreshold : ushort
 {
     Insane = 1,
-    VeryVeryBad = 2,
-    VeryBad = 3,
+    Horrible = 2,
+    Terrible = 3,
     Bad = 4,
-    NotGreat = 5,
+    Meh = 5,
     Neutral = 6,
-    Great = 7,
-    Good = 8,
-    VeryGood = 9,
-    VeryVeryGood = 10,
+    Good = 7,
+    Great = 8,
+    Exceptional = 9,
+    Perfect = 10,
     Dead = 0
 }

@@ -51,7 +51,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnRefreshMoveSpeed(EntityUid uid, MoodComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (component.CurrentMoodThreshold is > MoodThreshold.VeryBad and < MoodThreshold.VeryGood or MoodThreshold.Dead
+        if (component.CurrentMoodThreshold is > MoodThreshold.Terrible and < MoodThreshold.Exceptional or MoodThreshold.Dead
             || _jetpack.IsUserFlying(uid))
             return;
 
@@ -194,7 +194,7 @@ public sealed class MoodSystem : EntitySystem
         {
             component.CurrentMoodLevel = Math.Clamp(amount,
                 component.MoodThresholds[MoodThreshold.Dead] + 0.1f,
-                component.MoodThresholds[MoodThreshold.VeryVeryGood]);
+                component.MoodThresholds[MoodThreshold.Perfect]);
         }
         else
             component.CurrentMoodLevel = amount;
@@ -270,7 +270,7 @@ public sealed class MoodSystem : EntitySystem
     {
         moodLevel ??= component.CurrentMoodLevel;
         var result = MoodThreshold.Dead;
-        var value = component.MoodThresholds[MoodThreshold.VeryVeryGood];
+        var value = component.MoodThresholds[MoodThreshold.Perfect];
 
         foreach (var threshold in component.MoodThresholds)
             if (threshold.Value <= value && threshold.Value >= moodLevel)
@@ -286,8 +286,8 @@ public sealed class MoodSystem : EntitySystem
     {
         return threshold switch
         {
-            >= MoodThreshold.VeryGood => 1,
-            <= MoodThreshold.VeryBad => -1,
+            >= MoodThreshold.Exceptional => 1,
+            <= MoodThreshold.Terrible => -1,
             _ => 0
         };
     }
@@ -296,7 +296,9 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnDamageChange(EntityUid uid, MoodComponent component, DamageChangedEvent args)
     {
-        var damage = args.Damageable.TotalDamage.Float();
+        if (!_mobThreshold.TryGetPercentageForState(uid, MobState.Critical, args.Damageable.TotalDamage, out var damage))
+            return;
+
         var protoId = "HealthNoDamage";
         var value = component.HealthMoodEffectsThresholds["HealthNoDamage"];
 
