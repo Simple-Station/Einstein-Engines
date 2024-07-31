@@ -23,6 +23,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsWinterCargo

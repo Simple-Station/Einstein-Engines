@@ -8,6 +8,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesColorBlack
@@ -21,6 +22,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesColorBlue
@@ -34,6 +36,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesColorBrown
@@ -47,6 +50,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesColorGreen
@@ -60,6 +64,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesColorOrange
@@ -73,6 +78,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesColorPurple
@@ -86,6 +92,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesColorRed
@@ -99,6 +106,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesColorWhite
@@ -112,6 +120,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesColorYellow
@@ -125,6 +134,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesGeta
@@ -138,6 +148,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesTourist
@@ -152,6 +163,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsWork
@@ -165,6 +177,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsLaceup
@@ -178,6 +191,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsWinter
@@ -191,6 +205,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsCowboyBrown
@@ -204,6 +219,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsCowboyBlack
@@ -217,6 +233,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsCowboyWhite
@@ -230,6 +247,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsCowboyFancy
@@ -243,6 +261,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsFishing
@@ -259,6 +278,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
     - !type:CharacterJobRequirement
       jobs:
@@ -273,6 +293,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesLeather
@@ -286,6 +307,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesMiscWhite
@@ -299,6 +321,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesHighheelBoots
@@ -313,6 +336,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingUnderSocksCoder
@@ -327,6 +351,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingUnderSocksBee

@@ -63,6 +63,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsWinterClown
@@ -152,6 +153,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
+        - Diona
         - Harpy
   items:
     - ClothingShoesBootsWinterMime
