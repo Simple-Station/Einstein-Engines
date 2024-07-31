@@ -204,6 +204,11 @@
   cost: 2
   items:
     - ClothingBackpackSatchelLeather
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
 
 - type: loadout
   id: LoadoutItemWaistbag
@@ -211,6 +216,11 @@
   cost: 2
   items:
     - ClothingBeltStorageWaistbag
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
 
 - type: loadout
   id: LoadoutItemCrayonBox
