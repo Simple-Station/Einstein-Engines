@@ -4695,3 +4695,11 @@ Entries:
         give makeovers to your characters!
   id: 6190
   time: '2024-07-30T21:34:37.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Tools, Drink Containers, Lockers, and all base items having
+        inconsistent sound settings. 
+  id: 6191
+  time: '2024-07-31T22:47:01.0000000+00:00'
