@@ -23,23 +23,23 @@
       path: comms/welcome.ogg
 
     # Alert levels
-    - id: alertgreen # Everything is fine
+    - id: alertGreen # Everything is fine
       path: alerts/green.ogg
-    - id: alertblue # Something is amiss
+    - id: alertBlue # Something is amiss
       path: alerts/blue.ogg
-    - id: alertviolet # Viral infection or misc medical emergencies, listen to Medical
+    - id: alertViolet # Viral infection or misc medical emergencies, listen to Medical
       path: alerts/violet.ogg
-    - id: alertwhite # Glimmer is too high, listen to Epistemics
+    - id: alertWhite # Glimmer is too high, listen to Epistemics
       path: alerts/white.ogg
-    - id: alertyellow # The station is being largely damaged, listen to Engineering
+    - id: alertYellow # The station is being largely damaged, listen to Engineering
       path: alerts/yellow.ogg
-    - id: alertred # Generic many things are bad, listen to Security
+    - id: alertRed # Generic many things are bad, listen to Security
       path: alerts/red.ogg
-    - id: alertgamma # There is a massive immediate threat to the station, listen to Central Command
+    - id: alertGamma # There is a massive immediate threat to the station, listen to Central Command
       path: alerts/gamma.ogg
-    - id: alertdelta # The station is being or about to be massively destroyed, run for your life
+    - id: alertDelta # The station is being or about to be massively destroyed, run for your life
       path: alerts/delta.ogg
-    - id: alertepsilon # The station has been terminated, good luck survivors!
+    - id: alertEpsilon # The station has been terminated, good luck survivors!
       path: alerts/epsilon.ogg
       audioParams:
         volume: -3
