@@ -3,6 +3,7 @@ using Content.Shared.White.Overlays;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Shared.Player;
 
 namespace Content.Client.White.Overlays;
 
@@ -46,7 +47,7 @@ public sealed class SaturationScaleSystem : EntitySystem
 
     private void OnShutdown(EntityUid uid, SaturationScaleComponent component, ComponentShutdown args)
     {
-        if (_player.LocalPlayer?.ControlledEntity == uid)
+        if (_player.LocalSession?.AttachedEntity == uid)
         {
             _overlayMan.RemoveOverlay(_overlay);
         }
@@ -54,7 +55,7 @@ public sealed class SaturationScaleSystem : EntitySystem
 
     private void OnInit(EntityUid uid, SaturationScaleComponent component, ComponentInit args)
     {
-        if (_player.LocalPlayer?.ControlledEntity == uid)
+        if (_player.LocalSession?.AttachedEntity == uid)
             _overlayMan.AddOverlay(_overlay);
     }
 }

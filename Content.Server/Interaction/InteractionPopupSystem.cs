@@ -81,7 +81,6 @@ public sealed class InteractionPopupSystem : EntitySystem
             if (component.InteractSuccessString != null)
             {
                 msg = Loc.GetString(component.InteractSuccessString, ("target", Identity.Entity(uid, EntityManager))); // Success message (localized).
-                //WD start
                 if (component.InteractSuccessString == "hugging-success-generic")
                 {
                     var ev = new MoodEffectEvent("BeingHugged");
@@ -90,9 +89,8 @@ public sealed class InteractionPopupSystem : EntitySystem
                 else if (component.InteractSuccessString.Contains("petting-success-"))
                 {
                     var ev = new MoodEffectEvent("PetAnimal");
-                    RaiseLocalEvent(args.User, ev);
+                    RaiseLocalEvent(uid, ev);
                 }
-                //WD end
             }
 
             if (component.InteractSuccessSound != null)

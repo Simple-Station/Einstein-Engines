@@ -83,10 +83,8 @@ public sealed partial class BlockGame
         {
             _highScorePlacement = _arcadeSystem.RegisterHighScore(meta.EntityName, Points);
             SendHighscoreUpdate();
-            //WD start
             var ev = new MoodEffectEvent("ArcadePlay");
             _entityManager.EventBus.RaiseLocalEvent(meta.Owner, ev);
-            //WD end
         }
         SendMessage(new BlockGameMessages.BlockGameGameOverScreenMessage(Points, _highScorePlacement?.LocalPlacement, _highScorePlacement?.GlobalPlacement));
     }

@@ -10,7 +10,6 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.White.Mood;
 using Content.Shared.White.Overlays;
 using JetBrains.Annotations;
-using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
 

@@ -1,28 +1,28 @@
 ﻿#Hunger
 - type: moodEffect
   id: HungerOverfed
-  desc: "Во мне столько жира..."
+  description: "Во мне столько жира..."
   moodChange: enum.MoodChangeLevel.Big
   positiveEffect: false
   category: "Hunger"
 
 - type: moodEffect
   id: HungerOkay
-  desc: "Мой желудок полон!"
+  description: "Мой желудок полон!"
   moodChange: enum.MoodChangeLevel.Medium
   positiveEffect: true
   category: "Hunger"
 
 - type: moodEffect
   id: HungerPeckish
-  desc: "Не хочу есть."
+  description: "Не хочу есть."
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: true
   category: "Hunger"
 
 - type: moodEffect
   id: HungerStarving
-  desc: "Голодаю!"
+  description: "Голодаю!"
   moodChange: enum.MoodChangeLevel.Medium
   positiveEffect: false
   category: "Hunger"
@@ -30,28 +30,28 @@
 #Thirst
 - type: moodEffect
   id: ThirstOverHydrated
-  desc: "СЛИШКОМ МНОГО ВОДЫ..."
+  description: "СЛИШКОМ МНОГО ВОДЫ..."
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: false
   category: "Thirst"
 
 - type: moodEffect
   id: ThirstOkay
-  desc: "Не хочу пить."
+  description: "Не хочу пить."
   moodChange: enum.MoodChangeLevel.Medium
   positiveEffect: true
   category: "Thirst"
 
 - type: moodEffect
   id: ThirstThirsty
-  desc: "Хочу пить."
+  description: "Хочу пить."
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: false
   category: "Thirst"
 
 - type: moodEffect
   id: ThirstParched
-  desc: "ВОДЫ!"
+  description: "ВОДЫ!"
   moodChange: enum.MoodChangeLevel.Medium
   positiveEffect: false
   category: "Thirst"
@@ -59,7 +59,7 @@
 #Health
 - type: moodEffect
   id: HealthNoDamage
-  desc: "Чувствую себя лишённым боли."
+  description: "Чувствую себя лишённым боли."
   moodChange: enum.MoodChangeLevel.None
   positiveEffect: true
   hidden: true
@@ -67,21 +67,21 @@
 
 - type: moodEffect
   id: HealthLightDamage
-  desc: "Мои ссадины жгутся."
+  description: "Мои ссадины жгутся."
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: false
   category: "Health"
 
 - type: moodEffect
   id: HealthSevereDamage
-  desc: "Сильная боль пронзает меня."
+  description: "Сильная боль пронзает меня."
   moodChange: enum.MoodChangeLevel.Medium
   positiveEffect: false
   category: "Health"
 
 - type: moodEffect
   id: HealthHeavyDamage
-  desc: "Агония гложет мою душу!"
+  description: "Агония гложет мою душу!"
   moodChange: enum.MoodChangeLevel.Large
   positiveEffect: false
   category: "Health"

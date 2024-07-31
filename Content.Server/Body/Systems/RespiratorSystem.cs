@@ -10,8 +10,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Popups; // WD
-using Content.Shared.White.Mood; // WD
+using Content.Shared.White.Mood;
 using JetBrains.Annotations;
 using Robust.Shared.Timing;
 

@@ -177,12 +177,12 @@ namespace Content.Shared.Cuffs
             if (component.CanStillInteract)
             {
                 _alerts.ClearAlert(uid, AlertType.Handcuffed);
-                RaiseLocalEvent(uid, new MoodRemoveEffectEvent("Handcuffed")); //WD edit
+                RaiseLocalEvent(uid, new MoodRemoveEffectEvent("Handcuffed"));
             }
             else
             {
                 _alerts.ShowAlert(uid, AlertType.Handcuffed);
-                RaiseLocalEvent(uid, new MoodEffectEvent("Handcuffed")); // WD edit
+                RaiseLocalEvent(uid, new MoodEffectEvent("Handcuffed"));
             }
 
             var ev = new CuffedStateChangeEvent();

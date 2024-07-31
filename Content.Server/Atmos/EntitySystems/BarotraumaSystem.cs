@@ -245,7 +245,7 @@ namespace Content.Server.Atmos.EntitySystems
                             _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} started taking low pressure damage");
                         }
 
-                        RaiseLocalEvent(uid, new MoodEffectEvent("MobLowPressure")); // WD edit
+                        RaiseLocalEvent(uid, new MoodEffectEvent("MobLowPressure"));
 
                         if (pressure <= Atmospherics.HazardLowPressure)
                         {
@@ -274,7 +274,7 @@ namespace Content.Server.Atmos.EntitySystems
                             _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} started taking high pressure damage");
                         }
 
-                        RaiseLocalEvent(uid, new MoodEffectEvent("MobHighPressure")); // WD edit
+                        RaiseLocalEvent(uid, new MoodEffectEvent("MobHighPressure"));
 
                         if (pressure >= Atmospherics.HazardHighPressure)
                         {
@@ -293,8 +293,8 @@ namespace Content.Server.Atmos.EntitySystems
                             _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} stopped taking pressure damage");
                         }
                         _alertsSystem.ClearAlertCategory(uid, AlertCategory.Pressure);
-                        RaiseLocalEvent(uid, new MoodRemoveEffectEvent("MobLowPressure")); // WD edit
-                        RaiseLocalEvent(uid, new MoodRemoveEffectEvent("MobHighPressure")); // WD edit
+                        RaiseLocalEvent(uid, new MoodRemoveEffectEvent("MobLowPressure"));
+                        RaiseLocalEvent(uid, new MoodRemoveEffectEvent("MobHighPressure"));
                         break;
                 }
             }

@@ -155,7 +155,7 @@ namespace Content.Server.Bible
                 _delay.TryResetDelay((uid, useDelay));
             }
 
-            RaiseLocalEvent(args.Target.Value, new MoodEffectEvent("GotBlessed")); // WD edit
+            RaiseLocalEvent(args.Target.Value, new MoodEffectEvent("GotBlessed"));
         }
 
         private void AddSummonVerb(EntityUid uid, SummonableComponent component, GetVerbsEvent<AlternativeVerb> args)

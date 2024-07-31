@@ -10,22 +10,22 @@ public sealed class MoodEffectPrototype : IPrototype
     [IdDataField]
     public string ID { get; } = default!;
 
-    [DataField("desc", required: true)]
+    [DataField(required: true)]
     public string Description = string.Empty;
 
-    [DataField("moodChange", customTypeSerializer: typeof(EnumSerializer), required: true)]
+    [DataField(customTypeSerializer: typeof(EnumSerializer), required: true)]
     public Enum MoodChange = default!;
 
-    [DataField("positiveEffect", required: true)]
+    [DataField(required: true)]
     public bool PositiveEffect;
 
-    [DataField("timeout")]
+    [DataField]
     public int Timeout;
 
-    [DataField("hidden")]
+    [DataField]
     public bool Hidden;
 
     //If mob already has effect of the same category, the new one will replace the old one.
-    [DataField("category")]
+    [DataField]
     public string? Category;
 }
