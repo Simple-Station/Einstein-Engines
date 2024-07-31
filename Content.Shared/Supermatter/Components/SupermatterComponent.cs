@@ -359,7 +359,7 @@ public enum SupermatterSound : sbyte
     Delam = 1
 }
 
-public enum DelamType : sbyte
+public enum DelamType : int
 {
     Explosion = 0,
     Singulo = 1,
