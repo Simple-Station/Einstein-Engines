@@ -28,6 +28,58 @@
     - ClothingShoesJester
 
 - type: loadout
+  id: LoadoutServiceClownOuterWinter
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingOuterWinterClown
+
+- type: loadout
+  id: LoadoutServiceClownOuterClownPriest
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingOuterClownPriest
+
+- type: loadout
+  id: LoadoutServiceClownBootsWinter
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  items:
+    - ClothingShoesBootsWinterClown
+
+- type: loadout
+  id: LoadoutServiceClownMaskSexy
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingMaskSexyClown
+
+- type: loadout
   id: LoadoutServiceClownBedsheetClown
   category: Jobs
   cost: 2
@@ -40,6 +92,70 @@
     - BedsheetClown
 
 # Mime
+- type: loadout
+  id: LoadoutServiceMimeOuterWinter
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingOuterWinterMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskSad
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskSadMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskScared
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskScaredMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskSexy
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskSexyMime
+
+- type: loadout
+  id: LoadoutServiceMimeShoesBootsWinter
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  items:
+    - ClothingShoesBootsWinterMime
+
 - type: loadout
   id: LoadoutServiceMimeBedsheetMime
   category: Jobs
