@@ -20,6 +20,10 @@
     - !type:CharacterJobRequirement
       jobs:
         - CargoTechnician
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
   items:
     - ClothingShoesBootsWinterCargo
 
