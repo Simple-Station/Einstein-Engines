@@ -178,10 +178,11 @@ public sealed class RadioSystem : EntitySystem
 
     private string WrapRadioMessage(EntityUid source, RadioChannelPrototype channel, string name, string message, LanguagePrototype language)
     {
+        // TODO: code duplication with ChatSystem.WrapMessage
         var speech = _chat.GetSpeechVerb(source, message);
         var languageColor = channel.Color;
         if (language.SpeechOverride.Color is { } colorOverride)
-            languageColor *= colorOverride;
+            languageColor = Color.InterpolateBetween(languageColor, colorOverride, colorOverride.A);
 
         return Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("color", channel.Color),

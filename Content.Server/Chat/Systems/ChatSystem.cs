@@ -881,7 +881,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             : _random.Pick(speech.SpeechVerbStrings);
         var color = DefaultSpeakColor;
         if (language.SpeechOverride.Color is { } colorOverride)
-            color *= colorOverride;
+            color = Color.InterpolateBetween(color, colorOverride, colorOverride.A);
 
         return Loc.GetString(wrapId,
             ("color", color),

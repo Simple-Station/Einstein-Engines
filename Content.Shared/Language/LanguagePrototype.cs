@@ -38,7 +38,8 @@ public sealed class LanguagePrototype : IPrototype
 public sealed partial class SpeechOverrideInfo
 {
     /// <summary>
-    ///     Color mask for text written in this language. If null, text color will not be affected.
+    ///     Color which text in this language will be blended with.
+    ///     Alpha blending is used, which means the alpha component of the color controls the intensity of this color.
     /// </summary>
     [DataField]
     public Color? Color = null;
