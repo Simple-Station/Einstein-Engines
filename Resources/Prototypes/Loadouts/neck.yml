@@ -23,6 +23,46 @@
     - ClothingNeckScarfStripedGreen
 
 - type: loadout
+  id: LoadoutNeckScarfStripedBlack
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckScarfStripedBlack
+
+- type: loadout
+  id: LoadoutNeckScarfStripedBrown
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckScarfStripedBrown
+
+- type: loadout
+  id: LoadoutNeckScarfStripedLightBlue
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckScarfStripedLightBlue
+
+- type: loadout
+  id: LoadoutNeckScarfStripedOrange
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckScarfStripedOrange
+
+- type: loadout
+  id: LoadoutNeckScarfStripedPurple
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckScarfStripedPurple
+
+- type: loadout
   id: LoadoutNeckScarfStripedZebra
   category: Neck
   cost: 1
@@ -102,3 +142,19 @@
   exclusive: true
   items:
     - ClothingNeckTransPin
+
+- type: loadout
+  id: LoadoutItemsAutismPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckAutismPin
+
+- type: loadout
+  id: LoadoutItemsGoldAutismPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckGoldAutismPin

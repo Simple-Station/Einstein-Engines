@@ -183,6 +183,22 @@
   items:
     - CrowbarRed
 
+# Plushies
+- type: loadout
+  id: LoadoutItemPlushieLizard
+  category: Items
+  cost: 2
+  items:
+    - PlushieLizard
+
+- type: loadout
+  id: LoadoutItemPlushieSpaceLizard
+  category: Items
+  cost: 2
+  items:
+    - PlushieSpaceLizard
+
+
 #Misc Items
 - type: loadout
   id: LoadoutItemPAI
@@ -197,6 +213,13 @@
   cost: 2
   items:
     - ClothingBeltStorageWaistbag
+
+- type: loadout
+  id: LoadoutItemCrayonBox
+  category: Items
+  cost: 5
+  items:
+    - CrayonBox
 
 - type: loadout
   id: LoadoutSolCommonTranslator

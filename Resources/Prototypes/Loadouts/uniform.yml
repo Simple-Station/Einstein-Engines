@@ -436,6 +436,217 @@
       jobs:
         - Passenger
 
+- type: loadout
+  id: LoadoutUniformJumpsuitFlannel
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitFlannel
+
+- type: loadout
+  id: LoadoutUniformJumpskirtCasualBlue
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtCasualBlue
+
+- type: loadout
+  id: LoadoutUniformJumpsuitCasualPurple
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitCasualPurple
+
+- type: loadout
+  id: LoadoutUniformJumpskirtCasualPurple
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtCasualPurple
+
+- type: loadout
+  id: LoadoutUniformJumpsuitCasualRed
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitCasualRed
+
+- type: loadout
+  id: LoadoutUniformJumpskirtCasualRed
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtCasualRed
+
+- type: loadout
+  id: LoadoutUniformJumpsuitTshirtJeans
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitTshirtJeans
+
+- type: loadout
+  id: LoadoutUniformJumpsuitTshirtJeansGray
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitTshirtJeansGray
+
+- type: loadout
+  id: LoadoutUniformJumpsuitTshirtJeansPeach
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitTshirtJeansPeach
+
+- type: loadout
+  id: LoadoutUniformJumpsuitJeansGreen
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitJeansGreen
+
+- type: loadout
+  id: LoadoutUniformJumpsuitJeansRed
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitJeansRed
+
+- type: loadout
+  id: LoadoutUniformJumpsuitJeansBrown
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitJeansBrown
+
+- type: loadout
+  id: LoadoutUniformJumpsuitLostTourist
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitLostTourist
+
+# Hawaiian shirts
+- type: loadout
+  id: LoadoutUniformJumpsuitHawaiBlack
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitHawaiBlack
+
+- type: loadout
+  id: LoadoutUniformJumpsuitHawaiBlue
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitHawaiBlue
+
+- type: loadout
+  id: LoadoutUniformJumpsuitHawaiRed
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitHawaiRed
+
+- type: loadout
+  id: LoadoutUniformJumpsuitHawaiYellow
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitHawaiYellow
+
+# AutoDrobe clothes
+- type: loadout
+  id: LoadoutUniformDressRed
+  category: Uniform
+  cost: 4
+  exclusive: true
+  items:
+    - ClothingUniformDressRed
+
+- type: loadout
+  id: LoadoutUniformJumpsuitSober
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSober
+
+- type: loadout
+  id: LoadoutUniformSkirtTurtle
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformSkirtTurtle
+
+- type: loadout
+  id: LoadoutUniformGeisha
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - UniformGeisha
+
+- type: loadout
+  id: LoadoutUniformCostumeArcDress
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingCostumeArcDress
+
+- type: loadout
+  id: LoadoutUniformCostumeMioSkirt
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingCostumeMioSkirt
+
+- type: loadout
+  id: LoadoutUniformCostumeNaota
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingCostumeNaota
+
+# Bartender clothes
+- type: loadout
+  id: LoadoutUniformJumpsuitBartender
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitBartender
+
+- type: loadout
+  id: LoadoutUniformJumpskirtBartender
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtBartender
+
 # Kendo
 - type: loadout
   id: LoadoutUniformKendoHakama
@@ -454,6 +665,14 @@
     - ClothingUniformMartialGi
 
 # Kimono
+- type: loadout
+  id: LoadoutClothingJumpsuitKimono
+  category: Uniform
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitKimono
+
 - type: loadout
   id: LoadoutClothingKimonoBlue
   category: Uniform

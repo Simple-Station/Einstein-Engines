@@ -129,6 +129,19 @@
   items:
     - ClothingShoesGeta
 
+- type: loadout
+  id: LoadoutShoesTourist
+  category: Shoes
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  items:
+    - ClothingShoesTourist
+
 # Boots
 - type: loadout
   id: LoadoutShoesBootsWork
@@ -221,6 +234,19 @@
   items:
     - ClothingShoesBootsCowboyFancy
 
+- type: loadout
+  id: LoadoutShoesBootsFishing
+  category: Shoes
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  items:
+    - ClothingShoesBootsFishing
+
 # Miscellaneous
 - type: loadout
   id: LoadoutShoesSlippersDuck
@@ -263,3 +289,16 @@
         - Harpy
   items:
     - ClothingShoesMiscWhite
+
+- type: loadout
+  id: LoadoutShoesHighheelBoots
+  category: Shoes
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  items:
+    - ClothingShoesHighheelBoots

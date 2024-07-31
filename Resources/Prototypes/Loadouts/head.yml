@@ -137,6 +137,22 @@
     - ClothingHeadHatGreysoftFlipped
 
 - type: loadout
+  id: LoadoutHeadHatMimesoft
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadHatMimesoft
+
+- type: loadout
+  id: LoadoutHeadHatMimesoftFlipped
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadHatMimesoftFlipped
+
+- type: loadout
   id: LoadoutHeadHatOrangesoft
   category: Head
   cost: 1
@@ -272,3 +288,86 @@
   exclusive: true
   items:
     - ClothingHeadBandBrown
+
+- type: loadout
+  id: LoadoutHeadFishCap
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadFishCap
+
+- type: loadout
+  id: LoadoutHeadRastaHat
+  category: Head
+  cost: 4
+  exclusive: true
+  items:
+    - ClothingHeadRastaHat
+
+# Flatcaps
+- type: loadout
+  id: LoadoutHeadGreyFlatcap
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatGreyFlatcap
+
+- type: loadout
+  id: LoadoutHeadBrownFlatcap
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatBrownFlatcap
+
+# Berets
+- type: loadout
+  id: LoadoutHeadBeret
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatBeret
+
+- type: loadout
+  id: LoadoutHeadBeretFrench
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatBeretFrench
+
+# Cowboy hats
+- type: loadout
+  id: LoadoutHeadCowboyBrown
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatCowboyBrown
+
+- type: loadout
+  id: LoadoutHeadCowboyBlack
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatCowboyBlack
+
+- type: loadout
+  id: LoadoutHeadCowboyWhite
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatCowboyWhite
+
+- type: loadout
+  id: LoadoutHeadCowboyGrey
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatCowboyGrey
