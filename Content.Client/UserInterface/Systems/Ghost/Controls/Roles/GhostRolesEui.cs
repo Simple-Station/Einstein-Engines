@@ -94,7 +94,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                         group.Key.Requirements ?? new(),
                         new(),
                         (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                        requirementsManager.GetPlayTimes(),
+                        requirementsManager.GetRawPlayTimeTrackers(),
                         requirementsManager.IsWhitelisted(),
                         entityManager,
                         protoMan,
