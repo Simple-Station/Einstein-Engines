@@ -1,5 +1,4 @@
 using Content.Server.DoAfter;
-using Content.Server.Popups;
 using Content.Server.PowerCell;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
@@ -89,15 +88,15 @@ public sealed class PenLightSystem : EntitySystem
         var blind = _entityManager.HasComponent<PermanentBlindnessComponent>(target);
 
         // Drunk
-        var drunk = !_entityManager.HasComponent<DrunkComponent>(target);
+        var drunk = _entityManager.HasComponent<DrunkComponent>(target);
 
         // EyeDamage
-
         var eyeDamage = false;
         if (TryComp<BlindableComponent>(target, out var eyeDam))
         {
-            eyeDamage = eyeDam.EyeDamage > 0;
+            eyeDamage = eyeDam.EyeDamage > 0 && eyeDam.EyeDamage < 6; //6 means perma-blind
         }
+
 
         // seeingRainbows
         var seeingRainbows = _entityManager.HasComponent<SeeingRainbowsComponent>(target);

@@ -33,8 +33,8 @@ namespace Content.Client.Eye.PenLight.UI
         private readonly SpriteSystem _spriteSystem;
         private readonly IPrototypeManager _prototypes;
         private readonly IResourceCache _cache;
-        private const int LightHeight = 430;
-        private const int LightWidth = 300;
+        private const int LightHeight = 150;
+        private const int LightWidth = 800;
 
         public PenLightWindow()
         {
@@ -84,11 +84,11 @@ namespace Content.Client.Eye.PenLight.UI
             // EyeDamage
             if (msg.EyeDamage == true)
             {
-                Drunk.Text = Loc.GetString("pen-light-exam-eyedamage-text");
+                EyeDamage.Text = Loc.GetString("pen-light-exam-eyedamage-text");
             }
             else
             {
-                Drunk.Text = string.Empty;  // Clear the text
+                EyeDamage.Text = string.Empty;  // Clear the text
             }
 
             // Drunk
@@ -104,11 +104,11 @@ namespace Content.Client.Eye.PenLight.UI
             // Hallucinating
             if (msg.SeeingRainbows == true)
             {
-                Drunk.Text = Loc.GetString("pen-light-exam-hallucinating-text");
+                SeeingRainbows.Text = Loc.GetString("pen-light-exam-hallucinating-text");
             }
             else
             {
-                Drunk.Text = string.Empty;  // Clear the text
+                SeeingRainbows.Text = string.Empty;  // Clear the text
             }
 
             SetHeight = LightHeight;

@@ -1,7 +1,7 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
                 xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                 Title="{Loc 'pen-light-exam-title'}"
-                SetSize="250 100">
+                SetSize="150 800">
 
     <BoxContainer Name="RootContainer" Margin="4 0" Orientation="Horizontal">
          <Label
