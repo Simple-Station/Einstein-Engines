@@ -183,6 +183,13 @@
   items:
     - CrowbarRed
 
+- type: loadout
+  id: LoadoutItemFireExtinguisher
+  category: Items
+  cost: 3
+  items:
+    - FireExtinguisher
+
 #Misc Items
 - type: loadout
   id: LoadoutItemPAI
