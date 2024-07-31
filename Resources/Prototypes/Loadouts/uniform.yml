@@ -68,6 +68,7 @@
         - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
+         - Medical
          - Civilian
     - !type:CharacterDepartmentRequirement
        inverted: true
@@ -84,6 +85,7 @@
   requirements:
     - !type:CharacterDepartmentRequirement
        departments:
+         - Medical
          - Civilian
     - !type:CharacterDepartmentRequirement
        inverted: true
@@ -251,6 +253,8 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
+         - Medical
+         - Epistemics
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -267,6 +271,8 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
+         - Medical
+         - Epistemics
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -287,6 +293,7 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
+         - Engineering
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -303,6 +310,7 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
+         - Engineering
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -395,6 +403,7 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
+         - Epistemics
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -411,6 +420,7 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
+         - Epistemics
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
