@@ -183,22 +183,6 @@
   items:
     - CrowbarRed
 
-# Plushies
-- type: loadout
-  id: LoadoutItemPlushieLizard
-  category: Items
-  cost: 2
-  items:
-    - PlushieLizard
-
-- type: loadout
-  id: LoadoutItemPlushieSpaceLizard
-  category: Items
-  cost: 2
-  items:
-    - PlushieSpaceLizard
-
-
 #Misc Items
 - type: loadout
   id: LoadoutItemPAI
