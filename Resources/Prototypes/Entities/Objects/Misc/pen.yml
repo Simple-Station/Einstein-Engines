@@ -18,6 +18,14 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 25
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/pen_click.ogg
+      params:
+        volume: -4
+        maxDistance: 2
+  - type: UseDelay
+    delay: 1.5
   # Shitmed Change
   - type: Tending
     speed: 0.55
@@ -46,6 +54,7 @@
     removalTime: 0.0
   - type: ThrowingAngle
     angle: 315
+  - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
       types:
