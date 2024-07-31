@@ -192,6 +192,13 @@
     - PersonalAI
 
 - type: loadout
+  id: LoadoutItemBackpackSatchelLeather
+  category: Items
+  cost: 2
+  items:
+    - ClothingBackpackSatchelLeather
+
+- type: loadout
   id: LoadoutItemWaistbag
   category: Items
   cost: 2
