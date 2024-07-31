@@ -39,14 +39,14 @@ public sealed class MoodSystem : EntitySystem
     private void OnRemoveEffect(EntityUid uid, MoodComponent component, MoodRemoveEffectEvent args)
     {
         if (component.UncategorisedEffects.TryGetValue(args.EffectId, out _))
-            RemoveTimedOutEffect(uid, component, args.EffectId);
+            RemoveTimedOutEffect(uid, args.EffectId);
         else
         {
             foreach (var (category, id) in component.CategorisedEffects)
             {
                 if (id == args.EffectId)
                 {
-                    RemoveTimedOutEffect(uid, component, args.EffectId, category);
+                    RemoveTimedOutEffect(uid, args.EffectId, category);
                     return;
                 }
             }
@@ -110,7 +110,7 @@ public sealed class MoodSystem : EntitySystem
             }
 
             if (prototype.Timeout != 0)
-                Timer.Spawn(TimeSpan.FromMinutes(prototype.Timeout), () => RemoveTimedOutEffect(uid, component, prototype.ID, prototype.Category));
+                Timer.Spawn(TimeSpan.FromMinutes(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
         }
         //Apply uncategorised effect
         else
@@ -124,14 +124,17 @@ public sealed class MoodSystem : EntitySystem
             amount += effectValue;
 
             if (prototype.Timeout != 0)
-                Timer.Spawn(TimeSpan.FromMinutes(prototype.Timeout), () => RemoveTimedOutEffect(uid, component, prototype.ID));
+                Timer.Spawn(TimeSpan.FromMinutes(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID));
         }
 
         SetMood(uid, amount, component);
     }
 
-    private void RemoveTimedOutEffect(EntityUid uid, MoodComponent comp, string prototypeId, string? category = null)
+    private void RemoveTimedOutEffect(EntityUid uid, string prototypeId, string? category = null)
     {
+        if (!TryComp<MoodComponent>(uid, out var comp))
+            return;
+
         var amount = comp.CurrentMoodLevel;
 
         if (category == null)
@@ -198,9 +201,12 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnInit(EntityUid uid, MoodComponent component, ComponentInit args)
     {
-        _mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var critThreshold);
-        if (critThreshold != null)
+        if (TryComp<MobThresholdsComponent>(uid, out var mobThresholdsComponent)
+            && _mobThreshold.TryGetThresholdForState(uid, MobState.Critical,
+                out var critThreshold,mobThresholdsComponent))
+        {
             component.CritThresholdBeforeModify = critThreshold.Value;
+        }
 
         var amount = component.MoodThresholds[MoodThreshold.Neutral];
         SetMood(uid, amount, component, refresh: true);
