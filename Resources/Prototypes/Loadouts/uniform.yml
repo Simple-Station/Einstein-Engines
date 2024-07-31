@@ -28,9 +28,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorBlack
@@ -40,9 +44,13 @@
   items:
     - ClothingUniformJumpskirtColorBlack
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorBlue
@@ -56,9 +64,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorBlue
@@ -68,9 +80,13 @@
   items:
     - ClothingUniformJumpskirtColorBlue
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorGreen
@@ -84,9 +100,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorGreen
@@ -96,9 +116,13 @@
   items:
     - ClothingUniformJumpskirtColorGreen
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorOrange
@@ -112,9 +136,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorOrange
@@ -124,9 +152,13 @@
   items:
     - ClothingUniformJumpskirtColorOrange
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorPink
@@ -140,9 +172,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorPink
@@ -152,9 +188,13 @@
   items:
     - ClothingUniformJumpskirtColorPink
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorRed
@@ -168,9 +208,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorRed
@@ -180,9 +224,13 @@
   items:
     - ClothingUniformJumpskirtColorRed
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorWhite
@@ -196,9 +244,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorWhite
@@ -208,9 +260,13 @@
   items:
     - ClothingUniformJumpskirtColorWhite
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorYellow
@@ -224,9 +280,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorYellow
@@ -236,9 +296,13 @@
   items:
     - ClothingUniformJumpskirtColorYellow
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorDarkBlue
@@ -252,9 +316,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorDarkBlue
@@ -264,9 +332,13 @@
   items:
     - ClothingUniformJumpskirtColorDarkBlue
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorTeal
@@ -280,9 +352,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorTeal
@@ -292,9 +368,13 @@
   items:
     - ClothingUniformJumpskirtColorTeal
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorPurple
@@ -308,9 +388,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorPurple
@@ -320,9 +404,13 @@
   items:
     - ClothingUniformJumpskirtColorPurple
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorDarkGreen
@@ -336,9 +424,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorDarkGreen
@@ -348,9 +440,13 @@
   items:
     - ClothingUniformJumpskirtColorDarkGreen
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorLightBrown
@@ -364,9 +460,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorLightBrown
@@ -376,9 +476,13 @@
   items:
     - ClothingUniformJumpskirtColorLightBrown
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorBrown
@@ -392,9 +496,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorBrown
@@ -404,9 +512,13 @@
   items:
     - ClothingUniformJumpskirtColorBrown
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitColorMaroon
@@ -420,9 +532,13 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtColorMaroon
@@ -432,9 +548,13 @@
   items:
     - ClothingUniformJumpskirtColorMaroon
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Passenger
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Civilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitFlannel
