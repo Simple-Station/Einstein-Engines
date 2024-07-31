@@ -4715,3 +4715,19 @@ Entries:
       message: Fixed the Uncategorized category not being hidden when empty
   id: 6193
   time: '2024-07-31T23:32:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Whisper can no longer be heard clearly outside the intended range.
+    - type: Fix
+      message: >-
+        Translators can no longer be used without knowing the languages they
+        require.
+    - type: Fix
+      message: >-
+        Computers (primarily RnD console) now speak GC by default instead of
+        Universal.
+    - type: Tweak
+      message: Readjusted colors of all languages to make them easier to read.
+  id: 6194
+  time: '2024-07-31T23:57:25.0000000+00:00'
