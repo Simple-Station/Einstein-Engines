@@ -29,7 +29,6 @@
     - type: Geiger
       showControl: true
       showExamine: true
-      isEnabled: true
       localSoundOnly: false
       rolloffFactorParams: 2
       maxDistanceParams: 15
