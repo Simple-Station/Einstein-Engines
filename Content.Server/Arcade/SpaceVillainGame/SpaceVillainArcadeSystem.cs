@@ -2,6 +2,8 @@ using Content.Server.Power.Components;
 using Content.Shared.UserInterface;
 using Content.Server.Advertise;
 using Content.Server.Advertise.Components;
+using Content.Server.UserInterface;
+using Content.Shared.White.Mood;
 using static Content.Shared.Arcade.SharedSpaceVillainArcadeComponent;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -75,6 +77,9 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
             return;
         if (!TryComp<ApcPowerReceiverComponent>(uid, out var power) || !power.Powered)
             return;
+
+        if (msg.Session.AttachedEntity != null)
+            RaiseLocalEvent(msg.Session.AttachedEntity.Value, new MoodEffectEvent("ArcadePlay")); //WD edit
 
         switch (msg.PlayerAction)
         {

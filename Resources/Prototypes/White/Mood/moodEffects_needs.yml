@@ -1,0 +1,87 @@
+﻿#Hunger
+- type: moodEffect
+  id: HungerOverfed
+  desc: "Во мне столько жира..."
+  moodChange: enum.MoodChangeLevel.Big
+  positiveEffect: false
+  category: "Hunger"
+
+- type: moodEffect
+  id: HungerOkay
+  desc: "Мой желудок полон!"
+  moodChange: enum.MoodChangeLevel.Medium
+  positiveEffect: true
+  category: "Hunger"
+
+- type: moodEffect
+  id: HungerPeckish
+  desc: "Не хочу есть."
+  moodChange: enum.MoodChangeLevel.Small
+  positiveEffect: true
+  category: "Hunger"
+
+- type: moodEffect
+  id: HungerStarving
+  desc: "Голодаю!"
+  moodChange: enum.MoodChangeLevel.Medium
+  positiveEffect: false
+  category: "Hunger"
+
+#Thirst
+- type: moodEffect
+  id: ThirstOverHydrated
+  desc: "СЛИШКОМ МНОГО ВОДЫ..."
+  moodChange: enum.MoodChangeLevel.Small
+  positiveEffect: false
+  category: "Thirst"
+
+- type: moodEffect
+  id: ThirstOkay
+  desc: "Не хочу пить."
+  moodChange: enum.MoodChangeLevel.Medium
+  positiveEffect: true
+  category: "Thirst"
+
+- type: moodEffect
+  id: ThirstThirsty
+  desc: "Хочу пить."
+  moodChange: enum.MoodChangeLevel.Small
+  positiveEffect: false
+  category: "Thirst"
+
+- type: moodEffect
+  id: ThirstParched
+  desc: "ВОДЫ!"
+  moodChange: enum.MoodChangeLevel.Medium
+  positiveEffect: false
+  category: "Thirst"
+
+#Health
+- type: moodEffect
+  id: HealthNoDamage
+  desc: "Чувствую себя лишённым боли."
+  moodChange: enum.MoodChangeLevel.None
+  positiveEffect: true
+  hidden: true
+  category: "Health"
+
+- type: moodEffect
+  id: HealthLightDamage
+  desc: "Мои ссадины жгутся."
+  moodChange: enum.MoodChangeLevel.Small
+  positiveEffect: false
+  category: "Health"
+
+- type: moodEffect
+  id: HealthSevereDamage
+  desc: "Сильная боль пронзает меня."
+  moodChange: enum.MoodChangeLevel.Medium
+  positiveEffect: false
+  category: "Health"
+
+- type: moodEffect
+  id: HealthHeavyDamage
+  desc: "Агония гложет мою душу!"
+  moodChange: enum.MoodChangeLevel.Large
+  positiveEffect: false
+  category: "Health"

@@ -1,0 +1,51 @@
+﻿- type: moodEffect
+  id: Handcuffed
+  desc: "Кажется мои выходки кто-то заметил."
+  moodChange: enum.MoodChangeLevel.Small
+  positiveEffect: false
+
+- type: moodEffect
+  id: Suffocating
+  desc: "НЕ.. МОГУ... ДЫШАТЬ..."
+  moodChange: enum.MoodChangeLevel.Medium
+  positiveEffect: false
+  timeout: 1
+
+- type: moodEffect
+  id: OnFire
+  desc: "ГОРЮ!!!"
+  moodChange: enum.MoodChangeLevel.Big
+  positiveEffect: false
+
+- type: moodEffect
+  id: Creampied
+  desc: "Меня окремили. На вкус как пирог."
+  moodChange: enum.MoodChangeLevel.Small
+  positiveEffect: false
+  timeout: 3
+
+- type: moodEffect
+  id: MobSlipped
+  desc: "Опять поскальзываюсь. Надо быть аккуратней."
+  moodChange: enum.MoodChangeLevel.Small
+  positiveEffect: false
+  timeout: 3
+
+- type: moodEffect
+  id: MobVomit
+  desc: "Меня только что вырвало. Мерзость."
+  moodChange: enum.MoodChangeLevel.Small
+  positiveEffect: false
+  timeout: 8
+
+- type: moodEffect
+  id: MobLowPressure
+  desc: "Меня сейчас разорвёт наружу!"
+  moodChange: enum.MoodChangeLevel.Medium
+  positiveEffect: false
+
+- type: moodEffect
+  id: MobHighPressure
+  desc: "На меня оказывается огромное давление!"
+  moodChange: enum.MoodChangeLevel.Medium
+  positiveEffect: false

@@ -28,6 +28,7 @@ using Content.Shared.Timing;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.White.Mood;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -174,9 +175,15 @@ namespace Content.Shared.Cuffs
             _actionBlocker.UpdateCanMove(uid);
 
             if (component.CanStillInteract)
+            {
                 _alerts.ClearAlert(uid, AlertType.Handcuffed);
+                RaiseLocalEvent(uid, new MoodRemoveEffectEvent("Handcuffed")); //WD edit
+            }
             else
+            {
                 _alerts.ShowAlert(uid, AlertType.Handcuffed);
+                RaiseLocalEvent(uid, new MoodEffectEvent("Handcuffed")); // WD edit
+            }
 
             var ev = new CuffedStateChangeEvent();
             RaiseLocalEvent(uid, ref ev);

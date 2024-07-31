@@ -8,6 +8,7 @@ using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+using Content.Shared.White.Mood;
 using Robust.Shared.Containers;
 
 namespace Content.Server.Atmos.EntitySystems
@@ -244,6 +245,8 @@ namespace Content.Server.Atmos.EntitySystems
                             _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} started taking low pressure damage");
                         }
 
+                        RaiseLocalEvent(uid, new MoodEffectEvent("MobLowPressure")); // WD edit
+
                         if (pressure <= Atmospherics.HazardLowPressure)
                         {
                             _alertsSystem.ShowAlert(uid, AlertType.LowPressure, 2);
@@ -271,6 +274,8 @@ namespace Content.Server.Atmos.EntitySystems
                             _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} started taking high pressure damage");
                         }
 
+                        RaiseLocalEvent(uid, new MoodEffectEvent("MobHighPressure")); // WD edit
+
                         if (pressure >= Atmospherics.HazardHighPressure)
                         {
                             _alertsSystem.ShowAlert(uid, AlertType.HighPressure, 2);
@@ -288,6 +293,8 @@ namespace Content.Server.Atmos.EntitySystems
                             _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} stopped taking pressure damage");
                         }
                         _alertsSystem.ClearAlertCategory(uid, AlertCategory.Pressure);
+                        RaiseLocalEvent(uid, new MoodRemoveEffectEvent("MobLowPressure")); // WD edit
+                        RaiseLocalEvent(uid, new MoodRemoveEffectEvent("MobHighPressure")); // WD edit
                         break;
                 }
             }

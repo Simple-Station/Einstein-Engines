@@ -1,6 +1,7 @@
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
+using Content.Shared.White.Mood;
 using JetBrains.Annotations;
 
 namespace Content.Shared.Nutrition.EntitySystems
@@ -44,6 +45,8 @@ namespace Content.Shared.Nutrition.EntitySystems
             {
                 _appearance.SetData(uid, CreamPiedVisuals.Creamed, value, appearance);
             }
+
+            RaiseLocalEvent(uid, new MoodEffectEvent("Creampied")); // WD edit
         }
 
         private void OnCreamPieLand(EntityUid uid, CreamPieComponent component, ref LandEvent args)
