@@ -135,7 +135,7 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
             playtime += otherTime;
         }
 
-        if (playtime > Max)
+        if (playtime.TotalMinutes > Max.TotalMinutes)
         {
             // Show the reason if invalid
             reason = Inverted
@@ -147,7 +147,7 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
             return false;
         }
 
-        if (playtime < Min)
+        if (playtime.TotalMinutes < Min.TotalMinutes)
         {
             // Show the reason if invalid
             reason = Inverted
@@ -192,7 +192,7 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
         // Get the overall time
         var overallTime = playTimes.GetValueOrDefault(PlayTimeTrackingShared.TrackerOverall);
 
-        if (overallTime > Max)
+        if (overallTime.TotalMinutes > Max.TotalMinutes)
         {
             // Show the reason if invalid
             reason = Inverted
@@ -202,7 +202,7 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
             return false;
         }
 
-        if (overallTime < Min)
+        if (overallTime.TotalMinutes < Min.TotalMinutes)
         {
             // Show the reason if invalid
             reason = Inverted
