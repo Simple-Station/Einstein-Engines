@@ -443,6 +443,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitFlannel
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpskirtCasualBlue
@@ -459,6 +464,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitCasualPurple
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpskirtCasualPurple
@@ -475,6 +485,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitCasualRed
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpskirtCasualRed
@@ -491,6 +506,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitTshirtJeans
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpsuitTshirtJeansGray
@@ -499,6 +519,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitTshirtJeansGray
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpsuitTshirtJeansPeach
@@ -507,6 +532,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitTshirtJeansPeach
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpsuitJeansGreen
@@ -515,6 +545,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitJeansGreen
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpsuitJeansRed
@@ -523,6 +558,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitJeansRed
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpsuitJeansBrown
@@ -531,6 +571,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitJeansBrown
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpsuitLostTourist
@@ -539,6 +584,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitLostTourist
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 # Hawaiian shirts
 - type: loadout
@@ -548,6 +598,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitHawaiBlack
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpsuitHawaiBlue
@@ -556,6 +611,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitHawaiBlue
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpsuitHawaiRed
@@ -564,6 +624,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitHawaiRed
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpsuitHawaiYellow
@@ -572,6 +637,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitHawaiYellow
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 # AutoDrobe clothes
 - type: loadout
@@ -589,6 +659,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitSober
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformSkirtTurtle
@@ -638,6 +713,11 @@
   exclusive: true
   items:
     - ClothingUniformJumpsuitBartender
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
 
 - type: loadout
   id: LoadoutUniformJumpskirtBartender
