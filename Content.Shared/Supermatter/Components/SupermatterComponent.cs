@@ -337,8 +337,7 @@ public sealed partial class SupermatterComponent : Component
     ///     Stores each gas facts
     /// </summary>
     // todo: replace this with serializable GasFact array something
-    [DataField]
-    public Dictionary<Gas, (float TransmitModifier, float HeatPenalty, float PowerMixRatio)> GasDataFields = new()
+    public readonly Dictionary<Gas, (float TransmitModifier, float HeatPenalty, float PowerMixRatio)> GasDataFields = new()
     {
         [Gas.Oxygen] = (TransmitModifier: 1.5f, HeatPenalty: 1f, PowerMixRatio: 1f),
         [Gas.Nitrogen] = (TransmitModifier: 0f, HeatPenalty: -1.5f, PowerMixRatio: -1f),
