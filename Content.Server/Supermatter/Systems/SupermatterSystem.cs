@@ -528,6 +528,7 @@ public sealed class SupermatterSystem : EntitySystem
         {
             EntityManager.SpawnEntity(sm.CollisionResultPrototype, Transform(target).Coordinates);
             _audio.PlayPvs(sm.DustSound, uid);
+            sm.Power += args.OtherBody.Mass;
         }
 
         EntityManager.QueueDeleteEntity(target);
