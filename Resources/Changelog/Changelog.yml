@@ -4774,3 +4774,12 @@ Entries:
         inventory slots than they occupy.
   id: 6198
   time: '2024-08-01T21:55:09.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Ultraviolet Vision, Deuteranopia, and Trichromat Modification are all
+        now 0 point Neutral traits. They still occupy one of your trait
+        selections.
+  id: 6199
+  time: '2024-08-01T22:41:24.0000000+00:00'
