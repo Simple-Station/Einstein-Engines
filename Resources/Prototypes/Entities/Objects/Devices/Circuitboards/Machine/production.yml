@@ -1547,6 +1547,20 @@
     -  JukeboxCircuitBoard
 
 - type: entity
+  parent: BaseMachineCircuitboard
+  id: CutterMachineCircuitboard
+  name: cutter machine board
+  components:
+  - type: MachineBoard
+    prototype: CutterMachine
+    machinePartRequirements:
+      Capacitor: 1
+      Manipulator: 1
+    stackRequirements:
+      Steel: 2
+      Cable: 1
+
+- type: entity
   id: MaterialSiloCircuitboard
   parent: BaseMachineCircuitboard
   name: material silo machine board

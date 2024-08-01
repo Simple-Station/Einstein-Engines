@@ -20,8 +20,8 @@
   parent: BaseElectronicsRecipe
   id: BaseCheapCircuitboardRecipe
   materials:
-     Steel: 50
-     Glass: 250
+    Steel: 50
+    Glass: 250
 
 - type: latheRecipe
   abstract: true
@@ -193,9 +193,9 @@
   result: MetempsychoticMachineCircuitboard
   completetime: 4
   materials:
-     Steel: 100
-     Glass: 900
-     Gold: 100
+    Steel: 100
+    Glass: 900
+    Gold: 100
 
 - type: latheRecipe
   id: ThermomachineFreezerMachineCircuitBoard
@@ -328,8 +328,8 @@
   category: Circuitry
   completetime: 4
   materials:
-     Steel: 100
-     Glass: 500
+    Steel: 100
+    Glass: 500
 
 - type: latheRecipe
   id: ProtolatheMachineCircuitboard
@@ -789,8 +789,8 @@
   category: Circuitry
   completetime: 4
   materials:
-     Steel: 100
-     Glass: 500
+    Steel: 100
+    Glass: 500
 
 - type: latheRecipe
   id: CloningConsoleComputerCircuitboard
@@ -1084,6 +1084,14 @@
 - type: latheRecipe
   id: JukeboxCircuitBoard
   result: JukeboxCircuitBoard
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 500
+
+- type: latheRecipe
+  id: CutterMachineCircuitboard
+  result: CutterMachineCircuitboard
   completetime: 4
   materials:
     Steel: 100
