@@ -82,20 +82,6 @@
 
 - type: entity
   parent: ClothingNeckBase
-  id: ClothingNeckFlowerWreath
-  name: flower wreath
-  description: A wreath of colourful flowers.
-  components:
-  - type: Sprite
-    sprite: Clothing/Neck/Misc/flower-wreath.rsi
-  - type: Clothing
-    sprite: Clothing/Neck/Misc/flower-wreath.rsi
-  - type: Construction
-    graph: flowerwreath
-    node: flowerwreath
-
-- type: entity
-  parent: ClothingNeckBase
   id: ClothingNeckBellCollar
   name: bell collar
   description: A way to inform others about your presence, or just to annoy everyone around you!
