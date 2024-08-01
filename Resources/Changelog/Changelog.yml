@@ -4793,3 +4793,9 @@ Entries:
         paperwork, and medkits.
   id: 6200
   time: '2024-08-01T22:45:13.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Vulpkanins can wag their tails now
+  id: 6201
+  time: '2024-08-01T23:06:24.0000000+00:00'
