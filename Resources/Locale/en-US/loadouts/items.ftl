@@ -27,3 +27,10 @@ loadout-description-LoadoutEmergencyMedipen = A rapid and safe way to stabilize 
 loadout-description-LoadoutSpaceMedipen = Contains a mix of chemicals that protect you from the deadly effects of space.
                                           Also known as the "poor man's hardsuit".
                                           WARNING: injecting two space medipens at once will cause a barozine overdose.
+
+loadout-name-LoadoutItemBoxSurvival = survival box (standard)
+loadout-name-LoadoutItemBoxSurvivalEngineering = extended-capacity survival box (engineering)
+loadout-name-LoadoutItemBoxSurvivalSecurity = survival box (security)
+loadout-name-LoadoutItemBoxSurvivalBrigmedic = survival box (corpsman)
+loadout-name-LoadoutItemBoxSurvivalMedical = survival box (medical)
+loadout-name-LoadoutItemBoxHug = box of hugs (clown)
