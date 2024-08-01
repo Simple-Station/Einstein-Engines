@@ -16,7 +16,7 @@
     - FEET
     sprite: Clothing/Shoes/Misc/clothWrap.rsi
   - type: Construction
-    graph: ClothingsClothwarp
+    graph: ClothingClothWrap
     node: shoes
   - type: Butcherable
     butcheringType: Knife
