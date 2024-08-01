@@ -190,6 +190,80 @@
   items:
     - FireExtinguisher
 
+- type: loadout
+  id: LoadoutItemBoxSurvival
+  category: Items
+  cost: 2 #All survival kits are intentionally cheaper than their contents to help encourage people to buy them. The contents can be bought separately to save space, or as spares
+  items:
+    - BoxSurvival
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Medical
+         - Engineering
+         - Epistemics
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Clown
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalEngineering
+  category: Items
+  cost: 2
+  items:
+    - BoxSurvivalEngineering
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Engineering
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalSecurity
+  category: Items
+  cost: 2
+  items:
+    - BoxSurvivalSecurity
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Security
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalBrigmedic
+  category: Items
+  cost: 2
+  items:
+    - BoxSurvivalBrigmedic
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Brigmedic
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalMedical
+  category: Items
+  cost: 2
+  items:
+    - BoxSurvivalMedical
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Medical
+
+- type: loadout
+  id: LoadoutItemBoxHug
+  category: Items
+  cost: 2
+  items:
+    - BoxHug
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Clown
+
 #Misc Items
 - type: loadout
   id: LoadoutItemPAI

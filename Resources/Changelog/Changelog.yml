@@ -4760,3 +4760,9 @@ Entries:
         enjoy The Park instead of sprinting everywhere
   id: 6196
   time: '2024-08-01T08:30:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Survival Boxes have been added to loadouts. '
+  id: 6197
+  time: '2024-08-01T21:12:49.0000000+00:00'
