@@ -4752,3 +4752,11 @@ Entries:
       message: Prevent dionas and harpies from selecting shoes in Loadouts.
   id: 6195
   time: '2024-08-01T02:37:45.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        The station's crew hivemind has decided to slow down their movement and
+        enjoy The Park instead of sprinting everywhere
+  id: 6196
+  time: '2024-08-01T08:30:47.0000000+00:00'
