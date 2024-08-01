@@ -184,6 +184,13 @@
     - DoubleEmergencyOxygenTankFilled
 
 - type: loadout
+  id: LoadoutItemClothingMaskBreath
+  category: Items
+  cost: 1
+  items:
+    - ClothingMaskBreath
+
+- type: loadout
   id: LoadoutItemsEmergencyCrowbar
   category: Items
   cost: 3
@@ -203,6 +210,13 @@
   cost: 2
   items:
     - FlashlightLantern
+
+- type: loadout
+  id: LoadoutItemFlare
+  category: Items
+  cost: 1
+  items:
+    - Flare
 
 - type: loadout
   id: LoadoutEmergencyMedipen
