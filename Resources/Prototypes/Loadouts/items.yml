@@ -63,11 +63,18 @@
     - CheapLighter
 
 - type: loadout
-  id: LoadoutItemMatches
+  id: LoadoutItemLighterFlippo
   category: Items
-  cost: 1
+  cost: 3
   items:
-    - Matchbox
+    - FlippoLighter
+
+- type: loadout
+  id: LoadoutItemSmokingPipeFilledTobacco
+  category: Items
+  cost: 2
+  items:
+    - SmokingPipeFilledTobacco
 
 # Instruments
 - type: loadout
@@ -190,6 +197,38 @@
   items:
     - FireExtinguisher
 
+- type: loadout
+  id: LoadoutItemFlashlightLantern
+  category: Items
+  cost: 2
+  items:
+    - FlashlightLantern
+
+# Business
+- type: loadout
+  id: LoadoutItemPapers
+  category: Items
+  cost: 1
+  items:
+    - Paper
+    - Paper
+    - Paper
+    - Paper
+
+- type: loadout
+  id: LoadoutItemBoxFolderGrey
+  category: Items
+  cost: 1
+  items:
+    - BoxFolderGrey
+
+- type: loadout
+  id: LoadoutBookRandom
+  category: Items
+  cost: 1
+  items:
+    - BookRandom
+
 #Misc Items
 - type: loadout
   id: LoadoutItemPAI
@@ -242,3 +281,10 @@
   cost: 3
   items:
     - SolCommonTranslator
+
+- type: loadout
+  id: LoadoutItemLunchboxGenericFilledRandom
+  category: Items
+  cost: 3
+  items:
+    - LunchboxGenericFilledRandom
