@@ -4,12 +4,15 @@
 * See AGPLv3.txt for details.
 */
 
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
+
 namespace Content.Shared.SegmentedEntity
 {
     /// <summary>
     /// Controls initialization of any Multi-segmented entity
     /// </summary>
-    [RegisterComponent]
+    [RegisterComponent, NetworkedComponent]
     public sealed partial class SegmentedEntityComponent : Component
     {
         /// <summary>
@@ -80,5 +83,16 @@ namespace Content.Shared.SegmentedEntity
 
         [DataField("bulletPassover")]
         public bool BulletPassover = true;
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class SegmentedEntityComponentState : ComponentState
+    {
+        public readonly List<int> Segments;
+
+        public SegmentedEntityComponentState(List<int> segments)
+        {
+            Segments = segments;
+        }
     }
 }

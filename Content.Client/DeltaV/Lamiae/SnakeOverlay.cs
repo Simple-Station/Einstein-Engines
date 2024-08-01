@@ -54,8 +54,8 @@ public sealed class SnakeOverlay : Overlay
                 continue;
 
             // Skip ones where there's nothing to draw or they're maybe uninitialized
-            // if (lamia.Segments.Count == 0)
-            //     continue;
+            if (lamia.Segments.Count == 0)
+                continue;
 
             // By the way, there's a hack to mitigate overdraw somewhat. Check out whatever is going on with the variable called "bounds" in DoAfterOverlay.
             // I won't do it here because (1) it's ugly and (2) theoretically these entities can be fucking huge and you'll see the tail end of them when they are way off screen.

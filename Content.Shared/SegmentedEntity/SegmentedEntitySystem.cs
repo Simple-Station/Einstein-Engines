@@ -14,6 +14,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
 using Robust.Shared.Network;
+using Robust.Shared.GameStates;
 
 namespace Content.Shared.SegmentedEntity
 {
@@ -40,6 +41,8 @@ namespace Content.Shared.SegmentedEntity
             SubscribeLocalEvent<SegmentedEntityComponent, DidUnequipEvent>(OnDidUnequipEvent);
             SubscribeLocalEvent<SegmentedEntityComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<SegmentedEntityComponent, ComponentShutdown>(OnShutdown);
+            SubscribeLocalEvent<SegmentedEntityComponent, ComponentGetState>(OnGetState);
+            SubscribeLocalEvent<SegmentedEntityComponent, ComponentHandleState>(OnHandleState);
             SubscribeLocalEvent<SegmentedEntityComponent, JointRemovedEvent>(OnJointRemoved);
             SubscribeLocalEvent<SegmentedEntityComponent, EntParentChangedMessage>(OnParentChanged);
             SubscribeLocalEvent<SegmentedEntityComponent, StoreMobInItemContainerAttemptEvent>(OnStoreSnekAttempt);
@@ -114,6 +117,38 @@ namespace Content.Shared.SegmentedEntity
             component.Segments.Clear();
         }
 
+        private void OnGetState(EntityUid uid, SegmentedEntityComponent component, ref ComponentGetState args)
+        {
+            var segs = new List<int>();
+
+            foreach (var seg in component.Segments)
+            {
+                segs.Add((int) seg);
+            }
+
+            args.State = new SegmentedEntityComponentState(segs);
+        }
+
+        private void OnHandleState(EntityUid uid, SegmentedEntityComponent component, ref ComponentHandleState args)
+        {
+            if (args.Current is not SegmentedEntityComponentState cast)
+                return;
+
+            component.Segments.Clear();
+
+            foreach (var segment in cast.Segments)
+            {
+                var segmentUid = EntityManager.GetEntity(new NetEntity(segment));
+
+                if (!segmentUid.IsValid())
+                    continue;
+
+                component.Segments.Add(segmentUid);
+            }
+
+            component.Segments.Sort();
+        }
+
         /// <summary>
         ///     TODO: Full Self-Test function that intelligently checks the status of where everything is, and calls whatever
         ///     functions are appropriate
@@ -182,6 +217,8 @@ namespace Content.Shared.SegmentedEntity
                 addTo = segment;
                 i++;
             }
+
+            Dirty(uid, component);
         }
 
         private EntityUid AddSegment(EntityUid segmentuid, EntityUid parentuid, SegmentedEntityComponent segmentedComponent, int segmentNumber)

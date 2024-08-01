@@ -44,7 +44,7 @@
   noSpawn: true
   description: A tail segment, hopefully attached to a lamia.
   components:
-  # - type: Sprite
+  - type: Sprite
   #   sprite: Nyanotrasen/Mobs/Species/lamia.rsi
   #   drawdepth: SmallMobs
   #   layers:
