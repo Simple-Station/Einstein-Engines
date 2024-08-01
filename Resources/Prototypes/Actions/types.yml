@@ -345,8 +345,8 @@
   noSpawn: true
   components:
     - type: InstantAction
-      icon: { sprite: Interface/Actions/wagging.rsi, state: icon }
-      iconOn: { sprite: Interface/Actions/wagging.rsi, state: icon-on }
+      icon: { sprite: Mobs/Customization/reptilian_parts.rsi, state: tail_smooth_behind }
+      iconOn: { sprite: Mobs/Customization/reptilian_parts.rsi, state: tail_smooth_behind }
       itemIconStyle: NoItem
       useDelay: 1 # emote spam
       event: !type:ToggleActionEvent

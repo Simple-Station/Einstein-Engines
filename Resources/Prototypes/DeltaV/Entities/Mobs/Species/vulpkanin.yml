@@ -97,7 +97,6 @@
       Female: FemaleVulpkanin
       Unsexed: MaleVulpkanin
   - type: DogVision
-  - type: Wagging
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon

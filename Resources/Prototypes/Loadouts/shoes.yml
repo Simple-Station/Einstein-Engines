@@ -341,7 +341,6 @@
   items:
     - ClothingUnderSocksCoder
 
-# Socks
 - type: loadout
   id: LoadoutShoesUnderSocksBee
   category: Shoes
@@ -357,9 +356,9 @@
     - ClothingUnderSocksBee
 
 - type: loadout
-  id: LoadoutShoesClothwarp
+  id: LoadoutShoesClothWrap
   category: Shoes
   cost: 1
   exclusive: true
   items:
-    - ClothingsClothwarp
+    - ClothingClothWrap
