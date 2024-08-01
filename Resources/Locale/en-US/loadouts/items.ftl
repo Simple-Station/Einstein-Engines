@@ -13,7 +13,8 @@ loadout-description-LoadoutItemPlushieSharkGrey = Introducing the Grey Shark Plu
 loadout-description-LoadoutItemPlushieCarp = Brace for extraterrestrial antics with the Purple Space Carp Plushie! A fishy invader from the cosmic deep, this plushie brings a splash of humor to zero-gravity escapades. From hostile waters to interstellar giggles, it's a cuddly contradiction that's out of this world
 loadout-description-LoadoutSolCommonTranslator = The most common of all translators, such that it can be purchased in any civilized station.
                                                  This device translates Sol Common speech into Galactic Common.
-loadout-description-LoadoutItemPapers = 4 pieces of paper, good for filling out tedious paperwork and silent communication.
+loadout-name-LoadoutItemPapers = papers (x4)
+loadout-description-LoadoutItemPapers = four pieces of paper, good for filling out tedious paperwork and silent communication.
 loadout-description-LoadoutItemBoxFolderGrey = A folder to store papers and top secret documents.
 loadout-description-LoadoutBookRandom = A notebook with a random cover. Can be used as a diary, or for writing fanfiction drafts for SpacePad.
 loadout-description-LoadoutPen = An extra pen, just in case your pen from your PDA gets robbed by skeletal space pirates.
