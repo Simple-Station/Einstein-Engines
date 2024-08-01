@@ -4783,3 +4783,13 @@ Entries:
         selections.
   id: 6199
   time: '2024-08-01T22:41:24.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: 'Added new clothes in Loadouts: slim trench coat, and Mafia-style suits.'
+    - type: Add
+      message: >-
+        Added new useful items in Loadouts: lunchbox, more survival gear,
+        paperwork, and medkits.
+  id: 6200
+  time: '2024-08-01T22:45:13.0000000+00:00'
