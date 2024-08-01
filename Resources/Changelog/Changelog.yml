@@ -4731,3 +4731,24 @@ Entries:
       message: Readjusted colors of all languages to make them easier to read.
   id: 6194
   time: '2024-07-31T23:57:25.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Added dozens of new clothes and items to Loadouts, including the new
+        Mask category. Have fun dressing up your characters!
+    - type: Tweak
+      message: Restrict Command Loadouts from selecting uniforms outside of their job.
+    - type: Tweak
+      message: >-
+        Limit the selection in Security Loadouts of non-sec uniforms, hats, and
+        masks to those that maintain the Security aesthetic.
+    - type: Tweak
+      message: >-
+        Made all types of colored jumpsuits in Loadouts available to Civilian
+        roles (excluding HoP), and suitable jumpsuits to Epistemics,
+        Engineering, and Medical.
+    - type: Fix
+      message: Prevent dionas and harpies from selecting shoes in Loadouts.
+  id: 6195
+  time: '2024-08-01T02:37:45.0000000+00:00'
