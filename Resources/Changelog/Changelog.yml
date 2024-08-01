@@ -4686,7 +4686,7 @@ Entries:
         Cybernetics.
   id: 6189
   time: '2024-07-30T21:33:23.0000000+00:00'
-- author: angelofallars
+- author: Skubman
   changes:
     - type: Add
       message: >-
@@ -4695,3 +4695,68 @@ Entries:
         give makeovers to your characters!
   id: 6190
   time: '2024-07-30T21:34:37.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Tools, Drink Containers, Lockers, and all base items having
+        inconsistent sound settings. 
+  id: 6191
+  time: '2024-07-31T22:47:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: 'Lasers no longer function as jetpacks in space. '
+  id: 6192
+  time: '2024-07-31T22:57:33.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed the Uncategorized category not being hidden when empty
+  id: 6193
+  time: '2024-07-31T23:32:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Whisper can no longer be heard clearly outside the intended range.
+    - type: Fix
+      message: >-
+        Translators can no longer be used without knowing the languages they
+        require.
+    - type: Fix
+      message: >-
+        Computers (primarily RnD console) now speak GC by default instead of
+        Universal.
+    - type: Tweak
+      message: Readjusted colors of all languages to make them easier to read.
+  id: 6194
+  time: '2024-07-31T23:57:25.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Added dozens of new clothes and items to Loadouts, including the new
+        Mask category. Have fun dressing up your characters!
+    - type: Tweak
+      message: Restrict Command Loadouts from selecting uniforms outside of their job.
+    - type: Tweak
+      message: >-
+        Limit the selection in Security Loadouts of non-sec uniforms, hats, and
+        masks to those that maintain the Security aesthetic.
+    - type: Tweak
+      message: >-
+        Made all types of colored jumpsuits in Loadouts available to Civilian
+        roles (excluding HoP), and suitable jumpsuits to Epistemics,
+        Engineering, and Medical.
+    - type: Fix
+      message: Prevent dionas and harpies from selecting shoes in Loadouts.
+  id: 6195
+  time: '2024-08-01T02:37:45.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        The station's crew hivemind has decided to slow down their movement and
+        enjoy The Park instead of sprinting everywhere
+  id: 6196
+  time: '2024-08-01T08:30:47.0000000+00:00'
