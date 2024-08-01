@@ -1360,3 +1360,159 @@
        inverted: true
        departments:
          - Command
+
+# Suits
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBlack
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBlack
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBlackAlt
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBlackAlt
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBlackMob
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBlackMob
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBrown
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBrown
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
+         - Security
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBrownAlt
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBrownAlt
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBrownMob
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBrownMob
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitWhite
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitWhite
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
+         - Security
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitWhiteAlt
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitWhiteAlt
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitWhiteMob
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitWhiteMob
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
