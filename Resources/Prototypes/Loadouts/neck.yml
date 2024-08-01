@@ -110,7 +110,7 @@
   cost: 1
   exclusive: true
   items:
-    - ClothingNeckOldMantle
+    - ClothingNeckTieRed
 
 - type: loadout
   id: LoadoutNeckTieWhite
