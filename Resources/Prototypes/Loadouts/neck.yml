@@ -194,22 +194,6 @@
   items:
     - ClothingNeckTransPin
 
-- type: loadout
-  id: LoadoutItemsAutismPin
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - ClothingNeckAutismPin
-
-- type: loadout
-  id: LoadoutItemsGoldAutismPin
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - ClothingNeckGoldAutismPin
-
 # Bedsheets
 - type: loadout
   id: LoadoutNeckBedsheetBlack
