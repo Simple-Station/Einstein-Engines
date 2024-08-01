@@ -1,7 +1,7 @@
 - type: entity
   parent: Clothing
-  id: ClothingsClothwarp
-  name: clothwarps
+  id: ClothingClothWrap
+  name: cloth wraps
   description: A roll of treated canvas used for wrapping claws or paws.
   components:
   - type: Item

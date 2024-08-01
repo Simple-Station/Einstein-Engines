@@ -1,13 +1,13 @@
 - type: constructionGraph
-  id: ClothingsClothwarp
+  id: ClothingClothWrap
   start: start
   graph:
     - node: start
       edges:
-        - to: warps
+        - to: wraps
           steps:
           - material: Cloth
             amount: 2
             doAfter: 1
     - node: warps
-      entity: ClothingsClothwarp
+      entity: ClothingClothWrap

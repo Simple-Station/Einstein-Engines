@@ -98,12 +98,12 @@
   objectType: Item
 
 - type: construction
-  name: clothwarps
-  id: ClothingsClothwarp
-  graph: ClothingsClothwarp
+  name: cloth wraps
+  id: ClothingClothWrap
+  graph: ClothingClothWrap
   startNode: start
-  targetNode: warps
+  targetNode: wraps
   category: construction-category-clothing
   description: A roll of treated canvas used for wrapping claws or paws.
-  icon: { sprite: Clothing/Shoes/Misc/clothwarp.rsi, state: icon }
+  icon: { sprite: Clothing/Shoes/Misc/clothWrap.rsi, state: icon }
   objectType: Item
