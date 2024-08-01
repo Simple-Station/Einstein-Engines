@@ -729,7 +729,7 @@ namespace Content.Client.Preferences.UI
                         job.Requirements ?? new(),
                         job,
                         Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                        _requirements.GetPlayTimes(),
+                        _requirements.GetRawPlayTimeTrackers(),
                         _requirements.IsWhitelisted(),
                         _entityManager,
                         _prototypeManager,
@@ -784,7 +784,7 @@ namespace Content.Client.Preferences.UI
                         selector.Proto.Requirements ?? new(),
                         selector.Proto,
                         Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                        _requirements.GetPlayTimes(),
+                        _requirements.GetRawPlayTimeTrackers(),
                         _requirements.IsWhitelisted(),
                         _entityManager,
                         _prototypeManager,
@@ -1434,7 +1434,7 @@ namespace Content.Client.Preferences.UI
                     trait.Requirements,
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetPlayTimes(),
+                    _requirements.GetRawPlayTimeTrackers(),
                     _requirements.IsWhitelisted(),
                     _entityManager,
                     _prototypeManager,
@@ -1449,7 +1449,7 @@ namespace Content.Client.Preferences.UI
                     trait.Requirements,
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetPlayTimes(),
+                    _requirements.GetRawPlayTimeTrackers(),
                     _requirements.IsWhitelisted(),
                     _entityManager,
                     _prototypeManager,
@@ -1599,7 +1599,7 @@ namespace Content.Client.Preferences.UI
 
 
             // Hide Uncategorized tab if it's empty, other tabs already shouldn't exist if they're empty
-            _traitsTabs.SetTabVisible(0, uncategorized.Children.Any());
+            _traitsTabs.SetTabVisible(0, uncategorized.Children.First().Children.First().Children.Any());
 
             // Add fake tabs until tab container is happy
             for (var i = _traitsTabs.ChildCount - 1; i < _traitsTabs.CurrentTab; i++)
@@ -1695,7 +1695,7 @@ namespace Content.Client.Preferences.UI
                     loadout.Requirements,
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetPlayTimes(),
+                    _requirements.GetRawPlayTimeTrackers(),
                     _requirements.IsWhitelisted(),
                     _entityManager,
                     _prototypeManager,
@@ -1710,7 +1710,7 @@ namespace Content.Client.Preferences.UI
                     loadout.Requirements,
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetPlayTimes(),
+                    _requirements.GetRawPlayTimeTrackers(),
                     _requirements.IsWhitelisted(),
                     _entityManager,
                     _prototypeManager,
@@ -1860,7 +1860,7 @@ namespace Content.Client.Preferences.UI
 
 
             // Hide Uncategorized tab if it's empty, other tabs already shouldn't exist if they're empty
-            _loadoutsTabs.SetTabVisible(0, uncategorized.Children.Any());
+            _loadoutsTabs.SetTabVisible(0, uncategorized.Children.First().Children.First().Children.Any());
 
             // Add fake tabs until tab container is happy
             for (var i = _loadoutsTabs.ChildCount - 1; i < _loadoutsTabs.CurrentTab; i++)

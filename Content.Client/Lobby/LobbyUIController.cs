@@ -126,7 +126,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                 GiveDummyJobClothes(_previewDummy.Value, GetPreferredJob(maybeProfile), maybeProfile);
             if (ShowLoadouts)
                 _loadouts.ApplyCharacterLoadout(_previewDummy.Value, GetPreferredJob(maybeProfile), maybeProfile,
-                    _jobRequirements.GetPlayTimes(), _jobRequirements.IsWhitelisted());
+                    _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted());
             UpdateClothes = false;
         }
 
@@ -173,7 +173,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     {
         var job = GetPreferredJob(profile);
         GiveDummyJobClothes(dummy, job, profile);
-        _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetPlayTimes(), _jobRequirements.IsWhitelisted());
+        _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted());
     }
 
     /// <summary>
