@@ -145,8 +145,6 @@ namespace Content.Shared.SegmentedEntity
 
                 component.Segments.Add(segmentUid);
             }
-
-            component.Segments.Sort();
         }
 
         /// <summary>
