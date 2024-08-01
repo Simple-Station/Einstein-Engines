@@ -288,3 +288,10 @@
   cost: 3
   items:
     - LunchboxGenericFilledRandom
+
+- type: loadout
+  id: LoadoutHandLabeler
+  category: Items
+  cost: 3
+  items:
+    - HandLabeler
