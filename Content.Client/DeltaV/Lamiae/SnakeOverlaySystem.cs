@@ -5,6 +5,7 @@
 */
 
 using Robust.Client.Graphics;
+using Robust.Client.ResourceManagement;
 
 namespace Content.Client.DeltaV.Lamiae;
 
@@ -15,11 +16,12 @@ namespace Content.Client.DeltaV.Lamiae;
 public sealed class SnakeOverlaySystem : EntitySystem
 {
     [Dependency] private readonly IOverlayManager _overlay = default!;
+    [Dependency] private readonly IResourceCache _resourceCache = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        _overlay.AddOverlay(new SnakeOverlay(EntityManager));
+        _overlay.AddOverlay(new SnakeOverlay(EntityManager, _resourceCache));
     }
 
     public override void Shutdown()

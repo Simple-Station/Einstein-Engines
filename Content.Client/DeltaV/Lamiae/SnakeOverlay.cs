@@ -5,9 +5,11 @@
 */
 
 using Content.Shared.SegmentedEntity;
+using Robust.Client.ResourceManagement;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using System.Numerics;
+using Content.Client.Resources;
 
 
 namespace Content.Client.DeltaV.Lamiae;
@@ -20,7 +22,7 @@ namespace Content.Client.DeltaV.Lamiae;
 /// </summary>
 public sealed class SnakeOverlay : Overlay
 {
-
+    private readonly IResourceCache _resourceCache;
     private readonly IEntityManager _entManager;
     private readonly SharedTransformSystem _transform;
 
@@ -29,8 +31,9 @@ public sealed class SnakeOverlay : Overlay
 
     // Overlays are strange and you need this pattern where you define readonly deps above, and then make a constructor with this pattern. Anything that creates this overlay will then
     // have to provide all the deps.
-    public SnakeOverlay(IEntityManager entManager)
+    public SnakeOverlay(IEntityManager entManager, IResourceCache resourceCache)
     {
+        _resourceCache = resourceCache;
         // we get ent manager from SnakeOverlaySystem turning this on and passing it
         _entManager = entManager;
         // with ent manager we can fetch our other entity systems
@@ -69,14 +72,69 @@ public sealed class SnakeOverlay : Overlay
     {
         List<DrawVertexUV2DColor> verts = new List<DrawVertexUV2DColor>();
 
+        float radius = 0.15f;
+
+        Vector2? lastPtCW = null;
+        Vector2? lastPtCCW = null;
+        var tex = _resourceCache.GetTexture("/Textures/Nyanotrasen/Mobs/Species/lamia.rsi/soyjakcobson.png");
+
         int i = 1;
+        // so, for each segment we connect we need 4 verts...
         while (i < lamia.Segments.Count)
         {
-            verts.Add(new DrawVertexUV2DColor(_transform.GetWorldPosition(lamia.Segments[i - 1]), Color.White));
-            verts.Add(new DrawVertexUV2DColor(_transform.GetWorldPosition(lamia.Segments[i]), Color.White));
+            var origin = _transform.GetWorldPosition(lamia.Segments[i - 1]);
+            var destination = _transform.GetWorldPosition(lamia.Segments[i]);
+
+            // get direction between the two points and normalize it
+            var connectorVec = destination - origin;
+            connectorVec = connectorVec.Normalized();
+
+            //get one rotated 90 degrees clockwise
+            var offsetVecCW = new Vector2(connectorVec.Y, 0 - connectorVec.X);
+
+            //ditto counterclockwise
+            var offsetVecCCW = new Vector2(0 - connectorVec.Y, connectorVec.X);
+
+            /// add our two triangle verts verts.
+            /// tri 1
+            if (lastPtCW == null)
+            {
+                verts.Add(new DrawVertexUV2DColor(origin + offsetVecCW * radius, Vector2.Zero, Color.White));
+            }
+            else
+            {
+                verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCW, Vector2.Zero, Color.White));
+            }
+
+            if (lastPtCCW == null)
+            {
+                verts.Add(new DrawVertexUV2DColor(origin + offsetVecCCW * radius, new Vector2(1, 0), Color.White));
+            }
+            else
+            {
+                verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCCW, new Vector2(1, 0), Color.White));
+            }
+
+            verts.Add(new DrawVertexUV2DColor(destination + offsetVecCW * radius, new Vector2(0, 1), Color.White));
+
+            // tri 2
+            if (lastPtCCW == null)
+            {
+                verts.Add(new DrawVertexUV2DColor(origin + offsetVecCCW * radius, new Vector2(1, 0), Color.White));
+            }
+            else
+            {
+                verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCCW, new Vector2(1, 0), Color.White));
+            }
+
+            lastPtCW = destination + offsetVecCW * radius;
+            verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCW, new Vector2(0, 1), Color.White));
+            lastPtCCW = destination + offsetVecCCW * radius;
+            verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCCW, new Vector2(1, 1), Color.White));
+
             i++;
         }
 
-        handle.DrawPrimitives(DrawPrimitiveTopology.LineList, Texture.White, verts.ToArray().AsSpan());
+        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, texture: tex, verts.ToArray().AsSpan());
     }
 }
