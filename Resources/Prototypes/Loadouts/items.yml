@@ -204,6 +204,20 @@
   items:
     - FlashlightLantern
 
+- type: loadout
+  id: LoadoutEmergencyMedipen
+  category: Items
+  cost: 1
+  items:
+    - EmergencyMedipen
+
+- type: loadout
+  id: LoadoutSpaceMedipen
+  category: Items
+  cost: 1
+  items:
+    - SpaceMedipen
+
 # Paperwork
 - type: loadout
   id: LoadoutItemPapers
