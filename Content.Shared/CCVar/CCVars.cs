@@ -407,6 +407,13 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> GameAutoEatDrinks =
             CVarDef.Create("game.auto_eat_drinks", false, CVar.REPLICATED);
 
+
+        /// <summary>
+        ///     When true, you have to press the change speed button to sprint.
+        /// </summary>
+        public static readonly CVarDef<bool> GamePressToSprint =
+            CVarDef.Create("game.press_to_sprint", true, CVar.REPLICATED);
+
 #if EXCEPTION_TOLERANCE
         /// <summary>
         ///     Amount of times round start must fail before the server is shut down.
