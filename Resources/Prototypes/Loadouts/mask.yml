@@ -38,6 +38,11 @@
   exclusive: true
   items:
     - ClothingMaskBandBlue
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
 
 - type: loadout
   id: LoadoutMaskBandGold
@@ -46,6 +51,11 @@
   exclusive: true
   items:
     - ClothingMaskBandGold
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
 
 - type: loadout
   id: LoadoutMaskBandGreen
@@ -54,6 +64,11 @@
   exclusive: true
   items:
     - ClothingMaskBandGreen
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
 
 - type: loadout
   id: LoadoutMaskBandGrey
@@ -62,6 +77,11 @@
   exclusive: true
   items:
     - ClothingMaskBandGrey
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
 
 - type: loadout
   id: LoadoutMaskBandRed
@@ -86,6 +106,11 @@
   exclusive: true
   items:
     - ClothingMaskBandMerc
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
 
 - type: loadout
   id: LoadoutMaskBandBrown
@@ -94,6 +119,11 @@
   exclusive: true
   items:
     - ClothingMaskBandBrown
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
 
 # Gaiters
 - type: loadout
