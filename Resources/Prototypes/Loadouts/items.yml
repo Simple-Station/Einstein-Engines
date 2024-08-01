@@ -201,7 +201,7 @@
 - type: loadout
   id: LoadoutItemBackpackSatchelLeather
   category: Items
-  cost: 2
+  cost: 1
   items:
     - ClothingBackpackSatchelLeather
   requirements:
