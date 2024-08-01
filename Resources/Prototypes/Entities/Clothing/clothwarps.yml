@@ -9,12 +9,12 @@
     storedRotation: -90
   - type: Sprite
     state: icon
-    sprite: Clothing/Shoes/Misc/clothwarp.rsi
+    sprite: Clothing/Shoes/Misc/clothWrap.rsi
   - type: Clothing
     slots:
     - gloves
     - FEET
-    sprite: Clothing/Shoes/Misc/clothwarp.rsi
+    sprite: Clothing/Shoes/Misc/clothWrap.rsi
   - type: Construction
     graph: ClothingsClothwarp
     node: shoes
