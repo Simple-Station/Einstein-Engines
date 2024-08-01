@@ -10,6 +10,7 @@ using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using System.Numerics;
 using Content.Client.Resources;
+using Robust.Client.GameStates;
 
 
 namespace Content.Client.DeltaV.Lamiae;
@@ -58,7 +59,10 @@ public sealed class SnakeOverlay : Overlay
 
             // Skip ones where there's nothing to draw or they're maybe uninitialized
             if (lamia.Segments.Count == 0)
+            {
+                _entManager.Dirty(uid, lamia); // pls give me an update...
                 continue;
+            }
 
             // By the way, there's a hack to mitigate overdraw somewhat. Check out whatever is going on with the variable called "bounds" in DoAfterOverlay.
             // I won't do it here because (1) it's ugly and (2) theoretically these entities can be fucking huge and you'll see the tail end of them when they are way off screen.
