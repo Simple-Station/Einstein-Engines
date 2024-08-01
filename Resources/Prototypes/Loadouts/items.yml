@@ -183,6 +183,13 @@
   items:
     - CrowbarRed
 
+- type: loadout
+  id: LoadoutItemFireExtinguisher
+  category: Items
+  cost: 3
+  items:
+    - FireExtinguisher
+
 #Misc Items
 - type: loadout
   id: LoadoutItemPAI
@@ -192,11 +199,42 @@
     - PersonalAI
 
 - type: loadout
+  id: LoadoutItemBackpackSatchelLeather
+  category: Items
+  cost: 1
+  items:
+    - ClothingBackpackSatchelLeather
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+
+- type: loadout
   id: LoadoutItemWaistbag
   category: Items
   cost: 2
   items:
     - ClothingBeltStorageWaistbag
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+
+- type: loadout
+  id: LoadoutItemCrayonBox
+  category: Items
+  cost: 4
+  items:
+    - CrayonBox
+
+- type: loadout
+  id: LoadoutItemBarberScissors
+  category: Items
+  cost: 4
+  items:
+    - BarberScissors
 
 - type: loadout
   id: LoadoutSolCommonTranslator
