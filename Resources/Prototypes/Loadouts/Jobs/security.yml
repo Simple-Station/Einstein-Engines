@@ -363,6 +363,22 @@
   items:
     - ClothingBeltSecurityWebbingFilled
 
+# Equipment
+- type: loadout
+  id: LoadoutSecurityCombatKnife
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Diona
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - CombatKnife
+
 # TODO: Make this replace the secoff handgun and make it cheaper
 # # Species
 # - type: loadout
