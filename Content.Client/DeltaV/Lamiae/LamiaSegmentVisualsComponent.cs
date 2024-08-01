@@ -1,6 +1,6 @@
 /*
-* Delta-V - This file is licensed under AGPLv3
-* Copyright (c) 2024 Delta-V Contributors
+* This file is licensed under AGPLv3
+* Copyright (c) 2024 Rane
 * See AGPLv3.txt for details.
 */
 
