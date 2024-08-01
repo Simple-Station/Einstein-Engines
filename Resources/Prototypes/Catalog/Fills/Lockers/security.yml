@@ -98,7 +98,6 @@
     - id: ClothingShoesBootsJack
     - id: WeaponMeleeNeedle
       prob: 0.1
-    - id: ClothingEyesHudSecurity
     - id: HoloprojectorSecurity
       prob: 0.6
     - id: BookSpaceLaw
@@ -176,7 +175,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingEyesHudSecurity
+    - id: ClothingEyesGlassesSecurity
       prob: 0.3
     - id: ClothingHeadHatFedoraBrown
     - id: ClothingNeckTieDet
@@ -193,6 +192,7 @@
     - id: BoxEvidenceMarkers
     - id: LunchboxSecurityFilledRandom
       prob: 0.3
+    - id: HandLabeler
 
 - type: entity
   id: ClosetBombFilled
