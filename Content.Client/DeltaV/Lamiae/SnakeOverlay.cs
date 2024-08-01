@@ -67,7 +67,16 @@ public sealed class SnakeOverlay : Overlay
     // This is where we do the actual drawing.
     private void DrawLamia(DrawingHandleWorld handle, EntityUid uid, SegmentedEntityComponent lamia, TransformComponent xform)
     {
-        // The handle has already been set for us at the world position of the lamia. We can start drawing from there.
-        handle.DrawCircle(_transform.GetWorldPosition(xform), 1f, Color.Red);
+        List<DrawVertexUV2DColor> verts = new List<DrawVertexUV2DColor>();
+
+        int i = 1;
+        while (i < lamia.Segments.Count)
+        {
+            verts.Add(new DrawVertexUV2DColor(_transform.GetWorldPosition(lamia.Segments[i - 1]), Color.White));
+            verts.Add(new DrawVertexUV2DColor(_transform.GetWorldPosition(lamia.Segments[i]), Color.White));
+            i++;
+        }
+
+        handle.DrawPrimitives(DrawPrimitiveTopology.LineList, Texture.White, verts.ToArray().AsSpan());
     }
 }
