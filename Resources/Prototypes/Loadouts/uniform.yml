@@ -838,7 +838,6 @@
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
-         - Security
          - Command
 
 - type: loadout
