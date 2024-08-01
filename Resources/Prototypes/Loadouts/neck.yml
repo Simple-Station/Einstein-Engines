@@ -79,6 +79,48 @@
   items:
     - ClothingNeckScarfStripedZebra
 
+# Ties
+- type: loadout
+  id: LoadoutNeckTieRed
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckTieRed
+
+- type: loadout
+  id: LoadoutNeckTieWhite
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckTieWhite
+
+- type: loadout
+  id: LoadoutNeckTieBlack
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckTieBlack
+
+- type: loadout
+  id: LoadoutNeckTieBlue
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckTieBlue
+
+- type: loadout
+  id: LoadoutNeckTieGreen
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckTieGreen
+
+
 #Pride Accessories
 - type: loadout
   id: LoadoutItemsPrideLGBTPin
