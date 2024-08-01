@@ -258,15 +258,12 @@
   items:
     - DrinkWaterBottleFull
 
-# TODO: uncomment this when survival boxes are removed from job spawns
-# and turned into a Loadout item, because this item is large.
-#
-# - type: loadout
-#   id: LoadoutItemLunchboxGenericFilledRandom
-#   category: Items
-#   cost: 3
-#   items:
-#     - LunchboxGenericFilledRandom
+- type: loadout
+  id: LoadoutItemLunchboxGenericFilledRandom
+  category: Items
+  cost: 3
+  items:
+    - LunchboxGenericFilledRandom
 
 #Misc Items
 - type: loadout
