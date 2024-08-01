@@ -16,3 +16,4 @@ loadout-description-LoadoutSolCommonTranslator = The most common of all translat
 loadout-description-LoadoutItemPapers = 4 pieces of paper, good for filling out tedious paperwork and silent communication.
 loadout-description-LoadoutItemBoxFolderGrey = A folder to store papers and top secret documents.
 loadout-description-LoadoutBookRandom = A notebook with a random cover. Can be used as a diary, or as a book filled with blackmail material on several crewmembers.
+loadout-description-LoadoutPen = An extra pen, just in case your pen from your PDA gets robbed by skeletal space pirates.
