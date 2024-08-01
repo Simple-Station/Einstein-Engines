@@ -320,6 +320,10 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Security
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Brigmedic
 
 - type: loadout
   id: LoadoutItemBoxSurvivalBrigmedic
