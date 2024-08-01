@@ -340,6 +340,116 @@
        jobs:
          - Clown
 
+# Medkits
+- type: loadout
+  id: LoadoutMedkitFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitFilled
+
+- type: loadout
+  id: LoadoutMedkitBruteFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitBruteFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitBurnFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitBurnFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitToxinFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitToxinFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitOxygenFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitOxygenFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitRadiationFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitRadiationFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitAdvancedFilled
+  category: Items
+  cost: 5
+  items:
+    - MedkitAdvancedFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitCombatFilled
+  category: Items
+  cost: 4 # Discounted for the CMO and Corpsman
+  items:
+    - MedkitCombatFilled
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - ChiefMedicalOfficer
+         - Brigmedic
+
 #Misc Items
 - type: loadout
   id: LoadoutItemPAI
