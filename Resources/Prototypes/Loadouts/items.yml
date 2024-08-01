@@ -289,12 +289,15 @@
   items:
     - SolCommonTranslator
 
-- type: loadout
-  id: LoadoutItemLunchboxGenericFilledRandom
-  category: Items
-  cost: 3
-  items:
-    - LunchboxGenericFilledRandom
+# TODO: uncomment the lunchbox when survival boxes are removed from job spawns
+# and turned into a Loadout item, because lunchboxes are very big.
+#
+# - type: loadout
+#   id: LoadoutItemLunchboxGenericFilledRandom
+#   category: Items
+#   cost: 3
+#   items:
+#     - LunchboxGenericFilledRandom
 
 - type: loadout
   id: LoadoutHandLabeler
