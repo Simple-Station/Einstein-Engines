@@ -1,4 +1,13 @@
 - type: loadout
+  id: LoadoutNeckHeadphones
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckHeadphones
+
+# Scarves
+- type: loadout
   id: LoadoutNeckScarfStripedRed
   category: Neck
   cost: 1

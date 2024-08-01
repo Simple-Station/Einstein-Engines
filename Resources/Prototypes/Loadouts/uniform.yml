@@ -958,6 +958,19 @@
          - Security
          - Command
 
+- type: loadout
+  id: LoadoutUniformJumpsuitLoungewear
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitLoungewear
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Command
+
 # Bartender clothes
 - type: loadout
   id: LoadoutUniformJumpsuitBartender

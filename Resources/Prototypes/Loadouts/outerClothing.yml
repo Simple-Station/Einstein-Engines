@@ -211,3 +211,17 @@
   cost: 3
   items:
     - ClothingOuterCoatTrench
+
+- type: loadout
+  id: LoadoutOuterCoatJensen
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatJensen
+
+- type: loadout
+  id: LoadoutOuterCoatGentle
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatGentle

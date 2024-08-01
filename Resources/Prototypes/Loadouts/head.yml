@@ -24,6 +24,22 @@
     - ClothingHeadHatFedoraBlack
 
 - type: loadout
+  id: LoadoutHeadFedoraBrown
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatFedoraBrown
+
+- type: loadout
+  id: LoadoutHeadFedoraGrey
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatFedoraGrey
+
+- type: loadout
   id: LoadoutHeadFedoraChoc
   category: Head
   cost: 2
@@ -305,6 +321,22 @@
   items:
     - ClothingHeadRastaHat
 
+- type: loadout
+  id: LoadoutHeadFez
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatFez
+
+- type: loadout
+  id: LoadoutHeadBowlerHat
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatBowlerHat
+
 # Flatcaps
 - type: loadout
   id: LoadoutHeadGreyFlatcap
@@ -371,3 +403,11 @@
   exclusive: true
   items:
     - ClothingHeadHatCowboyGrey
+
+- type: loadout
+  id: LoadoutHeadCowboyRed
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHatCowboyRed
