@@ -15,5 +15,10 @@ loadout-description-LoadoutSolCommonTranslator = The most common of all translat
                                                  This device translates Sol Common speech into Galactic Common.
 loadout-description-LoadoutItemPapers = 4 pieces of paper, good for filling out tedious paperwork and silent communication.
 loadout-description-LoadoutItemBoxFolderGrey = A folder to store papers and top secret documents.
-loadout-description-LoadoutBookRandom = A notebook with a random cover. Can be used as a diary, or as a book filled with blackmail material on several crewmembers.
+loadout-description-LoadoutBookRandom = A notebook with a random cover. Can be used as a diary, or for writing fanfiction drafts for SpacePad.
 loadout-description-LoadoutPen = An extra pen, just in case your pen from your PDA gets robbed by skeletal space pirates.
+loadout-description-LoadoutItemLunchboxGenericFilledRandom = Packed with love.
+                                                             This is only useful when the chefs are either a.) nonexistent or b.) not doing their job.
+                                                             In conclusion, this lunchbox is useful most of the time.
+loadout-description-LoadoutHandLabeler = A hand labeler, used to label items and objects.
+                                         It's not really recommended to use this to label a fuel tank with "SOLUTION TO CLOWN PROBLEM".
