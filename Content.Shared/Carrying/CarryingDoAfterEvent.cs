@@ -4,7 +4,5 @@ using Content.Shared.DoAfter;
 namespace Content.Shared.Carrying
 {
     [Serializable, NetSerializable]
-    public sealed partial class CarryDoAfterEvent : SimpleDoAfterEvent
-    {
-    }
+    public sealed partial class CarryDoAfterEvent : SimpleDoAfterEvent { }
 }
