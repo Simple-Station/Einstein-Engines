@@ -131,6 +131,7 @@
   noSpawn: true
   components:
   - type: RampingStationEventScheduler
+    shiftChaosModifier: 0.3
 
 - type: entity
   id: LongSurvivalStationEventScheduler
@@ -139,6 +140,7 @@
   components:
   - type: RampingStationEventScheduler
     shiftLengthOffset: -120
+    shiftChaosModifier: 0.2
 
 - type: entity
   id: HellshiftStationEventScheduler
@@ -146,7 +148,8 @@
   noSpawn: true
   components:
   - type: RampingStationEventScheduler
-    shiftChaosModifier: 4 #30 minute HELL SHIFT
+    shiftChaosModifier: 0.4
+    shiftLengthOffset: 60
 
 # variation passes
 - type: entity

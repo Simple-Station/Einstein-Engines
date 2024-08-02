@@ -31,10 +31,10 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
         var shiftLength = Math.Max(1, _cfg.GetCVar(CCVars.EventsRampingAverageEndTime) - component.ShiftLengthOffset);
         return 2 * endTime
             / (1
-            	+ MathF.Exp(_cfg.GetCVar(CCVars.EventsRampingAverageChaos)
+            	+ MathF.Pow(2, _cfg.GetCVar(CCVars.EventsRampingAverageChaos)
 	            * component.ShiftChaosModifier
-	            / shiftLength
-	            * endTime
+	            / (shiftLength
+	            * endTime)
 	            * (float) _gameTicker.RoundDuration().TotalSeconds
 	            / 60))
                 	+ (startTime - endTime);
