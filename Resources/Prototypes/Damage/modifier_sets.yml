@@ -389,3 +389,9 @@
     Cold: 0.5
     Heat: 0.8
     Shock: 0.5
+
+# protects against radiation
+- type: damageModifierSet
+  id: PotassiumIodide
+  coefficients:
+    Radiation: 0.1
