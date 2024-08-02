@@ -28,15 +28,6 @@ public sealed partial class SupermatterComponent : Component
     [DataField]
     public bool SliverRemoved = false;
 
-    [DataField]
-    public EntityWhitelist Whitelist = new();
-
-    /// <summary>
-    ///     The ID of the projectile fired by Emitter machines.
-    /// </summary>
-    [DataField]
-    public string IdTag = "EmitterBolt";
-
     public string[] LightningPrototypes =
     {
         "Lightning",
@@ -157,7 +148,7 @@ public sealed partial class SupermatterComponent : Component
     ///     Set to YellTimer at first so it doesnt yell a minute after being hit
     /// </summary>
     [DataField]
-    public float YellAccumulator = YellTimer;
+    public float YellAccumulator = 60f;
 
     /// <summary>
     ///     Timer for delam
@@ -194,7 +185,7 @@ public sealed partial class SupermatterComponent : Component
     #region Thresholds
 
     /// <summary>
-    ///     The amount of heat we apply scaled
+    ///     The heat threshold in Kelvin, after which the supermatter begins taking damage.
     /// </summary>
     [DataField]
     public float HeatThreshold = 2500f;
@@ -343,15 +334,15 @@ public sealed partial class SupermatterComponent : Component
     //TODO: Replace this with serializable GasFact array something
     public readonly Dictionary<Gas, (float TransmitModifier, float HeatPenalty, float PowerMixRatio)> GasDataFields = new()
     {
-        [Gas.Oxygen] = (TransmitModifier: 1.5f, HeatPenalty: 1f, PowerMixRatio: 1f),
-        [Gas.Nitrogen] = (TransmitModifier: 0f, HeatPenalty: -1.5f, PowerMixRatio: -1f),
-        [Gas.CarbonDioxide] = (TransmitModifier: 0f, HeatPenalty: 0.1f, PowerMixRatio: 1f),
-        [Gas.Plasma] = (TransmitModifier: 4f, HeatPenalty: 15f, PowerMixRatio: 1f),
-        [Gas.Tritium] = (TransmitModifier: 30f, HeatPenalty: 10f, PowerMixRatio: 1f),
-        [Gas.WaterVapor] = (TransmitModifier: 2f, HeatPenalty: 12f, PowerMixRatio: 1f),
-        [Gas.Frezon] = (TransmitModifier: 3f, HeatPenalty: -10f, PowerMixRatio: -1f),
-        [Gas.Ammonia] = (TransmitModifier: 0f, HeatPenalty: .5f, PowerMixRatio: 1f),
-        [Gas.NitrousOxide] = (TransmitModifier: 0f, HeatPenalty: -5f, PowerMixRatio: -1f),
+        { Gas.Oxygen,        (1.5f, 1f,    1f)  },
+        { Gas.Nitrogen,      (0f,   -1.5f, -1f) },
+        { Gas.CarbonDioxide, (0f,   0.1f,  1f)  },
+        { Gas.Plasma,        (4f,   15f,   1f)  },
+        { Gas.Tritium,       (30f,  10f,   1f)  },
+        { Gas.WaterVapor,    (2f,   12f,   1f)  },
+        { Gas.Frezon,        (3f,   -10f,  -1f) },
+        { Gas.Ammonia,       (0f,   .5f,   1f)  },
+        { Gas.NitrousOxide,  (0f,   -5f,   -1f) },
     };
 
     #endregion
