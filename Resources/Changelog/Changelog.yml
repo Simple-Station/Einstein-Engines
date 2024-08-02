@@ -4823,3 +4823,11 @@ Entries:
         through walls.
   id: 6203
   time: '2024-08-02T07:09:44.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        The AdminHelp sound has changed to three that play under different
+        circumstances
+  id: 6204
+  time: '2024-08-02T07:14:01.0000000+00:00'
