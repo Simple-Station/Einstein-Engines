@@ -43,7 +43,7 @@ public sealed class EventManagerSystem : EntitySystem
             return errStr;
         }
 
-        GameTicker.StartGameRule(randomEvent, out var ent);
+        var ent = GameTicker.AddGameRule(randomEvent);
         var str = Loc.GetString("station-event-system-run-event",("eventName", ToPrettyString(ent)));
         Log.Info(str);
         return str;
@@ -162,7 +162,7 @@ public sealed class EventManagerSystem : EntitySystem
 
     private bool CanRun(EntityPrototype prototype, StationEventComponent stationEvent, int playerCount, TimeSpan currentTime)
     {
-        if (GameTicker.IsGameRuleActive(prototype.ID))
+        if (GameTicker.IsGameRuleAdded(prototype.ID))
             return false;
 
         if (stationEvent.MaxOccurrences.HasValue && GetOccurrences(prototype) >= stationEvent.MaxOccurrences.Value)
