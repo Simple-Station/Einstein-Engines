@@ -19,10 +19,11 @@ public sealed partial class SupermatterComponent : Component
     public bool Activated = false;
 
     [DataField]
-    public string SupermatterSliverPrototype = "SupermatterSliver";
+    public string SliverPrototype = "SupermatterSliver";
 
     /// <summary>
-    ///     Affects delamination timer. If removed - delamination timer is divided by 2.
+    ///     Affects delamination timer.
+    ///     If removed - delamination timer is divided by 2.
     /// </summary>
     [DataField]
     public bool SliverRemoved = false;
@@ -51,7 +52,7 @@ public sealed partial class SupermatterComponent : Component
     public string TeslaSpawnPrototype = "TeslaEnergyBall";
 
     [DataField]
-    public string SupermatterKudzuSpawnPrototype = "SupermatterKudzu";
+    public string KudzuSpawnPrototype = "SupermatterKudzu";
 
     /// <summary>
     ///     What spawns in the place of an unfortunate entity that got removed by the SM.
@@ -83,6 +84,7 @@ public sealed partial class SupermatterComponent : Component
 
     [DataField]
     public float MatterPowerConversion = 10f;
+
     /// <summary>
     ///     The portion of the gasmix we're on
     /// </summary>
@@ -90,26 +92,27 @@ public sealed partial class SupermatterComponent : Component
     public float GasEfficiency = 0.15f;
 
     /// <summary>
-    ///     Based on co2 percentage, slowly moves between 0 and 1. We use it to calc the powerloss_inhibitor
+    ///     Based on CO2 percentage, this slowly moves between 0 and 1.
+    ///     We use it to calculate the powerloss_inhibitor.
     /// </summary>
     [DataField]
     public float PowerlossDynamicScaling;
 
     /// <summary>
-    ///     Affects the amount of damage and minimum point at which the sm takes heat damage
+    ///     Affects the amount of damage and minimum point at which the SM takes heat damage
     /// </summary>
     [DataField]
     public float DynamicHeatResistance = 1;
 
     /// <summary>
     ///     Multiplier on damage the core takes from absorbing hot gas.
-    ///     Default is ~1/350
+    ///     Default is ~1/350.
     /// </summary>
     [DataField]
     public float MoleHeatPenalty = 0.00286f;
 
     /// <summary>
-    ///     Inverse of MoleHeatPenalty
+    ///     Inverse of <see cref="MoleHeatPenalty" />
     /// </summary>
     [DataField]
     public float MoleHeatThreshold = 350f;
@@ -154,7 +157,7 @@ public sealed partial class SupermatterComponent : Component
     ///     Set to YellTimer at first so it doesnt yell a minute after being hit
     /// </summary>
     [DataField]
-    public float YellAccumulator = 60f;
+    public float YellAccumulator = YellTimer;
 
     /// <summary>
     ///     Timer for delam
@@ -197,15 +200,14 @@ public sealed partial class SupermatterComponent : Component
     public float HeatThreshold = 2500f;
 
     /// <summary>
-    ///     Higher == Higher percentage of inhibitor gas needed
-    ///     before the charge inertia chain reaction effect starts.
+    ///     Percentage of inhibitor gas needed before the charge inertia chain reaction effect starts.
     /// </summary>
     [DataField]
     public float PowerlossInhibitionGasThreshold = 0.20f;
 
     /// <summary>
-    ///     Higher == More moles of the gas are needed before the charge inertia chain reaction effect starts.
-    ///     Scales powerloss inhibition down until this amount of moles is reached
+    ///     Moles of the gas needed before the charge inertia chain reaction effect starts.
+    ///     Scales powerloss inhibition down until this amount of moles is reached.
     /// </summary>
     [DataField]
     public float PowerlossInhibitionMoleThreshold = 20f;
@@ -236,7 +238,8 @@ public sealed partial class SupermatterComponent : Component
     public float PowerPenaltyThreshold = 4000f;
 
     /// <summary>
-    ///     Maximum safe operational temperature in degrees Celsius. Supermatter begins taking damage above this temperature.
+    ///     Maximum safe operational temperature in degrees Celsius.
+    ///     Supermatter begins taking damage above this temperature.
     /// </summary>
     [DataField]
     public float HeatPenaltyThreshold = 40f;
@@ -246,13 +249,14 @@ public sealed partial class SupermatterComponent : Component
     #region Damage
 
     /// <summary>
-    ///     The amount of damage we have currently
+    ///     The amount of damage taken
     /// </summary>
     [DataField]
     public float Damage = 0f;
 
     /// <summary>
-    ///     The damage we had before this cycle. Used to limit the damage we can take each cycle, and for safe alert
+    ///     The damage from before this cycle.
+    ///     Used to limit the damage we can take each cycle, and for safe alert.
     /// </summary>
     [DataField]
     public float DamageArchived = 0f;
@@ -270,28 +274,28 @@ public sealed partial class SupermatterComponent : Component
     public float DamageIncreaseMultiplier = 0.25f;
 
     /// <summary>
-    ///     If spaced sm wont take more than 2 damage per cycle
+    ///     Max space damage the SM will take per cycle
     /// </summary>
     [DataField]
     public float MaxSpaceExposureDamage = 2;
 
     /// <summary>
-    ///     The point at which we should start sending messeges about the damage.
+    ///     The point at which we should start sending radio messages about the damage.
     /// </summary>
     [DataField]
-    public float WarningPoint = 50;
+    public float DamageWarningThreshold = 50;
 
     /// <summary>
-    ///     The point at which we start sending announcements.
+    ///     The point at which we start sending station announcements about the damage.
     /// </summary>
     [DataField]
-    public float EmergencyPoint = 500;
+    public float DamageEmergencyThreshold = 500;
 
     /// <summary>
-    ///     The point at which we begin delaminating.
+    ///     The point at which the SM begins delaminating.
     /// </summary>
     [DataField]
-    public int DelaminationPoint = 900;
+    public int DamageDelaminationPoint = 900;
 
     [DataField]
     public bool Delamming = false;
@@ -317,26 +321,26 @@ public sealed partial class SupermatterComponent : Component
     #region Gases
 
     /// <summary>
-    ///     Is used to store gas
+    ///     How much gas is in the SM
     /// </summary>
     [DataField]
     public Dictionary<Gas, float> GasStorage = new Dictionary<Gas, float>()
     {
-        {Gas.Oxygen, 0f},
-        {Gas.Nitrogen, 0f},
-        {Gas.CarbonDioxide, 0f},
-        {Gas.Plasma, 0f},
-        {Gas.Tritium, 0f},
-        {Gas.WaterVapor, 0f},
-        {Gas.Frezon, 0f},
-        {Gas.Ammonia, 0f},
-        {Gas.NitrousOxide, 0f},
+        { Gas.Oxygen,        0f },
+        { Gas.Nitrogen,      0f },
+        { Gas.CarbonDioxide, 0f },
+        { Gas.Plasma,        0f },
+        { Gas.Tritium,       0f },
+        { Gas.WaterVapor,    0f },
+        { Gas.Frezon,        0f },
+        { Gas.Ammonia,       0f },
+        { Gas.NitrousOxide,  0f },
     };
 
     /// <summary>
-    ///     Stores each gas facts
+    ///     Stores information about how every gas interacts with the SM
     /// </summary>
-    // todo: replace this with serializable GasFact array something
+    //TODO: Replace this with serializable GasFact array something
     public readonly Dictionary<Gas, (float TransmitModifier, float HeatPenalty, float PowerMixRatio)> GasDataFields = new()
     {
         [Gas.Oxygen] = (TransmitModifier: 1.5f, HeatPenalty: 1f, PowerMixRatio: 1f),
@@ -352,6 +356,7 @@ public sealed partial class SupermatterComponent : Component
 
     #endregion
 }
+
 
 public enum SupermatterSound : sbyte
 {
