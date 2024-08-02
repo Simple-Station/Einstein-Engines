@@ -1,5 +1,9 @@
 using Content.Client.Players.PlayTimeTracking;
+using Content.Shared.Customization.Systems;
+using Content.Shared.Preferences;
 using Content.Shared.Roles;
+using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client.Preferences.UI;
 
@@ -14,7 +18,7 @@ public sealed class AntagPreferenceSelector : RequirementsSelector<AntagPrototyp
 
     public event Action<bool>? PreferenceChanged;
 
-    public AntagPreferenceSelector(AntagPrototype proto) : base(proto)
+    public AntagPreferenceSelector(AntagPrototype proto, JobPrototype highJob) : base(proto, highJob)
     {
         Options.OnItemSelected += _ => PreferenceChanged?.Invoke(Preference);
 
@@ -30,7 +34,23 @@ public sealed class AntagPreferenceSelector : RequirementsSelector<AntagPrototyp
         // Immediately lock requirements if they aren't met.
         // Another function checks Disabled after creating the selector so this has to be done now
         var requirements = IoCManager.Resolve<JobRequirementsManager>();
-        if (proto.Requirements != null && !requirements.CheckRoleTime(proto.Requirements, out var reason))
-            LockRequirements(reason);
+        var prefs = IoCManager.Resolve<IClientPreferencesManager>();
+        var entMan = IoCManager.Resolve<IEntityManager>();
+        var characterReqs = entMan.System<CharacterRequirementsSystem>();
+        var protoMan = IoCManager.Resolve<IPrototypeManager>();
+        var configMan = IoCManager.Resolve<IConfigurationManager>();
+
+        if (proto.Requirements != null
+            && !characterReqs.CheckRequirementsValid(
+                proto.Requirements,
+                highJob,
+                (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                requirements.GetRawPlayTimeTrackers(),
+                requirements.IsWhitelisted(),
+                entMan,
+                protoMan,
+                configMan,
+                out var reasons))
+            LockRequirements(characterReqs.GetRequirementsText(reasons));
     }
 }

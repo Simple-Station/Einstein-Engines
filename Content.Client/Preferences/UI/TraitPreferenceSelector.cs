@@ -1,4 +1,5 @@
 using System.Text;
+using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Preferences;
@@ -30,7 +31,8 @@ public sealed class TraitPreferenceSelector : Control
     public TraitPreferenceSelector(TraitPrototype trait, JobPrototype highJob,
         HumanoidCharacterProfile profile, string style, IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, CharacterRequirementsSystem characterRequirementsSystem)
+        IConfigurationManager configManager, CharacterRequirementsSystem characterRequirementsSystem,
+        JobRequirementsManager jobRequirementsManager)
     {
         Trait = trait;
 
@@ -71,8 +73,9 @@ public sealed class TraitPreferenceSelector : Control
 
 
         // Get requirement reasons
-        characterRequirementsSystem.CheckRequirementsValid(trait, trait.Requirements, highJob, profile,
-            new Dictionary<string, TimeSpan>(),
+        characterRequirementsSystem.CheckRequirementsValid(
+            trait.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
+            jobRequirementsManager.IsWhitelisted(),
             entityManager, prototypeManager, configManager,
             out var reasons);
 
