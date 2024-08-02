@@ -1,4 +1,9 @@
+
+using System.Linq;
 using System.Text;
+using Content.Shared.Clothing.Components;
+using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Shared.Configuration;
@@ -10,10 +15,11 @@ namespace Content.Shared.Customization.Systems;
 
 public sealed class CharacterRequirementsSystem : EntitySystem
 {
+    [Dependency] private readonly IEntityManager _entityManager = default!;
     public bool CheckRequirementsValid(List<CharacterRequirement> requirements, JobPrototype job,
         HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out List<FormattedMessage> reasons)
+        out List<FormattedMessage> reasons, LoadoutPrototype? loadout = null, EntityUid? dummy = null, List<SlotDefinition>? dummySlots = null)
     {
         reasons = new List<FormattedMessage>();
         var valid = true;
@@ -37,6 +43,17 @@ public sealed class CharacterRequirementsSystem : EntitySystem
 
             if (reason != null)
                 reasons.Add(reason);
+        }
+
+        if (loadout is not null
+            && dummy is not null
+            && dummySlots is not null
+            && CheckSpeciesCanEquip(dummy.Value, dummySlots, loadout, profile, out var species))
+        {
+            foreach (var speciesReason in species)
+                reasons.Add(speciesReason);
+            if (species.Count != 0)
+                valid = false;
         }
 
         return valid;
@@ -65,5 +82,42 @@ public sealed class CharacterRequirementsSystem : EntitySystem
             text.Append($"\n{reason.ToMarkup()}");
 
         return text.ToString().Trim();
+    }
+
+    public bool CheckSpeciesCanEquip(EntityUid dummy, List<SlotDefinition> dummySlots, LoadoutPrototype loadout, HumanoidCharacterProfile profile, out List<FormattedMessage> reasons)
+    {
+        reasons = new List<FormattedMessage>();
+        if (!_entityManager.TryGetComponent<InventoryComponent>(dummy, out var inv))
+            return false;
+
+        foreach (var item in loadout.Items)
+        {
+            var toEquip = _entityManager.Spawn(item);
+            if (!_entityManager.TryGetComponent<ClothingComponent>(toEquip, out var clothing))
+            {
+                QueueDel(toEquip);
+                continue;
+            }
+
+            foreach (var slots in dummySlots)
+                if (slots.SlotFlags == clothing.Slots)
+                {
+                    if (slots.Whitelist != null && !slots.Whitelist.IsValid(toEquip))
+                        reasons.Add(FormattedMessage.FromMarkup(Loc.GetString("species-cannot-equip", ("species", profile.Species), ("item", item))));
+
+                    if (slots.Blacklist != null && slots.Blacklist.IsValid(toEquip))
+                        reasons.Add(FormattedMessage.FromMarkup(Loc.GetString("species-cannot-equip", ("species", profile.Species), ("item", item))));
+                }
+
+            var slotCount = inv.Slots.Count();
+            foreach (var fullSlots in inv.Slots)
+                if (fullSlots.SlotFlags == clothing.Slots)
+                    --slotCount;
+            if (slotCount != inv.Slots.Count())
+                reasons.Add(FormattedMessage.FromMarkup(Loc.GetString("species-cannot-equip", ("species", profile.Species), ("item", item))));
+
+            QueueDel(toEquip);
+        }
+        return true;
     }
 }

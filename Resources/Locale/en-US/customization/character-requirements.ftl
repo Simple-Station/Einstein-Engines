@@ -48,3 +48,6 @@ character-whitelist-requirement = You must {$inverted ->
     [true] not be
     *[other] be
 } whitelisted
+
+# Species
+species-cannot-equip = {$species} cannot equip {$item}

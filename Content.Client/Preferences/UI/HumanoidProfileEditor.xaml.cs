@@ -15,6 +15,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
@@ -1688,6 +1689,26 @@ namespace Content.Client.Preferences.UI
             // Get all loadout categories
             var categories = _prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>().ToList();
 
+            // This is Urist McShoppingMall, his purpose is to try on new clothes. He's about to try on several thousand clothes. Say Hi.
+            var dummy = (EntityUid?) null;
+            var dummySlots = new List<SlotDefinition>();
+            if (Profile is not null
+                && _prototypeManager.TryIndex($"Mob{Profile.Species}", out var speciesProto))
+            {
+                dummy = _entityManager.Spawn(speciesProto.ID);
+                if (_entityManager.TryGetComponent<InventoryComponent>(dummy, out var inventory))
+                    foreach (var slot in inventory.Slots)
+                    {
+                        if (slot.Whitelist != null)
+                            dummySlots.Add(slot);
+
+                        if (slot.Blacklist != null)
+                            dummySlots.Add(slot);
+                    }
+
+            }
+
+
             // If showUnusable is false filter out loadouts that are unusable based on your current character setup
             var loadouts = enumeratedLoadouts.Where(loadout =>
                 showUnusable || // Ignore everything if this is true
@@ -1700,10 +1721,12 @@ namespace Content.Client.Preferences.UI
                     _entityManager,
                     _prototypeManager,
                     _configurationManager,
-                    out _
+                    out _,
+                    loadout,
+                    dummy,
+                    dummySlots
                 )
             ).ToList();
-
             // Loadouts to highlight red when showUnusable is true
             var loadoutsUnusable = enumeratedLoadouts.Where(loadout =>
                 _characterRequirementsSystem.CheckRequirementsValid(
@@ -1715,9 +1738,15 @@ namespace Content.Client.Preferences.UI
                     _entityManager,
                     _prototypeManager,
                     _configurationManager,
-                    out _
+                    out _,
+                    loadout,
+                    dummy,
+                    dummySlots
                 )
             ).ToList();
+
+            // And now we kill Urist. He has served his purpose.
+            _entityManager.QueueDeleteEntity(dummy);
 
             // Every loadout not in the loadouts list
             var otherLoadouts = enumeratedLoadouts.Where(loadout => !loadouts.Contains(loadout)).ToList();
@@ -1841,7 +1870,6 @@ namespace Content.Client.Preferences.UI
                     uncategorized.AddChild(selector);
                 else
                     match.AddChild(selector);
-
 
                 AddSelector(selector, loadout.Cost, loadout.ID);
             }
