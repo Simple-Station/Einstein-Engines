@@ -1,19 +1,19 @@
 supermatter-announcer = Automatic Supermatter Engine
 supermatter-examine-integrity =
-    It's integrity is [color=yellow]{$integrity}%[/color].
-supermatter-warning =
+    Its' integrity is [color=yellow]{$integrity}%[/color].
+supermatter-announcement-warning =
     Warning! Crystal hyperstructure integrity faltering! Integrity: {$integrity}%.
-supermatter-emergency =
+supermatter-announcement-emergency =
     DANGER! Crystal hyperstructure integrity reaching critical levels! Integrity: {$integrity}%.
-supermatter-delam-explosion =
+supermatter-announcement-delam-explosion =
     CRYSTAL DELAMINATION IMMINENT! The crystal has reached critical integrity failure! Emergency causality destabilization field has been engaged.
-supermatter-delam-overmass =
+supermatter-announcement-delam-overmass =
     CRYSTAL DELAMINATION IMMINENT! Crystal hyperstructure integrity has reached critical mass failure! Singularity formation imminent!
-supermatter-delam-tesla =
+supermatter-announcement-delam-tesla =
     CRYSTAL DELAMINATION IMMINENT! Crystal hyperstructure integrity has reached critical power surge failure! Energy ball formation imminent!
-supermatter-delam-cascade =
+supermatter-announcement-delam-cascade =
     CRYSTAL DELAMINATION IMMINENT! Harmonic frequency limits exceeded, casualty destabilization field could not be engaged!
-supermatter-delam-cancel =
+supermatter-announcement-delam-cancel =
     Crystalline hyperstructure returning to safe operating parameters. Failsafe has been Disengaged. Integrity: {$integrity}%.
 supermatter-seconds-before-delam =
     Estimated time before delamination: {$seconds} seconds.

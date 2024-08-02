@@ -2,7 +2,7 @@
   parent: BaseItem
   id: SupermatterSliver
   name: supermatter sliver
-  description: A shard from the station's supermatter crystal. Highly radioactive.
+  description: A shard from the station's Supermatter crystal. Highly radioactive.
   components:
     - type: PointLight
       enabled: true
