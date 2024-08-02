@@ -1,0 +1,9 @@
+- type: latheRecipe
+  id: PrizeBallRecipe
+  result: PrizeBall
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 50
+
+# EMAG
