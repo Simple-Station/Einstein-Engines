@@ -28,7 +28,7 @@ public sealed class SnakeOverlay : Overlay
     private readonly SharedTransformSystem _transform;
 
     // Look through these carefully. WorldSpace is useful for debugging. Note that this defaults to "screen space" which breaks when you try and get the world handle.
-    public override OverlaySpace Space => OverlaySpace.WorldSpace;
+    public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities;
 
     // Overlays are strange and you need this pattern where you define readonly deps above, and then make a constructor with this pattern. Anything that creates this overlay will then
     // have to provide all the deps.
@@ -39,6 +39,9 @@ public sealed class SnakeOverlay : Overlay
         _entManager = entManager;
         // with ent manager we can fetch our other entity systems
         _transform = _entManager.EntitySysManager.GetEntitySystem<SharedTransformSystem>();
+
+        // draw at drawdepth 3
+        ZIndex = 3;
     }
 
     // This step occurs each frame. For some overlays you may want to conisder limiting how often they update, but for player entities that move around fast we'll just do it every frame.
@@ -76,7 +79,7 @@ public sealed class SnakeOverlay : Overlay
     {
         List<DrawVertexUV2DColor> verts = new List<DrawVertexUV2DColor>();
 
-        float radius = 0.15f;
+        float radius = 0.3f;
 
         Vector2? lastPtCW = null;
         Vector2? lastPtCCW = null;
@@ -135,6 +138,11 @@ public sealed class SnakeOverlay : Overlay
             verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCW, new Vector2(0, 1), Color.White));
             lastPtCCW = destination + offsetVecCCW * radius;
             verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCCW, new Vector2(1, 1), Color.White));
+
+            if (lamia.UseTaperSystem)
+            {
+                radius *= 0.93f;
+            }
 
             i++;
         }
