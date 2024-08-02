@@ -101,6 +101,7 @@ namespace Content.Server.Zombies
             //Remove these so that zombie ducks don't overwhelm the station with infinite Zucks
             RemComp<ReproductiveComponent>(target);
             RemComp<ReproductivePartnerComponent>(target);
+            RemComp<LegsParalyzedComponent>(target);
 
             if (TryComp<PsionicComponent>(target, out var psionic)) // DeltaV - Prevent psionic zombies
             {
