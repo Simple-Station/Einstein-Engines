@@ -31,7 +31,6 @@
 - type: trait
   id: NormalVision
   category: Visual
-  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
