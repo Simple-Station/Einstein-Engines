@@ -180,11 +180,10 @@ namespace Content.Server.Carrying
                 || !args.HasDirectionalMovement)
                 return;
 
+            // Check if the victim is in any way incapacitated, and if not make an escape attempt.
+            // Escape time scales with the inverse of a mass contest. Being lighter makes escape harder.
             if (_actionBlockerSystem.CanInteract(uid, component.Carrier))
-            {
-                // Note: the mass contest is inverted because weaker entities are supposed to take longer to escape
-                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, _contests.MassContest(component.Carrier, uid, false, 2f));
-            }
+                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, _contests.MassContest(uid, component.Carrier, false, 2f));
         }
 
         private void OnMoveAttempt(EntityUid uid, BeingCarriedComponent component, UpdateCanMoveEvent args)
@@ -331,10 +330,6 @@ namespace Content.Server.Carrying
                 || !TryComp<HandsComponent>(carrier, out var hands)
                 || hands.CountFreeHands() < carriedComp.FreeHandsRequired)
                 return false;
-
-            //  if (_respirator.IsReceivingCPR(carried))
-            //  return false;
-
             return true;
         }
 
