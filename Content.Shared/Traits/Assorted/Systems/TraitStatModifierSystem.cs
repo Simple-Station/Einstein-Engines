@@ -3,6 +3,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.Damage.Components;
 
 namespace Content.Shared.Traits.Assorted.Systems;
 
@@ -15,6 +16,7 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<CritModifierComponent, ComponentStartup>(OnCritStartup);
         SubscribeLocalEvent<DeadModifierComponent, ComponentStartup>(OnDeadStartup);
+        SubscribeLocalEvent<StaminaCritModifierComponent, ComponentStartup>(OnStaminaCritStartup);
         SubscribeLocalEvent<AdrenalineComponent, GetMeleeDamageEvent>(OnAdrenalineGetDamage);
         SubscribeLocalEvent<PainToleranceComponent, GetMeleeDamageEvent>(OnPainToleranceGetDamage);
     }
@@ -37,6 +39,14 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         var deadThreshold = _threshold.GetThresholdForState(uid, Mobs.MobState.Dead, threshold);
         if (deadThreshold != 0)
             _threshold.SetMobStateThreshold(uid, deadThreshold + component.DeadThresholdModifier, Mobs.MobState.Dead);
+    }
+
+    private void OnStaminaCritStartup(EntityUid uid, StaminaCritModifierComponent component, ComponentStartup args)
+    {
+        if (!TryComp<StaminaComponent>(uid, out var stamina))
+            return;
+
+        stamina.CritThreshold += component.CritThresholdModifier;
     }
 
     private void OnAdrenalineGetDamage(EntityUid uid, AdrenalineComponent component, ref GetMeleeDamageEvent args)
