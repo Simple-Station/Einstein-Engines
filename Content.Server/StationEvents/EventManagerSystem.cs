@@ -43,7 +43,7 @@ public sealed class EventManagerSystem : EntitySystem
             return errStr;
         }
 
-        var ent = GameTicker.AddGameRule(randomEvent);
+        GameTicker.StartGameRule(randomEvent, out var ent);
         var str = Loc.GetString("station-event-system-run-event",("eventName", ToPrettyString(ent)));
         Log.Info(str);
         return str;
