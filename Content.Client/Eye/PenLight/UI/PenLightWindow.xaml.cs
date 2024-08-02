@@ -54,54 +54,19 @@ namespace Content.Client.Eye.PenLight.UI
             );
 
             // Blind
-            if (msg.Blind == true)
-            {
-                Blind.Text = Loc.GetString("pen-light-exam-blind-text");
-            }
-            else
-            {
-                Blind.Text = string.Empty;  // Clear the text
-            }
+            Blind.Text = msg.Blind == true ? Loc.GetString("pen-light-exam-blind-text") : string.Empty;
 
             // EyeDamage
-            if (msg.EyeDamage == true)
-            {
-                EyeDamage.Text = Loc.GetString("pen-light-exam-eyedamage-text");
-            }
-            else
-            {
-                EyeDamage.Text = string.Empty;  // Clear the text
-            }
+            EyeDamage.Text = msg.EyeDamage == true ? Loc.GetString("pen-light-exam-eyedamage-text") : string.Empty;
 
             // Drunk
-            if (msg.Drunk == true)
-            {
-                Drunk.Text = Loc.GetString("pen-light-exam-drunk-text");
-            }
-            else
-            {
-                Drunk.Text = string.Empty;  // Clear the text
-            }
+            Drunk.Text = msg.Drunk == true ? Loc.GetString("pen-light-exam-drunk-text") : string.Empty;
 
             // Hallucinating
-            if (msg.SeeingRainbows == true)
-            {
-                SeeingRainbows.Text = Loc.GetString("pen-light-exam-hallucinating-text");
-            }
-            else
-            {
-                SeeingRainbows.Text = string.Empty;  // Clear the text
-            }
+            SeeingRainbows.Text = msg.SeeingRainbows == true ? Loc.GetString("pen-light-exam-hallucinating-text") : string.Empty;
 
             // Healthy
-            if (msg.Healthy == true)
-            {
-                Healthy.Text = Loc.GetString("pen-light-exam-healthy-text");
-            }
-            else
-            {
-                Healthy.Text = string.Empty;  // Clear the text
-            }
+            Healthy.Text = msg.Healthy == true ? Loc.GetString("pen-light-exam-healthy-text") : string.Empty;
 
             SetHeight = LightHeight;
             SetWidth = LightWidth;

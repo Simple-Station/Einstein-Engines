@@ -14,24 +14,12 @@
                 Name="ExamDataContainer"
                 Orientation="Vertical"
                 Margin="0 0 5 10">
-            <Label
-                    Name="PatientName"/>
-            <Label
-                    Name="Blind"
-                    Margin="5" />
-                <Label
-                    Name="Drunk"
-                    Margin="5" />
-                <Label
-                    Name="EyeDamage"
-                    Margin="5" />
-                <Label
-                    Name="Healthy"
-                    Margin="5" />
-                <Label
-                    Name="SeeingRainbows"
-                    Margin="5" />
-
+            <Label Name="PatientName"/>
+            <Label Name="Blind" Margin="5" />
+            <Label Name="Drunk" Margin="5" />
+            <Label Name="EyeDamage" Margin="5" />
+            <Label Name="Healthy" Margin="5" />
+            <Label Name="SeeingRainbows" Margin="5" />
             </BoxContainer>
         </BoxContainer>
     </ScrollContainer>

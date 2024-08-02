@@ -103,11 +103,7 @@ public sealed class PenLightSystem : EntitySystem
         var seeingRainbows = _entityManager.HasComponent<SeeingRainbowsComponent>(target);
 
         // Healthy
-        var healthy = false;
-        if (!blind && !drunk && !eyeDamage && !seeingRainbows)
-        {
-            healthy = true;
-        }
+        var healthy = !(blind || drunk || eyeDamage || seeingRainbows);
 
         _uiSystem.SendUiMessage(ui, new PenLightUserMessage(GetNetEntity(target),
         blind,
