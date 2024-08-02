@@ -48,6 +48,7 @@ public sealed class SupermatterSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
+
     public override void Initialize()
     {
         base.Initialize();
@@ -60,6 +61,7 @@ public sealed class SupermatterSystem : EntitySystem
         SubscribeLocalEvent<SupermatterComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<SupermatterComponent, SupermatterDoAfterEvent>(OnGetSliver);
     }
+
 
     public override void Update(float frameTime)
     {
@@ -80,6 +82,7 @@ public sealed class SupermatterSystem : EntitySystem
             }
         }
     }
+
 
     public void Cycle(EntityUid uid, SupermatterComponent sm)
     {
@@ -128,14 +131,14 @@ public sealed class SupermatterSystem : EntitySystem
         var gases = sm.GasStorage;
         var facts = sm.GasDataFields;
 
-        //Lets get the proportions of the gasses in the mix for scaling stuff later
-        //They range between 0 and 1
+        // Lets get the proportions of the gasses in the mix for scaling stuff later
+        // They range between 0 and 1
         gases = gases.ToDictionary(
             gas => gas.Key,
             gas => Math.Clamp(absorbedGas.GetMoles(gas.Key) / moles, 0, 1)
         );
 
-        //No less then zero, and no greater then one, we use this to do explosions and heat to power transfer.
+        // No less then zero, and no greater then one, we use this to do explosions and heat to power transfer.
         var powerRatio = gases.Sum(gas => gases[gas.Key] * facts[gas.Key].PowerMixRatio);
 
         // Minimum value of -10, maximum value of 23. Affects plasma, o2 and heat output.
@@ -153,56 +156,60 @@ public sealed class SupermatterSystem : EntitySystem
         // Effects the damage heat does to the crystal
         sm.DynamicHeatResistance = 1f;
 
-        // more moles of gases are harder to heat than fewer,
-        // so let's scale heat damage around them
+        // More moles of gases are harder to heat than fewer, so let's scale heat damage around them
         sm.MoleHeatPenaltyThreshold = (float) Math.Max(moles * sm.MoleHeatPenalty, 0.25);
 
-        // Ramps up or down in increments of 0.02 up to the proportion of co2
+        // Ramps up or down in increments of 0.02 up to the proportion of CO2
         // Given infinite time, powerloss_dynamic_scaling = co2comp
-        // Some value between 0 and 1
+        // Some value from 0-1
         if (moles > sm.PowerlossInhibitionMoleThreshold && gases[Gas.CarbonDioxide] > sm.PowerlossInhibitionGasThreshold)
         {
             var co2powerloss = Math.Clamp(gases[Gas.CarbonDioxide] - sm.PowerlossDynamicScaling, -0.02f, 0.02f);
             sm.PowerlossDynamicScaling = Math.Clamp(sm.PowerlossDynamicScaling + co2powerloss, 0f, 1f);
         }
         else
-        {
             sm.PowerlossDynamicScaling = Math.Clamp(sm.PowerlossDynamicScaling - 0.05f, 0f, 1f);
-        }
 
-        // Ranges from 0 to 1(1-(value between 0 and 1 * ranges from 1 to 1.5(mol / 500)))
+        // Ranges from 0~1(1 - (0~1 * 1~(1.5 * (mol / 500))))
         // We take the mol count, and scale it to be our inhibitor
         var powerlossInhibitor =
             Math.Clamp(
-                1 - sm.PowerlossDynamicScaling *
-                Math.Clamp(moles / sm.PowerlossInhibitionMoleBoostThreshold, 1f, 1.5f),
+                1
+                - sm.PowerlossDynamicScaling
+                * Math.Clamp(
+                    moles / sm.PowerlossInhibitionMoleBoostThreshold,
+                    1f, 1.5f),
                 0f, 1f);
 
-        if (sm.MatterPower != 0) //We base our removed power off one 10th of the matter_power.
+        if (sm.MatterPower != 0) // We base our removed power off 1/10 the matter_power.
         {
             var removedMatter = Math.Max(sm.MatterPower / sm.MatterPowerConversion, 40);
-            //Adds at least 40 power
+            // Adds at least 40 power
             sm.Power = Math.Max(sm.Power + removedMatter, 0);
-            //Removes at least 40 matter power
+            // Removes at least 40 matter power
             sm.MatterPower = Math.Max(sm.MatterPower - removedMatter, 0);
         }
 
-        //based on gas mix, makes the power more based on heat or less effected by heat
+        // Based on gas mix, makes the power more based on heat or less effected by heat
         var tempFactor = powerRatio > 0.8 ? 50f : 30f;
 
-        //if there is more pluox and n2 then anything else, we receive no power increase from heat
+        // If there is more pluox and N2 then anything else, we receive no power increase from heat
         sm.Power = Math.Max(absorbedGas.Temperature * tempFactor / Atmospherics.T0C * powerRatio + sm.Power, 0);
 
-        //Radiate stuff
+        // Irradiate stuff
         if (TryComp<RadiationSourceComponent>(uid, out var rad))
-            rad.Intensity = sm.Power * Math.Max(0, 1f + transmissionBonus / 10f) * 0.003f * _config.GetCVar(CCVars.SupermatterRadsModifier);
+            rad.Intensity =
+                sm.Power
+                * Math.Max(0, 1f + transmissionBonus / 10f)
+                * 0.003f
+                * _config.GetCVar(CCVars.SupermatterRadsModifier);
 
-        //Power * 0.55 * a value between 1 and 0.8
+        // Power * 0.55 * 0.8~1
         var energy = sm.Power * sm.ReactionPowerModifier;
 
-        // Keep in mind we are only adding this temperature to (efficiency)% of the one tile the rock
-        // is on. An increase of 4*C @ 25% efficiency here results in an increase of 1*C / (#tilesincore) overall.
-        // Power * 0.55 * (some value between 1.5 and 23) / 5
+        // Keep in mind we are only adding this temperature to (efficiency)% of the one tile the rock is on.
+        // An increase of 4°C at 25% efficiency here results in an increase of 1°C / (#tilesincore) overall.
+        // Power * 0.55 * 1.5~23 / 5
         absorbedGas.Temperature += energy * heatModifier * sm.ThermalReleaseModifier;
         absorbedGas.Temperature = Math.Max(0,
             Math.Min(absorbedGas.Temperature, sm.HeatThreshold * heatModifier));
@@ -225,7 +232,7 @@ public sealed class SupermatterSystem : EntitySystem
     /// </summary>
     private void SupermatterZap(EntityUid uid, SupermatterComponent sm)
     {
-        // Divide power by it's threshold to get a value from 0 to 1, then multiply by the amount of possible lightnings
+        // Divide power by its' threshold to get a value from 0-1, then multiply by the amount of possible lightnings
         var zapPower = sm.Power / sm.PowerPenaltyThreshold * sm.LightningPrototypes.Length;
         var zapPowerNorm = (int) Math.Clamp(zapPower, 0, sm.LightningPrototypes.Length - 1);
         _lightning.ShootRandomLightnings(uid, 3.5f, sm.Power > sm.PowerPenaltyThreshold ? 3 : 1, sm.LightningPrototypes[zapPowerNorm]);
@@ -259,27 +266,36 @@ public sealed class SupermatterSystem : EntitySystem
         var tempThreshold = Atmospherics.T0C + sm.HeatPenaltyThreshold;
 
         // Temperature start to have a positive effect on damage after 350
-        var tempDamage = Math.Max(Math.Clamp(moles / 200f, .5f, 1f) * absorbedGas.Temperature - tempThreshold * sm.DynamicHeatResistance, 0f) * sm.MoleHeatThreshold / 150f * sm.DamageIncreaseMultiplier;
+        var tempDamage =
+            Math.Max(
+                Math.Clamp(moles / 200f, .5f, 1f)
+                    * absorbedGas.Temperature
+                    - tempThreshold
+                    * sm.DynamicHeatResistance,
+                0f)
+                * sm.MoleHeatThreshold
+                / 150f
+                * sm.DamageIncreaseMultiplier;
         totalDamage += tempDamage;
 
         // Power only starts affecting damage when it is above 5000
         var powerDamage = Math.Max(sm.Power - sm.PowerPenaltyThreshold, 0f) / 500f * sm.DamageIncreaseMultiplier;
         totalDamage += powerDamage;
 
-        // Molar count only starts affecting damage when it is above 1800
+        // Mol count only starts affecting damage when it is above 1800
         var moleDamage = Math.Max(moles - sm.MolePenaltyThreshold, 0) / 80 * sm.DamageIncreaseMultiplier;
         totalDamage += moleDamage;
 
         // Healing damage
         if (moles < sm.MolePenaltyThreshold)
         {
-            // left there a very small float value so that it doesn't eventually divide by 0.
+            // There's a very small float so that it doesn't divide by 0
             var healHeatDamage = Math.Min(absorbedGas.Temperature - tempThreshold, 0.001f) / 150;
             totalDamage += healHeatDamage;
         }
 
         // Check for space tiles next to SM
-        // TODO: change moles out for checking if adjacent tiles exist
+        //TODO: Change moles out for checking if adjacent tiles exist
         var enumerator = _atmosphere.GetAdjacentTileMixtures(xform.GridUid.Value, indices, false, false);
         while (enumerator.MoveNext(out var ind))
         {
@@ -304,12 +320,12 @@ public sealed class SupermatterSystem : EntitySystem
 
         var damage = Math.Min(sm.DamageArchived + sm.DamageHardcap * sm.DelaminationPoint, totalDamage);
 
-        // prevent it from going negative
+        // Prevent it from going negative
         sm.Damage = Math.Clamp(damage, 0, float.PositiveInfinity);
     }
 
     /// <summary>
-    ///     Handles announcements.
+    ///     Handles core damage announcements
     /// </summary>
     private void HandleAnnouncements(EntityUid uid, SupermatterComponent sm)
     {
@@ -325,6 +341,7 @@ public sealed class SupermatterSystem : EntitySystem
             sm.DelamAnnounced = false;
             global = true;
         }
+
         if (sm.Delamming && !sm.DelamAnnounced)
         {
             var sb = new StringBuilder();
@@ -332,14 +349,10 @@ public sealed class SupermatterSystem : EntitySystem
 
             switch (sm.PreferredDelamType)
             {
-                case DelamType.Explosion:
-                default: loc = "supermatter-delam-explosion"; break;
-
-                case DelamType.Singulo: loc = "supermatter-delam-overmass"; break;
-
-                case DelamType.Tesla: loc = "supermatter-delam-tesla"; break;
-
-                case DelamType.Cascade: loc = "supermatter-delam-cascade"; break;
+                case DelamType.Cascade: loc = "supermatter-delam-cascade";   break;
+                case DelamType.Singulo: loc = "supermatter-delam-overmass";  break;
+                case DelamType.Tesla:   loc = "supermatter-delam-tesla";     break;
+                default:                loc = "supermatter-delam-explosion"; break;
             }
 
             var station = _station.GetOwningStation(uid);
@@ -357,11 +370,11 @@ public sealed class SupermatterSystem : EntitySystem
             return;
         }
 
-        // ignore the 0% integrity alarm
+        // Ignore the 0% integrity alarm
         if (sm.Delamming)
             return;
 
-        // We are not taking consistent damage. Engis not needed.
+        // We are not taking consistent damage, Engineers aren't needed
         if (sm.Damage <= sm.DamageArchived)
             return;
 
@@ -374,22 +387,21 @@ public sealed class SupermatterSystem : EntitySystem
                 global = true;
             }
         }
+
         SupermatterAnnouncement(uid, message, global);
     }
 
-    /// <summary>
-    ///     Help the SM announce something.
-    /// </summary>
-    /// <param name="global">If true, does the station announcement.</param>
-    /// <param name="customSender">If true, sends the announcement from Central Command.</param>
-    public void SupermatterAnnouncement(EntityUid uid, string message, bool global = false, string? customSender = null)
+    /// <param name="global">If true, sends a station announcement</param>
+    /// <param name="customSender">Localisation string for a custom announcer name</param>
+    public void SendSupermatterAnnouncement(EntityUid uid, string message, bool global = false, string? customSender = null)
     {
         if (global)
         {
-            var sender = customSender != null ? customSender : Loc.GetString("supermatter-announcer");
+            var sender = Loc.GetString(customSender != null ? customSender : "supermatter-announcer");
             _chat.DispatchStationAnnouncement(uid, message, sender, colorOverride: Color.Yellow);
             return;
         }
+
         _chat.TrySendInGameICMessage(uid, message, InGameICChatType.Speak, hideChat: false, checkRadioPrefix: true);
     }
 
@@ -423,11 +435,12 @@ public sealed class SupermatterSystem : EntitySystem
                 && moles >= sm.MolePenaltyThreshold * _config.GetCVar(CCVars.SingulooseMolesModifier))
                 return DelamType.Singulo;
         }
+
         if (_config.GetCVar(CCVars.DoTeslooseDelam)
             && sm.Power >= sm.PowerPenaltyThreshold * _config.GetCVar(CCVars.TesloosePowerModifier))
             return DelamType.Tesla;
 
-        // TODO: add resonance cascade when there's crazy conditions or a destabilizing crystal
+        //TODO: Add resonance cascade when there's crazy conditions or a destabilizing crystal
 
         return DelamType.Explosion;
     }
@@ -446,6 +459,7 @@ public sealed class SupermatterSystem : EntitySystem
             sm.Delamming = true;
             HandleAnnouncements(uid, sm);
         }
+
         if (sm.Damage < sm.DelaminationPoint && sm.Delamming)
         {
             sm.Delamming = false;
@@ -459,9 +473,8 @@ public sealed class SupermatterSystem : EntitySystem
 
         switch (sm.PreferredDelamType)
         {
-            case DelamType.Explosion:
-            default:
-                _explosion.TriggerExplosive(uid);
+            case DelamType.Cascade:
+                Spawn(sm.SupermatterKudzuSpawnPrototype, xform.Coordinates);
                 break;
 
             case DelamType.Singulo:
@@ -472,14 +485,14 @@ public sealed class SupermatterSystem : EntitySystem
                 Spawn(sm.TeslaSpawnPrototype, xform.Coordinates);
                 break;
 
-            case DelamType.Cascade:
-                Spawn(sm.SupermatterKudzuSpawnPrototype, xform.Coordinates);
+            default:
+                _explosion.TriggerExplosive(uid);
                 break;
         }
     }
 
     /// <summary>
-    ///     Swaps out ambience sounds whether the SM is delamming or not.
+    ///     Swaps out ambience sounds when the SM is delamming or not.
     /// </summary>
     private void HandleSoundLoop(EntityUid uid, SupermatterComponent sm)
     {
@@ -507,7 +520,7 @@ public sealed class SupermatterSystem : EntitySystem
         // Set the Sound
         _ambient.SetAmbience(uid, true);
 
-        //Add Air to the initialized SM in the Map so it doesnt delam on default
+        // Add Air to the initialized SM in the Map so it doesn't delam on its' own
         var mix = _atmosphere.GetContainingMixture(uid, true, true);
         mix?.AdjustMoles(Gas.Oxygen, Atmospherics.OxygenMolesStandard);
         mix?.AdjustMoles(Gas.Nitrogen, Atmospherics.NitrogenMolesStandard);
@@ -520,8 +533,8 @@ public sealed class SupermatterSystem : EntitySystem
 
         var target = args.OtherEntity;
         if (args.OtherBody.BodyType == BodyType.Static
-        || HasComp<SupermatterImmuneComponent>(target)
-        || _container.IsEntityInContainer(uid))
+            || HasComp<SupermatterImmuneComponent>(target)
+            || _container.IsEntityInContainer(uid))
             return;
 
         if (!HasComp<ProjectileComponent>(target))
@@ -591,7 +604,7 @@ public sealed class SupermatterSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        // your criminal actions will not go unnoticed
+        // Your criminal actions will not go unnoticed
         sm.Damage += sm.DelaminationPoint / 10;
 
         var integrity = GetIntegrity(sm).ToString("0.00");
@@ -605,11 +618,8 @@ public sealed class SupermatterSystem : EntitySystem
 
     private void OnExamine(EntityUid uid, SupermatterComponent sm, ref ExaminedEvent args)
     {
-        // get all close and personal to it
         if (args.IsInDetailsRange)
-        {
             args.PushMarkup(Loc.GetString("supermatter-examine-integrity", ("integrity", GetIntegrity(sm).ToString("0.00"))));
-        }
     }
 
     #endregion
