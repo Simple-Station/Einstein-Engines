@@ -107,9 +107,9 @@ trait-description-MartialArtist =
 trait-name-Vigor = Vigor
 trait-description-Vigor =
     Whether by pure determination, fitness, or bionic augmentations, your endurance is enhanced.
-    Your stamina is increased by 15 points.
+    Your stamina is increased by 10 points.
 
 trait-name-Lethargy = Lethargy
 trait-description-Lethargy =
     You become tired faster than others, making you more vulnerable to exhaustion and fatigue.
-    Your stamina is decreased by 20 points.
+    Your stamina is decreased by 15 points.
