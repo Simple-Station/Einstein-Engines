@@ -4799,3 +4799,19 @@ Entries:
       message: Vulpkanins can wag their tails now
   id: 6201
   time: '2024-08-01T23:06:24.0000000+00:00'
+- author: angelofallars
+  changes:
+    - type: Add
+      message: >-
+        Added the combat knife to the SecTech, and the ability to manufacture
+        combat knives in the SecLathe and emagged autolathes.
+    - type: Add
+      message: >-
+        Added a 1-point combat knife to Loadouts for Felinid/Harpy security
+        jobs. 
+    - type: Tweak
+      message: Made the security belt and security webbing able to hold combat knives.
+    - type: Tweak
+      message: 'Prison Guards now start with combat boots with a combat knife. '
+  id: 6202
+  time: '2024-08-02T07:08:07.0000000+00:00'
