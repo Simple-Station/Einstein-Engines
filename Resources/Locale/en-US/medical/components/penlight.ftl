@@ -8,3 +8,4 @@ pen-light-exam-blind-text = The patient's eyes are glassy and unfocused. They ca
 pen-light-exam-drunk-text = The patient's eyes are slow to follow the light, droopy. They're likely drunk.
 pen-light-exam-eyedamage-text = The patient's eyes are partially focused, though they struggle to look at the light for too long. Their gaze falters, rather than following it perfectly. They have some sort of eye damage.
 pen-light-exam-hallucinating-text = The patient's eyes are wandering around, with dilated pupils. They seem to not focus on the light, staring off at random angles. They're hallucinating.
+pen-light-exam-healthy-text = The patient follows the light perfectly with no stuttering. Their eyes are in tip-top shape.

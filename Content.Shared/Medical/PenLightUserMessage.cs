@@ -8,14 +8,16 @@ public sealed class PenLightUserMessage : BoundUserInterfaceMessage
     public bool? Blind;
     public bool? Drunk;
     public bool? EyeDamage;
+    public bool? Healthy;
     public bool? SeeingRainbows;
 
-    public PenLightUserMessage(NetEntity? targetEntity, bool? blind, bool? drunk, bool? eyeDamage, bool? seeingRainbows)
+    public PenLightUserMessage(NetEntity? targetEntity, bool? blind, bool? drunk, bool? eyeDamage, bool? healthy, bool? seeingRainbows)
     {
         TargetEntity = targetEntity;
         Blind = blind;
         Drunk = drunk;
         EyeDamage = eyeDamage;
+        Healthy = healthy;
         SeeingRainbows = seeingRainbows;
     }
 }

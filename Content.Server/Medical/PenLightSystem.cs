@@ -79,10 +79,12 @@ public sealed class PenLightSystem : EntitySystem
     /// </summary>
     private void Diagnose(EntityUid penlight, EntityUid target)
     {
+        // Check if the UI system is available
         if (!_uiSystem.TryGetUi(penlight, PenLightUiKey.Key, out var ui))
             return;
 
-        if (!HasComp<DamageableComponent>(target))
+        // Check if the target has an EyeComponent
+        if (!HasComp<EyeComponent>(target))
             return;
         // Blind
         var blind = _entityManager.HasComponent<PermanentBlindnessComponent>(target);
@@ -97,14 +99,21 @@ public sealed class PenLightSystem : EntitySystem
             eyeDamage = eyeDam.EyeDamage > 0 && eyeDam.EyeDamage < 6; //6 means perma-blind
         }
 
-
-        // seeingRainbows
+        // Hallucinating
         var seeingRainbows = _entityManager.HasComponent<SeeingRainbowsComponent>(target);
+
+        // Healthy
+        var healthy = false;
+        if (!blind && !drunk && !eyeDamage && !seeingRainbows)
+        {
+            healthy = true;
+        }
 
         _uiSystem.SendUiMessage(ui, new PenLightUserMessage(GetNetEntity(target),
         blind,
         drunk,
         eyeDamage,
+        healthy,
         seeingRainbows
         ));
     }
