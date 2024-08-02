@@ -224,13 +224,11 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
         var zombers = GetEntityQuery<ZombieComponent>();
         while (players.MoveNext(out var uid, out _, out _, out var mob, out var xform))
         {
-            if (!_mobState.IsAlive(uid, mob))
-                continue;
-
-            if (zombers.HasComponent(uid))
-                continue;
-
-            if (!includeOffStation && !stationGrids.Contains(xform.GridUid ?? EntityUid.Invalid))
+            if (!_mobState.IsAlive(uid, mob)
+                || HasComp<PendingZombieComponent>(uid) //Do not include infected players in the "Healthy players" list.
+                || HasComp<ZombifyOnDeathComponent>(uid)
+                || zombers.HasComponent(uid)
+                || !includeOffStation && !stationGrids.Contains(xform.GridUid ?? EntityUid.Invalid))
                 continue;
 
             healthy.Add(uid);
