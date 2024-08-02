@@ -4815,3 +4815,11 @@ Entries:
       message: 'Prison Guards now start with combat boots with a combat knife. '
   id: 6202
   time: '2024-08-02T07:08:07.0000000+00:00'
+- author: rosieposieeee
+  changes:
+    - type: Add
+      message: >-
+        Added breaching charges to the SecTech vendor for Security, to break
+        through walls.
+  id: 6203
+  time: '2024-08-02T07:09:44.0000000+00:00'
