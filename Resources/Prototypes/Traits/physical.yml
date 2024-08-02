@@ -71,6 +71,42 @@
       critThresholdModifier: -10
 
 - type: trait
+  id: Vigor
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Lethargy
+  components:
+    - type: StaminaCritModifier
+      critThresholdModifier: 15
+
+- type: trait
+  id: Lethargy
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Vigor
+  components:
+    - type: StaminaCritModifier
+      critThresholdModifier: -20
+
+- type: trait
   id: HighAdrenaline
   category: Physical
   points: -2

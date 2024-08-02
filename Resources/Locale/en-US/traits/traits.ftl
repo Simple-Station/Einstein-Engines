@@ -103,3 +103,13 @@ trait-description-MartialArtist =
     You have received formal training in unarmed combat, whether with Fists, Feet, or Claws.
     Your unarmed melee attacks have a small range increase, and deal 50% more damage.
     This does not apply to any form of armed melee, only the weapons you were naturally born with.
+
+trait-name-Vigor = Vigor
+trait-description-Vigor =
+    Whether by pure determination, fitness, or bionic augmentations, your endurance is enhanced.
+    Your stamina is increased by 15 points.
+
+trait-name-Lethargy = Lethargy
+trait-description-Lethargy =
+    You become tired faster than others, making you more vulnerable to exhaustion and fatigue.
+    Your stamina is decreased by 20 points.
