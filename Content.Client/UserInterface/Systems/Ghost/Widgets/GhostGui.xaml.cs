@@ -10,10 +10,12 @@ namespace Content.Client.UserInterface.Systems.Ghost.Widgets;
 public sealed partial class GhostGui : UIWidget
 {
     public GhostTargetWindow TargetWindow { get; }
+    public GhostBarRulesWindow GhostBarWindow { get; }
 
     public event Action? RequestWarpsPressed;
     public event Action? ReturnToBodyPressed;
     public event Action? GhostRolesPressed;
+    public event Action? GhostBarPressed;
 
     public GhostGui()
     {
@@ -21,16 +23,20 @@ public sealed partial class GhostGui : UIWidget
 
         TargetWindow = new GhostTargetWindow();
 
+        GhostBarWindow = new GhostBarRulesWindow();
+
         MouseFilter = MouseFilterMode.Ignore;
 
         GhostWarpButton.OnPressed += _ => RequestWarpsPressed?.Invoke();
         ReturnToBodyButton.OnPressed += _ => ReturnToBodyPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
+        GhostBarButton.OnPressed += _ => GhostBarPressed?.Invoke();
     }
 
     public void Hide()
     {
         TargetWindow.Close();
+        GhostBarWindow.Close();
         Visible = false;
     }
 
@@ -61,6 +67,7 @@ public sealed partial class GhostGui : UIWidget
         if (disposing)
         {
             TargetWindow.Dispose();
+            GhostBarWindow.Dispose();
         }
     }
 }
