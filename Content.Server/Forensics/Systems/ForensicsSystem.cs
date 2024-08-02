@@ -158,7 +158,7 @@ namespace Content.Server.Forensics
 
         public string GenerateFingerprint(int length = 16)
         {
-            var fingerprint = new byte[length];
+            var fingerprint = new byte[Math.Clamp(length, 0, 255)];
             _random.NextBytes(fingerprint);
             return Convert.ToHexString(fingerprint);
         }
