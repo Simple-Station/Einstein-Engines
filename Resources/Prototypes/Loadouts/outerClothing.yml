@@ -225,3 +225,17 @@
   cost: 3
   items:
     - ClothingOuterCoatGentle
+
+- type: loadout
+  id: LoadoutOuterCoatInspector
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatInspector
+
+- type: loadout
+  id: LoadoutOuterCoatOvercoat
+  category: Outer
+  cost: 4
+  items:
+    - ClothingOuterCoatOvercoat

@@ -4760,3 +4760,74 @@ Entries:
         enjoy The Park instead of sprinting everywhere
   id: 6196
   time: '2024-08-01T08:30:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Survival Boxes have been added to loadouts. '
+  id: 6197
+  time: '2024-08-01T21:12:49.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Boxes(Cardboard, Medkits, Lunchboxes) now contain slightly more
+        inventory slots than they occupy.
+  id: 6198
+  time: '2024-08-01T21:55:09.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Ultraviolet Vision, Deuteranopia, and Trichromat Modification are all
+        now 0 point Neutral traits. They still occupy one of your trait
+        selections.
+  id: 6199
+  time: '2024-08-01T22:41:24.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: 'Added new clothes in Loadouts: slim trench coat, and Mafia-style suits.'
+    - type: Add
+      message: >-
+        Added new useful items in Loadouts: lunchbox, more survival gear,
+        paperwork, and medkits.
+  id: 6200
+  time: '2024-08-01T22:45:13.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Vulpkanins can wag their tails now
+  id: 6201
+  time: '2024-08-01T23:06:24.0000000+00:00'
+- author: angelofallars
+  changes:
+    - type: Add
+      message: >-
+        Added the combat knife to the SecTech, and the ability to manufacture
+        combat knives in the SecLathe and emagged autolathes.
+    - type: Add
+      message: >-
+        Added a 1-point combat knife to Loadouts for Felinid/Harpy security
+        jobs. 
+    - type: Tweak
+      message: Made the security belt and security webbing able to hold combat knives.
+    - type: Tweak
+      message: 'Prison Guards now start with combat boots with a combat knife. '
+  id: 6202
+  time: '2024-08-02T07:08:07.0000000+00:00'
+- author: rosieposieeee
+  changes:
+    - type: Add
+      message: >-
+        Added breaching charges to the SecTech vendor for Security, to break
+        through walls.
+  id: 6203
+  time: '2024-08-02T07:09:44.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        The AdminHelp sound has changed to three that play under different
+        circumstances
+  id: 6204
+  time: '2024-08-02T07:14:01.0000000+00:00'
