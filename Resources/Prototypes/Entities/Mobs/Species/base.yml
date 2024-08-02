@@ -142,6 +142,7 @@
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
+    - Flashed
     - RadiationProtection
     - Drowsiness
     - PsionicsDisabled
@@ -266,7 +267,6 @@
   - type: StatusEffects
     allowed:
     - Stun
-    - KnockedDown
     - SlowedDown
     - Stutter
     - SeeingRainbows
@@ -286,9 +286,7 @@
     - Drowsiness
   - type: Blindable
   # Other
-  - type: Temperature
     heatDamageThreshold: 325
-    coldDamageThreshold: 260
     currentTemperature: 310.15
     specificHeat: 42
     coldDamage:
