@@ -40,13 +40,13 @@
 
   [color=red]7[/color]. [color=#ff9d00]Plasma[/color]. Very similar to Oxygen but provides a higher power boost as well as a much higher waste and heat penalty. The extreme pressures and volumes of gas produced by this gas are very likely to clog pipes and overheat the chamber.
 
-  [color=red]8[/color]. [color=#08a800]Tritium[/color]. Increases the power production of the Supermatter by up to 3 times, there is one slight issue with it. It is dangerous. It is very dangerous. Tritium is a horrifyingly irritable and jumpy gas. While it isn't as harmful to the heat level as Plasma is (just barely), it also has the second worst heat capacity of all gasses while Plasma has the second highest. This means that Plasma can be kept happy with enough cooling, whereas Tritium eagerly goes from a safe space loop into a burning hellfire. Add to this the byproduct of large amounts of Oxygen production (not exclusive to Tritium. An issue in a Plasma engine too), and you have a tritium fire and a very hot crystal. Do not use this gas unless you have a very strong understanding of atmospherics and the Supermatter, and are willing to get creative.
+  [color=red]8[/color]. [color=#08a800]Tritium[/color]. Increases the power production of the Supermatter by up to 3 times, there is one slight issue with it. It is dangerous. It is very dangerous. Tritium is a horrifyingly irritable and jumpy gas. While it isn't as harmful to the heat level as Plasma is (just barely), it also has the second worst heat capacity of all gasses while Plasma has the second highest. This means that Plasma can be kept happy with enough cooling, whereas Tritium eagerly goes from a safe space loop into a burning hellfire. Add to this the byproduct of large amounts of Oxygen production (not exclusive to Tritium, an issue in a Plasma engine too), and you have a tritium fire and a very hot crystal. Do not use this gas unless you have a very strong understanding of atmospherics and the Supermatter, and are willing to get creative.
 
   ## Practical guide to the Supermatter
 
   Now, forget about everything you've just read and get to setting up the most basic loop there is: the Nitrogen loop.
 
-  The atmospheric setup in it's most basic form should look like this:
+  The atmospheric setup in its' most basic form should look like this:
 
   (We did not have enough budget for images, here is a text representation)
 
@@ -54,7 +54,7 @@
 
   2. Every gas gets pumped out of the chamber by using scrubbers set on Siphon on the other side.
 
-  3. The output gets cooled down, filtered and excess nitrogen gets either outted into space or rerouted into the input.
+  3. The output gets filtered, cooled down, and excess nitrogen gets either routed into space or rerouted into the input.
 
   That's basically it. I hope you understand at least something in this example. Now get to it!
 
