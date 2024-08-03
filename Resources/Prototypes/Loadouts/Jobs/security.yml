@@ -445,7 +445,7 @@
 - type: loadout
   id: LoadoutClothingHandsGlovesNitrile
   category: Jobs
-  cost: 2
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
