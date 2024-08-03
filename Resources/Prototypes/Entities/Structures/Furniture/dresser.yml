@@ -52,7 +52,7 @@
   suffix: Filled
   components:
   - type: StaticPrice
-    price: 15
+    price: 5
   - type: StorageFill
     contents:
       - id: ClothingNeckLGBTPin
