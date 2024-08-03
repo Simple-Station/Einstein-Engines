@@ -13,19 +13,3 @@
       - id: BurnAutoInjector
         amount: 2
       - id: MagazinePistol # EinsteinEngines - Security does get an extra mag
-
-- type: entity
-  noSpawn: true
-  parent: ClothingBackpackBrigmedic
-  id: ClothingBackpackBrigmedicFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: EmergencyRollerBedSpawnFolded
-      - id: BodyBagFolded
-      - id: Portafib
-      - id: BruteAutoInjector
-        amount: 2
-      - id: BurnAutoInjector
-        amount: 2
-      - id: MagazinePistol # EinsteinEngines - Security does get an extra mag
