@@ -379,6 +379,17 @@
   items:
     - CombatKnife
 
+- type: loadout
+  id: LoadoutSecurityFlash
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - Flash
+
 # TODO: Make this replace the secoff handgun and make it cheaper
 # # Species
 # - type: loadout

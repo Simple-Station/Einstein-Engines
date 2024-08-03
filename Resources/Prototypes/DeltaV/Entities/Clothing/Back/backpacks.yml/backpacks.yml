@@ -8,8 +8,8 @@
       - id: EmergencyRollerBedSpawnFolded
       - id: BodyBagFolded
       - id: Portafib
-    #  - id: Flash
       - id: BruteAutoInjector
         amount: 2
       - id: BurnAutoInjector
         amount: 2
+      - id: MagazinePistol # EinsteinEngines - Security does get an extra mag
