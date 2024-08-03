@@ -331,53 +331,6 @@
     - ClothingEyesGlassesSecurity
 
 # Head
-- type: loadout
-  id: LoadoutClothingHeadBandBlack
-  category: Jobs
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-  - ClothingHeadBandBlack
-
-- type: loadout
-  id: LoadoutClothingHeadBandBlue
-  category: Jobs
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-  - ClothingHeadBandBlue
-
-- type: loadout
-  id: LoadoutClothingHeadBandGrey
-  category: Jobs
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-  - ClothingHeadBandGrey
-
-- type: loadout
-  id: LoadoutClothingHeadBandRed
-  category: Jobs
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-  - ClothingHeadBandRed
 
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
@@ -587,6 +540,67 @@
         - HeadOfSecurity
   items:
     - ClothingOuterWinterHoS
+
+# Neck
+- type: loadout
+  id: LoadoutClothingNeckCloakHos
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingNeckCloakHos
+
+- type: loadout
+  id: LoadoutClothingNeckMantleHOS
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingNeckMantleHOS
+
+- type: loadout
+  id: LoadoutClothingNeckScarfStripedRed
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingNeckScarfStripedRed
+
+- type: loadout
+  id: LoadoutClothingNeckScarfStripedBlack
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingNeckScarfStripedBlack
+
+- type: loadout
+  id: LoadoutClothingNeckScarfStripedBlue
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingNeckScarfStripedBlue
   
 # Equipment
 - type: loadout
