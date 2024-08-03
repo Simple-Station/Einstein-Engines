@@ -18,6 +18,9 @@
       min: 43200 # DeltaV - 12 hours
     - !type:CharacterOverallTimeRequirement
       min: 72000 # DeltaV - 20 hours
+    - !type:CharacterSpeciesRequirement
+      species: 
+        - Human
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

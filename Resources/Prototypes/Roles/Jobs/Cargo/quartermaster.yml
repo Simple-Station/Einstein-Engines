@@ -19,6 +19,9 @@
       min: 43200 #DeltaV 12 hours
     - !type:CharacterOverallTimeRequirement
       min: 144000 #40 hrs
+    - !type:CharacterSpeciesRequirement
+      species: 
+        - Human
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

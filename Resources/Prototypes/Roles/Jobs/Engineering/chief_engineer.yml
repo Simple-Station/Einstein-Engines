@@ -15,6 +15,9 @@
       min: 90000 # DeltaV - 25 hours
 #    - !type:OverallPlaytimeRequirement
 #      time: 72000 # DeltaV - 20 hours
+    - !type:CharacterSpeciesRequirement
+      species: 
+        - Human
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
