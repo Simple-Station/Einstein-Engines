@@ -1,38 +1,33 @@
 using Content.Shared.DoAfter;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-/// I have no fucking idea what I'm doing///
 namespace Content.Shared.Medical;
 
 /// <summary>
-/// This is used for penlights; a tool that med uses
-/// to check for eye damages.
+///     This for penlights; a tool used to check for eye damage.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
 public sealed partial class PenLightComponent : Component
 {
     /// <summary>
-    /// Cooldown Time, exams take a bit
+    ///     Cooldown Time, exams take a bit
     /// </summary>
     [AutoPausedField]
     public TimeSpan? NextExamTime;
 
     /// <summary>
-    /// The min time between exams
+    ///     The min time between exams
     /// </summary>
     [DataField]
     public TimeSpan ExamDelay = TimeSpan.FromSeconds(3);
 
     /// <summary>
-    /// How long the doafter for the exam takes
+    ///     How long the doafter for the exam takes
     /// </summary>
-    [DataField("examSpeed", required: true)]
+    [DataField(required: true)]
     public float ExamSpeed { get; set; }
 
 }
 
 [Serializable, NetSerializable]
-public sealed partial class PenLightDoAfterEvent : SimpleDoAfterEvent
-{
-
-}
+public sealed partial class PenLightDoAfterEvent : SimpleDoAfterEvent { }

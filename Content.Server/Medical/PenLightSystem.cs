@@ -15,7 +15,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Medical;
 /// <summary>
-/// This stores the eye exam system for <see cref="PenLightComponent"/>
+///     This stores the eye exam system for <see cref="PenLightComponent"/>
 /// </summary>
 public sealed class PenLightSystem : EntitySystem
 {
@@ -32,14 +32,19 @@ public sealed class PenLightSystem : EntitySystem
 
     private void OnAfterInteract(EntityUid uid, PenLightComponent component, AfterInteractEvent args)
     {
-        if (args.Handled || args.Target is not { } target)
+        if (args.Handled 
+            || args.Target is not { } target)
             return;
+
         args.Handled = TryStartExam(uid, target, args.User, component);
     }
 
     private void OnDoAfter(Entity<PenLightComponent> uid, ref PenLightDoAfterEvent args)
     {
-        if (args.Handled || args.Cancelled || args.Target == null || !_powerCell.HasDrawCharge(uid, user: args.User))
+        if (args.Handled 
+            || args.Cancelled 
+            || args.Target == null 
+            || !_powerCell.HasDrawCharge(uid, user: args.User))
             return;
 
         OpenUserInterface(args.User, uid);
@@ -68,23 +73,20 @@ public sealed class PenLightSystem : EntitySystem
     }
     private void OpenUserInterface(EntityUid user, EntityUid penlight)
     {
-        if (!TryComp<ActorComponent>(user, out var actor) || !_uiSystem.TryGetUi(penlight, PenLightUiKey.Key, out var ui))
+        if (!TryComp<ActorComponent>(user, out var actor) 
+            || !_uiSystem.TryGetUi(penlight, PenLightUiKey.Key, out var ui))
             return;
 
         _uiSystem.OpenUi(ui, actor.PlayerSession);
     }
 
     /// <summary>
-    /// Runs the checks for the different types of eye damage
+    ///     Runs the checks for the different types of eye damage
     /// </summary>
     private void Diagnose(EntityUid penlight, EntityUid target)
     {
-        // Check if the UI system is available
-        if (!_uiSystem.TryGetUi(penlight, PenLightUiKey.Key, out var ui))
-            return;
-
-        // Check if the target has an EyeComponent
-        if (!HasComp<EyeComponent>(target))
+        if (!_uiSystem.TryGetUi(penlight, PenLightUiKey.Key, out var ui)
+            || !HasComp<EyeComponent>(target))
             return;
         // Blind
         var blind = _entityManager.HasComponent<PermanentBlindnessComponent>(target);
