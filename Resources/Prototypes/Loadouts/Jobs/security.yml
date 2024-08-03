@@ -426,7 +426,7 @@
       jobs:
         - Brigmedic
   items:
-    - ClothingBeltCorpsmanWebbing
+    - ClothingBeltCorpsmanWebbingFilled
 
 - type: loadout
   id: LoadoutClothingBeltSecurity
