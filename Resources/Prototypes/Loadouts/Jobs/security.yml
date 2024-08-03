@@ -9,11 +9,9 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - SecurityCadet
-        - Warden
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingUniformJumpsuitSecBlue
 
@@ -27,11 +25,9 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - SecurityCadet
-        - Warden
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingUniformJumpsuitSecGrey
 
@@ -41,11 +37,9 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - SecurityCadet
-        - Warden
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingUniformJumpskirtSecGrey
 
@@ -55,11 +49,9 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - SecurityCadet
-        - Warden
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingUniformJumpskirtSecBlue
 
@@ -205,12 +197,9 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Detective
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingUniformJumpsuitSecFormal
 
@@ -224,12 +213,9 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Detective
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingUniformJumpsuitSecSummer
 # Mask
@@ -257,13 +243,9 @@
       species:
         - Diona
         - Harpy
-    - !type:CharacterJobRequirement
-      jobs:
-        - Detective
-        - SecurityOfficer
-        - SecurityCadet
-        - Warden
-        - HeadOfSecurity
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingShoesBootsJack
 
@@ -274,12 +256,9 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
-        - Brigmedic
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingEyesHudSecurity
 
@@ -289,12 +268,9 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
-        - Brigmedic
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingEyesEyepatchHudSecurity
 
@@ -304,12 +280,9 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
-        - Brigmedic
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
     - !type:CharacterTraitRequirement
       traits:
         - Nearsighted
@@ -323,12 +296,9 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
-        - Brigmedic
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingHeadHatBeretSecurity
 
@@ -337,12 +307,9 @@
   category: Jobs
   cost: 3
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - SecurityOfficer
-        - Warden
-        - HeadOfSecurity
-        - Brigmedic
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingHeadHelmetInsulated
 
@@ -353,13 +320,9 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Detective
-        - SecurityOfficer
-        - SecurityCadet
-        - Warden
-        - HeadOfSecurity
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingBeltSecurityWebbingFilled
 
