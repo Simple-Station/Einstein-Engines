@@ -191,7 +191,7 @@ public sealed partial class BorgSystem
             if (!component.ItemsCreated)
             {
                 item = Spawn(itemProto, xform.Coordinates);
-                if (itemProto == "JetpackMicroFilled" && TryComp<BorgJetpackComponent>(uid, out var module))
+                if (TryComp<BorgJetpackComponent>(uid, out var module))
                 {
                     module.JetpackUid = item;
                 }
