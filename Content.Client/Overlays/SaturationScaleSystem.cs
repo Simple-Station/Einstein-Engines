@@ -1,17 +1,15 @@
 ﻿using Content.Shared.GameTicking;
-using Content.Shared.White.Overlays;
-using Robust.Client.GameObjects;
+using Content.Shared.Overlays;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;
 
-namespace Content.Client.White.Overlays;
+namespace Content.Client.Overlays;
 
 public sealed class SaturationScaleSystem : EntitySystem
 {
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
-    [Dependency] private readonly ILightManager _lightManager = default!;
 
     private SaturationScaleOverlay _overlay = default!;
 
@@ -47,15 +45,17 @@ public sealed class SaturationScaleSystem : EntitySystem
 
     private void OnShutdown(EntityUid uid, SaturationScaleComponent component, ComponentShutdown args)
     {
-        if (_player.LocalSession?.AttachedEntity == uid)
-        {
-            _overlayMan.RemoveOverlay(_overlay);
-        }
+        if (_player.LocalSession?.AttachedEntity != uid)
+            return;
+
+        _overlayMan.RemoveOverlay(_overlay);
     }
 
     private void OnInit(EntityUid uid, SaturationScaleComponent component, ComponentInit args)
     {
-        if (_player.LocalSession?.AttachedEntity == uid)
-            _overlayMan.AddOverlay(_overlay);
+        if (_player.LocalSession?.AttachedEntity != uid)
+            return;
+
+        _overlayMan.AddOverlay(_overlay);
     }
 }

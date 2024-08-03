@@ -8,13 +8,13 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
-using Content.Shared.White.Mood;
-using Content.Shared.White.Overlays;
+using Content.Shared.Mood;
+using Content.Shared.Overlays;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
 
-namespace Content.Server.White.Mood;
+namespace Content.Server.Mood;
 
 public sealed class MoodSystem : EntitySystem
 {

@@ -1,12 +1,11 @@
 ﻿using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
-namespace Content.Shared.White.Mood;
+namespace Content.Shared.Mood;
 
 [Prototype("moodEffect")]
 public sealed class MoodEffectPrototype : IPrototype
 {
-    [ViewVariables]
     [IdDataField]
     public string ID { get; } = default!;
 

@@ -2,7 +2,7 @@
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.White.Overlays;
+namespace Content.Client.Overlays;
 
 public sealed class SaturationScaleOverlay : Overlay
 {

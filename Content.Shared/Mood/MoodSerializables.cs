@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Serialization;
 
-namespace Content.Shared.White.Mood;
+namespace Content.Shared.Mood;
 
 [Serializable, NetSerializable]
 public enum MoodChangeLevel : byte
