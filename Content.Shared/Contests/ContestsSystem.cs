@@ -265,12 +265,13 @@ namespace Content.Shared.Contests
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
                 || !_cfg.GetCVar(CCVars.DoMindContests)
-                || !TryComp<MoodComponent>(performer, out var mood))
+                || !TryComp<MoodComponent>(performer, out var mood)
+                || !mood.MoodThresholds.TryGetValue(MoodThreshold.Neutral, out var threshold))
                 return 1f;
 
             return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
-                ? mood.CurrentMoodLevel / mood.MoodThresholds.GetValueOrDefault(MoodThreshold.Neutral)
-                : Math.Clamp(mood.CurrentMoodLevel / mood.MoodThresholds.GetValueOrDefault(MoodThreshold.Neutral),
+                ? mood.CurrentMoodLevel / threshold
+                : Math.Clamp(mood.CurrentMoodLevel / threshold,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
                     1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor);
         }
