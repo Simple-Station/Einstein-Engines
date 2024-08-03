@@ -87,10 +87,10 @@
   - type: Armor # DeltaV - adds resists to coat, same as HoS coat. Still better than nothing, but nowhere as good as a carapace
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.75
-        Heat: 0.75
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70
+        Heat: 0.70
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
@@ -244,10 +244,11 @@
   - type: Armor # DeltaV - adds resists to coat. As good as Cap's, but I don't know why you'd wear this over a trench coat
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.75
-        Heat: 0.75
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70
+        Heat: 0.70
+        Caustic: 0.75 #not the full 90% from ss13 because of the head
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
@@ -417,13 +418,15 @@
     sprite: Clothing/OuterClothing/WinterCoats/coatsec.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSec
-  - type: Armor # DeltaV - adds resists to coat
+  - type: Armor # EinsteinEngines - makes equivalent to vests
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.85 # DeltaV - not as resistant as pre-rebase, but still better than nothing
-        Heat: 0.75
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70 #Can save you, but bullets will still hurt. Will take about 10 shots from a Viper before critting, as opposed to 7 while unarmored and 16~ with a bulletproof vest.
+        Heat: 0.80
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
