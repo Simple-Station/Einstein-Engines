@@ -6,12 +6,6 @@
     mode: SnapgridCenter
   components:
     - type: Supermatter
-      whitelist:
-        tags:
-          - EmitterBolt
-        components:
-          - Body
-          - Item
     - type: RadiationSource
     - type: AmbientSound
       range: 5
