@@ -13,7 +13,7 @@
             <BoxContainer
                 Name="ExamDataContainer"
                 Orientation="Vertical"
-                Margin="0 0 5 10">
+            >
             <Label Name="PatientName"/>
             <Label Name="Blind" Margin="5" />
             <Label Name="Drunk" Margin="5" />

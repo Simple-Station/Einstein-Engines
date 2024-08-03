@@ -31,6 +31,7 @@
       - key: enum.PenLightUiKey.Key
         type: PenLightBoundUserInterface
     - type: ToggleableLightVisuals
+    - type: ContainerContainer
     - type: PowerCellSlot
       cellSlotId: cell_slot
     - type: ItemSlots

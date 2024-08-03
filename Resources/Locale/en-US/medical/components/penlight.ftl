@@ -4,8 +4,8 @@ pen-light-window-entity-eyes-text = {$entityName}'s conditions:
 pen-light-window-no-patient-data-text = No patient data.
 pen-light-window-entity-unknown-text = unknown
 
-pen-light-exam-blind-text = The patient's eyes are glassy and unfocused. They can't follow the light at all. They are blind.
-pen-light-exam-drunk-text = The patient's eyes are slow to follow the light, droopy. They're likely drunk.
-pen-light-exam-eyedamage-text = The patient's eyes are partially focused, though they struggle to look at the light for too long. Their gaze falters, rather than following it perfectly. They have some sort of eye damage.
-pen-light-exam-hallucinating-text = The patient's eyes are wandering around, with dilated pupils. They seem to not focus on the light, staring off at random angles. They're hallucinating.
-pen-light-exam-healthy-text = The patient follows the light perfectly with no stuttering. Their eyes are in tip-top shape.
+pen-light-exam-blind-text = The patient's eyes are glassy and unfocused. They can't follow the light at all.
+pen-light-exam-drunk-text = The patient's eyes are slow to follow the light, droopy.
+pen-light-exam-eyedamage-text = The patient's eyes are partially focused, though they struggle to look at the light for too long.
+pen-light-exam-hallucinating-text = The patient's eyes are wandering around, with dilated pupils. They don't focus on the light.
+pen-light-exam-healthy-text = The patient follows the light perfectly with no stuttering.
