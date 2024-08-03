@@ -4845,3 +4845,9 @@ Entries:
       message: 'Supermatter Engines have been implemented. '
   id: 6206
   time: '2024-08-03T00:41:54.0000000+00:00'
+- author: Tilkku
+  changes:
+    - type: Tweak
+      message: Rouny Sprite Changed
+  id: 6207
+  time: '2024-08-03T11:04:01.0000000+00:00'
