@@ -38,12 +38,11 @@ public sealed class LoadoutSystem : EntitySystem
     }
 
 
-    /// <inheritdoc cref="ApplyCharacterLoadout(Robust.Shared.GameObjects.EntityUid,string,Content.Shared.Preferences.HumanoidCharacterProfile,System.Collections.Generic.Dictionary{string,System.TimeSpan}?)"/>
-    public List<EntityUid> ApplyCharacterLoadout(EntityUid uid, string job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan>? playTimes = null)
+    public List<EntityUid> ApplyCharacterLoadout(EntityUid uid, ProtoId<JobPrototype> job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted)
     {
-        var jobPrototype = _prototype.Index<JobPrototype>(job);
-        return ApplyCharacterLoadout(uid, jobPrototype, profile, playTimes);
+        var jobPrototype = _prototype.Index(job);
+        return ApplyCharacterLoadout(uid, jobPrototype, profile, playTimes, whitelisted);
     }
 
     /// <summary>
@@ -53,9 +52,10 @@ public sealed class LoadoutSystem : EntitySystem
     /// <param name="job">The job to use for loadout whitelist/blacklist (should be the job of the entity)</param>
     /// <param name="profile">The profile to get loadout items from (should be the entity's, or at least have the same species as the entity)</param>
     /// <param name="playTimes">Playtime for the player for use with playtime requirements</param>
+    /// <param name="whitelisted">If the player is whitelisted</param>
     /// <returns>A list of loadout items that couldn't be equipped but passed checks</returns>
     public List<EntityUid> ApplyCharacterLoadout(EntityUid uid, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan>? playTimes = null)
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted)
     {
         var failedLoadouts = new List<EntityUid>();
 
@@ -68,8 +68,8 @@ public sealed class LoadoutSystem : EntitySystem
                 continue;
 
 
-            if (!_characterRequirements.CheckRequirementsValid(loadoutProto, loadoutProto.Requirements, job, profile,
-                playTimes ?? new Dictionary<string, TimeSpan>(),
+            if (!_characterRequirements.CheckRequirementsValid(
+                loadoutProto.Requirements, job, profile, playTimes, whitelisted,
                 EntityManager, _prototype, _configuration,
                 out _))
                 continue;

@@ -4652,3 +4652,29 @@ Entries:
         connection. Attached grids now permit sound to travel through.
   id: 6184
   time: '2024-07-26T20:09:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Long Survival has been added as a new Game mode.
+  id: 6185
+  time: '2024-07-27T06:00:24.0000000+00:00'
+- author: CilliePaint
+  changes:
+    - type: Tweak
+      message: New Box Textures!
+  id: 6186
+  time: '2024-07-29T05:50:43.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Fixed toolshed command permissions. This will mostly affect admins who
+        don't have full host access.
+  id: 6187
+  time: '2024-07-29T05:54:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Radiation damage no longer interrupts DoAfters.
+  id: 6188
+  time: '2024-07-29T06:00:26.0000000+00:00'

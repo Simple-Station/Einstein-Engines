@@ -4,9 +4,13 @@ using Content.Client.CrewManifest;
 using Content.Client.GameTicking.Managers;
 using Content.Client.UserInterface.Controls;
 using Content.Client.Players.PlayTimeTracking;
+using Content.Client.Preferences;
 using Content.Shared.CCVar;
+using Content.Shared.Customization.Systems;
+using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
+using Microsoft.Win32.SafeHandles;
 using Robust.Client.Console;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
@@ -26,6 +30,9 @@ namespace Content.Client.LateJoin
         [Dependency] private readonly IConfigurationManager _configManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
         [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
+        [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
+        [Dependency] private readonly IEntityManager _entityManager = default!;
+        [Dependency] private readonly IClientPreferencesManager _prefs = default!;
 
         public event Action<(NetEntity, string)> SelectedId;
 
@@ -254,14 +261,24 @@ namespace Content.Client.LateJoin
 
                         jobButton.OnPressed += _ => SelectedId.Invoke((id, jobButton.JobId));
 
-                        if (!_jobRequirements.IsAllowed(prototype, out var reason))
+                        if (!_characterRequirements.CheckRequirementsValid(
+                                prototype.Requirements ?? new(),
+                                prototype,
+                                (HumanoidCharacterProfile) (_prefs.Preferences?.SelectedCharacter
+                                    ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                                _jobRequirements.GetPlayTimes(),
+                                _jobRequirements.IsWhitelisted(),
+                                _entityManager,
+                                _prototypeManager,
+                                _configManager,
+                                out var reasons))
                         {
                             jobButton.Disabled = true;
 
-                            if (!reason.IsEmpty)
+                            if (reasons.Count > 0)
                             {
                                 var tooltip = new Tooltip();
-                                tooltip.SetMessage(reason);
+                                tooltip.SetMessage(_characterRequirements.GetRequirementsText(reasons));
                                 jobButton.TooltipSupplier = _ => tooltip;
                             }
 

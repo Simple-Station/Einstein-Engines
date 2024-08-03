@@ -85,8 +85,11 @@
     description: ghost-role-information-loneop-description
     rules: ghost-role-information-loneop-rules
     requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 18000 # 5h
+    - !type:CharacterOverallTimeRequirement
+      min: 172800 # DeltaV - 48 hours
+    - !type:DepartmentTimeRequirement # DeltaV - Security dept time requirement
+      department: Security
+      time: 36000 # DeltaV - 10 hours
   - type: GhostRoleMobSpawner
     prototype: MobHumanLoneNuclearOperative
   - type: Sprite

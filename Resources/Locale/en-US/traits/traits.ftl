@@ -35,14 +35,11 @@ trait-description-Stutter = You t-t-talk with a bit of a s-s-stutter...
 trait-name-Snoring = Snoring
 trait-description-Snoring = You will snore while sleeping.
 
-trait-name-NormalVisionHarpy = Trichromat Modification
-trait-description-NormalVisionHarpy = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
-
 trait-name-Southern = Southern Drawl
 trait-description-Southern = You have a different way of speakin'.
 
-trait-name-NormalVisionVulpkanin = Trichromat Modification
-trait-description-NormalVisionVulpkanin = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
+trait-name-NormalVision = Trichromat Modification
+trait-description-NormalVision = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
 
 trait-name-Thieving = Thieving
 trait-description-Thieving =
