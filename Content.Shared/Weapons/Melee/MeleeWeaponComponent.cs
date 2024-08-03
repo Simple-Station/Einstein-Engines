@@ -140,6 +140,9 @@ public sealed partial class MeleeWeaponComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("soundNoDamage"), AutoNetworkedField]
     public SoundSpecifier NoDamageSound { get; set; } = new SoundCollectionSpecifier("WeakHit");
+
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float? bypassResistance;
 }
 
 /// <summary>
