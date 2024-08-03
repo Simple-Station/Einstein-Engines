@@ -78,8 +78,6 @@ namespace Content.Shared.Damage
         [DataField]
         public ProtoId<StatusIconPrototype> RottingIcon = "HealthIconRotting";
 
-        [DataField]
-        public float? bypassResistance;
     }
 
     [Serializable, NetSerializable]
