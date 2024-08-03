@@ -190,7 +190,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSecFormal
   category: Jobs
-  cost: 2
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterSpeciesRequirement
@@ -270,7 +270,7 @@
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
   category: Jobs
-  cost: 2
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -282,7 +282,7 @@
 - type: loadout
   id: ClothingEyesGlassesSunglasses
   category: Jobs
-  cost: 2
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -294,7 +294,7 @@
 - type: loadout
   id: LoadoutSecurityEyesEyepatchHudSecurity
   category: Jobs
-  cost: 2
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -306,7 +306,7 @@
 - type: loadout
   id: LoadoutSecurityEyesHudSecurityPrescription
   category: Jobs
-  cost: 2
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -349,7 +349,7 @@
 - type: loadout
   id: LoadoutClothingHeadHelmetBasic
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -409,7 +409,7 @@
 - type: loadout
   id: LoadoutSecurityHeadHelmetInsulated
   category: Jobs
-  cost: 3
+  cost: 2
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -474,7 +474,7 @@
 - type: loadout
   id: LoadoutClothingOuterArmorBasic
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -486,7 +486,7 @@
 - type: loadout
   id: LoadoutClothingOuterArmorBasicSlim
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -496,9 +496,21 @@
     - ClothingOuterArmorBasicSlim
 
 - type: loadout
+  id: LoadoutClothingClothingOuterArmorPlateCarrier
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingClothingOuterArmorPlateCarrier
+
+- type: loadout
   id: LoadoutClothingOuterCoatDetective
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -510,7 +522,7 @@
 - type: loadout
   id: LoadoutOuterVestDetective
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -522,7 +534,7 @@
 - type: loadout
   id: LoadoutClothingOuterCoatWarden
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -534,7 +546,7 @@
 - type: loadout
   id: LoadoutClothingOuterCoatHoSTrench
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -546,7 +558,7 @@
 - type: loadout
   id: LoadoutClothingOuterWinterHoS
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -619,7 +631,7 @@
 - type: loadout
   id: LoadoutSecurityDisabler
   category: Jobs
-  cost: 4
+  cost: 2
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
