@@ -39,7 +39,7 @@
 - type: language
   id: Bubblish
   speech:
-    color: "#0077aa"
+    color: "#00a3e2dd"
     fontId: RubikBubbles
   obfuscation:
     !type:SyllableObfuscation
@@ -56,7 +56,7 @@
 - type: language
   id: Moffic
   speech:
-    color: "#869b29"
+    color: "#c7df2edd"
     fontId: Copperplate
   obfuscation:
     !type:SyllableObfuscation
@@ -125,7 +125,7 @@
 - type: language
   id: RootSpeak
   speech:
-    color: "#804000"
+    color: "#ce5e14dd"
     fontId: Noganas
   obfuscation:
     !type:SyllableObfuscation
@@ -142,7 +142,7 @@
 - type: language
   id: Nekomimetic
   speech:
-    color: "#803B56"
+    color: "#df57aaee"
     fontId: Manga
   obfuscation:
     !type:SyllableObfuscation
@@ -202,7 +202,7 @@
 - type: language
   id: Draconic
   speech:
-    color: "#228b22"
+    color: "#2aca2add"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -297,7 +297,7 @@
 - type: language
   id: Canilunzt
   speech:
-    color: "#b97a57"
+    color: "#d69b3dcc"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -365,7 +365,7 @@
 - type: language
   id: SolCommon
   speech:
-    color: "#8282fb"
+    color: "#8282fbaa"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -575,6 +575,18 @@
     - hiss
     - ss
     - ee
+
+- type: language
+  id: Hissing
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
+    replacement:
+    - hss
+    - iss
+    - ss
+    - is
 
 # Example of a sign language. Not currently used anyhow.
 - type: language

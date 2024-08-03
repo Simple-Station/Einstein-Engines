@@ -102,4 +102,9 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
         dict.Add(PlayTimeTrackingShared.TrackerOverall, FetchOverallPlaytime());
         return dict;
     }
+
+    public Dictionary<string, TimeSpan> GetRawPlayTimeTrackers()
+    {
+        return _roles;
+    }
 }
