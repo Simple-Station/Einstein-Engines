@@ -1,10 +1,8 @@
-﻿using Content.Shared.Alert;
-using Content.Shared.FixedPoint;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
+﻿using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 
 namespace Content.Shared.Mood;
 
-public abstract partial class MoodComponent : Component
+public abstract partial class SharedMoodComponent : Component
 {
     [DataField, AutoNetworkedField]
     public float CurrentMoodLevel;
@@ -23,5 +21,21 @@ public abstract partial class MoodComponent : Component
         { MoodThreshold.Horrible, 10f },
         { MoodThreshold.Dead, 0f }
     };
+}
+
+[Serializable]
+public enum MoodThreshold : ushort
+{
+    Insane = 1,
+    Horrible = 2,
+    Terrible = 3,
+    Bad = 4,
+    Meh = 5,
+    Neutral = 6,
+    Good = 7,
+    Great = 8,
+    Exceptional = 9,
+    Perfect = 10,
+    Dead = 0
 }
 
