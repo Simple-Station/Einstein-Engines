@@ -567,40 +567,17 @@
     - ClothingNeckMantleHOS
 
 - type: loadout
-  id: LoadoutClothingNeckScarfStripedRed
+  id: LoadoutBedsheetBrigmedic
   category: Jobs
   cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
   items:
-    - ClothingNeckScarfStripedRed
-
-- type: loadout
-  id: LoadoutClothingNeckScarfStripedBlack
-  category: Jobs
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingNeckScarfStripedBlack
-
-- type: loadout
-  id: LoadoutClothingNeckScarfStripedBlue
-  category: Jobs
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingNeckScarfStripedBlue
+    - BedsheetBrigmedic
+    
   
 # Equipment
 - type: loadout
