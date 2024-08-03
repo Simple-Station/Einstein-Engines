@@ -1,9 +1,8 @@
 ﻿using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
-using Content.Shared.Mood;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 
-namespace Content.Server.Mood;
+namespace Content.Shared.Mood;
 
 [RegisterComponent]
 public sealed partial class MoodComponent : Component
