@@ -8,7 +8,7 @@ using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
-using Content.Shared.White.Mood;
+using Content.Shared.Mood;
 using Robust.Shared.Containers;
 
 namespace Content.Server.Atmos.EntitySystems

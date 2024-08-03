@@ -23,7 +23,7 @@ using Content.Shared.Toggleable;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.FixedPoint;
 using Robust.Server.Audio;
-using Content.Shared.White.Mood;
+using Content.Shared.Mood;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;

@@ -55,3 +55,9 @@ trait-name-Foreigner = Foreigner
 trait-description-Foreigner =
     For one reason or another you do not speak this station's primary language.
     Instead, you have a translator issued to you that only you can use.
+
+trait-name-Depression = Depression
+trait-description-Depression = You suffer from chronic Depression, causing a permanent large mood debuff.
+
+trait-name-Sanguine = Sanguine
+trait-description-Sanguine = You are naturally upbeat and cheerful! Your mood is permanently increased by a large amount.

@@ -6,7 +6,7 @@ using Content.Shared.Rejuvenate;
 using JetBrains.Annotations;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared.White.Mood;
+using Content.Shared.Mood;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -110,14 +110,6 @@ public sealed class ThirstSystem : EntitySystem
 
     private void UpdateEffects(EntityUid uid, ThirstComponent component)
     {
-        //WD start
-        /*if (IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold) &&
-                TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
-        {
-            _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
-        }*/
-        //WD end
-
         // Update UI
         if (ThirstComponent.ThirstThresholdAlertTypes.TryGetValue(component.CurrentThirstThreshold, out var alertId))
         {

@@ -4,7 +4,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Rejuvenate;
-using Content.Shared.White.Mood;
+using Content.Shared.Mood;
 using Robust.Shared.Network;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -28,7 +28,7 @@ public sealed class HungerSystem : EntitySystem
 
         SubscribeLocalEvent<HungerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<HungerComponent, ComponentShutdown>(OnShutdown);
-        //SubscribeLocalEvent<HungerComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed); WD-edit
+        //SubscribeLocalEvent<HungerComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed); //This is handled by Mood System now
         SubscribeLocalEvent<HungerComponent, RejuvenateEvent>(OnRejuvenate);
     }
 
@@ -112,18 +112,11 @@ public sealed class HungerSystem : EntitySystem
         if (component.CurrentThreshold == component.LastThreshold && !force)
             return;
 
-        //WD start
         if (_net.IsServer)
         {
             var ev = new MoodEffectEvent("Hunger" + component.CurrentThreshold);
             RaiseLocalEvent(uid, ev);
         }
-
-        /*if (GetMovementThreshold(component.CurrentThreshold) != GetMovementThreshold(component.LastThreshold))
-        {
-            _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
-        }*/
-        //WD end
 
         if (component.HungerThresholdAlerts.TryGetValue(component.CurrentThreshold, out var alertId))
         {
@@ -187,22 +180,6 @@ public sealed class HungerSystem : EntitySystem
             return false; // It's never going to go hungry, so it's probably fine to assume that it's not... you know, hungry.
 
         return GetHungerThreshold(comp, food) < threshold;
-    }
-
-    private bool GetMovementThreshold(HungerThreshold threshold)
-    {
-        switch (threshold)
-        {
-            case HungerThreshold.Overfed:
-            case HungerThreshold.Okay:
-                return true;
-            case HungerThreshold.Peckish:
-            case HungerThreshold.Starving:
-            case HungerThreshold.Dead:
-                return false;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(threshold), threshold, null);
-        }
     }
 
     public override void Update(float frameTime)

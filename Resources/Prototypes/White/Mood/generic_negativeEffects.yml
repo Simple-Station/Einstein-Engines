@@ -1,51 +1,57 @@
 ﻿- type: moodEffect
   id: Handcuffed
-  description: "Кажется мои выходки кто-то заметил."
+  description: "I am held captive"
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: false
 
 - type: moodEffect
   id: Suffocating
-  description: "НЕ.. МОГУ... ДЫШАТЬ..."
+  description: "I.. Can't.. Breathe..."
   moodChange: enum.MoodChangeLevel.Medium
   positiveEffect: false
   timeout: 1
 
 - type: moodEffect
   id: OnFire
-  description: "ГОРЮ!!!"
+  description: "IT BURNS!!!"
   moodChange: enum.MoodChangeLevel.Big
   positiveEffect: false
 
 - type: moodEffect
   id: Creampied
-  description: "Меня окремили. На вкус как пирог."
+  description: "I was baptized. It tastes like pie."
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: false
   timeout: 3
 
 - type: moodEffect
   id: MobSlipped
-  description: "Опять поскальзываюсь. Надо быть аккуратней."
+  description: "I slipped! I should be more careful next time."
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: false
   timeout: 3
 
 - type: moodEffect
   id: MobVomit
-  description: "Меня только что вырвало. Мерзость."
+  description: "My lunch tasted awful coming back up."
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: false
   timeout: 8
 
 - type: moodEffect
   id: MobLowPressure
-  description: "Меня сейчас разорвёт наружу!"
+  description: "My whole body feels like it's going to burst!"
   moodChange: enum.MoodChangeLevel.Medium
   positiveEffect: false
 
 - type: moodEffect
   id: MobHighPressure
-  description: "На меня оказывается огромное давление!"
+  description: "I feel as though I am being crushed on all sides!"
   moodChange: enum.MoodChangeLevel.Medium
+  positiveEffect: false
+
+- type: moodEffect
+  id: TraitDepression
+  description: "I am haunted by despair..."
+  moodChange: enum.MoodChangeLevel.Large
   positiveEffect: false

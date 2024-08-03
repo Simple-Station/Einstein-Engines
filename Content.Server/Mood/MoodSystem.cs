@@ -13,6 +13,7 @@ using Content.Shared.Overlays;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
+using Content.Shared.Traits.Assorted.Components;
 
 namespace Content.Server.Mood;
 
@@ -34,6 +35,7 @@ public sealed class MoodSystem : EntitySystem
         SubscribeLocalEvent<MoodComponent, DamageChangedEvent>(OnDamageChange);
         SubscribeLocalEvent<MoodComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMoveSpeed);
         SubscribeLocalEvent<MoodComponent, MoodRemoveEffectEvent>(OnRemoveEffect);
+        SubscribeLocalEvent<MoodModifyTraitComponent, ComponentStartup>(OnTraitStartup);
     }
 
     private void OnRemoveEffect(EntityUid uid, MoodComponent component, MoodRemoveEffectEvent args)
@@ -65,6 +67,12 @@ public sealed class MoodSystem : EntitySystem
         args.ModifySpeed(modifier, modifier);
     }
 
+    private void OnTraitStartup(EntityUid uid, MoodModifyTraitComponent component, ComponentStartup args)
+    {
+        if (component.MoodId != null)
+            RaiseLocalEvent(uid, new MoodEffectEvent($"{component.MoodId}"));
+    }
+
     private void OnMoodEffect(EntityUid uid, MoodComponent component, MoodEffectEvent args)
     {
         if (!_prototypeManager.TryIndex<MoodEffectPrototype>(args.EffectId, out var prototype))
@@ -77,27 +85,35 @@ public sealed class MoodSystem : EntitySystem
     {
         var amount = component.CurrentMoodLevel;
 
-        if (!component.MoodChangeValues.TryGetValue(prototype.MoodChange, out var value)
-            || prototype.Category == null)
+        if (!component.MoodChangeValues.TryGetValue(prototype.MoodChange, out var value))
             return;
 
         //Apply categorised effect
-        if (component.CategorisedEffects.TryGetValue(prototype.Category, out var oldPrototypeId)
-            && _prototypeManager.TryIndex<MoodEffectPrototype>(oldPrototypeId, out var oldPrototype)
-            && prototype.ID != oldPrototype.ID
-            && component.MoodChangeValues.TryGetValue(oldPrototype.MoodChange, out var oldValue))
+        if (prototype.Category != null)
         {
-            amount += (oldPrototype.PositiveEffect ? -oldValue : oldValue) + (prototype.PositiveEffect ? value : -value);
-            component.CategorisedEffects[prototype.Category] = prototype.ID;
-        }
-        else
-        {
-            component.CategorisedEffects.Add(prototype.Category, prototype.ID);
-            amount += prototype.PositiveEffect ? value : -value;
-        }
+            if (component.CategorisedEffects.TryGetValue(prototype.Category, out var oldPrototypeId))
+            {
+                if (!_prototypeManager.TryIndex<MoodEffectPrototype>(oldPrototypeId, out var oldPrototype))
+                    return;
 
-        if (prototype.Timeout != 0)
-            Timer.Spawn(TimeSpan.FromMinutes(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
+                if (prototype.ID != oldPrototype.ID)
+                {
+                    if (!component.MoodChangeValues.TryGetValue(oldPrototype.MoodChange, out var oldValue))
+                        return;
+
+                    amount += (oldPrototype.PositiveEffect ? -oldValue : oldValue) + (prototype.PositiveEffect ? value : -value);
+                    component.CategorisedEffects[prototype.Category] = prototype.ID;
+                }
+            }
+            else
+            {
+                component.CategorisedEffects.Add(prototype.Category, prototype.ID);
+                amount += prototype.PositiveEffect ? value : -value;
+            }
+
+            if (prototype.Timeout != 0)
+                Timer.Spawn(TimeSpan.FromMinutes(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
+        }
         //Apply uncategorised effect
         else
         {

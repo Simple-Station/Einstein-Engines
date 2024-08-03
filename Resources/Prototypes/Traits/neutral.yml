@@ -39,3 +39,39 @@
         - Vulpkanin
   components:
     - type: NormalVision
+
+- type: trait
+  id: Depression
+  category: Mental
+  points: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sanguine
+  components:
+    - type: MoodModifyTrait
+      moodId: TraitDepression
+
+- type: trait
+  id: Sanguine
+  category: Mental
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Depression
+  components:
+    - type: MoodModifyTrait
+      moodId: TraitSanguine

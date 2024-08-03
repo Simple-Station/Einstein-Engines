@@ -7,7 +7,7 @@ using Content.Shared.StatusEffect;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
-using Content.Shared.White.Mood;
+using Content.Shared.Mood;
 using JetBrains.Annotations;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;

@@ -11,7 +11,7 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.StatusEffect;
 using Robust.Server.Audio;
-using Content.Shared.White.Mood;
+using Content.Shared.Mood;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 

@@ -1,52 +1,58 @@
 ﻿- type: moodEffect
   id: BeingHugged
-  description: "Обнимашки - круто."
+  description: "Hugs are great."
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: true
   timeout: 2
 
 - type: moodEffect
   id: ArcadePlay
-  description: "Я весело поиграл в интересную аркаду."
+  description: "I had fun playing an interesting arcade game."
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: true
   timeout: 8
 
 - type: moodEffect
   id: GotBlessed
-  description: "Меня благословили."
+  description: "I was blessed."
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: true
   timeout: 8
 
 - type: moodEffect
   id: PetAnimal
-  description: "Животные такие милые! Не могу перестать их гладить!"
+  description: "Animals are so cute! I can't stop petting them!"
   moodChange: enum.MoodChangeLevel.Small
   positiveEffect: true
   timeout: 5
 
 - type: moodEffect
   id: SavedLife
-  description: "Так приятно спасать чью-то жизнь."
+  description: "It's so nice to save someone's life."
   moodChange: enum.MoodChangeLevel.Medium
   positiveEffect: true
   timeout: 8
 
 - type: moodEffect
   id: TraitorFocused #Used for traitors to boost their goals completion.
-  description: "У меня есть цель, и я добьюсь её, во что бы то ни стало!"
+  description: "I have a goal, and I will achieve it no matter what!"
   moodChange: enum.MoodChangeLevel.Medium
   positiveEffect: true
 
 - type: moodEffect
   id: RevolutionFocused #Used for revolution
-  description: "СЛАВА РЕВОЛЮЦИИ!!!"
+  description: "VIVA LA REVOLUTION!!!"
   moodChange: enum.MoodChangeLevel.Medium
   positiveEffect: true
 
 - type: moodEffect
   id: CultFocused
-  description: "Знаю правду, славим великого!"
+  description: "Dark Gods grant me strength!"
   moodChange: enum.MoodChangeLevel.Big
+  positiveEffect: true
+
+- type: moodEffect
+  id: TraitSanguine
+  description: "I have nothing to worry about. I'm sure everything will turn out well in the end!"
+  moodChange: enum.MoodChangeLevel.Large
   positiveEffect: true
