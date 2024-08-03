@@ -437,7 +437,7 @@
       jobs:
         - HeadOfSecurity
   items:
-    - ClothingClothingHeadHatBeretHoS
+    - ClothingHeadHatBeretHoS
 
 - type: loadout
   id: LoadoutSecurityHeadHelmetInsulated
