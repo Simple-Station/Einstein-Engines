@@ -517,6 +517,18 @@
     - ClothingOuterArmorBasic
 
 - type: loadout
+  id: LoadoutClothingOuterArmorBasicSlim
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorBasicSlim
+
+- type: loadout
   id: LoadoutClothingOuterCoatDetective
   category: Jobs
   cost: 3
@@ -564,6 +576,18 @@
   items:
     - ClothingOuterCoatHoSTrench
 
+- type: loadout
+  id: LoadoutClothingOuterWinterHoS
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterWinterHoS
+  
 # Equipment
 - type: loadout
   id: LoadoutSecurityCombatKnife
@@ -590,7 +614,7 @@
 - type: loadout
   id: LoadoutSecurityDisabler
   category: Jobs
-  cost: 3
+  cost: 4
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -601,7 +625,7 @@
 - type: loadout
   id: LoadoutMagazinePistolRubber
   category: Jobs
-  cost: 3
+  cost: 2
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -612,7 +636,7 @@
 - type: loadout
   id: LoadoutSpeedLoaderMagnumRubber
   category: Jobs
-  cost: 3
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
