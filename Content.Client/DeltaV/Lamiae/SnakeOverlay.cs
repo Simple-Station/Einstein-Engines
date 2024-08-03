@@ -11,6 +11,7 @@ using Robust.Shared.Enums;
 using System.Numerics;
 using Content.Client.Resources;
 using Robust.Client.GameStates;
+using System.Linq;
 
 
 namespace Content.Client.DeltaV.Lamiae;
@@ -87,7 +88,7 @@ public sealed class SnakeOverlay : Overlay
 
         int i = 1;
         // so, for each segment we connect we need 4 verts...
-        while (i < lamia.Segments.Count)
+        while (i < lamia.Segments.Count - 1)
         {
             var origin = _transform.GetWorldPosition(lamia.Segments[i - 1]);
             var destination = _transform.GetWorldPosition(lamia.Segments[i]);
@@ -145,6 +146,17 @@ public sealed class SnakeOverlay : Overlay
             }
 
             i++;
+        }
+
+        // draw tail (1 tri)
+        if (lastPtCW != null && lastPtCCW != null)
+        {
+            verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCW, new Vector2(0, 0), Color.White));
+            verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCCW, new Vector2(1, 0), Color.White));
+
+            var destination = _transform.GetWorldPosition(lamia.Segments.Last());
+
+            verts.Add(new DrawVertexUV2DColor(destination, new Vector2(0.5f, 1f), Color.White));
         }
 
         handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, texture: tex, verts.ToArray().AsSpan());
