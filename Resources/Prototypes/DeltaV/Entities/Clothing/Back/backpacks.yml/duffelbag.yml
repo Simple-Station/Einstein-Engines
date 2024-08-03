@@ -1,7 +1,7 @@
 - type: entity
   noSpawn: true
   parent: ClothingBackpackDuffelBrigmedic
-  id: ClothingBackpackDuffelBrigmedicDeltaVFilled
+  id: ClothingBackpackDuffelBrigmedicFilled
   components:
   - type: StorageFill
     contents:

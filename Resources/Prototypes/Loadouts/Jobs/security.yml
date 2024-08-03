@@ -321,7 +321,7 @@
 - type: loadout
   id: LoadoutClothingEyesGlassesSecurity
   category: Jobs
-  cost: 5
+  cost: 4
   exclusive: true
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -367,6 +367,18 @@
         - Brigmedic
   items:
     - ClothingHeadHatBeretBrigmedic
+
+- type: loadout
+  id: LoadoutClothingHeadHatBeretCorpsman
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHeadHatBeretCorpsman
 
 - type: loadout
   id: LoadoutClothingHeadHatBeretWarden

@@ -32,7 +32,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitBrigmedic
     outerClothing: ClothingOuterArmorPlateCarrier
-    back: ClothingBackpackBrigmedicDeltaVFilled
+    back: ClothingBackpackBrigmedicFilled #This will need fixed later. I will do that when I change the starting equipment in favor of the loadout system.
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesNitrile
     eyes: ClothingEyesHudMedical
@@ -42,5 +42,5 @@
     belt: ClothingBeltCorpsmanWebbingFilled
     pocket1: WeaponPistolMk58Nonlethal
   innerClothingSkirt: ClothingUniformJumpskirtBrigmedic
-  satchel: ClothingBackpackSatchelBrigmedicDeltaVFilled
-  duffelbag: ClothingBackpackDuffelBrigmedicDeltaVFilled
+  satchel: ClothingBackpackSatchelBrigmedicFilled
+  duffelbag: ClothingBackpackDuffelBrigmedicFilled
