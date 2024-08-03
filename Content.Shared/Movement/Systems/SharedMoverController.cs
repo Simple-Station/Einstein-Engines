@@ -427,6 +427,13 @@ namespace Content.Shared.Movement.Systems
             var coordinates = xform.Coordinates;
             var distanceNeeded = mover.Sprinting ? StepSoundMoveDistanceRunning : StepSoundMoveDistanceWalking;
 
+            if (_entities.TryGetComponent(uid, out FootstepVolumeModifierComponent? volumeModifier))
+            {
+                distanceNeeded *= mover.Sprinting
+                    ? volumeModifier.SprintDistanceMultiplier
+                    : volumeModifier.WalkDistanceMultiplier;
+            }
+
             // Handle footsteps.
             if (!weightless)
             {

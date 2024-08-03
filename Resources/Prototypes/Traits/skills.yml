@@ -40,3 +40,5 @@
     - type: FootstepVolumeModifier
       sprintingModifier: -10
       walkingModifier: -10
+      sprintDistanceMultiplier: 0.85
+      walkDistanceMultiplier: 0.85
