@@ -30,8 +30,8 @@
       showControl: true
       showExamine: true
       localSoundOnly: false
-      rolloffFactorParams: 2
-      maxDistanceParams: 15
+      rolloffFactorParameters: 2
+      maxDistanceParameters: 15
     - type: Appearance
     - type: GenericVisualizer
       visuals:

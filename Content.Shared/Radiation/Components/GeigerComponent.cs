@@ -91,19 +91,19 @@ public sealed partial class GeigerComponent : Component
     ///     Used to control how loudly the geiger counter ticks.
     /// </summary>
     [DataField]
-    public float VolumeParams = -4f;
+    public float VolumeParameters = -4f;
 
     /// <summary>
     ///     Controls how quickly the sound gets quieter as a player moves away from the geiger counter.
     /// </summary>
     [DataField]
-    public float RolloffFactorParams = 4f;
+    public float RolloffFactorParameters = 4f;
 
     /// <summary>
     ///     Controls the maximum distance that players can hear geiger counter ticks.
     /// </summary>
     [DataField]
-    public float MaxDistanceParams = 10f;
+    public float MaxDistanceParameters = 10f;
 }
 
 [Serializable, NetSerializable]
