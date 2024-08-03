@@ -4,10 +4,10 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 
 namespace Content.Shared.Mood;
 
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentState]
 public sealed partial class MoodComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float CurrentMoodLevel;
 
     [DataField]
@@ -37,7 +37,7 @@ public sealed partial class MoodComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public FixedPoint2 CritThresholdBeforeModify;
 
-    [DataField(customTypeSerializer: typeof(DictionarySerializer<MoodThreshold, float>))]
+    [DataField(customTypeSerializer: typeof(DictionarySerializer<MoodThreshold, float>)), AutoNetworkedField]
     public Dictionary<MoodThreshold, float> MoodThresholds = new()
     {
         { MoodThreshold.Perfect, 100f },
