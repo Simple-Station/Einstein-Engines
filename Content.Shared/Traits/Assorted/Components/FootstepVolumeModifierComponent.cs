@@ -9,13 +9,13 @@ namespace Content.Shared.Traits.Assorted.Components;
 public sealed partial class FootstepVolumeModifierComponent : Component
 {
     /// <summary>
-    ///     What to add to the volume of sprinting.
+    ///     What to add to the volume of sprinting, in terms of decibels.
     /// </summary>
     [DataField, AutoNetworkedField]
     public float SprintingModifier { get; set; } = 0f;
 
     /// <summary>
-    ///     What to add to the volume of walking.
+    ///     What to add to the volume of walking, in terms of decibels.
     /// </summary>
     [DataField, AutoNetworkedField]
     public float WalkingModifier { get; set; } = 0f;
