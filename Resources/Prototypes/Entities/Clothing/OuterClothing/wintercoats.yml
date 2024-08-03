@@ -462,7 +462,7 @@
       coefficients:
         Blunt: 0.70
         Slash: 0.70
-        Piercing: 0.8 #slightly less bulletproof then warden's normal coat
+        Piercing: 0.7
         Heat: 0.70
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterWarden
