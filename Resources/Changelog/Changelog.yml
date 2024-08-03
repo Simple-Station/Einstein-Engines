@@ -4839,3 +4839,9 @@ Entries:
         breaking the game.
   id: 6205
   time: '2024-08-02T22:52:41.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Supermatter Engines have been implemented. '
+  id: 6206
+  time: '2024-08-03T00:41:54.0000000+00:00'
