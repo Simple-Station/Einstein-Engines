@@ -382,12 +382,14 @@
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
   category: Jobs
-  cost: 2
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+  items:
+    - ClothingHeadHatBeretSecurity
 
 - type: loadout
   id: LoadoutClothingHeadHelmetBasic
@@ -548,18 +550,6 @@
         - Detective
   items:
     - ClothingOuterCoatDetective
-
-- type: loadout
-  id: LoadoutOuterVestDetective
-  category: Jobs
-  cost: 3
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Detective
-  items:
-    - ClothingOuterVestDetective
 
 - type: loadout
   id: LoadoutOuterVestDetective
