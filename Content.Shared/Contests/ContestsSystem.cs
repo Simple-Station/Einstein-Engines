@@ -265,7 +265,7 @@ namespace Content.Shared.Contests
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
                 || !_cfg.GetCVar(CCVars.DoMindContests)
-                || !TryComp<MoodComponent>(performer, out var mood)
+                || !TryComp<SharedMoodComponent>(performer, out var mood)
                 || !mood.MoodThresholds.TryGetValue(MoodThreshold.Neutral, out var threshold))
                 return 1f;
 
@@ -288,8 +288,8 @@ namespace Content.Shared.Contests
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
                 || !_cfg.GetCVar(CCVars.DoMindContests)
-                || !TryComp<MoodComponent>(performer, out var performerMood)
-                || !TryComp<MoodComponent>(target, out var targetMood))
+                || !TryComp<SharedMoodComponent>(performer, out var performerMood)
+                || !TryComp<SharedMoodComponent>(target, out var targetMood))
                 return 1f;
 
             return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
