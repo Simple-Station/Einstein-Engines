@@ -125,7 +125,7 @@ namespace Content.Shared.Damage
         ///     null if the user had no applicable components that can take damage.
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
-            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null)
+            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null, float? bypassResistance = null)
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -150,9 +150,14 @@ namespace Content.Shared.Damage
                 if (damageable.DamageModifierSetId != null &&
                     _prototypeManager.TryIndex<DamageModifierSetPrototype>(damageable.DamageModifierSetId, out var modifierSet))
                 {
-                    // TODO DAMAGE PERFORMANCE
-                    // use a local private field instead of creating a new dictionary here..
-                    damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
+                    if (bypassResistance != null)
+                    {
+                        damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet,(float) bypassResistance);
+                    }
+                    else
+                    {
+                        damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
+                    }
                 }
 
                 var ev = new DamageModifyEvent(damage, origin);
