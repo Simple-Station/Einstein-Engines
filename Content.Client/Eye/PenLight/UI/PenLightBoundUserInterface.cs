@@ -10,9 +10,7 @@ namespace Content.Client.Eye.PenLight.UI
         [ViewVariables]
         private PenLightWindow? _window;
 
-        public PenLightBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-        {
-        }
+        public PenLightBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
         protected override void Open()
         {
@@ -27,10 +25,8 @@ namespace Content.Client.Eye.PenLight.UI
 
         protected override void ReceiveMessage(BoundUserInterfaceMessage message)
         {
-            if (_window == null)
-                return;
-
-            if (message is not PenLightUserMessage cast)
+            if (_window == null
+                || message is not PenLightUserMessage cast)
                 return;
 
             _window.Diagnose(cast);
