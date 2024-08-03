@@ -133,20 +133,14 @@
   - type: RampingStationEventScheduler
 
 - type: entity
-  id: LongSurvivalStationEventScheduler
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: RampingStationEventScheduler
-    shiftLengthOffset: -120
-
-- type: entity
   id: HellshiftStationEventScheduler
   parent: BaseGameRule
   noSpawn: true
   components:
   - type: RampingStationEventScheduler
-    shiftChaosModifier: 4 #30 minute HELL SHIFT
+    chaosModifier: 4 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
+    startingChaosRatio: 0.025 # Starts as slow as survival, but quickly ramps up
+    shiftLengthModifier: 2.5
 
 # variation passes
 - type: entity

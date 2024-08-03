@@ -4,10 +4,16 @@
 public sealed partial class RampingStationEventSchedulerComponent : Component
 {
     /// <summary>
-    ///     Multiplies the End Time of the Ramping Event curve. Lower this number for shorter, hectic shifts, increase this number for longer shifts.
+    ///     The maximum number by which the event rate will be multiplied when shift time reaches the end time.
     /// </summary>
     [DataField]
-    public float ShiftChaosModifier = 1f;
+    public float ChaosModifier = 3f;
+
+    /// <summary>
+    ///     The minimum number by which the event rate will be multiplied when the shift has just begun.
+    /// </summary>
+    [DataField]
+    public float StartingChaosRatio = 0.1f;
 
     /// <summary>
     ///     The number by which all event delays will be multiplied. Unlike chaos, remains constant throughout the shift.
@@ -15,39 +21,21 @@ public sealed partial class RampingStationEventSchedulerComponent : Component
     [DataField]
     public float EventDelayModifier = 1f;
 
-
     /// <summary>
-    ///     Shift Length(in Minutes) is directly reduced by this value.
+    ///     The number by which average expected shift length is multiplied. Higher values lead to slower chaos growth.
     /// </summary>
-    [DataField]
-    public float ShiftLengthOffset = 0f;
-
-    /// <summary>
-    ///     Minimum time between events is decreased by this value.
-    /// </summary>
-    [DataField]
-    public float MinimumEventTimeOffset = 0f;
-
-    /// <summary>
-    ///     Maximum time between events is decreased by this value.
-    /// </summary>
-
-    [DataField]
-    public float MaximumEventTimeOffset = 0f;
-
-    [DataField]
-    public bool IgnoreMinimumTimes = false;
+    public float ShiftLengthModifier = 1f;
 
     // Everything below is overridden in the RampingStationEventSchedulerSystem based on CVars
-    [DataField]
+    [DataField("endTime"), ViewVariables(VVAccess.ReadWrite)]
     public float EndTime;
 
-    [DataField]
+    [DataField("maxChaos"), ViewVariables(VVAccess.ReadWrite)]
     public float MaxChaos;
 
-    [DataField]
+    [DataField("startingChaos"), ViewVariables(VVAccess.ReadWrite)]
     public float StartingChaos;
 
-    [DataField]
+    [DataField("timeUntilNextEvent"), ViewVariables(VVAccess.ReadWrite)]
     public float TimeUntilNextEvent;
 }
