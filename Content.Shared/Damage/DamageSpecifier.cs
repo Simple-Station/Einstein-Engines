@@ -165,7 +165,7 @@ namespace Content.Shared.Damage
         /// <param name="damageSpec"></param>
         /// <param name="modifierSets"></param>
         /// <returns></returns>
-        public static DamageSpecifier ApplyModifierSets(DamageSpecifier damageSpec, IEnumerable<DamageModifierSet> modifierSets)
+        public static DamageSpecifier ApplyModifierSets(DamageSpecifier damageSpec, IEnumerable<DamageModifierSet> modifierSets, float br = 1)
         {
             bool any = false;
             DamageSpecifier newDamage = damageSpec;
@@ -173,7 +173,7 @@ namespace Content.Shared.Damage
             {
                 // This creates a new damageSpec for each modifier when we really onlt need to create one.
                 // This is quite inefficient, but hopefully this shouldn't ever be called frequently.
-                newDamage = ApplyModifierSet(newDamage, set);
+                newDamage = ApplyModifierSet(newDamage, set, br);
                 any = true;
             }
 
