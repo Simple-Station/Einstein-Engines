@@ -21,7 +21,22 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazinePistol # EinsteinEngines - Security does get an extra mag
+      - id: MagazinePistol
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackBrigmedic
+  id: ClothingBackpackBrigmedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyRollerBedSpawnFolded
+      - id: BodyBagFolded
+      - id: Portafib
+      - id: BruteAutoInjector
+        amount: 2
+      - id: BurnAutoInjector
+        amount: 2
+      - id: MagazinePistol
 
 - type: entity
   noSpawn: true
@@ -32,6 +47,8 @@
     contents:
       - id: ForensicPad
       - id: ForensicScanner
+
+
 
 - type: entity
   noSpawn: true

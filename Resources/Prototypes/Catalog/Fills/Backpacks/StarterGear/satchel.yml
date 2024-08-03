@@ -33,7 +33,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazinePistol # EinsteinEngines - Security does get an extra mag
+      - id: MagazinePistol
 
 - type: entity
   noSpawn: true
