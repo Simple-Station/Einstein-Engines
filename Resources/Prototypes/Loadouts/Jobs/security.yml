@@ -330,8 +330,10 @@
   items:
     - ClothingEyesGlassesSecurity
 
-# Head
+#Backpack
+#Will need to add a backpack category later on, that will be part of an starting inventory loadout refactor.
 
+# Head
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
   category: Jobs
