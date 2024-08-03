@@ -488,29 +488,6 @@
     - ClothingBeltSecurity
 
 #Gloves
-- type: loadout
-  id: LoadoutClothingHandsGlovesFingerless
-  category: Jobs
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingHandsGlovesFingerless
-
-- type: loadout
-  id: LoadoutClothingHandsGlovesColorBlack
-  category: Jobs
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingHandsGlovesColorBlack
 
 - type: loadout
   id: LoadoutClothingHandsGlovesNitrile
