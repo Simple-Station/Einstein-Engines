@@ -496,7 +496,7 @@
     - ClothingOuterArmorBasicSlim
 
 - type: loadout
-  id: LoadoutClothingClothingOuterArmorPlateCarrier
+  id: LoadoutClothingOuterArmorPlateCarrier
   category: Jobs
   cost: 2
   exclusive: true
@@ -505,7 +505,7 @@
       departments:
         - Security
   items:
-    - ClothingClothingOuterArmorPlateCarrier
+    - ClothingOuterArmorPlateCarrier
 
 - type: loadout
   id: LoadoutClothingOuterCoatDetective
