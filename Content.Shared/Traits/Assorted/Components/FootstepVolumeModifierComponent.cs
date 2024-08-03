@@ -5,18 +5,18 @@ namespace Content.Shared.Traits.Assorted.Components;
 /// <summary>
 ///     This is used for any trait that modifies footstep volumes.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class FootstepVolumeModifierComponent : Component
 {
     /// <summary>
     ///     What to add to the volume of sprinting.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float SprintingModifier { get; set; } = 0f;
 
     /// <summary>
     ///     What to add to the volume of walking.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float WalkingModifier { get; set; } = 0f;
 }
