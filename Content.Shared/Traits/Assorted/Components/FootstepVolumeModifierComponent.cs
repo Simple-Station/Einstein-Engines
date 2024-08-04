@@ -19,16 +19,4 @@ public sealed partial class FootstepVolumeModifierComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float WalkingModifier { get; set; } = 0f;
-
-    /// <summary>
-    ///     What to multiply the distance needed to hear sprinting by.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float SprintDistanceMultiplier { get; set; } = 1f;
-
-    /// <summary>
-    ///     What to multiply the distance needed to hear walking by.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float WalkDistanceMultiplier { get; set; } = 1f;
 }
