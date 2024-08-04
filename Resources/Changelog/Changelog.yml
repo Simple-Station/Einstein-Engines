@@ -4851,3 +4851,13 @@ Entries:
       message: Rouny Sprite Changed
   id: 6207
   time: '2024-08-03T11:04:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Due to budget cuts, Nanotrasen has ceased stocking Clothesmate vendors
+        with more clothing than the average cargo tech can afford. Civilians are
+        advised to bring their own clothes to the station if they wish to wear
+        anything other than grey. 
+  id: 6208
+  time: '2024-08-04T00:23:53.0000000+00:00'
