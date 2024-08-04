@@ -3,6 +3,8 @@ using System.Linq;
 using Content.Server.NanoMessage.Events;
 using Content.Server.Power.Components;
 using Content.Shared.CartridgeLoader.Cartridges;
+using Content.Shared.NanoMessage.Data;
+using Robust.Shared.Utility;
 
 namespace Content.Server.NanoMessage;
 
@@ -60,8 +62,11 @@ public sealed partial class NanoMessageServerSystem : EntitySystem
         RaiseLocalEvent(server, new NanoMessageClientsChangedEvent());
     }
 
-    public IEnumerable<NanoMessageRecipient> GetClientsData(Entity<NanoMessageServerComponent> server)
+    public IEnumerable<NanoMessageRecipient> GetClientsData(Entity<NanoMessageServerComponent?> server)
     {
+        if (!Resolve(server, ref server.Comp))
+            return [];
+
         return server.Comp.ConnectedClients
             .Where(c => server.Comp.ClientData.ContainsKey(c.Id))
             .Select(c => server.Comp.ClientData[c.Id]);

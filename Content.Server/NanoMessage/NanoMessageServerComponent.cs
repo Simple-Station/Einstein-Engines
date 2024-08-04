@@ -1,4 +1,4 @@
-using Content.Shared.CartridgeLoader.Cartridges;
+using Content.Shared.NanoMessage.Data;
 
 namespace Content.Server.NanoMessage;
 

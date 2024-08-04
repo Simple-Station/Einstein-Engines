@@ -1,8 +1,10 @@
-<cartridges:NanoMessageUiFragment xmlns:cartridges="clr-namespace:Content.Client.CartridgeLoader.Cartridges"
+<nanoMessage:NanoMessageUiFragment xmlns:cartridges="clr-namespace:Content.Client.CartridgeLoader.Cartridges"
                                    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                                    xmlns:ui="clr-namespace:Content.Client.CrewManifest.UI"
                                    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-                                   xmlns="https://spacestation14.io" Margin="1 0 2 0">
+                                   xmlns="https://spacestation14.io"
+                                   xmlns:nanoMessage="clr-namespace:Content.Client.CartridgeLoader.Cartridges.NanoMessage"
+                                   Margin="1 0 2 0">
     <PanelContainer StyleClasses="BackgroundDark"></PanelContainer>
     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
         <!-- Left panel - recipient list -->
@@ -23,7 +25,7 @@
 
                 <controls:HLine HorizontalExpand="True"/>
 
-                <ScrollContainer HScrollEnabled="False" VScrollEnabled="True" HorizontalExpand="True" VerticalExpand="True">
+                <ScrollContainer Name="ChatScroll" HScrollEnabled="False" VScrollEnabled="True" HorizontalExpand="True" VerticalExpand="True">
                     <BoxContainer Name="ChatContainer" Orientation="Vertical" HorizontalExpand="True"/>
                 </ScrollContainer>
 
@@ -35,4 +37,4 @@
             </BoxContainer>
         </PanelContainer>
     </BoxContainer>
-</cartridges:NanoMessageUiFragment>
+</nanoMessage:NanoMessageUiFragment>
