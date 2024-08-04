@@ -72,6 +72,7 @@
     rewardMinAmount: 0
     rewardMaxAmount: 0
     possibleRewards:
+    - PrizeBall
     - PrizeTicket10
     - PrizeTicket10
     - PrizeTicket10

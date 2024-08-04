@@ -447,8 +447,8 @@
     PrizeTicket: 20
 
 - type: latheRecipe
-  id: BasePetRock
-  result: BasePetRock
+  id: PetRockCarrier
+  result: PetRockCarrier
   applyMaterialDiscount: false
   completetime: 0.1
   materials:
