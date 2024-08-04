@@ -41,38 +41,6 @@
 
 - type: entity
   noSpawn: true
-  parent: ClothingBackpackDuffelBrigmedic
-  id: ClothingBackpackDuffelBrigmedicFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: EmergencyRollerBedSpawnFolded
-      - id: BodyBagFolded
-      - id: Portafib
-    #  - id: Flash
-      - id: BruteAutoInjector
-        amount: 2
-      - id: BurnAutoInjector
-        amount: 2
-
-- type: entity
-  noSpawn: true
-  parent: ClothingBackpackSatchelBrigmedic
-  id: ClothingBackpackSatchelBrigmedicFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: EmergencyRollerBedSpawnFolded
-      - id: BodyBagFolded
-      - id: Portafib
-    #  - id: Flash
-      - id: BruteAutoInjector
-        amount: 2
-      - id: BurnAutoInjector
-        amount: 2
-
-- type: entity
-  noSpawn: true
   parent: ClothingBackpackSecurity
   id: ClothingBackpackSecurityFilledDetective
   components:
