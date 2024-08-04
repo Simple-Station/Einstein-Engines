@@ -56,6 +56,11 @@ trait-description-Foreigner =
     For one reason or another you do not speak this station's primary language.
     Instead, you have a translator issued to you that only you can use.
 
+trait-name-Voracious = Voracious
+trait-description-Voracious =
+    Nothing gets between you and your food.
+    Your endless consumption of food and drinks is twice as fast.
+    
 trait-name-ParkourTraining = Parkour Training
 trait-description-ParkourTraining =
     Whether as a hobby, lifestyle, or professional training, you are trained in the discipline of parkour.

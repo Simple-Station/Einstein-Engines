@@ -33,6 +33,15 @@
         - Felinid
 
 - type: trait
+  id: Voracious
+  category: Physical
+  points: -1
+  components:
+    - type: ConsumeDelayModifier
+      foodDelayMultiplier: 0.5
+      drinkDelayMultiplier: 0.5
+
+- type: trait
   id: ParkourTraining
   category: Physical
   points: -3
@@ -42,3 +51,4 @@
     - type: LayingDownModifier
       layingDownCooldownMultiplier: 0.8
       downedSpeedMultiplierMultiplier: 1.25
+      
