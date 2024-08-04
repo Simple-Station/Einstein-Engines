@@ -10,3 +10,21 @@
         - Captain
   items:
     - ClothingHandsGlovesInspection
+
+- type: loadout
+  id: LoadoutCodetalkInjector
+  category: Jobs
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+        - Captain
+        - HeadOfSecurity
+        - Quartermaster
+        - ResearchDirector
+        - ChiefEngineer
+        - ChiefMedicalOfficer
+  items:
+    - CodeTalkTranslatorImplanter

@@ -396,10 +396,20 @@
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 10 # Crazy
+    maxSyllables: 3 # Crazy
     replacement:
-    - 0
-    - 1
+    - Tzz
+    - wurr
+    - boop
+    - beep
+    - ksss
+    - hiss
+    - buzz
+    - keey
+    - hss
+    - doo
+    - wahh
+    - dee
 
 # Languages spoken by various critters.
 - type: language

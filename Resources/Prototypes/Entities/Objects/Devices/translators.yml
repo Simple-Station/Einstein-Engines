@@ -219,3 +219,18 @@
     requires:
     - GalacticCommon
     setLanguageOnInteract: false
+
+- type: entity
+  id: MachineTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Encoded Audio translator
+  description: Translates Encoded Audio Languages, allowing you to understand synths and cyborgs.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - GalacticCommon
+    understood:
+    - GalacticCommon
+    - RobotTalk
+    requires:
+    - GalacticCommon

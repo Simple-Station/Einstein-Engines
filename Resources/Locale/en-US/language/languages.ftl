@@ -25,7 +25,7 @@ language-Canilunzt-description = The guttural language spoken and utilized by th
 language-Moffic-name = Moffic
 language-Moffic-description = The language of the mothpeople borders on complete unintelligibility.
 
-language-RobotTalk-name = RobotTalk
+language-RobotTalk-name = Encoded Audio Language
 language-RobotTalk-description = A language consisting of harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
 
 language-Cat-name = Cat

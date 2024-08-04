@@ -176,3 +176,16 @@
         - AtmosphericTechnician
   items:
     - ClothingHeadHatHardhatRed
+
+- type: loadout
+  id: LoadoutMachineTranslator
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+        - AtmosphericTechnician
+  items:
+    - MachineTranslator
