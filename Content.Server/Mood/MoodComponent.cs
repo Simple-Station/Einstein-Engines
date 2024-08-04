@@ -1,6 +1,5 @@
 using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
-using Content.Shared.Mood;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 
 namespace Content.Server.Mood;
@@ -73,4 +72,20 @@ public sealed partial class MoodComponent : SharedMoodComponent
         { "HealthLightDamage", 0.1f },
         { "HealthNoDamage", 0.05f }
     };
+}
+
+[Serializable]
+public enum MoodThreshold : ushort
+{
+    Insane = 1,
+    Horrible = 2,
+    Terrible = 3,
+    Bad = 4,
+    Meh = 5,
+    Neutral = 6,
+    Good = 7,
+    Great = 8,
+    Exceptional = 9,
+    Perfect = 10,
+    Dead = 0
 }

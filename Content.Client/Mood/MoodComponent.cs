@@ -1,5 +1,3 @@
-using Content.Shared.Mood;
-
 namespace Content.Client.Mood;
 
 [RegisterComponent]
