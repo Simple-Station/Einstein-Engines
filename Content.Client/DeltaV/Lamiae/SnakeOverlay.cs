@@ -5,12 +5,13 @@
 */
 
 using Content.Shared.SegmentedEntity;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Markings;
+using Content.Client.Resources;
 using Robust.Client.ResourceManagement;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using System.Numerics;
-using Content.Client.Resources;
-using Robust.Client.GameStates;
 using System.Linq;
 
 
@@ -27,6 +28,7 @@ public sealed class SnakeOverlay : Overlay
     private readonly IResourceCache _resourceCache;
     private readonly IEntityManager _entManager;
     private readonly SharedTransformSystem _transform;
+    private readonly SharedHumanoidAppearanceSystem _humanoid = default!;
 
     // Look through these carefully. WorldSpace is useful for debugging. Note that this defaults to "screen space" which breaks when you try and get the world handle.
     public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities;
@@ -40,6 +42,7 @@ public sealed class SnakeOverlay : Overlay
         _entManager = entManager;
         // with ent manager we can fetch our other entity systems
         _transform = _entManager.EntitySysManager.GetEntitySystem<SharedTransformSystem>();
+        _humanoid = _entManager.EntitySysManager.GetEntitySystem<SharedHumanoidAppearanceSystem>();
 
         // draw at drawdepth 3
         ZIndex = 3;
@@ -71,20 +74,37 @@ public sealed class SnakeOverlay : Overlay
             // By the way, there's a hack to mitigate overdraw somewhat. Check out whatever is going on with the variable called "bounds" in DoAfterOverlay.
             // I won't do it here because (1) it's ugly and (2) theoretically these entities can be fucking huge and you'll see the tail end of them when they are way off screen.
             // On a PVS level I think segmented entities should be all-or-nothing when it comes to PVS range, that is you either load all of their segments or none.
-            DrawLamia(handle, uid, lamia, xform);
+
+            // Color.White is drawing without modifying color. For clothed tails, we should use White. For skin, we should use the color of the marking.
+            // TODO: Better way to cache this
+            if (_entManager.TryGetComponent<HumanoidAppearanceComponent>(uid, out var humanoid))
+            {
+                if (humanoid.MarkingSet.TryGetCategory(MarkingCategories.Tail, out var tailMarkings))
+                {
+                    var col = tailMarkings.First().MarkingColors.First();
+                    DrawLamia(handle, lamia, col);
+                }
+            }
+            else
+            {
+                DrawLamia(handle, lamia, Color.White);
+            }
         }
     }
 
     // This is where we do the actual drawing.
-    private void DrawLamia(DrawingHandleWorld handle, EntityUid uid, SegmentedEntityComponent lamia, TransformComponent xform)
+    private void DrawLamia(DrawingHandleWorld handle, SegmentedEntityComponent lamia, Color color)
     {
         List<DrawVertexUV2D> verts = new List<DrawVertexUV2D>();
 
+        // TODO: move to component
         float radius = 0.3f;
 
         Vector2? lastPtCW = null;
         Vector2? lastPtCCW = null;
-        var tex = _resourceCache.GetTexture("/Textures/Nyanotrasen/Mobs/Species/lamia.rsi/soyjakcobson.png");
+
+        // TODO: move to component
+        var tex = _resourceCache.GetTexture("/Textures/Nyanotrasen/Mobs/Species/lamia.rsi/segment.png");
 
         int i = 1;
         // so, for each segment we connect we need 4 verts...
@@ -100,10 +120,9 @@ public sealed class SnakeOverlay : Overlay
             //get one rotated 90 degrees clockwise
             var offsetVecCW = new Vector2(connectorVec.Y, 0 - connectorVec.X);
 
-            //ditto counterclockwise
+            //and counterclockwise
             var offsetVecCCW = new Vector2(0 - connectorVec.Y, connectorVec.X);
 
-            /// add our two triangle verts verts.
             /// tri 1
             if (lastPtCW == null)
             {
@@ -142,6 +161,8 @@ public sealed class SnakeOverlay : Overlay
 
             if (lamia.UseTaperSystem)
             {
+                // TODO: move to component
+                // also can just be a float instead of a bool can't it?
                 radius *= 0.93f;
             }
 
@@ -159,6 +180,6 @@ public sealed class SnakeOverlay : Overlay
             verts.Add(new DrawVertexUV2D(destination, new Vector2(0.5f, 1f)));
         }
 
-        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, texture: tex, verts.ToArray().AsSpan(), Color.White);
+        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, texture: tex, verts.ToArray().AsSpan(), color);
     }
 }

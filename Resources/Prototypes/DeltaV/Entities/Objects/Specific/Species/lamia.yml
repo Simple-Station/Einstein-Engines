@@ -29,7 +29,6 @@
         - MobLayer
   - type: Transform
     anchored: false
-  - type: SegmentedEntitySegmentVisuals
   - type: Tag
     tags:
     - HideContextMenu
