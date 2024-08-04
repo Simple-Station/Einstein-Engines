@@ -1,5 +1,4 @@
 ﻿using Content.Server.Chat.Managers;
-using Content.Server.Mood;
 using Content.Shared.Alert;
 using Content.Shared.Chat;
 using Content.Shared.Mind;
