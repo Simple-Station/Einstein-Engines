@@ -59,4 +59,4 @@ trait-description-Foreigner =
 trait-name-Voracious = Voracious
 trait-description-Voracious =
     Nothing gets between you and your food.
-    You eat food and drink drinks twice as fast.
+    Your endless consumption of food and drinks is twice as fast.
