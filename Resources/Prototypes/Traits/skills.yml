@@ -38,5 +38,5 @@
   points: -1
   components:
     - type: FootstepVolumeModifier
-      sprintingModifier: -10
-      walkingModifier: -10
+      sprintModifier: -10
+      walkModifier: -10

@@ -267,8 +267,8 @@ namespace Content.Shared.Movement.Systems
                     if (_entities.TryGetComponent(uid, out FootstepVolumeModifierComponent? volumeModifier))
                     {
                         volume += mover.Sprinting
-                            ? volumeModifier.SprintingModifier
-                            : volumeModifier.WalkingModifier;
+                            ? volumeModifier.sprintModifier
+                            : volumeModifier.walkModifier;
                     }
 
                     var audioParams = sound.Params
