@@ -19,6 +19,9 @@
   id: Jobs
 
 - type: loadoutCategory
+  id: Mask
+
+- type: loadoutCategory
   id: Neck
 
 - type: loadoutCategory

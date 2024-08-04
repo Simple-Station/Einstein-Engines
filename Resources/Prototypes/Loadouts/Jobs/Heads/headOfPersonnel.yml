@@ -97,8 +97,25 @@
   cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
   items:
     - ClothingShoesBootsWinterHeadOfPersonel
+
+- type: loadout
+  id: LoadoutCommandHOPBedsheetIan
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - BedsheetIan

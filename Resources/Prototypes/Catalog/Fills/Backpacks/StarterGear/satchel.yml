@@ -2,10 +2,6 @@
   noSpawn: true
   parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvival
 
 - type: entity
   noSpawn: true
@@ -14,7 +10,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
       - id: Crowbar
       - id: Wrench
       - id: Screwdriver
@@ -38,7 +33,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalSecurity
       - id: Flash
 #      - id: MagazinePistol # DeltaV - Security doesn't get an extra mag
 
@@ -49,7 +43,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalSecurity
       - id: Flash
       - id: ForensicPad
       - id: ForensicScanner
@@ -67,10 +60,6 @@
   noSpawn: true
   parent: ClothingBackpackSatchelMedical
   id: ClothingBackpackSatchelMedicalFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalMedical
 
 - type: entity
   noSpawn: true
@@ -79,7 +68,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalMedical
       - id: EmergencyRollerBedSpawnFolded
 
 - type: entity
@@ -89,10 +77,10 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
       - id: Flash
       #- name: StationCharter
       #- name: TelescopicBaton
+
 - type: entity
   noSpawn: true
   parent: ClothingBackpackSatchelEngineering
@@ -100,7 +88,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalEngineering
       - id: Flash
       #- id: TelescopicBaton
 
@@ -111,7 +98,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
       - id: Flash
       #- id: TelescopicBaton
 
@@ -122,7 +108,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
       - id: Flash
       #- id: TelescopicBaton
 
@@ -133,7 +118,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalMedical
       - id: Flash
       #- id: TelescopicBaton
 
@@ -144,7 +128,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
       - id: Flash
       #- id: TelescopicBaton
 
@@ -155,7 +138,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalSecurity
       - id: Flash
       - id: MagazinePistol
 
@@ -163,46 +145,26 @@
   noSpawn: true
   parent: ClothingBackpackSatchelEngineering
   id: ClothingBackpackSatchelEngineeringFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalEngineering
 
 - type: entity
   noSpawn: true
   parent: ClothingBackpackSatchelAtmospherics
   id: ClothingBackpackSatchelAtmosphericsFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalEngineering
 
 - type: entity
   noSpawn: true
   parent: ClothingBackpackSatchelScience
   id: ClothingBackpackSatchelScienceFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvival
 
 - type: entity
   noSpawn: true
   parent: ClothingBackpackSatchelHydroponics
   id: ClothingBackpackSatchelHydroponicsFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvival
 
 - type: entity
   noSpawn: true
   parent: ClothingBackpackSatchelChemistry
   id: ClothingBackpackSatchelChemistryFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalMedical
 
 - type: entity
   noSpawn: true
@@ -211,7 +173,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
       - id: Bible
       - id: RubberStampChaplain
 
@@ -222,7 +183,6 @@
   components:
     - type: StorageFill
       contents:
-        - id: BoxSurvival
         - id: AcousticGuitarInstrument
         - id: SaxophoneInstrument
 
@@ -233,7 +193,6 @@
   components:
     - type: StorageFill
       contents:
-        - id: BoxSurvival
         - id: BookRandom
 
 - type: entity
@@ -243,7 +202,6 @@
   components:
     - type: StorageFill
       contents:
-      - id: BoxSurvival
       - id: BoxForensicPad
       - id: Lighter
       - id: CigPackBlack
@@ -253,19 +211,11 @@
   noSpawn: true
   parent: ClothingBackpackSatchelCargo
   id: ClothingBackpackSatchelCargoFilled
-  components:
-    - type: StorageFill
-      contents:
-        - id: BoxSurvival
 
 - type: entity
   noSpawn: true
   parent: ClothingBackpackSatchelSalvage
   id: ClothingBackpackSatchelSalvageFilled
-  components:
-    - type: StorageFill
-      contents:
-        - id: BoxSurvival
 
 - type: entity
   noSpawn: true
@@ -274,7 +224,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
       - id: RubberStampMime
 
 - type: entity
