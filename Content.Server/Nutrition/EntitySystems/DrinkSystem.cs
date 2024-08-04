@@ -27,6 +27,7 @@ using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Throwing;
+using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -279,9 +280,13 @@ public sealed class DrinkSystem : EntitySystem
 
         var flavors = _flavorProfile.GetLocalizedFlavorsMessage(user, drinkSolution);
 
+        var drinkDelay = drink.Delay;
+        if (TryComp<ConsumeDelayModifierComponent>(target, out var delayModifier))
+            drinkDelay *= delayModifier.DrinkDelayMultiplier;
+
         var doAfterEventArgs = new DoAfterArgs(EntityManager,
             user,
-            forceDrink ? drink.ForceFeedDelay : drink.Delay,
+            forceDrink ? drink.ForceFeedDelay : drinkDelay,
             new ConsumeDoAfterEvent(drink.Solution, flavors),
             eventTarget: item,
             target: target,

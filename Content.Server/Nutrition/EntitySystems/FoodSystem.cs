@@ -26,6 +26,7 @@ using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Stacks;
 using Content.Shared.Storage;
+using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -176,9 +177,13 @@ public sealed class FoodSystem : EntitySystem
             _adminLogger.Add(LogType.Ingestion, LogImpact.Low, $"{ToPrettyString(target):target} is eating {ToPrettyString(food):food} {SolutionContainerSystem.ToPrettyString(foodSolution)}");
         }
 
+        var foodDelay = foodComp.Delay;
+        if (TryComp<ConsumeDelayModifierComponent>(target, out var delayModifier))
+            foodDelay *= delayModifier.FoodDelayMultiplier;
+
         var doAfterArgs = new DoAfterArgs(EntityManager,
             user,
-            forceFeed ? foodComp.ForceFeedDelay : foodComp.Delay,
+            forceFeed ? foodComp.ForceFeedDelay : foodDelay,
             new ConsumeDoAfterEvent(foodComp.Solution, flavors),
             eventTarget: food,
             target: target,
