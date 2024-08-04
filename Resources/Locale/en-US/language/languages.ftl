@@ -76,5 +76,5 @@ language-Hissing-description = Hiss!
 language-Sign-name = Sign Language
 language-Sign-description = The standard Galactic sign language, used by those that are unable to speak Galactic Common or at all.
 
-language-Codetalk-name = Code Talk
-language-Codetalk-description = A language used by Syndicate agents to discreetly talk amongst themselves. Popular among command memebers.
+language-CodeTalk-name = Code Talk
+language-CodeTalk-description = A language used by Syndicate agents to discreetly talk amongst themselves. Popular among command memebers.
