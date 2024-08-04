@@ -418,7 +418,8 @@
     sprite: Clothing/OuterClothing/WinterCoats/coatsec.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSec
-  - type: Armor # EinsteinEngines - makes equivalent to vests
+  - type: Armor
+
     modifiers:
       coefficients:
         Blunt: 0.70
