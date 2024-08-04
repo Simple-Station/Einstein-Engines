@@ -31,3 +31,14 @@
       inverted: true
       species:
         - Felinid
+
+- type: trait
+  id: ParkourTraining
+  category: Physical
+  points: -3
+  components:
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 0.75
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 0.8
+      downedSpeedMultiplierMultiplier: 1.25

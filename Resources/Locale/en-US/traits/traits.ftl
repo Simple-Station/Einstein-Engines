@@ -55,3 +55,10 @@ trait-name-Foreigner = Foreigner
 trait-description-Foreigner =
     For one reason or another you do not speak this station's primary language.
     Instead, you have a translator issued to you that only you can use.
+
+trait-name-ParkourTraining = Parkour Training
+trait-description-ParkourTraining =
+    Whether as a hobby, lifestyle, or professional training, you are trained in the discipline of parkour.
+    You climb 25% faster over tables, railings, fences and other similar structures.
+    You crawl 25% faster.
+    You can lie down and stand up in succession 10% faster.
