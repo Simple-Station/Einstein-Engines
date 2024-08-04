@@ -87,15 +87,15 @@
   id: GrenadeFlashEffect
   categories: [ HideSpawnMenu ]
   components:
-    - type: PointLight
-      enabled: true
-      radius: 5
-      energy: 8
-      netsync: false
-    - type: LightFade
-      duration: 0.5
-    - type: TimedDespawn
-      lifetime: 0.5
+  - type: PointLight
+    enabled: true
+    radius: 5
+    energy: 8
+    netsync: false
+  - type: LightFade
+    duration: 0.5
+  - type: TimedDespawn
+    lifetime: 0.5
 
 #The explosive values for these are pretty god damn mediocre, but SS14's explosion system is hard to understand - this is a good enough approximation of how it was in SS13.
 #Ideally, there should be a weak radius around the bomb outside of its gibbing / spacing range capable of dealing fair damage to players / structures.
@@ -181,33 +181,33 @@
   - type: TwoStageTrigger
     triggerDelay: 10.45
     components:
-      - type: AmbientSound
-        enabled: true
-        volume: -5
-        range: 14
-        sound:
-          path: /Audio/Effects/Grenades/Supermatter/supermatter_loop.ogg
-      - type: GravityWell
-        maxRange: 8
-        baseRadialAcceleration: 145
-        baseTangentialAcceleration: 5
-        gravPulsePeriod: 0.01
-      - type: SingularityDistortion
-        intensity: 150
-        falloffPower: 1.5
-      - type: PointLight
-        enabled: true
-        color: "#ffaa44"
-        energy: 8
-        radius: 6
-        softness: 1
-        offset: "0, 0"
-      - type: SoundOnTrigger
-        sound:
-          path: /Audio/Effects/Grenades/Supermatter/supermatter_end.ogg
-          params:
-            volume: 5
-      - type: ExplodeOnTrigger
+    - type: AmbientSound
+      enabled: true
+      volume: -5
+      range: 14
+      sound:
+        path: /Audio/Effects/Grenades/Supermatter/supermatter_loop.ogg
+    - type: GravityWell
+      maxRange: 8
+      baseRadialAcceleration: 145
+      baseTangentialAcceleration: 5
+      gravPulsePeriod: 0.01
+    - type: SingularityDistortion
+      intensity: 150
+      falloffPower: 1.5
+    - type: PointLight
+      enabled: true
+      color: "#ffaa44"
+      energy: 8
+      radius: 6
+      softness: 1
+      offset: "0, 0"
+    - type: SoundOnTrigger
+      sound:
+        path: /Audio/Effects/Grenades/Supermatter/supermatter_end.ogg
+        params:
+          volume: 5
+    - type: ExplodeOnTrigger
 
 - type: entity
   name: whitehole grenade
@@ -228,33 +228,33 @@
   - type: TwoStageTrigger
     triggerDelay: 11.14
     components:
-      - type: AmbientSound
-        enabled: true
-        volume: -5
-        range: 14
-        sound:
-          path: /Audio/Effects/Grenades/Supermatter/whitehole_loop.ogg
-      - type: GravityWell
-        maxRange: 10
-        baseRadialAcceleration: -180
-        baseTangentialAcceleration: -5
-        gravPulsePeriod: 0.01
-      - type: SingularityDistortion
-        intensity: -200
-        falloffPower: 1.5
-      - type: PointLight
-        enabled: true
-        color: "#ffffff"
-        energy: 8
-        radius: 6
-        softness: 1
-        offset: "0, 0"
-      - type: SoundOnTrigger
-        sound:
-          path: /Audio/Effects/Grenades/Supermatter/supermatter_end.ogg
-          params:
-            volume: 15
-      - type: DeleteOnTrigger
+    - type: AmbientSound
+      enabled: true
+      volume: -5
+      range: 14
+      sound:
+        path: /Audio/Effects/Grenades/Supermatter/whitehole_loop.ogg
+    - type: GravityWell
+      maxRange: 10
+      baseRadialAcceleration: -180
+      baseTangentialAcceleration: -5
+      gravPulsePeriod: 0.01
+    - type: SingularityDistortion
+      intensity: -200
+      falloffPower: 1.5
+    - type: PointLight
+      enabled: true
+      color: "#ffffff"
+      energy: 8
+      radius: 6
+      softness: 1
+      offset: "0, 0"
+    - type: SoundOnTrigger
+      sound:
+        path: /Audio/Effects/Grenades/Supermatter/supermatter_end.ogg
+        params:
+          volume: 15
+    - type: DeleteOnTrigger
 
 - type: entity
   name: the nuclear option

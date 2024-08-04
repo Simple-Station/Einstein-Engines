@@ -57,7 +57,7 @@
     - Mouse
   - type: MeleeWeapon
     soundHit:
-        path: /Audio/Effects/bite.ogg
+      path: /Audio/Effects/bite.ogg
     angle: 0
     animation: WeaponArcBite
     damage:
@@ -447,7 +447,7 @@
     useKey: false
     selectedMode: SemiAuto
     availableModes:
-      - SemiAuto
+    - SemiAuto
     soundGunshot: /Audio/Weapons/Guns/Gunshots/pistol.ogg
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
@@ -913,17 +913,17 @@
   parent: FoodEgg
   suffix: Fertilized, Duck
   components:
-    - type: Timer
-    - type: TimedSpawner
-      prototypes:
-      - MobDuckMallard
-      - MobDuckWhite
-      - MobDuckBrown
-      intervalSeconds: 20
-      minimumEntitiesSpawned: 1
-      maximumEntitiesSpawned: 1
-    - type: TimedDespawn #delete the egg after the chicken spawns
-      lifetime: 21
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - MobDuckMallard
+    - MobDuckWhite
+    - MobDuckBrown
+    intervalSeconds: 20
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+  - type: TimedDespawn #delete the egg after the chicken spawns
+    lifetime: 21
 
 - type: entity
   name: butterfly
@@ -958,8 +958,8 @@
       10: Dead
   - type: RandomSprite
     available:
-      - enum.DamageStateVisualLayers.Base:
-          butterfly: Rainbow
+    - enum.DamageStateVisualLayers.Base:
+        butterfly: Rainbow
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1052,6 +1052,7 @@
   - type: GuideHelp
     guides:
     - Chef
+    - FoodRecipes
   - type: RandomBark
     barkType: cow
     barkMultiplier: 3
@@ -1352,9 +1353,9 @@
   - type: Sprite
     drawdepth: Mobs
     layers:
-      - map: ["enum.DamageStateVisualLayers.Base"]
-        state: kangaroo
-        sprite: Mobs/Animals/kangaroo.rsi
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: kangaroo
+      sprite: Mobs/Animals/kangaroo.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -1577,7 +1578,7 @@
   - type: FactionException
   - type: NpcFactionMember
     factions:
-      - Passive
+    - Passive
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -1669,7 +1670,7 @@
   parent: MobBaseSyndicateMonkey
   suffix: syndicate agent
   components:
-    # make the player a traitor once its taken
+  # make the player a traitor once its taken
   - type: Absorbable
   - type: AutoTraitor
     profile: TraitorReinforcement
@@ -1824,7 +1825,7 @@
   id: MobGuidebookMonkey
   description: A hopefully helpful monkey whose only purpose in life is for you to click on. Does this count as having a monkey give you a tutorial?
   components:
-    - type: GuidebookControlsTest
+  - type: GuidebookControlsTest
 
 - type: entity
   name: mouse
@@ -1871,7 +1872,7 @@
     - HEAD
   - type: NpcFactionMember
     factions:
-      - Mouse
+    - Mouse
   - type: HTN
     rootTask:
       task: MouseCompound
@@ -2504,7 +2505,7 @@
       behaviors:
       - !type:ExplodeBehavior
 
-  # I have included a snake_hiss.ogg sound file so if you want to use that be my guest
+      # I have included a snake_hiss.ogg sound file so if you want to use that be my guest
 - type: entity
   name: snake
   parent: SimpleMobBase
@@ -2639,12 +2640,12 @@
   - type: Tool # Open door from xeno.yml.
     speedModifier: 1.5
     qualities:
-      - Prying
+    - Prying
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Prying
     pryPowered: !type:Bool
-        true
+      true
     force: !type:Bool
       true
     useSound:
@@ -2680,7 +2681,7 @@
   - type: Absorbable
   - type: NpcFactionMember
     factions:
-      - Xeno
+    - Xeno
   - type: InputMover
   - type: MobMover
   - type: HTN
@@ -2749,46 +2750,46 @@
   id: MobClownSpider
   description: Combines the two most terrifying things in existence, spiders and clowns.
   components:
-    - type: Absorbable
-    - type: Sprite
-      drawdepth: Mobs
-      layers:
-      - map: ["enum.DamageStateVisualLayers.Base"]
-        state: clown
-        sprite: Mobs/Animals/clownspider.rsi
-    - type: Butcherable
-      spawned:
-        - id: MaterialBananium1
-          amount: 1
-    - type: DamageStateVisuals
-      states:
-        Alive:
-          Base: clown
-        Dead:
-          Base: dead
-    - type: MobThresholds
-      thresholds:
-        0: Alive
-        180: Dead
-    - type: Spider
-      webPrototype: SpiderWebClown
-    - type: MeleeWeapon
-      altDisarm: false
-      angle: 0
-      animation: WeaponArcBite
-      soundHit:
-        path: /Audio/Effects/bite.ogg
-      damage:
-        types:
-          Piercing: 8
-    - type: FootstepModifier
-      footstepSoundCollection:
-        collection: FootstepClownFast
-    - type: Speech
-      speechVerb: Cluwne
-    - type: Bloodstream
-      bloodMaxVolume: 150
-      bloodReagent: Laughter
+  - type: Absorbable
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: clown
+      sprite: Mobs/Animals/clownspider.rsi
+  - type: Butcherable
+    spawned:
+    - id: MaterialBananium1
+      amount: 1
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: clown
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      180: Dead
+  - type: Spider
+    webPrototype: SpiderWebClown
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 8
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepClownFast
+  - type: Speech
+    speechVerb: Cluwne
+  - type: Bloodstream
+    bloodMaxVolume: 150
+    bloodReagent: Laughter
 
 - type: entity
   name: wizard spider
@@ -3138,7 +3139,7 @@
         Base: narsian_dead
   - type: MeleeWeapon
     soundHit:
-        path: /Audio/Effects/bite.ogg
+      path: /Audio/Effects/bite.ogg
     angle: 0
     animation: WeaponArcBite
     damage:
@@ -3358,7 +3359,7 @@
         Structural: 15
   - type: LanguageKnowledge
     speaks:
-      - Cat
+    - Cat
     understands:
     - Cat
     - TauCetiBasic
@@ -3385,7 +3386,7 @@
     coldDamageThreshold: 0
   - type: Tag
     tags:
-      - DoorBumpOpener
+    - DoorBumpOpener
   - type: MovementAlwaysTouching
   - type: PressureImmunity
   - type: StepTriggerImmune
@@ -3731,7 +3732,7 @@
   - type: CombatMode
   - type: MeleeWeapon
     soundHit:
-        path: /Audio/Effects/bite.ogg
+      path: /Audio/Effects/bite.ogg
     angle: 0
     animation: WeaponArcBite
     damage:
