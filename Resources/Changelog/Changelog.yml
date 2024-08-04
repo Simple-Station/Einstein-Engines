@@ -4860,3 +4860,19 @@ Entries:
         anything other than grey. 
   id: 6208
   time: '2024-08-04T00:23:53.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        SweatMAX, "hot foods", Mars Mart, and Nippon-tan vendors have all been
+        added to vendor spawners. 
+  id: 6209
+  time: '2024-08-04T06:26:34.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Voracious trait, a 1-point trait that makes you eat and drink
+        twice as fast.
+  id: 6210
+  time: '2024-08-04T09:30:31.0000000+00:00'
