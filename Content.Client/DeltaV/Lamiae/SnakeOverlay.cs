@@ -78,7 +78,7 @@ public sealed class SnakeOverlay : Overlay
     // This is where we do the actual drawing.
     private void DrawLamia(DrawingHandleWorld handle, EntityUid uid, SegmentedEntityComponent lamia, TransformComponent xform)
     {
-        List<DrawVertexUV2DColor> verts = new List<DrawVertexUV2DColor>();
+        List<DrawVertexUV2D> verts = new List<DrawVertexUV2D>();
 
         float radius = 0.3f;
 
@@ -107,38 +107,38 @@ public sealed class SnakeOverlay : Overlay
             /// tri 1
             if (lastPtCW == null)
             {
-                verts.Add(new DrawVertexUV2DColor(origin + offsetVecCW * radius, Vector2.Zero, Color.White));
+                verts.Add(new DrawVertexUV2D(origin + offsetVecCW * radius, Vector2.Zero));
             }
             else
             {
-                verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCW, Vector2.Zero, Color.White));
+                verts.Add(new DrawVertexUV2D((Vector2) lastPtCW, Vector2.Zero));
             }
 
             if (lastPtCCW == null)
             {
-                verts.Add(new DrawVertexUV2DColor(origin + offsetVecCCW * radius, new Vector2(1, 0), Color.White));
+                verts.Add(new DrawVertexUV2D(origin + offsetVecCCW * radius, new Vector2(1, 0)));
             }
             else
             {
-                verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCCW, new Vector2(1, 0), Color.White));
+                verts.Add(new DrawVertexUV2D((Vector2) lastPtCCW, new Vector2(1, 0)));
             }
 
-            verts.Add(new DrawVertexUV2DColor(destination + offsetVecCW * radius, new Vector2(0, 1), Color.White));
+            verts.Add(new DrawVertexUV2D(destination + offsetVecCW * radius, new Vector2(0, 1)));
 
             // tri 2
             if (lastPtCCW == null)
             {
-                verts.Add(new DrawVertexUV2DColor(origin + offsetVecCCW * radius, new Vector2(1, 0), Color.White));
+                verts.Add(new DrawVertexUV2D(origin + offsetVecCCW * radius, new Vector2(1, 0)));
             }
             else
             {
-                verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCCW, new Vector2(1, 0), Color.White));
+                verts.Add(new DrawVertexUV2D((Vector2) lastPtCCW, new Vector2(1, 0)));
             }
 
             lastPtCW = destination + offsetVecCW * radius;
-            verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCW, new Vector2(0, 1), Color.White));
+            verts.Add(new DrawVertexUV2D((Vector2) lastPtCW, new Vector2(0, 1)));
             lastPtCCW = destination + offsetVecCCW * radius;
-            verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCCW, new Vector2(1, 1), Color.White));
+            verts.Add(new DrawVertexUV2D((Vector2) lastPtCCW, new Vector2(1, 1)));
 
             if (lamia.UseTaperSystem)
             {
@@ -151,14 +151,14 @@ public sealed class SnakeOverlay : Overlay
         // draw tail (1 tri)
         if (lastPtCW != null && lastPtCCW != null)
         {
-            verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCW, new Vector2(0, 0), Color.White));
-            verts.Add(new DrawVertexUV2DColor((Vector2) lastPtCCW, new Vector2(1, 0), Color.White));
+            verts.Add(new DrawVertexUV2D((Vector2) lastPtCW, new Vector2(0, 0)));
+            verts.Add(new DrawVertexUV2D((Vector2) lastPtCCW, new Vector2(1, 0)));
 
             var destination = _transform.GetWorldPosition(lamia.Segments.Last());
 
-            verts.Add(new DrawVertexUV2DColor(destination, new Vector2(0.5f, 1f), Color.White));
+            verts.Add(new DrawVertexUV2D(destination, new Vector2(0.5f, 1f)));
         }
 
-        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, texture: tex, verts.ToArray().AsSpan());
+        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, texture: tex, verts.ToArray().AsSpan(), Color.White);
     }
 }
