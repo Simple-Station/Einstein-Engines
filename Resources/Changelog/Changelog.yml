@@ -4877,3 +4877,14 @@ Entries:
         twice as fast.
   id: 6210
   time: '2024-08-04T09:30:31.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Zombie events have had their Anti-Stalling mechanic improved. Dead
+        (Player) Zombies, Infected Players, and Initial Infected are all counted
+        as zombies for the purpose of determine if the shuttle should be called.
+        Additionally, any player who leaves the station is no longer counted as
+        a healthy crewman for the automatic shuttle call.
+  id: 6211
+  time: '2024-08-04T14:14:12.0000000+00:00'
