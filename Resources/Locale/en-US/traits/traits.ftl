@@ -60,8 +60,7 @@ trait-name-Voracious = Voracious
 trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
-    
+
 trait-name-LightStep = Light Step
 trait-description-LightStep =
-    You move with a quiet step, making it easier for you to elude detection.
-    Your footsteps are roughly 50% quieter.
+    You move with a gentle step, making your footsteps quieter.
