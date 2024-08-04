@@ -31,3 +31,12 @@
       inverted: true
       species:
         - Felinid
+
+- type: trait
+  id: Voracious
+  category: Physical
+  points: -1
+  components:
+    - type: ConsumeDelayModifier
+      foodDelayMultiplier: 0.5
+      drinkDelayMultiplier: 0.5
