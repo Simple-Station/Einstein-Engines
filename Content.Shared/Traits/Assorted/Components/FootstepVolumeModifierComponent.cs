@@ -12,11 +12,11 @@ public sealed partial class FootstepVolumeModifierComponent : Component
     ///     What to add to the volume of sprinting, in terms of decibels.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float SprintModifier { get; set; } = 0f;
+    public float SprintVolumeModifier { get; set; } = 0f;
 
     /// <summary>
     ///     What to add to the volume of walking, in terms of decibels.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float WalkModifier { get; set; } = 0f;
+    public float WalkVolumeModifier { get; set; } = 0f;
 }
