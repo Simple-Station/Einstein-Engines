@@ -75,5 +75,5 @@ public sealed partial class ProjectileComponent : Component
     public bool DamagedEntity;
 
     [DataField]
-    public float? bypassResistance;
+    public float bypassResistance = 1;
 }
