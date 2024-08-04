@@ -162,7 +162,7 @@ public sealed class EventManagerSystem : EntitySystem
 
     private bool CanRun(EntityPrototype prototype, StationEventComponent stationEvent, int playerCount, TimeSpan currentTime)
     {
-        if (GameTicker.IsGameRuleActive(prototype.ID))
+        if (GameTicker.IsGameRuleAdded(prototype.ID))
             return false;
 
         if (stationEvent.MaxOccurrences.HasValue && GetOccurrences(prototype) >= stationEvent.MaxOccurrences.Value)
