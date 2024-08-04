@@ -89,26 +89,6 @@
   group: market
 
 - type: cargoProduct
-  id: FunPlushies
-  icon:
-    sprite: Objects/Fun/toys.rsi
-    state: plushie_h
-  product: CrateFunPlushie
-  cost: 1000
-  category: cargoproduct-category-name-fun
-  group: market
-
-- type: cargoProduct
-  id: FunLizardPlushies
-  icon:
-    sprite: Objects/Fun/toys.rsi
-    state: plushie_lizard
-  product: CrateFunLizardPlushieBulk
-  cost: 500
-  category: cargoproduct-category-name-fun
-  group: market
-
-- type: cargoProduct
   id: FunBoardGames
   icon:
     sprite: Objects/Fun/dice.rsi
