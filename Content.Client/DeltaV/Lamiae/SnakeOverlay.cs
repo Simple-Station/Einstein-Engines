@@ -95,21 +95,23 @@ public sealed class SnakeOverlay : Overlay
     // This is where we do the actual drawing.
     private void DrawLamia(DrawingHandleWorld handle, SegmentedEntityComponent lamia, Color color)
     {
+        // We're going to store all our verticies in here and then draw them
         List<DrawVertexUV2D> verts = new List<DrawVertexUV2D>();
 
-        // TODO: move to component
-        float radius = 0.3f;
+        // Radius of the initial segment
+        float radius = lamia.InitialRadius;
 
+        // We're storing the left and right verticies of the last segment so we can start drawing from there without gaps
         Vector2? lastPtCW = null;
         Vector2? lastPtCCW = null;
 
-        // TODO: move to component
-        var tex = _resourceCache.GetTexture("/Textures/Nyanotrasen/Mobs/Species/lamia.rsi/segment.png");
+        var tex = _resourceCache.GetTexture(lamia.TexturePath);
 
         int i = 1;
-        // so, for each segment we connect we need 4 verts...
+        // do each segment except the last one normally
         while (i < lamia.Segments.Count - 1)
         {
+            // get centerpoints of last segment and this one
             var origin = _transform.GetWorldPosition(lamia.Segments[i - 1]);
             var destination = _transform.GetWorldPosition(lamia.Segments[i]);
 
@@ -123,7 +125,7 @@ public sealed class SnakeOverlay : Overlay
             //and counterclockwise
             var offsetVecCCW = new Vector2(0 - connectorVec.Y, connectorVec.X);
 
-            /// tri 1
+            /// tri 1: line across first segment and corner of second
             if (lastPtCW == null)
             {
                 verts.Add(new DrawVertexUV2D(origin + offsetVecCW * radius, Vector2.Zero));
@@ -144,7 +146,7 @@ public sealed class SnakeOverlay : Overlay
 
             verts.Add(new DrawVertexUV2D(destination + offsetVecCW * radius, new Vector2(0, 1)));
 
-            // tri 2
+            // tri 2: line across second segment and corner of first
             if (lastPtCCW == null)
             {
                 verts.Add(new DrawVertexUV2D(origin + offsetVecCCW * radius, new Vector2(1, 0)));
@@ -159,12 +161,8 @@ public sealed class SnakeOverlay : Overlay
             lastPtCCW = destination + offsetVecCCW * radius;
             verts.Add(new DrawVertexUV2D((Vector2) lastPtCCW, new Vector2(1, 1)));
 
-            if (lamia.UseTaperSystem)
-            {
-                // TODO: move to component
-                // also can just be a float instead of a bool can't it?
-                radius *= 0.93f;
-            }
+            // slim down a bit for next segment
+            radius *= lamia.SlimFactor;
 
             i++;
         }
@@ -180,6 +178,7 @@ public sealed class SnakeOverlay : Overlay
             verts.Add(new DrawVertexUV2D(destination, new Vector2(0.5f, 1f)));
         }
 
+        // Draw all of the triangles we just pit in at once
         handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, texture: tex, verts.ToArray().AsSpan(), color);
     }
 }

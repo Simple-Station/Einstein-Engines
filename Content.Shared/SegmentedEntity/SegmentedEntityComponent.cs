@@ -6,6 +6,7 @@
 
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.SegmentedEntity
 {
@@ -28,6 +29,18 @@ namespace Content.Shared.SegmentedEntity
         public int NumberOfSegments = 18;
 
         /// <summary>
+        /// How wide the initial segment should be.
+        /// </summary>
+        [DataField("initialRadius")]
+        public float InitialRadius = 0.3f;
+
+        /// <summary>
+        /// Texture of the segment.
+        /// </summary>
+        [DataField("texturePath", required: true)]
+        public string TexturePath;
+
+        /// <summary>
         /// If UseTaperSystem is true, this constant represents the rate at which a segmented entity will taper towards the tip. Tapering is on a logarithmic scale, and will asymptotically approach 0.
         /// </summary>
         [DataField("offsetConstant")]
@@ -42,11 +55,17 @@ namespace Content.Shared.SegmentedEntity
         /// <summary>
         /// Represents the segment prototype to be spawned
         /// </summary>
-        [DataField("SegmentId")]
+        [DataField("segmentId")]
         public string SegmentId = "LamiaSegment";
 
         /// <summary>
-        /// Toggles the tapering system on and off. When false, segmented entities will have a constant width.
+        /// How much to slim each successive segment.
+        /// </summary>
+        [DataField("slimFactor")]
+        public float SlimFactor = 0.93f;
+
+        /// <summary>
+        /// Set to 1f for constant width
         /// </summary>
         [DataField("useTaperSystem")]
         public bool UseTaperSystem = true;
