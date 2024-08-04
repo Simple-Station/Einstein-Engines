@@ -17,7 +17,6 @@ using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
 using Robust.Server.Player;
 using Robust.Shared.Player;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Content.Server.Mood;
 
@@ -83,15 +82,15 @@ public sealed class MoodSystem : EntitySystem
         if (!_prototypeManager.TryIndex<MoodEffectPrototype>(args.EffectId, out var prototype))
             return;
 
-        ApplyEffect(uid, component, prototype);
+        var ev = new OnMoodEffect(uid, args.EffectId, args.EffectModifier, args.EffectOffset);
+        RaiseLocalEvent(uid, ref ev);
+
+        ApplyEffect(uid, component, prototype, ev.EffectModifier, ev.EffectOffset);
     }
 
-    private void ApplyEffect(EntityUid uid, MoodComponent component, MoodEffectPrototype prototype)
+    private void ApplyEffect(EntityUid uid, MoodComponent component, MoodEffectPrototype prototype, float eventModifier = 1, float eventOffset = 0)
     {
         var amount = component.CurrentMoodLevel;
-
-        if (!component.MoodChangeValues.TryGetValue(prototype.MoodChange, out var value))
-            return;
 
         //Apply categorised effect
         if (prototype.Category != null)
@@ -103,22 +102,19 @@ public sealed class MoodSystem : EntitySystem
 
                 if (prototype.ID != oldPrototype.ID)
                 {
-                    if (!component.MoodChangeValues.TryGetValue(oldPrototype.MoodChange, out var oldValue))
-                        return;
-
                     SendEffectText(uid, prototype);
-                    amount += (oldPrototype.PositiveEffect ? -oldValue : oldValue) + (prototype.PositiveEffect ? value : -value);
+                    amount += prototype.MoodChange - oldPrototype.MoodChange;
                     component.CategorisedEffects[prototype.Category] = prototype.ID;
                 }
             }
             else
             {
                 component.CategorisedEffects.Add(prototype.Category, prototype.ID);
-                amount += prototype.PositiveEffect ? value : -value;
+                amount += prototype.MoodChange;
             }
 
             if (prototype.Timeout != 0)
-                Timer.Spawn(TimeSpan.FromMinutes(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
+                Timer.Spawn(TimeSpan.FromSeconds(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
         }
         //Apply uncategorised effect
         else
@@ -126,14 +122,19 @@ public sealed class MoodSystem : EntitySystem
             if (component.UncategorisedEffects.TryGetValue(prototype.ID, out _))
                 return;
 
-            var effectValue = prototype.PositiveEffect ? value : -value;
+            var moodChange = prototype.MoodChange * eventModifier + eventOffset;
+            if (moodChange == 0)
+                return;
 
             SendEffectText(uid, prototype);
-            component.UncategorisedEffects.Add(prototype.ID, effectValue);
-            amount += effectValue;
+            component.UncategorisedEffects.Add(prototype.ID, moodChange);
+            amount += moodChange;
+            SetMood(uid, moodChange, component);
 
             if (prototype.Timeout != 0)
-                Timer.Spawn(TimeSpan.FromMinutes(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID));
+                Timer.Spawn(TimeSpan.FromSeconds(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID));
+
+            return;
         }
 
         SetMood(uid, amount, component);
@@ -142,7 +143,7 @@ public sealed class MoodSystem : EntitySystem
     private void SendEffectText(EntityUid uid, MoodEffectPrototype prototype)
     {
         if (!prototype.Hidden)
-            _popup.PopupEntity(prototype.Description, uid, uid, prototype.PositiveEffect ? PopupType.Medium : PopupType.MediumCaution);
+            _popup.PopupEntity(prototype.Description, uid, uid, (prototype.MoodChange > 0) ? PopupType.Medium : PopupType.MediumCaution);
     }
 
     private void RemoveTimedOutEffect(EntityUid uid, string prototypeId, string? category = null)
@@ -157,18 +158,17 @@ public sealed class MoodSystem : EntitySystem
             if (!comp.UncategorisedEffects.TryGetValue(prototypeId, out var value))
                 return;
 
-            amount += -value;
+            amount -= value;
             comp.UncategorisedEffects.Remove(prototypeId);
         }
         else
         {
             if (!comp.CategorisedEffects.TryGetValue(category, out var currentProtoId)
                 || currentProtoId != prototypeId
-                || !_prototypeManager.TryIndex<MoodEffectPrototype>(currentProtoId, out var currentProto)
-                || !comp.MoodChangeValues.TryGetValue(currentProto.MoodChange, out var value))
+                || !_prototypeManager.TryIndex<MoodEffectPrototype>(currentProtoId, out var currentProto))
                 return;
 
-            amount += currentProto.PositiveEffect ? -value : value;
+            amount -= currentProto.MoodChange;
             comp.CategorisedEffects.Remove(category);
         }
 
@@ -190,11 +190,10 @@ public sealed class MoodSystem : EntitySystem
 
         foreach (var (_, protoId) in component.CategorisedEffects)
         {
-            if (!_prototypeManager.TryIndex<MoodEffectPrototype>(protoId, out var prototype)
-                || !component.MoodChangeValues.TryGetValue(prototype.MoodChange, out var value))
+            if (!_prototypeManager.TryIndex<MoodEffectPrototype>(protoId, out var prototype))
                 continue;
 
-            amount += prototype.PositiveEffect ? value : -value;
+            amount += prototype.MoodChange;
         }
 
         foreach (var (_, value) in component.UncategorisedEffects)
@@ -221,6 +220,7 @@ public sealed class MoodSystem : EntitySystem
             || component.CurrentMoodLevel == amount)
             return;
 
+        var neutral = component.MoodThresholds[MoodThreshold.Neutral];
         var ev = new OnSetMoodEvent(uid, amount);
         RaiseLocalEvent(uid, ref ev);
         if (ev.Cancelled)
@@ -234,11 +234,11 @@ public sealed class MoodSystem : EntitySystem
         if (!force)
         {
             component.CurrentMoodLevel = Math.Clamp(amount,
-                component.MoodThresholds[MoodThreshold.Dead] + 0.1f,
+                component.MoodThresholds[MoodThreshold.Dead] + neutral,
                 component.MoodThresholds[MoodThreshold.Perfect]);
         }
         else
-            component.CurrentMoodLevel = amount;
+            component.CurrentMoodLevel = amount + neutral;
 
         if (TryComp<NetMoodComponent>(uid, out var mood))
         {
@@ -410,7 +410,7 @@ public sealed partial class ShowMoodEffects : IAlertClick
 
         var chatManager = IoCManager.Resolve<IChatManager>();
 
-        var color = proto.PositiveEffect ? "#008000" : "#BA0000";
+        var color = (proto.MoodChange > 0) ? "#008000" : "#BA0000";
         var msg = $"[font size=10][color={color}]{proto.Description}[/color][/font]";
 
         chatManager.ChatMessageToOne(ChatChannel.Emotes, msg, msg, EntityUid.Invalid, false,

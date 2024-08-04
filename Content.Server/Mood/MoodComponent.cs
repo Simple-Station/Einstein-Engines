@@ -1,6 +1,5 @@
 ﻿using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
-using Content.Shared.Mood;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 
 namespace Content.Server.Mood;
@@ -67,17 +66,6 @@ public sealed partial class MoodComponent : Component
         { MoodThreshold.Exceptional, AlertType.Exceptional },
         { MoodThreshold.Perfect, AlertType.Perfect },
         { MoodThreshold.Insane, AlertType.Insane }
-    };
-
-    [DataField(customTypeSerializer: typeof(DictionarySerializer<Enum, float>))]
-    public Dictionary<Enum, float> MoodChangeValues = new()
-    {
-        { MoodChangeLevel.None , 0f },
-        { MoodChangeLevel.Small , 3f },
-        { MoodChangeLevel.Medium , 7f },
-        { MoodChangeLevel.Big , 10f },
-        { MoodChangeLevel.Huge , 13f },
-        { MoodChangeLevel.Large , 20f }
     };
 
     /// <summary>

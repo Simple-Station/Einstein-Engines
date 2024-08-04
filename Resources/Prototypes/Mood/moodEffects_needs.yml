@@ -2,86 +2,74 @@
 - type: moodEffect
   id: HungerOverfed
   description: "I so much, I feel as though I'm ready to burst!"
-  moodChange: enum.MoodChangeLevel.Big
-  positiveEffect: false
+  moodChange: -10
   category: "Hunger"
 
 - type: moodEffect
   id: HungerOkay
   description: "I am feeling full."
-  moodChange: enum.MoodChangeLevel.Medium
-  positiveEffect: true
+  moodChange: 7
   category: "Hunger"
 
 - type: moodEffect
   id: HungerPeckish
   description: "I could go for a snack right about now."
-  moodChange: enum.MoodChangeLevel.Small
-  positiveEffect: true
+  moodChange: -3
   category: "Hunger"
 
 - type: moodEffect
   id: HungerStarving
   description: "I NEED FOOD!"
-  moodChange: enum.MoodChangeLevel.Medium
-  positiveEffect: false
+  moodChange: -7
   category: "Hunger"
 
 #Thirst
 - type: moodEffect
   id: ThirstOverHydrated
   description: "I feel dizzy after drinking too much."
-  moodChange: enum.MoodChangeLevel.Small
-  positiveEffect: false
+  moodChange: -3
   category: "Thirst"
 
 - type: moodEffect
   id: ThirstOkay
   description: "I'm feeling refreshed."
-  moodChange: enum.MoodChangeLevel.Medium
-  positiveEffect: true
+  moodChange: 7
   category: "Thirst"
 
 - type: moodEffect
   id: ThirstThirsty
   description: "My lips are a little dry."
-  moodChange: enum.MoodChangeLevel.Small
-  positiveEffect: false
+  moodChange: -3
   category: "Thirst"
 
 - type: moodEffect
   id: ThirstParched
   description: "I NEED WATER!"
-  moodChange: enum.MoodChangeLevel.Medium
-  positiveEffect: false
+  moodChange: -7
   category: "Thirst"
 
 #Health
 - type: moodEffect
   id: HealthNoDamage
   description: "I'm in no pain."
-  moodChange: enum.MoodChangeLevel.None
-  positiveEffect: true
+  moodChange: 0
   hidden: true
   category: "Health"
 
 - type: moodEffect
   id: HealthLightDamage
   description: "It's just a scratch, but it hurts nonetheless"
-  moodChange: enum.MoodChangeLevel.Small
-  positiveEffect: false
+  moodChange: -3
   category: "Health"
 
 - type: moodEffect
   id: HealthSevereDamage
   description: "The pain is almost unbearable!"
-  moodChange: enum.MoodChangeLevel.Medium
-  positiveEffect: false
+  moodChange: -7
   category: "Health"
 
 - type: moodEffect
   id: HealthHeavyDamage
   description: "Agony gnaws at my soul!"
-  moodChange: enum.MoodChangeLevel.Large
-  positiveEffect: false
+  moodChange: -20
   category: "Health"

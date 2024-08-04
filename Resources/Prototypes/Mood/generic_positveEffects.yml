@@ -1,58 +1,49 @@
 ﻿- type: moodEffect
   id: BeingHugged
   description: "Hugs are great."
-  moodChange: enum.MoodChangeLevel.Small
-  positiveEffect: true
-  timeout: 2
+  moodChange: 3
+  timeout: 120
 
 - type: moodEffect
   id: ArcadePlay
   description: "I had fun playing an interesting arcade game."
-  moodChange: enum.MoodChangeLevel.Small
-  positiveEffect: true
-  timeout: 8
+  moodChange: 3
+  timeout: 480
 
 - type: moodEffect
   id: GotBlessed
   description: "I was blessed."
-  moodChange: enum.MoodChangeLevel.Small
-  positiveEffect: true
-  timeout: 8
+  moodChange: 3
+  timeout: 480
 
 - type: moodEffect
   id: PetAnimal
   description: "Animals are so cute! I can't stop petting them!"
-  moodChange: enum.MoodChangeLevel.Small
-  positiveEffect: true
-  timeout: 5
+  moodChange: 3
+  timeout: 300
 
 - type: moodEffect
   id: SavedLife
   description: "It's so nice to save someone's life."
-  moodChange: enum.MoodChangeLevel.Medium
-  positiveEffect: true
-  timeout: 8
+  moodChange: 7
+  timeout: 480
 
 - type: moodEffect
   id: TraitorFocused #Used for traitors to boost their goals completion.
   description: "I have a goal, and I will achieve it no matter what!"
-  moodChange: enum.MoodChangeLevel.Medium
-  positiveEffect: true
+  moodChange: 7
 
 - type: moodEffect
   id: RevolutionFocused #Used for revolution
   description: "VIVA LA REVOLUTION!!!"
-  moodChange: enum.MoodChangeLevel.Medium
-  positiveEffect: true
+  moodChange: 7
 
 - type: moodEffect
   id: CultFocused
   description: "Dark Gods grant me strength!"
-  moodChange: enum.MoodChangeLevel.Big
-  positiveEffect: true
+  moodChange: 10
 
 - type: moodEffect
   id: TraitSanguine
   description: "I have nothing to worry about. I'm sure everything will turn out well in the end!"
-  moodChange: enum.MoodChangeLevel.Large
-  positiveEffect: true
+  moodChange: 15
