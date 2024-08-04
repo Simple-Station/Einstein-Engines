@@ -51,7 +51,7 @@
   positiveEffect: false
 
 - type: moodEffect
-  id: TraitDepression
+  id: TraitSaturnine
   description: "I am haunted by despair..."
   moodChange: enum.MoodChangeLevel.Large
   positiveEffect: false

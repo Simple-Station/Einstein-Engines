@@ -40,7 +40,7 @@
     - type: NormalVision
 
 - type: trait
-  id: Depression
+  id: Saturnine
   category: Mental
   points: 2
   requirements:
@@ -55,7 +55,7 @@
         - Sanguine
   components:
     - type: MoodModifyTrait
-      moodId: TraitDepression
+      moodId: TraitSaturnine
 
 - type: trait
   id: Sanguine
@@ -70,7 +70,7 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Depression
+        - Saturnine
   components:
     - type: MoodModifyTrait
       moodId: TraitSanguine

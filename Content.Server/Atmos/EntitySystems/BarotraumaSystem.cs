@@ -238,6 +238,7 @@ namespace Content.Server.Atmos.EntitySystems
                     if (!barotrauma.TakingDamage)
                     {
                         barotrauma.TakingDamage = true;
+                        RaiseLocalEvent(uid, new MoodEffectEvent("MobLowPressure"));
                         _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} started taking low pressure damage");
                     }
 
@@ -262,23 +263,20 @@ namespace Content.Server.Atmos.EntitySystems
                     if (!barotrauma.TakingDamage)
                     {
                         barotrauma.TakingDamage = true;
+                        RaiseLocalEvent(uid, new MoodEffectEvent("MobHighPressure"));
                         _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} started taking high pressure damage");
                     }
                     // Set correct alert.
                     switch (pressure)
                     {
                         case <= Atmospherics.WarningLowPressure:
-                            RaiseLocalEvent(uid, new MoodEffectEvent("MobLowPressure"));
                             _alertsSystem.ShowAlert(uid, AlertType.LowPressure, 1);
                             break;
                         case >= Atmospherics.WarningHighPressure:
-                            RaiseLocalEvent(uid, new MoodEffectEvent("MobHighPressure"));
                             _alertsSystem.ShowAlert(uid, AlertType.HighPressure, 1);
                             break;
                         default:
                             _alertsSystem.ClearAlertCategory(uid, AlertCategory.Pressure);
-                            RaiseLocalEvent(uid, new MoodRemoveEffectEvent("MobLowPressure"));
-                            RaiseLocalEvent(uid, new MoodRemoveEffectEvent("MobHighPressure"));
                             break;
                     }
                 }

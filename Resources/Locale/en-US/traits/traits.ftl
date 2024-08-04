@@ -56,11 +56,14 @@ trait-description-Foreigner =
     For one reason or another you do not speak this station's primary language.
     Instead, you have a translator issued to you that only you can use.
 
-trait-name-Depression = Saturnine
-trait-description-Depression = You suffer from chronic Depression, causing a permanent large mood debuff.
+trait-name-Saturnine = Saturnine
+trait-description-Saturnine = You are naturally dour and morose. Your mood is permanently decreased by a large amount.
 
 trait-name-Sanguine = Sanguine
 trait-description-Sanguine = You are naturally upbeat and cheerful! Your mood is permanently increased by a large amount.
+
+trait-name-Mercurial = Mercurial
+trait-description-Mercurial = Your mood is unpredictable, often swinging wildly in either direction regardless of circumstance.
 
 trait-name-Voracious = Voracious
 trait-description-Voracious =
