@@ -1,6 +1,6 @@
 - type: antag
   id: SynthesisSpecialist
-  name: roles-antag-syndicate-synthesis-name
+  name: roles-antag-syndicate-sythesis-name
   objective: roles-antag-syndicate-synthesis-objective
   antagonist: true # making poisions and shit on demand is evil
   requirements:
@@ -15,7 +15,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitSyndieFormal
     jumpskirt: ClothingUniformJumpskirtSyndieFormalDress
-    back: ClothingBackpackChemistry
+    back: ClothingBackpackChemistryFilled
     belt: ChemBag
     eyes: ClothingEyesGlassesChemical
     gloves: ClothingHandsGlovesChemist
