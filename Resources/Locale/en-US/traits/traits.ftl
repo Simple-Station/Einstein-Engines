@@ -61,3 +61,8 @@ trait-description-Depression = You suffer from chronic Depression, causing a per
 
 trait-name-Sanguine = Sanguine
 trait-description-Sanguine = You are naturally upbeat and cheerful! Your mood is permanently increased by a large amount.
+
+trait-name-Voracious = Voracious
+trait-description-Voracious =
+    Nothing gets between you and your food.
+    Your endless consumption of food and drinks is twice as fast.
