@@ -88,22 +88,10 @@ public sealed partial class GeigerComponent : Component
     public bool LocalSoundOnly = false;
 
     /// <summary>
-    ///     Used to control how loudly the geiger counter ticks.
+    ///     Used for all geiger counter audio controls, allowing entities to override default audio parameters.
     /// </summary>
     [DataField]
-    public float VolumeParameters = -4f;
-
-    /// <summary>
-    ///     Controls how quickly the sound gets quieter as a player moves away from the geiger counter.
-    /// </summary>
-    [DataField]
-    public float RolloffFactorParameters = 4f;
-
-    /// <summary>
-    ///     Controls the maximum distance that players can hear geiger counter ticks.
-    /// </summary>
-    [DataField]
-    public float MaxDistanceParameters = 10f;
+    public AudioParams AudioParameters;
 }
 
 [Serializable, NetSerializable]

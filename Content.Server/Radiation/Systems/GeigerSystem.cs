@@ -155,19 +155,15 @@ public sealed class GeigerSystem : SharedGeigerSystem
         if (component.Sounds.TryGetValue(component.DangerLevel, out var sounds))
         {
             var sound = _audio.GetSound(sounds);
-            var param = sounds.Params.WithLoop(true)
-                                     .WithVolume(component.VolumeParameters)
-                                     .WithRolloffFactor(component.RolloffFactorParameters)
-                                     .WithMaxDistance(component.MaxDistanceParameters);
 
             if (component.LocalSoundOnly
                 && component.User is not null
                 && _player.TryGetSessionByEntity(component.User.Value, out var session))
             {
-                component.Stream = _audio.PlayGlobal(sound, session, param)?.Entity;
+                component.Stream = _audio.PlayGlobal(sound, session, component.AudioParameters)?.Entity;
                 return;
             }
-            component.Stream = _audio.PlayEntity(sound, Filter.Pvs(uid), uid, true, param)?.Entity;
+            component.Stream = _audio.PlayEntity(sound, Filter.Pvs(uid), uid, true, component.AudioParameters)?.Entity;
         }
     }
 
