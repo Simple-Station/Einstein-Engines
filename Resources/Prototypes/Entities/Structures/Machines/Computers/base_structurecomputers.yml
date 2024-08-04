@@ -61,3 +61,12 @@
   - type: LightningTarget
     priority: 1
   - type: RequireProjectileTarget
+  - type: LanguageSpeaker
+    currentLanguage: GalacticCommon
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - RobotTalk
+    understands:
+    - GalacticCommon
+    - RobotTalk

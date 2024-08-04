@@ -4,6 +4,7 @@ using Content.Server.PowerCell;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Language;
+using Content.Shared.Language.Components;
 using Content.Shared.Language.Systems;
 using Content.Shared.PowerCell;
 using Content.Shared.Language.Components.Translators;
@@ -173,11 +174,13 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         {
             intrinsic.SpokenLanguages = [..comp.SpokenLanguages];
             intrinsic.UnderstoodLanguages = [..comp.UnderstoodLanguages];
+            intrinsic.RequiredLanguages = [..comp.RequiredLanguages];
         }
         else
         {
             intrinsic.SpokenLanguages.Clear();
             intrinsic.UnderstoodLanguages.Clear();
+            intrinsic.RequiredLanguages.Clear();
         }
 
         intrinsic.Enabled = isEnabled;

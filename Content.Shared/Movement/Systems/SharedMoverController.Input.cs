@@ -620,7 +620,7 @@ namespace Content.Shared.Movement.Systems
         Down = 2,
         Left = 4,
         Right = 8,
-        Walk = 16,
+        Walk = 16, // This may be either a sprint button or a walk button, depending on server config
         AnyDirection = Up | Down | Left | Right,
     }
 
