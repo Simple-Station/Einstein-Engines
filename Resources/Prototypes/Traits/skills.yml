@@ -49,3 +49,8 @@
     - type: FootstepVolumeModifier
       sprintVolumeModifier: -10
       walkVolumeModifier: -10
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
