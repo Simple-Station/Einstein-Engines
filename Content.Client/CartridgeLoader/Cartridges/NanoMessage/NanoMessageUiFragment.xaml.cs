@@ -75,8 +75,7 @@ public sealed partial class NanoMessageUiFragment : BoxContainer
         {
             RecipientsContainer.AddChild(new Label
             {
-                Text = Loc.GetString("nano-message-no-recipients"),
-                HorizontalExpand = true
+                Text = Loc.GetString("nano-message-no-recipients")
             });
         }
     }

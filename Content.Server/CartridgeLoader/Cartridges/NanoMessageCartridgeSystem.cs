@@ -101,7 +101,7 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
     /// </summary>
     private void OnAfterInteract(Entity<NanoMessageCartridgeComponent> ent, ref CartridgeAfterInteractEvent args)
     {
-        if (args.InteractEvent.Handled || !args.InteractEvent.CanReach || !args.InteractEvent.Target.HasValue
+        if (!args.InteractEvent.CanReach || !args.InteractEvent.Target.HasValue
             || !TryComp<NanoMessageClientComponent>(ent, out var thisClient))
             return;
 
@@ -113,7 +113,7 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
             targetClient = (target, standaloneClient);
 
         // If the target is a PDA, try to locate a NanoMessage cartridge and use its ID.
-        if (target is { Valid: false } && TryComp<CartridgeLoaderComponent>(target, out var loader))
+        if (targetClient is not { } && TryComp<CartridgeLoaderComponent>(target, out var loader))
         {
             var cartridge = _cartridgeLoader.GetAvailablePrograms(target, loader)
                 .Select(GetEntity)
@@ -124,18 +124,37 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
                 targetClient = (cartridge.Owner, cartridge);
         }
 
-        if (targetClient is not {} client || client.Comp.Id <= 0)
+        if (targetClient is not { } otherClient || otherClient.Comp.Id <= 0)
             return;
 
         // Add the recipient if it wasn't previously added
-        if (!ent.Comp.KnownRecipients.Contains(client.Comp.Id))
-            ent.Comp.KnownRecipients.Add(client.Comp.Id);
+        if (!ent.Comp.KnownRecipients.Contains(otherClient.Comp.Id))
+        {
+            ent.Comp.KnownRecipients.Add(otherClient.Comp.Id);
+            UpdateAll((ent.Owner, ent.Comp, thisClient));
+        }
 
         // Also, if the target is a cartridge, add this client to its recipient list if it's not already there
-        if (TryComp<NanoMessageCartridgeComponent>(client.Owner, out var targetCartridge) && !targetCartridge.KnownRecipients.Contains(thisClient.Id))
+        if (TryComp<NanoMessageCartridgeComponent>(otherClient.Owner, out var targetCartridge) && !targetCartridge.KnownRecipients.Contains(thisClient.Id))
+        {
             targetCartridge.KnownRecipients.Add(thisClient.Id);
+            UpdateAll((otherClient.Owner, targetCartridge, otherClient.Comp));
+        }
 
         // TODO: popup
+
+
+    }
+
+    public void UpdateAll(Entity<NanoMessageCartridgeComponent?, NanoMessageClientComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp1, false) || !Resolve(ent, ref ent.Comp2, false))
+            return;
+
+        if (ent.Comp2.ConnectedServer is { Valid: true } server)
+            RefreshClientData(ent, _servers.GetClientsData(server).ToList());
+
+        UpdateUiState((ent.Owner, ent.Comp1));
     }
 
     private void UpdateUiState(Entity<NanoMessageCartridgeComponent?> ent, EntityUid? loader = null)
