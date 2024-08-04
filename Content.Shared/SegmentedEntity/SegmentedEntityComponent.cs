@@ -14,13 +14,15 @@ namespace Content.Shared.SegmentedEntity
     /// Controls initialization of any Multi-segmented entity
     /// </summary>
     [RegisterComponent, NetworkedComponent]
+    [AutoGenerateComponentState]
     public sealed partial class SegmentedEntityComponent : Component
     {
         /// <summary>
         /// A list of each UID attached to the Lamia, in order of spawn
         /// </summary>
         [DataField("segments")]
-        public List<EntityUid> Segments = new();
+        [AutoNetworkedField]
+        public List<NetEntity> Segments = new();
 
         /// <summary>
         /// A clamped variable that represents the number of segments to be spawned
@@ -102,16 +104,5 @@ namespace Content.Shared.SegmentedEntity
 
         [DataField("bulletPassover")]
         public bool BulletPassover = true;
-    }
-
-    [Serializable, NetSerializable]
-    public sealed class SegmentedEntityComponentState : ComponentState
-    {
-        public readonly List<int> Segments;
-
-        public SegmentedEntityComponentState(List<int> segments)
-        {
-            Segments = segments;
-        }
     }
 }

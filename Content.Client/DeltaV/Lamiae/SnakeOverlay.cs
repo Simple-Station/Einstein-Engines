@@ -64,8 +64,8 @@ public sealed class SnakeOverlay : Overlay
             if (xform.MapID != args.MapId)
                 continue;
 
-            // Skip ones where there's nothing to draw or they're maybe uninitialized
-            if (lamia.Segments.Count == 0)
+            // Skip ones where they are not loaded properly, uninitialized, or w/e
+            if (lamia.Segments.Count < lamia.NumberOfSegments)
             {
                 _entManager.Dirty(uid, lamia); // pls give me an update...
                 continue;
@@ -112,8 +112,8 @@ public sealed class SnakeOverlay : Overlay
         while (i < lamia.Segments.Count - 1)
         {
             // get centerpoints of last segment and this one
-            var origin = _transform.GetWorldPosition(lamia.Segments[i - 1]);
-            var destination = _transform.GetWorldPosition(lamia.Segments[i]);
+            var origin = _transform.GetWorldPosition(_entManager.GetEntity(lamia.Segments[i - 1]));
+            var destination = _transform.GetWorldPosition(_entManager.GetEntity(lamia.Segments[i]));
 
             // get direction between the two points and normalize it
             var connectorVec = destination - origin;
@@ -173,7 +173,7 @@ public sealed class SnakeOverlay : Overlay
             verts.Add(new DrawVertexUV2D((Vector2) lastPtCW, new Vector2(0, 0)));
             verts.Add(new DrawVertexUV2D((Vector2) lastPtCCW, new Vector2(1, 0)));
 
-            var destination = _transform.GetWorldPosition(lamia.Segments.Last());
+            var destination = _transform.GetWorldPosition(_entManager.GetEntity(lamia.Segments.Last()));
 
             verts.Add(new DrawVertexUV2D(destination, new Vector2(0.5f, 1f)));
         }

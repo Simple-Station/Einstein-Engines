@@ -38,8 +38,6 @@ namespace Content.Shared.SegmentedEntity
             SubscribeLocalEvent<SegmentedEntityComponent, DidUnequipEvent>(OnDidUnequipEvent);
             SubscribeLocalEvent<SegmentedEntityComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<SegmentedEntityComponent, ComponentShutdown>(OnShutdown);
-            SubscribeLocalEvent<SegmentedEntityComponent, ComponentGetState>(OnGetState);
-            SubscribeLocalEvent<SegmentedEntityComponent, ComponentHandleState>(OnHandleState);
             SubscribeLocalEvent<SegmentedEntityComponent, JointRemovedEvent>(OnJointRemoved);
             SubscribeLocalEvent<SegmentedEntityComponent, EntParentChangedMessage>(OnParentChanged);
             SubscribeLocalEvent<SegmentedEntityComponent, StoreMobInItemContainerAttemptEvent>(OnStoreSnekAttempt);
@@ -107,40 +105,10 @@ namespace Content.Shared.SegmentedEntity
 
             foreach (var segment in component.Segments)
             {
-                QueueDel(segment);
+                QueueDel(GetEntity(segment));
             }
 
             component.Segments.Clear();
-        }
-
-        private void OnGetState(EntityUid uid, SegmentedEntityComponent component, ref ComponentGetState args)
-        {
-            var segs = new List<int>();
-
-            foreach (var seg in component.Segments)
-            {
-                segs.Add((int) seg);
-            }
-
-            args.State = new SegmentedEntityComponentState(segs);
-        }
-
-        private void OnHandleState(EntityUid uid, SegmentedEntityComponent component, ref ComponentHandleState args)
-        {
-            if (args.Current is not SegmentedEntityComponentState cast)
-                return;
-
-            component.Segments.Clear();
-
-            foreach (var segment in cast.Segments)
-            {
-                var segmentUid = EntityManager.GetEntity(new NetEntity(segment));
-
-                if (!segmentUid.IsValid())
-                    continue;
-
-                component.Segments.Add(segmentUid);
-            }
         }
 
         /// <summary>
@@ -170,7 +138,7 @@ namespace Content.Shared.SegmentedEntity
 
         private void OnJointRemoved(EntityUid uid, SegmentedEntityComponent component, JointRemovedEvent args)
         {
-            if (!component.Segments.Contains(args.OtherEntity))
+            if (!component.Segments.Contains(GetNetEntity(args.OtherEntity)))
                 return;
 
             DeleteSegments(component);
@@ -182,7 +150,7 @@ namespace Content.Shared.SegmentedEntity
                 return; //Client is not allowed to predict QueueDel, it'll throw an error(but won't crash in Release build)
 
             foreach (var segment in component.Segments)
-                QueueDel(segment);
+                QueueDel(GetEntity(segment));
 
             component.Segments.Clear();
         }
@@ -266,7 +234,7 @@ namespace Content.Shared.SegmentedEntity
 
             EnsureComp<PortalExemptComponent>(segment); //Not temporary, segments must never be allowed to go through portals for physics limitation reasons
             _segments.Enqueue((segmentComponent, parentuid));
-            segmentedComponent.Segments.Add(segment);
+            segmentedComponent.Segments.Add(GetNetEntity(segment));
             return segment;
         }
 
@@ -321,7 +289,7 @@ namespace Content.Shared.SegmentedEntity
             var entityList = new List<RayCastResults>();
             foreach (var entity in args.RayCastResults)
             {
-                if (!component.Segments.Contains(entity.HitEntity))
+                if (!component.Segments.Contains(GetNetEntity(entity.HitEntity)))
                     entityList.Add(entity);
             }
             args.RayCastResults = entityList;
