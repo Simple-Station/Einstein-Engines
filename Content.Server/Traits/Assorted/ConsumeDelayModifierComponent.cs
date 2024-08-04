@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Traits.Assorted.Components;
+namespace Content.Server.Traits.Assorted.Components;
 
 /// <summary>
 ///     This is used for any trait that modifies how fast an entity consumes food and drinks.
