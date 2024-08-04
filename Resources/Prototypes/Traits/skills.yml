@@ -47,8 +47,7 @@
   points: -3
   components:
     - type: ClimbDelayModifier
-      climbDelayMultiplier: 0.75
+      climbDelayMultiplier: 0.70
     - type: LayingDownModifier
       layingDownCooldownMultiplier: 0.8
       downedSpeedMultiplierMultiplier: 1.25
-      
