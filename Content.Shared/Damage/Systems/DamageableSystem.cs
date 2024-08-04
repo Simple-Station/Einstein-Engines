@@ -150,14 +150,7 @@ namespace Content.Shared.Damage
                 if (damageable.DamageModifierSetId != null &&
                     _prototypeManager.TryIndex<DamageModifierSetPrototype>(damageable.DamageModifierSetId, out var modifierSet))
                 {
-                    if (bypassResistance != null)
-                    {
-                        damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet,(float) bypassResistance);
-                    }
-                    else
-                    {
-                        damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
-                    }
+                    damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet,(float) bypassResistance);
                 }
 
                 var ev = new DamageModifyEvent(damage, origin);
