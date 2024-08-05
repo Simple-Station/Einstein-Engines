@@ -4839,3 +4839,98 @@ Entries:
         breaking the game.
   id: 6205
   time: '2024-08-02T22:52:41.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Supermatter Engines have been implemented. '
+  id: 6206
+  time: '2024-08-03T00:41:54.0000000+00:00'
+- author: Tilkku
+  changes:
+    - type: Tweak
+      message: Rouny Sprite Changed
+  id: 6207
+  time: '2024-08-03T11:04:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Due to budget cuts, Nanotrasen has ceased stocking Clothesmate vendors
+        with more clothing than the average cargo tech can afford. Civilians are
+        advised to bring their own clothes to the station if they wish to wear
+        anything other than grey. 
+  id: 6208
+  time: '2024-08-04T00:23:53.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        SweatMAX, "hot foods", Mars Mart, and Nippon-tan vendors have all been
+        added to vendor spawners. 
+  id: 6209
+  time: '2024-08-04T06:26:34.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Voracious trait, a 1-point trait that makes you eat and drink
+        twice as fast.
+  id: 6210
+  time: '2024-08-04T09:30:31.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Zombie events have had their Anti-Stalling mechanic improved. Dead
+        (Player) Zombies, Infected Players, and Initial Infected are all counted
+        as zombies for the purpose of determine if the shuttle should be called.
+        Additionally, any player who leaves the station is no longer counted as
+        a healthy crewman for the automatic shuttle call.
+  id: 6211
+  time: '2024-08-04T14:14:12.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: Rename the trait "Heavyweight Drunk" into "Alcohol Tolerance".
+  id: 6212
+  time: '2024-08-05T03:30:41.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Light Step trait, a 1-point trait that makes your footsteps
+        quieter.
+  id: 6213
+  time: '2024-08-05T15:29:07.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add a new 1-point trait called Sign Language, a trait that allows you to
+        communicate in Galactic Sign Language.
+  id: 6214
+  time: '2024-08-05T16:55:31.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Oracle requests are now more likely to be aligned with the current
+        research.
+  id: 6215
+  time: '2024-08-05T17:10:42.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        The Carrying system has been reworked as a means of better supporting
+        having extremely large species and characters. 10kg Harpies should no
+        longer be oppressed by 2000kg Lamia with infinitely short carry
+        attempts. 
+  id: 6216
+  time: '2024-08-05T17:11:37.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Add
+      message: Lamiae should now be rendered much better.
+  id: 6217
+  time: '2024-08-05T17:15:51.0000000+00:00'

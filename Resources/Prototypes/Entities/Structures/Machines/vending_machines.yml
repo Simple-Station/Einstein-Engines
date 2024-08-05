@@ -322,7 +322,7 @@
   parent: VendingMachine
   id: VendingMachineClothing
   name: ClothesMate
-  description: A vending machine for clothing.
+  description: A vending machine for dispensing the cheapest clothing Nanotrasen can buy.
   components:
   - type: VendingMachine
     pack: ClothesMateInventory

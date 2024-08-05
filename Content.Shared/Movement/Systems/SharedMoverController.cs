@@ -12,6 +12,7 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.StepTrigger.Components;
 using Content.Shared.Tag;
+using Content.Shared.Traits.Assorted.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
@@ -261,9 +262,17 @@ namespace Content.Shared.Movement.Systems
                     TryGetSound(weightless, uid, mover, mobMover, xform, out var sound, tileDef: tileDef))
                 {
                     var soundModifier = mover.Sprinting ? 3.5f : 1.5f;
+                    var volume = sound.Params.Volume + soundModifier;
+
+                    if (_entities.TryGetComponent(uid, out FootstepVolumeModifierComponent? volumeModifier))
+                    {
+                        volume += mover.Sprinting
+                            ? volumeModifier.SprintVolumeModifier
+                            : volumeModifier.WalkVolumeModifier;
+                    }
 
                     var audioParams = sound.Params
-                        .WithVolume(sound.Params.Volume + soundModifier)
+                        .WithVolume(volume)
                         .WithVariation(sound.Params.Variation ?? FootstepVariation);
 
                     // If we're a relay target then predict the sound for all relays.
