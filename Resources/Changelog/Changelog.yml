@@ -4888,3 +4888,9 @@ Entries:
         a healthy crewman for the automatic shuttle call.
   id: 6211
   time: '2024-08-04T14:14:12.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: Rename the trait "Heavyweight Drunk" into "Alcohol Tolerance".
+  id: 6212
+  time: '2024-08-05T03:30:41.0000000+00:00'
