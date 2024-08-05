@@ -22,12 +22,12 @@ public sealed class LanguageKnowledgeModifierSystem : EntitySystem
             return;
         }
 
-        for (var spokenLanguage in entity.Comp.NewSpokenLanguages)
+        foreach (var spokenLanguage in entity.Comp.NewSpokenLanguages)
         {
             _languages.AddLanguage(entity, spokenLanguage, true, false, knowledge);
         }
 
-        for (var understoodLanguage in entity.Comp.NewUnderstoodLanguages)
+        foreach (var understoodLanguage in entity.Comp.NewUnderstoodLanguages)
         {
             _languages.AddLanguage(entity, understoodLanguage, false, true, knowledge);
         }
