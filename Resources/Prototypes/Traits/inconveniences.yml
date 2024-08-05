@@ -1,4 +1,4 @@
-﻿- type: trait
+- type: trait
   id: LightweightDrunk
   category: Physical
   requirements:
@@ -57,3 +57,21 @@
   components:
     - type: ForeignerTrait
       baseTranslator: TranslatorForeigner
+
+- type: trait
+  id: Sluggish
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+  components:
+    - type: TraitSpeedModifier
+      sprintModifier: 0.85
+      walkModifier: 0.85
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 1.35
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 1.2

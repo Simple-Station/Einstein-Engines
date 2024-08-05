@@ -89,6 +89,11 @@ trait-description-ParkourTraining =
     Whether as a hobby, lifestyle, or professional training, you are trained in the discipline of parkour.
     You're faster with climbing, crawling, lying down, and getting up.
 
+trait-name-Sluggish = Sluggish
+trait-description-Sluggish =
+    You navigate the world slower than others, perhaps due to a medical condition, inactivity, or age.
+    You move slower, and it takes longer for you to climb, lie down and get up.
+
 trait-name-LightStep = Light Step
 trait-description-LightStep =
     You move with a gentle step, making your footsteps quieter.
