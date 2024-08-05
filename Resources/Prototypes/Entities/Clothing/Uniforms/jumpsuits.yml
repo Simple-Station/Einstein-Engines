@@ -147,10 +147,10 @@
   name: chaplain's jumpsuit
   description: It's a black jumpsuit, often worn by religious folk.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/chaplain.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/chaplain.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/chaplain.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/chaplain.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -355,10 +355,10 @@
   name: hard-worn suit
   description: Someone who wears this means business.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/detective.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/detective.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/detective.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/detective.rsi
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -366,10 +366,10 @@
   name: noir suit
   description: A hard-boiled private investigator's grey suit, complete with tie clip.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -665,10 +665,10 @@
   name: logistics officer's turtleneck # DeltaV - Logistics Department replacing Cargo
   description: A sharp turtleneck made for the hardy work environment of supply.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -678,10 +678,10 @@
   description: Inspired by the logistics officers of military's past, the perfect outfit for supplying a formal occasion.
   # End of modified code
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -970,10 +970,10 @@
   name: good lawyer's suit
   description: A tacky suit perfect for a CRIMINAL lawyer!
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/lawyergood.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/lawyergood.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/lawyergood.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/lawyergood.rsi
 
 - type: entity
   parent: UnsensoredClothingUniformBase
@@ -1069,14 +1069,14 @@
   name: tacticool jumpsuit
   description: Uniform for subpar operative LARPers performing tactical insulated glove theft in deep space.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/tacticool.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/tacticool.rsi
-    # Too cool for sensors to be on
-    - type: SuitSensor
-      randomMode: false
-      mode: SensorOff
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/tacticool.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/tacticool.rsi
+  # Too cool for sensors to be on
+  - type: SuitSensor
+    randomMode: false
+    mode: SensorOff
 
 - type: entity
   parent: ClothingUniformBase
@@ -1281,7 +1281,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCossack
   name: cossack suit
-  description: the good old pants and brigantine.
+  description: The good old pants and brigantine.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/cossack.rsi
@@ -1314,7 +1314,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitHawaiRed
   name: red hawaiian shirt
-# Fixed typo, "Red as a juicy watermelons."
+  # Fixed typo, "Red as a juicy watermelons."
   description: Red as a juicy watermelon.
   components:
   - type: Sprite
@@ -1348,13 +1348,13 @@
   parent: [ ClothingUniformBase, ClothingUniformFoldableBase ]
   id: ClothingUniformJumpsuitFlannel
   name: flannel jumpsuit
-# Fixed a typo, there should be an apostrophe before the s in 'someone's."
+  # Fixed a typo, there should be an apostrophe before the s in 'someone's."
   description: Smells like someone's been grillin'.
   components:
-    - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
-    - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
 
 - type: entity
   parent: [ClothingUniformBase,ClothingUniformFoldableBase]
@@ -1417,9 +1417,9 @@
       amount: 8
   - type: FlavorProfile
     flavors:
-      - cobwebs
+    - cobwebs
     ignoreReagents:
-      - Fiber
+    - Fiber
   - type: SolutionContainerManager
     solutions: # 24 (3 (fiber count of web) * 8 (to craft)) + 6 (magical crafting bonus)
       food:

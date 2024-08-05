@@ -6,11 +6,11 @@
   components:
   - type: Eye
     visMask:
-      - TelegnosticProjection
-      - PsionicInvisibility
-      - Ghost
-      - Normal
-      - Ethereal
+    - TelegnosticProjection
+    - PsionicInvisibility
+    - Ghost
+    - Normal
+    - Ethereal
   - type: ContentEye
     maxZoom: 8.916104, 8.916104
   - type: Tag
@@ -59,7 +59,7 @@
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
       enum.GeneralStationRecordConsoleKey.Key:
-      # who the fuck named this bruh
+        # who the fuck named this bruh
         type: GeneralStationRecordConsoleBoundUserInterface
   - type: IntrinsicUI
     uis:
@@ -177,7 +177,7 @@
 - type: entity
   id: ActionAGhostShowStationRecords
   name: Station Records Interface
-  description: View a station records Interface
+  description: View a station records Interface.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

@@ -1212,7 +1212,7 @@
   id: ComputerPalletConsole
   parent: BaseComputerAiAccess
   name: cargo sale computer
-  description: Used to sell goods loaded onto cargo pallets
+  description: Used to sell goods loaded onto cargo pallets.
   components:
   - type: Sprite
     layers:
