@@ -4928,3 +4928,9 @@ Entries:
         attempts. 
   id: 6216
   time: '2024-08-05T17:11:37.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Add
+      message: Lamiae should now be rendered much better.
+  id: 6217
+  time: '2024-08-05T17:15:51.0000000+00:00'
