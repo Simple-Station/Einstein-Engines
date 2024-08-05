@@ -4910,3 +4910,11 @@ Entries:
         communicate in Galactic Sign Language.
   id: 6214
   time: '2024-08-05T16:55:31.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Oracle requests are now more likely to be aligned with the current
+        research.
+  id: 6215
+  time: '2024-08-05T17:10:42.0000000+00:00'
