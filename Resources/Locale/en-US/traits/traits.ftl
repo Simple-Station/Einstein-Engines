@@ -63,5 +63,5 @@ trait-description-Voracious =
 
 trait-name-SignLanguage = Sign Language
 trait-description-SignLanguage =
-    You can understand and use sign language, allowing for visual communication.
+    You can understand and use Galactic Sign Language (GSL).
     Being mute for any reason still allows you to communicate with sign language.

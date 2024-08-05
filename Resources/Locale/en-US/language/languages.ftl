@@ -73,5 +73,5 @@ language-Kobold-description = Hiss!
 language-Hissing-name = Hissing
 language-Hissing-description = Hiss!
 
-language-Sign-name = Sign Language
-language-Sign-description = The standard Galactic sign language, used by those that are unable to speak Galactic Common or at all.
+language-Sign-name = Galactic Sign Language
+language-Sign-description = GSL for short, this sign language is prevalent among mute and deaf people.
