@@ -1,14 +1,16 @@
 using System.Linq;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
+using Content.Server.Psionics.Glimmer;
+using Content.Server.RoundEnd;
 using Content.Server.StationEvents.Components;
 using Content.Shared.CCVar;
+using Content.Shared.Psionics.Glimmer;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Server.Psionics.Glimmer;
-using Content.Shared.Psionics.Glimmer;
+
 namespace Content.Server.StationEvents;
 
 public sealed class EventManagerSystem : EntitySystem
@@ -19,6 +21,7 @@ public sealed class EventManagerSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] public readonly GameTicker GameTicker = default!;
+    [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly GlimmerSystem _glimmerSystem = default!; //Nyano - Summary: pulls in the glimmer system.
 
     public bool EventsEnabled { get; private set; }
@@ -193,16 +196,18 @@ public sealed class EventManagerSystem : EntitySystem
             return false;
         }
 
-        // Nyano - Summary: - Begin modified code block: check for glimmer events.
-        // This could not be cleanly done anywhere else.
-        if (_configurationManager.GetCVar(CCVars.GlimmerEnabled) &&
-            prototype.TryGetComponent<GlimmerEventComponent>(out var glimmerEvent) &&
-            (_glimmerSystem.GlimmerOutput < glimmerEvent.MinimumGlimmer ||
-            _glimmerSystem.GlimmerOutput > glimmerEvent.MaximumGlimmer))
+        if (_roundEnd.IsRoundEndRequested() && !stationEvent.OccursDuringRoundEnd)
         {
             return false;
         }
-        // Nyano - End modified code block.
+
+        if (_configurationManager.GetCVar(CCVars.GlimmerEnabled) &&
+            prototype.TryGetComponent<GlimmerEventComponent>(out var glimmerEvent) &&
+            (_glimmerSystem.GlimmerOutput < glimmerEvent.MinimumGlimmer ||
+                _glimmerSystem.GlimmerOutput > glimmerEvent.MaximumGlimmer))
+        {
+            return false;
+        }
 
         return true;
     }

@@ -503,6 +503,7 @@
     reoccurrenceDelay: 30
     startAnnouncement: false
     duration: null # the rule has to last the whole round not 1 second
+    occursDuringRoundEnd: false
   # - type: AlertLevelInterceptionRule - Disable setting to blue with sleeper agents. Uncomment to enable.
   - type: AntagSelection
     definitions:
