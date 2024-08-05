@@ -22,7 +22,7 @@ public sealed class TeleportingTraitSystem : EntitySystem
     }
 
     // sets the potency and the radius
-    public static void SetPotency(float seedPotency, TeleportingTraitComponent comp)
+    public static void SetPotencyRadius(float seedPotency, TeleportingTraitComponent comp)
     {
         comp.Potency = seedPotency;
         comp.ProduceTeleportRadius = comp.Potency / comp.PotencyDivide;
