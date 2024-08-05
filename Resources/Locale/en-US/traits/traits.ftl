@@ -11,8 +11,8 @@ trait-description-Pacifist = You cannot attack or hurt any living beings.
 trait-name-LightweightDrunk = Lightweight Drunk
 trait-description-LightweightDrunk = Alcohol has a stronger effect on you
 
-trait-name-HeavyweightDrunk = Heavyweight Drunk
-trait-description-HeavyweightDrunk = Alcohols are afraid of you
+trait-name-HeavyweightDrunk = Alcohol Tolerance
+trait-description-HeavyweightDrunk = Alcohol is afraid of you.
 
 trait-name-Muted = Muted
 trait-description-Muted = You can't speak
@@ -55,7 +55,6 @@ trait-name-Foreigner = Foreigner
 trait-description-Foreigner =
     For one reason or another you do not speak this station's primary language.
     Instead, you have a translator issued to you that only you can use.
-
 trait-name-Saturnine = Saturnine
 trait-description-Saturnine = You are naturally dour and morose. Your mood is permanently decreased by a large amount.
 
@@ -65,7 +64,16 @@ trait-description-Sanguine = You are naturally upbeat and cheerful! Your mood is
 trait-name-Mercurial = Mercurial
 trait-description-Mercurial = Your mood is unpredictable, often swinging wildly in either direction regardless of circumstance.
 
+trait-name-SignLanguage = Sign Language
+trait-description-SignLanguage =
+    You can understand and use Galactic Sign Language (GSL).
+    If you are mute for any reason, you can still communicate with sign language.
+
 trait-name-Voracious = Voracious
 trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
+
+trait-name-LightStep = Light Step
+trait-description-LightStep =
+    You move with a gentle step, making your footsteps quieter.
