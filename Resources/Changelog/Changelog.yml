@@ -4894,3 +4894,11 @@ Entries:
       message: Rename the trait "Heavyweight Drunk" into "Alcohol Tolerance".
   id: 6212
   time: '2024-08-05T03:30:41.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Light Step trait, a 1-point trait that makes your footsteps
+        quieter.
+  id: 6213
+  time: '2024-08-05T15:29:07.0000000+00:00'

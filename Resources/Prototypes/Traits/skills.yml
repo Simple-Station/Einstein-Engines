@@ -42,6 +42,34 @@
       drinkDelayMultiplier: 0.5
 
 - type: trait
+  id: LightStep
+  category: Auditory
+  points: -1
+  components:
+    - type: FootstepVolumeModifier
+      sprintVolumeModifier: -10
+      walkVolumeModifier: -10
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+
+- type: trait
+  id: LightStep
+  category: Auditory
+  points: -1
+  components:
+    - type: FootstepVolumeModifier
+      sprintVolumeModifier: -10
+      walkVolumeModifier: -10
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+
+- type: trait
   id: SignLanguage
   category: Visual
   points: -1
