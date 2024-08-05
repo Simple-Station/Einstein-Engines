@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Shared.Language;
+using Content.Server.Language;
 using Content.Shared.Language.Components;
 
 namespace Content.Server.Traits.Assorted;
