@@ -8,10 +8,10 @@
     - !type:CharacterDepartmentTimeRequirement
       min: 36000 # 10 hrs
     - !type:CharacterPlaytimeRequirement
-      role: JobLawyer
+      tracker: JobLawyer
       min: 36000 # 10 hours
     - !type:CharacterPlaytimeRequirement
-      role: JobProsecutor
+      tracker: JobProsecutor
       min: 36000 # 10 hours
 
 

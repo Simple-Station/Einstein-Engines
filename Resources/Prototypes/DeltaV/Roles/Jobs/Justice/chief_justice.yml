@@ -5,13 +5,13 @@
   playTimeTracker: JobChiefJustice
   requirements:
     - !type:CharacterPlaytimeRequirement
-      role: JobClerk
+      tracker: JobClerk
       min: 36000 # 10 hours
     - !type:CharacterPlaytimeRequirement
-      role: JobLawyer
+      tracker: JobLawyer
       min: 36000 # 10 hours
     - !type:CharacterPlaytimeRequirement
-      role: JobProsecutor
+      tracker: JobProsecutor
       min: 36000 # 10 hours
     - !type:CharacterOverallTimeRequirement
       min: 90000 # 25 hours
