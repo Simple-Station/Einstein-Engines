@@ -8,6 +8,8 @@ using Content.Shared.Mood;
 using Robust.Shared.Network;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -21,6 +23,7 @@ public sealed class HungerSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     public override void Initialize()
     {
@@ -28,7 +31,7 @@ public sealed class HungerSystem : EntitySystem
 
         SubscribeLocalEvent<HungerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<HungerComponent, ComponentShutdown>(OnShutdown);
-        //SubscribeLocalEvent<HungerComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed); //This is handled by Mood System now
+        SubscribeLocalEvent<HungerComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
         SubscribeLocalEvent<HungerComponent, RejuvenateEvent>(OnRejuvenate);
     }
 
@@ -47,10 +50,9 @@ public sealed class HungerSystem : EntitySystem
 
     private void OnRefreshMovespeed(EntityUid uid, HungerComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (component.CurrentThreshold > HungerThreshold.Starving)
-            return;
-
-        if (_jetpack.IsUserFlying(uid))
+        if (_config.GetCVar(CCVars.DoMoodSystem)
+            || component.CurrentThreshold > HungerThreshold.Starving
+            || _jetpack.IsUserFlying(uid))
             return;
 
         args.ModifySpeed(component.StarvingSlowdownModifier, component.StarvingSlowdownModifier);
@@ -112,10 +114,15 @@ public sealed class HungerSystem : EntitySystem
         if (component.CurrentThreshold == component.LastThreshold && !force)
             return;
 
-        if (_net.IsServer)
+        if (GetMovementThreshold(component.CurrentThreshold) != GetMovementThreshold(component.LastThreshold))
         {
-            var ev = new MoodEffectEvent("Hunger" + component.CurrentThreshold);
-            RaiseLocalEvent(uid, ev);
+            if (!_config.GetCVar(CCVars.DoMoodSystem))
+                _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
+            else if (_net.IsServer)
+            {
+                var ev = new MoodEffectEvent("Hunger" + component.CurrentThreshold);
+                RaiseLocalEvent(uid, ev);
+            }
         }
 
         if (component.HungerThresholdAlerts.TryGetValue(component.CurrentThreshold, out var alertId))
@@ -180,6 +187,22 @@ public sealed class HungerSystem : EntitySystem
             return false; // It's never going to go hungry, so it's probably fine to assume that it's not... you know, hungry.
 
         return GetHungerThreshold(comp, food) < threshold;
+    }
+
+    private bool GetMovementThreshold(HungerThreshold threshold)
+    {
+        switch (threshold)
+        {
+            case HungerThreshold.Overfed:
+            case HungerThreshold.Okay:
+                return true;
+            case HungerThreshold.Peckish:
+            case HungerThreshold.Starving:
+            case HungerThreshold.Dead:
+                return false;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(threshold), threshold, null);
+        }
     }
 
     public override void Update(float frameTime)
