@@ -2395,5 +2395,18 @@ namespace Content.Shared.CCVar
             CVarDef.Create("supermatter.rads_modifier", 1f, CVar.SERVER);
 
         #endregion
+
+        #region Mood System
+
+
+        public static readonly CVarDef<bool> DoMoodSystem =
+            CVarDef.Create("mood.do_mood_system", true, CVar.SERVER);
+
+        public static readonly CVarDef<bool> MoodIncreasesSpeed =
+            CVarDef.Create("mood.increases_speed", true, CVar.SERVER);
+
+        public static readonly CVarDef<bool> MoodDecreasesSpeed =
+            CVarDef.Create("mood.decreases_speed", true, CVar.SERVER);
+        #endregion
     }
 }

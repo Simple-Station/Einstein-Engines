@@ -22,11 +22,24 @@ public sealed partial class MoodComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public readonly Dictionary<string, float> UncategorisedEffects = new();
 
+    /// <summary>
+    ///     The formula for the movement speed modifier is SpeedBonusGrowth ^ (MoodLevel - MoodThreshold.Neutral).
+    ///     Change this ONLY BY 0.001 AT A TIME.
+    /// </summary>
     [DataField]
-    public float SlowdownSpeedModifier = 0.75f;
+    public float SpeedBonusGrowth = 1.003f;
 
+    /// <summary>
+    ///     The lowest point that low morale can multiply our movement speed by. Lowering speed follows a linear curve, rather than geometric.
+    /// </summary>
     [DataField]
-    public float IncreaseSpeedModifier = 1.15f;
+    public float MinimumSpeedModifier = 0.75f;
+
+    /// <summary>
+    ///     The maximum amount that high morale can multiply our movement speed by. This follows a significantly slower geometric sequence.
+    /// </summary>
+    [DataField]
+    public float MaximumSpeedModifier = 1.15f;
 
     [DataField]
     public float IncreaseCritThreshold = 1.2f;

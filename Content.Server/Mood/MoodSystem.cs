@@ -17,6 +17,8 @@ using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
 using Robust.Server.Player;
 using Robust.Shared.Player;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
 
 namespace Content.Server.Mood;
 
@@ -28,6 +30,7 @@ public sealed class MoodSystem : EntitySystem
     [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     public override void Initialize()
     {
@@ -61,14 +64,14 @@ public sealed class MoodSystem : EntitySystem
             || _jetpack.IsUserFlying(uid))
             return;
 
-        var modifier = GetMovementThreshold(component.CurrentMoodThreshold) switch
-        {
-            -1 => component.SlowdownSpeedModifier,
-            1 => component.IncreaseSpeedModifier,
-            _ => 1
-        };
+        // This ridiculous math serves a purpose making high mood less impactful on movement speed than low mood.
+        var modifier = Math.Clamp((component.CurrentMoodLevel >= component.MoodThresholds[MoodThreshold.Neutral])
+                        ? _config.GetCVar(CCVars.MoodIncreasesSpeed) ? MathF.Pow(1.003f, component.CurrentMoodLevel - component.MoodThresholds[MoodThreshold.Neutral]) : 1
+                        : _config.GetCVar(CCVars.MoodDecreasesSpeed) ? 2 - component.MoodThresholds[MoodThreshold.Neutral] / component.CurrentMoodLevel : 1,
+                        component.MinimumSpeedModifier,
+                        component.MaximumSpeedModifier);
 
-        args.ModifySpeed(modifier, modifier);
+        args.ModifySpeed(1, modifier);
     }
 
     private void OnTraitStartup(EntityUid uid, MoodModifyTraitComponent component, ComponentStartup args)
@@ -79,7 +82,8 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnMoodEffect(EntityUid uid, MoodComponent component, MoodEffectEvent args)
     {
-        if (!_prototypeManager.TryIndex<MoodEffectPrototype>(args.EffectId, out var prototype))
+        if (!_config.GetCVar(CCVars.DoMoodSystem)
+            || !_prototypeManager.TryIndex<MoodEffectPrototype>(args.EffectId, out var prototype))
             return;
 
         var ev = new OnMoodEffect(uid, args.EffectId, args.EffectModifier, args.EffectOffset);
@@ -215,7 +219,8 @@ public sealed class MoodSystem : EntitySystem
 
     public void SetMood(EntityUid uid, float amount, MoodComponent? component = null, bool force = false, bool refresh = false)
     {
-        if (!Resolve(uid, ref component)
+        if (!_config.GetCVar(CCVars.DoMoodSystem)
+            || !Resolve(uid, ref component)
             || component.CurrentMoodThreshold == MoodThreshold.Dead && !refresh
             || component.CurrentMoodLevel == amount)
             return;
