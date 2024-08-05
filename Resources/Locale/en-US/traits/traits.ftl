@@ -56,6 +56,11 @@ trait-description-Foreigner =
     For one reason or another you do not speak this station's primary language.
     Instead, you have a translator issued to you that only you can use.
 
+trait-name-SignLanguage = Sign Language
+trait-description-SignLanguage =
+    You can understand and use Galactic Sign Language (GSL).
+    If you are mute for any reason, you can still communicate with sign language.
+
 trait-name-Voracious = Voracious
 trait-description-Voracious =
     Nothing gets between you and your food.
@@ -64,8 +69,3 @@ trait-description-Voracious =
 trait-name-LightStep = Light Step
 trait-description-LightStep =
     You move with a gentle step, making your footsteps quieter.
-
-trait-name-SignLanguage = Sign Language
-trait-description-SignLanguage =
-    You can understand and use Galactic Sign Language (GSL).
-    If you are mute for any reason, you can still communicate with sign language.
