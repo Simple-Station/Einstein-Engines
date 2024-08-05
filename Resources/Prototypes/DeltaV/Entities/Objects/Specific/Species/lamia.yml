@@ -9,7 +9,6 @@
   components:
   - type: Damageable
   - type: StandingState
-  - type: Appearance
   - type: Clickable
   - type: InteractionOutline
   - type: PsionicInsulation #Not a brain, target the lamia instead
@@ -29,7 +28,6 @@
         - MobLayer
   - type: Transform
     anchored: false
-  - type: SegmentedEntitySegmentVisuals
   - type: Tag
     tags:
     - HideContextMenu
@@ -45,17 +43,7 @@
   description: A tail segment, hopefully attached to a lamia.
   components:
   - type: Sprite
-    sprite: Nyanotrasen/Mobs/Species/lamia.rsi
-    drawdepth: SmallMobs
-    layers:
-    - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "enum.SegmentedEntitySegmentVisualLayers.Armor" ]
-      sprite: Clothing/OuterClothing/Hardsuits/basic.rsi
-      state: segment
-      visible: false
-  - type: Clickable
   - type: Tag
     tags:
+    - HideContextMenu
     - DoorBumpOpener
-  - type: HumanoidAppearance
-    species: LamiaSegment

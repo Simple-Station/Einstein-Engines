@@ -17,19 +17,6 @@
   sexes:
   - Female
 
-- type: species
-  id: LamiaSegment
-  name: LamiaSegment
-  roundStart: false
-  prototype: LamiaSegment
-  dollPrototype: MobLamiaDummy
-  sprites: MobLamiaSegmentSprites
-  markingLimits: MobLamiaSegmentMarkingLimits
-  skinColoration: HumanToned
-  sexes:
-  - Female
-
-
 - type: markingPoints
   id: MobLamiaMarkingLimits
   points:
@@ -40,13 +27,6 @@
       points: 1
       required: true
       defaultMarkings: [ LamiaBottom ]
-
-- type: markingPoints
-  id: MobLamiaSegmentMarkingLimits
-  points:
-    Tail:
-      points: 1
-      required: false
 
 
 - type: speciesBaseSprites
@@ -60,9 +40,4 @@
     RArm: MobHumanRArm
     LHand: MobHumanLHand
     RHand: MobHumanRHand
-    Tail: MobHumanoidAnyMarking
-
-- type: speciesBaseSprites
-  id: MobLamiaSegmentSprites
-  sprites:
     Tail: MobHumanoidAnyMarking

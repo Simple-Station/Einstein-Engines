@@ -2,7 +2,6 @@ using Robust.Shared.Physics;
 using Content.Shared.Damage;
 using Content.Shared.Explosion;
 using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Markings;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Tag;
@@ -14,15 +13,14 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
 using Robust.Shared.Network;
+using Robust.Shared.GameStates;
 
 namespace Content.Shared.SegmentedEntity
 {
     public sealed partial class LamiaSystem : EntitySystem
     {
         [Dependency] private readonly TagSystem _tagSystem = default!;
-        [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-        [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoid = default!;
         [Dependency] private readonly SharedJointSystem _jointSystem = default!;
         [Dependency] private readonly INetManager _net = default!;
 
@@ -49,7 +47,6 @@ namespace Content.Shared.SegmentedEntity
             SubscribeLocalEvent<SegmentedEntitySegmentComponent, GetExplosionResistanceEvent>(OnSnekBoom);
             SubscribeLocalEvent<SegmentedEntitySegmentComponent, DamageChangedEvent>(HandleDamageTransfer);
             SubscribeLocalEvent<SegmentedEntitySegmentComponent, DamageModifyEvent>(HandleSegmentDamage);
-            SubscribeLocalEvent<SegmentedEntitySegmentComponent, SegmentSpawnedEvent>(OnSegmentSpawned);
         }
         public override void Update(float frameTime)
         {
@@ -108,7 +105,7 @@ namespace Content.Shared.SegmentedEntity
 
             foreach (var segment in component.Segments)
             {
-                QueueDel(segment);
+                QueueDel(GetEntity(segment));
             }
 
             component.Segments.Clear();
@@ -141,7 +138,7 @@ namespace Content.Shared.SegmentedEntity
 
         private void OnJointRemoved(EntityUid uid, SegmentedEntityComponent component, JointRemovedEvent args)
         {
-            if (!component.Segments.Contains(args.OtherEntity))
+            if (!component.Segments.Contains(GetNetEntity(args.OtherEntity)))
                 return;
 
             DeleteSegments(component);
@@ -153,7 +150,7 @@ namespace Content.Shared.SegmentedEntity
                 return; //Client is not allowed to predict QueueDel, it'll throw an error(but won't crash in Release build)
 
             foreach (var segment in component.Segments)
-                QueueDel(segment);
+                QueueDel(GetEntity(segment));
 
             component.Segments.Clear();
         }
@@ -182,6 +179,8 @@ namespace Content.Shared.SegmentedEntity
                 addTo = segment;
                 i++;
             }
+
+            Dirty(uid, component);
         }
 
         private EntityUid AddSegment(EntityUid segmentuid, EntityUid parentuid, SegmentedEntityComponent segmentedComponent, int segmentNumber)
@@ -235,39 +234,8 @@ namespace Content.Shared.SegmentedEntity
 
             EnsureComp<PortalExemptComponent>(segment); //Not temporary, segments must never be allowed to go through portals for physics limitation reasons
             _segments.Enqueue((segmentComponent, parentuid));
-            segmentedComponent.Segments.Add(segment);
+            segmentedComponent.Segments.Add(GetNetEntity(segment));
             return segment;
-        }
-
-        /// <summary>
-        /// Handles transferring marking selections to the tail segments. Every tail marking must be repeated 2 times in order for this script to work.
-        /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="component"></param>
-        /// <param name="args"></param>
-        // TODO: Please for the love of god don't make me write a test to validate that every marking also has its matching segment states.
-        // Future contributors will just find out when their game crashes because they didn't make a marking-segment.
-        private void OnSegmentSpawned(EntityUid uid, SegmentedEntitySegmentComponent component, SegmentSpawnedEvent args)
-        {
-            component.Lamia = args.Lamia;
-
-            if (!TryComp<HumanoidAppearanceComponent>(uid, out var species)) return;
-            if (!TryComp<HumanoidAppearanceComponent>(args.Lamia, out var humanoid)) return;
-            if (!TryComp<AppearanceComponent>(uid, out var appearance)) return;
-            var humanoidFactor = (humanoid.Height + humanoid.Width) / 2;
-
-            _appearance.SetData(uid, ScaleVisuals.Scale, component.ScaleFactor * humanoidFactor, appearance);
-
-            if (humanoid.MarkingSet.TryGetCategory(MarkingCategories.Tail, out var tailMarkings))
-            {
-                foreach (var markings in tailMarkings)
-                {
-                    var segmentId = species.Species;
-                    var markingId = markings.MarkingId;
-                    string segmentmarking = $"{markingId}-{segmentId}";
-                    _humanoid.AddMarking(uid, segmentmarking, markings.MarkingColors);
-                }
-            }
         }
 
         private void HandleSegmentDamage(EntityUid uid, SegmentedEntitySegmentComponent component, DamageModifyEvent args)
@@ -297,13 +265,7 @@ namespace Content.Shared.SegmentedEntity
             if (!TryComp<ClothingComponent>(args.Equipment, out var clothing)) return;
             if (args.Slot == "outerClothing" && _tagSystem.HasTag(args.Equipment, LamiaHardsuitTag))
             {
-                foreach (var uid in component.Segments)
-                {
-                    if (!TryComp<AppearanceComponent>(uid, out var appearance)) return;
-                    _appearance.SetData(uid, SegmentedEntitySegmentVisualLayers.Armor, true, appearance);
-                    if (clothing.RsiPath == null) return;
-                    _appearance.SetData(uid, SegmentedEntitySegmentVisualLayers.ArmorRsi, clothing.RsiPath, appearance);
-                }
+                // TODO: Switch segment sprite
             }
         }
 
@@ -316,11 +278,7 @@ namespace Content.Shared.SegmentedEntity
         {
             if (args.Slot == "outerClothing" && _tagSystem.HasTag(args.Equipment, LamiaHardsuitTag))
             {
-                foreach (var uid in component.Segments)
-                {
-                    if (!TryComp<AppearanceComponent>(uid, out var appearance)) return;
-                    _appearance.SetData(uid, SegmentedEntitySegmentVisualLayers.Armor, false, appearance);
-                }
+                    // TODO: Revert to default segment sprite
             }
         }
 
@@ -331,7 +289,7 @@ namespace Content.Shared.SegmentedEntity
             var entityList = new List<RayCastResults>();
             foreach (var entity in args.RayCastResults)
             {
-                if (!component.Segments.Contains(entity.HitEntity))
+                if (!component.Segments.Contains(GetNetEntity(entity.HitEntity)))
                     entityList.Add(entity);
             }
             args.RayCastResults = entityList;
