@@ -471,29 +471,29 @@
 #Outer
 #If the armor changes proves to be too strong, bump the cost up to 4. - Tmanzxd
 #If the armors in the 20~25% resistance values are still too weak, bump up resistances by 5%. Maybe 10% for Detectives and Brigmedics. - Tmanzxd
-- type: loadout
-  id: LoadoutClothingOuterArmorBasic
-  category: Jobs
-  cost: 2
-  exclusive: true
-  requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingOuterArmorBasic
+#- type: loadout
+#  id: LoadoutClothingOuterArmorBasic
+#  category: Jobs
+#  cost: 2
+#  exclusive: true
+#  requirements:
+#    - !type:CharacterDepartmentRequirement
+#      departments:
+#        - Security
+#  items:
+#    - ClothingOuterArmorBasic
 
-- type: loadout
-  id: LoadoutClothingOuterArmorBasicSlim
-  category: Jobs
-  cost: 2
-  exclusive: true
-  requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingOuterArmorBasicSlim
+#- type: loadout
+#  id: LoadoutClothingOuterArmorBasicSlim
+#  category: Jobs
+#  cost: 2
+#  exclusive: true
+#  requirements:
+#    - !type:CharacterDepartmentRequirement
+#      departments:
+#        - Security
+#  items:
+#    - ClothingOuterArmorBasicSlim
 
 - type: loadout
   id: LoadoutClothingOuterArmorPlateCarrier
@@ -506,6 +506,18 @@
         - Security
   items:
     - ClothingOuterArmorPlateCarrier
+
+- type: loadout
+  id: LoadoutClothingOuterArmorDuraVest
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorDuraVest
 
 - type: loadout
   id: LoadoutClothingOuterCoatDetective
