@@ -61,11 +61,11 @@ trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
 
-trait-name-LightStep = Light Step
-trait-description-LightStep =
-    You move with a gentle step, making your footsteps quieter.
-
 trait-name-ParkourTraining = Parkour Training
 trait-description-ParkourTraining =
     Whether as a hobby, lifestyle, or professional training, you are trained in the discipline of parkour.
     You're faster with climbing, crawling, lying down, and getting up.
+
+trait-name-LightStep = Light Step
+trait-description-LightStep =
+    You move with a gentle step, making your footsteps quieter.
