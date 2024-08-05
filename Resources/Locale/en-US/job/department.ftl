@@ -1,11 +1,11 @@
-department-Cargo = Cargo
+department-Logistics = Logistics
 department-Civilian = Civilian
 department-Command = Command
 department-CentralCommand = Central Command
 department-Engineering = Engineering
 department-Medical = Medical
 department-Security = Security
-department-Science = Science
+department-Epistemics = Epistemics
 department-Silicon = Silicon
 department-Specific = Station specific
 department-Dignitary = Dignitary
