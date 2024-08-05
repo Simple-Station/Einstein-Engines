@@ -4888,3 +4888,49 @@ Entries:
         a healthy crewman for the automatic shuttle call.
   id: 6211
   time: '2024-08-04T14:14:12.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: Rename the trait "Heavyweight Drunk" into "Alcohol Tolerance".
+  id: 6212
+  time: '2024-08-05T03:30:41.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Light Step trait, a 1-point trait that makes your footsteps
+        quieter.
+  id: 6213
+  time: '2024-08-05T15:29:07.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add a new 1-point trait called Sign Language, a trait that allows you to
+        communicate in Galactic Sign Language.
+  id: 6214
+  time: '2024-08-05T16:55:31.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Oracle requests are now more likely to be aligned with the current
+        research.
+  id: 6215
+  time: '2024-08-05T17:10:42.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        The Carrying system has been reworked as a means of better supporting
+        having extremely large species and characters. 10kg Harpies should no
+        longer be oppressed by 2000kg Lamia with infinitely short carry
+        attempts. 
+  id: 6216
+  time: '2024-08-05T17:11:37.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Add
+      message: Lamiae should now be rendered much better.
+  id: 6217
+  time: '2024-08-05T17:15:51.0000000+00:00'
