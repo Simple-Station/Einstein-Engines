@@ -16,8 +16,6 @@ public sealed class LayingDownModifierSystem : EntitySystem
         if (!TryComp<LayingDownComponent>(uid, out var layingDown))
             return;
 
-        Log.Debug("Got to on startup");
-
         layingDown.Cooldown *= component.LayingDownCooldownMultiplier;
         layingDown.DownedSpeedMultiplier *= component.DownedSpeedMultiplierMultiplier;
     }
