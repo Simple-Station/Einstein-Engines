@@ -4918,3 +4918,13 @@ Entries:
         research.
   id: 6215
   time: '2024-08-05T17:10:42.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        The Carrying system has been reworked as a means of better supporting
+        having extremely large species and characters. 10kg Harpies should no
+        longer be oppressed by 2000kg Lamia with infinitely short carry
+        attempts. 
+  id: 6216
+  time: '2024-08-05T17:11:37.0000000+00:00'
