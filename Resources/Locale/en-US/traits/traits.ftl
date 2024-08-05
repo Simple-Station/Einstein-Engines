@@ -60,3 +60,8 @@ trait-name-Voracious = Voracious
 trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
+
+trait-name-SignLanguage = Sign Language
+trait-description-SignLanguage =
+    You can understand and use sign language, allowing for visual communication.
+    Being mute for any reason still allows you to communicate with sign language.
