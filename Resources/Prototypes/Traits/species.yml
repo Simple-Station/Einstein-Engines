@@ -1,6 +1,6 @@
 - type: trait
   id: Swashbuckler
-  category: Species
+  category: Physical
   points: -1
   components:
   - type: OniDamageModifier
@@ -21,7 +21,7 @@
 
 - type: trait
   id: Spearmaster
-  category: Species
+  category: Physical
   points: -1
   components:
   - type: OniDamageModifier
@@ -42,7 +42,7 @@
 
 - type: trait
   id: WeaponsGeneralist
-  category: Species
+  category: Physical
   points: -1
   components:
   - type: OniDamageModifier
