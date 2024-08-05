@@ -60,3 +60,18 @@ trait-name-Voracious = Voracious
 trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
+
+trait-name-Swashbuckler = Swashbuckler
+trait-description-Swashbuckler =
+    You are an expert in swordsmanship, wielding swords, knives, and other blades with unrivaled finesse.
+    Your melee Slash bonus is increased to 35%, but your melee Blunt bonus is reduced to 20%.
+
+trait-name-Spearmaster = Spearmaster
+trait-description-Spearmaster =
+    You have an outstanding proficiency with spears, wielding them as an extension of your body.
+    Your melee Piercing bonus is increased to 35%, but your melee Blunt bonus is reduced to 20%.
+
+trait-name-WeaponsGeneralist = Weapons Generalist
+trait-description-WeaponsGeneralist =
+    You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
+    Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 25%.
