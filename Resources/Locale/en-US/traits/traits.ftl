@@ -61,9 +61,6 @@ trait-description-Saturnine = You are naturally dour and morose. Your mood is pe
 trait-name-Sanguine = Sanguine
 trait-description-Sanguine = You are naturally upbeat and cheerful! Your mood is permanently increased by a large amount.
 
-trait-name-Mercurial = Mercurial
-trait-description-Mercurial = Your mood is unpredictable, often swinging wildly in either direction regardless of circumstance.
-
 trait-name-SignLanguage = Sign Language
 trait-description-SignLanguage =
     You can understand and use Galactic Sign Language (GSL).
