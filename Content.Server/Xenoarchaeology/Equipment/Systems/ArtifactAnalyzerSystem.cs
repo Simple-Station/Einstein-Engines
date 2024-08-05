@@ -1,6 +1,5 @@
-using System.Linq;
+using System.Linq
 using Content.Server.Construction;
-using Content.Server.Paper;
 using Content.Server.Power.Components;
 using Content.Server.Research.Systems;
 using Content.Shared.UserInterface;
@@ -10,9 +9,11 @@ using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
 using Content.Shared.Audio;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
+using Content.Shared.Paper;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
 using Content.Shared.Power;
+using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Research.Components;
 using Content.Shared.Xenoarchaeology.Equipment;
 using Content.Shared.Xenoarchaeology.XenoArtifacts;
@@ -23,7 +24,6 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Psionics.Glimmer; //Nyano - Summary:.
 
 namespace Content.Server.Xenoarchaeology.Equipment.Systems;
 
@@ -308,7 +308,8 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
             return;
 
         _popup.PopupEntity(Loc.GetString("analysis-console-print-popup"), uid);
-        _paper.SetContent(report, msg.ToMarkup());
+        if (TryComp<PaperComponent>(report, out var paperComp))
+            _paper.SetContent((report, paperComp), msg.ToMarkup());
         UpdateUserInterface(uid, component);
     }
 
@@ -389,13 +390,8 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
         _research.ModifyServerPoints(server.Value, pointValue, serverComponent);
         _artifact.AdjustConsumedPoints(artifact.Value, pointValue);
 
-        // Nyano - Summary - Begin modified code block: tie artifacts to glimmer.
-        if (TryComp<ArtifactAnalyzerComponent>(component.AnalyzerEntity.Value, out var analyzer) &&
-            analyzer != null)
-        {
+        if (TryComp<ArtifactAnalyzerComponent>(component.AnalyzerEntity.Value, out var analyzer) && analyzer != null)
             _glimmerSystem.DeltaGlimmerInput(pointValue / analyzer.ExtractRatio);
-        }
-        // Nyano - End modified code block.
 
         _audio.PlayPvs(component.ExtractSound, component.AnalyzerEntity.Value, AudioParams.Default.WithVolume(2f));
 
