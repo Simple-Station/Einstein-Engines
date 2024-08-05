@@ -6,6 +6,7 @@
   antagAdvantage: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
+      tracker: Security
       min: 36000 # 10 hrs
     - !type:CharacterPlaytimeRequirement
       tracker: JobLawyer
