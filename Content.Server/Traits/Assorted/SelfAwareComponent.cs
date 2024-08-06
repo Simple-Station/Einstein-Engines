@@ -13,13 +13,13 @@ public sealed partial class SelfAwareComponent : Component
     // <summary>
     //     Damage types that an entity is able to precisely analyze like a health analyzer when they examine themselves.
     // </summary>
-    [DataField("analyzableTypes", required: true, customTypeSerializer:typeof(PrototypeIdHashSetSerializer<DamageTypePrototype>))]
+    [DataField(required: true, customTypeSerializer:typeof(PrototypeIdHashSetSerializer<DamageTypePrototype>))]
     public HashSet<string> AnalyzableTypes = default!;
 
     // <summary>
     //     Damage groups that an entity is able to detect the presence of when they examine themselves.
     // </summary>
-    [DataField("detectableGroups", required: true, customTypeSerializer:typeof(PrototypeIdHashSetSerializer<DamageGroupPrototype>))]
+    [DataField(required: true, customTypeSerializer:typeof(PrototypeIdHashSetSerializer<DamageGroupPrototype>))]
     public HashSet<string> DetectableGroups = default!;
 
     // <summary>
