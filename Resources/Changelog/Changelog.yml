@@ -4969,3 +4969,11 @@ Entries:
         toxin/airloss damage.
   id: 6221
   time: '2024-08-06T08:05:59.0000000+00:00'
+- author: TJohnson
+  changes:
+    - type: Tweak
+      message: >-
+        Removed overlay restriction for vulps, you can now have as many overlay
+        markings as you want!
+  id: 6222
+  time: '2024-08-06T19:05:46.0000000+00:00'
