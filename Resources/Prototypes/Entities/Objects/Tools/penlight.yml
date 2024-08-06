@@ -32,6 +32,8 @@
         type: PenLightBoundUserInterface
     - type: ToggleableLightVisuals
     - type: ContainerContainer
+      containers:
+        cell_slot: !type:ContainerSlot {}
     - type: PowerCellSlot
       cellSlotId: cell_slot
     - type: ItemSlots
