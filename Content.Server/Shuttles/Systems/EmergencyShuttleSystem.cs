@@ -8,6 +8,7 @@ using Content.Server.Communications;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.GameTicking.Events;
+using Content.Server.Pinpointer;
 using Content.Server.Popups;
 using Content.Server.RoundEnd;
 using Content.Server.Screens.Components;
@@ -33,6 +34,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 using Content.Server.Announcements.Systems;
 
 namespace Content.Server.Shuttles.Systems;
@@ -56,6 +58,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly DockingSystem _dock = default!;
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly IdCardSystem _idSystem = default!;
+    [Dependency] private readonly NavMapSystem _navMap = default!;
     [Dependency] private readonly MapLoaderSystem _map = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
@@ -313,16 +316,13 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         }
         else
         {
-            if (TryComp<TransformComponent>(targetGrid.Value, out var targetXform))
-            {
-                var angle = _dock.GetAngle(stationShuttle.EmergencyShuttle.Value, xform, targetGrid.Value, targetXform, xformQuery);
-                _announcer.SendAnnouncementMessage(
+            var location = FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((stationShuttle.EmergencyShuttle.Value, xform)));
+            _announcer.SendAnnouncementMessage(
                     _announcer.GetAnnouncementId("ShuttleNearby"),
                     "emergency-shuttle-nearby",
                     null, null, null, null,
-                    ("direction", angle.GetDir())
+                    ("direction", location)
                 );
-            }
 
             _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle {ToPrettyString(stationUid)} unable to find a valid docking port for {ToPrettyString(stationUid)}");
             _announcer.SendAnnouncementAudio(_announcer.GetAnnouncementId("ShuttleNearby"), Filter.Broadcast());
@@ -428,7 +428,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         }
 
         var mapId = _mapManager.CreateMap();
-        var grid = _map.LoadGrid(mapId, component.Map.ToString(),  new MapLoadOptions()
+        var grid = _map.LoadGrid(mapId, component.Map.ToString(), new MapLoadOptions()
         {
             LoadMap = false,
         });

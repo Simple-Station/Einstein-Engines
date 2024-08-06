@@ -23,21 +23,18 @@
         accent: dwarf
 
 - type: trait
-  id: NormalVisionHarpy
-  category: Visual
-  points: -1
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species: Harpy
+  id: Southern
+  category: Speech
   components:
-    - type: NormalVision
+    - type: SouthernAccent
 
 - type: trait
-  id: NormalVisionVulpkanin
+  id: NormalVision
   category: Visual
-  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: Vulpkanin
+      species:
+        - Harpy
+        - Vulpkanin
   components:
     - type: NormalVision

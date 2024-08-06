@@ -4,17 +4,17 @@
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobWarden
-      time: 14400 #DeltaV 4 hrs
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobWarden
+      min: 14400 #DeltaV 4 hrs
   #  - !type:RoleTimeRequirement # DeltaV - No Security Officer time requirement - REIMPLEMENT WHEN MORE PEOPLE HAVE IT
   #    role: JobDetective
   #    time: 14400 #DeltaV 4 hrs
-    - !type:DepartmentTimeRequirement # DeltaV - Command dept time requirement
+    - !type:CharacterDepartmentTimeRequirement # DeltaV - Command dept time requirement
       department: Command
-      time: 36000 # 10 hours
-    - !type:OverallPlaytimeRequirement
-      time: 90000 # DeltaV - 25 hours
+      min: 36000 # 10 hours
+    - !type:CharacterOverallTimeRequirement
+      min: 90000 # DeltaV - 25 hours
     - !type:WhitelistRequirement # DeltaV - Whitelist requirement
   weight: 10
   startingGear: HoSGear

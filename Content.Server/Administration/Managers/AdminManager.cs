@@ -150,7 +150,7 @@ namespace Content.Server.Administration.Managers
             plyData.ExplicitlyDeadminned = false;
             reg.Data.Active = true;
 
-            if (reg.Data.Stealth)
+            if (!reg.Data.Stealth)
             {
                 _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-self-re-admin-message", ("newAdminName", session.Name)));
             }
@@ -279,7 +279,13 @@ namespace Content.Server.Administration.Managers
                 _commandPermissions.LoadPermissionsFromStream(efs);
             }
 
-            if (_res.TryContentFileRead(new ResPath("/toolshedEngineCommandPerms.yml"), out var toolshedPerms))
+            var toolshedPermsPath = new ResPath("/toolshedEngineCommandPerms.yml");
+            if (_res.TryContentFileRead(toolshedPermsPath, out var toolshedPerms))
+            {
+                _commandPermissions.LoadPermissionsFromStream(toolshedPerms);
+            }
+            // This may or may not be necessary. We read the same file again and load the same permissions into a different manager.
+            if (_res.TryContentFileRead(toolshedPermsPath, out toolshedPerms))
             {
                 _toolshedCommandPermissions.LoadPermissionsFromStream(toolshedPerms);
             }
@@ -366,10 +372,10 @@ namespace Content.Server.Administration.Managers
 
             _admins.Add(session, reg);
 
-            if (session.ContentData()!.Stealthed)
+            if (session.ContentData()?.Stealthed == true)
                 reg.Data.Stealth = true;
 
-            if (!session.ContentData()?.ExplicitlyDeadminned ?? false)
+            if (!session.ContentData()?.ExplicitlyDeadminned ?? true)
             {
                 reg.Data.Active = true;
 

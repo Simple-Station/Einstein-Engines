@@ -63,13 +63,20 @@
     - CheapLighter
 
 - type: loadout
-  id: LoadoutItemMatches
+  id: LoadoutItemLighterFlippo
   category: Items
-  cost: 1
+  cost: 3
   items:
-    - Matchbox
+    - FlippoLighter
 
-## Instruments
+- type: loadout
+  id: LoadoutItemSmokingPipeFilledTobacco
+  category: Items
+  cost: 2
+  items:
+    - SmokingPipeFilledTobacco
+
+# Instruments
 - type: loadout
   id: LoadoutItemMicrophoneInstrument
   category: Items
@@ -177,11 +184,289 @@
     - DoubleEmergencyOxygenTankFilled
 
 - type: loadout
+  id: LoadoutItemClothingMaskBreath
+  category: Items
+  cost: 1
+  items:
+    - ClothingMaskBreath
+
+- type: loadout
   id: LoadoutItemsEmergencyCrowbar
   category: Items
   cost: 3
   items:
     - CrowbarRed
+
+- type: loadout
+  id: LoadoutItemFireExtinguisher
+  category: Items
+  cost: 3
+  items:
+    - FireExtinguisher
+
+- type: loadout
+  id: LoadoutItemFlashlightLantern
+  category: Items
+  cost: 2
+  items:
+    - FlashlightLantern
+
+- type: loadout
+  id: LoadoutItemFlare
+  category: Items
+  cost: 1
+  items:
+    - Flare
+
+- type: loadout
+  id: LoadoutEmergencyMedipen
+  category: Items
+  cost: 1
+  items:
+    - EmergencyMedipen
+
+- type: loadout
+  id: LoadoutSpaceMedipen
+  category: Items
+  cost: 1
+  items:
+    - SpaceMedipen
+
+# Paperwork
+- type: loadout
+  id: LoadoutItemPapers
+  category: Items
+  cost: 1
+  items:
+    - Paper
+    - Paper
+    - Paper
+    - Paper
+
+- type: loadout
+  id: LoadoutItemBoxFolderGrey
+  category: Items
+  cost: 1
+  items:
+    - BoxFolderGrey
+
+- type: loadout
+  id: LoadoutBookRandom
+  category: Items
+  cost: 1
+  items:
+    - BookRandom
+
+- type: loadout
+  id: LoadoutPen
+  category: Items
+  cost: 1
+  items:
+    - Pen
+
+# Food and drink
+- type: loadout
+  id: LoadoutDrinkWaterBottleFull
+  category: Items
+  cost: 1
+  items:
+    - DrinkWaterBottleFull
+
+- type: loadout
+  id: LoadoutItemLunchboxGenericFilledRandom
+  category: Items
+  cost: 3
+  items:
+    - LunchboxGenericFilledRandom
+
+# Survival boxes
+- type: loadout
+  id: LoadoutItemBoxSurvival
+  category: Items
+  cost: 2 #All survival kits are intentionally cheaper than their contents to help encourage people to buy them. The contents can be bought separately to save space, or as spares
+  items:
+    - BoxSurvival
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Medical
+         - Engineering
+         - Epistemics
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Clown
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalEngineering
+  category: Items
+  cost: 2
+  items:
+    - BoxSurvivalEngineering
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Engineering
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalSecurity
+  category: Items
+  cost: 2
+  items:
+    - BoxSurvivalSecurity
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Security
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Brigmedic
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalBrigmedic
+  category: Items
+  cost: 2
+  items:
+    - BoxSurvivalBrigmedic
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Brigmedic
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalMedical
+  category: Items
+  cost: 2
+  items:
+    - BoxSurvivalMedical
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Medical
+
+- type: loadout
+  id: LoadoutItemBoxHug
+  category: Items
+  cost: 2
+  items:
+    - BoxHug
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Clown
+
+# Medkits
+- type: loadout
+  id: LoadoutMedkitFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitFilled
+
+- type: loadout
+  id: LoadoutMedkitBruteFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitBruteFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitBurnFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitBurnFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitToxinFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitToxinFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitOxygenFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitOxygenFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitRadiationFilled
+  category: Items
+  cost: 4
+  items:
+    - MedkitRadiationFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitAdvancedFilled
+  category: Items
+  cost: 5
+  items:
+    - MedkitAdvancedFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutMedkitCombatFilled
+  category: Items
+  cost: 4 # Discounted for the CMO and Corpsman
+  items:
+    - MedkitCombatFilled
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - ChiefMedicalOfficer
+         - Brigmedic
 
 #Misc Items
 - type: loadout
@@ -192,11 +477,42 @@
     - PersonalAI
 
 - type: loadout
+  id: LoadoutItemBackpackSatchelLeather
+  category: Items
+  cost: 1
+  items:
+    - ClothingBackpackSatchelLeather
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+
+- type: loadout
   id: LoadoutItemWaistbag
   category: Items
   cost: 2
   items:
     - ClothingBeltStorageWaistbag
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+
+- type: loadout
+  id: LoadoutItemCrayonBox
+  category: Items
+  cost: 4
+  items:
+    - CrayonBox
+
+- type: loadout
+  id: LoadoutItemBarberScissors
+  category: Items
+  cost: 4
+  items:
+    - BarberScissors
 
 - type: loadout
   id: LoadoutSolCommonTranslator
@@ -204,3 +520,10 @@
   cost: 3
   items:
     - SolCommonTranslator
+
+- type: loadout
+  id: LoadoutHandLabeler
+  category: Items
+  cost: 3
+  items:
+    - HandLabeler

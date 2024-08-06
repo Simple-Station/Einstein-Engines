@@ -211,6 +211,34 @@
     - RadioHandheld
 
 - type: entity
+  id: BorgModuleJetpack
+  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  name: jetpack cyborg module
+  description: A piece of tech that gives cyborgs new abilities. Needs to be loaded by a cyborg before you can refill the jetpack.
+  components:
+  - type: Sprite
+    layers:
+    - state: cargo
+    - state: icon-jetpack
+  - type: BorgJetpack
+  - type: ItemBorgModule
+    items:
+    - JetpackMicroFilled
+
+- type: entity
+  id: BorgModulePka
+  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  name: proto kinetic accelerator cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: cargo
+    - state: icon-pka
+  - type: ItemBorgModule
+    items:
+    - WeaponProtoKineticAccelerator
+
+- type: entity
   id: BorgModuleGrapplingGun
   parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
   name: grappling gun cyborg module
@@ -222,7 +250,6 @@
   - type: ItemBorgModule
     items:
     - WeaponGrapplingGun
-    - WeaponCrusherDagger
     - HandheldGPSBasic
 
 # engineering modules
@@ -517,13 +544,13 @@
   components:
     - type: Sprite
       layers:
-        - state: syndicate
-        - state: icon-tools
+      - state: syndicate
+      - state: icon-syndicate
     - type: ItemBorgModule
       items:
-        - Crowbar
-        - Emag
-        - PinpointerSyndicateNuclear
+      - Crowbar
+      - Emag
+      - PinpointerSyndicateNuclear
 
 - type: entity
   id: BorgModuleEsword
@@ -533,12 +560,12 @@
   components:
     - type: Sprite
       layers:
-        - state: syndicate
-        - state: icon-tools
+      - state: syndicate
+      - state: icon-syndicate
     - type: ItemBorgModule
       items:
-        - EnergySwordDouble
-        - PinpointerSyndicateNuclear
+      - EnergySwordDouble
+      - PinpointerSyndicateNuclear
 
 - type: entity
   id: BorgModuleL6C
@@ -548,9 +575,9 @@
   components:
     - type: Sprite
       layers:
-        - state: syndicate
-        - state: icon-tools
+      - state: syndicate
+      - state: icon-syndicate
     - type: ItemBorgModule
       items:
-        - WeaponLightMachineGunL6C
-        - PinpointerSyndicateNuclear
+      - WeaponLightMachineGunL6C
+      - PinpointerSyndicateNuclear

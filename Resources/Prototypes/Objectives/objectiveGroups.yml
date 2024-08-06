@@ -26,6 +26,7 @@
     LOLuckyBillStealObjective: 0.5 # DeltaV - LO steal objective, see Resources/Prototypes/DeltaV/Objectives/traitor.yml
     HoPBookIanDossierStealObjective: 1 # DeltaV - HoP steal objective, see Resources/Prototypes/DeltaV/Objectives/traitor.yml
     HoSGunStealObjective: 0.5
+    StealSupermatterSliverObjective: 0.5
 
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
@@ -80,7 +81,6 @@
     TechnologyDiskStealCollectionObjective: 1        #rnd
     FigurineStealCollectionObjective: 0.3          #service
     IDCardsStealCollectionObjective: 1
-    CannabisStealCollectionObjective: 1
     LAMPStealCollectionObjective: 2 #only for moth
 
 - type: weightedRandom

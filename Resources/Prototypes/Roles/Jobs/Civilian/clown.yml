@@ -4,8 +4,8 @@
   description: job-description-clown
   playTimeTracker: JobClown
   requirements:
-    - !type:OverallPlaytimeRequirement # DeltaV - Playtime requirement
-      time: 7200 #2 hrs
+    - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
+      min: 7200 #2 hrs
   startingGear: ClownGear
   icon: "JobIconClown"
   supervisors: job-supervisors-hop
@@ -23,11 +23,10 @@
           Piercing: 4
         groups:
           Burn: 3
-# DeltaV - Commenting out the clown snore sound because I am not fond of it (it makes me itchy and feral). By "I", I mean Leonardo_DaBepis. 
+# DeltaV - Commenting out the clown snore sound because I am not fond of it (it makes me itchy and feral). By "I", I mean Leonardo_DaBepis.
 #    - type: SleepEmitSound
 #      snore: /Audio/Voice/Misc/silly_snore.ogg
 #      interval: 10
-#      chance: 1.0
   - !type:AddImplantSpecial
     implants: [ SadTromboneImplant ]
 

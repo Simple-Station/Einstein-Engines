@@ -1,4 +1,4 @@
-## Clown
+# Clown
 - type: loadout
   id: LoadoutServiceClownOutfitJester
   category: Jobs
@@ -27,7 +27,150 @@
     - ClothingHeadHatJesterAlt
     - ClothingShoesJester
 
-## Bartender
+- type: loadout
+  id: LoadoutServiceClownOuterWinter
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingOuterWinterClown
+
+- type: loadout
+  id: LoadoutServiceClownOuterClownPriest
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingOuterClownPriest
+
+- type: loadout
+  id: LoadoutServiceClownBootsWinter
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesBootsWinterClown
+
+- type: loadout
+  id: LoadoutServiceClownMaskSexy
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingMaskSexyClown
+
+- type: loadout
+  id: LoadoutServiceClownBedsheetClown
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - BedsheetClown
+
+# Mime
+- type: loadout
+  id: LoadoutServiceMimeOuterWinter
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingOuterWinterMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskSad
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskSadMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskScared
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskScaredMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskSexy
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskSexyMime
+
+- type: loadout
+  id: LoadoutServiceMimeShoesBootsWinter
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesBootsWinterMime
+
+- type: loadout
+  id: LoadoutServiceMimeBedsheetMime
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - BedsheetMime
+
+# Bartender
 - type: loadout
   id: LoadoutServiceBartenderUniformPurple
   category: Jobs
@@ -40,7 +183,7 @@
   items:
     - ClothingUniformJumpsuitBartenderPurple
 
-## Botanist
+# Botanist
 - type: loadout
   id: LoadoutServiceBotanistUniformOveralls
   category: Jobs
@@ -53,13 +196,17 @@
   items:
     - ClothingUniformOveralls
 
-## Lawyer
+# Lawyer
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSuit
   category: Jobs
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
      jobs:
         - Lawyer
@@ -84,6 +231,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -108,6 +259,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -132,6 +287,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -162,13 +321,17 @@
   items:
     - ClothingUniformJumpsuitJournalist
 
-## Reporter
+# Reporter
 - type: loadout
   id: LoadoutServiceReporterUniformDetectivesuit
   category: Jobs
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Reporter
@@ -187,7 +350,7 @@
   items:
     - ClothingUniformJumpskirtDetective
 
-## Musician
+# Musician
 - type: loadout
   id: LoadoutItemSynthesizerInstrument
   category: Jobs
