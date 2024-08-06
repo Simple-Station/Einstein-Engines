@@ -7,10 +7,10 @@ namespace Content.Shared.Carrying
 
     public sealed partial class CarryingSlowdownComponent : Component
     {
-        [DataField("walkModifier", required: true)] [ViewVariables(VVAccess.ReadWrite)]
+        [DataField(required: true)]
         public float WalkModifier = 1.0f;
 
-        [DataField("sprintModifier", required: true)] [ViewVariables(VVAccess.ReadWrite)]
+        [DataField(required: true)]
         public float SprintModifier = 1.0f;
     }
 

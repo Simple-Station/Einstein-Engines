@@ -1,7 +1,6 @@
 using System.Numerics;
 using System.Threading;
 using Content.Server.DoAfter;
-using Content.Server.Body.Systems;
 using Content.Server.Resist;
 using Content.Server.Popups;
 using Content.Server.Inventory;
@@ -14,8 +13,9 @@ using Content.Shared.Hands;
 using Content.Shared.Stunnable;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Verbs;
-using Content.Shared.Climbing.Events; // Added this.
+using Content.Shared.Climbing.Events;
 using Content.Shared.Carrying;
+using Content.Shared.Contests;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Standing;
@@ -31,6 +31,7 @@ using Content.Shared.Nyanotrasen.Item.PseudoItem;
 using Content.Shared.Storage;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Carrying
 {
@@ -47,6 +48,8 @@ namespace Content.Server.Carrying
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
         [Dependency] private readonly PseudoItemSystem _pseudoItem = default!;
+        [Dependency] private readonly ContestsSystem _contests = default!;
+        [Dependency] private readonly TransformSystem _transform = default!;
 
         public override void Initialize()
         {
@@ -70,22 +73,11 @@ namespace Content.Server.Carrying
 
         private void AddCarryVerb(EntityUid uid, CarriableComponent component, GetVerbsEvent<AlternativeVerb> args)
         {
-            if (!args.CanInteract || !args.CanAccess)
-                return;
-
-            if (!CanCarry(args.User, uid, component))
-                return;
-
-            if (HasComp<CarryingComponent>(args.User)) // yeah not dealing with that
-                return;
-
-            if (HasComp<BeingCarriedComponent>(args.User) || HasComp<BeingCarriedComponent>(args.Target))
-                return;
-
-            if (!_mobStateSystem.IsAlive(args.User))
-                return;
-
-            if (args.User == args.Target)
+            if (!args.CanInteract || !args.CanAccess || !_mobStateSystem.IsAlive(args.User)
+                || !CanCarry(args.User, uid, component)
+                || HasComp<CarryingComponent>(args.User)
+                || HasComp<BeingCarriedComponent>(args.User) || HasComp<BeingCarriedComponent>(args.Target)
+                || args.User == args.Target)
                 return;
 
             AlternativeVerb verb = new()
@@ -105,13 +97,10 @@ namespace Content.Server.Carrying
             // If the person is carrying someone, and the carried person is a pseudo-item, and the target entity is a storage,
             // then add an action to insert the carried entity into the target
             var toInsert = args.Using;
-            if (toInsert is not { Valid: true } || !args.CanAccess || !TryComp<PseudoItemComponent>(toInsert, out var pseudoItem))
-                return;
-
-            if (!TryComp<StorageComponent>(args.Target, out var storageComp))
-                return;
-
-            if (!_pseudoItem.CheckItemFits((toInsert.Value, pseudoItem), (args.Target, storageComp)))
+            if (toInsert is not { Valid: true } || !args.CanAccess
+                || !TryComp<PseudoItemComponent>(toInsert, out var pseudoItem)
+                || !TryComp<StorageComponent>(args.Target, out var storageComp)
+                || !_pseudoItem.CheckItemFits((toInsert.Value, pseudoItem), (args.Target, storageComp)))
                 return;
 
             InnateVerb verb = new()
@@ -142,25 +131,22 @@ namespace Content.Server.Carrying
         /// Basically using virtual item passthrough to throw the carried person. A new age!
         /// Maybe other things besides throwing should use virt items like this...
         /// </summary>
-        private void OnThrow(EntityUid uid, CarryingComponent component, BeforeThrowEvent args)
+        private void OnThrow(EntityUid uid, CarryingComponent component, ref BeforeThrowEvent args)
         {
-            if (!TryComp<VirtualItemComponent>(args.ItemUid, out var virtItem) || !HasComp<CarriableComponent>(virtItem.BlockingEntity))
+            if (!TryComp<VirtualItemComponent>(args.ItemUid, out var virtItem)
+                || !HasComp<CarriableComponent>(virtItem.BlockingEntity))
                 return;
 
             args.ItemUid = virtItem.BlockingEntity;
 
-            var multiplier = MassContest(uid, virtItem.BlockingEntity);
-            args.ThrowStrength = 5f * multiplier;
+            args.ThrowStrength *= _contests.MassContest(uid, virtItem.BlockingEntity, false, 2f)
+                            * _contests.StaminaContest(uid, virtItem.BlockingEntity);
         }
 
         private void OnParentChanged(EntityUid uid, CarryingComponent component, ref EntParentChangedMessage args)
         {
             var xform = Transform(uid);
-            if (xform.MapID != args.OldMapId)
-                return;
-
-            // Do not drop the carried entity if the new parent is a grid
-            if (xform.ParentUid == xform.GridUid)
+            if (xform.MapID != args.OldMapId || xform.ParentUid == xform.GridUid)
                 return;
 
             DropCarried(uid, component.Carried);
@@ -190,17 +176,14 @@ namespace Content.Server.Carrying
         /// </summary>
         private void OnMoveInput(EntityUid uid, BeingCarriedComponent component, ref MoveInputEvent args)
         {
-            if (!TryComp<CanEscapeInventoryComponent>(uid, out var escape))
+            if (!TryComp<CanEscapeInventoryComponent>(uid, out var escape)
+                || !args.HasDirectionalMovement)
                 return;
 
-            if (!args.HasDirectionalMovement)
-                return;
-
+            // Check if the victim is in any way incapacitated, and if not make an escape attempt.
+            // Escape time scales with the inverse of a mass contest. Being lighter makes escape harder.
             if (_actionBlockerSystem.CanInteract(uid, component.Carrier))
-            {
-                // Note: the mass contest is inverted because weaker entities are supposed to take longer to escape
-                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, MassContest(component.Carrier, uid));
-            }
+                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, _contests.MassContest(uid, component.Carrier, false, 2f));
         }
 
         private void OnMoveAttempt(EntityUid uid, BeingCarriedComponent component, UpdateCanMoveEvent args)
@@ -237,10 +220,8 @@ namespace Content.Server.Carrying
         private void OnDoAfter(EntityUid uid, CarriableComponent component, CarryDoAfterEvent args)
         {
             component.CancelToken = null;
-            if (args.Handled || args.Cancelled)
-                return;
-
-            if (!CanCarry(args.Args.User, uid, component))
+            if (args.Handled || args.Cancelled
+                || !CanCarry(args.Args.User, uid, component))
                 return;
 
             Carry(args.Args.User, uid);
@@ -248,16 +229,18 @@ namespace Content.Server.Carrying
         }
         private void StartCarryDoAfter(EntityUid carrier, EntityUid carried, CarriableComponent component)
         {
-            TimeSpan length = GetPickupDuration(carrier, carried);
-
-            if (length >= TimeSpan.FromSeconds(9))
+            if (!TryComp<PhysicsComponent>(carrier, out var carrierPhysics)
+                || !TryComp<PhysicsComponent>(carried, out var carriedPhysics)
+                || carriedPhysics.Mass > carrierPhysics.Mass * 2f)
             {
                 _popupSystem.PopupEntity(Loc.GetString("carry-too-heavy"), carried, carrier, Shared.Popups.PopupType.SmallCaution);
                 return;
             }
 
-            if (!HasComp<KnockedDownComponent>(carried))
-                length *= 2f;
+            var length = TimeSpan.FromSeconds(component.PickupDuration
+                        * _contests.MassContest(carriedPhysics, carrierPhysics, false, 4f)
+                        * _contests.StaminaContest(carrier, carried)
+                        * (_standingState.IsDown(carried) ? 0.5f : 1));
 
             component.CancelToken = new CancellationTokenSource();
 
@@ -280,10 +263,10 @@ namespace Content.Server.Carrying
             if (TryComp<PullableComponent>(carried, out var pullable))
                 _pullingSystem.TryStopPull(carried, pullable);
 
-            Transform(carrier).AttachToGridOrMap();
-            Transform(carried).AttachToGridOrMap();
-            Transform(carried).Coordinates = Transform(carrier).Coordinates;
-            Transform(carried).AttachParent(Transform(carrier));
+            _transform.AttachToGridOrMap(carrier);
+            _transform.AttachToGridOrMap(carried);
+            _transform.SetCoordinates(carried, Transform(carrier).Coordinates);
+            _transform.SetParent(carried, carrier);
             _virtualItemSystem.TrySpawnVirtualItemInHand(carried, carrier);
             _virtualItemSystem.TrySpawnVirtualItemInHand(carried, carrier);
             var carryingComp = EnsureComp<CarryingComponent>(carrier);
@@ -299,17 +282,13 @@ namespace Content.Server.Carrying
 
         public bool TryCarry(EntityUid carrier, EntityUid toCarry, CarriableComponent? carriedComp = null)
         {
-            if (!Resolve(toCarry, ref carriedComp, false))
-                return false;
-
-            if (!CanCarry(carrier, toCarry, carriedComp))
-                return false;
-
-            // The second one means that carrier is a pseudo-item and is inside a bag.
-            if (HasComp<BeingCarriedComponent>(carrier) || HasComp<ItemComponent>(carrier))
-                return false;
-
-            if (GetPickupDuration(carrier, toCarry) > TimeSpan.FromSeconds(9))
+            if (!Resolve(toCarry, ref carriedComp, false)
+                || !CanCarry(carrier, toCarry, carriedComp)
+                || HasComp<BeingCarriedComponent>(carrier)
+                || HasComp<ItemComponent>(carrier)
+                || TryComp<PhysicsComponent>(carrier, out var carrierPhysics)
+                && TryComp<PhysicsComponent>(toCarry, out var toCarryPhysics)
+                && carrierPhysics.Mass < toCarryPhysics.Mass * 2f)
                 return false;
 
             Carry(carrier, toCarry);
@@ -319,77 +298,39 @@ namespace Content.Server.Carrying
 
         public void DropCarried(EntityUid carrier, EntityUid carried)
         {
-            RemComp<CarryingComponent>(carrier); // get rid of this first so we don't recusrively fire that event
+            RemComp<CarryingComponent>(carrier); // get rid of this first so we don't recursively fire that event
             RemComp<CarryingSlowdownComponent>(carrier);
             RemComp<BeingCarriedComponent>(carried);
             RemComp<KnockedDownComponent>(carried);
             _actionBlockerSystem.UpdateCanMove(carried);
             _virtualItemSystem.DeleteInHandsMatching(carrier, carried);
-            Transform(carried).AttachToGridOrMap();
+            _transform.AttachToGridOrMap(carried);
             _standingState.Stand(carried);
             _movementSpeed.RefreshMovementSpeedModifiers(carrier);
         }
 
         private void ApplyCarrySlowdown(EntityUid carrier, EntityUid carried)
         {
-            var massRatio = MassContest(carrier, carried);
+            var massRatio = _contests.MassContest(carrier, carried, true);
+            var massRatioSq = MathF.Pow(massRatio, 2);
+            var modifier = 1 - 0.15f / massRatioSq;
+            modifier = Math.Max(0.1f, modifier);
 
-            if (massRatio == 0)
-                massRatio = 1;
-
-            var massRatioSq = Math.Pow(massRatio, 2);
-            var modifier = (1 - (0.15 / massRatioSq));
-            modifier = Math.Max(0.1, modifier);
             var slowdownComp = EnsureComp<CarryingSlowdownComponent>(carrier);
-            _slowdown.SetModifier(carrier, (float) modifier, (float) modifier, slowdownComp);
+            _slowdown.SetModifier(carrier, modifier, modifier, slowdownComp);
         }
 
         public bool CanCarry(EntityUid carrier, EntityUid carried, CarriableComponent? carriedComp = null)
         {
-            if (!Resolve(carried, ref carriedComp, false))
+            if (!Resolve(carried, ref carriedComp, false)
+                || carriedComp.CancelToken != null
+                || !HasComp<MapGridComponent>(Transform(carrier).ParentUid)
+                || HasComp<BeingCarriedComponent>(carrier)
+                || HasComp<BeingCarriedComponent>(carried)
+                || !TryComp<HandsComponent>(carrier, out var hands)
+                || hands.CountFreeHands() < carriedComp.FreeHandsRequired)
                 return false;
-
-            if (carriedComp.CancelToken != null)
-                return false;
-
-            if (!HasComp<MapGridComponent>(Transform(carrier).ParentUid))
-                return false;
-
-            if (HasComp<BeingCarriedComponent>(carrier) || HasComp<BeingCarriedComponent>(carried))
-                return false;
-
-        //  if (_respirator.IsReceivingCPR(carried))
-            //  return false;
-
-            if (!TryComp<HandsComponent>(carrier, out var hands))
-                return false;
-
-            if (hands.CountFreeHands() < carriedComp.FreeHandsRequired)
-                return false;
-
             return true;
-        }
-
-        private float MassContest(EntityUid roller, EntityUid target, PhysicsComponent? rollerPhysics = null, PhysicsComponent? targetPhysics = null)
-        {
-            if (!Resolve(roller, ref rollerPhysics, false) || !Resolve(target, ref targetPhysics, false))
-                return 1f;
-
-            if (targetPhysics.FixturesMass == 0)
-                return 1f;
-
-            return rollerPhysics.FixturesMass / targetPhysics.FixturesMass;
-        }
-
-        private TimeSpan GetPickupDuration(EntityUid carrier, EntityUid carried)
-        {
-            var length = TimeSpan.FromSeconds(3);
-
-            var mod = MassContest(carrier, carried);
-            if (mod != 0)
-                length /= mod;
-
-            return length;
         }
 
         public override void Update(float frameTime)
