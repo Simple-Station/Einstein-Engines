@@ -4,10 +4,10 @@
   graph:
     - node: start
       edges:
-        - to: wraps
+        - to: shoes
           steps:
           - material: Cloth
             amount: 2
             doAfter: 1
-    - node: warps
+    - node: shoes
       entity: ClothingClothWrap
