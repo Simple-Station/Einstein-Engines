@@ -42,10 +42,10 @@ public sealed class TeleportingTraitSystem : EntitySystem
     {
         if (!_random.Prob(comp.DeletionChance))
             return;
-        QueueDel(uid);
         Solution vanishSolution = new();
         vanishSolution.AddReagent("Slime", comp.Potency / 2);
         _puddle.TrySpillAt(uid, vanishSolution, out _);
+        QueueDel(uid);
     }
 }
 

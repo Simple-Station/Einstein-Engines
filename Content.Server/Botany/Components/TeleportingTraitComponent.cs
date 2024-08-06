@@ -4,28 +4,28 @@ namespace Content.Server.Botany
 
     public sealed partial class TeleportingTraitComponent : Component
     {
-        ///<summary>
-        /// Teleportation radius of produce.
+        /// <summary>
+        ///     Teleportation radius of produce.
         ///
-        [DataField("produceTeleportRadius")]
+        [DataField]
         public float ProduceTeleportRadius;
 
-        ///<summary>
-        /// How much to divide the potency.
+        /// <summary>
+        ///     How much to divide the potency.
         ///
-        [DataField("potencyDivide")]
+        [DataField]
         public float PotencyDivide = 10f;
 
-        ///<summary>
-        ///  Potency of fruit.
+        /// <summary>
+        ///     Potency of fruit.
         ///
-        [DataField("potency")]
+        [DataField]
         public float Potency;
 
-        ///<summary>
-        ///  Chance of deletion.
+        /// <summary>
+        ///     Chance of deletion.
         ///
-        [DataField("deletionChance")]
+        [DataField]
         public float DeletionChance = .5f;
     }
 }
