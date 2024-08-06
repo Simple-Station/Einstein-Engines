@@ -5001,3 +5001,11 @@ Entries:
         Slash or Piercing damage or be a melee weapons generalist.
   id: 6225
   time: '2024-08-06T19:50:20.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add Parkour Training, a 3-point trait that makes you faster with
+        climbing tables and crawling.
+  id: 6226
+  time: '2024-08-06T20:37:00.0000000+00:00'
