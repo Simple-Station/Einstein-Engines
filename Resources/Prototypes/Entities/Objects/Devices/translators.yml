@@ -215,6 +215,7 @@
     - Pig
     - Crab
     - Kobold
+    - Hissing
     requires:
     - GalacticCommon
     setLanguageOnInteract: false

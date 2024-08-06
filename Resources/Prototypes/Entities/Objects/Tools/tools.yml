@@ -5,12 +5,20 @@
   description: This kills the wire.
   components:
   - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/wirecutter_pickup.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/wirecutter_pickup.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/wirecutter_drop.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/wirecutter_drop.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/wirecutter_drop.ogg
+      params:
+        volume: -2
   - type: Tag
     tags:
     - PlantSampleTaker
@@ -55,12 +63,20 @@
   description: Industrial grade torque in a small screwdriving package.
   components:
   - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/screwdriver_pickup.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/screwdriver_pickup.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/screwdriver_drop.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/screwdriver_drop.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/screwdriver_drop.ogg
+      params:
+        volume: -2
   - type: Tag
     tags:
     - Screwdriver
@@ -103,12 +119,20 @@
   description: 'A common tool for assembly and disassembly. Remember: righty tighty, lefty loosey.'
   components:
   - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/wrench_pickup.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/wrench_pickup.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/wrench_drop.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/wrench_drop.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/wrench_drop.ogg
+      params:
+        volume: -2
   - type: Tag
     tags:
     - Wrench
@@ -146,12 +170,20 @@
   description: A multipurpose tool to pry open doors and fight interdimensional invaders.
   components:
   - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/crowbar_pickup.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/crowbar_pickup.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/crowbar_drop.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/crowbar_drop.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/crowbar_drop.ogg
+      params:
+        volume: -2
   - type: Tag
     tags:
     - Crowbar

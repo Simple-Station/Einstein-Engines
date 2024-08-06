@@ -1313,7 +1313,6 @@
     tags:
     - VimPilot
     - DoorBumpOpener
-  - type: CanWalk
 
 - type: entity
   name: monkey
@@ -2442,6 +2441,12 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
+
 
 - type: entity
   name: possum
@@ -2519,6 +2524,11 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
 
 - type: entity
   name: fox
@@ -2886,9 +2896,9 @@
     - Syndicate
   - type: LanguageKnowledge
     speaks:
-    - Xeno
+    - Cat
     understands:
-    - Xeno
+    - Cat
     - GalacticCommon
 
 - type: entity
@@ -3060,6 +3070,11 @@
     barkMultiplier: 10
     barks:
       - Sloth
+  - type: LanguageKnowledge # WHAT DOES THE SLOTH SAY???????
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
 
 - type: entity
   name: ferret
@@ -3119,6 +3134,11 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
 
 - type: entity
   name: hamster
