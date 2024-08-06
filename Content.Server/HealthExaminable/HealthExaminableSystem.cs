@@ -200,7 +200,7 @@ public sealed class HealthExaminableSystem : EntitySystem
         if (critThreshold == 0)
             critThreshold = 100;
 
-        return thresholdPercentages.Select(percentage => critThreshold * (percentage / 100)).ToList();
+        return thresholdPercentages.Select(percentage => critThreshold * percentage).ToList();
     }
 }
 
