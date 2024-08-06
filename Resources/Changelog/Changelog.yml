@@ -4934,3 +4934,9 @@ Entries:
       message: Lamiae should now be rendered much better.
   id: 6217
   time: '2024-08-05T17:15:51.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Added an unlockable PKA and Jetpack module to Salvage Cyborgs
+  id: 6218
+  time: '2024-08-06T01:14:31.0000000+00:00'
