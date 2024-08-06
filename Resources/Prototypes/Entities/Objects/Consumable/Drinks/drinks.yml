@@ -34,11 +34,20 @@
     - key: enum.TransferAmountUiKey.Key
       type: TransferAmountBoundUserInterface
   - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnLand
-    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      params:
+        volume: -2
 
 - type: entity
   parent: DrinkBase
@@ -85,8 +94,8 @@
 
 # Transformable container - normal glass
 - type: entity
-  name: metamorphic glass
-  description: A metamorphic glass that automagically turns into a glass appropriate for the drink within. There's a sanded off patent number on the bottom.
+  name: glass cup
+  description: A glass cup, able to hold a variety of liquids for your drinking pleasure.
   parent: DrinkGlassBase
   id: DrinkGlass
   components:

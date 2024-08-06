@@ -18,7 +18,9 @@ public sealed class FalseAlarmRule : StationEventSystem<FalseAlarmRuleComponent>
     {
         base.Started(uid, component, gameRule, args);
 
-        var allEv = _event.AllEvents().Select(p => p.Key).ToList();
+        var allEv = _event.AllEvents()
+            .Where(p => p.Value.StartAnnouncement)
+            .Select(p => p.Key).ToList();
         var picked = RobustRandom.Pick(allEv);
 
         _announcer.SendAnnouncement(

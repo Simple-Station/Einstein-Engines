@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Shared.CCVar;
+using Content.Shared.Customization.Systems;
 using Content.Shared.Players;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Roles;
@@ -17,9 +18,6 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
 {
     [Dependency] private readonly IBaseClient _client = default!;
     [Dependency] private readonly IClientNetManager _net = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
 
     private readonly Dictionary<string, TimeSpan> _roles = new();
@@ -80,64 +78,33 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
         Updated?.Invoke();
     }
 
-    public bool IsAllowed(JobPrototype job, [NotNullWhen(false)] out FormattedMessage? reason)
-    {
-        reason = null;
-
-        if (_roleBans.Contains($"Job:{job.ID}"))
-        {
-            reason = FormattedMessage.FromUnformatted(Loc.GetString("role-ban"));
-            return false;
-        }
-
-        var player = _playerManager.LocalSession;
-        if (player == null)
-            return true;
-
-        return CheckRoleTime(job.Requirements, out reason);
-    }
-
-    public bool CheckRoleTime(HashSet<JobRequirement>? requirements, [NotNullWhen(false)] out FormattedMessage? reason, string? localePrefix = "role-timer-")
-    {
-        reason = null;
-
-        if (requirements == null || !_cfg.GetCVar(CCVars.GameRoleTimers))
-            return true;
-
-        var reasons = new List<string>();
-        foreach (var requirement in requirements)
-        {
-            if (JobRequirements.TryRequirementMet(requirement, _roles, out var jobReason, _entManager, _prototypes, _whitelisted, localePrefix))
-                continue;
-
-            reasons.Add(jobReason.ToMarkup());
-        }
-
-        reason = reasons.Count == 0 ? null : FormattedMessage.FromMarkup(string.Join('\n', reasons));
-        return reason == null;
-    }
-
     public TimeSpan FetchOverallPlaytime()
     {
         return _roles.TryGetValue("Overall", out var overallPlaytime) ? overallPlaytime : TimeSpan.Zero;
     }
 
-    public IEnumerable<KeyValuePair<string, TimeSpan>> FetchPlaytimeByRoles()
+    public Dictionary<string, TimeSpan> FetchPlaytimeByRoles()
     {
         var jobsToMap = _prototypes.EnumeratePrototypes<JobPrototype>();
+        var ret = new Dictionary<string, TimeSpan>();
 
         foreach (var job in jobsToMap)
-        {
             if (_roles.TryGetValue(job.PlayTimeTracker, out var locJobName))
-            {
-                yield return new KeyValuePair<string, TimeSpan>(job.Name, locJobName);
-            }
-        }
+                ret.Add(job.Name, locJobName);
+
+        return ret;
     }
 
 
-    public IReadOnlyDictionary<string, TimeSpan> GetPlayTimes(ICommonSession session)
+    public Dictionary<string, TimeSpan> GetPlayTimes()
     {
-        return session != _playerManager.LocalSession ? new Dictionary<string, TimeSpan>() : _roles;
+        var dict = FetchPlaytimeByRoles();
+        dict.Add(PlayTimeTrackingShared.TrackerOverall, FetchOverallPlaytime());
+        return dict;
+    }
+
+    public Dictionary<string, TimeSpan> GetRawPlayTimeTrackers()
+    {
+        return _roles;
     }
 }

@@ -4588,3 +4588,349 @@ Entries:
         experience more camera shake. Large characters experience less. 
   id: 6176
   time: '2024-07-21T06:50:25.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Head Of Personnel can now hire people onto basic roles for each
+        department by vending PDAs. 
+  id: 6177
+  time: '2024-07-22T19:12:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Pipes and Wires are now correctly hidden by grass and asphalt once more.
+        Use a shovel to expose pipes hidden by grass.
+  id: 6178
+  time: '2024-07-22T19:34:07.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Job playtime requirements for loadouts and traits show correctly
+  id: 6179
+  time: '2024-07-23T14:18:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        False alarm event will no longer report events that should not be
+        reported.
+  id: 6180
+  time: '2024-07-24T03:18:56.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed the character editor dummy always acting like a human
+  id: 6181
+  time: '2024-07-24T17:13:05.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Most station events were rebalanced to better suit low-pop rounds.
+    - type: Add
+      message: >-
+        Weakened versions of vent critter events can now occur on low-pop
+        rounds.
+    - type: Tweak
+      message: >-
+        After a lot of complaints, the mass mindswap event is no longer
+        permanent.
+  id: 6182
+  time: '2024-07-24T23:27:34.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed some NEIL announcements not playing audio
+  id: 6183
+  time: '2024-07-26T19:29:37.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where sound was not traveling over a Shuttle-Docking
+        connection. Attached grids now permit sound to travel through.
+  id: 6184
+  time: '2024-07-26T20:09:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Long Survival has been added as a new Game mode.
+  id: 6185
+  time: '2024-07-27T06:00:24.0000000+00:00'
+- author: CilliePaint
+  changes:
+    - type: Tweak
+      message: New Box Textures!
+  id: 6186
+  time: '2024-07-29T05:50:43.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Fixed toolshed command permissions. This will mostly affect admins who
+        don't have full host access.
+  id: 6187
+  time: '2024-07-29T05:54:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Radiation damage no longer interrupts DoAfters.
+  id: 6188
+  time: '2024-07-29T06:00:26.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Added cybernetic limb markings from Hesphiastos Industries and Bishop
+        Cybernetics.
+  id: 6189
+  time: '2024-07-30T21:33:23.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Makeup is finally here: lips, blush, and nail polish! Sashay over to
+        Character Setup in the Markings section, then look at Head/Overlay to
+        give makeovers to your characters!
+  id: 6190
+  time: '2024-07-30T21:34:37.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Tools, Drink Containers, Lockers, and all base items having
+        inconsistent sound settings. 
+  id: 6191
+  time: '2024-07-31T22:47:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: 'Lasers no longer function as jetpacks in space. '
+  id: 6192
+  time: '2024-07-31T22:57:33.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed the Uncategorized category not being hidden when empty
+  id: 6193
+  time: '2024-07-31T23:32:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Whisper can no longer be heard clearly outside the intended range.
+    - type: Fix
+      message: >-
+        Translators can no longer be used without knowing the languages they
+        require.
+    - type: Fix
+      message: >-
+        Computers (primarily RnD console) now speak GC by default instead of
+        Universal.
+    - type: Tweak
+      message: Readjusted colors of all languages to make them easier to read.
+  id: 6194
+  time: '2024-07-31T23:57:25.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Added dozens of new clothes and items to Loadouts, including the new
+        Mask category. Have fun dressing up your characters!
+    - type: Tweak
+      message: Restrict Command Loadouts from selecting uniforms outside of their job.
+    - type: Tweak
+      message: >-
+        Limit the selection in Security Loadouts of non-sec uniforms, hats, and
+        masks to those that maintain the Security aesthetic.
+    - type: Tweak
+      message: >-
+        Made all types of colored jumpsuits in Loadouts available to Civilian
+        roles (excluding HoP), and suitable jumpsuits to Epistemics,
+        Engineering, and Medical.
+    - type: Fix
+      message: Prevent dionas and harpies from selecting shoes in Loadouts.
+  id: 6195
+  time: '2024-08-01T02:37:45.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        The station's crew hivemind has decided to slow down their movement and
+        enjoy The Park instead of sprinting everywhere
+  id: 6196
+  time: '2024-08-01T08:30:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Survival Boxes have been added to loadouts. '
+  id: 6197
+  time: '2024-08-01T21:12:49.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Boxes(Cardboard, Medkits, Lunchboxes) now contain slightly more
+        inventory slots than they occupy.
+  id: 6198
+  time: '2024-08-01T21:55:09.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Ultraviolet Vision, Deuteranopia, and Trichromat Modification are all
+        now 0 point Neutral traits. They still occupy one of your trait
+        selections.
+  id: 6199
+  time: '2024-08-01T22:41:24.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: 'Added new clothes in Loadouts: slim trench coat, and Mafia-style suits.'
+    - type: Add
+      message: >-
+        Added new useful items in Loadouts: lunchbox, more survival gear,
+        paperwork, and medkits.
+  id: 6200
+  time: '2024-08-01T22:45:13.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Vulpkanins can wag their tails now
+  id: 6201
+  time: '2024-08-01T23:06:24.0000000+00:00'
+- author: angelofallars
+  changes:
+    - type: Add
+      message: >-
+        Added the combat knife to the SecTech, and the ability to manufacture
+        combat knives in the SecLathe and emagged autolathes.
+    - type: Add
+      message: >-
+        Added a 1-point combat knife to Loadouts for Felinid/Harpy security
+        jobs. 
+    - type: Tweak
+      message: Made the security belt and security webbing able to hold combat knives.
+    - type: Tweak
+      message: 'Prison Guards now start with combat boots with a combat knife. '
+  id: 6202
+  time: '2024-08-02T07:08:07.0000000+00:00'
+- author: rosieposieeee
+  changes:
+    - type: Add
+      message: >-
+        Added breaching charges to the SecTech vendor for Security, to break
+        through walls.
+  id: 6203
+  time: '2024-08-02T07:09:44.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        The AdminHelp sound has changed to three that play under different
+        circumstances
+  id: 6204
+  time: '2024-08-02T07:14:01.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Reverted the station event scheduler rework due to it absolutely
+        breaking the game.
+  id: 6205
+  time: '2024-08-02T22:52:41.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Supermatter Engines have been implemented. '
+  id: 6206
+  time: '2024-08-03T00:41:54.0000000+00:00'
+- author: Tilkku
+  changes:
+    - type: Tweak
+      message: Rouny Sprite Changed
+  id: 6207
+  time: '2024-08-03T11:04:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Due to budget cuts, Nanotrasen has ceased stocking Clothesmate vendors
+        with more clothing than the average cargo tech can afford. Civilians are
+        advised to bring their own clothes to the station if they wish to wear
+        anything other than grey. 
+  id: 6208
+  time: '2024-08-04T00:23:53.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        SweatMAX, "hot foods", Mars Mart, and Nippon-tan vendors have all been
+        added to vendor spawners. 
+  id: 6209
+  time: '2024-08-04T06:26:34.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Voracious trait, a 1-point trait that makes you eat and drink
+        twice as fast.
+  id: 6210
+  time: '2024-08-04T09:30:31.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Zombie events have had their Anti-Stalling mechanic improved. Dead
+        (Player) Zombies, Infected Players, and Initial Infected are all counted
+        as zombies for the purpose of determine if the shuttle should be called.
+        Additionally, any player who leaves the station is no longer counted as
+        a healthy crewman for the automatic shuttle call.
+  id: 6211
+  time: '2024-08-04T14:14:12.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: Rename the trait "Heavyweight Drunk" into "Alcohol Tolerance".
+  id: 6212
+  time: '2024-08-05T03:30:41.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Light Step trait, a 1-point trait that makes your footsteps
+        quieter.
+  id: 6213
+  time: '2024-08-05T15:29:07.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add a new 1-point trait called Sign Language, a trait that allows you to
+        communicate in Galactic Sign Language.
+  id: 6214
+  time: '2024-08-05T16:55:31.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Oracle requests are now more likely to be aligned with the current
+        research.
+  id: 6215
+  time: '2024-08-05T17:10:42.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        The Carrying system has been reworked as a means of better supporting
+        having extremely large species and characters. 10kg Harpies should no
+        longer be oppressed by 2000kg Lamia with infinitely short carry
+        attempts. 
+  id: 6216
+  time: '2024-08-05T17:11:37.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Add
+      message: Lamiae should now be rendered much better.
+  id: 6217
+  time: '2024-08-05T17:15:51.0000000+00:00'

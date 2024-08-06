@@ -11,8 +11,8 @@ trait-description-Pacifist = You cannot attack or hurt any living beings.
 trait-name-LightweightDrunk = Lightweight Drunk
 trait-description-LightweightDrunk = Alcohol has a stronger effect on you
 
-trait-name-HeavyweightDrunk = Heavyweight Drunk
-trait-description-HeavyweightDrunk = Alcohols are afraid of you
+trait-name-HeavyweightDrunk = Alcohol Tolerance
+trait-description-HeavyweightDrunk = Alcohol is afraid of you.
 
 trait-name-Muted = Muted
 trait-description-Muted = You can't speak
@@ -29,8 +29,8 @@ trait-description-Accentless = You don't have the accent that your species would
 trait-name-FrontalLisp = Frontal Lisp
 trait-description-FrontalLisp = You thpeak with a lithp
 
-trait-name-SocialAnxiety = Social Anxiety
-trait-description-SocialAnxiety = You are anxious when you speak and stutter.
+trait-name-Stutter = Stutter
+trait-description-Stutter = You t-t-talk with a bit of a s-s-stutter...
 
 trait-name-Snoring = Snoring
 trait-description-Snoring = You will snore while sleeping.
@@ -45,8 +45,8 @@ trait-description-NormalVisionHarpy = Your eyes have been modified by means of a
 trait-name-Southern = Southern Drawl
 trait-description-Southern = You have a different way of speakin'.
 
-trait-name-NormalVisionVulpkanin = Trichromat Modification
-trait-description-NormalVisionVulpkanin = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
+trait-name-NormalVision = Trichromat Modification
+trait-description-NormalVision = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
 
 trait-name-Thieving = Thieving
 trait-description-Thieving =
@@ -62,3 +62,17 @@ trait-name-Foreigner = Foreigner
 trait-description-Foreigner =
     For one reason or another you do not speak this station's primary language.
     Instead, you have a translator issued to you that only you can use.
+
+trait-name-SignLanguage = Sign Language
+trait-description-SignLanguage =
+    You can understand and use Galactic Sign Language (GSL).
+    If you are mute for any reason, you can still communicate with sign language.
+
+trait-name-Voracious = Voracious
+trait-description-Voracious =
+    Nothing gets between you and your food.
+    Your endless consumption of food and drinks is twice as fast.
+
+trait-name-LightStep = Light Step
+trait-description-LightStep =
+    You move with a gentle step, making your footsteps quieter.
