@@ -41,6 +41,13 @@ trait-description-Stutter = You t-t-talk with a bit of a s-s-stutter...
 trait-name-Snoring = Snoring
 trait-description-Snoring = You will snore while sleeping.
 
+trait-name-CPRTraining = CPR Training
+trait-description-CPRTraining = At some point in your life, you have received training in how to perform CPR.
+                                This trait is automatically given for free to medical doctors, and is intended for non-medical characters
+
+trait-name-NormalVisionHarpy = Trichromat Modification
+trait-description-NormalVisionHarpy = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
+
 trait-name-Southern = Southern Drawl
 trait-description-Southern = You have a different way of speakin'.
 

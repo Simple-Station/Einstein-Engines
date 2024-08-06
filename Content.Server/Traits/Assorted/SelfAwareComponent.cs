@@ -24,7 +24,7 @@ public sealed partial class SelfAwareComponent : Component
 
     // <summary>
     //     The thresholds for determining the examine text of DetectableGroups for certain amounts of damage.
-    //     These are calculated as a percentage of 100 of the entity's critical threshold.
+    //     These are calculated as a percentage of 100, and multiplied with the entity's critical threshold.
     // </summary>
     public List<FixedPoint2> Thresholds = new()
         { FixedPoint2.New(10), FixedPoint2.New(25), FixedPoint2.New(50), FixedPoint2.New(75) };

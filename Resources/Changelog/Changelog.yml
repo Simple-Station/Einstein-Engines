@@ -4948,3 +4948,15 @@ Entries:
       message: Oneirophages are back!
   id: 6219
   time: '2024-08-06T04:52:32.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        CPR has been added to the game. People with CPR training can now perform
+        CPR on anyone who is in either crit or dead states. 
+    - type: Add
+      message: >-
+        CPR Training has been added to the game as a new positive trait. All
+        medical staff start with this trait for free. 
+  id: 6220
+  time: '2024-08-06T05:28:54.0000000+00:00'
