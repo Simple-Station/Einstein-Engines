@@ -4993,3 +4993,11 @@ Entries:
         start dying slowly.
   id: 6224
   time: '2024-08-06T19:12:34.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add three new 1-point traits for Onis that allow you to specialize in
+        Slash or Piercing damage or be a melee weapons generalist.
+  id: 6225
+  time: '2024-08-06T19:50:20.0000000+00:00'
