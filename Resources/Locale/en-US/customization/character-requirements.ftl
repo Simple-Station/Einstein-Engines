@@ -1,3 +1,22 @@
+# Job
+character-job-requirement = You must {$inverted ->
+    [true] not be
+    *[other] be
+} one of these jobs: {$jobs}
+character-department-requirement = You must {$inverted ->
+    [true] not be
+    *[other] be
+} in one of these departments: {$departments}
+
+character-timer-department-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes of [color={$departmentColor}]{$department}[/color] department playtime
+character-timer-department-too-high = You require [color=yellow]{TOSTRING($time, "0")}[/color] fewer minutes in [color={$departmentColor}]{$department}[/color] department
+character-timer-overall-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes of playtime
+character-timer-overall-too-high = You require [color=yellow]{TOSTRING($time, "0")}[/color] fewer minutes of playtime
+character-timer-role-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes with [color={$departmentColor}]{$job}[/color]
+character-timer-role-too-high = You require[color=yellow] {TOSTRING($time, "0")}[/color] fewer minutes with [color={$departmentColor}]{$job}[/color]
+
+
+# Profile
 character-age-requirement = You must {$inverted ->
     [true] not be
     *[other] be
@@ -23,18 +42,9 @@ character-clothing-preference-requirement = You must {$inverted ->
     *[other] wear
 } a [color=white]{$type}[/color]
 
-character-job-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
-} one of these jobs: {$jobs}
-character-department-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
-} in one of these departments: {$departments}
 
-character-timer-department-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes of [color={$departmentColor}]{$department}[/color] department playtime
-character-timer-department-too-high = You require [color=yellow]{TOSTRING($time, "0")}[/color] fewer minutes in [color={$departmentColor}]{$department}[/color] department
-character-timer-overall-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes of playtime
-character-timer-overall-too-high = You require [color=yellow]{TOSTRING($time, "0")}[/color] fewer minutes of playtime
-character-timer-role-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes with [color={$departmentColor}]{$job}[/color]
-character-timer-role-too-high = You require[color=yellow] {TOSTRING($time, "0")}[/color] fewer minutes with [color={$departmentColor}]{$job}[/color]
+# Whitelist
+character-whitelist-requirement = You must {$inverted ->
+    [true] not be
+    *[other] be
+} whitelisted
