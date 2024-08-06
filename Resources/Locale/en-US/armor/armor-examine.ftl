@@ -17,3 +17,4 @@ armor-damage-type-cold = Cold
 armor-damage-type-poison = Poison
 armor-damage-type-shock = Shock
 armor-damage-type-structural = Structural
+armor-examine-stamina = Reduces your stamina damage by [color=cyan]{$num}%[/color].

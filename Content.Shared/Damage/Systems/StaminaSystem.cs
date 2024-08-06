@@ -166,20 +166,20 @@ public sealed partial class StaminaSystem : EntitySystem
             toHit.Add((ent, stam));
         }
 
-        var hitEvent = new StaminaMeleeHitEvent(toHit);
-        RaiseLocalEvent(uid, hitEvent);
-
-        if (hitEvent.Handled)
-            return;
-
-        var damage = component.Damage;
-
-        damage *= hitEvent.Multiplier;
-
-        damage += hitEvent.FlatModifier;
-
         foreach (var (ent, comp) in toHit)
         {
+            var hitEvent = new TakeStaminaDamageEvent((ent, comp));
+            RaiseLocalEvent(uid, hitEvent);
+
+            if (hitEvent.Handled)
+                return;
+
+            var damage = component.Damage;
+
+            damage *= hitEvent.Multiplier;
+
+            damage += hitEvent.FlatModifier;
+
             TakeStaminaDamage(ent, damage / toHit.Count, comp, source: args.User, with: args.Weapon, sound: component.Sound);
         }
     }
@@ -204,12 +204,28 @@ public sealed partial class StaminaSystem : EntitySystem
 
     private void OnCollide(EntityUid uid, StaminaDamageOnCollideComponent component, EntityUid target)
     {
+        if (!TryComp<StaminaComponent>(target, out var stamComp))
+            return;
+
         var ev = new StaminaDamageOnHitAttemptEvent();
         RaiseLocalEvent(uid, ref ev);
         if (ev.Cancelled)
             return;
 
-        TakeStaminaDamage(target, component.Damage, source: uid, sound: component.Sound);
+        // goobstation
+        var hitEvent = new TakeStaminaDamageEvent((target, stamComp));
+        RaiseLocalEvent(target, hitEvent);
+
+        if (hitEvent.Handled)
+            return;
+
+        var damage = component.Damage;
+
+        damage *= hitEvent.Multiplier;
+
+        damage += hitEvent.FlatModifier;
+
+        TakeStaminaDamage(target, damage, source: uid, sound: component.Sound);
     }
 
     private void SetStaminaAlert(EntityUid uid, StaminaComponent? component = null)
