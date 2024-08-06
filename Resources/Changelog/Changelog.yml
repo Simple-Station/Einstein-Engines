@@ -5017,3 +5017,11 @@ Entries:
         in disable duration.
   id: 6227
   time: '2024-08-06T20:47:49.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Admin tooling: added several admin commands to help manipulate entities'
+        languages.
+  id: 6228
+  time: '2024-08-06T21:22:11.0000000+00:00'
