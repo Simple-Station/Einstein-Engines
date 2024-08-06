@@ -16,6 +16,24 @@
         - Brigmedic
 
 - type: trait
+  id: SelfAware
+  category: Mental
+  points: -2
+  components:
+    - type: SelfAware
+      analyzableTypes:
+      - Blunt
+      - Slash
+      - Piercing
+      - Heat
+      - Shock
+      - Cold
+      - Caustic
+      detectableGroups:
+      - Airloss
+      - Toxin
+
+- type: trait
   id: HeavyweightDrunk
   category: Physical
   points: -2
