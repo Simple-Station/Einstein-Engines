@@ -14,7 +14,7 @@ public sealed partial class BoxingSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<BoxerComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<BoxerComponent, MeleeHitEvent>(OnMeleeHit);
-        SubscribeLocalEvent<BoxingGlovesComponent, StaminaMeleeHitEvent>(OnStamHit);
+        SubscribeLocalEvent<BoxingGlovesComponent, TakeStaminaDamageEvent>(OnStamHit);
     }
 
     private void OnInit(EntityUid uid, BoxerComponent component, ComponentInit args)
@@ -27,7 +27,7 @@ public sealed partial class BoxingSystem : EntitySystem
         args.ModifiersList.Add(component.UnarmedModifiers);
     }
 
-    private void OnStamHit(EntityUid uid, BoxingGlovesComponent component, StaminaMeleeHitEvent args)
+    private void OnStamHit(EntityUid uid, BoxingGlovesComponent component, TakeStaminaDamageEvent args)
     {
         if (!_containerSystem.TryGetContainingContainer(uid, out var equipee))
             return;
