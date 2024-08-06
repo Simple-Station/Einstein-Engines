@@ -45,8 +45,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSuitBlackMob
-  name: mobster's attire
-  description: A crisp red shirt and charcoal slacks. Reminds you of your debts.
+  name: red suit
+  description: A crisp red shirt and charcoal slacks. Reminds you of law enforcement.
   components:
   - type: Sprite
     sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitblackmob.rsi
@@ -67,7 +67,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSuitBrownAlt
-  name: suspicious suit
+  name: dubious suit
   description: A crisp grey shirt and chocolate slacks. Reminds you of clandestine operators.
   components:
   - type: Sprite
@@ -78,8 +78,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSuitBrownMob
-  name: gangster's attire
-  description: A crisp red shirt and chocolate slacks. Reminds you of drivebys.
+  name: mafioso suit
+  description: A crisp red shirt and chocolate slacks. Reminds you of family.
   components:
   - type: Sprite
     sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitbrownmob.rsi
@@ -111,8 +111,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSuitWhiteMob
-  name: mafioso's attire
-  description: A crisp red shirt and ivory slacks. Reminds you of family.
+  name: gangster suit
+  description: A crisp red shirt and ivory slacks. Reminds you of organized Japanese crime.
   components:
   - type: Sprite
     sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitwhitemob.rsi

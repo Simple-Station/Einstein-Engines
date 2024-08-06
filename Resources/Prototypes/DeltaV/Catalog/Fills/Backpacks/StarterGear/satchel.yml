@@ -5,7 +5,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalMedical
       - id: EmergencyRollerBedSpawnFolded
       - id: BodyBagFolded
       - id: Portafib
@@ -17,7 +16,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalMedical
       - id: RubberStampPsychologist
 
 
@@ -28,5 +26,4 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
       - id: RubberStampLawyer

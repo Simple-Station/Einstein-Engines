@@ -16,6 +16,7 @@ research-technology-shuttlecraft = Shuttlecraft
 research-technology-ripley-aplu = Ripley APLU
 research-technology-advanced-atmospherics = Advanced Atmospherics
 research-technology-advanced-tools = Advanced Tools
+research-technology-mechanized-salvaging = Mechanized Salvaging
 research-technology-super-powercells = Super Powercells
 research-technology-bluespace-storage = Bluespace Storage
 research-technology-portable-fission = Portable Fission

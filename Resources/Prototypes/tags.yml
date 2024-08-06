@@ -17,6 +17,9 @@
   id: AppraisalTool
 
 - type: Tag
+  id: ArachneWeb
+
+- type: Tag
   id: ArtifactFragment
 
 - type: Tag
@@ -603,6 +606,9 @@
   id: Fruit
 
 - type: Tag
+  id: FullBodyOuter
+
+- type: Tag
   id: Galaxythistle
 
 - type: Tag
@@ -923,6 +929,9 @@
   id: Ointment
 
 - type: Tag
+  id: Oneirophage
+
+- type: Tag
   id: Ore
 
 - type: Tag
@@ -1122,10 +1131,10 @@
   id: SmallMech
 
 - type: Tag
-  id: SnapPop
+  id: Smokable
 
 - type: Tag
-  id: Smokable
+  id: SnapPop
 
 - type: Tag
   id: SnowyLabs

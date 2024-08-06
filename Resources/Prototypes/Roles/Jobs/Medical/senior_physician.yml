@@ -5,15 +5,15 @@
   playTimeTracker: JobSeniorPhysician
   setPreference: false # DeltaV - Disable Senior Roles round start selection
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobChemist
-      time: 21600 #6 hrs
-    - !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 21600 #6 hrs
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobChemist
+      min: 21600 #6 hrs
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobMedicalDoctor
+      min: 21600 #6 hrs
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
-      time: 216000 # 60 hrs
+      min: 216000 # 60 hrs
   startingGear: SeniorPhysicianGear
   icon: "JobIconSeniorPhysician"
   supervisors: job-supervisors-cmo
@@ -21,6 +21,10 @@
   - Medical
   - Maintenance
   - Chemistry
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CPRTraining
 
 - type: startingGear
   id: SeniorPhysicianGear
