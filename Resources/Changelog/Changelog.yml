@@ -4983,3 +4983,13 @@ Entries:
       message: Added different stamina damage resistance to hardsuits.
   id: 6223
   time: '2024-08-06T19:08:48.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Blood Deficiency trait, a new negative trait that makes you
+        slowly lose blood over time. You must routinely receive blood loss
+        treatment to live, and even normally non-lethal bleeding can make you
+        start dying slowly.
+  id: 6224
+  time: '2024-08-06T19:12:34.0000000+00:00'
