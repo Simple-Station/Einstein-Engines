@@ -850,7 +850,7 @@
 - type: entity
   id: Biofabricator
   parent: [BaseLathe, BaseMaterialSiloUtilizer]
-  name: biofabricator
+  name: biocube fabricator
   description: Produces animal cubes using biomass.
   components:
   - type: Sprite
