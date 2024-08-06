@@ -118,11 +118,14 @@ public sealed class BloodstreamSystem : EntitySystem
             if (!_solutionContainerSystem.ResolveSolution(uid, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var bloodSolution))
                 continue;
 
-            // Adds blood to their blood level if it is below the maximum; Blood regeneration. Must be alive.
-            if (bloodSolution.Volume < bloodSolution.MaxVolume && !_mobStateSystem.IsDead(uid))
-            {
-                TryModifyBloodLevel(uid, bloodstream.BloodRefreshAmount, bloodstream);
-            }
+            // Removes blood for Blood Deficiency constantly.
+            if (bloodstream.HasBloodDeficiency)
+                if (!_mobStateSystem.IsDead(uid))
+                    RemoveBlood(uid, bloodstream.BloodDeficiencyLossAmount, bloodstream);
+            // Adds blood to their blood level if it is below the maximum.
+            else if (bloodSolution.Volume < bloodSolution.MaxVolume)
+                if (!_mobStateSystem.IsDead(uid))
+                    TryModifyBloodLevel(uid, bloodstream.BloodRefreshAmount, bloodstream);
 
             // Removes blood from the bloodstream based on bleed amount (bleed rate)
             // as well as stop their bleeding to a certain extent.
@@ -471,5 +474,17 @@ public sealed class BloodstreamSystem : EntitySystem
 
         if (currentVolume > 0)
             _solutionContainerSystem.TryAddReagent(component.BloodSolution.Value, component.BloodReagent, currentVolume, out _);
+    }
+
+    /// <summary>
+    ///   Remove blood from an entity, without spilling it.
+    /// </summary>
+    private void RemoveBlood(EntityUid uid, FixedPoint2 amount, BloodstreamComponent? component = null)
+    {
+        if (!Resolve(uid, ref component, logMissing: false)
+            || !_solutionContainerSystem.ResolveSolution(uid, component.BloodSolutionName, ref component.BloodSolution, out var bloodSolution))
+            return;
+
+        bloodSolution.RemoveReagent(component.BloodReagent, amount);
     }
 }

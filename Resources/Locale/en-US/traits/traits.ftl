@@ -23,6 +23,11 @@ trait-description-HeavyweightDrunk = Alcohol is afraid of you.
 trait-name-Muted = Muted
 trait-description-Muted = You can't speak
 
+trait-name-BloodDeficiency = Blood Deficiency
+trait-description-BloodDeficiency =
+    Your body loses more blood than it can replenish.
+    You lose blood over time, and when left untreated you will eventually die from blood loss.
+
 trait-name-Paracusia = Paracusia
 trait-description-Paracusia = You hear sounds that aren't really there
 
@@ -79,6 +84,26 @@ trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
 
+trait-name-ParkourTraining = Parkour Training
+trait-description-ParkourTraining =
+    Whether as a hobby, lifestyle, or professional training, you are trained in the discipline of parkour.
+    You're faster with climbing, crawling, lying down, and getting up.
+
 trait-name-LightStep = Light Step
 trait-description-LightStep =
     You move with a gentle step, making your footsteps quieter.
+
+trait-name-Swashbuckler = Swashbuckler
+trait-description-Swashbuckler =
+    You are an expert in swordsmanship, wielding swords, knives, and other blades with unrivaled finesse.
+    Your melee Slash bonus is increased to 35%, but your melee Blunt bonus is reduced to 20%.
+
+trait-name-Spearmaster = Spearmaster
+trait-description-Spearmaster =
+    You have an outstanding proficiency with spears, wielding them as an extension of your body.
+    Your melee Piercing bonus is increased to 35%, but your melee Blunt bonus is reduced to 20%.
+
+trait-name-WeaponsGeneralist = Weapons Generalist
+trait-description-WeaponsGeneralist =
+    You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
+    Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 25%.
