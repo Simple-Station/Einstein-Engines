@@ -54,6 +54,16 @@
     - Heat
 
 - type: damageContainer
+  id: HalfSpirit
+  supportedGroups:
+    - Burn
+    - Brute
+    - Airloss
+    - Immaterial
+  supportedTypes:
+    - Poison
+
+- type: damageContainer
   id: Synth
   supportedGroups:
     - Brute
