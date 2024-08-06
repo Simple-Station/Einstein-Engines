@@ -39,9 +39,8 @@ namespace Content.Client.Eye.PenLight.UI
 
             string entityName = Loc.GetString("pen-light-window-entity-unknown-text");
             if (_entityManager.HasComponent<MetaDataComponent>(target.Value))
-            {
                 entityName = Identity.Name(target.Value, _entityManager);
-            }
+
             var sb = new StringBuilder();
             sb.AppendLine(Loc.GetString("pen-light-window-entity-eyes-text", ("entityName", entityName)));
 

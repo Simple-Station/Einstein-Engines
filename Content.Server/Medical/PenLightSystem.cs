@@ -54,7 +54,7 @@ public sealed class PenLightSystem : EntitySystem
 
 
     /// <summary>
-    /// Actually handles the exam interaction.
+    ///     Actually handles the exam interaction.
     /// </summary>
     public bool TryStartExam(EntityUid uid, EntityUid target, EntityUid user, PenLightComponent? component = null)
     {
