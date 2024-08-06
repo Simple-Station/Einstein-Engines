@@ -9,7 +9,7 @@ namespace Content.Shared.Damage.Events;
 /// </summary>
 public sealed class TakeStaminaDamageEvent : HandledEntityEventArgs, IInventoryRelayEvent
 {
-    public SlotFlags TargetSlots { get; } = SlotFlags.WITHOUT_POCKET;
+    public SlotFlags TargetSlots { get; } = ~SlotFlags.POCKET;
 
     /// <summary>
     /// List of hit stamina components.

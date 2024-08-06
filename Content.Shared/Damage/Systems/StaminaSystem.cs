@@ -168,7 +168,7 @@ public sealed partial class StaminaSystem : EntitySystem
 
         foreach (var (ent, comp) in toHit)
         {
-            var hitEvent = new TakeStaminaDamageEvent((ent, comp));
+            var hitEvent = new TakeStaminaDamageEvent(ent);
             RaiseLocalEvent(uid, hitEvent);
 
             if (hitEvent.Handled)
@@ -212,7 +212,7 @@ public sealed partial class StaminaSystem : EntitySystem
         if (ev.Cancelled)
             return;
 
-        var hitEvent = new TakeStaminaDamageEvent((target, stamComp));
+        var hitEvent = new TakeStaminaDamageEvent(target);
         RaiseLocalEvent(target, hitEvent);
 
         if (hitEvent.Handled)
