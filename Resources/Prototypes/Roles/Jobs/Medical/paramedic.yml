@@ -23,6 +23,10 @@
   - Paramedic # DeltaV - Add Paramedic access
   extendedAccess:
   - Chemistry
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CPRTraining
 
 - type: startingGear
   id: ParamedicGear
