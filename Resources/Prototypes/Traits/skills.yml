@@ -18,9 +18,6 @@
   id: HeavyweightDrunk
   category: Physical
   points: -2
-  components:
-    - type: LightweightDrunk
-      boozeStrengthMultiplier: 0.5
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
