@@ -1,6 +1,6 @@
 - type: trait
   id: CPRTraining
-  category: Physical
+  category: Mental
   points: -2
   components:
     - type: CPRTraining
