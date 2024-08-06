@@ -212,7 +212,6 @@ public sealed partial class StaminaSystem : EntitySystem
         if (ev.Cancelled)
             return;
 
-        // goobstation
         var hitEvent = new TakeStaminaDamageEvent((target, stamComp));
         RaiseLocalEvent(target, hitEvent);
 
