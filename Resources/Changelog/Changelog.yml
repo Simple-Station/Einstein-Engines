@@ -5033,3 +5033,11 @@ Entries:
       message: Eye Examination
   id: 6229
   time: '2024-08-06T21:51:21.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: >-
+        Gloves now have unique fingerprints. Items can be traced back to gloves,
+        which can then be traced back to people.
+  id: 6230
+  time: '2024-08-06T22:03:36.0000000+00:00'
