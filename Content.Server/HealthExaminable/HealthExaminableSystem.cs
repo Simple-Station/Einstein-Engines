@@ -3,14 +3,18 @@ using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
+using System.Linq;
 
 namespace Content.Server.HealthExaminable;
 
 public sealed class HealthExaminableSystem : EntitySystem
 {
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
+    [Dependency] private readonly MobThresholdSystem _threshold = default!;
 
     public override void Initialize()
     {
@@ -54,6 +58,9 @@ public sealed class HealthExaminableSystem : EntitySystem
         var msg = new FormattedMessage();
 
         var first = true;
+
+        var adjustedThresholds = GetAdjustedThresholds(uid, component.Thresholds);
+
         foreach (var type in component.ExaminableTypes)
         {
             if (!damage.Damage.DamageDict.TryGetValue(type, out var dmg))
@@ -65,7 +72,7 @@ public sealed class HealthExaminableSystem : EntitySystem
             FixedPoint2 closest = FixedPoint2.Zero;
 
             string chosenLocStr = string.Empty;
-            foreach (var threshold in component.Thresholds)
+            foreach (var threshold in adjustedThresholds)
             {
                 var str = $"health-examinable-{component.LocPrefix}-{type}-{threshold}";
                 var tempLocStr = Loc.GetString($"health-examinable-{component.LocPrefix}-{type}-{threshold}", ("target", Identity.Entity(uid, EntityManager)));
@@ -134,6 +141,8 @@ public sealed class HealthExaminableSystem : EntitySystem
             msg.AddMarkup(damageString);
         }
 
+        var adjustedThresholds = GetAdjustedThresholds(target, selfAware.Thresholds);
+
         foreach (var group in selfAware.DetectableGroups)
         {
             if (!damage.DamagePerGroup.TryGetValue(group, out var groupDmg)
@@ -143,7 +152,7 @@ public sealed class HealthExaminableSystem : EntitySystem
             FixedPoint2 closest = FixedPoint2.Zero;
 
             string chosenLocStr = string.Empty;
-            foreach (var threshold in selfAware.Thresholds)
+            foreach (var threshold in adjustedThresholds)
             {
                 var locName = $"health-examinable-selfaware-group-{group}-{threshold}";
                 var locStr = Loc.GetString(locName);
@@ -176,6 +185,22 @@ public sealed class HealthExaminableSystem : EntitySystem
         RaiseLocalEvent(target, new HealthBeingExaminedEvent(msg, true), true);
 
         return msg;
+    }
+
+    /// <summary>
+    ///     Return thresholds as percentages of an entity's critical threshold.
+    /// </summary>
+    private List<FixedPoint2> GetAdjustedThresholds(EntityUid uid, List<FixedPoint2> thresholdPercentages)
+    {
+        FixedPoint2 critThreshold = 0;
+        if (TryComp<MobThresholdsComponent>(uid, out var threshold))
+            critThreshold = _threshold.GetThresholdForState(uid, Shared.Mobs.MobState.Critical, threshold);
+
+        // Fallback to 100 crit threshold if none found
+        if (critThreshold == 0)
+            critThreshold = 100;
+
+        return thresholdPercentages.Select(percentage => critThreshold * (percentage / 100)).ToList();
     }
 }
 
