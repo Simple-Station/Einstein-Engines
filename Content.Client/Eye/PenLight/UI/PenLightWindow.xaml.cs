@@ -45,10 +45,15 @@ namespace Content.Client.Eye.PenLight.UI
             var sb = new StringBuilder();
             sb.AppendLine(Loc.GetString("pen-light-window-entity-eyes-text", ("entityName", entityName)));
 
-            // Blind
+            // Check if Blind and return early if true
             if (msg.Blind == true)
+            {
                 sb.AppendLine(Loc.GetString("pen-light-exam-blind-text"));
-
+                ExamDataLabel.Text = sb.ToString();
+                SetHeight = LightHeight;
+                SetWidth = LightWidth;
+                return;
+            }
             // EyeDamage
             if (msg.EyeDamage == true)
                 sb.AppendLine(Loc.GetString("pen-light-exam-eyedamage-text"));
