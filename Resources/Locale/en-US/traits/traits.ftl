@@ -23,6 +23,11 @@ trait-description-HeavyweightDrunk = Alcohol is afraid of you.
 trait-name-Muted = Muted
 trait-description-Muted = You can't speak
 
+trait-name-BloodDeficiency = Blood Deficiency
+trait-description-BloodDeficiency =
+    Your body loses more blood than it can replenish.
+    You lose blood over time, and when left untreated you will eventually die from blood loss.
+
 trait-name-Paracusia = Paracusia
 trait-description-Paracusia = You hear sounds that aren't really there
 
