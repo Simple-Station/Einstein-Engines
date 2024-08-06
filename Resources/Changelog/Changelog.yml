@@ -4960,3 +4960,12 @@ Entries:
         medical staff start with this trait for free. 
   id: 6220
   time: '2024-08-06T05:28:54.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Self-Aware trait, a 2-point trait that allows you to examine
+        your Brute/Burn damage numbers like a health analyzer, and estimate your
+        toxin/airloss damage.
+  id: 6221
+  time: '2024-08-06T08:05:59.0000000+00:00'
