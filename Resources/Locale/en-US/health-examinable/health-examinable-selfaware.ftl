@@ -19,4 +19,4 @@ health-examinable-selfaware-group-Toxin-75 = [color=green]You feel gravely ill![
 health-examinable-selfaware-group-Airloss-10 = [color=lightblue]You feel lightheaded.[/color]
 health-examinable-selfaware-group-Airloss-25 = [color=lightblue]You feel faint and woozy.[/color]
 health-examinable-selfaware-group-Airloss-50 = [color=lightblue]You're struggling to breathe![/color]
-health-examinable-selfaware-group-Airloss-75 = [color=lightblue]You're choking![/color]
+health-examinable-selfaware-group-Airloss-75 = [color=lightblue]You're suffocating badly![/color]
