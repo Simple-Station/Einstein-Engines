@@ -51,7 +51,7 @@ namespace Content.Server.Psionics
             base.Initialize();
             SubscribeLocalEvent<PotentialPsionicComponent, MapInitEvent>(OnStartup);
             SubscribeLocalEvent<AntiPsionicWeaponComponent, MeleeHitEvent>(OnMeleeHit);
-            SubscribeLocalEvent<AntiPsionicWeaponComponent, StaminaMeleeHitEvent>(OnStamHit);
+            SubscribeLocalEvent<AntiPsionicWeaponComponent, TakeStaminaDamageEvent>(OnStamHit);
 
             SubscribeLocalEvent<PsionicComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
@@ -110,14 +110,12 @@ namespace Content.Server.Psionics
             _npcFactonSystem.RemoveFaction(uid, "PsionicInterloper");
         }
 
-        private void OnStamHit(EntityUid uid, AntiPsionicWeaponComponent component, StaminaMeleeHitEvent args)
+        private void OnStamHit(EntityUid uid, AntiPsionicWeaponComponent component, TakeStaminaDamageEvent args)
         {
             var bonus = false;
-            foreach (var stam in args.HitList)
-            {
-                if (HasComp<PsionicComponent>(stam.Entity))
-                    bonus = true;
-            }
+
+            if (HasComp<PsionicComponent>(args.Target))
+                bonus = true;
 
             if (!bonus)
                 return;

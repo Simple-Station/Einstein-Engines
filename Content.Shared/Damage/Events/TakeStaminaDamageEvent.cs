@@ -1,5 +1,5 @@
 using Content.Shared.Damage.Components;
-using Robust.Shared.Collections;
+using Content.Shared.Inventory;
 
 namespace Content.Shared.Damage.Events;
 
@@ -7,12 +7,14 @@ namespace Content.Shared.Damage.Events;
 /// The components in the list are going to be hit,
 /// give opportunities to change the damage or other stuff.
 /// </summary>
-public sealed class StaminaMeleeHitEvent : HandledEntityEventArgs
+public sealed class TakeStaminaDamageEvent : HandledEntityEventArgs, IInventoryRelayEvent
 {
+    public SlotFlags TargetSlots { get; } = ~SlotFlags.POCKET;
+
     /// <summary>
     /// List of hit stamina components.
     /// </summary>
-    public List<(EntityUid Entity, StaminaComponent Component)> HitList;
+    public EntityUid Target;
 
     /// <summary>
     /// The multiplier. Generally, try to use *= or /= instead of overwriting.
@@ -24,8 +26,8 @@ public sealed class StaminaMeleeHitEvent : HandledEntityEventArgs
     /// </summary>
     public float FlatModifier = 0;
 
-    public StaminaMeleeHitEvent(List<(EntityUid Entity, StaminaComponent Component)> hitList)
+    public TakeStaminaDamageEvent(EntityUid target)
     {
-        HitList = hitList;
+        Target = target;
     }
 }
