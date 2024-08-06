@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Server.Interaction;
 using Content.Server.Mech.Equipment.Components;
 using Content.Server.Mech.Systems;
