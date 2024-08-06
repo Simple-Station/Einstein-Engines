@@ -13,6 +13,7 @@
         - MedicalIntern
         - Paramedic
         - ChiefMedicalOfficer
+        - Brigmedic
 
 - type: trait
   id: HeavyweightDrunk
