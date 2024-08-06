@@ -113,11 +113,9 @@ namespace Content.Server.Psionics
         private void OnStamHit(EntityUid uid, AntiPsionicWeaponComponent component, TakeStaminaDamageEvent args)
         {
             var bonus = false;
-            foreach (var stam in args.HitList)
-            {
-                if (HasComp<PsionicComponent>(stam.Entity))
-                    bonus = true;
-            }
+
+            if (HasComp<PsionicComponent>(args.Target))
+                bonus = true;
 
             if (!bonus)
                 return;
