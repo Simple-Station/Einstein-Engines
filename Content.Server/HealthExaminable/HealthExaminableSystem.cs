@@ -1,4 +1,5 @@
-﻿using Content.Shared.Damage;
+using Content.Server.Traits.Assorted;
+using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
@@ -29,7 +30,13 @@ public sealed class HealthExaminableSystem : EntitySystem
         {
             Act = () =>
             {
-                var markup = CreateMarkup(uid, component, damage);
+                FormattedMessage markup;
+                if (uid == args.User
+                    && TryComp<SelfAwareComponent>(uid, out var selfAware))
+                    markup = CreateMarkupSelfAware(uid, selfAware, component, damage);
+                else
+                    markup = CreateMarkup(uid, component, damage);
+
                 _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
             },
             Text = Loc.GetString("health-examinable-verb-text"),
@@ -94,7 +101,79 @@ public sealed class HealthExaminableSystem : EntitySystem
         }
 
         // Anything else want to add on to this?
-        RaiseLocalEvent(uid, new HealthBeingExaminedEvent(msg), true);
+        RaiseLocalEvent(uid, new HealthBeingExaminedEvent(msg, false), true);
+
+        return msg;
+    }
+
+    private FormattedMessage CreateMarkupSelfAware(EntityUid target, SelfAwareComponent selfAware, HealthExaminableComponent component, DamageableComponent damage)
+    {
+        var msg = new FormattedMessage();
+
+        var first = true;
+
+        foreach (var type in selfAware.AnalyzableTypes)
+        {
+            if (!damage.Damage.DamageDict.TryGetValue(type, out var typeDmgUnrounded))
+                continue;
+
+            var typeDmg = (int) Math.Round(typeDmgUnrounded.Float(), 0);
+            if (typeDmg <= 0)
+                continue;
+
+            var damageString = Loc.GetString(
+                "health-examinable-selfaware-type-text",
+                ("damageType", Loc.GetString($"health-examinable-selfaware-type-{type}")),
+                ("amount", typeDmg)
+            );
+
+            if (!first)
+                msg.PushNewline();
+            else
+                first = false;
+            msg.AddMarkup(damageString);
+        }
+
+        foreach (var group in selfAware.DetectableGroups)
+        {
+            if (!damage.DamagePerGroup.TryGetValue(group, out var groupDmg)
+                || groupDmg == FixedPoint2.Zero)
+                continue;
+
+            FixedPoint2 closest = FixedPoint2.Zero;
+
+            string chosenLocStr = string.Empty;
+            foreach (var threshold in selfAware.Thresholds)
+            {
+                var locName = $"health-examinable-selfaware-group-{group}-{threshold}";
+                var locStr = Loc.GetString(locName);
+
+                var locDoesNotExist = locStr == locName;
+                if (locDoesNotExist)
+                    continue;
+
+                if (groupDmg > threshold && threshold > closest)
+                {
+                    chosenLocStr = locStr;
+                    closest = threshold;
+                }
+            }
+
+            if (closest == FixedPoint2.Zero)
+                continue;
+
+            if (!first)
+                msg.PushNewline();
+            else
+                first = false;
+            msg.AddMarkup(chosenLocStr);
+        }
+
+        if (msg.IsEmpty)
+            msg.AddMarkup(Loc.GetString($"health-examinable-selfaware-none"));
+
+        // Event listeners can know if the examination is Self-Aware.
+        RaiseLocalEvent(target, new HealthBeingExaminedEvent(msg, true), true);
 
         return msg;
     }
@@ -108,9 +187,11 @@ public sealed class HealthExaminableSystem : EntitySystem
 public sealed class HealthBeingExaminedEvent
 {
     public FormattedMessage Message;
+    public bool IsSelfAware;
 
-    public HealthBeingExaminedEvent(FormattedMessage message)
+    public HealthBeingExaminedEvent(FormattedMessage message, bool isSelfAware)
     {
         Message = message;
+        IsSelfAware = isSelfAware;
     }
 }

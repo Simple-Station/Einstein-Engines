@@ -8,6 +8,12 @@ trait-description-Narcolepsy = You fall asleep randomly
 trait-name-Pacifist = Pacifist
 trait-description-Pacifist = You cannot attack or hurt any living beings.
 
+trait-name-SelfAware = Self-Aware
+trait-description-SelfAware =
+    You possess a keen intuition of your body and senses.
+    You can accurately examine the severity of your wounds and burns like a health analyzer,
+    and can gauge if you have toxin or airloss damage.
+
 trait-name-LightweightDrunk = Lightweight Drunk
 trait-description-LightweightDrunk = Alcohol has a stronger effect on you
 
