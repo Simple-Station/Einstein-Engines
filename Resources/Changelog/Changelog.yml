@@ -5009,3 +5009,11 @@ Entries:
         climbing tables and crawling.
   id: 6226
   time: '2024-08-06T20:37:00.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Tweak
+      message: >-
+        EMP Grenades can now disable basically any electrical device, and stack
+        in disable duration.
+  id: 6227
+  time: '2024-08-06T20:47:49.0000000+00:00'
