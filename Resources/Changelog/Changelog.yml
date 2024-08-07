@@ -5053,3 +5053,9 @@ Entries:
       message: Barotrauma admin log spam
   id: 6232
   time: '2024-08-07T17:31:55.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Mr. Butlertron can now suffer for its crimes.
+  id: 6233
+  time: '2024-08-07T22:38:04.0000000+00:00'
