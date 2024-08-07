@@ -104,7 +104,7 @@
     soundHit:
       collection: MetalThud
     bluntStaminaDamageFactor: 2
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 10
   - type: Item
