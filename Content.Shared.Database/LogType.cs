@@ -107,5 +107,9 @@ public enum LogType
     /// </remarks>
     RateLimited = 91,
     InteractUsing = 92,
-    Storage = 93
+
+    /// <summary>
+    /// Storage & entity-storage related interactions
+    /// </summary>
+    Storage = 93,
 }

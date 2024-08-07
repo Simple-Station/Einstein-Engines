@@ -614,15 +614,7 @@ public abstract class SharedStorageSystem : EntitySystem
             $"{ToPrettyString(player):player} is interacting with {ToPrettyString(item):item} while it is stored in {ToPrettyString(storage):storage} using {ToPrettyString(player.Comp.ActiveHandEntity):used}");
 
         // Else, interact using the held item
-        if (_interactionSystem.InteractUsing(player,
-                player.Comp.ActiveHandEntity.Value,
-                item,
-                Transform(item).Coordinates,
-                checkCanInteract: false))
-            return;
-
-        var failedEv = new StorageInsertFailedEvent((storage, storage.Comp), (player, player.Comp));
-        RaiseLocalEvent(storage, ref failedEv);
+        _interactionSystem.InteractUsing(player, player.Comp.ActiveHandEntity.Value, item, Transform(item).Coordinates, checkCanInteract: false);
     }
 
     private void OnSetItemLocation(StorageSetItemLocationEvent msg, EntitySessionEventArgs args)
@@ -636,6 +628,19 @@ public abstract class SharedStorageSystem : EntitySystem
             $"{ToPrettyString(player):player} is updating the location of {ToPrettyString(item):item} within {ToPrettyString(storage):storage}");
 
         TrySetItemStorageLocation(item!, storage!, msg.Location);
+    }
+
+    private void OnRemoveItem(StorageRemoveItemEvent msg, EntitySessionEventArgs args)
+    {
+        if (!ValidateInput(args, msg.StorageEnt, msg.ItemEnt, out var player, out var storage, out var item))
+            return;
+
+        _adminLog.Add(
+            LogType.Storage,
+            LogImpact.Low,
+            $"{ToPrettyString(player):player} is removing {ToPrettyString(item):item} from {ToPrettyString(storage):storage}");
+        TransformSystem.DropNextTo(item.Owner, player.Owner);
+        Audio.PlayPredicted(storage.Comp.StorageRemoveSound, storage, player, _audioParams);
     }
 
     private void OnInsertItemIntoLocation(StorageInsertItemIntoLocationEvent msg, EntitySessionEventArgs args)
@@ -652,7 +657,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
     private void OnSaveItemLocation(StorageSaveItemLocationEvent msg, EntitySessionEventArgs args)
     {
-        if (!ValidateInput(args, msg.Storage, msg.Item, out var player, out var storage, out var item))
+        if (!ValidateInput(args, msg.Storage, msg.Item, out var player, out var storage, out var item, held: true))
             return;
 
         SaveItemLocation(storage!, item.Owner);
