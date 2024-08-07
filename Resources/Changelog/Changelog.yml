@@ -5047,3 +5047,9 @@ Entries:
       message: Passive blood regeneration now works again.
   id: 6231
   time: '2024-08-07T06:07:35.0000000+00:00'
+- author: Fansana
+  changes:
+    - type: Fix
+      message: Barotrauma admin log spam
+  id: 6232
+  time: '2024-08-07T17:31:55.0000000+00:00'
