@@ -5041,3 +5041,15 @@ Entries:
         which can then be traced back to people.
   id: 6230
   time: '2024-08-06T22:03:36.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Passive blood regeneration now works again.
+  id: 6231
+  time: '2024-08-07T06:07:35.0000000+00:00'
+- author: Fansana
+  changes:
+    - type: Fix
+      message: Barotrauma admin log spam
+  id: 6232
+  time: '2024-08-07T17:31:55.0000000+00:00'
