@@ -28,6 +28,11 @@ trait-description-BloodDeficiency =
     Your body loses more blood than it can replenish.
     You lose blood over time, and when left untreated you will eventually die from blood loss.
 
+trait-name-Hemophilia = Hemophilia
+trait-description-Hemophilia =
+    Your body's ability to form blood clots is impaired.
+    You bleed twice as long, and you have easy bruising, taking 10% more Blunt damage.
+
 trait-name-Paracusia = Paracusia
 trait-description-Paracusia = You hear sounds that aren't really there
 
