@@ -20,7 +20,8 @@
         volume: -3
     damage:
       groups:
-        Brute: 7
+        Blunt: 6
+        Pierce: 3
     bluntStaminaDamageFactor: 2.0
     heavyDamageBaseModifier: 1.75
     heavyStaminaCost: 5
@@ -30,7 +31,7 @@
   - type: IncreaseDamageOnWield
     damage:
       groups:
-        Brute: 5
+        Blunt: 5
       types:
         Structural: 30
   - type: Item
@@ -65,7 +66,8 @@
     range: 1.4
     damage:
       groups:
-        Brute: 10
+        Blunt: 9
+        Slash: 3
       types:
         Structural: 12
     bluntStaminaDamageFactor: 4.0
