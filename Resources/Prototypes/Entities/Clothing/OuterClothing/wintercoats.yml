@@ -419,7 +419,6 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSec
   - type: Armor
-
     modifiers:
       coefficients:
         Blunt: 0.85
