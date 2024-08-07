@@ -147,3 +147,5 @@ public sealed partial class PullerComponent : Component
     public float ChokeGrabSpeedModifier = 0.4f;
     // Goobstation end
 }
+
+public sealed partial class StopPullingAlertEvent : BaseAlertEvent;
