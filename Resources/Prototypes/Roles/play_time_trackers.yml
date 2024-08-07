@@ -38,10 +38,16 @@
   id: JobChiefEngineer
 
 - type: playTimeTracker
+  id: JobChiefJustice
+
+- type: playTimeTracker
   id: JobChiefMedicalOfficer
 
 - type: playTimeTracker
   id: JobClown
+
+- type: playTimeTracker
+  id: JobClerk
 
 - type: playTimeTracker
   id: JobDetective
@@ -99,6 +105,9 @@
 
 - type: playTimeTracker
   id: JobPsychologist
+
+- type: playTimeTracker
+  id: JobProsecutor
 
 - type: playTimeTracker
   id: JobQuartermaster

@@ -169,6 +169,7 @@
        - ShellTranquilizer
        - CartridgeLightRifle
        - CartridgeRifle
+       - CombatKnife
        - MagazineBoxPistol
        - MagazineBoxMagnum
        - MagazineBoxRifle
@@ -593,6 +594,8 @@
     - BorgModuleAdvancedTool
     - BorgModuleGPS
     - BorgModuleRCD
+    - BorgModuleJetpack
+    - BorgModulePka
     - BorgModuleArtifact
     - BorgModuleAnomaly
     - BorgModuleGardening
@@ -706,6 +709,7 @@
     runningState: icon
     staticRecipes:
       - ClothingEyesHudSecurity
+      - CombatKnife
       - Flash
       - Handcuffs
       - Zipties

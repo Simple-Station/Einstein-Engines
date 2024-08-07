@@ -100,6 +100,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineering
+  - type: StaminaDamageResistance
+    coefficient: 0.75 # 25%
 
 #Spationaut Hardsuit
 - type: entity
@@ -221,6 +223,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
+  - type: StaminaDamageResistance
+    coefficient: 0.75 # 25%
 
 #Brigmedic Hardsuit
 - type: entity
@@ -248,6 +252,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic
+  - type: StaminaDamageResistance
+    coefficient: 0.75 # 25%
 
 #Warden's Hardsuit
 - type: entity
@@ -278,6 +284,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
+  - type: StaminaDamageResistance
+    coefficient: 0.65 # 35%
 
 #Captain's Hardsuit
 - type: entity
@@ -310,6 +318,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCap
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -342,6 +352,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineeringWhite
+  - type: ClothingGrantComponent
+    component:
+    - type: SupermatterImmune
+  - type: StaminaDamageResistance
+    coefficient: 0.65 # 35%
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -409,6 +424,8 @@
     price: 750
   - type: StealTarget
     stealGroup: ClothingOuterHardsuitRd
+  - type: StaminaDamageResistance
+    coefficient: 0.75 # 25% as in "shock resistance" :trollface:
 
 #Head of Security's Hardsuit
 - type: entity
@@ -440,6 +457,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurityRed
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #Luxury Mining Hardsuit
 - type: entity
@@ -517,6 +536,8 @@
     - Hardsuit
     - WhitelistChameleon
     - HidesHarpyWings
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 # Syndicate Medic Hardsuit
 - type: entity
@@ -536,6 +557,8 @@
     - Hardsuit
     - WhitelistChameleon
     - HidesHarpyWings
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -572,6 +595,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -604,6 +629,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -636,6 +663,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCybersun
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #Wizard Hardsuit
 - type: entity
@@ -668,6 +697,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWizard
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #Ling Space Suit
 - type: entity
@@ -763,6 +794,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitPirateCap
   - type: StaticPrice
     price: 0
+  - type: StaminaDamageResistance
+    coefficient: 0.75 # 25%
 
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
@@ -778,6 +811,8 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTLeader
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #ERT Chaplain Hardsuit
 - type: entity
@@ -792,6 +827,8 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTChaplain
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #ERT Engineer Hardsuit
 - type: entity
@@ -806,6 +843,8 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTEngineer
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #ERT Medic Hardsuit
 - type: entity
@@ -820,6 +859,8 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTMedical
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #ERT Security Hardsuit
 - type: entity
@@ -838,6 +879,8 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #ERT Janitor Hardsuit
 - type: entity
@@ -852,6 +895,8 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTJanitor
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%
 
 #Deathsquad
 - type: entity
@@ -886,6 +931,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
+  - type: StaminaDamageResistance
+    coefficient: 0.1 # 90%
 
 #CBURN Hardsuit
 - type: entity
