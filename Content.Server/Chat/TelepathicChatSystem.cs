@@ -16,13 +16,13 @@ using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
 
-namespace Content.Server.Nyanotrasen.Chat
+namespace Content.Server.Chat
 {
     /// <summary>
-    /// Extensions for nyano's chat stuff
+    /// Extensions for Telepathic chat stuff
     /// </summary>
 
-    public sealed class NyanoChatSystem : EntitySystem
+    public sealed class TelepathicChatSystem : EntitySystem
     {
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
