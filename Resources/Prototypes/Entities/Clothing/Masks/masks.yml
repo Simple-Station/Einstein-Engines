@@ -198,7 +198,7 @@
     - ClownMask
     - WhitelistChameleon
     - HidesNose
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
 
 - type: entity
   parent: ClothingMaskClownBase
@@ -239,7 +239,7 @@
   - type: Tag
     tags:
     - HidesNose
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -258,7 +258,7 @@
     - HamsterWearable
     - WhitelistChameleon
     - HidesNose
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -402,7 +402,7 @@
   - type: BreathMask
   - type: Tag
     tags:
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
     - HamsterWearable
     - WhitelistChameleon
     - HidesNose
@@ -423,7 +423,7 @@
   - type: Tag
     tags:
     - HidesNose
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -440,7 +440,7 @@
   - type: Tag
     tags:
     - HidesNose
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -457,7 +457,7 @@
   - type: Tag
     tags:
     - HidesNose
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -474,7 +474,7 @@
   - type: Tag
     tags:
     - HidesNose
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -491,7 +491,7 @@
   - type: Tag
     tags:
     - HidesNose
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -508,7 +508,7 @@
   - type: Tag
     tags:
     - HidesNose
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -525,7 +525,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs
 
 - type: entity
   parent: ClothingMaskNeckGaiter
@@ -614,4 +614,4 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - IPCMaskWearable
+    - IPCMaskWearable # Estacao Pirata - IPCs

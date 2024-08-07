@@ -102,8 +102,8 @@ public sealed class SiliconChargeSystem : EntitySystem
             if (!TryGetSiliconBattery(silicon, out var batteryComp))
             {
                 UpdateChargeState(silicon, 0, siliconComp);
-                _alerts.ClearAlert(silicon, siliconComp.BatteryAlert);
-                _alerts.ShowAlert(silicon, siliconComp.NoBatteryAlert);
+                _alerts.ClearAlert(silicon, AlertType.BorgBattery);
+                _alerts.ShowAlert(silicon, AlertType.BorgBatteryNone);
                 continue;
             }
 
@@ -158,10 +158,10 @@ public sealed class SiliconChargeSystem : EntitySystem
         _moveMod.RefreshMovementSpeedModifiers(uid);
 
         // If the battery was replaced and the no battery indicator is showing, replace the indicator
-        if (_alerts.IsShowingAlert(uid, component.NoBatteryAlert) && chargePercent != 0)
+        if (_alerts.IsShowingAlert(uid, AlertType.BorgBatteryNone) && chargePercent != 0)
         {
-            _alerts.ClearAlert(uid, component.NoBatteryAlert);
-            _alerts.ShowAlert(uid, component.BatteryAlert, chargePercent);
+            _alerts.ClearAlert(uid, AlertType.BorgBatteryNone);
+            _alerts.ShowAlert(uid, AlertType.BorgBattery, chargePercent);
         }
     }
 

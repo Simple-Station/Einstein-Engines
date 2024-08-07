@@ -61,6 +61,7 @@ public sealed class LockSystem : EntitySystem
         // Only attempt an unlock by default on Activate
         if (lockComp.Locked)
         {
+            // Estacao Pirata - IPC locking
             if (!lockComp.UnlockOnClick)
                 return;
             TryUnlock(uid, args.User, lockComp);
