@@ -96,6 +96,7 @@
       inverted: true
       traits:
         - Sluggish
+        - SnailPaced
   components:
     - type: ClimbDelayModifier
       climbDelayMultiplier: 0.70

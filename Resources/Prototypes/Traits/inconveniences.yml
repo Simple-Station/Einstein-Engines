@@ -67,6 +67,7 @@
       inverted: true
       traits:
         - ParkourTraining
+        - SnailPaced
   components:
     - type: TraitSpeedModifier
       sprintModifier: 0.85
@@ -75,3 +76,22 @@
       climbDelayMultiplier: 1.35
     - type: LayingDownModifier
       layingDownCooldownMultiplier: 1.2
+
+- type: trait
+  id: SnailPaced
+  category: Physical
+  points: 2
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+        - Sluggish
+  components:
+    - type: TraitSpeedModifier
+      sprintModifier: 0.7
+      walkModifier: 0.7
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 1.66
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 1.6
