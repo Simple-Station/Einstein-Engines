@@ -6,7 +6,7 @@ namespace Content.Server.Traits.Assorted;
 [RegisterComponent]
 public sealed partial class TraitSpeedModifierComponent : Component
 {
-    [DataField("walkModifier", required: true)]
+    [DataField(required: true)]
     public float WalkModifier = 1.0f;
 
     [DataField("sprintModifier", required: true)]
