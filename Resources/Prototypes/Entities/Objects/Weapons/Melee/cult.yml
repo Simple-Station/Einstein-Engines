@@ -10,10 +10,14 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: 1.25
+    range: 1.4
     damage:
       types:
-        Slash: 12
+        Slash: 8
+    heavyRateModifier: 0.9
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 5
   - type: Item
     size: Normal
   - type: Clothing
@@ -35,9 +39,14 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 0.75
+    range: 1.75
     damage:
       types:
-        Slash: 16
+        Slash: 12
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 10
+    maxTargets: 6
+    angle: 90
   - type: Item
     size: Normal
   - type: Clothing
@@ -62,19 +71,24 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 0.75
+    range: 1.75
     damage:
       types:
-        Blunt: 10
-        Slash: 10
+        Blunt: 2
+        Slash: 13
         Structural: 5
+    heavyRateModifier: 0.9
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 10
+    angle: 100
     soundHit:
       collection: MetalThud
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 5
-        Slash: 5
+        Blunt: 2
+        Slash: 3
         Structural: 10
   - type: Item
     size: Ginormous
