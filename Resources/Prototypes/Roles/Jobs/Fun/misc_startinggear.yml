@@ -18,7 +18,9 @@
 - type: startingGear
   id: DeathSquadGear
   subGear:
+  - BoxSurvivalEngineering
   - ERTPlasmamanGear # TODO: death squad envirosuit
+  - GasTankSuitStorage
   equipment:
     jumpsuit: ClothingUniformJumpsuitDeathSquad
     back: ClothingBackpackDeathSquad
@@ -27,7 +29,6 @@
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitDeathsquad
-    suitstorage: AirTankFilled
     shoes: ClothingShoesBootsMagAdv
     id: DeathsquadPDA
     pocket1: EnergySword
@@ -35,8 +36,6 @@
     belt: ClothingBeltMilitaryWebbingMedFilled
   storage:
     back:
-    - BoxSurvivalEngineering
-    - WeaponPulseRifle
     - WeaponPulsePistol
     - WeaponRevolverMateba
     - SpeedLoaderMagnumAP
@@ -47,6 +46,8 @@
     - Hypospray
     - DeathAcidifierImplanter # crew will try to steal their amazing hardsuits
     - FreedomImplanter
+  inhand:
+  - WeaponPulseRifle
 
 # Syndicate Operative Outfit - Civilian
 - type: startingGear
@@ -107,7 +108,9 @@
 - type: startingGear
   id: CBURNGear
   subGear:
+  - BoxSurvivalEngineering
   - CBURNPlasmamanGear
+  - GasTankSuitStorage
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBrown
     back: ClothingBackpackDuffelCBURN
@@ -120,11 +123,9 @@
     id: CBURNPDA
     pocket1: RadioHandheld
     pocket2: WeaponLaserGun
-    suitstorage: OxygenTankFilled
     belt: ClothingBeltBandolier
   storage:
     back:
-    - BoxSurvivalEngineering
     - WeaponShotgunDoubleBarreled
     - BoxShotgunIncendiary
     - GrenadeFlashBang

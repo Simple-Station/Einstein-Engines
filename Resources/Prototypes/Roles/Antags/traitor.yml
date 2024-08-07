@@ -43,9 +43,10 @@
 - type: startingGear
   id: SyndicateOperativeGearExtremelyBasic
   parent: SyndicateOperativeClothing
+  subGear:
+  - BoxSurvivalSyndicate
   storage:
     back:
-    - BoxSurvivalSyndicate
     - WeaponPistolViper
     - PinpointerSyndicateNuclear
     - DeathAcidifierImplanter
@@ -53,35 +54,34 @@
 - type: startingGear
   id: SyndicateReinforcementMedic
   parent: SyndicateOperativeClothing
+  subGear:
+  - BoxSurvivalSyndicate
   equipment:
     pocket1: WeaponPistolViper
   inhand:
   - MedkitCombatFilled
-  storage:
-    back:
-    - BoxSurvivalSyndicate
 
 - type: startingGear
   id: SyndicateReinforcementSpy
   parent: SyndicateOperativeClothing
+  subGear:
+  - BoxSurvivalSyndicate
   equipment:
     id: AgentIDCard
     mask: ClothingMaskGasVoiceChameleon
     pocket1: WeaponPistolViper
-  storage:
-    back:
-    - BoxSurvivalSyndicate
 
 - type: startingGear
   id: SyndicateReinforcementThief
   parent: SyndicateOperativeClothing
+  subGear:
+  - BoxSurvivalSyndicate
   equipment:
     pocket1: WeaponPistolViper
   inhand:
   - ToolboxSyndicateFilled
   storage:
     back:
-    - BoxSurvivalSyndicate
     - SyndicateJawsOfLife
 
 #Syndicate Operative Outfit - Basic

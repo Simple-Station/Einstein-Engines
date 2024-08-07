@@ -240,7 +240,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             newStartingGear.Inhand.AddRange(subGearProto.Inhand);
 
             foreach (var (slot, entProtoIds) in subGearProto.Storage)
-                newStartingGear.Storage[slot].AddRange(entProtoIds);
+            {
+                if (!newStartingGear.Storage.TryAdd(slot, entProtoIds))
+                    newStartingGear.Storage[slot].AddRange(entProtoIds);
+            }
         }
 
         return newStartingGear;

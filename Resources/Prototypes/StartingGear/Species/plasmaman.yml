@@ -1,4 +1,3 @@
-# Base Plasmaman starting gear that all plasmaman starting gears should inherit from
 - type: startingGear
   abstract: true
   id: BasePlasmamanGear
