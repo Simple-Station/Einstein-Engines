@@ -86,6 +86,14 @@
         {
             "name": "bat_wings_tone_2",
             "directions": 4
+        },
+        {
+            "name": "bionic_wings_tone_1",
+            "directions": 4
+        },
+        {
+            "name": "bionic_wings_tone_2",
+            "directions": 4
         }
     ]
 }

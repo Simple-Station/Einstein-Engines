@@ -372,6 +372,18 @@
       state: bat_wings_tone_2
 
 - type: marking
+  id: HarpyWingBionic
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Harpy]
+  sprites:
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
+      state: bionic_wings_tone_1
+    - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
+      state: bionic_wings_tone_2
+      shader: unshaded
+
+- type: marking
   id: HarpyChestDefault
   bodyPart: Chest
   markingCategory: Chest
