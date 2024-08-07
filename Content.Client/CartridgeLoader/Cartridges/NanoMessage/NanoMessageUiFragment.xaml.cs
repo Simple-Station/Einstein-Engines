@@ -48,7 +48,7 @@ public sealed partial class NanoMessageUiFragment : BoxContainer
         // Disable controls if there is no conversation
         var hasConvo = state.OpenedConversation is not null;
         ChatSendButton.Disabled = !hasConvo;
-        ChatFieldEdit.CanKeyboardFocus = !hasConvo;
+        ChatFieldEdit.CanKeyboardFocus = hasConvo;
     }
 
     private void BuildRecipients(NanoMessageUiState state)
@@ -116,7 +116,6 @@ public sealed partial class NanoMessageUiFragment : BoxContainer
     private void ChooseRecipient(ulong id)
     {
         OnRecipientChoose?.Invoke(id);
-        Logger.Debug($"Chose {id}");
     }
 
     private void AddRecipient()
