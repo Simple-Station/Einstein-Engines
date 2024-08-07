@@ -5073,3 +5073,11 @@ Entries:
       message: Readded Psionic Relay Orb
   id: 6235
   time: '2024-08-07T23:16:30.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add two new negative traits: Sluggish (+1) and Snail-Paced (+2) that
+        make you move slower, and climb tables slower.
+  id: 6236
+  time: '2024-08-07T23:38:33.0000000+00:00'
