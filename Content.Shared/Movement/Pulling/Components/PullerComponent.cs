@@ -69,3 +69,5 @@ public sealed partial class PullerComponent : Component
     [DataField]
     public ProtoId<AlertPrototype> PullingAlert = "Pulling";
 }
+
+public sealed partial class StopPullingAlertEvent : BaseAlertEvent;
