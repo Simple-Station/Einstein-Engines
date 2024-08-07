@@ -5089,3 +5089,9 @@ Entries:
         you bleed twice as long and makes you take 10% more Blunt damage.
   id: 6237
   time: '2024-08-07T23:39:52.0000000+00:00'
+- author: SleepyScarecrow
+  changes:
+    - type: Fix
+      message: Fixed the RegenMesh recipe
+  id: 6238
+  time: '2024-08-07T23:51:29.0000000+00:00'
