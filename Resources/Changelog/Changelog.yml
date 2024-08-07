@@ -5095,3 +5095,11 @@ Entries:
       message: Fixed the RegenMesh recipe
   id: 6238
   time: '2024-08-07T23:51:29.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: >-
+        Added Bluespace Slips, a plant trait that teleports you randomly if you
+        slip.
+  id: 6239
+  time: '2024-08-07T23:54:13.0000000+00:00'
