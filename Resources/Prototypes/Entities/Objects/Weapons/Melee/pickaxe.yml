@@ -68,6 +68,7 @@
       groups:
         Brute: 9
         Slash: 6
+      types:
         Structural: 12
     bluntStaminaDamageFactor: 4.0
     heavyRateModifier: 1
