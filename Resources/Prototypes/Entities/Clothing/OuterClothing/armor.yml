@@ -146,6 +146,9 @@
         Radiation: 0
         Caustic: 0.75
   - type: GroupExamine
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterArmorHeavy
@@ -242,6 +245,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: GroupExamine
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBaseLarge

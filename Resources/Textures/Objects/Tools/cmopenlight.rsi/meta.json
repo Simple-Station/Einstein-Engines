@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "MistakeNot4892, https://github.com/NebulaSS13/Nebula/blob/dev/icons/obj/lighting/penlight.dmi",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "world"
+        },
+        {
+            "name": "world-on"
+        }
+    ]
+}
