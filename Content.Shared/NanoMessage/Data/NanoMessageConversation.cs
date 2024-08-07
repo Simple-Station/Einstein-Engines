@@ -4,6 +4,9 @@ namespace Content.Shared.NanoMessage.Data;
 public partial struct NanoMessageConversation
 {
     [DataField]
+    public ulong Id;
+
+    [DataField]
     public ulong User1;
 
     [DataField]

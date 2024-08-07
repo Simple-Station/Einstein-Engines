@@ -20,4 +20,6 @@ public sealed partial class NanoMessageServerComponent : Component
     [DataField]
     public List<NanoMessageConversation> Conversations = new();
 
+    [DataField]
+    public ulong NextConversationId = 1;
 }

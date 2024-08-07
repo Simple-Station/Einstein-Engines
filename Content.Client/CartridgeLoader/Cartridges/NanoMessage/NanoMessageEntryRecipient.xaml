@@ -1,14 +1,10 @@
-﻿<BoxContainer xmlns="https://spacestation14.io"
-              xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
-              Margin="4"
-              Orientation="Vertical"
-              HorizontalExpand="True">
-    <ContainerButton Name="Root" Access="Public" HorizontalExpand="True">
-        <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-            <Label Name="RecipientLabel" HorizontalExpand="True"/>
-            <Label Name="IdLabel"/>
-        </BoxContainer>
-    </ContainerButton>
-
-    <customControls:HSeparator Margin="0 5 0 5"/>
-</BoxContainer>
+﻿<ContainerButton xmlns="https://spacestation14.io"
+                 xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+                 Margin="4"
+                 HorizontalExpand="True">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+        <Label Name="RecipientLabel" HorizontalExpand="True"/>
+        <Label Name="IdLabel"/>
+        <customControls:HSeparator Margin="0 5 0 5"/>
+    </BoxContainer>
+</ContainerButton>

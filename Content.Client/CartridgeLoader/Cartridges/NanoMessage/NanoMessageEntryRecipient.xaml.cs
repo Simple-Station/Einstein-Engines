@@ -6,7 +6,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client.CartridgeLoader.Cartridges.NanoMessage;
 
 [GenerateTypedNameReferences]
-public sealed partial class NanoMessageEntryRecipient : BoxContainer
+public sealed partial class NanoMessageEntryRecipient : ContainerButton
 {
     public NanoMessageRecipient Recipient;
     public string RecipientName;

@@ -33,3 +33,5 @@ nano-message-unknown-user-short = <Unknown>
 nano-message-timestamp-now = Just now
 nano-message-timestamp-recent = {$minutes} minutes ago
 nano-message-timestamp-old = {$hours}:{$minutes} shift time
+nano-message-popup-paired = {THE($used)} pairs with {THE($target)}.
+nano-message-notification-message-header = New message from {$sender}!

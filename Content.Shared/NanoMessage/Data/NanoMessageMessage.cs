@@ -7,7 +7,7 @@ public partial struct NanoMessageMessage
     public ulong Sender;
 
     [DataField]
-    public string Message;
+    public string Content;
 
     [DataField]
     public TimeSpan Timestamp;

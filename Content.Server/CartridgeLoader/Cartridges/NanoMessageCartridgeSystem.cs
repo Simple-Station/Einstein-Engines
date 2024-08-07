@@ -1,15 +1,12 @@
-using System.Diagnostics;
 using System.Linq;
 using Content.Server.NanoMessage;
 using Content.Server.NanoMessage.Events;
+using Content.Server.Popups;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Content.Shared.IdentityManagement;
 using Content.Shared.NanoMessage.Data;
-using Content.Shared.NanoMessage.Events;
 using Content.Shared.NanoMessage.Events.Cartridge;
-using Content.Shared.PDA;
-using Robust.Shared.Utility;
 
 namespace Content.Server.CartridgeLoader.Cartridges;
 
@@ -18,6 +15,7 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
     [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
     [Dependency] private readonly NanoMessageClientSystem _clients = default!;
     [Dependency] private readonly NanoMessageServerSystem _servers = default!;
+    [Dependency] private readonly PopupSystem _popups = default!;
 
     public override void Initialize()
     {
@@ -26,6 +24,7 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
         SubscribeLocalEvent<NanoMessageCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<NanoMessageCartridgeComponent, CartridgeMessageEvent>(OnUiMessage);
         SubscribeLocalEvent<NanoMessageCartridgeComponent, CartridgeAfterInteractEvent>(OnAfterInteract);
+        SubscribeLocalEvent<NanoMessageCartridgeComponent, NanoMessageClientMessageReceiveEvent>(OnReceiveMessage);
     }
 
     private void OnServerClientsChanged(Entity<NanoMessageServerComponent> ent, ref NanoMessageClientsChangedEvent args)
@@ -38,7 +37,7 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
             if (!TryComp<NanoMessageCartridgeComponent>(client.Ent, out var cartridge))
                 continue;
 
-            RefreshClientData((client.Ent, cartridge), recipients);
+            UpdateClientData((client.Ent, cartridge), recipients);
             UpdateUiState((client.Ent, cartridge));
         }
     }
@@ -60,10 +59,10 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
                 OnReconnect(ent, ref reconnect);
                 break;
             case NanoMessageMessageSendRequest send:
-                // TODO
+                OnSendMessage(ent, ref send);
                 break;
             case NanoMessageChooseConversationRequest choose:
-                // TODO
+                OnChooseConversation(ent, ref choose);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -79,8 +78,7 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
             return;
 
         ent.Comp.KnownRecipients.Add(args.Id);
-        RefreshClientData(ent, _servers.GetClientsData(server).ToList());
-        UpdateUiState(ent!);
+        UpdateAll((ent.Owner, ent.Comp, client));
     }
 
     private void OnReconnect(Entity<NanoMessageCartridgeComponent> ent, ref NanoMessageReconnectRequest args)
@@ -92,9 +90,28 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
         UpdateUiState(ent!);
     }
 
-    // TODO
-    // private void OnSendMessage(Entity<NanoMessageCartridgeComponent> ent, ref NanoMessageMessageSendRequest args)
-    // private void OnChooseConversation(Entity<NanoMessageCartridgeComponent> ent, ref NanoMessageChooseConversationRequest args)
+    private void OnSendMessage(Entity<NanoMessageCartridgeComponent> ent, ref NanoMessageMessageSendRequest args)
+    {
+        if (!TryComp<NanoMessageClientComponent>(ent, out var client)
+            || client.ConnectedServer is not { Valid: true } server
+            || !_servers.TryConversationBetween(server, client.Id, args.RecipientId, out var conv, createIfMissing: true))
+            return;
+
+        _clients.TrySendMessage((ent, client), conv.Value.Id, args.Message);
+        UpdateUiState(ent!);
+    }
+
+    private void OnChooseConversation(Entity<NanoMessageCartridgeComponent> ent, ref NanoMessageChooseConversationRequest args)
+    {
+        // TODO: show an error popup or a fallback conversation or whatever
+        if (!TryComp<NanoMessageClientComponent>(ent, out var client)
+            || client.ConnectedServer is not { Valid: true } server
+            || !_servers.TryConversationBetween(server, client.Id, args.RecipientId, out var conv, createIfMissing: true))
+            return;
+
+        ent.Comp.CurrentConversationId = conv.Value.Id;
+        UpdateUiState(ent!);
+    }
 
     /// <summary>
     ///     When touching another NanoMessage client or PDA, try to add it to the recipient list.
@@ -141,23 +158,41 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
             UpdateAll((otherClient.Owner, targetCartridge, otherClient.Comp));
         }
 
-        // TODO: popup
-
-
+        _popups.PopupEntity(Loc.GetString("nano-message-popup-paired", ("used", args.InteractEvent.Used), ("target", target)), ent);
     }
 
+    private void OnReceiveMessage(Entity<NanoMessageCartridgeComponent> ent, ref NanoMessageClientMessageReceiveEvent args)
+    {
+        UpdateUiState(ent!);
+        if (!TryComp<NanoMessageClientComponent>(ent, out var client)
+            || args.Message.Sender == client.Id) // Don't send a notification if this message is from self
+            return;
+
+        var senderName = GetClientName(ent, args.Message.Sender);
+        var header = Loc.GetString("nano-message-notification-message-header", ("sender", senderName));
+
+        if (TryComp<CartridgeComponent>(ent, out var cartridgeComponent) && cartridgeComponent.LoaderUid is { } loader)
+            _cartridgeLoader.SendNotification(loader, header, args.Message.Content);
+    }
+
+    /// <summary>
+    ///     Updates the ui state and refreshes the client data of the given client.
+    /// </summary>
     public void UpdateAll(Entity<NanoMessageCartridgeComponent?, NanoMessageClientComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp1, false) || !Resolve(ent, ref ent.Comp2, false))
             return;
 
         if (ent.Comp2.ConnectedServer is { Valid: true } server)
-            RefreshClientData(ent, _servers.GetClientsData(server).ToList());
+            UpdateClientData(ent!, _servers.GetClientsData(server).ToList());
 
         UpdateUiState((ent.Owner, ent.Comp1));
     }
 
-    private void UpdateUiState(Entity<NanoMessageCartridgeComponent?> ent, EntityUid? loader = null)
+    /// <summary>
+    ///     Updates the ui state of the given client, without refreshing the client data.
+    /// </summary>
+    public void UpdateUiState(Entity<NanoMessageCartridgeComponent?> ent, EntityUid? loader = null)
     {
         if (!Resolve(ent, ref ent.Comp))
             return;
@@ -175,8 +210,8 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
             return;
 
         NanoMessageConversation? currentConvo = null;
-        if (ent.Comp.CurrentRecipient != null)
-            _servers.TryConversationBetween(client.ConnectedServer, ent.Comp.CurrentRecipient.Value, client.Id, out currentConvo);
+        if (ent.Comp.CurrentConversationId is { } currentConversationId)
+            _servers.TryConversation(client.ConnectedServer, currentConversationId, out currentConvo);
 
         var state = new NanoMessageUiState
         {
@@ -184,12 +219,22 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
             KnownRecipients = ent.Comp.KnownRecipientsData,
             OpenedConversation = currentConvo
         };
-        _cartridgeLoader?.UpdateCartridgeUiState(loader!.Value, state);
+        _cartridgeLoader.UpdateCartridgeUiState(loader!.Value, state);
     }
 
-    private void RefreshClientData(Entity<NanoMessageCartridgeComponent> ent, List<NanoMessageRecipient> fullData)
+    private void UpdateClientData(Entity<NanoMessageCartridgeComponent> ent, List<NanoMessageRecipient> fullData)
     {
         var knownRecipients = fullData.Where(it => ent.Comp.KnownRecipients.Contains(it.Id)).ToList();
         ent.Comp.KnownRecipientsData = knownRecipients;
+    }
+
+    private string GetClientName(Entity<NanoMessageCartridgeComponent> ent, ulong id)
+    {
+        var result = ent.Comp.KnownRecipientsData
+            .Where(it => it.Id == id)
+            .Cast<NanoMessageRecipient?>()
+            .FirstOrDefault();
+
+        return result?.Name ?? Loc.GetString("nano-message-unknown-user-short");
     }
 }

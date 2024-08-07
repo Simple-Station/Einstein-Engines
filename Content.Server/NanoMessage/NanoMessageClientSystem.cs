@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Power.Components;
+using Content.Shared.NanoMessage.Data;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Toolshed.Commands.Values;
@@ -61,6 +62,23 @@ public sealed partial class NanoMessageClientSystem : EntitySystem
         }
 
         return _servers.TryConnect(result, ent!);
+    }
+
+    public bool TrySendMessage(Entity<NanoMessageClientComponent?> client, ulong conversationId, string message)
+    {
+        if (!Resolve(client, ref client.Comp)
+            || client.Comp.Id <= 0
+            || client.Comp.ConnectedServer is not { Valid: true } server)
+            return false;
+
+        var msg = new NanoMessageMessage
+        {
+            Content = message,
+            Sender = client.Comp.Id,
+            Timestamp = _timing.CurTime
+        };
+
+        return _servers.TryDispatchMessage(server, conversationId, msg);
     }
 
     private EntityUid FindClosestServer(Entity<NanoMessageClientComponent> ent)

@@ -22,7 +22,7 @@ public sealed partial class NanoMessageEntryMessage : BoxContainer
         TimestampLabel.Text = FormatTimestamp(message.Timestamp);
         LanguageLabel.Text = "LANGUAGE PLACEHOLDER";
 
-        ContentLabel.SetMessage(message.Message);
+        ContentLabel.SetMessage(message.Content);
     }
 
     private string FormatTimestamp(TimeSpan shiftTime)

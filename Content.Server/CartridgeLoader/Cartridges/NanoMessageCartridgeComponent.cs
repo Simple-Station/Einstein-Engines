@@ -20,5 +20,5 @@ public sealed partial class NanoMessageCartridgeComponent : Component
     public List<NanoMessageRecipient> KnownRecipientsData = new();
 
     [DataField]
-    public ulong? CurrentRecipient;
+    public ulong? CurrentConversationId;
 }
