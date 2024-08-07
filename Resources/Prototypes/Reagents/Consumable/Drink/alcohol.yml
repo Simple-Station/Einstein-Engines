@@ -186,6 +186,9 @@
           min: 15
         - !type:OrganType
           type: Dwarf
+        - !type:OrganType
+          type: DrunkenResilience
+          shouldHave: false
         damage:
           groups:
             Brute: -1
@@ -199,6 +202,15 @@
         - !type:OrganType
           type: Dwarf
           shouldHave: false
+      # Drunken Resilience
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: DrunkenResilience
+        damage:
+          groups:
+            Brute: -0.5 # heals 0.08 damage per tick
+            Burn: -0.5  # heals 0.08 damage per tick
       - !type:Drunk
         boozePower: 2
 

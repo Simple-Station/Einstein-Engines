@@ -52,6 +52,22 @@
       boozeStrengthMultiplier: 0.5
 
 - type: trait
+  id: DrunkenResilience
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      traits:
+        - HeavyweightDrunk
+  components:
+    - type: DrunkenResilience
+
+- type: trait
   id: Thieving
   category: Physical
   points: -4
