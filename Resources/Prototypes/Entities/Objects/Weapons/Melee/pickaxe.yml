@@ -20,8 +20,7 @@
         volume: -3
     damage:
       groups:
-        Brute: 5
-        Piercing: 3
+        Brute: 7
     bluntStaminaDamageFactor: 2.0
     heavyDamageBaseModifier: 1.75
     heavyStaminaCost: 5
@@ -66,8 +65,7 @@
     range: 1.4
     damage:
       groups:
-        Brute: 9
-        Slash: 6
+        Brute: 10
       types:
         Structural: 12
     bluntStaminaDamageFactor: 4.0
