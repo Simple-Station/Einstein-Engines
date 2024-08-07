@@ -97,7 +97,7 @@ trait-description-Sluggish =
 trait-name-SnailPaced = Snail-Paced
 trait-description-SnailPaced =
     You walk at a snail's pace, perhaps due to a medical condition, mobility impairment, or age.
-    You move substantially slower, and it takes far more longer for you to climb, lie down and get up.
+    You move substantially slower, and it takes far longer for you to climb, lie down and get up.
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
