@@ -9,6 +9,6 @@ public sealed partial class TraitSpeedModifierComponent : Component
     [DataField(required: true)]
     public float WalkModifier = 1.0f;
 
-    [DataField("sprintModifier", required: true)]
+    [DataField(required: true)]
     public float SprintModifier = 1.0f;
 }
