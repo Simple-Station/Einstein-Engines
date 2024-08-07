@@ -11,7 +11,7 @@ using Content.Shared.Traits.Assorted.Components;
 
 namespace Content.Shared.HealthExaminable;
 
-public sealed class HealthExaminableSystem : EntitySystem
+public abstract class SharedHealthExaminableSystem : EntitySystem
 {
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
     [Dependency] private readonly MobThresholdSystem _threshold = default!;
@@ -47,14 +47,14 @@ public sealed class HealthExaminableSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
-    public FormattedMessage GetMarkup(EntityUid examiner,
+    public FormattedMessage GetMarkup(
+        EntityUid examiner,
         Entity<HealthExaminableComponent> examinable,
-        DamageableComponent damageable)
-    {
-        return examiner == examinable.Owner && TryComp<SelfAwareComponent>(examinable, out var selfAware)
+        DamageableComponent damageable
+        ) =>
+        examiner == examinable.Owner && TryComp<SelfAwareComponent>(examinable, out var selfAware)
             ? CreateMarkupSelfAware(examinable, selfAware, examinable.Comp, damageable)
             : CreateMarkup(examinable, examinable.Comp, damageable);
-    }
 
     private FormattedMessage CreateMarkup(EntityUid uid, HealthExaminableComponent component, DamageableComponent damage)
     {
