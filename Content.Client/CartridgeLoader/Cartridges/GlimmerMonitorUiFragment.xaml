@@ -1,4 +1,4 @@
-﻿<cartridges:GlimmerMonitorUiFragment xmlns:cartridges="clr-namespace:Content.Client.Nyanotrasen.CartridgeLoader.Cartridges"
+﻿<cartridges:GlimmerMonitorUiFragment xmlns:cartridges="clr-namespace:Content.Client.CartridgeLoader.Cartridges"
                                  xmlns="https://spacestation14.io" Margin="1 0 2 0">
     <PanelContainer StyleClasses="BackgroundDark"></PanelContainer>
     <BoxContainer Name="SettingsBox" Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="False">
