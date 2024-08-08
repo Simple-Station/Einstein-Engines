@@ -23,8 +23,9 @@ trait-description-HeavyweightDrunk =
 
 trait-name-DrunkenResilience = Drunken Resilience
 trait-description-DrunkenResilience =
-    Alcohol is afraid of you so much, it's willing to serve as medicine just to appease you!
-    Whenever you're drunk, you slowly recover Brute and Burn damage.
+    Forget the doctor — just hit the bar for your "ethanol prescription"!
+    While drunk, you slowly heal [color=red]Brute[/color], [color=orange]Heat[/color], [color=orange]Shock[/color], and [color=orange]Cold[/color] damage, scaling with how drunk you are.
+    You also gain the benefits of [color=lightblue]Alcohol Tolerance[/color].
 
 trait-name-Muted = Muted
 trait-description-Muted = You can't speak
