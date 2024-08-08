@@ -47,13 +47,13 @@
       inverted: true
       traits:
         - LightweightDrunk
-        - DrunkenResilience
+        - BoozyBoost
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 0.5
 
 - type: trait
-  id: DrunkenResilience
+  id: BoozyBoost
   category: Physical
   points: -4
   requirements:
@@ -68,7 +68,7 @@
         - LightweightDrunk
         - HeavyweightDrunk
   components:
-    - type: DrunkenResilience
+    - type: BoozyBoost
 
 - type: trait
   id: Thieving

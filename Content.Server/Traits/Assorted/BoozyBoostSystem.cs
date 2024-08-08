@@ -5,7 +5,7 @@ using Content.Shared.Tag;
 
 namespace Content.Server.Traits.Assorted;
 
-public sealed class DrunkenResilienceSystem : EntitySystem
+public sealed class BoozyBoostSystem : EntitySystem
 {
     [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
@@ -13,10 +13,10 @@ public sealed class DrunkenResilienceSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<DrunkenResilienceComponent, ComponentInit>(OnSpawn);
+        SubscribeLocalEvent<BoozyBoostComponent, ComponentInit>(OnSpawn);
     }
 
-    private void OnSpawn(Entity<DrunkenResilienceComponent> entity, ref ComponentInit args)
+    private void OnSpawn(Entity<BoozyBoostComponent> entity, ref ComponentInit args)
     {
         if (!TryComp<BodyComponent>(entity, out var body))
             return;
@@ -32,9 +32,9 @@ public sealed class DrunkenResilienceSystem : EntitySystem
 
             foreach (var metabolismGroup in metabolizer.MetabolismGroups)
             {
-                // Add the DrunkenResilience metabolizer type to the liver and equivalent organs.
+                // Add the BoozyBoost metabolizer type to the liver and equivalent organs.
                 if (metabolismGroup.Id == "Alcohol")
-                    metabolizer.MetabolizerTypes.Add("DrunkenResilience");
+                    metabolizer.MetabolizerTypes.Add("BoozyBoost");
             }
         }
     }

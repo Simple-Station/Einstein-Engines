@@ -187,7 +187,7 @@
         - !type:OrganType
           type: Dwarf
         - !type:OrganType
-          type: DrunkenResilience
+          type: BoozyBoost
           shouldHave: false
         damage:
           groups:
@@ -206,7 +206,7 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: DrunkenResilience
+          type: BoozyBoost
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 0.10
@@ -221,7 +221,7 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: DrunkenResilience
+          type: BoozyBoost
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 0.50
@@ -236,7 +236,7 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: DrunkenResilience
+          type: BoozyBoost
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 7.00
@@ -251,7 +251,7 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: DrunkenResilience
+          type: BoozyBoost
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 11
@@ -266,7 +266,7 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: DrunkenResilience
+          type: BoozyBoost
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 15 # Overdose threshold
