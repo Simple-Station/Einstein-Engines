@@ -112,6 +112,12 @@
   id: ParkourTraining
   category: Physical
   points: -3
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sluggish
+        - SnailPaced
   components:
     - type: ClimbDelayModifier
       climbDelayMultiplier: 0.70
