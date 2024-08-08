@@ -128,7 +128,7 @@ public sealed partial class MeleeWeaponComponent : Component
     public bool SwingLeft;
 
     [DataField, AutoNetworkedField]
-    public float HeavyStaminaCost = 20f;
+    public float HeavyStaminaCost = 10f;
 
     [DataField, AutoNetworkedField]
     public int MaxTargets = 5;
