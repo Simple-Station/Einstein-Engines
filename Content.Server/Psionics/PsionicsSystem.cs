@@ -1,19 +1,15 @@
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.StatusEffect;
-using Content.Shared.Mobs;
 using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Damage.Events;
-using Content.Shared.IdentityManagement;
 using Content.Shared.CCVar;
 using Content.Server.Abilities.Psionics;
 using Content.Server.Chat.Systems;
 using Content.Server.Electrocution;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.Systems;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Random;
 
@@ -27,7 +23,6 @@ namespace Content.Server.Psionics
         [Dependency] private readonly ElectrocutionSystem _electrocutionSystem = default!;
         [Dependency] private readonly MindSwapPowerSystem _mindSwapPowerSystem = default!;
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
-        [Dependency] private readonly ChatSystem _chat = default!;
         [Dependency] private readonly NpcFactionSystem _npcFactonSystem = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -41,9 +36,7 @@ namespace Content.Server.Psionics
         {
             base.Update(frameTime);
             foreach (var roller in _rollers)
-            {
                 RollPsionics(roller.uid, roller.component, false);
-            }
             _rollers.Clear();
         }
         public override void Initialize()
@@ -90,13 +83,9 @@ namespace Content.Server.Psionics
 
         private void OnInit(EntityUid uid, PsionicComponent component, ComponentInit args)
         {
-            if (!component.Removable)
-                return;
-
-            if (!TryComp<NpcFactionMemberComponent>(uid, out var factions))
-                return;
-
-            if (_npcFactonSystem.ContainsFaction(uid, "GlimmerMonster", factions))
+            if (!component.Removable
+                || !TryComp<NpcFactionMemberComponent>(uid, out var factions)
+                || _npcFactonSystem.ContainsFaction(uid, "GlimmerMonster", factions))
                 return;
 
             _npcFactonSystem.AddFaction(uid, "PsionicInterloper");
@@ -104,7 +93,7 @@ namespace Content.Server.Psionics
 
         private void OnRemove(EntityUid uid, PsionicComponent component, ComponentRemove args)
         {
-            if (!TryComp<NpcFactionMemberComponent>(uid, out var factions))
+            if (!HasComp<NpcFactionMemberComponent>(uid))
                 return;
 
             _npcFactonSystem.RemoveFaction(uid, "PsionicInterloper");
@@ -112,24 +101,14 @@ namespace Content.Server.Psionics
 
         private void OnStamHit(EntityUid uid, AntiPsionicWeaponComponent component, TakeStaminaDamageEvent args)
         {
-            var bonus = false;
-
             if (HasComp<PsionicComponent>(args.Target))
-                bonus = true;
-
-            if (!bonus)
-                return;
-
-
-            args.FlatModifier += component.PsychicStaminaDamage;
+                args.FlatModifier += component.PsychicStaminaDamage;
         }
 
         public void RollPsionics(EntityUid uid, PotentialPsionicComponent component, bool applyGlimmer = true, float multiplier = 1f)
         {
-            if (HasComp<PsionicComponent>(uid))
-                return;
-
-            if (!_cfg.GetCVar(CCVars.PsionicRollsEnabled))
+            if (HasComp<PsionicComponent>(uid)
+                || !_cfg.GetCVar(CCVars.PsionicRollsEnabled))
                 return;
 
             var chance = component.Chance;
@@ -154,10 +133,8 @@ namespace Content.Server.Psionics
 
         public void RerollPsionics(EntityUid uid, PotentialPsionicComponent? psionic = null, float bonusMuliplier = 1f)
         {
-            if (!Resolve(uid, ref psionic, false))
-                return;
-
-            if (psionic.Rerolled)
+            if (!Resolve(uid, ref psionic, false)
+                || psionic.Rerolled)
                 return;
 
             RollPsionics(uid, psionic, multiplier: bonusMuliplier);
