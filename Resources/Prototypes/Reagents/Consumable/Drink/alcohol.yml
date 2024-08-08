@@ -207,10 +207,77 @@
         conditions:
         - !type:OrganType
           type: DrunkenResilience
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 0.10
+          max: 0.49
         damage:
           groups:
-            Brute: -0.5 # heals 0.08 damage per tick
-            Burn: -0.5  # heals 0.08 damage per tick
+            Brute: -0.2
+          types:
+            Heat: -0.06
+            Shock: -0.06
+            Cold: -0.06
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: DrunkenResilience
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 0.50
+          max: 6.99
+        damage:
+          groups:
+            Brute: -0.4
+          types:
+            Heat: -0.13
+            Shock: -0.13
+            Cold: -0.13
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: DrunkenResilience
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 7.00
+          max: 10.99
+        damage:
+          groups:
+            Brute: -0.8
+          types:
+            Heat: -0.27
+            Shock: -0.27
+            Cold: -0.27
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: DrunkenResilience
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 11
+          max: 14.99
+        damage:
+          groups:
+            Brute: -1.6
+          types:
+            Heat: -0.53
+            Shock: -0.53
+            Cold: -0.53
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: DrunkenResilience
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 15 # Overdose threshold
+        damage:
+          groups:
+            Brute: -2.4
+            Burn: -2.4
+          types:
+            Heat: -0.8
+            Shock: -0.8
+            Cold: -0.8
       - !type:Drunk
         boozePower: 2
 
