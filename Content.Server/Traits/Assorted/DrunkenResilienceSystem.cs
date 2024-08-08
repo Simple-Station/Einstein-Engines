@@ -36,10 +36,7 @@ public sealed class DrunkenResilienceSystem : EntitySystem
             {
                 // Add the DrunkenResilience metabolizer type to the liver and equivalent organs.
                 if (metabolismGroup.Id == "Alcohol")
-                {
                     metabolizer.MetabolizerTypes.Add("DrunkenResilience");
-                    continue;
-                }
             }
         }
     }
