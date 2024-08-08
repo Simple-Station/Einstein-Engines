@@ -20,13 +20,11 @@ trait-description-LightweightDrunk = Alcohol has a stronger effect on you
 trait-name-HeavyweightDrunk = Alcohol Tolerance
 trait-description-HeavyweightDrunk =
     Alcohol is afraid of you.
-    [color=skyblue]Selecting this trait will unlock [/color][bold]Drunken Resilience.[/bold][/color]
 
-trait-name-DrunkenResilience = [Upgrade] Drunken Resilience
+trait-name-DrunkenResilience = Drunken Resilience
 trait-description-DrunkenResilience =
     Alcohol is afraid of you so much, it's willing to serve as medicine just to appease you!
     Whenever you're drunk, you slowly recover Brute and Burn damage.
-    [color=skyblue]This is an Upgrade Trait of [/color][bold]Alcohol Tolerance[/bold][color=skyblue].[/color]
 
 trait-name-Muted = Muted
 trait-description-Muted = You can't speak

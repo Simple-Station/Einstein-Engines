@@ -11,6 +11,7 @@
       inverted: true
       traits:
         - HeavyweightDrunk
+        - DrunkenResilience
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 2
