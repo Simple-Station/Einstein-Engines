@@ -1,16 +1,28 @@
-ent-ClothingOuterHardsuitCombatStandard = combat tacsuit
-    .desc = A purpose-built combat suit designed to protect its user against all manner of enemy combatants in low pressure environments.
-ent-ClothingOuterHardsuitCombatOfficer = security combat tacsuit
-    .desc = A purpose-built combat suit designed to protect its user against all manner of enemy combatants in low pressure environments. This one has station security markings.
-ent-ClothingOuterHardsuitCombatMedical = medical combat tacsuit
-    .desc = A purpose-built combat suit designed to allow its user greater mobility for superior support of friendly units in active combat zones.
-ent-ClothingOuterHardsuitCombatCorpsman = corpsman combat tacsuit
-    .desc = A purpose-built combat suit designed to allow its user greater mobility for superior support of friendly units in active combat zones. This one has station security markings.
-ent-ClothingOuterHardsuitCombatRiot = riot tacsuit
-    .desc = A purpose-built combat suit designed for crowd control against armed combatants in low pressure environments.
-ent-ClothingOuterHardsuitCombatWarden = warden's riot tacsuit
-    .desc = A purpose-built combat suit designed for crowd control against armed combatants in low pressure environments. This one has station security and warden's rank markings.
-ent-ClothingOuterHardsuitCombatAdvanced = advanced combat tacsuit
-    .desc = A purpose-built combat suit of second-generation design, providing unparalleled protection against all manner of kinetic forces in low pressure environments.
-ent-ClothingOuterHardsuitCombatHoS = head of security's advanced tacsuit
-    .desc = A purpose-built combat suit of second-generation design, providing unparalleled protection against all manner of kinetic forces in low pressure environments. This one has station security and commander's rank markings.
+ent-ClothingOuterHardsuitCombatStandard = FPA-85 - "Baghatur Mk.II" tacsuit
+    .desc = A sturdy and cumbersome tactical combat hardsuit mass-produced by Five-Points-Armory.
+    It offers protection against low pressure environments, and sports heavy layers of plastitanium, protecting against physical trauma & explosive ordinance at the cost of the wearer's mobility.
+ent-ClothingOuterHardsuitCombatOfficer = FPA-85s - "Baghatur Mk.II" tacsuit
+    .desc = A sturdy and cumbersome tactical combat hardsuit mass-produced by Five-Points-Armory.
+    It offers protection against low pressure environments, and sports heavy layers of plastitanium, protecting against physical trauma & explosive ordinance at the cost of the wearer's mobility.
+    This one has station security markings.
+ent-ClothingOuterHardsuitCombatMedical = FPA-86 - "Tsagaan Mk.II" tacsuit
+    .desc = A sturdy and cumbersome tactical combat hardsuit mass-produced by Five-Points-Armory.
+    It offers protection against low pressure environments, and sports heavy layers of plastitanium, protecting slightly against physical trauma & explosive ordinance while severely reducing the wearer's mobility.
+ent-ClothingOuterHardsuitCombatCorpsman = FPA-86m - "Tsagaan Mk.II" tacsuit
+    .desc = A sturdy and cumbersome tactical combat hardsuit mass-produced by Five-Points-Armory.
+    It offers protection against low pressure environments, and sports heavy layers of plastitanium, protecting slightly against physical trauma & explosive ordinance while severely reducing the wearer's mobility.
+    This one has station security & medical markings.
+ent-ClothingOuterHardsuitCombatRiot = FPA-93 - "Sülde Mk.II" tacsuit
+    .desc = A specialized riot-control tactical combat hardsuit produced by Five-Points-Armory.
+    Featuring reinforced plastitanium plating that offers better protection against low pressure environments and physical trauma than its standard counterpart, at the expense of some more mobility.
+ent-ClothingOuterHardsuitCombatWarden = FPA-93s - "Sülde Mk.II" tacsuit
+    .desc = A specialized riot-control tactical combat hardsuit produced by Five-Points-Armory.
+    Featuring reinforced plastitanium plating that offers better protection against low pressure environments and physical trauma than its standard counterpart, at the expense of some more mobility.
+    This one has station security markings.
+ent-ClothingOuterHardsuitCombatAdvanced = FPA-99 - "Dayičin Mk.II" tacsuit
+    .desc = A top-of-the-line tactical combat hardsuit produced by Five-Points-Armory.
+    It features an optimized arrangement of its reinforcement layers that offers the same protection as standard suits without impacting mobility as much.
+ent-ClothingOuterHardsuitCombatHoS = FPA-99s - "Dayičin Mk.II" tacsuit
+    .desc = A top-of-the-line tactical combat hardsuit produced by Five-Points-Armory.
+    It features an optimized arrangement of its reinforcement layers that offers the same protection as standard suits without impacting mobility as much.
+    This one has station security markings.

@@ -1,16 +1,22 @@
-ent-ClothingHeadHelmetHardsuitCombatStandard = combat tacsuit helmet
-    .desc = An armoured helmet with a yellow visor and dual head-mounted lights.
-ent-ClothingHeadHelmetHardsuitCombatOfficer = security combat tacsuit helmet
+ent-ClothingHeadHelmetHardsuitCombatStandard = FPA-85 helmet
+    .desc = A bulky helmet deployed with the Baghatur Mk.II tacsuit.
+    It has heavy layers of plastitanium on it, offering protection against ballistics and explosive ordinance, at the cost of some mobility.
+ent-ClothingHeadHelmetHardsuitCombatOfficer = FPA-85s helmet
     .desc = { ent-ClothingHeadHelmetHardsuitCombatStandard.desc }
-ent-ClothingHeadHelmetHardsuitCombatMedical = medical combat tacsuit helmet
-    .desc = A lightweight armoured helmet with full-face blue visor and head-mounted light.
-ent-ClothingHeadHelmetHardsuitCombatCorpsman = corpsman combat tacsuit helmet
+ent-ClothingHeadHelmetHardsuitCombatMedical = FPA-86 helmet
+    .desc = A bulky helmet deployed with the Tsagaan Mk.II tacsuit.
+    It has heavy layers of plastitanium on it, offering protection against ballistics and explosive ordinance, at the cost of some mobility.
+ent-ClothingHeadHelmetHardsuitCombatCorpsman = FPA-86m helmet
     .desc = { ent-ClothingHeadHelmetHardsuitCombatMedical.desc }
-ent-ClothingHeadHelmetHardsuitCombatRiot = riot combat tacsuit helmet
-    .desc = A heavy armoured helmet with a sealed visor with yellow slits and dual head-mounted lights.
-ent-ClothingHeadHelmetHardsuitCombatWarden = warden's riot combat tacsuit helmet
+ent-ClothingHeadHelmetHardsuitCombatRiot = FPA-93 helmet
+    .desc = A modified riot-control helmet for use with the Sülde Mk.II tacsuit.
+    Features plastitanium plating, offering better overall protection than standard models at the expense of mobility.
+ent-ClothingHeadHelmetHardsuitCombatWarden = FPA-93s helmet
     .desc = { ent-ClothingHeadHelmetHardsuitCombatRiot.desc }
-ent-ClothingHeadHelmetHardsuitCombatAdvanced = advanced combat tacsuit helmet
-    .desc = A light but durable helmet with full-face protection and four head-mounted lights.
-ent-ClothingHeadHelmetHardsuitCombatHoS = head of security's advanced combat tacsuit helmet
+ent-ClothingHeadHelmetHardsuitCombatAdvanced = FPA-99 helmet
+    .desc = A high quality helmet for the Dayičin tacsuit.
+    Features a lightweight reinforced plating, offering the same protection as a standard tacsuit without impacting mobility as much.
+ent-ClothingHeadHelmetHardsuitCombatHoS = FPA-99s helmet
     .desc = { ent-ClothingHeadHelmetHardsuitCombatAdvanced.desc }
+
+
