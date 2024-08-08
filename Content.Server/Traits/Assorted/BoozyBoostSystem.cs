@@ -1,14 +1,12 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared.Body.Components;
-using Content.Shared.Tag;
 
 namespace Content.Server.Traits.Assorted;
 
 public sealed class BoozyBoostSystem : EntitySystem
 {
     [Dependency] private readonly BodySystem _bodySystem = default!;
-    [Dependency] private readonly TagSystem _tagSystem = default!;
 
     public override void Initialize()
     {
