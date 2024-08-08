@@ -247,7 +247,11 @@ namespace Content.Server.Atmos.EntitySystems
                     var damageScale = MathF.Min(((pressure / Atmospherics.HazardHighPressure) - 1) * Atmospherics.PressureDamageCoefficient, Atmospherics.MaxHighPressureDamage);
 
                     _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * damageScale, true, false);
-
+                    if (!barotrauma.TakingDamage)
+                    {
+                        barotrauma.TakingDamage = true;
+                        _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} started taking high pressure damage");
+                    }
                     _alertsSystem.ShowAlert(uid, AlertType.HighPressure, 2);
                 }
                 else
@@ -257,11 +261,6 @@ namespace Content.Server.Atmos.EntitySystems
                     {
                         barotrauma.TakingDamage = false;
                         _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} stopped taking pressure damage");
-                    }
-                    if (!barotrauma.TakingDamage)
-                    {
-                        barotrauma.TakingDamage = true;
-                        _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} started taking high pressure damage");
                     }
                     // Set correct alert.
                     switch (pressure)

@@ -88,6 +88,23 @@
       drinkDelayMultiplier: 0.5
 
 - type: trait
+  id: ParkourTraining
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sluggish
+        - SnailPaced
+  components:
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 0.70
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 0.8
+      downedSpeedMultiplierMultiplier: 1.25
+
+- type: trait
   id: LightStep
   category: Auditory
   points: -1

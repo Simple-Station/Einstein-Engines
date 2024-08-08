@@ -24,7 +24,8 @@ job-name-centcomoff = High Command Official
 job-name-reporter = Propogandist
 job-name-musician = Musician
 job-name-librarian = Librarian
-job-name-lawyer = Lawyer
+# DeltaV - Changed Lawyer to Attorney
+# job-name-lawyer = Lawyer
 job-name-mime = Mime
 job-name-ce = Chief Engineer
 job-name-janitor = Janitor
