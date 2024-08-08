@@ -5111,3 +5111,9 @@ Entries:
         EntitySpawnEntry format
   id: 6240
   time: '2024-08-08T00:16:02.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Moths can now once again be colorful.
+  id: 6241
+  time: '2024-08-08T00:18:08.0000000+00:00'
