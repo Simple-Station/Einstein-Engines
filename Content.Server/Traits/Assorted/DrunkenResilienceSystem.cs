@@ -5,8 +5,6 @@ using Content.Shared.Tag;
 
 namespace Content.Server.Traits.Assorted;
 
-// TODO: make Drunken Resilience healing scale by the amount of alcohol/drunkenness
-// perhaps by using `public override void Update(float frameTime)`
 public sealed class DrunkenResilienceSystem : EntitySystem
 {
     [Dependency] private readonly BodySystem _bodySystem = default!;
