@@ -44,6 +44,7 @@
     sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
   - type: EmitSoundOnLand
     sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+  - type: DnaSubstanceTrace
 
 - type: entity
   parent: DrinkBaseCup
@@ -320,14 +321,14 @@
 - type: entity
   parent: DrinkBaseCup
   id: DrinkLean
-  name: Lean # Delta V : Re-adds Lean
-  description: Often paired with doja sweet, drinking this concoction is the staple of a trill O.G. # Delta V : Re-Re-adds Lean
+  name: Lean
+  description: Often paired with doja sweet, drinking this concoction is the staple of a trill O.G.
   components:
   - type: SolutionContainerManager
     solutions:
       drink:
         reagents:
-        - ReagentId: Lean # Delta V : Re-adds Lean
+        - ReagentId: Lean
           Quantity: 20
   - type: Sprite
     sprite: Objects/Consumable/Drinks/lean.rsi
