@@ -97,6 +97,7 @@
       traits:
         - Sluggish
         - SnailPaced
+        - SlowAndSteady
   components:
     - type: ClimbDelayModifier
       climbDelayMultiplier: 0.70
