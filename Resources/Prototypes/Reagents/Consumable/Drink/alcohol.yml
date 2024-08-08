@@ -211,23 +211,8 @@
           reagent: Ethanol
           min: 0.10
           max: 0.49
-        damage:
-          groups:
-            Brute: -0.2
-          types:
-            Heat: -0.06
-            Shock: -0.06
-            Cold: -0.06
-      - !type:HealthChange
-        conditions:
-        - !type:OrganType
-          type: BoozyBoost
-        - !type:ReagentThreshold
-          reagent: Ethanol
-          min: 0.50
-          max: 6.99
-        damage:
-          groups:
+        damage:   # NOTE: all damage sets for Boozy Boost are halved due to
+          groups: # LightweightDrunkComponent making ethanol half as potent
             Brute: -0.4
           types:
             Heat: -0.13
@@ -239,8 +224,8 @@
           type: BoozyBoost
         - !type:ReagentThreshold
           reagent: Ethanol
-          min: 7.00
-          max: 10.99
+          min: 0.50
+          max: 6.99
         damage:
           groups:
             Brute: -0.8
@@ -254,8 +239,8 @@
           type: BoozyBoost
         - !type:ReagentThreshold
           reagent: Ethanol
-          min: 11
-          max: 14.99
+          min: 7.00
+          max: 10.99
         damage:
           groups:
             Brute: -1.6
@@ -269,15 +254,30 @@
           type: BoozyBoost
         - !type:ReagentThreshold
           reagent: Ethanol
+          min: 11
+          max: 14.99
+        damage:
+          groups:
+            Brute: -3.2
+          types:
+            Heat: -1.06
+            Shock: -1.06
+            Cold: -1.06
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: BoozyBoost
+        - !type:ReagentThreshold
+          reagent: Ethanol
           min: 15 # Overdose threshold
         damage:
           groups:
-            Brute: -2.4
-            Burn: -2.4
+            Brute: -4.8
+            Burn: -4.8
           types:
-            Heat: -0.8
-            Shock: -0.8
-            Cold: -0.8
+            Heat: -1.60
+            Shock: -1.60
+            Cold: -1.60
       - !type:Drunk
         boozePower: 2
 
