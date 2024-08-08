@@ -122,3 +122,9 @@ trait-name-WeaponsGeneralist = Weapons Generalist
 trait-description-WeaponsGeneralist =
     You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
     Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 25%.
+
+trait-name-SlowAndSteady = Slow And Steady
+trait-description-SlowAndSteady =
+    "Slow and steady wins the race."
+    Your movement speed is decreased by [color=yellow]25%[/color].
+    You gain [color=skyblue]slip immunity[/color], [color=skyblue]slow immunity[/color] (except lying down), and [color=skyblue]speed boost immunity[/color].

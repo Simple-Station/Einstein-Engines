@@ -105,6 +105,7 @@
       traits:
         - ParkourTraining
         - SnailPaced
+        - SlowAndSteady
   components:
     - type: TraitSpeedModifier
       sprintModifier: 0.85
@@ -124,6 +125,7 @@
       traits:
         - ParkourTraining
         - Sluggish
+        - SlowAndSteady
   components:
     - type: TraitSpeedModifier
       sprintModifier: 0.7

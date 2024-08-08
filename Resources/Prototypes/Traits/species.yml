@@ -60,3 +60,23 @@
       traits:
         - Swashbuckler
         - Spearmaster
+
+- type: trait
+  id: SlowAndSteady
+  category: Physical
+  points: -3
+  components:
+    - type: SpeedModifierImmunity
+    - type: TraitSpeedModifier
+      sprintModifier: 0.75
+      walkModifier: 0.75
+    - type: SlipImmunity
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Diona
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sluggish
+        - SnailPaced
