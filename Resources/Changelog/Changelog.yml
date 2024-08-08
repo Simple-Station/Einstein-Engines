@@ -5103,3 +5103,11 @@ Entries:
         slip.
   id: 6239
   time: '2024-08-07T23:54:13.0000000+00:00'
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the formatting for WelderRefinable refineResult to use
+        EntitySpawnEntry format
+  id: 6240
+  time: '2024-08-08T00:16:02.0000000+00:00'
