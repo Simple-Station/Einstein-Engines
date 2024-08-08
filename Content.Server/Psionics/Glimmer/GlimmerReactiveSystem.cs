@@ -40,7 +40,7 @@ namespace Content.Server.Psionics.Glimmer
         [Dependency] private readonly RevenantSystem _revenantSystem = default!;
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly SharedPointLightSystem _pointLightSystem = default!;
-        [Dependency] private readonly ISawmill _sawmill = default!;
+        private ISawmill _sawmill = default!;
 
         public float Accumulator = 0;
         public const float UpdateFrequency = 15f;
