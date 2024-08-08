@@ -105,7 +105,10 @@
       traits:
         - ParkourTraining
         - SnailPaced
-        - SlowAndSteady
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
   components:
     - type: TraitSpeedModifier
       sprintModifier: 0.85
@@ -125,7 +128,10 @@
       traits:
         - ParkourTraining
         - Sluggish
-        - SlowAndSteady
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
   components:
     - type: TraitSpeedModifier
       sprintModifier: 0.7
