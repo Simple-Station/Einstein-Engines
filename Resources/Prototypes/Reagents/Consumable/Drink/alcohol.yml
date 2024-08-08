@@ -245,9 +245,9 @@
           groups:
             Brute: -0.8
           types:
-            Heat: -0.27
-            Shock: -0.27
-            Cold: -0.27
+            Heat: -0.26
+            Shock: -0.26
+            Cold: -0.26
       - !type:HealthChange
         conditions:
         - !type:OrganType
