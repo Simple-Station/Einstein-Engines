@@ -184,10 +184,13 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         switch (action)
         {
             case WorldTargetActionComponent mapTarget:
-                    return TryTargetWorld(args, actionId, mapTarget, user, comp) || !mapTarget.InteractOnMiss;
+                return TryTargetWorld(args, actionId, mapTarget, user, comp) || !mapTarget.InteractOnMiss;
 
             case EntityTargetActionComponent entTarget:
-                    return TryTargetEntity(args, actionId, entTarget, user, comp) || !entTarget.InteractOnMiss;
+                return TryTargetEntity(args, actionId, entTarget, user, comp) || !entTarget.InteractOnMiss;
+
+            case EntityWorldTargetActionComponent entMapTarget:
+                return TryTargetEntityWorld(args, actionId, entMapTarget, user, comp) || !entMapTarget.InteractOnMiss;
 
             default:
                 Logger.Error($"Unknown targeting action: {actionId.GetType()}");
@@ -288,6 +291,8 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
             {
                 action.Event.Entity = entity;
                 action.Event.Coords = coords;
+                action.Event.Performer = user;
+                action.Event.Action = actionId;
             }
 
             _actionsSystem.PerformAction(user, actionComp, actionId, action, action.Event, _timing.CurTime);
