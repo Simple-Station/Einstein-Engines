@@ -55,7 +55,7 @@
 - type: trait
   id: DrunkenResilience
   category: Physical
-  points: -3
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
