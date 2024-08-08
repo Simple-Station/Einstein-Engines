@@ -268,7 +268,8 @@ namespace Content.Server.Kitchen.EntitySystems
             {
                 BreakOnDamage = true,
                 BreakOnMove = true,
-                NeedHand = true
+                NeedHand = true,
+                BreakOnDropItem = false,
             };
 
             _doAfter.TryStartDoAfter(doAfterArgs);

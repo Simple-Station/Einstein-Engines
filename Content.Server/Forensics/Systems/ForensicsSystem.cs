@@ -189,7 +189,6 @@ namespace Content.Server.Forensics
 
                 var doAfterArgs = new DoAfterArgs(EntityManager, user, cleanDelay, new CleanForensicsDoAfterEvent(), cleanForensicsEntity, target: target, used: cleanForensicsEntity)
                 {
-                    BreakOnHandChange = true,
                     NeedHand = true,
                     BreakOnDamage = true,
                     BreakOnMove = true,
