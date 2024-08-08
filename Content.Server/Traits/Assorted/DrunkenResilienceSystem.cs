@@ -12,18 +12,6 @@ public sealed class DrunkenResilienceSystem : EntitySystem
     [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
 
-    private readonly HashSet<String> MetabolizerGroups = new HashSet<String>() {
-        // Stomach
-        "Food",
-        "Drink",
-        // Heart
-        "Medicine",
-        "Poison",
-        "Narcotic",
-        // Liver
-        "Alcohol",
-    };
-
     public override void Initialize()
     {
         base.Initialize();
@@ -38,7 +26,6 @@ public sealed class DrunkenResilienceSystem : EntitySystem
         if (!_bodySystem.TryGetBodyOrganComponents<MetabolizerComponent>(entity, out var metabolizers, body))
             return;
 
-        // Add the DrunkenResilience metabolizer type to Heart/Stomach/Liver and equivalents.
         foreach (var (metabolizer, _) in metabolizers)
         {
             if (metabolizer.MetabolizerTypes is null
@@ -47,9 +34,8 @@ public sealed class DrunkenResilienceSystem : EntitySystem
 
             foreach (var metabolismGroup in metabolizer.MetabolismGroups)
             {
-                // Kinda hacky way to check if the organ is a Heart, Stomach or Liver,
-                // or anything that would process ethanol.
-                if (MetabolizerGroups.Contains(metabolismGroup.Id))
+                // Add the DrunkenResilience metabolizer type to the liver and equivalent organs.
+                if (metabolismGroup.Id == "Alcohol")
                 {
                     metabolizer.MetabolizerTypes.Add("DrunkenResilience");
                     continue;
