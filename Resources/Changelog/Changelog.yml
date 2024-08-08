@@ -5053,3 +5053,67 @@ Entries:
       message: Barotrauma admin log spam
   id: 6232
   time: '2024-08-07T17:31:55.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Mr. Butlertron can now suffer for its crimes.
+  id: 6233
+  time: '2024-08-07T22:38:04.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The following new markings have been added for Harpies: Bat Wings,
+        Simple Bionic Wings, Haven Tail, Swallow tail, and Long Forked Tail
+  id: 6234
+  time: '2024-08-07T23:11:41.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Readded Psionic Relay Orb
+  id: 6235
+  time: '2024-08-07T23:16:30.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add two new negative traits: Sluggish (+1) and Snail-Paced (+2) that
+        make you move slower, and climb tables slower.
+  id: 6236
+  time: '2024-08-07T23:38:33.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Hemophilia trait, a new negative trait for 1 point that makes
+        you bleed twice as long and makes you take 10% more Blunt damage.
+  id: 6237
+  time: '2024-08-07T23:39:52.0000000+00:00'
+- author: SleepyScarecrow
+  changes:
+    - type: Fix
+      message: Fixed the RegenMesh recipe
+  id: 6238
+  time: '2024-08-07T23:51:29.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: >-
+        Added Bluespace Slips, a plant trait that teleports you randomly if you
+        slip.
+  id: 6239
+  time: '2024-08-07T23:54:13.0000000+00:00'
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the formatting for WelderRefinable refineResult to use
+        EntitySpawnEntry format
+  id: 6240
+  time: '2024-08-08T00:16:02.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Moths can now once again be colorful.
+  id: 6241
+  time: '2024-08-08T00:18:08.0000000+00:00'

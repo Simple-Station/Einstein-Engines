@@ -67,22 +67,22 @@
   - type: AmbientSound
     range: 6
     volume: -6
-    sound: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_low.ogg
+    sound: /Audio/Ambience/Objects/prober_hum_low.ogg
   - type: AmbientOnPowered
   - type: GlimmerSound
     glimmerTier:
       Minimal:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_low.ogg
+        path: /Audio/Ambience/Objects/prober_hum_low.ogg
       Low:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_low.ogg
+        path: /Audio/Ambience/Objects/prober_hum_low.ogg
       Moderate:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_moderate.ogg
+        path: /Audio/Ambience/Objects/prober_hum_moderate.ogg
       High:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_high.ogg
+        path: /Audio/Ambience/Objects/prober_hum_high.ogg
       Dangerous:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_dangerous.ogg
+        path: /Audio/Ambience/Objects/prober_hum_dangerous.ogg
       Critical:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_dangerous.ogg
+        path: /Audio/Ambience/Objects/prober_hum_dangerous.ogg
 
 - type: entity
   parent: BaseMachinePowered
