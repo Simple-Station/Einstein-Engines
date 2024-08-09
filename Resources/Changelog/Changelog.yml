@@ -5133,3 +5133,17 @@ Entries:
       message: Wall mounted geiger counters have been added to the game.
   id: 6243
   time: '2024-08-09T11:13:13.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Dionas have been given a 25% slower movement speed. In exchange for
+        that, they gain absolute slip immunity and movement speed modifier
+        immunity. This makes them immune to slowdown from things like
+        duffelbags, hardsuits, and spider webs.
+    - type: Fix
+      message: >-
+        Sluggish and Snail-Paced will now properly apply their movement
+        penalties upon joining. 
+  id: 6244
+  time: '2024-08-09T17:28:01.0000000+00:00'
