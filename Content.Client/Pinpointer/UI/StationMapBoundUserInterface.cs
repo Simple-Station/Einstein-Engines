@@ -1,3 +1,4 @@
+using Content.Shared.Pinpointer;
 using Robust.Client.UserInterface;
 
 namespace Content.Client.Pinpointer.UI;
