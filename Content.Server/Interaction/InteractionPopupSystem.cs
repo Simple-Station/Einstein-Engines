@@ -84,12 +84,12 @@ public sealed class InteractionPopupSystem : EntitySystem
                 if (component.InteractSuccessString == "hugging-success-generic")
                 {
                     var ev = new MoodEffectEvent("BeingHugged");
-                    RaiseLocalEvent(uid, ev);
+                    RaiseLocalEvent(target, ev);
                 }
                 else if (component.InteractSuccessString.Contains("petting-success-"))
                 {
                     var ev = new MoodEffectEvent("PetAnimal");
-                    RaiseLocalEvent(uid, ev);
+                    RaiseLocalEvent(user, ev);
                 }
             }
 
