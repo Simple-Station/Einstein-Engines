@@ -1,15 +1,20 @@
-﻿using Content.Shared.Damage;
+using Content.Server.Traits.Assorted;
+using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
+using System.Linq;
 
 namespace Content.Server.HealthExaminable;
 
 public sealed class HealthExaminableSystem : EntitySystem
 {
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
+    [Dependency] private readonly MobThresholdSystem _threshold = default!;
 
     public override void Initialize()
     {
@@ -29,7 +34,13 @@ public sealed class HealthExaminableSystem : EntitySystem
         {
             Act = () =>
             {
-                var markup = CreateMarkup(uid, component, damage);
+                FormattedMessage markup;
+                if (uid == args.User
+                    && TryComp<SelfAwareComponent>(uid, out var selfAware))
+                    markup = CreateMarkupSelfAware(uid, selfAware, component, damage);
+                else
+                    markup = CreateMarkup(uid, component, damage);
+
                 _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
             },
             Text = Loc.GetString("health-examinable-verb-text"),
@@ -47,6 +58,9 @@ public sealed class HealthExaminableSystem : EntitySystem
         var msg = new FormattedMessage();
 
         var first = true;
+
+        var adjustedThresholds = GetAdjustedThresholds(uid, component.Thresholds);
+
         foreach (var type in component.ExaminableTypes)
         {
             if (!damage.Damage.DamageDict.TryGetValue(type, out var dmg))
@@ -58,7 +72,7 @@ public sealed class HealthExaminableSystem : EntitySystem
             FixedPoint2 closest = FixedPoint2.Zero;
 
             string chosenLocStr = string.Empty;
-            foreach (var threshold in component.Thresholds)
+            foreach (var threshold in adjustedThresholds)
             {
                 var str = $"health-examinable-{component.LocPrefix}-{type}-{threshold}";
                 var tempLocStr = Loc.GetString($"health-examinable-{component.LocPrefix}-{type}-{threshold}", ("target", Identity.Entity(uid, EntityManager)));
@@ -94,9 +108,99 @@ public sealed class HealthExaminableSystem : EntitySystem
         }
 
         // Anything else want to add on to this?
-        RaiseLocalEvent(uid, new HealthBeingExaminedEvent(msg), true);
+        RaiseLocalEvent(uid, new HealthBeingExaminedEvent(msg, false), true);
 
         return msg;
+    }
+
+    private FormattedMessage CreateMarkupSelfAware(EntityUid target, SelfAwareComponent selfAware, HealthExaminableComponent component, DamageableComponent damage)
+    {
+        var msg = new FormattedMessage();
+
+        var first = true;
+
+        foreach (var type in selfAware.AnalyzableTypes)
+        {
+            if (!damage.Damage.DamageDict.TryGetValue(type, out var typeDmgUnrounded))
+                continue;
+
+            var typeDmg = (int) Math.Round(typeDmgUnrounded.Float(), 0);
+            if (typeDmg <= 0)
+                continue;
+
+            var damageString = Loc.GetString(
+                "health-examinable-selfaware-type-text",
+                ("damageType", Loc.GetString($"health-examinable-selfaware-type-{type}")),
+                ("amount", typeDmg)
+            );
+
+            if (!first)
+                msg.PushNewline();
+            else
+                first = false;
+            msg.AddMarkup(damageString);
+        }
+
+        var adjustedThresholds = GetAdjustedThresholds(target, selfAware.Thresholds);
+
+        foreach (var group in selfAware.DetectableGroups)
+        {
+            if (!damage.DamagePerGroup.TryGetValue(group, out var groupDmg)
+                || groupDmg == FixedPoint2.Zero)
+                continue;
+
+            FixedPoint2 closest = FixedPoint2.Zero;
+
+            string chosenLocStr = string.Empty;
+            foreach (var threshold in adjustedThresholds)
+            {
+                var locName = $"health-examinable-selfaware-group-{group}-{threshold}";
+                var locStr = Loc.GetString(locName);
+
+                var locDoesNotExist = locStr == locName;
+                if (locDoesNotExist)
+                    continue;
+
+                if (groupDmg > threshold && threshold > closest)
+                {
+                    chosenLocStr = locStr;
+                    closest = threshold;
+                }
+            }
+
+            if (closest == FixedPoint2.Zero)
+                continue;
+
+            if (!first)
+                msg.PushNewline();
+            else
+                first = false;
+            msg.AddMarkup(chosenLocStr);
+        }
+
+        if (msg.IsEmpty)
+            msg.AddMarkup(Loc.GetString($"health-examinable-selfaware-none"));
+
+        // Event listeners can know if the examination is Self-Aware.
+        RaiseLocalEvent(target, new HealthBeingExaminedEvent(msg, true), true);
+
+        return msg;
+    }
+
+    /// <summary>
+    ///     Return thresholds as percentages of an entity's critical threshold.
+    /// </summary>
+    private List<FixedPoint2> GetAdjustedThresholds(EntityUid uid, List<FixedPoint2> thresholdPercentages)
+    {
+        FixedPoint2 critThreshold = 0;
+        if (TryComp<MobThresholdsComponent>(uid, out var threshold))
+            critThreshold = _threshold.GetThresholdForState(uid, Shared.Mobs.MobState.Critical, threshold);
+
+        // Fallback to 100 crit threshold if none found
+        if (critThreshold == 0)
+            critThreshold = 100;
+
+        return thresholdPercentages.Select(percentage => critThreshold * percentage).ToList();
     }
 }
 
@@ -108,9 +212,11 @@ public sealed class HealthExaminableSystem : EntitySystem
 public sealed class HealthBeingExaminedEvent
 {
     public FormattedMessage Message;
+    public bool IsSelfAware;
 
-    public HealthBeingExaminedEvent(FormattedMessage message)
+    public HealthBeingExaminedEvent(FormattedMessage message, bool isSelfAware)
     {
         Message = message;
+        IsSelfAware = isSelfAware;
     }
 }
