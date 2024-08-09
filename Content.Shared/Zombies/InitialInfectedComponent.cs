@@ -12,5 +12,5 @@ public sealed partial class InitialInfectedComponent : Component, IAntagStatusIc
     public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "InitialInfectedFaction";
 
     [DataField]
-    public bool IconVisibleToGhost { get; set; } = true;
+    public ProtoId<FactionIconPrototype> StatusIcon = "InitialInfectedFaction";
 }

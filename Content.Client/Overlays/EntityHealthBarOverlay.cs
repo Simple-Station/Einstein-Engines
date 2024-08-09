@@ -26,6 +26,7 @@ public sealed class EntityHealthBarOverlay : Overlay
     private readonly ProgressColorSystem _progressColor;
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
     public HashSet<string> DamageContainers = new();
+    public ProtoId<HealthIconPrototype>? StatusIcon;
 
     public EntityHealthBarOverlay(IEntityManager entManager)
     {

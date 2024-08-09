@@ -95,7 +95,7 @@ public sealed partial class ZombieComponent : Component, IAntagStatusIconCompone
     public TimeSpan NextTick;
 
     [DataField("zombieStatusIcon")]
-    public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "ZombieFaction";
+    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "ZombieFaction";
 
     [DataField]
     public bool IconVisibleToGhost { get; set; } = true;

@@ -15,4 +15,7 @@ public sealed partial class ShowHealthBarsComponent : Component
     /// </summary>
     [DataField("damageContainers", customTypeSerializer: typeof(PrototypeIdListSerializer<DamageContainerPrototype>)), AutoNetworkedField]
     public List<string> DamageContainers = new();
+
+    [DataField]
+    public ProtoId<HealthIconPrototype>? HealthStatusIcon = "HealthIconFine";
 }
