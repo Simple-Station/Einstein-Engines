@@ -9,9 +9,6 @@
       collection: RadiationPulse
       params:
         volume: 5
-    anomalyContactDamage:
-      types:
-        Radiation: 10
   - type: AmbientSound
     range: 5
     volume: -5
@@ -53,12 +50,21 @@
     roller: false
   - type: InnatePsionicPowers
     powersToAdd:
-      - TelepathyPower
+    - TelepathyPower
   - type: GlimmerSource
     active: false
   - type: SecretDataAnomaly
     randomStartSecretMin: 0
     randomStartSecretMax: 2
+  - type: DamageOnInteract
+    damage:
+      types:
+        Radiation: 10
+    popupText: anomaly-component-contact-damage
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Radiation: 10
 
 - type: entity
   id: AnomalyPyroclastic
@@ -107,11 +113,20 @@
   - type: IgniteOnCollide
     fixtureId: fix1
     fireStacks: 1
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 10
+    popupText: anomaly-component-contact-damage
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Heat: 10
   - type: Psionic
     removable: false
     roller: false
     assayFeedback:
-      - anomaly-pyroclastic-feedback
+    - anomaly-pyroclastic-feedback
 
 - type: entity
   id: AnomalyGravity
@@ -148,7 +163,7 @@
     removable: false
     roller: false
     assayFeedback:
-      - anomaly-gravity-feedback
+    - anomaly-gravity-feedback
 
 - type: entity
   id: AnomalyElectricity
@@ -176,7 +191,7 @@
     removable: false
     roller: false
     assayFeedback:
-      - anomaly-electricity-feedback
+    - anomaly-electricity-feedback
 
 - type: entity
   id: AnomalyFlesh
@@ -274,7 +289,7 @@
     removable: false
     roller: false
     assayFeedback:
-      - anomaly-flesh-feedback
+    - anomaly-flesh-feedback
 
 - type: entity
   id: AnomalyBluespace
@@ -322,14 +337,11 @@
       collection: RadiationPulse
       params:
         volume: 5
-    anomalyContactDamage:
-      types:
-        Radiation: 10
   - type: Psionic
     removable: false
     roller: false
     assayFeedback:
-      - anomaly-bluespace-feedback
+    - anomaly-bluespace-feedback
 
 - type: entity
   id: AnomalyIce
@@ -352,9 +364,6 @@
   - type: Anomaly
     corePrototype: AnomalyCoreIce
     coreInertPrototype: AnomalyCoreIceInert
-    anomalyContactDamage:
-      types:
-        Cold: 10
   - type: ExplosionAnomaly
     supercriticalExplosion: Cryo
     explosionTotalIntensity: 300
@@ -378,11 +387,20 @@
     releasedGas: 8 # Frezon. Please replace if there is a better way to specify this
     releaseOnMaxSeverity: true
     spawnRadius: 0
+  - type: DamageOnInteract
+    damage:
+      types:
+        Cold: 10
+    popupText: anomaly-component-contact-damage
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Cold: 10
   - type: Psionic
     removable: false
     roller: false
     assayFeedback:
-      - anomaly-ice-feedback
+    - anomaly-ice-feedback
 
 - type: entity
   id: AnomalyRockBase
@@ -425,7 +443,7 @@
     removable: false
     roller: false
     assayFeedback:
-      - anomaly-rock-feedback
+    - anomaly-rock-feedback
 
 - type: entity
   id: AnomalyRockUranium
@@ -652,9 +670,6 @@
     coreInertPrototype: AnomalyCoreFloraInert
     minPulseLength: 60
     maxPulseLength: 120
-    anomalyContactDamage:
-      types:
-        Slash: 0
   - type: TileSpawnAnomaly
     entries:
     - settings:
@@ -689,7 +704,7 @@
     removable: false
     roller: false
     assayFeedback:
-      - anomaly-flora-feedback
+    - anomaly-flora-feedback
 
 - type: entity
   id: AnomalyFloraBulb
@@ -763,9 +778,6 @@
     coreInertPrototype: AnomalyCoreLiquidInert
     minPulseLength: 60
     maxPulseLength: 120
-    anomalyContactDamage:
-      types:
-        Slash: 1
   - type: EntitySpawnAnomaly
     entries:
     - settings:
@@ -861,7 +873,7 @@
     removable: false
     roller: false
     assayFeedback:
-      - anomaly-liquid-feedback
+    - anomaly-liquid-feedback
 
 - type: entity
   id: AnomalyShadow
@@ -890,9 +902,6 @@
     coreInertPrototype: AnomalyCoreShadowInert
     minPulseLength: 60
     maxPulseLength: 120
-    anomalyContactDamage:
-      types:
-        Cold: 10
     animationTime: 4
     offset: "-0.1,0.1"
   - type: EntitySpawnAnomaly
@@ -918,8 +927,17 @@
   - type: Tag
     tags:
       - SpookyFog
+  - type: DamageOnInteract
+    damage:
+      types:
+        Cold: 10
+    popupText: anomaly-component-contact-damage
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Cold: 10
   - type: Psionic
     removable: false
     roller: false
     assayFeedback:
-      - anomaly-shadow-feedback
+    - anomaly-shadow-feedback

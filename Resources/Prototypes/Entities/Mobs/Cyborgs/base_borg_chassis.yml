@@ -55,11 +55,11 @@
     allowRevives: true
   - type: HealthExaminable
     examinableTypes:
-      - Blunt
-      - Slash
-      - Piercing
-      - Heat
-      - Shock
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
     locPrefix: silicon
   - type: UserInterface
     interfaces:
@@ -243,10 +243,14 @@
     - Cyborgs
     - Robotics
   - type: StepTriggerImmune
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   - type: Eye
     visMask:
-      - PsionicInvisibility
-      - Normal
+    - PsionicInvisibility
+    - Normal
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -347,8 +351,8 @@
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
-  - type: Damageable 
+  - type: Damageable
     damageContainer: Silicon
-    damageModifierSet: SiliconProtected 
+    damageModifierSet: SiliconProtected
   - type: ExplosionResistance
     damageCoefficient: 0.5

@@ -48,6 +48,7 @@ namespace Content.Server.Light.EntitySystems
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly PointLightSystem _pointLight = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+        [Dependency] private readonly DamageOnInteractSystem _damageOnInteractSystem = default!;
         [Dependency] private readonly InventorySystem _inventory = default!;
 
         private static readonly TimeSpan ThunkDelay = TimeSpan.FromSeconds(2);
@@ -438,6 +439,11 @@ namespace Content.Server.Light.EntitySystems
                 if (softness != null)
                     _pointLight.SetSoftness(uid, (float) softness, pointLight);
             }
+
+
+            // light bulbs burn your hands!
+            if (TryComp<DamageOnInteractComponent>(uid, out var damageOnInteractComp))
+                _damageOnInteractSystem.SetIsDamageActiveTo((uid, damageOnInteractComp), value);
         }
 
         public void ToggleLight(EntityUid uid, PoweredLightComponent? light = null)
