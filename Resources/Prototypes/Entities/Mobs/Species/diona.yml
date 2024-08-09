@@ -113,7 +113,7 @@
     sprintModifier: 0.75
     walkModifier: 0.75
   - type: SpeedModifierImmunity
-  - type: SlipImmunity
+  - type: NoSlip
 
 - type: entity
   parent: BaseSpeciesDummy
