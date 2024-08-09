@@ -5117,3 +5117,9 @@ Entries:
       message: Moths can now once again be colorful.
   id: 6241
   time: '2024-08-08T00:18:08.0000000+00:00'
+- author: ShatteredSwords
+  changes:
+    - type: Tweak
+      message: Skeleton ghost role description has been adjusted to be less evil.
+  id: 6242
+  time: '2024-08-09T10:52:49.0000000+00:00'
