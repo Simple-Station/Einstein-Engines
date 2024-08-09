@@ -28,6 +28,11 @@ trait-description-BloodDeficiency =
     Your body loses more blood than it can replenish.
     You lose blood over time, and when left untreated you will eventually die from blood loss.
 
+trait-name-Hemophilia = Hemophilia
+trait-description-Hemophilia =
+    Your body's ability to form blood clots is impaired.
+    You bleed twice as long, and you have easy bruising, taking 10% more Blunt damage.
+
 trait-name-Paracusia = Paracusia
 trait-description-Paracusia = You hear sounds that aren't really there
 
@@ -93,6 +98,16 @@ trait-name-ParkourTraining = Parkour Training
 trait-description-ParkourTraining =
     Whether as a hobby, lifestyle, or professional training, you are trained in the discipline of parkour.
     You're faster with climbing, crawling, lying down, and getting up.
+
+trait-name-Sluggish = Sluggish
+trait-description-Sluggish =
+    You navigate the world slower than others, perhaps due to a medical condition, inactivity, or age.
+    You move slower, and it takes longer for you to climb, lie down and get up.
+
+trait-name-SnailPaced = Snail-Paced
+trait-description-SnailPaced =
+    You walk at a snail's pace, perhaps due to a medical condition, mobility impairment, or age.
+    You move substantially slower, and it takes far longer for you to climb, lie down and get up.
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
