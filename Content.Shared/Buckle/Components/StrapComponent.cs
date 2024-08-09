@@ -84,6 +84,12 @@ public sealed partial class StrapComponent : Component
     /// </summary>
     [DataField]
     public bool BuckleOnInteractHand = true;
+
+    /// <summary>
+    /// How long it takes to buckle someone else into a chair
+    /// </summary>
+    [DataField]
+    public float BuckleDoafterTime = 2f;
 }
 
 public enum StrapPosition
