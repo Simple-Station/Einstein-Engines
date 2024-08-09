@@ -1,16 +1,14 @@
-using System.Numerics;
-using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
-using Robust.Client.Utility;
-using Robust.Shared.Graphics;
-using static Robust.Client.GameObjects.SpriteComponent;
-using Direction = Robust.Shared.Maths.Direction;
+namespace Content.Client.Clickable;
 
-namespace Content.Client.Clickable
+[RegisterComponent]
+public sealed partial class ClickableComponent : Component
 {
-    [RegisterComponent]
-    public sealed partial class ClickableComponent : Component
+    [DataField] public DirBoundData? Bounds;
+
+    [DataDefinition]
+    public sealed partial class DirBoundData
     {
+<<<<<<< HEAD
         [Dependency] private readonly IClickMapManager _clickMapManager = default!;
 
         [DataField("bounds")] public DirBoundData? Bounds;
@@ -141,5 +139,12 @@ namespace Content.Client.Clickable
             [DataField("east")] public Box2 East;
             [DataField("west")] public Box2 West;
         }
+=======
+        [DataField] public Box2 All;
+        [DataField] public Box2 North;
+        [DataField] public Box2 South;
+        [DataField] public Box2 East;
+        [DataField] public Box2 West;
+>>>>>>> ecf278a89b (Make clickable 1% nicer (#29706))
     }
 }
