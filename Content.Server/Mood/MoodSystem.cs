@@ -1,4 +1,4 @@
-﻿using Content.Server.Chat.Managers;
+using Content.Server.Chat.Managers;
 using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Chat;
@@ -94,8 +94,6 @@ public sealed class MoodSystem : EntitySystem
 
     private void ApplyEffect(EntityUid uid, MoodComponent component, MoodEffectPrototype prototype, float eventModifier = 1, float eventOffset = 0)
     {
-        var amount = component.CurrentMoodLevel;
-
         //Apply categorised effect
         if (prototype.Category != null)
         {
@@ -107,14 +105,12 @@ public sealed class MoodSystem : EntitySystem
                 if (prototype.ID != oldPrototype.ID)
                 {
                     SendEffectText(uid, prototype);
-                    amount += prototype.MoodChange - oldPrototype.MoodChange;
                     component.CategorisedEffects[prototype.Category] = prototype.ID;
                 }
             }
             else
             {
                 component.CategorisedEffects.Add(prototype.Category, prototype.ID);
-                amount += prototype.MoodChange;
             }
 
             if (prototype.Timeout != 0)
@@ -132,16 +128,12 @@ public sealed class MoodSystem : EntitySystem
 
             SendEffectText(uid, prototype);
             component.UncategorisedEffects.Add(prototype.ID, moodChange);
-            amount += moodChange;
-            SetMood(uid, moodChange, component);
 
             if (prototype.Timeout != 0)
                 Timer.Spawn(TimeSpan.FromSeconds(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID));
-
-            return;
         }
 
-        SetMood(uid, amount, component);
+        RefreshMood(uid, component);
     }
 
     private void SendEffectText(EntityUid uid, MoodEffectPrototype prototype)
@@ -155,14 +147,10 @@ public sealed class MoodSystem : EntitySystem
         if (!TryComp<MoodComponent>(uid, out var comp))
             return;
 
-        var amount = comp.CurrentMoodLevel;
-
         if (category == null)
         {
             if (!comp.UncategorisedEffects.TryGetValue(prototypeId, out var value))
                 return;
-
-            amount -= value;
             comp.UncategorisedEffects.Remove(prototypeId);
         }
         else
@@ -171,26 +159,33 @@ public sealed class MoodSystem : EntitySystem
                 || currentProtoId != prototypeId
                 || !_prototypeManager.TryIndex<MoodEffectPrototype>(currentProtoId, out var currentProto))
                 return;
-
-            amount -= currentProto.MoodChange;
             comp.CategorisedEffects.Remove(category);
         }
 
-        SetMood(uid, amount, comp);
+        RefreshMood(uid, comp);
     }
 
     private void OnMobStateChanged(EntityUid uid, MoodComponent component, MobStateChangedEvent args)
     {
         if (args.NewMobState == MobState.Dead && args.OldMobState != MobState.Dead)
-            SetMood(uid, component.MoodThresholds[MoodThreshold.Dead], component, true);
-
+        {
+            var ev = new MoodEffectEvent("Dead");
+            RaiseLocalEvent(uid, ev);
+        }
         else if (args.OldMobState == MobState.Dead && args.NewMobState != MobState.Dead)
-            ReapplyAllEffects(uid, component);
+        {
+            var ev = new MoodRemoveEffectEvent("Dead");
+            RaiseLocalEvent(uid, ev);
+        }
+        RefreshMood(uid, component);
     }
 
-    private void ReapplyAllEffects(EntityUid uid, MoodComponent component)
+    // <summary>
+    //   Recalculate the mood level of an entity by summing up all moodlets.
+    // </summary>
+    private void RefreshMood(EntityUid uid, MoodComponent component)
     {
-        var amount = component.MoodThresholds[MoodThreshold.Neutral];
+        var amount = 0f;
 
         foreach (var (_, protoId) in component.CategorisedEffects)
         {
@@ -213,16 +208,14 @@ public sealed class MoodSystem : EntitySystem
             component.CritThresholdBeforeModify = critThreshold.Value;
 
         EnsureComp<NetMoodComponent>(uid);
-        var amount = component.MoodThresholds[MoodThreshold.Neutral];
-        SetMood(uid, amount, component, refresh: true);
+        RefreshMood(uid, component);
     }
 
-    public void SetMood(EntityUid uid, float amount, MoodComponent? component = null, bool force = false, bool refresh = false)
+    private void SetMood(EntityUid uid, float amount, MoodComponent? component = null, bool force = false, bool refresh = false)
     {
         if (!_config.GetCVar(CCVars.DoMoodSystem)
             || !Resolve(uid, ref component)
-            || component.CurrentMoodThreshold == MoodThreshold.Dead && !refresh
-            || component.CurrentMoodLevel == amount)
+            || component.CurrentMoodThreshold == MoodThreshold.Dead && !refresh)
             return;
 
         var neutral = component.MoodThresholds[MoodThreshold.Neutral];
@@ -236,18 +229,17 @@ public sealed class MoodSystem : EntitySystem
             amount = ev.MoodChangedAmount;
         }
 
+        var newMoodLevel = amount + neutral;
         if (!force)
-        {
-            component.CurrentMoodLevel = Math.Clamp(amount,
-                component.MoodThresholds[MoodThreshold.Dead] + neutral,
+            newMoodLevel = Math.Clamp(amount + neutral,
+                component.MoodThresholds[MoodThreshold.Dead],
                 component.MoodThresholds[MoodThreshold.Perfect]);
-        }
-        else
-            component.CurrentMoodLevel = amount + neutral;
+
+        component.CurrentMoodLevel = newMoodLevel;
 
         if (TryComp<NetMoodComponent>(uid, out var mood))
         {
-            mood.CurrentMoodLevel = amount;
+            mood.CurrentMoodLevel = component.CurrentMoodLevel;
             mood.NeutralMoodThreshold = component.MoodThresholds.GetValueOrDefault(MoodThreshold.Neutral);
         }
 
