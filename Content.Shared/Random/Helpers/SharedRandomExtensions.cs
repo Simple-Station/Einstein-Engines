@@ -78,6 +78,47 @@ namespace Content.Shared.Random.Helpers
             throw new InvalidOperationException("Invalid weighted pick");
         }
 
+        public static T PickAndTake<T>(this IRobustRandom random, Dictionary<T, float> weights)
+            where T : notnull
+        {
+            var pick = Pick(random, weights);
+            weights.Remove(pick);
+            return pick;
+        }
+
+        public static bool TryPickAndTake<T>(this IRobustRandom random, Dictionary<T, float> weights, [NotNullWhen(true)] out T? pick)
+            where T : notnull
+        {
+            if (weights.Count == 0)
+            {
+                pick = default;
+                return false;
+            }
+            pick = PickAndTake(random, weights);
+            return true;
+        }
+
+        public static T Pick<T>(Dictionary<T, float> weights, System.Random random)
+            where T : notnull
+        {
+            var sum = weights.Values.Sum();
+            var accumulated = 0f;
+
+            var rand = random.NextFloat() * sum;
+
+            foreach (var (key, weight) in weights)
+            {
+                accumulated += weight;
+
+                if (accumulated >= rand)
+                {
+                    return key;
+                }
+            }
+
+            throw new InvalidOperationException("Invalid weighted pick");
+        }
+
         public static (string reagent, FixedPoint2 quantity) Pick(this WeightedRandomFillSolutionPrototype prototype, IRobustRandom? random = null)
         {
             var randomFill = prototype.PickRandomFill(random);
