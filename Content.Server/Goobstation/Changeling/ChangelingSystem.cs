@@ -121,7 +121,17 @@ public sealed partial class ChangelingSystem : EntitySystem
         SubscribeLocalEvent<ChangelingComponent, DamageChangedEvent>(OnDamageChange);
         SubscribeLocalEvent<ChangelingComponent, ComponentRemove>(OnComponentRemove);
 
+        SubscribeLocalEvent<ChangelingComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshSpeed);
+
         SubscribeAbilities();
+    }
+
+    private void OnRefreshSpeed(Entity<ChangelingComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
+    {
+        if (ent.Comp.StrainedMusclesActive)
+            args.ModifySpeed(1.25f, 1.5f);
+        else
+            args.ModifySpeed(1f, 1f);
     }
 
     public override void Update(float frameTime)
@@ -221,6 +231,7 @@ public sealed partial class ChangelingSystem : EntitySystem
     }
     private void UpdateAbilities(EntityUid uid, ChangelingComponent comp)
     {
+        _speed.RefreshMovementSpeedModifiers(uid);
         if (comp.StrainedMusclesActive)
         {
             var stamina = EnsureComp<StaminaComponent>(uid);
