@@ -5147,3 +5147,11 @@ Entries:
         penalties upon joining. 
   id: 6244
   time: '2024-08-09T17:28:01.0000000+00:00'
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: >-
+        Melee Weapons now feel different across the board, from the Wrench to
+        the Chainsaw, try out their normal swings and their heavy attacks!
+  id: 6245
+  time: '2024-08-10T12:00:06.0000000+00:00'
