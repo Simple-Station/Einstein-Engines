@@ -36,7 +36,6 @@
       - id: EmergencyRollerBedSpawnFolded
       - id: BodyBagFolded
       - id: Portafib
-    #  - id: Flash
       - id: BruteAutoInjector
         amount: 2
       - id: BurnAutoInjector
