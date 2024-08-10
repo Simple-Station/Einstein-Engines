@@ -12,6 +12,10 @@
       traits:
         - HeavyweightDrunk
         - BoozyBoost
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Dwarf
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 2
