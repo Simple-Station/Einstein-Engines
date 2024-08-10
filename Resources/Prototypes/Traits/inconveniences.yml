@@ -11,7 +11,7 @@
       inverted: true
       traits:
         - HeavyweightDrunk
-        - BoozyBoost
+        - LiquorLifeline
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:

@@ -181,12 +181,12 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: BoozyBoost
+          type: LiquorLifeline
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 0.10
           max: 0.49
-        damage:   # NOTE: all damage sets for Boozy Boost are halved due to
+        damage:   # NOTE: all damage sets for LiquorLifeline are halved due to
           groups: # LightweightDrunkComponent making ethanol half as potent
             Brute: -0.4
           types:
@@ -196,7 +196,7 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: BoozyBoost
+          type: LiquorLifeline
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 0.50
@@ -211,7 +211,7 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: BoozyBoost
+          type: LiquorLifeline
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 7.00
@@ -226,7 +226,7 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: BoozyBoost
+          type: LiquorLifeline
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 11
@@ -241,7 +241,7 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: BoozyBoost
+          type: LiquorLifeline
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 15 # Overdose threshold

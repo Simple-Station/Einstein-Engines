@@ -47,7 +47,7 @@
       inverted: true
       traits:
         - LightweightDrunk
-        - BoozyBoost
+        - LiquorLifeline
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -57,7 +57,7 @@
       boozeStrengthMultiplier: 0.5
 
 - type: trait
-  id: BoozyBoost
+  id: LiquorLifeline
   category: Physical
   points: -3
   requirements:
@@ -76,7 +76,7 @@
       species:
         - Dwarf
   components:
-    - type: BoozyBoost
+    - type: LiquorLifeline
     - type: LightweightDrunk
       boozeStrengthMultiplier: 0.5
 

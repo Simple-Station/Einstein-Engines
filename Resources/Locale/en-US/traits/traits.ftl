@@ -21,8 +21,8 @@ trait-name-HeavyweightDrunk = Alcohol Tolerance
 trait-description-HeavyweightDrunk =
     Alcohol is afraid of you.
 
-trait-name-BoozyBoost = Boozy Boost
-trait-description-BoozyBoost =
+trait-name-LiquorLifeline = Liquor Lifeline
+trait-description-LiquorLifeline =
     Forget the doctor — just hit the bar for your "ethanol prescription"!
     While drunk, you slowly heal [color=red]Brute[/color], [color=orange]Heat[/color], [color=orange]Shock[/color], and [color=orange]Cold[/color] damage, scaling with how drunk you are.
     You also gain the benefits of [color=lightblue]Alcohol Tolerance[/color].
