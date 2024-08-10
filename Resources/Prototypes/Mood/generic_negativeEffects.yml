@@ -49,3 +49,8 @@
   id: TraitSaturnine
   description: "Everything kind of sucks. I hate this job. "
   moodChange: -20
+
+- type: moodEffect
+  id: Dead
+  description: "You are dead."
+  moodChange: -1000
