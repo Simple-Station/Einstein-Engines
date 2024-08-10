@@ -27,10 +27,8 @@ public sealed class GlimmerSetCommand : IConsoleCommand
 
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        if (args.Length != 1)
-            return;
-
-        if (!int.TryParse(args[0], out var glimmerValue))
+        if (args.Length != 1
+            || !int.TryParse(args[0], out var glimmerValue))
             return;
 
         var entMan = IoCManager.Resolve<IEntityManager>();
