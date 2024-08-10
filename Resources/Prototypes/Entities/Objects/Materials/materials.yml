@@ -525,7 +525,7 @@
     flavors:
       - banana
   - type: Food
-    trash:
+    trash: 
     - TrashBananiumPeel
   - type: BadFood
   - type: SolutionContainerManager

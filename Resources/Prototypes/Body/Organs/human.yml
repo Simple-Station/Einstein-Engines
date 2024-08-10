@@ -68,7 +68,14 @@
   - type: FlavorProfile
     flavors:
       - people
-
+  - type: FoodSequenceElement
+    entries:
+      burger:
+        name: food-sequence-burger-content-brain
+        sprite:
+          sprite: Mobs/Species/Human/organs.rsi
+          state: brain
+  
 - type: entity
   id: OrganHumanEyes
   parent: BaseHumanOrgan
@@ -91,6 +98,13 @@
   components:
   - type: Sprite
     state: tongue
+  - type: FoodSequenceElement
+    entries:
+      burger:
+        name: food-sequence-burger-content-tongue
+        sprite:
+          sprite: Mobs/Species/Human/organs.rsi
+          state: tongue
 
 - type: entity
   id: OrganHumanAppendix
@@ -102,6 +116,13 @@
     - state: appendix
     - state: appendix-inflamed
       visible: false
+  - type: FoodSequenceElement
+    entries:
+      burger:
+        name: food-sequence-burger-content-appendix
+        sprite:
+          sprite: Mobs/Species/Human/organs.rsi
+          state: appendix
 
 - type: entity
   id: OrganHumanEars
@@ -111,7 +132,13 @@
   components:
   - type: Sprite
     state: ears
-  - type: Ears
+  - type: FoodSequenceElement
+    entries:
+      burger:
+        name: food-sequence-burger-content-ears
+        sprite:
+          sprite: Mobs/Species/Human/organs.rsi
+          state: ears
 
 - type: entity
   id: OrganHumanLungs
@@ -201,6 +228,13 @@
     groups:
     - id: Food
     - id: Drink
+  - type: FoodSequenceElement
+    entries:
+      burger:
+        name: food-sequence-burger-content-stomach
+        sprite:
+          sprite: Mobs/Species/Human/organs.rsi
+          state: stomach
 
 - type: entity
   id: OrganHumanLiver
@@ -219,6 +253,13 @@
     groups:
     - id: Alcohol
       rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+  - type: FoodSequenceElement
+    entries:
+      burger:
+        name: food-sequence-burger-content-liver
+        sprite:
+          sprite: Mobs/Species/Human/organs.rsi
+          state: liver
 
 - type: entity
   id: OrganHumanKidneys
