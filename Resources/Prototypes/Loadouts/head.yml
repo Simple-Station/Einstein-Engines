@@ -156,12 +156,12 @@
     - ClothingHeadHatBellhop
 
 - type: loadout
-  id: LoadoutHeadFlower
+  id: LoadoutHeadPoppy
   category: Head
   cost: 1
   exclusive: true
   items:
-    - ClothingHeadHatHairflower
+    - FoodPoppy
 
 # Color Hats
 - type: loadout
