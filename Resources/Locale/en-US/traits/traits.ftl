@@ -122,3 +122,6 @@ trait-name-WeaponsGeneralist = Weapons Generalist
 trait-description-WeaponsGeneralist =
     You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
     Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 25%.
+
+trait-name-Singer = Singer
+trait-description-Singer = You are naturally capable of singing simple melodies with your voice.

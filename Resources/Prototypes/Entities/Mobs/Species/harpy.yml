@@ -5,7 +5,10 @@
   id: MobHarpyBase
   abstract: true
   components:
-  - type: HarpySinger
+  - type: Singer
+    midiUi:
+      key: enum.InstrumentUiKey.Key
+      type: InstrumentBoundUserInterface
   - type: Instrument
     allowPercussion: false
     program: 52
@@ -19,16 +22,6 @@
       "Acoustic": {24: 0}
       "Flute": {73: 0}
       "Sax": {66: 0}
-  - type: UserInterface
-    interfaces:
-      - key: enum.InstrumentUiKey.Key
-        type: InstrumentBoundUserInterface
-      - key: enum.VoiceMaskUIKey.Key
-        type: VoiceMaskBoundUserInterface
-      - key: enum.HumanoidMarkingModifierKey.Key
-        type: HumanoidMarkingModifierBoundUserInterface
-      - key: enum.StrippingUiKey.Key
-        type: StrippableBoundUserInterface
   - type: Sprite
     scale: 0.9, 0.9
     layers:
@@ -140,6 +133,7 @@
     understands:
     - GalacticCommon
     - SolCommon
+
 - type: entity
   save: false
   name: Urist McHands

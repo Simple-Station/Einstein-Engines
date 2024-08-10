@@ -121,3 +121,25 @@
       inverted: true
       species:
         - Felinid
+
+- type: trait
+  id: Singer
+  category: Auditory
+  points: -4
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vulpkanin # Naturally more vocal than humans
+        - Felinid
+  components:
+    - type: Singer
+      midiUi:
+        key: enum.InstrumentUiKey.Key
+        type: InstrumentBoundUserInterface
+    - type: Instrument
+      allowPercussion: false
+      program: 52 # Voice
+    - type: SwappableInstrument
+      instrumentList:
+        "Voice": { 52: 0 }
+        "Acoustic": { 24: 0 } # All of them use synthesizer samples anyway...
