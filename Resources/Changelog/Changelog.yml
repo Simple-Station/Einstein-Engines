@@ -5196,3 +5196,11 @@ Entries:
         different stamina costs to power attack with.
   id: 6248
   time: '2024-08-10T21:30:42.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Remove
+      message: >-
+        Removed the spammable hugging on click. Consider using emotes for this
+        instead.
+  id: 6249
+  time: '2024-08-10T21:34:22.0000000+00:00'
