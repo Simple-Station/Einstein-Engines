@@ -36,7 +36,7 @@
 - type: trait
   id: HeavyweightDrunk
   category: Physical
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -55,7 +55,7 @@
 - type: trait
   id: BoozyBoost
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
