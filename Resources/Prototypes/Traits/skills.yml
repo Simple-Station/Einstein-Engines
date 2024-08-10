@@ -142,4 +142,3 @@
     - type: SwappableInstrument
       instrumentList:
         "Voice": { 52: 0 }
-        "Acoustic": { 24: 0 } # All of them use synthesizer samples anyway...
