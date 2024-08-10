@@ -5212,3 +5212,9 @@ Entries:
         and 5 negative traits.
   id: 6250
   time: '2024-08-10T21:36:09.0000000+00:00'
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added `HidesBeard` tag
+  id: 6251
+  time: '2024-08-10T21:36:49.0000000+00:00'
