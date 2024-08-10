@@ -293,7 +293,6 @@
          - Security
          - Medical
          - Engineering
-         - Epistemics
     - !type:CharacterJobRequirement
        inverted: true
        jobs:
