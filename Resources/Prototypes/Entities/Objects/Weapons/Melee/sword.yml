@@ -10,12 +10,19 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: 1.25
+    range: 1.75
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 17 #cmon, it has to be at least BETTER than the rest.
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 5
+    maxTargets: 7
+    angle: 80
   - type: Reflect
     enabled: true
     reflectProb: .5
@@ -43,11 +50,18 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    attackRate: 1.5
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
-        Slash: 15
+        Slash: 12
+    heavyRateModifier: 0.5
+    heavyRangeModifier: 3 #Superior Japanese folded steel
+    heavyDamageBaseModifier: 1.25
+    heavyStaminaCost: 10
+    maxTargets: 1
+    angle: 20
   - type: Item
     size: Normal
     sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
@@ -66,7 +80,7 @@
     wideAnimationRotation: -60
     damage:
       types:
-        Slash: 30
+        Slash: 25
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/energykatana.rsi
@@ -99,9 +113,15 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    attackRate: 0.8
     damage:
       types:
         Slash: 15
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 10
+    angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -121,10 +141,19 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.75
+    attackRate: 0.65
+    range: 1.85
     damage:
       types:
-        Slash: 20
+        Slash: 19
+        Blunt: 1
+    bluntStaminaDamageFactor: 25.0
+    heavyRateModifier: 0.5
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 20
+    maxTargets: 10
+    angle: 200
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -150,9 +179,16 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    attackRate: 1.25
     damage:
       types:
-        Slash: 16
+        Slash: 12
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1.2
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 10
+    maxTargets: 3
+    angle: 40
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item

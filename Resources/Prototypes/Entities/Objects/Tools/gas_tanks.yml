@@ -34,9 +34,16 @@
   - type: MeleeWeapon
     wideAnimationRotation: 45
     attackRate: 0.8
+    range: 1.75
     damage:
       types:
-        Blunt: 10
+        Blunt: 8
+    bluntStaminaDamageFactor: 2.5
+    heavyRateModifier: 0.8
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 15
+    maxTargets: 1
+    angle: 140
   - type: PhysicalComposition
     materialComposition:
       Steel: 185

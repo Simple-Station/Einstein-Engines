@@ -143,7 +143,7 @@ namespace Content.Server.Zombies
             melee.AltDisarm = false;
             melee.Range = 1.2f;
             melee.Angle = 0.0f;
-            melee.HitSound = zombiecomp.BiteSound;
+            melee.SoundHit = zombiecomp.BiteSound;
 
             if (mobState.CurrentState == MobState.Alive)
             {
