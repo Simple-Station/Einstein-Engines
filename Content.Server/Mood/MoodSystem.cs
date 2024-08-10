@@ -1,4 +1,4 @@
-using Content.Server.Chat.Managers;
+﻿using Content.Server.Chat.Managers;
 using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Chat;
@@ -60,7 +60,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnRefreshMoveSpeed(EntityUid uid, MoodComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (component.CurrentMoodThreshold is > MoodThreshold.Terrible and < MoodThreshold.Exceptional or MoodThreshold.Dead
+        if (component.CurrentMoodThreshold is > MoodThreshold.Meh and < MoodThreshold.Good or MoodThreshold.Dead
             || _jetpack.IsUserFlying(uid))
             return;
 
@@ -330,8 +330,8 @@ public sealed class MoodSystem : EntitySystem
     {
         return threshold switch
         {
-            >= MoodThreshold.Exceptional => 1,
-            <= MoodThreshold.Terrible => -1,
+            >= MoodThreshold.Good => 1,
+            <= MoodThreshold.Meh => -1,
             _ => 0
         };
     }
