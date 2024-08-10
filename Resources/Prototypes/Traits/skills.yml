@@ -125,7 +125,7 @@
 - type: trait
   id: Singer
   category: Auditory
-  points: -3
+  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
