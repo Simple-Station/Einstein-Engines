@@ -5155,3 +5155,11 @@ Entries:
         the Chainsaw, try out their normal swings and their heavy attacks!
   id: 6245
   time: '2024-08-10T12:00:06.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Tweak
+      message: >-
+        Renamed "Psionic Mantis" to "Mantis", as it was originally going to be
+        called. 
+  id: 6246
+  time: '2024-08-10T12:03:12.0000000+00:00'
