@@ -1,5 +1,6 @@
 using Content.Server.Body.Systems;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Server.Traits.Assorted;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
@@ -11,7 +12,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Body.Components
 {
-    [RegisterComponent, Access(typeof(BloodstreamSystem), typeof(ReactionMixerSystem))]
+    [RegisterComponent, Access(typeof(BloodstreamSystem), typeof(ReactionMixerSystem), typeof(BloodDeficiencySystem), typeof(HemophiliaSystem))]
     public sealed partial class BloodstreamComponent : Component
     {
         public static string DefaultChemicalsSolutionName = "chemicals";
@@ -171,5 +172,18 @@ namespace Content.Server.Body.Components
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
         public TimeSpan StatusTime;
+
+        /// <summary>
+        ///     If this is true, the entity will not passively regenerate blood,
+        ///     and instead will slowly lose blood.
+        /// </summary>
+        [DataField]
+        public bool HasBloodDeficiency = false;
+
+        /// <summary>
+        ///     How much reagent of blood should be removed with blood deficiency in each update interval?
+        /// </summary>
+        [DataField]
+        public FixedPoint2 BloodDeficiencyLossAmount;
     }
 }
