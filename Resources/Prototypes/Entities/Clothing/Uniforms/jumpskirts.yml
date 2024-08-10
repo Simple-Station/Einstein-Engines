@@ -864,6 +864,17 @@
 
 - type: entity
   parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtPsychologist
+  name: psychologist suitskirt
+  description: I don't lose things. I place things in locations which later elude me.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/psychologist.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/psychologist.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressAsymmetric
   name: asymmetric dress
   description: This dress forced the mothermatter to deyassinate in slaygineering.
