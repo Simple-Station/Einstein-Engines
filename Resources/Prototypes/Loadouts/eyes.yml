@@ -10,10 +10,6 @@
   category: Eyes
   cost: 1
   requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Nearsighted
   items:
     - ClothingEyesGlasses
 
