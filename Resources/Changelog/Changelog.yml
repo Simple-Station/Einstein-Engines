@@ -5204,3 +5204,11 @@ Entries:
         instead.
   id: 6249
   time: '2024-08-10T21:34:22.0000000+00:00'
+- author: VMSolidus and Skubman
+  changes:
+    - type: Add
+      message: >-
+        11 new Physical Traits have been added to the game! 6 positive traits,
+        and 5 negative traits.
+  id: 6250
+  time: '2024-08-10T21:36:09.0000000+00:00'
