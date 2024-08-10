@@ -12,7 +12,7 @@
   name: dwarf liver
   components:
   - type: Metabolizer
-    metabolizerTypes: [Dwarf]
+    metabolizerTypes: [Dwarf, BoozyBoost]
 
 - type: entity
   id: OrganDwarfStomach
