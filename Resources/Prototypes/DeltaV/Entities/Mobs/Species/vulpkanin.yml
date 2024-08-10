@@ -97,6 +97,11 @@
       Female: FemaleVulpkanin
       Unsexed: MaleVulpkanin
   - type: DogVision
+  # - type: DarkVision
+  # - type: ScentTracker
+  - type: Flashable
+    eyeDamageChance: 0.3
+    eyeDamage: 1
   - type: Wagging
   - type: LanguageKnowledge
     speaks:
