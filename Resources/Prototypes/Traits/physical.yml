@@ -1,7 +1,7 @@
 - type: trait
   id: WillToLive
   category: Physical
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -37,7 +37,7 @@
 - type: trait
   id: Tenacity
   category: Physical
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -73,7 +73,7 @@
 - type: trait
   id: Vigor
   category: Physical
-  points: -2
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -117,7 +117,7 @@
 - type: trait
   id: HighAdrenaline
   category: Physical
-  points: -2
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -154,7 +154,7 @@
 - type: trait
   id: Masochism
   category: Physical
-  points: -2
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
