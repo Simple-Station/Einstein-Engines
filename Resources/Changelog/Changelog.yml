@@ -5117,3 +5117,33 @@ Entries:
       message: Moths can now once again be colorful.
   id: 6241
   time: '2024-08-08T00:18:08.0000000+00:00'
+- author: ShatteredSwords
+  changes:
+    - type: Tweak
+      message: Skeleton ghost role description has been adjusted to be less evil.
+  id: 6242
+  time: '2024-08-09T10:52:49.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Geiger Counters other than ones installed in Hardsuits now generate an
+        audible sound when active and exposed to radiation.
+    - type: Add
+      message: Wall mounted geiger counters have been added to the game.
+  id: 6243
+  time: '2024-08-09T11:13:13.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Dionas have been given a 25% slower movement speed. In exchange for
+        that, they gain absolute slip immunity and movement speed modifier
+        immunity. This makes them immune to slowdown from things like
+        duffelbags, hardsuits, and spider webs.
+    - type: Fix
+      message: >-
+        Sluggish and Snail-Paced will now properly apply their movement
+        penalties upon joining. 
+  id: 6244
+  time: '2024-08-09T17:28:01.0000000+00:00'

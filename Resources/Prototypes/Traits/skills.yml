@@ -102,6 +102,10 @@
       traits:
         - Sluggish
         - SnailPaced
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
   components:
     - type: ClimbDelayModifier
       climbDelayMultiplier: 0.70

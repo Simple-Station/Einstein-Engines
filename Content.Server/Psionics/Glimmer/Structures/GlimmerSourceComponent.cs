@@ -6,22 +6,22 @@ namespace Content.Server.Psionics.Glimmer
     /// </summary>
     public sealed partial class GlimmerSourceComponent : Component
     {
-        [DataField("accumulator")]
+        [DataField]
         public float Accumulator = 0f;
 
-        [DataField("active")]
+        [DataField]
         public bool Active = true;
 
         /// <summary>
         ///     Since glimmer is an int, we'll do it like this.
         /// </summary>
-        [DataField("secondsPerGlimmer")]
+        [DataField]
         public float SecondsPerGlimmer = 10f;
 
         /// <summary>
         ///     True if it produces glimmer, false if it subtracts it.
         /// </summary>
-        [DataField("addToGlimmer")]
+        [DataField]
         public bool AddToGlimmer = true;
     }
 }

@@ -1,14 +1,16 @@
-namespace Content.Server.Traits.Assorted;
+using Robust.Shared.GameStates;
+
+namespace Content.Shared.Traits.Assorted.Components;
 
 /// <summary>
 ///  This component is used for traits that modify movement speed.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class TraitSpeedModifierComponent : Component
 {
-    [DataField(required: true)]
+    [DataField, AutoNetworkedField]
     public float WalkModifier = 1.0f;
 
-    [DataField(required: true)]
+    [DataField, AutoNetworkedField]
     public float SprintModifier = 1.0f;
 }
