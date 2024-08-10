@@ -5163,3 +5163,18 @@ Entries:
         called. 
   id: 6246
   time: '2024-08-10T12:03:12.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add Liquor Lifeline (-3 points), a new positive trait that makes you
+        slowly heal Brute and Burn damage when drunk, healing more the drunker
+        you are. The trait also gives you the benefits of Alcohol Tolerance.
+    - type: Tweak
+      message: >-
+        The cost of the Alcohol Tolerance trait has been reduced from -2 points
+        to -1 point.
+    - type: Add
+      message: Dwarves receive the Liquor Lifeline trait for free.
+  id: 6247
+  time: '2024-08-10T20:59:22.0000000+00:00'
