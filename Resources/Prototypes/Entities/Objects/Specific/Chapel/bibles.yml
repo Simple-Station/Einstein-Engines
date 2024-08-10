@@ -45,8 +45,12 @@
   - type: MeleeWeapon # Nyanotrasen - Bibles do Holy damage
     damage:
       types:
-        Blunt: 3
-        Holy: 10
+        Blunt: 4
+        Holy: 20
+    heavyRateModifier: 0.8
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 5
+    maxTargets: 3
   - type: Tag
     tags:
     - Book

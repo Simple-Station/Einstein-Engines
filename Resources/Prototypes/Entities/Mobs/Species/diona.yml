@@ -109,6 +109,11 @@
     understands:
     - GalacticCommon
     - RootSpeak
+  - type: TraitSpeedModifier
+    sprintModifier: 0.75
+    walkModifier: 0.75
+  - type: SpeedModifierImmunity
+  - type: NoSlip
 
 - type: entity
   parent: BaseSpeciesDummy

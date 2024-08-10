@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by @dootythefrooty (Discord)",
+    "states": [
+        {
+            "name": "geiger_base",
+            "directions": 4
+        },
+        {
+            "name": "geiger_on_idle",
+            "directions": 4
+        },
+        {
+            "name": "geiger_on_low",
+            "directions": 4
+        },
+        {
+            "name": "geiger_on_med",
+            "directions": 4
+        },
+        {
+            "name": "geiger_on_high",
+            "directions": 4
+        },
+        {
+            "name": "geiger_on_ext",
+            "directions": 4
+        }
+    ]
+}
