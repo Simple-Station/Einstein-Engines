@@ -2,14 +2,19 @@ using Content.Shared.Actions;
 using Content.Shared.DeltaV.Harpy.Components;
 using Content.Shared.Instruments;
 using Content.Shared.Traits.Assorted.Components;
+using Content.Shared.Traits.Assorted.Prototypes;
 using Content.Shared.Zombies;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Traits.Assorted.Systems;
 
 public abstract class SharedSingerSystem : EntitySystem
 {
+    [Dependency] protected readonly IPrototypeManager ProtoMan = default!;
+
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedInstrumentSystem _instrument = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
 
     public override void Initialize()
@@ -25,10 +30,18 @@ public abstract class SharedSingerSystem : EntitySystem
 
     private void OnStartup(Entity<SingerComponent> ent, ref ComponentStartup args)
     {
-        _actionsSystem.AddAction(ent, ref ent.Comp.MidiAction, ent.Comp.MidiActionId);
+        if (!ProtoMan.TryIndex(ent.Comp.Proto, out var singer))
+            return;
 
-        if (ent.Comp.MidiUi is { } data && !_ui.TryGetUi(ent, data.UiKey, out _))
-            _ui.AddUi(ent.Owner, data); // Stinky
+        _actionsSystem.AddAction(ent, ref ent.Comp.MidiAction, singer.MidiActionId);
+
+        var instrumentComp = EnsureInstrumentComp(ent);
+        var defaultData = singer.InstrumentList[singer.DefaultInstrument];
+        _instrument.SetInstrumentProgram(instrumentComp, defaultData.Item1, defaultData.Item2);
+        SetUpSwappableInstrument(ent, singer);
+
+        if (singer.MidiUi is {} uiData && !_ui.TryGetUi(ent, uiData.UiKey, out _))
+            _ui.AddUi(ent.Owner, uiData);
     }
 
     private void OnShutdown(Entity<SingerComponent> ent, ref ComponentShutdown args)
@@ -60,9 +73,21 @@ public abstract class SharedSingerSystem : EntitySystem
     }
 
     /// <summary>
-    /// Closes the MIDI UI if it is open. Does nothing on client side.
+    ///     Closes the MIDI UI if it is open. Does nothing on client side.
     /// </summary>
     public virtual void CloseMidiUi(EntityUid uid)
     {
     }
+
+    /// <summary>
+    ///     Sets up the swappable instrument on the entity, only on the server.
+    /// </summary>
+    protected virtual void SetUpSwappableInstrument(EntityUid uid, SingerInstrumentPrototype singer)
+    {
+    }
+
+    /// <summary>
+    ///     Ensures an InstrumentComponent on the entity. Uses client-side comp on client and server-side comp on the server.
+    /// </summary>
+    protected abstract SharedInstrumentComponent EnsureInstrumentComp(EntityUid uid);
 }

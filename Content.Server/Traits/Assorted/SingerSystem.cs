@@ -13,6 +13,7 @@ using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Content.Shared.Traits.Assorted.Components;
+using Content.Shared.Traits.Assorted.Prototypes;
 using Content.Shared.Traits.Assorted.Systems;
 using Content.Shared.UserInterface;
 using Content.Shared.Zombies;
@@ -27,7 +28,6 @@ public sealed class SingerSystem : SharedSingerSystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly InstrumentSystem _instrument = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {
@@ -42,6 +42,20 @@ public sealed class SingerSystem : SharedSingerSystem
         SubscribeLocalEvent<InstrumentComponent, DamageChangedEvent>(OnDamageChanged);
         // This is intended to intercept and cancel the UI event before it reaches ActivatableUISystem.
         SubscribeLocalEvent<SingerComponent, OpenUiActionEvent>(OnInstrumentOpen, before: [typeof(ActivatableUISystem)]);
+    }
+
+    protected override SharedInstrumentComponent EnsureInstrumentComp(EntityUid uid)
+    {
+        return EnsureComp<InstrumentComponent>(uid);
+    }
+
+    protected override void SetUpSwappableInstrument(EntityUid uid, SingerInstrumentPrototype singer)
+    {
+        if (singer.InstrumentList.Count <= 1)
+            return;
+
+        var swappableComp = EnsureComp<SwappableInstrumentComponent>(uid);
+        swappableComp.InstrumentList = singer.InstrumentList;
     }
 
     private void OnEquip(GotEquippedEvent args)
@@ -101,7 +115,7 @@ public sealed class SingerSystem : SharedSingerSystem
             return;
 
         var totalApplicableDamage = FixedPoint2.Zero;
-        foreach (var (group, value) in args.DamageDelta.GetDamagePerGroup(_prototype))
+        foreach (var (group, value) in args.DamageDelta.GetDamagePerGroup(ProtoMan))
         {
             if (!component.ValidDamageGroups.Contains(group))
                 continue;

@@ -133,12 +133,4 @@
         - Harpy
   components:
     - type: Singer
-      midiUi:
-        key: enum.InstrumentUiKey.Key
-        type: InstrumentBoundUserInterface
-    - type: Instrument
-      allowPercussion: false
-      program: 52 # Voice
-    - type: SwappableInstrument
-      instrumentList:
-        "Voice": { 52: 0 }
+      proto: NormalSinger
