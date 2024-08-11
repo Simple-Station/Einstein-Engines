@@ -5,7 +5,7 @@
   description: Heavy metal bat with an extra kick.
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Melee/home_run_bat.rsi
+    sprite: Objects/Weapons/Melee/home_run_bat.rsi
     state: icon
   - type: MeleeWeapon
     damage:
