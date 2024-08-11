@@ -186,7 +186,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         if (!Resolve(uid, ref component, false))
             return new DamageSpecifier();
 
-        var ev = new GetMeleeDamageEvent(uid, new (component.Damage), new(), user);
+        var ev = new GetMeleeDamageEvent(uid, new(component.Damage), new(), user, component.ResistanceBypass);
         RaiseLocalEvent(uid, ref ev);
 
         if (component.ContestArgs is not null)
@@ -214,9 +214,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         var ev = new GetHeavyDamageModifierEvent(uid, component.ClickDamageModifier, 1, user);
         RaiseLocalEvent(uid, ref ev);
 
-        return ev.DamageModifier
-                * ev.Multipliers
-                * component.HeavyDamageBaseModifier;
+        return ev.DamageModifier * ev.Multipliers;
     }
 
     public bool TryGetWeapon(EntityUid entity, out EntityUid weaponUid, [NotNullWhen(true)] out MeleeWeaponComponent? melee)
@@ -424,6 +422,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
     {
         var damage = GetDamage(meleeUid, user, component);
         var target = GetEntity(ev.Target);
+        var resistanceBypass = GetResistanceBypass(meleeUid, user, component);
 
         // For consistency with wide attacks stuff needs damageable.
         if (Deleted(target) ||
@@ -480,7 +479,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         RaiseLocalEvent(target.Value, attackedEvent);
 
         var modifiedDamage = DamageSpecifier.ApplyModifierSets(damage + hitEvent.BonusDamage + attackedEvent.BonusDamage, hitEvent.ModifiersList);
-        var damageResult = Damageable.TryChangeDamage(target, modifiedDamage, origin: user, partMultiplier: component.ClickPartDamageMultiplier);
+        var damageResult = Damageable.TryChangeDamage(target, modifiedDamage, origin: user, ignoreResistances: resistanceBypass, partMultiplier: component.ClickPartDamageMultiplier);
 
         if (damageResult is {Empty: false})
         {

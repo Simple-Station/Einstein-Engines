@@ -104,11 +104,11 @@ namespace Content.Server.Medical.BiomassReclaimer
             SubscribeLocalEvent<BiomassReclaimerComponent, RefreshPartsEvent>(OnRefreshParts);
             SubscribeLocalEvent<BiomassReclaimerComponent, UpgradeExamineEvent>(OnUpgradeExamine);
             SubscribeLocalEvent<BiomassReclaimerComponent, PowerChangedEvent>(OnPowerChanged);
-            SubscribeLocalEvent<BiomassReclaimerComponent, SuicideEvent>(OnSuicide);
+            SubscribeLocalEvent<BiomassReclaimerComponent, SuicideByEnvironmentEvent>(OnSuicideByEnvironment);
             SubscribeLocalEvent<BiomassReclaimerComponent, ReclaimerDoAfterEvent>(OnDoAfter);
         }
 
-        private void OnSuicide(Entity<BiomassReclaimerComponent> ent, ref SuicideEvent args)
+        private void OnSuicideByEnvironment(Entity<BiomassReclaimerComponent> ent, ref SuicideByEnvironmentEvent args)
         {
             if (args.Handled
                 || HasComp<ActiveBiomassReclaimerComponent>(ent)
@@ -117,7 +117,7 @@ namespace Content.Server.Medical.BiomassReclaimer
 
             _popup.PopupEntity(Loc.GetString("biomass-reclaimer-suicide-others", ("victim", args.Victim)), ent, PopupType.LargeCaution);
             StartProcessing(args.Victim, ent);
-            args.SetHandled(SuicideKind.Blunt);
+            args.Handled = true;
         }
 
         private void OnInit(EntityUid uid, ActiveBiomassReclaimerComponent component, ComponentInit args)

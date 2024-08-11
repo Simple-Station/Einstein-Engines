@@ -1,5 +1,6 @@
 using Content.Server.GameTicking;
 using Content.Shared.Administration;
+using Content.Shared.Chat;
 using Content.Shared.Mind;
 using Robust.Shared.Console;
 using Robust.Shared.Enums;
@@ -28,24 +29,25 @@ namespace Content.Server.Chat.Commands
 
             var minds = IoCManager.Resolve<IEntityManager>().System<SharedMindSystem>();
             // This check also proves mind not-null for at the end when the mob is ghosted.
-            if (!minds.TryGetMind(player, out var mindId, out var mind) ||
-                mind.OwnedEntity is not { Valid: true } victim)
+            if (!minds.TryGetMind(player, out var mindId, out var mindComp) ||
+                mindComp.OwnedEntity is not { Valid: true } victim)
             {
                 shell.WriteLine("You don't have a mind!");
                 return;
             }
 
-            var gameTicker = EntitySystem.Get<GameTicker>();
-            var suicideSystem = EntitySystem.Get<SuicideSystem>();
-            if (suicideSystem.Suicide(victim))
+            var suicideSystem = _e.System<SuicideSystem>();
+
+            if (_e.HasComponent<AdminFrozenComponent>(victim))
             {
-                // Prevent the player from returning to the body.
-                // Note that mind cannot be null because otherwise victim would be null.
-                gameTicker.OnGhostAttempt(mindId, false, mind: mind);
+                var deniedMessage = Loc.GetString("suicide-command-denied");
+                shell.WriteLine(deniedMessage);
+                _e.System<PopupSystem>()
+                    .PopupEntity(deniedMessage, victim, victim);
                 return;
             }
 
-            if (gameTicker.OnGhostAttempt(mindId, true, mind: mind))
+            if (suicideSystem.Suicide(victim))
                 return;
 
             shell.WriteLine("You can't ghost right now.");
