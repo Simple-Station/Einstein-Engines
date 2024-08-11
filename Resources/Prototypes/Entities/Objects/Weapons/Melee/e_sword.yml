@@ -35,8 +35,8 @@
         variation: 0.125
     activatedDamage:
         types:
-            Slash: 15
-            Heat: 15
+            Slash: 8
+            Heat: 10
             Structural: 20
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_sword.rsi
@@ -49,7 +49,7 @@
         map: [ "blade" ]
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1
+    attackRate: 1.25
     damage:
       types:
         Blunt: 4.5
@@ -106,8 +106,8 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 10
-            Heat: 10
+            Slash: 4
+            Heat: 8
     deactivatedSecret: true
   - type: ItemToggleActiveSound
     activeSound:
@@ -245,8 +245,8 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 12
-            Heat: 12
+            Slash: 8
+            Heat: 13
             Structural: 15
   - type: ItemToggleActiveSound
     activeSound:
