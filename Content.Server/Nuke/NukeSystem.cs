@@ -459,10 +459,12 @@ public sealed class NukeSystem : EntitySystem
             _announcer.GetAnnouncementId("NukeArm"),
             "nuke-component-announcement-armed",
             Loc.GetString("nuke-component-announcement-sender"),
+            null,
             Color.Red,
             stationUid ?? uid,
             null,
-            ("time", (int) component.RemainingTime), ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((uid, nukeXform))))
+            ("time", (int) component.RemainingTime),
+            ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((uid, nukeXform))))
         );
 
         _sound.PlayGlobalOnStation(uid, _audio.GetSound(component.ArmSound));

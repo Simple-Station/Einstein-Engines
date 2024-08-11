@@ -267,15 +267,14 @@ namespace Content.Server.Communications
             msg += $"\n{Loc.GetString("comms-console-announcement-sent-by")} {author}";
             if (comp.Global)
             {
-                _announcer.SendAnnouncement("announce", Filter.Broadcast(), msg, title, comp.Color);
+                _announcer.SendAnnouncement("announce", msg, title, colorOverride: comp.Color);
 
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following global announcement: {msg}");
                 return;
             }
 
             if (TryComp<StationDataComponent>(_stationSystem.GetOwningStation(uid), out var stationData))
-                _announcer.SendAnnouncement("announce", _stationSystem.GetInStation(stationData), msg, title,
-                    comp.Color);
+                _announcer.SendAnnouncement("announce", msg, title, _stationSystem.GetInStation(stationData), comp.Color);
 
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following station announcement: {msg}");
 

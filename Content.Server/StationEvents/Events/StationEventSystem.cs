@@ -58,7 +58,6 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         {
             _announcer.SendAnnouncement(
                 _announcer.GetAnnouncementId(args.RuleId),
-                Filter.Broadcast(),
                 _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId)),
                 colorOverride: Color.Gold
             );
@@ -88,7 +87,6 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         {
             _announcer.SendAnnouncement(
                 _announcer.GetAnnouncementId(args.RuleId, true),
-                Filter.Broadcast(),
                 _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId, true)),
                 colorOverride: Color.Gold);
         }

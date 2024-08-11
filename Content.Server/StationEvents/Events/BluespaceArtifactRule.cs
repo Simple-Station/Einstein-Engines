@@ -19,12 +19,9 @@ public sealed class BluespaceArtifactRule : StationEventSystem<BluespaceArtifact
 
         _announcer.SendAnnouncement(
             _announcer.GetAnnouncementId(args.RuleId),
-            Filter.Broadcast(),
             "bluespace-artifact-event-announcement",
-            null,
-            stationEvent.StartAnnouncementColor,
-            null, null,
-            ("sighting", Loc.GetString(RobustRandom.Pick(component.PossibleSighting)))
+            colorOverride: stationEvent.StartAnnouncementColor,
+            localeArgs: [("sighting", Loc.GetString(RobustRandom.Pick(component.PossibleSighting))), ]
         );
     }
 

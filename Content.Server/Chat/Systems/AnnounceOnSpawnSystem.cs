@@ -17,7 +17,7 @@ public sealed class AnnounceOnSpawnSystem : EntitySystem
     private void OnInit(EntityUid uid, AnnounceOnSpawnComponent comp, MapInitEvent args)
     {
         var sender = comp.Sender != null ? Loc.GetString(comp.Sender) : Loc.GetString("chat-manager-sender-announcement");
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("SpawnAnnounceCaptain"), Filter.Broadcast(),
-            comp.Message, sender, comp.Color);
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("SpawnAnnounceCaptain"),
+            comp.Message, sender, colorOverride: comp.Color);
     }
 }

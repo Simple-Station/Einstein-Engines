@@ -23,13 +23,10 @@ public sealed class FalseAlarmRule : StationEventSystem<FalseAlarmRuleComponent>
 
         _announcer.SendAnnouncement(
             _announcer.GetAnnouncementId(picked.Key.ID),
-            Filter.Broadcast(),
             _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(picked.Key.ID)),
-            null,
-            picked.Value.StartAnnouncementColor,
-            null, null,
+            colorOverride: picked.Value.StartAnnouncementColor,
             //TODO This isn't a good solution, but I can't think of something better
-            ("data", Loc.GetString($"random-sentience-event-data-{RobustRandom.Next(1, 6)}"))
+            localeArgs: [("data", Loc.GetString($"random-sentience-event-data-{RobustRandom.Next(1, 6)}")), ]
         );
     }
 }

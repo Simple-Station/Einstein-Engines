@@ -277,8 +277,10 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         if (targetGrid == null)
         {
             _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle {ToPrettyString(stationUid)} unable to dock with station {ToPrettyString(stationUid)}");
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleGoodLuck"), Filter.Broadcast(),
-                "emergency-shuttle-good-luck", colorOverride: DangerColor);
+            _announcer.SendAnnouncement(
+                _announcer.GetAnnouncementId("ShuttleGoodLuck"),
+                "emergency-shuttle-good-luck",
+                colorOverride: DangerColor);
             return;
         }
 
@@ -293,7 +295,11 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
                 _announcer.SendAnnouncementMessage(
                     _announcer.GetAnnouncementId("ShuttleDock"),
                     "emergency-shuttle-docked",
-                    null, null, null, null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
                     ("time", $"{_consoleAccumulator:0}"),
                     ("direction", angle.GetDir()),
                     ("location", location)
@@ -318,7 +324,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             }
 
             _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle {ToPrettyString(stationUid)} docked with stations");
-            _announcer.SendAnnouncementAudio(_announcer.GetAnnouncementId("ShuttleDock"), Filter.Broadcast());
+            _announcer.SendAnnouncementAudio(_announcer.GetAnnouncementId("ShuttleDock"));
         }
         else
         {
@@ -333,6 +339,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
                     null,
                     null,
                     null,
+                    null,
                     ("time", $"{_consoleAccumulator:0}"),
                     ("direction", angle.GetDir()),
                     ("location", location)
@@ -341,7 +348,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             }
 
             _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle {ToPrettyString(stationUid)} unable to find a valid docking port for {ToPrettyString(stationUid)}");
-            _announcer.SendAnnouncementAudio(_announcer.GetAnnouncementId("ShuttleNearby"), Filter.Broadcast());
+            _announcer.SendAnnouncementAudio(_announcer.GetAnnouncementId("ShuttleNearby"));
         }
     }
 

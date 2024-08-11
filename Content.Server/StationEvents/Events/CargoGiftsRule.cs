@@ -27,14 +27,14 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
 
         _announcer.SendAnnouncement(
             _announcer.GetAnnouncementId(args.RuleId),
-            Filter.Broadcast(),
             component.Announce,
-            null,
-            stationEvent.StartAnnouncementColor,
-            null, null,
-            ("sender", Loc.GetString(component.Sender)),
+            colorOverride: stationEvent.StartAnnouncementColor,
+            localeArgs:
+            [
+                ("sender", Loc.GetString(component.Sender)),
                 ("description", Loc.GetString(component.Description)),
-                ("dest", Loc.GetString(component.Dest))
+                ("dest", Loc.GetString(component.Dest)),
+            ]
         );
     }
 

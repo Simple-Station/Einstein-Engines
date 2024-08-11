@@ -80,7 +80,7 @@ namespace Content.Server.Nuke
             }
 
             if (wasSent)
-                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("NukeCodes"), Filter.Broadcast(),
+                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("NukeCodes"),
                     "nuke-component-announcement-send-codes", colorOverride: Color.Red);
 
             return wasSent;

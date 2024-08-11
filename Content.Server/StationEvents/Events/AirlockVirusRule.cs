@@ -49,10 +49,7 @@ public sealed class AirlockVirusRule : StationEventSystem<AirlockVirusRuleCompon
 
         _announcer.SendAnnouncement(
             _announcer.GetAnnouncementId(args.RuleId),
-            Filter.Broadcast(),
             "airlock-virus-event-announcement",
-            null,
-            Color.FromHex("#18abf5"),
-            null, null);
+            colorOverride: Color.FromHex("#18abf5"));
     }
 }
