@@ -259,18 +259,18 @@ public sealed class BloodstreamSystem : EntitySystem
         {
             args.Message.PushNewline();
             if (!args.IsSelfAware)
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-profusely-bleeding", ("target", ent.Owner)));
+                args.Message.AddMarkupOrThrow(Loc.GetString("bloodstream-component-profusely-bleeding", ("target", ent.Owner)));
             else
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-selfaware-profusely-bleeding"));
+                args.Message.AddMarkupOrThrow(Loc.GetString("bloodstream-component-selfaware-profusely-bleeding"));
         }
         // Shows bleeding message when bleeding, but less than profusely.
         else if (ent.Comp.BleedAmount > 0)
         {
             args.Message.PushNewline();
             if (!args.IsSelfAware)
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-bleeding", ("target", ent.Owner)));
+                args.Message.AddMarkupOrThrow(Loc.GetString("bloodstream-component-bleeding", ("target", ent.Owner)));
             else
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-selfaware-bleeding"));
+                args.Message.AddMarkupOrThrow(Loc.GetString("bloodstream-component-selfaware-bleeding"));
         }
 
         // If the mob's blood level is below the damage threshhold, the pale message is added.
@@ -278,9 +278,9 @@ public sealed class BloodstreamSystem : EntitySystem
         {
             args.Message.PushNewline();
             if (!args.IsSelfAware)
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-looks-pale", ("target", ent.Owner)));
+                args.Message.AddMarkupOrThrow(Loc.GetString("bloodstream-component-looks-pale", ("target", ent.Owner)));
             else
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-selfaware-looks-pale"));
+                args.Message.AddMarkupOrThrow(Loc.GetString("bloodstream-component-selfaware-looks-pale"));
         }
     }
 
