@@ -11,6 +11,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Random;
+using Content.Shared.Inventory.Events;
 
 namespace Content.Server.Forensics
 {
@@ -23,9 +24,11 @@ namespace Content.Server.Forensics
         public override void Initialize()
         {
             SubscribeLocalEvent<FingerprintComponent, ContactInteractionEvent>(OnInteract);
+            SubscribeLocalEvent<ScentComponent, DidEquipEvent>(OnEquip);
             SubscribeLocalEvent<FiberComponent, MapInitEvent>(OnFiberInit);
             SubscribeLocalEvent<FingerprintComponent, MapInitEvent>(OnFingerprintInit);
             SubscribeLocalEvent<DnaComponent, MapInitEvent>(OnDNAInit);
+            SubscribeLocalEvent<ScentComponent, MapInitEvent>(OnScentInit);
 
             SubscribeLocalEvent<DnaComponent, BeingGibbedEvent>(OnBeingGibbed);
             SubscribeLocalEvent<ForensicsComponent, MeleeHitEvent>(OnMeleeHit);
@@ -38,6 +41,11 @@ namespace Content.Server.Forensics
         private void OnInteract(EntityUid uid, FingerprintComponent component, ContactInteractionEvent args)
         {
             ApplyEvidence(uid, args.Other);
+        }
+
+        private void OnEquip(EntityUid uid, ScentComponent component, DidEquipEvent args)
+        {
+            ApplyScent(uid, args.Equipment);
         }
 
         private void OnFiberInit(EntityUid uid, FiberComponent component, MapInitEvent args)
@@ -55,9 +63,14 @@ namespace Content.Server.Forensics
             component.DNA = GenerateDNA();
         }
 
+        private void OnScentInit(EntityUid uid, ScentComponent component, MapInitEvent args)
+        {
+            component.Scent = GenerateFingerprint(length: 5);
+        }
+
         private void OnBeingGibbed(EntityUid uid, DnaComponent component, BeingGibbedEvent args)
         {
-            foreach(EntityUid part in args.GibbedParts)
+            foreach (EntityUid part in args.GibbedParts)
             {
                 var partComp = EnsureComp<ForensicsComponent>(part);
                 partComp.DNAs.Add(component.DNA);
@@ -67,13 +80,13 @@ namespace Content.Server.Forensics
 
         private void OnMeleeHit(EntityUid uid, ForensicsComponent component, MeleeHitEvent args)
         {
-            if((args.BaseDamage.DamageDict.TryGetValue("Blunt", out var bluntDamage) && bluntDamage.Value > 0) ||
+            if ((args.BaseDamage.DamageDict.TryGetValue("Blunt", out var bluntDamage) && bluntDamage.Value > 0) ||
                 (args.BaseDamage.DamageDict.TryGetValue("Slash", out var slashDamage) && slashDamage.Value > 0) ||
                 (args.BaseDamage.DamageDict.TryGetValue("Piercing", out var pierceDamage) && pierceDamage.Value > 0))
             {
-                foreach(EntityUid hitEntity in args.HitEntities)
+                foreach (EntityUid hitEntity in args.HitEntities)
                 {
-                    if(TryComp<DnaComponent>(hitEntity, out var hitEntityComp))
+                    if (TryComp<DnaComponent>(hitEntity, out var hitEntityComp))
                         component.DNAs.Add(hitEntityComp.DNA);
                 }
             }
@@ -112,19 +125,43 @@ namespace Content.Server.Forensics
             if (args.Handled)
                 return;
 
-            if (!TryComp<ForensicsComponent>(args.Target, out var forensicsComp))
-                return;
-
-            if((forensicsComp.DNAs.Count > 0 && forensicsComp.CanDnaBeCleaned) || (forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count > 0))
+            if (TryComp<ForensicsComponent>(args.Target, out var forensicsComp))
             {
-                var doAfterArgs = new DoAfterArgs(EntityManager, args.User, component.CleanDelay, new CleanForensicsDoAfterEvent(), uid, target: args.Target, used: args.Used)
+                if ((forensicsComp.DNAs.Count > 0 && forensicsComp.CanDnaBeCleaned) || (forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count > 0) || (forensicsComp.Scent != string.Empty))
+                {
+                    var cleanDelay = component.CleanDelay;
+                    if (HasComp<ScentComponent>(args.Target))
+                        cleanDelay += 30;
+
+                    var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cleanDelay, new CleanForensicsDoAfterEvent(), uid, target: args.Target, used: args.Used)
+                    {
+                        BreakOnHandChange = true,
+                        NeedHand = true,
+                        BreakOnDamage = true,
+                        BreakOnTargetMove = true,
+                        MovementThreshold = 0.01f,
+                        DistanceThreshold = forensicsComp.CleanDistance,
+                    };
+
+                    _doAfterSystem.TryStartDoAfter(doAfterArgs);
+                    _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning", ("target", args.Target)), args.User, args.User);
+
+                    args.Handled = true;
+                    return;
+                }
+            }
+
+            if (TryComp<ScentComponent>(args.Target, out var scentComp))
+            {
+                var cleanDelay = component.CleanDelay + 30;
+                var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cleanDelay, new CleanForensicsDoAfterEvent(), uid, target: args.Target, used: args.Used)
                 {
                     BreakOnHandChange = true,
                     NeedHand = true,
                     BreakOnDamage = true,
                     BreakOnTargetMove = true,
                     MovementThreshold = 0.01f,
-                    DistanceThreshold = forensicsComp.CleanDistance,
+                    DistanceThreshold = 1.5f,
                 };
 
                 _doAfterSystem.TryStartDoAfter(doAfterArgs);
@@ -139,11 +176,15 @@ namespace Content.Server.Forensics
             if (args.Handled || args.Cancelled || args.Args.Target == null)
                 return;
 
+            if (TryComp<ScentComponent>(args.Target, out var scentComp))
+                scentComp.Scent = GenerateFingerprint(length: 5);
+
             if (!TryComp<ForensicsComponent>(args.Target, out var targetComp))
                 return;
 
             targetComp.Fibers = new();
             targetComp.Fingerprints = new();
+            targetComp.Scent = String.Empty;
 
             if (targetComp.CanDnaBeCleaned)
                 targetComp.DNAs = new();
@@ -197,6 +238,16 @@ namespace Content.Server.Forensics
             }
             if (TryComp<FingerprintComponent>(user, out var fingerprint))
                 component.Fingerprints.Add(fingerprint.Fingerprint ?? "");
+        }
+
+        private void ApplyScent(EntityUid user, EntityUid target)
+        {
+            if (HasComp<ScentComponent>(target))
+                return;
+
+            var component = EnsureComp<ForensicsComponent>(target);
+            if (TryComp<ScentComponent>(user, out var scent))
+                component.Scent = scent.Scent;
         }
 
         private void OnTransferDnaEvent(EntityUid uid, DnaComponent component, ref TransferDnaEvent args)

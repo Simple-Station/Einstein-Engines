@@ -12,6 +12,9 @@ namespace Content.Server.Forensics
         [DataField("dnas")]
         public HashSet<string> DNAs = new();
 
+        [DataField("scent")]
+        public string Scent = String.Empty;
+
         [DataField("residues")]
         public HashSet<string> Residues = new();
 
