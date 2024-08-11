@@ -34,6 +34,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    LaughEvil:
+      path: /Audio/Effects/Emotes/cackle.ogg
 
 - type: emoteSounds
   id: FemaleHuman
