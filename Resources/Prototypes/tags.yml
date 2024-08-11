@@ -603,6 +603,9 @@
   id: DrinkCan
 
 - type: Tag
+  id: DrinkCup
+
+- type: Tag
   id: DrinkGlass
 
 - type: Tag
