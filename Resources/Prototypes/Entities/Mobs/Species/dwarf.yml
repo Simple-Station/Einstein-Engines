@@ -58,6 +58,8 @@
     understands:
     - GalacticCommon
     - SolCommon
+  - type: LightweightDrunk
+    boozeStrengthMultiplier: 0.5
 
 - type: entity
   parent: BaseSpeciesDummy
