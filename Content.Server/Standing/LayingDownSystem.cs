@@ -48,7 +48,7 @@ public sealed class LayingDownSystem : EntitySystem
         if (TryComp<StandingStateComponent>(uid, out var standingState) && standingState.Standing)
             return;
 
-        args.ModifySpeed(component.DownedSpeedMultiplier, component.DownedSpeedMultiplier);
+        args.ModifySpeed(component.DownedSpeedMultiplier, component.DownedSpeedMultiplier, bypassImmunity: true);
     }
 
     private void OnParentChanged(EntityUid uid, LayingDownComponent component, EntParentChangedMessage args)

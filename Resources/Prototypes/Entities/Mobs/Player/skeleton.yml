@@ -3,12 +3,7 @@
   parent: BaseMobSkeletonPerson
   id: MobSkeletonPerson
   components:
-  - type: InteractionPopup
-    successChance: 1
-    interactSuccessString: hugging-success-generic
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
-  - type: PotentialPsionic #Nyano - Summary: makes potentially psionic. 
+  - type: PotentialPsionic #Nyano - Summary: makes potentially psionic.
 
 - type: entity
   name: skeleton pirate

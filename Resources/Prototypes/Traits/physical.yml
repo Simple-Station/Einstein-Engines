@@ -1,0 +1,208 @@
+- type: trait
+  id: WillToLive
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - WillToDie
+  components:
+    - type: DeadModifier
+      deadThresholdModifier: 10
+
+- type: trait
+  id: WillToDie
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - WillToLive
+  components:
+    - type: DeadModifier
+      deadThresholdModifier: -15
+
+- type: trait
+  id: Tenacity
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - GlassJaw
+  components:
+    - type: CritModifier
+      critThresholdModifier: 5
+
+- type: trait
+  id: GlassJaw
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Tenacity
+  components:
+    - type: CritModifier
+      critThresholdModifier: -10
+
+- type: trait
+  id: Vigor
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Lethargy
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
+  components:
+    - type: StaminaCritModifier
+      critThresholdModifier: 10
+
+- type: trait
+  id: Lethargy
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Vigor
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+  components:
+    - type: StaminaCritModifier
+      critThresholdModifier: -15
+
+- type: trait
+  id: HighAdrenaline
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - AdrenalDysfunction
+  components:
+    - type: Adrenaline
+      rangeModifier: 0.4
+      inverse: true
+
+- type: trait
+  id: AdrenalDysfunction
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighAdrenaline
+  components:
+    - type: Adrenaline
+      rangeModifier: 0.8
+
+- type: trait
+  id: Masochism
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowPainTolerance
+  components:
+    - type: PainTolerance
+      rangeModifier: 0.4
+      inverse: true
+
+- type: trait
+  id: LowPainTolerance
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Masochism
+  components:
+    - type: PainTolerance
+      rangeModifier: 0.6
+
+- type: trait
+  id: MartialArtist
+  category: Physical
+  points: -2
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - Borg
+      - MedicalBorg
+      - Boxer
+  components:
+    - type: Boxer
+      modifiers:
+        coefficients:
+          Blunt: 1.5
+          Slash: 1.5
+          Piercing: 1.5
