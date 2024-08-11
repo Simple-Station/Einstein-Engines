@@ -1,0 +1,62 @@
+- type: trait
+  id: Swashbuckler
+  category: Physical
+  points: -1
+  components:
+  - type: OniDamageModifier
+    modifiers:
+      coefficients:
+        Blunt: 1.2
+        Slash: 1.35
+        Piercing: 1.2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Oni
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Spearmaster
+        - WeaponsGeneralist
+
+- type: trait
+  id: Spearmaster
+  category: Physical
+  points: -1
+  components:
+  - type: OniDamageModifier
+    modifiers:
+      coefficients:
+        Blunt: 1.2
+        Slash: 1.2
+        Piercing: 1.35
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Oni
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Swashbuckler
+        - WeaponsGeneralist
+
+- type: trait
+  id: WeaponsGeneralist
+  category: Physical
+  points: -1
+  components:
+  - type: OniDamageModifier
+    modifiers:
+      coefficients:
+        Blunt: 1.25
+        Slash: 1.25
+        Piercing: 1.25
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Oni
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Swashbuckler
+        - Spearmaster

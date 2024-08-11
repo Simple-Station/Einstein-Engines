@@ -8,9 +8,17 @@
     sprite: Objects/Specific/Janitorial/mop.rsi
     state: mop
   - type: MeleeWeapon
+    range: 1.85
     damage:
       types:
-        Blunt: 10
+        Blunt: 2
+    bluntStaminaDamageFactor: 3
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 1.25
+    heavyStaminaCost: 10
+    maxTargets: 2
+    angle: 180
     soundHit:
       collection: MetalThud
   - type: Spillable
@@ -48,9 +56,17 @@
       sprite: Objects/Specific/Janitorial/advmop.rsi
       state: advmop
     - type: MeleeWeapon
+      range: 1.85
       damage:
         types:
-          Blunt: 10
+          Blunt: 2
+      bluntStaminaDamageFactor: 3
+      heavyRateModifier: 0.8
+      heavyRangeModifier: 1.25
+      heavyDamageBaseModifier: 1.25
+      heavyStaminaCost: 10
+      maxTargets: 2
+      angle: 180
       soundHit:
          collection: MetalThud
     - type: Spillable

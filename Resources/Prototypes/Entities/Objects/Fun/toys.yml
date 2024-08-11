@@ -628,6 +628,16 @@
   - type: Sprite
     sprite: Objects/Fun/ducky.rsi
     state: icon
+  - type: MeleeWeapon
+    attackRate: 1.5
+    range: 1.3
+    damage:
+      types:
+        Blunt: 0.1
+    heavyDamageBaseModifier: 2
+    heavyStaminaCost: 5
+    maxTargets: 8
+    angle: 25
   - type: Clothing
     quickEquip: false
     sprite: Objects/Fun/ducky.rsi

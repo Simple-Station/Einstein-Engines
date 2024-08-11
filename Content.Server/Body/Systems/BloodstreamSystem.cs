@@ -120,12 +120,15 @@ public sealed class BloodstreamSystem : EntitySystem
 
             // Removes blood for Blood Deficiency constantly.
             if (bloodstream.HasBloodDeficiency)
+            {
                 if (!_mobStateSystem.IsDead(uid))
                     RemoveBlood(uid, bloodstream.BloodDeficiencyLossAmount, bloodstream);
+            }
             // Adds blood to their blood level if it is below the maximum.
-            else if (bloodSolution.Volume < bloodSolution.MaxVolume)
-                if (!_mobStateSystem.IsDead(uid))
-                    TryModifyBloodLevel(uid, bloodstream.BloodRefreshAmount, bloodstream);
+            else if (bloodSolution.Volume < bloodSolution.MaxVolume && !_mobStateSystem.IsDead(uid))
+            {
+                TryModifyBloodLevel(uid, bloodstream.BloodRefreshAmount, bloodstream);
+            }
 
             // Removes blood from the bloodstream based on bleed amount (bleed rate)
             // as well as stop their bleeding to a certain extent.
