@@ -5218,3 +5218,9 @@ Entries:
       message: Added `HidesBeard` tag
   id: 6251
   time: '2024-08-10T21:36:49.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: The maximum trait limit has increased from 5 traits to 10 traits.
+  id: 6252
+  time: '2024-08-11T02:08:37.0000000+00:00'
