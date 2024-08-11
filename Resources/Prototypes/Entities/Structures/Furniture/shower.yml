@@ -21,6 +21,7 @@
     - type: Shower
     - type: Physics
       bodyType: Static
+      canCollide: false
     - type: InteractionOutline
     - type: Damageable
     - type: Construction
