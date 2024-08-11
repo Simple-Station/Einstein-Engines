@@ -4,9 +4,12 @@
   description: A shower, complete with bluespace water.
   placement:
     mode: SnapgridCenter
+    snap:
+    - Wallmount
   components:
     - type: Sprite
       sprite: Structures/Furniture/shower.rsi
+      drawdepth: WallMountedItems
       layers:
       - state: shower
         map: ["enabled", "enum.ShowerVisualState.Off" ]
@@ -39,3 +42,4 @@
           ShowerVisualState.Off:
             On: { state: shower_on }
             Off: { state: shower }
+

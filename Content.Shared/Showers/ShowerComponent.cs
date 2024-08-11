@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -15,7 +16,16 @@ namespace Content.Shared.Showers
         [DataField, AutoNetworkedField]
         public bool ToggleShower;
 
+        [DataField("enableShowerSound")]
+        public SoundSpecifier EnableShowerSound = new SoundPathSpecifier("/Audio/Ambience/Objects/shower_enable.ogg");
+
+        public EntityUid? PlayingStream;
+
+        [DataField("loopingSound")]
+        public SoundSpecifier LoopingSound = new SoundPathSpecifier("/Audio/Ambience/Objects/shower_running.ogg");
+
     }
+
 
     [Serializable, NetSerializable]
     public enum ShowerVisuals : byte

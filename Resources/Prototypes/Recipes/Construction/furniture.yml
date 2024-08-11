@@ -607,8 +607,9 @@
   icon:
     sprite: Structures/Furniture/shower.rsi
     state: shower
-  objectType: Structure
+    objectType: Structure
   placementMode: SnapgridCenter
+  canRotate: true
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked

@@ -1,5 +1,7 @@
 using Content.Shared.Interaction;
 using Content.Shared.Verbs;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -9,6 +11,7 @@ namespace Content.Shared.Showers
     {
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+        [Dependency] private readonly SharedAudioSystem _audio = default!;
         public override void Initialize()
         {
             base.Initialize();
@@ -53,6 +56,8 @@ namespace Content.Shared.Showers
 
             args.Handled = true;
             ToggleShowerHead(uid, args.User, comp);
+
+            _audio.PlayPvs(comp.EnableShowerSound, uid);
         }
         public void ToggleShowerHead(EntityUid uid, EntityUid? user = null, ShowerComponent? component = null, MetaDataComponent? meta = null)
         {
@@ -68,7 +73,20 @@ namespace Content.Shared.Showers
             if (!Resolve(uid, ref component))
                 return;
 
-            _appearance.SetData(uid, ShowerVisuals.ShowerVisualState, component.ToggleShower ? ShowerVisualState.Off : ShowerVisualState.On);
+            _appearance.SetData(uid, ShowerVisuals.ShowerVisualState, component.ToggleShower ? ShowerVisualState.On : ShowerVisualState.Off);
+
+            if (component.ToggleShower)
+            {
+                if (component.PlayingStream == null)
+                {
+                    component.PlayingStream = _audio.PlayPvs(component.LoopingSound, uid, AudioParams.Default.WithLoop(true).WithMaxDistance(5)).Value.Entity;
+                }
+            }
+            else
+            {
+                component.PlayingStream = _audio.Stop(component.PlayingStream);
+                component.PlayingStream = null;
+            }
         }
     }
 }
