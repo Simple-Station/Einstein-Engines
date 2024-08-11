@@ -79,29 +79,31 @@ namespace Content.Server.Administration
             if (record != null)
                 return new LocatedPlayerData(record.UserId, record.LastSeenAddress, record.HWId, record.LastSeenUserName);
 
-            // If all else fails, ask the auth server.
-            var authServer = _configurationManager.GetCVar(CVars.AuthServer);
-            var requestUri = $"{authServer}api/query/name?name={WebUtility.UrlEncode(playerName)}";
-            using var resp = await _httpClient.GetAsync(requestUri, cancel);
+            // If all else fails, ask the auth server.  [No longer relevant with SSMV auth.]
+            // var authServer = _configurationManager.GetCVar(CVars.AuthServer);
+            // var requestUri = $"{authServer}api/query/name?name={WebUtility.UrlEncode(playerName)}";
+            // using var resp = await _httpClient.GetAsync(requestUri, cancel);
 
-            if (resp.StatusCode == HttpStatusCode.NotFound)
-                return null;
+            // if (resp.StatusCode == HttpStatusCode.NotFound)
+            //     return null;
 
-            if (!resp.IsSuccessStatusCode)
-            {
-                _sawmill.Error("Auth server returned bad response {StatusCode}!", resp.StatusCode);
-                return null;
-            }
+            // if (!resp.IsSuccessStatusCode)
+            // {
+            //     _sawmill.Error("Auth server returned bad response {StatusCode}!", resp.StatusCode);
+            //     return null;
+            // }
 
-            var responseData = await resp.Content.ReadFromJsonAsync<UserDataResponse>(cancellationToken: cancel);
+            // var responseData = await resp.Content.ReadFromJsonAsync<UserDataResponse>(cancellationToken: cancel);
 
-            if (responseData == null)
-            {
-                _sawmill.Error("Auth server returned null response!");
-                return null;
-            }
+            // if (responseData == null)
+            // {
+            //     _sawmill.Error("Auth server returned null response!");
+            //     return null;
+            // }
 
-            return new LocatedPlayerData(new NetUserId(responseData.UserId), null, null, responseData.UserName);
+            // return new LocatedPlayerData(new NetUserId(responseData.UserId), null, null, responseData.UserName);
+
+            return null; // SSMV auth has no centralized username store.
         }
 
         public async Task<LocatedPlayerData?> LookupIdAsync(NetUserId userId, CancellationToken cancel = default)
@@ -119,7 +121,8 @@ namespace Content.Server.Administration
             if (record != null)
                 return new LocatedPlayerData(record.UserId, record.LastSeenAddress, record.HWId, record.LastSeenUserName);
 
-            // If all else fails, ask the auth server.
+            // If all else fails, ask the auth server. [No longer relevant with SSMV auth.]
+            /*
             var authServer = _configurationManager.GetCVar(CVars.AuthServer);
             var requestUri = $"{authServer}api/query/userid?userid={WebUtility.UrlEncode(userId.UserId.ToString())}";
             using var resp = await _httpClient.GetAsync(requestUri, cancel);
@@ -141,7 +144,8 @@ namespace Content.Server.Administration
                 return null;
             }
 
-            return new LocatedPlayerData(new NetUserId(responseData.UserId), null, null, responseData.UserName);
+            return new LocatedPlayerData(new NetUserId(responseData.UserId), null, null, responseData.UserName);*/
+            return null; // SSMV auth has no centralized username store.
         }
 
         public async Task<LocatedPlayerData?> LookupIdByNameOrIdAsync(string playerName, CancellationToken cancel = default)
