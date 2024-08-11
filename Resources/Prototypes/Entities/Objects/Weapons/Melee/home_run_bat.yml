@@ -10,7 +10,13 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 15
+        Blunt: 11
+    bluntStaminaDamageFactor: 2.0
+    heavyRateModifier: 0.5
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 25
+    maxTargets: 2
+    angle: 120
     soundHit:
       collection: ExplosionSmall
   - type: MeleeRequiresWield # You can't hit a home run with one hand, jimbo.
