@@ -124,7 +124,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatFezMantis
-  name: psionic mantis' fez # DeltaV - Rename Forensic Mantis to Psionic Mantis
+  name: mantis' fez
   description: A fine red fez with a gold tassel.
   components:
   - type: Sprite
