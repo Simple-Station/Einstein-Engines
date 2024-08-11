@@ -45,12 +45,19 @@ public sealed class SeedExtractorSystem : EntitySystem
         var amount = (int) _random.NextFloat(seedExtractor.BaseMinSeeds, seedExtractor.BaseMaxSeeds + 1) * seedExtractor.SeedAmountMultiplier;
         var coords = Transform(uid).Coordinates;
 
+        var packetSeed = seed;
+        if (packetSeed.Sentient)
+        {
+            if (!packetSeed.Unique) // clone if necessary before modifying the seed
+                packetSeed = packetSeed.Clone();
+            packetSeed.Sentient = false; // remove Sentient to avoid ghost role spam
+        }
         if (amount > 1)
-            seed.Unique = false;
+            packetSeed.Unique = false;
 
         for (var i = 0; i < amount; i++)
         {
-            _botanySystem.SpawnSeedPacket(seed, coords, args.User);
+            _botanySystem.SpawnSeedPacket(packetSeed, coords, args.User);
         }
     }
 
