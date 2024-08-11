@@ -5163,3 +5163,64 @@ Entries:
         called. 
   id: 6246
   time: '2024-08-10T12:03:12.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add Liquor Lifeline (-3 points), a new positive trait that makes you
+        slowly heal Brute and Burn damage when drunk, healing more the drunker
+        you are. The trait also gives you the benefits of Alcohol Tolerance.
+    - type: Tweak
+      message: >-
+        The cost of the Alcohol Tolerance trait has been reduced from -2 points
+        to -1 point.
+    - type: Add
+      message: Dwarves receive the Liquor Lifeline trait for free.
+  id: 6247
+  time: '2024-08-10T20:59:22.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Being injured now lets you deal up to 20% more damage in melee combat to
+        simulate the adrenaline rush from taking a hit.
+    - type: Add
+      message: >-
+        Taking stamina damage now makes you deal less damage in melee. Up to 25%
+        less for Light Attacks, and 50% less for Power Attacks
+    - type: Add
+      message: >-
+        Wide Swing has been reworked as "Power Attack". Power attacks cost 20
+        stamina(by default) to perform, and their effects can differ from Light
+        attacks on a per-weapon basis. Individual weapons can also have
+        different stamina costs to power attack with.
+  id: 6248
+  time: '2024-08-10T21:30:42.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Remove
+      message: >-
+        Removed the spammable hugging on click. Consider using emotes for this
+        instead.
+  id: 6249
+  time: '2024-08-10T21:34:22.0000000+00:00'
+- author: VMSolidus and Skubman
+  changes:
+    - type: Add
+      message: >-
+        11 new Physical Traits have been added to the game! 6 positive traits,
+        and 5 negative traits.
+  id: 6250
+  time: '2024-08-10T21:36:09.0000000+00:00'
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added `HidesBeard` tag
+  id: 6251
+  time: '2024-08-10T21:36:49.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: The maximum trait limit has increased from 5 traits to 10 traits.
+  id: 6252
+  time: '2024-08-11T02:08:37.0000000+00:00'
