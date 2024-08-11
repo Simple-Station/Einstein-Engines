@@ -89,15 +89,15 @@
   metabolisms:
     Poison:
       effects:
-        - !type:HealthChange
-          damage:
-            types:
-              Poison: 2
-        - !type:ChemVomit
-          conditions:
-          - !type:ReagentThreshold
-            min: 2
-          probability: 0.2
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 2
+        probability: 0.2
 
 - type: reagent
   id: Mold
@@ -349,9 +349,9 @@
         refresh: false
       - !type:ChemRemovePsionic #Nyano - Summary: removes psionics from the user at 20u.
         conditions:
-          - !type:ReagentThreshold
-            reagent: MindbreakerToxin
-            min: 20
+        - !type:ReagentThreshold
+          reagent: MindbreakerToxin
+          min: 20
   # TODO: PROPER hallucinations
 
 - type: reagent
@@ -417,10 +417,10 @@
       - !type:ChemVomit
         probability: 0.04 #Scaled for time, not metabolismrate.
         conditions:
-          - !type:ReagentThreshold
-            min: 3
-          - !type:OrganType
-            type: Animal
+        - !type:ReagentThreshold
+          min: 3
+        - !type:OrganType
+          type: Animal
 
 - type: reagent
   id: Amatoxin
@@ -449,10 +449,10 @@
   metabolisms:
     Poison:
       effects:
-        - !type:HealthChange
-          damage:
-            types:
-              Poison: 2
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
 
 - type: reagent
   id: Romerol
@@ -466,15 +466,15 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:CauseZombieInfection
-          conditions:
-            - !type:ReagentThreshold
-              min: 5
-        - !type:ChemAddMoodlet
-          moodPrototype: RomerolEffect
-          conditions:
-            - !type:ReagentThreshold
-              min: 5
+      - !type:CauseZombieInfection
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: RomerolEffect
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
 
 - type: reagent
   id: UncookedAnimalProteins
@@ -489,9 +489,9 @@
       effects:
       - !type:PopupMessage
         conditions:
-          - !type:OrganType
-            type: Animal
-            shouldHave: false
+        - !type:OrganType
+          type: Animal
+          shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
@@ -499,9 +499,9 @@
       - !type:ChemVomit
         probability: 0.1
         conditions:
-          - !type:OrganType
-            type: Animal
-            shouldHave: false
+        - !type:OrganType
+          type: Animal
+          shouldHave: false
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -559,8 +559,8 @@
       - !type:GenericStatusEffect
         key: Pacified
         component: Pacified
-        refresh: false
         type: Add
+        time: 4
       - !type:ChemAddMoodlet
         moodPrototype: PaxEffect
 
