@@ -16,7 +16,14 @@
     swingLeft: true
     damage:
       types:
-        Slash: 6
+        Slash: 3.5
+        Blunt: 3
+    heavyRateModifier: 1
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 5
+    maxTargets: 5
+    angle: 100
   - type: Item
     sprite: Objects/Tools/Hydroponics/hoe.rsi
 
@@ -34,9 +41,16 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
+    attackRate: 0.8
     damage:
       types:
-        Slash: 7
+        Pierce: 7
+    heavyRateModifier: 0.9
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 5
+    maxTargets: 1
+    angle: 20
   - type: Item
     sprite: Objects/Tools/Hydroponics/clippers.rsi
     storedRotation: -90
@@ -53,9 +67,16 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 135
+    range: 1.85
     damage:
       types:
-        Slash: 10
+        Slash: 7
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 5
+    maxTargets: 1
+    angle: 120
   - type: Item
     size: Normal
   - type: Clothing
@@ -81,10 +102,13 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
+    attackRate: 1.25
+    range: 1.25
     damage:
       types:
-        Slash: 8
-        Piercing: 2
+        Slash: 10
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 5
   - type: Item
     sprite: Objects/Tools/Hydroponics/hatchet.rsi
 
@@ -104,14 +128,19 @@
     wideAnimationRotation: 45
     damage:
       types:
-        Blunt: 8
-        Piercing: 2 # I guess you can stab it into them?
+        Blunt: 6
+        Slash: 2 # I guess you can stab it into them?
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 5
+    angle: 80
     soundHit:
       collection: MetalThud
   - type: Item
     sprite: Objects/Tools/Hydroponics/spade.rsi
   - type: Shovel
-    speedModifier: 0.75 # slower at digging than a full-sized shovel
+    speedModifier: 0.85 # slower at digging than a full-sized shovel
 
 - type: entity
   name: plant bag
