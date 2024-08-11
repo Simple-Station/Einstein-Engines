@@ -1,0 +1,24 @@
+- type: Interaction
+  id: Base
+  abstract: true
+  popup:
+    success: success
+    fail: null
+    popupType: Medium
+    logPopup: true
+    logChannel: Emotes
+
+# Base global interaction
+- type: Interaction
+  id: BaseGlobal
+  parent: Base
+  abstract: true
+  global: true
+
+# Base interaction that involves hands
+- type: Interaction
+  id: BaseHands
+  parent: Base
+  requireHands: true
+  requireCanInteract: true
+  contactInteraction: true
