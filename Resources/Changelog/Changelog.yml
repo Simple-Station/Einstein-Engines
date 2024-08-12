@@ -5244,3 +5244,9 @@ Entries:
       message: Added a variety of Cowboy Hats into loadouts.
   id: 6254
   time: '2024-08-12T02:22:58.0000000+00:00'
+- author: musicmanvr
+  changes:
+    - type: Add
+      message: Added the Home Run Bat for Syndicate operatives. Send your foes flying!
+  id: 6255
+  time: '2024-08-12T16:43:11.0000000+00:00'
