@@ -16,8 +16,23 @@ ent-ClothingHeadHelmetHardsuitSecurity = FPA-83s helmet
     .desc = A bulky helmet deployed with the Baghatur tacsuit. Protects its wearer against ballistics and explosive ordinance, at the cost of some mobility.
 ent-ClothingHeadHelmetHardsuitBrigmedic = FPA-84m helmet
     .desc = A bulky helmet deployed with the Tsagaan tacsuit. Protects its wearer against ballistics and explosive ordinance, at the cost of some mobility.
+ent-ClothingHeadHelmetHardsuitCombatStandard = FPA-85 helmet
+    .desc = A bulky helmet deployed with the Baghatur Mk.II tacsuit.
+    Protects its wearer against ballistics and explosive ordinance, at the cost of some mobility.
+ent-ClothingHeadHelmetHardsuitCombatOfficer = FPA-85s helmet
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatStandard.desc }
+ent-ClothingHeadHelmetHardsuitCombatMedical = FPA-86 helmet
+    .desc = A bulky helmet deployed with the Tsagaan Mk.II tacsuit.
+    Protects its wearer against ballistics and explosive ordinance, at the cost of some mobility.
+ent-ClothingHeadHelmetHardsuitCombatCorpsman = FPA-86m helmet
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatMedical.desc }
 ent-ClothingHeadHelmetHardsuitWarden = FPA-92s helmet
     .desc = A modified riot-control helmet for use with the Sulde tacsuit. Offers better overall protection than standard tacsuits at the expense of mobility.
+ent-ClothingHeadHelmetHardsuitCombatRiot = FPA-93 helmet
+    .desc = A modified riot-control helmet for use with the Sulde Mk.II tacsuit.
+    Offers better overall protection than other models at the expense of mobility.
+ent-ClothingHeadHelmetHardsuitCombatWarden = FPA-93s helmet
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatRiot.desc }
 ent-ClothingHeadHelmetHardsuitCap = NT-42c helmet
     .desc = A special helmet for the Tengri tacsuit, despite its lightweight appearance, it provides good all-around protection to its wearer.
 ent-ClothingHeadHelmetHardsuitEngineeringWhite = HpI-24c helmet
@@ -27,8 +42,15 @@ ent-ClothingHeadHelmetHardsuitMedical = ZhP-25m helmet
     It is primarily made from transparent hard-plastics, providing complete freedom of vision.
 ent-ClothingHeadHelmetHardsuitRd = NT-45e helmet
     .desc = A heavily armored helmet worn over the Sophia hardsuit. It boasts the same near-immunity to explosions, heat and radiation as the suit, but heavily restricts the wearer's mobility.
+ent-ClothingHeadHelmetHardsuitMystagogue = NT-45e helmet
+    .desc = { ent-ClothingHeadHelmetHardsuitRd.desc }
 ent-ClothingHeadHelmetHardsuitSecurityRed = FPA-98s helmet
     .desc = A high quality helmet for the Dayicin tacsuit. It offers better overall protection than standard tacsuits without impacting mobility as much.
+ent-ClothingHeadHelmetHardsuitCombatAdvanced = FPA-99 helmet
+    .desc = A high quality helmet for the Dayicin Mk.II tacsuit.
+    Features a lightweight construction, offering the same protection as a standard tacsuit without impacting mobility as much.
+ent-ClothingHeadHelmetHardsuitCombatHoS = FPA-99s helmet
+    .desc = { ent-ClothingHeadHelmetHardsuitCombatAdvanced.desc }
 ent-ClothingHeadHelmetHardsuitLuxury = HpI-20c helmet
     .desc = A modified helmet for the Minos hardsuit, fashioned after the Logistics Officer's colors. It's been modified for greater mobility at the expense of physical trauma protection.
 ent-ClothingHeadHelmetHardsuitSyndie = CSA-51a helmet
@@ -52,6 +74,12 @@ ent-ClothingHeadHelmetHardsuitPirateEVA = pirate helmet
 ent-ClothingHeadHelmetHardsuitPirateCap = pirate captain's tacsuit helmet
     .desc = A special hardsuit helmet, made for the captain of a pirate ship.
     .suffix = Pirate
+ent-ClothingHeadHelmetHardsuitSyndieReverseEngineered = NTSA-122 helmet
+    .desc = A sturdy, lightweight helmet made by the special adquisitions department of Nanotrasen.
+ent-ClothingHeadHelmetHardsuitJuggernautReverseEngineered = NTSA-126 helmet
+    .desc = A very sturdy helmet made by the special acquisitions department of Nanotrasen, based on the "Juggernaut" tacsuit's design.
+ent-ClothingHeadHelmetHardsuitERTCentcomm = NT-444c helmet
+    .desc = A special tacsuit helmet worn by Central Command Officers.
 ent-ClothingHeadHelmetHardsuitERTLeader = NT-444l helmet
     .desc = A special tacsuit helmet worn by leaders of an emergency response team.
 ent-ClothingHeadHelmetHardsuitERTEngineer = NT-444e helmet

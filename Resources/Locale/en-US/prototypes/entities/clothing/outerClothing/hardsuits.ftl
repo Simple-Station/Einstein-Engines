@@ -24,8 +24,26 @@ ent-ClothingOuterHardsuitSecurity = FPA-83s - "Baghatur" tacsuit
 ent-ClothingOuterHardsuitBrigmedic = FPA-84m - "Tsagaan" tacsuit
     .desc = A sturdy tactical combat hardsuit mass-produced by Five-Points-Armory, used by doctors in the Nanotrasen security force.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels heavy.
+ent-ClothingOuterHardsuitCombatStandard = FPA-85 - "Baghatur Mk.II" tacsuit
+    .desc = A sturdy tactical combat hardsuit mass-produced by Five-Points-Armory.
+    The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels heavy.
+ent-ClothingOuterHardsuitCombatOfficer = FPA-85s - "Baghatur Mk.II" tacsuit
+    .desc = A sturdy tactical combat hardsuit mass-produced by Five-Points-Armory, painted with the colors of station security.
+    The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels heavy.
+ent-ClothingOuterHardsuitCombatMedical = FPA-86 - "Tsagaan Mk.II" tacsuit
+    .desc = A sturdy tactical combat hardsuit mass-produced by Five-Points-Armory.
+    The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels heavy.
+ent-ClothingOuterHardsuitCombatCorpsman = FPA-86m - "Tsagaan Mk.II" tacsuit
+    .desc = A sturdy tactical combat hardsuit mass-produced by Five-Points-Armory, painted with the colors of station security & medical staff.
+    The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels heavy.
 ent-ClothingOuterHardsuitWarden = FPA-92s - "Sulde" tacsuit
     .desc = A specialized tactical combat hardsuit produced by Five-Points-Armory, often used by Wardens in Nanotrasen stations.
+    The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels VERY heavy.
+ent-ClothingOuterHardsuitCombatRiot = FPA-93 - "Sulde Mk.II" tacsuit
+    .desc = A specialized tactical combat hardsuit produced by Five-Points-Armory.
+    The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels VERY heavy.
+ent-ClothingOuterHardsuitCombatWarden = FPA-93s - "Sulde Mk.II" tacsuit
+    .desc = A specialized tactical combat hardsuit produced by Five-Points-Armory, painted with the colors of station security.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels VERY heavy.
 ent-ClothingOuterHardsuitCap = NT-42c - "Tengri" tacsuit
     .desc = A formal, tactical combat hardsuit, made in collaboration by Nanotrasen's R&D department with Five-Points-Armory for station captains.
@@ -39,8 +57,16 @@ ent-ClothingOuterHardsuitMedical = ZhP-25m - "Okuninushi" hardsuit
 ent-ClothingOuterHardsuitRd = NT-45e - "Sophia" research hardsuit
     .desc = The magnum opus of Nanotrasen's R&D division. The labels on this hardsuit claim that its near-immune to explosions, heat and radiation.
     Somehow it also can shrink enough to fit in a bag. It feels VERY heavy.
+ent-ClothingOuterHardsuitMystagogue = NT-45e - "Sophia" research hardsuit
+    .desc = { ent-ClothingOuterHardsuitRd.desc }
 ent-ClothingOuterHardsuitSecurityRed = FPA-98s - "Dayicin" tacsuit
     .desc = A top-of-the-line tactical combat hardsuit  produced by Five-Points-Armory, often purchased for use by Nanotrasen senior security officers.
+    The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels somewhat light.
+ent-ClothingOuterHardsuitCombatAdvanced = FPA-99 - "Dayicin Mk.II" tacsuit
+    .desc = A top-of-the-line tactical combat hardsuit produced by Five-Points-Armory.
+    The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels somewhat light.
+ent-ClothingOuterHardsuitCombatHoS = FPA-99s - "Dayicin Mk.II" tacsuit
+    .desc = A top-of-the-line tactical combat hardsuit produced by Five-Points-Armory, painted with the colors of station security.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels somewhat light.
 ent-ClothingOuterHardsuitLuxury = HpI-20c - "Minos" hardsuit
     .desc = A modified mining hardsuit from Hephaestus Industries, fashioned after the Logistics Officer's colors.
@@ -72,6 +98,14 @@ ent-ClothingOuterHardsuitPirateEVA = pirate vacsuit
 ent-ClothingOuterHardsuitPirateCap = pirate captain's tacsuit
     .desc = An ancient armored tactical combat hardsuit of unknown origin, provides basic protections from the cold harsh realities of deep space and physical trauma.
     It doesn't seem to have any weight either. Perfect for defending against space scurvy and toolbox-wielding scallywags.
+ent-ClothingOuterHardsuitSyndieReverseEngineered = NTSA-122 tacsuit
+    .desc = A suit made by the special adquisitions department of Nanotrasen, the suit's tags indicate it provides moderate protection against most forms of damage.
+ent-ClothingOuterHardsuitJuggernautReverseEngineered = NTSA-126 tacsuit
+    .desc = A suit made by the special acquisitions department of Nanotrasen based on the "Juggernaut" design.
+    Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
+ent-ClothingOuterHardsuitERTCentcomm = NT-444c - "Ophanim" tacsuit
+    .desc = A highly advanced, tactical combat hardsuit used by Central Command Officers, it seems to be branded with the Nanotrasen logo and a strange looking series number.
+    The armor appears to be lined with a very sturdy alloy, it doesn't seem to have any weight either.
 ent-ClothingOuterHardsuitERTLeader = NT-444l - "Michael" tacsuit
     .desc = A highly advanced, tactical combat hardsuit used by Leaders of the Emergency Response Team, it seems to be branded with the Nanotrasen logo and a strange looking series number.
     The armor appears to be lined with a very sturdy alloy, it doesn't seem to have any weight either.
