@@ -26,7 +26,7 @@
   - type: Item
     size: Large
   - type: Tool
-    speedModifier: 0.5 # it's very heavy, it rolls slower than a wooden bat
+    speed: 0.5 # it's very heavy, it rolls slower than a wooden bat
   - type: UseDelay
     delay: 2
   - type: PhysicalComposition
