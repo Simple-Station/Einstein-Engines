@@ -57,6 +57,9 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             return;
 
         _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
+
+        if (damageSpec * component.HeavyDamageBaseModifier != damageSpec)
+            _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
     }
 
     protected override bool ArcRaySuccessful(EntityUid targetUid, Vector2 position, Angle angle, Angle arcWidth, float range, MapId mapId,
@@ -132,7 +135,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (attemptEvent.Cancelled)
             return false;
 
-        var chance = CalculateDisarmChance(user, target, inTargetHand, combatMode) * _contests.MassContest(user, target);
+        var chance = CalculateDisarmChance(user, target, inTargetHand, combatMode);
 
         if (_random.Prob(chance))
         {
@@ -212,7 +215,11 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             chance += malus.Malus;
         }
 
-        return Math.Clamp(chance, 0f, 1f);
+        return Math.Clamp(chance
+                        * _contests.MassContest(disarmer, disarmed, false, 0.5f)
+                        * _contests.StaminaContest(disarmer, disarmed, false, 0.5f)
+                        * _contests.HealthContest(disarmer, disarmed, false, 0.5f),
+                        0f, 1f);
     }
 
     public override void DoLunge(EntityUid user, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, bool predicted = true)

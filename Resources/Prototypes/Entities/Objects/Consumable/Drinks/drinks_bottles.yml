@@ -47,6 +47,15 @@
   components:
   - type: Sprite
     state: icon
+  - type: MeleeWeapon
+    bluntStaminaDamageFactor: 2.0
+    damage:
+      types:
+        Blunt: 7.5
+    heavyRangeModifier: 1.5
+    heavyStaminaCost: 5
+    maxTargets: 1
+    angle: 25
   - type: DamageOnLand
     damage:
       types:
@@ -54,7 +63,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 4
+        Blunt: 5
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible

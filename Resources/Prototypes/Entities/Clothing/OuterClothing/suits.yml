@@ -25,6 +25,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - FullBodyOuter
     - HidesHarpyWings
 
 - type: entity
@@ -38,6 +39,17 @@
     sprite: Clothing/OuterClothing/Suits/janitor_bombsuit.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/janitor_bombsuit.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.15
+  - type: GroupExamine
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+    - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -97,6 +109,7 @@
     - type: GroupExamine
     - type: Tag
       tags:
+        - FullBodyOuter
         - WhitelistChameleon
         - HidesHarpyWings
 
@@ -124,6 +137,7 @@
       toggleable-clothing: !type:ContainerSlot {}
   - type: Tag
     tags:
+      - FullBodyOuter
       - WhitelistChameleon
       - HidesHarpyWings
 
@@ -177,6 +191,9 @@
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBase
@@ -202,6 +219,9 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBase

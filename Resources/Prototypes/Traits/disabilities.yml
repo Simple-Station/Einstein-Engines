@@ -94,3 +94,80 @@
         - MedicalBorg
   components:
     - type: Snoring
+
+- type: trait
+  id: Sluggish
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+        - SnailPaced
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+  components:
+    - type: TraitSpeedModifier
+      sprintModifier: 0.85
+      walkModifier: 0.85
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 1.35
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 1.2
+
+- type: trait
+  id: SnailPaced
+  category: Physical
+  points: 2
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+        - Sluggish
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+  components:
+    - type: TraitSpeedModifier
+      sprintModifier: 0.7
+      walkModifier: 0.7
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 1.66
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 1.6
+
+- type: trait
+  id: BloodDeficiency
+  category: Physical
+  points: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  components:
+    - type: BloodDeficiency  # 0.07 = start taking bloodloss damage at around ~21.4 minutes,
+      bloodLossAmount: 0.07  # then become crit ~10 minutes later
+
+- type: trait
+  id: Hemophilia
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  components:
+    - type: Hemophilia
+      bleedReductionModifier: 0.5
+      damageModifiers:
+        coefficients:
+          Blunt: 1.1
