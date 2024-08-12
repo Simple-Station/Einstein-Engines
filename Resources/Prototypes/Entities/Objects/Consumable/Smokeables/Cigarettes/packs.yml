@@ -180,7 +180,7 @@
 
 - type: entity
   id: CigPackSyndicate
-  parent: CigPackBase
+  parent: [CigPackBase, BaseSyndicateContraband]
   name: Interdyne herbals packet
   description: Premium medicinal cigarettes from the Interdyne Corporation. Not endorsed by the Terra-Gov Surgeon General.
   components:

@@ -1025,7 +1025,7 @@
 #this is where all the syringes are so i didn't know where to put it
 - type: entity
   name: romerol syringe
-  parent: PrefilledSyringe
+  parent: [PrefilledSyringe, BaseSyndicateContraband]
   id: SyringeRomerol
   components:
   - type: SolutionContainerManager
@@ -1038,7 +1038,7 @@
 
 - type: entity
   name: hyperzine syringe
-  parent: PrefilledSyringe
+  parent: [PrefilledSyringe, BaseSyndicateContraband]
   id: SyringeStimulants
   components:
   - type: SolutionContainerManager

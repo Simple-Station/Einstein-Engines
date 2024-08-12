@@ -401,6 +401,12 @@ public sealed partial class CCVars
         CVarDef.Create("game.round_end_pvs_overrides", true, CVar.SERVERONLY);
 
     /// <summary>
+    ///     If true, contraband severity can be viewed in the examine menu
+    /// </summary>
+    public static readonly CVarDef<bool> ContrabandExamine =
+        CVarDef.Create("game.contraband_examine", true, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
     /// Set to true to enable the dynamic hostname system.
     /// Automatically updates the hostname to include current map and preset.
     /// Configure what that looks like for you in Resources/Prototypes/Locale/en-US/dynamichostname/hostname.ftl

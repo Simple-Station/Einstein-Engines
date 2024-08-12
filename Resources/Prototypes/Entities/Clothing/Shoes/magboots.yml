@@ -81,11 +81,11 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase]
+  parent: [ClothingShoesBootsMagBase, BaseEngineeringContraband]
   id: ClothingShoesBootsMag
 
 - type: entity
-  parent: ClothingShoesBootsMag
+  parent: [ClothingShoesBootsMag, BaseGrandTheftContraband]
   id: ClothingShoesBootsMagAdv
   name: advanced magboots
   description: State-of-the-art magnetic boots that do not slow down their wearer.
@@ -125,7 +125,7 @@
     price: 3000
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase, BaseJetpack]
+  parent: [ClothingShoesBootsMagBase, BaseJetpack, BaseSyndicateContraband]
   id: ClothingShoesBootsMagSyndie
   name: blood-red magboots
   description: Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters. It can hold 0.75 L of gas.
