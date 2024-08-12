@@ -234,3 +234,36 @@
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
+
+- type: entity #Fake goggles, the latest in anti-valid hunting technology
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesThermalBudget
+  name: red goggles
+  description: These don't have any real function, but they do look cool!
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/thermal.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/thermal.rsi
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesChemicalBudget
+  name: purple goggles
+  description: These don't have any real function, but they do look cool!
+  components:
+    - type: Sprite
+      sprite: Clothing/Eyes/Glasses/science.rsi
+    - type: Clothing
+      sprite: Clothing/Eyes/Glasses/science.rsi
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesMesonBudget
+  name: green goggles
+  description: These don't have any real function, but they do look cool!
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/meson.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/meson.rsi
