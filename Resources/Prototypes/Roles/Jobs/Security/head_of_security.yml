@@ -15,7 +15,7 @@
       min: 36000 # 10 hours
     - !type:CharacterOverallTimeRequirement
       min: 90000 # DeltaV - 25 hours
-    - !type:WhitelistRequirement # DeltaV - Whitelist requirement
+    - !type:CharacterWhitelistRequirement # DeltaV - Whitelist requirement
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
