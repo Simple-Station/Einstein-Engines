@@ -30,7 +30,7 @@
     HeadTop:
       points: 1
       required: true
-      defaultMarkings: [ OniHornSingleCurved ]
+      defaultMarkings: [ OniHornDoubleCurved ]
     Snout:
       points: 2
       required: false
