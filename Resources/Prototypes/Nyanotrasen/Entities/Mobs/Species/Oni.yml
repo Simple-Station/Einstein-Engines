@@ -6,6 +6,7 @@
   components:
   - type: Speech
     speechSounds: Baritone
+    speechVerb: Oni
   - type: HumanoidAppearance
     species: Oni
   - type: Sprite
