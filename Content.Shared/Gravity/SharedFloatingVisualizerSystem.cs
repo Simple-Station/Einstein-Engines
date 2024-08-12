@@ -16,6 +16,7 @@ public abstract class SharedFloatingVisualizerSystem : EntitySystem
 
         SubscribeLocalEvent<FloatingVisualsComponent, ComponentStartup>(OnComponentStartup);
         SubscribeLocalEvent<GravityChangedEvent>(OnGravityChanged);
+        SubscribeLocalEvent<FlightEvent>(OnFlight);
         SubscribeLocalEvent<FloatingVisualsComponent, EntParentChangedMessage>(OnEntParentChanged);
     }
 
@@ -61,6 +62,15 @@ public abstract class SharedFloatingVisualizerSystem : EntitySystem
                 FloatAnimation(uid, floating.Offset, floating.AnimationKey, floating.AnimationTime);
         }
     }
+
+    private void OnFlight(ref FlightEvent args)
+    {
+            floating.CanFloat = !args.HasGravity;
+            Dirty(uid, floating);
+
+            if (!args.HasGravity)
+                FloatAnimation(uid, floating.Offset, floating.AnimationKey, floating.AnimationTime);
+    } 
 
     private void OnEntParentChanged(EntityUid uid, FloatingVisualsComponent component, ref EntParentChangedMessage args)
     {

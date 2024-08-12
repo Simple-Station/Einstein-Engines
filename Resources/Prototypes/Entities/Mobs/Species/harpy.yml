@@ -6,6 +6,7 @@
   abstract: true
   components:
   - type: HarpySinger
+  - type: Flight
   - type: Instrument
     allowPercussion: false
     program: 52
@@ -218,3 +219,15 @@
     icon: DeltaV/Interface/Actions/harpy_syrinx.png
     itemIconStyle: BigAction
     event: !type:VoiceMaskSetNameEvent
+
+- type: entity
+  id: ActionToggleFlight
+  name: Fly
+  description: Make use of your wings to fly. Beat the flightless bird allegations.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    icon: { sprite: Interface/Actions/actions_mecha.rsi, state: mech_thrusters_off }
+    iconOn: { sprite : Interface/Actions/actions_mecha.rsi, state: mech_thrusters_on }
+    event: !type:ToggleFlightEvent
