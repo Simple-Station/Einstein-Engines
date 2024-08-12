@@ -293,7 +293,6 @@
          - Security
          - Medical
          - Engineering
-         - Epistemics
     - !type:CharacterJobRequirement
        inverted: true
        jobs:
@@ -469,6 +468,20 @@
          - Brigmedic
 
 #Misc Items
+- type: loadout
+  id: LoadoutItemFlash
+  category: Items
+  cost: 1
+  items:
+    - Flash
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Security
+    - !type:CharacterJobRequirement
+       jobs:
+         - Brigmedic
+
 - type: loadout
   id: LoadoutItemPAI
   category: Items
