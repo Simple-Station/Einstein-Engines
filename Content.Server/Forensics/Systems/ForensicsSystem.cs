@@ -275,6 +275,23 @@ namespace Content.Server.Forensics
             }
         }
 
+        /// <summary>
+        /// Get the Scent of a entity, if generating a scent, this will be prioritized.
+        /// </summary>
+        /// <param name="uid">The entity to get the scent</param>
+        public string GetScent(EntityUid uid)
+        {
+            var scent = string.Empty;
+
+            if (TryComp<ForensicsComponent>(uid, out var forensicsComp))
+                scent = forensicsComp.Scent;
+
+            if (TryComp<ScentComponent>(uid, out var scentComp))
+                scent = scentComp.Scent;
+
+            return scent;
+        }
+
         #endregion
     }
 }
