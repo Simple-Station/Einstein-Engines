@@ -14,7 +14,8 @@ public abstract partial class InteractionRequirement
 }
 
 // <inheritdoc />
-public abstract class InvertableInteractionRequirement : InteractionRequirement
+[Serializable, NetSerializable]
+public abstract partial class InvertableInteractionRequirement : InteractionRequirement
 {
     [DataField] public bool Inverted = false;
 }

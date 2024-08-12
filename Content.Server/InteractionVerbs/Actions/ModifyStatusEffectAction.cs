@@ -28,7 +28,7 @@ public sealed partial class ModifyStatusEffectAction : InteractionVerbAction
         if (!statusEffects.CanApplyEffect(target, Effect))
             return false;
 
-        return !EnsureEffect || TimeAdded >= TimeSpan.Zero || statusEffects.HasStatusEffect(target, Effect));
+        return !EnsureEffect || TimeAdded >= TimeSpan.Zero || statusEffects.HasStatusEffect(target, Effect);
     }
 
     public override void Perform(EntityUid user, EntityUid target, InteractionVerbPrototype proto, VerbDependencies deps)

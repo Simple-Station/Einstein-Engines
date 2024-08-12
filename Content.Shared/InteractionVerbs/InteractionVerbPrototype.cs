@@ -68,14 +68,14 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public InteractionVerbAction? Action;
 
     /// <summary>
-    ///     If true, this action will be hidden if the <see cref="Requirement"/> does not pass its IsMet check. Otherwise it will be disabled.
+    ///     If true, this action will be hidden if the <see cref="Requirement"/> does not pass its IsMet check. Otherwise it will be shown, but disabled.
     /// </summary>
     /// <remarks>I apologize, I could not come up with a better name.</remarks>
     [DataField]
     public bool HideByRequirement = false;
 
     /// <summary>
-    ///     If true, this action will be hidden if the <see cref="Action"/> does not pass its IsAllowed check. Otherwise it will be disabled.
+    ///     If true, this action will be hidden if the <see cref="Action"/> does not pass its IsAllowed check. Otherwise it will be shown, but disabled.
     /// </summary>
     [DataField]
     public bool HideWhenInvalid = true;
