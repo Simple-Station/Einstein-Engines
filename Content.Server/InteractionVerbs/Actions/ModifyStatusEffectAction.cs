@@ -1,10 +1,12 @@
 using Content.Shared.InteractionVerbs;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Server.InteractionVerbs.Actions;
 
-public sealed partial class ModifyStatusEffectAction : InteractionVerbAction
+[Serializable]
+public sealed partial class ModifyStatusEffectAction : InteractionAction
 {
     [DataField(required: true)]
     public ProtoId<StatusEffectPrototype> Effect;

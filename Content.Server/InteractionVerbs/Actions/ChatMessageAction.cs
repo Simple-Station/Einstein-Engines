@@ -2,6 +2,7 @@ using Content.Server.Chat.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Chat;
 using Content.Shared.InteractionVerbs;
+using Robust.Shared.Serialization;
 
 namespace Content.Server.InteractionVerbs.Actions;
 
@@ -13,7 +14,8 @@ namespace Content.Server.InteractionVerbs.Actions;
 ///
 ///     Similarly to interaction verb locales, {$user} and {$target} arguments are passed to the locales retrieved by this action.
 /// </summary>
-public sealed partial class ChatMessageAction : InteractionVerbAction
+[Serializable]
+public sealed partial class ChatMessageAction : InteractionAction
 {
     [DataField]
     public string MessageLocPrefix = "message";

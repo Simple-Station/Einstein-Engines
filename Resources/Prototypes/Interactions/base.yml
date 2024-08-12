@@ -23,6 +23,8 @@
   requireHands: true
   requireCanInteract: true
   contactInteraction: true
+  range:
+    max: 2
 
 # Base interaction that shows a popup when failed. The popup is not shown to others by default.
 - type: Interaction

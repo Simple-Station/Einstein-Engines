@@ -2,10 +2,12 @@ using Content.Server.Bed.Sleep;
 using Content.Shared.Actions;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.InteractionVerbs;
+using Robust.Shared.Serialization;
 
 namespace Content.Server.InteractionVerbs.Actions;
 
-public sealed partial class WakeUpAction : InteractionVerbAction
+[Serializable]
+public sealed partial class WakeUpAction : InteractionAction
 {
     public override bool IsAllowed(EntityUid user, EntityUid target, InteractionVerbPrototype proto, bool canAccess, bool canInteract, VerbDependencies deps)
     {

@@ -1,4 +1,5 @@
 using Content.Shared.DoAfter;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.InteractionVerbs.Events;
@@ -7,9 +8,9 @@ namespace Content.Shared.InteractionVerbs.Events;
 public sealed partial class InteractionVerbDoAfterEvent : SimpleDoAfterEvent
 {
     [DataField]
-    public InteractionVerbPrototype VerbPrototype;
+    public ProtoId<InteractionVerbPrototype> VerbPrototype;
 
-    public InteractionVerbDoAfterEvent(InteractionVerbPrototype verbPrototype)
+    public InteractionVerbDoAfterEvent(ProtoId<InteractionVerbPrototype> verbPrototype)
     {
         VerbPrototype = verbPrototype;
     }

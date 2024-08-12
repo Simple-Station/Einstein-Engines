@@ -1,15 +1,17 @@
 using System.Linq;
 using Content.Shared.InteractionVerbs;
+using Robust.Shared.Serialization;
 
 namespace Content.Server.InteractionVerbs.Actions;
 
 /// <summary>
 ///     An action that combines multiple other actions.
 /// </summary>
-public sealed partial class ComplexAction : InteractionVerbAction
+[Serializable]
+public sealed partial class ComplexAction : InteractionAction
 {
     [DataField]
-    public List<InteractionVerbAction> Actions = new();
+    public List<InteractionAction> Actions = new();
 
     /// <summary>
     ///     If true, all actions must pass the IsAllowed and CanPerform checks (boolean and). Otherwise, at least one must pass (boolean or).

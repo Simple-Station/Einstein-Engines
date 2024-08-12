@@ -4,7 +4,7 @@
   abstract: true
   allowSelfInteract: true
   requirement:
-  - !type:SelfInteractionRequirement
+  - !type:SelfTargetRequirement
   failPopup:
     others: null
 
@@ -19,8 +19,10 @@
       damage:
         types: {Blunt: 5}
     # 45% chance to cause yelp
-    - !type:ChanceAction
-      chance: 0.45
-      action:
+    - !type:ConditionalAction
+      condition:
+        !type:ChanceRequirement
+        chance: 0.45
+      true:
       - !type:ChatMessageAction
         numMessages: 3

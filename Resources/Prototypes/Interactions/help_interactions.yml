@@ -3,9 +3,11 @@
   id: HelpingUp
   parent: [BaseGlobal, BaseHands, BaseDelayedPopup]
   priority: -5
+  range: {max: 1.2}
   delay: 1.5
   finishPopup:
     fail: fail
+  hideByRequirement: true
   requirement:
     !type:StandingStateRequirement
     allowLaying: true
@@ -25,12 +27,14 @@
   id: ForceDown
   parent: [BaseGlobal, BaseHands, BaseDelayedPopup]
   priority: -5
+  range: {max: 1.2}
   delay: 1.5
   delayedPopup:
     popupType: SmallCaution
   finishPopup:
     fail: fail
     popupType: SmallCaution
+  hideByRequirement: true
   requirement:
     !type:StandingStateRequirement
     allowStanding: true

@@ -3,6 +3,7 @@ using Content.Shared.DoAfter;using Content.Shared.InteractionVerbs;
 using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -13,12 +14,13 @@ namespace Content.Shared.InteractionVerbs;
 
 public abstract class SharedInteractionVerbsSystem : EntitySystem
 {
-    private readonly InteractionVerbAction.VerbDependencies _verbDependencies = new();
+    private readonly InteractionAction.VerbDependencies _verbDependencies = new();
     private List<InteractionVerbPrototype> _globalPrototypes = default!;
 
     [Dependency] private readonly SharedDoAfterSystem _doAfters = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
@@ -68,10 +70,10 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
     private void OnDoAfterFinished(InteractionVerbDoAfterEvent ev)
     {
-        if (ev.Cancelled || ev.Handled)
+        if (ev.Cancelled || ev.Handled || !_protoMan.TryIndex(ev.VerbPrototype, out var proto))
             return;
 
-        PerformVerb(ev.VerbPrototype, ev.User, ev.Target!.Value);
+        PerformVerb(proto, ev.User, ev.Target!.Value);
         ev.Handled = true;
     }
 
@@ -114,7 +116,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             NeedHand = proto.RequiresHands,
             Delay = proto.Delay,
             RequireCanInteract = proto.RequiresCanInteract,
-            Event = new InteractionVerbDoAfterEvent(proto)
+            Event = new InteractionVerbDoAfterEvent(proto.ID)
         };
 
         var isSuccess = _doAfters.TryStartDoAfter(doAfter);
@@ -130,6 +132,9 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     /// </summary>
     public void PerformVerb(InteractionVerbPrototype proto, EntityUid user, EntityUid target, bool force = false)
     {
+        if (_net.IsClient)
+            return; // guh
+
         if (!proto.Action!.CanPerform(user, target, false, proto, _verbDependencies) && !force)
         {
             ShowVerbPopups(proto.FailurePopup, proto, user, target);
@@ -152,14 +157,15 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             DebugTools.AssertNotEqual(proto.Abstract, true, "Attempted to add a verb with an abstract prototype.");
 
             var name = proto.Name;
-            if (proto.RequiresHands && args.Hands is null
-                || proto.RequiresCanInteract && !args.CanInteract
-                || !proto.AllowSelfInteract && args.User == args.Target
+            if (!proto.AllowSelfInteract && args.User == args.Target
                 || args.Verbs.Any(v => v.Text == name)
                 || !Transform(args.User).Coordinates.TryDistance(EntityManager, Transform(args.Target).Coordinates, out var distance)
-                || !proto.Range.IsInRange(distance)
             )
                 continue;
+
+            var isInvalid = proto.RequiresHands && args.Hands is null
+                || proto.RequiresCanInteract && !args.CanInteract
+                || !proto.Range.IsInRange(distance);
 
             var isRequirementMet = proto.Requirement?.IsMet(args.User, args.Target, proto, args.CanAccess, args.CanInteract, _verbDependencies) != false;
             if (!isRequirementMet && proto.HideByRequirement)
@@ -171,7 +177,10 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
             var verb = factory.Invoke();
             CopyVerbData(proto, verb, args.User, args.Target);
-            verb.Disabled = !isRequirementMet || !isAllowed;
+
+            verb.Disabled = isInvalid || !isRequirementMet || !isAllowed;
+            if (verb.Disabled)
+                verb.Act = null;
 
             args.Verbs.Add(verb);
         }
@@ -190,7 +199,8 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
     private void ShowVerbPopups(PopupSpecifier? specifier, InteractionVerbPrototype proto, EntityUid user, EntityUid target)
     {
-        if (specifier is not { } popup)
+        // Not showing popups on client because it causes issues.
+        if (specifier is not { } popup || _net.IsClient)
             return;
 
         var locPrefix = $"interaction-{proto.ID}-{popup.PopupPrefix}";

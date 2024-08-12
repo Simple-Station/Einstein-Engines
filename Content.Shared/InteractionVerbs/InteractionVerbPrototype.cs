@@ -58,14 +58,14 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     ///     The requirement of this verb.
     /// </summary>
     [DataField]
-    public InteractionRequirement? Requirement;
+    public InteractionRequirement? Requirement = null;
 
     /// <summary>
     ///     The action of this verb. It defines the conditions under which this verb is shown, as well as what the verb does.
     /// </summary>
     /// <remarks>Made server-only because many actions require authoritative access to the server.</remarks>
     [DataField(serverOnly: true)]
-    public InteractionVerbAction? Action;
+    public InteractionAction? Action = null;
 
     /// <summary>
     ///     If true, this action will be hidden if the <see cref="Requirement"/> does not pass its IsMet check. Otherwise it will be shown, but disabled.
@@ -99,7 +99,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
         BreakOnWeightlessMove = true,
         RequireCanInteract = false,
         // Never used, but must be present because the field is non-nullable and will error if not set.
-        Event = new InteractionVerbDoAfterEvent(null!)
+        Event = new InteractionVerbDoAfterEvent(default)
     };
 
     [DataField]
@@ -115,7 +115,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public bool RequiresHands = false;
 
     [DataField]
-    public bool RequiresCanInteract = false;
+    public bool RequiresCanInteract = true;
 
     /// <summary>
     ///     If true, this verb can be invoked by the user on itself.

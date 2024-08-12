@@ -1,9 +1,11 @@
 using Content.Shared.InteractionVerbs;
 using Content.Shared.Standing;
+using Robust.Shared.Serialization;
 
 namespace Content.Server.InteractionVerbs.Actions;
 
-public sealed partial class ChangeStandingStateAction : InteractionVerbAction
+[Serializable]
+public sealed partial class ChangeStandingStateAction : InteractionAction
 {
     [DataField]
     public bool MakeStanding, MakeLaying;
@@ -13,7 +15,7 @@ public sealed partial class ChangeStandingStateAction : InteractionVerbAction
         if (!deps.EntMan.TryGetComponent<StandingStateComponent>(target, out var state))
             return false;
 
-        return state.Standing ? MakeStanding : MakeLaying;
+        return state.Standing ? MakeLaying : MakeStanding;
     }
 
     public override void Perform(EntityUid user, EntityUid target, InteractionVerbPrototype proto, VerbDependencies deps)
