@@ -1,18 +1,18 @@
 - type: entity
   id: ElectricalDisruptionKit
-  parent: BoxCardboard
+  parent: [BoxCardboard, BaseSyndicateContraband]
   name: electrical disruption kit
   suffix: Filled
   components:
-    - type: StorageFill
-      contents:
-        - id: EmpGrenade
-          amount: 3
-        - id: EmpImplanter
-          amount: 1
+  - type: StorageFill
+    contents:
+    - id: EmpGrenade
+      amount: 3
+    - id: EmpImplanter
+      amount: 1
 
 - type: entity
-  parent: BoxVial
+  parent: [BoxVial, BaseSyndicateContraband]
   id: ChemicalSynthesisKit
   name: chemical synthesis kit
   description: A starter kit for the aspiring chemist, includes toxin and vestine for all your criminal needs!
@@ -22,19 +22,19 @@
     - 0,0,3,2
   - type: StorageFill
     contents:
-      - id: Beaker
-        amount: 2
-      - id: Dropper
-      # It would be cool to have special "syndicate" chemical analysis goggles
-      - id: ClothingEyesGlassesChemical
-      - id: VestineChemistryVial
-        amount: 2
-      - id: BaseChemistryEmptyVial
-      - id: SyringeStimulants
+    - id: Beaker
+      amount: 2
+    - id: Dropper
+    # It would be cool to have special "syndicate" chemical analysis goggles
+    - id: ClothingEyesGlassesChemical
+    - id: VestineChemistryVial
+      amount: 2
+    - id: BaseChemistryEmptyVial
+    - id: SyringeStimulants
 
 - type: entity
   id: Observationskit
-  parent: BoxCardboard
+  parent: [BoxCardboard, BaseSyndicateContraband]
   name: observations kit
   suffix: Filled
   components:
@@ -48,7 +48,7 @@
       amount: 1
 
 - type: entity
-  parent: BoxCardboard
+  parent: [BoxCardboard, BaseSyndicateContraband]
   id: ThrowingKnivesKit
   name: throwing knives kit
   description: A set of 4 syndicate branded throwing knives, perfect for embedding into the body of your victims.
@@ -67,7 +67,7 @@
 
 - type: entity
   name: deathrattle implant box
-  parent: BoxCardboard
+  parent: [BoxCardboard, BaseSyndicateContraband]
   id: BoxDeathRattleImplants
   description: Six deathrattle implants for the whole squad.
   components:
@@ -80,11 +80,11 @@
     - 0,0,5,3
   - type: StorageFill
     contents:
-      - id: DeathRattleImplanter
-        amount: 6
+    - id: DeathRattleImplanter
+      amount: 6
 
 - type: entity
-  parent: BoxCardboard
+  parent: [BoxCardboard, BaseSyndicateContraband]
   id: CombatBakeryKit
   name: combat bakery kit
   description: A kit of clandestine baked weapons.

@@ -30,7 +30,7 @@
 
 #Atmospherics Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot]
+  parent: [ClothingOuterHardsuitBase, BaseEngineeringContraband, BaseIntegratedMagboot]
   id: ClothingOuterHardsuitAtmos
   name: atmos hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
@@ -72,7 +72,7 @@
 
 #Engineering Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot]
+  parent: [ClothingOuterHardsuitBase, BaseEngineeringContraband, BaseIntegratedMagboot]
   id: ClothingOuterHardsuitEngineeringUnpainted
   name: engineering hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
@@ -135,7 +135,7 @@
 
 #Spationaut Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot]
+  parent: [ClothingOuterHardsuitBase, BaseCargoContraband, BaseIntegratedMagboot]
   id: ClothingOuterHardsuitSpatio
   name: spationaut hardsuit
   description: A lightweight hardsuit designed for industrial EVA in zero gravity.
@@ -166,7 +166,7 @@
 
 #Salvage Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot]
+  parent: [ClothingOuterHardsuitBase, BaseEngineeringContraband, BaseIntegratedMagboot]
   id: ClothingOuterHardsuitSalvage
   name: mining hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
@@ -232,7 +232,7 @@
 
 
 - type: entity
-  parent: [ClothingOuterHardsuitBaseMedium, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitBaseMedium, BaseCargoContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitMaxim
   name: salvager maxim hardsuit
   description: Fire. Heat. These things forge great weapons, they also forge great salvagers.
@@ -268,7 +268,7 @@
 
 #Security Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBaseMedium
+  parent: [ClothingOuterHardsuitBaseMedium, BaseEngineeringContraband]
   id: ClothingOuterHardsuitSecurity
   name: security hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
@@ -301,7 +301,7 @@
 
 #Brigmedic Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBaseMedium
+  parent: [ClothingOuterHardsuitBaseMedium, BaseRestrictedContraband]
   id: ClothingOuterHardsuitBrigmedic
   name: corpsman hardsuit # DeltaV - rename brigmedic to corpsman
   description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit. # I will fix the rest of this entry later when I resprite sec suits
@@ -336,7 +336,7 @@
 
 #Warden's Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBaseHeavy
+  parent: [ClothingOuterHardsuitBaseHeavy, BaseRestrictedContraband]
   id: ClothingOuterHardsuitWarden
   name: warden's hardsuit
   description: A specialized riot suit geared to combat low pressure environments.
@@ -369,7 +369,7 @@
 
 #Captain's Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBaseMedium, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitBaseMedium, BaseCommandContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitCap
   name: captain's armored spacesuit
   description: A formal armored spacesuit, made for the station's captain.
@@ -405,7 +405,7 @@
 
 #Chief Engineer's Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBaseMedium, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitBaseMedium, BaseCommandContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitEngineeringWhite
   name: chief engineer's hardsuit
   description: A special hardsuit that protects against hazardous, low pressure environments, made for the chief engineer of the station.
@@ -453,7 +453,7 @@
 
 #Chief Medical Officer's Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitBase, BaseCommandContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitMedical
   name: chief medical officer's hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Built with lightweight materials for easier movement.
@@ -480,7 +480,7 @@
 
 #Research Director's Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBaseHeavy
+  parent: [ClothingOuterHardsuitBaseHeavy, BaseGrandTheftContraband]
   id: ClothingOuterHardsuitRd
   name: experimental research hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
@@ -528,7 +528,7 @@
 
 #Head of Security's Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitSecurity
+  parent: [ClothingOuterHardsuitSecurity, BaseCommandContraband]
   id: ClothingOuterHardsuitSecurityRed
   name: head of security's hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
@@ -596,7 +596,7 @@
 #ANTAG HARDSUITS
 #Blood-red Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitSyndie
+  parent: [ClothingOuterHardsuitSyndie, BaseSyndicateContraband]
   id: ClothingOuterHardsuitShanlinUnpainted
   name: Cybersun tacsuit
   description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
@@ -614,7 +614,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitShanlinUnpainted
 
 - type: entity
-  parent: [ClothingOuterHardsuitBaseMedium, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitBaseMedium, BaseSyndicateContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitSyndie
   name: blood-red hardsuit
   description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
@@ -661,7 +661,7 @@
 
 # Syndicate Medic Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitSyndie
+  parent: [ClothingOuterHardsuitSyndie, BaseSyndicateContraband]
   id: ClothingOuterHardsuitSyndieMedic
   name: blood-red medic hardsuit
   description: A heavily armored and agile advanced hardsuit specifically designed for field medic operations.
@@ -687,7 +687,7 @@
 
 #Syndicate Elite Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitSyndieElite
+  parent: [ClothingOuterHardsuitSyndieElite, BaseSyndicateContraband]
   id: ClothingOuterHardsuitShiweiUnpainted
   name: Cybersun tacsuit
   description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
@@ -705,7 +705,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitShiweiUnpainted
 
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitSyndieElite
   name: syndicate elite hardsuit
   description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
@@ -750,7 +750,7 @@
 
 #Syndicate Commander Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBaseHeavy, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitBaseHeavy, BaseSyndicateContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitSyndieCommander
   name: syndicate commander hardsuit
   description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
@@ -791,7 +791,7 @@
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBaseHeavy, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitBaseHeavy, BaseSyndicateContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitJuggernaut
   name: cybersun juggernaut suit
   description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
