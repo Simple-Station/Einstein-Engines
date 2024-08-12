@@ -5224,3 +5224,9 @@ Entries:
       message: The maximum trait limit has increased from 5 traits to 10 traits.
   id: 6252
   time: '2024-08-11T02:08:37.0000000+00:00'
+- author: Xavier
+  changes:
+    - type: Fix
+      message: Crew monitor not working properly, now displays correctly.
+  id: 6253
+  time: '2024-08-12T02:22:27.0000000+00:00'
