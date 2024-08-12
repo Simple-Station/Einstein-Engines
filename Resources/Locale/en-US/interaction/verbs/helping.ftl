@@ -1,0 +1,19 @@
+interaction-HelpingUp-name = Help up
+interaction-HelpingUp-description = Help the person get up.
+interaction-HelpingUp-delayed-self-popup = You try to help {THE($target)} get up...
+interaction-HelpingUp-delayed-target-popup = {THE($user)} tries to help you get up...
+interaction-HelpingUp-success-self-popup = You help {THE($target)} get up.
+interaction-HelpingUp-success-target-popup = {THE($user)} helps you up.
+interaction-HelpingUp-success-others-popup = {THE($user)} helps {THE($target)} up.
+interaction-HelpingUp-fail-self-popup = You fail to help {THE($target)} get up.
+interaction-HelpingUp-fail-target-popup = {THE($user)} fails to help you up.
+
+interaction-ForceDown-name = Force down
+interaction-ForceDown-description = Force the person to lay down on the floor.
+interaction-ForceDown-delayed-self-popup = You try to force {THE($target)} down...
+interaction-ForceDown-delayed-target-popup = {THE($user)} tries to force you down...
+interaction-ForceDown-success-self-popup = You force {THE($target)} to lay down.
+interaction-ForceDown-success-target-popup = {THE($user)} forces you to lay down.
+interaction-ForceDown-success-others-popup = {THE($user)} forces {THE($target)} to lay down.
+interaction-ForceDown-fail-self-popup = You fail to force {THE($target)} down.
+interaction-ForceDown-fail-target-popup = {THE($user)} fails to force you down.

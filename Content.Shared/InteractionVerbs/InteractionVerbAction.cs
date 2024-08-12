@@ -4,6 +4,7 @@ using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.InteractionVerbs;
 
@@ -48,5 +49,6 @@ public abstract partial class InteractionVerbAction
         [Dependency] public readonly IEntityManager EntMan = default!;
         [Dependency] public readonly IPrototypeManager ProtoMan = default!;
         [Dependency] public readonly IRobustRandom Random = default!;
+        [Dependency] public readonly IGameTiming Timing = default!;
     }
 }

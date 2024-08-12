@@ -1,0 +1,39 @@
+# Combines waking up, helping from stun, and forcing to stand.
+- type: Interaction
+  id: HelpingUp
+  parent: [BaseGlobal, BaseHands, BaseDelayedPopup]
+  priority: -5
+  delay: 1.5
+  finishPopup:
+    fail: fail
+  requirement:
+    !type:StandingStateRequirement
+    allowLaying: true
+    allowKnockedDown: true
+  action:
+    !type:ComplexAction
+    requireAll: false
+    actions:
+    - !type:WakeUpAction
+    - !type:ChangeStandingStateAction
+      makeStanding: true
+    - !type:ModifyStatusEffectAction
+      effect: KnockedDown
+      timeAdded: -2.5 # 1.5 seconds delay to remove 2.5 seconds of stun - should be good enough.
+
+- type: Interaction
+  id: ForceDown
+  parent: [BaseGlobal, BaseHands, BaseDelayedPopup]
+  priority: -5
+  delay: 1.5
+  delayedPopup:
+    popupType: SmallCaution
+  finishPopup:
+    fail: fail
+    popupType: SmallCaution
+  requirement:
+    !type:StandingStateRequirement
+    allowStanding: true
+  action:
+    !type:ChangeStandingStateAction
+    makeLaying: true

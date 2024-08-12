@@ -1,0 +1,26 @@
+- type: Interaction
+  id: SelfInteractionBase
+  parent: [BaseGlobal, BaseHands, BaseFailable]
+  abstract: true
+  allowSelfInteract: true
+  requirement:
+  - !type:SelfInteractionRequirement
+  failPopup:
+    others: null
+
+- type: Interaction
+  id: SelfPinching
+  parent: SelfInteractionBase
+  delay: 1
+  action:
+  - !type:ComplexAction
+    actions:
+    - !type:ModifyHealthAction
+      damage:
+        types: {Blunt: 5}
+    # 45% chance to cause yelp
+    - !type:ChanceAction
+      chance: 0.45
+      action:
+      - !type:ChatMessageAction
+        numMessages: 3

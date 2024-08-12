@@ -1,7 +1,5 @@
-using System.Diagnostics;
 using System.Linq;
-using Content.Shared.DoAfter;
-using Content.Shared.Interaction;
+using Content.Shared.DoAfter;using Content.Shared.InteractionVerbs;
 using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
@@ -9,6 +7,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Content.Shared.InteractionVerbs.InteractionVerbPrototype.PopupTargetSpecifier;
+using PopupSpecifier = Content.Shared.InteractionVerbs.InteractionVerbPrototype.PopupSpecifier;
 
 namespace Content.Shared.InteractionVerbs;
 
@@ -91,7 +90,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
         if (!proto.Action.CanPerform(user, target, true, proto, _verbDependencies) && !force)
         {
-            ShowVerbResultPopups(true, proto, user, target);
+            ShowVerbPopups(proto.FailurePopup, proto, user, target);
             return false;
         }
 
@@ -117,7 +116,12 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             RequireCanInteract = proto.RequiresCanInteract,
             Event = new InteractionVerbDoAfterEvent(proto)
         };
-        return _doAfters.TryStartDoAfter(doAfter);
+
+        var isSuccess = _doAfters.TryStartDoAfter(doAfter);
+        if (isSuccess)
+            ShowVerbPopups(proto.DelayedPopup, proto, user, target);
+
+        return isSuccess;
     }
 
     /// <summary>
@@ -128,12 +132,12 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     {
         if (!proto.Action!.CanPerform(user, target, false, proto, _verbDependencies) && !force)
         {
-            ShowVerbResultPopups(true, proto, user, target);
+            ShowVerbPopups(proto.FailurePopup, proto, user, target);
             return;
         }
 
         proto.Action.Perform(user, target, proto, _verbDependencies);
-        ShowVerbResultPopups(false, proto, user, target);
+        ShowVerbPopups(proto.SuccessPopup, proto, user, target);
     }
 
     #endregion
@@ -154,12 +158,20 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
                 || args.Verbs.Any(v => v.Text == name)
                 || !Transform(args.User).Coordinates.TryDistance(EntityManager, Transform(args.Target).Coordinates, out var distance)
                 || !proto.Range.IsInRange(distance)
-                || proto.Action?.IsAllowed(args.User, args.Target, proto, args.CanAccess, args.CanInteract, _verbDependencies) != true
             )
                 continue;
 
-            var verb = factory();
+            var isRequirementMet = proto.Requirement?.IsMet(args.User, args.Target, proto, args.CanAccess, args.CanInteract, _verbDependencies) != false;
+            if (!isRequirementMet && proto.HideByRequirement)
+                continue;
+
+            var isAllowed = proto.Action?.IsAllowed(args.User, args.Target, proto, args.CanAccess, args.CanInteract, _verbDependencies) == true;
+            if (!isAllowed && proto.HideWhenInvalid)
+                continue;
+
+            var verb = factory.Invoke();
             CopyVerbData(proto, verb, args.User, args.Target);
+            verb.Disabled = !isRequirementMet || !isAllowed;
 
             args.Verbs.Add(verb);
         }
@@ -176,24 +188,12 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         verb.Act = () => StartVerb(proto, user, target);
     }
 
-    private void ShowVerbResultPopups(bool failed, InteractionVerbPrototype proto, EntityUid user, EntityUid target)
+    private void ShowVerbPopups(PopupSpecifier? specifier, InteractionVerbPrototype proto, EntityUid user, EntityUid target)
     {
-        if (proto.Popup is not { } popup)
+        if (specifier is not { } popup)
             return;
 
-        var locPrefix = $"interaction-{proto.ID}-";
-        if (failed)
-        {
-            if (popup.FailPopupPrefix is null)
-                return;
-            locPrefix += popup.FailPopupPrefix;
-        }
-        else
-        {
-            if (popup.SuccessPopupPrefix is null)
-                return;
-            locPrefix += popup.SuccessPopupPrefix;
-        }
+        var locPrefix = $"interaction-{proto.ID}-{popup.PopupPrefix}";
 
         (string, object)[] localeArgs = [("user", user), ("target", target)];
 
@@ -204,10 +204,13 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             PopupAndLog(Loc.GetString($"{locPrefix}-{userSuffix}-popup", localeArgs), userTarget, Filter.Entities(user), false, popup);
 
         // Target popup
-        var targetSuffix = popup.TargetSuffix ?? popup.OthersSuffix;
-        var targetTarget = popup.PopupTarget is not User ? target : user;
-        if (targetSuffix is not null)
-            PopupAndLog(Loc.GetString($"{locPrefix}-{targetSuffix}-popup", localeArgs), targetTarget, Filter.Entities(target), false, popup);
+        if (target != user)
+        {
+            var targetSuffix = popup.TargetSuffix ?? popup.OthersSuffix;
+            var targetTarget = popup.PopupTarget is not User ? target : user;
+            if (targetSuffix is not null)
+                PopupAndLog(Loc.GetString($"{locPrefix}-{targetSuffix}-popup", localeArgs), targetTarget, Filter.Entities(target), false, popup);
+        }
 
         // Others popup
         var othersSuffix = popup.OthersSuffix;
@@ -217,7 +220,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             PopupAndLog(Loc.GetString($"{locPrefix}-{othersSuffix}-popup", localeArgs), othersTarget, othersFilter, true, popup);
     }
 
-    private void PopupAndLog(string message, EntityUid target, Filter filter, bool recordReplay, InteractionVerbPrototype.PopupSpecifier specifier)
+    private void PopupAndLog(string message, EntityUid target, Filter filter, bool recordReplay, PopupSpecifier specifier)
     {
         // Sending a chat message will result in a popup anyway
         // TODO this needs to be fixed probably. Popups and chat messages should be independent.
@@ -227,7 +230,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             _popups.PopupEntity(message, target, filter, recordReplay, specifier.PopupType);
     }
 
-    protected virtual void SendChatLog(string message, EntityUid source, Filter filter, InteractionVerbPrototype.PopupSpecifier specifier)
+    protected virtual void SendChatLog(string message, EntityUid source, Filter filter, PopupSpecifier specifier)
     {
     }
 

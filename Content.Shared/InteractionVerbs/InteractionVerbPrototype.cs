@@ -41,16 +41,44 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public SpriteSpecifier? Icon;
 
     /// <summary>
-    ///     Specifies what popups are displayed when this verb is performed.
+    ///     Specifies what popups are displayed when this verb is performed successfully, or unsuccessfully.
+    ///     Popups specified here are shown after the associated do-after has ended, if any.
     /// </summary>
     [DataField]
-    public PopupSpecifier? Popup;
+    public PopupSpecifier? SuccessPopup, FailurePopup;
+
+    /// <summary>
+    ///     Specifies what popups are displayed when a do-after for this verb is started.
+    ///     This is only ever used if <see cref="Delay"/> is set to a non-zero value.
+    /// </summary>
+    [DataField]
+    public PopupSpecifier? DelayedPopup;
+
+    /// <summary>
+    ///     The requirement of this verb.
+    /// </summary>
+    [DataField]
+    public InteractionRequirement? Requirement;
 
     /// <summary>
     ///     The action of this verb. It defines the conditions under which this verb is shown, as well as what the verb does.
     /// </summary>
-    [DataField]
+    /// <remarks>Made server-only because many actions require authoritative access to the server.</remarks>
+    [DataField(serverOnly: true)]
     public InteractionVerbAction? Action;
+
+    /// <summary>
+    ///     If true, this action will be hidden if the <see cref="Requirement"/> does not pass its IsMet check. Otherwise it will be disabled.
+    /// </summary>
+    /// <remarks>I apologize, I could not come up with a better name.</remarks>
+    [DataField]
+    public bool HideByRequirement = false;
+
+    /// <summary>
+    ///     If true, this action will be hidden if the <see cref="Action"/> does not pass its IsAllowed check. Otherwise it will be disabled.
+    /// </summary>
+    [DataField]
+    public bool HideWhenInvalid = true;
 
     /// <summary>
     ///     The delay of the verb. Anything greater than zero constitutes a do-after.
@@ -70,7 +98,8 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
         BreakOnUserMove = true,
         BreakOnWeightlessMove = true,
         RequireCanInteract = false,
-        Event = new InteractionVerbDoAfterEvent() // Never used, but must be present because the field is non-nullable and will error if not set
+        // Never used, but must be present because the field is non-nullable and will error if not set.
+        Event = new InteractionVerbDoAfterEvent(null!)
     };
 
     [DataField]
@@ -119,7 +148,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     /// <summary>
     ///     Specifies how popups should be shown.<br/>
     ///     Popup locales follow the format "interaction-[verb id]-[prefix]-[kind suffix]-popup", where: <br/>
-    ///     - [prefix] is <see cref="SuccessPopupPrefix"/> or <see cref="FailPopupPrefix"/> <br/>
+    ///     - [prefix] is <see cref="PopupPrefix"/>, which is usually one of: "success", "fail", "delayed". <br/>
     ///     - [kind suffix] is one of the respective suffix properties, typically "self", "target", or "others" <br/>
     /// </summary>
     /// <remarks>
@@ -131,16 +160,10 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public partial struct PopupSpecifier()
     {
         /// <summary>
-        ///     Popup loc prefix shown when the verb is used successfully. If null, no popup will be shown.
+        ///     Popup loc prefix shown when the popup is shown.
         /// </summary>
-        [DataField("success")]
-        public string? SuccessPopupPrefix = "success";
-
-        /// <summary>
-        ///     Popup loc prefix shown when the verb is used unsuccessfully. If null, no popup will be shown.
-        /// </summary>
-        [DataField("fail")]
-        public string? FailPopupPrefix = "fail";
+        [DataField("prefix")]
+        public string PopupPrefix = string.Empty;
 
         [DataField]
         public PopupTargetSpecifier PopupTarget = PopupTargetSpecifier.TargetThenUser;

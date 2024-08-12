@@ -1,6 +1,7 @@
 - type: Interaction
   id: Looking
   parent: BaseGlobal
+  priority: 3
   requireHands: false
   requireCanInteract: false
   contactInteraction: false
@@ -13,22 +14,28 @@
 - type: Interaction
   id: Hugging
   parent: [BaseGlobal, BaseHands]
+  priority: 2
   #icon: /Textures/Interface/Actions/hug.png
   delay: 1
   range:
     max: 0.7
+  requirement:
+    !type:MobStateRequirement
+    inverted: true
   action:
     # TODO: this should pull the target closer or sumth, but I need to code that action first
-    !type:MobNoOpAction
-    requiredState: null
+    !type:NoOpAction
 
 - type: Interaction
   id: Petting
   parent: [BaseGlobal, BaseHands]
+  priority: 1
   #icon: /Textures/Interface/Actions/hug.png
   delay: 0.3
   range:
     max: 1
+  requirement:
+    !type:MobStateRequirement
+    inverted: true
   action:
-    !type:MobNoOpAction
-    requiredState: null
+    !type:NoOpAction

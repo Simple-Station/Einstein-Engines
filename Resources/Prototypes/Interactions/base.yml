@@ -1,12 +1,13 @@
 - type: Interaction
   id: Base
   abstract: true
-  popup:
-    success: success
-    fail: null
+  successPopup:
+    prefix: success
     popupType: Medium
     logPopup: true
     logChannel: Emotes
+  failurePopup: null
+  delayedPopup: null
 
 # Base global interaction
 - type: Interaction
@@ -22,3 +23,24 @@
   requireHands: true
   requireCanInteract: true
   contactInteraction: true
+
+# Base interaction that shows a popup when failed. The popup is not shown to others by default.
+- type: Interaction
+  id: BaseFailable
+  parent: Base
+  abstract: true
+  failurePopup:
+    prefix: fail
+    others: null
+    popupType: SmallCaution
+
+# Base delayed interaction that shows a popup when started. The popup is not shown to others by default.
+- type: Interaction
+  id: BaseDelayedPopup
+  parent: Base
+  abstract: true
+  delayedPopup:
+    prefix: delayed
+    others: null
+    logPopup: false
+    popupType: Small
