@@ -5270,3 +5270,17 @@ Entries:
       message: Whitelist requirements work properly
   id: 6258
   time: '2024-08-13T17:08:24.0000000+00:00'
+- author: Skubman and leonardo-dabepis
+  changes:
+    - type: Add
+      message: Onis now get a unique speech bubble, a black bubble with horns.
+    - type: Add
+      message: >-
+        Onis have received a distinct speech style that reflects their strength.
+        Hear them 'grunt', 'bellow', 'blare', and 'rumble' as they talk.
+    - type: Tweak
+      message: >-
+        The Nekomimetic language description has been changed to mention Onis
+        speaking it.
+  id: 6259
+  time: '2024-08-13T17:12:15.0000000+00:00'
