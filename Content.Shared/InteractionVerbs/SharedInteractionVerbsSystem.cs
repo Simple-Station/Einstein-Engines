@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Shared.DoAfter;using Content.Shared.InteractionVerbs;
+using Content.Shared.DoAfter;
 using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
@@ -8,8 +8,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using static Content.Shared.InteractionVerbs.InteractionVerbPrototype.PopupTargetSpecifier;
-using PopupSpecifier = Content.Shared.InteractionVerbs.InteractionVerbPrototype.PopupSpecifier;
+using static Content.Shared.InteractionVerbs.InteractionPopupPrototype.Prefix;
+using static Content.Shared.InteractionVerbs.InteractionVerbPrototype.EffectTargetSpecifier;
 
 namespace Content.Shared.InteractionVerbs;
 
@@ -94,7 +94,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
         if (!proto.Action.CanPerform(args, proto, true, _verbDependencies) && !force)
         {
-            ShowVerbPopups(proto.FailurePopup, proto, args);
+            CreateVerbEffects(proto.EffectFailure, Fail, proto, args);
             return false;
         }
 
@@ -104,7 +104,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
         if (attemptEv.Cancelled)
         {
-            ShowVerbPopups(proto.FailurePopup, proto, args);
+            CreateVerbEffects(proto.EffectFailure, Fail, proto, args);
             return false;
         }
 
@@ -136,7 +136,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
         var isSuccess = _doAfters.TryStartDoAfter(doAfter);
         if (isSuccess)
-            ShowVerbPopups(proto.DelayedPopup, proto, args);
+            CreateVerbEffects(proto.EffectDelayed, Delayed, proto, args);
 
         return isSuccess;
     }
@@ -153,11 +153,11 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         if (!proto.Action!.CanPerform(args, proto, false, _verbDependencies) && !force
             || !proto.Action.Perform(args, proto, _verbDependencies))
         {
-            ShowVerbPopups(proto.FailurePopup, proto, args);
+            CreateVerbEffects(proto.EffectFailure, Fail, proto, args);
             return;
         }
 
-        ShowVerbPopups(proto.SuccessPopup, proto, args);
+        CreateVerbEffects(proto.EffectSuccess, Success, proto, args);
     }
 
     #endregion
@@ -214,58 +214,65 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         verb.Category = VerbCategory.Interaction;
     }
 
-    private void ShowVerbPopups(PopupSpecifier? specifier, InteractionVerbPrototype proto, InteractionArgs args)
+    private void CreateVerbEffects(InteractionVerbPrototype.EffectSpecifier? specifier, InteractionPopupPrototype.Prefix prefix, InteractionVerbPrototype proto, InteractionArgs args)
     {
-        // Not showing popups on client because it causes issues.
-        if (specifier is not { } popup || _net.IsClient)
+        // Not doing effects on client because it causes issues
+        if (specifier is null || _net.IsClient)
             return;
 
         var (user, target, used) = (args.User, args.Target, args.Used);
-        var locPrefix = $"interaction-{proto.ID}-{popup.PopupPrefix}";
 
-        (string, object)[] localeArgs = [("user", user), ("target", target), ("used", used ?? EntityUid.Invalid), ("selfTarget", user == target)];
-
-        // User popup
-        var userSuffix = popup.SelfSuffix ?? popup.OthersSuffix;
-        var userTarget = popup.PopupTarget is User or TargetThenUser ? user : target;
-        if (userSuffix is not null)
-            PopupEffects(Loc.GetString($"{locPrefix}-{userSuffix}-popup", localeArgs), userTarget, Filter.Entities(user), false, popup);
-
-        // Target popup
-        var targetSuffix = popup.TargetSuffix ?? popup.OthersSuffix;
-        var targetTarget = popup.PopupTarget is not User ? target : user;
-        if (targetSuffix is not null && user != target)
-            PopupEffects(Loc.GetString($"{locPrefix}-{targetSuffix}-popup", localeArgs), targetTarget, Filter.Entities(target), false, popup);
-
-        // Others popup
-        var othersSuffix = popup.OthersSuffix;
-        var othersTarget = popup.PopupTarget is User or TargetThenUser ? user : target;
+        // Effect targets for different players
+        var userTarget = specifier.EffectTarget is User or TargetThenUser ? user : target;
+        var targetTarget = specifier.EffectTarget is User or TargetThenUser ? user : target;
+        var othersTarget = specifier.EffectTarget is not User ? target : user;
         var othersFilter = Filter.Pvs(othersTarget).RemoveWhereAttachedEntity(ent => ent == user || ent == target);
-        if (othersSuffix is not null)
-            PopupEffects(Loc.GetString($"{locPrefix}-{othersSuffix}-popup", localeArgs), othersTarget, othersFilter, true, popup);
+
+        // Popups
+        if (_protoMan.TryIndex(specifier.Popup, out var popup))
+        {
+            var locPrefix = $"interaction-{proto.ID}-{prefix.ToString().ToLower()}";
+
+            (string, object)[] localeArgs = [("user", user), ("target", target), ("used", used ?? EntityUid.Invalid), ("selfTarget", user == target)];
+
+            // User popup
+            var userSuffix = popup.SelfSuffix ?? popup.OthersSuffix;
+            if (userSuffix is not null)
+                PopupEffects(Loc.GetString($"{locPrefix}-{userSuffix}-popup", localeArgs), userTarget, Filter.Entities(user), false, popup);
+
+            // Target popup
+            var targetSuffix = popup.TargetSuffix ?? popup.OthersSuffix;
+            if (targetSuffix is not null && user != target)
+                PopupEffects(Loc.GetString($"{locPrefix}-{targetSuffix}-popup", localeArgs), targetTarget, Filter.Entities(target), false, popup);
+
+            // Others popup
+            var othersSuffix = popup.OthersSuffix;
+            if (othersSuffix is not null)
+                PopupEffects(Loc.GetString($"{locPrefix}-{othersSuffix}-popup", localeArgs), othersTarget, othersFilter, true, popup);
+        }
 
         // Sounds
-        if (popup.Sound is { } sound)
+        if (specifier.Sound is { } sound)
         {
             // TODO we have a choice between having an accurate sound source or saving on an entity spawn...
-            _audio.PlayEntity(sound, Filter.Entities(user, target), target, false, popup.SoundParams);
+            _audio.PlayEntity(sound, Filter.Entities(user, target), target, false, specifier.SoundParams);
 
-            if (popup.SoundPerceivedByOthers)
-                _audio.PlayEntity(sound, othersFilter, othersTarget, false, popup.SoundParams);
+            if (specifier.SoundPerceivedByOthers)
+                _audio.PlayEntity(sound, othersFilter, othersTarget, false, specifier.SoundParams);
         }
     }
 
-    private void PopupEffects(string message, EntityUid target, Filter filter, bool recordReplay, PopupSpecifier specifier)
+    private void PopupEffects(string message, EntityUid target, Filter filter, bool recordReplay, InteractionPopupPrototype popup)
     {
         // Sending a chat message will result in a popup anyway
         // TODO this needs to be fixed probably. Popups and chat messages should be independent.
-        if (specifier.LogPopup)
-            SendChatLog(message, target, filter, specifier);
+        if (popup.LogPopup)
+            SendChatLog(message, target, filter, popup);
         else
-            _popups.PopupEntity(message, target, filter, recordReplay, specifier.PopupType);
+            _popups.PopupEntity(message, target, filter, recordReplay, popup.PopupType);
     }
 
-    protected virtual void SendChatLog(string message, EntityUid source, Filter filter, PopupSpecifier specifier)
+    protected virtual void SendChatLog(string message, EntityUid source, Filter filter, InteractionPopupPrototype popup)
     {
     }
 

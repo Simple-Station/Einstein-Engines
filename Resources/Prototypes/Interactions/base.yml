@@ -1,55 +1,41 @@
-# TODO MAKE POPUP SPECIFIERS PROTOTYPES THIS IS UNBEARABLE
 - type: Interaction
   id: Base
   abstract: true
-  successPopup:
-    prefix: success
-    popupType: Medium
-    logPopup: true
-    logChannel: Emotes
+  effectSuccess:
+    popup: Small
+  effectFailure:
+    popup: SubtleFail
 
 # Base global interaction
 - type: Interaction
   id: BaseGlobal
-  parent: Base
   abstract: true
   global: true
 
 # Base interaction that involves hands
 - type: Interaction
   id: BaseHands
-  parent: Base
   requiresHands: true
   requiresCanInteract: true
   contactInteraction: true
   range:
     max: 2
-  successPopup:
-    prefix: success
-    popupType: Medium
-    logPopup: true
-    logChannel: Emotesdw
+  effectSuccess:
+    popup: Obvious
+    sound: {path: /Audio/Effects/thudswoosh.ogg}
+  effectFailure:
+    popup: Fail
     sound: {path: /Audio/Effects/thudswoosh.ogg}
 
-# TODO ALL OF THE BELOW SHOULD BE GONE IN FAVOR OF PROTOTYPES
-# I HATE THESE
-# Base interaction that shows a popup when failed. The popup is not shown to others by default.
+# Base interaction using dangerous popups
 - type: Interaction
-  id: BaseFailable
-  parent: Base
+  id: BaseDangerous
   abstract: true
-  failurePopup:
-    prefix: fail
-    others: null
-    popupType: SmallCaution
-
-# Base delayed interaction that shows a popup when started. The popup is not shown to others by default.
-- type: Interaction
-  id: BaseDelayedPopup
-  parent: Base
-  abstract: true
-  delayedPopup:
-    prefix: delayed
-    others: null
-    logPopup: false
-    popupType: Small
+  effectSuccess:
+    popup: Dangerous
+    sound: {path: /Audio/Effects/thudswoosh.ogg}
+  effectFailure:
+    popup: Fail
+    sound: {path: /Audio/Effects/thudswoosh.ogg}
+  effectDelayed:
+    popup: DangerousDelayed

@@ -1,8 +1,5 @@
-using Content.Shared.Cargo.Prototypes;
-using Content.Shared.Chat;
 using Content.Shared.DoAfter;
 using Content.Shared.InteractionVerbs.Events;
-using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
@@ -42,18 +39,18 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public SpriteSpecifier? Icon;
 
     /// <summary>
-    ///     Specifies what popups are displayed when this verb is performed successfully, or unsuccessfully.
-    ///     Popups specified here are shown after the associated do-after has ended, if any.
+    ///     Specifies what effects are shown when this verb is performed successfully, or unsuccessfully.
+    ///     Effects specified here are shown after the associated do-after has ended, if any.
     /// </summary>
     [DataField]
-    public PopupSpecifier? SuccessPopup, FailurePopup;
+    public EffectSpecifier? EffectSuccess, EffectFailure;
 
     /// <summary>
-    ///     Specifies what popups are displayed when a do-after for this verb is started.
+    ///     Specifies what popups are shown when a do-after for this verb is started.
     ///     This is only ever used if <see cref="Delay"/> is set to a non-zero value.
     /// </summary>
     [DataField]
-    public PopupSpecifier? DelayedPopup;
+    public EffectSpecifier? EffectDelayed;
 
     /// <summary>
     ///     The requirement of this verb.
@@ -146,75 +143,20 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
         public bool IsInRange(float value) => (Inverse ? value < Min || value > Max : value >= Min && value <= Max);
     }
 
-    /// <summary>
-    ///     Specifies how popups should be shown.<br/>
-    ///     Popup locales follow the format "interaction-[verb id]-[prefix]-[kind suffix]-popup", where: <br/>
-    ///     - [prefix] is <see cref="PopupPrefix"/>, which is usually one of: "success", "fail", "delayed". <br/>
-    ///     - [kind suffix] is one of the respective suffix properties, typically "self", "target", or "others" <br/>
-    /// </summary>
-    /// <remarks>
-    ///     The following parameters may be used in the locale: <br/>
-    ///     - {$user} - The performer of the action. <br/>
-    ///     - {$target} - The target of the action. <br/>
-    ///     - {$used} - The active-hand item used in the action. May be null, then "0" is used instead.
-    ///     - {$selfTarget} - A boolean value that indicates whether the action is used on the user itself.
-    /// </remarks>
     [DataDefinition, Serializable]
-    public partial struct PopupSpecifier()
+    public partial class EffectSpecifier
     {
-        /// <summary>
-        ///     Popup loc prefix shown when the popup is shown.
-        /// </summary>
-        [DataField("prefix")]
-        public string PopupPrefix = string.Empty;
-
         [DataField]
-        public PopupTargetSpecifier PopupTarget = PopupTargetSpecifier.TargetThenUser;
-
-        [DataField]
-        public PopupType PopupType = PopupType.Medium;
+        public EffectTargetSpecifier EffectTarget = EffectTargetSpecifier.TargetThenUser;
 
         /// <summary>
-        ///     If true, the respective success/fail popups will be logged into chat, as players perceive them.
+        ///     The interaction popup to show, at <see cref="EffectLocation"/>. If null, no popup will be shown.
         /// </summary>
         [DataField]
-        public bool LogPopup = true;
+        public ProtoId<InteractionPopupPrototype>? Popup = null;
 
         /// <summary>
-        ///     Chat channel to which popups will be logged if <see cref="LogPopup"/> is true.
-        /// </summary>
-        [DataField]
-        public ChatChannel LogChannel = ChatChannel.Emotes;
-
-        /// <summary>
-        ///     Color of the chat message sent if <see cref="LogPopup"/> is true. If null, defaults based on <see cref="PopupType"/>.
-        /// </summary>
-        [DataField]
-        public Color? LogColor = null;
-
-        [DataField("self")]
-        public string? SelfSuffixField = "self";
-        /// <summary>
-        ///     Loc prefix for popups shown for the performer of the verb. If set to null, defaults to <see cref="OthersSuffix"/>.
-        /// </summary>
-        public string? SelfSuffix => SelfSuffixField ?? OthersSuffix;
-
-        [DataField("target")]
-        public string? TargetSuffixField = "target";
-        /// <summary>
-        ///     Loc prefix for popups shown for the target of the verb. If set to null, defaults to <see cref="OthersSuffix"/>.
-        /// </summary>
-        public string? TargetSuffix => TargetSuffixField ?? SelfSuffix;
-
-        /// <summary>
-        ///     Loc prefix for popups shown for other people observing the verb. This also defines what is logged into the chat if
-        ///     <see cref="InteractionVerbPrototype.LogPopup"/> is true. If null, no popup will be shown for others.
-        /// </summary>
-        [DataField("others")]
-        public string? OthersSuffix = "others";
-
-        /// <summary>
-        ///     Sound played when the popup is shown, at the location of the popup. If null, no sound will be played.
+        ///     Sound played when the effect is shown, at <see cref="EffectLocation"/>. If null, no sound will be played.
         /// </summary>
         [DataField]
         public SoundSpecifier? Sound;
@@ -234,7 +176,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     }
 
     [Serializable]
-    public enum PopupTargetSpecifier
+    public enum EffectTargetSpecifier
     {
         /// <summary>
         ///     Popup will be shown above the person executing the verb.

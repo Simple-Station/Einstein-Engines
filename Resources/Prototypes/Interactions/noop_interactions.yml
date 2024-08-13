@@ -5,13 +5,13 @@
   requiresHands: false
   requiresCanInteract: false
   contactInteraction: false
+  allowSelfInteract: true
   icon: /Textures/Interface/Actions/eyeopen.png
   range:
     max: 20
-  successPopup:
-    prefix: success
-    sound: {path: /Audio/Effects/thudswoosh.ogg}
-    logPopup: false
+  effectSuccess:
+    popup: Obvious
+    sound: {path: /Audio/Effects/ominous.ogg}
     soundPerceivedByOthers: false # Can be used to attract attention, but not to spam sounds or chat
   action:
     !type:NoOpAction
@@ -50,10 +50,8 @@
   id: KnockingOn
   parent: BaseHands
   priority: 20
-  successPopup:
-    prefix: success
-    logPopup: false # Abusable
-    sound:
-      path: /Audio/Effects/glass_knock.ogg
+  effectSuccess:
+    popup: Subtle
+    sound: {path: /Audio/Effects/glass_knock.ogg}
   action:
     !type:NoOpAction

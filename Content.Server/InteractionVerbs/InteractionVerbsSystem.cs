@@ -10,18 +10,18 @@ public sealed class InteractionVerbsSystem : SharedInteractionVerbsSystem
 {
     [Dependency] private readonly IChatManager _chatManager = default!;
 
-    protected override void SendChatLog(string message, EntityUid source, Filter filter, InteractionVerbPrototype.PopupSpecifier specifier)
+    protected override void SendChatLog(string message, EntityUid source, Filter filter, InteractionPopupPrototype popup)
     {
         if (filter.Count <= 0)
             return;
 
-        var color = specifier.LogColor ?? InferColor(specifier.PopupType);
+        var color = popup.LogColor ?? InferColor(popup.PopupType);
         var wrappedMessage = message; // TODO: custom chat wraps maybe?
 
         if (filter.Count == 1)
-            _chatManager.ChatMessageToOne(specifier.LogChannel, message, wrappedMessage, source, false, filter.Recipients.First().Channel, color);
+            _chatManager.ChatMessageToOne(popup.LogChannel, message, wrappedMessage, source, false, filter.Recipients.First().Channel, color);
         else
-            _chatManager.ChatMessageToManyFiltered(filter, specifier.LogChannel, message, wrappedMessage, source, false, false, color);
+            _chatManager.ChatMessageToManyFiltered(filter, popup.LogChannel, message, wrappedMessage, source, false, false, color);
     }
 
     private Color InferColor(PopupType popup) => popup switch

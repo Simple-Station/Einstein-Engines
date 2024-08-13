@@ -1,7 +1,7 @@
 # Combines waking up, helping from stun, and forcing to stand.
 - type: Interaction
   id: HelpUp
-  parent: [BaseDelayedPopup, BaseFailable, BaseHands, BaseGlobal]
+  parent: [BaseDangerous, BaseHands, BaseGlobal]
   priority: -5
   range: {max: 1.2}
   delay: 1.5
@@ -24,10 +24,10 @@
 
 - type: Interaction
   id: ForceDown
-  parent: [BaseDelayedPopup, BaseFailable, BaseHands, BaseGlobal]
+  parent: [BaseDangerous, BaseHands, BaseGlobal]
   priority: -5
   range: {max: 1.2}
-  delay: 3.5
+  delay: 4.5
   hideByRequirement: true
   requirement:
     !type:StandingStateRequirement
@@ -38,7 +38,7 @@
 
 - type: Interaction
   id: MakeSleepOther
-  parent: [BaseDelayedPopup, BaseHands, BaseGlobal]
+  parent: [BaseDangerous, BaseHands, BaseGlobal]
   priority: -6
   range: {max: 1.2}
   delay: 10 # Should be long enough to be non-abusable, right?

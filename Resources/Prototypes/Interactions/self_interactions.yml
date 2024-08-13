@@ -1,9 +1,13 @@
 - type: Interaction
   id: SelfInteractionBase
-  parent: [BaseFailable, BaseHands, BaseGlobal]
+  parent: [BaseHands, BaseGlobal]
   abstract: true
   allowSelfInteract: true
   hideByRequirement: true
+  effectFailure:
+    popup: SubtleFail
+  effectDelayed:
+    popup: Subtle
   requirement:
     !type:SelfTargetRequirement
   failPopup:
@@ -33,14 +37,6 @@
   id: MakeSleepSelf
   parent: [SelfInteractionBase, MakeSleepOther]
   delay: 4.5
-  delayedPopup:
-    prefix: delayed
-    others: null
-    logPopup: false
-  failurePopup:
-    prefix: fail
-    others: null
-    logPopup: false
   requirement:
     !type:ComplexRequirement
     requirements:
