@@ -5224,3 +5224,43 @@ Entries:
       message: The maximum trait limit has increased from 5 traits to 10 traits.
   id: 6252
   time: '2024-08-11T02:08:37.0000000+00:00'
+- author: Xavier
+  changes:
+    - type: Fix
+      message: Crew monitor not working properly, now displays correctly.
+  id: 6253
+  time: '2024-08-12T02:22:27.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Added the Explorer's Labcoat and a Hairflower into Loadouts.
+    - type: Fix
+      message: Fixed Epistemics being unable to take Survival Boxes
+    - type: Fix
+      message: >-
+        Fixed the NearSighted trait making you unable to take glasses in your
+        loadout
+    - type: Add
+      message: Added a variety of Cowboy Hats into loadouts.
+  id: 6254
+  time: '2024-08-12T02:22:58.0000000+00:00'
+- author: musicmanvr
+  changes:
+    - type: Add
+      message: Added the Home Run Bat for Syndicate operatives. Send your foes flying!
+  id: 6255
+  time: '2024-08-12T16:43:11.0000000+00:00'
+- author: Tilkku
+  changes:
+    - type: Add
+      message: Added showers
+  id: 6256
+  time: '2024-08-12T16:46:05.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Tweak
+      message: Changed hardsuit descriptions to be slightly less LRP.
+    - type: Tweak
+      message: Changed paramedic voidsuit from a softsuit to a hardsuit.
+  id: 6257
+  time: '2024-08-12T21:43:52.0000000+00:00'
