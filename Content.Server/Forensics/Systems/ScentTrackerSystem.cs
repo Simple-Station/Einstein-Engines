@@ -12,13 +12,11 @@ namespace Content.Server.Forensics
     {
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-        [Dependency] private readonly ForensicsSystem _forensicsSystem = default!;
         public override void Initialize()
         {
             SubscribeLocalEvent<ScentTrackerComponent, GetVerbsEvent<InnateVerb>>(AddVerbs);
             SubscribeLocalEvent<ScentTrackerComponent, ScentTrackerDoAfterEvent>(TrackScentDoAfter);
             SubscribeLocalEvent<ForensicsComponent, ExaminedEvent>((uid, _, args) => OnExamine(uid, args));
-            SubscribeLocalEvent<ScentComponent, ExaminedEvent>((uid, _, args) => OnExamine(uid, args));
         }
 
         private void AddVerbs(EntityUid uid, ScentTrackerComponent component, GetVerbsEvent<InnateVerb> args)
@@ -88,7 +86,10 @@ namespace Content.Server.Forensics
             if (!TryComp<ScentTrackerComponent>(args.Examiner, out var component))
                 return;
 
-            if (component.Scent == _forensicsSystem.GetScent(args.Examined))
+            if (!TryComp<ForensicsComponent>(args.Examined, out var forcomp))
+                return;
+
+            if (forcomp.Scent != string.Empty && component.Scent == forcomp.Scent)
                 args.PushMarkup(Loc.GetString("examined-scent"));
         }
 
@@ -98,18 +99,20 @@ namespace Content.Server.Forensics
             if (!TryComp<ScentTrackerComponent>(uid, out var component))
                 return;
 
-            var scenttotrack = _forensicsSystem.GetScent(target);
+            if (!TryComp<ForensicsComponent>(target, out var forcomp))
+                return;
 
-            if (scenttotrack != string.Empty)
+            if (forcomp.Scent != string.Empty)
             {
-                component.Scent = scenttotrack;
+                component.Scent = forcomp.Scent;
                 _popupSystem.PopupEntity(Loc.GetString("tracking-scent", ("target", Identity.Name(target, EntityManager))), uid, uid);
-                // TODO ClientOverlay Scent Tracking
             }
             else
             {
                 _popupSystem.PopupEntity(Loc.GetString("no-scent"), uid, uid);
             }
+
+            Dirty(uid, component);
         }
 
         public void StopTrackScent(EntityUid uid, ScentTrackerComponent component)
@@ -119,7 +122,8 @@ namespace Content.Server.Forensics
 
             component.Scent = string.Empty;
             _popupSystem.PopupEntity(Loc.GetString("stopped-tracking-scent"), uid, uid);
-            // TODO ClientOverlay Scent Tracking - Stop
+
+            Dirty(uid, component);
         }
 
         #endregion

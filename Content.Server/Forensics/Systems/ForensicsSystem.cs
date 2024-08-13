@@ -61,11 +61,17 @@ namespace Content.Server.Forensics
         private void OnDNAInit(EntityUid uid, DnaComponent component, MapInitEvent args)
         {
             component.DNA = GenerateDNA();
+
         }
 
         private void OnScentInit(EntityUid uid, ScentComponent component, MapInitEvent args)
         {
             component.Scent = GenerateFingerprint(length: 5);
+
+            var updatecomp = EnsureComp<ForensicsComponent>(uid);
+            updatecomp.Scent = component.Scent;
+
+            Dirty(uid, updatecomp);
         }
 
         private void OnBeingGibbed(EntityUid uid, DnaComponent component, BeingGibbedEvent args)
@@ -75,6 +81,7 @@ namespace Content.Server.Forensics
                 var partComp = EnsureComp<ForensicsComponent>(part);
                 partComp.DNAs.Add(component.DNA);
                 partComp.CanDnaBeCleaned = false;
+                Dirty(part, partComp);
             }
         }
 
@@ -90,11 +97,13 @@ namespace Content.Server.Forensics
                         component.DNAs.Add(hitEntityComp.DNA);
                 }
             }
+            Dirty(uid, component);
         }
 
         private void OnRehydrated(Entity<ForensicsComponent> ent, ref GotRehydratedEvent args)
         {
             CopyForensicsFrom(ent.Comp, args.Target);
+            Dirty(args.Target, ent.Comp);
         }
 
         /// <summary>
@@ -178,6 +187,7 @@ namespace Content.Server.Forensics
 
             if (TryComp<ScentComponent>(args.Target, out var scentComp))
                 scentComp.Scent = GenerateFingerprint(length: 5);
+                // TODO: Replace all currently weared items to this scent.
 
             if (!TryComp<ForensicsComponent>(args.Target, out var targetComp))
                 return;
@@ -195,6 +205,8 @@ namespace Content.Server.Forensics
 
             if (TryComp<ResidueComponent>(args.Used, out var residue))
                 targetComp.Residues.Add(string.IsNullOrEmpty(residue.ResidueColor) ? Loc.GetString("forensic-residue", ("adjective", residue.ResidueAdjective)) : Loc.GetString("forensic-residue-colored", ("color", residue.ResidueColor), ("adjective", residue.ResidueAdjective)));
+
+            Dirty(uid, component);
         }
 
         public string GenerateFingerprint(int length = 16)
@@ -234,10 +246,16 @@ namespace Content.Server.Forensics
                 }
 
                 if (HasComp<FingerprintMaskComponent>(gloves))
+                {
+                    Dirty(target, component);
                     return;
+                }
             }
             if (TryComp<FingerprintComponent>(user, out var fingerprint))
+            {
                 component.Fingerprints.Add(fingerprint.Fingerprint ?? "");
+                Dirty(target, component);
+            }
         }
 
         private void ApplyScent(EntityUid user, EntityUid target)
@@ -248,6 +266,8 @@ namespace Content.Server.Forensics
             var component = EnsureComp<ForensicsComponent>(target);
             if (TryComp<ScentComponent>(user, out var scent))
                 component.Scent = scent.Scent;
+
+            Dirty(target, component);
         }
 
         private void OnTransferDnaEvent(EntityUid uid, DnaComponent component, ref TransferDnaEvent args)
@@ -255,6 +275,8 @@ namespace Content.Server.Forensics
             var recipientComp = EnsureComp<ForensicsComponent>(args.Recipient);
             recipientComp.DNAs.Add(component.DNA);
             recipientComp.CanDnaBeCleaned = args.CanDnaBeCleaned;
+
+            Dirty(args.Recipient, recipientComp);
         }
 
         #region Public API
@@ -272,24 +294,9 @@ namespace Content.Server.Forensics
                 EnsureComp<ForensicsComponent>(recipient, out var recipientComp);
                 recipientComp.DNAs.Add(donorComp.DNA);
                 recipientComp.CanDnaBeCleaned = canDnaBeCleaned;
+
+                Dirty(recipient, recipientComp);
             }
-        }
-
-        /// <summary>
-        /// Get the Scent of a entity, if generating a scent, this will be prioritized.
-        /// </summary>
-        /// <param name="uid">The entity to get the scent</param>
-        public string GetScent(EntityUid uid)
-        {
-            var scent = string.Empty;
-
-            if (TryComp<ForensicsComponent>(uid, out var forensicsComp))
-                scent = forensicsComp.Scent;
-
-            if (TryComp<ScentComponent>(uid, out var scentComp))
-                scent = scentComp.Scent;
-
-            return scent;
         }
 
         #endregion

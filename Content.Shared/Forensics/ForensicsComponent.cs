@@ -1,21 +1,23 @@
-namespace Content.Server.Forensics
+using Robust.Shared.GameStates;
+
+namespace Content.Shared.Forensics
 {
-    [RegisterComponent]
+    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
     public sealed partial class ForensicsComponent : Component
     {
-        [DataField("fingerprints")]
+        [DataField("fingerprints"), AutoNetworkedField]
         public HashSet<string> Fingerprints = new();
 
-        [DataField("fibers")]
+        [DataField("fibers"), AutoNetworkedField]
         public HashSet<string> Fibers = new();
 
-        [DataField("dnas")]
+        [DataField("dnas"), AutoNetworkedField]
         public HashSet<string> DNAs = new();
 
-        [DataField("scent")]
+        [DataField("scent"), AutoNetworkedField]
         public string Scent = String.Empty;
 
-        [DataField("residues")]
+        [DataField("residues"), AutoNetworkedField]
         public HashSet<string> Residues = new();
 
         /// <summary>
@@ -30,5 +32,11 @@ namespace Content.Server.Forensics
         /// </summary>
         [DataField("canDnaBeCleaned")]
         public bool CanDnaBeCleaned = true;
+
+        /// <summary>
+        /// Moment in time next effect will be spawned
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
+        public TimeSpan TargetTime = TimeSpan.Zero;
     }
 }

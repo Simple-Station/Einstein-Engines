@@ -1,12 +1,14 @@
-namespace Content.Server.Forensics
+using Robust.Shared.GameStates;
+
+namespace Content.Shared.Forensics
 {
-    [RegisterComponent]
+    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
     public sealed partial class ScentTrackerComponent : Component
     {
         /// <summary>
         /// The currently tracked scent.
         /// </summary>
-        [DataField("scent")]
+        [DataField("scent"), AutoNetworkedField]
         public string Scent = String.Empty;
 
         /// <summary>
