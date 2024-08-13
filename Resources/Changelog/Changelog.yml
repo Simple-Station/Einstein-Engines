@@ -5294,3 +5294,26 @@ Entries:
         prize tickets! and find prize balls!!
   id: 6260
   time: '2024-08-13T17:16:52.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Onis have received eight new pointy ear markings in the 'Head (Side)'
+        section that can help them resemble tieflings, orcs, elves, goblins,
+        trolls, and more.
+    - type: Add
+      message: >-
+        Onis get two new tusk markings in the 'Snout' section, and a Two-Toed
+        feet marking in the 'Legs' section.
+    - type: Add
+      message: >-
+        Felinids, Onis, and Harpies can now select Human nose markings like the
+        schnozz, blobby nose, and nubby nose.
+    - type: Add
+      message: >-
+        Felinids and Onis can now select the Chest Scar and Top Surgery Scar
+        markings.
+    - type: Tweak
+      message: Default Onis now use the Double Curved horn and Upward Ears markings.
+  id: 6261
+  time: '2024-08-13T21:12:45.0000000+00:00'
