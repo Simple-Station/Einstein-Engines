@@ -34,7 +34,8 @@ public sealed class StationSurfaceSystem : EntitySystem
         map = _map.GetMap(mapId);
         _map.SetPaused(map, false);
 
-        _biome.SetEnabled(map); // generate the terrain after the grids loaded to prevent it getting hidden under it
+        // Needs a cherrypick, but this system is unused entirely for now
+        //_biome.SetEnabled(map); // generate the terrain after the grids loaded to prevent it getting hidden under it
         ent.Comp.Map = map;
     }
 }
