@@ -1,5 +1,4 @@
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Psionics;
 
@@ -13,16 +12,22 @@ public sealed class PsionicPowerPrototype : IPrototype
     public string ID { get; } = default!;
 
     /// <summary>
+    ///     The name of the psionic power.
+    /// </summary>
+    [DataField(required: true)]
+    public string Name = default!;
+
+    /// <summary>
     ///     The description of a power in yml, used for player notifications.
     /// </summary>
     [DataField(required: true)]
-    public string Description = string.Empty;
+    public string Description = default!;
 
     /// <summary>
     ///     The list of each Action that this power adds in the form of ActionId and ActionEntity
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public readonly Dictionary<string, EntityUid>? Actions = new();
+    [DataField]
+    public List<(EntProtoId, EntityUid? Entity)> Actions = new();
 
     /// <summary>
     ///     The list of what Components this power adds.
@@ -34,22 +39,22 @@ public sealed class PsionicPowerPrototype : IPrototype
     ///     What message will play as a popup when the power is initialized.
     /// </summary>
     [DataField(required: true)]
-    public string InitializationFeedback = default!;
+    public string InitializationFeedback = "psionic-power-initialization-default";
 
     /// <summary>
     ///     What message will this power generate when scanned by a Metempsionic Focused Pulse.
     /// </summary>
     [DataField(required: true)]
-    public string MetempsionicFeedback = default!;
+    public string MetempsionicFeedback = "psionic-metapsionic-feedback-default";
 
     /// <summary>
-    ///     How much this power will increase or decrease a user's Amplification when initialized.
+    ///     How much this power will increase or decrease a user's Amplification.
     /// </summary>
     [DataField]
     public float AmplificationModifier = 0;
 
     /// <summary>
-    ///     How much this power will increase or decrease a user's Dampening when initialized.
+    ///     How much this power will increase or decrease a user's Dampening.
     /// </summary>
     [DataField]
     public float DampeningModifier = 0;

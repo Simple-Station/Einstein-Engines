@@ -52,21 +52,11 @@ namespace Content.Server.Abilities.Psionics
             _actions.TryGetActionData( component.DispelActionEntity, out var actionData );
             if (actionData is { UseDelay: not null })
                 _actions.StartUseDelay(component.DispelActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
-            {
-                psionic.PsionicAbility = component.DispelActionEntity;
-                psionic.ActivePowers.Add(component);
-            }
         }
 
         private void OnShutdown(EntityUid uid, DispelPowerComponent component, ComponentShutdown args)
         {
             _actions.RemoveAction(uid, component.DispelActionEntity);
-
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.ActivePowers.Remove(component);
-            }
         }
 
         private void OnPowerUsed(DispelPowerActionEvent args)

@@ -1,4 +1,4 @@
-using Content.Shared.Actions;
+using Content.Shared.Psionics;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Abilities.Psionics
@@ -11,10 +11,44 @@ namespace Content.Shared.Abilities.Psionics
         /// <summary>
         ///     Ifrits, revenants, etc are explicitly magical beings that shouldn't get mindbreakered.
         /// </summary>
-        [DataField("removable")]
+        [DataField]
         public bool Removable = true;
 
-        [DataField("activePowers")]
-        public HashSet<Component> ActivePowers = new();
+        /// <summary>
+        ///     The list of all powers currently active on a Psionic, by power Prototype.
+        ///     TODO: Not in this PR due to scope, but this needs to go to Server and not Shared.
+        /// </summary>
+        [DataField]
+        public HashSet<PsionicPowerPrototype> ActivePowers = new();
+
+        /// <summary>
+        ///     What sources of Amplification does this Psion have?
+        /// </summary>
+        [ViewVariables(VVAccess.ReadOnly)]
+        public readonly Dictionary<string, float> AmplificationSources = new() { { "Baseline Amplification", 0.1f } };
+
+        /// <summary>
+        ///     A measure of how "Powerful" a Psion is.
+        ///     TODO: Implement this in a separate PR.
+        /// </summary>
+        public float CurrentAmplification;
+
+        /// <summary>
+        ///     What sources of Dampening does this Psion have?
+        /// </summary>
+        [ViewVariables(VVAccess.ReadOnly)]
+        public readonly Dictionary<string, float> DampeningSources = new() { { "Baseline Dampening", 0.1f } };
+
+        /// <summary>
+        ///     A measure of how "Controlled" a Psion is.
+        ///     TODO: Implement this in a separate PR.
+        /// </summary>
+        public float CurrentDampening;
+
+        /// <summary>
+        ///     How close a Psion is to awakening a new power.
+        ///     TODO: Implement this in a separate PR.
+        /// </summary>
+        public float Potentia = 0;
     }
 }

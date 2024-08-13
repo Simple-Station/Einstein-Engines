@@ -1,5 +1,6 @@
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
+using Content.Shared.Popups;
 using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
@@ -10,6 +11,8 @@ using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
+using Robust.Shared.Serialization.Manager;
+using Content.Shared.Psionics;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -23,6 +26,9 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly MindSystem _mindSystem = default!;
+        [Dependency] private readonly SharedActionsSystem _actions = default!;
+        [Dependency] private readonly SharedPopupSystem _popups = default!;
+        [Dependency] private readonly ISerializationManager _serialization = default!;
 
         private ISawmill _sawmill = default!;
 
@@ -62,23 +68,9 @@ namespace Content.Server.Abilities.Psionics
                 AddRandomPsionicPower(uid);
         }
 
-        public void AddPsionics(EntityUid uid, string powerComp)
-        {
-            if (Deleted(uid)
-                || HasComp<PsionicComponent>(uid))
-                return;
-
-            AddComp<PsionicComponent>(uid);
-
-            var newComponent = (Component) _componentFactory.GetComponent(powerComp);
-            newComponent.Owner = uid;
-
-            EntityManager.AddComponent(uid, newComponent);
-        }
-
         public void AddRandomPsionicPower(EntityUid uid)
         {
-            AddComp<PsionicComponent>(uid);
+            EnsureComp<PsionicComponent>(uid, out var psionic);
 
             if (!_prototypeManager.TryIndex<WeightedRandomPrototype>("RandomPsionicPowerPool", out var pool))
             {
@@ -86,13 +78,106 @@ namespace Content.Server.Abilities.Psionics
                 return;
             }
 
-            // uh oh, stinky!
-            var newComponent = (Component) _componentFactory.GetComponent(pool.Pick());
-            newComponent.Owner = uid;
+            var newPool = _serialization.CreateCopy(pool, null, false, true);
+            foreach (var proto in pool.Weights.Keys)
+            {
+                if (!_prototypeManager.TryIndex<PsionicPowerPrototype>(proto, out var powerPrototype))
+                    continue;
 
-            EntityManager.AddComponent(uid, newComponent);
+                if (psionic.ActivePowers.Contains(powerPrototype))
+                    newPool.Weights.Remove(powerPrototype.ID);
+            }
+
+            if (newPool.Weights.Keys != null)
+            {
+                var newPower = _prototypeManager.Index<PsionicPowerPrototype>(newPool.Pick());
+                InitializePsionicPower(uid, newPower);
+            }
 
             _glimmerSystem.Glimmer += _random.Next(1, 5);
+        }
+
+        public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, bool playPopup = true)
+        {
+            if (!TryComp<PsionicComponent>(uid, out var psionic)
+                || !_prototypeManager.TryIndex(proto.ID, out var _))
+                return;
+
+            psionic.ActivePowers.Add(proto);
+
+            foreach (var (id, entity) in proto.Actions)
+            {
+                if (entity is null)
+                    continue;
+                _actions.AddAction(uid, id.Id, entity.Value);
+                if (_actions.TryGetActionData(entity.Value, out var _))
+                    _actions.StartUseDelay(entity.Value);
+            }
+
+            if (proto.AmplificationModifier != 0)
+                psionic.AmplificationSources.Add(proto.Name, proto.AmplificationModifier);
+
+            if (proto.DampeningModifier != 0)
+                psionic.DampeningSources.Add(proto.Name, proto.DampeningModifier);
+
+            if (playPopup)
+                _popups.PopupEntity(proto.InitializationFeedback, uid, uid, PopupType.MediumCaution);
+
+            if (proto.Components is not null)
+                foreach (var comp in proto.Components)
+                    if (!HasComp(uid, comp.GetType()))
+                        EntityManager.AddComponent(uid, comp);
+
+            RefreshPsionicModifiers(uid, psionic);
+        }
+
+        /// <summary>
+        ///     Updates a Psion's casting stats, call this anytime a system adds a new source of Amp or Damp.
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="comp"></param>
+        public void RefreshPsionicModifiers(EntityUid uid, PsionicComponent comp)
+        {
+            var ampModifier = 0f;
+            var dampModifier = 0f;
+            foreach (var (_, source) in comp.AmplificationSources)
+                ampModifier += source;
+            foreach (var (_, source) in comp.DampeningSources)
+                dampModifier += source;
+
+            var ev = new OnSetPsionicStatsEvent(ampModifier, dampModifier);
+            RaiseLocalEvent(uid, ref ev);
+            ampModifier = ev.AmplificationChangedAmount;
+            dampModifier = ev.DampeningChangedAmount;
+
+            comp.CurrentAmplification = ampModifier;
+            comp.CurrentDampening = dampModifier;
+        }
+
+        /// <summary>
+        ///     Updates a Psion's casting stats, call this anytime a system adds a new source of Amp or Damp.
+        ///     Variant function for systems that didn't already have the PsionicComponent.
+        /// </summary>
+        /// <param name="uid"></param>
+        public void RefreshPsionicModifiers(EntityUid uid)
+        {
+            if (!TryComp<PsionicComponent>(uid, out var comp))
+                return;
+
+            var ampModifier = 0f;
+            var dampModifier = 0f;
+            foreach (var (_, source) in comp.AmplificationSources)
+                ampModifier += source;
+            foreach (var (_, source) in comp.DampeningSources)
+                dampModifier += source;
+
+            var ev = new OnSetPsionicStatsEvent(ampModifier, dampModifier);
+            RaiseLocalEvent(uid, ref ev);
+            ampModifier = ev.AmplificationChangedAmount;
+            dampModifier = ev.DampeningChangedAmount;
+
+            comp.CurrentAmplification = ampModifier;
+            comp.CurrentDampening = dampModifier;
         }
 
         public void RemovePsionics(EntityUid uid)
