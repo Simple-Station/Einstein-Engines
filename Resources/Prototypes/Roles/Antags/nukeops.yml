@@ -39,4 +39,4 @@
   - !type:CharacterDepartmentTimeRequirement # DeltaV - Command dept time requirement
     department: Command
     min: 36000 # DeltaV - 10 hours
-  - !type:WhitelistRequirement # DeltaV - Whitelist requirement
+  - !type:CharacterWhitelistRequirement
