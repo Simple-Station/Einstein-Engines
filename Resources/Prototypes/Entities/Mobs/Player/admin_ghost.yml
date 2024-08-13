@@ -95,6 +95,7 @@
   - type: InventorySlots
   - type: Loadout
     prototypes: [ MobAghostGear ]
+  - type: SupermatterImmune
 
 - type: entity
   id: ActionAGhostShowSolar

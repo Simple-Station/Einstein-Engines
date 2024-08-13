@@ -85,6 +85,9 @@ public sealed class RadioSystem : EntitySystem
         if (language == null)
             language = _language.GetLanguage(messageSource);
 
+        if (!language.SpeechOverride.AllowRadio)
+            return;
+
         // TODO if radios ever garble / modify messages, feedback-prevention needs to be handled better than this.
         if (!_messages.Add(message))
             return;
@@ -175,12 +178,17 @@ public sealed class RadioSystem : EntitySystem
 
     private string WrapRadioMessage(EntityUid source, RadioChannelPrototype channel, string name, string message, LanguagePrototype language)
     {
+        // TODO: code duplication with ChatSystem.WrapMessage
         var speech = _chat.GetSpeechVerb(source, message);
+        var languageColor = channel.Color;
+        if (language.SpeechOverride.Color is { } colorOverride)
+            languageColor = Color.InterpolateBetween(languageColor, colorOverride, colorOverride.A);
+
         return Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("color", channel.Color),
-            ("languageColor", language.Color ?? channel.Color),
-            ("fontType", language.FontId ?? speech.FontId),
-            ("fontSize", language.FontSize ?? speech.FontSize),
+            ("languageColor", languageColor),
+            ("fontType", language.SpeechOverride.FontId ?? speech.FontId),
+            ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),

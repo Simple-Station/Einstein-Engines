@@ -38,7 +38,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Client.Nyanotrasen.Chat; //Nyano - Summary: chat namespace.
 
 namespace Content.Client.UserInterface.Systems.Chat;
 

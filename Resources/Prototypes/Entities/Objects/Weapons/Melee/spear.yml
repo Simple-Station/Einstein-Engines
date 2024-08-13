@@ -35,17 +35,24 @@
       visible: false
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    range: 1.75
     damage:
       types:
-        Piercing: 12
-    angle: 0
+        Piercing: 7
+        Slash: 1
+    heavyRateModifier: 0.75
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 1.0
+    heavyStaminaCost: 5
+    maxTargets: 3
+    angle: 20
     animation: WeaponArcThrust
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 15
+        Piercing: 10
   - type: Item
     size: Ginormous
   - type: Clothing
@@ -75,7 +82,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Piercing: 4
+        Piercing: 3
+        Slash: 3
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -124,11 +132,12 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 15
+        Piercing: 8.5
+        Slash: 1
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 18
+        Piercing: 12
   - type: Construction
     graph: SpearReinforced
 
@@ -144,11 +153,12 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 18
+        Piercing: 9.5
+        Slash: 1.5
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 21
+        Piercing: 14
   - type: Construction
     graph: SpearPlasma
 
@@ -164,13 +174,13 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 10
+        Piercing: 8
         Radiation: 8
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 12
-        Radiation: 9
+        Piercing: 8
+        Radiation: 8
   - type: Construction
     graph: SpearUranium
 

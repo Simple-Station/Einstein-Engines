@@ -29,21 +29,12 @@
     - type: SouthernAccent
 
 - type: trait
-  id: NormalVisionHarpy
+  id: NormalVision
   category: Visual
-  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: Harpy
-  components:
-    - type: NormalVision
-
-- type: trait
-  id: NormalVisionVulpkanin
-  category: Visual
-  points: -1
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species: Vulpkanin
+      species:
+        - Harpy
+        - Vulpkanin
   components:
     - type: NormalVision
