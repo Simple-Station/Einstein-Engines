@@ -11899,15 +11899,6 @@ entities:
     - type: Transform
       pos: 16.5,-9.5
       parent: 2
-- proto: AirlockClerkGlassLocked
-  entities:
-  - uid: 16570
-    components:
-    - type: MetaData
-      name: Clerk
-    - type: Transform
-      pos: -60.5,15.5
-      parent: 2
 - proto: AirlockClownLocked
   entities:
   - uid: 235
@@ -12502,6 +12493,13 @@ entities:
       name: Dorms
     - type: Transform
       pos: 69.5,-18.5
+      parent: 2
+  - uid: 16570
+    components:
+    - type: MetaData
+      name: Clerk
+    - type: Transform
+      pos: -60.5,15.5
       parent: 2
 - proto: AirlockGlassShuttle
   entities:
