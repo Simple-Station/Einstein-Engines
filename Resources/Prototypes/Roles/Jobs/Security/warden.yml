@@ -10,7 +10,7 @@
     - !type:CharacterPlaytimeRequirement # DeltaV - JobDetective time requirement. Give them an understanding of basic forensics.
       tracker: JobDetective
       min: 14400 # DeltaV - 4 hours
-    - !type:WhitelistRequirement # DeltaV - Whitelist requirement
+    - !type:CharacterWhitelistRequirement
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

@@ -156,6 +156,25 @@
         Piercing: 0.9
         Heat: 0.9
 
+#Paramedic Void Helmet
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitVoidParamed
+  name: paramedic void helmet
+  description: A void helmet made for paramedics.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/paramedhelm.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/paramedhelm.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.90
+        Radiation: 0.75
+
+
 #Security Hardsuit
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
