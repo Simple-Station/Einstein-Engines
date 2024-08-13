@@ -540,7 +540,8 @@ namespace Content.Server.Database
             NetUserId userId,
             string userName,
             IPAddress address,
-            ImmutableArray<byte> hwId)
+            ImmutableArray<byte> hwId,
+            ImmutableArray<byte> publicKey)
         {
             await using var db = await GetDb();
 
@@ -558,6 +559,7 @@ namespace Content.Server.Database
             record.LastSeenAddress = address;
             record.LastSeenUserName = userName;
             record.LastSeenHWId = hwId.ToArray();
+            record.PublicKey = publicKey.ToArray();
 
             await db.DbContext.SaveChangesAsync();
         }
@@ -586,6 +588,21 @@ namespace Content.Server.Database
             return record == null ? null : MakePlayerRecord(record);
         }
 
+        public async Task<PlayerRecord?> GetPlayerRecordByPublicKey(ImmutableArray<byte> publicKey, CancellationToken cancel)
+        {
+            await using var db = await GetDb();
+
+            // Sort by descending last seen time.
+            // (I am only expecting one public key to go to one player -- however, if something weird happened,
+            // maybe due to someone logging in and then later an account migration happening, this at least goes
+            // to the most recent account.)
+            var record = await db.DbContext.Player
+                .OrderByDescending(p => p.LastSeenTime)
+                .FirstOrDefaultAsync(p => p.PublicKey == publicKey.ToArray(), cancel);
+
+            return record == null ? null : MakePlayerRecord(record);
+        }
+
         [return: NotNullIfNotNull(nameof(player))]
         protected PlayerRecord? MakePlayerRecord(Player? player)
         {
@@ -598,7 +615,8 @@ namespace Content.Server.Database
                 player.LastSeenUserName,
                 new DateTimeOffset(NormalizeDatabaseTime(player.LastSeenTime)),
                 player.LastSeenAddress,
-                player.LastSeenHWId?.ToImmutableArray());
+                player.LastSeenHWId?.ToImmutableArray(),
+                player.PublicKey?.ToImmutableArray());
         }
 
         #endregion
@@ -613,7 +631,8 @@ namespace Content.Server.Database
             IPAddress address,
             ImmutableArray<byte> hwId,
             ConnectionDenyReason? denied,
-            int serverId);
+            int serverId,
+            ImmutableArray<byte> publicKey);
 
         public async Task AddServerBanHitsAsync(int connection, IEnumerable<ServerBanDef> bans)
         {

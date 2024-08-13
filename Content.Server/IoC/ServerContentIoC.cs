@@ -25,6 +25,8 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Kitchen;
 using Content.Shared.Players.PlayTimeTracking;
+using Content.Server.Authentication;
+using Robust.Shared.Network;
 
 namespace Content.Server.IoC
 {
@@ -65,6 +67,7 @@ namespace Content.Server.IoC
             IoCManager.Register<DiscordAuthManager>();
             IoCManager.Register<ISharedPlaytimeManager, PlayTimeTrackingManager>();
             IoCManager.Register<ServerApi>();
+            IoCManager.Register<IServerUserDataAssociation, UserDataAssociation>();
         }
     }
 }

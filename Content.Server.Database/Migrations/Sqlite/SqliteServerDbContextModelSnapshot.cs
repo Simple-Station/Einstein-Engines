@@ -503,6 +503,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("BLOB")
                         .HasColumnName("hwid");
 
+                    b.Property<byte[]>("PublicKey")
+                        .HasColumnType("BLOB")
+                        .HasColumnName("public_key");
+
                     b.Property<int>("ServerId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER")
@@ -655,6 +659,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("last_seen_user_name");
 
+                    b.Property<byte[]>("PublicKey")
+                        .HasColumnType("BLOB")
+                        .HasColumnName("public_key");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("TEXT")
                         .HasColumnName("user_id");
@@ -666,6 +674,8 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasName("ak_player_user_id");
 
                     b.HasIndex("LastSeenUserName");
+
+                    b.HasIndex("PublicKey");
 
                     b.HasIndex("UserId")
                         .IsUnique();

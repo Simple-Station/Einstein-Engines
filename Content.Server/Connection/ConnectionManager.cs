@@ -110,7 +110,7 @@ namespace Content.Server.Connection
             {
                 var (reason, msg, banHits) = deny.Value;
 
-                var id = await _db.AddConnectionLogAsync(userId, e.UserName, addr, e.UserData.HWId, reason, serverId);
+                var id = await _db.AddConnectionLogAsync(userId, e.UserName, addr, e.UserData.HWId, reason, serverId, e.UserData.PublicKey);
                 if (banHits is { Count: > 0 })
                     await _db.AddServerBanHitsAsync(id, banHits);
 
@@ -118,12 +118,12 @@ namespace Content.Server.Connection
             }
             else
             {
-                await _db.AddConnectionLogAsync(userId, e.UserName, addr, e.UserData.HWId, null, serverId);
+                await _db.AddConnectionLogAsync(userId, e.UserName, addr, e.UserData.HWId, null, serverId, e.UserData.PublicKey);
 
                 if (!ServerPreferencesManager.ShouldStorePrefs(e.AuthType))
                     return;
 
-                await _db.UpdatePlayerRecordAsync(userId, e.UserName, addr, e.UserData.HWId);
+                await _db.UpdatePlayerRecordAsync(userId, e.UserName, addr, e.UserData.HWId, e.UserData.PublicKey);
             }
         }
 

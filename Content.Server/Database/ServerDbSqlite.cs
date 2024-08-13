@@ -414,7 +414,8 @@ namespace Content.Server.Database
             IPAddress address,
             ImmutableArray<byte> hwId,
             ConnectionDenyReason? denied,
-            int serverId)
+            int serverId,
+            ImmutableArray<byte> publicKey)
         {
             await using var db = await GetDbImpl();
 
@@ -426,7 +427,8 @@ namespace Content.Server.Database
                 UserName = userName,
                 HWId = hwId.ToArray(),
                 Denied = denied,
-                ServerId = serverId
+                ServerId = serverId,
+                PublicKey = publicKey.ToArray()
             };
 
             db.SqliteDbContext.ConnectionLog.Add(connectionLog);

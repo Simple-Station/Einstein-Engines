@@ -173,9 +173,11 @@ namespace Content.Server.Database
             NetUserId userId,
             string userName,
             IPAddress address,
-            ImmutableArray<byte> hwId);
+            ImmutableArray<byte> hwId,
+            ImmutableArray<byte> publicKey);
         Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel = default);
         Task<PlayerRecord?> GetPlayerRecordByUserId(NetUserId userId, CancellationToken cancel = default);
+        Task<PlayerRecord?> GetPlayerRecordByPublicKey(ImmutableArray<byte> publicKey, CancellationToken cancel = default);
         #endregion
 
         #region Connection Logs
@@ -186,7 +188,8 @@ namespace Content.Server.Database
             IPAddress address,
             ImmutableArray<byte> hwId,
             ConnectionDenyReason? denied,
-            int serverId);
+            int serverId,
+            ImmutableArray<byte> publicKey);
 
         Task AddServerBanHitsAsync(int connection, IEnumerable<ServerBanDef> bans);
 
@@ -505,10 +508,11 @@ namespace Content.Server.Database
             NetUserId userId,
             string userName,
             IPAddress address,
-            ImmutableArray<byte> hwId)
+            ImmutableArray<byte> hwId,
+            ImmutableArray<byte> publicKey)
         {
             DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdatePlayerRecord(userId, userName, address, hwId));
+            return RunDbCommand(() => _db.UpdatePlayerRecord(userId, userName, address, hwId, publicKey));
         }
 
         public Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel = default)
@@ -523,16 +527,23 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.GetPlayerRecordByUserId(userId, cancel));
         }
 
+        public Task<PlayerRecord?> GetPlayerRecordByPublicKey(ImmutableArray<byte> publicKey, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetPlayerRecordByPublicKey(publicKey, cancel));
+        }
+
         public Task<int> AddConnectionLogAsync(
             NetUserId userId,
             string userName,
             IPAddress address,
             ImmutableArray<byte> hwId,
             ConnectionDenyReason? denied,
-            int serverId)
+            int serverId,
+            ImmutableArray<byte> publicKey)
         {
             DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddConnectionLogAsync(userId, userName, address, hwId, denied, serverId));
+            return RunDbCommand(() => _db.AddConnectionLogAsync(userId, userName, address, hwId, denied, serverId, publicKey));
         }
 
         public Task AddServerBanHitsAsync(int connection, IEnumerable<ServerBanDef> bans)
