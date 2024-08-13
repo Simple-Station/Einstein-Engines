@@ -34,7 +34,7 @@
     HeadSide:
       points: 1
       required: false
-      defaultMarkings: [ PointyEarsStandard ]
+      defaultMarkings: [ PointyEarsUpwards ]
     Snout:
       points: 2
       required: false

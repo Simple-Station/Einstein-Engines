@@ -59,6 +59,16 @@
     state: pointy_ears_thin
 
 - type: marking
+  id: PointyEarsLarge
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  forcedColoring: true
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: Mobs/Customization/pointy_ears.rsi
+    state: pointy_ears_large
+
+- type: marking
   id: PointyEarsNone
   bodyPart: HeadSide
   markingCategory: HeadSide

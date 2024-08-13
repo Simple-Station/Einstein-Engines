@@ -16,5 +16,8 @@ marking-PointyEarsSlanted = Slanted Ears
 marking-PointyEarsThin-pointy_ears_thin = Thin Ears
 marking-PointyEarsThin = Thin Ears
 
+marking-PointyEarsLarge-pointy_ears_large = Large Ears
+marking-PointyEarsLarge = Large Ears
+
 marking-PointyEarsNone-pointy_ears_none = No Ears
 marking-PointyEarsNone = No Ears
