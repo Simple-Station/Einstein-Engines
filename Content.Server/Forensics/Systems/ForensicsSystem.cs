@@ -185,10 +185,6 @@ namespace Content.Server.Forensics
             if (args.Handled || args.Cancelled || args.Args.Target == null)
                 return;
 
-            if (TryComp<ScentComponent>(args.Target, out var scentComp))
-                scentComp.Scent = GenerateFingerprint(length: 5);
-                // TODO: Replace all currently weared items to this scent.
-
             if (!TryComp<ForensicsComponent>(args.Target, out var targetComp))
                 return;
 
@@ -206,7 +202,33 @@ namespace Content.Server.Forensics
             if (TryComp<ResidueComponent>(args.Used, out var residue))
                 targetComp.Residues.Add(string.IsNullOrEmpty(residue.ResidueColor) ? Loc.GetString("forensic-residue", ("adjective", residue.ResidueAdjective)) : Loc.GetString("forensic-residue-colored", ("color", residue.ResidueColor), ("adjective", residue.ResidueAdjective)));
 
-            Dirty(uid, component);
+            // If the ent has a Scent Component, we compleatly generate a new one and apply the new scent to all currently weared items.
+            if (TryComp<ScentComponent>(args.Target, out var scentComp))
+            {
+                var generatedscent = GenerateFingerprint(length: 5);
+                scentComp.Scent = generatedscent;
+                targetComp.Scent = generatedscent;
+
+                if (args.Target is { Valid: true } target)
+                {
+                    if (_inventory.TryGetSlots(target, out var slotDefinitions))
+                    {
+                        foreach (var slot in slotDefinitions)
+                        {
+                            if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt))
+                                continue;
+
+                            EnsureComp<ForensicsComponent>(slotEnt.Value, out var recipientComp);
+                            recipientComp.Scent = generatedscent;
+
+                            Dirty(slotEnt.Value, recipientComp);
+                        }
+                    }
+                }
+            }
+
+            if (args.Target is { Valid: true } targetuid)
+                Dirty(targetuid, targetComp);
         }
 
         public string GenerateFingerprint(int length = 16)
