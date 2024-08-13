@@ -4,6 +4,9 @@ marking-PointyEarsStandard = Standard Ears
 marking-PointyEarsWide-pointy_ears_wide = Wide Ears
 marking-PointyEarsWide = Wide Ears
 
+marking-PointyEarsSmall-pointy_ears_small = Small Ears
+marking-PointyEarsSmall = Small Ears
+
 marking-PointyEarsUpwards-pointy_ears_upwards = Upward Ears
 marking-PointyEarsUpwards = Upward Ears
 
