@@ -1,5 +1,6 @@
 using Content.Shared.Psionics;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Abilities.Psionics
 {
@@ -22,10 +23,16 @@ namespace Content.Shared.Abilities.Psionics
         public HashSet<PsionicPowerPrototype> ActivePowers = new();
 
         /// <summary>
+        ///     The list of each Psionic Power by action with entityUid.
+        /// </summary>
+        [DataField]
+        public List<(EntProtoId Id, EntityUid? Entity)> Actions = new();
+
+        /// <summary>
         ///     What sources of Amplification does this Psion have?
         /// </summary>
         [ViewVariables(VVAccess.ReadOnly)]
-        public readonly Dictionary<string, float> AmplificationSources = new() { { "Baseline Amplification", 0.1f } };
+        public readonly Dictionary<string, float> AmplificationSources = new() { { "amplification-baseline", 0.1f } };
 
         /// <summary>
         ///     A measure of how "Powerful" a Psion is.
@@ -37,7 +44,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     What sources of Dampening does this Psion have?
         /// </summary>
         [ViewVariables(VVAccess.ReadOnly)]
-        public readonly Dictionary<string, float> DampeningSources = new() { { "Baseline Dampening", 0.1f } };
+        public readonly Dictionary<string, float> DampeningSources = new() { { "dampening-baseline", 0.1f } };
 
         /// <summary>
         ///     A measure of how "Controlled" a Psion is.

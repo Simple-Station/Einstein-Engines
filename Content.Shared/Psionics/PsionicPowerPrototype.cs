@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Psionics;
 
 [Prototype("psionicPower")]
-public sealed class PsionicPowerPrototype : IPrototype
+public sealed partial class PsionicPowerPrototype : IPrototype
 {
     /// <summary>
     ///     The ID of the psionic power to use.
@@ -27,7 +27,7 @@ public sealed class PsionicPowerPrototype : IPrototype
     ///     The list of each Action that this power adds in the form of ActionId and ActionEntity
     /// </summary>
     [DataField]
-    public List<(EntProtoId, EntityUid? Entity)> Actions = new();
+    public List<EntProtoId> Actions = new();
 
     /// <summary>
     ///     The list of what Components this power adds.

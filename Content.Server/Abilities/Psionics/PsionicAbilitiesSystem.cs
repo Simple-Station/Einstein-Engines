@@ -18,7 +18,6 @@ namespace Content.Server.Abilities.Psionics
 {
     public sealed class PsionicAbilitiesSystem : EntitySystem
     {
-        [Dependency] private readonly IComponentFactory _componentFactory = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
         [Dependency] private readonly EuiManager _euiManager = default!;
@@ -36,8 +35,17 @@ namespace Content.Server.Abilities.Psionics
         {
             base.Initialize();
             SubscribeLocalEvent<PsionicAwaitingPlayerComponent, PlayerAttachedEvent>(OnPlayerAttached);
+            SubscribeLocalEvent<InnatePsionicPowersComponent, ComponentStartup>(InnatePowerStartup);
         }
 
+        private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, ComponentStartup args)
+        {
+            //Any entity with InnatePowers should also be psionic, but in case they aren't already...
+            EnsureComp<PsionicComponent>(uid);
+
+            foreach (var proto in comp.PowersToAdd)
+                InitializePsionicPower(uid, proto, false);
+        }
         private void OnPlayerAttached(EntityUid uid, PsionicAwaitingPlayerComponent component, PlayerAttachedEvent args)
         {
             if (TryComp<PsionicBonusChanceComponent>(uid, out var bonus) && bonus.Warn == true)
@@ -105,13 +113,14 @@ namespace Content.Server.Abilities.Psionics
 
             psionic.ActivePowers.Add(proto);
 
-            foreach (var (id, entity) in proto.Actions)
+            foreach (var id in proto.Actions)
             {
-                if (entity is null)
-                    continue;
-                _actions.AddAction(uid, id.Id, entity.Value);
-                if (_actions.TryGetActionData(entity.Value, out var _))
-                    _actions.StartUseDelay(entity.Value);
+                EntityUid? actionId = null;
+                if (_actions.AddAction(uid, ref actionId, id))
+                {
+                    _actions.StartUseDelay(actionId);
+                    psionic.Actions.Add((id, actionId));
+                }
             }
 
             if (proto.AmplificationModifier != 0)
@@ -180,33 +189,66 @@ namespace Content.Server.Abilities.Psionics
             comp.CurrentDampening = dampModifier;
         }
 
-        public void RemovePsionics(EntityUid uid)
+        public void RemoveAllPsionicPowers(EntityUid uid, bool mindbreak = false)
         {
             if (!TryComp<PsionicComponent>(uid, out var psionic)
                 || !psionic.Removable)
                 return;
 
-            if (!_prototypeManager.TryIndex<WeightedRandomPrototype>("RandomPsionicPowerPool", out var pool))
+            var newPsionic = _serialization.CreateCopy(psionic, null, false, true);
+            foreach (var proto in newPsionic.ActivePowers)
             {
-                _sawmill.Error("Can't index the random psionic power pool!");
+                if (!_prototypeManager.TryIndex<PsionicPowerPrototype>(proto.ID, out var power))
+                    continue;
+
+                if (power.Components is not null)
+                    foreach (var comp in power.Components)
+                        EntityManager.RemoveComponent(uid, comp);
+
+                if (psionic.Actions is not null)
+                    foreach (var action in psionic.Actions)
+                        _actionsSystem.RemoveAction(uid, action.Entity);
+
+                // If we're mindbreaking, we can skip the last two enumerations since the PsionicComponent is getting 1984'd.
+                if (mindbreak)
+                    continue;
+
+                if (power.AmplificationModifier != 0)
+                    psionic.AmplificationSources.Remove(power.Name);
+
+                if (power.DampeningModifier != 0)
+                    psionic.DampeningSources.Remove(power.Name);
+            }
+
+            if (mindbreak)
+            {
+                RemComp<PsionicComponent>(uid);
+                EnsureComp<MindbrokenComponent>(uid);
+                _statusEffectsSystem.TryAddStatusEffect(uid, "Stutter", TimeSpan.FromMinutes(5 * psionic.CurrentAmplification * psionic.CurrentDampening), false, "StutteringAccent");
+            }
+        }
+
+        public void RemovePsionicPower(EntityUid uid, PsionicPowerPrototype proto, bool removedByComponent = false)
+        {
+            if (!TryComp<PsionicComponent>(uid, out var psionic)
+                || !psionic.Removable
+                || !_prototypeManager.TryIndex(proto.ID, out var _))
                 return;
-            }
 
-            foreach (var compName in pool.Weights.Keys)
-            {
-                // component moment
-                var comp = _componentFactory.GetComponent(compName);
-                if (EntityManager.TryGetComponent(uid, comp.GetType(), out var psionicPower))
-                    RemComp(uid, psionicPower);
-            }
-            if (psionic.PsionicAbility != null
-                && _actionsSystem.TryGetActionData(psionic.PsionicAbility, out var psiAbility)
-                && psiAbility is not null)
-                _actionsSystem.RemoveAction(uid, psionic.PsionicAbility);
+            if (removedByComponent
+                && proto.Components is not null)
+                foreach (var comp in proto.Components)
+                    EntityManager.RemoveComponent(uid, comp);
 
-            _statusEffectsSystem.TryAddStatusEffect(uid, "Stutter", TimeSpan.FromMinutes(5), false, "StutteringAccent");
+            if (psionic.Actions is not null)
+                foreach (var action in psionic.Actions)
+                    _actionsSystem.RemoveAction(uid, action.Entity);
 
-            RemComp<PsionicComponent>(uid);
+            if (proto.AmplificationModifier != 0)
+                psionic.AmplificationSources.Remove(proto.Name);
+
+            if (proto.DampeningModifier != 0)
+                psionic.DampeningSources.Remove(proto.Name);
         }
     }
 }
