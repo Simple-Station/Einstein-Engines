@@ -1,3 +1,4 @@
+# TODO MAKE POPUP SPECIFIERS PROTOTYPES THIS IS UNBEARABLE
 - type: Interaction
   id: Base
   abstract: true
@@ -6,8 +7,6 @@
     popupType: Medium
     logPopup: true
     logChannel: Emotes
-  failurePopup: null
-  delayedPopup: null
 
 # Base global interaction
 - type: Interaction
@@ -20,12 +19,20 @@
 - type: Interaction
   id: BaseHands
   parent: Base
-  requireHands: true
-  requireCanInteract: true
+  requiresHands: true
+  requiresCanInteract: true
   contactInteraction: true
   range:
     max: 2
+  successPopup:
+    prefix: success
+    popupType: Medium
+    logPopup: true
+    logChannel: Emotesdw
+    sound: {path: /Audio/Effects/thudswoosh.ogg}
 
+# TODO ALL OF THE BELOW SHOULD BE GONE IN FAVOR OF PROTOTYPES
+# I HATE THESE
 # Base interaction that shows a popup when failed. The popup is not shown to others by default.
 - type: Interaction
   id: BaseFailable

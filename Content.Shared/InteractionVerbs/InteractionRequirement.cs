@@ -12,7 +12,7 @@ namespace Content.Shared.InteractionVerbs;
 [UsedImplicitly(ImplicitUseTargetFlags.WithInheritors )]
 public abstract partial class InteractionRequirement
 {
-    public abstract bool IsMet(EntityUid user, EntityUid target, InteractionVerbPrototype proto, bool canAccess, bool canInteract, InteractionAction.VerbDependencies deps);
+    public abstract bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps);
 }
 
 // <inheritdoc/>

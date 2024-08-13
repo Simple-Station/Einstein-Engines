@@ -5,9 +5,10 @@ namespace Content.Shared.InteractionVerbs.Events;
 ///     Note that this is raised if and only if verb's own CanPerform check returns true.
 /// </summary>
 [ByRefEvent]
-public sealed class InteractionVerbAttemptEvent(InteractionVerbPrototype proto, EntityUid user, EntityUid target) : CancellableEntityEventArgs
+public sealed class InteractionVerbAttemptEvent(InteractionVerbPrototype proto, InteractionArgs args) : CancellableEntityEventArgs
 {
+    public bool Handled { get; set; } = false;
+
     public InteractionVerbPrototype Proto => proto;
-    public EntityUid User => user;
-    public EntityUid Target => target;
+    public InteractionArgs Args => args;
 }

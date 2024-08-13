@@ -15,9 +15,9 @@ public sealed partial class EntityWhitelistRequirement : InteractionRequirement
 {
     [DataField] public EntityWhitelist Whitelist = new(), Blacklist = new();
 
-    public override bool IsMet(EntityUid user, EntityUid target, InteractionVerbPrototype proto, bool canAccess, bool canInteract, InteractionAction.VerbDependencies deps)
+    public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps)
     {
-        return Whitelist.IsValid(target, deps.EntMan) && !Blacklist.IsValid(target, deps.EntMan);
+        return Whitelist.IsValid(args.Target, deps.EntMan) && !Blacklist.IsValid(args.Target, deps.EntMan);
     }
 }
 
@@ -29,9 +29,9 @@ public sealed partial class MobStateRequirement : InvertableInteractionRequireme
 {
     [DataField] public List<MobState> AllowedStates = new();
 
-    public override bool IsMet(EntityUid user, EntityUid target, InteractionVerbPrototype proto, bool canAccess, bool canInteract, InteractionAction.VerbDependencies deps)
+    public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps)
     {
-        if (!deps.EntMan.TryGetComponent<MobStateComponent>(target, out var state))
+        if (!deps.EntMan.TryGetComponent<MobStateComponent>(args.Target, out var state))
             return false;
 
         return AllowedStates.Contains(state.CurrentState) ^ Inverted;
@@ -46,12 +46,12 @@ public sealed partial class StandingStateRequirement : InteractionRequirement
 {
     [DataField] public bool AllowStanding, AllowLaying, AllowKnockedDown;
 
-    public override bool IsMet(EntityUid user, EntityUid target, InteractionVerbPrototype proto, bool canAccess, bool canInteract, InteractionAction.VerbDependencies deps)
+    public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps)
     {
-        if (deps.EntMan.HasComponent<KnockedDownComponent>(target))
+        if (deps.EntMan.HasComponent<KnockedDownComponent>(args.Target))
             return AllowKnockedDown;
 
-        if (!deps.EntMan.TryGetComponent<StandingStateComponent>(target, out var state))
+        if (!deps.EntMan.TryGetComponent<StandingStateComponent>(args.Target, out var state))
             return false;
 
         return state.Standing ? AllowStanding : AllowLaying;
@@ -64,8 +64,8 @@ public sealed partial class StandingStateRequirement : InteractionRequirement
 [Serializable, NetSerializable]
 public sealed partial class SelfTargetRequirement : InvertableInteractionRequirement
 {
-    public override bool IsMet(EntityUid user, EntityUid target, InteractionVerbPrototype proto, bool canAccess, bool canInteract, InteractionAction.VerbDependencies deps)
+    public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps)
     {
-        return (user == target) ^ Inverted;
+        return (args.Target == args.User) ^ Inverted;
     }
 }

@@ -24,22 +24,24 @@ public sealed partial class ModifyStatusEffectAction : InteractionAction
     [DataField]
     public TimeSpan TimeAdded = TimeSpan.FromSeconds(1);
 
-    public override bool CanPerform(EntityUid user, EntityUid target, bool beforeDelay, InteractionVerbPrototype proto, VerbDependencies deps)
+    public override bool CanPerform(InteractionArgs args, InteractionVerbPrototype proto, bool isBefore, VerbDependencies deps)
     {
         var statusEffects = deps.EntMan.System<StatusEffectsSystem>();
-        if (!statusEffects.CanApplyEffect(target, Effect))
+        if (!statusEffects.CanApplyEffect(args.Target, Effect))
             return false;
 
-        return !EnsureEffect || TimeAdded >= TimeSpan.Zero || statusEffects.HasStatusEffect(target, Effect);
+        return !EnsureEffect || TimeAdded >= TimeSpan.Zero || statusEffects.HasStatusEffect(args.Target, Effect);
     }
 
-    public override void Perform(EntityUid user, EntityUid target, InteractionVerbPrototype proto, VerbDependencies deps)
+    public override bool Perform(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps)
     {
         var statusEffects = deps.EntMan.System<StatusEffectsSystem>();
 
-        if (statusEffects.HasStatusEffect(target, Effect))
-            statusEffects.TryAddTime(target, Effect, TimeAdded);
+        if (statusEffects.HasStatusEffect(args.Target, Effect))
+            return statusEffects.TryAddTime(args.Target, Effect, TimeAdded);
         else if (EnsureEffect)
-            statusEffects.TryAddStatusEffect(target, Effect, TimeAdded, true);
+            return statusEffects.TryAddStatusEffect(args.Target, Effect, TimeAdded, true);
+
+        return false;
     }
 }

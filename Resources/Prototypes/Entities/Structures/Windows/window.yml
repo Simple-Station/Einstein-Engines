@@ -74,11 +74,6 @@
   - type: IconSmooth
     key: walls
     base: window
-  - type: InteractionPopup
-    interactSuccessString: comp-window-knock
-    messagePerceivedByOthers: comp-window-knock
-    interactSuccessSound:
-      path: /Audio/Effects/glass_knock.ogg
   - type: Construction
     graph: Window
     node: window
@@ -92,7 +87,10 @@
   - type: StaticPrice
     price: 100
   - type: BlockWeather
-  
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockingOn
+
 - type: entity
   id: WindowRCDResistant
   parent: Window
@@ -198,7 +196,7 @@
     price: 10
 
 - type: entity
-  id: WindowDirectionalRCDResistant  
+  id: WindowDirectionalRCDResistant
   parent: WindowDirectional
   abstract: true
   components:

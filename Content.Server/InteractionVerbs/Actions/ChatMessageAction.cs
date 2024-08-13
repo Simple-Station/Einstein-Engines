@@ -12,7 +12,7 @@ namespace Content.Server.InteractionVerbs.Actions;
 ///     Messages are locale-based, their keys follow the form of "interaction-[verb id]-[message loc prefix]-[index]".
 ///     The index parameter is a random integer from 1 to <see cref="NumMessages"/>. <br/><br/>
 ///
-///     Similarly to interaction verb locales, {$user} and {$target} arguments are passed to the locales retrieved by this action.
+///     Similarly to interaction verb locales, {$user}, {$target} amd {$used} arguments are passed to the locales retrieved by this action.
 /// </summary>
 [Serializable]
 public sealed partial class ChatMessageAction : InteractionAction
@@ -35,28 +35,28 @@ public sealed partial class ChatMessageAction : InteractionAction
     [DataField]
     public bool TargetIsSource = true;
 
-    private EntityUid GetSpeaker(EntityUid user, EntityUid target)
+    private EntityUid GetSpeaker(InteractionArgs args) => TargetIsSource ? args.Target : args.User;
+
+    public override bool CanPerform(InteractionArgs args, InteractionVerbPrototype proto, bool beforeDelay, VerbDependencies deps)
     {
-        return TargetIsSource ? target : user;
+        return deps.EntMan.System<ActionBlockerSystem>().CanSpeak(GetSpeaker(args));
     }
 
-    public override bool CanPerform(EntityUid user, EntityUid target, bool beforeDelay, InteractionVerbPrototype proto, VerbDependencies deps)
-    {
-        return deps.EntMan.System<ActionBlockerSystem>().CanSpeak(GetSpeaker(user, target));
-    }
-
-    public override void Perform(EntityUid user, EntityUid target, InteractionVerbPrototype proto, VerbDependencies deps)
+    public override bool Perform(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps)
     {
         var index = NumMessages <= 1 ? 1 : deps.Random.Next(1, NumMessages + 1);
         var locString = $"interaction-{proto.ID}-{MessageLocPrefix}-{index}";
 
-        if (!Loc.TryGetString(locString, out var message, ("user", user), ("target", target)))
+        var used = args.Used ?? EntityUid.Invalid;
+        if (!Loc.TryGetString(locString, out var message, ("user", args.User), ("target", args.Target), ("used", used)))
         {
             Logger.GetSawmill("action.chat_message").Error($"No chat message found for interaction {proto.ID}! Loc string: {locString}.");
-            return;
+            return false;
         }
 
-        var speaker = GetSpeaker(user, target);
+        var speaker = GetSpeaker(args);
         deps.EntMan.System<ChatSystem>().TrySendInGameICMessage(speaker, message, ChatType, false);
+
+        return true;
     }
 }

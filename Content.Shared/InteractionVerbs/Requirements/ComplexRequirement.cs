@@ -16,12 +16,12 @@ public sealed partial class ComplexRequirement : InteractionRequirement
     ///     If true, all requirements must pass (boolean and). Otherwise, at least one must pass (boolean or).
     /// </summary>
     [DataField]
-    public bool RequireAll = false;
+    public bool RequireAll = true;
 
-    public override bool IsMet(EntityUid user, EntityUid target, InteractionVerbPrototype proto, bool canAccess, bool canInteract, InteractionAction.VerbDependencies deps)
+    public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps)
     {
         return RequireAll
-            ? Requirements.All(r => r.IsMet(user, target, proto, canAccess, canInteract, deps))
-            : Requirements.Any(r => r.IsMet(user, target, proto, canAccess, canInteract, deps));
+            ? Requirements.All(r => r.IsMet(args, proto, deps))
+            : Requirements.Any(r => r.IsMet(args, proto, deps));
     }
 }

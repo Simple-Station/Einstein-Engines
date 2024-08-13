@@ -16,11 +16,8 @@ public abstract partial class InteractionAction
     ///     If this method returns false, it will not be shown to the user.
     /// </summary>
     public virtual bool IsAllowed(
-        EntityUid user,
-        EntityUid target,
+        InteractionArgs args,
         InteractionVerbPrototype proto,
-        bool canAccess,
-        bool canInteract,
         VerbDependencies deps
     ) => true;
 
@@ -29,19 +26,17 @@ public abstract partial class InteractionAction
     ///     If the verb has a do-after, this will be called both before and after the do-after.
     /// </summary>
     public abstract bool CanPerform(
-        EntityUid user,
-        EntityUid target,
-        bool beforeDelay,
+        InteractionArgs args,
         InteractionVerbPrototype proto,
+        bool beforeDelay,
         VerbDependencies deps
     );
 
     /// <summary>
-    ///     Performs the action.
+    ///     Performs the action and returns whether it was successful.
     /// </summary>
-    public abstract void Perform(
-        EntityUid user,
-        EntityUid target,
+    public abstract bool Perform(
+        InteractionArgs args,
         InteractionVerbPrototype proto,
         VerbDependencies deps
     );

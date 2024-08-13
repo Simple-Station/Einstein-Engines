@@ -3,6 +3,7 @@ using Content.Shared.DoAfter;using Content.Shared.InteractionVerbs;
 using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -21,6 +22,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -73,7 +75,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         if (ev.Cancelled || ev.Handled || !_protoMan.TryIndex(ev.VerbPrototype, out var proto))
             return;
 
-        PerformVerb(proto, ev.User, ev.Target!.Value);
+        PerformVerb(proto, ev.VerbArgs);
         ev.Handled = true;
     }
 
@@ -85,43 +87,56 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     ///     Starts the verb, checking if it can be performed first, unless forced.
     ///     Upon success, this method will either start a do-after, or pass control to <see cref="PerformVerb"/>.
     /// </summary>
-    public bool StartVerb(InteractionVerbPrototype proto, EntityUid user, EntityUid target, bool force = false)
+    public bool StartVerb(InteractionVerbPrototype proto, InteractionArgs args, bool force = false)
     {
         if (proto.Action is null)
             return false;
 
-        if (!proto.Action.CanPerform(user, target, true, proto, _verbDependencies) && !force)
+        if (!proto.Action.CanPerform(args, proto, true, _verbDependencies) && !force)
         {
-            ShowVerbPopups(proto.FailurePopup, proto, user, target);
+            ShowVerbPopups(proto.FailurePopup, proto, args);
             return false;
         }
 
+        var attemptEv = new InteractionVerbAttemptEvent(proto, args);
+        RaiseLocalEvent(args.User, ref attemptEv);
+        RaiseLocalEvent(args.Target, ref attemptEv);
+
+        if (attemptEv.Cancelled)
+        {
+            ShowVerbPopups(proto.FailurePopup, proto, args);
+            return false;
+        }
+
+        if (attemptEv.Handled)
+            return true;
+
         if (proto.Delay <= TimeSpan.Zero)
         {
-            PerformVerb(proto, user, target);
+            PerformVerb(proto, args);
             return true;
         }
 
         // The pyramid strikes again... god forgive me for this
         var doAfter = new DoAfterArgs(proto.DoAfter)
         {
-            User = user,
-            Target = target,
+            User = args.User,
+            Target = args.Target,
             EventTarget = EntityUid.Invalid,
-            NetUser = GetNetEntity(user),
-            NetTarget = GetNetEntity(target),
+            NetUser = GetNetEntity(args.User),
+            NetTarget = GetNetEntity(args.Target),
             NetEventTarget = NetEntity.Invalid,
             Broadcast = true,
             BreakOnHandChange = proto.RequiresHands,
             NeedHand = proto.RequiresHands,
             Delay = proto.Delay,
             RequireCanInteract = proto.RequiresCanInteract,
-            Event = new InteractionVerbDoAfterEvent(proto.ID)
+            Event = new InteractionVerbDoAfterEvent(proto.ID, args)
         };
 
         var isSuccess = _doAfters.TryStartDoAfter(doAfter);
         if (isSuccess)
-            ShowVerbPopups(proto.DelayedPopup, proto, user, target);
+            ShowVerbPopups(proto.DelayedPopup, proto, args);
 
         return isSuccess;
     }
@@ -130,25 +145,28 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     ///     Performs an additional CanPerform check (unless forced) and then actually performs the action of the verb
     ///     and shows a success popup.
     /// </summary>
-    public void PerformVerb(InteractionVerbPrototype proto, EntityUid user, EntityUid target, bool force = false)
+    public void PerformVerb(InteractionVerbPrototype proto, InteractionArgs args, bool force = false)
     {
         if (_net.IsClient)
-            return; // guh
+            return; // this leads to issues
 
-        if (!proto.Action!.CanPerform(user, target, false, proto, _verbDependencies) && !force)
+        if (!proto.Action!.CanPerform(args, proto, false, _verbDependencies) && !force
+            || !proto.Action.Perform(args, proto, _verbDependencies))
         {
-            ShowVerbPopups(proto.FailurePopup, proto, user, target);
+            ShowVerbPopups(proto.FailurePopup, proto, args);
             return;
         }
 
-        proto.Action.Perform(user, target, proto, _verbDependencies);
-        ShowVerbPopups(proto.SuccessPopup, proto, user, target);
+        ShowVerbPopups(proto.SuccessPopup, proto, args);
     }
 
     #endregion
 
     #region private api
 
+    /// <summary>
+    ///     Creates verbs for all listed prototypes that match their own requirements. Uses the provided factory to create new verb instances.
+    /// </summary>
     // Note: using `where T : Verb, new()` here results in a sandbox violation... Yea we peasants don't get OOP in ss14.
     private void AddAll<T>(IEnumerable<InteractionVerbPrototype> verbs, GetVerbsEvent<T> args, Func<T> factory) where T : Verb
     {
@@ -167,26 +185,26 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
                 || proto.RequiresCanInteract && !args.CanInteract
                 || !proto.Range.IsInRange(distance);
 
-            var isRequirementMet = proto.Requirement?.IsMet(args.User, args.Target, proto, args.CanAccess, args.CanInteract, _verbDependencies) != false;
+            var verbArgs = InteractionArgs.From(args);
+            var isRequirementMet = proto.Requirement?.IsMet(verbArgs, proto, _verbDependencies) != false;
             if (!isRequirementMet && proto.HideByRequirement)
                 continue;
 
-            var isAllowed = proto.Action?.IsAllowed(args.User, args.Target, proto, args.CanAccess, args.CanInteract, _verbDependencies) == true;
+            var isAllowed = proto.Action?.IsAllowed(verbArgs, proto, _verbDependencies) == true;
             if (!isAllowed && proto.HideWhenInvalid)
                 continue;
 
             var verb = factory.Invoke();
-            CopyVerbData(proto, verb, args.User, args.Target);
-
+            CopyVerbData(proto, verb);
             verb.Disabled = isInvalid || !isRequirementMet || !isAllowed;
-            if (verb.Disabled)
-                verb.Act = null;
+            if (!verb.Disabled)
+                verb.Act = () => StartVerb(proto, verbArgs);
 
             args.Verbs.Add(verb);
         }
     }
 
-    private void CopyVerbData(InteractionVerbPrototype proto, Verb verb, EntityUid user, EntityUid target)
+    private void CopyVerbData(InteractionVerbPrototype proto, Verb verb)
     {
         verb.Text = proto.Name;
         verb.Message = proto.Description;
@@ -194,43 +212,50 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         verb.Priority = proto.Priority;
         verb.Icon = proto.Icon;
         verb.Category = VerbCategory.Interaction;
-        verb.Act = () => StartVerb(proto, user, target);
     }
 
-    private void ShowVerbPopups(PopupSpecifier? specifier, InteractionVerbPrototype proto, EntityUid user, EntityUid target)
+    private void ShowVerbPopups(PopupSpecifier? specifier, InteractionVerbPrototype proto, InteractionArgs args)
     {
         // Not showing popups on client because it causes issues.
         if (specifier is not { } popup || _net.IsClient)
             return;
 
+        var (user, target, used) = (args.User, args.Target, args.Used);
         var locPrefix = $"interaction-{proto.ID}-{popup.PopupPrefix}";
 
-        (string, object)[] localeArgs = [("user", user), ("target", target)];
+        (string, object)[] localeArgs = [("user", user), ("target", target), ("used", used ?? EntityUid.Invalid), ("selfTarget", user == target)];
 
         // User popup
         var userSuffix = popup.SelfSuffix ?? popup.OthersSuffix;
         var userTarget = popup.PopupTarget is User or TargetThenUser ? user : target;
         if (userSuffix is not null)
-            PopupAndLog(Loc.GetString($"{locPrefix}-{userSuffix}-popup", localeArgs), userTarget, Filter.Entities(user), false, popup);
+            PopupEffects(Loc.GetString($"{locPrefix}-{userSuffix}-popup", localeArgs), userTarget, Filter.Entities(user), false, popup);
 
         // Target popup
-        if (target != user)
-        {
-            var targetSuffix = popup.TargetSuffix ?? popup.OthersSuffix;
-            var targetTarget = popup.PopupTarget is not User ? target : user;
-            if (targetSuffix is not null)
-                PopupAndLog(Loc.GetString($"{locPrefix}-{targetSuffix}-popup", localeArgs), targetTarget, Filter.Entities(target), false, popup);
-        }
+        var targetSuffix = popup.TargetSuffix ?? popup.OthersSuffix;
+        var targetTarget = popup.PopupTarget is not User ? target : user;
+        if (targetSuffix is not null && user != target)
+            PopupEffects(Loc.GetString($"{locPrefix}-{targetSuffix}-popup", localeArgs), targetTarget, Filter.Entities(target), false, popup);
 
         // Others popup
         var othersSuffix = popup.OthersSuffix;
         var othersTarget = popup.PopupTarget is User or TargetThenUser ? user : target;
         var othersFilter = Filter.Pvs(othersTarget).RemoveWhereAttachedEntity(ent => ent == user || ent == target);
         if (othersSuffix is not null)
-            PopupAndLog(Loc.GetString($"{locPrefix}-{othersSuffix}-popup", localeArgs), othersTarget, othersFilter, true, popup);
+            PopupEffects(Loc.GetString($"{locPrefix}-{othersSuffix}-popup", localeArgs), othersTarget, othersFilter, true, popup);
+
+        // Sounds
+        if (popup.Sound is { } sound)
+        {
+            // TODO we have a choice between having an accurate sound source or saving on an entity spawn...
+            _audio.PlayEntity(sound, Filter.Entities(user, target), target, false, popup.SoundParams);
+
+            if (popup.SoundPerceivedByOthers)
+                _audio.PlayEntity(sound, othersFilter, othersTarget, false, popup.SoundParams);
+        }
     }
 
-    private void PopupAndLog(string message, EntityUid target, Filter filter, bool recordReplay, PopupSpecifier specifier)
+    private void PopupEffects(string message, EntityUid target, Filter filter, bool recordReplay, PopupSpecifier specifier)
     {
         // Sending a chat message will result in a popup anyway
         // TODO this needs to be fixed probably. Popups and chat messages should be independent.

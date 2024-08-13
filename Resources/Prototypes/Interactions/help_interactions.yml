@@ -1,12 +1,10 @@
 # Combines waking up, helping from stun, and forcing to stand.
 - type: Interaction
-  id: HelpingUp
-  parent: [BaseGlobal, BaseHands, BaseDelayedPopup]
+  id: HelpUp
+  parent: [BaseDelayedPopup, BaseFailable, BaseHands, BaseGlobal]
   priority: -5
   range: {max: 1.2}
   delay: 1.5
-  finishPopup:
-    fail: fail
   hideByRequirement: true
   requirement:
     !type:StandingStateRequirement
@@ -16,7 +14,8 @@
     !type:ComplexAction
     requireAll: false
     actions:
-    - !type:WakeUpAction
+    - !type:ToggleSleepingAction
+      wakeUp: true
     - !type:ChangeStandingStateAction
       makeStanding: true
     - !type:ModifyStatusEffectAction
@@ -25,15 +24,10 @@
 
 - type: Interaction
   id: ForceDown
-  parent: [BaseGlobal, BaseHands, BaseDelayedPopup]
+  parent: [BaseDelayedPopup, BaseFailable, BaseHands, BaseGlobal]
   priority: -5
   range: {max: 1.2}
-  delay: 1.5
-  delayedPopup:
-    popupType: SmallCaution
-  finishPopup:
-    fail: fail
-    popupType: SmallCaution
+  delay: 3.5
   hideByRequirement: true
   requirement:
     !type:StandingStateRequirement
@@ -41,3 +35,22 @@
   action:
     !type:ChangeStandingStateAction
     makeLaying: true
+
+- type: Interaction
+  id: MakeSleepOther
+  parent: [BaseDelayedPopup, BaseHands, BaseGlobal]
+  priority: -6
+  range: {max: 1.2}
+  delay: 10 # Should be long enough to be non-abusable, right?
+  hideByRequirement: true
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+      - !type:StandingStateRequirement
+        allowLaying: true
+        allowKnockedDown: true
+      - !type:MobStateRequirement
+        allowedStates: [Alive, Critical]
+  action:
+    !type:ToggleSleepingAction
+    sleep: true

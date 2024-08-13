@@ -3,6 +3,7 @@ using Content.Shared.Chat;
 using Content.Shared.DoAfter;
 using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Popups;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
@@ -98,8 +99,8 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
         BreakOnUserMove = true,
         BreakOnWeightlessMove = true,
         RequireCanInteract = false,
-        // Never used, but must be present because the field is non-nullable and will error if not set.
-        Event = new InteractionVerbDoAfterEvent(default)
+        // Never used, but must be present because the field is non-nullable and will error during serialization if not set.
+        Event = new InteractionVerbDoAfterEvent(default, default!)
     };
 
     [DataField]
@@ -152,9 +153,11 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     ///     - [kind suffix] is one of the respective suffix properties, typically "self", "target", or "others" <br/>
     /// </summary>
     /// <remarks>
-    ///     The following parameters may be used in the locale, regardless of its kind: <br/>
+    ///     The following parameters may be used in the locale: <br/>
     ///     - {$user} - The performer of the action. <br/>
-    ///     - {$target} - The target of the action.
+    ///     - {$target} - The target of the action. <br/>
+    ///     - {$used} - The active-hand item used in the action. May be null, then "0" is used instead.
+    ///     - {$selfTarget} - A boolean value that indicates whether the action is used on the user itself.
     /// </remarks>
     [DataDefinition, Serializable]
     public partial struct PopupSpecifier()
@@ -209,6 +212,25 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
         /// </summary>
         [DataField("others")]
         public string? OthersSuffix = "others";
+
+        /// <summary>
+        ///     Sound played when the popup is shown, at the location of the popup. If null, no sound will be played.
+        /// </summary>
+        [DataField]
+        public SoundSpecifier? Sound;
+
+        /// <summary>
+        ///     If true, the sound will be perceived by everyone in the PVS of the popup.
+        ///     Otherwise, it will be perceived only by the target and the user.
+        /// </summary>
+        [DataField]
+        public bool SoundPerceivedByOthers = true;
+
+        [DataField]
+        public AudioParams SoundParams = new AudioParams()
+        {
+            Variation = 0.1f
+        };
     }
 
     [Serializable]

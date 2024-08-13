@@ -12,7 +12,7 @@ public sealed partial class NoOpAction : InteractionAction
     [DataField]
     public float SuccessChance = 1f;
 
-    public override bool CanPerform(EntityUid user, EntityUid target, bool isBefore, InteractionVerbPrototype proto, VerbDependencies deps)
+    public override bool CanPerform(InteractionArgs args, InteractionVerbPrototype proto, bool isBefore, VerbDependencies deps)
     {
         if (isBefore)
             return true; // so the do-after can happen if there's one
@@ -21,7 +21,8 @@ public sealed partial class NoOpAction : InteractionAction
         return SuccessChance > 0f && (SuccessChance >= 1f || deps.Random.Prob(SuccessChance));
     }
 
-    public override void Perform(EntityUid user, EntityUid target, InteractionVerbPrototype proto, VerbDependencies deps)
+    public override bool Perform(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps)
     {
+        return true;
     }
 }
