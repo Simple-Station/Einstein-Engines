@@ -80,13 +80,13 @@ namespace Content.Server.Psionics
 
         private void OnInit(EntityUid uid, PsionicComponent component, ComponentStartup args)
         {
+            component.AmplificationSources.Add("Baseline Amplification", _random.NextFloat(0.4f, 1.2f));
+            component.DampeningSources.Add("Baseline Dampening", _random.NextFloat(0.4f, 1.2f));
+
             if (!component.Removable
                 || !TryComp<NpcFactionMemberComponent>(uid, out var factions)
                 || _npcFactonSystem.ContainsFaction(uid, "GlimmerMonster", factions))
                 return;
-
-            component.AmplificationSources.Add("Baseline Amplification", _random.NextFloat(0.4f, 1.2f));
-            component.DampeningSources.Add("Baseline Dampening", _random.NextFloat(0.4f, 1.2f));
 
             _npcFactonSystem.AddFaction(uid, "PsionicInterloper");
         }
