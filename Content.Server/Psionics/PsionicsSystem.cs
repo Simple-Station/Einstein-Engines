@@ -5,6 +5,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Damage.Events;
 using Content.Shared.CCVar;
 using Content.Server.Abilities.Psionics;
+using Content.Server.Chat.Systems;
 using Content.Server.Electrocution;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.Systems;
@@ -79,6 +80,11 @@ namespace Content.Server.Psionics
 
         private void OnInit(EntityUid uid, PsionicComponent component, ComponentStartup args)
         {
+            if (!component.Removable
+                || !TryComp<NpcFactionMemberComponent>(uid, out var factions)
+                || _npcFactonSystem.ContainsFaction(uid, "GlimmerMonster", factions))
+                return;
+
             component.AmplificationSources.Add("Baseline Amplification", _random.NextFloat(0.4f, 1.2f));
             component.DampeningSources.Add("Baseline Dampening", _random.NextFloat(0.4f, 1.2f));
 
@@ -101,7 +107,8 @@ namespace Content.Server.Psionics
 
         public void RollPsionics(EntityUid uid, PsionicComponent component, bool applyGlimmer = true, float multiplier = 1f)
         {
-            if (!_cfg.GetCVar(CCVars.PsionicRollsEnabled))
+            if (!TryComp<PsionicComponent>(uid, out var psionic)
+                || !_cfg.GetCVar(CCVars.PsionicRollsEnabled))
                 return;
 
             var chance = component.Chance;
