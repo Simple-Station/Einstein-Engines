@@ -5,7 +5,7 @@
   actions:
     - ActionDispel
   components:
-  - DispelPowerComponent
+  - DispelPower
   initializationFeedback: dispel-power-initialization-feedback
   metapsionicFeedback: dispel-power-metapsionic-feedback
   dampeningModifier: 1
@@ -17,7 +17,7 @@
   actions:
     - ActionMassSleep
   components:
-  - MassSleepPowerComponent
+  - MassSleepPower
   initializationFeedback: mass-sleep-power-initialization-feedback
   metapsionicFeedback: mass-sleep-power-metapsionic-feedback
   amplificationModifier: 0.5
@@ -30,7 +30,7 @@
   actions:
     - ActionMindSwap
   components:
-  - MindSwapPowerComponent
+  - MindSwapPower
   initializationFeedback: mind-swap-power-initialization-feedback
   metapsionicFeedback: mind-swap-power-metapsionic-feedback
   amplificationModifier: 1
@@ -42,7 +42,7 @@
   actions:
     - ActionNoosphericZap
   components:
-  - NoosphericZapPowerComponent
+  - NoosphericZapPower
   initializationFeedback: noospheric-zap-power-initialization-feedback
   metapsionicFeedback: noospheric-zap-power-metapsionic-feedback
   amplificationModifier: 1
@@ -54,7 +54,7 @@
   actions:
   - ActionPyrokinesis
   components:
-  - PyrokinesisPowerComponent
+  - PyrokinesisPower
   initializationFeedback: pyrokinesis-power-initialization-feedback
   metapsionicFeedback: pyrokinesis-power-metapsionic-feedback
   amplificationModifier: 1
@@ -66,7 +66,7 @@
   actions:
   - ActionMetapsionic
   components:
-  - MetapsionicPowerComponent
+  - MetapsionicPower
   initializationFeedback: metapsionic-power-initialization-feedback
   metapsionicFeedback: metapsionic-power-metapsionic-feedback
   amplificationModifier: 0.5
@@ -79,7 +79,7 @@
   actions:
   - ActionPsionicRegeneration
   components:
-  - PsionicRegenerationPowerComponent
+  - PsionicRegenerationPower
   initializationFeedback: psionic-regeneration-power-initialization-feedback
   metapsionicFeedback: psionic-regeneration-power-metapsionic-feedback
   amplificationModifier: 0.5
@@ -92,7 +92,7 @@
   actions:
   - ActionTelegnosis
   components:
-  - TelegnosisPowerComponent
+  - TelegnosisPower
   initializationFeedback: telegnosis-power-initialization-feedback
   metapsionicFeedback: telegnosis-power-metapsionic-feedback
   amplificationModifier: 0.5
@@ -105,7 +105,7 @@
   actions:
   - ActionDispel
   components:
-  - PsionicInvisibilityPowerComponent
+  - PsionicInvisibilityPower
   initializationFeedback: psionic-invisibility-power-initialization-feedback
   metapsionicFeedback: psionic-invisibility-power-metapsionic-feedback
   amplificationModifier: 0.5
