@@ -5317,3 +5317,9 @@ Entries:
       message: Default Onis now use the Double Curved horn and Upward Ears markings.
   id: 6261
   time: '2024-08-13T21:12:45.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fix missing Psionic Regeneration sound effect
+  id: 6262
+  time: '2024-08-14T02:12:43.0000000+00:00'
