@@ -6,10 +6,27 @@
   showInVote: true # secret # DeltaV - Me when the survival. Used for periapsis.
   description: survival-description
   rules:
+  - MeteorSwarmScheduler
   - RampingStationEventScheduler
-  - GameRuleMeteorScheduler
+  - SpaceTrafficControlEventScheduler
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
-  - SubGamemodesRule
+  - LavalandStormScheduler # Lavaland Change
+
+- type: gamePreset
+  id: KesslerSyndrome
+  alias:
+  - kessler
+  - junk
+  - meteorhell
+  name: kessler-syndrome-title
+  showInVote: false # secret
+  description: kessler-syndrome-description
+  rules:
+  - KesslerSyndromeScheduler
+  - RampingStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
@@ -20,9 +37,11 @@
   name: hellshift-title
   description: hellshift-description
   rules:
+  - MeteorSwarmScheduler
   - HellshiftStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
-  - SubGamemodesRule
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
@@ -32,7 +51,10 @@
   name: irregular-title
   description: irregular-description
   rules:
+  - MeteorSwarmScheduler
   - IrregularStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
@@ -43,12 +65,17 @@
   name: irregular-extended-title
   description: irregular-extended-description
   rules:
+  - MeteorSwarmScheduler
   - IrregularExtendedStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: AllAtOnce
+  alias:
+  - all
   name: all-at-once-title
   description: all-at-once-description
   showInVote: false
@@ -60,8 +87,38 @@
   - Changeling
   - Shadowling
   - BloodCult
+  - KesslerSyndromeScheduler
   - RampingStationEventScheduler
-  - GameRuleMeteorScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
+
+- type: gamePreset
+  id: AllerAtOnce
+  alias:
+  - allall
+  - aller
+  - badidea
+  - punishment
+  name: aller-at-once-title
+  description: all-at-once-description
+  showInVote: false #Please god dont do this
+  rules:
+  - Nukeops
+  - Traitor
+  - Revolutionary
+  - Zombie
+  - Changeling
+  - Shadowling
+  - BloodCult
+  - BasicStationEventScheduler
+  - KesslerSyndromeScheduler
+  - MeteorSwarmMildScheduler
+  - MeteorSwarmScheduler
+  - RampingStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - SpaceTrafficControlFriendlyEventScheduler
+  - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
@@ -74,9 +131,8 @@
   description: extended-description
   rules:
   - BasicStationEventScheduler
-  - GameRuleMeteorScheduler
-  - BasicRoundstartVariation
-  - SubGamemodesRule
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
@@ -88,7 +144,7 @@
   showInVote: true
   description: greenshift-description
   rules:
-  - BasicRoundstartVariation
+  - SpaceTrafficControlFriendlyEventScheduler
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
@@ -103,7 +159,6 @@
   - Secret
   - LavalandStormScheduler # Lavaland Change
 
-
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
   alias:
@@ -112,8 +167,9 @@
   showInVote: false #Admin Use
   description: secret-description
   rules:
-  - BasicStationEventScheduler
-  - GameRuleMeteorScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
@@ -124,6 +180,8 @@
   showInVote: false #Admin Use
   description: secret-description
   rules:
+  - SpaceTrafficControlFriendlyEventScheduler
+  - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
@@ -142,6 +200,7 @@
   id: Traitor
   alias:
   - traitor
+  - tator
   name: traitor-title
   description: traitor-description
   showInVote: true
@@ -149,7 +208,8 @@
   - Traitor
   - SubGamemodesRule
   - BasicStationEventScheduler
-  - GameRuleMeteorScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
@@ -177,7 +237,8 @@
   - Nukeops
   - SubGamemodesRule
   - BasicStationEventScheduler
-  - GameRuleMeteorScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
@@ -194,7 +255,8 @@
   - Revolutionary
   - SubGamemodesRule
   - BasicStationEventScheduler
-  - GameRuleMeteorScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
@@ -212,7 +274,25 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - GameRuleMeteorScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
+
+- type: gamePreset
+  id: Zombieteors
+  alias:
+  - zombieteors
+  - zombombies
+  - meteombies
+  name: zombieteors-title
+  description: zombieteors-description
+  showInVote: false
+  rules:
+  - Zombie
+  - BasicStationEventScheduler
+  - KesslerSyndromeScheduler
+  - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
@@ -230,6 +310,7 @@
   - Changeling
   - SubGamemodesRule
   - BasicStationEventScheduler
-  - GameRuleMeteorScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change

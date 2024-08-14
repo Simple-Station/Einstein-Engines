@@ -54,30 +54,6 @@ public sealed partial class CCVars
         GameLobbyEnableWin = CVarDef.Create("game.enablewin", true, CVar.ARCHIVE);
 
     /// <summary>
-    ///     Minimum time between Basic station events in seconds
-    /// </summary>
-    public static readonly CVarDef<int> // 5 Minutes
-        GameEventsBasicMinimumTime = CVarDef.Create("game.events_basic_minimum_time", 300, CVar.SERVERONLY | CVar.ARCHIVE);
-
-    /// <summary>
-    ///     Maximum time between Basic station events in seconds
-    /// </summary>
-    public static readonly CVarDef<int> // 25 Minutes
-        GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 1500, CVar.SERVERONLY | CVar.ARCHIVE);
-
-    /// <summary>
-    ///     Minimum time between Ramping station events in seconds
-    /// </summary>
-    public static readonly CVarDef<int> // 4 Minutes
-        GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 240, CVar.SERVERONLY | CVar.ARCHIVE);
-
-    /// <summary>
-    ///     Maximum time between Ramping station events in seconds
-    /// </summary>
-    public static readonly CVarDef<int> // 12 Minutes
-        GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 720, CVar.SERVERONLY | CVar.ARCHIVE);
-
-    /// <summary>
     ///     Minimum time between Oscillating station events in seconds. This is the bare minimum which will never be violated, unlike with ramping events.
     /// </summary>
     public static readonly CVarDef<int> // 40 seconds
