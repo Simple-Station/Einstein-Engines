@@ -190,14 +190,15 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             if (!isRequirementMet && proto.HideByRequirement)
                 continue;
 
-            var isAllowed = proto.Action?.IsAllowed(verbArgs, proto, _verbDependencies) == true;
+            // TODO: we skip this check since the client is not aware of actions. This should be changed, maybe make actions mixed server/client?
+            var isAllowed = proto.Action?.IsAllowed(verbArgs, proto, _verbDependencies) == true || _net.IsClient;
             if (!isAllowed && proto.HideWhenInvalid)
                 continue;
 
             var verb = factory.Invoke();
             CopyVerbData(proto, verb);
             verb.Disabled = isInvalid || !isRequirementMet || !isAllowed;
-            if (!verb.Disabled)
+            if (!verb.Disabled && !_net.IsClient)
                 verb.Act = () => StartVerb(proto, verbArgs);
 
             args.Verbs.Add(verb);
