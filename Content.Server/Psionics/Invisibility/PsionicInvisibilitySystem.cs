@@ -3,6 +3,7 @@ using Content.Server.Abilities.Psionics;
 using Content.Shared.Eye;
 using Content.Server.NPC.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Player;
 using Robust.Server.GameObjects;
 
 namespace Content.Server.Psionics
@@ -17,12 +18,12 @@ namespace Content.Server.Psionics
         {
             base.Initialize();
             /// Masking
-            SubscribeLocalEvent<EyeComponent, ComponentStartup>(OnInit);
-            SubscribeLocalEvent<PsionicInsulationComponent, ComponentStartup>(OnInsulInit);
+            SubscribeLocalEvent<ActorComponent, ComponentInit>(OnInit);
+            SubscribeLocalEvent<PsionicInsulationComponent, ComponentInit>(OnInsulInit);
             SubscribeLocalEvent<PsionicInsulationComponent, ComponentShutdown>(OnInsulShutdown);
 
             /// Layer
-            SubscribeLocalEvent<PsionicallyInvisibleComponent, ComponentInit>(OnInvisInit);
+            SubscribeLocalEvent<PsionicallyInvisibleComponent, ComponentStartup>(OnInvisInit);
             SubscribeLocalEvent<PsionicallyInvisibleComponent, ComponentShutdown>(OnInvisShutdown);
 
             // PVS Stuff
@@ -30,13 +31,13 @@ namespace Content.Server.Psionics
             SubscribeLocalEvent<PsionicallyInvisibleComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
         }
 
-        private void OnInit(EntityUid uid, EyeComponent component, ComponentStartup args)
+        private void OnInit(EntityUid uid, ActorComponent component, ComponentInit args)
         {
             if (!HasComp<PsionicInsulationComponent>(uid))
                 SetCanSeePsionicInvisiblity(uid, false);
         }
 
-        private void OnInsulInit(EntityUid uid, PsionicInsulationComponent component, ComponentStartup args)
+        private void OnInsulInit(EntityUid uid, PsionicInsulationComponent component, ComponentInit args)
         {
             if (HasComp<PsionicInvisibilityUsedComponent>(uid))
                 _invisSystem.ToggleInvisibility(uid);
@@ -73,7 +74,7 @@ namespace Content.Server.Psionics
             component.SuppressedFactions.Clear();
         }
 
-        private void OnInvisInit(EntityUid uid, PsionicallyInvisibleComponent component, ComponentInit args)
+        private void OnInvisInit(EntityUid uid, PsionicallyInvisibleComponent component, ComponentStartup args)
         {
             var visibility = EntityManager.EnsureComponent<VisibilityComponent>(uid);
 
@@ -92,6 +93,7 @@ namespace Content.Server.Psionics
                 _visibilitySystem.RefreshVisibility(uid, visibility);
             }
         }
+
         private void OnEntInserted(EntityUid uid, PsionicallyInvisibleComponent component, EntInsertedIntoContainerMessage args)
         {
             DirtyEntity(args.Entity);
