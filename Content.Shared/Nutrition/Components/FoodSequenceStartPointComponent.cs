@@ -111,6 +111,9 @@ public sealed partial class FoodSequenceStartPointComponent : Component
     [DataField]
     public Vector2 MinLayerOffset = Vector2.Zero;
 
+    /// <summary>
+    /// LocId with a name generation pattern.
+    /// </summary>
     [DataField]
     public bool AllowHorizontalFlip = true;
 

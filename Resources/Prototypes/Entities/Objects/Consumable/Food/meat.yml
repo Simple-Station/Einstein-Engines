@@ -629,6 +629,15 @@
     damage:
       types:
         Blunt: 2
+  - type: FoodSequenceElement
+    sprite:
+      sprite: Objects/Consumable/Food/salami.rsi
+      state: salami
+    entries:
+      burger:
+        name: food-sequence-content-salami
+      taco:
+        name: food-sequence-content-salami
 
 - type: entity
   name: meat clown
@@ -1086,6 +1095,9 @@
     graph: LizardSteak
     node: lizard steak
   - type: FoodSequenceElement
+    sprite:
+      sprite: Objects/Consumable/Food/meat.rsi
+      state: lizard-cooked
     entries:
       Burger: MeatLizardBurger
       Taco: MeatLizard
@@ -1612,6 +1624,9 @@
     graph: LizardCutlet
     node: lizard cutlet
   - type: FoodSequenceElement
+    sprite:
+      sprite: Objects/Consumable/Food/meat.rsi
+      state: cutlet-cooked
     entries:
       Burger: LizardCutletBurger
       Taco: LizardCutlet

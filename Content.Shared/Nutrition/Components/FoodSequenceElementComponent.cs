@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Nutrition.Prototypes;
 using Content.Shared.Tag;
@@ -22,4 +23,10 @@ public sealed partial class FoodSequenceElementComponent : Component
     /// </summary>
     [DataField]
     public string Solution = "food";
+
+    /// <summary>
+    /// state used to generate the appearance of the added layer
+    /// </summary>
+    [DataField]
+    public SpriteSpecifier? Sprite;
 }
