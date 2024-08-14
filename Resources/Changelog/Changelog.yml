@@ -5270,3 +5270,56 @@ Entries:
       message: Whitelist requirements work properly
   id: 6258
   time: '2024-08-13T17:08:24.0000000+00:00'
+- author: Skubman and leonardo-dabepis
+  changes:
+    - type: Add
+      message: Onis now get a unique speech bubble, a black bubble with horns.
+    - type: Add
+      message: >-
+        Onis have received a distinct speech style that reflects their strength.
+        Hear them 'grunt', 'bellow', 'blare', and 'rumble' as they talk.
+    - type: Tweak
+      message: >-
+        The Nekomimetic language description has been changed to mention Onis
+        speaking it.
+  id: 6259
+  time: '2024-08-13T17:12:15.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: A ton of new plushies has arrived
+    - type: Add
+      message: >-
+        Prize counter are here, get your prizes by winning games and getting
+        prize tickets! and find prize balls!!
+  id: 6260
+  time: '2024-08-13T17:16:52.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Onis have received eight new pointy ear markings in the 'Head (Side)'
+        section that can help them resemble tieflings, orcs, elves, goblins,
+        trolls, and more.
+    - type: Add
+      message: >-
+        Onis get two new tusk markings in the 'Snout' section, and a Two-Toed
+        feet marking in the 'Legs' section.
+    - type: Add
+      message: >-
+        Felinids, Onis, and Harpies can now select Human nose markings like the
+        schnozz, blobby nose, and nubby nose.
+    - type: Add
+      message: >-
+        Felinids and Onis can now select the Chest Scar and Top Surgery Scar
+        markings.
+    - type: Tweak
+      message: Default Onis now use the Double Curved horn and Upward Ears markings.
+  id: 6261
+  time: '2024-08-13T21:12:45.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fix missing Psionic Regeneration sound effect
+  id: 6262
+  time: '2024-08-14T02:12:43.0000000+00:00'
