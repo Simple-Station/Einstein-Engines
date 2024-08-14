@@ -38,6 +38,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     A measure of how "Powerful" a Psion is.
         ///     TODO: Implement this in a separate PR.
         /// </summary>
+        [ViewVariables(VVAccess.ReadOnly)]
         public float CurrentAmplification;
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     A measure of how "Controlled" a Psion is.
         ///     TODO: Implement this in a separate PR.
         /// </summary>
+        [ViewVariables(VVAccess.ReadOnly)]
         public float CurrentDampening;
 
         /// <summary>
