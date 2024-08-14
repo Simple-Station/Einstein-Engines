@@ -33,7 +33,7 @@ public sealed partial class PsionicPowerPrototype : IPrototype
     ///     The list of what Components this power adds.
     /// </summary>
     [DataField]
-    public readonly List<Component>? Components = new();
+    public readonly List<string>? Components = new();
 
     /// <summary>
     ///     What message will play as a popup when the power is initialized.
@@ -45,7 +45,7 @@ public sealed partial class PsionicPowerPrototype : IPrototype
     ///     What message will this power generate when scanned by a Metempsionic Focused Pulse.
     /// </summary>
     [DataField(required: true)]
-    public string MetempsionicFeedback = "psionic-metapsionic-feedback-default";
+    public string MetapsionicFeedback = "psionic-metapsionic-feedback-default";
 
     /// <summary>
     ///     How much this power will increase or decrease a user's Amplification.

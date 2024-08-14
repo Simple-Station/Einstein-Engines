@@ -31,7 +31,7 @@ namespace Content.Server.Psionics
         /// Unfortunately, since spawning as a normal role and anything else is so different,
         /// this is the only way to unify them, for now at least.
         /// </summary>
-        Queue<(PotentialPsionicComponent component, EntityUid uid)> _rollers = new();
+        Queue<(PsionicComponent component, EntityUid uid)> _rollers = new();
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
@@ -42,19 +42,16 @@ namespace Content.Server.Psionics
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<PotentialPsionicComponent, MapInitEvent>(OnStartup);
+            SubscribeLocalEvent<PsionicComponent, MapInitEvent>(OnStartup);
             SubscribeLocalEvent<AntiPsionicWeaponComponent, MeleeHitEvent>(OnMeleeHit);
             SubscribeLocalEvent<AntiPsionicWeaponComponent, TakeStaminaDamageEvent>(OnStamHit);
 
-            SubscribeLocalEvent<PsionicComponent, ComponentInit>(OnInit);
+            SubscribeLocalEvent<PsionicComponent, ComponentStartup>(OnInit);
             SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
         }
 
-        private void OnStartup(EntityUid uid, PotentialPsionicComponent component, MapInitEvent args)
+        private void OnStartup(EntityUid uid, PsionicComponent component, MapInitEvent args)
         {
-            if (HasComp<PsionicComponent>(uid))
-                return;
-
             _rollers.Enqueue((component, uid));
         }
 
@@ -76,17 +73,20 @@ namespace Content.Server.Psionics
                     return;
                 }
 
-                if (component.Punish && HasComp<PotentialPsionicComponent>(entity) && !HasComp<PsionicComponent>(entity) && _random.Prob(0.5f))
+                if (component.Punish && !HasComp<PsionicComponent>(entity) && _random.Prob(0.5f))
                     _electrocutionSystem.TryDoElectrocution(args.User, null, 20, TimeSpan.FromSeconds(5), false);
             }
         }
 
-        private void OnInit(EntityUid uid, PsionicComponent component, ComponentInit args)
+        private void OnInit(EntityUid uid, PsionicComponent component, ComponentStartup args)
         {
             if (!component.Removable
                 || !TryComp<NpcFactionMemberComponent>(uid, out var factions)
                 || _npcFactonSystem.ContainsFaction(uid, "GlimmerMonster", factions))
                 return;
+
+            component.AmplificationSources.Add("Baseline Amplification", _random.NextFloat(0.4f, 1.2f));
+            component.DampeningSources.Add("Baseline Dampening", _random.NextFloat(0.4f, 1.2f));
 
             _npcFactonSystem.AddFaction(uid, "PsionicInterloper");
         }
@@ -105,9 +105,9 @@ namespace Content.Server.Psionics
                 args.FlatModifier += component.PsychicStaminaDamage;
         }
 
-        public void RollPsionics(EntityUid uid, PotentialPsionicComponent component, bool applyGlimmer = true, float multiplier = 1f)
+        public void RollPsionics(EntityUid uid, PsionicComponent component, bool applyGlimmer = true, float multiplier = 1f)
         {
-            if (HasComp<PsionicComponent>(uid)
+            if (!TryComp<PsionicComponent>(uid, out var psionic)
                 || !_cfg.GetCVar(CCVars.PsionicRollsEnabled))
                 return;
 
@@ -131,7 +131,7 @@ namespace Content.Server.Psionics
                 _psionicAbilitiesSystem.AddPsionics(uid, warn);
         }
 
-        public void RerollPsionics(EntityUid uid, PotentialPsionicComponent? psionic = null, float bonusMuliplier = 1f)
+        public void RerollPsionics(EntityUid uid, PsionicComponent? psionic = null, float bonusMuliplier = 1f)
         {
             if (!Resolve(uid, ref psionic, false)
                 || psionic.Rerolled)

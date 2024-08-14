@@ -1,5 +1,4 @@
 using Content.Shared.Abilities.Psionics;
-using Content.Server.Psionics;
 using Content.Shared.StatusEffect;
 using Content.Server.Stunnable;
 using Content.Server.Beam;
@@ -23,9 +22,6 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(NoosphericZapPowerActionEvent args)
         {
-            if (!HasComp<PotentialPsionicComponent>(args.Target))
-                return;
-
             if (HasComp<PsionicInsulationComponent>(args.Target))
                 return;
 

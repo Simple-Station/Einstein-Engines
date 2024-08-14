@@ -18,6 +18,7 @@ namespace Content.Server.Abilities.Psionics
 {
     public sealed class PsionicAbilitiesSystem : EntitySystem
     {
+        [Dependency] private readonly IComponentFactory _componentFactory = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
         [Dependency] private readonly EuiManager _euiManager = default!;
@@ -44,7 +45,8 @@ namespace Content.Server.Abilities.Psionics
             EnsureComp<PsionicComponent>(uid);
 
             foreach (var proto in comp.PowersToAdd)
-                InitializePsionicPower(uid, proto, false);
+                if (_prototypeManager.TryIndex<PsionicPowerPrototype>(proto, out var powerPrototype))
+                    InitializePsionicPower(uid, powerPrototype, false);
         }
         private void OnPlayerAttached(EntityUid uid, PsionicAwaitingPlayerComponent component, PlayerAttachedEvent args)
         {
@@ -57,8 +59,7 @@ namespace Content.Server.Abilities.Psionics
 
         public void AddPsionics(EntityUid uid, bool warn = true)
         {
-            if (Deleted(uid)
-                || HasComp<PsionicComponent>(uid))
+            if (Deleted(uid))
                 return;
 
             if (!_mindSystem.TryGetMind(uid, out _, out var mind))
@@ -108,7 +109,7 @@ namespace Content.Server.Abilities.Psionics
         public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, bool playPopup = true)
         {
             if (!TryComp<PsionicComponent>(uid, out var psionic)
-                || !_prototypeManager.TryIndex(proto.ID, out var _))
+                || !_prototypeManager.TryIndex<PsionicPowerPrototype>(proto.ID, out var _))
                 return;
 
             psionic.ActivePowers.Add(proto);
@@ -134,8 +135,9 @@ namespace Content.Server.Abilities.Psionics
 
             if (proto.Components is not null)
                 foreach (var comp in proto.Components)
-                    if (!HasComp(uid, comp.GetType()))
-                        EntityManager.AddComponent(uid, comp);
+                    if (!EntityManager.TryGetComponent(uid, _componentFactory.GetComponent(comp).GetType(), out var powerComp)
+                        && powerComp is not null)
+                        AddComp(uid, powerComp);
 
             RefreshPsionicModifiers(uid, psionic);
         }
@@ -203,7 +205,9 @@ namespace Content.Server.Abilities.Psionics
 
                 if (power.Components is not null)
                     foreach (var comp in power.Components)
-                        EntityManager.RemoveComponent(uid, comp);
+                        if (EntityManager.TryGetComponent(uid, _componentFactory.GetComponent(comp).GetType(), out var powerComp)
+                            && powerComp is not null)
+                            RemComp(uid, powerComp);
 
                 if (psionic.Actions is not null)
                     foreach (var action in psionic.Actions)
@@ -238,7 +242,9 @@ namespace Content.Server.Abilities.Psionics
             if (removedByComponent
                 && proto.Components is not null)
                 foreach (var comp in proto.Components)
-                    EntityManager.RemoveComponent(uid, comp);
+                    if (EntityManager.TryGetComponent(uid, _componentFactory.GetComponent(comp).GetType(), out var powerComp)
+                        && powerComp is not null)
+                        RemComp(uid, powerComp);
 
             if (psionic.Actions is not null)
                 foreach (var action in psionic.Actions)

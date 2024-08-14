@@ -29,6 +29,10 @@
     components:
     - type: BibleUser # Nyano - Lets them heal with bibles
     - type: Psionic # Nyano - They start with telepathic chat
+    - type: InnatePsionicPowers
+      powersToAdd:
+        - DispelPower
+        - MetapsionicPower
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial

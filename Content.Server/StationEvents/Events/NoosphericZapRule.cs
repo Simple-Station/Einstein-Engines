@@ -25,9 +25,9 @@ internal sealed class NoosphericZapRule : StationEventSystem<NoosphericZapRuleCo
     {
         base.Started(uid, component, gameRule, args);
 
-        var query = EntityQueryEnumerator<PotentialPsionicComponent, MobStateComponent>();
+        var query = EntityQueryEnumerator<PsionicComponent, MobStateComponent>();
 
-        while (query.MoveNext(out var psion, out var potentialPsionicComponent, out _))
+        while (query.MoveNext(out var psion, out var psionicComponent, out _))
         {
             if (!_mobStateSystem.IsAlive(psion) || HasComp<PsionicInsulationComponent>(psion))
                 continue;
@@ -35,19 +35,15 @@ internal sealed class NoosphericZapRule : StationEventSystem<NoosphericZapRuleCo
             _stunSystem.TryParalyze(psion, TimeSpan.FromSeconds(5), false);
             _statusEffectsSystem.TryAddStatusEffect(psion, "Stutter", TimeSpan.FromSeconds(10), false, "StutteringAccent");
 
-            if (HasComp<PsionicComponent>(psion))
-                _popupSystem.PopupEntity(Loc.GetString("noospheric-zap-seize"), psion, psion, Shared.Popups.PopupType.LargeCaution);
+            if (psionicComponent.Rerolled)
+            {
+                psionicComponent.Rerolled = false;
+                _popupSystem.PopupEntity(Loc.GetString("noospheric-zap-seize-potential-regained"), psion, psion, Shared.Popups.PopupType.LargeCaution);
+            }
             else
             {
-                if (potentialPsionicComponent.Rerolled)
-                {
-                    potentialPsionicComponent.Rerolled = false;
-                    _popupSystem.PopupEntity(Loc.GetString("noospheric-zap-seize-potential-regained"), psion, psion, Shared.Popups.PopupType.LargeCaution);
-                } else
-                {
-                    _psionicsSystem.RollPsionics(psion, potentialPsionicComponent, multiplier: 0.25f);
-                    _popupSystem.PopupEntity(Loc.GetString("noospheric-zap-seize"), psion, psion, Shared.Popups.PopupType.LargeCaution);
-                }
+                _psionicsSystem.RollPsionics(psion, psionicComponent, multiplier: 0.25f);
+                _popupSystem.PopupEntity(Loc.GetString("noospheric-zap-seize"), psion, psion, Shared.Popups.PopupType.LargeCaution);
             }
         }
     }

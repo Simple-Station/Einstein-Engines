@@ -32,7 +32,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     What sources of Amplification does this Psion have?
         /// </summary>
         [ViewVariables(VVAccess.ReadOnly)]
-        public readonly Dictionary<string, float> AmplificationSources = new() { { "amplification-baseline", 0.1f } };
+        public readonly Dictionary<string, float> AmplificationSources = new();
 
         /// <summary>
         ///     A measure of how "Powerful" a Psion is.
@@ -44,7 +44,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     What sources of Dampening does this Psion have?
         /// </summary>
         [ViewVariables(VVAccess.ReadOnly)]
-        public readonly Dictionary<string, float> DampeningSources = new() { { "dampening-baseline", 0.1f } };
+        public readonly Dictionary<string, float> DampeningSources = new();
 
         /// <summary>
         ///     A measure of how "Controlled" a Psion is.
@@ -56,6 +56,19 @@ namespace Content.Shared.Abilities.Psionics
         ///     How close a Psion is to awakening a new power.
         ///     TODO: Implement this in a separate PR.
         /// </summary>
+        [DataField]
         public float Potentia = 0;
+
+        /// <summary>
+        ///     The baseline chance of obtaining a psionic power when rolling for one.
+        /// </summary>
+        [DataField]
+        public float Chance = 0.04f;
+
+        /// <summary>
+        ///     Whether or not a Psion has an available "Reroll" to spend on attempting to gain powers.
+        /// </summary>
+        [DataField]
+        public bool Rerolled;
     }
 }

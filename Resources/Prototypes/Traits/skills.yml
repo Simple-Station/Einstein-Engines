@@ -150,3 +150,19 @@
       inverted: true
       species:
         - Felinid
+
+- type: trait
+  id: LatentPsychic
+  category: Mental
+  points: -3
+  components:
+    - type: Psionic
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain

@@ -44,7 +44,6 @@
     components:
     - type: PsionicBonusChance #Nyano - Summary: makes it more likely to become psionic.
       flatBonus: 0.025
-    - type: Psionic
 
 - type: startingGear
   id: CaptainGear
