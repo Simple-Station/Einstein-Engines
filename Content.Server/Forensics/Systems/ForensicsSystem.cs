@@ -135,30 +135,30 @@ namespace Content.Server.Forensics
                 return;
 
             if (TryComp<ForensicsComponent>(args.Target, out var forensicsComp)
-                && (forensicsComp.DNAs.Count > 0 && forensicsComp.CanDnaBeCleaned)
-                || (forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count > 0)
-                || (forensicsComp.Scent != string.Empty))
+                && forensicsComp.DNAs.Count > 0 && forensicsComp.CanDnaBeCleaned
+                && forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count > 0
+                && forensicsComp.Scent != string.Empty)
+            {
+                var cleanDelay = component.CleanDelay;
+                if (HasComp<ScentComponent>(args.Target))
+                    cleanDelay += 30;
+
+                var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cleanDelay, new CleanForensicsDoAfterEvent(), uid, target: args.Target, used: args.Used)
                 {
-                    var cleanDelay = component.CleanDelay;
-                    if (HasComp<ScentComponent>(args.Target))
-                        cleanDelay += 30;
+                    BreakOnHandChange = true,
+                    NeedHand = true,
+                    BreakOnDamage = true,
+                    BreakOnTargetMove = true,
+                    MovementThreshold = 0.01f,
+                    DistanceThreshold = forensicsComp.CleanDistance,
+                };
 
-                    var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cleanDelay, new CleanForensicsDoAfterEvent(), uid, target: args.Target, used: args.Used)
-                    {
-                        BreakOnHandChange = true,
-                        NeedHand = true,
-                        BreakOnDamage = true,
-                        BreakOnTargetMove = true,
-                        MovementThreshold = 0.01f,
-                        DistanceThreshold = forensicsComp.CleanDistance,
-                    };
+                _doAfterSystem.TryStartDoAfter(doAfterArgs);
+                _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning", ("target", args.Target)), args.User, args.User);
 
-                    _doAfterSystem.TryStartDoAfter(doAfterArgs);
-                    _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning", ("target", args.Target)), args.User, args.User);
-
-                    args.Handled = true;
-                    return;
-                }
+                args.Handled = true;
+                return;
+            }
 
             if (TryComp<ScentComponent>(args.Target, out var scentComp))
             {
@@ -211,16 +211,16 @@ namespace Content.Server.Forensics
 
                 if (args.Target is { Valid: true } target
                     && _inventory.TryGetSlots(target, out var slotDefinitions))
-                        foreach (var slot in slotDefinitions)
-                        {
-                            if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt))
-                                continue;
+                    foreach (var slot in slotDefinitions)
+                    {
+                        if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt))
+                            continue;
 
-                            EnsureComp<ForensicsComponent>(slotEnt.Value, out var recipientComp);
-                            recipientComp.Scent = generatedscent;
+                        EnsureComp<ForensicsComponent>(slotEnt.Value, out var recipientComp);
+                        recipientComp.Scent = generatedscent;
 
-                            Dirty(slotEnt.Value, recipientComp);
-                        }
+                        Dirty(slotEnt.Value, recipientComp);
+                    }
             }
 
             if (args.Target is { Valid: true } targetuid)
