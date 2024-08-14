@@ -1,3 +1,5 @@
+generic-power-initialization-feedback = I Awaken.
+
 # Dispel
 dispel-power-description = Dispel summoned entities such as familiars or forcewalls.
 dispel-power-initialization-feedback = The powers of fate are nothing to me. I feel as though I can reach out to the strands around me, and enforce reality upon others.

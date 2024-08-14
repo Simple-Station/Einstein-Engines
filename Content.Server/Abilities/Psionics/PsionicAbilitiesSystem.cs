@@ -131,7 +131,8 @@ namespace Content.Server.Abilities.Psionics
                 psionic.DampeningSources.Add(proto.Name, proto.DampeningModifier);
 
             if (playPopup)
-                _popups.PopupEntity(proto.InitializationFeedback, uid, uid, PopupType.MediumCaution);
+                _popups.PopupEntity("generic-power-initialization-feedback", uid, uid, PopupType.MediumCaution);
+            // TODO: Replace this with chat message: _popups.PopupEntity(proto.InitializationFeedback, uid, uid, PopupType.MediumCaution);
 
             if (proto.Components is not null)
                 foreach (var comp in proto.Components)
