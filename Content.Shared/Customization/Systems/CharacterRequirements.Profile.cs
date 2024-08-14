@@ -107,6 +107,77 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
 }
 
 /// <summary>
+///    Requires the profile to be within a certain height range
+/// </summary>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class CharacterHeightRequirement : CharacterRequirement
+{
+    /// <summary>
+    ///     The minimum height of the profile in centimeters
+    /// </summary>
+    [DataField]
+    public float Min = int.MinValue;
+
+    /// <summary>
+    ///     The maximum height of the profile in centimeters
+    /// </summary>
+    [DataField]
+    public float Max = int.MaxValue;
+
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
+    {
+        const string color = "yellow";
+        var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
+
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-height-requirement",
+            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max)));
+
+        var height = profile.Height * species.AverageHeight;
+        return height >= Min && height <= Max;
+    }
+}
+
+/// <summary>
+///     Requires the profile to be within a certain width range
+/// </summary>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class CharacterWidthRequirement : CharacterRequirement
+{
+    /// <summary>
+    ///     The minimum width of the profile in centimeters
+    /// </summary>
+    [DataField]
+    public float Min = int.MinValue;
+
+    /// <summary>
+    ///     The maximum width of the profile in centimeters
+    /// </summary>
+    [DataField]
+    public float Max = int.MaxValue;
+
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
+    {
+        const string color = "yellow";
+        var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
+
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-width-requirement",
+            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max)));
+
+        var width = profile.Width * species.AverageWidth;
+        return width >= Min && width <= Max;
+    }
+}
+
+
+/// <summary>
 ///     Requires the profile to have one of the specified traits
 /// </summary>
 [UsedImplicitly]
