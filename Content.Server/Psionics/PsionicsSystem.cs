@@ -107,8 +107,7 @@ namespace Content.Server.Psionics
 
         public void RollPsionics(EntityUid uid, PsionicComponent component, bool applyGlimmer = true, float multiplier = 1f)
         {
-            if (!TryComp<PsionicComponent>(uid, out var psionic)
-                || !_cfg.GetCVar(CCVars.PsionicRollsEnabled))
+            if (!_cfg.GetCVar(CCVars.PsionicRollsEnabled))
                 return;
 
             var chance = component.Chance;
