@@ -133,6 +133,8 @@ namespace Content.Server.Flash
                     RaiseLocalEvent(used.Value, ref ev);
             }
 
+            flashDuration *= flashable.DurationMultiplier;
+
             flashable.LastFlash = _timing.CurTime;
             flashable.Duration = flashDuration / 1000f; // TODO: Make this sane...
             Dirty(target, flashable);

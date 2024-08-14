@@ -115,6 +115,11 @@
     - type: ConsumeDelayModifier
       foodDelayMultiplier: 0.5
       drinkDelayMultiplier: 0.5
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vulpkanin
 
 - type: trait
   id: ParkourTraining
