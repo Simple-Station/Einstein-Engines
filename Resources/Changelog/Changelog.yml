@@ -5323,3 +5323,18 @@ Entries:
       message: Fix missing Psionic Regeneration sound effect
   id: 6262
   time: '2024-08-14T02:12:43.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Vulpkanins receive the Voracious trait for free, giving them 2x
+        eating/drinking speed, but Vulpkanins get hungrier 25% faster.
+    - type: Tweak
+      message: >-
+        Vulpkanins gain a 30% Cold resistance, but their Heat vulnerability has
+        increased from 15% to 30%. Vulpkanins also receive 25% more Fire stacks,
+        amplifying the damage and duration of being on fire.
+    - type: Tweak
+      message: Flash duration against Vulpkanins has been increased by 50%.
+  id: 6263
+  time: '2024-08-14T05:30:37.0000000+00:00'
