@@ -134,9 +134,10 @@ namespace Content.Server.Forensics
             if (args.Handled)
                 return;
 
-            if (TryComp<ForensicsComponent>(args.Target, out var forensicsComp))
-            {
-                if ((forensicsComp.DNAs.Count > 0 && forensicsComp.CanDnaBeCleaned) || (forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count > 0) || (forensicsComp.Scent != string.Empty))
+            if (TryComp<ForensicsComponent>(args.Target, out var forensicsComp)
+                && (forensicsComp.DNAs.Count > 0 && forensicsComp.CanDnaBeCleaned)
+                || (forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count > 0)
+                || (forensicsComp.Scent != string.Empty))
                 {
                     var cleanDelay = component.CleanDelay;
                     if (HasComp<ScentComponent>(args.Target))
@@ -158,7 +159,6 @@ namespace Content.Server.Forensics
                     args.Handled = true;
                     return;
                 }
-            }
 
             if (TryComp<ScentComponent>(args.Target, out var scentComp))
             {
@@ -209,10 +209,8 @@ namespace Content.Server.Forensics
                 scentComp.Scent = generatedscent;
                 targetComp.Scent = generatedscent;
 
-                if (args.Target is { Valid: true } target)
-                {
-                    if (_inventory.TryGetSlots(target, out var slotDefinitions))
-                    {
+                if (args.Target is { Valid: true } target
+                    && _inventory.TryGetSlots(target, out var slotDefinitions))
                         foreach (var slot in slotDefinitions)
                         {
                             if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt))
@@ -223,8 +221,6 @@ namespace Content.Server.Forensics
 
                             Dirty(slotEnt.Value, recipientComp);
                         }
-                    }
-                }
             }
 
             if (args.Target is { Valid: true } targetuid)

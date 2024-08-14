@@ -6,15 +6,15 @@ namespace Content.Shared.Forensics
     public sealed partial class ScentTrackerComponent : Component
     {
         /// <summary>
-        /// The currently tracked scent.
+        ///     The currently tracked scent.
         /// </summary>
-        [DataField("scent"), AutoNetworkedField]
+        [DataField, AutoNetworkedField]
         public string Scent = String.Empty;
 
         /// <summary>
-        /// The time (in seconds) that it takes to sniff an entity.
+        ///     The time (in seconds) that it takes to sniff an entity.
         /// </summary>
-        [DataField("sniffDelay")]
+        [DataField]
         public float SniffDelay = 5.0f;
     }
 }

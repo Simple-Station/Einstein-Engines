@@ -5,19 +5,19 @@ namespace Content.Shared.Forensics
     [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
     public sealed partial class ForensicsComponent : Component
     {
-        [DataField("fingerprints"), AutoNetworkedField]
+        [DataField, AutoNetworkedField]
         public HashSet<string> Fingerprints = new();
 
-        [DataField("fibers"), AutoNetworkedField]
+        [DataField, AutoNetworkedField]
         public HashSet<string> Fibers = new();
 
-        [DataField("dnas"), AutoNetworkedField]
+        [DataField, AutoNetworkedField]
         public HashSet<string> DNAs = new();
 
-        [DataField("scent"), AutoNetworkedField]
+        [DataField, AutoNetworkedField]
         public string Scent = String.Empty;
 
-        [DataField("residues"), AutoNetworkedField]
+        [DataField, AutoNetworkedField]
         public HashSet<string> Residues = new();
 
         /// <summary>

@@ -142,13 +142,10 @@ namespace Content.Server.Flash
             flashable.Duration = flashDuration / 1000f; // TODO: Make this sane...
             Dirty(target, flashable);
 
-            if (TryComp<BlindableComponent>(target, out var blindable))
-            {
-                if (!blindable.IsBlind && _random.Prob(flashable.EyeDamageChance))
-                {
+            if (TryComp<BlindableComponent>(target, out var blindable)
+                && !blindable.IsBlind 
+                && _random.Prob(flashable.EyeDamageChance))
                     _blindingSystem.AdjustEyeDamage((target, blindable), flashable.EyeDamage);
-                }
-            }
 
             _stun.TrySlowdown(target, TimeSpan.FromSeconds(flashDuration/1000f), true,
                 slowTo, slowTo);

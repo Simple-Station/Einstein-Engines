@@ -27,7 +27,9 @@ namespace Content.Server.Forensics
 
         private void TrackScentVerb(EntityUid uid, ScentTrackerComponent component, GetVerbsEvent<InnateVerb> args)
         {
-            if (!args.CanInteract || !args.CanAccess || args.User == args.Target)
+            if (!args.CanInteract 
+                || !args.CanAccess 
+                || args.User == args.Target)
                 return;
 
             InnateVerb verbTrackScent = new()
@@ -58,7 +60,9 @@ namespace Content.Server.Forensics
 
         private void TrackScentDoAfter(Entity<ScentTrackerComponent> entity, ref ScentTrackerDoAfterEvent args)
         {
-            if (args.Handled || args.Cancelled || args.Args.Target == null)
+            if (args.Handled 
+                || args.Cancelled 
+                || args.Args.Target == null)
                 return;
 
             TrackScent(args.Args.User, args.Args.Target.Value);
@@ -68,7 +72,8 @@ namespace Content.Server.Forensics
 
         private void StopTrackScentVerb(EntityUid uid, ScentTrackerComponent component, GetVerbsEvent<InnateVerb> args)
         {
-            if (args.User != args.Target || component.Scent == string.Empty)
+            if (args.User != args.Target 
+                || component.Scent == string.Empty)
                 return;
 
             InnateVerb verbStopTrackScent = new()
@@ -83,10 +88,8 @@ namespace Content.Server.Forensics
 
         private void OnExamine(EntityUid uid, ExaminedEvent args)
         {
-            if (!TryComp<ScentTrackerComponent>(args.Examiner, out var component))
-                return;
-
-            if (!TryComp<ForensicsComponent>(args.Examined, out var forcomp))
+            if (!TryComp<ScentTrackerComponent>(args.Examiner, out var component)
+                || !TryComp<ForensicsComponent>(args.Examined, out var forcomp))
                 return;
 
             if (forcomp.Scent != string.Empty && component.Scent == forcomp.Scent)
@@ -96,10 +99,8 @@ namespace Content.Server.Forensics
         #region Utilities
         public void TrackScent(EntityUid uid, EntityUid target)
         {
-            if (!TryComp<ScentTrackerComponent>(uid, out var component))
-                return;
-
-            if (!TryComp<ForensicsComponent>(target, out var forcomp))
+            if (!TryComp<ScentTrackerComponent>(uid, out var component)
+                || !TryComp<ForensicsComponent>(target, out var forcomp))
                 return;
 
             if (forcomp.Scent != string.Empty)
@@ -108,9 +109,7 @@ namespace Content.Server.Forensics
                 _popupSystem.PopupEntity(Loc.GetString("tracking-scent", ("target", Identity.Name(target, EntityManager))), uid, uid);
             }
             else
-            {
                 _popupSystem.PopupEntity(Loc.GetString("no-scent"), uid, uid);
-            }
 
             Dirty(uid, component);
         }

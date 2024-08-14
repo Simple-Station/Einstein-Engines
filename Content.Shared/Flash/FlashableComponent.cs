@@ -13,14 +13,14 @@ namespace Content.Shared.Flash
         // <summary>
         //   Chance to get EyeDamage on flash
         // </summary>
-        [DataField("eyeDamageChance")]
-        public float EyeDamageChance = 0f;
+        [DataField]
+        public float EyeDamageChance;
 
         // <summary>
         //   How many EyeDamage when flashed? (If EyeDamageChance check passed)
         // </summary>
-        [DataField("eyeDamage")]
-        public int EyeDamage = 0;
+        [DataField]
+        public int EyeDamage;
 
         [DataField]
         public CollisionGroup CollisionGroup = CollisionGroup.Opaque;

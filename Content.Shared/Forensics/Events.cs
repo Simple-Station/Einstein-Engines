@@ -26,9 +26,7 @@ public sealed partial class ForensicPadDoAfterEvent : DoAfterEvent
 }
 
 [Serializable, NetSerializable]
-public sealed partial class ScentTrackerDoAfterEvent : SimpleDoAfterEvent
-{
-}
+public sealed partial class ScentTrackerDoAfterEvent : SimpleDoAfterEvent { }
 
 [Serializable, NetSerializable]
 public sealed partial class CleanForensicsDoAfterEvent : SimpleDoAfterEvent

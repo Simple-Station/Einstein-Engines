@@ -19,17 +19,14 @@ namespace Content.Client.Forensics
             var query = AllEntityQuery<ForensicsComponent>();
             while (query.MoveNext(out var uid, out var comp))
             {
-                if (TryComp<ScentTrackerComponent>(_playerManager.LocalEntity, out var scentcomp))
-                {
-                    if (scentcomp.Scent != string.Empty && scentcomp.Scent == comp.Scent)
+                if (TryComp<ScentTrackerComponent>(_playerManager.LocalEntity, out var scentcomp)
+                    && scentcomp.Scent != string.Empty 
+                    && scentcomp.Scent == comp.Scent
+                    && _timing.CurTime > comp.TargetTime)
                     {
-                        if (_timing.CurTime > comp.TargetTime)
-                        {
-                            comp.TargetTime = _timing.CurTime + TimeSpan.FromSeconds(1.0f);
-                            Spawn("ScentTrackEffect", _transform.GetMapCoordinates(uid).Offset(_random.NextVector2(0.25f)));
-                        }
+                        comp.TargetTime = _timing.CurTime + TimeSpan.FromSeconds(1.0f);
+                        Spawn("ScentTrackEffect", _transform.GetMapCoordinates(uid).Offset(_random.NextVector2(0.25f)));
                     }
-                }
             }
         }
     }

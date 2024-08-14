@@ -6,6 +6,6 @@ namespace Content.Server.Forensics;
 [RegisterComponent]
 public sealed partial class ScentComponent : Component
 {
-    [DataField("scent"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public string Scent = String.Empty;
 }
