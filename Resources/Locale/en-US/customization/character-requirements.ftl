@@ -3,6 +3,7 @@ character-job-requirement = You must {$inverted ->
     [true] not be
     *[other] be
 } one of these jobs: {$jobs}
+
 character-department-requirement = You must {$inverted ->
     [true] not be
     *[other] be
@@ -21,18 +22,34 @@ character-age-requirement = You must {$inverted ->
     [true] not be
     *[other] be
 } be within [color=yellow]{$min}[/color] and [color=yellow]{$max}[/color] years old
+
 character-backpack-type-requirement = You must {$inverted ->
     [true] not use
     *[other] use
 } a [color=brown]{$type}[/color] as your bag
+
 character-clothing-preference-requirement = You must {$inverted ->
     [true] not wear
     *[other] wear
 } a [color=white]{$type}[/color]
+
+character-gender-requirement = You must {$inverted ->
+    [true] not have
+    *[other] have
+} the pronouns [color=white]{$gender}[/color]
+
+character-sex-requirement = You must {$inverted ->
+    [true] not be
+    *[other] be
+} [color=white]{$sex ->
+    [None] unsexed
+    *[other] {$sex}
+}[/color]
 character-species-requirement = You must {$inverted ->
     [true] not be
     *[other] be
 } a {$species}
+
 character-height-requirement = You must {$inverted ->
     [true] not be
     *[other] be
@@ -46,6 +63,7 @@ character-height-requirement = You must {$inverted ->
         *[other] between [color={$color}]{$min}[/color] and [color={$color}]{$max}[/color]cm tall
     }
 }
+
 character-width-requirement = You must {$inverted ->
     [true] not be
     *[other] be
@@ -59,6 +77,7 @@ character-width-requirement = You must {$inverted ->
         *[other] between [color={$color}]{$min}[/color] and [color={$color}]{$max}[/color]cm wide
     }
 }
+
 character-weight-requirement = You must {$inverted ->
     [true] not be
     *[other] be
@@ -73,10 +92,12 @@ character-weight-requirement = You must {$inverted ->
     }
 }
 
+
 character-trait-requirement = You must {$inverted ->
     [true] not have
     *[other] have
 } one of these traits: {$traits}
+
 character-loadout-requirement = You must {$inverted ->
     [true] not have
     *[other] have

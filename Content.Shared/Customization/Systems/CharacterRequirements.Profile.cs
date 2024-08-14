@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -80,6 +81,50 @@ public sealed partial class CharacterClothingPreferenceRequirement : CharacterRe
             ("inverted", Inverted),
             ("preference", Loc.GetString($"humanoid-profile-editor-preference-{Preference.ToString().ToLower()}"))));
         return profile.Clothing == Preference;
+    }
+}
+
+/// <summary>
+///     Requires the profile to be a certain gender
+/// </summary>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class CharacterGenderRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public Gender Gender;
+
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
+    {
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-gender-requirement",
+            ("inverted", Inverted),
+            ("gender", Loc.GetString($"humanoid-profile-editor-pronouns-{Gender.ToString().ToLower()}-text"))));
+        return profile.Gender == Gender;
+    }
+}
+
+/// <summary>
+///     Requires the profile to be a certain sex
+/// </summary>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class CharacterSexRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public Sex Sex;
+
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
+    {
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-gender-requirement",
+            ("inverted", Inverted),
+            ("sex", Loc.GetString($"humanoid-profile-editor-sex-{Sex.ToString().ToLower()}-text"))));
+        return profile.Sex == Sex;
     }
 }
 
