@@ -22,6 +22,14 @@ public sealed partial class ComplexAction : InteractionAction
     [DataField]
     public bool RequireAll = false;
 
+    /// <summary>
+    ///     If true, when it comes to execution of this action, the entire action will exit early if: <br/>
+    ///     * The action has RequireAll = false and at least one action succeeds; <br/>
+    ///     * Or if the action has RequireAll = true and at least one action fails.
+    /// </summary>
+    [DataField]
+    public bool Lazy = false;
+
     private bool Delegate(Func<InteractionAction, bool> delegatedAction)
     {
         return RequireAll ? Actions.All(delegatedAction) : Actions.Any(delegatedAction);
@@ -39,6 +47,17 @@ public sealed partial class ComplexAction : InteractionAction
 
     public override bool Perform(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps)
     {
-        return Delegate(act => act.Perform(args, proto, deps));
+        if (Lazy)
+            return Delegate(act => act.Perform(args, proto, deps));
+
+        var result = RequireAll;
+        if (RequireAll)
+            foreach (var action in Actions)
+                result &= action.Perform(args, proto, deps);
+        else
+            foreach (var action in Actions)
+                result |= action.Perform(args, proto, deps);
+
+        return result;
     }
 }

@@ -15,3 +15,9 @@ interaction-Pet-description = Pet your co-worker to ease their stress.
 interaction-Pet-success-self-popup = You pet {THE($target)} on {POSS-ADJ($target)} head.
 interaction-Pet-success-target-popup = {THE($user)} pets you on {POSS-ADJ($target)} head.
 interaction-Pet-success-others-popup = {THE($user)} pets {THE($target)}.
+
+interaction-KnockOn-name = Knock
+interaction-KnockOn-description = Knock on the target to attract attention.
+interaction-KnockOn-success-self-popup = You knock on {THE($target)}.
+interaction-KnockOn-success-target-popup = {THE($user)} knocks on you.
+interaction-KnockOn-success-others-popup = {THE($user)} knocks on {THE($target)}.
