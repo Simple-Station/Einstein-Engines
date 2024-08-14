@@ -22,7 +22,6 @@ using Robust.Shared.Timing;
 using InventoryComponent = Content.Shared.Inventory.InventoryComponent;
 using Content.Shared.Traits.Assorted.Components;
 using Robust.Shared.Random;
-using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
 
 namespace Content.Server.Flash
@@ -143,9 +142,9 @@ namespace Content.Server.Flash
             Dirty(target, flashable);
 
             if (TryComp<BlindableComponent>(target, out var blindable)
-                && !blindable.IsBlind 
+                && !blindable.IsBlind
                 && _random.Prob(flashable.EyeDamageChance))
-                    _blindingSystem.AdjustEyeDamage((target, blindable), flashable.EyeDamage);
+                _blindingSystem.AdjustEyeDamage((target, blindable), flashable.EyeDamage);
 
             _stun.TrySlowdown(target, TimeSpan.FromSeconds(flashDuration/1000f), true,
                 slowTo, slowTo);
