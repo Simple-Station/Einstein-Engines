@@ -47,7 +47,7 @@
 
 # Knocking on the target - windows, doors, etc.
 - type: Interaction
-  id: KnockingOn
+  id: KnockOn
   parent: BaseHands
   priority: 20
   effectSuccess:

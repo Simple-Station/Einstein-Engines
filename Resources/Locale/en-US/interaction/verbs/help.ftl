@@ -28,10 +28,3 @@ interaction-MakeSleepOther-fail-target-popup = {THE($user)} fails to put you to 
 interaction-MakeSleepOther-success-self-popup = You put {THE($target)} to sleep.
 interaction-MakeSleepOther-success-target-popup = {THE($user)} puts you to sleep.
 interaction-MakeSleepOther-success-others-popup = {THE($user)} puts {THE($target)} to sleep.
-
-interaction-MakeSleepSelf-name = Sleep
-interaction-MakeSleepSelf-description = Put yourself to sleep.
-interaction-MakeSleepSelf-delayed-self-popup = You are trying to fall asleep...
-interaction-MakeSleepSelf-fail-self-popup = You cannot sleep right now.
-interaction-MakeSleepSelf-success-self-popup = You put yourself to sleep.
-interaction-MakeSleepSelf-success-others-popup = {THE($user)} falls asleep.

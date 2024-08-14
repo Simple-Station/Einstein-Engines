@@ -143,7 +143,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
     /// <summary>
     ///     Performs an additional CanPerform check (unless forced) and then actually performs the action of the verb
-    ///     and shows a success popup.
+    ///     and shows a success/failure popup.
     /// </summary>
     public void PerformVerb(InteractionVerbPrototype proto, InteractionArgs args, bool force = false)
     {

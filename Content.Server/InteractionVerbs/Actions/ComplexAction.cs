@@ -51,6 +51,7 @@ public sealed partial class ComplexAction : InteractionAction
             return Delegate(act => act.Perform(args, proto, deps));
 
         var result = RequireAll;
+        // Note: we use bitwise OR and AND here instead of their boolean equivalents to avoid lazy execution.
         if (RequireAll)
             foreach (var action in Actions)
                 result &= action.Perform(args, proto, deps);
