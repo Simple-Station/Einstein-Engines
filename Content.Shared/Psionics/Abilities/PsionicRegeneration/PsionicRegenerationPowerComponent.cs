@@ -16,7 +16,7 @@ namespace Content.Shared.Abilities.Psionics
         public float UseDelay = 8f;
         [DataField]
 
-        public SoundSpecifier SoundUse = new SoundPathSpecifier("/Audio/Nyanotrasen/Psionics/heartbeat_fast.ogg");
+        public SoundSpecifier SoundUse = new SoundPathSpecifier("/Audio/Psionics/heartbeat_fast.ogg");
     }
 }
 
