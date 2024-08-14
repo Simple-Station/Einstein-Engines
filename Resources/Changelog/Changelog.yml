@@ -5338,3 +5338,9 @@ Entries:
       message: Flash duration against Vulpkanins has been increased by 50%.
   id: 6263
   time: '2024-08-14T05:30:37.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added crowned, tall bull, and tall curved Oni horns.
+  id: 6264
+  time: '2024-08-14T09:05:24.0000000+00:00'
