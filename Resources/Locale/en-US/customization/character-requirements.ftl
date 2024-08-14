@@ -59,6 +59,19 @@ character-width-requirement = You must {$inverted ->
         *[other] between [color={$color}]{$min}[/color] and [color={$color}]{$max}[/color]cm wide
     }
 }
+character-weight-requirement = You must {$inverted ->
+    [true] not be
+    *[other] be
+} {$min ->
+    [-2147483648] {$max ->
+        [2147483648] {""}
+        *[other] lighter than [color={$color}]{$max}[/color]kg
+    }
+    *[other] {$max ->
+        [2147483648] heavier than [color={$color}]{$min}[/color]kg
+        *[other] between [color={$color}]{$min}[/color] and [color={$color}]{$max}[/color]kg
+    }
+}
 
 character-trait-requirement = You must {$inverted ->
     [true] not have

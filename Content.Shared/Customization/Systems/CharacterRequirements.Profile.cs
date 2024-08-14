@@ -6,6 +6,8 @@ using Content.Shared.Roles;
 using Content.Shared.Traits;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
+using Robust.Shared.Enums;
+using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -173,6 +175,53 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
 
         var width = profile.Width * species.AverageWidth;
         return width >= Min && width <= Max;
+    }
+}
+
+/// <summary>
+///     Requires the profile to be within a certain weight range
+/// </summary>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class CharacterWeightRequirement : CharacterRequirement
+{
+    /// <summary>
+    ///     Minimum weight of the profile in kilograms
+    /// </summary>
+    [DataField]
+    public float Min = int.MinValue;
+
+    /// <summary>
+    ///     Maximum weight of the profile in kilograms
+    /// </summary>
+    [DataField]
+    public float Max = int.MaxValue;
+
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
+    {
+        const string color = "green";
+        var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
+        prototypeManager.Index(species.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
+
+        if (fixture == null)
+        {
+            reason = null;
+            return false;
+        }
+
+        var weight = MathF.Round(
+            MathF.PI * MathF.Pow(
+                fixture.Fixtures["fix1"].Shape.Radius
+                * ((profile.Width + profile.Height) / 2), 2)
+                * fixture.Fixtures["fix1"].Density);
+
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-weight-requirement",
+            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max)));
+
+        return weight >= Min && weight <= Max;
     }
 }
 
