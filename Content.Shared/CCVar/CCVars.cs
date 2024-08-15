@@ -1678,17 +1678,19 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> CrewManifestUnsecure =
             CVarDef.Create("crewmanifest.unsecure", true, CVar.REPLICATED);
 
-        /*
-         * Biomass
-         */
+        #region Cloning
 
         /// <summary>
         ///     Enabled: Cloning has 70% cost and reclaimer will refuse to reclaim corpses with souls. (For LRP).
         ///     Disabled: Cloning has full biomass cost and reclaimer can reclaim corpses with souls. (Playtested and balanced for MRP+).
         /// </summary>
-        public static readonly CVarDef<bool> BiomassEasyMode =
-            CVarDef.Create("biomass.easy_mode", false, CVar.SERVERONLY);
+        public static readonly CVarDef<float> CloningBiomassCostMultiplier =
+            CVarDef.Create("cloning.biomass_cost_multiplier", 1f, CVar.SERVERONLY);
 
+        public static readonly CVarDef<bool> CloningReclaimSouledBodies =
+            CVarDef.Create("cloning.reclaim_souled_bodies", false, CVar.SERVERONLY);
+
+        #endregion
         /*
          * Anomaly
          */
@@ -2291,7 +2293,7 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> StationGoalsChance =
             CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
-            
+
 
         #region CPR System
         /// <summary>
@@ -2338,7 +2340,7 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> CPRAirlossReductionMultiplier =
             CVarDef.Create("cpr.airloss_reduction_multiplier", 1f, CVar.REPLICATED | CVar.SERVER);
-            
+
         #endregion
 
         #region Contests System

@@ -6,7 +6,7 @@ namespace Content.Server.Nyanotrasen.Cloning
     [RegisterComponent]
     public sealed partial class MetempsychosisKarmaComponent : Component
     {
-        [DataField("score")]
+        [DataField]
         public int Score = 0;
     }
 }

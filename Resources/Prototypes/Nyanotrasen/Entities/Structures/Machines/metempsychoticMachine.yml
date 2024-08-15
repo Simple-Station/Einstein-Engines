@@ -4,8 +4,8 @@
   name: metempsychotic machine
   description: Speeds along the transmigration of a soul to its next vessel.
   components:
-    - type: MetempsychoticMachine
     - type: CloningPod
+      doMetempsychosis: true
     - type: Machine
       board: MetempsychoticMachineCircuitboard
     - type: Sprite
