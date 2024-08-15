@@ -15,6 +15,10 @@
       - !type:NestedSelector
         tableId: SalvageScrapLarge
         weight: 10
+    # 10% chance of some trash
+    - !type:NestedSelector
+      tableId: GenericTrashItems
+      weight: 10
     # 15% chance of low-value equipment
     - !type:NestedSelector
       tableId: SalvageEquipmentCommon
@@ -390,7 +394,7 @@
     table: !type:GroupSelector
       children:
       - id: MobGoliath
-        weight: 35
+        weight: 45
       #- id: MobHivelord
       #  weight: 30
       #- id: MobArgocyteLeviathing #goobstation
