@@ -178,6 +178,7 @@ namespace Content.Server.Database
         Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel = default);
         Task<PlayerRecord?> GetPlayerRecordByUserId(NetUserId userId, CancellationToken cancel = default);
         Task<PlayerRecord?> GetPlayerRecordByPublicKey(ImmutableArray<byte> publicKey, CancellationToken cancel = default);
+        Task<List<PlayerRecord>> GetAllPlayerRecordsWithPublicKey(ImmutableArray<byte> publicKey, CancellationToken cancel = default);
         Task<PlayerRecord?> GetPlayerRecordByHWID(ImmutableArray<byte> hwID, CancellationToken cancel = default);
         #endregion
 
@@ -532,6 +533,12 @@ namespace Content.Server.Database
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetPlayerRecordByPublicKey(publicKey, cancel));
+        }
+
+        public Task<List<PlayerRecord>> GetAllPlayerRecordsWithPublicKey(ImmutableArray<byte> publicKey, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetAllPlayerRecordsWithPublicKey(publicKey, cancel));
         }
 
         public Task<PlayerRecord?> GetPlayerRecordByHWID(ImmutableArray<byte> hwID, CancellationToken cancel = default)

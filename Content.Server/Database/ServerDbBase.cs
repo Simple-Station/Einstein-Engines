@@ -590,6 +590,9 @@ namespace Content.Server.Database
 
         public async Task<PlayerRecord?> GetPlayerRecordByPublicKey(ImmutableArray<byte> publicKey, CancellationToken cancel)
         {
+            if (publicKey.Length == 0) // Can't search / match by empty key
+                return null;
+
             await using var db = await GetDb();
 
             // Sort by descending last seen time.
@@ -601,6 +604,31 @@ namespace Content.Server.Database
                 .FirstOrDefaultAsync(p => p.PublicKey == publicKey.ToArray(), cancel);
 
             return record == null ? null : MakePlayerRecord(record);
+        }
+
+        public async Task<List<PlayerRecord>> GetAllPlayerRecordsWithPublicKey(ImmutableArray<byte> publicKey, CancellationToken cancel)
+        {
+            var playerRecords = new List<PlayerRecord>();
+
+            if (publicKey.Length == 0) // Can't search / match by empty key
+                return playerRecords;
+
+            await using var db = await GetDb();
+
+            // Sort by descending last seen time.
+            // (I am only expecting one public key to go to one player -- however, if something weird happened,
+            // maybe due to someone logging in and then later an account migration happening, this at least goes
+            // to the most recent account.)
+            var recordsDatabaseResult = await db.DbContext.Player
+                .OrderByDescending(p => p.LastSeenTime)
+                .Where(p => p.PublicKey == publicKey.ToArray())
+                .ToListAsync();
+
+            if (recordsDatabaseResult == null)
+                return playerRecords;
+
+            recordsDatabaseResult.ForEach(p => playerRecords.Add(MakePlayerRecord(p)));
+            return playerRecords;
         }
 
         public async Task<PlayerRecord?> GetPlayerRecordByHWID(ImmutableArray<byte> hwID, CancellationToken cancel)

@@ -1,8 +1,11 @@
 using System.Collections.Immutable;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using Content.Server.Administration.Notes;
 using Content.Server.Database;
 using Content.Shared.CCVar;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Robust.Server.Player;
 using Robust.Shared.AuthLib;
 using Robust.Shared.Configuration;
@@ -89,5 +92,71 @@ public sealed class MVKeyAuthUtilities : IPostInjectInit
         }
 
         return new UtilityResult(true, $"Successfully renamed '{oldUserName}' -> '{newUserName}'.");
+    }
+
+    /// <summary>
+    /// Attempts to take a user inputted key.  Could be the base64 only: "MIGbMBAGByqGSM..." or could be with the
+    /// PEM stanzas "-----BEGIN PUBLIC KEY-----..."
+    /// </summary>
+    /// <param name="userInputKey"></param>
+    /// <returns></returns>
+    public ECDsa? ParseUserInputtedPublicKey(string userInputKey)
+    {
+        if (userInputKey.StartsWith("-----BEGIN PUBLIC KEY-----"))
+        {
+            // May already be wrapped with PEM stanzas.  Try parsing as-is
+            try
+            {
+                var key = ECDsa.Create();
+                key.ImportFromPem(userInputKey);
+                return key;
+            } catch (Exception e)
+            {
+                _logger.Debug("Wasn't able to parse pem first try in ParseUserInputtedPublicKey, probably nothing to worry about just yet though.", e);
+            }
+        }
+
+        // User may be providing just the base64 portion without the stanzas.  Support that as well.
+
+        try
+        {
+            var key = ECDsa.Create();
+            userInputKey = userInputKey.Trim().Replace(" ", "");
+
+            var pemStringBuilder = new StringBuilder("-----BEGIN PUBLIC KEY-----\n");
+            for (int i=0; i<userInputKey.Length; i++)
+            {
+                if (i % 64 == 0)
+                    pemStringBuilder.Append("\n");
+
+                pemStringBuilder.Append(userInputKey[i]);
+            }
+
+            if (pemStringBuilder[pemStringBuilder.Length-1] != '\n')
+                pemStringBuilder.Append('\n');
+
+            pemStringBuilder.Append("-----END PUBLIC KEY-----");
+
+            var publicKeyPEM = pemStringBuilder.ToString();
+
+            key.ImportFromPem(publicKeyPEM);
+            return key;
+        } catch (Exception e)
+        {
+            _logger.Error("Exception in ParseUserInputtedPublicKey when trying to parse a user-provided public key.", e);
+            return null;
+        }
+    }
+
+    public ImmutableArray<byte>? UserInputtedPublicKeyToBytes(string userInputKeyString)
+    {
+        var userPublicKey = ParseUserInputtedPublicKey(userInputKeyString);
+        if (userPublicKey == null)
+            return null;
+
+        var userPublicKeyX509Der = userPublicKey.ExportSubjectPublicKeyInfo();
+        var userPublicKeyImmutableBytes = userPublicKeyX509Der.ToImmutableArray();
+
+        return userPublicKeyImmutableBytes;
     }
 }
