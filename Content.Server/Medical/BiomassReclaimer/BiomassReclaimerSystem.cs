@@ -219,7 +219,7 @@ namespace Content.Server.Medical.BiomassReclaimer
                 return false;
 
             bool isPlant = HasComp<ProduceComponent>(dragged);
-            if (!HasComp<ProduceComponent>(dragged) && (!HasComp<MobStateComponent>(dragged) || reclaimerComp.SafetyEnabled && !_mobState.IsDead(dragged)))
+            if (!HasComp<ProduceComponent>(dragged) && (!HasComp<MobStateComponent>(dragged) || reclaimer.Comp.SafetyEnabled && !_mobState.IsDead(dragged)))
                 return false;
 
             if (_configManager.GetCVar(CCVars.CloningReclaimSouledBodies)
