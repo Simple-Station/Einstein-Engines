@@ -1,13 +1,13 @@
-# Job
+## Job
 character-job-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
-} one of these jobs: {$jobs}
+    [true] not
+    *[other] {""}
+} be one of these jobs: {$jobs}
 
 character-department-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
-} in one of these departments: {$departments}
+    [true] not
+    *[other] {""}
+} be in one of these departments: {$departments}
 
 character-timer-department-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes of [color={$departmentColor}]{$department}[/color] department playtime
 character-timer-department-too-high = You require [color=yellow]{TOSTRING($time, "0")}[/color] fewer minutes in [color={$departmentColor}]{$department}[/color] department
@@ -16,11 +16,17 @@ character-timer-overall-too-high = You require [color=yellow]{TOSTRING($time, "0
 character-timer-role-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes with [color={$departmentColor}]{$job}[/color]
 character-timer-role-too-high = You require[color=yellow] {TOSTRING($time, "0")}[/color] fewer minutes with [color={$departmentColor}]{$job}[/color]
 
+## Logic
+character-logic-xor-requirement = You must {$inverted ->
+    [true] not
+    *[other] {""}
+} have only one of these:
+    {$options}
 
-# Profile
+## Profile
 character-age-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
+    [true] not
+    *[other] {""}
 } be within [color=yellow]{$min}[/color] and [color=yellow]{$max}[/color] years old
 
 character-backpack-type-requirement = You must {$inverted ->
@@ -39,21 +45,21 @@ character-gender-requirement = You must {$inverted ->
 } the pronouns [color=white]{$gender}[/color]
 
 character-sex-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
-} [color=white]{$sex ->
+    [true] not
+    *[other] {""}
+} be [color=white]{$sex ->
     [None] unsexed
     *[other] {$sex}
 }[/color]
 character-species-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
-} a {$species}
+    [true] not
+    *[other] {""}
+} be a {$species}
 
 character-height-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
-} {$min ->
+    [true] not
+    *[other] {""}
+} be {$min ->
     [-2147483648] {$max ->
         [2147483648] {""}
         *[other] shorter than [color={$color}]{$max}[/color]cm
@@ -65,9 +71,9 @@ character-height-requirement = You must {$inverted ->
 }
 
 character-width-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
-} {$min ->
+    [true] not
+    *[other] {""}
+} be {$min ->
     [-2147483648] {$max ->
         [2147483648] {""}
         *[other] skinnier than [color={$color}]{$max}[/color]cm
@@ -79,9 +85,9 @@ character-width-requirement = You must {$inverted ->
 }
 
 character-weight-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
-} {$min ->
+    [true] not
+    *[other] {""}
+} be {$min ->
     [-2147483648] {$max ->
         [2147483648] {""}
         *[other] lighter than [color={$color}]{$max}[/color]kg
@@ -104,8 +110,8 @@ character-loadout-requirement = You must {$inverted ->
 } one of these loadouts: {$loadouts}
 
 
-# Whitelist
+## Whitelist
 character-whitelist-requirement = You must {$inverted ->
-    [true] not be
-    *[other] be
-} whitelisted
+    [true] not
+    *[other] {""}
+} be whitelisted
