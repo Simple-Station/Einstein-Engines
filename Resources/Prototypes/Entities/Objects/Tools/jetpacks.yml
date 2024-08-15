@@ -295,3 +295,43 @@
       moles:
         - 1.025689525 # oxygen
         - 1.025689525 # nitrogen
+
+#Empty micro - Used in the Cyborg module, visually the same as mini jetpack.
+- type: entity
+  id: JetpackMicro
+  parent: BaseJetpack
+  name: micro jetpack
+  suffix: Empty
+  components:
+    - type: Item
+      sprite: Objects/Tanks/Jetpacks/mini.rsi
+    - type: Sprite
+      sprite: Objects/Tanks/Jetpacks/mini.rsi
+    - type: Clothing
+      sprite: Objects/Tanks/Jetpacks/mini.rsi
+      slots:
+        - Back
+        - suitStorage
+        - Belt
+    - type: GasTank
+      outputPressure: 42.6
+      air:
+        volume: 0.75
+
+
+# Filled micro
+- type: entity
+  id: JetpackMicroFilled
+  parent: JetpackMicro
+  name: micro jetpack
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 2 minutes of thrust
+      volume: 0.75
+      temperature: 293.15
+      moles:
+        - 0.153853429 # oxygen
+        - 0.153853429 # nitrogen

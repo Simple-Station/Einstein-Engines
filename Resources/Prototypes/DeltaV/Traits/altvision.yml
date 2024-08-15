@@ -1,7 +1,6 @@
 - type: trait
   id: UltraVision
   category: Visual
-  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -18,7 +17,6 @@
 - type: trait
   id: DogVision
   category: Visual
-  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true

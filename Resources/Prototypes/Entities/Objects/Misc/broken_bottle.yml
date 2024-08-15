@@ -7,9 +7,16 @@
   - type: Sharp
   - type: MeleeWeapon
     attackRate: 1.5
+    range: 1.3
     damage:
       types:
-        Slash: 5
+        Slash: 4
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 0.8
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 5
+    maxTargets: 3
+    angle: 75
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Sprite
@@ -28,4 +35,4 @@
   - type: SpaceGarbage
   - type: WelderRefinable
     refineResult:
-    - SheetGlass1
+    - id: SheetGlass1

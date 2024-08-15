@@ -1,7 +1,42 @@
 - type: trait
+  id: CPRTraining
+  category: Mental
+  points: -2
+  components:
+    - type: CPRTraining
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - MedicalIntern
+        - Paramedic
+        - ChiefMedicalOfficer
+        - Brigmedic
+
+- type: trait
+  id: SelfAware
+  category: Mental
+  points: -2
+  components:
+    - type: SelfAware
+      analyzableTypes:
+      - Blunt
+      - Slash
+      - Piercing
+      - Heat
+      - Shock
+      - Cold
+      - Caustic
+      detectableGroups:
+      - Airloss
+      - Toxin
+
+- type: trait
   id: HeavyweightDrunk
   category: Physical
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -12,7 +47,36 @@
       inverted: true
       traits:
         - LightweightDrunk
+        - LiquorLifeline
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Dwarf
   components:
+    - type: LightweightDrunk
+      boozeStrengthMultiplier: 0.5
+
+- type: trait
+  id: LiquorLifeline
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LightweightDrunk
+        - HeavyweightDrunk
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Dwarf
+  components:
+    - type: LiquorLifeline
     - type: LightweightDrunk
       boozeStrengthMultiplier: 0.5
 
@@ -31,3 +95,76 @@
       inverted: true
       species:
         - Felinid
+
+- type: trait
+  id: SignLanguage
+  category: Visual
+  points: -1
+  components:
+    - type: LanguageKnowledgeModifier
+      speaks:
+        - Sign
+      understands:
+        - Sign
+
+- type: trait
+  id: Voracious
+  category: Physical
+  points: -1
+  components:
+    - type: ConsumeDelayModifier
+      foodDelayMultiplier: 0.5
+      drinkDelayMultiplier: 0.5
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vulpkanin
+
+- type: trait
+  id: ParkourTraining
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sluggish
+        - SnailPaced
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+  components:
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 0.70
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 0.8
+      downedSpeedMultiplierMultiplier: 1.25
+
+- type: trait
+  id: LightStep
+  category: Auditory
+  points: -1
+  components:
+    - type: FootstepVolumeModifier
+      sprintVolumeModifier: -10
+      walkVolumeModifier: -10
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+
+- type: trait
+  id: Singer
+  category: Auditory
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  components:
+    - type: Singer
+      proto: NormalSinger
