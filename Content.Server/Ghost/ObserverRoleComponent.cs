@@ -1,4 +1,4 @@
-﻿using Content.Shared.Roles;
+using Content.Shared.Roles;
 
 namespace Content.Server.Ghost;
 
