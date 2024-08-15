@@ -603,6 +603,23 @@ namespace Content.Server.Database
             return record == null ? null : MakePlayerRecord(record);
         }
 
+        public async Task<PlayerRecord?> GetPlayerRecordByHWID(ImmutableArray<byte> hwID, CancellationToken cancel)
+        {
+            // if HWid is empty, then don't match any records based on it (since that'd be all linux/mac players)
+            if (hwID.Length == 0)
+                return null;
+
+            await using var db = await GetDb();
+
+            // Sort by descending last seen time.
+            // So if player's machine played on multiple accounts, it picks the most recent one.
+            var record = await db.DbContext.Player
+                .OrderByDescending(p => p.LastSeenHWId)
+                .FirstOrDefaultAsync(p => p.LastSeenHWId == hwID.ToArray(), cancel);
+
+            return record == null ? null : MakePlayerRecord(record);
+        }
+
         [return: NotNullIfNotNull(nameof(player))]
         protected PlayerRecord? MakePlayerRecord(Player? player)
         {

@@ -905,6 +905,21 @@ namespace Content.Shared.CCVar
             CVarDef.Create("admin.afk_time", 600f, CVar.SERVERONLY);
 
         /*
+         * Auth (content-directed portion)
+         */
+
+        /// <summary>
+        /// Intended for servers migrating from wizden accounts to multiverse keys.  It will migrate
+        /// based on user's HWID if the following conditions are met:
+        /// 1) Connecting user's public key does not already exist in DB
+        /// 2) HWID between old & new user matches
+        /// 3) User has no special permissions (do these by hand for safety)
+        /// 4) Old user has no prior public key
+        /// </summary>
+        public static readonly CVarDef<bool> AuthMigrationViaHwid =
+            CVarDef.Create("auth.migration_via_hwid", true, CVar.SERVERONLY);
+
+        /*
          * Explosions
          */
 
