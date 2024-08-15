@@ -93,7 +93,7 @@ namespace Content.Server.Forensics
                 return;
 
             if (forcomp.Scent != string.Empty && component.Scent == forcomp.Scent)
-                args.PushMarkup(Loc.GetString("examined-scent"));
+                args.PushMarkup(Loc.GetString("examined-scent"), -1);
         }
 
         #region Utilities
