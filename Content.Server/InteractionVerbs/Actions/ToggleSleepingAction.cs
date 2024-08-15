@@ -34,9 +34,9 @@ public sealed partial class ToggleSleepingAction : InteractionAction
         if (args.TryGetBlackboard("sleeping", out bool wasSleeping) && wasSleeping != isSleeping)
             return false; // The target woke up/went to sleep during the do-after - sus
 
-        if (isSleeping)
+        if (isSleeping && WakeUp)
             return deps.EntMan.System<SleepingSystem>().TryWaking(args.Target, user: args.User);
-        else
+        else if (Sleep)
             return deps.EntMan.System<SleepingSystem>().TrySleeping(args.Target);
     }
 }

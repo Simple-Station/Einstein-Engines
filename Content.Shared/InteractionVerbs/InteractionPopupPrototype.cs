@@ -45,6 +45,19 @@ public sealed partial class InteractionPopupPrototype : IPrototype
     public Color? LogColor = null;
 
     /// <summary>
+    ///     If true, entities who cannot directly see the popup target will not chat log. Only has effect if <see cref="LogPopup"/> is true.
+    /// </summary>
+    [DataField]
+    public bool DoClipping = true;
+
+    /// <summary>
+    ///     Range in which other entities, given that they can directly see the performer, see the chat log.
+    ///     This does not affect the user and target. Only has effect if <see cref="LogPopup"/> is true.
+    /// </summary>
+    [DataField]
+    public float VisibilityRange = 20f;
+
+    /// <summary>
     ///     Loc prefix for popups shown for the performer of the verb. If set to null, defaults to <see cref="OthersSuffix"/>.
     /// </summary>
     [DataField("self")]

@@ -2,7 +2,9 @@ using System.Linq;
 using Content.Shared.Contests;
 using Content.Shared.DoAfter;
 using Content.Shared.Ghost;
+using Content.Shared.Interaction;
 using Content.Shared.InteractionVerbs.Events;
+using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
@@ -22,12 +24,12 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     private readonly InteractionAction.VerbDependencies _verbDependencies = new();
     private List<InteractionVerbPrototype> _globalPrototypes = default!;
 
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfters = default!;
+    [Dependency] private readonly ContestsSystem _contests = default!;
+    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ContestsSystem _contests = default!;
 
     public override void Initialize()
     {
@@ -295,7 +297,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             // Others popup
             var othersSuffix = popup.OthersSuffix;
             if (othersSuffix is not null)
-                PopupEffects(Loc.GetString($"{locPrefix}-{othersSuffix}-popup", localeArgs), othersTarget, othersFilter, true, popup);
+                PopupEffects(Loc.GetString($"{locPrefix}-{othersSuffix}-popup", localeArgs), othersTarget, othersFilter, true, popup, clip: true);
         }
 
         // Sounds
@@ -309,17 +311,17 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         }
     }
 
-    private void PopupEffects(string message, EntityUid target, Filter filter, bool recordReplay, InteractionPopupPrototype popup)
+    private void PopupEffects(string message, EntityUid target, Filter filter, bool recordReplay, InteractionPopupPrototype popup, bool clip = false)
     {
         // Sending a chat message will result in a popup anyway
         // TODO this needs to be fixed probably. Popups and chat messages should be independent.
         if (popup.LogPopup)
-            SendChatLog(message, target, filter, popup);
+            SendChatLog(message, target, filter, popup, clip);
         else
             _popups.PopupEntity(message, target, filter, recordReplay, popup.PopupType);
     }
 
-    protected virtual void SendChatLog(string message, EntityUid source, Filter filter, InteractionPopupPrototype popup)
+    protected virtual void SendChatLog(string message, EntityUid source, Filter filter, InteractionPopupPrototype popup, bool clip)
     {
     }
 
