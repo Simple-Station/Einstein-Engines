@@ -59,6 +59,7 @@ using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Power.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Server.Database.Migrations.Postgres;
 
 namespace Content.Server.Cloning
 {
@@ -406,7 +407,7 @@ namespace Content.Server.Cloning
         }
 
         /// <summary>
-        ///     Start Nyano Code: Handles fetching the mob and any appearance stuff...
+        ///     This function handles the Clone vs. Metem logic, as well as creation of the new body.
         /// </summary>
         private EntityUid FetchAndSpawnMob
         (EntityUid clonePod,
@@ -456,13 +457,32 @@ namespace Content.Server.Cloning
             {
                 if (switchingSpecies && !forceOldProfile)
                 {
+                    var flavorText = _serialization.CreateCopy(pref.FlavorText, null, false, true);
+                    var oldName = _serialization.CreateCopy(pref.Name, null, false, true);
+
                     pref = HumanoidCharacterProfile.RandomWithSpecies(newHumanoid.Species);
-                    if (sexes.Contains(humanoid.Sex))
+
+                    if (sexes.Contains(humanoid.Sex)
+                        && _config.GetCVar(CCVars.CloningPreserveSex))
                         pref = pref.WithSex(humanoid.Sex);
 
-                    pref = pref.WithGender(humanoid.Gender);
-                    pref = pref.WithAge(humanoid.Age);
+                    if (_config.GetCVar(CCVars.CloningPreserveGender))
+                        pref = pref.WithGender(humanoid.Gender);
 
+                    if (_config.GetCVar(CCVars.CloningPreserveAge))
+                        pref = pref.WithAge(humanoid.Age);
+
+                    if (_config.GetCVar(CCVars.CloningPreserveHeight))
+                        pref = pref.WithHeight(humanoid.Height);
+
+                    if (_config.GetCVar(CCVars.CloningPreserveWidth))
+                        pref = pref.WithWidth(humanoid.Width);
+
+                    if (_config.GetCVar(CCVars.CloningPreserveName))
+                        pref = pref.WithName(oldName);
+
+                    if (_config.GetCVar(CCVars.CloningPreserveFlavorText))
+                        pref = pref.WithFlavorText(flavorText);
                 }
                 _humanoidSystem.LoadProfile(mob, pref);
             }

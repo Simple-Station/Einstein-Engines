@@ -1692,6 +1692,48 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> CloningReclaimSouledBodies =
             CVarDef.Create("cloning.reclaim_souled_bodies", false, CVar.SERVERONLY);
 
+        /// <summary>
+        ///     Controls whether or not Metempsychosis will potentially give people a sex change.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveSex =
+            CVarDef.Create("cloning.preserve_sex", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves Pronouns when reincarnating people.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveGender =
+            CVarDef.Create("cloning.preserve_gender", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves Age.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveAge =
+            CVarDef.Create("cloning.preserve_age", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves height.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveHeight =
+            CVarDef.Create("cloning.preserve_height", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves width.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveWidth =
+            CVarDef.Create("cloning.preserve_width", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves Names. EG: Are you actually a new person?
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveName =
+            CVarDef.Create("cloning.preserve_name", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves Flavor Text.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveFlavorText =
+            CVarDef.Create("cloning.preserve_flavor_text", true, CVar.SERVERONLY);
+
         #endregion
         /*
          * Anomaly
