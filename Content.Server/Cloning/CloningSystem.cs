@@ -286,6 +286,11 @@ namespace Content.Server.Cloning
 
         public void AttemptCloning(EntityUid cloningPod, CloningPodComponent cloningPodComponent)
         {
+            if (cloningPodComponent.BodyContainer.ContainedEntity is { Valid: true } entity
+                && TryComp<PhysicsComponent>(entity, out var physics)
+                && physics.Mass > 71)
+                Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime * _contests.MassContest(entity, physics, true)), () => UpdateCloning(cloningPod, cloningPodComponent));
+
             Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime), () => UpdateCloning(cloningPod, cloningPodComponent));
         }
 
