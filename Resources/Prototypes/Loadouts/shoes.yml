@@ -341,7 +341,6 @@
   items:
     - ClothingUnderSocksCoder
 
-# Socks
 - type: loadout
   id: LoadoutShoesUnderSocksBee
   category: Shoes
@@ -355,3 +354,11 @@
         - Harpy
   items:
     - ClothingUnderSocksBee
+
+- type: loadout
+  id: LoadoutShoesClothWrap
+  category: Shoes
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingClothWrap
