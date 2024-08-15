@@ -423,7 +423,7 @@ namespace Content.Server.Cloning
             EnsureComp<MetempsychosisKarmaComponent>(mob, out var newKarma);
             newKarma.Score += oldKarma;
 
-            // Put the clone in crit with high Cellular damage. Medbay should use Cryogenics to "Finish" clones. Clonexadone is perfect for this.
+            // Put the clone in crit with high Cellular damage. Medbay should use Cryogenics to "Finish" clones. Doxarubixadone is perfect for this.
             if (HasComp<DamageableComponent>(mob))
             {
                 DamageSpecifier damage = new(_prototypeManager.Index<DamageGroupPrototype>("Cellular"), _random.NextFloat(105, 120));
