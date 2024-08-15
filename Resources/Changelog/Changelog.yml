@@ -5344,3 +5344,11 @@ Entries:
       message: Added crowned, tall bull, and tall curved Oni horns.
   id: 6264
   time: '2024-08-14T09:05:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added a new positive trait - singer. It allows you to play midi songs
+        without an instrument, similarly to harpies.
+  id: 6265
+  time: '2024-08-15T06:06:25.0000000+00:00'
