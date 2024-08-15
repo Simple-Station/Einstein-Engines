@@ -631,6 +631,25 @@ namespace Content.Server.Database
             return playerRecords;
         }
 
+        public async Task<int> GetCountOfRecentlyUsedPlayerRecordsWithPublicKeyFromIP(
+            IPAddress address, float daysToConsider, CancellationToken cancel)
+        {
+            var playerRecords = new List<PlayerRecord>();
+
+            var timeToConsider = DateTime.UtcNow.AddDays(-1f * daysToConsider);
+
+            await using var db = await GetDb();
+
+            int recordsFound = await db.DbContext.Player
+                .Where(p =>
+                    p.LastSeenAddress == address &&
+                    p.LastSeenTime > timeToConsider &&
+                    p.PublicKey != null)
+                .CountAsync();
+
+            return recordsFound;
+        }
+
         public async Task<PlayerRecord?> GetPlayerRecordByHWID(ImmutableArray<byte> hwID, CancellationToken cancel)
         {
             // if HWid is empty, then don't match any records based on it (since that'd be all linux/mac players)

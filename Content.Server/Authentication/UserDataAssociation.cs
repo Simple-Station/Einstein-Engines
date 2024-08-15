@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Net;
 using System.Threading.Tasks;
 using Content.Server.Administration.Notes;
 using Content.Server.Database;
@@ -23,7 +24,7 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
     private ISawmill _logger = default!;
 
     public async Task<AssociationResult> AttemptUserDataFromPublicKey(
-        ImmutableArray<byte> publicKey, ImmutableArray<byte> hWId, string requestedUserName)
+        ImmutableArray<byte> publicKey, ImmutableArray<byte> hWId, string requestedUserName, IPAddress connectingAddress)
     {
         // Check if public key already has a match in database
         var existingPlayerRecord = await _db.GetPlayerRecordByPublicKey(publicKey);
@@ -40,8 +41,23 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
             return new AssociationResult(true, userData);
         }
 
-        // TODO - Throttle connections here to prevent a nefarious person from flooding user table with keys
+        // Beyond this point, the public key will either need a new user, or to associate with an existing user.
+        // Throttle to prevent a nefarious person from flooding user table with new keys
         // or trying to claim old accounts during migration.
+        var floodCheckMaxAccounts = _cfg.GetCVar(CCVars.AuthLimitNewPublicKeysFromIPCount);
+        var floodCheckDays = _cfg.GetCVar(CCVars.AuthLimitNewPublicKeysFromIPForDays);
+
+        if (floodCheckDays > 0 && floodCheckMaxAccounts > 0)
+        {
+            int recentPublicKeyLoginsFromThisIP = await _db.GetCountOfRecentlyUsedPlayerRecordsWithPublicKeyFromIP(
+                connectingAddress, floodCheckDays);
+
+            if (recentPublicKeyLoginsFromThisIP > floodCheckMaxAccounts)
+            {
+                _logger.Info($"Blocking connection from {requestedUserName} due to new account flood check.");
+                return new AssociationResult(false, null, "Too many accounts from your IP.  Try one of these:\n1) Use your existing public key if you have one.\n2) Or you may also contact server staff with your public key to be added manually.\n   (Please inform them if your account needs migrating or if you are a new player.)\n3) Alternatively, if the server supports it, you could try guest mode.");
+            }
+        }
 
         // Allow server to optionally attempt to associate/migrate user account if history of HWID/Username/IP/whatever
         if (_cfg.GetCVar(CCVars.AuthMigrationViaHwid))
