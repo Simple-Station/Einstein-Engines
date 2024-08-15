@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-4.0",
-  "copyright": "Created by discord user Four Hydra Heads#2075 (971500282364178512)",
+  "copyright": "Created by discord user Four Hydra Heads#2075 (971500282364178512), gore state edited by VMSolidus",
   "size": {
     "x": 32,
     "y": 32
@@ -13,6 +13,10 @@
     {
       "name": "pod_1",
       "delays": [ [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ] ]
+    },
+    {
+        "name": "pod_g",
+        "delays": [ [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ] ]
     }
   ]
 }
