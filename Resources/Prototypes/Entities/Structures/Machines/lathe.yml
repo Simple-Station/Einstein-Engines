@@ -1300,6 +1300,9 @@
     - BoneGel # Shitmed Change
     - AACTablet # DeltaV
     - VehicleWheelchairFolded # Goobstation - Vehicles
+    - MedicalPatchBasic  #Goobstation - MedicalPatch
+    - MedicalPatchRapid #Goobstation - MedicalPatch
+    - MedicalPatchLarge #Goobstation - MedicalPatch
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker
