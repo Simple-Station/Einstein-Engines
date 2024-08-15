@@ -423,6 +423,7 @@ namespace Content.Server.Cloning
             var toSpawn = speciesPrototype.Prototype;
             var forceOldProfile = true;
             var oldKarma = 0;
+            var oldGender = humanoid.Gender;
             if (TryComp<MetempsychosisKarmaComponent>(bodyToClone, out var oldKarmaComp))
                 oldKarma += oldKarmaComp.Score;
 
@@ -468,6 +469,7 @@ namespace Content.Server.Cloning
 
                     if (_config.GetCVar(CCVars.CloningPreserveGender))
                         pref = pref.WithGender(humanoid.Gender);
+                    else oldGender = humanoid.Gender;
 
                     if (_config.GetCVar(CCVars.CloningPreserveAge))
                         pref = pref.WithAge(humanoid.Age);
@@ -495,7 +497,7 @@ namespace Content.Server.Cloning
 
             var grammar = EnsureComp<GrammarComponent>(mob);
             grammar.ProperNoun = true;
-            grammar.Gender = humanoid.Gender;
+            grammar.Gender = oldGender;
             Dirty(mob, grammar);
 
             if (forceOldProfile
