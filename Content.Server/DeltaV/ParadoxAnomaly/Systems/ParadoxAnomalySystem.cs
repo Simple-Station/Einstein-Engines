@@ -146,7 +146,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
 
         if (job.StartingGear != null && _proto.TryIndex<StartingGearPrototype>(job.StartingGear, out var gear))
         {
-            _stationSpawning.EquipStartingGear(spawned, gear, profile);
+            _stationSpawning.EquipStartingGear(spawned, gear);
             _stationSpawning.EquipIdCard(spawned,
                 profile.Name,
                 job,

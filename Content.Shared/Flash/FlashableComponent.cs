@@ -11,6 +11,17 @@ namespace Content.Shared.Flash
         public TimeSpan LastFlash;
 
         // <summary>
+        //   Chance to get EyeDamage on flash
+        // </summary>
+        [DataField]
+        public float EyeDamageChance;
+
+        // <summary>
+        //   How many EyeDamage when flashed? (If EyeDamageChance check passed)
+        // </summary>
+        [DataField]
+        public int EyeDamage;
+        
         //   How much to modify the duration of flashes against this entity.
         // </summary>
         [DataField]
@@ -27,16 +38,16 @@ namespace Content.Shared.Flash
     {
         public float Duration { get; }
         public TimeSpan Time { get; }
-
-        // <summary>
-        //   How much to modify the duration of flashes against this entity.
-        // </summary>
+        public float EyeDamageChance { get; }
+        public int EyeDamage { get; }
         public float DurationMultiplier { get; }
 
-        public FlashableComponentState(float duration, TimeSpan time, float durationMultiplier)
+        public FlashableComponentState(float duration, TimeSpan time, float eyeDamageChance, int eyeDamage, float durationMultiplier)
         {
             Duration = duration;
             Time = time;
+            EyeDamageChance = eyeDamageChance;
+            EyeDamage = eyeDamage;
             DurationMultiplier = durationMultiplier;
         }
     }

@@ -5352,3 +5352,23 @@ Entries:
         without an instrument, similarly to harpies.
   id: 6265
   time: '2024-08-15T06:06:25.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Xenowears! new non-human related clothings.
+  id: 6266
+  time: '2024-08-15T06:24:07.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: >-
+        Forensics Scent Type and Vulpkanins can now track scents, better keep
+        yourself clean!
+    - type: Tweak
+      message: >-
+        Vulpkanins eyes are sensetive, please dont flash them with lights as
+        this could damage them.
+    - type: Add
+      message: Vulpkanins now has their own screams!
+  id: 6267
+  time: '2024-08-15T07:11:05.0000000+00:00'
