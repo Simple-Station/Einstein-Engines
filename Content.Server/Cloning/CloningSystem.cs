@@ -204,6 +204,9 @@ namespace Content.Server.Cloning
 
         private bool CheckGeneticDamage(EntityUid uid, EntityUid bodyToClone, CloningPodComponent clonePod, float failChanceModifier = 1)
         {
+            if (clonePod.DoMetempsychosis)
+                return false;
+
             if (TryComp<DamageableComponent>(bodyToClone, out var damageable)
                 && damageable.Damage.DamageDict.TryGetValue("Cellular", out var cellularDmg)
                 && clonePod.ConnectedConsole is not null)
