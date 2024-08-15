@@ -1,5 +1,5 @@
-track-scent = track scent
-stop-track-scent = stop tracking scent
+track-scent = Track scent
+stop-track-scent = Stop tracking scent
 
 start-tracking-scent = {CAPITALIZE($user)} start tracking the scent of the {CAPITALIZE($target)}
 stopped-tracking-scent = You stopped tracking the scent
