@@ -10,6 +10,7 @@ using Robust.Server.Player;
 using Robust.Shared.AuthLib;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using Robust.Shared.Player;
 using static Robust.Shared.Network.IServerUserDataAssociation;
 
 namespace Content.Server.Authentication;
@@ -44,7 +45,8 @@ public sealed class MVKeyAuthUtilities : IPostInjectInit
         public string Message;
     }
 
-    public async Task<UtilityResult> AttemptRenameUser(string oldUserName, string newUserName, bool requestorCanModifyAdmin)
+    public async Task<UtilityResult> AttemptRenameUser(string oldUserName, string newUserName, bool requestorCanModifyAdmin,
+        ICommonSession? requestOriginator, string requestOriginatorString)
     {
         // Verify username rules
         if (!UsernameHelpers.IsNameValid(newUserName, out var reason))
@@ -78,6 +80,10 @@ public sealed class MVKeyAuthUtilities : IPostInjectInit
         {
             _netManager.DisconnectChannel(activeSession.Channel, $"Please reconnect, an admin renamed your UserName to {newUserName}");
         }
+
+        var logMessage = $"Username renaming from {oldUserName} => {newUserName} by {requestOriginatorString}";
+        await _adminNotes.AddAdminRemark(requestOriginator, sourceUsernameLookupRecord.UserId,
+            Shared.Database.NoteType.Note, logMessage, Shared.Database.NoteSeverity.None, true, null);
 
         try
         {

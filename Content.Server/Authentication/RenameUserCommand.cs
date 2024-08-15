@@ -10,6 +10,7 @@ using Content.Server.Storage.Components;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Content.Server.Administration.Managers;
+using Content.Server.Administration.Notes;
 
 namespace Content.Server.Authentication;
 
@@ -20,6 +21,7 @@ internal sealed class RenameUserCommand : IConsoleCommand
     [Dependency] private readonly IServerNetManager _netManager = default!;
     [Dependency] private readonly MVKeyAuthUtilities _mvKeyAuthUtilities = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
+    [Dependency] private readonly IAdminNotesManager _adminNotes = default!;
 
     public string Command => "renameuser";
     public string Description => "Renames the username to the desired new one.  It safely checks to make sure new one is not already in use.";
@@ -43,7 +45,9 @@ internal sealed class RenameUserCommand : IConsoleCommand
             isHost = _adminManager.HasAdminFlag(shell.Player, AdminFlags.Host);
         }
 
-        var result = await _mvKeyAuthUtilities.AttemptRenameUser(args[0], args[1], isHost);
+        var result = await _mvKeyAuthUtilities.AttemptRenameUser(args[0], args[1], isHost,
+            shell.Player,
+            shell.Player?.Name ?? "Console");
 
         if (result.Success)
             shell.WriteLine(result.Message);
