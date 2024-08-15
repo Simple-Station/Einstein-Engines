@@ -188,7 +188,9 @@ namespace Content.Server.Cloning
 
         private bool CheckBiomassCost(EntityUid uid, PhysicsComponent physics, CloningPodComponent clonePod)
         {
-            var cloningCost = (int) Math.Round(physics.FixturesMass * _config.GetCVar(CCVars.CloningBiomassCostMultiplier));
+            var cloningCost = (int) Math.Round(physics.FixturesMass
+                * _config.GetCVar(CCVars.CloningBiomassCostMultiplier)
+                * clonePod.BiomassCostMultiplier);
 
             if (_material.GetMaterialAmount(uid, clonePod.RequiredMaterial) < cloningCost)
             {

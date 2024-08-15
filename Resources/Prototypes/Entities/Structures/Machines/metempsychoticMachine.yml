@@ -6,6 +6,7 @@
   components:
     - type: CloningPod
       doMetempsychosis: true
+      biomassCostMultiplier: 0.5
     - type: Machine
       board: MetempsychoticMachineCircuitboard
     - type: Sprite
