@@ -430,7 +430,7 @@ namespace Content.Server.Cloning
                 toSpawn = GetSpawnEntity(bodyToClone, clonePodComp, speciesPrototype, oldKarma, out var newSpecies, out var changeProfile);
                 forceOldProfile = !changeProfile;
 
-                if (!changeProfile)
+                if (changeProfile)
                     geneticDamage = 0;
 
                 if (newSpecies != null)
