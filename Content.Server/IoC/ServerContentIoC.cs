@@ -68,6 +68,7 @@ namespace Content.Server.IoC
             IoCManager.Register<ISharedPlaytimeManager, PlayTimeTrackingManager>();
             IoCManager.Register<ServerApi>();
             IoCManager.Register<IServerUserDataAssociation, UserDataAssociation>();
+            IoCManager.Register<MVKeyAuthUtilities>();
         }
     }
 }
