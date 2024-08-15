@@ -97,8 +97,7 @@ namespace Content.Server.Medical
 
         private void AddAlternativeVerbs(EntityUid uid, MedicalScannerComponent component, GetVerbsEvent<AlternativeVerb> args)
         {
-            if (!args.CanAccess
-                || !args.CanInteract)
+            if (!args.CanAccess || !args.CanInteract)
                 return;
 
             // Eject verb
@@ -143,13 +142,14 @@ namespace Content.Server.Medical
         private void OnAnchorChanged(EntityUid uid, MedicalScannerComponent component, ref AnchorStateChangedEvent args)
         {
             if (component.ConnectedConsole == null
-                || !TryComp<CloningConsoleComponent>(component.ConnectedConsole, out var console)
                 || !args.Anchored
+                || !TryComp<CloningConsoleComponent>(component.ConnectedConsole, out var console)
                 || !_cloningConsoleSystem.RecheckConnections(component.ConnectedConsole.Value, console.CloningPod, uid, console))
                 return;
 
             _cloningConsoleSystem.UpdateUserInterface(component.ConnectedConsole.Value, console);
         }
+
         private MedicalScannerStatus GetStatus(EntityUid uid, MedicalScannerComponent scannerComponent)
         {
             if (!this.IsPowered(uid, EntityManager))

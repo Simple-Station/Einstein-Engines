@@ -109,8 +109,7 @@ namespace Content.Server.Medical.BiomassReclaimer
         {
             if (args.Handled
                 || HasComp<ActiveBiomassReclaimerComponent>(ent)
-                || TryComp<ApcPowerReceiverComponent>(ent, out var power)
-                && !power.Powered)
+                || TryComp<ApcPowerReceiverComponent>(ent, out var power) && !power.Powered)
                 return;
 
             _popup.PopupEntity(Loc.GetString("biomass-reclaimer-suicide-others", ("victim", args.Victim)), ent, PopupType.LargeCaution);

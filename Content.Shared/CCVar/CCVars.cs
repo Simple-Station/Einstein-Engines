@@ -1690,7 +1690,7 @@ namespace Content.Shared.CCVar
         ///     Whether or not the Biomass Reclaimer is allowed to roundremove bodies with a soul.
         /// </summary>
         public static readonly CVarDef<bool> CloningReclaimSouledBodies =
-            CVarDef.Create("cloning.reclaim_souled_bodies", false, CVar.SERVERONLY);
+            CVarDef.Create("cloning.reclaim_souled_bodies", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Controls whether or not Metempsychosis will potentially give people a sex change.
@@ -1708,7 +1708,7 @@ namespace Content.Shared.CCVar
         ///     Controls whether or not Metempsychosis preserves Age.
         /// </summary>
         public static readonly CVarDef<bool> CloningPreserveAge =
-            CVarDef.Create("cloning.preserve_age", true, CVar.SERVERONLY);
+            CVarDef.Create("cloning.preserve_age", false, CVar.SERVERONLY);
 
         /// <summary>
         ///     Controls whether or not Metempsychosis preserves height.
