@@ -6,6 +6,7 @@ using Content.Client.Lobby;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Roles;
+using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
@@ -67,7 +68,7 @@ namespace Content.Client.Preferences.UI
         private Slider _heightSlider => CHeightSlider;
         private Slider _widthSlider => CWidthSlider;
 
-        private TabContainer _tabContainer => CTabContainer;
+        private NeoTabContainer _tabContainer => CTabContainer;
         private BoxContainer _jobList => CJobList;
         private BoxContainer _antagList => CAntagList;
         private Label _traitPointsLabel => TraitPointsLabel;
@@ -75,12 +76,12 @@ namespace Content.Client.Preferences.UI
         private ProgressBar _traitPointsBar => TraitPointsBar;
         private Button _traitsShowUnusableButton => TraitsShowUnusableButton;
         private BoxContainer _traitsTab => CTraitsTab;
-        private TabContainer _traitsTabs => CTraitsTabs;
+        private NeoTabContainer _traitsTabs => CTraitsTabs;
         private Label _loadoutPointsLabel => LoadoutPointsLabel;
         private ProgressBar _loadoutPointsBar => LoadoutPointsBar;
         private Button _loadoutsShowUnusableButton => LoadoutsShowUnusableButton;
         private BoxContainer _loadoutsTab => CLoadoutsTab;
-        private TabContainer _loadoutsTabs => CLoadoutsTabs;
+        private NeoTabContainer _loadoutsTabs => CLoadoutsTabs;
         private readonly List<JobPrioritySelector> _jobPriorities;
         private OptionButton _preferenceUnavailableButton => CPreferenceUnavailableButton;
         private readonly Dictionary<string, BoxContainer> _jobCategories;
@@ -1464,39 +1465,19 @@ namespace Content.Client.Preferences.UI
 
             if (traits.Count == 0)
             {
-                _traitsTab.AddChild(new Label { Text = Loc.GetString("humanoid-profile-editor-traits-no-traits") });
+                _traitsTabs.AddTab(new Label { Text = Loc.GetString("humanoid-profile-editor-traits-no-traits") },
+                    Loc.GetString("trait-category-Uncategorized"));
                 return;
             }
 
-            // Make Uncategorized category
             var uncategorized = new BoxContainer
             {
                 Orientation = LayoutOrientation.Vertical,
                 VerticalExpand = true,
                 Name = "Uncategorized_0",
-                // I hate ScrollContainers
-                Children =
-                {
-                    new ScrollContainer
-                    {
-                        HScrollEnabled = false,
-                        HorizontalExpand = true,
-                        VerticalExpand = true,
-                        Children =
-                        {
-                            new BoxContainer
-                            {
-                                Orientation = LayoutOrientation.Vertical,
-                                HorizontalExpand = true,
-                                VerticalExpand = true,
-                            },
-                        },
-                    },
-                },
             };
 
-            _traitsTabs.AddChild(uncategorized);
-            _traitsTabs.SetTabTitle(0, Loc.GetString("trait-category-Uncategorized"));
+            _traitsTabs.AddTab(uncategorized, Loc.GetString("trait-category-Uncategorized"));
 
 
             // Make categories
@@ -1524,29 +1505,9 @@ namespace Content.Client.Preferences.UI
                     Orientation = LayoutOrientation.Vertical,
                     VerticalExpand = true,
                     Name = $"{category.ID}_{currentCategory}",
-                    // I hate ScrollContainers
-                    Children =
-                    {
-                        new ScrollContainer
-                        {
-                            HScrollEnabled = false,
-                            HorizontalExpand = true,
-                            VerticalExpand = true,
-                            Children =
-                            {
-                                new BoxContainer
-                                {
-                                    Orientation = LayoutOrientation.Vertical,
-                                    HorizontalExpand = true,
-                                    VerticalExpand = true,
-                                },
-                            },
-                        },
-                    },
                 };
 
-                _traitsTabs.AddChild(box);
-                _traitsTabs.SetTabTitle(currentCategory, Loc.GetString($"trait-category-{category.ID}"));
+                _traitsTabs.AddTab(box, Loc.GetString($"trait-category-{category.ID}"));
                 currentCategory++;
             }
 
@@ -1562,21 +1523,18 @@ namespace Content.Client.Preferences.UI
 
                 // Look for an existing trait category
                 BoxContainer? match = null;
-                foreach (var child in _traitsTabs.Children)
+                foreach (var child in _traitsTabs.Tabs)
                 {
                     if (string.IsNullOrEmpty(child.Name))
                         continue;
 
-                    // This is fucked up
-                    if (child.Name.Split("_")[0] == trait.Category
-                        && child.Children.FirstOrDefault()?.Children.FirstOrDefault(g =>
-                            g.GetType() == typeof(BoxContainer)) is { } g)
-                        match = (BoxContainer) g;
+                    if (child.Name.Split("_")[0] == trait.Category)
+                        match = (BoxContainer) child;
                 }
 
                 // If there is no category put it in Uncategorized
-                if (string.IsNullOrEmpty(match?.Parent?.Parent?.Name)
-                    || match.Parent.Parent.Name.Split("_")[0] != trait.Category)
+                if (string.IsNullOrEmpty(match?.Name)
+                    || match.Name.Split("_")[0] != trait.Category)
                     uncategorized.AddChild(selector);
                 else
                     match.AddChild(selector);
@@ -1599,14 +1557,7 @@ namespace Content.Client.Preferences.UI
 
 
             // Hide Uncategorized tab if it's empty, other tabs already shouldn't exist if they're empty
-            _traitsTabs.SetTabVisible(0, uncategorized.Children.First().Children.First().Children.Any());
-
-            // Add fake tabs until tab container is happy
-            for (var i = _traitsTabs.ChildCount - 1; i < _traitsTabs.CurrentTab; i++)
-            {
-                _traitsTabs.AddChild(new BoxContainer());
-                _traitsTabs.SetTabVisible(i + 1, false);
-            }
+            _traitsTabs.SetTabVisible(0, uncategorized.Children.Any());
 
             UpdateTraitPreferences();
             return;
@@ -1725,39 +1676,19 @@ namespace Content.Client.Preferences.UI
 
             if (loadouts.Count == 0)
             {
-                _loadoutsTab.AddChild(new Label { Text = Loc.GetString("humanoid-profile-editor-loadouts-no-loadouts") });
+                _loadoutsTabs.AddTab(new Label { Text = Loc.GetString("humanoid-profile-editor-loadouts-no-loadouts") },
+                    Loc.GetString("loadout-category-Uncategorized"));
                 return;
             }
 
-            // Make Uncategorized category
             var uncategorized = new BoxContainer
             {
                 Orientation = LayoutOrientation.Vertical,
                 VerticalExpand = true,
                 Name = "Uncategorized_0",
-                // I hate ScrollContainers
-                Children =
-                {
-                    new ScrollContainer
-                    {
-                        HScrollEnabled = false,
-                        HorizontalExpand = true,
-                        VerticalExpand = true,
-                        Children =
-                        {
-                            new BoxContainer
-                            {
-                                Orientation = LayoutOrientation.Vertical,
-                                HorizontalExpand = true,
-                                VerticalExpand = true,
-                            },
-                        },
-                    },
-                },
             };
 
-            _loadoutsTabs.AddChild(uncategorized);
-            _loadoutsTabs.SetTabTitle(0, Loc.GetString("loadout-category-Uncategorized"));
+            _loadoutsTabs.AddTab(uncategorized, Loc.GetString("loadout-category-Uncategorized"));
 
 
             // Make categories
@@ -1771,11 +1702,8 @@ namespace Content.Client.Preferences.UI
                     if (string.IsNullOrEmpty(child.Name))
                         continue;
 
-                    // This is fucked up
-                    if (child.Name.Split("_")[0] == category.ID
-                        && child.Children.FirstOrDefault()?.Children.FirstOrDefault(g =>
-                            g.GetType() == typeof(BoxContainer)) is { } g)
-                        match = (BoxContainer) g;
+                    if (child.Name.Split("_")[0] == category.ID)
+                        match = (BoxContainer) child;
                 }
 
                 // If there is a category do nothing
@@ -1788,29 +1716,9 @@ namespace Content.Client.Preferences.UI
                     Orientation = LayoutOrientation.Vertical,
                     VerticalExpand = true,
                     Name = $"{category.ID}_{currentCategory}",
-                    // I hate ScrollContainers
-                    Children =
-                    {
-                        new ScrollContainer
-                        {
-                            HScrollEnabled = false,
-                            HorizontalExpand = true,
-                            VerticalExpand = true,
-                            Children =
-                            {
-                                new BoxContainer
-                                {
-                                    Orientation = LayoutOrientation.Vertical,
-                                    HorizontalExpand = true,
-                                    VerticalExpand = true,
-                                },
-                            },
-                        },
-                    },
                 };
 
-                _loadoutsTabs.AddChild(box);
-                _loadoutsTabs.SetTabTitle(currentCategory, Loc.GetString($"loadout-category-{category.ID}"));
+                _loadoutsTabs.AddTab(box, Loc.GetString($"loadout-category-{category.ID}"));
                 currentCategory++;
             }
 
@@ -1826,18 +1734,18 @@ namespace Content.Client.Preferences.UI
 
                 // Look for an existing loadout category
                 BoxContainer? match = null;
-                foreach (var child in _loadoutsTabs.Children)
+                foreach (var child in _loadoutsTabs.Tabs)
                 {
                     if (string.IsNullOrEmpty(child.Name))
                         continue;
 
                     if (child.Name.Split("_")[0] == loadout.Category)
-                        match = (BoxContainer) child.Children.First().Children.First();
+                        match = (BoxContainer) child;
                 }
 
                 // If there is no category put it in Uncategorized
-                if (string.IsNullOrEmpty(match?.Parent?.Parent?.Name)
-                    || match.Parent.Parent.Name.Split("_")[0] != loadout.Category)
+                if (string.IsNullOrEmpty(match?.Name)
+                    || match.Name.Split("_")[0] != loadout.Category)
                     uncategorized.AddChild(selector);
                 else
                     match.AddChild(selector);
@@ -1860,14 +1768,8 @@ namespace Content.Client.Preferences.UI
 
 
             // Hide Uncategorized tab if it's empty, other tabs already shouldn't exist if they're empty
-            _loadoutsTabs.SetTabVisible(0, uncategorized.Children.First().Children.First().Children.Any());
+            _loadoutsTabs.SetTabVisible(0, uncategorized.Children.Any());
 
-            // Add fake tabs until tab container is happy
-            for (var i = _loadoutsTabs.ChildCount - 1; i < _loadoutsTabs.CurrentTab; i++)
-            {
-                _loadoutsTabs.AddChild(new BoxContainer());
-                _loadoutsTabs.SetTabVisible(i + 1, false);
-            }
 
             UpdateLoadoutPreferences();
             return;
