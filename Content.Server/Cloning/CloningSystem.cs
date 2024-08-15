@@ -204,8 +204,9 @@ namespace Content.Server.Cloning
             return true;
         }
 
-        private bool CheckGeneticDamage(EntityUid uid, EntityUid bodyToClone, CloningPodComponent clonePod, float failChanceModifier = 1)
+        private bool CheckGeneticDamage(EntityUid uid, EntityUid bodyToClone, CloningPodComponent clonePod, out float geneticDamage, float failChanceModifier = 1)
         {
+            geneticDamage = 0;
             if (clonePod.DoMetempsychosis)
                 return false;
 
@@ -213,6 +214,7 @@ namespace Content.Server.Cloning
                 && damageable.Damage.DamageDict.TryGetValue("Cellular", out var cellularDmg)
                 && clonePod.ConnectedConsole is not null)
             {
+                geneticDamage += (float) cellularDmg;
                 var chance = Math.Clamp((float) (cellularDmg / 100), 0, 1);
                 chance *= failChanceModifier;
 
@@ -260,10 +262,10 @@ namespace Content.Server.Cloning
                 || !_prototypeManager.TryIndex(humanoid.Species, out var speciesPrototype))
                 return false;
 
-            if (CheckGeneticDamage(uid, bodyToClone, clonePod, failChanceModifier))
+            if (CheckGeneticDamage(uid, bodyToClone, clonePod, out var geneticDamage, failChanceModifier))
                 return true;
 
-            var mob = FetchAndSpawnMob(uid, clonePod, pref, speciesPrototype, humanoid, bodyToClone);
+            var mob = FetchAndSpawnMob(uid, clonePod, pref, speciesPrototype, humanoid, bodyToClone, geneticDamage);
 
             var ev = new CloningEvent(bodyToClone, mob);
             RaiseLocalEvent(bodyToClone, ref ev);
@@ -406,7 +408,14 @@ namespace Content.Server.Cloning
         /// <summary>
         ///     Start Nyano Code: Handles fetching the mob and any appearance stuff...
         /// </summary>
-        private EntityUid FetchAndSpawnMob(EntityUid clonePod, CloningPodComponent clonePodComp, HumanoidCharacterProfile pref, SpeciesPrototype speciesPrototype, HumanoidAppearanceComponent humanoid, EntityUid bodyToClone)
+        private EntityUid FetchAndSpawnMob
+        (EntityUid clonePod,
+        CloningPodComponent clonePodComp,
+        HumanoidCharacterProfile pref,
+        SpeciesPrototype speciesPrototype,
+        HumanoidAppearanceComponent humanoid,
+        EntityUid bodyToClone,
+        float geneticDamage)
         {
             List<Sex> sexes = new();
             bool switchingSpecies = false;
@@ -420,6 +429,9 @@ namespace Content.Server.Cloning
             {
                 toSpawn = GetSpawnEntity(bodyToClone, clonePodComp, speciesPrototype, oldKarma, out var newSpecies, out var changeProfile);
                 forceOldProfile = !changeProfile;
+
+                if (!changeProfile)
+                    geneticDamage = 0;
 
                 if (newSpecies != null)
                 {
@@ -436,7 +448,7 @@ namespace Content.Server.Cloning
             // Put the clone in crit with high Cellular damage. Medbay should use Cryogenics to "Finish" clones. Doxarubixadone is perfect for this.
             if (HasComp<DamageableComponent>(mob))
             {
-                DamageSpecifier damage = new(_prototypeManager.Index<DamageGroupPrototype>("Cellular"), _random.NextFloat(105, 120));
+                DamageSpecifier damage = new(_prototypeManager.Index<DamageGroupPrototype>("Cellular"), 101f + geneticDamage);
                 _damageable.TryChangeDamage(mob, damage, true);
             }
 
