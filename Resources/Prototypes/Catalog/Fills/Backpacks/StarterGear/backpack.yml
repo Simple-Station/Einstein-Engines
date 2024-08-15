@@ -21,8 +21,23 @@
   components:
   - type: StorageFill
     contents:
-      - id: Flash
-#      - id: MagazinePistol # DeltaV - Security doesn't get an extra mag
+      - id: MagazinePistol
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackBrigmedic
+  id: ClothingBackpackBrigmedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyRollerBedSpawnFolded
+      - id: BodyBagFolded
+      - id: Portafib
+      - id: BruteAutoInjector
+        amount: 2
+      - id: BurnAutoInjector
+        amount: 2
+      - id: MagazinePistol
 
 - type: entity
   noSpawn: true
@@ -31,9 +46,10 @@
   components:
   - type: StorageFill
     contents:
-      - id: Flash
       - id: ForensicPad
       - id: ForensicScanner
+
+
 
 - type: entity
   noSpawn: true
