@@ -219,7 +219,7 @@ namespace Content.Server.Strip
                 return;
             }
 
-            var (time, stealth) = GetStripTimeModifiers(user, target, slotDef.StripTime);
+            var (time, stealth) = GetStripTimeModifiers(user, target, held, slotDef.StripTime);
 
             bool hidden = stealth == ThievingStealth.Hidden;
 
@@ -309,7 +309,7 @@ namespace Content.Server.Strip
                 return;
             }
 
-            var (time, stealth) = GetStripTimeModifiers(user, target, slotDef.StripTime);
+            var (time, stealth) = GetStripTimeModifiers(user, target, item, slotDef.StripTime);
 
             bool hidden = stealth == ThievingStealth.Hidden;
 
@@ -416,7 +416,7 @@ namespace Content.Server.Strip
             if (!CanStripInsertHand(user, target, held, handName))
                 return;
 
-            var (time, stealth) = GetStripTimeModifiers(user, target, targetStrippable.HandStripDelay);
+            var (time, stealth) = GetStripTimeModifiers(user, target, null, targetStrippable.HandStripDelay);
 
             bool hidden = stealth == ThievingStealth.Hidden;
 
@@ -517,7 +517,7 @@ namespace Content.Server.Strip
             if (!CanStripRemoveHand(user, target, item, handName))
                 return;
 
-            var (time, stealth) = GetStripTimeModifiers(user, target, targetStrippable.HandStripDelay);
+            var (time, stealth) = GetStripTimeModifiers(user, target, null, targetStrippable.HandStripDelay);
 
             bool hidden = stealth == ThievingStealth.Hidden;
 
