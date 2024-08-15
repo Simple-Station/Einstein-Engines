@@ -36,7 +36,6 @@ public sealed class SiliconDeathSystem : EntitySystem
 
         if (args.ChargePercent == 0 && siliconDeadComp.Dead)
         {
-            siliconDeadComp.WakeToken?.Cancel();
             return;
         }
 
@@ -44,23 +43,6 @@ public sealed class SiliconDeathSystem : EntitySystem
             SiliconDead(uid, siliconDeadComp, batteryComp, uid);
         else if (args.ChargePercent != 0 && siliconDeadComp.Dead)
         {
-            if (siliconDeadComp.DeadBuffer > 0)
-            {
-                siliconDeadComp.WakeToken?.Cancel(); // This should never matter, but better safe than loose timers.
-
-                var wakeToken = new CancellationTokenSource();
-                siliconDeadComp.WakeToken = wakeToken;
-
-                // If battery is dead, wait the dead buffer time and then wake it up.
-                Timer.Spawn(TimeSpan.FromSeconds(siliconDeadComp.DeadBuffer), () =>
-                {
-                    if (wakeToken.IsCancellationRequested)
-                        return;
-
-                    SiliconUnDead(uid, siliconDeadComp, batteryComp, uid);
-                }, wakeToken.Token);
-            }
-            else
                 SiliconUnDead(uid, siliconDeadComp, batteryComp, uid);
         }
     }
@@ -89,6 +71,7 @@ public sealed class SiliconDeathSystem : EntitySystem
 
     private void SiliconUnDead(EntityUid uid, SiliconDownOnDeadComponent siliconDeadComp, BatteryComponent? batteryComp, EntityUid batteryUid)
     {
+        RemComp<ForcedSleepingComponent>(uid);
         _sleep.TryWaking(uid, null, true);
 
         siliconDeadComp.Dead = false;
