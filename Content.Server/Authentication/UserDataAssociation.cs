@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using System.Threading.Tasks;
+using Content.Server.Administration.Notes;
 using Content.Server.Database;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
@@ -17,6 +18,7 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ILogManager _logMan = default!;
+    [Dependency] private readonly IAdminNotesManager _adminNotes = default!;
 
     private ISawmill _logger = default!;
 
@@ -58,7 +60,12 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
                     if (matchingExistingAdminData == null)
                     {
                         // Not an admin, safe to associate account
-                        _logger.Info($"Auto-migrating user account for {matchingExistingPlayerRecord.LastSeenUserName} -> {requestedUserName}.");
+                        var logMessage = $"Auto-migrating user account from Account Auth to Key Auth:  {matchingExistingPlayerRecord.LastSeenUserName} -> {requestedUserName}.";
+                        _logger.Info(logMessage);
+
+                        // Might be useful to have this in the user log in case account was highjacked
+                        await _adminNotes.AddAdminRemark(null, matchingExistingPlayerRecord.UserId,
+                            Shared.Database.NoteType.Note, logMessage, Shared.Database.NoteSeverity.None, true, null);
 
                         // Login as the existing user
                         // New public key will be added by DB on next commit
