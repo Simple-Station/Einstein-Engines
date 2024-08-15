@@ -36,7 +36,7 @@
 - type: trait
   id: HeavyweightDrunk
   category: Physical
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -47,7 +47,36 @@
       inverted: true
       traits:
         - LightweightDrunk
+        - LiquorLifeline
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Dwarf
   components:
+    - type: LightweightDrunk
+      boozeStrengthMultiplier: 0.5
+
+- type: trait
+  id: LiquorLifeline
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LightweightDrunk
+        - HeavyweightDrunk
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Dwarf
+  components:
+    - type: LiquorLifeline
     - type: LightweightDrunk
       boozeStrengthMultiplier: 0.5
 
@@ -86,6 +115,11 @@
     - type: ConsumeDelayModifier
       foodDelayMultiplier: 0.5
       drinkDelayMultiplier: 0.5
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vulpkanin
 
 - type: trait
   id: ParkourTraining
@@ -97,6 +131,10 @@
       traits:
         - Sluggish
         - SnailPaced
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
   components:
     - type: ClimbDelayModifier
       climbDelayMultiplier: 0.70
@@ -117,3 +155,16 @@
       inverted: true
       species:
         - Felinid
+
+- type: trait
+  id: Singer
+  category: Auditory
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  components:
+    - type: Singer
+      proto: NormalSinger

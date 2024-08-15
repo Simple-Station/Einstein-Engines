@@ -77,12 +77,6 @@ comp-window-knock = *knock knock*
 
 fence-rattle-success = *rattle*
 
-## Hugging players
-
-hugging-success-generic = You hug {THE($target)}.
-hugging-success-generic-others = { CAPITALIZE(THE($user)) } hugs {THE($target)}.
-hugging-success-generic-target = { CAPITALIZE(THE($user)) } hugs you.
-
 ## Other
 
 petting-success-tesla = You pet {THE($target)}, violating the laws of nature and physics.

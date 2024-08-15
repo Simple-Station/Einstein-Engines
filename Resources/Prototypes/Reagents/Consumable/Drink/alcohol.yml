@@ -164,31 +164,9 @@
         conditions:
         - !type:ReagentThreshold
           min: 15
-        - !type:OrganType
-          type: Dwarf
-          shouldHave: false
         damage:
           types:
             Poison: 1
-      # dwarves take less toxin damage and heal a marginal amount of brute
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentThreshold
-          min: 15
-        - !type:OrganType
-          type: Dwarf
-        damage:
-          types:
-            Poison: 0.2
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentThreshold
-          min: 15
-        - !type:OrganType
-          type: Dwarf
-        damage:
-          groups:
-            Brute: -1
       - !type:ChemVomit
         probability: 0.04
         conditions:
@@ -199,6 +177,82 @@
         - !type:OrganType
           type: Dwarf
           shouldHave: false
+      # Drunken Resilience
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: LiquorLifeline
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 0.10
+          max: 0.49
+        damage:   # NOTE: all damage sets for LiquorLifeline are halved due to
+          groups: # LightweightDrunkComponent making ethanol half as potent
+            Brute: -0.4
+          types:
+            Heat: -0.13
+            Shock: -0.13
+            Cold: -0.13
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: LiquorLifeline
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 0.50
+          max: 6.99
+        damage:
+          groups:
+            Brute: -0.8
+          types:
+            Heat: -0.26
+            Shock: -0.26
+            Cold: -0.26
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: LiquorLifeline
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 7.00
+          max: 10.99
+        damage:
+          groups:
+            Brute: -1.6
+          types:
+            Heat: -0.53
+            Shock: -0.53
+            Cold: -0.53
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: LiquorLifeline
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 11
+          max: 14.99
+        damage:
+          groups:
+            Brute: -3.2
+          types:
+            Heat: -1.06
+            Shock: -1.06
+            Cold: -1.06
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: LiquorLifeline
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 15 # Overdose threshold
+        damage:
+          groups:
+            Brute: -4.8
+            Burn: -4.8
+          types:
+            Heat: -1.60
+            Shock: -1.60
+            Cold: -1.60
       - !type:Drunk
         boozePower: 2
 
