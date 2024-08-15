@@ -21,6 +21,10 @@
     - id: ClothingOuterHardsuitCombatWarden
     - id: HoloprojectorSecurity
     - id: BookSpaceLaw
+    - id: ClothingNeckShockCollar
+      amount: 2
+    - id: RemoteSignaller
+      amount: 2
     - id: BoxPDAPrisoner
     - id: ClothingShoesBootsWinterWarden
     - id: BoxEncryptionKeyPrisoner
@@ -50,6 +54,10 @@
     - id: DoorRemoteArmory
     - id: HoloprojectorSecurity
     - id: BookSpaceLaw
+    - id: ClothingNeckShockCollar
+      amount: 2
+    - id: RemoteSignaller
+      amount: 2
     - id: BoxPDAPrisoner
     - id: ClothingShoesBootsWinterWarden
     - id: BoxEncryptionKeyPrisoner

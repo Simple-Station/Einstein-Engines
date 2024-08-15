@@ -8,6 +8,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
+using Content.Shared.Strip.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 
@@ -36,6 +37,8 @@ public abstract class ClothingSystem : EntitySystem
 
         SubscribeLocalEvent<ClothingComponent, ClothingEquipDoAfterEvent>(OnEquipDoAfter);
         SubscribeLocalEvent<ClothingComponent, ClothingUnequipDoAfterEvent>(OnUnequipDoAfter);
+
+        SubscribeLocalEvent<ClothingComponent, BeforeItemStrippedEvent>(OnItemStripped);
     }
 
     private void OnUseInHand(Entity<ClothingComponent> ent, ref UseInHandEvent args)
@@ -225,6 +228,11 @@ public abstract class ClothingSystem : EntitySystem
         args.Handled = _invSystem.TryUnequip(args.User, target, args.Slot, clothing: ent.Comp, predicted: true, checkDoafter: false);
         if (args.Handled)
             _handsSystem.TryPickup(args.User, ent);
+    }
+
+    private void OnItemStripped(Entity<ClothingComponent> ent, ref BeforeItemStrippedEvent args)
+    {
+        args.Additive += ent.Comp.StripDelay;
     }
 
     private void CheckEquipmentForLayerHide(EntityUid equipment, EntityUid equipee)

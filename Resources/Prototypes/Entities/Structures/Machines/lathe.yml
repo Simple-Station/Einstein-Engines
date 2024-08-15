@@ -988,8 +988,7 @@
     - WeaponFlareGunSecurity
     - WeaponLaserCarbinePractice
     - Zipties
-    - GrenadeFlashBang # Goobstation
-    - ShockCollar
+    - GrenadeFlashBang
     # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
     - MagazineBoxSpecial
     - MagazineBoxSpecialPractice
@@ -1088,9 +1087,8 @@
     - WeaponLaserCannon
     - WeaponLaserCarbine
     - ClothingEyesNightVisionSecurityGoggles
-    - ClothingHeadHelmetInsulated # Nyanotrasen - Insulative headgear
-    - ClothingHeadCage # Nyanotrasen - Insulative headgear
-    - ShockCollar # Nyanotrasen - Shock Collar
+    - ClothingHeadHelmetInsulated
+    - ClothingHeadCage
     - WeaponXrayCannon
     - WeaponEnergyGun
     - WeaponEnergyGunMini
@@ -1153,6 +1151,7 @@
     - MagazineUniversalMagnumIncendiary
     - MagazineUniversalMagnumShrapnel
     - WeaponPistolUniversal
+    - ClothingBackpackElectropack
   - type: MaterialStorage
     whitelist:
       tags:
