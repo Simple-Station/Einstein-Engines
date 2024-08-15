@@ -1681,12 +1681,14 @@ namespace Content.Shared.CCVar
         #region Cloning
 
         /// <summary>
-        ///     Enabled: Cloning has 70% cost and reclaimer will refuse to reclaim corpses with souls. (For LRP).
-        ///     Disabled: Cloning has full biomass cost and reclaimer can reclaim corpses with souls. (Playtested and balanced for MRP+).
+        ///     How much should the cost to clone an entity be multiplied by.
         /// </summary>
         public static readonly CVarDef<float> CloningBiomassCostMultiplier =
             CVarDef.Create("cloning.biomass_cost_multiplier", 1f, CVar.SERVERONLY);
 
+        /// <summary>
+        ///     Whether or not the Biomass Reclaimer is allowed to roundremove bodies with a soul.
+        /// </summary>
         public static readonly CVarDef<bool> CloningReclaimSouledBodies =
             CVarDef.Create("cloning.reclaim_souled_bodies", false, CVar.SERVERONLY);
 
