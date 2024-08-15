@@ -5,7 +5,7 @@
   priority: -5
   allowedContests: [Mass]
   contestAdvantageRange:
-    min: 0.5 # Only lower bound; you can be as much stronger than your target as you like
+    min: 0.4 # Only lower bound; you can be as much stronger than your target as you like
   contestAdvantageLimit:
     min: 0.5
     max: 2
@@ -15,7 +15,6 @@
 - type: Interaction
   id: HelpUp
   parent: [BaseHelp, BaseGlobal]
-  priority: -5
   range: {max: 1.2}
   delay: 1.5
   hideByRequirement: true
@@ -38,7 +37,6 @@
 - type: Interaction
   id: ForceDown
   parent: [BaseHelp, BaseGlobal]
-  priority: -5
   range: {max: 1.2}
   delay: 4.5
   hideByRequirement: true

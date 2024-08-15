@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared.Contests;
 using Content.Shared.DoAfter;
+using Content.Shared.Ghost;
 using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
@@ -180,6 +181,10 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     // Note: using `where T : Verb, new()` here results in a sandbox violation... Yea we peasants don't get OOP in ss14.
     private void AddAll<T>(IEnumerable<InteractionVerbPrototype> verbs, GetVerbsEvent<T> args, Func<T> factory) where T : Verb
     {
+        // Don't add verbs to ghosts. Ghost system will also cancel all verbs by/on non-admin ghosts.
+        if (TryComp<GhostComponent>(args.User, out var ghost) && !ghost.CanGhostInteract)
+            return;
+
         foreach (var proto in verbs)
         {
             DebugTools.AssertNotEqual(proto.Abstract, true, "Attempted to add a verb with an abstract prototype.");
@@ -266,7 +271,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
         // Effect targets for different players
         var userTarget = specifier.EffectTarget is User or TargetThenUser ? user : target;
-        var targetTarget = specifier.EffectTarget is User or UserThenTarget ? user : target;
+        var targetTarget = specifier.EffectTarget is Target or UserThenTarget ? target : user;
         var othersTarget = specifier.EffectTarget is not User ? target : user;
         var othersFilter = Filter.Pvs(othersTarget).RemoveWhereAttachedEntity(ent => ent == user || ent == target);
 

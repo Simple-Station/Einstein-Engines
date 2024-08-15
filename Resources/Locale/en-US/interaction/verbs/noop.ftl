@@ -1,7 +1,7 @@
 interaction-LookAt-name = Look at
 interaction-LookAt-description = Stare into the void and see it stare back.
 interaction-LookAt-success-self-popup = You look at {THE($target)}.
-interaction-LookAt-success-target-popup = {THE($user)} looks at you.
+interaction-LookAt-success-target-popup = You feel {THE($user)} looking at you...
 interaction-LookAt-success-others-popup = {THE($user)} looks at {THE($target)}.
 
 interaction-Hug-name = Hug
