@@ -5352,3 +5352,9 @@ Entries:
         without an instrument, similarly to harpies.
   id: 6265
   time: '2024-08-15T06:06:25.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Xenowears! new non-human related clothings.
+  id: 6266
+  time: '2024-08-15T06:24:07.0000000+00:00'
