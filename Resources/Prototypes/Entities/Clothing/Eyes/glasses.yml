@@ -87,59 +87,6 @@
 
 - type: entity
   parent: ClothingEyesBase
-  id: ClothingEyesGlasses3D
-  name: 3D glasses
-  description: twiin armageddon2
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Glasses/3d.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Glasses/3d.rsi
-
-- type: entity
-  parent: ClothingEyesGlasses
-  id: ClothingEyesGlassesHipster
-  name: hipster glasses
-  description: Made by Uncool. Co.
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Glasses/hipster.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Glasses/hipster.rsi
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-
-- type: entity
-  parent: ClothingEyesGlasses
-  id: ClothingEyesGlassesMonocle
-  name: monocle
-  description: Such a dapper eyepiece!
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Glasses/monocle.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Glasses/monocle.rsi
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-
-- type: entity
-  parent: ClothingEyesGlasses
-  id: ClothingEyesGlassesPanto
-  name: panto glasses
-  description: So iconic. So generic. The monobloc chair of the glasses world.
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Glasses/panto.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Glasses/panto.rsi
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-
-- type: entity
-  parent: ClothingEyesBase
   id: ClothingEyesGlassesJensen
   name: jensen glasses
   description: A pair of yellow tinted folding glasses. You never asked for these.
@@ -216,7 +163,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons, BallisticGlasses]
+  parent: [ClothingEyesBase, ShowSecurityIcons, BallisticGlasses, BaseSecurityCommandContraband]
   id: ClothingEyesGlassesSecurity
   name: security glasses
   description: Upgraded sunglasses that provide flash immunity and a security HUD.
@@ -242,6 +189,123 @@
     - Antagonists
   - type: IdentityBlocker
     coverage: EYES
+
+- type: entity
+  parent: [ClothingEyesBase, BallisticGlasses]
+  id: ClothingEyesGlassesMercenary
+  name: mercenary glasses
+  description: Glasses made for combat, to protect the eyes from bright blinding flashes.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/mercglasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/mercglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: IdentityBlocker
+    coverage: EYES
+
+#Make a scanner category when these actually function and we get the trayson
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesThermal
+  name: optical thermal scanner
+  description: Thermals in the shape of glasses.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/thermal.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/thermal.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
+  - type: GroupExamine
+  - type: IdentityBlocker
+    coverage: EYES
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesChemical
+  name: chemical analysis goggles
+  description: Goggles that can scan the chemical composition of a solution.
+  components:
+    - type: Sprite
+      sprite: Clothing/Eyes/Glasses/science.rsi
+    - type: Clothing
+      sprite: Clothing/Eyes/Glasses/science.rsi
+    - type: SolutionScanner
+    - type: IdentityBlocker
+      coverage: EYES
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesVisorNinja
+  name: ninja visor
+  description: An advanced visor protecting a ninja's eyes from flashing lights.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
+  - type: FlashImmunity
+  - type: NightVision
+    isEquipment: true
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlasses3D
+  name: 3D glasses
+  description: twiin armageddon2
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/3d.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/3d.rsi
+
+- type: entity
+  parent: ClothingEyesGlasses
+  id: ClothingEyesGlassesHipster
+  name: hipster glasses
+  description: Made by Uncool. Co.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/hipster.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/hipster.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingEyesGlasses
+  id: ClothingEyesGlassesMonocle
+  name: monocle
+  description: Such a dapper eyepiece!
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/monocle.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/monocle.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingEyesGlasses
+  id: ClothingEyesGlassesPanto
+  name: panto glasses
+  description: So iconic. So generic. The monobloc chair of the glasses world.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/panto.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/panto.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
 
 - type: entity
   parent: [ClothingEyesBase, ShowPsionicsIcons]
@@ -387,70 +451,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-
-- type: entity
-  parent: [ClothingEyesBase, BallisticGlasses]
-  id: ClothingEyesGlassesMercenary
-  name: mercenary glasses
-  description: Glasses made for combat, to protect the eyes from bright blinding flashes.
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Glasses/mercglasses.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Glasses/mercglasses.rsi
-  - type: FlashImmunity
-  - type: EyeProtection
-    protectionTime: 5
-  - type: IdentityBlocker
-    coverage: EYES
-
-#Make a scanner category when these actually function and we get the trayson
-- type: entity
-  parent: ClothingEyesBase
-  id: ClothingEyesGlassesThermal
-  name: optical thermal scanner
-  description: Thermals in the shape of glasses.
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Glasses/thermal.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Glasses/thermal.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Heat: 0.95
-  - type: GroupExamine
-  - type: IdentityBlocker
-    coverage: EYES
-
-- type: entity
-  parent: ClothingEyesBase
-  id: ClothingEyesGlassesChemical
-  name: chemical analysis goggles
-  description: Goggles that can scan the chemical composition of a solution.
-  components:
-    - type: Sprite
-      sprite: Clothing/Eyes/Glasses/science.rsi
-    - type: Clothing
-      sprite: Clothing/Eyes/Glasses/science.rsi
-    - type: SolutionScanner
-    - type: IdentityBlocker
-      coverage: EYES
-
-- type: entity
-  parent: ClothingEyesBase
-  id: ClothingEyesVisorNinja
-  name: ninja visor
-  description: An advanced visor protecting a ninja's eyes from flashing lights.
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
-  - type: FlashImmunity
-  - type: NightVision
-    isEquipment: true
-  - type: Unremoveable
 
 - type: entity #Fake goggles, the latest in anti-valid hunting technology
   parent: ClothingEyesBase
