@@ -361,7 +361,7 @@ namespace Content.Shared.CCVar
         ///     How many traits a character can have at most.
         /// </summary>
         public static readonly CVarDef<int> GameTraitsMax =
-            CVarDef.Create("game.traits_max", 5, CVar.REPLICATED);
+            CVarDef.Create("game.traits_max", 10, CVar.REPLICATED);
 
         /// <summary>
         ///     How many points a character should start with.
@@ -536,91 +536,6 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> DiscordAuthApiKey =
             CVarDef.Create("discord.auth_api_key", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
-
-
-        /*
-         * Suspicion
-         */
-
-        public static readonly CVarDef<int> SuspicionMinPlayers =
-            CVarDef.Create("suspicion.min_players", 5);
-
-        public static readonly CVarDef<int> SuspicionMinTraitors =
-            CVarDef.Create("suspicion.min_traitors", 2);
-
-        public static readonly CVarDef<int> SuspicionPlayersPerTraitor =
-            CVarDef.Create("suspicion.players_per_traitor", 6);
-
-        public static readonly CVarDef<int> SuspicionStartingBalance =
-            CVarDef.Create("suspicion.starting_balance", 20);
-
-        public static readonly CVarDef<int> SuspicionMaxTimeSeconds =
-            CVarDef.Create("suspicion.max_time_seconds", 300);
-
-        /*
-         * Traitor
-         */
-
-        public static readonly CVarDef<int> TraitorMinPlayers =
-            CVarDef.Create("traitor.min_players", 5);
-
-        public static readonly CVarDef<int> TraitorMaxTraitors =
-            CVarDef.Create("traitor.max_traitors", 12); // Assuming average server maxes somewhere from like 50-80 people
-
-        public static readonly CVarDef<int> TraitorPlayersPerTraitor =
-            CVarDef.Create("traitor.players_per_traitor", 10);
-
-        public static readonly CVarDef<int> TraitorCodewordCount =
-            CVarDef.Create("traitor.codeword_count", 4);
-
-        public static readonly CVarDef<int> TraitorStartingBalance =
-            CVarDef.Create("traitor.starting_balance", 20);
-
-        public static readonly CVarDef<int> TraitorMaxDifficulty =
-            CVarDef.Create("traitor.max_difficulty", 5);
-
-        public static readonly CVarDef<int> TraitorMaxPicks =
-            CVarDef.Create("traitor.max_picks", 20);
-
-        public static readonly CVarDef<float> TraitorStartDelay =
-            CVarDef.Create("traitor.start_delay", 4f * 60f);
-
-        public static readonly CVarDef<float> TraitorStartDelayVariance =
-            CVarDef.Create("traitor.start_delay_variance", 3f * 60f);
-
-        /*
-         * TraitorDeathMatch
-         */
-
-        public static readonly CVarDef<int> TraitorDeathMatchStartingBalance =
-            CVarDef.Create("traitordm.starting_balance", 20);
-
-        /*
-         * Zombie
-         */
-
-        public static readonly CVarDef<int> ZombieMinPlayers =
-            CVarDef.Create("zombie.min_players", 20);
-
-        /*
-         * Pirates
-         */
-
-        public static readonly CVarDef<int> PiratesMinPlayers =
-            CVarDef.Create("pirates.min_players", 25);
-
-        public static readonly CVarDef<int> PiratesMaxOps =
-            CVarDef.Create("pirates.max_pirates", 6);
-
-        public static readonly CVarDef<int> PiratesPlayersPerOp =
-            CVarDef.Create("pirates.players_per_pirate", 5);
-
-        /*
-         * Nukeops
-         */
-
-        public static readonly CVarDef<bool> NukeopsSpawnGhostRoles =
-            CVarDef.Create("nukeops.spawn_ghost_roles", false);
 
         /*
          * Tips
@@ -2291,7 +2206,7 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> StationGoalsChance =
             CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
-            
+
 
         #region CPR System
         /// <summary>
@@ -2338,7 +2253,7 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> CPRAirlossReductionMultiplier =
             CVarDef.Create("cpr.airloss_reduction_multiplier", 1f, CVar.REPLICATED | CVar.SERVER);
-            
+
         #endregion
 
         #region Contests System
