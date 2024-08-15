@@ -347,6 +347,7 @@ namespace Content.Server.Cloning
 
                 QueueDel(entity);
             }
+            else MakeAHugeMess(uid);
 
             clonePod.FailedClone = false;
             clonePod.CloningProgress = 0f;
@@ -379,14 +380,14 @@ namespace Content.Server.Cloning
             Solution bloodSolution = new();
 
             tileMix?.AdjustMoles(Gas.Ammonia, 0.5f
-                                                * ((physics is not null)
-                                                ? physics.Mass
-                                                : 71));
+                * ((physics is not null)
+                ? physics.Mass
+                : 71));
 
             bloodSolution.AddReagent("blood", 0.8f
-                                                * ((blood is not null)
-                                                ? blood.BloodMaxVolume
-                                                : 300));
+                * ((blood is not null)
+                ? blood.BloodMaxVolume
+                : 300));
 
             _puddleSystem.TrySpillAt(uid, bloodSolution, out _);
         }
