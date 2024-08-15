@@ -58,7 +58,7 @@ using Content.Shared.Language;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Power.Components;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Content.Shared.Damage.Prototypes;
 
 namespace Content.Server.Cloning
 {
@@ -89,6 +89,7 @@ namespace Content.Server.Cloning
         [Dependency] private readonly TagSystem _tag = default!;
         [Dependency] private readonly ContestsSystem _contests = default!;
         [Dependency] private readonly ISerializationManager _serialization = default!;
+        [Dependency] private readonly DamageableSystem _damageable = default!;
 
         public readonly Dictionary<MindComponent, EntityUid> ClonesWaitingForMind = new();
 
@@ -421,6 +422,13 @@ namespace Content.Server.Cloning
             EntityUid mob = Spawn(toSpawn, _transformSystem.GetMapCoordinates(clonePod));
             EnsureComp<MetempsychosisKarmaComponent>(mob, out var newKarma);
             newKarma.Score += oldKarma;
+
+            // Put the clone in crit with high Cellular damage. Medbay should use Cryogenics to "Finish" clones. Clonexadone is perfect for this.
+            if (HasComp<DamageableComponent>(mob))
+            {
+                DamageSpecifier damage = new(_prototypeManager.Index<DamageGroupPrototype>("Cellular"), _random.NextFloat(105, 120));
+                _damageable.TryChangeDamage(mob, damage, true);
+            }
 
             if (TryComp<HumanoidAppearanceComponent>(mob, out var newHumanoid))
             {
