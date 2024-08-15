@@ -1,7 +1,20 @@
+- type: Interaction
+  id: BaseHelp
+  parent: [BaseDangerous, BaseHands]
+  abstract: true
+  priority: -5
+  allowedContests: [Mass]
+  contestAdvantageRange:
+    min: 0.5 # Only lower bound; you can be as much stronger than your target as you like
+  contestAdvantageLimit:
+    min: 0.5
+    max: 2
+  contestDelay: true
+
 # Combines waking up, helping from stun, and forcing to stand.
 - type: Interaction
   id: HelpUp
-  parent: [BaseDangerous, BaseHands, BaseGlobal]
+  parent: [BaseHelp, BaseGlobal]
   priority: -5
   range: {max: 1.2}
   delay: 1.5
@@ -24,7 +37,7 @@
 
 - type: Interaction
   id: ForceDown
-  parent: [BaseDangerous, BaseHands, BaseGlobal]
+  parent: [BaseHelp, BaseGlobal]
   priority: -5
   range: {max: 1.2}
   delay: 4.5
@@ -38,7 +51,7 @@
 
 - type: Interaction
   id: MakeSleepOther
-  parent: [BaseDangerous, BaseHands, BaseGlobal]
+  parent: [BaseHelp, BaseGlobal]
   priority: -6
   range: {max: 1.2}
   delay: 10 # Should be long enough to be non-abusable, right?

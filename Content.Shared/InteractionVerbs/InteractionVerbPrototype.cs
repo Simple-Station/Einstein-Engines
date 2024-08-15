@@ -85,6 +85,12 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public TimeSpan Delay = TimeSpan.Zero;
 
     /// <summary>
+    ///     If true, the contests defined in <see cref="AllowedContests"/> will affect the delay of the verb.
+    /// </summary>
+    [DataField("contestDelay")]
+    public bool ContestAffectsDelay = true;
+
+    /// <summary>
     ///     Arguments of the do-after shown if <see cref="Delay"/> is greater than zero.
     ///     The user, target, needHand, event, and other required parameters are set up automatically when the do-after is created.
     /// </summary>
@@ -102,6 +108,25 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
 
     [DataField]
     public RangeSpecifier Range = new();
+
+    /// <summary>
+    ///     Range of contest advantages valid for this verb.
+    ///     If the user's contest advantage is outside of this range, the verb will be disabled or hidden.
+    /// </summary>
+    /// <remarks>If not specified, contest advantage won't be calculated until the verb is performed.</remarks>
+    [DataField]
+    public RangeSpecifier? ContestAdvantageRange;
+
+    /// <summary>
+    ///     Range of contest advantages that the user can gain while using this verb.
+    ///     The user's advantage will never exceed this range. This is applied after <see cref="ContestAdvantageRange"/> is checked.
+    /// </summary>
+    /// <returns></returns>
+    [DataField]
+    public RangeSpecifier ContestAdvantageLimit = new() { Min = 0.2f, Max = 5f };
+
+    [DataField]
+    public ContestType AllowedContests = ContestType.None;
 
     /// <summary>
     ///     Whether this interaction implies direct body contact (transfer of fibers, fingerprints, etc).
@@ -141,6 +166,12 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
         [DataField] public bool Inverse = false;
 
         public bool IsInRange(float value) => (Inverse ? value < Min || value > Max : value >= Min && value <= Max);
+
+        public float Clamp(float value)
+        {
+            DebugTools.Assert(!Inverse, "Inverse ranges do not support clamping.");
+            return Math.Clamp(value, Min, Max);
+        }
     }
 
     [DataDefinition, Serializable]
@@ -175,7 +206,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
         };
     }
 
-    [Serializable]
+    [Serializable, Flags]
     public enum EffectTargetSpecifier
     {
         /// <summary>
@@ -194,6 +225,16 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
         ///     The target will see the popup shown above itself, others will see the popup above the user.
         /// </summary>
         TargetThenUser
+    }
+
+    [Serializable, Flags]
+    public enum ContestType : byte
+    {
+        Mass = 1,
+        Stamina = 1 << 1,
+        Health = 1 << 2,
+        All = Mass | Stamina | Health,
+        None = 0
     }
 }
 

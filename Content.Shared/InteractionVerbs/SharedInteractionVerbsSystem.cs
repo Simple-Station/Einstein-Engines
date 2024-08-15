@@ -1,14 +1,17 @@
 using System.Linq;
+using Content.Shared.Contests;
 using Content.Shared.DoAfter;
 using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Content.Shared.InteractionVerbs.InteractionPopupPrototype.Prefix;
+using static Content.Shared.InteractionVerbs.InteractionVerbPrototype.ContestType;
 using static Content.Shared.InteractionVerbs.InteractionVerbPrototype.EffectTargetSpecifier;
 
 namespace Content.Shared.InteractionVerbs;
@@ -23,6 +26,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly ContestsSystem _contests = default!;
 
     public override void Initialize()
     {
@@ -92,7 +96,12 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         if (proto.Action is null)
             return false;
 
-        if (!proto.Action.CanPerform(args, proto, true, _verbDependencies) && !force)
+        // If contest advantage wasn't calculated yet, calculate it now and ensure it's in the allowed range
+        var contestAdvantageValid = true;
+        if (args.ContestAdvantage is null)
+            CalculateAdvantage(proto, ref args, out contestAdvantageValid);
+
+        if ((!contestAdvantageValid || !proto.Action.CanPerform(args, proto, true, _verbDependencies)) && !force)
         {
             CreateVerbEffects(proto.EffectFailure, Fail, proto, args);
             return false;
@@ -111,26 +120,27 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         if (attemptEv.Handled)
             return true;
 
-        if (proto.Delay <= TimeSpan.Zero)
+        var delay = proto.Delay;
+        if (proto.ContestAffectsDelay)
+            delay /= args.ContestAdvantage!.Value;
+
+        // Delay can become zero if the contest advantage is infinity or just really large...
+        if (delay <= TimeSpan.Zero)
         {
             PerformVerb(proto, args);
             return true;
         }
 
-        // The pyramid strikes again... god forgive me for this
         var doAfter = new DoAfterArgs(proto.DoAfter)
         {
             User = args.User,
             Target = args.Target,
-            EventTarget = EntityUid.Invalid,
-            NetUser = GetNetEntity(args.User),
-            NetTarget = GetNetEntity(args.Target),
-            NetEventTarget = NetEntity.Invalid,
+            EventTarget = EntityUid.Invalid, // Raised broadcast
             Broadcast = true,
             BreakOnHandChange = proto.RequiresHands,
             NeedHand = proto.RequiresHands,
-            Delay = proto.Delay,
             RequireCanInteract = proto.RequiresCanInteract,
+            Delay = delay,
             Event = new InteractionVerbDoAfterEvent(proto.ID, args)
         };
 
@@ -186,6 +196,13 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
                 || !proto.Range.IsInRange(distance);
 
             var verbArgs = InteractionArgs.From(args);
+            // Calculate contest advantage early if required
+            if (proto.ContestAdvantageRange is not null)
+            {
+                CalculateAdvantage(proto, ref verbArgs, out var canPerform);
+                isInvalid |= !canPerform;
+            }
+
             var isRequirementMet = proto.Requirement?.IsMet(verbArgs, proto, _verbDependencies) != false;
             if (!isRequirementMet && proto.HideByRequirement)
                 continue;
@@ -203,6 +220,30 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
             args.Verbs.Add(verb);
         }
+    }
+
+    /// <summary>
+    ///     Calculates the effective contest advantage for the verb and writes their clamped value to <see cref="InteractionArgs.ContestAdvantage"/>.
+    /// </summary>
+    private void CalculateAdvantage(InteractionVerbPrototype proto, ref InteractionArgs args, out bool canPerform)
+    {
+        args.ContestAdvantage = 1f;
+        canPerform = true;
+
+        var contests = proto.AllowedContests;
+        if (contests == None)
+            return;
+
+        // We don't use EveryContest here because it's straight up bad
+        if (contests.HasFlag(Mass))
+            args.ContestAdvantage *= _contests.MassContest(args.User, args.Target, true, 10f);
+        if (contests.HasFlag(Stamina))
+            args.ContestAdvantage *= _contests.MassContest(args.User, args.Target, true, 10f);
+        if (contests.HasFlag(Health))
+            args.ContestAdvantage *= _contests.MassContest(args.User, args.Target, true, 10f);
+
+        canPerform = proto.ContestAdvantageRange?.IsInRange(args.ContestAdvantage.Value) ?? true;
+        args.ContestAdvantage = proto.ContestAdvantageLimit.Clamp(args.ContestAdvantage.Value);
     }
 
     private void CopyVerbData(InteractionVerbPrototype proto, Verb verb)
@@ -225,7 +266,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
         // Effect targets for different players
         var userTarget = specifier.EffectTarget is User or TargetThenUser ? user : target;
-        var targetTarget = specifier.EffectTarget is User or TargetThenUser ? user : target;
+        var targetTarget = specifier.EffectTarget is User or UserThenTarget ? user : target;
         var othersTarget = specifier.EffectTarget is not User ? target : user;
         var othersFilter = Filter.Pvs(othersTarget).RemoveWhereAttachedEntity(ent => ent == user || ent == target);
 
