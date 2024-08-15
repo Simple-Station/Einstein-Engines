@@ -115,6 +115,11 @@
     - type: ConsumeDelayModifier
       foodDelayMultiplier: 0.5
       drinkDelayMultiplier: 0.5
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vulpkanin
 
 - type: trait
   id: ParkourTraining
@@ -150,7 +155,19 @@
       inverted: true
       species:
         - Felinid
-
+        
+- type: trait
+  id: Singer
+  category: Auditory
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - type: Singer
+      proto: NormalSinger
+  
 - type: trait
   id: LatentPsychic
   category: Mental

@@ -5317,3 +5317,38 @@ Entries:
       message: Default Onis now use the Double Curved horn and Upward Ears markings.
   id: 6261
   time: '2024-08-13T21:12:45.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fix missing Psionic Regeneration sound effect
+  id: 6262
+  time: '2024-08-14T02:12:43.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Vulpkanins receive the Voracious trait for free, giving them 2x
+        eating/drinking speed, but Vulpkanins get hungrier 25% faster.
+    - type: Tweak
+      message: >-
+        Vulpkanins gain a 30% Cold resistance, but their Heat vulnerability has
+        increased from 15% to 30%. Vulpkanins also receive 25% more Fire stacks,
+        amplifying the damage and duration of being on fire.
+    - type: Tweak
+      message: Flash duration against Vulpkanins has been increased by 50%.
+  id: 6263
+  time: '2024-08-14T05:30:37.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added crowned, tall bull, and tall curved Oni horns.
+  id: 6264
+  time: '2024-08-14T09:05:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added a new positive trait - singer. It allows you to play midi songs
+        without an instrument, similarly to harpies.
+  id: 6265
+  time: '2024-08-15T06:06:25.0000000+00:00'

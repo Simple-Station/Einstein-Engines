@@ -10,6 +10,12 @@ namespace Content.Shared.Flash
         public float Duration;
         public TimeSpan LastFlash;
 
+        // <summary>
+        //   How much to modify the duration of flashes against this entity.
+        // </summary>
+        [DataField]
+        public float DurationMultiplier = 1f;
+
         [DataField]
         public CollisionGroup CollisionGroup = CollisionGroup.Opaque;
 
@@ -22,10 +28,16 @@ namespace Content.Shared.Flash
         public float Duration { get; }
         public TimeSpan Time { get; }
 
-        public FlashableComponentState(float duration, TimeSpan time)
+        // <summary>
+        //   How much to modify the duration of flashes against this entity.
+        // </summary>
+        public float DurationMultiplier { get; }
+
+        public FlashableComponentState(float duration, TimeSpan time, float durationMultiplier)
         {
             Duration = duration;
             Time = time;
+            DurationMultiplier = durationMultiplier;
         }
     }
 
