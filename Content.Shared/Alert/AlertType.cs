@@ -55,6 +55,8 @@ namespace Content.Shared.Alert
         BorgCrit,
         BorgDead,
         Offer,
+        ChangelingChemicals,
+        ChangelingBiomass,
     }
 
 }

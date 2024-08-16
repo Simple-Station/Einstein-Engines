@@ -37,7 +37,6 @@ using Content.Shared.Inventory;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Mind;
-using Content.Shared.Damage.Components;
 using Content.Server.Objectives.Components;
 using Content.Server.Light.EntitySystems;
 using Content.Shared.Eye.Blinding.Systems;
@@ -50,7 +49,7 @@ using Robust.Shared.Player;
 using System.Numerics;
 using Content.Shared.Camera;
 using Robust.Shared.Timing;
-using Content.Server.Damage.Components;
+using Content.Shared.Damage.Components;
 using Content.Server.Gravity;
 using Content.Shared.Mobs.Components;
 using Content.Server.Stunnable;
@@ -174,14 +173,14 @@ public sealed partial class ChangelingSystem : EntitySystem
         chemicals += amount ?? 1 + comp.BonusChemicalRegen;
         comp.Chemicals = Math.Clamp(chemicals, 0, comp.MaxChemicals);
         Dirty(uid, comp);
-        _alerts.ShowAlert(uid, "ChangelingChemicals");
+        _alerts.ShowAlert(uid, AlertType.ChangelingChemicals);
     }
     private void UpdateBiomass(EntityUid uid, ChangelingComponent comp, float? amount = null)
     {
         comp.Biomass += amount ?? -1;
         comp.Biomass = Math.Clamp(comp.Biomass, 0, comp.MaxBiomass);
         Dirty(uid, comp);
-        _alerts.ShowAlert(uid, "ChangelingBiomass");
+        _alerts.ShowAlert(uid, AlertType.ChangelingBiomass);
 
         var random = (int) _rand.Next(1, 3);
 
@@ -236,8 +235,7 @@ public sealed partial class ChangelingSystem : EntitySystem
         {
             var stamina = EnsureComp<StaminaComponent>(uid);
             _stamina.TakeStaminaDamage(uid, 7.5f, visual: false);
-            if (_stamina.GetStaminaDamage(uid) >= stamina.CritThreshold
-            || !HasComp<GravityComponent>(uid))
+            if (stamina.StaminaDamage >= stamina.CritThreshold || _gravity.IsWeightless(uid))
                 ToggleStrainedMuscles(uid, comp);
         }
     }
@@ -374,28 +372,29 @@ public sealed partial class ChangelingSystem : EntitySystem
 
         return true;
     }
-    public bool TryToggleItem(EntityUid uid, EntProtoId proto, ref EntityUid? outItem, string? clothingSlot = null)
+    public bool TryToggleItem(EntityUid uid, EntProtoId proto, ChangelingComponent comp, string? clothingSlot = null)
     {
-        if (outItem == null)
+        if (!comp.Equipment.TryGetValue(proto.Id, out var item) && item == null)
         {
-            var item = EntityManager.SpawnEntity(proto, Transform(uid).Coordinates);
-            if (clothingSlot != null && !_inventory.TryEquip(uid, item, clothingSlot, force: true))
+            item = Spawn(proto, Transform(uid).Coordinates);
+            if (clothingSlot != null && !_inventory.TryEquip(uid, (EntityUid) item, clothingSlot, force: true))
             {
-                EntityManager.DeleteEntity(item);
+                QueueDel(item);
                 return false;
             }
-            else if (!_hands.TryForcePickupAnyHand(uid, item))
+            else if (!_hands.TryForcePickupAnyHand(uid, (EntityUid) item))
             {
                 _popup.PopupEntity(Loc.GetString("changeling-fail-hands"), uid, uid);
-                EntityManager.DeleteEntity(item);
+                QueueDel(item);
                 return false;
             }
-            outItem = item;
+            comp.Equipment.Add(proto.Id, item);
             return true;
         }
 
-        EntityManager.DeleteEntity(outItem);
-        outItem = null;
+        QueueDel(item);
+        // assuming that it exists
+        comp.Equipment.Remove(proto.Id);
 
         return true;
     }
