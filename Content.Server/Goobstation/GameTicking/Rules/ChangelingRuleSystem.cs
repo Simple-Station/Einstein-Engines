@@ -4,11 +4,11 @@ using Content.Server.Mind;
 using Content.Server.Objectives;
 using Content.Server.Roles;
 using Content.Shared.Changeling;
-using Content.Shared.NPC.Prototypes;
-using Content.Shared.NPC.Systems;
+using Content.Server.NPC.Components;
+using Content.Server.NPC.Systems;
 using Content.Shared.Roles;
 using Content.Shared.Store;
-using Content.Shared.Store.Components;
+using Content.Server.Store.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using System.Text;
@@ -99,12 +99,17 @@ public sealed partial class ChangelingRuleSystem : GameRuleSystem<ChangelingRule
             if (ling.TotalAbsorbedEntities > mostAbsorbed)
             {
                 mostAbsorbed = ling.TotalAbsorbedEntities;
-                mostAbsorbedName = _objective.GetTitle((mindId, mind), metaData.EntityName);
+                mostAbsorbedName = _objective.GetTitle(mindId);
+                if (mostAbsorbedName is null)
+                    mostAbsorbedName = String.Empty;
             }
             if (ling.TotalStolenDNA > mostStolen)
             {
                 mostStolen = ling.TotalStolenDNA;
-                mostStolenName = _objective.GetTitle((mindId, mind), metaData.EntityName);
+                mostStolenName = _objective.GetTitle(mindId);
+                if (mostStolenName is null)
+                    mostStolenName = String.Empty;
+
             }
         }
 

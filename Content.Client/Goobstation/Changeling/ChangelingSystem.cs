@@ -23,7 +23,7 @@ public sealed partial class ChangelingSystem : EntitySystem
         var stateNormalized = 0f;
 
         // hardcoded because uhh umm i don't know. send help.
-        switch (args.Alert.AlertKey.AlertType)
+        switch (args.Alert.AlertViewEntity)
         {
             case "ChangelingChemicals":
                 stateNormalized = (int) (comp.Chemicals / comp.MaxChemicals * 18);

@@ -5,7 +5,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs;
-using Content.Shared.Store.Components;
+using Content.Server.Store.Components;
 using Content.Shared.Popups;
 using Content.Shared.Damage;
 using Robust.Shared.Prototypes;

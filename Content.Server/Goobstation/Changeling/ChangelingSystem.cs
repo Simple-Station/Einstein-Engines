@@ -14,7 +14,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
-using Content.Shared.Store.Components;
+using Content.Server.Store.Components;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Random;
@@ -50,7 +50,7 @@ using Robust.Shared.Player;
 using System.Numerics;
 using Content.Shared.Camera;
 using Robust.Shared.Timing;
-using Content.Shared.Damage.Components;
+using Content.Server.Damage.Components;
 using Content.Server.Gravity;
 using Content.Shared.Mobs.Components;
 using Content.Server.Stunnable;
@@ -622,7 +622,7 @@ public sealed partial class ChangelingSystem : EntitySystem
 
         if (!args.DamageIncreased)
             return;
-        
+
         target.Damage.ClampMax(200); // we never die. UNLESS??
     }
 
