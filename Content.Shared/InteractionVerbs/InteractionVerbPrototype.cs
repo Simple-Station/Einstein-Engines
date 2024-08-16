@@ -110,6 +110,8 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     [DataField]
     public DoAfterArgs DoAfter = new DoAfterArgs()
     {
+        User = EntityUid.Invalid,
+        NetUser = NetEntity.Invalid,
         BreakOnDamage = true,
         BreakOnTargetMove = true,
         BreakOnUserMove = true,
