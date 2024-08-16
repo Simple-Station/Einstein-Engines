@@ -15,7 +15,7 @@ public abstract partial class InteractionRequirement
     public abstract bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps);
 }
 
-// <inheritdoc/>
+/// <inheritdoc cref="InteractionRequirement"/>
 [Serializable, NetSerializable]
 public abstract partial class InvertableInteractionRequirement : InteractionRequirement
 {
