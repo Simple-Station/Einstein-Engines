@@ -141,7 +141,7 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Goobstation/Changeling/changeling_abilities.rsi"), "transform"),
             Act = () =>
             {
-                _antag.ForceMakeAntag<ChangelingRuleComponent>(targetPlayer, "Changeling");
+                _antag.ForceMakeAntag<ChangelingRuleComponent>(player, "Changeling");
             },
             Impact = LogImpact.High,
             Message = Loc.GetString("admin-verb-make-changeling"),
