@@ -26,3 +26,19 @@ interaction-Rattle-name = Rattle
 interaction-Rattle-success-self-popup = You rattle {THE($target)}.
 interaction-Rattle-success-target-popup = {THE($user)} rattles you.
 interaction-Rattle-success-others-popup = {THE($user)} rattles {THE($target)}.
+
+# The below includes conditionals for if the user is holding an item
+interaction-WaveAt-name = Wave at
+interaction-WaveAt-description = Wave at the target. If you are holding an item, you will wave it.
+interaction-WaveAt-success-self-popup = You wave {$hasUsed ->
+    [false] at {THE($target)}.
+    *[true] your {$used} at {THE($target)}.
+}
+interaction-WaveAt-success-target-popup = {THE($user)} waves {$hasUsed ->
+    [false] at you.
+    *[true] {POSS-PRONOUN($user)} {$used} at you.
+}
+interaction-WaveAt-success-others-popup = {THE($user)} waves {$hasUsed ->
+    [false] at {THE($target)}.
+    *[true] {POSS-PRONOUN($user)} {$used} at {THE($target)}.
+}

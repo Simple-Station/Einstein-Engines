@@ -37,6 +37,8 @@ public sealed partial class InteractionArgs
         ContestAdvantage = contestAdvantage;
     }
 
+    public InteractionArgs(InteractionArgs other) : this(other.User, other.Target, other.Used, other.CanAccess, other.CanInteract, other.ContestAdvantage) {}
+
     public static InteractionArgs From<T>(GetVerbsEvent<T> ev) where T : Verb => new(ev.User, ev.Target, ev.Using, ev.CanAccess, ev.CanInteract, null);
 
     /// <summary>

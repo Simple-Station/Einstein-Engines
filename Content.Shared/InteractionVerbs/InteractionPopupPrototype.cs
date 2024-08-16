@@ -16,6 +16,7 @@ namespace Content.Shared.InteractionVerbs;
 ///     - {$target} - The target of the action. <br/>
 ///     - {$used} - The active-hand item used in the action. May be null, then "0" is used instead.
 ///     - {$selfTarget} - A boolean value that indicates whether the action is used on the user itself.
+///     - {$hasUsed} - A boolean value that indicates whether the user is holding an item ($used is not null).
 /// </remarks>
 [Prototype("InteractionPopup"), Serializable]
 public sealed partial class InteractionPopupPrototype : IPrototype
@@ -23,7 +24,7 @@ public sealed partial class InteractionPopupPrototype : IPrototype
     [IdDataField]
     public string ID { get; } = default!;
 
-    [DataField()]
+    [DataField]
     public PopupType PopupType = PopupType.Medium;
 
     /// <summary>

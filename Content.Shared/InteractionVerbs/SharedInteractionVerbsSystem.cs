@@ -327,9 +327,9 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         var (user, target, used) = (args.User, args.Target, args.Used);
 
         // Effect targets for different players
-        var userTarget = specifier.EffectTarget is User or TargetThenUser ? user : target;
-        var targetTarget = specifier.EffectTarget is Target or UserThenTarget ? target : user;
-        var othersTarget = specifier.EffectTarget is not User ? target : user;
+        var userTarget = specifier.EffectTarget is User or UserThenTarget or TargetThenUser ? user : target;
+        var targetTarget = specifier.EffectTarget is Target or UserThenTarget or TargetThenUser ? target : user;
+        var othersTarget = specifier.EffectTarget is Target or UserThenTarget ? target : user;
         var othersFilter = Filter.Pvs(othersTarget).RemoveWhereAttachedEntity(ent => ent == user || ent == target);
 
         // Popups
@@ -337,7 +337,14 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         {
             var locPrefix = $"interaction-{proto.ID}-{prefix.ToString().ToLower()}";
 
-            (string, object)[] localeArgs = [("user", user), ("target", target), ("used", used ?? EntityUid.Invalid), ("selfTarget", user == target)];
+            (string, object)[] localeArgs =
+            [
+                ("user", user),
+                ("target", target),
+                ("used", used ?? EntityUid.Invalid),
+                ("selfTarget", user == target),
+                ("hasUsed", used != null)
+            ];
 
             // User popup
             var userSuffix = popup.SelfSuffix ?? popup.OthersSuffix;

@@ -87,8 +87,7 @@
     - !type:ModifyStatusEffectAction
       effect: Drunk
       timeAdded: -20 # Only removes 20s of visual effects, not affecting the amount of ethanol in the target's blood
-    - !type:ModifyStatusEffectAction
-      effect: Jitter
-      timeAdded: 2 # Real
+    - !type:JitterAction
+      time: 0.8
     - !type:ToggleSleepingAction
       wakeUp: true

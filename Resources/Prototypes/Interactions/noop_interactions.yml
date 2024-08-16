@@ -1,18 +1,34 @@
 - type: Interaction
   id: LookAt
   parent: BaseGlobal
-  priority: 3
+  priority: 4
   requiresHands: false
   requiresCanInteract: false
   contactInteraction: false
   allowSelfInteract: true
   icon: /Textures/Interface/Actions/eyeopen.png
-  range:
-    max: 20
+  range: {max: 20}
   effectSuccess:
     popup: Obvious
     sound: {path: /Audio/Effects/ominous.ogg}
     soundPerceivedByOthers: false # Can be used to attract attention, but not to spam sounds or chat
+  action:
+    !type:NoOpAction
+
+- type: Interaction
+  id: WaveAt
+  parent: [BaseHands, BaseGlobal]
+  priority: 3
+  contactInteraction: false
+  range: {max: 20}
+  effectSuccess:
+    popup: Obvious
+    sound: {path: /Audio/Effects/ominous.ogg}
+    soundPerceivedByOthers: false
+  hideByRequirement: true
+  requirement:
+    !type:MobStateRequirement # Don't wave your hands at inanimate objects smh
+    inverted: true
   action:
     !type:NoOpAction
 
