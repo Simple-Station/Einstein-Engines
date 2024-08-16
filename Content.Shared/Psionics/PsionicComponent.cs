@@ -63,7 +63,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     The baseline chance of obtaining a psionic power when rolling for one.
         /// </summary>
         [DataField]
-        public float Chance { get; set; } = 0.04f;
+        public float Chance = 0.04f;
 
         /// <summary>
         ///     Whether or not a Psion has an available "Reroll" to spend on attempting to gain powers.
@@ -74,20 +74,20 @@ namespace Content.Shared.Abilities.Psionics
         /// <summary>
         ///     The Base amount of time (in minutes) this Psion be given the stutter condition if they become mindbroken.
         /// </summary>
-        [ViewVariables(VVAccess.ReadOnly)]
-        public float MindbreakingStutterTime { get; } = 5;
+        [DataField]
+        public float MindbreakingStutterTime = 5;
 
         /// <summary>
         ///     How much should the odds of obtaining a Psionic Power be multiplied when rolling for one.
         /// </summary>
-        [ViewVariables(VVAccess.ReadOnly)]
-        public float PowerRollMultiplier { get; } = 1f;
+        [DataField]
+        public float PowerRollMultiplier = 1f;
 
         /// <summary>
         ///     How much should the odds of obtaining a Psionic Power be increased when rolling for one.
         /// </summary>
-        [ViewVariables(VVAccess.ReadOnly)]
-        public float PowerRollFlatBonus { get; } = 0;
+        [DataField]
+        public float PowerRollFlatBonus = 0;
 
         private (float, float) _baselineAmplification = (0, 0);
 
