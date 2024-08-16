@@ -178,6 +178,7 @@
   - type: StandingState
   - type: Fingerprint
   - type: Dna
+  - type: Scent
   - type: MindContainer
     showExamineInfo: true
   - type: CanHostGuardian

@@ -112,6 +112,12 @@ chat-speech-verb-vox-1 = screeches
 chat-speech-verb-vox-2 = shrieks
 chat-speech-verb-vox-3 = croaks
 
+chat-speech-verb-name-oni = Oni
+chat-speech-verb-oni-1 = grunts
+chat-speech-verb-oni-2 = bellows
+chat-speech-verb-oni-3 = blares
+chat-speech-verb-oni-4 = rumbles
+
 chat-speech-verb-name-canine = Canine
 chat-speech-verb-canine-1 = barks
 chat-speech-verb-canine-2 = woofs

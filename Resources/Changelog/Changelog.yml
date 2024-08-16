@@ -5218,3 +5218,163 @@ Entries:
       message: Added `HidesBeard` tag
   id: 6251
   time: '2024-08-10T21:36:49.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: The maximum trait limit has increased from 5 traits to 10 traits.
+  id: 6252
+  time: '2024-08-11T02:08:37.0000000+00:00'
+- author: Xavier
+  changes:
+    - type: Fix
+      message: Crew monitor not working properly, now displays correctly.
+  id: 6253
+  time: '2024-08-12T02:22:27.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Added the Explorer's Labcoat and a Hairflower into Loadouts.
+    - type: Fix
+      message: Fixed Epistemics being unable to take Survival Boxes
+    - type: Fix
+      message: >-
+        Fixed the NearSighted trait making you unable to take glasses in your
+        loadout
+    - type: Add
+      message: Added a variety of Cowboy Hats into loadouts.
+  id: 6254
+  time: '2024-08-12T02:22:58.0000000+00:00'
+- author: musicmanvr
+  changes:
+    - type: Add
+      message: Added the Home Run Bat for Syndicate operatives. Send your foes flying!
+  id: 6255
+  time: '2024-08-12T16:43:11.0000000+00:00'
+- author: Tilkku
+  changes:
+    - type: Add
+      message: Added showers
+  id: 6256
+  time: '2024-08-12T16:46:05.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Tweak
+      message: Changed hardsuit descriptions to be slightly less LRP.
+    - type: Tweak
+      message: Changed paramedic voidsuit from a softsuit to a hardsuit.
+  id: 6257
+  time: '2024-08-12T21:43:52.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Whitelist requirements work properly
+  id: 6258
+  time: '2024-08-13T17:08:24.0000000+00:00'
+- author: Skubman and leonardo-dabepis
+  changes:
+    - type: Add
+      message: Onis now get a unique speech bubble, a black bubble with horns.
+    - type: Add
+      message: >-
+        Onis have received a distinct speech style that reflects their strength.
+        Hear them 'grunt', 'bellow', 'blare', and 'rumble' as they talk.
+    - type: Tweak
+      message: >-
+        The Nekomimetic language description has been changed to mention Onis
+        speaking it.
+  id: 6259
+  time: '2024-08-13T17:12:15.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: A ton of new plushies has arrived
+    - type: Add
+      message: >-
+        Prize counter are here, get your prizes by winning games and getting
+        prize tickets! and find prize balls!!
+  id: 6260
+  time: '2024-08-13T17:16:52.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Onis have received eight new pointy ear markings in the 'Head (Side)'
+        section that can help them resemble tieflings, orcs, elves, goblins,
+        trolls, and more.
+    - type: Add
+      message: >-
+        Onis get two new tusk markings in the 'Snout' section, and a Two-Toed
+        feet marking in the 'Legs' section.
+    - type: Add
+      message: >-
+        Felinids, Onis, and Harpies can now select Human nose markings like the
+        schnozz, blobby nose, and nubby nose.
+    - type: Add
+      message: >-
+        Felinids and Onis can now select the Chest Scar and Top Surgery Scar
+        markings.
+    - type: Tweak
+      message: Default Onis now use the Double Curved horn and Upward Ears markings.
+  id: 6261
+  time: '2024-08-13T21:12:45.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fix missing Psionic Regeneration sound effect
+  id: 6262
+  time: '2024-08-14T02:12:43.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Vulpkanins receive the Voracious trait for free, giving them 2x
+        eating/drinking speed, but Vulpkanins get hungrier 25% faster.
+    - type: Tweak
+      message: >-
+        Vulpkanins gain a 30% Cold resistance, but their Heat vulnerability has
+        increased from 15% to 30%. Vulpkanins also receive 25% more Fire stacks,
+        amplifying the damage and duration of being on fire.
+    - type: Tweak
+      message: Flash duration against Vulpkanins has been increased by 50%.
+  id: 6263
+  time: '2024-08-14T05:30:37.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added crowned, tall bull, and tall curved Oni horns.
+  id: 6264
+  time: '2024-08-14T09:05:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added a new positive trait - singer. It allows you to play midi songs
+        without an instrument, similarly to harpies.
+  id: 6265
+  time: '2024-08-15T06:06:25.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Xenowears! new non-human related clothings.
+  id: 6266
+  time: '2024-08-15T06:24:07.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: >-
+        Forensics Scent Type and Vulpkanins can now track scents, better keep
+        yourself clean!
+    - type: Tweak
+      message: >-
+        Vulpkanins eyes are sensetive, please dont flash them with lights as
+        this could damage them.
+    - type: Add
+      message: Vulpkanins now has their own screams!
+  id: 6267
+  time: '2024-08-15T07:11:05.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Adds a new blindfold variant into loadouts.
+  id: 6268
+  time: '2024-08-16T12:43:33.0000000+00:00'

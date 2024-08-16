@@ -1,4 +1,4 @@
-﻿- type: speechVerb
+- type: speechVerb
   id: Default
   name: chat-speech-verb-name-default
   speechVerbStrings:
@@ -93,6 +93,15 @@
   - chat-speech-verb-vox-1
   - chat-speech-verb-vox-2
   - chat-speech-verb-vox-3
+
+- type: speechVerb
+  id: Oni
+  name: chat-speech-verb-name-oni
+  speechVerbStrings:
+  - chat-speech-verb-oni-1
+  - chat-speech-verb-oni-2
+  - chat-speech-verb-oni-3
+  - chat-speech-verb-oni-4
 
 - type: speechVerb
   id: Plant

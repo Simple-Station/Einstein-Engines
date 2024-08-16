@@ -19,6 +19,7 @@ using Content.Server.Station.Components;
 using Content.Shared.Salvage;
 using Content.Shared.Random.Helpers;
 using System.Linq;
+using Content.Server.GameTicking.Components;
 using Content.Shared.CCVar;
 
 namespace Content.Server.StationEvents.Events;
