@@ -33,8 +33,8 @@ internal sealed class NoosphericZapRule : StationEventSystem<NoosphericZapRuleCo
             if (!_mobStateSystem.IsAlive(psion) || HasComp<PsionicInsulationComponent>(psion))
                 continue;
 
-            _stunSystem.TryParalyze(psion, TimeSpan.FromSeconds(5), false);
-            _statusEffectsSystem.TryAddStatusEffect(psion, "Stutter", TimeSpan.FromSeconds(10), false, "StutteringAccent");
+            _stunSystem.TryParalyze(psion, TimeSpan.FromSeconds(component.StunDuration), false);
+            _statusEffectsSystem.TryAddStatusEffect(psion, "Stutter", TimeSpan.FromSeconds(component.StutterDuration), false, "StutteringAccent");
 
             if (psionicComponent.Rerolled)
             {
@@ -43,7 +43,7 @@ internal sealed class NoosphericZapRule : StationEventSystem<NoosphericZapRuleCo
             }
             else
             {
-                _psionicsSystem.RollPsionics(psion, psionicComponent, multiplier: 0.25f);
+                _psionicsSystem.RollPsionics(psion, psionicComponent, true, component.PowerRerollMultiplier);
                 _popupSystem.PopupEntity(Loc.GetString("noospheric-zap-seize"), psion, psion, Shared.Popups.PopupType.LargeCaution);
             }
         }

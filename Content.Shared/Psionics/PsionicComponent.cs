@@ -7,8 +7,6 @@ namespace Content.Shared.Abilities.Psionics
     [RegisterComponent, NetworkedComponent]
     public sealed partial class PsionicComponent : Component
     {
-        public EntityUid? PsionicAbility = null;
-
         /// <summary>
         ///     Ifrits, revenants, etc are explicitly magical beings that shouldn't get mindbreakered.
         /// </summary>
@@ -65,12 +63,75 @@ namespace Content.Shared.Abilities.Psionics
         ///     The baseline chance of obtaining a psionic power when rolling for one.
         /// </summary>
         [DataField]
-        public float Chance = 0.04f;
+        public float Chance { get; set; } = 0.04f;
 
         /// <summary>
         ///     Whether or not a Psion has an available "Reroll" to spend on attempting to gain powers.
         /// </summary>
         [DataField]
         public bool Rerolled;
+
+        /// <summary>
+        ///     The Base amount of time (in minutes) this Psion be given the stutter condition if they become mindbroken.
+        /// </summary>
+        [ViewVariables(VVAccess.ReadOnly)]
+        public float MindbreakingStutterTime { get; } = 5;
+
+        /// <summary>
+        ///     How much should the odds of obtaining a Psionic Power be multiplied when rolling for one.
+        /// </summary>
+        [ViewVariables(VVAccess.ReadOnly)]
+        public float PowerRollMultiplier { get; } = 1f;
+
+        /// <summary>
+        ///     How much should the odds of obtaining a Psionic Power be increased when rolling for one.
+        /// </summary>
+        [ViewVariables(VVAccess.ReadOnly)]
+        public float PowerRollFlatBonus { get; } = 0;
+
+        private (float, float) _baselineAmplification = (0, 0);
+
+        /// <summary>
+        ///     Use this datafield to change the range of Baseline Amplification.
+        /// </summary>
+        [DataField]
+        private (float, float) _baselineAmplificationFactors = (0.4f, 1.2f);
+
+        /// <summary>
+        ///     All Psionics automatically possess a random amount of initial starting Amplification, regardless of if they have any powers or not.
+        ///     The game will crash if Robust.Random is handed a (bigger number, smaller number), so the logic here prevents any funny business.
+        /// </summary>
+        public (float, float) BaselineAmplification
+        {
+            get { return _baselineAmplification; }
+            private set
+            {
+                _baselineAmplification = (Math.Min(
+                _baselineAmplificationFactors.Item1, _baselineAmplificationFactors.Item2),
+                Math.Max(_baselineAmplificationFactors.Item1, _baselineAmplificationFactors.Item2));
+            }
+        }
+        private (float, float) _baselineDampening = (0, 0);
+
+        /// <summary>
+        ///     Use this datafield to change the range of Baseline Amplification.
+        /// </summary>
+        [DataField]
+        private (float, float) _baselineDampeningFactors = (0.4f, 1.2f);
+
+        /// <summary>
+        ///     All Psionics automatically possess a random amount of initial starting Dampening, regardless of if they have any powers or not.
+        ///     The game will crash if Robust.Random is handed a (bigger number, smaller number), so the logic here prevents any funny business.
+        /// </summary>
+        public (float, float) BaselineDampening
+        {
+            get { return _baselineDampening; }
+            private set
+            {
+                _baselineDampening = (Math.Min(
+                _baselineDampeningFactors.Item1, _baselineDampeningFactors.Item2),
+                Math.Max(_baselineDampeningFactors.Item1, _baselineDampeningFactors.Item2));
+            }
+        }
     }
 }

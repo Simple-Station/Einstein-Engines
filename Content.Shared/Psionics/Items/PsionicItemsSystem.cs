@@ -8,7 +8,6 @@ namespace Content.Shared.Abilities.Psionics
     {
         [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
         [Dependency] private readonly IComponentFactory _componentFactory = default!;
-        [Dependency] private readonly SharedPsionicAbilitiesSystem _psiAbilities = default!;
         public override void Initialize()
         {
             base.Initialize();
@@ -29,7 +28,6 @@ namespace Content.Shared.Abilities.Psionics
             var insul = EnsureComp<PsionicInsulationComponent>(args.Equipee);
             insul.Passthrough = component.Passthrough;
             component.IsActive = true;
-            _psiAbilities.SetPsionicsThroughEligibility(args.Equipee);
         }
 
         private void OnTinfoilUnequipped(EntityUid uid, TinfoilHatComponent component, GotUnequippedEvent args)
@@ -41,7 +39,6 @@ namespace Content.Shared.Abilities.Psionics
                 RemComp<PsionicInsulationComponent>(args.Equipee);
 
             component.IsActive = false;
-            _psiAbilities.SetPsionicsThroughEligibility(args.Equipee);
         }
 
         private void OnGranterEquipped(EntityUid uid, ClothingGrantPsionicPowerComponent component, GotEquippedEvent args)

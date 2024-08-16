@@ -123,8 +123,6 @@ namespace Content.Server.Abilities.Psionics
             _actions.TryGetActionData( component.MindSwapReturnActionEntity, out var actionData );
             if (actionData is { UseDelay: not null })
                 _actions.StartUseDelay(component.MindSwapReturnActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
-                psionic.PsionicAbility = component.MindSwapReturnActionEntity;
         }
 
         public void Swap(EntityUid performer, EntityUid target, bool end = false)

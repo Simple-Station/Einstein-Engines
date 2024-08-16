@@ -27,11 +27,8 @@ internal sealed class NoosphericStormRule : StationEventSystem<NoosphericStormRu
         var query = EntityManager.EntityQueryEnumerator<PsionicComponent>();
         while (query.MoveNext(out var Psionic, out var PsionicComponent))
         {
-            if (_mobStateSystem.IsDead(Psionic))
-                continue;
-
-            // Those who are insulated, or zombies.
-            if (HasComp<PsionicInsulationComponent>(Psionic) || HasComp<ZombieComponent>(Psionic))
+            if (_mobStateSystem.IsDead(Psionic)
+                || HasComp<PsionicInsulationComponent>(Psionic))
                 continue;
 
             validList.Add(Psionic);

@@ -5,7 +5,6 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Damage.Events;
 using Content.Shared.CCVar;
 using Content.Server.Abilities.Psionics;
-using Content.Server.Chat.Systems;
 using Content.Server.Electrocution;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.Systems;
@@ -64,7 +63,7 @@ namespace Content.Server.Psionics
                     _audio.PlayPvs("/Audio/Effects/lightburn.ogg", entity);
                     args.ModifiersList.Add(component.Modifiers);
                     if (_random.Prob(component.DisableChance))
-                        _statusEffects.TryAddStatusEffect(entity, "PsionicsDisabled", TimeSpan.FromSeconds(10), true, "PsionicsDisabled");
+                        _statusEffects.TryAddStatusEffect(entity, "PsionicsDisabled", TimeSpan.FromSeconds(component.DisableDuration), true, "PsionicsDisabled");
                 }
 
                 if (TryComp<MindSwappedComponent>(entity, out var swapped))
@@ -73,15 +72,15 @@ namespace Content.Server.Psionics
                     return;
                 }
 
-                if (component.Punish && !HasComp<PsionicComponent>(entity) && _random.Prob(0.5f))
-                    _electrocutionSystem.TryDoElectrocution(args.User, null, 20, TimeSpan.FromSeconds(5), false);
+                if (component.Punish && !HasComp<PsionicComponent>(entity) && _random.Prob(component.PunishChances))
+                    _electrocutionSystem.TryDoElectrocution(args.User, null, component.PunishSelfDamage, TimeSpan.FromSeconds(component.PunishStunDuration), false);
             }
         }
 
         private void OnInit(EntityUid uid, PsionicComponent component, ComponentStartup args)
         {
-            component.AmplificationSources.Add("Baseline Amplification", _random.NextFloat(0.4f, 1.2f));
-            component.DampeningSources.Add("Baseline Dampening", _random.NextFloat(0.4f, 1.2f));
+            component.AmplificationSources.Add("Baseline Amplification", _random.NextFloat(component.BaselineAmplification.Item1, component.BaselineAmplification.Item2));
+            component.DampeningSources.Add("Baseline Dampening", _random.NextFloat(component.BaselineDampening.Item1, component.BaselineDampening.Item2));
 
             if (!component.Removable
                 || !TryComp<NpcFactionMemberComponent>(uid, out var factions)
@@ -105,29 +104,31 @@ namespace Content.Server.Psionics
                 args.FlatModifier += component.PsychicStaminaDamage;
         }
 
-        public void RollPsionics(EntityUid uid, PsionicComponent component, bool applyGlimmer = true, float multiplier = 1f)
+        public void RollPsionics(EntityUid uid, PsionicComponent component, bool applyGlimmer = true, float rollEventMultiplier = 1f)
         {
             if (!_cfg.GetCVar(CCVars.PsionicRollsEnabled))
                 return;
 
-            var chance = component.Chance;
-            var warn = true;
-            if (TryComp<PsionicBonusChanceComponent>(uid, out var bonus))
-            {
-                chance *= bonus.Multiplier;
-                chance += bonus.FlatBonus;
-                warn = bonus.Warn;
-            }
+            // Calculate the initial odds based on the innate potential
+            var baselineChance = component.Chance
+                * component.PowerRollMultiplier
+                + component.PowerRollFlatBonus;
 
-            if (applyGlimmer)
-                chance += ((float) _glimmerSystem.Glimmer / 1000);
+            // Increase the initial odds based on Glimmer.
+            // TODO: Change this equation when I do my Glimmer Refactor
+            baselineChance += applyGlimmer
+                ? (float) _glimmerSystem.Glimmer / 1000 //Convert from Glimmer to %chance
+                : 0;
 
-            chance *= multiplier;
+            // Certain sources of power rolls provide their own multiplier.
+            baselineChance *= rollEventMultiplier;
 
-            chance = Math.Clamp(chance, 0, 1);
+            // Ask if the Roller has any other effects to contribute, such as Traits.
+            var ev = new OnRollPsionicsEvent(uid, baselineChance);
+            RaiseLocalEvent(uid, ref ev);
 
-            if (_random.Prob(chance))
-                _psionicAbilitiesSystem.AddPsionics(uid, warn);
+            if (_random.Prob(ev.BaselineChance))
+                _psionicAbilitiesSystem.AddPsionics(uid);
         }
 
         public void RerollPsionics(EntityUid uid, PsionicComponent? psionic = null, float bonusMuliplier = 1f)
@@ -136,8 +137,23 @@ namespace Content.Server.Psionics
                 || psionic.Rerolled)
                 return;
 
-            RollPsionics(uid, psionic, multiplier: bonusMuliplier);
+            RollPsionics(uid, psionic, true, bonusMuliplier);
             psionic.Rerolled = true;
         }
+    }
+}
+
+/// <summary>
+///     Raised on an entity about to roll for a Psionic Power, after their baseline chances of success are calculated.
+/// </summary>
+[ByRefEvent]
+public struct OnRollPsionicsEvent
+{
+    public readonly EntityUid Roller;
+    public float BaselineChance;
+    public OnRollPsionicsEvent(EntityUid roller, float baselineChance)
+    {
+        Roller = roller;
+        BaselineChance = baselineChance;
     }
 }
