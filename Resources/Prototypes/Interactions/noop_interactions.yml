@@ -51,7 +51,18 @@
   parent: BaseHands
   priority: 20
   effectSuccess:
-    popup: Subtle
+    popup: Visible
     sound: {path: /Audio/Effects/glass_knock.ogg}
+  action:
+    !type:NoOpAction
+
+# Rattling a fence
+- type: Interaction
+  id: Rattle
+  parent: BaseHands
+  priority: 20
+  effectSuccess:
+    popup: VisibleNoChat
+    sound: {collection: FenceRattle}
   action:
     !type:NoOpAction

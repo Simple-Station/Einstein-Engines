@@ -9,6 +9,12 @@ namespace Content.Shared.InteractionVerbs;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class OwnInteractionVerbsComponent : Component
 {
+    public override bool SendOnlyToOwner => true;
+
     [DataField, AutoNetworkedField]
     public List<ProtoId<InteractionVerbPrototype>> AllowedVerbs = new();
+
+    // Too volatile to be worth networking; client and server just keep track of this field independently.
+    [NonSerialized, ViewVariables]
+    public Dictionary<(ProtoId<InteractionVerbPrototype>, EntityUid), TimeSpan> Cooldowns = new();
 }

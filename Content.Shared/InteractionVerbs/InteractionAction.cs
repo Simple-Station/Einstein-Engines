@@ -1,6 +1,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.InteractionVerbs;
@@ -53,5 +54,6 @@ public abstract partial class InteractionAction
         [Dependency] public readonly IPrototypeManager ProtoMan = default!;
         [Dependency] public readonly IRobustRandom Random = default!;
         [Dependency] public readonly IGameTiming Timing = default!;
+        [Dependency] public readonly ISerializationManager Serialization = default!;
     }
 }

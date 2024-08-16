@@ -12,6 +12,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using static Content.Shared.InteractionVerbs.InteractionPopupPrototype.Prefix;
 using static Content.Shared.InteractionVerbs.InteractionVerbPrototype.ContestType;
@@ -30,6 +31,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -94,9 +96,11 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     ///     Starts the verb, checking if it can be performed first, unless forced.
     ///     Upon success, this method will either start a do-after, or pass control to <see cref="PerformVerb"/>.
     /// </summary>
+    // TODO this function is an active battlefield
     public bool StartVerb(InteractionVerbPrototype proto, InteractionArgs args, bool force = false)
     {
-        if (proto.Action is null)
+        if (!TryComp<OwnInteractionVerbsComponent>(args.User, out var ownInteractions)
+            || !force && CheckVerbCooldown(proto, args, out _, ownInteractions))
             return false;
 
         // If contest advantage wasn't calculated yet, calculate it now and ensure it's in the allowed range
@@ -104,7 +108,9 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         if (args.ContestAdvantage is null)
             CalculateAdvantage(proto, ref args, out contestAdvantageValid);
 
-        if ((!contestAdvantageValid || !proto.Action.CanPerform(args, proto, true, _verbDependencies)) && !force)
+        if (!_net.IsClient
+            && !force
+            && (!contestAdvantageValid || proto.Action?.CanPerform(args, proto, true, _verbDependencies) != true))
         {
             CreateVerbEffects(proto.EffectFailure, Fail, proto, args);
             return false;
@@ -119,13 +125,17 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             CreateVerbEffects(proto.EffectFailure, Fail, proto, args);
             return false;
         }
-
         if (attemptEv.Handled)
             return true;
 
+        var cooldown = proto.Cooldown;
         var delay = proto.Delay;
-        if (proto.ContestAffectsDelay)
+        if (proto.ContestDelay)
             delay /= args.ContestAdvantage!.Value;
+        if (proto.ContestCooldown)
+            cooldown /= args.ContestAdvantage!.Value;
+
+        StartVerbCooldown(proto, args, cooldown, ownInteractions);
 
         // Delay can become zero if the contest advantage is infinity or just really large...
         if (delay <= TimeSpan.Zero)
@@ -158,6 +168,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     ///     Performs an additional CanPerform check (unless forced) and then actually performs the action of the verb
     ///     and shows a success/failure popup.
     /// </summary>
+    /// <remarks>This does nothing on client, as the client has no clue about verb actions. Only the server should ever perform verbs.</remarks>
     public void PerformVerb(InteractionVerbPrototype proto, InteractionArgs args, bool force = false)
     {
         if (_net.IsClient)
@@ -187,6 +198,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         if (TryComp<GhostComponent>(args.User, out var ghost) && !ghost.CanGhostInteract)
             return;
 
+        var ownInteractions = EnsureComp<OwnInteractionVerbsComponent>(args.User);
         foreach (var proto in verbs)
         {
             DebugTools.AssertNotEqual(proto.Abstract, true, "Attempted to add a verb with an abstract prototype.");
@@ -222,8 +234,17 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             var verb = factory.Invoke();
             CopyVerbData(proto, verb);
             verb.Disabled = isInvalid || !isRequirementMet || !isAllowed;
-            if (!verb.Disabled && !_net.IsClient)
+            if (!verb.Disabled)
                 verb.Act = () => StartVerb(proto, verbArgs);
+            else
+                verb.Message = Loc.GetString("interaction-verb-invalid");
+
+            // This just marks the verb as disabled without removing the action so the user can still try to use it.
+            if (CheckVerbCooldown(proto, verbArgs, out var remainingTime, ownInteractions))
+            {
+                verb.Disabled = true;
+                verb.Message = Loc.GetString("interaction-verb-cooldown", ("seconds", remainingTime.TotalSeconds));
+            }
 
             args.Verbs.Add(verb);
         }
@@ -261,6 +282,40 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         verb.Priority = proto.Priority;
         verb.Icon = proto.Icon;
         verb.Category = VerbCategory.Interaction;
+    }
+
+    /// <summary>
+    ///     Checks if the verb is on cooldown. Returns true if it still is.
+    /// </summary>
+    private bool CheckVerbCooldown(InteractionVerbPrototype proto, InteractionArgs args, out TimeSpan remainingTime, OwnInteractionVerbsComponent? comp = null)
+    {
+        remainingTime = TimeSpan.Zero;
+        if (!Resolve(args.User, ref comp))
+            return false;
+
+        var cooldownTarget = proto.GlobalCooldown ? EntityUid.Invalid : args.Target;
+        if (!comp.Cooldowns.TryGetValue((proto.ID, cooldownTarget), out var cooldown))
+            return false;
+
+        remainingTime = cooldown - _timing.CurTime;
+        return remainingTime > TimeSpan.Zero;
+    }
+
+    private void StartVerbCooldown(InteractionVerbPrototype proto, InteractionArgs args, TimeSpan cooldown, OwnInteractionVerbsComponent? comp = null)
+    {
+        if (!Resolve(args.User, ref comp))
+            return;
+
+        var cooldownTarget = proto.GlobalCooldown ? EntityUid.Invalid : args.Target;
+        comp.Cooldowns[(proto.ID, cooldownTarget)] = _timing.CurTime + cooldown;
+
+        // We also clean up old cooldowns here to avoid a memory leak... This is probably a bad place to do it.
+        // TODO might wanna switch to a list because dict is probably overkill for this task given we clean it up often.
+        foreach (var (key, time) in comp.Cooldowns.ToArray())
+        {
+            if (time < _timing.CurTime)
+                comp.Cooldowns.Remove(key);
+        }
     }
 
     private void CreateVerbEffects(InteractionVerbPrototype.EffectSpecifier? specifier, InteractionPopupPrototype.Prefix prefix, InteractionVerbPrototype proto, InteractionArgs args)

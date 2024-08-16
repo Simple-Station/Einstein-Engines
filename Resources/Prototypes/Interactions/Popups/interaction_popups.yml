@@ -5,6 +5,18 @@
   logChannel: Emotes
   others: null
 
+# Small, visible to others
+- type: InteractionPopup
+  id: Visible
+  popupType: Small
+  logChannel: Emotes
+
+# Small, visible to others but not logged into chat
+- type: InteractionPopup
+  id: VisibleNoChat
+  popupType: Small
+  logPopup: false
+
 # Medium, visible to others
 - type: InteractionPopup
   id: Obvious

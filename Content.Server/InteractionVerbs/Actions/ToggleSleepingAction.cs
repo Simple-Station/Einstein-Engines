@@ -38,5 +38,7 @@ public sealed partial class ToggleSleepingAction : InteractionAction
             return deps.EntMan.System<SleepingSystem>().TryWaking(args.Target, user: args.User);
         else if (Sleep)
             return deps.EntMan.System<SleepingSystem>().TrySleeping(args.Target);
+
+        return false;
     }
 }

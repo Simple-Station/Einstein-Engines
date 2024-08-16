@@ -28,3 +28,11 @@ interaction-MakeSleepOther-fail-target-popup = {THE($user)} fails to put you to 
 interaction-MakeSleepOther-success-self-popup = You put {THE($target)} to sleep.
 interaction-MakeSleepOther-success-target-popup = {THE($user)} puts you to sleep.
 interaction-MakeSleepOther-success-others-popup = {THE($user)} puts {THE($target)} to sleep.
+
+interaction-ShakeOther-name = Shake
+interaction-ShakeOther-description = Shake the target.
+interaction-ShakeOther-fail-self-popup = You somehow fail to shake {THE($target)}.
+interaction-ShakeOther-fail-target-popup = {THE($user)} somehow fails to shake you.
+interaction-ShakeOther-success-self-popup = You grab and shake {THE($target)}.
+interaction-ShakeOther-success-target-popup = {THE($user)} grabs and shakes you.
+interaction-ShakeOther-success-others-popup = {THE($user)} grabs and shakes {THE($target)}.

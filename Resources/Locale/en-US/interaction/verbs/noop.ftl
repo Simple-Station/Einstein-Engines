@@ -21,3 +21,8 @@ interaction-KnockOn-description = Knock on the target to attract attention.
 interaction-KnockOn-success-self-popup = You knock on {THE($target)}.
 interaction-KnockOn-success-target-popup = {THE($user)} knocks on you.
 interaction-KnockOn-success-others-popup = {THE($user)} knocks on {THE($target)}.
+
+interaction-Rattle-name = Rattle
+interaction-Rattle-success-self-popup = You rattle {THE($target)}.
+interaction-Rattle-success-target-popup = {THE($user)} rattles you.
+interaction-Rattle-success-others-popup = {THE($user)} rattles {THE($target)}.

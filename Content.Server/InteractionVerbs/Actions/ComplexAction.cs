@@ -32,7 +32,18 @@ public sealed partial class ComplexAction : InteractionAction
 
     private bool Delegate(Func<InteractionAction, bool> delegatedAction)
     {
-        return RequireAll ? Actions.All(delegatedAction) : Actions.Any(delegatedAction);
+        if (Lazy)
+            return RequireAll ? Actions.All(delegatedAction) : Actions.Any(delegatedAction);
+
+        var result = RequireAll;
+        if (RequireAll)
+            foreach (var action in Actions)
+                result &= delegatedAction(action);
+        else
+            foreach (var action in Actions)
+                result |= delegatedAction(action);
+
+        return result;
     }
 
     public override bool IsAllowed(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps)
@@ -47,18 +58,6 @@ public sealed partial class ComplexAction : InteractionAction
 
     public override bool Perform(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps)
     {
-        if (Lazy)
-            return Delegate(act => act.Perform(args, proto, deps));
-
-        var result = RequireAll;
-        // Note: we use bitwise OR and AND here instead of their boolean equivalents to avoid lazy execution.
-        if (RequireAll)
-            foreach (var action in Actions)
-                result &= action.Perform(args, proto, deps);
-        else
-            foreach (var action in Actions)
-                result |= action.Perform(args, proto, deps);
-
-        return result;
+        return Delegate(act => act.Perform(args, proto, deps));
     }
 }

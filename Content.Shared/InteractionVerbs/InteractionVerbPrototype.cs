@@ -85,10 +85,23 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public TimeSpan Delay = TimeSpan.Zero;
 
     /// <summary>
-    ///     If true, the contests defined in <see cref="AllowedContests"/> will affect the delay of the verb.
+    ///     Cooldown between uses of this verb. Applied per user or per user-target pair (see <see cref="GlobalCooldown"/>) and before the do-after.
     /// </summary>
-    [DataField("contestDelay")]
-    public bool ContestAffectsDelay = true;
+    [DataField]
+    public TimeSpan Cooldown = TimeSpan.FromSeconds(0.5f);
+
+    /// <summary>
+    ///     If true, the contests defined in <see cref="AllowedContests"/> will affect the delay or the cooldown of the verb.
+    /// </summary>
+    [DataField]
+    public bool ContestDelay = true, ContestCooldown = false;
+
+    /// <summary>
+    ///     If true, the cooldown of this verb will be applied regardless of the verb target,
+    ///     i.e. a user won't be able to apply the same verb to any different entity until the cooldown ends.
+    /// </summary>
+    [DataField]
+    public bool GlobalCooldown = false;
 
     /// <summary>
     ///     Arguments of the do-after shown if <see cref="Delay"/> is greater than zero.
