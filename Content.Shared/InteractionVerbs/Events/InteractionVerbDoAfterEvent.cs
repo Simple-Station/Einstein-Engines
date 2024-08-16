@@ -8,12 +8,12 @@ namespace Content.Shared.InteractionVerbs.Events;
 public sealed partial class InteractionVerbDoAfterEvent : SimpleDoAfterEvent
 {
     [DataField]
-    public ProtoId<InteractionVerbPrototype> VerbPrototype;
+    public ProtoId<InteractionVerbPrototype>? VerbPrototype;
 
     [NonSerialized]
-    public InteractionArgs VerbArgs; // Only ever used on the server, it should be fine™. If it ever isn't, move the entire code to server and forget it.
+    public InteractionArgs? VerbArgs; // Only ever used on the server, it should be fine™. If it ever isn't, move the entire code to server and forget it.
 
-    public InteractionVerbDoAfterEvent(ProtoId<InteractionVerbPrototype> verbPrototype, InteractionArgs verbArgs)
+    public InteractionVerbDoAfterEvent(ProtoId<InteractionVerbPrototype>? verbPrototype, InteractionArgs? verbArgs)
     {
         VerbPrototype = verbPrototype;
         VerbArgs = verbArgs;

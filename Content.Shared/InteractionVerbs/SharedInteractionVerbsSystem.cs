@@ -2,14 +2,11 @@ using System.Linq;
 using Content.Shared.Contests;
 using Content.Shared.DoAfter;
 using Content.Shared.Ghost;
-using Content.Shared.Interaction;
 using Content.Shared.InteractionVerbs.Events;
-using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -84,7 +81,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         if (ev.Cancelled || ev.Handled || !_protoMan.TryIndex(ev.VerbPrototype, out var proto))
             return;
 
-        PerformVerb(proto, ev.VerbArgs);
+        PerformVerb(proto, ev.VerbArgs!);
         ev.Handled = true;
     }
 
