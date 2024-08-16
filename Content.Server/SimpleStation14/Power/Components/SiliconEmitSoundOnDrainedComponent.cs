@@ -13,8 +13,11 @@ public sealed partial class SiliconEmitSoundOnDrainedComponent : Component
     [DataField("sound"), Required]
     public SoundSpecifier Sound = default!;
 
-    [DataField("interval")]
-    public float Interval = 8f;
+    [DataField("minInterval")]
+    public TimeSpan Interval = TimeSpan.FromSeconds(8);
+
+    [DataField("maxInterval")]
+    public TimeSpan MaxInterval = TimeSpan.FromSeconds(15);
 
     [DataField("playChance")]
     public float PlayChance = 1f;
