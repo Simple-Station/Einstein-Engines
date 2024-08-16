@@ -103,7 +103,8 @@ public sealed partial class ChangelingSystem : EntitySystem
             DistanceThreshold = 1.5f,
             BreakOnDamage = true,
             BreakOnHandChange = false,
-            BreakOnMove = true,
+            BreakOnUserMove = true,
+            BreakOnTargetMove = true,
             BreakOnWeightlessMove = true,
             AttemptFrequency = AttemptFrequency.StartAndEnd
         };

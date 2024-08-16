@@ -18,9 +18,9 @@
       mindComponents:
       - type: ChangelingRole
         prototype: Changeling
-        
+
 - type: entity
-  parent: BaseTraitorRule
+  parent: Traitor
   id: CalmTraitor # For Dual Antag Gamemodes
   components:
   - type: GameRule
@@ -63,7 +63,7 @@
         prototype: Changeling
 
 - type: entity
-  parent: BaseNukeopsRule
+  parent: Nukeops
   id: Calmops # For Dual Antag Gamemodes
   components:
   - type: GameRule

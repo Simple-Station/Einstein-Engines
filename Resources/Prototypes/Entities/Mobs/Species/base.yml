@@ -196,8 +196,7 @@
         type: HumanoidMarkingModifierBoundUserInterface
       - key: enum.StrippingUiKey.Key
         type: StrippableBoundUserInterface
-      # Goobstation - changelings
-      enum.StoreUiKey.Key:
+      - key: enum.StoreUiKey.Key
         type: StoreBoundUserInterface
   - type: Puller
   - type: Speech
