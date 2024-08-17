@@ -62,13 +62,16 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
         }
 
         // Block VPN connections to make it harder to get past flood checking
-        var ipResult = await _ipInformation.GetIPInformationAsync(connectingAddress);
-        _logger.Debug($"Connection from IP {connectingAddress} is suspicious level: {ipResult.suspiciousScore}");
-
-        if (ipResult.suspiciousIP)
+        if (_cfg.GetCVar(CCVars.VPNBlockEnabled))
         {
-            _logger.Info($"Blocking connection from {connectingAddress} / {requestedUserName} due to VPN IP creating or migrating new account.");
-            return new AssociationResult(false, null, _cfg.GetCVar(CCVars.VPNBlockDenyMessage));
+            var ipResult = await _ipInformation.GetIPInformationAsync(connectingAddress);
+            _logger.Debug($"Connection from IP {connectingAddress} is suspicious level: {ipResult.suspiciousScore}");
+
+            if (ipResult.suspiciousIP)
+            {
+                _logger.Info($"Blocking connection from {connectingAddress} / {requestedUserName} due to VPN IP creating or migrating new account.");
+                return new AssociationResult(false, null, _cfg.GetCVar(CCVars.VPNBlockDenyMessage));
+            }
         }
 
         // Allow server to optionally attempt to associate/migrate user account if history of HWID/Username/IP/whatever
