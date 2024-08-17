@@ -427,6 +427,9 @@
   - type: Construction
     graph: Pizza
     node: flat
+  - type: SliceableFood
+    count: 3
+    slice: FoodCroissantRaw
 
 - type: entity
   name: pizza bread
