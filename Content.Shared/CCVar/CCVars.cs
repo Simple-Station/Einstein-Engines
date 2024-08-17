@@ -436,6 +436,37 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<string> RoundEndSoundCollection =
             CVarDef.Create("game.round_end_sound_collection", "RoundEnd", CVar.SERVERONLY);
 
+        /*
+         * VPN BLOCK
+         */
+
+        /// <summary>
+        /// Is VPN Block enabled?
+        /// </summary>
+        /// <param name="CVar.SERVER"></param>
+        /// <returns></returns>
+        public static readonly CVarDef<bool> VPNBlockEnabled =
+            CVarDef.Create("vpn_block.enabled", false, CVar.NOTIFY | CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
+        /// Minimal overall played time to skip VPN Block.
+        /// </summary>
+        public static readonly CVarDef<float> VPNBlockSkipWithMinOverallHours =
+            CVarDef.Create("vpn_block.skip_with_min_overall_hours", 1.0f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Admin e-mail, is passed to IP service (is their requirement)
+        /// https://getipintel.net/free-proxy-vpn-tor-detection-api/
+        /// </summary>
+        public static readonly CVarDef<string> VPNBlockAdminEmail =
+            CVarDef.Create("vpn_block.admin_email", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+        /// <summary>
+        /// At this value or above, server will consider IP to be suspicious and block it.  API recommends .99 or .995
+        /// </summary>
+        /// <returns></returns>
+        public static readonly CVarDef<double> VPNBlockThresholdToBlockIP =
+            CVarDef.Create("vpn_block.threshold_for_blocked_ip", 0.99, CVar.SERVERONLY);
 
         /*
          * Announcers

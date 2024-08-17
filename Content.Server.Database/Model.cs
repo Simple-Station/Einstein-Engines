@@ -810,6 +810,11 @@ namespace Content.Server.Database
         Whitelist = 1,
         Full = 2,
         Panic = 3,
+        /*
+         * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
+         */
+        BabyJail = 4,
+        VPN = 100 // SSMV custom deny reason
     }
 
     public class ServerBanHit

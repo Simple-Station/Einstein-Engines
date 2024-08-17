@@ -97,6 +97,7 @@ namespace Content.Server.Entry
                 logManager.GetSawmill("db.ef").Level = LogLevel.Info;
 
                 IoCManager.Resolve<IAdminLogManager>().Initialize();
+                IoCManager.Resolve<IIPInformation>().Initialize();
                 IoCManager.Resolve<IConnectionManager>().Initialize();
                 _dbManager.Init();
                 IoCManager.Resolve<IServerPreferencesManager>().Init();

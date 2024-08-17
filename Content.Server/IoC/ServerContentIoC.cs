@@ -41,6 +41,7 @@ namespace Content.Server.IoC
             IoCManager.Register<IServerDbManager, ServerDbManager>();
             IoCManager.Register<RecipeManager, RecipeManager>();
             IoCManager.Register<INodeGroupFactory, NodeGroupFactory>();
+            IoCManager.Register<IIPInformation, IPInformationIPIntel>();
             IoCManager.Register<IConnectionManager, ConnectionManager>();
             IoCManager.Register<ServerUpdateManager>();
             IoCManager.Register<IAdminManager, AdminManager>();
