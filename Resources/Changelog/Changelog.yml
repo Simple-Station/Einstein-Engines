@@ -5372,3 +5372,9 @@ Entries:
       message: Vulpkanins now has their own screams!
   id: 6267
   time: '2024-08-15T07:11:05.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Adds a new blindfold variant into loadouts.
+  id: 6268
+  time: '2024-08-16T12:43:33.0000000+00:00'
