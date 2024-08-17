@@ -11,12 +11,12 @@ public sealed partial class AutoTraitorComponent : Component
     /// <summary>
     /// Whether to give the traitor an uplink or not.
     /// </summary>
-    [DataField("giveUplink"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool GiveUplink = true;
 
     /// <summary>
     /// Whether to give the traitor objectives or not.
     /// </summary>
-    [DataField("giveObjectives"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool GiveObjectives = true;
 }
