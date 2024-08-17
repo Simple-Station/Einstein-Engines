@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using System.Net;
 using System.Threading.Tasks;
 using Content.Server.Administration.Notes;
+using Content.Server.Connection;
 using Content.Server.Database;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
@@ -20,6 +21,7 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ILogManager _logMan = default!;
     [Dependency] private readonly IAdminNotesManager _adminNotes = default!;
+    [Dependency] private readonly IIPInformation _ipInformation = default!;
 
     private ISawmill _logger = default!;
 
@@ -54,9 +56,19 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
 
             if (recentPublicKeyLoginsFromThisIP > floodCheckMaxAccounts)
             {
-                _logger.Info($"Blocking connection from {requestedUserName} due to new account flood check.");
+                _logger.Info($"Blocking connection from {connectingAddress} / {requestedUserName} due to new account flood check.");
                 return new AssociationResult(false, null, "Too many accounts from your IP.  Try one of these:\n1) Use your existing public key if you have one.\n2) Or you may also contact server staff with your public key to be added manually.\n   (Please inform them if your account needs migrating or if you are a new player.)\n3) Alternatively, if the server supports it, you could try guest mode.");
             }
+        }
+
+        // Block VPN connections to make it harder to get past flood checking
+        var ipResult = await _ipInformation.GetIPInformationAsync(connectingAddress);
+        _logger.Debug($"Connection from IP {connectingAddress} is suspicious level: {ipResult.suspiciousScore}");
+
+        if (ipResult.suspiciousIP)
+        {
+            _logger.Info($"Blocking connection from {connectingAddress} / {requestedUserName} due to VPN IP creating or migrating new account.");
+            return new AssociationResult(false, null, "VPN BLOCKED\nHello, it appears you are connecting from a VPN and this server currently blocks VPN connections.  Please use a\nresidential/home IP.  You may also request a whitelist from server staff via the website if you have a good record\non another server or well established furry profile.\nPlease include your requested username and the public key from the launcher\n(visible in account drop down menu.)\nhttps://blepstation.com/"); // I don't know how to get newlines working in FTL/loc
         }
 
         // Allow server to optionally attempt to associate/migrate user account if history of HWID/Username/IP/whatever
