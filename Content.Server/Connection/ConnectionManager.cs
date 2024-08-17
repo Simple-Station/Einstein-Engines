@@ -252,7 +252,7 @@ namespace Content.Server.Connection
 
                             if (ipResult.suspiciousIP)
                             {
-                                return (ConnectionDenyReason.VPN, "VPN BLOCKED\nHello, it appears you are connecting from a VPN and this server currently blocks VPN connections.  Please use a\nresidential/home IP.  You may also request a whitelist from server staff via the website if you have a good record\non another server or well established furry profile.\nhttps://blepstation.com/", null); // I don't know how to get newlines working in FTL/loc
+                                return (ConnectionDenyReason.VPN, _cfg.GetCVar(CCVars.VPNBlockDenyMessage), null); // I don't know how to get newlines working in FTL/loc
                             }
                         } catch (Exception exception) {
                             _sawmill.Error("Caught VPN Block exception", exception);

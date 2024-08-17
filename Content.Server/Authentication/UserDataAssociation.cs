@@ -68,7 +68,7 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
         if (ipResult.suspiciousIP)
         {
             _logger.Info($"Blocking connection from {connectingAddress} / {requestedUserName} due to VPN IP creating or migrating new account.");
-            return new AssociationResult(false, null, "VPN BLOCKED\nHello, it appears you are connecting from a VPN and this server currently blocks VPN connections.  Please use a\nresidential/home IP.  You may also request a whitelist from server staff via the website if you have a good record\non another server or well established furry profile.\nPlease include your requested username and the public key from the launcher\n(visible in account drop down menu.)\nhttps://blepstation.com/"); // I don't know how to get newlines working in FTL/loc
+            return new AssociationResult(false, null, _cfg.GetCVar(CCVars.VPNBlockDenyMessage));
         }
 
         // Allow server to optionally attempt to associate/migrate user account if history of HWID/Username/IP/whatever

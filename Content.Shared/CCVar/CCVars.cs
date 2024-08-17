@@ -468,6 +468,21 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<double> VPNBlockThresholdToBlockIP =
             CVarDef.Create("vpn_block.threshold_for_blocked_ip", 0.99, CVar.SERVERONLY);
 
+        /// <summary>
+        /// Admin e-mail, is passed to IP service (is their requirement)
+        /// https://getipintel.net/free-proxy-vpn-tor-detection-api/
+        /// </summary>
+        public static readonly CVarDef<string> VPNBlockDenyMessage =
+            CVarDef.Create("vpn_block.deny_message",
+                "VPN BLOCKED\n" +
+                "Hello, it appears you are connecting from a VPN and this server currently blocks VPN connections.  Please use a\n" +
+                "residential/home IP.\n" +
+                "\n" +
+                "Alternatively, you may request a whitelist from server staff via discord, website, etc if you have a good record\n" +
+                "on another server.  Please include your requested username and the public key from the launcher (launcher's \n" +
+                "account drop down menu -> configure button -> copy/paste public key.)",
+                CVar.SERVERONLY);
+
         /*
          * Announcers
          */
