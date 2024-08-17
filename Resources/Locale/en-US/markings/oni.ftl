@@ -154,7 +154,7 @@ marking-OniHornErebiaRings-erebia = Erebia
 marking-OniHornErebiaRings-erebia_rings = Rings
 
 marking-OniHornDoubleThick = Double Thick
-marking-OniHornDoubleThick-double_thick = DoubleThick
+marking-OniHornDoubleThick-double_thick = Double Thick
 
 marking-OniHornDoubleThick2Tone = Double Thick (Striped)
 marking-OniHornDoubleThick2Tone-double_thick_2tone_1 = Even stripes
