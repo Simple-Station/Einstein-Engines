@@ -5,8 +5,10 @@ using Content.Server.Administration.Notes;
 using Content.Server.Connection;
 using Content.Server.Database;
 using Content.Shared.CCVar;
+using Robust.Shared.AuthLib;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using Robust.Shared.Random;
 using static Robust.Shared.Network.IServerUserDataAssociation;
 
 namespace Content.Server.Authentication;
@@ -22,7 +24,7 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
     [Dependency] private readonly ILogManager _logMan = default!;
     [Dependency] private readonly IAdminNotesManager _adminNotes = default!;
     [Dependency] private readonly IIPInformation _ipInformation = default!;
-
+    private const int MAXIMUM_ITERATIONS_TO_SEEK = 10;
     private ISawmill _logger = default!;
 
     public async Task<AssociationResult> AttemptUserDataFromPublicKey(
@@ -115,12 +117,46 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
             }
         }
 
+        // New username will be created.  Verify it is valid username.
+        if (!UsernameHelpers.IsNameValid(requestedUserName, out var usernameInvalidReason))
+        {
+            return new AssociationResult(false, null, $"Username is invalid ({usernameInvalidReason}).");
+        }
+
         // Try creating a new association if username isn't already taken
         var desiredUsernameLookupRecord = await _db.GetPlayerRecordByUserName(requestedUserName);
+
+        if (desiredUsernameLookupRecord != null)
+        {
+            // Preferred username is already taken -- give the user an alternate username instead.
+            // (This way they can at least get into the game and play, versus trying to manually rename your MV key every
+            // server connect would be annoying.)
+            var iterations = 0;
+            var random = new Random();
+            while (iterations < MAXIMUM_ITERATIONS_TO_SEEK && desiredUsernameLookupRecord != null)
+            {
+                iterations++;
+
+                var possibleName = requestedUserName + "_" + (int) (random.NextFloat() * 1000);
+
+                // It should still be valid, but just in case something weird happened...
+                if (!UsernameHelpers.IsNameValid(possibleName, out usernameInvalidReason))
+                {
+                    continue;
+                }
+
+                // Is it free?
+                desiredUsernameLookupRecord = await _db.GetPlayerRecordByUserName(possibleName);
+                if (desiredUsernameLookupRecord == null)
+                    requestedUserName = possibleName;
+            }
+        }
+
         if (desiredUsernameLookupRecord == null)
         {
             // No one else is using it, so let player have it
-            // TODO - rate limit
+
+            // Create user
 
             var userId = new NetUserId(Guid.NewGuid());
 
@@ -140,9 +176,6 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
             };
             return new AssociationResult(true, userData);
         }
-
-        // Username is already taken.
-        // TODO - Maybe do .001 etc?
 
         return new AssociationResult(false, null, "That username is already taken here, please use another."); // Failed
     }
