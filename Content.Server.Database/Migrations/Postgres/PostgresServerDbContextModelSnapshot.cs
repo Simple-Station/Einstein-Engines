@@ -715,6 +715,10 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.HasAlternateKey("UserId")
                         .HasName("ak_player_user_id");
 
+                    b.HasIndex("LastSeenAddress");
+
+                    b.HasIndex("LastSeenHWId");
+
                     b.HasIndex("LastSeenUserName");
 
                     b.HasIndex("PublicKey");
