@@ -83,7 +83,7 @@ namespace Content.Server.Medical.BiomassReclaimer
                 if (reclaimer.ProcessingTimer > 0)
                     continue;
 
-                var actualYield = (int) reclaimer.CurrentExpectedYield; // can only have integer biomass
+                var actualYield = (int) reclaimer.CurrentExpectedYield; // Can only have integer biomass physically
                 reclaimer.CurrentExpectedYield = reclaimer.CurrentExpectedYield - actualYield; // store non-integer leftovers
                 _material.SpawnMultipleFromMaterial(actualYield, BiomassPrototype, Transform(uid).Coordinates);
 
@@ -202,8 +202,8 @@ namespace Content.Server.Medical.BiomassReclaimer
                 component.SpawnedEntities = butcherableComponent.SpawnedEntities;
 
             component.CurrentExpectedYield += HasComp<ProduceComponent>(toProcess)
-                                            ? physics.FixturesMass * component.YieldPerUnitMass * component.ProduceYieldMultiplier
-                                            : physics.FixturesMass * component.YieldPerUnitMass;
+                ? physics.FixturesMass * component.YieldPerUnitMass * component.ProduceYieldMultiplier
+                : physics.FixturesMass * component.YieldPerUnitMass;
 
             component.ProcessingTimer = physics.FixturesMass * component.ProcessingTimePerUnitMass;
 

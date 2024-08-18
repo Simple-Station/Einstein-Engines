@@ -90,7 +90,7 @@ namespace Content.Server.Medical
             {
                 Act = () => InsertBody(uid, args.Target, component),
                 Category = VerbCategory.Insert,
-                Text = metadata.EntityName
+                Text = MetaData(args.Using.Value).EntityName
             };
             args.Verbs.Add(verb);
         }

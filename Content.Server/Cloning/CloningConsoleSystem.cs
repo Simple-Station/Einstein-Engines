@@ -222,8 +222,8 @@ namespace Content.Server.Cloning
                     if (!_mobStateSystem.IsDead(scanBody.Value))
                         clonerStatus = ClonerStatus.ScannerOccupantAlive;
                     else if (!_mindSystem.TryGetMind(scanBody.Value, out _, out var mind)
-                            || mind.UserId == null
-                            || !_playerManager.TryGetSessionById(mind.UserId.Value, out _))
+                        || mind.UserId == null
+                        || !_playerManager.TryGetSessionById(mind.UserId.Value, out _))
                         clonerStatus = ClonerStatus.NoMindDetected;
                 }
             }

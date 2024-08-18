@@ -79,6 +79,7 @@ public sealed partial class CloningPodComponent : Component
     public bool ActivelyCloning;
 
     #region Metempsychosis
+
     /// <summary>
     ///     Controls whether a cloning machine performs the Metempsychosis functions, EG: Is this a Cloner or a Metem Machine?
     ///     Metempsychosis refers to the metaphysical process of Reincarnation
@@ -114,6 +115,7 @@ public sealed partial class CloningPodComponent : Component
     [ValidatePrototypeId<WeightedRandomPrototype>]
     [DataField]
     public string MetempsychoticNonHumanoidPool = "MetempsychoticNonhumanoidPool";
+
     #endregion
 }
 
@@ -171,6 +173,7 @@ public struct ReincarnatingEvent
     public readonly EntityUid OldBody;
     public float ReincarnationChanceModifier = 1;
     public float ReincarnationChances;
+
     public ReincarnatingEvent(EntityUid oldBody, float reincarnationChances)
     {
         OldBody = oldBody;

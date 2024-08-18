@@ -1735,6 +1735,7 @@ namespace Content.Shared.CCVar
             CVarDef.Create("cloning.preserve_flavor_text", true, CVar.SERVERONLY);
 
         #endregion
+
         /*
          * Anomaly
          */

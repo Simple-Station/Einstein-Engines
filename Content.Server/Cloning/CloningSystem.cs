@@ -395,13 +395,13 @@ namespace Content.Server.Cloning
 
             tileMix?.AdjustMoles(Gas.Ammonia, 0.5f
                 * ((physics is not null)
-                ? physics.Mass
-                : 71));
+                    ? physics.Mass
+                    : 71));
 
             bloodSolution.AddReagent("blood", 0.8f
                 * ((blood is not null)
-                ? blood.BloodMaxVolume
-                : 300));
+                    ? blood.BloodMaxVolume
+                    : 300));
 
             _puddleSystem.TrySpillAt(uid, bloodSolution, out _);
         }
