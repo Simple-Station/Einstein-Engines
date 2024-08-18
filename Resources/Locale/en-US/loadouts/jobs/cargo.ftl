@@ -1,1 +1,1 @@
-loadout-description-LoadoutCargoNeckGoliathCloak = For the greatest of the Salvage crew.
+loadout-LoadoutCargoNeckGoliathCloak-desc = For the greatest of the Salvage crew.

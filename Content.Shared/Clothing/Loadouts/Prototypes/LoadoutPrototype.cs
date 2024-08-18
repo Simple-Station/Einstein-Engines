@@ -1,20 +1,16 @@
-using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Prototypes;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Clothing.Loadouts.Prototypes;
 
 
-[Prototype("loadout")]
-public sealed class LoadoutPrototype : IPrototype
+[Prototype]
+public sealed class LoadoutPrototype : LocalizedPrototype
 {
-    /// <summary>
-    ///     Formatted like "Loadout[Department/ShortHeadName][CommonClothingSlot][SimplifiedClothingId]", example: "LoadoutScienceOuterLabcoatSeniorResearcher"
-    /// </summary>
-    [IdDataField]
-    public string ID { get; } = default!;
+    public string Description => ToLocalizationString("desc");
+    public string LocalizedDescription => Loc.GetString(Description);
 
     /// <summary>
     ///     Which tab category to put this under

@@ -1,5 +1,5 @@
-loadout-description-LoadoutOuterGhostSheet = Spooky...
-loadout-description-LoadoutOuterCoatBomberjacket = A sleek bomber jacket.
-loadout-description-LoadoutOuterCoatHoodieBlack = A warm hoodie.
-loadout-description-LoadoutOuterCoatHoodieGrey = A warm hoodie.
-loadout-description-LoadoutOuterCoatWinterCoat = For keeping nice and snug.
+loadout-LoadoutOuterGhostSheet-desc = Spooky...
+loadout-LoadoutOuterCoatBomberjacket-desc = A sleek bomber jacket.
+loadout-LoadoutOuterCoatHoodieBlack-desc = A warm hoodie.
+loadout-LoadoutOuterCoatHoodieGrey-desc = A warm hoodie.
+loadout-LoadoutOuterCoatWinterCoat-desc = For keeping nice and snug.

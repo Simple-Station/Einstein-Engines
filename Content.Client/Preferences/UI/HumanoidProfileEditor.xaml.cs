@@ -1816,7 +1816,7 @@ namespace Content.Client.Preferences.UI
 
 
             // Fill categories
-            foreach (var loadout in loadouts.OrderBy(l => l.Cost).ThenBy(l => Loc.GetString($"loadout-{l.ID}-name")))
+            foreach (var loadout in loadouts.OrderBy(l => l.Cost).ThenBy(l => l.LocalizedName))
             {
                 var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1847,7 +1847,7 @@ namespace Content.Client.Preferences.UI
             }
 
             // Add the selected unusable loadouts to the point counter
-            foreach (var loadout in otherLoadouts.OrderBy(l => l.Cost).ThenBy(l => Loc.GetString($"loadout-{l.ID}-name")))
+            foreach (var loadout in otherLoadouts.OrderBy(l => l.Cost).ThenBy(l => l.LocalizedName))
             {
                 var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
