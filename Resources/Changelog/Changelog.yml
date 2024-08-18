@@ -5391,3 +5391,9 @@ Entries:
         three-tone variants.
   id: 6269
   time: '2024-08-18T05:52:22.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: You no longer need to have a station record to publish news.
+  id: 6270
+  time: '2024-08-18T18:11:10.0000000+00:00'
