@@ -12,8 +12,7 @@ namespace Content.Server.Traits.Assorted
 
         private void OnAttemptCloning(EntityUid uid, UncloneableComponent component, ref AttemptCloningEvent args)
         {
-            if (args.DoMetempsychosis
-                || args.CloningFailMessage is not null
+            if (args.CloningFailMessage is not null
                 || args.Cancelled)
                 return;
 
