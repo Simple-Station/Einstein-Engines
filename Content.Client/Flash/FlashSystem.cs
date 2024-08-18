@@ -38,8 +38,10 @@ namespace Content.Client.Flash
             // Few things here:
             // 1. If a shorter duration flash is applied then don't do anything
             // 2. If the client-side time is later than when the flash should've ended don't do anything
+            var calculatedStateDuration = state.Duration * state.DurationMultiplier;
+
             var currentTime = _gameTiming.CurTime.TotalSeconds;
-            var newEndTime = state.Time.TotalSeconds + state.Duration;
+            var newEndTime = state.Time.TotalSeconds + calculatedStateDuration;
             var currentEndTime = component.LastFlash.TotalSeconds + component.Duration;
 
             if (currentEndTime > newEndTime)
@@ -53,7 +55,7 @@ namespace Content.Client.Flash
             }
 
             component.LastFlash = state.Time;
-            component.Duration = state.Duration;
+            component.Duration = calculatedStateDuration;
 
             var overlay = _overlayManager.GetOverlay<FlashOverlay>();
             overlay.ReceiveFlash(component.Duration);
