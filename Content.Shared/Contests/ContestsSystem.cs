@@ -260,11 +260,10 @@ namespace Content.Shared.Contests
         /// <param name="performer"></param>
         /// <param name="bypassClamp"></param>
         /// <param name="rangeFactor"></param>
-        /// <returns></returns>
         public float MoodContest(EntityUid performer, bool bypassClamp = false, float rangeFactor = 1f)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
-                || !_cfg.GetCVar(CCVars.DoMindContests)
+                || !_cfg.GetCVar(CCVars.DoMoodContests)
                 || !TryComp<NetMoodComponent>(performer, out var mood))
                 return 1f;
 
@@ -282,11 +281,10 @@ namespace Content.Shared.Contests
         /// <param name="target"></param>
         /// <param name="bypassClamp"></param>
         /// <param name="rangeFactor"></param>
-        /// <returns></returns>
         public float MoodContest(EntityUid performer, EntityUid target, bool bypassClamp = false, float rangeFactor = 1f)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
-                || !_cfg.GetCVar(CCVars.DoMindContests)
+                || !_cfg.GetCVar(CCVars.DoMoodContests)
                 || !TryComp<NetMoodComponent>(performer, out var performerMood)
                 || !TryComp<NetMoodComponent>(target, out var targetMood))
                 return 1f;
