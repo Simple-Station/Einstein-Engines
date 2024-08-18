@@ -2,7 +2,7 @@
 
 namespace Content.Shared.Mood;
 
-[Prototype("moodEffect")]
+[Prototype]
 public sealed class MoodEffectPrototype : IPrototype
 {
     /// <summary>
@@ -11,33 +11,25 @@ public sealed class MoodEffectPrototype : IPrototype
     [IdDataField]
     public string ID { get; } = default!;
 
+    public string Description => Loc.GetString($"mood-effect-{ID}");
     /// <summary>
-    ///     The description of a moodlet in yml, used for player notifications.
+    ///     If they already have an effect with the same category, the new one will replace the old one.
     /// </summary>
-    [DataField(required: true)]
-    public string Description = string.Empty;
-
+    [DataField]
+    public string? Category;
     /// <summary>
     ///     How much should this moodlet modify an entity's Mood.
     /// </summary>
     [DataField(required: true)]
     public float MoodChange;
-
     /// <summary>
     ///     How long, in Seconds, does this moodlet last? If omitted, the moodlet will last until canceled by any system.
     /// </summary>
     [DataField]
     public int Timeout;
-
     /// <summary>
     ///     Should this moodlet be hidden from the player? EG: No popups or chat messages.
     /// </summary>
     [DataField]
     public bool Hidden;
-
-    /// <summary>
-    ///     If mob already has effect of the same category, the new one will replace the old one.
-    /// </summary>
-    [DataField]
-    public string? Category;
 }
