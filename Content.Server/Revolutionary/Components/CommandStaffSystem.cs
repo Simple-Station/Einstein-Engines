@@ -1,3 +1,5 @@
+using Content.Server.Psionics;
+
 namespace Content.Server.Revolutionary.Components
 {
     public sealed partial class CommandStaffSystem : EntitySystem
