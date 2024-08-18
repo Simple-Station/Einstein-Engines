@@ -80,8 +80,8 @@ def generate_manifest_hash(file: str) -> str:
 def get_engine_version() -> str:
     proc = subprocess.run(["git", "describe","--tags", "--abbrev=0"], stdout=subprocess.PIPE, cwd="RobustToolbox", check=True, encoding="UTF-8")
     tag = proc.stdout.strip()
-    assert tag.startswith("v")
-    return tag[1:] # Cut off v prefix.
+    assert tag.startswith("mv")
+    return tag  # Don't cut off prefix for mv, engine version should begin with mv-
 
 
 def sha256_file(path: str) -> str:
