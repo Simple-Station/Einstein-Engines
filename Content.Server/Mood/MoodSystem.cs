@@ -32,6 +32,7 @@ public sealed class MoodSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
+
     public override void Initialize()
     {
         base.Initialize();
@@ -42,8 +43,10 @@ public sealed class MoodSystem : EntitySystem
         SubscribeLocalEvent<MoodComponent, DamageChangedEvent>(OnDamageChange);
         SubscribeLocalEvent<MoodComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMoveSpeed);
         SubscribeLocalEvent<MoodComponent, MoodRemoveEffectEvent>(OnRemoveEffect);
+
         SubscribeLocalEvent<MoodModifyTraitComponent, ComponentStartup>(OnTraitStartup);
     }
+
 
     private void OnRemoveEffect(EntityUid uid, MoodComponent component, MoodRemoveEffectEvent args)
     {
@@ -64,12 +67,18 @@ public sealed class MoodSystem : EntitySystem
             || _jetpack.IsUserFlying(uid))
             return;
 
-        // This ridiculous math serves a purpose making high mood less impactful on movement speed than low mood.
-        var modifier = Math.Clamp((component.CurrentMoodLevel >= component.MoodThresholds[MoodThreshold.Neutral])
-                        ? _config.GetCVar(CCVars.MoodIncreasesSpeed) ? MathF.Pow(1.003f, component.CurrentMoodLevel - component.MoodThresholds[MoodThreshold.Neutral]) : 1
-                        : _config.GetCVar(CCVars.MoodDecreasesSpeed) ? 2 - component.MoodThresholds[MoodThreshold.Neutral] / component.CurrentMoodLevel : 1,
-                        component.MinimumSpeedModifier,
-                        component.MaximumSpeedModifier);
+        // This ridiculous math serves a purpose making high mood less impactful on movement speed than low mood
+        var modifier =
+            Math.Clamp(
+                (component.CurrentMoodLevel >= component.MoodThresholds[MoodThreshold.Neutral])
+                    ? _config.GetCVar(CCVars.MoodIncreasesSpeed)
+                        ? MathF.Pow(1.003f, component.CurrentMoodLevel - component.MoodThresholds[MoodThreshold.Neutral])
+                        : 1
+                    : _config.GetCVar(CCVars.MoodDecreasesSpeed)
+                        ? 2 - component.MoodThresholds[MoodThreshold.Neutral] / component.CurrentMoodLevel
+                        : 1,
+                component.MinimumSpeedModifier,
+                component.MaximumSpeedModifier);
 
         args.ModifySpeed(1, modifier);
     }
@@ -94,7 +103,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void ApplyEffect(EntityUid uid, MoodComponent component, MoodEffectPrototype prototype, float eventModifier = 1, float eventOffset = 0)
     {
-        //Apply categorised effect
+        // Apply categorised effect
         if (prototype.Category != null)
         {
             if (component.CategorisedEffects.TryGetValue(prototype.Category, out var oldPrototypeId))
@@ -116,7 +125,7 @@ public sealed class MoodSystem : EntitySystem
             if (prototype.Timeout != 0)
                 Timer.Spawn(TimeSpan.FromSeconds(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
         }
-        //Apply uncategorised effect
+        // Apply uncategorised effect
         else
         {
             if (component.UncategorisedEffects.TryGetValue(prototype.ID, out _))
@@ -181,7 +190,7 @@ public sealed class MoodSystem : EntitySystem
     }
 
     // <summary>
-    //   Recalculate the mood level of an entity by summing up all moodlets.
+    //      Recalculate the mood level of an entity by summing up all moodlets.
     // </summary>
     private void RefreshMood(EntityUid uid, MoodComponent component)
     {
@@ -221,6 +230,7 @@ public sealed class MoodSystem : EntitySystem
         var neutral = component.MoodThresholds[MoodThreshold.Neutral];
         var ev = new OnSetMoodEvent(uid, amount);
         RaiseLocalEvent(uid, ref ev);
+
         if (ev.Cancelled)
             return;
         else
@@ -336,8 +346,6 @@ public sealed class MoodSystem : EntitySystem
         };
     }
 
-    #region HealthStatusCheck
-
     private void OnDamageChange(EntityUid uid, MoodComponent component, DamageChangedEvent args)
     {
         if (!_mobThreshold.TryGetPercentageForState(uid, MobState.Critical, args.Damageable.TotalDamage, out var damage))
@@ -356,8 +364,6 @@ public sealed class MoodSystem : EntitySystem
         var ev = new MoodEffectEvent(protoId);
         RaiseLocalEvent(uid, ev);
     }
-
-    #endregion
 }
 
 [UsedImplicitly]
