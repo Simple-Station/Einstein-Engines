@@ -82,8 +82,7 @@ namespace Content.Server.Medical
                 || !args.CanAccess
                 || !args.CanInteract
                 || IsOccupied(component)
-                || !CanScannerInsert(uid, args.Using.Value, component)
-                || !TryComp<MetaDataComponent>(args.Using.Value, out var metadata))
+                || !CanScannerInsert(uid, args.Using.Value, component))
                 return;
 
             InteractionVerb verb = new()

@@ -28,7 +28,6 @@ using Robust.Server.Player;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server.Medical.BiomassReclaimer
@@ -147,11 +146,12 @@ namespace Content.Server.Medical.BiomassReclaimer
         {
             if (!args.CanReach
                 || args.Target == null
-                || !CanGib(reclaimer, args.Used)
-                || !TryComp<PhysicsComponent>(args.Used, out var physics))
+                || !CanGib(reclaimer, args.Used))
                 return;
 
-            var delay = reclaimer.Comp.BaseInsertionDelay * physics.FixturesMass;
+            var delay = reclaimer.Comp.BaseInsertionDelay * (TryComp<PhysicsComponent>(args.Used, out var physics)
+                ? physics.FixturesMass
+                : 1);
             _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, delay, new ReclaimerDoAfterEvent(), reclaimer, target: args.Target, used: args.Used)
             {
                 BreakOnTargetMove = true,

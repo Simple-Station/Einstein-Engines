@@ -52,16 +52,16 @@ namespace Content.Server.Cloning
         }
         private void OnButtonPressed(EntityUid uid, CloningConsoleComponent consoleComponent, UiButtonPressedMessage args)
         {
-            if (!_powerReceiverSystem.IsPowered(uid))
+            if (!_powerReceiverSystem.IsPowered(uid)
+                || consoleComponent.GeneticScanner is null
+                || consoleComponent.CloningPod is null
+                || !TryComp<CloningPodComponent>(consoleComponent.CloningPod.Value, out var cloningPod))
                 return;
 
             switch (args.Button)
             {
                 case UiButton.Clone:
-                    if (consoleComponent.GeneticScanner != null
-                        && consoleComponent.CloningPod != null
-                        && TryComp<CloningPodComponent>(consoleComponent.CloningPod.Value, out var cloningPod))
-                        TryClone(uid, consoleComponent.CloningPod.Value, consoleComponent.GeneticScanner.Value, cloningPod, consoleComponent: consoleComponent);
+                    TryClone(uid, consoleComponent.CloningPod.Value, consoleComponent.GeneticScanner.Value, cloningPod, consoleComponent: consoleComponent);
                     break;
             }
             UpdateUserInterface(uid, consoleComponent);
@@ -153,8 +153,7 @@ namespace Content.Server.Cloning
 
         public void TryClone(EntityUid uid, EntityUid cloningPodUid, EntityUid scannerUid, CloningPodComponent cloningPod, MedicalScannerComponent? scannerComp = null, CloningConsoleComponent? consoleComponent = null)
         {
-            if (!Resolve(uid, ref consoleComponent)
-                || !Resolve(scannerUid, ref scannerComp)
+            if (!Resolve(uid, ref consoleComponent, ref scannerComp)
                 || !Transform(cloningPodUid).Anchored
                 || !Transform(scannerUid).Anchored
                 || !consoleComponent.CloningPodInRange
