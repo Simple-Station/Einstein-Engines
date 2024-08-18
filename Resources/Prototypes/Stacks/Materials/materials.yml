@@ -92,4 +92,17 @@
   icon: { sprite: /Textures/Objects/Materials/materials.rsi, state: bones}
   spawn: MaterialBones1
   maxCount: 30
-  itemSize: 1
+
+- type: stack
+  id: Gunpowder
+  name: gunpowder
+  icon: { sprite: /Textures/Objects/Misc/reagent_fillings.rsi, state: powderpile }
+  spawn: MaterialGunpowder
+  maxCount: 60
+
+- type: stack
+  id: GoliathHide
+  name: goliath hide
+  icon: { sprite: /Textures/Objects/Materials/hide.rsi, state: goliath_hide }
+  spawn: MaterialGoliathHide1
+  maxCount: 30
