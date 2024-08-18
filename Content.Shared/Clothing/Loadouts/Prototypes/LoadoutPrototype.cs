@@ -9,9 +9,9 @@ namespace Content.Shared.Clothing.Loadouts.Prototypes;
 [Prototype]
 public sealed class LoadoutPrototype : LocalizedPrototype
 {
-    /// <summary>The localization string for the description of this prototype</summary>
+    /// <summary>The localization string for the description of this loadout</summary>
     public string DescriptionLoc => ToLocalizationString("desc");
-    /// <summary>The localized string for the description of this prototype</summary>
+    /// <summary>The localized string for the description of this loadout</summary>
     public string Description => Loc.GetString(DescriptionLoc);
 
     /// <summary>

@@ -1,4 +1,5 @@
 using Content.Shared.Customization.Systems;
+using Content.Shared.Prototypes;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
@@ -9,11 +10,12 @@ namespace Content.Shared.Traits;
 ///     Describes a trait.
 /// </summary>
 [Prototype("trait")]
-public sealed partial class TraitPrototype : IPrototype
+public sealed class TraitPrototype : LocalizedPrototype
 {
-    [ViewVariables]
-    [IdDataField]
-    public string ID { get; private set; } = default!;
+    /// <summary>The localization string for the description of this trait</summary>
+    public string DescriptionLoc => ToLocalizationString("desc");
+    /// <summary>The localized string for the description of this trait</summary>
+    public string Description => Loc.GetString(DescriptionLoc);
 
     /// <summary>
     ///     Which customization tab to place this entry in
@@ -25,7 +27,7 @@ public sealed partial class TraitPrototype : IPrototype
     ///     How many points this will give the character
     /// </summary>
     [DataField]
-    public int Points = 0;
+    public int Points;
 
 
     [DataField]

@@ -125,7 +125,7 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-requirement",
             ("inverted", Inverted),
             ("traits", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Traits.Select(t => Loc.GetString($"trait-name-{t}")))}[/color]")));
+                Traits.Select(t => prototypeManager.Index(t).Name))}[/color]")));
 
         return Traits.Any(t => profile.TraitPreferences.Contains(t.ToString()));
     }
@@ -150,7 +150,7 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-loadout-requirement",
             ("inverted", Inverted),
             ("loadouts", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Loadouts.Select(l => Loc.GetString($"loadout-name-{l}")))}[/color]")));
+                Loadouts.Select(l => prototypeManager.Index(l).Name))}[/color]")));
 
         return Loadouts.Any(l => profile.LoadoutPreferences.Contains(l.ToString()));
     }

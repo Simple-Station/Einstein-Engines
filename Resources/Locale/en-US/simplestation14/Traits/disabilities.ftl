@@ -1,2 +1,2 @@
-trait-name-Nearsighted = Nearsighted
-trait-description-Nearsighted = You require glasses to see properly.
+trait-Nearsighted-name = Nearsighted
+trait-Nearsighted-desc = You require glasses to see properly.

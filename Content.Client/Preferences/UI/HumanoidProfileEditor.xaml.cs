@@ -1501,7 +1501,7 @@ namespace Content.Client.Preferences.UI
 
             // Make categories
             var currentCategory = 1; // 1 because we already made 0 as Uncategorized, I am not not zero-indexing :)
-            foreach (var category in categories.OrderBy(c => Loc.GetString($"trait-category-{c.ID}")))
+            foreach (var category in categories.OrderBy(c => c.Name))
             {
                 // Check for existing category
                 BoxContainer? match = null;
@@ -1546,13 +1546,13 @@ namespace Content.Client.Preferences.UI
                 };
 
                 _traitsTabs.AddChild(box);
-                _traitsTabs.SetTabTitle(currentCategory, Loc.GetString($"trait-category-{category.ID}"));
+                _traitsTabs.SetTabTitle(currentCategory, category.Name);
                 currentCategory++;
             }
 
 
             // Fill categories
-            foreach (var trait in traits.OrderBy(t => -t.Points).ThenBy(t => Loc.GetString($"trait-name-{t.ID}")))
+            foreach (var trait in traits.OrderBy(t => -t.Points).ThenBy(t => t.Name))
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1586,7 +1586,7 @@ namespace Content.Client.Preferences.UI
             }
 
             // Add the selected unusable traits to the point counter
-            foreach (var trait in otherTraits.OrderBy(t => -t.Points).ThenBy(t => Loc.GetString($"trait-name-{t.ID}")))
+            foreach (var trait in otherTraits.OrderBy(t => -t.Points).ThenBy(t => t.Name))
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",

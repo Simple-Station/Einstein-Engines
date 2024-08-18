@@ -57,7 +57,7 @@ public sealed class TraitPreferenceSelector : Control
                             ClipText = true,
                             Margin = new Thickness(0, 0, 8, 0),
                         },
-                        new Label { Text = Loc.GetString($"trait-name-{trait.ID}") },
+                        new Label { Text = trait.Name },
                     },
                 },
             },
@@ -66,9 +66,8 @@ public sealed class TraitPreferenceSelector : Control
         _button.AddStyleClass(style);
 
         var tooltip = new StringBuilder();
-        // Add the loadout description to the tooltip if there is one
-        var desc = Loc.GetString($"trait-description-{trait.ID}");
-        if (!string.IsNullOrEmpty(desc) && desc != $"trait-description-{trait.ID}")
+        // Add the trait description to the tooltip if there is one
+        if (Loc.TryGetString(trait.DescriptionLoc, out var desc))
             tooltip.Append(desc);
 
 
