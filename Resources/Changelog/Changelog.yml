@@ -5378,3 +5378,16 @@ Entries:
       message: Adds a new blindfold variant into loadouts.
   id: 6268
   time: '2024-08-16T12:43:33.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        16 new horns for Onis have been added, with three-tone variants and some
+        striped variants! The new horns include the Serket, Nepeta, Vantas,
+        Makara, and more.
+    - type: Add
+      message: >-
+        The Oni horns Double Curved and Double Curved Outwards have received
+        three-tone variants.
+  id: 6269
+  time: '2024-08-18T05:52:22.0000000+00:00'
