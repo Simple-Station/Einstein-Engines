@@ -13,14 +13,14 @@
       sprite: Structures/Machines/metempsychotic.rsi
       snapCardinals: true
       layers:
-        - state: pod_0
+        - state: cloning_idle
     - type: Appearance
     - type: GenericVisualizer
       visuals:
         enum.CloningPodVisuals.Status:
           base:
-            Cloning: { state: pod_1 }
-            NoMind: { state: pod_1 }
-            Gore: { state: pod_g }
-            Idle: { state: pod_0 }
+            Cloning: { state: cloning_active }
+            NoMind: { state: cloning_active }
+            Gore: { state: cloning_failed }
+            Idle: { state: cloning_idle }
     - type: Psionic
