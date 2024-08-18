@@ -10,8 +10,10 @@ public abstract class LocalizedPrototype : IPrototype
 
     public const string LocFormat = "{type}-{ID}-{field}";
 
-    public string Name => ToLocalizationString("name");
-    public string LocalizedName => Loc.GetString(Name);
+    /// <summary>The localization string for the name of this prototype</summary>
+    public string NameLoc => ToLocalizationString("name");
+    /// <summary>The localized string for the name of prototype</summary>
+    public string Name => Loc.GetString(NameLoc);
 
     public string ToLocalizationString(string field)
     {

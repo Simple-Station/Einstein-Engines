@@ -9,8 +9,10 @@ namespace Content.Shared.Clothing.Loadouts.Prototypes;
 [Prototype]
 public sealed class LoadoutPrototype : LocalizedPrototype
 {
-    public string Description => ToLocalizationString("desc");
-    public string LocalizedDescription => Loc.GetString(Description);
+    /// <summary>The localization string for the description of this prototype</summary>
+    public string DescriptionLoc => ToLocalizationString("desc");
+    /// <summary>The localized string for the description of this prototype</summary>
+    public string Description => Loc.GetString(DescriptionLoc);
 
     /// <summary>
     ///     Which tab category to put this under

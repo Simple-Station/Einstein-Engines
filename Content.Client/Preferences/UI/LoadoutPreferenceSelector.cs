@@ -75,7 +75,7 @@ public sealed class LoadoutPreferenceSelector : Control
                         },
                         new Label
                         {
-                            Text = !Loc.TryGetString(loadout.Name, out var name)
+                            Text = !Loc.TryGetString(loadout.NameLoc, out var name)
                                 ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName
                                 : name,
                         },
@@ -88,7 +88,7 @@ public sealed class LoadoutPreferenceSelector : Control
 
         var tooltip = new StringBuilder();
         // Add the loadout description to the tooltip if there is one
-        var desc = !Loc.TryGetString(loadout.Description, out var description)
+        var desc = !Loc.TryGetString(loadout.DescriptionLoc, out var description)
             ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityDescription
             : description;
         if (!string.IsNullOrEmpty(desc))
