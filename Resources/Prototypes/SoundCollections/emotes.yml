@@ -79,3 +79,9 @@
   id: Weh
   files:
   - /Audio/Items/Toys/weh.ogg
+
+- type: soundCollection
+  id: LaughEvil
+  files:
+    - /Audio/Effects/Emotes/cackle.ogg
+    - /Audio/Effects/Emotes/cackle2.ogg

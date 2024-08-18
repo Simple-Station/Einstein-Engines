@@ -35,7 +35,7 @@
     Weh:
       collection: Weh
     LaughEvil:
-      path: /Audio/Effects/Emotes/cackle.ogg
+      collection: LaughEvil
 
 - type: emoteSounds
   id: FemaleHuman

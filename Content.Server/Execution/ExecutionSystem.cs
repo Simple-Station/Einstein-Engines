@@ -133,13 +133,6 @@ public sealed class ExecutionSystem : EntitySystem
         if (!_actionBlockerSystem.CanAttack(attacker, victim))
             return false;
 
-        // The victim must be incapacitated to be executed
-        if (victim != attacker && _actionBlockerSystem.CanInteract(victim, null))
-            return false;
-
-        if (victim == attacker)
-            return false; // DeltaV - Fucking seriously?
-
         // All checks passed
         return true;
     }
