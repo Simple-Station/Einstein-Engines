@@ -142,7 +142,7 @@
   name: research-technology-metempsychosis
   icon:
     sprite: Structures/Machines/metempsychotic.rsi
-    state: pod_0
+    state: cloning_idle
   discipline: Experimental
   tier: 2
   cost: 15000
