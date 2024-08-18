@@ -209,13 +209,18 @@
   # TODO make these entitystorage again + placeablesurface after entity storage ECS gets merged.
   - type: Storage
     grid:
-    - 0,0,1,1
+    - 0,0,3,1
     maxItemSize: Normal
+    whitelist:
+      components:
+      - Utensil
+      tags:
+      - Pizza
   - type: Item
     sprite: Objects/Consumable/Food/Baked/pizza.rsi
     heldPrefix: box
     shape:
-    - 0,0,1,1
+    - 0,0,2,1
   - type: Appearance
   - type: EntityStorageVisuals
     stateDoorOpen: box-open
@@ -754,8 +759,4 @@
         orGroup: GiftPool
       - id: GoldenBikeHorn
         prob: 0.1
-        orGroup: GiftPool
-      - id: ToyRenault # DeltaV Toy, see Resources/Prototypes/DeltaV/Entities/Objects/Fun/toys.yml
-        orGroup: GiftPool
-      - id: ToySiobhan # DeltaV Toy, see Resources/Prototypes/DeltaV/Entities/Objects/Fun/toys.yml
         orGroup: GiftPool
