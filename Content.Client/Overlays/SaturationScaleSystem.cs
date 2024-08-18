@@ -13,9 +13,12 @@ public sealed class SaturationScaleSystem : EntitySystem
 
     private SaturationScaleOverlay _overlay = default!;
 
+
     public override void Initialize()
     {
         base.Initialize();
+
+        _overlay = new();
 
         SubscribeLocalEvent<SaturationScaleComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<SaturationScaleComponent, ComponentShutdown>(OnShutdown);
@@ -24,9 +27,8 @@ public sealed class SaturationScaleSystem : EntitySystem
         SubscribeLocalEvent<SaturationScaleComponent, PlayerDetachedEvent>(OnPlayerDetached);
 
         SubscribeNetworkEvent<RoundRestartCleanupEvent>(RoundRestartCleanup);
-
-        _overlay = new();
     }
+
 
     private void RoundRestartCleanup(RoundRestartCleanupEvent ev)
     {

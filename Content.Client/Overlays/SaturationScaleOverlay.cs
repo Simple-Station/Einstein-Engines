@@ -13,9 +13,11 @@ public sealed class SaturationScaleOverlay : Overlay
     private readonly ShaderInstance _shader;
     private const float Saturation = 0.5f;
 
+
     public SaturationScaleOverlay()
     {
         IoCManager.InjectDependencies(this);
+
         _shader = _prototypeManager.Index<ShaderPrototype>("SaturationScale").InstanceUnique();
     }
 
