@@ -6,17 +6,21 @@ namespace Content.Shared.Mood;
 public sealed class MoodEffectEvent : EntityEventArgs
 {
     /// <summary>
-    ///     ID of the moodlet prototype to use.
+    ///     ID of the moodlet prototype to use
     /// </summary>
     public string EffectId;
 
     /// <summary>
-    ///     How much should the mood change be multiplied by? This does nothing if the moodlet ID matches to one with a Category.
+    ///     How much should the mood change be multiplied by
+    ///     <br />
+    ///     This does nothing if the moodlet ID matches one with the same Category
     /// </summary>
     public float EffectModifier = 1f;
 
     /// <summary>
-    ///     How much should the mood change be offset by, after multiplication? This does nothing if the moodlet ID matches to one with a Category.
+    ///     How much should the mood change be offset by, after multiplication
+    ///     <br />
+    ///     This does nothing if the moodlet ID matches one with the same Category
     /// </summary>
     public float EffectOffset = 0f;
 
@@ -47,6 +51,7 @@ public sealed class MoodRemoveEffectEvent : EntityEventArgs
 public struct OnSetMoodEvent
 {
     public float MoodChangedAmount;
+
     public EntityUid Receiver;
 
     public bool Cancelled;
@@ -70,21 +75,26 @@ public struct OnSetMoodEvent
 public struct OnMoodEffect
 {
     /// <summary>
-    ///     The entity receiving a Mood Effect.
+    ///     The entity receiving a Mood Effect
     /// </summary>
     public EntityUid Receiver;
+
     /// <summary>
-    ///     ID of the moodlet prototype to use.
+    ///     ID of the moodlet prototype to use
     /// </summary>
     public string EffectId;
 
     /// <summary>
-    ///     How much should the mood change be multiplied by? This does nothing if the moodlet ID matches to one with a Category.
+    ///     How much should the mood change be multiplied by
+    ///     <br />
+    ///     This does nothing if the moodlet ID matches one with the same Category
     /// </summary>
     public float EffectModifier = 1;
 
     /// <summary>
-    ///     How much should the mood change be offset by, after multiplication? This does nothing if the moodlet ID matches to one with a Category.
+    ///     How much should the mood change be offset by, after multiplication
+    ///     <br />
+    ///     This does nothing if the moodlet ID matches one with the same Category
     /// </summary>
     public float EffectOffset = 0;
 
