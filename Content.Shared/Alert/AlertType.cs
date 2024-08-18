@@ -25,6 +25,8 @@ namespace Content.Shared.Alert
         HumanHealth,
         BorgBattery,
         BorgBatteryNone,
+
+        // Mood
         Bleeding,
         Insane,
         Horrible,
@@ -38,6 +40,7 @@ namespace Content.Shared.Alert
         Perfect,
         MoodDead,
         CultBuffed,
+
         PilotingShuttle,
         Peckish,
         Starving,
