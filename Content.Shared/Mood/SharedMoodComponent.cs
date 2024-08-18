@@ -12,5 +12,4 @@ public sealed partial class NetMoodComponent : Component
 
     [DataField, AutoNetworkedField]
     public float NeutralMoodThreshold;
-
 }

@@ -1,6 +1,6 @@
 ﻿- type: moodEffect
   id: BeingHugged
-  description: "Hugs are great."
+  description: "Hugs are nice."
   moodChange: 3
   timeout: 120
 
@@ -18,7 +18,7 @@
 
 - type: moodEffect
   id: PetAnimal
-  description: "Animals are so cute! I can't stop petting them!"
+  description: "Animals are so cute, I can't stop petting them!"
   moodChange: 3
   timeout: 300
 
@@ -29,18 +29,18 @@
   timeout: 480
 
 - type: moodEffect
-  id: TraitorFocused #Used for traitors to boost their goals completion.
-  description: "I have a goal, and I will achieve it no matter what!"
+  id: TraitorFocused # Used for traitors to boost their goals completion.
+  description: "I have a goal, and I will accomplish it no matter what."
   moodChange: 7
 
 - type: moodEffect
-  id: RevolutionFocused #Used for revolution
+  id: RevolutionFocused # Used for revolution
   description: "VIVA LA REVOLUTION!!!"
   moodChange: 7
 
 - type: moodEffect
   id: CultFocused
-  description: "Dark Gods grant me strength!"
+  description: "Dark Gods, grant me strength!"
   moodChange: 10
 
 - type: moodEffect

@@ -1,6 +1,6 @@
 ﻿- type: moodEffect
   id: Handcuffed
-  description: "I am held captive"
+  description: "I am being held captive"
   moodChange: -3
 
 - type: moodEffect

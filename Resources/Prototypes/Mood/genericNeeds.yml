@@ -1,7 +1,7 @@
-﻿#Hunger
+﻿# Hunger
 - type: moodEffect
   id: HungerOverfed
-  description: "I so much, I feel as though I'm ready to burst!"
+  description: "I ate so much, I feel as though I'm about to burst!"
   moodChange: -10
   category: "Hunger"
 
@@ -23,7 +23,7 @@
   moodChange: -7
   category: "Hunger"
 
-#Thirst
+# Thirst
 - type: moodEffect
   id: ThirstOverHydrated
   description: "I feel dizzy after drinking too much."
@@ -48,7 +48,7 @@
   moodChange: -7
   category: "Thirst"
 
-#Health
+# Health
 - type: moodEffect
   id: HealthNoDamage
   description: "I'm in no pain."
