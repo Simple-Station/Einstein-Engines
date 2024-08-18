@@ -32,8 +32,6 @@ public abstract class LocalizedPrototype : IPrototype
             .Replace("{ID}", ID)
             .Replace("{field}", field);
 
-        Logger.Fatal(t);
-        Logger.Fatal(Loc.GetString(t));
         return t;
     }
 }
