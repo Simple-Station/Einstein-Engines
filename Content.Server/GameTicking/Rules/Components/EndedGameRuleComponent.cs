@@ -1,4 +1,4 @@
-﻿namespace Content.Server.GameTicking.Components;
+﻿namespace Content.Server.GameTicking.Rules.Components;
 
 /// <summary>
 ///     Added to game rules before <see cref="GameRuleEndedEvent"/>.
