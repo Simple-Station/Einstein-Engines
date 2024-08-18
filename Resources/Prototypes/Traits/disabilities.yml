@@ -144,7 +144,7 @@
 - type: trait
   id: BloodDeficiency
   category: Physical
-  points: 2
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
