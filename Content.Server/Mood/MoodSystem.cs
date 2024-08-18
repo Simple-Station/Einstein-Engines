@@ -91,7 +91,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnMoodEffect(EntityUid uid, MoodComponent component, MoodEffectEvent args)
     {
-        if (!_config.GetCVar(CCVars.DoMoodSystem)
+        if (!_config.GetCVar(CCVars.MoodEnabled)
             || !_prototypeManager.TryIndex<MoodEffectPrototype>(args.EffectId, out var prototype))
             return;
 
@@ -222,7 +222,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void SetMood(EntityUid uid, float amount, MoodComponent? component = null, bool force = false, bool refresh = false)
     {
-        if (!_config.GetCVar(CCVars.DoMoodSystem)
+        if (!_config.GetCVar(CCVars.MoodEnabled)
             || !Resolve(uid, ref component)
             || component.CurrentMoodThreshold == MoodThreshold.Dead && !refresh)
             return;

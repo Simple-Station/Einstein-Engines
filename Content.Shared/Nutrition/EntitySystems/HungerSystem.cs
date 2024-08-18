@@ -50,7 +50,7 @@ public sealed class HungerSystem : EntitySystem
 
     private void OnRefreshMovespeed(EntityUid uid, HungerComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (_config.GetCVar(CCVars.DoMoodSystem)
+        if (_config.GetCVar(CCVars.MoodEnabled)
             || component.CurrentThreshold > HungerThreshold.Starving
             || _jetpack.IsUserFlying(uid))
             return;
@@ -116,7 +116,7 @@ public sealed class HungerSystem : EntitySystem
 
         if (GetMovementThreshold(component.CurrentThreshold) != GetMovementThreshold(component.LastThreshold))
         {
-            if (!_config.GetCVar(CCVars.DoMoodSystem))
+            if (!_config.GetCVar(CCVars.MoodEnabled))
                 _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
             else if (_net.IsServer)
             {

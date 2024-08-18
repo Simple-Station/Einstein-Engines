@@ -53,7 +53,7 @@ public sealed class ThirstSystem : EntitySystem
     private void OnRefreshMovespeed(EntityUid uid, ThirstComponent component, RefreshMovementSpeedModifiersEvent args)
     {
         // TODO: This should really be taken care of somewhere else
-        if (_config.GetCVar(CCVars.DoMoodSystem)
+        if (_config.GetCVar(CCVars.MoodEnabled)
             || _jetpack.IsUserFlying(uid))
             return;
 
@@ -114,7 +114,7 @@ public sealed class ThirstSystem : EntitySystem
 
     private void UpdateEffects(EntityUid uid, ThirstComponent component)
     {
-        if (!_config.GetCVar(CCVars.DoMoodSystem)
+        if (!_config.GetCVar(CCVars.MoodEnabled)
             && IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold)
             && TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
         {
