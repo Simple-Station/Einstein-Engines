@@ -34,7 +34,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Server.Traits.Assorted;
 using Content.Shared.Speech;
 using Content.Shared.Tag;
 using Content.Shared.Preferences;
@@ -42,7 +41,6 @@ using Content.Shared.Emoting;
 using Content.Server.Speech.Components;
 using Content.Server.StationEvents.Components;
 using Content.Server.Ghost.Roles.Components;
-using Content.Server.Nyanotrasen.Cloning;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.GameObjects.Components.Localization;
 using Content.Shared.SSDIndicator;
@@ -59,7 +57,6 @@ using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Power.Components;
 using Content.Shared.Damage.Prototypes;
-using Content.Server.Database.Migrations.Postgres;
 
 namespace Content.Server.Cloning
 {
@@ -175,23 +172,29 @@ namespace Content.Server.Cloning
             args.PushMarkup(Loc.GetString("cloning-pod-biomass", ("number", _material.GetMaterialAmount(uid, component.RequiredMaterial))));
         }
 
-        private bool CheckUncloneable(EntityUid uid, EntityUid bodyToClone)
+        private bool CheckUncloneable(EntityUid uid, EntityUid bodyToClone, CloningPodComponent clonePod, out float cloningCostMultiplier)
         {
-            if (!TryComp<UncloneableComponent>(bodyToClone, out _))
-                return true;
+            var ev = new AttemptCloningEvent(uid, clonePod.DoMetempsychosis);
+            RaiseLocalEvent(bodyToClone, ref ev);
+            cloningCostMultiplier = ev.CloningCostMultiplier;
 
-            _chatSystem.TrySendInGameICMessage(uid,
-                Loc.GetString("cloning-console-uncloneable-trait-error"),
-                InGameICChatType.Speak, false);
+            if (ev.Cancelled && ev.CloningFailMessage is not null)
+            {
+                _chatSystem.TrySendInGameICMessage(uid,
+                    Loc.GetString(ev.CloningFailMessage),
+                    InGameICChatType.Speak, false);
+                return false;
+            }
 
-            return false;
+            return true;
         }
 
-        private bool CheckBiomassCost(EntityUid uid, PhysicsComponent physics, CloningPodComponent clonePod)
+        private bool CheckBiomassCost(EntityUid uid, PhysicsComponent physics, CloningPodComponent clonePod, float cloningCostMultiplier = 1)
         {
             var cloningCost = (int) Math.Round(physics.FixturesMass
                 * _config.GetCVar(CCVars.CloningBiomassCostMultiplier)
-                * clonePod.BiomassCostMultiplier);
+                * clonePod.BiomassCostMultiplier
+                * cloningCostMultiplier);
 
             if (_material.GetMaterialAmount(uid, clonePod.RequiredMaterial) < cloningCost)
             {
@@ -243,10 +246,10 @@ namespace Content.Server.Cloning
             if (!_mobStateSystem.IsDead(bodyToClone)
                 || clonePod.ActivelyCloning
                 || clonePod.ConnectedConsole == null
-                || CheckUncloneable(uid, bodyToClone)
+                || !CheckUncloneable(uid, bodyToClone, clonePod, out var cloningCostMultiplier)
                 || !TryComp<HumanoidAppearanceComponent>(bodyToClone, out var humanoid)
                 || !TryComp<PhysicsComponent>(bodyToClone, out var physics)
-                || CheckBiomassCost(uid, physics, clonePod)
+                || !CheckBiomassCost(uid, physics, clonePod, cloningCostMultiplier)
                 || !ClonesWaitingForMind.TryGetValue(mindEnt.Comp, out var clone)
                 || !TryComp<MindContainerComponent>(clone, out var cloneMindComp)
                 || cloneMindComp.Mind == null

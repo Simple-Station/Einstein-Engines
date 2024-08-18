@@ -35,3 +35,22 @@ public struct ReincarnatingEvent
         ReincarnationChances = reincarnationChances;
     }
 }
+
+/// <summary>
+///     Raised on a corpse that someone is attempting to clone, but before the process actually begins.
+///     ALlows for Entities to influence whether the cloning can begin in the first place, either by canceling it, or modifying the cost.
+/// </summary>
+[ByRefEvent]
+public struct AttemptCloningEvent
+{
+    public bool Cancelled;
+    public bool DoMetempsychosis;
+    public EntityUid CloningPod;
+    public string? CloningFailMessage;
+    public float CloningCostMultiplier = 1;
+    public AttemptCloningEvent(EntityUid cloningPod, bool doMetempsychosis)
+    {
+        DoMetempsychosis = doMetempsychosis;
+        CloningPod = cloningPod;
+    }
+}
