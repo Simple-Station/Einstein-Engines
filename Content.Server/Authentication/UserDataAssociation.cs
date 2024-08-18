@@ -30,6 +30,12 @@ public sealed class UserDataAssociation : IServerUserDataAssociation, IPostInjec
     public async Task<AssociationResult> AttemptUserDataFromPublicKey(
         ImmutableArray<byte> publicKey, ImmutableArray<byte> hWId, string requestedUserName, IPAddress connectingAddress)
     {
+        // Sanity check (unlikely a user can get this far without a publickey set, but just in case...)
+        if (publicKey == null || publicKey.Length == 0)
+        {
+            return new AssociationResult(false, null, "Public key not set.");
+        }
+
         // Check if public key already has a match in database
         var existingPlayerRecord = await _db.GetPlayerRecordByPublicKey(publicKey);
         if (existingPlayerRecord != null)
