@@ -3,4 +3,4 @@
 namespace Content.Shared.Overlays;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class SaturationScaleComponent : Component { }
+public sealed partial class SaturationScaleOverlayComponent : Component { }

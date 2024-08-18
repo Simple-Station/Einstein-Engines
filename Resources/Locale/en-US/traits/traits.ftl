@@ -85,6 +85,7 @@ trait-name-Foreigner = Foreigner
 trait-description-Foreigner =
     For one reason or another you do not speak this station's primary language.
     Instead, you have a translator issued to you that only you can use.
+
 trait-name-Saturnine = Saturnine
 trait-description-Saturnine = You are naturally dour and morose. Your mood is permanently decreased by a large amount.
 

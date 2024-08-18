@@ -35,6 +35,12 @@
       "name": "mood9"
     },
     {
+      "name": "mood_happiness_bad"
+    },
+    {
+      "name": "mood_happiness_good"
+    },
+    {
       "name": "mood_insane",
       "delays": [
         [
@@ -49,12 +55,6 @@
           0.07
         ]
       ]
-    },
-    {
-      "name": "mood_happiness_good"
-    },
-    {
-      "name": "mood_happiness_bad"
     }
   ]
 }

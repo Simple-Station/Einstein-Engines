@@ -502,7 +502,7 @@
 - type: alert
   id: Insane
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood_insane
@@ -512,7 +512,7 @@
 - type: alert
   id: Horrible
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood1
@@ -522,7 +522,7 @@
 - type: alert
   id: Terrible
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood2
@@ -532,7 +532,7 @@
 - type: alert
   id: Bad
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood3
@@ -542,7 +542,7 @@
 - type: alert
   id: Meh
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood4
@@ -552,7 +552,7 @@
 - type: alert
   id: Neutral
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood5
@@ -562,7 +562,7 @@
 - type: alert
   id: Good
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood6
@@ -572,7 +572,7 @@
 - type: alert
   id: Great
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood7
@@ -582,7 +582,7 @@
 - type: alert
   id: Exceptional
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood8
@@ -592,7 +592,7 @@
 - type: alert
   id: Perfect
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood9
@@ -602,7 +602,7 @@
 - type: alert
   id: MoodDead
   category: Mood
-  onClick: !type:ShowMoodEffects  { }
+  onClick: !type:ShowMoodEffects { }
   icons:
     - sprite: /Textures/Interface/Alerts/mood.rsi
       state: mood_happiness_bad
