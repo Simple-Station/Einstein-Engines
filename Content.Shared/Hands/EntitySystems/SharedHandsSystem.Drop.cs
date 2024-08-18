@@ -3,7 +3,6 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Tag;
-using Content.Shared.Interaction.Events;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
@@ -153,7 +152,7 @@ public abstract partial class SharedHandsSystem
         var (itemPos, itemRot) = TransformSystem.GetWorldPositionRotation(entity);
         var origin = new MapCoordinates(itemPos, itemXform.MapID);
         var target = TransformSystem.ToMapCoordinates(targetDropLocation.Value);
-        TransformSystem.SetWorldPositionRotation(entity, GetFinalDropCoordinates(uid, origin, target), itemRot);
+        TransformSystem.SetWorldPositionRotation(entity, GetFinalDropCoordinates(uid, origin, target, entity), itemRot);
         return true;
     }
 
@@ -182,7 +181,7 @@ public abstract partial class SharedHandsSystem
     /// <summary>
     ///     Calculates the final location a dropped item will end up at, accounting for max drop range and collision along the targeted drop path, Does a check to see if a user should bypass those checks as well.
     /// </summary>
-    private Vector2 GetFinalDropCoordinates(EntityUid user, MapCoordinates origin, MapCoordinates target)
+    private Vector2 GetFinalDropCoordinates(EntityUid user, MapCoordinates origin, MapCoordinates target, EntityUid held)
     {
         var dropVector = target.Position - origin.Position;
         var requestedDropDistance = dropVector.Length();
@@ -196,7 +195,7 @@ public abstract partial class SharedHandsSystem
                 target = new MapCoordinates(origin.Position + dropVector, target.MapId);
             }
 
-            dropLength = _interactionSystem.UnobstructedDistance(origin, target, predicate: e => e == user);
+            dropLength = _interactionSystem.UnobstructedDistance(origin, target, predicate: e => e == user || e == held);
         }
 
         if (dropLength < requestedDropDistance)
