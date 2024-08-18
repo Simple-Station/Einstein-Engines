@@ -38,7 +38,7 @@ public sealed class SlippingTest : MovementTest
         await SpawnTarget("TrashBananaPeel");
 
         // var modifier = Comp<MovementSpeedModifierComponent>(Player).SprintSpeedModifier;
-        // Assert.That(modifier, Is.EqualTo(1), "Player is not moving at full speed."); //Yeeting this pointless Assert because it's not actually important.
+        // Assert.That(modifier, Is.EqualTo(1), "Player is not moving at full speed."); // Yeeting this pointless Assert because it's not actually important.
 
         // Player is to the left of the banana peel and has not slipped.
 #pragma warning disable NUnit2045
