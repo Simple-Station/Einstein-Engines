@@ -12,7 +12,7 @@ public sealed class ListPsionicsCommand : IConsoleCommand
     public string Command => "lspsionics";
     public string Description => Loc.GetString("command-lspsionic-description");
     public string Help => Loc.GetString("command-lspsionic-help");
-    public void Execute(IConsoleShell shell, string argStr, string[] args)
+    public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         var entMan = IoCManager.Resolve<IEntityManager>();
         foreach (var (actor, psionic, meta) in entMan.EntityQuery<ActorComponent, PsionicComponent, MetaDataComponent>())

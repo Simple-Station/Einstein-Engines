@@ -20,10 +20,7 @@ namespace Content.Shared.Abilities.Psionics
         {
             foreach (var entity in _lookup.GetEntitiesInRange(args.Target, component.Radius))
             {
-                if (entity == uid)
-                    continue;
-
-                if (HasComp<MobStateComponent>(entity) && !HasComp<PsionicInsulationComponent>(entity))
+                if (HasComp<MobStateComponent>(entity) && entity != uid && !HasComp<PsionicInsulationComponent>(entity))
                 {
                     if (TryComp<DamageableComponent>(entity, out var damageable) && damageable.DamageContainerID == "Biological")
                         EnsureComp<SleepingComponent>(entity);

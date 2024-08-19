@@ -8,4 +8,21 @@ namespace Content.Shared.Psionics;
 /// <param name="amplificationChangedAmount"></param>
 /// <param name="dampeningChangedAmount"></param>
 [ByRefEvent]
-public record struct OnSetPsionicStatsEvent(float AmplificationChangedAmount, float DampeningChangedAmount);
+public struct OnSetPsionicStatsEvent
+{
+    public float AmplificationChangedAmount;
+    public float DampeningChangedAmount;
+
+    /// <summary>
+    ///     This event is raised whenever a psionic entity sets their casting stats(Amplification and Dampening), allowing other systems to modify the end result
+    ///     of casting stat math. EG: The end result after tallying up
+    /// </summary>
+    /// <param name="receiver"></param>
+    /// <param name="amplificationChangedAmount"></param>
+    /// <param name="dampeningChangedAmount"></param>
+    public OnSetPsionicStatsEvent(float amplificationChangedAmount, float dampeningChangedAmount)
+    {
+        AmplificationChangedAmount = amplificationChangedAmount;
+        DampeningChangedAmount = dampeningChangedAmount;
+    }
+}

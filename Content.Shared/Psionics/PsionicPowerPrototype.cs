@@ -2,7 +2,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Psionics;
 
-[Prototype]
+[Prototype("psionicPower")]
 public sealed partial class PsionicPowerPrototype : IPrototype
 {
     /// <summary>
@@ -33,19 +33,19 @@ public sealed partial class PsionicPowerPrototype : IPrototype
     ///     The list of what Components this power adds.
     /// </summary>
     [DataField]
-    public ComponentRegistry Components = new();
+    public readonly List<string>? Components = new();
 
     /// <summary>
     ///     What message will play as a popup when the power is initialized.
     /// </summary>
-    [DataField]
-    public string? InitializationFeedback;
+    [DataField(required: true)]
+    public string InitializationFeedback = "psionic-power-initialization-default";
 
     /// <summary>
     ///     What message will this power generate when scanned by a Metempsionic Focused Pulse.
     /// </summary>
-    [DataField]
-    public string? MetapsionicFeedback;
+    [DataField(required: true)]
+    public string MetapsionicFeedback = "psionic-metapsionic-feedback-default";
 
     /// <summary>
     ///     How much this power will increase or decrease a user's Amplification.

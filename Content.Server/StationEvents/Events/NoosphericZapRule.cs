@@ -34,11 +34,11 @@ internal sealed class NoosphericZapRule : StationEventSystem<NoosphericZapRuleCo
                 continue;
 
             _stunSystem.TryParalyze(psion, TimeSpan.FromSeconds(component.StunDuration), false);
-            _statusEffectsSystem.TryAddStatusEffect(psion, component.ZapStatusEffect, TimeSpan.FromSeconds(component.StutterDuration), false, component.ZapStatusAccent);
+            _statusEffectsSystem.TryAddStatusEffect(psion, "Stutter", TimeSpan.FromSeconds(component.StutterDuration), false, "StutteringAccent");
 
-            if (psionicComponent.CanReroll)
+            if (psionicComponent.Rerolled)
             {
-                psionicComponent.CanReroll = false;
+                psionicComponent.Rerolled = false;
                 _popupSystem.PopupEntity(Loc.GetString("noospheric-zap-seize-potential-regained"), psion, psion, Shared.Popups.PopupType.LargeCaution);
             }
             else
