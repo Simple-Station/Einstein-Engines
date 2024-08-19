@@ -24,9 +24,8 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly SharedPopupSystem _popups = default!;
         [Dependency] private readonly ISerializationManager _serialization = default!;
 
+        private ProtoId<WeightedRandomPrototype> _pool = "RandomPsionicPowerPool";
         private const string GenericInitializationMessage = "generic-power-initialization-feedback";
-
-        private ISawmill _sawmill = default!;
 
         public override void Initialize()
         {
@@ -55,11 +54,8 @@ namespace Content.Server.Abilities.Psionics
         {
             EnsureComp<PsionicComponent>(uid, out var psionic);
 
-            if (!_prototypeManager.TryIndex<WeightedRandomPrototype>("RandomPsionicPowerPool", out var pool))
-            {
-                _sawmill.Error("Can't index the random psionic power pool!");
+            if (!_prototypeManager.TryIndex<WeightedRandomPrototype>(_pool.Id, out var pool))
                 return;
-            }
 
             var newPool = _serialization.CreateCopy(pool, null, false, true);
             foreach (var proto in pool.Weights.Keys)
@@ -83,7 +79,7 @@ namespace Content.Server.Abilities.Psionics
         public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, bool playPopup = true)
         {
             if (!TryComp<PsionicComponent>(uid, out var psionic)
-                || !_prototypeManager.TryIndex<PsionicPowerPrototype>(proto.ID, out var _))
+                || !_prototypeManager.HasIndex<PsionicPowerPrototype>(proto.ID))
                 return;
 
             psionic.ActivePowers.Add(proto);
@@ -165,6 +161,11 @@ namespace Content.Server.Abilities.Psionics
             RefreshPsionicModifiers(uid, comp);
         }
 
+        public void MindBreak(EntityUid uid)
+        {
+            RemoveAllPsionicPowers(uid, true);
+        }
+
         public void RemoveAllPsionicPowers(EntityUid uid, bool mindbreak = false)
         {
             if (!TryComp<PsionicComponent>(uid, out var psionic)
@@ -183,7 +184,7 @@ namespace Content.Server.Abilities.Psionics
 
                 // If we're mindbreaking, we can skip the casting stats since the PsionicComponent is getting 1984'd.
                 if (!mindbreak)
-                    RemovePsionicStatSources(power, psionic);
+                    RemovePsionicStatSources(uid, power, psionic);
             }
 
             if (mindbreak)
@@ -227,13 +228,15 @@ namespace Content.Server.Abilities.Psionics
         /// </summary>
         /// <param name="proto"></param>
         /// <param name="psionic"></param>
-        private void RemovePsionicStatSources(PsionicPowerPrototype proto, PsionicComponent psionic)
+        private void RemovePsionicStatSources(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic)
         {
             if (proto.AmplificationModifier != 0)
                 psionic.AmplificationSources.Remove(proto.Name);
 
             if (proto.DampeningModifier != 0)
                 psionic.DampeningSources.Remove(proto.Name);
+
+            RefreshPsionicModifiers(uid, psionic);
         }
     }
 }
