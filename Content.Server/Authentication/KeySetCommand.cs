@@ -18,7 +18,7 @@ using Content.Server.Administration.Notes;
 
 namespace Content.Server.Authentication;
 
-[AdminCommand(AdminFlags.Moderator)]
+[AdminCommand(AdminFlags.Server)]
 internal sealed class KeySetCommand : IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _players = default!;

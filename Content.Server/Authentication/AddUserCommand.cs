@@ -21,7 +21,7 @@ using System.Net;
 
 namespace Content.Server.Authentication;
 
-[AdminCommand(AdminFlags.Moderator)]
+[AdminCommand(AdminFlags.Server)]
 internal sealed class AddUserCommand : IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _players = default!;

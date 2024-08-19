@@ -14,7 +14,7 @@ using Content.Server.Administration.Notes;
 
 namespace Content.Server.Authentication;
 
-[AdminCommand(AdminFlags.Moderator)]
+[AdminCommand(AdminFlags.Server)]
 internal sealed class RenameUserCommand : IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _players = default!;

@@ -16,7 +16,7 @@ using System.Collections.Immutable;
 
 namespace Content.Server.Authentication;
 
-[AdminCommand(AdminFlags.Moderator)]
+[AdminCommand(AdminFlags.Server)]
 internal sealed class TouchUserCommand : IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _players = default!;

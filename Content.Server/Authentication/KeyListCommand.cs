@@ -17,7 +17,7 @@ using Content.Shared.Players.PlayTimeTracking;
 
 namespace Content.Server.Authentication;
 
-[AdminCommand(AdminFlags.Moderator)]
+[AdminCommand(AdminFlags.Server)]
 internal sealed class KeyListCommand : IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _players = default!;
