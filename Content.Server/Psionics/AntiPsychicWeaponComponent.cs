@@ -52,6 +52,6 @@ namespace Content.Server.Psionics
         public float PunishStunDuration = 5f;
 
         [DataField]
-        public string PsionicDisabledString = ""
+        public string PsionicDisabledString = "PsionicsDisabled";
     }
 }
