@@ -1,75 +1,63 @@
 ﻿# Hunger
 - type: moodEffect
   id: HungerOverfed
-  description: "I ate so much, I feel as though I'm about to burst!"
   moodChange: -10
   category: "Hunger"
 
 - type: moodEffect
   id: HungerOkay
-  description: "I am feeling full."
   moodChange: 7
   category: "Hunger"
 
 - type: moodEffect
   id: HungerPeckish
-  description: "I could go for a snack right about now."
   moodChange: -3
   category: "Hunger"
 
 - type: moodEffect
   id: HungerStarving
-  description: "I NEED FOOD!"
   moodChange: -7
   category: "Hunger"
 
 # Thirst
 - type: moodEffect
   id: ThirstOverHydrated
-  description: "I feel dizzy after drinking too much."
   moodChange: -3
   category: "Thirst"
 
 - type: moodEffect
   id: ThirstOkay
-  description: "I'm feeling refreshed."
   moodChange: 7
   category: "Thirst"
 
 - type: moodEffect
   id: ThirstThirsty
-  description: "My lips are a little dry."
   moodChange: -3
   category: "Thirst"
 
 - type: moodEffect
   id: ThirstParched
-  description: "I NEED WATER!"
   moodChange: -7
   category: "Thirst"
 
 # Health
 - type: moodEffect
   id: HealthNoDamage
-  description: "I'm in no pain."
   moodChange: 0
   hidden: true
   category: "Health"
 
 - type: moodEffect
   id: HealthLightDamage
-  description: "It's just a scratch, but it hurts nonetheless"
   moodChange: -3
   category: "Health"
 
 - type: moodEffect
   id: HealthSevereDamage
-  description: "The pain is almost unbearable!"
   moodChange: -7
   category: "Health"
 
 - type: moodEffect
   id: HealthHeavyDamage
-  description: "Agony gnaws at my soul!"
   moodChange: -20
   category: "Health"
