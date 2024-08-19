@@ -158,7 +158,7 @@ public sealed class MoodSystem : EntitySystem
 
         if (category == null)
         {
-            if (!comp.UncategorisedEffects.TryGetValue(prototypeId, out var value))
+            if (!comp.UncategorisedEffects.ContainsKey(prototypeId))
                 return;
             comp.UncategorisedEffects.Remove(prototypeId);
         }
@@ -166,7 +166,7 @@ public sealed class MoodSystem : EntitySystem
         {
             if (!comp.CategorisedEffects.TryGetValue(category, out var currentProtoId)
                 || currentProtoId != prototypeId
-                || !_prototypeManager.TryIndex<MoodEffectPrototype>(currentProtoId, out var currentProto))
+                || !_prototypeManager.HasIndex<MoodEffectPrototype>(currentProtoId))
                 return;
             comp.CategorisedEffects.Remove(category);
         }
@@ -228,7 +228,7 @@ public sealed class MoodSystem : EntitySystem
             return;
 
         var neutral = component.MoodThresholds[MoodThreshold.Neutral];
-        var ev = new OnSetMoodEvent(uid, amount);
+        var ev = new OnSetMoodEvent(uid, amount, false);
         RaiseLocalEvent(uid, ref ev);
 
         if (ev.Cancelled)

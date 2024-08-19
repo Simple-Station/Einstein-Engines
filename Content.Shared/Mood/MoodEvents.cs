@@ -48,66 +48,12 @@ public sealed class MoodRemoveEffectEvent : EntityEventArgs
 ///     EG: The end result after tallying up all Moodlets comes out to 70, but a trait multiplies it by 0.8 to make it 56.
 /// </summary>
 [ByRefEvent]
-public struct OnSetMoodEvent
-{
-    public float MoodChangedAmount;
-
-    public EntityUid Receiver;
-
-    public bool Cancelled;
-
-    /// <summary>
-    ///     This event is raised whenever an entity sets their mood, allowing other systems to modify the end result of mood math.
-    ///     EG: The end result after tallying up all Moodlets comes out to 70, but a trait multiplies it by 0.8 to make it 56.
-    /// </summary>
-    public OnSetMoodEvent(EntityUid receiver, float moodChangedAmount)
-    {
-        Receiver = receiver;
-        MoodChangedAmount = moodChangedAmount;
-    }
-}
+public record struct OnSetMoodEvent(EntityUid Receiver, float MoodChangedAmount, bool Cancelled);
 
 /// <summary>
 ///     This event is raised on an entity when it receives a mood effect, but before the effects are calculated.
 ///     Allows for other systems to pick and choose specific events to modify.
 /// </summary>
 [ByRefEvent]
-public struct OnMoodEffect
-{
-    /// <summary>
-    ///     The entity receiving a Mood Effect
-    /// </summary>
-    public EntityUid Receiver;
-
-    /// <summary>
-    ///     ID of the moodlet prototype to use
-    /// </summary>
-    public string EffectId;
-
-    /// <summary>
-    ///     How much should the mood change be multiplied by
-    ///     <br />
-    ///     This does nothing if the moodlet ID matches one with the same Category
-    /// </summary>
-    public float EffectModifier = 1;
-
-    /// <summary>
-    ///     How much should the mood change be offset by, after multiplication
-    ///     <br />
-    ///     This does nothing if the moodlet ID matches one with the same Category
-    /// </summary>
-    public float EffectOffset = 0;
-
-    /// <summary>
-    ///     This event is raised on an entity when it receives a mood effect, but before the effects are calculated.
-    ///     Allows for other systems to pick and choose specific events to modify.
-    /// </summary>
-    public OnMoodEffect(EntityUid receiver, string effectId, float effectModifier, float effectOffset)
-    {
-        Receiver = receiver;
-        EffectId = effectId;
-        EffectModifier = effectModifier;
-        EffectOffset = effectOffset;
-    }
-}
+public record struct OnMoodEffect(EntityUid Receiver, string EffectId, float EffectModifier = 1, float EffectOffset = 0);
 
