@@ -34,7 +34,7 @@ public sealed class LoadoutSystem : EntitySystem
             return;
 
         var proto = _prototype.Index<StartingGearPrototype>(_random.Pick(component.Prototypes));
-        _station.EquipStartingGear(uid, proto);
+        _station.EquipStartingGear(uid, proto, null);
     }
 
 
