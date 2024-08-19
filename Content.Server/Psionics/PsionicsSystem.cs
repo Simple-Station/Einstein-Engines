@@ -137,11 +137,11 @@ namespace Content.Server.Psionics
         public void RerollPsionics(EntityUid uid, PsionicComponent? psionic = null, float bonusMuliplier = 1f)
         {
             if (!Resolve(uid, ref psionic, false)
-                || psionic.Rerolled)
+                || psionic.CanReroll)
                 return;
 
             RollPsionics(uid, psionic, true, bonusMuliplier);
-            psionic.Rerolled = true;
+            psionic.CanReroll = true;
         }
     }
 }

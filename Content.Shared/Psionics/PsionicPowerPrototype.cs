@@ -2,7 +2,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Psionics;
 
-[Prototype("psionicPower")]
+[Prototype]
 public sealed partial class PsionicPowerPrototype : IPrototype
 {
     /// <summary>

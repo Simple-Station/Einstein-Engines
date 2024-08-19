@@ -36,9 +36,9 @@ internal sealed class NoosphericZapRule : StationEventSystem<NoosphericZapRuleCo
             _stunSystem.TryParalyze(psion, TimeSpan.FromSeconds(component.StunDuration), false);
             _statusEffectsSystem.TryAddStatusEffect(psion, "Stutter", TimeSpan.FromSeconds(component.StutterDuration), false, "StutteringAccent");
 
-            if (psionicComponent.Rerolled)
+            if (psionicComponent.CanReroll)
             {
-                psionicComponent.Rerolled = false;
+                psionicComponent.CanReroll = false;
                 _popupSystem.PopupEntity(Loc.GetString("noospheric-zap-seize-potential-regained"), psion, psion, Shared.Popups.PopupType.LargeCaution);
             }
             else

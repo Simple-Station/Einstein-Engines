@@ -102,7 +102,7 @@ namespace Content.Server.Abilities.Psionics
                 if (_actions.AddAction(uid, ref actionId, id))
                 {
                     _actions.StartUseDelay(actionId);
-                    psionic.Actions.Add((id, actionId));
+                    psionic.Actions.Add(id, actionId);
                 }
             }
         }
@@ -206,7 +206,7 @@ namespace Content.Server.Abilities.Psionics
         {
             if (psionic.Actions is not null)
                 foreach (var action in psionic.Actions)
-                    _actionsSystem.RemoveAction(uid, action.Entity);
+                    _actionsSystem.RemoveAction(uid, action.Value);
         }
 
         /// <summary>
