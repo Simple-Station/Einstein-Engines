@@ -24,6 +24,8 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly SharedPopupSystem _popups = default!;
         [Dependency] private readonly ISerializationManager _serialization = default!;
 
+        private const string GenericInitializationMessage = "generic-power-initialization-feedback";
+
         private ISawmill _sawmill = default!;
 
         public override void Initialize()
@@ -92,7 +94,7 @@ namespace Content.Server.Abilities.Psionics
             RefreshPsionicModifiers(uid, psionic);
 
             if (playPopup)
-                _popups.PopupEntity("generic-power-initialization-feedback", uid, uid, PopupType.MediumCaution);
+                _popups.PopupEntity(GenericInitializationMessage, uid, uid, PopupType.MediumCaution);
             // TODO: Replace this with chat message: _popups.PopupEntity(proto.InitializationFeedback, uid, uid, PopupType.MediumCaution);
         }
 

@@ -26,6 +26,9 @@ namespace Content.Server.Psionics
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
 
+        private const string BaselineAmplification = "Baseline Amplification";
+        private const string BaselineDampening = "Baseline Dampening";
+
         /// <summary>
         /// Unfortunately, since spawning as a normal role and anything else is so different,
         /// this is the only way to unify them, for now at least.
@@ -63,7 +66,7 @@ namespace Content.Server.Psionics
                     _audio.PlayPvs("/Audio/Effects/lightburn.ogg", entity);
                     args.ModifiersList.Add(component.Modifiers);
                     if (_random.Prob(component.DisableChance))
-                        _statusEffects.TryAddStatusEffect(entity, "PsionicsDisabled", TimeSpan.FromSeconds(component.DisableDuration), true, "PsionicsDisabled");
+                        _statusEffects.TryAddStatusEffect(entity, component.DisableStatus, TimeSpan.FromSeconds(component.DisableDuration), true, component.DisableStatus);
                 }
 
                 if (TryComp<MindSwappedComponent>(entity, out var swapped))
@@ -79,8 +82,8 @@ namespace Content.Server.Psionics
 
         private void OnInit(EntityUid uid, PsionicComponent component, ComponentStartup args)
         {
-            component.AmplificationSources.Add("Baseline Amplification", _random.NextFloat(component.BaselineAmplification.Item1, component.BaselineAmplification.Item2));
-            component.DampeningSources.Add("Baseline Dampening", _random.NextFloat(component.BaselineDampening.Item1, component.BaselineDampening.Item2));
+            component.AmplificationSources.Add(BaselineAmplification, _random.NextFloat(component.BaselineAmplification.Item1, component.BaselineAmplification.Item2));
+            component.DampeningSources.Add(BaselineDampening, _random.NextFloat(component.BaselineDampening.Item1, component.BaselineDampening.Item2));
 
             if (!component.Removable
                 || !TryComp<NpcFactionMemberComponent>(uid, out var factions)
@@ -127,7 +130,7 @@ namespace Content.Server.Psionics
             var ev = new OnRollPsionicsEvent(uid, baselineChance);
             RaiseLocalEvent(uid, ref ev);
 
-            if (_random.Prob(ev.BaselineChance))
+            if (_random.Prob(Math.Clamp(ev.BaselineChance, 0, 1)))
                 _psionicAbilitiesSystem.AddPsionics(uid);
         }
 
