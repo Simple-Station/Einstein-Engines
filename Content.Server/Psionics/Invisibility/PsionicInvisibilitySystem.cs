@@ -18,7 +18,7 @@ namespace Content.Server.Psionics
         {
             base.Initialize();
             /// Masking
-            SubscribeLocalEvent<ActorComponent, ComponentInit>(OnInit);
+            // SubscribeLocalEvent<ActorComponent, ComponentInit>(OnInit); // TODO: Fix this in the PsionicInvisibility PR
             SubscribeLocalEvent<PsionicInsulationComponent, ComponentInit>(OnInsulInit);
             SubscribeLocalEvent<PsionicInsulationComponent, ComponentShutdown>(OnInsulShutdown);
 
@@ -31,11 +31,11 @@ namespace Content.Server.Psionics
             SubscribeLocalEvent<PsionicallyInvisibleComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
         }
 
-        private void OnInit(EntityUid uid, ActorComponent component, ComponentInit args)
-        {
-            if (!HasComp<PsionicInsulationComponent>(uid))
-                SetCanSeePsionicInvisiblity(uid, false);
-        }
+        //private void OnInit(EntityUid uid, ActorComponent component, ComponentInit args)
+        //{
+        //   if (!HasComp<PsionicInsulationComponent>(uid))
+        //        SetCanSeePsionicInvisiblity(uid, false);
+        //}
 
         private void OnInsulInit(EntityUid uid, PsionicInsulationComponent component, ComponentInit args)
         {
@@ -76,7 +76,7 @@ namespace Content.Server.Psionics
 
         private void OnInvisInit(EntityUid uid, PsionicallyInvisibleComponent component, ComponentStartup args)
         {
-            var visibility = EntityManager.EnsureComponent<VisibilityComponent>(uid);
+            EnsureComp<VisibilityComponent>(uid, out var visibility);
 
             _visibilitySystem.AddLayer(uid, visibility, (int) VisibilityFlags.PsionicInvisibility, false);
             _visibilitySystem.RemoveLayer(uid, visibility, (int) VisibilityFlags.Normal, false);

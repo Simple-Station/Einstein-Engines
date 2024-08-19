@@ -1,3 +1,5 @@
+using Content.Shared.Psionics;
+
 namespace Content.Server.Abilities.Psionics
 {
     [RegisterComponent]
@@ -7,6 +9,6 @@ namespace Content.Server.Abilities.Psionics
         ///     The list of all powers to be added on Startup
         /// </summary>
         [DataField]
-        public List<string> PowersToAdd = new();
+        public List<PsionicPowerPrototype> PowersToAdd = new();
     }
 }

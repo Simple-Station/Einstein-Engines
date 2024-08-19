@@ -25,13 +25,13 @@ internal sealed class NoosphericStormRule : StationEventSystem<NoosphericStormRu
         List<EntityUid> validList = new();
 
         var query = EntityManager.EntityQueryEnumerator<PsionicComponent>();
-        while (query.MoveNext(out var Psionic, out var PsionicComponent))
+        while (query.MoveNext(out var psionic, out var _))
         {
-            if (_mobStateSystem.IsDead(Psionic)
-                || HasComp<PsionicInsulationComponent>(Psionic))
+            if (_mobStateSystem.IsDead(psionic)
+                || HasComp<PsionicInsulationComponent>(psionic))
                 continue;
 
-            validList.Add(Psionic);
+            validList.Add(psionic);
         }
 
         // Give some targets psionic abilities.
@@ -44,7 +44,7 @@ internal sealed class NoosphericStormRule : StationEventSystem<NoosphericStormRu
             if (toAwaken-- == 0)
                 break;
 
-            _psionicAbilitiesSystem.AddPsionics(target);
+            _psionicAbilitiesSystem.AddRandomPsionicPower(target);
         }
 
         // Increase glimmer.
