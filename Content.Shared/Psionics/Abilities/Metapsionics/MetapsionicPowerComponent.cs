@@ -4,6 +4,6 @@ namespace Content.Shared.Abilities.Psionics
     public sealed partial class MetapsionicPowerComponent : Component
     {
         [DataField]
-        public float Range = 5f;
+        public readonly float Range = 5f;
     }
 }
