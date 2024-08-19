@@ -42,8 +42,6 @@ internal sealed class NoosphericStormRule : StationEventSystem<NoosphericStormRu
         foreach (var target in validList)
         {
             EnsureComp<PsionicComponent>(uid, out var psionic);
-            psionic.Owner = target;
-
             if (toAwaken-- == 0)
                 break;
 
