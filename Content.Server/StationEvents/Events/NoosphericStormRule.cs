@@ -41,11 +41,10 @@ internal sealed class NoosphericStormRule : StationEventSystem<NoosphericStormRu
 
         foreach (var target in validList)
         {
-            EnsureComp<PsionicComponent>(uid, out var psionic);
             if (toAwaken-- == 0)
                 break;
 
-            _psionicAbilitiesSystem.AddRandomPsionicPower(target, psionic);
+            _psionicAbilitiesSystem.AddRandomPsionicPower(target);
         }
 
         // Increase glimmer.
