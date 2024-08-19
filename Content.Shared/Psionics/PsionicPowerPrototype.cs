@@ -33,7 +33,7 @@ public sealed partial class PsionicPowerPrototype : IPrototype
     ///     The list of what Components this power adds.
     /// </summary>
     [DataField]
-    public ComponentRegistry Components = new();
+    public readonly List<string>? Components = new();
 
     /// <summary>
     ///     What message will play as a popup when the power is initialized.
