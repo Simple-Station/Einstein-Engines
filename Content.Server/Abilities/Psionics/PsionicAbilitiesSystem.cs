@@ -98,7 +98,7 @@ namespace Content.Server.Abilities.Psionics
             if (mindbreak)
             {
                 EnsureComp<MindbrokenComponent>(uid);
-                _statusEffectsSystem.TryAddStatusEffect(uid, psionicComp.MindbreakingStatusEffect, TimeSpan.FromMinutes(5 * psionicComp.CurrentAmplification * psionicComp.CurrentDampening), false, psionicComp.MindbreakingStatusAccent);
+                _statusEffectsSystem.TryAddStatusEffect(uid, psionicComp.MindbreakingStatusEffect, TimeSpan.FromMinutes(psionicComp.MindbreakingStutterTime * psionicComp.CurrentAmplification * psionicComp.CurrentDampening), false, psionicComp.MindbreakingStatusAccent);
                 RemComp<PsionicComponent>(uid);
                 return;
             }
