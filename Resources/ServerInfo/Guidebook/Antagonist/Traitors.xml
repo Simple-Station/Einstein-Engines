@@ -60,6 +60,10 @@
   <Box>
     <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption="Advanced Magboots"/>
   </Box>
+  - Stealing the [color=#cb0000]Head of Security[/color]'s [bold]energy shotgun[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="WeaponEnergyShotgun" Caption=""/>
+  </Box>
   - Steal the [color=#a4885c]Nuke Disk[/color].
   <Box>
     <GuideEntityEmbed Entity="NukeDisk" Caption="Nuke Disk"/>

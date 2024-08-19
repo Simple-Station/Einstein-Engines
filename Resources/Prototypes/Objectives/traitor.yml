@@ -227,16 +227,15 @@
 - type: entity
   categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
-  id: SecretDocumentsStealObjective
+  id: EnergyShotgunStealObjective
   components:
   - type: Objective
-    # hos has a gun ce does not, higher difficulty than most
+    # HoS will have this on them a lot of the time so..
     difficulty: 3
   - type: NotJobRequirement
     job: HeadOfSecurity
   - type: StealCondition
-    stealGroup: BookSecretDocuments
-    verifyMapExistence: true
+    stealGroup: WeaponEnergyShotgun
     owner: job-name-hos
 
 ## ce
