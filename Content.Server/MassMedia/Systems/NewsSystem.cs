@@ -141,9 +141,6 @@ public sealed class NewsSystem : SharedNewsSystem
         if (msg.Session.AttachedEntity is not { } author)
             return;
 
-        if (!_accessReader.FindStationRecordKeys(author, out _))
-            return;
-
         string? authorName = null;
         if (_idCardSystem.TryFindIdCard(author, out var idCard))
             authorName = idCard.Comp.FullName;

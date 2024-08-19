@@ -90,7 +90,8 @@
     - !type:DepartmentTimeRequirement # DeltaV - Security dept time requirement
       department: Security
       time: 36000 # DeltaV - 10 hours
-  - type: GhostRoleAntagSpawner
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanLoneNuclearOperative
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
