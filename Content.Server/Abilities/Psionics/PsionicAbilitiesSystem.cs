@@ -75,7 +75,8 @@ namespace Content.Server.Abilities.Psionics
         /// <param name="mindbreak"></param>
         public void RemoveAllPsionicPowers(EntityUid uid, bool mindbreak = false)
         {
-            if (!TryComp<PsionicComponent>(uid, out var psionicComp)
+            if (!EntityManager.EntityExists(uid)
+                || !TryComp<PsionicComponent>(uid, out var psionicComp)
                 || !psionicComp.Removable)
                 return;
 
@@ -137,7 +138,8 @@ namespace Content.Server.Abilities.Psionics
         /// <param name="playPopup"></param>
         public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic, bool playPopup = true)
         {
-            if (!_prototypeManager.HasIndex<PsionicPowerPrototype>(proto.ID))
+            if (!EntityManager.EntityExists(uid)
+                || !_prototypeManager.HasIndex<PsionicPowerPrototype>(proto.ID))
                 return;
 
             psionic.ActivePowers.Add(proto);
@@ -154,6 +156,9 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPsionicShutdown(EntityUid uid, PsionicComponent component, ComponentShutdown args)
         {
+            if (!EntityManager.EntityExists(uid))
+                return;
+
             RemovePsionicActions(uid, component);
 
             var newPsionic = _serialization.CreateCopy(component, null, false, true);
@@ -180,6 +185,9 @@ namespace Content.Server.Abilities.Psionics
         {
             foreach (var id in proto.Actions)
             {
+                if (psionic.Actions.Keys.Contains(id))
+                    continue;
+
                 EntityUid? actionId = null;
                 if (_actions.AddAction(uid, ref actionId, id))
                 {
@@ -193,7 +201,13 @@ namespace Content.Server.Abilities.Psionics
         {
             if (proto.Components is not null)
                 foreach (var comp in proto.Components)
-                    AddComp(uid, (Component) _componentFactory.GetComponent(comp));
+                {
+                    var powerComp = (Component) _componentFactory.GetComponent(comp);
+                    if (EntityManager.HasComponent(uid, powerComp.GetType()))
+                        continue;
+
+                    AddComp(uid, powerComp);
+                }
         }
 
         private void AddPsionicStatSources(PsionicPowerPrototype proto, PsionicComponent psionic)
@@ -227,7 +241,15 @@ namespace Content.Server.Abilities.Psionics
                 return;
 
             foreach (var name in proto.Components)
-                EntityManager.RemoveComponent(uid, (Component) _componentFactory.GetComponent(name));
+            {
+                var powerComp = (Component) _componentFactory.GetComponent(name);
+
+                if (EntityManager.HasComponent(uid, powerComp.GetType()))
+                    continue;
+
+                EntityManager.RemoveComponent(uid, powerComp);
+            }
+
         }
 
         /// <summary>
