@@ -133,11 +133,11 @@ public sealed class NewsSystem : SharedNewsSystem
         if (!ent.Comp.PublishEnabled)
             return;
 
-        ent.Comp.PublishEnabled = false;
-        ent.Comp.NextPublish = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.PublishCooldown);
-
         if (!TryGetArticles(ent, out var articles))
             return;
+
+        ent.Comp.PublishEnabled = false;
+        ent.Comp.NextPublish = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.PublishCooldown);
 
         var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(ent, msg.Actor);
         RaiseLocalEvent(tryGetIdentityShortInfoEvent);
