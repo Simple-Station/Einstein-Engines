@@ -179,7 +179,7 @@ namespace Content.Server.Abilities.Psionics
             EnsureComp<PsionicComponent>(uid, out var psionic);
 
             foreach (var proto in comp.PowersToAdd)
-                InitializePsionicPower(uid, proto, psionic, false);
+                InitializePsionicPower(uid, _prototypeManager.Index(proto), psionic, false);
         }
 
         private void AddPsionicActions(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic)
