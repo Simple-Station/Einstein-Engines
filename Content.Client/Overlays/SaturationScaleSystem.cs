@@ -20,11 +20,11 @@ public sealed class SaturationScaleSystem : EntitySystem
 
         _overlay = new();
 
-        SubscribeLocalEvent<SaturationScaleComponent, ComponentInit>(OnInit);
-        SubscribeLocalEvent<SaturationScaleComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<SaturationScaleOverlayComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<SaturationScaleOverlayComponent, ComponentShutdown>(OnShutdown);
 
-        SubscribeLocalEvent<SaturationScaleComponent, PlayerAttachedEvent>(OnPlayerAttached);
-        SubscribeLocalEvent<SaturationScaleComponent, PlayerDetachedEvent>(OnPlayerDetached);
+        SubscribeLocalEvent<SaturationScaleOverlayComponent, PlayerAttachedEvent>(OnPlayerAttached);
+        SubscribeLocalEvent<SaturationScaleOverlayComponent, PlayerDetachedEvent>(OnPlayerDetached);
 
         SubscribeNetworkEvent<RoundRestartCleanupEvent>(RoundRestartCleanup);
     }

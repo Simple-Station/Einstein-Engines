@@ -298,9 +298,9 @@ public sealed class MoodSystem : EntitySystem
     private void RefreshShaders(EntityUid uid, int modifier)
     {
         if (modifier == -1)
-            EnsureComp<SaturationScaleComponent>(uid);
+            EnsureComp<SaturationScaleOverlayComponent>(uid);
         else
-            RemComp<SaturationScaleComponent>(uid);
+            RemComp<SaturationScaleOverlayComponent>(uid);
     }
 
     private void SetCritThreshold(EntityUid uid, MoodComponent component, int modifier)
