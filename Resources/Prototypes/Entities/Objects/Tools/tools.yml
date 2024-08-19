@@ -518,7 +518,7 @@
       Plastic: 100
       Circuitry: 50
   - type: StaticPrice
-    price: 100
+    price: 110
   - type: UserInterface
     interfaces:
       enum.RcdUiKey.Key:
