@@ -62,11 +62,20 @@ namespace Content.Server.Abilities.Psionics
             Dirty(uid, comp);
         }
 
+        /// <summary>
+        ///     This function can be called on an Entity to completely remove all Psionic abilities, components, and the entire PsionicComponent
+        /// </summary>
+        /// <param name="uid"></param>
         public void MindBreak(EntityUid uid)
         {
             RemoveAllPsionicPowers(uid, true);
         }
 
+        /// <summary>
+        ///     This function completely removes all Psionic abilities and components from a given Entity
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="mindbreak"></param>
         public void RemoveAllPsionicPowers(EntityUid uid, bool mindbreak = false)
         {
             if (!TryComp<PsionicComponent>(uid, out var psionicComp)
@@ -98,6 +107,12 @@ namespace Content.Server.Abilities.Psionics
             RefreshPsionicModifiers(uid, psionicComp);
         }
 
+        /// <summary>
+        ///     Generate a random power from the global list of all psionic powers, not including any powers already present on an Entity,
+        ///     then initialize said power on the entity
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="psionic"></param>
         public void AddRandomPsionicPower(EntityUid uid, PsionicComponent? psionic = null)
         {
             if (!Resolve(uid, ref psionic))
@@ -120,6 +135,12 @@ namespace Content.Server.Abilities.Psionics
             _glimmerSystem.Glimmer += _random.Next(1, (int) Math.Round(1 + psionic.CurrentAmplification + psionic.CurrentDampening));
         }
 
+        /// <summary>
+        ///     This function fully initalizes a specific psionic power, based on a given prototype
+        /// <param name="uid"></param>
+        /// <param name="proto"></param>
+        /// <param name="psionic"></param>
+        /// <param name="playPopup"></param>
         public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent? psionic, bool playPopup = true)
         {
             if (!Resolve(uid, ref psionic)
