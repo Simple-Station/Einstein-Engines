@@ -40,7 +40,7 @@ public sealed class MutationSystem : EntitySystem
         }
 
         // Add up everything in the bits column and put the number here.
-        const int totalbits = 275;
+        const int totalbits = 285;
 
         // Tolerances (55)
         MutateFloat(ref seed.NutrientConsumption  , 0.05f, 1.2f, 5, totalbits, severity);
@@ -66,11 +66,12 @@ public sealed class MutationSystem : EntitySystem
         // Kill the plant (30)
         MutateBool(ref seed.Viable        , false, 30, totalbits, severity);
 
-        // Fun (90)
+        // Fun (100)
         MutateBool(ref seed.Seedless      , true , 10, totalbits, severity);
         MutateBool(ref seed.Slip          , true , 10, totalbits, severity);
         MutateBool(ref seed.Sentient      , true , 10, totalbits, severity);
         MutateBool(ref seed.Ligneous      , true , 10, totalbits, severity);
+        MutateBool(ref seed.Teleporting   , true , 10, totalbits, severity);
         MutateBool(ref seed.Bioluminescent, true , 10, totalbits, severity);
         MutateBool(ref seed.TurnIntoKudzu , true , 10, totalbits, severity);
         MutateBool(ref seed.CanScream     , true , 10, totalbits, severity);
@@ -120,6 +121,7 @@ public sealed class MutationSystem : EntitySystem
         CrossBool(ref result.Slip, a.Slip);
         CrossBool(ref result.Sentient, a.Sentient);
         CrossBool(ref result.Ligneous, a.Ligneous);
+        CrossBool(ref result.Teleporting, a.Teleporting);
         CrossBool(ref result.Bioluminescent, a.Bioluminescent);
         CrossBool(ref result.TurnIntoKudzu, a.TurnIntoKudzu);
         CrossBool(ref result.CanScream, a.CanScream);

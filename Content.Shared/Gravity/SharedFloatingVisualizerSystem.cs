@@ -1,5 +1,6 @@
 using System.Numerics;
 using Robust.Shared.Map;
+using Content.Shared.DeltaV.Harpy;
 
 namespace Content.Shared.Gravity;
 
@@ -16,8 +17,8 @@ public abstract class SharedFloatingVisualizerSystem : EntitySystem
 
         SubscribeLocalEvent<FloatingVisualsComponent, ComponentStartup>(OnComponentStartup);
         SubscribeLocalEvent<GravityChangedEvent>(OnGravityChanged);
-        SubscribeLocalEvent<FlightEvent>(OnFlight);
         SubscribeLocalEvent<FloatingVisualsComponent, EntParentChangedMessage>(OnEntParentChanged);
+        SubscribeNetworkEvent<FlightEvent>(OnFlight);
     }
 
     /// <summary>
@@ -63,14 +64,19 @@ public abstract class SharedFloatingVisualizerSystem : EntitySystem
         }
     }
 
-    private void OnFlight(ref FlightEvent args)
+    private void OnFlight(FlightEvent args)
     {
-            floating.CanFloat = !args.HasGravity;
-            Dirty(uid, floating);
+        var uid = GetEntity(args.Uid);
+        if (!TryComp<FloatingVisualsComponent>(uid, out var floating))
+            return;
+        floating.CanFloat = args.IsFlying;
+        Dirty(uid, floating);
 
-            if (!args.HasGravity)
-                FloatAnimation(uid, floating.Offset, floating.AnimationKey, floating.AnimationTime);
-    } 
+        if (args.IsFlying)
+        {
+            FloatAnimation(uid, floating.Offset, floating.AnimationKey, floating.AnimationTime);
+        }
+    }
 
     private void OnEntParentChanged(EntityUid uid, FloatingVisualsComponent component, ref EntParentChangedMessage args)
     {

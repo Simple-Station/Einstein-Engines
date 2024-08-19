@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -17,5 +18,18 @@ namespace Content.Shared.DeltaV.Harpy
 
         [ViewVariables(VVAccess.ReadWrite), DataField("on"), AutoNetworkedField]
         public bool On;
+
+        [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+        public float StaminaDrainRate = 3f;
+
+        [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+        public float ActivationDelay = 1.0f;
+
+        [DataField("flapSound")]
+        public SoundSpecifier FlapSound = new SoundCollectionSpecifier("WingFlaps");
+
+        [DataField("flapInterval")]
+        public float FlapInterval = 1.25f;
+        public float TimeUntilFlap;
     }
 }

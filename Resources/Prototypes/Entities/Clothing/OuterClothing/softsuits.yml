@@ -2,7 +2,7 @@
 - type: entity
   parent: ClothingOuterEVASuitBase
   id: ClothingOuterHardsuitEVA
-  name: Vacsuit
+  name: vacsuit
   description: A lightweight vacsuit with the basic ability to protect the wearer from the vacuum of space during emergencies.
   components:
   - type: Sprite

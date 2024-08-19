@@ -9,6 +9,18 @@
   - type: Storage
     grid:
     - 0,0,5,3
+  - type: MeleeWeapon
+    bluntStaminaDamageFactor: 3.0
+    attackRate: 0.9
+    range: 1.75
+    damage:
+      types:
+        Blunt: 3.5
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 0.8
+    heavyDamageBaseModifier: 2
+    heavyStaminaCost: 5
+    maxTargets: 8
   - type: Tag
     tags:
     - Briefcase

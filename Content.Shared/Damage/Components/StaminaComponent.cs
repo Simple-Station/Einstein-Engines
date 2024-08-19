@@ -40,6 +40,13 @@ public sealed partial class StaminaComponent : Component
     public float CritThreshold = 100f;
 
     /// <summary>
+    /// A dictionary of active stamina drains, with the key being the source of the drain
+    /// and the value being the drain rate per second.
+    /// </summary>
+    [DataField("activeDrains"), AutoNetworkedField]
+    public Dictionary<EntityUid, float> ActiveDrains = new();
+
+    /// <summary>
     /// How long will this mob be stunned for?
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField]

@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
@@ -32,7 +33,8 @@ public sealed class LoadoutPreferenceSelector : Control
 
     public LoadoutPreferenceSelector(LoadoutPrototype loadout, JobPrototype highJob,
         HumanoidCharacterProfile profile, string style, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, CharacterRequirementsSystem characterRequirementsSystem)
+        IConfigurationManager configManager, CharacterRequirementsSystem characterRequirementsSystem,
+        JobRequirementsManager jobRequirementsManager)
     {
         Loadout = loadout;
 
@@ -94,8 +96,9 @@ public sealed class LoadoutPreferenceSelector : Control
 
 
         // Get requirement reasons
-        characterRequirementsSystem.CheckRequirementsValid(loadout, loadout.Requirements, highJob, profile,
-            new Dictionary<string, TimeSpan>(),
+        characterRequirementsSystem.CheckRequirementsValid(
+            loadout.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
+            jobRequirementsManager.IsWhitelisted(),
             entityManager, prototypeManager, configManager,
             out var reasons);
 

@@ -54,7 +54,14 @@
   items:
     - ClothingOuterVestValet
 
-## Letterman Jackets
+- type: loadout
+  id: LoadoutOuterVest
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterVest
+
+# Letterman Jackets
 - type: loadout
   id: LoadoutOuterCoatLettermanBlue
   category: Outer
@@ -69,7 +76,7 @@
   items:
     - ClothingOuterCoatLettermanRed
 
-## MNK
+# MNK
 - type: loadout
   id: LoadoutOuterCoatMNKWhiteHoodie
   category: Outer
@@ -91,7 +98,7 @@
   items:
     - ClothingOuterCoatMNKBlackJacket
 
-## Contractor Jackets
+# Contractor Jackets
 - type: loadout
   id: LoadoutOuterCorporateJacket
   category: Outer
@@ -168,3 +175,67 @@
   cost: 2
   items:
     - ClothingOuterZhCorporateJacket
+
+- type: loadout
+  id: LoadoutOuterDenimJacket
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterDenimJacket
+
+# Flannel
+- type: loadout
+  id: LoadoutOuterFlannelRed
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterFlannelRed
+
+- type: loadout
+  id: LoadoutOuterFlannelGreen
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterFlannelGreen
+
+- type: loadout
+  id: LoadoutOuterFlannelBlue
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterFlannelBlue
+
+- type: loadout
+  id: LoadoutOuterCoatTrench
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatTrench
+
+- type: loadout
+  id: LoadoutOuterCoatJensen
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatJensen
+
+- type: loadout
+  id: LoadoutOuterCoatGentle
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatGentle
+
+- type: loadout
+  id: LoadoutOuterCoatInspector
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatInspector
+
+- type: loadout
+  id: LoadoutOuterCoatOvercoat
+  category: Outer
+  cost: 4
+  items:
+    - ClothingOuterCoatOvercoat

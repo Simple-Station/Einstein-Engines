@@ -1,0 +1,6 @@
+- type: soundCollection
+  id: WingFlaps
+  files:
+    - /Audio/DeltaV/Effects/Flight/wingflap1.ogg
+    - /Audio/DeltaV/Effects/Flight/wingflap2.ogg
+    - /Audio/DeltaV/Effects/Flight/wingflap3.ogg

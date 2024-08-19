@@ -1,23 +1,31 @@
 
 using Content.Shared.Actions;
-using Content.Shared.Movement.Components;
-using Content.Shared.Gravity;
-
+using Content.Shared.DoAfter;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Interaction.Components;
+using Content.Shared.Inventory.VirtualItem;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.DeltaV.Harpy
 {
-    public class SharedFlightSystem : EntitySystem
+    public abstract class SharedFlightSystem : EntitySystem
     {
         [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+        [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
+        [Dependency] private readonly StaminaSystem _staminaSystem = default!;
+        [Dependency] private readonly SharedHandsSystem _hands = default!;
         public override void Initialize()
         {
             base.Initialize();
 
             SubscribeLocalEvent<FlightComponent, ComponentStartup>(OnStartup);
             SubscribeLocalEvent<FlightComponent, ComponentShutdown>(OnShutdown);
-            //SubscribeLocalEvent<FlightComponent, ToggleFlightEvent>(OnToggleFlight);
+            // Move out to client: SubscribeLocalEvent<FlightComponent, AnimationCompletedEvent>(OnAnimationCompleted);
         }
 
+        #region Core Functions
         private void OnStartup(EntityUid uid, FlightComponent component, ComponentStartup args)
         {
             _actionsSystem.AddAction(uid, ref component.ToggleActionEntity, component.ToggleAction);
@@ -28,11 +36,118 @@ namespace Content.Shared.DeltaV.Harpy
             _actionsSystem.RemoveAction(uid, component.ToggleActionEntity);
         }
 
-        public void ToggleActive(bool active, FlightComponent component)
+        public void ToggleActive(EntityUid uid, bool active, FlightComponent component)
         {
             component.On = active;
+            component.TimeUntilFlap = 0f;
             _actionsSystem.SetToggled(component.ToggleActionEntity, component.On);
+            // Triggers the flight animation
+            RaiseNetworkEvent(new FlightEvent(GetNetEntity(uid), component.On));
+            _staminaSystem.ToggleStaminaDrain(uid, component.StaminaDrainRate, active);
+            UpdateHands(uid, active);
+            Dirty(uid, component);
         }
+
+        private void UpdateHands(EntityUid uid, bool flying)
+        {
+            if (!TryComp<HandsComponent>(uid, out var handsComponent))
+                return;
+
+            if (flying)
+                BlockHands(uid, handsComponent);
+            else
+                FreeHands(uid);
+        }
+
+        private void BlockHands(EntityUid uid, HandsComponent handsComponent)
+        {
+            var freeHands = 0;
+            foreach (var hand in _hands.EnumerateHands(uid, handsComponent))
+            {
+                if (hand.HeldEntity == null)
+                {
+                    freeHands++;
+                    continue;
+                }
+
+                // Is this entity removable? (they might have handcuffs on)
+                if (HasComp<UnremoveableComponent>(hand.HeldEntity) && hand.HeldEntity != uid)
+                    continue;
+
+                _hands.DoDrop(uid, hand, true, handsComponent);
+                freeHands++;
+                if (freeHands == 2)
+                    break;
+            }
+            if (_virtualItem.TrySpawnVirtualItemInHand(uid, uid, out var virtItem1))
+                EnsureComp<UnremoveableComponent>(virtItem1.Value);
+
+            if (_virtualItem.TrySpawnVirtualItemInHand(uid, uid, out var virtItem2))
+                EnsureComp<UnremoveableComponent>(virtItem2.Value);
+        }
+
+        private void FreeHands(EntityUid uid)
+        {
+            _virtualItem.DeleteInHandsMatching(uid, uid);
+        }
+        #endregion
+
+        #region Visualizer Stuff
+        /*
+                public override void FloatAnimation(EntityUid uid, Vector2 offset, string animationKey, float animationTime, bool stop = false)
+                {
+                    if (stop)
+                    {
+                        AnimationSystem.Stop(uid, animationKey);
+                        return;
+                    }
+
+                    var animation = new Animation
+                    {
+                        // We multiply by the number of extra keyframes to make time for them
+                        Length = TimeSpan.FromSeconds(animationTime * 2),
+                        AnimationTracks =
+                            {
+                                new AnimationTrackComponentProperty
+                                {
+                                    ComponentType = typeof(SpriteComponent),
+                                    Property = nameof(SpriteComponent.Offset),
+                                    InterpolationMode = AnimationInterpolationMode.Linear,
+                                    KeyFrames =
+                                    {
+                                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f),
+                                        new AnimationTrackProperty.KeyFrame(offset, animationTime),
+                                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, animationTime),
+                                    }
+                                }
+                            }
+                    };
+
+                    if (!AnimationSystem.HasRunningAnimation(uid, animationKey))
+                        AnimationSystem.Play(uid, animation, animationKey);
+                }
+
+                private void OnAnimationCompleted(EntityUid uid, FlightComponent component, AnimationCompletedEvent args)
+                {
+                    if (args.Key != component.AnimationKey)
+                        return;
+
+                    FloatAnimation(uid, component.Offset, component.AnimationKey, component.AnimationTime, !component.CanFloat);
+                }
+        */
+        #endregion
+
+        #region Events
+
+        #endregion
     }
-    public sealed partial class ToggleFlightEvent : InstantActionEvent {}
+    public sealed partial class ToggleFlightEvent : InstantActionEvent
+    {
+    }
+
+    [Serializable, NetSerializable]
+    public sealed partial class FlightDoAfterEvent : SimpleDoAfterEvent
+    {
+    }
 }
+
