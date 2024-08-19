@@ -55,7 +55,7 @@
     materialComposition:
       Steel: 185
   - type: StaticPrice
-    price: 20
+    price: 30
 
 - type: entity
   abstract: true

@@ -97,7 +97,7 @@
     stateDoorOpen: generic_open
     stateDoorClosed: generic_door
   - type: StaticPrice
-    price: 50
+    price: 75
   - type: DamageOtherOnHit
     damage:
       types:
@@ -136,7 +136,7 @@
   - type: WallMount
     arc: 175
   - type: StaticPrice
-    price: 50
+    price: 75
   - type: Transform
     noRot: false
   - type: Sprite
