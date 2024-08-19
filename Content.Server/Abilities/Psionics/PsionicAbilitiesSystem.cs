@@ -134,7 +134,7 @@ namespace Content.Server.Abilities.Psionics
             RefreshPsionicModifiers(uid, psionic);
 
             if (playPopup)
-                _popups.PopupEntity(Loc.GetString("generic-power-initialization-feedback"), uid, uid, PopupType.MediumCaution);
+                _popups.PopupEntity("generic-power-initialization-feedback", uid, uid, PopupType.MediumCaution);
             // TODO: Replace this with chat message: _popups.PopupEntity(proto.InitializationFeedback, uid, uid, PopupType.MediumCaution);
         }
 
@@ -178,7 +178,9 @@ namespace Content.Server.Abilities.Psionics
         {
             if (proto.Components is not null)
                 foreach (var comp in proto.Components)
-                    AddComp(uid, (Component) _componentFactory.GetComponent(comp));
+                    if (!EntityManager.TryGetComponent(uid, _componentFactory.GetComponent(comp.Key).GetType(), out var powerComp)
+                        && powerComp is not null)
+                        AddComp(uid, powerComp);
         }
 
         private void AddPsionicStatSources(PsionicPowerPrototype proto, PsionicComponent psionic)
@@ -208,10 +210,7 @@ namespace Content.Server.Abilities.Psionics
         /// <param name="proto"></param>
         private void RemovePsionicPowerComponents(EntityUid uid, PsionicPowerPrototype proto)
         {
-            if (proto.Components is null)
-                return;
-
-            foreach (var name in proto.Components)
+            foreach (var (name, _) in proto.Components)
                 EntityManager.RemoveComponent(uid, (Component) _componentFactory.GetComponent(name));
         }
 

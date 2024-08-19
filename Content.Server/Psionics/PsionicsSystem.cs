@@ -129,7 +129,7 @@ namespace Content.Server.Psionics
             var ev = new OnRollPsionicsEvent(uid, baselineChance);
             RaiseLocalEvent(uid, ref ev);
 
-            if (_random.Prob(Math.Clamp(ev.BaselineChance, 0, 1)))
+            if (_random.Prob(ev.BaselineChance))
                 _psionicAbilitiesSystem.AddRandomPsionicPower(uid);
         }
 
