@@ -15,7 +15,7 @@ public sealed class MoodEffectPrototype : IPrototype
     /// <summary>
     ///     If they already have an effect with the same category, the new one will replace the old one.
     /// </summary>
-    [DataField]
+    [DataField, ValidatePrototypeId<MoodCategoryPrototype>]
     public string? Category;
     /// <summary>
     ///     How much should this moodlet modify an entity's Mood.

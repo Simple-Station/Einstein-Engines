@@ -22,8 +22,6 @@ using Robust.Shared.Timing;
 using System.Linq;
 using System.Text;
 using Content.Shared.Mood;
-using Content.Server.GameTicking.Components;
-using Content.Server.Traitor.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
