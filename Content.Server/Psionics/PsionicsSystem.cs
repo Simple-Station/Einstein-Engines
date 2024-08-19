@@ -110,7 +110,7 @@ namespace Content.Server.Psionics
         public void RollPsionics(EntityUid uid, PsionicComponent component, bool applyGlimmer = true, float rollEventMultiplier = 1f)
         {
             if (!_cfg.GetCVar(CCVars.PsionicRollsEnabled)
-                || component.Removable)
+                || !component.Removable)
                 return;
 
             // Calculate the initial odds based on the innate potential
@@ -139,7 +139,7 @@ namespace Content.Server.Psionics
         {
             if (!Resolve(uid, ref psionic, false)
                 || psionic.CanReroll
-                || psionic.Removable)
+                || !psionic.Removable)
                 return;
 
             RollPsionics(uid, psionic, true, bonusMuliplier);
