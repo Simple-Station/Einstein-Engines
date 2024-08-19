@@ -46,7 +46,10 @@ namespace Content.Shared.Nutrition.EntitySystems
                 _appearance.SetData(uid, CreamPiedVisuals.Creamed, value, appearance);
             }
 
-            RaiseLocalEvent(uid, new MoodEffectEvent("Creampied"));
+            if (value)
+                RaiseLocalEvent(uid, new MoodEffectEvent("Creampied"));
+            else
+                RaiseLocalEvent(uid, new MoodRemoveEffectEvent("Creampied"));
         }
 
         private void OnCreamPieLand(EntityUid uid, CreamPieComponent component, ref LandEvent args)
