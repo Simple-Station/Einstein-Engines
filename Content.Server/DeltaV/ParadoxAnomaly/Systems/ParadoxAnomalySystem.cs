@@ -17,7 +17,6 @@ using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Serialization.Manager;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Server.DeltaV.ParadoxAnomaly.Systems;
@@ -40,7 +39,6 @@ public sealed class ParadoxAnomalySystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly TerminatorSystem _terminator = default!;
-    [Dependency] private readonly ISerializationManager _serialization = default!;
 
     public override void Initialize()
     {

@@ -1,18 +1,16 @@
 using Content.Server.Psionics;
 
-namespace Content.Server.Revolutionary.Components
+namespace Content.Server.Revolutionary.Components;
+public sealed partial class CommandStaffSystem : EntitySystem
 {
-    public sealed partial class CommandStaffSystem : EntitySystem
+    public override void Initialize()
     {
-        public override void Initialize()
-        {
-            base.Initialize();
-            SubscribeLocalEvent<CommandStaffComponent, OnRollPsionicsEvent>(OnRollPsionics);
-        }
+        base.Initialize();
+        SubscribeLocalEvent<CommandStaffComponent, OnRollPsionicsEvent>(OnRollPsionics);
+    }
 
-        private void OnRollPsionics(EntityUid uid, CommandStaffComponent component, ref OnRollPsionicsEvent args)
-        {
-            args.BaselineChance = args.BaselineChance * component.PsionicBonusModifier + component.PsionicBonusOffset;
-        }
+    private void OnRollPsionics(EntityUid uid, CommandStaffComponent component, ref OnRollPsionicsEvent args)
+    {
+        args.BaselineChance = args.BaselineChance * component.PsionicBonusModifier + component.PsionicBonusOffset;
     }
 }
