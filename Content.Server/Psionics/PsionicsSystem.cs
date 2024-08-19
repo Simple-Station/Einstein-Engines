@@ -130,7 +130,7 @@ namespace Content.Server.Psionics
             RaiseLocalEvent(uid, ref ev);
 
             if (_random.Prob(Math.Clamp(ev.BaselineChance, 0, 1)))
-                _psionicAbilitiesSystem.AddRandomPsionicPower(uid);
+                _psionicAbilitiesSystem.AddRandomPsionicPower(uid, component);
         }
 
         public void RerollPsionics(EntityUid uid, PsionicComponent? psionic = null, float bonusMuliplier = 1f)
