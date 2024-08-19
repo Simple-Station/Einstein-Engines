@@ -40,11 +40,8 @@ namespace Content.Server.Abilities.Psionics
         /// </summary>
         /// <param name="uid"></param>
         /// <param name="comp"></param>
-        public void RefreshPsionicModifiers(EntityUid uid, PsionicComponent? comp = null)
+        public void RefreshPsionicModifiers(EntityUid uid, PsionicComponent comp)
         {
-            if (!Resolve(uid, ref comp))
-                return;
-
             var ampModifier = 0f;
             var dampModifier = 0f;
             foreach (var (_, source) in comp.AmplificationSources)
@@ -113,11 +110,8 @@ namespace Content.Server.Abilities.Psionics
         /// </summary>
         /// <param name="uid"></param>
         /// <param name="psionic"></param>
-        public void AddRandomPsionicPower(EntityUid uid, PsionicComponent? psionic = null)
+        public void AddRandomPsionicPower(EntityUid uid, PsionicComponent psionic)
         {
-            if (!Resolve(uid, ref psionic))
-                return;
-
             if (!_prototypeManager.TryIndex<WeightedRandomPrototype>(_pool.Id, out var pool))
                 return;
 
@@ -141,10 +135,9 @@ namespace Content.Server.Abilities.Psionics
         /// <param name="proto"></param>
         /// <param name="psionic"></param>
         /// <param name="playPopup"></param>
-        public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent? psionic, bool playPopup = true)
+        public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic, bool playPopup = true)
         {
-            if (!Resolve(uid, ref psionic)
-                || !_prototypeManager.HasIndex<PsionicPowerPrototype>(proto.ID))
+            if (!_prototypeManager.HasIndex<PsionicPowerPrototype>(proto.ID))
                 return;
 
             psionic.ActivePowers.Add(proto);
@@ -179,7 +172,8 @@ namespace Content.Server.Abilities.Psionics
             EnsureComp<PsionicComponent>(uid, out var psionic);
 
             foreach (var proto in comp.PowersToAdd)
-                InitializePsionicPower(uid, _prototypeManager.Index(proto), psionic, false);
+                if (!psionic.ActivePowers.Contains(_prototypeManager.Index(proto)))
+                    InitializePsionicPower(uid, _prototypeManager.Index(proto), psionic, false);
         }
 
         private void AddPsionicActions(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic)
