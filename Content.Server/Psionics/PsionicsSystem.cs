@@ -138,8 +138,8 @@ namespace Content.Server.Psionics
         public void RerollPsionics(EntityUid uid, PsionicComponent? psionic = null, float bonusMuliplier = 1f)
         {
             if (!Resolve(uid, ref psionic, false)
-                || psionic.CanReroll
-                || !psionic.Removable)
+                || !psionic.Removable
+                || psionic.CanReroll)
                 return;
 
             RollPsionics(uid, psionic, true, bonusMuliplier);
