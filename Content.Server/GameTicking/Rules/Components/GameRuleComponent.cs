@@ -1,7 +1,6 @@
-using Content.Server.Destructible.Thresholds;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Server.GameTicking.Components;
+namespace Content.Server.GameTicking.Rules.Components;
 
 /// <summary>
 /// Component attached to all gamerule entities.
@@ -21,12 +20,6 @@ public sealed partial class GameRuleComponent : Component
     /// </summary>
     [DataField]
     public int MinPlayers;
-
-    /// <summary>
-    /// A delay for when the rule the is started and when the starting logic actually runs.
-    /// </summary>
-    [DataField]
-    public MinMax? Delay;
 }
 
 /// <summary>
