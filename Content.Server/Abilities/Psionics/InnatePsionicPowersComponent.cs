@@ -1,5 +1,4 @@
 using Content.Shared.Psionics;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -10,6 +9,6 @@ namespace Content.Server.Abilities.Psionics
         ///     The list of all powers to be added on Startup
         /// </summary>
         [DataField]
-        public List<ProtoId<PsionicPowerPrototype>> PowersToAdd = new();
+        public List<PsionicPowerPrototype> PowersToAdd = new();
     }
 }
