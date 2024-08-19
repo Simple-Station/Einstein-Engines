@@ -170,6 +170,7 @@
     - NamesLastMilitary
   - type: Loadout
     prototypes: [ ERTChaplainGear ]
+  - type: BibleUser
 
 - type: entity
   id: RandomHumanoidSpawnerERTChaplainEVA
@@ -194,6 +195,7 @@
       settings: short
   - type: Loadout
     prototypes: [ ERTChaplainGearEVA ]
+  - type: BibleUser
 
 ## ERT Janitor
 
