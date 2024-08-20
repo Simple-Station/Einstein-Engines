@@ -41,9 +41,6 @@ namespace Content.Server.Abilities.Psionics
             if (!(TryComp<DamageableComponent>(args.Target, out var damageable) && damageable.DamageContainerID == "Biological"))
                 return;
 
-            if (HasComp<PsionicInsulationComponent>(args.Target))
-                return;
-
             Swap(args.Performer, args.Target);
 
             _psionics.LogPowerUsed(args.Performer, "mind swap");
