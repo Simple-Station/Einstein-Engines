@@ -78,7 +78,7 @@
       60: 0.7
       80: 0.5
   - type: Stamina
-    excess: 100
+    critThreshold: 100
   - type: InputMover
   - type: MobMover
   - type: Examiner
@@ -102,12 +102,14 @@
   - type: HitscanBatteryAmmoProvider
     proto: WispLash
     fireCost: 1
-    examinable: false
+    # examinable: false
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 100
+  - type: NPCRetaliation
   - type: HTN
-    rootTask: GlimmerWispCompound
+    rootTask:
+      task: GlimmerWispCompound
   - type: NpcFactionMember
     factions:
       - GlimmerMonster

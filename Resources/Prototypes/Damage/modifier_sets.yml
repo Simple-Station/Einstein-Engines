@@ -352,7 +352,7 @@
 
 - type: damageModifierSet
   id: GlimmerWisp
-  coeffecients:
+  coefficients:
     Blunt: 0.1
     Slash: 0.1
     Piercing: 0.0

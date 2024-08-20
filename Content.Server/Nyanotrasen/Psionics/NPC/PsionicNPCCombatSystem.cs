@@ -1,6 +1,5 @@
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
-using Content.Shared.Actions.ActionTypes;
 using Content.Server.NPC.Events;
 using Content.Server.NPC.Components;
 using Content.Server.Abilities.Psionics;
@@ -20,22 +19,27 @@ namespace Content.Server.Psionics.NPC
 
         private void ZapCombat(EntityUid uid, NoosphericZapPowerComponent component, ref NPCSteeringEvent args)
         {
-            if (component.NoosphericZapPowerAction?.Event == null)
+            if (!TryComp<ActionsComponent>(uid, out var actions))
                 return;
 
-            if (component.NoosphericZapPowerAction!.Cooldown.HasValue && component.NoosphericZapPowerAction?.Cooldown.Value.End > _timing.CurTime)
+            // two years and one action rework later and npcs still can't directly use actions so we have to do the checks ourselves
+            if (!_actions.TryGetActionData(component.NoosphericZapActionEntity, out var actionData))
+                return;
+
+            if (!TryComp<EntityTargetActionComponent>(component.NoosphericZapActionEntity, out var entTarget))
+                return;
+
+            if (actionData.Cooldown.HasValue && actionData.Cooldown.Value.End > _timing.CurTime)
                 return;
 
             if (!TryComp<NPCRangedCombatComponent>(uid, out var combat))
                 return;
 
-            if (_actions.ValidateEntityTarget(uid, combat.Target, component.NoosphericZapPowerAction!))
+            if (_actions.ValidateEntityTarget(uid, combat.Target, entTarget))
             {
-                var ev = component.NoosphericZapPowerAction!.Event;
-                ev.Performer = uid;
-                ev.Target = combat.Target;
+                var ev = entTarget.Event;
 
-                _actions.PerformAction(uid, null, component.NoosphericZapPowerAction!, ev, _timing.CurTime, false);
+                _actions.PerformAction(uid, actions, (EntityUid) component.NoosphericZapActionEntity, entTarget, entTarget.Event, _timing.CurTime, false);
             }
         }
     }

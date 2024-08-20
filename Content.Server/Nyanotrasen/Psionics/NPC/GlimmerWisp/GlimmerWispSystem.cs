@@ -13,7 +13,7 @@ using Content.Server.NPC.Systems;
 using Content.Server.Carrying;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
-using Robust.Server.GameObjects;
+using Robust.Server.Audio;
 
 namespace Content.Server.Psionics.NPC.GlimmerWisp
 {
@@ -25,7 +25,7 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
         [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
         [Dependency] private readonly PopupSystem _popups = default!;
         [Dependency] private readonly AudioSystem _audioSystem = default!;
-        [Dependency] private readonly NPCCombatTargetSystem _combatTargetSystem = default!;
+        [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
         public override void Initialize()
         {
             base.Initialize();
@@ -51,7 +51,7 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
                     StartLifeDrain(uid, args.Target, component);
                 },
                 Text = Loc.GetString("verb-life-drain"),
-                Icon = new SpriteSpecifier.Texture(new ("/Textures/Nyanotrasen/Icons/verbiconfangs.png")),
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Nyanotrasen/Icons/verbiconfangs.png")),
                 Priority = 2
             };
             args.Verbs.Add(verb);
@@ -62,17 +62,17 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
             component.IsDraining = false;
             if (args.Handled || args.Args.Target == null)
             {
-                component.DrainStingStream?.Stop();
+                // component.DrainStingStream?.Stop();
                 return;
             }
 
             if (args.Cancelled)
             {
                 if (TryComp<PullableComponent>(args.Args.Target.Value, out var pullable) && pullable.Puller != null)
-                    _combatTargetSystem.StartHostility(uid, pullable.Puller.Value);
+                    _npcFaction.AggroEntity(uid, pullable.Puller.Value);
 
                 if (TryComp<BeingCarriedComponent>(args.Args.Target.Value, out var carried))
-                    _combatTargetSystem.StartHostility(uid, carried.Carrier);
+                    _npcFaction.AggroEntity(uid, carried.Carrier);
 
                 return;
             }
@@ -87,7 +87,7 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
 
             DamageSpecifier damage = new();
             damage.DamageDict.Add("Asphyxiation", 200);
-            _damageable.TryChangeDamage(args.Args.Target.Value, damage, true, origin:uid);
+            _damageable.TryChangeDamage(args.Args.Target.Value, damage, true, origin: uid);
         }
 
 
@@ -111,15 +111,15 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
             if (!Resolve(uid, ref component))
                 return;
 
-           component.DrainTarget = target;
+            component.DrainTarget = target;
             _popups.PopupEntity(Loc.GetString("life-drain-second-start", ("wisp", uid)), target, target, Shared.Popups.PopupType.LargeCaution);
             _popups.PopupEntity(Loc.GetString("life-drain-third-start", ("wisp", uid), ("target", target)), target, Filter.PvsExcept(target), true, Shared.Popups.PopupType.LargeCaution);
 
-            component.DrainStingStream = _audioSystem.PlayPvs(component.DrainSoundPath, target);
+            // component.DrainStingStream = _audioSystem.PlayPvs(component.DrainSoundPath, target);
             component.IsDraining = true;
 
             var ev = new GlimmerWispDrainDoAfterEvent();
-            var args = new DoAfterArgs(uid, component.DrainDelay, ev, uid, target: target)
+            var args = new DoAfterArgs(EntityManager, uid, component.DrainDelay, ev, uid, target: target)
             {
                 BreakOnTargetMove = true,
                 BreakOnUserMove = false,
