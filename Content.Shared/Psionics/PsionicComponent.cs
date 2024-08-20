@@ -112,6 +112,7 @@ namespace Content.Shared.Abilities.Psionics
         /// <summary>
         ///     The list of each Psionic Power by action with entityUid.
         /// </summary>
+        [ViewVariables(VVAccess.ReadOnly)]
         public Dictionary<EntProtoId, EntityUid?> Actions = new();
 
         /// <summary>
