@@ -43,14 +43,7 @@ namespace Content.Server.Abilities.Psionics
         private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, ComponentStartup args)
         {
             // Any entity with InnatePowers should also be psionic, but in case they aren't already...
-            // If I use an EnsureComp here, it crashes during tests but not during Live.
-            // I don't know why, I can't figure out why, and I'm not going to spend another 10 hours trying to find out why.
-            // Easier solution is to force the tests to fail if someone creates an Entity that lacks a PsionicComponent.
-            if (!TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                DebugTools.Assert("InnatePsionicPowers was added to an entity that lacks a PsionicComponent");
-                return;
-            }
+            EnsureComp<PsionicComponent>(uid, out var psionic);
 
             foreach (var proto in comp.PowersToAdd)
                 if (!psionic.ActivePowers.Contains(_prototypeManager.Index(proto)))
@@ -200,7 +193,8 @@ namespace Content.Server.Abilities.Psionics
         }
 
         /// <summary>
-        ///
+        ///     Remove all Psionic powers, with accompanying actions, components, and casting stat sources, from a given Psion.
+        ///     Optionally, the Psion can also be rendered permanently non-Psionic.
         /// </summary>
         /// <param name="uid"></param>
         /// <param name="mindbreak"></param>
@@ -241,6 +235,12 @@ namespace Content.Server.Abilities.Psionics
             RefreshPsionicModifiers(uid, psionic);
         }
 
+        /// <summary>
+        ///     Add all actions associated with a specific Psionic Power
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="proto"></param>
+        /// <param name="psionic"></param>
         private void AddPsionicActions(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic)
         {
             foreach (var id in proto.Actions)
@@ -254,6 +254,11 @@ namespace Content.Server.Abilities.Psionics
             }
         }
 
+        /// <summary>
+        ///     Add all components associated with a specific Psionic power.
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="proto"></param>
         private void AddPsionicPowerComponents(EntityUid uid, PsionicPowerPrototype proto)
         {
             if (proto.Components is null)
@@ -269,6 +274,11 @@ namespace Content.Server.Abilities.Psionics
             }
         }
 
+        /// <summary>
+        ///     Update the Amplification and Dampening sources of a Psion to include a new Power.
+        /// </summary>
+        /// <param name="proto"></param>
+        /// <param name="psionic"></param>
         private void AddPsionicStatSources(PsionicPowerPrototype proto, PsionicComponent psionic)
         {
             if (proto.AmplificationModifier != 0)
