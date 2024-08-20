@@ -5428,3 +5428,26 @@ Entries:
         both providing innate modifiers to a character's Morale.
   id: 6272
   time: '2024-08-20T08:16:05.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Latent Psychic has been added as a new positive trait.
+    - type: Tweak
+      message: >-
+        Psionics have received a substantial refactor. While no new powers have
+        been added this patch, this initial refactor lays the groundwork so that
+        new psionic powers will be easier to create.
+    - type: Tweak
+      message: >-
+        Latent Psychic is now fully required to become psionic, or to interact
+        with Oracle.
+    - type: Tweak
+      message: Psychics can now have more than one active power.
+    - type: Remove
+      message: Mimes are no longer Psionic.
+    - type: Tweak
+      message: >-
+        Chaplain, Mantis, & Mystagogue all receive the Latent Psychic trait for
+        free, automatically. 
+  id: 6273
+  time: '2024-08-20T18:42:44.0000000+00:00'
