@@ -34,6 +34,12 @@ namespace Content.Server.Abilities.Psionics
             SubscribeLocalEvent<PsionicComponent, ComponentShutdown>(OnPsionicShutdown);
         }
 
+        /// <summary>
+        ///     Special use-case for a InnatePsionicPowers, which allows an entity to start with any number of Psionic Powers.
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="comp"></param>
+        /// <param name="args"></param>
         private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, ComponentStartup args)
         {
             // Any entity with InnatePowers should also be psionic, but in case they aren't already...
@@ -50,6 +56,7 @@ namespace Content.Server.Abilities.Psionics
                 if (!psionic.ActivePowers.Contains(_prototypeManager.Index(proto)))
                     InitializePsionicPower(uid, _prototypeManager.Index(proto), psionic, false);
         }
+
         private void OnPsionicShutdown(EntityUid uid, PsionicComponent component, ComponentShutdown args)
         {
             if (!EntityManager.EntityExists(uid)
@@ -58,6 +65,12 @@ namespace Content.Server.Abilities.Psionics
 
             RemoveAllPsionicPowers(uid);
         }
+
+        /// <summary>
+        ///     The most shorthand route to creating a Psion. If an entity is not already psionic, it becomes one. This also adds a random new PsionicPower.
+        ///     To create a "Latent Psychic"(Psion with no powers) just add or ensure the PsionicComponent normally.
+        /// </summary>
+        /// <param name="uid"></param>
         public void AddPsionics(EntityUid uid)
         {
             if (Deleted(uid))
@@ -66,13 +79,18 @@ namespace Content.Server.Abilities.Psionics
             AddRandomPsionicPower(uid);
         }
 
+        /// <summary>
+        ///     Pretty straightforward, adds a random psionic power to a given Entity. If that Entity is not already Psychic, it will be made one.
+        ///     If an entity already has all possible powers, this will not add any new ones.
+        /// </summary>
+        /// <param name="uid"></param>
         public void AddRandomPsionicPower(EntityUid uid)
         {
             // We need to EnsureComp here to make sure that we aren't iterating over a component that:
             // A: Isn't fully initialized
             // B: Is in the process of being shutdown/deleted
             // Imagine my surprise when I found out Resolve doesn't check for that.
-            // TODO: This EnsureComp will be 1984'd when I get to reworking how you get powers in the first place.
+            // TODO: This EnsureComp will be 1984'd in a separate PR, when I rework how you get psionics in the first place.
             EnsureComp<PsionicComponent>(uid, out var psionic);
 
             if (!_prototypeManager.TryIndex<WeightedRandomPrototype>(_pool.Id, out var pool))
@@ -95,9 +113,17 @@ namespace Content.Server.Abilities.Psionics
             _glimmerSystem.Glimmer += _random.Next(1, (int) Math.Round(1 + psionic.CurrentAmplification + psionic.CurrentDampening));
         }
 
+        /// <summary>
+        ///     Initializes a new Psionic Power on a given entity, assuming the entity does not already have said power initialized.
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="proto"></param>
+        /// <param name="psionic"></param>
+        /// <param name="playPopup"></param>
         public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic, bool playPopup = true)
         {
-            if (!_prototypeManager.HasIndex<PsionicPowerPrototype>(proto.ID))
+            if (!_prototypeManager.HasIndex<PsionicPowerPrototype>(proto.ID)
+                || psionic.ActivePowers.Contains(proto))
                 return;
 
             psionic.ActivePowers.Add(proto);
@@ -112,6 +138,13 @@ namespace Content.Server.Abilities.Psionics
             // TODO: Replace this with chat message: _popups.PopupEntity(proto.InitializationFeedback, uid, uid, PopupType.MediumCaution);
         }
 
+        /// <summary>
+        ///     Initializes a new Psionic Power on a given entity, assuming the entity does not already have said power initialized.
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="proto"></param>
+        /// <param name="psionic"></param>
+        /// <param name="playPopup"></param>
         public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, bool playPopup = true)
         {
             if (!TryComp<PsionicComponent>(uid, out var psionic))
@@ -156,11 +189,21 @@ namespace Content.Server.Abilities.Psionics
             RefreshPsionicModifiers(uid, comp);
         }
 
+        /// <summary>
+        ///     A more advanced form of removing powers. Mindbreaking not only removes all psionic powers,
+        ///     it also disables the possibility of obtaining new ones.
+        /// </summary>
+        /// <param name="uid"></param>
         public void MindBreak(EntityUid uid)
         {
             RemoveAllPsionicPowers(uid, true);
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="mindbreak"></param>
         public void RemoveAllPsionicPowers(EntityUid uid, bool mindbreak = false)
         {
             if (!TryComp<PsionicComponent>(uid, out var psionic)
