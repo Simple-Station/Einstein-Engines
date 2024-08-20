@@ -15,6 +15,7 @@
 # Base interaction that involves hands
 - type: Interaction
   id: BaseHands
+  abstract: true
   requiresHands: true
   requiresCanInteract: true
   contactInteraction: true
