@@ -106,6 +106,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     The list of all powers currently active on a Psionic, by power Prototype.
         ///     TODO: Not in this PR due to scope, but this needs to go to Server and not Shared.
         /// </summary>
+        [ViewVariables(VVAccess.ReadOnly)]
         public HashSet<PsionicPowerPrototype> ActivePowers = new();
 
         /// <summary>
