@@ -349,3 +349,15 @@
     Holy: 1.5
   flatReductions:
     Cold: 3
+
+- type: damageModifierSet
+  id: GlimmerWisp
+  coeffecients:
+    Blunt: 0.1
+    Slash: 0.1
+    Piercing: 0.0
+    Poison: 0.0
+    Cold: 0.0
+    Radiation: 0.0
+    Heat: 3.0
+    Shock: 0.0 #if negative modifiers healed I'd set this to -1.0

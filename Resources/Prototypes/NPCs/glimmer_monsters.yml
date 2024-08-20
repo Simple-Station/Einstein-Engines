@@ -1,0 +1,125 @@
+- type: entity
+  id: MobGlimmerWisp
+  name: glimmer wisp
+  description: A strange orb that moves with intent.
+  save: false
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Ghosts
+    sprite: Nyanotrasen/Mobs/Monster/glimmer_wisp.rsi
+    state: willowisp
+    layers:
+      - state: willowisp
+        shader: unshaded
+  - type: GlimmerWisp
+  - type: DoAfter
+  - type: PotentialPsionic
+  - type: Psionic
+    removable: false
+  - type: NoosphericZapPower
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: KinematicController
+    fixedRotation: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 13
+        mask:
+        - Opaque
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 8
+    baseWalkSpeed: 5
+  - type: MovementIgnoreGravity
+  - type: Stealth
+    lastVisibility: 0.66
+  - type: Reactive
+    groups:
+      Acidic: [Touch] #Holy water
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Nyanotrasen/Mobs/GlimmerWisp/wail.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Ectoplasm:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Damageable
+    damageContainer: Spirit
+    damageModifierSet: Spirit
+  - type: Actions
+  - type: Alerts
+  - type: CombatMode
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.7
+      80: 0.5
+  - type: Stamina
+    excess: 100
+  - type: InputMover
+  - type: MobMover
+  - type: Examiner
+  - type: StatusEffects
+    allowed:
+      - Stun
+      - KnockedDown #KnockedDown is inseperable from stun because... IT JUST IS OK?
+      - SlowedDown
+      - Pacified
+  - type: PointLight
+    color: "#419ba3"
+  - type: Speech
+  - type: Gun
+    fireRate: 0.7
+    soundGunshot:
+      collection: MagicMissile
+    showExamineText: false
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: HitscanBatteryAmmoProvider
+    proto: WispLash
+    fireCost: 1
+    examinable: false
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 100
+  - type: HTN
+    rootTask: GlimmerWispCompound
+  - type: NpcFactionMember
+    factions:
+      - GlimmerMonster
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: DamageOnDispel
+    damage:
+      types:
+        Heat: 75
+  - type: AmbientSound
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/Nyanotrasen/Mobs/GlimmerWisp/wisp_ambience.ogg
