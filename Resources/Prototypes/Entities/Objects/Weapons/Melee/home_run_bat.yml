@@ -1,0 +1,34 @@
+- type: entity
+  parent: BaseBallBat
+  id: BaseBallBatHomeRun
+  name: home run bat
+  description: Heavy metal bat with an extra kick.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/home_run_bat.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 11
+    bluntStaminaDamageFactor: 2.0
+    heavyRateModifier: 0.5
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 25
+    maxTargets: 2
+    angle: 120
+    soundHit:
+      collection: ExplosionSmall
+  - type: MeleeRequiresWield # You can't hit a home run with one hand, jimbo.
+  - type: MeleeThrowOnHit
+    speed: 30
+    lifetime: 5
+  - type: Item
+    size: Large
+  - type: Tool
+    speed: 0.5 # it's very heavy, it rolls slower than a wooden bat
+  - type: UseDelay
+    delay: 2
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 350 # it's not made of wood

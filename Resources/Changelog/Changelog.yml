@@ -5053,3 +5053,409 @@ Entries:
       message: Barotrauma admin log spam
   id: 6232
   time: '2024-08-07T17:31:55.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Mr. Butlertron can now suffer for its crimes.
+  id: 6233
+  time: '2024-08-07T22:38:04.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The following new markings have been added for Harpies: Bat Wings,
+        Simple Bionic Wings, Haven Tail, Swallow tail, and Long Forked Tail
+  id: 6234
+  time: '2024-08-07T23:11:41.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Readded Psionic Relay Orb
+  id: 6235
+  time: '2024-08-07T23:16:30.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add two new negative traits: Sluggish (+1) and Snail-Paced (+2) that
+        make you move slower, and climb tables slower.
+  id: 6236
+  time: '2024-08-07T23:38:33.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Hemophilia trait, a new negative trait for 1 point that makes
+        you bleed twice as long and makes you take 10% more Blunt damage.
+  id: 6237
+  time: '2024-08-07T23:39:52.0000000+00:00'
+- author: SleepyScarecrow
+  changes:
+    - type: Fix
+      message: Fixed the RegenMesh recipe
+  id: 6238
+  time: '2024-08-07T23:51:29.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: >-
+        Added Bluespace Slips, a plant trait that teleports you randomly if you
+        slip.
+  id: 6239
+  time: '2024-08-07T23:54:13.0000000+00:00'
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the formatting for WelderRefinable refineResult to use
+        EntitySpawnEntry format
+  id: 6240
+  time: '2024-08-08T00:16:02.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Moths can now once again be colorful.
+  id: 6241
+  time: '2024-08-08T00:18:08.0000000+00:00'
+- author: ShatteredSwords
+  changes:
+    - type: Tweak
+      message: Skeleton ghost role description has been adjusted to be less evil.
+  id: 6242
+  time: '2024-08-09T10:52:49.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Geiger Counters other than ones installed in Hardsuits now generate an
+        audible sound when active and exposed to radiation.
+    - type: Add
+      message: Wall mounted geiger counters have been added to the game.
+  id: 6243
+  time: '2024-08-09T11:13:13.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Dionas have been given a 25% slower movement speed. In exchange for
+        that, they gain absolute slip immunity and movement speed modifier
+        immunity. This makes them immune to slowdown from things like
+        duffelbags, hardsuits, and spider webs.
+    - type: Fix
+      message: >-
+        Sluggish and Snail-Paced will now properly apply their movement
+        penalties upon joining. 
+  id: 6244
+  time: '2024-08-09T17:28:01.0000000+00:00'
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: >-
+        Melee Weapons now feel different across the board, from the Wrench to
+        the Chainsaw, try out their normal swings and their heavy attacks!
+  id: 6245
+  time: '2024-08-10T12:00:06.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Tweak
+      message: >-
+        Renamed "Psionic Mantis" to "Mantis", as it was originally going to be
+        called. 
+  id: 6246
+  time: '2024-08-10T12:03:12.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add Liquor Lifeline (-3 points), a new positive trait that makes you
+        slowly heal Brute and Burn damage when drunk, healing more the drunker
+        you are. The trait also gives you the benefits of Alcohol Tolerance.
+    - type: Tweak
+      message: >-
+        The cost of the Alcohol Tolerance trait has been reduced from -2 points
+        to -1 point.
+    - type: Add
+      message: Dwarves receive the Liquor Lifeline trait for free.
+  id: 6247
+  time: '2024-08-10T20:59:22.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Being injured now lets you deal up to 20% more damage in melee combat to
+        simulate the adrenaline rush from taking a hit.
+    - type: Add
+      message: >-
+        Taking stamina damage now makes you deal less damage in melee. Up to 25%
+        less for Light Attacks, and 50% less for Power Attacks
+    - type: Add
+      message: >-
+        Wide Swing has been reworked as "Power Attack". Power attacks cost 20
+        stamina(by default) to perform, and their effects can differ from Light
+        attacks on a per-weapon basis. Individual weapons can also have
+        different stamina costs to power attack with.
+  id: 6248
+  time: '2024-08-10T21:30:42.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Remove
+      message: >-
+        Removed the spammable hugging on click. Consider using emotes for this
+        instead.
+  id: 6249
+  time: '2024-08-10T21:34:22.0000000+00:00'
+- author: VMSolidus and Skubman
+  changes:
+    - type: Add
+      message: >-
+        11 new Physical Traits have been added to the game! 6 positive traits,
+        and 5 negative traits.
+  id: 6250
+  time: '2024-08-10T21:36:09.0000000+00:00'
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added `HidesBeard` tag
+  id: 6251
+  time: '2024-08-10T21:36:49.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: The maximum trait limit has increased from 5 traits to 10 traits.
+  id: 6252
+  time: '2024-08-11T02:08:37.0000000+00:00'
+- author: Xavier
+  changes:
+    - type: Fix
+      message: Crew monitor not working properly, now displays correctly.
+  id: 6253
+  time: '2024-08-12T02:22:27.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Added the Explorer's Labcoat and a Hairflower into Loadouts.
+    - type: Fix
+      message: Fixed Epistemics being unable to take Survival Boxes
+    - type: Fix
+      message: >-
+        Fixed the NearSighted trait making you unable to take glasses in your
+        loadout
+    - type: Add
+      message: Added a variety of Cowboy Hats into loadouts.
+  id: 6254
+  time: '2024-08-12T02:22:58.0000000+00:00'
+- author: musicmanvr
+  changes:
+    - type: Add
+      message: Added the Home Run Bat for Syndicate operatives. Send your foes flying!
+  id: 6255
+  time: '2024-08-12T16:43:11.0000000+00:00'
+- author: Tilkku
+  changes:
+    - type: Add
+      message: Added showers
+  id: 6256
+  time: '2024-08-12T16:46:05.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Tweak
+      message: Changed hardsuit descriptions to be slightly less LRP.
+    - type: Tweak
+      message: Changed paramedic voidsuit from a softsuit to a hardsuit.
+  id: 6257
+  time: '2024-08-12T21:43:52.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Whitelist requirements work properly
+  id: 6258
+  time: '2024-08-13T17:08:24.0000000+00:00'
+- author: Skubman and leonardo-dabepis
+  changes:
+    - type: Add
+      message: Onis now get a unique speech bubble, a black bubble with horns.
+    - type: Add
+      message: >-
+        Onis have received a distinct speech style that reflects their strength.
+        Hear them 'grunt', 'bellow', 'blare', and 'rumble' as they talk.
+    - type: Tweak
+      message: >-
+        The Nekomimetic language description has been changed to mention Onis
+        speaking it.
+  id: 6259
+  time: '2024-08-13T17:12:15.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: A ton of new plushies has arrived
+    - type: Add
+      message: >-
+        Prize counter are here, get your prizes by winning games and getting
+        prize tickets! and find prize balls!!
+  id: 6260
+  time: '2024-08-13T17:16:52.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Onis have received eight new pointy ear markings in the 'Head (Side)'
+        section that can help them resemble tieflings, orcs, elves, goblins,
+        trolls, and more.
+    - type: Add
+      message: >-
+        Onis get two new tusk markings in the 'Snout' section, and a Two-Toed
+        feet marking in the 'Legs' section.
+    - type: Add
+      message: >-
+        Felinids, Onis, and Harpies can now select Human nose markings like the
+        schnozz, blobby nose, and nubby nose.
+    - type: Add
+      message: >-
+        Felinids and Onis can now select the Chest Scar and Top Surgery Scar
+        markings.
+    - type: Tweak
+      message: Default Onis now use the Double Curved horn and Upward Ears markings.
+  id: 6261
+  time: '2024-08-13T21:12:45.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fix missing Psionic Regeneration sound effect
+  id: 6262
+  time: '2024-08-14T02:12:43.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Vulpkanins receive the Voracious trait for free, giving them 2x
+        eating/drinking speed, but Vulpkanins get hungrier 25% faster.
+    - type: Tweak
+      message: >-
+        Vulpkanins gain a 30% Cold resistance, but their Heat vulnerability has
+        increased from 15% to 30%. Vulpkanins also receive 25% more Fire stacks,
+        amplifying the damage and duration of being on fire.
+    - type: Tweak
+      message: Flash duration against Vulpkanins has been increased by 50%.
+  id: 6263
+  time: '2024-08-14T05:30:37.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added crowned, tall bull, and tall curved Oni horns.
+  id: 6264
+  time: '2024-08-14T09:05:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added a new positive trait - singer. It allows you to play midi songs
+        without an instrument, similarly to harpies.
+  id: 6265
+  time: '2024-08-15T06:06:25.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Xenowears! new non-human related clothings.
+  id: 6266
+  time: '2024-08-15T06:24:07.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: >-
+        Forensics Scent Type and Vulpkanins can now track scents, better keep
+        yourself clean!
+    - type: Tweak
+      message: >-
+        Vulpkanins eyes are sensetive, please dont flash them with lights as
+        this could damage them.
+    - type: Add
+      message: Vulpkanins now has their own screams!
+  id: 6267
+  time: '2024-08-15T07:11:05.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Adds a new blindfold variant into loadouts.
+  id: 6268
+  time: '2024-08-16T12:43:33.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        16 new horns for Onis have been added, with three-tone variants and some
+        striped variants! The new horns include the Serket, Nepeta, Vantas,
+        Makara, and more.
+    - type: Add
+      message: >-
+        The Oni horns Double Curved and Double Curved Outwards have received
+        three-tone variants.
+  id: 6269
+  time: '2024-08-18T05:52:22.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: You no longer need to have a station record to publish news.
+  id: 6270
+  time: '2024-08-18T18:11:10.0000000+00:00'
+- author: ShatteredSwords
+  changes:
+    - type: Add
+      message: Several useful items have been added to loadouts
+    - type: Add
+      message: Cowtools are selectable for clown in the "Jobs" category of loadouts
+  id: 6271
+  time: '2024-08-20T06:48:59.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Mood System has been ported from White Dream. Mood acts as a 3rd
+        healthbar, alongside Health and Stamina, representing your character's
+        current mental state. Having either high or low mood can modify certain
+        physical attributes.
+    - type: Add
+      message: >-
+        Mood modifies your Critical Threshold. Your critical threshold can be
+        increased or decreased depending on how high or low your character's
+        mood is.
+    - type: Add
+      message: >-
+        Mood modifies your Movement Speed. Characters move faster when they have
+        an overall high mood, and move slower when they have a lower mood.
+    - type: Add
+      message: >-
+        Saturnine and Sanguine have been added to the list of Mental traits,
+        both providing innate modifiers to a character's Morale.
+  id: 6272
+  time: '2024-08-20T08:16:05.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Latent Psychic has been added as a new positive trait.
+    - type: Tweak
+      message: >-
+        Psionics have received a substantial refactor. While no new powers have
+        been added this patch, this initial refactor lays the groundwork so that
+        new psionic powers will be easier to create.
+    - type: Tweak
+      message: >-
+        Latent Psychic is now fully required to become psionic, or to interact
+        with Oracle.
+    - type: Tweak
+      message: Psychics can now have more than one active power.
+    - type: Remove
+      message: Mimes are no longer Psionic.
+    - type: Tweak
+      message: >-
+        Chaplain, Mantis, & Mystagogue all receive the Latent Psychic trait for
+        free, automatically. 
+  id: 6273
+  time: '2024-08-20T18:42:44.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue where Overlays(Dogvision, Ultravision, Mood) would apply
+        globally to all entities when updating.
+  id: 6274
+  time: '2024-08-20T18:49:28.0000000+00:00'
