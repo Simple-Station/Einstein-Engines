@@ -32,6 +32,12 @@ namespace Content.Shared.Abilities.Psionics
         [DataField]
         public float MindbreakingStutterTime = 5;
 
+        public string MindbreakingStutterCondition = "Stutter";
+
+        public string MindbreakingStutterAccent = "StutteringAccent";
+
+        public string MindbreakingFeedback = "mindbreaking-feedback";
+
         /// <summary>
         ///     How much should the odds of obtaining a Psionic Power be multiplied when rolling for one.
         /// </summary>

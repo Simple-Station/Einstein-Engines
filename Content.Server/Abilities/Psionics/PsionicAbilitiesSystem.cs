@@ -10,8 +10,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Content.Shared.Psionics;
 using System.Linq;
-using Content.Shared.PowerCell;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -34,6 +32,7 @@ namespace Content.Server.Abilities.Psionics
         {
             base.Initialize();
             SubscribeLocalEvent<InnatePsionicPowersComponent, ComponentStartup>(InnatePowerStartup);
+            SubscribeLocalEvent<PsionicComponent, ComponentShutdown>(OnPsionicShutdown);
         }
 
         private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, ComponentStartup args)
@@ -45,6 +44,14 @@ namespace Content.Server.Abilities.Psionics
             foreach (var proto in comp.PowersToAdd)
                 if (!psionic.ActivePowers.Contains(_prototypeManager.Index(proto)))
                     InitializePsionicPower(uid, _prototypeManager.Index(proto), psionic, false);
+        }
+        private void OnPsionicShutdown(EntityUid uid, PsionicComponent component, ComponentShutdown args)
+        {
+            if (!EntityManager.EntityExists(uid)
+                || HasComp<MindbrokenComponent>(uid))
+                return;
+
+            RemoveAllPsionicPowers(uid);
         }
         public void AddPsionics(EntityUid uid)
         {
@@ -204,7 +211,13 @@ namespace Content.Server.Abilities.Psionics
             if (mindbreak)
             {
                 EnsureComp<MindbrokenComponent>(uid);
-                _statusEffectsSystem.TryAddStatusEffect(uid, "Stutter", TimeSpan.FromMinutes(5 * psionic.CurrentAmplification * psionic.CurrentDampening), false, "StutteringAccent");
+                _statusEffectsSystem.TryAddStatusEffect(uid, psionic.MindbreakingStutterCondition,
+                    TimeSpan.FromMinutes(psionic.MindbreakingStutterTime * psionic.CurrentAmplification * psionic.CurrentDampening),
+                    false,
+                    psionic.MindbreakingStutterAccent);
+
+                _popups.PopupEntity(Loc.GetString(psionic.MindbreakingFeedback, ("entity", MetaData(uid).EntityName)), uid, uid, PopupType.MediumCaution);
+
                 RemComp<PsionicComponent>(uid);
                 return;
             }

@@ -65,3 +65,5 @@ psionic-invisibility-power-initialization-feedback =
     Pondering this, I arrive at a realization that sight itself is an illusion. I reject it, I deny that light itself is real.
     When I awaken, I can no longer see even myself.
 psionic-invisibility-power-metapsionic-feedback = {CAPITALIZE($entity)}'s wyrd seeks to hide from thine gaze
+
+mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
