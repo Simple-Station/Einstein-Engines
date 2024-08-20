@@ -51,7 +51,7 @@ namespace Content.Shared.Abilities.Psionics
         [DataField]
         public float PowerRollFlatBonus = 0;
 
-        private (float, float) _baselineAmplification = (0, 0);
+        private (float, float) _baselineAmplification = (0.4f, 1.2f);
 
         /// <summary>
         ///     Use this datafield to change the range of Baseline Amplification.
@@ -73,7 +73,7 @@ namespace Content.Shared.Abilities.Psionics
                 Math.Max(_baselineAmplificationFactors.Item1, _baselineAmplificationFactors.Item2));
             }
         }
-        private (float, float) _baselineDampening = (0, 0);
+        private (float, float) _baselineDampening = (0.4f, 1.2f);
 
         /// <summary>
         ///     Use this datafield to change the range of Baseline Amplification.
