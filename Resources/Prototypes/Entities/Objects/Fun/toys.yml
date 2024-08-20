@@ -1373,6 +1373,35 @@
         types:
           Blunt: 0
 
+# description is aptly misspelled to reference to it's old self, where it was pointing out a joke at a funny translation to russian. vis below
+# <span class='danger'>[user] are stroking the head of [M] with a bangammer</span>", "<span class='userdanger'>[user] are stroking the head with a bangammer</span>", "you hear a bangammer stroking a head"
+- type: entity
+  parent: ToyHammer
+  id: BwoinkHammer
+  name: bwoink hammer
+  description: A toy hammer which makes a wildly terrifying sound. It is missing it's old spirit of bangammer and is still unreisinable.
+  components:
+    - type: Sprite
+      sprite: Objects/Fun/bwoink_hammer.rsi
+      state: icon
+    - type: Item
+      size: Small
+      sprite: Objects/Fun/bwoink_hammer.rsi
+    - type: MeleeWeapon
+      soundHit:
+        path: /Audio/Admin/adminhelp_old.ogg
+        params:
+            variation: 0.03
+            volume: 3
+      soundNoDamage:
+        path: /Audio/Admin/adminhelp_old.ogg
+        params:
+            variation: 0.03
+            volume: 3
+      damage:
+        types:
+          Blunt: 0
+
 - type: entity
   parent: BaseItem
   id: WhoopieCushion
