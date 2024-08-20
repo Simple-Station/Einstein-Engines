@@ -9,6 +9,9 @@ using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Content.Shared.Psionics;
+using System.Linq;
+using Content.Shared.PowerCell;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -58,24 +61,19 @@ namespace Content.Server.Abilities.Psionics
             if (!_prototypeManager.TryIndex<WeightedRandomPrototype>(_pool.Id, out var pool))
                 return;
 
-            var newPool = _serialization.CreateCopy(pool, null, false, true);
-            foreach (var proto in pool.Weights.Keys)
-            {
-                if (!_prototypeManager.TryIndex<PsionicPowerPrototype>(proto, out var powerPrototype))
-                    continue;
+            var newPool = pool.Weights.Keys.ToList();
+            newPool.RemoveAll(s =>
+                _prototypeManager.TryIndex<PsionicPowerPrototype>(s, out var p) &&
+                psionic.ActivePowers.Contains(p));
 
-                if (psionic.ActivePowers.Contains(powerPrototype))
-                    newPool.Weights.Remove(powerPrototype.ID);
-            }
+            if (newPool is null)
+                return;
 
-            if (newPool.Weights.Keys != null)
-            {
-                var newProto = newPool.Pick();
-                if (!_prototypeManager.TryIndex<PsionicPowerPrototype>(newProto, out var newPower))
-                    return;
+            var newProto = _random.Pick(newPool);
+            if (!_prototypeManager.TryIndex<PsionicPowerPrototype>(newProto, out var newPower))
+                return;
 
-                InitializePsionicPower(uid, newPower);
-            }
+            InitializePsionicPower(uid, newPower);
 
             _glimmerSystem.Glimmer += _random.Next(1, (int) Math.Round(1 + psionic.CurrentAmplification + psionic.CurrentDampening));
         }
@@ -92,7 +90,7 @@ namespace Content.Server.Abilities.Psionics
             RefreshPsionicModifiers(uid, psionic);
 
             if (playPopup)
-                _popups.PopupEntity(GenericInitializationMessage, uid, uid, PopupType.MediumCaution);
+                _popups.PopupEntity(Loc.GetString(GenericInitializationMessage), uid, uid, PopupType.MediumCaution);
             // TODO: Replace this with chat message: _popups.PopupEntity(proto.InitializationFeedback, uid, uid, PopupType.MediumCaution);
         }
 
@@ -119,15 +117,17 @@ namespace Content.Server.Abilities.Psionics
 
         private void AddPsionicPowerComponents(EntityUid uid, PsionicPowerPrototype proto)
         {
-            if (proto.Components is not null)
-                foreach (var comp in proto.Components)
-                {
-                    var powerComp = (Component) _componentFactory.GetComponent(comp.Key);
-                    if (EntityManager.HasComponent(uid, powerComp.GetType()))
-                        continue;
+            if (proto.Components is null)
+                return;
 
-                    AddComp(uid, powerComp);
-                }
+            foreach (var comp in proto.Components)
+            {
+                var powerComp = (Component) _componentFactory.GetComponent(comp.Key);
+                if (EntityManager.HasComponent(uid, powerComp.GetType()))
+                    continue;
+
+                AddComp(uid, powerComp);
+            }
         }
 
         private void AddPsionicStatSources(PsionicPowerPrototype proto, PsionicComponent psionic)
@@ -188,8 +188,8 @@ namespace Content.Server.Abilities.Psionics
 
             RemovePsionicActions(uid, psionic);
 
-            var newPsionic = _serialization.CreateCopy(psionic, null, false, true);
-            foreach (var proto in newPsionic.ActivePowers)
+            var newPsionic = psionic.ActivePowers.ToList();
+            foreach (var proto in newPsionic)
             {
                 if (!_prototypeManager.TryIndex<PsionicPowerPrototype>(proto.ID, out var power))
                     continue;
@@ -241,7 +241,7 @@ namespace Content.Server.Abilities.Psionics
                 if (!EntityManager.HasComponent(uid, powerComp.GetType()))
                     continue;
 
-                EntityManager.RemoveComponent(uid, powerComp);
+                EntityManager.RemoveComponent(uid, powerComp.GetType());
             }
         }
 
