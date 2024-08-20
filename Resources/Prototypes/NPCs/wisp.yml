@@ -4,8 +4,10 @@
     - tasks:
       - !type:HTNCompoundTask
         task: InnateRangedCombatCompound
+    - tasks:
       - !type:HTNCompoundTask
         task: DrainPsionicCompound
+    - tasks:
       - !type:HTNCompoundTask
         task: IdleCompound
 
@@ -14,11 +16,8 @@
   branches:
     - tasks:
       - !type:HTNPrimitiveTask
-        operator: !type:PickDrainTargetOperator
-          pathfindInPlanning: true
-          targetKey: MovementTarget
-          drainKey: DrainTarget
-          rangeKey: IdleRange
+        operator: !type:UtilityOperator
+          proto: NearbyDrainTargets
 
       - !type:HTNPrimitiveTask
         operator: !type:MoveToOperator
@@ -26,5 +25,8 @@
 
       - !type:HTNPrimitiveTask
         operator: !type:DrainOperator
-          drainKey: DrainTarget
+          drainKey: Target
+        preconditions:
+        - !type:KeyExistsPrecondition
+          key: Target
 
