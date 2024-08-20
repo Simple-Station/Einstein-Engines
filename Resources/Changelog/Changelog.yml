@@ -5405,3 +5405,26 @@ Entries:
       message: Cowtools are selectable for clown in the "Jobs" category of loadouts
   id: 6271
   time: '2024-08-20T06:48:59.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Mood System has been ported from White Dream. Mood acts as a 3rd
+        healthbar, alongside Health and Stamina, representing your character's
+        current mental state. Having either high or low mood can modify certain
+        physical attributes.
+    - type: Add
+      message: >-
+        Mood modifies your Critical Threshold. Your critical threshold can be
+        increased or decreased depending on how high or low your character's
+        mood is.
+    - type: Add
+      message: >-
+        Mood modifies your Movement Speed. Characters move faster when they have
+        an overall high mood, and move slower when they have a lower mood.
+    - type: Add
+      message: >-
+        Saturnine and Sanguine have been added to the list of Mental traits,
+        both providing innate modifiers to a character's Morale.
+  id: 6272
+  time: '2024-08-20T08:16:05.0000000+00:00'
