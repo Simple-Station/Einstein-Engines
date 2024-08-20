@@ -5451,3 +5451,11 @@ Entries:
         free, automatically. 
   id: 6273
   time: '2024-08-20T18:42:44.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue where Overlays(Dogvision, Ultravision, Mood) would apply
+        globally to all entities when updating.
+  id: 6274
+  time: '2024-08-20T18:49:28.0000000+00:00'
