@@ -86,6 +86,12 @@ trait-description-Foreigner =
     For one reason or another you do not speak this station's primary language.
     Instead, you have a translator issued to you that only you can use.
 
+trait-name-Saturnine = Saturnine
+trait-description-Saturnine = You are naturally dour and morose. Your mood is permanently decreased by a large amount.
+
+trait-name-Sanguine = Sanguine
+trait-description-Sanguine = You are naturally upbeat and cheerful! Your mood is permanently increased by a large amount.
+
 trait-name-WillToLive = Will To Live
 trait-description-WillToLive =
     You have an unusually strong "will to live", and will resist death more than others.
@@ -188,3 +194,5 @@ trait-description-WeaponsGeneralist =
     You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
     Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 25%.
 
+trait-name-Singer = Singer
+trait-description-Singer = You are naturally capable of singing simple melodies with your voice.

@@ -523,6 +523,8 @@ namespace Content.Server.Cloning
                 AddComp(mob, newSpeakLangs, true);
             }
 
+            if (clonePodComp.DoMetempsychosis)
+              EnsureComp<PsionicComponent>(mob);
 
             EnsureComp<SpeechComponent>(mob);
             EnsureComp<DamageForceSayComponent>(mob);
