@@ -7,7 +7,7 @@ using Content.Shared.Random.Helpers;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Utility;
 using Content.Shared.Psionics;
 using System.Linq;
 
@@ -23,7 +23,6 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly SharedPopupSystem _popups = default!;
-        [Dependency] private readonly ISerializationManager _serialization = default!;
 
         private ProtoId<WeightedRandomPrototype> _pool = "RandomPsionicPowerPool";
         private const string GenericInitializationMessage = "generic-power-initialization-feedback";
@@ -39,7 +38,10 @@ namespace Content.Server.Abilities.Psionics
         {
             //Any entity with InnatePowers should also be psionic, but in case they aren't already...
             if (!TryComp<PsionicComponent>(uid, out var psionic))
+            {
+                DebugTools.Assert("InnatePsionicPowers was added to an entity that lacks a PsionicComponent");
                 return;
+            }
 
             foreach (var proto in comp.PowersToAdd)
                 if (!psionic.ActivePowers.Contains(_prototypeManager.Index(proto)))
@@ -63,6 +65,11 @@ namespace Content.Server.Abilities.Psionics
 
         public void AddRandomPsionicPower(EntityUid uid)
         {
+            // We need to EnsureComp here to make sure that we aren't iterating over a component that:
+            // A: Isn't fully initialized
+            // B: Is in the process of being shutdown/deleted
+            // Imagine my surprise when I found out Resolve doesn't check for that.
+            // TODO: This EnsureComp will be 1984'd when I get to reworking how you get powers in the first place.
             EnsureComp<PsionicComponent>(uid, out var psionic);
 
             if (!_prototypeManager.TryIndex<WeightedRandomPrototype>(_pool.Id, out var pool))
@@ -84,6 +91,7 @@ namespace Content.Server.Abilities.Psionics
 
             _glimmerSystem.Glimmer += _random.Next(1, (int) Math.Round(1 + psionic.CurrentAmplification + psionic.CurrentDampening));
         }
+
         public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic, bool playPopup = true)
         {
             if (!_prototypeManager.HasIndex<PsionicPowerPrototype>(proto.ID))
@@ -107,43 +115,6 @@ namespace Content.Server.Abilities.Psionics
                 return;
 
             InitializePsionicPower(uid, proto, psionic, playPopup);
-        }
-
-        private void AddPsionicActions(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic)
-        {
-            foreach (var id in proto.Actions)
-            {
-                EntityUid? actionId = null;
-                if (_actions.AddAction(uid, ref actionId, id))
-                {
-                    _actions.StartUseDelay(actionId);
-                    psionic.Actions.Add(id, actionId);
-                }
-            }
-        }
-
-        private void AddPsionicPowerComponents(EntityUid uid, PsionicPowerPrototype proto)
-        {
-            if (proto.Components is null)
-                return;
-
-            foreach (var comp in proto.Components)
-            {
-                var powerComp = (Component) _componentFactory.GetComponent(comp.Key);
-                if (EntityManager.HasComponent(uid, powerComp.GetType()))
-                    continue;
-
-                AddComp(uid, powerComp);
-            }
-        }
-
-        private void AddPsionicStatSources(PsionicPowerPrototype proto, PsionicComponent psionic)
-        {
-            if (proto.AmplificationModifier != 0)
-                psionic.AmplificationSources.Add(proto.Name, proto.AmplificationModifier);
-
-            if (proto.DampeningModifier != 0)
-                psionic.DampeningSources.Add(proto.Name, proto.DampeningModifier);
         }
 
         /// <summary>
@@ -222,6 +193,43 @@ namespace Content.Server.Abilities.Psionics
                 return;
             }
             RefreshPsionicModifiers(uid, psionic);
+        }
+
+        private void AddPsionicActions(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic)
+        {
+            foreach (var id in proto.Actions)
+            {
+                EntityUid? actionId = null;
+                if (_actions.AddAction(uid, ref actionId, id))
+                {
+                    _actions.StartUseDelay(actionId);
+                    psionic.Actions.Add(id, actionId);
+                }
+            }
+        }
+
+        private void AddPsionicPowerComponents(EntityUid uid, PsionicPowerPrototype proto)
+        {
+            if (proto.Components is null)
+                return;
+
+            foreach (var comp in proto.Components)
+            {
+                var powerComp = (Component) _componentFactory.GetComponent(comp.Key);
+                if (EntityManager.HasComponent(uid, powerComp.GetType()))
+                    continue;
+
+                AddComp(uid, powerComp);
+            }
+        }
+
+        private void AddPsionicStatSources(PsionicPowerPrototype proto, PsionicComponent psionic)
+        {
+            if (proto.AmplificationModifier != 0)
+                psionic.AmplificationSources.Add(proto.Name, proto.AmplificationModifier);
+
+            if (proto.DampeningModifier != 0)
+                psionic.DampeningSources.Add(proto.Name, proto.DampeningModifier);
         }
 
         /// <summary>
