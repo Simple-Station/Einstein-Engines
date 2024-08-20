@@ -36,7 +36,10 @@ namespace Content.Server.Abilities.Psionics
 
         private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, ComponentStartup args)
         {
-            //Any entity with InnatePowers should also be psionic, but in case they aren't already...
+            // Any entity with InnatePowers should also be psionic, but in case they aren't already...
+            // If I use an EnsureComp here, it crashes during tests but not during Live.
+            // I don't know why, I can't figure out why, and I'm not going to spend another 10 hours trying to find out why.
+            // Easier solution is to force the tests to fail if someone creates an Entity that lacks a PsionicComponent.
             if (!TryComp<PsionicComponent>(uid, out var psionic))
             {
                 DebugTools.Assert("InnatePsionicPowers was added to an entity that lacks a PsionicComponent");
