@@ -3,7 +3,6 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.GameTicking.Components;
 using Content.Shared.Construction.EntitySystems;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Popups;
