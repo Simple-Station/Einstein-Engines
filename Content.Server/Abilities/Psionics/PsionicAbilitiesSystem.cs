@@ -230,6 +230,7 @@ namespace Content.Server.Abilities.Psionics
                 _popups.PopupEntity(Loc.GetString(psionic.MindbreakingFeedback, ("entity", MetaData(uid).EntityName)), uid, uid, PopupType.MediumCaution);
 
                 RemComp<PsionicComponent>(uid);
+                RemComp<InnatePsionicPowersComponent>(uid);
                 return;
             }
             RefreshPsionicModifiers(uid, psionic);
