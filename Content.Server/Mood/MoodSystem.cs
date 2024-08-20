@@ -38,6 +38,7 @@ public sealed class MoodSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MoodComponent, ComponentStartup>(OnInit);
+        SubscribeLocalEvent<MoodComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<MoodComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<MoodComponent, MoodEffectEvent>(OnMoodEffect);
         SubscribeLocalEvent<MoodComponent, DamageChangedEvent>(OnDamageChange);
@@ -45,6 +46,11 @@ public sealed class MoodSystem : EntitySystem
         SubscribeLocalEvent<MoodComponent, MoodRemoveEffectEvent>(OnRemoveEffect);
 
         SubscribeLocalEvent<MoodModifyTraitComponent, ComponentStartup>(OnTraitStartup);
+    }
+
+    private void OnShutdown(EntityUid uid, MoodComponent component, ComponentShutdown args)
+    {
+        _alerts.ClearAlertCategory(uid, AlertCategory.Mood);
     }
 
 
