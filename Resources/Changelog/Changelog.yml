@@ -5397,3 +5397,11 @@ Entries:
       message: You no longer need to have a station record to publish news.
   id: 6270
   time: '2024-08-18T18:11:10.0000000+00:00'
+- author: ShatteredSwords
+  changes:
+    - type: Add
+      message: Several useful items have been added to loadouts
+    - type: Add
+      message: Cowtools are selectable for clown in the "Jobs" category of loadouts
+  id: 6271
+  time: '2024-08-20T06:48:59.0000000+00:00'
