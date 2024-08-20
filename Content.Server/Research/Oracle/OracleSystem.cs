@@ -5,7 +5,6 @@ using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
-using Content.Server.Psionics;
 using Content.Server.Research.Systems;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Chat;
@@ -74,7 +73,7 @@ public sealed class OracleSystem : EntitySystem
 
     private void OnInteractHand(Entity<OracleComponent> oracle, ref InteractHandEvent args)
     {
-        if (!HasComp<PotentialPsionicComponent>(args.User) || HasComp<PsionicInsulationComponent>(args.User)
+        if (!HasComp<PsionicComponent>(args.User) || HasComp<PsionicInsulationComponent>(args.User)
             || !TryComp<ActorComponent>(args.User, out var actor))
             return;
 

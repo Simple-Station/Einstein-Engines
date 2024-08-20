@@ -173,7 +173,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (prototype?.StartingGear != null)
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
-            EquipStartingGear(entity.Value, startingGear);
+            EquipStartingGear(entity.Value, startingGear, profile);
             if (profile != null)
                 EquipIdCard(entity.Value, profile.Name, prototype, station);
         }

@@ -5,6 +5,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Mood;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
@@ -78,7 +79,19 @@ public sealed class InteractionPopupSystem : EntitySystem
         if (_random.Prob(component.SuccessChance))
         {
             if (component.InteractSuccessString != null)
+            {
                 msg = Loc.GetString(component.InteractSuccessString, ("target", Identity.Entity(uid, EntityManager))); // Success message (localized).
+                if (component.InteractSuccessString == "hugging-success-generic")
+                {
+                    var ev = new MoodEffectEvent("BeingHugged");
+                    RaiseLocalEvent(target, ev);
+                }
+                else if (component.InteractSuccessString.Contains("petting-success-"))
+                {
+                    var ev = new MoodEffectEvent("PetAnimal");
+                    RaiseLocalEvent(user, ev);
+                }
+            }
 
             if (component.InteractSuccessSound != null)
                 sfx = component.InteractSuccessSound;
