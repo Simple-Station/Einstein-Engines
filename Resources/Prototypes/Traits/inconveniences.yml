@@ -7,7 +7,6 @@
       jobs:
         - Borg
         - MedicalBorg
-        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -17,6 +16,7 @@
       inverted: true
       species:
         - Dwarf
+        - IPC
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 2

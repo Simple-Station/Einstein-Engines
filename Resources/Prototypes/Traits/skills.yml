@@ -43,7 +43,6 @@
       jobs:
         - Borg
         - MedicalBorg
-        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -53,6 +52,7 @@
       inverted: true
       species:
         - Dwarf
+        - IPC
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 0.5
@@ -67,7 +67,6 @@
       jobs:
         - Borg
         - MedicalBorg
-        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -77,6 +76,7 @@
       inverted: true
       species:
         - Dwarf
+        - IPC
   components:
     - type: LiquorLifeline
     - type: LightweightDrunk
@@ -184,7 +184,10 @@
       jobs:
         - Borg
         - MedicalBorg
-        - IPC
         - ResearchDirector
         - ForensicMantis
         - Chaplain
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
