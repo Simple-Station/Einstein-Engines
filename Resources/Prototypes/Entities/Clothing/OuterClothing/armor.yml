@@ -1,7 +1,6 @@
 # Numbers for armor here largely taken from /tg/.
 # NOTE: Half of the kind of armor you're probably thinking of is in vests.yml. These should probably be merged some day.
 
-#Basic armor vest
 - type: entity
   parent: ClothingOuterBaseMedium
   id: ClothingOuterArmorBasic
@@ -138,6 +137,9 @@
         Radiation: 0
         Caustic: 0.75
   - type: GroupExamine
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterArmorHeavy
@@ -234,6 +236,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: GroupExamine
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBaseLarge

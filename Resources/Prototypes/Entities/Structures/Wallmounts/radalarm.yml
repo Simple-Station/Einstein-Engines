@@ -1,0 +1,51 @@
+- type: entity
+  id: GeigerCounterWallMount
+  name: wall-mounted Geiger counter
+  description: A stationary device that emits a warning tone when it detects radiation pulses.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Rotatable
+      rotateWhileAnchored: false
+      rotateWhilePulling: true
+    - type: WallMount
+    - type: Transform
+      noRot: false
+      anchored: true
+    - type: Sprite
+      noRot: true
+      drawdepth: WallMountedItems
+      sprite: Structures/Wallmounts/radalarm.rsi
+      layers:
+        - state: geiger_base
+        - state: geiger_on_idle
+          map: ["enum.GeigerLayers.Screen"]
+          shader: unshaded
+          visible: false
+    - type: Geiger
+      showControl: true
+      showExamine: true
+      localSoundOnly: false
+      audioParameters:
+        volume: -4
+        maxDistance: 10
+        rolloffFactor: 4
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.GeigerVisuals.IsEnabled:
+          GeigerLayers.Screen:
+            True: { visible: True }
+            False: { visible: False }
+        enum.GeigerVisuals.DangerLevel:
+          GeigerLayers.Screen:
+            None: {state: geiger_on_idle}
+            Low: {state: geiger_on_low}
+            Med: {state: geiger_on_med}
+            High: {state: geiger_on_high}
+            Extreme: {state: geiger_on_ext}
+

@@ -58,9 +58,6 @@ namespace Content.Server.Abilities.Mime
             EnsureComp<MutedComponent>(uid);
             _alertsSystem.ShowAlert(uid, AlertType.VowOfSilence);
             _actionsSystem.AddAction(uid, ref component.InvisibleWallActionEntity, component.InvisibleWallAction, uid);
-            //Nyano - Summary: Add Psionic Ability to Mime.
-            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
-                psionic.PsionicAbility = component.InvisibleWallActionEntity;
         }
 
         /// <summary>

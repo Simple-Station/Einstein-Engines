@@ -30,16 +30,23 @@
     energyPerUse: 70
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    attackRate: 0.8
+    range: 1.4
     damage:
       types:
-        Blunt: 9
+        Blunt: 7.5
+    bluntStaminaDamageFactor: 2.0
+    heavyRateModifier: 0.8
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 5
+    maxTargets: 3
     angle: 60
     animation: WeaponArcThrust
   - type: StaminaDamageOnHit
-    damage: 20
+    damage: 22
     sound: /Audio/Weapons/egloves.ogg
   - type: StaminaDamageOnCollide
-    damage: 20
+    damage: 22
     sound: /Audio/Weapons/egloves.ogg
   - type: Battery
     maxCharge: 360

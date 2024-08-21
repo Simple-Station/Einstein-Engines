@@ -19,7 +19,7 @@
   parent: ClothingHeadHelmetHardsuitSyndie
   id: ClothingHeadHelmetHardsuitSyndieReverseEngineered
   noSpawn: true
-  name: SA-123 combat hardsuit helmet
+  name: SA-122 combat hardsuit helmet
   description: An advanced hardsuit helmet designed for work in special operations.
   components:
   - type: Sprite
@@ -31,7 +31,7 @@
   parent: ClothingHeadHelmetHardsuitCybersun
   id: ClothingHeadHelmetHardsuitJuggernautReverseEngineered
   noSpawn: true
-  name: SA-127 combat hardsuit helmet
+  name: SA-126 combat hardsuit helmet
   description: An assault hardsuit helmet featuring a top-secret translucent polymer.
   components:
   - type: Sprite

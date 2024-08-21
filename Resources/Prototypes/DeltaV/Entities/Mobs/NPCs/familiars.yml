@@ -81,10 +81,11 @@
   - type: ZombieImmune # No zombie servant
   - type: RandomMetadata
     nameSegments: [names_golem]
-  - type: PotentialPsionic
   - type: Psionic
     removable: false
-  # - type: PyrokinesisPower # Pending psionic rework
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - PyrokinesisPower
   - type: Grammar
     attributes:
       proper: true
