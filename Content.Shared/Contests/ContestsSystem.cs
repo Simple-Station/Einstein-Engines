@@ -30,7 +30,6 @@ namespace Content.Shared.Contests
         /// <summary>
         ///     Outputs the ratio of mass between a performer and the average human mass
         /// </summary>
-        /// <param name="performerUid">Uid of Performer</param>
         public float MassContest(EntityUid performerUid, bool bypassClamp = false, float rangeFactor = 1f, float otherMass = AverageMass)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
@@ -48,8 +47,7 @@ namespace Content.Shared.Contests
 
         /// <inheritdoc cref="MassContest(EntityUid, bool, float, float)"/>
         /// <remarks>
-        ///     MaybeMassContest, in case your entity doesn'so be ready to meet god if you bypass the clamp.
-        /// </remarks> exist
+        ///     MaybeMassContest, in case your entity doesn't exist
         /// </remarks>
         public float MassContest(EntityUid? performerUid, bool bypassClamp = false, float rangeFactor = 1f, float otherMass = AverageMass)
         {
@@ -65,7 +63,6 @@ namespace Content.Shared.Contests
         ///     Outputs the ratio of mass between a performer and the average human mass
         ///     If a function already has the performer's physics component, this is faster
         /// </summary>
-        /// <param name="performerPhysics"></param>
         public float MassContest(PhysicsComponent performerPhysics, bool bypassClamp = false, float rangeFactor = 1f, float otherMass = AverageMass)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
@@ -84,8 +81,6 @@ namespace Content.Shared.Contests
         ///     Outputs the ratio of mass between a performer and a target, accepts either EntityUids or PhysicsComponents in any combination
         ///     If you have physics components already in your function, use <see cref="MassContest(PhysicsComponent, float)" /> instead
         /// </summary>
-        /// <param name="performerUid"></param>
-        /// <param name="targetUid"></param>
         public float MassContest(EntityUid performerUid, EntityUid targetUid, bool bypassClamp = false, float rangeFactor = 1f)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
@@ -240,9 +235,6 @@ namespace Content.Shared.Contests
         /// <remarks>
         ///     This can produce some truly astounding modifiers, so be ready to meet god if you bypass the clamp.
         /// </remarks>
-        /// <param name="performer"></param>
-        /// <param name="bypassClamp"></param>
-        /// <param name="rangeFactor"></param>
         public float MindContest(EntityUid performer, bool bypassClamp = false, float rangeFactor = 1f, float otherPsion = AveragePsionicPotential)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
@@ -270,10 +262,6 @@ namespace Content.Shared.Contests
         /// <remarks>
         ///     This can produce some truly astounding modifiers, so be ready to meet god if you bypass the clamp.
         /// </remarks>
-        /// <param name="performer"></param>
-        /// <param name="target"></param>
-        /// <param name="bypassClamp"></param>
-        /// <param name="rangeFactor"></param>
         public float MindContest(EntityUid performer, EntityUid target, bool bypassClamp = false, float rangeFactor = 1f)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
@@ -305,9 +293,6 @@ namespace Content.Shared.Contests
         /// <summary>
         ///     Outputs the ratio of an Entity's mood level and its Neutral Mood threshold.
         /// </summary>
-        /// <param name="performer"></param>
-        /// <param name="bypassClamp"></param>
-        /// <param name="rangeFactor"></param>
         public float MoodContest(EntityUid performer, bool bypassClamp = false, float rangeFactor = 1f)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
@@ -325,10 +310,6 @@ namespace Content.Shared.Contests
         /// <summary>
         ///     Outputs the ratio of mood level between two Entities.
         /// </summary>
-        /// <param name="performer"></param>
-        /// <param name="target"></param>
-        /// <param name="bypassClamp"></param>
-        /// <param name="rangeFactor"></param>
         public float MoodContest(EntityUid performer, EntityUid target, bool bypassClamp = false, float rangeFactor = 1f)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
