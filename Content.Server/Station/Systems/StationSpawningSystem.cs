@@ -5,7 +5,7 @@ using Content.Server.IdentityManagement;
 using Content.Server.Mind.Commands;
 using Content.Server.PDA;
 using Content.Server.Shuttles.Systems;
-using Content.Server.SimpleStation14.Silicon.IPC; // Parkstation - IPCs
+using Content.Server.Silicon.IPC;
 using Content.Server.Spawners.EntitySystems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
@@ -85,7 +85,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (station != null && !Resolve(station.Value, ref stationSpawning))
             throw new ArgumentException("Tried to use a non-station entity as a station!", nameof(station));
 
-        // Delta-V: Set desired spawn point type.
         var ev = new PlayerSpawningEvent(job, profile, station, spawnPointType);
 
         if (station != null && profile != null)
@@ -276,7 +275,7 @@ public sealed class PlayerSpawningEvent : EntityEventArgs
     /// </summary>
     public readonly EntityUid? Station;
     /// <summary>
-    /// Delta-V: Desired SpawnPointType, if any.
+    /// Desired SpawnPointType, if any.
     /// </summary>
     public readonly SpawnPointType DesiredSpawnPointType;
 

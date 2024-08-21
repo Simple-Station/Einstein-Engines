@@ -17,7 +17,7 @@ public sealed partial class DeathgaspComponent : Component
     public string Prototype = "DefaultDeathgasp";
 
     /// <summary>
-    ///     Makes sure that the deathgasp is only displayed if the entity went critical before dying - Estacao Pirata
+    ///     Makes sure that the deathgasp is only displayed if the entity went critical before dying
     /// </summary>
     [DataField("needsCritical")]
     public bool NeedsCritical = true;
