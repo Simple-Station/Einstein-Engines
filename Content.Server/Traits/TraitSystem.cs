@@ -49,14 +49,9 @@ public sealed class TraitSystem : EntitySystem
                 out _))
                 continue;
 
-            if (traitPrototype.Components is not null)
-                AddTraitComponents(args.Mob, traitPrototype);
-
-            if (traitPrototype.Actions is not null)
-                AddTraitActions(args.Mob, traitPrototype);
-
-            if (traitPrototype.PsionicPowers is not null)
-                AddTraitPsionics(args.Mob, traitPrototype);
+            AddTraitComponents(args.Mob, traitPrototype);
+            AddTraitActions(args.Mob, traitPrototype);
+            AddTraitPsionics(args.Mob, traitPrototype);
         }
     }
 
@@ -67,6 +62,9 @@ public sealed class TraitSystem : EntitySystem
     /// <param name="traitPrototype"></param>
     private void AddTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
     {
+        if (traitPrototype.Components is null)
+            return;
+
         foreach (var entry in traitPrototype.Components.Values)
         {
             if (HasComp(uid, entry.Component.GetType()))
@@ -86,6 +84,9 @@ public sealed class TraitSystem : EntitySystem
     /// <param name="psionic"></param>
     private void AddTraitActions(EntityUid uid, TraitPrototype traitPrototype)
     {
+        if (traitPrototype.Actions is null)
+            return;
+
         foreach (var id in traitPrototype.Actions)
         {
             EntityUid? actionId = null;
@@ -98,11 +99,15 @@ public sealed class TraitSystem : EntitySystem
 
     /// <summary>
     ///     If a trait includes any Psionic Powers, this enters the powers into PsionicSystem to be initialized.
+    ///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="traitPrototype"></param>
     private void AddTraitPsionics(EntityUid uid, TraitPrototype traitPrototype)
     {
+        if (traitPrototype.PsionicPowers is null)
+            return;
+
         foreach (var powerProto in traitPrototype.PsionicPowers)
             _psionicAbilities.InitializePsionicPower(uid, powerProto, false);
     }
