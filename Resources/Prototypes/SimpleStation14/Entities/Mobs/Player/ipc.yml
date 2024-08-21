@@ -96,7 +96,7 @@
   - type: IntrinsicRadioTransmitter
   - type: DeadStartupButton
     sound:
-      path: /Audio/EstacaoPirata/Effects/Silicon/startup.ogg
+      path: /Audio/Effects/Silicon/startup.ogg
 # Erro de linter
 #   - type: Wires
 #     layoutId: IPC

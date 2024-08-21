@@ -6,9 +6,9 @@
     Buzz:
       path: /Audio/Effects/Cargo/buzz_sigh.ogg
     Scream:
-      path: /Audio/EstacaoPirata/Voice/IPC/robot-scream.ogg
+      path: /Audio/Voice/IPC/robot-scream.ogg
     Laugh:
-      path: /Audio/EstacaoPirata/Voice/IPC/robot-laugh_3.ogg
+      path: /Audio/Voice/IPC/robot-laugh_3.ogg
     Chitter:
       path: /Audio/Voice/Talk/pai.ogg
     Squeak:
@@ -24,6 +24,6 @@
     Sigh:
       path: /Audio/Voice/Talk/pai.ogg
     Crying:
-      path: /Audio/EstacaoPirata/Voice/IPC/cry_robot_1.ogg
+      path: /Audio/Voice/IPC/cry_robot_1.ogg
     Whistle:
       path: /Audio/Voice/Talk/pai.ogg
