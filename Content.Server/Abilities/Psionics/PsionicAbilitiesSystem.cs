@@ -1,6 +1,5 @@
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
-using Content.Shared.Chat;
 using Content.Shared.Popups;
 using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Random;
@@ -95,7 +94,7 @@ namespace Content.Server.Abilities.Psionics
                 _prototypeManager.TryIndex<PsionicPowerPrototype>(s, out var p) &&
                 psionic.ActivePowers.Contains(p));
 
-            if (newPool is null)
+            if (newPool.Count == 0)
                 return;
 
             var newProto = _random.Pick(newPool);
@@ -286,7 +285,7 @@ namespace Content.Server.Abilities.Psionics
             if (proto.InitializationFeedback is null)
                 return;
 
-            var feedbackMessage = $"[font size={proto.InitializationFeedbackFontSize}][color={proto.InitializationFeedbackColor}]{proto.InitializationFeedback}[/color][/font]";
+            var feedbackMessage = Loc.GetString($"[font size={proto.InitializationFeedbackFontSize}][color={proto.InitializationFeedbackColor}]{proto.InitializationFeedback}[/color][/font]");
             _chatManager.ChatMessageToOne(
                 proto.InitializationFeedbackChannel,
                 feedbackMessage,
