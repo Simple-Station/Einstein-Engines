@@ -8,6 +8,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -26,6 +30,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -44,6 +52,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -62,6 +74,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -88,6 +104,7 @@
       inverted: true
       species:
         - Oni
+        - IPC
   components:
     - type: StaminaCritModifier
       critThresholdModifier: 10
@@ -124,6 +141,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -143,6 +164,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

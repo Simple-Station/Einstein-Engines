@@ -12,6 +12,7 @@ using Content.Shared.Damage;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Timing;
+using Content.Shared.Silicon.Components; // I shouldn't have to modify this.
 
 namespace Content.Server.Bed
 {
@@ -65,7 +66,8 @@ namespace Content.Server.Bed
 
                 foreach (var healedEntity in strapComponent.BuckledEntities)
                 {
-                    if (_mobStateSystem.IsDead(healedEntity))
+                    if (_mobStateSystem.IsDead(healedEntity) 
+                        || HasComp<SiliconComponent>(healedEntity))
                         continue;
 
                     var damage = bedComponent.Damage;

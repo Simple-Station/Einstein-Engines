@@ -10,4 +10,4 @@ species-name-arachne = Arachne
 species-name-moth = Moth Person
 species-name-skeleton = Skeleton
 species-name-vox = Vox
-species-name-ipc = Synth
+species-name-ipc = IPC

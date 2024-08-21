@@ -1,32 +1,32 @@
 ﻿- type: body
   id: IPC
-  name: "IPC"
+  name: "ipc"
   root: torso
   slots:
     head:
       part: HeadIPC
       connections:
-        - torso
+      - torso
       organs:
-        brain: OrganIPCCPU
-        eyes: OrganIPCGPU
+        eyes: OrganIPCEyes
     torso:
       part: TorsoIPC
-      organs:
-        lungs: OrganIPCFan
       connections:
-        - left arm
-        - right arm
-        - left leg
-        - right leg
+      - left arm
+      - right arm
+      - left leg
+      - right leg
+      organs:
+        brain: PositronicBrain
+        heart: OrganIPCPump
     right arm:
       part: RightArmIPC
       connections:
-        - right hand
+      - right hand
     left arm:
       part: LeftArmIPC
       connections:
-        - left hand
+      - left hand
     right hand:
       part: RightHandIPC
     left hand:
@@ -34,11 +34,11 @@
     right leg:
       part: RightLegIPC
       connections:
-        - right foot
+      - right foot
     left leg:
       part: LeftLegIPC
       connections:
-        - left foot
+      - left foot
     right foot:
       part: RightFootIPC
     left foot:
