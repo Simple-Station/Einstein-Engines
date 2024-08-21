@@ -1,6 +1,5 @@
 ﻿using Content.Server.GameTicking;
 using Content.Server.GameTicking.Commands;
-using Content.Server.GameTicking.Components;
 using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Shared.CCVar;

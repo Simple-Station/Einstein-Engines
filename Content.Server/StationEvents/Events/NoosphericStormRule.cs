@@ -1,6 +1,5 @@
 using Robust.Shared.Random;
 using Content.Server.Abilities.Psionics;
-using Content.Server.GameTicking.Components;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
 using Content.Server.Psionics;
@@ -24,17 +23,14 @@ internal sealed class NoosphericStormRule : StationEventSystem<NoosphericStormRu
 
         List<EntityUid> validList = new();
 
-        var query = EntityManager.EntityQueryEnumerator<PotentialPsionicComponent>();
-        while (query.MoveNext(out var potentialPsionic, out var potentialPsionicComponent))
+        var query = EntityManager.EntityQueryEnumerator<PsionicComponent>();
+        while (query.MoveNext(out var Psionic, out var PsionicComponent))
         {
-            if (_mobStateSystem.IsDead(potentialPsionic))
+            if (_mobStateSystem.IsDead(Psionic)
+                || HasComp<PsionicInsulationComponent>(Psionic))
                 continue;
 
-            // Skip over those who are already psionic or those who are insulated, or zombies.
-            if (HasComp<PsionicComponent>(potentialPsionic) || HasComp<PsionicInsulationComponent>(potentialPsionic) || HasComp<ZombieComponent>(potentialPsionic))
-                continue;
-
-            validList.Add(potentialPsionic);
+            validList.Add(Psionic);
         }
 
         // Give some targets psionic abilities.

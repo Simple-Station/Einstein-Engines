@@ -441,28 +441,11 @@
     weight: 2
     duration: 1
   - type: ZombieRule
-  - type: AntagSelection
-    definitions:
-    - prefRoles: [ InitialInfected ]
-      max: 3
-      playerRatio: 10
-      blacklist:
-        components:
-        - ZombieImmune
-        - InitialInfectedExempt
-      briefing:
-        text: zombie-patientzero-role-greeting
-        color: Plum
-        sound: "/Audio/Ambience/Antag/zombie_start.ogg"
-      components:
-      - type: PendingZombie #less time to prepare than normal
-        minInitialInfectedGrace: 300
-        maxInitialInfectedGrace: 450
-      - type: ZombifyOnDeath
-      - type: IncurableZombie
-      mindComponents:
-      - type: InitialInfectedRole
-        prototype: InitialInfected
+    minStartDelay: 0 #let them know immediately
+    maxStartDelay: 10
+    maxInitialInfected: 2
+    minInitialInfectedGrace: 300
+    maxInitialInfectedGrace: 450
 
 - type: entity
   id: LoneOpsSpawn
@@ -475,29 +458,7 @@
     minimumPlayers: 15
     reoccurrenceDelay: 45
     duration: 1
-  - type: LoadMapRule
-    mapPath: /Maps/Shuttles/striker.yml
-  - type: NukeopsRule
-    roundEndBehavior: Nothing
-  - type: AntagSelection
-    definitions:
-    - spawnerPrototype: SpawnPointLoneNukeOperative
-      min: 1
-      max: 1
-      pickPlayer: false
-      startingGear: SyndicateLoneOperativeGearFull
-      components:
-      - type: NukeOperative
-      - type: RandomMetadata
-        nameSegments:
-        - SyndicateNamesPrefix
-        - SyndicateNamesNormal
-      - type: NpcFactionMember
-        factions:
-        - Syndicate
-      mindComponents:
-      - type: NukeopsRole
-        prototype: Nukeops
+  - type: LoneOpsSpawnRule
 
 - type: entity
   id: MassHallucinations
