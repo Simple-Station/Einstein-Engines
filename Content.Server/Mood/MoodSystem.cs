@@ -48,6 +48,7 @@ public sealed class MoodSystem : EntitySystem
         SubscribeLocalEvent<MoodModifyTraitComponent, ComponentStartup>(OnTraitStartup);
     }
 
+
     private void OnShutdown(EntityUid uid, MoodComponent component, ComponentShutdown args)
     {
         _alerts.ClearAlertCategory(uid, AlertCategory.Mood);
