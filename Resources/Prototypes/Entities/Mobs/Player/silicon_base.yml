@@ -194,6 +194,7 @@
             True: { visible: true }
             False: { visible: false }
     - type: Cuffable
+    - type: Mood
     - type: AnimationPlayer
     - type: Buckle
     - type: CreamPied
