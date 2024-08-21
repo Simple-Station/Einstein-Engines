@@ -16,6 +16,7 @@
       inverted: true
       species:
         - Dwarf
+        - IPC
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 2
