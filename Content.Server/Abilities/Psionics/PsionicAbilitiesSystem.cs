@@ -141,8 +141,7 @@ namespace Content.Server.Abilities.Psionics
         /// <param name="playPopup"></param>
         public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, bool playPopup = true)
         {
-            if (!TryComp<PsionicComponent>(uid, out var psionic))
-                return;
+            EnsureComp<PsionicComponent>(uid, out var psionic);
 
             InitializePsionicPower(uid, proto, psionic, playPopup);
         }
