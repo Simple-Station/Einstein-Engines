@@ -18,7 +18,7 @@
     - ActionMassSleep
   components:
     - type: MassSleepPower
-  initializationFeedback: mass-sleep-power-initialization-feedback
+  # initializationFeedback: mass-sleep-power-initialization-feedback # I apologize, I don't feel like writing a paragraph of feedback for a power that's getting replaced with a new one.
   metapsionicFeedback: mass-sleep-power-metapsionic-feedback
   amplificationModifier: 0.5
   dampeningModifier: 0.5
