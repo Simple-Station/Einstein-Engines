@@ -7,7 +7,7 @@ using Content.Shared.Random.Helpers;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
+using Robust.Shared.Serialization.Manager;
 using Content.Shared.Psionics;
 using System.Linq;
 
@@ -23,6 +23,7 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly SharedPopupSystem _popups = default!;
+        [Dependency] private readonly ISerializationManager _serialization = default!;
 
         private ProtoId<WeightedRandomPrototype> _pool = "RandomPsionicPowerPool";
         private const string GenericInitializationMessage = "generic-power-initialization-feedback";
@@ -265,13 +266,14 @@ namespace Content.Server.Abilities.Psionics
             if (proto.Components is null)
                 return;
 
-            foreach (var comp in proto.Components)
+            foreach (var entry in proto.Components.Values)
             {
-                var powerComp = (Component) _componentFactory.GetComponent(comp.Key);
-                if (EntityManager.HasComponent(uid, powerComp.GetType()))
+                if (HasComp(uid, entry.Component.GetType()))
                     continue;
 
-                AddComp(uid, powerComp);
+                var comp = (Component) _serialization.CreateCopy(entry.Component, notNullableOverride: true);
+                comp.Owner = uid;
+                EntityManager.AddComponent(uid, comp);
             }
         }
 
