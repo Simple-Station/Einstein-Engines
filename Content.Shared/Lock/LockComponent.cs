@@ -30,7 +30,7 @@ public sealed partial class LockComponent : Component
     /// <summary>
     /// Whether or not the lock is unlocked by simply clicking.
     /// </summary>
-    [DataField("unlockOnClick"), ViewVariables(VVAccess.ReadWrite)] // Estacao Pirata - IPC locking
+    [DataField("unlockOnClick"), ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
     public bool UnlockOnClick = true;
 
