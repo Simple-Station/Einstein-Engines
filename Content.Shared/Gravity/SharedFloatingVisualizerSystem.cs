@@ -70,7 +70,6 @@ public abstract class SharedFloatingVisualizerSystem : EntitySystem
         if (!TryComp<FloatingVisualsComponent>(uid, out var floating))
             return;
         floating.CanFloat = args.IsFlying;
-        Dirty(uid, floating);
 
         if (args.IsFlying)
         {

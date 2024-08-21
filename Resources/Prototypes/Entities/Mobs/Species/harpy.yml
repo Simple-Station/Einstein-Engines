@@ -5,6 +5,7 @@
   id: MobHarpyBase
   abstract: true
   components:
+  - type: DashFlight
   - type: Flight
   - type: Singer
     proto: HarpySinger
@@ -209,3 +210,21 @@
     icon: { sprite: DeltaV/Interface/Actions/flight.rsi, state: flight_off }
     iconOn: { sprite : DeltaV/Interface/Actions/flight.rsi, state: flight_on }
     event: !type:ToggleFlightEvent
+
+- type: entity
+  id: ActionDashFlight
+  name: Dash Flight
+  description: Quickly fly to a nearby location.
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 0
+    range: 16 # default examine-range is 16.
+    # ^ should probably add better validation that the clicked location is on the users screen somewhere,
+    itemIconStyle: BigAction
+    checkCanAccess: false
+    repeat: true
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: blink
+    event: !type:DashFlightEvent

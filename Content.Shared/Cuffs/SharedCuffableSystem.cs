@@ -7,6 +7,7 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.Contests;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Database;
+using Content.Shared.DeltaV.Harpy;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
@@ -468,6 +469,13 @@ namespace Content.Shared.Cuffs
             if (cuffable.CuffedHandCount >= hands.Count)
             {
                 _popup.PopupClient(Loc.GetString("handcuff-component-target-has-no-free-hands-error",
+                    ("targetName", Identity.Name(target, EntityManager, user))), user, user);
+                return true;
+            }
+
+            if (TryComp<FlightComponent>(target, out var flight) && flight.On)
+            {
+                _popup.PopupClient(Loc.GetString("handcuff-component-target-flying-error",
                     ("targetName", Identity.Name(target, EntityManager, user))), user, user);
                 return true;
             }
