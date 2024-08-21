@@ -353,10 +353,9 @@
 - type: damageModifierSet
   id: FireSpirit
   coefficients:
-    Heat: 0.0
-    Cold: 0.5
-    Shock: 0.0
-    Blunt: 0.5
-    Slash: 0.5
-    Piercing: 0.5
-    Holy: 3.0
+    Heat: 0
+    Cold: 1.2
+    Blunt: 0.6
+    Slash: 0.6
+    Piercing: 0.6
+    Holy: 1.5
