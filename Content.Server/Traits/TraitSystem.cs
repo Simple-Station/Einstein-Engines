@@ -49,10 +49,20 @@ public sealed class TraitSystem : EntitySystem
                 out _))
                 continue;
 
-            AddTraitComponents(args.Mob, traitPrototype);
-            AddTraitActions(args.Mob, traitPrototype);
-            AddTraitPsionics(args.Mob, traitPrototype);
+            AddTrait(args.Mob, traitPrototype);
         }
+    }
+
+    /// <summary>
+    ///     Adds a single Trait Prototype to an Entity.
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="traitPrototype"></param>
+    public void AddTrait(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        AddTraitComponents(uid, traitPrototype);
+        AddTraitActions(uid, traitPrototype);
+        AddTraitPsionics(uid, traitPrototype);
     }
 
     /// <summary>
@@ -60,7 +70,7 @@ public sealed class TraitSystem : EntitySystem
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="traitPrototype"></param>
-    private void AddTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
+    public void AddTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
     {
         if (traitPrototype.Components is null)
             return;
@@ -82,7 +92,7 @@ public sealed class TraitSystem : EntitySystem
     /// <param name="uid"></param>
     /// <param name="proto"></param>
     /// <param name="psionic"></param>
-    private void AddTraitActions(EntityUid uid, TraitPrototype traitPrototype)
+    public void AddTraitActions(EntityUid uid, TraitPrototype traitPrototype)
     {
         if (traitPrototype.Actions is null)
             return;
@@ -103,7 +113,7 @@ public sealed class TraitSystem : EntitySystem
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="traitPrototype"></param>
-    private void AddTraitPsionics(EntityUid uid, TraitPrototype traitPrototype)
+    public void AddTraitPsionics(EntityUid uid, TraitPrototype traitPrototype)
     {
         if (traitPrototype.PsionicPowers is null)
             return;
