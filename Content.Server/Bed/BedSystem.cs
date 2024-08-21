@@ -66,7 +66,8 @@ namespace Content.Server.Bed
 
                 foreach (var healedEntity in strapComponent.BuckledEntities)
                 {
-                    if (_mobStateSystem.IsDead(healedEntity) || HasComp<SiliconComponent>(healedEntity)) // I shouldn't have to modify this.
+                    if (_mobStateSystem.IsDead(healedEntity) 
+                        || HasComp<SiliconComponent>(healedEntity))
                         continue;
 
                     var damage = bedComponent.Damage;
