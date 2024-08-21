@@ -60,10 +60,7 @@ public sealed class SiliconChargeSystem : EntitySystem
     private void OnSiliconStartup(EntityUid uid, SiliconComponent component, ComponentStartup args)
     {
         if (!HasComp<PowerCellSlotComponent>(uid))
-        {
-            DebugTools.Assert($"Silicon entity (prototype){MetaData(uid).EntityPrototype}/(name){MetaData(uid).EntityName} does not have a PowerCellSlotComponent");
             return;
-        }
 
         if (component.EntityType.GetType() != typeof(SiliconType))
             DebugTools.Assert("SiliconComponent.EntityType is not a SiliconType enum.");
