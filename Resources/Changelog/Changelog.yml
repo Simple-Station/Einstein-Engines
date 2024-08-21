@@ -5484,3 +5484,11 @@ Entries:
       message: Added IPC as a playable species.
   id: 6277
   time: '2024-08-21T09:14:30.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Traits can now add Active Abilities to a character.
+    - type: Add
+      message: Traits can now add Psionic Powers to a character.
+  id: 6278
+  time: '2024-08-21T09:49:54.0000000+00:00'
