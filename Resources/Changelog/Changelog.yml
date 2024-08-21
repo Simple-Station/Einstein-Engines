@@ -5469,3 +5469,12 @@ Entries:
         Psionic Insulation (Or have been Mindbroken). 
   id: 6275
   time: '2024-08-21T09:08:40.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        PsionicPowers that add a Component now also allow for adding a Component
+        with Arguments. This works exactly like the trait system's
+        implementation of components.
+  id: 6276
+  time: '2024-08-21T09:10:28.0000000+00:00'
