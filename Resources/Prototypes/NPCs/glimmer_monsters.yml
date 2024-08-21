@@ -107,12 +107,13 @@
     autoRecharge: true
     autoRechargeRate: 100
   - type: NPCRetaliation
-  - type: HTN
-    rootTask:
-      task: GlimmerWispCompound
+  - type: FactionException
   - type: NpcFactionMember
     factions:
       - GlimmerMonster
+  - type: HTN
+    rootTask:
+      task: GlimmerWispCompound
   - type: Battery
     maxCharge: 1000
     startingCharge: 1000
