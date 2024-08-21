@@ -223,6 +223,7 @@
     understands:
     - GalacticCommon
     - RobotTalk
+  - type: PsionicInsulaion
 
 - type: entity
   id: BaseBorgChassisNT
