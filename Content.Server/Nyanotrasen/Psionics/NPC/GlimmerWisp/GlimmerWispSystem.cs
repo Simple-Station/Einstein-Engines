@@ -24,7 +24,7 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
         [Dependency] private readonly MobStateSystem _mobs = default!;
         [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
         [Dependency] private readonly PopupSystem _popups = default!;
-        [Dependency] private readonly AudioSystem _audioSystem = default!;
+        [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
         public override void Initialize()
         {
@@ -62,7 +62,7 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
             component.IsDraining = false;
             if (args.Handled || args.Args.Target == null)
             {
-                // component.DrainStingStream?.Stop();
+                component.DrainAudioStream = _audio.Stop(component.DrainAudioStream);
                 return;
             }
 
@@ -83,7 +83,7 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
             var rejEv = new RejuvenateEvent();
             RaiseLocalEvent(uid, rejEv);
 
-            _audioSystem.PlayPvs(component.DrainFinishSoundPath, uid);
+            _audio.PlayPvs(component.DrainFinishSoundPath, uid);
 
             DamageSpecifier damage = new();
             damage.DamageDict.Add("Asphyxiation", 200);
@@ -115,7 +115,7 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
             _popups.PopupEntity(Loc.GetString("life-drain-second-start", ("wisp", uid)), target, target, Shared.Popups.PopupType.LargeCaution);
             _popups.PopupEntity(Loc.GetString("life-drain-third-start", ("wisp", uid), ("target", target)), target, Filter.PvsExcept(target), true, Shared.Popups.PopupType.LargeCaution);
 
-            // component.DrainStingStream = _audioSystem.PlayPvs(component.DrainSoundPath, target);
+            component.DrainAudioStream = _audio.PlayPvs(component.DrainSoundPath, target).Value.Entity;
             component.IsDraining = true;
 
             var ev = new GlimmerWispDrainDoAfterEvent();

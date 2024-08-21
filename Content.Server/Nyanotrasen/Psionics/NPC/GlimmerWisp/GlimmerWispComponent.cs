@@ -19,5 +19,6 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
         [DataField("drainFinishSound")]
         public SoundSpecifier DrainFinishSoundPath = new SoundPathSpecifier("/Audio/Effects/guardian_inject.ogg");
         public EntityUid? DrainTarget;
+        public EntityUid? DrainAudioStream;
     }
 }
