@@ -196,3 +196,9 @@ trait-description-WeaponsGeneralist =
 
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
+
+trait-name-LatentPsychic = Latent Psychic
+trait-description-LatentPsychic =
+    Your mind and soul are open to the noosphere, allowing for use of Telepathy.
+    Thus, you are eligible for potentially receiving psychic powers.
+    It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.

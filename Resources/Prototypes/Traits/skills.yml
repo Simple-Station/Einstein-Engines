@@ -52,6 +52,7 @@
       inverted: true
       species:
         - Dwarf
+        - IPC
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 0.5
@@ -75,6 +76,7 @@
       inverted: true
       species:
         - Dwarf
+        - IPC
   components:
     - type: LiquorLifeline
     - type: LightweightDrunk
@@ -120,6 +122,7 @@
       inverted: true
       species:
         - Vulpkanin
+        - IPC
 
 - type: trait
   id: ParkourTraining
@@ -184,3 +187,7 @@
         - ResearchDirector
         - ForensicMantis
         - Chaplain
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
