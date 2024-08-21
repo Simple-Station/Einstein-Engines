@@ -66,4 +66,12 @@ psionic-invisibility-power-initialization-feedback =
     When I awaken, I can no longer see even myself.
 psionic-invisibility-power-metapsionic-feedback = {CAPITALIZE($entity)}'s wyrd seeks to hide from thine gaze
 
+# Xenoglossy
+xenoglossy-power-description = You understand all languages.
+xenoglossy-power-initialization-feedback =
+    I feel an empathy with all creation, so that I may understand them and be understood.
+    The barrier between thought and expressions is permeable to me.
+
+psionic-language-power-metapsionic-feedback = The noösphere flows freely through {CAPITALIZE($entity)}, who seems to digest it and pass it back out undisturbed.
+
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
