@@ -53,7 +53,6 @@ public sealed class MoodSystem : EntitySystem
         _alerts.ClearAlertCategory(uid, AlertCategory.Mood);
     }
 
-
     private void OnRemoveEffect(EntityUid uid, MoodComponent component, MoodRemoveEffectEvent args)
     {
         if (component.UncategorisedEffects.TryGetValue(args.EffectId, out _))
