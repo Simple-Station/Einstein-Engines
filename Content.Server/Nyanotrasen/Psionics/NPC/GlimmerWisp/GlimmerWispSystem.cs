@@ -60,6 +60,7 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
         private void OnDrain(EntityUid uid, GlimmerWispComponent component, GlimmerWispDrainDoAfterEvent args)
         {
             component.IsDraining = false;
+
             if (args.Handled || args.Args.Target == null)
             {
                 component.DrainAudioStream = _audio.Stop(component.DrainAudioStream);
@@ -68,6 +69,8 @@ namespace Content.Server.Psionics.NPC.GlimmerWisp
 
             if (args.Cancelled)
             {
+                component.DrainAudioStream = _audio.Stop(component.DrainAudioStream);
+
                 if (TryComp<PullableComponent>(args.Args.Target.Value, out var pullable) && pullable.Puller != null)
                     _npcFaction.AggroEntity(uid, pullable.Puller.Value);
 
