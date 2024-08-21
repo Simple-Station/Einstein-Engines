@@ -13,6 +13,7 @@ using Robust.Shared.Console;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Server.Silicon.IPC;
+using Content.Shared.Radio.Components;
 
 namespace Content.Server.Administration.Commands
 {
@@ -20,7 +21,6 @@ namespace Content.Server.Administration.Commands
     public sealed class SetOutfitCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _entities = default!;
-        [Dependency] private readonly InternalEncryptionKeySpawner _encryption = default!;
 
         public string Command => "setoutfit";
 
@@ -128,7 +128,12 @@ namespace Content.Server.Administration.Commands
                     handsSystem.TryPickup(target, inhandEntity, checkActionBlocker: false, handsComp: handsComponent);
                 }
             }
-            _encryption.TryInsertEncryptionKey(target, startingGear, entityManager);
+
+            if (entityManager.HasComponent<EncryptionKeyHolderComponent>(target))
+            {
+                var encryption = new InternalEncryptionKeySpawner();
+                encryption.TryInsertEncryptionKey(target, startingGear, entityManager);
+            }
             return true;
         }
     }

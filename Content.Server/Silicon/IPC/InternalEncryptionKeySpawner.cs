@@ -2,6 +2,7 @@ using Content.Shared.Roles;
 using Content.Shared.Radio.Components;
 using Content.Shared.Containers;
 using Robust.Shared.Containers;
+using Content.Server.Cargo.Components;
 
 namespace Content.Server.Silicon.IPC;
 public sealed partial class InternalEncryptionKeySpawner : EntitySystem
