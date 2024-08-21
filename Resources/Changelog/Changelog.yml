@@ -5478,3 +5478,9 @@ Entries:
         implementation of components.
   id: 6276
   time: '2024-08-21T09:10:28.0000000+00:00'
+- author: Timemaster99
+  changes:
+    - type: Add
+      message: Added IPC as a playable species.
+  id: 6277
+  time: '2024-08-21T09:14:30.0000000+00:00'
