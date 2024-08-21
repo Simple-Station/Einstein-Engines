@@ -1745,13 +1745,12 @@
         types:
           Blunt: 0
 
-# description is aptly misspelled to reference to it's old self, where it was pointing out a joke at a funny translation to russian. vis below
-# <span class='danger'>[user] are stroking the head of [M] with a bangammer</span>", "<span class='userdanger'>[user] are stroking the head with a bangammer</span>", "you hear a bangammer stroking a head"
 - type: entity
   parent: ToyHammer
   id: BwoinkHammer
   name: bwoink hammer
   description: A toy hammer which makes a wildly terrifying sound. It is missing it's old spirit of bangammer and is still unreisinable.
+  suffix: DO NOT MAP
   components:
     - type: Sprite
       sprite: Objects/Fun/bwoink_hammer.rsi
