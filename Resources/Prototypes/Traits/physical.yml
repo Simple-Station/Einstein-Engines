@@ -8,6 +8,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -26,6 +27,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -44,6 +46,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -62,6 +65,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -80,6 +84,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -124,6 +129,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -143,6 +149,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

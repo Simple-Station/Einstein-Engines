@@ -21,6 +21,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
   components:
     - type: Narcolepsy
       timeBetweenIncidents: 300, 600
@@ -80,6 +81,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
   components:
     - type: FrontalLisp
 
@@ -92,6 +94,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
   components:
     - type: Snoring
 
@@ -151,6 +154,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
   components:
     - type: BloodDeficiency  # 0.07 = start taking bloodloss damage at around ~21.4 minutes,
       bloodLossAmount: 0.07  # then become crit ~10 minutes later
@@ -165,6 +169,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - IPC
   components:
     - type: Hemophilia
       bleedReductionModifier: 0.5
