@@ -118,4 +118,4 @@
   components:
     - type: UniversalLanguageSpeaker
   initializationFeedback: xenoglossy-power-initialization-feedback
-  metapsionicFeedback: psionic-language-power-feedback #Reuse for telepathy, clairaudience, etc
+  metapsionicFeedback: psionic-language-power-feedback # Reuse for telepathy, clairaudience, etc
