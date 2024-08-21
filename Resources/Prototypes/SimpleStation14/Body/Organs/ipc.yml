@@ -5,7 +5,7 @@
   components:
   - type: Sprite
     netsync: false
-    sprite: SimpleStation14/Mobs/Species/IPC/organs.rsi
+    sprite: Mobs/Species/IPC/organs.rsi
   - type: Organ
   # - type: Food
   # - type: Extractable
