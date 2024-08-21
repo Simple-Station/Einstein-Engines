@@ -5459,3 +5459,13 @@ Entries:
         globally to all entities when updating.
   id: 6274
   time: '2024-08-20T18:49:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Actions no longer need to hardcode in target blacklists, and can now
+        blacklist entities in YML. This is notably useful for Psionic powers,
+        which all share a common feature that they can't target people with
+        Psionic Insulation (Or have been Mindbroken). 
+  id: 6275
+  time: '2024-08-21T09:08:40.0000000+00:00'
