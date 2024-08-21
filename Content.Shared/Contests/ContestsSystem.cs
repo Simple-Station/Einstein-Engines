@@ -2,6 +2,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Mood;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
 
@@ -251,6 +252,52 @@ namespace Content.Shared.Contests
 
         #endregion
 
+        #region Mood Contests
+
+        /// <summary>
+        ///     Outputs the ratio of an Entity's mood level and its Neutral Mood threshold.
+        /// </summary>
+        /// <param name="performer"></param>
+        /// <param name="bypassClamp"></param>
+        /// <param name="rangeFactor"></param>
+        public float MoodContest(EntityUid performer, bool bypassClamp = false, float rangeFactor = 1f)
+        {
+            if (!_cfg.GetCVar(CCVars.DoContestsSystem)
+                || !_cfg.GetCVar(CCVars.DoMoodContests)
+                || !TryComp<NetMoodComponent>(performer, out var mood))
+                return 1f;
+
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+                ? mood.CurrentMoodLevel / mood.NeutralMoodThreshold
+                : Math.Clamp(mood.CurrentMoodLevel / mood.NeutralMoodThreshold,
+                    1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor);
+        }
+
+        /// <summary>
+        ///     Outputs the ratio of mood level between two Entities.
+        /// </summary>
+        /// <param name="performer"></param>
+        /// <param name="target"></param>
+        /// <param name="bypassClamp"></param>
+        /// <param name="rangeFactor"></param>
+        public float MoodContest(EntityUid performer, EntityUid target, bool bypassClamp = false, float rangeFactor = 1f)
+        {
+            if (!_cfg.GetCVar(CCVars.DoContestsSystem)
+                || !_cfg.GetCVar(CCVars.DoMoodContests)
+                || !TryComp<NetMoodComponent>(performer, out var performerMood)
+                || !TryComp<NetMoodComponent>(target, out var targetMood))
+                return 1f;
+
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+                ? performerMood.CurrentMoodLevel / targetMood.CurrentMoodLevel
+                : Math.Clamp(performerMood.CurrentMoodLevel / targetMood.CurrentMoodLevel,
+                    1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor);
+        }
+
+        #endregion
+
         #region EVERY CONTESTS
 
         public float EveryContest(
@@ -259,34 +306,40 @@ namespace Content.Shared.Contests
             bool bypassClampStamina = false,
             bool bypassClampHealth = false,
             bool bypassClampMind = false,
+            bool bypassClampMood = false,
             float rangeFactorMass = 1f,
             float rangeFactorStamina = 1f,
             float rangeFactorHealth = 1f,
             float rangeFactorMind = 1f,
+            float rangeFactorMood = 1f,
             float weightMass = 1f,
             float weightStamina = 1f,
             float weightHealth = 1f,
             float weightMind = 1f,
+            float weightMood = 1f,
             bool sumOrMultiply = false)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem))
                 return 1f;
 
-            var weightTotal = weightMass + weightStamina + weightHealth + weightMind;
+            var weightTotal = weightMass + weightStamina + weightHealth + weightMind + weightMood;
             var massMultiplier = weightMass / weightTotal;
             var staminaMultiplier = weightStamina / weightTotal;
             var healthMultiplier = weightHealth / weightTotal;
             var mindMultiplier = weightMind / weightTotal;
+            var moodMultiplier = weightMood / weightTotal;
 
             return sumOrMultiply
                 ? MassContest(performer, bypassClampMass, rangeFactorMass) * massMultiplier
                     + StaminaContest(performer, bypassClampStamina, rangeFactorStamina) * staminaMultiplier
                     + HealthContest(performer, bypassClampHealth, rangeFactorHealth) * healthMultiplier
                     + MindContest(performer, bypassClampMind, rangeFactorMind) * mindMultiplier
+                    + MoodContest(performer, bypassClampMood, rangeFactorMood) * moodMultiplier
                 : MassContest(performer, bypassClampMass, rangeFactorMass) * massMultiplier
                     * StaminaContest(performer, bypassClampStamina, rangeFactorStamina) * staminaMultiplier
                     * HealthContest(performer, bypassClampHealth, rangeFactorHealth) * healthMultiplier
-                    * MindContest(performer, bypassClampMind, rangeFactorMind) * mindMultiplier;
+                    * MindContest(performer, bypassClampMind, rangeFactorMind) * mindMultiplier
+                    * MoodContest(performer, bypassClampMood, rangeFactorMood) * moodMultiplier;
         }
 
         public float EveryContest(
@@ -296,34 +349,40 @@ namespace Content.Shared.Contests
             bool bypassClampStamina = false,
             bool bypassClampHealth = false,
             bool bypassClampMind = false,
+            bool bypassClampMood = false,
             float rangeFactorMass = 1f,
             float rangeFactorStamina = 1f,
             float rangeFactorHealth = 1f,
             float rangeFactorMind = 1f,
+            float rangeFactorMood = 1f,
             float weightMass = 1f,
             float weightStamina = 1f,
             float weightHealth = 1f,
             float weightMind = 1f,
+            float weightMood = 1f,
             bool sumOrMultiply = false)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem))
                 return 1f;
 
-            var weightTotal = weightMass + weightStamina + weightHealth + weightMind;
+            var weightTotal = weightMass + weightStamina + weightHealth + weightMind + weightMood;
             var massMultiplier = weightMass / weightTotal;
             var staminaMultiplier = weightStamina / weightTotal;
             var healthMultiplier = weightHealth / weightTotal;
             var mindMultiplier = weightMind / weightTotal;
+            var moodMultiplier = weightMood / weightTotal;
 
             return sumOrMultiply
                 ? MassContest(performer, target, bypassClampMass, rangeFactorMass) * massMultiplier
                     + StaminaContest(performer, target, bypassClampStamina, rangeFactorStamina) * staminaMultiplier
                     + HealthContest(performer, target, bypassClampHealth, rangeFactorHealth) * healthMultiplier
                     + MindContest(performer, target, bypassClampMind, rangeFactorMind) * mindMultiplier
+                    + MoodContest(performer, target, bypassClampMood, rangeFactorMood) * moodMultiplier
                 : MassContest(performer, target, bypassClampMass, rangeFactorMass) * massMultiplier
                     * StaminaContest(performer, target, bypassClampStamina, rangeFactorStamina) * staminaMultiplier
                     * HealthContest(performer, target, bypassClampHealth, rangeFactorHealth) * healthMultiplier
-                    * MindContest(performer, target, bypassClampMind, rangeFactorMind) * mindMultiplier;
+                    * MindContest(performer, target, bypassClampMind, rangeFactorMind) * mindMultiplier
+                    * MoodContest(performer, target, bypassClampMood, rangeFactorMood) * moodMultiplier;
         }
         #endregion
     }

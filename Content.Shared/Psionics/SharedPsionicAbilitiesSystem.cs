@@ -1,7 +1,4 @@
-using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Psionics.Glimmer;
 using Robust.Shared.Random;
@@ -11,7 +8,6 @@ namespace Content.Shared.Abilities.Psionics
 {
     public sealed class SharedPsionicAbilitiesSystem : EntitySystem
     {
-        [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly EntityLookupSystem _lookup = default!;
         [Dependency] private readonly SharedPopupSystem _popups = default!;
         [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
@@ -21,11 +17,7 @@ namespace Content.Shared.Abilities.Psionics
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<PsionicsDisabledComponent, ComponentInit>(OnInit);
-            SubscribeLocalEvent<PsionicsDisabledComponent, ComponentShutdown>(OnShutdown);
             SubscribeLocalEvent<PsionicComponent, PsionicPowerUsedEvent>(OnPowerUsed);
-
-            SubscribeLocalEvent<PsionicComponent, MobStateChangedEvent>(OnMobStateChanged);
         }
 
         private void OnPowerUsed(EntityUid uid, PsionicComponent component, PsionicPowerUsedEvent args)
@@ -39,47 +31,6 @@ namespace Content.Shared.Abilities.Psionics
                     return;
                 }
             }
-        }
-
-        private void OnInit(EntityUid uid, PsionicsDisabledComponent component, ComponentInit args)
-        {
-            SetPsionicsThroughEligibility(uid);
-        }
-
-        private void OnShutdown(EntityUid uid, PsionicsDisabledComponent component, ComponentShutdown args)
-        {
-            SetPsionicsThroughEligibility(uid);
-        }
-
-        private void OnMobStateChanged(EntityUid uid, PsionicComponent component, MobStateChangedEvent args)
-        {
-            SetPsionicsThroughEligibility(uid);
-        }
-
-        /// <summary>
-        /// Checks whether the entity is eligible to use its psionic ability. This should be run after anything that could effect psionic eligibility.
-        /// </summary>
-        public void SetPsionicsThroughEligibility(EntityUid uid)
-        {
-            PsionicComponent? component = null;
-            if (!Resolve(uid, ref component, false))
-                return;
-
-            if (component.PsionicAbility == null)
-                return;
-
-            _actions.TryGetActionData( component.PsionicAbility, out var actionData );
-
-            if (actionData == null)
-                return;
-
-            _actions.SetEnabled(actionData.Owner, IsEligibleForPsionics(uid));
-        }
-
-        private bool IsEligibleForPsionics(EntityUid uid)
-        {
-            return !HasComp<PsionicInsulationComponent>(uid)
-                && (!TryComp<MobStateComponent>(uid, out var mobstate) || mobstate.CurrentState == MobState.Alive);
         }
 
         public void LogPowerUsed(EntityUid uid, string power, int minGlimmer = 8, int maxGlimmer = 12)

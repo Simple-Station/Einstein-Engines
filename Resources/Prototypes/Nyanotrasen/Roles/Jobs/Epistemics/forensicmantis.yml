@@ -23,7 +23,11 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
-    - type: MetapsionicPower
+  - !type:AddComponentSpecial
+    components:
+    - type: InnatePsionicPowers
+      powersToAdd:
+        - MetapsionicPower
 
 - type: startingGear
   id: ForensicMantisGear
