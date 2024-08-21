@@ -40,7 +40,7 @@ public sealed class SiliconDeathSystem : EntitySystem
         if (args.ChargePercent == 0 && !siliconDeadComp.Dead)
             SiliconDead(uid, siliconDeadComp, batteryComp, uid);
         else if (args.ChargePercent != 0 && siliconDeadComp.Dead)
-                SiliconUnDead(uid, siliconDeadComp, batteryComp, uid);
+            SiliconUnDead(uid, siliconDeadComp, batteryComp, uid);
     }
 
     private void SiliconDead(EntityUid uid, SiliconDownOnDeadComponent siliconDeadComp, BatteryComponent? batteryComp, EntityUid batteryUid)
@@ -54,7 +54,7 @@ public sealed class SiliconDeathSystem : EntitySystem
         EntityManager.EnsureComponent<SleepingComponent>(uid);
         EntityManager.EnsureComponent<ForcedSleepingComponent>(uid);
 
-        if (TryComp(uid, out HumanoidAppearanceComponent? humanoidAppearanceComponent))
+        if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoidAppearanceComponent))
         {
             var layers = HumanoidVisualLayersExtension.Sublayers(HumanoidVisualLayers.HeadSide);
             _humanoidAppearanceSystem.SetLayersVisibility(uid, layers, false, true, humanoidAppearanceComponent);

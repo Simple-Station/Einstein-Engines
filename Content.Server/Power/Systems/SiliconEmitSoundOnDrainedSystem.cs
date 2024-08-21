@@ -2,7 +2,6 @@ using Content.Server.Silicon.Death;
 using Content.Shared.Sound.Components;
 using Content.Server.Sound;
 using Content.Shared.Mobs;
-using Content.Shared.Silicon.Systems;
 
 namespace Content.Server.Silicon;
 

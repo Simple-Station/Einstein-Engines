@@ -20,6 +20,7 @@ namespace Content.Server.Administration.Commands
     public sealed class SetOutfitCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _entities = default!;
+        [Dependency] private readonly InternalEncryptionKeySpawner _encryption = default!;
 
         public string Command => "setoutfit";
 
@@ -127,7 +128,7 @@ namespace Content.Server.Administration.Commands
                     handsSystem.TryPickup(target, inhandEntity, checkActionBlocker: false, handsComp: handsComponent);
                 }
             }
-            InternalEncryptionKeySpawner.TryInsertEncryptionKey(target, startingGear, entityManager, profile);
+            _encryption.TryInsertEncryptionKey(target, startingGear, entityManager);
             return true;
         }
     }

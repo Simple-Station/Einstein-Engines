@@ -17,10 +17,9 @@ namespace Content.Server.Silicon.BlindHealing
     public sealed class BlindHealingSystem : SharedBlindHealingSystem
     {
         [Dependency] private readonly SharedPopupSystem _popup = default!;
-        [Dependency] private readonly IAdminLogManager _adminLogger= default!;
+        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly BlindableSystem _blindableSystem = default!;
         [Dependency] private readonly StackSystem _stackSystem = default!;
-        [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
 
         public override void Initialize()
@@ -32,27 +31,16 @@ namespace Content.Server.Silicon.BlindHealing
 
         private void OnHealingFinished(EntityUid uid, BlindHealingComponent component, HealingDoAfterEvent args)
         {
-            Log.Info("event started!");
-
-            if (args.Cancelled || args.Target == null)
+            if (args.Cancelled || args.Target == null
+                || !TryComp<BlindableComponent>(args.Target, out var blindComp)
+                || blindComp is { EyeDamage: 0 })
                 return;
 
-            EntityUid target = (EntityUid) args.Target;
+            if (TryComp<StackComponent>(uid, out var stackComponent)
+                && TryComp<StackPriceComponent>(uid, out var stackPrice))
+                _stackSystem.SetCount(uid, (int) (_stackSystem.GetCount(uid, stackComponent) - stackPrice.Price), stackComponent);
 
-            if(!EntityManager.TryGetComponent(target, out BlindableComponent? blindcomp)
-                || blindcomp is { EyeDamage: 0 })
-                return;
-
-            if(EntityManager.TryGetComponent(uid, out StackComponent? stackComponent))
-            {
-                double price = 1;
-                if (EntityManager.TryGetComponent(uid, out StackPriceComponent? stackPrice))
-                    price = stackPrice.Price;
-                _stackSystem.SetCount(uid, (int) (_stackSystem.GetCount(uid, stackComponent) - price), stackComponent);
-
-            }
-
-            _blindableSystem.AdjustEyeDamage((target, blindcomp), -blindcomp!.EyeDamage);
+            _blindableSystem.AdjustEyeDamage((args.Target.Value, blindComp), -blindComp.EyeDamage);
 
             _adminLogger.Add(LogType.Healed, $"{ToPrettyString(args.User):user} repaired {ToPrettyString(uid):target}'s vision");
 
@@ -82,40 +70,30 @@ namespace Content.Server.Silicon.BlindHealing
 
             if (args.Handled
                 || !TryComp(args.User, out DamageableComponent? damageable)
-                || damageable.DamageContainerID != null
-                && !component.DamageContainers.Contains(damageable.DamageContainerID)
+                || damageable.DamageContainerID != null && !component.DamageContainers.Contains(damageable.DamageContainerID)
                 || !TryComp(args.User, out BlindableComponent? blindcomp)
-                || blindcomp is { EyeDamage: 0 })
+                || blindcomp is { EyeDamage: 0 }
+                || args.User == args.Target && !component.AllowSelfHeal)
                 return;
 
-            float delay = component.DoAfterDelay;
-
-            if (args.User == args.Target)
-            {
-                if (!component.AllowSelfHeal)
-                    return;
-                delay *= component.SelfHealPenalty;
-            }
-
-            TryHealBlindness(uid, args.User, args.User, delay);
+            TryHealBlindness(uid, args.User, args.User,
+                args.User == args.Target
+                    ? component.DoAfterDelay * component.SelfHealPenalty
+                    : component.DoAfterDelay);
         }
 
         private void OnUse(EntityUid uid, BlindHealingComponent component, ref UseInHandEvent args)
         {
             if (args.Handled
                 || !TryComp(args.User, out DamageableComponent? damageable)
-                || damageable.DamageContainerID != null
-                && !component.DamageContainers.Contains(damageable.DamageContainerID)
+                || damageable.DamageContainerID != null && !component.DamageContainers.Contains(damageable.DamageContainerID)
                 || !TryComp(args.User, out BlindableComponent? blindcomp)
                 || blindcomp is { EyeDamage: 0 }
                 || !component.AllowSelfHeal)
                 return;
 
-            float delay = component.DoAfterDelay;
-            delay *= component.SelfHealPenalty;
-
-            TryHealBlindness(uid, args.User, args.User, delay);
-
+            TryHealBlindness(uid, args.User, args.User,
+                component.DoAfterDelay * component.SelfHealPenalty);
         }
     }
 }
