@@ -110,3 +110,21 @@
   metapsionicFeedback: psionic-invisibility-power-metapsionic-feedback
   amplificationModifier: 0.5
   dampeningModifier: 0.5
+
+- type: psionicPower
+  id: PotentiometryPower
+  name: Potentiometry
+  description: potentiometry-power-description
+  actions:
+  - ActionPotentiometry
+  components:
+    - type: PsiPotentiometer
+      innate: true
+      potentiometerUi:
+        key: enum.PenLightUiKey.Key
+        type: PenLightBoundUserInterface
+      examSpeed: 10
+  initializationFeedback: potentiometry-power-initialization-feedback
+  metapsionicFeedback: potentiometry-power-metapsionic-feedback
+  amplificationModifier: 0.2
+  dampeningModifier: 0.2

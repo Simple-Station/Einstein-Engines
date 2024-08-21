@@ -15,5 +15,13 @@ namespace Content.Server.Psionics
             BaselineChance = baselineChance;
         }
     }
+
+    /// <summary>
+    ///     Raised on an entity when a Potentiometer has finished scanning it, but before the check for no feedback messages is made.
+    ///     This allows entities to either mess with the Examiner, or modify the list.
+    /// </summary>
+    /// <param name="Examiner"></param>
+    [ByRefEvent]
+    public record struct OnPotentiometryEvent(EntityUid Examiner, List<string> Messages);
 }
 

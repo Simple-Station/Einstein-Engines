@@ -134,3 +134,17 @@
     icon: Interface/VerbIcons/psionic_invisibility_off.png
     event: !type:RemovePsionicInvisibilityOffPowerActionEvent
 
+- type: entity
+  id: ActionPotentiometry
+  name: action-name-potentiometry
+  descrption: action-descrption-potentiometry
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    icon: Interface/VerbIcons/metapsionic.png
+    useDelay: 45
+    checkCanAccess: true
+    range: 3
+    itemIconStyle: BigAction
+    canTargetSelf: true
+    event: !type:PotentiometryPowerActionEvent

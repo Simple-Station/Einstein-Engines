@@ -99,6 +99,8 @@
       type: InstrumentBoundUserInterface
     - key: enum.HealthAnalyzerUiKey.Key
       type: HealthAnalyzerBoundUserInterface
+    - key: enum.PenLightUiKey.Key
+      type: PenLightBoundUserInterface
   - type: Tag
     tags:
     - DoorBumpOpener

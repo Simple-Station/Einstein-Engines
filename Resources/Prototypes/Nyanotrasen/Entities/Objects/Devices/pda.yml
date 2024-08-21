@@ -113,3 +113,5 @@
      - NotekeeperCartridge
      - NewsReaderCartridge
      - GlimmerMonitorCartridge
+  - type: PsiPotentiometer
+    examSpeed: 10
