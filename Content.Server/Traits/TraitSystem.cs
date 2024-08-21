@@ -56,8 +56,6 @@ public sealed class TraitSystem : EntitySystem
     /// <summary>
     ///     Adds a single Trait Prototype to an Entity.
     /// </summary>
-    /// <param name="uid"></param>
-    /// <param name="traitPrototype"></param>
     public void AddTrait(EntityUid uid, TraitPrototype traitPrototype)
     {
         AddTraitComponents(uid, traitPrototype);
@@ -68,8 +66,6 @@ public sealed class TraitSystem : EntitySystem
     /// <summary>
     ///     Adds all Components included with a Trait.
     /// </summary>
-    /// <param name="uid"></param>
-    /// <param name="traitPrototype"></param>
     public void AddTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
     {
         if (traitPrototype.Components is null)
@@ -89,9 +85,6 @@ public sealed class TraitSystem : EntitySystem
     /// <summary>
     ///     Add all actions associated with a specific Trait
     /// </summary>
-    /// <param name="uid"></param>
-    /// <param name="proto"></param>
-    /// <param name="psionic"></param>
     public void AddTraitActions(EntityUid uid, TraitPrototype traitPrototype)
     {
         if (traitPrototype.Actions is null)
@@ -111,8 +104,6 @@ public sealed class TraitSystem : EntitySystem
     ///     If a trait includes any Psionic Powers, this enters the powers into PsionicSystem to be initialized.
     ///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
     /// </summary>
-    /// <param name="uid"></param>
-    /// <param name="traitPrototype"></param>
     public void AddTraitPsionics(EntityUid uid, TraitPrototype traitPrototype)
     {
         if (traitPrototype.PsionicPowers is null)
