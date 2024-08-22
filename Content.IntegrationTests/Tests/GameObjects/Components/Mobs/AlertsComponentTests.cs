@@ -84,11 +84,13 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
                     return null;
                 }
 
-                // we should be seeing 3 alerts - our health, and the 2 debug alerts, in a specific order.
-                Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(3));
+                // This originally was hardcoded to expect a player character to have a Human Healthbar.
+                // It is no longer hardcoded to demand that.
+                // We should be seeing 2 alerts - the 2 debug alerts, in a specific order.
+                Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(2));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.AlertType).ToArray();
-                var expectedIDs = new[] { AlertType.HumanHealth, AlertType.Debug1, AlertType.Debug2 };
+                var expectedIDs = new[] { AlertType.Debug1, AlertType.Debug2 };
                 Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
             });
 
@@ -101,11 +103,11 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
 
             await client.WaitAssertion(() =>
             {
-                // we should be seeing 2 alerts now because one was cleared
-                Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(2));
+                // We should be seeing 1 alert now because one was cleared
+                Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(1));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.AlertType).ToArray();
-                var expectedIDs = new[] { AlertType.HumanHealth, AlertType.Debug2 };
+                var expectedIDs = new[] { AlertType.Debug2 };
                 Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
             });
 

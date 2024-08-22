@@ -349,3 +349,13 @@
     Holy: 1.5
   flatReductions:
     Cold: 3
+
+- type: damageModifierSet
+  id: FireSpirit
+  coefficients:
+    Heat: 0
+    Cold: 1.2
+    Blunt: 0.6
+    Slash: 0.6
+    Piercing: 0.6
+    Holy: 1.5

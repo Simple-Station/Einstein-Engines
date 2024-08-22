@@ -8,10 +8,10 @@ namespace Content.Shared.Abilities.Psionics
     [RegisterComponent]
     public sealed partial class DamageOnDispelComponent : Component
     {
-        [DataField("damage", required: true)]
-        public DamageSpecifier  Damage = default!;
+        [DataField(required: true)]
+        public DamageSpecifier Damage = default!;
 
-        [DataField("variance")]
+        [DataField]
         public float Variance = 0.5f;
     }
 }

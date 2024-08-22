@@ -367,7 +367,7 @@ namespace Content.Shared.CCVar
         ///     How many points a character should start with.
         /// </summary>
         public static readonly CVarDef<int> GameTraitsDefaultPoints =
-            CVarDef.Create("game.traits_default_points", 5, CVar.REPLICATED);
+            CVarDef.Create("game.traits_default_points", 10, CVar.REPLICATED);
 
 
         /// <summary>
@@ -536,6 +536,91 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> DiscordAuthApiKey =
             CVarDef.Create("discord.auth_api_key", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+
+        /*
+         * Suspicion
+         */
+
+        public static readonly CVarDef<int> SuspicionMinPlayers =
+            CVarDef.Create("suspicion.min_players", 5);
+
+        public static readonly CVarDef<int> SuspicionMinTraitors =
+            CVarDef.Create("suspicion.min_traitors", 2);
+
+        public static readonly CVarDef<int> SuspicionPlayersPerTraitor =
+            CVarDef.Create("suspicion.players_per_traitor", 6);
+
+        public static readonly CVarDef<int> SuspicionStartingBalance =
+            CVarDef.Create("suspicion.starting_balance", 20);
+
+        public static readonly CVarDef<int> SuspicionMaxTimeSeconds =
+            CVarDef.Create("suspicion.max_time_seconds", 300);
+
+        /*
+         * Traitor
+         */
+
+        public static readonly CVarDef<int> TraitorMinPlayers =
+            CVarDef.Create("traitor.min_players", 5);
+
+        public static readonly CVarDef<int> TraitorMaxTraitors =
+            CVarDef.Create("traitor.max_traitors", 12); // Assuming average server maxes somewhere from like 50-80 people
+
+        public static readonly CVarDef<int> TraitorPlayersPerTraitor =
+            CVarDef.Create("traitor.players_per_traitor", 10);
+
+        public static readonly CVarDef<int> TraitorCodewordCount =
+            CVarDef.Create("traitor.codeword_count", 4);
+
+        public static readonly CVarDef<int> TraitorStartingBalance =
+            CVarDef.Create("traitor.starting_balance", 20);
+
+        public static readonly CVarDef<int> TraitorMaxDifficulty =
+            CVarDef.Create("traitor.max_difficulty", 5);
+
+        public static readonly CVarDef<int> TraitorMaxPicks =
+            CVarDef.Create("traitor.max_picks", 20);
+
+        public static readonly CVarDef<float> TraitorStartDelay =
+            CVarDef.Create("traitor.start_delay", 4f * 60f);
+
+        public static readonly CVarDef<float> TraitorStartDelayVariance =
+            CVarDef.Create("traitor.start_delay_variance", 3f * 60f);
+
+        /*
+         * TraitorDeathMatch
+         */
+
+        public static readonly CVarDef<int> TraitorDeathMatchStartingBalance =
+            CVarDef.Create("traitordm.starting_balance", 20);
+
+        /*
+         * Zombie
+         */
+
+        public static readonly CVarDef<int> ZombieMinPlayers =
+            CVarDef.Create("zombie.min_players", 20);
+
+        /*
+         * Pirates
+         */
+
+        public static readonly CVarDef<int> PiratesMinPlayers =
+            CVarDef.Create("pirates.min_players", 25);
+
+        public static readonly CVarDef<int> PiratesMaxOps =
+            CVarDef.Create("pirates.max_pirates", 6);
+
+        public static readonly CVarDef<int> PiratesPlayersPerOp =
+            CVarDef.Create("pirates.players_per_pirate", 5);
+
+        /*
+         * Nukeops
+         */
+
+        public static readonly CVarDef<bool> NukeopsSpawnGhostRoles =
+            CVarDef.Create("nukeops.spawn_ghost_roles", false);
 
         /*
          * Tips
@@ -2141,6 +2226,14 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<string> ReplayAutoRecordTempDir =
             CVarDef.Create("replay.auto_record_temp_dir", "", CVar.SERVERONLY);
 
+
+        /// <summary>
+        ///     The amount of time between NPC Silicons draining their battery in seconds.
+        /// </summary>
+        public static readonly CVarDef<float> SiliconNpcUpdateTime =
+            CVarDef.Create("silicon.npcupdatetime", 1.5f, CVar.SERVERONLY);
+
+
         /*
          * Miscellaneous
          */
@@ -2297,6 +2390,12 @@ namespace Content.Shared.CCVar
             CVarDef.Create("contests.do_mind_contests", true, CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
+        ///     Toggles all MoodContest functions. All mood contests output 1f when false.
+        /// </summary>
+        public static readonly CVarDef<bool> DoMoodContests =
+            CVarDef.Create("contests.do_mood_contests", true, CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
         ///     The maximum amount that Mass Contests can modify a physics multiplier, given as a +/- percentage
         ///     Default of 0.25f outputs between * 0.75f and 1.25f
         /// </summary>
@@ -2351,6 +2450,19 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> SupermatterRadsModifier =
             CVarDef.Create("supermatter.rads_modifier", 1f, CVar.SERVER);
+
+        #endregion
+
+        #region Mood System
+
+        public static readonly CVarDef<bool> MoodEnabled =
+            CVarDef.Create("mood.enabled", true, CVar.SERVER);
+
+        public static readonly CVarDef<bool> MoodIncreasesSpeed =
+            CVarDef.Create("mood.increases_speed", true, CVar.SERVER);
+
+        public static readonly CVarDef<bool> MoodDecreasesSpeed =
+            CVarDef.Create("mood.decreases_speed", true, CVar.SERVER);
 
         #endregion
     }
