@@ -5498,3 +5498,9 @@ Entries:
       message: Ifrit has received some damage resistance changes
   id: 6279
   time: '2024-08-21T21:00:01.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Add
+      message: Added Xenoglossy to the psionic power pool.
+  id: 6280
+  time: '2024-08-22T00:08:59.0000000+00:00'
