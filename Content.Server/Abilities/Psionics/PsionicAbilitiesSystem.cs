@@ -285,7 +285,9 @@ namespace Content.Server.Abilities.Psionics
             if (proto.InitializationFeedback is null)
                 return;
 
-            var feedbackMessage = $"[font size={proto.InitializationFeedbackFontSize}][color={proto.InitializationFeedbackColor}]{Loc.GetString(proto.InitializationFeedback)}[/color][/font]";
+            if (!Loc.TryGetString(proto.InitializationFeedback, out var feedback))
+                return;
+            var feedbackMessage = $"[font size={proto.InitializationFeedbackFontSize}][color={proto.InitializationFeedbackColor}]{feedback}[/color][/font]";
             _chatManager.ChatMessageToOne(
                 proto.InitializationFeedbackChannel,
                 feedbackMessage,
