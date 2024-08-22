@@ -367,7 +367,7 @@ namespace Content.Shared.CCVar
         ///     How many points a character should start with.
         /// </summary>
         public static readonly CVarDef<int> GameTraitsDefaultPoints =
-            CVarDef.Create("game.traits_default_points", 5, CVar.REPLICATED);
+            CVarDef.Create("game.traits_default_points", 10, CVar.REPLICATED);
 
 
         /// <summary>
@@ -2299,7 +2299,7 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> StationGoalsChance =
             CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
-            
+
 
         #region CPR System
         /// <summary>
@@ -2346,7 +2346,7 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> CPRAirlossReductionMultiplier =
             CVarDef.Create("cpr.airloss_reduction_multiplier", 1f, CVar.REPLICATED | CVar.SERVER);
-            
+
         #endregion
 
         #region Contests System
