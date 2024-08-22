@@ -92441,6 +92441,13 @@ entities:
     - type: Transform
       pos: 9.5,-33.5
       parent: 2
+- proto: SpawnPointLibrarian
+  entities:
+  - uid: 14037
+    components:
+    - type: Transform
+      pos: -39.5,27.5
+      parent: 2
 - proto: SpawnPointScientist
   entities:
   - uid: 14035
@@ -92452,11 +92459,6 @@ entities:
     components:
     - type: Transform
       pos: -40.5,27.5
-      parent: 2
-  - uid: 14037
-    components:
-    - type: Transform
-      pos: -39.5,27.5
       parent: 2
 - proto: SpawnPointSecurityCadet
   entities:
