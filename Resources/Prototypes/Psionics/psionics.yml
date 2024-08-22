@@ -112,6 +112,15 @@
   dampeningModifier: 0.5
 
 - type: psionicPower
+  id: XenoglossyPower
+  name: Xenoglossy
+  description: xenoglossy-power-description
+  components:
+    - type: UniversalLanguageSpeaker
+  initializationFeedback: xenoglossy-power-initialization-feedback
+  metapsionicFeedback: psionic-language-power-feedback # Reuse for telepathy, clairaudience, etc
+
+- type: psionicPower
   id: PotentiometryPower
   name: Potentiometry
   description: potentiometry-power-description
