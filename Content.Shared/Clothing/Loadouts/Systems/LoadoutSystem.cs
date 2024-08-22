@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
@@ -78,7 +79,7 @@ public sealed class LoadoutSystem : EntitySystem
             // Spawn the loadout items
             var spawned = EntityManager.SpawnEntities(
                 EntityManager.GetComponent<TransformComponent>(uid).Coordinates.ToMap(EntityManager),
-                loadoutProto.Items!);
+                loadoutProto.Items.Select(p => (string?) p.ToString()).ToList()); // Dumb cast
 
             foreach (var item in spawned)
             {

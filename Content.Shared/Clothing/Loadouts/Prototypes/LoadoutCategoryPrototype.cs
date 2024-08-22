@@ -6,7 +6,7 @@ namespace Content.Shared.Clothing.Loadouts.Prototypes;
 /// <summary>
 ///     A prototype defining a valid category for <see cref="LoadoutPrototype"/>s to go into.
 /// </summary>
-[Prototype("loadoutCategory")]
+[Prototype]
 public sealed class LoadoutCategoryPrototype : IPrototype
 {
     [IdDataField]
