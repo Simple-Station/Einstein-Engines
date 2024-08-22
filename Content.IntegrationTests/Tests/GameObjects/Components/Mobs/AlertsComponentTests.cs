@@ -103,7 +103,7 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
 
             await client.WaitAssertion(() =>
             {
-                // we should be seeing 2 alerts now because one was cleared
+                // we should be seeing 1 alert now because one was cleared
                 Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(1));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.AlertType).ToArray();
