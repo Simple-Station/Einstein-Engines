@@ -187,6 +187,7 @@
         - ResearchDirector
         - ForensicMantis
         - Chaplain
+        - Librarian
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
