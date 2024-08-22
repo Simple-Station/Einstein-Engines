@@ -1,7 +1,7 @@
 - type: trait
   id: CPRTraining
   category: Mental
-  points: -2
+  points: -4
   components:
     - type: CPRTraining
   requirements:
@@ -18,7 +18,7 @@
 - type: trait
   id: SelfAware
   category: Mental
-  points: -2
+  points: -4
   components:
     - type: SelfAware
       analyzableTypes:
@@ -36,7 +36,7 @@
 - type: trait
   id: HeavyweightDrunk
   category: Physical
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -60,7 +60,7 @@
 - type: trait
   id: LiquorLifeline
   category: Physical
-  points: -3
+  points: -6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -85,7 +85,7 @@
 - type: trait
   id: Thieving
   category: Physical
-  points: -4
+  points: -8
   components:
     - type: Thieving
       ignoreStripHidden: true
@@ -101,7 +101,7 @@
 - type: trait
   id: SignLanguage
   category: Visual
-  points: -1
+  points: -2
   components:
     - type: LanguageKnowledgeModifier
       speaks:
@@ -112,7 +112,7 @@
 - type: trait
   id: Voracious
   category: Physical
-  points: -1
+  points: -2
   components:
     - type: ConsumeDelayModifier
       foodDelayMultiplier: 0.5
@@ -127,7 +127,7 @@
 - type: trait
   id: ParkourTraining
   category: Physical
-  points: -3
+  points: -6
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -148,7 +148,7 @@
 - type: trait
   id: LightStep
   category: Auditory
-  points: -1
+  points: -2
   components:
     - type: FootstepVolumeModifier
       sprintVolumeModifier: -10
@@ -162,7 +162,7 @@
 - type: trait
   id: Singer
   category: Auditory
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -175,7 +175,7 @@
 - type: trait
   id: LatentPsychic
   category: Mental
-  points: -3
+  points: -6
   components:
     - type: Psionic
   requirements:
