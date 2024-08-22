@@ -21,7 +21,6 @@
           availableJobs:
           #civilian
             Passenger: [ -1, -1 ]
-            Librarian: [ 1, 1 ]
           #command
             Captain: [ 1, 1 ]
           #engineering
@@ -65,6 +64,7 @@
             ResearchAssistant: [ 2, 3 ]
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 3, 5 ]
+            Librarian: [ 1, 1 ]
           #supply
             Quartermaster: [ 1, 1 ]
             CargoTechnician: [ 2, 3 ]
