@@ -21,6 +21,7 @@
           availableJobs:
           #civilian
             Passenger: [ -1, -1 ]
+            Librarian: [ 1, 1 ]
           #command
             Captain: [ 1, 1 ]
           #engineering
@@ -63,7 +64,6 @@
             ForensicMantis: [ 1, 1 ]
             ResearchAssistant: [ 2, 4 ]
             Chaplain: [ 1, 1 ]
-            Librarian: [ 1, 1 ]
             Borg: [ 2, 2 ]
           #supply
             Quartermaster: [ 1, 1 ]

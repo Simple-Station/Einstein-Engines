@@ -58700,19 +58700,17 @@ entities:
     - type: Transform
       pos: 15.5,24.5
       parent: 2
-- proto: SpawnPointLibrarian
-  entities:
-  - uid: 10028
-    components:
-    - type: Transform
-      pos: -29.5,-20.5
-      parent: 2
 - proto: SpawnPointScientist
   entities:
   - uid: 10027
     components:
     - type: Transform
       pos: -29.5,-19.5
+      parent: 2
+  - uid: 10028
+    components:
+    - type: Transform
+      pos: -29.5,-20.5
       parent: 2
   - uid: 10029
     components:

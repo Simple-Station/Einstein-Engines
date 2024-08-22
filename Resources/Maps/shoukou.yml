@@ -74027,13 +74027,6 @@ entities:
     - type: Transform
       pos: -16.5,-32.5
       parent: 34
-- proto: SpawnPointLibrarian
-  entities:
-  - uid: 10443
-    components:
-    - type: Transform
-      pos: -29.5,-15.5
-      parent: 34
 - proto: SpawnPointScientist
   entities:
   - uid: 10440
@@ -74050,6 +74043,11 @@ entities:
     components:
     - type: Transform
       pos: -28.5,-15.5
+      parent: 34
+  - uid: 10443
+    components:
+    - type: Transform
+      pos: -29.5,-15.5
       parent: 34
   - uid: 10444
     components:
