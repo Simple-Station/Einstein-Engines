@@ -408,22 +408,7 @@
     params:
       variation: 0.125
 
-# IPC
-- type: emoteSounds
-  id: UnisexIPC
-  sounds:
-    Scream:
-      path: /Audio/Effects/PowerSink/electric.ogg
-      params:
-        variation: 0.125
-    Laugh:
-      path: /Audio/Effects/sparks4.ogg
-      params:
-        variation: 0.125
-    Honk:
-      collection: BikeHorn
-      params:
-        variation: 0.125
+
 
 - type: emoteSounds
   id: Parrot
@@ -440,9 +425,21 @@
     Buzz:
       path: /Audio/Effects/Cargo/buzz_sigh.ogg
     Scream:
-      path: /Audio/Voice/IPC/robot-scream.ogg
+      path: /Audio/Effects/PowerSink/electric.ogg
+      params:
+        variation: 0.125
     Laugh:
-      path: /Audio/Voice/IPC/robot-laugh_3.ogg
+      path: /Audio/Effects/sparks4.ogg
+      params:
+        variation: 0.125
+    LaughEvil:
+      path: /Audio/Voice/IPC/syndieborg_laugh.ogg
+      params:
+        variation: 0.125
+    Honk:
+      collection: BikeHorn
+      params:
+        variation: 0.125
     Chitter:
       path: /Audio/Voice/Talk/pai.ogg
     Squeak:
