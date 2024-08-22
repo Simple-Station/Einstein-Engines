@@ -86,7 +86,7 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
 
                 // This originally was hardcoded to expect a player character to have a Human Healthbar.
                 // It is no longer hardcoded to demand that.
-                // we should be seeing 2 alerts - the 2 debug alerts, in a specific order.
+                // We should be seeing 2 alerts - the 2 debug alerts, in a specific order.
                 Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(2));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.AlertType).ToArray();
@@ -103,7 +103,7 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
 
             await client.WaitAssertion(() =>
             {
-                // we should be seeing 1 alert now because one was cleared
+                // We should be seeing 1 alert now because one was cleared
                 Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(1));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.AlertType).ToArray();
