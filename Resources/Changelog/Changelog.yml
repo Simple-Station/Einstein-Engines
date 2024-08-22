@@ -5529,3 +5529,12 @@ Entries:
         him to know and speak all languages.
   id: 6283
   time: '2024-08-22T17:00:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Gaining a new Psionic Power can now display messages to alert the
+        player, both as a short popup, and optionally a lengthier message sent
+        to the user's Chat window. 
+  id: 6284
+  time: '2024-08-22T17:12:26.0000000+00:00'
