@@ -7,7 +7,7 @@
 - type: trait
   id: Accentless
   category: Speech
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -42,7 +42,7 @@
 - type: trait
   id: Saturnine
   category: Mental
-  points: 3
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -60,7 +60,7 @@
 - type: trait
   id: Sanguine
   category: Mental
-  points: -3
+  points: -6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

@@ -23,7 +23,7 @@ job-name-serviceworker = Service Worker
 job-name-centcomoff = High Command Official
 job-name-reporter = Propogandist
 job-name-musician = Musician
-job-name-librarian = Librarian
+job-name-librarian = Cataloguer
 # DeltaV - Changed Lawyer to Attorney
 # job-name-lawyer = Lawyer
 job-name-mime = Mime
