@@ -71,6 +71,7 @@
       - CartridgeAntiMateriel
     capacity: 5
     proto: CartridgeAntiMateriel
+  - type: Telescope # WD EDIT
 
 - type: entity
   name: musket
