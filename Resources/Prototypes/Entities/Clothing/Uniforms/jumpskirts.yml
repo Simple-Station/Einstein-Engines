@@ -875,6 +875,21 @@
 
 - type: entity
   parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtClown
+  name: clown skirt
+  description: HONK!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/clown.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/clown.rsi
+  - type: Tag
+    tags:
+    - ClownSuit
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressAsymmetric
   name: asymmetric dress
   description: This dress forced the mothermatter to deyassinate in slaygineering.
