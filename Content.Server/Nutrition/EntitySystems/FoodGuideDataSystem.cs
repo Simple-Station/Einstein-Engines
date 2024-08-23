@@ -29,6 +29,10 @@ public sealed class FoodGuideDataSystem : SharedFoodGuideDataSystem
         "Water"
     ];
 
+    public static readonly string[] ComponentNamesBlacklist = ["HumanoidAppearance"];
+
+    public static readonly string[] SuffixBlacklist = ["debug", "do not map", "admeme"];
+
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
@@ -61,6 +65,12 @@ public sealed class FoodGuideDataSystem : SharedFoodGuideDataSystem
         // Butcherable and slicable entities
         foreach (var ent in _protoMan.EnumeratePrototypes<EntityPrototype>())
         {
+            if (ent.Abstract
+                || ent.Components.Any(it => ComponentNamesBlacklist.Contains(it.Key))
+                || ent.SetSuffix is {} suffix && SuffixBlacklist.Any(it => suffix.Contains(it, StringComparison.OrdinalIgnoreCase))
+            )
+                continue;
+
             if (ent.TryGetComponent<ButcherableComponent>(out var butcherable))
             {
                 var butcheringSource = new FoodButcheringData(ent, butcherable);
