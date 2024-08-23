@@ -5546,3 +5546,15 @@ Entries:
         behavior in sound setting if you want though)
   id: 6285
   time: '2024-08-22T21:46:38.0000000+00:00'
+- author: v0idRift
+  changes:
+    - type: Add
+      message: >-
+        Added the ability for IPCs to speak and understand Galactic Common and
+        RobotTalk languages.
+    - type: Add
+      message: >-
+        Enabled IPCs to heal themselves using welding tools via the
+        WeldingHealable component.
+  id: 6286
+  time: '2024-08-23T03:58:35.0000000+00:00'
