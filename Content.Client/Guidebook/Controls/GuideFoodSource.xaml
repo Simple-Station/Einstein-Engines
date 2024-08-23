@@ -14,7 +14,7 @@
                Access="Public"
                Margin="2 0 0 0"/>
     </BoxContainer>
-    <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
+    <BoxContainer Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalExpand="True">
         <TextureRect HorizontalAlignment="Center"
                      Name="ProcessingTexture"
                      Access="Public"/>
@@ -24,7 +24,7 @@
                Access="Public"
                Margin="2 0 0 0"/>
     </BoxContainer>
-    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
+    <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
         <TextureRect HorizontalAlignment="Center"
                      Name="OutputsTexture"
                      Access="Public"/>
