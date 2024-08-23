@@ -69,7 +69,6 @@
   - type: DogVision
   - type: NpcFactionMember
     factions:
-    - Pet
     - Pibble
   - type: HTN
     rootTask:
