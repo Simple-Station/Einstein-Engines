@@ -99,8 +99,15 @@
       path: /Audio/Effects/Silicon/startup.ogg
   - type: EmitBuzzWhileDamaged
   - type: CanHostGuardian
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - RobotTalk
+    understands:
+    - GalacticCommon
+    - RobotTalk
+  - type: WeldingHealable
   - type: PsionicInsulation
-
 
 - type: entity
   save: false
