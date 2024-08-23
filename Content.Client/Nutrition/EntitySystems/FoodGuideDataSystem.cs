@@ -1,6 +1,5 @@
 using Content.Client.Chemistry.EntitySystems;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Client.Nutrition.EntitySystems;
 

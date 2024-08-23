@@ -4,7 +4,6 @@ using Content.Client.Chemistry.EntitySystems;
 using Content.Client.Guidebook.Richtext;
 using Content.Client.Message;
 using Content.Client.Nutrition.EntitySystems;
-using Content.Client.UserInterface.ControlExtensions;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
