@@ -12,8 +12,10 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Objectives.Components;
 using Content.Shared.PDA;
+using Content.Shared.Radio;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
+using Content.Shared.Roles.RoleCodeword;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
@@ -25,6 +27,8 @@ namespace Content.Server.GameTicking.Rules;
 
 public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 {
+    private static readonly Color TraitorCodewordColor = Color.FromHex("#cc3b3b");
+
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
@@ -34,6 +38,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
     [Dependency] private readonly SharedJobSystem _jobs = default!;
     [Dependency] private readonly ObjectivesSystem _objectives = default!;
+    [Dependency] private readonly SharedRoleCodewordSystem _roleCodewordSystem = default!;
 
     public override void Initialize()
     {
@@ -120,12 +125,17 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             Briefing = briefing
         }, mind, true);
 
-        // Don't Change the faction, this was stupid.
+        // Send codewords to only the traitor client
+        var color = TraitorCodewordColor; // Fall back to a dark red Syndicate color if a prototype is not found
+
+        RoleCodewordComponent codewordComp = EnsureComp<RoleCodewordComponent>(mindId);
+        _roleCodewordSystem.SetRoleCodewords(codewordComp, "traitor", component.Codewords.ToList(), color);
+
+        // Don't change the faction, this was stupid.
         //_npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
         //_npcFaction.AddFaction(traitor, component.SyndicateFaction);
 
         RaiseLocalEvent(traitor, new MoodEffectEvent("TraitorFocused"));
-
         return true;
     }
 
