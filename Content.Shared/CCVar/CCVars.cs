@@ -466,6 +466,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<float> AnnouncerVolume =
             CVarDef.Create("announcer.volume", 0.5f, CVar.ARCHIVE | CVar.CLIENTONLY);
 
+        /// <summary>
+        ///     Disables multiple announcement sounds from playing at once
+        /// </summary>
+        public static readonly CVarDef<bool> AnnouncerDisableMultipleSounds =
+            CVarDef.Create("announcer.disable_multiple_sounds", false, CVar.ARCHIVE | CVar.CLIENTONLY);
+
 
         /*
          * Queue

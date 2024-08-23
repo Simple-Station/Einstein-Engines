@@ -5538,3 +5538,11 @@ Entries:
         to the user's Chat window. 
   id: 6284
   time: '2024-08-22T17:12:26.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: >-
+        Announcements can play multiple sounds now (you can revert to the old
+        behavior in sound setting if you want though)
+  id: 6285
+  time: '2024-08-22T21:46:38.0000000+00:00'
