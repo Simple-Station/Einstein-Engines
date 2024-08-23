@@ -46,7 +46,8 @@ public sealed partial class GuideFoodEmbed : BoxContainer, IDocumentTag, ISearch
 
     public bool CheckMatchesSearch(string query)
     {
-        return FoodName.GetMessage()?.Contains(query) == true || FoodDescription.GetMessage()?.Contains(query) == true;
+        return FoodName.GetMessage()?.Contains(query, StringComparison.InvariantCultureIgnoreCase) == true
+               || FoodDescription.GetMessage()?.Contains(query, StringComparison.InvariantCultureIgnoreCase) == true;
     }
 
     public void SetHiddenState(bool state, string query)
