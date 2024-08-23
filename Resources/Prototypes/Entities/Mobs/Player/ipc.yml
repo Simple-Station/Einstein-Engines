@@ -97,11 +97,9 @@
   - type: DeadStartupButton
     sound:
       path: /Audio/Effects/Silicon/startup.ogg
-# Erro de linter
-#   - type: Wires
-#     layoutId: IPC
   - type: EmitBuzzWhileDamaged
   - type: CanHostGuardian
+  - type: PsionicInsulation
 
 
 - type: entity
