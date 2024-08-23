@@ -19,11 +19,18 @@ namespace Content.Server.Nutrition.EntitySystems;
 
 public sealed class FoodGuideDataSystem : SharedFoodGuideDataSystem
 {
+    public static readonly ProtoId<ReagentPrototype>[] ReagentWhitelist =
+    [
+        "Nutriment",
+        "Vitamin",
+        "Protein",
+        "UncookedAnimalProteins",
+        "Fat",
+        "Water"
+    ];
+
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
-
-    [ValidatePrototypeId<ReagentPrototype>]
-    private readonly ProtoId<ReagentPrototype> _nutrimentPrototype = "Nutriment";
 
     private Dictionary<string, List<FoodSourceData>> _sources = new();
 
@@ -99,12 +106,13 @@ public sealed class FoodGuideDataSystem : SharedFoodGuideDataSystem
                 ? manager?.Solutions?[food.Solution]?.Contents?.ToArray() ?? []
                 : [];
 
-            // We filter out food without nutriments because well when people look for food they usually expect FOOD and not insulated gloves.
+            // We filter out food without whitelisted reagents because well when people look for food they usually expect FOOD and not insulated gloves.
             // And we get insulated and other gloves because they have ButcherableComponent and they are also moth food
-            if (composition.All(it => it.Reagent.Prototype != _nutrimentPrototype))
+            if (!composition.Any(it => ReagentWhitelist.Contains(it.Reagent.Prototype)))
                 continue;
 
-            var distinctSources = sources.DistinctBy(it => it.Identitier);
+            // We also limit the number of sources to 10 because it's a huge performance strain to render 500 raw meat recipes.
+            var distinctSources = sources.DistinctBy(it => it.Identitier).Take(10);
             var entry = new FoodGuideEntry(result, proto.Name, distinctSources.ToArray(), composition);
             Registry.Add(entry);
         }
