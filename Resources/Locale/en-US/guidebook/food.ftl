@@ -1,4 +1,4 @@
-guidebook-food-name = [bold]{CAPITALIZE($name)}[/bold]
+guidebook-food-name = [bold][color={$color}]{CAPITALIZE($name)}[/color][/bold]
 guidebook-food-unknown-proto = Unknown prototype
 guidebook-food-sources-header = Sources
 guidebook-food-sources-ent-wrapper = {$name}

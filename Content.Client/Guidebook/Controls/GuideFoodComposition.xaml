@@ -8,12 +8,14 @@
                HorizontalExpand="True"
                HorizontalAlignment="Left"
                VerticalAlignment="Center"
-               Access="Public"/>
+               Access="Public"
+               Margin="2 0 0 0"/>
     </BoxContainer>
     <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
         <Label Name="AmountLabel"
                HorizontalAlignment="Right"
                VerticalAlignment="Center"
-               Access="Public"/>
+               Access="Public"
+               Margin="2 0 0 0"/>
     </BoxContainer>
 </BoxContainer>
