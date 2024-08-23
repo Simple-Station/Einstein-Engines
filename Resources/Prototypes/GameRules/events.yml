@@ -243,6 +243,8 @@
       prob: 0.02
     - id: MobMouse2
       prob: 0.02
+    - id: MobPibbleVent
+      prob: 0.005
 
 - type: entity
   id: PowerGridCheck
