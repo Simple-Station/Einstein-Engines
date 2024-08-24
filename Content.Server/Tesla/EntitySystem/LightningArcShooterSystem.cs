@@ -73,7 +73,7 @@ public sealed class LightningArcShooterSystem : EntitySystem
             ArcRange = (context) => component.ArcRadius,
             ArcForks = (context) =>
             {
-                if (_random.NextFloat(0f, 1f) < component.ForkChance)
+                if (_random.NextFloat(0f, 1f) > component.ForkChance)
                     return 1;
 
                 return _random.Next(2, Math.Max(2, component.MaxForks));
