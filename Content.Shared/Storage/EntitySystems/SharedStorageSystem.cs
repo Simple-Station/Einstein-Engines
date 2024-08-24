@@ -1521,7 +1521,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (session is not { } playerSession)
             return;
 
-        if (playerSession.AttachedEntity is not {Valid: true} playerEnt || !Exists(playerEnt))
+        if (playerSession.AttachedEntity is not { Valid: true } playerEnt || !Exists(playerEnt))
             return;
 
         if (!_inventory.TryGetSlotEntity(playerEnt, slot, out var storageEnt))
