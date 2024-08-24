@@ -223,6 +223,10 @@ public sealed partial class NeoTabContainer : BoxContainer
                 button.RemoveStyleClass(StyleBase.ButtonOpenRight);
                 button.RemoveStyleClass(StyleBase.ButtonOpenBoth);
                 button.RemoveStyleClass(StyleBase.ButtonOpenLeft);
+
+                if (FirstTabOpenBoth)
+                    button.AddStyleClass(StyleBase.ButtonOpenBoth);
+
                 return;
             }
         }
@@ -234,9 +238,9 @@ public sealed partial class NeoTabContainer : BoxContainer
             button.RemoveStyleClass(StyleBase.ButtonOpenBoth);
             button.RemoveStyleClass(StyleBase.ButtonOpenLeft);
 
-            if (i == 0)
+            if (i == 0 && !FirstTabOpenBoth)
                 button.AddStyleClass(StyleBase.ButtonOpenRight);
-            else if (i == visibleTabs.Count - 1)
+            else if (i == visibleTabs.Count - 1 && !LastTabOpenBoth)
                 button.AddStyleClass(StyleBase.ButtonOpenLeft);
             else
                 button.AddStyleClass(StyleBase.ButtonOpenBoth);

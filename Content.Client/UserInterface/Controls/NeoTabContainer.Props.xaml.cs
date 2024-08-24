@@ -11,6 +11,7 @@ public sealed partial class NeoTabContainer
 {
     // Too many computed properties...
 
+    //TODO private Direction _tabLocation = Direction.North;
     /// <summary>
     ///     If true, the tabs will be displayed horizontally over the top of the contents
     ///     <br />
@@ -24,27 +25,45 @@ public sealed partial class NeoTabContainer
         set => LayoutChanged(value);
     }
 
-    //TODO private bool _swapSides = false;
-
+    /// If the <see cref="ContentContainer"/>'s horizontal scroll is enabled
     private bool _hScrollEnabled;
+    /// <inheritdoc cref="_hScrollEnabled"/>
     public bool HScrollEnabled
     {
         get => _hScrollEnabled;
         set => ScrollingChanged(value, _vScrollEnabled);
     }
 
+    /// If the <see cref="ContentContainer"/>'s vertical scroll is enabled
     private bool _vScrollEnabled;
+    /// <inheritdoc cref="_vScrollEnabled"/>
     public bool VScrollEnabled
     {
         get => _vScrollEnabled;
         set => ScrollingChanged(_hScrollEnabled, value);
     }
 
+    /// The margin around the whole UI element
     private Thickness _containerMargin = new(0);
+    /// <inheritdoc cref="_containerMargin"/>
     public Thickness ContainerMargin
     {
         get => _containerMargin;
         set => ContainerMarginChanged(value);
+    }
+
+    private bool _firstTabOpenBoth;
+    public bool FirstTabOpenBoth
+    {
+        get => _firstTabOpenBoth;
+        set => TabStyleChanged(value, LastTabOpenBoth);
+    }
+
+    private bool _lastTabOpenBoth;
+    public bool LastTabOpenBoth
+    {
+        get => _lastTabOpenBoth;
+        set => TabStyleChanged(FirstTabOpenBoth, value);
     }
 
 
@@ -87,5 +106,13 @@ public sealed partial class NeoTabContainer
     {
         _containerMargin = value;
         LayoutChanged(Horizontal);
+    }
+
+    private void TabStyleChanged(bool firstTabOpenBoth, bool lastTabOpenBoth)
+    {
+        _firstTabOpenBoth = firstTabOpenBoth;
+        _lastTabOpenBoth = lastTabOpenBoth;
+
+        UpdateTabMerging();
     }
 }
