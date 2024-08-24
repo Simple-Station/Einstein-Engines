@@ -37,13 +37,27 @@ public sealed partial class NeoTabContainer : BoxContainer
     ///     If false, the tabs will be displayed vertically to the left of the contents
     /// </summary>
     private bool _horizontal = true;
-    //TODO private bool _swapSides = false;
-
     /// <inheritdoc cref="_horizontal"/>
     public bool Horizontal
     {
         get => _horizontal;
         set => LayoutChanged(value);
+    }
+
+    //TODO private bool _swapSides = false;
+
+    private bool _hScrollEnabled;
+    public bool HScrollEnabled
+    {
+        get => _hScrollEnabled;
+        set => ScrollingChanged(value, _vScrollEnabled);
+    }
+
+    private bool _vScrollEnabled;
+    public bool VScrollEnabled
+    {
+        get => _vScrollEnabled;
+        set => ScrollingChanged(_hScrollEnabled, value);
     }
 
 
@@ -53,6 +67,7 @@ public sealed partial class NeoTabContainer : BoxContainer
         RobustXamlLoader.Load(this);
 
         LayoutChanged(Horizontal);
+        ScrollingChanged(HScrollEnabled, VScrollEnabled);
     }
 
     //TODO This sucks, put this on some post-init if that exists
@@ -104,6 +119,15 @@ public sealed partial class NeoTabContainer : BoxContainer
         TabScrollContainer.VerticalExpand = !Horizontal;
         TabScrollContainer.HScrollEnabled = Horizontal;
         TabScrollContainer.VScrollEnabled = !Horizontal;
+    }
+
+    private void ScrollingChanged(bool hScroll, bool vScroll)
+    {
+        _hScrollEnabled = hScroll;
+        _vScrollEnabled = vScroll;
+
+        ContentScrollContainer.HScrollEnabled = hScroll;
+        ContentScrollContainer.VScrollEnabled = vScroll;
     }
 
 
