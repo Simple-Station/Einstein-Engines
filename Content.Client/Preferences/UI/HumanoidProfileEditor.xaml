@@ -48,7 +48,7 @@
         <Control MinHeight="10" />
         <!-- TabContainer -->
         <ui:NeoTabContainer Name="CTabContainer" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
-            <BoxContainer HorizontalExpand="True" Orientation="Vertical">
+            <BoxContainer Name="CAppearance" HorizontalExpand="True" Orientation="Vertical">
                 <!-- appearanceList -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <BoxContainer HorizontalExpand="True" Orientation="Vertical">
@@ -145,14 +145,14 @@
                     </BoxContainer>
                 </ScrollContainer>
             </BoxContainer>
-            <BoxContainer HorizontalExpand="True" Orientation="Vertical">
+            <BoxContainer Name="CJobs" HorizontalExpand="True" Orientation="Vertical">
                 <!-- Jobs -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <OptionButton Name="CPreferenceUnavailableButton" />
                     <BoxContainer Name="CJobList" Orientation="Vertical" />
                 </ScrollContainer>
             </BoxContainer>
-            <BoxContainer HorizontalExpand="True" Orientation="Vertical" Margin="10">
+            <BoxContainer Name="CAntags" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Antags -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <BoxContainer Name="CAntagList" Orientation="Vertical" />

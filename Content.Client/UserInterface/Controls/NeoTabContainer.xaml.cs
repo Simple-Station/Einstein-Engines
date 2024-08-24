@@ -47,18 +47,6 @@ public sealed partial class NeoTabContainer : BoxContainer
         ScrollingChanged(HScrollEnabled, VScrollEnabled);
     }
 
-    //TODO This sucks, put this on some post-init if that exists
-    protected override void FrameUpdate(FrameEventArgs args)
-    {
-        base.FrameUpdate(args);
-
-        foreach (var child in Children.Where(child => child.Name is not nameof(Container)).ToList())
-        {
-            child.Orphan();
-            AddTab(child, child.Name ?? "Untitled Tab");
-        }
-    }
-
     protected override void ChildRemoved(Control child)
     {
         if (_tabs.Remove(child, out var button))
@@ -88,17 +76,18 @@ public sealed partial class NeoTabContainer : BoxContainer
     /// <param name="title">The title of the tab</param>
     /// <param name="updateTabMerging">Whether the tabs should fix their styling automatically. Useful if you're doing tons of updates at once</param>
     /// <returns>The index of the new tab</returns>
-    public int AddTab(Control control, string title, bool updateTabMerging = true)
+    public int AddTab(Control control, string? title, bool updateTabMerging = true)
     {
         var button = new Button
         {
-            Text = title,
             Group = _tabGroup,
             MinHeight = 32,
             MaxHeight = 32,
             HorizontalExpand = true,
         };
         button.OnPressed += _ => SelectTab(control);
+        if (!string.IsNullOrEmpty(title))
+            button.Text = title;
 
         TabContainer.AddChild(button);
         ContentContainer.AddChild(control);

@@ -135,7 +135,8 @@ namespace Content.Client.Preferences.UI
 
             #region Appearance
 
-            _tabContainer.SetTabTitle(0, Loc.GetString("humanoid-profile-editor-appearance-tab"));
+            CAppearance.Orphan();
+            _tabContainer.AddTab(CAppearance, Loc.GetString("humanoid-profile-editor-appearance-tab"));
 
             ShowClothes.OnPressed += ToggleClothes;
             ShowLoadouts.OnPressed += ToggleLoadouts;
@@ -462,7 +463,8 @@ namespace Content.Client.Preferences.UI
 
             #region Jobs
 
-            _tabContainer.SetTabTitle(1, Loc.GetString("humanoid-profile-editor-jobs-tab"));
+            CJobs.Orphan();
+            _tabContainer.AddTab(CJobs, Loc.GetString("humanoid-profile-editor-jobs-tab"));
 
             _preferenceUnavailableButton.AddItem(
                 Loc.GetString("humanoid-profile-editor-preference-unavailable-stay-in-lobby-button"),
@@ -492,14 +494,16 @@ namespace Content.Client.Preferences.UI
 
             #region Antags
 
-            _tabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab"));
+            CAntags.Orphan();
+            _tabContainer.AddTab(CAntags, Loc.GetString("humanoid-profile-editor-antags-tab"));
 
             #endregion Antags
 
             #region Traits
 
             // Set up the traits tab
-            _tabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
+            CTraitsTab.Orphan();
+            _tabContainer.AddTab(CTraitsTab, Loc.GetString("humanoid-profile-editor-traits-tab"));
             _traitPreferences = new List<TraitPreferenceSelector>();
 
             // Show/Hide the traits tab if they ever get enabled/disabled
@@ -517,7 +521,8 @@ namespace Content.Client.Preferences.UI
             #region Loadouts
 
             // Set up the loadouts tab
-            _tabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-loadouts-tab"));
+            CLoadoutsTab.Orphan();
+            _tabContainer.AddTab(CLoadoutsTab, Loc.GetString("humanoid-profile-editor-loadouts-tab"));
             _loadoutPreferences = new List<LoadoutPreferenceSelector>();
 
             // Show/Hide the loadouts tab if they ever get enabled/disabled
@@ -540,7 +545,9 @@ namespace Content.Client.Preferences.UI
             #endregion Save
 
             #region Markings
-            _tabContainer.SetTabTitle(5, Loc.GetString("humanoid-profile-editor-markings-tab"));
+
+            CMarkingsTab.Orphan();
+            _tabContainer.AddTab(CMarkingsTab, Loc.GetString("humanoid-profile-editor-markings-tab"));
 
             CMarkings.OnMarkingAdded += OnMarkingChange;
             CMarkings.OnMarkingRemoved += OnMarkingChange;
@@ -554,8 +561,7 @@ namespace Content.Client.Preferences.UI
             if (configurationManager.GetCVar(CCVars.FlavorText))
             {
                 var flavorText = new FlavorText.FlavorText();
-                _tabContainer.AddChild(flavorText);
-                _tabContainer.SetTabTitle(_tabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
+                _tabContainer.AddTab(flavorText, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
                 _flavorTextEdit = flavorText.CFlavorTextInput;
 
                 flavorText.OnFlavorTextChanged += OnFlavorTextChange;
