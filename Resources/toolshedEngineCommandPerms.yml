@@ -50,7 +50,8 @@
     - methods
     - ioc
 
-- Commands:
+- Flags: ADMIN
+  Commands:
     - fuck
     - ent
     - as

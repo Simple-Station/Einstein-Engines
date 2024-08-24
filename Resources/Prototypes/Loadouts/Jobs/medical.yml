@@ -47,6 +47,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -62,6 +66,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -77,6 +85,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -92,6 +104,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -107,6 +123,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -122,6 +142,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -137,6 +161,10 @@
   cost: 3
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -188,6 +216,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Paramedic
@@ -236,6 +268,10 @@
   cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -459,3 +495,109 @@
         - Nearsighted
   items:
     - ClothingEyesPrescriptionMedHud
+
+- type: loadout
+  id: LoadoutMedicalEyesGlassesChemical
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+         - Chemist
+  items:
+    - ClothingEyesGlassesChemical
+
+- type: loadout
+  id: LoadoutMedicalBedsheetMedical
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - BedsheetMedical
+
+# Chemist PPE gear
+- type: loadout
+  id: LoadoutMedicalUniformJumpsuitChemShirt
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  items:
+    - ClothingUniformJumpsuitChemShirt
+
+- type: loadout
+  id: LoadoutMedicalNeckTieChem
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingNeckTieChem
+
+- type: loadout
+  id: LoadoutMedicalShoesEnclosedChem
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesEnclosedChem
+
+- type: loadout
+  id: LoadoutMedicalOuterApronChemist
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingOuterApronChemist
+
+- type: loadout
+  id: LoadoutMedicalEyesGlassesChemist
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingEyesGlassesChemist
+
+- type: loadout
+  id: LoadoutMedicalHandsGlovesChemist
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingHandsGlovesChemist

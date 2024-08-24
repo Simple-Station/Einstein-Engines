@@ -11,7 +11,7 @@ language-RootSpeak-name = Rootspeak
 language-RootSpeak-description = The strange whistling-style language spoken by the Diona.
 
 language-Nekomimetic-name = Nekomimetic
-language-Nekomimetic-description = To the casual observer, this language is an incomprehensible mess of broken Japanese. To the felinids, it's somehow comprehensible.
+language-Nekomimetic-description = To the casual observer, this language is an incomprehensible mess of broken Japanese. To the Felinids and Oni, it's somehow comprehensible.
 
 language-Draconic-name = Draconic
 language-Draconic-description = The common language of lizard-people, composed of sibilant hisses and rattles.
@@ -27,6 +27,9 @@ language-Moffic-description = The language of the mothpeople borders on complete
 
 language-RobotTalk-name = RobotTalk
 language-RobotTalk-description = A language consisting of harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
+
+language-Sign-name = Galactic Sign Language
+language-Sign-description = GSL for short, this sign language is prevalent among mute and deaf people.
 
 language-Cat-name = Cat
 language-Cat-description = Meow
@@ -69,3 +72,6 @@ language-Crab-description = Click!
 
 language-Kobold-name = Kobold
 language-Kobold-description = Hiss!
+
+language-Hissing-name = Hissing
+language-Hissing-description = Hiss!

@@ -45,13 +45,23 @@
   - type: MeleeWeapon # Nyanotrasen - Bibles do Holy damage
     damage:
       types:
-        Blunt: 3
-        Holy: 10
+        Blunt: 4
+        Holy: 20
+    heavyRateModifier: 0.8
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 5
+    maxTargets: 3
   - type: Tag
     tags:
     - Book
   - type: StealTarget
     stealGroup: Bible
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
 
 - type: entity
   parent: Bible
@@ -73,7 +83,6 @@
     failChance: 0
     locPrefix: "necro"
     healSound: "/Audio/Effects/lightburn.ogg"
-    cooldownTime: 1.3
   - type: Summonable
     specialItem: SpawnPointGhostCerberus
     respawnTime: 300

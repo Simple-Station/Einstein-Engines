@@ -101,6 +101,18 @@
         tags:
           - NukeOpsUplink
 
+- type: listing
+  id: BaseBallBatHomeRun
+  name: uplink-home-run-bat-name
+  description: uplink-home-run-bat-desc
+  productEntity: BaseBallBatHomeRun
+  icon:
+    entity: BaseBallBatHomeRun
+  cost:
+    Telecrystal: 16
+  categories:
+  - UplinkWeapons
+
 # Explosives
 
 - type: listing
@@ -243,7 +255,7 @@
     Telecrystal: 11
   categories:
     - UplinkExplosives
-  restockTime: 30
+  restockTime: 1800
   conditions:
   - !type:StoreWhitelistCondition
     blacklist:

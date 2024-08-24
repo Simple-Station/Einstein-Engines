@@ -69,16 +69,6 @@
   group: market
 
 - type: cargoProduct
-  id: FunSprayPaints
-  icon:
-    sprite: Objects/Fun/spraycans.rsi
-    state: death2_cap
-  product: CrateFunSprayPaints
-  cost: 2000
-  category: Fun
-  group: market
-
-- type: cargoProduct
   id: FunParty
   icon:
     sprite: Objects/Consumable/Food/Baked/cake.rsi
@@ -95,26 +85,6 @@
     state: display
   product: CrateFunWaterGuns
   cost: 750
-  category: cargoproduct-category-name-fun
-  group: market
-
-- type: cargoProduct
-  id: FunPlushies
-  icon:
-    sprite: Objects/Fun/toys.rsi
-    state: plushie_h
-  product: CrateFunPlushie
-  cost: 1000
-  category: cargoproduct-category-name-fun
-  group: market
-
-- type: cargoProduct
-  id: FunLizardPlushies
-  icon:
-    sprite: Objects/Fun/toys.rsi
-    state: plushie_lizard
-  product: CrateFunLizardPlushieBulk
-  cost: 500
   category: cargoproduct-category-name-fun
   group: market
 

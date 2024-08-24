@@ -60,7 +60,6 @@
   - type: NameIdentifier
     group: GenericNumber
   - type: Repairable
-    fuelcost: 15
     doAfterDelay: 8
   - type: Pullable
   - type: Tag
@@ -114,6 +113,7 @@
     understands:
     - GalacticCommon
     - RobotTalk
+  - type: PsionicInsulation
 
 - type: entity
   parent: MobSiliconBase
@@ -122,11 +122,16 @@
   description: Horrifying.
   components:
   - type: SpamEmitSound
+    minInterval: 2
+    maxInterval: 12
     sound:
       collection: BikeHorn
   - type: Sprite
     sprite: Mobs/Silicon/Bots/honkbot.rsi
     state: honkbot
+  - type: HTN
+    rootTask:
+      task: HonkbotCompound
   - type: Slippery
     launchForwardsMultiplier: 2
   - type: Speech

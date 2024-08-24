@@ -108,6 +108,7 @@
 - type: entity
   parent: BasePDA
   id: BaseMedicalPDA
+  abstract: true
   components:
   - type: HealthAnalyzer
     scanDelay: 1
@@ -150,6 +151,12 @@
   - type: Pda
     id: MedicalInternIDCard
     state: pda-internmed
+    penSlot: # Pen Lights
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#717059"
     accentVColor: "#447987"
@@ -411,6 +418,12 @@
     borderColor: "#858585"
   - type: Icon
     state: pda-library
+  - type: CartridgeLoader
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - GlimmerMonitorCartridge
 
 - type: entity
   parent: BasePDA
@@ -533,6 +546,12 @@
   - type: Pda
     id: CMOIDCard
     state: pda-cmo
+    penSlot: # Fancy Pen Light
+      startingItem: CMOPenLight
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentHColor: "#447987"
@@ -549,6 +568,12 @@
   - type: Pda
     id: MedicalIDCard
     state: pda-medical
+    penSlot: # Pen Lights
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#447987"
@@ -567,6 +592,12 @@
   - type: Pda
     id: ParamedicIDCard
     state: pda-paramedic
+    penSlot: # Pen Lights
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#2a4b5b"
@@ -582,6 +613,12 @@
   - type: Pda
     id: ChemistIDCard
     state: pda-chemistry
+    penSlot: # Pen Lights
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#B34200"
@@ -916,6 +953,12 @@
   - type: Pda
     id: PsychologistIDCard
     state: pda-medical
+    penSlot: # Pen Lights
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#447987"
@@ -1001,6 +1044,12 @@
   - type: Pda
     id: BrigmedicIDCard
     state: pda-brigmedic
+    penSlot: # Pen Lights
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentHColor: "#d7d7d0"
@@ -1078,6 +1127,12 @@
   - type: Pda
     id: SeniorPhysicianIDCard
     state: pda-seniorphysician
+    penSlot: # Pen Lights
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentHColor: "#447987"
@@ -1128,6 +1183,12 @@
   - type: Pda
     id: SyndicateIDCard
     state: pda-syndi-agent
+    penSlot: # Pen Lights
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#891417"
   - type: Icon

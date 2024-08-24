@@ -1,5 +1,8 @@
 using Content.Server.Power.Components;
 using Content.Shared.UserInterface;
+using Content.Server.Advertise;
+using Content.Server.Advertise.Components;
+using Content.Shared.Mood;
 using static Content.Shared.Arcade.SharedSpaceVillainArcadeComponent;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -13,6 +16,7 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly SpeakOnUIClosedSystem _speakOnUIClosed = default!;
 
     public override void Initialize()
     {
@@ -73,12 +77,18 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
         if (!TryComp<ApcPowerReceiverComponent>(uid, out var power) || !power.Powered)
             return;
 
+        if (msg.Session.AttachedEntity != null)
+            RaiseLocalEvent(msg.Session.AttachedEntity.Value, new MoodEffectEvent("ArcadePlay"));
+
         switch (msg.PlayerAction)
         {
             case PlayerAction.Attack:
             case PlayerAction.Heal:
             case PlayerAction.Recharge:
                 component.Game.ExecutePlayerAction(uid, msg.PlayerAction, component);
+                // Any sort of gameplay action counts
+                if (TryComp<SpeakOnUIClosedComponent>(uid, out var speakComponent))
+                    _speakOnUIClosed.TrySetFlag((uid, speakComponent));
                 break;
             case PlayerAction.NewGame:
                 _audioSystem.PlayPvs(component.NewGameSound, uid, AudioParams.Default.WithVolume(-4f));

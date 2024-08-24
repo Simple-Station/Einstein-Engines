@@ -38,8 +38,9 @@
 # Spoken by slimes.
 - type: language
   id: Bubblish
-  color: "#0077aa"
-  fontId: RubikBubbles
+  speech:
+    color: "#00a3e2dd"
+    fontId: RubikBubbles
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -54,8 +55,9 @@
 # Spoken by moths.
 - type: language
   id: Moffic
-  color: "#869b29"
-  fontId: Copperplate
+  speech:
+    color: "#c7df2edd"
+    fontId: Copperplate
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2 # Replacements are really short
@@ -122,8 +124,9 @@
 # Spoken by dionas.
 - type: language
   id: RootSpeak
-  color: "#804000"
-  fontId: Noganas
+  speech:
+    color: "#ce5e14dd"
+    fontId: Noganas
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -138,8 +141,9 @@
 # A mess of broken Japanese, spoken by Felinds and Oni
 - type: language
   id: Nekomimetic
-  color: "#803B56"
-  fontId: Manga
+  speech:
+    color: "#df57aaee"
+    fontId: Manga
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -197,7 +201,8 @@
 # Spoken by the Lizard race.
 - type: language
   id: Draconic
-  color: "#228b22"
+  speech:
+    color: "#2aca2add"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -291,7 +296,8 @@
 # Spoken by the Vulpkanin race.
 - type: language
   id: Canilunzt
-  color: "#b97a57"
+  speech:
+    color: "#d69b3dcc"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -358,7 +364,8 @@
 # The common language of the Sol system.
 - type: language
   id: SolCommon
-  color: "#8282fb"
+  speech:
+    color: "#8282fbaa"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -384,7 +391,8 @@
 
 - type: language
   id: RobotTalk
-  fontId: Monospace
+  speech:
+    fontId: Monospace
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -567,3 +575,40 @@
     - hiss
     - ss
     - ee
+
+- type: language
+  id: Hissing
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
+    replacement:
+    - hss
+    - iss
+    - ss
+    - is
+
+# Example of a sign language. Not currently used anyhow.
+- type: language
+  id: Sign
+  speech:
+    allowRadio: false
+    requireSpeech: false
+    color: "#dddddd"
+    messageWrapOverrides:
+      Speak: chat-sign-language-message-wrap
+      Whisper: chat-sign-language-whisper-wrap
+    speechVerbOverrides:
+    - chat-speech-verb-sign-1
+    - chat-speech-verb-sign-2
+    - chat-speech-verb-sign-3
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - something
+    - a cryptic message to you
+    - a signal to you
+    - a message
+    - a rude expression to you
+    - a sad expression to you
+    - a happy expression to you

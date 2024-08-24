@@ -43,7 +43,7 @@ namespace Content.Server.GameTicking
         // Mainly to avoid allocations.
         private readonly List<EntityCoordinates> _possiblePositions = new();
 
-        private List<EntityUid> GetSpawnableStations()
+        public List<EntityUid> GetSpawnableStations()
         {
             var spawnableStations = new List<EntityUid>();
             var query = EntityQueryEnumerator<StationJobsComponent, StationSpawningComponent>();
@@ -153,10 +153,6 @@ namespace Content.Server.GameTicking
                 JoinAsObserver(player);
                 return;
             }
-
-            // Automatically de-admin players who are joining.
-            if (_cfg.GetCVar(CCVars.AdminDeadminOnJoin) && _adminManager.IsAdmin(player))
-                _adminManager.DeAdmin(player);
 
             // We raise this event to allow other systems to handle spawning this player themselves. (e.g. late-join wizard, etc)
             var bev = new PlayerBeforeSpawnEvent(player, character, jobId, lateJoin, station);

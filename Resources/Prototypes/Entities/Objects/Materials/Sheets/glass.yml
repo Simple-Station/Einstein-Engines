@@ -15,7 +15,6 @@
   - type: Tag
     tags:
     - Sheet
-    - NoPaint
   - type: Material
   - type: Damageable
     damageContainer: Inorganic
@@ -49,6 +48,12 @@
     solutions:
       glass:
         canReact: false
+  # Estacao Pirata - IPC Healing
+  - type: BlindHealing
+    damageContainers: 
+      - Silicon
+  - type: StackPrice
+    price: 2
 
 - type: entity
   parent: SheetGlassBase

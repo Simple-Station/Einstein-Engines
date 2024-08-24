@@ -66,3 +66,12 @@
     intensitySlope: 5
     totalIntensity: 5
   - type: RequireProjectileTarget
+  - type: LanguageSpeaker
+    currentLanguage: GalacticCommon
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - RobotTalk
+    understands:
+    - GalacticCommon
+    - RobotTalk

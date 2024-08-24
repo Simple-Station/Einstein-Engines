@@ -17,6 +17,9 @@
   id: AppraisalTool
 
 - type: Tag
+  id: ArachneWeb
+
+- type: Tag
   id: ArtifactFragment
 
 - type: Tag
@@ -405,6 +408,9 @@
   id: Coldsauce
 
 - type: Tag
+  id: CoordinatesDisk
+
+- type: Tag
   id: Corn
 
 - type: Tag
@@ -513,6 +519,9 @@
   id: DoorElectronics
 
 - type: Tag
+  id: DoorElectronicsConfigurator
+
+- type: Tag
   id: DonkPocket
 
 - type: Tag
@@ -595,6 +604,9 @@
 
 - type: Tag
   id: Fruit
+
+- type: Tag
+  id: FullBodyOuter
 
 - type: Tag
   id: Galaxythistle
@@ -691,6 +703,9 @@
 
 - type: Tag
   id: HidesNose # for non-standard noses.
+
+- type: Tag
+  id: HidesBeard # for full coverage helmet / masks where beard shouldn't show
 
 - type: Tag
   id: HighRiskItem
@@ -905,9 +920,6 @@
   id: NoBlockAnchoring
 
 - type: Tag
-  id: NoPaint
-
-- type: Tag
   id: NozzleBackTank
 
 - type: Tag
@@ -915,6 +927,9 @@
 
 - type: Tag
   id: Ointment
+
+- type: Tag
+  id: Oneirophage
 
 - type: Tag
   id: Ore
@@ -1019,6 +1034,9 @@
   id: PrisonUniform
 
 - type: Tag
+  id: PrizeTicket
+
+- type: Tag
   id: ProximitySensor
 
 - type: Tag
@@ -1029,9 +1047,6 @@
 
 - type: Tag
   id: RawMaterial
-
-- type: Tag
-  id: RCDDeconstructWhitelist
 
 # Give this to something that doesn't need any special recycler behavior and just needs deleting.
 - type: Tag
@@ -1119,10 +1134,10 @@
   id: SmallMech
 
 - type: Tag
-  id: SnapPop
+  id: Smokable
 
 - type: Tag
-  id: Smokable
+  id: SnapPop
 
 - type: Tag
   id: SnowyLabs

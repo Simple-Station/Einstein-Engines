@@ -18,9 +18,8 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalMedical
       - id: EmergencyRollerBedSpawnFolded
-      - id: BodyBag_Folded
+      - id: BodyBagFolded
       - id: Portafib
 
 - type: entity
@@ -30,10 +29,9 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalMedical
       - id: RubberStampPsychologist
 
-  
+
 - type: entity
   noSpawn: true
   parent: ClothingBackpack
@@ -41,5 +39,4 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
       - id: RubberStampLawyer

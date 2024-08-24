@@ -2,8 +2,8 @@
 - type: entity
   parent: ClothingOuterEVASuitBase
   id: ClothingOuterHardsuitEVA
-  name: EVA suit
-  description: A lightweight space suit with the basic ability to protect the wearer from the vacuum of space during emergencies.
+  name: vacsuit
+  description: A lightweight vacsuit with the basic ability to protect the wearer from the vacuum of space during emergencies.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva.rsi
@@ -14,12 +14,13 @@
     - SuitEVA
     - MonkeyWearable
     - WhitelistChameleon
+    - HidesHarpyWings
 
 #Syndicate EVA
 - type: entity
   parent: ClothingOuterEVASuitBase
   id: ClothingOuterHardsuitSyndicate # TODO: rename to ClothingOuterEVASuitSyndicate
-  name: syndicate EVA suit
+  name: syndicate vacsuit
   description: "Has a tag on the back that reads: 'Totally not property of an enemy corporation, honest!'"
   components:
   - type: Sprite
@@ -31,13 +32,14 @@
     - SuitEVA
     - MonkeyWearable
     - WhitelistChameleon
+    - HidesHarpyWings
 
 #Emergency EVA
 - type: entity
   parent: ClothingOuterEVASuitBase
   id: ClothingOuterSuitEmergency
-  name: emergency EVA suit
-  description: An emergency EVA suit with a built-in helmet. It's horribly slow and lacking in temperature protection, but enough to bide you time from the harsh vaccuum of space.
+  name: emergency vacsuit
+  description: An emergency vacsuit with a built-in helmet. It's horribly slow and lacking in temperature protection, but enough to bide you time from the harsh vaccuum of space.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva_emergency.rsi
@@ -60,7 +62,7 @@
 - type: entity
   parent: ClothingOuterEVASuitBase
   id:  ClothingOuterHardsuitEVAPrisoner
-  name: prisoner EVA suit
+  name: prisoner vacsuit
   description: A lightweight space suit for prisoners to protect them from the vacuum of space during emergencies.
   components:
   - type: Sprite
@@ -72,13 +74,14 @@
     - SuitEVA
     - MonkeyWearable
     - WhitelistChameleon
+    - HidesHarpyWings
 
 #NTSRA Voidsuit / Ancient Voidsuit
 - type: entity
   parent: ClothingOuterEVASuitBase
   id: ClothingOuterHardsuitAncientEVA
-  name: NTSRA voidsuit #Nanotrasen Space Research Association
-  description: An ancient space suit, designed by the NTSRA branch of CentCom. It is very finely crafted, allowing for greater mobility than most modern space suits.
+  name: NTSRA vacsuit #Nanotrasen Space Research Association
+  description: An ancient vacsuit, designed by the NTSRA branch of CentCom. It is very finely crafted, allowing for greater mobility than most modern vacsuits.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/ancient_voidsuit.rsi
@@ -88,40 +91,3 @@
     walkModifier: 0.85
     sprintModifier: 0.85
   - type: HeldSpeedModifier
-
-#Paramedic Voidsuit
-#Despite having resistances and looking like a hardsuit, this parents off the EVA suit so it goes here.
-- type: entity
-  parent: ClothingOuterEVASuitBase
-  id: ClothingOuterHardsuitVoidParamed
-  name: paramedic void suit
-  description: A void suit made for paramedics.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.5
-    lowPressureMultiplier: 1000
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
-  - type: HeldSpeedModifier
-  - type: TemperatureProtection
-    coefficient: 0.1
-  - type: Armor
-    modifiers:
-      coefficients:
-        Heat: 0.90
-        Radiation: 0.75
-        Caustic: 0.5
-  - type: GroupExamine
-  - type: StealTarget
-    stealGroup: ClothingOuterHardsuitVoidParamed
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetVoidParamed
-    slot: head
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}

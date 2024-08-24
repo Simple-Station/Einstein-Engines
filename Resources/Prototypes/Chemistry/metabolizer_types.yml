@@ -1,4 +1,4 @@
-﻿# If your species wants to metabolize stuff differently,
+# If your species wants to metabolize stuff differently,
 # you'll likely have to tag its metabolizers with something other than Human.
 
 - type: metabolizerType
@@ -44,3 +44,11 @@
 - type: metabolizerType
   id: Arachnid
   name: arachnid
+
+- type: metabolizerType
+  id: Vampiric
+  name: vampiric
+
+- type: metabolizerType
+  id: LiquorLifeline
+  name: liquorlifeline

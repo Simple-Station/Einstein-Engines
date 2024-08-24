@@ -7,7 +7,7 @@
 - type: trait
   id: Accentless
   category: Speech
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -23,21 +23,54 @@
         accent: dwarf
 
 - type: trait
-  id: NormalVisionHarpy
+  id: Southern
+  category: Speech
+  components:
+    - type: SouthernAccent
+
+- type: trait
+  id: NormalVision
   category: Visual
-  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: Harpy
+      species:
+        - Harpy
+        - Vulpkanin
   components:
     - type: NormalVision
 
 - type: trait
-  id: NormalVisionVulpkanin
-  category: Visual
-  points: -1
+  id: Saturnine
+  category: Mental
+  points: 6
   requirements:
-    - !type:CharacterSpeciesRequirement
-      species: Vulpkanin
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sanguine
   components:
-    - type: NormalVision
+    - type: MoodModifyTrait
+      moodId: TraitSaturnine
+
+- type: trait
+  id: Sanguine
+  category: Mental
+  points: -6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Saturnine
+  components:
+    - type: MoodModifyTrait
+      moodId: TraitSanguine

@@ -205,6 +205,11 @@ public partial class SeedData
     /// </summary>
     [DataField("ligneous")] public bool Ligneous;
 
+    /// <summary>
+    ///     If true, teleports both fruit and player if slippable.
+    /// </summary>
+    [DataField] public bool Teleporting;
+
     // No, I'm not removing these.
     // if you re-add these, make sure that they get cloned.
     //public PlantSpread Spread { get; set; }
@@ -215,7 +220,6 @@ public partial class SeedData
     //public bool Hematophage { get; set; }
     //public bool Thorny { get; set; }
     //public bool Stinging { get; set; }
-    // public bool Teleporting { get; set; }
     // public PlantJuicy Juicy { get; set; }
 
     #endregion
@@ -295,6 +299,7 @@ public partial class SeedData
             Slip = Slip,
             Sentient = Sentient,
             Ligneous = Ligneous,
+            Teleporting = Teleporting,
 
             PlantRsi = PlantRsi,
             PlantIconState = PlantIconState,
@@ -358,6 +363,7 @@ public partial class SeedData
             Slip = Slip,
             Sentient = Sentient,
             Ligneous = Ligneous,
+            Teleporting = Teleporting,
 
             PlantRsi = other.PlantRsi,
             PlantIconState = other.PlantIconState,

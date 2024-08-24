@@ -124,7 +124,7 @@ public abstract class SharedActionsSystem : EntitySystem
             return true;
 
         if (logError)
-            Log.Error($"Failed to get action from action entity: {ToPrettyString(uid.Value)}");
+            Log.Error($"Failed to get action from action entity: {ToPrettyString(uid.Value)}. Trace: {Environment.StackTrace}");
 
         return false;
     }
@@ -451,6 +451,9 @@ public abstract class SharedActionsSystem : EntitySystem
             return false;
 
         if (action.Whitelist != null && !action.Whitelist.IsValid(target, EntityManager))
+            return false;
+
+        if (action.Blacklist != null && action.Blacklist.IsValid(target, EntityManager))
             return false;
 
         if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, target))
@@ -804,7 +807,7 @@ public abstract class SharedActionsSystem : EntitySystem
                               || !comp.Actions.Contains(actionId.Value));
 
             if (!GameTiming.ApplyingState)
-                Log.Error($"Attempted to remove an action {ToPrettyString(actionId)} from an entity that it was never attached to: {ToPrettyString(performer)}");
+                Log.Error($"Attempted to remove an action {ToPrettyString(actionId)} from an entity that it was never attached to: {ToPrettyString(performer)}. Trace: {Environment.StackTrace}");
             return;
         }
 

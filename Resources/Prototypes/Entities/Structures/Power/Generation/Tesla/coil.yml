@@ -5,6 +5,7 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: SupermatterImmune
   - type: Transform
     anchored: true
   - type: Physics
@@ -59,7 +60,6 @@
     maxCharge: 1000000
     startingCharge: 0
   - type: BatteryDischarger
-    activeSupplyRate: 15000
   - type: TeslaCoil
   - type: LightningTarget
     weighting: 200
@@ -108,6 +108,7 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: SupermatterImmune
   - type: Transform
     anchored: true
   - type: Physics
