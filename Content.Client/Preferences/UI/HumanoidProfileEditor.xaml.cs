@@ -1670,6 +1670,7 @@ namespace Content.Client.Preferences.UI
                 uncategorized = new BoxContainer
                 {
                     Orientation = LayoutOrientation.Vertical,
+                    HorizontalExpand = true,
                     VerticalExpand = true,
                     Name = "Uncategorized_0",
                     // I hate ScrollContainers
@@ -1715,6 +1716,7 @@ namespace Content.Client.Preferences.UI
                 var box = new BoxContainer
                 {
                     Orientation = LayoutOrientation.Vertical,
+                    HorizontalExpand = true,
                     VerticalExpand = true,
                     Name = $"{category.ID}_{_loadoutsTabs.Contents.Count()}",
                     // I hate ScrollContainers
