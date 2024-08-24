@@ -36,15 +36,6 @@
   amplificationModifier: 1
 
 - type: psionicPower
-  id: MindSwapReturnPower
-  name: Mind Swap Return
-  description: mind-swap-return-power-description
-  actions:
-    - ActionMindSwapReturn
-  initializationFeedback: mind-swap-return-power-initialization-feedback
-  metapsionicFeedback: mind-swap-return-power-metapsionic-feedback
-
-- type: psionicPower
   id: NoosphericZapPower
   name: Noospheric Zap
   description: noospheric-zap-power-description
