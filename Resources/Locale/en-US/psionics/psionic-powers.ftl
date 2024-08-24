@@ -15,6 +15,10 @@ mind-swap-power-description = Swap minds with the target. Either can change back
 mind-swap-power-initialization-feedback = I can feel the bonds of soul and body wither at my whim, my vessel may be replaced with that of another.
 mind-swap-power-metapsionic-feedback = {CAPITALIZE($entity)} lacks a strong bond with their vessel, as if their connection with spirit is malleable.
 
+mind-swap-return-power-description = Return to your original body.
+mind-swap-return-initialization-feedback = I find myself wearing unfamiliar flesh.
+mind-swap-return-metapsionic-feedback = Cursed flesh! {CAPITALIZE($entity)} dwells within the wrong vessel!
+
 # Noospheric Zap
 noospheric-zap-power-description = Shocks the conciousness of the target and leaves them stunned and stuttering.
 noospheric-zap-power-initialization-feedback =
