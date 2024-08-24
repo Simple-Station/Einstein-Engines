@@ -6,6 +6,7 @@ using Content.Client.Lobby;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Roles;
+using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.CCVar;
@@ -1517,7 +1518,7 @@ namespace Content.Client.Preferences.UI
             {
                 var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    traitsUnusable.Contains(trait) ? "" : "ButtonColorRed",
+                    traitsUnusable.Contains(trait) ? "" : StyleBase.ButtonCaution,
                     _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
                     _requirements);
 
@@ -1618,6 +1619,7 @@ namespace Content.Client.Preferences.UI
             UpdatePreview();
         }
 
+        private Dictionary<LoadoutPrototype, EntityUid> _dummyLoadouts = new();
         private void UpdateLoadouts(bool showUnusable)
         {
             // Reset loadout points so you don't get -14 points or something for no reason
@@ -1626,23 +1628,14 @@ namespace Content.Client.Preferences.UI
             _loadoutPointsBar.MaxValue = points;
             _loadoutPointsBar.Value = points;
 
-            // Clear current listings
-            _loadoutPreferences.Clear();
-            _loadoutsTabs.DisposeAllChildren();
-
 
             // Get the highest priority job to use for loadout filtering
             var highJob = _jobPriorities.FirstOrDefault(j => j.Priority == JobPriority.High);
 
-            // Get all loadout prototypes
-            var enumeratedLoadouts = _prototypeManager.EnumeratePrototypes<LoadoutPrototype>().ToList();
-            // Get all loadout categories
-            var categories = _prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>().ToList();
-
-            // If showUnusable is false filter out loadouts that are unusable based on your current character setup
-            var loadouts = enumeratedLoadouts.Where(loadout =>
-                showUnusable || // Ignore everything if this is true
-                _characterRequirementsSystem.CheckRequirementsValid(
+            Dictionary<LoadoutPrototype, bool> loadouts = new();
+            foreach (var loadout in _prototypeManager.EnumeratePrototypes<LoadoutPrototype>())
+            {
+                var usable = _characterRequirementsSystem.CheckRequirementsValid(
                     loadout.Requirements,
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1652,27 +1645,16 @@ namespace Content.Client.Preferences.UI
                     _prototypeManager,
                     _configurationManager,
                     out _
-                )
-            ).ToList();
+                );
+                loadouts.Add(loadout, usable);
 
-            // Loadouts to highlight red when showUnusable is true
-            var loadoutsUnusable = enumeratedLoadouts.Where(loadout =>
-                _characterRequirementsSystem.CheckRequirementsValid(
-                    loadout.Requirements,
-                    highJob?.Proto ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetRawPlayTimeTrackers(),
-                    _requirements.IsWhitelisted(),
-                    _entityManager,
-                    _prototypeManager,
-                    _configurationManager,
-                    out _
-                )
-            ).ToList();
+                if (_loadoutPreferences.FindIndex(lps => lps.Loadout.ID == loadout.ID) is not (not -1 and var i))
+                    continue;
 
-            // Every loadout not in the loadouts list
-            var otherLoadouts = enumeratedLoadouts.Where(loadout => !loadouts.Contains(loadout)).ToList();
-
+                var selector = _loadoutPreferences[i];
+                selector.Valid = usable;
+                selector.ShowUnusable = showUnusable;
+            }
 
             if (loadouts.Count == 0)
             {
@@ -1681,30 +1663,30 @@ namespace Content.Client.Preferences.UI
                 return;
             }
 
-            var uncategorized = new BoxContainer
-            {
-                Orientation = LayoutOrientation.Vertical,
-                VerticalExpand = true,
-                Name = "Uncategorized_0",
-            };
 
-            _loadoutsTabs.AddTab(uncategorized, Loc.GetString("loadout-category-Uncategorized"));
+            var uncategorized = _loadoutsTabs.Tabs.FirstOrDefault(c => string.IsNullOrEmpty(c.Name));
+            if (uncategorized == null)
+            {
+                uncategorized = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Vertical,
+                    VerticalExpand = true,
+                    Name = "Uncategorized_0",
+                };
+
+                _loadoutsTabs.AddTab(uncategorized, Loc.GetString("loadout-category-Uncategorized"));
+            }
 
 
             // Make categories
-            var currentCategory = 1; // 1 because we already made 0 as Uncategorized, I am not not zero-indexing :)
-            foreach (var category in categories.OrderBy(c => Loc.GetString($"loadout-category-{c.ID}")))
+            foreach (var category in _prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>()
+                .OrderBy(c => Loc.GetString($"loadout-category-{c.ID}")))
             {
                 // Check for existing category
                 BoxContainer? match = null;
-                foreach (var child in _loadoutsTabs.Children)
-                {
-                    if (string.IsNullOrEmpty(child.Name))
-                        continue;
-
-                    if (child.Name.Split("_")[0] == category.ID)
+                foreach (var child in _loadoutsTabs.Tabs.Where(c => !string.IsNullOrEmpty(c.Name)))
+                    if (child.Name!.Split("_")[0] == category.ID)
                         match = (BoxContainer) child;
-                }
 
                 // If there is a category do nothing
                 if (match != null)
@@ -1715,33 +1697,30 @@ namespace Content.Client.Preferences.UI
                 {
                     Orientation = LayoutOrientation.Vertical,
                     VerticalExpand = true,
-                    Name = $"{category.ID}_{currentCategory}",
+                    Name = $"{category.ID}_{_loadoutsTabs.Tabs.Count()}",
                 };
 
                 _loadoutsTabs.AddTab(box, Loc.GetString($"loadout-category-{category.ID}"));
-                currentCategory++;
             }
 
 
             // Fill categories
-            foreach (var loadout in loadouts.OrderBy(l => l.Cost).ThenBy(l => Loc.GetString($"loadout-{l.ID}-name")))
+            foreach (var (loadout, _) in loadouts.Where(l => _loadoutPreferences.All(lps => lps.Loadout.ID != l.Key.ID))
+                .OrderBy(l => l.Key.Cost).ThenBy(l => Loc.GetString($"loadout-{l.Key.ID}-name")))
             {
-                var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    loadoutsUnusable.Contains(loadout) ? "" : "ButtonColorRed",
-                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
-                    _requirements);
+                // Get the existing selector if it exists
+                var selector = _loadoutPreferences.FirstOrDefault(lp => lp.Loadout == loadout)
+                    // Or make a new one and set it up
+                    ?? new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
+                        Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), ref _dummyLoadouts,
+                        _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
+                        _requirements);
 
                 // Look for an existing loadout category
                 BoxContainer? match = null;
-                foreach (var child in _loadoutsTabs.Tabs)
-                {
-                    if (string.IsNullOrEmpty(child.Name))
-                        continue;
-
-                    if (child.Name.Split("_")[0] == loadout.Category)
+                foreach (var child in _loadoutsTabs.Tabs.Where(c => !string.IsNullOrEmpty(c.Name)))
+                    if (child.Name!.Split("_")[0] == loadout.Category)
                         match = (BoxContainer) child;
-                }
 
                 // If there is no category put it in Uncategorized
                 if (string.IsNullOrEmpty(match?.Name)
@@ -1750,25 +1729,12 @@ namespace Content.Client.Preferences.UI
                 else
                     match.AddChild(selector);
 
-
                 AddSelector(selector, loadout.Cost, loadout.ID);
             }
 
-            // Add the selected unusable loadouts to the point counter
-            foreach (var loadout in otherLoadouts.OrderBy(l => l.Cost).ThenBy(l => Loc.GetString($"loadout-{l.ID}-name")))
-            {
-                var selector = new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
-                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
-                    _requirements);
-
-
-                AddSelector(selector, loadout.Cost, loadout.ID);
-            }
-
-
-            // Hide Uncategorized tab if it's empty, other tabs already shouldn't exist if they're empty
-            _loadoutsTabs.SetTabVisible(0, uncategorized.Children.Any());
+            // Hide any empty tabs
+            foreach (var child in _loadoutsTabs.Tabs.Where(c => !string.IsNullOrEmpty(c.Name)))
+                _loadoutsTabs.SetTabVisible(child, child.Children.Any());
 
 
             UpdateLoadoutPreferences();

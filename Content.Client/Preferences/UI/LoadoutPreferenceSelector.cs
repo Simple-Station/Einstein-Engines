@@ -21,40 +21,69 @@ namespace Content.Client.Preferences.UI;
 public sealed class LoadoutPreferenceSelector : Control
 {
     public LoadoutPrototype Loadout { get; }
-    private readonly Button _button;
 
+    public bool Valid;
+    private bool _showUnusable;
+    public bool ShowUnusable
+    {
+        get => _showUnusable;
+        set
+        {
+            _showUnusable = value;
+            Visible = Valid || _showUnusable;
+            PreferenceButton.RemoveStyleClass(StyleBase.ButtonCaution);
+            PreferenceButton.AddStyleClass(Valid ? "" : StyleBase.ButtonCaution);
+        }
+    }
+
+    public Button PreferenceButton;
     public bool Preference
     {
-        get => _button.Pressed;
-        set => _button.Pressed = value;
+        get => PreferenceButton.Pressed;
+        set => PreferenceButton.Pressed = value;
     }
 
     public event Action<bool>? PreferenceChanged;
 
     public LoadoutPreferenceSelector(LoadoutPrototype loadout, JobPrototype highJob,
-        HumanoidCharacterProfile profile, string style, IEntityManager entityManager, IPrototypeManager prototypeManager,
+        HumanoidCharacterProfile profile, ref Dictionary<LoadoutPrototype, EntityUid> entities, IEntityManager entityManager, IPrototypeManager prototypeManager,
         IConfigurationManager configManager, CharacterRequirementsSystem characterRequirementsSystem,
         JobRequirementsManager jobRequirementsManager)
     {
         Loadout = loadout;
 
-        // Display the first item in the loadout as a preview
-        // TODO: Maybe allow custom icons to be specified in the prototype?
-        var dummyLoadoutItem = entityManager.SpawnEntity(loadout.Items.First(), MapCoordinates.Nullspace);
-
-        // Create a sprite preview of the loadout item
-        var previewLoadout = new SpriteView
+        SpriteView previewLoadout;
+        if (!entities.TryGetValue(loadout, out var dummyLoadoutItem))
         {
-            Scale = new Vector2(1, 1),
-            OverrideDirection = Direction.South,
-            VerticalAlignment = VAlignment.Center,
-            SizeFlagsStretchRatio = 1,
-        };
-        previewLoadout.SetEntity(dummyLoadoutItem);
+            // Get the first item in the loadout to be the preview
+            dummyLoadoutItem = entityManager.SpawnEntity(loadout.Items.First(), MapCoordinates.Nullspace);
+
+            // Create a sprite preview of the loadout item
+            previewLoadout = new SpriteView
+            {
+                Scale = new Vector2(1, 1),
+                OverrideDirection = Direction.South,
+                VerticalAlignment = VAlignment.Center,
+                SizeFlagsStretchRatio = 1,
+            };
+            previewLoadout.SetEntity(dummyLoadoutItem);
+        }
+        else
+        {
+            // Create a sprite preview of the loadout item
+            previewLoadout = new SpriteView
+            {
+                Scale = new Vector2(1, 1),
+                OverrideDirection = Direction.South,
+                VerticalAlignment = VAlignment.Center,
+                SizeFlagsStretchRatio = 1,
+            };
+            previewLoadout.SetEntity(dummyLoadoutItem);
+        }
 
 
         // Create a checkbox to get the loadout
-        _button = new Button
+        PreferenceButton = new Button
         {
             ToggleMode = true,
             StyleClasses = { StyleBase.ButtonOpenLeft },
@@ -73,6 +102,7 @@ public sealed class LoadoutPreferenceSelector : Control
                             ClipText = true,
                             Margin = new Thickness(0, 0, 8, 0),
                         },
+                        previewLoadout,
                         new Label
                         {
                             Text = Loc.GetString($"loadout-name-{loadout.ID}") == $"loadout-name-{loadout.ID}"
@@ -83,8 +113,7 @@ public sealed class LoadoutPreferenceSelector : Control
                 },
             },
         };
-        _button.OnToggled += OnButtonToggled;
-        _button.AddStyleClass(style);
+        PreferenceButton.OnToggled += OnButtonToggled;
 
         var tooltip = new StringBuilder();
         // Add the loadout description to the tooltip if there is one
@@ -111,7 +140,7 @@ public sealed class LoadoutPreferenceSelector : Control
         {
             var formattedTooltip = new Tooltip();
             formattedTooltip.SetMessage(FormattedMessage.FromMarkupPermissive(tooltip.ToString()));
-            _button.TooltipSupplier = _ => formattedTooltip;
+            PreferenceButton.TooltipSupplier = _ => formattedTooltip;
         }
 
 
@@ -119,7 +148,7 @@ public sealed class LoadoutPreferenceSelector : Control
         AddChild(new BoxContainer
         {
             Orientation = BoxContainer.LayoutOrientation.Horizontal,
-            Children = { previewLoadout, _button },
+            Children = { PreferenceButton },
         });
     }
 
