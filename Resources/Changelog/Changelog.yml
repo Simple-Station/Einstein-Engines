@@ -5558,3 +5558,9 @@ Entries:
         WeldingHealable component.
   id: 6286
   time: '2024-08-23T03:58:35.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Fix
+      message: Supermatter Annoncements
+  id: 6287
+  time: '2024-08-24T07:56:12.0000000+00:00'
