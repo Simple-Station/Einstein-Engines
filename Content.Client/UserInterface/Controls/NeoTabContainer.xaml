@@ -11,7 +11,7 @@
             <BoxContainer Name="TabContainer" />
         </ScrollContainer>
 
-        <PanelContainer MinSize="2 2" Margin="5">
+        <PanelContainer Name="Separator" MinSize="2 2">
             <PanelContainer.PanelOverride>
                 <graphics:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.NanoGold}" />
             </PanelContainer.PanelOverride>

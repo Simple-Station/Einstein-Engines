@@ -76,12 +76,10 @@ namespace Content.Client.Preferences.UI
         private int _traitCount;
         private ProgressBar _traitPointsBar => TraitPointsBar;
         private Button _traitsShowUnusableButton => TraitsShowUnusableButton;
-        private BoxContainer _traitsTab => CTraitsTab;
         private NeoTabContainer _traitsTabs => CTraitsTabs;
         private Label _loadoutPointsLabel => LoadoutPointsLabel;
         private ProgressBar _loadoutPointsBar => LoadoutPointsBar;
         private Button _loadoutsShowUnusableButton => LoadoutsShowUnusableButton;
-        private BoxContainer _loadoutsTab => CLoadoutsTab;
         private NeoTabContainer _loadoutsTabs => CLoadoutsTabs;
         private readonly List<JobPrioritySelector> _jobPriorities;
         private OptionButton _preferenceUnavailableButton => CPreferenceUnavailableButton;
@@ -1313,6 +1311,8 @@ namespace Content.Client.Preferences.UI
 
             SetPreviewRotation(_previewRotation);
             _controller.UpdateCharacterUI();
+            _traitsTabs.UpdateTabMerging();
+            _loadoutsTabs.UpdateTabMerging();
         }
 
         private void SetPreviewRotation(Direction direction)
@@ -1524,7 +1524,7 @@ namespace Content.Client.Preferences.UI
 
                 // Look for an existing trait category
                 BoxContainer? match = null;
-                foreach (var child in _traitsTabs.Tabs)
+                foreach (var child in _traitsTabs.Contents)
                 {
                     if (string.IsNullOrEmpty(child.Name))
                         continue;
@@ -1664,7 +1664,7 @@ namespace Content.Client.Preferences.UI
             }
 
 
-            var uncategorized = _loadoutsTabs.Tabs.FirstOrDefault(c => string.IsNullOrEmpty(c.Name));
+            var uncategorized = _loadoutsTabs.Contents.FirstOrDefault(c => c.Name == "Uncategorized_0");
             if (uncategorized == null)
             {
                 uncategorized = new BoxContainer
@@ -1672,6 +1672,25 @@ namespace Content.Client.Preferences.UI
                     Orientation = LayoutOrientation.Vertical,
                     VerticalExpand = true,
                     Name = "Uncategorized_0",
+                    // I hate ScrollContainers
+                    Children =
+                    {
+                        new ScrollContainer
+                        {
+                            HScrollEnabled = false,
+                            HorizontalExpand = true,
+                            VerticalExpand = true,
+                            Children =
+                            {
+                                new BoxContainer
+                                {
+                                    Orientation = LayoutOrientation.Vertical,
+                                    HorizontalExpand = true,
+                                    VerticalExpand = true,
+                                },
+                            },
+                        },
+                    },
                 };
 
                 _loadoutsTabs.AddTab(uncategorized, Loc.GetString("loadout-category-Uncategorized"));
@@ -1684,9 +1703,9 @@ namespace Content.Client.Preferences.UI
             {
                 // Check for existing category
                 BoxContainer? match = null;
-                foreach (var child in _loadoutsTabs.Tabs.Where(c => !string.IsNullOrEmpty(c.Name)))
+                foreach (var child in _loadoutsTabs.Contents.Where(c => !string.IsNullOrEmpty(c.Name)))
                     if (child.Name!.Split("_")[0] == category.ID)
-                        match = (BoxContainer) child;
+                        match = (BoxContainer) child.Children.First().Children.First();
 
                 // If there is a category do nothing
                 if (match != null)
@@ -1697,11 +1716,31 @@ namespace Content.Client.Preferences.UI
                 {
                     Orientation = LayoutOrientation.Vertical,
                     VerticalExpand = true,
-                    Name = $"{category.ID}_{_loadoutsTabs.Tabs.Count()}",
+                    Name = $"{category.ID}_{_loadoutsTabs.Contents.Count()}",
+                    // I hate ScrollContainers
+                    Children =
+                    {
+                        new ScrollContainer
+                        {
+                            HScrollEnabled = false,
+                            HorizontalExpand = true,
+                            VerticalExpand = true,
+                            Children =
+                            {
+                                new BoxContainer
+                                {
+                                    Orientation = LayoutOrientation.Vertical,
+                                    HorizontalExpand = true,
+                                    VerticalExpand = true,
+                                },
+                            },
+                        },
+                    },
                 };
 
-                _loadoutsTabs.AddTab(box, Loc.GetString($"loadout-category-{category.ID}"));
+                _loadoutsTabs.AddTab(box, Loc.GetString($"loadout-category-{category.ID}"), false);
             }
+            _loadoutsTabs.UpdateTabMerging();
 
 
             // Fill categories
@@ -1718,13 +1757,13 @@ namespace Content.Client.Preferences.UI
 
                 // Look for an existing loadout category
                 BoxContainer? match = null;
-                foreach (var child in _loadoutsTabs.Tabs.Where(c => !string.IsNullOrEmpty(c.Name)))
+                foreach (var child in _loadoutsTabs.Contents.Where(c => !string.IsNullOrEmpty(c.Name)))
                     if (child.Name!.Split("_")[0] == loadout.Category)
-                        match = (BoxContainer) child;
+                        match = (BoxContainer) child.Children.First().Children.First();
 
                 // If there is no category put it in Uncategorized
-                if (string.IsNullOrEmpty(match?.Name)
-                    || match.Name.Split("_")[0] != loadout.Category)
+                if (string.IsNullOrEmpty(match?.Parent?.Parent?.Name)
+                    || match.Parent?.Parent?.Name.Split("_")[0] != loadout.Category)
                     uncategorized.AddChild(selector);
                 else
                     match.AddChild(selector);
@@ -1733,8 +1772,8 @@ namespace Content.Client.Preferences.UI
             }
 
             // Hide any empty tabs
-            foreach (var child in _loadoutsTabs.Tabs.Where(c => !string.IsNullOrEmpty(c.Name)))
-                _loadoutsTabs.SetTabVisible(child, child.Children.Any());
+            foreach (var child in _loadoutsTabs.Contents.Where(c => !string.IsNullOrEmpty(c.Name)))
+                _loadoutsTabs.SetTabVisible(child, child.Children.First().Children.First().Children.Any());
 
 
             UpdateLoadoutPreferences();
