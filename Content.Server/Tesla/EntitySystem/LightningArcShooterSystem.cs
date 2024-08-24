@@ -1,5 +1,6 @@
 using Content.Server.Administration.Commands;
 using Content.Server.Lightning;
+using Content.Shared.Lightning;
 using Content.Server.Tesla.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
