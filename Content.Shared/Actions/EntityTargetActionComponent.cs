@@ -12,24 +12,27 @@ public sealed partial class EntityTargetActionComponent : BaseTargetActionCompon
     /// <summary>
     ///     The local-event to raise when this action is performed.
     /// </summary>
-    [DataField("event")]
+    [DataField]
     [NonSerialized]
     public EntityTargetActionEvent? Event;
 
-    [DataField("whitelist")] public EntityWhitelist? Whitelist;
+    [DataField] public EntityWhitelist? Whitelist;
+    [DataField] public EntityWhitelist? Blacklist;
 
-    [DataField("canTargetSelf")] public bool CanTargetSelf = true;
+    [DataField] public bool CanTargetSelf = true;
 }
 
 [Serializable, NetSerializable]
 public sealed class EntityTargetActionComponentState : BaseActionComponentState
 {
     public EntityWhitelist? Whitelist;
+    public EntityWhitelist? Blacklist;
     public bool CanTargetSelf;
 
     public EntityTargetActionComponentState(EntityTargetActionComponent component, IEntityManager entManager) : base(component, entManager)
     {
         Whitelist = component.Whitelist;
+        Blacklist = component.Blacklist;
         CanTargetSelf = component.CanTargetSelf;
     }
 }

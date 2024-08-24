@@ -5459,3 +5459,108 @@ Entries:
         globally to all entities when updating.
   id: 6274
   time: '2024-08-20T18:49:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Actions no longer need to hardcode in target blacklists, and can now
+        blacklist entities in YML. This is notably useful for Psionic powers,
+        which all share a common feature that they can't target people with
+        Psionic Insulation (Or have been Mindbroken). 
+  id: 6275
+  time: '2024-08-21T09:08:40.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        PsionicPowers that add a Component now also allow for adding a Component
+        with Arguments. This works exactly like the trait system's
+        implementation of components.
+  id: 6276
+  time: '2024-08-21T09:10:28.0000000+00:00'
+- author: Timemaster99
+  changes:
+    - type: Add
+      message: Added IPC as a playable species.
+  id: 6277
+  time: '2024-08-21T09:14:30.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Traits can now add Active Abilities to a character.
+    - type: Add
+      message: Traits can now add Psionic Powers to a character.
+  id: 6278
+  time: '2024-08-21T09:49:54.0000000+00:00'
+- author: stellar-novas
+  changes:
+    - type: Tweak
+      message: Ifrit has received some damage resistance changes
+  id: 6279
+  time: '2024-08-21T21:00:01.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Add
+      message: Added Xenoglossy to the psionic power pool.
+  id: 6280
+  time: '2024-08-22T00:08:59.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Trait points have been made more granular by both doubling the available
+        number of trait points, and increasing the base cost of all pre-existing
+        traits.
+  id: 6281
+  time: '2024-08-22T00:52:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Moths can now be colorful again.
+  id: 6282
+  time: '2024-08-22T08:43:20.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Cataloguer has been re-added to the game as a new roundstart Psionic
+        role. The Cataloguer is a unique role that will always start with the
+        Latent Psychic trait, as well as the new Xenoglossy power, which allows
+        him to know and speak all languages.
+  id: 6283
+  time: '2024-08-22T17:00:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Gaining a new Psionic Power can now display messages to alert the
+        player, both as a short popup, and optionally a lengthier message sent
+        to the user's Chat window. 
+  id: 6284
+  time: '2024-08-22T17:12:26.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: >-
+        Announcements can play multiple sounds now (you can revert to the old
+        behavior in sound setting if you want though)
+  id: 6285
+  time: '2024-08-22T21:46:38.0000000+00:00'
+- author: v0idRift
+  changes:
+    - type: Add
+      message: >-
+        Added the ability for IPCs to speak and understand Galactic Common and
+        RobotTalk languages.
+    - type: Add
+      message: >-
+        Enabled IPCs to heal themselves using welding tools via the
+        WeldingHealable component.
+  id: 6286
+  time: '2024-08-23T03:58:35.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Fix
+      message: Supermatter Annoncements
+  id: 6287
+  time: '2024-08-24T07:56:12.0000000+00:00'
