@@ -171,7 +171,7 @@
                     StyleClasses="OpenRight"
                     Margin="0 0 0 5" />
 
-                <ui:NeoTabContainer Name="CTraitsTabs" VerticalExpand="True" FirstTabOpenBoth="True" />
+                <ui:NeoTabContainer Name="CTraitsTabs" VerticalExpand="True" />
             </BoxContainer>
             <BoxContainer Name="CLoadoutsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Loadouts -->
@@ -186,7 +186,7 @@
                     StyleClasses="OpenRight"
                     Margin="0 0 0 5" />
 
-                <ui:NeoTabContainer Name="CLoadoutsTabs" VerticalExpand="True" FirstTabOpenBoth="True" />
+                <ui:NeoTabContainer Name="CLoadoutsTabs" VerticalExpand="True" />
             </BoxContainer>
             <BoxContainer Name="CMarkingsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Markings -->
