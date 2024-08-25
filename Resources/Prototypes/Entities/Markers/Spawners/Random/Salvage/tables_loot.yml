@@ -133,6 +133,7 @@
       weight: 0.5
     - id: ResearchDisk20000
       weight: 0.5
+    - id: ArabianLamp
     - !type:NestedSelector
       tableId: TreasureCoinPileRare
       rolls: !type:RangeNumberSelector
@@ -208,7 +209,6 @@
       weight: 0.5
     - id: OxygenTankFilled
     - id: WelderIndustrial
-    #   - id: WeaponGrapplingGun
     - !type:GroupSelector
       children:
       - id: ClothingHeadHatWelding
@@ -223,19 +223,16 @@
   id: SalvageEquipmentRare
   table: !type:GroupSelector
     children:
-    #    - id: BlueprintDoubleEmergencyTank
+    - id: BlueprintFlare
     - id: FultonBeacon
     - id: Fulton
       amount: !type:RangeNumberSelector
         range: 1, 3
-    #- id: HandHeldMassScanner - Removed by Lavaland
     - id: WeaponCrusherDagger
     - id: MiningDrill
     - id: ClothingEyesGlassesMeson
     - id: ClothingBeltSalvageWebbing
     - id: SeismicCharge
-      #    - id: MineralScanner
-      weight: 0.5
     - id: WeaponCrusher
       weight: 0.5
     - !type:GroupSelector
@@ -247,9 +244,8 @@
   id: SalvageEquipmentLegendary
   table: !type:GroupSelector
     children:
-    #    - id: AdvancedMineralScanner
-    #    - id: BlueprintFulton
-    #    - id: BlueprintSeismicCharge
+    - id: BlueprintFulton
+    - id: BlueprintSeismicCharge
     - id: WeaponCrusherGlaive
     - id: ClothingOuterHardsuitSalvage
     - id: OmnizineChemistryBottle
