@@ -36,10 +36,10 @@ public sealed class OscillatingStationEventSchedulerSystem : GameRuleSystem<Osci
     private TimeSpan CalculateAverageEventTime(OscillatingStationEventSchedulerComponent comp)
     {
         // TODO those cvars are bad
-        var min = _cfg.GetCVar(CCVars.GameEventsRampingMinimumTime);
-        var max = _cfg.GetCVar(CCVars.GameEventsRampingMaximumTime);
+        var min = _cfg.GetCVar(CCVars.GameEventsOscillatingMinimumTime);
+        var max = _cfg.GetCVar(CCVars.GameEventsOscillatingAverageTime);
 
-        return TimeSpan.FromSeconds(min + (min - max) / comp.CurrentChaos); // Why does C# have no math.lerp??????????????
+        return TimeSpan.FromSeconds(min + (max - min) / comp.CurrentChaos); // Why does C# have no math.lerp??????????????
     }
 
     protected override void Started(EntityUid uid, OscillatingStationEventSchedulerComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -62,7 +62,7 @@ public sealed class OscillatingStationEventSchedulerSystem : GameRuleSystem<Osci
 
         // Slope is the first derivative of chaos, and acceleration is the second
         // We randomize acceleration on each tick and simulate its effect on the slope and base function
-        // But we spread the effect across a longer time span to achieve a pleasant result
+        // But we spread the effect across a longer time span to achieve a smooth and pleasant result
         var delta = (float) comp.UpdateInterval.TotalSeconds;
         var newAcceleration = _random.NextFloat(comp.DownwardsBias, comp.UpwardsBias);
         var newSlope =

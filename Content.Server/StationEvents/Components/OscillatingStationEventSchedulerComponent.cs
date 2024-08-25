@@ -40,8 +40,9 @@ public sealed partial class OscillatingStationEventSchedulerComponent : Componen
     /// <summary>
     ///     A value between 0 and 1 that determines how slowly the chaos and its first derivative change in time.
     /// </summary>
+    /// <remarks>Changing these values will have a great impact on how fast the event rate changes.</remarks>
     [DataField]
-    public float ChaosStickiness = 0.95f, SlopeStickiness = 0.97f;
+    public float ChaosStickiness = 0.93f, SlopeStickiness = 0.96f;
 
     /// <summary>
     ///     Actual chaos data at the current moment. Those are overridden at runtime.

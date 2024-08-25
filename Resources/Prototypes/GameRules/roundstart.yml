@@ -148,10 +148,11 @@
   noSpawn: true
   components:
   - type: OscillatingStationEventScheduler
-    minChaos: 0.1
+    minChaos: 0.8
     maxChaos: 14
     startingSlope: 0.2
-    downwardsLimit: -0.9
+    downwardsLimit: -0.25
+    upwardsLimit: 0.3
 
 # More likely to go down than up, so calmness prevails
 - type: entity
@@ -160,11 +161,11 @@
   noSpawn: true
   components:
   - type: OscillatingStationEventScheduler
-    minChaos: 0.1
-    maxChaos: 6
+    minChaos: 0.8
+    maxChaos: 8
     startingSlope: -1
-    downwardsLimit: -1.2
-    upwardsLimit: 0.9
+    downwardsLimit: -0.4
+    upwardsLimit: 0.3
     downwardsBias: -1.1
     upwardsBias: 0.9
 
