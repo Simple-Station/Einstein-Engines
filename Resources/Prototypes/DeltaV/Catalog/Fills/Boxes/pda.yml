@@ -46,7 +46,7 @@
     - 0,0,4,3
   - type: Storage
     grid:
-    - 0,0,4,3 # Increased storage space for more PDA types
+    - 0,0,3,2 # Increased storage space for more PDA types
   - type: StorageFill
     contents:
       - id: SciencePDA
