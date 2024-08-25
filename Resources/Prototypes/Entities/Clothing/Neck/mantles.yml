@@ -74,3 +74,25 @@
     sprite: Clothing/Neck/mantles/qmmantle.rsi
   - type: Clothing
     sprite: Clothing/Neck/mantles/qmmantle.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckOldMantle
+  name: old wrap
+  description: A tattered fabric wrap, faded over the years. Smells faintly of cigars.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/oldmantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/oldmantle.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckUnathiMantle
+  name: hide mantle
+  description: A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/unathimantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/unathimantle.rsi

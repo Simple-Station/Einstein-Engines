@@ -1,0 +1,121 @@
+- type: psionicPower
+  id: DispelPower
+  name: Dispel
+  description: dispel-power-description
+  actions:
+    - ActionDispel
+  components:
+    - type: DispelPower
+  initializationFeedback: dispel-power-initialization-feedback
+  metapsionicFeedback: dispel-power-metapsionic-feedback
+  dampeningModifier: 1
+
+- type: psionicPower
+  id: MassSleepPower
+  name: Mass Sleep
+  description: mass-sleep-power-description
+  actions:
+    - ActionMassSleep
+  components:
+    - type: MassSleepPower
+  # initializationFeedback: mass-sleep-power-initialization-feedback # I apologize, I don't feel like writing a paragraph of feedback for a power that's getting replaced with a new one.
+  metapsionicFeedback: mass-sleep-power-metapsionic-feedback
+  amplificationModifier: 0.5
+  dampeningModifier: 0.5
+
+- type: psionicPower
+  id: MindSwapPower
+  name: Mind Swap
+  description: mind-swap-power-description
+  actions:
+    - ActionMindSwap
+  components:
+    - type: MindSwapPower
+  initializationFeedback: mind-swap-power-initialization-feedback
+  metapsionicFeedback: mind-swap-power-metapsionic-feedback
+  amplificationModifier: 1
+
+- type: psionicPower
+  id: NoosphericZapPower
+  name: Noospheric Zap
+  description: noospheric-zap-power-description
+  actions:
+    - ActionNoosphericZap
+  components:
+    - type: NoosphericZapPower
+  initializationFeedback: noospheric-zap-power-initialization-feedback
+  metapsionicFeedback: noospheric-zap-power-metapsionic-feedback
+  amplificationModifier: 1
+
+- type: psionicPower
+  id: PyrokinesisPower
+  name: Pyrokinesis
+  description: pyrokinesis-power-description
+  actions:
+  - ActionPyrokinesis
+  components:
+    - type: PyrokinesisPower
+  initializationFeedback: pyrokinesis-power-initialization-feedback
+  metapsionicFeedback: pyrokinesis-power-metapsionic-feedback
+  amplificationModifier: 1
+
+- type: psionicPower
+  id: MetapsionicPower
+  name: Metapsionic Pulse
+  description: metapsionic-power-description
+  actions:
+  - ActionMetapsionic
+  components:
+    - type: MetapsionicPower
+  initializationFeedback: metapsionic-power-initialization-feedback
+  metapsionicFeedback: metapsionic-power-metapsionic-feedback
+  amplificationModifier: 0.5
+  dampeningModifier: 0.5
+
+- type: psionicPower
+  id: PsionicRegenerationPower
+  name: Psionic Regeneration
+  description: psionic-regeneration-power-description
+  actions:
+  - ActionPsionicRegeneration
+  components:
+    - type: PsionicRegenerationPower
+  initializationFeedback: psionic-regeneration-power-initialization-feedback
+  metapsionicFeedback: psionic-regeneration-power-metapsionic-feedback
+  amplificationModifier: 0.5
+  dampeningModifier: 0.5
+
+- type: psionicPower
+  id: TelegnosisPower
+  name: Telegnosis
+  description: telegnosis-power-description
+  actions:
+  - ActionTelegnosis
+  components:
+    - type: TelegnosisPower
+  initializationFeedback: telegnosis-power-initialization-feedback
+  metapsionicFeedback: telegnosis-power-metapsionic-feedback
+  amplificationModifier: 0.5
+  dampeningModifier: 0.5
+
+- type: psionicPower
+  id: PsionicInvisibilityPower
+  name: Psionic Invisibility
+  description: psionic-invisibility-power-description
+  actions:
+  - ActionDispel
+  components:
+    - type: PsionicInvisibilityPower
+  initializationFeedback: psionic-invisibility-power-initialization-feedback
+  metapsionicFeedback: psionic-invisibility-power-metapsionic-feedback
+  amplificationModifier: 0.5
+  dampeningModifier: 0.5
+
+- type: psionicPower
+  id: XenoglossyPower
+  name: Xenoglossy
+  description: xenoglossy-power-description
+  components:
+    - type: UniversalLanguageSpeaker
+  initializationFeedback: xenoglossy-power-initialization-feedback
+  metapsionicFeedback: psionic-language-power-feedback # Reuse for telepathy, clairaudience, etc
