@@ -159,7 +159,7 @@
     delay: 3
     transferAmount: 1
     solution: puddle
-    examinable: false
+    examinable: true
   - type: ExaminableSolution
     solution: puddle
   - type: DrawableSolution
@@ -209,7 +209,7 @@
       delay: 3
       transferAmount: 1
       solution: step
-      examinable: false
+      examinable: true
     - type: ExaminableSolution
       solution: step
     - type: DrawableSolution
