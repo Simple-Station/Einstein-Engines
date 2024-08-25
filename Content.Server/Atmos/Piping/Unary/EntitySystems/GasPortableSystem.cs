@@ -15,9 +15,9 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
     [UsedImplicitly]
     public sealed class GasPortableSystem : EntitySystem
     {
+        [Dependency] private readonly SharedMapSystem _mapSystem = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
-        [Dependency] private readonly SharedMapSystem _sharedMapSystem = default!;
 
         public override void Initialize()
         {
@@ -55,13 +55,10 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
         {
             port = null;
 
-            if (gridId == null)
-                return false;
-
             if (!TryComp<MapGridComponent>(gridId, out var grid))
                 return false;
 
-            foreach (var entityUid in _sharedMapSystem.GetLocal((EntityUid) gridId, grid, coordinates))
+            foreach (var entityUid in _mapSystem.GetLocal(gridId.Value, grid, coordinates))
             {
                 if (EntityManager.TryGetComponent(entityUid, out port))
                 {
