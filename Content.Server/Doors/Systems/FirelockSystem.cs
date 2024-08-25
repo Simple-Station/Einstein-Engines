@@ -14,6 +14,7 @@ using Content.Shared.Doors.Systems;
 using Content.Shared.Power;
 using Content.Shared.Popups;
 using Content.Shared.Prying.Components;
+using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
 
 namespace Content.Server.Doors.Systems
