@@ -148,6 +148,15 @@
 
 - type: entity
   parent: ClothingBackpack
+  id: ClothingBackpackRobotics
+  name: robotics backpack
+  description: A sturdy backpack to store all the tools and parts.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/robotics.rsi
+
+- type: entity
+  parent: ClothingBackpack
   id: ClothingBackpackVirology
   name: virology backpack
   description: A backpack made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
