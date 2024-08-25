@@ -55,12 +55,6 @@ public sealed class ActionOnInteractSystem : EntitySystem
             return;
 
         var (actId, act) = _random.Pick(options);
-        if (act.Event != null)
-        {
-            act.Event.Performer = args.User;
-            act.Event.Action = actId;
-        }
-
         _actions.PerformAction(args.User, null, actId, act, act.Event, _timing.CurTime, false);
         args.Handled = true;
     }
@@ -94,8 +88,6 @@ public sealed class ActionOnInteractSystem : EntitySystem
                 var (entActId, entAct) = _random.Pick(entOptions);
                 if (entAct.Event != null)
                 {
-                    entAct.Event.Performer = args.User;
-                    entAct.Event.Action = entActId;
                     entAct.Event.Target = args.Target.Value;
                 }
 
@@ -103,6 +95,29 @@ public sealed class ActionOnInteractSystem : EntitySystem
                 args.Handled = true;
                 return;
             }
+        }
+
+        // Then EntityWorld target actions
+        var entWorldOptions = GetValidActions<EntityWorldTargetActionComponent>(actionEnts, args.CanReach);
+        for (var i = entWorldOptions.Count - 1; i >= 0; i--)
+        {
+            var action = entWorldOptions[i];
+            if (!_actions.ValidateEntityWorldTarget(args.User, args.Target, args.ClickLocation, action))
+                entWorldOptions.RemoveAt(i);
+        }
+
+        if (entWorldOptions.Count > 0)
+        {
+            var (entActId, entAct) = _random.Pick(entWorldOptions);
+            if (entAct.Event != null)
+            {
+                entAct.Event.Entity = args.Target;
+                entAct.Event.Coords = args.ClickLocation;
+            }
+
+            _actions.PerformAction(args.User, null, entActId, entAct, entAct.Event, _timing.CurTime, false);
+            args.Handled = true;
+            return;
         }
 
         // else: try world target actions
@@ -120,8 +135,6 @@ public sealed class ActionOnInteractSystem : EntitySystem
         var (actId, act) = _random.Pick(options);
         if (act.Event != null)
         {
-            act.Event.Performer = args.User;
-            act.Event.Action = actId;
             act.Event.Target = args.ClickLocation;
         }
 
