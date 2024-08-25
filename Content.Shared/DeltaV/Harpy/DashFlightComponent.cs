@@ -21,10 +21,10 @@ namespace Content.Shared.DeltaV.Harpy
         public EntityUid? DashActionEntity;
 
         [DataField("dashSpeed")]
-        public float DashSpeed = 30f;
+        public float DashSpeed = 70f;
 
         [DataField("maxDashDistance")]
-        public float MaxDashDistance = 500f; //Placeholder until i figure out what the scale for this translates to
+        public float MaxDashDistance = 10f; //Placeholder until i figure out what the scale for this translates to
 
         [DataField("minDashDistance")]
         public float MinDashDistance = 1f;

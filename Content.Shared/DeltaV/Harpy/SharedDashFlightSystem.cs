@@ -29,33 +29,27 @@ namespace Content.Shared.DeltaV.Harpy
 
         public override void Update(float frameTime)
         {
+            const float stopThreshold = 0.05f;
             var query = EntityQueryEnumerator<DashFlightComponent, PhysicsComponent>();
             while (query.MoveNext(out var uid, out var dash, out var physics))
             {
-                if (!dash.IsDashing)
+                if (_timing.IsFirstTimePredicted && dash.IsDashing)
                 {
-                    continue;
+                    var progress = 1 - dash.RemainingDistance / dash.MaxDashDistance;
+                    var currentSpeed = MathHelper.Lerp(dash.DashSpeed, 0, progress);
+
+                    var movement = dash.DashDirection * currentSpeed * frameTime;
+                    var movementDistance = movement.Length();
+
+                    Logger.Debug($"calculated movement {movement}, current distance {movementDistance}, remaining distance {dash.RemainingDistance}, current speed {currentSpeed}, current progress {progress}");
+                    if (movementDistance < stopThreshold)
+                    {
+                        dash.IsDashing = false;
+                    }
+                    _physics.SetLinearVelocity(uid, movement / frameTime, body: physics);
+                    dash.RemainingDistance -= movementDistance;
                 }
 
-                var movement = dash.DashDirection * dash.DashSpeed * frameTime;
-                var movementDistance = movement.Length();
-
-                if (movementDistance > dash.RemainingDistance)
-                {
-                    movement = dash.DashDirection * dash.RemainingDistance;
-                    dash.IsDashing = false;
-                }
-
-                dash.RemainingDistance -= movementDistance;
-
-                _physics.SetLinearVelocity(uid, movement / frameTime, body: physics);
-
-                if (!dash.IsDashing)
-                {
-                    // Dash completed
-                    _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
-                    // TODO: Play dash sound here
-                }
             }
         }
 
@@ -72,8 +66,9 @@ namespace Content.Shared.DeltaV.Harpy
 
         private void OnDashAttempt(EntityUid uid, DashFlightComponent component, DashFlightEvent args)
         {
-            if (_net.IsServer)
+            if (_timing.IsFirstTimePredicted && _net.IsServer)
             {
+                Logger.Debug("Executing dashattempt");
                 var startPos = _transform.GetMapCoordinates(uid).Position;
                 var targetPos = args.Target.ToMap(EntityManager, _transform).Position;
                 var diff = targetPos - startPos;
@@ -82,30 +77,7 @@ namespace Content.Shared.DeltaV.Harpy
                 component.RemainingDistance = Math.Clamp(diff.Length(), component.MinDashDistance, component.MaxDashDistance);
                 component.IsDashing = true;
             }
-
-            //Logger.Debug($"Starting position {startPos}, target {targetPos}, direction {DashDirection}, frametime {_timing.FrameTime}");
-            //var velocity = diff * component.DashSpeed;
-            //Logger.Debug($"Distance {totalDistance}, Clamped Distance {clampedDistance}, DashTime {dashTime}, Velocity {velocity}");
-            //_physics.ApplyLinearImpulse(uid, velocity);
-
-            // Set up a timer to stop the dash
-            //Timer.Spawn(TimeSpan.FromSeconds(dashTime), () => StopDash(uid));
-
-            //component.LastDashTime = _timing.CurTime;
-            //args.Handled = true;
         }
-
-        /*     private bool CanDash(EntityUid uid, DashComponent component)
-             {
-                 if (GameTiming.CurTime - component.LastDashTime < TimeSpan.FromSeconds(component.Cooldown))
-                 {
-                     _popup.PopupEntity($"Dash is on cooldown for {component.Cooldown - (GameTiming.CurTime - component.LastDashTime).TotalSeconds:F1} seconds.", uid, uid);
-                     return false;
-                 }
-
-                 return true;
-             }*/
-
 
         #endregion
 

@@ -219,8 +219,7 @@
   components:
   - type: WorldTargetAction
     useDelay: 0
-    range: 16 # default examine-range is 16.
-    # ^ should probably add better validation that the clicked location is on the users screen somewhere,
+    range: 16
     itemIconStyle: BigAction
     checkCanAccess: false
     repeat: true
