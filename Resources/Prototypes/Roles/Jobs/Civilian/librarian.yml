@@ -4,15 +4,24 @@
   description: job-description-librarian
   playTimeTracker: JobLibrarian
   requirements:
-    - !type:CharacterOverallTimeRequirement #DeltaV
-      min: 3600 # 1 hr
+    - !type:CharacterDepartmentTimeRequirement
+      department: Epistemics
+      min: 14400
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
-  supervisors: job-supervisors-hop
+  supervisors: job-supervisors-rd
   access:
-  - Service
+  - Research
   - Maintenance
-  - Library # DeltaV - Add Library access
+  - Library
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Psionic
+    - type: InnatePsionicPowers
+      powersToAdd:
+        - XenoglossyPower
+
 
 - type: startingGear
   id: LibrarianGear
@@ -20,10 +29,11 @@
     jumpsuit: ClothingUniformJumpsuitLibrarian
     back: ClothingBackpackLibrarianFilled
     shoes: ClothingShoesBootsLaceup
+    outerClothing: ClothingOuterCoatRnd
     id: LibrarianPDA
-    ears: ClothingHeadsetService
+    ears: ClothingHeadsetScience
     pocket1: d10Dice
-    pocket2: HandLabeler # for making named bestsellers
+    pocket2: HandLabeler
   innerClothingSkirt: ClothingUniformJumpskirtLibrarian
   satchel: ClothingBackpackSatchelLibrarianFilled
   duffelbag: ClothingBackpackDuffelLibrarianFilled
