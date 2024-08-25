@@ -151,8 +151,8 @@
     minChaos: 0.8
     maxChaos: 14
     startingSlope: 0.2
-    downwardsLimit: -0.25
-    upwardsLimit: 0.3
+    downwardsLimit: -0.35
+    upwardsLimit: 0.4
 
 # More likely to go down than up, so calmness prevails
 - type: entity
