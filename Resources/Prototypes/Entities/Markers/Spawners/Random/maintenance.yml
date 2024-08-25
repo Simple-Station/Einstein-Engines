@@ -17,6 +17,8 @@
         - id: ClothingEyesGlassesGar
         - id: ClothingEyesGlassesGarOrange
         - id: ClothingEyesGlassesGarGiga
+      - id: Wristwatch
+        weight: 0.5
       - id: ClothingHeadHatCake
       - id: ClothingHeadHatSkub
       - id: ClothingHeadHatCone
@@ -162,7 +164,8 @@
       - id: DrinkMugDog
       - id: CigarGold
       - id: ClothingUniformJumpsuitFamilyGuy
-      - d: WristwatchGold
+      - id: WristwatchGold
+      - id: RubberStampGreytide
 
 - type: entity
   name: Maint Loot Spawner
