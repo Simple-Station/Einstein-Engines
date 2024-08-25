@@ -5746,7 +5746,7 @@ entities:
     - type: Transform
       pos: 5.5,-32.5
       parent: 31
-- proto: AtmosDeviceFanDirectional
+- proto: AtmosDeviceFanTiny
   entities:
   - uid: 950
     components:
@@ -26234,7 +26234,7 @@ entities:
     - type: Transform
       pos: 18.5,1.5
       parent: 31
-- proto: ChemMaster
+- proto: chem_master
   entities:
   - uid: 606
     components:
@@ -27220,7 +27220,7 @@ entities:
     - type: Transform
       pos: -11.209741,19.672714
       parent: 31
-- proto: ClothingOuterCoatDetectiveLoadout
+- proto: ClothingOuterCoatDetective
   entities:
   - uid: 7480
     components:
@@ -27889,7 +27889,7 @@ entities:
     - type: Transform
       pos: -4.5,-19.5
       parent: 31
-- proto: ComputerRoboticsControl
+- proto: BaseComputer
   entities:
   - uid: 11453
     components:
@@ -48553,13 +48553,6 @@ entities:
     - type: Transform
       pos: -11.571391,18.68531
       parent: 31
-- proto: Jukebox
-  entities:
-  - uid: 5090
-    components:
-    - type: Transform
-      pos: -2.5,1.5
-      parent: 31
 - proto: KalimbaInstrument
   entities:
   - uid: 10631
@@ -56702,13 +56695,6 @@ entities:
     - type: Transform
       pos: 32.5,23.5
       parent: 31
-- proto: SignMaterials
-  entities:
-  - uid: 7224
-    components:
-    - type: Transform
-      pos: 26.5,2.5
-      parent: 31
 - proto: SignMedical
   entities:
   - uid: 4151
@@ -57005,7 +56991,7 @@ entities:
     - type: Transform
       pos: -6.517076,-41.294003
       parent: 31
-- proto: SodaDispenser
+- proto: soda_dispenser
   entities:
   - uid: 1418
     components:
