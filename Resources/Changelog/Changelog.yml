@@ -5573,3 +5573,9 @@ Entries:
         Psychologist.
   id: 6288
   time: '2024-08-25T08:45:17.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed the FixGridAtmos command.
+  id: 6289
+  time: '2024-08-26T00:02:53.0000000+00:00'
