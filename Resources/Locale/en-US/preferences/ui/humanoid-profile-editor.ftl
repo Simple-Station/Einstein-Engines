@@ -59,11 +59,15 @@ humanoid-profile-editor-traits-header = You have {$points ->
     }
     *[other] {$traits}/{$maxTraits} traits
 }
-humanoid-profile-editor-traits-show-unusable-button = Show Unusable
+humanoid-profile-editor-traits-show-unusable-button = Show Unusable Traits
 humanoid-profile-editor-traits-show-unusable-button-tooltip =
     When enabled, traits that your current character setup cannot use will be shown highlighted in red or orange if selected.
     You will still not be able to use the invalid traits unless your character setup changes to fit the requirements.
     This is most likely useful only if there's a bug hiding traits you actually can use or if you want to see other species' traits or something.
+humanoid-profile-editor-traits-remove-unusable-button = Remove {$count} Unusable Traits
+humanoid-profile-editor-traits-remove-unusable-button-tooltip =
+    If you click this button, all traits that your current character setup cannot use will be removed.
+    You will be asked for confirmation before the traits are removed.
 humanoid-profile-editor-traits-no-traits = No traits found
 
 humanoid-profile-editor-job-priority-high-button = High

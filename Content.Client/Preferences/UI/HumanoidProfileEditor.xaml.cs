@@ -78,6 +78,7 @@ namespace Content.Client.Preferences.UI
         private int _traitCount;
         private ProgressBar _traitPointsBar => TraitPointsBar;
         private Button _traitsShowUnusableButton => TraitsShowUnusableButton;
+        private Button _traitsRemoveUnusableButton => TraitsRemoveUnusableButton;
         private NeoTabContainer _traitsTabs => CTraitsTabs;
         private Label _loadoutPointsLabel => LoadoutPointsLabel;
         private ProgressBar _loadoutPointsBar => LoadoutPointsBar;
@@ -516,6 +517,7 @@ namespace Content.Client.Preferences.UI
                 enabled => _tabContainer.SetTabVisible(3, enabled));
 
             _traitsShowUnusableButton.OnToggled += args => UpdateTraits(args.Pressed);
+            _traitsRemoveUnusableButton.OnPressed += _ => TryRemoveUnusableTraits();
 
             UpdateTraits(false);
 
@@ -1385,6 +1387,10 @@ namespace Content.Client.Preferences.UI
             }
         }
 
+        #region Traits
+
+        #region Updates
+
         private void UpdateTraitPreferences()
         {
             var points = _configurationManager.GetCVar(CCVars.GameTraitsDefaultPoints);
@@ -1409,6 +1415,14 @@ namespace Content.Client.Preferences.UI
                 ("points", points), ("traits", _traitCount),
                 ("maxTraits", _configurationManager.GetCVar(CCVars.GameTraitsMax)));
 
+            // Set the remove unusable button's label to have the correct amount of unusable traits
+            _traitsRemoveUnusableButton.Text = Loc.GetString("humanoid-profile-editor-traits-remove-unusable-button",
+                ("count", _traits
+                    .Where(t => _traitPreferences
+                        .Where(tps => tps.Preference).Select(tps => tps.Trait).Contains(t.Key))
+                    .Count(t => !t.Value)));
+            AdminUIHelpers.RemoveConfirm(_traitsRemoveUnusableButton, _confirmationData);
+
             IsDirty = true;
             UpdatePreview();
         }
@@ -1416,33 +1430,23 @@ namespace Content.Client.Preferences.UI
         // Yeah this is mostly just copied from UpdateLoadouts
         // This whole file is bad though and a lot of loadout code came from traits originally
         //TODO Make this file not hell
+        private Dictionary<TraitPrototype, bool> _traits = new();
         private void UpdateTraits(bool showUnusable)
         {
             // Reset trait points so you don't get -14 points or something for no reason
             var points = _configurationManager.GetCVar(CCVars.GameTraitsDefaultPoints);
-            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-header",
-                ("points", points), ("traits", 0),
-                ("maxTraits", _configurationManager.GetCVar(CCVars.GameTraitsMax)));
+            _traitPointsLabel.Text = Loc.GetString("humanoid-profile-editor-traits-points-label", ("points", points), ("max", points));
             _traitPointsBar.MaxValue = points;
             _traitPointsBar.Value = points;
-
-            // Clear current listings
-            _traitPreferences.Clear();
-            _traitsTabs.DisposeAllChildren();
 
 
             // Get the highest priority job to use for trait filtering
             var highJob = _jobPriorities.FirstOrDefault(j => j.Priority == JobPriority.High);
 
-            // Get all trait prototypes
-            var enumeratedTraits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().ToList();
-            // Get all trait categories
-            var categories = _prototypeManager.EnumeratePrototypes<TraitCategoryPrototype>().ToList();
-
-            // If showUnusable is false filter out traits that are unusable based on your current character setup
-            var traits = enumeratedTraits.Where(trait =>
-                showUnusable || // Ignore everything if this is true
-                _characterRequirementsSystem.CheckRequirementsValid(
+            _traits.Clear();
+            foreach (var trait in _prototypeManager.EnumeratePrototypes<TraitPrototype>())
+            {
+                var usable = _characterRequirementsSystem.CheckRequirementsValid(
                     trait.Requirements,
                     highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
@@ -1452,147 +1456,177 @@ namespace Content.Client.Preferences.UI
                     _prototypeManager,
                     _configurationManager,
                     out _
-                )
-            ).ToList();
+                );
+                _traits.Add(trait, usable);
 
-            // Traits to highlight red when showUnusable is true
-            var traitsUnusable = enumeratedTraits.Where(trait =>
-                _characterRequirementsSystem.CheckRequirementsValid(
-                    trait.Requirements,
-                    highJob?.Proto ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetRawPlayTimeTrackers(),
-                    _requirements.IsWhitelisted(),
-                    _entityManager,
-                    _prototypeManager,
-                    _configurationManager,
-                    out _
-                )
-            ).ToList();
+                if (_traitPreferences.FindIndex(lps => lps.Trait.ID == trait.ID) is not (not -1 and var i))
+                    continue;
 
-            // Every trait not in the traits list
-            var otherTraits = enumeratedTraits.Where(trait => !traits.Contains(trait)).ToList();
+                var selector = _traitPreferences[i];
+                selector.Valid = usable;
+                selector.ShowUnusable = showUnusable;
+            }
 
-
-            if (traits.Count == 0)
+            if (_traits.Count == 0)
             {
                 _traitsTabs.AddTab(new Label { Text = Loc.GetString("humanoid-profile-editor-traits-no-traits") },
                     Loc.GetString("trait-category-Uncategorized"));
                 return;
             }
 
-            var uncategorized = new BoxContainer
+
+            var uncategorized = _traitsTabs.Contents.FirstOrDefault(c => c.Name == "Uncategorized");
+            if (uncategorized == null)
             {
-                Orientation = LayoutOrientation.Vertical,
-                VerticalExpand = true,
-                Name = "Uncategorized_0",
-            };
-
-            _traitsTabs.AddTab(uncategorized, Loc.GetString("trait-category-Uncategorized"));
-
-
-            // Make categories
-            var currentCategory = 1; // 1 because we already made 0 as Uncategorized, I am not not zero-indexing :)
-            foreach (var category in categories.OrderBy(c => Loc.GetString($"trait-category-{c.ID}")))
-            {
-                // Check for existing category
-                BoxContainer? match = null;
-                foreach (var child in _traitsTabs.Children)
+                uncategorized = new BoxContainer
                 {
-                    if (string.IsNullOrEmpty(child.Name))
-                        continue;
-
-                    if (child.Name.Split("_")[0] == category.ID)
-                        match = (BoxContainer) child;
-                }
-
-                // If there is a category do nothing
-                if (match != null)
-                    continue;
-
-                // If not, make it
-                var box = new BoxContainer
-                {
+                    Name = "Uncategorized",
                     Orientation = LayoutOrientation.Vertical,
+                    HorizontalExpand = true,
                     VerticalExpand = true,
-                    Name = $"{category.ID}_{currentCategory}",
+                    // I hate ScrollContainers
+                    Children =
+                    {
+                        new ScrollContainer
+                        {
+                            HScrollEnabled = false,
+                            HorizontalExpand = true,
+                            VerticalExpand = true,
+                            Children =
+                            {
+                                new BoxContainer
+                                {
+                                    Orientation = LayoutOrientation.Vertical,
+                                    HorizontalExpand = true,
+                                    VerticalExpand = true,
+                                },
+                            },
+                        },
+                    },
                 };
 
-                _traitsTabs.AddTab(box, Loc.GetString($"trait-category-{category.ID}"));
-                currentCategory++;
+                _traitsTabs.AddTab(uncategorized, Loc.GetString("trait-category-Uncategorized"));
             }
 
+            // Create a Dictionary/tree of categories and subcategories
+            var cats = CreateTree(_prototypeManager.EnumeratePrototypes<TraitCategoryPrototype>()
+                .Where(c => c.Root)
+                .OrderBy(c => Loc.GetString($"trait-category-{c.ID}"))
+                .ToList());
+            var categories = new Dictionary<string, object>();
+            foreach (var (key, value) in cats)
+                categories.Add(key, value);
 
-            // Fill categories
-            foreach (var trait in traits.OrderBy(t => -t.Points).ThenBy(t => Loc.GetString($"trait-name-{t.ID}")))
+            // Create the UI elements for the category tree
+            CreateCategoryUI(categories, _traitsTabs);
+
+            // Fill categories with traits
+            foreach (var (trait, usable) in _traits
+                .OrderBy(l => -l.Key.Points)
+                .ThenBy(l => l.Key.ID)
+                .ThenBy(l => Loc.GetString($"trait-name-{l.Key.ID}")))
             {
-                var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    traitsUnusable.Contains(trait) ? "" : StyleBase.ButtonCaution,
-                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
-                    _requirements);
-
-                // Look for an existing trait category
-                BoxContainer? match = null;
-                foreach (var child in _traitsTabs.Contents)
+                if (_traitPreferences.Select(lps => lps.Trait.ID).Contains(trait.ID))
                 {
-                    if (string.IsNullOrEmpty(child.Name))
-                        continue;
-
-                    if (child.Name.Split("_")[0] == trait.Category)
-                        match = (BoxContainer) child;
+                    var first = _traitPreferences.First(lps => lps.Trait.ID == trait.ID);
+                    first.Valid = usable;
+                    first.ShowUnusable = showUnusable;
+                    continue;
                 }
 
-                // If there is no category put it in Uncategorized
-                if (string.IsNullOrEmpty(match?.Name)
-                    || match.Name.Split("_")[0] != trait.Category)
-                    uncategorized.AddChild(selector);
-                else
-                    match.AddChild(selector);
+                var selector = new TraitPreferenceSelector(
+                    trait, highJob?.Proto ?? new JobPrototype(), Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem, _requirements);
+                selector.Valid = usable;
+                selector.ShowUnusable = showUnusable;
+                AddSelector(selector);
 
+                // Look for an existing category tab
+                var match = FindCategory(trait.Category, _traitsTabs);
 
-                AddSelector(selector, trait.Points, trait.ID);
+                // If there is no category put it in Uncategorized (this shouldn't happen)
+                (match ?? uncategorized).Children.First().Children.First().AddChild(selector);
             }
 
-            // Add the selected unusable traits to the point counter
-            foreach (var trait in otherTraits.OrderBy(t => -t.Points).ThenBy(t => Loc.GetString($"trait-name-{t.ID}")))
-            {
-                var selector = new TraitPreferenceSelector(trait, highJob?.Proto ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), "",
-                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
-                    _requirements);
-
-
-                AddSelector(selector, trait.Points, trait.ID);
-            }
-
-
-            // Hide Uncategorized tab if it's empty, other tabs already shouldn't exist if they're empty
-            _traitsTabs.SetTabVisible(0, uncategorized.Children.Any());
+            // Hide any empty tabs
+            HideEmptyTabs(_prototypeManager.EnumeratePrototypes<TraitCategoryPrototype>().ToList());
 
             UpdateTraitPreferences();
             return;
 
 
-            void AddSelector(TraitPreferenceSelector selector, int points, string id)
+            void CreateCategoryUI(Dictionary<string, object> tree, NeoTabContainer parent)
             {
-                if (points > 0)
-                    _traitPointsBar.MaxValue += points;
+                foreach (var (key, value) in tree)
+                {
+                    // If the category's container exists already, ignore it
+                    if (parent.Contents.Any(c => c.Name == key))
+                        continue;
 
+                    // If the value is a list of TraitPrototypes, create a final tab for them
+                    if (value is List<TraitPrototype>)
+                    {
+                        var category = new BoxContainer
+                        {
+                            Name = key,
+                            Orientation = LayoutOrientation.Vertical,
+                            HorizontalExpand = true,
+                            VerticalExpand = true,
+                            Children =
+                            {
+                                new ScrollContainer
+                                {
+                                    HScrollEnabled = false,
+                                    HorizontalExpand = true,
+                                    VerticalExpand = true,
+                                    Children =
+                                    {
+                                        new BoxContainer
+                                        {
+                                            Orientation = LayoutOrientation.Vertical,
+                                            HorizontalExpand = true,
+                                            VerticalExpand = true,
+                                        },
+                                    },
+                                },
+                            },
+                        };
+
+                        parent.AddTab(category, Loc.GetString($"trait-category-{key}"));
+                    }
+                    // If the value is a dictionary, create a new tab for it and recursively call this function to fill it
+                    else
+                    {
+                        var category = new NeoTabContainer
+                        {
+                            Name = key,
+                            HorizontalExpand = true,
+                            VerticalExpand = true,
+                            SeparatorMargin = new Thickness(0),
+                        };
+
+                        parent.AddTab(category, Loc.GetString($"trait-category-{key}"));
+                        CreateCategoryUI((Dictionary<string, object>) value, category);
+                    }
+                }
+            }
+
+            void AddSelector(TraitPreferenceSelector selector)
+            {
                 _traitPreferences.Add(selector);
                 selector.PreferenceChanged += preference =>
                 {
                     // Make sure they have enough trait points
-                    preference = preference ? CheckPoints(points, preference) : CheckPoints(-points, preference);
-                    // Don't allow having too many traits
-                    preference = preference && _traitCount + 1 <= _configurationManager.GetCVar(CCVars.GameTraitsMax);
+                    preference = CheckPoints(preference ? selector.Trait.Points : -selector.Trait.Points, preference);
+                    // Make sure they have enough trait slots
+                    preference = preference ? _traitCount < _configurationManager.GetCVar(CCVars.GameTraitsMax) : preference;
 
                     // Update Preferences
-                    Profile = Profile?.WithTraitPreference(id, preference);
-                    UpdatePreview();
+                    Profile = Profile?.WithTraitPreference(selector.Trait.ID, preference);
+                    IsDirty = true;
                     UpdateTraitPreferences();
-                    UpdateTraits(_traitsShowUnusableButton.Pressed);
                     UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
+                    UpdateTraits(_traitsShowUnusableButton.Pressed);
                 };
             }
 
@@ -1602,6 +1636,74 @@ namespace Content.Client.Preferences.UI
                 return preference ? !(temp < 0) : temp < 0;
             }
         }
+
+        #endregion
+
+        #region Functions
+
+        private Dictionary<string, object> CreateTree(List<TraitCategoryPrototype> cats)
+        {
+            var tree = new Dictionary<string, object>();
+            foreach (var category in cats)
+            {
+                // If the category is already in the tree, ignore it
+                if (tree.ContainsKey(category.ID))
+                    continue;
+
+                // Categories don't have a Parent field, so we need to instead check the SubCategories of every Category
+                var subCategories = category.SubCategories.Where(subCategory => !tree.ContainsKey(subCategory)).ToList();
+                // If there are no subcategories, add a loadout spot to the dictionary
+                if (subCategories.Count == 0)
+                {
+                    tree.Add(category.ID, new List<TraitPrototype>());
+                    continue;
+                }
+
+                // If there are subcategories, we need to add them to the dictionary as well
+                var subCategoryTree = CreateTree(subCategories.Select(c => _prototypeManager.Index(c)).ToList());
+                tree.Add(category.ID, subCategoryTree);
+            }
+
+            return tree;
+        }
+
+        private void HideEmptyTabs(List<TraitCategoryPrototype> cats)
+        {
+            foreach (var tab in cats.Select(category => FindCategory(category.ID, _traitsTabs)))
+            {
+                // If it's empty, hide it
+                if (tab != null)
+                    ((NeoTabContainer) tab.Parent!.Parent!.Parent!.Parent!).SetTabVisible(tab, tab.Children.First().Children.First().Children.Any());
+
+                // If it has a parent tab container, hide it if it's empty
+                if (tab?.Parent?.Parent is NeoTabContainer parent)
+                {
+                    var parentCats = parent.Contents.Select(c => _prototypeManager.Index<TraitCategoryPrototype>(c.Name!)).ToList();
+                    HideEmptyTabs(parentCats);
+                }
+            }
+        }
+
+        private void TryRemoveUnusableTraits()
+        {
+            // Confirm the user wants to remove unusable loadouts
+            if (!AdminUIHelpers.TryConfirm(_traitsRemoveUnusableButton, _confirmationData))
+                return;
+
+            // Remove unusable loadouts
+            foreach (var (trait, usable) in _traits.Where(l => !l.Value).ToList())
+                Profile = Profile?.WithTraitPreference(trait.ID, false);
+            UpdateTraits(_traitsShowUnusableButton.Pressed);
+            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Loadouts
+
+        #region Updates
 
         private void UpdateLoadoutPreferences()
         {
@@ -1764,32 +1866,6 @@ namespace Content.Client.Preferences.UI
             return;
 
 
-            Dictionary<string, object> CreateTree(List<LoadoutCategoryPrototype> cats)
-            {
-                var tree = new Dictionary<string, object>();
-                foreach (var category in cats)
-                {
-                    // If the category is already in the tree, ignore it
-                    if (tree.ContainsKey(category.ID))
-                        continue;
-
-                    // Categories don't have a Parent field, so we need to instead check the SubCategories of every Category
-                    var subCategories = category.SubCategories.Where(subCategory => !tree.ContainsKey(subCategory)).ToList();
-                    // If there are no subcategories, add a loadout spot to the dictionary
-                    if (subCategories.Count == 0)
-                    {
-                        tree.Add(category.ID, new List<LoadoutPrototype>());
-                        continue;
-                    }
-
-                    // If there are subcategories, we need to add them to the dictionary as well
-                    var subCategoryTree = CreateTree(subCategories.Select(c => _prototypeManager.Index(c)).ToList());
-                    tree.Add(category.ID, subCategoryTree);
-                }
-
-                return tree;
-            }
-
             void CreateCategoryUI(Dictionary<string, object> tree, NeoTabContainer parent)
             {
                 foreach (var (key, value) in tree)
@@ -1868,42 +1944,72 @@ namespace Content.Client.Preferences.UI
                 var temp = _loadoutPointsBar.Value + points;
                 return preference ? !(temp < 0) : temp < 0;
             }
+        }
 
-            BoxContainer? FindCategory(string id, NeoTabContainer parent)
+        #endregion
+
+        #region Functions
+
+        private Dictionary<string, object> CreateTree(List<LoadoutCategoryPrototype> cats)
+        {
+            var tree = new Dictionary<string, object>();
+            foreach (var category in cats)
             {
-                BoxContainer? match = null;
-                foreach (var child in parent.Contents)
-                {
-                    if (string.IsNullOrEmpty(child.Name))
-                        continue;
+                // If the category is already in the tree, ignore it
+                if (tree.ContainsKey(category.ID))
+                    continue;
 
-                    if (child.Name == id)
-                        match = (BoxContainer?) child;
+                // Categories don't have a Parent field, so we need to instead check the SubCategories of every Category
+                var subCategories = category.SubCategories.Where(subCategory => !tree.ContainsKey(subCategory)).ToList();
+                // If there are no subcategories, add a loadout spot to the dictionary
+                if (subCategories.Count == 0)
+                {
+                    tree.Add(category.ID, new List<LoadoutPrototype>());
+                    continue;
                 }
 
-                if (match != null)
-                    return match;
-
-                foreach (var subcategory in parent.Contents.Where(c => c is NeoTabContainer).Cast<NeoTabContainer>())
-                    match = FindCategory(id, subcategory);
-
-                return match;
+                // If there are subcategories, we need to add them to the dictionary as well
+                var subCategoryTree = CreateTree(subCategories.Select(c => _prototypeManager.Index(c)).ToList());
+                tree.Add(category.ID, subCategoryTree);
             }
 
-            void HideEmptyTabs(List<LoadoutCategoryPrototype> cats)
-            {
-                foreach (var tab in cats.Select(category => FindCategory(category.ID, _loadoutsTabs)))
-                {
-                    // If it's empty, hide it
-                    if (tab != null)
-                        ((NeoTabContainer) tab.Parent!.Parent!.Parent!.Parent!).SetTabVisible(tab, tab.Children.First().Children.First().Children.Any());
+            return tree;
+        }
 
-                    // If it has a parent tab container, hide it if it's empty
-                    if (tab?.Parent?.Parent is NeoTabContainer parent)
-                    {
-                        var parentCats = parent.Contents.Select(c => _prototypeManager.Index<LoadoutCategoryPrototype>(c.Name!)).ToList();
-                        HideEmptyTabs(parentCats);
-                    }
+        private BoxContainer? FindCategory(string id, NeoTabContainer parent)
+        {
+            BoxContainer? match = null;
+            foreach (var child in parent.Contents)
+            {
+                if (string.IsNullOrEmpty(child.Name))
+                    continue;
+
+                if (child.Name == id)
+                    match = (BoxContainer?) child;
+            }
+
+            if (match != null)
+                return match;
+
+            foreach (var subcategory in parent.Contents.Where(c => c is NeoTabContainer).Cast<NeoTabContainer>())
+                match = FindCategory(id, subcategory);
+
+            return match;
+        }
+
+        private void HideEmptyTabs(List<LoadoutCategoryPrototype> cats)
+        {
+            foreach (var tab in cats.Select(category => FindCategory(category.ID, _loadoutsTabs)))
+            {
+                // If it's empty, hide it
+                if (tab != null)
+                    ((NeoTabContainer) tab.Parent!.Parent!.Parent!.Parent!).SetTabVisible(tab, tab.Children.First().Children.First().Children.Any());
+
+                // If it has a parent tab container, hide it if it's empty
+                if (tab?.Parent?.Parent is NeoTabContainer parent)
+                {
+                    var parentCats = parent.Contents.Select(c => _prototypeManager.Index<LoadoutCategoryPrototype>(c.Name!)).ToList();
+                    HideEmptyTabs(parentCats);
                 }
             }
         }
@@ -1917,7 +2023,12 @@ namespace Content.Client.Preferences.UI
             // Remove unusable loadouts
             foreach (var (loadout, usable) in _loadouts.Where(l => !l.Value).ToList())
                 Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
+            UpdateTraits(_traitsShowUnusableButton.Pressed);
             UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
         }
+
+        #endregion
+
+        #endregion
     }
 }

@@ -165,15 +165,25 @@
                 <Label Name="TraitPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
                 <ProgressBar Name="TraitPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
-                <Button
-                    Name="TraitsShowUnusableButton"
-                    Text="{Loc 'humanoid-profile-editor-traits-show-unusable-button'}"
-                    ToolTip="{Loc 'humanoid-profile-editor-traits-show-unusable-button-tooltip'}"
-                    ToggleMode="True"
-                    StyleClasses="OpenRight"
-                    Margin="0 0 0 5" />
+                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
+                    <Button
+                        Name="TraitsShowUnusableButton"
+                        Text="{Loc 'humanoid-profile-editor-traits-show-unusable-button'}"
+                        ToolTip="{Loc 'humanoid-profile-editor-traits-show-unusable-button-tooltip'}"
+                        ToggleMode="True"
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True"
+                        StyleClasses="OpenRight" />
+                    <Button
+                        Name="TraitsRemoveUnusableButton"
+                        Text="{Loc 'humanoid-profile-editor-traits-remove-unusable-button'}"
+                        ToolTip="{Loc 'humanoid-profile-editor-traits-remove-unusable-button-tooltip'}"
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True"
+                        StyleClasses="OpenLeft" />
+                </BoxContainer>
 
-                <ui:NeoTabContainer Name="CTraitsTabs" VerticalExpand="True" />
+                <ui:NeoTabContainer Name="CTraitsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
             <BoxContainer Name="CLoadoutsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Loadouts -->

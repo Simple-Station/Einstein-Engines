@@ -113,7 +113,7 @@ public sealed class LoadoutPreferenceSelector : Control
                 },
             },
         };
-        PreferenceButton.OnToggled += OnButtonToggled;
+        PreferenceButton.OnToggled += OnPreferenceButtonToggled;
 
         var tooltip = new StringBuilder();
         // Add the loadout description to the tooltip if there is one
@@ -152,7 +152,7 @@ public sealed class LoadoutPreferenceSelector : Control
         });
     }
 
-    private void OnButtonToggled(BaseButton.ButtonToggledEventArgs args)
+    private void OnPreferenceButtonToggled(BaseButton.ButtonToggledEventArgs args)
     {
         PreferenceChanged?.Invoke(Preference);
     }
