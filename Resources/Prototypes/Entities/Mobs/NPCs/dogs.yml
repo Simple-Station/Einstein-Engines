@@ -30,7 +30,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 65
+        density: 135 #Bigger than Laika
         mask:
         - MobMask
         layer:
@@ -81,6 +81,15 @@
       proper: true
   - type: RandomMetadata
     nameSegments: [names_pitbull]
+  - type: Speech
+    speechVerb: Canine
+    speechSounds: Vulpkanin
+  - type: LanguageKnowledge
+    speaks:
+    - Dog
+    understands:
+    - Dog
+    - GalacticCommon
 
 - type: entity
   parent: MobPibble
@@ -106,7 +115,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.28
-        density: 35
+        density: 135
         mask:
         - SmallMobMask
         layer:
