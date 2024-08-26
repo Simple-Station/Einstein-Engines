@@ -21,6 +21,8 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
 
     private Dictionary<string, GuideEntry> _entries = new();
 
+    public ProtoId<GuideEntryPrototype> LastEntry;
+
     public GuidebookWindow()
     {
         RobustXamlLoader.Load(this);
@@ -66,6 +68,8 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
             EntryContainer.AddChild(new Label() { Text = "ERROR: Failed to parse document." });
             Logger.Error($"Failed to parse contents of guide document {entry.Id}.");
         }
+
+        LastEntry = entry.Id;
     }
 
     public void UpdateGuides(
