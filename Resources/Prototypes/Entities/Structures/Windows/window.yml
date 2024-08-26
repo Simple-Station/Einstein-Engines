@@ -92,7 +92,7 @@
   - type: StaticPrice
     price: 100
   - type: BlockWeather
-  
+
 - type: entity
   id: WindowRCDResistant
   parent: Window
@@ -198,7 +198,7 @@
     price: 10
 
 - type: entity
-  id: WindowDirectionalRCDResistant  
+  id: WindowDirectionalRCDResistant
   parent: WindowDirectional
   abstract: true
   components:
@@ -237,7 +237,7 @@
     state: state0
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls
     base: state
   - type: Icon
     sprite: Structures/Windows/window_diagonal.rsi
