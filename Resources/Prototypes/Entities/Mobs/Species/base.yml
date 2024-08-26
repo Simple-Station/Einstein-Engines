@@ -104,6 +104,7 @@
         layer:
         - MobLayer
   - type: FloorOcclusion
+  - type: Mood
   - type: RangedDamageSound
     soundGroups:
       Brute:
@@ -178,6 +179,7 @@
   - type: StandingState
   - type: Fingerprint
   - type: Dna
+  - type: Scent
   - type: MindContainer
     showExamineInfo: true
   - type: CanHostGuardian

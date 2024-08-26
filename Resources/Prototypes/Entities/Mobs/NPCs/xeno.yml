@@ -121,8 +121,6 @@
     molsPerSecondPerUnitMass: 0.0005
   - type: Speech
     speechVerb: LargeMob
-  - type: PotentialPsionic #Nyano - Summary: makes potentially psionic.
-    chance: -2
   - type: Psionic #Nyano - Summary: makes psionic by default.
     removable: false
   - type: LanguageKnowledge

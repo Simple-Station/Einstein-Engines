@@ -50,6 +50,7 @@ using Content.Shared.SSDIndicator;
 using Content.Shared.Damage.ForceSay;
 using Content.Server.Polymorph.Components;
 using Content.Shared.Chat;
+using Content.Shared.Abilities.Psionics;
 
 namespace Content.Server.Cloning
 {
@@ -252,7 +253,7 @@ namespace Content.Server.Cloning
             var mob = FetchAndSpawnMob(clonePod, pref, speciesPrototype, humanoid, bodyToClone, karmaBonus); //DeltaV Replaces CloneAppearance with Metem/Clone via FetchAndSpawnMob
 
             ///Nyano - Summary: adds the potential psionic trait to the reanimated mob.
-            EnsureComp<PotentialPsionicComponent>(mob);
+            EnsureComp<PsionicComponent>(mob);
 
             var ev = new CloningEvent(bodyToClone, mob);
             RaiseLocalEvent(bodyToClone, ref ev);
@@ -438,7 +439,7 @@ namespace Content.Server.Cloning
             grammar.Gender = humanoid.Gender;
             Dirty(grammar);
 
-            EnsureComp<PotentialPsionicComponent>(mob);
+            EnsureComp<PsionicComponent>(mob);
             EnsureComp<SpeechComponent>(mob);
             EnsureComp<DamageForceSayComponent>(mob);
             EnsureComp<EmotingComponent>(mob);

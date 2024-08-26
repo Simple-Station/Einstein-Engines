@@ -15,7 +15,7 @@
       min: 36000 # 10 hours
     - !type:CharacterOverallTimeRequirement
       min: 90000 # DeltaV - 25 hours
-    - !type:WhitelistRequirement # DeltaV - Whitelist requirement
+    - !type:CharacterWhitelistRequirement
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
@@ -40,10 +40,6 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-  - !type:AddComponentSpecial
-    components:
-    - type: PsionicBonusChance #Nyano - Summary: makes it more likely to become psionic.
-      flatBonus: 0.025
 
 - type: startingGear
   id: HoSGear

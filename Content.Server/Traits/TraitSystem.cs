@@ -1,16 +1,15 @@
 using System.Linq;
+using Content.Shared.Actions;
 using Content.Server.GameTicking;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Customization.Systems;
-using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Players;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
-using Pidgin.Configuration;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
+using Content.Server.Abilities.Psionics;
 
 namespace Content.Server.Traits;
 
@@ -18,10 +17,11 @@ public sealed class TraitSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly ISerializationManager _serialization = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
     [Dependency] private readonly IConfigurationManager _configuration = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilities = default!;
 
     public override void Initialize()
     {
@@ -49,16 +49,67 @@ public sealed class TraitSystem : EntitySystem
                 out _))
                 continue;
 
-            // Add all components required by the prototype
-            foreach (var entry in traitPrototype.Components.Values)
-            {
-                if (HasComp(args.Mob, entry.Component.GetType()))
-                    continue;
+            AddTrait(args.Mob, traitPrototype);
+        }
+    }
 
-                var comp = (Component) _serialization.CreateCopy(entry.Component, notNullableOverride: true);
-                comp.Owner = args.Mob;
-                EntityManager.AddComponent(args.Mob, comp);
+    /// <summary>
+    ///     Adds a single Trait Prototype to an Entity.
+    /// </summary>
+    public void AddTrait(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        AddTraitComponents(uid, traitPrototype);
+        AddTraitActions(uid, traitPrototype);
+        AddTraitPsionics(uid, traitPrototype);
+    }
+
+    /// <summary>
+    ///     Adds all Components included with a Trait.
+    /// </summary>
+    public void AddTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.Components is null)
+            return;
+
+        foreach (var entry in traitPrototype.Components.Values)
+        {
+            if (HasComp(uid, entry.Component.GetType()))
+                continue;
+
+            var comp = (Component) _serialization.CreateCopy(entry.Component, notNullableOverride: true);
+            comp.Owner = uid;
+            EntityManager.AddComponent(uid, comp);
+        }
+    }
+
+    /// <summary>
+    ///     Add all actions associated with a specific Trait
+    /// </summary>
+    public void AddTraitActions(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.Actions is null)
+            return;
+
+        foreach (var id in traitPrototype.Actions)
+        {
+            EntityUid? actionId = null;
+            if (_actions.AddAction(uid, ref actionId, id))
+            {
+                _actions.StartUseDelay(actionId);
             }
         }
+    }
+
+    /// <summary>
+    ///     If a trait includes any Psionic Powers, this enters the powers into PsionicSystem to be initialized.
+    ///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
+    /// </summary>
+    public void AddTraitPsionics(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.PsionicPowers is null)
+            return;
+
+        foreach (var powerProto in traitPrototype.PsionicPowers)
+            _psionicAbilities.InitializePsionicPower(uid, powerProto, false);
     }
 }

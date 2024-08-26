@@ -76,6 +76,21 @@
   items:
     - SmokingPipeFilledTobacco
 
+- type: loadout
+  id: LoadoutItemBlunt
+  category: Items
+  cost: 2
+  items:
+    - Blunt
+
+- type: loadout
+  id: LoadoutItemJoint
+  category: Items
+  cost: 2
+  items:
+    - Joint
+
+
 # Instruments
 - type: loadout
   id: LoadoutItemMicrophoneInstrument
@@ -278,6 +293,13 @@
   cost: 3
   items:
     - LunchboxGenericFilledRandom
+
+- type: loadout
+  id: LoadoutItemDrinkMREFlask
+  category: Items
+  cost: 2
+  items:
+    - DrinkMREFlask
 
 # Survival boxes
 - type: loadout
@@ -540,3 +562,38 @@
   cost: 3
   items:
     - HandLabeler
+
+- type: loadout
+  id: LoadoutItemHandheldStationMap
+  category: Items
+  cost: 2
+  items:
+    - HandheldStationMap
+
+- type: loadout
+  id: LoadoutItemLantern
+  category: Items
+  cost: 2
+  items:
+    - Lantern
+
+- type: loadout
+  id: LoadoutItemDrinkShinyFlask
+  category: Items
+  cost: 1
+  items:
+    - DrinkShinyFlask
+
+- type: loadout
+  id: LoadoutItemDrinkLithiumFlask
+  category: Items
+  cost: 1
+  items:
+    - DrinkLithiumFlask
+
+- type: loadout
+  id: LoadoutItemDrinkVacuumFlask
+  category: Items
+  cost: 1
+  items:
+    - DrinkVacuumFlask

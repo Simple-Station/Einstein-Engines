@@ -2,8 +2,6 @@
   save: false
   parent: BaseMobSkeletonPerson
   id: MobSkeletonPerson
-  components:
-  - type: PotentialPsionic #Nyano - Summary: makes potentially psionic.
 
 - type: entity
   name: skeleton pirate
