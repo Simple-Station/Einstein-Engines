@@ -1,6 +1,5 @@
 using Content.Shared.Audio;
 using Content.Shared.Hands;
-using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Maps;
@@ -8,6 +7,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Content.Shared.Sound.Components;
 using Content.Shared.Throwing;
+using Content.Shared.UserInterface;
 using Content.Shared.Whitelist;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
@@ -48,6 +48,7 @@ public abstract class SharedEmitSoundSystem : EntitySystem
         SubscribeLocalEvent<EmitSoundOnPickupComponent, GotEquippedHandEvent>(OnEmitSoundOnPickup);
         SubscribeLocalEvent<EmitSoundOnDropComponent, DroppedEvent>(OnEmitSoundOnDrop);
         SubscribeLocalEvent<EmitSoundOnInteractUsingComponent, InteractUsingEvent>(OnEmitSoundOnInteractUsing);
+        SubscribeLocalEvent<EmitSoundOnUIOpenComponent, AfterActivatableUIOpenEvent>(HandleEmitSoundOnUIOpen);
 
         SubscribeLocalEvent<EmitSoundOnCollideComponent, StartCollideEvent>(OnEmitSoundOnCollide);
 
