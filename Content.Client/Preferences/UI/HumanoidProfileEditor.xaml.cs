@@ -1670,15 +1670,15 @@ namespace Content.Client.Preferences.UI
             }
 
 
-            var uncategorized = _loadoutsTabs.Contents.FirstOrDefault(c => c.Name == "Uncategorized_0");
+            var uncategorized = _loadoutsTabs.Contents.FirstOrDefault(c => c.Name == "Uncategorized");
             if (uncategorized == null)
             {
                 uncategorized = new BoxContainer
                 {
+                    Name = "Uncategorized",
                     Orientation = LayoutOrientation.Vertical,
                     HorizontalExpand = true,
                     VerticalExpand = true,
-                    Name = "Uncategorized_0",
                     // I hate ScrollContainers
                     Children =
                     {
@@ -1703,101 +1703,149 @@ namespace Content.Client.Preferences.UI
                 _loadoutsTabs.AddTab(uncategorized, Loc.GetString("loadout-category-Uncategorized"));
             }
 
+            // Create a Dictionary/tree of categories and subcategories
+            var cats = CreateTree(_prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>()
+                .Where(c => c.Root)
+                .OrderBy(c => Loc.GetString($"loadout-category-{c.ID}"))
+                .ToList());
+            var categories = new Dictionary<string, object>();
+            foreach (var (key, value) in cats)
+                categories.Add(key, value);
 
-            // Make categories
-            foreach (var category in _prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>()
-                .OrderBy(c => Loc.GetString($"loadout-category-{c.ID}")))
+            // Create the UI elements for the category tree
+            CreateCategoryUI(categories, _loadoutsTabs);
+
+            // Fill categories with loadouts
+            foreach (var (loadout, usable) in loadouts
+                .OrderBy(l => l.Key.ID)
+                .ThenBy(l => Loc.GetString($"loadout-name-{l.Key.ID}"))
+                .ThenBy(l => l.Key.Cost))
             {
-                // Check for existing category
-                BoxContainer? match = null;
-                foreach (var child in _loadoutsTabs.Contents.Where(c => !string.IsNullOrEmpty(c.Name)))
-                    if (child.Name!.Split("_")[0] == category.ID)
-                        match = (BoxContainer) child.Children.First().Children.First();
-
-                // If there is a category do nothing
-                if (match != null)
-                    continue;
-
-                // If not, make it
-                var box = new BoxContainer
+                if (_loadoutPreferences.Select(lps => lps.Loadout.ID).Contains(loadout.ID))
                 {
-                    Orientation = LayoutOrientation.Vertical,
-                    HorizontalExpand = true,
-                    VerticalExpand = true,
-                    Name = $"{category.ID}_{_loadoutsTabs.Contents.Count()}",
-                    // I hate ScrollContainers
-                    Children =
-                    {
-                        new ScrollContainer
-                        {
-                            HScrollEnabled = false,
-                            HorizontalExpand = true,
-                            VerticalExpand = true,
-                            Children =
-                            {
-                                new BoxContainer
-                                {
-                                    Orientation = LayoutOrientation.Vertical,
-                                    HorizontalExpand = true,
-                                    VerticalExpand = true,
-                                },
-                            },
-                        },
-                    },
-                };
+                    var first = _loadoutPreferences.First(lps => lps.Loadout.ID == loadout.ID);
+                    first.Valid = usable;
+                    first.ShowUnusable = showUnusable;
+                    continue;
+                }
 
-                _loadoutsTabs.AddTab(box, Loc.GetString($"loadout-category-{category.ID}"), false);
-            }
-            _loadoutsTabs.UpdateTabMerging();
+                var selector = new LoadoutPreferenceSelector(
+                    loadout, highJob?.Proto ?? new JobPrototype(),
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), ref _dummyLoadouts,
+                    _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem, _requirements);
+                selector.Valid = usable;
+                selector.ShowUnusable = showUnusable;
+                AddSelector(selector);
 
+                // Look for an existing category tab
+                var match = FindCategory(loadout.Category, _loadoutsTabs);
 
-            // Fill categories
-            foreach (var (loadout, _) in loadouts.Where(l => _loadoutPreferences.All(lps => lps.Loadout.ID != l.Key.ID))
-                .OrderBy(l => l.Key.Cost).ThenBy(l => Loc.GetString($"loadout-{l.Key.ID}-name")))
-            {
-                // Get the existing selector if it exists
-                var selector = _loadoutPreferences.FirstOrDefault(lp => lp.Loadout == loadout)
-                    // Or make a new one and set it up
-                    ?? new LoadoutPreferenceSelector(loadout, highJob?.Proto ?? new JobPrototype(),
-                        Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), ref _dummyLoadouts,
-                        _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem,
-                        _requirements);
-
-                // Look for an existing loadout category
-                BoxContainer? match = null;
-                foreach (var child in _loadoutsTabs.Contents.Where(c => !string.IsNullOrEmpty(c.Name)))
-                    if (child.Name!.Split("_")[0] == loadout.Category)
-                        match = (BoxContainer) child.Children.First().Children.First();
-
-                // If there is no category put it in Uncategorized
-                if (string.IsNullOrEmpty(match?.Parent?.Parent?.Name)
-                    || match.Parent?.Parent?.Name.Split("_")[0] != loadout.Category)
-                    uncategorized.AddChild(selector);
+                // If there is no category put it in Uncategorized (this shouldn't happen)
+                if (match == null)
+                    uncategorized.Children.First().Children.First().AddChild(selector);
                 else
-                    match.AddChild(selector);
-
-                AddSelector(selector, loadout.Cost, loadout.ID);
+                    match.Children.First().Children.First().AddChild(selector);
             }
 
             // Hide any empty tabs
-            foreach (var child in _loadoutsTabs.Contents.Where(c => !string.IsNullOrEmpty(c.Name)))
-                _loadoutsTabs.SetTabVisible(child, child.Children.First().Children.First().Children.Any());
-
+            HideEmptyTabs(_prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>().ToList());
 
             UpdateLoadoutPreferences();
             return;
 
 
-            void AddSelector(LoadoutPreferenceSelector selector, int points, string id)
+            Dictionary<string, object> CreateTree(List<LoadoutCategoryPrototype> cats)
+            {
+                var tree = new Dictionary<string, object>();
+                foreach (var category in cats)
+                {
+                    // If the category is already in the tree, ignore it
+                    if (tree.ContainsKey(category.ID))
+                        continue;
+
+                    // Categories don't have a Parent field, so we need to instead check the SubCategories of every Category
+                    var subCategories = category.SubCategories.Where(subCategory => !tree.ContainsKey(subCategory)).ToList();
+                    // If there are no subcategories, add a loadout spot to the dictionary
+                    if (subCategories.Count == 0)
+                    {
+                        tree.Add(category.ID, new List<LoadoutPrototype>());
+                        continue;
+                    }
+
+                    // If there are subcategories, we need to add them to the dictionary as well
+                    var subCategoryTree = CreateTree(subCategories.Select(c => _prototypeManager.Index(c)).ToList());
+                    tree.Add(category.ID, subCategoryTree);
+                }
+
+                return tree;
+            }
+
+            void CreateCategoryUI(Dictionary<string, object> tree, NeoTabContainer parent)
+            {
+                foreach (var (key, value) in tree)
+                {
+                    // If the category's container exists already, ignore it
+                    if (parent.Contents.Any(c => c.Name == key))
+                        continue;
+
+                    // If the value is a list of LoadoutPrototypes, create a final tab for them
+                    if (value is List<LoadoutPrototype>)
+                    {
+                        var category = new BoxContainer
+                        {
+                            Name = key,
+                            Orientation = LayoutOrientation.Vertical,
+                            HorizontalExpand = true,
+                            VerticalExpand = true,
+                            Children =
+                            {
+                                new ScrollContainer
+                                {
+                                    HScrollEnabled = false,
+                                    HorizontalExpand = true,
+                                    VerticalExpand = true,
+                                    Children =
+                                    {
+                                        new BoxContainer
+                                        {
+                                            Orientation = LayoutOrientation.Vertical,
+                                            HorizontalExpand = true,
+                                            VerticalExpand = true,
+                                        },
+                                    },
+                                },
+                            },
+                        };
+
+                        parent.AddTab(category, Loc.GetString($"loadout-category-{key}"));
+                    }
+                    // If the value is a dictionary, create a new tab for it and recursively call this function to fill it
+                    else
+                    {
+                        var category = new NeoTabContainer
+                        {
+                            Name = key,
+                            HorizontalExpand = true,
+                            VerticalExpand = true,
+                            SeparatorMargin = new Thickness(0),
+                        };
+
+                        parent.AddTab(category, Loc.GetString($"loadout-category-{key}"));
+                        CreateCategoryUI((Dictionary<string, object>) value, category);
+                    }
+                }
+            }
+
+            void AddSelector(LoadoutPreferenceSelector selector)
             {
                 _loadoutPreferences.Add(selector);
                 selector.PreferenceChanged += preference =>
                 {
                     // Make sure they have enough loadout points
-                    preference = preference ? CheckPoints(-points, preference) : CheckPoints(points, preference);
+                    preference = preference ? CheckPoints(-selector.Loadout.Cost, preference) : CheckPoints(selector.Loadout.Cost, preference);
 
                     // Update Preferences
-                    Profile = Profile?.WithLoadoutPreference(id, preference);
+                    Profile = Profile?.WithLoadoutPreference(selector.Loadout.ID, preference);
                     IsDirty = true;
                     UpdateLoadoutPreferences();
                     UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
@@ -1809,6 +1857,44 @@ namespace Content.Client.Preferences.UI
             {
                 var temp = _loadoutPointsBar.Value + points;
                 return preference ? !(temp < 0) : temp < 0;
+            }
+
+            BoxContainer? FindCategory(string id, NeoTabContainer parent)
+            {
+                BoxContainer? match = null;
+                foreach (var child in parent.Contents)
+                {
+                    if (string.IsNullOrEmpty(child.Name))
+                        continue;
+
+                    if (child.Name == id)
+                        match = (BoxContainer?) child;
+                }
+
+                if (match != null)
+                    return match;
+
+                foreach (var subcategory in parent.Contents.Where(c => c is NeoTabContainer).Cast<NeoTabContainer>())
+                    match = FindCategory(id, subcategory);
+
+                return match;
+            }
+
+            void HideEmptyTabs(List<LoadoutCategoryPrototype> cats)
+            {
+                foreach (var tab in cats.Select(category => FindCategory(category.ID, _loadoutsTabs)))
+                {
+                    // If it's empty, hide it
+                    if (tab != null)
+                        ((NeoTabContainer) tab.Parent!.Parent!.Parent!.Parent!).SetTabVisible(tab, tab.Children.First().Children.First().Children.Any());
+
+                    // If it has a parent tab container, hide it if it's empty
+                    if (tab?.Parent?.Parent is NeoTabContainer parent)
+                    {
+                        var parentCats = parent.Contents.Select(c => _prototypeManager.Index<LoadoutCategoryPrototype>(c.Name!)).ToList();
+                        HideEmptyTabs(parentCats);
+                    }
+                }
             }
         }
     }

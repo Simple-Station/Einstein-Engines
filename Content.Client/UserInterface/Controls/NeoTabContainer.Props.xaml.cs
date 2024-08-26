@@ -52,6 +52,13 @@ public sealed partial class NeoTabContainer
         set => ContainerMarginChanged(value);
     }
 
+    /// The margin around the separator between the tabs and contents
+    public Thickness SeparatorMargin
+    {
+        get => Separator.Margin;
+        set => Separator.Margin = value;
+    }
+
     private bool _firstTabOpenBoth;
     public bool FirstTabOpenBoth
     {
@@ -78,9 +85,6 @@ public sealed partial class NeoTabContainer
         TabContainer.Orientation = horizontal ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical;
         Container.Orientation = horizontal ? LayoutOrientation.Vertical : LayoutOrientation.Horizontal;
 
-        Separator.Margin = horizontal
-            ? new Thickness(_containerMargin.Left, 5, _containerMargin.Right, 5)
-            : new Thickness(5, _containerMargin.Top, 5, _containerMargin.Bottom);
         var containerMargin = horizontal
             ? new Thickness(_containerMargin.Left, 0, _containerMargin.Right, _containerMargin.Bottom)
             : new Thickness(0, _containerMargin.Top, _containerMargin.Right, _containerMargin.Bottom);

@@ -17,7 +17,7 @@ public sealed class LoadoutPrototype : IPrototype
     public string ID { get; } = default!;
 
     [DataField, ValidatePrototypeId<LoadoutCategoryPrototype>]
-    public string Category = "Uncategorized";
+    public ProtoId<LoadoutCategoryPrototype> Category = "Uncategorized";
 
     [DataField(required: true)]
     public List<ProtoId<EntityPrototype>> Items = new();

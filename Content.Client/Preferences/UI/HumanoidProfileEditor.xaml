@@ -186,7 +186,7 @@
                     StyleClasses="OpenRight"
                     Margin="0 0 0 5" />
 
-                <ui:NeoTabContainer Name="CLoadoutsTabs" VerticalExpand="True" />
+                <ui:NeoTabContainer Name="CLoadoutsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
             <BoxContainer Name="CMarkingsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Markings -->
