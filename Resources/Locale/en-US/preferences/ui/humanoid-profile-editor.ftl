@@ -75,11 +75,15 @@ humanoid-profile-editor-naming-rules-warning = Warning: Offensive or LRP IC name
 
 humanoid-profile-editor-loadouts-tab = Loadout
 humanoid-profile-editor-loadouts-points-label = You have {$points}/{$max} points
-humanoid-profile-editor-loadouts-show-unusable-button = Show Unusable
+humanoid-profile-editor-loadouts-show-unusable-button = Show Unusable Loadouts
 humanoid-profile-editor-loadouts-show-unusable-button-tooltip =
     When enabled, loadouts that your current character setup cannot use will be shown highlighted in red or orange if selected.
     You will still not be able to use the invalid loadouts unless your character setup changes to fit the requirements.
-    This may be useful if you like switching between multiple jobs and don't want to have to reselect your loadout every
+    This may be useful if you like switching between multiple jobs and don't want to have to reselect your loadout every time you switch.
+humanoid-profile-editor-loadouts-remove-unusable-button = Remove {$count} Unusable Loadouts
+humanoid-profile-editor-loadouts-remove-unusable-button-tooltip =
+    If you click this button, all loadouts that your current character setup cannot use will be removed.
+    You will be asked for confirmation before the loadouts are removed.
 humanoid-profile-editor-loadouts-no-loadouts = No loadouts foundtime.
 
 humanoid-profile-editor-markings-tab = Markings

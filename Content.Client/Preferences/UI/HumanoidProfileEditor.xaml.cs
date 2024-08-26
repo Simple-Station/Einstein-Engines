@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client.Administration.UI;
 using Content.Client.Guidebook;
 using Content.Client.Humanoid;
 using Content.Client.Lobby;
@@ -72,6 +73,7 @@ namespace Content.Client.Preferences.UI
         private NeoTabContainer _tabContainer => CTabContainer;
         private BoxContainer _jobList => CJobList;
         private BoxContainer _antagList => CAntagList;
+        private Dictionary<Button, ConfirmationData> _confirmationData = new();
         private Label _traitPointsLabel => TraitPointsLabel;
         private int _traitCount;
         private ProgressBar _traitPointsBar => TraitPointsBar;
@@ -80,6 +82,7 @@ namespace Content.Client.Preferences.UI
         private Label _loadoutPointsLabel => LoadoutPointsLabel;
         private ProgressBar _loadoutPointsBar => LoadoutPointsBar;
         private Button _loadoutsShowUnusableButton => LoadoutsShowUnusableButton;
+        private Button _loadoutsRemoveUnusableButton => LoadoutsRemoveUnusableButton;
         private NeoTabContainer _loadoutsTabs => CLoadoutsTabs;
         private readonly List<JobPrioritySelector> _jobPriorities;
         private OptionButton _preferenceUnavailableButton => CPreferenceUnavailableButton;
@@ -533,6 +536,7 @@ namespace Content.Client.Preferences.UI
                 enabled => LoadoutsChanged(enabled));
 
             _loadoutsShowUnusableButton.OnToggled += args => UpdateLoadouts(args.Pressed);
+            _loadoutsRemoveUnusableButton.OnPressed += _ => TryRemoveUnusableLoadouts();
 
             UpdateLoadouts(false);
 
@@ -1620,11 +1624,20 @@ namespace Content.Client.Preferences.UI
                 }
             }
 
+            // Set the remove unusable button's label to have the correct amount of unusable loadouts
+            _loadoutsRemoveUnusableButton.Text = Loc.GetString("humanoid-profile-editor-loadouts-remove-unusable-button",
+                ("count", _loadouts
+                    .Where(l => _loadoutPreferences
+                        .Where(lps => lps.Preference).Select(lps => lps.Loadout).Contains(l.Key))
+                    .Count(l => !l.Value)));
+            AdminUIHelpers.RemoveConfirm(_loadoutsRemoveUnusableButton, _confirmationData);
+
             IsDirty = true;
             _controller.UpdateClothes = true;
             UpdatePreview();
         }
 
+        private Dictionary<LoadoutPrototype, bool> _loadouts = new();
         private Dictionary<LoadoutPrototype, EntityUid> _dummyLoadouts = new();
         private void UpdateLoadouts(bool showUnusable)
         {
@@ -1638,7 +1651,7 @@ namespace Content.Client.Preferences.UI
             // Get the highest priority job to use for loadout filtering
             var highJob = _jobPriorities.FirstOrDefault(j => j.Priority == JobPriority.High);
 
-            Dictionary<LoadoutPrototype, bool> loadouts = new();
+            _loadouts.Clear();
             foreach (var loadout in _prototypeManager.EnumeratePrototypes<LoadoutPrototype>())
             {
                 var usable = _characterRequirementsSystem.CheckRequirementsValid(
@@ -1652,7 +1665,7 @@ namespace Content.Client.Preferences.UI
                     _configurationManager,
                     out _
                 );
-                loadouts.Add(loadout, usable);
+                _loadouts.Add(loadout, usable);
 
                 if (_loadoutPreferences.FindIndex(lps => lps.Loadout.ID == loadout.ID) is not (not -1 and var i))
                     continue;
@@ -1662,7 +1675,7 @@ namespace Content.Client.Preferences.UI
                 selector.ShowUnusable = showUnusable;
             }
 
-            if (loadouts.Count == 0)
+            if (_loadouts.Count == 0)
             {
                 _loadoutsTabs.AddTab(new Label { Text = Loc.GetString("humanoid-profile-editor-loadouts-no-loadouts") },
                     Loc.GetString("loadout-category-Uncategorized"));
@@ -1716,7 +1729,7 @@ namespace Content.Client.Preferences.UI
             CreateCategoryUI(categories, _loadoutsTabs);
 
             // Fill categories with loadouts
-            foreach (var (loadout, usable) in loadouts
+            foreach (var (loadout, usable) in _loadouts
                 .OrderBy(l => l.Key.ID)
                 .ThenBy(l => Loc.GetString($"loadout-name-{l.Key.ID}"))
                 .ThenBy(l => l.Key.Cost))
@@ -1741,10 +1754,7 @@ namespace Content.Client.Preferences.UI
                 var match = FindCategory(loadout.Category, _loadoutsTabs);
 
                 // If there is no category put it in Uncategorized (this shouldn't happen)
-                if (match == null)
-                    uncategorized.Children.First().Children.First().AddChild(selector);
-                else
-                    match.Children.First().Children.First().AddChild(selector);
+                (match ?? uncategorized).Children.First().Children.First().AddChild(selector);
             }
 
             // Hide any empty tabs
@@ -1896,6 +1906,18 @@ namespace Content.Client.Preferences.UI
                     }
                 }
             }
+        }
+
+        private void TryRemoveUnusableLoadouts()
+        {
+            // Confirm the user wants to remove unusable loadouts
+            if (!AdminUIHelpers.TryConfirm(_loadoutsRemoveUnusableButton, _confirmationData))
+                return;
+
+            // Remove unusable loadouts
+            foreach (var (loadout, usable) in _loadouts.Where(l => !l.Value).ToList())
+                Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
+            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
         }
     }
 }

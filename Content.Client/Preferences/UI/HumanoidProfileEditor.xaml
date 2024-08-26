@@ -145,13 +145,15 @@
                     </BoxContainer>
                 </ScrollContainer>
             </BoxContainer>
-            <BoxContainer Name="CJobs" HorizontalExpand="True" Orientation="Vertical">
+            <BoxContainer Name="CJobs" HorizontalExpand="True">
                 <!-- Jobs -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
-                    <OptionButton Name="CPreferenceUnavailableButton" />
-                    <BoxContainer Name="CJobList" Orientation="Vertical" />
+                    <BoxContainer HorizontalExpand="True" Orientation="Vertical">
+                        <OptionButton Name="CPreferenceUnavailableButton" StyleClasses="OpenBoth" />
+                        <BoxContainer Name="CJobList" Orientation="Vertical" />
+                    </BoxContainer>
                 </ScrollContainer>
-            </BoxContainer>
+                </BoxContainer>
             <BoxContainer Name="CAntags" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Antags -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
@@ -178,13 +180,23 @@
                 <Label Name="LoadoutPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
                 <ProgressBar Name="LoadoutPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
-                <Button
-                    Name="LoadoutsShowUnusableButton"
-                    Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}"
-                    ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}"
-                    ToggleMode="True"
-                    StyleClasses="OpenRight"
-                    Margin="0 0 0 5" />
+                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
+                    <Button
+                        Name="LoadoutsShowUnusableButton"
+                        Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}"
+                        ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}"
+                        ToggleMode="True"
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True"
+                        StyleClasses="OpenRight" />
+                    <Button
+                        Name="LoadoutsRemoveUnusableButton"
+                        Text="{Loc 'humanoid-profile-editor-loadouts-remove-unusable-button'}"
+                        ToolTip="{Loc 'humanoid-profile-editor-loadouts-remove-unusable-button-tooltip'}"
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True"
+                        StyleClasses="OpenLeft" />
+                </BoxContainer>
 
                 <ui:NeoTabContainer Name="CLoadoutsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
