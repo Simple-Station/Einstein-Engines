@@ -8,6 +8,7 @@ using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Mood;
 using Robust.Shared.Containers;
 
 namespace Content.Server.Atmos.EntitySystems
@@ -239,14 +240,16 @@ namespace Content.Server.Atmos.EntitySystems
                         barotrauma.TakingDamage = true;
                         _adminLogger.Add(LogType.Barotrauma, $"{ToPrettyString(uid):entity} started taking low pressure damage");
                     }
-
-                        _alertsSystem.ShowAlert(uid, AlertType.LowPressure, 2);
+                    RaiseLocalEvent(uid, new MoodEffectEvent("MobLowPressure"));
+                    _alertsSystem.ShowAlert(uid, AlertType.LowPressure, 2);
                 }
                 else if (pressure >= Atmospherics.HazardHighPressure)
                 {
                     var damageScale = MathF.Min(((pressure / Atmospherics.HazardHighPressure) - 1) * Atmospherics.PressureDamageCoefficient, Atmospherics.MaxHighPressureDamage);
 
                     _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * damageScale, true, false);
+                    RaiseLocalEvent(uid, new MoodEffectEvent("MobHighPressure"));
+
                     if (!barotrauma.TakingDamage)
                     {
                         barotrauma.TakingDamage = true;

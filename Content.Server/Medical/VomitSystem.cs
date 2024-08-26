@@ -11,6 +11,7 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.StatusEffect;
 using Robust.Server.Audio;
+using Content.Shared.Mood;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -94,6 +95,8 @@ namespace Content.Server.Medical
             // Force sound to play as spill doesn't work if solution is empty.
             _audio.PlayPvs("/Audio/Effects/Fluids/splat.ogg", uid, AudioParams.Default.WithVariation(0.2f).WithVolume(-4f));
             _popup.PopupEntity(Loc.GetString("disease-vomit", ("person", Identity.Entity(uid, EntityManager))), uid);
+
+            RaiseLocalEvent(uid, new MoodEffectEvent("MobVomit"));
         }
     }
 }

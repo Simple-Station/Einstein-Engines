@@ -1,4 +1,3 @@
-using Content.Server.Actions;
 using Content.Server.Atmos.Components;
 using Content.Server.Body.Components;
 using Content.Server.Chat;
@@ -37,6 +36,7 @@ using Content.Shared.Zombies;
 using Content.Shared.Prying.Components;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Traits.Assorted.Components;
+using Content.Server.Abilities.Psionics;
 
 namespace Content.Server.Zombies
 {
@@ -60,7 +60,7 @@ namespace Content.Server.Zombies
         [Dependency] private readonly MindSystem _mind = default!;
         [Dependency] private readonly SharedRoleSystem _roles = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
-        [Dependency] private readonly ActionsSystem _actions = default!; // DeltaV - No psionic zombies
+        [Dependency] private readonly PsionicAbilitiesSystem _psionic = default!;
 
         /// <summary>
         /// Handles an entity turning into a zombie when they die or go into crit
@@ -108,17 +108,9 @@ namespace Content.Server.Zombies
             RemComp<ReproductivePartnerComponent>(target);
             RemComp<LegsParalyzedComponent>(target);
 
-            if (TryComp<PsionicComponent>(target, out var psionic)) // DeltaV - Prevent psionic zombies
+            if (HasComp<PsionicComponent>(target)) // Prevent psionic zombies
             {
-                if (psionic.ActivePowers.Count > 0)
-                {
-                    foreach (var power in psionic.ActivePowers)
-                    {
-                        RemComp(target, power);
-                    }
-                    psionic.ActivePowers.Clear();
-                }
-                RemComp<PsionicComponent>(target);
+                _psionic.RemoveAllPsionicPowers(target, true);
             }
 
             //funny voice

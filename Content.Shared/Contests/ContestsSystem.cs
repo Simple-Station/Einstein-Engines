@@ -1,7 +1,9 @@
+using Content.Shared.Abilities.Psionics;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Mood;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
 
@@ -18,11 +20,16 @@ namespace Content.Shared.Contests
         /// </summary>
         private const float AverageMass = 71f;
 
+        /// <summary>
+        ///     The presumed average sum of a Psionic's Baseline Amplification and Baseline Dampening.
+        ///     Since Baseline casting stats are a random value between 0.4 and 1.2, this is defaulted to 0.8 + 0.8.
+        /// </summary>
+        private const float AveragePsionicPotential = 1.6f;
+
         #region Mass Contests
         /// <summary>
         ///     Outputs the ratio of mass between a performer and the average human mass
         /// </summary>
-        /// <param name="performerUid">Uid of Performer</param>
         public float MassContest(EntityUid performerUid, bool bypassClamp = false, float rangeFactor = 1f, float otherMass = AverageMass)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
@@ -56,7 +63,6 @@ namespace Content.Shared.Contests
         ///     Outputs the ratio of mass between a performer and the average human mass
         ///     If a function already has the performer's physics component, this is faster
         /// </summary>
-        /// <param name="performerPhysics"></param>
         public float MassContest(PhysicsComponent performerPhysics, bool bypassClamp = false, float rangeFactor = 1f, float otherMass = AverageMass)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
@@ -75,8 +81,6 @@ namespace Content.Shared.Contests
         ///     Outputs the ratio of mass between a performer and a target, accepts either EntityUids or PhysicsComponents in any combination
         ///     If you have physics components already in your function, use <see cref="MassContest(PhysicsComponent, float)" /> instead
         /// </summary>
-        /// <param name="performerUid"></param>
-        /// <param name="targetUid"></param>
         public float MassContest(EntityUid performerUid, EntityUid targetUid, bool bypassClamp = false, float rangeFactor = 1f)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
@@ -224,29 +228,101 @@ namespace Content.Shared.Contests
         #region Mind Contests
 
         /// <summary>
-        ///     These cannot be implemented until AFTER the psychic refactor, but can still be factored into other systems before that point.
-        ///     Same rule here as other Contest functions, simply multiply or divide by the function.
+        ///     Returns the ratio of casting stats between a performer and the presumed average latent psionic.
+        ///     Uniquely among Contests, not being Psionic is not a failure condition, and is instead a variable.
+        ///     If you do not have a PsionicComponent, your combined casting stats are assumed to be 0.1f
         /// </summary>
-        /// <param name="performer"></param>
-        /// <param name="bypassClamp"></param>
-        /// <param name="rangeFactor"></param>
-        /// <returns></returns>
-        public float MindContest(EntityUid performer, bool bypassClamp = false, float rangeFactor = 1f)
+        /// <remarks>
+        ///     This can produce some truly astounding modifiers, so be ready to meet god if you bypass the clamp.
+        /// </remarks>
+        public float MindContest(EntityUid performer, bool bypassClamp = false, float rangeFactor = 1f, float otherPsion = AveragePsionicPotential)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
                 || !_cfg.GetCVar(CCVars.DoMindContests))
                 return 1f;
 
-            return 1f;
+            var performerPotential = TryComp<PsionicComponent>(performer, out var performerPsionic)
+                ? performerPsionic.CurrentAmplification + performerPsionic.CurrentDampening
+                : 0.1f;
+
+            if (performerPotential == otherPsion)
+                return 1f;
+
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+                ? performerPotential / otherPsion
+                : Math.Clamp(performerPotential / otherPsion,
+                    1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor);
         }
 
+        /// <summary>
+        ///     Returns the ratio of casting stats between a performer and a target.
+        ///     Like with single-Uid MindContests, if an entity does not possess a PsionicComponent, its casting stats are assumed to be 0.1f.
+        /// </summary>
+        /// <remarks>
+        ///     This can produce some truly astounding modifiers, so be ready to meet god if you bypass the clamp.
+        /// </remarks>
         public float MindContest(EntityUid performer, EntityUid target, bool bypassClamp = false, float rangeFactor = 1f)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem)
                 || !_cfg.GetCVar(CCVars.DoMindContests))
                 return 1f;
 
-            return 1f;
+            var performerPotential = TryComp<PsionicComponent>(performer, out var performerPsionic)
+                ? performerPsionic.CurrentAmplification + performerPsionic.CurrentDampening
+                : 0.1f;
+
+            var targetPotential = TryComp<PsionicComponent>(target, out var targetPsionic)
+                ? targetPsionic.CurrentAmplification + targetPsionic.CurrentDampening
+                : 0.1f;
+
+            if (performerPotential == targetPotential)
+                return 1f;
+
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+                ? performerPotential / targetPotential
+                : Math.Clamp(performerPotential / targetPotential,
+                    1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor);
+        }
+
+        #endregion
+
+        #region Mood Contests
+
+        /// <summary>
+        ///     Outputs the ratio of an Entity's mood level and its Neutral Mood threshold.
+        /// </summary>
+        public float MoodContest(EntityUid performer, bool bypassClamp = false, float rangeFactor = 1f)
+        {
+            if (!_cfg.GetCVar(CCVars.DoContestsSystem)
+                || !_cfg.GetCVar(CCVars.DoMoodContests)
+                || !TryComp<NetMoodComponent>(performer, out var mood))
+                return 1f;
+
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+                ? mood.CurrentMoodLevel / mood.NeutralMoodThreshold
+                : Math.Clamp(mood.CurrentMoodLevel / mood.NeutralMoodThreshold,
+                    1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor);
+        }
+
+        /// <summary>
+        ///     Outputs the ratio of mood level between two Entities.
+        /// </summary>
+        public float MoodContest(EntityUid performer, EntityUid target, bool bypassClamp = false, float rangeFactor = 1f)
+        {
+            if (!_cfg.GetCVar(CCVars.DoContestsSystem)
+                || !_cfg.GetCVar(CCVars.DoMoodContests)
+                || !TryComp<NetMoodComponent>(performer, out var performerMood)
+                || !TryComp<NetMoodComponent>(target, out var targetMood))
+                return 1f;
+
+            return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+                ? performerMood.CurrentMoodLevel / targetMood.CurrentMoodLevel
+                : Math.Clamp(performerMood.CurrentMoodLevel / targetMood.CurrentMoodLevel,
+                    1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor);
         }
 
         #endregion
@@ -259,34 +335,40 @@ namespace Content.Shared.Contests
             bool bypassClampStamina = false,
             bool bypassClampHealth = false,
             bool bypassClampMind = false,
+            bool bypassClampMood = false,
             float rangeFactorMass = 1f,
             float rangeFactorStamina = 1f,
             float rangeFactorHealth = 1f,
             float rangeFactorMind = 1f,
+            float rangeFactorMood = 1f,
             float weightMass = 1f,
             float weightStamina = 1f,
             float weightHealth = 1f,
             float weightMind = 1f,
+            float weightMood = 1f,
             bool sumOrMultiply = false)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem))
                 return 1f;
 
-            var weightTotal = weightMass + weightStamina + weightHealth + weightMind;
+            var weightTotal = weightMass + weightStamina + weightHealth + weightMind + weightMood;
             var massMultiplier = weightMass / weightTotal;
             var staminaMultiplier = weightStamina / weightTotal;
             var healthMultiplier = weightHealth / weightTotal;
             var mindMultiplier = weightMind / weightTotal;
+            var moodMultiplier = weightMood / weightTotal;
 
             return sumOrMultiply
                 ? MassContest(performer, bypassClampMass, rangeFactorMass) * massMultiplier
                     + StaminaContest(performer, bypassClampStamina, rangeFactorStamina) * staminaMultiplier
                     + HealthContest(performer, bypassClampHealth, rangeFactorHealth) * healthMultiplier
                     + MindContest(performer, bypassClampMind, rangeFactorMind) * mindMultiplier
+                    + MoodContest(performer, bypassClampMood, rangeFactorMood) * moodMultiplier
                 : MassContest(performer, bypassClampMass, rangeFactorMass) * massMultiplier
                     * StaminaContest(performer, bypassClampStamina, rangeFactorStamina) * staminaMultiplier
                     * HealthContest(performer, bypassClampHealth, rangeFactorHealth) * healthMultiplier
-                    * MindContest(performer, bypassClampMind, rangeFactorMind) * mindMultiplier;
+                    * MindContest(performer, bypassClampMind, rangeFactorMind) * mindMultiplier
+                    * MoodContest(performer, bypassClampMood, rangeFactorMood) * moodMultiplier;
         }
 
         public float EveryContest(
@@ -296,34 +378,40 @@ namespace Content.Shared.Contests
             bool bypassClampStamina = false,
             bool bypassClampHealth = false,
             bool bypassClampMind = false,
+            bool bypassClampMood = false,
             float rangeFactorMass = 1f,
             float rangeFactorStamina = 1f,
             float rangeFactorHealth = 1f,
             float rangeFactorMind = 1f,
+            float rangeFactorMood = 1f,
             float weightMass = 1f,
             float weightStamina = 1f,
             float weightHealth = 1f,
             float weightMind = 1f,
+            float weightMood = 1f,
             bool sumOrMultiply = false)
         {
             if (!_cfg.GetCVar(CCVars.DoContestsSystem))
                 return 1f;
 
-            var weightTotal = weightMass + weightStamina + weightHealth + weightMind;
+            var weightTotal = weightMass + weightStamina + weightHealth + weightMind + weightMood;
             var massMultiplier = weightMass / weightTotal;
             var staminaMultiplier = weightStamina / weightTotal;
             var healthMultiplier = weightHealth / weightTotal;
             var mindMultiplier = weightMind / weightTotal;
+            var moodMultiplier = weightMood / weightTotal;
 
             return sumOrMultiply
                 ? MassContest(performer, target, bypassClampMass, rangeFactorMass) * massMultiplier
                     + StaminaContest(performer, target, bypassClampStamina, rangeFactorStamina) * staminaMultiplier
                     + HealthContest(performer, target, bypassClampHealth, rangeFactorHealth) * healthMultiplier
                     + MindContest(performer, target, bypassClampMind, rangeFactorMind) * mindMultiplier
+                    + MoodContest(performer, target, bypassClampMood, rangeFactorMood) * moodMultiplier
                 : MassContest(performer, target, bypassClampMass, rangeFactorMass) * massMultiplier
                     * StaminaContest(performer, target, bypassClampStamina, rangeFactorStamina) * staminaMultiplier
                     * HealthContest(performer, target, bypassClampHealth, rangeFactorHealth) * healthMultiplier
-                    * MindContest(performer, target, bypassClampMind, rangeFactorMind) * mindMultiplier;
+                    * MindContest(performer, target, bypassClampMind, rangeFactorMind) * mindMultiplier
+                    * MoodContest(performer, target, bypassClampMood, rangeFactorMood) * moodMultiplier;
         }
         #endregion
     }
