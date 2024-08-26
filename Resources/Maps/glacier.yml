@@ -95812,7 +95812,7 @@ entities:
     - type: Transform
       pos: -23.5,-10.5
       parent: 2
-- proto: SpawnPointCourier
+- proto: SpawnPointMailCarrier
   entities:
   - uid: 13932
     components:
