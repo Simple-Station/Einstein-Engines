@@ -5579,3 +5579,11 @@ Entries:
       message: Fixed the FixGridAtmos command.
   id: 6289
   time: '2024-08-26T00:02:53.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Lab Mixes have been added to the game as a new random animal. Be sure to
+        keep Felinids and Harpies away from them.
+  id: 6290
+  time: '2024-08-27T03:16:46.0000000+00:00'
