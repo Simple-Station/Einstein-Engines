@@ -1,4 +1,9 @@
 using System.Collections.Immutable;
+using System.Linq;
+using System.Text.Json.Nodes;
+using System.Threading.Tasks;
+using Content.Server.Connection.Whitelist;
+using Content.Server.Connection.Whitelist.Conditions;
 using System.Runtime.InteropServices;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
@@ -11,6 +16,8 @@ using Content.Shared.Players.PlayTimeTracking;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 /*
@@ -22,6 +29,7 @@ namespace Content.Server.Connection
     public interface IConnectionManager
     {
         void Initialize();
+        void PostInit();
 
         Task<bool> HasPrivilegedJoin(NetUserId userId);
 
@@ -41,7 +49,7 @@ namespace Content.Server.Connection
     /// <summary>
     ///     Handles various duties like guest username assignment, bans, connection logs, etc...
     /// </summary>
-    public sealed class ConnectionManager : IConnectionManager
+    public sealed partial class ConnectionManager : IConnectionManager
     {
         [Dependency] private readonly IServerDbManager _dbManager = default!;
         [Dependency] private readonly IPlayerManager _plyMgr = default!;
@@ -50,9 +58,11 @@ namespace Content.Server.Connection
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly ILocalizationManager _loc = default!;
         [Dependency] private readonly ServerDbEntryManager _serverDbEntry = default!;
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
 
+        private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
         private ISawmill _sawmill = default!;
 
@@ -227,9 +237,8 @@ namespace Content.Server.Connection
             if ((_plyMgr.PlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !adminBypass) && !wasInGame)
                 return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
 
-
-            // DeltaV - Replace existing softwhitelist implementation
-            if (_cfg.GetCVar(CCVars.WhitelistEnabled)) //_cfg.GetCVar(CCVars.WhitelistEnabled))
+            // Checks for whitelist IF it's enabled AND the user isn't an admin. Admins are always allowed.
+            if (false)
             {
                 var min = _cfg.GetCVar(CCVars.WhitelistMinPlayers);
                 var max = _cfg.GetCVar(CCVars.WhitelistMaxPlayers);
