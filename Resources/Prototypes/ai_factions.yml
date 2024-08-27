@@ -83,3 +83,19 @@
   - Zombie
   - SimpleHostile
   - Dragon
+
+- type: npcFaction
+  id: Pibble
+  hostile:
+  - Cat
+  - Birb
+  - Mailman
+
+- type: npcFaction
+  id: Mailman
+
+- type: npcFaction
+  id: Cat
+
+- type: npcFaction
+  id: Birb
