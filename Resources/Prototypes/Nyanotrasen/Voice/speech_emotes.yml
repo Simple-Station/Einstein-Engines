@@ -3,6 +3,7 @@
   id: Hiss
   name: chat-emote-name-hisses
   category: Vocal
+  icon: Interface/Emotes/hiss.png
   whitelist:
     tags:
     - FelinidEmotes
@@ -18,6 +19,7 @@
   id: Meow
   name: chat-emote-name-meow
   category: Vocal
+  icon: Interface/Emotes/meow.png
   whitelist:
     tags:
     - FelinidEmotes
@@ -36,6 +38,7 @@
   id: Mew
   name: chat-emote-name-mew
   category: Vocal
+  icon: Interface/Emotes/mew.png
   whitelist:
     tags:
     - FelinidEmotes
@@ -51,6 +54,7 @@
   id: Growl
   name: chat-emote-name-growl
   category: Vocal
+  icon: Interface/Emotes/growl.png
   whitelist:
     tags:
     - FelinidEmotes
@@ -66,6 +70,7 @@
   id: Purr
   name: chat-emote-name-purr
   category: Vocal
+  icon: Interface/Emotes/purr.png
   whitelist:
     tags:
     - FelinidEmotes
