@@ -26,21 +26,27 @@ public sealed partial class OscillatingStationEventSchedulerComponent : Componen
     /// <summary>
     ///     Biases that determine how likely the event rate is to go up or down, and how fast it's going to happen.
     /// </summary>
-    /// <remarks>Downwards bias must always be negative, and upwards must be positive. Otherwise, you'll get odd behavior or errors.</remarks>
+    /// <remarks>
+    ///     Downwards bias must always be negative, and upwards must be positive. Otherwise, you'll get odd behavior or errors.
+    /// </remarks>
     [DataField]
     public float DownwardsBias = -1f, UpwardsBias = 1f;
 
     /// <summary>
     ///     Limits that define how large the chaos slope can become.
     /// </summary>
-    /// <remarks>Downwards limit must always be negative, and upwards must be positive. Otherwise, you'll get odd behavior or errors.</remarks>
+    /// <remarks>
+    ///     Downwards limit must always be negative, and upwards must be positive. Otherwise, you'll get odd behavior or errors.
+    /// </remarks>
     [DataField]
     public float DownwardsLimit = -1f, UpwardsLimit = 1f;
 
     /// <summary>
     ///     A value between 0 and 1 that determines how slowly the chaos and its first derivative change in time.
     /// </summary>
-    /// <remarks>Changing these values will have a great impact on how fast the event rate changes.</remarks>
+    /// <remarks>
+    ///     Changing these values will have a great impact on how fast the event rate changes.
+    /// </remarks>
     [DataField]
     public float ChaosStickiness = 0.93f, SlopeStickiness = 0.96f;
 
