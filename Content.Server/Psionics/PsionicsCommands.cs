@@ -29,6 +29,7 @@ public sealed class ListPsionicsCommand : IConsoleCommand
     }
 }
 
+[AdminCommand(AdminFlags.Fun)]
 public sealed class AddPsionicPowerCommand : IConsoleCommand
 {
     public string Command => "addpsionicpower";
