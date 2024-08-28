@@ -338,6 +338,7 @@
   - AiHolder
   suffix: Empty
   components:
+  - type: WarpPoint
   - type: ContainerComp
     proto: AiHeld
     container: station_ai_mind_slot
