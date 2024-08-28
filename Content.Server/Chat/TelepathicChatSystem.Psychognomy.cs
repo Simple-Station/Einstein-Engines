@@ -113,7 +113,7 @@ public sealed partial class TelepathicChatSystem
         if (component.Score == 0)
             return;
 
-        ev.Descriptors.Add(Loc.GetString("cyclic"));
+        ev.Descriptors.Add(Loc.GetString("p-descriptor-cyclic"));
     }
 
     private void DescribeGlimmerSource(EntityUid uid, GlimmerSourceComponent component, GetPsychognomicDescriptorEvent ev)
