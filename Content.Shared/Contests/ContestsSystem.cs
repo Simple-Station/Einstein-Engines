@@ -7,7 +7,7 @@ using Content.Shared.Mood;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
 
-// TODO until the code is rewritten, DO NOT EVER MODIFY ANY RELATED CVARS or you will BREAK THE GAME DUE TO NEGATIVE CONTEST ADVANTAGES
+// TODO until the code is rewritten, DO NOT EVER INCREASE ANY RELATED CVARS ABOVE 0.25x or you will BREAK THE GAME DUE TO NEGATIVE CONTEST ADVANTAGES
 // TODO this code needs a refactor:
 // - misleading x0.25 multiplications in stamina and health contests should be gone
 // - rangeFactor should multiply the resulting value or raise it to the power of itself, NOT modify the clamp range
