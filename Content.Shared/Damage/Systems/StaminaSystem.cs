@@ -119,13 +119,11 @@ public sealed partial class StaminaSystem : EntitySystem
 
     private void OnDisarmed(EntityUid uid, StaminaComponent component, DisarmedEvent args)
     {
-        // Note: we do not run _random.Prob here because SharedWeaponSystem already rolls it.
+        // Note: we do not run _random.Prob here because SharedWeaponSystem already runs it.
         if (args.Handled || component.Critical)
             return;
 
-        // TODO: this should be inferred from the weapon. For now it's hardcoded to 50% if you're guaranteed to shove, and less if less.
-        var damage = args.PushProbability * 50f;
-        TakeStaminaDamage(uid, damage, component, source: args.Source);
+        TakeStaminaDamage(uid, args.StaminaDamage, component, source: args.Source);
 
         // We need a better method of getting if the entity is going to resist stam damage, both this and the lines in the foreach at the end of OnHit() are awful
         if (!component.Critical)

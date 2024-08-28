@@ -162,7 +162,10 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         _audio.PlayPvs(combatMode.DisarmSuccessSound, user, AudioParams.Default.WithVariation(0.025f).WithVolume(5f));
         AdminLogger.Add(LogType.DisarmedAction, $"{ToPrettyString(user):user} used disarm on {ToPrettyString(target):target}");
 
-        var eventArgs = new DisarmedEvent { Target = target, Source = user, PushProbability = chance };
+        var staminaDamage = (TryComp<ShovingComponent>(user, out var shoving) ? shoving.StaminaDamage : ShovingComponent.DefaultStaminaDamage)
+            * Math.Clamp(chance, 0f, 1f);
+
+        var eventArgs = new DisarmedEvent { Target = target, Source = user, PushProbability = chance, StaminaDamage = staminaDamage };
         RaiseLocalEvent(target, eventArgs);
 
         if (!eventArgs.Handled)
@@ -210,9 +213,10 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         var chance = 1 - disarmerComp.BaseDisarmFailChance;
 
         if (inTargetHand != null && TryComp<DisarmMalusComponent>(inTargetHand, out var malus))
-        {
             chance -= malus.Malus;
-        }
+
+        if (TryComp<ShovingComponent>(disarmer, out var shoving))
+            chance += shoving.DisarmBonus;
 
         return Math.Clamp(chance
                         * _contests.MassContest(disarmer, disarmed, false, 2f)
