@@ -69,8 +69,8 @@ public sealed class EscapeInventorySystem : EntitySystem
         // Contested
         if (_handsSystem.IsHolding(container.Owner, uid, out _))
         {
-            var advantage = _contests.MassContest(uid, container.Owner, rangeFactor: 3f);
-            AttemptEscape(uid, container.Owner, component, advantage);
+            var disadvantage = _contests.MassContest(container.Owner, uid, rangeFactor: 3f);
+            AttemptEscape(uid, container.Owner, component, disadvantage);
             return;
         }
 
