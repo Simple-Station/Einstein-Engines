@@ -23,7 +23,7 @@ namespace Content.Server.Chat
     /// Extensions for Telepathic chat stuff
     /// </summary>
 
-    public sealed class TelepathicChatSystem : EntitySystem
+    public sealed partial class TelepathicChatSystem : EntitySystem
     {
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
@@ -31,6 +31,12 @@ namespace Content.Server.Chat
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly ChatSystem _chatSystem = default!;
+
+        public override void Initialize()
+        {
+            base.Initialize();
+            InitializePsychognomy();
+        }
         private (IEnumerable<INetChannel> normal, IEnumerable<INetChannel> psychog) GetPsionicChatClients()
         {
             var psions = Filter.Empty()
@@ -96,10 +102,19 @@ namespace Content.Server.Chat
 
             if (clients.psychog.Count() > 0)
             {
+                var ev = new GetPsychognomicDescriptorEvent();
+                RaiseLocalEvent(source, ev);
+
                 string psychogMessageWrap;
+                string descriptor;
+
+                if (ev.Descriptors.Count == 0)
+                    descriptor = Loc.GetString("p-descriptor-mysterious");
+                else
+                    descriptor = _random.Pick(ev.Descriptors);
 
                 psychogMessageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message-psychognomy",
-                    ("source", source), ("message", message));
+                    ("source", descriptor.ToUpper()), ("message", message));
 
                 _chatManager.ChatMessageToMany(ChatChannel.Telepathic, message, psychogMessageWrap, source, hideChat, true, clients.psychog.ToList(), Color.PaleVioletRed);
             }
