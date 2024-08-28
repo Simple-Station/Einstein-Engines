@@ -3,7 +3,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Shared.Abilities.Psionics;
-using Content.Shared.Abilities.Psionics.Passives;
+using Content.Shared.Psionics.Passives;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Chat;
 using Content.Shared.Database;
