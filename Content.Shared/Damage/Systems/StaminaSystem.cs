@@ -7,6 +7,7 @@ using Content.Shared.Damage.Events;
 using Content.Shared.Database;
 using Content.Shared.Effects;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Rejuvenate;
@@ -36,6 +37,7 @@ public sealed partial class StaminaSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
 
     /// <summary>
     /// How much of a buffer is there between the stun duration and when stuns can be re-applied.
@@ -47,6 +49,7 @@ public sealed partial class StaminaSystem : EntitySystem
         base.Initialize();
 
         InitializeModifier();
+        InitializeSlowdown();
 
         SubscribeLocalEvent<StaminaComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<StaminaComponent, ComponentShutdown>(OnShutdown);
@@ -116,13 +119,12 @@ public sealed partial class StaminaSystem : EntitySystem
 
     private void OnDisarmed(EntityUid uid, StaminaComponent component, DisarmedEvent args)
     {
-        if (args.Handled || !_random.Prob(args.PushProbability))
+        // Note: we do not run _random.Prob here because SharedWeaponSystem already rolls it.
+        if (args.Handled || component.Critical)
             return;
 
-        if (component.Critical)
-            return;
-
-        var damage = args.PushProbability * component.CritThreshold;
+        // TODO: this should be inferred from the weapon. For now it's hardcoded to 50% if you're guaranteed to shove, and less if less.
+        var damage = args.PushProbability * 50f;
         TakeStaminaDamage(uid, damage, component, source: args.Source);
 
         // We need a better method of getting if the entity is going to resist stam damage, both this and the lines in the foreach at the end of OnHit() are awful
@@ -285,15 +287,7 @@ public sealed partial class StaminaSystem : EntitySystem
                 component.NextUpdate = nextUpdate;
         }
 
-        var slowdownThreshold = component.CritThreshold / 2f;
-
-        // If we go above n% then apply slowdown
-        if (oldDamage < slowdownThreshold &&
-            component.StaminaDamage > slowdownThreshold)
-        {
-            _stunSystem.TrySlowdown(uid, TimeSpan.FromSeconds(3), true, 0.8f, 0.8f);
-        }
-
+        _movementSpeed.RefreshMovementSpeedModifiers(uid);
         SetStaminaAlert(uid, component);
 
         if (!component.Critical)
@@ -378,11 +372,8 @@ public sealed partial class StaminaSystem : EntitySystem
 
     private void EnterStamCrit(EntityUid uid, StaminaComponent? component = null)
     {
-        if (!Resolve(uid, ref component) ||
-            component.Critical)
-        {
+        if (!Resolve(uid, ref component) || component.Critical)
             return;
-        }
 
         // To make the difference between a stun and a stamcrit clear
         // TODO: Mask?
@@ -401,17 +392,14 @@ public sealed partial class StaminaSystem : EntitySystem
 
     private void ExitStamCrit(EntityUid uid, StaminaComponent? component = null)
     {
-        if (!Resolve(uid, ref component) ||
-            !component.Critical)
-        {
+        if (!Resolve(uid, ref component) || !component.Critical)
             return;
-        }
 
         component.Critical = false;
-        component.StaminaDamage = 0f;
+        component.StaminaDamage = component.CritThreshold - float.Epsilon; // Yea, standing up after fainting from fatigue... not exactly easy
         component.NextUpdate = _timing.CurTime;
+        _movementSpeed.RefreshMovementSpeedModifiers(uid);
         SetStaminaAlert(uid, component);
-        RemComp<ActiveStaminaComponent>(uid);
         Dirty(component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered from stamina crit");
     }
