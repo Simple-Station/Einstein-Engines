@@ -16,6 +16,12 @@
   - type: Speech
     speechSounds: Tenor
   - type: Psionic
+    removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - PsychognomyPower
+      - NoosphericZapPower
   - type: SolutionContainerManager
     solutions:
       fountain:

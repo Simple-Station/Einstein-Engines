@@ -105,13 +105,11 @@ namespace Content.Server.Chat
                 var ev = new GetPsychognomicDescriptorEvent();
                 RaiseLocalEvent(source, ev);
 
+                ev.Descriptors.Add("p-descriptor-ignorant");
                 string psychogMessageWrap;
                 string descriptor;
 
-                if (ev.Descriptors.Count == 0)
-                    descriptor = Loc.GetString("p-descriptor-mysterious");
-                else
-                    descriptor = _random.Pick(ev.Descriptors);
+                descriptor = _random.Pick(ev.Descriptors);
 
                 psychogMessageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message-psychognomy",
                     ("source", descriptor.ToUpper()), ("message", message));
