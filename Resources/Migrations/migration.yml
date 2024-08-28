@@ -323,6 +323,9 @@ FoodMeatHawaiianKebab: FoodKebabSkewer
 FoodMeatKebab: FoodKebabSkewer
 FoodMeatFiestaKebab: FoodKebabSkewer
 
+#2024-08-14
+ClothingBeltSuspenders: ClothingBeltSuspendersRed
+
 # 2024-10-09
 # Removal of separate borg chassis parts, replace them with generic borg parts.
 LeftArmBorgEngineer: LeftArmBorg
