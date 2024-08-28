@@ -19,3 +19,5 @@ p-descriptor-hungry = hungry
 p-descriptor-vampiric = vampiric
 p-descriptor-kinetic = kinetic
 p-descriptor-gnostic = gnostic
+p-descriptor-dumb = dumb
+p-descriptor-passive = passive

@@ -2,7 +2,10 @@ using Content.Shared.Humanoid;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
-using Content.Shared.Psionics;
+using Content.Shared.Speech;
+using Content.Shared.Speech.Muting;
+using Content.Shared.CombatMode.Pacification;
+using Content.Shared.CombatMode;
 using Content.Server.Bible.Components;
 using Content.Server.Research.Oracle;
 using Robust.Shared.GameObjects.Components.Localization;
@@ -17,7 +20,6 @@ using Content.Server.Vampiric;
 using Content.Shared.Revenant.Components;
 using Content.Shared.Abilities.Psionics;
 using Content.Server.Abilities.Psionics;
-using System.ComponentModel;
 
 namespace Content.Server.Chat
 {
@@ -124,8 +126,15 @@ namespace Content.Server.Chat
             }
         }
 
+        // This one's also a bit of a catch-all for "lacks component"
         private void DescribePsion(EntityUid uid, PsionicComponent component, GetPsychognomicDescriptorEvent ev)
         {
+            if (!HasComp<SpeechComponent>(uid) || HasComp<MutedComponent>(uid))
+                ev.Descriptors.Add(Loc.GetString("p-descriptor-dumb"));
+
+            if (!HasComp<CombatModeComponent>(uid) || HasComp<PacifiedComponent>(uid))
+                ev.Descriptors.Add(Loc.GetString("p-descriptor-passive"));
+
             foreach (var power in component.ActivePowers)
             {
                 // TODO: Mime counts too and isn't added back to psions yet
@@ -161,6 +170,7 @@ namespace Content.Server.Chat
             ev.Descriptors.Add(Loc.GetString("p-descriptor-old"));
             ev.Descriptors.Add(Loc.GetString("p-descriptor-demiurgic"));
             ev.Descriptors.Add(Loc.GetString("p-descriptor-mysterious"));
+            ev.Descriptors.Add(Loc.GetString("p-descriptor-emanative"));
         }
 
         private void DescribeSophia(EntityUid uid, SophicScribeComponent component, GetPsychognomicDescriptorEvent ev)
