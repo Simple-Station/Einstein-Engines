@@ -139,6 +139,22 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         EntityUid? entity = null)
     {
         _prototypeManager.TryIndex(job?.Prototype ?? string.Empty, out var prototype);
+        RoleLoadout? loadout = null;
+
+        // Need to get the loadout up-front to handle names if we use an entity spawn override.
+        var jobLoadout = LoadoutSystem.GetJobPrototype(prototype?.ID);
+
+        if (_prototypeManager.TryIndex(jobLoadout, out RoleLoadoutPrototype? roleProto))
+        {
+            profile?.Loadouts.TryGetValue(jobLoadout, out loadout);
+
+            // Set to default if not present
+            if (loadout == null)
+            {
+                loadout = new RoleLoadout(jobLoadout);
+                loadout.SetDefault(profile, _actors.GetSession(entity), _prototypeManager);
+            }
+        }
 
         // If we're not spawning a humanoid, we're gonna exit early without doing all the humanoid stuff.
         if (prototype?.JobEntity != null)
@@ -146,6 +162,13 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             DebugTools.Assert(entity is null);
             var jobEntity = EntityManager.SpawnEntity(prototype.JobEntity, coordinates);
             MakeSentientCommand.MakeSentient(jobEntity, EntityManager);
+
+            // Make sure custom names get handled, what is gameticker control flow whoopy.
+            if (loadout != null)
+            {
+                EquipRoleName(jobEntity, loadout, roleProto!);
+            }
+
             DoJobSpecials(job, jobEntity);
             _identity.QueueIdentityUpdate(jobEntity);
             return jobEntity;

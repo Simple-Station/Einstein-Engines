@@ -70,6 +70,7 @@ namespace Content.Client.Verbs
 
             // Get entities
             List<EntityUid> entities;
+            var examineFlags = LookupFlags.All & ~LookupFlags.Sensors;
 
             // Do we have to do FoV checks?
             if ((visibility & MenuVisibility.NoFov) == 0)
@@ -85,7 +86,7 @@ namespace Content.Client.Verbs
 
                 // Then check every entity
                 entities = new();
-                foreach (var ent in _entityLookup.GetEntitiesInRange(targetPos, EntityMenuLookupSize))
+                foreach (var ent in _entityLookup.GetEntitiesInRange(targetPos, EntityMenuLookupSize, flags: examineFlags))
                 {
                     if (_examine.CanExamine(player.Value, targetPos, Predicate, ent, examiner))
                         entities.Add(ent);
@@ -93,7 +94,7 @@ namespace Content.Client.Verbs
             }
             else
             {
-                entities = _entityLookup.GetEntitiesInRange(targetPos, EntityMenuLookupSize).ToList();
+                entities = _entityLookup.GetEntitiesInRange(targetPos, EntityMenuLookupSize, flags: examineFlags).ToList();
             }
 
             if (entities.Count == 0)

@@ -1249,6 +1249,9 @@
   id: StringInstrument
 
 - type: Tag
+  id: StationAi
+
+- type: Tag
   id: StationMapElectronics
 
 - type: Tag
