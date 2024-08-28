@@ -37,6 +37,7 @@ namespace Content.Server.Chat
             base.Initialize();
             InitializePsychognomy();
         }
+
         private (IEnumerable<INetChannel> normal, IEnumerable<INetChannel> psychog) GetPsionicChatClients()
         {
             var psions = Filter.Empty()

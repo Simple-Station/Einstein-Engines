@@ -77,8 +77,10 @@ namespace Content.Server.Chat
 
         private void DescribeMobState(EntityUid uid, MobStateComponent component, GetPsychognomicDescriptorEvent ev)
         {
-            if (component.CurrentState == Shared.Mobs.MobState.Critical)
-                ev.Descriptors.Add(Loc.GetString("p-descriptor-liminal"));
+            if (component.CurrentState != Shared.Mobs.MobState.Critical)
+                return;
+
+            ev.Descriptors.Add(Loc.GetString("p-descriptor-liminal"));
         }
 
         private void DescribeHunger(EntityUid uid, HungerComponent component, GetPsychognomicDescriptorEvent ev)
@@ -90,13 +92,11 @@ namespace Content.Server.Chat
         private void DescribeFixtures(EntityUid uid, FixturesComponent component, GetPsychognomicDescriptorEvent ev)
         {
             foreach (var fixture in component.Fixtures.Values)
-            {
                 if (fixture.CollisionMask == (int) CollisionGroup.GhostImpassable)
                 {
                     ev.Descriptors.Add(Loc.GetString("p-descriptor-pneumatic"));
                     return;
                 }
-            }
         }
 
         private void DescribePhysics(EntityUid uid, PhysicsComponent component, GetPsychognomicDescriptorEvent ev)
@@ -109,10 +109,10 @@ namespace Content.Server.Chat
 
         private void DescribeKarma(EntityUid uid, MetempsychosisKarmaComponent component, GetPsychognomicDescriptorEvent ev)
         {
-            if (component.Score > 0)
-            {
-                ev.Descriptors.Add(Loc.GetString("cyclic"));
-            }
+            if (component.Score == 0)
+                return;
+
+            ev.Descriptors.Add(Loc.GetString("cyclic"));
         }
 
         private void DescribeGlimmerSource(EntityUid uid, GlimmerSourceComponent component, GetPsychognomicDescriptorEvent ev)
@@ -138,9 +138,10 @@ namespace Content.Server.Chat
             foreach (var power in component.ActivePowers)
             {
                 // TODO: Mime counts too and isn't added back to psions yet
-                if (power.ID == "PyrokinesisPower" || power.ID == "NoosphericZapPower")
-                    ev.Descriptors.Add(Loc.GetString("p-descriptor-kinetic"));
+                if (power.ID != "PyrokinesisPower" && power.ID != "NoosphericZapPower")
+                    continue;
 
+                ev.Descriptors.Add(Loc.GetString("p-descriptor-kinetic"));
                 return;
             }
         }
@@ -149,6 +150,7 @@ namespace Content.Server.Chat
         {
             ev.Descriptors.Add(Loc.GetString("p-descriptor-gnostic"));
         }
+
         private void DescribeBloodsucker(EntityUid uid, BloodSuckerComponent component, GetPsychognomicDescriptorEvent ev)
         {
             ev.Descriptors.Add(Loc.GetString("p-descriptor-vampiric"));

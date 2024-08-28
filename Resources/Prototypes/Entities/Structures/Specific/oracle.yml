@@ -15,6 +15,7 @@
         state: oracle-0
   - type: Speech
     speechSounds: Tenor
+  - type: Actions
   - type: Psionic
     removable: false
   - type: InnatePsionicPowers

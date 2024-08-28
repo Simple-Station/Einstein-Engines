@@ -27,6 +27,7 @@
     channels:
     - Common
     - Science
+  - type: Actions
   - type: Psionic
     removable: false
   - type: InnatePsionicPowers
@@ -42,3 +43,4 @@
   - type: GuideHelp
     guides:
     - Psionics
+  - type: Prayable
