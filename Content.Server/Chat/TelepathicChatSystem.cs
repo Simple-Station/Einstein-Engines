@@ -3,6 +3,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Shared.Abilities.Psionics;
+using Content.Shared.Abilities.Psionics.Passives;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Chat;
 using Content.Shared.Database;
@@ -30,12 +31,16 @@ namespace Content.Server.Chat
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly ChatSystem _chatSystem = default!;
-        private IEnumerable<INetChannel> GetPsionicChatClients()
+        private (IEnumerable<INetChannel> normal, IEnumerable<INetChannel> psychog) GetPsionicChatClients()
         {
-            return Filter.Empty()
+            var psions = Filter.Empty()
                 .AddWhereAttachedEntity(IsEligibleForTelepathy)
-                .Recipients
-                .Select(p => p.ConnectedClient);
+                .Recipients;
+
+            var normalSessions = psions.Where(p => !HasComp<PsychognomistComponent>(p.AttachedEntity)).Select(p => p.Channel);
+            var psychogSessions = psions.Where(p => HasComp<PsychognomistComponent>(p.AttachedEntity)).Select(p => p.Channel);
+
+            return (normalSessions, psychogSessions);
         }
 
         private IEnumerable<INetChannel> GetAdminClients()
@@ -64,7 +69,7 @@ namespace Content.Server.Chat
             return HasComp<PsionicComponent>(entity)
                 && !HasComp<PsionicsDisabledComponent>(entity)
                 && !HasComp<PsionicInsulationComponent>(entity)
-                && (!TryComp<MobStateComponent>(entity, out var mobstate) || mobstate.CurrentState == MobState.Alive);
+                && (!TryComp<MobStateComponent>(entity, out var mobstate) || mobstate.CurrentState != MobState.Dead);
         }
 
         public void SendTelepathicChat(EntityUid source, string message, bool hideChat)
@@ -85,18 +90,28 @@ namespace Content.Server.Chat
 
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Telepathic chat from {ToPrettyString(source):Player}: {message}");
 
-            _chatManager.ChatMessageToMany(ChatChannel.Telepathic, message, messageWrap, source, hideChat, true, clients.ToList(), Color.PaleVioletRed);
+            _chatManager.ChatMessageToMany(ChatChannel.Telepathic, message, messageWrap, source, hideChat, true, clients.normal.ToList(), Color.PaleVioletRed);
 
             _chatManager.ChatMessageToMany(ChatChannel.Telepathic, message, adminMessageWrap, source, hideChat, true, admins, Color.PaleVioletRed);
+
+            if (clients.psychog.Count() > 0)
+            {
+                string psychogMessageWrap;
+
+                psychogMessageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message-psychognomy",
+                    ("source", source), ("message", message));
+
+                _chatManager.ChatMessageToMany(ChatChannel.Telepathic, message, psychogMessageWrap, source, hideChat, true, clients.psychog.ToList(), Color.PaleVioletRed);
+            }
 
             if (_random.Prob(0.1f))
                 _glimmerSystem.Glimmer++;
 
-            if (_random.Prob(Math.Min(0.33f + ((float) _glimmerSystem.Glimmer / 1500), 1)))
+            if (_random.Prob(Math.Min(0.33f + (float) _glimmerSystem.Glimmer / 1500, 1)))
             {
-                float obfuscation = (0.25f + (float) _glimmerSystem.Glimmer / 2000);
+                float obfuscation = 0.25f + (float) _glimmerSystem.Glimmer / 2000;
                 var obfuscated = ObfuscateMessageReadability(message, obfuscation);
-                _chatManager.ChatMessageToMany(ChatChannel.Telepathic, obfuscated, messageWrap, source, hideChat, false, GetDreamers(clients), Color.PaleVioletRed);
+                _chatManager.ChatMessageToMany(ChatChannel.Telepathic, obfuscated, messageWrap, source, hideChat, false, GetDreamers(clients.normal.Concat(clients.psychog)), Color.PaleVioletRed);
             }
 
             foreach (var repeater in EntityQuery<TelepathicRepeaterComponent>())
