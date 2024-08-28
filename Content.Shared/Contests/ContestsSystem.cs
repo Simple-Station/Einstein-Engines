@@ -7,12 +7,6 @@ using Content.Shared.Mood;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
 
-// TODO until the code is rewritten, DO NOT EVER INCREASE ANY RELATED CVARS ABOVE 0.25x or you will BREAK THE GAME DUE TO NEGATIVE CONTEST ADVANTAGES
-// TODO this code needs a refactor:
-// - misleading x0.25 multiplications in stamina and health contests should be gone
-// - rangeFactor should multiply the resulting value or raise it to the power of itself, NOT modify the clamp range
-// - all CVARs should probably be nuked in favor of system-specific cvars.
-// - all output values should be clamped between float.Epsilon and float.MaxValue, softly (via b^x) if possible
 namespace Content.Shared.Contests
 {
     public sealed partial class ContestsSystem : EntitySystem
