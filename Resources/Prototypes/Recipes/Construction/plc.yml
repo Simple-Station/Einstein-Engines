@@ -1,0 +1,17 @@
+- type: construction
+  name: plc
+  id: PLCRecipe
+  graph: PLCGraph
+  startNode: start
+  targetNode: PLCNode
+  category: construction-category-machines
+  description: It's a programmable logic controller.
+  icon:
+    sprite: Structures/Wallmounts/switch.rsi
+    state: on
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
