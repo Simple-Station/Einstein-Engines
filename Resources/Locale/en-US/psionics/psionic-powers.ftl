@@ -75,3 +75,6 @@ xenoglossy-power-initialization-feedback =
 psionic-language-power-metapsionic-feedback = The noösphere flows freely through {CAPITALIZE($entity)}, who seems to digest it and pass it back out undisturbed.
 
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
+examine-mindbroken-message =
+    Eyes unblinking, staring deep into the horizon. {CAPITALIZE($entity)} is a sack of meat pretending it has a soul.
+    There is nothing behind its gaze, no evidence there can be found of the divine light of creation.
