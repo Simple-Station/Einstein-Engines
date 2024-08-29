@@ -16,6 +16,7 @@
     state: box
     layers:
     - state: box
+      map: ["closeLayer"]
     - state: box-open
       map: ["openLayer"]
       visible: false
@@ -79,6 +80,7 @@
     state: box-closed
     layers:
     - state: box-closed
+      map: ["closeLayer"]
     - state: box-open
       map: ["openLayer"]
       visible: false
@@ -294,6 +296,7 @@
     state: box
     layers:
     - state: box
+      map: ["closeLayer"]
     - state: box-open
       map: ["openLayer"]
       visible: false
@@ -487,6 +490,7 @@
     state: box
     layers:
     - state: box
+      map: ["closeLayer"]
     - state: box-open
       map: ["openLayer"]
   - type: Item
