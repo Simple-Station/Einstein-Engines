@@ -39,7 +39,7 @@ public sealed class BatteryDrinkerSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract
             || !TryComp<BatteryDrinkerComponent>(args.User, out var drinkerComp)
             || !TestDrinkableBattery(uid, drinkerComp)
-            || !_silicon.TryGetSiliconBattery(args.User, out var drinkerBattery))
+            || !_silicon.TryGetSiliconBattery(args.User, out var _))
             return;
 
         AlternativeVerb verb = new()
