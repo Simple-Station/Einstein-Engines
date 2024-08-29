@@ -28,6 +28,7 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
+    fireOnDropChance: 0.2
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -75,6 +76,7 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
+    fireOnDropChance: 0.3
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -115,6 +117,7 @@
     heldPrefix: db
   - type: Gun
     fireRate: 2
+    fireOnDropChance: 0.5
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
@@ -190,6 +193,7 @@
     heldPrefix: sawn
   - type: Gun
     fireRate: 4
+    fireOnDropChance: 0.5
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
@@ -226,6 +230,7 @@
     sprite: Objects/Weapons/Guns/Shotguns/hm_pistol.rsi
   - type: Gun
     fireRate: 4
+    fireOnDropChance: 1
   - type: BallisticAmmoProvider
     capacity: 1
   - type: Construction
@@ -250,6 +255,7 @@
     sprite: Objects/Weapons/Guns/Shotguns/blunderbuss.rsi
   - type: Gun
     fireRate: 2
+    fireOnDropChance: 1
   - type: BallisticAmmoProvider
     capacity: 1
   - type: StaticPrice
@@ -273,6 +279,7 @@
     heldPrefix: improvised
   - type: Gun
     fireRate: 4 #No reason to stifle the firerate since you have to manually reload every time anyways.
+    fireOnDropChance: 1
   - type: BallisticAmmoProvider
     capacity: 1
     proto: null

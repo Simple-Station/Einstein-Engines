@@ -14,13 +14,15 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Physics;
 using Content.Shared.Tag;
-using Content.Shared.Traits.Assorted;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using InventoryComponent = Content.Shared.Inventory.InventoryComponent;
+using Content.Shared.Traits.Assorted.Components;
+using Robust.Shared.Random;
+using Content.Shared.Eye.Blinding.Systems;
 
 namespace Content.Server.Flash
 {
@@ -37,6 +39,8 @@ namespace Content.Server.Flash
         [Dependency] private readonly PopupSystem _popup = default!;
         [Dependency] private readonly StunSystem _stun = default!;
         [Dependency] private readonly TagSystem _tag = default!;
+        [Dependency] private readonly IRobustRandom _random = default!;
+        [Dependency] private readonly BlindableSystem _blindingSystem = default!;
 
         public override void Initialize()
         {
@@ -133,9 +137,16 @@ namespace Content.Server.Flash
                     RaiseLocalEvent(used.Value, ref ev);
             }
 
+            flashDuration *= flashable.DurationMultiplier;
+
             flashable.LastFlash = _timing.CurTime;
             flashable.Duration = flashDuration / 1000f; // TODO: Make this sane...
             Dirty(target, flashable);
+
+            if (TryComp<BlindableComponent>(target, out var blindable)
+                && !blindable.IsBlind
+                && _random.Prob(flashable.EyeDamageChance))
+                _blindingSystem.AdjustEyeDamage((target, blindable), flashable.EyeDamage);
 
             _stun.TrySlowdown(target, TimeSpan.FromSeconds(flashDuration/1000f), true,
                 slowTo, slowTo);

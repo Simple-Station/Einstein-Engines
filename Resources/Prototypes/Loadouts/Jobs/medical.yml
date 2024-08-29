@@ -4,11 +4,13 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Paramedic
         - ChiefMedicalOfficer
+        - MedicalIntern
+        - Chemist
   items:
     - ClothingHandsGlovesNitrile
 
@@ -18,7 +20,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - Chemist
@@ -31,10 +33,11 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
         - ChiefMedicalOfficer
+        - MedicalIntern
   items:
     - ClothingNeckStethoscope
 
@@ -44,9 +47,16 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
   items:
     - UniformScrubsColorBlue
 
@@ -56,9 +66,16 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
   items:
     - UniformScrubsColorGreen
 
@@ -68,11 +85,107 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
   items:
     - UniformScrubsColorPurple
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsCyan
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
+  items:
+    - UniformScrubsColorCyan
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsBlack
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
+  items:
+    - UniformScrubsColorBlack
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsPink
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
+  items:
+    - UniformScrubsColorPink
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsCybersun
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+  items:
+    - UniformScrubsColorCybersun
+
+- type: loadout
+  id: LoadoutMedicalOuterCybersunWindbreaker
+  category: Jobs
+  cost: 5
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+  items:
+    - ClothingOuterCoatCybersunWindbreaker
 
 - type: loadout
   id: LoadoutMedicalOuterLabcoatChem
@@ -80,7 +193,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Chemist
   items:
@@ -91,7 +204,7 @@
   category: Jobs
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Chemist
   items:
@@ -103,7 +216,11 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
       jobs:
         - Paramedic
   items:
@@ -115,7 +232,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Paramedic
   items:
@@ -127,16 +244,19 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
-    - !type:LoadoutPlaytimeRequirement
+        - Chemist
+        - Paramedic
+        - ChiefMedicalOfficer
+    - !type:CharacterPlaytimeRequirement
       tracker: JobChemist
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobMedicalDoctor
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 216000 # 60 hours
   items:
@@ -148,16 +268,23 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
-    - !type:LoadoutPlaytimeRequirement
+        - Chemist
+        - Paramedic
+        - ChiefMedicalOfficer
+    - !type:CharacterPlaytimeRequirement
       tracker: JobChemist
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobMedicalDoctor
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 216000 # 60 hours
   items:
@@ -169,7 +296,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
   items:
@@ -181,17 +308,296 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
-    - !type:LoadoutPlaytimeRequirement
+        - Chemist
+        - Paramedic
+        - ChiefMedicalOfficer
+    - !type:CharacterPlaytimeRequirement
       tracker: JobChemist
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobMedicalDoctor
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 216000 # 60 hours
   items:
     - ClothingHeadHatBeretSeniorPhysician
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapBlue
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
+  items:
+    - ClothingHeadHatSurgcapBlue
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapPurple
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
+  items:
+    - ClothingHeadHatSurgcapPurple
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapGreen
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
+  items:
+    - ClothingHeadHatSurgcapGreen
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapCyan
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
+  items:
+    - ClothingHeadHatSurgcapCyan
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapBlack
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
+  items:
+    - ClothingHeadHatSurgcapBlack
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapPink
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
+  items:
+    - ClothingHeadHatSurgcapPink
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapWhite
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+        - MedicalIntern
+  items:
+    - ClothingHeadHatSurgcapWhite
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapCybersun
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+  items:
+    - ClothingHeadHatSurgcapCybersun
+
+- type: loadout
+  id: LoadoutMedicalEyesHudMedical
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+  items:
+    - ClothingEyesHudMedical
+
+- type: loadout
+  id: LoadoutMedicalEyesEyepatchHudMedical
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+  items:
+    - ClothingEyesEyepatchHudMedical
+
+- type: loadout
+  id: LoadoutMedicalEyesHudMedicalPrescription
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+    - !type:CharacterTraitRequirement
+      traits:
+        - Nearsighted
+  items:
+    - ClothingEyesPrescriptionMedHud
+
+- type: loadout
+  id: LoadoutMedicalEyesGlassesChemical
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+         - Chemist
+  items:
+    - ClothingEyesGlassesChemical
+
+- type: loadout
+  id: LoadoutMedicalBedsheetMedical
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - BedsheetMedical
+
+# Chemist PPE gear
+- type: loadout
+  id: LoadoutMedicalUniformJumpsuitChemShirt
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  items:
+    - ClothingUniformJumpsuitChemShirt
+
+- type: loadout
+  id: LoadoutMedicalNeckTieChem
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingNeckTieChem
+
+- type: loadout
+  id: LoadoutMedicalShoesEnclosedChem
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesEnclosedChem
+
+- type: loadout
+  id: LoadoutMedicalOuterApronChemist
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingOuterApronChemist
+
+- type: loadout
+  id: LoadoutMedicalEyesGlassesChemist
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingEyesGlassesChemist
+
+- type: loadout
+  id: LoadoutMedicalHandsGlovesChemist
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingHandsGlovesChemist

@@ -26,8 +26,10 @@ using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Spawners.EntitySystems;
+using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Chat;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Emag.Components;
@@ -42,6 +44,7 @@ using Content.Shared.Item;
 using Content.Shared.Mail;
 using Content.Shared.Maps;
 using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.PDA;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
@@ -712,21 +715,17 @@ namespace Content.Server.Mail
         }
     }
 
-    public struct MailRecipient
+    public struct MailRecipient(
+        string name,
+        string job,
+        string jobIcon,
+        HashSet<ProtoId<AccessLevelPrototype>> accessTags,
+        bool mayReceivePriorityMail)
     {
-        public string Name;
-        public string Job;
-        public string JobIcon;
-        public HashSet<String> AccessTags;
-        public bool MayReceivePriorityMail;
-
-        public MailRecipient(string name, string job, string jobIcon, HashSet<String> accessTags, bool mayReceivePriorityMail)
-        {
-            Name = name;
-            Job = job;
-            JobIcon = jobIcon;
-            AccessTags = accessTags;
-            MayReceivePriorityMail = mayReceivePriorityMail;
-        }
+        public string Name = name;
+        public string Job = job;
+        public string JobIcon = jobIcon;
+        public HashSet<ProtoId<AccessLevelPrototype>> AccessTags = accessTags;
+        public bool MayReceivePriorityMail = mayReceivePriorityMail;
     }
 }

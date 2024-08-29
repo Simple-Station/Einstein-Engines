@@ -85,3 +85,25 @@
   description: Two huds joined by arms
   icon: { sprite: Clothing/Eyes/Hud/medsec.rsi, state: icon }
   objectType: Item
+
+- type: construction
+  name: ducky slippers
+  id: ClothingShoeSlippersDuck
+  graph: ClothingShoeSlippersDuck
+  startNode: start
+  targetNode: shoes
+  category: construction-category-clothing
+  description: Comfy, yet haunted by the ghosts of ducks you fed bread to as a child.
+  icon: { sprite: Clothing/Shoes/Misc/duck-slippers.rsi, state: icon }
+  objectType: Item
+
+- type: construction
+  name: cloth wraps
+  id: ClothingClothWrap
+  graph: ClothingClothWrap
+  startNode: start
+  targetNode: shoes
+  category: construction-category-clothing
+  description: A roll of treated canvas used for wrapping claws or paws.
+  icon: { sprite: Clothing/Shoes/Misc/clothWrap.rsi, state: icon }
+  objectType: Item

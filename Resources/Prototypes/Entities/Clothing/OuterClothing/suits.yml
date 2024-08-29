@@ -8,6 +8,9 @@
     sprite: Clothing/OuterClothing/Suits/bombsuit.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/bombsuit.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
   - type: Armor
     modifiers:
       coefficients:
@@ -22,9 +25,11 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - FullBodyOuter
+    - HidesHarpyWings
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterSuitBomb
   id: ClothingOuterSuitJanitorBomb
   name: janitorial bomb suit
   description: A heavy helmet designed to withstand explosions formed from reactions between chemicals.
@@ -44,6 +49,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -70,6 +76,10 @@
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: GroupExamine
+  - type: Tag
+    tags:
+      - WhitelistChameleon
+      - HidesHarpyWings
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -97,6 +107,11 @@
       sprintModifier: 0.8
     - type: HeldSpeedModifier
     - type: GroupExamine
+    - type: Tag
+      tags:
+        - FullBodyOuter
+        - WhitelistChameleon
+        - HidesHarpyWings
 
 - type: entity
   parent: [ClothingOuterBaseLarge, GeigerCounterClothing]
@@ -120,7 +135,12 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
-      
+  - type: Tag
+    tags:
+      - FullBodyOuter
+      - WhitelistChameleon
+      - HidesHarpyWings
+
 - type: entity
   parent: ClothingOuterBaseLarge
   id: ClothingOuterSuitSpaceNinja
@@ -171,6 +191,9 @@
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBase
@@ -196,6 +219,9 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBase

@@ -121,10 +121,13 @@
     molsPerSecondPerUnitMass: 0.0005
   - type: Speech
     speechVerb: LargeMob
-  - type: PotentialPsionic #Nyano - Summary: makes potentially psionic.
-    chance: -2
   - type: Psionic #Nyano - Summary: makes psionic by default.
     removable: false
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
 
 - type: entity
   name: Praetorian
@@ -234,6 +237,13 @@
   - type: Tag
     tags:
     - CannotSuicide
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Xeno
+    understands:
+    - GalacticCommon
+    - Xeno
 
 - type: entity
   name: Ravager

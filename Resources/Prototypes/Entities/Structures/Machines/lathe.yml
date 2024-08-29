@@ -33,9 +33,6 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: WiresPanel
-  - type: Wires
-    boardName: wires-board-name-autolathe
-    layoutId: Autolathe
   - type: ActivatableUI
     key: enum.LatheUiKey.Key
   - type: ActivatableUIRequiresPower
@@ -157,6 +154,7 @@
       - APCElectronics
       - SMESMachineCircuitboard
       - SubstationMachineCircuitboard
+      - WallmountSubstationElectronics
       - CellRechargerCircuitboard
       - BorgChargerCircuitboard
       - WeaponCapacitorRechargerCircuitboard
@@ -171,6 +169,7 @@
        - ShellTranquilizer
        - CartridgeLightRifle
        - CartridgeRifle
+       - CombatKnife
        - MagazineBoxPistol
        - MagazineBoxMagnum
        - MagazineBoxRifle
@@ -261,9 +260,6 @@
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: Machine
     board: ProtolatheMachineCircuitboard
-  - type: Wires
-    boardName: wires-board-name-protolathe
-    layoutId: Protolathe
   - type: MaterialStorage
     whitelist:
       tags:
@@ -341,6 +337,24 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
+      - CanilunztTranslator
+      - BubblishTranslator
+      - NekomimeticTranslator
+      - DraconicTranslator
+      - SolCommonTranslator
+      - RootSpeakTranslator
+      - XenoTranslator
+      - BasicGalaticCommonTranslatorImplanter
+      - AdvancedGalaticCommonTranslatorImplanter
+      - BubblishTranslatorImplanter
+      - NekomimeticTranslatorImplanter
+      - DraconicTranslatorImplanter
+      - CanilunztTranslatorImplanter
+      - SolCommonTranslatorImplanter
+      - RootSpeakTranslatorImplanter
+      - AnimalTranslator
+      - MofficTranslatorImplanter
+      - MofficTranslator
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ExplosivePayload
@@ -481,6 +495,7 @@
       - ArtifactCrusherMachineCircuitboard
       - TelecomServerCircuitboard
       - MassMediaCircuitboard
+      - ReagentGrinderIndustrialMachineCircuitboard
     # Begin Nyano additions
       - ReverseEngineeringMachineCircuitboard
       - CrewMonitoringComputerCircuitboard
@@ -500,6 +515,7 @@
         - Sheet
         - RawMaterial
         - Ingot
+  - type: RequireProjectileTarget
 
 - type: entity
   id: ExosuitFabricator
@@ -578,6 +594,8 @@
     - BorgModuleAdvancedTool
     - BorgModuleGPS
     - BorgModuleRCD
+    - BorgModuleJetpack
+    - BorgModulePka
     - BorgModuleArtifact
     - BorgModuleAnomaly
     - BorgModuleGardening
@@ -691,6 +709,7 @@
     runningState: icon
     staticRecipes:
       - ClothingEyesHudSecurity
+      - CombatKnife
       - Flash
       - Handcuffs
       - Zipties
@@ -723,6 +742,7 @@
       - ShellShotgunPractice
       - WeaponLaserCarbinePractice
       - WeaponDisablerPractice
+      - ShockCollar
       # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
       - MagazineBoxSpecial
       - MagazineBoxSpecialPractice
@@ -1255,3 +1275,141 @@
     staticRecipes:
     - MaterialSheetMeat
     - SheetPaper
+
+- type: entity
+  parent: BaseLathe
+  id: PrizeCounter
+  name: prize counter
+  description: Claim your prize and win some toys and cute plushies!
+  components:
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 3
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/vending_machine_hum.ogg
+  - type: LitOnPowered
+  - type: ApcPowerReceiver
+    powerLoad: 200
+    priority: Low
+  # - type: Advertise
+  #   pack: CuddlyCritterAds # TODO Change this
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#4b93ad"
+  - type: Transform
+    noRot: false
+  - type: Sprite
+    sprite: Structures/Machines/prizecounter.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes:
+      - PrizeBall
+      - PlushieMothRandom
+      - PlushieMothMusician
+      - PlushieMothBartender
+      - PlushieBee
+      - PlushieHampter
+      - PlushieRouny
+      - PlushieLamp
+      - PlushieArachind
+      - PlushieLizard
+      - PlushieSpaceLizard
+      - PlushieSharkBlue
+      - PlushieSharkPink
+      - PlushieSharkGrey
+      - PlushieCarp
+      - PlushieMagicarp
+      - PlushieHolocarp
+      - PlushieSlime
+      - PlushieSnake
+      - ToyMouse
+      - ToyRubberDuck
+      - PlushieVox
+      - PlushieAtmosian
+      - PlushiePenguin
+      - PlushieHuman
+      - PlushieArachne
+      - PlushieGnome
+      - PlushieLoveable
+      - PlushieDeer
+      - PlushieIpc
+      - PlushieGrey
+      - PlushieRedFox
+      - PlushiePurpleFox
+      - PlushiePinkFox
+      - PlushieOrangeFox
+      - PlushieMarbleFox
+      - PlushieCrimsonFox
+      - PlushieCoffeeFox
+      - PlushieBlueFox
+      - PlushieBlackFox
+      - PlushieVulp
+      - PlushieCorgi
+      - PlushieGirlyCorgi
+      - PlushieRobotCorgi
+      - PlushieCatBlack
+      - PlushieCatGrey
+      - PlushieCatOrange
+      - PlushieCatSiames
+      - PlushieCatTabby
+      - PlushieCatTuxedo
+      - PlushieCatWhite
+      - ToyAi
+      - ToyIan
+      - BalloonNT
+      - BalloonCorgi
+      - CrayonBox
+      - PetRockCarrier
+      - PlushieXeno
+      - FoamCrossbow
+      - RevolverCapGun
+      - PonderingOrb
+      - ToyAmongPequeno
+      - FoamCutlass
+      - WhoopieCushion
+      - ToyHammer
+      - PlasticBanana
+      - WeaponWaterPistol
+      - WeaponWaterBlaster
+      - NewtonCradle
+      - SnapPopBox
+      - MrDips
+      - MrChips
+      - CrazyGlue
+      - PlushieRatvar
+      - PlushieNar
+  - type: EmagLatheRecipes
+    emagStaticRecipes:
+      - PlushieGhost
+      - PlushieRGBee
+      - PlushieRainbowCarp
+      - PlushieJester
+      - PlushieSlips
+      - PlushieTrystan
+      - PlushieAbductor
+      - PlushieAbductorAgent
+      - PlushieNuke
+      - ToyNuke
+      - FoamBlade
+      - BalloonSyn
+      - SingularityToy
+      - TeslaToy
+      - ToySword
+      - ThronglerToy
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - PrizeTicket

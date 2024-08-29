@@ -1,0 +1,12 @@
+- type: messagePack
+  id: HotfoodAds
+  messages:
+  - advertisement-hotfood-1
+  - advertisement-hotfood-2
+  - advertisement-hotfood-3
+  - advertisement-hotfood-4
+
+- type: messagePack
+  id: HotfoodGoodbyes
+  messages:
+  - vending-machine-thanks

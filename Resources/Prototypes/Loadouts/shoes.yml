@@ -1,98 +1,364 @@
 # Colored
 - type: loadout
   id: LoadoutShoesBlack
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
   items:
     - ClothingShoesColorBlack
 
 - type: loadout
   id: LoadoutShoesBlue
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
   items:
     - ClothingShoesColorBlue
 
 - type: loadout
   id: LoadoutShoesBrown
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
   items:
     - ClothingShoesColorBrown
 
 - type: loadout
   id: LoadoutShoesGreen
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
   items:
     - ClothingShoesColorGreen
 
 - type: loadout
   id: LoadoutShoesOrange
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
   items:
     - ClothingShoesColorOrange
 
 - type: loadout
   id: LoadoutShoesPurple
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
   items:
     - ClothingShoesColorPurple
 
 - type: loadout
   id: LoadoutShoesRed
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
   items:
     - ClothingShoesColorRed
 
 - type: loadout
   id: LoadoutShoesWhite
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
   items:
     - ClothingShoesColorWhite
 
 - type: loadout
   id: LoadoutShoesYellow
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
   items:
     - ClothingShoesColorYellow
 
+- type: loadout
+  id: LoadoutShoesGeta
+  category: Shoes
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesGeta
+
+- type: loadout
+  id: LoadoutShoesTourist
+  category: Shoes
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesTourist
+
+# Boots
+- type: loadout
+  id: LoadoutShoesBootsWork
+  category: Shoes
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesBootsWork
+
+- type: loadout
+  id: LoadoutShoesBootsLaceup
+  category: Shoes
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesBootsLaceup
+
+- type: loadout
+  id: LoadoutShoesBootsWinter
+  category: Shoes
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesBootsWinter
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyBrown
+  category: Shoes
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesBootsCowboyBrown
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyBlack
+  category: Shoes
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesBootsCowboyBlack
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyWhite
+  category: Shoes
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesBootsCowboyWhite
+
+- type: loadout
+  id: LoadoutShoesBootsCowboyFancy
+  category: Shoes
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesBootsCowboyFancy
+
+- type: loadout
+  id: LoadoutShoesBootsFishing
+  category: Shoes
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesBootsFishing
 
 # Miscellaneous
 - type: loadout
   id: LoadoutShoesSlippersDuck
-  category: Accessories
-  cost: 1
+  category: Shoes
+  cost: 2
   exclusive: true
   items:
     - ClothingShoeSlippersDuck
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
 
 - type: loadout
   id: LoadoutShoesLeather
-  category: Accessories
+  category: Shoes
   cost: 1
   exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
   items:
     - ClothingShoesLeather
 
 - type: loadout
   id: LoadoutShoesMiscWhite
-  category: Accessories
+  category: Shoes
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesMiscWhite
+
+- type: loadout
+  id: LoadoutShoesHighheelBoots
+  category: Shoes
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingShoesHighheelBoots
+
+# Socks
+- type: loadout
+  id: LoadoutShoesUnderSocksCoder
+  category: Shoes
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingUnderSocksCoder
+
+- type: loadout
+  id: LoadoutShoesUnderSocksBee
+  category: Shoes
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+  items:
+    - ClothingUnderSocksBee
+
+- type: loadout
+  id: LoadoutShoesClothWrap
+  category: Shoes
   cost: 1
   exclusive: true
   items:
-    - ClothingShoesMiscWhite
+    - ClothingClothWrap

@@ -22,6 +22,14 @@ guide-entry-cargo-bounties = Cargo Bounties
 guide-entry-salvage = Salvage
 guide-entry-survival = Survival
 guide-entry-chemicals = Chemicals
+guide-entry-elements = Elements
+guide-entry-narcotics = Narcotics
+guide-entry-pyrotechnics = Pyrotechnic
+guide-entry-toxins = Toxins
+guide-entry-foods = Foods
+guide-entry-biological = Biological
+guide-entry-others = Others
+guide-entry-botanical = Botanicals
 guide-entry-ss14 = Space Station 14
 guide-entry-janitorial = Janitorial
 guide-entry-bartender = Bartender
@@ -62,3 +70,7 @@ guide-entry-space-ninja = Space Ninja
 
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary
+
+guide-entry-altars-golemancy = Altars and Golemancy
+guide-entry-psionics = Psionics
+guide-entry-reverse-engineering = Reverse Engineering

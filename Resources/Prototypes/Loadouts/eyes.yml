@@ -1,13 +1,60 @@
 - type: loadout
   id: LoadoutEyesEyepatch
-  category: Accessories
+  category: Eyes
   cost: 1
   items:
     - ClothingEyesEyepatch
 
 - type: loadout
+  id: LoadoutEyesGlasses
+  category: Eyes
+  cost: 1
+  items:
+    - ClothingEyesGlasses
+
+- type: loadout
+  id: LoadoutEyesGlassesJamjar
+  category: Eyes
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingEyesGlassesJamjar
+
+- type: loadout
+  id: LoadoutEyesGlassesJensen
+  category: Eyes
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingEyesGlassesJensen
+
+- type: loadout
   id: LoadoutEyesBlindfold
-  category: Accessories
+  category: Eyes
   cost: 2
   items:
     - ClothingEyesBlindfold
+
+- type: loadout
+  id: LoadoutItemCheapSunglasses
+  category: Eyes
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingEyesGlassesCheapSunglasses
+
+- type: loadout
+  id: LoadoutItemSunglasses
+  category: Eyes
+  cost: 5
+  exclusive: true
+  items:
+    - ClothingEyesGlassesSunglasses
+
+- type: loadout
+  id: LoadoutItemBlindfoldFake
+  category: Eyes
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingEyesBlindfoldFake

@@ -20,7 +20,7 @@
     maxAngle: 16
     fireRate: 8
     angleIncrease: 3
-    angleDecay: 16
+    angleDecay: 16  
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -72,6 +72,7 @@
     fireRate: 10
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+    fireOnDropChance: 0.3
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -94,8 +95,14 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
   - type: Gun
+    shotsPerBurst: 5
+    availableModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
+    fireOnDropChance: 0.3
   - type: ChamberMagazineAmmoProvider
     autoEject: true
   - type: MagazineVisuals
@@ -126,6 +133,7 @@
         path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
       availableModes:
         - FullAuto
+      fireOnDropChance: 0.2
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -173,6 +181,7 @@
       path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
     availableModes:
     - FullAuto
+    fireOnDropChance: 0.1
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -221,10 +230,18 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 5
+    fireRate: 5.5
+    minAngle: 1
+    maxAngle: 6
+    angleIncrease: 1.5
+    angleDecay: 6  
     selectedMode: FullAuto
+    shotsPerBurst: 5
     availableModes:
+    - SemiAuto
+    - Burst
     - FullAuto
+    fireOnDropChance: 0.1
   - type: ItemSlots
     slots:
       gun_magazine:

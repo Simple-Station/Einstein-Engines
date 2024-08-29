@@ -110,7 +110,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
                 _atmosphereSystem.AddHeat(heatExchangeGasMixture, dQPipe);
                 thermoMachine.LastEnergyDelta = dQPipe;
 
-                if (dQLeak != 0f && _atmosphereSystem.GetContainingMixture(uid, excite: true) is { } containingMixture)
+                if (dQLeak != 0f && _atmosphereSystem.GetContainingMixture(uid, args.Grid, args.Map, excite: true) is { } containingMixture)
                     _atmosphereSystem.AddHeat(containingMixture, dQLeak);
             }
 
@@ -130,8 +130,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
             }
             else
             {
-                if (!TryComp<NodeContainerComponent>(uid, out var nodeContainer)
-                    || !_nodeContainer.TryGetNode(nodeContainer, thermoMachine.InletName, out PipeNode? inlet))
+                if (!_nodeContainer.TryGetNode(uid, thermoMachine.InletName, out PipeNode? inlet))
                     return;
                 heatExchangeGasMixture = inlet.Air;
             }
@@ -144,7 +143,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
 
         private void OnToggleMessage(EntityUid uid, GasThermoMachineComponent thermoMachine, GasThermomachineToggleMessage args)
         {
-            var powerState = _power.TogglePower(uid);
+            var powerState = _power.TryTogglePower(uid);
             _adminLogger.Add(LogType.AtmosPowerChanged, $"{ToPrettyString(args.Session.AttachedEntity)} turned {(powerState ? "On" : "Off")} {ToPrettyString(uid)}");
             DirtyUI(uid, thermoMachine);
         }

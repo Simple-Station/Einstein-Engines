@@ -597,6 +597,24 @@
 
 #bathroom
 - type: construction
+  name: shower
+  id: Shower
+  graph: Shower
+  startNode: start
+  targetNode: shower
+  category: construction-category-furniture
+  description: A shower, complete with bluespace water.
+  icon:
+    sprite: Structures/Furniture/shower.rsi
+    state: shower
+    objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
   name: toilet
   id: ToiletEmpty
   graph: Toilet
@@ -606,7 +624,7 @@
   description: A human excrement flushing apparatus.
   icon:
     sprite: Structures/Furniture/toilet.rsi
-    state: closed_toilet_seat_up
+    state: disposal
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -731,10 +749,8 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-    
+  canBuildInImpassable: true
+
 - type: construction
   id: CurtainsBlack
   name: black curtains
@@ -748,9 +764,7 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked  
+  canBuildInImpassable: true
 
 - type: construction
   id: CurtainsBlue
@@ -765,10 +779,8 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked  
-    
+  canBuildInImpassable: true
+
 - type: construction
   id: CurtainsCyan
   name: cyan curtains
@@ -782,10 +794,8 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-    
+  canBuildInImpassable: true
+
 - type: construction
   id: CurtainsGreen
   name: green curtains
@@ -799,10 +809,8 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-    
+  canBuildInImpassable: true
+
 - type: construction
   id: CurtainsOrange
   name: orange curtains
@@ -816,10 +824,8 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-    
+  canBuildInImpassable: true
+
 - type: construction
   id: CurtainsPink
   name: pink curtains
@@ -833,10 +839,8 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-    
+  canBuildInImpassable: true
+
 - type: construction
   id: CurtainsPurple
   name: purple curtains
@@ -850,10 +854,8 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-    
+  canBuildInImpassable: true
+
 - type: construction
   id: CurtainsRed
   name: red curtains
@@ -867,9 +869,7 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked    
+  canBuildInImpassable: true
 
 - type: construction
   id: CurtainsWhite
@@ -884,9 +884,7 @@
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
+  canBuildInImpassable: true
 
 - type: construction
   id: Bookshelf
@@ -901,6 +899,24 @@
     state: base
   objectType: Structure
   placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: NoticeBoard
+  name: notice board
+  description: Wooden notice board, can store paper inside itself.
+  graph: NoticeBoard
+  startNode: start
+  targetNode: noticeBoard
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Wallmounts/noticeboard.rsi
+    state: noticeboard
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked

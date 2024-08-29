@@ -1,6 +1,16 @@
-# Alphabetically ordered
+# Alphabetically ordered, except for Uncategorized since it is always first
+
 - type: loadoutCategory
-  id: Accessories
+  id: Uncategorized
+
+- type: loadoutCategory
+  id: Eyes
+
+- type: loadoutCategory
+  id: Hands
+
+- type: loadoutCategory
+  id: Head
 
 - type: loadoutCategory
   id: Items
@@ -9,10 +19,19 @@
   id: Jobs
 
 - type: loadoutCategory
+  id: Mask
+
+- type: loadoutCategory
+  id: Neck
+
+- type: loadoutCategory
   id: Outer
 
 - type: loadoutCategory
-  id: Uncategorized
+  id: Shoes
+
+- type: loadoutCategory
+  id: Species
 
 - type: loadoutCategory
   id: Uniform

@@ -1,0 +1,11 @@
+- type: messagePack
+  id: WeebVendAds
+  messages:
+  - advertisement-weebvend-1
+  - advertisement-weebvend-2
+  - advertisement-weebvend-3
+
+- type: messagePack
+  id: WeebVendGoodbyes
+  messages:
+  - vending-machine-thanks

@@ -9,17 +9,24 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    range: 1.6
     damage:
       types:
-        Blunt: 10
+        Blunt: 7.5
         Structural: 5
+    bluntStaminaDamageFactor: 2.0
+    heavyRateModifier: 0.5
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 15
+    maxTargets: 2
+    angle: 120
     soundHit:
       collection: MetalThud
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 5
+        Blunt: 4
         Structural: 10
   - type: Item
     size: Normal
@@ -39,6 +46,21 @@
   - type: Tag
     tags:
     - BaseballBat
+
+- type: entity
+  name: incomplete baseball bat
+  parent: BaseItem
+  id: IncompleteBaseBallBat
+  description: A few planks of wood stuck together.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/incomplete_bat.rsi
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Construction
+    graph: WoodenBat
+    node: incompleteBat
 
 - type: entity
   name: knockback stick

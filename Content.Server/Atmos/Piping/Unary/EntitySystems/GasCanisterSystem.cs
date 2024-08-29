@@ -13,9 +13,9 @@ using Content.Shared.Atmos;
 using Content.Shared.Atmos.Piping.Binary.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Lock;
+using Content.Server.Silicons.Borgs.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -29,8 +29,6 @@ public sealed class GasCanisterSystem : EntitySystem
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
@@ -63,7 +61,7 @@ public sealed class GasCanisterSystem : EntitySystem
         if (!Resolve(uid, ref canister, ref transform))
             return;
 
-        var environment = _atmos.GetContainingMixture(uid, false, true);
+        var environment = _atmos.GetContainingMixture((uid, transform), false, true);
 
         if (environment is not null)
             _atmos.Merge(environment, canister.Air);
@@ -94,6 +92,10 @@ public sealed class GasCanisterSystem : EntitySystem
         if (canister.GasTankSlot.Item != null)
         {
             var tank = canister.GasTankSlot.Item.Value;
+            if (TryComp<BorgJetpackComponent>(tank, out var jetpack) && jetpack.JetpackUid.HasValue)
+            {
+                tank = jetpack.JetpackUid.Value;
+            }
             var tankComponent = Comp<GasTankComponent>(tank);
             tankLabel = Name(tank);
             tankPressure = tankComponent.Air.Pressure;
@@ -136,7 +138,7 @@ public sealed class GasCanisterSystem : EntitySystem
 
         for (int i = 0; i < containedGasArray.Length; i++)
         {
-            containedGasDict.Add((Gas)i, canister.Air.Moles[i]);
+            containedGasDict.Add((Gas)i, canister.Air[i]);
         }
 
         _adminLogger.Add(LogType.CanisterValve, impact, $"{ToPrettyString(args.Session.AttachedEntity.GetValueOrDefault()):player} set the valve on {ToPrettyString(uid):canister} to {args.Valve:valveState} while it contained [{string.Join(", ", containedGasDict)}]");
@@ -166,12 +168,17 @@ public sealed class GasCanisterSystem : EntitySystem
         {
             if (canister.GasTankSlot.Item != null)
             {
-                var gasTank = Comp<GasTankComponent>(canister.GasTankSlot.Item.Value);
+                var tank = canister.GasTankSlot.Item;
+                if (TryComp<BorgJetpackComponent>(tank, out var jetpack) && jetpack.JetpackUid.HasValue)
+                {
+                    tank = jetpack.JetpackUid.Value;
+                }
+                var gasTank = Comp<GasTankComponent>(tank.Value);
                 _atmos.ReleaseGasTo(canister.Air, gasTank.Air, canister.ReleasePressure);
             }
             else
             {
-                var environment = _atmos.GetContainingMixture(uid, false, true);
+                var environment = _atmos.GetContainingMixture(uid, args.Grid, args.Map, false, true);
                 _atmos.ReleaseGasTo(canister.Air, environment, canister.ReleasePressure);
             }
         }
@@ -236,7 +243,19 @@ public sealed class GasCanisterSystem : EntitySystem
         if (args.Slot.ID != component.ContainerName || args.User == null)
             return;
 
-        if (!TryComp<GasTankComponent>(args.Item, out var gasTank) || gasTank.IsValveOpen)
+        var tank = args.Item;
+
+        if (TryComp<BorgJetpackComponent>(tank, out var jetpack))
+        {
+            if (!jetpack.JetpackUid.HasValue)
+            {
+                args.Cancelled = true;
+                return;
+            }
+            tank = jetpack.JetpackUid.Value;
+        }
+
+        if (!TryComp<GasTankComponent>(tank, out var gasTank) || gasTank.IsValveOpen)
         {
             args.Cancelled = true;
             return;

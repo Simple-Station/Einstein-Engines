@@ -1,16 +1,59 @@
+# Uniforms
 - type: loadout
-  id: LoadoutSecurityUniformGrey
+  id: LoadoutSecurityUniformJumpsuitBlue
   category: Jobs
-  cost: 2
+  cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
-      jobs:
-        - SecurityOfficer
-        - SecurityCadet
-        - Warden
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingUniformJumpsuitSecBlue
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpsuitGrey
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingUniformJumpsuitSecGrey
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpskirtGrey
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingUniformJumpskirtSecGrey
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpskirtBlue
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingUniformJumpskirtSecBlue
 
 - type: loadout
   id: LoadoutSecurityUniformJumpskirtSenior
@@ -18,19 +61,19 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobWarden
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobDetective
       min: 7200 # 2 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobSecurityOfficer
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 216000 # 60 hours
   items:
@@ -42,48 +85,586 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobWarden
       min: 21600 # 6 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobDetective
       min: 7200 # 2 hours
-    - !type:LoadoutPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement
       tracker: JobSecurityOfficer
       min: 21600 # 6 hours
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 216000 # 60 hours
   items:
     - ClothingUniformJumpsuitSeniorOfficer
 
 - type: loadout
+  id: LoadoutUniformJumpsuitWardenBlue
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpsuitWardenBlue
+
+- type: loadout
+  id: LoadoutUniformJumpsuitWardenGrey
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpsuitWardenGrey
+
+- type: loadout
+  id: LoadoutUniformJumpskirtWardenBlue
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpskirtWardenBlue
+
+- type: loadout
+  id: LoadoutUniformJumpskirtWardenGrey
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpskirtWardenGrey
+
+- type: loadout
+  id: LoadoutUniformJumpskirtHoSBlue
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHoSBlue
+
+- type: loadout
+  id: LoadoutUniformJumpskirtHoSGrey
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHoSGrey
+
+- type: loadout
+  id: LoadoutUniformJumpsuitSecFormal
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingUniformJumpsuitSecFormal
+
+- type: loadout
+  id: LoadoutUniformJumpsuitSecSummer
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingUniformJumpsuitSecSummer
+  
+# Mask
+- type: loadout
   id: LoadoutSecurityMaskGasSwat
   category: Jobs
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Warden
         - HeadOfSecurity
   items:
     - ClothingMaskGasSwat
 
+# Shoes
 - type: loadout
   id: LoadoutSecurityShoesJackboots
   category: Jobs
   cost: 1
   requirements:
-    - !type:LoadoutJobRequirement
-      jobs:
-        - Detective
-        - SecurityOfficer
-        - SecurityCadet
-        - Warden
-        - HeadOfSecurity
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
     - ClothingShoesBootsJack
+
+- type: loadout
+  id: LoadoutClothingShoesBootsCombat
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+        - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingShoesBootsCombat
+
+# Eyes
+- type: loadout
+  id: LoadoutSecurityEyesHudSecurity
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesHudSecurity
+
+- type: loadout
+  id: ClothingEyesGlassesSunglasses
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesGlassesSunglasses
+
+- type: loadout
+  id: LoadoutSecurityEyesEyepatchHudSecurity
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesEyepatchHudSecurity
+
+- type: loadout
+  id: LoadoutSecurityEyesHudSecurityPrescription
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterTraitRequirement
+      traits:
+        - Nearsighted
+  items:
+    - ClothingEyesPrescriptionHudSecurity
+
+- type: loadout
+  id: LoadoutClothingEyesGlassesSecurity
+  category: Jobs
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesGlassesSecurity
+
+#Backpack
+#Will need to add a backpack category later on, that will be part of an starting inventory loadout refactor.
+
+# Head
+- type: loadout
+  id: LoadoutSecurityHeadHatBeret
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHeadHatBeretSecurity
+
+- type: loadout
+  id: LoadoutClothingHeadHelmetBasic
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHeadHelmetBasic
+
+- type: loadout
+  id: LoadoutClothingHeadHatBeretBrigmedic
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHeadHatBeretBrigmedic
+
+- type: loadout
+  id: LoadoutClothingHeadHatBeretCorpsman
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHeadHatBeretCorpsman
+
+- type: loadout
+  id: LoadoutClothingHeadHatBeretWarden
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingHeadHatBeretWarden
+
+- type: loadout
+  id: LoadoutClothingHeadHatBeretHoS
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingHeadHatBeretHoS
+
+- type: loadout
+  id: LoadoutSecurityHeadHelmetInsulated
+  category: Jobs
+  cost: 2
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHeadHelmetInsulated
+
+# Belt
+- type: loadout
+  id: LoadoutSecurityBeltWebbing
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingBeltSecurityWebbingFilled
+
+- type: loadout
+  id: LoadoutClothingBeltCorpsmanWebbing
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingBeltCorpsmanWebbingFilled
+
+- type: loadout
+  id: LoadoutClothingBeltSecurity
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingBeltSecurity
+
+#Gloves
+
+- type: loadout
+  id: LoadoutClothingHandsGlovesNitrile
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHandsGlovesNitrile
+
+- type: loadout
+  id: LoadoutClothingOuterArmorPlateCarrier
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorPlateCarrier
+
+- type: loadout
+  id: LoadoutClothingOuterArmorDuraVest
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorDuraVest
+
+- type: loadout
+  id: LoadoutClothingOuterCoatDetective
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingOuterCoatDetective
+
+- type: loadout
+  id: LoadoutOuterVestDetective
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingOuterVestDetective
+
+- type: loadout
+  id: LoadoutClothingOuterCoatWarden
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingOuterCoatWarden
+
+- type: loadout
+  id: LoadoutClothingOuterCoatHoSTrench
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterCoatHoSTrench
+
+- type: loadout
+  id: LoadoutClothingOuterWinterHoS
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterWinterHoS
+
+# Neck
+- type: loadout
+  id: LoadoutClothingNeckCloakHos
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingNeckCloakHos
+
+- type: loadout
+  id: LoadoutClothingNeckMantleHOS
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingNeckMantleHOS
+
+- type: loadout
+  id: LoadoutBedsheetBrigmedic
+  category: Jobs
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - BedsheetBrigmedic
+    
+  
+# Equipment
+- type: loadout
+  id: LoadoutSecurityCombatKnife
+  category: Jobs
+  cost: 2
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - CombatKnife
+
+- type: loadout
+  id: LoadoutSecurityFlash
+  category: Jobs
+  cost: 1
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - Flash
+
+- type: loadout
+  id: LoadoutSecurityDisabler
+  category: Jobs
+  cost: 2
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - WeaponDisabler
+
+- type: loadout
+  id: LoadoutMagazinePistolRubber
+  category: Jobs
+  cost: 2
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - MagazinePistolRubber
+
+- type: loadout
+  id: LoadoutSpeedLoaderMagnumRubber
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - SpeedLoaderMagnumRubber
+
+# TODO: Make this replace the secoff handgun and make it cheaper
+# # Species
+# - type: loadout
+#   id: LoadoutSecurityEquipmentTruncheon
+#   category: Jobs
+#   cost: 8
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       jobs:
+#         - SecurityOfficer
+#         - Warden
+#         - HeadOfSecurity
+#         - Brigmedic
+#     - !type:CharacterPlaytimeRequirement
+#       tracker: JobSecurityOfficer
+#       min: 36000 # 10 hours
+#     - !type:CharacterSpeciesRequirement
+#       species:
+#         - Oni
+#   items:
+#     - Truncheon

@@ -2,6 +2,7 @@
   id: BaseEnergyBall
   abstract: true
   components:
+  - type: SupermatterImmune
   - type: Clickable
   - type: Physics
     bodyType: KinematicController
@@ -85,7 +86,6 @@
   - type: ChaoticJump
     jumpMinInterval: 8
     jumpMaxInterval: 15
-    offset: 1
   - type: WarpPoint
     follow: true
     location: tesla ball

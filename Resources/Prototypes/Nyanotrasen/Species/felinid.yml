@@ -7,6 +7,12 @@
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy
   skinColoration: HumanToned
+  minHeight: 0.65
+  defaultHeight: 0.8
+  maxHeight: 1.1
+  minWidth: 0.6
+  defaultWidth: 0.8
+  maxWidth: 1.15
 
 - type: markingPoints
   id: MobFelinidMarkingLimits
@@ -29,8 +35,8 @@
       points: 1
       required: false
     Legs:
-      points: 2
+      points: 6
       required: false
     Arms:
-      points: 2
+      points: 6
       required: false

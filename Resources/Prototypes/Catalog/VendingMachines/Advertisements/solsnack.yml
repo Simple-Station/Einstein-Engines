@@ -1,0 +1,11 @@
+- type: messagePack
+  id: SolsnackAds
+  messages:
+  - advertisement-solsnack-1
+  - advertisement-solsnack-2
+  - advertisement-solsnack-3
+
+- type: messagePack
+  id: SolsnackGoodbyes
+  messages:
+  - vending-machine-thanks

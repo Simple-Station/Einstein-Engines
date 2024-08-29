@@ -4080,3 +4080,1522 @@ Entries:
         you join when someone leaves.
   id: 6110
   time: '2024-05-13T04:58:39.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Add
+      message: Added a number of new corporate coats to the Clothesmate.
+  id: 6111
+  time: '2024-05-22T03:35:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Syndicate Listening Posts can now appear any time in a round, and can
+        appear on low-pop servers.
+  id: 6112
+  time: '2024-05-28T23:44:39.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Better wall sprites.
+    - type: Tweak
+      message: Better window sprites.
+  id: 6113
+  time: '2024-05-28T23:59:19.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Radio Resprites, Talkwalkies, Beacon, Headset...
+    - type: Tweak
+      message: >-
+        Radio and uplink radio looks the same, make sure to check what freq the
+        radio is on!
+  id: 6114
+  time: '2024-05-29T00:00:50.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: New Tools Sprites!
+  id: 6115
+  time: '2024-05-29T01:06:42.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Resprited gas canisters
+    - type: Tweak
+      message: Resprited gas tanks
+  id: 6116
+  time: '2024-05-31T00:13:45.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Add
+      message: Added five new coats
+    - type: Add
+      message: Added loadouts
+    - type: Fix
+      message: Fixed the coat handhole
+  id: 6117
+  time: '2024-06-02T00:36:59.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Floors Looks Updated/Resprited.
+  id: 6118
+  time: '2024-06-03T19:23:51.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: All species can now bring their own cultures and languages
+  id: 6119
+  time: '2024-06-10T20:48:48.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Rust Walls Sprites.
+    - type: Tweak
+      message: Armor, Bulletproof, Riot Suit Resprites.
+    - type: Tweak
+      message: New Banners Sprites.
+    - type: Tweak
+      message: Stunbaton, Fire Extinguisher New Sprites.
+    - type: Tweak
+      message: Rack/WallScreen resprites.
+    - type: Tweak
+      message: Stock Parts new sprites!
+    - type: Tweak
+      message: Radiation Collector has now a new sprite!
+  id: 6120
+  time: '2024-06-11T00:34:02.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        UI layout now defaults to separated, the old one is still available in
+        settings
+  id: 6121
+  time: '2024-06-16T22:38:10.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Space has suddenly become less dense (objects don't slow down in space)
+    - type: Remove
+      message: Moths are unable to move in space
+    - type: Tweak
+      message: Moths have way better control in zero gravity environments
+  id: 6122
+  time: '2024-06-17T07:58:34.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added station goals that get sent to the Command fax machine at the
+        start of every shift
+  id: 6123
+  time: '2024-06-17T21:42:13.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Peacock Tails have been added for Harpies
+  id: 6124
+  time: '2024-06-20T22:07:29.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        NanoTrasen has disabled the unneeded safeties on your guns- Make sure
+        you're careful with them!
+    - type: Tweak
+      message: >-
+        All Firearms now have a reliability stat, some are more reliable than
+        others. The more reliable a weapon is, the less likely it is to
+        accidentally discharge when yeeted.
+  id: 6125
+  time: '2024-06-20T22:17:03.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Animals will no longer be a silent, soulless shell
+  id: 6126
+  time: '2024-06-20T22:24:30.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Added trait points
+    - type: Add
+      message: Added categories for traits
+  id: 6127
+  time: '2024-06-20T23:39:31.0000000+00:00'
+- author: LovelyLophi
+  changes:
+    - type: Remove
+      message: Removed Wizden patrons
+  id: 6128
+  time: '2024-06-25T19:54:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpies remembered that just like moths; they also have wings, and can
+        zoom whenever the gravity turns off.
+  id: 6129
+  time: '2024-06-25T20:19:11.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Mid-round events will occur much less often
+  id: 6130
+  time: '2024-06-25T20:47:09.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Height and Width sliders have been added to character creation. '
+  id: 6131
+  time: '2024-06-27T17:46:51.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Most items now take time to equip and unequip, especially space suits.
+  id: 6132
+  time: '2024-06-30T18:22:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Spent bullet casings now fly away from a shooter in a cinematic manner,
+        rather than fall at their feet. 
+  id: 6133
+  time: '2024-07-01T22:37:29.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Fix
+      message: Fixed loadouts becoming uneditable after spending all your points
+  id: 6134
+  time: '2024-07-02T07:18:27.0000000+00:00'
+- author: deltanedas
+  changes:
+    - type: Add
+      message: >-
+        Security can find the new SecWatch™ app in their PDAs to see current
+        suspects and wanted criminals.
+  id: 6135
+  time: '2024-07-02T08:01:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Equipping clothing using the Z key works correctly again.
+  id: 6136
+  time: '2024-07-03T19:48:29.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Space stations now have a tiny bit of velocity dampening to prevent them
+        from being flunged into the void.
+  id: 6137
+  time: '2024-07-05T16:53:25.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Carrying is less likely to behave erratically or suddenly interrupt now.
+    - type: Add
+      message: >-
+        You can now see when someone is trying to pick you up, and also you can
+        interrupt your attempt at escaping from their hands or inventory.
+    - type: Add
+      message: You can now properly take Felinids out of bags and place them inside.
+    - type: Add
+      message: Scientists have discovered that Felinids can sleep in bags.
+  id: 6138
+  time: '2024-07-05T17:28:44.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: You can now sign paper by alt-clicking it while holding a pen.
+  id: 6139
+  time: '2024-07-05T17:33:39.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: Added the Thievery trait, which provides various soft stripping bonuses
+    - type: Tweak
+      message: >-
+        Felinids no longer have passive thieving gloves, they instead get the
+        Thievery trait by default
+  id: 6140
+  time: '2024-07-05T17:49:25.0000000+00:00'
+- author: Froffy025
+  changes:
+    - type: Add
+      message: You can now carry most of the station pets.
+  id: 6141
+  time: '2024-07-05T17:49:57.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Job requirements are now displayed correctly.
+  id: 6142
+  time: '2024-07-05T19:10:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Events should now occur as frequently as before. Note: server owner can
+        configure the frequency on their server manually.
+  id: 6143
+  time: '2024-07-05T21:03:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The catalog of items available via Loadouts has been greatly expanded.
+        Have fun customizing your characters!
+  id: 6144
+  time: '2024-07-05T22:53:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Translator implants are now proper implants that can be removed.
+    - type: Tweak
+      message: Animalistic languages should now look less messy.
+    - type: Fix
+      message: Hopefully fixed language menu desync and other issues.
+  id: 6145
+  time: '2024-07-05T23:49:47.0000000+00:00'
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added system
+  id: 6146
+  time: '2024-07-06T00:19:35.0000000+00:00'
+- author: Velcroboy
+  changes:
+    - type: Tweak
+      message: Changed asteroids to have more ore...and some danger
+  id: 6147
+  time: '2024-07-08T07:03:39.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Languages are now marked in the chat!
+  id: 6148
+  time: '2024-07-09T19:01:38.0000000+00:00'
+- author: Spatison
+  changes:
+    - type: Fix
+      message: Food and handcuffs can now be given
+  id: 6149
+  time: '2024-07-09T19:32:11.0000000+00:00'
+- author: FoxxoTrrystan
+  changes:
+    - type: Tweak
+      message: >-
+        Power Resprites! (New SMES, APC, Airlarm, Camera, Substation, LightTube,
+        Intercom, FireAlarm and Substation)
+  id: 6150
+  time: '2024-07-09T19:37:03.0000000+00:00'
+- author: CodedCrow
+  changes:
+    - type: Add
+      message: Added an Arachne plushie
+  id: 6151
+  time: '2024-07-11T17:23:58.0000000+00:00'
+- author: osjarw
+  changes:
+    - type: Add
+      message: Wallmount substation electronics can now be created at an autolathe.
+  id: 6152
+  time: '2024-07-11T17:24:30.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: 'Players can now vote on two more gamemodes: Traitors and Hellshift.'
+  id: 6153
+  time: '2024-07-11T17:26:41.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added two new foreigner traits that make your character unable to speak
+        Galactic Common and give you a translator instead.
+    - type: Tweak
+      message: >-
+        Translators can now be equipped in the neck slot and display useful info
+        when examined.
+  id: 6154
+  time: '2024-07-12T01:19:09.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Foreigner traits now work correctly.
+  id: 6155
+  time: '2024-07-12T17:46:37.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: >-
+        Added the Heavyweight Drunk trait, which doubles your alcoholism
+        potential.
+  id: 6156
+  time: '2024-07-12T19:02:15.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Added 4 new announcers that will randomly be selected every shift
+  id: 6157
+  time: '2024-07-12T20:13:50.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Mass Contests have returned in a new reworked form. '
+    - type: Add
+      message: >-
+        Weapon Recoil is now resisted by character mass. More massive characters
+        take less recoil, less massive characters take more recoil.
+    - type: Add
+      message: >-
+        Disarm and Shove actions are now modified by relative character mass. It
+        is easier to shove people around if you're bigger than them.
+    - type: Add
+      message: >-
+        Cablecuffs and Zipties are now easier to escape out of if you're
+        smaller. 
+  id: 6158
+  time: '2024-07-13T08:05:52.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: We got new ID Cards the old ones were soo tiny that they were lost.
+  id: 6159
+  time: '2024-07-14T23:12:33.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Shock collars can now be manufactured in the security techfab. They also
+        deal less damage and ignore insulated gloves.
+  id: 6160
+  time: '2024-07-14T23:14:03.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Fix
+      message: Fixed thieving trait not granting pocket vision
+  id: 6161
+  time: '2024-07-16T17:41:42.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Many new sound effects have been implemented for items.
+  id: 6162
+  time: '2024-07-16T17:52:03.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Added a new icon to the offer item interaction.
+    - type: Fix
+      message: Fixed typos in the offer item prompts.
+  id: 6163
+  time: '2024-07-16T18:18:18.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: You can now configure your zoom more precisely.
+  id: 6164
+  time: '2024-07-16T18:18:57.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added Harpy Wings as a delicious dish.
+  id: 6165
+  time: '2024-07-16T18:21:27.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Added an alert on the UI for when the user is walking or running.
+  id: 6166
+  time: '2024-07-16T21:39:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now lie down and stand up at will! The default keybind for it is
+        "R", but it can be changed in settings.
+  id: 6167
+  time: '2024-07-18T02:33:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Harpies can no longer buy Loadout items that are impossible for them to
+        wear due to having digitigrade legs. 
+  id: 6168
+  time: '2024-07-18T02:34:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Foreigner translator should now consume power, as intended.
+  id: 6169
+  time: '2024-07-18T08:22:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Atmospheric "Throws" are now calculated using object mass, and behave
+        accordingly. Tiny objects will shoot out of rooms quite fast!
+  id: 6170
+  time: '2024-07-18T08:24:58.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Rampant Brand Intelligence has been spotted infesting NT Stations, be on
+        the lookout for highly aggressive vending machines.
+  id: 6171
+  time: '2024-07-18T19:30:00.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Added the ability to speak with Sign Language.
+  id: 6172
+  time: '2024-07-19T17:20:30.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpy Update 3, New markings for Harpies, all new species-specific
+        hardsuit & softsuit variations that feature wing sleeves.
+  id: 6173
+  time: '2024-07-20T04:40:01.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Merged ~250-500 WizDen PRs
+  id: 6174
+  time: '2024-07-20T05:24:50.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Voice will no longer travel through space. If you are in space, you must
+        either have a radio to communicate with others, or get within hugging
+        distance of someone to talk.
+  id: 6175
+  time: '2024-07-21T06:47:41.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Camera Shake is now affected by character mass. Small characters
+        experience more camera shake. Large characters experience less. 
+  id: 6176
+  time: '2024-07-21T06:50:25.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Head Of Personnel can now hire people onto basic roles for each
+        department by vending PDAs. 
+  id: 6177
+  time: '2024-07-22T19:12:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Pipes and Wires are now correctly hidden by grass and asphalt once more.
+        Use a shovel to expose pipes hidden by grass.
+  id: 6178
+  time: '2024-07-22T19:34:07.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Job playtime requirements for loadouts and traits show correctly
+  id: 6179
+  time: '2024-07-23T14:18:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        False alarm event will no longer report events that should not be
+        reported.
+  id: 6180
+  time: '2024-07-24T03:18:56.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed the character editor dummy always acting like a human
+  id: 6181
+  time: '2024-07-24T17:13:05.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Most station events were rebalanced to better suit low-pop rounds.
+    - type: Add
+      message: >-
+        Weakened versions of vent critter events can now occur on low-pop
+        rounds.
+    - type: Tweak
+      message: >-
+        After a lot of complaints, the mass mindswap event is no longer
+        permanent.
+  id: 6182
+  time: '2024-07-24T23:27:34.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed some NEIL announcements not playing audio
+  id: 6183
+  time: '2024-07-26T19:29:37.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where sound was not traveling over a Shuttle-Docking
+        connection. Attached grids now permit sound to travel through.
+  id: 6184
+  time: '2024-07-26T20:09:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Long Survival has been added as a new Game mode.
+  id: 6185
+  time: '2024-07-27T06:00:24.0000000+00:00'
+- author: CilliePaint
+  changes:
+    - type: Tweak
+      message: New Box Textures!
+  id: 6186
+  time: '2024-07-29T05:50:43.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Fixed toolshed command permissions. This will mostly affect admins who
+        don't have full host access.
+  id: 6187
+  time: '2024-07-29T05:54:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Radiation damage no longer interrupts DoAfters.
+  id: 6188
+  time: '2024-07-29T06:00:26.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Added cybernetic limb markings from Hesphiastos Industries and Bishop
+        Cybernetics.
+  id: 6189
+  time: '2024-07-30T21:33:23.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Makeup is finally here: lips, blush, and nail polish! Sashay over to
+        Character Setup in the Markings section, then look at Head/Overlay to
+        give makeovers to your characters!
+  id: 6190
+  time: '2024-07-30T21:34:37.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Tools, Drink Containers, Lockers, and all base items having
+        inconsistent sound settings. 
+  id: 6191
+  time: '2024-07-31T22:47:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: 'Lasers no longer function as jetpacks in space. '
+  id: 6192
+  time: '2024-07-31T22:57:33.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed the Uncategorized category not being hidden when empty
+  id: 6193
+  time: '2024-07-31T23:32:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Whisper can no longer be heard clearly outside the intended range.
+    - type: Fix
+      message: >-
+        Translators can no longer be used without knowing the languages they
+        require.
+    - type: Fix
+      message: >-
+        Computers (primarily RnD console) now speak GC by default instead of
+        Universal.
+    - type: Tweak
+      message: Readjusted colors of all languages to make them easier to read.
+  id: 6194
+  time: '2024-07-31T23:57:25.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Added dozens of new clothes and items to Loadouts, including the new
+        Mask category. Have fun dressing up your characters!
+    - type: Tweak
+      message: Restrict Command Loadouts from selecting uniforms outside of their job.
+    - type: Tweak
+      message: >-
+        Limit the selection in Security Loadouts of non-sec uniforms, hats, and
+        masks to those that maintain the Security aesthetic.
+    - type: Tweak
+      message: >-
+        Made all types of colored jumpsuits in Loadouts available to Civilian
+        roles (excluding HoP), and suitable jumpsuits to Epistemics,
+        Engineering, and Medical.
+    - type: Fix
+      message: Prevent dionas and harpies from selecting shoes in Loadouts.
+  id: 6195
+  time: '2024-08-01T02:37:45.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        The station's crew hivemind has decided to slow down their movement and
+        enjoy The Park instead of sprinting everywhere
+  id: 6196
+  time: '2024-08-01T08:30:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Survival Boxes have been added to loadouts. '
+  id: 6197
+  time: '2024-08-01T21:12:49.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Boxes(Cardboard, Medkits, Lunchboxes) now contain slightly more
+        inventory slots than they occupy.
+  id: 6198
+  time: '2024-08-01T21:55:09.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Ultraviolet Vision, Deuteranopia, and Trichromat Modification are all
+        now 0 point Neutral traits. They still occupy one of your trait
+        selections.
+  id: 6199
+  time: '2024-08-01T22:41:24.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: 'Added new clothes in Loadouts: slim trench coat, and Mafia-style suits.'
+    - type: Add
+      message: >-
+        Added new useful items in Loadouts: lunchbox, more survival gear,
+        paperwork, and medkits.
+  id: 6200
+  time: '2024-08-01T22:45:13.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Vulpkanins can wag their tails now
+  id: 6201
+  time: '2024-08-01T23:06:24.0000000+00:00'
+- author: angelofallars
+  changes:
+    - type: Add
+      message: >-
+        Added the combat knife to the SecTech, and the ability to manufacture
+        combat knives in the SecLathe and emagged autolathes.
+    - type: Add
+      message: >-
+        Added a 1-point combat knife to Loadouts for Felinid/Harpy security
+        jobs. 
+    - type: Tweak
+      message: Made the security belt and security webbing able to hold combat knives.
+    - type: Tweak
+      message: 'Prison Guards now start with combat boots with a combat knife. '
+  id: 6202
+  time: '2024-08-02T07:08:07.0000000+00:00'
+- author: rosieposieeee
+  changes:
+    - type: Add
+      message: >-
+        Added breaching charges to the SecTech vendor for Security, to break
+        through walls.
+  id: 6203
+  time: '2024-08-02T07:09:44.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        The AdminHelp sound has changed to three that play under different
+        circumstances
+  id: 6204
+  time: '2024-08-02T07:14:01.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Reverted the station event scheduler rework due to it absolutely
+        breaking the game.
+  id: 6205
+  time: '2024-08-02T22:52:41.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Supermatter Engines have been implemented. '
+  id: 6206
+  time: '2024-08-03T00:41:54.0000000+00:00'
+- author: Tilkku
+  changes:
+    - type: Tweak
+      message: Rouny Sprite Changed
+  id: 6207
+  time: '2024-08-03T11:04:01.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Due to budget cuts, Nanotrasen has ceased stocking Clothesmate vendors
+        with more clothing than the average cargo tech can afford. Civilians are
+        advised to bring their own clothes to the station if they wish to wear
+        anything other than grey. 
+  id: 6208
+  time: '2024-08-04T00:23:53.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        SweatMAX, "hot foods", Mars Mart, and Nippon-tan vendors have all been
+        added to vendor spawners. 
+  id: 6209
+  time: '2024-08-04T06:26:34.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Voracious trait, a 1-point trait that makes you eat and drink
+        twice as fast.
+  id: 6210
+  time: '2024-08-04T09:30:31.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Zombie events have had their Anti-Stalling mechanic improved. Dead
+        (Player) Zombies, Infected Players, and Initial Infected are all counted
+        as zombies for the purpose of determine if the shuttle should be called.
+        Additionally, any player who leaves the station is no longer counted as
+        a healthy crewman for the automatic shuttle call.
+  id: 6211
+  time: '2024-08-04T14:14:12.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: Rename the trait "Heavyweight Drunk" into "Alcohol Tolerance".
+  id: 6212
+  time: '2024-08-05T03:30:41.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Light Step trait, a 1-point trait that makes your footsteps
+        quieter.
+  id: 6213
+  time: '2024-08-05T15:29:07.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add a new 1-point trait called Sign Language, a trait that allows you to
+        communicate in Galactic Sign Language.
+  id: 6214
+  time: '2024-08-05T16:55:31.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Oracle requests are now more likely to be aligned with the current
+        research.
+  id: 6215
+  time: '2024-08-05T17:10:42.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        The Carrying system has been reworked as a means of better supporting
+        having extremely large species and characters. 10kg Harpies should no
+        longer be oppressed by 2000kg Lamia with infinitely short carry
+        attempts. 
+  id: 6216
+  time: '2024-08-05T17:11:37.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Add
+      message: Lamiae should now be rendered much better.
+  id: 6217
+  time: '2024-08-05T17:15:51.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Added an unlockable PKA and Jetpack module to Salvage Cyborgs
+  id: 6218
+  time: '2024-08-06T01:14:31.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Arachne have been reimplemented!
+    - type: Add
+      message: Oneirophages are back!
+  id: 6219
+  time: '2024-08-06T04:52:32.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        CPR has been added to the game. People with CPR training can now perform
+        CPR on anyone who is in either crit or dead states. 
+    - type: Add
+      message: >-
+        CPR Training has been added to the game as a new positive trait. All
+        medical staff start with this trait for free. 
+  id: 6220
+  time: '2024-08-06T05:28:54.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Self-Aware trait, a 2-point trait that allows you to examine
+        your Brute/Burn damage numbers like a health analyzer, and estimate your
+        toxin/airloss damage.
+  id: 6221
+  time: '2024-08-06T08:05:59.0000000+00:00'
+- author: TJohnson
+  changes:
+    - type: Tweak
+      message: >-
+        Removed overlay restriction for vulps, you can now have as many overlay
+        markings as you want!
+  id: 6222
+  time: '2024-08-06T19:05:46.0000000+00:00'
+- author: whateverusername0
+  changes:
+    - type: Add
+      message: Added different stamina damage resistance to hardsuits.
+  id: 6223
+  time: '2024-08-06T19:08:48.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Blood Deficiency trait, a new negative trait that makes you
+        slowly lose blood over time. You must routinely receive blood loss
+        treatment to live, and even normally non-lethal bleeding can make you
+        start dying slowly.
+  id: 6224
+  time: '2024-08-06T19:12:34.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add three new 1-point traits for Onis that allow you to specialize in
+        Slash or Piercing damage or be a melee weapons generalist.
+  id: 6225
+  time: '2024-08-06T19:50:20.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add Parkour Training, a 3-point trait that makes you faster with
+        climbing tables and crawling.
+  id: 6226
+  time: '2024-08-06T20:37:00.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Tweak
+      message: >-
+        EMP Grenades can now disable basically any electrical device, and stack
+        in disable duration.
+  id: 6227
+  time: '2024-08-06T20:47:49.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Admin tooling: added several admin commands to help manipulate entities'
+        languages.
+  id: 6228
+  time: '2024-08-06T21:22:11.0000000+00:00'
+- author: Tilkku
+  changes:
+    - type: Add
+      message: Added Pen Lights
+    - type: Add
+      message: Eye Examination
+  id: 6229
+  time: '2024-08-06T21:51:21.0000000+00:00'
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: >-
+        Gloves now have unique fingerprints. Items can be traced back to gloves,
+        which can then be traced back to people.
+  id: 6230
+  time: '2024-08-06T22:03:36.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Passive blood regeneration now works again.
+  id: 6231
+  time: '2024-08-07T06:07:35.0000000+00:00'
+- author: Fansana
+  changes:
+    - type: Fix
+      message: Barotrauma admin log spam
+  id: 6232
+  time: '2024-08-07T17:31:55.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Mr. Butlertron can now suffer for its crimes.
+  id: 6233
+  time: '2024-08-07T22:38:04.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The following new markings have been added for Harpies: Bat Wings,
+        Simple Bionic Wings, Haven Tail, Swallow tail, and Long Forked Tail
+  id: 6234
+  time: '2024-08-07T23:11:41.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Readded Psionic Relay Orb
+  id: 6235
+  time: '2024-08-07T23:16:30.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add two new negative traits: Sluggish (+1) and Snail-Paced (+2) that
+        make you move slower, and climb tables slower.
+  id: 6236
+  time: '2024-08-07T23:38:33.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add the Hemophilia trait, a new negative trait for 1 point that makes
+        you bleed twice as long and makes you take 10% more Blunt damage.
+  id: 6237
+  time: '2024-08-07T23:39:52.0000000+00:00'
+- author: SleepyScarecrow
+  changes:
+    - type: Fix
+      message: Fixed the RegenMesh recipe
+  id: 6238
+  time: '2024-08-07T23:51:29.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: >-
+        Added Bluespace Slips, a plant trait that teleports you randomly if you
+        slip.
+  id: 6239
+  time: '2024-08-07T23:54:13.0000000+00:00'
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the formatting for WelderRefinable refineResult to use
+        EntitySpawnEntry format
+  id: 6240
+  time: '2024-08-08T00:16:02.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Moths can now once again be colorful.
+  id: 6241
+  time: '2024-08-08T00:18:08.0000000+00:00'
+- author: ShatteredSwords
+  changes:
+    - type: Tweak
+      message: Skeleton ghost role description has been adjusted to be less evil.
+  id: 6242
+  time: '2024-08-09T10:52:49.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Geiger Counters other than ones installed in Hardsuits now generate an
+        audible sound when active and exposed to radiation.
+    - type: Add
+      message: Wall mounted geiger counters have been added to the game.
+  id: 6243
+  time: '2024-08-09T11:13:13.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Dionas have been given a 25% slower movement speed. In exchange for
+        that, they gain absolute slip immunity and movement speed modifier
+        immunity. This makes them immune to slowdown from things like
+        duffelbags, hardsuits, and spider webs.
+    - type: Fix
+      message: >-
+        Sluggish and Snail-Paced will now properly apply their movement
+        penalties upon joining. 
+  id: 6244
+  time: '2024-08-09T17:28:01.0000000+00:00'
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: >-
+        Melee Weapons now feel different across the board, from the Wrench to
+        the Chainsaw, try out their normal swings and their heavy attacks!
+  id: 6245
+  time: '2024-08-10T12:00:06.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Tweak
+      message: >-
+        Renamed "Psionic Mantis" to "Mantis", as it was originally going to be
+        called. 
+  id: 6246
+  time: '2024-08-10T12:03:12.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Add Liquor Lifeline (-3 points), a new positive trait that makes you
+        slowly heal Brute and Burn damage when drunk, healing more the drunker
+        you are. The trait also gives you the benefits of Alcohol Tolerance.
+    - type: Tweak
+      message: >-
+        The cost of the Alcohol Tolerance trait has been reduced from -2 points
+        to -1 point.
+    - type: Add
+      message: Dwarves receive the Liquor Lifeline trait for free.
+  id: 6247
+  time: '2024-08-10T20:59:22.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Being injured now lets you deal up to 20% more damage in melee combat to
+        simulate the adrenaline rush from taking a hit.
+    - type: Add
+      message: >-
+        Taking stamina damage now makes you deal less damage in melee. Up to 25%
+        less for Light Attacks, and 50% less for Power Attacks
+    - type: Add
+      message: >-
+        Wide Swing has been reworked as "Power Attack". Power attacks cost 20
+        stamina(by default) to perform, and their effects can differ from Light
+        attacks on a per-weapon basis. Individual weapons can also have
+        different stamina costs to power attack with.
+  id: 6248
+  time: '2024-08-10T21:30:42.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Remove
+      message: >-
+        Removed the spammable hugging on click. Consider using emotes for this
+        instead.
+  id: 6249
+  time: '2024-08-10T21:34:22.0000000+00:00'
+- author: VMSolidus and Skubman
+  changes:
+    - type: Add
+      message: >-
+        11 new Physical Traits have been added to the game! 6 positive traits,
+        and 5 negative traits.
+  id: 6250
+  time: '2024-08-10T21:36:09.0000000+00:00'
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added `HidesBeard` tag
+  id: 6251
+  time: '2024-08-10T21:36:49.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: The maximum trait limit has increased from 5 traits to 10 traits.
+  id: 6252
+  time: '2024-08-11T02:08:37.0000000+00:00'
+- author: Xavier
+  changes:
+    - type: Fix
+      message: Crew monitor not working properly, now displays correctly.
+  id: 6253
+  time: '2024-08-12T02:22:27.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Added the Explorer's Labcoat and a Hairflower into Loadouts.
+    - type: Fix
+      message: Fixed Epistemics being unable to take Survival Boxes
+    - type: Fix
+      message: >-
+        Fixed the NearSighted trait making you unable to take glasses in your
+        loadout
+    - type: Add
+      message: Added a variety of Cowboy Hats into loadouts.
+  id: 6254
+  time: '2024-08-12T02:22:58.0000000+00:00'
+- author: musicmanvr
+  changes:
+    - type: Add
+      message: Added the Home Run Bat for Syndicate operatives. Send your foes flying!
+  id: 6255
+  time: '2024-08-12T16:43:11.0000000+00:00'
+- author: Tilkku
+  changes:
+    - type: Add
+      message: Added showers
+  id: 6256
+  time: '2024-08-12T16:46:05.0000000+00:00'
+- author: gluesniffler
+  changes:
+    - type: Tweak
+      message: Changed hardsuit descriptions to be slightly less LRP.
+    - type: Tweak
+      message: Changed paramedic voidsuit from a softsuit to a hardsuit.
+  id: 6257
+  time: '2024-08-12T21:43:52.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Whitelist requirements work properly
+  id: 6258
+  time: '2024-08-13T17:08:24.0000000+00:00'
+- author: Skubman and leonardo-dabepis
+  changes:
+    - type: Add
+      message: Onis now get a unique speech bubble, a black bubble with horns.
+    - type: Add
+      message: >-
+        Onis have received a distinct speech style that reflects their strength.
+        Hear them 'grunt', 'bellow', 'blare', and 'rumble' as they talk.
+    - type: Tweak
+      message: >-
+        The Nekomimetic language description has been changed to mention Onis
+        speaking it.
+  id: 6259
+  time: '2024-08-13T17:12:15.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: A ton of new plushies has arrived
+    - type: Add
+      message: >-
+        Prize counter are here, get your prizes by winning games and getting
+        prize tickets! and find prize balls!!
+  id: 6260
+  time: '2024-08-13T17:16:52.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Onis have received eight new pointy ear markings in the 'Head (Side)'
+        section that can help them resemble tieflings, orcs, elves, goblins,
+        trolls, and more.
+    - type: Add
+      message: >-
+        Onis get two new tusk markings in the 'Snout' section, and a Two-Toed
+        feet marking in the 'Legs' section.
+    - type: Add
+      message: >-
+        Felinids, Onis, and Harpies can now select Human nose markings like the
+        schnozz, blobby nose, and nubby nose.
+    - type: Add
+      message: >-
+        Felinids and Onis can now select the Chest Scar and Top Surgery Scar
+        markings.
+    - type: Tweak
+      message: Default Onis now use the Double Curved horn and Upward Ears markings.
+  id: 6261
+  time: '2024-08-13T21:12:45.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fix missing Psionic Regeneration sound effect
+  id: 6262
+  time: '2024-08-14T02:12:43.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Vulpkanins receive the Voracious trait for free, giving them 2x
+        eating/drinking speed, but Vulpkanins get hungrier 25% faster.
+    - type: Tweak
+      message: >-
+        Vulpkanins gain a 30% Cold resistance, but their Heat vulnerability has
+        increased from 15% to 30%. Vulpkanins also receive 25% more Fire stacks,
+        amplifying the damage and duration of being on fire.
+    - type: Tweak
+      message: Flash duration against Vulpkanins has been increased by 50%.
+  id: 6263
+  time: '2024-08-14T05:30:37.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added crowned, tall bull, and tall curved Oni horns.
+  id: 6264
+  time: '2024-08-14T09:05:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added a new positive trait - singer. It allows you to play midi songs
+        without an instrument, similarly to harpies.
+  id: 6265
+  time: '2024-08-15T06:06:25.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Xenowears! new non-human related clothings.
+  id: 6266
+  time: '2024-08-15T06:24:07.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: >-
+        Forensics Scent Type and Vulpkanins can now track scents, better keep
+        yourself clean!
+    - type: Tweak
+      message: >-
+        Vulpkanins eyes are sensetive, please dont flash them with lights as
+        this could damage them.
+    - type: Add
+      message: Vulpkanins now has their own screams!
+  id: 6267
+  time: '2024-08-15T07:11:05.0000000+00:00'
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Adds a new blindfold variant into loadouts.
+  id: 6268
+  time: '2024-08-16T12:43:33.0000000+00:00'
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        16 new horns for Onis have been added, with three-tone variants and some
+        striped variants! The new horns include the Serket, Nepeta, Vantas,
+        Makara, and more.
+    - type: Add
+      message: >-
+        The Oni horns Double Curved and Double Curved Outwards have received
+        three-tone variants.
+  id: 6269
+  time: '2024-08-18T05:52:22.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: You no longer need to have a station record to publish news.
+  id: 6270
+  time: '2024-08-18T18:11:10.0000000+00:00'
+- author: ShatteredSwords
+  changes:
+    - type: Add
+      message: Several useful items have been added to loadouts
+    - type: Add
+      message: Cowtools are selectable for clown in the "Jobs" category of loadouts
+  id: 6271
+  time: '2024-08-20T06:48:59.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Mood System has been ported from White Dream. Mood acts as a 3rd
+        healthbar, alongside Health and Stamina, representing your character's
+        current mental state. Having either high or low mood can modify certain
+        physical attributes.
+    - type: Add
+      message: >-
+        Mood modifies your Critical Threshold. Your critical threshold can be
+        increased or decreased depending on how high or low your character's
+        mood is.
+    - type: Add
+      message: >-
+        Mood modifies your Movement Speed. Characters move faster when they have
+        an overall high mood, and move slower when they have a lower mood.
+    - type: Add
+      message: >-
+        Saturnine and Sanguine have been added to the list of Mental traits,
+        both providing innate modifiers to a character's Morale.
+  id: 6272
+  time: '2024-08-20T08:16:05.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Latent Psychic has been added as a new positive trait.
+    - type: Tweak
+      message: >-
+        Psionics have received a substantial refactor. While no new powers have
+        been added this patch, this initial refactor lays the groundwork so that
+        new psionic powers will be easier to create.
+    - type: Tweak
+      message: >-
+        Latent Psychic is now fully required to become psionic, or to interact
+        with Oracle.
+    - type: Tweak
+      message: Psychics can now have more than one active power.
+    - type: Remove
+      message: Mimes are no longer Psionic.
+    - type: Tweak
+      message: >-
+        Chaplain, Mantis, & Mystagogue all receive the Latent Psychic trait for
+        free, automatically. 
+  id: 6273
+  time: '2024-08-20T18:42:44.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue where Overlays(Dogvision, Ultravision, Mood) would apply
+        globally to all entities when updating.
+  id: 6274
+  time: '2024-08-20T18:49:28.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Actions no longer need to hardcode in target blacklists, and can now
+        blacklist entities in YML. This is notably useful for Psionic powers,
+        which all share a common feature that they can't target people with
+        Psionic Insulation (Or have been Mindbroken). 
+  id: 6275
+  time: '2024-08-21T09:08:40.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        PsionicPowers that add a Component now also allow for adding a Component
+        with Arguments. This works exactly like the trait system's
+        implementation of components.
+  id: 6276
+  time: '2024-08-21T09:10:28.0000000+00:00'
+- author: Timemaster99
+  changes:
+    - type: Add
+      message: Added IPC as a playable species.
+  id: 6277
+  time: '2024-08-21T09:14:30.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Traits can now add Active Abilities to a character.
+    - type: Add
+      message: Traits can now add Psionic Powers to a character.
+  id: 6278
+  time: '2024-08-21T09:49:54.0000000+00:00'
+- author: stellar-novas
+  changes:
+    - type: Tweak
+      message: Ifrit has received some damage resistance changes
+  id: 6279
+  time: '2024-08-21T21:00:01.0000000+00:00'
+- author: Rane
+  changes:
+    - type: Add
+      message: Added Xenoglossy to the psionic power pool.
+  id: 6280
+  time: '2024-08-22T00:08:59.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Trait points have been made more granular by both doubling the available
+        number of trait points, and increasing the base cost of all pre-existing
+        traits.
+  id: 6281
+  time: '2024-08-22T00:52:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Moths can now be colorful again.
+  id: 6282
+  time: '2024-08-22T08:43:20.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Cataloguer has been re-added to the game as a new roundstart Psionic
+        role. The Cataloguer is a unique role that will always start with the
+        Latent Psychic trait, as well as the new Xenoglossy power, which allows
+        him to know and speak all languages.
+  id: 6283
+  time: '2024-08-22T17:00:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Gaining a new Psionic Power can now display messages to alert the
+        player, both as a short popup, and optionally a lengthier message sent
+        to the user's Chat window. 
+  id: 6284
+  time: '2024-08-22T17:12:26.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: >-
+        Announcements can play multiple sounds now (you can revert to the old
+        behavior in sound setting if you want though)
+  id: 6285
+  time: '2024-08-22T21:46:38.0000000+00:00'
+- author: v0idRift
+  changes:
+    - type: Add
+      message: >-
+        Added the ability for IPCs to speak and understand Galactic Common and
+        RobotTalk languages.
+    - type: Add
+      message: >-
+        Enabled IPCs to heal themselves using welding tools via the
+        WeldingHealable component.
+  id: 6286
+  time: '2024-08-23T03:58:35.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Fix
+      message: Supermatter Annoncements
+  id: 6287
+  time: '2024-08-24T07:56:12.0000000+00:00'
+- author: Fansana
+  changes:
+    - type: Fix
+      message: >-
+        Fixed most door accesses including: Lawyer, Mantis, Corpsman, Boxer,
+        Clown, Mime, Musician, Reporter, Library, Zookeeper, Salvage and
+        Psychologist.
+  id: 6288
+  time: '2024-08-25T08:45:17.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed the FixGridAtmos command.
+  id: 6289
+  time: '2024-08-26T00:02:53.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Lab Mixes have been added to the game as a new random animal. Be sure to
+        keep Felinids and Harpies away from them.
+  id: 6290
+  time: '2024-08-27T03:16:46.0000000+00:00'
+- author: router
+  changes:
+    - type: Add
+      message: >-
+        Added more sounds to IPCs. IPCs can now also whistle, whirr, beep, boop,
+        ping, chime, buzz and buzz twice.
+    - type: Fix
+      message: IPCs no longer have the default wilhelm sound.
+    - type: Tweak
+      message: Silicon deathgasps are now darker.
+  id: 6291
+  time: '2024-08-29T02:57:16.0000000+00:00'

@@ -4,8 +4,9 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 12 # DeltaV - was 10
+    weight: 12
     startDelay: 30
+    reoccurrenceDelay: 8
     duration: 35
   - type: AnomalySpawnRule
 
@@ -17,6 +18,7 @@
   - type: StationEvent
     weight: 5
     startDelay: 30
+    reoccurrenceDelay: 5
     duration: 35
   - type: BluespaceArtifactRule
 
@@ -27,8 +29,9 @@
   components:
   - type: StationEvent
     weight: 1
-    reoccurrenceDelay: 5
+    maxOccurrences: 4 # Very annoying, makes containers unusable
     earliestStart: 1
+    reoccurrenceDelay: 15
     duration: 1
   - type: BluespaceLockerRule
 
@@ -40,7 +43,8 @@
   - type: StationEvent
     weight: 10
     duration: 1
-    minimumPlayers: 15
+    minimumPlayers: 7
+    reoccurrenceDelay: 5
   - type: BreakerFlipRule
 
 - type: entity
@@ -49,10 +53,11 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-bureaucratic-error-announcement
+    startAnnouncement: true
     minimumPlayers: 25
     weight: 5
     duration: 1
+    reoccurrenceDelay: 5
   - type: BureaucraticErrorRule
 
 - type: entity
@@ -61,22 +66,25 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-clerical-error-announcement
+    startAnnouncement: true
     minimumPlayers: 15
     weight: 5
     duration: 1
+    reoccurrenceDelay: 5
   - type: ClericalErrorRule
 
-#- type: entity
-#  parent: BaseGameRule # DeltaV - this shit is busted most of the time
-#  id: ClosetSkeleton
-#  noSpawn: true
-#  components:
-#  - type: StationEvent
-#    weight: 10
-#    duration: 1
-#  - type: RandomEntityStorageSpawnRule
-#    prototype: MobSkeletonCloset
+- type: entity
+  parent: BaseGameRule
+  id: ClosetSkeleton
+  noSpawn: true
+  components:
+  - type: StationEvent
+    weight: 10
+    duration: 1
+    minimumPlayers: 15
+    reoccurrenceDelay: 25
+  - type: RandomEntityStorageSpawnRule
+    prototype: MobSkeletonCloset
 
 - type: entity
   parent: BaseGameRule
@@ -84,7 +92,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 1 # DeltaV - was 5
+    weight: 2
     duration: 1
     earliestStart: 45
     reoccurrenceDelay: 60
@@ -98,13 +106,14 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 3 # DeltaV - was 10
+    weight: 3
     duration: 1
-    earliestStart: 45 # DeltaV - was 30
-    reoccurrenceDelay: 60
-    minimumPlayers: 40
+    earliestStart: 45
+    reoccurrenceDelay: 45
+    minimumPlayers: 20
   - type: NinjaSpawnRule
 
+# TODO there's already a glimmer revenant rule. One of them might be broken.
 - type: entity
   parent: BaseGameRule
   id: RevenantSpawn
@@ -124,8 +133,9 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 15
+    weight: 10
     duration: 1
+    reoccurrenceDelay: 4 # Please no 10 false alarms in a row.
   - type: FalseAlarmRule
 
 - type: entity
@@ -134,11 +144,10 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-gas-leak-start-announcement
-    startAudio:
-      path: /Audio/Announcements/gas_leak.ogg # DeltaV - custom announcer
-    endAnnouncement: station-event-gas-leak-end-announcement
+    startAnnouncement: true
+    endAnnouncement: true
     earliestStart: 10
+    reoccurrenceDelay: 7
     minimumPlayers: 5
     weight: 10
     startDelay: 20
@@ -151,6 +160,7 @@
   components:
   - type: StationEvent
     earliestStart: 15
+    reoccurrenceDelay: 10
     minimumPlayers: 15
     weight: 5
     startDelay: 50
@@ -164,14 +174,11 @@
   components:
   - type: StationEvent
     earliestStart: 30
+    reoccurrenceDelay: 5
     weight: 7.5
-    minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
-    startAnnouncement: station-event-meteor-swarm-start-announcement
-    endAnnouncement: station-event-meteor-swarm-end-announcement
-    startAudio:
-      path: /Audio/Announcements/meteors.ogg
-      params:
-        volume: -4
+    minimumPlayers: 7 #Enough to hopefully have at least one engineering guy
+    startAnnouncement: true
+    endAnnouncement: true
     duration: null #ending is handled by MeteorSwarmRule
     startDelay: 30
   - type: MeteorSwarmRule
@@ -182,12 +189,10 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
     startDelay: 10
-    earliestStart: 30
-    minimumPlayers: 35
+    earliestStart: 15
+    reoccurrenceDelay: 3
     weight: 5
     duration: 50
   - type: VentCrittersRule
@@ -198,11 +203,6 @@
       prob: 0.02
     - id: MobMouse2
       prob: 0.02
-    # DeltaV - Rat King spawns under MidRoundAntag - Comment out Rat King from spawning with MouseMigration gamerule
-    # specialEntries:
-    # - id: SpawnPointGhostRatKing
-    #   prob: 0.005
-    # End of modified code
 
 - type: entity
   id: CockroachMigration
@@ -210,18 +210,41 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
     startDelay: 10
     weight: 5
     duration: 50
+    reoccurrenceDelay: 15 # Cockroaches en masse are utmost annoying to deal with.
   - type: VentCrittersRule
     entries:
     - id: MobCockroach
       prob: 0.03
     - id: MobMothroach
       prob: 0.008
+
+# TODO this is the same as mouse migration, but with different announcer.
+- type: entity
+  id: VentCritters
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    startDelay: 10
+    earliestStart: 15
+    reoccurrenceDelay: 3
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobMouse
+      prob: 0.02
+    - id: MobMouse1
+      prob: 0.02
+    - id: MobMouse2
+      prob: 0.02
+    - id: MobPibbleVent
+      prob: 0.005
 
 - type: entity
   id: PowerGridCheck
@@ -230,28 +253,25 @@
   components:
   - type: StationEvent
     weight: 10
-    startAnnouncement: station-event-power-grid-check-start-announcement
-    endAnnouncement: station-event-power-grid-check-end-announcement
-    startAudio:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-       volume: -4
+    startAnnouncement: true
+    endAnnouncement: true
     startDelay: 24
     duration: 60
     maxDuration: 120
+    reoccurrenceDelay: 2 # Gives a chance for multiple checks in a row, but not in parallel
   - type: PowerGridCheckRule
 
-# - type: entity # DeltaV - Removes the random sentience.
-#   id: RandomSentience
-#   parent: BaseGameRule
-#   noSpawn: true
-#   components:
-#   - type: StationEvent
-#     weight: 10
-#     duration: 1
-#     startAudio:
-#       path: /Audio/Announcements/attention.ogg
-#   - type: RandomSentienceRule
+- type: entity
+  id: RandomSentience
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    weight: 5
+    duration: 1
+    reoccurrenceDelay: 10
+    maxOccurrences: 3 # Annoying and rarely if ever interesting
+  - type: RandomSentienceRule
 
 - type: entity
   parent: BaseGameRule
@@ -260,12 +280,11 @@
   components:
   - type: StationEvent
     weight: 10
-    startAnnouncement: station-event-solar-flare-start-announcement
-    endAnnouncement: station-event-solar-flare-end-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
+    endAnnouncement: true
     duration: 120
     maxDuration: 240
+    reoccurrenceDelay: 5
   - type: SolarFlareRule
     onlyJamHeadsets: true
     affectedChannels:
@@ -301,10 +320,9 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-clog-start-announcement
-    startAudio:
-      path: /Audio/Announcements/ventclog.ogg # DeltaV - custom announcer
+    startAnnouncement: true
     earliestStart: 15
+    reoccurrenceDelay: 5
     minimumPlayers: 15
     weight: 5
     startDelay: 50
@@ -312,39 +330,15 @@
   - type: VentClogRule
 
 - type: entity
-  id: VentCritters
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    startDelay: 10
-    earliestStart: 15
-    minimumPlayers: 15
-    weight: 5
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobMouse
-      prob: 0.02
-    - id: MobMouse1
-      prob: 0.02
-    - id: MobMouse2
-      prob: 0.02
-
-- type: entity
   id: SlimesSpawn
   parent: BaseGameRule
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
     startDelay: 10
     earliestStart: 20
+    reoccurrenceDelay: 12
     minimumPlayers: 15
     weight: 5
     duration: 60
@@ -363,11 +357,10 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
     startDelay: 10
     earliestStart: 20
+    reoccurrenceDelay: 15
     minimumPlayers: 15
     weight: 5
     duration: 60
@@ -376,15 +369,42 @@
     - id: MobGiantSpiderAngry
       prob: 0.05
 
+# Weaker versions of the above
+- type: entity
+  id: SlimesSpawnWeak
+  parent: SlimesSpawn
+  noSpawn: true
+  components:
+  - type: StationEvent
+    minimumPlayers: 1
+  - type: VentCrittersRule
+    entries:
+    - id: MobAdultSlimesBlueAngry
+      prob: 0.005
+    - id: MobAdultSlimesGreenAngry
+      prob: 0.005
+    - id: MobAdultSlimesYellowAngry
+      prob: 0.005
+
+- type: entity
+  id: SpiderSpawnWeak
+  parent: SpiderSpawn
+  noSpawn: true
+  components:
+  - type: StationEvent
+    minimumPlayers: 1
+  - type: VentCrittersRule
+    entries:
+    - id: MobGiantSpiderAngry
+      prob: 0.01
+
 # - type: entity # DeltaV - Prevent normal spawning of MobClownSpider
 #  id: SpiderClownSpawn
 #  parent: BaseGameRule
 #  noSpawn: true
 #  components:
 #  - type: StationEvent
-#    startAnnouncement: station-event-vent-creatures-start-announcement
-#    startAudio:
-#      path: /Audio/Announcements/attention.ogg
+#    startAnnouncement: true
 #    startDelay: 10
 #    earliestStart: 20
 #    minimumPlayers: 15
@@ -396,20 +416,37 @@
 #      prob: 0.05
 
 - type: entity
+  id: OneirophageSpawn
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    id: VentCritters
+    earliestStart: 15
+    minimumPlayers: 15
+    weight: 4
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobGiantSpiderVampireAngry
+      prob: 0.01
+
+- type: entity
   id: ZombieOutbreak
   parent: BaseGameRule
   noSpawn: true
   components:
   - type: StationEvent
-    earliestStart: 90 # DeltaV - was 50
+    earliestStart: 60
+    reoccurrenceDelay: 60
     minimumPlayers: 15
-    weight: 2.5 # DeltaV - was 5
+    weight: 2
     duration: 1
   - type: ZombieRule
     minStartDelay: 0 #let them know immediately
     maxStartDelay: 10
-    maxInitialInfected: 3 #fewer zombies
-    minInitialInfectedGrace: 300 #less time to prepare
+    maxInitialInfected: 2
+    minInitialInfectedGrace: 300
     maxInitialInfectedGrace: 450
 
 - type: entity
@@ -418,10 +455,10 @@
   noSpawn: true
   components:
   - type: StationEvent
-    earliestStart: 60 # DeltaV - was 45
-    weight: 3 # DeltaV - was 5
-    minimumPlayers: 10
-    reoccurrenceDelay: 30
+    earliestStart: 60
+    weight: 3
+    minimumPlayers: 15
+    reoccurrenceDelay: 45
     duration: 1
   - type: LoneOpsSpawnRule
 
@@ -447,9 +484,7 @@
 #  noSpawn: true
 #  components:
 #  - type: StationEvent
-#    startAnnouncement: station-event-immovable-rod-start-announcement
-#    startAudio:
-#      path: /Audio/Announcements/attention.ogg
+#    startAnnouncement: true
 #    weight: 5
 #    duration: 1
 #    earliestStart: 45
@@ -474,6 +509,8 @@
   components:
     - type: StationEvent
       earliestStart: 0
+      reoccurrenceDelay: 5
       minimumPlayers: 20
       weight: 5
     - type: MobReplacementRule
+      numberToReplace: 1

@@ -23,7 +23,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Administration.Managers
 {
-    public sealed class AdminManager : IAdminManager, IPostInjectInit, IConGroupControllerImplementation
+    public sealed partial class AdminManager : IAdminManager, IPostInjectInit, IConGroupControllerImplementation
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IServerDbManager _dbManager = default!;
@@ -34,6 +34,7 @@ namespace Content.Server.Administration.Managers
         [Dependency] private readonly IServerConsoleHost _consoleHost = default!;
         [Dependency] private readonly IChatManager _chat = default!;
         [Dependency] private readonly ToolshedManager _toolshed = default!;
+        [Dependency] private readonly ILogManager _logManager = default!;
 
         private readonly Dictionary<ICommonSession, AdminReg> _admins = new();
         private readonly HashSet<NetUserId> _promotedPlayers = new();
@@ -48,6 +49,8 @@ namespace Content.Server.Administration.Managers
 
         private readonly AdminCommandPermissions _commandPermissions = new();
         private readonly AdminCommandPermissions _toolshedCommandPermissions = new();
+
+        private ISawmill _sawmill = default!;
 
         public bool IsAdmin(ICommonSession session, bool includeDeAdmin = false)
         {
@@ -95,6 +98,40 @@ namespace Content.Server.Administration.Managers
             UpdateAdminStatus(session);
         }
 
+        public void Stealth(ICommonSession session)
+        {
+            if (!_admins.TryGetValue(session, out var reg))
+                throw new ArgumentException($"Player {session} is not an admin");
+
+            if (reg.Data.Stealth)
+                return;
+
+            var playerData = session.ContentData()!;
+            playerData.Stealthed = true;
+            reg.Data.Stealth = true;
+
+            _chat.DispatchServerMessage(session, Loc.GetString("admin-manager-stealthed-message"));
+            _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-self-de-admin-message", ("exAdminName", session.Name)), AdminFlags.Stealth);
+            _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-self-enable-stealth", ("stealthAdminName", session.Name)), flagWhitelist: AdminFlags.Stealth);
+        }
+
+        public void UnStealth(ICommonSession session)
+        {
+            if (!_admins.TryGetValue(session, out var reg))
+                throw new ArgumentException($"Player {session} is not an admin");
+
+            if (!reg.Data.Stealth)
+                return;
+
+            var playerData = session.ContentData()!;
+            playerData.Stealthed = false;
+            reg.Data.Stealth = false;
+
+            _chat.DispatchServerMessage(session, Loc.GetString("admin-manager-unstealthed-message"));
+            _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-self-re-admin-message", ("newAdminName", session.Name)), flagBlacklist: AdminFlags.Stealth);
+            _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-self-disable-stealth", ("exStealthAdminName", session.Name)), flagWhitelist: AdminFlags.Stealth);
+        }
+
         public void ReAdmin(ICommonSession session)
         {
             if (!_admins.TryGetValue(session, out var reg))
@@ -113,7 +150,16 @@ namespace Content.Server.Administration.Managers
             plyData.ExplicitlyDeadminned = false;
             reg.Data.Active = true;
 
-            _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-self-re-admin-message", ("newAdminName", session.Name)));
+            if (!reg.Data.Stealth)
+            {
+                _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-self-re-admin-message", ("newAdminName", session.Name)));
+            }
+            else
+            {
+                _chat.DispatchServerMessage(session, Loc.GetString("admin-manager-stealthed-message"));
+                _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-self-re-admin-message",
+                    ("newAdminName", session.Name)), flagWhitelist: AdminFlags.Stealth);
+            }
 
             SendPermsChangedEvent(session);
             UpdateAdminStatus(session);
@@ -165,6 +211,9 @@ namespace Content.Server.Administration.Managers
 
                     _chat.DispatchServerMessage(player, Loc.GetString("admin-manager-admin-permissions-updated-message"));
                 }
+
+                if (player.ContentData()!.Stealthed)
+                    aData.Stealth = true;
             }
 
             SendPermsChangedEvent(player);
@@ -181,6 +230,8 @@ namespace Content.Server.Administration.Managers
 
         public void Initialize()
         {
+            _sawmill = _logManager.GetSawmill("admin");
+
             _netMgr.RegisterNetMessage<MsgUpdateAdminStatus>();
 
             // Cache permissions for loaded console commands with the requisite attributes.
@@ -228,12 +279,20 @@ namespace Content.Server.Administration.Managers
                 _commandPermissions.LoadPermissionsFromStream(efs);
             }
 
-            if (_res.TryContentFileRead(new ResPath("/toolshedEngineCommandPerms.yml"), out var toolshedPerms))
+            var toolshedPermsPath = new ResPath("/toolshedEngineCommandPerms.yml");
+            if (_res.TryContentFileRead(toolshedPermsPath, out var toolshedPerms))
+            {
+                _commandPermissions.LoadPermissionsFromStream(toolshedPerms);
+            }
+            // This may or may not be necessary. We read the same file again and load the same permissions into a different manager.
+            if (_res.TryContentFileRead(toolshedPermsPath, out toolshedPerms))
             {
                 _toolshedCommandPermissions.LoadPermissionsFromStream(toolshedPerms);
             }
 
             _toolshed.ActivePermissionController = this;
+
+            InitializeMetrics();
         }
 
         public void PromoteHost(ICommonSession player)
@@ -283,9 +342,14 @@ namespace Content.Server.Administration.Managers
             }
             else if (e.NewStatus == SessionStatus.Disconnected)
             {
-                if (_admins.Remove(e.Session) && _cfg.GetCVar(CCVars.AdminAnnounceLogout))
+                if (_admins.Remove(e.Session, out var reg ) && _cfg.GetCVar(CCVars.AdminAnnounceLogout))
                 {
-                    _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-logout-message", ("name", e.Session.Name)));
+                    if (reg.Data.Stealth)
+                        _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-logout-message",
+                            ("name", e.Session.Name)), flagWhitelist: AdminFlags.Stealth);
+                    else
+                        _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-logout-message",
+                            ("name", e.Session.Name)));
                 }
             }
         }
@@ -308,13 +372,27 @@ namespace Content.Server.Administration.Managers
 
             _admins.Add(session, reg);
 
-            if (!session.ContentData()!.ExplicitlyDeadminned)
+            if (session.ContentData()?.Stealthed == true)
+                reg.Data.Stealth = true;
+
+            if (!session.ContentData()?.ExplicitlyDeadminned ?? true)
             {
                 reg.Data.Active = true;
 
                 if (_cfg.GetCVar(CCVars.AdminAnnounceLogin))
                 {
-                    _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-login-message", ("name", session.Name)));
+                    if (reg.Data.Stealth)
+                    {
+
+                        _chat.DispatchServerMessage(session, Loc.GetString("admin-manager-stealthed-message"));
+                        _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-login-message",
+                            ("name", session.Name)), flagWhitelist: AdminFlags.Stealth);
+                    }
+                    else
+                    {
+                        _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-login-message",
+                            ("name", session.Name)));
+                    }
                 }
 
                 SendPermsChangedEvent(session);

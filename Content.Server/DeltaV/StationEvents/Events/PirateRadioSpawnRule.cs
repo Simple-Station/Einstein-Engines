@@ -1,9 +1,3 @@
-/*
-* Delta-V - This file is licensed under AGPLv3
-* Copyright (c) 2024 Delta-V Contributors
-* See AGPLv3.txt for details.
-*/
-
 using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Shared.Configuration;
@@ -39,7 +33,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
         var xformQuery = GetEntityQuery<TransformComponent>();
         var aabbs = EntityQuery<StationDataComponent>().SelectMany(x =>
                 x.Grids.Select(x =>
-                    xformQuery.GetComponent(x).WorldMatrix.TransformBox(_mapManager.GetGridComp(x).LocalAABB)))
+                    xformQuery.GetComponent(x).WorldMatrix.TransformBox(_entities.GetComponent<MapGridComponent>(x).LocalAABB)))
             .ToArray();
         if (aabbs.Length < 1) return;
         var aabb = aabbs[0];

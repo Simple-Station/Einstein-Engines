@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared.Alert;
 using Content.Shared.CCVar;
 using Content.Shared.Follower.Components;
 using Content.Shared.Input;
@@ -333,6 +334,7 @@ namespace Content.Shared.Movement.Systems
 
             component.RelativeEntity = xform.GridUid ?? xform.MapUid;
             component.TargetRelativeRotation = Angle.Zero;
+            WalkingAlert(uid, !component.Sprinting);
         }
 
         private void HandleRunChange(EntityUid uid, ushort subTick, bool walking)
@@ -344,6 +346,7 @@ namespace Content.Shared.Movement.Systems
                 // if we swap to relay then stop our existing input if we ever change back.
                 if (moverComp != null)
                 {
+                    WalkingAlert(uid, walking);
                     SetMoveInput(moverComp, MoveButtons.None);
                 }
 
@@ -460,10 +463,11 @@ namespace Content.Shared.Movement.Systems
             component.LastInputSubTick = 0;
         }
 
+
         public void SetSprinting(EntityUid entity, InputMoverComponent component, ushort subTick, bool walking)
         {
             // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
-
+            WalkingAlert(entity, walking);
             SetMoveInput(entity, component, subTick, walking, MoveButtons.Walk);
         }
 
@@ -616,7 +620,7 @@ namespace Content.Shared.Movement.Systems
         Down = 2,
         Left = 4,
         Right = 8,
-        Walk = 16,
+        Walk = 16, // This may be either a sprint button or a walk button, depending on server config
         AnyDirection = Up | Down | Left | Right,
     }
 

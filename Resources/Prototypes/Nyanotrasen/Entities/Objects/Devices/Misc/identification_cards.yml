@@ -5,9 +5,12 @@
   components:
   - type: Sprite
     layers:
-    - state: orange
-    - sprite: DeltaV/Objects/Misc/id_cards.rsi
-      state: nyanoprisoner
+    - state: prisoner
+    - state: department
+      color: "#292929"
+    - state: subdepartment
+      color: "#A54900"
+    - state: warden
   - type: PresetIdCard
     job: Prisoner
 
@@ -18,9 +21,12 @@
   components:
   - type: Sprite
     layers:
-    - state: orange
-    - sprite: DeltaV/Objects/Misc/id_cards.rsi
-      state: nyanogladiator
+    - state: default
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#878787"
+    - state: gladiator
   - type: PresetIdCard
     job: Gladiator
 
@@ -32,8 +38,11 @@
   - type: Sprite
     layers:
     - state: default
-    - sprite: DeltaV/Objects/Misc/id_cards.rsi
-      state: nyanoprisonguard
+    - state: department
+      color: "#CB0000"
+    - state: subdepartment
+      color: "#CB0000"
+    - state: prisonguard
   - type: PresetIdCard
     job: PrisonGuard
 
@@ -45,8 +54,11 @@
   - type: Sprite
     layers:
     - state: default
-    - sprite: DeltaV/Objects/Misc/id_cards.rsi
-      state: nyanomailcarrier
+    - state: department
+      color: "#B18644"
+    - state: subdepartment
+      color: "#B18644"
+    - state: mailcarrier
   - type: PresetIdCard
     job: MailCarrier
 
@@ -59,20 +71,26 @@
   - type: Sprite
     layers:
     - state: default
-    - sprite: DeltaV/Objects/Misc/id_cards.rsi
-      state: nyanomartialartist
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#878787"
+    - state: martialartist
   - type: PresetIdCard
     job: MartialArtist
 
 - type: entity
   parent: IDCardStandard
   id: ForensicMantisIDCard
-  name: psionic mantis ID card # DeltaV - Rename Forensic Mantis to Psionic Mantis
+  name: mantis ID card
   components:
-    - type: Sprite
-      layers:
-        - state: default
-        - sprite: DeltaV/Objects/Misc/id_cards.rsi
-          state: nyanomantis
-    - type: PresetIdCard
-      job: ForensicMantis
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#C96DBF"
+    - state: subdepartment
+      color: "#C96DBF"
+    - state: detective
+  - type: PresetIdCard
+    job: ForensicMantis

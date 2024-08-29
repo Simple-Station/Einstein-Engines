@@ -1,18 +1,30 @@
 - type: trait
   id: Blindness
-  name: trait-blindness-name
-  description: trait-blindness-desc
-  traitGear: WhiteCane
-  whitelist:
-    components:
-      - Blindable
+  category: Visual
+  points: 4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: PermanentBlindness
 
 - type: trait
   id: Narcolepsy
-  name: trait-narcolepsy-name
-  description: trait-narcolepsy-desc
+  category: Mental
+  points: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
   components:
     - type: Narcolepsy
       timeBetweenIncidents: 300, 600
@@ -20,15 +32,15 @@
 
 - type: trait
   id: Pacifist
-  name: trait-pacifist-name
-  description: trait-pacifist-desc
+  category: Mental
+  points: 6
   components:
     - type: Pacified
 
 - type: trait
   id: Paracusia
-  name: trait-paracusia-name
-  description: trait-paracusia-desc
+  category: Auditory
+  points: 2
   components:
     - type: Paracusia
       minTimeBetweenIncidents: 0.1
@@ -39,24 +51,143 @@
 
 - type: trait
   id: Muted
-  name: trait-muted-name
-  description: trait-muted-desc
-  blacklist:
-    components:
-      - BorgChassis
+  category: Speech
+  points: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: Muted
 
 - type: trait
   id: Uncloneable
-  name: trait-uncloneable-name
-  description: trait-uncloneable-desc
+  category: Physical
+  points: 4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
   components:
     - type: Uncloneable
 
 - type: trait
   id: FrontalLisp
-  name: trait-frontal-lisp-name
-  description: trait-frontal-lisp-desc
+  category: Speech
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
   components:
     - type: FrontalLisp
+
+- type: trait
+  id: Snoring
+  category: Auditory
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  components:
+    - type: Snoring
+
+- type: trait
+  id: Sluggish
+  category: Physical
+  points: 2
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+        - SnailPaced
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+  components:
+    - type: TraitSpeedModifier
+      sprintModifier: 0.85
+      walkModifier: 0.85
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 1.35
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 1.2
+
+- type: trait
+  id: SnailPaced
+  category: Physical
+  points: 4
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+        - Sluggish
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+  components:
+    - type: TraitSpeedModifier
+      sprintModifier: 0.7
+      walkModifier: 0.7
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 1.66
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 1.6
+
+- type: trait
+  id: BloodDeficiency
+  category: Physical
+  points: 4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  components:
+    - type: BloodDeficiency  # 0.07 = start taking bloodloss damage at around ~21.4 minutes,
+      bloodLossAmount: 0.07  # then become crit ~10 minutes later
+
+- type: trait
+  id: Hemophilia
+  category: Physical
+  points: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  components:
+    - type: Hemophilia
+      bleedReductionModifier: 0.5
+      damageModifiers:
+        coefficients:
+          Blunt: 1.1

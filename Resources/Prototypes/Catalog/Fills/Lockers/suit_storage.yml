@@ -44,7 +44,7 @@
   suffix: Prisoner EVA
   components:
   - type: StorageFill
-    contents:   
+    contents:
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitEVAPrisoner
         - id: ClothingHeadHelmetEVALarge
@@ -258,7 +258,6 @@
         - id: NitrogenTankFilled
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitVoidParamed
-        - id: ClothingHeadHelmetVoidParamed
         - id: ClothingMaskBreathMedical
   - type: AccessReader
     access: [ [ "Paramedic" ] ]

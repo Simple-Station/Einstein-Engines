@@ -29,3 +29,6 @@
   components:
     - type: VoiceMasker
       default: ClothingMaskGas
+    - type: Tag
+      tags:
+      - IPCMaskWearable # Estacao Pirata - IPCs

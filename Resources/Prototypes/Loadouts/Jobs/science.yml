@@ -4,10 +4,10 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Scientist
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
       min: 216000 # 60 hours
   items:
@@ -19,10 +19,14 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterJobRequirement
       jobs:
         - Scientist
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
       min: 216000 # 60 hours
   items:
@@ -34,7 +38,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Scientist
         - ResearchAssistant
@@ -48,7 +52,7 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Scientist
         - ResearchAssistant
@@ -62,14 +66,28 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Scientist
-    - !type:LoadoutDepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
       min: 216000 # 60 hours
   items:
     - ClothingOuterCoatLabSeniorResearcher
+
+- type: loadout
+  id: LoadoutScienceOuterExplorerLabcoat
+  category: Jobs
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+        - ResearchAssistant
+        - ResearchDirector
+  items:
+    - ClothingOuterExplorerCoat
 
 - type: loadout
   id: LoadoutScienceHatBeret
@@ -77,10 +95,66 @@
   cost: 1
   exclusive: true
   requirements:
-    - !type:LoadoutJobRequirement
+    - !type:CharacterJobRequirement
       jobs:
         - Scientist
         - ResearchAssistant
         - ResearchDirector
   items:
     - ClothingHeadHatBeretRND
+
+- type: loadout
+  id: LoadoutScienceEyesHudDiagnostic
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+        - ResearchAssistant
+        - ResearchDirector
+  items:
+    - ClothingEyesHudDiagnostic
+
+- type: loadout
+  id: LoadoutScienceEyesEyepatchHudDiag
+  category: Jobs
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+        - ResearchAssistant
+        - ResearchDirector
+  items:
+    - ClothingEyesEyepatchHudDiag
+
+# Robes
+- type: loadout
+  id: LoadoutOuterRobeTechPriest
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterRobeTechPriest
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+        - ResearchAssistant
+        - ResearchDirector
+
+- type: loadout
+  id: LoadoutHeadHoodTechPriest
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadTechPriest
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+        - ResearchAssistant
+        - ResearchDirector

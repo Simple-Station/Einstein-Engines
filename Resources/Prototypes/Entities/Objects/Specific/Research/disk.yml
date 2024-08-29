@@ -11,6 +11,12 @@
   - type: GuideHelp
     guides:
     - Science
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/disk_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg
 
 - type: entity
   parent: ResearchDisk
@@ -29,6 +35,15 @@
   components:
   - type: ResearchDisk
     points: 10000
+
+- type: entity
+  parent: ResearchDisk
+  id: ResearchDisk20000
+  name: research point disk (20000)
+  description: A disk for the R&D server containing 20000 points.
+  components:
+  - type: ResearchDisk
+    points: 20000
 
 - type: entity
   parent: ResearchDisk
@@ -69,3 +84,9 @@
   components:
   - type: TechnologyDisk
     tierWeightPrototype: RareTechDiskTierWeights
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/disk_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/disk_drop.ogg

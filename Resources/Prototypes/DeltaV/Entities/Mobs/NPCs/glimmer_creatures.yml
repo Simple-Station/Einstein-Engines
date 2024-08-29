@@ -22,7 +22,6 @@
         reagents:
         - ReagentId: Ectoplasm
           Quantity: 15
-  - type: PotentialPsionic
   - type: Psionic
   - type: GlimmerSource
   - type: AmbientSound

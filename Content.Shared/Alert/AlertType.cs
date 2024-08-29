@@ -25,6 +25,22 @@ namespace Content.Shared.Alert
         HumanHealth,
         BorgBattery,
         BorgBatteryNone,
+
+        // Mood
+        Bleeding,
+        Insane,
+        Horrible,
+        Terrible,
+        Bad,
+        Meh,
+        Neutral,
+        Good,
+        Great,
+        Exceptional,
+        Perfect,
+        MoodDead,
+        CultBuffed,
+
         PilotingShuttle,
         Peckish,
         Starving,
@@ -37,6 +53,7 @@ namespace Content.Shared.Alert
         Internals,
         Toxins,
         Muted,
+        Walking,
         VowOfSilence,
         VowBroken,
         Essence,
@@ -52,7 +69,8 @@ namespace Content.Shared.Alert
         SuitPower,
         BorgHealth,
         BorgCrit,
-        BorgDead
+        BorgDead,
+        Offer,
     }
 
 }

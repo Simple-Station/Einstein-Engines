@@ -1,6 +1,6 @@
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
-using Content.Shared.Traits.Assorted;
+using Content.Shared.Traits.Assorted.Components;
 
 namespace Content.Shared.Drunk;
 
@@ -17,9 +17,6 @@ public abstract class SharedDrunkSystem : EntitySystem
     {
         if (!Resolve(uid, ref status, false))
             return;
-
-        if (TryComp<LightweightDrunkComponent>(uid, out var trait))
-            boozePower *= trait.BoozeStrengthMultiplier;
 
         if (applySlur)
         {

@@ -1,0 +1,614 @@
+# The universal language, assumed if the entity has a UniversalLanguageSpeakerComponent.
+# Do not use otherwise. Making an entity explicitly understand/speak this language will NOT have the desired effect.
+- type: language
+  id: Universal
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - "*incomprehensible*" # Never actually used
+
+# The common galactic tongue.
+- type: language
+  id: GalacticCommon
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - blah
+    - blah
+    - blah
+    - dingle-doingle
+    - dingle
+    - dangle
+    - jibber-jabber
+    - jubber
+    - bleh
+    - zippity
+    - zoop
+    - wibble
+    - wobble
+    - wiggle
+    - yada
+    - meh
+    - neh
+    - nah
+    - wah
+
+# Spoken by slimes.
+- type: language
+  id: Bubblish
+  speech:
+    color: "#00a3e2dd"
+    fontId: RubikBubbles
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - blob
+    - plop
+    - pop
+    - bop
+    - boop
+
+# Spoken by moths.
+- type: language
+  id: Moffic
+  speech:
+    color: "#c7df2edd"
+    fontId: Copperplate
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2 # Replacements are really short
+    maxSyllables: 4
+    replacement:
+    - år
+    - i
+    - går
+    - sek
+    - mo
+    - ff
+    - ok
+    - gj
+    - ø
+    - gå
+    - la
+    - le
+    - lit
+    - ygg
+    - van
+    - dår
+    - næ
+    - møt
+    - idd
+    - hvo
+    - ja
+    - på
+    - han
+    - så
+    - ån
+    - det
+    - att
+    - nå
+    - gö
+    - bra
+    - int
+    - tyc
+    - om
+    - när
+    - två
+    - må
+    - dag
+    - sjä
+    - vii
+    - vuo
+    - eil
+    - tun
+    - käyt
+    - teh
+    - vä
+    - hei
+    - huo
+    - suo
+    - ää
+    - ten
+    - ja
+    - heu
+    - stu
+    - uhr
+    - kön
+    - we
+    - hön
+
+# Spoken by dionas.
+- type: language
+  id: RootSpeak
+  speech:
+    color: "#ce5e14dd"
+    fontId: Noganas
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 5
+    replacement:
+    - hs
+    - zt
+    - kr
+    - st
+    - sh
+
+# A mess of broken Japanese, spoken by Felinds and Oni
+- type: language
+  id: Nekomimetic
+  speech:
+    color: "#df57aaee"
+    fontId: Manga
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3 # May be too long even, we'll see.
+    replacement:
+    - neko
+    - nyan
+    - mimi
+    - moe
+    - mofu
+    - fuwa
+    - kyaa
+    - kawaii
+    - poka
+    - munya
+    - puni
+    - munyu
+    - ufufu
+    - icha
+    - doki
+    - kyun
+    - kusu
+    - nya
+    - nyaa
+    - desu
+    - kis
+    - ama
+    - chuu
+    - baka
+    - hewo
+    - boop
+    - gato
+    - kit
+    - sune
+    - yori
+    - sou
+    - baka
+    - chan
+    - san
+    - kun
+    - mahou
+    - yatta
+    - suki
+    - usagi
+    - domo
+    - ori
+    - uwa
+    - zaazaa
+    - shiku
+    - puru
+    - ira
+    - heto
+    - etto
+
+# Spoken by the Lizard race.
+- type: language
+  id: Draconic
+  speech:
+    color: "#2aca2add"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
+    replacement:
+    - za
+    - az
+    - ze
+    - ez
+    - zi
+    - iz
+    - zo
+    - oz
+    - zu
+    - uz
+    - zs
+    - sz
+    - ha
+    - ah
+    - he
+    - eh
+    - hi
+    - ih
+    - ho
+    - oh
+    - hu
+    - uh
+    - hs
+    - sh
+    - la
+    - al
+    - le
+    - el
+    - li
+    - il
+    - lo
+    - ol
+    - lu
+    - ul
+    - ls
+    - sl
+    - ka
+    - ak
+    - ke
+    - ek
+    - ki
+    - ik
+    - ko
+    - ok
+    - ku
+    - uk
+    - ks
+    - sk
+    - sa
+    - as
+    - se
+    - es
+    - si
+    - is
+    - so
+    - os
+    - su
+    - us
+    - ss
+    - ss
+    - ra
+    - ar
+    - re
+    - er
+    - ri
+    - ir
+    - ro
+    - or
+    - ru
+    - ur
+    - rs
+    - sr
+    - a
+    - a
+    - e
+    - e
+    - i
+    - i
+    - o
+    - o
+    - u
+    - u
+    - s
+    - s
+
+# Spoken by the Vulpkanin race.
+- type: language
+  id: Canilunzt
+  speech:
+    color: "#d69b3dcc"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 4
+    replacement:
+    - rur
+    - ya
+    - cen
+    - rawr
+    - bar
+    - kuk
+    - tek
+    - qat
+    - uk
+    - wu
+    - vuh
+    - tah
+    - tch
+    - schz
+    - auch
+    - ist
+    - ein
+    - entch
+    - zwichs
+    - tut
+    - mir
+    - wo
+    - bis
+    - es
+    - vor
+    - nic
+    - gro
+    - enem
+    - zandt
+    - tzch
+    - noch
+    - hel
+    - ischt
+    - far
+    - wa
+    - baram
+    - iereng
+    - tech
+    - lach
+    - sam
+    - mak
+    - lich
+    - gen
+    - or
+    - ag
+    - eck
+    - gec
+    - stag
+    - onn
+    - bin
+    - ket
+    - jarl
+    - vulf
+    - einech
+    - cresthz
+    - azunein
+    - ghzth
+
+# The common language of the Sol system.
+- type: language
+  id: SolCommon
+  speech:
+    color: "#8282fbaa"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 4
+    replacement:
+    - tao
+    - shi
+    - tzu
+    - yi
+    - com
+    - be
+    - is
+    - i
+    - op
+    - vi
+    - ed
+    - lec
+    - mo
+    - cle
+    - te
+    - dis
+    - e
+
+- type: language
+  id: RobotTalk
+  speech:
+    fontId: Monospace
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 10 # Crazy
+    replacement:
+    - 0
+    - 1
+
+# Languages spoken by various critters.
+- type: language
+  id: Cat
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement:
+    - murr
+    - meow
+    - purr
+    - mrow
+
+- type: language
+  id: Dog
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement:
+    - woof
+    - bark
+    - ruff
+    - bork
+    - raff
+    - garr
+
+- type: language
+  id: Fox
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement:
+    - ruff
+    - raff
+    - garr
+    - yip
+    - yap
+    - myah
+
+- type: language
+  id: Xeno
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 8 # I was crazy once
+    replacement:
+    - s
+    - S
+
+- type: language
+  id: Monkey
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 8 # They locked me in a room...
+    replacement:
+    - o
+    - k
+
+- type: language
+  id: Mouse
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 3
+    replacement:
+    - squ
+    - eak
+    - pi
+    - ep
+    - chuu
+    - ee
+    - fwi
+    - he
+
+- type: language
+  id: Chicken
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - co
+    - coo
+    - ot
+
+- type: language
+  id: Duck
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - qu
+    - ack
+    - quack
+
+- type: language
+  id: Cow
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - moo
+    - mooo
+
+- type: language
+  id: Sheep
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - ba
+    - baa
+    - aa
+
+- type: language
+  id: Kangaroo
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - shre
+    - ack
+    - chuu
+    - choo
+
+- type: language
+  id: Pig
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - oink # Please someone come up with something better
+
+- type: language
+  id: Crab
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - click
+    - clack
+    - ti
+    - pi
+    - tap
+    - cli
+    - ick
+
+- type: language
+  id: Kobold
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
+    replacement:
+    - yip
+    - yap
+    - gar
+    - grr
+    - ar
+    - scre
+    - et
+    - gronk
+    - hiss
+    - ss
+    - ee
+
+- type: language
+  id: Hissing
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
+    replacement:
+    - hss
+    - iss
+    - ss
+    - is
+
+# Example of a sign language. Not currently used anyhow.
+- type: language
+  id: Sign
+  speech:
+    allowRadio: false
+    requireSpeech: false
+    color: "#dddddd"
+    messageWrapOverrides:
+      Speak: chat-sign-language-message-wrap
+      Whisper: chat-sign-language-whisper-wrap
+    speechVerbOverrides:
+    - chat-speech-verb-sign-1
+    - chat-speech-verb-sign-2
+    - chat-speech-verb-sign-3
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - something
+    - a cryptic message to you
+    - a signal to you
+    - a message
+    - a rude expression to you
+    - a sad expression to you
+    - a happy expression to you

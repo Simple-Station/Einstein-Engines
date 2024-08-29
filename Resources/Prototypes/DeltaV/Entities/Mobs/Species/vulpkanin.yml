@@ -8,6 +8,7 @@
   - type: HumanoidAppearance
     species: Vulpkanin
   - type: Hunger
+    baseDecayRate: 0.02083333332 # 25% more than default
   - type: Carriable # Carrying system from nyanotrasen.
   - type: Inventory # Allows vulps to wear properly shaped helmets
     speciesId: vulpkanin
@@ -97,6 +98,24 @@
       Female: FemaleVulpkanin
       Unsexed: MaleVulpkanin
   - type: DogVision
+  - type: ScentTracker
+  - type: Flashable
+    eyeDamageChance: 0.3
+    eyeDamage: 1
+    durationMultiplier: 1.5
+  - type: Wagging
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Canilunzt
+    understands:
+    - GalacticCommon
+    - Canilunzt
+  - type: ConsumeDelayModifier
+    foodDelayMultiplier: 0.5
+    drinkDelayMultiplier: 0.5
+  - type: Flammable
+    fireStackIncreaseMultiplier: 1.25
 
 - type: entity
   save: false

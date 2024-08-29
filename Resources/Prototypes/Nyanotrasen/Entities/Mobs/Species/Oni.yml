@@ -6,6 +6,7 @@
   components:
   - type: Speech
     speechSounds: Baritone
+    speechVerb: Oni
   - type: HumanoidAppearance
     species: Oni
   - type: Sprite
@@ -26,7 +27,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.42
+          radius: 0.35
         density: 220
         restitution: 0.0
         mask:
@@ -35,6 +36,15 @@
         - MobLayer
   - type: Stamina
     critThreshold: 115
+  - type: TypingIndicator
+    proto: oni
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Nekomimetic
+    understands:
+    - GalacticCommon
+    - Nekomimetic
 
 - type: entity
   save: false

@@ -7,7 +7,7 @@ in import (builtins.fetchTarball {
 
 let
   dependencies = with pkgs; [
-    dotnetCorePackages.sdk_8_0
+    dotnetCorePackages.sdk_8_0_1xx
     glfw
     SDL2
     libGL
@@ -41,7 +41,6 @@ let
     dbus
     at-spi2-core
     cups
-    python3
   ];
 in pkgs.mkShell {
   name = "space-station-14-devshell";

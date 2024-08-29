@@ -75,11 +75,22 @@
   - type: StorageFill
     contents:
       - id: MobDuckMallard
-        amount: 2
+        amount: 1
+      - id: MobDuckBrown
+        amount: 1
       - id: MobDuckWhite
         amount: 2
-      - id: MobDuckBrown
-        amount: 2
+
+- type: entity
+  id: CrateNPCPibble
+  parent: CrateLivestock
+  name: pitbull crate
+  description: "Note from the shelter: Lab mix. Looking for a home without cats, birds, or children. Anxious when pet."
+  components:
+  - type: StorageFill
+    contents:
+      - id: MobPibble
+        amount: 1
 
 - type: entity
   id: CrateNPCCorgi

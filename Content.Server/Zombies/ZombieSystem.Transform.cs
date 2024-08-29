@@ -1,4 +1,3 @@
-using Content.Server.Actions;
 using Content.Server.Atmos.Components;
 using Content.Server.Body.Components;
 using Content.Server.Chat;
@@ -26,17 +25,18 @@ using Content.Shared.Humanoid;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.AnimalHusbandry;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
-using Content.Shared.Pulling.Components;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Zombies;
 using Content.Shared.Prying.Components;
-using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Traits.Assorted.Components;
+using Content.Server.Abilities.Psionics;
 
 namespace Content.Server.Zombies
 {
@@ -59,9 +59,8 @@ namespace Content.Server.Zombies
         [Dependency] private readonly IChatManager _chatMan = default!;
         [Dependency] private readonly MindSystem _mind = default!;
         [Dependency] private readonly SharedRoleSystem _roles = default!;
-        [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
-        [Dependency] private readonly ActionsSystem _actions = default!; // DeltaV - No psionic zombies
+        [Dependency] private readonly PsionicAbilitiesSystem _psionic = default!;
 
         /// <summary>
         /// Handles an entity turning into a zombie when they die or go into crit
@@ -109,17 +108,9 @@ namespace Content.Server.Zombies
             RemComp<ReproductivePartnerComponent>(target);
             RemComp<LegsParalyzedComponent>(target);
 
-            if (TryComp<PsionicComponent>(target, out var psionic)) // DeltaV - Prevent psionic zombies
+            if (HasComp<PsionicComponent>(target)) // Prevent psionic zombies
             {
-                if (psionic.ActivePowers.Count > 0)
-                {
-                    foreach (var power in psionic.ActivePowers)
-                    {
-                        RemComp(target, power);
-                    }
-                    psionic.ActivePowers.Clear();
-                }
-                RemComp<PsionicComponent>(target);
+                _psionic.RemoveAllPsionicPowers(target, true);
             }
 
             //funny voice
@@ -144,7 +135,7 @@ namespace Content.Server.Zombies
             melee.AltDisarm = false;
             melee.Range = 1.2f;
             melee.Angle = 0.0f;
-            melee.HitSound = zombiecomp.BiteSound;
+            melee.SoundHit = zombiecomp.BiteSound;
 
             if (mobState.CurrentState == MobState.Alive)
             {
@@ -282,7 +273,9 @@ namespace Content.Server.Zombies
                 RemComp(target, handsComp);
             }
 
-            RemComp<SharedPullerComponent>(target);
+            // Sloth: What the fuck?
+            // How long until compregistry lmao.
+            RemComp<PullerComponent>(target);
 
             // No longer waiting to become a zombie:
             // Requires deferral because this is (probably) the event which called ZombifyEntity in the first place.

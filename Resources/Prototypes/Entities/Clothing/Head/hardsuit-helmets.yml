@@ -156,6 +156,25 @@
         Piercing: 0.9
         Heat: 0.9
 
+#Paramedic Void Helmet
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitVoidParamed
+  name: paramedic void helmet
+  description: A void helmet made for paramedics.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/paramedhelm.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/paramedhelm.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.90
+        Radiation: 0.75
+
+
 #Security Hardsuit
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -570,6 +589,21 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+
+#ERT Chaplain Hardsuit
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSyndie
+  id: ClothingHeadHelmetHardsuitERTChaplain
+  name: ERT chaplain hardsuit helmet
+  description: A special hardsuit helmet worn by members of an emergency response team.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/ERThelmets/ertchaplain.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/ERThelmets/ertchaplain.rsi
+  - type: PointLight
+    color: "#ffffff"
 
 #ERT Engineer Hardsuit
 - type: entity
