@@ -9,7 +9,7 @@ using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._White.Standing;
+namespace Content.Shared.Standing;
 
 public abstract class SharedLayingDownSystem : EntitySystem
 {
@@ -40,12 +40,10 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     private void ToggleStanding(ICommonSession? session)
     {
-        if (session?.AttachedEntity == null ||
-            !HasComp<LayingDownComponent>(session.AttachedEntity) ||
-            _gravity.IsWeightless(session.AttachedEntity.Value))
-        {
+        if (session?.AttachedEntity == null
+            || !HasComp<LayingDownComponent>(session.AttachedEntity)
+            || _gravity.IsWeightless(session.AttachedEntity.Value))
             return;
-        }
 
         RaiseNetworkEvent(new ChangeLayingDownEvent());
     }
@@ -61,15 +59,14 @@ public abstract class SharedLayingDownSystem : EntitySystem
         //if (HasComp<FrozenComponent>(uid))
         //   return;
 
-        if (!TryComp(uid, out StandingStateComponent? standing) ||
-            !TryComp(uid, out LayingDownComponent? layingDown))
-        {
+        if (!TryComp(uid, out StandingStateComponent? standing)
+            || !TryComp(uid, out LayingDownComponent? layingDown))
             return;
-        }
 
         RaiseNetworkEvent(new CheckAutoGetUpEvent(GetNetEntity(uid)));
 
-        if (HasComp<KnockedDownComponent>(uid) || !_mobState.IsAlive(uid))
+        if (HasComp<KnockedDownComponent>(uid)
+            || !_mobState.IsAlive(uid))
             return;
 
         if (_standing.IsDown(uid, standing))
@@ -80,11 +77,11 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     private void OnStandingUpDoAfter(EntityUid uid, StandingStateComponent component, StandingUpDoAfterEvent args)
     {
-        if (args.Handled || args.Cancelled || HasComp<KnockedDownComponent>(uid) ||
-            _mobState.IsIncapacitated(uid) || !_standing.Stand(uid))
-        {
+        if (args.Handled || args.Cancelled
+            || HasComp<KnockedDownComponent>(uid)
+            || _mobState.IsIncapacitated(uid)
+            || !_standing.Stand(uid))
             component.CurrentState = StandingState.Lying;
-        }
 
         component.CurrentState = StandingState.Standing;
     }
@@ -103,23 +100,19 @@ public abstract class SharedLayingDownSystem : EntitySystem
         if (!TryComp<StandingStateComponent>(uid, out var standingState)
             || standingState.CurrentState is StandingState.Standing
             || Transform(uid).GridUid != null)
-        {
             return;
-        }
 
         _standing.Stand(uid, standingState);
     }
 
     public bool TryStandUp(EntityUid uid, LayingDownComponent? layingDown = null, StandingStateComponent? standingState = null)
     {
-        if (!Resolve(uid, ref standingState, false) ||
-            !Resolve(uid, ref layingDown, false) ||
-            standingState.CurrentState is not StandingState.Lying ||
-            !_mobState.IsAlive(uid) ||
-            TerminatingOrDeleted(uid))
-        {
+        if (!Resolve(uid, ref standingState, false)
+            || !Resolve(uid, ref layingDown, false)
+            || standingState.CurrentState is not StandingState.Lying
+            || !_mobState.IsAlive(uid)
+            || TerminatingOrDeleted(uid))
             return false;
-        }
 
         var args = new DoAfterArgs(EntityManager, uid, layingDown.StandingUpTime, new StandingUpDoAfterEvent(), uid)
         {
@@ -136,9 +129,9 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     public bool TryLieDown(EntityUid uid, LayingDownComponent? layingDown = null, StandingStateComponent? standingState = null, DropHeldItemsBehavior behavior = DropHeldItemsBehavior.NoDrop)
     {
-        if (!Resolve(uid, ref standingState, false) ||
-            !Resolve(uid, ref layingDown, false) ||
-            standingState.CurrentState is not StandingState.Standing)
+        if (!Resolve(uid, ref standingState, false)
+            || !Resolve(uid, ref layingDown, false)
+            || standingState.CurrentState is not StandingState.Standing)
         {
             if (behavior == DropHeldItemsBehavior.AlwaysDrop)
                 RaiseLocalEvent(uid, new DropHandItemsEvent());

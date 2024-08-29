@@ -1,4 +1,3 @@
-using Content.Shared._White.Standing;
 using Content.Shared.Buckle;
 using Content.Shared.Rotation;
 using Content.Shared.Standing;
@@ -27,24 +26,14 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
 
     private void OnMovementInput(EntityUid uid, LayingDownComponent component, MoveEvent args)
     {
-        if (!_timing.IsFirstTimePredicted)
-            return;
-
-        if (!_standing.IsDown(uid))
-            return;
-
-        if (_buckle.IsBuckled(uid))
-            return;
-
-        if (_animation.HasRunningAnimation(uid, "rotate"))
-            return;
-
-        if (!TryComp<TransformComponent>(uid, out var transform)
+        if (!_timing.IsFirstTimePredicted
+            || !_standing.IsDown(uid)
+            || _buckle.IsBuckled(uid)
+            || _animation.HasRunningAnimation(uid, "rotate")
+            || !TryComp<TransformComponent>(uid, out var transform)
             || !TryComp<SpriteComponent>(uid, out var sprite)
             || !TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
-        {
             return;
-        }
 
         var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - transform.WorldRotation));
 

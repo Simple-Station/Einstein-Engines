@@ -1,5 +1,5 @@
 using Content.Server.Traits.Assorted;
-using Content.Shared._White.Standing;
+using Content.Shared.Standing;
 
 namespace Content.Shared.Traits.Assorted.Systems;
 

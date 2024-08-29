@@ -1,10 +1,9 @@
-using Content.Shared._White;
-using Content.Shared._White.Standing;
+using Content.Shared.Standing;
 using Robust.Shared.Configuration;
 
 namespace Content.Server.Standing;
 
-public sealed class LayingDownSystem : SharedLayingDownSystem // WD EDIT
+public sealed class LayingDownSystem : SharedLayingDownSystem
 {
     [Dependency] private readonly INetConfigurationManager _cfg = default!;
 
