@@ -35,6 +35,7 @@
       entity_storage: !type:NestedSelector
         tableId: LockerFillQuarterMaster
 
+# No laser table
 - type: entityTable
   id: LockerFillCaptainNoLaser
   table: !type:AllSelector
@@ -43,6 +44,7 @@
     - id: CigarGoldCase
       prob: 0.25
     - id: ClothingBeltSheathFilled
+    - id: ClothingEyesGlassesCommand
     - id: ClothingHeadsetAltCommand
     - id: ClothingOuterArmorCaptainCarapace
     - id: CommsComputerCircuitboard
@@ -124,6 +126,7 @@
     - id: BoxHeadset
     - id: BoxID
     - id: BoxPDA
+    - id: ClothingEyesHudCommand
     - id: ClothingHeadsetAltService
     - id: DoorRemoteService
     - id: HoPIDCard
