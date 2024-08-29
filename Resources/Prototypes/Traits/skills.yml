@@ -192,6 +192,10 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PsionicInsulation
 
 - type: trait
   id: PsionicInsulation
@@ -218,3 +222,4 @@
       inverted: true
       traits:
         - Uncloneable
+        - LatentPsychic
