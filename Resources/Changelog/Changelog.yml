@@ -5564,3 +5564,44 @@ Entries:
       message: Supermatter Annoncements
   id: 6287
   time: '2024-08-24T07:56:12.0000000+00:00'
+- author: Fansana
+  changes:
+    - type: Fix
+      message: >-
+        Fixed most door accesses including: Lawyer, Mantis, Corpsman, Boxer,
+        Clown, Mime, Musician, Reporter, Library, Zookeeper, Salvage and
+        Psychologist.
+  id: 6288
+  time: '2024-08-25T08:45:17.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed the FixGridAtmos command.
+  id: 6289
+  time: '2024-08-26T00:02:53.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Lab Mixes have been added to the game as a new random animal. Be sure to
+        keep Felinids and Harpies away from them.
+  id: 6290
+  time: '2024-08-27T03:16:46.0000000+00:00'
+- author: router
+  changes:
+    - type: Add
+      message: >-
+        Added more sounds to IPCs. IPCs can now also whistle, whirr, beep, boop,
+        ping, chime, buzz and buzz twice.
+    - type: Fix
+      message: IPCs no longer have the default wilhelm sound.
+    - type: Tweak
+      message: Silicon deathgasps are now darker.
+  id: 6291
+  time: '2024-08-29T02:57:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: IPCs can now lay down, offer people items, and be picked up and carried.
+  id: 6292
+  time: '2024-08-29T20:01:47.0000000+00:00'
