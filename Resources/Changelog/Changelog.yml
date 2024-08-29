@@ -5587,3 +5587,15 @@ Entries:
         keep Felinids and Harpies away from them.
   id: 6290
   time: '2024-08-27T03:16:46.0000000+00:00'
+- author: router
+  changes:
+    - type: Add
+      message: >-
+        Added more sounds to IPCs. IPCs can now also whistle, whirr, beep, boop,
+        ping, chime, buzz and buzz twice.
+    - type: Fix
+      message: IPCs no longer have the default wilhelm sound.
+    - type: Tweak
+      message: Silicon deathgasps are now darker.
+  id: 6291
+  time: '2024-08-29T02:57:16.0000000+00:00'
