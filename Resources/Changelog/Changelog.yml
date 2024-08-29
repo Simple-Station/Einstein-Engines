@@ -5599,3 +5599,9 @@ Entries:
       message: Silicon deathgasps are now darker.
   id: 6291
   time: '2024-08-29T02:57:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: IPCs can now lay down, offer people items, and be picked up and carried.
+  id: 6292
+  time: '2024-08-29T20:01:47.0000000+00:00'
