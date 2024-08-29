@@ -90,7 +90,6 @@ public sealed class BatteryDrinkerSystem : EntitySystem
             || !_silicon.TryGetSiliconBattery(uid, out var drinkerBatteryComponent)
             || !TryComp(uid, out PowerCellSlotComponent? batterySlot)
             || !TryComp<BatteryDrinkerSourceComponent>(args.Target.Value, out var sourceComp)
-            || sourceComp is null
             || !_container.TryGetContainer(uid, batterySlot.CellSlotId, out var container)
             || container.ContainedEntities is null)
             return;

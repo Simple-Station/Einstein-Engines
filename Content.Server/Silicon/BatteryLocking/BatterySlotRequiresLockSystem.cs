@@ -12,7 +12,6 @@ public sealed class BatterySlotRequiresLockSystem : EntitySystem
     [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
-    /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();

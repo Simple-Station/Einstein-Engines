@@ -2,14 +2,9 @@ using Content.Server.Power.Components;
 using Content.Shared.Silicon.Systems;
 using Content.Server.Bed.Sleep;
 using Content.Shared.Bed.Sleep;
-using Content.Server.Sound.Components;
 using Content.Server.Silicon.Charge;
-using System.Threading;
 using Content.Server.Humanoid;
 using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Markings;
-using Robust.Shared.Utility;
-using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server.Silicon.Death;
 

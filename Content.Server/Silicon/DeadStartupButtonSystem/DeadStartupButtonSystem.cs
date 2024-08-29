@@ -37,10 +37,10 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
     private void OnDoAfter(EntityUid uid, DeadStartupButtonComponent comp, OnDoAfterButtonPressedEvent args)
     {
         if (args.Handled || args.Cancelled
-            || !TryComp(uid, out MobStateComponent? mobStateComponent)
+            || !TryComp<MobStateComponent>(uid, out var mobStateComponent)
             || !_mobState.IsDead(uid, mobStateComponent)
-            || !TryComp(uid, out MobThresholdsComponent? mobThresholdsComponent)
-            || !TryComp(uid, out DamageableComponent? damageable)
+            || !TryComp<MobThresholdsComponent>(uid, out var mobThresholdsComponent)
+            || !TryComp<DamageableComponent>(uid, out var damageable)
             || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var criticalThreshold, mobThresholdsComponent))
             return;
 
@@ -56,7 +56,7 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
 
     private void OnElectrocuted(EntityUid uid, DeadStartupButtonComponent comp, ElectrocutedEvent args)
     {
-        if (!TryComp(uid, out MobStateComponent? mobStateComponent)
+        if (!TryComp<MobStateComponent>(uid, out var mobStateComponent)
             || !_mobState.IsDead(uid, mobStateComponent)
             || !_siliconChargeSystem.TryGetSiliconBattery(uid, out var bateria)
             || bateria.CurrentCharge <= 0)
