@@ -2,15 +2,11 @@
   id: PLC
   name: plc
   description: It's a programmable logic controller.
+  parent: BaseStructure
   placement:
     mode: SnapgridCenter
   components:
-    - type: Transform
-      anchored: true
-    - type: Clickable
     - type: InteractionOutline
-    - type: Physics
-      canCollide: true
     - type: Sprite
       drawdepth: SmallObjects
       sprite: Structures/Wallmounts/switch.rsi
@@ -20,7 +16,6 @@
     - type: Construction
       graph: PLCGraph
       node: PLCNode
-    - type: Fixtures
     - type: DeviceNetwork
       deviceNetId: Wireless
     - type: WirelessNetworkConnection
