@@ -17,15 +17,16 @@ namespace Spessembly
         public const int HIGH = 100;
         public const int LOW = 0;
 
+        // todo: when checking syntax, convert to a list of enums for efficiency (as opposed to string checks every step)
         private string[] code = Array.Empty<string>();
-        private int[] pins;
-        private int[] registers;
-        private int[] memory;
+        private double[] pins;
+        private double[] registers;
+        private double[] memory;
         public string Name;
 
-        private int CLK = 0, POWER = 0, prevCLK = 0;
+        private double CLK = 0, POWER = 0, prevCLK = 0;
 
-        private Dictionary<string, int> labels = new Dictionary<string, int>();
+        private Dictionary<string, double> labels = new Dictionary<string, double>();
         private bool syntaxOk = false;
 
         public int AmountOfPins => pins.Length;
@@ -75,9 +76,9 @@ namespace Spessembly
         public PLCInterpreter(string name, int amountOfPins, int amountOfRegisters, int memoryCapacity)
         {
             Name = name;
-            pins = new int[amountOfPins];
-            registers = new int[amountOfRegisters];
-            memory = new int[memoryCapacity];
+            pins = new double[amountOfPins];
+            registers = new double[amountOfRegisters];
+            memory = new double[memoryCapacity];
             allPlcs.Add(this);
         }
 
@@ -99,27 +100,27 @@ namespace Spessembly
             }
         }
 
-        public void SetPin(int pin, int value)
+        public void SetPin(int pin, double value)
         {
             pins[pin] = value;
         }
 
-        public int GetPin(int pin)
+        public double GetPin(int pin)
         {
             return pins[pin];
         }
 
-        public void SetCLK(int value)
+        public void SetCLK(double value)
         {
             CLK = value;
         }
 
-        public int GetCLK()
+        public double GetCLK()
         {
             return CLK;
         }
 
-        public void SetPOWER(int value) //should not be higher than 100, but it's really just an on/off
+        public void SetPOWER(double value) //should not be higher than 100, but it's really just an on/off
         {
             if (value < 50) // on too low power...
             {
@@ -134,24 +135,24 @@ namespace Spessembly
             POWER = value;
         }
 
-        public int GetPOWER()
+        public double GetPOWER()
         {
             return POWER;
         }
 
-        public void SetRegister(int register, int value)
+        public void SetRegister(int register, double value)
         {
             registers[register] = value;
         }
 
-        public int GetRegister(int register)
+        public double GetRegister(int register)
         {
             return registers[register];
         }
 
-        public int[] DumpMemory()
+        public double[] DumpMemory()
         {
-            int[] copy = new int[memory.Length];
+            double[] copy = new double[memory.Length];
             memory.CopyTo(copy, 0);
             return copy;
         }
@@ -206,7 +207,7 @@ namespace Spessembly
             string instruction = linePrts[0];
             string[] args = linePrts.Length > 1 ? line.Split(' ')[1].Split(',') : new string[0];
 
-            int value;
+            double value;
 
             switch (instruction)
             {
@@ -255,56 +256,56 @@ namespace Spessembly
 
                 case "add":
 
-                    value = (byte) (GetNumberFromSource(args[1]) + GetNumberFromSource(args[2]));
+                    value = (double)(GetNumberFromSource(args[1]) + GetNumberFromSource(args[2]));
                     SetValueIntoDest(args[0], value);
 
                     break;
 
                 case "sub":
 
-                    value = (byte) (GetNumberFromSource(args[1]) - GetNumberFromSource(args[2]));
+                    value = (double)(GetNumberFromSource(args[1]) - GetNumberFromSource(args[2]));
                     SetValueIntoDest(args[0], value);
 
                     break;
 
                 case "mul":
 
-                    value = (byte) (GetNumberFromSource(args[1]) * GetNumberFromSource(args[2]));
+                    value = (double)(GetNumberFromSource(args[1]) * GetNumberFromSource(args[2]));
                     SetValueIntoDest(args[0], value);
 
                     break;
 
                 case "div":
 
-                    value = (byte) (GetNumberFromSource(args[1]) / GetNumberFromSource(args[2]));
+                    value = (double)(GetNumberFromSource(args[1]) / GetNumberFromSource(args[2]));
                     SetValueIntoDest(args[0], value);
 
                     break;
 
                 case "mod":
 
-                    value = (byte) (GetNumberFromSource(args[1]) % GetNumberFromSource(args[2]));
+                    value = (double)(GetNumberFromSource(args[1]) % GetNumberFromSource(args[2]));
                     SetValueIntoDest(args[0], value);
 
                     break;
 
                 case "and":
 
-                    value = (byte) (GetValueFromSource(args[1]) & GetValueFromSource(args[2]));
+                    value = (double)(GetValueFromSource(args[1]) & GetValueFromSource(args[2]));
                     SetValueIntoDest(args[0], value);
 
                     break;
 
                 case "or":
 
-                    value = (byte) (GetValueFromSource(args[1]) | GetValueFromSource(args[2]));
+                    value = (double)(GetValueFromSource(args[1]) | GetValueFromSource(args[2]));
                     SetValueIntoDest(args[0], value);
 
                     break;
 
                 case "not":
 
-                    value = (byte) ~GetValueFromSource(args[1]);
+                    value = (double)~GetValueFromSource(args[1]);
                     SetValueIntoDest(args[0], value);
 
                     break;
@@ -329,66 +330,66 @@ namespace Spessembly
 
                 case "cmpgt":
 
-                    value = (byte) (GetValueFromSource(args[1]) > GetValueFromSource(args[2]) ? 1 : 0);
+                    value = (double)(GetValueFromSource(args[1]) > GetValueFromSource(args[2]) ? 1 : 0);
                     SetValueIntoDest(args[0], value);
 
                     break;
 
                 case "cmplt":
 
-                    value = (byte) (GetValueFromSource(args[1]) < GetValueFromSource(args[2]) ? 1 : 0);
+                    value = (double)(GetValueFromSource(args[1]) < GetValueFromSource(args[2]) ? 1 : 0);
                     SetValueIntoDest(args[0], value);
 
                     break;
 
                 case "cmpeq":
 
-                    value = (byte) (GetValueFromSource(args[1]) == GetValueFromSource(args[2]) ? 1 : 0);
+                    value = (double)(GetValueFromSource(args[1]) == GetValueFromSource(args[2]) ? 1 : 0);
                     SetValueIntoDest(args[0], value);
 
                     break;
             }
         }
 
-        private int GetNumberFromSource(string source, bool literalAllowed = false)
+        private double GetNumberFromSource(string source, bool literalAllowed = false)
         {
             if (source[0] == pinPrefix)
             {
-                return GetPin(int.Parse(source.Substring(1)));
+                return GetPin(double.Parse(source.Substring(1)));
             }
             else if (source[0] == registerPrefix)
             {
-                return GetRegister(int.Parse(source.Substring(1)));
+                return GetRegister(double.Parse(source.Substring(1)));
             }
             else if (source[0] == immediatePrefix)
             {
-                return int.Parse(source.Substring(1));
+                return double.Parse(source.Substring(1));
             }
             else
             {
                 if (literalAllowed)
                 {
-                    return int.Parse(source);
+                    return double.Parse(source);
                 }
 
                 throw new InvalidOperationException($"Unknown source type in parameter '{source}'");
             }
         }
 
-        private int GetValueFromSource(string source)
+        private double GetValueFromSource(string source)
         {
-            return (int) GetNumberFromSource((string) source, false);
+            return (double)GetNumberFromSource((string)source, false);
         }
 
-        private void SetValueIntoDest(string dest, int value)
+        private void SetValueIntoDest(string dest, double value)
         {
             if (dest[0] == pinPrefix)
             {
-                SetPin(int.Parse(dest.Substring(1)), value);
+                SetPin(double.Parse(dest.Substring(1)), value);
             }
             else if (dest[0] == registerPrefix)
             {
-                SetRegister(int.Parse(dest.Substring(1)), value);
+                SetRegister(double.Parse(dest.Substring(1)), value);
             }
             else if (dest[0] == immediatePrefix)
             {
@@ -402,7 +403,7 @@ namespace Spessembly
 
         private bool CheckSyntax()
         {
-            labels = new Dictionary<string, int>();
+            labels = new Dictionary<string, double>();
             try
             {
                 for (int i = 0, l = code.Length; i < l; i++)
