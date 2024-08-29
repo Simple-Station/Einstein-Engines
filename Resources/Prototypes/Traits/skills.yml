@@ -203,3 +203,10 @@
     - !type:CharacterTraitRequirement
       traits:
         - LatentPsychic
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain
+        - Librarian
