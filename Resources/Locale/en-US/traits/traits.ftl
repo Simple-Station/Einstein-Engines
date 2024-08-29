@@ -202,3 +202,10 @@ trait-description-LatentPsychic =
     Your mind and soul are open to the noosphere, allowing for use of Telepathy.
     Thus, you are eligible for potentially receiving psychic powers.
     It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.
+
+trait-name-NaturalTelepath = Natural Telepath
+trait-description-NaturalTelepath =
+    As a naturally occuring Telepath, you are capable of fluent telepathic communication, regardless of
+    whether or not you possess any notable psychic powers. This offers all of the same benefits and
+    drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
+    still gain powers as normal for a Latent Psychic.
