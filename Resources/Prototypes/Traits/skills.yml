@@ -192,6 +192,37 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PsionicInsulation
+
+- type: trait
+  id: PsionicInsulation
+  category: Mental
+  points: -14 #Buy a significant disability to get this.
+  components:
+    - type: PsionicInsulation
+    - type: Mindbroken
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain
+        - Librarian
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Uncloneable
+        - LatentPsychic
 
 - type: trait
   id: NaturalTelepath

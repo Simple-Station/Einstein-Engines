@@ -203,6 +203,13 @@ trait-description-LatentPsychic =
     Thus, you are eligible for potentially receiving psychic powers.
     It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.
 
+trait-name-PsionicInsulation = χ Waveform Misalignment
+trait-description-PsionicInsulation =
+    You are a flesh automaton animated by neurotransmitters. Within your skull lies a
+    1.5kg sack of meat pretending at sentience. By modern epistemiological theory, you aren't even a sophont.
+    The good news is that you are immune to most positive and negative effects of psychic powers.
+    There may be other consequences to this malady.
+
 trait-name-NaturalTelepath = Natural Telepath
 trait-description-NaturalTelepath =
     As a naturally occuring Telepath, you are capable of fluent telepathic communication, regardless of
