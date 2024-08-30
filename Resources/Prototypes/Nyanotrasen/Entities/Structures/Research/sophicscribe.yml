@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseStructure
   id: SophicScribe
-  name: Sophia
+  name: sophie
   description: Latest reports on the Noösphere!
   components:
   - type: Sprite
@@ -27,14 +27,7 @@
     channels:
     - Common
     - Science
-  - type: Actions
   - type: Psionic
-    removable: false
-  - type: InnatePsionicPowers
-    powersToAdd:
-      - XenoglossyPower
-      - PsychognomyPower
-      - NoosphericZapPower
   - type: Grammar
     attributes:
       gender: female
@@ -43,4 +36,3 @@
   - type: GuideHelp
     guides:
     - Psionics
-  - type: Prayable
