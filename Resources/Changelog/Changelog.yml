@@ -5605,3 +5605,9 @@ Entries:
       message: IPCs can now lay down, offer people items, and be picked up and carried.
   id: 6292
   time: '2024-08-29T20:01:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Temporarily disabled Telegnosis pending a lengthier update.
+  id: 6293
+  time: '2024-08-30T00:46:52.0000000+00:00'
