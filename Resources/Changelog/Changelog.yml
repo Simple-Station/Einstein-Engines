@@ -5671,3 +5671,13 @@ Entries:
         Telepathic, and thus get the new trait for free.
   id: 6297
   time: '2024-08-30T05:27:54.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        x-Waveform Misalignment has been rebased from the Psionic Refactor v1.
+        x-Waveform Misalignment is an extraordinarily expensive trait that
+        grants full immunity to nearly all psionic powers and effects, both
+        positive and negative.
+  id: 6298
+  time: '2024-08-30T05:39:59.0000000+00:00'
