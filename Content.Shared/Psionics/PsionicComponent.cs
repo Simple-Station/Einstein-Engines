@@ -148,5 +148,18 @@ namespace Content.Shared.Abilities.Psionics
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
         public float CurrentDampening;
+
+        /// <summary>
+        ///     How many "Slots" an entity has for psionic powers. This is not a hard limit, and is instead used for calculating the cost to generate new powers.
+        ///     Exceeding this limit causes an entity to become a Glimmer Source.
+        /// </summary>
+        [DataField]
+        public int PowerSlots = 1;
+
+        /// <summary>
+        ///     How many "Slots" are currently occupied by psionic powers.
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
+        public int PowerSlotsTaken;
     }
 }

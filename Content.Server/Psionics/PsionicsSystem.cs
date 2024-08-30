@@ -15,6 +15,8 @@ using Content.Shared.Popups;
 using Content.Shared.Chat;
 using Robust.Server.Player;
 using Content.Server.Chat.Managers;
+using Robust.Shared.Prototypes;
+using Content.Shared.Psionics;
 
 namespace Content.Server.Psionics;
 
@@ -32,6 +34,7 @@ public sealed class PsionicsSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
     private const string BaselineAmplification = "Baseline Amplification";
     private const string BaselineDampening = "Baseline Dampening";
@@ -72,10 +75,25 @@ public sealed class PsionicsSystem : EntitySystem
             || !component.CanReroll)
             return;
 
-        if (TryComp<InnatePsionicPowersComponent>(uid, out var innate))
-            component.NextPowerCost = 100 * MathF.Pow(2, innate.PowersToAdd.Count);
-
+        CheckPowerCost(uid, component);
         _rollers.Enqueue((component, uid));
+    }
+
+    /// <summary>
+    ///     On MapInit, PsionicComponent isn't going to contain any powers.
+    ///     So before we send a Latent Psychic into the roundstart roll queue, we need to calculate their power cost in advance.
+    /// </summary>
+    private void CheckPowerCost(EntityUid uid, PsionicComponent component)
+    {
+        if (!TryComp<InnatePsionicPowersComponent>(uid, out var innate))
+            return;
+
+        var powerCount = 0;
+        foreach (var powerId in innate.PowersToAdd)
+            if (_protoMan.TryIndex<PsionicPowerPrototype>(powerId, out var power))
+                powerCount += power.PowerSlotCost;
+
+        component.NextPowerCost = 100 * MathF.Pow(2, powerCount);
     }
 
     private void OnMeleeHit(EntityUid uid, AntiPsionicWeaponComponent component, MeleeHitEvent args)
@@ -155,7 +173,7 @@ public sealed class PsionicsSystem : EntitySystem
 
         component.Potentia -= component.NextPowerCost;
         _psionicAbilitiesSystem.AddPsionics(uid);
-        component.NextPowerCost = 100 * MathF.Pow(2, component.ActivePowers.Count);
+        component.NextPowerCost = 100 * MathF.Pow(2, component.PowerSlotsTaken);
         return true;
     }
 

@@ -119,6 +119,7 @@
     - type: UniversalLanguageSpeaker
   initializationFeedback: xenoglossy-power-initialization-feedback
   metapsionicFeedback: psionic-language-power-feedback # Reuse for telepathy, clairaudience, etc
+  powerSlotCost: 0
 
 - type: psionicPower
   id: TelepathyPower
@@ -128,3 +129,4 @@
     - type: Telepathy
   initializationFeedback: telepathy-power-initialization-feedback
   metapsionicFeedback: psionic-language-power-feedback # Reuse for telepathy, clairaudience, etc
+  powerSlotCost: 0

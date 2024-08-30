@@ -12,6 +12,7 @@ using Content.Shared.Psionics;
 using System.Linq;
 using Robust.Server.Player;
 using Content.Server.Chat.Managers;
+using Content.Server.Psionics.Glimmer;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -122,6 +123,8 @@ namespace Content.Server.Abilities.Psionics
             AddPsionicStatSources(proto, psionic);
             RefreshPsionicModifiers(uid, psionic);
             SendFeedbackMessage(uid, proto, playFeedback);
+            UpdatePowerSlots(psionic);
+            UpdatePsionicDanger(uid, psionic);
             //SendFeedbackAudio(uid, proto, playPopup); // TODO: This one is coming next!
         }
 
@@ -295,6 +298,24 @@ namespace Content.Server.Abilities.Psionics
                 EntityUid.Invalid,
                 false,
                 session.Channel);
+        }
+
+        private void UpdatePowerSlots(PsionicComponent psionic)
+        {
+            var slotsUsed = 0;
+            foreach (var power in psionic.ActivePowers)
+                slotsUsed += power.PowerSlotCost;
+
+            psionic.PowerSlotsTaken = slotsUsed;
+        }
+
+        private void UpdatePsionicDanger(EntityUid uid, PsionicComponent psionic)
+        {
+            if (psionic.PowerSlotsTaken <= psionic.PowerSlots)
+                return;
+
+            EnsureComp<GlimmerSourceComponent>(uid, out var glimmerSource);
+            glimmerSource.SecondsPerGlimmer = 10 / psionic.PowerSlotsTaken;
         }
 
         /// <summary>
