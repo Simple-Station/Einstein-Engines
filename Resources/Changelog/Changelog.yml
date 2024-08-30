@@ -5707,3 +5707,12 @@ Entries:
       message: Glacier Returns.
   id: 6301
   time: '2024-08-30T14:13:04.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Saltern has been added to the map rotation. Now featuring a compact
+        Supermatter engine, full Epistemics department, and a significantly
+        expanded Chapel and Library.
+  id: 6302
+  time: '2024-08-30T14:24:49.0000000+00:00'
