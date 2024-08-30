@@ -16,6 +16,7 @@ namespace Content.Shared.Customization.Systems;
 [Serializable, NetSerializable]
 public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
 {
+    [DataField]
     public List<CharacterRequirement> Requirements { get; private set; } = new();
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
@@ -23,14 +24,9 @@ public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
-        foreach (var req in Requirements)
-            Logger.Error(nameof(req) + " " + req.GetType() + " " + req);
-
         var charReqs = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>();
         var succeeded = charReqs.CheckRequirementsValid(Requirements, job, profile, playTimes, whitelisted,
             entityManager, prototypeManager, configManager, out var reasons);
-
-        Logger.Error(succeeded.ToString());
 
         if (reasons.Count == 0)
         {
@@ -40,8 +36,11 @@ public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
 
         reason = new FormattedMessage();
         foreach (var message in reasons)
-            reason.AddMessage(message);
-        Logger.Error(reason.ToMarkup());
+            reason.AddMessage(FormattedMessage.FromMarkup(
+                Loc.GetString("character-logic-or-requirement-listprefix") + message.ToMarkup()));
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-logic-or-requirement",
+            ("inverted", Inverted), ("options", reason.ToMarkup())));
+
         return succeeded;
     }
 }
@@ -53,6 +52,7 @@ public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
 [Serializable, NetSerializable]
 public sealed partial class CharacterLogicXorRequirement : CharacterRequirement
 {
+    [DataField]
     public List<CharacterRequirement> Requirements { get; private set; } = new();
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
@@ -89,11 +89,10 @@ public sealed partial class CharacterLogicXorRequirement : CharacterRequirement
 
         reason = new FormattedMessage();
         foreach (var message in reasons)
-            reason.AddMessage(FormattedMessage.FromMarkup("  " + message.ToMarkup()));
-
-        var thEraisin = new FormattedMessage();
-        thEraisin.AddMarkup(Loc.GetString("character-logic-xor-requirement", ("message", reason.ToMarkup())));
-        reason = thEraisin;
+            reason.AddMessage(FormattedMessage.FromMarkup(
+                Loc.GetString("character-logic-xor-requirement-listprefix") + message.ToMarkup()));
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-logic-xor-requirement",
+            ("inverted", Inverted), ("options", reason.ToMarkup())));
 
         return succeeded;
     }

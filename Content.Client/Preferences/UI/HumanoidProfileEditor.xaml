@@ -168,7 +168,7 @@
                 <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
                     <Button
                         Name="TraitsShowUnusableButton"
-                        Text="{Loc 'humanoid-profile-editor-traits-show-unusable-button'}"
+                        Text="You shouldn't see this."
                         ToolTip="{Loc 'humanoid-profile-editor-traits-show-unusable-button-tooltip'}"
                         ToggleMode="True"
                         HorizontalAlignment="Stretch"
@@ -176,7 +176,7 @@
                         StyleClasses="OpenRight" />
                     <Button
                         Name="TraitsRemoveUnusableButton"
-                        Text="{Loc 'humanoid-profile-editor-traits-remove-unusable-button'}"
+                        Text="You shouldn't see this"
                         ToolTip="{Loc 'humanoid-profile-editor-traits-remove-unusable-button-tooltip'}"
                         HorizontalAlignment="Stretch"
                         HorizontalExpand="True"
@@ -201,7 +201,7 @@
                         StyleClasses="OpenRight" />
                     <Button
                         Name="LoadoutsRemoveUnusableButton"
-                        Text="{Loc 'humanoid-profile-editor-loadouts-remove-unusable-button'}"
+                        Text="You shouldn't see this"
                         ToolTip="{Loc 'humanoid-profile-editor-loadouts-remove-unusable-button-tooltip'}"
                         HorizontalAlignment="Stretch"
                         HorizontalExpand="True"
