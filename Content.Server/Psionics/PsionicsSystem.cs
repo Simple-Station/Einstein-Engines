@@ -68,30 +68,41 @@ public sealed class PsionicsSystem : EntitySystem
 
     private void OnStartup(EntityUid uid, PsionicComponent component, MapInitEvent args)
     {
+        if (!component.Removable
+            || !component.CanReroll)
+            return;
+
         _rollers.Enqueue((component, uid));
     }
 
     private void OnMeleeHit(EntityUid uid, AntiPsionicWeaponComponent component, MeleeHitEvent args)
     {
         foreach (var entity in args.HitEntities)
+            CheckAntiPsionic(entity, component, args);
+    }
+
+    private void CheckAntiPsionic(EntityUid entity, AntiPsionicWeaponComponent component, MeleeHitEvent args)
+    {
+        if (HasComp<PsionicComponent>(entity))
         {
-            if (HasComp<PsionicComponent>(entity))
-            {
-                _audio.PlayPvs("/Audio/Effects/lightburn.ogg", entity);
-                args.ModifiersList.Add(component.Modifiers);
-                if (_random.Prob(component.DisableChance))
-                    _statusEffects.TryAddStatusEffect(entity, component.DisableStatus, TimeSpan.FromSeconds(component.DisableDuration), true, component.DisableStatus);
-            }
+            _audio.PlayPvs("/Audio/Effects/lightburn.ogg", entity);
+            args.ModifiersList.Add(component.Modifiers);
 
-            if (TryComp<MindSwappedComponent>(entity, out var swapped))
-            {
-                _mindSwapPowerSystem.Swap(entity, swapped.OriginalEntity, true);
+            if (!_random.Prob(component.DisableChance))
                 return;
-            }
 
-            if (component.Punish && !HasComp<PsionicComponent>(entity) && _random.Prob(component.PunishChances))
-                _electrocutionSystem.TryDoElectrocution(args.User, null, component.PunishSelfDamage, TimeSpan.FromSeconds(component.PunishStunDuration), false);
+            _statusEffects.TryAddStatusEffect(entity, component.DisableStatus, TimeSpan.FromSeconds(component.DisableDuration), true, component.DisableStatus);
         }
+
+        if (TryComp<MindSwappedComponent>(entity, out var swapped))
+            _mindSwapPowerSystem.Swap(entity, swapped.OriginalEntity, true);
+
+        if (!component.Punish
+            || HasComp<PsionicComponent>(entity)
+            || !_random.Prob(component.PunishChances))
+            return;
+
+        _electrocutionSystem.TryDoElectrocution(args.User, null, component.PunishSelfDamage, TimeSpan.FromSeconds(component.PunishStunDuration), false);
     }
 
     private void OnInit(EntityUid uid, PsionicComponent component, ComponentStartup args)
@@ -117,8 +128,10 @@ public sealed class PsionicsSystem : EntitySystem
 
     private void OnStamHit(EntityUid uid, AntiPsionicWeaponComponent component, TakeStaminaDamageEvent args)
     {
-        if (HasComp<PsionicComponent>(args.Target))
-            args.FlatModifier += component.PsychicStaminaDamage;
+        if (!HasComp<PsionicComponent>(args.Target))
+            return;
+
+        args.FlatModifier += component.PsychicStaminaDamage;
     }
 
     /// <summary>
