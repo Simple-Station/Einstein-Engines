@@ -175,7 +175,7 @@
 - type: trait
   id: LatentPsychic
   category: Mental
-  points: -6
+  points: -4
   components:
     - type: Psionic
   requirements:
@@ -192,3 +192,21 @@
       inverted: true
       species:
         - IPC
+
+- type: trait
+  id: NaturalTelepath
+  category: Mental
+  points: -2
+  psionicPowers:
+    - TelepathyPower
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain
+        - Librarian

@@ -10,6 +10,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Content.Server.Abilities.Psionics;
+using Content.Shared.Psionics;
 
 namespace Content.Server.Traits;
 
@@ -110,6 +111,7 @@ public sealed class TraitSystem : EntitySystem
             return;
 
         foreach (var powerProto in traitPrototype.PsionicPowers)
-            _psionicAbilities.InitializePsionicPower(uid, powerProto, false);
+            if (_prototype.TryIndex<PsionicPowerPrototype>(powerProto, out var psionicPower))
+                _psionicAbilities.InitializePsionicPower(uid, psionicPower, false);
     }
 }
