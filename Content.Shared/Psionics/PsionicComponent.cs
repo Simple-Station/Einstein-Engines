@@ -8,11 +8,12 @@ namespace Content.Shared.Abilities.Psionics
     public sealed partial class PsionicComponent : Component
     {
         /// <summary>
-        ///     How close a Psion is to awakening a new power.
-        ///     TODO: Implement this in a separate PR.
+        ///     Each time a Psion rolls for a new power, they roll a number between 0 and 100, adding any relevant modifiers. This number is then added to Potentia,
+        ///     meaning that it carries over between rolls. When a character has an amount of potentia equal to at least 100 * 2^(total powers), the potentia is then spent, and a power is generated.
+        ///     TODO: Psi-Potentiometry should be able to read how much Potentia a person has.
         /// </summary>
         [DataField]
-        public float Potentia = 0;
+        public float Potentia;
 
         /// <summary>
         ///     The baseline chance of obtaining a psionic power when rolling for one.
