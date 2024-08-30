@@ -278,7 +278,6 @@ public sealed class CloningSystem : EntitySystem
             || !CheckBiomassCost(uid, physics, clonePod, cloningCostMultiplier)
             || !ClonesWaitingForMind.TryGetValue(mindEnt.Comp, out var clone)
             || !TryComp<MindContainerComponent>(clone, out var cloneMindComp)
-            || cloneMindComp.Mind == null
             || cloneMindComp.Mind == mindEnt
             || mindEnt.Comp.UserId == null
             || !_playerManager.TryGetSessionById(mindEnt.Comp.UserId.Value, out var client))
