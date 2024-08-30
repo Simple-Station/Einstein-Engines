@@ -132,15 +132,14 @@ public sealed class PsionicsSystem : EntitySystem
     /// </remarks>
     private bool HandlePotentiaCalculations(EntityUid uid, PsionicComponent component, float psionicChance)
     {
-
-        var nextPowerCost = 100 * MathF.Pow(2, component.ActivePowers.Count);
         component.Potentia += _random.NextFloat(0 + psionicChance, 100 + psionicChance);
 
-        if (component.Potentia < nextPowerCost)
+        if (component.Potentia < component.NextPowerCost)
             return false;
 
-        component.Potentia -= nextPowerCost;
+        component.Potentia -= component.NextPowerCost;
         _psionicAbilitiesSystem.AddPsionics(uid);
+        component.NextPowerCost = 100 * MathF.Pow(2, component.ActivePowers.Count);
         return true;
     }
 

@@ -16,6 +16,14 @@ namespace Content.Shared.Abilities.Psionics
         public float Potentia;
 
         /// <summary>
+        ///     Each time a Psion rolls for a new power, they roll a number between 0 and 100, adding any relevant modifiers. This number is then added to Potentia,
+        ///     meaning that it carries over between rolls. When a character has an amount of potentia equal to at least 100 * 2^(total powers), the potentia is then spent, and a power is generated.
+        ///     This variable stores the cost of the next power.
+        /// </summary>
+        [DataField]
+        public float NextPowerCost;
+
+        /// <summary>
         ///     The baseline chance of obtaining a psionic power when rolling for one.
         /// </summary>
         [DataField]
