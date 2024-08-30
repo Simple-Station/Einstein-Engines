@@ -33,7 +33,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     Whether or not a Psion has an available "Reroll" to spend on attempting to gain powers.
         /// </summary>
         [DataField]
-        public bool CanReroll;
+        public bool CanReroll = true;
 
         /// <summary>
         ///     The Base amount of time (in minutes) this Psion is given the stutter effect if they become mindbroken.
