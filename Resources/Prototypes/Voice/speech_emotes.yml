@@ -144,6 +144,13 @@
     - beeps
 
 - type: emote
+  id: Boop
+  category: Vocal
+  chatMessages: [ boops ]
+  chatTriggers:
+    - boops
+
+- type: emote
   id: Chime
   category: Vocal
   chatMessages: [ chimes ]
@@ -163,3 +170,9 @@
   chatMessages: [ pings ]
   chatTriggers:
     - pings
+
+- type: emote
+  id: Whirr # uncategorized as it is generic
+  chatMessages: [ whirrs ]
+  chatTriggers:
+    - whirrs
