@@ -57,6 +57,10 @@ using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Power.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Drunk;
+using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.EntitySystems;
+using Robust.Shared.Enums;
 
 namespace Content.Server.Cloning;
 
@@ -88,7 +92,9 @@ public sealed class CloningSystem : EntitySystem
     [Dependency] private readonly ContestsSystem _contests = default!;
     [Dependency] private readonly ISerializationManager _serialization = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-
+    [Dependency] private readonly HungerSystem _hunger = default!;
+    [Dependency] private readonly ThirstSystem _thirst = default!;
+    [Dependency] private readonly SharedDrunkSystem _drunk = default!;
     public readonly Dictionary<MindComponent, EntityUid> ClonesWaitingForMind = new();
 
     public override void Initialize()
@@ -480,6 +486,71 @@ public sealed class CloningSystem : EntitySystem
     }
 
     /// <summary>
+    ///     Modify the clone's hunger and thirst values by an amount set in the cloningPod.
+    /// </summary>
+    private void UpdateHungerAndThirst(EntityUid uid, CloningPodComponent cloningPod)
+    {
+        if (cloningPod.HungerAdjustment != 0
+            && TryComp<HungerComponent>(uid, out var hungerComponent))
+            _hunger.SetHunger(uid, cloningPod.HungerAdjustment, hungerComponent);
+
+        if (cloningPod.ThirstAdjustment != 0
+            && TryComp<ThirstComponent>(uid, out var thirstComponent))
+            _thirst.SetThirst(uid, thirstComponent, cloningPod.ThirstAdjustment);
+
+        if (cloningPod.DrunkTimer != 0)
+            _drunk.TryApplyDrunkenness(uid, cloningPod.DrunkTimer);
+    }
+
+    private void UpdateCloneAppearance(
+        EntityUid mob,
+        HumanoidCharacterProfile pref,
+        HumanoidAppearanceComponent humanoid,
+        List<Sex> sexes,
+        Gender oldGender,
+        bool switchingSpecies,
+        bool forceOldProfile,
+        out Gender gender)
+    {
+        gender = oldGender;
+        if (!TryComp<HumanoidAppearanceComponent>(mob, out var newHumanoid))
+            return;
+
+        if (switchingSpecies && !forceOldProfile)
+        {
+            var flavorText = _serialization.CreateCopy(pref.FlavorText, null, false, true);
+            var oldName = _serialization.CreateCopy(pref.Name, null, false, true);
+
+            pref = HumanoidCharacterProfile.RandomWithSpecies(newHumanoid.Species);
+
+            if (sexes.Contains(humanoid.Sex)
+                && _config.GetCVar(CCVars.CloningPreserveSex))
+                pref = pref.WithSex(humanoid.Sex);
+
+            if (_config.GetCVar(CCVars.CloningPreserveGender))
+                pref = pref.WithGender(humanoid.Gender);
+            else gender = humanoid.Gender;
+
+            if (_config.GetCVar(CCVars.CloningPreserveAge))
+                pref = pref.WithAge(humanoid.Age);
+
+            if (_config.GetCVar(CCVars.CloningPreserveHeight))
+                pref = pref.WithHeight(humanoid.Height);
+
+            if (_config.GetCVar(CCVars.CloningPreserveWidth))
+                pref = pref.WithWidth(humanoid.Width);
+
+            if (_config.GetCVar(CCVars.CloningPreserveName))
+                pref = pref.WithName(oldName);
+
+            if (_config.GetCVar(CCVars.CloningPreserveFlavorText))
+                pref = pref.WithFlavorText(flavorText);
+
+            _humanoidSystem.LoadProfile(mob, pref);
+        }
+    }
+
+    /// <summary>
     ///     This function handles the Clone vs. Metem logic, as well as creation of the new body.
     /// </summary>
     private EntityUid FetchAndSpawnMob
@@ -521,47 +592,14 @@ public sealed class CloningSystem : EntitySystem
         newKarma.Score += oldKarma;
 
         // Put the clone in crit with high Cellular damage. Medbay should use Cryogenics to "Finish" clones. Doxarubixadone is perfect for this.
-        if (HasComp<DamageableComponent>(mob))
+        if (clonePodComp.DoGeneticDamage
+        && HasComp<DamageableComponent>(mob))
         {
             DamageSpecifier damage = new(_prototypeManager.Index<DamageGroupPrototype>("Cellular"), 101f + geneticDamage);
             _damageable.TryChangeDamage(mob, damage, true);
         }
 
-        if (TryComp<HumanoidAppearanceComponent>(mob, out var newHumanoid))
-        {
-            if (switchingSpecies && !forceOldProfile)
-            {
-                var flavorText = _serialization.CreateCopy(pref.FlavorText, null, false, true);
-                var oldName = _serialization.CreateCopy(pref.Name, null, false, true);
-
-                pref = HumanoidCharacterProfile.RandomWithSpecies(newHumanoid.Species);
-
-                if (sexes.Contains(humanoid.Sex)
-                    && _config.GetCVar(CCVars.CloningPreserveSex))
-                    pref = pref.WithSex(humanoid.Sex);
-
-                if (_config.GetCVar(CCVars.CloningPreserveGender))
-                    pref = pref.WithGender(humanoid.Gender);
-                else oldGender = humanoid.Gender;
-
-                if (_config.GetCVar(CCVars.CloningPreserveAge))
-                    pref = pref.WithAge(humanoid.Age);
-
-                if (_config.GetCVar(CCVars.CloningPreserveHeight))
-                    pref = pref.WithHeight(humanoid.Height);
-
-                if (_config.GetCVar(CCVars.CloningPreserveWidth))
-                    pref = pref.WithWidth(humanoid.Width);
-
-                if (_config.GetCVar(CCVars.CloningPreserveName))
-                    pref = pref.WithName(oldName);
-
-                if (_config.GetCVar(CCVars.CloningPreserveFlavorText))
-                    pref = pref.WithFlavorText(flavorText);
-            }
-            _humanoidSystem.LoadProfile(mob, pref);
-        }
-
+        UpdateCloneAppearance(mob, pref, humanoid, sexes, oldGender, switchingSpecies, forceOldProfile, out var gender);
         var ev = new CloningEvent(bodyToClone, mob);
         RaiseLocalEvent(bodyToClone, ref ev);
 
@@ -570,10 +608,11 @@ public sealed class CloningSystem : EntitySystem
 
         var grammar = EnsureComp<GrammarComponent>(mob);
         grammar.ProperNoun = true;
-        grammar.Gender = oldGender;
+        grammar.Gender = gender;
         Dirty(mob, grammar);
 
         CleanupCloneComponents(mob, bodyToClone, forceOldProfile, clonePodComp.DoMetempsychosis);
+        UpdateHungerAndThirst(mob, clonePodComp);
 
         return mob;
     }

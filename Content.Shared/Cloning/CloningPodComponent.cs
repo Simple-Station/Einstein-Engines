@@ -78,6 +78,30 @@ public sealed partial class CloningPodComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public bool ActivelyCloning;
 
+    /// <summary>
+    ///     Controls whether a Cloning Pod will add genetic damage to a clone, scaling as 101 + the genetic damage of the body to be cloned.
+    /// </summary>
+    [DataField]
+    public bool DoGeneticDamage = true;
+
+    /// <summary>
+    ///     How much should the cloning pod adjust the hunger of an entity by.
+    /// </summary>
+    [DataField]
+    public float HungerAdjustment = 50;
+
+    /// <summary>
+    ///     How much should the cloning pod adjust the thirst of an entity by.
+    /// </summary>
+    [DataField]
+    public float ThirstAdjustment = 50;
+
+    /// <summary>
+    ///     How much time should the cloning pod give an entity the durnk condition, in seconds.
+    /// </summary>
+    [DataField]
+    public float DrunkTimer = 300;
+
     #region Metempsychosis
 
     /// <summary>
