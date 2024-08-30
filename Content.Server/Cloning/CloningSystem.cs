@@ -95,6 +95,7 @@ public sealed class CloningSystem : EntitySystem
     [Dependency] private readonly HungerSystem _hunger = default!;
     [Dependency] private readonly ThirstSystem _thirst = default!;
     [Dependency] private readonly SharedDrunkSystem _drunk = default!;
+    [Dependency] private readonly MobThresholdSystem _thresholds = default!;
     public readonly Dictionary<MindComponent, EntityUid> ClonesWaitingForMind = new();
 
     public override void Initialize()
@@ -502,6 +503,10 @@ public sealed class CloningSystem : EntitySystem
             _drunk.TryApplyDrunkenness(uid, cloningPod.DrunkTimer);
     }
 
+    /// <summary>
+    ///     Updates the HumanoidAppearanceComponent of the clone.
+    ///     If a species swap is occuring, this updates all relevant information as per server config.
+    /// </summary>
     private void UpdateCloneAppearance(
         EntityUid mob,
         HumanoidCharacterProfile pref,
@@ -551,6 +556,35 @@ public sealed class CloningSystem : EntitySystem
     }
 
     /// <summary>
+    ///     Optionally makes sure that pronoun preferences are preserved by the clone.
+    ///     Although handled here, the swap(if it occurs) happens during UpdateCloneAppearance.
+    /// </summary>
+    /// <param name="mob"></param>
+    /// <param name="gender"></param>
+    private void UpdateGrammar(EntityUid mob, Gender gender)
+    {
+        var grammar = EnsureComp<GrammarComponent>(mob);
+        grammar.ProperNoun = true;
+        grammar.Gender = gender;
+        Dirty(mob, grammar);
+    }
+
+    /// <summary>
+    ///     Optionally puts the clone in crit with high Cellular damage.
+    ///     Medbay should use Cryogenics to "Finish" clones. Doxarubixadone is perfect for this.
+    /// </summary>
+    private void UpdateCloneDamage(EntityUid mob, CloningPodComponent clonePodComp, float geneticDamage)
+    {
+        if (!clonePodComp.DoGeneticDamage
+            || !HasComp<DamageableComponent>(mob)
+            || !_thresholds.TryGetThresholdForState(mob, Shared.Mobs.MobState.Critical, out var threshold))
+            return;
+
+        DamageSpecifier damage = new(_prototypeManager.Index<DamageGroupPrototype>("Cellular"), (int) threshold + 1 + geneticDamage);
+        _damageable.TryChangeDamage(mob, damage, true);
+    }
+
+    /// <summary>
     ///     This function handles the Clone vs. Metem logic, as well as creation of the new body.
     /// </summary>
     private EntityUid FetchAndSpawnMob
@@ -591,14 +625,7 @@ public sealed class CloningSystem : EntitySystem
         EnsureComp<MetempsychosisKarmaComponent>(mob, out var newKarma);
         newKarma.Score += oldKarma;
 
-        // Put the clone in crit with high Cellular damage. Medbay should use Cryogenics to "Finish" clones. Doxarubixadone is perfect for this.
-        if (clonePodComp.DoGeneticDamage
-        && HasComp<DamageableComponent>(mob))
-        {
-            DamageSpecifier damage = new(_prototypeManager.Index<DamageGroupPrototype>("Cellular"), 101f + geneticDamage);
-            _damageable.TryChangeDamage(mob, damage, true);
-        }
-
+        UpdateCloneDamage(mob, clonePodComp, geneticDamage);
         UpdateCloneAppearance(mob, pref, humanoid, sexes, oldGender, switchingSpecies, forceOldProfile, out var gender);
         var ev = new CloningEvent(bodyToClone, mob);
         RaiseLocalEvent(bodyToClone, ref ev);
@@ -606,11 +633,7 @@ public sealed class CloningSystem : EntitySystem
         if (!ev.NameHandled)
             _metaSystem.SetEntityName(mob, MetaData(bodyToClone).EntityName);
 
-        var grammar = EnsureComp<GrammarComponent>(mob);
-        grammar.ProperNoun = true;
-        grammar.Gender = gender;
-        Dirty(mob, grammar);
-
+        UpdateGrammar(mob, gender);
         CleanupCloneComponents(mob, bodyToClone, forceOldProfile, clonePodComp.DoMetempsychosis);
         UpdateHungerAndThirst(mob, clonePodComp);
 

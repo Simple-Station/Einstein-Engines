@@ -79,7 +79,7 @@ public sealed partial class CloningPodComponent : Component
     public bool ActivelyCloning;
 
     /// <summary>
-    ///     Controls whether a Cloning Pod will add genetic damage to a clone, scaling as 101 + the genetic damage of the body to be cloned.
+    ///     Controls whether a Cloning Pod will add genetic damage to a clone, scaling as the body's crit threshold + 1 + the genetic damage of the body to be cloned.
     /// </summary>
     [DataField]
     public bool DoGeneticDamage = true;
