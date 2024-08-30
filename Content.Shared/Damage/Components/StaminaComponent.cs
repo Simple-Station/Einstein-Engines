@@ -51,4 +51,16 @@ public sealed partial class StaminaComponent : Component
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
     [AutoPausedField]
     public TimeSpan NextUpdate = TimeSpan.Zero;
+
+    /// <summary>
+    /// Minimum factor of the crit threshold that the mob must receive in stamina damage in order to start slowing down.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float SlowdownThresholdFactor = 0.5f;
+
+    /// <summary>
+    /// Speed multiplier for entities that are slowed down due to low stamina. Multiplied by how close the mob is to stamcrit.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float SlowdownMultiplier = 0.75f;
 }
