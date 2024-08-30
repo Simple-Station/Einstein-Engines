@@ -88,12 +88,11 @@
     - DoorStatus
     lastSignals:
       DoorStatus: false
-  - type: InteractionPopup
-    interactSuccessString: comp-window-knock
-    messagePerceivedByOthers: comp-window-knock
-    interactSuccessSound:
-      path: /Audio/Effects/glass_knock.ogg
   - type: BlockWeather
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
+
 
 - type: entity
   id: ShuttersNormal
