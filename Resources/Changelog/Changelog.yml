@@ -5691,3 +5691,13 @@ Entries:
         fence rattling, have also been moved to that system.
   id: 6299
   time: '2024-08-30T05:45:24.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Radiation shielding objects have been rebalanced, such that objects that
+        players previously assumed would provide reasonable protection from
+        radiation, now factually do. For instance, Radiation Shutters now
+        actually block radiation.
+  id: 6300
+  time: '2024-08-30T14:10:02.0000000+00:00'
