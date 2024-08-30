@@ -5681,3 +5681,13 @@ Entries:
         positive and negative.
   id: 6298
   time: '2024-08-30T05:39:59.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        A new interaction system has been implemented. The right-click menu now
+        provides a wide variety of different interactions with different
+        entities. Some old default interactions, such as hugging, knocking,
+        fence rattling, have also been moved to that system.
+  id: 6299
+  time: '2024-08-30T05:45:24.0000000+00:00'
