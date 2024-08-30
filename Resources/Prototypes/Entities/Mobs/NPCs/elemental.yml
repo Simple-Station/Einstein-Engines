@@ -552,3 +552,6 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
         color: "#3e901c"
+  - type: GhostRole
+    prob: 1 #it's significantly more psionic than the others
+    description: ghost-role-information-angry-slimes-description
