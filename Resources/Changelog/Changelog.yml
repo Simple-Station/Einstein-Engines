@@ -5611,3 +5611,9 @@ Entries:
       message: Temporarily disabled Telegnosis pending a lengthier update.
   id: 6293
   time: '2024-08-30T00:46:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: IPC now have their own unique deathgasp message.
+  id: 6294
+  time: '2024-08-30T00:50:20.0000000+00:00'
