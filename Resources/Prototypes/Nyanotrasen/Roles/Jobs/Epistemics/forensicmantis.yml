@@ -28,6 +28,7 @@
     - type: InnatePsionicPowers
       powersToAdd:
         - MetapsionicPower
+        - TelepathyPower
 
 - type: startingGear
   id: ForensicMantisGear

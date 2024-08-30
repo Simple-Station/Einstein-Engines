@@ -128,3 +128,12 @@
   #   - type: Psychognomist
   initializationFeedback: psychognomy-power-initialization-feedback
   metapsionicFeedback: psionic-language-power-feedback
+
+- type: psionicPower
+  id: TelepathyPower
+  name: Telepathy
+  description: telepathy-power-description
+  components:
+    - type: Telepathy
+  initializationFeedback: telepathy-power-initialization-feedback
+  metapsionicFeedback: psionic-language-power-feedback # Reuse for telepathy, clairaudience, etc

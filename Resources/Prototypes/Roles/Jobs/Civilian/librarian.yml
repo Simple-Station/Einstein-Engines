@@ -21,6 +21,7 @@
     - type: InnatePsionicPowers
       powersToAdd:
         - XenoglossyPower
+        - TelepathyPower
 
 
 - type: startingGear
