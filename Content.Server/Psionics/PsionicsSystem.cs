@@ -90,7 +90,7 @@ public sealed class PsionicsSystem : EntitySystem
 
         var powerCount = 0;
         foreach (var powerId in innate.PowersToAdd)
-            if (_protoMan.TryIndex<PsionicPowerPrototype>(powerId, out var power))
+            if (_protoMan.TryIndex(powerId, out var power))
                 powerCount += power.PowerSlotCost;
 
         component.NextPowerCost = 100 * MathF.Pow(2, powerCount);
