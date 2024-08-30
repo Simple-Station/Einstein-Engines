@@ -5634,3 +5634,9 @@ Entries:
         disadvantages!
   id: 6295
   time: '2024-08-30T04:46:40.0000000+00:00'
+- author: ShatteredSwords
+  changes:
+    - type: Tweak
+      message: Thieves are now in Survival, Hellshift, and Extended.
+  id: 6296
+  time: '2024-08-30T04:57:29.0000000+00:00'
