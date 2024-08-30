@@ -418,7 +418,7 @@ public sealed class CloningSystem : EntitySystem
     ///     The body coming out of the machine isn't guaranteed to even be a Humanoid.
     ///     This function makes sure the body is "Human Playable", with no funny business.
     /// </summary>
-    private void CleanupCloneComponents(EntityUid uid, EntityUid bodyToClone, bool forceOldProfile = false, bool DoMetempsychosis)
+    private void CleanupCloneComponents(EntityUid uid, EntityUid bodyToClone, bool forceOldProfile, bool doMetempsychosis)
     {
         if (forceOldProfile
             && TryComp<PsionicComponent>(bodyToClone, out var psionic))
@@ -440,7 +440,7 @@ public sealed class CloningSystem : EntitySystem
             AddComp(uid, newSpeakLangs, true);
         }
 
-        if (DoMetempsychosis)
+        if (doMetempsychosis)
             EnsureComp<PsionicComponent>(uid);
 
         EnsureComp<SpeechComponent>(uid);
