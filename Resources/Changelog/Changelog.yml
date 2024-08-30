@@ -5640,3 +5640,34 @@ Entries:
       message: Thieves are now in Survival, Hellshift, and Extended.
   id: 6296
   time: '2024-08-30T04:57:29.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        TelepathyComponent has been split off from the PsionicComponent, now as
+        it's own standalone feature.
+    - type: Add
+      message: Telepathy has been added as a new Psionic Power
+    - type: Add
+      message: >-
+        Natural Telepath has returned from Psionic-Refactor V1, now using new
+        functionality from the trait system that allows traits to buy psionic
+        powers directly. 
+    - type: Add
+      message: >-
+        Latent Psychics who have neither bought Natural Telepath, nor acquired
+        Telepathy during the round, can sometimes hear snippets of conversation
+        from telepathic chat.
+    - type: Tweak
+      message: >-
+        The cost of Latent Psychic has been reduced from 6 to 4 points, this is
+        to accommodate for the loss of Telepathy as a bonus feature for all
+        Psionics. Since Natural Telepath is a 2 point trait, this gives a net 0
+        change in trait points for anyone who wishes to keep being a roundstart
+        Telepath.
+    - type: Tweak
+      message: >-
+        Psionic Mantis, Mystagogue, Chaplain, and Cataloguer are all Naturally
+        Telepathic, and thus get the new trait for free.
+  id: 6297
+  time: '2024-08-30T05:27:54.0000000+00:00'
