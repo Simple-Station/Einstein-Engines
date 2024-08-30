@@ -5716,3 +5716,11 @@ Entries:
         expanded Chapel and Library.
   id: 6302
   time: '2024-08-30T14:24:49.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Core has been added to the list of maps in rotation. This time featuring
+        a custom Supermatter Engine
+  id: 6303
+  time: '2024-08-30T14:42:12.0000000+00:00'
