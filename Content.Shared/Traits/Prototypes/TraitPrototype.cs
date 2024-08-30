@@ -1,6 +1,7 @@
 using Content.Shared.Customization.Systems;
 using Content.Shared.Psionics;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Traits;
 
@@ -47,5 +48,5 @@ public sealed partial class TraitPrototype : IPrototype
     ///     The list of all Psionic Powers that this trait adds. If this list is not empty, the trait will also Ensure that a player is Psionic.
     /// </summary>
     [DataField]
-    public List<PsionicPowerPrototype>? PsionicPowers { get; private set; } = default!;
+    public List<string>? PsionicPowers { get; private set; } = default!;
 }
