@@ -315,7 +315,7 @@ namespace Content.Server.Abilities.Psionics
                 return;
 
             EnsureComp<GlimmerSourceComponent>(uid, out var glimmerSource);
-            glimmerSource.SecondsPerGlimmer = 10 / psionic.PowerSlotsTaken;
+            glimmerSource.SecondsPerGlimmer = 10 / (psionic.PowerSlotsTaken - psionic.PowerSlots);
         }
 
         /// <summary>
