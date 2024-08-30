@@ -5701,3 +5701,9 @@ Entries:
         actually block radiation.
   id: 6300
   time: '2024-08-30T14:10:02.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Glacier Returns.
+  id: 6301
+  time: '2024-08-30T14:13:04.0000000+00:00'
