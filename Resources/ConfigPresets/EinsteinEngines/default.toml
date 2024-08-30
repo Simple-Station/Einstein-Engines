@@ -10,12 +10,11 @@ ramping_average_end_time = 180.0
 ramping_average_chaos    = 4.5
 
 [game]
-hostname           = "Default EE Server Name, please change this to your intended server name"
+hostname           = "Einstein Engines (change this)"
 desc               = "An alternative upstream that favors content intended for RP servers. If you are reading this, please change it."
-soft_max_players   = 100
+soft_max_players   = 60
 lobbyenabled       = true
 lobbyduration      = 240
-round_end_pacifist = true
 
 [hub]
 tags = "lang:en-US,region:am_n_e,rp:med"
@@ -25,7 +24,7 @@ hub_urls = "https://hub.spacestation14.com/"
 flavor_text = true
 
 [infolinks]
-discord    = "https://discord.gg/zgQVdEPJ8w"
+discord    = "https://discord.gg/X4QEXxUrsJ"
 github     = "https://github.com/Simple-Station/Einstein-Engines"
 website    = "https://simplestation.org/"
 bug_report = "https://github.com/Simple-Station/Einstein-Engines/issues/new/choose"
@@ -35,10 +34,12 @@ max_connections = 1024
 tickrate = 30
 
 [netres]
-limit    = 10.0
+limit = 10.0
+
+[build]
+fork_id = "EinsteinEngines"
 
 [server]
-id = "einstein-engines"
 rules_file   = "Rules.txt"
 rules_header = "ui-rules-header"
 
