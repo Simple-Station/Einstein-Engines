@@ -2471,5 +2471,10 @@ namespace Content.Shared.CCVar
             CVarDef.Create("mood.decreases_speed", true, CVar.SERVER);
 
         #endregion
+
+        #region Material Reclaimer
+
+        public static readonly CVarDef<bool> ReclaimerAllowGibbing =
+            CVarDef.Create("reclaimer.allow_gibbing", true, CVar.SERVER);
     }
 }
