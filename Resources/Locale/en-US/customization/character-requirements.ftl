@@ -122,6 +122,12 @@ character-loadout-requirement = You must{$inverted ->
 } one of these loadouts: {$loadouts}
 
 
+character-item-group-requirement = You must {$inverted ->
+    [true] have {$max} or more
+    *[other] have {$max} or less
+} items from the group [color=white]{$group}[/color]
+
+
 ## Whitelist
 character-whitelist-requirement = You must{$inverted ->
     [true] not

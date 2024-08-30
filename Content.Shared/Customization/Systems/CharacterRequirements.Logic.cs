@@ -20,12 +20,12 @@ public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
     public List<CharacterRequirement> Requirements { get; private set; } = new();
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
         var charReqs = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>();
-        var succeeded = charReqs.CheckRequirementsValid(Requirements, job, profile, playTimes, whitelisted,
+        var succeeded = charReqs.CheckRequirementsValid(Requirements, job, profile, playTimes, whitelisted, prototype,
             entityManager, prototypeManager, configManager, out var reasons);
 
         if (reasons.Count == 0)
@@ -56,7 +56,7 @@ public sealed partial class CharacterLogicXorRequirement : CharacterRequirement
     public List<CharacterRequirement> Requirements { get; private set; } = new();
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -65,7 +65,7 @@ public sealed partial class CharacterLogicXorRequirement : CharacterRequirement
 
         foreach (var requirement in Requirements)
         {
-            if (requirement.IsValid(job, profile, playTimes, whitelisted, entityManager, prototypeManager,
+            if (requirement.IsValid(job, profile, playTimes, whitelisted, prototype, entityManager, prototypeManager,
                 configManager, out var raisin))
             {
                 if (succeeded)

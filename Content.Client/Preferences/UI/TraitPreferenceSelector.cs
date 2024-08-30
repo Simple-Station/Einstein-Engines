@@ -87,7 +87,7 @@ public sealed class TraitPreferenceSelector : Control
         // Get requirement reasons
         characterRequirementsSystem.CheckRequirementsValid(
             trait.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
-            jobRequirementsManager.IsWhitelisted(),
+            jobRequirementsManager.IsWhitelisted(), trait,
             entityManager, prototypeManager, configManager,
             out var reasons);
 

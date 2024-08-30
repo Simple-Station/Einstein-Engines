@@ -3,6 +3,7 @@ using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
+using Content.Shared.Prototypes;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
 using JetBrains.Annotations;
@@ -30,7 +31,7 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
     public int Max;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -51,7 +52,7 @@ public sealed partial class CharacterBackpackTypeRequirement : CharacterRequirem
     public BackpackPreference Preference;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -73,7 +74,7 @@ public sealed partial class CharacterClothingPreferenceRequirement : CharacterRe
     public ClothingPreference Preference;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -95,7 +96,7 @@ public sealed partial class CharacterGenderRequirement : CharacterRequirement
     public Gender Gender;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -117,7 +118,7 @@ public sealed partial class CharacterSexRequirement : CharacterRequirement
     public Sex Sex;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -139,7 +140,7 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
     public List<ProtoId<SpeciesPrototype>> Species;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -173,7 +174,7 @@ public sealed partial class CharacterHeightRequirement : CharacterRequirement
     public float Max = int.MaxValue;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -208,7 +209,7 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
     public float Max = int.MaxValue;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -243,7 +244,7 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
     public float Max = int.MaxValue;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -282,7 +283,7 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
     public List<ProtoId<TraitPrototype>> Traits;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -307,7 +308,7 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
     public List<ProtoId<LoadoutPrototype>> Loadouts;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
@@ -318,5 +319,39 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
                 Loadouts.Select(l => Loc.GetString($"loadout-name-{l}")))}[/color]")));
 
         return Loadouts.Any(l => profile.LoadoutPreferences.Contains(l.ToString()));
+    }
+}
+
+/// <summary>
+///     Requires the profile to not have any more than X of the specified traits, loadouts, etc, in a group
+/// </summary>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public ProtoId<CharacterItemGroupPrototype> Group;
+
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
+    {
+        var group = prototypeManager.Index(Group);
+
+        // Get the count of items in the group that are in the profile
+        var items = group.Items.Select(item => item.TryGetValue(profile, prototypeManager, out _) ? item.ID : null).Where(id => id != null).ToList();
+        var count = items.Count;
+
+        // If prototype is selected, remove one from the count
+        if (items.ToList().Contains(prototype.ID))
+            count--;
+
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-item-group-requirement",
+            ("inverted", Inverted),
+            ("group", Loc.GetString($"character-item-group-{Group}")),
+            ("max", group.MaxItems)));
+
+        return count < group.MaxItems;
     }
 }

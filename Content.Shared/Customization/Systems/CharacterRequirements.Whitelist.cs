@@ -18,7 +18,7 @@ namespace Content.Shared.Customization.Systems;
 public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
 {
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {

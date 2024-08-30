@@ -127,7 +127,7 @@ public sealed class LoadoutPreferenceSelector : Control
         // Get requirement reasons
         characterRequirementsSystem.CheckRequirementsValid(
             loadout.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
-            jobRequirementsManager.IsWhitelisted(),
+            jobRequirementsManager.IsWhitelisted(), loadout,
             entityManager, prototypeManager, configManager,
             out var reasons);
 

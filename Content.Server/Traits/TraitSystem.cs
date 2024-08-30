@@ -11,6 +11,7 @@ using Pidgin.Configuration;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Traits;
 
@@ -37,14 +38,14 @@ public sealed class TraitSystem : EntitySystem
         {
             if (!_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
             {
-                Log.Warning($"No trait found with ID {traitId}!");
+                DebugTools.Assert($"No trait found with ID {traitId}!");
                 return;
             }
 
             if (!_characterRequirements.CheckRequirementsValid(
                 traitPrototype.Requirements,
                 _prototype.Index<JobPrototype>(args.JobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID),
-                args.Profile, _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false,
+                args.Profile, _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false, traitPrototype,
                 EntityManager, _prototype, _configuration,
                 out _))
                 continue;
