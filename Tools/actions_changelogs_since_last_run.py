@@ -15,17 +15,17 @@ from typing import Any, Iterable
 GITHUB_API_URL    = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 GITHUB_REPOSITORY = os.environ["GITHUB_REPOSITORY"]
 GITHUB_RUN        = os.environ["GITHUB_RUN_ID"]
-GITHUB_TOKEN      = os.environ["GITHUB_TOKEN"]
+BOT_TOKEN         = os.environ["BOT_TOKEN"]
 
 # https://discord.com/developers/docs/resources/webhook
 DISCORD_SPLIT_LIMIT = 2000
-DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
+CHANGELOG_DISCORD_WEBHOOK = os.environ.get("CHANGELOG_DISCORD_WEBHOOK")
 
-CHANGELOG_FILE = "Resources/Changelog/DeltaVChangelog.yml"
+CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
 
 TYPES_TO_EMOJI = {
     "Fix":    "🐛",
-    "Add":    "🆕",
+    "Add":    "✨",
     "Remove": "❌",
     "Tweak":  "⚒️"
 }
@@ -33,11 +33,11 @@ TYPES_TO_EMOJI = {
 ChangelogEntry = dict[str, Any]
 
 def main():
-    if not DISCORD_WEBHOOK_URL:
+    if not CHANGELOG_DISCORD_WEBHOOK:
         return
 
     session = requests.Session()
-    session.headers["Authorization"]        = f"Bearer {GITHUB_TOKEN}"
+    session.headers["Authorization"]        = f"Bearer {BOT_TOKEN}"
     session.headers["Accept"]               = "Accept: application/vnd.github+json"
     session.headers["X-GitHub-Api-Version"] = "2022-11-28"
 
@@ -121,12 +121,12 @@ def get_discord_body(content: str):
 def send_discord(content: str):
     body = get_discord_body(content)
 
-    response = requests.post(DISCORD_WEBHOOK_URL, json=body)
+    response = requests.post(CHANGELOG_DISCORD_WEBHOOK, json=body)
     response.raise_for_status()
 
 
 def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
-    if not DISCORD_WEBHOOK_URL:
+    if not CHANGELOG_DISCORD_WEBHOOK:
         print(f"No discord webhook URL found, skipping discord send")
         return
 
@@ -165,7 +165,7 @@ def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
 
         # Flush the group to the message
         message_content.write(group_text)
-    
+
     # Clean up anything remaining
     message_text = message_content.getvalue()
     if len(message_text) > 0:
