@@ -66,7 +66,7 @@
     damageContainer: Inorganic
     damageModifierSet: Glass
   - type: ExaminableDamage
-    messages: WindowMessages   
+    messages: WindowMessages
   - type: RCDDeconstructable
     cost: 8
     delay: 8
@@ -145,6 +145,9 @@
   - type: StaticPrice
     price: 100
   - type: PryUnpowered
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
 
 - type: entity
   id: BaseSecureWindoor
@@ -252,7 +255,7 @@
   - type: StaticPrice
     price: 170
   - type: RadiationBlocker
-    resistance: 2
+    resistance: 4
 
 - type: entity
   id: BaseSecurePlasmaWindoor
@@ -307,7 +310,7 @@
   - type: StaticPrice
     price: 312
   - type: RadiationBlocker
-    resistance: 4
+    resistance: 6
 
 #Uranium Windoors
 - type: entity
@@ -362,7 +365,7 @@
   - type: StaticPrice
     price: 180
   - type: RadiationBlocker
-    resistance: 3
+    resistance: 5
 
 - type: entity
   id: BaseSecureUraniumWindoor
@@ -417,4 +420,4 @@
   - type: StaticPrice
     price: 462
   - type: RadiationBlocker
-    resistance: 5
+    resistance: 8
