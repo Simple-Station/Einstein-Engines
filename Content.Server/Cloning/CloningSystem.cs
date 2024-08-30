@@ -172,6 +172,10 @@ public sealed class CloningSystem : EntitySystem
         args.PushMarkup(Loc.GetString("cloning-pod-biomass", ("number", _material.GetMaterialAmount(uid, component.RequiredMaterial))));
     }
 
+    /// <summary>
+    ///     Test if the body to be cloned has any conditions that would prevent cloning from taking place.
+    ///     Or, if the body has a particular reason to make cloning more difficult.
+    /// </summary>
     private bool CheckUncloneable(EntityUid uid, EntityUid bodyToClone, CloningPodComponent clonePod, out float cloningCostMultiplier)
     {
         var ev = new AttemptCloningEvent(uid, clonePod.DoMetempsychosis);
@@ -189,6 +193,10 @@ public sealed class CloningSystem : EntitySystem
         return true;
     }
 
+    /// <summary>
+    ///     Checks the body's physics component and any previously obtained modifiers to determine biomass cost.
+    ///     If there is insufficient biomass, the cloning cannot start.
+    /// </summary>
     private bool CheckBiomassCost(EntityUid uid, PhysicsComponent physics, CloningPodComponent clonePod, float cloningCostMultiplier = 1)
     {
         var cloningCost = (int) Math.Round(physics.FixturesMass
@@ -208,6 +216,10 @@ public sealed class CloningSystem : EntitySystem
         return true;
     }
 
+    /// <summary>
+    ///     Tests the original body for genetic damage, while returning the cloning damage for later damage.
+    ///     The body's cellular damage is also used as a potential failure state, giving a chance for the cloning to fail immediately.
+    /// </summary>
     private bool CheckGeneticDamage(EntityUid uid, EntityUid bodyToClone, CloningPodComponent clonePod, out float geneticDamage, float failChanceModifier = 1)
     {
         geneticDamage = 0;
@@ -234,6 +246,10 @@ public sealed class CloningSystem : EntitySystem
         return false;
     }
 
+    /// <summary>
+    ///     When this condition is called, it sets the cloning pod to its fail condition.
+    ///     Such that when the cloning timer ends, the body that would be created, is turned into clone soup.
+    /// </summary>
     private void CauseCloningFail(EntityUid uid, CloningPodComponent component)
     {
         UpdateStatus(uid, CloningPodStatus.Gore, component);
@@ -241,6 +257,9 @@ public sealed class CloningSystem : EntitySystem
         component.ActivelyCloning = true;
     }
 
+    /// <summary>
+    ///     The master function behind Cloning, called by the cloning console via button press to start the cloning process.
+    /// </summary>
     public bool TryCloning(EntityUid uid, EntityUid bodyToClone, Entity<MindComponent> mindEnt, CloningPodComponent clonePod, float failChanceModifier = 1)
     {
         if (!_mobStateSystem.IsDead(bodyToClone)
@@ -260,12 +279,13 @@ public sealed class CloningSystem : EntitySystem
 
         ClonesWaitingForMind.Remove(mindEnt.Comp);
 
+        // Special handling for humanoid data related to metempsychosis. This function is needed for Paradox Anomaly code to play nice with reincarnated people
         var pref = humanoid.LastProfileLoaded;
-
         if (pref == null
             || !_prototypeManager.TryIndex(humanoid.Species, out var speciesPrototype))
             return false;
 
+        // Yes, this can return true without making a body. If it returns true, we're making clone soup instead.
         if (CheckGeneticDamage(uid, bodyToClone, clonePod, out var geneticDamage, failChanceModifier))
             return true;
 
@@ -295,25 +315,31 @@ public sealed class CloningSystem : EntitySystem
         return true;
     }
 
+    /// <summary>
+    ///     Begins the cloning timer, which at the end can either produce clone soup, or a functional body, depending on if anything interrupts the procedure.
+    /// </summary>
     public void AttemptCloning(EntityUid cloningPod, CloningPodComponent cloningPodComponent)
     {
         if (cloningPodComponent.BodyContainer.ContainedEntity is { Valid: true } entity
             && TryComp<PhysicsComponent>(entity, out var physics)
             && physics.Mass > 71)
-            Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime * _contests.MassContest(entity, physics, true)), () => UpdateCloning(cloningPod, cloningPodComponent));
+            Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime * _contests.MassContest(entity, physics, true)), () => EndCloning(cloningPod, cloningPodComponent));
 
-        Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime), () => UpdateCloning(cloningPod, cloningPodComponent));
+        Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime), () => EndCloning(cloningPod, cloningPodComponent));
     }
 
-    public void UpdateCloning(EntityUid cloningPod, CloningPodComponent cloningPodComponent)
+    /// <summary>
+    ///     Ding, your body is ready. Time to find out if it's soup or solid.
+    /// </summary>
+    public void EndCloning(EntityUid cloningPod, CloningPodComponent cloningPodComponent)
     {
         if (!cloningPodComponent.ActivelyCloning
             || !_powerReceiverSystem.IsPowered(cloningPod)
             || cloningPodComponent.BodyContainer.ContainedEntity == null
             || cloningPodComponent.FailedClone)
-            EndFailedCloning(cloningPod, cloningPodComponent);
+            EndFailedCloning(cloningPod, cloningPodComponent); //Surprise, it's soup!
 
-        Eject(cloningPod, cloningPodComponent);
+        Eject(cloningPod, cloningPodComponent); //Hey look, a body!
     }
 
     public void UpdateStatus(EntityUid podUid, CloningPodStatus status, CloningPodComponent cloningPod)
@@ -338,7 +364,10 @@ public sealed class CloningSystem : EntitySystem
         args.Handled = true;
     }
 
-    public void Eject(EntityUid uid, CloningPodComponent? clonePod)
+    /// <summary>
+    ///     This is the success condition for cloning. At the end of the timer, if nothing interrupted it, this function is called to finish the cloning by dispensing the body.
+    /// </summary>
+    private void Eject(EntityUid uid, CloningPodComponent? clonePod)
     {
         if (!Resolve(uid, ref clonePod)
             || clonePod.BodyContainer.ContainedEntity is not { Valid: true } entity
@@ -353,6 +382,9 @@ public sealed class CloningSystem : EntitySystem
         clonePod.ActivelyCloning = false;
     }
 
+    /// <summary>
+    ///     And now we turn it over to Chef Pod to make soup!
+    /// </summary>
     private void EndFailedCloning(EntityUid uid, CloningPodComponent clonePod)
     {
         if (clonePod.BodyContainer.ContainedEntity is { Valid: true } entity)
@@ -383,14 +415,52 @@ public sealed class CloningSystem : EntitySystem
     }
 
     /// <summary>
+    ///     The body coming out of the machine isn't guaranteed to even be a Humanoid.
+    ///     This function makes sure the body is "Human Playable", with no funny business.
+    /// </summary>
+    private void CleanupCloneComponents(EntityUid uid, EntityUid bodyToClone, bool forceOldProfile = false, bool DoMetempsychosis)
+    {
+        if (forceOldProfile
+            && TryComp<PsionicComponent>(bodyToClone, out var psionic))
+        {
+            var newPsionic = _serialization.CreateCopy(psionic, null, false, true);
+            AddComp(uid, newPsionic, true);
+        }
+
+        if (TryComp<LanguageKnowledgeComponent>(bodyToClone, out var oldKnowLangs))
+        {
+            var newKnowLangs = _serialization.CreateCopy(oldKnowLangs, null, false, true);
+            AddComp(uid, newKnowLangs, true);
+        }
+
+
+        if (TryComp<LanguageSpeakerComponent>(bodyToClone, out var oldSpeakLangs))
+        {
+            var newSpeakLangs = _serialization.CreateCopy(oldSpeakLangs, null, false, true);
+            AddComp(uid, newSpeakLangs, true);
+        }
+
+        if (DoMetempsychosis)
+            EnsureComp<PsionicComponent>(uid);
+
+        EnsureComp<SpeechComponent>(uid);
+        EnsureComp<DamageForceSayComponent>(uid);
+        EnsureComp<EmotingComponent>(uid);
+        EnsureComp<MindContainerComponent>(uid);
+        EnsureComp<SSDIndicatorComponent>(uid);
+        RemComp<ReplacementAccentComponent>(uid);
+        RemComp<MonkeyAccentComponent>(uid);
+        RemComp<SentienceTargetComponent>(uid);
+        RemComp<GhostTakeoverAvailableComponent>(uid);
+        _tag.AddTag(uid, "DoorBumpOpener");
+    }
+
+    /// <summary>
     ///     When failing to clone, much of the failed body is dissolved into a slurry of Ammonia and Blood, which spills from the machine.
     /// </summary>
     /// <remarks>
     ///     WOE BEFALLS WHOEVER FAILS TO CLONE A LAMIA
     /// </remarks>
-    /// <param name="uid"></param>
-    /// <param name="physics"></param>
-    /// <param name="blood"></param>
     private void MakeAHugeMess(EntityUid uid, PhysicsComponent? physics = null, BloodstreamComponent? blood = null)
     {
         var tileMix = _atmosphereSystem.GetTileMixture(Transform(uid).GridUid, null, _transformSystem.GetGridTilePositionOrDefault((uid, Transform(uid))), true);
@@ -503,40 +573,7 @@ public sealed class CloningSystem : EntitySystem
         grammar.Gender = oldGender;
         Dirty(mob, grammar);
 
-        if (forceOldProfile
-            && TryComp<PsionicComponent>(bodyToClone, out var psionic))
-        {
-            var newPsionic = _serialization.CreateCopy(psionic, null, false, true);
-            AddComp(mob, newPsionic, true);
-        }
-
-        if (TryComp<LanguageKnowledgeComponent>(bodyToClone, out var oldKnowLangs))
-        {
-            var newKnowLangs = _serialization.CreateCopy(oldKnowLangs, null, false, true);
-            AddComp(mob, newKnowLangs, true);
-        }
-
-
-        if (TryComp<LanguageSpeakerComponent>(bodyToClone, out var oldSpeakLangs))
-        {
-            var newSpeakLangs = _serialization.CreateCopy(oldSpeakLangs, null, false, true);
-            AddComp(mob, newSpeakLangs, true);
-        }
-
-        if (clonePodComp.DoMetempsychosis)
-            EnsureComp<PsionicComponent>(mob);
-
-        EnsureComp<SpeechComponent>(mob);
-        EnsureComp<DamageForceSayComponent>(mob);
-        EnsureComp<EmotingComponent>(mob);
-        EnsureComp<MindContainerComponent>(mob);
-        EnsureComp<SSDIndicatorComponent>(mob);
-        RemComp<ReplacementAccentComponent>(mob);
-        RemComp<MonkeyAccentComponent>(mob);
-        RemComp<SentienceTargetComponent>(mob);
-        RemComp<GhostTakeoverAvailableComponent>(mob);
-
-        _tag.AddTag(mob, "DoorBumpOpener");
+        CleanupCloneComponents(mob, bodyToClone, forceOldProfile, clonePodComp.DoMetempsychosis);
 
         return mob;
     }
