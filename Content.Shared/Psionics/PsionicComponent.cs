@@ -20,7 +20,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     This variable stores the cost of the next power.
         /// </summary>
         [DataField]
-        public float NextPowerCost;
+        public float NextPowerCost = 100;
 
         /// <summary>
         ///     The baseline chance of obtaining a psionic power when rolling for one.

@@ -72,6 +72,9 @@ public sealed class PsionicsSystem : EntitySystem
             || !component.CanReroll)
             return;
 
+        if (TryComp<InnatePsionicPowersComponent>(uid, out var innate))
+            component.NextPowerCost = 100 * MathF.Pow(2, innate.PowersToAdd.Count);
+
         _rollers.Enqueue((component, uid));
     }
 
