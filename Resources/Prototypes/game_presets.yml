@@ -8,6 +8,7 @@
   rules:
     - RampingStationEventScheduler
     - BasicRoundstartVariation
+    - SubGamemodesRule
 
 - type: gamePreset
   id: SurvivalHellshift
@@ -19,6 +20,7 @@
   rules:
     - HellshiftStationEventScheduler
     - BasicRoundstartVariation
+    - SubGamemodesRule
 
 - type: gamePreset
   id: AllAtOnce
@@ -43,6 +45,7 @@
   rules:
   - BasicStationEventScheduler
   - BasicRoundstartVariation
+  - SubGamemodesRule
 
 - type: gamePreset
   id: Greenshift
