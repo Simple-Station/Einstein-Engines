@@ -28,6 +28,11 @@
     - Common
     - Science
   - type: Psionic
+    removable: false
+    psychognomicDescriptors:
+      - p-descriptor-old
+      - p-descriptor-demiurgic
+      - p-descriptor-mysterious
   - type: Grammar
     attributes:
       gender: female

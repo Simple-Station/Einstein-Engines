@@ -7,10 +7,8 @@ using Content.Shared.Speech.Muting;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.CombatMode;
 using Content.Server.Bible.Components;
-using Content.Server.Research.Oracle;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Enums;
-using Content.Server.Nyanotrasen.Research.SophicScribe;
 using Content.Server.Nyanotrasen.Cloning;
 using Content.Server.Psionics.Glimmer;
 using Robust.Shared.Physics;
@@ -38,12 +36,6 @@ public sealed partial class TelepathicChatSystem
         SubscribeLocalEvent<PsionicComponent, GetPsychognomicDescriptorEvent>(DescribePsion);
         SubscribeLocalEvent<InnatePsionicPowersComponent, GetPsychognomicDescriptorEvent>(DescribeInnatePsionics);
         SubscribeLocalEvent<BloodSuckerComponent, GetPsychognomicDescriptorEvent>(DescribeBloodsucker);
-        SubscribeLocalEvent<RevenantComponent, GetPsychognomicDescriptorEvent>(DescribeRevenant);
-        // SubscribeLocalEvent<GlimmerWispComponent, GetPsychognomicDescriptorEvent>(DescribeGlimmerWisp);
-        SubscribeLocalEvent<FamiliarComponent, GetPsychognomicDescriptorEvent>(DescribeFamiliar);
-        // SubscribeLocalEvent<GolemComponent, GetPsychognomicDescriptorEvent>(DescribeGolem);
-        SubscribeLocalEvent<OracleComponent, GetPsychognomicDescriptorEvent>(DescribeOracle);
-        SubscribeLocalEvent<SophicScribeComponent, GetPsychognomicDescriptorEvent>(DescribeSophia);
     }
 
     private void DescribeHumanoid(EntityUid uid, HumanoidAppearanceComponent component, GetPsychognomicDescriptorEvent ev)
@@ -130,6 +122,14 @@ public sealed partial class TelepathicChatSystem
     // This one's also a bit of a catch-all for "lacks component"
     private void DescribePsion(EntityUid uid, PsionicComponent component, GetPsychognomicDescriptorEvent ev)
     {
+        if (component.PsychognomicDescriptors != null)
+        {
+            foreach (var descriptor in component.PsychognomicDescriptors)
+            {
+                ev.Descriptors.Add(Loc.GetString(descriptor));
+            }
+        }
+
         if (!HasComp<SpeechComponent>(uid) || HasComp<MutedComponent>(uid))
             ev.Descriptors.Add(Loc.GetString("p-descriptor-dumb"));
 
@@ -155,32 +155,6 @@ public sealed partial class TelepathicChatSystem
     private void DescribeBloodsucker(EntityUid uid, BloodSuckerComponent component, GetPsychognomicDescriptorEvent ev)
     {
         ev.Descriptors.Add(Loc.GetString("p-descriptor-vampiric"));
-    }
-
-    private void DescribeRevenant(EntityUid uid, RevenantComponent component, GetPsychognomicDescriptorEvent ev)
-    {
-        ev.Descriptors.Add(Loc.GetString("p-descriptor-vampiric"));
-    }
-
-    private void DescribeFamiliar(EntityUid uid, FamiliarComponent component, GetPsychognomicDescriptorEvent ev)
-    {
-        ev.Descriptors.Add(Loc.GetString("p-descriptor-bound"));
-        ev.Descriptors.Add(Loc.GetString("p-descriptor-cyclic"));
-    }
-
-    private void DescribeOracle(EntityUid uid, OracleComponent component, GetPsychognomicDescriptorEvent ev)
-    {
-        ev.Descriptors.Add(Loc.GetString("p-descriptor-old"));
-        ev.Descriptors.Add(Loc.GetString("p-descriptor-demiurgic"));
-        ev.Descriptors.Add(Loc.GetString("p-descriptor-mysterious"));
-        ev.Descriptors.Add(Loc.GetString("p-descriptor-emanative"));
-    }
-
-    private void DescribeSophia(EntityUid uid, SophicScribeComponent component, GetPsychognomicDescriptorEvent ev)
-    {
-        ev.Descriptors.Add(Loc.GetString("p-descriptor-old"));
-        ev.Descriptors.Add(Loc.GetString("p-descriptor-demiurgic"));
-        ev.Descriptors.Add(Loc.GetString("p-descriptor-mysterious"));
     }
 }
 public sealed class GetPsychognomicDescriptorEvent : EntityEventArgs

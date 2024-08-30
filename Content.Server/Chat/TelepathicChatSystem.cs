@@ -108,7 +108,7 @@ public sealed partial class TelepathicChatSystem : EntitySystem
             var ev = new GetPsychognomicDescriptorEvent();
             RaiseLocalEvent(source, ev);
 
-            ev.Descriptors.Add("p-descriptor-ignorant");
+            ev.Descriptors.Add(Loc.GetString("p-descriptor-ignorant"));
             string psychogMessageWrap;
             string descriptor;
 
