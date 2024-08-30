@@ -5617,3 +5617,20 @@ Entries:
       message: IPC now have their own unique deathgasp message.
   id: 6294
   time: '2024-08-30T00:50:20.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Shoving once again works correctly, and mass difference matters a lot
+        when shoving someone.
+    - type: Fix
+      message: >-
+        The time it takes to escape one's hands once again depends on the mass
+        difference between the escapee and the holder.
+    - type: Tweak
+      message: >-
+        Exiting stamina crit now leaves you with 0 stamina. You can't be
+        immediately stunned again, but you will suffer from slowdown and combat
+        disadvantages!
+  id: 6295
+  time: '2024-08-30T04:46:40.0000000+00:00'
