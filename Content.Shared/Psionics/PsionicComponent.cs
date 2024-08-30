@@ -8,8 +8,7 @@ namespace Content.Shared.Abilities.Psionics
     public sealed partial class PsionicComponent : Component
     {
         /// <summary>
-        ///     Each time a Psion rolls for a new power, they roll a number between 0 and 100, adding any relevant modifiers. This number is then added to Potentia,
-        ///     meaning that it carries over between rolls. When a character has an amount of potentia equal to at least 100 * 2^(total powers), the potentia is then spent, and a power is generated.
+        ///     How close a Psion is to generating a new power. When Potentia reaches the NextPowerCost, it is "Spent" in order to "Buy" a random new power.
         ///     TODO: Psi-Potentiometry should be able to read how much Potentia a person has.
         /// </summary>
         [DataField]
