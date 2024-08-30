@@ -6,22 +6,30 @@ using Content.Shared.Speech;
 using Content.Shared.Speech.Muting;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.CombatMode;
-using Content.Server.Bible.Components;
-using Robust.Shared.GameObjects.Components.Localization;
-using Robust.Shared.Enums;
-using Content.Server.Nyanotrasen.Cloning;
-using Content.Server.Psionics.Glimmer;
-using Robust.Shared.Physics;
-using Robust.Shared.Physics.Components;
 using Content.Shared.Nutrition.Components;
 using Content.Server.Vampiric;
-using Content.Shared.Revenant.Components;
 using Content.Shared.Abilities.Psionics;
 using Content.Server.Abilities.Psionics;
+using Content.Server.Nyanotrasen.Cloning;
+using Content.Server.Psionics.Glimmer;
+using Robust.Shared.GameObjects.Components.Localization;
+using Robust.Shared.Enums;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Random;
 
 namespace Content.Server.Chat;
 public sealed partial class TelepathicChatSystem
 {
+    public string SourceToDescriptor(EntityUid source)
+    {
+        var ev = new GetPsychognomicDescriptorEvent();
+        RaiseLocalEvent(source, ev);
+
+        ev.Descriptors.Add(Loc.GetString("p-descriptor-ignorant"));
+
+        return _random.Pick(ev.Descriptors);
+    }
     private void InitializePsychognomy()
     {
         SubscribeLocalEvent<HumanoidAppearanceComponent, GetPsychognomicDescriptorEvent>(DescribeHumanoid);

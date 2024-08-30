@@ -105,14 +105,8 @@ public sealed partial class TelepathicChatSystem : EntitySystem
 
         if (clients.psychog.Count() > 0)
         {
-            var ev = new GetPsychognomicDescriptorEvent();
-            RaiseLocalEvent(source, ev);
-
-            ev.Descriptors.Add(Loc.GetString("p-descriptor-ignorant"));
+            var descriptor = SourceToDescriptor(source);
             string psychogMessageWrap;
-            string descriptor;
-
-            descriptor = _random.Pick(ev.Descriptors);
 
             psychogMessageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message-psychognomy",
                 ("source", descriptor.ToUpper()), ("message", message));
