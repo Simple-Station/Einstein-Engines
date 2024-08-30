@@ -117,4 +117,4 @@
     interactFailureString: petting-failure-generic
     interactSuccessSound:
       path: /Audio/Items/drill_hit.ogg
-  - type: APCPowerReceiver
+  - type: ApcPowerReceiver
