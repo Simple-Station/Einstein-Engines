@@ -1,6 +1,5 @@
 using Robust.Shared.Random;
 using Robust.Shared.Player;
-using Content.Server.Psionics;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Mobs.Components;
@@ -28,7 +27,7 @@ internal sealed class PsionicCatGotYourTongueRule : StationEventSystem<PsionicCa
 
         List<EntityUid> psionicList = new();
 
-        var query = EntityQueryEnumerator<PotentialPsionicComponent, MobStateComponent>();
+        var query = EntityQueryEnumerator<PsionicComponent, MobStateComponent>();
         while (query.MoveNext(out var psion, out _, out _))
         {
             if (_mobStateSystem.IsAlive(psion) && !HasComp<PsionicInsulationComponent>(psion))

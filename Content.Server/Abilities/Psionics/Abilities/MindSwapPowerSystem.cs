@@ -10,8 +10,6 @@ using Content.Shared.Mobs.Systems;
 using Content.Server.Popups;
 using Content.Server.Psionics;
 using Content.Server.GameTicking;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
 
@@ -19,10 +17,8 @@ namespace Content.Server.Abilities.Psionics
 {
     public sealed class MindSwapPowerSystem : EntitySystem
     {
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-        [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly MindSystem _mindSystem = default!;
@@ -31,8 +27,6 @@ namespace Content.Server.Abilities.Psionics
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<MindSwapPowerComponent, ComponentInit>(OnInit);
-            SubscribeLocalEvent<MindSwapPowerComponent, ComponentShutdown>(OnShutdown);
             SubscribeLocalEvent<MindSwapPowerActionEvent>(OnPowerUsed);
             SubscribeLocalEvent<MindSwappedComponent, MindSwapPowerReturnActionEvent>(OnPowerReturned);
             SubscribeLocalEvent<MindSwappedComponent, DispelledEvent>(OnDispelled);
@@ -42,34 +36,9 @@ namespace Content.Server.Abilities.Psionics
             SubscribeLocalEvent<MindSwappedComponent, ComponentInit>(OnSwapInit);
         }
 
-        private void OnInit(EntityUid uid, MindSwapPowerComponent component, ComponentInit args)
-        {
-            _actions.AddAction(uid, ref component.MindSwapActionEntity, component.MindSwapActionId );
-            _actions.TryGetActionData( component.MindSwapActionEntity, out var actionData );
-            if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.MindSwapActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
-            {
-                psionic.PsionicAbility = component.MindSwapActionEntity;
-                psionic.ActivePowers.Add(component);
-            }
-        }
-
-        private void OnShutdown(EntityUid uid, MindSwapPowerComponent component, ComponentShutdown args)
-        {
-            _actions.RemoveAction(uid, component.MindSwapActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.ActivePowers.Remove(component);
-            }
-        }
-
         private void OnPowerUsed(MindSwapPowerActionEvent args)
         {
             if (!(TryComp<DamageableComponent>(args.Target, out var damageable) && damageable.DamageContainerID == "Biological"))
-                return;
-
-            if (HasComp<PsionicInsulationComponent>(args.Target))
                 return;
 
             Swap(args.Performer, args.Target);
@@ -151,8 +120,6 @@ namespace Content.Server.Abilities.Psionics
             _actions.TryGetActionData( component.MindSwapReturnActionEntity, out var actionData );
             if (actionData is { UseDelay: not null })
                 _actions.StartUseDelay(component.MindSwapReturnActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
-                psionic.PsionicAbility = component.MindSwapReturnActionEntity;
         }
 
         public void Swap(EntityUid performer, EntityUid target, bool end = false)

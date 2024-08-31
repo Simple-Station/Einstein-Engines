@@ -1,9 +1,9 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-# DeltaV
   - Arena
   - Asterisk
+  - Core
   - Edge
   - Hammurabi
   - Lighthouse

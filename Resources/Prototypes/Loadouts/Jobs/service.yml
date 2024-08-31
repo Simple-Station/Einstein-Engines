@@ -92,6 +92,17 @@
   items:
     - BedsheetClown
 
+- type: loadout
+  id: LoadoutServiceClownCowToolboxFilled
+  category: Jobs
+  cost: 3
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - CowToolboxFilled
+
 # Mime
 - type: loadout
   id: LoadoutServiceMimeOuterWinter

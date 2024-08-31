@@ -1,4 +1,3 @@
-using Content.Shared.Actions;
 using Content.Shared.StatusEffect;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Damage;
@@ -6,11 +5,8 @@ using Content.Shared.Revenant.Components;
 using Content.Server.Guardian;
 using Content.Server.Bible.Components;
 using Content.Server.Popups;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
-using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
 using Robust.Shared.Audio.Systems;
 
@@ -18,24 +14,18 @@ namespace Content.Server.Abilities.Psionics
 {
     public sealed class DispelPowerSystem : EntitySystem
     {
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
-        [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly GuardianSystem _guardianSystem = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
-        [Dependency] private readonly IGameTiming _gameTiming = default!;
-        [Dependency] private readonly SharedMindSystem _mindSystem = default!;
 
 
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<DispelPowerComponent, ComponentInit>(OnInit);
-            SubscribeLocalEvent<DispelPowerComponent, ComponentShutdown>(OnShutdown);
             SubscribeLocalEvent<DispelPowerActionEvent>(OnPowerUsed);
 
             SubscribeLocalEvent<DispellableComponent, DispelledEvent>(OnDispelled);
@@ -46,34 +36,8 @@ namespace Content.Server.Abilities.Psionics
             SubscribeLocalEvent<RevenantComponent, DispelledEvent>(OnRevenantDispelled);
         }
 
-        private void OnInit(EntityUid uid, DispelPowerComponent component, ComponentInit args)
-        {
-            _actions.AddAction(uid, ref component.DispelActionEntity, component.DispelActionId );
-            _actions.TryGetActionData( component.DispelActionEntity, out var actionData );
-            if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.DispelActionEntity);
-            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
-            {
-                psionic.PsionicAbility = component.DispelActionEntity;
-                psionic.ActivePowers.Add(component);
-            }
-        }
-
-        private void OnShutdown(EntityUid uid, DispelPowerComponent component, ComponentShutdown args)
-        {
-            _actions.RemoveAction(uid, component.DispelActionEntity);
-
-            if (TryComp<PsionicComponent>(uid, out var psionic))
-            {
-                psionic.ActivePowers.Remove(component);
-            }
-        }
-
         private void OnPowerUsed(DispelPowerActionEvent args)
         {
-            if (HasComp<PsionicInsulationComponent>(args.Target))
-                return;
-
             var ev = new DispelledEvent();
             RaiseLocalEvent(args.Target, ev, false);
 
