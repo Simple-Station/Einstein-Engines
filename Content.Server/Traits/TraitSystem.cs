@@ -153,7 +153,7 @@ public sealed class TraitSystem : EntitySystem
     /// </summary>
     private void VaporizeCheater (Robust.Shared.Player.ICommonSession targetPlayer)
     {
-        _adminSystem.Erase(targetPlayer);
+        _adminSystem.Erase(targetPlayer.UserId);
 
         var feedbackMessage = $"[font size=24][color=#ff0000]{"You have spawned in with an illegal trait point total. If this was a result of cheats, then your nonexistence is a skill issue. Otherwise, feel free to click 'Return To Lobby', and fix your trait selections."}[/color][/font]";
         _chatManager.ChatMessageToOne(
