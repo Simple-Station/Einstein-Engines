@@ -8,7 +8,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Customization.Systems;
 
-
+// ReSharper disable InvalidXmlDocComment
 [ImplicitDataDefinitionForInheritors, MeansImplicitUse]
 [Serializable, NetSerializable]
 public abstract partial class CharacterRequirement
@@ -25,14 +25,6 @@ public abstract partial class CharacterRequirement
     ///     <br />
     ///     You should probably not be calling this directly, use <see cref="CharacterRequirementsSystem"/>
     /// </summary>
-    /// <param name="job"></param>
-    /// <param name="profile"></param>
-    /// <param name="playTimes"></param>
-    /// <param name="whitelisted"></param>
-    /// <param name="prototype"></param>
-    /// <param name="entityManager"></param>
-    /// <param name="prototypeManager"></param>
-    /// <param name="configManager"></param>
     /// <param name="reason">Description for the requirement, shown when not null</param>
     public abstract bool IsValid(
         JobPrototype job,
