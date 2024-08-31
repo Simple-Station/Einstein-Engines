@@ -16,12 +16,13 @@ GITHUB_API_URL    = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 GITHUB_REPOSITORY = os.environ["GITHUB_REPOSITORY"]
 GITHUB_RUN        = os.environ["GITHUB_RUN_ID"]
 BOT_TOKEN         = os.environ["BOT_TOKEN"]
+CHANGELOG_DIR     = os.environ["CHANGELOG_DIR"]
 
 # https://discord.com/developers/docs/resources/webhook
 DISCORD_SPLIT_LIMIT = 2000
 CHANGELOG_DISCORD_WEBHOOK = os.environ.get("CHANGELOG_DISCORD_WEBHOOK")
 
-CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
+CHANGELOG_FILE = "{CHANGELOG_DIR}"
 
 TYPES_TO_EMOJI = {
     "Fix":    "🐛",
