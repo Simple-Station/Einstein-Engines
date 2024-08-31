@@ -94,7 +94,7 @@
 
 - type: loadout
   id: LoadoutServiceClownCowToolboxFilled
-  category: Jobs
+  category: JobsAUncategorized
   cost: 3
   requirements:
     - !type:CharacterJobRequirement
