@@ -1,11 +1,11 @@
 ## Job
 character-job-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } be one of these jobs: {$jobs}
 
 character-department-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } be in one of these departments: {$departments}
 
@@ -23,21 +23,21 @@ character-timer-role-too-high = You require[color=yellow] {TOSTRING($time, "0")}
 character-logic-or-requirement-listprefix = {""}
     {""}[color=white]-[/color]{" "}
 character-logic-or-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } fit at least one of these: {$options}
 
 character-logic-xor-requirement-listprefix = {""}
     {""}[color=white]-[/color]{" "}
 character-logic-xor-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } fit only one of these: {$options}
 
 
 ## Profile
 character-age-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } be within [color=yellow]{$min}[/color] and [color=yellow]{$max}[/color] years old
 
@@ -57,19 +57,19 @@ character-gender-requirement = You must {$inverted ->
 } the pronouns [color=white]{$gender}[/color]
 
 character-sex-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } be [color=white]{$sex ->
     [None] unsexed
     *[other] {$sex}
 }[/color]
 character-species-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } be a {$species}
 
 character-height-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } be{$min ->
     [-2147483648]{$max ->
@@ -83,7 +83,7 @@ character-height-requirement = You must{$inverted ->
 }
 
 character-width-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } be{$min ->
     [-2147483648]{$max ->
@@ -97,7 +97,7 @@ character-width-requirement = You must{$inverted ->
 }
 
 character-weight-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } be{$min ->
     [-2147483648]{$max ->
@@ -130,6 +130,6 @@ character-item-group-requirement = You must {$inverted ->
 
 ## Whitelist
 character-whitelist-requirement = You must{$inverted ->
-    [true] not
+    [true]{" "}not
     *[other]{""}
 } be whitelisted
