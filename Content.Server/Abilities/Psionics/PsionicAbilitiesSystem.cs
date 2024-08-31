@@ -124,7 +124,7 @@ namespace Content.Server.Abilities.Psionics
             RefreshPsionicModifiers(uid, psionic);
             SendFeedbackMessage(uid, proto, playFeedback);
             UpdatePowerSlots(psionic);
-            UpdatePsionicDanger(uid, psionic);
+            //UpdatePsionicDanger(uid, psionic); // TODO: After Glimmer Refactor
             //SendFeedbackAudio(uid, proto, playPopup); // TODO: This one is coming next!
         }
 
@@ -309,14 +309,17 @@ namespace Content.Server.Abilities.Psionics
             psionic.PowerSlotsTaken = slotsUsed;
         }
 
-        private void UpdatePsionicDanger(EntityUid uid, PsionicComponent psionic)
-        {
-            if (psionic.PowerSlotsTaken <= psionic.PowerSlots)
-                return;
-
-            EnsureComp<GlimmerSourceComponent>(uid, out var glimmerSource);
-            glimmerSource.SecondsPerGlimmer = 10 / (psionic.PowerSlotsTaken - psionic.PowerSlots);
-        }
+        /// <summary>
+        ///     Psions over a certain power threshold become a glimmer source. This cannot be fully implemented until after I rework Glimmer
+        /// </summary>
+        //private void UpdatePsionicDanger(EntityUid uid, PsionicComponent psionic)
+        //{
+        //   if (psionic.PowerSlotsTaken <= psionic.PowerSlots)
+        //        return;
+        //
+        //    EnsureComp<GlimmerSourceComponent>(uid, out var glimmerSource);
+        //    glimmerSource.SecondsPerGlimmer = 10 / (psionic.PowerSlotsTaken - psionic.PowerSlots);
+        //}
 
         /// <summary>
         ///     Remove all Psychic Actions listed in an entity's Psionic Component. Unfortunately, removing actions associated with a specific Power Prototype is not supported.
