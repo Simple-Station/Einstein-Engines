@@ -764,28 +764,6 @@
 
 - type: entity
   parent: IDCardStandard
-  id: CentcomIDCardSyndie
-  name: command officer ID card
-  suffix: Fake
-  components:
-  - type: Sprite
-    layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#1B67A5"
-    - state: cc
-  - type: Item
-    heldPrefix: blue
-  - type: PresetIdCard
-    job: CentralCommandOfficial
-  - type: Access
-    tags:
-    - Maintenance
-
-- type: entity
-  parent: IDCardStandard
   id: MusicianIDCard
   name: musician ID card
   components:
