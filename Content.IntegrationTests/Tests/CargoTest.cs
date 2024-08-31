@@ -180,6 +180,8 @@ public sealed class CargoTest
         {
             var priceSystem = entManager.System<PricingSystem>();
 
+        await server.WaitAssertion(() =>
+        {
             var ent = entManager.SpawnEntity("StackEnt", MapCoordinates.Nullspace);
             var price = priceSystem.GetPrice(ent);
             Assert.That(price, Is.EqualTo(100.0));
