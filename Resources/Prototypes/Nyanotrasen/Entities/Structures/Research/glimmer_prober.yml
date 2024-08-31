@@ -6,6 +6,9 @@
   components:
   - type: Psionic
     removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
   - type: GlimmerSource
   - type: Construction
     graph: GlimmerDevices

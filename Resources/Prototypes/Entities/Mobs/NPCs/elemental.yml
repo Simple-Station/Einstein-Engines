@@ -103,6 +103,9 @@
     damageContainer: StructuralInorganic
   - type: Psionic
     removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
 
 - type: entity
   parent: MobOreCrab
@@ -297,6 +300,9 @@
     solution: bloodstream
   - type: Psionic
     removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
 
 - type: entity
   name: Reagent Slime Spawner

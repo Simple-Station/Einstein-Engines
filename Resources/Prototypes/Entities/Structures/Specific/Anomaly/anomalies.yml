@@ -50,6 +50,9 @@
       path: /Audio/Effects/teleport_arrival.ogg
   - type: Psionic
     removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
   - type: GlimmerSource
     active: false
   - type: SecretDataAnomaly

@@ -161,6 +161,9 @@
           shader: unshaded
     - type: Psionic
       removable: false
+    - type: InnatePsionicPowers
+      powersToAdd:
+        - TelepathyPower
 
 - type: entity
   name: HoloClown
