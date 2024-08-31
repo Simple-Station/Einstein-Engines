@@ -168,7 +168,7 @@
                 <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
                     <Button
                         Name="TraitsShowUnusableButton"
-                        Text="You shouldn't see this."
+                        Text="{Loc 'humanoid-profile-editor-traits-show-unusable-button'}"
                         ToolTip="{Loc 'humanoid-profile-editor-traits-show-unusable-button-tooltip'}"
                         ToggleMode="True"
                         HorizontalAlignment="Stretch"
