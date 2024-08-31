@@ -5724,3 +5724,16 @@ Entries:
         a custom Supermatter Engine
   id: 6303
   time: '2024-08-30T14:42:12.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        InnatePsionicPowers now operates on MapInitEvent instead of
+        ComponentStartup, meaning that it can now be safely used on entities
+        that are mapped in instead of spawned. 
+    - type: Add
+      message: >-
+        Oracle and Sophia are now recognized as Divine, and as such are
+        creatures that can be prayed to.
+  id: 6304
+  time: '2024-08-31T04:28:16.0000000+00:00'
