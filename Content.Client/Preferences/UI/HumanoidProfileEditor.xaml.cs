@@ -963,6 +963,8 @@ namespace Content.Client.Preferences.UI
             OnSkinColorOnValueChanged(); // Species may have special color prefs, make sure to update it.
             CMarkings.SetSpecies(newSpecies); // Repopulate the markings tab as well.
             UpdateSexControls(); // Update sex for new species
+            UpdateTraits(_traitsShowUnusableButton.Pressed);
+            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
             // Changing species provides inaccurate sliders without these
             UpdateHeightControls();
             UpdateWidthControls();
@@ -981,6 +983,8 @@ namespace Content.Client.Preferences.UI
         private void SetClothing(ClothingPreference newClothing)
         {
             Profile = Profile?.WithClothingPreference(newClothing);
+            UpdateTraits(_traitsShowUnusableButton.Pressed);
+            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
             IsDirty = true;
             _controller.UpdateClothes = true;
             UpdatePreview();
@@ -989,6 +993,8 @@ namespace Content.Client.Preferences.UI
         private void SetBackpack(BackpackPreference newBackpack)
         {
             Profile = Profile?.WithBackpackPreference(newBackpack);
+            UpdateTraits(_traitsShowUnusableButton.Pressed);
+            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
             IsDirty = true;
             _controller.UpdateClothes = true;
             UpdatePreview();
@@ -1353,9 +1359,8 @@ namespace Content.Client.Preferences.UI
             UpdateSaveButton();
             UpdateJobPriorities();
             UpdateAntagPreferences();
-            UpdateTraitPreferences();
+            UpdateTraits(_traitsShowUnusableButton.Pressed);
             UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
-            UpdateLoadoutPreferences();
             UpdateMarkings();
             UpdateHairPickers();
             UpdateCMarkingsHair();
