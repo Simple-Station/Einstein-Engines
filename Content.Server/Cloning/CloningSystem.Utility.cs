@@ -328,7 +328,7 @@ public sealed partial class CloningSystem
 
     /// <summary>
     ///     Optionally makes sure that pronoun preferences are preserved by the clone.
-    ///     Although handled here, the swap(if it occurs) happens during UpdateCloneAppearance.
+    ///     Although handled here, the swap (if it occurs) happens during UpdateCloneAppearance.
     /// </summary>
     /// <param name="mob"></param>
     /// <param name="gender"></param>

@@ -18,7 +18,7 @@ public sealed partial class CloningPodComponent : Component
     public ContainerSlot BodyContainer = default!;
 
     /// <summary>
-    ///     How long the cloning has been going on for.
+    ///     How long the cloning has been going on for
     /// </summary>
     [ViewVariables]
     public float CloningProgress = 0;
@@ -33,7 +33,7 @@ public sealed partial class CloningPodComponent : Component
     public bool FailedClone = false;
 
     /// <summary>
-    ///     The material that is used to clone entities.
+    ///     The material that is used to clone entities
     /// </summary>
     [DataField]
     public ProtoId<MaterialPrototype> RequiredMaterial = "Biomass";
@@ -51,7 +51,7 @@ public sealed partial class CloningPodComponent : Component
     public EntProtoId MobSpawnId = "MobAbomination";
 
     /// <summary>
-    ///     Emag sound effects.
+    ///     Emag sound effects
     /// </summary>
     [DataField]
     public SoundSpecifier SparkSound = new SoundCollectionSpecifier("sparks")
@@ -73,31 +73,31 @@ public sealed partial class CloningPodComponent : Component
     public EntityUid? ConnectedConsole;
 
     /// <summary>
-    ///     Tracks whether a Cloner is actively cloning someone.
+    ///     Tracks whether a Cloner is actively cloning someone
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     public bool ActivelyCloning;
 
     /// <summary>
-    ///     Controls whether a Cloning Pod will add genetic damage to a clone, scaling as the body's crit threshold + 1 + the genetic damage of the body to be cloned.
+    ///     Controls whether a Cloning Pod will add genetic damage to a clone, scaling as the body's crit threshold + 1 + the genetic damage of the body to be cloned
     /// </summary>
     [DataField]
     public bool DoGeneticDamage = true;
 
     /// <summary>
-    ///     How much should the cloning pod adjust the hunger of an entity by.
+    ///     How much should the cloning pod adjust the hunger of an entity by
     /// </summary>
     [DataField]
     public float HungerAdjustment = 50;
 
     /// <summary>
-    ///     How much should the cloning pod adjust the thirst of an entity by.
+    ///     How much should the cloning pod adjust the thirst of an entity by
     /// </summary>
     [DataField]
     public float ThirstAdjustment = 50;
 
     /// <summary>
-    ///     How much time should the cloning pod give an entity the durnk condition, in seconds.
+    ///     How much time should the cloning pod give an entity the durnk condition, in seconds
     /// </summary>
     [DataField]
     public float DrunkTimer = 300;
@@ -116,22 +116,22 @@ public sealed partial class CloningPodComponent : Component
     public bool DoMetempsychosis;
 
     /// <summary>
-    ///     How much should each point of Karma decrease the odds of reincarnating as a humanoid.
+    ///     How much should each point of Karma decrease the odds of reincarnating as a humanoid
     /// </summary>
     [DataField]
     public float KarmaOffset = 0.5f;
 
     /// <summary>
     ///     The base chances for a Metem Machine to produce a Humanoid.
-    ///     > 1 has a chance of acting like a true Cloner
+    ///     > 1 has a chance of acting like a true Cloner.
     ///     On a successful roll, produces a random Humanoid.
-    ///     A failed roll poduces a random NonHumanoid
+    ///     A failed roll poduces a random NonHumanoid.
     /// </summary>
     [DataField]
     public float HumanoidBaseChance = 1;
 
     /// <summary>
-    ///     The proto that the Metem Machine picks a random Humanoid from.
+    ///     The proto that the Metem Machine picks a random Humanoid from
     /// </summary>
     [ValidatePrototypeId<WeightedRandomPrototype>]
     [DataField]

@@ -127,8 +127,7 @@ public sealed partial class CloningSystem : EntitySystem
 
     private void OnPowerChanged(EntityUid uid, CloningPodComponent component, PowerChangedEvent args)
     {
-        if (!args.Powered
-            && component.ActivelyCloning)
+        if (!args.Powered && component.ActivelyCloning)
             CauseCloningFail(uid, component);
     }
 
@@ -246,14 +245,15 @@ public sealed partial class CloningSystem : EntitySystem
     /// <summary>
     ///     This function handles the Clone vs. Metem logic, as well as creation of the new body.
     /// </summary>
-    private EntityUid FetchAndSpawnMob
-    (EntityUid clonePod,
-    CloningPodComponent clonePodComp,
-    HumanoidCharacterProfile pref,
-    SpeciesPrototype speciesPrototype,
-    HumanoidAppearanceComponent humanoid,
-    EntityUid bodyToClone,
-    float geneticDamage)
+    private EntityUid FetchAndSpawnMob(
+        EntityUid clonePod,
+        CloningPodComponent clonePodComp,
+        HumanoidCharacterProfile pref,
+        SpeciesPrototype speciesPrototype,
+        HumanoidAppearanceComponent humanoid,
+        EntityUid bodyToClone,
+        float geneticDamage
+    )
     {
         List<Sex> sexes = new();
         bool switchingSpecies = false;
@@ -319,8 +319,8 @@ public sealed partial class CloningSystem : EntitySystem
         RaiseLocalEvent(oldBody, ref ev);
 
         chance = ev.OverrideChance
-                ? ev.ReincarnationChances
-                : chance * ev.ReincarnationChanceModifier;
+            ? ev.ReincarnationChances
+            : chance * ev.ReincarnationChanceModifier;
 
         switch (ev.ForcedType)
         {

@@ -1,4 +1,5 @@
 namespace Content.Shared.Cloning;
+
 /// <summary>
 ///     Raised after a new mob got spawned when cloning a humanoid
 /// </summary>
@@ -18,7 +19,8 @@ public struct CloningEvent
 }
 
 /// <summary>
-///     Raised on a corpse being subjected to forced reincarnation(Metempsychosis). Allowing for innate effects from the mob to influence the reincarnation.
+///     Raised on a corpse being subjected to forced reincarnation(Metempsychosis).
+///     Allowing for innate effects from the mob to influence the reincarnation.
 /// </summary>
 [ByRefEvent]
 public struct ReincarnatingEvent
@@ -38,7 +40,7 @@ public struct ReincarnatingEvent
 
 /// <summary>
 ///     Raised on a corpse that someone is attempting to clone, but before the process actually begins.
-///     ALlows for Entities to influence whether the cloning can begin in the first place, either by canceling it, or modifying the cost.
+///     Allows for Entities to influence whether the cloning can begin in the first place, either by canceling it, or modifying the cost.
 /// </summary>
 [ByRefEvent]
 public struct AttemptCloningEvent
