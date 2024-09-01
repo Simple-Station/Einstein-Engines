@@ -41,12 +41,11 @@ namespace Content.Shared.Contests
                 || performerPhysics.Mass == 0)
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? performerPhysics.Mass / otherMass
                 : Math.Clamp(performerPhysics.Mass / otherMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
-                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor));
         }
 
         /// <inheritdoc cref="MassContest(EntityUid, bool, float, float)"/>
@@ -77,12 +76,11 @@ namespace Content.Shared.Contests
                 || performerPhysics.Mass == 0)
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? performerPhysics.Mass / otherMass
                 : Math.Clamp(performerPhysics.Mass / otherMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
-                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor));
         }
 
         /// <summary>
@@ -102,12 +100,11 @@ namespace Content.Shared.Contests
                 || targetPhysics.InvMass == 0)
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? performerPhysics.Mass * targetPhysics.InvMass
                 : Math.Clamp(performerPhysics.Mass * targetPhysics.InvMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
-                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor));
         }
 
         /// <inheritdoc cref="MassContest(EntityUid, EntityUid, bool, float)"/>
@@ -120,12 +117,11 @@ namespace Content.Shared.Contests
                 || targetPhysics.InvMass == 0)
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? performerPhysics.Mass * targetPhysics.InvMass
                 : Math.Clamp(performerPhysics.Mass * targetPhysics.InvMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
-                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor));
         }
 
         /// <inheritdoc cref="MassContest(EntityUid, EntityUid, bool, float)"/>
@@ -138,12 +134,11 @@ namespace Content.Shared.Contests
                 || targetPhysics.InvMass == 0)
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? performerPhysics.Mass * targetPhysics.InvMass
                 : Math.Clamp(performerPhysics.Mass * targetPhysics.InvMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
-                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor));
         }
 
         /// <inheritdoc cref="MassContest(EntityUid, EntityUid, bool, float)"/>
@@ -155,12 +150,11 @@ namespace Content.Shared.Contests
                 || targetPhysics.InvMass == 0)
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? performerPhysics.Mass * targetPhysics.InvMass
                 : Math.Clamp(performerPhysics.Mass * targetPhysics.InvMass,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
-                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor));
         }
 
         #endregion
@@ -189,10 +183,9 @@ namespace Content.Shared.Contests
                 || !_cfg.GetCVar(CCVars.DoStaminaContests))
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? 1 - perfStamina.StaminaDamage / perfStamina.CritThreshold
-                : 1 - Math.Clamp(perfStamina.StaminaDamage / perfStamina.CritThreshold, 0, 0.25f * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                : 1 - Math.Clamp(perfStamina.StaminaDamage / perfStamina.CritThreshold, 0, 0.25f * rangeFactor));
         }
 
         /// <summary>
@@ -210,12 +203,11 @@ namespace Content.Shared.Contests
                 || !TryComp<StaminaComponent>(target, out var targetStamina))
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? (1 - perfStamina.StaminaDamage / perfStamina.CritThreshold)
                     / (1 - targetStamina.StaminaDamage / targetStamina.CritThreshold)
                 : (1 - Math.Clamp(perfStamina.StaminaDamage / perfStamina.CritThreshold, 0, 0.25f * rangeFactor))
-                    / (1 - Math.Clamp(targetStamina.StaminaDamage / targetStamina.CritThreshold, 0, 0.25f * rangeFactor)),
-                    float.Epsilon, float.MaxValue);
+                    / (1 - Math.Clamp(targetStamina.StaminaDamage / targetStamina.CritThreshold, 0, 0.25f * rangeFactor)));
         }
 
         #endregion
@@ -237,10 +229,9 @@ namespace Content.Shared.Contests
                 || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.Critical, out var threshold))
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? 1 - damage.TotalDamage.Float() / threshold.Value.Float()
-                : 1 - Math.Clamp(damage.TotalDamage.Float() / threshold.Value.Float(), 0, 0.25f * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                : 1 - Math.Clamp(damage.TotalDamage.Float() / threshold.Value.Float(), 0, 0.25f * rangeFactor));
         }
 
         /// <summary>
@@ -260,12 +251,11 @@ namespace Content.Shared.Contests
                 || !_mobThreshold.TryGetThresholdForState(target, Mobs.MobState.Critical, out var targetThreshold))
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? (1 - perfDamage.TotalDamage.Float() / perfThreshold.Value.Float())
                     / (1 - targetDamage.TotalDamage.Float() / targetThreshold.Value.Float())
                 : (1 - Math.Clamp(perfDamage.TotalDamage.Float() / perfThreshold.Value.Float(), 0, 0.25f * rangeFactor))
-                    / (1 - Math.Clamp(targetDamage.TotalDamage.Float() / targetThreshold.Value.Float(), 0, 0.25f * rangeFactor)),
-                    float.Epsilon, float.MaxValue);
+                    / (1 - Math.Clamp(targetDamage.TotalDamage.Float() / targetThreshold.Value.Float(), 0, 0.25f * rangeFactor)));
         }
         #endregion
 
@@ -293,12 +283,11 @@ namespace Content.Shared.Contests
             if (performerPotential == otherPsion)
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? performerPotential / otherPsion
                 : Math.Clamp(performerPotential / otherPsion,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
-                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor));
         }
 
         /// <summary>
@@ -326,12 +315,11 @@ namespace Content.Shared.Contests
             if (performerPotential == targetPotential)
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? performerPotential / targetPotential
                 : Math.Clamp(performerPotential / targetPotential,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
-                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor));
         }
 
         #endregion
@@ -351,12 +339,11 @@ namespace Content.Shared.Contests
                 || !TryComp<NetMoodComponent>(performer, out var mood))
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? mood.CurrentMoodLevel / mood.NeutralMoodThreshold
                 : Math.Clamp(mood.CurrentMoodLevel / mood.NeutralMoodThreshold,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
-                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor));
         }
 
         /// <summary>
@@ -373,12 +360,11 @@ namespace Content.Shared.Contests
                 || !TryComp<NetMoodComponent>(target, out var targetMood))
                 return 1f;
 
-            return Math.Clamp(_cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp
+            return ContestClamp(ContestClampOverride(bypassClamp)
                 ? performerMood.CurrentMoodLevel / targetMood.CurrentMoodLevel
                 : Math.Clamp(performerMood.CurrentMoodLevel / targetMood.CurrentMoodLevel,
                     1 - _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor,
-                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor),
-                    float.Epsilon, float.MaxValue);
+                    1 + _cfg.GetCVar(CCVars.MassContestsMaxPercentage) * rangeFactor));
         }
 
         #endregion
@@ -427,12 +413,11 @@ namespace Content.Shared.Contests
                     + HealthContest(performer, bypassClampHealth, rangeFactorHealth) * healthMultiplier
                     + MindContest(performer, bypassClampMind, rangeFactorMind) * mindMultiplier
                     + MoodContest(performer, bypassClampMood, rangeFactorMood) * moodMultiplier
-                : Math.Clamp(MassContest(performer, bypassClampMass, rangeFactorMass) * massMultiplier
+                : ContestClamp(MassContest(performer, bypassClampMass, rangeFactorMass) * massMultiplier
                     * StaminaContest(performer, bypassClampStamina, rangeFactorStamina) * staminaMultiplier
                     * HealthContest(performer, bypassClampHealth, rangeFactorHealth) * healthMultiplier
                     * MindContest(performer, bypassClampMind, rangeFactorMind) * mindMultiplier
-                    * MoodContest(performer, bypassClampMood, rangeFactorMood) * moodMultiplier,
-                    float.Epsilon, float.MaxValue);
+                    * MoodContest(performer, bypassClampMood, rangeFactorMood) * moodMultiplier);
         }
 
         /// <summary>
@@ -478,12 +463,11 @@ namespace Content.Shared.Contests
                     + HealthContest(performer, target, bypassClampHealth, rangeFactorHealth) * healthMultiplier
                     + MindContest(performer, target, bypassClampMind, rangeFactorMind) * mindMultiplier
                     + MoodContest(performer, target, bypassClampMood, rangeFactorMood) * moodMultiplier
-                : Math.Clamp(MassContest(performer, target, bypassClampMass, rangeFactorMass) * massMultiplier
+                : ContestClamp(MassContest(performer, target, bypassClampMass, rangeFactorMass) * massMultiplier
                     * StaminaContest(performer, target, bypassClampStamina, rangeFactorStamina) * staminaMultiplier
                     * HealthContest(performer, target, bypassClampHealth, rangeFactorHealth) * healthMultiplier
                     * MindContest(performer, target, bypassClampMind, rangeFactorMind) * mindMultiplier
-                    * MoodContest(performer, target, bypassClampMood, rangeFactorMood) * moodMultiplier,
-                    float.Epsilon, float.MaxValue);
+                    * MoodContest(performer, target, bypassClampMood, rangeFactorMood) * moodMultiplier);
         }
         #endregion
     }
