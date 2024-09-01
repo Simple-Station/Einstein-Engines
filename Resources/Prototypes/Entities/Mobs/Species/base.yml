@@ -308,6 +308,7 @@
     alternateState: Standing
   - type: OfferItem
   - type: LayingDown
+  - type: Shoving
 
 - type: entity
   save: false
