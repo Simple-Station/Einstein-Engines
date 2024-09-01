@@ -36,7 +36,7 @@
 - type: trait
   id: HeavyweightDrunk
   category: Physical
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -127,7 +127,7 @@
 - type: trait
   id: ParkourTraining
   category: Physical
-  points: -6
+  points: -5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -140,10 +140,10 @@
         - Diona
   components:
     - type: ClimbDelayModifier
-      climbDelayMultiplier: 0.70
+      climbDelayMultiplier: 0.35
     - type: LayingDownModifier
-      layingDownCooldownMultiplier: 0.8
-      downedSpeedMultiplierMultiplier: 1.25
+      layingDownCooldownMultiplier: 0.5
+      downedSpeedMultiplierMultiplier: 1.65
 
 - type: trait
   id: LightStep
@@ -200,7 +200,7 @@
 - type: trait
   id: PsionicInsulation
   category: Mental
-  points: -14 #Buy a significant disability to get this.
+  points: -10 #Buy a significant disability to get this.
   components:
     - type: PsionicInsulation
     - type: Mindbroken
