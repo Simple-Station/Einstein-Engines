@@ -622,6 +622,10 @@
     - CannotSuicide
     - Hamster
     - VimPilot
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - sadness
   - type: LanguageKnowledge
     speaks:
     - Mouse
