@@ -5743,3 +5743,15 @@ Entries:
       message: Diagonal windows now use connected textures.
   id: 6305
   time: '2024-09-01T23:20:12.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Character names can now be up to 48 characters in length.
+    - type: Tweak
+      message: >-
+        Character descriptions can now be up to 1024 characters in length. This
+        is the maximum size descriptions can be without the menu having a scroll
+        bar. And while we'd like it to be bigger, we're going to want to get a
+        new UI for this in the future!
+  id: 6306
+  time: '2024-09-01T23:20:45.0000000+00:00'
