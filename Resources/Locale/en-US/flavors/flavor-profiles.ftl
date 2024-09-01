@@ -50,6 +50,7 @@ flavor-base-horrible = horrible
 # lmao
 flavor-base-terrible = terrible
 flavor-base-mindful = mindful
+flavor-base-chewy = chewy
 
 # Complex flavors. Put a flavor here when you want something that's more
 # specific.
@@ -276,6 +277,6 @@ flavor-complex-bee = unbeelievable
 flavor-complex-sax = like jazz
 flavor-complex-bottledlightning = like lightning in a bottle
 flavor-complex-punishment = like punishment
-flavor-weh = like weh
 flavor-complex-supernova = like a supernova frozen at its apex
 flavor-complex-xelthia = like some exotic kind of sourish calamari
+flavor-weh = like weh
