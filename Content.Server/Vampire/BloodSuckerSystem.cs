@@ -76,7 +76,7 @@ namespace Content.Server.Vampiric
         private void OnHealthExamined(EntityUid uid, BloodSuckedComponent component, HealthBeingExaminedEvent args)
         {
             args.Message.PushNewline();
-            args.Message.AddMarkup(Loc.GetString("bloodsucked-health-examine", ("target", uid)));
+            args.Message.AddMarkupOrThrow(Loc.GetString("bloodsucked-health-examine", ("target", uid)));
         }
 
         private void OnDamageChanged(EntityUid uid, BloodSuckedComponent component, DamageChangedEvent args)

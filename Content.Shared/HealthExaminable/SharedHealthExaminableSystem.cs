@@ -98,11 +98,11 @@ public abstract class SharedHealthExaminableSystem : EntitySystem
                 msg.PushNewline();
             else
                 first = false;
-            msg.AddMarkup(chosenLocStr);
+            msg.AddMarkupOrThrow(chosenLocStr);
         }
 
         if (msg.IsEmpty)
-            msg.AddMarkup(Loc.GetString($"health-examinable-{component.LocPrefix}-none"));
+            msg.AddMarkupOrThrow(Loc.GetString($"health-examinable-{component.LocPrefix}-none"));
 
         // Anything else want to add on to this?
         RaiseLocalEvent(uid, new HealthBeingExaminedEvent(msg, false), true);
@@ -135,7 +135,7 @@ public abstract class SharedHealthExaminableSystem : EntitySystem
                 msg.PushNewline();
             else
                 first = false;
-            msg.AddMarkup(damageString);
+            msg.AddMarkupOrThrow(damageString);
         }
 
         var adjustedThresholds = GetAdjustedThresholds(target, selfAware.Thresholds);
@@ -172,11 +172,11 @@ public abstract class SharedHealthExaminableSystem : EntitySystem
                 msg.PushNewline();
             else
                 first = false;
-            msg.AddMarkup(chosenLocStr);
+            msg.AddMarkupOrThrow(chosenLocStr);
         }
 
         if (msg.IsEmpty)
-            msg.AddMarkup(Loc.GetString($"health-examinable-selfaware-none"));
+            msg.AddMarkupOrThrow(Loc.GetString($"health-examinable-selfaware-none"));
 
         // Event listeners can know if the examination is Self-Aware.
         RaiseLocalEvent(target, new HealthBeingExaminedEvent(msg, true), true);

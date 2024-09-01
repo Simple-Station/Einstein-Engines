@@ -1,3 +1,4 @@
+using Content.Server.Announcements.Systems;
 using Content.Server.Chat.Systems;
 using Content.Server.NPC;
 using Content.Server.NPC.Systems;
@@ -14,7 +15,6 @@ using System.Numerics;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
-using Content.Server.Announcements.Systems;
 
 namespace Content.Server.Dragon;
 
