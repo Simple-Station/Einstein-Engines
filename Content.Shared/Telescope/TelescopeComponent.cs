@@ -1,14 +1,14 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._White.Telescope;
+namespace Content.Shared.Telescope;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class TelescopeComponent : Component
 {
-    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public float Divisor = 0.1f;
 
-    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public float LerpAmount = 0.1f;
 
     [ViewVariables]

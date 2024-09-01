@@ -1,7 +1,7 @@
 using System.Numerics;
 using Content.Client.Viewport;
-using Content.Shared._White;
-using Content.Shared._White.Telescope;
+using Content.Shared.CCVar;
+using Content.Shared.Telescope;
 using Content.Shared.Input;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -13,7 +13,7 @@ using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Timing;
 
-namespace Content.Client._White.Telescope;
+namespace Content.Client.Telescope;
 
 public sealed class TelescopeSystem : SharedTelescopeSystem
 {
@@ -33,7 +33,7 @@ public sealed class TelescopeSystem : SharedTelescopeSystem
     {
         base.Initialize();
 
-        _cfg.OnValueChanged(WhiteCVars.HoldLookUp,
+        _cfg.OnValueChanged(CCVars.HoldLookUp,
             val =>
             {
                 var input = val ? null : InputCmdHandler.FromDelegate(_ => _toggled = !_toggled);
