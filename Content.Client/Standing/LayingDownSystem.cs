@@ -5,7 +5,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Timing;
 
-namespace Content.Client._White.Standing;
+namespace Content.Client.Standing;
 
 public sealed class LayingDownSystem : SharedLayingDownSystem
 {

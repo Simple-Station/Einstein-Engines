@@ -193,7 +193,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.OfferItem);
             AddButton(ContentKeyFunctions.SaveItemLocation);
             AddButton(ContentKeyFunctions.ToggleStanding);
-            AddButton(ContentKeyFunctions.LookUp); // WD EDIT
+            AddButton(ContentKeyFunctions.LookUp);
             AddCheckBox("ui-options-function-auto-get-up", _cfg.GetCVar(WhiteCVars.AutoGetUp), HandleToggleAutoGetUp);
             AddCheckBox("ui-options-function-hold-look-up", _cfg.GetCVar(WhiteCVars.HoldLookUp), HandleHoldLookUp);
 
