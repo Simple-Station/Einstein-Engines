@@ -5737,3 +5737,9 @@ Entries:
         creatures that can be prayed to.
   id: 6304
   time: '2024-08-31T04:28:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Diagonal windows now use connected textures.
+  id: 6305
+  time: '2024-09-01T23:20:12.0000000+00:00'
