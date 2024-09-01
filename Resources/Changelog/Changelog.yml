@@ -5763,3 +5763,9 @@ Entries:
         explicitly modify it is now correctly set to 10 stamina(down from 20).
   id: 6307
   time: '2024-09-01T23:25:51.0000000+00:00'
+- author: Evgencheg
+  changes:
+    - type: Add
+      message: Changelogs should be shown in Discord now
+  id: 6308
+  time: '2024-09-01T23:47:18.0000000+00:00'
