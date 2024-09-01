@@ -2,7 +2,7 @@
   parent: BaseStructure
   id: Oracle
   name: Oracle
-  description: It asks for items in exchange for knowledge. No one knows how it works.
+  description: She asks for items in exchange for knowledge. No one knows how she works.
   components:
   - type: Sprite
     noRot: true
@@ -15,7 +15,14 @@
         state: oracle-0
   - type: Speech
     speechSounds: Tenor
+  - type: Actions
   - type: Psionic
+    removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+      - NoosphericZapPower
   - type: SolutionContainerManager
     solutions:
       fountain:

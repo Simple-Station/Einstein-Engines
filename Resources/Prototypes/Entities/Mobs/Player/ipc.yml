@@ -108,6 +108,9 @@
     - RobotTalk
   - type: WeldingHealable
   - type: PsionicInsulation
+  - type: OfferItem
+  - type: LayingDown
+  - type: Carriable
 
 - type: entity
   save: false
