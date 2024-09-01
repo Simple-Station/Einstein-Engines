@@ -22,8 +22,6 @@ CHANGELOG_WEBHOOK = os.environ["CHANGELOG_WEBHOOK"]
 # https://discord.com/developers/docs/resources/webhook
 DISCORD_SPLIT_LIMIT = 2000
 
-CHANGELOG_FILE = "{CHANGELOG_DIR}"
-
 TYPES_TO_EMOJI = {
     "Fix":    "🐛",
     "Add":    "🆕",
@@ -46,7 +44,7 @@ def main():
     last_sha = most_recent['head_commit']['id']
     print(f"Last successful publish job was {most_recent['id']}: {last_sha}")
     last_changelog = yaml.safe_load(get_last_changelog(session, last_sha))
-    with open(CHANGELOG_FILE, "r") as f:
+    with open(CHANGELOG_DIR, "r") as f:
         cur_changelog = yaml.safe_load(f)
 
     diff = diff_changelog(last_changelog, cur_changelog)
@@ -94,7 +92,7 @@ def get_last_changelog(sess: requests.Session, sha: str) -> str:
         "Accept": "application/vnd.github.raw"
     }
 
-    resp = sess.get(f"{GITHUB_API_URL}/repos/{GITHUB_REPOSITORY}/contents/{CHANGELOG_FILE}", headers=headers, params=params)
+    resp = sess.get(f"{GITHUB_API_URL}/repos/{GITHUB_REPOSITORY}/contents/{CHANGELOG_DIR}", headers=headers, params=params)
     resp.raise_for_status()
     return resp.text
 
