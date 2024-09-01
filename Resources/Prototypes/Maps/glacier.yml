@@ -21,6 +21,7 @@
         overflowJobs:
           - Passenger
         availableJobs:
+          Passenger: [ -1, -1 ]
           Captain: [ 1, 1 ]
         #service
           HeadOfPersonnel: [ 1, 1 ]
