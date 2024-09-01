@@ -3,7 +3,7 @@ namespace Content.Shared.Chat
     /// <summary>
     ///     Represents chat channels that the player can filter chat tabs by.
     /// </summary>
-    [Flags]
+    [Flags, Serializable]
     public enum ChatChannel : ushort
     {
         None = 0,

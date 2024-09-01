@@ -8,7 +8,7 @@ Einstein Engines is a hard fork of [Space Station 14](https://github.com/space-w
 Our founding organization is based on a democratic system whereby our mutual contributors and downstreams have a say in what code goes into their own upstream.
 If you are a representative of a former downstream of Delta-V, we would like to invite you to contact us for an opportunity to represent your fork in this new upstream.
 
-Space Station 14 is inspired heavily by Space Station 13 and runs on [Robust Toolbox](https://github.com/space-wizards/Robust-Toolbox), a homegrown engine written in C#.
+Space Station 14 is inspired heavily by Space Station 13 and runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), a homegrown engine written in C#.
 
 As a hard fork, any code sourced from a different upstream cannot ever be merged directly here, and must instead be ported.
 All code present in this repository is subject to change as desired by the council of maintainers.
