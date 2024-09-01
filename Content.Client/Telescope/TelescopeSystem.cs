@@ -48,7 +48,9 @@ public sealed class TelescopeSystem : SharedTelescopeSystem
     {
         base.FrameUpdate(frameTime);
 
-        if (_timing.ApplyingState || !_timing.IsFirstTimePredicted || !_input.MouseScreenPosition.IsValid)
+        if (_timing.ApplyingState
+            || !_timing.IsFirstTimePredicted
+            || !_input.MouseScreenPosition.IsValid)
             return;
 
         var player = _player.LocalEntity;
