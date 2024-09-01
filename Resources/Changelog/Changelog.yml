@@ -5755,3 +5755,11 @@ Entries:
         new UI for this in the future!
   id: 6306
   time: '2024-09-01T23:20:45.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        The default stamina cost for Power Attacks for any weapon that doesn't
+        explicitly modify it is now correctly set to 10 stamina(down from 20).
+  id: 6307
+  time: '2024-09-01T23:25:51.0000000+00:00'
