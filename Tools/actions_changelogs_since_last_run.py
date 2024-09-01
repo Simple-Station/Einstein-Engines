@@ -16,12 +16,13 @@ GITHUB_API_URL    = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 GITHUB_REPOSITORY = os.environ["GITHUB_REPOSITORY"]
 GITHUB_RUN        = os.environ["GITHUB_RUN_ID"]
 GITHUB_TOKEN      = os.environ["GITHUB_TOKEN"]
+CHANGELOG_DIR     = os.environ["CHANGELOG_DIR"]
+CHANGELOG_WEBHOOK = os.environ["CHANGELOG_WEBHOOK"]
 
 # https://discord.com/developers/docs/resources/webhook
 DISCORD_SPLIT_LIMIT = 2000
-DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
-CHANGELOG_FILE = "Resources/Changelog/DeltaVChangelog.yml"
+CHANGELOG_FILE = "{CHANGELOG_DIR}"
 
 TYPES_TO_EMOJI = {
     "Fix":    "🐛",
@@ -33,7 +34,7 @@ TYPES_TO_EMOJI = {
 ChangelogEntry = dict[str, Any]
 
 def main():
-    if not DISCORD_WEBHOOK_URL:
+    if not CHANGELOG_WEBHOOK:
         return
 
     session = requests.Session()
@@ -121,12 +122,12 @@ def get_discord_body(content: str):
 def send_discord(content: str):
     body = get_discord_body(content)
 
-    response = requests.post(DISCORD_WEBHOOK_URL, json=body)
+    response = requests.post(CHANGELOG_WEBHOOK, json=body)
     response.raise_for_status()
 
 
 def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
-    if not DISCORD_WEBHOOK_URL:
+    if not CHANGELOG_WEBHOOK:
         print(f"No discord webhook URL found, skipping discord send")
         return
 
@@ -165,7 +166,7 @@ def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
 
         # Flush the group to the message
         message_content.write(group_text)
-    
+
     # Clean up anything remaining
     message_text = message_content.getvalue()
     if len(message_text) > 0:
