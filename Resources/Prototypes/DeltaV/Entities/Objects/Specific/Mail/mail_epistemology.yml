@@ -46,13 +46,3 @@
   - type: Mail
     contents:
     - id: ClothingHeadTinfoil
-
-- type: entity
-  noSpawn: true
-  parent: BaseMail
-  id: MailDetectiveForensicSupplement # Deltav - Detective is in charge of investigating crimes.
-  suffix: detectivesupplement # Deltav - Detective is in charge of investigating crimes.
-  components:
-  - type: Mail
-    contents:
-    - id: BoxForensicPad
