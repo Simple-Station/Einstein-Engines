@@ -10,7 +10,7 @@ using Content.Shared.Nutrition.Components;
 using Content.Server.Vampiric;
 using Content.Shared.Abilities.Psionics;
 using Content.Server.Abilities.Psionics;
-using Content.Server.Nyanotrasen.Cloning;
+using Content.Server.Cloning.Components;
 using Content.Server.Psionics.Glimmer;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Enums;

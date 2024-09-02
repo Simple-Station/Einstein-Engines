@@ -99,6 +99,9 @@
   - type: Dispellable
   - type: Psionic #Nyano - Summary: makes psionic on creation.
     removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
   - type: Vocal
     sounds:
       Male: Cerberus

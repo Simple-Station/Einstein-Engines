@@ -5737,3 +5737,113 @@ Entries:
         creatures that can be prayed to.
   id: 6304
   time: '2024-08-31T04:28:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Diagonal windows now use connected textures.
+  id: 6305
+  time: '2024-09-01T23:20:12.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Character names can now be up to 48 characters in length.
+    - type: Tweak
+      message: >-
+        Character descriptions can now be up to 1024 characters in length. This
+        is the maximum size descriptions can be without the menu having a scroll
+        bar. And while we'd like it to be bigger, we're going to want to get a
+        new UI for this in the future!
+  id: 6306
+  time: '2024-09-01T23:20:45.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        The default stamina cost for Power Attacks for any weapon that doesn't
+        explicitly modify it is now correctly set to 10 stamina(down from 20).
+  id: 6307
+  time: '2024-09-01T23:25:51.0000000+00:00'
+- author: Evgencheg
+  changes:
+    - type: Add
+      message: Changelogs should be shown in Discord now
+  id: 6308
+  time: '2024-09-01T23:47:18.0000000+00:00'
+- author: DJB1gYAPPA
+  changes:
+    - type: Add
+      message: 'Added Jukebox with basic songs. '
+  id: 6309
+  time: '2024-09-02T02:28:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Revenants, Reagent Slimes, and Ore Crabs are now considered to be
+        Psionic(But cannot gain powers randomly). This is due to their status as
+        "Magical And/Or Extraplanar Creatures", which makes them valid targets
+        for anti-psychic abilities such as the Psionic Mantis' Anti-Psychic
+        Knife. 
+    - type: Add
+      message: Some Reagent Slimes can now contain Lotophagoi Oil.
+  id: 6310
+  time: '2024-09-02T15:08:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Cloning & Metempsychosis Machines have been refactored!
+    - type: Add
+      message: >-
+        Cloning can now fail at any point during the cloning process, turning
+        the would-be clone into a soup of blood and ammonia.
+    - type: Add
+      message: >-
+        "Clone Soup" scales directly with the mass of the entity you're
+        attempting to clone. Fail to clone a Lamia, and you'll be greeted with
+        an Olympic swimming pool worth of blood when the machine opens. 
+    - type: Add
+      message: >-
+        Cloning will fail if at any point during the procedure, the machine is
+        depowered, unanchored, or emagged.
+    - type: Add
+      message: >-
+        Clones come out of the machine with severe Cellular damage. Consider
+        using Doxarubixadone in a Cryo tube as an affordable means of
+        "Finishing" clones. 
+    - type: Tweak
+      message: >-
+        Cloning Time is now increased proportionally if an entity being cloned
+        is larger than a standard human(smaller entities are unchanged)
+    - type: Tweak
+      message: >-
+        The cost to clone an entity can now be configured on a per-server basis
+        via CCVar "cloning.biomass_cost_multiplier"
+    - type: Tweak
+      message: >-
+        The Biomass Reclaimer can now be toggled to round-remove ensouled bodies
+        or not via CCVar "cloning.reclaim_souled_bodies"
+    - type: Add
+      message: >-
+        The effects of Metempsychosis now scale with a Psion's relevant caster
+        stats. More powerful psychics are more likely to get favorable results
+        from being forcibly reincarnated.
+  id: 6311
+  time: '2024-09-02T15:08:52.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: New changelogs should now show links to their PRs
+    - type: Tweak
+      message: Changelog authors should now be a header instead of bold text
+    - type: Fix
+      message: Changelogs shouldn't send random amounts of old changelogs
+  id: 6312
+  time: '2024-09-02T19:52:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/843
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: oatnsdaoersoaetaroeoertnsirlea
+  id: 6313
+  time: '2024-09-02T19:54:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/846

@@ -124,8 +124,8 @@
   id: PsychognomyPower #i.e. reverse physiognomy
   name: Psychognomy #psycho- + -gnomy. I reccomend starting with your language's equilvalent of "physiognomy" and working backwards. i.e. психо(г)номика
   description: psychognomy-power-description
-  # components:
-  #   - type: Psychognomist
+  components:
+    - type: Psychognomist
   initializationFeedback: psychognomy-power-initialization-feedback
   metapsionicFeedback: psionic-language-power-feedback
 
