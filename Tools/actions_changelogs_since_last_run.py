@@ -18,6 +18,7 @@ GITHUB_RUN        = os.environ["GITHUB_RUN_ID"]
 GITHUB_TOKEN      = os.environ["GITHUB_TOKEN"]
 CHANGELOG_DIR     = os.environ["CHANGELOG_DIR"]
 CHANGELOG_WEBHOOK = os.environ["CHANGELOG_WEBHOOK"]
+PR_NUMBER         = os.environ["PR_NUMBER"]
 
 # https://discord.com/developers/docs/resources/webhook
 DISCORD_SPLIT_LIMIT = 2000
@@ -40,8 +41,21 @@ def main():
     session.headers["Accept"]               = "Accept: application/vnd.github+json"
     session.headers["X-GitHub-Api-Version"] = "2022-11-28"
 
+    resp = session.get(f"{GITHUB_API_URL}/repos/{GITHUB_REPOSITORY}/pulls/{PR_NUMBER}")
+    resp.raise_for_status()
+    last_sha = resp.json()["merge_commit_sha"]
+
+    index = PR_NUMBER
+    while True:
+        index -= 1
+        resp = session.get(f"{GITHUB_API_URL}/repos/{GITHUB_REPOSITORY}/pulls/{index}")
+        resp.raise_for_status()
+        merge_info = resp.json()
+        if merge_info["merged_at"]:
+            last_sha = merge_info["merge_commit_sha"]
+            break
+
     most_recent = get_most_recent_workflow(session)
-    last_sha = most_recent['head_commit']['id']
     print(f"Last successful publish job was {most_recent['id']}: {last_sha}")
     last_changelog = yaml.safe_load(get_last_changelog(session, last_sha))
     with open(CHANGELOG_DIR, "r") as f:
@@ -137,7 +151,7 @@ def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
     for name, group in itertools.groupby(entries, lambda x: x["author"]):
         # Need to split text to avoid discord character limit
         group_content = io.StringIO()
-        group_content.write(f"**{name}** updated:\n")
+        group_content.write(f"## {name}:\n")
 
         for entry in group:
             for change in entry["changes"]:
@@ -156,7 +170,7 @@ def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
 
         # If adding the text would bring it over the group limit then send the message and start a new one
         if message_length + group_length >= DISCORD_SPLIT_LIMIT:
-            print("Split changelog  and sending to discord")
+            print("Split changelog and sending to discord")
             send_discord(message_text)
 
             # Reset the message
