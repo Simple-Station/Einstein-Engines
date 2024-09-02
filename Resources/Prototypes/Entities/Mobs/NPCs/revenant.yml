@@ -97,4 +97,9 @@
     - RevenantTheme
   - type: Speech
     speechVerb: Ghost
-  - type: UniversalLanguageSpeaker
+  - type: Psionic
+    removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower

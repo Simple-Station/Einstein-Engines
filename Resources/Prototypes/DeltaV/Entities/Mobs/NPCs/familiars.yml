@@ -95,6 +95,7 @@
   - type: InnatePsionicPowers
     powersToAdd:
       - PyrokinesisPower
+      - TelepathyPower
   - type: Grammar
     attributes:
       proper: true

@@ -5,6 +5,10 @@
   description: Probes the noösphere to generate research points. Might be worth turning off if glimmer is a problem.
   components:
   - type: Psionic
+    removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
   - type: GlimmerSource
   - type: Construction
     graph: GlimmerDevices
@@ -91,6 +95,7 @@
   description: Uses electricity to try and sort out the noösphere, reducing its level of entropy.
   components:
   - type: Psionic
+    removable: false
   - type: GlimmerSource
     addToGlimmer: false
   - type: Construction
