@@ -1,5 +1,6 @@
 using Content.Server.DoAfter;
 using Content.Server.Popups;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Audio;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;

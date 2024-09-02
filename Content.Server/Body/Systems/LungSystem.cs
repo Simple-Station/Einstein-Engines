@@ -1,10 +1,10 @@
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Clothing;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
@@ -16,7 +16,7 @@ public sealed class LungSystem : EntitySystem
 {
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
     [Dependency] private readonly InternalsSystem _internals = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; // Goobstation
 
@@ -55,9 +55,11 @@ public sealed class LungSystem : EntitySystem
 
     private void OnComponentInit(Entity<LungComponent> entity, ref ComponentInit args)
     {
-        var solution = _solutionContainerSystem.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
-        solution.MaxVolume = entity.Comp.MaxVolume;
-        solution.CanReact = entity.Comp.CanReact;
+        if (_solutionContainerSystem.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out var solution))
+        {
+            solution.MaxVolume = entity.Comp.MaxVolume;
+            solution.CanReact = entity.Comp.CanReact;
+        }
     }
 
     // Goobstation - Update component state on component toggle

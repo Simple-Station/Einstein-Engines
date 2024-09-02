@@ -1,10 +1,10 @@
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Construction;
 using Content.Server.Kitchen.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Stack;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
@@ -30,7 +30,7 @@ namespace Content.Server.Kitchen.EntitySystems
     internal sealed class ReagentGrinderSystem : EntitySystem
     {
         [Dependency] private readonly IGameTiming _timing = default!;
-        [Dependency] private readonly SolutionContainerSystem _solutionContainersSystem = default!;
+        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainersSystem = default!;
         [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
         [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
@@ -324,7 +324,7 @@ namespace Content.Server.Kitchen.EntitySystems
             var active = AddComp<ActiveReagentGrinderComponent>(uid);
             active.EndTime = _timing.CurTime + reagentGrinder.WorkTime * reagentGrinder.WorkTimeMultiplier;
             active.Program = program;
-            
+
             // slightly higher pitched
             var audio = _audioSystem.PlayPvs(sound, uid,
                 AudioParams.Default.WithPitchScale(1 / reagentGrinder.WorkTimeMultiplier));
