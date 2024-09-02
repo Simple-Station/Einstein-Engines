@@ -7,6 +7,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory.VirtualItem;
 using Robust.Shared.Serialization;
+using Content.Shared.DeltaV.Harpy.Events;
 
 namespace Content.Shared.DeltaV.Harpy
 {
@@ -142,11 +143,6 @@ namespace Content.Shared.DeltaV.Harpy
         #endregion
     }
     public sealed partial class ToggleFlightEvent : InstantActionEvent
-    {
-    }
-
-    [Serializable, NetSerializable]
-    public sealed partial class FlightDoAfterEvent : SimpleDoAfterEvent
     {
     }
 }

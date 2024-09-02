@@ -247,8 +247,7 @@ namespace Content.Shared.Movement.Systems
             }
 
             var minimumFrictionSpeed = moveSpeedComponent?.MinimumFrictionSpeed ?? MovementSpeedModifierComponent.DefaultMinimumFrictionSpeed;
-            if (!(TryComp<DashFlightComponent>(uid, out var dash) && dash.IsDashing))
-                Friction(minimumFrictionSpeed, frameTime, friction, ref velocity);
+            Friction(minimumFrictionSpeed, frameTime, friction, ref velocity);
 
             if (worldTotal != Vector2.Zero)
             {

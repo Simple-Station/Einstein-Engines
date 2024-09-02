@@ -1,6 +1,7 @@
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Map;
 using System.Numerics;
 
 namespace Content.Shared.DeltaV.Harpy
@@ -20,28 +21,43 @@ namespace Content.Shared.DeltaV.Harpy
         [DataField, AutoNetworkedField]
         public EntityUid? DashActionEntity;
 
+        /// <summary>
+        /// How fast is the user moving?
+        /// </summary>
+
         [DataField("dashSpeed")]
-        public float DashSpeed = 70f;
+        public float DashSpeed = 15f;
 
-        [DataField("maxDashDistance")]
-        public float MaxDashDistance = 10f; //Placeholder until i figure out what the scale for this translates to
+        /// <summary>
+        /// How long is the user going to be in the air during the dash?
+        /// 80% of the dash by default.
+        /// </summary>
 
-        [DataField("minDashDistance")]
-        public float MinDashDistance = 1f;
+        [DataField("lungeDuration")]
+        public float LungeDuration = 0.8f;
+
+
+        /// <summary>
+        /// How much stamina should the dash drain?
+        /// </summary>
+
+        [DataField("staminaDrain")]
+        public float StaminaDrain = 6f;
+
+        /// <summary>
+        /// Delay until the user starts the dash.
+        /// </summary>
+
+        [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+        public float ActivationDelay = 0.5f;
+
+        /// <summary>
+        /// Where is the user dashing to?
+        /// </summary>
 
         [ViewVariables(VVAccess.ReadWrite)]
-        public bool IsDashing = false;
+        public EntityCoordinates TargetCoordinates;
 
-        [ViewVariables(VVAccess.ReadWrite)]
-        public Vector2 DashDirection;
-
-        [ViewVariables(VVAccess.ReadWrite)]
-        public Vector2 TargetCoordinates;
-
-        [ViewVariables(VVAccess.ReadWrite)]
-        public float RemainingDistance;
-
-        public TimeSpan LastDashTime;
         /// <summary>
         /// Sound played when using dash action.
         /// </summary>

@@ -1,6 +1,7 @@
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Robust.Client.GameObjects;
+using Content.Shared.DeltaV.Harpy.Events;
 
 namespace Content.Shared.DeltaV.Harpy
 {

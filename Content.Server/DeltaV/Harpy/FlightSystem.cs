@@ -7,6 +7,7 @@ using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Zombies;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.DeltaV.Harpy.Events;
 
 namespace Content.Shared.DeltaV.Harpy
 {
@@ -58,6 +59,7 @@ namespace Content.Shared.DeltaV.Harpy
                 {
                     var doAfterArgs = new DoAfterArgs(EntityManager, uid, component.ActivationDelay, new FlightDoAfterEvent(), uid, target: uid)
                     {
+                        BlockDuplicate = true,
                         BreakOnTargetMove = true,
                         BreakOnUserMove = true,
                         BreakOnDamage = true,
