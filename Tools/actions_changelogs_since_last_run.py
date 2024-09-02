@@ -45,7 +45,7 @@ def main():
     resp.raise_for_status()
     last_sha = resp.json()["merge_commit_sha"]
 
-    index = PR_NUMBER
+    index = int(PR_NUMBER)
     while True:
         index -= 1
         resp = session.get(f"{GITHUB_API_URL}/repos/{GITHUB_REPOSITORY}/pulls/{index}")
