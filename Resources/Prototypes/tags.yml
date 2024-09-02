@@ -914,15 +914,6 @@
 - type: Tag
   id: MailCapsule
 
-- type: Tag
-  id: MimeBelt
-
-- type: Tag
-  id: MimeHappyHonk
-
-- type: Tag
-  id: Mineshaft
-
 # Magazines ordered by slot then caliber
 
 - type: Tag

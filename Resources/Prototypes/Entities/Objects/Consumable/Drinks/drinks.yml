@@ -1707,6 +1707,7 @@
   parent: DrinkGlass
   id: DrinkSakeGlass
   suffix: sake
+  description: Wine made from rice, it's sake!
   components:
   - type: SolutionContainerManager
     solutions:
@@ -1715,6 +1716,9 @@
         reagents:
         - ReagentId: Sake
           Quantity: 30
+  - type: Icon
+    sprite: Nyanotrasen/Objects/Consumable/Drinks/sakeglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass

@@ -684,15 +684,15 @@
 - type: entity
   parent: [DrinkBottleVisualsOpenable, DrinkBottleGlassBaseFull]
   id: DrinkSakeBottleFull
-  name: small sake bottle
-  description: The regret of the next morning seems to be nipping on the bottle too.
+  name: sake bottle
+  description: Clear, or sometimes foggy. Chilled like ice cream alcohol. Fill a cup, drink up!
   components:
   - type: SolutionContainerManager
     solutions:
       drink:
         reagents:
         - ReagentId: Sake
-          Quantity: 50
+          Quantity: 100
   - type: Label
     currentLabel: reagent-name-sake
   - type: Sprite
