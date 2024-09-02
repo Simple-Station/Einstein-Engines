@@ -5737,3 +5737,35 @@ Entries:
         creatures that can be prayed to.
   id: 6304
   time: '2024-08-31T04:28:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Diagonal windows now use connected textures.
+  id: 6305
+  time: '2024-09-01T23:20:12.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Character names can now be up to 48 characters in length.
+    - type: Tweak
+      message: >-
+        Character descriptions can now be up to 1024 characters in length. This
+        is the maximum size descriptions can be without the menu having a scroll
+        bar. And while we'd like it to be bigger, we're going to want to get a
+        new UI for this in the future!
+  id: 6306
+  time: '2024-09-01T23:20:45.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        The default stamina cost for Power Attacks for any weapon that doesn't
+        explicitly modify it is now correctly set to 10 stamina(down from 20).
+  id: 6307
+  time: '2024-09-01T23:25:51.0000000+00:00'
+- author: Evgencheg
+  changes:
+    - type: Add
+      message: Changelogs should be shown in Discord now
+  id: 6308
+  time: '2024-09-01T23:47:18.0000000+00:00'
