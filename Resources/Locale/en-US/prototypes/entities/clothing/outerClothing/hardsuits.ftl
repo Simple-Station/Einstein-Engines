@@ -74,6 +74,9 @@ ent-ClothingOuterHardsuitLuxury = HpI-20c - "Minos" hardsuit
 ent-ClothingOuterHardsuitSyndie = CSA-51a - "Shanlin" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
     This one has been painted blood red. It feels incredibly light.
+ent-ClothingOuterHardsuitSyndieReverseEngineered = CSA-51a - "Shanlin" tacsuit
+    .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
+    This one has been painted blue. It feels incredibly light.
 ent-ClothingOuterHardsuitSyndieMedic = CSA-51m - "Zhongyao" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
     Half of the suit is painted blood red, the rest bears galactic-standard medical markings. It feels incredibly light.
@@ -85,6 +88,9 @@ ent-ClothingOuterHardsuitSyndieCommander = CSA-54c - "Tianming" tacsuit
     .desc = A "Commander" tactical combat hardsuit produced by the Cybersun-Armaments Corporation. The suit's tags indicate that it protects greatly against all forms of damage.
     This one has been painted blood red. It doesn't seem to have any weight.
 ent-ClothingOuterHardsuitJuggernaut = CSA-80UA - "Guan Yu" tacsuit
+    .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
+    Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
+end-ClothingOuterHardsuitJuggernautReverseEngineered = CSA-80UA - "Guan Yu" tacsuit
     .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
     Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
 ent-ClothingOuterHardsuitWizard = WZD-84 - "Mana" tacsuit
