@@ -5829,21 +5829,3 @@ Entries:
         from being forcibly reincarnated.
   id: 6311
   time: '2024-09-02T15:08:52.0000000+00:00'
-- author: DEATHB4DEFEAT
-  changes:
-    - type: Add
-      message: New changelogs should now show links to their PRs
-    - type: Tweak
-      message: Changelog authors should now be a header instead of bold text
-    - type: Fix
-      message: Changelogs shouldn't send random amounts of old changelogs
-  id: 6312
-  time: '2024-09-02T19:52:08.0000000+00:00'
-  url: https://github.com/Simple-Station/Einstein-Engines/pull/843
-- author: DEATHB4DEFEAT
-  changes:
-    - type: Fix
-      message: oatnsdaoersoaetaroeoertnsirlea
-  id: 6313
-  time: '2024-09-02T19:54:19.0000000+00:00'
-  url: https://github.com/Simple-Station/Einstein-Engines/pull/846
