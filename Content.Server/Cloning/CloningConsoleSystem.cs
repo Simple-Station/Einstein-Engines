@@ -32,7 +32,7 @@ namespace Content.Server.Cloning
         [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
         [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!;
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
-        
+
         public override void Initialize()
         {
             base.Initialize();
@@ -52,14 +52,16 @@ namespace Content.Server.Cloning
         }
         private void OnButtonPressed(EntityUid uid, CloningConsoleComponent consoleComponent, UiButtonPressedMessage args)
         {
-            if (!_powerReceiverSystem.IsPowered(uid))
+            if (!_powerReceiverSystem.IsPowered(uid)
+                || consoleComponent.GeneticScanner is null
+                || consoleComponent.CloningPod is null
+                || !TryComp<CloningPodComponent>(consoleComponent.CloningPod.Value, out var cloningPod))
                 return;
 
             switch (args.Button)
             {
                 case UiButton.Clone:
-                    if (consoleComponent.GeneticScanner != null && consoleComponent.CloningPod != null)
-                        TryClone(uid, consoleComponent.CloningPod.Value, consoleComponent.GeneticScanner.Value, consoleComponent: consoleComponent);
+                    TryClone(uid, consoleComponent.CloningPod.Value, consoleComponent.GeneticScanner.Value, cloningPod, consoleComponent: consoleComponent);
                     break;
             }
             UpdateUserInterface(uid, consoleComponent);
@@ -93,13 +95,15 @@ namespace Content.Server.Cloning
 
         private void OnNewLink(EntityUid uid, CloningConsoleComponent component, NewLinkEvent args)
         {
-            if (TryComp<MedicalScannerComponent>(args.Sink, out var scanner) && args.SourcePort == CloningConsoleComponent.ScannerPort)
+            if (TryComp<MedicalScannerComponent>(args.Sink, out var scanner)
+                && args.SourcePort == CloningConsoleComponent.ScannerPort)
             {
                 component.GeneticScanner = args.Sink;
                 scanner.ConnectedConsole = uid;
             }
 
-            if (TryComp<CloningPodComponent>(args.Sink, out var pod) && args.SourcePort == CloningConsoleComponent.PodPort)
+            if (TryComp<CloningPodComponent>(args.Sink, out var pod)
+                && args.SourcePort == CloningConsoleComponent.PodPort)
             {
                 component.CloningPod = args.Sink;
                 pod.ConnectedConsole = uid;
@@ -125,11 +129,10 @@ namespace Content.Server.Cloning
 
         private void OnAnchorChanged(EntityUid uid, CloningConsoleComponent component, ref AnchorStateChangedEvent args)
         {
-            if (args.Anchored)
-            {
-                RecheckConnections(uid, component.CloningPod, component.GeneticScanner, component);
+            if (!args.Anchored
+                || !RecheckConnections(uid, component.CloningPod, component.GeneticScanner, component))
                 return;
-            }
+
             UpdateUserInterface(uid, component);
         }
 
@@ -148,49 +151,52 @@ namespace Content.Server.Cloning
             _uiSystem.SetUiState(ui, newState);
         }
 
-        public void TryClone(EntityUid uid, EntityUid cloningPodUid, EntityUid scannerUid, CloningPodComponent? cloningPod = null, MedicalScannerComponent? scannerComp = null, CloningConsoleComponent? consoleComponent = null)
+        public void TryClone(EntityUid uid, EntityUid cloningPodUid, EntityUid scannerUid, CloningPodComponent cloningPod, MedicalScannerComponent? scannerComp = null, CloningConsoleComponent? consoleComponent = null)
         {
-            if (!Resolve(uid, ref consoleComponent) || !Resolve(cloningPodUid, ref cloningPod) || !Resolve(scannerUid, ref scannerComp))
-                return;
-
-            if (!Transform(cloningPodUid).Anchored || !Transform(scannerUid).Anchored)
-                return;
-
-            if (!consoleComponent.CloningPodInRange || !consoleComponent.GeneticScannerInRange)
+            if (!Resolve(uid, ref consoleComponent)
+                || !Resolve(scannerUid, ref scannerComp)
+                || !Transform(cloningPodUid).Anchored
+                || !Transform(scannerUid).Anchored
+                || !consoleComponent.CloningPodInRange
+                || !consoleComponent.GeneticScannerInRange)
                 return;
 
             var body = scannerComp.BodyContainer.ContainedEntity;
 
-            if (body is null)
+            if (body is null
+                || !_mindSystem.TryGetMind(body.Value, out var mindId, out var mind)
+                || mind.UserId.HasValue == false
+                || mind.Session == null)
                 return;
 
-            if (!_mindSystem.TryGetMind(body.Value, out var mindId, out var mind))
-                return;
-
-            if (mind.UserId.HasValue == false || mind.Session == null)
-                return;
-            // Nyano: Adds scannerComp.MetemKarmaBonus
-            if (_cloningSystem.TryCloning(cloningPodUid, body.Value, (mindId, mind), cloningPod, scannerComp.CloningFailChanceMultiplier, scannerComp.MetemKarmaBonus))
-                _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(uid)} successfully cloned {ToPrettyString(body.Value)}.");
+            if (_cloningSystem.TryCloning(cloningPodUid, body.Value, (mindId, mind), cloningPod, scannerComp.CloningFailChanceMultiplier))
+            {
+                _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(uid)} started cloning {ToPrettyString(body.Value)}.");
+                _cloningSystem.AttemptCloning(cloningPodUid, cloningPod);
+            }
         }
 
-        public void RecheckConnections(EntityUid console, EntityUid? cloningPod, EntityUid? scanner, CloningConsoleComponent? consoleComp = null)
+        public bool RecheckConnections(EntityUid console, EntityUid? cloningPod, EntityUid? scanner, CloningConsoleComponent? consoleComp = null)
         {
             if (!Resolve(console, ref consoleComp))
-                return;
+                return false;
 
+            var connected = true;
             if (scanner != null)
             {
-                Transform(scanner.Value).Coordinates.TryDistance(EntityManager, Transform((console)).Coordinates, out float scannerDistance);
+                Transform(scanner.Value).Coordinates.TryDistance(EntityManager, Transform(console).Coordinates, out float scannerDistance);
                 consoleComp.GeneticScannerInRange = scannerDistance <= consoleComp.MaxDistance;
+                connected = false;
             }
             if (cloningPod != null)
             {
-                Transform(cloningPod.Value).Coordinates.TryDistance(EntityManager, Transform((console)).Coordinates, out float podDistance);
+                Transform(cloningPod.Value).Coordinates.TryDistance(EntityManager, Transform(console).Coordinates, out float podDistance);
                 consoleComp.CloningPodInRange = podDistance <= consoleComp.MaxDistance;
+                connected = false;
             }
 
             UpdateUserInterface(console, consoleComp);
+            return connected;
         }
         private CloningConsoleBoundUserInterfaceState GetUserInterfaceState(CloningConsoleComponent consoleComponent)
         {
@@ -206,25 +212,19 @@ namespace Content.Server.Cloning
                 EntityUid? scanBody = scanner.BodyContainer.ContainedEntity;
 
                 // GET STATE
-                if (scanBody == null || !HasComp<MobStateComponent>(scanBody))
+                if (scanBody == null
+                    || !HasComp<MobStateComponent>(scanBody))
                     clonerStatus = ClonerStatus.ScannerEmpty;
                 else
                 {
                     scanBodyInfo = MetaData(scanBody.Value).EntityName;
 
                     if (!_mobStateSystem.IsDead(scanBody.Value))
-                    {
                         clonerStatus = ClonerStatus.ScannerOccupantAlive;
-                    }
-                    else
-                    {
-                        if (!_mindSystem.TryGetMind(scanBody.Value, out _, out var mind) ||
-                            mind.UserId == null ||
-                            !_playerManager.TryGetSessionById(mind.UserId.Value, out _))
-                        {
-                            clonerStatus = ClonerStatus.NoMindDetected;
-                        }
-                    }
+                    else if (!_mindSystem.TryGetMind(scanBody.Value, out _, out var mind)
+                        || mind.UserId == null
+                        || !_playerManager.TryGetSessionById(mind.UserId.Value, out _))
+                        clonerStatus = ClonerStatus.NoMindDetected;
                 }
             }
 
@@ -240,7 +240,7 @@ namespace Content.Server.Cloning
                 EntityUid? cloneBody = clonePod.BodyContainer.ContainedEntity;
 
                 clonerMindPresent = clonePod.Status == CloningPodStatus.Cloning;
-                if (HasComp<ActiveCloningPodComponent>(consoleComponent.CloningPod))
+                if (clonePod.ActivelyCloning)
                 {
                     if (cloneBody != null)
                         cloneBodyInfo = Identity.Name(cloneBody.Value, EntityManager);
@@ -248,9 +248,7 @@ namespace Content.Server.Cloning
                 }
             }
             else
-            {
                 clonerStatus = ClonerStatus.NoClonerDetected;
-            }
 
             return new CloningConsoleBoundUserInterfaceState(
                 scanBodyInfo,
