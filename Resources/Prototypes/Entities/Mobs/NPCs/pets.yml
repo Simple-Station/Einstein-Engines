@@ -822,6 +822,7 @@
     transferAmount: 0.1
   - type: MultiHandedItem
   - type: Item
+    sprite: Mobs/Pets/smile.rsi
     size: Ginormous
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-slime
