@@ -99,6 +99,7 @@
     wipeVerbPopup: positronic-brain-wiped-device
     stopSearchVerbText: positronic-brain-stop-searching-verb-text
     stopSearchVerbPopup: positronic-brain-stopped-searching
+    job: Borg
   - type: BlockMovement
   - type: Examiner
   - type: Brain # hopefully this doesn't break everything
