@@ -5775,3 +5775,16 @@ Entries:
       message: 'Added Jukebox with basic songs. '
   id: 6309
   time: '2024-09-02T02:28:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Revenants, Reagent Slimes, and Ore Crabs are now considered to be
+        Psionic(But cannot gain powers randomly). This is due to their status as
+        "Magical And/Or Extraplanar Creatures", which makes them valid targets
+        for anti-psychic abilities such as the Psionic Mantis' Anti-Psychic
+        Knife. 
+    - type: Add
+      message: Some Reagent Slimes can now contain Lotophagoi Oil.
+  id: 6310
+  time: '2024-09-02T15:08:11.0000000+00:00'
