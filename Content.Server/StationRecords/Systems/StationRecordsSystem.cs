@@ -347,6 +347,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
                 && IsFilterWithSomeCodeValue(someRecord.Fingerprint, filterLowerCaseValue),
             StationRecordFilterType.DNA => someRecord.DNA != null
                 && IsFilterWithSomeCodeValue(someRecord.DNA, filterLowerCaseValue),
+            _ => throw new IndexOutOfRangeException(nameof(filter.Type)),
         };
     }
 
