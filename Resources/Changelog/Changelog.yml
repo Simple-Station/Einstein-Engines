@@ -5769,3 +5769,9 @@ Entries:
       message: Changelogs should be shown in Discord now
   id: 6308
   time: '2024-09-01T23:47:18.0000000+00:00'
+- author: DJB1gYAPPA
+  changes:
+    - type: Add
+      message: 'Added Jukebox with basic songs. '
+  id: 6309
+  time: '2024-09-02T02:28:11.0000000+00:00'
