@@ -159,6 +159,11 @@
           map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
           color: "#40a7d7"
           shader: unshaded
+    - type: Psionic
+      removable: false
+    - type: InnatePsionicPowers
+      powersToAdd:
+        - TelepathyPower
 
 - type: entity
   name: HoloClown
