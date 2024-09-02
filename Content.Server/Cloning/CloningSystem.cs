@@ -162,16 +162,26 @@ public sealed partial class CloningSystem : EntitySystem
             || clonePod.ConnectedConsole == null
             || !CheckUncloneable(uid, bodyToClone, clonePod, out var cloningCostMultiplier)
             || !TryComp<HumanoidAppearanceComponent>(bodyToClone, out var humanoid)
-            || !TryComp<PhysicsComponent>(bodyToClone, out var physics)
-            || !CheckBiomassCost(uid, physics, clonePod, cloningCostMultiplier)
-            || !ClonesWaitingForMind.TryGetValue(mindEnt.Comp, out var clone)
-            || !TryComp<MindContainerComponent>(clone, out var cloneMindComp)
-            || cloneMindComp.Mind == mindEnt
-            || mindEnt.Comp.UserId == null
-            || !_playerManager.TryGetSessionById(mindEnt.Comp.UserId.Value, out var client))
+            || !TryComp<PhysicsComponent>(bodyToClone, out var physics))
             return false;
 
-        ClonesWaitingForMind.Remove(mindEnt.Comp);
+        var mind = mindEnt.Comp;
+        if (ClonesWaitingForMind.TryGetValue(mind, out var clone))
+        {
+            if (EntityManager.EntityExists(clone) &&
+                !_mobStateSystem.IsDead(clone) &&
+                TryComp<MindContainerComponent>(clone, out var cloneMindComp) &&
+                (cloneMindComp.Mind == null || cloneMindComp.Mind == mindEnt))
+                return false; // Mind already has clone
+
+            ClonesWaitingForMind.Remove(mind);
+        }
+
+        if (mind.OwnedEntity != null && !_mobStateSystem.IsDead(mind.OwnedEntity.Value)
+            || mind.UserId == null
+            || !_playerManager.TryGetSessionById(mind.UserId.Value, out var client)
+            || !CheckBiomassCost(uid, physics, clonePod, cloningCostMultiplier))
+            return false;
 
         // Special handling for humanoid data related to metempsychosis. This function is needed for Paradox Anomaly code to play nice with reincarnated people
         var pref = humanoid.LastProfileLoaded;
@@ -268,6 +278,7 @@ public sealed partial class CloningSystem : EntitySystem
         {
             toSpawn = GetSpawnEntity(bodyToClone, clonePodComp, speciesPrototype, oldKarma, out var newSpecies, out var changeProfile);
             forceOldProfile = !changeProfile;
+            oldKarma++;
 
             if (changeProfile)
                 geneticDamage = 0;

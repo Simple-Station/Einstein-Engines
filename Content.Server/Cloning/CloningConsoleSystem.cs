@@ -153,7 +153,8 @@ namespace Content.Server.Cloning
 
         public void TryClone(EntityUid uid, EntityUid cloningPodUid, EntityUid scannerUid, CloningPodComponent cloningPod, MedicalScannerComponent? scannerComp = null, CloningConsoleComponent? consoleComponent = null)
         {
-            if (!Resolve(uid, ref consoleComponent, ref scannerComp)
+            if (!Resolve(uid, ref consoleComponent)
+                || !Resolve(scannerUid, ref scannerComp)
                 || !Transform(cloningPodUid).Anchored
                 || !Transform(scannerUid).Anchored
                 || !consoleComponent.CloningPodInRange

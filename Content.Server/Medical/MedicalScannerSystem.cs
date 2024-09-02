@@ -161,13 +161,13 @@ namespace Content.Server.Medical
             if (!TryComp<MobStateComponent>(body.Value, out var state))
                 return MedicalScannerStatus.Yellow;
 
-            if (_mobStateSystem.IsAlive(uid, state))
+            if (_mobStateSystem.IsAlive(body.Value, state))
                 return MedicalScannerStatus.Green;
 
-            if (_mobStateSystem.IsCritical(uid, state))
+            if (_mobStateSystem.IsCritical(body.Value, state))
                 return MedicalScannerStatus.Red;
 
-            if (_mobStateSystem.IsDead(uid, state))
+            if (_mobStateSystem.IsDead(body.Value, state))
                 return MedicalScannerStatus.Death;
 
             return MedicalScannerStatus.Yellow;

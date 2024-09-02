@@ -24,7 +24,6 @@ using Content.Server.Body.Components;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Language.Components;
 using Content.Shared.Language;
-using Content.Shared.Damage.Prototypes;
 using Content.Shared.Nutrition.Components;
 using Robust.Shared.Enums;
 
@@ -84,6 +83,9 @@ public sealed partial class CloningSystem
     /// </summary>
     private bool CheckBiomassCost(EntityUid uid, PhysicsComponent physics, CloningPodComponent clonePod, float cloningCostMultiplier = 1)
     {
+        if (clonePod.ConnectedConsole is null)
+            return false;
+
         var cloningCost = (int) Math.Round(physics.FixturesMass
             * _config.GetCVar(CCVars.CloningBiomassCostMultiplier)
             * clonePod.BiomassCostMultiplier
@@ -91,7 +93,7 @@ public sealed partial class CloningSystem
 
         if (_material.GetMaterialAmount(uid, clonePod.RequiredMaterial) < cloningCost)
         {
-            _chatSystem.TrySendInGameICMessage(uid, Loc.GetString("cloning-console-chat-error", ("units", cloningCost)), InGameICChatType.Speak, false);
+            _chatSystem.TrySendInGameICMessage(clonePod.ConnectedConsole.Value, Loc.GetString("cloning-console-chat-error", ("units", cloningCost)), InGameICChatType.Speak, false);
             return false;
         }
 
@@ -148,10 +150,10 @@ public sealed partial class CloningSystem
     private void Eject(EntityUid uid, CloningPodComponent? clonePod)
     {
         if (!Resolve(uid, ref clonePod)
-            || clonePod.BodyContainer.ContainedEntity is not { Valid: true } entity
-            || clonePod.CloningProgress < clonePod.CloningTime)
+            || clonePod.BodyContainer.ContainedEntity is null)
             return;
 
+        var entity = clonePod.BodyContainer.ContainedEntity.Value;
         EntityManager.RemoveComponent<BeingClonedComponent>(entity);
         _containerSystem.Remove(entity, clonePod.BodyContainer);
         clonePod.CloningProgress = 0f;
@@ -165,8 +167,9 @@ public sealed partial class CloningSystem
     /// </summary>
     private void EndFailedCloning(EntityUid uid, CloningPodComponent clonePod)
     {
-        if (clonePod.BodyContainer.ContainedEntity is { Valid: true } entity)
+        if (clonePod.BodyContainer.ContainedEntity is not null)
         {
+            var entity = clonePod.BodyContainer.ContainedEntity.Value;
             if (TryComp<PhysicsComponent>(entity, out var physics)
                 && TryComp<BloodstreamComponent>(entity, out var bloodstream))
                 MakeAHugeMess(uid, physics, bloodstream);
@@ -350,8 +353,8 @@ public sealed partial class CloningSystem
             || !HasComp<DamageableComponent>(mob)
             || !_thresholds.TryGetThresholdForState(mob, Shared.Mobs.MobState.Critical, out var threshold))
             return;
-
-        DamageSpecifier damage = new(_prototypeManager.Index<DamageGroupPrototype>("Cellular"), (int) threshold + 1 + geneticDamage);
+        DamageSpecifier damage = new();
+        damage.DamageDict.Add("Cellular", (int) threshold + 1 + geneticDamage);
         _damageable.TryChangeDamage(mob, damage, true);
     }
 }
