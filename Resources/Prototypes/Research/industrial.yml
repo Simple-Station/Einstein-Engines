@@ -11,9 +11,8 @@
   cost: 7500
   recipeUnlocks:
   - MiningDrill
-#  - WeaponGrapplingGun
   - BorgModuleMining
-#  - BorgModuleGrapplingGun
+  # - BorgModuleGrapplingGun
   - MechEquipmentDrill # Goobstation
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
