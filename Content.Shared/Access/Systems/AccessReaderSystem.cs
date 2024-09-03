@@ -386,7 +386,33 @@ public sealed class AccessReaderSystem : EntitySystem
     /// <param name="accessor">The accessor to log</param>
     private void LogAccess(Entity<AccessReaderComponent> ent, EntityUid accessor)
     {
-        if (IsPaused(ent))
+        if (IsPaused(ent) || ent.Comp.LoggingDisabled)
+            return;
+
+        string? name = null;
+        if (TryComp<NameIdentifierComponent>(accessor, out var nameIdentifier))
+            name = nameIdentifier.FullIdentifier;
+
+        // TODO pass the ID card on IsAllowed() instead of using this expensive method
+        // Set name if the accessor has a card and that card has a name and allows itself to be recorded
+        var getIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(ent, accessor, true);
+        RaiseLocalEvent(getIdentityShortInfoEvent);
+        if (getIdentityShortInfoEvent.Title != null)
+        {
+            name = getIdentityShortInfoEvent.Title;
+        }
+
+        LogAccess(ent, name ?? Loc.GetString("access-reader-unknown-id"));
+    }
+
+    /// <summary>
+    /// Logs an access with a predetermined name
+    /// </summary>
+    /// <param name="ent">The reader to log the access on</param>
+    /// <param name="name">The name to log as</param>
+    public void LogAccess(Entity<AccessReaderComponent> ent, string name)
+    {
+        if (IsPaused(ent) || ent.Comp.LoggingDisabled)
             return;
 
         if (ent.Comp.AccessLog.Count >= ent.Comp.AccessLogLimit)
