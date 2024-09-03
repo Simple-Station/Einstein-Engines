@@ -25,17 +25,17 @@ public sealed class OscillatingStationEventSchedulerSystem : GameRuleSystem<Osci
     {
         // This monstrousity is necessary because if someone fucks up one of these parameters,
         // it will likely either crash the game (in debug), or cause the event scheduler to stop working and spam the server console (in prod)
-        DebugTools.Assert(c.DownwardsBias <= 0f && c.UpwardsBias >= 0f, "Fix your scheduler bias!");
-        DebugTools.Assert(c.DownwardsLimit <= 0f && c.UpwardsLimit >= 0f, "Fix your scheduler slope limits!");
-        DebugTools.Assert(c.UpdateInterval > TimeSpan.Zero, "scheduler update interval must be positive!");
-        DebugTools.Assert(c.ChaosStickiness >= 0f && c.ChaosStickiness <= 1f, "Scheduler stickiness must be between 0 and 1!");
-        DebugTools.Assert(c.SlopeStickiness >= 0f && c.SlopeStickiness <= 1f, "Scheduler stickiness must be between 0 and 1!");
-        DebugTools.Assert(c.MinChaos < c.MaxChaos, "What did you expect??");
+        DebugTools.Assert(c.DownwardsBias <= 0f && c.UpwardsBias >= 0f, "Fix your scheduler bias");
+        DebugTools.Assert(c.DownwardsLimit <= 0f && c.UpwardsLimit >= 0f, "Fix your scheduler slope limits");
+        DebugTools.Assert(c.UpdateInterval > TimeSpan.Zero, "Scheduler update interval must be positive");
+        DebugTools.Assert(c.ChaosStickiness >= 0f && c.ChaosStickiness <= 1f, "Scheduler stickiness must be between 0 and 1");
+        DebugTools.Assert(c.SlopeStickiness >= 0f && c.SlopeStickiness <= 1f, "Scheduler stickiness must be between 0 and 1");
+        DebugTools.Assert(c.MinChaos < c.MaxChaos, "Don't set the minimum above the maximum");
     }
 
     private TimeSpan CalculateAverageEventTime(OscillatingStationEventSchedulerComponent comp)
     {
-        // TODO those cvars are bad
+        //TODO Those cvars are bad
         var min = _cfg.GetCVar(CCVars.GameEventsOscillatingMinimumTime);
         var max = _cfg.GetCVar(CCVars.GameEventsOscillatingAverageTime);
 
@@ -50,7 +50,7 @@ public sealed class OscillatingStationEventSchedulerSystem : GameRuleSystem<Osci
         comp.CurrentSlope = comp.StartingSlope;
 
         comp.NextUpdate = _timing.CurTime + CalculateAverageEventTime(comp);
-        comp.LastEventTime = _timing.CurTime; // just so we don't run an event the very moment this scheduler gets added
+        comp.LastEventTime = _timing.CurTime; // Just so we don't run an event the very moment this scheduler gets added
     }
 
     protected override void ActiveTick(EntityUid uid, OscillatingStationEventSchedulerComponent comp, GameRuleComponent gameRule, float frameTime)
