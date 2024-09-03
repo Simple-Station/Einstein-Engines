@@ -101,6 +101,11 @@
       - SimpleHostile
   - type: Damageable
     damageContainer: StructuralInorganic
+  - type: Psionic
+    removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
 
 - type: entity
   parent: MobOreCrab
@@ -293,6 +298,11 @@
     solution: bloodstream
   - type: DrainableSolution
     solution: bloodstream
+  - type: Psionic
+    removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
 
 - type: entity
   name: Reagent Slime Spawner
@@ -319,6 +329,7 @@
         - ReagentSlimeNorepinephricAcid
         - ReagentSlimeEphedrine
         - ReagentSlimeRobustHarvest
+        - ReagentSlimeLotophagoiOil
       chance: 1
 
 - type: entity
@@ -530,3 +541,23 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
         color: "#3e901c"
+
+- type: entity
+  id: ReagentSlimeLotophagoiOil
+  parent: ReagentSlime
+  suffix: Lotophagoi Oil
+  components:
+  - type: Bloodstream
+    bloodReagent: LotophagoiOil
+  - type: PointLight
+    color: "#FFBF00"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#3e901c"
+  - type: GhostRole
+    prob: 1 #it's significantly more psionic than the others
+    description: ghost-role-information-angry-slimes-description
