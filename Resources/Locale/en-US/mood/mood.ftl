@@ -37,7 +37,7 @@ mood-effect-Dead = You are dead.
 
 mood-effect-BeingHugged = Hugs are nice.
 
-mood-effect-BeingPet = Someone petted me!
+mood-effect-BeingPet = Someone pet me!
 
 mood-effect-ArcadePlay = I had fun playing an interesting arcade game.
 
