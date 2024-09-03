@@ -5847,3 +5847,18 @@ Entries:
   id: 6313
   time: '2024-09-02T19:54:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/846
+- author: Rane
+  changes:
+    - type: Add
+      message: Added Psychognomy.
+    - type: Tweak
+      message: Reverted Sophia name change.
+    - type: Tweak
+      message: Minor tweaks to psionic chat eligibility and formatting.
+    - type: Add
+      message: >-
+        Some new utility has been added to player-controlled Oracle or Sophia.
+        NPC functionality later :^)
+  id: 6314
+  time: '2024-09-03T02:17:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/808
