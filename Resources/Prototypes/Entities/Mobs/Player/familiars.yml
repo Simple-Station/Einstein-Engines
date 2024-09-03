@@ -34,8 +34,11 @@
     - PsionicInterloper #Nyano - Summary: makes a part of the psionic faction.
   - type: Alerts
   - type: Familiar
-  - type: Psionic #Nyano - Summary: Makes psionic on creation.
+  - type: Psionic
     removable: false
+    psychognomicDescriptors:
+      - p-descriptor-bound
+      - p-descriptor-cyclic
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower

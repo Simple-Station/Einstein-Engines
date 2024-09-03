@@ -31,6 +31,10 @@
   - type: Actions
   - type: Psionic
     removable: false
+    psychognomicDescriptors:
+      - p-descriptor-old
+      - p-descriptor-demiurgic
+      - p-descriptor-mysterious
   - type: InnatePsionicPowers
     powersToAdd:
       - XenoglossyPower
