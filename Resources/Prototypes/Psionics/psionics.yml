@@ -129,7 +129,7 @@
     - type: Psychognomist
   initializationFeedback: psychognomy-power-initialization-feedback
   metapsionicFeedback: psionic-language-power-feedback
-  powerSlotClost: 0
+  powerSlotCost: 0
 
 - type: psionicPower
   id: TelepathyPower
