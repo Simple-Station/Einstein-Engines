@@ -18,6 +18,11 @@
   - type: Actions
   - type: Psionic
     removable: false
+    psychognomicDescriptors:
+      - p-descriptor-old
+      - p-descriptor-demiurgic
+      - p-descriptor-mysterious
+      - p-descriptor-emanative
   - type: InnatePsionicPowers
     powersToAdd:
       - XenoglossyPower

@@ -99,6 +99,8 @@
     speechVerb: Ghost
   - type: Psionic
     removable: false
+    psychognomicDescriptors:
+      - p-descriptor-vampiric
   - type: InnatePsionicPowers
     powersToAdd:
       - XenoglossyPower
