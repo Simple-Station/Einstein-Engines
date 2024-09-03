@@ -100,10 +100,15 @@ namespace Content.Client.Stylesheets
         public static readonly Color ButtonColorPressed = Color.FromHex("#3e6c45");
         public static readonly Color ButtonColorDisabled = Color.FromHex("#303133");
 
-        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232");
-        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#cf2f2f");
-        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#a26b27");
-        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#602a2a");
+        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#b28325");
+        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#bb9340");
+        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#9b9e20");
+        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#917131");
+
+        public static readonly Color ButtonColorDangerDefault = Color.FromHex("#ab3232");
+        public static readonly Color ButtonColorDangerHovered = Color.FromHex("#cf2f2f");
+        public static readonly Color ButtonColorDangerPressed = Color.FromHex("#a26b27");
+        public static readonly Color ButtonColorDangerDisabled = Color.FromHex("#602a2a");
 
         public static readonly Color ButtonColorGoodDefault = Color.FromHex("#3E6C45");
         public static readonly Color ButtonColorGoodHovered = Color.FromHex("#31843E");
@@ -660,22 +665,39 @@ namespace Content.Client.Stylesheets
                     .Pseudo(ContainerButton.StylePseudoClassDisabled)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionDisabled),
 
+                // Colors for the danger buttons.
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonDanger)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerDefault),
+
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonDanger)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerHovered),
+
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonDanger)
+                    .Pseudo(ContainerButton.StylePseudoClassPressed)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerPressed),
+
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonDanger)
+                    .Pseudo(ContainerButton.StylePseudoClassDisabled)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerDisabled),
+
                 // Colors for confirm buttons confirm states.
                 Element<ConfirmButton>()
                     .Pseudo(ConfirmButton.ConfirmPrefix + ContainerButton.StylePseudoClassNormal)
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionDefault),
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerDefault),
 
                 Element<ConfirmButton>()
                     .Pseudo(ConfirmButton.ConfirmPrefix + ContainerButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionHovered),
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerHovered),
 
                 Element<ConfirmButton>()
                     .Pseudo(ConfirmButton.ConfirmPrefix + ContainerButton.StylePseudoClassPressed)
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionPressed),
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerPressed),
 
                 Element<ConfirmButton>()
                     .Pseudo(ConfirmButton.ConfirmPrefix + ContainerButton.StylePseudoClassDisabled)
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionDisabled),
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerDisabled),
 
                 new StyleRule(new SelectorChild(
                     new SelectorElement(typeof(Button), null, null, new[] {ContainerButton.StylePseudoClassDisabled}),
@@ -734,19 +756,19 @@ namespace Content.Client.Stylesheets
 
                 Element<ContextMenuElement>().Class(ConfirmationMenuElement.StyleClassConfirmationContextMenuButton)
                     .Pseudo(ContainerButton.StylePseudoClassNormal)
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionDefault),
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerDefault),
 
                 Element<ContextMenuElement>().Class(ConfirmationMenuElement.StyleClassConfirmationContextMenuButton)
                     .Pseudo(ContainerButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionHovered),
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerHovered),
 
                 Element<ContextMenuElement>().Class(ConfirmationMenuElement.StyleClassConfirmationContextMenuButton)
                     .Pseudo(ContainerButton.StylePseudoClassPressed)
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionPressed),
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerPressed),
 
                 Element<ContextMenuElement>().Class(ConfirmationMenuElement.StyleClassConfirmationContextMenuButton)
                     .Pseudo(ContainerButton.StylePseudoClassDisabled)
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionDisabled),
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerDisabled),
 
                 // Examine buttons
                 Element<ExamineButton>().Class(ExamineButton.StyleClassExamineButton)

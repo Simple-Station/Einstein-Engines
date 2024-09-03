@@ -31,8 +31,8 @@ public sealed class LoadoutPreferenceSelector : Control
         {
             _showUnusable = value;
             Visible = Valid || _showUnusable;
-            PreferenceButton.RemoveStyleClass(StyleBase.ButtonCaution);
-            PreferenceButton.AddStyleClass(Valid ? "" : StyleBase.ButtonCaution);
+            PreferenceButton.RemoveStyleClass(StyleBase.ButtonDanger);
+            PreferenceButton.AddStyleClass(Valid ? "" : StyleBase.ButtonDanger);
         }
     }
 
@@ -46,9 +46,9 @@ public sealed class LoadoutPreferenceSelector : Control
     public event Action<bool>? PreferenceChanged;
 
     public LoadoutPreferenceSelector(LoadoutPrototype loadout, JobPrototype highJob,
-        HumanoidCharacterProfile profile, ref Dictionary<LoadoutPrototype, EntityUid> entities, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, CharacterRequirementsSystem characterRequirementsSystem,
-        JobRequirementsManager jobRequirementsManager)
+        HumanoidCharacterProfile profile, ref Dictionary<LoadoutPrototype, EntityUid> entities,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        CharacterRequirementsSystem characterRequirementsSystem, JobRequirementsManager jobRequirementsManager)
     {
         Loadout = loadout;
 

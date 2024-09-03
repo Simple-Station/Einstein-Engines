@@ -28,8 +28,8 @@ public sealed class TraitPreferenceSelector : Control
         {
             _showUnusable = value;
             Visible = Valid || _showUnusable;
-            PreferenceButton.RemoveStyleClass(StyleBase.ButtonCaution);
-            PreferenceButton.AddStyleClass(Valid ? "" : StyleBase.ButtonCaution);
+            PreferenceButton.RemoveStyleClass(StyleBase.ButtonDanger);
+            PreferenceButton.AddStyleClass(Valid ? "" : StyleBase.ButtonDanger);
         }
     }
 
@@ -42,10 +42,9 @@ public sealed class TraitPreferenceSelector : Control
 
     public event Action<bool>? PreferenceChanged;
 
-    public TraitPreferenceSelector(TraitPrototype trait, JobPrototype highJob,
-        HumanoidCharacterProfile profile, IEntityManager entityManager, IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, CharacterRequirementsSystem characterRequirementsSystem,
-        JobRequirementsManager jobRequirementsManager)
+    public TraitPreferenceSelector(TraitPrototype trait, JobPrototype highJob, HumanoidCharacterProfile profile,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        CharacterRequirementsSystem characterRequirementsSystem, JobRequirementsManager jobRequirementsManager)
     {
         Trait = trait;
 

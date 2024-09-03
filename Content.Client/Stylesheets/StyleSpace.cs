@@ -131,19 +131,19 @@ namespace Content.Client.Stylesheets
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorDisabled),
 
                 // Colors for the caution buttons.
-                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonCaution)
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonDanger)
                     .Pseudo(ContainerButton.StylePseudoClassNormal)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionDefault),
 
-                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonCaution)
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonDanger)
                     .Pseudo(ContainerButton.StylePseudoClassHover)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionHovered),
 
-                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonCaution)
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonDanger)
                     .Pseudo(ContainerButton.StylePseudoClassPressed)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionPressed),
 
-                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonCaution)
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonDanger)
                     .Pseudo(ContainerButton.StylePseudoClassDisabled)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorCautionDisabled),
 
