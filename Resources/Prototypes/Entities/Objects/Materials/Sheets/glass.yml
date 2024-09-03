@@ -91,6 +91,15 @@
         reagents:
         - ReagentId: Silicon
           Quantity: 10
+  - type: UserInterface # White Dream Start
+    interfaces:
+    - key: enum.ShortConstructionUiKey.Key
+      type: ShortConstructionMenuBUI
+  - type: ActivatableUI
+    key: enum.ShortConstructionUiKey.Key
+  - type: ShortConstruction
+    prototypes:
+    - Window # White Dream end
 
 - type: entity
   parent: SheetGlass
@@ -177,6 +186,15 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: UserInterface # White Dream Start
+    interfaces:
+    - key: enum.ShortConstructionUiKey.Key
+      type: ShortConstructionMenuBUI
+  - type: ActivatableUI
+    key: enum.ShortConstructionUiKey.Key
+  - type: ShortConstruction
+    prototypes:
+    - ReinforcedWindow # White Dream end
 
 - type: entity
   parent: SheetRGlass

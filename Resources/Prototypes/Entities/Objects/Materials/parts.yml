@@ -68,6 +68,15 @@
           Quantity: 4.5
         - ReagentId: Carbon
           Quantity: 0.5
+  - type: UserInterface # White Dream Start
+    interfaces:
+    - key: enum.ShortConstructionUiKey.Key
+      type: ShortConstructionMenuBUI
+  - type: ActivatableUI
+    key: enum.ShortConstructionUiKey.Key
+  - type: ShortConstruction
+    prototypes:
+    - Grille # White Dream end
 
 - type: entity
   parent: PartRodMetal

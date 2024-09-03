@@ -1,0 +1,12 @@
+﻿<ui:RadialMenu xmlns="https://spacestation14.io"
+               xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+               BackButtonStyleClass="RadialMenuBackButton"
+               CloseButtonStyleClass="RadialMenuCloseButton"
+               VerticalExpand="True"
+               HorizontalExpand="True"
+               MinSize="350 350">
+
+    <!-- Main container to hold all crafts-->
+    <ui:RadialContainer Name="Main" VerticalExpand="True" HorizontalExpand="True" Radius="100"
+                        ReserveSpaceForHiddenChildren="False" />
+</ui:RadialMenu>
