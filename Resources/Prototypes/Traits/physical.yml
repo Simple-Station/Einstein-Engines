@@ -45,7 +45,7 @@
 - type: trait
   id: Tenacity
   category: Physical
-  points: -2
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
