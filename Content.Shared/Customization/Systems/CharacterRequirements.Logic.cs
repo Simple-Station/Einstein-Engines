@@ -10,6 +10,29 @@ namespace Content.Shared.Customization.Systems;
 
 
 /// <summary>
+///    Requires all of the requirements to be true
+/// </summary>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class CharacterLogicAndRequirement : CharacterRequirement
+{
+    [DataField]
+    public List<CharacterRequirement> Requirements { get; private set; } = new();
+
+    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason)
+    {
+        var success = entityManager.System<CharacterRequirementsSystem>().CheckRequirementsValid(Requirements, job,
+            profile, playTimes, whitelisted, prototype, entityManager, prototypeManager, configManager,
+            out var reasons);
+        reason = entityManager.System<CharacterRequirementsSystem>().GetRequirementsText(reasons);
+        return success;
+    }
+}
+
+/// <summary>
 ///     Requires any of the requirements to be true
 /// </summary>
 [UsedImplicitly]
