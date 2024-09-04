@@ -134,7 +134,7 @@
       bodyType: Static
       canCollide: false
     - type: Damageable
-      damageContainer: Inorganic
+      damageContainer: StructuralInorganic
       damageModifierSet: FlimsyMetallic
     - type: Destructible
       thresholds:

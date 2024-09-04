@@ -823,7 +823,7 @@
     sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: StructuralInorganic
     damageModifierSet: StrongMetallic
   - type: Physics
     bodyType: Static
