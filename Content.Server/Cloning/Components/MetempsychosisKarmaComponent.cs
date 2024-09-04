@@ -1,4 +1,4 @@
-namespace Content.Server.Nyanotrasen.Cloning
+namespace Content.Server.Cloning.Components
 {
     /// <summary>
     /// This tracks how many times you have already been cloned and lowers your chance of getting a humanoid each time.
@@ -6,7 +6,7 @@ namespace Content.Server.Nyanotrasen.Cloning
     [RegisterComponent]
     public sealed partial class MetempsychosisKarmaComponent : Component
     {
-        [DataField("score")]
+        [DataField]
         public int Score = 0;
     }
 }
