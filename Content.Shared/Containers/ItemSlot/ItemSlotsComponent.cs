@@ -221,7 +221,7 @@ namespace Content.Shared.Containers.ItemSlots
         /// </remarks>
         [DataField]
         [Access(typeof(ItemSlotsSystem), Other = AccessPermissions.ReadWriteExecute)]
-        public bool Swap = true;
+        public bool Swap = false;
 
         public string? ID => ContainerSlot?.ID;
 
