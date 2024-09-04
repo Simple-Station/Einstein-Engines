@@ -58,7 +58,6 @@
         startingItem: PowerCellSmall
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
-        swap: false
         whitelist:
           tags:
             - PowerCell

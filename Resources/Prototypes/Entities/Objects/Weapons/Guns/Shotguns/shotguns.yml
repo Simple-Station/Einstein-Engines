@@ -83,7 +83,6 @@
         name: Magazine
         startingItem: MagazineShotgun
         priority: 2
-        swap: false
         whitelist:
           tags:
           - MagazineShotgun

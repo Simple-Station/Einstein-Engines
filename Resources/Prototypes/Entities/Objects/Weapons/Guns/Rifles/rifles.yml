@@ -33,7 +33,6 @@
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
-        swap: false
         whitelist:
           tags:
             - MagazineLightRifle
