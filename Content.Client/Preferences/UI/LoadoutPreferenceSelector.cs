@@ -7,6 +7,7 @@ using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
+using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
@@ -115,12 +116,20 @@ public sealed class LoadoutPreferenceSelector : Control
                             ClipText = true,
                             Margin = new Thickness(0, 0, 8, 0),
                         },
-                        previewLoadout,
+                        new PanelContainer
+                        {
+                            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#2f2f2f ") },
+                            Children =
+                            {
+                                previewLoadout,
+                            },
+                        },
                         new Label
                         {
                             Text = Loc.GetString($"loadout-name-{loadout.ID}") == $"loadout-name-{loadout.ID}"
                                 ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName
                                 : Loc.GetString($"loadout-name-{loadout.ID}"),
+                            Margin = new Thickness(8, 0, 0, 0),
                         },
                     },
                 },
