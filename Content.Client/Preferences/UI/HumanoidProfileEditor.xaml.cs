@@ -617,12 +617,14 @@ namespace Content.Client.Preferences.UI
 
         private void ToggleClothes(BaseButton.ButtonEventArgs _)
         {
+            _controller.UpdateClothes = true;
             _controller.ShowClothes = ShowClothes.Pressed;
             _controller.UpdateCharacterUI();
         }
 
         private void ToggleLoadouts(BaseButton.ButtonEventArgs _)
         {
+            _controller.UpdateClothes = true;
             _controller.ShowLoadouts = ShowLoadouts.Pressed;
             _controller.UpdateCharacterUI();
         }
