@@ -284,7 +284,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
             if (!canPerform)
             {
-                errorLocale = "interaction-verb-contest-too" + (args.ContestAdvantage > 1f ? "strong" : "weak");
+                errorLocale = "interaction-verb-too-" + (args.ContestAdvantage > 1f ? "strong" : "weak");
                 return false;
             }
         }
