@@ -84,7 +84,7 @@
         - Tenacity
   components:
     - type: CritModifier
-      critThresholdModifier: -7
+      critThresholdModifier: -10
 
 - type: trait
   id: Vigor
