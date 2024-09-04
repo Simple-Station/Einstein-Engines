@@ -47,10 +47,6 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -66,10 +62,6 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -85,10 +77,6 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -104,10 +92,6 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -123,10 +107,6 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -142,10 +122,6 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -161,10 +137,6 @@
   cost: 3
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -216,10 +188,6 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Paramedic
@@ -268,10 +236,6 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -530,10 +494,6 @@
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
   items:
     - ClothingUniformJumpsuitChemShirt
 
@@ -558,11 +518,6 @@
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesEnclosedChem
 

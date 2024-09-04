@@ -7,10 +7,10 @@ using Content.Client.Lobby;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Roles;
-using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.CCVar;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
@@ -31,10 +31,12 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
+using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using static Content.Client.Stylesheets.StyleBase;
 using Direction = Robust.Shared.Maths.Direction;
 
 namespace Content.Client.Preferences.UI
@@ -1739,7 +1741,8 @@ namespace Content.Client.Preferences.UI
                 ("count", _loadouts
                     .Where(l => _loadoutPreferences
                         .Where(lps => lps.Preference).Select(lps => lps.Loadout).Contains(l.Key))
-                    .Count(l => !l.Value)));
+                    .Count(l => !l.Value
+                        || !_loadoutPreferences.Find(lps => lps.Loadout == l.Key)!.Wearable)));
             AdminUIHelpers.RemoveConfirm(_loadoutsRemoveUnusableButton, _confirmationData);
 
             IsDirty = true;
@@ -1748,7 +1751,7 @@ namespace Content.Client.Preferences.UI
         }
 
         private Dictionary<LoadoutPrototype, bool> _loadouts = new();
-        private Dictionary<LoadoutPrototype, EntityUid> _dummyLoadouts = new();
+        private Dictionary<string, EntityUid> _dummyLoadouts = new();
         private void UpdateLoadouts(bool showUnusable)
         {
             // Reset loadout points so you don't get -14 points or something for no reason
@@ -1782,8 +1785,7 @@ namespace Content.Client.Preferences.UI
                     continue;
 
                 var selector = _loadoutPreferences[i];
-                selector.Valid = usable;
-                selector.ShowUnusable = showUnusable;
+                UpdateSelector(selector, usable);
             }
 
             if (_loadouts.Count == 0)
@@ -1848,8 +1850,7 @@ namespace Content.Client.Preferences.UI
                 if (_loadoutPreferences.Select(lps => lps.Loadout.ID).Contains(loadout.ID))
                 {
                     var first = _loadoutPreferences.First(lps => lps.Loadout.ID == loadout.ID);
-                    first.Valid = usable;
-                    first.ShowUnusable = showUnusable;
+                    UpdateSelector(first, usable);
                     continue;
                 }
 
@@ -1857,8 +1858,7 @@ namespace Content.Client.Preferences.UI
                     loadout, highJob?.Proto ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), ref _dummyLoadouts,
                     _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem, _requirements);
-                selector.Valid = usable;
-                selector.ShowUnusable = showUnusable;
+                UpdateSelector(selector, usable);
                 AddSelector(selector);
 
                 // Look for an existing category tab
@@ -1874,6 +1874,39 @@ namespace Content.Client.Preferences.UI
             UpdateLoadoutPreferences();
             return;
 
+
+            void UpdateSelector(LoadoutPreferenceSelector selector, bool usable)
+            {
+                selector.Valid = usable;
+                selector.ShowUnusable = showUnusable;
+
+                if (_controller.GetPreviewDummy() is not { } dummy)
+                    return;
+                foreach (var item in selector.Loadout.Items)
+                {
+                    if (_dummyLoadouts.TryGetValue(selector.Loadout.ID + selector.Loadout.Items.IndexOf(item), out var entity)
+                        && _entityManager.GetComponent<MetaDataComponent>(entity).EntityPrototype!.ID == item)
+                    {
+                        if (!_entityManager.HasComponent<ClothingComponent>(entity))
+                        {
+                            selector.Wearable = true;
+                            continue;
+                        }
+                        selector.Wearable = _characterRequirementsSystem.CanEntityWearItem(dummy, entity);
+                        continue;
+                    }
+
+                    entity = _entityManager.SpawnEntity(item, MapCoordinates.Nullspace);
+                    _dummyLoadouts[selector.Loadout.ID + selector.Loadout.Items.IndexOf(item)] = entity;
+
+                    if (!_entityManager.HasComponent<ClothingComponent>(entity))
+                    {
+                        selector.Wearable = true;
+                        continue;
+                    }
+                    selector.Wearable = _characterRequirementsSystem.CanEntityWearItem(dummy, entity);
+                }
+            }
 
             void CreateCategoryUI(Dictionary<string, object> tree, NeoTabContainer parent)
             {
@@ -2029,8 +2062,10 @@ namespace Content.Client.Preferences.UI
             if (!AdminUIHelpers.TryConfirm(_loadoutsRemoveUnusableButton, _confirmationData))
                 return;
 
-            // Remove unusable loadouts
-            foreach (var (loadout, usable) in _loadouts.Where(l => !l.Value).ToList())
+            // Remove unusable and unwearable loadouts
+            foreach (var (loadout, _) in
+                _loadouts.Where(l =>
+                    !l.Value || !_loadoutPreferences.Find(lps => lps.Loadout.ID == l.Key.ID)!.Wearable).ToList())
                 Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
             UpdateTraits(_traitsShowUnusableButton.Pressed);
             UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);

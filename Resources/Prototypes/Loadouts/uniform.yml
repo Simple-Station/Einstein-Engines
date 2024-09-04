@@ -4,10 +4,6 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Passenger
@@ -24,10 +20,6 @@
   items:
     - ClothingUniformJumpsuitColorBlack
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -62,10 +54,6 @@
   items:
     - ClothingUniformJumpsuitColorBlue
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Medical
@@ -100,10 +88,6 @@
   items:
     - ClothingUniformJumpsuitColorGreen
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -136,10 +120,6 @@
   items:
     - ClothingUniformJumpsuitColorOrange
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -172,10 +152,6 @@
   items:
     - ClothingUniformJumpsuitColorPink
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -208,10 +184,6 @@
   items:
     - ClothingUniformJumpsuitColorRed
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -246,10 +218,6 @@
   items:
     - ClothingUniformJumpsuitColorWhite
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -286,10 +254,6 @@
   items:
     - ClothingUniformJumpsuitColorYellow
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -324,10 +288,6 @@
   items:
     - ClothingUniformJumpsuitColorDarkBlue
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -360,10 +320,6 @@
   items:
     - ClothingUniformJumpsuitColorTeal
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -396,10 +352,6 @@
   items:
     - ClothingUniformJumpsuitColorPurple
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -434,10 +386,6 @@
   items:
     - ClothingUniformJumpsuitColorDarkGreen
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -470,10 +418,6 @@
   items:
     - ClothingUniformJumpsuitColorLightBrown
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -506,10 +450,6 @@
   items:
     - ClothingUniformJumpsuitColorBrown
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -542,10 +482,6 @@
   items:
     - ClothingUniformJumpsuitColorMaroon
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -578,10 +514,6 @@
   items:
     - ClothingUniformJumpsuitFlannel
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -609,10 +541,6 @@
   items:
     - ClothingUniformJumpsuitCasualPurple
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -641,10 +569,6 @@
   items:
     - ClothingUniformJumpsuitCasualRed
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -671,10 +595,6 @@
   items:
     - ClothingUniformJumpsuitTshirtJeans
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -689,10 +609,6 @@
   items:
     - ClothingUniformJumpsuitTshirtJeansGray
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -706,10 +622,6 @@
   items:
     - ClothingUniformJumpsuitTshirtJeansPeach
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -723,10 +635,6 @@
   items:
     - ClothingUniformJumpsuitJeansGreen
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -741,10 +649,6 @@
   items:
     - ClothingUniformJumpsuitJeansRed
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -758,10 +662,6 @@
   items:
     - ClothingUniformJumpsuitJeansBrown
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -776,10 +676,6 @@
   items:
     - ClothingUniformJumpsuitLostTourist
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -795,10 +691,6 @@
   items:
     - ClothingUniformJumpsuitHawaiBlack
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -813,10 +705,6 @@
   items:
     - ClothingUniformJumpsuitHawaiBlue
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -831,10 +719,6 @@
   items:
     - ClothingUniformJumpsuitHawaiRed
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -848,10 +732,6 @@
   items:
     - ClothingUniformJumpsuitHawaiYellow
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -880,10 +760,6 @@
   items:
     - ClothingUniformJumpsuitSober
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -979,10 +855,6 @@
   items:
     - ClothingUniformJumpsuitBartender
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -1370,10 +1242,6 @@
   items:
     - ClothingUniformJumpsuitSuitBlack
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -1387,10 +1255,6 @@
   items:
     - ClothingUniformJumpsuitSuitBlackAlt
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -1404,10 +1268,6 @@
   items:
     - ClothingUniformJumpsuitSuitBlackMob
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -1421,10 +1281,6 @@
   items:
     - ClothingUniformJumpsuitSuitBrown
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -1439,10 +1295,6 @@
   items:
     - ClothingUniformJumpsuitSuitBrownAlt
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -1456,10 +1308,6 @@
   items:
     - ClothingUniformJumpsuitSuitBrownMob
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -1473,10 +1321,6 @@
   items:
     - ClothingUniformJumpsuitSuitWhite
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -1491,10 +1335,6 @@
   items:
     - ClothingUniformJumpsuitSuitWhiteAlt
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -1508,10 +1348,6 @@
   items:
     - ClothingUniformJumpsuitSuitWhiteMob
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:

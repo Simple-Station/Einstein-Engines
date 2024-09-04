@@ -4,12 +4,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorBlack
 
@@ -18,12 +12,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorBlue
 
@@ -32,12 +20,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorBrown
 
@@ -46,12 +28,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorGreen
 
@@ -60,12 +36,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorOrange
 
@@ -74,12 +44,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorPurple
 
@@ -88,12 +52,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorRed
 
@@ -102,12 +60,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorWhite
 
@@ -116,12 +68,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorYellow
 
@@ -130,12 +76,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesGeta
 
@@ -144,12 +84,6 @@
   category: Shoes
   cost: 2
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesTourist
 
@@ -159,12 +93,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsWork
 
@@ -173,12 +101,6 @@
   category: Shoes
   cost: 2
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsLaceup
 
@@ -187,12 +109,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsWinter
 
@@ -201,12 +117,6 @@
   category: Shoes
   cost: 2
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsCowboyBrown
 
@@ -215,12 +125,6 @@
   category: Shoes
   cost: 2
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsCowboyBlack
 
@@ -229,12 +133,6 @@
   category: Shoes
   cost: 2
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsCowboyWhite
 
@@ -243,12 +141,6 @@
   category: Shoes
   cost: 2
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsCowboyFancy
 
@@ -257,12 +149,6 @@
   category: Shoes
   cost: 2
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsFishing
 
@@ -275,11 +161,6 @@
   items:
     - ClothingShoeSlippersDuck
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Clown
@@ -289,12 +170,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesLeather
 
@@ -303,12 +178,6 @@
   category: Shoes
   cost: 1
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesMiscWhite
 
@@ -317,12 +186,6 @@
   category: Shoes
   cost: 3
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesHighheelBoots
 
@@ -332,12 +195,6 @@
   category: Shoes
   cost: 3
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingUnderSocksCoder
 
@@ -346,12 +203,6 @@
   category: Shoes
   cost: 3
   exclusive: true
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingUnderSocksBee
 

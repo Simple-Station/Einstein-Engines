@@ -83,8 +83,9 @@ public sealed class LoadoutSystem : EntitySystem
 
             foreach (var item in spawned)
             {
-                if (EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp) &&
-                    _inventory.TryGetSlots(uid, out var slotDefinitions))
+                if (EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp)
+                    && _characterRequirements.CanEntityWearItem(uid, item)
+                    && _inventory.TryGetSlots(uid, out var slotDefinitions))
                 {
                     var deleted = false;
                     foreach (var curSlot in slotDefinitions)

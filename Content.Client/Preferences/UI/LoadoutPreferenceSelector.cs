@@ -30,9 +30,22 @@ public sealed class LoadoutPreferenceSelector : Control
         set
         {
             _showUnusable = value;
-            Visible = Valid || _showUnusable;
+            Visible = Valid && _wearable || _showUnusable;
             PreferenceButton.RemoveStyleClass(StyleBase.ButtonDanger);
             PreferenceButton.AddStyleClass(Valid ? "" : StyleBase.ButtonDanger);
+        }
+    }
+
+    private bool _wearable;
+    public bool Wearable
+    {
+        get => _wearable;
+        set
+        {
+            _wearable = value;
+            Visible = Valid && _wearable || _showUnusable;
+            PreferenceButton.RemoveStyleClass(StyleBase.ButtonCaution);
+            PreferenceButton.AddStyleClass(_wearable ? "" : StyleBase.ButtonCaution);
         }
     }
 
@@ -46,14 +59,14 @@ public sealed class LoadoutPreferenceSelector : Control
     public event Action<bool>? PreferenceChanged;
 
     public LoadoutPreferenceSelector(LoadoutPrototype loadout, JobPrototype highJob,
-        HumanoidCharacterProfile profile, ref Dictionary<LoadoutPrototype, EntityUid> entities,
+        HumanoidCharacterProfile profile, ref Dictionary<string, EntityUid> entities,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         CharacterRequirementsSystem characterRequirementsSystem, JobRequirementsManager jobRequirementsManager)
     {
         Loadout = loadout;
 
         SpriteView previewLoadout;
-        if (!entities.TryGetValue(loadout, out var dummyLoadoutItem))
+        if (!entities.TryGetValue(loadout.ID + 0, out var dummyLoadoutItem))
         {
             // Get the first item in the loadout to be the preview
             dummyLoadoutItem = entityManager.SpawnEntity(loadout.Items.First(), MapCoordinates.Nullspace);
