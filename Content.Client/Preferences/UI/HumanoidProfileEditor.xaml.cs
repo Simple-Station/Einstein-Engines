@@ -758,9 +758,6 @@ namespace Content.Client.Preferences.UI
 
                     selector.PriorityChanged += priority =>
                     {
-                        Profile = Profile?.WithJobPriority(job.ID, priority);
-                        IsDirty = true;
-
                         foreach (var jobSelector in _jobPriorities)
                         {
                             // Sync other selectors with the same job in case of multiple department jobs
@@ -775,6 +772,10 @@ namespace Content.Client.Preferences.UI
                                 Profile = Profile?.WithJobPriority(jobSelector.Proto.ID, JobPriority.Medium);
                             }
                         }
+
+                        Profile = Profile?.WithJobPriority(job.ID, priority);
+                        IsDirty = true;
+                        UpdateCharacterRequired();
                     };
 
                 }
@@ -965,8 +966,7 @@ namespace Content.Client.Preferences.UI
             OnSkinColorOnValueChanged(); // Species may have special color prefs, make sure to update it.
             CMarkings.SetSpecies(newSpecies); // Repopulate the markings tab as well.
             UpdateSexControls(); // Update sex for new species
-            UpdateTraits(_traitsShowUnusableButton.Pressed);
-            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
+            UpdateCharacterRequired();
             // Changing species provides inaccurate sliders without these
             UpdateHeightControls();
             UpdateWidthControls();
@@ -985,8 +985,7 @@ namespace Content.Client.Preferences.UI
         private void SetClothing(ClothingPreference newClothing)
         {
             Profile = Profile?.WithClothingPreference(newClothing);
-            UpdateTraits(_traitsShowUnusableButton.Pressed);
-            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
+            UpdateCharacterRequired();
             IsDirty = true;
             _controller.UpdateClothes = true;
             UpdatePreview();
@@ -995,8 +994,7 @@ namespace Content.Client.Preferences.UI
         private void SetBackpack(BackpackPreference newBackpack)
         {
             Profile = Profile?.WithBackpackPreference(newBackpack);
-            UpdateTraits(_traitsShowUnusableButton.Pressed);
-            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
+            UpdateCharacterRequired();
             IsDirty = true;
             _controller.UpdateClothes = true;
             UpdatePreview();
@@ -1361,8 +1359,6 @@ namespace Content.Client.Preferences.UI
             UpdateSaveButton();
             UpdateJobPriorities();
             UpdateAntagPreferences();
-            UpdateTraits(_traitsShowUnusableButton.Pressed);
-            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
             UpdateMarkings();
             UpdateHairPickers();
             UpdateCMarkingsHair();
@@ -1370,6 +1366,7 @@ namespace Content.Client.Preferences.UI
             UpdateHeightControls();
             UpdateWidthControls();
             UpdateWeight();
+            UpdateCharacterRequired();
 
             _preferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
         }
@@ -1635,8 +1632,7 @@ namespace Content.Client.Preferences.UI
                     Profile = Profile?.WithTraitPreference(selector.Trait.ID, preference);
                     IsDirty = true;
                     UpdateTraitPreferences();
-                    UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
-                    UpdateTraits(_traitsShowUnusableButton.Pressed);
+                    UpdateCharacterRequired();
                 };
             }
 
@@ -1701,10 +1697,9 @@ namespace Content.Client.Preferences.UI
                 return;
 
             // Remove unusable loadouts
-            foreach (var (trait, usable) in _traits.Where(l => !l.Value).ToList())
+            foreach (var (trait, _) in _traits.Where(l => !l.Value).ToList())
                 Profile = Profile?.WithTraitPreference(trait.ID, false);
-            UpdateTraits(_traitsShowUnusableButton.Pressed);
-            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
+            UpdateCharacterRequired();
         }
 
         #endregion
@@ -1976,8 +1971,7 @@ namespace Content.Client.Preferences.UI
                     Profile = Profile?.WithLoadoutPreference(selector.Loadout.ID, preference);
                     IsDirty = true;
                     UpdateLoadoutPreferences();
-                    UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
-                    UpdateTraits(_traitsShowUnusableButton.Pressed);
+                    UpdateCharacterRequired();
                 };
             }
 
@@ -2067,12 +2061,18 @@ namespace Content.Client.Preferences.UI
                 _loadouts.Where(l =>
                     !l.Value || !_loadoutPreferences.Find(lps => lps.Loadout.ID == l.Key.ID)!.Wearable).ToList())
                 Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
-            UpdateTraits(_traitsShowUnusableButton.Pressed);
-            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
+            UpdateCharacterRequired();
         }
 
         #endregion
 
         #endregion
+
+        private void UpdateCharacterRequired()
+        {
+            UpdateRoleRequirements();
+            UpdateTraits(_traitsShowUnusableButton.Pressed);
+            UpdateLoadouts(_loadoutsShowUnusableButton.Pressed);
+        }
     }
 }
