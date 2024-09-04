@@ -118,7 +118,7 @@ public sealed class LoadoutPreferenceSelector : Control
                         },
                         new PanelContainer
                         {
-                            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#2f2f2f ") },
+                            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#2f2f2f") },
                             Children =
                             {
                                 previewLoadout,
