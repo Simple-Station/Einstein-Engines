@@ -121,6 +121,15 @@
   metapsionicFeedback: psionic-language-power-feedback # Reuse for telepathy, clairaudience, etc
 
 - type: psionicPower
+  id: PsychognomyPower #i.e. reverse physiognomy
+  name: Psychognomy #psycho- + -gnomy. I reccomend starting with your language's equilvalent of "physiognomy" and working backwards. i.e. психо(г)номика
+  description: psychognomy-power-description
+  components:
+    - type: Psychognomist
+  initializationFeedback: psychognomy-power-initialization-feedback
+  metapsionicFeedback: psionic-language-power-feedback
+
+- type: psionicPower
   id: TelepathyPower
   name: Telepathy
   description: telepathy-power-description
