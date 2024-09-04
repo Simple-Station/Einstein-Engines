@@ -35,14 +35,14 @@ namespace Content.Server.Abilities.Psionics
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<InnatePsionicPowersComponent, ComponentStartup>(InnatePowerStartup);
+            SubscribeLocalEvent<InnatePsionicPowersComponent, MapInitEvent>(InnatePowerStartup);
             SubscribeLocalEvent<PsionicComponent, ComponentShutdown>(OnPsionicShutdown);
         }
 
         /// <summary>
         ///     Special use-case for a InnatePsionicPowers, which allows an entity to start with any number of Psionic Powers.
         /// </summary>
-        private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, ComponentStartup args)
+        private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, MapInitEvent args)
         {
             // Any entity with InnatePowers should also be psionic, but in case they aren't already...
             EnsureComp<PsionicComponent>(uid, out var psionic);

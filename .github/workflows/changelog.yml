@@ -8,6 +8,7 @@ env:
   GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
   CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
   PR_NUMBER: ${{ github.event.number }}
+  CHANGELOG_WEBHOOK: ${{ secrets.CHANGELOG_WEBHOOK }}
 
 jobs:
   changelog:
@@ -53,4 +54,8 @@ jobs:
           git commit -m "${{ vars.CHANGELOG_MESSAGE }} (#${{ env.PR_NUMBER }})"
           git push
         shell: bash
+        continue-on-error: true
+
+      - name: Publish changelog
+        run: Tools/actions_changelogs_since_last_run.py
         continue-on-error: true
