@@ -20,7 +20,7 @@
     maxAngle: 16
     fireRate: 8
     angleIncrease: 3
-    angleDecay: 16  
+    angleDecay: 16
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -38,6 +38,7 @@
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
+        swap: false
         whitelist:
           tags:
             - MagazinePistolSubMachineGun
@@ -234,7 +235,7 @@
     minAngle: 1
     maxAngle: 6
     angleIncrease: 1.5
-    angleDecay: 6  
+    angleDecay: 6
     selectedMode: FullAuto
     shotsPerBurst: 5
     availableModes:

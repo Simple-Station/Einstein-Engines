@@ -44,6 +44,7 @@
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
+        swap: false
         whitelist:
           tags:
             - MagazinePistol
