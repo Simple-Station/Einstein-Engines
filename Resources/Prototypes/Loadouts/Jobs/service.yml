@@ -92,9 +92,41 @@
   category: JobsAUncategorized
   cost: 3
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Clown
+    - !type:CharacterLogicXorRequirement
+      requirements:
+        - !type:CharacterLogicAndRequirement
+          requirements:
+            - !type:CharacterSexRequirement
+              sex: Male
+            - !type:CharacterSpeciesRequirement
+              species:
+                - Felinid
+            - !type:CharacterHeightRequirement
+              min: 110
+              max: 122
+            - !type:CharacterGenderRequirement
+              gender: Female
+            - !type:CharacterTraitRequirement
+              traits:
+                - HeavyweightDrunk
+        - !type:CharacterLogicAndRequirement
+          requirements:
+            - !type:CharacterSpeciesRequirement
+              species:
+                - Harpy
+            - !type:CharacterHeightRequirement
+              min: 170
+            - !type:CharacterWeightRequirement
+              min: 20
+            - !type:CharacterSexRequirement
+              sex: Male
+            - !type:CharacterJobRequirement
+              inverted: true
+              jobs:
+                - Clown
+        - !type:CharacterJobRequirement
+          jobs:
+            - Clown
   items:
     - CowToolboxFilled
 
@@ -192,7 +224,7 @@
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
-     jobs:
+      jobs:
         - Botanist
   items:
     - ClothingUniformOveralls
@@ -205,7 +237,7 @@
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
-     jobs:
+      jobs:
         - Lawyer
   items:
     - ClothingUniformJumpsuitLawyerBlue
