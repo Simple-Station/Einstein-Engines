@@ -122,7 +122,7 @@ public sealed partial class CharacterSexRequirement : CharacterRequirement
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-gender-requirement",
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-sex-requirement",
             ("inverted", Inverted),
             ("sex", Loc.GetString($"humanoid-profile-editor-sex-{Sex.ToString().ToLower()}-text"))));
         return profile.Sex == Sex;
