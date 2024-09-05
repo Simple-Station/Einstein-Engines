@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._White.ShortConstruction;
+namespace Content.Shared.ShortConstruction;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class ShortConstructionComponent : Component

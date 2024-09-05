@@ -50,7 +50,7 @@
         canReact: false
   # Estacao Pirata - IPC Healing
   - type: BlindHealing
-    damageContainers: 
+    damageContainers:
       - Silicon
   - type: StackPrice
     price: 2
@@ -91,7 +91,7 @@
         reagents:
         - ReagentId: Silicon
           Quantity: 10
-  - type: UserInterface # White Dream Start
+  - type: UserInterface
     interfaces:
     - key: enum.ShortConstructionUiKey.Key
       type: ShortConstructionMenuBUI
@@ -99,7 +99,7 @@
     key: enum.ShortConstructionUiKey.Key
   - type: ShortConstruction
     prototypes:
-    - Window # White Dream end
+    - Window
 
 - type: entity
   parent: SheetGlass
@@ -186,7 +186,7 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: UserInterface # White Dream Start
+  - type: UserInterface
     interfaces:
     - key: enum.ShortConstructionUiKey.Key
       type: ShortConstructionMenuBUI
@@ -194,7 +194,7 @@
     key: enum.ShortConstructionUiKey.Key
   - type: ShortConstruction
     prototypes:
-    - ReinforcedWindow # White Dream end
+    - ReinforcedWindow
 
 - type: entity
   parent: SheetRGlass
