@@ -1,11 +1,11 @@
 using System.Linq;
 using Content.Server.Store.Systems;
 using Content.Server.StoreDiscount.Systems;
-using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Implants;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
+using Content.Shared.FixedPoint;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Robust.Shared.Prototypes;
@@ -25,33 +25,48 @@ public sealed class UplinkSystem : EntitySystem
     private const string FallbackUplinkImplant = "UplinkImplant";
     private const string FallbackUplinkCatalog = "UplinkUplinkImplanter";
 
-    /// <summary>
-    /// Adds an uplink to the target
-    /// </summary>
-    /// <param name="user">The person who is getting the uplink</param>
-    /// <param name="balance">The amount of currency on the uplink. If null, will just use the amount specified in the preset.</param>
-    /// <param name="uplinkEntity">The entity that will actually have the uplink functionality. Defaults to the PDA if null.</param>
-    /// <param name="giveDiscounts">Marker that enables discounts for uplink items.</param>
-    /// <returns>Whether or not the uplink was added successfully</returns>
-    public bool AddUplink(
-        EntityUid user,
-        FixedPoint2 balance,
-        EntityUid? uplinkEntity = null,
-        bool giveDiscounts = false)
-    {
-        // Try to find target item if none passed
+        /// <summary>
+        /// Adds an uplink to the target
+        /// </summary>
+        /// <param name="user">The person who is getting the uplink</param>
+        /// <param name="balance">The amount of currency on the uplink. If null, will just use the amount specified in the preset.</param>
+        /// <param name="uplinkEntity">The entity that will actually have the uplink functionality. Defaults to the PDA if null.</param>
+        /// <param name="giveDiscounts">Marker that enables discounts for uplink items.</param>
+        /// <returns>Whether or not the uplink was added successfully</returns>
+        public bool AddUplink(
+            EntityUid user,
+            FixedPoint2? balance,
+            EntityUid? uplinkEntity = null,
+            bool giveDiscounts = false
+        )
+        {
+            // Try to find target item if none passed
+            uplinkEntity ??= FindUplinkTarget(user);
+            if (uplinkEntity == null)
+            {
+                return false;
+            }
 
-        uplinkEntity ??= FindUplinkTarget(user);
+            EnsureComp<UplinkComponent>(uplinkEntity.Value);
+            var store = EnsureComp<StoreComponent>(uplinkEntity.Value);
 
-        if (uplinkEntity == null)
-            return ImplantUplink(user, balance, giveDiscounts);
+            store.AccountOwner = user;
+            store.Balance.Clear();
+            if (balance != null)
+            {
+                store.Balance.Clear();
+                _store.TryAddCurrency(new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, balance.Value } }, uplinkEntity.Value, store);
+            }
 
-        EnsureComp<UplinkComponent>(uplinkEntity.Value);
-
-        SetUplink(user, uplinkEntity.Value, balance, giveDiscounts);
-
-        // TODO add BUI. Currently can't be done outside of yaml -_-
-        // ^ What does this even mean?
+            var uplinkInitializedEvent = new StoreInitializedEvent(
+                TargetUser: user,
+                Store: uplinkEntity.Value,
+                UseDiscounts: giveDiscounts,
+                Listings: _store.GetAvailableListings(user, uplinkEntity.Value, store)
+                                .ToArray()
+            );
+            RaiseLocalEvent(ref uplinkInitializedEvent);
+            // TODO add BUI. Currently can't be done outside of yaml -_-
 
         return true;
     }
@@ -105,19 +120,19 @@ public sealed class UplinkSystem : EntitySystem
         return true;
     }
 
-    /// <summary>
-    /// Finds the entity that can hold an uplink for a user.
-    /// Usually this is a pda in their pda slot, but can also be in their hands. (but not pockets or inside bag, etc.)
-    /// </summary>
-    public EntityUid? FindUplinkTarget(EntityUid user)
-    {
-        // Try to find PDA in inventory
-        if (_inventorySystem.TryGetContainerSlotEnumerator(user, out var containerSlotEnumerator))
+        /// <summary>
+        /// Finds the entity that can hold an uplink for a user.
+        /// Usually this is a pda in their pda slot, but can also be in their hands. (but not pockets or inside bag, etc.)
+        /// </summary>
+        public EntityUid? FindUplinkTarget(EntityUid user)
         {
-            while (containerSlotEnumerator.MoveNext(out var pdaUid))
+            // Try to find PDA in inventory
+            if (_inventorySystem.TryGetContainerSlotEnumerator(user, out var containerSlotEnumerator))
             {
-                if (!pdaUid.ContainedEntity.HasValue)
-                    continue;
+                while (containerSlotEnumerator.MoveNext(out var pdaUid))
+                {
+                    if (!pdaUid.ContainedEntity.HasValue)
+                        continue;
 
                 if (HasComp<PdaComponent>(pdaUid.ContainedEntity.Value) || HasComp<StoreComponent>(pdaUid.ContainedEntity.Value))
                     return pdaUid.ContainedEntity.Value;
