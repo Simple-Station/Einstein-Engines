@@ -20,19 +20,26 @@ character-timer-role-too-high = You require[color=yellow] {TOSTRING($time, "0")}
 
 
 ## Logic
+character-logic-and-requirement-listprefix = {""}
+    {""}[color=gray]&[/color]{" "}
+character-logic-and-requirement = You must{$inverted ->
+    [true]{" "}not
+    *[other]{""}
+} fit [color=red]all[/color] of [color=gray]these[/color]: {$options}
+
 character-logic-or-requirement-listprefix = {""}
-    {""}[color=white]-[/color]{" "}
+    {""}[color=white]O[/color]{" "}
 character-logic-or-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
-} fit at least one of these: {$options}
+} fit [color=red]at least one[/color] of [color=white]these[/color]: {$options}
 
 character-logic-xor-requirement-listprefix = {""}
-    {""}[color=white]-[/color]{" "}
+    {""}[color=white]X[/color]{" "}
 character-logic-xor-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
-} fit only one of these: {$options}
+} fit [color=red]only one[/color] of [color=white]these[/color]: {$options}
 
 
 ## Profile
@@ -71,7 +78,7 @@ character-species-requirement = You must{$inverted ->
 character-height-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
-} be{$min ->
+} be {$min ->
     [-2147483648]{$max ->
         [2147483648]{""}
         *[other] shorter than [color={$color}]{$max}[/color]cm
@@ -85,7 +92,7 @@ character-height-requirement = You must{$inverted ->
 character-width-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
-} be{$min ->
+} be {$min ->
     [-2147483648]{$max ->
         [2147483648]{""}
         *[other] skinnier than [color={$color}]{$max}[/color]cm
@@ -99,7 +106,7 @@ character-width-requirement = You must{$inverted ->
 character-weight-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
-} be{$min ->
+} be {$min ->
     [-2147483648]{$max ->
         [2147483648]{""}
         *[other] lighter than [color={$color}]{$max}[/color]kg
@@ -111,12 +118,12 @@ character-weight-requirement = You must{$inverted ->
 }
 
 
-character-trait-requirement = You must{$inverted ->
+character-trait-requirement = You must {$inverted ->
     [true] not have
     *[other] have
 } one of these traits: {$traits}
 
-character-loadout-requirement = You must{$inverted ->
+character-loadout-requirement = You must {$inverted ->
     [true] not have
     *[other] have
 } one of these loadouts: {$loadouts}
