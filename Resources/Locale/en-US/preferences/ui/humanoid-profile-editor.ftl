@@ -81,8 +81,8 @@ humanoid-profile-editor-loadouts-tab = Loadout
 humanoid-profile-editor-loadouts-points-label = You have {$points}/{$max} points
 humanoid-profile-editor-loadouts-show-unusable-button = Show Unusable Loadouts
 humanoid-profile-editor-loadouts-show-unusable-button-tooltip =
-    When enabled, loadouts that your current character setup cannot use will be shown highlighted in red, or orange if selected.
-    Loadouts that your character cannot wear (if clothing) will be shown as yellow.
+    When enabled, loadouts that your current character setup cannot use will be highlighted in red.
+    Loadouts that your character cannot wear (if clothing) will be highlighted in yellow.
     You will still not be able to use the invalid loadouts unless your character setup changes to fit the requirements.
     This may be useful if you like switching between multiple jobs and don't want to have to reselect your loadout every time you switch.
 humanoid-profile-editor-loadouts-remove-unusable-button = Remove {$count ->

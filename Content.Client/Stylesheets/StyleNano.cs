@@ -98,17 +98,17 @@ namespace Content.Client.Stylesheets
         public static readonly Color ButtonColorHovered = Color.FromHex("#575b61");
         public static readonly Color ButtonColorHoveredRed = Color.FromHex("#DF6B6B");
         public static readonly Color ButtonColorPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorDisabled = Color.FromHex("#303133");
+        public static readonly Color ButtonColorDisabled = Color.FromHex("#292929");
 
-        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#b28325");
-        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#bb9340");
-        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#9b9e20");
-        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#917131");
+        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#8F6A33");
+        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#C0934E");
+        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#E49F35");
+        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#28251F");
 
-        public static readonly Color ButtonColorDangerDefault = Color.FromHex("#ab3232");
-        public static readonly Color ButtonColorDangerHovered = Color.FromHex("#cf2f2f");
-        public static readonly Color ButtonColorDangerPressed = Color.FromHex("#a26b27");
-        public static readonly Color ButtonColorDangerDisabled = Color.FromHex("#602a2a");
+        public static readonly Color ButtonColorDangerDefault = Color.FromHex("#7B2D2D");
+        public static readonly Color ButtonColorDangerHovered = Color.FromHex("#BD524B");
+        public static readonly Color ButtonColorDangerPressed = Color.FromHex("#C12525      ");
+        public static readonly Color ButtonColorDangerDisabled = Color.FromHex("#2F2020");
 
         public static readonly Color ButtonColorGoodDefault = Color.FromHex("#3E6C45");
         public static readonly Color ButtonColorGoodHovered = Color.FromHex("#31843E");
