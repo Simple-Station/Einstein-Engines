@@ -5878,3 +5878,14 @@ Entries:
   id: 6316
   time: '2024-09-05T00:18:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/854
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Due to NUMEROUS complaints, NanoTrasen has swapped the sticker labels on
+        all colored jumpskirts to correctly state that they are infact,
+        "Skirts", so now they can legally be worn by Harpies, Lamia, and
+        Arachne. 
+  id: 6317
+  time: '2024-09-05T00:19:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/848
