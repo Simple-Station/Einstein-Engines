@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
@@ -24,11 +25,24 @@ public sealed partial class CharacterLogicAndRequirement : CharacterRequirement
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
-        var success = entityManager.System<CharacterRequirementsSystem>().CheckRequirementsValid(Requirements, job,
-            profile, playTimes, whitelisted, prototype, entityManager, prototypeManager, configManager,
-            out var reasons);
-        reason = entityManager.System<CharacterRequirementsSystem>().GetRequirementsText(reasons);
-        return success;
+        var succeeded = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>()
+            .CheckRequirementsValid(Requirements, job, profile, playTimes, whitelisted, prototype, entityManager,
+                prototypeManager, configManager, out var reasons);
+
+        if (reasons.Count == 0)
+        {
+            reason = null;
+            return succeeded;
+        }
+
+        reason = new FormattedMessage();
+        foreach (var message in reasons)
+            reason.AddMessage(FormattedMessage.FromMarkup(
+                Loc.GetString("character-logic-and-requirement-listprefix") + message.ToMarkup()));
+        reason = FormattedMessage.FromMarkup(Loc.GetString("character-logic-and-requirement",
+            ("inverted", Inverted), ("options", reason.ToMarkup())));
+
+        return succeeded;
     }
 }
 
@@ -47,9 +61,20 @@ public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         out FormattedMessage? reason)
     {
-        var charReqs = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>();
-        var succeeded = charReqs.CheckRequirementsValid(Requirements, job, profile, playTimes, whitelisted, prototype,
-            entityManager, prototypeManager, configManager, out var reasons);
+        var succeeded = false;
+        var reasons = new List<FormattedMessage>();
+        foreach (var requirement in Requirements)
+        {
+            if (requirement.IsValid(job, profile, playTimes, whitelisted, prototype, entityManager, prototypeManager,
+                configManager, out var raisin))
+            {
+                succeeded = true;
+                break;
+            }
+
+            if (raisin != null)
+                reasons.Add(raisin);
+        }
 
         if (reasons.Count == 0)
         {
