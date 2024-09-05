@@ -5862,3 +5862,12 @@ Entries:
   id: 6314
   time: '2024-09-03T02:17:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/808
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Several new tips have been added to the game, many of which reference
+        new content available on Einstein-Engines. 
+  id: 6315
+  time: '2024-09-05T00:00:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/844
