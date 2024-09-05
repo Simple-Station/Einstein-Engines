@@ -107,7 +107,7 @@ namespace Content.Client.Stylesheets
 
         public static readonly Color ButtonColorDangerDefault = Color.FromHex("#7B2D2D");
         public static readonly Color ButtonColorDangerHovered = Color.FromHex("#BD524B");
-        public static readonly Color ButtonColorDangerPressed = Color.FromHex("#C12525      ");
+        public static readonly Color ButtonColorDangerPressed = Color.FromHex("#C12525");
         public static readonly Color ButtonColorDangerDisabled = Color.FromHex("#2F2020");
 
         public static readonly Color ButtonColorGoodDefault = Color.FromHex("#3E6C45");
