@@ -20,7 +20,7 @@ public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-whitelist-requirement", ("inverted", Inverted)));
         return !configManager.GetCVar(CCVars.WhitelistEnabled) || whitelisted;

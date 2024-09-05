@@ -33,7 +33,7 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-age-requirement",
             ("inverted", Inverted), ("min", Min), ("max", Max)));
@@ -54,7 +54,7 @@ public sealed partial class CharacterBackpackTypeRequirement : CharacterRequirem
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-backpack-type-requirement",
             ("inverted", Inverted),
@@ -76,7 +76,7 @@ public sealed partial class CharacterClothingPreferenceRequirement : CharacterRe
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-clothing-preference-requirement",
             ("inverted", Inverted),
@@ -98,7 +98,7 @@ public sealed partial class CharacterGenderRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-gender-requirement",
             ("inverted", Inverted),
@@ -120,7 +120,7 @@ public sealed partial class CharacterSexRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-sex-requirement",
             ("inverted", Inverted),
@@ -142,7 +142,7 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         const string color = "green";
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-species-requirement",
@@ -176,7 +176,7 @@ public sealed partial class CharacterHeightRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         const string color = "yellow";
         var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
@@ -211,7 +211,7 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         const string color = "yellow";
         var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
@@ -246,7 +246,7 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         const string color = "green";
         var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
@@ -285,7 +285,7 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         const string color = "lightblue";
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-requirement",
@@ -310,7 +310,7 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         const string color = "lightblue";
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-loadout-requirement",
@@ -335,7 +335,7 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         var group = prototypeManager.Index(Group);
 

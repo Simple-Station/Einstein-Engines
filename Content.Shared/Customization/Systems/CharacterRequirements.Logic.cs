@@ -23,11 +23,11 @@ public sealed partial class CharacterLogicAndRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         var succeeded = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>()
             .CheckRequirementsValid(Requirements, job, profile, playTimes, whitelisted, prototype, entityManager,
-                prototypeManager, configManager, out var reasons);
+                prototypeManager, configManager, out var reasons, depth + 1);
 
         if (reasons.Count == 0)
         {
@@ -38,7 +38,7 @@ public sealed partial class CharacterLogicAndRequirement : CharacterRequirement
         reason = new FormattedMessage();
         foreach (var message in reasons)
             reason.AddMessage(FormattedMessage.FromMarkup(
-                Loc.GetString("character-logic-and-requirement-listprefix") + message.ToMarkup()));
+                Loc.GetString("character-logic-and-requirement-listprefix", ("indent", new string(' ', depth * 2))) + message.ToMarkup()));
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-logic-and-requirement",
             ("inverted", Inverted), ("options", reason.ToMarkup())));
 
@@ -59,14 +59,14 @@ public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         var succeeded = false;
         var reasons = new List<FormattedMessage>();
         foreach (var requirement in Requirements)
         {
             if (requirement.IsValid(job, profile, playTimes, whitelisted, prototype, entityManager, prototypeManager,
-                configManager, out var raisin))
+                configManager, out var raisin, depth + 1))
             {
                 succeeded = true;
                 break;
@@ -85,7 +85,7 @@ public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
         reason = new FormattedMessage();
         foreach (var message in reasons)
             reason.AddMessage(FormattedMessage.FromMarkup(
-                Loc.GetString("character-logic-or-requirement-listprefix") + message.ToMarkup()));
+                Loc.GetString("character-logic-or-requirement-listprefix", ("indent", new string(' ', depth * 2))) + message.ToMarkup()));
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-logic-or-requirement",
             ("inverted", Inverted), ("options", reason.ToMarkup())));
 
@@ -106,7 +106,7 @@ public sealed partial class CharacterLogicXorRequirement : CharacterRequirement
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         var reasons = new List<FormattedMessage>();
         var succeeded = false;
@@ -114,7 +114,7 @@ public sealed partial class CharacterLogicXorRequirement : CharacterRequirement
         foreach (var requirement in Requirements)
         {
             if (requirement.IsValid(job, profile, playTimes, whitelisted, prototype, entityManager, prototypeManager,
-                configManager, out var raisin))
+                configManager, out var raisin, depth + 1))
             {
                 if (succeeded)
                 {
@@ -138,7 +138,7 @@ public sealed partial class CharacterLogicXorRequirement : CharacterRequirement
         reason = new FormattedMessage();
         foreach (var message in reasons)
             reason.AddMessage(FormattedMessage.FromMarkup(
-                Loc.GetString("character-logic-xor-requirement-listprefix") + message.ToMarkup()));
+                Loc.GetString("character-logic-xor-requirement-listprefix", ("indent", new string(' ', depth * 2))) + message.ToMarkup()));
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-logic-xor-requirement",
             ("inverted", Inverted), ("options", reason.ToMarkup())));
 

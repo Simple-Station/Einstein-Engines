@@ -35,6 +35,7 @@ public abstract partial class CharacterRequirement
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
-        out FormattedMessage? reason
+        out FormattedMessage? reason,
+        int depth = 0
     );
 }

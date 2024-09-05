@@ -21,21 +21,21 @@ character-timer-role-too-high = You require[color=yellow] {TOSTRING($time, "0")}
 
 ## Logic
 character-logic-and-requirement-listprefix = {""}
-    {""}[color=gray]&[/color]{" "}
+    {$indent}[color=gray]&[/color]{" "}
 character-logic-and-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
 } fit [color=red]all[/color] of [color=gray]these[/color]: {$options}
 
 character-logic-or-requirement-listprefix = {""}
-    {""}[color=white]O[/color]{" "}
+    {$indent}[color=white]O[/color]{" "}
 character-logic-or-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
 } fit [color=red]at least one[/color] of [color=white]these[/color]: {$options}
 
 character-logic-xor-requirement-listprefix = {""}
-    {""}[color=white]X[/color]{" "}
+    {$indent}[color=white]X[/color]{" "}
 character-logic-xor-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
