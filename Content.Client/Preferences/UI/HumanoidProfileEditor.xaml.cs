@@ -792,7 +792,6 @@ namespace Content.Client.Preferences.UI
         /// </summary>
         private void EnsureJobRequirementsValid()
         {
-            var changed = false;
             foreach (var selector in _jobPriorities)
             {
                 if (selector.Priority == JobPriority.Never
@@ -811,13 +810,7 @@ namespace Content.Client.Preferences.UI
 
                 selector.Priority = JobPriority.Never;
                 Profile = Profile?.WithJobPriority(selector.Proto.ID, JobPriority.Never);
-                changed = true;
             }
-
-            if (!changed)
-                return;
-
-            Save();
         }
 
         private void OnFlavorTextChange(string content)
