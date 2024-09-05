@@ -1440,14 +1440,14 @@ namespace Content.Client.Preferences.UI
 
 
             // Get the highest priority job to use for trait filtering
-            var highJob = _jobPriorities.FirstOrDefault(j => j.Priority == JobPriority.High);
+            var highJob = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
 
             _traits.Clear();
             foreach (var trait in _prototypeManager.EnumeratePrototypes<TraitPrototype>())
             {
                 var usable = _characterRequirementsSystem.CheckRequirementsValid(
                     trait.Requirements,
-                    highJob?.Proto ?? new JobPrototype(),
+                    highJob,
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                     _requirements.GetRawPlayTimeTrackers(),
                     _requirements.IsWhitelisted(),
@@ -1535,7 +1535,7 @@ namespace Content.Client.Preferences.UI
                 }
 
                 var selector = new TraitPreferenceSelector(
-                    trait, highJob?.Proto ?? new JobPrototype(), Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    trait, highJob, Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                     _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem, _requirements);
                 selector.Valid = usable;
                 selector.ShowUnusable = showUnusable;
@@ -1750,14 +1750,14 @@ namespace Content.Client.Preferences.UI
 
 
             // Get the highest priority job to use for loadout filtering
-            var highJob = _jobPriorities.FirstOrDefault(j => j.Priority == JobPriority.High);
+            var highJob = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
 
             _loadouts.Clear();
             foreach (var loadout in _prototypeManager.EnumeratePrototypes<LoadoutPrototype>())
             {
                 var usable = _characterRequirementsSystem.CheckRequirementsValid(
                     loadout.Requirements,
-                    highJob?.Proto ?? new JobPrototype(),
+                    highJob ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                     _requirements.GetRawPlayTimeTrackers(),
                     _requirements.IsWhitelisted(),
@@ -1843,7 +1843,7 @@ namespace Content.Client.Preferences.UI
                 }
 
                 var selector = new LoadoutPreferenceSelector(
-                    loadout, highJob?.Proto ?? new JobPrototype(),
+                    loadout, highJob ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), ref _dummyLoadouts,
                     _entityManager, _prototypeManager, _configurationManager, _characterRequirementsSystem, _requirements);
                 UpdateSelector(selector, usable);
