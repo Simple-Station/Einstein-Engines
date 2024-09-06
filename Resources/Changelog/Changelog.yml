@@ -5889,3 +5889,12 @@ Entries:
   id: 6317
   time: '2024-09-05T00:19:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/848
+- author: ShatteredSwords
+  changes:
+    - type: Tweak
+      message: The cost of many traits have been updated
+    - type: Tweak
+      message: A few traits have been tweaked
+  id: 6318
+  time: '2024-09-06T20:08:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/842
