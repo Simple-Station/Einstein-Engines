@@ -11,6 +11,7 @@
   cost: 7500
   recipeUnlocks:
   - MiningDrill
+  - MineralScannerEmpty
   - BorgModuleMining
   # - BorgModuleGrapplingGun
   - MechEquipmentDrill # Goobstation
@@ -183,6 +184,7 @@
   recipeUnlocks:
     - OreBagOfHolding
     - MiningDrillDiamond
+    - AdvancedMineralScannerEmpty
     - MechEquipmentDrillDiamond
 
 - type: technology

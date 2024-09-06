@@ -220,6 +220,7 @@
     items:
     - MiningDrill
     # - Shovel # Goobstation
+    - MineralScannerUnpowered
     - OreBag
     - Crowbar
     - RadioHandheld
