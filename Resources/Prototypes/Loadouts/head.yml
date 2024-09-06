@@ -48,7 +48,6 @@
        inverted: true
        departments:
          - Security
-  requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead
 
