@@ -5912,3 +5912,30 @@ Entries:
   id: 6319
   time: '2024-09-06T20:17:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/801
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: The loadout/trait editors' performance has been improved by 100~1000x
+    - type: Tweak
+      message: The character editor's tabs look, feel, and function much better
+    - type: Fix
+      message: Unusable loadouts/traits have an orange color when selected
+    - type: Tweak
+      message: Loadout previews are now inside the button
+    - type: Add
+      message: >-
+        Added a button to remove any unusable loadouts (or traits) you have
+        selected
+    - type: Add
+      message: >-
+        Loadouts and traits can have subcategories, though only Command loadouts
+        use them at the moment
+    - type: Fix
+      message: Fixed empty loadout categories not hiding
+    - type: Fix
+      message: Fixed spacing on some loadout requirements' reason text
+    - type: Fix
+      message: Fixed traits not updating after saving
+  id: 6320
+  time: '2024-09-06T21:59:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/736
