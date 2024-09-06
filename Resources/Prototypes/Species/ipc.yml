@@ -57,35 +57,35 @@
       points: 1
       required: false
     RightLeg:
-      points: 2
+      points: 1
       required: false
       defaultMarkings: [ MobIPCRLegDefault ]
     RightFoot:
-      points: 2
+      points: 1
       required: false
       defaultMarkings: [ MobIPCRFootDefault ]
     LeftLeg:
-      points: 2
+      points: 1
       required: false
       defaultMarkings: [ MobIPCLLegDefault ]
     LeftFoot:
-      points: 2
+      points: 1
       required: false
       defaultMarkings: [ MobIPCLFootDefault ]
     RightArm:
-      points: 2
+      points: 1
       required: false
       defaultMarkings: [ MobIPCRArmDefault ]
     RightHand:
-      points: 2
+      points: 1
       required: false
       defaultMarkings: [ MobIPCRHandDefault ]
     LeftArm:
-      points: 2
+      points: 1
       required: false
       defaultMarkings: [ MobIPCLArmDefault ]
     LeftHand:
-      points: 2
+      points: 1
       required: false
       defaultMarkings: [ MobIPCLHandDefault ]
 
