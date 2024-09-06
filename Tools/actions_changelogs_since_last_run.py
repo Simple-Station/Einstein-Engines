@@ -32,7 +32,7 @@ TYPES_TO_EMOJI = {
 ChangelogEntry = dict[str, Any]
 
 def main():
-    if not CHANGELOG_DISCORD_WEBHOOK:
+    if not CHANGELOG_WEBHOOK:
         return
 
     session = requests.Session()
@@ -120,12 +120,12 @@ def get_discord_body(content: str):
 def send_discord(content: str):
     body = get_discord_body(content)
 
-    response = requests.post(CHANGELOG_DISCORD_WEBHOOK, json=body)
+    response = requests.post(CHANGELOG_WEBHOOK, json=body)
     response.raise_for_status()
 
 
 def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
-    if not CHANGELOG_DISCORD_WEBHOOK:
+    if not CHANGELOG_WEBHOOK:
         print(f"No discord webhook URL found, skipping discord send")
         return
 
