@@ -219,7 +219,7 @@
     defaultText: station-beacon-courtroom
 
 - type: entity
-  parent: DefaultStationBeaconService #Delta V - Lawer is Service until Justice Dept is a thing
+  parent: DefaultStationBeaconService
   id: DefaultStationBeaconLawOffice
   suffix: Law Office
   components:
