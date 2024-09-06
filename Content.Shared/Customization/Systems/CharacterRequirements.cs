@@ -8,7 +8,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Customization.Systems;
 
-
+// ReSharper disable InvalidXmlDocComment
 [ImplicitDataDefinitionForInheritors, MeansImplicitUse]
 [Serializable, NetSerializable]
 public abstract partial class CharacterRequirement
@@ -31,9 +31,11 @@ public abstract partial class CharacterRequirement
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
+        IPrototype prototype,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
-        out FormattedMessage? reason
+        out FormattedMessage? reason,
+        int depth = 0
     );
 }

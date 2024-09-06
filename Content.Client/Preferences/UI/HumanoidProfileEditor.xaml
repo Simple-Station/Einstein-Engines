@@ -3,6 +3,7 @@
     xmlns:prefUi="clr-namespace:Content.Client.Preferences.UI"
     xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
     HorizontalExpand="True">
     <!-- Left side -->
     <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -45,12 +46,12 @@
             </BoxContainer>
         </BoxContainer>
         <Control MinHeight="10" />
-        <!-- tabContainer -->
-        <TabContainer Name="CTabContainer" VerticalExpand="True">
-            <BoxContainer Orientation="Vertical">
-                <ScrollContainer VerticalExpand="True">
-                    <!-- appearanceList -->
-                    <BoxContainer Orientation="Vertical">
+        <!-- TabContainer -->
+        <ui:NeoTabContainer Name="CTabContainer" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
+            <BoxContainer Name="CAppearance" HorizontalExpand="True" Orientation="Vertical">
+                <!-- appearanceList -->
+                <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
+                    <BoxContainer HorizontalExpand="True" Orientation="Vertical">
                         <BoxContainer Margin="10" Orientation="Vertical" HorizontalExpand="True">
                             <!-- Species -->
                             <BoxContainer HorizontalExpand="True">
@@ -108,7 +109,7 @@
                                 <Control HorizontalExpand="True"/>
                                 <OptionButton Name="CSpawnPriorityButton" HorizontalAlignment="Right" />
                             </BoxContainer>
-							<!-- Height -->
+						    <!-- Height -->
                             <BoxContainer HorizontalExpand="True">
                                 <Label Name="CHeightLabel" MinWidth="110" />
                                 <Slider Name="CHeightSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="5 0 5 0" />
@@ -144,52 +145,76 @@
                     </BoxContainer>
                 </ScrollContainer>
             </BoxContainer>
-            <BoxContainer Orientation="Vertical">
+            <BoxContainer Name="CJobs" HorizontalExpand="True">
                 <!-- Jobs -->
-                <OptionButton Name="CPreferenceUnavailableButton" />
-                <ScrollContainer VerticalExpand="True">
-                    <BoxContainer Name="CJobList" Orientation="Vertical" />
+                <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
+                    <BoxContainer HorizontalExpand="True" Orientation="Vertical">
+                        <OptionButton Name="CPreferenceUnavailableButton" StyleClasses="OpenBoth" />
+                        <BoxContainer Name="CJobList" Orientation="Vertical" />
+                    </BoxContainer>
                 </ScrollContainer>
-            </BoxContainer>
-            <BoxContainer Orientation="Vertical" Margin="10">
+                </BoxContainer>
+            <BoxContainer Name="CAntags" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Antags -->
-                <ScrollContainer VerticalExpand="True">
+                <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <BoxContainer Name="CAntagList" Orientation="Vertical" />
                 </ScrollContainer>
             </BoxContainer>
-            <BoxContainer Name="CTraitsTab" Orientation="Vertical" Margin="10">
+            <BoxContainer Name="CTraitsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Traits -->
                 <Label Name="TraitPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
                 <ProgressBar Name="TraitPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
-                <Button Name="TraitsShowUnusableButton"
+                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
+                    <Button
+                        Name="TraitsShowUnusableButton"
                         Text="{Loc 'humanoid-profile-editor-traits-show-unusable-button'}"
                         ToolTip="{Loc 'humanoid-profile-editor-traits-show-unusable-button-tooltip'}"
                         ToggleMode="True"
-                        Margin="0 0 0 5" />
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True"
+                        StyleClasses="OpenRight" />
+                    <Button
+                        Name="TraitsRemoveUnusableButton"
+                        Text="You shouldn't see this"
+                        ToolTip="{Loc 'humanoid-profile-editor-traits-remove-unusable-button-tooltip'}"
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True"
+                        StyleClasses="OpenLeft" />
+                </BoxContainer>
 
-                <TabContainer Name="CTraitsTabs" VerticalExpand="True" />
+                <ui:NeoTabContainer Name="CTraitsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
-            <BoxContainer Name="CLoadoutsTab" Orientation="Vertical" Margin="10">
+            <BoxContainer Name="CLoadoutsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Loadouts -->
                 <Label Name="LoadoutPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
                 <ProgressBar Name="LoadoutPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
-                <Button Name="LoadoutsShowUnusableButton"
+                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
+                    <Button
+                        Name="LoadoutsShowUnusableButton"
                         Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}"
                         ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}"
                         ToggleMode="True"
-                        Margin="0 0 0 5" />
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True"
+                        StyleClasses="OpenRight" />
+                    <Button
+                        Name="LoadoutsRemoveUnusableButton"
+                        Text="You shouldn't see this"
+                        ToolTip="{Loc 'humanoid-profile-editor-loadouts-remove-unusable-button-tooltip'}"
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True"
+                        StyleClasses="OpenLeft" />
+                </BoxContainer>
 
-                <TabContainer Name="CLoadoutsTabs" VerticalExpand="True" />
+                <ui:NeoTabContainer Name="CLoadoutsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
-            <BoxContainer Name="CMarkingsTab" Orientation="Vertical" Margin="10">
+            <BoxContainer Name="CMarkingsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Markings -->
-                <ScrollContainer VerticalExpand="True">
-                    <humanoid:MarkingPicker Name="CMarkings" IgnoreCategories="Hair,FacialHair" />
-                </ScrollContainer>
+                <humanoid:MarkingPicker Name="CMarkings" IgnoreCategories="Hair,FacialHair" />
             </BoxContainer>
-        </TabContainer>
+        </ui:NeoTabContainer>
     </BoxContainer>
     <!-- Right side -->
     <BoxContainer Orientation="Vertical" VerticalExpand="True" VerticalAlignment="Center">

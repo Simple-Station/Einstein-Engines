@@ -7,7 +7,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Shared.Clothing.Loadouts.Prototypes;
 
 
-[Prototype("loadout")]
+[Prototype]
 public sealed class LoadoutPrototype : IPrototype
 {
     /// <summary>
@@ -16,22 +16,12 @@ public sealed class LoadoutPrototype : IPrototype
     [IdDataField]
     public string ID { get; } = default!;
 
-    /// <summary>
-    ///     Which tab category to put this under
-    /// </summary>
     [DataField, ValidatePrototypeId<LoadoutCategoryPrototype>]
-    public string Category = "Uncategorized";
+    public ProtoId<LoadoutCategoryPrototype> Category = "Uncategorized";
 
-    /// <summary>
-    ///     The item to give
-    /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdListSerializer<EntityPrototype>), required: true)]
-    public List<string> Items = new();
+    [DataField(required: true)]
+    public List<ProtoId<EntityPrototype>> Items = new();
 
-
-    /// <summary>
-    ///     The point cost of this loadout
-    /// </summary>
     [DataField]
     public int Cost = 1;
 
@@ -40,7 +30,6 @@ public sealed class LoadoutPrototype : IPrototype
     /// </summary>
     [DataField]
     public bool Exclusive;
-
 
     [DataField]
     public List<CharacterRequirement> Requirements = new();
