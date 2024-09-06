@@ -57,17 +57,17 @@ public sealed class ShortConstructionMenuBUI : BoundUserInterface
         {
             HorizontalExpand = true,
             VerticalExpand = true,
-            BackButtonStyleClass="RadialMenuBackButton",
-            CloseButtonStyleClass="RadialMenuCloseButton"
-        };
-
-        var mainContainer = new RadialContainer
-        {
-            Radius = 100
+            BackButtonStyleClass = "RadialMenuBackButton",
+            CloseButtonStyleClass = "RadialMenuCloseButton"
         };
 
         if (!_entManager.TryGetComponent<ShortConstructionComponent>(Owner, out var crafting))
             return menu;
+
+        var mainContainer = new RadialContainer
+        {
+            Radius = (float) (36f / Math.Sin(Math.PI / crafting.Prototypes.Count))
+        };
 
         foreach (var protoId in crafting.Prototypes)
         {
