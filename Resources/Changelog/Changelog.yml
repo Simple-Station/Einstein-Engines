@@ -5898,3 +5898,17 @@ Entries:
   id: 6318
   time: '2024-09-06T20:08:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/842
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        A new Roboticist job has been added. The job does not offer any new
+        accesses, but lets you distinguish yourself from scientists. Existing
+        maps will need to be updated to support the new job.
+    - type: Add
+      message: >-
+        Added new PDA, ID, and bag variants for roboticists. The mystagogue will
+        now also find a roboticist PDA in their office.
+  id: 6319
+  time: '2024-09-06T20:17:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/801
