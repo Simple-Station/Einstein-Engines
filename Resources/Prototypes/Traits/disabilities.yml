@@ -65,7 +65,6 @@
 - type: trait
   id: Uncloneable
   category: Physical
-  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
