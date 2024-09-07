@@ -26,7 +26,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCultArmor
   - type: CultItem

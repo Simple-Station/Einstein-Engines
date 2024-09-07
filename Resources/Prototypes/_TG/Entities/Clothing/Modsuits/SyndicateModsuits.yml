@@ -99,7 +99,8 @@
           Piercing: 0.80
           Heat: 0.60
     - type: TemperatureProtection
-      coefficient: 0.01
+      heatingCoefficient: 0.01
+      coolingCoefficient: 0.01
     - type: ClothingModifyStunTime
       modifier: 0.5
     - type: Reflect
@@ -242,7 +243,8 @@
           Heat: 0.60
           Radiation: 0.40
     - type: TemperatureProtection
-      coefficient: 0.01
+      heatingCoefficient: 0.01
+      coolingCoefficient: 0.01
     - type: ClothingModifyStunTime
       modifier: 0.5
     - type: Reflect

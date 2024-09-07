@@ -12,7 +12,8 @@
   - type: Clothing
     sprite: _EE/Clothing/Neck/Mantles/magmantle.rsi
   - type: TemperatureProtection
-    coefficient: 0.8 # equivalent to winter boots, scarves
+    heatingCoefficient: 1.025
+    coolingCoefficient: 0.8
   - type: ToggleClothing
     action: ActionToggleMagmantle
   - type: Magboots
