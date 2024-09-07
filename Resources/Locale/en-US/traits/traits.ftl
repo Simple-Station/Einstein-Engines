@@ -216,3 +216,9 @@ trait-description-NaturalTelepath =
     whether or not you possess any notable psychic powers. This offers all of the same benefits and
     drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
     still gain powers as normal for a Latent Psychic.
+
+trait-name-AnomalousPositronics = Anomalous Positronics
+trait-description-AnomalousPositronics =
+    Whether by intentional design from the manufacturer, black market modifications, or accidental omission,
+    your positronic brain lacks its standard psionic insulation. As a being that can be argued to have a soul,
+    this by extension means that it is possible for you to be influenced by the Noosphere.

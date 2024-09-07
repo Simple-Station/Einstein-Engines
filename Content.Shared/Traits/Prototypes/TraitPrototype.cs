@@ -39,6 +39,13 @@ public sealed partial class TraitPrototype : IPrototype
     public ComponentRegistry? Components { get; private set; } = default!;
 
     /// <summary>
+    ///     The components that will be removed from a player when they pick this trait.
+    ///     Primarily used to remove species innate traits.
+    /// </summary>
+    [DataField]
+    public List<string>? ComponentRemovals { get; private set; } = default!;
+
+    /// <summary>
     ///     The list of each Action that this trait adds in the form of ActionId and ActionEntity
     /// </summary>
     [DataField]

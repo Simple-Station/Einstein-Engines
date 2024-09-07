@@ -24,6 +24,7 @@ public sealed class TraitSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilities = default!;
+    [Dependency] private readonly IComponentFactory _componentFactory = default!;
 
     public override void Initialize()
     {
@@ -61,6 +62,7 @@ public sealed class TraitSystem : EntitySystem
     public void AddTrait(EntityUid uid, TraitPrototype traitPrototype)
     {
         AddTraitComponents(uid, traitPrototype);
+        RemoveTraitComponents(uid, traitPrototype);
         AddTraitActions(uid, traitPrototype);
         AddTraitPsionics(uid, traitPrototype);
     }
@@ -81,6 +83,24 @@ public sealed class TraitSystem : EntitySystem
             var comp = (Component) _serialization.CreateCopy(entry.Component, notNullableOverride: true);
             comp.Owner = uid;
             EntityManager.AddComponent(uid, comp);
+        }
+    }
+
+    /// <summary>
+    ///     Removes all components defined by a Trait. It's not possible to Validate component removals,
+    ///     so if an incorrect string is given, it's basically a skill issue.
+    /// </summary>
+    public void RemoveTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.ComponentRemovals is null)
+            return;
+
+        foreach (var entry in traitPrototype.ComponentRemovals)
+        {
+            if (!_componentFactory.TryGetRegistration(entry, out var comp))
+                continue;
+
+            EntityManager.RemoveComponent(uid, comp.Type);
         }
     }
 
