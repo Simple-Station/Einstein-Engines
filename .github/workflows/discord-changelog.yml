@@ -20,4 +20,5 @@ jobs:
       env:
         CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
         CHANGELOG_WEBHOOK: ${{ secrets.CHANGELOG_WEBHOOK }}
+        GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
     continue-on-error: true
