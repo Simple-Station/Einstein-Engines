@@ -96,15 +96,3 @@
     sprite: Clothing/Neck/mantles/unathimantle.rsi
   - type: Clothing
     sprite: Clothing/Neck/mantles/unathimantle.rsi
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckMantleRyuzo
-  name: ornate mantle
-  description: In days of old, giving one's life was considered the ultimate sacrifice. The owner of this mantle, however, has dedicated their life twice over.
-  suffix: ADMIN ONLY, DO NOT MAP
-  components:
-  - type: Sprite
-    sprite: Clothing/Neck/mantles/ryuzo.rsi
-  - type: Clothing
-    sprite: Clothing/Neck/mantles/ryuzo.rsi

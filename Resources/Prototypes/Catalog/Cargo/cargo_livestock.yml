@@ -237,13 +237,3 @@
   cost: 5000
   category: cargoproduct-category-name-livestock
   group: market
-
-- type: cargoProduct
-  id: LivestockSecDog
-  icon:
-    sprite: Mobs/Pets/secdog.rsi
-    state: secdog
-  product: CrateNPCSecDog
-  cost: 3500
-  category: Livestock
-  group: market
