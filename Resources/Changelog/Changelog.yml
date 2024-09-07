@@ -5962,3 +5962,10 @@ Entries:
   id: 6322
   time: '2024-09-07T00:55:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/874
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Eyewear have had their loadout point costs significantly reduced.
+  id: 6323
+  time: '2024-09-07T01:04:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/879
