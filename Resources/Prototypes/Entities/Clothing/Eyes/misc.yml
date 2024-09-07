@@ -26,3 +26,14 @@
     graph: Blindfold
     node: blindfold
   - type: FlashImmunity
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesBlindfoldFake
+  name: blindfold
+  description: The bind leading the blind.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold.rsi

@@ -1,13 +1,9 @@
 - type: loadout
   id: LoadoutEngineeringUniformHazard
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -16,7 +12,7 @@
 
 - type: loadout
   id: LoadoutEngineeringOuterHazard
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -28,7 +24,7 @@
 
 - type: loadout
   id: LoadoutEngineeringUniformJumpskirtSenior
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -49,14 +45,10 @@
 
 - type: loadout
   id: LoadoutEngineeringUniformJumpsuitSenior
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -74,7 +66,7 @@
 
 - type: loadout
   id: LoadoutEngineeringChickenSuit # :)
-  category: Jobs
+  category: JobsAUncategorized
   cost: 3
   exclusive: true
   requirements:
@@ -87,7 +79,7 @@
 
 - type: loadout
   id: LoadoutEngineeringEyesMeson
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -100,7 +92,7 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadBeret
-  category: Jobs
+  category: JobsAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -114,7 +106,7 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadHardhatBlue
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -127,7 +119,7 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadHardhatOrange
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -140,7 +132,7 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadHardhatYellow
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -153,7 +145,7 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadHardhatWhite
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -166,7 +158,7 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadHardhatRed
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:

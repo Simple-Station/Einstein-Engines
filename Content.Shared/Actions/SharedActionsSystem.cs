@@ -453,6 +453,9 @@ public abstract class SharedActionsSystem : EntitySystem
         if (action.Whitelist != null && !action.Whitelist.IsValid(target, EntityManager))
             return false;
 
+        if (action.Blacklist != null && action.Blacklist.IsValid(target, EntityManager))
+            return false;
+
         if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, target))
             return false;
 

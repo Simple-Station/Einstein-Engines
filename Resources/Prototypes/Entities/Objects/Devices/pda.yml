@@ -418,6 +418,12 @@
     borderColor: "#858585"
   - type: Icon
     state: pda-library
+  - type: CartridgeLoader
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - GlimmerMonitorCartridge
 
 - type: entity
   parent: BasePDA
@@ -661,6 +667,21 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - GlimmerMonitorCartridge
+
+- type: entity
+  parent: SciencePDA
+  name: robotics PDA
+  id: RoboticsPDA
+  description: It has its back panel covered in duct tape.
+  components:
+  - type: Pda
+    id: RoboticsIDCard
+    state: pda-robotics
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#952004"
+  - type: Icon
+    state: pda-robotics
 
 - type: entity
   parent: BasePDA

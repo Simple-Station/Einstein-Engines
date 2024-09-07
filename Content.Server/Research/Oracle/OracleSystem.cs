@@ -1,11 +1,11 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Botany;
+using Content.Server.Chat;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
-using Content.Server.Psionics;
 using Content.Server.Research.Systems;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Chat;
@@ -14,6 +14,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Psionics.Glimmer;
+using Content.Shared.Psionics.Passives;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -30,6 +31,7 @@ namespace Content.Server.Research.Oracle;
 public sealed class OracleSystem : EntitySystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly TelepathicChatSystem _tChat = default!;
     [Dependency] private readonly IChatManager _chatMan = default!;
     [Dependency] private readonly GlimmerSystem _glimmer = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
@@ -74,16 +76,16 @@ public sealed class OracleSystem : EntitySystem
 
     private void OnInteractHand(Entity<OracleComponent> oracle, ref InteractHandEvent args)
     {
-        if (!HasComp<PotentialPsionicComponent>(args.User) || HasComp<PsionicInsulationComponent>(args.User)
+        if (!HasComp<PsionicComponent>(args.User) || HasComp<PsionicInsulationComponent>(args.User)
             || !TryComp<ActorComponent>(args.User, out var actor))
             return;
 
         SendTelepathicInfo(oracle, actor.PlayerSession.Channel,
-            Loc.GetString("oracle-current-item", ("item", oracle.Comp.DesiredPrototype.Name)));
+            Loc.GetString("oracle-current-item", ("item", oracle.Comp.DesiredPrototype.Name)), HasComp<PsychognomistComponent>(args.User));
 
         if (oracle.Comp.LastDesiredPrototype != null)
             SendTelepathicInfo(oracle, actor.PlayerSession.Channel,
-                Loc.GetString("oracle-previous-item", ("item", oracle.Comp.LastDesiredPrototype.Name)));
+                Loc.GetString("oracle-previous-item", ("item", oracle.Comp.LastDesiredPrototype.Name)), HasComp<PsychognomistComponent>(args.User));
     }
 
     private void OnInteractUsing(Entity<OracleComponent> oracle, ref InteractUsingEvent args)
@@ -124,14 +126,25 @@ public sealed class OracleSystem : EntitySystem
             NextItem(oracle);
     }
 
-    private void SendTelepathicInfo(Entity<OracleComponent> oracle, INetChannel client, string message)
+    private void SendTelepathicInfo(Entity<OracleComponent> oracle, INetChannel client, string message, bool psychognomist = false)
     {
-        var messageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message",
-            ("telepathicChannelName", Loc.GetString("chat-manager-telepathic-channel-name")),
-            ("message", message));
+        if (!psychognomist)
+        {
+            var messageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message",
+                ("telepathicChannelName", Loc.GetString("chat-manager-telepathic-channel-name")),
+                ("message", message));
 
-        _chatMan.ChatMessageToOne(ChatChannel.Telepathic,
-            message, messageWrap, oracle, false, client, Color.PaleVioletRed);
+            _chatMan.ChatMessageToOne(ChatChannel.Telepathic,
+                message, messageWrap, oracle, false, client, Color.PaleVioletRed);
+        }
+        else
+        {
+            var descriptor = _tChat.SourceToDescriptor(oracle);
+            var psychogMessageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message-psychognomy",
+                ("source", descriptor.ToUpper()), ("message", message));
+
+            _chatMan.ChatMessageToOne(ChatChannel.Telepathic, message, psychogMessageWrap, oracle, false, client, Color.PaleVioletRed);
+        }
     }
 
     private bool IsCorrectItem(EntityPrototype given, EntityPrototype target)
