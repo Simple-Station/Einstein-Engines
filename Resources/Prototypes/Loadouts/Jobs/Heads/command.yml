@@ -1,6 +1,6 @@
 - type: loadout
   id: LoadoutCommandGlovesInspection
-  category: Jobs
+  category: JobsCommandAUncategorized
   cost: 1
   exclusive: true
   requirements:

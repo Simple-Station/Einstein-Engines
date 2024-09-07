@@ -266,9 +266,10 @@ namespace Content.Client.LateJoin
                                 prototype.Requirements ?? new(),
                                 prototype,
                                 (HumanoidCharacterProfile) (_prefs.Preferences?.SelectedCharacter
-                                    ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                                                            ?? HumanoidCharacterProfile.DefaultWithSpecies()),
                                 _jobRequirements.GetRawPlayTimeTrackers(),
                                 _jobRequirements.IsWhitelisted(),
+                                prototype,
                                 _entityManager,
                                 _prototypeManager,
                                 _configManager,
