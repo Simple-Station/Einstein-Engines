@@ -94,3 +94,21 @@
     nameSegments:
     - names_ninja_title
     - names_ninja
+
+- type: entity
+  noSpawn: true
+  parent: MobHumanSyndicateAgent
+  id: MobHumanSyndicateListener
+  name: Syndicate Listener
+  components:
+    - type: Loadout
+      prototypes: [SyndicateListenerGear]
+    - type: NpcFactionMember
+      factions:
+      - Syndicate
+    - type: AutoTraitor
+      giveUplink: false
+      giveObjectives: false
+    - type: AutoImplant
+      implants:
+      - DeathAcidifierImplant

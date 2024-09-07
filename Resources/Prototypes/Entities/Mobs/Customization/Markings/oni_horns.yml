@@ -523,3 +523,23 @@
     state: double_curved_outwards_3tone_2
   - sprite: Mobs/Customization/Oni/oni_horns.rsi
     state: double_curved_outwards_3tone_3
+
+- type: marking
+  id: OniHornShaved
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: false
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: Mobs/Customization/Oni/oni_horns.rsi
+    state: shaved
+
+- type: marking
+  id: OniHornBull
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: false
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: Mobs/Customization/Oni/oni_horns.rsi
+    state: bull

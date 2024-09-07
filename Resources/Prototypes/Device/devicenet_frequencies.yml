@@ -101,3 +101,9 @@
   id: BasicDevice
   name: device-frequency-prototype-name-basic-device
   frequency: 1280
+
+- type: deviceFrequency
+  id: SurveillanceCameraJustice
+  name: device-frequency-prototype-name-surveillance-camera-justice
+  frequency: 1420
+

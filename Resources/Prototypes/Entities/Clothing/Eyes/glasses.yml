@@ -267,3 +267,18 @@
     sprite: Clothing/Eyes/Glasses/meson.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/meson.rsi
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesChemist
+  name: safety glasses
+  description: Glasses made for chemists and other workers dealing with caustic reagents.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/safetyglasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/safetyglasses.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85

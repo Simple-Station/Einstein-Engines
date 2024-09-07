@@ -17,4 +17,8 @@
   - Salvage
   - Cargo
   - Mail # Nyanotrasen - MailCarrier, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail-carrier.yml
-  - Orders # Delta V - Orders, see Resources/Prototypes/Access/cargo.yml
+  - Orders
+
+- type: accessLevel
+  id: Orders
+  name: id-card-access-level-orders

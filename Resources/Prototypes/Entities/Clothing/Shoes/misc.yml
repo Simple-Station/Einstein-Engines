@@ -133,3 +133,14 @@
     event: !type:ToggleClothingSpeedEvent
     icon: { sprite: Clothing/Shoes/Boots/speedboots.rsi, state: icon }
     iconOn: { sprite: Clothing/Shoes/Boots/speedboots.rsi, state: icon-on }
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesMiscWhite
+  name: white leather shoes
+  description: Impeccably shined white leather shoes. Don't tread on these tootsies.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/whiteleather.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/whiteleather.rsi

@@ -48,3 +48,56 @@
   - ChiefJustice #  - Add Chief Justice access
   - Prosecutor #  - Add Prosecutor access
   - Corpsman #  - Add Corpsman access
+
+- type: accessLevel
+  id: SpareSafe
+  name: id-card-access-level-unused
+
+- type: accessGroup
+  id: AllAccessBorg
+  tags:
+#    - EmergencyShuttleRepealAll
+#    - Captain
+#    - HeadOfPersonnel
+#    - ChiefEngineer
+#    - ChiefMedicalOfficer
+#    - HeadOfSecurity
+#    - ResearchDirector
+    - Command
+    - Security
+    - Detective
+    - Corpsman
+#    - Armory
+    - Lawyer
+    - Engineering
+    - Medical
+#    - Quartermaster
+    - Salvage
+    - Cargo
+    - Research
+    - Service
+    - Maintenance
+    - External
+    - Janitor
+    - Theatre
+    - Bar
+    - Chemistry
+    - Kitchen
+    - Chapel
+    - Hydroponics
+    - Atmospherics
+    - Mail
+#   - Orders
+    - Mantis
+    - Paramedic
+    - Psychologist
+    - Boxer
+    - Clown
+    - Library
+    - Mime
+    - Musician
+    - Reporter
+    - Zookeeper
+    - Justice
+    - Prosecutor
+

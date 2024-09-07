@@ -245,3 +245,32 @@
     - id: GasAnalyzer
     - id: trayScanner
   - type: Unremoveable
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelMedical
+  id: ClothingBackpackSatchelParamedicFilledDV
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyRollerBedSpawnFolded
+      - id: BodyBagFolded
+      - id: Portafib
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelMedical
+  id: ClothingBackpackSatchelPsychologistFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: RubberStampPsychologist
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelLawyerFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: RubberStampLawyer

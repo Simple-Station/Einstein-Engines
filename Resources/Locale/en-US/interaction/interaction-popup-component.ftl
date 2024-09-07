@@ -89,3 +89,5 @@ hugging-success-generic-target = { CAPITALIZE(THE($user)) } hugs you.
 petting-success-tesla = You pet {THE($target)}, violating the laws of nature and physics.
 
 petting-failure-tesla = You reach out towards {THE($target)}, but it zaps your hand away.
+petting-success-nukie-mouse = You pet {THE($target)} on {POSS-ADJ($target)} little blood-red syndicate mouse head.
+petting-failure-nukie-mouse = You reach out to pet {THE($target)}, but {SUBJECT($target)} attempts to slice your finger with a mouse-sized e-dagger and only your quick reflexes save you from an almost fatal injury.

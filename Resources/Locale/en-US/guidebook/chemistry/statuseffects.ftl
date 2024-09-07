@@ -11,3 +11,5 @@ reagent-effect-status-effect-PressureImmunity = pressure immunity
 reagent-effect-status-effect-Pacified = combat pacification
 reagent-effect-status-effect-RatvarianLanguage = ratvarian language patterns
 reagent-effect-status-effect-StaminaModifier = modified stamina
+reagent-effect-status-effect-PsionicallyInsulated = psionic insulation
+reagent-effect-status-effect-PsionicsDisabled = inability to use psionic powers

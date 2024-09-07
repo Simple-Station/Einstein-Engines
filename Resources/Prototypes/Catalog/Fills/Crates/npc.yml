@@ -275,3 +275,12 @@
     contents:
       - id: MobMothroach
         amount: 4
+
+- type: entity
+  id: CrateNPCSecDog
+  parent: CrateLivestock
+  components:
+  - type: StorageFill
+    contents:
+      - id: MobSecDog
+        amount: 1

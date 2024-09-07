@@ -19,3 +19,7 @@ chat-radio-freelance = Freelance
 # not headset but whatever
 chat-radio-handheld = Handheld
 chat-radio-binary = Binary
+
+chat-radio-justice = Justice
+chat-radio-prison = Prison
+
