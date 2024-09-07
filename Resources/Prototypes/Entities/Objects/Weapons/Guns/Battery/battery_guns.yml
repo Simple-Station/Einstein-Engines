@@ -981,15 +981,15 @@
     uniformSpread: true
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserSpread
-    fireCost: 150
+    fireCost: 100
   - type: BatteryWeaponFireModes
     fireModes:
     - proto: BulletLaserSpread
-      fireCost: 150
-    - proto: BulletLaserSpreadSlug
-      fireCost: 300
+      fireCost: 100
+    - proto: BulletLaserSpreadNarrow
+      fireCost: 100
     - proto: BulletDisablerSmgSpread
-      fireCost: 120
+      fireCost: 100
   - type: Item
     size: Large
     shape:
@@ -1001,11 +1001,5 @@
     - HighRiskItem
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Battery
-    maxCharge: 1210
-    startingCharge: 1210
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 48
-    autoRechargePause: true
-    autoRechargePauseTime: 5
-
+    maxCharge: 800
+    startingCharge: 800

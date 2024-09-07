@@ -1298,7 +1298,7 @@
 - type: entity
   name: laser slug
   id: BulletLaserSpreadSlug
-  parent: BulletLaserHeavy
+  parent: BulletLaser
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
@@ -1307,26 +1307,14 @@
     spread: 0
 
 - type: entity
-  name : heavy laser bolt
-  id: BulletLaserHeavy
-  parent: BulletLaser
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Heat: 15
-        Blunt: 5
-
-- type: entity
   name: narrow laser barrage
-  id: BulletLaserHeavySpread
-  parent: BulletLaser
+  id: BulletLaserSpreadNarrow
   categories: [ HideSpawnMenu ]
+  parent: BulletLaser
   components:
   - type: ProjectileSpread
-    proto: BulletLaserHeavy
-    count: 4 #60 heat damage if you hit all your shots, but narrower spread
+    proto: BulletLaser
+    count: 4 #52 heat damage if you hit all your shots, but narrower spread
     spread: 10
 
 - type: entity
