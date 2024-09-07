@@ -25,6 +25,8 @@
   - type: GhostHearing
   - type: Hands
   - type: Puller
+    specificForce: 1000
+    maxPushRange: 20
   - type: CombatMode
   - type: Physics
     ignorePaused: true
