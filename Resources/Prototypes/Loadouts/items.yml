@@ -2,206 +2,289 @@
 - type: loadout
   id: LoadoutItemCig
   category: Items
-  cost: 1
+  cost: 0
   items:
     - Cigarette
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
 
 - type: loadout
   id: LoadoutItemCigsGreen
   category: Items
-  cost: 2
+  cost: 0
   items:
     - CigPackGreen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
 
 - type: loadout
   id: LoadoutItemCigsRed
   category: Items
-  cost: 2
+  cost: 0
   items:
     - CigPackRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
 
 - type: loadout
   id: LoadoutItemCigsBlue
   category: Items
-  cost: 2
+  cost: 0
   items:
     - CigPackBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
 
 - type: loadout
   id: LoadoutItemCigsBlack
   category: Items
-  cost: 2
+  cost: 0
   items:
     - CigPackBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
 
 - type: loadout
   id: LoadoutItemCigsMixed
   category: Items
-  cost: 3
+  cost: 1
   items:
     - CigPackMixed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
 
 - type: loadout
   id: LoadoutItemCigsSyndicate
   category: Items
-  cost: 4
+  cost: 2
   items:
     - CigPackSyndicate
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
 
 - type: loadout
   id: LoadoutItemLighter
   category: Items
-  cost: 2
+  cost: 1
   items:
     - Lighter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLighters
 
 - type: loadout
   id: LoadoutItemLighterCheap
   category: Items
-  cost: 1
+  cost: 0
   items:
     - CheapLighter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLighters
 
 - type: loadout
   id: LoadoutItemLighterFlippo
   category: Items
-  cost: 3
+  cost: 2
   items:
     - FlippoLighter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLighters
 
 - type: loadout
   id: LoadoutItemSmokingPipeFilledTobacco
   category: Items
-  cost: 2
+  cost: 0
   items:
     - SmokingPipeFilledTobacco
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
 
 - type: loadout
   id: LoadoutItemBlunt
   category: Items
-  cost: 2
+  cost: 0
   items:
     - Blunt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
 
 - type: loadout
   id: LoadoutItemJoint
   category: Items
-  cost: 2
+  cost: 0
   items:
     - Joint
-
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
 
 # Instruments
 - type: loadout
   id: LoadoutItemMicrophoneInstrument
   category: Items
-  cost: 4
+  cost: 2
   items:
     - MicrophoneInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemKalimbaInstrument
   category: Items
-  cost: 4
+  cost: 2
   items:
     - KalimbaInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemTrumpetInstrument
   category: Items
-  cost: 6
+  cost: 4
   items:
     - TrumpetInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemElectricGuitar
   category: Items
-  cost: 7
+  cost: 5
   items:
     - ElectricGuitarInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemBassGuitar
   category: Items
-  cost: 7
+  cost: 5
   items:
     - BassGuitarInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemRockGuitar
   category: Items
-  cost: 7
+  cost: 5
   items:
     - RockGuitarInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemAcousticGuitar
   category: Items
-  cost: 7
+  cost: 5
   items:
     - AcousticGuitarInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemViolin
   category: Items
-  cost: 6
+  cost: 4
   items:
     - ViolinInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemHarmonica
   category: Items
-  cost: 3
+  cost: 1
   items:
     - HarmonicaInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemAccordion
   category: Items
-  cost: 6
+  cost: 4
   items:
     - AccordionInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemFlute
   category: Items
-  cost: 4
+  cost: 2
   items:
     - FluteInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 - type: loadout
   id: LoadoutItemOcarina
   category: Items
-  cost: 3
+  cost: 1
   items:
     - OcarinaInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
 
 # Survival Kit
 - type: loadout
   id: LoadoutItemsEmergencyOxygenTank
   category: Items
-  cost: 1
+  cost: 0
   items:
     - EmergencyOxygenTankFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
 
 - type: loadout
   id: LoadoutItemsExtendedEmergencyOxygenTank
   category: Items
-  cost: 2
+  cost: 1
   items:
     - ExtendedEmergencyOxygenTankFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
 
 - type: loadout
   id: LoadoutItemsDoubleEmergencyOxygenTank
   category: Items
-  cost: 4
+  cost: 2
   items:
     - DoubleEmergencyOxygenTankFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
 
 - type: loadout
   id: LoadoutItemClothingMaskBreath
   category: Items
-  cost: 1
+  cost: 0
   items:
     - ClothingMaskBreath
 
@@ -251,19 +334,25 @@
 - type: loadout
   id: LoadoutItemPapers
   category: Items
-  cost: 1
+  cost: 0
   items:
     - Paper
     - Paper
     - Paper
     - Paper
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWritables
 
 - type: loadout
   id: LoadoutItemBoxFolderGrey
   category: Items
-  cost: 1
+  cost: 0
   items:
     - BoxFolderGrey
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWritables
 
 - type: loadout
   id: LoadoutBookRandom
@@ -271,13 +360,19 @@
   cost: 1
   items:
     - BookRandom
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWritables
 
 - type: loadout
   id: LoadoutPen
   category: Items
-  cost: 1
+  cost: 0
   items:
     - Pen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWritables
 
 # Food and drink
 - type: loadout
@@ -305,7 +400,7 @@
 - type: loadout
   id: LoadoutItemBoxSurvival
   category: Items
-  cost: 2 #All survival kits are intentionally cheaper than their contents to help encourage people to buy them. The contents can be bought separately to save space, or as spares
+  cost: 0
   items:
     - BoxSurvival
   requirements:
@@ -319,22 +414,26 @@
        inverted: true
        jobs:
          - Clown
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutItemBoxSurvivalEngineering
   category: Items
-  cost: 2
+  cost: 0
   items:
     - BoxSurvivalEngineering
   requirements:
     - !type:CharacterDepartmentRequirement
        departments:
          - Engineering
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutItemBoxSurvivalSecurity
   category: Items
-  cost: 2
+  cost: 0
   items:
     - BoxSurvivalSecurity
   requirements:
@@ -345,52 +444,63 @@
        inverted: true
        jobs:
          - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutItemBoxSurvivalBrigmedic
   category: Items
-  cost: 2
+  cost: 0
   items:
     - BoxSurvivalBrigmedic
   requirements:
     - !type:CharacterJobRequirement
        jobs:
          - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutItemBoxSurvivalMedical
   category: Items
-  cost: 2
+  cost: 0
   items:
     - BoxSurvivalMedical
   requirements:
     - !type:CharacterDepartmentRequirement
        departments:
          - Medical
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutItemBoxHug
   category: Items
-  cost: 2
+  cost: 0
   items:
     - BoxHug
   requirements:
     - !type:CharacterJobRequirement
        jobs:
          - Clown
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 # Medkits
 - type: loadout
   id: LoadoutMedkitFilled
   category: Items
-  cost: 4
+  cost: 2
   items:
     - MedkitFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitBruteFilled
   category: Items
-  cost: 4
+  cost: 2
   items:
     - MedkitBruteFilled
   requirements:
@@ -401,11 +511,13 @@
         - ChiefMedicalOfficer
         - MedicalIntern
         - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitBurnFilled
   category: Items
-  cost: 4
+  cost: 2
   items:
     - MedkitBurnFilled
   requirements:
@@ -416,11 +528,13 @@
         - ChiefMedicalOfficer
         - MedicalIntern
         - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitToxinFilled
   category: Items
-  cost: 4
+  cost: 2
   items:
     - MedkitToxinFilled
   requirements:
@@ -431,11 +545,13 @@
         - ChiefMedicalOfficer
         - MedicalIntern
         - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitOxygenFilled
   category: Items
-  cost: 4
+  cost: 2
   items:
     - MedkitOxygenFilled
   requirements:
@@ -446,11 +562,13 @@
         - ChiefMedicalOfficer
         - MedicalIntern
         - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitRadiationFilled
   category: Items
-  cost: 4
+  cost: 2
   items:
     - MedkitRadiationFilled
   requirements:
@@ -461,11 +579,13 @@
         - ChiefMedicalOfficer
         - MedicalIntern
         - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitAdvancedFilled
   category: Items
-  cost: 5
+  cost: 3
   items:
     - MedkitAdvancedFilled
   requirements:
@@ -476,11 +596,13 @@
         - ChiefMedicalOfficer
         - MedicalIntern
         - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitCombatFilled
   category: Items
-  cost: 4 # Discounted for the CMO and Corpsman
+  cost: 3
   items:
     - MedkitCombatFilled
   requirements:
@@ -488,6 +610,8 @@
        jobs:
          - ChiefMedicalOfficer
          - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 #Misc Items
 - type: loadout

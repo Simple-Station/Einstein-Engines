@@ -186,6 +186,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter,
             playTimes,
             isWhitelisted,
+            job,
             EntityManager,
             _prototypes,
             _config,
@@ -216,6 +217,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                         (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter,
                         playTimes,
                         isWhitelisted,
+                        job,
                         EntityManager,
                         _prototypes,
                         _config,
@@ -257,15 +259,16 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                 continue;
 
             if (!_characterRequirements.CheckRequirementsValid(
-                    jobber.Requirements,
-                    jobber,
-                    (HumanoidCharacterProfile) _prefs.GetPreferences(userId).SelectedCharacter,
-                    _tracking.GetPlayTimes(_playerManager.GetSessionById(userId)),
-                    _playerManager.GetSessionById(userId).ContentData()?.Whitelisted ?? false,
-                    EntityManager,
-                    _prototypes,
-                    _config,
-                    out _))
+                jobber.Requirements,
+                jobber,
+                (HumanoidCharacterProfile) _prefs.GetPreferences(userId).SelectedCharacter,
+                _tracking.GetPlayTimes(_playerManager.GetSessionById(userId)),
+                _playerManager.GetSessionById(userId).ContentData()?.Whitelisted ?? false,
+                jobber,
+                EntityManager,
+                _prototypes,
+                _config,
+                out _))
             {
                 jobs.RemoveSwap(i);
                 i--;

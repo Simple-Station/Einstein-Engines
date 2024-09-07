@@ -1,6 +1,6 @@
 - type: loadout
   id: LoadoutMedicalGlovesNitrile
-  category: Jobs
+  category: JobsAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -16,7 +16,7 @@
 
 - type: loadout
   id: LoadoutMedicalOuterLabcoat
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -29,7 +29,7 @@
 
 - type: loadout
   id: LoadoutMedicalNeckStethoscope
-  category: Jobs
+  category: JobsAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -43,14 +43,10 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsBlue
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -62,14 +58,10 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsGreen
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -81,14 +73,10 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsPurple
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -100,14 +88,10 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsCyan
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -119,14 +103,10 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsBlack
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -138,14 +118,10 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsPink
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -157,14 +133,10 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsCybersun
-  category: Jobs
+  category: JobsAUncategorized
   cost: 3
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -175,7 +147,7 @@
 
 - type: loadout
   id: LoadoutMedicalOuterCybersunWindbreaker
-  category: Jobs
+  category: JobsAUncategorized
   cost: 5
   exclusive: true
   requirements:
@@ -189,7 +161,7 @@
 
 - type: loadout
   id: LoadoutMedicalOuterLabcoatChem
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -201,7 +173,7 @@
 
 - type: loadout
   id: LoadoutMedicalItemHandLabeler
-  category: Jobs
+  category: JobsAUncategorized
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -212,14 +184,10 @@
 
 - type: loadout
   id: LoadoutMedicalUniformParamedicJumpsuit
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Paramedic
@@ -228,7 +196,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformParamedicJumpskirt
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -240,7 +208,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformJumpskirtSenior
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -264,14 +232,10 @@
 
 - type: loadout
   id: LoadoutMedicalUniformJumpsuitSenior
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -292,7 +256,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadNurse
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -304,7 +268,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadBeretSeniorPhysician
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -328,7 +292,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapBlue
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -343,7 +307,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapPurple
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -358,7 +322,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapGreen
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -373,7 +337,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapCyan
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -388,7 +352,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapBlack
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -403,7 +367,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapPink
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -418,7 +382,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapWhite
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -433,7 +397,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapCybersun
-  category: Jobs
+  category: JobsAUncategorized
   cost: 3
   exclusive: true
   requirements:
@@ -447,7 +411,7 @@
 
 - type: loadout
   id: LoadoutMedicalEyesHudMedical
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -463,7 +427,7 @@
 
 - type: loadout
   id: LoadoutMedicalEyesEyepatchHudMedical
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -479,7 +443,7 @@
 
 - type: loadout
   id: LoadoutMedicalEyesHudMedicalPrescription
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -498,7 +462,7 @@
 
 - type: loadout
   id: LoadoutMedicalEyesGlassesChemical
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -510,7 +474,7 @@
 
 - type: loadout
   id: LoadoutMedicalBedsheetMedical
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -523,23 +487,19 @@
 # Chemist PPE gear
 - type: loadout
   id: LoadoutMedicalUniformJumpsuitChemShirt
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
   items:
     - ClothingUniformJumpsuitChemShirt
 
 - type: loadout
   id: LoadoutMedicalNeckTieChem
-  category: Jobs
+  category: JobsAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -551,24 +511,19 @@
 
 - type: loadout
   id: LoadoutMedicalShoesEnclosedChem
-  category: Jobs
+  category: JobsAUncategorized
   cost: 1
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesEnclosedChem
 
 - type: loadout
   id: LoadoutMedicalOuterApronChemist
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -580,7 +535,7 @@
 
 - type: loadout
   id: LoadoutMedicalEyesGlassesChemist
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -592,7 +547,7 @@
 
 - type: loadout
   id: LoadoutMedicalHandsGlovesChemist
-  category: Jobs
+  category: JobsAUncategorized
   cost: 1
   exclusive: true
   requirements:

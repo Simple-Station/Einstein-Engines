@@ -1,0 +1,95 @@
+# Alphabetically ordered, except for Uncategorized since it is always first
+# AUncategorized is always first in subcategories to stay consistent with the root Uncategorized
+#  AUncategorized is not a spelling mistake, and might have more As added as needed
+
+- type: loadoutCategory
+  id: Uncategorized
+  root: true
+
+- type: loadoutCategory
+  id: Eyes
+  root: true
+
+- type: loadoutCategory
+  id: Hands
+  root: true
+
+- type: loadoutCategory
+  id: Head
+  root: true
+
+- type: loadoutCategory
+  id: Items
+  root: true
+
+- type: loadoutCategory
+  id: Jobs
+  root: true
+  subCategories:
+    - JobsAUncategorized
+    - JobsCommand
+
+- type: loadoutCategory
+  id: JobsAUncategorized
+
+- type: loadoutCategory
+  id: JobsCommand
+  subCategories:
+    - JobsCommandAUncategorized
+    - JobsCommandCaptain
+    - JobsCommandCE
+    - JobsCommandCMO
+    - JobsCommandHOP
+    - JobsCommandHOS
+    - JobsCommandQM
+    - JobsCommandRD
+
+
+- type: loadoutCategory
+  id: JobsCommandAUncategorized
+
+- type: loadoutCategory
+  id: JobsCommandCaptain
+
+- type: loadoutCategory
+  id: JobsCommandCE
+
+- type: loadoutCategory
+  id: JobsCommandCMO
+
+- type: loadoutCategory
+  id: JobsCommandHOP
+
+- type: loadoutCategory
+  id: JobsCommandHOS
+
+- type: loadoutCategory
+  id: JobsCommandQM
+
+- type: loadoutCategory
+  id: JobsCommandRD
+
+
+- type: loadoutCategory
+  id: Mask
+  root: true
+
+- type: loadoutCategory
+  id: Neck
+  root: true
+
+- type: loadoutCategory
+  id: Outer
+  root: true
+
+- type: loadoutCategory
+  id: Shoes
+  root: true
+
+- type: loadoutCategory
+  id: Species
+  root: true
+
+- type: loadoutCategory
+  id: Uniform
+  root: true

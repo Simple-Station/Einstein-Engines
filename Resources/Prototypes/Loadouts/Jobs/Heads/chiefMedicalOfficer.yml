@@ -1,6 +1,6 @@
 - type: loadout
   id: LoadoutCommandCMONeckMantle
-  category: Jobs
+  category: JobsCommandCMO
   cost: 2
   exclusive: true
   requirements:
@@ -12,7 +12,7 @@
 
 - type: loadout
   id: LoadoutCommandCMONeckCloak
-  category: Jobs
+  category: JobsCommandCMO
   cost: 2
   exclusive: true
   requirements:
@@ -24,7 +24,7 @@
 
 - type: loadout
   id: LoadoutCommandCMOOuterWinter
-  category: Jobs
+  category: JobsCommandCMO
   cost: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -35,7 +35,7 @@
 
 - type: loadout
   id: LoadoutCommandCMOOuterLab
-  category: Jobs
+  category: JobsCommandCMO
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -46,7 +46,7 @@
 
 - type: loadout
   id: LoadoutCommandCMOHatBeret
-  category: Jobs
+  category: JobsCommandCMO
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -57,15 +57,10 @@
 
 - type: loadout
   id: LoadoutCommandCMOShoesBootsWinter
-  category: Jobs
+  category: JobsCommandCMO
   cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - ChiefMedicalOfficer
