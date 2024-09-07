@@ -5976,3 +5976,12 @@ Entries:
   id: 6324
   time: '2024-09-07T01:06:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/875
+- author: Remuchi
+  changes:
+    - type: Add
+      message: >-
+        Interacting with some materials now opens the radial menu containing
+        some of the most used recipes of that material.
+  id: 6325
+  time: '2024-09-07T03:59:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/861
