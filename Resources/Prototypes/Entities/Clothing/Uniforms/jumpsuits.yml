@@ -46,18 +46,6 @@
     randomMode: false
     mode: SensorCords
 
-# This has been moved to jumpskirts.yml, as it visually resembles a skirt.
-# - type: entity
-#   parent: ClothingUniformBase
-#   id: ClothingUniformJumpsuitBartenderPurple
-#   name: purple bartender's uniform
-#   description: A special purple outfit to serve drinks.
-#   components:
-#   - type: Sprite
-#     sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
-#   - type: Clothing
-#     sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
-
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCaptain
@@ -396,17 +384,6 @@
     sprite: Clothing/Uniforms/Jumpsuit/janitor.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/janitor.rsi
-
-# - type: entity
-#   parent: ClothingUniformBase
-#   id: ClothingUniformJumpsuitKimono
-#   name: kimono
-#   description: traditional chinese clothing
-#   components:
-#   - type: Sprite
-#     sprite: Clothing/Uniforms/Jumpsuit/kimono.rsi
-#   - type: Clothing
-#     sprite: Clothing/Uniforms/Jumpsuit/kimono.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -893,29 +870,6 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/journalist.rsi
 
-# Both the light and dark monastic robes have been relocated to jumpskirts.yml, as robes should be able to be worn by harpies.
-# - type: entity
-#   parent: ClothingUniformBase
-#   id: ClothingUniformJumpsuitMonasticRobeDark
-#   name: dark monastic robe
-#   description: It's a dark robe, often worn by religious folk.
-#   components:
-#     - type: Sprite
-#       sprite: Clothing/Uniforms/Jumpsuit/monastic_robe_dark.rsi
-#     - type: Clothing
-#       sprite: Clothing/Uniforms/Jumpsuit/monastic_robe_dark.rsi
-
-# - type: entity
-#   parent: ClothingUniformBase
-#   id: ClothingUniformJumpsuitMonasticRobeLight
-#   name: light monastic robe
-#   description: It's a light robe, often worn by religious folk.
-#   components:
-#     - type: Sprite
-#       sprite: Clothing/Uniforms/Jumpsuit/monastic_robe_light.rsi
-#     - type: Clothing
-#       sprite: Clothing/Uniforms/Jumpsuit/monastic_robe_light.rsi
-
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitMusician
@@ -1195,17 +1149,6 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/loungewear.rsi
 
-# Moved to jumpskirts.yml, as I believe it resembles a chainmail skirt more than pants or shorts.
-# - type: entity
-#   parent: ClothingUniformBase
-#   id: ClothingUniformJumpsuitGladiator
-#   name: gladiator uniform
-#   description: Made for true gladiators (or Ash Walkers).
-#   components:
-#   - type: Sprite
-#     sprite: Clothing/Uniforms/Jumpsuit/gladiator.rsi
-#   - type: Clothing
-#     sprite: Clothing/Uniforms/Jumpsuit/gladiator.rsi
 
 - type: entity
   parent: ClothingUniformBase
