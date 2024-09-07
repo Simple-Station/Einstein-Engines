@@ -5,7 +5,7 @@ on:
     types: [closed]
 
 env:
-  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
   CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
   PR_NUMBER: ${{ github.event.number }}
 
