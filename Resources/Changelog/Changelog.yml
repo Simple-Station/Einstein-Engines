@@ -5939,3 +5939,17 @@ Entries:
   id: 6320
   time: '2024-09-06T21:59:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/736
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The first of all new loadout groups has been added, Civilian Uniforms.
+        Only one civilian uniform can be selected, in exchange for...
+    - type: Tweak
+      message: >-
+        All non-job specific uniforms have had their points reduced drastically,
+        almost all of them down to 0 points, with only a tiny handful at 2
+        points, and the rest as 1. 
+  id: 6321
+  time: '2024-09-07T00:53:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/872
