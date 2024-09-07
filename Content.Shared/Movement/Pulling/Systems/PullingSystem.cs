@@ -123,12 +123,14 @@ public sealed class PullingSystem : EntitySystem
             }
 
             var desiredDeltaPos = pushCoordinates.Position - Transform(pulled).Coordinates.ToMapPos(EntityManager, _xformSys);
-            var desiredForce = pulledPhysics.Mass * desiredDeltaPos * 60;
+            var desiredForce = pulledPhysics.Mass * desiredDeltaPos;
             var maxSourceForce = pullerComp.SpecificForce * pullerPhysics.Mass;
             var actualForce = desiredForce.LengthSquared() > maxSourceForce * maxSourceForce ? desiredDeltaPos.Normalized() * maxSourceForce : desiredForce;
 
-            _physics.ApplyForce(pulled, actualForce);
-            _physics.ApplyForce(puller, -actualForce);
+            // Cannot use ApplyForce here because it will be cleared on the next physics substep which will render it ultimately useless
+            // The alternative is to run this function on every physics substep, but that is way too expensive for such a minor system
+            _physics.ApplyLinearImpulse(pulled, actualForce);
+            _physics.ApplyLinearImpulse(puller, -actualForce);
             pulledComp.BeingActivelyPushed = true;
 
             // Means the pullee has been pushed close enough to the destination

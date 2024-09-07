@@ -51,7 +51,7 @@ public sealed partial class PullerComponent : Component
     ///     The specific force of pushing, in newtons per kilogram. This is multiplied by the puller's physics mass.
     /// </summary>
     [DataField]
-    public float SpecificForce = 2.5f;
+    public float SpecificForce = 0.3f;
 
     /// <summary>
     ///     The maximum distance between the puller and the point towards which the puller may attempt to pull it, in meters.
