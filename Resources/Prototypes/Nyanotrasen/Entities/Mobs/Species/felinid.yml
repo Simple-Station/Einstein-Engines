@@ -79,6 +79,7 @@
     stealth: Subtle
     stripTimeReduction: 0
     stripTimeMultiplier: 0.667
+  - type: StepTriggerImmune
 
 - type: entity
   save: false

@@ -216,3 +216,8 @@ trait-description-NaturalTelepath =
     whether or not you possess any notable psychic powers. This offers all of the same benefits and
     drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
     still gain powers as normal for a Latent Psychic.
+
+trait-name-TrapAvoider = Trap Avoider
+trait-description-TrapAvoider =
+    You possess a preturnatural sense of traps, and will unconsciously avoid them. You will never trigger
+    floor traps, such as land mines, tripwires, mouse traps(If you're small enough), etc.
