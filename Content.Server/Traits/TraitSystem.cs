@@ -61,10 +61,31 @@ public sealed class TraitSystem : EntitySystem
     /// </summary>
     public void AddTrait(EntityUid uid, TraitPrototype traitPrototype)
     {
-        AddTraitComponents(uid, traitPrototype);
         RemoveTraitComponents(uid, traitPrototype);
+        AddTraitComponents(uid, traitPrototype);
         AddTraitActions(uid, traitPrototype);
         AddTraitPsionics(uid, traitPrototype);
+    }
+
+    /// <summary>
+    ///     Removes all components defined by a Trait. It's not possible to validate component removals,
+    ///     so if an incorrect string is given, it's basically a skill issue.
+    /// </summary>
+    /// <remarks>
+    /// This comes before AddTraitComponents for a good reason. It allows for a component to optionally be fully wiped and replaced with a new component.
+    /// </remarks>
+    public void RemoveTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.ComponentRemovals is null)
+            return;
+
+        foreach (var entry in traitPrototype.ComponentRemovals)
+        {
+            if (!_componentFactory.TryGetRegistration(entry, out var comp))
+                continue;
+
+            EntityManager.RemoveComponent(uid, comp.Type);
+        }
     }
 
     /// <summary>
@@ -83,24 +104,6 @@ public sealed class TraitSystem : EntitySystem
             var comp = (Component) _serialization.CreateCopy(entry.Component, notNullableOverride: true);
             comp.Owner = uid;
             EntityManager.AddComponent(uid, comp);
-        }
-    }
-
-    /// <summary>
-    ///     Removes all components defined by a Trait. It's not possible to Validate component removals,
-    ///     so if an incorrect string is given, it's basically a skill issue.
-    /// </summary>
-    public void RemoveTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.ComponentRemovals is null)
-            return;
-
-        foreach (var entry in traitPrototype.ComponentRemovals)
-        {
-            if (!_componentFactory.TryGetRegistration(entry, out var comp))
-                continue;
-
-            EntityManager.RemoveComponent(uid, comp.Type);
         }
     }
 
