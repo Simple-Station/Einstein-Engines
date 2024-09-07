@@ -20,7 +20,7 @@
     maxAngle: 16
     fireRate: 8
     angleIncrease: 3
-    angleDecay: 16  
+    angleDecay: 16
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -234,7 +234,7 @@
     minAngle: 1
     maxAngle: 6
     angleIncrease: 1.5
-    angleDecay: 6  
+    angleDecay: 6
     selectedMode: FullAuto
     shotsPerBurst: 5
     availableModes:
@@ -317,3 +317,51 @@
         whitelist:
           tags:
             - CartridgeMagnum
+
+- type: entity
+  name: Typewriter
+  parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunTypewriter
+  description: A modern take on the classic design used by mobsters throughout space and time. Types .35 auto ammo.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/SMGs/typewriter.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/SMGs/typewriter.rsi
+  - type: Gun
+    minAngle: 1
+    maxAngle: 15
+    angleIncrease: 5
+    angleDecay: 20
+    fireRate: 8
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/typewriter.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGun
+        insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance

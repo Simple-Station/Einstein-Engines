@@ -104,3 +104,16 @@
     OreIronCrab: 5
     OreUraniumCrab: 2
     OreSilverCrab: 3
+
+#Ported from Nyano
+
+- type: weightedRandomOre
+  id: RandomOreDistributionHigh
+  weights:
+    OreSteel: 1
+    OreSpaceQuartz: 2
+    OreGold: 10
+    OrePlasma: 8
+    OreSilver: 4
+    OreUranium: 6
+    OreArtifactFragment: 0.5
