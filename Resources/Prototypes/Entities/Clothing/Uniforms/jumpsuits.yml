@@ -1149,7 +1149,6 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/loungewear.rsi
 
-
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCasualBlue
