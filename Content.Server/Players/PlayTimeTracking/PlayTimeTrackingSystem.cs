@@ -178,7 +178,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             playTimes = new Dictionary<string, TimeSpan>();
         }
 
-        var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // - Whitelist requirement
+        var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
 
         return _characterRequirements.CheckRequirementsValid(
             job.Requirements,
@@ -205,7 +205,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             playTimes = new Dictionary<string, TimeSpan>();
         }
 
-        var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // - Whitelist requirement
+        var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
 
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
@@ -247,7 +247,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             playTimes ??= new Dictionary<string, TimeSpan>();
         }
 
-        var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // - Whitelist requirement
+        var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
 
         for (var i = 0; i < jobs.Count; i++)
         {

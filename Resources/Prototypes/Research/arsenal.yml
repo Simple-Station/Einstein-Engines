@@ -33,7 +33,7 @@
   - MagazineBoxMagnumIncendiary
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
-  #  - .38 special incendiary ammo - Add .38 special incendiary ammo to the research tree
+  # DeltaV - .38 special incendiary ammo - Add .38 special incendiary ammo to the research tree
   - CartridgeSpecialIncendiary
   - MagazineBoxSpecialIncendiary
   # End of modified code
@@ -69,7 +69,7 @@
   - MagazineBoxMagnumRubber
   - MagazineBoxLightRifleRubber
   - MagazineBoxRifleRubber
-  #  - .38 special rubber ammo - Adds .38 special rubber ammo to the research tree
+  # DeltaV - .38 special rubber ammo - Adds .38 special rubber ammo to the research tree
   - CartridgeSpecialRubber
   - MagazineBoxSpecialRubber
   # End of modified code
@@ -93,7 +93,7 @@
   - MagazineBoxMagnumUranium
   - MagazineBoxLightRifleUranium
   - MagazineBoxRifleUranium
-  #  - .38 special uranium ammo - Adds .38 special uranium ammo to the research tree
+  # DeltaV - .38 special uranium ammo - Adds .38 special uranium ammo to the research tree
   - CartridgeSpecialUranium
   - MagazineBoxSpecialUranium
   # End of modified code

@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Pets/arcticfox.rsi
+    sprite: DeltaV/Mobs/Pets/arcticfox.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: arcticfox
@@ -94,7 +94,7 @@
       - PetsNT
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Pets/secdog.rsi
+    sprite: DeltaV/Mobs/Pets/secdog.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: secdog
@@ -165,7 +165,7 @@
     interactFailureString: petting-failure-generic
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
-      path: /Audio/Voice/Vulpkanin/dog_bark2.ogg
+      path: /Audio/DeltaV/Voice/Vulpkanin/dog_bark2.ogg
   - type: Grammar
     attributes:
       gender: epicene

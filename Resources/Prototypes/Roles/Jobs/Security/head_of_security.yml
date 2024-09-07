@@ -6,15 +6,15 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobWarden
-      min: 14400 # 4 hrs
-  #  - !type:RoleTimeRequirement #  - No Security Officer time requirement - REIMPLEMENT WHEN MORE PEOPLE HAVE IT
+      min: 14400 #DeltaV 4 hrs
+  #  - !type:RoleTimeRequirement # DeltaV - No Security Officer time requirement - REIMPLEMENT WHEN MORE PEOPLE HAVE IT
   #    role: JobDetective
-  #    time: 14400 # 4 hrs
-    - !type:CharacterDepartmentTimeRequirement #  - Command dept time requirement
+  #    time: 14400 #DeltaV 4 hrs
+    - !type:CharacterDepartmentTimeRequirement # DeltaV - Command dept time requirement
       department: Command
       min: 36000 # 10 hours
     - !type:CharacterOverallTimeRequirement
-      min: 90000 #  - 25 hours
+      min: 90000 # DeltaV - 25 hours
     - !type:CharacterWhitelistRequirement
   weight: 10
   startingGear: HoSGear
@@ -32,7 +32,7 @@
   - Service
   - External
   - Detective
-  - Corpsman #  - added Corpsman access
+  - Corpsman # DeltaV - added Corpsman access
   - Cryogenics
   special:
   - !type:AddImplantSpecial

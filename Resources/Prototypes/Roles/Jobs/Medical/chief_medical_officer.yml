@@ -5,19 +5,19 @@
   name: job-name-cmo
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
-  antagAdvantage: 6 #  - Reduced TC: Head of Staff
+  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobChemist
-      min: 14400 # 4 hrs
-#    - !type:RoleTimeRequirement #  - No Medical Doctor time requirement
+      min: 14400 #DeltaV 4 hrs
+#    - !type:RoleTimeRequirement # DeltaV - No Medical Doctor time requirement
 #      role: JobMedicalDoctor
 #      time: 21600 #6 hrs
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
-      min: 43200 #  - 12 hours
+      min: 43200 # DeltaV - 12 hours
     - !type:CharacterOverallTimeRequirement
-      min: 72000 #  - 20 hours
+      min: 72000 # DeltaV - 20 hours
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
@@ -30,9 +30,9 @@
   - Maintenance
   - Chemistry
   - ChiefMedicalOfficer
-  - Paramedic #  - Add Paramedic access
-  - External #  - Paramedics need this access
-  - Psychologist #  - Add Psychologist access
+  - Paramedic # DeltaV - Add Paramedic access
+  - External # DeltaV - Paramedics need this access
+  - Psychologist # DeltaV - Add Psychologist access
   - Cryogenics
   special:
   - !type:AddImplantSpecial

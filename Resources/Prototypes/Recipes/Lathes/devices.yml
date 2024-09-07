@@ -76,7 +76,7 @@
     Steel: 100
     Plastic: 200
     Glass: 100
-
+    
 - type: latheRecipe
   id: SignallerAdvanced
   result: RemoteSignallerAdvanced
@@ -144,7 +144,7 @@
     Silver: 750
     Plasma: 1250 #Higher Plasma due to it needing less bluespace
     Uranium: 150
-    Bluespace: 300 #: Bluespace Exists
+    Bluespace: 300 #DeltaV: Bluespace Exists
 
 - type: latheRecipe
   id: ClothingBackpackSatchelHolding
@@ -155,7 +155,7 @@
     Silver: 750
     Plasma: 1250 #Higher Plasma due to it needing less bluespace
     Uranium: 150
-    Bluespace: 300 #: Bluespace Exists
+    Bluespace: 300 #DeltaV: Bluespace Exists
 
 - type: latheRecipe
   id: ClothingBackpackDuffelHolding
@@ -166,7 +166,7 @@
     Silver: 750
     Plasma: 1250 #Higher Plasma due to it needing less bluespace
     Uranium: 150
-    Bluespace: 300 #: Bluespace Exists
+    Bluespace: 300 #DeltaV: Bluespace Exists
 
 - type: latheRecipe
   id: OreBagOfHolding
@@ -175,10 +175,10 @@
   materials:
     Steel: 2000
     Silver: 750
-    Plasma: 1000 #: Bluespace Exists so less plasma used, no uranium
-    Bluespace: 200 #: Bluespace Exists
+    Plasma: 1000 #DeltaV: Bluespace Exists so less plasma used, no uranium
+    Bluespace: 200 #DeltaV: Bluespace Exists
 
-#- type: latheRecipe # - LRP
+#- type: latheRecipe #DeltaV - LRP
 #  id: WeaponForceGun
 #  result: WeaponForceGun
 #  category: Tools
@@ -207,7 +207,7 @@
     Glass: 500
     Silver: 100
 
-#- type: latheRecipe # - LRP
+#- type: latheRecipe #DeltaV - LRP
 #  id: WeaponTetherGun
 #  result: WeaponTetherGun
 #  category: Tools
@@ -217,7 +217,7 @@
 #    Glass: 400
 #    Silver: 100
 
-#- type: latheRecipe # - LRP
+#- type: latheRecipe #DeltaV - LRP
 #  id: WeaponGrapplingGun
 #  result: WeaponGrapplingGun
 #  category: Tools

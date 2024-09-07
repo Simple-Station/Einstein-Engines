@@ -6,19 +6,19 @@
   - type: StorageFill
     contents:
       # Tools
-      # - id: FlashlightSeclite #  - Detective is in charge of investigating crimes.
+      # - id: FlashlightSeclite # Deltav - Detective is in charge of investigating crimes.
       # - id: ForensicScanner
       # - id: BoxForensicPad
       - id: AntiPsychicKnife
-      - id: FlashlightLantern #  - To replace their lost flashlight
-      - id: BoxZiptie #  - Give the mantis some zipties
-      - id: WeaponPistolPsiBreaker #  - Mantis mindbreaker pistol, see Resources/Prototypes/Entities?Objects/Weapons/Guns/Pistols/pistols.yml
+      - id: FlashlightLantern # DeltaV - To replace their lost flashlight
+      - id: BoxZiptie # DeltaV - Give the mantis some zipties
+      - id: WeaponPistolPsiBreaker # DeltaV - Mantis mindbreaker pistol, see Resources/Prototypes/DeltaV/Entities?Objects/Weapons/Guns/Pistols/pistols.yml
       # Spare change of clothes
       # - id: ClothingUniformJumpsuitMantis
       # - id: ClothingUniformSkirtMantis
       # - id: ClothingBeltMantis
       # - id: ClothingShoesBootsMantis
-      # - id: ClothingHandsGlovesForensic #  - Detective is in charge of investigating crimes.
+      # - id: ClothingHandsGlovesForensic # Deltav - Detective is in charge of investigating crimes.
       - id: ClothingHeadHatFezMantis
       # - id: ClothingOuterCoatMantis
       - id: ClothingOuterWinterCoatMantis

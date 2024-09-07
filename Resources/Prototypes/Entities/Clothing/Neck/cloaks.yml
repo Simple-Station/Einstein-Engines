@@ -8,7 +8,7 @@
     sprite: Clothing/Neck/Cloaks/centcomcloakformal.rsi
   - type: StealTarget
     stealGroup: HeadCloak # leaving this here because I suppose it might be interesting?
-
+    
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakCap
@@ -56,7 +56,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakRd
-  name: mystagogue's cloak #  - Epistemics Department replacing Science
+  name: mystagogue's cloak # DeltaV - Epistemics Department replacing Science
   description: A white cloak with violet stripes, showing your status as the arbiter of cutting-edge technology.
   components:
   - type: Sprite
@@ -67,7 +67,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakQm
-  name: logistics officer's cloak #  - Logistics Department replacing Cargo
+  name: logistics officer's cloak # DeltaV - Logistics Department replacing Cargo
   description: A strong brown cloak with a reflective stripe, while not as fancy as others, it does show your managing skills.
   components:
   - type: Sprite

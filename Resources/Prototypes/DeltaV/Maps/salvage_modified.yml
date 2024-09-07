@@ -4,97 +4,97 @@
 
 - type: salvageMap
   id: DVOutpostArm
-  mapPath: /Maps/Salvage/DV-outpost-arm.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-outpost-arm.yml
   size: medium
 
 - type: salvageMap
   id: DVMedium1
-  mapPath: /Maps/Salvage/DV-medium-01.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-medium-01.yml
   size: medium
 
 - type: salvageMap
   id: DVMediumVault1
-  mapPath: /Maps/Salvage/DV-med-vault-01.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-med-vault-01.yml
   size: medium
 
 - type: salvageMap
   id: DVMediumOrchestra
-  mapPath: /Maps/Salvage/DV-med-silent-orchestra.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-med-silent-orchestra.yml
   size: medium
 
 - type: salvageMap
   id: DVMediumLibraryWreck
-  mapPath: /Maps/Salvage/DV-med-library.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-med-library.yml
   size: medium
 
 - type: salvageMap
   id: DVMediumCargoWreck
-  mapPath: /Maps/Salvage/DV-cargo-01.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-cargo-01.yml
   size: medium
 
 - type: salvageMap
   id: DVMediumPirateWreck
-  mapPath: /Maps/Salvage/DV-med-pirate.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-med-pirate.yml
   size: medium
 
 - type: salvageMap
   id: DVTickColony
-  mapPath: /Maps/Salvage/DV-tick-colony.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-tick-colony.yml
   size: medium
 
 - type: salvageMap
   id: DVCargoDock
-  mapPath: /Maps/Salvage/DV-med-dock.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-med-dock.yml
   size: medium
 
 - type: salvageMap
   id: DVSpaceWaffleHome
-  mapPath: /Maps/Salvage/DV-wh-salvage.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-wh-salvage.yml
   size: medium
 
 - type: salvageMap
   id: DVMediumShuttleWreck
-  mapPath: /Maps/Salvage/DV-med-ruined-emergency-shuttle.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-med-ruined-emergency-shuttle.yml
   size: medium
 
 - type: salvageMap
   id: DVmediumPetHospital
-  mapPath: /Maps/Salvage/DV-med-pet-hospital.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-med-pet-hospital.yml
   size: medium
 
 - type: salvageMap
   id: DVMediumCrashedShuttle
-  mapPath: /Maps/Salvage/DV-med-crashed-shuttle.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-med-crashed-shuttle.yml
   size: medium
 
 - type: salvageMap
   id: DVMeatball
-  mapPath: /Maps/Salvage/DV-meatball.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-meatball.yml
   size: medium
 
 - type: salvageMap
   id: DVMediumHaulingShuttleWreck
-  mapPath: /Maps/Salvage/DV-hauling-shuttle.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-hauling-shuttle.yml
   size: medium
 
 # """Large""" maps
 
 - type: salvageMap
   id: DVStationStation
-  mapPath: /Maps/Salvage/DV-stationstation.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-stationstation.yml
   size: large
 
 - type: salvageMap
   id: DVAsteroidBase
-  mapPath: /Maps/Salvage/DV-asteroid-base.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-asteroid-base.yml
   size: large
 
 - type: salvageMap
   id: DVRuinCargoBase
-  mapPath: /Maps/Salvage/DV-ruin-cargo-salvage.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-ruin-cargo-salvage.yml
   size: large
 
 - type: salvageMap
   id: DVSecurityChunk
-  mapPath: /Maps/Salvage/DV-security-chunk.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-security-chunk.yml
   size: large

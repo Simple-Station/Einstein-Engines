@@ -205,7 +205,7 @@ namespace Content.Server.GameTicking
 
             _playTimeTrackings.PlayerRolesChanged(player);
 
-            // Add AlwaysUseSpawner.
+            // Delta-V: Add AlwaysUseSpawner.
             var spawnPointType = SpawnPointType.Unset;
             if (jobPrototype.AlwaysUseSpawner)
             {

@@ -9,7 +9,7 @@
     stampedColor: "#00ccff"
     stampState: "paper_stamp-psychologist"
   - type: Sprite
-    sprite: Objects/Misc/stamps.rsi
+    sprite: DeltaV/Objects/Misc/stamps.rsi
     state: stamp-psychologist
 
 - type: entity
@@ -23,7 +23,7 @@
     stampedColor: "#696969"
     stampState: "paper_stamp-lawyer"
   - type: Sprite
-    sprite: Objects/Misc/stamps.rsi
+    sprite: DeltaV/Objects/Misc/stamps.rsi
     state: stamp-lawyer
 
 - type: entity
@@ -37,7 +37,7 @@
     stampedColor: "#a81f3d"
     stampState: "paper_stamp-notary"
   - type: Sprite
-    sprite: Objects/Misc/stamps.rsi
+    sprite: DeltaV/Objects/Misc/stamps.rsi
     state: stamp-notary
   - type: StealTarget
     stealGroup: RubberStampNotary
@@ -52,6 +52,6 @@
     stampedColor: "#6b2833"
     stampState: "paper_stamp-notary"
   - type: Sprite
-    sprite: Objects/Misc/stamps.rsi
+    sprite: DeltaV/Objects/Misc/stamps.rsi
     state: stamp-cj
 

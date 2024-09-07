@@ -14,7 +14,7 @@
   - BorgModuleMining
   - OreProcessorIndustrialMachineCircuitboard
   - OreBagOfHolding
-  - SalvageExpeditionsComputerCircuitboard #
+  - SalvageExpeditionsComputerCircuitboard # DeltaV
 
 - type: technology
   id: AdvancedPowercells

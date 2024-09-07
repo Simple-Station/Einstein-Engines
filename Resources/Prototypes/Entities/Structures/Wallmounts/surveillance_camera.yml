@@ -122,7 +122,7 @@
   parent: SurveillanceCameraBase
   id: SurveillanceCameraScience
   name: camera
-  suffix: Epistemics #  - Epistemics Department replacing Science
+  suffix: Epistemics # DeltaV - Epistemics Department replacing Science
   components:
   - type: DeviceNetwork
     deviceNetId: Wired

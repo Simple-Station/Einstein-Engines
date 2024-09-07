@@ -1,4 +1,4 @@
-using Content.Server.ParadoxAnomaly.Components;
+using Content.Server.DeltaV.ParadoxAnomaly.Components;
 using Content.Server.DetailExaminable;
 using Content.Server.GenericAntag;
 using Content.Server.Ghost.Roles;
@@ -19,7 +19,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Content.Server.ParadoxAnomaly.Systems;
+namespace Content.Server.DeltaV.ParadoxAnomaly.Systems;
 
 /// <summary>
 /// 90% of the work is done by exterminator since its a reskin.

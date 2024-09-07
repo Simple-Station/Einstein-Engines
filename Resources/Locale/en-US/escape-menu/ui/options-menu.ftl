@@ -268,9 +268,3 @@ ui-options-net-pvs-leave-tooltip = This limits the rate at which the client will
 ## Toggle window console command
 cmd-options-desc = Opens options menu, optionally with a specific tab selected.
 cmd-options-help = Usage: options [tab]
-
-## Accessibility Menu
-ui-options-tab-accessibility = Accessibility
-ui-options-general-forknotice = These options are provided to make the game more playable for people with accessibility issues.
-
-ui-options-no-filters = Disable species vision filters

@@ -1,5 +1,5 @@
 - type: department
-  id: Logistics #  - Logistics Department replacing Cargo
+  id: Logistics # DeltaV - Logistics Department replacing Cargo
   description: department-Cargo-description
   color: "#A46106"
   roles:
@@ -18,12 +18,12 @@
   - Borg
   - Botanist
   - Boxer
-  # - Chaplain #  - Move Chaplain into Epistemics
+  # - Chaplain # DeltaV - Move Chaplain into Epistemics
   - Chef
   - Clown
   - HeadOfPersonnel
   - Janitor
-  # - Lawyer #  - Move Lawyer into Justice
+  # - Lawyer # DeltaV - Move Lawyer into Justice
   - Mime
   - Musician
   - Passenger
@@ -74,7 +74,7 @@
   - Psychologist
   - Paramedic
   - SeniorPhysician
-  - MedicalBorg  # Delta V - Medical Borg, see Resources/Prototypes/Roles/Jobs/Medical/medicalborg.yml
+  - MedicalBorg  # Delta V - Medical Borg, see Resources/Prototypes/DeltaV/Roles/Jobs/Medical/medicalborg.yml
 
 - type: department
   id: Security
@@ -89,10 +89,10 @@
   - Detective
   - Warden
   - PrisonGuard # Nyanotrasen - PrisonGuard, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Security/prisonguard.yml
-  - Brigmedic #  - Brigmedic, see Resources/Prototypes/Roles/Jobs/Security/brigmedic.yml
+  - Brigmedic # DeltaV - Brigmedic, see Resources/Prototypes/DeltaV/Roles/Jobs/Security/brigmedic.yml
 
 - type: department
-  id: Epistemics #  - Epistemics Department replacing Science
+  id: Epistemics # DeltaV - Epistemics Department replacing Science
   description: department-Science-description
   color: "#D381C9"
   roles:
@@ -100,7 +100,7 @@
   - SeniorResearcher
   - Scientist
   - ResearchAssistant
-  - Chaplain #  - Move Chaplain into Epistemics
+  - Chaplain # DeltaV - Move Chaplain into Epistemics
   - ForensicMantis # Nyanotrasen - ForensicMantis, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Epistemics/forensicmantis.yml
   - Librarian
   - Roboticist
@@ -118,5 +118,5 @@
   - MartialArtist # Nyanotrasen - MartialArtist, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/martialartist.yml
   - Gladiator # Nyanotrasen - Gladiator, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/gladiator.yml
   - Prisoner # Nyanotrasen - Prisoner, see Resrouces/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/prisoner.yml
-  - Brigmedic #  - Corpsman, see Resources/Prototypes/Roles/Jobs/Security/brigmedic.yml
+  - Brigmedic # DeltaV - Corpsman, see Resources/Prototypes/DeltaV/Roles/Jobs/Security/brigmedic.yml
   primary: false

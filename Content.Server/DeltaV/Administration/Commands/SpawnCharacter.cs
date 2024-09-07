@@ -13,7 +13,7 @@ using Robust.Shared.Console;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
-namespace Content.Server.Administration.Commands;
+namespace Content.Server.DeltaV.Administration.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
 public sealed class SpawnCharacter : IConsoleCommand

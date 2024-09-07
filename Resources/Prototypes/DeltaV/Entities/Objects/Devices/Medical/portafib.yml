@@ -5,7 +5,7 @@
   description: Less weight, same great ZZZAP!
   components:
   - type: Sprite
-    sprite: Objects/Medical/portafib.rsi
+    sprite: DeltaV/Objects/Medical/portafib.rsi
     layers:
     - state: icon
     - state: screen

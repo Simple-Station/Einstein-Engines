@@ -5,9 +5,9 @@
   description: An old and reliable revolver, modified to be more easily concealed. Uses .45 magnum ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/webleysnubnose.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/webleysnubnose.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/webleysnubnose.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/webleysnubnose.rsi
   - type: Gun
     selectedMode: SemiAuto
     minAngle: 5
@@ -29,9 +29,9 @@
   description: A classic, if not outdated, law enforcement firearm. Uses .38 special ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/k38master.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/k38master.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/k38master.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/k38master.rsi
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 2
@@ -54,9 +54,9 @@
   description: A compact and concealable self defence snub revolver. Uses .38 special ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/fitz.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/fitz.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/fitz.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/fitz.rsi
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 1.75
@@ -79,9 +79,9 @@
   description: Luck always beats skill, ya weasel. Uses .38 special ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/lucky.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/lucky.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/lucky.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/lucky.rsi
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 2
@@ -106,9 +106,9 @@
   description: Delivers blessings in bullet form. Uses .38 special ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/faith.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/faith.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/faith.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/faith.rsi
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 1.5

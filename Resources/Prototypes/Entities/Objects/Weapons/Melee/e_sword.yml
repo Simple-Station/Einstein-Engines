@@ -55,7 +55,7 @@
         Blunt: 4.5
   - type: Item
     size: Small
-    sprite: Objects/Weapons/Melee/e_sword.rsi # Delta-V
+    sprite: DeltaV/Objects/Weapons/Melee/e_sword.rsi # Delta-V
   - type: UseDelay
     delay: 1.0
   - type: PointLight
@@ -181,7 +181,7 @@
   name: energy cutlass
   parent: EnergySword
   id: EnergyCutlass
-  description: An exotic energy weapon, brutal blade crackling with crudely harnessed plasma. # - nicer description.
+  description: An exotic energy weapon, brutal blade crackling with crudely harnessed plasma. #DeltaV - nicer description.
   components:
   - type: EnergySword
   - type: ItemToggleMeleeWeapon
@@ -193,7 +193,7 @@
   - type: ItemToggleDisarmMalus
     activatedDisarmMalus: 0.6
   - type: Sprite
-    sprite: Objects/Weapons/Melee/e_cutlass.rsi #
+    sprite: DeltaV/Objects/Weapons/Melee/e_cutlass.rsi # DeltaV
     layers:
       - state: e_cutlass
       - state: e_cutlass_blade
@@ -201,7 +201,7 @@
         visible: false
         shader: unshaded
         map: [ "blade" ]
-  - type: MeleeWeapon #  - reduced attack rate of e-cutlass; slower, more brutal swings
+  - type: MeleeWeapon # DeltaV - reduced attack rate of e-cutlass; slower, more brutal swings
     attackRate: 0.75
     soundHit:
       path: /Audio/Weapons/eblade1.ogg
@@ -210,7 +210,7 @@
         Blunt: 6
   - type: Item
     size: Small
-    sprite: Objects/Weapons/Melee/e_cutlass.rsi #
+    sprite: DeltaV/Objects/Weapons/Melee/e_cutlass.rsi #DeltaV
   - type: ToggleableLightVisuals
     spriteLayer: blade
     inhandVisuals:
@@ -276,10 +276,10 @@
     size: Small
     sprite: Objects/Weapons/Melee/e_sword_double-inhands.rsi
   - type: Reflect
-    reflectProb: .80 #: 80% Energy Reflection but no ballistics.
+    reflectProb: .80 #DeltaV: 80% Energy Reflection but no ballistics.
     spread: 75
     reflects:
-      - Energy #: 80% Energy Reflection but no ballistics.
+      - Energy #DeltaV: 80% Energy Reflection but no ballistics.
   - type: UseDelay
     delay: 1
   - type: ToggleableLightVisuals

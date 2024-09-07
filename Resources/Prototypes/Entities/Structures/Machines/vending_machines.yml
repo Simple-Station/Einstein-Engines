@@ -1798,8 +1798,8 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachineCargoDrobe
-  name: LogiDrobe #  - Logistics Department replacing Cargo
-  description: A highly advanced vending machine for buying logistics related clothing for free. #  - Logistics Department replacing Cargo
+  name: LogiDrobe # DeltaV - Logistics Department replacing Cargo
+  description: A highly advanced vending machine for buying logistics related clothing for free. # DeltaV - Logistics Department replacing Cargo
   components:
   - type: VendingMachine
     pack: CargoDrobeInventory

@@ -5,6 +5,6 @@
   description: Impeccably shined white leather shoes. Don't tread on these tootsies.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Misc/whiteleather.rsi
+    sprite: DeltaV/Clothing/Shoes/Misc/whiteleather.rsi
   - type: Clothing
-    sprite: Clothing/Shoes/Misc/whiteleather.rsi
+    sprite: DeltaV/Clothing/Shoes/Misc/whiteleather.rsi

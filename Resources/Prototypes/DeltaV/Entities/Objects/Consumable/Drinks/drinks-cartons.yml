@@ -58,7 +58,7 @@
         - ReagentId: JuiceOrange
           Quantity: 20
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/juiceboxorange.rsi
+    sprite: DeltaV/Objects/Consumable/Drinks/juiceboxorange.rsi
 
 - type: entity
   parent: DrinkJuiceBoxBaseFull
@@ -73,7 +73,7 @@
         - ReagentId: JuicePineapple
           Quantity: 20
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/juiceboxpineapple.rsi
+    sprite: DeltaV/Objects/Consumable/Drinks/juiceboxpineapple.rsi
 
 - type: entity
   parent: DrinkJuiceBoxBaseFull
@@ -88,7 +88,7 @@
         - ReagentId: JuiceApple
           Quantity: 20
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/juiceboxapple.rsi
+    sprite: DeltaV/Objects/Consumable/Drinks/juiceboxapple.rsi
 
 - type: entity
   parent: DrinkJuiceBoxBaseFull
@@ -103,7 +103,7 @@
         - ReagentId: JuiceGrape
           Quantity: 20
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/juiceboxgrape.rsi
+    sprite: DeltaV/Objects/Consumable/Drinks/juiceboxgrape.rsi
 
 - type: entity
   parent: DrinkJuiceBoxBaseFull
@@ -120,4 +120,4 @@
         - ReagentId: Milk # The milk of chocolate milk
           Quantity: 10
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/juiceboxchocolate.rsi
+    sprite: DeltaV/Objects/Consumable/Drinks/juiceboxchocolate.rsi

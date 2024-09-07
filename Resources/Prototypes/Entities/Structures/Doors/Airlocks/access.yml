@@ -11,7 +11,7 @@
     layoutId: AirlockService
 
 - type: entity
-  parent: AirlockJustice #  - Lawyer is in Justice Dept
+  parent: AirlockJustice # DeltaV - Lawyer is in Justice Dept
   id: AirlockLawyerLocked
   suffix: Lawyer, Locked
   components:
@@ -29,7 +29,7 @@
       board: [ DoorElectronicsTheatre ]
 
 - type: entity
-  parent: AirlockScience #  - Chapel is in Epistemics
+  parent: AirlockScience # DeltaV - Chapel is in Epistemics
   id: AirlockChapelLocked
   suffix: Chapel, Locked
   components:
@@ -94,7 +94,7 @@
 - type: entity
   parent: AirlockExternal
   id: AirlockExternalCargoLocked
-  suffix: External, Logistics, Locked #  - Logistics Department replacing Cargo
+  suffix: External, Logistics, Locked # DeltaV - Logistics Department replacing Cargo
   components:
   - type: ContainerFill
     containers:
@@ -184,7 +184,7 @@
 - type: entity
   parent: AirlockCargo
   id: AirlockCargoLocked
-  suffix: Logistics, Locked #  - Logistics Department replacing Cargo
+  suffix: Logistics, Locked # DeltaV - Logistics Department replacing Cargo
   components:
   - type: ContainerFill
     containers:
@@ -246,7 +246,7 @@
 - type: entity
   parent: AirlockScience
   id: AirlockScienceLocked
-  suffix: Epistemics, Locked #  - Epistemics Department replacing Science
+  suffix: Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
   - type: ContainerFill
     containers:
@@ -255,7 +255,7 @@
 - type: entity
   parent: AirlockScience
   id: AirlockMedicalScienceLocked
-  suffix: Medical/Epistemics, Locked #  - Epistemics Department replacing Science
+  suffix: Medical/Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
   - type: ContainerFill
     containers:
@@ -336,7 +336,7 @@
 - type: entity
   parent: AirlockCommand
   id: AirlockQuartermasterLocked
-  suffix: Logistics Officer, Locked #  - Logistics Department replacing Cargo
+  suffix: Logistics Officer, Locked # DeltaV - Logistics Department replacing Cargo
   components:
   - type: ContainerFill
     containers:
@@ -422,7 +422,7 @@
 
 - type: entity
   parent: AirlockJusticeGlass
-  id: AirlockLawyerGlassLocked #  - Lawyer is in Justice Dept
+  id: AirlockLawyerGlassLocked # DeltaV - Lawyer is in Justice Dept
   suffix: Lawyer, Locked
   components:
   - type: ContainerFill
@@ -459,7 +459,7 @@
 - type: entity
   parent: AirlockExternalGlass
   id: AirlockExternalGlassCargoLocked
-  suffix: External, Glass, Logistics, Locked #  - Logistics Department replacing Cargo
+  suffix: External, Glass, Logistics, Locked # DeltaV - Logistics Department replacing Cargo
   components:
   - type: ContainerFill
     containers:
@@ -529,7 +529,7 @@
       board: [ DoorElectronicsHydroponics ]
 
 - type: entity
-  parent: AirlockScienceGlass  #  - Chapel is in Epistemics
+  parent: AirlockScienceGlass  # DeltaV - Chapel is in Epistemics
   id: AirlockChapelGlassLocked
   suffix: Chapel, Locked
   components:
@@ -558,7 +558,7 @@
 - type: entity
   parent: AirlockCargoGlass
   id: AirlockCargoGlassLocked
-  suffix: Logistics, Locked #  - Logistics Department replacing Cargo
+  suffix: Logistics, Locked # DeltaV - Logistics Department replacing Cargo
   components:
   - type: ContainerFill
     containers:
@@ -620,7 +620,7 @@
 - type: entity
   parent: AirlockScienceGlass
   id: AirlockScienceGlassLocked
-  suffix: Epistemics, Locked #  - Epistemics Department replacing Science
+  suffix: Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
   - type: ContainerFill
     containers:
@@ -629,7 +629,7 @@
 - type: entity
   parent: AirlockScienceGlass
   id: AirlockMedicalScienceGlassLocked
-  suffix: Medical/Epistemics, Locked #  - Epistemics Department replacing Science
+  suffix: Medical/Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
   - type: ContainerFill
     containers:
@@ -710,7 +710,7 @@
 - type: entity
   parent: AirlockCommandGlass
   id: AirlockQuartermasterGlassLocked
-  suffix: Logistics Officer, Locked #  - Logistics Department replacing Cargo
+  suffix: Logistics Officer, Locked # DeltaV - Logistics Department replacing Cargo
   components:
   - type: ContainerFill
     containers:
@@ -819,7 +819,7 @@
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintCargoLocked
-  suffix: Logistics, Locked #  - Logistics Department replacing Cargo
+  suffix: Logistics, Locked # DeltaV - Logistics Department replacing Cargo
   components:
   - type: ContainerFill
     containers:
@@ -967,7 +967,7 @@
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintRnDLocked
-  suffix: Epistemics, Locked #  - Epistemics Department replacing Science
+  suffix: Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
   - type: ContainerFill
     containers:
@@ -978,7 +978,7 @@
 - type: entity
   parent: AirlockMaintRnDLocked
   id: AirlockMaintRnDMedLocked
-  suffix: Medical/Epistemics, Locked #  - Epistemics Department replacing Science
+  suffix: Medical/Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
   - type: ContainerFill
     containers:

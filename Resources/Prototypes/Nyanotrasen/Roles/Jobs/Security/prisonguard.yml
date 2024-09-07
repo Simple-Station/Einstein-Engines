@@ -34,7 +34,7 @@
     eyes: ClothingEyesGlassesSecurity
     head: ClothingHeadPrisonGuard
     id: PrisonGuardPDA
-    ears: ClothingHeadsetPrisonGuard #
+    ears: ClothingHeadsetPrisonGuard #DeltaV
     belt: ClothingBeltSecurityFilled
   innerClothingSkirt: ClothingUniformJumpsuitPrisonGuard
   satchel: ClothingBackpackSatchelSecurityFilled

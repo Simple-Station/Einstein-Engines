@@ -5,9 +5,9 @@
   description: A dusty and weathered flak jacket.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Vests/flak.rsi
+    sprite: DeltaV/Clothing/OuterClothing/Vests/flak.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Vests/flak.rsi
+    sprite: DeltaV/Clothing/OuterClothing/Vests/flak.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -25,9 +25,9 @@
   description: A flak jacket for reporters in wartorn zones.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Vests/flakpress.rsi
+    sprite: DeltaV/Clothing/OuterClothing/Vests/flakpress.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Vests/flakpress.rsi
+    sprite: DeltaV/Clothing/OuterClothing/Vests/flakpress.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -45,7 +45,7 @@
   description: a silken magenta vest with a pocket to put your notary stamp.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Vests/clerkvest.rsi
+    sprite: DeltaV/Clothing/OuterClothing/Vests/clerkvest.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Vests/clerkvest.rsi
+    sprite: DeltaV/Clothing/OuterClothing/Vests/clerkvest.rsi
 

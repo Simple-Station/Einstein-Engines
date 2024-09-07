@@ -6,7 +6,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterArmorPlateCarrier #  - ClothingOuterArmorBulletproof replaced in favour of plate carrier
+      - id: ClothingOuterArmorPlateCarrier # DeltaV - ClothingOuterArmorBulletproof replaced in favour of plate carrier
         amount: 3
 
 - type: entity
@@ -46,7 +46,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterArmorARC #  - ClothingOuterArmorRiot replaced in favour of ARC suit
+      - id: ClothingOuterArmorARC # DeltaV - ClothingOuterArmorRiot replaced in favour of ARC suit
         amount: 2
       - id: ClothingHeadHelmetRiot
         amount: 2

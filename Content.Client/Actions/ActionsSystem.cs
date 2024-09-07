@@ -315,7 +315,8 @@ namespace Content.Client.Actions
         }
 
         /// <summary>
-        ///     Load actions and their toolbar assignments from a yaml stream
+        ///     Load actions and their toolbar assignments from a file.
+        ///     DeltaV - Load from an existing yaml stream instead
         /// </summary>
         public void LoadActionAssignments(YamlStream stream)
         {

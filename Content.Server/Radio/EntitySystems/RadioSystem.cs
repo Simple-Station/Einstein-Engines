@@ -96,7 +96,7 @@ public sealed class RadioSystem : EntitySystem
             ? mask.VoiceName
             : MetaData(messageSource).EntityName;
 
-        // Support syrinx voice mask on radio.
+        // Delta-V: Support syrinx voice mask on radio.
         if (TryComp(messageSource, out SyrinxVoiceMaskComponent? syrinx) && syrinx.Enabled)
             name = syrinx.VoiceName;
 

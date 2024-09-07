@@ -124,7 +124,7 @@
   suffix: External, Escape Sub, Glass, Docking
   components:
     - type: GridFill
-      path: /Maps/Shuttles/sub_escape_pod.yml
+      path: /Maps/Shuttles/DeltaV/sub_escape_pod.yml
 
 - type: entity
   parent: Airlock

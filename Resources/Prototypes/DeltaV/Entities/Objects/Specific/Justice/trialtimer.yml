@@ -14,7 +14,7 @@
     rows: 1
   - type: Sprite
     drawdepth: SmallObjects
-    sprite: Objects/Specific/Justice/trialtimer.rsi
+    sprite: DeltaV/Objects/Specific/Justice/trialtimer.rsi
     state: trialtimer
     noRot: true
   - type: Construction

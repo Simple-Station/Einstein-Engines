@@ -5,9 +5,9 @@
   description: Keeps your parcels safe.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/courierbag.rsi
+    sprite: DeltaV/Clothing/Belt/courierbag.rsi
     state: icon
   - type: Clothing
-    sprite: Clothing/Belt/courierbag.rsi
+    sprite: DeltaV/Clothing/Belt/courierbag.rsi
     quickEquip: false
     slots: [belt]

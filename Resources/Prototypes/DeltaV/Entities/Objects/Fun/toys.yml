@@ -5,7 +5,7 @@
   description: Almost as cute and adorable as the real Renault!
   components:
   - type: Sprite
-    sprite: Objects/Fun/Toys/renaulttoy.rsi
+    sprite: DeltaV/Objects/Fun/Toys/renaulttoy.rsi
     state: base
   - type: EmitSoundOnUse
     sound:
@@ -24,7 +24,7 @@
   description: Nearly as fluffy as the real Shivs!
   components:
   - type: Sprite
-    sprite: Objects/Fun/Toys/siobhantoy.rsi
+    sprite: DeltaV/Objects/Fun/Toys/siobhantoy.rsi
     state: base
   - type: EmitSoundOnUse
     sound:
@@ -43,5 +43,5 @@
   description: whirrrrrrrrr taktaktaktaktak BOOM whirrrrrrr
   components:
   - type: Sprite
-    sprite: Objects/Fun/Toys/zerotoy.rsi
+    sprite: DeltaV/Objects/Fun/Toys/zerotoy.rsi
     state: icon

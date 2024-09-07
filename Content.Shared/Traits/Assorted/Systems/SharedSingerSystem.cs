@@ -1,5 +1,5 @@
 using Content.Shared.Actions;
-using Content.Shared.Harpy.Components;
+using Content.Shared.DeltaV.Harpy.Components;
 using Content.Shared.Instruments;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Traits.Assorted.Prototypes;

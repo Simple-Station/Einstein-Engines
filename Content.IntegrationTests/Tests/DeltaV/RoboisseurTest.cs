@@ -5,7 +5,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.IntegrationTests.Tests;
+namespace Content.IntegrationTests.Tests.DeltaV;
 
 [TestFixture]
 [TestOf(typeof(RoboisseurSystem))]

@@ -93,7 +93,7 @@
       - PosterContrabandWaffleCorp
       - PosterContrabandSaucerNumberOne # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
       - PosterContrabandBreadLies # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
-      - PosterContrabandGotWood #  Poster, see Resources/Prototypes/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterContrabandGotWood # DeltaV Poster, see Resources/Prototypes/DeltaV/Entities/Structures/Wallmount/Signs/posters.yml
       - PosterContrabandAyaya # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
       - PosterContrabandMissingSpacepen
     chance: 1
@@ -168,5 +168,5 @@
       - PosterLegitChknDnnr # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
       - PosterLegitShoukou # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
       - PosterLegitCornzza # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
-      - PosterLegitFuckAround #  Poster, see Resources/Prototypes/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitFuckAround # DeltaV Poster, see Resources/Prototypes/DeltaV/Entities/Structures/Wallmount/Signs/posters.yml
     chance: 1

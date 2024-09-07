@@ -754,7 +754,7 @@ namespace Content.Client.Preferences.UI
 
                     category.AddChild(selector);
                     _jobPriorities.Add(selector);
-                    EnsureJobRequirementsValid();
+                    EnsureJobRequirementsValid(); // DeltaV
 
                     selector.PriorityChanged += priority =>
                     {
@@ -788,7 +788,7 @@ namespace Content.Client.Preferences.UI
         }
 
         /// <summary>
-        ///     Make sure that no invalid job priorities get through.
+        ///     DeltaV - Make sure that no invalid job priorities get through.
         /// </summary>
         private void EnsureJobRequirementsValid()
         {
@@ -869,7 +869,7 @@ namespace Content.Client.Preferences.UI
                     break;
                 }
                 case HumanoidSkinColor.TintedHues:
-                case HumanoidSkinColor.TintedHuesSkin:
+                case HumanoidSkinColor.TintedHuesSkin: // DeltaV - Tone blending
                 {
                     if (!_rgbSkinColorContainer.Visible)
                     {
@@ -877,7 +877,7 @@ namespace Content.Client.Preferences.UI
                         _rgbSkinColorContainer.Visible = true;
                     }
 
-                    var color = skin switch
+                    var color = skin switch // DeltaV - Tone blending
                     {
                         HumanoidSkinColor.TintedHues => SkinColor.TintedHues(_rgbSkinColorSelector.Color),
                         HumanoidSkinColor.TintedHuesSkin => SkinColor.TintedHuesSkin(_rgbSkinColorSelector.Color, skinColor),
@@ -916,7 +916,7 @@ namespace Content.Client.Preferences.UI
             UpdateAntagRequirements();
             UpdateRoleRequirements();
             UpdateControls();
-            EnsureJobRequirementsValid();
+            EnsureJobRequirementsValid(); // DeltaV
         }
 
         private void SetAge(int newAge)

@@ -1,7 +1,7 @@
-using Content.Server.ParadoxAnomaly.Systems;
+using Content.Server.DeltaV.ParadoxAnomaly.Systems;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.ParadoxAnomaly.Components;
+namespace Content.Server.DeltaV.ParadoxAnomaly.Components;
 
 /// <summary>
 /// Creates a random paradox anomaly and tranfers mind to it when taken by a player.

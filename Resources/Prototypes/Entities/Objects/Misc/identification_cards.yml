@@ -247,7 +247,7 @@
 - type: entity
   parent: IDCardStandard
   id: CargoIDCard
-  name: logistics ID card #  - Logistics Department replacing Cargo
+  name: logistics ID card # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Sprite
     layers:
@@ -279,7 +279,7 @@
 - type: entity
   parent: IDCardStandard
   id: QuartermasterIDCard
-  name: logistics officer ID card #  - Logistics Department replacing Cargo
+  name: logistics officer ID card # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Sprite
     layers:
@@ -465,7 +465,7 @@
 - type: entity
   parent: IDCardStandard
   id: LawyerIDCard
-  name: attorney ID card #  - Changed Lawyer to Attorney
+  name: attorney ID card # DeltaV - Changed Lawyer to Attorney
   components:
   - type: Sprite
     layers:
@@ -584,7 +584,7 @@
 - type: entity
   parent: IDCardStandard
   id: RDIDCard
-  name: mystagogue ID card #  - Epistemics Department replacing Science
+  name: mystagogue ID card # DeltaV - Epistemics Department replacing Science
   components:
   - type: Sprite
     layers:
@@ -620,7 +620,7 @@
 - type: entity
   parent: IDCardStandard
   id: BrigmedicIDCard
-  name: corpsman ID card #  - rename brigmedic to corpsman
+  name: corpsman ID card # DeltaV - rename brigmedic to corpsman
   components:
   - type: Sprite
     layers:
@@ -630,7 +630,7 @@
     - state: subdepartment
       color: "#5B97BC"
     - state: medicaldoctor
-  - type: PresetIdCard # Delta V - Brigmedic, see Prototypes/Roles/Jobs/Security/brigmedic.yml
+  - type: PresetIdCard # Delta V - Brigmedic, see Prototypes/DeltaV/Roles/Jobs/Security/brigmedic.yml
     job: Brigmedic
 
 - type: entity

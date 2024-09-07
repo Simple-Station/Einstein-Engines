@@ -45,7 +45,7 @@ namespace Content.Shared.Maps
         [DataField]
         public PrototypeFlags<ToolQualityPrototype> DeconstructTools { get; set; } = new();
 
-        //
+        // Delta V
         [DataField("canShovel")] public bool CanShovel { get; private set; }
         //Delta V
 

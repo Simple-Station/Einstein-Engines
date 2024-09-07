@@ -5,7 +5,7 @@
   description: A hardwood block that, when hit with a gavel, emits an aura of authority.
   components:
     - type: Sprite
-      sprite: Objects/Specific/Justice/gavelblock.rsi
+      sprite: DeltaV/Objects/Specific/Justice/gavelblock.rsi
       layers:
         - state: icon
     - type: Item
@@ -13,7 +13,7 @@
     - type: Clickable
     - type: EmitSoundOnInteractUsing
       sound:
-        path: /Audio/Items/gavel.ogg
+        path: /Audio/DeltaV/Items/gavel.ogg
       whitelist:
         tags:
           - Gavel

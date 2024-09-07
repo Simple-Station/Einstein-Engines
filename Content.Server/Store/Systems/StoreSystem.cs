@@ -225,7 +225,7 @@ public sealed class CurrencyInsertAttemptEvent : CancellableEntityEventArgs
 
 
 /// <summary>
-/// Nyano Code. For penguin bombs and what not.
+/// Nyano/DeltaV Code. For penguin bombs and what not. 
 /// Raised on an item when it is purchased.
 /// An item may need to set it upself up for its purchaser.
 /// For example, to make sure it isn't hostile to them or

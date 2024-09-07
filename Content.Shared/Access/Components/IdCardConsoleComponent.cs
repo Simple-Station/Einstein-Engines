@@ -50,7 +50,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "Atmospherics",
         "Bar",
         //"Brig", Delta V: Removed Brig Access
-        "Boxer",  // - Add Boxer access
+        "Boxer",  // DeltaV - Add Boxer access
         "Detective",
         "Captain",
         "Cargo",
@@ -58,8 +58,8 @@ public sealed partial class IdCardConsoleComponent : Component
         "Chemistry",
         "ChiefEngineer",
         "ChiefMedicalOfficer",
-        "Clown", // - Add Clown access
-        "Corpsman", // - Add Corpsman access
+        "Clown", // DeltaV - Add Clown access
+        "Corpsman", // DeltaV - Add Corpsman access
         "Command",
         "Cryogenics",
         "Engineering",
@@ -70,28 +70,28 @@ public sealed partial class IdCardConsoleComponent : Component
         "Janitor",
         "Kitchen",
         "Lawyer",
-        "Library",  // - Add Library access
+        "Library",  // DeltaV - Add Library access
         "Maintenance",
         "Medical",
-        "Mime", // - Add Mime access
-        "Musician", // - Add Musician access
-        "Paramedic", // - Add Paramedic access
-        "Psychologist", // - Add Psychologist access
+        "Mime", // DeltaV - Add Mime access
+        "Musician", // DeltaV - Add Musician access
+        "Paramedic", // DeltaV - Add Paramedic access
+        "Psychologist", // DeltaV - Add Psychologist access
         "Quartermaster",
-        "Reporter", // - Add Reporter access
+        "Reporter", // DeltaV - Add Reporter access
         "Research",
         "ResearchDirector",
         "Salvage",
         "Security",
         "Service",
         "Theatre",
-        "Orders", // - Orders, see Resources/Prototypes/Access/cargo.yml
+        "Orders", // DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
         "Mail", // Nyanotrasen - Mail, see Resources/Prototypes/Nyanotrasen/Access/cargo.yml
-        "Mantis", // - Psionic Mantis, see Resources/Prototypes/Access/epistemics.yml
-        "Zookeeper",  // - Add Zookeeper access
-        "ChiefJustice",  // - Add Chief Justice access
-        "Justice",  // - Add Justice access
-        "Prosecutor", // - Add Prosecutor access
+        "Mantis", // DeltaV - Psionic Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
+        "Zookeeper",  // DeltaV - Add Zookeeper access
+        "ChiefJustice",  // DeltaV - Add Chief Justice access
+        "Justice",  // DeltaV - Add Justice access
+        "Prosecutor", // Delta V - Add Prosecutor access
     };
 
     [Serializable, NetSerializable]

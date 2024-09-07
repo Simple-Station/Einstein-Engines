@@ -182,7 +182,7 @@
         - id: ClothingBackpackDuffelSyndicate
           prob: 0.005
           orGroup: syndiemaintloot
-        #- id: CyberPen #  - Nuh uh
+        #- id: CyberPen # DeltaV - Nuh uh
         #  prob: 0.005
         #  orGroup: syndiemaintloot
         #- id: CigPackSyndicate

@@ -5,7 +5,7 @@
   description: A hardwood mallet made to keep order in the court.
   components:
     - type: Sprite
-      sprite: Objects/Specific/Justice/gavel.rsi
+      sprite: DeltaV/Objects/Specific/Justice/gavel.rsi
       layers:
         - state: icon
     - type: MeleeWeapon
@@ -15,7 +15,7 @@
           Blunt: 2
     - type: Item
       size: Small
-      sprite: Objects/Specific/Justice/gavel.rsi
+      sprite: DeltaV/Objects/Specific/Justice/gavel.rsi
     - type: Tag
       tags:
         - Gavel

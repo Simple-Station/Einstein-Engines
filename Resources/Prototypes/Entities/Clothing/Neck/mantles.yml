@@ -56,8 +56,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantleRD
-  name: mystagogue's mantle #  - Epistemics Department replacing Science
-  description: For when long days in the office consist of explosives, poisonous gas, murder robots, and a fresh pizza from logistics; this mantle will keep you comfy. #  - Logistics Department replacing Cargo
+  name: mystagogue's mantle # DeltaV - Epistemics Department replacing Science
+  description: For when long days in the office consist of explosives, poisonous gas, murder robots, and a fresh pizza from logistics; this mantle will keep you comfy. # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Sprite
     sprite: Clothing/Neck/mantles/rdmantle.rsi
@@ -67,7 +67,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantleQM
-  name: logistics officer's mantle #  - Logistics Department replacing Cargo
+  name: logistics officer's mantle # DeltaV - Logistics Department replacing Cargo
   description: For the master of goods and materials to rule over the department, a befitting mantle to show off superiority!
   components:
   - type: Sprite

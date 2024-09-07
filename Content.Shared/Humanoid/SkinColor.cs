@@ -130,7 +130,7 @@ public static class SkinColor
     }
 
     /// <summary>
-    ///      - Convert a color to the 'tinted hues' skin tone type, and blend it into skinColor
+    ///     DeltaV - Convert a color to the 'tinted hues' skin tone type, and blend it into skinColor
     /// </summary>
     /// <param name="color">Color to convert</param>
     /// <param name="skinColor">The skin color to blend with</param>
@@ -187,7 +187,7 @@ public static class SkinColor
         {
             HumanoidSkinColor.HumanToned => VerifyHumanSkinTone(color),
             HumanoidSkinColor.TintedHues => VerifyTintedHues(color),
-            HumanoidSkinColor.TintedHuesSkin => true, // - Tone blending
+            HumanoidSkinColor.TintedHuesSkin => true, // DeltaV - Tone blending
             HumanoidSkinColor.Hues => VerifyHues(color),
             _ => false,
         };
@@ -199,7 +199,7 @@ public static class SkinColor
         {
             HumanoidSkinColor.HumanToned => ValidHumanSkinTone,
             HumanoidSkinColor.TintedHues => ValidTintedHuesSkinTone(color),
-            HumanoidSkinColor.TintedHuesSkin => ValidTintedHuesSkinTone(color), // - Tone blending
+            HumanoidSkinColor.TintedHuesSkin => ValidTintedHuesSkinTone(color), // DeltaV - Tone blending
             HumanoidSkinColor.Hues => MakeHueValid(color),
             _ => color
         };
@@ -211,5 +211,5 @@ public enum HumanoidSkinColor : byte
     HumanToned,
     Hues,
     TintedHues, //This gives a color tint to a humanoid's skin (10% saturation with full hue range).
-    TintedHuesSkin, // - Default TintedHues assumes the texture will have the proper skin color, but moths dont
+    TintedHuesSkin, // DeltaV - Default TintedHues assumes the texture will have the proper skin color, but moths dont
 }

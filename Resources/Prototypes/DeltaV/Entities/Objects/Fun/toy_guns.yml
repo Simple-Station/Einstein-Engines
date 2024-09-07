@@ -7,12 +7,12 @@
   - type: Sprite
     netsync: false
     size: 50
-    sprite: Objects/Weapons/Guns/Rifles/bbgun.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/bbgun.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Rifles/bbgun.rsi ##
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/bbgun.rsi ##
     quickEquip: false
     slots:
     - Back

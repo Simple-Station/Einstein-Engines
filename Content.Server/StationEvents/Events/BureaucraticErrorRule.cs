@@ -31,7 +31,7 @@ public sealed class BureaucraticErrorRule : StationEventSystem<BureaucraticError
         {
             var chosenJob = RobustRandom.PickAndTake(jobList);
             _stationJobs.MakeJobUnlimited(chosenStation.Value, chosenJob); // INFINITE chaos.
-            /*  - don't close all other jobs
+            /* DeltaV - don't close all other jobs
             foreach (var job in jobList)
             {
                 if (_stationJobs.IsJobUnlimited(chosenStation.Value, job))

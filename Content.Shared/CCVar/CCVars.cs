@@ -2304,7 +2304,7 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> DebugOptionVisualizerTest =
             CVarDef.Create("debug.option_visualizer_test", false, CVar.CLIENTONLY);
 
-        /// CCVARS
+        /// DELTA-V CCVARS
         /*
          * Glimmer
          */
@@ -2516,23 +2516,6 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<bool> MoodDecreasesSpeed =
             CVarDef.Create("mood.decreases_speed", true, CVar.SERVER);
-
-        #endregion
-
-        #region Legacy Systems
-
-        /// <summary>
-        /// Anti-EORG measure. Will add pacified to all players upon round end.
-        /// Its not perfect, but gets the job done.
-        /// </summary>
-        public static readonly CVarDef<bool> RoundEndPacifist =
-            CVarDef.Create("game.round_end_pacifist", false, CVar.SERVERONLY);
-
-        /// <summary>
-        /// Disables all vision filters for species like Vulpkanin or Harpies. There are good reasons someone might want to disable these.
-        /// </summary>
-        public static readonly CVarDef<bool> NoVisionFilters =
-            CVarDef.Create("accessibility.no_vision_filters", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
         #endregion
     }

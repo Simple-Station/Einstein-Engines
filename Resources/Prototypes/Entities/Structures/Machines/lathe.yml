@@ -175,7 +175,7 @@
        - MagazineBoxRifle
        - MagazineBoxLightRifle
        - GrenadeBlast
-       #  - .38 special ammo - Add .38 special lethals to emagged autolathe
+       # DeltaV - .38 special ammo - Add .38 special lethals to emagged autolathe
        - CartridgeSpecial
        - MagazineBoxSpecial
        # End of modified code
@@ -213,7 +213,7 @@
       - MagazineGrenadeEmpty
       - GrenadeEMP
       - GrenadeFlash
-      #  - .38 special ammo - Add various .38 special ammo to emagged autolathe
+      # DeltaV - .38 special ammo - Add various .38 special ammo to emagged autolathe
       - CartridgeSpecialRubber
       - CartridgeSpecialIncendiary
       - CartridgeSpecialUranium
@@ -362,10 +362,10 @@
       - WeaponAdvancedLaser
       - WeaponLaserCannon
       - WeaponXrayCannon
-      - WeaponEnergyGun       #  - Energy Gun
-      - WeaponEnergyGunMini   #  - Miniature Energy Gun
-      - WeaponEnergyGunPistol #  - PDW-9 Energy Pistol
-      - WeaponGunLaserCarbineAutomatic #  - IK-60 Laser Carbine
+      - WeaponEnergyGun       # DeltaV - Energy Gun
+      - WeaponEnergyGunMini   # DeltaV - Miniature Energy Gun
+      - WeaponEnergyGunPistol # DeltaV - PDW-9 Energy Pistol
+      - WeaponGunLaserCarbineAutomatic # DeltaV - IK-60 Laser Carbine
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -509,7 +509,7 @@
       - StationMapElectronics
       - MetempsychoticMachineCircuitboard
     # End Nyano additions
-      - SalvageExpeditionsComputerCircuitboard #
+      - SalvageExpeditionsComputerCircuitboard # DeltaV
   - type: MaterialStorage
     whitelist:
       tags:
@@ -731,8 +731,8 @@
       - MagazineBoxRifle
       - MagazineBoxLightRifle
       - SpeedLoaderMagnum
-      - ClothingOuterArmorPlateCarrier #  - plate carrier body armour
-      - ClothingOuterArmorDuraVest #  - stabproof vest body armour
+      - ClothingOuterArmorPlateCarrier # DeltaV - plate carrier body armour
+      - ClothingOuterArmorDuraVest # DeltaV - stabproof vest body armour
       - TargetHuman
       - TargetSyndicate
       - TargetClown
@@ -744,7 +744,7 @@
       - WeaponLaserCarbinePractice
       - WeaponDisablerPractice
       - ShockCollar
-      #  - .38 special ammo - Add various .38 special ammo to security techfab
+      # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
       - MagazineBoxSpecial
       - MagazineBoxSpecialPractice
       - SpeedLoaderSpecial
@@ -809,11 +809,11 @@
       - ShuttleGunPerforatorCircuitboard
       - ShuttleGunFriendshipCircuitboard
       - ShuttleGunDusterCircuitboard
-      - WeaponEnergyGun # - Energy Gun
-      - WeaponEnergyGunMini # - Energy Gun but miniature
-      - WeaponEnergyGunPistol # - Energy Gun Mini but with the power of a normal energy gun
-      - WeaponGunLaserCarbineAutomatic # - New Laser Projectiles with a 20 round carbine
-      #  - .38 special ammo - Add various .38 special ammo to security techfab
+      - WeaponEnergyGun #DeltaV - Energy Gun
+      - WeaponEnergyGunMini #DeltaV - Energy Gun but miniature
+      - WeaponEnergyGunPistol #DeltaV - Energy Gun Mini but with the power of a normal energy gun
+      - WeaponGunLaserCarbineAutomatic #DeltaV - New Laser Projectiles with a 20 round carbine
+      # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
       - CartridgeSpecialRubber
       - CartridgeSpecialIncendiary
       - CartridgeSpecialUranium
@@ -868,7 +868,7 @@
         - MagazineBoxMagnum
         - MagazineBoxRifle
         - MagazineBoxLightRifle
-        #  - .38 special ammo - Add lethal .38 special ammo to ammo techfab
+        # DeltaV - .38 special ammo - Add lethal .38 special ammo to ammo techfab
         - CartridgeSpecial
         - MagazineBoxSpecial
         # End of modified code
@@ -1014,10 +1014,10 @@
       - ClothingHeadHatHoshat
       - ClothingUniformJumpsuitHoS
       - ClothingUniformJumpskirtHoS
-      - ClothingUniformJumpsuitHoSBlue #  - alternate sec uniforms
-      - ClothingUniformJumpskirtHoSBlue #  - alternate sec uniforms
-      - ClothingUniformJumpsuitHoSGrey #  - alternate sec uniforms
-      - ClothingUniformJumpskirtHoSGrey #  - alternate sec uniforms
+      - ClothingUniformJumpsuitHoSBlue # DeltaV - alternate sec uniforms
+      - ClothingUniformJumpskirtHoSBlue # DeltaV - alternate sec uniforms
+      - ClothingUniformJumpsuitHoSGrey # DeltaV - alternate sec uniforms
+      - ClothingUniformJumpskirtHoSGrey # DeltaV - alternate sec uniforms
       - ClothingUniformJumpsuitHosFormal
       - ClothingUniformJumpskirtHosFormal
       - ClothingUniformJumpsuitHoSAlt
@@ -1033,8 +1033,8 @@
       - ClothingUniformJumpsuitLawyerBlack
       - ClothingUniformJumpsuitLibrarian
       - ClothingUniformJumpskirtColorLightBrown
-      - ClothingUniformCourier #  - Courier Uniform
-      - ClothingUniformSkirtCourier #  - Courier Uniform
+      - ClothingUniformCourier # DeltaV - Courier Uniform
+      - ClothingUniformSkirtCourier # DeltaV - Courier Uniform
       - ClothingUniformJumpsuitMantis # Nyanotrasen - Forensic Mantis
       - ClothingUniformSkirtMantis # Nyanotrasen - Forensic Mantis
       - ClothingHeadHatBeretSeniorPhysician
@@ -1068,10 +1068,10 @@
       - ClothingHeadHatBeretSecurity
       - ClothingUniformJumpsuitSec
       - ClothingUniformJumpskirtSec
-      - ClothingUniformJumpsuitSecBlue #  - alternate sec uniforms
-      - ClothingUniformJumpskirtSecBlue #  - alternate sec uniforms
-      - ClothingUniformJumpsuitSecGrey #  - alternate sec uniforms
-      - ClothingUniformJumpskirtSecGrey #  - alternate sec uniforms
+      - ClothingUniformJumpsuitSecBlue # DeltaV - alternate sec uniforms
+      - ClothingUniformJumpskirtSecBlue # DeltaV - alternate sec uniforms
+      - ClothingUniformJumpsuitSecGrey # DeltaV - alternate sec uniforms
+      - ClothingUniformJumpskirtSecGrey # DeltaV - alternate sec uniforms
       - ClothingHeadHatBeretBrigmedic
       - ClothingUniformJumpsuitBrigmedic
       - ClothingUniformJumpskirtBrigmedic
@@ -1079,10 +1079,10 @@
       - ClothingHeadHatWarden
       - ClothingUniformJumpsuitWarden
       - ClothingUniformJumpskirtWarden
-      - ClothingUniformJumpsuitWardenBlue #  - alternate sec uniforms
-      - ClothingUniformJumpskirtWardenBlue #  - alternate sec uniforms
-      - ClothingUniformJumpsuitWardenGrey #  - alternate sec uniforms
-      - ClothingUniformJumpskirtWardenGrey #  - alternate sec uniforms
+      - ClothingUniformJumpsuitWardenBlue # DeltaV - alternate sec uniforms
+      - ClothingUniformJumpskirtWardenBlue # DeltaV - alternate sec uniforms
+      - ClothingUniformJumpsuitWardenGrey # DeltaV - alternate sec uniforms
+      - ClothingUniformJumpskirtWardenGrey # DeltaV - alternate sec uniforms
       - ClothingHeadHatParamedicsoft
       # Winter outfits
       - ClothingOuterWinterCap
@@ -1099,7 +1099,7 @@
       - ClothingNeckMantleHOS
       - ClothingNeckMantleRD
       - ClothingNeckMantleQM
-      - ClothingOuterStasecSweater #  - added stasec sweater to uniform printer.
+      - ClothingOuterStasecSweater # DeltaV - added stasec sweater to uniform printer.
       - ClothingOuterWinterMusician
       - ClothingOuterWinterClown
       - ClothingOuterWinterMime

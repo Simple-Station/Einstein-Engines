@@ -5,7 +5,7 @@
   description: A strange pest from a world beyond the noosphere.
   components:
   - type: Sprite
-    sprite: Mobs/Ghosts/glimmermite.rsi
+    sprite: DeltaV/Mobs/Ghosts/glimmermite.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: mite
@@ -27,5 +27,5 @@
   - type: AmbientSound
     range: 6
     volume: -3
-    sound: /Audio/Glimmer_Creatures/mite.ogg
+    sound: /Audio/DeltaV/Glimmer_Creatures/mite.ogg
   - type: AmbientOnPowered

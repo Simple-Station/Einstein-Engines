@@ -33,7 +33,7 @@
     MailMoney: 1
     MailMuffins: 1.1
     MailMoffins: 0.5
-    MailPumpkinPie: 1 #  - Pumpkie pie mail
+    MailPumpkinPie: 1 # DeltaV - Pumpkie pie mail
     MailNoir: 0.5
     MailPAI: 1
     MailPlushie: 1
@@ -46,7 +46,7 @@
     MailVagueThreat: 0.4
     # This is mainly for Glacier.
     MailWinterCoat: 1.5
-    MailBooksAll: 0.5 #  - All the other books not in MailBooks, see Resources/Prototypes/Entities/Objects/Specific/Mail/mail.yml
+    MailBooksAll: 0.5 # DeltaV - All the other books not in MailBooks, see Resources/Prototypes/DeltaV/Entities/Objects/Specific/Mail/mail.yml
 
   # Department and job-specific mail can have slightly higher weights,
   # since they'll be merged with the everyone pool.
@@ -97,8 +97,8 @@
     Clown:
       MailClownGildedBikeHorn: 0.5
       MailClownHonkSupplement: 3
-    Detective: #  - Detective is in charge of investigating crimes.
-      MailDetectiveForensicSupplement: 2 #  - Detective is in charge of investigating crimes.
+    Detective: # Deltav - Detective is in charge of investigating crimes.
+      MailDetectiveForensicSupplement: 2 # Deltav - Detective is in charge of investigating crimes.
     HeadOfPersonnel:
       MailHoPBureaucracy: 2
       MailHoPSupplement: 3
@@ -110,7 +110,7 @@
       MailMimeArtsCrafts: 3
       MailMimeBlankBook: 2
       MailMimeBottleOfNothing: 1
-    ResearchDirector: #  - Epistemics Department replacing Science but keeping their IDs
+    ResearchDirector: # DeltaV - Epistemics Department replacing Science but keeping their IDs
       MailEpistemologyIngotGold: 2
     Musician:
       MailMusicianInstrumentSmall: 1

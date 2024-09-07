@@ -180,7 +180,7 @@
     accentVColor: "#A32D26"
   - type: Icon
     state: pda-interncadet
-  - type: CartridgeLoader #  - Crime Assist + SecWatch
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -315,12 +315,12 @@
 
 - type: entity
   name: chaplain PDA
-  parent: SciencePDA #  - Chaplain is part of episetmics
+  parent: SciencePDA # DeltaV - Chaplain is part of episetmics
   id: ChaplainPDA
   description: God's chosen PDA.
   components:
-  - type: Sprite #  - Give Chaplain PDA Epistemics colors
-    sprite: Objects/Devices/pda.rsi
+  - type: Sprite # DeltaV - Give Chaplain PDA Epistemics colors
+    sprite: DeltaV/Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
     - state: "light_overlay"
@@ -336,16 +336,16 @@
     state: pda-chaplain
   - type: PdaBorderColor
     borderColor: "#333333"
-    accentVColor: "#8900c9" #  - Give Chaplain PDA Epistemics colors
+    accentVColor: "#8900c9" # DeltaV - Give Chaplain PDA Epistemics colors
   - type: Icon
-    sprite: Objects/Devices/pda.rsi #  - Give Chaplain PDA Epistemics colors
+    sprite: DeltaV/Objects/Devices/pda.rsi # DeltaV - Give Chaplain PDA Epistemics colors
     state: pda-chaplain
 
 - type: entity
-  name: logistics officer PDA #  - Logistics Department replacing Cargo
+  name: logistics officer PDA # DeltaV - Logistics Department replacing Cargo
   parent: BasePDA
   id: QuartermasterPDA
-  description: PDA for the guy that directs logistics. #  - Logistics Department replacing Cargo
+  description: PDA for the guy that directs logistics. # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Pda
     id: QuartermasterIDCard
@@ -359,8 +359,8 @@
 - type: entity
   parent: BasePDA
   id: CargoPDA
-  name: logistics PDA #  - Logistics Department replacing Cargo
-  description: PDA for the guys that order the pizzas. #  - Logistics Department replacing Cargo
+  name: logistics PDA # DeltaV - Logistics Department replacing Cargo
+  description: PDA for the guys that order the pizzas. # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Pda
     id: CargoIDCard
@@ -444,7 +444,7 @@
     borderColor: "#6f6192"
   - type: Icon
     state: pda-lawyer
-  - type: CartridgeLoader #  - Crime Assist + SecWatch
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -628,7 +628,7 @@
 - type: entity
   parent: BasePDA
   id: RnDPDA
-  name: mystagogue PDA #  - Epistemics Department replacing Science
+  name: mystagogue PDA # DeltaV - Epistemics Department replacing Science
   description: It appears surprisingly ordinary.
   components:
   - type: Pda
@@ -650,7 +650,7 @@
 - type: entity
   parent: BasePDA
   id: SciencePDA
-  name: epistemics PDA #  - Epistemics Department replacing Science
+  name: epistemics PDA # DeltaV - Epistemics Department replacing Science
   description: It's covered with an unknown gooey substance.
   components:
   - type: Pda
@@ -697,7 +697,7 @@
     accentHColor: "#447987"
   - type: Icon
     state: pda-hos
-  - type: CartridgeLoader #  - Crime Assist + SecWatch
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -719,7 +719,7 @@
     accentVColor: "#949137"
   - type: Icon
     state: pda-warden
-  - type: CartridgeLoader #  - Crime Assist + SecWatch
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -740,7 +740,7 @@
     borderColor: "#A32D26"
   - type: Icon
     state: pda-security
-  - type: CartridgeLoader #  - Crime Assist + SecWatch
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -1042,7 +1042,7 @@
     borderColor: "#774705"
   - type: Icon
     state: pda-detective
-  - type: CartridgeLoader #  - Crime Assist + SecWatch
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -1071,7 +1071,7 @@
     accentVColor: "#d7d7d0"
   - type: Icon
     state: pda-brigmedic
-  - type: CartridgeLoader #  - Crime Assist + SecWatch
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -1169,7 +1169,7 @@
     accentVColor: "#DFDFDF"
   - type: Icon
     state: pda-seniorofficer
-  - type: CartridgeLoader #  - Crime Assist + SecWatch
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge

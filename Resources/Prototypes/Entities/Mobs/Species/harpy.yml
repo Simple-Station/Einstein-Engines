@@ -182,7 +182,7 @@
   components:
   - type: InstantAction
     checkCanInteract: false
-    icon: Interface/Actions/harpy_sing.png
+    icon: DeltaV/Interface/Actions/harpy_sing.png
     event: !type:OpenUiActionEvent
       key: enum.InstrumentUiKey.Key
 
@@ -193,6 +193,6 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: Interface/Actions/harpy_syrinx.png
+    icon: DeltaV/Interface/Actions/harpy_syrinx.png
     itemIconStyle: BigAction
     event: !type:VoiceMaskSetNameEvent

@@ -3,20 +3,20 @@
   name: job-name-qm
   description: job-description-qm
   playTimeTracker: JobQuartermaster
-  antagAdvantage: 6 #  - Reduced TC: Head of Staff
+  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
-  #  - !type:RoleTimeRequirement #
+  #  - !type:RoleTimeRequirement #DeltaV
   #    role: JobCargoTechnician
   #    time: 21600 #6 hrs
     - !type:CharacterPlaytimeRequirement
       tracker: JobSalvageSpecialist
       min: 10800 #3 hrs
-    - !type:CharacterPlaytimeRequirement #  - Courier role time requirement
+    - !type:CharacterPlaytimeRequirement # DeltaV - Courier role time requirement
       tracker: JobMailCarrier
       min: 7200 # 2 hours
     - !type:CharacterDepartmentTimeRequirement
-      department: Logistics #  - Logistics Department replacing Cargo
-      min: 43200 # 12 hours
+      department: Logistics # DeltaV - Logistics Department replacing Cargo
+      min: 43200 #DeltaV 12 hours
     - !type:CharacterOverallTimeRequirement
       min: 144000 #40 hrs
   weight: 10
@@ -31,8 +31,8 @@
   - Quartermaster
   - Maintenance
   - Command
-  - Orders #  - Orders, see Resources/Prototypes/Access/cargo.yml
-  - External #  - for promoting salvage specialists
+  - Orders # DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
+  - External # DeltaV - for promoting salvage specialists
   - Cryogenics
   special:
   - !type:AddImplantSpecial

@@ -1,12 +1,12 @@
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Preferences;
+using Content.Shared.Preferences; // DeltaV
 using Robust.Shared.Enums;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
-using Content.Shared.Preferences;
+using Content.Shared.Preferences; //DeltaV, used for Metempsychosis, Fugitive, and Paradox Anomaly
 
 namespace Content.Shared.Humanoid;
 
@@ -86,7 +86,7 @@ public sealed partial class HumanoidAppearanceComponent : Component
     public Color? CachedFacialHairColor;
 
     /// <summary>
-    /// - let paradox anomaly be cloned
+    /// DeltaV - let paradox anomaly be cloned
     /// </summary>
     [ViewVariables]
     public HumanoidCharacterProfile? LastProfileLoaded;

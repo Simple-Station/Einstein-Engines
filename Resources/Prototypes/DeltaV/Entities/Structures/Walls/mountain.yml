@@ -10,7 +10,7 @@
       tags:
         - Pickaxe
   - type: Sprite
-    sprite: Structures/Walls/asteroid_rock.rsi
+    sprite: DeltaV/Structures/Walls/asteroid_rock.rsi
     state: full
   - type: Damageable
     damageContainer: Inorganic
@@ -51,7 +51,7 @@
   description: A craggy mountain wall.
   components:
   - type: Sprite
-    sprite: Structures/Walls/mountain_rock_ore.rsi
+    sprite: DeltaV/Structures/Walls/mountain_rock_ore.rsi
     state: full
   - type: Destructible
     thresholds:
@@ -73,7 +73,7 @@
   description: A craggy mountain wall. It is too hard to mine.
   components:
   - type: Sprite
-    sprite: Structures/Walls/mountain_rock.rsi
+    sprite: DeltaV/Structures/Walls/mountain_rock.rsi
     state: full
   - type: Damageable
     damageContainer: Inorganic

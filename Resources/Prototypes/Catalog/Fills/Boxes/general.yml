@@ -279,7 +279,7 @@
       - EncryptionKey
 
 - type: entity
-  name: logistics encryption key box #  - Logistics Department replacing Cargo
+  name: logistics encryption key box # DeltaV - Logistics Department replacing Cargo
   parent: BoxEncryptionKeyPassenger
   id: BoxEncryptionKeyCargo
   components:
@@ -329,7 +329,7 @@
         amount: 4
 
 - type: entity
-  name: epistemics encryption key box #  - Epistemics Department replacing Science
+  name: epistemics encryption key box # DeltaV - Epistemics Department replacing Science
   parent: BoxEncryptionKeyPassenger
   id: BoxEncryptionKeyScience
   components:

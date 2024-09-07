@@ -5,14 +5,14 @@
   playTimeTracker: JobZookeeper
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 7200 # 2 hours
+      min: 7200 #DeltaV 2 hours
   startingGear: ZookeeperGear
   icon: "JobIconZookeeper"
   supervisors: job-supervisors-hop
   access:
   - Service
   - Maintenance
-  - Zookeeper #  - Add Zookeeper access
+  - Zookeeper # DeltaV - Add Zookeeper access
 
 - type: startingGear
   id: ZookeeperGear

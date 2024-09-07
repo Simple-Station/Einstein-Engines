@@ -7,7 +7,7 @@
     specialDigestible:
       tags:
       - ClothMade
-      - Fruit #  - Moth can eat fruits.
+      - Fruit # DeltaV - Moth can eat fruits.
       - Paper
   - type: SolutionContainerManager
     solutions:

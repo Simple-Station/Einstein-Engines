@@ -53,15 +53,15 @@ namespace Content.Server.Connection
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
         private ISawmill _sawmill = default!;
 
-        private List<NetUserId> _connectedWhitelistedPlayers = new(); // - Soft whitelist improvements
+        private List<NetUserId> _connectedWhitelistedPlayers = new(); // DeltaV - Soft whitelist improvements
 
         public void Initialize()
         {
             _sawmill = _logManager.GetSawmill("connections");
 
             _netMgr.Connecting += NetMgrOnConnecting;
-            _netMgr.Connected += OnConnected; // - Soft whitelist improvements
-            _netMgr.Disconnect += OnDisconnected; // - Soft whitelist improvements
+            _netMgr.Connected += OnConnected; // DeltaV - Soft whitelist improvements
+            _netMgr.Disconnect += OnDisconnected; // DeltaV - Soft whitelist improvements
             _netMgr.AssignUserIdCallback = AssignUserIdCallback;
             // Approval-based IP bans disabled because they don't play well with Happy Eyeballs.
             // _netMgr.HandleApprovalCallback = HandleApproval;
@@ -212,7 +212,7 @@ namespace Content.Server.Connection
                 return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
 
 
-            // - Replace existing softwhitelist implementation
+            // DeltaV - Replace existing softwhitelist implementation
             if (false) //_cfg.GetCVar(CCVars.WhitelistEnabled))
             {
                 var min = _cfg.GetCVar(CCVars.WhitelistMinPlayers);
@@ -230,7 +230,7 @@ namespace Content.Server.Connection
                 }
             }
 
-            // - Soft whitelist improvements
+            // DeltaV - Soft whitelist improvements
             if (_cfg.GetCVar(CCVars.WhitelistEnabled))
             {
                 var connectedPlayers = _plyMgr.PlayerCount;
@@ -279,7 +279,7 @@ namespace Content.Server.Connection
         }
 
         /// <summary>
-        ///     Soft whitelist improvements
+        ///     DeltaV - Soft whitelist improvements
         ///     Handles a completed connection, and stores the player if they're whitelisted and the whitelist is enabled
         /// </summary>
         private async void OnConnected(object? sender, NetChannelArgs e)
@@ -293,7 +293,7 @@ namespace Content.Server.Connection
         }
 
         /// <summary>
-        ///     Soft whitelist improvements
+        ///     DeltaV - Soft whitelist improvements
         ///     Handles a disconnection, and removes a stored player from the count if the whitelist is enabled
         /// </summary>
         private async void OnDisconnected(object? sender, NetChannelArgs e)

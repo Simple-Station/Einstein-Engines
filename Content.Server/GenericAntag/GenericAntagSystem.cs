@@ -59,7 +59,7 @@ public sealed class GenericAntagSystem : EntitySystem
     }
 
     /// <summary>
-    /// - used by paradox anomaly
+    /// DeltaV - used by paradox anomaly
     /// </summary>
     public void MakeAntag(EntityUid uid, string rule)
     {

@@ -1,7 +1,7 @@
 - type: cargoProduct
   id: LivestockSecDog
   icon:
-    sprite: Mobs/Pets/secdog.rsi
+    sprite: DeltaV/Mobs/Pets/secdog.rsi
     state: secdog
   product: CrateNPCSecDog
   cost: 3500

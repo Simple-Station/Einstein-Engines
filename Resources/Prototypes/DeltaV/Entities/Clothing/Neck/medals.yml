@@ -5,6 +5,6 @@
   description: Given to crewmates that make the greatest of sacrifices in the performance of their duties.
   components:
   - type: Sprite
-    sprite: Clothing/Neck/Medals/blackstar.rsi
+    sprite: DeltaV/Clothing/Neck/Medals/blackstar.rsi
   - type: Clothing
-    sprite: Clothing/Neck/Medals/blackstar.rsi
+    sprite: DeltaV/Clothing/Neck/Medals/blackstar.rsi

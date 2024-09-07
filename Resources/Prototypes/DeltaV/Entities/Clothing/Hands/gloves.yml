@@ -5,9 +5,9 @@
   description: A fancy pair of white gloves, both durable and delicate.
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/inspection.rsi
+    sprite: DeltaV/Clothing/Hands/Gloves/inspection.rsi
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/inspection.rsi
+    sprite: DeltaV/Clothing/Hands/Gloves/inspection.rsi
   - type: GloveHeatResistance
     heatResistance: 1400
   - type: Insulated
@@ -24,9 +24,9 @@
   suffix: ADMIN ONLY, DO NOT MAP
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/ryuzogauntlets.rsi
+    sprite: DeltaV/Clothing/Hands/Gloves/ryuzogauntlets.rsi
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/ryuzogauntlets.rsi
+    sprite: DeltaV/Clothing/Hands/Gloves/ryuzogauntlets.rsi
   - type: GloveHeatResistance
     heatResistance: 1400
   - type: Insulated
@@ -49,9 +49,9 @@
   description: A pair of thick gloves that provide some protection from caustic chemicals.
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/hvchemresgloves.rsi
+    sprite: DeltaV/Clothing/Hands/Gloves/hvchemresgloves.rsi
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/hvchemresgloves.rsi
+    sprite: DeltaV/Clothing/Hands/Gloves/hvchemresgloves.rsi
   - type: Fiber
     fiberMaterial: fibers-rubber
     fiberColor: fibers-black

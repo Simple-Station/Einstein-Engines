@@ -11,7 +11,7 @@
   - type: Sprite
     layers:
     - state: tin
-    - sprite: Objects/Consumable/Food/Baked/pie.rsi
+    - sprite: DeltaV/Objects/Consumable/Food/Baked/pie.rsi
       state: pumpkin
   - type: SliceableFood
     slice: FoodPiePumpkinSlice
@@ -30,7 +30,7 @@
       - sweet
       - pumpkin
   - type: Sprite
-    sprite: Objects/Consumable/Food/Baked/pie.rsi
+    sprite: DeltaV/Objects/Consumable/Food/Baked/pie.rsi
     state: pumpkin-slice
   - type: Tag
     tags:

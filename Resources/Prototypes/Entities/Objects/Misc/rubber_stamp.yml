@@ -159,7 +159,7 @@
     state: stamp-mime
 
 - type: entity
-  name: logistics officer's rubber stamp #  - Logistics Department replacing Cargo
+  name: logistics officer's rubber stamp # DeltaV - Logistics Department replacing Cargo
   parent: RubberStampBase
   id: RubberStampQm
   suffix: DO NOT MAP
@@ -172,7 +172,7 @@
       state: stamp-qm
 
 - type: entity
-  name: mystagogue's rubber stamp #  - Epistemics Department replacing Science
+  name: mystagogue's rubber stamp # DeltaV - Epistemics Department replacing Science
   parent: RubberStampBase
   id: RubberStampRd
   suffix: DO NOT MAP

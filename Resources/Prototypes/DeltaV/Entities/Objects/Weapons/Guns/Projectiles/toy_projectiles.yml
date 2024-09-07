@@ -10,7 +10,7 @@
     - type: Appearance
     - type: FlyBySound
     - type: Sprite
-      sprite: Objects/Weapons/Guns/Ammunition/Boxes/bbgun.rsi
+      sprite: DeltaV/Objects/Weapons/Guns/Ammunition/Boxes/bbgun.rsi
       layers:
         - state: bbbullet
     - type: Tag

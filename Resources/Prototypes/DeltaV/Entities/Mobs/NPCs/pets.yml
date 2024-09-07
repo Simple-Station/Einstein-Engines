@@ -34,7 +34,7 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 14400 #  - 4 hours
+      time: 14400 # DeltaV - 4 hours
   - type: GhostTakeoverAvailable
   - type: InteractionPopup
     successChance: 1

@@ -5,17 +5,17 @@
   description: A cartridge that helps identify crimes and see appropriate punishment.
   components:
   - type: Sprite
-    sprite: Objects/Devices/cartridge.rsi
+    sprite: DeltaV/Objects/Devices/cartridge.rsi
     state: cart-cri
   - type: Icon
-    sprite: Objects/Devices/cartridge.rsi
+    sprite: DeltaV/Objects/Devices/cartridge.rsi
     state: cart-cri
   - type: UIFragment
     ui: !type:CrimeAssistUi
   - type: Cartridge
     programName: crime-assist-program-name
     icon:
-      sprite: Icons/cri.rsi
+      sprite: DeltaV/Icons/cri.rsi
       state: cri
 
 - type: entity
@@ -25,10 +25,10 @@
   description: A cartridge that tracks the status of currently wanted individuals.
   components:
   - type: Sprite
-    sprite: Objects/Devices/cartridge.rsi
+    sprite: DeltaV/Objects/Devices/cartridge.rsi
     state: cart-cri
   - type: Icon
-    sprite: Objects/Devices/cartridge.rsi
+    sprite: DeltaV/Objects/Devices/cartridge.rsi
     state: cart-cri
   - type: UIFragment
     ui: !type:SecWatchUi

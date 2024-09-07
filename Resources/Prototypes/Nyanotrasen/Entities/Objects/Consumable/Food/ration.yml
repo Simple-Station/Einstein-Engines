@@ -74,7 +74,7 @@
           Quantity: 15
   - type: Tag
     tags:
-    - Fruit #  - Allow anyone to eat it, hopefully
+    - Fruit # DeltaV - Allow anyone to eat it, hopefully
 
 - type: entity
   name: soy sustenance bar

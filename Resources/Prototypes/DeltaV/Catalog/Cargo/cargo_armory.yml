@@ -21,7 +21,7 @@
 - type: cargoProduct
   id: ArmoryShotgunAdjutant
   icon:
-    sprite: Objects/Weapons/Guns/Shotguns/Adjutant.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/Adjutant.rsi
     state: icon
   product: CrateArmoryAdjutant
   cost: 10000
@@ -30,18 +30,18 @@
 
 - type: cargoProduct
   id: ArmoryEnergyGun
-  icon:
-    sprite: Objects/Weapons/Guns/Battery/energygun.rsi
+  icon: 
+    sprite: DeltaV/Objects/Weapons/Guns/Battery/energygun.rsi
     state: icon
   product: CrateArmoryEnergyGun
   cost: 5500
   category: Armory
   group: market
-
+ 
 - type: cargoProduct
   id: ArmoryEnergyGunMini
   icon:
-    sprite: Objects/Weapons/Guns/Battery/mini_energygun.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Battery/mini_energygun.rsi
     state: icon
   product: CrateArmoryEnergyGunMini
   cost: 3500

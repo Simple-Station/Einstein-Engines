@@ -65,7 +65,7 @@
   - type: EyeProtection
   - type: Tag
     tags:
-    - SecDogWearable #  - let Laika wear meson goggles
+    - SecDogWearable # DeltaV - let Laika wear meson goggles
 
 - type: entity
   parent: ClothingEyesBase
@@ -141,7 +141,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - SecDogWearable #  - let Laika wear sunglasses
+    - SecDogWearable # DeltaV - let Laika wear sunglasses
   - type: IdentityBlocker
     coverage: EYES
 
@@ -172,7 +172,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - SecDogWearable #  - let Laika wear secglasses
+    - SecDogWearable # DeltaV - let Laika wear secglasses
   - type: GuideHelp
     guides:
     - Security

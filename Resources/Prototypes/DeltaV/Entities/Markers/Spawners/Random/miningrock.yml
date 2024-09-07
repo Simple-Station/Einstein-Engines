@@ -6,7 +6,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: Structures/Walls/asteroid_rock.rsi
+      - sprite: DeltaV/Structures/Walls/asteroid_rock.rsi
         state: full
   - type: RandomSpawner
     prototypes:

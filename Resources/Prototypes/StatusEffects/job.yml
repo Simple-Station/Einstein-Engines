@@ -114,15 +114,15 @@
   parent: JobIcon
   id: JobIconChaplain
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi #  - Move Chaplain into Epistemics
-    state: Chaplain #  - Move Chaplain into Epistemics
+    sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi # DeltaV - Move Chaplain into Epistemics
+    state: Chaplain # DeltaV - Move Chaplain into Epistemics
 
 - type: statusIcon
   parent: JobIcon
   id: JobIconLawyer
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi #  - Move Lawyer into Justice
-    state: Lawyer #  - Move Lawyer into Justice
+    sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi # DeltaV - Move Lawyer into Justice
+    state: Lawyer # DeltaV - Move Lawyer into Justice
 
 - type: statusIcon
   parent: JobIcon

@@ -27,7 +27,7 @@
     color: green
   - type: Sprite
     drawdepth: SmallMobs
-    sprite: Mobs/Animals/nukiemouse.rsi
+    sprite: DeltaV/Mobs/Animals/nukiemouse.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: mouse

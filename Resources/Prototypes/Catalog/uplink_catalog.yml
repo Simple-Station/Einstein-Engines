@@ -1202,7 +1202,7 @@
   conditions:
     - !type:BuyerDepartmentCondition
       whitelist:
-      - Epistemics #  - Epistemics Department replacing Science
+      - Epistemics # DeltaV - Epistemics Department replacing Science
 
 - type: listing
   id: uplinkProximityMine
@@ -1584,7 +1584,7 @@
   categories:
   - UplinkPointless
 
-# - type: listing #  - Move cat ears out of syndicate uplink into the AutoDrobe
+# - type: listing # DeltaV - Move cat ears out of syndicate uplink into the AutoDrobe
 #   id: UplinkCatEars
 #   name: uplink-cat-ears-name
 #   description: uplink-cat-ears-desc
@@ -1634,7 +1634,7 @@
   categories:
   - UplinkPointless
 
-# - type: listing #  - Disable carp suit being buyable
+# - type: listing # DeltaV - Disable carp suit being buyable
 #   id: UplinkCarpSuitBundle
 #   name: uplink-carp-suit-bundle-name
 #   description: uplink-carp-suit-bundle-desc

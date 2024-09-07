@@ -14,7 +14,7 @@
   - type: Sprite
     noRot: true
     drawdepth: Ghosts
-    sprite: Mobs/Ghosts/revenant.rsi #  - Custom revenant sprite
+    sprite: DeltaV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite
     layers:
     - state: active
   - type: Reactive # Nyanotrasen - Holy Water affects Revenants

@@ -1,10 +1,10 @@
 using Robust.Client.UserInterface;
 using Content.Client.UserInterface.Fragments;
-using Content.Shared.CartridgeLoader.Cartridges;
+using Content.Shared.DeltaV.CartridgeLoader.Cartridges;
 using Content.Shared.CartridgeLoader;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.CartridgeLoader.Cartridges;
+namespace Content.Client.DeltaV.CartridgeLoader.Cartridges;
 
 public sealed partial class CrimeAssistUi : UIFragment
 {

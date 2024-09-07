@@ -139,7 +139,7 @@
   description: Much less deadly in this form.
   components:
     - type: Sprite
-      sprite: Mobs/Ghosts/revenant.rsi #  - Custom revenant sprite
+      sprite: DeltaV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite
       state: ectoplasm
     - type: Tag
       tags:
@@ -154,8 +154,8 @@
               Quantity: 5
             - ReagentId: Necrosol
               Quantity: 5
-            - ReagentId: Ectoplasm  #  - for normality crystals
-              Quantity: 30          #
+            - ReagentId: Ectoplasm  # DeltaV - for normality crystals
+              Quantity: 30          # DeltaV
     - type: GuideHelp
       guides:
       - MinorAntagonists

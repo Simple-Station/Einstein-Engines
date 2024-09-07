@@ -5,14 +5,14 @@
   playTimeTracker: JobChaplain
   requirements:
     - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics #  - Epistemics Department replacing Science
-      min: 14400 # 4 hours
+      department: Epistemics # DeltaV - Epistemics Department replacing Science
+      min: 14400 #DeltaV 4 hours
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-rd
   access:
   - Chapel
-  - Research #  - Move Chaplain into Epistemics
+  - Research # DeltaV - Move Chaplain into Epistemics
   - Maintenance
   special:
   - !type:AddComponentSpecial
@@ -31,7 +31,7 @@
     back: ClothingBackpackChaplainFilled
     shoes: ClothingShoesColorBlack
     id: ChaplainPDA
-    ears: ClothingHeadsetScience #  - Move Chaplain into Epistemics
+    ears: ClothingHeadsetScience # DeltaV - Move Chaplain into Epistemics
   innerClothingSkirt: ClothingUniformJumpskirtChaplain
   satchel: ClothingBackpackSatchelChaplainFilled
   duffelbag: ClothingBackpackDuffelChaplainFilled

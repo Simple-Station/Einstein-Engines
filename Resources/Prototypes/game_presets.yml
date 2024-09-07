@@ -3,7 +3,7 @@
   alias:
     - survival
   name: survival-title
-  showInVote: true # secret #  - Me when the survival. Used for periapsis.
+  showInVote: true # secret # DeltaV - Me when the survival. Used for periapsis.
   description: survival-description
   rules:
     - RampingStationEventScheduler
@@ -40,7 +40,7 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: true #2boring2vote #  - I'd like to disagree, used for periapsis.
+  showInVote: true #2boring2vote # DeltaV - I'd like to disagree, used for periapsis.
   description: extended-description
   rules:
   - BasicStationEventScheduler
@@ -119,7 +119,7 @@
   name: death-match-title
   description: death-match-description
   #maxPlayers: 15
-  showInVote: false #  - No.
+  showInVote: false # DeltaV - No.
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31

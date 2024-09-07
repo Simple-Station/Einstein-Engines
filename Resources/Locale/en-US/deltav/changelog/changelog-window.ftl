@@ -1,1 +1,1 @@
-changelog-tab-title-Changelog =
+changelog-tab-title-DeltaVChangelog = DeltaV

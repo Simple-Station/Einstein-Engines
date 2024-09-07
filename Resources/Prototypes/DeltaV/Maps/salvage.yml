@@ -2,39 +2,39 @@
 
 - type: salvageMap
   id: AsteroidSyndiHideout
-  mapPath: /Maps/Salvage/DV-syndi-hideout.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-syndi-hideout.yml
   size: medium
 
 # """Large""" maps
 
 - type: salvageMap
   id: AsteroidChemlab
-  mapPath: /Maps/Salvage/DV-asteroid-mining-chemlab.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-asteroid-mining-chemlab.yml
   size: large
 
 - type: salvageMap
   id: LaundromatChunk
-  mapPath: /Maps/Salvage/DV-laundromat-chunk.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-laundromat-chunk.yml
   size: large
 
 # Asteroids
 
 - type: salvageMap
   id: AsteroidTickNest
-  mapPath: /Maps/Salvage/DV-tick-nest.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-tick-nest.yml
 
 - type: salvageMap
   id: AsteroidMiningMed1
-  mapPath: /Maps/Salvage/DV-large-asteroid-mining-01.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-large-asteroid-mining-01.yml
 
 - type: salvageMap
   id: AsteroidMiningLarge1
-  mapPath: /Maps/Salvage/DV-med-asteroid-mining-01.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-med-asteroid-mining-01.yml
 
 - type: salvageMap
   id: AsteroidCrystalCave
-  mapPath: /Maps/Salvage/DV-crystal-cave.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-crystal-cave.yml
 
 - type: salvageMap
   id: AsteroidBoneCave
-  mapPath: /Maps/Salvage/DV-bone-cave.yml
+  mapPath: /Maps/Salvage/DeltaV/DV-bone-cave.yml

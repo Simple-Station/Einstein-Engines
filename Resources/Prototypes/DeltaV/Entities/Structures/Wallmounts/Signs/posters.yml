@@ -5,7 +5,7 @@
   description: ...and find out. Sponsored by the Intergalactic Bartenders' Federation, Delta branch.
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/Posters/TJohnson.rsi
+    sprite: DeltaV/Structures/Wallmounts/Posters/TJohnson.rsi
     state: fuckaround
 
 - type: entity
@@ -15,5 +15,5 @@
   description: "A grimy old advert for a seedy lumber company. \"You got a friend in me.\" is scrawled in the corner."
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/Posters/misc.rsi
+    sprite: DeltaV/Structures/Wallmounts/Posters/misc.rsi
     state: woodygotwood

@@ -3,7 +3,7 @@
   name: job-name-senior-officer
   description: job-description-senior-officer
   playTimeTracker: JobSeniorOfficer
-  setPreference: false #  - Disable Senior Roles round start selection
+  setPreference: false # DeltaV - Disable Senior Roles round start selection
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobWarden
@@ -39,7 +39,7 @@
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesSecurity
     head: ClothingHeadHatBeretSecurity
-    outerClothing: ClothingOuterArmorPlateCarrier #  - ClothingOuterArmorBasic replaced in favour of plate carrier
+    outerClothing: ClothingOuterArmorPlateCarrier # DeltaV - ClothingOuterArmorBasic replaced in favour of plate carrier
     id: SeniorOfficerPDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled

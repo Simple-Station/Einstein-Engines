@@ -8,7 +8,7 @@ using Content.Shared.Verbs;
 using Robust.Server.Audio;
 using Robust.Shared.Player;
 
-namespace Content.Server.Paper;
+namespace Content.Server.DeltaV.Paper;
 
 public sealed class SignatureSystem : EntitySystem
 {

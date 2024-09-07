@@ -5,7 +5,7 @@
   description:  A direction sign, pointing out which way the Logistics department is.
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/signs.rsi
+    sprite: DeltaV/Structures/Wallmounts/signs.rsi
     state: direction_logi
 
 - type: entity
@@ -15,7 +15,7 @@
   description:  A direction sign, pointing out which way the mailroom is.
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/signs.rsi
+    sprite: DeltaV/Structures/Wallmounts/signs.rsi
     state: direction_mail
 
 - type: entity
@@ -25,7 +25,7 @@
   description:  A direction sign, pointing out which way the Justice department is.
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/signs.rsi
+    sprite: DeltaV/Structures/Wallmounts/signs.rsi
     state: direction_justice
 
 - type: entity
@@ -35,7 +35,7 @@
   description:  A direction sign, pointing out which way the court room is.
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/signs.rsi
+    sprite: DeltaV/Structures/Wallmounts/signs.rsi
     state: direction_court
 
 

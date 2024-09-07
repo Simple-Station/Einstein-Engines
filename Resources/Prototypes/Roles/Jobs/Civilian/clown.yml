@@ -4,7 +4,7 @@
   description: job-description-clown
   playTimeTracker: JobClown
   requirements:
-    - !type:CharacterOverallTimeRequirement #  - Playtime requirement
+    - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
       min: 7200 #2 hrs
   startingGear: ClownGear
   icon: "JobIconClown"
@@ -12,7 +12,7 @@
   access:
   - Theatre
   - Maintenance
-  - Clown #  - Add Clown access
+  - Clown # DeltaV - Add Clown access
   special:
   - !type:AddComponentSpecial
     components:
@@ -23,7 +23,7 @@
           Piercing: 4
         groups:
           Burn: 3
-#  - Commenting out the clown snore sound because I am not fond of it (it makes me itchy and feral). By "I", I mean Leonardo_DaBepis.
+# DeltaV - Commenting out the clown snore sound because I am not fond of it (it makes me itchy and feral). By "I", I mean Leonardo_DaBepis.
 #    - type: SleepEmitSound
 #      snore: /Audio/Voice/Misc/silly_snore.ogg
 #      interval: 10

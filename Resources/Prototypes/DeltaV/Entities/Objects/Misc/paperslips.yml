@@ -6,7 +6,7 @@
   description: A biscuit card. On the back, 'DO NOT DIGEST' is printed in large lettering.
   components:
     - type: Sprite
-      sprite: Objects/Misc/biscuits.rsi
+      sprite: DeltaV/Objects/Misc/biscuits.rsi
       layers:
         - state: biscuit
         - state: biscuit_paper
@@ -36,7 +36,7 @@
       containers:
         PaperSlip: !type:ContainerSlot {}
     - type: ItemMapper
-      sprite: Objects/Misc/biscuits.rsi
+      sprite: DeltaV/Objects/Misc/biscuits.rsi
       mapLayers:
         biscuit_paper:
           whitelist:
@@ -67,7 +67,7 @@
   description: A confidential biscuit card. The tasteful blue color and NT logo on the front makes it look a little like a chocolate bar.
   components:
     - type: Sprite
-      sprite: Objects/Misc/biscuits.rsi
+      sprite: DeltaV/Objects/Misc/biscuits.rsi
       layers:
         - state: biscuit_secret
           map: [ "enum.BiscuitVisualLayers.Base" ]
@@ -116,7 +116,7 @@
   description: A little slip of paper left over after a larger piece was cut. Whoa.
   components:
     - type: Sprite
-      sprite: Objects/Misc/biscuits.rsi
+      sprite: DeltaV/Objects/Misc/biscuits.rsi
       layers:
         - state: slip
         - state: slip_words
@@ -169,7 +169,7 @@
           map: [ "enum.PaperVisualLayers.Writing" ]
           visible: false
     - type: PaperVisuals
-      backgroundImagePath: "/Textures/Interface/Paper/paper_background_corpcard.svg.96dpi.png"
+      backgroundImagePath: "/Textures/DeltaV/Interface/Paper/paper_background_corpcard.svg.96dpi.png"
       contentMargin: 70.0, 16.0, 70.0, 16.0
       maxWritableArea: 400.0, 600.0
 
