@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared.DeltaV.Hologram;
+namespace Content.Shared.Hologram;
 
 [RegisterComponent, NetworkedComponent]
 [Access(typeof(SharedHologramSystem))]

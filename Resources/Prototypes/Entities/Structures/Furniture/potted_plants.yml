@@ -229,7 +229,7 @@
 - type: entity
   id: PottedPlantRD #PottedPlant25
   parent: PottedPlantBase
-  # DeltaV - Epistemics Department - Replace Research Director with Mystagogue
+  #  - Epistemics Department - Replace Research Director with Mystagogue
   name: Mystagogue's potted plant
   description: "A gift from the botanical staff, presented after the Mystagogue's reassignment. There's a tag on it that says \"Y'all come back now, y'hear?\"\nIt doesn't look very healthy..."
   # End of modified code

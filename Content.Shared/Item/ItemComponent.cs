@@ -13,11 +13,11 @@ namespace Content.Shared.Item;
 /// </summary>
 [RegisterComponent]
 [NetworkedComponent]
-[Access(typeof(SharedItemSystem), typeof(SharedPseudoItemSystem)), AutoGenerateComponentState(true)] // DeltaV - Gave PseudoItem access
+[Access(typeof(SharedItemSystem), typeof(SharedPseudoItemSystem)), AutoGenerateComponentState(true)] // - Gave PseudoItem access
 public sealed partial class ItemComponent : Component
 {
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-    [Access(typeof(SharedItemSystem), typeof(SharedPseudoItemSystem))] // DeltaV - Gave PseudoItem access
+    [Access(typeof(SharedItemSystem), typeof(SharedPseudoItemSystem))] // - Gave PseudoItem access
     public ProtoId<ItemSizePrototype> Size = "Small";
 
     [Access(typeof(SharedItemSystem))]

@@ -49,7 +49,7 @@
       state: shuttle
   - type: EscapeShuttleCondition
 
-##- type: entity # DeltaV
+##- type: entity #
 #  noSpawn: true
 #  parent: BaseTraitorObjective
 #  id: DieObjective

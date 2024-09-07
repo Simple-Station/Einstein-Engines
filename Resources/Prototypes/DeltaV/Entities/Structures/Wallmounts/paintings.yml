@@ -5,7 +5,7 @@
   description: A blunt smoking weird-cat thing with a smug look.
   components:
   - type: Sprite
-    sprite: DeltaV/Structures/Wallmounts/Paintings/ps3moira.rsi
+    sprite: Structures/Wallmounts/Paintings/ps3moira.rsi
     state: bluntpainting
 
 - type: entity
@@ -15,5 +15,5 @@
   description: The type of painting that really ties together a room.
   components:
   - type: Sprite
-    sprite: DeltaV/Structures/Wallmounts/Paintings/leonardodabepis.rsi
+    sprite: Structures/Wallmounts/Paintings/leonardodabepis.rsi
     state: spoonpainting

@@ -1,4 +1,4 @@
-# - type: construction # DeltaV - Prevent clowns from making the hardsuit
+# - type: construction #  - Prevent clowns from making the hardsuit
 #   name: clown hardsuit
 #   id: ClownHardsuit
 #   graph: ClownHardsuit
@@ -9,7 +9,7 @@
 #   icon: { sprite: Clothing/OuterClothing/Hardsuits/clown.rsi, state: icon }
 #   objectType: Item
 
-#- type: construction # DeltaV - No mimes either
+#- type: construction #  - No mimes either
 #  name: mime hardsuit
 #  id: MimeHardsuit
 #  graph: MimeHardsuit

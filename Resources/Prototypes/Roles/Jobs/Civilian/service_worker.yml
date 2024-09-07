@@ -5,28 +5,28 @@
   playTimeTracker: JobServiceWorker
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 7200 # DeltaV - 2 hours
+      min: 7200 #  - 2 hours
   startingGear: ServiceWorkerGear
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service
-  canBeAntag: true # DeltaV - Can be antagonist
-  antagAdvantage: 1 # DeltaV - Reduced TC: Accesses
+  canBeAntag: true #  - Can be antagonist
+  antagAdvantage: 1 #  - Reduced TC: Accesses
   access:
   - Service
   - Maintenance
   extendedAccess:
   - Hydroponics
-  - Bar # DeltaV - moved to extended access
-  - Kitchen # DeltaV - moved to extended access
+  - Bar #  - moved to extended access
+  - Kitchen #  - moved to extended access
 
 - type: startingGear
   id: ServiceWorkerGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorDarkGreen # DeltaV
+    jumpsuit: ClothingUniformJumpsuitColorDarkGreen #
     back: ClothingBackpackFilled
     shoes: ClothingShoesColorBlack
     id: ServiceWorkerPDA
     ears: ClothingHeadsetService
-  innerClothingSkirt: ClothingUniformJumpskirtColorDarkGreen # DeltaV
+  innerClothingSkirt: ClothingUniformJumpskirtColorDarkGreen #
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled

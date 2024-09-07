@@ -125,7 +125,7 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
-  - type: Extractable # DeltaV - Make it so bees can be ground up
+  - type: Extractable #  - Make it so bees can be ground up
     grindableSolutionName: bee
   - type: SolutionContainerManager
     solutions:
@@ -540,7 +540,7 @@
     tags:
     - Trash
     - CannotSuicide
-    - DoorBumpOpener # DeltaV - After all, why not? Why shouldn't they be able to open doors?
+    - DoorBumpOpener #  - After all, why not? Why shouldn't they be able to open doors?
     - VimPilot
   - type: CanEscapeInventory
   - type: NpcFactionMember
@@ -2337,7 +2337,7 @@
       makeSentient: true
       name: ghost-role-information-giant-spider-name
       description: ghost-role-information-giant-spider-description
-      rules: deltav-ghost-role-information-softantag-rules #DeltaV
+      rules: -ghost-role-information-softantag-rules #
     - type: GhostTakeoverAvailable
 
 - type: entity

@@ -5,9 +5,9 @@
   description: A swanky uniform with tasteful gold and red trim. Keep your latte away from this.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/hopmesskit.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/hopmesskit.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/hopmesskit.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/hopmesskit.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -16,9 +16,9 @@
   description: A comfortable rollneck and slacks. Suitable attire for a pipe-smoking bosun.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/boatswain.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/boatswain.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/boatswain.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/boatswain.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -27,9 +27,9 @@
   description: A crisp white shirt and charcoal slacks. Reminds you of the old times.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitblack.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitblack.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitblack.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitblack.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -38,9 +38,9 @@
   description: A crisp grey shirt and charcoal slacks. Reminds you of overcast days.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitblackalt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitblackalt.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitblackalt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitblackalt.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -49,9 +49,9 @@
   description: A crisp red shirt and charcoal slacks. Reminds you of law enforcement.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitblackmob.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitblackmob.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitblackmob.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitblackmob.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -60,9 +60,9 @@
   description: A crisp white shirt and chocolate slacks. Reminds you of dusty offices.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitbrown.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitbrown.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitbrown.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitbrown.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -71,9 +71,9 @@
   description: A crisp grey shirt and chocolate slacks. Reminds you of clandestine operators.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitbrownalt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitbrownalt.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitbrownalt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitbrownalt.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -82,9 +82,9 @@
   description: A crisp red shirt and chocolate slacks. Reminds you of family.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitbrownmob.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitbrownmob.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitbrownmob.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitbrownmob.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -93,9 +93,9 @@
   description: A crisp white shirt and ivory slacks. Reminds you of swans.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitwhite.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitwhite.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitwhite.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitwhite.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -104,9 +104,9 @@
   description: A crisp grey shirt and ivory slacks. Reminds you of daguerreotypes.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitwhitealt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitwhitealt.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitwhitealt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitwhitealt.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -115,9 +115,9 @@
   description: A crisp red shirt and ivory slacks. Reminds you of organized Japanese crime.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitwhitemob.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitwhitemob.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/suitwhitemob.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/suitwhitemob.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -126,9 +126,9 @@
   description: A ceremonial piece of Station Security kit, for special occasions of any kind.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/secformal.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/secformal.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/secformal.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/secformal.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -137,9 +137,9 @@
   description: For the more lucid moments.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/sober.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/sober.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/sober.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/sober.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -148,9 +148,9 @@
   description: The uniform of those who just want to relax on a beach... Where is the beach anyway?
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/lost_tourist.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/lost_tourist.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/lost_tourist.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/lost_tourist.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -159,9 +159,9 @@
   description: A red sweater with blue jeans. This one has the dominant jeans.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/jeans_red.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/jeans_red.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/jeans_red.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/jeans_red.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -170,9 +170,9 @@
   description: A green sweater with blue jeans. This one has the recessive jeans.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/jeans_green.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/jeans_green.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/jeans_green.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/jeans_green.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -181,9 +181,9 @@
   description: A brown sweater with blue jeans.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/jeans_brown.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/jeans_brown.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/jeans_brown.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/jeans_brown.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -192,9 +192,9 @@
   description:
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/courier.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/courier.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/courier.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/courier.rsi
 
 # Warden alt uniforms
 
@@ -205,9 +205,9 @@
   description: A cool blue shirt with ice-white markings and warden's epaulettes.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/warden_blue.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/warden_blue.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/warden_blue.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/warden_blue.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -216,9 +216,9 @@
   description: Charcoal pants, a grey shirt, and white warden's markings and epaulettes.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/warden_grey.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/warden_grey.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/warden_grey.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/warden_grey.rsi
 
 # Central Command Uniform - ported from Velta
 
@@ -229,9 +229,9 @@
   description: A sharp and professional jumpsuit worn by a high-ranking member of Central Command.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -240,9 +240,9 @@
   description: A fine bit o' garb for the lad an' lasses.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/kilt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/kilt.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/kilt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/kilt.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -251,9 +251,9 @@
   description: A fancy black jumpsuit with a lace cravat to make it even more fancy. Proper judicial attire.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/cj.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/cj.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/cj.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/cj.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -262,9 +262,9 @@
   description: A fancy double-breasted suit with golden accoutrements. Sharp and authoritative.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/cjformal.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/cjformal.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/cjformal.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/cjformal.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -273,9 +273,9 @@
   description: A modest, white office shirt with hard-earned rank epaulets.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/cj_white.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/cj_white.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/cj_white.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/cj_white.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -284,9 +284,9 @@
   description: A modest suit for the person with the power to notarize anything.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/clerk.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/clerk.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/clerk.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/clerk.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -295,9 +295,9 @@
   description: There's still some odd stains on this suit. Hm.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/chemshirtsuit.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/chemshirtsuit.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/chemshirtsuit.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/chemshirtsuit.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -306,7 +306,7 @@
   description: A red suit with a fancy cravat. Perfect for a prosecutor.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/prosecutorred.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/prosecutorred.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/prosecutorred.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/prosecutorred.rsi
 

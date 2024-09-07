@@ -20,7 +20,7 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
         if (args.SpawnResult != null)
             return;
 
-        // DeltaV - Ignore these two desired spawn types
+        // - Ignore these two desired spawn types
         if (args.DesiredSpawnPointType is SpawnPointType.Observer or SpawnPointType.LateJoin)
             return;
 
@@ -32,7 +32,7 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
             if (args.Station != null && _station.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
-            // DeltaV - Custom override for override spawnpoints, only used for prisoners currently. This shouldn't run for any other jobs
+            // - Custom override for override spawnpoints, only used for prisoners currently. This shouldn't run for any other jobs
             if (args.DesiredSpawnPointType == SpawnPointType.Job)
             {
                 if (spawnPoint.SpawnType != SpawnPointType.Job || spawnPoint.Job != args.Job?.Prototype)

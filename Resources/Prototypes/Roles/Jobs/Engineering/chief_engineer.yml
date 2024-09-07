@@ -6,15 +6,15 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobAtmosphericTechnician
-      min: 36000 # DeltaV - 10 hours
-#    - !type:RoleTimeRequirement # DeltaV - No Station Engineer time requirement
+      min: 36000 #  - 10 hours
+#    - !type:RoleTimeRequirement #  - No Station Engineer time requirement
 #      role: JobStationEngineer
 #      time: 21600 #6 hrs
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
-      min: 90000 # DeltaV - 25 hours
+      min: 90000 #  - 25 hours
 #    - !type:OverallPlaytimeRequirement
-#      time: 72000 # DeltaV - 20 hours
+#      time: 72000 #  - 20 hours
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"

@@ -9,7 +9,7 @@
       - butter
       - cheesy
   - type: Sprite
-    sprite: DeltaV/Objects/Consumable/Food/Baked/grilledcheese.rsi
+    sprite: Objects/Consumable/Food/Baked/grilledcheese.rsi
     state: grilledcheese
   - type: SolutionContainerManager
     solutions:

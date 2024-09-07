@@ -4,9 +4,9 @@
   markingCategory: Tail
   speciesRestriction: [Felinid]
   sprites:
-  - sprite: DeltaV/Mobs/Customization/Felinid/felinid_tails.rsi
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
     state: Felinid_fluffy_tail_full
-  - sprite: DeltaV/Mobs/Customization/Felinid/felinid_tails.rsi
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
     state: felinid_fluffy_tail_rings
 
 - type: marking
@@ -15,7 +15,7 @@
   markingCategory: Tail
   speciesRestriction: [Felinid]
   sprites:
-  - sprite: DeltaV/Mobs/Customization/Felinid/felinid_tails.rsi
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
     state: Felinid_fluffy_tail_full
 
 - type: marking
@@ -24,6 +24,6 @@
   markingCategory: Tail
   speciesRestriction: [Felinid]
   sprites:
-    - sprite: DeltaV/Mobs/Customization/Felinid/alternative_tail.rsi
+    - sprite: Mobs/Customization/Felinid/alternative_tail.rsi
       state: m_waggingtail_cat_FRONT
 

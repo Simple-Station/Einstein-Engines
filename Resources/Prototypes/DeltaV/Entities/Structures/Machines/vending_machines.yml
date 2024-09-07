@@ -15,7 +15,7 @@
     pack: PrideDrobeGoodbyes
   - type: Speech
   - type: Sprite
-    sprite: DeltaV/Structures/Machines/VendingMachines/pride.rsi
+    sprite: Structures/Machines/VendingMachines/pride.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -41,7 +41,7 @@
   - type: SpeakOnUIClosed
     pack: CourierDrobeGoodbyes
   - type: Sprite
-    sprite: DeltaV/Structures/Machines/VendingMachines/courierdrobe.rsi
+    sprite: Structures/Machines/VendingMachines/courierdrobe.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]

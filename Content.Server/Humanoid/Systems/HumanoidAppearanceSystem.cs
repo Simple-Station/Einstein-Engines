@@ -53,7 +53,7 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
             grammar.Gender = sourceHumanoid.Gender;
         }
 
-        targetHumanoid.LastProfileLoaded = sourceHumanoid.LastProfileLoaded; // DeltaV - let paradox anomaly be cloned
+        targetHumanoid.LastProfileLoaded = sourceHumanoid.LastProfileLoaded; // - let paradox anomaly be cloned
 
         Dirty(targetHumanoid);
     }

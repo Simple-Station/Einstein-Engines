@@ -5,9 +5,9 @@
   description: Sold as a "riot" shotgun, this shotgun has a special gas-operated mechanism that makes it highly effective for CQC and suppressive fire.
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/Adjutant.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/Adjutant.rsi
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/Adjutant.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/Adjutant.rsi
   - type: Item
     size: Large
   - type: Gun
@@ -37,9 +37,9 @@
   suffix: Beanbag
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
+    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
+    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
   - type: BallisticAmmoProvider
     capacity: 4
     proto: ShellShotgunBeanbag

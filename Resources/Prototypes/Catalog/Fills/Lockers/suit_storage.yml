@@ -139,7 +139,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitCombatOfficer # DeltaV - ClothingOuterHardsuitSecurity replaced in favour of security combat hardsuit.
+        - id: ClothingOuterHardsuitCombatOfficer #  - ClothingOuterHardsuitSecurity replaced in favour of security combat hardsuit.
         - id: ClothingMaskBreath
   - type: AccessReader
     access: [["Security"]]
@@ -178,7 +178,7 @@
 - type: entity
   id: SuitStorageRD
   parent: SuitStorageBase
-  suffix: Mystagogue # DeltaV - Epistemics Department replacing Science
+  suffix: Mystagogue #  - Epistemics Department replacing Science
   components:
   - type: StorageFill
     contents:
@@ -198,7 +198,7 @@
     contents:
         - id: OxygenTankFilled
         - id: JetpackSecurityFilled
-        - id: ClothingOuterHardsuitCombatHoS # DeltaV - ClothingOuterHardsuitSecurityRed replaced in favour of head of security's advanced combat hardsuit.
+        - id: ClothingOuterHardsuitCombatHoS #  - ClothingOuterHardsuitSecurityRed replaced in favour of head of security's advanced combat hardsuit.
         - id: ClothingMaskGasSwat
   - type: AccessReader
     access: [["HeadOfSecurity"]]
@@ -212,7 +212,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitCombatWarden # DeltaV - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
+        - id: ClothingOuterHardsuitCombatWarden #  - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
         - id: ClothingMaskBreath
   - type: AccessReader
     access: [["Armory"]]
@@ -246,7 +246,7 @@
   - type: AccessReader
     access: [["Salvage"]]
 
-# DeltaV - Adding Paramedic Suit Storage Unit
+#  - Adding Paramedic Suit Storage Unit
 #Paramedic hardsuit
 - type: entity
   id: SuitStorageParamedic
@@ -262,7 +262,7 @@
   - type: AccessReader
     access: [ [ "Paramedic" ] ]
 
-# DeltaV - Adding Corpsman Suit Storage Unit
+#  - Adding Corpsman Suit Storage Unit
 - type: entity
   id: SuitStorageCorpsman
   parent: SuitStorageBase
@@ -277,7 +277,7 @@
   - type: AccessReader
     access: [ [ "Corpsman" ] ]
 
-# DeltaV - End Changes
+#  - End Changes
 
 #Blood-red hardsuit
 - type: entity

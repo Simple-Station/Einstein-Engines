@@ -3,7 +3,7 @@ using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Robust.Client.UserInterface;
 
-namespace Content.Client.DeltaV.CartridgeLoader.Cartridges;
+namespace Content.Client.CartridgeLoader.Cartridges;
 
 public sealed partial class SecWatchUi : UIFragment
 {

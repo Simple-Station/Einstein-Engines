@@ -1,9 +1,9 @@
-﻿using Content.Shared.DeltaV.Hologram;
+﻿using Content.Shared.Hologram;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.DeltaV.Hologram;
+namespace Content.Client.Hologram;
 
 public sealed class HologramSystem : SharedHologramSystem
 {

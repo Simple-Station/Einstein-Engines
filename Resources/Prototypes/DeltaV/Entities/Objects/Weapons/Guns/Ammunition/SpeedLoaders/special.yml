@@ -27,7 +27,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeSpecial
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
@@ -47,7 +47,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeSpecialPractice
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
@@ -67,7 +67,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeSpecialRubber
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
@@ -87,7 +87,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeSpecialUranium
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
@@ -107,7 +107,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeSpecialMindbreaker
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
@@ -127,7 +127,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeSpecialHoly
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Special/special_speed_loader.rsi
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]

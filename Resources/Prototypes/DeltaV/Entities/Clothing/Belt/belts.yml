@@ -5,9 +5,9 @@
   description: A blue-and-white belt with assorted pockets and pouches.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Belt/ceremonial.rsi
+    sprite: Clothing/Belt/ceremonial.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Belt/ceremonial.rsi
+    sprite: Clothing/Belt/ceremonial.rsi
   - type: Storage
     whitelist:
       tags:
@@ -45,10 +45,10 @@
   description: For holding your pants up.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Belt/suspendersblack.rsi
+    sprite: Clothing/Belt/suspendersblack.rsi
     state: icon
   - type: Clothing
-    sprite: DeltaV/Clothing/Belt/suspendersblack.rsi
+    sprite: Clothing/Belt/suspendersblack.rsi
     quickEquip: true
   - type: Tag
     tags:
@@ -61,6 +61,6 @@
   description: A set of security webbing with blue corpsman highlights.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Belt/corpsman.rsi
+    sprite: Clothing/Belt/corpsman.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Belt/corpsman.rsi
+    sprite: Clothing/Belt/corpsman.rsi

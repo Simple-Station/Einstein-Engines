@@ -10,7 +10,7 @@
         - BulletBB
     proto: BulletBB
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Ammunition/Boxes/bbgun.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/bbgun.rsi
     layers:
       - state: bbbox
   - type: StaticPrice

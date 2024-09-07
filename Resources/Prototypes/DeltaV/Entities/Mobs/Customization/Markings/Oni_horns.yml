@@ -5,7 +5,7 @@
   forcedColoring: false
   speciesRestriction: [Oni]
   sprites:
-  - sprite: DeltaV/Mobs/Customization/Oni/oni_horns.rsi
+  - sprite: Mobs/Customization/Oni/oni_horns.rsi
     state: shaved
 
 - type: marking
@@ -15,5 +15,5 @@
   forcedColoring: false
   speciesRestriction: [Oni]
   sprites:
-  - sprite: DeltaV/Mobs/Customization/Oni/oni_horns.rsi
+  - sprite: Mobs/Customization/Oni/oni_horns.rsi
     state: bull

@@ -104,7 +104,7 @@ public sealed class TileSystem : EntitySystem
 
         return DeconstructTile(tileRef);
     }
-    // Delta V
+    //
     public bool DigTile(TileRef tileRef)
     {
         var tile = tileRef.Tile;
@@ -119,7 +119,7 @@ public sealed class TileSystem : EntitySystem
 
         return DeconstructTile(tileRef);
     }
-    // Delta V
+    //
     public bool ReplaceTile(TileRef tileref, ContentTileDefinition replacementTile)
     {
         if (!TryComp<MapGridComponent>(tileref.GridUid, out var grid))

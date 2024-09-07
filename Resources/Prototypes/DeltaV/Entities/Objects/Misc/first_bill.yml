@@ -5,7 +5,7 @@
   description: The first bill ever earned by the Logistics Officer from trading. A small chip is embedded in it.
   components:
     - type: Sprite
-      sprite: DeltaV/Objects/Misc/first_bill.rsi
+      sprite: Objects/Misc/first_bill.rsi
       state: icon
     - type: Tag
       tags:

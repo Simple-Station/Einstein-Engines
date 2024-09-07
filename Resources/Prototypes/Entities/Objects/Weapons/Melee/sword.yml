@@ -46,7 +46,7 @@
     tags:
     - Katana
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
+    sprite: Objects/Weapons/Melee/katana.rsi #
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
@@ -64,7 +64,7 @@
     angle: 20
   - type: Item
     size: Normal
-    sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
+    sprite: Objects/Weapons/Melee/katana.rsi #
   - type: DisarmMalus
 
 - type: entity

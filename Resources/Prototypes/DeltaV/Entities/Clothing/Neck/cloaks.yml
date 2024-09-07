@@ -6,9 +6,9 @@
   description: A comfy white and purple cloak, perfect for those sleepless nights when you're haunted by the yet unsolved mysteries of the universe.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Neck/Cloaks/mystacloak.rsi
+    sprite: Clothing/Neck/Cloaks/mystacloak.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Neck/Cloaks/mystacloak.rsi
+    sprite: Clothing/Neck/Cloaks/mystacloak.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -17,9 +17,9 @@
   description: A regal blue durathread boat cloak with a red felt lining and gold trim. Somehow, it's even more expensive than it looks.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Neck/Cloaks/boatcloak.rsi
+    sprite: Clothing/Neck/Cloaks/boatcloak.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Neck/Cloaks/boatcloak.rsi    
+    sprite: Clothing/Neck/Cloaks/boatcloak.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -28,9 +28,9 @@
   description: Worn by dangerous people who've deconstructed stations with ease.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Neck/Cloaks/salvage.rsi 
+    sprite: Clothing/Neck/Cloaks/salvage.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Neck/Cloaks/salvage.rsi  
+    sprite: Clothing/Neck/Cloaks/salvage.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -39,7 +39,7 @@
   description: A hefty cloak adorned with a modest insignia and grand fur trim.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Neck/Cloaks/cjcloak.rsi
+    sprite: Clothing/Neck/Cloaks/cjcloak.rsi
   - type: StealTarget
     stealGroup: HeadCloak
 

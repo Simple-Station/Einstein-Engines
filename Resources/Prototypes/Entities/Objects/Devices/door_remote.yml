@@ -97,7 +97,7 @@
 - type: entity
   parent: DoorRemoteDefault
   id: DoorRemoteCargo
-  name: logistics door remote # DeltaV - Logistics Department replacing Cargo
+  name: logistics door remote #  - Logistics Department replacing Cargo
   components:
   - type: Sprite
     layers:

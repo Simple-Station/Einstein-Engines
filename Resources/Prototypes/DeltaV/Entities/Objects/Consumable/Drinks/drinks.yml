@@ -12,7 +12,7 @@
         - ReagentId: HealthViolation
           Quantity: 30
   - type: Icon
-    sprite: DeltaV/Objects/Consumable/Drinks/healthcodeviolation.rsi
+    sprite: Objects/Consumable/Drinks/healthcodeviolation.rsi
     state: icon
 
 - type: entity
@@ -29,7 +29,7 @@
         - ReagentId: Gunmetal
           Quantity: 30
   - type: Icon
-    sprite: DeltaV/Objects/Consumable/Drinks/gunmetal.rsi
+    sprite: Objects/Consumable/Drinks/gunmetal.rsi
     state: icon
 
 - type: entity
@@ -46,7 +46,7 @@
         - ReagentId: LemonDrop
           Quantity: 30
   - type: Icon
-    sprite: DeltaV/Objects/Consumable/Drinks/lemondrop.rsi
+    sprite: Objects/Consumable/Drinks/lemondrop.rsi
     state: icon
 
 - type: entity
@@ -63,7 +63,7 @@
         - ReagentId: GreenGrass
           Quantity: 30
   - type: Icon
-    sprite: DeltaV/Objects/Consumable/Drinks/greengrass.rsi
+    sprite: Objects/Consumable/Drinks/greengrass.rsi
     state: icon
 
 - type: entity
@@ -80,7 +80,7 @@
         - ReagentId: Daiquiri
           Quantity: 30
   - type: Icon
-    sprite: DeltaV/Objects/Consumable/Drinks/daiquiri.rsi
+    sprite: Objects/Consumable/Drinks/daiquiri.rsi
     state: icon
 
 - type: entity
@@ -97,7 +97,7 @@
         - ReagentId: ArsonistsBrew
           Quantity: 30
   - type: Icon
-    sprite: DeltaV/Objects/Consumable/Drinks/arsonist.rsi
+    sprite: Objects/Consumable/Drinks/arsonist.rsi
     state: icon
 
 - type: entity
@@ -114,7 +114,7 @@
             - ReagentId: Kvass
               Quantity: 30
     - type: Icon
-      sprite: DeltaV/Objects/Consumable/Drinks/kvass.rsi
+      sprite: Objects/Consumable/Drinks/kvass.rsi
       state: icon
 
 - type: entity
@@ -131,5 +131,5 @@
             - ReagentId: Mothamphetamine
               Quantity: 30
     - type: Icon
-      sprite: DeltaV/Objects/Consumable/Drinks/mothamphetamine.rsi
+      sprite: Objects/Consumable/Drinks/mothamphetamine.rsi
       state: icon

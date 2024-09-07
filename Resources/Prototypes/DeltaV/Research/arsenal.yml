@@ -18,7 +18,7 @@
   id: EnergyGuns
   name: research-technology-energy-gun
   icon:
-    sprite: DeltaV/Objects/Weapons/Guns/Battery/energygun.rsi
+    sprite: Objects/Weapons/Guns/Battery/energygun.rsi
     state: icon
   discipline: Arsenal
   tier: 1
@@ -31,7 +31,7 @@
   id: EnergyGunsAdvanced
   name: research-technology-energy-gun-advance
   icon:
-    sprite: DeltaV/Objects/Weapons/Guns/Battery/energygun_pistol.rsi
+    sprite: Objects/Weapons/Guns/Battery/energygun_pistol.rsi
     state: icon
   discipline: Arsenal
   tier: 2
@@ -43,7 +43,7 @@
   id: Advanced Laser Manipulation
   name: research-technology-advance-laser
   icon:
-    sprite: DeltaV/Objects/Weapons/Guns/Battery/energygun_carbine.rsi
+    sprite: Objects/Weapons/Guns/Battery/energygun_carbine.rsi
     state: icon
   discipline: Arsenal
   tier: 2

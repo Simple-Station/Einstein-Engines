@@ -262,7 +262,7 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitBrigmedic
-  name: corpsman hardsuit # DeltaV - rename brigmedic to corpsman
+  name: corpsman hardsuit #  - rename brigmedic to corpsman
   description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit. # I will fix the rest of this entry later when I resprite sec suits
   components:
   - type: Sprite
@@ -497,7 +497,7 @@
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitLuxury #DO NOT MAP - https://github.com/space-wizards/space-station-14/pull/19738#issuecomment-1703486738
   name: luxury mining hardsuit
-  description: A refurbished mining hardsuit, fashioned after the Logistics Officer's colors. Graphene lining provides less protection, but is much easier to move. # DeltaV - Logistics Department replacing Cargo
+  description: A refurbished mining hardsuit, fashioned after the Logistics Officer's colors. Graphene lining provides less protection, but is much easier to move. #  - Logistics Department replacing Cargo
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/luxury.rsi
@@ -1030,7 +1030,7 @@
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: HeldSpeedModifier
-  #- type: Construction # DeltaV - Prevent clowns from making the hardsuit
+  #- type: Construction #  - Prevent clowns from making the hardsuit
   #   graph: ClownHardsuit
   #   node: clownHardsuit
   - type: ToggleableClothing
@@ -1047,7 +1047,7 @@
     sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
-#  - type: Construction # DeltaV - Nuh uh
+#  - type: Construction #  - Nuh uh
 #    graph: MimeHardsuit
 #    node: mimeHardsuit
   - type: ToggleableClothing

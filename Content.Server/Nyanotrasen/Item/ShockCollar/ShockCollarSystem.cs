@@ -28,7 +28,7 @@ public sealed partial class ShockCollarSystem : EntitySystem
         if (!HasComp<MobStateComponent>(containerEnt)) // If it's not a mob we don't care
             return;
 
-        // DeltaV: prevent clocks from instantly killing people
+        //: prevent clocks from instantly killing people
         if (TryComp<UseDelayComponent>(uid, out var useDelay)
             && !_useDelay.TryResetDelay((uid, useDelay), true))
             return;

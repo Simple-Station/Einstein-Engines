@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Serialization;
 
-namespace Content.Shared.DeltaV.Biscuit;
+namespace Content.Shared.Biscuit;
 
 public abstract partial class SharedBiscuitComponent : Component
 {}

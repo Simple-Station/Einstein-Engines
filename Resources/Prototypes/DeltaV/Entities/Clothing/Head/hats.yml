@@ -5,9 +5,9 @@
   description: A black fedora. Lookin' classy.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/blackfedora.rsi
+    sprite: Clothing/Head/Hats/blackfedora.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/blackfedora.rsi
+    sprite: Clothing/Head/Hats/blackfedora.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -16,9 +16,9 @@
   description: A brown fedora. Lookin' snazzy.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/brownfedora.rsi
+    sprite: Clothing/Head/Hats/brownfedora.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/brownfedora.rsi
+    sprite: Clothing/Head/Hats/brownfedora.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -27,9 +27,9 @@
   description: A white fedora. Lookin' ritzy.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/whitefedora.rsi
+    sprite: Clothing/Head/Hats/whitefedora.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/whitefedora.rsi
+    sprite: Clothing/Head/Hats/whitefedora.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -38,9 +38,9 @@
   description: A black flat cap, for driving cabs and delivering the papers.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/flatblack.rsi
+    sprite: Clothing/Head/Hats/flatblack.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/flatblack.rsi
+    sprite: Clothing/Head/Hats/flatblack.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -49,9 +49,9 @@
   description: A brown flat cap, for driving cabs and delivering the papers.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/flatbrown.rsi
+    sprite: Clothing/Head/Hats/flatbrown.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/flatbrown.rsi
+    sprite: Clothing/Head/Hats/flatbrown.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -61,9 +61,9 @@
   description: A black flat cap, for sending a message.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/flatblack.rsi
+    sprite: Clothing/Head/Hats/flatblack.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/flatblack.rsi
+    sprite: Clothing/Head/Hats/flatblack.rsi
   - type: MeleeWeapon
     attackRate: 1.5
     damage:
@@ -77,9 +77,9 @@
   description: A black cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_black.rsi
+    sprite: Clothing/Head/Hats/surgcap_black.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_black.rsi
+    sprite: Clothing/Head/Hats/surgcap_black.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -88,9 +88,9 @@
   description: A cyan cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_cyan.rsi
+    sprite: Clothing/Head/Hats/surgcap_cyan.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_cyan.rsi
+    sprite: Clothing/Head/Hats/surgcap_cyan.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -99,9 +99,9 @@
   description: A surgical cap worn by members of Cybersun's Biotechnology division.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_cybersun.rsi
+    sprite: Clothing/Head/Hats/surgcap_cybersun.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_cybersun.rsi
+    sprite: Clothing/Head/Hats/surgcap_cybersun.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -110,9 +110,9 @@
   description: A pink cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_pink.rsi
+    sprite: Clothing/Head/Hats/surgcap_pink.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_pink.rsi
+    sprite: Clothing/Head/Hats/surgcap_pink.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -121,9 +121,9 @@
   description: A rainbow cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_rainbow.rsi
+    sprite: Clothing/Head/Hats/surgcap_rainbow.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_rainbow.rsi
+    sprite: Clothing/Head/Hats/surgcap_rainbow.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -132,9 +132,9 @@
   description: A black cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_white.rsi
+    sprite: Clothing/Head/Hats/surgcap_white.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/surgcap_white.rsi
+    sprite: Clothing/Head/Hats/surgcap_white.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -143,9 +143,9 @@
   description: Special delivery.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Soft/couriersoft.rsi
+    sprite: Clothing/Head/Soft/couriersoft.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Soft/couriersoft.rsi
+    sprite: Clothing/Head/Soft/couriersoft.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -154,10 +154,10 @@
   description: Special delivery.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Soft/couriersoft.rsi
+    sprite: Clothing/Head/Soft/couriersoft.rsi
     state: flipped-icon
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Soft/couriersoft.rsi
+    sprite: Clothing/Head/Soft/couriersoft.rsi
     equippedPrefix: flipped
 
 - type: entity
@@ -167,9 +167,9 @@
   description: A green cap with a director's rank emblem, belonging to a high-ranking member of Central Command. Whoever it is, they mean business.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/dircap.rsi
+    sprite: Clothing/Head/Hats/dircap.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/dircap.rsi
+    sprite: Clothing/Head/Hats/dircap.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -178,9 +178,9 @@
   description: For the intellectual and studious accountant. Definitely not a revolutionary symbol.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/beret_lo.rsi
+    sprite: Clothing/Head/Hats/beret_lo.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/beret_lo.rsi
+    sprite: Clothing/Head/Hats/beret_lo.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -189,9 +189,9 @@
   description: For style-conscious combat lifesavers and medical specialists alike.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/beret_corpsman.rsi
+    sprite: Clothing/Head/Hats/beret_corpsman.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/beret_corpsman.rsi
+    sprite: Clothing/Head/Hats/beret_corpsman.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -200,7 +200,7 @@
   description: A standard-issue judicial hat. Wigs are old-fashioned anyway.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/cj_toque.rsi
+    sprite: Clothing/Head/Hats/cj_toque.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/cj_toque.rsi
+    sprite: Clothing/Head/Hats/cj_toque.rsi
 

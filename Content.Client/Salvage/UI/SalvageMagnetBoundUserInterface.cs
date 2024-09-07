@@ -99,7 +99,7 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
 
                     break;
                 case SalvageOffering salvage:
-                    option.Title = Loc.GetString($"salvage-map-size-{salvage.SalvageMap.Size}"); // DeltaV - Replace map names with sizes
+                    option.Title = Loc.GetString($"salvage-map-size-{salvage.SalvageMap.Size}");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -24,7 +24,7 @@
   - type: Sprite
     layers:
     - state: green
-    - sprite: DeltaV/Markers/jobs.rsi
+    - sprite: Markers/jobs.rsi
       state: chiefjustice
 
 - type: entity
@@ -37,7 +37,7 @@
   - type: Sprite
     layers:
     - state: green
-    - sprite: DeltaV/Markers/jobs.rsi
+    - sprite: Markers/jobs.rsi
       state: clerk
 
 - type: entity
@@ -50,7 +50,7 @@
   - type: Sprite
     layers:
     - state: green
-    - sprite: DeltaV/Markers/jobs.rsi
+    - sprite: Markers/jobs.rsi
       state: prosecutor
 
 - type: entity
@@ -63,5 +63,5 @@
   - type: Sprite
     layers:
     - state: green
-    - sprite: DeltaV/Markers/jobs.rsi
+    - sprite: Markers/jobs.rsi
       state: courier

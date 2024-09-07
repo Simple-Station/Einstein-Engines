@@ -6,11 +6,11 @@ round_end_pacifist = true
 
 [infolinks]
 discord    = "https://go.delta-v.org/sxzqj"
-github     = "https://github.com/DeltaV-Station/Delta-v"
+github     = "https://github.com-Station/Delta-v"
 website    = "https://www.delta-v.org/"
 wiki       = "https://wiki.delta-v.org/view/Main_Page"
 patreon    = "https://www.patreon.com/Delta_v"
-bug_report = "https://github.com/DeltaV-Station/Delta-v/issues/new/choose"
+bug_report = "https://github.com-Station/Delta-v/issues/new/choose"
 forum      = "https://forum.delta-v.org/"
 appeal     = "https://go.delta-v.org/appeal"
 
@@ -36,10 +36,10 @@ ramping_average_chaos    = 4.5
 monstermos_rip_tiles = false
 
 [server]
-id = "deltav"
+id = ""
 
 [discord]
-rich_main_icon_id = "deltav"
+rich_main_icon_id = ""
 
 [ic]
 flavor_text = true

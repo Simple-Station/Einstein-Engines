@@ -5,7 +5,7 @@
   description: Red and Sterile. Has a built-in health analyzer.
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Devices/pda.rsi
+    sprite: Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
     - state: "light_overlay"
@@ -16,7 +16,7 @@
       map: [ "enum.PdaVisualLayers.IdLight" ]
       shader: "unshaded"
       visible: false
-  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
+  - type: CartridgeLoader #  - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -30,7 +30,7 @@
     borderColor: "#A32D26"
     accentVColor: "#447987"
   - type: Icon
-    sprite: DeltaV/Objects/Devices/pda.rsi
+    sprite: Objects/Devices/pda.rsi
     state: pda-corpsman
   - type: HealthAnalyzer
     scanDelay: 1
@@ -44,7 +44,7 @@
   description: Whosoever bears this PDA is the law.
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Devices/pda.rsi
+    sprite: Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
     - state: "light_overlay"
@@ -67,7 +67,7 @@
   - type: PdaBorderColor
     borderColor: "#470823"
   - type: Icon
-    sprite: DeltaV/Objects/Devices/pda.rsi
+    sprite: Objects/Devices/pda.rsi
     state: pda-chiefjustice
   - type: CartridgeLoader
     preinstalled:
@@ -83,7 +83,7 @@
   description: It has the stamp to prove it's been officially notarized!
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Devices/pda.rsi
+    sprite: Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
     - state: "light_overlay"
@@ -106,7 +106,7 @@
   - type: PdaBorderColor
     borderColor: "#611528"
   - type: Icon
-    sprite: DeltaV/Objects/Devices/pda.rsi
+    sprite: Objects/Devices/pda.rsi
     state: pda-clerk
   - type: CartridgeLoader
     preinstalled:
@@ -122,7 +122,7 @@
   description: Sharp. Looks like it could prosecute you all on its own.
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Devices/pda.rsi
+    sprite: Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
     - state: "light_overlay"
@@ -145,9 +145,9 @@
   - type: PdaBorderColor
     borderColor: "#6f6192"
   - type: Icon
-    sprite: DeltaV/Objects/Devices/pda.rsi
+    sprite: Objects/Devices/pda.rsi
     state: pda-prosecutor
-  - type: CartridgeLoader # DeltaV - Crime Assist
+  - type: CartridgeLoader #  - Crime Assist
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge

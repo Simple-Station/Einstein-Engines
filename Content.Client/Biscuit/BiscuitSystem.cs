@@ -1,7 +1,7 @@
-﻿using Content.Shared.DeltaV.Biscuit;
+﻿using Content.Shared.Biscuit;
 using Robust.Client.GameObjects;
 
-namespace Content.Client.DeltaV.Biscuit;
+namespace Content.Client.Biscuit;
 
 public sealed class BiscuitSystem : VisualizerSystem<BiscuitVisualsComponent>
 {

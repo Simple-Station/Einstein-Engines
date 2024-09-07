@@ -15,7 +15,7 @@
       - id: SeismicCharge
         amount: 2
       - id: ClothingShoesBootsWinterMiner #Delta V: Add departmental winter boots
-      - id: JetpackMiniFilled # DeltaV - Salv lost their shuttle
+      - id: JetpackMiniFilled #  - Salv lost their shuttle
       - id: OreBag
         prob: 0.5
       - id: Flare
@@ -24,9 +24,9 @@
         prob: 0.3
       - id: Flare
         prob: 0.3
-      - id: ClothingNeckSalvager # DeltaV - salvage cloak
+      - id: ClothingNeckSalvager #  - salvage cloak
         prob: 0.2
-      - id: LunchboxLogisticsFilledRandom # DeltaV - Lunchboxes!
+      - id: LunchboxLogisticsFilledRandom #  - Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -45,7 +45,7 @@
       - id: SeismicCharge
         amount: 2
       - id: ClothingShoesBootsWinterMiner #Delta V: Add departmental winter boots
-      - id: JetpackMiniFilled # DeltaV - Salv lost their shuttle
+      - id: JetpackMiniFilled #  - Salv lost their shuttle
       - id: OreBag
         prob: 0.5
       - id: Flare
@@ -54,7 +54,7 @@
         prob: 0.3
       - id: Flare
         prob: 0.3
-      - id: ClothingNeckSalvager # DeltaV - salvage cloak
+      - id: ClothingNeckSalvager #  - salvage cloak
         prob: 0.2
-      - id: LunchboxLogisticsFilledRandom # DeltaV - Lunchboxes!
+      - id: LunchboxLogisticsFilledRandom #  - Lunchboxes!
         prob: 0.3

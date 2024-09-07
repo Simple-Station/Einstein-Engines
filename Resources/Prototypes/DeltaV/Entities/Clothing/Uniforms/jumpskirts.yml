@@ -5,9 +5,9 @@
   description: A swanky uniform with tasteful gold and red trim. Keep your latte away from this.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/hopmesskit.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/hopmesskit.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/hopmesskit.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/hopmesskit.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -16,9 +16,9 @@
   description: Enemy of dogs everywhere.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/courier.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/courier.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/courier.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/courier.rsi
 
 # Security alt uniforms
 
@@ -29,9 +29,9 @@
   description: A cool blue shirt over charcoal skirt, for the calm and collected security officer.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/security_blue.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/security_blue.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/security_blue.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/security_blue.rsi
 
 # Warden alt uniforms
 
@@ -42,9 +42,9 @@
   description: A cool blue shirt with ice-white markings and warden's epaulettes.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/warden_blue.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/warden_blue.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/warden_blue.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/warden_blue.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -53,9 +53,9 @@
   description: Charcoal skirt, a grey shirt, and white warden's markings and epaulettes.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/warden_grey.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/warden_grey.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/warden_grey.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/warden_grey.rsi
 
 # HoS alt uniforms
 
@@ -66,9 +66,9 @@
   description: A blue Station Security shirt with charcoal skirt. Features gold emblems and commander's epaulettes.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/hos_blue.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/hos_blue.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/hos_blue.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/hos_blue.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -77,9 +77,9 @@
   description: A grey Station Security shirt with charcoal skirt. Stands out with red highlights, gold emblems, and commander's epaulettes.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/hos_grey.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/hos_grey.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/hos_grey.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/hos_grey.rsi
 
 # Central Command Uniform - ported from Velta
 
@@ -90,9 +90,9 @@
   description: A sharp and professional jumpskirt worn by a high-ranking member of Central Command.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/centcom_officer.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/centcom_officer.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/centcom_officer.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/centcom_officer.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -101,10 +101,10 @@
   description: A fancy black jumpskirt with a lace cravat to make it even more fancy. Proper judicial attire.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/cj.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/cj.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniform/Jumpskirt/cj.rsi
-    
+    sprite: Clothing/Uniform/Jumpskirt/cj.rsi
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpskirtClerk
@@ -112,9 +112,9 @@
   description: A modest dress skirt for the person with the power to notarize anything.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/clerk.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/clerk.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/clerk.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/clerk.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -123,7 +123,7 @@
   description: A red suit and skirt with a fancy cravat. Perfect for a prosecutor.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/prosecutorred.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/prosecutorred.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/prosecutorred.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/prosecutorred.rsi
 

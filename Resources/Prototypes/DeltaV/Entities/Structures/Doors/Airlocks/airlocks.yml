@@ -4,7 +4,7 @@
   suffix: Justice
   components:
   - type: Sprite
-    sprite: DeltaV/Structures/Doors/Airlocks/Standard/justice.rsi
+    sprite: Structures/Doors/Airlocks/Standard/justice.rsi
   - type: PaintableAirlock
     department: Justice
 
@@ -16,7 +16,7 @@
   suffix: Justice
   components:
   - type: Sprite
-    sprite: DeltaV/Structures/Doors/Airlocks/Glass/justice.rsi
+    sprite: Structures/Doors/Airlocks/Glass/justice.rsi
   - type: PaintableAirlock
     department: Justice
 

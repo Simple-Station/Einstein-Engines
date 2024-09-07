@@ -6,7 +6,7 @@ namespace Content.Server.StationEvents.Components;
 public sealed partial class PirateRadioSpawnRuleComponent : Component
 {
     [DataField("PirateRadioShuttlePath")]
-    public string PirateRadioShuttlePath = "Maps/Shuttles/DeltaV/DV-pirateradio.yml";
+    public string PirateRadioShuttlePath = "Maps/Shuttles/DV-pirateradio.yml";
 
     [DataField("additionalRule")]
     public EntityUid? AdditionalRule;

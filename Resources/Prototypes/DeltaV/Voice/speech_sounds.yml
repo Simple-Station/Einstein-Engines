@@ -1,17 +1,17 @@
 - type: speechSounds
   id: Vulpkanin
   saySound:
-    path: /Audio/DeltaV/Voice/Talk/vulp.ogg
+    path: /Audio/Voice/Talk/vulp.ogg
   askSound:
-    path: /Audio/DeltaV/Voice/Talk/vulp_ask.ogg
+    path: /Audio/Voice/Talk/vulp_ask.ogg
   exclaimSound:
-    path: /Audio/DeltaV/Voice/Talk/vulp_exclaim.ogg
+    path: /Audio/Voice/Talk/vulp_exclaim.ogg
 
 - type: speechSounds
   id: Harpy
   saySound:
-    path: /Audio/DeltaV/Voice/Harpy/chirp1.ogg
+    path: /Audio/Voice/Harpy/chirp1.ogg
   askSound:
-    path: /Audio/DeltaV/Voice/Harpy/chirp1.ogg
+    path: /Audio/Voice/Harpy/chirp1.ogg
   exclaimSound:
-    path: /Audio/DeltaV/Voice/Harpy/chirp1.ogg
+    path: /Audio/Voice/Harpy/chirp1.ogg

@@ -14,7 +14,7 @@
     speciesId: vulpkanin
   - type: Thirst
   - type: Icon
-    sprite: DeltaV/Mobs/Species/Vulpkanin/parts.rsi
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
     state: full
   - type: Body
     prototype: Vulpkanin
@@ -42,7 +42,7 @@
         state: l_leg
       - shader: StencilMask
         map: [ "enum.HumanoidVisualLayers.StencilMask" ]
-        sprite: DeltaV/Mobs/Customization/Vulpkanin/masking_helpers.rsi
+        sprite: Mobs/Customization/Vulpkanin/masking_helpers.rsi
         state: female_full
         visible: false
       - map: [ "jumpsuit" ]
@@ -74,7 +74,7 @@
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]
       - map: [ "clownedon" ] # Dynamically generated
-        sprite: "DeltaV/Effects/creampie.rsi"
+        sprite: "Effects/creampie.rsi"
         state: "creampie_vulpkanin"
         visible: false
   - type: MeleeWeapon

@@ -80,7 +80,7 @@
       - EncryptionKeySecurity
       - EncryptionKeyService
       - EncryptionKeyCommand
-      - EncryptionKeyJustice #DeltaV - Justice dept
+      - EncryptionKeyJustice # - Justice dept
 
 - type: entity
   parent: TelecomServer
@@ -141,7 +141,7 @@
     containers:
       key_slots:
       - EncryptionKeySecurity
-      - EncryptionKeyJustice #DeltaV - Justice dept
+      - EncryptionKeyJustice # - Justice dept
 
 - type: entity
   parent: TelecomServer

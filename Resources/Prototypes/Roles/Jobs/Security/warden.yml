@@ -4,12 +4,12 @@
   description: job-description-warden
   playTimeTracker: JobWarden
   requirements:
-    - !type:CharacterPlaytimeRequirement # DeltaV - JobSecurityOfficer time requirement. Make them experienced in proper officer work.
+    - !type:CharacterPlaytimeRequirement #  - JobSecurityOfficer time requirement. Make them experienced in proper officer work.
       tracker: JobSecurityOfficer
-      min: 43200 # DeltaV - 12 hrs
-    - !type:CharacterPlaytimeRequirement # DeltaV - JobDetective time requirement. Give them an understanding of basic forensics.
+      min: 43200 #  - 12 hrs
+    - !type:CharacterPlaytimeRequirement #  - JobDetective time requirement. Give them an understanding of basic forensics.
       tracker: JobDetective
-      min: 14400 # DeltaV - 4 hours
+      min: 14400 #  - 4 hours
     - !type:CharacterWhitelistRequirement
   startingGear: WardenGear
   icon: "JobIconWarden"

@@ -6,6 +6,6 @@
   suffix: ADMIN ONLY, DO NOT MAP
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Neck/mantles/ryuzo.rsi
+    sprite: Clothing/Neck/mantles/ryuzo.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Neck/mantles/ryuzo.rsi    
+    sprite: Clothing/Neck/mantles/ryuzo.rsi

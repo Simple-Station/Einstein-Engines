@@ -4,14 +4,14 @@
   description: job-description-intern
   playTimeTracker: JobMedicalIntern
   requirements:
-    # - !type:DepartmentTimeRequirement # DeltaV - Removes time limit
+    # - !type:DepartmentTimeRequirement #  - Removes time limit
     #   department: Medical
     #   time: 54000 # 15 hrs
     #   inverted: true # stop playing intern if you're good at med!
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
-  canBeAntag: true # DeltaV - Can be antagonist
+  canBeAntag: true #  - Can be antagonist
   access:
   - Medical
   - Maintenance
@@ -23,13 +23,13 @@
 - type: startingGear
   id: MedicalInternGear
   equipment:
-    jumpsuit: UniformScrubsColorBlue # DeltaV - Intern starts with blue scrubs
+    jumpsuit: UniformScrubsColorBlue #  - Intern starts with blue scrubs
     back: ClothingBackpackMedicalFilled
     shoes: ClothingShoesColorWhite
     id: MedicalInternPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalFilled
     pocket2: BookMedicalReferenceBook
-  # innerClothingSkirt: ClothingUniformJumpskirtColorWhite # DeltaV
+  # innerClothingSkirt: ClothingUniformJumpskirtColorWhite #
   satchel: ClothingBackpackSatchelMedicalFilled
   duffelbag: ClothingBackpackDuffelMedicalFilled

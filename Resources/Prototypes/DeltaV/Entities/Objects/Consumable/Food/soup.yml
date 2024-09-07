@@ -9,7 +9,7 @@
       - egg
       - salty
   - type: Sprite
-    sprite: DeltaV/Objects/Consumable/Food/scrambledeggs.rsi
+    sprite: Objects/Consumable/Food/scrambledeggs.rsi
     layers:
       - state: bowl
       - state: scrambled-eggs

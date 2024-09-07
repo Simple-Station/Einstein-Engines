@@ -5,12 +5,12 @@ ghost-role-component-default-rules = All normal rules apply unless an administra
                                      You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
 # Delta V soft antag rule
-deltav-ghost-role-information-softantag-rules = You are allowed to attack the crew without provocation.
+-ghost-role-information-softantag-rules = You are allowed to attack the crew without provocation.
                                                 You are allowed to coexist with the crew.
                                                 The crew is allowed to kill you without warning.
 
 # Delta V salvage antag rule
-deltav-ghost-role-information-salvageantag-rules =  You are a salvage mob.
+-ghost-role-information-salvageantag-rules =  You are a salvage mob.
                                                     You are allowed to attack salvagers without provocation. DO NOT GIB THEIR CORPSES!
                                                     You are allowed to attack the salvage shuttle.
                                                     You are NOT allowed to go to the station. If the salvagers go to the station, you can't follow them.

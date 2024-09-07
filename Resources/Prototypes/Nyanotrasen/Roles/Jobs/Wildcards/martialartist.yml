@@ -13,8 +13,8 @@
 #  whitelistRequired: true
   access:
   - Maintenance
-  - Theatre # DeltaV - Add Theatre access
-  - Boxer # DeltaV - Add Boxer access
+  - Theatre #  - Add Theatre access
+  - Boxer #  - Add Boxer access
   special:
   - !type:AddComponentSpecial
     components:

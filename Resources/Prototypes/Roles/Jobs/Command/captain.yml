@@ -5,24 +5,24 @@
   playTimeTracker: JobCaptain
   requirements:
     - !type:CharacterDepartmentTimeRequirement
-      department: Logistics # DeltaV - Logistics Department replacing Cargo
-      min: 18000 # DeltaV - 5 hours
+      department: Logistics #  - Logistics Department replacing Cargo
+      min: 18000 #  - 5 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
-      min: 18000 # DeltaV - 5 hours
+      min: 18000 #  - 5 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
-      min: 18000 # DeltaV - 5 hours
+      min: 18000 #  - 5 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Security
-      min: 18000 # DeltaV - 5 hours
-    - !type:CharacterDepartmentTimeRequirement # DeltaV - Epistemics dept time requirement
-      department: Epistemics # DeltaV - Epistemics Department replacing Science
+      min: 18000 #  - 5 hours
+    - !type:CharacterDepartmentTimeRequirement #  - Epistemics dept time requirement
+      department: Epistemics #  - Epistemics Department replacing Science
       min: 18000 # 5 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Command
-      min: 108000 # DeltaV - 30 hours
-    - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
+      min: 108000 #  - 30 hours
+    - !type:CharacterOverallTimeRequirement #  - Playtime requirement
       min: 108000 # 30 hours
     - !type:CharacterWhitelistRequirement
   weight: 20

@@ -62,7 +62,7 @@
 - type: entity
   parent: Windoor
   id: WindoorCargoLocked
-  suffix: Logistics, Locked # DeltaV - Logistics Department replacing Cargo
+  suffix: Logistics, Locked #  - Logistics Department replacing Cargo
   components:
   - type: AccessReader
     access: [["Cargo"]]
@@ -169,7 +169,7 @@
 - type: entity
   parent: WindoorSecure
   id: WindoorSecureCargoLocked
-  suffix: Logistics, Locked # DeltaV - Logistics Department replacing Cargo
+  suffix: Logistics, Locked #  - Logistics Department replacing Cargo
   components:
   - type: AccessReader
     access: [["Cargo"]]
@@ -329,7 +329,7 @@
 - type: entity
   parent: WindoorSecure
   id: WindoorSecureScienceLocked
-  suffix: Epistemics, Locked # DeltaV - Epistemics Department replacing Science
+  suffix: Epistemics, Locked #  - Epistemics Department replacing Science
   components:
   - type: AccessReader
     access: [["Research"]]

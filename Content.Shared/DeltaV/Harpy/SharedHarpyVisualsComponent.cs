@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.DeltaV.Harpy;
+namespace Content.Shared.Harpy;
 
 [Serializable, NetSerializable]
 public enum HardsuitWings : byte

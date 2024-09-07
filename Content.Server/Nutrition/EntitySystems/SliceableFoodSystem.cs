@@ -1,4 +1,4 @@
-using Content.Server.Nutrition; // DeltaV
+using Content.Server.Nutrition; //
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Nutrition.Components;
 using Content.Shared.Nutrition;
@@ -121,10 +121,10 @@ namespace Content.Server.Nutrition.EntitySystems
                 _xformSystem.SetLocalRotation(sliceUid, 0);
             }
 
-            // DeltaV - Begin deep frier related code
+            // - Begin deep frier related code
             var sliceEvent = new SliceFoodEvent(user, uid, sliceUid);
             RaiseLocalEvent(uid, sliceEvent);
-            // DeltaV - End deep frier related code
+            // - End deep frier related code
 
             return sliceUid;
         }

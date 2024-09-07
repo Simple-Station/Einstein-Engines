@@ -1,6 +1,6 @@
-﻿using Content.Shared.DeltaV.Biscuit;
+﻿using Content.Shared.Biscuit;
 
-namespace Content.Server.DeltaV.Biscuit;
+namespace Content.Server.Biscuit;
 
 [RegisterComponent]
 public sealed partial class BiscuitComponent : SharedBiscuitComponent

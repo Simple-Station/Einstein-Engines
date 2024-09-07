@@ -216,7 +216,7 @@
   parent: PosterBase
   id: PosterContrabandLamarr
   name: "Lamarr"
-  description: "This poster depicts Lamarr. Probably made by a traitorous Mystagogue." # DeltaV - Epistemics Department replacing Science
+  description: "This poster depicts Lamarr. Probably made by a traitorous Mystagogue." #  - Epistemics Department replacing Science
   components:
   - type: Sprite
     state: poster19_contraband
@@ -590,7 +590,7 @@
   components:
     - type: Sprite
       state: poster62_contraband
-      
+
 - type: entity
   parent: PosterBase
   id: PosterContrabandMissingSpacepen
@@ -857,7 +857,7 @@
   parent: PosterBase
   id: PosterLegitEnlist
   name: "Enlist"
-  description: "Enlist in the NanoTrasen ERT reserves today!" # DeltaV - expunged blatant reference to Division of Asset Protection death squads
+  description: "Enlist in the NanoTrasen ERT reserves today!" #  - expunged blatant reference to Division of Asset Protection death squads
   components:
   - type: Sprite
     state: poster29_legit
