@@ -5969,3 +5969,10 @@ Entries:
   id: 6323
   time: '2024-09-07T01:04:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/879
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: All masks have had their loadout point costs substantially reduced.
+  id: 6324
+  time: '2024-09-07T01:06:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/875
