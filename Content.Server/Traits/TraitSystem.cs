@@ -72,7 +72,8 @@ public sealed class TraitSystem : EntitySystem
     ///     so if an incorrect string is given, it's basically a skill issue.
     /// </summary>
     /// <remarks>
-    /// This comes before AddTraitComponents for a good reason. It allows for a component to optionally be fully wiped and replaced with a new component.
+    ///     This comes before AddTraitComponents for a good reason.
+    ///     It allows for a component to optionally be fully wiped and replaced with a new component.
     /// </remarks>
     public void RemoveTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
     {
