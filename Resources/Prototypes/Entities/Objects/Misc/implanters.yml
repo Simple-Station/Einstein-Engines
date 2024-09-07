@@ -251,11 +251,3 @@
   components:
     - type: Implanter
       implant: MindShieldImplant
-
-- type: entity
-  id: BionicSyrinxImplanter
-  name: bionic syrinx implanter
-  parent: BaseImplantOnlyImplanterSyndi
-  components:
-    - type: Implanter
-      implant: BionicSyrinxImplant
