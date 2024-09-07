@@ -8,7 +8,7 @@
   - type: Sprite
     layers:
       - state: green
-      - sprite: DeltaV/Markers/jobs.rsi
+      - sprite: EE/Markers/jobs.rsi
         state: nyanogladiator
 
 - type: entity
@@ -33,7 +33,7 @@
   - type: Sprite
     layers:
       - state: green
-      - sprite: DeltaV/Markers/jobs.rsi
+      - sprite: EE/Markers/jobs.rsi
         state: nyanoprisonguard
 
 - type: entity
@@ -46,7 +46,7 @@
   - type: Sprite
     layers:
       - state: green
-      - sprite: DeltaV/Markers/jobs.rsi
+      - sprite: EE/Markers/jobs.rsi
         state: courier # Delta V - Mail Carrier to Courier replacement
 
 - type: entity
@@ -59,7 +59,7 @@
   - type: Sprite
     layers:
       - state: green
-      - sprite: DeltaV/Markers/jobs.rsi
+      - sprite: EE/Markers/jobs.rsi
         state: nyanomartialartist
 
 - type: entity
@@ -72,5 +72,5 @@
   - type: Sprite
     layers:
       - state: green
-      - sprite: DeltaV/Markers/jobs.rsi
+      - sprite: EE/Markers/jobs.rsi
         state: nyanomantis

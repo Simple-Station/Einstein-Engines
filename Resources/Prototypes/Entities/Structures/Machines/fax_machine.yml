@@ -45,7 +45,7 @@
           - Paper
       blacklist:
         tags:
-          - PaperSlip # DeltaV - Prevent the faxing of paper slips.
+          - PaperSlip # Prevent the faxing of paper slips.
   - type: GenericVisualizer
     visuals:
       enum.PowerDeviceVisuals.Powered:

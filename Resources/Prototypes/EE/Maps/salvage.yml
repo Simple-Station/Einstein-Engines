@@ -1,0 +1,40 @@
+﻿# "Medium"-class maps - Max size square: 15x15, indicated size: 7.5
+
+- type: salvageMap
+  id: AsteroidSyndiHideout
+  mapPath: /Maps/Salvage/EE/DV-syndi-hideout.yml
+  size: medium
+
+# """Large""" maps
+
+- type: salvageMap
+  id: AsteroidChemlab
+  mapPath: /Maps/Salvage/EE/DV-asteroid-mining-chemlab.yml
+  size: large
+
+- type: salvageMap
+  id: LaundromatChunk
+  mapPath: /Maps/Salvage/EE/DV-laundromat-chunk.yml
+  size: large
+
+# Asteroids
+
+- type: salvageMap
+  id: AsteroidTickNest
+  mapPath: /Maps/Salvage/EE/DV-tick-nest.yml
+
+- type: salvageMap
+  id: AsteroidMiningMed1
+  mapPath: /Maps/Salvage/EE/DV-large-asteroid-mining-01.yml
+
+- type: salvageMap
+  id: AsteroidMiningLarge1
+  mapPath: /Maps/Salvage/EE/DV-med-asteroid-mining-01.yml
+
+- type: salvageMap
+  id: AsteroidCrystalCave
+  mapPath: /Maps/Salvage/EE/DV-crystal-cave.yml
+
+- type: salvageMap
+  id: AsteroidBoneCave
+  mapPath: /Maps/Salvage/EE/DV-bone-cave.yml

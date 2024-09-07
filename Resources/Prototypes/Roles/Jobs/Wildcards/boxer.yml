@@ -5,14 +5,14 @@
   playTimeTracker: JobBoxer
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 7200 #DeltaV 2 hours
+      min: 7200 #EE 2 hours
   startingGear: BoxerGear
   icon: "JobIconBoxer"
   supervisors: job-supervisors-hop
   access:
   - Maintenance
-  - Theatre # DeltaV - Add Theatre access
-  - Boxer # DeltaV - Add Boxer access
+  - Theatre # Add Theatre access
+  - Boxer # Add Boxer access
   special: # Nyanotrasen - BoxerComponent, see Content.Server/Nyanotrasen/Abilities/Boxer/Boxer/BoxerComponent.cs
   - !type:AddComponentSpecial
     components:

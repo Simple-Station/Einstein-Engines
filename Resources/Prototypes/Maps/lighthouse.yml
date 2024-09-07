@@ -9,7 +9,7 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_BC20.yml
+        emergencyShuttlePath: /Maps/Shuttles/EE/NTES_BC20.yml
       - type: StationNameSetup
         mapNameTemplate: '{0} Lighthouse {1}'
         nameGenerator:

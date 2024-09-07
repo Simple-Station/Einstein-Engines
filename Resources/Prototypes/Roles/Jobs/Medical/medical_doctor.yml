@@ -15,7 +15,7 @@
   - Maintenance
   extendedAccess:
   - Chemistry
-  - Paramedic # DeltaV - Add Paramedic access
+  - Paramedic # Add Paramedic access
   special:
   - !type:AddComponentSpecial
     components:

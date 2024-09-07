@@ -24,7 +24,7 @@ public sealed class TerminatorSystem : EntitySystem
     private void OnMapInit(EntityUid uid, TerminatorComponent comp, MapInitEvent args)
     {
         // cyborg doesn't need to breathe
-        //RemComp<RespiratorComponent>(uid); // DeltaV - paradox anomaly does actually need to breathe
+        //RemComp<RespiratorComponent>(uid); // paradox anomaly does actually need to breathe
     }
 
     private void OnSpawned(EntityUid uid, TerminatorComponent comp, GhostRoleSpawnerUsedEvent args)
@@ -48,7 +48,7 @@ public sealed class TerminatorSystem : EntitySystem
     }
 
     /// <summary>
-    /// DeltaV - used for paradox anomaly.
+    /// used for paradox anomaly.
     /// </summary>
     public void SetTarget(Entity<TerminatorComponent?> ent, EntityUid mindId)
     {

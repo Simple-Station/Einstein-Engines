@@ -205,7 +205,7 @@
     sound:
       path: /Audio/Effects/bite.ogg
   - type: Tag
-    tags: [] # DeltaV - remove PlushieCarp tag to prevent wasting
+    tags: [] # remove PlushieCarp tag to prevent wasting
 
 - type: entity
   parent: BaseItem

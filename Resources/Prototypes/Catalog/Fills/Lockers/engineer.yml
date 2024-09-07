@@ -90,7 +90,7 @@
       - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
-      - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxEngineeringFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -109,7 +109,7 @@
       - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
-      - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxEngineeringFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -125,7 +125,7 @@
       - id: ClothingShoesBootsMag
       - id: RCD
       - id: RCDAmmo
-      - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxEngineeringFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -140,7 +140,7 @@
       - id: trayScanner
       - id: RCD
       - id: RCDAmmo
-      - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxEngineeringFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity

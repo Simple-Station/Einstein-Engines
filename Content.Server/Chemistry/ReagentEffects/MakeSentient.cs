@@ -9,7 +9,7 @@ using Content.Shared.Language.Systems;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Prototypes;
 using Content.Shared.Humanoid;
-using Content.Shared.Language.Components; //Delta-V - Banning humanoids from becoming ghost roles.
+using Content.Shared.Language.Components;
 using Content.Shared.Language.Events;
 
 namespace Content.Server.Chemistry.ReagentEffects;
@@ -55,7 +55,7 @@ public sealed partial class MakeSentient : ReagentEffect
             return;
         }
 
-        // Delta-V: Do not allow humanoids to become sentient. Intended to stop people from
+        // Do not allow humanoids to become sentient. Intended to stop people from
         // repeatedly cloning themselves and using cognizine on their bodies.
         // HumanoidAppearanceComponent is common to all player species, and is also used for the
         // Ripley pilot whitelist, so there's a precedent for using it for this kind of check.

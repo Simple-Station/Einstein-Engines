@@ -58,7 +58,7 @@ namespace Content.Server.Labels
         {
             if (!Resolve(uid, ref metadata))
                 return;
-            if (_tagSystem.HasTag(uid, PreventTag)) // DeltaV - Prevent labels on certain items
+            if (_tagSystem.HasTag(uid, PreventTag)) // Prevent labels on certain items
                 return;
             if (!Resolve(uid, ref label, false))
                 label = EnsureComp<LabelComponent>(uid);

@@ -17,10 +17,10 @@
       - id: RubberStampQm
       - id: ClothingHeadsetAltCargo
       - id: BoxEncryptionKeyCargo
-      - id: SpaceCashLuckyBill # DeltaV - LO steal objective, see Resources/Prototypes/DeltaV/Entities/Objects/Misc/first_bill.yml
-      - id: BoxPDACargo # Delta-V
-      - id: QuartermasterIDCard # Delta-V
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: SpaceCashLuckyBill # LO steal objective, see Resources/Prototypes/EE/Entities/Objects/Misc/first_bill.yml
+      - id: BoxPDACargo # EE
+      - id: QuartermasterIDCard # EE
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -33,7 +33,7 @@
       - id: ClothingOuterArmorCaptainCarapace
       - id: NukeDisk
       - id: PinpointerNuclear
-#     - id: CaptainIDCard # DeltaV - Replaced by the spare ID system
+#     - id: CaptainIDCard # Replaced by the spare ID system
       - id: ClothingOuterHardsuitCap
       - id: WeaponDisabler
       - id: CommsComputerCircuitboard
@@ -46,10 +46,10 @@
       - id: ClothingBeltSheathFilled
       - id: DoorRemoteCommand
       - id: RubberStampCaptain
-#     - id: WeaponAntiqueLaser # DeltaV - Remove in favor of the glass box
+#     - id: WeaponAntiqueLaser # Remove in favor of the glass box
       - id: JetpackCaptainFilled
       - id: MedalCase
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -62,7 +62,7 @@
       - id: ClothingOuterArmorCaptainCarapace
       - id: NukeDisk
       - id: PinpointerNuclear
-#     - id: CaptainIDCard # DeltaV - Replaced by the spare ID system
+#     - id: CaptainIDCard # Replaced by the spare ID system
       - id: WeaponDisabler
       - id: CommsComputerCircuitboard
       - id: ClothingHeadsetAltCommand
@@ -78,7 +78,7 @@
       - id: JetpackCaptainFilled
       - id: MedalCase
       - id: ClothingHeadHatBeretCap # Nyanotrasen - Captain's Beret
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -106,7 +106,7 @@
       - id: JetpackCaptainFilled
       - id: MedalCase
       - id: ClothingHeadHatBeretCap # Nyanotrasen - Captain's Beret
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -117,14 +117,14 @@
   - type: StorageFill
     contents:
       - id: HoPIDCard
-      - id: ClothingHeadsetAltService # DeltaV - HoP is now a service role, replaces their all channels headset.
+      - id: ClothingHeadsetAltService # HoP is now a service role, replaces their all channels headset.
       - id: BoxPDA
       - id: BoxID
       - id: BoxHeadset
       - id: IDComputerCircuitboard
       - id: WeaponDisabler
-      - id: ClothingOuterCoatHoPArmored # DeltaV
-      - id: ClothingOuterArmorDuraVest # DeltaV - replaced HoP's armoured coat with a standard stabproof, pending HoPcoat resprite
+      - id: ClothingOuterCoatHoPArmored # EE
+      - id: ClothingOuterArmorDuraVest # replaced HoP's armoured coat with a standard stabproof, pending HoPcoat resprite
       - id: CigarGoldCase
         prob: 0.25
         # Fuck the HoP they don't deserve fucking cigars.
@@ -135,9 +135,9 @@
       - id: BoxEncryptionKeyPassenger
       - id: BoxEncryptionKeyService
       - id: AccessConfigurator
-      - id: BookIanDossier # DeltaV - HoP steal objective, see Resources/Prototypes/DeltaV/Entities/Objects/Misc/ian_dossier.yml
-      - id: ClothingHandsGlovesInspection # DeltaV - Add inspection gloves for HoP.
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: BookIanDossier # HoP steal objective, see Resources/Prototypes/EE/Entities/Objects/Misc/ian_dossier.yml
+      - id: ClothingHandsGlovesInspection # Add inspection gloves for HoP.
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -161,11 +161,11 @@
       - id: ClothingHeadsetAltEngineering
       - id: BoxEncryptionKeyEngineering
       - id: AccessConfigurator
-      - id: BoxPDAEngineering # Delta-V
+      - id: BoxPDAEngineering # EE
       - id: RCD
       - id: RCDAmmo
-      - id: CEIDCard # Delta-V
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: CEIDCard # EE
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -185,11 +185,11 @@
       - id: ClothingHeadsetAltEngineering
       - id: BoxEncryptionKeyEngineering
       - id: AccessConfigurator
-      - id: BoxPDAEngineering # Delta-V
-      - id: CEIDCard # Delta-V
+      - id: BoxPDAEngineering # EE
+      - id: CEIDCard # EE
       - id: RCD
       - id: RCDAmmo
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -211,13 +211,13 @@
       - id: HandheldCrewMonitor
       - id: DoorRemoteMedical
       - id: RubberStampCMO
-      - id: RubberStampPsychologist # DeltaV
+      - id: RubberStampPsychologist # EE
       - id: MedicalTechFabCircuitboard
       - id: BoxEncryptionKeyMedical
-      - id: BoxPDAMedical # Delta-V
-      - id: ClothingBeltMilitaryWebbingCMO # DeltaV - add webbing for CMO. ON THIS STATION, IT'S DRIP OR [die], CAPTAIN!
-      - id: CMOIDCard # Delta-V
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: BoxPDAMedical # EE
+      - id: ClothingBeltMilitaryWebbingCMO # add webbing for CMO. ON THIS STATION, IT'S DRIP OR [die], CAPTAIN!
+      - id: CMOIDCard # EE
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -238,10 +238,10 @@
       - id: RubberStampCMO
       - id: MedicalTechFabCircuitboard
       - id: BoxEncryptionKeyMedical
-      - id: BoxPDAMedical # Delta-V
-      - id: ClothingBeltMilitaryWebbingCMO # DeltaV - add webbing for CMO. ON THIS STATION, IT'S DRIP OR [die], CAPTAIN!
-      - id: CMOIDCard # Delta-V
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: BoxPDAMedical # EE
+      - id: ClothingBeltMilitaryWebbingCMO # add webbing for CMO. ON THIS STATION, IT'S DRIP OR [die], CAPTAIN!
+      - id: CMOIDCard # EE
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -260,11 +260,11 @@
       - id: ClothingBeltUtilityFilled
       - id: RubberStampRd
       - id: BoxEncryptionKeyScience
-      - id: BoxPDAScience # Delta-V
-      - id: RDIDCard # Delta-V
+      - id: BoxPDAScience # EE
+      - id: RDIDCard # EE
       - id: ClothingHeadsetAltScience
       - id: EncryptionKeyBinary
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -282,11 +282,11 @@
       - id: ClothingBeltUtilityFilled
       - id: RubberStampRd
       - id: BoxEncryptionKeyScience
-      - id: BoxPDAScience # Delta-V
-      - id: RDIDCard # Delta-V
+      - id: BoxPDAScience # EE
+      - id: RDIDCard # EE
       - id: ClothingHeadsetAltScience
       - id: EncryptionKeyBinary
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -300,7 +300,7 @@
       - id: WeaponDisabler
       - id: ClothingOuterCoatHoSTrench
       - id: ClothingMaskNeckGaiter
-      - id: ClothingOuterHardsuitCombatHoS # DeltaV - ClothingOuterHardsuitSecurityRed replaced in favour of head of security's advanced combat hardsuit.
+      - id: ClothingOuterHardsuitCombatHoS # ClothingOuterHardsuitSecurityRed replaced in favour of head of security's advanced combat hardsuit.
       - id: ClothingBeltSecurityFilled
       - id: ClothingHeadsetAltSecurity
       - id: ClothingEyesGlassesSunglasses
@@ -314,10 +314,10 @@
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
       - id: BookSecretDocuments
-      - id: BoxPDASecurity # Delta-V
-      - id: WeaponEnergyGunMultiphase # DeltaV - HoS Energy Gun
-      - id: HoSIDCard # Delta-V
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: BoxPDASecurity # EE
+      - id: WeaponEnergyGunMultiphase # HoS Energy Gun
+      - id: HoSIDCard # EE
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -343,10 +343,10 @@
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
       - id: BookSecretDocuments
-      - id: BoxPDASecurity # Delta-V
-      - id: WeaponEnergyGunMultiphase # DeltaV - HoS Energy Gun
-      - id: HoSIDCard # Delta-V
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: BoxPDASecurity # EE
+      - id: WeaponEnergyGunMultiphase # HoS Energy Gun
+      - id: HoSIDCard # EE
+      - id: LunchboxCommandFilledRandom #Lunchboxes!
         prob: 0.3
 
 - type: entity

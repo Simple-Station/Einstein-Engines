@@ -2,7 +2,7 @@
   parent: ClothingNeckBase
   id: ShockCollar
   name: shock collar
-  description: Shocking. # DeltaV: sprite is fine
+  description: Shocking. # EE: sprite is fine
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
@@ -12,7 +12,7 @@
     unequipDelay: 10 # It's a collar meant to be used on prisoners (or not), so it probably has some sort of safety.
   - type: ShockCollar
   - type: UseDelay
-    delay: 3 # DeltaV: prevent clocks instakilling people
+    delay: 3 # EE: prevent clocks instakilling people
   - type: TriggerOnSignal
   - type: DeviceNetwork
     deviceNetId: Wireless

@@ -102,7 +102,7 @@
     #   path: events/immovable_rod_spawn.ogg
     # - id: ionStorm # AI-controlled equipment are now weird, check their laws
     #   path: events/ion_storm.ogg
-    ## Delta-V
+    ## EE
     - id: xenoVents # Xenomorphs are coming out of vents
       path: events/aliens.ogg
     ## NyanoTrasen

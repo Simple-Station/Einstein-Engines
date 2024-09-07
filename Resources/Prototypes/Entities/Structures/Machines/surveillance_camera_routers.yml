@@ -58,7 +58,7 @@
 - type: entity
   parent: SurveillanceCameraRouterBase
   id: SurveillanceCameraRouterScience
-  suffix: Epistemics # DeltaV - Epistemics Department replacing Science
+  suffix: Epistemics # Epistemics Department replacing Science
   components:
     - type: SurveillanceCameraRouter
       subnetFrequency: SurveillanceCameraScience

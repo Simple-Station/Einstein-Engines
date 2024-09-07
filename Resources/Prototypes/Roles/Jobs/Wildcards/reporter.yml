@@ -5,15 +5,15 @@
   playTimeTracker: JobReporter
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 7200 #DeltaV 2 hours
+      min: 7200 #EE 2 hours
   startingGear: ReporterGear
   icon: "JobIconReporter"
   supervisors: job-supervisors-hop
   access:
   - Service
   - Maintenance
-  - Theatre # DeltaV - Add Theatre access
-  - Reporter # DeltaV - Add Reporter access
+  - Theatre # Add Theatre access
+  - Reporter # Add Reporter access
 
 - type: startingGear
   id: ReporterGear

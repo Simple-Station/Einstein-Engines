@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Civilian
-      min: 3600 #DeltaV
+      min: 3600 #EE
   startingGear: BartenderGear
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop

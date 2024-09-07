@@ -118,7 +118,7 @@
     access: [["Engineering"], ["Command"], ["Research"]]
   - type: Inventory
     templateId: borgShort
-  - type: SiliconLawProvider # Delta-V - Adds custom lawset for Engineering Cyborg
+  - type: SiliconLawProvider #- Adds custom lawset for Engineering Cyborg
     laws: Engineer
 
 - type: entity
@@ -171,7 +171,7 @@
     access: [["Service"], ["Command"], ["Research"]]
   - type: Inventory
     templateId: borgShort
-  - type: SiliconLawProvider # Delta-V Adds custom lawset for Janitor Cyborg
+  - type: SiliconLawProvider #Adds custom lawset for Janitor Cyborg
     laws: Janitor
 
 - type: entity
@@ -228,7 +228,7 @@
     actions:
     - ActionFabricateLollipop
     - ActionFabricateGumball
-  - type: SiliconLawProvider # Delta-V - Adds custom lawset for Medical cyborg
+  - type: SiliconLawProvider #- Adds custom lawset for Medical cyborg
     laws: Medical
 
 - type: entity

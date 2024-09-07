@@ -18,7 +18,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/DeltaV/Weapons/Guns/Gunshots/universal.ogg
+      path: /Audio/EE/Weapons/Guns/Gunshots/universal.ogg
   - type: ItemSlots
     slots:
       gun_magazine:

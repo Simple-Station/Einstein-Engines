@@ -198,7 +198,7 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
     /// </summary>
     public bool CanGib(EntityUid uid, EntityUid victim, MaterialReclaimerComponent component)
     {
-        return false; // DeltaV - Kinda LRP
+        return false; // Kinda LRP
         // return component.Powered &&
         //       component.Enabled &&
         //       HasComp<BodyComponent>(victim) &&

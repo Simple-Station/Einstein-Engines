@@ -3,13 +3,13 @@
   name: job-name-rd
   description: job-description-rd
   playTimeTracker: JobResearchDirector
-  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
+  antagAdvantage: 6 # Reduced TC: Head of Staff
   requirements:
     - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics # DeltaV - Epistemics Department replacing Science
-      min: 54000 # DeltaV - 15 hours
+      department: Epistemics # Epistemics Department replacing Science
+      min: 54000 # 15 hours
     - !type:CharacterOverallTimeRequirement
-      min: 72000 # DeltaV - 20 hours
+      min: 72000 # 20 hours
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -21,8 +21,8 @@
   - Command
   - Maintenance
   - ResearchDirector
-  - Mantis # DeltaV - Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
-  - Chapel # DeltaV - Chaplain is in Epistemics
+  - Mantis # Mantis, see Resources/Prototypes/EE/Access/epistemics.yml
+  - Chapel # Chaplain is in Epistemics
   - Cryogenics
   special: # Nyanotrasen - Mystagogue can use the Bible
   - !type:AddComponentSpecial

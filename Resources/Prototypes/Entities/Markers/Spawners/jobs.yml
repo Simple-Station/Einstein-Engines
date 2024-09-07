@@ -41,7 +41,7 @@
 - type: entity
   id: SpawnPointQuartermaster
   parent: SpawnPointJobBase
-  name: logistics officer # DeltaV - Logistics Department replacing Cargo
+  name: logistics officer # Logistics Department replacing Cargo
   components:
   - type: SpawnPoint
     job_id: Quartermaster
@@ -73,7 +73,7 @@
   - type: Sprite
     layers:
       - state: green
-      - sprite: DeltaV/Markers/jobs.rsi # DeltaV - Salvage specialist look change
+      - sprite: EE/Markers/jobs.rsi # Salvage specialist look change
         state: salvagespecialist
 
 # Civilian
@@ -440,14 +440,14 @@
 - type: entity
   id: SpawnPointResearchDirector
   parent: SpawnPointJobBase
-  name: mystagogue # DeltaV - Epistemics Department replacing Science
+  name: mystagogue # Epistemics Department replacing Science
   components:
   - type: SpawnPoint
     job_id: ResearchDirector
   - type: Sprite
     layers:
       - state: green
-      - sprite: DeltaV/Markers/jobs.rsi # DeltaV - Epistemics new labcoats
+      - sprite: EE/Markers/jobs.rsi # Epistemics new labcoats
         state: mystagogue
 
 - type: entity
@@ -472,7 +472,7 @@
   - type: Sprite
     layers:
       - state: green
-      - sprite: DeltaV/Markers/jobs.rsi # DeltaV - Epistemics new labcoats
+      - sprite: EE/Markers/jobs.rsi # Epistemics new labcoats
         state: scientist
 
 - type: entity
@@ -552,7 +552,7 @@
 - type: entity
   id: SpawnPointBrigmedic
   parent: SpawnPointJobBase
-  name: corpsman # DeltaV - rename brigmedic to corpsman
+  name: corpsman # rename brigmedic to corpsman
   components:
   - type: SpawnPoint #Delta V
     job_id: Brigmedic

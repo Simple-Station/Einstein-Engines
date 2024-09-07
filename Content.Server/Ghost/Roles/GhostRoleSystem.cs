@@ -27,7 +27,7 @@ using Robust.Shared.Utility;
 namespace Content.Server.Ghost.Roles
 {
     [UsedImplicitly]
-    public sealed partial class GhostRoleSystem : EntitySystem // Converted to partial to allow for DeltaV character ghost roles
+    public sealed partial class GhostRoleSystem : EntitySystem // Converted to partial to allow for character ghost roles
     {
         [Dependency] private readonly EuiManager _euiManager = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -63,7 +63,7 @@ namespace Content.Server.Ghost.Roles
             SubscribeLocalEvent<GhostRoleComponent, EntityUnpausedEvent>(OnUnpaused);
             SubscribeLocalEvent<GhostRoleMobSpawnerComponent, TakeGhostRoleEvent>(OnSpawnerTakeRole);
             SubscribeLocalEvent<GhostTakeoverAvailableComponent, TakeGhostRoleEvent>(OnTakeoverTakeRole);
-            SubscribeLocalEvent<GhostRoleCharacterSpawnerComponent, TakeGhostRoleEvent>(OnSpawnerTakeCharacter); // DeltaV - Character ghost roles, see Content.Server/DeltaV/Ghost/Roles/GhostRoleSystem.Character.cs
+            SubscribeLocalEvent<GhostRoleCharacterSpawnerComponent, TakeGhostRoleEvent>(OnSpawnerTakeCharacter); // Character ghost roles, see Content.Server/EE/Ghost/Roles/GhostRoleSystem.Character.cs
             _playerManager.PlayerStatusChanged += PlayerStatusChanged;
         }
 

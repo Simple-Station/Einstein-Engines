@@ -33,18 +33,18 @@
   - Hydroponics
   - Atmospherics
   - Mail # Nyanotrasen - MailCarrier, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail-carrier.yml
-  - Orders # DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
-  - Mantis # DeltaV - Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
-  - Paramedic # DeltaV - Add Paramedic access
-  - Psychologist # DeltaV - Add Psychologist access
-  - Boxer # DeltaV - Add Boxer access
-  - Clown # DeltaV - Add Clown access
-  - Library # DeltaV - Add Library access
-  - Mime # DeltaV - Add Mime access
-  - Musician # DeltaV - Add Musician access
-  - Reporter # DeltaV - Add Reporter access
-  - Zookeeper # DeltaV - Add Zookeeper access
-  - Justice # DeltaV - Add Justice dept access
-  - ChiefJustice # DeltaV - Add Chief Justice access
-  - Prosecutor # DeltaV - Add Prosecutor access
-  - Corpsman # DeltaV - Add Corpsman access
+  - Orders # Orders, see Resources/Prototypes/EE/Access/cargo.yml
+  - Mantis # Mantis, see Resources/Prototypes/EE/Access/epistemics.yml
+  - Paramedic # Add Paramedic access
+  - Psychologist # Add Psychologist access
+  - Boxer # Add Boxer access
+  - Clown # Add Clown access
+  - Library # Add Library access
+  - Mime # Add Mime access
+  - Musician # Add Musician access
+  - Reporter # Add Reporter access
+  - Zookeeper # Add Zookeeper access
+  - Justice # Add Justice dept access
+  - ChiefJustice # Add Chief Justice access
+  - Prosecutor # Add Prosecutor access
+  - Corpsman # Add Corpsman access

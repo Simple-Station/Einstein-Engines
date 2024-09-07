@@ -18,7 +18,7 @@ public sealed partial class PaperComponent : SharedPaperComponent
 
     [DataField("canEdit")]
     [ViewVariables(VVAccess.ReadWrite)]
-    public bool CanEdit { get; set; } = true; // DeltaV - Used for paper slips
+    public bool CanEdit { get; set; } = true; // Used for paper slips
 
     /// <summary>
     ///     Stamp to be displayed on the paper, state from beauracracy.rsi

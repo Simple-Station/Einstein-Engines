@@ -70,13 +70,13 @@
           maxCount: 2
           stationGrid: false
           paths:
-          - /Maps/Ruins/DeltaV/biodome_satellite.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/derelict.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/djstation.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/old_ai_sat.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/relaystation.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/whiteship_ancient.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/whiteship_bluespacejumper.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/biodome_satellite.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/derelict.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/djstation.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/old_ai_sat.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/relaystation.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/whiteship_ancient.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/whiteship_bluespacejumper.yml #Delta V - Move to DV folder
 
 - type: entity
   id: BaseStationShuttlesCore
@@ -97,13 +97,13 @@
           maxCount: 2
           stationGrid: false
           paths:
-          - /Maps/Ruins/DeltaV/biodome_satellite.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/derelict.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/djstation.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/old_ai_sat.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/relaystation.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/whiteship_ancient.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/whiteship_bluespacejumper.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/biodome_satellite.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/derelict.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/djstation.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/old_ai_sat.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/relaystation.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/whiteship_ancient.yml #Delta V - Move to DV folder
+          - /Maps/Ruins/EE/whiteship_bluespacejumper.yml #Delta V - Move to DV folder
 
 - type: entity
   id: BaseStationCentcomm

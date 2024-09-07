@@ -49,7 +49,7 @@
       - id: ClothingHeadsetMedical
       - id: ClothingEyesHudMedical
       - id: ClothingBeltMedical
-#Yea. Those probs are fucked. Nothing I can do about orGroup behavior. Everything below this line is DeltaV.
+#Yea. Those probs are fucked. Nothing I can do about orGroup behavior. Everything below this line is
 #If Wizden ever adds new Probs, throw their probs out, but keep new items if added
       - id: ClothingHeadHatSurgcapGreen
         prob: 0.1
@@ -108,8 +108,8 @@
       - id: NitrousOxideTankFilled
         prob: 0.3
       - id: ClothingMaskSterile
-      - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+      - id: LunchboxMedicalFilledRandom #Lunchboxes!
+        prob: 0.3
 
 - type: entity
   parent: LockerWallMedical
@@ -144,8 +144,8 @@
         prob: 0.05
         orGroup: Surgshrubs
       - id: ClothingMaskSterile
-      - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+      - id: LunchboxMedicalFilledRandom #Lunchboxes!
+        prob: 0.3
 
 - type: entity
   id: LockerChemistryFilled
@@ -186,8 +186,8 @@
       - id: ClothingShoesBootsWinterParamedic #Delta V: Add departmental winter boots
       - id: MedkitFilled
         prob: 0.3
-      - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+      - id: LunchboxMedicalFilledRandom #Lunchboxes!
+        prob: 0.3
 
 - type: entity
   id: LockerParamedicFilledHardsuit #Delta V - Paramedic locker with suit
@@ -210,5 +210,5 @@
       - id: HandheldGPSBasic
       - id: MedkitFilled
         prob: 0.3
-      - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+      - id: LunchboxMedicalFilledRandom #Lunchboxes!
+        prob: 0.3

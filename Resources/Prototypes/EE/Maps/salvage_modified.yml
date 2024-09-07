@@ -1,0 +1,100 @@
+﻿# Override for /Prototypes/Maps/salvage.yml
+
+# "Medium"-class maps - Max size square: 15x15, indicated size: 7.5
+
+- type: salvageMap
+  id: DVOutpostArm
+  mapPath: /Maps/Salvage/EE/DV-outpost-arm.yml
+  size: medium
+
+- type: salvageMap
+  id: DVMedium1
+  mapPath: /Maps/Salvage/EE/DV-medium-01.yml
+  size: medium
+
+- type: salvageMap
+  id: DVMediumVault1
+  mapPath: /Maps/Salvage/EE/DV-med-vault-01.yml
+  size: medium
+
+- type: salvageMap
+  id: DVMediumOrchestra
+  mapPath: /Maps/Salvage/EE/DV-med-silent-orchestra.yml
+  size: medium
+
+- type: salvageMap
+  id: DVMediumLibraryWreck
+  mapPath: /Maps/Salvage/EE/DV-med-library.yml
+  size: medium
+
+- type: salvageMap
+  id: DVMediumCargoWreck
+  mapPath: /Maps/Salvage/EE/DV-cargo-01.yml
+  size: medium
+
+- type: salvageMap
+  id: DVMediumPirateWreck
+  mapPath: /Maps/Salvage/EE/DV-med-pirate.yml
+  size: medium
+
+- type: salvageMap
+  id: DVTickColony
+  mapPath: /Maps/Salvage/EE/DV-tick-colony.yml
+  size: medium
+
+- type: salvageMap
+  id: DVCargoDock
+  mapPath: /Maps/Salvage/EE/DV-med-dock.yml
+  size: medium
+
+- type: salvageMap
+  id: DVSpaceWaffleHome
+  mapPath: /Maps/Salvage/EE/DV-wh-salvage.yml
+  size: medium
+
+- type: salvageMap
+  id: DVMediumShuttleWreck
+  mapPath: /Maps/Salvage/EE/DV-med-ruined-emergency-shuttle.yml
+  size: medium
+
+- type: salvageMap
+  id: DVmediumPetHospital
+  mapPath: /Maps/Salvage/EE/DV-med-pet-hospital.yml
+  size: medium
+
+- type: salvageMap
+  id: DVMediumCrashedShuttle
+  mapPath: /Maps/Salvage/EE/DV-med-crashed-shuttle.yml
+  size: medium
+
+- type: salvageMap
+  id: DVMeatball
+  mapPath: /Maps/Salvage/EE/DV-meatball.yml
+  size: medium
+
+- type: salvageMap
+  id: DVMediumHaulingShuttleWreck
+  mapPath: /Maps/Salvage/EE/DV-hauling-shuttle.yml
+  size: medium
+
+# """Large""" maps
+
+- type: salvageMap
+  id: DVStationStation
+  mapPath: /Maps/Salvage/EE/DV-stationstation.yml
+  size: large
+
+- type: salvageMap
+  id: DVAsteroidBase
+  mapPath: /Maps/Salvage/EE/DV-asteroid-base.yml
+  size: large
+
+- type: salvageMap
+  id: DVRuinCargoBase
+  mapPath: /Maps/Salvage/EE/DV-ruin-cargo-salvage.yml
+  size: large
+
+- type: salvageMap
+  id: DVSecurityChunk
+  mapPath: /Maps/Salvage/EE/DV-security-chunk.yml
+  size: large

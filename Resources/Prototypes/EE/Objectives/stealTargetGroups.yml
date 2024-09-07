@@ -1,0 +1,29 @@
+﻿- type: stealTargetGroup
+  id: SpaceCashLuckyBill
+  name: logistics officer's lucky bill
+  sprite:
+    sprite: EE/Objects/Misc/first_bill.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: BookIanDossier
+  name: head of personnel's photobook
+  sprite:
+    sprite: EE/Objects/Misc/bureaucracy.rsi
+    state: folder-hop-ian
+
+- type: stealTargetGroup
+  id: WeaponEnergyGunMultiphase
+  name: x-01 multiphase energy gun
+  sprite:
+    sprite: EE/Objects/Weapons/Guns/Battery/multiphase_energygun.rsi
+    state: base
+
+- type: stealTargetGroup
+  id: RubberStampNotary
+  name: notary stamp
+  sprite:
+    sprite: EE/Objects/Misc/stamps.rsi
+    state: stamp-notary
+
+

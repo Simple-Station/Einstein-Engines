@@ -1400,7 +1400,7 @@
 - type: tile
   id: FloorGlass
   name: tiles-glass-floor
-  sprite: /Textures/DeltaV/Tiles/glass.png # DeltaV - Replace glass texture so it's easier to see
+  sprite: /Textures/EE/Tiles/glass.png # Replace glass texture so it's easier to see
   variants: 4
   placementVariants:
   - 1.0

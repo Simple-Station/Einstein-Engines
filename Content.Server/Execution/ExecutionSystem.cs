@@ -138,7 +138,7 @@ public sealed class ExecutionSystem : EntitySystem
             return false;
 
         if (victim == attacker)
-            return false; // DeltaV - Fucking seriously?
+            return false; // Fucking seriously?
 
         // All checks passed
         return true;

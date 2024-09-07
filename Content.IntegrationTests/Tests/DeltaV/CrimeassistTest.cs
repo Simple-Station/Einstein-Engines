@@ -1,11 +1,11 @@
 ﻿using System.Linq;
-using Content.Shared.DeltaV.CartridgeLoader.Cartridges;
+using Content.Shared.CartridgeLoader.Cartridges;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.IntegrationTests.Tests.DeltaV;
+namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
 public sealed class CrimeAssistTest

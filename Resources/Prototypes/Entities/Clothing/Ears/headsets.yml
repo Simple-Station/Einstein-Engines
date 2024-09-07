@@ -38,7 +38,7 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetCargo
-  name: logistics headset # DeltaV - Logistics Department replacing Cargo
+  name: logistics headset # Logistics Department replacing Cargo
   description: A headset used by supply employees.
   components:
   - type: ContainerFill
@@ -65,8 +65,8 @@
 - type: entity
   parent: ClothingHeadsetCargo
   id: ClothingHeadsetQM
-  name: logistics officer's headset # DeltaV - Logistics Department replacing Cargo
-  description: A headset used by the logistics officer. # DeltaV - Logistics Department replacing Cargo
+  name: logistics officer's headset # Logistics Department replacing Cargo
+  description: A headset used by the logistics officer. # Logistics Department replacing Cargo
   components:
   - type: ContainerFill
     containers:
@@ -167,8 +167,8 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetScience
-  name: epistemics headset # DeltaV - Epistemics Department replacing Science
-  description: A sciency headset. Like usual. # DeltaV - Epistemics Department replacing Science
+  name: epistemics headset # Epistemics Department replacing Science
+  description: A sciency headset. Like usual. # Epistemics Department replacing Science
   components:
   - type: ContainerFill
     containers:
@@ -215,7 +215,7 @@
 - type: entity
   parent: ClothingHeadsetScience
   id: ClothingHeadsetRD
-  name: mysta headset # DeltaV - Epistemics Department replacing Science
+  name: mysta headset # Epistemics Department replacing Science
   description: Lamarr used to love chewing on this...
   components:
   - type: ContainerFill
@@ -244,7 +244,7 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetBrigmedic
-  name: corpsman headset # DeltaV - rename brigmedic to corpsman
+  name: corpsman headset # rename brigmedic to corpsman
   description: A headset that helps to hear the death cries.
   components:
   - type: ContainerFill
@@ -254,9 +254,9 @@
       - EncryptionKeySecurity
       - EncryptionKeyCommon
   - type: Sprite
-    sprite: DeltaV/Clothing/Ears/Headsets/securitymedical.rsi # DeltaV - Change the sprite to fit the others
+    sprite: EE/Clothing/Ears/Headsets/securitymedical.rsi # Change the sprite to fit the others
   - type: Clothing
-    sprite: DeltaV/Clothing/Ears/Headsets/securitymedical.rsi # DeltaV - Change the sprite to fit the others
+    sprite: EE/Clothing/Ears/Headsets/securitymedical.rsi # Change the sprite to fit the others
 
 - type: entity
   parent: ClothingHeadset

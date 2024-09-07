@@ -6,7 +6,7 @@
   requirements:
   - !type:CharacterDepartmentTimeRequirement
     department: Security
-    min: 36000 # DeltaV - 10 hours
+    min: 36000 # 10 hours
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

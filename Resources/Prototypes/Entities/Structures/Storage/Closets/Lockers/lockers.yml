@@ -34,7 +34,7 @@
 - type: entity
   id: LockerQuarterMaster
   parent: LockerBaseSecure
-  name: logistics officer's locker # DeltaV - Logistics Department replacing Cargo
+  name: logistics officer's locker # Logistics Department replacing Cargo
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -235,7 +235,7 @@
     stateDoorOpen: paramed_open
     stateDoorClosed: paramed_door
   - type: AccessReader
-    access: [ [ "Paramedic" ] ] # DeltaV - Change Medical access to Paramedic
+    access: [ [ "Paramedic" ] ] # Change Medical access to Paramedic
 
 
 # Chemical
@@ -270,7 +270,7 @@
 - type: entity
   id: LockerResearchDirector
   parent: LockerBase
-  name: mystagogue's locker # DeltaV - Epistemics Department replacing Science
+  name: mystagogue's locker # Epistemics Department replacing Science
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -325,7 +325,7 @@
 - type: entity
   id: LockerBrigmedic
   parent: LockerBaseSecure
-  name: corpsman locker # DeltaV - rename brigmedic to corpsman
+  name: corpsman locker # rename brigmedic to corpsman
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -333,7 +333,7 @@
     stateDoorOpen: armory_open
     stateDoorClosed: brigmedic_door
   - type: AccessReader
-    access: [["Corpsman"]] # DeltaV - add corpsman access
+    access: [["Corpsman"]] # add corpsman access
 
 # Security Officer
 - type: entity

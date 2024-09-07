@@ -84,7 +84,7 @@
     sprite: Clothing/OuterClothing/WinterCoats/coatcap.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterCaptain
-  - type: Armor # DeltaV - adds resists to coat, same as HoS coat. Still better than nothing, but nowhere as good as a carapace
+  - type: Armor # adds resists to coat, same as HoS coat. Still better than nothing, but nowhere as good as a carapace
     modifiers:
       coefficients:
         Blunt: 0.75
@@ -95,7 +95,7 @@
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterCargo
-  name: logistics winter coat # DeltaV - Logistics Department replacing Cargo
+  name: logistics winter coat # Logistics Department replacing Cargo
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coatcargo.rsi
@@ -241,7 +241,7 @@
     sprite: Clothing/OuterClothing/WinterCoats/coathos.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterHOS
-  - type: Armor # DeltaV - adds resists to coat. As good as Cap's, but I don't know why you'd wear this over a trench coat
+  - type: Armor # adds resists to coat. As good as Cap's, but I don't know why you'd wear this over a trench coat
     modifiers:
       coefficients:
         Blunt: 0.75
@@ -346,7 +346,7 @@
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterQM
-  name: logistics officer's winter coat # DeltaV - Logistics Department replacing Cargo
+  name: logistics officer's winter coat # Logistics Department replacing Cargo
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coatqm.rsi
@@ -359,7 +359,7 @@
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterRD
-  name: mystagogue's winter coat # DeltaV - Epistemics Department replacing Science
+  name: mystagogue's winter coat # Epistemics Department replacing Science
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coatrd.rsi
@@ -391,7 +391,7 @@
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterSci
-  name: epistemics winter coat # DeltaV - Epistemics Department replacing Science
+  name: epistemics winter coat # Epistemics Department replacing Science
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coatsci.rsi

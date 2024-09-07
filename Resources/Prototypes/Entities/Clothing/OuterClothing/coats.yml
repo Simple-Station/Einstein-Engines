@@ -49,9 +49,9 @@
   description: A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/OuterClothing/Coats/hos_trenchcoat.rsi # DeltaV - resprite
+    sprite: EE/Clothing/OuterClothing/Coats/hos_trenchcoat.rsi # resprite
   - type: Clothing
-    sprite: DeltaV/Clothing/OuterClothing/Coats/hos_trenchcoat.rsi # DeltaV - resprite
+    sprite: EE/Clothing/OuterClothing/Coats/hos_trenchcoat.rsi # resprite
   - type: Armor
     modifiers:
       coefficients:
@@ -216,13 +216,13 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatRnd
-  name: epistemics lab coat # DeltaV - Epistemics Department replacing Science
+  name: epistemics lab coat # Epistemics Department replacing Science
   description: A suit that protects against minor chemical spills. Has a purple stripe on the shoulder.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/OuterClothing/Coats/epicoat.rsi # DeltaV - Epistemic lab coat
+    sprite: EE/Clothing/OuterClothing/Coats/epicoat.rsi # Epistemic lab coat
   - type: Clothing
-    sprite: DeltaV/Clothing/OuterClothing/Coats/epicoat.rsi # DeltaV - Epistemic lab coat
+    sprite: EE/Clothing/OuterClothing/Coats/epicoat.rsi # Epistemic lab coat
   - type: Armor
     modifiers:
       coefficients:
@@ -387,7 +387,7 @@
     sprite: Clothing/OuterClothing/Coats/brigmedic.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/brigmedic.rsi
-  - type: Armor # DeltaV - tweak for Velta armour
+  - type: Armor # tweak for Velta armour
     modifiers:
       coefficients:
         Blunt: 0.85

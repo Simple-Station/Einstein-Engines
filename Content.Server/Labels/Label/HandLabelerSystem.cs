@@ -41,7 +41,7 @@ namespace Content.Server.Labels
         private void OnUtilityVerb(EntityUid uid, HandLabelerComponent handLabeler, GetVerbsEvent<UtilityVerb> args)
         {
             if (args.Target is not { Valid: true } target || !handLabeler.Whitelist.IsValid(target) || !args.CanAccess
-                || _tagSystem.HasTag(target, PreventTag)) // DeltaV - Prevent labels on certain items
+                || _tagSystem.HasTag(target, PreventTag)) // Prevent labels on certain items
                 return;
 
             string labelerText = handLabeler.AssignedLabel == string.Empty ? Loc.GetString("hand-labeler-remove-label-text") : Loc.GetString("hand-labeler-add-label-text");
@@ -63,7 +63,7 @@ namespace Content.Server.Labels
         private void AfterInteractOn(EntityUid uid, HandLabelerComponent handLabeler, AfterInteractEvent args)
         {
             if (args.Target is not {Valid: true} target || !handLabeler.Whitelist.IsValid(target) || !args.CanReach
-                || _tagSystem.HasTag(target, PreventTag)) // DeltaV - Prevent labels on certain items
+                || _tagSystem.HasTag(target, PreventTag)) // Prevent labels on certain items
                 return;
 
             AddLabelTo(uid, handLabeler, target, out string? result);

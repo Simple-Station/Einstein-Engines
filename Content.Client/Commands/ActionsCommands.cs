@@ -50,7 +50,7 @@ public sealed class LoadActionsCommand : LocalizedCommands
     {
         if (args.Length != 1)
         {
-            LoadActs(); // DeltaV - Load from a file dialogue instead
+            LoadActs(); // Load from a file dialogue instead
             return;
         }
 
@@ -65,7 +65,7 @@ public sealed class LoadActionsCommand : LocalizedCommands
     }
 
     /// <summary>
-    /// DeltaV - Load actions from a file stream instead
+    /// Load actions from a file stream instead
     /// </summary>
     private static async void LoadActs()
     {

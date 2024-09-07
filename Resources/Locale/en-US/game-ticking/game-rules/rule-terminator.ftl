@@ -8,7 +8,7 @@ terminator-role-greeting =
     Use any means at your disposal to complete the mission.
     Glory to Cybersun.
 
-# DeltaV - paradox anomaly
+# paradox anomaly
 terminator-role-briefing =
     You are a bluespace anomaly that looks and sound identical to someone from this reality.
     Kill them and assume their identity, or talk it out and become friends.

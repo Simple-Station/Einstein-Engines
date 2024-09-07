@@ -167,12 +167,12 @@
   id: IonStormLawsets
   weights:
     # its crewsimov by default dont be lame
-    #Crewsimov: 0.25 # Delta-V disables crewsimov as an option for borg ion storm lawsets
+    #Crewsimov: 0.25 #disables crewsimov as an option for borg ion storm lawsets
     Corporate: 1
     NTDefault: 1
-    Drone: 0.25 # Delta-V - Lowers the spawn rate due to it being anti-crew interaction + drones are disabled anyways
+    Drone: 0.25 #- Lowers the spawn rate due to it being anti-crew interaction + drones are disabled anyways
     Ninja: 0.25
-    #Delta-V Lawsets Start
+    #EE Lawsets Start
     Chaplain: 1
     Reporter: 1
     Clown: 1
@@ -185,4 +185,4 @@
     # Less harmful outright, so higher chance of spawn
     Nutimov: 0.5
     Paladin: 0.5
-    #DeltaV lawsets end
+    #EE lawsets end

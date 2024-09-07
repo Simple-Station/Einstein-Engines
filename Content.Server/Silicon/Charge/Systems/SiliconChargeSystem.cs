@@ -111,7 +111,7 @@ public sealed class SiliconChargeSystem : EntitySystem
             if (_mobState.IsDead(silicon))
                 continue;
 
-            // If the silicon ghosted or is SSD while still being powered, skip it. - DeltaV
+            // If the silicon ghosted or is SSD while still being powered, skip it.
             if (EntityManager.TryGetComponent<MindContainerComponent>(silicon, out var mindContComp)
                 && EntityManager.TryGetComponent<SiliconDownOnDeadComponent>(silicon, out var siliconDeathComp))
             {
@@ -168,7 +168,7 @@ public sealed class SiliconChargeSystem : EntitySystem
 
     private float SiliconHeatEffects(EntityUid silicon, float frameTime)
     {
-        if (!EntityManager.TryGetComponent<TemperatureComponent>(silicon, out var temperComp) 
+        if (!EntityManager.TryGetComponent<TemperatureComponent>(silicon, out var temperComp)
             || !EntityManager.TryGetComponent<ThermalRegulatorComponent>(silicon, out var thermalComp))
             return 0;
 

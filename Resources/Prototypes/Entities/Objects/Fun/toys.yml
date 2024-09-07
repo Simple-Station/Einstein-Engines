@@ -102,7 +102,7 @@
     - type: Item
       size: Normal
     - type: Sprite
-      sprite: DeltaV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite
+      sprite: EE/Mobs/Ghosts/revenant.rsi # Custom revenant sprite
       state: icon
       noRot: true
     - type: Construction
@@ -522,7 +522,7 @@
     animation: WeaponArcBite # Rrrr!
   - type: Tag
     tags:
-    - PlushieCarp # DeltaV - fish labeler craft
+    - PlushieCarp # fish labeler craft
 
 - type: entity
   parent: PlushieCarp
@@ -798,20 +798,20 @@
     state: plushie_moth
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/Voice/Moth/moth_squeak.ogg # DeltaV - Give back the mothplushie the squeak
+      path: /Audio/Voice/Moth/moth_squeak.ogg # Give back the mothplushie the squeak
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/Voice/Moth/moth_scream.ogg # DeltaV - Make the mothplushie scream on landing
+      path: /Audio/Voice/Moth/moth_scream.ogg # Make the mothplushie scream on landing
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/Voice/Moth/moth_squeak.ogg # DeltaV - Give back the mothplushie the squeak
+      path: /Audio/Voice/Moth/moth_squeak.ogg # Give back the mothplushie the squeak
   - type: EmitSoundOnTrigger
     sound:
-      path: /Audio/Voice/Moth/moth_scream.ogg # DeltaV - Make the mothplushie scream on trigger
+      path: /Audio/Voice/Moth/moth_scream.ogg # Make the mothplushie scream on trigger
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/Voice/Moth/moth_squeak.ogg # DeltaV - Give back the mothplushie the squeak
-  - type: Construction # DeltaV - Mothroach hide craft, see Prototypes/Nyanotrasen/Recipes/Crafting/Graphs/fun/mothplushie.yml
+      path: /Audio/Voice/Moth/moth_squeak.ogg # Give back the mothplushie the squeak
+  - type: Construction # Mothroach hide craft, see Prototypes/Nyanotrasen/Recipes/Crafting/Graphs/fun/mothplushie.yml
     graph: MothPlushie
     node: plush
   - type: Food
@@ -1050,16 +1050,16 @@
     state: plushie_vulp
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/DeltaV/Voice/Vulpkanin/dog_bark1.ogg
+      path: /Audio/EE/Voice/Vulpkanin/dog_bark1.ogg
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/DeltaV/Voice/Vulpkanin/dog_bark1.ogg
+      path: /Audio/EE/Voice/Vulpkanin/dog_bark1.ogg
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/DeltaV/Voice/Vulpkanin/dog_bark1.ogg
+      path: /Audio/EE/Voice/Vulpkanin/dog_bark1.ogg
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/DeltaV/Voice/Vulpkanin/dog_bark1.ogg
+      path: /Audio/EE/Voice/Vulpkanin/dog_bark1.ogg
 
 - type: entity
   parent: PlushieVulp
@@ -1894,7 +1894,7 @@
   - type: ItemToggle
   - type: UseDelay
     delay: 1
-#  - type: ItemToggleActiveSound # DeltaV - No more annoying clicking
+#  - type: ItemToggleActiveSound # No more annoying clicking
 #    activeSound:
 #      path: /Audio/Items/newton_cradle.ogg
 #      params:

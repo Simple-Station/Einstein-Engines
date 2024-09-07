@@ -1,0 +1,38 @@
+[game]
+desc               = "Featuring loads of unique content and psionics."
+lobbyenabled       = true
+lobbyduration      = 240
+round_end_pacifist = true
+
+[net]
+max_connections = 1024
+tickrate = 30
+
+[vote]
+restart_required_ratio = 0.7
+
+[netres]
+limit    = 10.0
+
+[admin]
+see_own_notes   = true
+deadmin_on_join = true
+
+[events]
+ramping_average_end_time = 180.0
+ramping_average_chaos    = 4.5
+
+[atmos]
+monstermos_rip_tiles = false
+
+[server]
+id = "ee"
+
+[discord]
+rich_main_icon_id = "ee"
+
+[ic]
+flavor_text = true
+
+#[worldgen]
+#enabled = true
