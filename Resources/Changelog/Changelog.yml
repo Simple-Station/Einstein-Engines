@@ -5994,3 +5994,13 @@ Entries:
   id: 6326
   time: '2024-09-08T14:39:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/858
+- author: Mnemotechnician
+  changes:
+    - type: Remove
+      message: >-
+        Quick swap has been disabled for most item slots. This primarily means
+        you will have to eject power cells/magazines from items/weapons/borgs
+        before replacing them with different ones.
+  id: 6327
+  time: '2024-09-08T14:42:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/856
