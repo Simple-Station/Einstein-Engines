@@ -6004,3 +6004,10 @@ Entries:
   id: 6327
   time: '2024-09-08T14:42:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/856
+- author: router
+  changes:
+    - type: Tweak
+      message: Female slimes no longer have movie screams.
+  id: 6328
+  time: '2024-09-08T14:44:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/849
