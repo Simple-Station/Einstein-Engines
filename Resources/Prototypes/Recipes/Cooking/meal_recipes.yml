@@ -57,7 +57,7 @@
     FoodTomato: 1
     FoodOnionSlice: 2
 
-- type: microwaveMealRecipe
+- type: microwaveMealRecipe #Added to metamorph recipes
   id: RecipeBrainBurger
   name: brain burger recipe
   result: FoodBurgerBrain
@@ -76,7 +76,7 @@
     FoodMeat: 1
     ClothingHeadHatCatEars: 1
 
-- type: microwaveMealRecipe
+- type: microwaveMealRecipe #Added to metamorph recipes
   id: RecipeCheeseburger
   name: cheeseburger recipe
   result: FoodBurgerCheese
@@ -86,7 +86,7 @@
     FoodMeat: 1
     FoodCheeseSlice: 1
 
-- type: microwaveMealRecipe
+- type: microwaveMealRecipe #Added to metamorph recipes
   id: RecipeChickenSandwich
   name: chicken sandwich recipe
   result: FoodBurgerChicken
@@ -115,7 +115,7 @@
     FoodBreadBun: 1
     FoodMeatCorgi: 1
 
-- type: microwaveMealRecipe
+- type: microwaveMealRecipe #Added to metamorph recipes
   id: RecipeCrabBurger
   name: crab burger recipe
   result: FoodBurgerCrab
@@ -140,7 +140,7 @@
     CrayonGreen: 1
     Flare: 1
 
-- type: microwaveMealRecipe
+- type: microwaveMealRecipe #Added to metamorph recipes
   id: RecipeDuckBurger
   name: duck sandwich recipe
   result: FoodBurgerDuck
@@ -1968,3 +1968,23 @@
     FoodTomato: 1
     FoodCabbage: 1
     FoodOnionSlice: 2
+
+- type: microwaveMealRecipe
+  id: RecipeTacoBeef
+  name: beef taco recipe
+  result: FoodTacoBeef
+  time: 10
+  solids:
+    FoodTacoShell: 1
+    FoodMeatCutlet: 1
+    FoodCheeseSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeTacoChicken
+  name: chicken taco recipe
+  result: FoodTacoChicken
+  time: 10
+  solids:
+    FoodCroissantRaw: 1
+    FoodButterSlice: 1
+    ShardGlass: 1

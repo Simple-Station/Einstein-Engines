@@ -524,11 +524,8 @@
     - Slice
   - type: FoodSequenceElement
     entries:
-      burger:
-        name: food-sequence-burger-content-cheese
-        sprite:
-          sprite: Objects/Consumable/Food/ingredients.rsi
-          state: cheesewedge
+      Taco: CheeseTaco
+      Burger: CheeseBurger
 
 - type: entity
   name: chèvre log
@@ -680,6 +677,9 @@
       reagents:
       - ReagentId: CocoaPowder
         Quantity: 2
+  - type: Tag
+    tags:
+      - Ingredient
 
 - type: entity
   parent: BaseFoodCondimentPacket

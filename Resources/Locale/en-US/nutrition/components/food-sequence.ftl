@@ -7,6 +7,7 @@ food-sequence-burger-suffix = burger
 food-sequence-burger-content-raw-meat = raw
 food-sequence-burger-content-carp = carpo
 food-sequence-burger-content-bear = bear
+food-sequence-burger-content-crab = crabs
 food-sequence-burger-content-penguin = peng
 food-sequence-burger-content-chiken = chiken
 food-sequence-burger-content-duck = duck

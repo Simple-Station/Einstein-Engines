@@ -37,17 +37,19 @@
   - type: Sprite
     drawdepth: Mobs
     noRot: true
-    sprite: Objects/Consumable/Food/burger.rsi
+    sprite: Objects/Consumable/Food/burger_sequence.rsi
     layers:
     - state: bun_bottom
   - type: FoodSequenceStartPoint
-    key: burger
-    maxLayers: 20
+    key: Burger
+    maxLayers: 10
     startPosition: 0, 0
-    offset: 0, 0.1
-    nameGeneration: food-sequence-standart-gen
-    nameSuffix: food-sequence-burger-suffix
+    offset: 0, 0.07
+    minLayerOffset: -0.05, 0
+    maxLayerOffset: 0.05, 0
+    nameGeneration: food-sequence-burger-gen
   - type: Appearance
+  - type: FoodMetamorphableByAdding
   - type: SolutionContainerManager
     solutions:
       food:
@@ -64,7 +66,7 @@
   components:
   - type: Food
   - type: Sprite
-    sprite: Objects/Consumable/Food/burger.rsi
+    sprite: Objects/Consumable/Food/burger_sequence.rsi
     layers:
     - state: bun_top
   - type: SolutionContainerManager
@@ -76,11 +78,7 @@
           Quantity: 3.3 # 1/2 of a bun
   - type: FoodSequenceElement
     entries:
-      burger:
-        final: true
-        sprite:
-          sprite: Objects/Consumable/Food/burger.rsi
-          state: bun_top
+      Burger: BunTopBurger
   
 # Base
 

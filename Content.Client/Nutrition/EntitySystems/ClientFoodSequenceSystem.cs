@@ -47,6 +47,7 @@ public sealed class ClientFoodSequenceSystem : SharedFoodSequenceSystem
 
             //Set image
             sprite.LayerSetSprite(index, state.Sprite);
+            sprite.LayerSetScale(index, state.Scale);
 
             //Offset the layer
             var layerPos = start.Comp.StartPosition;

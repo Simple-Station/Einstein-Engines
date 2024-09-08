@@ -17,13 +17,6 @@
         reagents:
         - ReagentId: THC
           Quantity: 15
-  - type: FoodSequenceElement
-    entries:
-      burger:
-        name: food-sequence-burger-content-cannabis
-        sprite:
-          sprite: Objects/Specific/Hydroponics/cannabis.rsi
-          state: produce
 
 
 - type: entity
@@ -118,13 +111,6 @@
 #         Quantity: 1
         - ReagentId: Psicodine
           Quantity: 0.6
-  - type: FoodSequenceElement
-    entries:
-      burger:
-        name: food-sequence-burger-content-rainbow-cannabis
-        sprite:
-          sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
-          state: produce
 
 - type: entity
   name: dried rainbow cannabis leaves
