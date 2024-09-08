@@ -1749,7 +1749,7 @@
   parent: ToyHammer
   id: BwoinkHammer
   name: bwoink hammer
-  description: A toy hammer which makes a wildly terrifying sound. It is missing it's old spirit of bangammer and is still unreisinable.
+  description: A toy hammer which makes a wildly terrifying sound. It is missing it's old spirit of bangammer and is still unraisinable.
   suffix: DO NOT MAP
   components:
     - type: Sprite
