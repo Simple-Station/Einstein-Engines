@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
+using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Destructible;
 using Content.Shared.Hands.Components;
@@ -10,6 +11,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
@@ -27,10 +29,13 @@ namespace Content.Shared.Containers.ItemSlots
     {
         [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
         [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
+        [Dependency] private readonly IConfigurationManager _config = default!;
         [Dependency] private readonly SharedContainerSystem _containers = default!;
         [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
         [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
         [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+
+        private bool _defaultQuickSwap;
 
         public override void Initialize()
         {
@@ -53,6 +58,8 @@ namespace Content.Shared.Containers.ItemSlots
             SubscribeLocalEvent<ItemSlotsComponent, ComponentHandleState>(HandleItemSlotsState);
 
             SubscribeLocalEvent<ItemSlotsComponent, ItemSlotButtonPressedEvent>(HandleButtonPressed);
+
+            _config.OnValueChanged(CCVars.AllowSlotQuickSwap, b => _defaultQuickSwap = b, true);
         }
 
         #region ComponentManagement
@@ -202,7 +209,7 @@ namespace Content.Shared.Containers.ItemSlots
                 if (!slot.InsertOnInteract)
                     continue;
 
-                if (!CanInsert(uid, args.Used, args.User, slot, swap: slot.Swap, popup: args.User))
+                if (!CanInsert(uid, args.Used, args.User, slot, swap: slot.Swap ?? _defaultQuickSwap, popup: args.User))
                     continue;
 
                 // Drop the held item onto the floor. Return if the user cannot drop.
