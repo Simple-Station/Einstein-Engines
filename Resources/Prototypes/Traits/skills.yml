@@ -188,10 +188,15 @@
         - ForensicMantis
         - Chaplain
         - Librarian
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -214,14 +219,18 @@
         - ForensicMantis
         - Chaplain
         - Librarian
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Uncloneable
         - LatentPsychic
 
 - type: trait
@@ -231,13 +240,37 @@
   psionicPowers:
     - TelepathyPower
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - ResearchDirector
         - ForensicMantis
-        - Chaplain
-        - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+
+- type: trait
+  id: AnomalousPositronics
+  category: Mental
+  points: -4
+  componentRemovals:
+    - PsionicInsulation
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
