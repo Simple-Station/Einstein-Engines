@@ -406,7 +406,7 @@ namespace Content.Shared.CCVar
         ///     Whether item slots, such as power cell slots or AME fuel cell slots, should support quick swap if it is not otherwise specified in their YAML prototype.
         /// </summary>
         public static readonly CVarDef<bool> AllowSlotQuickSwap =
-            CVarDef.Create("game.slot_quick_swap", true, CVar.REPLICATED);
+            CVarDef.Create("game.slot_quick_swap", false, CVar.REPLICATED);
 
 #if EXCEPTION_TOLERANCE
         /// <summary>
