@@ -53,11 +53,6 @@
     needsHands: false
   - type: MindContainer
     showExamineInfo: true
-  - type: Psionic
-    removable: false
-  - type: InnatePsionicPowers
-    powersToAdd:
-    - PyrokinesisPower
   - type: NpcFactionMember
     factions:
     - Passive
