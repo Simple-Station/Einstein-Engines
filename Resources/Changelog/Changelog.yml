@@ -6027,3 +6027,12 @@ Entries:
   id: 6330
   time: '2024-09-08T14:56:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/882
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Multiple issues with translators were fixed. Additionally, you can now
+        hold multiple handheld translators at once without issues.
+  id: 6331
+  time: '2024-09-08T15:08:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/834
