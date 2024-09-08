@@ -6036,3 +6036,18 @@ Entries:
   id: 6331
   time: '2024-09-08T15:08:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/834
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Recyclers can now once again eat people when emagged.
+    - type: Add
+      message: >-
+        The ability for emagged Recyclers to eat people is now controlled by the
+        CVar "reclaimer.allow_gibbing".
+    - type: Add
+      message: >-
+        Recyclers require power to eat people. No more dragging emagged
+        recyclers into crowds.
+  id: 6332
+  time: '2024-09-08T15:15:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/822
