@@ -25,6 +25,7 @@ namespace Content.Client.Stylesheets
         public const string ButtonSquare = "ButtonSquare";
 
         public const string ButtonCaution = "Caution";
+        public const string ButtonDanger = "Danger";
 
         public const int DefaultGrabberSize = 10;
 

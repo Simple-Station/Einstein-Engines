@@ -92,9 +92,13 @@
     nameSegments: [names_golem]
   - type: Psionic
     removable: false
+    psychognomicDescriptors:
+      - p-descriptor-bound
+      - p-descriptor-cyclic
   - type: InnatePsionicPowers
     powersToAdd:
       - PyrokinesisPower
+      - TelepathyPower
   - type: Grammar
     attributes:
       proper: true

@@ -1,6 +1,6 @@
 - type: loadout
   id: LoadoutCommandHOPNeckMantle
-  category: Jobs
+  category: JobsCommandHOP
   cost: 2
   exclusive: true
   requirements:
@@ -12,7 +12,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPNeckCloak
-  category: Jobs
+  category: JobsCommandHOP
   cost: 2
   exclusive: true
   requirements:
@@ -24,7 +24,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpsuitTurtleneckBoatswain
-  category: Jobs
+  category: JobsCommandHOP
   cost: 2
   exclusive: true
   requirements:
@@ -36,7 +36,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpsuitMess
-  category: Jobs
+  category: JobsCommandHOP
   cost: 2
   exclusive: true
   requirements:
@@ -48,7 +48,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpskirtMess
-  category: Jobs
+  category: JobsCommandHOP
   cost: 2
   exclusive: true
   requirements:
@@ -60,7 +60,7 @@
 
 - type: loadout
   id: LoadoutcommandHOPOuterCoatFormal
-  category: Jobs
+  category: JobsCommandHOP
   cost: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -71,7 +71,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPBackIan
-  category: Jobs
+  category: JobsCommandHOP
   cost: 4
   requirements:
     - !type:CharacterJobRequirement
@@ -82,7 +82,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPHatCap
-  category: Jobs
+  category: JobsCommandHOP
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -93,15 +93,10 @@
 
 - type: loadout
   id: LoadoutCommandHOPShoesBootsWinter
-  category: Jobs
+  category: JobsCommandHOP
   cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
@@ -110,7 +105,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPBedsheetIan
-  category: Jobs
+  category: JobsCommandHOP
   cost: 2
   exclusive: true
   requirements:

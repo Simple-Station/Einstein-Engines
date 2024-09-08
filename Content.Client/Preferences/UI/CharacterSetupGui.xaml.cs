@@ -213,7 +213,7 @@ namespace Content.Client.Preferences.UI
                     Text = Loc.GetString("character-setup-gui-character-picker-button-confirm-delete-button"),
                     Visible = false,
                 };
-                confirmDeleteButton.ModulateSelfOverride = StyleNano.ButtonColorCautionDefault;
+                confirmDeleteButton.ModulateSelfOverride = StyleNano.ButtonColorDangerDefault;
                 confirmDeleteButton.OnPressed += _ =>
                 {
                     Parent?.RemoveChild(this);

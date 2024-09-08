@@ -74,4 +74,19 @@ xenoglossy-power-initialization-feedback =
 
 psionic-language-power-metapsionic-feedback = The noösphere flows freely through {CAPITALIZE($entity)}, who seems to digest it and pass it back out undisturbed.
 
+# Psychognomy
+psychognomy-power-description = You have some vague sense of the form of the source of telepathic messages.
+psychognomy-power-initialization-feedback =
+    I have pierced the veil, and I know I'm not alone. More concerning, the piercing I made seems to be still indefinitely permeable.
+    When energy passes through the perforations in the noösphere, I get a faint glimpse of the material origin.
+
+# Telepathy
+telepathy-power-description = You are capable of both sending and receiving telepathic messages.
+telepathy-power-initialization-feedback =
+    The voices I've heard all my life begin to clear, yet they do not leave me. Before, they were as incoherent whispers,
+    now my senses broaden, I come to a realization that they are part of a communal shared hallucination. Behind every voice is a glimmering sentience.
+
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
+examine-mindbroken-message =
+    Eyes unblinking, staring deep into the horizon. {CAPITALIZE($entity)} is a sack of meat pretending it has a soul.
+    There is nothing behind its gaze, no evidence there can be found of the divine light of creation.

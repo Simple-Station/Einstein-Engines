@@ -9,7 +9,9 @@ using Content.Shared.Traits;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Utility;
 using Content.Server.Abilities.Psionics;
+using Content.Shared.Psionics;
 
 namespace Content.Server.Traits;
 
@@ -37,14 +39,14 @@ public sealed class TraitSystem : EntitySystem
         {
             if (!_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
             {
-                Log.Warning($"No trait found with ID {traitId}!");
+                DebugTools.Assert($"No trait found with ID {traitId}!");
                 return;
             }
 
             if (!_characterRequirements.CheckRequirementsValid(
                 traitPrototype.Requirements,
                 _prototype.Index<JobPrototype>(args.JobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID),
-                args.Profile, _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false,
+                args.Profile, _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false, traitPrototype,
                 EntityManager, _prototype, _configuration,
                 out _))
                 continue;
@@ -110,6 +112,7 @@ public sealed class TraitSystem : EntitySystem
             return;
 
         foreach (var powerProto in traitPrototype.PsionicPowers)
-            _psionicAbilities.InitializePsionicPower(uid, powerProto, false);
+            if (_prototype.TryIndex<PsionicPowerPrototype>(powerProto, out var psionicPower))
+                _psionicAbilities.InitializePsionicPower(uid, psionicPower, false);
     }
 }

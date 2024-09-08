@@ -1,6 +1,6 @@
 - type: loadout
   id: LoadoutScienceUniformJumpskirtSenior
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -15,14 +15,10 @@
 
 - type: loadout
   id: LoadoutScienceUniformJumpsuitSenior
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Scientist
@@ -34,7 +30,7 @@
 
 - type: loadout
   id: LoadoutScienceOuterCoat
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -48,7 +44,7 @@
 
 - type: loadout
   id: LoadoutScienceOuterLabcoat
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -62,7 +58,7 @@
 
 - type: loadout
   id: LoadoutScienceOuterLabcoatSeniorResearcher
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -77,7 +73,7 @@
 
 - type: loadout
   id: LoadoutScienceOuterExplorerLabcoat
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -91,7 +87,7 @@
 
 - type: loadout
   id: LoadoutScienceHatBeret
-  category: Jobs
+  category: JobsAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -105,7 +101,7 @@
 
 - type: loadout
   id: LoadoutScienceEyesHudDiagnostic
-  category: Jobs
+  category: JobsAUncategorized
   cost: 3
   exclusive: true
   requirements:
@@ -119,7 +115,7 @@
 
 - type: loadout
   id: LoadoutScienceEyesEyepatchHudDiag
-  category: Jobs
+  category: JobsAUncategorized
   cost: 3
   exclusive: true
   requirements:

@@ -20,6 +20,9 @@
     - type: BibleUser #Lets them heal with bibles
     - type: Psionic
       powerRollMultiplier: 3
+    - type: InnatePsionicPowers
+      powersToAdd:
+        - TelepathyPower
 
 - type: startingGear
   id: ChaplainGear

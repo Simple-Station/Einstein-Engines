@@ -5538,3 +5538,469 @@ Entries:
         to the user's Chat window. 
   id: 6284
   time: '2024-08-22T17:12:26.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: >-
+        Announcements can play multiple sounds now (you can revert to the old
+        behavior in sound setting if you want though)
+  id: 6285
+  time: '2024-08-22T21:46:38.0000000+00:00'
+- author: v0idRift
+  changes:
+    - type: Add
+      message: >-
+        Added the ability for IPCs to speak and understand Galactic Common and
+        RobotTalk languages.
+    - type: Add
+      message: >-
+        Enabled IPCs to heal themselves using welding tools via the
+        WeldingHealable component.
+  id: 6286
+  time: '2024-08-23T03:58:35.0000000+00:00'
+- author: FoxxoTrystan
+  changes:
+    - type: Fix
+      message: Supermatter Annoncements
+  id: 6287
+  time: '2024-08-24T07:56:12.0000000+00:00'
+- author: Fansana
+  changes:
+    - type: Fix
+      message: >-
+        Fixed most door accesses including: Lawyer, Mantis, Corpsman, Boxer,
+        Clown, Mime, Musician, Reporter, Library, Zookeeper, Salvage and
+        Psychologist.
+  id: 6288
+  time: '2024-08-25T08:45:17.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed the FixGridAtmos command.
+  id: 6289
+  time: '2024-08-26T00:02:53.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Lab Mixes have been added to the game as a new random animal. Be sure to
+        keep Felinids and Harpies away from them.
+  id: 6290
+  time: '2024-08-27T03:16:46.0000000+00:00'
+- author: router
+  changes:
+    - type: Add
+      message: >-
+        Added more sounds to IPCs. IPCs can now also whistle, whirr, beep, boop,
+        ping, chime, buzz and buzz twice.
+    - type: Fix
+      message: IPCs no longer have the default wilhelm sound.
+    - type: Tweak
+      message: Silicon deathgasps are now darker.
+  id: 6291
+  time: '2024-08-29T02:57:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: IPCs can now lay down, offer people items, and be picked up and carried.
+  id: 6292
+  time: '2024-08-29T20:01:47.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Temporarily disabled Telegnosis pending a lengthier update.
+  id: 6293
+  time: '2024-08-30T00:46:52.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: IPC now have their own unique deathgasp message.
+  id: 6294
+  time: '2024-08-30T00:50:20.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Shoving once again works correctly, and mass difference matters a lot
+        when shoving someone.
+    - type: Fix
+      message: >-
+        The time it takes to escape one's hands once again depends on the mass
+        difference between the escapee and the holder.
+    - type: Tweak
+      message: >-
+        Exiting stamina crit now leaves you with 0 stamina. You can't be
+        immediately stunned again, but you will suffer from slowdown and combat
+        disadvantages!
+  id: 6295
+  time: '2024-08-30T04:46:40.0000000+00:00'
+- author: ShatteredSwords
+  changes:
+    - type: Tweak
+      message: Thieves are now in Survival, Hellshift, and Extended.
+  id: 6296
+  time: '2024-08-30T04:57:29.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        TelepathyComponent has been split off from the PsionicComponent, now as
+        it's own standalone feature.
+    - type: Add
+      message: Telepathy has been added as a new Psionic Power
+    - type: Add
+      message: >-
+        Natural Telepath has returned from Psionic-Refactor V1, now using new
+        functionality from the trait system that allows traits to buy psionic
+        powers directly. 
+    - type: Add
+      message: >-
+        Latent Psychics who have neither bought Natural Telepath, nor acquired
+        Telepathy during the round, can sometimes hear snippets of conversation
+        from telepathic chat.
+    - type: Tweak
+      message: >-
+        The cost of Latent Psychic has been reduced from 6 to 4 points, this is
+        to accommodate for the loss of Telepathy as a bonus feature for all
+        Psionics. Since Natural Telepath is a 2 point trait, this gives a net 0
+        change in trait points for anyone who wishes to keep being a roundstart
+        Telepath.
+    - type: Tweak
+      message: >-
+        Psionic Mantis, Mystagogue, Chaplain, and Cataloguer are all Naturally
+        Telepathic, and thus get the new trait for free.
+  id: 6297
+  time: '2024-08-30T05:27:54.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        x-Waveform Misalignment has been rebased from the Psionic Refactor v1.
+        x-Waveform Misalignment is an extraordinarily expensive trait that
+        grants full immunity to nearly all psionic powers and effects, both
+        positive and negative.
+  id: 6298
+  time: '2024-08-30T05:39:59.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        A new interaction system has been implemented. The right-click menu now
+        provides a wide variety of different interactions with different
+        entities. Some old default interactions, such as hugging, knocking,
+        fence rattling, have also been moved to that system.
+  id: 6299
+  time: '2024-08-30T05:45:24.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Radiation shielding objects have been rebalanced, such that objects that
+        players previously assumed would provide reasonable protection from
+        radiation, now factually do. For instance, Radiation Shutters now
+        actually block radiation.
+  id: 6300
+  time: '2024-08-30T14:10:02.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Glacier Returns.
+  id: 6301
+  time: '2024-08-30T14:13:04.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Saltern has been added to the map rotation. Now featuring a compact
+        Supermatter engine, full Epistemics department, and a significantly
+        expanded Chapel and Library.
+  id: 6302
+  time: '2024-08-30T14:24:49.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Core has been added to the list of maps in rotation. This time featuring
+        a custom Supermatter Engine
+  id: 6303
+  time: '2024-08-30T14:42:12.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        InnatePsionicPowers now operates on MapInitEvent instead of
+        ComponentStartup, meaning that it can now be safely used on entities
+        that are mapped in instead of spawned. 
+    - type: Add
+      message: >-
+        Oracle and Sophia are now recognized as Divine, and as such are
+        creatures that can be prayed to.
+  id: 6304
+  time: '2024-08-31T04:28:16.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Diagonal windows now use connected textures.
+  id: 6305
+  time: '2024-09-01T23:20:12.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Character names can now be up to 48 characters in length.
+    - type: Tweak
+      message: >-
+        Character descriptions can now be up to 1024 characters in length. This
+        is the maximum size descriptions can be without the menu having a scroll
+        bar. And while we'd like it to be bigger, we're going to want to get a
+        new UI for this in the future!
+  id: 6306
+  time: '2024-09-01T23:20:45.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        The default stamina cost for Power Attacks for any weapon that doesn't
+        explicitly modify it is now correctly set to 10 stamina(down from 20).
+  id: 6307
+  time: '2024-09-01T23:25:51.0000000+00:00'
+- author: Evgencheg
+  changes:
+    - type: Add
+      message: Changelogs should be shown in Discord now
+  id: 6308
+  time: '2024-09-01T23:47:18.0000000+00:00'
+- author: DJB1gYAPPA
+  changes:
+    - type: Add
+      message: 'Added Jukebox with basic songs. '
+  id: 6309
+  time: '2024-09-02T02:28:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Revenants, Reagent Slimes, and Ore Crabs are now considered to be
+        Psionic(But cannot gain powers randomly). This is due to their status as
+        "Magical And/Or Extraplanar Creatures", which makes them valid targets
+        for anti-psychic abilities such as the Psionic Mantis' Anti-Psychic
+        Knife. 
+    - type: Add
+      message: Some Reagent Slimes can now contain Lotophagoi Oil.
+  id: 6310
+  time: '2024-09-02T15:08:11.0000000+00:00'
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Cloning & Metempsychosis Machines have been refactored!
+    - type: Add
+      message: >-
+        Cloning can now fail at any point during the cloning process, turning
+        the would-be clone into a soup of blood and ammonia.
+    - type: Add
+      message: >-
+        "Clone Soup" scales directly with the mass of the entity you're
+        attempting to clone. Fail to clone a Lamia, and you'll be greeted with
+        an Olympic swimming pool worth of blood when the machine opens. 
+    - type: Add
+      message: >-
+        Cloning will fail if at any point during the procedure, the machine is
+        depowered, unanchored, or emagged.
+    - type: Add
+      message: >-
+        Clones come out of the machine with severe Cellular damage. Consider
+        using Doxarubixadone in a Cryo tube as an affordable means of
+        "Finishing" clones. 
+    - type: Tweak
+      message: >-
+        Cloning Time is now increased proportionally if an entity being cloned
+        is larger than a standard human(smaller entities are unchanged)
+    - type: Tweak
+      message: >-
+        The cost to clone an entity can now be configured on a per-server basis
+        via CCVar "cloning.biomass_cost_multiplier"
+    - type: Tweak
+      message: >-
+        The Biomass Reclaimer can now be toggled to round-remove ensouled bodies
+        or not via CCVar "cloning.reclaim_souled_bodies"
+    - type: Add
+      message: >-
+        The effects of Metempsychosis now scale with a Psion's relevant caster
+        stats. More powerful psychics are more likely to get favorable results
+        from being forcibly reincarnated.
+  id: 6311
+  time: '2024-09-02T15:08:52.0000000+00:00'
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: New changelogs should now show links to their PRs
+    - type: Tweak
+      message: Changelog authors should now be a header instead of bold text
+    - type: Fix
+      message: Changelogs shouldn't send random amounts of old changelogs
+  id: 6312
+  time: '2024-09-02T19:52:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/843
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: oatnsdaoersoaetaroeoertnsirlea
+  id: 6313
+  time: '2024-09-02T19:54:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/846
+- author: Rane
+  changes:
+    - type: Add
+      message: Added Psychognomy.
+    - type: Tweak
+      message: Reverted Sophia name change.
+    - type: Tweak
+      message: Minor tweaks to psionic chat eligibility and formatting.
+    - type: Add
+      message: >-
+        Some new utility has been added to player-controlled Oracle or Sophia.
+        NPC functionality later :^)
+  id: 6314
+  time: '2024-09-03T02:17:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/808
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Several new tips have been added to the game, many of which reference
+        new content available on Einstein-Engines. 
+  id: 6315
+  time: '2024-09-05T00:00:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/844
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Fixed a couple issues with the new interaction verb system.
+  id: 6316
+  time: '2024-09-05T00:18:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/854
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Due to NUMEROUS complaints, NanoTrasen has swapped the sticker labels on
+        all colored jumpskirts to correctly state that they are infact,
+        "Skirts", so now they can legally be worn by Harpies, Lamia, and
+        Arachne. 
+  id: 6317
+  time: '2024-09-05T00:19:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/848
+- author: ShatteredSwords
+  changes:
+    - type: Tweak
+      message: The cost of many traits have been updated
+    - type: Tweak
+      message: A few traits have been tweaked
+  id: 6318
+  time: '2024-09-06T20:08:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/842
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        A new Roboticist job has been added. The job does not offer any new
+        accesses, but lets you distinguish yourself from scientists. Existing
+        maps will need to be updated to support the new job.
+    - type: Add
+      message: >-
+        Added new PDA, ID, and bag variants for roboticists. The mystagogue will
+        now also find a roboticist PDA in their office.
+  id: 6319
+  time: '2024-09-06T20:17:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/801
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: The loadout/trait editors' performance has been improved by 100~1000x
+    - type: Tweak
+      message: The character editor's tabs look, feel, and function much better
+    - type: Fix
+      message: Unusable loadouts/traits have an orange color when selected
+    - type: Tweak
+      message: Loadout previews are now inside the button
+    - type: Add
+      message: >-
+        Added a button to remove any unusable loadouts (or traits) you have
+        selected
+    - type: Add
+      message: >-
+        Loadouts and traits can have subcategories, though only Command loadouts
+        use them at the moment
+    - type: Fix
+      message: Fixed empty loadout categories not hiding
+    - type: Fix
+      message: Fixed spacing on some loadout requirements' reason text
+    - type: Fix
+      message: Fixed traits not updating after saving
+  id: 6320
+  time: '2024-09-06T21:59:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/736
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The first of all new loadout groups has been added, Civilian Uniforms.
+        Only one civilian uniform can be selected, in exchange for...
+    - type: Tweak
+      message: >-
+        All non-job specific uniforms have had their points reduced drastically,
+        almost all of them down to 0 points, with only a tiny handful at 2
+        points, and the rest as 1. 
+  id: 6321
+  time: '2024-09-07T00:53:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/872
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        All neck slot Loadout items have had their costs significantly reduced,
+        most of them to 0.
+  id: 6322
+  time: '2024-09-07T00:55:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/874
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Eyewear have had their loadout point costs significantly reduced.
+  id: 6323
+  time: '2024-09-07T01:04:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/879
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: All masks have had their loadout point costs substantially reduced.
+  id: 6324
+  time: '2024-09-07T01:06:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/875
+- author: Remuchi
+  changes:
+    - type: Add
+      message: >-
+        Interacting with some materials now opens the radial menu containing
+        some of the most used recipes of that material.
+  id: 6325
+  time: '2024-09-07T03:59:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/861
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Your character size now affects your blood level. Smaller characters
+        will have less blood, and larger characters will have more.
+  id: 6326
+  time: '2024-09-08T14:39:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/858
+- author: Mnemotechnician
+  changes:
+    - type: Remove
+      message: >-
+        Quick swap has been disabled for most item slots. This primarily means
+        you will have to eject power cells/magazines from items/weapons/borgs
+        before replacing them with different ones.
+  id: 6327
+  time: '2024-09-08T14:42:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/856
