@@ -19,8 +19,8 @@ public sealed partial class TraitPrototype : IPrototype
     /// <summary>
     ///     Which customization tab to place this entry in
     /// </summary>
-    [DataField(required: true), ValidatePrototypeId<TraitCategoryPrototype>]
-    public string Category = "Uncategorized";
+    [DataField(required: true)]
+    public ProtoId<TraitCategoryPrototype> Category = "Uncategorized";
 
     /// <summary>
     ///     How many points this will give the character

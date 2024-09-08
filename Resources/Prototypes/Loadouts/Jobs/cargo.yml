@@ -1,7 +1,7 @@
 # Cargo technician
 - type: loadout
   id: LoadoutCargoOuterWinterCargo
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -13,18 +13,13 @@
 
 - type: loadout
   id: LoadoutCargoShoesBootsWinterCargo
-  category: Jobs
+  category: JobsAUncategorized
   cost: 1
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
         - CargoTechnician
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsWinterCargo
 
@@ -32,7 +27,7 @@
 
 - type: loadout
   id: LoadoutCargoOuterWinterMiner
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -44,7 +39,7 @@
 
 - type: loadout
   id: LoadoutCargoNeckGoliathCloak
-  category: Jobs
+  category: JobsAUncategorized
   cost: 2
   exclusive: true
   requirements:

@@ -282,7 +282,7 @@
       - id: CrayonBox
         prob: 0.80
         orGroup: Prize
-      - id: BasePetRock
+      - id: PetRock
         prob: 0.80
         orGroup: Prize
       # Uncommon

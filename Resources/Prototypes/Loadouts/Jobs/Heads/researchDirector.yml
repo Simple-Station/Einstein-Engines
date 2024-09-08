@@ -1,6 +1,6 @@
 - type: loadout
   id: LoadoutCommandRDNeckMantle
-  category: Jobs
+  category: JobsCommandRD
   cost: 2
   exclusive: true
   requirements:
@@ -12,7 +12,7 @@
 
 - type: loadout
   id: LoadoutCommandRDNeckCloak
-  category: Jobs
+  category: JobsCommandRD
   cost: 2
   exclusive: true
   requirements:
@@ -24,7 +24,7 @@
 
 - type: loadout
   id: LoadoutCommandRDOuterWinter
-  category: Jobs
+  category: JobsCommandRD
   cost: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -35,7 +35,7 @@
 
 - type: loadout
   id: LoadoutCommandRDOuterMysta
-  category: Jobs
+  category: JobsCommandRD
   cost: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -46,15 +46,10 @@
 
 - type: loadout
   id: LoadoutCommandRDShoesBootsWinter
-  category: Jobs
+  category: JobsCommandRD
   cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector
