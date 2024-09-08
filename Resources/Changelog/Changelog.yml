@@ -6051,3 +6051,10 @@ Entries:
   id: 6332
   time: '2024-09-08T15:15:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/822
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added bwoink hammer with bwoink sound
+  id: 6333
+  time: '2024-09-08T15:16:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/759
