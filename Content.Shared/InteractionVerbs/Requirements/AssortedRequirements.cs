@@ -13,11 +13,12 @@ namespace Content.Shared.InteractionVerbs.Requirements;
 [Serializable, NetSerializable]
 public sealed partial class EntityWhitelistRequirement : InteractionRequirement
 {
-    [DataField] public EntityWhitelist Whitelist = new(), Blacklist = new();
+    [DataField] public EntityWhitelist? Whitelist, Blacklist;
 
     public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps)
     {
-        return Whitelist.IsValid(args.Target, deps.EntMan) && !Blacklist.IsValid(args.Target, deps.EntMan);
+        return Whitelist?.IsValid(args.Target, deps.EntMan) != false
+               && Blacklist?.IsValid(args.Target, deps.EntMan) != true;
     }
 }
 

@@ -16,6 +16,12 @@ interaction-Pet-success-self-popup = You pet {THE($target)} on {POSS-ADJ($target
 interaction-Pet-success-target-popup = {THE($user)} pets you on {POSS-ADJ($target)} head.
 interaction-Pet-success-others-popup = {THE($user)} pets {THE($target)}.
 
+interaction-PetAnimal-name = {interaction-Pet-name}
+interaction-PetAnimal-description = Pet an animal.
+interaction-PetAnimal-success-self-popup = {interaction-Pet-success-self-popup}
+interaction-PetAnimal-success-target-popup = {interaction-Pet-success-target-popup}
+interaction-PetAnimal-success-others-popup = {interaction-Pet-success-others-popup}
+
 interaction-KnockOn-name = Knock
 interaction-KnockOn-description = Knock on the target to attract attention.
 interaction-KnockOn-success-self-popup = You knock on {THE($target)}.
