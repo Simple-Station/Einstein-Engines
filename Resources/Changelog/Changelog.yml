@@ -5976,3 +5976,45 @@ Entries:
   id: 6324
   time: '2024-09-07T01:06:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/875
+- author: Remuchi
+  changes:
+    - type: Add
+      message: >-
+        Interacting with some materials now opens the radial menu containing
+        some of the most used recipes of that material.
+  id: 6325
+  time: '2024-09-07T03:59:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/861
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Your character size now affects your blood level. Smaller characters
+        will have less blood, and larger characters will have more.
+  id: 6326
+  time: '2024-09-08T14:39:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/858
+- author: Mnemotechnician
+  changes:
+    - type: Remove
+      message: >-
+        Quick swap has been disabled for most item slots. This primarily means
+        you will have to eject power cells/magazines from items/weapons/borgs
+        before replacing them with different ones.
+  id: 6327
+  time: '2024-09-08T14:42:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/856
+- author: router
+  changes:
+    - type: Tweak
+      message: Female slimes no longer have movie screams.
+  id: 6328
+  time: '2024-09-08T14:44:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/849
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Chat bubbles now use the font & color of the language of the message.
+  id: 6329
+  time: '2024-09-08T14:51:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/812

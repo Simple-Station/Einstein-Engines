@@ -221,3 +221,9 @@ trait-name-TrapAvoider = Trap Avoider
 trait-description-TrapAvoider =
     You possess a preturnatural sense of traps, and will unconsciously avoid them. You will never trigger
     floor traps, such as land mines, tripwires, mouse traps(If you're small enough), etc.
+
+trait-name-AnomalousPositronics = Anomalous Positronics
+trait-description-AnomalousPositronics =
+    Whether by intentional design from the manufacturer, black market modifications, or accidental omission,
+    your positronic brain lacks its standard psionic insulation. As a being that can be argued to have a soul,
+    this by extension means that it is possible for you to be influenced by the Noosphere.

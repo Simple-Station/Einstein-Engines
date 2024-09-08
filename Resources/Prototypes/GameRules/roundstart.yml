@@ -142,6 +142,33 @@
     startingChaosRatio: 0.025 # Starts as slow as survival, but quickly ramps up
     shiftLengthModifier: 2.5
 
+- type: entity
+  id: IrregularStationEventScheduler
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: OscillatingStationEventScheduler
+    minChaos: 0.8
+    maxChaos: 14
+    startingSlope: 0.2
+    downwardsLimit: -0.35
+    upwardsLimit: 0.4
+
+# More likely to go down than up, so calmness prevails
+- type: entity
+  id: IrregularExtendedStationEventScheduler
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: OscillatingStationEventScheduler
+    minChaos: 0.8
+    maxChaos: 8
+    startingSlope: -1
+    downwardsLimit: -0.4
+    upwardsLimit: 0.3
+    downwardsBias: -1.1
+    upwardsBias: 0.9
+
 # variation passes
 - type: entity
   id: BasicRoundstartVariation
