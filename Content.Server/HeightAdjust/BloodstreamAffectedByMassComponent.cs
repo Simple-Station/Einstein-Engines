@@ -4,8 +4,8 @@ namespace Content.Server.HeightAdjust;
 
 /// <summary>
 ///     When applied to a humanoid or any mob, adjusts their blood level based on the mass contest between them
-///     and an average humanoid. <br/><br/>
-///
+///     and an average humanoid.
+///     <br/>
 ///     The formula for the resulting bloodstream volume is <code>V = BloodMaxVolume * MassContest^Power</code>
 ///     clamped between the specified Min and Max values.
 /// </summary>
