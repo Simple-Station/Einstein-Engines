@@ -6058,3 +6058,10 @@ Entries:
   id: 6333
   time: '2024-09-08T15:16:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/759
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'A new console command, AddPsionicPower has been added. '
+  id: 6334
+  time: '2024-09-08T15:16:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/807
