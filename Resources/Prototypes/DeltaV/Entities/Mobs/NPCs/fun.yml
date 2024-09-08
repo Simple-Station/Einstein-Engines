@@ -3,7 +3,6 @@
   parent: [ SimpleMobBase, FlyingMobBase, MobCombat ]
   id: MobSpaceShrimp
   description: Shrimply cursed...
-  suffix: METEM MACHINE ONLY #for now, only to be used as a very rare result for the metempsychosis machine. If fishing ever gets added, this suffix can be removed.
   components:
   - type: MeleeWeapon
     soundHit:
@@ -40,7 +39,7 @@
       amount: 3
   - type: Bloodstream
     bloodMaxVolume: 100
-    bloodReagent: BbqSauce #australia reference
+    bloodReagent: BbqSauce # Australia reference
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-possum
