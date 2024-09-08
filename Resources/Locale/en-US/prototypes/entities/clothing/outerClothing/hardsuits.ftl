@@ -76,7 +76,7 @@ ent-ClothingOuterHardsuitSyndie = CSA-51a - "Shanlin" tacsuit
     This one has been painted blood red. It feels incredibly light.
 ent-ClothingOuterHardsuitSyndieReverseEngineered = CSA-51a - "Shanlin" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
-    This one has been painted blue. It feels incredibly light.
+        This one has been painted blue. It feels incredibly light.
 ent-ClothingOuterHardsuitSyndieMedic = CSA-51m - "Zhongyao" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
     Half of the suit is painted blood red, the rest bears galactic-standard medical markings. It feels incredibly light.
@@ -92,7 +92,7 @@ ent-ClothingOuterHardsuitJuggernaut = CSA-80UA - "Guan Yu" tacsuit
     Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
 end-ClothingOuterHardsuitJuggernautReverseEngineered = CSA-80UA - "Guan Yu" tacsuit
     .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
-    Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
+        Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
 ent-ClothingOuterHardsuitWizard = WZD-84 - "Mana" tacsuit
     .desc = A bizarre gem-encrusted hardsuit. Famously used by members of the Wizard Federation in their operations.
     Contrary to it's appearance, it can protect its wearer from space and considerable amounts of physical trauma, it feels somewhat light.
