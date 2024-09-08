@@ -2342,6 +2342,15 @@ namespace Content.Shared.CCVar
             CVarDef.Create("heightadjust.modifies_zoom", false, CVar.SERVERONLY);
 
         /// <summary>
+        ///     Whether height & width sliders adjust a player's bloodstream volume.
+        /// </summary>
+        /// <remarks>
+        ///     This can be configured more precisely by modifying BloodstreamAffectedByMassComponent.
+        /// </remarks>
+        public static readonly CVarDef<bool> HeightAdjustModifiesBloodstream =
+            CVarDef.Create("heightadjust.modifies_bloodstream", true, CVar.SERVERONLY);
+
+        /// <summary>
         ///     Enables station goals
         /// </summary>
         public static readonly CVarDef<bool> StationGoalsEnabled =

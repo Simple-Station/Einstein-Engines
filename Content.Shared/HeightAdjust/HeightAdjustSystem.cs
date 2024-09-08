@@ -25,27 +25,7 @@ public sealed class HeightAdjustSystem : EntitySystem
     /// <returns>True if all operations succeeded</returns>
     public bool SetScale(EntityUid uid, float scale)
     {
-        var succeeded = true;
-        if (_config.GetCVar(CCVars.HeightAdjustModifiesZoom) && EntityManager.TryGetComponent<ContentEyeComponent>(uid, out var eye))
-            _eye.SetMaxZoom(uid, eye.MaxZoom * scale);
-        else
-            succeeded = false;
-
-        if (_config.GetCVar(CCVars.HeightAdjustModifiesHitbox) && EntityManager.TryGetComponent<FixturesComponent>(uid, out var fixtures))
-            foreach (var fixture in fixtures.Fixtures)
-                _physics.SetRadius(uid, fixture.Key, fixture.Value, fixture.Value.Shape, MathF.MinMagnitude(fixture.Value.Shape.Radius * scale, 0.49f));
-        else
-            succeeded = false;
-
-        if (EntityManager.HasComponent<HumanoidAppearanceComponent>(uid))
-        {
-            _appearance.SetHeight(uid, scale);
-            _appearance.SetWidth(uid, scale);
-        }
-        else
-            succeeded = false;
-
-        return succeeded;
+        return SetScale(uid, new Vector2(scale, scale));
     }
 
     /// <summary>
@@ -74,6 +54,8 @@ public sealed class HeightAdjustSystem : EntitySystem
             _appearance.SetScale(uid, scale);
         else
             succeeded = false;
+
+        RaiseLocalEvent(uid, new HeightAdjustedEvent { NewScale = scale });
 
         return succeeded;
     }
