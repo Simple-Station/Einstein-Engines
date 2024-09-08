@@ -6011,3 +6011,10 @@ Entries:
   id: 6328
   time: '2024-09-08T14:44:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/849
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Chat bubbles now use the font & color of the language of the message.
+  id: 6329
+  time: '2024-09-08T14:51:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/812
