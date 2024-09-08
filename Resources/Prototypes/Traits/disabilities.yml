@@ -191,3 +191,16 @@
       damageModifiers:
         coefficients:
           Blunt: 1.1
+
+- type: trait
+  id: Nearsighted
+  category: Visual
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  components:
+    - type: Nearsighted
