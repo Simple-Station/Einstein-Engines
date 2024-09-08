@@ -47,7 +47,7 @@ public sealed class MousetrapSystem : EntitySystem
         // The idea here is inverse,
         // Small - big damage,
         // Large - small damage
-        // yes i punched numbers into a calculator until the graph looked right
+        // Yes, I punched numbers into a calculator until the graph looked right
         var scaledDamage = -50 * MathF.Atan(physics.Mass - component.MassBalance) + 25 * MathF.PI;
         args.Damage *= scaledDamage;
     }
