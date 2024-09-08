@@ -33,7 +33,7 @@ public sealed class ListPsionicsCommand : IConsoleCommand
 public sealed class AddPsionicPowerCommand : IConsoleCommand
 {
     public string Command => "addpsionicpower";
-    public string Description =>Loc.GetString("command-addpsionicpower-description");
+    public string Description => Loc.GetString("command-addpsionicpower-description");
     public string Help => Loc.GetString("command-addpsionicpower-help");
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
