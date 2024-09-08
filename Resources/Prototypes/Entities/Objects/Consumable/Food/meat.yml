@@ -1085,6 +1085,10 @@
   - type: Construction
     graph: LizardSteak
     node: lizard steak
+  - type: FoodSequenceElement
+    entries:
+      Burger: MeatLizardBurger
+      Taco: MeatLizard
 
 - type: entity
   name: boiled spider leg
@@ -1607,6 +1611,10 @@
   - type: Construction
     graph: LizardCutlet
     node: lizard cutlet
+  - type: FoodSequenceElement
+    entries:
+      Burger: LizardCutletBurger
+      Taco: LizardCutlet
 
 - type: entity
   name: spider cutlet

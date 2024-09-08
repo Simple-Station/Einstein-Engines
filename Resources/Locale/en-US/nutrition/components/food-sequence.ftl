@@ -7,7 +7,7 @@ food-sequence-burger-suffix = burger
 
 food-sequence-content-chicken = chicken
 food-sequence-content-duck = duck
-food-sequence-content-crab = crabs
+food-sequence-content-crab = crab
 food-sequence-content-dragon = dragon
 food-sequence-content-snake = snake
 food-sequence-content-xeno = xeno
