@@ -6018,3 +6018,12 @@ Entries:
   id: 6329
   time: '2024-09-08T14:51:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/812
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        A shrimp morphotype was added to the failure pool of the metempsychotic
+        machine.
+  id: 6330
+  time: '2024-09-08T14:56:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/882
