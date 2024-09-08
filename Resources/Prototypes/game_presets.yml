@@ -23,6 +23,26 @@
     - SubGamemodesRule
 
 - type: gamePreset
+  id: SurvivalIrregular
+  alias: [irregular]
+  showInVote: true
+  name: irregular-title
+  description: irregular-description
+  rules:
+    - IrregularStationEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SurvivalIrregularExtended
+  alias: [irregular-extended]
+  showInVote: true
+  name: irregular-extended-title
+  description: irregular-extended-description
+  rules:
+    - IrregularExtendedStationEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
   id: AllAtOnce
   name: all-at-once-title
   description: all-at-once-description

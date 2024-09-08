@@ -178,28 +178,37 @@ namespace Content.Shared.CCVar
         ///     Minimum time between Basic station events in seconds
         /// </summary>
         public static readonly CVarDef<int> // 5 Minutes
-            GameEventsBasicMinimumTime = CVarDef.Create("game.events_basic_minimum_time", 300, CVar.SERVERONLY);
+            GameEventsBasicMinimumTime = CVarDef.Create("game.events_basic_minimum_time", 300, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
         ///     Maximum time between Basic station events in seconds
         /// </summary>
         public static readonly CVarDef<int> // 25 Minutes
-            GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 1500, CVar.SERVERONLY);
+            GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 1500, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
         ///     Minimum time between Ramping station events in seconds
         /// </summary>
         public static readonly CVarDef<int> // 4 Minutes
-            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 240, CVar.SERVERONLY);
+            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 240, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
         ///     Maximum time between Ramping station events in seconds
         /// </summary>
         public static readonly CVarDef<int> // 12 Minutes
-            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 720, CVar.SERVERONLY);
+            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 720, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
-        ///
+        ///     Minimum time between Oscillating station events in seconds. This is the bare minimum which will never be violated, unlike with ramping events.
+        /// </summary>
+        public static readonly CVarDef<int> // 40 seconds
+            GameEventsOscillatingMinimumTime = CVarDef.Create("game.events_oscillating_minimum_time", 40, CVar.SERVERONLY | CVar.ARCHIVE);
+
+        /// <summary>
+        ///     Time between Oscillating station events in seconds at 1x chaos level. Events may occur at larger intervals if current chaos is lower than that.
+        /// </summary>
+        public static readonly CVarDef<int> // 20 Minutes - which constitutes a minimum of 120 seconds between events in Irregular and 280 seconds in Extended Irregular
+            GameEventsOscillatingAverageTime = CVarDef.Create("game.events_oscillating_average_time", 1200, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
         ///     Controls the maximum number of character slots a player is allowed to have.
