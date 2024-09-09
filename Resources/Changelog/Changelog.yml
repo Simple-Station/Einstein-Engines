@@ -6121,3 +6121,12 @@ Entries:
   id: 6339
   time: '2024-09-09T05:30:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/870
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Antag Refactor has been once again added back in. More antags will
+        be coming soon. 
+  id: 6340
+  time: '2024-09-09T14:21:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/794
