@@ -6065,3 +6065,14 @@ Entries:
   id: 6334
   time: '2024-09-08T15:16:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/807
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Glacier, Core, and Saltern now have assistant job slots.
+    - type: Add
+      message: >-
+        Glacier, Core, and Saltern are now able to be voted on for map
+        selection.
+  id: 6335
+  time: '2024-09-09T04:13:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/838
