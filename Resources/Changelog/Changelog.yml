@@ -6097,3 +6097,18 @@ Entries:
   id: 6337
   time: '2024-09-09T04:13:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/871
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Felinids and Harpies will now correctly never set off floor traps, such
+        as landmines and mouse traps.
+    - type: Add
+      message: >-
+        Trap Avoider has been added as a new trait, allowing characters to buy
+        the innate ability to avoid floor traps. I would have named this "Light
+        Step", after the trait from Fallout that shares its name and effect, but
+        someone already gave that name to a different trait entirely.
+  id: 6338
+  time: '2024-09-09T04:14:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/884
