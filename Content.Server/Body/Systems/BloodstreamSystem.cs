@@ -122,7 +122,7 @@ public sealed class BloodstreamSystem : EntitySystem
             if (bloodstream.HasBloodDeficiency)
             {
                 if (!_mobStateSystem.IsDead(uid))
-                    RemoveBlood(uid, bloodstream.BloodDeficiencyLossAmount, bloodstream);
+                    RemoveBlood(uid, bloodstream.BloodMaxVolume * bloodstream.BloodDeficiencyLossPercentage, bloodstream);
             }
             // Adds blood to their blood level if it is below the maximum.
             else if (bloodSolution.Volume < bloodSolution.MaxVolume && !_mobStateSystem.IsDead(uid))
@@ -347,6 +347,14 @@ public sealed class BloodstreamSystem : EntitySystem
             return;
 
         comp.BloodlossThreshold = threshold;
+    }
+
+    public void SetBloodMaxVolume(EntityUid uid, FixedPoint2 volume, BloodstreamComponent? comp = null)
+    {
+        if (!Resolve(uid, ref comp))
+            return;
+
+        comp.BloodMaxVolume = volume;
     }
 
     /// <summary>
