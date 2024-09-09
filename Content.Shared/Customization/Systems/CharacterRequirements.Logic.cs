@@ -63,10 +63,12 @@ public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
     {
         var succeeded = false;
         var reasons = new List<FormattedMessage>();
+        var characterRequirements = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>();
+
         foreach (var requirement in Requirements)
         {
-            if (requirement.IsValid(job, profile, playTimes, whitelisted, prototype, entityManager, prototypeManager,
-                configManager, out var raisin, depth + 1))
+            if (characterRequirements.CheckRequirementValid(requirement, job, profile, playTimes, whitelisted, prototype,
+                entityManager, prototypeManager, configManager, out var raisin, depth + 1))
             {
                 succeeded = true;
                 break;
@@ -110,11 +112,12 @@ public sealed partial class CharacterLogicXorRequirement : CharacterRequirement
     {
         var reasons = new List<FormattedMessage>();
         var succeeded = false;
+        var characterRequirements = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>();
 
         foreach (var requirement in Requirements)
         {
-            if (requirement.IsValid(job, profile, playTimes, whitelisted, prototype, entityManager, prototypeManager,
-                configManager, out var raisin, depth + 1))
+            if (characterRequirements.CheckRequirementValid(requirement, job, profile, playTimes, whitelisted, prototype,
+                entityManager, prototypeManager, configManager, out var raisin, depth + 1))
             {
                 if (succeeded)
                 {
