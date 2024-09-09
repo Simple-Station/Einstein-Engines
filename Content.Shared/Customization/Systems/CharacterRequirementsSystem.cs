@@ -15,6 +15,21 @@ public sealed class CharacterRequirementsSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
 
 
+    public bool CheckRequirementValid(CharacterRequirement requirement, JobPrototype job,
+        HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        out FormattedMessage? reason, int depth = 0)
+    {
+        // Return false if the requirement is invalid and not inverted
+        // If it's inverted return false when it's valid
+        return
+            !requirement.IsValid(job, profile, playTimes, whitelisted, prototype,
+                entityManager, prototypeManager, configManager,
+                out reason, depth)
+                ? requirement.Inverted
+                : !requirement.Inverted;
+    }
+
     public bool CheckRequirementsValid(List<CharacterRequirement> requirements, JobPrototype job,
         HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
