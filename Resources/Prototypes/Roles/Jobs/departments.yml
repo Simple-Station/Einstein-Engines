@@ -1,5 +1,5 @@
 - type: department
-  id: Logistics # DeltaV - Logistics Department replacing Cargo
+  id: Logistics
   description: department-Cargo-description
   color: "#A46106"
   roles:
@@ -33,19 +33,11 @@
   - Gladiator
 
 - type: department
-  id: Command
-  description: department-Command-description
-  color: "#334E6D"
+  id: CentralCommand
+  name: department-CentralCommand
+  description: department-CentralCommand-description
+  color: "#0c344d"
   roles:
-  - Captain
-  - CentralCommandOfficial
-  - ChiefEngineer
-  - ChiefMedicalOfficer
-  - HeadOfPersonnel
-  - HeadOfSecurity
-  - ResearchDirector
-  - Quartermaster
-  - ChiefJustice
   - CentralCommandOfficial
   - CBURN
   - ERTLeader
@@ -55,7 +47,32 @@
   - ERTSecurity
   - ERTEngineer
   - DeathSquad
+  editorHidden: true
+  weight: 120
+
+- type: department
+  id: Command
+  description: department-Command-description
+  color: "#334E6D"
+  roles:
+  - Captain
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfPersonnel
+  - HeadOfSecurity
+  - ResearchDirector
+  - Quartermaster
+  - ChiefJustice
   - AdministrativeAssistant
+  - CentralCommandOfficial
+  - CBURN
+  - ERTLeader
+  - ERTChaplain
+  - ERTJanitor
+  - ERTMedical
+  - ERTSecurity
+  - ERTEngineer
+  - DeathSquad
   primary: false
   weight: 100
 
