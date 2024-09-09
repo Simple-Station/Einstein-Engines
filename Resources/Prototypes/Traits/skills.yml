@@ -265,6 +265,19 @@
             - AnomalousPositronics
 
 - type: trait
+  id: TrapAvoider
+  category: Physical
+  points: -3
+  components:
+    - type: StepTriggerImmune
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+        - Harpy
+
+- type: trait
   id: AnomalousPositronics
   category: Mental
   points: -4
