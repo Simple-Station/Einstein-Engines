@@ -125,6 +125,9 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         component.Enabled = false;
         _powerCell.SetPowerCellDrawEnabled(translator, false);
         OnAppearanceChange(translator, component);
+
+        if (_containers.TryGetContainingContainer(translator, out var holderCont) && TryComp<LanguageSpeakerComponent>(holderCont.Owner, out var languageComp))
+            _language.UpdateEntityLanguages(holderCont.Owner, languageComp);
     }
 
     private void CopyLanguages(BaseTranslatorComponent from, DetermineEntityLanguagesEvent to, LanguageKnowledgeComponent knowledge)
