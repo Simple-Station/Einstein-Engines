@@ -6076,3 +6076,14 @@ Entries:
   id: 6335
   time: '2024-09-09T04:13:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/838
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Wide Swing is no longer possible as a default on all weapons, the
+        default is now Power Attack (10 stamina spent, for 20% bonus damage to
+        single target only). Only a small number of weapons designed to
+        "Cleave", still have their wide swing functionality.
+  id: 6336
+  time: '2024-09-09T04:13:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/866
