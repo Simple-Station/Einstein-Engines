@@ -6087,3 +6087,13 @@ Entries:
   id: 6336
   time: '2024-09-09T04:13:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/866
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Arrivals has been re-enabled. I feel sorry for all the people who
+        thought we had disabled it. This was a legacy toggle that was leftover
+        from when we forked DeltaV
+  id: 6337
+  time: '2024-09-09T04:13:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/871
