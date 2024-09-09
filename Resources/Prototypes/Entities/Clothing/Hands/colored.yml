@@ -335,6 +335,9 @@
       - 1.5
       - 1.5
       - 1.5
+  - type: Fiber
+    fiberMaterial: fibers-insulative-frayed
+    fiberColor: fibers-yellow
 
 # Conductive Insulated Gloves
 - type: entity
