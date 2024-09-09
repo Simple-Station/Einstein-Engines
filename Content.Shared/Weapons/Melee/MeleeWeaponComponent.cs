@@ -109,7 +109,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// Total width of the angle for wide attacks.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Angle Angle = Angle.FromDegrees(60);
+    public Angle Angle = Angle.FromDegrees(45);
 
     [DataField, AutoNetworkedField]
     public EntProtoId Animation = "WeaponArcPunch";
@@ -131,7 +131,7 @@ public sealed partial class MeleeWeaponComponent : Component
     public float HeavyStaminaCost = 10f;
 
     [DataField, AutoNetworkedField]
-    public int MaxTargets = 5;
+    public int MaxTargets = 1;
 
     // Sounds
 
