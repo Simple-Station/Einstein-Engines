@@ -6112,3 +6112,12 @@ Entries:
   id: 6338
   time: '2024-09-09T04:14:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/884
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Arm and Leg markings are now split between individual arms, hands, legs,
+        and feet.
+  id: 6339
+  time: '2024-09-09T05:30:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/870
