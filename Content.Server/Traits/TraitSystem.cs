@@ -12,6 +12,7 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using Content.Server.Abilities.Psionics;
 using Content.Shared.Psionics;
+using Content.Shared.Mood;
 
 namespace Content.Server.Traits;
 
@@ -65,6 +66,7 @@ public sealed class TraitSystem : EntitySystem
         AddTraitComponents(uid, traitPrototype);
         AddTraitActions(uid, traitPrototype);
         AddTraitPsionics(uid, traitPrototype);
+        AddTraitMoodlets(uid, traitPrototype);
     }
 
     /// <summary>
@@ -138,5 +140,19 @@ public sealed class TraitSystem : EntitySystem
         foreach (var powerProto in traitPrototype.PsionicPowers)
             if (_prototype.TryIndex<PsionicPowerPrototype>(powerProto, out var psionicPower))
                 _psionicAbilities.InitializePsionicPower(uid, psionicPower, false);
+    }
+
+    /// <summary>
+    ///     If a trait includes any moodlets, this adds the moodlets to the receiving entity.
+    ///     While I can't stop you, you shouldn't use this to add temporary moodlets.
+    /// </summary>
+    public void AddTraitMoodlets(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.MoodEffects is null)
+            return;
+
+        foreach (var moodProto in traitPrototype.MoodEffects)
+            if (_prototype.TryIndex(moodProto, out var moodlet))
+                RaiseLocalEvent(uid, new MoodEffectEvent(moodlet.ID));
     }
 }

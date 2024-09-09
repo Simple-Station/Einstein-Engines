@@ -1,4 +1,5 @@
 using Content.Shared.Customization.Systems;
+using Content.Shared.Mood;
 using Content.Shared.Psionics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -56,4 +57,10 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<string>? PsionicPowers { get; private set; } = default!;
+
+    /// <summary>
+    ///     The list of all Moodlets that this trait adds.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<MoodEffectPrototype>>? MoodEffects { get; private set; } = default!;
 }
