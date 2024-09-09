@@ -45,7 +45,7 @@
   - type: AnimationPlayer
   - type: Tag
     tags:
-      - WeldbotFixableStructure
+    - WeldbotFixableStructure
   - type: ApcPowerReceiver
   - type: ExtensionCableReceiver
   - type: DoorSignalControl
@@ -56,11 +56,11 @@
     range: 200
   - type: DeviceLinkSink
     ports:
-      - Open
-      - Close
-      - Toggle
-      - AutoClose
-      - DoorBolt
+    - Open
+    - Close
+    - Toggle
+    - AutoClose
+    - DoorBolt
   - type: DeviceLinkSource
     ports:
     - DoorStatus
@@ -143,7 +143,7 @@
   - type: Airtight
     noAirWhenFullyAirBlocked: false
     airBlockedDirection:
-      - South
+    - South
   - type: Construction
     graph: Windoor
     node: windoor
@@ -210,6 +210,10 @@
     node: windoorSecure
   - type: StaticPrice
     price: 350
+  - type: Tag
+    tags:
+    - SecureWindoor
+    # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
 
 #Plasma Windoors
 - type: entity
@@ -320,6 +324,10 @@
     price: 500
   - type: RadiationBlocker
     resistance: 6
+  - type: Tag
+    tags:
+    - SecurePlasmaWindoor
+    # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
 
 #Uranium Windoors
 - type: entity
@@ -430,3 +438,8 @@
     price: 750
   - type: RadiationBlocker
     resistance: 8
+  - type: Tag
+    tags:
+    - SecureUraniumWindoor
+    # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
+
