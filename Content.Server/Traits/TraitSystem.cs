@@ -67,7 +67,8 @@ public sealed class TraitSystem : EntitySystem
         AddTraitComponents(uid, traitPrototype);
         AddTraitActions(uid, traitPrototype);
         AddTraitPsionics(uid, traitPrototype);
-        AddTraitLanguages(uid, traitPrototype);
+        AddTraitLanguagesSpoken(uid, traitPrototype);
+        AddTraitLanguagesUnderstood(uid, traitPrototype);
     }
 
     /// <summary>
@@ -144,14 +145,23 @@ public sealed class TraitSystem : EntitySystem
     }
 
     /// <summary>
-    ///     If a trait includes any Languages, this sends them to LanguageSystem to be initialized.
+    ///     If a trait includes any Spoken Languages, this sends them to LanguageSystem to be initialized.
     /// </summary>
-    public void AddTraitLanguages(EntityUid uid, TraitPrototype traitPrototype)
+    public void AddTraitLanguagesSpoken(EntityUid uid, TraitPrototype traitPrototype)
     {
-        if (traitPrototype.Languages is null)
+        if (traitPrototype.LanguagesSpoken is null)
             return;
 
-        foreach (var language in traitPrototype.Languages)
-            _languageSystem.AddLanguage(uid, language);
+        foreach (var language in traitPrototype.LanguagesSpoken)
+            _languageSystem.AddLanguage(uid, language, true, false);
+    }
+
+    public void AddTraitLanguagesUnderstood(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.LanguagesUnderstood is null)
+            return;
+
+        foreach (var language in traitPrototype.LanguagesUnderstood)
+            _languageSystem.AddLanguage(uid, language, false, true);
     }
 }

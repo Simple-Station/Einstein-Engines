@@ -58,8 +58,14 @@ public sealed partial class TraitPrototype : IPrototype
     public List<string>? PsionicPowers { get; private set; } = default!;
 
     /// <summary>
-    ///     The list of all Languages that this trait adds.
+    ///     The list of all Spoken Languages that this trait adds.
     /// </summary>
     [DataField]
-    public List<string>? Languages { get; private set; } = default!;
+    public List<string>? LanguagesSpoken { get; private set; } = default!;
+
+    /// <summary>
+    ///     The list of all Understood Languages that this trait adds.
+    /// </summary>
+    [DataField]
+    public List<string>? LanguagesUnderstood { get; private set; } = default!;
 }

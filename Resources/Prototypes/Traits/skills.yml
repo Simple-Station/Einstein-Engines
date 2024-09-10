@@ -102,7 +102,9 @@
   id: SignLanguage
   category: Visual
   points: -2
-  languages:
+  languagesSpoken:
+    - Sign
+  languagesUnderstood:
     - Sign
 
 - type: trait
