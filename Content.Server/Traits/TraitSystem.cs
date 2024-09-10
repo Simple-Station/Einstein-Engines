@@ -12,6 +12,7 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using Content.Server.Abilities.Psionics;
 using Content.Shared.Psionics;
+using Content.Server.Language;
 
 namespace Content.Server.Traits;
 
@@ -25,6 +26,7 @@ public sealed class TraitSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilities = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
+    [Dependency] private readonly LanguageSystem _languageSystem = default!;
 
     public override void Initialize()
     {
@@ -65,6 +67,7 @@ public sealed class TraitSystem : EntitySystem
         AddTraitComponents(uid, traitPrototype);
         AddTraitActions(uid, traitPrototype);
         AddTraitPsionics(uid, traitPrototype);
+        AddTraitLanguages(uid, traitPrototype);
     }
 
     /// <summary>
@@ -138,5 +141,17 @@ public sealed class TraitSystem : EntitySystem
         foreach (var powerProto in traitPrototype.PsionicPowers)
             if (_prototype.TryIndex<PsionicPowerPrototype>(powerProto, out var psionicPower))
                 _psionicAbilities.InitializePsionicPower(uid, psionicPower, false);
+    }
+
+    /// <summary>
+    ///     If a trait includes any Languages, this sends them to LanguageSystem to be initialized.
+    /// </summary>
+    public void AddTraitLanguages(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.Languages is null)
+            return;
+
+        foreach (var language in traitPrototype.Languages)
+            _languageSystem.AddLanguage(uid, language);
     }
 }
