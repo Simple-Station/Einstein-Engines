@@ -21,13 +21,15 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
 
     private void OnUniversalLanguageInit(EntityUid uid, UniversalLanguageSpeakerComponent component, MapInitEvent args)
     {
+        EnsureComp<LanguageSpeakerComponent>(uid);
         EnsureComp<LanguageKnowledgeComponent>(uid);
         AddLanguage(uid, UniversalPrototype);
     }
 
     private void OnUniversalLanguageShutdown(EntityUid uid, UniversalLanguageSpeakerComponent component, ComponentShutdown args)
     {
-        if (!HasComp<LanguageKnowledgeComponent>(uid))
+        if (!HasComp<LanguageKnowledgeComponent>(uid)
+            || !HasComp<LanguageSpeakerComponent>(uid))
             return;
 
         RemoveLanguage(uid, UniversalPrototype);
