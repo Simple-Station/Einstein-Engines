@@ -1,4 +1,5 @@
 using Content.Server.DoAfter;
+using Content.Server.Popups;
 using Content.Server.PowerCell;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
@@ -23,7 +24,9 @@ public sealed class PenLightSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -54,7 +57,13 @@ public sealed class PenLightSystem : EntitySystem
         args.Handled = true;
     }
 
-
+        /// <summary>
+        ///     Checks if the PointLight component is enabled.
+        /// </summary>
+        private bool IsLightEnabled(EntityUid uid)
+        {
+            return TryComp<PointLightComponent>(uid, out var pointLight) && pointLight.Enabled;
+        }
     /// <summary>
     ///     Actually handles the exam interaction.
     /// </summary>
@@ -62,6 +71,13 @@ public sealed class PenLightSystem : EntitySystem
     {
         if (!Resolve(uid, ref component))
             return false;
+
+        if (!IsLightEnabled(uid))
+        {
+            if (user != null)
+                _popup.PopupEntity(Loc.GetString("penlight-off"), uid, user);
+            return false;
+        }
 
         return _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, component.ExamSpeed, new PenLightDoAfterEvent(),
             uid, target, uid)
