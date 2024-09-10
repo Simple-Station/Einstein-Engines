@@ -2,7 +2,6 @@ using Content.Client.Language;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Input;
-using Content.Shared.Language.Events;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input.Binding;
@@ -65,9 +64,6 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
             return;
 
         LanguageButton.OnPressed += LanguageButtonPressed;
-
-        if (LanguageWindow == null)
-            return;
     }
 
     private void LanguageButtonPressed(ButtonEventArgs args)
