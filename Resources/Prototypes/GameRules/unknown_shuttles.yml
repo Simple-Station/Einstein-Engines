@@ -26,19 +26,12 @@
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
     - id: UnknownShuttleSyndieEvacPod
-    - id: UnknownShuttleBang
-    - id: UnknownShuttleHook
 
 - type: entityTable
   id: UnknownShuttlesHostileTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
     - id: LoneOpsSpawn
-    - id: UnknownShuttleDrone
-    - id: UnknownShuttleInstigator
-    - id: UnknownShuttleManOWar
-    - id: UnknownShuttleRaider
-    - id: UnknownShuttleScooner
 
 # Shuttle Game Rules
 
@@ -49,7 +42,7 @@
   components:
   - type: StationEvent
     startAnnouncement: false
-    weight: 5
+    weight: 10 # 10 default
     reoccurrenceDelay: 30
     duration: 1
     maxOccurrences: 1 # should be the same as [copies] in shuttle_incoming_event.yml
@@ -120,16 +113,6 @@
     preloadedGrid: NTQuark
 
 - type: entity
-  id: UnknownShuttleBang
-  parent: BaseUnknownShuttleRule
-  components:
-  - type: StationEvent
-    startAnnouncement: true #!!
-    weight: 7 # lower because freelance, but plays well with other antags so lil higher
-  - type: LoadMapRule
-    preloadedGrid: Bang
-
-- type: entity
   id: UnknownShuttleCruiser
   parent: BaseUnknownShuttleRule
   components:
@@ -147,16 +130,6 @@
     startAnnouncement: true #!!
   - type: LoadMapRule
     preloadedGrid: Cryptid
-
-- type: entity
-  id: UnknownShuttleDrone
-  parent: BaseUnknownShuttleRule
-  components:
-  - type: StationEvent
-    startAnnouncement: false #dont nark on antags
-    weight: 2 # lower because antags
-  - type: LoadMapRule
-    preloadedGrid: Drone
 
 - type: entity
   id: UnknownShuttleEternal
@@ -187,16 +160,6 @@
     preloadedGrid: Gym
 
 - type: entity
-  id: UnknownShuttleHook
-  parent: BaseUnknownShuttleRule
-  components:
-  - type: StationEvent
-    startAnnouncement: true #!!
-    weight: 7 # lower because freelance, but plays well with other antags so lil higher
-  - type: LoadMapRule
-    preloadedGrid: Hook
-
-- type: entity
   id: UnknownShuttleNTIncorporation
   parent: BaseUnknownShuttleRule
   components:
@@ -206,17 +169,6 @@
     earliestStart: 45 # late to hopefully have enough ghosts to fill all roles quickly. (5-6)
   - type: LoadMapRule
     preloadedGrid: NTIncorporation
-
-- type: entity
-  id: UnknownShuttleInstigator
-  parent: BaseUnknownShuttleRule
-  components:
-  - type: StationEvent
-    startAnnouncement: false #dont nark on antags
-    weight: 1 #  lower because antags.
-    earliestStart: 50 # late to hopefully have enough ghosts to fill all roles quickly (3) and because antags
-  - type: LoadMapRule
-    preloadedGrid: Instigator
 
 - type: entity
   id: UnknownShuttleJoe
@@ -237,17 +189,6 @@
     preloadedGrid: Lambordeere
 
 - type: entity
-  id: UnknownShuttleManOWar
-  parent: BaseUnknownShuttleRule
-  components:
-  - type: StationEvent
-    startAnnouncement: true #Leaving this one because theyre like primitives and its funnier
-    weight: 1 # lower because antags
-    earliestStart: 50 # late to hopefully have enough ghosts to fill all roles quickly. (4) & antags
-  - type: LoadMapRule
-    preloadedGrid: ManOWar
-
-- type: entity
   id: UnknownShuttleMeatZone
   parent: BaseUnknownShuttleRule
   components:
@@ -266,28 +207,6 @@
     maxOccurrences: 4
   - type: LoadMapRule
     preloadedGrid: Microshuttle
-
-- type: entity
-  id: UnknownShuttleRaider
-  parent: BaseUnknownShuttleRule
-  components:
-  - type: StationEvent
-    startAnnouncement: false #dont nark on antags
-    weight: 1 # lower because antags & because its the Drone but better
-    earliestStart: 45 # late to hopefully have enough ghosts to fill all roles quickly.
-  - type: LoadMapRule
-    preloadedGrid: Raider
-
-- type: entity
-  id: UnknownShuttleScooner
-  parent: BaseUnknownShuttleRule
-  components:
-  - type: StationEvent
-    startAnnouncement: false #dont nark on antags, it might be worth giving this one some generic "There be pirates" announement. idk.
-    weight: 2 # lower because antags
-    earliestStart: 35 # late to hopefully have enough ghosts to fill all roles quickly. (3)
-  - type: LoadMapRule
-    preloadedGrid: Scooner
 
 - type: entity
   id: UnknownShuttleSpacebus
