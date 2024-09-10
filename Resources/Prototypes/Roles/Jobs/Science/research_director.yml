@@ -10,6 +10,15 @@
       min: 54000 # DeltaV - 15 hours
     - !type:CharacterOverallTimeRequirement
       min: 72000 # DeltaV - 20 hours
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"

@@ -36,8 +36,9 @@
       species:
         - Harpy
         - Vulpkanin
-  components:
-    - type: NormalVision
+  componentRemovals:
+    - UltraVision
+    - DogVision
 
 - type: trait
   id: Saturnine

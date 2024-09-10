@@ -9,6 +9,19 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/bartender.rsi
 
+# This has been placed here, as it visually resembles a skirt.
+# Likewise, the sprite file location has been moved to jumpskirts and the parent has been changed to ClothingUniformSkirtBase.
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitBartenderPurple
+  name: purple bartender's uniform
+  description: A special purple outfit to serve drinks.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/bartender_purple.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/bartender_purple.rsi
+
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCaptain
@@ -217,6 +230,19 @@
     sprite: Clothing/Uniforms/Jumpskirt/janitor.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/janitor.rsi
+
+# This has been moved here, as it visually resembles a skirt.
+# Likewise, the sprite file location has been moved to jumpskirts and the parent has been changed to ClothingUniformSkirtBase.
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitKimono
+  name: kimono
+  description: traditional chinese clothing
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/kimono.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/kimono.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -592,6 +618,30 @@
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpskirt/skirtoflife.rsi
 
+# Both the light and dark monastic robes have been moved here.
+# They have also had their parent changed to ClothingUniformSkirtBase, and their sprite has likewise been moved to the jumpskirts directory.
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitMonasticRobeDark
+  name: dark monastic robe
+  description: It's a dark robe, often worn by religious folk.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_dark.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_dark.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitMonasticRobeLight
+  name: light monastic robe
+  description: It's a light robe, often worn by religious folk.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_light.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_light.rsi
+
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtSeniorEngineer
@@ -677,6 +727,17 @@
   - type: Construction
     graph: WebObjects
     node: jumpskirt
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitGladiator
+  name: gladiator uniform
+  description: Made for true gladiators (or Ash Walkers).
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/gladiator.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/gladiator.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase

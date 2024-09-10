@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Client.Eui;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Preferences;
+using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Eui;
 using Content.Shared.Ghost.Roles;
@@ -91,15 +92,16 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                 var hasAccess = true;
 
                 if (!characterReqs.CheckRequirementsValid(
-                        group.Key.Requirements ?? new(),
-                        new(),
-                        (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                        requirementsManager.GetRawPlayTimeTrackers(),
-                        requirementsManager.IsWhitelisted(),
-                        entityManager,
-                        protoMan,
-                        configManager,
-                        out var reasons))
+                    group.Key.Requirements ?? new(),
+                    new(),
+                    (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                    requirementsManager.GetRawPlayTimeTrackers(),
+                    requirementsManager.IsWhitelisted(),
+                    new LoadoutPrototype(), // idk
+                    entityManager,
+                    protoMan,
+                    configManager,
+                    out var reasons))
                     hasAccess = false;
 
                 _window.AddEntry(name, description, hasAccess, characterReqs.GetRequirementsText(reasons), group, spriteSystem);

@@ -19,8 +19,8 @@ public sealed partial class TraitPrototype : IPrototype
     /// <summary>
     ///     Which customization tab to place this entry in
     /// </summary>
-    [DataField(required: true), ValidatePrototypeId<TraitCategoryPrototype>]
-    public string Category = "Uncategorized";
+    [DataField(required: true)]
+    public ProtoId<TraitCategoryPrototype> Category = "Uncategorized";
 
     /// <summary>
     ///     How many points this will give the character
@@ -37,6 +37,13 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public ComponentRegistry? Components { get; private set; } = default!;
+
+    /// <summary>
+    ///     The components that will be removed from a player when they pick this trait.
+    ///     Primarily used to remove species innate traits.
+    /// </summary>
+    [DataField]
+    public List<string>? ComponentRemovals { get; private set; } = default!;
 
     /// <summary>
     ///     The list of each Action that this trait adds in the form of ActionId and ActionEntity

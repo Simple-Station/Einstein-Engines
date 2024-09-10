@@ -24,9 +24,9 @@ public sealed partial class CharacterJobRequirement : CharacterRequirement
     public List<ProtoId<JobPrototype>> Jobs;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         var jobs = new List<FormattedMessage>();
 
@@ -70,9 +70,9 @@ public sealed partial class CharacterDepartmentRequirement : CharacterRequiremen
     public List<ProtoId<DepartmentPrototype>> Departments;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         var departments = new List<FormattedMessage>();
 
@@ -112,9 +112,9 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
     public ProtoId<DepartmentPrototype> Department;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         // Disable the requirement if the role timers are disabled
         if (!configManager.GetCVar(CCVars.GameRoleTimers))
@@ -178,9 +178,9 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
     public TimeSpan Max = TimeSpan.MaxValue;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         // Disable the requirement if the role timers are disabled
         if (!configManager.GetCVar(CCVars.GameRoleTimers))
@@ -234,9 +234,9 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
     public ProtoId<PlayTimeTrackerPrototype> Tracker;
 
     public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason)
+        out FormattedMessage? reason, int depth = 0)
     {
         // Disable the requirement if the role timers are disabled
         if (!configManager.GetCVar(CCVars.GameRoleTimers))

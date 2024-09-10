@@ -140,5 +140,12 @@ namespace Content.Shared.Abilities.Psionics
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
         public float CurrentDampening;
+
+        /// <summary>
+        ///     List of descriptors this entity will bring up for psychognomy. Used to remove
+        ///     unneccesary subs for unique psionic entities like e.g. Oracle.
+        /// </summary>
+        [DataField]
+        public List<String>? PsychognomicDescriptors = null;
     }
 }

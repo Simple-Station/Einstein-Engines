@@ -3,7 +3,8 @@
   weights:
     MobMonkey: 1
     MobGorilla: 1
-    # MobKangaroo: 0.5 # Mobs here need to be either VERY funny or up to standard.
+    MobKangaroo: 0.5
     MobXenoQueen: 0.01
     MobCrab: 0.01
-    MobPenguin: 1 #ODJ's orders
+    MobPenguin: 1
+    MobSpaceShrimp: 1
