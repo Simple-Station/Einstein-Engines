@@ -102,12 +102,8 @@
   id: SignLanguage
   category: Visual
   points: -2
-  components:
-    - type: LanguageKnowledgeModifier
-      speaks:
-        - Sign
-      understands:
-        - Sign
+  languages:
+    - Sign
 
 - type: trait
   id: Voracious
