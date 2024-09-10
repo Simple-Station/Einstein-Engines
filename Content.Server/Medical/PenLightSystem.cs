@@ -7,6 +7,7 @@ using Content.Shared.Drunk;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Medical;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Traits.Assorted.Components;
 using Robust.Server.GameObjects;
@@ -30,20 +31,21 @@ public sealed class PenLightSystem : EntitySystem
         SubscribeLocalEvent<PenLightComponent, PenLightDoAfterEvent>(OnDoAfter);
     }
 
-    private void OnAfterInteract(EntityUid uid, PenLightComponent component, AfterInteractEvent args)
+    private void OnAfterInteract(EntityUid uid, PenLightComponent component, ref AfterInteractEvent args)
     {
-        if (args.Handled 
-            || args.Target is not { } target)
+        if (args.Handled
+            || args.Target is not {} target)
             return;
-
+        if (target == null || !args.CanReach || !HasComp<MobStateComponent>(target) || !_powerCell.HasDrawCharge(uid, user: args.User))
+            return;
         args.Handled = TryStartExam(uid, target, args.User, component);
     }
 
     private void OnDoAfter(Entity<PenLightComponent> uid, ref PenLightDoAfterEvent args)
     {
-        if (args.Handled 
-            || args.Cancelled 
-            || args.Target == null 
+        if (args.Handled
+            || args.Cancelled
+            || args.Target == null
             || !_powerCell.HasDrawCharge(uid, user: args.User))
             return;
 
@@ -73,7 +75,7 @@ public sealed class PenLightSystem : EntitySystem
     }
     private void OpenUserInterface(EntityUid user, EntityUid penlight)
     {
-        if (!TryComp<ActorComponent>(user, out var actor) 
+        if (!TryComp<ActorComponent>(user, out var actor)
             || !_uiSystem.TryGetUi(penlight, PenLightUiKey.Key, out var ui))
             return;
 
@@ -88,6 +90,10 @@ public sealed class PenLightSystem : EntitySystem
         if (!_uiSystem.TryGetUi(penlight, PenLightUiKey.Key, out var ui)
             || !HasComp<EyeComponent>(target))
             return;
+
+        if (!HasComp<DamageableComponent>(target))
+            return;
+
         // Blind
         var blind = _entityManager.HasComponent<PermanentBlindnessComponent>(target);
 
