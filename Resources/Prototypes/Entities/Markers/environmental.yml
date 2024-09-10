@@ -95,6 +95,6 @@
   parent: MarkerBase
   components:
   - type: Sprite
-    sprite: _Nuclear14/Markers/environment.rsi
+    sprite: Markers/environment.rsi
     state: weather
   - type: BlockWeather
