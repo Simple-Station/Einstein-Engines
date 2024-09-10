@@ -147,7 +147,7 @@
 - type: entity
   id: AsimovCircuitBoard
   parent: BaseElectronics
-  name: circuit board (Crewsimov)
+  name: law board (Crewsimov)
   description: An electronics board containing the Crewsimov lawset.
   components:
   - type: Sprite
@@ -159,7 +159,7 @@
 - type: entity
   id: CorporateCircuitBoard
   parent: BaseElectronics
-  name: circuit board (Corporate)
+  name: law board (Corporate)
   description: An electronics board containing the Corporate lawset.
   components:
   - type: Sprite
@@ -171,7 +171,7 @@
 - type: entity
   id: NTDefaultCircuitBoard
   parent: BaseElectronics
-  name: circuit board (NT Default)
+  name: law board (NT Default)
   description: An electronics board containing the NT Default lawset.
   components:
   - type: Sprite
