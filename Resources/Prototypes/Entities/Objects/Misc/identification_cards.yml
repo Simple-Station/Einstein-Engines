@@ -621,6 +621,21 @@
 
 - type: entity
   parent: IDCardStandard
+  id: VisitorIDCard
+  name: visitor ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: visitor
+  - type: IdCard
+    jobTitle: Visitor
+    jobIcon: JobIconVisitor
+  - type: PresetIdCard
+    job: Visitor
+
+- type: entity
+  parent: IDCardStandard
   id: BrigmedicIDCard
   name: corpsman ID card
   components:

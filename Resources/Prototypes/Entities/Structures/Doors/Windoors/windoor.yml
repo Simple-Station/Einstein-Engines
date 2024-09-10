@@ -535,3 +535,57 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: Windoor
+  id: WindoorNukeopLocked
+  suffix: Nukeop, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureNukeopLocked
+  suffix: Nukeop, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: WindoorPlasma
+  id: PlasmaWindoorNukeopLocked
+  suffix: Nukeop, Locked, Plasma
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureNukeopLocked
+  suffix: Nukeop, Locked, Plasma
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: WindoorUranium
+  id: UraniumWindoorNukeopLocked
+  suffix: Nukeop, Locked, Uranium
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: WindoorSecureUranium
+  id: UraniumWindoorSecureNukeopLocked
+  suffix: Nukeop, Locked, Uranium
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]

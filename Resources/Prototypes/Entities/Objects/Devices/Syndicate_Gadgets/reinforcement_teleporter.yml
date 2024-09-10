@@ -24,8 +24,8 @@
   components:
   - type: GhostRole
     name: ghost-role-information-syndicate-reinforcement-spy-name
-    description: ghost-role-information-syndicate-reinforcement-spy-description
-    rules: ghost-role-information-syndicate-reinforcement-rules
+    description: ghost-role-information-syndicate-reinforcement-description
+    rules: ghost-role-information-rules-default-solo-antagonist
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
     raffle:
@@ -61,7 +61,7 @@
   - type: GhostRole
     name: ghost-role-information-syndicate-monkey-reinforcement-name
     description: ghost-role-information-syndicate-monkey-reinforcement-description
-    rules: ghost-role-information-syndicate-reinforcement-rules
+    rules: ghost-role-information-rules-default-familiar
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
     raffle:
@@ -71,7 +71,7 @@
     selectablePrototypes: ["SyndicateMonkey", "SyndicateKobold"]
 
 - type: entity
-  parent: ReinforcementRadio
+  parent: ReinforcementRadioSyndicateAncestor
   id: ReinforcementRadioSyndicateAncestorNukeops # Reinforcement radio exclusive to nukeops uplink
   suffix: NukeOps
   components:
@@ -88,7 +88,7 @@
   - type: GhostRole
     name: ghost-role-information-SyndiCat-name
     description: ghost-role-information-SyndiCat-description
-    rules: ghost-role-information-syndicate-reinforcement-rules
+    rules: ghost-role-information-rules-default-familiar
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
     raffle:
@@ -108,7 +108,7 @@
   - type: GhostRole
     name: ghost-role-information-syndicate-cyborg-assault-name
     description: ghost-role-information-syndicate-cyborg-description
-    rules: ghost-role-information-silicon-rules
+    rules: ghost-role-information-rules-default-silicon
     mindRoles:
     - MindRoleGhostRoleSilicon
     raffle:
