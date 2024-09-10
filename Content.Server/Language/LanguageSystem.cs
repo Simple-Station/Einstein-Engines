@@ -2,7 +2,6 @@ using System.Linq;
 using Content.Server.Language.Events;
 using Content.Shared.Language;
 using Content.Shared.Language.Components;
-using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using UniversalLanguageSpeakerComponent = Content.Shared.Language.Components.UniversalLanguageSpeakerComponent;
 
@@ -16,8 +15,19 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         InitializeNet();
 
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentInit>(OnInitLanguageSpeaker);
+        SubscribeLocalEvent<UniversalLanguageSpeakerComponent, MapInitEvent>(OnUniversalLanguageInit);
+        SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentShutdown>(OnUniversalLanguageShutdown);
     }
 
+    private void OnUniversalLanguageInit(EntityUid uid, UniversalLanguageSpeakerComponent component, MapInitEvent args)
+    {
+        AddLanguage(uid, UniversalPrototype);
+    }
+
+    private void OnUniversalLanguageShutdown(EntityUid uid, UniversalLanguageSpeakerComponent component, ComponentShutdown args)
+    {
+        RemoveLanguage(uid, UniversalPrototype);
+    }
 
     #region public api
 
@@ -34,9 +44,6 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
 
     public bool CanSpeak(EntityUid speaker, string language, LanguageSpeakerComponent? component = null)
     {
-        if (HasComp<UniversalLanguageSpeakerComponent>(speaker))
-            return true;
-
         if (!Resolve(speaker, ref component, logMissing: false))
             return false;
 
@@ -48,10 +55,9 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     /// </summary>
     public LanguagePrototype GetLanguage(EntityUid speaker, LanguageSpeakerComponent? component = null)
     {
-        if (HasComp<UniversalLanguageSpeakerComponent>(speaker) || !Resolve(speaker, ref component, logMissing: false))
-            return Universal; // Serves both as a fallback and uhhh something (TODO: fix this comment)
-
-        if (string.IsNullOrEmpty(component.CurrentLanguage) || !_prototype.TryIndex<LanguagePrototype>(component.CurrentLanguage, out var proto))
+        if (!Resolve(speaker, ref component, logMissing: false)
+            || string.IsNullOrEmpty(component.CurrentLanguage)
+            || !_prototype.TryIndex<LanguagePrototype>(component.CurrentLanguage, out var proto))
             return Universal;
 
         return proto;
@@ -63,13 +69,10 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     /// <remarks>Typically, checking <see cref="LanguageSpeakerComponent.SpokenLanguages"/> is sufficient.</remarks>
     public List<string> GetSpokenLanguages(EntityUid uid)
     {
-        if (HasComp<UniversalLanguageSpeakerComponent>(uid))
-            return [UniversalPrototype];
+        if (!TryComp<LanguageSpeakerComponent>(uid, out var component))
+            return [];
 
-        if (TryComp<LanguageSpeakerComponent>(uid, out var component))
-            return component.SpokenLanguages;
-
-        return [];
+        return component.SpokenLanguages;
     }
 
     /// <summary>
@@ -78,21 +81,17 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     /// <remarks>Typically, checking <see cref="LanguageSpeakerComponent.UnderstoodLanguages"/> is sufficient.</remarks>
     public List<string> GetUnderstoodLanguages(EntityUid uid)
     {
-        if (HasComp<UniversalLanguageSpeakerComponent>(uid))
-            return [UniversalPrototype]; // This one is tricky because... well, they understand all of them, not just one.
+        if (!TryComp<LanguageSpeakerComponent>(uid, out var component))
+            return [];
 
-        if (TryComp<LanguageSpeakerComponent>(uid, out var component))
-            return component.UnderstoodLanguages;
-
-        return [];
+        return component.UnderstoodLanguages;
     }
 
     public void SetLanguage(EntityUid speaker, string language, LanguageSpeakerComponent? component = null)
     {
-        if (!CanSpeak(speaker, language) || (HasComp<UniversalLanguageSpeakerComponent>(speaker) && language != UniversalPrototype))
-            return;
-
-        if (!Resolve(speaker, ref component) || component.CurrentLanguage == language)
+        if (!CanSpeak(speaker, language)
+            || !Resolve(speaker, ref component)
+            || component.CurrentLanguage == language)
             return;
 
         component.CurrentLanguage = language;
