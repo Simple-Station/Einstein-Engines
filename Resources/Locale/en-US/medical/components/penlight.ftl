@@ -1,4 +1,5 @@
 penlight-off = The pen light is off.
+penlight-cannot-examine-self = You cannot examine your own eyes.
 pen-light-exam-title = Pen Light
 pen-light-window-entity-eyes-text = {$entityName}'s conditions:
 pen-light-window-no-patient-data-text = No patient data.

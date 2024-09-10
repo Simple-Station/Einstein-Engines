@@ -57,13 +57,14 @@ public sealed class PenLightSystem : EntitySystem
         args.Handled = true;
     }
 
-        /// <summary>
-        ///     Checks if the PointLight component is enabled.
-        /// </summary>
-        private bool IsLightEnabled(EntityUid uid)
-        {
-            return TryComp<PointLightComponent>(uid, out var pointLight) && pointLight.Enabled;
-        }
+    /// <summary>
+    ///     Checks if the PointLight component is enabled.
+    /// </summary>
+    private bool IsLightEnabled(EntityUid uid)
+    {
+        return TryComp<PointLightComponent>(uid, out var pointLight) && pointLight.Enabled;
+    }
+
     /// <summary>
     ///     Actually handles the exam interaction.
     /// </summary>
@@ -78,7 +79,12 @@ public sealed class PenLightSystem : EntitySystem
                 _popup.PopupEntity(Loc.GetString("penlight-off"), uid, user);
             return false;
         }
-
+        // can't examine your own eyes, dingus
+        if (user == target)
+        {
+            _popup.PopupEntity(Loc.GetString("penlight-cannot-examine-self"), uid, user);
+            return false;
+        }
         return _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, component.ExamSpeed, new PenLightDoAfterEvent(),
             uid, target, uid)
         {
