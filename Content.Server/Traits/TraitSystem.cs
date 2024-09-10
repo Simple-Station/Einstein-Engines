@@ -67,8 +67,8 @@ public sealed class TraitSystem : EntitySystem
         AddTraitComponents(uid, traitPrototype);
         AddTraitActions(uid, traitPrototype);
         AddTraitPsionics(uid, traitPrototype);
-        AddTraitLanguagesSpoken(uid, traitPrototype);
-        AddTraitLanguagesUnderstood(uid, traitPrototype);
+        AddTraitLanguage(uid, traitPrototype);
+        RemoveTraitLanguage(uid, traitPrototype);
     }
 
     /// <summary>
@@ -145,6 +145,15 @@ public sealed class TraitSystem : EntitySystem
     }
 
     /// <summary>
+    ///     Initialize languages given by a Trait.
+    /// </summary>
+    private void AddTraitLanguage(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        AddTraitLanguagesSpoken(uid, traitPrototype);
+        AddTraitLanguagesUnderstood(uid, traitPrototype);
+    }
+
+    /// <summary>
     ///     If a trait includes any Spoken Languages, this sends them to LanguageSystem to be initialized.
     /// </summary>
     public void AddTraitLanguagesSpoken(EntityUid uid, TraitPrototype traitPrototype)
@@ -156,6 +165,9 @@ public sealed class TraitSystem : EntitySystem
             _languageSystem.AddLanguage(uid, language, true, false);
     }
 
+    /// <summary>
+    ///     If a trait includes any Understood Languages, this sends them to LanguageSystem to be initialized.
+    /// </summary>
     public void AddTraitLanguagesUnderstood(EntityUid uid, TraitPrototype traitPrototype)
     {
         if (traitPrototype.LanguagesUnderstood is null)
@@ -163,5 +175,38 @@ public sealed class TraitSystem : EntitySystem
 
         foreach (var language in traitPrototype.LanguagesUnderstood)
             _languageSystem.AddLanguage(uid, language, false, true);
+    }
+
+    /// <summary>
+    ///     Remove Languages given by a Trait.
+    /// </summary>
+    private void RemoveTraitLanguage(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        RemoveTraitLanguagesSpoken(uid, traitPrototype);
+        RemoveTraitLanguagesUnderstood(uid, traitPrototype);
+    }
+
+    /// <summary>
+    ///     Removes any Spoken Languages if defined by a trait.
+    /// </summary>
+    public void RemoveTraitLanguagesSpoken(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.RemoveLanguagesSpoken is null)
+            return;
+
+        foreach (var language in traitPrototype.RemoveLanguagesSpoken)
+            _languageSystem.RemoveLanguage(uid, language, true, false);
+    }
+
+    /// <summary>
+    ///     Removes any Understood Languages if defined by a trait.
+    /// </summary>
+    public void RemoveTraitLanguagesUnderstood(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.RemoveLanguagesUnderstood is null)
+            return;
+
+        foreach (var language in traitPrototype.RemoveLanguagesUnderstood)
+            _languageSystem.RemoveLanguage(uid, language, false, true);
     }
 }
