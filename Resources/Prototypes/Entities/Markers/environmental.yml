@@ -7,10 +7,10 @@
   components:
   - type: Sprite
     layers:
-      - sprite: _Nuclear14/Markers/environment.rsi
+      - sprite: Markers/environment.rsi
         state: base-green
         shader: unshaded
-      - sprite: _Nuclear14/Markers/environment.rsi
+      - sprite: Markers/environment.rsi
         shader: unshaded
         state: rad
   - type: RadiationSource
