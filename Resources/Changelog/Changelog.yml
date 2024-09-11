@@ -6130,3 +6130,12 @@ Entries:
   id: 6340
   time: '2024-09-09T14:21:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/794
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        The "food recipes" page in guidebook now contains an automatically
+        generated list of food recipes.
+  id: 6341
+  time: '2024-09-11T17:55:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/783
