@@ -510,6 +510,8 @@
       - MetempsychoticMachineCircuitboard
     # End Nyano additions
       - SalvageExpeditionsComputerCircuitboard # DeltaV
+      - RCDammo #DeltaV
+      - RCD #EE
   - type: MaterialStorage
     whitelist:
       tags:
