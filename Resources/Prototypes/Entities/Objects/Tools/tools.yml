@@ -552,7 +552,7 @@
     heldPrefix: ammo
   - type: PhysicalComposition
     materialComposition:
-      Steel: 100
+      Steel: 600
       Plastic: 100
   - type: StaticPrice
     price: 60
