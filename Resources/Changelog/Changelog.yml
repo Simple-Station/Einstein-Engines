@@ -6171,3 +6171,14 @@ Entries:
   id: 6344
   time: '2024-09-11T20:00:07.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/902
+- author: Tilkku
+  changes:
+    - type: Tweak
+      message: Penlight Exam Messages
+    - type: Fix
+      message: Penlights now need to be on in order to examine
+    - type: Fix
+      message: Penlights can no longer be used on self
+  id: 6345
+  time: '2024-09-11T20:02:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/900
