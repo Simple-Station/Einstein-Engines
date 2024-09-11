@@ -39,7 +39,7 @@ public sealed class GhostBarSystem : EntitySystem
         SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(OnPlayerGhosted);
     }
 
-    const string MapPath = "Maps/Goobstation/Nonstations/ghostbar.yml";
+    const string MapPath = "Maps/Ruins/ghostbar.yml";
     private void OnRoundStart(RoundStartingEvent ev)
     {
         _mapSystem.CreateMap(out var mapId);
