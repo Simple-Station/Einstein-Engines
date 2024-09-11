@@ -11006,7 +11006,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 15.5,18.5
       parent: 4
-- proto: SodaDispenser
+- proto: soda_dispenser
   entities:
   - uid: 1642
     components:
@@ -11071,7 +11071,7 @@ entities:
     - type: Transform
       pos: 47.5,5.5
       parent: 4
-- proto: SyndicateMicrowave
+- proto: KitchenMicrowave
   entities:
   - uid: 1652
     components:
@@ -13111,7 +13111,7 @@ entities:
     - type: Transform
       pos: 32.5,14.5
       parent: 4
-- proto: WeaponRifleFoam
+- proto: FoamCrossbow
   entities:
   - uid: 2001
     components:
