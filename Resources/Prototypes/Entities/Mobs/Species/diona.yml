@@ -114,7 +114,7 @@
     walkModifier: 0.75
   - type: SpeedModifierImmunity
   - type: NoSlip
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
       - Shard

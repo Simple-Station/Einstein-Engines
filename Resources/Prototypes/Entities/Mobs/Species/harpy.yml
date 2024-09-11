@@ -121,7 +121,7 @@
     understands:
     - TauCetiBasic
     - ValyrianStandard
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
       - Shard
