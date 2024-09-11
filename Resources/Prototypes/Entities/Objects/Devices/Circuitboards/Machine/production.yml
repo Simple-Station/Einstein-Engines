@@ -87,10 +87,10 @@
         MatterBin: 4
       materialRequirements:
         Glass: 1
-   - type: ReverseEngineering # Delta
-     difficulty: 2
-     recipes:
-       - BiofabricatorMachineCircuitboard
+    - type: ReverseEngineering # Delta
+      difficulty: 2
+      recipes:
+        - BiofabricatorMachineCircuitboard
 
 - type: entity
   id: SecurityTechFabCircuitboard
