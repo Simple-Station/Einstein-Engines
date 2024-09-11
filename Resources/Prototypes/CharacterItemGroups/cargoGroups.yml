@@ -1,10 +1,4 @@
 - type: characterItemGroup
-  id: LoadoutUniformsCargo
-  items:
-    - type: loadout
-      id: LoadoutMedicalUniformScrubsBlue
-
-- type: characterItemGroup
   id: LoadoutOuterCargo
   items:
     - type: loadout
