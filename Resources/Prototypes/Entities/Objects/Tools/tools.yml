@@ -477,8 +477,8 @@
     - Belt
   - type: PhysicalComposition
     materialComposition:
-      Steel: 1200
-      Plastic: 200
+      Steel: 600
+      Plastic: 150
   - type: StaticPrice
     price: 100
   - type: UserInterface
@@ -552,7 +552,7 @@
     heldPrefix: ammo
   - type: PhysicalComposition
     materialComposition:
-      Steel: 600
+      Steel: 300
       Plastic: 100
   - type: StaticPrice
     price: 60
