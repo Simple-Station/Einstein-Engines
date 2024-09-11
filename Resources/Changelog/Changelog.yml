@@ -6130,3 +6130,80 @@ Entries:
   id: 6340
   time: '2024-09-09T14:21:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/794
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        The "food recipes" page in guidebook now contains an automatically
+        generated list of food recipes.
+  id: 6341
+  time: '2024-09-11T17:55:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/783
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Rat Kings have returned to the default event rotation.
+  id: 6342
+  time: '2024-09-11T19:59:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/903
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Jetpacks now work in zero gravity.
+    - type: Add
+      message: >-
+        New CCVar "jetpack.enable_anywhere" allows server hosts to optionally
+        make it so that jetpacks can be used anywhere, even in gravity and on
+        grids.
+    - type: Add
+      message: >-
+        New CCVar "jetpack.enable_in_no_gravity" allows server hosts to
+        optionally disable jetpacks being usable in zero gravity.
+  id: 6343
+  time: '2024-09-11T19:59:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/901
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Medical Job related items are now part of a Medical loadout group, and
+        have all been significantly discounted.
+  id: 6344
+  time: '2024-09-11T20:00:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/902
+- author: Tilkku
+  changes:
+    - type: Tweak
+      message: Penlight Exam Messages
+    - type: Fix
+      message: Penlights now need to be on in order to examine
+    - type: Fix
+      message: Penlights can no longer be used on self
+  id: 6345
+  time: '2024-09-11T20:02:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/900
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Fixed a couple issues with the language menu UI and translators.
+  id: 6346
+  time: '2024-09-11T20:03:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/893
+- author: Mocho
+  changes:
+    - type: Add
+      message: >-
+        Cargo Job related items are now part of a Cargo loadout group, and have
+        all been significantly discounted.
+  id: 6347
+  time: '2024-09-11T20:27:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/909
+- author: Mocho
+  changes:
+    - type: Add
+      message: >-
+        Security Job related items are now part of a Security loadout group, and
+        have all been significantly discounted.
+  id: 6348
+  time: '2024-09-11T20:39:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/908
