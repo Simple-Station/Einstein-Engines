@@ -68,7 +68,7 @@ namespace Content.Shared.Ghost
     ///     A server to client request for them to spawn at the ghost bar
     /// </summary>
     [Serializable, NetSerializable]
-    public sealed class GhostBarSpawnEvent : EntityEventArgs { }
+    public sealed class GhostBarSpawnRequestEvent : EntityEventArgs { }
 
     /// <summary>
     /// An individual place a ghost can warp to.

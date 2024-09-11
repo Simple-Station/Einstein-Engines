@@ -60,9 +60,7 @@ public sealed class GhostBarSystem : EntitySystem
         var spawnPoints = new List<EntityCoordinates>();
         var query = EntityQueryEnumerator<GhostBarSpawnComponent>();
         while (query.MoveNext(out var ent, out _))
-        {
             spawnPoints.Add(_entityManager.GetComponent<TransformComponent>(ent).Coordinates);
-        }
 
         if (spawnPoints.Count == 0)
         {
@@ -82,9 +80,7 @@ public sealed class GhostBarSystem : EntitySystem
 
 
         if (targetMind != null)
-        {
             _mindSystem.TransferTo(targetMind.Value, mobUid, true);
-        }
     }
 
     private void OnPlayerGhosted(EntityUid uid, GhostBarPlayerComponent component, MindRemovedMessage args)
