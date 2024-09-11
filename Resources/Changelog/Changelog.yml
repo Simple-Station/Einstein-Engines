@@ -6220,3 +6220,12 @@ Entries:
   id: 6349
   time: '2024-09-11T20:52:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/906
+- author: Mocho
+  changes:
+    - type: Add
+      message: >-
+        Engineering Job related items are now part of a Engineering loadout
+        group, and have all been significantly discounted.
+  id: 6350
+  time: '2024-09-11T21:03:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/907
