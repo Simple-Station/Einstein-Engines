@@ -112,10 +112,8 @@ public sealed class PenLightSystem : EntitySystem
     private void Diagnose(EntityUid penlight, EntityUid target)
     {
         if (!_uiSystem.TryGetUi(penlight, PenLightUiKey.Key, out var ui)
-            || !HasComp<EyeComponent>(target))
-            return;
-
-        if (!HasComp<DamageableComponent>(target))
+            || !HasComp<EyeComponent>(target)
+            || !HasComp<DamageableComponent>(target))
             return;
 
         // Blind
