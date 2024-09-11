@@ -58,6 +58,10 @@
     angle: 20
     soundHit:
       collection: MetalThud
+  - type: ReverseEngineering # Delta
+    difficulty: 3
+    recipes:
+      - JawsOfLife
 
 - type: entity
   name: syndicate jaws of life
