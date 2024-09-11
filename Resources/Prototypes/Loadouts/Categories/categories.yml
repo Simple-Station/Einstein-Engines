@@ -28,6 +28,7 @@
   subCategories:
     - JobsAUncategorized
     - JobsCommand
+    - JobsService
 
 - type: loadoutCategory
   id: JobsAUncategorized
@@ -69,6 +70,8 @@
 - type: loadoutCategory
   id: JobsCommandRD
 
+- type: loadoutCategory
+  id: JobsService
 
 - type: loadoutCategory
   id: Mask
