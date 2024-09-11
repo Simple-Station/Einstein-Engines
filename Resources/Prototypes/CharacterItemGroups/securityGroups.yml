@@ -125,6 +125,7 @@
       id: LoadoutClothingShoesBootsCombat
 
 - type: characterItemGroup
+  maxItems: 5 # No clue what the actual number should be.
   id: LoadoutEquipmentSecurity
   items:
     - type: loadout
