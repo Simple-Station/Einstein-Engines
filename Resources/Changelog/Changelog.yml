@@ -6182,3 +6182,10 @@ Entries:
   id: 6345
   time: '2024-09-11T20:02:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/900
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Fixed a couple issues with the language menu UI and translators.
+  id: 6346
+  time: '2024-09-11T20:03:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/893
