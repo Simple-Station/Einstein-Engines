@@ -6146,3 +6146,19 @@ Entries:
   id: 6342
   time: '2024-09-11T19:59:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/903
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Jetpacks now work in zero gravity.
+    - type: Add
+      message: >-
+        New CCVar "jetpack.enable_anywhere" allows server hosts to optionally
+        make it so that jetpacks can be used anywhere, even in gravity and on
+        grids.
+    - type: Add
+      message: >-
+        New CCVar "jetpack.enable_in_no_gravity" allows server hosts to
+        optionally disable jetpacks being usable in zero gravity.
+  id: 6343
+  time: '2024-09-11T19:59:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/901
