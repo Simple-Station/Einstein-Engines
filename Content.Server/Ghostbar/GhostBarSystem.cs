@@ -22,7 +22,7 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly StationSpawningSystem _spawningSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
-
+    const string MapPath = "Maps/Ruins/ghostbar.yml";
     private static readonly List<JobComponent> JobComponents = new()
     {
         new JobComponent { Prototype = "Passenger" },
@@ -35,11 +35,10 @@ public sealed class GhostBarSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
-        SubscribeNetworkEvent<GhostBarSpawnEvent>(SpawnPlayer);
+        SubscribeNetworkEvent<GhostBarSpawnRequestEvent>(SpawnPlayer);
         SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(OnPlayerGhosted);
     }
 
-    const string MapPath = "Maps/Ruins/ghostbar.yml";
     private void OnRoundStart(RoundStartingEvent ev)
     {
         _mapSystem.CreateMap(out var mapId);
@@ -49,7 +48,7 @@ public sealed class GhostBarSystem : EntitySystem
             _mapSystem.SetPaused(mapId, false);
     }
 
-    public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)
+    public void SpawnPlayer(GhostBarSpawnRequestEvent msg, EntitySessionEventArgs args)
     {
         if (!_entityManager.HasComponent<GhostComponent>(args.SenderSession.AttachedEntity))
         {
