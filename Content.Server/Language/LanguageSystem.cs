@@ -15,24 +15,12 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         InitializeNet();
 
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentInit>(OnInitLanguageSpeaker);
-        SubscribeLocalEvent<UniversalLanguageSpeakerComponent, MapInitEvent>(OnUniversalLanguageInit);
-        SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentShutdown>(OnUniversalLanguageShutdown);
+        SubscribeLocalEvent<UniversalLanguageSpeakerComponent, DetermineEntityLanguagesEvent>(OnUniversalDetermineLanguages);
     }
 
-    private void OnUniversalLanguageInit(EntityUid uid, UniversalLanguageSpeakerComponent component, MapInitEvent args)
+    private void OnDetermineLanguages(EntityUid uid, UniversalLanguageSpeakerComponent component, DetermineEntityLanguagesEvent args)
     {
-        EnsureComp<LanguageSpeakerComponent>(uid);
-        EnsureComp<LanguageKnowledgeComponent>(uid);
-        AddLanguage(uid, UniversalPrototype);
-    }
-
-    private void OnUniversalLanguageShutdown(EntityUid uid, UniversalLanguageSpeakerComponent component, ComponentShutdown args)
-    {
-        if (!HasComp<LanguageKnowledgeComponent>(uid)
-            || !HasComp<LanguageSpeakerComponent>(uid))
-            return;
-
-        RemoveLanguage(uid, UniversalPrototype);
+        args.SpokenLanguages.Add(UniversalPrototype);
     }
 
     #region public api
