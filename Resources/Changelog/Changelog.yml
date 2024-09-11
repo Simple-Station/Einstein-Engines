@@ -6189,3 +6189,12 @@ Entries:
   id: 6346
   time: '2024-09-11T20:03:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/893
+- author: Mocho
+  changes:
+    - type: Add
+      message: >-
+        Cargo Job related items are now part of a Cargo loadout group, and have
+        all been significantly discounted.
+  id: 6347
+  time: '2024-09-11T20:27:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/909
