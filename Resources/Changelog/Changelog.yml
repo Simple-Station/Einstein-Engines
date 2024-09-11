@@ -6139,3 +6139,10 @@ Entries:
   id: 6341
   time: '2024-09-11T17:55:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/783
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Rat Kings have returned to the default event rotation.
+  id: 6342
+  time: '2024-09-11T19:59:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/903
