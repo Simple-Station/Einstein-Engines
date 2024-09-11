@@ -490,7 +490,7 @@
   - type: ReverseEngineering # Nyano
     difficulty: 3
     recipes:
-      - RCD
+      - RCDEmpty
 
 - type: entity
   id: RCDEmpty
