@@ -37,9 +37,11 @@ public sealed class PenLightSystem : EntitySystem
     private void OnAfterInteract(EntityUid uid, PenLightComponent component, ref AfterInteractEvent args)
     {
         if (args.Handled
-            || args.Target is not {} target)
-            return;
-        if (target == null || !args.CanReach || !HasComp<MobStateComponent>(target) || !_powerCell.HasDrawCharge(uid, user: args.User))
+            || args.Target is not {} target
+            || target == null 
+            || !args.CanReach 
+            || !HasComp<MobStateComponent>(target) 
+            || !_powerCell.HasDrawCharge(uid, user: args.User))
             return;
         args.Handled = TryStartExam(uid, target, args.User, component);
     }
