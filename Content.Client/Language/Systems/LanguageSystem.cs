@@ -29,6 +29,8 @@ public sealed class LanguageSystem : SharedLanguageSystem
     /// </summary>
     public List<string> UnderstoodLanguages { get; private set; } = new();
 
+    public event EventHandler<LanguagesUpdatedMessage>? OnLanguagesChanged;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -39,9 +41,13 @@ public sealed class LanguageSystem : SharedLanguageSystem
 
     private void OnLanguagesUpdated(LanguagesUpdatedMessage message)
     {
+        // TODO this entire thing is horrible. If someone is willing to refactor this, LanguageSpeakerComponent should become shared with SendOnlyToOwner = true
+        // That way, this system will be able to use the existing networking infrastructure instead of relying on this makeshift... whatever this is.
         CurrentLanguage = message.CurrentLanguage;
         SpokenLanguages = message.Spoken;
         UnderstoodLanguages = message.Understood;
+
+        OnLanguagesChanged?.Invoke(this, message);
     }
 
     private void OnRunLevelChanged(object? sender, RunLevelChangedEventArgs args)
