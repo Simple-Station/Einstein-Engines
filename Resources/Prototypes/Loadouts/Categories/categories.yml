@@ -29,6 +29,7 @@
     - JobsAUncategorized
     - JobsCargo
     - JobsCommand
+    - JobsEngineering
     - JobsMedical
     - JobsSecurity
     - JobsService
@@ -74,7 +75,10 @@
 
 - type: loadoutCategory
   id: JobsCargo
-  
+
+- type: loadoutCategory
+  id: JobsEngineering
+
 - type: loadoutCategory  
   id: JobsMedical
 
