@@ -355,6 +355,8 @@
       - AnimalTranslator
       - MofficTranslatorImplanter
       - MofficTranslator
+      - RCDammo #DeltaV
+      - RCD #EE
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ExplosivePayload
@@ -510,8 +512,6 @@
       - MetempsychoticMachineCircuitboard
     # End Nyano additions
       - SalvageExpeditionsComputerCircuitboard # DeltaV
-      - RCDammo #DeltaV
-      - RCD #EE
   - type: MaterialStorage
     whitelist:
       tags:
