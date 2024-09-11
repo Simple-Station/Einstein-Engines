@@ -179,7 +179,7 @@ namespace Content.Client.Ghost
 
         public void GhostBarSpawn()
         {
-            RaiseNetworkEvent(new GhostBarSpawnEvent());
+            RaiseNetworkEvent(new GhostBarSpawnRequestEvent());
         }
 
         public void ToggleGhostVisibility(bool? visibility = null)
