@@ -27,8 +27,8 @@
   root: true
   subCategories:
     - JobsAUncategorized
-    - JobsEngineering
     - JobsCommand
+    - JobsEngineering
 
 - type: loadoutCategory
   id: JobsAUncategorized
