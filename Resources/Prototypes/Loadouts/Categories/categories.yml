@@ -27,6 +27,7 @@
   root: true
   subCategories:
     - JobsAUncategorized
+    - JobsCargo
     - JobsCommand
 
 - type: loadoutCategory
@@ -43,7 +44,6 @@
     - JobsCommandHOS
     - JobsCommandQM
     - JobsCommandRD
-
 
 - type: loadoutCategory
   id: JobsCommandAUncategorized
@@ -69,6 +69,8 @@
 - type: loadoutCategory
   id: JobsCommandRD
 
+- type: loadoutCategory
+  id: JobsCargo
 
 - type: loadoutCategory
   id: Mask
