@@ -6162,3 +6162,12 @@ Entries:
   id: 6343
   time: '2024-09-11T19:59:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/901
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Medical Job related items are now part of a Medical loadout group, and
+        have all been significantly discounted.
+  id: 6344
+  time: '2024-09-11T20:00:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/902
