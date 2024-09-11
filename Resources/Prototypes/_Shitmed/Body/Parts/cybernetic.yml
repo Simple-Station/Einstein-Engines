@@ -157,7 +157,7 @@
     sprintSpeed: 5.625
   - type: BodyPart
     onAdd:
-    - type: StepTriggerImmune
+    - type: ProtectedFromStepTriggers
       whitelist:
         types:
         - Shard
@@ -175,7 +175,7 @@
     sprintSpeed: 5.625
   - type: BodyPart
     onAdd:
-    - type: StepTriggerImmune
+    - type: ProtectedFromStepTriggers
       whitelist:
         types:
         - Shard
