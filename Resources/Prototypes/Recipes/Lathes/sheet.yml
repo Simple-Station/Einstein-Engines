@@ -39,8 +39,8 @@
   miningPoints: 1
   completetime: 0.025 # 0.75 per 30
   materials:
-    Glass: 100
-    Steel: 50
+    RawQuartz: 100
+    RawIron: 50
     Coal: 15
 
 - type: latheRecipe
