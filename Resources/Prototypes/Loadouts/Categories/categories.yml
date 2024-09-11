@@ -27,6 +27,7 @@
   root: true
   subCategories:
     - JobsAUncategorized
+    - JobsMedical
     - JobsCommand
 
 - type: loadoutCategory
@@ -69,6 +70,8 @@
 - type: loadoutCategory
   id: JobsCommandRD
 
+- type: loadoutCategory
+  id: JobsMedical
 
 - type: loadoutCategory
   id: Mask

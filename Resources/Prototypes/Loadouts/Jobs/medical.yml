@@ -1,9 +1,11 @@
 - type: loadout
   id: LoadoutMedicalGlovesNitrile
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGlovesMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -16,10 +18,12 @@
 
 - type: loadout
   id: LoadoutMedicalOuterLabcoat
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -29,10 +33,12 @@
 
 - type: loadout
   id: LoadoutMedicalNeckStethoscope
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -43,10 +49,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsBlue
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -58,10 +66,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsGreen
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -73,10 +83,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsPurple
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -88,10 +100,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsCyan
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -103,10 +117,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsBlack
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -118,10 +134,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsPink
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -133,10 +151,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsCybersun
-  category: JobsAUncategorized
-  cost: 3
+  category: JobsMedical
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -147,10 +167,12 @@
 
 - type: loadout
   id: LoadoutMedicalOuterCybersunWindbreaker
-  category: JobsAUncategorized
-  cost: 5
+  category: JobsMedical
+  cost: 3
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -161,10 +183,12 @@
 
 - type: loadout
   id: LoadoutMedicalOuterLabcoatChem
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterMedical
     - !type:CharacterJobRequirement
       jobs:
         - Chemist
@@ -173,7 +197,7 @@
 
 - type: loadout
   id: LoadoutMedicalItemHandLabeler
-  category: JobsAUncategorized
+  category: JobsMedical
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -184,10 +208,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformParamedicJumpsuit
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - Paramedic
@@ -196,10 +222,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformParamedicJumpskirt
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - Paramedic
@@ -208,10 +236,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformJumpskirtSenior
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -232,10 +262,12 @@
 
 - type: loadout
   id: LoadoutMedicalUniformJumpsuitSenior
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -256,10 +288,12 @@
 
 - type: loadout
   id: LoadoutMedicalHeadNurse
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -268,10 +302,12 @@
 
 - type: loadout
   id: LoadoutMedicalHeadBeretSeniorPhysician
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -292,10 +328,12 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapBlue
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -307,10 +345,12 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapPurple
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -322,10 +362,12 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapGreen
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -337,10 +379,12 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapCyan
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -352,10 +396,12 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapBlack
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -367,10 +413,12 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapPink
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -382,10 +430,12 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapWhite
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -397,10 +447,12 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapCybersun
-  category: JobsAUncategorized
-  cost: 3
+  category: JobsMedical
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -411,10 +463,12 @@
 
 - type: loadout
   id: LoadoutMedicalEyesHudMedical
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -427,10 +481,12 @@
 
 - type: loadout
   id: LoadoutMedicalEyesEyepatchHudMedical
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -443,10 +499,12 @@
 
 - type: loadout
   id: LoadoutMedicalEyesHudMedicalPrescription
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesMedical
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -462,10 +520,12 @@
 
 - type: loadout
   id: LoadoutMedicalEyesGlassesChemical
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesMedical
     - !type:CharacterJobRequirement
       jobs:
          - Chemist
@@ -474,10 +534,12 @@
 
 - type: loadout
   id: LoadoutMedicalBedsheetMedical
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckMedical
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
@@ -487,10 +549,12 @@
 # Chemist PPE gear
 - type: loadout
   id: LoadoutMedicalUniformJumpsuitChemShirt
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
@@ -499,10 +563,12 @@
 
 - type: loadout
   id: LoadoutMedicalNeckTieChem
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckMedical
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
@@ -511,10 +577,12 @@
 
 - type: loadout
   id: LoadoutMedicalShoesEnclosedChem
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoesMedical
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
@@ -523,10 +591,12 @@
 
 - type: loadout
   id: LoadoutMedicalOuterApronChemist
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterMedical
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
@@ -535,10 +605,12 @@
 
 - type: loadout
   id: LoadoutMedicalEyesGlassesChemist
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesMedical
     - !type:CharacterJobRequirement
        jobs:
          - Chemist
@@ -547,10 +619,12 @@
 
 - type: loadout
   id: LoadoutMedicalHandsGlovesChemist
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsMedical
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGlovesMedical
     - !type:CharacterJobRequirement
        jobs:
          - Chemist

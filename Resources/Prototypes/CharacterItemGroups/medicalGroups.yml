@@ -1,0 +1,101 @@
+- type: characterItemGroup
+  id: LoadoutUniformsMedical
+  items:
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsBlue
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsGreen
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsPurple
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsCyan
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsBlack
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsPink
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsCybersun
+    - type: loadout
+      id: LoadoutMedicalUniformParamedicJumpsuit
+    - type: loadout
+      id: LoadoutMedicalUniformParamedicJumpskirt
+    - type: loadout
+      id: LoadoutMedicalUniformJumpskirtSenior
+    - type: loadout
+      id: LoadoutMedicalUniformJumpsuitSenior
+    - type: loadout
+      id: LoadoutMedicalUniformJumpsuitChemShirt
+
+- type: characterItemGroup
+  id: LoadoutOuterMedical
+  items:
+    - type: loadout
+      id: LoadoutMedicalOuterLabcoat
+    - type: loadout
+      id: LoadoutMedicalOuterCybersunWindbreaker
+    - type: loadout
+      id: LoadoutMedicalOuterLabcoatChem
+    - type: loadout
+      id: LoadoutMedicalOuterApronChemist
+
+- type: characterItemGroup
+  id: LoadoutGlovesMedical
+  items:
+    - type: loadout
+      id: LoadoutMedicalGlovesNitrile
+    - type: loadout
+      id: LoadoutMedicalHandsGlovesChemist
+
+- type: characterItemGroup
+  id: LoadoutNeckMedical
+  items:
+    - type: loadout
+      id: LoadoutMedicalNeckStethoscope
+    - type: loadout
+      id: LoadoutMedicalBedsheetMedical
+    - type: loadout
+      id: LoadoutMedicalNeckTieChem
+
+- type: characterItemGroup
+  id: LoadoutHeadMedical
+  items:
+    - type: loadout
+      id: LoadoutMedicalHeadNurse
+    - type: loadout
+      id: LoadoutMedicalHeadBeretSeniorPhysician
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapBlue
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapPurple
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapGreen
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapCyan
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapBlack
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapPink
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapWhite
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapCybersun
+
+- type: characterItemGroup
+  id: LoadoutEyesMedical
+  items:
+    - type: loadout
+      id: LoadoutMedicalEyesHudMedical
+    - type: loadout
+      id: LoadoutMedicalEyesEyepatchHudMedical
+    - type: loadout
+      id: LoadoutMedicalEyesHudMedicalPrescription
+    - type: loadout
+      id: LoadoutMedicalEyesGlassesChemical
+    - type: loadout
+      id: LoadoutMedicalEyesGlassesChemist
+
+- type: characterItemGroup
+  id: LoadoutShoesMedical
+  items:
+    - type: loadout
+      id: LoadoutMedicalShoesEnclosedChem
