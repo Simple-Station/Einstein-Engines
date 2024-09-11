@@ -163,7 +163,7 @@
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 15
+          min: 45
         damage:
           types:
             Poison: 1
