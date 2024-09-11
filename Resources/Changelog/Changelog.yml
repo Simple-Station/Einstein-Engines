@@ -6207,3 +6207,16 @@ Entries:
   id: 6348
   time: '2024-09-11T20:39:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/908
+- author: Mocho
+  changes:
+    - type: Add
+      message: >-
+        Service Job related items are now part of a Service loadout group, and
+        have all been significantly discounted.
+    - type: Tweak
+      message: >-
+        Musicians now have significant discounts on all instruments in loadouts,
+        but can only take a maximum of 3.
+  id: 6349
+  time: '2024-09-11T20:52:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/906
