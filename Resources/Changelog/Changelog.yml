@@ -6260,3 +6260,14 @@ Entries:
   id: 6353
   time: '2024-09-12T00:14:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/912
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Blood Deficiency now makes you lose a consistent percentage of blood
+        regardless of your blood volume, which is dictated by size. This makes
+        the time to low blood and death consistent for every character of all
+        sizes with this trait.
+  id: 6354
+  time: '2024-09-12T00:15:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/895
