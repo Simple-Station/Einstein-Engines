@@ -355,6 +355,8 @@
       - AnimalTranslator
       - MofficTranslatorImplanter
       - MofficTranslator
+      - RCDAmmo #DeltaV
+      - RCD #EE
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ExplosivePayload
