@@ -2,18 +2,24 @@
 
 - type: traitCategory
   id: Uncategorized
+  root: true
 
 - type: traitCategory
   id: Auditory
+  root: true
 
 - type: traitCategory
   id: Mental
+  root: true
 
 - type: traitCategory
   id: Physical
+  root: true
 
 - type: traitCategory
   id: Speech
+  root: true
 
 - type: traitCategory
   id: Visual
+  root: true

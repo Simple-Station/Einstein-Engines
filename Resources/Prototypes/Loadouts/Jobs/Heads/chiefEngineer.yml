@@ -1,6 +1,6 @@
 - type: loadout
   id: LoadoutCommandCENeckMantle
-  category: Jobs
+  category: JobsCommandCE
   cost: 2
   exclusive: true
   requirements:
@@ -12,7 +12,7 @@
 
 - type: loadout
   id: LoadoutCommandCENeckCloak
-  category: Jobs
+  category: JobsCommandCE
   cost: 2
   exclusive: true
   requirements:
@@ -24,7 +24,7 @@
 
 - type: loadout
   id: LoadoutCommandCEOuterWinter
-  category: Jobs
+  category: JobsCommandCE
   cost: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -35,15 +35,10 @@
 
 - type: loadout
   id: LoadoutCommandCEShoesBootsWinter
-  category: Jobs
+  category: JobsCommandCE
   cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer

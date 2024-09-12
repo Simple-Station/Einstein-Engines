@@ -9,6 +9,15 @@
     - !type:DepartmentTimeRequirement
       department: Epistemics # DeltaV - Epistemics Department replacing Science
       min: 3600
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
@@ -23,7 +32,12 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
-    - type: MetapsionicPower
+  - !type:AddComponentSpecial
+    components:
+    - type: InnatePsionicPowers
+      powersToAdd:
+        - MetapsionicPower
+        - TelepathyPower
 
 - type: startingGear
   id: ForensicMantisGear

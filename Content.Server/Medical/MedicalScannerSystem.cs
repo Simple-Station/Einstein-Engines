@@ -15,7 +15,7 @@ using Content.Shared.Climbing.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Server.Containers;
-using static Content.Shared.MedicalScanner.SharedMedicalScannerComponent; // Hmm...
+using static Content.Shared.MedicalScanner.SharedMedicalScannerComponent;
 
 namespace Content.Server.Medical
 {
@@ -78,22 +78,18 @@ namespace Content.Server.Medical
 
         private void AddInsertOtherVerb(EntityUid uid, MedicalScannerComponent component, GetVerbsEvent<InteractionVerb> args)
         {
-            if (args.Using == null ||
-                !args.CanAccess ||
-                !args.CanInteract ||
-                IsOccupied(component) ||
-                !CanScannerInsert(uid, args.Using.Value, component))
+            if (args.Using == null
+                || !args.CanAccess
+                || !args.CanInteract
+                || IsOccupied(component)
+                || !CanScannerInsert(uid, args.Using.Value, component))
                 return;
-
-            var name = "Unknown";
-            if (TryComp<MetaDataComponent>(args.Using.Value, out var metadata))
-                name = metadata.EntityName;
 
             InteractionVerb verb = new()
             {
                 Act = () => InsertBody(uid, args.Target, component),
                 Category = VerbCategory.Insert,
-                Text = name
+                Text = MetaData(args.Using.Value).EntityName
             };
             args.Verbs.Add(verb);
         }
@@ -115,11 +111,8 @@ namespace Content.Server.Medical
                 };
                 args.Verbs.Add(verb);
             }
-
-            // Self-insert verb
-            if (!IsOccupied(component) &&
-                CanScannerInsert(uid, args.User, component) &&
-                _blocker.CanMove(args.User))
+            else if (CanScannerInsert(uid, args.User, component)
+                    && _blocker.CanMove(args.User))
             {
                 AlternativeVerb verb = new()
                 {
@@ -147,32 +140,37 @@ namespace Content.Server.Medical
 
         private void OnAnchorChanged(EntityUid uid, MedicalScannerComponent component, ref AnchorStateChangedEvent args)
         {
-            if (component.ConnectedConsole == null || !TryComp<CloningConsoleComponent>(component.ConnectedConsole, out var console))
+            if (component.ConnectedConsole == null
+                || !args.Anchored
+                || !TryComp<CloningConsoleComponent>(component.ConnectedConsole, out var console)
+                || !_cloningConsoleSystem.RecheckConnections(component.ConnectedConsole.Value, console.CloningPod, uid, console))
                 return;
 
-            if (args.Anchored)
-            {
-                _cloningConsoleSystem.RecheckConnections(component.ConnectedConsole.Value, console.CloningPod, uid, console);
-                return;
-            }
             _cloningConsoleSystem.UpdateUserInterface(component.ConnectedConsole.Value, console);
         }
+
         private MedicalScannerStatus GetStatus(EntityUid uid, MedicalScannerComponent scannerComponent)
         {
-            if (this.IsPowered(uid, EntityManager))
-            {
-                var body = scannerComponent.BodyContainer.ContainedEntity;
-                if (body == null)
-                    return MedicalScannerStatus.Open;
+            if (!this.IsPowered(uid, EntityManager))
+                return MedicalScannerStatus.Off;
 
-                if (!TryComp<MobStateComponent>(body.Value, out var state))
-                {   // Is not alive or dead or critical
-                    return MedicalScannerStatus.Yellow;
-                }
+            var body = scannerComponent.BodyContainer.ContainedEntity;
+            if (body == null)
+                return MedicalScannerStatus.Open;
 
-                return GetStatusFromDamageState(body.Value, state);
-            }
-            return MedicalScannerStatus.Off;
+            if (!TryComp<MobStateComponent>(body.Value, out var state))
+                return MedicalScannerStatus.Yellow;
+
+            if (_mobStateSystem.IsAlive(body.Value, state))
+                return MedicalScannerStatus.Green;
+
+            if (_mobStateSystem.IsCritical(body.Value, state))
+                return MedicalScannerStatus.Red;
+
+            if (_mobStateSystem.IsDead(body.Value, state))
+                return MedicalScannerStatus.Death;
+
+            return MedicalScannerStatus.Yellow;
         }
 
         public static bool IsOccupied(MedicalScannerComponent scannerComponent)
@@ -180,26 +178,10 @@ namespace Content.Server.Medical
             return scannerComponent.BodyContainer.ContainedEntity != null;
         }
 
-        private MedicalScannerStatus GetStatusFromDamageState(EntityUid uid, MobStateComponent state)
-        {
-            if (_mobStateSystem.IsAlive(uid, state))
-                return MedicalScannerStatus.Green;
-
-            if (_mobStateSystem.IsCritical(uid, state))
-                return MedicalScannerStatus.Red;
-
-            if (_mobStateSystem.IsDead(uid, state))
-                return MedicalScannerStatus.Death;
-
-            return MedicalScannerStatus.Yellow;
-        }
-
         private void UpdateAppearance(EntityUid uid, MedicalScannerComponent scannerComponent)
         {
             if (TryComp<AppearanceComponent>(uid, out var appearance))
-            {
                 _appearance.SetData(uid, MedicalScannerVisuals.Status, GetStatus(uid, scannerComponent), appearance);
-            }
         }
 
         public override void Update(float frameTime)
@@ -214,20 +196,14 @@ namespace Content.Server.Medical
 
             var query = EntityQueryEnumerator<MedicalScannerComponent>();
             while (query.MoveNext(out var uid, out var scanner))
-            {
                 UpdateAppearance(uid, scanner);
-            }
         }
 
         public void InsertBody(EntityUid uid, EntityUid to_insert, MedicalScannerComponent? scannerComponent)
         {
-            if (!Resolve(uid, ref scannerComponent))
-                return;
-
-            if (scannerComponent.BodyContainer.ContainedEntity != null)
-                return;
-
-            if (!HasComp<BodyComponent>(to_insert))
+            if (!Resolve(uid, ref scannerComponent)
+                || scannerComponent.BodyContainer.ContainedEntity != null
+                || !HasComp<BodyComponent>(to_insert))
                 return;
 
             _containerSystem.Insert(to_insert, scannerComponent.BodyContainer);
@@ -236,10 +212,8 @@ namespace Content.Server.Medical
 
         public void EjectBody(EntityUid uid, MedicalScannerComponent? scannerComponent)
         {
-            if (!Resolve(uid, ref scannerComponent))
-                return;
-
-            if (scannerComponent.BodyContainer.ContainedEntity is not { Valid: true } contained)
+            if (!Resolve(uid, ref scannerComponent)
+                || scannerComponent.BodyContainer.ContainedEntity is not { Valid: true } contained)
                 return;
 
             _containerSystem.Remove(contained, scannerComponent.BodyContainer);

@@ -1,7 +1,7 @@
 - type: trait
   id: CPRTraining
   category: Mental
-  points: -2
+  points: -4
   components:
     - type: CPRTraining
   requirements:
@@ -18,7 +18,7 @@
 - type: trait
   id: SelfAware
   category: Mental
-  points: -2
+  points: -4
   components:
     - type: SelfAware
       analyzableTypes:
@@ -52,6 +52,7 @@
       inverted: true
       species:
         - Dwarf
+        - IPC
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 0.5
@@ -59,7 +60,7 @@
 - type: trait
   id: LiquorLifeline
   category: Physical
-  points: -3
+  points: -6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -75,6 +76,7 @@
       inverted: true
       species:
         - Dwarf
+        - IPC
   components:
     - type: LiquorLifeline
     - type: LightweightDrunk
@@ -83,7 +85,7 @@
 - type: trait
   id: Thieving
   category: Physical
-  points: -4
+  points: -8
   components:
     - type: Thieving
       ignoreStripHidden: true
@@ -99,7 +101,7 @@
 - type: trait
   id: SignLanguage
   category: Visual
-  points: -1
+  points: -2
   components:
     - type: LanguageKnowledgeModifier
       speaks:
@@ -110,7 +112,7 @@
 - type: trait
   id: Voracious
   category: Physical
-  points: -1
+  points: -2
   components:
     - type: ConsumeDelayModifier
       foodDelayMultiplier: 0.5
@@ -120,11 +122,12 @@
       inverted: true
       species:
         - Vulpkanin
+        - IPC
 
 - type: trait
   id: ParkourTraining
   category: Physical
-  points: -3
+  points: -5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -137,15 +140,15 @@
         - Diona
   components:
     - type: ClimbDelayModifier
-      climbDelayMultiplier: 0.70
+      climbDelayMultiplier: 0.35
     - type: LayingDownModifier
-      layingDownCooldownMultiplier: 0.8
-      downedSpeedMultiplierMultiplier: 1.25
+      layingDownCooldownMultiplier: 0.5
+      downedSpeedMultiplierMultiplier: 1.65
 
 - type: trait
   id: LightStep
   category: Auditory
-  points: -1
+  points: -2
   components:
     - type: FootstepVolumeModifier
       sprintVolumeModifier: -10
@@ -159,7 +162,7 @@
 - type: trait
   id: Singer
   category: Auditory
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -168,3 +171,119 @@
   components:
     - type: Singer
       proto: NormalSinger
+
+- type: trait
+  id: LatentPsychic
+  category: Mental
+  points: -4
+  components:
+    - type: Psionic
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain
+        - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PsionicInsulation
+
+- type: trait
+  id: PsionicInsulation
+  category: Mental
+  points: -10 #Buy a significant disability to get this.
+  components:
+    - type: PsionicInsulation
+    - type: Mindbroken
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain
+        - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LatentPsychic
+
+- type: trait
+  id: NaturalTelepath
+  category: Mental
+  points: -2
+  psionicPowers:
+    - TelepathyPower
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector
+        - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+
+- type: trait
+  id: TrapAvoider
+  category: Physical
+  points: -3
+  components:
+    - type: StepTriggerImmune
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+        - Harpy
+
+- type: trait
+  id: AnomalousPositronics
+  category: Mental
+  points: -4
+  componentRemovals:
+    - PsionicInsulation
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC

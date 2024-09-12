@@ -49,10 +49,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 var equipmentEntity = EntityManager.SpawnEntity(equipmentStr, EntityManager.GetComponent<TransformComponent>(entity).Coordinates);
                 InventorySystem.TryEquip(entity, equipmentEntity, slot.Name, true, force:true);
             }
+            
         }
 
         if (TryComp(entity, out HandsComponent? handsComponent))
-            return;
         {
             var inhand = startingGear.Inhand;
             var coords = EntityManager.GetComponent<TransformComponent>(entity).Coordinates;
@@ -61,8 +61,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 var inhandEntity = EntityManager.SpawnEntity(prototype, coords);
 
                 if (_handsSystem.TryGetEmptyHand(entity, out var emptyHand, handsComponent))
+                {
                     _handsSystem.TryPickup(entity, inhandEntity, emptyHand, checkActionBlocker: false,
                         handsComp: handsComponent);
+                }
             }
         }
 
@@ -78,7 +80,9 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                     continue;
 
                 foreach (var ent in entProtos)
+                {
                     ents.Add(Spawn(ent, coords));
+                }
 
                 if (inventoryComp == null
                     || !InventorySystem.TryGetSlotEntity(entity, slot, out var slotEnt,
@@ -87,7 +91,9 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                     continue;
 
                 foreach (var ent in ents)
+                {
                     _storage.Insert(slotEnt.Value, ent, out _, storageComp: storage, playSound: false);
+                }
             }
         }
     }

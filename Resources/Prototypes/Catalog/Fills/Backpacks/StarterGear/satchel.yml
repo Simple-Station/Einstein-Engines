@@ -162,6 +162,11 @@
 
 - type: entity
   noSpawn: true
+  parent: ClothingBackpackSatchelRobotics
+  id: ClothingBackpackSatchelRoboticsFilled
+
+- type: entity
+  noSpawn: true
   parent: ClothingBackpackSatchelHydroponics
   id: ClothingBackpackSatchelHydroponicsFilled
 

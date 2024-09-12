@@ -137,6 +137,21 @@
   - WeaponParticleDecelerator
   - HoloprojectorField
 
+- type: technology
+  id: Metempsychosis
+  name: research-technology-metempsychosis
+  icon:
+    sprite: Structures/Machines/metempsychotic.rsi
+    state: cloning_idle
+  discipline: Experimental
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+    - BiomassReclaimerMachineCircuitboard
+    - CloningConsoleComputerCircuitboard
+    - MedicalScannerMachineCircuitboard
+    - MetempsychoticMachineCircuitboard
+
 # Tier 3
 
 #- type: technology # DeltaV - LRP

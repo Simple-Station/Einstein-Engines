@@ -62,7 +62,16 @@
   - type: Dispellable
   - type: Damageable
     damageContainer: CorporealSpirit
-    damageModifierSet: CorporealSpirit
+    damageModifierSet: FireSpirit
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
+    allowedStates:
+    - Alive
+    damageCap: 120
+    damage:
+      types:
+        Cold: -0.07
+      groups:
+        Brute: -0.07
   - type: Speech
     speechSounds: Bass
   - type: Puller
@@ -81,10 +90,15 @@
   - type: ZombieImmune # No zombie servant
   - type: RandomMetadata
     nameSegments: [names_golem]
-  - type: PotentialPsionic
   - type: Psionic
     removable: false
-  # - type: PyrokinesisPower # Pending psionic rework
+    psychognomicDescriptors:
+      - p-descriptor-bound
+      - p-descriptor-cyclic
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - PyrokinesisPower
+      - TelepathyPower
   - type: Grammar
     attributes:
       proper: true
@@ -108,7 +122,7 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Epistemics
-      time: 14400 # DeltaV - 4 hours
+      time: 14400 # 4 hours
 
 - type: entity
   parent: WelderExperimental

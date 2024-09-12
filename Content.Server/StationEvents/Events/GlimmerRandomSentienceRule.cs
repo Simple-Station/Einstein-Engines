@@ -2,7 +2,7 @@ using System.Linq;
 using Content.Server.GameTicking.Components;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Ghost.Roles.Components;
-using Content.Server.Psionics;
+using Content.Shared.Abilities.Psionics;
 using Content.Server.Speech.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Mobs.Systems;
@@ -51,7 +51,7 @@ internal sealed class GlimmerRandomSentienceRule : StationEventSystem<GlimmerRan
             comp.RoleDescription = Loc.GetString("station-event-random-sentience-role-description", ("name", comp.RoleName));
             RemComp<ReplacementAccentComponent>(target);
             RemComp<MonkeyAccentComponent>(target);
-            EnsureComp<PotentialPsionicComponent>(target);
+            EnsureComp<PsionicComponent>(target);
             EnsureComp<GhostTakeoverAvailableComponent>(target);
         }
     }

@@ -104,6 +104,7 @@
         layer:
         - MobLayer
   - type: FloorOcclusion
+  - type: Mood
   - type: RangedDamageSound
     soundGroups:
       Brute:
@@ -307,6 +308,9 @@
     alternateState: Standing
   - type: OfferItem
   - type: LayingDown
+  - type: Shoving
+  - type: BloodstreamAffectedByMass
+    power: 0.6 # A minimum size felinid will have 30% blood, a minimum size vulp will have 60%, a maximum size oni will have ~200%
 
 - type: entity
   save: false

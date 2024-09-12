@@ -86,6 +86,12 @@ trait-description-Foreigner =
     For one reason or another you do not speak this station's primary language.
     Instead, you have a translator issued to you that only you can use.
 
+trait-name-Saturnine = Saturnine
+trait-description-Saturnine = You are naturally dour and morose. Your mood is permanently decreased by a large amount.
+
+trait-name-Sanguine = Sanguine
+trait-description-Sanguine = You are naturally upbeat and cheerful! Your mood is permanently increased by a large amount.
+
 trait-name-WillToLive = Will To Live
 trait-description-WillToLive =
     You have an unusually strong "will to live", and will resist death more than others.
@@ -190,3 +196,34 @@ trait-description-WeaponsGeneralist =
 
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
+
+trait-name-LatentPsychic = Latent Psychic
+trait-description-LatentPsychic =
+    Your mind and soul are open to the noosphere, allowing for use of Telepathy.
+    Thus, you are eligible for potentially receiving psychic powers.
+    It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.
+
+trait-name-PsionicInsulation = χ Waveform Misalignment
+trait-description-PsionicInsulation =
+    You are a flesh automaton animated by neurotransmitters. Within your skull lies a
+    1.5kg sack of meat pretending at sentience. By modern epistemiological theory, you aren't even a sophont.
+    The good news is that you are immune to most positive and negative effects of psychic powers.
+    There may be other consequences to this malady.
+
+trait-name-NaturalTelepath = Natural Telepath
+trait-description-NaturalTelepath =
+    As a naturally occuring Telepath, you are capable of fluent telepathic communication, regardless of
+    whether or not you possess any notable psychic powers. This offers all of the same benefits and
+    drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
+    still gain powers as normal for a Latent Psychic.
+
+trait-name-TrapAvoider = Trap Avoider
+trait-description-TrapAvoider =
+    You possess a preturnatural sense of traps, and will unconsciously avoid them. You will never trigger
+    floor traps, such as land mines, tripwires, mouse traps(If you're small enough), etc.
+
+trait-name-AnomalousPositronics = Anomalous Positronics
+trait-description-AnomalousPositronics =
+    Whether by intentional design from the manufacturer, black market modifications, or accidental omission,
+    your positronic brain lacks its standard psionic insulation. As a being that can be argued to have a soul,
+    this by extension means that it is possible for you to be influenced by the Noosphere.
