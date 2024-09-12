@@ -18,6 +18,6 @@ public sealed class BloodDeficiencySystem : EntitySystem
             return;
 
         bloodstream.HasBloodDeficiency = true;
-        bloodstream.BloodDeficiencyLossAmount = component.BloodLossAmount;
+        bloodstream.BloodDeficiencyLossPercentage = component.BloodLossPercentage;
     }
 }
