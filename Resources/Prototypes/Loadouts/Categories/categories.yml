@@ -31,6 +31,7 @@
     - JobsCommand
     - JobsEngineering
     - JobsMedical
+    - JobsScience
     - JobsSecurity
     - JobsService
 
@@ -79,9 +80,12 @@
 - type: loadoutCategory
   id: JobsEngineering
 
-- type: loadoutCategory  
+- type: loadoutCategory
   id: JobsMedical
 
+- type: loadoutCategory
+  id: JobsScience
+  
 - type: loadoutCategory
   id: JobsSecurity
 
