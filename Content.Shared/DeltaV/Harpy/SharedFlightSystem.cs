@@ -43,7 +43,7 @@ namespace Content.Shared.DeltaV.Harpy
             component.TimeUntilFlap = 0f;
             _actionsSystem.SetToggled(component.ToggleActionEntity, component.On);
             // Triggers the flight animation
-            RaiseNetworkEvent(new FlightEvent(GetNetEntity(uid), component.On));
+            RaiseNetworkEvent(new FlightEvent(GetNetEntity(uid), component.On, component.IsAnimated, component.Layer ?? string.Empty, component.AnimationKey));
             _staminaSystem.ToggleStaminaDrain(uid, component.StaminaDrainRate, active);
             UpdateHands(uid, active);
             Dirty(uid, component);

@@ -1,9 +1,11 @@
+using Robust.Client.GameObjects;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
-using Robust.Client.GameObjects;
+using Content.Shared.DeltaV.Harpy;
+using Content.Shared.DeltaV.Harpy.Components;
 using Content.Shared.DeltaV.Harpy.Events;
 
-namespace Content.Shared.DeltaV.Harpy
+namespace Content.Client.DeltaV.Harpy
 {
     public sealed class FlightSystem : SharedFlightSystem
     {
@@ -22,22 +24,38 @@ namespace Content.Shared.DeltaV.Harpy
             if (!_entityManager.TryGetComponent(uid, out SpriteComponent? sprite))
                 return;
 
-            var wingLayer = GetHarpyWingLayer(uid, sprite);
-            if (wingLayer == null)
-                return;
-            sprite.LayerSetColor(wingLayer.Value, Color.White);
+            if (args.Layer != string.Empty)
+            {
+                var targetLayer = GetAnimatedLayer(uid, args.Layer, sprite);
+                if (targetLayer == null)
+                    return;
+                sprite.LayerSetColor(targetLayer.Value, Color.White);
+            }
+
+            if (args.IsFlying && args.IsAnimated && args.AnimationKey != "default")
+            {
+                var comp = new FlyingVisualsComponent
+                {
+                    AnimationKey = args.AnimationKey,
+                };
+                AddComp(uid, comp, true);
+            }
+            if (!args.IsFlying)
+            {
+                RemComp<FlyingVisualsComponent>(uid);
+            }
         }
 
-        public int? GetHarpyWingLayer(EntityUid harpyUid, SpriteComponent? sprite = null)
+        public int? GetAnimatedLayer(EntityUid uid, string targetLayer, SpriteComponent? sprite = null)
         {
-            if (!Resolve(harpyUid, ref sprite))
+            if (!Resolve(uid, ref sprite))
                 return null;
 
             int index = 0;
             foreach (var layer in sprite.AllLayers)
             {
                 // This feels like absolute shitcode, isn't there a better way to check for it?
-                if (layer.Rsi?.Path.ToString() == "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi")
+                if (layer.Rsi?.Path.ToString() == targetLayer)
                 {
                     return index;
                 }

@@ -71,7 +71,7 @@ public abstract class SharedFloatingVisualizerSystem : EntitySystem
             return;
         floating.CanFloat = args.IsFlying;
 
-        if (args.IsFlying)
+        if (args.IsFlying && args.IsAnimated)
         {
             FloatAnimation(uid, floating.Offset, floating.AnimationKey, floating.AnimationTime);
         }

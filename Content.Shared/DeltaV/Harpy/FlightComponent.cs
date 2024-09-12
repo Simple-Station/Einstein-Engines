@@ -18,6 +18,10 @@ namespace Content.Shared.DeltaV.Harpy
         [DataField, AutoNetworkedField]
         public EntityUid? ToggleActionEntity;
 
+        /// <summary>
+        /// Is the user flying right now?
+        /// </summary>
+
         [ViewVariables(VVAccess.ReadWrite), DataField("on"), AutoNetworkedField]
         public bool On;
 
@@ -29,20 +33,53 @@ namespace Content.Shared.DeltaV.Harpy
         public float StaminaDrainRate = 3f;
 
         /// <summary>
-        /// Delay until the user becomes weightless.
+        /// DoAfter delay until the user becomes weightless.
         /// </summary>
 
         [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
         public float ActivationDelay = 1.0f;
 
+        /// <summary>
+        /// Path to a sound specifier or collection for the noises made during flight
+        /// </summary>
+
         [DataField("flapSound")]
         public SoundSpecifier FlapSound = new SoundCollectionSpecifier("WingFlaps");
 
         /// <summary>
-        /// Time between flap sounds being played
+        /// Is the flight animated?
+        /// </summary>
+
+        [DataField("isAnimated")]
+        public bool IsAnimated = true;
+
+        /// <summary>
+        /// Does the animation animate a layer?.
+        /// </summary>
+
+        [DataField("isLayerAnimated")]
+        public bool IsLayerAnimated = false;
+
+        /// <summary>
+        /// Which RSI layer path does this animate?
+        /// </summary>
+
+        [DataField("layer")]
+        public string? Layer;
+
+        /// <summary>
+        /// What animation does the flight use?
+        /// </summary>
+
+        [DataField("animationKey")]
+        public string AnimationKey = "default";
+
+        /// <summary>
+        /// Time between sounds being played
         /// </summary>
         [DataField("flapInterval")]
         public float FlapInterval = 1.25f;
+
         public float TimeUntilFlap;
     }
 }

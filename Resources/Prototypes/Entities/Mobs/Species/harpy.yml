@@ -8,6 +8,8 @@
   - type: Dash
     dashAction: "ActionDashFlight"
   - type: Flight
+    isLayerAnimated: true
+    layer: "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi"
   - type: Singer
     proto: HarpySinger
   - type: Sprite
