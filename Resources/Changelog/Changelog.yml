@@ -6253,3 +6253,10 @@ Entries:
   id: 6352
   time: '2024-09-12T00:14:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/911
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Ported a number of jukebox songs from Delta-V.
+  id: 6353
+  time: '2024-09-12T00:14:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/912
