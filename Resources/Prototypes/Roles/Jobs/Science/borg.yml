@@ -9,8 +9,8 @@
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
   nameDataset: NamesAI
-  spawnLoadout: false
   applyTraits: false
+  spawnLoadout: false
   canHavePassport: false
 
 - type: job
@@ -22,4 +22,5 @@
   icon: JobIconBorg
   supervisors: job-supervisors-rd
   jobEntity: PlayerBorgBattery
+  applyTraits: false
   canHavePassport: false
