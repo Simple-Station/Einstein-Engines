@@ -76,5 +76,25 @@
     - type: loadout
       id: LoadoutServiceClownCowToolboxFilled
 
+# Bartender
+- type: characterItemGroup
+  id: LoadoutBartenderOuterwear
+  items:
+    - type: loadout
+      id: LoadoutServiceBartenderArmorDuraVest
 
+- type: characterItemGroup
+  id: LoadoutBartenderAmmo
+  items:
+    - type: loadout
+      id: LoadoutServiceBartenderBoxBeanbags
+    - type: loadout
+      id: LoadoutServiceBartenderBoxLightRifleRubber
 
+- type: characterItemGroup
+  id: LoadoutBartenderWeapon
+  items:
+    - type: loadout
+      id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
+    - type: loadout
+      id: LoadoutServiceBartenderMosinRubber

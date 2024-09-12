@@ -249,6 +249,76 @@
   items:
     - ClothingUniformJumpsuitBartenderPurple
 
+- type: loadout
+  id: LoadoutServiceBartenderArmorDuraVest
+  category: JobsService
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderOuterwear
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingOuterArmorDuraVest
+
+- type: loadout
+  id: LoadoutServiceBartenderBoxBeanbags
+  category: JobsService
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - BoxBeanbag
+
+- type: loadout
+  id: LoadoutServiceBartenderBoxLightRifleRubber
+  category: JobsService
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - MagazineBoxLightRifleRubber
+
+- type: loadout
+  id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
+  category: JobsService
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - WeaponShotgunDoubleBarreledRubber
+
+- type: loadout
+  id: LoadoutServiceBartenderMosinRubber
+  category: JobsService
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - WeaponSniperMosinRubber
+
 # Botanist
 - type: loadout
   id: LoadoutServiceBotanistUniformOveralls
