@@ -6229,3 +6229,16 @@ Entries:
   id: 6350
   time: '2024-09-11T21:03:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/907
+- author: Squishy77
+  changes:
+    - type: Add
+      message: >-
+        added rcds to the list of possible re and ported over the re update from
+        delta 
+    - type: Tweak
+      message: >-
+        tweaked the costs of boards re-machine boards to be more consistent with
+        their post hyper lathe update counter parts
+  id: 6351
+  time: '2024-09-12T00:12:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/910
