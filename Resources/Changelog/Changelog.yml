@@ -6242,3 +6242,14 @@ Entries:
   id: 6351
   time: '2024-09-12T00:12:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/910
+- author: SleepyScarecrow
+  changes:
+    - type: Tweak
+      message: Ethanol Contents
+    - type: Fix
+      message: SnowWhite Recipe
+    - type: Tweak
+      message: Ethanol overdose changed from 15 to 45
+  id: 6352
+  time: '2024-09-12T00:14:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/911
