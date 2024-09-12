@@ -25,7 +25,7 @@
   - type: GhostHearing
   - type: Hands
   - type: Puller
-    specificForce: 1000
+    pushAcceleration: 1000000 # Will still be capped in max speed
     maxPushRange: 20
   - type: CombatMode
   - type: Physics

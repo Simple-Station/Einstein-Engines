@@ -48,10 +48,16 @@ public sealed partial class PullerComponent : Component
     public bool NeedsHands = true;
 
     /// <summary>
-    ///     The specific force of pushing, in newtons per kilogram. This is multiplied by the puller's physics mass.
+    ///     The maximum acceleration of pushing, in meters per second squared.
     /// </summary>
     [DataField]
-    public float SpecificForce = 0.3f;
+    public float PushAcceleration = 0.3f;
+
+    /// <summary>
+    ///     The maximum speed to which the pulled entity may be accelerated relative to the push direction, in meters per second.
+    /// </summary>
+    [DataField]
+    public float MaxPushSpeed = 1.2f;
 
     /// <summary>
     ///     The maximum distance between the puller and the point towards which the puller may attempt to pull it, in meters.

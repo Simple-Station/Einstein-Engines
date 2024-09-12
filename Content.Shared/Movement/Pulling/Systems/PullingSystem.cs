@@ -112,7 +112,7 @@ public sealed class PullingSystem : EntitySystem
             if (pullerComp.PushingTowards is null)
                 continue;
 
-            // If pushing but the target position is invalid, or the push action has expired, stop pushing
+            // If pushing but the target position is invalid, or the push action has expired or finished, stop pushing
             if (pullerComp.NextPushStop < _timing.CurTime
                 || !(pullerComp.PushingTowards.Value.ToMap(EntityManager, _xformSys) is var pushCoordinates)
                 || pushCoordinates.MapId != pulledXForm.MapID)
@@ -122,20 +122,28 @@ public sealed class PullingSystem : EntitySystem
                 continue;
             }
 
+            // Actual force calculation. All the Vector2's below are in map coordinates.
             var desiredDeltaPos = pushCoordinates.Position - Transform(pulled).Coordinates.ToMapPos(EntityManager, _xformSys);
-            var desiredForce = pulledPhysics.Mass * desiredDeltaPos;
-            var maxSourceForce = pullerComp.SpecificForce * pullerPhysics.Mass;
-            var actualForce = desiredForce.LengthSquared() > maxSourceForce * maxSourceForce ? desiredDeltaPos.Normalized() * maxSourceForce : desiredForce;
-
-            // Cannot use ApplyForce here because it will be cleared on the next physics substep which will render it ultimately useless
-            // The alternative is to run this function on every physics substep, but that is way too expensive for such a minor system
-            _physics.ApplyLinearImpulse(pulled, actualForce);
-            _physics.ApplyLinearImpulse(puller, -actualForce);
-            pulledComp.BeingActivelyPushed = true;
-
-            // Means the pullee has been pushed close enough to the destination
-            if (actualForce == desiredForce)
+            if (desiredDeltaPos.LengthSquared() < 0.1f)
+            {
                 pullerComp.PushingTowards = null;
+                continue;
+            }
+
+            var velocityAndDirectionAngle = new Angle(pulledPhysics.LinearVelocity) - new Angle(desiredDeltaPos);
+            var currentRelativeSpeed = pulledPhysics.LinearVelocity.Length() * (float) Math.Cos(velocityAndDirectionAngle.Theta);
+            var desiredAcceleration = MathF.Max(0f, pullerComp.MaxPushSpeed - currentRelativeSpeed);
+
+            var desiredImpulse = pulledPhysics.Mass * desiredDeltaPos;
+            var maxSourceImpulse = MathF.Min(pullerComp.PushAcceleration, desiredAcceleration) * pullerPhysics.Mass;
+            var actualImpulse = desiredImpulse.LengthSquared() > maxSourceImpulse * maxSourceImpulse ? desiredDeltaPos.Normalized() * maxSourceImpulse : desiredImpulse;
+
+            // Ideally we'd want to apply forces instead of impulses, however...
+            // We cannot use ApplyForce here because it will be cleared on the next physics substep which will render it ultimately useless
+            // The alternative is to run this function on every physics substep, but that is way too expensive for such a minor system
+            _physics.ApplyLinearImpulse(pulled, actualImpulse);
+            _physics.ApplyLinearImpulse(puller, -actualImpulse);
+            pulledComp.BeingActivelyPushed = true;
         }
         query.Dispose();
     }
