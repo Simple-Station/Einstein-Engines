@@ -296,12 +296,12 @@
           state: icon
     - type: RandomSpawner
       rarePrototypes:
-        - CratePartsT2
-        - CratePartsT3
-        - CratePartsT3T4
-        - CratePartsT4
+        - SalvagePartsT2Spawner
+        - SalvagePartsT3Spawner
+        - SalvagePartsT3T4Spawner
+        - SalvagePartsT4Spawner
       rareChance: 0.4
       prototypes:
         - CrateSalvageAssortedGoodies
       chance: 0.9
-      offset: 0.0
+      offset: 0.2
