@@ -283,3 +283,25 @@
       - MobFleshLoverSalvage
       chance: 1
       offset: 0.2
+
+- type: entity
+  name: Salvage Loot Spawner
+  id: SalvageLootSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Storage/Crates/generic.rsi
+          state: icon
+    - type: RandomSpawner
+      rarePrototypes:
+        - CratePartsT2
+        - CratePartsT3
+        - CratePartsT3T4
+        - CratePartsT4
+      rareChance: 0.4
+      prototypes:
+        - CrateSalvageAssortedGoodies
+      chance: 0.9
+      offset: 0.0
