@@ -16,8 +16,10 @@
       sound: /Audio/SimpleStation14/Items/Handling/component_drop.ogg
     - type: EmitSoundOnLand
       sound: /Audio/SimpleStation14/Items/Handling/component_drop.ogg
-
 # Rating 1
+    - type: GuideHelp
+      guides:
+      - MachineUpgrading
 
 - type: entity
   id: CapacitorStockPart
