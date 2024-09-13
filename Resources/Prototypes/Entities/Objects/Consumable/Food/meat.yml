@@ -622,6 +622,9 @@
   id: FoodMeatWheat
   description: This doesn't look like meat, but your standards aren't that high to begin with.
   components:
+  - type: FlavorProfile
+    flavors:
+      - falsemeat
   - type: Sprite
     state: clump
   - type: SolutionContainerManager
@@ -952,10 +955,8 @@
     node: bacon
   - type: FoodSequenceElement
     entries:
-      burger:
-        sprite:
-          sprite: Objects/Consumable/Food/meat.rsi
-          state: bacon-cooked
+      Burger: MeatBacon
+      Taco: MeatBacon
 
 - type: entity
   name: cooked bear

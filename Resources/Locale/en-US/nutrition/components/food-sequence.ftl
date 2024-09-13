@@ -2,7 +2,6 @@ food-sequence-no-space = You can't put any more!
 
 food-sequence-standart-gen = {$prefix}{$content}{$suffix}
 
-#Burger
 food-sequence-burger-suffix = burger
 
 food-sequence-burger-content-raw-meat = raw
@@ -56,6 +55,7 @@ food-sequence-burger-content-rice = rice
 food-sequence-burger-content-soy = soy
 food-sequence-burger-content-koibean = koi
 food-sequence-burger-content-watermelon = water
+food-sequence-burger-content-holymelon = holy
 food-sequence-burger-content-cannabis = funny
 food-sequence-burger-content-rainbow-cannabis = FUNNY
 food-sequence-burger-content-tobacco = tobaco
@@ -68,3 +68,17 @@ food-sequence-burger-content-appendix = appendi
 food-sequence-burger-content-ears = ear
 food-sequence-burger-content-stomach = stomach
 food-sequence-burger-content-liver = liver
+food-sequence-burger-content-suppermatter = supper
+food-sequence-burger-content-hamster = hams
+food-sequence-burger-content-berries = berri
+food-sequence-burger-content-spacemans-trumpet = spacetrump
+food-sequence-burger-content-extradimensional-orange = 3d
+food-sequence-burger-content-world-pea = peace
+
+# TACO
+
+food-sequence-taco-gen = taco with {$content}
+
+# SKEWER
+
+food-sequence-skewer-gen = {$content} kebab
