@@ -6,13 +6,16 @@ namespace Content.Server.Bed.Components
     [RegisterComponent]
     public sealed partial class StasisBedComponent : Component
     {
+        [DataField]
+        public float BaseMultiplier = 10f;
+
         /// <summary>
         ///     What the metabolic update rate will be multiplied by (higher = slower metabolism)
         /// </summary>
-        [DataField]
+        [ViewVariables(VVAccess.ReadWrite)]
         public float Multiplier = 10f;
 
-        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+        [DataField("machinePartMetabolismModifier", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
         public string MachinePartMetabolismModifier = "Capacitor";
     }
 }
