@@ -31,7 +31,6 @@ public sealed class FatExtractorSystem : EntitySystem
     {
         SubscribeLocalEvent<FatExtractorComponent, RefreshPartsEvent>(OnRefreshParts);
         SubscribeLocalEvent<FatExtractorComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-        SubscribeLocalEvent<FatExtractorComponent, EntityUnpausedEvent>(OnUnpaused);
         SubscribeLocalEvent<FatExtractorComponent, GotEmaggedEvent>(OnGotEmagged);
         SubscribeLocalEvent<FatExtractorComponent, StorageAfterCloseEvent>(OnClosed);
         SubscribeLocalEvent<FatExtractorComponent, StorageAfterOpenEvent>(OnOpen);
@@ -47,11 +46,6 @@ public sealed class FatExtractorSystem : EntitySystem
     private void OnUpgradeExamine(EntityUid uid, FatExtractorComponent component, UpgradeExamineEvent args)
     {
         args.AddPercentageUpgrade("fat-extractor-component-rate", (float) component.NutritionPerSecond / component.BaseNutritionPerSecond);
-    }
-
-    private void OnUnpaused(EntityUid uid, FatExtractorComponent component, ref EntityUnpausedEvent args)
-    {
-        component.NextUpdate += args.PausedTime;
     }
 
     private void OnGotEmagged(EntityUid uid, FatExtractorComponent component, ref GotEmaggedEvent args)
