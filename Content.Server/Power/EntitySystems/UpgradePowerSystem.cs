@@ -5,8 +5,8 @@ using Content.Server.Power.Components;
 namespace Content.Server.Power.EntitySystems;
 
 /// <summary>
-/// This handles using upgraded machine parts
-/// to modify the power supply/generation of a machine.
+///     This handles using upgraded machine parts
+///     to modify the power supply/generation of a machine.
 /// </summary>
 public sealed class UpgradePowerSystem : EntitySystem
 {
@@ -69,8 +69,10 @@ public sealed class UpgradePowerSystem : EntitySystem
 
     private void OnSupplierMapInit(EntityUid uid, UpgradePowerSupplierComponent component, MapInitEvent args)
     {
-        if (TryComp<PowerSupplierComponent>(uid, out var supplier))
-            component.BaseSupplyRate = supplier.MaxSupply;
+        if (!TryComp<PowerSupplierComponent>(uid, out var supplier))
+            return;
+
+        component.BaseSupplyRate = supplier.MaxSupply;
     }
 
     private void OnSupplierRefreshParts(EntityUid uid, UpgradePowerSupplierComponent component, RefreshPartsEvent args)
@@ -93,8 +95,10 @@ public sealed class UpgradePowerSystem : EntitySystem
 
         component.ActualScalar = supply / component.BaseSupplyRate;
 
-        if (TryComp<PowerSupplierComponent>(uid, out var powa))
-            powa.MaxSupply = supply;
+        if (!TryComp<PowerSupplierComponent>(uid, out var powa))
+            return;
+
+        powa.MaxSupply = supply;
     }
 
     private void OnSupplierUpgradeExamine(EntityUid uid, UpgradePowerSupplierComponent component, UpgradeExamineEvent args)
@@ -104,8 +108,10 @@ public sealed class UpgradePowerSystem : EntitySystem
 
     private void OnSupplyRampingMapInit(EntityUid uid, UpgradePowerSupplyRampingComponent component, MapInitEvent args)
     {
-        if (TryComp<PowerNetworkBatteryComponent>(uid, out var battery))
-            component.BaseRampRate = battery.SupplyRampRate;
+        if (!TryComp<PowerNetworkBatteryComponent>(uid, out var battery))
+            return;
+
+        component.BaseRampRate = battery.SupplyRampRate;
     }
 
     private void OnSupplyRampingRefreshParts(EntityUid uid, UpgradePowerSupplyRampingComponent component, RefreshPartsEvent args)
@@ -128,8 +134,10 @@ public sealed class UpgradePowerSystem : EntitySystem
 
         component.ActualScalar = rampRate / component.BaseRampRate;
 
-        if (TryComp<PowerNetworkBatteryComponent>(uid, out var battery))
-            battery.SupplyRampRate = rampRate;
+        if (!TryComp<PowerNetworkBatteryComponent>(uid, out var battery))
+            return;
+
+        battery.SupplyRampRate = rampRate;
     }
 
     private void OnSupplyRampingUpgradeExamine(EntityUid uid, UpgradePowerSupplyRampingComponent component, UpgradeExamineEvent args)

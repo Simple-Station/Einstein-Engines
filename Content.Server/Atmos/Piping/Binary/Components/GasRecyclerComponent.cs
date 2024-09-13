@@ -7,7 +7,6 @@ namespace Content.Server.Atmos.Piping.Binary.Components
     [RegisterComponent]
     public sealed partial class GasRecyclerComponent : Component
     {
-        [ViewVariables(VVAccess.ReadOnly)]
         [DataField("reacting")]
         public Boolean Reacting { get; set; } = false;
 
@@ -19,28 +18,28 @@ namespace Content.Server.Atmos.Piping.Binary.Components
         [DataField("outlet")]
         public string OutletName { get; set; } = "outlet";
 
-        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
         public float MinTemp = 300 + Atmospherics.T0C;
 
-        [DataField("BaseMinTemp")]
+        [DataField]
         public float BaseMinTemp = 300 + Atmospherics.T0C;
 
-        [DataField("machinePartMinTemp", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
         public string MachinePartMinTemp = "Capacitor";
 
-        [DataField("partRatingMinTempMultiplier")]
+        [DataField]
         public float PartRatingMinTempMultiplier = 0.95f;
 
         [ViewVariables(VVAccess.ReadWrite)]
         public float MinPressure = 30 * Atmospherics.OneAtmosphere;
 
-        [DataField("BaseMinPressure")]
+        [DataField]
         public float BaseMinPressure = 30 * Atmospherics.OneAtmosphere;
 
-        [DataField("machinePartMinPressure", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
         public string MachinePartMinPressure = "Manipulator";
 
-        [DataField("partRatingMinPressureMultiplier")]
+        [DataField]
         public float PartRatingMinPressureMultiplier = 0.8f;
     }
 }

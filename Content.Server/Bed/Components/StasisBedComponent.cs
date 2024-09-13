@@ -15,7 +15,7 @@ namespace Content.Server.Bed.Components
         [ViewVariables(VVAccess.ReadWrite)]
         public float Multiplier = 10f;
 
-        [DataField("machinePartMetabolismModifier", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
         public string MachinePartMetabolismModifier = "Capacitor";
     }
 }

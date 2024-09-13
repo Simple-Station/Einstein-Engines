@@ -39,51 +39,51 @@ namespace Content.Server.Atmos.Portable
         /// <summary>
         /// Maximum internal pressure before it refuses to take more.
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
         public float MaxPressure = 2500;
 
         /// <summary>
-        /// The base amount of maximum internal pressure
+        ///     The base amount of maximum internal pressure
         /// </summary>
-        [DataField("baseMaxPressure")]
+        [DataField]
         public float BaseMaxPressure = 2500;
 
         /// <summary>
-        /// The machine part that modifies the maximum internal pressure
+        ///     The machine part that modifies the maximum internal pressure
         /// </summary>
-        [DataField("machinePartMaxPressure", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
         public string MachinePartMaxPressure = "MatterBin";
 
         /// <summary>
-        /// How much the <see cref="MachinePartMaxPressure"/> will affect the pressure.
-        /// The value will be multiplied by this amount for each increasing part tier.
+        ///     How much the <see cref="MachinePartMaxPressure"/> will affect the pressure.
+        ///     The value will be multiplied by this amount for each increasing part tier.
         /// </summary>
-        [DataField("partRatingMaxPressureModifier")]
+        [DataField]
         public float PartRatingMaxPressureModifier = 1.5f;
 
         /// <summary>
-        /// The speed at which gas is scrubbed from the environment.
+        ///     The speed at which gas is scrubbed from the environment.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
         public float TransferRate = 800;
 
         /// <summary>
-        /// The base speed at which gas is scrubbed from the environment.
+        ///     The base speed at which gas is scrubbed from the environment.
         /// </summary>
-        [DataField("baseTransferRate")]
+        [DataField]
         public float BaseTransferRate = 800;
 
         /// <summary>
-        /// The machine part which modifies the speed of <see cref="TransferRate"/>
+        ///     The machine part which modifies the speed of <see cref="TransferRate"/>
         /// </summary>
-        [DataField("machinePartTransferRate", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
         public string MachinePartTransferRate = "Manipulator";
 
         /// <summary>
         /// How much the <see cref="MachinePartTransferRate"/> will modify the rate.
         /// The value will be multiplied by this amount for each increasing part tier.
         /// </summary>
-        [DataField("partRatingTransferRateModifier")]
+        [DataField]
         public float PartRatingTransferRateModifier = 1.4f;
     }
 }

@@ -37,7 +37,7 @@ namespace Content.Server.Gravity
         // 0 -> 1
         [ViewVariables(VVAccess.ReadWrite)] [DataField("charge")] public float Charge { get; set; } = 1;
 
-        [DataField("machinePartMaxChargeMultiplier", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
         public string MachinePartMaxChargeMultiplier = "Capacitor";
 
         /// <summary>

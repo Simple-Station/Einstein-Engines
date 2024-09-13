@@ -10,19 +10,19 @@ namespace Content.Server.Power.Components
         /// <summary>
         ///     The machine part that affects the power capacity.
         /// </summary>
-        [DataField("machinePartPowerCapacity", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
         public string MachinePartPowerCapacity = "PowerCell";
 
         /// <summary>
         ///     The machine part rating is raised to this power when calculating power gain
         /// </summary>
-        [DataField("maxChargeMultiplier")]
+        [DataField]
         public float MaxChargeMultiplier = 2f;
 
         /// <summary>
         ///     Power gain scaling
         /// </summary>
-        [DataField("baseMaxCharge")]
+        [DataField]
         public float BaseMaxCharge = 8000000;
     }
 }

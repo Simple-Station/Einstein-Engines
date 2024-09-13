@@ -4,26 +4,26 @@ namespace Content.Server.Chemistry.Components;
 public sealed partial class SolutionHeaterComponent : Component
 {
     /// <summary>
-    /// How much heat is added per second to the solution, with no upgrades.
+    ///     How much heat is added per second to the solution, with no upgrades.
     /// </summary>
-    [DataField("baseHeatPerSecond")]
+    [DataField]
     public float BaseHeatPerSecond = 120;
 
     /// <summary>
-    /// How much heat is added per second to the solution, taking upgrades into account.
+    ///     How much heat is added per second to the solution, taking upgrades into account.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     public float HeatPerSecond;
 
     /// <summary>
-    /// The machine part that affects the heat multiplier.
+    ///     The machine part that affects the heat multiplier.
     /// </summary>
-    [DataField("machinePartHeatMultiplier")]
+    [DataField]
     public string MachinePartHeatMultiplier = "Capacitor";
 
     /// <summary>
-    /// How much each upgrade multiplies the heat by.
+    ///     How much each upgrade multiplies the heat by.
     /// </summary>
-    [DataField("partRatingHeatMultiplier")]
+    [DataField]
     public float PartRatingHeatMultiplier = 1.5f;
 }

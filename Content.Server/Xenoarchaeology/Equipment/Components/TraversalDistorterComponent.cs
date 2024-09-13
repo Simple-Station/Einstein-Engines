@@ -13,13 +13,13 @@ public sealed partial class TraversalDistorterComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public float BiasChance;
 
-    [DataField("baseBiasChance")]
+    [DataField]
     public float BaseBiasChance = 0.7f;
 
-    [DataField("machinePartBiasChance", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
     public string MachinePartBiasChance = "Manipulator";
 
-    [DataField("partRatingBiasChance")]
+    [DataField]
     public float PartRatingBiasChance = 1.1f;
 
     [ViewVariables(VVAccess.ReadWrite)]

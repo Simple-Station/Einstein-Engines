@@ -11,26 +11,26 @@ public sealed partial class UpgradePowerSupplierComponent : Component
     public float BaseSupplyRate;
 
     /// <summary>
-    /// The machine part that affects the power supplu.
+    ///     The machine part that affects the power supplu.
     /// </summary>
-    [DataField("machinePartPowerSupply", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>)), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
     public string MachinePartPowerSupply = "Capacitor";
 
     /// <summary>
-    /// The multiplier used for scaling the power supply.
+    ///     The multiplier used for scaling the power supply.
     /// </summary>
-    [DataField("powerSupplyMultiplier", required: true), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
     public float PowerSupplyMultiplier = 1f;
 
     /// <summary>
-    /// What type of scaling is being used?
+    ///     What type of scaling is being used?
     /// </summary>
-    [DataField("scaling", required: true), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
     public MachineUpgradeScalingType Scaling;
 
     /// <summary>
-    /// The current value that the power supply is being scaled by,
+    ///     The current value that the power supply is being scaled by,
     /// </summary>
-    [DataField("actualScalar"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float ActualScalar = 1f;
 }
