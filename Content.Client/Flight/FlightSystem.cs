@@ -21,8 +21,8 @@ namespace Content.Client.Flight
             Logger.Debug("Starting onFlight!");
             var uid = GetEntity(args.Uid);
             if (!_entityManager.TryGetComponent(uid, out SpriteComponent? sprite)
-            || !args.IsAnimated
-            || !_entityManager.TryGetComponent(uid, out FlightComponent? flight))
+                || !args.IsAnimated
+                || !_entityManager.TryGetComponent(uid, out FlightComponent? flight))
                 return;
 
 
