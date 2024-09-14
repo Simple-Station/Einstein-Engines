@@ -1,0 +1,31 @@
+preset raw;
+
+varying highp vec2 Pos;
+varying highp vec4 VtxModulate;
+
+uniform highp float Speed;
+uniform highp float Dis;
+uniform highp float Offset;
+
+void fragment() {
+    // Output the final color
+    COLOR = zTexture(UV);
+}
+
+void vertex() {
+    vec2 pos = aPos;
+
+    // Apply MVP transformation first
+    vec2 transformedPos = apply_mvp(pos);
+
+    // Calculate vertical movement in screen space
+    float verticalOffset = sin(TIME * 3.0) * 0.01;
+
+    // Apply vertical movement after MVP transformation
+    transformedPos.y += verticalOffset;
+
+    // Assign the final position
+    VERTEX = transformedPos;
+
+    // Keep the original UV coordinates
+}

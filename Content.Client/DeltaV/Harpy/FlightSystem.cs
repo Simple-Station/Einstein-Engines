@@ -4,6 +4,7 @@ using Content.Shared.Humanoid.Markings;
 using Content.Shared.DeltaV.Harpy;
 using Content.Shared.DeltaV.Harpy.Components;
 using Content.Shared.DeltaV.Harpy.Events;
+using Content.Client.DeltaV.Harpy.Components;
 
 namespace Content.Client.DeltaV.Harpy
 {
@@ -20,16 +21,17 @@ namespace Content.Client.DeltaV.Harpy
 
         private void OnFlight(FlightEvent args)
         {
+            Logger.Debug("Starting onFlight!");
             var uid = GetEntity(args.Uid);
-            if (!_entityManager.TryGetComponent(uid, out SpriteComponent? sprite))
+            if (!_entityManager.TryGetComponent(uid, out SpriteComponent? sprite) || !args.IsAnimated)
                 return;
 
-            if (args.Layer != string.Empty)
+            int? targetLayer = null;
+            if (args.IsLayerAnimated && args.Layer != string.Empty)
             {
-                var targetLayer = GetAnimatedLayer(uid, args.Layer, sprite);
+                targetLayer = GetAnimatedLayer(uid, args.Layer, sprite);
                 if (targetLayer == null)
                     return;
-                sprite.LayerSetColor(targetLayer.Value, Color.White);
             }
 
             if (args.IsFlying && args.IsAnimated && args.AnimationKey != "default")
@@ -37,8 +39,10 @@ namespace Content.Client.DeltaV.Harpy
                 var comp = new FlyingVisualsComponent
                 {
                     AnimationKey = args.AnimationKey,
+                    AnimateLayer = args.IsLayerAnimated,
+                    TargetLayer = targetLayer,
                 };
-                AddComp(uid, comp, true);
+                AddComp(uid, comp);
             }
             if (!args.IsFlying)
             {

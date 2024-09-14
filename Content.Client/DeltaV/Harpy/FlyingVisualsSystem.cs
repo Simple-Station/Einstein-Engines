@@ -1,57 +1,66 @@
+using Content.Client.DeltaV.Harpy.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Shared.DeltaV.Harpy.Events;
-using Content.Shared.DeltaV.Harpy.Components;
 
 namespace Content.Client.DeltaV.Harpy;
 
 /// <summary>
 /// Handles offsetting an entity while flying
 /// </summary>
-public abstract class FlyingVisualizerSystem : EntitySystem
+public sealed class FlyingVisualizerSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    private ShaderInstance _shader = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
     public override void Initialize()
     {
         base.Initialize();
-
-        _shader = _protoMan.Index<ShaderPrototype>("Wave").InstanceUnique();
-
         SubscribeLocalEvent<FlyingVisualsComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<FlyingVisualsComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<FlyingVisualsComponent, BeforePostShaderRenderEvent>(OnBeforeShaderPost);
     }
 
-    private void OnStartup(EntityUid uid, FlyingVisualsComponent comp, ref ComponentStartup args)
+    private void OnStartup(EntityUid uid, FlyingVisualsComponent comp, ComponentStartup args)
     {
-        _shader = _protoMan.Index<ShaderPrototype>("Wave").InstanceUnique();
-        comp.Offset = _random.NextFloat(0, 1000);
-        SetShader(uid, _shader);
+        comp.Shader = _protoMan.Index<ShaderPrototype>(comp.AnimationKey).InstanceUnique();
+        //comp.Rotation = _random.NextFloat(0, 1000);
+        Logger.Debug($"Executing OnStartup! with {comp.Shader}, {comp.AnimateLayer}, {comp.TargetLayer}");
+        AddShader(uid, comp.Shader, comp.AnimateLayer, comp.TargetLayer);
     }
 
-    private void OnShutdown(EntityUid uid, FlyingVisualsComponent comp, ref ComponentShutdown args)
+    private void OnShutdown(EntityUid uid, FlyingVisualsComponent comp, ComponentShutdown args)
     {
-        SetShader(uid, null);
+        Logger.Debug($"Executing OnShutdown! with {comp.Shader} changing to {null}, {comp.AnimateLayer}, {comp.TargetLayer}");
+        AddShader(uid, null, comp.AnimateLayer, comp.TargetLayer);
     }
 
-    private void SetShader(Entity<SpriteComponent?> entity, ShaderInstance? instance)
+    private void AddShader(Entity<SpriteComponent?> entity, ShaderInstance? shader, bool animateLayer, int? layer)
     {
+        Logger.Debug($"Executing AddShader on {entity}! with {shader}, {animateLayer}, {layer}");
         if (!Resolve(entity, ref entity.Comp, false))
             return;
 
-        entity.Comp.PostShader = instance;
-        entity.Comp.GetScreenTexture = instance is not null;
-        entity.Comp.RaiseShaderEvent = instance is not null;
+        if (!animateLayer)
+        {
+            entity.Comp.PostShader = shader;
+        }
+
+        if (animateLayer && layer is not null)
+        {
+            Logger.Debug($"Executing LayerSetShader!");
+            entity.Comp.LayerSetShader(layer.Value, shader);
+        }
+
+        entity.Comp.GetScreenTexture = shader is not null;
+        entity.Comp.RaiseShaderEvent = shader is not null;
     }
 
     private void OnBeforeShaderPost(EntityUid uid, FlyingVisualsComponent comp, ref BeforePostShaderRenderEvent args)
     {
-        _shader.SetParameter("Speed", comp.Speed);
-        _shader.SetParameter("Dis", comp.Dis);
-        _shader.SetParameter("Offset", comp.Offset);
+        comp.Shader.SetParameter("Speed", comp.Speed);
+        comp.Shader.SetParameter("Dis", comp.Distance);
+        comp.Shader.SetParameter("Offset", comp.Rotation);
     }
 }

@@ -10,6 +10,7 @@
   - type: Flight
     isLayerAnimated: true
     layer: "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi"
+    animationKey: "Flap"
   - type: Singer
     proto: HarpySinger
   - type: Sprite

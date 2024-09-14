@@ -43,7 +43,7 @@ namespace Content.Shared.DeltaV.Harpy
             component.TimeUntilFlap = 0f;
             _actionsSystem.SetToggled(component.ToggleActionEntity, component.On);
             // Triggers the flight animation
-            RaiseNetworkEvent(new FlightEvent(GetNetEntity(uid), component.On, component.IsAnimated, component.Layer ?? string.Empty, component.AnimationKey));
+            RaiseNetworkEvent(new FlightEvent(GetNetEntity(uid), component.On, component.IsAnimated, component.IsLayerAnimated, component.Layer ?? string.Empty, component.AnimationKey));
             _staminaSystem.ToggleStaminaDrain(uid, component.StaminaDrainRate, active);
             UpdateHands(uid, active);
             Dirty(uid, component);
@@ -91,55 +91,6 @@ namespace Content.Shared.DeltaV.Harpy
         {
             _virtualItem.DeleteInHandsMatching(uid, uid);
         }
-        #endregion
-
-        #region Visualizer Stuff
-        /*
-                public override void FloatAnimation(EntityUid uid, Vector2 offset, string animationKey, float animationTime, bool stop = false)
-                {
-                    if (stop)
-                    {
-                        AnimationSystem.Stop(uid, animationKey);
-                        return;
-                    }
-
-                    var animation = new Animation
-                    {
-                        // We multiply by the number of extra keyframes to make time for them
-                        Length = TimeSpan.FromSeconds(animationTime * 2),
-                        AnimationTracks =
-                            {
-                                new AnimationTrackComponentProperty
-                                {
-                                    ComponentType = typeof(SpriteComponent),
-                                    Property = nameof(SpriteComponent.Offset),
-                                    InterpolationMode = AnimationInterpolationMode.Linear,
-                                    KeyFrames =
-                                    {
-                                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f),
-                                        new AnimationTrackProperty.KeyFrame(offset, animationTime),
-                                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, animationTime),
-                                    }
-                                }
-                            }
-                    };
-
-                    if (!AnimationSystem.HasRunningAnimation(uid, animationKey))
-                        AnimationSystem.Play(uid, animation, animationKey);
-                }
-
-                private void OnAnimationCompleted(EntityUid uid, FlightComponent component, AnimationCompletedEvent args)
-                {
-                    if (args.Key != component.AnimationKey)
-                        return;
-
-                    FloatAnimation(uid, component.Offset, component.AnimationKey, component.AnimationTime, !component.CanFloat);
-                }
-        */
-        #endregion
-
-        #region Events
-
         #endregion
     }
     public sealed partial class ToggleFlightEvent : InstantActionEvent

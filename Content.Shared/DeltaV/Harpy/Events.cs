@@ -21,14 +21,16 @@ namespace Content.Shared.DeltaV.Harpy.Events
         public NetEntity Uid { get; }
         public bool IsFlying { get; }
         public bool IsAnimated { get; }
+        public bool IsLayerAnimated { get; }
         public string Layer { get; }
         public string AnimationKey { get; }
 
-        public FlightEvent(NetEntity uid, bool isFlying, bool isAnimated, string layer, string animationKey)
+        public FlightEvent(NetEntity uid, bool isFlying, bool isAnimated, bool isLayerAnimated, string layer, string animationKey)
         {
             Uid = uid;
             IsFlying = isFlying;
             IsAnimated = isAnimated;
+            IsLayerAnimated = isLayerAnimated;
             Layer = layer;
             AnimationKey = animationKey;
         }
