@@ -6354,3 +6354,14 @@ Entries:
   id: 6360
   time: '2024-09-14T06:48:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/896
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Cyborg recharging stations finally work again.
+    - type: Fix
+      message: >-
+        Rehydratable entities (such as monkey cubes) no longer spawn a second
+        client-side entity when rehydrated.
+  id: 6361
+  time: '2024-09-14T17:55:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/888
