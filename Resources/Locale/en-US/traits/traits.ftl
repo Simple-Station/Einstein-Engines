@@ -230,8 +230,9 @@ trait-description-AnomalousPositronics =
 
 trait-name-Photophobia = Photophobia
 trait-description-Photophobia =
-    Your eyes are extremely sensitive to bright lights. As a result, you may be blinded for a greater duration than others
-    when exposed to sudden flashes of light. Your eyes are also more likely to be injured by flashes.
+    Your eyes are extremely sensitive to bright lights.
+    As a result, you may be blinded for a greater duration than others when exposed to sudden flashes of light.
+    Your eyes are also more likely to be injured by flashes.
 
 trait-name-Clumsy = Clumsy
 trait-description-Clumsy =
@@ -244,8 +245,9 @@ trait-description-Small =
 
 trait-name-Tiny = Tiny
 trait-description-Tiny =
-    You are substantially smaller than a typical person. You may be picked up by other people with no more difficulty than
-    any moderately sized object. You can also squeeze yourself into most common containers. Or the deep fryer.
+    You are smaller than a typical small person.
+    You may be picked up by other people with no more difficulty than any moderately sized object.
+    You can also squeeze yourself into most common containers. Or the deep fryer.
 
 trait-name-TemperatureTolerance = Temperature Tolerance
 trait-description-TemperatureTolerance =
