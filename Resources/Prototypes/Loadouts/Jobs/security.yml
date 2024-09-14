@@ -1,14 +1,12 @@
 # Uniforms
 - type: loadout
   id: LoadoutSecurityUniformJumpsuitBlue
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -17,14 +15,12 @@
 
 - type: loadout
   id: LoadoutSecurityUniformJumpsuitGrey
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -33,10 +29,12 @@
 
 - type: loadout
   id: LoadoutSecurityUniformJumpskirtGrey
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -45,10 +43,12 @@
 
 - type: loadout
   id: LoadoutSecurityUniformJumpskirtBlue
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -57,10 +57,12 @@
 
 - type: loadout
   id: LoadoutSecurityUniformJumpskirtSenior
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
@@ -81,14 +83,12 @@
 
 - type: loadout
   id: LoadoutSecurityUniformJumpsuitSenior
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
@@ -109,14 +109,12 @@
 
 - type: loadout
   id: LoadoutUniformJumpsuitWardenBlue
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Warden
@@ -125,14 +123,12 @@
 
 - type: loadout
   id: LoadoutUniformJumpsuitWardenGrey
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Warden
@@ -141,10 +137,12 @@
 
 - type: loadout
   id: LoadoutUniformJumpskirtWardenBlue
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Warden
@@ -153,10 +151,12 @@
 
 - type: loadout
   id: LoadoutUniformJumpskirtWardenGrey
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Warden
@@ -165,10 +165,12 @@
 
 - type: loadout
   id: LoadoutUniformJumpskirtHoSBlue
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -177,10 +179,12 @@
 
 - type: loadout
   id: LoadoutUniformJumpskirtHoSGrey
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -189,14 +193,12 @@
 
 - type: loadout
   id: LoadoutUniformJumpsuitSecFormal
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -205,27 +207,27 @@
 
 - type: loadout
   id: LoadoutUniformJumpsuitSecSummer
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
   items:
     - ClothingUniformJumpsuitSecSummer
-  
+
 # Mask
 - type: loadout
   id: LoadoutSecurityMaskGasSwat
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMaskSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Warden
@@ -236,14 +238,11 @@
 # Shoes
 - type: loadout
   id: LoadoutSecurityShoesJackboots
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoesSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -252,14 +251,11 @@
 
 - type: loadout
   id: LoadoutClothingShoesBootsCombat
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoesSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -269,10 +265,12 @@
 # Eyes
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
-  category: Jobs
+  category: JobsSecurity
   cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -281,10 +279,12 @@
 
 - type: loadout
   id: ClothingEyesGlassesSunglasses
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -293,10 +293,12 @@
 
 - type: loadout
   id: LoadoutSecurityEyesEyepatchHudSecurity
-  category: Jobs
+  category: JobsSecurity
   cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -305,10 +307,12 @@
 
 - type: loadout
   id: LoadoutSecurityEyesHudSecurityPrescription
-  category: Jobs
+  category: JobsSecurity
   cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -320,10 +324,12 @@
 
 - type: loadout
   id: LoadoutClothingEyesGlassesSecurity
-  category: Jobs
-  cost: 4
+  category: JobsSecurity
+  cost: 2
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -336,10 +342,12 @@
 # Head
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -348,10 +356,12 @@
 
 - type: loadout
   id: LoadoutClothingHeadHelmetBasic
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -360,10 +370,12 @@
 
 - type: loadout
   id: LoadoutClothingHeadHatBeretBrigmedic
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
@@ -372,10 +384,12 @@
 
 - type: loadout
   id: LoadoutClothingHeadHatBeretCorpsman
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
@@ -384,10 +398,12 @@
 
 - type: loadout
   id: LoadoutClothingHeadHatBeretWarden
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Warden
@@ -396,10 +412,12 @@
 
 - type: loadout
   id: LoadoutClothingHeadHatBeretHoS
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadSecurity
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -408,9 +426,11 @@
 
 - type: loadout
   id: LoadoutSecurityHeadHelmetInsulated
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 1
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -420,10 +440,12 @@
 # Belt
 - type: loadout
   id: LoadoutSecurityBeltWebbing
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBeltSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -432,10 +454,12 @@
 
 - type: loadout
   id: LoadoutClothingBeltCorpsmanWebbing
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBeltSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
@@ -444,10 +468,12 @@
 
 - type: loadout
   id: LoadoutClothingBeltSecurity
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBeltSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -458,22 +484,28 @@
 
 - type: loadout
   id: LoadoutClothingHandsGlovesNitrile
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGlovesSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
   items:
     - ClothingHandsGlovesNitrile
 
+# Outerwear
+
 - type: loadout
   id: LoadoutClothingOuterArmorPlateCarrier
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -482,10 +514,12 @@
 
 - type: loadout
   id: LoadoutClothingOuterArmorDuraVest
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -494,10 +528,12 @@
 
 - type: loadout
   id: LoadoutClothingOuterCoatDetective
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Detective
@@ -506,10 +542,12 @@
 
 - type: loadout
   id: LoadoutOuterVestDetective
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Detective
@@ -518,10 +556,12 @@
 
 - type: loadout
   id: LoadoutClothingOuterCoatWarden
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Warden
@@ -530,10 +570,12 @@
 
 - type: loadout
   id: LoadoutClothingOuterCoatHoSTrench
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterSecurity
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -542,10 +584,12 @@
 
 - type: loadout
   id: LoadoutClothingOuterWinterHoS
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterSecurity
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -555,10 +599,12 @@
 # Neck
 - type: loadout
   id: LoadoutClothingNeckCloakHos
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckSecurity
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -567,10 +613,12 @@
 
 - type: loadout
   id: LoadoutClothingNeckMantleHOS
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckSecurity
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -579,23 +627,26 @@
 
 - type: loadout
   id: LoadoutBedsheetBrigmedic
-  category: Jobs
-  cost: 1
+  category: JobsSecurity
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckSecurity
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
   items:
     - BedsheetBrigmedic
-    
-  
+
 # Equipment
 - type: loadout
   id: LoadoutSecurityCombatKnife
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 1
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEquipmentSecurity
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -604,7 +655,7 @@
 
 - type: loadout
   id: LoadoutSecurityFlash
-  category: Jobs
+  category: JobsSecurity
   cost: 1
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -615,8 +666,8 @@
 
 - type: loadout
   id: LoadoutSecurityDisabler
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 1
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -626,8 +677,8 @@
 
 - type: loadout
   id: LoadoutMagazinePistolRubber
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 1
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -637,8 +688,8 @@
 
 - type: loadout
   id: LoadoutSpeedLoaderMagnumRubber
-  category: Jobs
-  cost: 2
+  category: JobsSecurity
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -651,7 +702,7 @@
 # # Species
 # - type: loadout
 #   id: LoadoutSecurityEquipmentTruncheon
-#   category: Jobs
+#   category: JobsSecurity
 #   cost: 8
 #   requirements:
 #     - !type:CharacterJobRequirement

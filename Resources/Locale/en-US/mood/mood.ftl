@@ -37,6 +37,8 @@ mood-effect-Dead = You are dead.
 
 mood-effect-BeingHugged = Hugs are nice.
 
+mood-effect-BeingPet = Someone pet me!
+
 mood-effect-ArcadePlay = I had fun playing an interesting arcade game.
 
 mood-effect-GotBlessed = I was blessed.
@@ -52,3 +54,16 @@ mood-effect-RevolutionFocused = VIVA LA REVOLUTION!!!
 mood-effect-CultFocused = Dark Gods, grant me strength!
 
 mood-effect-TraitSanguine = I have nothing to worry about. I'm sure everything will turn out well in the end!
+
+# Addictions
+mood-effect-LotoTranscendence =
+    I CAN SEE ALL THAT IS, ALL THAT WILL EVER BE, AND ALL THAT EVER WAS. ALL OF CREATION HAS OPENED TO MY MIND!
+    I MUST HAVE IT ALL. I MUST KNOW IT ALL. ALL OF IT. FOREVER!
+mood-effect-LotoEnthrallment =
+    It has fled from me... The heart of all creation is gone from my soul, leaving behind an emptiness I cannot bear.
+    I fear that I will wither to nothing if I cannot drink from the cup of knowledge once again.
+
+mood-effect-NicotineBenefit =
+    I feel as if I have been standing my entire life and I just sat down.
+mood-effect-NicotineWithdrawal =
+    I could really go for a smoke right now.

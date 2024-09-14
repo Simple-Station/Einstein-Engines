@@ -36,8 +36,9 @@
       species:
         - Harpy
         - Vulpkanin
-  components:
-    - type: NormalVision
+  componentRemovals:
+    - UltraVision
+    - DogVision
 
 - type: trait
   id: Saturnine
@@ -53,9 +54,8 @@
       inverted: true
       traits:
         - Sanguine
-  components:
-    - type: MoodModifyTrait
-      moodId: TraitSaturnine
+  moodEffects:
+    - TraitSaturnine
 
 - type: trait
   id: Sanguine
@@ -71,6 +71,22 @@
       inverted: true
       traits:
         - Saturnine
-  components:
-    - type: MoodModifyTrait
-      moodId: TraitSanguine
+  moodEffects:
+    - TraitSanguine
+
+- type: trait
+  id: AddictionNicotine
+  category: Mental
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  moodEffects:
+    - NicotineWithdrawal

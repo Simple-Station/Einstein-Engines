@@ -1,7 +1,7 @@
 - type: trait
   id: Blindness
   category: Visual
-  points: 4
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -52,7 +52,7 @@
 - type: trait
   id: Muted
   category: Speech
-  points: 2
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -65,7 +65,7 @@
 - type: trait
   id: Uncloneable
   category: Physical
-  points: 4
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -110,7 +110,7 @@
 - type: trait
   id: Sluggish
   category: Physical
-  points: 2
+  points: 3
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -133,7 +133,7 @@
 - type: trait
   id: SnailPaced
   category: Physical
-  points: 4
+  points: 5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -156,7 +156,7 @@
 - type: trait
   id: BloodDeficiency
   category: Physical
-  points: 4
+  points: 5
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -168,8 +168,8 @@
       species:
         - IPC
   components:
-    - type: BloodDeficiency  # 0.07 = start taking bloodloss damage at around ~21.4 minutes,
-      bloodLossAmount: 0.07  # then become crit ~10 minutes later
+    - type: BloodDeficiency              # by default, start taking bloodloss damage at around ~21.4 minutes,
+      bloodLossPercentage: 0.0002333333  # then become crit ~10 minutes
 
 - type: trait
   id: Hemophilia

@@ -1,3 +1,4 @@
+# All of the jumpskirts here have had their parent changed to ClothingUniformSkirtBase, as to allow harpies to wear them.
 # White Jumpskirt
 - type: entity
   parent: ClothingUniformSkirtBase

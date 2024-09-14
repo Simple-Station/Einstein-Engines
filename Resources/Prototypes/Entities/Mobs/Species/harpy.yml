@@ -118,6 +118,7 @@
     understands:
     - GalacticCommon
     - SolCommon
+  - type: StepTriggerImmune
 
 - type: entity
   save: false

@@ -36,7 +36,7 @@
 - type: trait
   id: HeavyweightDrunk
   category: Physical
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -127,7 +127,7 @@
 - type: trait
   id: ParkourTraining
   category: Physical
-  points: -6
+  points: -5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -140,10 +140,10 @@
         - Diona
   components:
     - type: ClimbDelayModifier
-      climbDelayMultiplier: 0.70
+      climbDelayMultiplier: 0.35
     - type: LayingDownModifier
-      layingDownCooldownMultiplier: 0.8
-      downedSpeedMultiplierMultiplier: 1.25
+      layingDownCooldownMultiplier: 0.5
+      downedSpeedMultiplierMultiplier: 1.65
 
 - type: trait
   id: LightStep
@@ -188,10 +188,15 @@
         - ForensicMantis
         - Chaplain
         - Librarian
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -200,7 +205,7 @@
 - type: trait
   id: PsionicInsulation
   category: Mental
-  points: -14 #Buy a significant disability to get this.
+  points: -10 #Buy a significant disability to get this.
   components:
     - type: PsionicInsulation
     - type: Mindbroken
@@ -214,14 +219,18 @@
         - ForensicMantis
         - Chaplain
         - Librarian
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - IPC
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Uncloneable
         - LatentPsychic
 
 - type: trait
@@ -231,13 +240,50 @@
   psionicPowers:
     - TelepathyPower
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - ResearchDirector
         - ForensicMantis
-        - Chaplain
-        - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+
+- type: trait
+  id: TrapAvoider
+  category: Physical
+  points: -3
+  components:
+    - type: StepTriggerImmune
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+        - Harpy
+
+- type: trait
+  id: AnomalousPositronics
+  category: Mental
+  points: -4
+  componentRemovals:
+    - PsionicInsulation
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC

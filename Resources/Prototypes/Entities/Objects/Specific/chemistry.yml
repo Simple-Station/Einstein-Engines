@@ -227,6 +227,10 @@
       beaker:
         maxVol: 60
         canReact: false
+  - type: ReverseEngineering # Delta
+    difficulty: 3
+    recipes:
+      - CryostasisBeaker
 
 - type: entity
   name: bluespace beaker
@@ -245,6 +249,10 @@
       beaker:
         maxVol: 1000
         canMix: true
+  - type: ReverseEngineering # Delta
+    difficulty: 4
+    recipes:
+      - BluespaceBeaker
 
 - type: entity
   name: dropper
@@ -401,6 +409,10 @@
     tags:
     - Syringe
     - Trash
+  - type: ReverseEngineering # Delta
+    difficulty: 4
+    recipes:
+      - SyringeBluespace
 
 - type: entity
   id: SyringeCryostasis
@@ -432,7 +444,10 @@
     tags:
     - Syringe
     - Trash
-
+  - type: ReverseEngineering # Delta
+    difficulty: 3
+    recipes:
+      - SyringeCryostasis
 
 - type: entity
   name: pill

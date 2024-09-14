@@ -216,3 +216,18 @@ trait-description-NaturalTelepath =
     whether or not you possess any notable psychic powers. This offers all of the same benefits and
     drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
     still gain powers as normal for a Latent Psychic.
+
+trait-name-TrapAvoider = Trap Avoider
+trait-description-TrapAvoider =
+    You possess a preturnatural sense of traps, and will unconsciously avoid them. You will never trigger
+    floor traps, such as land mines, tripwires, mouse traps(If you're small enough), etc.
+
+trait-name-AnomalousPositronics = Anomalous Positronics
+trait-description-AnomalousPositronics =
+    Whether by intentional design from the manufacturer, black market modifications, or accidental omission,
+    your positronic brain lacks its standard psionic insulation. As a being that can be argued to have a soul,
+    this by extension means that it is possible for you to be influenced by the Noosphere.
+
+trait-name-AddictionNicotine = Nicotine Addiction
+trait-description-AddictionNicotine =
+    You have an addiction to Nicotine, and will require frequent smoke breaks to keep your mood in check.

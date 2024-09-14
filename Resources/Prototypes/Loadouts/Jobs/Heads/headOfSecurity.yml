@@ -1,7 +1,7 @@
 - type: loadout
   id: LoadoutCommandHOSNeckMantle
-  category: Jobs
-  cost: 2
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -12,8 +12,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSNeckCloak
-  category: Jobs
-  cost: 2
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -24,8 +24,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpsuitAlt
-  category: Jobs
-  cost: 2
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -36,8 +36,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpsuitBlue
-  category: Jobs
-  cost: 2
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -48,8 +48,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpsuitGrey
-  category: Jobs
-  cost: 2
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -60,8 +60,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpsuitParade
-  category: Jobs
-  cost: 3
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -72,8 +72,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpsuitFormal
-  category: Jobs
-  cost: 3
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -84,8 +84,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpskirtAlt
-  category: Jobs
-  cost: 2
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -96,8 +96,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpskirtParade
-  category: Jobs
-  cost: 3
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -108,8 +108,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpskirtFormal
-  category: Jobs
-  cost: 3
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -120,8 +120,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSOuterWinter
-  category: Jobs
-  cost: 2
+  category: JobsCommandHOS
+  cost: 1
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -131,8 +131,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSOuterTrench
-  category: Jobs
-  cost: 2
+  category: JobsCommandHOS
+  cost: 1
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -142,8 +142,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSHatBeret
-  category: Jobs
-  cost: 1
+  category: JobsCommandHOS
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -153,8 +153,8 @@
 
 - type: loadout
   id: LoadoutCommandHOSHatHoshat
-  category: Jobs
-  cost: 1
+  category: JobsCommandHOS
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -164,15 +164,10 @@
 
 - type: loadout
   id: LoadoutCommandHOSShoesBootsWinter
-  category: Jobs
-  cost: 1
+  category: JobsCommandHOS
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity

@@ -56,6 +56,16 @@
     fireOnDropChance: 1
 
 - type: entity
+  name: Kardashev-Mosin
+  parent: WeaponSniperMosin
+  id: WeaponSniperMosinRubber
+  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle rubber ammo.
+  suffix: Non-Lethal
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleRubber
+
+- type: entity
   name: Hristov
   parent: BaseWeaponSniper
   id: WeaponSniperHristov
