@@ -1,6 +1,6 @@
 # Alphabetically ordered, except for Uncategorized since it is always first
 # AUncategorized is always first in subcategories to stay consistent with the root Uncategorized
-#  AUncategorized is not a spelling mistake, and might have more As added as needed
+# AUncategorized is not a spelling mistake, and might have more As added as needed
 
 - type: loadoutCategory
   id: Uncategorized
@@ -27,7 +27,13 @@
   root: true
   subCategories:
     - JobsAUncategorized
+    - JobsCargo
     - JobsCommand
+    - JobsEngineering
+    - JobsMedical
+    - JobsScience
+    - JobsSecurity
+    - JobsService
 
 - type: loadoutCategory
   id: JobsAUncategorized
@@ -43,7 +49,6 @@
     - JobsCommandHOS
     - JobsCommandQM
     - JobsCommandRD
-
 
 - type: loadoutCategory
   id: JobsCommandAUncategorized
@@ -69,6 +74,32 @@
 - type: loadoutCategory
   id: JobsCommandRD
 
+- type: loadoutCategory
+  id: JobsCargo
+
+- type: loadoutCategory
+  id: JobsEngineering
+
+- type: loadoutCategory
+  id: JobsMedical
+
+- type: loadoutCategory
+  id: JobsScience
+  
+- type: loadoutCategory
+  id: JobsSecurity
+
+- type: loadoutCategory
+  id: JobsService
+  subCategories:
+    - JobsServiceUncategorized
+    - JobsServiceBartender
+
+- type: loadoutCategory
+  id: JobsServiceUncategorized
+
+- type: loadoutCategory
+  id: JobsServiceBartender
 
 - type: loadoutCategory
   id: Mask

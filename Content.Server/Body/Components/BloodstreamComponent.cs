@@ -181,9 +181,9 @@ namespace Content.Server.Body.Components
         public bool HasBloodDeficiency = false;
 
         /// <summary>
-        ///     How much reagent of blood should be removed with blood deficiency in each update interval?
+        ///     How much percentage of max blood volume should be removed with blood deficiency in each update interval?
         /// </summary>
         [DataField]
-        public FixedPoint2 BloodDeficiencyLossAmount;
+        public float BloodDeficiencyLossPercentage;
     }
 }

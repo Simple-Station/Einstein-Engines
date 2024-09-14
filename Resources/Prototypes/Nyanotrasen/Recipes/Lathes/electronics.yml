@@ -4,7 +4,7 @@
   completetime: 4
   materials:
      Steel: 100
-     Glass: 900
+     Glass: 700
      Gold: 100
 
 - type: latheRecipe
@@ -13,7 +13,7 @@
   completetime: 4
   materials:
      Steel: 100
-     Glass: 900
+     Glass: 700
      Gold: 100
 
 - type: latheRecipe
@@ -21,8 +21,8 @@
   result: CrewMonitoringComputerCircuitboard
   completetime: 4
   materials:
-     Steel: 100
-     Glass: 900
+    Steel: 100
+    Glass: 700
 
 - type: latheRecipe
   id: ClothingEyesHudMedical
@@ -41,4 +41,4 @@
   completetime: 4
   materials:
      Steel: 100
-     Glass: 900
+     Glass: 700
