@@ -210,6 +210,7 @@ public sealed class TraitSystem : EntitySystem
 
         foreach (var language in traitPrototype.RemoveLanguagesUnderstood)
             _languageSystem.RemoveLanguage(uid, language, false, true);
+    }
 
     /// <summary>
     ///     If a trait includes any moodlets, this adds the moodlets to the receiving entity.
