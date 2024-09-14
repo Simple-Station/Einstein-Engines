@@ -6365,3 +6365,10 @@ Entries:
   id: 6361
   time: '2024-09-14T17:55:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/888
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: The Uncloneable trait is only worth one point now.
+  id: 6362
+  time: '2024-09-14T18:01:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/868
