@@ -2,14 +2,15 @@
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Flight;
+using Content.Shared.Flight.Events;
 using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Zombies;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.DeltaV.Harpy.Events;
 
-namespace Content.Shared.DeltaV.Harpy
+namespace Content.Server.Flight
 {
     public sealed class FlightSystem : SharedFlightSystem
     {

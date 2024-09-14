@@ -6,9 +6,9 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory.VirtualItem;
-using Content.Shared.DeltaV.Harpy.Events;
+using Content.Shared.Flight.Events;
 
-namespace Content.Shared.DeltaV.Harpy
+namespace Content.Shared.Flight
 {
     public abstract class SharedFlightSystem : EntitySystem
     {
@@ -16,7 +16,6 @@ namespace Content.Shared.DeltaV.Harpy
         [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
         [Dependency] private readonly StaminaSystem _staminaSystem = default!;
         [Dependency] private readonly SharedHandsSystem _hands = default!;
-
         [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
 
         public override void Initialize()
@@ -25,7 +24,7 @@ namespace Content.Shared.DeltaV.Harpy
 
             SubscribeLocalEvent<FlightComponent, ComponentStartup>(OnStartup);
             SubscribeLocalEvent<FlightComponent, ComponentShutdown>(OnShutdown);
-            // Move out to client: SubscribeLocalEvent<FlightComponent, AnimationCompletedEvent>(OnAnimationCompleted);
+            SubscribeLocalEvent<FlightComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMoveSpeed);
         }
 
         #region Core Functions
@@ -44,9 +43,9 @@ namespace Content.Shared.DeltaV.Harpy
             component.On = active;
             component.TimeUntilFlap = 0f;
             _actionsSystem.SetToggled(component.ToggleActionEntity, component.On);
-            // Triggers the flight animation
             RaiseNetworkEvent(new FlightEvent(GetNetEntity(uid), component.On, component.IsAnimated));
-            _staminaSystem.ToggleStaminaDrain(uid, component.StaminaDrainRate, active);
+            _staminaSystem.ToggleStaminaDrain(uid, component.StaminaDrainRate, active, false);
+            _movementSpeed.RefreshMovementSpeedModifiers(uid);
             UpdateHands(uid, active);
             Dirty(uid, component);
         }
@@ -93,6 +92,16 @@ namespace Content.Shared.DeltaV.Harpy
         {
             _virtualItem.DeleteInHandsMatching(uid, uid);
         }
+
+        private void OnRefreshMoveSpeed(EntityUid uid, FlightComponent component, RefreshMovementSpeedModifiersEvent args)
+        {
+            Logger.Debug("Refreshing movement speed!");
+            if (!component.On)
+                return;
+
+            args.ModifySpeed(component.SpeedModifier, component.SpeedModifier);
+        }
+
         #endregion
     }
     public sealed partial class ToggleFlightEvent : InstantActionEvent

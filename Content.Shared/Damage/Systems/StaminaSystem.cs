@@ -258,7 +258,7 @@ public sealed partial class StaminaSystem : EntitySystem
     }
 
     public void TakeStaminaDamage(EntityUid uid, float value, StaminaComponent? component = null,
-        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null)
+        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null, bool? allowsSlowdown = true)
     {
         if (!Resolve(uid, ref component, false)
             || value == 0)
@@ -284,8 +284,8 @@ public sealed partial class StaminaSystem : EntitySystem
             if (component.NextUpdate < nextUpdate)
                 component.NextUpdate = nextUpdate;
         }
-
-        _movementSpeed.RefreshMovementSpeedModifiers(uid);
+        if (allowsSlowdown == true)
+            _movementSpeed.RefreshMovementSpeedModifiers(uid);
         SetStaminaAlert(uid, component);
 
         if (!component.Critical)
@@ -328,7 +328,7 @@ public sealed partial class StaminaSystem : EntitySystem
         }
     }
 
-    public void ToggleStaminaDrain(EntityUid target, float drainRate, bool enabled, EntityUid? source = null)
+    public void ToggleStaminaDrain(EntityUid target, float drainRate, bool enabled, bool modifiesSpeed, EntityUid? source = null)
     {
         if (!TryComp<StaminaComponent>(target, out var stamina))
             return;
@@ -338,7 +338,7 @@ public sealed partial class StaminaSystem : EntitySystem
 
         if (enabled)
         {
-            stamina.ActiveDrains[actualSource] = drainRate;
+            stamina.ActiveDrains[actualSource] = (drainRate, modifiesSpeed);
             EnsureComp<ActiveStaminaComponent>(target);
         }
         else
@@ -369,9 +369,9 @@ public sealed partial class StaminaSystem : EntitySystem
             }
             if (comp.ActiveDrains.Count > 0)
             {
-                foreach (var (source, drainRate) in comp.ActiveDrains)
+                foreach (var (source, (drainRate, modifiesSpeed)) in comp.ActiveDrains)
                 {
-                    TakeStaminaDamage(uid, drainRate * frameTime, comp, source: source, visual: false);
+                    TakeStaminaDamage(uid, drainRate * frameTime, comp, source: source, visual: false, allowsSlowdown: modifiesSpeed);
                 }
             }
             // Shouldn't need to consider paused time as we're only iterating non-paused stamina components.

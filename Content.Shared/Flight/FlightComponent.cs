@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Shared.DeltaV.Harpy
+namespace Content.Shared.Flight
 {
     /// <summary>
     /// Adds an action that allows the user to become temporarily
@@ -30,7 +30,7 @@ namespace Content.Shared.DeltaV.Harpy
         /// </summary>
 
         [DataField("staminaDrainRate"), AutoNetworkedField]
-        public float StaminaDrainRate = 2.0f;
+        public float StaminaDrainRate = 6.0f;
 
         /// <summary>
         /// DoAfter delay until the user becomes weightless.
@@ -43,7 +43,7 @@ namespace Content.Shared.DeltaV.Harpy
         /// Speed modifier while in flight
         /// </summary>
 
-        [DataField("activationDelay"), AutoNetworkedField]
+        [DataField("speedModifier"), AutoNetworkedField]
         public float SpeedModifier = 2.0f;
 
         /// <summary>

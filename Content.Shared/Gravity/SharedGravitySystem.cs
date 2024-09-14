@@ -8,7 +8,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
-using Content.Shared.DeltaV.Harpy;
+using Content.Shared.Flight;
 
 namespace Content.Shared.Gravity
 {

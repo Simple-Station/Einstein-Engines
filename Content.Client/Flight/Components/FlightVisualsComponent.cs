@@ -1,10 +1,10 @@
 using Robust.Client.Graphics;
 using Robust.Shared.GameStates;
 
-namespace Content.Client.DeltaV.Harpy.Components;
+namespace Content.Client.Flight.Components;
 
 [RegisterComponent]
-public sealed partial class FlyingVisualsComponent : Component
+public sealed partial class FlightVisualsComponent : Component
 {
     /// <summary>
     /// How long does the animation last

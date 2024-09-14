@@ -1,6 +1,6 @@
 using System.Numerics;
 using Robust.Shared.Map;
-using Content.Shared.DeltaV.Harpy.Events;
+using Content.Shared.Flight.Events;
 
 namespace Content.Shared.Gravity;
 

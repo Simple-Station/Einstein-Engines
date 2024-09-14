@@ -212,8 +212,8 @@
   components:
   - type: InstantAction
     checkCanInteract: false
-    icon: { sprite: DeltaV/Interface/Actions/flight.rsi, state: flight_off }
-    iconOn: { sprite : DeltaV/Interface/Actions/flight.rsi, state: flight_on }
+    icon: { sprite: Interface/Actions/flight.rsi, state: flight_off }
+    iconOn: { sprite : Interface/Actions/flight.rsi, state: flight_on }
     event: !type:ToggleFlightEvent
 
 - type: entity
@@ -227,5 +227,5 @@
     range: 16
     itemIconStyle: BigAction
     checkCanAccess: false
-    icon: DeltaV/Interface/Actions/dash_flight.png
+    icon: Interface/Actions/dash_flight.png
     event: !type:ActivateDashEvent

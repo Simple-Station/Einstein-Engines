@@ -1,9 +1,9 @@
 using Robust.Client.GameObjects;
-using Content.Shared.DeltaV.Harpy;
-using Content.Shared.DeltaV.Harpy.Events;
-using Content.Client.DeltaV.Harpy.Components;
+using Content.Shared.Flight;
+using Content.Shared.Flight.Events;
+using Content.Client.Flight.Components;
 
-namespace Content.Client.DeltaV.Harpy
+namespace Content.Client.Flight
 {
     public sealed class FlightSystem : SharedFlightSystem
     {
@@ -36,20 +36,20 @@ namespace Content.Client.DeltaV.Harpy
 
             if (args.IsFlying && args.IsAnimated && flight.AnimationKey != "default")
             {
-                var comp = new FlyingVisualsComponent
+                var comp = new FlightVisualsComponent
                 {
-                    AnimationKey = flight.AnimationKey,
                     AnimateLayer = flight.IsLayerAnimated,
-                    TargetLayer = targetLayer,
-                    Speed = flight.ShaderSpeed,
+                    AnimationKey = flight.AnimationKey,
                     Multiplier = flight.ShaderMultiplier,
                     Offset = flight.ShaderOffset,
+                    Speed = flight.ShaderSpeed,
+                    TargetLayer = targetLayer,
                 };
                 AddComp(uid, comp);
             }
             if (!args.IsFlying)
             {
-                RemComp<FlyingVisualsComponent>(uid);
+                RemComp<FlightVisualsComponent>(uid);
             }
         }
 
