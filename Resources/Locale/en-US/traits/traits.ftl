@@ -262,3 +262,7 @@ trait-description-Claws =
 trait-name-Spinarette = Bionic Spinarette
 trait-description-Spinarette =
     A fully functional biological spinarette has been grafted into your wrist, allowing you to produce spider silk at will.
+
+trait-name-AddictionNicotine = Nicotine Addiction
+trait-description-AddictionNicotine =
+    You have an addiction to Nicotine, and will require frequent smoke breaks to keep your mood in check.

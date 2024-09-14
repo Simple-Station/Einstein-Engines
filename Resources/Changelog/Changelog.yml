@@ -6307,3 +6307,50 @@ Entries:
   id: 6357
   time: '2024-09-14T01:12:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/915
+- author: CilliePaint
+  changes:
+    - type: Tweak
+      message: Stuffed Lawyer's Pockets with Space Law guides!
+    - type: Remove
+      message: Took away Atmos backpacks as Starting equipment.
+  id: 6358
+  time: '2024-09-14T05:41:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/897
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now choose whether you want to walk or run by default in the
+        settings.
+  id: 6359
+  time: '2024-09-14T05:44:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/889
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Drug Addictions! Drug addictions are long lasting Moodlet-Pairs. The
+        first consisting of a temporary Mood bonus that is refreshed by
+        consuming the drug, and the second consisting of an extremely long
+        lasting mood penalty, which replaces the mood bonus should you go a long
+        enough time between consuming the drug in question.
+    - type: Add
+      message: Nicotine Addiction has been added as a new minor negative trait.
+    - type: Add
+      message: >-
+        Drugs/Reagents can now affect your character's Mood! Both with, and
+        without Addiction.
+    - type: Add
+      message: >-
+        TraitSystem has had functionality added for directly adding Moodlets to
+        a character upon joining the round, such as drug addictions, or
+        permanent mood modifications like Sanguine/Saturnine
+    - type: Add
+      message: >-
+        Lotophagoi Oil now induces an extremely powerful drug addiction,
+        providing an extremely large mood benefit for a short time. Which when
+        it wears off, creates an equally extreme mood penalty that lasts for a
+        very long time(or until you drink more Loto Oil).
+  id: 6360
+  time: '2024-09-14T06:48:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/896
