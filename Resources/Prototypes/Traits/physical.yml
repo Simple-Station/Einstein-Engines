@@ -377,7 +377,7 @@
 - type: trait
   id: StrikingCalluses
   category: Physical
-  points: -2
+  points: -4
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
