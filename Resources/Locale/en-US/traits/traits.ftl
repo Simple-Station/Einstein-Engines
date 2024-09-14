@@ -227,3 +227,7 @@ trait-description-AnomalousPositronics =
     Whether by intentional design from the manufacturer, black market modifications, or accidental omission,
     your positronic brain lacks its standard psionic insulation. As a being that can be argued to have a soul,
     this by extension means that it is possible for you to be influenced by the Noosphere.
+
+trait-name-AddictionNicotine = Nicotine Addiction
+trait-description-AddictionNicotine =
+    You have an addiction to Nicotine, and will require frequent smoke breaks to keep your mood in check.
