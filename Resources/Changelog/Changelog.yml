@@ -6316,3 +6316,12 @@ Entries:
   id: 6358
   time: '2024-09-14T05:41:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/897
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now choose whether you want to walk or run by default in the
+        settings.
+  id: 6359
+  time: '2024-09-14T05:44:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/889
