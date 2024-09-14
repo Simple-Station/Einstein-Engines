@@ -237,33 +237,66 @@ trait-description-Photophobia =
 trait-name-Clumsy = Clumsy
 trait-description-Clumsy =
     You have a severe deficiency in hand-eye-coordination, resulting in an inability to do some things that others would take for granted.
-    Any weapons you may try to use are more likely to injure yourself than others.
+    Any weapons you may try to use are more likely to injure yourself than others. You are unable to climb any objects without injuring yourself.
 
 trait-name-Small = Small
 trait-description-Small =
     You are much smaller than a typical person, and can climb into spaces others would not normally be able to fit into, such as duffel bags.
+    This trait does not in any way modify your character's size, it merely requires that your character be at most the size of a standard Felinid.
 
 trait-name-Tiny = Tiny
 trait-description-Tiny =
     You are smaller than a typical small person.
     You may be picked up by other people with no more difficulty than any moderately sized object.
     You can also squeeze yourself into most common containers. Or the deep fryer.
+    This trait does not in any way modify your character's size,
+    it merely requires that your character be substantially smaller than a standard Felinid.
 
 trait-name-TemperatureTolerance = Temperature Tolerance
 trait-description-TemperatureTolerance =
-    You have a notable tolerance for lower temperatures, with an innate protection roughly equivalent to wearing a warm jacket.
+    You have a notable tolerance for lower temperatures. You can stand for extended periods of time
+    in conditions just slightly below freezing, such as the inside of a kitchen fridge,
+    or the sunlit mountainside of the famous Glacier station.
 
 trait-name-Talons = Talons
 trait-description-Talons =
-    Your fingertips have been replaced with piercing talons, either by hard plastic bionics, or through genemodding.
+    Your fingertips have been replaced with piercing talons.
+    These could come from gene modifications, vatgrown implants,
+    or even hard plastic retractable talons incorpoated into a prosthetic limb.
+    Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
+    This has no effect on damage dealt with any form of armed melee.
 
 trait-name-Claws = Claws
 trait-description-Claws =
-    Your fingertips have been replaced with sharp claws, either by hard plastic bionics, or through genemodding.
+    Your fingertips have been replaced with sharp claws.
+    These could come from gene modifications, vatgrown implants,
+    or even hard plastic retractable claws incorpoated into a prosthetic limb.
+    Your unarmed melee attacks deal Slashing damage instead of the standard damage type for your species.
+    This has no effect on damage dealt with any form of armed melee.
+
+trait-name-NaturalWeaponRemoval = Natural Weapons Removal
+trait-description-NaturalWeaponRemoval =
+    Whatever "Natural Weapons" your species are normally born with have been surgically removed.
+    This could have been done to better fit in with terran space stations, or as a cosmetic choice.
+    As a result, your unarmed attacks deal Blunt damage instead of the standard damage type for your species.
+    This has no effect on damage dealt with any form of armed melee.
+
+trait-name-StrikingCalluses = Striking Calluses
+trait-description-StrikingCalluses =
+    An iconic enhancement commonly found in the world of cyberenhanced martial arts.
+    Striking Calluses consist of bony dermal deposits grafted into a user's hands, either inside the palm
+    for "Tiger Style" fighting, or just below the knuckles for those who favor traditional boxing.
+    Owners of prosthetic or bionic limbs would instead have a hard plastic shell over their knuckles.
+    These enhancements increase your unarmed strike damage by 1 point base, but do not confer
+    any benefits to any form of armed melee.
 
 trait-name-Spinarette = Bionic Spinarette
 trait-description-Spinarette =
-    A fully functional biological spinarette has been grafted into your wrist, allowing you to produce spider silk at will.
+    This vatgrown organ-- trademarked and patented by the Cybersun Corporation, is marketed as a highly
+    utilitarian enhancement, and sold in clinics all across known space. It consists of a nodule that is traditionally
+    implanted right below the wrist, which absorbs bodily lipids to convert into all natural silk. A small opening
+    in the palm allows the user to 'spin' this thread. Users of this enhancement typically require twice as much food
+    as a standard Sol Human, owing to the high metabolic cost of artificial Sericulture.
 
 trait-name-AddictionNicotine = Nicotine Addiction
 trait-description-AddictionNicotine =

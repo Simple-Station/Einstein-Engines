@@ -194,13 +194,13 @@
 
 - type: trait
   id: Photophobia
-  category: Physical
+  category: Visual
   points: 1
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Vulpkanin
+        - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
   components:
     - type: Flashable
       eyeDamageChance: 0.3
@@ -215,7 +215,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Clown
+        - Clown # This trait functions exactly as is for the Clown's trait.
     - !type:CharacterDepartmentRequirement
       inverted: true
       departments:
