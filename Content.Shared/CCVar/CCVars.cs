@@ -404,13 +404,6 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> GameAutoEatDrinks =
             CVarDef.Create("game.auto_eat_drinks", false, CVar.REPLICATED);
 
-
-        /// <summary>
-        ///     When true, you have to press the change speed button to sprint.
-        /// </summary>
-        public static readonly CVarDef<bool> GamePressToSprint =
-            CVarDef.Create("game.press_to_sprint", true, CVar.REPLICATED);
-
         /// <summary>
         ///     Whether item slots, such as power cell slots or AME fuel cell slots, should support quick swap if it is not otherwise specified in their YAML prototype.
         /// </summary>
@@ -2005,6 +1998,12 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ToggleWalk =
             CVarDef.Create("control.toggle_walk", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+        /// <summary>
+        /// Whether the player mob is walking by default instead of running.
+        /// </summary>
+        public static readonly CVarDef<bool> DefaultWalk =
+            CVarDef.Create("control.default_walk", true, CVar.CLIENT | CVar.REPLICATED | CVar.ARCHIVE);
 
         /*
          * STORAGE
