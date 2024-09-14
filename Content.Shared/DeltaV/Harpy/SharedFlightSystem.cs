@@ -1,12 +1,11 @@
 
 using Content.Shared.Actions;
-using Content.Shared.DoAfter;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory.VirtualItem;
-using Robust.Shared.Serialization;
 using Content.Shared.DeltaV.Harpy.Events;
 
 namespace Content.Shared.DeltaV.Harpy
@@ -17,6 +16,9 @@ namespace Content.Shared.DeltaV.Harpy
         [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
         [Dependency] private readonly StaminaSystem _staminaSystem = default!;
         [Dependency] private readonly SharedHandsSystem _hands = default!;
+
+        [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
+
         public override void Initialize()
         {
             base.Initialize();
@@ -43,7 +45,7 @@ namespace Content.Shared.DeltaV.Harpy
             component.TimeUntilFlap = 0f;
             _actionsSystem.SetToggled(component.ToggleActionEntity, component.On);
             // Triggers the flight animation
-            RaiseNetworkEvent(new FlightEvent(GetNetEntity(uid), component.On, component.IsAnimated, component.IsLayerAnimated, component.Layer ?? string.Empty, component.AnimationKey));
+            RaiseNetworkEvent(new FlightEvent(GetNetEntity(uid), component.On, component.IsAnimated));
             _staminaSystem.ToggleStaminaDrain(uid, component.StaminaDrainRate, active);
             UpdateHands(uid, active);
             Dirty(uid, component);

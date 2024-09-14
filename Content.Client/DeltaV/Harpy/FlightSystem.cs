@@ -1,8 +1,5 @@
 using Robust.Client.GameObjects;
-using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Markings;
 using Content.Shared.DeltaV.Harpy;
-using Content.Shared.DeltaV.Harpy.Components;
 using Content.Shared.DeltaV.Harpy.Events;
 using Content.Client.DeltaV.Harpy.Components;
 
@@ -23,24 +20,30 @@ namespace Content.Client.DeltaV.Harpy
         {
             Logger.Debug("Starting onFlight!");
             var uid = GetEntity(args.Uid);
-            if (!_entityManager.TryGetComponent(uid, out SpriteComponent? sprite) || !args.IsAnimated)
+            if (!_entityManager.TryGetComponent(uid, out SpriteComponent? sprite)
+            || !args.IsAnimated
+            || !_entityManager.TryGetComponent(uid, out FlightComponent? flight))
                 return;
 
+
             int? targetLayer = null;
-            if (args.IsLayerAnimated && args.Layer != string.Empty)
+            if (flight.IsLayerAnimated && flight.Layer is not null)
             {
-                targetLayer = GetAnimatedLayer(uid, args.Layer, sprite);
+                targetLayer = GetAnimatedLayer(uid, flight.Layer, sprite);
                 if (targetLayer == null)
                     return;
             }
 
-            if (args.IsFlying && args.IsAnimated && args.AnimationKey != "default")
+            if (args.IsFlying && args.IsAnimated && flight.AnimationKey != "default")
             {
                 var comp = new FlyingVisualsComponent
                 {
-                    AnimationKey = args.AnimationKey,
-                    AnimateLayer = args.IsLayerAnimated,
+                    AnimationKey = flight.AnimationKey,
+                    AnimateLayer = flight.IsLayerAnimated,
                     TargetLayer = targetLayer,
+                    Speed = flight.ShaderSpeed,
+                    Multiplier = flight.ShaderMultiplier,
+                    Offset = flight.ShaderOffset,
                 };
                 AddComp(uid, comp);
             }

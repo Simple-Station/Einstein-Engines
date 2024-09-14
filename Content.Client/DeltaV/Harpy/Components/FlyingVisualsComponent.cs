@@ -11,21 +11,21 @@ public sealed partial class FlyingVisualsComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField]
-    public float Speed = 1f;
+    public float Speed;
 
     /// <summary>
     /// How far it goes in any direction.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField]
-    public float Distance = 1f;
+    public float Multiplier;
 
     /// <summary>
     /// How much the limbs (if there are any) rotate.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField]
-    public float Rotation = 1f;
+    public float Offset;
 
     /// <summary>
     /// Are we animating layers or the entire sprite?

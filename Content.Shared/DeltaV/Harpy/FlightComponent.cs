@@ -22,22 +22,29 @@ namespace Content.Shared.DeltaV.Harpy
         /// Is the user flying right now?
         /// </summary>
 
-        [ViewVariables(VVAccess.ReadWrite), DataField("on"), AutoNetworkedField]
+        [DataField("on"), AutoNetworkedField]
         public bool On;
 
         /// <summary>
         /// Stamina drain per second when flying
         /// </summary>
 
-        [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-        public float StaminaDrainRate = 3f;
+        [DataField("staminaDrainRate"), AutoNetworkedField]
+        public float StaminaDrainRate = 2.0f;
 
         /// <summary>
         /// DoAfter delay until the user becomes weightless.
         /// </summary>
 
-        [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+        [DataField("activationDelay"), AutoNetworkedField]
         public float ActivationDelay = 1.0f;
+
+        /// <summary>
+        /// Speed modifier while in flight
+        /// </summary>
+
+        [DataField("activationDelay"), AutoNetworkedField]
+        public float SpeedModifier = 2.0f;
 
         /// <summary>
         /// Path to a sound specifier or collection for the noises made during flight
@@ -68,6 +75,24 @@ namespace Content.Shared.DeltaV.Harpy
         public string? Layer;
 
         /// <summary>
+        /// Whats the speed of the shader?
+        /// </summary>
+        [DataField("speed")]
+        public float ShaderSpeed = 6.0f;
+
+        /// <summary>
+        /// How much are the values in the shader's calculations multiplied by?
+        /// </summary>
+        [DataField("multiplier")]
+        public float ShaderMultiplier = 0.01f;
+
+        /// <summary>
+        /// What is the offset on the shader?
+        /// </summary>
+        [DataField("offset")]
+        public float ShaderOffset = 0.25f;
+
+        /// <summary>
         /// What animation does the flight use?
         /// </summary>
 
@@ -78,7 +103,7 @@ namespace Content.Shared.DeltaV.Harpy
         /// Time between sounds being played
         /// </summary>
         [DataField("flapInterval")]
-        public float FlapInterval = 1.25f;
+        public float FlapInterval = 1.0f;
 
         public float TimeUntilFlap;
     }
