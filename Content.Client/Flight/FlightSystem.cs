@@ -48,9 +48,7 @@ namespace Content.Client.Flight
                 AddComp(uid, comp);
             }
             if (!args.IsFlying)
-            {
                 RemComp<FlightVisualsComponent>(uid);
-            }
         }
 
         public int? GetAnimatedLayer(EntityUid uid, string targetLayer, SpriteComponent? sprite = null)
