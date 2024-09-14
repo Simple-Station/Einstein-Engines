@@ -231,3 +231,127 @@
           Blunt: 1.5
           Slash: 1.5
           Piercing: 1.5
+
+- type: trait
+  id: Small
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Tiny
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+    - !type:CharacterHeightRequirement
+      max: 150
+    - !type:CharacterWidthRequirement
+      max: 32
+  components:
+    - type: PseudoItem
+      storedOffset: 0,17
+      shape:
+        - 0,0,1,4
+        - 0,2,3,4
+        - 4,0,5,4
+
+- type: trait
+  id: Tiny
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Small
+    - !type:CharacterHeightRequirement
+      max: 133
+    - !type:CharacterWidthRequirement
+      max: 29
+  componentRemovals:
+    - PseudoItem
+  components:
+    - type: Item
+      size: Normal
+
+- type: trait
+  id: TemperatureTolerance
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vulpkanin
+  components:
+    - type: TemperatureProtection
+      coefficient: 0.1
+
+- type: trait
+  id: Talons
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Claws
+  componentRemovals:
+    - MeleeWeapon
+  components:
+    - type: MeleeWeapon
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Piercing: 5
+
+- type: trait
+  id: Claws
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+        - Reptilian
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Talons
+  componentRemovals:
+    - MeleeWeapon
+  components:
+    - type: MeleeWeapon
+      soundHit:
+        collection: AlienClaw
+      angle: 30
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 5
+
+- type: trait
+  id: Spinarette
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Arachnid
+        - Arachne
+  components:
+    - type: Sericulture
+      action: ActionSericulture
+      productionLength: 2
+      entityProduced: MaterialWebSilk1
+      hungerCost: 4

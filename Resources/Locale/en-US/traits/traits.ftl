@@ -227,3 +227,38 @@ trait-description-AnomalousPositronics =
     Whether by intentional design from the manufacturer, black market modifications, or accidental omission,
     your positronic brain lacks its standard psionic insulation. As a being that can be argued to have a soul,
     this by extension means that it is possible for you to be influenced by the Noosphere.
+
+trait-name-Photophobia = Photophobia
+trait-description-Photophobia =
+    Your eyes are extremely sensitive to bright lights. As a result, you may be blinded for a greater duration than others
+    when exposed to sudden flashes of light. Your eyes are also more likely to be injured by flashes.
+
+trait-name-Clumsy = Clumsy
+trait-description-Clumsy =
+    You have a severe deficiency in hand-eye-coordination, resulting in an inability to do some things that others would take for granted.
+    Any weapons you may try to use are more likely to injure yourself than others.
+
+trait-name-Small = Small
+trait-description-Small =
+    You are much smaller than a typical person, and can climb into spaces others would not normally be able to fit into, such as duffel bags.
+
+trait-name-Tiny = Tiny
+trait-description-Tiny =
+    You are substantially smaller than a typical person. You may be picked up by other people with no more difficulty than
+    any moderately sized object. You can also squeeze yourself into most common containers. Or the deep fryer.
+
+trait-name-TemperatureTolerance = Temperature Tolerance
+trait-description-TemperatureTolerance =
+    You have a notable tolerance for lower temperatures, with an innate protection roughly equivalent to wearing a warm jacket.
+
+trait-name-Talons = Talons
+trait-description-Talons =
+    Your fingertips have been replaced with piercing talons, either by hard plastic bionics, or through genemodding.
+
+trait-name-Claws = Claws
+trait-description-Claws =
+    Your fingertips have been replaced with sharp claws, either by hard plastic bionics, or through genemodding.
+
+trait-name-Spinarette = Bionic Spinarette
+trait-description-Spinarette =
+    A fully functional biological spinarette has been grafted into your wrist, allowing you to produce spider silk at will.
