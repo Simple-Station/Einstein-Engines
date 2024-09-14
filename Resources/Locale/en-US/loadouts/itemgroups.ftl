@@ -12,7 +12,7 @@ character-item-group-LoadoutUniformsCivilian = Civilian Uniforms
 # Generic - Items
 character-item-group-LoadoutAirTank = Emergency Air Tanks
 character-item-group-LoadoutLighters = Lighters
-character-item-group-LoadoutInstrumentsAny = Musical Instruments(Non-Musician)
+character-item-group-LoadoutInstrumentsAny = Musical Instruments (Non-Musician)
 character-item-group-LoadoutSmokes = Smokeables
 character-item-group-LoadoutBoxKits = Survival Kits
 character-item-group-LoadoutWritables = Writing Tools
