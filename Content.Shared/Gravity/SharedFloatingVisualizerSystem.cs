@@ -71,10 +71,11 @@ public abstract class SharedFloatingVisualizerSystem : EntitySystem
             return;
         floating.CanFloat = args.IsFlying;
 
-        if (args.IsFlying && args.IsAnimated)
-        {
-            FloatAnimation(uid, floating.Offset, floating.AnimationKey, floating.AnimationTime);
-        }
+        if (!args.IsFlying
+            || !args.IsAnimated)
+            return;
+
+        FloatAnimation(uid, floating.Offset, floating.AnimationKey, floating.AnimationTime);
     }
 
     private void OnEntParentChanged(EntityUid uid, FloatingVisualsComponent component, ref EntParentChangedMessage args)

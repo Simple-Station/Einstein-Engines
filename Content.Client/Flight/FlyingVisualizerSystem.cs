@@ -38,21 +38,20 @@ public sealed class FlyingVisualizerSystem : EntitySystem
             return;
 
         if (!animateLayer)
-        {
             entity.Comp.PostShader = shader;
-        }
 
         if (animateLayer && layer is not null)
-        {
             entity.Comp.LayerSetShader(layer.Value, shader);
-        }
+
         entity.Comp.GetScreenTexture = shader is not null;
         entity.Comp.RaiseShaderEvent = shader is not null;
     }
 
+    /// <summary>
+    ///     This function can be used to modify the shader's values while its running.
+    /// </summary>
     private void OnBeforeShaderPost(EntityUid uid, FlightVisualsComponent comp, ref BeforePostShaderRenderEvent args)
     {
-        // This function can be used to modify the shader's values while its running.
         SetValues(comp, comp.Speed, comp.Offset, comp.Multiplier);
     }
 

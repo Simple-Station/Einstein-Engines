@@ -342,9 +342,7 @@ public sealed partial class StaminaSystem : EntitySystem
             EnsureComp<ActiveStaminaComponent>(target);
         }
         else
-        {
             stamina.ActiveDrains.Remove(actualSource);
-        }
 
         Dirty(target, stamina);
     }
@@ -368,12 +366,13 @@ public sealed partial class StaminaSystem : EntitySystem
                 continue;
             }
             if (comp.ActiveDrains.Count > 0)
-            {
                 foreach (var (source, (drainRate, modifiesSpeed)) in comp.ActiveDrains)
-                {
-                    TakeStaminaDamage(uid, drainRate * frameTime, comp, source: source, visual: false, allowsSlowdown: modifiesSpeed);
-                }
-            }
+                    TakeStaminaDamage(uid,
+                    drainRate * frameTime,
+                    comp,
+                    source: source,
+                    visual: false,
+                    allowsSlowdown: modifiesSpeed);
             // Shouldn't need to consider paused time as we're only iterating non-paused stamina components.
             var nextUpdate = comp.NextUpdate;
 
@@ -390,9 +389,8 @@ public sealed partial class StaminaSystem : EntitySystem
             comp.NextUpdate += TimeSpan.FromSeconds(1f);
             // If theres no active drains, recover stamina.
             if (comp.ActiveDrains.Count == 0)
-            {
                 TakeStaminaDamage(uid, -comp.Decay, comp);
-            }
+
             Dirty(uid, comp);
         }
     }
