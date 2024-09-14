@@ -15,7 +15,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         InitializeNet();
 
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentInit>(OnInitLanguageSpeaker);
-        SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentInit>(OnUniversalInit);
+        SubscribeLocalEvent<UniversalLanguageSpeakerComponent, MapInitEvent>(OnUniversalInit);
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentShutdown>(OnUniversalShutdown);
     }
 
@@ -23,7 +23,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     {
         RemoveLanguage(uid, UniversalPrototype);
     }
-    private void OnUniversalInit(EntityUid uid, UniversalLanguageSpeakerComponent component, ComponentInit args)
+    private void OnUniversalInit(EntityUid uid, UniversalLanguageSpeakerComponent component, MapInitEvent args)
     {
         AddLanguage(uid, UniversalPrototype);
     }
