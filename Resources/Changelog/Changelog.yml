@@ -6271,3 +6271,10 @@ Entries:
   id: 6354
   time: '2024-09-12T00:15:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/895
+- author: stellar-novas
+  changes:
+    - type: Add
+      message: Airlocks once again have access wires. Happy hacking!
+  id: 6355
+  time: '2024-09-14T00:48:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/916
