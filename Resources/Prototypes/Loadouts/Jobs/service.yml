@@ -1,7 +1,7 @@
 # Clown
 - type: loadout
   id: LoadoutServiceClownOutfitJester
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -17,7 +17,7 @@
 
 - type: loadout
   id: LoadoutServiceClownOutfitJesterAlt
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -33,7 +33,7 @@
 
 - type: loadout
   id: LoadoutServiceClownOuterWinter
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -47,7 +47,7 @@
 
 - type: loadout
   id: LoadoutServiceClownOuterClownPriest
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -61,7 +61,7 @@
 
 - type: loadout
   id: LoadoutServiceClownBootsWinter
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -75,7 +75,7 @@
 
 - type: loadout
   id: LoadoutServiceClownMaskSexy
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -89,7 +89,7 @@
 
 - type: loadout
   id: LoadoutServiceClownBedsheetClown
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -106,7 +106,7 @@
 
 - type: loadout
   id: LoadoutServiceClownCowToolboxFilled
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -152,7 +152,7 @@
 # Mime
 - type: loadout
   id: LoadoutServiceMimeOuterWinter
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -166,7 +166,7 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskSad
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -180,7 +180,7 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskScared
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -194,7 +194,7 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskSexy
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -208,7 +208,7 @@
 
 - type: loadout
   id: LoadoutServiceMimeShoesBootsWinter
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -222,7 +222,7 @@
 
 - type: loadout
   id: LoadoutServiceMimeBedsheetMime
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -237,7 +237,7 @@
 # Bartender
 - type: loadout
   id: LoadoutServiceBartenderUniformPurple
-  category: JobsService
+  category: JobsServiceBartender
   cost: 0
   exclusive: true
   requirements:
@@ -249,10 +249,80 @@
   items:
     - ClothingUniformJumpsuitBartenderPurple
 
+- type: loadout
+  id: LoadoutServiceBartenderArmorDuraVest
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderOuterwear
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingOuterArmorDuraVest
+
+- type: loadout
+  id: LoadoutServiceBartenderBoxBeanbags
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - BoxBeanbag
+
+- type: loadout
+  id: LoadoutServiceBartenderBoxLightRifleRubber
+  category: JobsServiceBartender
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - MagazineBoxLightRifleRubber
+
+- type: loadout
+  id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - WeaponShotgunDoubleBarreledRubber
+
+- type: loadout
+  id: LoadoutServiceBartenderMosinRubber
+  category: JobsServiceBartender
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - WeaponSniperMosinRubber
+
 # Botanist
 - type: loadout
   id: LoadoutServiceBotanistUniformOveralls
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -267,7 +337,7 @@
 # Lawyer
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSuit
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -281,7 +351,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSkirt
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -295,7 +365,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformRedSuit
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -309,7 +379,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformRedSkirt
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -323,7 +393,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformPurpleSuit
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -337,7 +407,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformPurpleSkirt
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -351,7 +421,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformGoodSuit
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -365,7 +435,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformGoodSkirt
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -379,7 +449,7 @@
 
 - type: loadout
   id: LoadoutServiceReporterUniformJournalist
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -394,7 +464,7 @@
 # Reporter
 - type: loadout
   id: LoadoutServiceReporterUniformDetectivesuit
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -408,7 +478,7 @@
 
 - type: loadout
   id: LoadoutServiceReporterUniformDetectiveskirt
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -423,7 +493,7 @@
 # Musician
 - type: loadout
   id: LoadoutItemSynthesizerInstrumentMusician
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -436,7 +506,7 @@
 
 - type: loadout
   id: LoadoutItemMicrophoneInstrumentMusician
-  category: JobsService
+  category: JobsServiceUncategorized
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement

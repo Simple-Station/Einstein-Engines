@@ -91,6 +91,15 @@
 
 - type: loadoutCategory
   id: JobsService
+  subCategories:
+    - JobsServiceUncategorized
+    - JobsServiceBartender
+
+- type: loadoutCategory
+  id: JobsServiceUncategorized
+
+- type: loadoutCategory
+  id: JobsServiceBartender
 
 - type: loadoutCategory
   id: Mask
