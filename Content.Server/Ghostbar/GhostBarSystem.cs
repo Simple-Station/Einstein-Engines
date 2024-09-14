@@ -22,7 +22,10 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly StationSpawningSystem _spawningSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
+
+
     const string MapPath = "Maps/Ruins/ghostbar.yml";
+
     private static readonly List<JobComponent> JobComponents = new()
     {
         new JobComponent { Prototype = "Passenger" },
@@ -32,12 +35,14 @@ public sealed class GhostBarSystem : EntitySystem
         new JobComponent { Prototype = "Janitor" }
     };
 
+
     public override void Initialize()
     {
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeNetworkEvent<GhostBarSpawnRequestEvent>(SpawnPlayer);
         SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(OnPlayerGhosted);
     }
+
 
     private void OnRoundStart(RoundStartingEvent ev)
     {
