@@ -15,12 +15,17 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         InitializeNet();
 
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentInit>(OnInitLanguageSpeaker);
-        SubscribeLocalEvent<UniversalLanguageSpeakerComponent, DetermineEntityLanguagesEvent>(OnUniversalDetermineLanguages);
+        SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentInit>(OnUniversalInit);
+        SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentShutdown>(OnUniversalShutdown);
     }
 
-    private void OnDetermineLanguages(EntityUid uid, UniversalLanguageSpeakerComponent component, DetermineEntityLanguagesEvent args)
+    private void OnUniversalShutdown(EntityUid uid, UniversalLanguageSpeakerComponent component, ComponentShutdown args)
     {
-        args.SpokenLanguages.Add(UniversalPrototype);
+        RemoveLanguage(uid, UniversalPrototype);
+    }
+    private void OnUniversalInit(EntityUid uid, UniversalLanguageSpeakerComponent component, ComponentInit args)
+    {
+        AddLanguage(uid, UniversalPrototype);
     }
 
     #region public api
@@ -38,6 +43,9 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
 
     public bool CanSpeak(EntityUid speaker, string language, LanguageSpeakerComponent? component = null)
     {
+        if (HasComp<UniversalLanguageSpeakerComponent>(speaker))
+            return true;
+
         if (!Resolve(speaker, ref component, logMissing: false))
             return false;
 
