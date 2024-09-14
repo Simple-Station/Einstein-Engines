@@ -20,6 +20,7 @@ loadout-category-JobsCommandQM = Logistics Officer
 loadout-category-JobsCommandRD = Mystagogue
 loadout-category-JobsEngineering = Engineering
 loadout-category-JobsMedical = Medical
+loadout-category-JobsScience = Epistemics
 loadout-category-JobsSecurity = Security
 loadout-category-JobsService = Service
 loadout-category-JobsServiceUncategorized = Uncategorized

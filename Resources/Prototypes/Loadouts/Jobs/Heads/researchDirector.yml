@@ -1,7 +1,59 @@
+# Outer
+
+- type: loadout
+  id: LoadoutCommandRDOuterWinter
+  category: JobsCommandRD
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingOuterWinterRD
+
+- type: loadout
+  id: LoadoutCommandRDOuterMysta
+  category: JobsCommandRD
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingOuterCoatRndMysta
+
+# Head
+
+- type: loadout
+  id: LoadoutCommandRDHeadHatBeretMysta
+  category: JobsCommandRD
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingHeadHatBeretMysta
+
+- type: loadout
+  id: LoadoutCommandRDHeadHoodMysta
+  category: JobsCommandRD
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingHeadHoodMysta
+
+# Neck
+
 - type: loadout
   id: LoadoutCommandRDNeckMantle
   category: JobsCommandRD
-  cost: 2
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -13,7 +65,7 @@
 - type: loadout
   id: LoadoutCommandRDNeckCloak
   category: JobsCommandRD
-  cost: 2
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -23,31 +75,23 @@
     - ClothingNeckCloakRd
 
 - type: loadout
-  id: LoadoutCommandRDOuterWinter
+  id: LoadoutCommandRDNeckCloakMystagogue
   category: JobsCommandRD
-  cost: 2
+  cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector
   items:
-    - ClothingOuterWinterRD
+    - ClothingNeckCloakMystagogue
 
-- type: loadout
-  id: LoadoutCommandRDOuterMysta
-  category: JobsCommandRD
-  cost: 2
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - ResearchDirector
-  items:
-    - ClothingOuterCoatRndMysta
+# Shoes
 
 - type: loadout
   id: LoadoutCommandRDShoesBootsWinter
   category: JobsCommandRD
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
