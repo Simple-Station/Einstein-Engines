@@ -6278,3 +6278,18 @@ Entries:
   id: 6355
   time: '2024-09-14T00:48:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/916
+- author: Mocho
+  changes:
+    - type: Add
+      message: >-
+        Science Job related items are now part of a Science loadout group, and
+        have all been significantly discounted.
+    - type: Add
+      message: Added more clothing to the science section in loadouts.
+    - type: Tweak
+      message: Adjusted command loadout item pricing.
+    - type: Tweak
+      message: Added localization strings for the new loadout groups.
+  id: 6356
+  time: '2024-09-14T01:00:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/914
