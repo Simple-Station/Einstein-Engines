@@ -251,14 +251,6 @@ trait-name-TemperatureTolerance = Temperature Tolerance
 trait-description-TemperatureTolerance =
     You have a notable tolerance for lower temperatures, with an innate protection roughly equivalent to wearing a warm jacket.
 
-trait-name-Talons = Talons
-trait-description-Talons =
-    Your fingertips have been replaced with piercing talons, either by hard plastic bionics, or through genemodding.
-
-trait-name-Claws = Claws
-trait-description-Claws =
-    Your fingertips have been replaced with sharp claws, either by hard plastic bionics, or through genemodding.
-
 trait-name-Spinarette = Bionic Spinarette
 trait-description-Spinarette =
     A fully functional biological spinarette has been grafted into your wrist, allowing you to produce spider silk at will.
