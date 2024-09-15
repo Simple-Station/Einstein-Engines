@@ -9,8 +9,8 @@
     sprite: Objects/Fun/toys.rsi
   - type: Tag
     tags:
-      - Payload
-      - ClothMade
+    - Payload
+    - ClothMade
   - type: EmitSoundOnUse
     sound:
       collection: ToySqueak
@@ -60,15 +60,15 @@
   name: throngler plushie
   description: A stuffed toy to remind cargo techs of what they can no longer have.
   components:
-    - type: Sprite
-      sprite: Objects/Weapons/Melee/ThronglerPlushie.rsi
-      state: icon
-    - type: MeleeWeapon
-      wideAnimationRotation: -135
-      attackRate: 10
-    - type: Item
-      size: Ginormous
-      sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/ThronglerPlushie.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 10
+  - type: Item
+    size: Ginormous
+    sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
 
 - type: entity
   parent: BasePlushie
@@ -76,38 +76,38 @@
   name: ghost soft toy
   description: The start of your personal GHOST GANG!
   components:
-    - type: Sprite
-      sprite: Mobs/Ghosts/ghost_human.rsi
-      state: icon
-      noRot: true
-    - type: Item
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.25,-0.25,0.25,0.25"
-          density: 20
-          mask:
-            - ItemMask
-          restitution: 0.98
-          friction: 0.01
-    - type: Physics
-      angularDamping: 0.02
-      linearDamping: 0.02
-      fixedRotation: true
-      bodyType: Dynamic
-    - type: TileFrictionModifier
-      modifier: 0.1
-    - type: Tag
-      tags:
-        - ForceableFollow
-        - PlushieGhost
-        - Payload
-    - type: RandomWalk
-      accumulatorRatio: 0.5
-      maxSpeed: 1
-      minSpeed: 0.25
+  - type: Sprite
+    sprite: Mobs/Ghosts/ghost_human.rsi
+    state: icon
+    noRot: true
+  - type: Item
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.98
+        friction: 0.01
+  - type: Physics
+    angularDamping: 0.02
+    linearDamping: 0.02
+    fixedRotation: true
+    bodyType: Dynamic
+  - type: TileFrictionModifier
+    modifier: 0.1
+  - type: Tag
+    tags:
+    - ForceableFollow
+    - PlushieGhost
+    - Payload
+  - type: RandomWalk
+    accumulatorRatio: 0.5
+    maxSpeed: 1
+    minSpeed: 0.25
 
 - type: entity
   parent: PlushieGhost
@@ -116,15 +116,15 @@
   suffix: DO NOT MAP
   description: So soft it almost makes you want to take a nap...
   components:
-    - type: Item
-      size: Normal
-    - type: Sprite
-      sprite: DeltaV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite
-      state: icon
-      noRot: true
-    - type: Construction
-      graph: PlushieGhostRevenant
-      node: plushie
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: DeltaV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite
+    state: icon
+    noRot: true
+  - type: Construction
+    graph: PlushieGhostRevenant
+    node: plushie
 
 - type: entity
   parent: BasePlushie
@@ -398,74 +398,74 @@
   name: diona plushie
   description: An adorable stuffed toy that resembles a diona. Love water and cuddles. Do not wet!
   components:
-    - type: Sprite
-      layers:
-        - state: plushie_diona
-        - state: plushie_diona1
-          map: [ "enum.SolutionContainerLayers.Fill" ]
-          visible: false
-    - type: EmitSoundOnUse
-      sound:
-        path: /Audio/Items/Toys/toy_rustle.ogg
-    - type: EmitSoundOnLand
-      sound:
-        path: /Audio/Items/Toys/toy_rustle.ogg
-    - type: EmitSoundOnActivate
-      sound:
-        path: /Audio/Items/Toys/toy_rustle.ogg
-    - type: EmitSoundOnTrigger
-      sound:
-        path: /Audio/Items/Toys/toy_rustle.ogg
-    - type: MeleeWeapon
-      wideAnimationRotation: 180
-      soundHit:
-        path: /Audio/Items/Toys/toy_rustle.ogg
-    - type: Food
-      requiresSpecialDigestion: true
-      useSound:
-        path: /Audio/Items/Toys/toy_rustle.ogg
-    - type: SolutionContainerManager
-      solutions:
-        plushie:
-          maxVol: 1
-        food:
-          maxVol: 10
-          reagents:
-          - ReagentId: Fiber
-            Quantity: 10
+  - type: Sprite
+    layers:
+    - state: plushie_diona
+    - state: plushie_diona1
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+      visible: false
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: SolutionContainerManager
+    solutions:
+      plushie:
+        maxVol: 1
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
 
-    - type: RefillableSolution
-      solution: plushie
-    - type: SolutionContainerVisuals
-      maxFillLevels: 1
-      fillBaseName: plushie_diona
-      changeColor: false
-    - type: Appearance
-    - type: Reactive
-      reactions:
-        - reagents: [ Water ]
-          methods: [ Touch ]
-          effects:
-            - !type:AddToSolutionReaction
-              solution: plushie
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.3,-0.3,0.3,0.3"
-          density: 15
-          mask:
-            - ItemMask
-        rehydrate:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.3,-0.3,0.3,0.3"
-          hard: false
-          layer:
-            - LowImpassable
-    - type: CollisionWake
-      enabled: false
+  - type: RefillableSolution
+    solution: plushie
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: plushie_diona
+    changeColor: false
+  - type: Appearance
+  - type: Reactive
+    reactions:
+    - reagents: [ Water ]
+      methods: [ Touch ]
+      effects:
+      - !type:AddToSolutionReaction
+        solution: plushie
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        density: 15
+        mask:
+        - ItemMask
+      rehydrate:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        hard: false
+        layer:
+        - LowImpassable
+  - type: CollisionWake
+    enabled: false
 
 - type: entity
   parent: BasePlushie
@@ -487,8 +487,8 @@
     storedRotation: -90
   - type: Tag
     tags:
-      - PlushieSharkBlue
-      - Payload
+    - PlushieSharkBlue
+    - Payload
 
 - type: entity
   parent: PlushieSharkBlue
@@ -503,8 +503,8 @@
     heldPrefix: pink
   - type: Tag
     tags:
-      - PlushieSharkPink
-      - Payload
+    - PlushieSharkPink
+    - Payload
 
 - type: entity
   parent: PlushieSharkBlue
@@ -519,8 +519,8 @@
     heldPrefix: grey
   - type: Tag
     tags:
-      - PlushieSharkGrey
-      - Payload
+    - PlushieSharkGrey
+    - Payload
 
 - type: entity
   parent: BasePlushie
@@ -1296,7 +1296,7 @@
     state: nuketoy
   - type: Tag
     tags:
-      - Payload
+    - Payload
   - type: UseDelay
     delay: 180.0
   - type: EmitSoundOnUse
@@ -1371,13 +1371,13 @@
     fireRate: 0.5
     selectedMode: SemiAuto
     availableModes:
-      - SemiAuto
+    - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/click.ogg
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - BulletFoam
+      - BulletFoam
     capacity: 1
     soundInsert:
       path: /Audio/Items/bow_pull.ogg
@@ -1416,7 +1416,7 @@
   - type: Gun
     selectedMode: SemiAuto
     availableModes:
-      - SemiAuto
+    - SemiAuto
     fireRate: 2
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
@@ -1426,8 +1426,8 @@
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - CartridgeCap
-        - SpeedLoaderCap
+      - CartridgeCap
+      - SpeedLoaderCap
     proto: CartridgeCap
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
@@ -1448,10 +1448,10 @@
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - CartridgeCap
-        - SpeedLoaderCap
-        - CartridgeMagnum
-        - SpeedLoaderMagnum
+      - CartridgeCap
+      - SpeedLoaderCap
+      - CartridgeMagnum
+      - SpeedLoaderMagnum
     proto: CartridgeMagnumAP
 
 - type: entity
@@ -1660,70 +1660,70 @@
   name: toy sword
   description: New Sandy-Cat plastic sword! Comes with realistic sound and full color! Looks almost like the real thing!
   components:
-    - type: EnergySword
-      colorOptions:
-        - DodgerBlue
-    - type: ItemToggle
-      soundActivate:
-        path: /Audio/Weapons/ebladeon.ogg
-      soundDeactivate:
-        path: /Audio/Weapons/ebladeoff.ogg
-    - type: ItemToggleActiveSound
-      activeSound:
-        path: /Audio/Weapons/ebladehum.ogg
-    - type: Sprite
-      sprite: Objects/Fun/toy_sword.rsi
-      layers:
-        - state: e_sword
-        - state: e_sword_blade
-          color: "#FFFFFF"
-          visible: false
-          shader: unshaded
-          map: [ "blade" ]
-    - type: Item
-      size: Small
-      sprite: Objects/Fun/toy_sword.rsi
-    - type: UseDelay
-      delay: 1.0
-    - type: PointLight
-      enabled: false
-      radius: 2
-      energy: 2
-      color: white
-      netsync: false
-    - type: Appearance
-    - type: ToggleableLightVisuals
-      spriteLayer: blade
-      inhandVisuals:
-        left:
-          - state: inhand-left-blade
-            shader: unshaded
-        right:
-          - state: inhand-right-blade
-            shader: unshaded
-    - type: ItemTogglePointLight
-    - type: DisarmMalus
-      malus: 0
-    - type: StaminaDamageOnHit
-      damage: 8
-    - type: MeleeWeapon
-      wideAnimationRotation: -135
-      damage:
-        types:
-          Blunt: 0
-    - type: ItemToggleMeleeWeapon
-      activatedSoundOnHit:
-        path: /Audio/Weapons/eblade1.ogg
-        params:
-          variation: 0.250
-      activatedSoundOnHitNoDamage:
-        path: /Audio/Weapons/eblade1.ogg
-        params:
-          variation: 0.250
-      activatedSoundOnSwing:
-        path: /Audio/Weapons/eblademiss.ogg
-        params:
-          variation: 0.125
+  - type: EnergySword
+    colorOptions:
+    - DodgerBlue
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Weapons/ebladeon.ogg
+    soundDeactivate:
+      path: /Audio/Weapons/ebladeoff.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Weapons/ebladehum.ogg
+  - type: Sprite
+    sprite: Objects/Fun/toy_sword.rsi
+    layers:
+    - state: e_sword
+    - state: e_sword_blade
+      color: "#FFFFFF"
+      visible: false
+      shader: unshaded
+      map: [ "blade" ]
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/toy_sword.rsi
+  - type: UseDelay
+    delay: 1.0
+  - type: PointLight
+    enabled: false
+    radius: 2
+    energy: 2
+    color: white
+    netsync: false
+  - type: Appearance
+  - type: ToggleableLightVisuals
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-blade
+        shader: unshaded
+      right:
+      - state: inhand-right-blade
+        shader: unshaded
+  - type: ItemTogglePointLight
+  - type: DisarmMalus
+    malus: 0
+  - type: StaminaDamageOnHit
+    damage: 8
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 0
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+    activatedSoundOnSwing:
+      path: /Audio/Weapons/eblademiss.ogg
+      params:
+        variation: 0.125
 
 - type: entity
   parent: BasePlushie
@@ -1739,8 +1739,8 @@
     - state: visor
   - type: RandomSprite
     available:
-      - enum.DamageStateVisualLayers.Base:
-          base: Sixteen
+    - enum.DamageStateVisualLayers.Base:
+        base: Sixteen
 
 - type: entity
   parent: BaseItem
@@ -1752,10 +1752,9 @@
     sprite: Objects/Weapons/Melee/cutlass.rsi
     state: foam_icon
   - type: MeleeWeapon
+    wideAnimationRotation: -135
     attackRate: .6666
     range: 2.0
-    angle: 0
-    animation: WeaponArcThrust
     damage:
       types:
         Blunt: 0
@@ -1794,35 +1793,35 @@
   name: rubber hammer
   description: A brightly colored hammer made of rubber.
   components:
-    - type: Sprite
-      sprite: Objects/Fun/rubber_hammer.rsi
-      state: icon
-    - type: WeaponRandom
-      damageBonus:
-          types:
-              Blunt: 1000
-    - type: StaminaDamageOnHit
-      damage: 8
-    - type: Item
-      size: Small
-      sprite: Objects/Fun/rubber_hammer.rsi
-    - type: Appearance
-    - type: DisarmMalus
-      malus: 0
-    - type: MeleeWeapon
-      soundHit:
-        collection: RubberHammer
-        params:
-            variation: 0.03
-            volume: 3
-      soundNoDamage:
-        collection: RubberHammer
-        params:
-            variation: 0.03
-            volume: 3
-      damage:
-        types:
-          Blunt: 0
+  - type: Sprite
+    sprite: Objects/Fun/rubber_hammer.rsi
+    state: icon
+  - type: WeaponRandom
+    damageBonus:
+      types:
+        Blunt: 1000
+  - type: StaminaDamageOnHit
+    damage: 8
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/rubber_hammer.rsi
+  - type: Appearance
+  - type: DisarmMalus
+    malus: 0
+  - type: MeleeWeapon
+    soundHit:
+      collection: RubberHammer
+      params:
+        variation: 0.03
+        volume: 3
+    soundNoDamage:
+      collection: RubberHammer
+      params:
+        variation: 0.03
+        volume: 3
+    damage:
+      types:
+        Blunt: 0
 
 - type: entity
   parent: ToyHammer
@@ -1831,26 +1830,26 @@
   description: A toy hammer which makes a wildly terrifying sound. It is missing it's old spirit of bangammer and is still unraisinable.
   suffix: DO NOT MAP
   components:
-    - type: Sprite
-      sprite: Objects/Fun/bwoink_hammer.rsi
-      state: icon
-    - type: Item
-      size: Small
-      sprite: Objects/Fun/bwoink_hammer.rsi
-    - type: MeleeWeapon
-      soundHit:
-        path: /Audio/Admin/adminhelp_old.ogg
-        params:
-            variation: 0.03
-            volume: 3
-      soundNoDamage:
-        path: /Audio/Admin/adminhelp_old.ogg
-        params:
-            variation: 0.03
-            volume: 3
-      damage:
-        types:
-          Blunt: 0
+  - type: Sprite
+    sprite: Objects/Fun/bwoink_hammer.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/bwoink_hammer.rsi
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Admin/adminhelp_old.ogg
+      params:
+        variation: 0.03
+        volume: 3
+    soundNoDamage:
+      path: /Audio/Admin/adminhelp_old.ogg
+      params:
+        variation: 0.03
+        volume: 3
+    damage:
+      types:
+        Blunt: 0
 
 - type: entity
   parent: BaseItem
@@ -1864,7 +1863,7 @@
     quickEquip: false
   - type: Tag
     tags:
-      - Payload
+    - Payload
   - type: EmitSoundOnUse
     sound:
       collection: Parp
@@ -1926,7 +1925,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - plastic
+    - plastic
   - type: Food
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/banana.rsi
@@ -1953,8 +1952,8 @@
     sprite: Objects/Fun/glue.rsi
     state: icon
     layers:
-      - state: icon
-        map: ["enum.OpenableVisuals.Layer"]
+    - state: icon
+      map: ["enum.OpenableVisuals.Layer"]
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -1971,13 +1970,13 @@
       drink:
         maxVol: 100
         reagents:
-          - ReagentId: SpaceGlue
-            Quantity: 100
+        - ReagentId: SpaceGlue
+          Quantity: 100
   - type: TrashOnSolutionEmpty
     solution: drink
   - type: Tag
     tags:
-      - DrinkSpaceGlue
+    - DrinkSpaceGlue
 
 - type: entity
   parent: BaseItem
@@ -2015,26 +2014,26 @@
   suffix: Toy
   description: Why would you make this?
   components:
-    - type: Sprite
-      sprite: Objects/Weapons/Melee/Throngler2.rsi
-      state: icon
-    - type: StaminaDamageOnHit
-      damage: 0.8
-    - type: MeleeWeapon
-      wideAnimationRotation: -135
-      attackRate: .1
-      damage:
-        types:
-          Blunt: 0
-      soundHit:
-        path: /Audio/Effects/explosion_small1.ogg
-      soundNoDamage:
-        path: /Audio/Effects/explosion_small1.ogg
-    - type: Item
-      size: Ginormous
-      sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
-    - type: DisarmMalus
-      malus: 0
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/Throngler2.rsi
+    state: icon
+  - type: StaminaDamageOnHit
+    damage: 0.8
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: .1
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      path: /Audio/Effects/explosion_small1.ogg
+    soundNoDamage:
+      path: /Audio/Effects/explosion_small1.ogg
+  - type: Item
+    size: Ginormous
+    sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
+  - type: DisarmMalus
+    malus: 0
 
 - type: entity
   parent: BasePlushie
@@ -2042,9 +2041,9 @@
   name: shadowkin plushie
   description: A plushie of a Shadowkin. It's very soft.
   components:
-    - type: Sprite
-      sprite: Objects/Fun/toys.rsi
-      state: shadowkin
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: shadowkin
 
 - type: entity
   parent: BasePlushie
@@ -2052,9 +2051,9 @@
   name: morty plushie
   description: A plushie of the lovely Morty. It's a resilient, yet sensitive type of plush.
   components:
-    - type: Sprite
-      sprite: Objects/Fun/toys.rsi
-      state: mortplush
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: mortplush
 
 - type: entity
   parent: BasePlushie
