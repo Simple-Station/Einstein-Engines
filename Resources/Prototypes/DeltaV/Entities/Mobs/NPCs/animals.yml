@@ -97,6 +97,7 @@
     rootTask:
       task: SimpleHostileCompound
   - type: Speech
+    allowedEmotes: ['Bark', 'Snarl', 'Whine', 'Howl', 'Awoo']
     speechVerb: Canine
     speechSounds: Vulpkanin
   - type: Fixtures
