@@ -152,6 +152,8 @@
       id: LoadoutClothingEyesGlassesSecurityBig
     - type: loadout
       id: LoadoutClothingEyesGlassesSecurityVisor
+    - type: loadout
+      id: LoadoutClothingEyesGlassesCorpsman
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityGloves
