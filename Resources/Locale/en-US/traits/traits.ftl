@@ -244,14 +244,6 @@ trait-description-Small =
     You are much smaller than a typical person, and can climb into spaces others would not normally be able to fit into, such as duffel bags.
     This trait does not in any way modify your character's size, it merely requires that your character be at most the size of a standard Felinid.
 
-trait-name-Tiny = Tiny
-trait-description-Tiny =
-    You are smaller than a typical small person.
-    You may be picked up by other people with no more difficulty than any moderately sized object.
-    You can also squeeze yourself into most common containers. Or the deep fryer.
-    This trait does not in any way modify your character's size,
-    it merely requires that your character be substantially smaller than a standard Felinid.
-
 trait-name-TemperatureTolerance = Temperature Tolerance
 trait-description-TemperatureTolerance =
     You have a notable tolerance for lower temperatures. You can stand for extended periods of time

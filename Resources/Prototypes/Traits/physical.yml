@@ -258,25 +258,6 @@
         - 4,0,5,4
 
 - type: trait
-  id: Tiny
-  category: Physical
-  points: -3
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Small
-    - !type:CharacterHeightRequirement
-      max: 133
-    - !type:CharacterWidthRequirement
-      max: 29
-  componentRemovals:
-    - PseudoItem # Overwrites the Felinid Psuedoitem trait if taken by an "extra small Felinid"
-  components:
-    - type: Item
-      size: Normal
-
-- type: trait
   id: TemperatureTolerance
   category: Physical
   points: -1
