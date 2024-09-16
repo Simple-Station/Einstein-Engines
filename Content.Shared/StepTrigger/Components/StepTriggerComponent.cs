@@ -1,3 +1,4 @@
+using Content.Shared.StepTrigger.Prototypes;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
@@ -57,6 +58,13 @@ public sealed partial class StepTriggerComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool StepOn = false;
+
+    /// <summary>
+    /// If TriggerGroups is specified, it will check StepTriggerImmunityComponent to have the same TriggerType to activate immunity
+    /// </summary>
+    // WD EDIT
+    [DataField]
+    public StepTriggerGroup? TriggerGroups;
 }
 
 [RegisterComponent]

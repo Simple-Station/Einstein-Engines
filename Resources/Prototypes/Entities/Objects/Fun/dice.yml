@@ -119,6 +119,9 @@
         mask:
         - ItemMask
   - type: StepTrigger
+    triggerGroups: # WD EDIT
+      types:
+      - Shard
     intersectRatio: 0.2
   - type: TriggerOnStepTrigger
   - type: ShoesRequiredStepTrigger
