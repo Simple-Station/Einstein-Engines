@@ -237,10 +237,6 @@
   category: Physical
   points: -2
   requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Tiny
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
