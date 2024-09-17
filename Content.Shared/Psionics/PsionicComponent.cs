@@ -8,11 +8,19 @@ namespace Content.Shared.Abilities.Psionics
     public sealed partial class PsionicComponent : Component
     {
         /// <summary>
-        ///     How close a Psion is to awakening a new power.
-        ///     TODO: Implement this in a separate PR.
+        ///     How close a Psion is to generating a new power. When Potentia reaches the NextPowerCost, it is "Spent" in order to "Buy" a random new power.
+        ///     TODO: Psi-Potentiometry should be able to read how much Potentia a person has.
         /// </summary>
         [DataField]
-        public float Potentia = 0;
+        public float Potentia;
+
+        /// <summary>
+        ///     Each time a Psion rolls for a new power, they roll a number between 0 and 100, adding any relevant modifiers. This number is then added to Potentia,
+        ///     meaning that it carries over between rolls. When a character has an amount of potentia equal to at least 100 * 2^(total powers), the potentia is then spent, and a power is generated.
+        ///     This variable stores the cost of the next power.
+        /// </summary>
+        [DataField]
+        public float NextPowerCost = 100;
 
         /// <summary>
         ///     The baseline chance of obtaining a psionic power when rolling for one.
@@ -24,7 +32,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     Whether or not a Psion has an available "Reroll" to spend on attempting to gain powers.
         /// </summary>
         [DataField]
-        public bool CanReroll;
+        public bool CanReroll = true;
 
         /// <summary>
         ///     The Base amount of time (in minutes) this Psion is given the stutter effect if they become mindbroken.
@@ -142,6 +150,18 @@ namespace Content.Shared.Abilities.Psionics
         public float CurrentDampening;
 
         /// <summary>
+        ///     How many "Slots" an entity has for psionic powers. This is not a hard limit, and is instead used for calculating the cost to generate new powers.
+        ///     Exceeding this limit causes an entity to become a Glimmer Source.
+        /// </summary>
+        [DataField]
+        public int PowerSlots = 1;
+
+        /// <summary>
+        ///     How many "Slots" are currently occupied by psionic powers.
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
+        public int PowerSlotsTaken;
+
         ///     List of descriptors this entity will bring up for psychognomy. Used to remove
         ///     unneccesary subs for unique psionic entities like e.g. Oracle.
         /// </summary>
