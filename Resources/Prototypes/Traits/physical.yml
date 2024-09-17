@@ -231,3 +231,173 @@
           Blunt: 1.5
           Slash: 1.5
           Piercing: 1.5
+
+- type: trait
+  id: Small
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid # Felinids already have this feature by default.
+    - !type:CharacterHeightRequirement
+      max: 150
+    - !type:CharacterWidthRequirement
+      max: 32
+  components:
+    - type: PseudoItem
+      storedOffset: 0,17
+      shape:
+        - 0,0,1,4
+        - 0,2,3,4
+        - 4,0,5,4
+
+- type: trait
+  id: TemperatureTolerance
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
+  components:
+    - type: TemperatureProtection
+      coefficient: 0.1 # Enough resistance to walk into the chef's freezer, or tolerate daytime temperatures on Glacier without a jacket.
+
+# These traits largely exist to demonstrate more of the "Component Removals" functionality. This way contributors
+# can get used to seeing that they can "Remove and Replace" a pre-existing component.
+# When declared, componentRemovals work like a "RemComp" that activates upon joining a round.
+- type: trait
+  id: Talons
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy # Harpies already have talons
+        - Arachnid # Apparently they have a "piercing" bite
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Claws
+  componentRemovals:
+    - MeleeWeapon # Remove the original innate melee attack, so that it can be replaced with a new one.
+  components:
+    - type: MeleeWeapon
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
+                      # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
+
+- type: trait
+  id: Claws
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid # Felinids already have cat claws.
+        - Reptilian # Reptilians also have cat claws.
+        # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Talons
+  componentRemovals:
+    - MeleeWeapon # Remove the original innate melee attack, so that it can be replaced with a new one.
+  components:
+    - type: MeleeWeapon
+      soundHit:
+        collection: AlienClaw
+      angle: 30
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
+                   # Blunt also deals bleed damage, so this is more of a sidegrade.
+
+- type: trait
+  id: NaturalWeaponRemoval
+  category: Physical
+  points: 0
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Human
+        - Oni
+        - SlimePerson
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Talons
+        - Claws
+  componentRemovals:
+    - MeleeWeapon # Remove the original innate melee attack, so that it can be replaced with a new one.
+  components:
+    - type: MeleeWeapon
+      soundHit:
+        collection: Punch
+      angle: 30
+      animation: WeaponArcFist
+      damage:
+        types:
+          Blunt: 5
+
+- type: trait
+  id: StrikingCalluses
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
+                # When we get the Character Records system in, I also want to make this require certain Backgrounds.
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Claws
+        - Talons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - MartialArtist
+        - !type:CharacterJobRequirement
+          jobs:
+            - Boxer
+  componentRemovals:
+    - MeleeWeapon
+  components:
+    - type: MeleeWeapon
+      soundHit:
+        collection: Punch
+      angle: 30
+      animation: WeaponArcFist
+      damage:
+        types:
+          Blunt: 6
+
+- type: trait
+  id: Spinarette
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Arachnid
+        - Arachne
+  components:
+    - type: Sericulture
+      action: ActionSericulture
+      productionLength: 2
+      entityProduced: MaterialWebSilk1
+      hungerCost: 4
