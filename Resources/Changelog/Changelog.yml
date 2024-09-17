@@ -6404,3 +6404,12 @@ Entries:
   id: 6365
   time: '2024-09-17T23:39:07.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/927
+- author: JayJacobs
+  changes:
+    - type: Tweak
+      message: Changed the sprite of the barber chair.
+    - type: Fix
+      message: Fixed bench textures.
+  id: 6366
+  time: '2024-09-17T23:39:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/925
