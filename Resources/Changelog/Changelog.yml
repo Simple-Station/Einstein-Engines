@@ -6372,3 +6372,12 @@ Entries:
   id: 6362
   time: '2024-09-14T18:01:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/868
+- author: Mocho
+  changes:
+    - type: Add
+      message: >-
+        Harpies are now able to fly on station for limited periods of time,
+        moving faster at the cost of stamina.
+  id: 6363
+  time: '2024-09-16T04:41:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/919
