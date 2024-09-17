@@ -21,7 +21,6 @@ namespace Content.Server.Power.EntitySystems
             SubscribeLocalEvent<BatteryComponent, RejuvenateEvent>(OnBatteryRejuvenate);
             SubscribeLocalEvent<BatteryComponent, PriceCalculationEvent>(CalculateBatteryPrice);
             SubscribeLocalEvent<BatteryComponent, EmpPulseEvent>(OnEmpPulse);
-            SubscribeLocalEvent<BatteryComponent, EmpDisabledRemoved>(OnEmpDisabledRemoved);
 
             SubscribeLocalEvent<NetworkBatteryPreSync>(PreSync);
             SubscribeLocalEvent<NetworkBatteryPostSync>(PostSync);
@@ -106,17 +105,6 @@ namespace Content.Server.Power.EntitySystems
             UseCharge(uid, args.EnergyConsumption, component);
         }
 
-        // if a disabled battery is put into a recharged,
-        // allow the recharger to start recharging again after the disable ends
-        private void OnEmpDisabledRemoved(EntityUid uid, BatteryComponent component, ref EmpDisabledRemoved args)
-        {
-            if (!TryComp<ChargingComponent>(uid, out var charging))
-                return;
-
-            var ev = new ChargerUpdateStatusEvent(); 
-            RaiseLocalEvent<ChargerUpdateStatusEvent>(charging.ChargerUid, ref ev);
-        }
-
         public float UseCharge(EntityUid uid, float value, BatteryComponent? battery = null)
         {
             if (value <= 0 ||  !Resolve(uid, ref battery) || battery.CurrentCharge == 0)
@@ -190,10 +178,6 @@ namespace Content.Server.Power.EntitySystems
         {
             if (!Resolve(uid, ref battery))
                 return false;
-
-            // If the battery is full, remove its charging component.
-            if (TryComp<ChargingComponent>(uid, out _))
-                RemComp<ChargingComponent>(uid);
 
             return battery.CurrentCharge / battery.MaxCharge >= 0.99f;
         }

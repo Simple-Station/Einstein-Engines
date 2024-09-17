@@ -1,10 +1,12 @@
 # Clown
 - type: loadout
   id: LoadoutServiceClownOutfitJester
-  category: JobsAUncategorized
-  cost: 3
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Clown
@@ -15,10 +17,12 @@
 
 - type: loadout
   id: LoadoutServiceClownOutfitJesterAlt
-  category: JobsAUncategorized
-  cost: 3
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Clown
@@ -29,10 +33,12 @@
 
 - type: loadout
   id: LoadoutServiceClownOuterWinter
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterService
     - !type:CharacterJobRequirement
       jobs:
         - Clown
@@ -41,10 +47,12 @@
 
 - type: loadout
   id: LoadoutServiceClownOuterClownPriest
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterService
     - !type:CharacterJobRequirement
       jobs:
         - Clown
@@ -53,10 +61,12 @@
 
 - type: loadout
   id: LoadoutServiceClownBootsWinter
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoesService
     - !type:CharacterJobRequirement
       jobs:
         - Clown
@@ -65,10 +75,12 @@
 
 - type: loadout
   id: LoadoutServiceClownMaskSexy
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMaskService
     - !type:CharacterJobRequirement
       jobs:
         - Clown
@@ -77,21 +89,28 @@
 
 - type: loadout
   id: LoadoutServiceClownBedsheetClown
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckService
     - !type:CharacterJobRequirement
       jobs:
         - Clown
   items:
     - BedsheetClown
 
+# For the most part we dont want people to take this item, so its used as an example of all the things
+# you can do with requirements. Point someone to this thing if they ask "how tf do loadout requirements work?"
+
 - type: loadout
   id: LoadoutServiceClownCowToolboxFilled
-  category: JobsAUncategorized
-  cost: 3
+  category: JobsServiceUncategorized
+  cost: 2
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEquipmentService
     - !type:CharacterLogicXorRequirement
       requirements:
         - !type:CharacterLogicAndRequirement
@@ -121,7 +140,7 @@
             - !type:CharacterSexRequirement
               sex: Male
             - !type:CharacterJobRequirement
-              inverted: true
+              inverted: true # This is the equivalent of !(condition)
               jobs:
                 - Clown
         - !type:CharacterJobRequirement
@@ -133,10 +152,12 @@
 # Mime
 - type: loadout
   id: LoadoutServiceMimeOuterWinter
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterService
     - !type:CharacterJobRequirement
       jobs:
         - Mime
@@ -145,10 +166,12 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskSad
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMaskService
     - !type:CharacterJobRequirement
       jobs:
         - Mime
@@ -157,10 +180,12 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskScared
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMaskService
     - !type:CharacterJobRequirement
       jobs:
         - Mime
@@ -169,10 +194,12 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskSexy
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMaskService
     - !type:CharacterJobRequirement
       jobs:
         - Mime
@@ -181,10 +208,12 @@
 
 - type: loadout
   id: LoadoutServiceMimeShoesBootsWinter
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoesService
     - !type:CharacterJobRequirement
       jobs:
         - Mime
@@ -193,10 +222,12 @@
 
 - type: loadout
   id: LoadoutServiceMimeBedsheetMime
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckService
     - !type:CharacterJobRequirement
       jobs:
         - Mime
@@ -206,23 +237,97 @@
 # Bartender
 - type: loadout
   id: LoadoutServiceBartenderUniformPurple
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceBartender
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
   items:
     - ClothingUniformJumpsuitBartenderPurple
 
+- type: loadout
+  id: LoadoutServiceBartenderArmorDuraVest
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderOuterwear
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingOuterArmorDuraVest
+
+- type: loadout
+  id: LoadoutServiceBartenderBoxBeanbags
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - BoxBeanbag
+
+- type: loadout
+  id: LoadoutServiceBartenderBoxLightRifleRubber
+  category: JobsServiceBartender
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - MagazineBoxLightRifleRubber
+
+- type: loadout
+  id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - WeaponShotgunDoubleBarreledRubber
+
+- type: loadout
+  id: LoadoutServiceBartenderMosinRubber
+  category: JobsServiceBartender
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - WeaponSniperMosinRubber
+
 # Botanist
 - type: loadout
   id: LoadoutServiceBotanistUniformOveralls
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Botanist
@@ -232,10 +337,12 @@
 # Lawyer
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSuit
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -244,10 +351,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSkirt
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -256,10 +365,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformRedSuit
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -268,10 +379,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformRedSkirt
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -280,10 +393,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformPurpleSuit
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -292,10 +407,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformPurpleSkirt
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -304,10 +421,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformGoodSuit
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -316,10 +435,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformGoodSkirt
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -328,10 +449,12 @@
 
 - type: loadout
   id: LoadoutServiceReporterUniformJournalist
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Reporter
@@ -341,10 +464,12 @@
 # Reporter
 - type: loadout
   id: LoadoutServiceReporterUniformDetectivesuit
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Reporter
@@ -353,10 +478,12 @@
 
 - type: loadout
   id: LoadoutServiceReporterUniformDetectiveskirt
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsServiceUncategorized
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Reporter
@@ -365,12 +492,170 @@
 
 # Musician
 - type: loadout
-  id: LoadoutItemSynthesizerInstrument
-  category: JobsAUncategorized
-  cost: 8
+  id: LoadoutItemSynthesizerInstrumentMusician
+  category: JobsServiceUncategorized
+  cost: 2
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
     - !type:CharacterJobRequirement
       jobs:
         - Musician
   items:
     - SynthesizerInstrument
+
+- type: loadout
+  id: LoadoutItemMicrophoneInstrumentMusician
+  category: JobsServiceUncategorized
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - MicrophoneInstrument
+
+- type: loadout
+  id: LoadoutItemKalimbaInstrumentMusician
+  category: Items
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - KalimbaInstrument
+
+- type: loadout
+  id: LoadoutItemTrumpetInstrumentMusician
+  category: Items
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - TrumpetInstrument
+
+- type: loadout
+  id: LoadoutItemElectricGuitarInstrumentMusician
+  category: Items
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - ElectricGuitarInstrument
+
+- type: loadout
+  id: LoadoutItemBassGuitarInstrumentMusician
+  category: Items
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - BassGuitarInstrument
+
+- type: loadout
+  id: LoadoutItemRockGuitarInstrumentMusician
+  category: Items
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - RockGuitarInstrument
+
+- type: loadout
+  id: LoadoutItemAcousticGuitarInstrumentMusician
+  category: Items
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - AcousticGuitarInstrument
+
+- type: loadout
+  id: LoadoutItemViolinInstrumentMusician
+  category: Items
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - ViolinInstrument
+
+- type: loadout
+  id: LoadoutItemHarmonicaInstrumentMusician
+  category: Items
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - HarmonicaInstrument
+
+- type: loadout
+  id: LoadoutItemAccordionInstrumentMusician
+  category: Items
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - AccordionInstrument
+
+- type: loadout
+  id: LoadoutItemFluteInstrumentMusician
+  category: Items
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - FluteInstrument
+
+- type: loadout
+  id: LoadoutItemOcarinaInstrumentMusician
+  category: Items
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianInstruments
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - OcarinaInstrument
