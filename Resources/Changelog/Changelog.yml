@@ -6381,3 +6381,16 @@ Entries:
   id: 6363
   time: '2024-09-16T04:41:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/919
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Pulling has been reworked. Your character will now try to continuously
+        push the pulled entity when you use the push keybind.
+    - type: Remove
+      message: >-
+        You can no longer push the pulled entity while walking, and pushing now
+        follows the momentum conservation laws.
+  id: 6364
+  time: '2024-09-17T23:38:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/883
