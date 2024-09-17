@@ -6394,3 +6394,13 @@ Entries:
   id: 6364
   time: '2024-09-17T23:38:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/883
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Core now has a 6-Core AME, which is supplied with two jars of fuel. This
+        should give Engineers significantly more than 20 minutes of time to
+        setup the Supermatter engine.
+  id: 6365
+  time: '2024-09-17T23:39:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/927
