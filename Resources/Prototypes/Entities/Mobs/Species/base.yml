@@ -245,6 +245,7 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+    - AnomalyHost
   - type: Targeting
   - type: SurgeryTarget
   - type: MovedByPressure
@@ -306,8 +307,8 @@
   - type: Butcherable
     butcheringType: Spike # TODO human.
     spawned:
-      - id: FoodMeat
-        amount: 5
+    - id: FoodMeat
+      amount: 5
   - type: Respirator
     damage:
       types:
