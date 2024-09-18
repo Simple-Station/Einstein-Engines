@@ -1,4 +1,4 @@
-namespace Content.Shared._White.StoreDiscount;
+namespace Content.Shared.StoreDiscount;
 
 [DataDefinition]
 public sealed partial class SalesSpecifier

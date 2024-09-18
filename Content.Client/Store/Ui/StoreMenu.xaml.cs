@@ -148,7 +148,7 @@ public sealed partial class StoreMenu : DefaultWindow
 
         var newListing = new StoreListingControl(listing, GetListingPriceString(listing), hasBalance, texture);
 
-        if (listing.DiscountValue > 0) // WD EDIT
+        if (listing.DiscountValue > 0)
             newListing.StoreItemBuyButton.AddStyleClass("ButtonColorRed");
 
         newListing.StoreItemBuyButton.OnButtonDown += args

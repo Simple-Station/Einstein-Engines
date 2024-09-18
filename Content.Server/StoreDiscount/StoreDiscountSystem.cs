@@ -4,7 +4,7 @@ using Content.Shared.Store;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server._White.StoreDiscount;
+namespace Content.Server.StoreDiscount;
 
 public sealed class StoreDiscountSystem : EntitySystem
 {
