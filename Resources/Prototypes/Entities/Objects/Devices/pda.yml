@@ -272,7 +272,7 @@
     paralyzeTime: 4
     launchForwardsMultiplier: 1.5
   - type: StepTrigger
-    triggerGroups: # WD EDIT
+    triggerGroups:
       types:
       - SlipEntity
   - type: CollisionWake

@@ -270,7 +270,7 @@
   points: -3
   components:
     - type: StepTriggerImmune
-      whitelist: # WD EDIT
+      whitelist:
         types:
         - Shard
         - Landmine

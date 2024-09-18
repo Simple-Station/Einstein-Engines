@@ -14,7 +14,7 @@
     blacklist:
       tags:
       - Catwalk
-    triggerGroups: # WD EDIT
+    triggerGroups:
       types:
       - Chasm
   - type: Transform

@@ -80,7 +80,7 @@
     stripTimeReduction: 0
     stripTimeMultiplier: 0.667
   - type: StepTriggerImmune
-    whitelist: # WD EDIT
+    whitelist:
       types:
         - Shard
         - Landmine

@@ -77,7 +77,7 @@
     animationState: foam-dissolve
   - type: Slippery
   - type: StepTrigger
-    triggerGroups: # WD EDIT
+    triggerGroups:
       types:
       - SlipTile
   # disabled until foam reagent duplication is fixed

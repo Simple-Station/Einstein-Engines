@@ -123,7 +123,7 @@
     - GalacticCommon
     - SolCommon
   - type: StepTriggerImmune
-    whitelist: # WD EDIT
+    whitelist:
       types:
       - Shard
       - Landmine

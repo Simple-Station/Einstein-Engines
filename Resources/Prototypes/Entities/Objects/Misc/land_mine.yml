@@ -40,7 +40,7 @@
         params:
             maxDistance: 10
   - type: StepTrigger
-    triggerGroups: # WD EDIT
+    triggerGroups:
       types:
       - Landmine
     requiredTriggeredSpeed: 0

@@ -47,7 +47,7 @@
     paralyzeTime: 2
     launchForwardsMultiplier: 1.5
   - type: StepTrigger
-    triggerGroups: # WD EDIT
+    triggerGroups:
       types:
       - SlipTile
     intersectRatio: 0.2

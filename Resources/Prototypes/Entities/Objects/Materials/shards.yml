@@ -64,7 +64,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: StepTrigger
-    triggerGroups: # WD EDIT
+    triggerGroups:
       types:
       - Shard
     intersectRatio: 0.2
