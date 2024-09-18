@@ -1,0 +1,40 @@
+﻿- type: runeSelector
+  id: CultRuneOffering
+  prototype: CultRuneOffering
+
+- type: runeSelector
+  id: CultRuneEmpowering
+  prototype: CultRuneEmpowering
+
+- type: runeSelector
+  id: CultRuneBuff
+  prototype: CultRuneBuff
+
+- type: runeSelector
+  id: CultRuneTeleport
+  prototype: CultRuneTeleport
+
+- type: runeSelector
+  id: CultRuneRevive
+  prototype: CultRuneRevive
+
+- type: runeSelector
+  id: CultRuneBarrier
+  prototype: CultRuneBarrier
+
+- type: runeSelector
+  id: CultRuneSummoning
+  prototype: CultRuneSummoning
+
+- type: runeSelector
+  id: CultRuneBloodBoil
+  prototype: CultRuneBloodBoil
+
+- type: runeSelector
+  id: CultRuneApocalypse
+  prototype: CultRuneApocalypse
+
+- type: runeSelector
+  id: CultRuneDimensionTear
+  prototype: CultRuneDimensionTear
+

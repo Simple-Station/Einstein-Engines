@@ -1,0 +1,22 @@
+﻿- type: entity
+  noSpawn: true
+  parent: BaseTargetObjective
+  id: KillTargetCultObjective
+  description: This fool person should be sacrificed in the glory of our Goddess.
+  components:
+  - type: Objective
+    issuer: cult
+    unique: true
+    difficulty: 3
+    icon:
+      sprite: Objects/Weapons/Melee/cult_dagger.rsi
+      state: icon
+  - type: RoleRequirement
+    roles:
+      components:
+      - CultistRole
+  - type: TargetObjective
+    title: objective-condition-kill-person-title
+  - type: KillTargetCult
+  - type: KillPersonCondition
+    requireDead: true

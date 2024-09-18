@@ -1,0 +1,6 @@
+﻿- type: stack
+  id: RunicMetalSheets
+  name: materials-runic-metal
+  icon: { sprite: /Textures/WhiteDream/BloodCult/Entities/runic_metal.rsi, state: runic}
+  spawn: RunicMetal1
+  maxCount: 30

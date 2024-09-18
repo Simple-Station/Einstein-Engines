@@ -45,6 +45,12 @@ namespace Content.Server.UserInterface
         public EntityWhitelist? AllowedItems = null;
 
         /// <summary>
+        ///     Whitelist for the user who is trying to open this UI.
+        /// </summary>
+        [DataField]
+        public EntityWhitelist? UserWhitelist = null;
+
+        /// <summary>
         ///     Whether you can activate this ui with activateinhand or not
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]

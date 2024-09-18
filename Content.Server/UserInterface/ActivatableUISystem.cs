@@ -78,6 +78,9 @@ public sealed partial class ActivatableUISystem : EntitySystem
         if (!args.CanInteract && (!component.AllowSpectator || !HasComp<GhostComponent>(args.User)))
             return;
 
+        if (component.UserWhitelist != null && !component.UserWhitelist.IsValid(args.User, EntityManager))
+            return;
+
         ActivationVerb verb = new();
         verb.Act = () => InteractUI(args.User, uid, component);
         verb.Text = Loc.GetString(component.VerbText);
@@ -96,6 +99,9 @@ public sealed partial class ActivatableUISystem : EntitySystem
         if (component.AllowedItems != null)
             return;
 
+        if (component.UserWhitelist != null && !component.UserWhitelist.IsValid(args.User, EntityManager))
+            return;
+
         args.Handled = InteractUI(args.User, uid, component);
     }
 
@@ -108,6 +114,9 @@ public sealed partial class ActivatableUISystem : EntitySystem
             return;
 
         if (component.AllowedItems != null)
+            return;
+
+        if (component.UserWhitelist != null && !component.UserWhitelist.IsValid(args.User, EntityManager))
             return;
 
         args.Handled = InteractUI(args.User, uid, component);
