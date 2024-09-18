@@ -18,7 +18,7 @@ namespace Content.Shared.StepTrigger.Components;
 public sealed partial class StepTriggerImmuneComponent : Component
 {
     /// <summary>
-    /// WhiteList of immunity step triggers.
+    ///     WhiteList of immunity step triggers.
     /// </summary>
     [DataField]
     public StepTriggerGroup? Whitelist;

@@ -4,7 +4,6 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
-using Enumerable = System.Linq.Enumerable;
 
 namespace Content.Shared.StepTrigger.Systems;
 
@@ -119,7 +118,6 @@ public sealed class StepTriggerSystem : EntitySystem
 
     private bool CanTrigger(EntityUid uid, EntityUid otherUid, StepTriggerComponent component)
     {
-        // WD EDIT START
         if (!component.Active
             || component.CurrentlySteppedOn.Contains(otherUid))
             return false;
@@ -129,7 +127,6 @@ public sealed class StepTriggerSystem : EntitySystem
             && component.TriggerGroups != null
             && component.TriggerGroups.IsValid(stepTriggerImmuneComponent))
             return false;
-        // WD EDIT END
 
         // Can't trigger if we don't ignore weightless entities
         // and the entity is flying or currently weightless

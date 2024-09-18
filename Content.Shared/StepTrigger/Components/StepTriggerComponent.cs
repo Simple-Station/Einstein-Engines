@@ -54,22 +54,18 @@ public sealed partial class StepTriggerComponent : Component
     public bool IgnoreWeightless;
 
     /// <summary>
-    /// Does this have separate "StepOn" and "StepOff" triggers.
+    ///     Does this have separate "StepOn" and "StepOff" triggers.
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool StepOn = false;
 
     /// <summary>
-    /// If TriggerGroups is specified, it will check StepTriggerImmunityComponent to have the same TriggerType to activate immunity
+    ///     If TriggerGroups is specified, it will check StepTriggerImmunityComponent to have the same TriggerType to activate immunity
     /// </summary>
-    // WD EDIT
     [DataField]
     public StepTriggerGroup? TriggerGroups;
 }
 
 [RegisterComponent]
 [Access(typeof(StepTriggerSystem))]
-public sealed partial class StepTriggerActiveComponent : Component
-{
-
-}
+public sealed partial class StepTriggerActiveComponent : Component { }

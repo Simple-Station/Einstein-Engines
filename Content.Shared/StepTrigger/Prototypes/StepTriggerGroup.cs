@@ -1,77 +1,72 @@
-﻿using Content.Shared.Damage.Prototypes;
-using Content.Shared.StepTrigger.Components;
-using Content.Shared.StepTrigger.Systems;
+﻿using Content.Shared.StepTrigger.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
-namespace Content.Shared.StepTrigger.Prototypes
+namespace Content.Shared.StepTrigger.Prototypes;
+
+/// <summary>
+///     A group of <see cref="StepTriggerTypePrototype">
+///     Used to determine StepTriggerTypes like Tags.
+///     Used for better work with Immunity.
+///     StepTriggerTypes in StepTriggerTypes.yml
+/// </summary>
+/// <code>
+/// stepTriggerGroups:
+///   types:
+///   - Lava
+///   - Landmine
+///   - Shard
+///   - Chasm
+///   - Mousetrap
+///   - SlipTile
+///   - SlipEntity
+/// </code>
+[DataDefinition]
+[Serializable, NetSerializable]
+public sealed partial class StepTriggerGroup
 {
+    [DataField]
+    public List<ProtoId<StepTriggerTypePrototype>>? Types = null;
+
     /// <summary>
-    /// A group of <see cref="StepTriggerTypePrototype">
-    /// Used to determine StepTriggerTypes like Tags.
-    /// Used for better work with Immunity.
-    /// StepTriggerTypes in StepTriggerTypes.yml
-    /// WD EDIT
+    ///     Checks if types of this StepTriggerGroup is similar to types of AnotherGroup
     /// </summary>
-    /// <code>
-    /// stepTriggerGroups:
-    ///   types:
-    ///   - Lava
-    ///   - Landmine
-    ///   - Shard
-    ///   - Chasm
-    ///   - Mousetrap
-    ///   - SlipTile
-    ///   - SlipEntity
-    /// </code>
-    [DataDefinition]
-    [Serializable, NetSerializable]
-    public sealed partial class StepTriggerGroup
+    public bool IsValid(StepTriggerGroup? anotherGroup)
     {
-        [DataField]
-        public List<ProtoId<StepTriggerTypePrototype>>? Types = null;
-
-        /// <summary>
-        /// Checks if types of this StepTriggerGroup is similar to types of AnotherGroup
-        /// </summary>
-        public bool IsValid(StepTriggerGroup? AnotherGroup)
-        {
-            if (Types != null)
-            {
-                foreach (var type in Types)
-                {
-                    if (AnotherGroup != null
-                        && AnotherGroup.Types != null
-                        && AnotherGroup.Types.Contains(type))
-                        return true;
-                }
-            }
+        if (Types is null)
             return false;
-        }
 
-        /// <summary>
-        /// Checks validation (if types of this StepTriggerGroup are similar to types of
-        /// another StepTriggerComponent.
-        /// </summary>
-        public bool IsValid(StepTriggerComponent component)
+        foreach (var type in Types)
         {
-            if (component.TriggerGroups != null)
-            {
-                return IsValid(component.TriggerGroups);
-            }
-            return false;
+            if (anotherGroup != null
+                && anotherGroup.Types != null
+                && anotherGroup.Types.Contains(type))
+                return true;
         }
+        return false;
+    }
 
-        /// <summary>
-        /// Checks validation (if types of this StepTriggerGroup are similar to types of
-        /// another StepTriggerImmuneComponent.
-        /// </summary>
-        public bool IsValid(StepTriggerImmuneComponent component)
-        {
-            if (component.Whitelist != null)
-                return IsValid(component.Whitelist);
+    /// <summary>
+    ///     Checks validation (if types of this StepTriggerGroup are similar to types of
+    ///     another StepTriggerComponent.
+    /// </summary>
+    public bool IsValid(StepTriggerComponent component)
+    {
+        if (component.TriggerGroups is null)
             return false;
-        }
+
+        return IsValid(component.TriggerGroups);
+    }
+
+    /// <summary>
+    ///     Checks validation (if types of this StepTriggerGroup are similar to types of
+    ///     another StepTriggerImmuneComponent.
+    /// </summary>
+    public bool IsValid(StepTriggerImmuneComponent component)
+    {
+        if (component.Whitelist is null)
+            return false;
+
+        return IsValid(component.Whitelist);
     }
 }
