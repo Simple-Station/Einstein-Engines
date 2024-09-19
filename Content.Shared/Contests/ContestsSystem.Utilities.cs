@@ -56,8 +56,7 @@ public sealed partial class ContestsSystem
                             + args.MoodOffset)
                                 : 1);
 
-        return !args.EveryDisadvantage
-                ? EveryContest(user,
+        var everyContest = EveryContest(user,
                     args.MassBypassClamp,
                     args.StaminaBypassClamp,
                     args.HealthBypassClamp,
@@ -73,24 +72,11 @@ public sealed partial class ContestsSystem
                     args.EveryHealthWeight,
                     args.EveryMindWeight,
                     args.EveryMoodWeight,
-                    args.EveryInteractionSumOrMultiply)
-                : 1 / EveryContest(user,
-                        args.MassBypassClamp,
-                        args.StaminaBypassClamp,
-                        args.HealthBypassClamp,
-                        args.MindBypassClamp,
-                        args.MoodBypassClamp,
-                        args.MassRangeModifier,
-                        args.StaminaRangeModifier,
-                        args.HealthRangeModifier,
-                        args.MindRangeModifier,
-                        args.MoodRangeModifier,
-                        args.EveryMassWeight,
-                        args.EveryStaminaWeight,
-                        args.EveryHealthWeight,
-                        args.EveryMindWeight,
-                        args.EveryMoodWeight,
-                        args.EveryInteractionSumOrMultiply);
+                    args.EveryInteractionSumOrMultiply);
+
+        return !args.EveryDisadvantage
+                ? everyContest
+                : 1 / everyContest;
     }
 }
 
