@@ -9,8 +9,9 @@ public sealed partial class InternalEncryptionKeySpawner : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     public void TryInsertEncryptionKey(EntityUid target, StartingGearPrototype startingGear, IEntityManager entityManager)
     {
-#pragma warning disable CS8073 // target can be null during race conditions intentionally created by awful tests.
-        if (target == null
+#pragma warning disable CS8073
+        if (target == null // target can be null during race conditions intentionally created by awful tests.
+#pragma warning restore CS8073
             || !TryComp<EncryptionKeyHolderComponent>(target, out var keyHolderComp)
             || keyHolderComp is null
             || !startingGear.Equipment.TryGetValue("ears", out var earEquipString)
