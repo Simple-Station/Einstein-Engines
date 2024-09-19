@@ -22,6 +22,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -32,7 +33,7 @@ using ItemToggleMeleeWeaponComponent = Content.Shared.Item.ItemToggle.Components
 
 namespace Content.Shared.Weapons.Melee;
 
-public abstract class SharedMeleeWeaponSystem : EntitySystem
+public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 {
     [Dependency] protected readonly ISharedAdminLogManager AdminLogger = default!;
     [Dependency] protected readonly ActionBlockerSystem Blocker = default!;
@@ -49,6 +50,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
@@ -225,7 +227,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         var ev = new GetMeleeDamageEvent(uid, new (component.Damage), new(), user);
         RaiseLocalEvent(uid, ref ev);
 
-        return DamageSpecifier.ApplyModifierSets(ev.Damage, ev.Modifiers);
+        return DamageSpecifier.ApplyModifierSets(ev.Damage * MeleeContestInteractions(user, component), ev.Modifiers);
     }
 
     public float GetAttackRate(EntityUid uid, EntityUid user, MeleeWeaponComponent? component = null)
@@ -249,9 +251,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         return ev.DamageModifier
                 * ev.Multipliers
-                * component.HeavyDamageBaseModifier
-                * _contests.StaminaContest(user, false, 2f) //Taking stamina damage reduces wide swing damage by up to 50%
-                / _contests.HealthContest(user, false, 0.8f); //Being injured grants up to 20% more wide swing damage
+                * component.HeavyDamageBaseModifier;
     }
 
     public bool TryGetWeapon(EntityUid entity, out EntityUid weaponUid, [NotNullWhen(true)] out MeleeWeaponComponent? melee)
@@ -440,9 +440,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     protected virtual void DoLightAttack(EntityUid user, LightAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
     {
-        var damage = GetDamage(meleeUid, user, component)
-                    * _contests.StaminaContest(user) //Taking stamina damage reduces light attack damage by up to 25%
-                    / _contests.HealthContest(user, false, 0.8f); //Being injured grants up to 20% more damage;
+        var damage = GetDamage(meleeUid, user, component);
         var target = GetEntity(ev.Target);
 
         // For consistency with wide attacks stuff needs damageable.
