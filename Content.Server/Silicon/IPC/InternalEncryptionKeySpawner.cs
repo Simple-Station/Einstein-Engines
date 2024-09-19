@@ -2,7 +2,6 @@ using Content.Shared.Roles;
 using Content.Shared.Radio.Components;
 using Content.Shared.Containers;
 using Robust.Shared.Containers;
-using Content.Server.Cargo.Components;
 
 namespace Content.Server.Silicon.IPC;
 public sealed partial class InternalEncryptionKeySpawner : EntitySystem
@@ -10,7 +9,11 @@ public sealed partial class InternalEncryptionKeySpawner : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     public void TryInsertEncryptionKey(EntityUid target, StartingGearPrototype startingGear, IEntityManager entityManager)
     {
-        if (!TryComp<EncryptionKeyHolderComponent>(target, out var keyHolderComp)
+#pragma warning disable CS8073
+        if (target == null // target can be null during race conditions intentionally created by awful tests.
+#pragma warning restore CS8073
+            || !TryComp<EncryptionKeyHolderComponent>(target, out var keyHolderComp)
+            || keyHolderComp is null
             || !startingGear.Equipment.TryGetValue("ears", out var earEquipString)
             || string.IsNullOrEmpty(earEquipString))
             return;
