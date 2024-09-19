@@ -114,6 +114,10 @@
     walkModifier: 0.75
   - type: SpeedModifierImmunity
   - type: NoSlip
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+      - Shard
 
 - type: entity
   parent: BaseSpeciesDummy
