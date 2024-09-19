@@ -9,7 +9,8 @@ public sealed partial class InternalEncryptionKeySpawner : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     public void TryInsertEncryptionKey(EntityUid target, StartingGearPrototype startingGear, IEntityManager entityManager)
     {
-        if (target == null // For whatever ungodly reason, StationSpawningSystem **absolutely has to assert that a nullable Uid is not null**. This causes random test fails.
+#pragma warning disable CS8073 // target can be null during race conditions intentionally created by awful tests.
+        if (target == null
             || !TryComp<EncryptionKeyHolderComponent>(target, out var keyHolderComp)
             || keyHolderComp is null
             || !startingGear.Equipment.TryGetValue("ears", out var earEquipString)
