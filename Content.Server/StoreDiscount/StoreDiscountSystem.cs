@@ -18,8 +18,10 @@ public sealed class StoreDiscountSystem : EntitySystem
         var count = _random.Next(store.Sales.MinItems, store.Sales.MaxItems + 1);
 
         listings = listings
-            .Where(l => !l.SaleBlacklist && l.Cost.Any(x => x.Value > 1)
-                                         && store.Categories.Overlaps(ChangedFormatCategories(l.Categories)))
+            .Where(l =>
+                !l.SaleBlacklist
+                && l.Cost.Any(x => x.Value > 1)
+                && store.Categories.Overlaps(ChangedFormatCategories(l.Categories)))
             .OrderBy(_ => _random.Next()).Take(count).ToList();
 
         foreach (var listing in listings)
