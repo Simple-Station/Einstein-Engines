@@ -111,6 +111,10 @@
   - type: OfferItem
   - type: LayingDown
   - type: Carriable
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+      - Shard
 
 - type: entity
   save: false
