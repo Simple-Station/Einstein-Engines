@@ -23,6 +23,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     {
         RemoveLanguage(uid, UniversalPrototype);
     }
+
     private void OnUniversalInit(EntityUid uid, UniversalLanguageSpeakerComponent component, MapInitEvent args)
     {
         AddLanguage(uid, UniversalPrototype);
