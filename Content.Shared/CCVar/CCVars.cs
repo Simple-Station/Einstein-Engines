@@ -2457,6 +2457,16 @@ namespace Content.Shared.CCVar
 
         #endregion
 
+        #region Lying Down System
+
+        public static readonly CVarDef<bool> AutoGetUp =
+            CVarDef.Create("rest.auto_get_up", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
+
+        public static readonly CVarDef<bool> HoldLookUp =
+            CVarDef.Create("rest.hold_look_up", false, CVar.CLIENT | CVar.ARCHIVE);
+            
+        #endregion
+        
         #region Material Reclaimer
 
         /// <summary>
