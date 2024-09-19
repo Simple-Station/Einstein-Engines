@@ -13,10 +13,10 @@
   - UplinkJob
   - UplinkArmor
   - UplinkPointless
-  - UplinkSales # WD EDIT
+  - UplinkSales
   currencyWhitelist:
   - Telecrystal
-  sales: # WD EDIT
+  sales:
     enabled: true
     minMultiplier: 0.2
     maxMultiplier: 0.8
