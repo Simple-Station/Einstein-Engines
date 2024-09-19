@@ -112,8 +112,11 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         LanguageKnowledgeComponent? knowledge = null,
         LanguageSpeakerComponent? speaker = null)
     {
-        if (knowledge == null)
+        if (knowledge is null)
             knowledge = EnsureComp<LanguageKnowledgeComponent>(uid);
+
+        if (knowledge is null)
+            speaker = EnsureComp<LanguageSpeakerComponent>(uid);
 
         if (addSpoken && !knowledge.SpokenLanguages.Contains(language))
             knowledge.SpokenLanguages.Add(language);
@@ -135,14 +138,17 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         LanguageKnowledgeComponent? knowledge = null,
         LanguageSpeakerComponent? speaker = null)
     {
-        if (knowledge == null)
-            knowledge = EnsureComp<LanguageKnowledgeComponent>(uid);
+        if (knowledge is null)
+            return;
 
         if (removeSpoken)
             knowledge.SpokenLanguages.Remove(language);
 
         if (removeUnderstood)
             knowledge.UnderstoodLanguages.Remove(language);
+
+        if (speaker is null)
+            return;
 
         UpdateEntityLanguages(uid, speaker);
     }
