@@ -6429,3 +6429,18 @@ Entries:
   id: 6368
   time: '2024-09-18T04:30:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/926
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added lying down system / Добавлена система лежания
+    - type: Tweak
+      message: >-
+        Lying down now uses do-afters that are visible to other people to
+        indicate what is going on.
+    - type: Add
+      message: Added telescope system / Добавлена система прицеливания
+    - type: Tweak
+      message: Now you can aim from Hristov / Теперь можно прицеливаться из Христова
+  id: 6369
+  time: '2024-09-19T02:18:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/815
