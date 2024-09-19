@@ -131,13 +131,13 @@ public sealed partial class ContestArgs
     ///     Controls whether this melee weapon allows for stamina to factor into damage.
     /// </summary>
     [DataField]
-    public bool DoStaminaInteraction = true;
+    public bool DoStaminaInteraction;
 
     /// <summary>
     ///     When true, stamina provides a disadvantage.
     /// </summary>
     [DataField]
-    public bool StaminaDisadvantage = true;
+    public bool StaminaDisadvantage;
 
     /// <summary>
     ///     When true, stamina contests ignore clamp limitations for a melee weapon.
@@ -149,19 +149,19 @@ public sealed partial class ContestArgs
     ///     Multiplies the acceptable range of outputs provided by mass contests for melee.
     /// </summary>
     [DataField]
-    public float StaminaRangeModifier = 2;
+    public float StaminaRangeModifier = 1;
 
     /// <summary>
     ///     The output of a stamina contest is increased by this amount.
     /// </summary>
     [DataField]
-    public float StaminaOffset = 0.25f;
+    public float StaminaOffset;
 
     /// <summary>
     ///     Controls whether this melee weapon allows for health to factor into damage.
     /// </summary>
     [DataField]
-    public bool DoHealthInteraction = true;
+    public bool DoHealthInteraction;
 
     /// <summary>
     ///     When true, health contests provide a disadvantage.
@@ -179,7 +179,7 @@ public sealed partial class ContestArgs
     ///     Multiplies the acceptable range of outputs provided by mass contests for melee.
     /// </summary>
     [DataField]
-    public float HealthRangeModifier = 2;
+    public float HealthRangeModifier = 1;
 
     /// <summary>
     ///     The output of health contests is increased by this amount.
