@@ -19,6 +19,79 @@ public sealed partial class ContestsSystem
     {
         return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp;
     }
+
+    /// <summary>
+    ///     Constructor for feeding options from a given set of ContestArgs into the ContestsSystem.
+    ///     Just multiply by this and give it a user EntityUid and a ContestArgs variable. That's all you need to know.
+    /// </summary>
+    public float ContestConstructor(EntityUid user, ContestArgs args)
+    {
+        if (!_cfg.GetCVar(CCVars.DoContestsSystem))
+            return 1;
+
+        if (!args.DoEveryInteraction)
+            return args.DoMassInteraction ? ((!args.MassDisadvantage
+                        ? MassContest(user, args.MassBypassClamp, args.MassRangeModifier)
+                        : 1 / MassContest(user, args.MassBypassClamp, args.MassRangeModifier))
+                            + args.MassOffset)
+                                : 1
+                    * (args.DoStaminaInteraction ? ((!args.StaminaDisadvantage
+                        ? StaminaContest(user, args.StaminaBypassClamp, args.StaminaRangeModifier)
+                        : 1 / StaminaContest(user, args.StaminaBypassClamp, args.StaminaRangeModifier))
+                            + args.StaminaOffset)
+                                : 1)
+                    * (args.DoHealthInteraction ? ((!args.HealthDisadvantage
+                        ? HealthContest(user, args.HealthBypassClamp, args.HealthRangeModifier)
+                        : 1 / HealthContest(user, args.HealthBypassClamp, args.HealthRangeModifier))
+                            + args.HealthOffset)
+                                : 1)
+                    * (args.DoMindInteraction ? ((!args.MindDisadvantage
+                        ? MindContest(user, args.MindBypassClamp, args.MindRangeModifier)
+                        : 1 / MindContest(user, args.MindBypassClamp, args.MindRangeModifier))
+                            + args.MindOffset)
+                                : 1)
+                    * (args.DoMoodInteraction ? ((!args.MoodDisadvantage
+                        ? MoodContest(user, args.MoodBypassClamp, args.MoodRangeModifier)
+                        : 1 / MoodContest(user, args.MoodBypassClamp, args.MoodRangeModifier))
+                            + args.MoodOffset)
+                                : 1);
+
+        return !args.EveryDisadvantage
+                ? EveryContest(user,
+                    args.MassBypassClamp,
+                    args.StaminaBypassClamp,
+                    args.HealthBypassClamp,
+                    args.MindBypassClamp,
+                    args.MoodBypassClamp,
+                    args.MassRangeModifier,
+                    args.StaminaRangeModifier,
+                    args.HealthRangeModifier,
+                    args.MindRangeModifier,
+                    args.MoodRangeModifier,
+                    args.EveryMassWeight,
+                    args.EveryStaminaWeight,
+                    args.EveryHealthWeight,
+                    args.EveryMindWeight,
+                    args.EveryMoodWeight,
+                    args.EveryInteractionSumOrMultiply)
+                : 1 / EveryContest(user,
+                        args.MassBypassClamp,
+                        args.StaminaBypassClamp,
+                        args.HealthBypassClamp,
+                        args.MindBypassClamp,
+                        args.MoodBypassClamp,
+                        args.MassRangeModifier,
+                        args.StaminaRangeModifier,
+                        args.HealthRangeModifier,
+                        args.MindRangeModifier,
+                        args.MoodRangeModifier,
+                        args.EveryMassWeight,
+                        args.EveryStaminaWeight,
+                        args.EveryHealthWeight,
+                        args.EveryMindWeight,
+                        args.EveryMoodWeight,
+                        args.EveryInteractionSumOrMultiply);
+    }
 }
 
 [Serializable, NetSerializable, DataDefinition]

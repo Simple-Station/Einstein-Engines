@@ -227,7 +227,10 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         var ev = new GetMeleeDamageEvent(uid, new (component.Damage), new(), user);
         RaiseLocalEvent(uid, ref ev);
 
-        return DamageSpecifier.ApplyModifierSets(ev.Damage * MeleeContestInteractions(user, component), ev.Modifiers);
+        if (component.ContestArgs is not null)
+            ev.Damage *= _contests.ContestConstructor(user, component.ContestArgs);
+
+        return DamageSpecifier.ApplyModifierSets(ev.Damage, ev.Modifiers);
     }
 
     public float GetAttackRate(EntityUid uid, EntityUid user, MeleeWeaponComponent? component = null)
