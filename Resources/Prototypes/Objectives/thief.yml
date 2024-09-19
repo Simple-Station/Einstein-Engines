@@ -153,7 +153,7 @@
 
 # steal item
 
-- type: entity
+- type: entity                                      #Security subgroup
   parent: BaseThiefStealObjective
   id: ForensicScannerStealObjective
   components:
@@ -186,6 +186,15 @@
 
 - type: entity
   parent: BaseThiefStealObjective
+  id: WantedListCartridgeStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: WantedListCartridge
+  - type: Objective
+    difficulty: 1
+
+- type: entity                                      #Medical subgroup
+  parent: BaseThiefStealObjective
   id: ClothingOuterHardsuitVoidParamedStealObjective
   components:
   - type: NotJobRequirement
@@ -217,7 +226,7 @@
   - type: Objective
     difficulty: 1
 
-- type: entity
+- type: entity                                      #Engineering subgroup
   parent: BaseThiefStealObjective
   id: FireAxeStealObjective
   components:
@@ -239,7 +248,7 @@
   - type: Objective
     difficulty: 1
 
-- type: entity
+- type: entity                                      #Cargo subgroup
   parent: BaseThiefStealObjective
   id: ExpeditionsCircuitboardStealObjective
   components:
@@ -261,7 +270,7 @@
   - type: Objective
     difficulty: 0.7
 
-- type: entity
+- type: entity                                      #Service subgroup
   parent: BaseThiefStealObjective
   id: ClothingEyesHudBeerStealObjective
   components:
@@ -283,7 +292,7 @@
   - type: Objective
     difficulty: 0.4
 
-- type: entity
+- type: entity                                      #Other subgroup
   parent: BaseThiefStealObjective
   id: ClothingNeckGoldmedalStealObjective
   components:

@@ -363,6 +363,7 @@
     - id: SecurityTechFabCircuitboard
     - id: WeaponEnergyShotgun
     - id: WeaponDisabler
+    - id: WantedListCartridge
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
