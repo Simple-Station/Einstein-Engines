@@ -74,9 +74,7 @@ public sealed partial class ContestsSystem
                     args.EveryMoodWeight,
                     args.EveryInteractionSumOrMultiply);
 
-        return !args.EveryDisadvantage
-                ? everyContest
-                : 1 / everyContest;
+        return !args.EveryDisadvantage ? everyContest : 1 / everyContest;
     }
 }
 
