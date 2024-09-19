@@ -46,7 +46,7 @@ public sealed partial class CloningPodComponent : Component
     public float PartRatingSpeedMultiplier = 0.75f;
 
     /// <summary>
-    /// The machine part that affects cloning speed
+    ///     The machine part that affects cloning speed
     /// </summary>
     [DataField]
     public ProtoId<MachinePartPrototype> MachinePartCloningSpeed = "Manipulator";
