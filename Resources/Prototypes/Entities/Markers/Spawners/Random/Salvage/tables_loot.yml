@@ -225,7 +225,6 @@
   id: SalvageEquipmentRare
   table: !type:GroupSelector
     children:
-    - id: BlueprintFlare
     - id: FultonBeacon
     - id: Fulton
       amount: !type:RangeNumberSelector
