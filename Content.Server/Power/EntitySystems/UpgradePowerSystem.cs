@@ -39,6 +39,7 @@ public sealed class UpgradePowerSystem : EntitySystem
         var load = component.BaseLoad;
         var rating = args.PartRatings[component.MachinePartPowerDraw];
         switch (component.Scaling)
+
         {
             case MachineUpgradeScalingType.Linear:
                 load += component.PowerDrawMultiplier * (rating - 1);
@@ -51,6 +52,7 @@ public sealed class UpgradePowerSystem : EntitySystem
                 load = 0;
                 break;
         }
+
         if (TryComp<ApcPowerReceiverComponent>(uid, out var powa))
             powa.Load = load;
         if (TryComp<PowerConsumerComponent>(uid, out var powa2))
@@ -80,6 +82,7 @@ public sealed class UpgradePowerSystem : EntitySystem
         var supply = component.BaseSupplyRate;
         var rating = args.PartRatings[component.MachinePartPowerSupply];
         switch (component.Scaling)
+
         {
             case MachineUpgradeScalingType.Linear:
                 supply += component.PowerSupplyMultiplier * component.BaseSupplyRate * (rating - 1);
@@ -119,6 +122,7 @@ public sealed class UpgradePowerSystem : EntitySystem
         var rampRate = component.BaseRampRate;
         var rating = args.PartRatings[component.MachinePartRampRate];
         switch (component.Scaling)
+
         {
             case MachineUpgradeScalingType.Linear:
                 rampRate += component.SupplyRampingMultiplier * component.BaseRampRate * (rating - 1);

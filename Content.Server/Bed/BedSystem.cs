@@ -134,7 +134,7 @@ namespace Content.Server.Bed
         private void OnRefreshParts(EntityUid uid, StasisBedComponent component, RefreshPartsEvent args)
         {
             var metabolismRating = args.PartRatings[component.MachinePartMetabolismModifier];
-            component.Multiplier = component.BaseMultiplier * metabolismRating; //linear scaling so it's not OP
+            component.Multiplier = component.BaseMultiplier * metabolismRating; // Linear scaling so it's not OP
             if (HasComp<EmaggedComponent>(uid))
                 component.Multiplier = 1f / component.Multiplier;
         }

@@ -66,9 +66,7 @@ public sealed class MachineConstruction : InteractionTest
 
         // Initially has all quality-1 parts.
         foreach (var part in SConstruction.GetAllParts(serverTarget))
-        {
             Assert.That(part.Rating, Is.EqualTo(1));
-        }
 
         // Partially deconstruct lathe
         await Interact(Screw, Pry, Pry);
@@ -81,9 +79,7 @@ public sealed class MachineConstruction : InteractionTest
 
         // Query now returns higher quality parts.
         foreach (var part in SConstruction.GetAllParts(SEntMan.GetEntity(Target!.Value)))
-        {
             Assert.That(part.Rating, Is.EqualTo(4));
-        }
     }
 }
 
