@@ -108,15 +108,10 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         EntityUid uid,
         string language,
         bool addSpoken = true,
-        bool addUnderstood = true,
-        LanguageKnowledgeComponent? knowledge = null,
-        LanguageSpeakerComponent? speaker = null)
+        bool addUnderstood = true)
     {
-        if (knowledge is null)
-            knowledge = EnsureComp<LanguageKnowledgeComponent>(uid);
-
-        if (knowledge is null)
-            speaker = EnsureComp<LanguageSpeakerComponent>(uid);
+        EnsureComp<LanguageKnowledgeComponent>(uid, out var knowledge);
+        EnsureComp<LanguageSpeakerComponent>(uid);
 
         if (addSpoken && !knowledge.SpokenLanguages.Contains(language))
             knowledge.SpokenLanguages.Add(language);
@@ -124,7 +119,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         if (addUnderstood && !knowledge.UnderstoodLanguages.Contains(language))
             knowledge.UnderstoodLanguages.Add(language);
 
-        UpdateEntityLanguages(uid, speaker);
+        UpdateEntityLanguages(uid);
     }
 
     /// <summary>
@@ -134,11 +129,9 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         EntityUid uid,
         string language,
         bool removeSpoken = true,
-        bool removeUnderstood = true,
-        LanguageKnowledgeComponent? knowledge = null,
-        LanguageSpeakerComponent? speaker = null)
+        bool removeUnderstood = true)
     {
-        if (knowledge is null)
+        if (!TryComp<LanguageKnowledgeComponent>(uid, out var knowledge))
             return;
 
         if (removeSpoken)
@@ -147,10 +140,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         if (removeUnderstood)
             knowledge.UnderstoodLanguages.Remove(language);
 
-        if (speaker is null)
-            return;
-
-        UpdateEntityLanguages(uid, speaker);
+        UpdateEntityLanguages(uid);
     }
 
     /// <summary>
@@ -176,9 +166,9 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     /// <summary>
     ///     Immediately refreshes the cached lists of spoken and understood languages for the given entity.
     /// </summary>
-    public void UpdateEntityLanguages(EntityUid entity, LanguageSpeakerComponent? languages = null)
+    public void UpdateEntityLanguages(EntityUid entity)
     {
-        if (!Resolve(entity, ref languages))
+        if (!TryComp<LanguageSpeakerComponent>(entity, out var languages))
             return;
 
         var ev = new DetermineEntityLanguagesEvent();
@@ -213,7 +203,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         if (string.IsNullOrEmpty(component.CurrentLanguage))
             component.CurrentLanguage = component.SpokenLanguages.FirstOrDefault(UniversalPrototype);
 
-        UpdateEntityLanguages(uid, component);
+        UpdateEntityLanguages(uid);
     }
 
     #endregion
