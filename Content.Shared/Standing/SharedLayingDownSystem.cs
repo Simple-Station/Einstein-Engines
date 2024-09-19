@@ -40,7 +40,8 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     private void ToggleStanding(ICommonSession? session)
     {
-        if (session?.AttachedEntity == null
+        if (session is not { AttachedEntity: { Valid: true } uid } _
+            || !Exists(uid)
             || !HasComp<LayingDownComponent>(session.AttachedEntity)
             || _gravity.IsWeightless(session.AttachedEntity.Value))
             return;
