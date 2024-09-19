@@ -163,168 +163,201 @@ public sealed partial class MeleeWeaponComponent : Component
     /// <summary>
     ///     Controls whether this melee weapon allows for mass to factor into damage.
     /// </summary>
+    [DataField]
     public bool DoMassInteraction;
 
     /// <summary>
     ///     When true, mass provides a disadvantage.
     /// </summary>
+    [DataField]
     public bool MassDisadvantage;
 
     /// <summary>
     ///     When true, mass contests ignore clamp limitations for a melee weapon.
     /// </summary>
+    [DataField]
     public bool MassBypassClamp;
 
     /// <summary>
     ///     Multiplies the acceptable range of outputs provided by mass contests for melee.
     /// </summary>
+    [DataField]
     public float MassRangeModifier = 1;
 
     /// <summary>
     ///     The output of a mass contest is increased by this amount.
     /// </summary>
+    [DataField]
     public float MassOffset;
 
     /// <summary>
     ///     Controls whether this melee weapon allows for stamina to factor into damage.
     /// </summary>
+    [DataField]
     public bool DoStaminaInteraction = true;
 
     /// <summary>
     ///     When true, stamina provides a disadvantage.
     /// </summary>
+    [DataField]
     public bool StaminaDisadvantage = true;
 
     /// <summary>
     ///     When true, stamina contests ignore clamp limitations for a melee weapon.
     /// </summary>
+    [DataField]
     public bool StaminaBypassClamp;
 
     /// <summary>
     ///     Multiplies the acceptable range of outputs provided by mass contests for melee.
     /// </summary>
+    [DataField]
     public float StaminaRangeModifier = 2;
 
     /// <summary>
     ///     The output of a stamina contest is increased by this amount.
     /// </summary>
+    [DataField]
     public float StaminaOffset = 0.25f;
 
     /// <summary>
     ///     Controls whether this melee weapon allows for health to factor into damage.
     /// </summary>
+    [DataField]
     public bool DoHealthInteraction = true;
 
     /// <summary>
     ///     When true, health contests provide a disadvantage.
     /// </summary>
+    [DataField]
     public bool HealthDisadvantage;
 
     /// <summary>
     ///     When true, health contests ignore clamp limitations for a melee weapon.
     /// </summary>
+    [DataField]
     public bool HealthBypassClamp;
 
     /// <summary>
     ///     Multiplies the acceptable range of outputs provided by mass contests for melee.
     /// </summary>
+    [DataField]
     public float HealthRangeModifier = 2;
 
     /// <summary>
     ///     The output of health contests is increased by this amount.
     /// </summary>
+    [DataField]
     public float HealthOffset;
 
     /// <summary>
     ///     Controls whether this melee weapon allows for psychic casting stats to factor into damage.
     /// </summary>
+    [DataField]
     public bool DoMindInteraction;
 
     /// <summary>
     ///     When true, high psychic casting stats provide a disadvantage.
     /// </summary>
+    [DataField]
     public bool MindDisadvantage;
 
     /// <summary>
     ///     When true, mind contests ignore clamp limitations for a melee weapon.
     /// </summary>
+    [DataField]
     public bool MindBypassClamp;
 
     /// <summary>
     ///     Multiplies the acceptable range of outputs provided by mind contests for melee.
     /// </summary>
+    [DataField]
     public float MindRangeModifier = 1;
 
     /// <summary>
     ///     The output of a mind contest is increased by this amount.
     /// </summary>
+    [DataField]
     public float MindOffset;
 
     /// <summary>
     ///     Controls whether this melee weapon allows mood to factor into damage.
     /// </summary>
+    [DataField]
     public bool DoMoodInteraction;
 
     /// <summary>
     ///     When true, mood provides a disadvantage.
     /// </summary>
+    [DataField]
     public bool MoodDisadvantage;
 
     /// <summary>
     ///     When true, mood contests ignore clamp limitations for a melee weapon.
     /// </summary>
+    [DataField]
     public bool MoodBypassClamp;
 
     /// <summary>
     ///     Multiplies the acceptable range of outputs provided by mood contests for melee.
     /// </summary>
+    [DataField]
     public float MoodRangeModifier = 1;
 
     /// <summary>
     ///     The output of mood contests is increased by this amount.
     /// </summary>
+    [DataField]
     public float MoodOffset;
 
     /// <summary>
     ///     Enables the EveryContest interaction for a melee weapon.
     ///     IF YOU PUT THIS ON ANY WEAPON OTHER THAN AN ADMEME, I WILL COME TO YOUR HOUSE AND SEND YOU TO MEET YOUR CREATOR WHEN THE PLAYERS COMPLAIN.
     /// </summary>
+    [DataField]
     public bool DoEveryInteraction;
 
     /// <summary>
     ///     When true, EveryContest provides a disadvantage.
     /// </summary>
+    [DataField]
     public bool EveryDisadvantage;
 
     /// <summary>
     ///     How much Mass is considered for an EveryContest.
     /// </summary>
+    [DataField]
     public float EveryMassWeight = 1;
 
     /// <summary>
     ///     How much Stamina is considered for an EveryContest.
     /// </summary>
+    [DataField]
     public float EveryStaminaWeight = 1;
 
     /// <summary>
     ///     How much Health is considered for an EveryContest.
     /// </summary>
+    [DataField]
     public float EveryHealthWeight = 1;
 
     /// <summary>
     ///     How much psychic casting stats are considered for an EveryContest.
     /// </summary>
+    [DataField]
     public float EveryMindWeight = 1;
 
     /// <summary>
     ///     How much mood is considered for an EveryContest.
     /// </summary>
+    [DataField]
     public float EveryMoodWeight = 1;
 
     /// <summary>
     ///     When true, the EveryContest sums the results of all contests rather than multiplying them,
     ///     probably giving you a very, very, very large multiplier...
     /// </summary>
+    [DataField]
     public bool EveryInteractionSumOrMultiply;
 
     #endregion
