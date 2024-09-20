@@ -4,7 +4,7 @@ namespace Content.Shared.Language.Components.Translators;
 ///   A translator that must be held in a hand or a pocket of an entity in order ot have effect.
 /// </summary>
 [RegisterComponent]
-public sealed partial class HandheldTranslatorComponent : Translators.BaseTranslatorComponent
+public sealed partial class HandheldTranslatorComponent : BaseTranslatorComponent
 {
     /// <summary>
     ///   Whether interacting with this translator toggles it on and off.

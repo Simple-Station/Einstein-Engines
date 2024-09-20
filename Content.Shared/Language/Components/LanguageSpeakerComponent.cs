@@ -1,7 +1,8 @@
-namespace Content.Shared.Language.Components;
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
-// TODO: either move all language speaker-related components to server side, or make everything else shared.
-// The current approach leads to confusion, as the server never informs the client of updates in these components.
+namespace Content.Shared.Language.Components;
 
 /// <summary>
 ///     Stores the current state of the languages the entity can speak and understand.
@@ -10,23 +11,35 @@ namespace Content.Shared.Language.Components;
 ///     All fields of this component are populated during a DetermineEntityLanguagesEvent.
 ///     They are not to be modified externally.
 /// </remarks>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class LanguageSpeakerComponent : Component
 {
+    public override bool SendOnlyToOwner => true;
+
     /// <summary>
     ///     The current language the entity uses when speaking.
     ///     Other listeners will hear the entity speak in this language.
     /// </summary>
     [DataField]
-    public string CurrentLanguage = ""; // The language system will override it on init
+    public ProtoId<LanguagePrototype> CurrentLanguage = ""; // The language system will override it on init
 
     /// <summary>
     ///     List of languages this entity can speak at the current moment.
     /// </summary>
-    public List<string> SpokenLanguages = [];
+    [DataField]
+    public List<ProtoId<LanguagePrototype>> SpokenLanguages = [];
 
     /// <summary>
     ///     List of languages this entity can understand at the current moment.
     /// </summary>
-    public List<string> UnderstoodLanguages = [];
+    [DataField]
+    public List<ProtoId<LanguagePrototype>> UnderstoodLanguages = [];
+
+    [Serializable, NetSerializable]
+    public sealed class State : ComponentState
+    {
+        public string CurrentLanguage = default!;
+        public List<ProtoId<LanguagePrototype>> SpokenLanguages = default!;
+        public List<ProtoId<LanguagePrototype>> UnderstoodLanguages = default!;
+    }
 }

@@ -10,6 +10,7 @@ using Content.Shared.PowerCell;
 using Content.Shared.Language.Components.Translators;
 using Content.Shared.Language.Events;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using LanguageSpeakerComponent = Content.Shared.Language.Components.LanguageSpeakerComponent;
 
@@ -114,7 +115,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
 
             // Update the current language of the entity if necessary
             if (isEnabled && translatorComp.SetLanguageOnInteract && firstNewLanguage is {})
-                _language.SetLanguage(holder, firstNewLanguage, languageComp);
+                _language.SetLanguage((holder, languageComp), firstNewLanguage);
         }
 
         OnAppearanceChange(translator, translatorComp);
@@ -154,7 +155,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
     /// <summary>
     ///     Checks whether any OR all required languages are provided. Used for utility purposes.
     /// </summary>
-    public static bool CheckLanguagesMatch(ICollection<string> required, ICollection<string> provided, bool requireAll)
+    public static bool CheckLanguagesMatch(ICollection<ProtoId<LanguagePrototype>> required, ICollection<ProtoId<LanguagePrototype>> provided, bool requireAll)
     {
         if (required.Count == 0)
             return true;

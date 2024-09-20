@@ -1,8 +1,7 @@
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
+using Content.Shared.Language;
+using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Language.Components;
-
-// TODO: move to server side, it's never synchronized!
+namespace Content.Server.Language;
 
 /// <summary>
 ///     Stores data about entities' intrinsic language knowledge.
@@ -13,12 +12,12 @@ public sealed partial class LanguageKnowledgeComponent : Component
     /// <summary>
     ///     List of languages this entity can speak without any external tools.
     /// </summary>
-    [DataField("speaks", customTypeSerializer: typeof(PrototypeIdListSerializer<LanguagePrototype>), required: true)]
-    public List<string> SpokenLanguages = new();
+    [DataField("speaks", required: true)]
+    public List<ProtoId<LanguagePrototype>> SpokenLanguages = new();
 
     /// <summary>
     ///     List of languages this entity can understand without any external tools.
     /// </summary>
-    [DataField("understands", customTypeSerializer: typeof(PrototypeIdListSerializer<LanguagePrototype>), required: true)]
-    public List<string> UnderstoodLanguages = new();
+    [DataField("understands", required: true)]
+    public List<ProtoId<LanguagePrototype>> UnderstoodLanguages = new();
 }

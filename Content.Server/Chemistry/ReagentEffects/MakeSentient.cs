@@ -10,6 +10,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Language.Components; //Delta-V - Banning humanoids from becoming ghost roles.
 using Content.Shared.Language.Events;
+using LanguageKnowledgeComponent = Content.Server.Language.LanguageKnowledgeComponent;
 using LanguageSpeakerComponent = Content.Shared.Language.Components.LanguageSpeakerComponent;
 
 namespace Content.Server.Chemistry.ReagentEffects;

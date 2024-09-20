@@ -7,5 +7,6 @@ namespace Content.Server.Language;
 [RegisterComponent]
 public sealed partial class UniversalLanguageSpeakerComponent : Component
 {
-
+    [DataField]
+    public bool Enabled = true;
 }
