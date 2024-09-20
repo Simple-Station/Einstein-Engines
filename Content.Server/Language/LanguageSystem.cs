@@ -1,9 +1,10 @@
 using System.Linq;
-using Content.Server.Language.Events;
 using Content.Shared.Language;
 using Content.Shared.Language.Components;
+using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
-using UniversalLanguageSpeakerComponent = Content.Shared.Language.Components.UniversalLanguageSpeakerComponent;
+using LanguageSpeakerComponent = Content.Shared.Language.Components.LanguageSpeakerComponent;
+using UniversalLanguageSpeakerComponent = Content.Server.Language.UniversalLanguageSpeakerComponent;
 
 namespace Content.Server.Language;
 

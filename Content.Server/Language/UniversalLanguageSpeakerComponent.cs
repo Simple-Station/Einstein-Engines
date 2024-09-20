@@ -1,4 +1,4 @@
-namespace Content.Shared.Language.Components;
+namespace Content.Server.Language;
 
 // <summary>
 //     Signifies that this entity can speak and understand any language.

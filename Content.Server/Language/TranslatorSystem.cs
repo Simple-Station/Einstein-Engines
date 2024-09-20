@@ -8,8 +8,10 @@ using Content.Shared.Language.Components;
 using Content.Shared.Language.Systems;
 using Content.Shared.PowerCell;
 using Content.Shared.Language.Components.Translators;
+using Content.Shared.Language.Events;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
+using LanguageSpeakerComponent = Content.Shared.Language.Components.LanguageSpeakerComponent;
 
 namespace Content.Server.Language;
 

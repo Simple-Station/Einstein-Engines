@@ -1,6 +1,4 @@
-using Content.Shared.Language;
-
-namespace Content.Server.Language;
+namespace Content.Shared.Language.Events;
 
 /// <summary>
 ///     Raised in order to determine the list of languages the entity can speak and understand at the given moment.

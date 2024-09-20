@@ -1,4 +1,4 @@
-namespace Content.Shared.Language;
+namespace Content.Shared.Language.Components;
 
 // TODO: either move all language speaker-related components to server side, or make everything else shared.
 // The current approach leads to confusion, as the server never informs the client of updates in these components.
@@ -18,7 +18,7 @@ public sealed partial class LanguageSpeakerComponent : Component
     ///     Other listeners will hear the entity speak in this language.
     /// </summary>
     [DataField]
-    public string CurrentLanguage = ""; // The language system will override it on init  
+    public string CurrentLanguage = ""; // The language system will override it on init
 
     /// <summary>
     ///     List of languages this entity can speak at the current moment.

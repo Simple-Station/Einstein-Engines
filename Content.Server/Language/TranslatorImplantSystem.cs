@@ -1,6 +1,7 @@
 using Content.Shared.Implants.Components;
 using Content.Shared.Language;
 using Content.Shared.Language.Components;
+using Content.Shared.Language.Events;
 using Robust.Shared.Containers;
 
 namespace Content.Server.Language;

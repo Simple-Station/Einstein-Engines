@@ -1,7 +1,6 @@
 using System.Linq;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Language;
-using Content.Server.Language.Events;
 using Content.Server.Speech.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Language;
@@ -11,6 +10,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Language.Components; //Delta-V - Banning humanoids from becoming ghost roles.
 using Content.Shared.Language.Events;
+using LanguageSpeakerComponent = Content.Shared.Language.Components.LanguageSpeakerComponent;
 
 namespace Content.Server.Chemistry.ReagentEffects;
 
