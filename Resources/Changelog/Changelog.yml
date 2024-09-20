@@ -6482,3 +6482,21 @@ Entries:
   id: 6373
   time: '2024-09-20T01:47:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/899
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Melee Weapons can now individually define their interactions with the
+        ContestsSystem.
+    - type: Add
+      message: >-
+        Added the ContestArgs type, allowing arbitrarily any component to
+        contain a list of arguments for ContestSystems.
+    - type: Add
+      message: >-
+        Added the ContestConstructor, a new type of meta-Contest that enables
+        other systems to use components to define all possible contest
+        behaviors, rather than needing to hardcode specific interactions.
+  id: 6374
+  time: '2024-09-20T02:48:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/934
