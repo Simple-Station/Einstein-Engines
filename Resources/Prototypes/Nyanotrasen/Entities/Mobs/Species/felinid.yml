@@ -80,6 +80,12 @@
     stripTimeReduction: 0
     stripTimeMultiplier: 0.667
   - type: StepTriggerImmune
+    whitelist:
+      types:
+        - Shard
+        - Landmine
+        - Mousetrap
+        - SlipEntity
 
 - type: entity
   save: false

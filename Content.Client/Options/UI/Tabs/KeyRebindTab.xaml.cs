@@ -97,9 +97,27 @@ namespace Content.Client.Options.UI.Tabs
             _deferCommands.Add(_inputManager.SaveToUserData);
         }
 
+        private void HandleHoldLookUp(BaseButton.ButtonToggledEventArgs args)
+        {
+            _cfg.SetCVar(CCVars.HoldLookUp, args.Pressed);
+            _cfg.SaveToFile();
+        }
+        
+        private void HandleDefaultWalk(BaseButton.ButtonToggledEventArgs args)
+        {
+            _cfg.SetCVar(CCVars.DefaultWalk, args.Pressed);
+            _cfg.SaveToFile();
+        }
+
         private void HandleStaticStorageUI(BaseButton.ButtonToggledEventArgs args)
         {
             _cfg.SetCVar(CCVars.StaticStorageUI, args.Pressed);
+            _cfg.SaveToFile();
+        }
+
+        private void HandleToggleAutoGetUp(BaseButton.ButtonToggledEventArgs args)
+        {
+            _cfg.SetCVar(CCVars.AutoGetUp, args.Pressed);
             _cfg.SaveToFile();
         }
 
@@ -161,6 +179,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.MoveRight);
             AddButton(EngineKeyFunctions.Walk);
             AddCheckBox("ui-options-hotkey-toggle-walk", _cfg.GetCVar(CCVars.ToggleWalk), HandleToggleWalk);
+            AddCheckBox("ui-options-hotkey-default-walk", _cfg.GetCVar(CCVars.DefaultWalk), HandleDefaultWalk);
             InitToggleWalk();
 
             AddHeader("ui-options-header-camera");
@@ -186,6 +205,9 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.OfferItem);
             AddButton(ContentKeyFunctions.SaveItemLocation);
             AddButton(ContentKeyFunctions.ToggleStanding);
+            AddButton(ContentKeyFunctions.LookUp);
+            AddCheckBox("ui-options-function-auto-get-up", _cfg.GetCVar(CCVars.AutoGetUp), HandleToggleAutoGetUp);
+            AddCheckBox("ui-options-function-hold-look-up", _cfg.GetCVar(CCVars.HoldLookUp), HandleHoldLookUp);
 
             AddHeader("ui-options-header-interaction-adv");
             AddButton(ContentKeyFunctions.SmartEquipBackpack);

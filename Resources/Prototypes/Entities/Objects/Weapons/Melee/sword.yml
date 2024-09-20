@@ -57,9 +57,9 @@
       types:
         Slash: 12
     heavyRateModifier: 0.5
-    heavyRangeModifier: 3 #Superior Japanese folded steel
+    heavyRangeModifier: 2.75 #Superior Japanese folded steel
     heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 10
+    heavyStaminaCost: 15
     maxTargets: 1
     angle: 20
   - type: Item
@@ -120,7 +120,7 @@
     heavyRateModifier: 0.8
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+    heavyStaminaCost: 7.5
     angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
@@ -151,7 +151,7 @@
     heavyRateModifier: 0.5
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1
-    heavyStaminaCost: 20
+    heavyStaminaCost: 15
     maxTargets: 10
     angle: 200
     soundHit:
@@ -186,7 +186,7 @@
     heavyRateModifier: 0.8
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+    heavyStaminaCost: 7.5
     maxTargets: 3
     angle: 40
     soundHit:

@@ -25,7 +25,7 @@
     bluntStaminaDamageFactor: 1.5
     heavyRateModifier: 0.75
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+    heavyStaminaCost: 7.5
     angle: 75
   - type: Item
     size: Normal
@@ -67,7 +67,7 @@
     bluntStaminaDamageFactor: 1.5
     heavyRateModifier: 0.75
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+    heavyStaminaCost: 7.5
     angle: 75
   - type: Item
     size: Normal
@@ -110,7 +110,7 @@
     bluntStaminaDamageFactor: 1.5
     heavyRateModifier: 0.75
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 15
+    heavyStaminaCost: 10
     angle: 160
   - type: Wieldable
   - type: IncreaseDamageOnWield
@@ -234,7 +234,7 @@
     bluntStaminaDamageFactor: 2
     heavyRateModifier: 0.75
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+    heavyStaminaCost: 7.5
     angle: 75
 
 - type: entity

@@ -86,7 +86,9 @@ telepathy-power-initialization-feedback =
     The voices I've heard all my life begin to clear, yet they do not leave me. Before, they were as incoherent whispers,
     now my senses broaden, I come to a realization that they are part of a communal shared hallucination. Behind every voice is a glimmering sentience.
 
+# Psionic System Messages
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
 examine-mindbroken-message =
     Eyes unblinking, staring deep into the horizon. {CAPITALIZE($entity)} is a sack of meat pretending it has a soul.
     There is nothing behind its gaze, no evidence there can be found of the divine light of creation.
+psionic-roll-failed = For a moment, my consciousness expands, yet I feel that it is not enough.

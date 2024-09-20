@@ -48,3 +48,10 @@
   - type: GuideHelp
     guides:
     - Psionics
+  - type: LanguageSpeaker
+    currentLanguage: GalacticCommon
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    understands:
+    - GalacticCommon

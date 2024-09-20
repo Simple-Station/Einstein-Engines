@@ -1,7 +1,6 @@
 using Robust.Shared.GameStates;
 using Content.Shared.Silicon.Systems;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
-using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Content.Shared.Alert;
 
@@ -36,7 +35,7 @@ public sealed partial class SiliconComponent : Component
     /// <summary>
     ///     Is the Silicon currently dead?
     /// </summary>
-    public bool Dead = false;
+    public bool Dead;
 
     // BatterySystem took issue with how this was used, so I'm coming back to it at a later date, when more foundational Silicon stuff is implemented.
     // /// <summary>
@@ -52,7 +51,7 @@ public sealed partial class SiliconComponent : Component
     ///     Any new types of Silicons should be added to the enum.
     ///     Setting this to Npc will delay charge state updates by LastDrainTime and skip battery heat calculations
     /// </remarks>
-    [DataField("entityType", customTypeSerializer: typeof(EnumSerializer))]
+    [DataField(customTypeSerializer: typeof(EnumSerializer))]
     public Enum EntityType = SiliconType.Npc;
 
     /// <summary>
@@ -61,13 +60,13 @@ public sealed partial class SiliconComponent : Component
     /// <remarks>
     ///     If true, should go along with a battery component. One will not be added automatically.
     /// </remarks>
-    [DataField("batteryPowered"), ViewVariables(VVAccess.ReadWrite)]
-    public bool BatteryPowered = false;
+    [DataField]
+    public bool BatteryPowered;
 
     /// <summary>
     ///     How much power is drained by this Silicon every second by default.
     /// </summary>
-    [DataField("drainPerSecond"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float DrainPerSecond = 50f;
 
 
@@ -79,15 +78,15 @@ public sealed partial class SiliconComponent : Component
     ///     Setting a value to null will disable that state.
     ///     Setting Critical to 0 will cause the Silicon to never enter the dead state.
     /// </remarks>
-    [DataField("chargeThresholdMid"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float? ChargeThresholdMid = 0.5f;
 
     /// <inheritdoc cref="ChargeThresholdMid"/>
-    [DataField("chargeThresholdLow"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float? ChargeThresholdLow = 0.25f;
 
     /// <inheritdoc cref="ChargeThresholdMid"/>
-    [DataField("chargeThresholdCritical"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float? ChargeThresholdCritical = 0.1f;
 
     [DataField]
@@ -100,9 +99,16 @@ public sealed partial class SiliconComponent : Component
     /// <summary>
     ///     The amount the Silicon will be slowed at each charge state.
     /// </summary>
-    [DataField("speedModifierThresholds", required: true)]
-    public Dictionary<short, float> SpeedModifierThresholds = default!;
+    [DataField(required: true)]
+    public Dictionary<int, float> SpeedModifierThresholds = default!;
 
-    [DataField("fireStackMultiplier"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float FireStackMultiplier = 1f;
+
+    /// <summary>
+    ///     Whether or not a Silicon will cancel all sleep events.
+    ///     Maybe you want an android that can sleep as well as drink APCs? I'm not going to judge.
+    /// </summary>
+    [DataField]
+    public bool DoSiliconsDreamOfElectricSheep;
 }
