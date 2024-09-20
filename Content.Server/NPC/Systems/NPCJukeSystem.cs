@@ -3,6 +3,7 @@ using Content.Server.NPC.Components;
 using Content.Server.NPC.Events;
 using Content.Server.NPC.HTN.PrimitiveTasks.Operators.Combat;
 using Content.Server.Weapons.Melee;
+using Content.Shared.Coordinates.Helpers;
 using Content.Shared.NPC;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Collections;
@@ -38,22 +39,19 @@ public sealed class NPCJukeSystem : EntitySystem
 
     private void OnJukeSteering(EntityUid uid, NPCJukeComponent component, ref NPCSteeringEvent args)
     {
+        if (_timing.CurTime < component.NextJuke)
+        {
+            component.TargetTile = null;
+            return;
+        }
+
+        component.NextJuke = _timing.CurTime + TimeSpan.FromSeconds(component.JukeCooldown);
+
         if (component.JukeType == JukeType.AdjacentTile)
         {
-            if (_npcRangedQuery.TryGetComponent(uid, out var ranged) &&
-                ranged.Status == CombatStatus.NotInSight)
-            {
-                component.TargetTile = null;
-                return;
-            }
-
-            if (_timing.CurTime < component.NextJuke)
-            {
-                component.TargetTile = null;
-                return;
-            }
-
-            if (!TryComp<MapGridComponent>(args.Transform.GridUid, out var grid))
+            if (_npcRangedQuery.TryGetComponent(uid, out var ranged)
+                && ranged.Status is CombatStatus.NotInSight
+                || !TryComp<MapGridComponent>(args.Transform.GridUid, out var grid))
             {
                 component.TargetTile = null;
                 return;
@@ -107,12 +105,11 @@ public sealed class NPCJukeSystem : EntitySystem
 
             var elapsed = _timing.CurTime - component.NextJuke;
 
-            // Finished juke, reset timer.
-            if (elapsed.TotalSeconds > component.JukeDuration ||
-                currentTile == component.TargetTile)
+            // Finished juke.
+            if (elapsed.TotalSeconds > component.JukeDuration
+                || currentTile == component.TargetTile)
             {
                 component.TargetTile = null;
-                component.NextJuke = _timing.CurTime + TimeSpan.FromSeconds(component.JukeDuration);
                 return;
             }
 
@@ -155,9 +152,7 @@ public sealed class NPCJukeSystem : EntitySystem
                 var obstacleDirection = _transform.GetWorldPosition(melee.Target) - args.WorldPosition;
 
                 if (obstacleDirection == Vector2.Zero)
-                {
                     obstacleDirection = _random.NextVector2();
-                }
 
                 // If they're moving away then pursue anyway.
                 // If just hit then always back up a bit.
