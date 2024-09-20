@@ -38,9 +38,7 @@
         Blunt: 6.5
     heavyRateModifier: 0.9
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
     maxTargets: 4
-    angle: 60
     soundHit:
       path: "/Audio/Items/wirecutter.ogg"
   - type: Tool
@@ -103,7 +101,6 @@
         Piercing: 6
     heavyRateModifier: 0.75
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
     soundHit:
@@ -165,7 +162,6 @@
     bluntStaminaDamageFactor: 1.5
     heavyRateModifier: 0.75
     heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 5
     angle: 100
     soundHit:
       collection: MetalThud
@@ -279,7 +275,6 @@
         Shock: 2
     heavyRateModifier: 0.9
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
   - type: Item
@@ -424,7 +419,6 @@
         Piercing: 8
     heavyRateModifier: 0.9
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
     soundHit:
@@ -641,14 +635,14 @@
   - type: MeleeWeapon
     wideAnimationRotation: 45
     attackRate: 0.8
-    range: 2.0
+    range: 1.75
     damage:
       types:
         Blunt: 8
     bluntStaminaDamageFactor: 1.5
     heavyRateModifier: 0.9
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 10
+    heavyStaminaCost: 7.5
     angle: 100
     soundHit:
       collection: MetalThud
@@ -696,8 +690,7 @@
     bluntStaminaDamageFactor: 2.0
     heavyRateModifier: 0.8
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 5
-    maxTargets: 1
+    maxTargets: 2
     angle: 20
     soundHit:
       collection: MetalThud
