@@ -6566,3 +6566,13 @@ Entries:
   id: 6380
   time: '2024-09-20T21:46:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/936
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Removed the "Become Psionic" traitor objective. It was literally
+        impossible to fail if you took the Latent Psychic trait, and literally
+        impossible to greentext if you didn't. 
+  id: 6381
+  time: '2024-09-20T21:47:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/940
