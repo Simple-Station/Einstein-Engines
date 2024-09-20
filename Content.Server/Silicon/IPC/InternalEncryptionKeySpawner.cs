@@ -1,39 +1,34 @@
-using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Radio.Components;
 using Content.Shared.Containers;
 using Robust.Shared.Containers;
 
- // Pretty much copied from StationSpawningSystem.SpawnStartingGear
 namespace Content.Server.Silicon.IPC;
-public static class InternalEncryptionKeySpawner
+public sealed partial class InternalEncryptionKeySpawner : EntitySystem
 {
-    public static void TryInsertEncryptionKey(EntityUid target, StartingGearPrototype startingGear, IEntityManager entityManager, HumanoidCharacterProfile? profile)
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    public void TryInsertEncryptionKey(EntityUid target, StartingGearPrototype startingGear, IEntityManager entityManager)
     {
-        if (entityManager.TryGetComponent<EncryptionKeyHolderComponent>(target, out var keyHolderComp))
-        {
-            var earEquipString = startingGear.GetGear("ears", profile);
-            var containerMan = entityManager.System<SharedContainerSystem>();
+#pragma warning disable CS8073
+        if (target == null // target can be null during race conditions intentionally created by awful tests.
+#pragma warning restore CS8073
+            || !TryComp<EncryptionKeyHolderComponent>(target, out var keyHolderComp)
+            || keyHolderComp is null
+            || !startingGear.Equipment.TryGetValue("ears", out var earEquipString)
+            || string.IsNullOrEmpty(earEquipString))
+            return;
 
-            if (!string.IsNullOrEmpty(earEquipString))
-            {
-                var earEntity = entityManager.SpawnEntity(earEquipString, entityManager.GetComponent<TransformComponent>(target).Coordinates);
+        var earEntity = entityManager.SpawnEntity(earEquipString, entityManager.GetComponent<TransformComponent>(target).Coordinates);
+        if (!entityManager.HasComponent<EncryptionKeyHolderComponent>(earEntity)
+            || !entityManager.TryGetComponent<ContainerFillComponent>(earEntity, out var fillComp)
+            || !fillComp.Containers.TryGetValue(EncryptionKeyHolderComponent.KeyContainerName, out var defaultKeys))
+            return;
 
-                if (entityManager.TryGetComponent<EncryptionKeyHolderComponent>(earEntity, out _) && // I had initially wanted this to spawn the headset, and simply move all the keys over, but the headset didn't seem to have any keys in it when spawned...
-                    entityManager.TryGetComponent<ContainerFillComponent>(earEntity, out var fillComp) &&
-                    fillComp.Containers.TryGetValue(EncryptionKeyHolderComponent.KeyContainerName, out var defaultKeys))
-                {
-                    containerMan.CleanContainer(keyHolderComp.KeyContainer);
+        _container.CleanContainer(keyHolderComp.KeyContainer);
 
-                    foreach (var key in defaultKeys)
-                    {
-                        var keyEntity = entityManager.SpawnEntity(key, entityManager.GetComponent<TransformComponent>(target).Coordinates);
-                        containerMan.Insert(keyEntity, keyHolderComp.KeyContainer, force: true);
-                    }
-                }
+        foreach (var key in defaultKeys)
+            entityManager.SpawnInContainerOrDrop(key, target, keyHolderComp.KeyContainer.ID, out _);
 
-                entityManager.QueueDeleteEntity(earEntity);
-            }
-        }
+        entityManager.QueueDeleteEntity(earEntity);
     }
 }

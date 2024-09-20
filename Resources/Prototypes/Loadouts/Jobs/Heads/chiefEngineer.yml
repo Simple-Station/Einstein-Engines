@@ -1,7 +1,7 @@
 - type: loadout
   id: LoadoutCommandCENeckMantle
   category: JobsCommandCE
-  cost: 2
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -13,7 +13,7 @@
 - type: loadout
   id: LoadoutCommandCENeckCloak
   category: JobsCommandCE
-  cost: 2
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -25,7 +25,7 @@
 - type: loadout
   id: LoadoutCommandCEOuterWinter
   category: JobsCommandCE
-  cost: 2
+  cost: 1
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -36,7 +36,7 @@
 - type: loadout
   id: LoadoutCommandCEShoesBootsWinter
   category: JobsCommandCE
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement

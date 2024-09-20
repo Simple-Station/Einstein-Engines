@@ -1689,6 +1689,10 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+      - Landmine
 
 - type: entity
   parent: MobMouse

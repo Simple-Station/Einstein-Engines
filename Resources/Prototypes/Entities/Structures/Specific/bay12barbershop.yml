@@ -10,7 +10,7 @@
   - type: Anchorable
   - type: Rotatable
   - type: Sprite
-    sprite: Structures/Specific/barbershop.rsi
+    sprite: Structures/Specific/barberchair.rsi
     state: barberchair
 
 - type: entity

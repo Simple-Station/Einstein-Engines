@@ -1,0 +1,19 @@
+- type: characterItemGroup
+  id: LoadoutOuterCargo
+  items:
+    - type: loadout
+      id: LoadoutCargoOuterWinterCargo
+    - type: loadout
+      id: LoadoutCargoOuterWinterMiner
+
+- type: characterItemGroup
+  id: LoadoutNeckCargo
+  items:
+    - type: loadout
+      id: LoadoutCargoNeckGoliathCloak
+
+- type: characterItemGroup
+  id: LoadoutShoesCargo
+  items:
+    - type: loadout
+      id: LoadoutCargoShoesBootsWinterCargo

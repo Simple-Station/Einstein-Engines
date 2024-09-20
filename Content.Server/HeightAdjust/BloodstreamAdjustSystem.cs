@@ -1,4 +1,5 @@
 using Content.Server.Body.Components;
+using Content.Server.Body.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry.Reagent;
@@ -10,6 +11,7 @@ namespace Content.Server.HeightAdjust;
 
 public sealed class BloodstreamAdjustSystem : EntitySystem
 {
+    [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
     [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
@@ -39,6 +41,8 @@ public sealed class BloodstreamAdjustSystem : EntitySystem
         var newBloodLevel = bloodSolution.FillFraction * newVolume;
         bloodSolution.MaxVolume = newVolume;
         bloodSolution.SetContents([new ReagentQuantity(bloodstream.BloodReagent, newBloodLevel, null)], false);
+
+        _bloodstream.SetBloodMaxVolume(ent.Owner, newVolume, bloodstream);
 
         return true;
     }

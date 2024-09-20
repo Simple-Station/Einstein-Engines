@@ -12,6 +12,7 @@ using Content.Shared.Psionics;
 using System.Linq;
 using Robust.Server.Player;
 using Content.Server.Chat.Managers;
+using Content.Server.Psionics.Glimmer;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -122,6 +123,8 @@ namespace Content.Server.Abilities.Psionics
             AddPsionicStatSources(proto, psionic);
             RefreshPsionicModifiers(uid, psionic);
             SendFeedbackMessage(uid, proto, playFeedback);
+            UpdatePowerSlots(psionic);
+            //UpdatePsionicDanger(uid, psionic); // TODO: After Glimmer Refactor
             //SendFeedbackAudio(uid, proto, playPopup); // TODO: This one is coming next!
         }
 
@@ -296,6 +299,27 @@ namespace Content.Server.Abilities.Psionics
                 false,
                 session.Channel);
         }
+
+        private void UpdatePowerSlots(PsionicComponent psionic)
+        {
+            var slotsUsed = 0;
+            foreach (var power in psionic.ActivePowers)
+                slotsUsed += power.PowerSlotCost;
+
+            psionic.PowerSlotsTaken = slotsUsed;
+        }
+
+        /// <summary>
+        ///     Psions over a certain power threshold become a glimmer source. This cannot be fully implemented until after I rework Glimmer
+        /// </summary>
+        //private void UpdatePsionicDanger(EntityUid uid, PsionicComponent psionic)
+        //{
+        //   if (psionic.PowerSlotsTaken <= psionic.PowerSlots)
+        //        return;
+        //
+        //    EnsureComp<GlimmerSourceComponent>(uid, out var glimmerSource);
+        //    glimmerSource.SecondsPerGlimmer = 10 / (psionic.PowerSlotsTaken - psionic.PowerSlots);
+        //}
 
         /// <summary>
         ///     Remove all Psychic Actions listed in an entity's Psionic Component. Unfortunately, removing actions associated with a specific Power Prototype is not supported.

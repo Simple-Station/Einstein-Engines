@@ -64,6 +64,9 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - Shard
     intersectRatio: 0.2
   - type: ShoesRequiredStepTrigger
   - type: Slippery
