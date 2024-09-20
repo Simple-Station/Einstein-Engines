@@ -1,3 +1,4 @@
+using Content.Shared.Contests;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
@@ -156,6 +157,20 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public SoundSpecifier SoundNoDamage { get; set; } = new SoundCollectionSpecifier("WeakHit");
+
+    /// <summary>
+    ///     Arguments for the MeleeContestInteractions constructor
+    /// </summary>
+    [DataField]
+    public ContestArgs ContestArgs = new ContestArgs
+    {
+        DoStaminaInteraction = true,
+        StaminaDisadvantage = true,
+        StaminaRangeModifier = 2,
+        StaminaOffset = 0.25f,
+        DoHealthInteraction = true,
+        HealthRangeModifier = 1.5f,
+    };
 }
 
 /// <summary>
