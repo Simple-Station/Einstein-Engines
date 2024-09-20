@@ -137,7 +137,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 25
+        damage: 15
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -178,7 +178,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 25
+        damage: 15
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -216,7 +216,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 75
+        damage: 30
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -263,7 +263,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 25
+        damage: 15
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
@@ -379,7 +379,7 @@
           collection: GlassBreak
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 30
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -426,7 +426,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 25
+        damage: 40
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -546,7 +546,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 40
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -573,7 +573,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 20
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
