@@ -6467,3 +6467,18 @@ Entries:
   id: 6372
   time: '2024-09-19T20:37:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/933
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        UniversalLanguageSpeaker(And Xenoglossy by extension) will now appear in
+        your language menu alongside other known languages, rather than replace
+        all known languages. You can effectively now choose whether or not to
+        speak it, or to use a normal language.
+    - type: Add
+      message: Traits can now add Languages directly.
+    - type: Add
+      message: Traits can now remove Languages directly.
+  id: 6373
+  time: '2024-09-20T01:47:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/899
