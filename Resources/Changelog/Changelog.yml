@@ -6513,3 +6513,10 @@ Entries:
   id: 6375
   time: '2024-09-20T19:34:02.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/939
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Tweaked melee; Less stamina usage on heavy attacks.
+  id: 6376
+  time: '2024-09-20T19:34:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/938
