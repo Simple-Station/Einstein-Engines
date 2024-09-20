@@ -67,3 +67,4 @@ character-item-group-LoadoutMusicianInstruments = Musician Instruments
 
 # Traits - Languages
 character-item-group-TraitsLanguagesBasic = Basic Languages
+character-item-group-TraitsAccents = Accents

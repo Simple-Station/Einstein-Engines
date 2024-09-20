@@ -30,6 +30,8 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
   components:
     - type: StutteringAccent
       matchRandomProb: 0.1

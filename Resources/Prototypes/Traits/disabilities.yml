@@ -88,6 +88,8 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
   components:
     - type: FrontalLisp
 
