@@ -55,7 +55,8 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
     {
         var uid = GetEntity(args.Uid);
 
-        if (!TryComp<SpriteComponent>(uid, out var sprite) || !TryComp<LayingDownComponent>(uid, out var component))
+        if (!TryComp<SpriteComponent>(uid, out var sprite) 
+            || !TryComp<LayingDownComponent>(uid, out var component))
             return;
 
         if (!component.OriginalDrawDepth.HasValue)
