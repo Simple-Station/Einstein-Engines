@@ -191,3 +191,41 @@
       damageModifiers:
         coefficients:
           Blunt: 1.1
+
+- type: trait
+  id: Photophobia
+  category: Visual
+  points: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
+  components:
+    - type: Flashable
+      eyeDamageChance: 0.3
+      eyeDamage: 1
+      durationMultiplier: 1.5
+
+- type: trait
+  id: Clumsy
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Clown # This trait functions exactly as is for the Clown's trait.
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command # Because I know for a fact people will play Captain and grief with their inability to fight back.
+        - Security # Because I know for a fact people will play Security and grief with their inability to use guns.
+  components:
+    - type: Clumsy
+      clumsyDamage:
+        types:
+          Blunt: 5
+          Piercing: 4
+        groups:
+          Burn: 3

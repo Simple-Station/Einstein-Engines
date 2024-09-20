@@ -6381,3 +6381,89 @@ Entries:
   id: 6363
   time: '2024-09-16T04:41:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/919
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Pulling has been reworked. Your character will now try to continuously
+        push the pulled entity when you use the push keybind.
+    - type: Remove
+      message: >-
+        You can no longer push the pulled entity while walking, and pushing now
+        follows the momentum conservation laws.
+  id: 6364
+  time: '2024-09-17T23:38:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/883
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Core now has a 6-Core AME, which is supplied with two jars of fuel. This
+        should give Engineers significantly more than 20 minutes of time to
+        setup the Supermatter engine.
+  id: 6365
+  time: '2024-09-17T23:39:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/927
+- author: JayJacobs
+  changes:
+    - type: Tweak
+      message: Changed the sprite of the barber chair.
+    - type: Fix
+      message: Fixed bench textures.
+  id: 6366
+  time: '2024-09-17T23:39:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/925
+- author: zelezniciar
+  changes:
+    - type: Tweak
+      message: The fireaxe once again can pry subfloors
+  id: 6367
+  time: '2024-09-17T23:40:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/921
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Cloning Consoles will now correctly state when a body has the
+        Uncloneable trait. 
+  id: 6368
+  time: '2024-09-18T04:30:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/926
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added lying down system / Добавлена система лежания
+    - type: Tweak
+      message: >-
+        Lying down now uses do-afters that are visible to other people to
+        indicate what is going on.
+    - type: Add
+      message: Added telescope system / Добавлена система прицеливания
+    - type: Tweak
+      message: Now you can aim from Hristov / Теперь можно прицеливаться из Христова
+  id: 6369
+  time: '2024-09-19T02:18:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/815
+- author: FoxxoTrystan
+  changes:
+    - type: Remove
+      message: DeltaV Option Tab (Options moved)
+  id: 6370
+  time: '2024-09-19T02:24:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/928
+- author: Hell_Cat
+  changes: []
+  id: 6371
+  time: '2024-09-19T03:29:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/929
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed issues with the LayingDownSystem. Laying down no longer causes all
+        entities on your screen to lay down at once. Using any movement input no
+        longer causes the character to appear to the player as to be laying
+        down.
+  id: 6372
+  time: '2024-09-19T20:37:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/933

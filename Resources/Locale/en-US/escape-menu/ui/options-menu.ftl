@@ -52,6 +52,7 @@ ui-options-fancy-speech = Show names in speech bubbles
 ui-options-fancy-name-background = Add background to speech bubble names
 ui-options-enable-color-name = Add colors to character names
 ui-options-colorblind-friendly = Colorblind friendly mode
+ui-options-no-filters = Disable species vision filters
 ui-options-reduced-motion = Reduce motion of visual effects
 ui-options-chat-window-opacity = Chat window opacity
 ui-options-chat-window-opacity-percent = { TOSTRING($opacity, "P0") }
@@ -269,3 +270,8 @@ ui-options-net-pvs-leave-tooltip = This limits the rate at which the client will
 ## Toggle window console command
 cmd-options-desc = Opens options menu, optionally with a specific tab selected.
 cmd-options-help = Usage: options [tab]
+
+## Combat Options
+ui-options-function-look-up = Look up/Take aim
+ui-options-function-auto-get-up = Automatically get up after falling
+ui-options-function-hold-look-up = Hold down the key to aim

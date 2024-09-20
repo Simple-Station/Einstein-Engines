@@ -119,6 +119,9 @@
         mask:
         - ItemMask
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - Shard
     intersectRatio: 0.2
   - type: TriggerOnStepTrigger
   - type: ShoesRequiredStepTrigger

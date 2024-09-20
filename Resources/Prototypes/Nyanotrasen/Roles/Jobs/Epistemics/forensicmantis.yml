@@ -32,6 +32,7 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
+      powerSlots: 2
   - !type:AddComponentSpecial
     components:
     - type: InnatePsionicPowers
