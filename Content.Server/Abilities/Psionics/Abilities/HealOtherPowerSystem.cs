@@ -76,7 +76,7 @@ public sealed class RevivifyPowerSystem : EntitySystem
         ev.HealingAmount = args.HealingAmount;
         ev.RotReduction = args.RotReduction;
         ev.DoRevive = args.DoRevive;
-        var doAfterArgs = new DoAfterArgs(EntityManager, uid, args.UseDelay, ev, uid)
+        var doAfterArgs = new DoAfterArgs(EntityManager, uid, args.UseDelay, ev, uid, target: args.Target)
         {
             BreakOnUserMove = args.BreakOnUserMove,
             BreakOnTargetMove = args.BreakOnTargetMove,

@@ -159,9 +159,6 @@
     range: 6
     itemIconStyle: BigAction
     canTargetSelf: true
-    whitelist:
-      components:
-        - Damageable
     blacklist:
       components:
         - PsionicInsulation
@@ -170,10 +167,12 @@
             healingAmount:
               types:
                 Asphyxiation: -2.5
-                Brute: -2.5
-                Burn: -2.5
-                Cellular: -2.5
+              groups:
+                Brute: -7.5
+                Burn: -7.5
+                Poison: -7.5
             rotReduction: 10
+            useDelay: 1
             doRevive: true
             powerName: Healing Word
             popupText: healing-word-begin
@@ -196,9 +195,6 @@
     range: 2
     itemIconStyle: BigAction
     canTargetSelf: false
-    whitelist:
-      components:
-        - Damageable
     blacklist:
       components:
         - PsionicInsulation
@@ -207,9 +203,10 @@
             healingAmount:
               types:
                 Asphyxiation: -10
-                Brute: -10
-                Burn: -10
-                Cellular: -10
+              groups:
+                Brute: -30
+                Burn: -30
+                Poison: -30
             rotReduction: 60
             doRevive: true
             powerName: Revivify
