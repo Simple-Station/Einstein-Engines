@@ -78,8 +78,8 @@ public sealed class RevivifyPowerSystem : EntitySystem
         ev.DoRevive = args.DoRevive;
         var doAfterArgs = new DoAfterArgs(EntityManager, uid, args.UseDelay, ev, uid)
         {
-            BreakOnUserMove = true,
-            BreakOnTargetMove = false,
+            BreakOnUserMove = args.BreakOnUserMove,
+            BreakOnTargetMove = args.BreakOnTargetMove,
         };
 
         if (!_doAfterSystem.TryStartDoAfter(doAfterArgs, out var doAfterId))
@@ -108,12 +108,15 @@ public sealed class RevivifyPowerSystem : EntitySystem
             return; // The target can also cease existing mid-cast.
 
         _rotting.ReduceAccumulator(args.Target.Value, TimeSpan.FromSeconds(args.RotReduction * component.CurrentAmplification));
-        _damageable.TryChangeDamage(args.Target, args.HealingAmount * component.CurrentAmplification, true, origin: uid);
+
+        if (!TryComp<DamageableComponent>(args.Target.Value, out var damageableComponent))
+            return;
+
+        _damageable.TryChangeDamage(args.Target.Value, args.HealingAmount * component.CurrentAmplification, true, false, damageableComponent, uid);
 
         if (!args.DoRevive
             || !TryComp<MobStateComponent>(args.Target, out var mob)
             || !_mobThreshold.TryGetThresholdForState(args.Target.Value, MobState.Dead, out var threshold)
-            || !TryComp<DamageableComponent>(args.Target.Value, out var damageableComponent)
             || damageableComponent.TotalDamage > threshold)
             return;
 
@@ -127,12 +130,15 @@ public sealed class RevivifyPowerSystem : EntitySystem
             return;
 
         _rotting.ReduceAccumulator(args.Target, TimeSpan.FromSeconds(args.RotReduction * component.CurrentAmplification));
-        _damageable.TryChangeDamage(args.Target, args.HealingAmount * component.CurrentAmplification, true, origin: uid);
+
+        if (!TryComp<DamageableComponent>(args.Target, out var damageableComponent))
+            return;
+
+        _damageable.TryChangeDamage(args.Target, args.HealingAmount * component.CurrentAmplification, true, false, damageableComponent, uid);
 
         if (!args.DoRevive
             || !TryComp<MobStateComponent>(args.Target, out var mob)
             || !_mobThreshold.TryGetThresholdForState(args.Target, MobState.Dead, out var threshold)
-            || !TryComp<DamageableComponent>(args.Target, out var damageableComponent)
             || damageableComponent.TotalDamage > threshold)
             return;
 

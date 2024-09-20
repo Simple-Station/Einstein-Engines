@@ -157,5 +157,4 @@
     - ActionRevivify
   initializationFeedback: revivify-power-initialization-feedback
   metapsionicFeedback: revivify-power-feedback
-  amplificationModifier: 0.5
-  dampeningModifier: 0.5
+  amplificationModifier: 2.5 # An extremely rare and dangerous power.

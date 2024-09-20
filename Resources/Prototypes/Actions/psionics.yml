@@ -159,6 +159,9 @@
     range: 6
     itemIconStyle: BigAction
     canTargetSelf: true
+    whitelist:
+      components:
+        - Damageable
     blacklist:
       components:
         - PsionicInsulation
@@ -193,6 +196,9 @@
     range: 2
     itemIconStyle: BigAction
     canTargetSelf: false
+    whitelist:
+      components:
+        - Damageable
     blacklist:
       components:
         - PsionicInsulation
