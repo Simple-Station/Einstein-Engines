@@ -6500,3 +6500,42 @@ Entries:
   id: 6374
   time: '2024-09-20T02:48:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/934
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: >-
+        Adds an optional server variable which allows entities to crawl under
+        tables.
+    - type: Tweak
+      message: >-
+        Tables and plastic flaps are less resistant to damage, and can now be
+        targeted by guns by aiming on top of them.
+  id: 6375
+  time: '2024-09-20T19:34:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/939
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Tweaked melee; Less stamina usage on heavy attacks.
+  id: 6376
+  time: '2024-09-20T19:34:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/938
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        JukeOperator now allows for JukeDuration and JukeCooldown arguments.
+        JukeCooldown is a new feature where enemies must wait an amount of time
+        in seconds equal to the JukeCooldown, before they are allowed to attempt
+        to dodge a melee attack.
+    - type: Tweak
+      message: >-
+        By default, NPCs will only attempt to dodge attacks once every 5
+        seconds.
+    - type: Fix
+      message: >-
+        JukeOperator now performs extremely expensive math 5000 times less
+        often. EXIT CONDITIONS PEOPLE!
+  id: 6377
+  time: '2024-09-20T20:05:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/935
