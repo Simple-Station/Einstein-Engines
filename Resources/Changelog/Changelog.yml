@@ -6555,3 +6555,14 @@ Entries:
   id: 6379
   time: '2024-09-20T21:46:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/922
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'A basic Languages menu has been added into the Traits tab. '
+    - type: Add
+      message: >-
+        Tau-Ceti Basic, Tradeband, Freespeak, Elyran Standard, Sol Common, and
+        Sign Language have been added to the Languages tab. 
+  id: 6380
+  time: '2024-09-20T21:46:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/936
