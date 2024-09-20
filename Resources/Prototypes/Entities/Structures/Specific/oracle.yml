@@ -68,12 +68,12 @@
       components:
       - Item
   - type: LanguageSpeaker
-    currentLanguage: GalacticCommon
+    currentLanguage: TauCetiBasic
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
 
 
 - type: weightedRandomEntity
