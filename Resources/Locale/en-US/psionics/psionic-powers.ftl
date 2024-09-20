@@ -1,4 +1,5 @@
 generic-power-initialization-feedback = I Awaken.
+arleady-casting = I cannot channel more than one power at a time.
 
 # Dispel
 dispel-power-description = Dispel summoned entities such as familiars or forcewalls.
