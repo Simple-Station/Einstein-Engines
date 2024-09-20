@@ -46,8 +46,8 @@
         Blunt: 8
     heavyRateModifier: 0.8
     heavyDamageBaseModifier: 2
-    heavyStaminaCost: 15
-    maxTargets: 8
+    heavyStaminaCost: 7.5
+    maxTargets: 6
     soundHit:
       path: /Audio/Weapons/smash.ogg
   - type: Tool
