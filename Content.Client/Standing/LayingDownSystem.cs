@@ -66,7 +66,8 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
 
     private void OnStood(EntityUid uid, LayingDownComponent component, StoodEvent args)
     {
-        if (!TryComp<SpriteComponent>(uid, out var sprite) || !component.OriginalDrawDepth.HasValue)
+        if (!TryComp<SpriteComponent>(uid, out var sprite) 
+            || !component.OriginalDrawDepth.HasValue)
             return;
 
         sprite.DrawDepth = component.OriginalDrawDepth.Value;
