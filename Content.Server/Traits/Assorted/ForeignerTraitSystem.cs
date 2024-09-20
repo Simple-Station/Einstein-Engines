@@ -9,7 +9,6 @@ using Content.Shared.Language.Components;
 using Content.Shared.Language.Components.Translators;
 using Content.Shared.Storage;
 using Robust.Shared.Prototypes;
-using LanguageKnowledgeComponent = Content.Server.Language.LanguageKnowledgeComponent;
 
 namespace Content.Server.Traits.Assorted;
 

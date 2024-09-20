@@ -1,13 +1,11 @@
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Language;
-using Content.Shared.Language.Components;
 using Content.Shared.Language.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Toolshed.Syntax;
 using Robust.Shared.Toolshed.TypeParsers;
-using LanguageSpeakerComponent = Content.Shared.Language.Components.LanguageSpeakerComponent;
 
 namespace Content.Server.Language.Commands;
 

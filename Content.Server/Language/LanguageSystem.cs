@@ -5,8 +5,6 @@ using Content.Shared.Language.Events;
 using Content.Shared.Language.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using LanguageSpeakerComponent = Content.Shared.Language.Components.LanguageSpeakerComponent;
-using UniversalLanguageSpeakerComponent = Content.Server.Language.UniversalLanguageSpeakerComponent;
 
 namespace Content.Server.Language;
 
@@ -44,7 +42,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
 
     private void OnDetermineUniversalLanguages(Entity<UniversalLanguageSpeakerComponent> entity, ref DetermineEntityLanguagesEvent ev)
     {
-        // We don't add it as a spoken language; CanUnderstand checks for ULSC itself.
+        // We only add it as a spoken language; CanUnderstand checks for ULSC itself.
         if (entity.Comp.Enabled)
             ev.SpokenLanguages.Add(UniversalPrototype);
     }

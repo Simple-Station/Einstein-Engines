@@ -12,7 +12,6 @@ using Content.Shared.Language.Events;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using LanguageSpeakerComponent = Content.Shared.Language.Components.LanguageSpeakerComponent;
 
 namespace Content.Server.Language;
 

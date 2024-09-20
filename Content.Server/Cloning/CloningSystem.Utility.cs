@@ -26,8 +26,6 @@ using Content.Shared.Language.Components;
 using Content.Shared.Language;
 using Content.Shared.Nutrition.Components;
 using Robust.Shared.Enums;
-using LanguageKnowledgeComponent = Content.Server.Language.LanguageKnowledgeComponent;
-using LanguageSpeakerComponent = Content.Shared.Language.Components.LanguageSpeakerComponent;
 
 namespace Content.Server.Cloning;
 
