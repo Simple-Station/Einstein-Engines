@@ -1,7 +1,5 @@
 - type: language
   id: TauCetiBasic
-  speech:
-    color: "#597d35"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
