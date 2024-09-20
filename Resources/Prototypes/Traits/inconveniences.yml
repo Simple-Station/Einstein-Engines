@@ -23,7 +23,7 @@
 
 - type: trait
   id: Stutter
-  category: Mental
+  category: TraitsSpeechAccents
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -39,7 +39,7 @@
 
 - type: trait
   id: ForeignerLight
-  category: Mental
+  category: TraitsSpeechLanguages
   points: 2
   requirements:
     - !type:CharacterTraitRequirement
@@ -53,7 +53,7 @@
 
 - type: trait
   id: Foreigner
-  category: Mental
+  category: TraitsSpeechLanguages
   points: 4
   requirements: # TODO: Add a requirement to know at least 1 non-gc language
     - !type:CharacterTraitRequirement

@@ -1,6 +1,6 @@
 - type: trait
   id: SignLanguage
-  category: Language
+  category: TraitsSpeechLanguages
   points: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -12,7 +12,7 @@
 
 - type: trait
   id: SolCommon
-  category: Language
+  category: TraitsSpeechLanguages
   points: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -28,7 +28,7 @@
 
 - type: trait
   id: Tradeband
-  category: Language
+  category: TraitsSpeechLanguages
   points: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -44,7 +44,7 @@
 
 - type: trait
   id: Freespeak
-  category: Language
+  category: TraitsSpeechLanguages
   points: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -56,7 +56,7 @@
 
 - type: trait
   id: Elyran
-  category: Language
+  category: TraitsSpeechLanguages
   points: 0
   requirements:
     - !type:CharacterItemGroupRequirement
