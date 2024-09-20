@@ -146,3 +146,70 @@
     icon: Interface/VerbIcons/psionic_invisibility_off.png
     event: !type:RemovePsionicInvisibilityOffPowerActionEvent
 
+- type: entity
+  id: ActionHealingWord
+  name: action-name-healing-word
+  description: action-description-healing-word
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    icon: Interface/VerbIcons/healing_word.png
+    useDelay: 10
+    checkCanAccess: false
+    range: 6
+    itemIconStyle: BigAction
+    canTargetSelf: true
+    blacklist:
+      components:
+        - PsionicInsulation
+        - Mindbroken
+    event: !type:PsionicHealOtherPowerActionEvent
+            healingAmount:
+              types:
+                Asphyxiation: -2.5
+                Brute: -2.5
+                Burn: -2.5
+                Cellular: -2.5
+            rotReduction: 10
+            doRevive: true
+            powerName: Healing Word
+            popupText: healing-word-begin
+            playSound: true
+            minGlimmer: 2
+            maxGlimmer: 4
+            glimmerObviousSoundThreshold: 100
+            glimmerObviousPopupThreshold: 200
+
+- type: entity
+  id: ActionRevivify
+  name: action-name-revivify
+  description: action-description-revivify
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    icon: Interface/VerbIcons/revivify.png
+    useDelay: 120
+    checkCanAccess: false
+    range: 2
+    itemIconStyle: BigAction
+    canTargetSelf: false
+    blacklist:
+      components:
+        - PsionicInsulation
+        - Mindbroken
+    event: !type:PsionicHealOtherPowerActionEvent
+            healingAmount:
+              types:
+                Asphyxiation: -10
+                Brute: -10
+                Burn: -10
+                Cellular: -10
+            rotReduction: 60
+            doRevive: true
+            powerName: Revivify
+            popupText: revivify-begin
+            playSound: true
+            minGlimmer: 10
+            maxGlimmer: 15
+            glimmerObviousSoundThreshold: 50
+            glimmerObviousPopupThreshold: 100

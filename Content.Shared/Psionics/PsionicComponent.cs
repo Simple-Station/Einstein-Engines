@@ -1,3 +1,4 @@
+using Content.Shared.DoAfter;
 using Content.Shared.Psionics;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -146,6 +147,18 @@ namespace Content.Shared.Abilities.Psionics
         ///     unneccesary subs for unique psionic entities like e.g. Oracle.
         /// </summary>
         [DataField]
-        public List<String>? PsychognomicDescriptors = null;
+        public List<string>? PsychognomicDescriptors = null;
+
+        /// <summary>
+        ///     Used for tracking what spell a Psion is actively casting.
+        /// </summary>
+        [DataField]
+        public DoAfterId? DoAfter;
+
+        /// <summary>
+        ///     Popup to play if a Psion attempts to start casting a power while already casting one.
+        /// </summary>
+        [DataField]
+        public string AlreadyCasting = "already-casting";
     }
 }
