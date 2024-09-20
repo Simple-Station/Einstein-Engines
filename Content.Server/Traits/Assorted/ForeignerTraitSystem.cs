@@ -46,7 +46,7 @@ public sealed partial class ForeignerTraitSystem : EntitySystem
 
         if (TryGiveTranslator(entity.Owner, entity.Comp.BaseTranslator, entity.Comp.BaseLanguage, alternateLanguage, out var translator))
         {
-            _languages.RemoveLanguage(entity, entity.Comp.BaseLanguage, entity.Comp.CantSpeak, entity.Comp.CantUnderstand, knowledge);
+            _languages.RemoveLanguage(entity, entity.Comp.BaseLanguage, entity.Comp.CantSpeak, entity.Comp.CantUnderstand);
         }
     }
 

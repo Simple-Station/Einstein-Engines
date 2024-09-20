@@ -1,4 +1,4 @@
-using Content.Shared.ActionBlocker;
+using Content.Shared.Buckle;
 using Content.Shared.Rotation;
 using Content.Shared.Standing;
 using Robust.Client.GameObjects;
@@ -11,8 +11,9 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IEyeManager _eyeManager = default!;
+    [Dependency] private readonly StandingStateSystem _standing = default!;
     [Dependency] private readonly AnimationPlayerSystem _animation = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private readonly SharedBuckleSystem _buckle = default!;
 
     public override void Initialize()
     {
@@ -26,7 +27,8 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
     private void OnMovementInput(EntityUid uid, LayingDownComponent component, MoveEvent args)
     {
         if (!_timing.IsFirstTimePredicted
-            || !_actionBlocker.CanMove(uid)
+            || !_standing.IsDown(uid)
+            || _buckle.IsBuckled(uid)
             || _animation.HasRunningAnimation(uid, "rotate")
             || !TryComp<TransformComponent>(uid, out var transform)
             || !TryComp<SpriteComponent>(uid, out var sprite)

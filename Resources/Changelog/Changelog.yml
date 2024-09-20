@@ -6456,3 +6456,14 @@ Entries:
   id: 6371
   time: '2024-09-19T03:29:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/929
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed issues with the LayingDownSystem. Laying down no longer causes all
+        entities on your screen to lay down at once. Using any movement input no
+        longer causes the character to appear to the player as to be laying
+        down.
+  id: 6372
+  time: '2024-09-19T20:37:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/933
