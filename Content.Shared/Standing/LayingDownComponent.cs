@@ -14,6 +14,9 @@ public sealed partial class LayingDownComponent : Component
 
     [DataField, AutoNetworkedField]
     public bool AutoGetUp;
+
+    [DataField, AutoNetworkedField]
+    public int? OriginalDrawDepth { get; set; }
 }
 
 [Serializable, NetSerializable]
