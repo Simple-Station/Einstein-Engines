@@ -64,12 +64,7 @@ public sealed partial class LanguageSystem
     // TODO this is really stupid and can be avoided if we just make everything shared...
     private void SendLanguageStateToClient(EntityUid uid, ICommonSession session, LanguageSpeakerComponent? component = null)
     {
-        var isUniversal = HasComp<UniversalLanguageSpeakerComponent>(uid);
-        if (!isUniversal)
-            Resolve(uid, ref component, logMissing: false);
-
-        // I really don't want to call 3 getter methods here, so we'll just have this slightly hardcoded solution
-        var message = isUniversal || component == null
+        var message = !Resolve(uid, ref component, logMissing: false)
             ? new LanguagesUpdatedMessage(UniversalPrototype, [UniversalPrototype], [UniversalPrototype])
             : new LanguagesUpdatedMessage(component.CurrentLanguage, component.SpokenLanguages, component.UnderstoodLanguages);
 
