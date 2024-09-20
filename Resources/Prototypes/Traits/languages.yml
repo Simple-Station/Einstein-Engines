@@ -1,0 +1,67 @@
+- type: trait
+  id: SignLanguage
+  category: Language
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+  languagesSpoken:
+    - Sign
+  languagesUnderstood:
+    - Sign
+
+- type: trait
+  id: SolCommon
+  category: Language
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Human
+  languagesSpoken:
+    - SolCommon
+  languagesUnderstood:
+    - SolCommon
+
+- type: trait
+  id: Tradeband
+  category: Language
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  languagesSpoken:
+    - Tradeband
+  languagesUnderstood:
+    - Tradeband
+
+- type: trait
+  id: Freespeak
+  category: Language
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+  languagesSpoken:
+    - Freespeak
+  languagesUnderstood:
+    - Freespeak
+
+- type: trait
+  id: Elyran
+  category: Language
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+  languagesSpoken:
+    - Elyran
+  languagesUnderstood:
+    - Elyran

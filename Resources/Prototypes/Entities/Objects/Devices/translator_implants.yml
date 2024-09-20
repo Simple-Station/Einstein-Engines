@@ -1,26 +1,26 @@
 - type: entity
   parent: BaseSubdermalImplant
-  id: BasicGalacticCommonTranslatorImplant
+  id: BasicTauCetiBasicTranslatorImplant
   name: basic common translator implant
   description: Provides your illiterate friends the ability to understand the common galactic tongue.
   noSpawn: true
   components:
   - type: TranslatorImplant
     understood:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
-  id: GalacticCommonTranslatorImplant
+  id: TauCetiBasicTranslatorImplant
   name: advanced common translator implant
   description: A more advanced version of the translator implant, teaches your illiterate friends the ability to both speak and understand the galactic tongue!
   noSpawn: true
   components:
   - type: TranslatorImplant
     understood:
-    - GalacticCommon
+    - TauCetiBasic
     spoken:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -35,7 +35,7 @@
     spoken:
     - Bubblish
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -50,7 +50,7 @@
     spoken:
     - Nekomimetic
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -65,7 +65,7 @@
     spoken:
     - Draconic
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -80,7 +80,7 @@
     spoken:
     - Canilunzt
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -95,7 +95,7 @@
     spoken:
     - SolCommon
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -110,7 +110,7 @@
     spoken:
     - RootSpeak
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -125,4 +125,4 @@
     spoken:
     - Moffic
     requires:
-    - GalacticCommon
+    - TauCetiBasic

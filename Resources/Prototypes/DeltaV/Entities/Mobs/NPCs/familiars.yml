@@ -111,9 +111,9 @@
     - NanoTrasen
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true

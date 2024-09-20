@@ -106,10 +106,10 @@
   - type: Wagging
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - Canilunzt
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Canilunzt
   - type: ConsumeDelayModifier
     foodDelayMultiplier: 0.5

@@ -361,34 +361,6 @@
     - azunein
     - ghzth
 
-# The common language of the Sol system.
-- type: language
-  id: SolCommon
-  speech:
-    color: "#8282fbaa"
-  obfuscation:
-    !type:SyllableObfuscation
-    minSyllables: 1
-    maxSyllables: 4
-    replacement:
-    - tao
-    - shi
-    - tzu
-    - yi
-    - com
-    - be
-    - is
-    - i
-    - op
-    - vi
-    - ed
-    - lec
-    - mo
-    - cle
-    - te
-    - dis
-    - e
-
 - type: language
   id: RobotTalk
   speech:

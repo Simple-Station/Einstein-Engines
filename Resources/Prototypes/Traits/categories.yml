@@ -23,3 +23,7 @@
 - type: traitCategory
   id: Visual
   root: true
+
+- type: traitCategory
+  id: Language
+  root: true

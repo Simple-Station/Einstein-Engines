@@ -64,3 +64,6 @@ character-item-group-LoadoutBartenderWeapon = Bartender Weapon
 
 # Service - Musician
 character-item-group-LoadoutMusicianInstruments = Musician Instruments
+
+# Traits - Languages
+character-item-group-TraitsLanguagesBasic = Basic Languages
