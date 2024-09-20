@@ -22,7 +22,6 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
-using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -50,7 +49,6 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
