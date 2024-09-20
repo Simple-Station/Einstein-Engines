@@ -34,14 +34,15 @@ language-Tradeband-description =
 
 language-Freespeak-name = Freespeak
 language-Freespeak-description =
-    A language of renegades and frontiersmen descending from various languages from Earth like Hindi combined into a multi-rooted jumble that sounds incoherent or even barbarian to non-native speakers.
+    A language of renegades and frontiersmen descending from various languages from Earth-- like Hindi,
+    combined into a multi-rooted jumble that sounds incoherent or even barbarian to non-native speakers.
     This language is the only common cultural identity for humans in the frontier. Speaking this language in itself boldly declares the speaker a free spirit.
-    Often called 'Gutter' by Alliance citizens.
+    It is often called 'Gutter' by Alliance citizens.
 
 language-Elyran-name = Elyran Standard
 language-Elyran-description =
-    Elyran Standard is the official tongue of the Republic of Elyra.
-    Constructed using elements of Farsi - Arabic - and Turkish - influence from all three of these languages can be seen throughout its grammar and vocabulary.
+    Elyran Standard is the official tongue of the Republic of Elyra. Constructed using elements of Farsi - Arabic - and Turkish.
+    Influence from all three of these languages can be seen throughout its grammar and vocabulary.
 
 language-Canilunzt-name = Canilunzt
 language-Canilunzt-description =
