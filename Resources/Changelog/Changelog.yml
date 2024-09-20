@@ -6539,3 +6539,12 @@ Entries:
   id: 6377
   time: '2024-09-20T20:05:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/935
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        All "Long-arms", Rifles, Light Machine Guns, Shotguns, now require
+        wielding to use. 
+  id: 6378
+  time: '2024-09-20T20:35:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/913
