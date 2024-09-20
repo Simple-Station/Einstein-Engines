@@ -202,11 +202,11 @@
     event: !type:PsionicHealOtherPowerActionEvent
             healingAmount:
               types:
-                Asphyxiation: -10
+                Asphyxiation: -40
               groups:
-                Brute: -30
-                Burn: -30
-                Poison: -30
+                Brute: -45
+                Burn: -45
+                Poison: -45
             rotReduction: 60
             doRevive: true
             powerName: Revivify
