@@ -10,7 +10,7 @@
   name: basic common translator implanter
   components:
   - type: Implanter
-    implant: BasicGalacticCommonTranslatorImplant
+    implant: BasicTauCetiBasicTranslatorImplant
 
 - type: entity
   id: AdvancedGalaticCommonTranslatorImplanter
@@ -18,7 +18,7 @@
   name: advanced common translator implanter
   components:
   - type: Implanter
-    implant: GalacticCommonTranslatorImplant
+    implant: TauCetiBasicTranslatorImplant
 
 - type: entity
   id: BubblishTranslatorImplanter
