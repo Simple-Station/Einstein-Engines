@@ -1,7 +1,7 @@
 - type: loadout
   id: LoadoutCommandCMONeckMantle
   category: JobsCommandCMO
-  cost: 2
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -13,7 +13,7 @@
 - type: loadout
   id: LoadoutCommandCMONeckCloak
   category: JobsCommandCMO
-  cost: 2
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -25,7 +25,7 @@
 - type: loadout
   id: LoadoutCommandCMOOuterWinter
   category: JobsCommandCMO
-  cost: 2
+  cost: 1
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -36,7 +36,7 @@
 - type: loadout
   id: LoadoutCommandCMOOuterLab
   category: JobsCommandCMO
-  cost: 1
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -47,7 +47,7 @@
 - type: loadout
   id: LoadoutCommandCMOHatBeret
   category: JobsCommandCMO
-  cost: 1
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -58,7 +58,7 @@
 - type: loadout
   id: LoadoutCommandCMOShoesBootsWinter
   category: JobsCommandCMO
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement

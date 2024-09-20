@@ -13,6 +13,7 @@ using Robust.Shared.Console;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Server.Silicon.IPC;
+using Content.Shared.Radio.Components;
 
 namespace Content.Server.Administration.Commands
 {
@@ -127,7 +128,12 @@ namespace Content.Server.Administration.Commands
                     handsSystem.TryPickup(target, inhandEntity, checkActionBlocker: false, handsComp: handsComponent);
                 }
             }
-            InternalEncryptionKeySpawner.TryInsertEncryptionKey(target, startingGear, entityManager, profile);
+
+            if (entityManager.HasComponent<EncryptionKeyHolderComponent>(target))
+            {
+                var encryption = new InternalEncryptionKeySpawner();
+                encryption.TryInsertEncryptionKey(target, startingGear, entityManager);
+            }
             return true;
         }
     }
