@@ -69,8 +69,8 @@ public sealed class StandingStateSystem : EntitySystem
         RaiseLocalEvent(uid, new DownedEvent(), false);
 
         // Raising this event will lower the entity's draw depth to the same as a small mob.
-        if (_config.GetCVar(CCVars.CrawlUnderTables))
-            RaiseNetworkEvent(new DownedEvent(), uid);
+        if (!_config.GetCVar(CCVars.CrawlUnderTables))
+            RaiseNetworkEvent(new DrawDownedEvent(GetNetEntity(uid)));
 
         // Seemed like the best place to put it
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal, appearance);
@@ -165,6 +165,4 @@ public sealed class StoodEvent : EntityEventArgs { }
 /// <summary>
 ///     Raised when an entity is not standing
 /// </summary>
-
-[Serializable, NetSerializable]
 public sealed class DownedEvent : EntityEventArgs { }

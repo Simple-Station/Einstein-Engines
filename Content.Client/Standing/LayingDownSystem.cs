@@ -21,7 +21,7 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
         base.Initialize();
 
         SubscribeLocalEvent<LayingDownComponent, MoveEvent>(OnMovementInput);
-        SubscribeNetworkEvent<DownedEvent>(OnDowned);
+        SubscribeNetworkEvent<DrawDownedEvent>(OnDowned);
         SubscribeLocalEvent<LayingDownComponent, StoodEvent>(OnStood);
 
         SubscribeNetworkEvent<CheckAutoGetUpEvent>(OnCheckAutoGetUp);
@@ -51,12 +51,9 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
         sprite.Rotation = Angle.FromDegrees(90);
     }
 
-    private void OnDowned(DownedEvent ev, EntitySessionEventArgs args)
+    private void OnDowned(DrawDownedEvent args)
     {
-        if (!args.SenderSession.AttachedEntity.HasValue)
-            return;
-
-        var uid = args.SenderSession.AttachedEntity.Value;
+        var uid = GetEntity(args.Uid);
 
         if (!TryComp<SpriteComponent>(uid, out var sprite) || !TryComp<LayingDownComponent>(uid, out var component))
             return;

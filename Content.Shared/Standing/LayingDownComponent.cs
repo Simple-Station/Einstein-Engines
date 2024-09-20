@@ -27,3 +27,9 @@ public sealed class CheckAutoGetUpEvent(NetEntity user) : CancellableEntityEvent
 {
     public NetEntity User = user;
 }
+
+[Serializable, NetSerializable]
+public sealed class DrawDownedEvent(NetEntity uid) : EntityEventArgs
+{
+    public NetEntity Uid = uid;
+}
