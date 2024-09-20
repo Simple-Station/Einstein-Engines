@@ -6548,3 +6548,10 @@ Entries:
   id: 6378
   time: '2024-09-20T20:35:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/913
+- author: zelezniciar
+  changes:
+    - type: Add
+      message: Added Atmospheric Alerts Computer
+  id: 6379
+  time: '2024-09-20T21:46:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/922
