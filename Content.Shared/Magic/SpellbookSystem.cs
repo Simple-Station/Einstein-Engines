@@ -86,9 +86,11 @@ public sealed class SpellbookSystem : EntitySystem
     {
         var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, ent.Comp.LearnTime, new SpellbookDoAfterEvent(), ent, target: ent)
         {
-            BreakOnMove = true,
+            BreakOnTargetMove = true,
+            BreakOnUserMove = true,
+            BreakOnWeightlessMove = true,
             BreakOnDamage = true,
-            NeedHand = true //What, are you going to read with your eyes only??
+            NeedHand = true, // What, are you going to read with your eyes only??
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);

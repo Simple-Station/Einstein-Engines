@@ -5,7 +5,6 @@
             Name="PrefButton"
             ToggleMode="True"
             VerticalAlignment="Center"
-            StyleClasses="OpenLeft"
-        />
+            StyleClasses="OpenLeft" />
     </BoxContainer>
 </Control>

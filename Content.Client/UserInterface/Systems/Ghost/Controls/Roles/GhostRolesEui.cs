@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Client.Eui;
+using Content.Client.Lobby;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Preferences;
 using Content.Shared.Clothing.Loadouts.Prototypes;

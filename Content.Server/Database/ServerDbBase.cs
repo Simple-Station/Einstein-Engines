@@ -223,8 +223,7 @@ namespace Content.Server.Database
                 profile.Age,
                 sex,
                 gender,
-                new HumanoidCharacterAppearance
-                (
+                new HumanoidCharacterAppearance(
                     profile.HairName,
                     Color.FromHex(profile.HairColor),
                     profile.FacialHairName,
@@ -233,10 +232,10 @@ namespace Content.Server.Database
                     Color.FromHex(profile.SkinColor),
                     markings
                 ),
-                clothing,
-                backpack,
                 spawnPriority,
                 jobs,
+                clothing,
+                backpack,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),

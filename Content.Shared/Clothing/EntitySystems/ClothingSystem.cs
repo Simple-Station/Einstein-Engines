@@ -18,7 +18,6 @@ public abstract class ClothingSystem : EntitySystem
     [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidSystem = default!;
     [Dependency] private readonly InventorySystem _invSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSys = default!;
 
     public override void Initialize()
     {
@@ -154,8 +153,6 @@ public abstract class ClothingSystem : EntitySystem
 
         component.InSlot = null;
         CheckEquipmentForLayerHide(args.Equipment, args.Equipee);
-        if ((new string[] { "mask", "head" }).Contains(args.Slot) && _tagSystem.HasTag(args.Equipment, BeardTag))
-            ToggleVisualLayer(args.Equipee, HumanoidVisualLayers.FacialHair, BeardTag);
     }
 
     private void OnGetState(EntityUid uid, ClothingComponent component, ref ComponentGetState args)
@@ -180,7 +177,6 @@ public abstract class ClothingSystem : EntitySystem
         //TODO: sprites for 'pulled down' state. defaults to invisible due to no sprite with this prefix
         SetEquippedPrefix(ent, args.IsToggled ? args.equippedPrefix : null, ent);
         CheckEquipmentForLayerHide(ent.Owner, args.Wearer);
-        ToggleVisualLayer(args.Wearer, HumanoidVisualLayers.FacialHair, BeardTag);
     }
 
     private void OnPickedUp(Entity<ClothingComponent> ent, ref GettingPickedUpAttemptEvent args)

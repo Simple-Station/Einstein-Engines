@@ -11,6 +11,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
+using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -64,6 +65,8 @@ public sealed class LoadoutPreferenceSelector : Control
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
         CharacterRequirementsSystem characterRequirementsSystem, JobRequirementsManager jobRequirementsManager)
     {
+        RobustXamlLoader.Load(this);
+
         Loadout = loadout;
 
         SpriteView previewLoadout;

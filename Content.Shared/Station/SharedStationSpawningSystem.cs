@@ -34,34 +34,6 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Equips the given starting gears from a `RoleLoadout` onto an entity.
-    /// </summary>
-    public void EquipRoleLoadout(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto)
-    {
-        // Order loadout selections by the order they appear on the prototype.
-        foreach (var group in loadout.SelectedLoadouts.OrderBy(x => roleProto.Groups.FindIndex(e => e == x.Key)))
-        {
-            foreach (var items in group.Value)
-            {
-                if (!PrototypeManager.TryIndex(items.Prototype, out var loadoutProto))
-                {
-                    Log.Error($"Unable to find loadout prototype for {items.Prototype}");
-                    continue;
-                }
-
-                if (!PrototypeManager.TryIndex(loadoutProto.Equipment, out var startingGear))
-                {
-                    Log.Error($"Unable to find starting gear {loadoutProto.Equipment} for loadout {loadoutProto}");
-                    continue;
-                }
-
-                // Handle any extra data here.
-                EquipStartingGear(entity, startingGear, raiseEvent: false);
-            }
-        }
-    }
-
-    /// <summary>
     /// <see cref="EquipStartingGear(Robust.Shared.GameObjects.EntityUid,System.Nullable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.StartingGearPrototype}},bool)"/>
     /// </summary>
     public void EquipStartingGear(EntityUid entity, ProtoId<StartingGearPrototype>? startingGear, bool raiseEvent = true)

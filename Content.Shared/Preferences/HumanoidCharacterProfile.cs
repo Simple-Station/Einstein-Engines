@@ -84,6 +84,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public HumanoidCharacterAppearance Appearance { get; set; } = new();
 
+    [DataField]
+    public ClothingPreference Clothing { get; set; }
+    [DataField]
+    public BackpackPreference Backpack { get; set; }
+
     /// When spawning into a round what's the preferred spot to spawn
     [DataField]
     public SpawnPriorityPreference SpawnPriority { get; private set; } = SpawnPriorityPreference.None;
@@ -114,6 +119,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
+        ClothingPreference clothing,
+        BackpackPreference backpack,
         PreferenceUnavailableMode preferenceUnavailable,
         HashSet<string> antagPreferences,
         HashSet<string> traitPreferences,
@@ -130,6 +137,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Appearance = appearance;
         SpawnPriority = spawnPriority;
         _jobPriorities = jobPriorities;
+        Clothing = clothing;
+        Backpack = backpack;
         PreferenceUnavailable = preferenceUnavailable;
         _antagPreferences = antagPreferences;
         _traitPreferences = traitPreferences;
@@ -150,6 +159,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
+            other.Clothing,
+            other.Backpack,
             other.PreferenceUnavailable,
             new HashSet<string>(other.AntagPreferences),
             new HashSet<string>(other.TraitPreferences),
@@ -232,102 +243,51 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         };
     }
 
-    public HumanoidCharacterProfile WithName(string name)
-    {
-        return new(this) { Name = name };
-    }
+    public HumanoidCharacterProfile WithName(string name) => new(this) { Name = name };
+    public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
+    public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
+    public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
+    public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
+    public HumanoidCharacterProfile WithSpecies(string species) => new(this) { Species = species };
+    public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
+    public HumanoidCharacterProfile WithWidth(float width) => new(this) { Width = width };
 
-    public HumanoidCharacterProfile WithFlavorText(string flavorText)
-    {
-        return new(this) { FlavorText = flavorText };
-    }
-
-    public HumanoidCharacterProfile WithAge(int age)
-    {
-        return new(this) { Age = age };
-    }
-
-    public HumanoidCharacterProfile WithSex(Sex sex)
-    {
-        return new(this) { Sex = sex };
-    }
-
-    public HumanoidCharacterProfile WithGender(Gender gender)
-    {
-        return new(this) { Gender = gender };
-    }
-
-    public HumanoidCharacterProfile WithSpecies(string species)
-    {
-        return new(this) { Species = species };
-    }
-
-
-    public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
-    {
-        return new(this) { Appearance = appearance };
-    }
-
-    public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority)
-    {
-        return new(this) { SpawnPriority = spawnPriority };
-    }
-
-    public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<string, JobPriority>> jobPriorities)
-    {
-        return new(this)
-        {
-            _jobPriorities = new Dictionary<string, JobPriority>(jobPriorities),
-        };
-    }
+    public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance) =>
+        new(this) { Appearance = appearance };
+    public HumanoidCharacterProfile WithClothingPreference(ClothingPreference clothing) =>
+        new(this) { Clothing = clothing };
+    public HumanoidCharacterProfile WithBackpackPreference(BackpackPreference backpack) =>
+        new(this) { Backpack = backpack };
+    public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority) =>
+        new(this) { SpawnPriority = spawnPriority };
+    public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<string, JobPriority>> jobPriorities) =>
+        new(this) { _jobPriorities = new Dictionary<string, JobPriority>(jobPriorities) };
 
     public HumanoidCharacterProfile WithJobPriority(string jobId, JobPriority priority)
     {
         var dictionary = new Dictionary<string, JobPriority>(_jobPriorities);
         if (priority == JobPriority.Never)
-        {
             dictionary.Remove(jobId);
-        }
         else
-        {
             dictionary[jobId] = priority;
-        }
 
-        return new(this)
-        {
-            _jobPriorities = dictionary,
-        };
+        return new(this) { _jobPriorities = dictionary };
     }
 
-    public HumanoidCharacterProfile WithPreferenceUnavailable(PreferenceUnavailableMode mode)
-    {
-        return new(this) { PreferenceUnavailable = mode };
-    }
-
-    public HumanoidCharacterProfile WithAntagPreferences(IEnumerable<string> antagPreferences)
-    {
-        return new(this)
-        {
-            _antagPreferences = new HashSet<string>(antagPreferences),
-        };
-    }
+    public HumanoidCharacterProfile WithPreferenceUnavailable(PreferenceUnavailableMode mode) =>
+        new(this) { PreferenceUnavailable = mode };
+    public HumanoidCharacterProfile WithAntagPreferences(IEnumerable<string> antagPreferences) =>
+        new(this) { _antagPreferences = new HashSet<string>(antagPreferences) };
 
     public HumanoidCharacterProfile WithAntagPreference(string antagId, bool pref)
     {
         var list = new HashSet<string>(_antagPreferences);
         if (pref)
-        {
             list.Add(antagId);
-        }
         else
-        {
             list.Remove(antagId);
-        }
 
-        return new(this)
-        {
-            _antagPreferences = list,
-        };
+        return new(this) { _antagPreferences = list };
     }
 
     public HumanoidCharacterProfile WithTraitPreference(string traitId, bool pref)
@@ -335,18 +295,23 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         var list = new HashSet<string>(_traitPreferences);
 
         if (pref)
-        {
             list.Add(traitId);
-        }
         else
-        {
             list.Remove(traitId);
-        }
 
-        return new(this)
-        {
-            _traitPreferences = list,
-        };
+        return new(this) { _traitPreferences = list };
+    }
+
+    public HumanoidCharacterProfile WithLoadoutPreference(string loadoutId, bool pref)
+    {
+        var list = new HashSet<string>(_loadoutPreferences);
+
+        if (pref)
+            list.Add(loadoutId);
+        else
+            list.Remove(loadoutId);
+
+        return new HumanoidCharacterProfile(this) { _loadoutPreferences = list };
     }
 
     public string Summary =>
@@ -359,19 +324,19 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public bool MemberwiseEquals(ICharacterProfile maybeOther)
     {
-        if (maybeOther is not HumanoidCharacterProfile other) return false;
-        if (Name != other.Name) return false;
-        if (Age != other.Age) return false;
-        if (Sex != other.Sex) return false;
-        if (Gender != other.Gender) return false;
-        if (Species != other.Species) return false;
-        if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
-        if (SpawnPriority != other.SpawnPriority) return false;
-        if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
-        if (!_antagPreferences.SequenceEqual(other._antagPreferences)) return false;
-        if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
-        if (!LoadoutPreferences.SequenceEqual(other.LoadoutPreferences)) return false;
-        return Appearance.MemberwiseEquals(other.Appearance);
+        return maybeOther is HumanoidCharacterProfile other
+            && Name == other.Name
+            && Age == other.Age
+            && Sex == other.Sex
+            && Gender == other.Gender
+            && Species == other.Species
+            && PreferenceUnavailable == other.PreferenceUnavailable
+            && SpawnPriority == other.SpawnPriority
+            && _jobPriorities.SequenceEqual(other._jobPriorities)
+            && _antagPreferences.SequenceEqual(other._antagPreferences)
+            && _traitPreferences.SequenceEqual(other._traitPreferences)
+            && LoadoutPreferences.SequenceEqual(other.LoadoutPreferences)
+            && Appearance.MemberwiseEquals(other.Appearance);
     }
 
     public void EnsureValid(ICommonSession session, IDependencyCollection collection)
@@ -410,24 +375,16 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         string name;
         if (string.IsNullOrEmpty(Name))
-        {
             name = GetName(Species, gender);
-        }
         else if (Name.Length > MaxNameLength)
-        {
             name = Name[..MaxNameLength];
-        }
         else
-        {
             name = Name;
-        }
 
         name = name.Trim();
 
         if (configManager.GetCVar(CCVars.RestrictedNames))
-        {
             name = RestrictedNameRegex.Replace(name, string.Empty);
-        }
 
         if (configManager.GetCVar(CCVars.ICNameCase))
         {
@@ -436,19 +393,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         }
 
         if (string.IsNullOrEmpty(name))
-        {
             name = GetName(Species, gender);
-        }
 
         string flavortext;
         if (FlavorText.Length > MaxDescLength)
-        {
             flavortext = FormattedMessage.RemoveMarkup(FlavorText)[..MaxDescLength];
-        }
         else
-        {
             flavortext = FormattedMessage.RemoveMarkup(FlavorText);
-        }
 
         var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 

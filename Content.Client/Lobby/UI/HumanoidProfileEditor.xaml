@@ -183,7 +183,7 @@
             </BoxContainer>
             <BoxContainer Name="LoadoutsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Loadouts -->
-                <Label Name="LoadoutPointsLabel" HorizontalAlignment="Stretch" Align="enter" />
+                <Label Name="LoadoutPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
                 <ProgressBar Name="LoadoutPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
                 <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">

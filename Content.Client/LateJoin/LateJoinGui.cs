@@ -2,6 +2,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.CrewManifest;
 using Content.Client.GameTicking.Managers;
+using Content.Client.Lobby;
 using Content.Client.UserInterface.Controls;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Preferences;

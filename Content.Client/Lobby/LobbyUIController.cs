@@ -33,7 +33,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly IFileDialogManager _dialogManager = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
@@ -120,6 +119,9 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         if (_profileEditor == null)
             return;
 
+        if (obj.WasModified<SpeciesPrototype>())
+            _profileEditor.RefreshSpecies();
+
         if (obj.WasModified<AntagPrototype>())
             _profileEditor.RefreshAntags();
 
@@ -127,16 +129,11 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             || obj.WasModified<DepartmentPrototype>())
             _profileEditor.RefreshJobs();
 
-        if (obj.WasModified<LoadoutPrototype>()
-            || obj.WasModified<LoadoutGroupPrototype>()
-            || obj.WasModified<RoleLoadoutPrototype>())
-            _profileEditor.RefreshLoadouts();
-
-        if (obj.WasModified<SpeciesPrototype>())
-            _profileEditor.RefreshSpecies();
-
         if (obj.WasModified<TraitPrototype>())
-            _profileEditor.RefreshTraits();
+            _profileEditor.UpdateTraits(null, true);
+
+        if (obj.WasModified<LoadoutPrototype>())
+            _profileEditor.UpdateLoadouts(null, true);
     }
 
 
@@ -201,7 +198,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _configurationManager,
             EntityManager,
             _dialogManager,
-            _logManager,
             _playerManager,
             _prototypeManager,
             _requirements,

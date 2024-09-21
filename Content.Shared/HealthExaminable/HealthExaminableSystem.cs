@@ -1,4 +1,3 @@
-using Content.Server.Traits.Assorted;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
@@ -8,6 +7,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared.Traits.Assorted.Components;
 
 namespace Content.Shared.HealthExaminable;
 
@@ -92,20 +92,14 @@ public sealed class HealthExaminableSystem : EntitySystem
                 continue;
 
             if (!first)
-            {
                 msg.PushNewline();
-            }
             else
-            {
                 first = false;
-            }
             msg.AddMarkup(chosenLocStr);
         }
 
         if (msg.IsEmpty)
-        {
             msg.AddMarkup(Loc.GetString($"health-examinable-{component.LocPrefix}-none"));
-        }
 
         // Anything else want to add on to this?
         RaiseLocalEvent(uid, new HealthBeingExaminedEvent(msg, false), true);

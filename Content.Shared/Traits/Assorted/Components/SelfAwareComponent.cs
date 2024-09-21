@@ -3,7 +3,7 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 
-namespace Content.Shared.Traits.Assorted;
+namespace Content.Shared.Traits.Assorted.Components;
 
 /// <summary>
 ///     This is used for the Self-Aware trait to enhance the information received from HealthExaminableSystem.

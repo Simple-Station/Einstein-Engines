@@ -80,11 +80,11 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 
         foreach (var grid in args.NewGrids)
         {
-            var newComp = EnsureComp<NavMapComponent>(grid);
-            RefreshGrid(grid, newComp, _gridQuery.GetComponent(grid));
+            var newComp = EnsureComp<MapGridComponent>(grid);
+            RefreshGrid(comp, newComp);
         }
 
-        RefreshGrid(args.Grid, comp, _gridQuery.GetComponent(args.Grid));
+        RefreshGrid(comp, _gridQuery.GetComponent(args.Grid));
     }
 
     private NavMapChunk EnsureChunk(NavMapComponent component, Vector2i origin)
@@ -238,7 +238,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         component.Beacons.Clear();
 
         // Loop over all tiles
-        var tileRefs = _mapSystem.GetAllTiles(uid, mapGrid);
+        var tileRefs = _mapSystem.GetAllTiles(mapGrid.Owner, mapGrid);
 
         foreach (var tileRef in tileRefs)
         {
@@ -247,10 +247,10 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 
             var chunk = EnsureChunk(component, chunkOrigin);
             chunk.LastUpdate = _gameTiming.CurTick;
-            RefreshTileEntityContents(uid, component, mapGrid, chunkOrigin, tile, setFloor: true);
+            RefreshTileEntityContents(mapGrid.Owner, component, mapGrid, chunkOrigin, tile, setFloor: true);
         }
 
-        Dirty(uid, component);
+        Dirty(mapGrid.Owner, component);
     }
 
     private (int NewVal, NavMapChunk Chunk) RefreshTileEntityContents(EntityUid uid,
@@ -317,19 +317,15 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 
     private void UpdateNavMapBeaconData(EntityUid uid, NavMapBeaconComponent component, TransformComponent? xform = null)
     {
-        if (!Resolve(uid, ref xform))
-            return;
-
-        if (xform.GridUid == null)
-            return;
-
-        if (!_navQuery.TryComp(xform.GridUid, out var navMap))
+        if (!Resolve(uid, ref xform)
+            || xform.GridUid == null
+            || !_navQuery.TryComp(xform.GridUid, out var navMap))
             return;
 
         var meta = MetaData(uid);
         var changed = navMap.Beacons.Remove(meta.NetEntity);
 
-        if (TryCreateNavMapBeaconData(component, xform, meta, out var beaconData))
+        if (TryCreateNavMapBeaconData(uid, component, xform, meta, out var beaconData))
         {
             navMap.Beacons.Add(meta.NetEntity, beaconData.Value);
             changed = true;

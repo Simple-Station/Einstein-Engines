@@ -135,9 +135,6 @@ public sealed class NewsSystem : SharedNewsSystem
         if (!TryGetArticles(ent, out var articles))
             return;
 
-        if (msg.Session.AttachedEntity is not { } author)
-            return;
-
         string? authorName = null;
         if (_idCardSystem.TryFindIdCard(msg.Actor, out var idCard))
             authorName = idCard.Comp.FullName;

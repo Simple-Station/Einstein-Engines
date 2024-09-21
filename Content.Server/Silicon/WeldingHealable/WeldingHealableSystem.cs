@@ -1,21 +1,13 @@
-using System.Diagnostics;
 using Content.Server.Silicon.WeldingHealing;
 using Content.Server.Administration.Logs;
-using Content.Server.Stack;
-using Content.Server.Tools.Components;
-using Content.Shared.Silicon.WeldingHealing;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Silicon.WeldingHealing;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
-using Content.Shared.Database;
-using Content.Shared.Eye.Blinding.Components;
-using Content.Shared.Eye.Blinding.Systems;
-using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
-using Content.Shared.Tools;
-using Content.Shared.Stacks;
+using Content.Shared.Tools.Components;
 using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
 
 namespace Content.Server.Silicon.WeldingHealable
@@ -52,9 +44,10 @@ namespace Content.Server.Silicon.WeldingHealable
             if (TryComp(args.Used, out WelderComponent? welder) &&
                 TryComp(args.Used, out SolutionContainerManagerComponent? solutionContainer))
             {
-                if (!_solutionContainer.ResolveSolution(((EntityUid) args.Used, solutionContainer), welder.FuelSolutionName, ref welder.FuelSolution, out var solution))
+                Entity<SolutionComponent>? sol = new();
+                if (!_solutionContainer.ResolveSolution(((EntityUid) args.Used, solutionContainer), welder.FuelSolutionName, ref sol, out _))
                     return;
-                _solutionContainer.RemoveReagent(welder.FuelSolution.Value, welder.FuelReagent, component.FuelCost);
+                _solutionContainer.RemoveReagent(sol.Value, welder.FuelReagent, component.FuelCost);
             }
 
             var str = Loc.GetString("comp-repairable-repair",

@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Robust.Shared.Audio;
 using Content.Server.Sound.Components;
+using Content.Shared.Sound.Components;
 
 namespace Content.Server.Silicon;
 

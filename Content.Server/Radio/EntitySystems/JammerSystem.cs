@@ -1,4 +1,5 @@
 using Content.Server.DeviceNetwork.Components;
+using Content.Server.Medical.SuitSensors;
 using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
 using Content.Server.Radio.Components;

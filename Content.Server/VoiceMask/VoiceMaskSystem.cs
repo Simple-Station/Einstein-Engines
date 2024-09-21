@@ -93,10 +93,7 @@ public sealed partial class VoiceMaskSystem : EntitySystem
 
     private void OpenUI(EntityUid player)
     {
-        // Delta-V: `logMissing: false` because of syrinx.
-        if (!Resolve(player, ref actor, logMissing: false))
-            return;
-        if (!_uiSystem.TryGetUi(player, VoiceMaskUIKey.Key, out var bui))
+        if (!_uiSystem.IsUiOpen(player, VoiceMaskUIKey.Key))
             return;
 
         _uiSystem.OpenUi(player, VoiceMaskUIKey.Key, player);
@@ -105,11 +102,8 @@ public sealed partial class VoiceMaskSystem : EntitySystem
 
     private void UpdateUI(EntityUid owner, VoiceMaskComponent? component = null)
     {
-        // Delta-V: `logMissing: false` because of syrinx
         if (!Resolve(owner, ref component, logMissing: false))
-        {
             return;
-        }
 
         if (_uiSystem.HasUi(owner, VoiceMaskUIKey.Key))
             _uiSystem.SetUiState(owner, VoiceMaskUIKey.Key, new VoiceMaskBuiState(component.VoiceName, component.SpeechVerb));

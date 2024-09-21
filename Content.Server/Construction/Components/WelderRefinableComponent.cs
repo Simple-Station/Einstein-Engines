@@ -12,7 +12,7 @@ namespace Content.Server.Construction.Components;
 public sealed partial class WelderRefinableComponent : Component
 {
     [DataField]
-    public HashSet<EntProtoId>? RefineResult = new();
+    public HashSet<EntitySpawnEntry>? RefineResult;
 
     [DataField]
     public float RefineTime = 2f;
