@@ -1,8 +1,10 @@
 using System.Numerics;
 using Content.Server.Shuttles.Systems;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Shuttles.Components
 {
@@ -13,7 +15,7 @@ namespace Content.Server.Shuttles.Components
         /// <summary>
         /// Whether the thruster has been force to be enabled / disabled (e.g. VV, interaction, etc.)
         /// </summary>
-        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
         public bool Enabled { get; set; } = true;
 
         /// <summary>
@@ -22,8 +24,11 @@ namespace Content.Server.Shuttles.Components
         public bool IsOn;
 
         // Need to serialize this because RefreshParts isn't called on Init and this will break post-mapinit maps!
-        [ViewVariables(VVAccess.ReadWrite), DataField("thrust")]
+        [DataField]
         public float Thrust = 100f;
+
+        [DataField]
+        public float BaseThrust = 100f;
 
         [DataField("thrusterType")]
         public ThrusterType Type = ThrusterType.Linear;
@@ -37,24 +42,31 @@ namespace Content.Server.Shuttles.Components
         };
 
         /// <summary>
-        /// How much damage is done per second to anything colliding with our thrust.
+        ///     How much damage is done per second to anything colliding with our thrust.
         /// </summary>
-        [DataField("damage")] public DamageSpecifier? Damage = new();
+        [DataField]
+        public DamageSpecifier? Damage = new();
 
-        [DataField("requireSpace")]
+        [DataField]
         public bool RequireSpace = true;
 
         // Used for burns
 
         public List<EntityUid> Colliding = new();
 
-        public bool Firing = false;
+        public bool Firing;
 
         /// <summary>
-        /// Next time we tick damage for anyone colliding.
+        ///     Next time we tick damage for anyone colliding.
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite), DataField("nextFire", customTypeSerializer:typeof(TimeOffsetSerializer))]
+        [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
         public TimeSpan NextFire;
+
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+        public string MachinePartThrust = "Capacitor";
+
+        [DataField]
+        public float PartRatingThrustMultiplier = 1.5f;
     }
 
     public enum ThrusterType

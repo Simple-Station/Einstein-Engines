@@ -1,5 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Audio;
+using Content.Server.Construction;
 using Content.Server.Power.Components;
 using Content.Server.Emp;
 using Content.Shared.Database;
@@ -27,6 +28,7 @@ namespace Content.Server.Gravity
             SubscribeLocalEvent<GravityGeneratorComponent, ComponentShutdown>(OnComponentShutdown);
             SubscribeLocalEvent<GravityGeneratorComponent, EntParentChangedMessage>(OnParentChanged); // Or just anchor changed?
             SubscribeLocalEvent<GravityGeneratorComponent, InteractHandEvent>(OnInteractHand);
+            SubscribeLocalEvent<GravityGeneratorComponent, RefreshPartsEvent>(OnRefreshParts);
             SubscribeLocalEvent<GravityGeneratorComponent, SharedGravityGeneratorComponent.SwitchGeneratorMessage>(
                 OnSwitchGenerator);
 
@@ -255,6 +257,12 @@ namespace Content.Server.Gravity
             {
                 MakeOn((uid, grav), appearance);
             }
+        }
+
+        private void OnRefreshParts(EntityUid uid, GravityGeneratorComponent component, RefreshPartsEvent args)
+        {
+            var maxChargeMultipler = args.PartRatings[component.MachinePartMaxChargeMultiplier];
+            component.MaxCharge = maxChargeMultipler * 1;
         }
 
         private void MakeBroken(Entity<GravityGeneratorComponent> ent, AppearanceComponent? appearance)
