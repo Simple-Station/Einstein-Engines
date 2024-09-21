@@ -16,10 +16,10 @@ public sealed partial class ShortConstructionComponent : Component
 [DataDefinition]
 public sealed partial class ShortConstructionEntry
 {
-    [DataField("prototype")]
+    [DataField]
     public ProtoId<ConstructionPrototype>? Prototype { get; set; }
 
-    [DataField("category")]
+    [DataField]
     public ShortConstructionCategory? Category { get; set; }
 }
 
