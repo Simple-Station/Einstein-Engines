@@ -67,7 +67,7 @@
   description: action-description-noospheric-zap
   noSpawn: true
   components:
-  -
+  - type: EntityTargetAction
     icon: Interface/VerbIcons/noospheric_zap.png
     useDelay: 100
     range: 5
