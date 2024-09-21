@@ -31,15 +31,15 @@ public sealed partial class TraitPreferenceSelector : Control
         {
             _showUnusable = value;
             Visible = Valid || _showUnusable;
-            PrefButton.RemoveStyleClass(StyleBase.ButtonDanger);
-            PrefButton.AddStyleClass(Valid ? "" : StyleBase.ButtonDanger);
+            PreferenceButton.RemoveStyleClass(StyleBase.ButtonDanger);
+            PreferenceButton.AddStyleClass(Valid ? "" : StyleBase.ButtonDanger);
         }
     }
 
     public bool Preference
     {
-        get => PrefButton.Pressed;
-        set => PrefButton.Pressed = value;
+        get => PreferenceButton.Pressed;
+        set => PreferenceButton.Pressed = value;
     }
 
     public event Action<bool>? PreferenceChanged;
@@ -53,7 +53,7 @@ public sealed partial class TraitPreferenceSelector : Control
         Trait = trait;
 
         // Create a checkbox to get the loadout
-        PrefButton.AddChild(new Label
+        PreferenceButton.AddChild(new Label
         {
             Text = trait.Points.ToString(),
             StyleClasses = { StyleBase.StyleClassLabelHeading },
@@ -62,8 +62,8 @@ public sealed partial class TraitPreferenceSelector : Control
             ClipText = true,
             Margin = new Thickness(0, 0, 8, 0),
         });
-        PrefButton.AddChild(new Label { Text = Loc.GetString($"trait-name-{trait.ID}") });
-        PrefButton.OnToggled += OnPrefButtonToggled;
+        PreferenceButton.AddChild(new Label { Text = Loc.GetString($"trait-name-{trait.ID}") });
+        PreferenceButton.OnToggled += OnPrefButtonToggled;
 
         var tooltip = new StringBuilder();
         // Add the loadout description to the tooltip if there is one
@@ -88,7 +88,7 @@ public sealed partial class TraitPreferenceSelector : Control
         {
             var formattedTooltip = new Tooltip();
             formattedTooltip.SetMessage(FormattedMessage.FromMarkupPermissive(tooltip.ToString()));
-            PrefButton.TooltipSupplier = _ => formattedTooltip;
+            PreferenceButton.TooltipSupplier = _ => formattedTooltip;
         }
     }
 

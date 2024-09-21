@@ -2,7 +2,6 @@ using System.Linq;
 using Content.Client.Eui;
 using Content.Client.Lobby;
 using Content.Client.Players.PlayTimeTracking;
-using Content.Client.Preferences;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Eui;
@@ -12,7 +11,6 @@ using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 {

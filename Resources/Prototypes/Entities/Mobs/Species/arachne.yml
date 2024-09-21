@@ -104,8 +104,8 @@
   - type: Tag
     tags:
     - CanPilot
-    - ShoesRequiredStepTriggerImmune
     - DoorBumpOpener
+  - type: StepTriggerImmune
   - type: Bloodstream
     bloodReagent: DemonsBlood
   - type: BloodSucker

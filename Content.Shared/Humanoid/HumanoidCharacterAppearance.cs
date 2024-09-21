@@ -30,7 +30,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
     public Color SkinColor { get; private set; }
 
     [DataField]
-    public List<Marking> Markings { get; private set; }
+    public List<Marking> Markings { get; private set; } = new();
 
     public HumanoidCharacterAppearance(string hairStyleId,
         Color hairColor,

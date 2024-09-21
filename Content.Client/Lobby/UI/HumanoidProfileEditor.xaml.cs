@@ -6,7 +6,6 @@ using Content.Client.Guidebook;
 using Content.Client.Humanoid;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
-using Content.Client.Preferences.UI;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.CCVar;
@@ -34,7 +33,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Serilog;
 using Direction = Robust.Shared.Maths.Direction;
 
 namespace Content.Client.Lobby.UI
@@ -1039,7 +1037,6 @@ namespace Content.Client.Lobby.UI
                     };
 
                     _jobPriorities.Add((job.ID, selector));
-                    jobContainer.AddChild(selector);
                     category.AddChild(jobContainer);
                 }
             }
@@ -1644,7 +1641,7 @@ namespace Content.Client.Lobby.UI
             }
             catch (Exception exc)
             {
-                Log.Error($"Error when importing profile\n{exc.StackTrace}");
+                Logger.Error($"Error when importing profile\n{exc.StackTrace}");
             }
             finally
             {
@@ -1674,7 +1671,7 @@ namespace Content.Client.Lobby.UI
             }
             catch (Exception exc)
             {
-                Log.Error($"Error when exporting profile\n{exc.StackTrace}");
+                Logger.Error($"Error when exporting profile\n{exc.StackTrace}");
             }
             finally
             {

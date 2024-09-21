@@ -482,7 +482,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public override bool Equals(object? obj)
     {
-        return ReferenceEquals(this, obj) || obj is HumanoidCharacterProfile other && MemberwiseEquals(other
+        return ReferenceEquals(this, obj) || obj is HumanoidCharacterProfile other && MemberwiseEquals(other);
     }
 
     public override int GetHashCode()
