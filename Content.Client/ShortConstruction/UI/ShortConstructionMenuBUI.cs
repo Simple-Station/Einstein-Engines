@@ -70,7 +70,7 @@ public sealed class ShortConstructionMenuBUI : BoundUserInterface
         var container = new RadialContainer
         {
             Name = parentCategory ?? "Main",
-            Radius = 36f / MathF.Sin(MathF.PI / 2f / entries.Count),
+            Radius = 48f + 24f * MathF.Log(entries.Count),
         };
 
         _menu.AddChild(container);
