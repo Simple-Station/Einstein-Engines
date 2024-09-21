@@ -27,7 +27,8 @@
     - Vocal
   blacklist:
     components:
-    - BorgChassischatMessages: [ "chat-emote-msg-laugh" ]
+    - BorgChassischatMessages
+  chatMessages: ["chat-emote-msg-laugh"]
   chatTriggers:
     - laughs
     - chuckles
@@ -44,7 +45,7 @@
     requireAll: true
     components:
     - Vocal
-    - BorgChassischatMessages: [ "chat-emote-msg-honk" ]
+    - BorgChassischatMessages
   chatTriggers:
     - honks
 
@@ -58,7 +59,8 @@
     - Vocal
   blacklist:
     components:
-    - BorgChassischatMessages: [ "chat-emote-msg-sigh" ]
+    - BorgChassischatMessages
+  chatMessages: ["chat-emote-msg-sigh"]
   chatTriggers:
     - sighs
 

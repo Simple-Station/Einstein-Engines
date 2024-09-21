@@ -3,6 +3,7 @@
   id: BaseParadoxAnomalyObjective
   components:
   - type: Objective
+    difficulty: 1
     issuer: self
 
 # not using base kill/keep alive objectives since these intentionally conflict with eachother
@@ -17,6 +18,7 @@
       sprite: Objects/Weapons/Guns/Pistols/viper.rsi
       state: icon
   - type: TargetObjective
+    difficulty: 1
     title: objective-paradox-anomaly-kill-title
   - type: KillPersonCondition
     requireDead: true
@@ -32,6 +34,7 @@
       sprite: Objects/Misc/bureaucracy.rsi
       state: folder-white
   - type: TargetObjective
+    difficulty: 1
     title: objective-paradox-anomaly-friend-title
   - type: KeepAliveCondition
 

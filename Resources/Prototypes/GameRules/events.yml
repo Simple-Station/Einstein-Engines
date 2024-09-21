@@ -49,7 +49,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-bureaucratic-error-announcement
+    startAnnouncement: true
     minimumPlayers: 25
     weight: 3
     duration: 1
@@ -61,7 +61,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-clerical-error-announcement
+    startAnnouncement: true
     minimumPlayers: 15
     weight: 5
     duration: 1
@@ -136,10 +136,10 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-gas-leak-start-announcement
+    startAnnouncement: true
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    endAnnouncement: station-event-gas-leak-end-announcement
+    endAnnouncement: true
     weight: 8
     startDelay: 20
   - type: GasLeakRule
@@ -166,8 +166,8 @@
     earliestStart: 30
     weight: 7.5
     minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
-    startAnnouncement: station-event-meteor-swarm-start-announcement
-    endAnnouncement: station-event-meteor-swarm-end-announcement
+    startAnnouncement: true
+    endAnnouncement: true
     startAudio:
       path: /Audio/Announcements/meteors.ogg
       params:
@@ -182,7 +182,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: true
     startAudio:
       path: /Audio/Announcements/attention.ogg
     startDelay: 10
@@ -209,7 +209,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: true
     startAudio:
       path: /Audio/Announcements/attention.ogg
     startDelay: 10
@@ -229,8 +229,8 @@
   components:
   - type: StationEvent
     weight: 5
-    startAnnouncement: station-event-power-grid-check-start-announcement
-    endAnnouncement: station-event-power-grid-check-end-announcement
+    startAnnouncement: true
+    endAnnouncement: true
     startAudio:
       path: /Audio/Announcements/power_off.ogg
       params:
@@ -260,8 +260,8 @@
   components:
   - type: StationEvent
     weight: 8
-    startAnnouncement: station-event-solar-flare-start-announcement
-    endAnnouncement: station-event-solar-flare-end-announcement
+    startAnnouncement: true
+    endAnnouncement: true
     startAudio:
       path: /Audio/Announcements/attention.ogg
     duration: 120
@@ -288,7 +288,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-clog-start-announcement
+    startAnnouncement: true
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
@@ -304,7 +304,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: true
     startAudio:
       path: /Audio/Announcements/attention.ogg
     startDelay: 10
@@ -327,7 +327,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: true
     startAudio:
       path: /Audio/Announcements/attention.ogg
     startDelay: 10
@@ -346,7 +346,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: true
     startAudio:
       path: /Audio/Announcements/attention.ogg
     startDelay: 10
@@ -437,7 +437,7 @@
     weight: 8
     minimumPlayers: 15
     reoccurrenceDelay: 30
-    startAnnouncement: station-event-communication-interception
+    startAnnouncement: true
     startAudio:
       path: /Audio/Announcements/intercept.ogg
   - type: AlertLevelInterceptionRule
@@ -475,7 +475,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: station-event-immovable-rod-start-announcement
+    startAnnouncement: true
     startAudio:
       path: /Audio/Announcements/attention.ogg
     weight: 3.5

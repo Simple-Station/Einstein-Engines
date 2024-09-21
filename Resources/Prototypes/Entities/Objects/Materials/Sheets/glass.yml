@@ -93,8 +93,8 @@
           Quantity: 10
   - type: UserInterface
     interfaces:
-    - key: enum.ShortConstructionUiKey.Key
-      type: ShortConstructionMenuBUI
+      enum.ShortConstructionUiKey.Key:
+        type: ShortConstructionMenuBUI
   - type: ActivatableUI
     key: enum.ShortConstructionUiKey.Key
   - type: ShortConstruction
@@ -188,8 +188,8 @@
         acts: [ "Destruction" ]
   - type: UserInterface
     interfaces:
-    - key: enum.ShortConstructionUiKey.Key
-      type: ShortConstructionMenuBUI
+      enum.ShortConstructionUiKey.Key:
+        type: ShortConstructionMenuBUI
   - type: ActivatableUI
     key: enum.ShortConstructionUiKey.Key
   - type: ShortConstruction
