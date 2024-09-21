@@ -6583,3 +6583,10 @@ Entries:
   id: 6382
   time: '2024-09-21T22:46:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/917
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added discounts in uplink / Добавлены скидки в аплинк
+  id: 6383
+  time: '2024-09-21T22:46:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/930
