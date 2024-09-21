@@ -22,14 +22,18 @@ public sealed class StationMapBoundUserInterface : BoundUserInterface
             gridUid = xform.GridUid;
         }
 
-        _window = new StationMapWindow(gridUid, Owner);
-        _window.OpenCentered();
-        _window.OnClose += Close;
-    }
+        _window = this.CreateWindow<StationMapWindow>();
+        _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
 
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-        _window?.Dispose();
+        string stationName = string.Empty;
+        if(EntMan.TryGetComponent<MetaDataComponent>(gridUid, out var gridMetaData))
+        {
+            stationName = gridMetaData.EntityName;
+        }
+        
+        if (EntMan.TryGetComponent<StationMapComponent>(Owner, out var comp) && comp.ShowLocation)
+            _window.Set(stationName, gridUid, Owner);
+        else
+            _window.Set(stationName, gridUid, null);
     }
 }
