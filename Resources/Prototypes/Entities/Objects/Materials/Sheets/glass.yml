@@ -203,7 +203,7 @@
     - prototype: SheetRUGlass1
     - prototype: ReinforcedWindow
     - prototype: ReinforcedWindowDiagonal
-    - prototype: ReinforcedWindowDirectional
+    - prototype: WindowReinforcedDirectional
 
 - type: entity
   parent: SheetRGlass
