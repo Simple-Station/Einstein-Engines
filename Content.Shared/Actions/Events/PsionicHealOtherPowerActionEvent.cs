@@ -11,9 +11,7 @@ public sealed partial class PsionicHealOtherPowerActionEvent : EntityTargetActio
     [DataField]
     public string PowerName;
 
-    /// <summary>
-    ///     Controls whether or not a power fires immediately and with no DoAfter.
-    /// </summary>
+    /// Controls whether or not a power fires immediately and with no DoAfter
     [DataField]
     public bool Immediate;
 

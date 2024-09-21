@@ -32,13 +32,16 @@ public sealed class RevivifyPowerSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly GlimmerSystem _glimmer = default!;
 
+
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeLocalEvent<PsionicComponent, PsionicHealOtherPowerActionEvent>(OnPowerUsed);
         SubscribeLocalEvent<PsionicComponent, DispelledEvent>(OnDispelled);
         SubscribeLocalEvent<PsionicComponent, PsionicHealOtherDoAfterEvent>(OnDoAfter);
     }
+
 
     private void OnPowerUsed(EntityUid uid, PsionicComponent component, PsionicHealOtherPowerActionEvent args)
     {
@@ -100,12 +103,14 @@ public sealed class RevivifyPowerSystem : EntitySystem
 
     private void OnDoAfter(EntityUid uid, PsionicComponent component, PsionicHealOtherDoAfterEvent args)
     {
+        // It's entirely possible for the caster to stop being Psionic(due to mindbreaking) mid cast
         if (component is null)
-            return; // It's entirely possible for the caster to stop being Psionic(due to mindbreaking) mid cast.
+            return;
         component.DoAfter = null;
 
+        // The target can also cease existing mid-cast
         if (args.Target is null)
-            return; // The target can also cease existing mid-cast.
+            return;
 
         _rotting.ReduceAccumulator(args.Target.Value, TimeSpan.FromSeconds(args.RotReduction * component.CurrentAmplification));
 

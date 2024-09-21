@@ -169,15 +169,11 @@ namespace Content.Shared.Abilities.Psionics
         [DataField]
         public List<string>? PsychognomicDescriptors = null;
 
-        /// <summary>
-        ///     Used for tracking what spell a Psion is actively casting.
-        /// </summary>
+        /// Used for tracking what spell a Psion is actively casting
         [DataField]
         public DoAfterId? DoAfter;
 
-        /// <summary>
-        ///     Popup to play if a Psion attempts to start casting a power while already casting one.
-        /// </summary>
+        /// Popup to play if a Psion attempts to start casting a power while already casting one
         [DataField]
         public string AlreadyCasting = "already-casting";
     }

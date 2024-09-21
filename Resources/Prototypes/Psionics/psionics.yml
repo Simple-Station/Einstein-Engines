@@ -160,5 +160,5 @@
     - ActionRevivify
   initializationFeedback: revivify-power-initialization-feedback
   metapsionicFeedback: revivify-power-feedback
-  amplificationModifier: 2.5 # An extremely rare and dangerous power.
+  amplificationModifier: 2.5 # An extremely rare and dangerous power
   powerSlotCost: 2
