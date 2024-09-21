@@ -67,7 +67,7 @@
   description: action-description-noospheric-zap
   noSpawn: true
   components:
-  - type: EntityTargetAction
+  -
     icon: Interface/VerbIcons/noospheric_zap.png
     useDelay: 100
     range: 5
@@ -153,7 +153,7 @@
   noSpawn: true
   components:
   - type: EntityTargetAction
-    icon: Interface/VerbIcons/healing_word.png
+    icon: { sprite : Interface/Actions/psionics.rsi, state: healing_word }
     useDelay: 10
     checkCanAccess: false
     range: 6
@@ -189,7 +189,7 @@
   noSpawn: true
   components:
   - type: EntityTargetAction
-    icon: Interface/VerbIcons/revivify.png
+    icon: { sprite : Interface/Actions/psionics.rsi, state: revivify }
     useDelay: 120
     checkCanAccess: false
     range: 2
