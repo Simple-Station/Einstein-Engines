@@ -6590,3 +6590,25 @@ Entries:
   id: 6383
   time: '2024-09-21T22:46:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/930
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Healing Word has been added as a new Psionic Power. When cast on another
+        person, it heals a small amount of every damage type(scaling with
+        Casting Stats), while also reducing rot timers. Healing Word has a very
+        short cooldown, and a fairly low Glimmer cost.
+    - type: Add
+      message: >-
+        Breath of Life has been added as a new extremely rare Psionic Power.
+        When cast on another person, it heals a large amount of damage(scaling
+        with Casting Stats), while also substantially reducing rot timers.
+        Additionally, it will revive the target if it is possible to do so.
+        Breath of Life has an incredibly long cooldown, a long interuptable cast
+        time, and an extraordinarily high glimmer cost(A typical Psion will
+        spike glimmer by more than 50 points when casting it).
+    - type: Add
+      message: The Chaplain now starts with the Healing Word power.
+  id: 6384
+  time: '2024-09-21T22:50:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/942
