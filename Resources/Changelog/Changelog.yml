@@ -6576,3 +6576,10 @@ Entries:
   id: 6381
   time: '2024-09-20T21:47:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/940
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Part Upgrading has returned!
+  id: 6382
+  time: '2024-09-21T22:46:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/917
