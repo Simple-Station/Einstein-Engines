@@ -1,4 +1,5 @@
 generic-power-initialization-feedback = I Awaken.
+arleady-casting = I cannot channel more than one power at a time.
 
 # Dispel
 dispel-power-description = Dispel summoned entities such as familiars or forcewalls.
@@ -47,6 +48,28 @@ psionic-regeneration-power-description = Push your natural metabolism to the lim
 psionic-regeneration-power-initialization-feedback =
     I look within myself, finding a wellspring of life.
 psionic-regeneration-power-metapsionic-feedback = {CAPITALIZE($entity)} possesses an overwhelming will to live
+
+# Healing Word
+action-name-healing-word = Healing Word
+action-description-healing-word = Speak the Lesser Secret Of Life, and restore health to another.
+healing-word-power-description = Speak the Lesser Secret Of Life, and restore health to another.
+healing-word-power-initialization-feedback =
+    At the beginning of time, a word was spoken that brought life into the Spheres.
+    Though it taxes my mind to know it, this Secret is known to me now.
+    I need only speak it.
+healing-word-power-metapsionic-feedback = {CAPITALIZE($entity)} bears the Lesser Secret of Life.
+healing-word-begin = {CAPITALIZE($entity)} mutters a word that brings both joy and pain alike to those who hear it.
+
+# Revivify
+action-name-revivify = Breath of Life
+action-description-revivify = Speak the Greater Secret of Life, and restore another to life.
+revivify-power-description = Speak the Greater Secret of Life, and restore another to life.
+revivify-power-initialization-feedback =
+    For a moment, my soul journeys across time and space to the beginning of it all, there I hear it.
+    The Secret of Life in its fullness. I feel my entire existence burning out from within, merely by knowing it.
+    Power flows through me as a mighty river, begging to be released with a simple spoken word.
+revivify-power-metapsionic-feedback = {CAPITALIZE($entity)} bears the Greater Secret of Life.
+revivify-word-begin = {CAPITALIZE($entity)} enunciates a word of such divine power, that those who hear it weep from joy.
 
 # Telegnosis
 telegnosis-power-description = Create a telegnostic projection to remotely observe things.
