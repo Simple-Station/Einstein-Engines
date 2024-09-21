@@ -48,9 +48,7 @@ public sealed class ShortConstructionMenuBUI : BoundUserInterface
         };
 
         if (_entManager.TryGetComponent<ShortConstructionComponent>(Owner, out var crafting))
-        {
             CreateMenu(crafting.Entries);
-        }
 
         _menu.OpenCenteredAt(_inputManager.MouseScreenPosition.Position / _displayManager.ScreenSize);
     }
