@@ -39,6 +39,7 @@
   name: chat-emote-name-honk
   category: Vocal
   icon: Interface/Emotes/honk.png
+  chatMessages: ["chat-emote-msg-honk"]
   whitelist:
     requireAll: true
     components:
@@ -227,6 +228,7 @@
 
 - type: emote
   id: SiliconDeathgasp
+  name: chat-emote-name-deathgasp
   chatMessages: ["chat-emote-msg-deathgasp-silicon"]
   chatTriggers:
   - sdeathgasp
@@ -282,6 +284,7 @@
 
 - type: emote
   id: Boop
+  name: chat-emote-name-boop
   category: Vocal
   chatMessages: [ boops ]
   chatTriggers:
@@ -330,7 +333,8 @@
     - pings
 
 - type: emote
-  id: Whirr # uncategorized as it is generic
+  id: Whirr
+  name: chat-emote-name-whirr
   chatMessages: [ whirrs ]
   chatTriggers:
     - whirrs

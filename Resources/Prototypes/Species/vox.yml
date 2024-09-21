@@ -50,14 +50,38 @@
       points: 1
       required: true
       defaultMarkings: [ VoxBeak ]
-    Arms:
-      points: 4
+    RightArm:
+      points: 1
       required: true
-      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
-    Legs:
-      points: 4
+      defaultMarkings: [ VoxRArmScales ]
+    RightHand:
+      points: 1
       required: true
-      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+      defaultMarkings: [ VoxRHandScales ]
+    LeftArm:
+      points: 1
+      required: true
+      defaultMarkings: [ VoxLArmScales ]
+    LeftHand:
+      points: 1
+      required: true
+      defaultMarkings: [ VoxLHandScales ]
+    RightLeg:
+      points: 1
+      required: true
+      defaultMarkings: [ VoxRLegScales ]
+    LeftLeg:
+      points: 1
+      required: true
+      defaultMarkings: [ VoxLLegScales ]
+    RightFoot:
+      points: 1
+      required: true
+      defaultMarkings: [ VoxRFootScales ]
+    LeftFoot:
+      points: 1
+      required: true
+      defaultMarkings: [ VoxLFootScales ]
     Chest:
       points: 1
       required: false

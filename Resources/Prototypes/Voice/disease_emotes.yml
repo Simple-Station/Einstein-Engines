@@ -3,11 +3,13 @@
   name: chat-emote-name-sneeze
   category: Vocal
   chatMessages: [ "chat-emote-msg-sneeze" ]
+
 - type: emote
   id: Cough
   name: chat-emote-name-cough
   icon: Interface/Emotes/cough.png
   category: Vocal
+  chatMessages: [ "chat-emote-msg-cough" ]
   whitelist:
     components:
     - Vocal
@@ -46,6 +48,7 @@
   name: chat-emote-name-yawn
   icon: Interface/Emotes/yawn.png
   category: Vocal
+  chatMessages: [ "chat-emote-msg-yawn" ]
   whitelist:
     components:
     - Vocal

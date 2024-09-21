@@ -1823,41 +1823,6 @@
         Base: splat-2
 
 - type: entity
-  name: cancer mouse
-  description: Toxic. Squeak!
-  parent: MobMouse
-  id: MobMouseCancer
-  components:
-  - type: Sprite
-    color: LightGreen
-  - type: PointLight
-    color: LightGreen
-    radius: 5
-    energy: 5
-    netsync: false
-  - type: RadiationSource
-    intensity: 0.3
-  - type: Bloodstream
-    bloodReagent: UnstableMutagen
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 3
-        - ReagentId: Uranium
-          Quantity: 10
-  - type: Butcherable
-    spawned:
-    - id: FoodMeatRat
-      amount: 1
-    - id: SheetUranium1
-      amount: 1
-  - type: Damageable
-    damageContainer: Biological
-    damageModifierSet: Zombie
-
-- type: entity
   name: lizard #Weh
   parent: SimpleMobBase
   id: MobLizard
@@ -3019,12 +2984,12 @@
         Slash: 6
         Piercing: 6
         Structural: 15
-- type: LanguageKnowledge
+  - type: LanguageKnowledge
     speaks:
-    - Cat
+      - Cat
     understands:
-    - Cat
-    - GalacticCommon
+      - Cat
+      - GalacticCommon
 - type: entity
   name: space cat
   id: MobCatSpace

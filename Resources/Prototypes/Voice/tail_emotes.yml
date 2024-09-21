@@ -1,6 +1,7 @@
 - type: emote
   id: WagTail
-  chatMessages: [wags tail]
+  name: chat-emote-name-tailwag
+  chatMessages: [wags their tail]
   chatTriggers:
     - wags tail
     - wags his tail
