@@ -26,13 +26,13 @@ public sealed partial class ShortConstructionEntry
 [DataDefinition]
 public sealed partial class ShortConstructionCategory
 {
-    [DataField("name")]
+    [DataField]
     public string Name { get; set; } = string.Empty;
 
-    [DataField("icon")]
+    [DataField]
     public SpriteSpecifier Icon { get; set; } = default!;
 
-    [DataField("entries")]
+    [DataField]
     public List<ShortConstructionEntry> Entries { get; set; } = new();
 }
 
