@@ -6612,3 +6612,18 @@ Entries:
   id: 6384
   time: '2024-09-21T22:50:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/942
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Bottles, Drink Glasses, Plates, and all liquid containers are now struck
+        by bullets(and most likely destroyed in the process). We hope that this
+        will offer both a small tactical advantage/disadvantage, as well as
+        contribute to making gunfights around the bar more "Cinematic".
+    - type: Add
+      message: >-
+        Chairs are now hit by projectiles if a shooter clicks on them, in
+        addition to Tables.
+  id: 6385
+  time: '2024-09-21T23:22:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/943
