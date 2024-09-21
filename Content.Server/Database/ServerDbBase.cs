@@ -238,9 +238,9 @@ namespace Content.Server.Database
                 spawnPriority,
                 jobs,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
-                antags.ToList(),
-                traits.ToList(),
-                loadouts.ToList()
+                antags.ToHashSet(),
+                traits.ToHashSet(),
+                loadouts.ToHashSet()
             );
         }
 

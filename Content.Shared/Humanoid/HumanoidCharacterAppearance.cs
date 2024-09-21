@@ -9,8 +9,29 @@ namespace Content.Shared.Humanoid;
 
 [DataDefinition]
 [Serializable, NetSerializable]
-public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance
+public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, IEquatable<HumanoidCharacterAppearance>
 {
+    [DataField("hair")]
+    public string HairStyleId { get; set; } = HairStyles.DefaultHairStyle;
+
+    [DataField]
+    public Color HairColor { get; set; } = Color.Black;
+
+    [DataField("facialHair")]
+    public string FacialHairStyleId { get; set; } = HairStyles.DefaultFacialHairStyle;
+
+    [DataField]
+    public Color FacialHairColor { get; set; } = Color.Black;
+
+    [DataField]
+    public Color EyeColor { get; private set; }
+
+    [DataField]
+    public Color SkinColor { get; private set; }
+
+    [DataField]
+    public List<Marking> Markings { get; private set; }
+
     public HumanoidCharacterAppearance(string hairStyleId,
         Color hairColor,
         string facialHairStyleId,
@@ -28,26 +49,18 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance
         Markings = markings;
     }
 
-    [DataField("hair")]
-    public string HairStyleId { get; private set; }
+    public HumanoidCharacterAppearance(HumanoidCharacterAppearance other)
+        : this(
+            other.HairStyleId,
+            other.HairColor,
+            other.FacialHairStyleId,
+            other.FacialHairColor,
+            other.EyeColor,
+            other.SkinColor,
+            new(other.Markings))
+    {
 
-    [DataField("hairColor")]
-    public Color HairColor { get; private set; }
-
-    [DataField("facialHair")]
-    public string FacialHairStyleId { get; private set; }
-
-    [DataField("facialHairColor")]
-    public Color FacialHairColor { get; private set; }
-
-    [DataField("eyeColor")]
-    public Color EyeColor { get; private set; }
-
-    [DataField("skinColor")]
-    public Color SkinColor { get; private set; }
-
-    [DataField("markings")]
-    public List<Marking> Markings { get; private set; }
+    }
 
     public HumanoidCharacterAppearance WithHairStyleName(string newName)
     {
@@ -82,18 +95,6 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance
     public HumanoidCharacterAppearance WithMarkings(List<Marking> newMarkings)
     {
         return new(HairStyleId, HairColor, FacialHairStyleId, FacialHairColor, EyeColor, SkinColor, newMarkings);
-    }
-
-    public HumanoidCharacterAppearance() : this(
-        HairStyles.DefaultHairStyle,
-        Color.Black,
-        HairStyles.DefaultFacialHairStyle,
-        Color.Black,
-        Color.Black,
-        Humanoid.SkinColor.ValidHumanSkinTone,
-        new ()
-    )
-    {
     }
 
     public static HumanoidCharacterAppearance DefaultWithSpecies(string species)
@@ -240,14 +241,50 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance
 
     public bool MemberwiseEquals(ICharacterAppearance maybeOther)
     {
-        if (maybeOther is not HumanoidCharacterAppearance other) return false;
-        if (HairStyleId != other.HairStyleId) return false;
-        if (!HairColor.Equals(other.HairColor)) return false;
-        if (FacialHairStyleId != other.FacialHairStyleId) return false;
-        if (!FacialHairColor.Equals(other.FacialHairColor)) return false;
-        if (!EyeColor.Equals(other.EyeColor)) return false;
-        if (!SkinColor.Equals(other.SkinColor)) return false;
-        if (!Markings.SequenceEqual(other.Markings)) return false;
-        return true;
+        return
+            maybeOther is HumanoidCharacterAppearance other
+            && HairStyleId == other.HairStyleId
+            && HairColor.Equals(other.HairColor)
+            && FacialHairStyleId == other.FacialHairStyleId
+            && FacialHairColor.Equals(other.FacialHairColor)
+            && EyeColor.Equals(other.EyeColor)
+            && SkinColor.Equals(other.SkinColor)
+            && Markings.SequenceEqual(other.Markings);
     }
+
+    public bool Equals(HumanoidCharacterAppearance? other)
+    {
+        if (ReferenceEquals(null, other))
+            return false;
+        if (ReferenceEquals(this, other))
+            return true;
+        return HairStyleId == other.HairStyleId
+            && HairColor.Equals(other.HairColor)
+            && FacialHairStyleId == other.FacialHairStyleId
+            && FacialHairColor.Equals(other.FacialHairColor)
+            && EyeColor.Equals(other.EyeColor)
+            && SkinColor.Equals(other.SkinColor)
+            && Markings.SequenceEqual(other.Markings);
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return ReferenceEquals(this, obj)
+            || obj is HumanoidCharacterAppearance other
+                && Equals(other);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(
+            HairStyleId,
+            HairColor,
+            FacialHairStyleId,
+            FacialHairColor,
+            EyeColor,
+            SkinColor,
+            Markings);
+    }
+
+    public HumanoidCharacterAppearance Clone() => new(this);
 }

@@ -1,7 +1,7 @@
 using System;
 using Content.Shared.Preferences;
 
-namespace Content.Client.Preferences
+namespace Content.Client.Lobby
 {
     public interface IClientPreferencesManager
     {

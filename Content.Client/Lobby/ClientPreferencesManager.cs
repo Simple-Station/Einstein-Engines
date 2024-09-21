@@ -4,13 +4,11 @@ using System.Linq;
 using Content.Shared.Preferences;
 using Robust.Client;
 using Robust.Client.Player;
-using Robust.Shared.Configuration;
 using Robust.Shared.IoC;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client.Preferences
+namespace Content.Client.Lobby
 {
     /// <summary>
     ///     Receives <see cref="PlayerPreferences" /> and <see cref="GameSettings" /> from the server during the initial
