@@ -94,10 +94,10 @@
           sprite: Objects/Materials/Sheets/glass.rsi
           state: rglass_3
         entries:
+        - prototype: SheetRPGlass
         - prototype: SheetRPGlass0
-        - prototype: SheetRPGlass1
+        - prototype: SheetRUGlass
         - prototype: SheetRUGlass0
-        - prototype: SheetRUGlass1
         - prototype: SheetRGlass
 
 - type: entity
