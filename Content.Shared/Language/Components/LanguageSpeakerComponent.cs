@@ -21,8 +21,8 @@ public sealed partial class LanguageSpeakerComponent : Component
     ///     The current language the entity uses when speaking.
     ///     Other listeners will hear the entity speak in this language.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(StringSerializer))]
-    public ProtoId<LanguagePrototype> CurrentLanguage = ""; // The language system will override it on mapinit
+    [DataField]
+    public string CurrentLanguage = ""; // The language system will override it on mapinit
 
     /// <summary>
     ///     List of languages this entity can speak at the current moment.

@@ -47,7 +47,7 @@ public sealed class LanguageSystem : SharedLanguageSystem
 
     public void RequestSetLanguage(ProtoId<LanguagePrototype> language)
     {
-        if (language == GetLocalSpeaker()?.CurrentLanguage)
+        if (GetLocalSpeaker()?.CurrentLanguage?.Equals(language) == true)
             return;
 
         RaiseNetworkEvent(new LanguagesSetMessage(language));
