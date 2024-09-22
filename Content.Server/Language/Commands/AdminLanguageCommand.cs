@@ -1,6 +1,7 @@
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Language;
+using Content.Shared.Language.Components;
 using Content.Shared.Language.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed;
