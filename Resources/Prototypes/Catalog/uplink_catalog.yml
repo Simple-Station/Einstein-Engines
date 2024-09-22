@@ -412,6 +412,7 @@
     blacklist:
       components:
       - SurplusBundle
+  saleLimit: 1
 
 - type: listing
   id: UplinkNocturineChemistryBottle
@@ -422,6 +423,7 @@
     Telecrystal: 6
   categories:
   - UplinkChemicals
+  saleLimit: 1
 
 - type: listing
   id: UplinkCombatMedkit
@@ -432,6 +434,7 @@
     Telecrystal: 5
   categories:
   - UplinkChemicals
+  saleLimit: 1
 
 - type: listing
   id: UplinkCombatMedipen
@@ -442,6 +445,7 @@
     Telecrystal: 4
   categories:
   - UplinkChemicals
+  saleLimit: 1
 
 - type: listing
   id: UplinkStimpack
@@ -452,6 +456,7 @@
     Telecrystal: 4
   categories:
   - UplinkChemicals
+  saleLimit: 1
 
 - type: listing
   id: UplinkStimkit
@@ -462,6 +467,7 @@
     Telecrystal: 12
   categories:
   - UplinkChemicals
+  saleLimit: 1
 
 - type: listing
   id: UplinkCigarettes
@@ -491,6 +497,7 @@
       blacklist:
         components:
           - SurplusBundle
+  saleLimit: 1
 
 # Deception
 
@@ -1013,25 +1020,6 @@
   categories:
   - UplinkBundles
 
-- type: listing
-  id: UplinkMedsBundle
-  name: uplink-meds-bundle-name
-  description: uplink-meds-bundle-desc
-  productEntity: ClothingBackpackDuffelSyndicateMedicalBundleFilled
-  cost:
-    Telecrystal: 20
-  categories:
-  - UplinkBundles
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - NukeOpsUplink
-    - !type:BuyerWhitelistCondition
-      blacklist:
-        components:
-          - SurplusBundle
-  saleLimit: 1
 
 - type: listing
   id: UplinkSniperBundle
@@ -1091,27 +1079,6 @@
     Telecrystal: 30
   categories:
   - UplinkBundles
-  saleLimit: 1
-
-- type: listing
-  id: UplinkZombieBundle
-  name: uplink-zombie-bundle-name
-  description: uplink-zombie-bundle-desc
-  icon: { sprite: /Textures/Structures/Wallmounts/signs.rsi, state: bio }
-  productEntity: ClothingBackpackDuffelZombieBundle
-  cost:
-    Telecrystal: 40
-  categories:
-  - UplinkBundles
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
-  - !type:BuyerWhitelistCondition
-    blacklist:
-      components:
-      - SurplusBundle
   saleLimit: 1
 
 - type: listing
@@ -1628,67 +1595,6 @@
 #     Telecrystal: 5
 #   categories:
 #   - UplinkMisc
-
-- type: listing
-  id: UplinkNocturineChemistryBottle
-  name: uplink-nocturine-chemistry-bottle-name
-  description: uplink-nocturine-chemistry-bottle-desc
-  productEntity: NocturineChemistryBottle
-  cost:
-    Telecrystal: 6
-  categories:
-  - UplinkMisc
-
-- type: listing
-  id: UplinkCombatMedkit
-  name: uplink-combat-medkit-name
-  description: uplink-combat-medkit-desc
-  productEntity: MedkitCombatFilled
-  cost:
-    Telecrystal: 5
-  categories:
-  - UplinkMisc
-
-- type: listing
-  id: UplinkCombatMedipen
-  name: uplink-combat-medipen-name
-  description: uplink-combat-medipen-desc
-  productEntity: CombatMedipen
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkMisc
-
-- type: listing
-  id: UplinkStimpack
-  name: uplink-stimpack-name
-  description: uplink-stimpack-desc
-  productEntity: Stimpack
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkMisc
-
-- type: listing
-  id: UplinkStimkit
-  name: uplink-stimkit-name
-  description: uplink-stimkit-desc
-  productEntity: StimkitFilled
-  cost:
-    Telecrystal: 12
-  categories:
-  - UplinkMisc
-  saleLimit: 1
-
-- type: listing
-  id: UplinkBribe
-  name: uplink-bribe-name
-  description: uplink-bribe-desc
-  productEntity: BriefcaseSyndieLobbyingBundleFilled
-  cost:
-    Telecrystal: 4
-  categories:
-    - UplinkMisc
 
 - type: listing
   id: UplinkMobCatMicrobomb

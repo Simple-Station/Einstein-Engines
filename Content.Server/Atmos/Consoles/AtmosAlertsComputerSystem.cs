@@ -49,7 +49,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
         SubscribeLocalEvent<AtmosAlertsDeviceComponent, AnchorStateChangedEvent>(OnDeviceAnchorChanged);
     }
 
-    #region Event handling 
+    #region Event handling
 
     private void OnConsoleInit(EntityUid uid, AtmosAlertsComputerComponent component, ComponentInit args)
     {
@@ -197,7 +197,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
         var focusAlarmData = GetFocusAlarmData(uid, GetEntity(component.FocusDevice), gridUid);
 
         // Set the UI state
-        _uiSystem.TrySetUiState(uid, AtmosAlertsComputerUiKey.Key,
+        _uiSystem.SetUiState(uid, AtmosAlertsComputerUiKey.Key,
             new AtmosAlertsComputerBoundInterfaceState(airAlarmStateData, fireAlarmStateData, focusAlarmData));
     }
 

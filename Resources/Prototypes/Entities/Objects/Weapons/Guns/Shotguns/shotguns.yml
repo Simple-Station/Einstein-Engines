@@ -79,7 +79,6 @@
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
   - type: Wieldable
-  - type: GunRequiresWield
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -122,7 +121,6 @@
     fireRate: 2
     fireOnDropChance: 0.5
   - type: Wieldable
-  - type: GunRequiresWield
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
@@ -186,7 +184,6 @@
     tags:
     - WeaponShotgunKammerer
   - type: Wieldable
-  - type: GunRequiresWield
 
 - type: entity
   name: sawn-off shotgun
@@ -272,7 +269,6 @@
   - type: StaticPrice
     price: 0
   - type: Wieldable
-  - type: GunRequiresWield
 
 - type: entity
   name: improvised shotgun

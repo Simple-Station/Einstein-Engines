@@ -24,7 +24,7 @@
           False: { visible: false }
         computerLayerKeys:
           True: { visible: true, shader: unshaded }
-          False: { visible: true, shader: shaded }   
+          False: { visible: true, shader: shaded }
       enum.AtmosAlertsComputerVisuals.ComputerLayerScreen:
         computerLayerScreen:
           0: { state: alert-0 }
@@ -38,8 +38,8 @@
     key: enum.AtmosAlertsComputerUiKey.Key
   - type: UserInterface
     interfaces:
-    - key: enum.AtmosAlertsComputerUiKey.Key
-      type: AtmosAlertsComputerBoundUserInterface
+      enum.AtmosAlertsComputerUiKey.Key:
+        type: AtmosAlertsComputerBoundUserInterface
 
 - type: entity
   parent: BaseComputer
