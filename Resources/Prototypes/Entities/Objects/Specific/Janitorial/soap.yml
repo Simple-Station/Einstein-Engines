@@ -24,6 +24,9 @@
     paralyzeTime: 2
     launchForwardsMultiplier: 1.5
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - SlipEntity
     intersectRatio: 0.2
   - type: CollisionWake
     enabled: false
@@ -157,6 +160,9 @@
     paralyzeTime: 5
     launchForwardsMultiplier: 2.5
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - SlipEntity
     intersectRatio: 0.04
   - type: Item
     heldPrefix: syndie
@@ -198,6 +204,9 @@
   - type: Slippery
     paralyzeTime: 2
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - SlipEntity
   - type: Item
     heldPrefix: gibs
   - type: FlavorProfile

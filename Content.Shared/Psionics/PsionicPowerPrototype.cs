@@ -86,4 +86,10 @@ public sealed partial class PsionicPowerPrototype : IPrototype
     /// </summary>
     [DataField]
     public float DampeningModifier = 0;
+
+    /// <summary>
+    ///     How many "Power Slots" this power occupies.
+    /// </summary>
+    [DataField]
+    public int PowerSlotCost = 1;
 }

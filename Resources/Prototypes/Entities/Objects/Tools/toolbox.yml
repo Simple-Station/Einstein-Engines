@@ -28,7 +28,7 @@
         Blunt: 9
     bluntStaminaDamageFactor: 2.0
     heavyRateModifier: 0.8
-    heavyStaminaCost: 10
+    heavyStaminaCost: 7.5
     angle: 80.5
     soundHit:
       path: "/Audio/Weapons/smash.ogg"

@@ -41,9 +41,9 @@
     bluntStaminaDamageFactor: 2.5
     heavyRateModifier: 0.8
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 15
-    maxTargets: 1
-    angle: 140
+    heavyStaminaCost: 10
+    maxTargets: 3
+    angle: 100
   - type: PhysicalComposition
     materialComposition:
       Steel: 185

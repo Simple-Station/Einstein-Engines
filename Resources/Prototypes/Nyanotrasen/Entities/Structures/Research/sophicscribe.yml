@@ -48,3 +48,10 @@
   - type: GuideHelp
     guides:
     - Psionics
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic

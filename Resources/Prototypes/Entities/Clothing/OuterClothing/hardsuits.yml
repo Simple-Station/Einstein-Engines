@@ -60,11 +60,6 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitAtmos
-  - type: ReverseEngineering # Nyano
-    difficulty: 5
-    newItem: ClothingOuterHardsuitJuggernautReverseEngineered
-    recipes:
-      - ClothingOuterHardsuitJuggernautReverseEngineered
 
 #Engineering Hardsuit
 - type: entity
@@ -556,11 +551,6 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndie
-  - type: ReverseEngineering # Nyano
-    difficulty: 5
-    newItem: ClothingOuterHardsuitSyndieReverseEngineered
-    recipes:
-      - ClothingOuterHardsuitSyndieReverseEngineered
   - type: Tag
     tags:
     - MonkeyWearable

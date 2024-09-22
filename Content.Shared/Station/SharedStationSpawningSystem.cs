@@ -66,7 +66,6 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 var equipmentEntity = EntityManager.SpawnEntity(equipmentStr, xform.Coordinates);
                 InventorySystem.TryEquip(entity, equipmentEntity, slot.Name, true, force:true);
             }
-
         }
 
         if (_handsQuery.TryComp(entity, out var handsComponent))

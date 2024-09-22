@@ -33,7 +33,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 25
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
@@ -48,6 +48,7 @@
           collection: MetalBreak
   - type: StaticPrice
     price: 10
+  - type: RequireProjectileTarget
 
 #Starts unanchored, cannot be rotated while anchored
 - type: entity

@@ -78,6 +78,8 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
+  - type: Wieldable
+  - type: GunRequiresWield
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -119,6 +121,8 @@
   - type: Gun
     fireRate: 2
     fireOnDropChance: 0.5
+  - type: Wieldable
+  - type: GunRequiresWield
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
@@ -149,7 +153,8 @@
   - type: Item
     sprite: Objects/Weapons/Guns/Shotguns/enforcer_inhands_64x.rsi
   - type: BallisticAmmoProvider
-  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Wieldable
+  - type: GunRequiresWield
 
 - type: entity
   parent: WeaponShotgunEnforcer
@@ -180,6 +185,8 @@
   - type: Tag
     tags:
     - WeaponShotgunKammerer
+  - type: Wieldable
+  - type: GunRequiresWield
 
 - type: entity
   name: sawn-off shotgun
@@ -264,6 +271,8 @@
     capacity: 1
   - type: StaticPrice
     price: 0
+  - type: Wieldable
+  - type: GunRequiresWield
 
 - type: entity
   name: improvised shotgun

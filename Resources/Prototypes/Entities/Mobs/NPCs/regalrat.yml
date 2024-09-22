@@ -122,10 +122,10 @@
       gender: male
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - Mouse
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Mouse
 
 - type: entity
@@ -303,7 +303,7 @@
     speaks:
     - Mouse
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Mouse
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi

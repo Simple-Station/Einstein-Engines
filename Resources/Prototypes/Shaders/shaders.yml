@@ -104,3 +104,10 @@
   id: SaturationScale
   kind: source
   path: "/Textures/Shaders/saturationscale.swsl"
+
+  # Flight shaders
+
+- type: shader
+  id: Flap
+  kind: source
+  path: "/Textures/Shaders/flap.swsl"

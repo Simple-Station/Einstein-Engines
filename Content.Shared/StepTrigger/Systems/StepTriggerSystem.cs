@@ -118,9 +118,14 @@ public sealed class StepTriggerSystem : EntitySystem
 
     private bool CanTrigger(EntityUid uid, EntityUid otherUid, StepTriggerComponent component)
     {
-        if (HasComp<StepTriggerImmuneComponent>(otherUid)
-            || !component.Active
+        if (!component.Active
             || component.CurrentlySteppedOn.Contains(otherUid))
+            return false;
+
+        // Immunity checks
+        if (TryComp<StepTriggerImmuneComponent>(otherUid, out var stepTriggerImmuneComponent)
+            && component.TriggerGroups != null
+            && component.TriggerGroups.IsValid(stepTriggerImmuneComponent))
             return false;
 
         // Can't trigger if we don't ignore weightless entities

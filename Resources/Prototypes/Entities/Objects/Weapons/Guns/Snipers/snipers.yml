@@ -18,6 +18,8 @@
     - Back
     - suitStorage
   - type: AmmoCounter
+  - type: Wieldable
+  - type: GunRequiresWield
   - type: Gun
     fireRate: 0.75
     selectedMode: SemiAuto
@@ -81,6 +83,7 @@
       - CartridgeAntiMateriel
     capacity: 5
     proto: CartridgeAntiMateriel
+  - type: Telescope
 
 - type: entity
   name: musket

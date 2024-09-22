@@ -26,10 +26,10 @@
     allowedEmotes: ['Chitter', 'Squeak']
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - Moffic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Moffic
   - type: TypingIndicator
     proto: moth

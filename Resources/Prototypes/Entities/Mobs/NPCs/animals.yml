@@ -1377,7 +1377,7 @@
     understands:
     - Monkey
     - Kobold
-    - GalacticCommon
+    - TauCetiBasic
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -1742,6 +1742,10 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+      - Landmine
 
 - type: entity
   parent: MobMouse
@@ -2051,9 +2055,9 @@
     bloodMaxVolume: 50
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   name: penguin
@@ -2988,8 +2992,9 @@
     speaks:
       - Cat
     understands:
-      - Cat
-      - GalacticCommon
+    - Cat
+    - TauCetiBasic
+
 - type: entity
   name: space cat
   id: MobCatSpace
@@ -3544,7 +3549,7 @@
     speaks:
     - RootSpeak
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - RootSpeak
 
 - type: entity

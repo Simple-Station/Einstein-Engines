@@ -1,3 +1,4 @@
+using Content.Shared.Contests;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
@@ -109,7 +110,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// Total width of the angle for wide attacks.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Angle Angle = Angle.FromDegrees(45);
+    public Angle Angle = Angle.FromDegrees(60);
 
     [DataField, AutoNetworkedField]
     public EntProtoId Animation = "WeaponArcPunch";
@@ -128,10 +129,10 @@ public sealed partial class MeleeWeaponComponent : Component
     public bool SwingLeft;
 
     [DataField, AutoNetworkedField]
-    public float HeavyStaminaCost = 10f;
+    public float HeavyStaminaCost = 2.5f;
 
     [DataField, AutoNetworkedField]
-    public int MaxTargets = 1;
+    public int MaxTargets = 3;
 
     // Sounds
 
@@ -158,9 +159,23 @@ public sealed partial class MeleeWeaponComponent : Component
     public SoundSpecifier SoundNoDamage { get; set; } = new SoundCollectionSpecifier("WeakHit");
 
     /// <summary>
-    /// If true, the weapon must be equipped for it to be used.
-    /// E.g boxing gloves must be equipped to your gloves,
-    /// not just held in your hand to be used.
+    ///     Arguments for the MeleeContestInteractions constructor
+    /// </summary>
+    [DataField]
+    public ContestArgs ContestArgs = new ContestArgs
+    {
+        DoStaminaInteraction = true,
+        StaminaDisadvantage = true,
+        StaminaRangeModifier = 2,
+        StaminaOffset = 0.25f,
+        DoHealthInteraction = true,
+        HealthRangeModifier = 1.5f,
+    };
+
+    /// <summary>
+    ///     If true, the weapon must be equipped for it to be used.
+    ///     E.g boxing gloves must be equipped to your gloves,
+    ///     not just held in your hand to be used.
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool MustBeEquippedToUse = false;

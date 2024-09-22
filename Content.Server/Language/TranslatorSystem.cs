@@ -85,8 +85,8 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         // If that is not the case, then OnProxyDetermineLanguages will remove this translator from HoldsTranslatorComponent.Translators.
         Timer.Spawn(0, () =>
         {
-            if (Exists(args.OldParent) && TryComp<LanguageSpeakerComponent>(args.OldParent, out var speaker))
-                _language.UpdateEntityLanguages(args.OldParent.Value, speaker);
+            if (Exists(args.OldParent) && HasComp<LanguageSpeakerComponent>(args.OldParent))
+                _language.UpdateEntityLanguages(args.OldParent.Value);
         });
     }
 
@@ -108,7 +108,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         {
             // The first new spoken language added by this translator, or null
             var firstNewLanguage = translatorComp.SpokenLanguages.FirstOrDefault(it => !languageComp.SpokenLanguages.Contains(it));
-            _language.UpdateEntityLanguages(holder, languageComp);
+            _language.UpdateEntityLanguages(holder);
 
             // Update the current language of the entity if necessary
             if (isEnabled && translatorComp.SetLanguageOnInteract && firstNewLanguage is {})
@@ -131,8 +131,8 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         _powerCell.SetPowerCellDrawEnabled(translator, false);
         OnAppearanceChange(translator, component);
 
-        if (_containers.TryGetContainingContainer(translator, out var holderCont) && TryComp<LanguageSpeakerComponent>(holderCont.Owner, out var languageComp))
-            _language.UpdateEntityLanguages(holderCont.Owner, languageComp);
+        if (_containers.TryGetContainingContainer(translator, out var holderCont) && HasComp<LanguageSpeakerComponent>(holderCont.Owner))
+            _language.UpdateEntityLanguages(holderCont.Owner);
     }
 
     private void CopyLanguages(BaseTranslatorComponent from, DetermineEntityLanguagesEvent to, LanguageKnowledgeComponent knowledge)
