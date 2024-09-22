@@ -143,6 +143,7 @@ public sealed class RevivifyPowerSystem : EntitySystem
 
         if (!args.DoRevive
             || !TryComp<MobStateComponent>(args.Target, out var mob)
+            || !_mobState.IsDead(args.Target, mob)
             || !_mobThreshold.TryGetThresholdForState(args.Target, MobState.Dead, out var threshold)
             || damageableComponent.TotalDamage > threshold)
             return;
