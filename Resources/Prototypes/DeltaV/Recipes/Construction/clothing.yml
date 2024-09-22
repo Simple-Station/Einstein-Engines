@@ -21,7 +21,7 @@
   objectType: Item
 
 - type: constructionGraph
-  id: PrescriptionMedHud
+  id: ClothingEyesPrescriptionMedHud
   start: start
   graph:
     - node: start
@@ -53,7 +53,7 @@
       entity: ClothingEyesPrescriptionMedHud
 
 - type: constructionGraph
-  id: PrescriptionSecHud
+  id: ClothingEyesPrescriptionSecHud
   start: start
   graph:
     - node: start
