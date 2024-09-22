@@ -657,13 +657,6 @@ namespace Content.Client.Lobby.UI
                 };
 
                 antagContainer.AddChild(selector);
-                antagContainer.AddChild(new Button()
-                {
-                    Disabled = true,
-                    Text = Loc.GetString("loadout-window"),
-                    HorizontalAlignment = HAlignment.Right,
-                    Margin = new Thickness(3f, 0f, 0f, 0f),
-                });
                 AntagList.AddChild(antagContainer);
             }
         }
