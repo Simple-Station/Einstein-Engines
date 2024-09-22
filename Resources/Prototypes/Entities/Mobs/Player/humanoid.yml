@@ -825,7 +825,7 @@
         settings: default
     - type: GhostTakeoverAvailable
     - type: Loadout
-      prototypes: [ ChiefMedicalOfficerGear ]
+      prototypes: [ CMOGear ]
     - type: RandomMetadata
       nameSegments:
       - names_first

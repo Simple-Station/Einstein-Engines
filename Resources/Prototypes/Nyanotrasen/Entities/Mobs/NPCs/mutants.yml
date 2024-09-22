@@ -299,9 +299,9 @@
     needsHands: false
   - type: Vocal
     sounds:
-      Male: Squeak
-      Female: Squeak
-      Unsexed: Squeak
+      Male: Mouse
+      Female: Mouse
+      Unsexed: Mouse
     wilhelmProbability: 0.001
   - type: Tag
     tags:
