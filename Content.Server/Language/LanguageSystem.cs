@@ -14,7 +14,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<LanguageSpeakerComponent, ComponentInit>(OnInitLanguageSpeaker);
+        SubscribeLocalEvent<LanguageSpeakerComponent, MapInitEvent>(OnInitLanguageSpeaker);
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentGetState>(OnGetLanguageState);
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, DetermineEntityLanguagesEvent>(OnDetermineUniversalLanguages);
         SubscribeNetworkEvent<LanguagesSetMessage>(OnClientSetLanguage);
@@ -22,7 +22,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
 
     #region event handling
 
-    private void OnInitLanguageSpeaker(Entity<LanguageSpeakerComponent> ent, ref ComponentInit args)
+    private void OnInitLanguageSpeaker(Entity<LanguageSpeakerComponent> ent, ref MapInitEvent args)
     {
         if (string.IsNullOrEmpty(ent.Comp.CurrentLanguage))
             ent.Comp.CurrentLanguage = ent.Comp.SpokenLanguages.FirstOrDefault(UniversalPrototype);

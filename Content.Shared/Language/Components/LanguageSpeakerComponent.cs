@@ -1,6 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
 namespace Content.Shared.Language.Components;
 
@@ -20,8 +21,8 @@ public sealed partial class LanguageSpeakerComponent : Component
     ///     The current language the entity uses when speaking.
     ///     Other listeners will hear the entity speak in this language.
     /// </summary>
-    [DataField]
-    public ProtoId<LanguagePrototype> CurrentLanguage = ""; // The language system will override it on init
+    [DataField(customTypeSerializer: typeof(StringSerializer))]
+    public ProtoId<LanguagePrototype> CurrentLanguage = ""; // The language system will override it on mapinit
 
     /// <summary>
     ///     List of languages this entity can speak at the current moment.
