@@ -1,6 +1,6 @@
 - type: construction
   name: prescription medhud
-  id: ClothingEyesPrescriptionMedHud
+  id: PrescriptionMedHud
   graph: PrescriptionMedHud
   startNode: start
   targetNode: prescmedhud
@@ -11,7 +11,7 @@
 
 - type: construction
   name: prescription sechud
-  id: ClothingEyesPrescriptionHudSecurity
+  id: PrescriptionHudSecurity
   graph: PrescriptionSecHud
   startNode: start
   targetNode: prescsechud

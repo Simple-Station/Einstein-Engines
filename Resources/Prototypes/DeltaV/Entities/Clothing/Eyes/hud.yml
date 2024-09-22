@@ -9,7 +9,7 @@
   - type: Clothing
     sprite: DeltaV/Clothing/Eyes/Hud/prescmedhud.rsi
   - type: Construction
-    graph: ClothingEyesPrescriptionMedHud
+    graph: PrescriptionMedHud
     node: prescmedhud
   - type: ShowHealthBars
     damageContainers:
@@ -32,7 +32,7 @@
   - type: Clothing
     sprite: DeltaV/Clothing/Eyes/Hud/prescsechud.rsi
   - type: Construction
-    graph: ClothingEyesPrescriptionSecHud
+    graph: PrescriptionSecHud
     node: prescsechud
   - type: Tag
     tags:
