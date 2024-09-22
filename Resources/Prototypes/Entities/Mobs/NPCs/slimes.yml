@@ -203,10 +203,6 @@
     - type: NpcFactionMember
       factions:
         - SimpleHostile
-#    - type: GhostRole #DeltaV - all slimes neutral when ghost role
-#      description: ghost-role-information-angry-slimes-description
-      raffle:
-        settings: short
 
 - type: entity
   name: green slime

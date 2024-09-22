@@ -18,7 +18,6 @@
       sprite: Objects/Weapons/Guns/Pistols/viper.rsi
       state: icon
   - type: TargetObjective
-    difficulty: 1
     title: objective-paradox-anomaly-kill-title
   - type: KillPersonCondition
     requireDead: true
@@ -34,7 +33,6 @@
       sprite: Objects/Misc/bureaucracy.rsi
       state: folder-white
   - type: TargetObjective
-    difficulty: 1
     title: objective-paradox-anomaly-friend-title
   - type: KeepAliveCondition
 

@@ -137,8 +137,6 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     endAnnouncement: true
     weight: 8
     startDelay: 20
@@ -168,10 +166,6 @@
     minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
     startAnnouncement: true
     endAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/meteors.ogg
-      params:
-        volume: -4
     duration: null #ending is handled by MeteorSwarmRule
     startDelay: 30
   - type: MeteorSwarmRule
@@ -183,8 +177,6 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     startDelay: 10
     earliestStart: 15
     weight: 6
@@ -210,8 +202,6 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     startDelay: 10
     weight: 6
     duration: 50
@@ -231,10 +221,6 @@
     weight: 5
     startAnnouncement: true
     endAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-       volume: -4
     startDelay: 24
     duration: 60
     maxDuration: 120
@@ -249,8 +235,6 @@
     weight: 6
     duration: 1
     maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
   - type: RandomSentienceRule
 
 - type: entity
@@ -262,8 +246,6 @@
     weight: 8
     startAnnouncement: true
     endAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
@@ -289,8 +271,6 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -305,8 +285,6 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
@@ -328,8 +306,6 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
@@ -347,8 +323,6 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 20
@@ -438,8 +412,6 @@
     minimumPlayers: 15
     reoccurrenceDelay: 30
     startAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/intercept.ogg
   - type: AlertLevelInterceptionRule
   - type: TraitorRule
   - type: AntagSelection
@@ -476,38 +448,11 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     weight: 3.5
     duration: 1
     earliestStart: 30
     minimumPlayers: 20
   - type: ImmovableRodRule
-    rodPrototypes:
-    - id: ImmovableRodKeepTilesStill
-      prob: 0.95
-      orGroup: rodProto
-    - id: ImmovableRodMop
-      prob: 0.0072
-      orGroup: rodProto
-    - id: ImmovableRodShark
-      prob: 0.0072
-      orGroup: rodProto
-    - id: ImmovableRodClown
-      prob: 0.0072
-      orGroup: rodProto
-    - id: ImmovableRodBanana
-      prob: 0.0072
-      orGroup: rodProto
-    - id: ImmovableRodHammer
-      prob: 0.0072
-      orGroup: rodProto
-    - id: ImmovableRodThrongler
-      prob: 0.0072
-      orGroup: rodProto
-    - id: ImmovableRodGibstick
-      prob: 0.0072
-      orGroup: rodProto
 
 - type: entity
   noSpawn: true

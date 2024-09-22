@@ -166,7 +166,6 @@
     #   damage:
     #     types:
     #       Blunt: 0.28 #per second, scales with pressure and other constants.
-      atmosTemperatureTransferEfficiency: 0.4
     - type: Identity
     #  soundHit:
     #    path: /Audio/Effects/metalbreak.ogg
