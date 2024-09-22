@@ -10,9 +10,7 @@
     "Flute": {73: 0}
     "Sax": {66: 0}
   defaultInstrument: "Voice"
-  midiUi:
-    key: enum.InstrumentUiKey.Key
-    type: InstrumentBoundUserInterface
+  midiUi: Key
   midiActionId: ActionHarpyPlayMidi
 
 - type: SingerInstrument
@@ -20,7 +18,5 @@
   instrumentList:
     "Voice": {52: 0}
   defaultInstrument: "Voice"
-  midiUi:
-    key: enum.InstrumentUiKey.Key
-    type: InstrumentBoundUserInterface
+  midiUi: Key
   midiActionId: ActionHarpyPlayMidi # TODO: custom action maybe?

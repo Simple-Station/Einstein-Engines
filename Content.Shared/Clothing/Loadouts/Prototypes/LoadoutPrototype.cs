@@ -8,7 +8,7 @@ namespace Content.Shared.Clothing.Loadouts.Prototypes;
 
 
 [Prototype]
-public sealed class LoadoutPrototype : IPrototype
+public sealed partial class LoadoutPrototype : IPrototype
 {
     /// <summary>
     ///     Formatted like "Loadout[Department/ShortHeadName][CommonClothingSlot][SimplifiedClothingId]", example: "LoadoutScienceOuterLabcoatSeniorResearcher"

@@ -14,7 +14,8 @@
   - BorgModuleMining
   - OreProcessorIndustrialMachineCircuitboard
   - OreBagOfHolding
-  - SalvageExpeditionsComputerCircuitboard # DeltaV
+  - ClothingMaskWeldingGas
+  - SalvageExpeditionsComputerCircuitboard
 
 - type: technology
   id: AdvancedPowercells
@@ -53,6 +54,7 @@
   recipeUnlocks:
   - AutolatheHyperConvectionMachineCircuitboard
   - ProtolatheHyperConvectionMachineCircuitboard
+  - CircuitImprinterHyperConvectionMachineCircuitboard
   - SheetifierMachineCircuitboard
 
 - type: technology

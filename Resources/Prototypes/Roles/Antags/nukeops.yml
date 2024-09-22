@@ -19,10 +19,10 @@
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
   - !type:CharacterOverallTimeRequirement
-    min: 108000 # DeltaV - 30 hours
-  - !type:CharacterDepartmentTimeRequirement # DeltaV - Medical dept time requirement
+    min: 108000 #  30 hours
+  - !type:CharacterDepartmentTimeRequirement
     department: Medical
-    min: 36000 # DeltaV - 10 hours
+    min: 36000 # 10 hours
 
 - type: antag
   id: NukeopsCommander

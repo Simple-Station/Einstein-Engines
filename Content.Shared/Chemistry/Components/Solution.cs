@@ -6,6 +6,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using System.Collections;
 using System.Linq;
+using Content.Shared.Chemistry.Components.SolutionManager;
 
 namespace Content.Shared.Chemistry.Components
 {
@@ -47,13 +48,6 @@ namespace Content.Shared.Chemistry.Components
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("canReact")]
         public bool CanReact { get; set; } = true;
-
-        /// <summary>
-        ///     If reactions can occur via mixing.
-        /// </summary>
-        [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("canMix")]
-        public bool CanMix { get; set; } = false;
 
         /// <summary>
         ///     Volume needed to fill this container.

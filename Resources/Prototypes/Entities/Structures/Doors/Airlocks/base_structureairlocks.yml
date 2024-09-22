@@ -64,6 +64,7 @@
     containers:
       board: !type:Container
   - type: Weldable
+    fuel: 5
     time: 3
   - type: Airlock
   - type: NavMapDoor
@@ -103,8 +104,8 @@
   - type: SpawnOnOverload
   - type: UserInterface
     interfaces:
-    - key: enum.WiresUiKey.Key
-      type: WiresBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Airtight
     noAirWhenFullyAirBlocked: false
   - type: RadiationBlocker

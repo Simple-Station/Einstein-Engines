@@ -98,3 +98,11 @@
         - IPC
   moodEffects:
     - NicotineWithdrawal
+
+- type: trait
+  id: Liar
+  category: Mental
+  components:
+    - type: ReplacementAccent
+      replacementChance: 0.15
+      accent: liar
