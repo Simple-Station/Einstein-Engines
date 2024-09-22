@@ -109,6 +109,19 @@ public partial class ListingData : IEquatable<ListingData>, ICloneable
     [DataField]
     public TimeSpan RestockTime = TimeSpan.Zero;
 
+    [DataField]
+    public int SaleLimit = 3;
+
+    [DataField]
+    public bool SaleBlacklist;
+
+    public int DiscountValue;
+
+    public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> OldCost = new();
+
+    [DataField]
+    public List<string> Components = new();
+
     public bool Equals(ListingData? listing)
     {
         if (listing == null)
@@ -166,6 +179,11 @@ public partial class ListingData : IEquatable<ListingData>, ICloneable
             ProductEvent = ProductEvent,
             PurchaseAmount = PurchaseAmount,
             RestockTime = RestockTime,
+            SaleLimit = SaleLimit,
+            SaleBlacklist = SaleBlacklist,
+            DiscountValue = DiscountValue,
+            OldCost = OldCost,
+            Components = Components,
         };
     }
 }

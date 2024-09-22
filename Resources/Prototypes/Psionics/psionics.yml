@@ -140,3 +140,25 @@
   initializationFeedback: telepathy-power-initialization-feedback
   metapsionicFeedback: psionic-language-power-feedback # Reuse for telepathy, clairaudience, etc
   powerSlotCost: 0
+
+- type: psionicPower
+  id: HealingWordPower
+  name: HealingWord
+  description: healing-word-power-description
+  actions:
+    - ActionHealingWord
+  initializationFeedback: healing-word-power-initialization-feedback
+  metapsionicFeedback: healing-word-power-feedback
+  amplificationModifier: 0.5
+  dampeningModifier: 0.5
+
+- type: psionicPower
+  id: RevivifyPower
+  name: Revivify
+  description: revivify-power-description
+  actions:
+    - ActionRevivify
+  initializationFeedback: revivify-power-initialization-feedback
+  metapsionicFeedback: revivify-power-feedback
+  amplificationModifier: 2.5 # An extremely rare and dangerous power
+  powerSlotCost: 2

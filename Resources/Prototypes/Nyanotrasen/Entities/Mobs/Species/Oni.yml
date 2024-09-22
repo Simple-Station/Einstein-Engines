@@ -40,10 +40,10 @@
     proto: oni
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - Nekomimetic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Nekomimetic
 
 - type: entity

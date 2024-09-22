@@ -1,6 +1,7 @@
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Systems;
 using Content.Server.Cloning.Components;
+using Content.Server.Construction;
 using Content.Server.DeviceLinking.Systems;
 using Content.Server.EUI;
 using Content.Server.Fluids.EntitySystems;
@@ -9,6 +10,10 @@ using Content.Server.Jobs;
 using Content.Server.Materials;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Traits.Assorted;
+using Content.Shared.Atmos;
+using Content.Shared.CCVar;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Cloning;
 using Content.Shared.Damage;
 using Content.Shared.DeviceLinking.Events;
@@ -90,8 +95,23 @@ public sealed partial class CloningSystem : EntitySystem
         SubscribeLocalEvent<CloningPodComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CloningPodComponent, GotEmaggedEvent>(OnEmagged);
         SubscribeLocalEvent<CloningPodComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<CloningPodComponent, RefreshPartsEvent>(OnPartsRefreshed);
+        SubscribeLocalEvent<CloningPodComponent, UpgradeExamineEvent>(OnUpgradeExamine);
+    }
+    private void OnPartsRefreshed(EntityUid uid, CloningPodComponent component, RefreshPartsEvent args)
+    {
+        var materialRating = args.PartRatings[component.MachinePartMaterialUse];
+        var speedRating = args.PartRatings[component.MachinePartCloningSpeed];
+
+        component.BiomassCostMultiplier = MathF.Pow(component.PartRatingMaterialMultiplier, materialRating - 1);
+        component.CloningTime = component.CloningTime * MathF.Pow(component.PartRatingSpeedMultiplier, speedRating - 1);
     }
 
+    private void OnUpgradeExamine(EntityUid uid, CloningPodComponent component, UpgradeExamineEvent args)
+    {
+        args.AddPercentageUpgrade("cloning-pod-component-upgrade-speed", component.CloningTime / component.CloningTime);
+        args.AddPercentageUpgrade("cloning-pod-component-upgrade-biomass-requirement", component.BiomassCostMultiplier);
+    }
     private void OnPortDisconnected(EntityUid uid, CloningPodComponent pod, PortDisconnectedEvent args)
     {
         pod.ConnectedConsole = null;

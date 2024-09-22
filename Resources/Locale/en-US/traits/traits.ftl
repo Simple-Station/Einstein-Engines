@@ -152,8 +152,29 @@ trait-description-Lethargy =
 
 trait-name-SignLanguage = Sign Language
 trait-description-SignLanguage =
-    You can understand and use Galactic Sign Language (GSL).
+    You can understand and use Tau-Ceti Basic Sign Language (TCB-SL).
     If you are mute for any reason, you can still communicate with sign language.
+
+trait-name-SolCommon = Sol Common
+trait-description-SolCommon =
+    With its roots in Mandarin Chinese - Common evolved as the official language of the Sol Alliance - with officials working to tie it together with a common tongue.
+    It's spoken by state officials - taught in schools - and spoken by those who either feel a sense of national pride in the Alliance or otherwise fell sway to the culture.
+
+trait-name-Tradeband = Tradeband
+trait-description-Tradeband =
+    Descended from latin and romance languages of old Earth - Tradeband remains the main tongue of the upper class of humanity.
+    The language sounds elegant and well structured to most ears. It remains in popular use with traders - diplomats - and those seeking to hold onto a piece of a romantic past.
+
+trait-name-Freespeak = Freespeak (Gutter)
+trait-description-Freespeak =
+    A language of renegades and frontiersmen descending from various languages from Earth like Hindi combined into a multi-rooted jumble that sounds incoherent or even barbarian to non-native speakers.
+    This language is the only common cultural identity for humans in the frontier. Speaking this language in itself boldly declares the speaker a free spirit.
+    Often called 'Gutter' by Alliance citizens.
+
+trait-name-Elyran = Elyran Standard
+trait-description-Elyran =
+    Elyran Standard is the official tongue of the Republic of Elyra.
+    Constructed using elements of Farsi - Arabic - and Turkish - influence from all three of these languages can be seen throughout its grammar and vocabulary.
 
 trait-name-Voracious = Voracious
 trait-description-Voracious =

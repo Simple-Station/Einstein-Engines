@@ -239,10 +239,10 @@
     - CannotSuicide
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - Xeno
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Xeno
 
 - type: entity

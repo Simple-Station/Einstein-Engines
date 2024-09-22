@@ -6482,3 +6482,148 @@ Entries:
   id: 6373
   time: '2024-09-20T01:47:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/899
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Melee Weapons can now individually define their interactions with the
+        ContestsSystem.
+    - type: Add
+      message: >-
+        Added the ContestArgs type, allowing arbitrarily any component to
+        contain a list of arguments for ContestSystems.
+    - type: Add
+      message: >-
+        Added the ContestConstructor, a new type of meta-Contest that enables
+        other systems to use components to define all possible contest
+        behaviors, rather than needing to hardcode specific interactions.
+  id: 6374
+  time: '2024-09-20T02:48:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/934
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: >-
+        Adds an optional server variable which allows entities to crawl under
+        tables.
+    - type: Tweak
+      message: >-
+        Tables and plastic flaps are less resistant to damage, and can now be
+        targeted by guns by aiming on top of them.
+  id: 6375
+  time: '2024-09-20T19:34:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/939
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Tweaked melee; Less stamina usage on heavy attacks.
+  id: 6376
+  time: '2024-09-20T19:34:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/938
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        JukeOperator now allows for JukeDuration and JukeCooldown arguments.
+        JukeCooldown is a new feature where enemies must wait an amount of time
+        in seconds equal to the JukeCooldown, before they are allowed to attempt
+        to dodge a melee attack.
+    - type: Tweak
+      message: >-
+        By default, NPCs will only attempt to dodge attacks once every 5
+        seconds.
+    - type: Fix
+      message: >-
+        JukeOperator now performs extremely expensive math 5000 times less
+        often. EXIT CONDITIONS PEOPLE!
+  id: 6377
+  time: '2024-09-20T20:05:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/935
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        All "Long-arms", Rifles, Light Machine Guns, Shotguns, now require
+        wielding to use. 
+  id: 6378
+  time: '2024-09-20T20:35:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/913
+- author: zelezniciar
+  changes:
+    - type: Add
+      message: Added Atmospheric Alerts Computer
+  id: 6379
+  time: '2024-09-20T21:46:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/922
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'A basic Languages menu has been added into the Traits tab. '
+    - type: Add
+      message: >-
+        Tau-Ceti Basic, Tradeband, Freespeak, Elyran Standard, Sol Common, and
+        Sign Language have been added to the Languages tab. 
+  id: 6380
+  time: '2024-09-20T21:46:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/936
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Removed the "Become Psionic" traitor objective. It was literally
+        impossible to fail if you took the Latent Psychic trait, and literally
+        impossible to greentext if you didn't. 
+  id: 6381
+  time: '2024-09-20T21:47:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/940
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Part Upgrading has returned!
+  id: 6382
+  time: '2024-09-21T22:46:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/917
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added discounts in uplink / Добавлены скидки в аплинк
+  id: 6383
+  time: '2024-09-21T22:46:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/930
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Healing Word has been added as a new Psionic Power. When cast on another
+        person, it heals a small amount of every damage type(scaling with
+        Casting Stats), while also reducing rot timers. Healing Word has a very
+        short cooldown, and a fairly low Glimmer cost.
+    - type: Add
+      message: >-
+        Breath of Life has been added as a new extremely rare Psionic Power.
+        When cast on another person, it heals a large amount of damage(scaling
+        with Casting Stats), while also substantially reducing rot timers.
+        Additionally, it will revive the target if it is possible to do so.
+        Breath of Life has an incredibly long cooldown, a long interuptable cast
+        time, and an extraordinarily high glimmer cost(A typical Psion will
+        spike glimmer by more than 50 points when casting it).
+    - type: Add
+      message: The Chaplain now starts with the Healing Word power.
+  id: 6384
+  time: '2024-09-21T22:50:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/942
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Bottles, Drink Glasses, Plates, and all liquid containers are now struck
+        by bullets(and most likely destroyed in the process). We hope that this
+        will offer both a small tactical advantage/disadvantage, as well as
+        contribute to making gunfights around the bar more "Cinematic".
+    - type: Add
+      message: >-
+        Chairs are now hit by projectiles if a shooter clicks on them, in
+        addition to Tables.
+  id: 6385
+  time: '2024-09-21T23:22:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/943

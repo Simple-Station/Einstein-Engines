@@ -143,6 +143,7 @@
   - type: Thruster
     thrusterType: Angular
     requireSpace: false
+    baseThrust: 2000
     thrust: 2000
     machinePartThrust: Manipulator
   - type: Sprite
@@ -192,6 +193,9 @@
             collection: MetalBreak
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
+  - type: UpgradePowerDraw
+    powerDrawMultiplier: 0.75
+    scaling: Exponential
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Electronic
@@ -216,6 +220,7 @@
   - type: Thruster
     thrusterType: Angular
     requireSpace: false
+    baseThrust: 100
     thrust: 100
   - type: ApcPowerReceiver
     needsPower: false

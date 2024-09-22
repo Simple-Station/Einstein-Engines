@@ -265,6 +265,12 @@ public sealed partial class StoreSystem
         listing.PurchaseAmount++; //track how many times something has been purchased
         _audio.PlayEntity(component.BuySuccessSound, msg.Session, uid); //cha-ching!
 
+        if (listing.SaleLimit != 0 && listing.DiscountValue > 0 && listing.PurchaseAmount >= listing.SaleLimit)
+        {
+            listing.DiscountValue = 0;
+            listing.Cost = listing.OldCost;
+        }
+
         UpdateUserInterface(buyer, uid, component);
     }
 

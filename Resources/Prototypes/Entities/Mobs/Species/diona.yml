@@ -104,10 +104,10 @@
     - Dead
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - RootSpeak
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - RootSpeak
   - type: TraitSpeedModifier
     sprintModifier: 0.75
