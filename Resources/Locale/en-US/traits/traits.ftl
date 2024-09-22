@@ -314,3 +314,7 @@ trait-description-Spinarette =
 trait-name-AddictionNicotine = Nicotine Addiction
 trait-description-AddictionNicotine =
     You have an addiction to Nicotine, and will require frequent smoke breaks to keep your mood in check.
+
+trait-name-AnimalFriend = Animal Friend
+trait-description-AnimalFriend =
+    You have a way with animals. You will never be attacked by animals, unless you attack them first.

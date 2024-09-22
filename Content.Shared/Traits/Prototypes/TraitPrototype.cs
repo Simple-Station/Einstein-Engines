@@ -87,4 +87,22 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<MoodEffectPrototype>>? MoodEffects { get; private set; } = default!;
+
+    /// <summary>
+    ///     The list of all Factions that this trait removes.
+    /// </summary>
+    /// <remarks>
+    ///     I can't actually Validate these because the proto lives in Shared.
+    /// </remarks>
+    [DataField]
+    public List<string>? RemoveFactions { get; private set; } = default!;
+
+    /// <summary>
+    ///     The list of all Factions that this trait adds.
+    /// </summary>
+    /// <remarks>
+    ///     I can't actually Validate these because the proto lives in Shared.
+    /// </remarks>
+    [DataField]
+    public List<string>? AddFactions { get; private set; } = default!;
 }

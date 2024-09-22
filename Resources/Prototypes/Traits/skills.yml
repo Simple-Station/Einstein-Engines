@@ -282,3 +282,10 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+
+- type: trait
+  id: AnimalFriend
+  category: Mental
+  points: -4
+  addFactions:
+    - AnimalFriend
