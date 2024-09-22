@@ -780,3 +780,95 @@
      Plastic: 1000
      Plasma: 500
      Glass: 500
+
+- type: latheRecipe
+  id: ShellShotgun
+  result: ShellShotgun
+  category: Ammo
+  completetime: 2
+  materials:
+    Steel: 20
+
+- type: latheRecipe
+  id: ShellShotgunSlug
+  result: ShellShotgunSlug
+  completetime: 2
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  id: ShellShotgunFlare
+  result: ShellShotgunFlare
+  category: Ammo
+  completetime: 2
+  materials:
+    Plastic: 20
+    Steel: 5
+
+- type: latheRecipe
+  id: CartridgeLightRifleIncendiary
+  result: CartridgeLightRifleIncendiary
+  category: Ammo
+  completetime: 2
+  materials:
+    Plastic: 20
+
+- type: latheRecipe
+  id: CartridgeMagnumIncendiary
+  result: CartridgeMagnumIncendiary
+  category: Ammo
+  completetime: 2
+  materials:
+    Plastic: 20
+
+- type: latheRecipe
+  id: CartridgePistolIncendiary
+  result: CartridgePistolIncendiary
+  category: Ammo
+  completetime: 2
+  materials:
+    Plastic: 10
+
+- type: latheRecipe
+  id: CartridgeRifleIncendiary
+  result: CartridgeRifleIncendiary
+  category: Ammo
+  completetime: 2
+  materials:
+    Plastic: 15
+
+- type: latheRecipe
+  id: CartridgePistolUranium
+  result: CartridgePistolUranium
+  category: Ammo
+  completetime: 2
+  materials:
+    Plastic: 5
+    Uranium: 10
+
+- type: latheRecipe
+  id: CartridgeMagnumUranium
+  result: CartridgeMagnumUranium
+  category: Ammo
+  completetime: 2
+  materials:
+    Plastic: 20
+    Uranium: 10
+
+- type: latheRecipe
+  id: CartridgeLightRifleUranium
+  result: CartridgeLightRifleUranium
+  category: Ammo
+  completetime: 2
+  materials:
+    Plastic: 20
+    Uranium: 10
+
+- type: latheRecipe
+  id: CartridgeRifleUranium
+  result: CartridgeRifleUranium
+  category: Ammo
+  completetime: 2
+  materials:
+    Plastic: 15
+    Uranium: 10

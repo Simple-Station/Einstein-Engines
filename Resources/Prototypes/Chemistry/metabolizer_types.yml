@@ -47,8 +47,8 @@
 
 - type: metabolizerType
   id: Vampiric
-  name: vampiric
+  name: metabolizer-type-vampiric
 
 - type: metabolizerType
   id: LiquorLifeline
-  name: liquorlifeline
+  name: metabolizer-type-liquorlifeline

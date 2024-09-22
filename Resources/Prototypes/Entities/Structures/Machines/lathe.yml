@@ -1367,7 +1367,6 @@
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200
-    priority: Low
   # - type: Advertise
   #   pack: CuddlyCritterAds # TODO Change this
   - type: PointLight

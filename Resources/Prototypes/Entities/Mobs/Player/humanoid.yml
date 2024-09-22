@@ -631,7 +631,7 @@
         settings: short
     - type: GhostTakeoverAvailable
     - type: Loadout
-      roleLoadout: [ JobCargoTechnician ]
+      prototypes: [ JobCargoTechnician ]
     - type: RandomMetadata
       nameSegments:
       - names_first
@@ -686,7 +686,7 @@
         settings: short
     - type: GhostTakeoverAvailable
     - type: Loadout
-      roleLoadout: [ JobClown ]
+      prototypes: [ JobClown ]
     - type: RandomMetadata
       nameSegments:
       - names_clown
@@ -744,7 +744,7 @@
         settings: short
     - type: GhostTakeoverAvailable
     - type: Loadout
-      roleLoadout: [ JobChef ]
+      prototypes: [ JobChef ]
     - type: RandomMetadata
       nameSegments:
       - names_first
@@ -807,7 +807,7 @@
         settings: default
     - type: GhostTakeoverAvailable
     - type: Loadout
-      roleLoadout: [ JobResearchDirector ]
+      prototypes: [ JobResearchDirector ]
     - type: RandomMetadata
       nameSegments:
       - names_first
@@ -825,7 +825,7 @@
         settings: default
     - type: GhostTakeoverAvailable
     - type: Loadout
-      roleLoadout: [ JobChiefMedicalOfficer ]
+      prototypes: [ JobChiefMedicalOfficer ]
     - type: RandomMetadata
       nameSegments:
       - names_first
@@ -843,7 +843,7 @@
         settings: default
     - type: GhostTakeoverAvailable
     - type: Loadout
-      roleLoadout: [ JobCaptain ]
+      prototypes: [ JobCaptain ]
     - type: RandomMetadata
       nameSegments:
       - names_first

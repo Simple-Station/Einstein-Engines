@@ -53,7 +53,7 @@
     delay: 0.5 # line of fire as well as if it hits something
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: FireBomb
+    explosionType: Default
     totalIntensity: 5 # low intensity, the point is to burn attackers not to break open walls, dragons can just eat them
     intensitySlope: 1
     maxIntensity: 3

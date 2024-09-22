@@ -132,8 +132,6 @@
     name: ghost-role-information-slimes-name
     description: ghost-role-information-slimes-description
     rules: deltav-ghost-role-information-softantag-rules
-    raffle:
-      settings: short
   - type: Speech
     speechVerb: Slime
     speechSounds: Slime
@@ -238,8 +236,6 @@
         - SimpleHostile
 #    - type: GhostRole #DeltaV - all slimes neutral when ghost role
 #      description: ghost-role-information-angry-slimes-description
-      raffle:
-        settings: short
 
 - type: entity
   name: yellow slime
@@ -275,5 +271,3 @@
         - SimpleHostile
 #    - type: GhostRole #DeltaV - all slimes neutral when ghost role
 #      description: ghost-role-information-angry-slimes-description
-      raffle:
-        settings: short

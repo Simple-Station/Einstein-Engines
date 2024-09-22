@@ -94,6 +94,16 @@
   name: store-category-deception
   priority: 10
 
+- type: storeCategory
+  id: UplinkChemicals
+  name: store-category-chemicals
+  priority: 11
+
+- type: storeCategory
+  id: UplinkDisruption
+  name: store-category-disruption
+  priority: 12
+
 #revenant
 - type: storeCategory
   id: RevenantAbilities
