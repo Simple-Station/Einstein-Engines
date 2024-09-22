@@ -89,7 +89,7 @@
     - Dog
     understands:
     - Dog
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: MobPibble

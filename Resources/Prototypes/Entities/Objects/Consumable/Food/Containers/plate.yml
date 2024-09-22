@@ -54,6 +54,17 @@
     materialComposition:
       Glass: 60
   - type: SpaceGarbage
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 25
+        mask:
+        - ItemMask
+        layer:
+        - BulletImpassable # Ever seen a John Woo movie?
 
 - type: entity
   name: broken plate

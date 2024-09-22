@@ -17,7 +17,7 @@
     bluntStaminaDamageFactor: 2.0
     heavyRateModifier: 0.5
     heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 15
+    heavyStaminaCost: 10
     maxTargets: 2
     angle: 120
     soundHit:

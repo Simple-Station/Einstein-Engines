@@ -146,3 +146,76 @@
     icon: Interface/VerbIcons/psionic_invisibility_off.png
     event: !type:RemovePsionicInvisibilityOffPowerActionEvent
 
+- type: entity
+  id: ActionHealingWord
+  name: action-name-healing-word
+  description: action-description-healing-word
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    icon: { sprite : Interface/Actions/psionics.rsi, state: healing_word }
+    useDelay: 10
+    checkCanAccess: false
+    range: 6
+    itemIconStyle: BigAction
+    canTargetSelf: true
+    blacklist:
+      components:
+        - PsionicInsulation
+        - Mindbroken
+    event: !type:PsionicHealOtherPowerActionEvent
+            healingAmount:
+              groups: # These all get divided by the number of damage types in the group. So they're all -2.5.
+                Genetic: -2.5
+                Toxin: -5
+                Airloss: -5
+                Brute: -7.5
+                Burn: -10
+            rotReduction: 10
+            useDelay: 1
+            doRevive: true
+            powerName: Healing Word
+            popupText: healing-word-begin
+            playSound: true
+            minGlimmer: 2
+            maxGlimmer: 4
+            glimmerObviousSoundThreshold: 100
+            glimmerObviousPopupThreshold: 200
+
+- type: entity
+  id: ActionRevivify
+  name: action-name-revivify
+  description: action-description-revivify
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    icon: { sprite : Interface/Actions/psionics.rsi, state: revivify }
+    useDelay: 120
+    checkCanAccess: false
+    range: 2
+    itemIconStyle: BigAction
+    canTargetSelf: false
+    blacklist:
+      components:
+        - PsionicInsulation
+        - Mindbroken
+    event: !type:PsionicHealOtherPowerActionEvent
+            healingAmount:
+              # These all get divided by the number of damage types in the group. So they're all -15
+              # Additionally, they're multiplied by the caster's Amplification, which,
+              #   assuming this is the only power they have, the multiplier is between 2.9-3.9
+              groups:
+                Genetic: -15
+                Toxin: -30
+                Airloss: -60 # Except airloss, which heals 30 per type
+                Brute: -45
+                Burn: -60
+            rotReduction: 60
+            doRevive: true
+            powerName: Revivify
+            popupText: revivify-begin
+            playSound: true
+            minGlimmer: 10 # These also get multiplied by caster stats. So,
+            maxGlimmer: 15 # keeping in mind the ~3.5x multiplier, this spikes glimmer by as much as 60 points.
+            glimmerObviousSoundThreshold: 50
+            glimmerObviousPopupThreshold: 100

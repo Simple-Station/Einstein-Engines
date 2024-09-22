@@ -50,7 +50,7 @@
     heavyRateModifier: 0.8
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 5
-    maxTargets: 3
+    maxTargets: 4
   - type: Tag
     tags:
     - Book

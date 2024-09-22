@@ -67,6 +67,13 @@
     demandWhitelist:
       components:
       - Item
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
 
 
 - type: weightedRandomEntity

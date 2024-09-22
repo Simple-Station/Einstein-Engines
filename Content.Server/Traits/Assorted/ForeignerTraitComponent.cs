@@ -13,7 +13,7 @@ public sealed partial class ForeignerTraitComponent : Component
 {
     /// <summary>
     ///     The "base" language that is to be removed and substituted with a translator.
-    ///     By default, equals to the fallback language, which is GalacticCommon.
+    ///     By default, equals to the fallback language, which is TauCetiBasic.
     /// </summary>
     [DataField]
     public ProtoId<LanguagePrototype> BaseLanguage = SharedLanguageSystem.FallbackLanguagePrototype;

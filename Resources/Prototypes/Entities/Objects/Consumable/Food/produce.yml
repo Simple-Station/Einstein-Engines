@@ -314,6 +314,9 @@
     launchForwardsMultiplier: 1.5
   - type: StepTrigger
     intersectRatio: 0.2
+    triggerGroups:
+      types:
+      - SlipEntity
   - type: CollisionWake
     enabled: false
   - type: Physics

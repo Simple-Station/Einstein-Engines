@@ -1,0 +1,100 @@
+# Radiation
+- type: entity
+  name: Marker Radiation
+  id: MarkerRadiation1
+  parent: MarkerBase
+  suffix: intensity 1
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/environment.rsi
+        state: base-green
+        shader: unshaded
+      - sprite: Markers/environment.rsi
+        shader: unshaded
+        state: rad
+  - type: RadiationSource
+    intensity: 1
+    
+- type: entity
+  parent: MarkerRadiation1
+  id: MarkerRadiation2
+  suffix: intensity 2
+  components:
+  - type: RadiationSource
+    intensity: 2
+    
+- type: entity
+  parent: MarkerRadiation1
+  id: MarkerRadiation3
+  suffix: intensity 3
+  components:
+  - type: RadiationSource
+    intensity: 3
+    
+- type: entity
+  parent: MarkerRadiation1
+  id: MarkerRadiation4
+  suffix: intensity 4
+  components:
+  - type: RadiationSource
+    intensity: 4
+    
+- type: entity
+  parent: MarkerRadiation1
+  id: MarkerRadiation5
+  suffix: intensity 5
+  components:
+  - type: RadiationSource
+    intensity: 5
+    
+- type: entity
+  parent: MarkerRadiation1
+  id: MarkerRadiation10
+  suffix: intensity 10
+  components:
+  - type: RadiationSource
+    intensity: 10
+    
+# Invisible Walls
+- type: entity
+  name: Marker Blocker
+  id: MarkerBlocker
+  parent: MarkerBase
+  suffix: invisible wall
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/environment.rsi
+        state: base-blue
+        shader: unshaded
+      - sprite: Markers/environment.rsi
+        shader: unshaded
+        state: wall
+  - type: PlacementReplacement
+    key: blocker
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+  - type: Physics
+    bodyType: Static
+
+
+# Weather Blocker
+- type: entity
+  name: Marker Weather Blocker
+  id: MarkerWeatherblocker
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/environment.rsi
+    state: weather
+  - type: BlockWeather

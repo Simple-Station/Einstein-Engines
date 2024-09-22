@@ -104,16 +104,20 @@
     - Dead
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - RootSpeak
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - RootSpeak
   - type: TraitSpeedModifier
     sprintModifier: 0.75
     walkModifier: 0.75
   - type: SpeedModifierImmunity
   - type: NoSlip
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+      - Shard
 
 - type: entity
   parent: BaseSpeciesDummy

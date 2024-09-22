@@ -1,3 +1,4 @@
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.DeviceLinking;
 using Content.Shared.Materials;
 using Content.Shared.Random;
@@ -39,6 +40,18 @@ public sealed partial class CloningPodComponent : Component
     public ProtoId<MaterialPrototype> RequiredMaterial = "Biomass";
 
     /// <summary>
+    ///     The multiplier for cloning duration
+    /// </summary>
+    [DataField]
+    public float PartRatingSpeedMultiplier = 0.75f;
+
+    /// <summary>
+    ///     The machine part that affects cloning speed
+    /// </summary>
+    [DataField]
+    public ProtoId<MachinePartPrototype> MachinePartCloningSpeed = "Manipulator";
+
+    /// <summary>
     ///     The current amount of time it takes to clone a body
     /// </summary>
     [DataField]
@@ -65,6 +78,18 @@ public sealed partial class CloningPodComponent : Component
     {
         Params = AudioParams.Default.WithVolume(4),
     };
+
+    /// <summary>
+    ///     The machine part that affects how much biomass is needed to clone a body.
+    /// </summary>
+    [DataField]
+    public float PartRatingMaterialMultiplier = 0.85f;
+
+    /// <summary>
+    ///     The machine part that decreases the amount of material needed for cloning
+    /// </summary>
+    [DataField]
+    public ProtoId<MachinePartPrototype> MachinePartMaterialUse = "MatterBin";
 
     [ViewVariables(VVAccess.ReadWrite)]
     public CloningPodStatus Status;

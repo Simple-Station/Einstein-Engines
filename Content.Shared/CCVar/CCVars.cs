@@ -1856,6 +1856,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> AccessibilityColorblindFriendly =
             CVarDef.Create("accessibility.colorblind_friendly", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+        /// <summary>
+        /// Disables all vision filters for species like Vulpkanin or Harpies. There are good reasons someone might want to disable these.
+        /// </summary>
+        public static readonly CVarDef<bool> NoVisionFilters =
+            CVarDef.Create("accessibility.no_vision_filters", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
         /*
          * CHAT
          */
@@ -2546,6 +2552,23 @@ namespace Content.Shared.CCVar
 
         #endregion
 
+        #region Lying Down System
+
+        public static readonly CVarDef<bool> AutoGetUp =
+            CVarDef.Create("rest.auto_get_up", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
+
+        public static readonly CVarDef<bool> HoldLookUp =
+            CVarDef.Create("rest.hold_look_up", false, CVar.CLIENT | CVar.ARCHIVE);
+
+        /// <summary>
+        ///     When true, entities that fall to the ground will be able to crawl under tables and 
+        ///     plastic flaps, allowing them to take cover from gunshots. 
+        /// </summary>
+        public static readonly CVarDef<bool> CrawlUnderTables =
+            CVarDef.Create("rest.crawlundertables", false, CVar.REPLICATED);
+
+        #endregion
+
         #region Material Reclaimer
 
         /// <summary>
@@ -2571,5 +2594,6 @@ namespace Content.Shared.CCVar
             CVarDef.Create("jetpack.enable_in_no_gravity", true, CVar.REPLICATED);
 
         #endregion
+
     }
 }
