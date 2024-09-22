@@ -1,4 +1,7 @@
 ﻿using Content.Shared.Chat;
+using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
+using Content.Shared.Humanoid;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.WhiteDream.BloodCult.Runes;
@@ -18,15 +21,18 @@ public sealed partial class CultRuneBaseComponent : Component
     public int RequiredInvokers = 1;
 
     [DataField]
-    public float InvokersGatherRange = 0.5f; // Roughly half a tile.
+    public float RuneActivationRange = 1f;
 
+    /// <summary>
+    ///     Damage dealt on the rune activation.
+    /// </summary>
     [DataField]
-    public float BloodCost = 20;
+    public DamageSpecifier? ActivationDamage;
 }
 
-public sealed class TryInvokeCultRuneEvent(EntityUid user, HashSet<EntityUid> invokers)
+public sealed class TryInvokeCultRuneEvent(EntityUid user, HashSet<Entity<HumanoidAppearanceComponent>> invokers)
     : CancellableEntityEventArgs
 {
     public EntityUid User = user;
-    public HashSet<EntityUid> Invokers = invokers;
+    public HashSet<Entity<HumanoidAppearanceComponent>> Invokers = invokers;
 }

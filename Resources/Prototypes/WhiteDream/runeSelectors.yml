@@ -3,12 +3,12 @@
   prototype: CultRuneOffering
 
 - type: runeSelector
-  id: CultRuneEmpowering
-  prototype: CultRuneEmpowering
+  id: CultRuneSpells
+  prototype: CultRuneSpells
 
 - type: runeSelector
-  id: CultRuneBuff
-  prototype: CultRuneBuff
+  id: CultRuneEmpower
+  prototype: CultRuneEmpower
 
 - type: runeSelector
   id: CultRuneTeleport
@@ -35,6 +35,6 @@
   prototype: CultRuneApocalypse
 
 - type: runeSelector
-  id: CultRuneDimensionTear
-  prototype: CultRuneDimensionTear
+  id: CultRuneDimensionalRending
+  prototype: CultRuneDimensionalRending
 

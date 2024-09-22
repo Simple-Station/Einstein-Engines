@@ -16,6 +16,7 @@ public sealed partial class CultRuneReviveComponent : Component
         {
             ["Brute"] = -100,
             ["Burn"] = -100,
+            ["Heat"] = -100,
             ["Asphyxiation"] = -100,
             ["Bloodloss"] = -100,
             ["Poison"] = -50,

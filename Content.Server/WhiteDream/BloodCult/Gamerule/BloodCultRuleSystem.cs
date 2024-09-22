@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Content.Server.Actions;
 using Content.Server.Antag;
+using Content.Server.Antag.Components;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Components;
 using Content.Server.GameTicking.Rules;
@@ -22,6 +23,8 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Mood;
 using Content.Shared.Roles;
 using Content.Shared.WhiteDream.BloodCult.Components;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist;
+using Content.Shared.WhiteDream.BloodCult.CultItem;
 using Robust.Server.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
@@ -67,7 +70,6 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
-
 
         component.OfferingTarget = FindTarget()?.Mind ?? null;
     }
@@ -137,7 +139,6 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
     private void OnCultistComponentRemoved(Entity<BloodCultistComponent> ent, ref ComponentRemove args)
     {
-        _alertsSystem.ClearAlert(ent.Owner, AlertType.BloodSpells);
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out var cult, out _))
         {
@@ -163,17 +164,6 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         CheckRoundShouldEnd();
     }
 
-    public bool IsTarget(EntityUid mindId)
-    {
-        var query = QueryActiveRules();
-        while (query.MoveNext(out _, out var bloodCultRule, out _))
-        {
-            return mindId == bloodCultRule.OfferingTarget;
-        }
-
-        return false;
-    }
-
     private void OnCultistsStateChanged(Entity<BloodCultistComponent> ent, ref MobStateChangedEvent args)
     {
         if (args.NewMobState == MobState.Dead)
@@ -190,6 +180,57 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
     private void OnGetBriefing(Entity<BloodCultistRoleComponent> ent, ref GetBriefingEvent args)
     {
         args.Append(Loc.GetString("blood-cult-role-briefing-short"));
+    }
+
+    public void Convert(EntityUid target)
+    {
+        if (!TryComp(target, out ActorComponent? actor))
+        {
+            return;
+        }
+
+        var query = QueryActiveRules();
+        while (query.MoveNext(out var ruleUid, out _, out _, out _))
+        {
+            if (!TryComp(ruleUid, out AntagSelectionComponent? antagSelection))
+            {
+                continue;
+            }
+
+            var antagSelectionEnt = (ruleUid, antagSelection);
+            if (!_antagSelection.TryGetNextAvailableDefinition(antagSelectionEnt, out var def))
+            {
+                continue;
+            }
+
+            _antagSelection.MakeAntag(antagSelectionEnt, actor.PlayerSession, def.Value);
+        }
+    }
+
+    public bool IsTarget(EntityUid mindId)
+    {
+        var query = QueryActiveRules();
+        while (query.MoveNext(out _, out var bloodCultRule, out _))
+        {
+            return mindId == bloodCultRule.OfferingTarget;
+        }
+
+        return false;
+    }
+
+    public void RemoveObjectiveAndRole(EntityUid uid)
+    {
+        if (!_mindSystem.TryGetMind(uid, out var mindId, out var mind))
+            return;
+
+        var objectives = mind.Objectives.FindAll(HasComp<KillTargetCultComponent>);
+        foreach (var obj in objectives)
+        {
+            _mindSystem.TryRemoveObjective(mindId, mind, mind.Objectives.IndexOf(obj));
+        }
+
+        if (_roleSystem.MindHasRole<BloodCultistRoleComponent>(mindId))
+            _roleSystem.MindRemoveRole<BloodCultistRoleComponent>(mindId);
     }
 
     private void CheckRoundShouldEnd()
@@ -243,21 +284,6 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         }
 
         return potentialTargets.Count > 0 ? _random.Pick(potentialTargets) : null;
-    }
-
-    public void RemoveObjectiveAndRole(EntityUid uid)
-    {
-        if (!_mindSystem.TryGetMind(uid, out var mindId, out var mind))
-            return;
-
-        var objectives = mind.Objectives.FindAll(HasComp<KillTargetCultComponent>);
-        foreach (var obj in objectives)
-        {
-            _mindSystem.TryRemoveObjective(mindId, mind, mind.Objectives.IndexOf(obj));
-        }
-
-        if (_roleSystem.MindHasRole<BloodCultistRoleComponent>(mindId))
-            _roleSystem.MindRemoveRole<BloodCultistRoleComponent>(mindId);
     }
 
     private void RemoveAllCultItems(Entity<BloodCultistComponent> ent)

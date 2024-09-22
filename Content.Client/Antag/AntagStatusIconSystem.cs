@@ -2,6 +2,7 @@ using Content.Shared.Antag;
 using Content.Shared.Revolutionary.Components;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Components;
 using Content.Shared.Zombies;
 using Robust.Client.Player;

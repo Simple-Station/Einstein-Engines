@@ -1,14 +1,26 @@
 ﻿- type: entity
-  parent: CollideRune
   id: CultRuneBase
   name: based rune
   abstract: true
+  placement:
+    mode: SnapgridCenter
   components:
+  - type: Fixtures
+    fixtures:
+      rune:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        hard: false
+        mask:
+        - ItemMask
+        layer:
+        - SlipLayer
+  - type: Physics
+  - type: Clickable
   - type: Sprite
-    sprite: WhiteDream/BloodCult/Runes/regular.rsi
-    layers:
-    - state: offering
-      color: '#F80000'
+    sprite: WhiteDream/BloodCult/Entities/Runes/regular.rsi
+    state: "offering"
   - type: CultRuneBase
   - type: Appearance
 
@@ -18,38 +30,32 @@
   name: rune of offering
   components:
   - type: Sprite
-    layers:
-    - state: offering
-      color: '#F80000'
+    state: "offering"
   - type: CultRuneBase
     invokePhrase: "Mah'weyh pleggh at e'ntrath!"
   - type: CultRuneOffering
 
 - type: entity
   parent: CultRuneBase
-  id: CultRuneEmpowering
-  name: rune of powers
+  id: CultRuneSpells
+  name: rune of spells
   components:
   - type: Sprite
-    layers:
-    - state: empower
-      color: '#F80000'
+    state: empower
   - type: CultRuneBase
     invokePhrase: "H'drak v'loso, mir'kanas verbot!"
-    invokeAction: "RuneEmpower"
+    invokeAction: "RunePowers"
 
 - type: entity
   parent: CultRuneBase
-  id: CultRuneBuff
-  name: rune of strength
+  id: CultRuneEmpower
+  name: rune of empower
   components:
   - type: Sprite
-    layers:
-    - state: empower
-      color: '#008080'
+    state: strength
   - type: CultRuneBase
     invokePhrase: "Qu'laris ver'don, thal'sorin mik'thar!"
-    invokeAction: "RuneBuff"
+  - type: CultRuneEmpower
 
 - type: entity
   parent: CultRuneBase
@@ -57,9 +63,7 @@
   name: rune of teleportation
   components:
   - type: Sprite
-    layers:
-    - state: teleport
-      color: '#F80000'
+    state: teleport
   - type: CultRuneBase
     invokePhrase: "Sas'so c'arta forbici!"
     invokeAction: "RuneTeleport"
@@ -70,25 +74,26 @@
   name: rune of rejuvenation
   components:
   - type: Sprite
-    layers:
-    - state: revive
-      color: '#F80000'
+    state: revive
   - type: CultRuneBase
     invokePhrase: "Pasnar val'keriam usinar. Savrae ines amutan. Yam'toth remium il'tarat!"
-    invokeAction: "RuneRevive"
+  - type: CultRuneRevive
 
 - type: entity
   parent: CultRuneBase
   id: CultRuneBarrier
-  name: rune of protection
+  name: rune of barrier
   components:
   - type: Sprite
-    layers:
-    - state: barrier
-      color: '#F80000'
+    state: barrier
   - type: CultRuneBase
     invokePhrase: "Khari'd! Eske'te tannin!"
-    invokeAction: "RuneBarrier"
+    runeActivationRange: 1.5
+    bloodCost: 10
+    activationDamage:
+      types:
+        Slash: 5
+  - type: CultRuneBarrier
 
 - type: entity
   parent: CultRuneBase
@@ -96,9 +101,7 @@
   name: rune of summoning
   components:
   - type: Sprite
-    layers:
-    - state: summon
-      color: '#F80000'
+    state: summon
   - type: CultRuneBase
     invokePhrase: "N'ath reth sh'yro eth d'rekkathnor!"
     invokeAction: "RuneSummon"
@@ -109,12 +112,14 @@
   name: rune of boiling blood
   components:
   - type: Sprite
-    layers:
-    - state: blood_boil
-      color: '#F80000'
+    state: blood_boil
   - type: CultRuneBase
     invokePhrase: "N'Dedo ol'btoh!"
-    invokeAction: "RuneBloodboil"
+    requiredInvokers: 3
+    activationDamage:
+      types:
+        Slash: 35
+  - type: CultRuneBloodBoil
 
 - type: entity
   parent: CultRuneBase
@@ -122,24 +127,23 @@
   name: rune of apocalypse
   components:
   - type: Sprite
-    sprite: WhiteDream/BloodCult/Runes/apocalypse.rsi
-    layers:
-    - state: icon
-      color: '#F80000'
+    sprite: WhiteDream/BloodCult/Entities/Runes/apocalypse.rsi
+    state: icon
   - type: CultRuneBase
     invokePhrase: "Ta'gh fara'qha fel d'amar det!"
+    activationDamage:
+      types:
+        Slash: 35
     invokeAction: "RuneApocalypse"
 
 - type: entity
   parent: CultRuneBase
-  id: CultRuneDimensionTear
-  name: rune of dimension tear
+  id: CultRuneDimensionalRending
+  name: rune of dimensional rending
   components:
   - type: Sprite
-    sprite: WhiteDream/BloodCult/Runes/dimension_tear.rsi
-    layers:
-    - state: rune
-      color: '#F80000'
+    sprite: WhiteDream/BloodCult/Entities/Runes/dimensional_rending.rsi
+    state: rune_animated
   - type: CultRuneBase
     invokePhrase: "TOK-LYR RQA-NAP G'OLT-ULOFT!!!"
     invokeAction: "RuneDimensionTear"

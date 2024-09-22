@@ -1,8 +1,7 @@
 ﻿using System.Linq;
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
-using Content.Shared.WhiteDream.BloodCult;
-using Content.Shared.WhiteDream.BloodCult.Components;
+using Content.Shared.WhiteDream.BloodCult.Runes;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;

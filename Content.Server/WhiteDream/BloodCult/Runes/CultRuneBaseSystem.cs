@@ -1,20 +1,20 @@
 ﻿using System.Linq;
 using System.Numerics;
 using Content.Server.Bible.Components;
-using Content.Server.Body.Components;
-using Content.Server.Body.Systems;
 using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Components;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.DoAfter;
 using Content.Server.Fluids.Components;
 using Content.Server.Popups;
+using Content.Server.WhiteDream.BloodCult.Empower;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
-using Content.Shared.WhiteDream.BloodCult.Components;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist;
+using Content.Shared.WhiteDream.BloodCult.Runes;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -27,7 +27,6 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
@@ -55,25 +54,21 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
     private void OnRuneSelected(Entity<RuneDrawerComponent> ent, ref RuneDrawerSelectedMessage args)
     {
-        if (!args.Session.AttachedEntity.HasValue ||
-            !_protoManager.TryIndex(args.SelectedRune, out var runeSelector))
+        if (args.Session.AttachedEntity is not { } user ||
+            !_protoManager.TryIndex(args.SelectedRune, out var runeSelector) ||
+            !CanDrawRune(user))
         {
             return;
         }
 
         var timeToDraw = runeSelector.DrawTime;
-
-        // TODO: Buff rune
-        // if (HasComp<CultBuffComponent>(whoCalled))
-        //     _timeToDraw /= 2;
-
-        var user = args.Session.AttachedEntity.Value;
-        if (!CanDrawRune(user))
-            return;
+        if (TryComp(user, out BloodCultEmpoweredComponent? empowered))
+            timeToDraw *= empowered.TimeMultiplier;
 
         var ev = new DrawRuneDoAfter
         {
-            Rune = args.SelectedRune
+            Rune = args.SelectedRune,
+            EndDrawingSound = ent.Comp.EndDrawingSound
         };
 
         var argsDoAfterEvent = new DoAfterArgs(EntityManager, user, timeToDraw, ev, user)
@@ -82,35 +77,18 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
             NeedHand = true
         };
 
-        if (!_doAfter.TryStartDoAfter(argsDoAfterEvent))
-            return;
-
-        _audio.PlayPvs("/Audio/WhiteDream/BloodCult/butcher.ogg", user, AudioParams.Default.WithMaxDistance(2f));
+        if (_doAfter.TryStartDoAfter(argsDoAfterEvent))
+            _audio.PlayPvs(ent.Comp.StartDrawingSound, user, AudioParams.Default.WithMaxDistance(2f));
     }
 
     private void OnDrawRune(Entity<BloodCultistComponent> ent, ref DrawRuneDoAfter args)
     {
         if (args.Cancelled || !_protoManager.TryIndex(args.Rune, out var runeSelector))
-        {
             return;
-        }
 
-        var damage = new DamageSpecifier(runeSelector.DrawDamage);
-        var bloodToTake = runeSelector.BloodCost;
-        // if (HasComp<CultBuffComponent>(args.User))
-        //     bloodToTake /= 2;
+        DealDamage(args.User, runeSelector.DrawDamage);
 
-        if (TryComp<BloodstreamComponent>(args.User, out var bloodstreamComponent))
-        {
-            _bloodstream.TryModifyBloodLevel(args.User, bloodToTake, bloodstreamComponent, createPuddle: false);
-        }
-        else
-        {
-            damage.DamageDict["Slash"] *= 1.5;
-        }
-
-        _audio.PlayPvs("/Audio/WhiteDream/BloodCult/blood.ogg", args.User, AudioParams.Default.WithMaxDistance(2f));
-        _damageable.TryChangeDamage(args.User, damage, true);
+        _audio.PlayPvs(args.EndDrawingSound, args.User, AudioParams.Default.WithMaxDistance(2f));
         SpawnRune(args.User, runeSelector.Prototype);
     }
 
@@ -126,23 +104,18 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         }
 
         if (!TryComp(args.Used, out RuneDrawerComponent? runeDrawer))
-        {
             return;
-        }
 
-        var ev = new RuneEraseDoAfterEvent();
-
-        var argsDoAfterEvent = new DoAfterArgs(EntityManager, args.User, runeDrawer.EraseTime, ev, ent)
-        {
-            BreakOnUserMove = true,
-            BreakOnDamage = true,
-            NeedHand = true
-        };
+        var argsDoAfterEvent =
+            new DoAfterArgs(EntityManager, args.User, runeDrawer.EraseTime, new RuneEraseDoAfterEvent(), ent)
+            {
+                BreakOnUserMove = true,
+                BreakOnDamage = true,
+                NeedHand = true
+            };
 
         if (_doAfter.TryStartDoAfter(argsDoAfterEvent))
-        {
             _popup.PopupEntity(Loc.GetString("cult-started-erasing-rune"), args.User, args.User);
-        }
     }
 
     private void OnRuneErase(Entity<CultRuneBaseComponent> ent, ref RuneEraseDoAfterEvent args)
@@ -171,23 +144,23 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
     private void OnRuneActivate(Entity<CultRuneBaseComponent> ent, ref ActivateInWorldEvent args)
     {
-        if (args.Handled || !HasComp<BloodCultistComponent>(args.User))
+        var runeCoordinates = Transform(ent).Coordinates;
+        var userCoordinates = Transform(args.User).Coordinates;
+        if (args.Handled || !HasComp<BloodCultistComponent>(args.User) ||
+            !userCoordinates.TryDistance(EntityManager, runeCoordinates, out var distance) ||
+            distance > ent.Comp.RuneActivationRange)
+        {
             return;
+        }
 
         args.Handled = true;
-        var cultists = new HashSet<EntityUid>
-        {
-            args.User
-        };
 
-        if (ent.Comp.RequiredInvokers > 1)
-        {
-            cultists = GatherCultists(ent);
-        }
+        var cultists = GetTargetsNearRune(ent, ent.Comp.RuneActivationRange,
+            entity => !HasComp<BloodCultistComponent>(entity));
 
         if (cultists.Count < ent.Comp.RequiredInvokers)
         {
-            _popup.PopupEntity(Loc.GetString("cult-sacrifice-not-enough-cultists"), args.User, args.User);
+            _popup.PopupEntity(Loc.GetString("cult-rune-not-enough-cultists"), args.User, args.User);
             return;
         }
 
@@ -199,17 +172,15 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         foreach (var cultist in cultists)
         {
+            DealDamage(cultist, ent.Comp.ActivationDamage);
             _chat.TrySendInGameICMessage(cultist, ent.Comp.InvokePhrase, ent.Comp.InvokeChatType, false,
                 checkRadioPrefix: false);
         }
     }
 
-    #region UtilityMethods
-
     private void SpawnRune(EntityUid user, EntProtoId rune)
     {
         var transform = Transform(user);
-
         var snappedLocalPosition = new Vector2(MathF.Floor(transform.LocalPosition.X) + 0.5f,
             MathF.Floor(transform.LocalPosition.Y) + 0.5f);
         var spawnPosition = _transform.GetMapCoordinates(user);
@@ -221,27 +192,35 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
     {
         var transform = Transform(uid);
         var gridUid = transform.GridUid;
-        var tile = transform.Coordinates.GetTileRef();
-
         if (!gridUid.HasValue)
         {
             _popup.PopupEntity(Loc.GetString("cult-cant-draw-rune"), uid, uid);
             return false;
         }
 
+        var tile = transform.Coordinates.GetTileRef();
         if (tile.HasValue)
             return true;
+
         _popup.PopupEntity(Loc.GetString("cult-cant-draw-rune"), uid, uid);
         return false;
     }
 
-    private HashSet<EntityUid> GatherCultists(Entity<CultRuneBaseComponent> ent)
+    private void DealDamage(EntityUid user, DamageSpecifier? damage = null)
     {
-        var entities = _lookup.GetEntitiesInRange(ent, ent.Comp.InvokersGatherRange, LookupFlags.Dynamic);
-        // TODO: Add constructs support: && !HasComp<ConstructComponent>(x)
-        entities.RemoveWhere(x => !HasComp<BloodCultistComponent>(x));
-        return entities;
-    }
+        if (damage is null)
+            return;
 
-    #endregion
+        // So the original DamageSpecifier will not be changed.
+        var newDamage = new DamageSpecifier(damage);
+        if (TryComp(user, out BloodCultEmpoweredComponent? empowered))
+        {
+            foreach (var (key, value) in damage.DamageDict)
+            {
+                damage.DamageDict[key] = value * empowered.DamageMultiplier;
+            }
+        }
+
+        _damageable.TryChangeDamage(user, newDamage, true);
+    }
 }

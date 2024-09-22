@@ -1,22 +1,17 @@
 ﻿using Content.Server.NPC.Components;
-using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Roles;
-using Content.Shared.WhiteDream.BloodCult.Components;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.WhiteDream.BloodCult.Gamerule;
 
-[RegisterComponent, Access(typeof(BloodCultRuleSystem))]
+[RegisterComponent]
 public sealed partial class BloodCultRuleComponent : Component
 {
     public List<Entity<BloodCultistComponent>> CultistMinds = new();
 
     [DataField]
     public ProtoId<AntagPrototype> CultistRolePrototype = "Cultist";
-
-    // TODO: Do we need it?
-    // [DataField]
-    // public ProtoId<GamePresetPrototype> CultGamePresetPrototype = "Cult";
 
     [DataField]
     public ProtoId<NpcFactionPrototype> NanoTrasenFaction = "NanoTrasen";
@@ -27,16 +22,9 @@ public sealed partial class BloodCultRuleComponent : Component
     [DataField]
     public ProtoId<EntityPrototype> ReaperPrototype = "ReaperConstruct";
 
-    [ViewVariables(VVAccess.ReadOnly), DataField]
-    public string CultFloor = "CultFloor";
-
     [DataField]
     public Color EyeColor = Color.FromHex("#f80000");
 
-    // TODO: DO we need it here?
-    public ProtoId<ReagentPrototype> HolyWaterReagent = "Holywater";
-
-    // TODO: This two should probably be percent of server population
     [DataField]
     public int ReadEyeThreshold = 5;
 

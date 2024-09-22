@@ -14,7 +14,7 @@
   - type: RoleRequirement
     roles:
       components:
-      - CultistRole
+      - BloodCultistRole
   - type: TargetObjective
     title: objective-condition-kill-person-title
   - type: KillTargetCult

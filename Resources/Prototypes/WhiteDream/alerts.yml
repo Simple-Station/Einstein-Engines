@@ -8,7 +8,7 @@
   description: alerts-blood-spells-desc
 
 - type: alert
-  id: CultBuffed
+  id: CultEmpowered
   icons: [ /Textures/WhiteDream/BloodCult/Alerts/empowered.png ]
-  name: alerts-blood-cult-buff-name
-  description: alerts-blood-cult-buff-desc
+  name: alerts-blood-cult-empowered-name
+  description: alerts-blood-cult-empowered-desc

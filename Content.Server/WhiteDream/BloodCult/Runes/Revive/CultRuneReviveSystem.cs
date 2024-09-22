@@ -7,7 +7,7 @@ using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.WhiteDream.BloodCult.Components;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 
 namespace Content.Server.WhiteDream.BloodCult.Runes.Revive;
 
@@ -38,18 +38,23 @@ public sealed class CultRuneReviveSystem : EntitySystem
             !HasComp<MobStateComponent>(entity));
 
         if (possibleTargets.Count == 0)
+        {
+            args.Cancel();
             return;
+        }
 
         var victim = possibleTargets.First();
 
         if (chargesProvider.Charges == 0)
         {
+            args.Cancel();
             _popup.PopupEntity(Loc.GetString("cult-revive-rune-no-charges"), args.User, args.User);
             return;
         }
 
         if (_mobState.IsAlive(victim))
         {
+            args.Cancel();
             _popup.PopupEntity(Loc.GetString("cult-revive-rune-already-alive"), args.User, args.User);
             return;
         }

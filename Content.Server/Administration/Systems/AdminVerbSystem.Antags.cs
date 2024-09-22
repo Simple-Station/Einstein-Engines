@@ -139,7 +139,6 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(thief);
 
-        // White Dream
         Verb cultist = new()
         {
             Text = Loc.GetString("admin-verb-text-make-blood-cultist"),
@@ -153,6 +152,5 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-blood-cultist"),
         };
         args.Verbs.Add(cultist);
-        // White Dream End
     }
 }
