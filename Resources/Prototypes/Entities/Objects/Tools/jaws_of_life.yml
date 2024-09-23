@@ -44,8 +44,8 @@
         changeSound: /Audio/Items/change_jaws.ogg
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 0.75
-    range: 1.75
+    attackRate: 0.85
+    range: 1.65
     damage:
       types:
         Blunt: 10
@@ -53,7 +53,7 @@
     bluntStaminaDamageFactor: 2.0
     heavyRateModifier: 0.8
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 10
+    heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
     soundHit:

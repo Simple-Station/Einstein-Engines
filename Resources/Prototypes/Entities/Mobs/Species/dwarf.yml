@@ -53,10 +53,10 @@
     speechSounds: Bass
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - SolCommon
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - SolCommon
   - type: LightweightDrunk
     boozeStrengthMultiplier: 0.5

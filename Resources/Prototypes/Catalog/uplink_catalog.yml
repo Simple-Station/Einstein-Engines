@@ -10,6 +10,7 @@
     Telecrystal: 3
   categories:
   - UplinkWeapons
+  saleLimit: 1
 
 - type: listing
   id: UplinkRevolverPython
@@ -20,6 +21,7 @@
     Telecrystal: 8 # Originally was 13 TC but was not used due to high cost
   categories:
   - UplinkWeapons
+  saleLimit: 1
 
 # Inbuilt suppressor so it's sneaky + more expensive.
 - type: listing
@@ -31,6 +33,7 @@
     Telecrystal: 4
   categories:
   - UplinkWeapons
+  saleLimit: 1
 
 # Poor accuracy, slow to fire, cheap option
 - type: listing
@@ -42,6 +45,7 @@
     Telecrystal: 1
   categories:
   - UplinkWeapons
+  saleLimit: 1
 
 - type: listing
   id: UplinkEsword
@@ -53,6 +57,7 @@
     Telecrystal: 8
   categories:
   - UplinkWeapons
+  saleLimit: 2
 
 - type: listing
   id: UplinkEnergyDagger
@@ -64,6 +69,7 @@
     Telecrystal: 2
   categories:
   - UplinkWeapons
+  saleLimit: 1
 
 - type: listing
   id: UplinkThrowingKnivesKit
@@ -85,6 +91,7 @@
     Telecrystal: 8
   categories:
   - UplinkWeapons
+  saleLimit: 1
 
 - type: listing
   id: UplinkDisposableTurret
@@ -100,6 +107,7 @@
       blacklist:
         tags:
           - NukeOpsUplink
+  saleLimit: 2
 
 - type: listing
   id: BaseBallBatHomeRun
@@ -112,6 +120,7 @@
     Telecrystal: 16
   categories:
   - UplinkWeapons
+  saleLimit: 1
 
 # Explosives
 
@@ -214,6 +223,7 @@
     whitelist:
       tags:
       - NukeOpsUplink
+  saleLimit: 1
 
 - type: listing
   id: UplinkC4Bundle
@@ -224,6 +234,7 @@
     Telecrystal: 12 #you're buying bulk so its a 25% discount
   categories:
   - UplinkExplosives
+  saleLimit: 1
 
 - type: listing
   id: UplinkEmpGrenade
@@ -261,6 +272,7 @@
     blacklist:
       tags:
       - NukeOpsUplink
+  saleLimit: 1
 
 - type: listing
   id: UplinkSyndicateBombNukie
@@ -276,6 +288,7 @@
     whitelist:
       tags:
       - NukeOpsUplink
+  saleLimit: 1
 
 - type: listing
   id: UplinkClusterGrenade
@@ -451,6 +464,7 @@
       blacklist:
         tags:
           - NukeOpsUplink
+  saleLimit: 1
 
 - type: listing
   id: UplinkReinforcementRadioSyndicateNukeops # Version for Nukeops that spawns an agent with the NukeOperative component.
@@ -467,6 +481,7 @@
       whitelist:
         tags:
           - NukeOpsUplink
+  saleLimit: 1
 
 - type: listing
   id: UplinkReinforcementRadioSyndicateCyborgAssault
@@ -483,6 +498,7 @@
       whitelist:
         tags:
           - NukeOpsUplink
+  saleLimit: 1
 
 - type: listing
   id: UplinkReinforcementRadioSyndicateMonkey
@@ -515,6 +531,7 @@
       whitelist:
         tags:
           - NukeOpsUplink
+  saleLimit: 1
 
 - type: listing
   id: UplinkStealthBox
@@ -545,7 +562,6 @@
   productEntity: EncryptionKeyBinary
   cost:
     Telecrystal: 1
-
   categories:
   - UplinkUtility
 
@@ -748,6 +764,7 @@
       blacklist:
         tags:
           - NukeOpsUplink
+  saleBlacklist: true
 
 - type: listing
   id: UplinkDeathRattle
@@ -821,6 +838,7 @@
       blacklist:
         components:
           - SurplusBundle
+  saleLimit: 1
 
 - type: listing
   id: UplinkChemistryKitBundle
@@ -862,6 +880,7 @@
       blacklist:
         components:
           - SurplusBundle
+  saleLimit: 1
 
 - type: listing
   id: UplinkSniperBundle
@@ -873,6 +892,7 @@
     Telecrystal: 12
   categories:
   - UplinkBundles
+  saleLimit: 1
 
 - type: listing
   id: UplinkC20RBundle
@@ -884,6 +904,7 @@
     Telecrystal: 17
   categories:
   - UplinkBundles
+  saleLimit: 1
 
 - type: listing
   id: UplinkBulldogBundle
@@ -895,6 +916,7 @@
     Telecrystal: 20
   categories:
   - UplinkBundles
+  saleLimit: 1
 
 - type: listing
   id: UplinkGrenadeLauncherBundle
@@ -906,6 +928,7 @@
     Telecrystal: 25
   categories:
   - UplinkBundles
+  saleLimit: 1
 
 - type: listing
   id: UplinkL6SawBundle
@@ -917,6 +940,7 @@
     Telecrystal: 30
   categories:
   - UplinkBundles
+  saleLimit: 1
 
 - type: listing
   id: UplinkZombieBundle
@@ -937,6 +961,7 @@
     blacklist:
       components:
       - SurplusBundle
+  saleLimit: 1
 
 - type: listing
   id: UplinkSurplusBundle
@@ -956,6 +981,7 @@
     blacklist:
       components:
       - SurplusBundle
+  saleBlacklist: true
 
 - type: listing
   id: UplinkSuperSurplusBundle
@@ -975,6 +1001,7 @@
     blacklist:
       components:
       - SurplusBundle
+  saleBlacklist: true
 
 # Tools
 
@@ -1113,6 +1140,7 @@
   - !type:BuyerJobCondition
     whitelist:
     - Chaplain
+  saleLimit: 1
 
 - type: listing
   id: uplinkRevolverCapGunFake
@@ -1128,6 +1156,7 @@
     whitelist:
     - Mime
     - Clown
+  saleLimit: 1
 
 - type: listing
   id: uplinkBananaPeelExplosive
@@ -1172,6 +1201,7 @@
   - !type:BuyerJobCondition
     whitelist:
     - Clown
+  saleLimit: 1
 
 - type: listing
   id: uplinkHotPotato
@@ -1335,6 +1365,7 @@
     Telecrystal: 8
   categories:
   - UplinkArmor
+  saleLimit: 1
 
 - type: listing
   id: UplinkHardsuitSyndieElite
@@ -1346,6 +1377,7 @@
     Telecrystal: 10
   categories:
   - UplinkArmor
+  saleLimit: 1
 
 - type: listing
   id: UplinkClothingOuterHardsuitJuggernaut
@@ -1357,6 +1389,7 @@
     Telecrystal: 12
   categories:
   - UplinkArmor
+  saleLimit: 1
 
 # Misc
 
@@ -1425,6 +1458,7 @@
     whitelist:
       tags:
       - NukeOpsUplink
+  saleLimit: 1
 
 - type: listing
   id: UplinkSoapSyndie
@@ -1515,6 +1549,7 @@
     Telecrystal: 12
   categories:
   - UplinkMisc
+  saleLimit: 1
 
 - type: listing
   id: UplinkBribe
@@ -1541,6 +1576,7 @@
       whitelist:
         tags:
           - NukeOpsUplink
+  saleLimit: 1
 
 - type: listing
   id: UplinkBackpackSyndicate

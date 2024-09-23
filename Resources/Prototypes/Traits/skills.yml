@@ -99,17 +99,6 @@
         - Felinid
 
 - type: trait
-  id: SignLanguage
-  category: Visual
-  points: -2
-  components:
-    - type: LanguageKnowledgeModifier
-      speaks:
-        - Sign
-      understands:
-        - Sign
-
-- type: trait
   id: Voracious
   category: Physical
   points: -2
