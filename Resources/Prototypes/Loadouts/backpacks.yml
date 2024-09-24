@@ -26,7 +26,7 @@
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackDuffel
+    - ClothingBackpackSatchel
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
