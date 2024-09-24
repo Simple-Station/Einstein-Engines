@@ -444,7 +444,8 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - NanoChatCartridge # DeltaV
+      - AstroNavCartridge
+      - NanoChatCartridge
 
 - type: entity
   parent: BasePDA
