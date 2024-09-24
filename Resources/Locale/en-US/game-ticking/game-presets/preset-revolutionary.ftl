@@ -14,7 +14,7 @@ head-rev-briefing =
     Use the manifesto to convert people to your cause.
     Get rid of all heads to take over the station.
 
-head-rev-break-mindshield = The Mindshield was destroyed!
+head-rev-break-mindshield = The Mindshield neutralized hypnotic powers, but its functionality has been compromised!
 
 ## Rev
 

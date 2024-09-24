@@ -1,4 +1,5 @@
 - type: Tag
+<<<<<<< HEAD
   id: MagazineMagnumLeverRifle
 
 # Mechs
@@ -150,3 +151,6 @@
 
 - type: Tag
   id: CartridgeEpinephrine
+
+- type: Tag
+  id: BlueprintMedicalFabricator

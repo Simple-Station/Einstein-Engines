@@ -11,3 +11,13 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-rev-objective
+  guides: [ Revolutionaries ]
+
+- type: startingGear
+  id: HeadRevGear
+  storage:
+    back:
+    - Flash
+    - ClothingEyesGlassesSunglasses
+    - EncryptionKeySyndie # Goobstation
+    - RevsFastDrawImplanter # Goobstation
