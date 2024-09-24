@@ -7,6 +7,8 @@
   components:
   - type: Sprite
     sprite: Structures/Furniture/Tables/frame.rsi
+  - type: Icon
+    sprite: Structures/Furniture/Tables/frame.rsi
     state: full
   - type: Fixtures
     fixtures:
@@ -22,6 +24,9 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: IconSmooth
+    key: state
+    base: state_
   - type: Destructible
     thresholds:
     - trigger:
