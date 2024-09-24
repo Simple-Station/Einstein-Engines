@@ -182,7 +182,7 @@
       - Prying
   - type: Sprite
     drawdepth: Mobs
-    sprite: Floof/Mobs/Animals/patriarch.rsi
+    sprite: Mobs/Animals/patriarch.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: patriarch
@@ -298,7 +298,7 @@
       - Prying
   - type: Sprite
     drawdepth: Mobs
-    sprite: Floof/Mobs/Animals/subject7355.rsi
+    sprite: Mobs/Animals/subject7355.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: subject7355
