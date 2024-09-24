@@ -179,8 +179,9 @@
             playSound: true
             minGlimmer: 2
             maxGlimmer: 4
-            glimmerObviousSoundThreshold: 100
-            glimmerObviousPopupThreshold: 200
+            glimmerSoundThreshold: 100
+            glimmerPopupThreshold: 200
+            glimmerDoAfterVisibilityThreshold: 70
 
 - type: entity
   id: ActionRevivify
@@ -217,5 +218,6 @@
             playSound: true
             minGlimmer: 10 # These also get multiplied by caster stats. So,
             maxGlimmer: 15 # keeping in mind the ~3.5x multiplier, this spikes glimmer by as much as 60 points.
-            glimmerObviousSoundThreshold: 50
-            glimmerObviousPopupThreshold: 100
+            glimmerSoundThreshold: 50
+            glimmerPopupThreshold: 100
+            glimmerDoAfterVisibilityThreshold: 35
