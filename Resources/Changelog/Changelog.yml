@@ -6647,3 +6647,12 @@ Entries:
   id: 6386
   time: '2024-09-24T00:56:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/949
+- author: Mocho
+  changes:
+    - type: Add
+      message: >-
+        Added a lot of recipes to the quick construction menus. Give it a shot
+        by pressing Z with different construction materials in your hand!
+  id: 6387
+  time: '2024-09-24T00:56:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/945
