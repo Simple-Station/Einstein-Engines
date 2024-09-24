@@ -18,7 +18,7 @@ public sealed partial class BlobChemSwapMenu : DefaultWindow
     private readonly SpriteSystem _sprite;
     public event Action<BlobChemType>? OnIdSelected;
 
-    private Dictionary<BlobChemType, Color> _possibleChems = new();
+    private BlobChemColors _possibleChems = new();
     private BlobChemType _selectedId;
 
     public BlobChemSwapMenu()
@@ -28,12 +28,25 @@ public sealed partial class BlobChemSwapMenu : DefaultWindow
         _sprite = _entityManager.System<SpriteSystem>();
     }
 
-    public void UpdateState(Dictionary<BlobChemType, Color> chemList, BlobChemType selectedChem)
+    public void UpdateState(BlobChemColors chemList, BlobChemType selectedChem)
     {
         _possibleChems = chemList;
         _selectedId = selectedChem;
         UpdateGrid();
     }
+
+    protected override void EnteredTree()
+    {
+        UpdateGrid();
+    }
+
+    protected override void ExitedTree()
+    {
+        ClearGrid();
+    }
+
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string NormalBlobTile = "NormalBlobTile";
 
     private void UpdateGrid()
     {
@@ -41,9 +54,9 @@ public sealed partial class BlobChemSwapMenu : DefaultWindow
 
         var group = new ButtonGroup();
 
-        foreach (var blobChem in _possibleChems)
+        foreach (var (blobChem,blobColor) in _possibleChems)
         {
-            if (!_prototypeManager.TryIndex("NormalBlobTile", out EntityPrototype? proto))
+            if (!_prototypeManager.TryIndex(NormalBlobTile, out EntityPrototype? proto))
                 continue;
 
             var button = new Button
@@ -53,18 +66,18 @@ public sealed partial class BlobChemSwapMenu : DefaultWindow
                 Group = group,
                 StyleClasses = {StyleBase.ButtonSquare},
                 ToggleMode = true,
-                Pressed = _selectedId == blobChem.Key,
-                ToolTip = Loc.GetString($"blob-chem-{blobChem.Key.ToString().ToLower()}-info"),
+                Pressed = _selectedId == blobChem,
+                ToolTip = Loc.GetString($"blob-chem-{blobChem.ToString().ToLower()}-info"),
                 TooltipDelay = 0.01f,
             };
-            button.OnPressed += _ => OnIdSelected?.Invoke(blobChem.Key);
+            button.OnPressed += _ => OnIdSelected?.Invoke(blobChem);
             Grid.AddChild(button);
 
             var texture = _sprite.GetPrototypeIcon(proto);
             button.AddChild(new TextureRect
             {
                 Stretch = TextureRect.StretchMode.KeepAspectCentered,
-                Modulate = blobChem.Value,
+                Modulate = blobColor,
                 Texture = texture.Default,
             });
         }

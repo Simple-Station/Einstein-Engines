@@ -9,9 +9,6 @@ public sealed class BlobFactoryComponent : Component
     [DataField("spawnLimit"), ViewVariables(VVAccess.ReadWrite)]
     public float SpawnLimit = 3;
 
-    [DataField("spawnRate"), ViewVariables(VVAccess.ReadWrite)]
-    public float SpawnRate = 10;
-
     [DataField("blobSporeId"), ViewVariables(VVAccess.ReadWrite)]
     public string Pod = "MobBlobPod";
 
@@ -24,7 +21,11 @@ public sealed class BlobFactoryComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public List<EntityUid> BlobPods = new ();
 
-    public TimeSpan NextSpawn = TimeSpan.Zero;
+    [DataField]
+    public int Accumulator = 0;
+
+    [DataField]
+    public int AccumulateToSpawn = 3;
 }
 
 public sealed class ProduceBlobbernautEvent : EntityEventArgs

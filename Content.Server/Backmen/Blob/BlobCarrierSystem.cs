@@ -5,10 +5,18 @@ using Content.Server.Mind;
 using Content.Shared.Backmen.Blob;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
+<<<<<<< HEAD
 using Content.Shared.Popups;
 using Robust.Shared.Map;
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
+using Content.Shared.Popups;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
+=======
+using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
 namespace Content.Server.Backmen.Blob;
 
@@ -58,15 +66,31 @@ public sealed class BlobCarrierSystem : EntitySystem
 
     private void OnStartup(EntityUid uid, BlobCarrierComponent component, ComponentStartup args)
     {
+<<<<<<< HEAD
         _action.AddAction(uid, ref component.TransformToBlob ,ActionTransformToBlob);
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
+        _action.AddAction(uid, ref component.TransformToBlob, ActionTransformToBlob);
+=======
+        _action.AddAction(uid, ref component.TransformToBlob, ActionTransformToBlob);
+        EnsureComp<BlobSpeakComponent>(uid).OverrideName = false;
+
+        if (HasComp<ActorComponent>(uid))
+            return;
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
 
         var ghostRole = EnsureComp<GhostRoleComponent>(uid);
         EnsureComp<GhostTakeoverAvailableComponent>(uid);
         ghostRole.RoleName = Loc.GetString("blob-carrier-role-name");
         ghostRole.RoleDescription = Loc.GetString("blob-carrier-role-desc");
         ghostRole.RoleRules = Loc.GetString("blob-carrier-role-rules");
+<<<<<<< HEAD
 
         EnsureComp<BlobSpeakComponent>(uid);
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
+
+        EnsureComp<BlobSpeakComponent>(uid).OverrideName = false;
+=======
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
     }
 
     private void OnShutdown(EntityUid uid, BlobCarrierComponent component, ComponentShutdown args)
@@ -99,7 +123,13 @@ public sealed class BlobCarrierSystem : EntitySystem
         }
         else
         {
+<<<<<<< HEAD
             Spawn(carrier.CoreBlobGhostRolePrototype, xform.Coordinates);
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
+            Spawn(ent.Comp.CoreBlobGhostRolePrototype, xform.Coordinates);
+=======
+            Spawn(ent.Comp.CoreBlobPrototype, xform.Coordinates);
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
         }
 
         _bodySystem.GibBody(uid);

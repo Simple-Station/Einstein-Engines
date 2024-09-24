@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Atmos.Components;
@@ -7,34 +8,34 @@ using Content.Server.Backmen.Blob.Components;
 using Content.Server.Destructible;
 using Content.Server.Emp;
 using Content.Server.Explosion.EntitySystems;
+using Content.Server.Popups;
+using Content.Shared.Backmen.Blob;
 using Content.Shared.Backmen.Blob.Components;
 using Content.Shared.Backmen.CCVar;
 using Content.Shared.Damage;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
-using Content.Shared.Maps;
-using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.SubFloor;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
-using Robust.Server.Physics;
 using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Backmen.Blob;
 
-public sealed class BlobCoreActionSystem : EntitySystem
+public sealed class BlobCoreActionSystem : SharedBlobCoreActionSystem
 {
+    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly BlobCoreSystem _blobCoreSystem = default!;
     [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
@@ -46,12 +47,16 @@ public sealed class BlobCoreActionSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly BlobTileSystem _blobTileSystem = default!;
     //[Dependency] private readonly GridFixtureSystem _gridFixture = default!;
 
     private const double ActionJobTime = 0.005;
     private readonly JobQueue _actionJobQueue = new(ActionJobTime);
+
+    private bool _canGrowInSpace = true;
     private EntityQuery<BlobTileComponent> _tileQuery;
+    private EntityQuery<BlobCoreComponent> _blobCoreQuery;
 
     public override void Initialize()
     {
@@ -59,7 +64,10 @@ public sealed class BlobCoreActionSystem : EntitySystem
 
         SubscribeLocalEvent<BlobObserverControllerComponent, AfterInteractEvent>(OnInteractController);
         SubscribeLocalEvent<BlobObserverComponent, UserActivateInWorldEvent>(OnInteractTarget);
+
+        Subs.CVar(_cfg, CCVars.BlobCanGrowInSpace, value => _canGrowInSpace = value, true);
         _tileQuery = GetEntityQuery<BlobTileComponent>();
+        _blobCoreQuery = GetEntityQuery<BlobCoreComponent>();
     }
 
     public override void Update(float frameTime)
@@ -68,207 +76,184 @@ public sealed class BlobCoreActionSystem : EntitySystem
         _actionJobQueue.Process();
     }
 
-    public sealed class BlobMouseActionProcess : Job<object>
+    public sealed class BlobMouseActionProcess(
+        Entity<BlobObserverComponent> ent,
+        Entity<BlobCoreComponent> core,
+        BlobCoreActionSystem system,
+        InteractEvent args,
+        double maxTime,
+        CancellationToken cancellation = default)
+        : Job<object>(maxTime, cancellation)
     {
-        private readonly Entity<BlobObserverComponent> _ent;
-        private readonly Entity<BlobCoreComponent> _core;
-        private readonly BlobCoreActionSystem _system;
-        private readonly AfterInteractEvent _args;
-
-        public BlobMouseActionProcess(Entity<BlobObserverComponent> ent, Entity<BlobCoreComponent> core, BlobCoreActionSystem system, AfterInteractEvent args, double maxTime, CancellationToken cancellation = default) : base(maxTime, cancellation)
-        {
-            _ent = ent;
-            _core = core;
-            _system = system;
-            _args = args;
-        }
-
-        public BlobMouseActionProcess(Entity<BlobObserverComponent> ent, Entity<BlobCoreComponent> core, BlobCoreActionSystem system, AfterInteractEvent args, double maxTime, IStopwatch stopwatch, CancellationToken cancellation = default) : base(maxTime, stopwatch, cancellation)
-        {
-            _ent = ent;
-            _core = core;
-            _system = system;
-            _args = args;
-        }
-
         protected override async Task<object?> Process()
         {
-            _system.BlobInteract(_ent, _core, _args);
+            system.BlobInteract(ent, core, args);
             return null;
         }
     }
 
-    private readonly HashSet<Entity<MobStateComponent>> _entitiesTrackTiles = new();
-    private void BlobInteract(Entity<BlobObserverComponent> observer, Entity<BlobCoreComponent> core, AfterInteractEvent args)
+    private void BlobInteract(Entity<BlobObserverComponent> observer, Entity<BlobCoreComponent> core, InteractEvent args)
     {
-        var location = args.ClickLocation;
-        if (!location.IsValid(EntityManager))
-            return;
-
         if (TerminatingOrDeleted(observer) || TerminatingOrDeleted(core))
             return;
 
-        var gridUid = location.GetGridUid(EntityManager);
-        if (!HasComp<MapGridComponent>(gridUid))
-        {
-            location = location.AlignWithClosestGridTile();
-            gridUid = location.GetGridUid(EntityManager);
-            if (!HasComp<MapGridComponent>(gridUid))
-                return;
-        }
+        var location = args.ClickLocation.AlignWithClosestGridTile(entityManager: EntityManager, mapManager: _mapManager);
+
+        if (!location.IsValid(EntityManager))
+            return;
+
+        var gridUid = _transform.GetGrid(location);
 
         if (!TryComp<MapGridComponent>(gridUid, out var grid))
         {
             return;
         }
 
+        var fromTile = FindNearBlobTile(location, (gridUid.Value, grid));
+
         #region OnTarget
-        if (args.Target != null &&
-            !_tileQuery.HasComponent(args.Target) &&
-            !HasComp<BlobMobComponent>(args.Target))
+        if (args.Target != null && !HasComp<BlobMobComponent>(args.Target))
         {
+            if (_tileQuery.TryComp(args.Target.Value, out var tileComp) && tileComp.Core != null)
+                return;
+
             var target = args.Target;
-
-            // Check if the target is adjacent to a tile with BlobCellComponent horizontally or vertically
-            var xform = Transform(target.Value);
-            var mobTile = _mapSystem.GetTileRef(gridUid.Value, grid, xform.Coordinates);
-
-            var mobAdjacentTiles = new[]
+            if (fromTile != null && HasComp<DestructibleComponent>(target) && !HasComp<ItemComponent>(target) && !HasComp<SubFloorHideComponent>(target))
             {
-                mobTile.GridIndices.Offset(Direction.East),
-                mobTile.GridIndices.Offset(Direction.West),
-                mobTile.GridIndices.Offset(Direction.North),
-                mobTile.GridIndices.Offset(Direction.South)
-            };
-            var nearTile = mobAdjacentTiles.Select(indices=> _mapSystem.GetAnchoredEntities(gridUid.Value, grid, indices).Where(_tileQuery.HasComponent)
-                .FirstOrNull()).FirstOrDefault(x => x != null);
-
-            if (nearTile != null && HasComp<DestructibleComponent>(target) && !HasComp<ItemComponent>(target)&& !HasComp<SubFloorHideComponent>(target))
-            {
-                BlobTargetAttack(core, nearTile.Value, (gridUid.Value, grid), target.Value);
+                BlobTargetAttack(core, fromTile.Value, target.Value);
                 return;
             }
         }
         #endregion
 
-        var centerTile = _mapSystem.GetLocalTilesIntersecting(gridUid.Value, grid,
-            new Box2(location.Position, location.Position), false).ToArray();
-
-        var targetTileEmpty = false;
-        foreach (var tileRef in centerTile)
-        {
-            if (tileRef.Tile.IsEmpty)
-            {
-                targetTileEmpty = true;
-                if (!_cfg.GetCVar(CCVars.BlobCanGrowInSpace))
-                    return;
-            }
-
-            if (_mapSystem.GetAnchoredEntities(gridUid.Value, grid, tileRef.GridIndices).Any(_tileQuery.HasComponent))
-            {
-                return;
-            }
-            var pos = _transform.ToMapCoordinates(_mapSystem.ToCoordinates(gridUid.Value, tileRef.GridIndices, grid));
-
-            _entitiesTrackTiles.Clear();
-
-            _lookup.GetEntitiesInRange(pos, EntityLookupSystem.LookupEpsilon, _entitiesTrackTiles);
-            foreach (var entityUid in _entitiesTrackTiles)
-            {
-                if (!HasComp<BlobMobComponent>(entityUid))
-                    return;
-            }
-        }
-
         var targetTile = _mapSystem.GetTileRef(gridUid.Value, grid, location);
 
-        var adjacentTiles = new[]
+        var targetTileEmpty = false;
+        if (targetTile.Tile.IsEmpty)
         {
-            targetTile.GridIndices.Offset(Direction.East),
-            targetTile.GridIndices.Offset(Direction.West),
-            targetTile.GridIndices.Offset(Direction.North),
-            targetTile.GridIndices.Offset(Direction.South)
-        };
+            if (!_canGrowInSpace)
+                return;
 
-        var fromTile = adjacentTiles
-            .Select(indices=>_mapSystem.GetAnchoredEntities(gridUid.Value, grid, indices).FirstOrNull(_tileQuery.HasComponent))
-            .FirstOrDefault(x => x!=null);
+            targetTileEmpty = true;
+        }
 
-        if (fromTile == null)
+        if (_mapSystem.GetAnchoredEntities(gridUid.Value, grid, targetTile.GridIndices).Any(_tileQuery.HasComponent))
         {
-            /*
+            return;
+        }
+
+        var node = _blobCoreSystem.GetNearNode(location, core.Comp.TilesRadiusLimit);
+
+        if (fromTile != null && node == null)
+            _popup.PopupCoordinates(Loc.GetString("blob-target-nearby-not-node"), location, args.User, PopupType.Large);
+
+        if (fromTile == null || node == null)
+            return;
+
+        // This code doesn't work.
+        // If you can debug this, please do and fix it.
+
+        /*if (targetTileEmpty)
+        {
             var mapPos = _transform.ToMapCoordinates(location);
             var adjacentPos = new[]
-                {
-                    Direction.East,
-                    Direction.West,
-                    Direction.North,
-                    Direction.South
-             };
+            {
+                Direction.East,
+                Direction.West,
+                Direction.North,
+                Direction.South
+            };
+
             var tiles = new HashSet<Entity<BlobTileComponent>>();
             foreach (var dir in adjacentPos)
             {
-                var pos = mapPos.Offset(dir.ToVec());
-
                 tiles.Clear();
-                _lookup.GetEntitiesIntersecting<BlobTileComponent>(pos.MapId, new Box2(pos.Position,pos.Position), tiles, LookupFlags.Static);
-                if(tiles.Count == 0)
+
+                _lookup.GetEntitiesIntersecting(pos.MapId,
+                    new Box2(pos.Position, pos.Position),
+                    tiles,
+                    LookupFlags.Static);
+
+                if (tiles.Count == 0)
                     continue;
+
                 var tile = tiles.First();
                 var tilePos = Transform(tile);
 
-                if (tilePos.GridUid != gridUid && tilePos.GridUid != null && TryComp<MapGridComponent>(tilePos.GridUid, out var tileGrid))
-                {
-                    fromTile = tile;
-                    var locPos = _mapSystem.WorldToLocal(tilePos.GridUid.Value, tileGrid, mapPos.Position + dir.GetOpposite().ToVec());
-                    _gridFixture.Merge(tilePos.GridUid.Value, gridUid.Value, (Vector2i) locPos, Transform(gridUid.Value).LocalRotation);
-                }
+                if (tilePos.GridUid == gridUid || tilePos.GridUid == null ||
+                    !TryComp<MapGridComponent>(tilePos.GridUid, out var tileGrid))
+                    continue;
+
+                var locPos = _mapSystem.WorldToLocal(tilePos.GridUid.Value,
+                    tileGrid,
+                    mapPos.Position + dir.GetOpposite().ToVec());
+
+                _gridFixture.Merge(tilePos.GridUid.Value,
+                    gridUid.Value,
+                    (Vector2i)locPos,
+                    Transform(gridUid.Value).LocalRotation);
             }
-*/
-            if(fromTile == null)
-                return;
-        }
+        }*/
 
-
-        var cost = core.Comp.NormalBlobCost;
+        var cost = core.Comp.BlobTileCosts[BlobTileType.Normal];
         if (targetTileEmpty)
         {
-            cost *= 2;
-        }
+            cost *= 2.5f;
 
-        if (!_blobCoreSystem.TryUseAbility(observer, core, core, cost))
-            return;
-
-        if (targetTileEmpty)
-        {
             var plating = _tileDefinitionManager["Plating"];
             var platingTile = new Tile(plating.TileId);
             _mapSystem.SetTile(gridUid.Value, grid, location, platingTile);
         }
 
+        if (!_blobCoreSystem.TryUseAbility(core, cost, location))
+            return;
+
         _blobCoreSystem.TransformBlobTile(null,
             core,
-            core.Comp.NormalBlobTile,
-            location,
-            core,
-            transformCost: cost);
+            node,
+            BlobTileType.Normal,
+            location);
+
+        core.Comp.NextAction = _gameTiming.CurTime + TimeSpan.FromSeconds(Math.Abs(core.Comp.GrowRate));
     }
 
-    private void BlobTargetAttack(Entity<BlobCoreComponent> ent, Entity<BlobTileComponent?> from, Entity<MapGridComponent> fromGrid, EntityUid target)
+    private EntityUid? FindNearBlobTile(EntityCoordinates coords, Entity<MapGridComponent> grid)
     {
-        if (!Resolve(from, ref from.Comp))
+        var mobTile = _mapSystem.GetTileRef(grid, grid, coords);
+
+        var adjacentTiles = new[]
+        {
+            mobTile.GridIndices.Offset(Direction.East),
+            mobTile.GridIndices.Offset(Direction.West),
+            mobTile.GridIndices.Offset(Direction.North),
+            mobTile.GridIndices.Offset(Direction.South),
+        };
+
+        foreach (var indices in adjacentTiles)
+        {
+            var uid = _mapSystem.GetAnchoredEntities(grid, grid, indices)
+                .Where(_tileQuery.HasComponent)
+                .FirstOrNull();
+
+            // Don't count dead tiles
+            if (uid == null || _tileQuery.Comp(uid.Value).Core == null)
+                continue;
+
+            return uid;
+        }
+
+        return null;
+    }
+
+    private void BlobTargetAttack(Entity<BlobCoreComponent> ent, Entity<BlobTileComponent?> from, EntityUid target)
+    {
+        if (ent.Comp.Observer == null)
             return;
 
-        if(ent.Comp.Observer == null)
+        if (!_blobCoreSystem.TryUseAbility(ent, ent.Comp.AttackCost, Transform(target).Coordinates))
             return;
 
-        if (!_blobCoreSystem.TryUseAbility(ent.Comp.Observer.Value, ent, ent, ent.Comp.AttackCost))
-            return;
-
-        _popup.PopupCursor(Loc.GetString("blob-spent-resource", ("point", ent.Comp.AttackCost)),
-            ent.Comp.Observer.Value,
-            PopupType.LargeCaution);
-
+        _blobTileSystem.DoLunge(from, target);
         _damageableSystem.TryChangeDamage(target, ent.Comp.ChemDamageDict[ent.Comp.CurrentChem]);
 
         switch (ent.Comp.CurrentChem)
@@ -294,18 +279,26 @@ public sealed class BlobCoreActionSystem : EntitySystem
             }
         }
 
+<<<<<<< HEAD
         ent.Comp.NextAction =
             _gameTiming.CurTime + TimeSpan.FromSeconds(ent.Comp.AttackRate);
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
+        ent.Comp.NextAction =
+            _gameTiming.CurTime + TimeSpan.FromSeconds(ent.Comp.AttackRate.Float());
+=======
+        ent.Comp.NextAction = _gameTiming.CurTime + TimeSpan.FromSeconds(Math.Abs(ent.Comp.AttackRate));
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
         _audioSystem.PlayPvs(ent.Comp.AttackSound, from, AudioParams.Default);
     }
 
+    private static readonly TimeSpan GCd = TimeSpan.FromMilliseconds(300); // GCD?
     private void OnInteract(EntityUid uid, BlobObserverComponent observerComponent, AfterInteractEvent args)
     {
         if (args.Target == args.User)
             return;
 
         if (observerComponent.Core == null ||
-            !TryComp<BlobCoreComponent>(observerComponent.Core.Value, out var blobCoreComponent))
+            !_blobCoreQuery.TryComp(observerComponent.Core.Value, out var blobCoreComponent))
             return;
 
         if (_gameTiming.CurTime < blobCoreComponent.NextAction)
@@ -315,9 +308,8 @@ public sealed class BlobCoreActionSystem : EntitySystem
         if (!location.IsValid(EntityManager))
             return;
 
-        blobCoreComponent.NextAction = _gameTiming.CurTime + TimeSpan.FromMilliseconds(333); // GCD?
-
         args.Handled = true;
+        blobCoreComponent.NextAction = _gameTiming.CurTime + GCd;
 
         _actionJobQueue.EnqueueJob(new BlobMouseActionProcess(
             (uid,observerComponent),

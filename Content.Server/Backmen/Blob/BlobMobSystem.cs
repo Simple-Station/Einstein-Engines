@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
+using Content.Server.Backmen.Blob.Components;
+=======
+using System.Numerics;
+using Content.Server.Backmen.Blob.Components;
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
 using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
@@ -13,14 +20,80 @@ using Content.Shared.Popups;
 using Content.Shared.Speech;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+<<<<<<< HEAD
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
+using Robust.Shared.Network;
+using Robust.Shared.Player;
+=======
+using Robust.Shared.Map;
+using Robust.Shared.Network;
+using Robust.Shared.Player;
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Backmen.Blob;
 
+<<<<<<< HEAD
 public sealed class BlobMobSystem : EntitySystem
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
+public sealed class EntitySpeakPrivateTransformEvent(
+    ICommonSession targetSession,
+    ChatChannel chatChannel,
+    EntityUid source,
+    string message,
+    string wrappedMessage,
+    string? originalMessage,
+    NetUserId? author,
+    ChatSystem.ICChatRecipientData data)
+    : EntityEventArgs
+{
+    public ICommonSession TargetSession { get; } = targetSession;
+    public ChatChannel ChatChannel { get; set; } = chatChannel;
+    public EntityUid Source { get; } = source;
+    public string Message { get; set; } = message;
+    public string WrappedMessage { get; set; } = wrappedMessage;
+    public string? OriginalMessage { get; } = originalMessage;
+    public NetUserId? Author { get; } = author;
+    public ChatSystem.ICChatRecipientData Data { get; } = data;
+}
+
+public sealed class BlobMobSystem : EntitySystem
+=======
+public sealed class EntitySpeakPrivateTransformEvent(
+    ICommonSession targetSession,
+    ChatChannel chatChannel,
+    EntityUid source,
+    string message,
+    string wrappedMessage,
+    string? originalMessage,
+    NetUserId? author,
+    ChatSystem.ICChatRecipientData data)
+    : EntityEventArgs
+{
+    public ICommonSession TargetSession { get; } = targetSession;
+    public ChatChannel ChatChannel { get; set; } = chatChannel;
+    public EntityUid Source { get; } = source;
+    public string Message { get; set; } = message;
+    public string WrappedMessage { get; set; } = wrappedMessage;
+    public string? OriginalMessage { get; } = originalMessage;
+    public NetUserId? Author { get; } = author;
+    public ChatSystem.ICChatRecipientData Data { get; } = data;
+}
+
+public sealed class BlobMobSystem : SharedBlobMobSystem
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
 {
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+<<<<<<< HEAD
     [Dependency] private readonly PopupSystem _popupSystem = default!;
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
+
+    [Dependency] private readonly SharedChatSystem _chatSystem = default!;
+=======
+
+    [Dependency] private readonly SharedChatSystem _chatSystem = default!;
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
     //[Dependency] private readonly SmokeSystem _smokeSystem = default!;
     //[Dependency] private readonly SharedAudioSystem _audioSystem = default!;
 
@@ -32,7 +105,7 @@ public sealed class BlobMobSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<BlobMobComponent, BlobMobGetPulseEvent>(OnPulsed);
-        SubscribeLocalEvent<BlobMobComponent, AttackAttemptEvent>(OnBlobAttackAttempt);
+
         SubscribeLocalEvent<BlobSpeakComponent, EntitySpokeEvent>(OnSpoke, before: new []{ typeof(RadioSystem) });
         SubscribeLocalEvent<BlobSpeakComponent, ComponentStartup>(OnSpokeAdd);
         SubscribeLocalEvent<BlobSpeakComponent, ComponentShutdown>(OnSpokeRemove);
@@ -94,38 +167,11 @@ public sealed class BlobMobSystem : EntitySystem
         args.Channel = null; // prevent duplicate messages from other listeners.
     }
 
+
     private void OnPulsed(EntityUid uid, BlobMobComponent component, BlobMobGetPulseEvent args)
     {
         _damageableSystem.TryChangeDamage(uid, component.HealthOfPulse);
     }
 
-    private void OnBlobAttackAttempt(EntityUid uid, BlobMobComponent component, AttackAttemptEvent args)
-    {
-        if (args.Cancelled || !HasComp<BlobTileComponent>(args.Target) && !HasComp<BlobMobComponent>(args.Target))
-            return;
 
-        // TODO: Move this to shared
-        _popupSystem.PopupCursor(Loc.GetString("blob-mob-attack-blob"), uid, PopupType.Large);
-        args.Cancel();
-    }
-
-/*
-    private void HandleSmokeTrigger(EntityUid uid, SmokeOnTriggerComponent comp, TriggerEvent args)
-    {
-        var xform = Transform(uid);
-        var smokeEnt = Spawn("Smoke", xform.Coordinates);
-        var smoke = EnsureComp<SmokeComponent>(smokeEnt);
-        var colored = EnsureComp<BlobSmokeColorComponent>(smokeEnt);
-        colored.Color = comp.SmokeColor;
-        //colored.SmokeColor = comp.SmokeColor;
-        Dirty(smokeEnt,smoke);
-        var solution = new Solution();
-        foreach (var reagent in comp.SmokeReagents)
-        {
-            solution.AddReagent(reagent.Reagent, reagent.Quantity);
-        }
-        _smokeSystem.StartSmoke(smokeEnt, solution, comp.Time, comp.SpreadAmount, smoke);
-        _audioSystem.PlayPvs(comp.Sound, xform.Coordinates, AudioParams.Default.WithVariation(0.125f));
-        args.Handled = true;
-    }*/
 }

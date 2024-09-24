@@ -33,9 +33,9 @@
             Captain: [ -1, -1 ]
         # backmen blob-config-start DEBUG
         - type: StationBlobConfig
-          stageBegin: 10
-          stageCritical: 20
-          stageTheEnd: 30
+          stageBegin: 100
+          stageCritical: 200
+          stageTheEnd: 300
           specForceTeam: RXBZZBlobBig
         # backmen blob-config-end
 

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using Content.Server.Construction.Components;
@@ -9,12 +10,30 @@ using Content.Shared.Blob;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.FixedPoint;
+<<<<<<< HEAD:Content.Server/Blob/BlobTileSystem.cs
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
+using Content.Shared.Popups;
+using Content.Shared.Verbs;
+using Robust.Server.Audio;
+=======
+using Robust.Server.Audio;
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
+<<<<<<< HEAD:Content.Server/Blob/BlobTileSystem.cs
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
+using Robust.Shared.GameStates;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
+=======
+using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
+using Robust.Shared.Random;
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
 
 namespace Content.Server.Blob;
 
@@ -24,7 +43,6 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly BlobCoreSystem _blobCoreSystem = default!;
     [Dependency] private readonly AudioSystem _audioSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly EmpSystem _empSystem = default!;
 <<<<<<< HEAD:Content.Server/Blob/BlobTileSystem.cs
 
@@ -34,6 +52,8 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
 =======
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+
     private EntityQuery<BlobCoreComponent> _blobCoreQuery;
 >>>>>>> a2da11302d (cleanup blob (#598)):Content.Server/Backmen/Blob/BlobTileSystem.cs
 
@@ -41,7 +61,6 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
     {
         base.Initialize();
 
-        // SubscribeLocalEvent<BlobTileComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<BlobTileComponent, DestructionEventArgs>(OnDestruction);
         SubscribeLocalEvent<BlobTileComponent, BlobTileGetPulseEvent>(OnPulsed);
         SubscribeLocalEvent<BlobTileComponent, GetVerbsEvent<AlternativeVerb>>(AddUpgradeVerb);
@@ -55,9 +74,10 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
 
     private void OnTerminate(EntityUid uid, BlobTileComponent component, EntityTerminatingEvent args)
     {
-        if(component.Core == null || TerminatingOrDeleted(component.Core.Value) || !_blobCoreQuery.TryComp(component.Core.Value, out var blobCoreComponent))
+        if (TerminatingOrDeleted(component.Core))
             return;
-        blobCoreComponent.BlobTiles.Remove(uid);
+
+        component.Core!.Value.Comp.BlobTiles.Remove(uid);
     }
 
     private void OnFlashAttempt(EntityUid uid, BlobTileComponent component, FlashAttemptEvent args)
@@ -73,7 +93,10 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
 
     private void OnDestruction(EntityUid uid, BlobTileComponent component, DestructionEventArgs args)
     {
-        if (component.Core == null || !_blobCoreQuery.TryComp(component.Core.Value, out var blobCoreComponent))
+        if (
+            TerminatingOrDeleted(component.Core) ||
+            !_blobCoreQuery.TryComp(component.Core, out var blobCoreComponent)
+            )
             return;
 
         var xform = Transform(uid);
@@ -84,6 +107,7 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
         }
     }
 
+<<<<<<< HEAD:Content.Server/Blob/BlobTileSystem.cs
     private void AddRemoveVerb(EntityUid uid, BlobTileComponent component, GetVerbsEvent<Verb> args)
     {
         if (!TryComp<BlobObserverComponent>(args.User, out var ghostBlobComponent))
@@ -178,20 +202,84 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
         };
     }
 
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
+    protected override  void TryRemove(EntityUid target, EntityUid coreUid, BlobTileComponent tile, BlobCoreComponent core)
+    {
+        var xform = Transform(target);
+        if (!_blobCoreSystem.RemoveBlobTile(target, coreUid, core))
+        {
+            return;
+        }
+
+        FixedPoint2 returnCost = 0;
+
+        if (tile.ReturnCost)
+        {
+            switch (tile.BlobTileType)
+            {
+                case BlobTileType.Normal:
+                {
+                    returnCost = core.NormalBlobCost * core.ReturnResourceOnRemove;
+                    break;
+                }
+                case BlobTileType.Strong:
+                {
+                    returnCost = core.StrongBlobCost * core.ReturnResourceOnRemove;
+                    break;
+                }
+                case BlobTileType.Factory:
+                {
+                    returnCost = core.FactoryBlobCost * core.ReturnResourceOnRemove;
+                    break;
+                }
+                case BlobTileType.Resource:
+                {
+                    returnCost = core.ResourceBlobCost * core.ReturnResourceOnRemove;
+                    break;
+                }
+                case BlobTileType.Reflective:
+                {
+                    returnCost = core.ReflectiveBlobCost * core.ReturnResourceOnRemove;
+                    break;
+                }
+                case BlobTileType.Node:
+                {
+                    returnCost = core.NodeBlobCost * core.ReturnResourceOnRemove;
+                    break;
+                }
+            }
+        }
+
+        if (returnCost > 0)
+        {
+            if (_blobCoreQuery.TryComp(tile.Core, out var blobCoreComponent) && blobCoreComponent.Observer != null)
+            {
+                _popup.PopupCoordinates(Loc.GetString("blob-get-resource", ("point", returnCost)),
+                    xform.Coordinates,
+                    blobCoreComponent.Observer.Value,
+                    PopupType.LargeGreen);
+            }
+            _blobCoreSystem.ChangeBlobPoint(coreUid, returnCost, core);
+        }
+    }
+
+=======
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
     private void OnPulsed(EntityUid uid, BlobTileComponent component, BlobTileGetPulseEvent args)
     {
-
-        if (!TryComp<BlobTileComponent>(uid, out var blobTileComponent) || blobTileComponent.Core == null ||
-            !_blobCoreQuery.TryComp(blobTileComponent.Core.Value, out var blobCoreComponent))
+        if (component.Core == null)
             return;
 
-        if (blobCoreComponent.CurrentChem == BlobChemType.RegenerativeMateria)
+        var core = component.Core.Value;
+
+        if (core.Comp.CurrentChem == BlobChemType.RegenerativeMateria)
         {
             var healCore = new DamageSpecifier();
             foreach (var keyValuePair in component.HealthOfPulse.DamageDict)
             {
-                healCore.DamageDict.Add(keyValuePair.Key, keyValuePair.Value * 10);
+                healCore.DamageDict.Add(keyValuePair.Key, keyValuePair.Value * 5);
             }
+
             _damageableSystem.TryChangeDamage(uid, healCore);
         }
         else
@@ -199,7 +287,7 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
             _damageableSystem.TryChangeDamage(uid, component.HealthOfPulse);
         }
 
-        if (!args.Explain)
+        if (!args.Handled)
             return;
 
         var xform = Transform(uid);
@@ -209,22 +297,45 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
             return;
         }
 
+<<<<<<< HEAD:Content.Server/Blob/BlobTileSystem.cs
         var mobTile = grid.GetTileRef(xform.Coordinates);
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
+        var mobTile = _mapSystem.GetTileRef(xform.GridUid.Value, grid, xform.Coordinates);
+=======
+        var nearNode = _blobCoreSystem.GetNearNode(xform.Coordinates, core.Comp.TilesRadiusLimit);
+
+        if (nearNode == null)
+            return;
+
+        var mobTile = _mapSystem.GetTileRef(xform.GridUid.Value, grid, xform.Coordinates);
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
 
         var mobAdjacentTiles = new[]
         {
             mobTile.GridIndices.Offset(Direction.East),
             mobTile.GridIndices.Offset(Direction.West),
             mobTile.GridIndices.Offset(Direction.North),
-            mobTile.GridIndices.Offset(Direction.South)
+            mobTile.GridIndices.Offset(Direction.South),
         };
+
+        _random.Shuffle(mobAdjacentTiles);
 
         var localPos = xform.Coordinates.Position;
 
         var radius = 1.0f;
 
+<<<<<<< HEAD:Content.Server/Blob/BlobTileSystem.cs
         var innerTiles = grid.GetLocalTilesIntersecting(
             new Box2(localPos + new Vector2(-radius, -radius), localPos + new Vector2(radius, radius))).ToArray();
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
+        var innerTiles = _mapSystem.GetLocalTilesIntersecting(xform.GridUid.Value, grid,
+            new Box2(localPos + new Vector2(-radius, -radius), localPos + new Vector2(radius, radius))).ToArray();
+=======
+        var innerTiles = _mapSystem.GetLocalTilesIntersecting(xform.GridUid.Value,
+                grid,
+                new Box2(localPos + new Vector2(-radius, -radius), localPos + new Vector2(radius, radius)))
+            .ToArray();
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
 
         foreach (var innerTile in innerTiles)
         {
@@ -237,11 +348,14 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
             {
                 if (!HasComp<DestructibleComponent>(ent) || !HasComp<ConstructionComponent>(ent))
                     continue;
-                _damageableSystem.TryChangeDamage(ent, blobCoreComponent.ChemDamageDict[blobCoreComponent.CurrentChem]);
-                _audioSystem.PlayPvs(blobCoreComponent.AttackSound, uid, AudioParams.Default);
-                args.Explain = true;
+
+                DoLunge(uid, ent);
+                _damageableSystem.TryChangeDamage(ent, core.Comp.ChemDamageDict[core.Comp.CurrentChem]);
+                _audioSystem.PlayPvs(core.Comp.AttackSound, uid, AudioParams.Default);
+                args.Handled = true;
                 return;
             }
+
             var spawn = true;
             foreach (var ent in grid.GetAnchoredEntities(innerTile.GridIndices))
             {
@@ -257,15 +371,15 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
             var location = innerTile.GridIndices.ToEntityCoordinates(xform.GridUid.Value, _map);
 
             if (_blobCoreSystem.TransformBlobTile(null,
-                    blobTileComponent.Core.Value,
-                    blobCoreComponent.NormalBlobTile,
-                    location,
-                    blobCoreComponent,
-                    false))
+                    core,
+                    nearNode,
+                    BlobTileType.Normal,
+                    location))
                 return;
         }
     }
 
+<<<<<<< HEAD:Content.Server/Blob/BlobTileSystem.cs
     private void AddUpgradeVerb(EntityUid uid, BlobTileComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
         if (!TryComp<BlobObserverComponent>(args.User, out var ghostBlobComponent))
@@ -294,32 +408,36 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
     }
 
     private void TryUpgrade(EntityUid target, EntityUid user, EntityUid coreUid, BlobTileComponent tile, BlobCoreComponent core)
+||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
+    protected override void TryUpgrade(EntityUid target, EntityUid user, EntityUid coreUid, BlobTileComponent tile, BlobCoreComponent core)
+=======
+    protected override void TryUpgrade(Entity<BlobTileComponent> target, Entity<BlobCoreComponent> core, EntityUid observer)
+>>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703)):Content.Server/Backmen/Blob/BlobTileSystem.cs
     {
-        var xform = Transform(target);
-        if (tile.BlobTileType == BlobTileType.Normal)
-        {
-            if (!_blobCoreSystem.TryUseAbility(user, coreUid, core, core.StrongBlobCost))
-                return;
+        var coords = Transform(target).Coordinates;
 
-            _blobCoreSystem.TransformBlobTile(target,
-                coreUid,
-                core.StrongBlobTile,
-                xform.Coordinates,
-                core,
-                transformCost: core.StrongBlobCost);
-        }
-        else if (tile.BlobTileType == BlobTileType.Strong)
-        {
-            if (!_blobCoreSystem.TryUseAbility(user, coreUid, core, core.ReflectiveBlobCost))
-                return;
+        if (target.Comp.BlobTileType == BlobTileType.Reflective)
+            return;
 
-            _blobCoreSystem.TransformBlobTile(target,
-                coreUid,
-                core.ReflectiveBlobTile,
-                xform.Coordinates,
-                core,
-                transformCost: core.ReflectiveBlobCost);
-        }
+        var nearNode = _blobCoreSystem.GetNearNode(coords, core.Comp.TilesRadiusLimit);
+        if (nearNode == null)
+            return;
+
+        var ev = new BlobTransformTileActionEvent(
+            performer: observer,
+            target: coords,
+            transformFrom: target.Comp.BlobTileType,
+            tileType: BlobTileType.Invalid,
+            requireNode: false);
+
+        ev.TileType = ev.TransformFrom switch
+        {
+            BlobTileType.Normal => BlobTileType.Strong,
+            BlobTileType.Strong => BlobTileType.Reflective,
+            _ => BlobTileType.Invalid
+        };
+
+        RaiseLocalEvent(core, ev);
     }
 
     /* This work very bad.
@@ -545,4 +663,33 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
     //         EntityManager.SpawnEntity(component.BlobBorder, xform.Coordinates);
     //     }
     // }
+    public void SwapSpecials(Entity<BlobNodeComponent> from, Entity<BlobNodeComponent> to)
+    {
+        (from.Comp.BlobFactory, to.Comp.BlobFactory) = (to.Comp.BlobFactory, from.Comp.BlobFactory);
+        (from.Comp.BlobResource, to.Comp.BlobResource) = (to.Comp.BlobResource, from.Comp.BlobResource);
+        Dirty(from);
+        Dirty(to);
+    }
+
+    public bool IsEmptySpecial(Entity<BlobNodeComponent> node, BlobTileType tile)
+    {
+        return tile switch
+        {
+            BlobTileType.Factory => node.Comp.BlobFactory == null || TerminatingOrDeleted(node.Comp.BlobFactory),
+            BlobTileType.Resource => node.Comp.BlobResource == null || TerminatingOrDeleted(node.Comp.BlobResource),
+            _ => false
+        };
+    }
+
+    public void DoLunge(EntityUid from, EntityUid target)
+    {
+        if(!TransformQuery.TryComp(from, out var userXform))
+            return;
+
+        var targetPos = _transform.GetWorldPosition(target);
+        var localPos = Vector2.Transform(targetPos, _transform.GetInvWorldMatrix(userXform));
+        localPos = userXform.LocalRotation.RotateVec(localPos);
+
+        RaiseNetworkEvent(new BlobAttackEvent(GetNetEntity(from), GetNetEntity(target), localPos), Filter.Pvs(from));
+    }
 }
