@@ -1,0 +1,42 @@
+- type: loadout
+  id: LoadoutBackpack
+  category: Backpacks
+  cost: 0
+  items:
+    - ClothingBackpack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+
+- type: loadout
+  id: LoadoutBackpackDuffel
+  category: Backpacks
+  cost: 0
+  items:
+    - ClothingBackpackDuffel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+
+- type: loadout
+  id: LoadoutBackpackSatchel
+  category: Backpacks
+  cost: 0
+  items:
+    - ClothingBackpackDuffel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+
+- type: loadout
+  id: LoadoutBackpackClown
+  category: Backpacks
+  cost: 0
+  items:
+    - ClothingBackpackClown
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
