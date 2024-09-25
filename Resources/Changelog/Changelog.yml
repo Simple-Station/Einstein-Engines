@@ -6656,3 +6656,12 @@ Entries:
   id: 6387
   time: '2024-09-24T00:56:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/945
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        IPC now weigh 71kg by default instead of 5kg. Seriously who the fuck
+        made the BeepBoops out of feathers!?!
+  id: 6388
+  time: '2024-09-25T05:09:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/959
