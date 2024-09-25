@@ -2,15 +2,16 @@
 - type: language
   id: Marish
   speech:
+    chatTypeOverride: Empathy
     color: "#be3cc5"
     fontId: Gabriola
-    # TODO Add 150% Size Difference
+    fontSize: 18
   speechVerbOverrides:
     - chat-speech-verb-marish
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2 # Replacements are really short
-    maxSyllables: 4
+    minSyllables: 1 # Replacements are really short
+    maxSyllables: 3
     replacement:
     - mar
     - mwrrr

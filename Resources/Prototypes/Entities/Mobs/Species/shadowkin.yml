@@ -86,6 +86,7 @@
     eyeDamageChance: 0.3
     eyeDamage: 1
     durationMultiplier: 1.5
+  - type: PsionicInsulation
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic

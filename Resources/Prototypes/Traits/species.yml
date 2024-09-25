@@ -69,5 +69,5 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Shadowkin
-  # components:
-  #   - type: ShadowkinBlackeyeTrait
+  components:
+    - type: ShadowkinBlackeyeTrait

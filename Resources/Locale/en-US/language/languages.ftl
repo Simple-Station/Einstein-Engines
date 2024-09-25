@@ -55,6 +55,9 @@ language-RobotTalk-description = A language consisting of harsh binary chirps, w
 language-Sign-name = Tau-Ceti Basic Sign Language
 language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
 
+language-Marish-name = Marish
+language-Marish-description = Creature
+
 language-Cat-name = Cat
 language-Cat-description = Meow
 

@@ -261,7 +261,8 @@ public enum InGameICChatType : byte
     Speak,
     Emote,
     Whisper,
-    Telepathic
+    Telepathic,
+    Empathy
 }
 
 /// <summary>
