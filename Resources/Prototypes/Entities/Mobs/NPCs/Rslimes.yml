@@ -118,23 +118,6 @@
         color: "#b50ee8"
 
 - type: entity
-  id: ReagentSlimeOpporozidone
-  parent: ReagentSlime
-  suffix: Opporozidone
-  components:
-  - type: Bloodstream
-    bloodReagent: Opporozidone
-  - type: PointLight
-    color: "#b5e36d"
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Aliens/elemental.rsi
-    layers:
-      - map: [ "enum.DamageStateVisualLayers.Base" ]
-        state: alive
-        color: "#b5e36d"
-
-- type: entity
   id: ReagentSlimeNecrosol
   parent: ReagentSlime
   suffix: Necrosol
