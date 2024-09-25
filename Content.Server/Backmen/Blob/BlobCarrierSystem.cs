@@ -1,5 +1,6 @@
 ﻿using Content.Server.Actions;
 using Content.Server.Body.Systems;
+using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Mind;
 using Content.Shared.Backmen.Blob;
@@ -25,6 +26,7 @@ public sealed class BlobCarrierSystem : EntitySystem
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly BlobCoreSystem _blobCoreSystem = default!;
     [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly GhostRoleSystem _ghost = default!;
     [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ActionsSystem _action = default!;
@@ -114,7 +116,17 @@ public sealed class BlobCarrierSystem : EntitySystem
 
         if (_mind.TryGetMind(uid, out var mindId, out var mind) && mind.UserId != null)
         {
+<<<<<<< HEAD
             var core = Spawn(carrier.CoreBlobPrototype, xform.Coordinates);
+||||||| parent of b4570616f0 ([Fix] Very hot blob fix (#792))
+            var core = Spawn(ent.Comp.CoreBlobPrototype, xform.Coordinates);
+=======
+            var core = Spawn(ent.Comp.CoreBlobPrototype, xform.Coordinates);
+            var ghostRoleComp = EnsureComp<GhostRoleComponent>(core);
+
+            // Unfortunately we have to manually turn this off so we don't need to make more prototypes.
+            _ghost.UnregisterGhostRole((core, ghostRoleComp));
+>>>>>>> b4570616f0 ([Fix] Very hot blob fix (#792))
 
             if (!TryComp<BlobCoreComponent>(core, out var blobCoreComponent))
                 return;
