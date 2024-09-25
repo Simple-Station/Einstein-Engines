@@ -8,7 +8,7 @@
   - type: HumanoidAppearance
     species: Shadowkin
   - type: Icon
-    sprite: Mobs/Species/shadowkin.rsi
+    sprite: Mobs/Species/shadowkin/parts.rsi
     state: full
   - type: Body
     prototype: Shadowkin
@@ -65,7 +65,59 @@
         layer:
           - MobLayer
   - type: Sprite
+    netsync: false
+    noRot: true
+    drawdepth: Mobs
     scale: 0.85, 0.85
+    layers:
+      - map: ["enum.HumanoidVisualLayers.Chest"]
+      - map: ["enum.HumanoidVisualLayers.Head"]
+      - map: ["enum.HumanoidVisualLayers.Snout"]
+      - map: ["enum.HumanoidVisualLayers.Eyes"]
+        shader: unshaded
+      - map: ["enum.HumanoidVisualLayers.RArm"]
+      - map: ["enum.HumanoidVisualLayers.LArm"]
+      - map: ["enum.HumanoidVisualLayers.RLeg"]
+      - map: ["enum.HumanoidVisualLayers.LLeg"]
+      - shader: StencilClear
+        sprite: Mobs/Species/Human/parts.rsi
+        state: l_leg
+      - shader: StencilMask
+        map: ["enum.HumanoidVisualLayers.StencilMask"]
+        sprite: Mobs/Customization/masking_helpers.rsi
+        state: full
+        visible: false
+      - map: ["enum.HumanoidVisualLayers.LFoot"]
+      - map: ["enum.HumanoidVisualLayers.RFoot"]
+      - map: ["socks"]
+      - map: ["underpants"]
+      - map: ["undershirt"]
+      - map: ["jumpsuit"]
+      - map: ["enum.HumanoidVisualLayers.LHand"]
+      - map: ["enum.HumanoidVisualLayers.RHand"]
+      - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+        color: "#ffffff"
+        sprite: Objects/Misc/handcuffs.rsi
+        state: body-overlay-2
+        visible: false
+      - map: ["id"]
+      - map: ["gloves"]
+      - map: ["shoes"]
+      - map: ["ears"]
+      - map: ["outerClothing"]
+      - map: ["eyes"]
+      - map: ["belt"]
+      - map: ["neck"]
+      - map: ["back"]
+      - map: ["enum.HumanoidVisualLayers.FacialHair"]
+      - map: ["enum.HumanoidVisualLayers.Hair"]
+      - map: ["enum.HumanoidVisualLayers.HeadSide"]
+      - map: ["enum.HumanoidVisualLayers.HeadTop"]
+      - map: ["mask"]
+      - map: ["head"]
+      - map: ["pocket1"]
+      - map: ["pocket2"]
+      - map: ["enum.HumanoidVisualLayers.Tail"]
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw
@@ -105,7 +157,7 @@
   components:
   - type: HumanoidAppearance
     species: Shadowkin
-  - type: Sprite # sprite again because we want different layer ordering
+  - type: Sprite
     netsync: false
     noRot: true
     drawdepth: Mobs
@@ -115,6 +167,7 @@
       - map: ["enum.HumanoidVisualLayers.Head"]
       - map: ["enum.HumanoidVisualLayers.Snout"]
       - map: ["enum.HumanoidVisualLayers.Eyes"]
+        shader: unshaded
       - map: ["enum.HumanoidVisualLayers.RArm"]
       - map: ["enum.HumanoidVisualLayers.LArm"]
       - map: ["enum.HumanoidVisualLayers.RLeg"]

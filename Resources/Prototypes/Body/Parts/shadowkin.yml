@@ -6,9 +6,9 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/shadowkin.rsi
+      sprite: Mobs/Species/shadowkin/parts.rsi
     - type: Icon
-      sprite: Mobs/Species/shadowkin.rsi
+      sprite: Mobs/Species/shadowkin/parts.rsi
     - type: Damageable
       damageContainer: Biological
     - type: BodyPart

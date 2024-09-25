@@ -8,8 +8,8 @@
       connections:
       - torso
       organs:
-        brain: OrganHumanBrain
-        eyes: OrganHumanEyes
+        brain: OrganShadowkinBrain
+        eyes: OrganShadowkinEyes
     torso:
       part: TorsoShadowkin
       connections:
@@ -17,12 +17,11 @@
       - right arm
       - left leg
       - right leg
-      organs: # placeholders
-        heart: OrganHumanHeart
-        # lungs: OrganLungs
-        stomach: OrganHumanStomach
-        liver:  OrganHumanLiver
-        kidneys: OrganHumanKidneys
+      organs:
+        heart: OrganShadowkinHeart
+        stomach: OrganShadowkinStomach
+        liver:  OrganShadowkinLiver
+        kidneys: OrganShadowkinKidneys
     right arm:
       part: RightArmShadowkin
       connections:
