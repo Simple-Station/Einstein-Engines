@@ -22,7 +22,7 @@
     - Xeno
     understands:
     - Xeno
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   name: Neutral Praetorian
@@ -47,7 +47,7 @@
     - Xeno
     understands:
     - Xeno
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   name: Neutral Drone
@@ -72,7 +72,7 @@
     - Xeno
     understands:
     - Xeno
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   name: Neutral Ravager
@@ -97,7 +97,7 @@
     - Xeno
     understands:
     - Xeno
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: inventoryTemplate
   id: friendxeno
