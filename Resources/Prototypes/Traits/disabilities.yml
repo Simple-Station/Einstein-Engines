@@ -203,6 +203,7 @@
       inverted: true
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
+        - Shadowkin
   components:
     - type: Flashable
       eyeDamageChance: 0.3

@@ -305,6 +305,7 @@
       species:
         - Felinid # Felinids already have cat claws.
         - Reptilian # Reptilians also have cat claws.
+        - Shadowkin # Shadowkins also have claws.
         # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
     - !type:CharacterTraitRequirement
       inverted: true

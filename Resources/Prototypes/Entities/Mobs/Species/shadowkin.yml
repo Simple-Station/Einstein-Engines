@@ -7,19 +7,15 @@
   components:
   - type: HumanoidAppearance
     species: Shadowkin
-  - type: Hunger
-  - type: Thirst
   - type: Icon
     sprite: Mobs/Species/shadowkin.rsi
     state: full
   - type: Body
     prototype: Shadowkin
-    requiredLegs: 2
   - type: Flammable
     damage:
       types:
         Heat: 1.5 # burn more
-  - type: MobState
   - type: MobThresholds
     thresholds: # Weak
       0: Alive
@@ -45,11 +41,6 @@
       types:
         Bloodloss:
           -0.25
-  - type: Tag
-    tags:
-    - CanPilot
-    - FootstepSound
-    - DoorBumpOpener
   - type: Temperature
     heatDamageThreshold: 330
     coldDamageThreshold: 195
@@ -74,47 +65,34 @@
         layer:
           - MobLayer
   - type: Sprite
-    scale: 0.85, 0.85 # Small
-  - type: Eye
-    zoom: "0.85, 0.85"
+    scale: 0.85, 0.85
   - type: MeleeWeapon
     soundHit:
-      collection: Punch
+      collection: AlienClaw
+    angle: 30
     animation: WeaponArcClaw
     damage:
       types:
-        Blunt: 2
-        Slash: 3
-        Piercing: 1
-  # - type: EmpathyChat
-  # - type: Shadowkin
-  # - type: ShadowkinDarkSwapPower
-  # - type: ShadowkinRestPower
-  # - type: ShadowkinTeleportPower
+        Slash: 5
   - type: Vocal
     sounds:
       Male: MaleSlime
       Female: FemaleSlime
       Unsexed: MaleSlime
-  - type: CombatMode
-    canDisarm: true
-  - type: MindContainer
-    showExamineInfo: true
-  - type: Input
-    context: "human"
-  - type: MobMover
-  - type: InputMover
-  - type: Alerts
-  - type: Actions
-  - type: CameraRecoil
-  - type: Examiner
-  - type: CanHostGuardian
-  - type: NpcFactionMember
-    factions:
-    - NanoTrasen
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.7
     baseSprintSpeed : 4.5
+  - type: Flashable
+    eyeDamageChance: 0.3
+    eyeDamage: 1
+    durationMultiplier: 1.5
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Marish
+    understands:
+    - TauCetiBasic
+    - Marish
 
 
 - type: entity

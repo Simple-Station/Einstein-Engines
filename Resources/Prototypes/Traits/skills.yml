@@ -183,6 +183,7 @@
           inverted: true
           species:
             - IPC
+            - Shadowkin
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
@@ -214,6 +215,7 @@
           inverted: true
           species:
             - IPC
+            - Shadowkin
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
@@ -249,6 +251,7 @@
           inverted: true
           species:
             - IPC
+            - Shadowkin
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
@@ -282,3 +285,4 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+        - Shadowkin

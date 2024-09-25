@@ -67,8 +67,7 @@
   cost: 5
   requirements:
     - !type:CharacterSpeciesRequirement
-      inverted: true
       species:
         - Shadowkin
-  components:
-    - type: ShadowkinBlackeyeTrait
+  # components:
+  #   - type: ShadowkinBlackeyeTrait
