@@ -447,6 +447,79 @@
     entries:
     - id: MobTick
       prob: 0.01
+
+- type: entity
+  id: CarpVents
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 12
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobCarp
+      prob: 0.01
+    - id: MobCarpMagic
+      prob: 0.01
+    - id: MobCarpHolo
+      prob: 0.01
+    - id: MobCarpRainbow
+      prob: 0.01
+    - id: MobShark
+      prob: 0.01
+    - id: MobCarpDragon
+      prob: 0.01
+
+- type: entity
+  id: SpaceVents
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 12
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobBearSpace
+      prob: 0.01
+    - id: MobKangarooSpace
+      prob: 0.01
+    - id: MobSpiderSpace
+      prob: 0.01
+    - id: MobCobraSpace
+      prob: 0.01
+
+- type: entity
+  id: LightVents
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 12
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobLivingLight
+      prob: 0.01
+    - id: MobLuminousPerson
+      prob: 0.01
+    - id: MobLuminousObject
+      prob: 0.01
+    - id: MobLuminousEntity
+      prob: 0.01
       
 - type: entity
   name: Friendly Xeno spawner
