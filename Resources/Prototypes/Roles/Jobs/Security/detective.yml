@@ -7,6 +7,15 @@
   - !type:CharacterDepartmentTimeRequirement
     department: Security
     min: 36000 # DeltaV - 10 hours
+  - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

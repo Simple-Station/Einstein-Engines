@@ -7,3 +7,12 @@
   requirements:
   - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
     min: 259200 # DeltaV - 72 hours
+  - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye

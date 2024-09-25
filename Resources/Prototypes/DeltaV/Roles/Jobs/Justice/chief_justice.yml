@@ -16,6 +16,15 @@
     - !type:CharacterOverallTimeRequirement
       min: 90000 # 25 hours
     - !type:CharacterWhitelistRequirement # whitelist requirement because I don't want any dingus judges
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
   weight: 20
   startingGear: CJGear
   icon: "JobIconChiefJustice"

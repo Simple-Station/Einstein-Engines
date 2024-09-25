@@ -22,16 +22,16 @@
   components:
     - type: SelfAware
       analyzableTypes:
-      - Blunt
-      - Slash
-      - Piercing
-      - Heat
-      - Shock
-      - Cold
-      - Caustic
+        - Blunt
+        - Slash
+        - Piercing
+        - Heat
+        - Shock
+        - Cold
+        - Caustic
       detectableGroups:
-      - Airloss
-      - Toxin
+        - Airloss
+        - Toxin
 
 - type: trait
   id: HeavyweightDrunk
@@ -264,10 +264,10 @@
     - type: StepTriggerImmune
       whitelist:
         types:
-        - Shard
-        - Landmine
-        - Mousetrap
-        - SlipEntity
+          - Shard
+          - Landmine
+          - Mousetrap
+          - SlipEntity
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -279,10 +279,21 @@
   id: AnomalousPositronics
   category: Mental
   points: -4
+  components:
+    - type: ShadowkinBlackeye
   componentRemovals:
     - PsionicInsulation
   requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-        - Shadowkin
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - IPC
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye

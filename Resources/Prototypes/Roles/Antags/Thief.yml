@@ -4,3 +4,13 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-thief-objective
+  requirements:
+  - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye

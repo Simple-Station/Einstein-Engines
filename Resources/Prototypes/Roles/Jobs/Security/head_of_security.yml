@@ -16,6 +16,15 @@
     - !type:CharacterOverallTimeRequirement
       min: 90000 # DeltaV - 25 hours
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

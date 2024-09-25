@@ -64,10 +64,10 @@
 - type: trait
   id: ShadowkinBlackeye
   category: Mental
-  cost: 5
+  points: 4
+  components:
+    - type: ShadowkinBlackeye
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
         - Shadowkin
-  components:
-    - type: ShadowkinBlackeyeTrait

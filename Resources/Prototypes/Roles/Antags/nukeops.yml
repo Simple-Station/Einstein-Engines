@@ -10,6 +10,15 @@
   - !type:CharacterDepartmentTimeRequirement # DeltaV - Security dept time requirement
     department: Security
     min: 36000 # DeltaV - 10 hours
+  - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
 
 - type: antag
   id: NukeopsMedic
@@ -23,6 +32,15 @@
   - !type:CharacterDepartmentTimeRequirement # DeltaV - Medical dept time requirement
     department: Medical
     min: 36000 # DeltaV - 10 hours
+  - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
 
 - type: antag
   id: NukeopsCommander
@@ -40,6 +58,15 @@
     department: Command
     min: 36000 # DeltaV - 10 hours
   - !type:CharacterWhitelistRequirement
+  - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
 
 #Lone Operative Gear
 - type: startingGear

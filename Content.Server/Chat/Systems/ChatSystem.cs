@@ -39,7 +39,7 @@ using Robust.Shared.Utility;
 using Content.Server.Shuttles.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics.Joints;
-using Content.Server.Species.Shadowkin;
+using Content.Server.Shadowkin;
 
 namespace Content.Server.Chat.Systems;
 
@@ -637,7 +637,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     private void SendEmpathy(EntityUid source, string message, bool hideChat)
     {
-        if (HasComp<ShadowkinBlackeyeTraitComponent>(source))
+        if (HasComp<ShadowkinBlackeyeComponent>(source))
             return;
 
         var clients = GetEmpathChatClients();
@@ -847,7 +847,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     {
         return Filter.Empty()
             .AddWhereAttachedEntity(entity =>
-            _language.CanUnderstand(entity, "Marish") && !HasComp<ShadowkinBlackeyeTraitComponent>(entity))
+            _language.CanUnderstand(entity, "Marish") && !HasComp<ShadowkinBlackeyeComponent>(entity))
             .Recipients
             .Union(_adminManager.ActiveAdmins)
             .Select(p => p.Channel);

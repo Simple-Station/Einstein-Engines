@@ -15,6 +15,7 @@
           inverted: true
           species:
             - IPC
+            - Shadowkin
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
