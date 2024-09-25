@@ -1,0 +1,20 @@
+# Spoken by shadowkins.
+- type: language
+  id: Marish
+  speech:
+    color: "#be3cc5"
+    fontId: Gabriola
+    # TODO Add 150% Size Difference
+  speechVerbOverrides:
+    - chat-speech-verb-marish
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2 # Replacements are really short
+    maxSyllables: 4
+    replacement:
+    - mar
+    - mwrrr
+    - maaAr
+    - aarrr
+    - wrurrl
+    - mmar
