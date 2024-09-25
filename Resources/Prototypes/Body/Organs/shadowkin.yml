@@ -13,7 +13,8 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
-    state: eyes
+    layers:
+      - state: eyes
 
 - type: entity
   id: OrganShadowkinEars
@@ -39,7 +40,8 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
-    state: appendix
+    layers:
+      - state: appendix
 
 
 - type: entity
@@ -103,7 +105,8 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
-    state: kidneys
+    layers:
+      - state: kidneys
   - type: Metabolizer
     maxReagents: 5
     metabolizerTypes: [Shadowkin]

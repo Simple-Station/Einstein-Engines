@@ -1955,3 +1955,13 @@
       sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
     - type: DisarmMalus
       malus: 0
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieShadowkin
+  name: shadowkin plushie
+  description: A plushie of a Shadowkin. It's very soft.
+  components:
+    - type: Sprite
+      sprite: Objects/Fun/toys.rsi
+      state: shadowkin
