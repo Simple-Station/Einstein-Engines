@@ -13,6 +13,7 @@
   id: LoadoutItemBackpackSatchelLeather
   category: Backpacks
   cost: 1
+  exclusive: true
   items:
     - ClothingBackpackSatchelLeather
   requirements:
