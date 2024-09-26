@@ -28,7 +28,8 @@ public sealed partial class EmpathyChatSystem : EntitySystem
 
     private void OnSpeak(EntityUid uid, LanguageSpeakerComponent component, EntitySpokeEvent args)
     {
-        if (!args.Language.SpeechOverride.EmpathySpeech && !HasComp<ShadowkinBlackeyeComponent>(args.Source))
+        if (args.Source == uid
+            && !args.Language.SpeechOverride.EmpathySpeech && !HasComp<ShadowkinBlackeyeComponent>(args.Source))
             return;
 
         SendEmpathyChat(args.Source, args.Message, false);
