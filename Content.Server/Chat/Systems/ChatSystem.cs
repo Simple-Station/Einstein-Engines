@@ -278,10 +278,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             case InGameICChatType.Telepathic:
                 _telepath.SendTelepathicChat(source, message, range == ChatTransmitRange.HideChat);
                 break;
-            case InGameICChatType.Empathy:
-                SendEntitySpeak(source, message, range, nameOverride, language, hideLog, ignoreActionBlocker);
-                SendEmpathy(source, message, range == ChatTransmitRange.HideChat);
-                break;
         }
     }
 
@@ -635,21 +631,6 @@ public sealed partial class ChatSystem : SharedChatSystem
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"LOOC from {player:Player}: {message}");
     }
 
-    private void SendEmpathy(EntityUid source, string message, bool hideChat)
-    {
-        if (HasComp<ShadowkinBlackeyeComponent>(source))
-            return;
-
-        var clients = GetEmpathChatClients();
-        string wrappedMessage;
-
-        wrappedMessage = Loc.GetString("chat-manager-send-empathy-chat-wrap-message",
-                ("source", source),
-                ("message", FormattedMessage.EscapeText(message)));
-
-        _chatManager.ChatMessageToMany(ChatChannel.Telepathic, message, wrappedMessage, source, hideChat, true, clients.ToList(), Color.FromHex("#be3cc5"));
-    }
-
     private void SendDeadChat(EntityUid source, ICommonSession player, string message, bool hideChat)
     {
         var clients = GetDeadChatClients();
@@ -838,16 +819,6 @@ public sealed partial class ChatSystem : SharedChatSystem
     {
         return Filter.Empty()
             .AddWhereAttachedEntity(HasComp<GhostComponent>)
-            .Recipients
-            .Union(_adminManager.ActiveAdmins)
-            .Select(p => p.Channel);
-    }
-
-    private IEnumerable<INetChannel> GetEmpathChatClients()
-    {
-        return Filter.Empty()
-            .AddWhereAttachedEntity(entity =>
-            _language.CanUnderstand(entity, "Marish") && !HasComp<ShadowkinBlackeyeComponent>(entity))
             .Recipients
             .Union(_adminManager.ActiveAdmins)
             .Select(p => p.Channel);

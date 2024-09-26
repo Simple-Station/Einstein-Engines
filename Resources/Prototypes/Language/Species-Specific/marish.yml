@@ -2,10 +2,10 @@
 - type: language
   id: Marish
   speech:
-    chatTypeOverride: Empathy
     color: "#be3cc5"
     fontId: Gabriola
     fontSize: 18
+    empathySpeech: true
   speechVerbOverrides:
     - chat-speech-verb-marish
   obfuscation:
