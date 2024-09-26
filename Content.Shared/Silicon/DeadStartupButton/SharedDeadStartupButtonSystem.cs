@@ -13,7 +13,7 @@ namespace Content.Shared.Silicon.DeadStartupButton;
 ///     This creates a Button that can be activated after an entity, usually a silicon or an IPC, died.
 ///     This will activate a doAfter and then revive the entity, playing a custom afterward sound.
 /// </summary>
-public partial class SharedDeadStartupButtonSystem : EntitySystem
+public abstract partial class SharedDeadStartupButtonSystem : EntitySystem
 {
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
