@@ -128,9 +128,11 @@
         Slash: 5
   - type: Vocal
     sounds:
-      Male: MaleSlime
-      Female: FemaleSlime
-      Unsexed: MaleSlime
+      Male: MaleShadowkin
+      Female: FemaleShadowkin
+      Unsexed: MaleShadowkin
+  - type: TypingIndicator
+    proto: alien
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.7
     baseSprintSpeed : 4.5

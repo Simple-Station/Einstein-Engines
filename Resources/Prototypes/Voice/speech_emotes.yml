@@ -176,3 +176,17 @@
   chatMessages: [ whirrs ]
   chatTriggers:
     - whirrs
+
+- type: emote
+  id: Mars
+  category: Vocal
+  chatMessages: [ mars ]
+  chatTriggers:
+    - mars
+
+- type: emote
+  id: Wurble
+  category: Vocal
+  chatMessages: [ wurble ]
+  chatTriggers:
+    - wurble
