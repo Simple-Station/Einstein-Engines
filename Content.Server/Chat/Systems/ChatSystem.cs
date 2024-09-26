@@ -39,7 +39,6 @@ using Robust.Shared.Utility;
 using Content.Server.Shuttles.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics.Joints;
-using Content.Server.Shadowkin;
 
 namespace Content.Server.Chat.Systems;
 
