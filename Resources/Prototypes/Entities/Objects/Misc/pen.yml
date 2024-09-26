@@ -76,6 +76,7 @@
 - type: entity
   id: BaseAdvancedPen
   parent: PenEmbeddable
+  abstract: true
   components:
   - type: Tag
     tags:
