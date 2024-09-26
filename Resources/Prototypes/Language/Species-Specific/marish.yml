@@ -6,7 +6,7 @@
     fontId: Gabriola
     fontSize: 18
     empathySpeech: true
-  speechVerbOverrides:
+    SpeechVerbOverrides:
     - chat-speech-verb-marish
   obfuscation:
     !type:SyllableObfuscation
