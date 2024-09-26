@@ -29,7 +29,4 @@
     shoes: ClothingShoesColorBlack
     id: CentcomPDA
     ears: ClothingHeadsetCentCom
-    pocket1: CaneSheathFilledNanotrasen
-  storage:
-    back:
-    - RubberStampCentcom
+    pocket1: UniqueNanorepLockerTeleporter

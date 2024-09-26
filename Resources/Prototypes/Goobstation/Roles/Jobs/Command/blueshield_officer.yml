@@ -37,8 +37,10 @@
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesMedSec
     gloves: ClothingHandsGlovesCombat
-    #outerClothing: ClothingBlueshieldArmourVest
     id: BlueshieldPDA
+    pocket1: UniqueBlueshieldOfficerLockerTeleporter
+
+    #outerClothing: ClothingBlueshieldArmourVest
     #ears: ClothingHeadsetAltCommand
     #belt: ClothingBeltSecurityFilled
     #pocket1: WeaponPistolMk58
