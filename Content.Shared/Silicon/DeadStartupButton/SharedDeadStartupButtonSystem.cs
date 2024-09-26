@@ -1,4 +1,5 @@
 using Content.Shared.DoAfter;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
@@ -12,7 +13,7 @@ namespace Content.Shared.Silicon.DeadStartupButton;
 ///     This creates a Button that can be activated after an entity, usually a silicon or an IPC, died.
 ///     This will activate a doAfter and then revive the entity, playing a custom afterward sound.
 /// </summary>
-public abstract partial class SharedDeadStartupButtonSystem : EntitySystem
+public partial class SharedDeadStartupButtonSystem : EntitySystem
 {
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -27,7 +28,8 @@ public abstract partial class SharedDeadStartupButtonSystem : EntitySystem
 
     private void AddTurnOnVerb(EntityUid uid, DeadStartupButtonComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!_mobState.IsDead(uid)
+        if (!TryComp<MobStateComponent>(uid, out var mobState)
+            || !_mobState.IsDead(uid, mobState)
             || !args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
 
