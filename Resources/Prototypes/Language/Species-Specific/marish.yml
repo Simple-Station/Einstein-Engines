@@ -6,12 +6,12 @@
     fontId: Gabriola
     fontSize: 18
     empathySpeech: true
-    SpeechVerbOverrides:
+    speechVerbOverrides:
     - chat-speech-verb-marish
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1 # Replacements are really short
-    maxSyllables: 3
+    maxSyllables: 2
     replacement:
     - mar
     - mwrrr
