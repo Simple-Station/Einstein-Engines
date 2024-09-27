@@ -156,7 +156,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             Broadcast = true,
             BreakOnHandChange = proto.RequiresHands,
             NeedHand = proto.RequiresHands,
-            RequireCanInteract = proto.RequiresCanInteract,
+            RequireCanInteract = proto.RequiresCanAccess,
             Delay = delay,
             Event = new InteractionVerbDoAfterEvent(proto.ID, args)
         };
@@ -271,7 +271,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             return false;
         }
 
-        if (proto.RequiresCanInteract && args is not { CanInteract: true, CanAccess: true } || !proto.Range.IsInRange(distance))
+        if (!args.CanInteract || proto.RequiresCanAccess && !args.CanAccess || !proto.Range.IsInRange(distance))
         {
             errorLocale = "interaction-verb-cannot-reach";
             return false;
