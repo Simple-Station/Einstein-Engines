@@ -25,7 +25,7 @@ public sealed partial class NarcolepsyComponent : Component
 
     /// <summary>
     ///     Locales for popups shown when the entity is about to fall asleep/is waking up.
-    ///     They are fetched in the format of "(base)-(random number between 1 and count)", e.g. "narocolepsy-warning-popup-3".
+    ///     They are fetched in the format of "(base)-(random number between 1 and count)", e.g. "narcolepsy-warning-popup-3".
     /// </summary>
     [DataField]
     public string WarningLocaleBase = "narcolepsy-warning-popup", WakeupLocaleBase = "narcolepsy-wakeup-popup";
