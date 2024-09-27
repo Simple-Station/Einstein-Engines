@@ -15,8 +15,8 @@ using NpgsqlTypes;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    [Migration("20240505230501_Loadouts")]
-    partial class Loadouts
+    [Migration("20240623005113_BanTemplate")]
+    partial class BanTemplate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
