@@ -153,7 +153,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public bool RequiresHands = false;
 
     /// <summary>
-    ///     Whether this verb requires the user to be able to interact with the target normally.
+    ///     Whether this verb requires the user to be able to access the target normally (with their hands or otherwise).
     /// </summary>
     /// <remarks>The misleading yml name is kept for backwards compatibility with downstreams.</remarks>
     [DataField("requiresCanInteract")]
