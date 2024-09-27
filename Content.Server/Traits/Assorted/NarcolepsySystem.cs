@@ -75,7 +75,10 @@ public sealed class NarcolepsySystem : EntitySystem
                 // Roll for showing a popup. There should really be a class for doing this.
                 narcolepsy.LastWarningRollTime = narcolepsy.NextIncidentTime;
                 if (_random.Prob(narcolepsy.WarningChancePerSecond))
+                {
                     ShowRandomPopup(uid, narcolepsy.WarningLocaleBase, narcolepsy.WakeupLocaleCount);
+                    narcolepsy.LastWarningRollTime = 0f; // Do not show any more popups for the upcoming incident
+                }
             }
 
             if (narcolepsy.NextIncidentTime >= 0)
@@ -107,7 +110,8 @@ public sealed class NarcolepsySystem : EntitySystem
 
         var popup = Loc.GetString($"{prefix}-{_random.Next(1, count + 1)}");
         _popups.PopupEntity(popup, uid, uid, PopupType.MediumCaution);
-        _chatMan.ChatMessageToOne(ChatChannel.Visual, popup, popup, uid, true,
+        // This should use ChatChannel.Visual, but it's not displayed on the client.
+        _chatMan.ChatMessageToOne(ChatChannel.Notifications, popup, popup, uid, false,
             actor.PlayerSession.Channel, Color.IndianRed);
     }
 }

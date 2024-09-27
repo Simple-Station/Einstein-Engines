@@ -34,7 +34,7 @@ public sealed partial class NarcolepsyComponent : Component
     public int WarningLocaleCount = 5, WakeupLocaleCount = 3;
 
     [DataField]
-    public float TimeBeforeWarning = 25f, WarningChancePerSecond = 0.15f;
+    public float TimeBeforeWarning = 25f, WarningChancePerSecond = 0.25f;
 
     public float LastWarningRollTime = float.MaxValue;
 }
