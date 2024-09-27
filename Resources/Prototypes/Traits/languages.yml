@@ -65,3 +65,15 @@
     - Elyran
   languagesUnderstood:
     - Elyran
+
+- type: trait
+  id: ValyrianStandard
+  category: TraitsSpeechLanguages
+  points: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+  languagesSpoken:
+    - ValyrianStandard
+  languagesUnderstood:
+    - ValyrianStandard
