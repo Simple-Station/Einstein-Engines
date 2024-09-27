@@ -178,7 +178,8 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         if (_net.IsClient)
             return; // this leads to issues
 
-        if (!proto.Action!.CanPerform(args, proto, false, _verbDependencies) && !force
+        if (!PerformChecks(proto, ref args, out _, out _)
+            || !proto.Action!.CanPerform(args, proto, false, _verbDependencies) && !force
             || !proto.Action.Perform(args, proto, _verbDependencies))
         {
             CreateVerbEffects(proto.EffectFailure, Fail, proto, args);
