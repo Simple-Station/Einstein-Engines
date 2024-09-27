@@ -30,7 +30,7 @@ public sealed partial class EmpathyChatSystem : EntitySystem
     {
         if (args.Source != uid
             || !args.Language.SpeechOverride.EmpathySpeech
-            || !HasComp<ShadowkinBlackeyeComponent>(args.Source))
+            || HasComp<ShadowkinBlackeyeComponent>(args.Source))
             return;
 
         SendEmpathyChat(args.Source, args.Message, false);
