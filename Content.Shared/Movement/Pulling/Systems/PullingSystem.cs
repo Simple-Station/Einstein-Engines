@@ -144,7 +144,7 @@ public sealed class PullingSystem : EntitySystem
             // We cannot use ApplyForce here because it will be cleared on the next physics substep which will render it ultimately useless
             // The alternative is to run this function on every physics substep, but that is way too expensive for such a minor system
             _physics.ApplyLinearImpulse(pulled, actualImpulse);
-            if (!_gravity.IsWeightless(puller, pullerPhysics, pullerXForm))
+            if (_gravity.IsWeightless(puller, pullerPhysics, pullerXForm))
                 _physics.ApplyLinearImpulse(puller, -actualImpulse);
 
             pulledComp.BeingActivelyPushed = true;
