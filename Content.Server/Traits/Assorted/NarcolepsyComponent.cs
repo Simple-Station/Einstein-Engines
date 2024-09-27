@@ -20,5 +20,21 @@ public sealed partial class NarcolepsyComponent : Component
     [DataField("durationOfIncident", required: true)]
     public Vector2 DurationOfIncident { get; private set; }
 
+    [DataField]
     public float NextIncidentTime;
+
+    /// <summary>
+    ///     Locales for popups shown when the entity is about to fall asleep/is waking up.
+    ///     They are fetched in the format of "(base)-(random number between 1 and count)", e.g. "narocolepsy-warning-popup-3".
+    /// </summary>
+    [DataField]
+    public string WarningLocaleBase = "narcolepsy-warning-popup", WakeupLocaleBase = "narcolepsy-wakeup-popup";
+
+    [DataField]
+    public int WarningLocaleCount = 5, WakeupLocaleCount = 3;
+
+    [DataField]
+    public float TimeBeforeWarning = 15f, WarningChancePerSecond = 0.15f;
+
+    public float LastWarningRollTime = float.MaxValue;
 }
