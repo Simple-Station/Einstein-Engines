@@ -122,16 +122,15 @@ public sealed class MoodSystem : EntitySystem
                 if (!_prototypeManager.TryIndex<MoodEffectPrototype>(oldPrototypeId, out var oldPrototype))
                     return;
 
-                if (prototype.ID != oldPrototype.ID)
-                {
+                // Don't send the moodlet popup if we already have the moodlet.
+                if (!component.CategorisedEffects.ContainsValue(prototype.ID))
                     SendEffectText(uid, prototype);
+
+                if (prototype.ID != oldPrototype.ID)
                     component.CategorisedEffects[prototype.Category] = prototype.ID;
-                }
             }
             else
-            {
                 component.CategorisedEffects.Add(prototype.Category, prototype.ID);
-            }
 
             if (prototype.Timeout != 0)
                 Timer.Spawn(TimeSpan.FromSeconds(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
@@ -146,7 +145,10 @@ public sealed class MoodSystem : EntitySystem
             if (moodChange == 0)
                 return;
 
-            SendEffectText(uid, prototype);
+            // Don't send the moodlet popup if we already have the moodlet.
+            if (!component.UncategorisedEffects.ContainsKey(prototype.ID))
+                SendEffectText(uid, prototype);
+
             component.UncategorisedEffects.Add(prototype.ID, moodChange);
 
             if (prototype.Timeout != 0)

@@ -7,6 +7,10 @@
   root: true
 
 - type: loadoutCategory
+  id: Backpacks
+  root: true
+
+- type: loadoutCategory
   id: Eyes
   root: true
 
@@ -85,7 +89,7 @@
 
 - type: loadoutCategory
   id: JobsScience
-  
+
 - type: loadoutCategory
   id: JobsSecurity
 

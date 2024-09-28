@@ -2,6 +2,7 @@ using Content.Shared.Abilities.Psionics;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mood;
 using Robust.Shared.Configuration;
@@ -226,7 +227,8 @@ public sealed partial class ContestsSystem : EntitySystem
         if (!_cfg.GetCVar(CCVars.DoContestsSystem)
             || !_cfg.GetCVar(CCVars.DoHealthContests)
             || !TryComp<DamageableComponent>(performer, out var damage)
-            || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.Critical, out var threshold))
+            || !TryComp<MobThresholdsComponent>(performer, out var thresholdsComponent)
+            || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.Critical, out var threshold, thresholdsComponent))
             return 1f;
 
         return ContestClamp(ContestClampOverride(bypassClamp)
@@ -247,8 +249,10 @@ public sealed partial class ContestsSystem : EntitySystem
             || !_cfg.GetCVar(CCVars.DoHealthContests)
             || !TryComp<DamageableComponent>(performer, out var perfDamage)
             || !TryComp<DamageableComponent>(target, out var targetDamage)
-            || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.Critical, out var perfThreshold)
-            || !_mobThreshold.TryGetThresholdForState(target, Mobs.MobState.Critical, out var targetThreshold))
+            || !TryComp<MobThresholdsComponent>(performer, out var perfThresholdComp)
+            || !TryComp<MobThresholdsComponent>(target, out var targetThresholdComp)
+            || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.Critical, out var perfThreshold, perfThresholdComp)
+            || !_mobThreshold.TryGetThresholdForState(target, Mobs.MobState.Critical, out var targetThreshold, targetThresholdComp))
             return 1f;
 
         return ContestClamp(ContestClampOverride(bypassClamp)
