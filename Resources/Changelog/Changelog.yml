@@ -6710,3 +6710,10 @@ Entries:
   id: 6393
   time: '2024-09-28T02:30:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/948
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Noospheric events should once again occur on lower glimmer levels.
+  id: 6394
+  time: '2024-09-28T02:43:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/969
