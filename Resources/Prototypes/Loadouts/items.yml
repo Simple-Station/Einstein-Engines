@@ -684,18 +684,6 @@
     - PersonalAI
 
 - type: loadout
-  id: LoadoutItemBackpackSatchelLeather
-  category: Items
-  cost: 1
-  items:
-    - ClothingBackpackSatchelLeather
-  requirements:
-    - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - Prisoner
-
-- type: loadout
   id: LoadoutItemWaistbag
   category: Items
   cost: 2
