@@ -6737,3 +6737,16 @@ Entries:
   id: 6396
   time: '2024-09-28T03:10:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/964
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpies now have their own species-specific language, called Valyrian
+        Standard
+    - type: Add
+      message: >-
+        Valyrian Standard can now be bought as an extra language in the Traits
+        menu.
+  id: 6397
+  time: '2024-09-28T14:42:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/968
