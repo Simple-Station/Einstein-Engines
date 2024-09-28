@@ -65,3 +65,7 @@
 - type: font
   id: Gabriola
   path: /Fonts/Gabriola.ttf
+  
+- type: font
+  id: Cambria
+  path: /Fonts/Cambria.ttf
