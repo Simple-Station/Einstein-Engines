@@ -6672,3 +6672,18 @@ Entries:
   id: 6389
   time: '2024-09-26T15:06:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/956
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Backpacks, Duffelbags, and Satchels have been added to loadouts.
+    - type: Remove
+      message: >-
+        The button for "Backpack Preference" has been removed. Backpacks
+        selection is now done via Loadouts.
+    - type: Remove
+      message: >-
+        The button for "Suit/Skirt Preference" has also been removed. Suit
+        selection is done via Loadouts. 
+  id: 6390
+  time: '2024-09-28T00:46:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/957
