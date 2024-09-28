@@ -22,7 +22,7 @@ public sealed partial class PullerComponent : Component
     public TimeSpan NextPushStop;
 
     [DataField]
-    public TimeSpan PushChangeCooldown = TimeSpan.FromSeconds(0.1f), PushDuration = TimeSpan.FromSeconds(2f);
+    public TimeSpan PushChangeCooldown = TimeSpan.FromSeconds(0.1f), PushDuration = TimeSpan.FromSeconds(5f);
 
     // Before changing how this is updated, please see SharedPullerSystem.RefreshMovementSpeed
     public float WalkSpeedModifier => Pulling == default ? 1.0f : 0.95f;

@@ -6665,3 +6665,75 @@ Entries:
   id: 6388
   time: '2024-09-25T05:09:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/959
+- author: fenndragon
+  changes:
+    - type: Add
+      message: Added new neutral xenos, events, and reagent slimes
+  id: 6389
+  time: '2024-09-26T15:06:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/956
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Backpacks, Duffelbags, and Satchels have been added to loadouts.
+    - type: Remove
+      message: >-
+        The button for "Backpack Preference" has been removed. Backpacks
+        selection is now done via Loadouts.
+    - type: Remove
+      message: >-
+        The button for "Suit/Skirt Preference" has also been removed. Suit
+        selection is done via Loadouts. 
+  id: 6390
+  time: '2024-09-28T00:46:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/957
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed a bug where the button to reboot IPCs wasn't appearing.
+  id: 6391
+  time: '2024-09-28T02:23:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/963
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fix a crash related to Luminous Entities.
+  id: 6392
+  time: '2024-09-28T02:28:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/954
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Smoking cigarettes or drinking loto oil will no longer spam moodlet
+        popup messages.
+  id: 6393
+  time: '2024-09-28T02:30:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/948
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Noospheric events should once again occur on lower glimmer levels.
+  id: 6394
+  time: '2024-09-28T02:43:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/969
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Pushing something no longer causes your character to move, but only if
+        there is gravity holding you down.
+    - type: Tweak
+      message: >-
+        Pushing an object with Ctrl-RMB now pushes it continuously for up to 5
+        seconds instead of 2.
+  id: 6395
+  time: '2024-09-28T02:44:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/966
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Humans can now have tail and ear markings.
+  id: 6396
+  time: '2024-09-28T03:10:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/964
