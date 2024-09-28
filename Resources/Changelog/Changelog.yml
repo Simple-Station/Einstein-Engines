@@ -6717,3 +6717,16 @@ Entries:
   id: 6394
   time: '2024-09-28T02:43:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/969
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Pushing something no longer causes your character to move, but only if
+        there is gravity holding you down.
+    - type: Tweak
+      message: >-
+        Pushing an object with Ctrl-RMB now pushes it continuously for up to 5
+        seconds instead of 2.
+  id: 6395
+  time: '2024-09-28T02:44:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/966
