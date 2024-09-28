@@ -6687,3 +6687,10 @@ Entries:
   id: 6390
   time: '2024-09-28T00:46:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/957
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed a bug where the button to reboot IPCs wasn't appearing.
+  id: 6391
+  time: '2024-09-28T02:23:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/963
