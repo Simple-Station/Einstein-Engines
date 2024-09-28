@@ -42,7 +42,7 @@ public sealed partial class ImmovableRodComponent : Component
     ///     If true, this will gib & delete bodies
     /// </summary>
     [DataField]
-    public bool ShouldGib = true;
+    public bool ShouldGib = false;
 
     /// <summary>
     ///     Damage done, if not gibbing
