@@ -12,6 +12,8 @@
       id: Freespeak
     - type: trait
       id: Elyran
+    - type: trait
+      id: ValyrianStandard
 
 - type: characterItemGroup
   id: TraitsAccents
