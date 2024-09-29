@@ -398,7 +398,7 @@
     - id: MobArgocyteFounder
       prob: 0.003
     - id: MobArgocyteLeviathing
-      prob: 0.001
+      prob: 0.0001
 
 - type: entity
   id: MeatVents
