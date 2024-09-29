@@ -1,8 +1,7 @@
 using Content.Server.Psionics;
 
 namespace Content.Server.Traits.Assorted;
-
-public sealed class PotentiaModifierSystem : EntitySystem
+public sealed partial class PotentiaModifierSystem : EntitySystem
 {
     public override void Initialize()
     {
