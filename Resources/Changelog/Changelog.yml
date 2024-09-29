@@ -6750,3 +6750,13 @@ Entries:
   id: 6397
   time: '2024-09-28T14:42:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/968
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug with Healing Word and Breath of Life where if the caster was
+        moved by another person mid-cast, they would permanently become unable
+        to cast it again.
+  id: 6398
+  time: '2024-09-29T01:43:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/970
