@@ -1,7 +1,7 @@
 using System.Linq;
 using Content.Server.GameTicking.Components;
 using Robust.Shared.Random;
-using Content.Server.GameTicking.Rules.Components;
+using Content.Server.GameTicking;
 using Content.Server.NPC.Components;
 using Content.Server.Psionics.Glimmer;
 using Content.Server.StationEvents.Components;
@@ -14,15 +14,44 @@ public sealed class GlimmerMobRule : StationEventSystem<GlimmerMobRuleComponent>
 {
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
 
 
     protected override void Started(EntityUid uid, GlimmerMobRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
 
-        var glimmerSources = EntityQuery<GlimmerSourceComponent, TransformComponent>().ToList();
-        var normalSpawnLocations = EntityQuery<VentCritterSpawnLocationComponent, TransformComponent>().ToList();
-        var hiddenSpawnLocations = EntityQuery<MidRoundAntagSpawnLocationComponent, TransformComponent>().ToList();
+        var station = _gameTicker.GetSpawnableStations();
+        if (station is null)
+            return;
+
+        var glimmerSources = new List<(GlimmerSourceComponent, TransformComponent)>();
+        foreach (var source in EntityQuery<GlimmerSourceComponent, TransformComponent>().ToList())
+        {
+            if (source.Item2.GridUid != Transform(station[0]).GridUid)
+                continue;
+
+            glimmerSources.Add(source);
+        }
+
+
+        var normalSpawnLocations = new List<(VentCritterSpawnLocationComponent, TransformComponent)>();
+        foreach (var source in EntityQuery<VentCritterSpawnLocationComponent, TransformComponent>().ToList())
+        {
+            if (source.Item2.GridUid != Transform(station[0]).GridUid)
+                continue;
+
+            normalSpawnLocations.Add(source);
+        }
+
+        var hiddenSpawnLocations = new List<(MidRoundAntagSpawnLocationComponent, TransformComponent)>();
+        foreach (var source in EntityQuery<MidRoundAntagSpawnLocationComponent, TransformComponent>().ToList())
+        {
+            if (source.Item2.GridUid != Transform(station[0]).GridUid)
+                continue;
+
+            hiddenSpawnLocations.Add(source);
+        }
 
         var baseCount = Math.Max(1, EntityQuery<PsionicComponent, NpcFactionMemberComponent>().Count() / 10);
         int multiplier = Math.Max(1, (int) _glimmerSystem.GetGlimmerTier() - 2);
