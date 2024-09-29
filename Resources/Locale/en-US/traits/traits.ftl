@@ -323,28 +323,28 @@ trait-description-ValyrianStandard =
 
 trait-name-LowPotential = Low Psi-Potential
 trait-description-LowPotential =
-    When attempting to roll for new psionic powers, you gain 25% less Potentia during the roll. This effectively makes it harder to obtain new powers.
+    You possess an unusually weak connection to the noösphere, which makes it more difficult to obtain new psionic powers.
 
 trait-name-HighPotential = High Psi-Potential
 trait-description-HighPotential =
-    When attempting to roll for new psionic powers, you game 25% more Potentia during the roll. This effectively makes it easier to obtain new powers.
+    Your connection to the noösphere is greater than average, making it easier to obtain new psionic powers.
 
-trait-name-LowAmplification = Low Psi-Amplification
+trait-name-LowAmplification = kα Deficiency
 trait-description-LowAmplifiction =
-    The positive effects of all psionic powers cast by you are decreased.
+    Your psionic abilities are noticeably weaker than ones used by other psions.
 
-trait-name-HighAmplification = High Psi-Amplification
+trait-name-HighAmplification = kα Abundance
 trait-description-HighAmplification =
-    The positive effects of all psionic powers cast by you are increased.
+    Your psionic abilities are stronger than those of other psions.
 
 trait-name-PowerOverwhelming = Power Overwhelming
 trait-description-PowerOverwhelming =
     WITNESS MY HATE MORTALS, COWER BEFORE MY PSIONIC MIGHT! REALITY IS AS I DEEM IT.
 
-trait-name-LowDampening = Low Psi-Dampening
+trait-name-LowDampening = kδ Defect
 trait-description-LowDampening =
-    Guh low dampening make this a fancier description
+    Your skill in manipulating the noösphere is weaker than others. You may experience unintended effects from using your abilities.
 
-trait-name-HighDampening = High Psi-Dampening
+trait-name-HighDampening = kδ Proficient
 trait-description-HighDampening =
-    Guh high dampening make this a fancier vague description
+    You are skilled in the art of subtly manipulating the noösphere. Your powers are less likely to show unintended effects.
