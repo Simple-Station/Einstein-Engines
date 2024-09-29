@@ -3,9 +3,26 @@
   category: Mental
   points: -5
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
