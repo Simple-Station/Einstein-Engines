@@ -218,7 +218,7 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
         color: "#c6c8cc"
-        
+
 - type: entity
   id: reagentslimeVents
   parent: BaseGameRule
@@ -234,56 +234,56 @@
   - type: VentCrittersRule
     entries:
     - id: ReagentSlime
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeBeer
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimePax
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeNocturine
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeTHC
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeBicaridine
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeToxin
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeNapalm
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeOmnizine
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeMuteToxin
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeNorepinephricAcid
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeEphedrine
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeRobustHarvest
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeIchor
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeBleach
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeSoap
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeSpacelube
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeBuzzachloricbees
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeWehjuice
-      prob: 0.01
+      prob: 0.005
     - id: ReagentCognizine
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeNecrosol
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeSpaceDrugs
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeUnstableMutagen
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeLead
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimechlorinetriflouride
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimePotassium
-      prob: 0.01
+      prob: 0.005
     - id: ReagentSlimeLotophagoiOil
-      prob: 0.01
+      prob: 0.005
