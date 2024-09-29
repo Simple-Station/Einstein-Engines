@@ -6774,3 +6774,12 @@ Entries:
   id: 6399
   time: '2024-09-29T01:43:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/972
+- author: Aikakakah
+  changes:
+    - type: Fix
+      message: Fixed markings having incomplete names for color sections
+    - type: Fix
+      message: Fixed IPC marking categories
+  id: 6400
+  time: '2024-09-29T01:58:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/974
