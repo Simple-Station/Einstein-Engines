@@ -6783,3 +6783,13 @@ Entries:
   id: 6400
   time: '2024-09-29T01:58:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/974
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Nerfed the fuck out of Reagent Slimes. They have 1/3rd as much HP, spawn
+        half as many during reagent slime vents, deal significantly less damage,
+        and inject a lot less chems when biting people. 
+  id: 6401
+  time: '2024-09-29T17:42:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/977
