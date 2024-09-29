@@ -195,7 +195,6 @@
     checkCanAccess: false
     range: 2
     itemIconStyle: BigAction
-    canTargetSelf: false
     blacklist:
       components:
         - PsionicInsulation
@@ -221,3 +220,37 @@
             glimmerSoundThreshold: 50
             glimmerPopupThreshold: 100
             glimmerDoAfterVisibilityThreshold: 35
+
+- type: entity
+  id: ActionShadeskip
+  name: action-name-shadeskip
+  description: action-description-shadeskip
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: { sprite : Interface/Actions/psionics.rsi, state: shadeskip }
+    useDelay: 45
+    checkCanInteract: false
+    event: !type:AnomalyPowerActionEvent
+            powerName: "Shadeskip"
+            minGlimmer: 6
+            maxGlimmer: 8
+            supercriticalGlimmerMultiplier: 3
+            glimmerSoundThreshold: 50
+            supercriticalThreshold: 500
+            entitySpawnEntries:
+              - settings:
+                  spawnOnPulse: true
+                  spawnOnSuperCritical: true
+                  minAmount: 5
+                  maxAmount: 8
+                  maxRange: 1.5
+                spawns:
+                - ShadowKudzuWeak
+              - settings:
+                  spawnOnSuperCritical: true
+                  minAmount: 15
+                  maxAmount: 25
+                  maxRange: 50
+                spawns:
+                - ShadowKudzu

@@ -162,3 +162,13 @@
   metapsionicFeedback: revivify-power-feedback
   amplificationModifier: 2.5 # An extremely rare and dangerous power
   powerSlotCost: 2
+
+- type: psionicPower
+  id: ShadeskipPower
+  name: Shadeskip
+  description: shadeskip-power-description
+  actions:
+  - ActionShadeskip
+  initializationFeedback: shadeskip-power-initialization-feedback
+  metapsionicFeedback: shadeskip-power-metapsionic-feedback
+  amplificationModifier: 1
