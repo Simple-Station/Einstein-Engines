@@ -465,7 +465,7 @@
     - id: MobCarpRainbow
       prob: 0.01
     - id: MobShark
-      prob: 0.008
+      prob: 0.002
     - id: MobCarpDragon
       prob: 0.01
 
