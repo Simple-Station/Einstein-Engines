@@ -81,6 +81,8 @@ public sealed class GlimmerMobRule : StationEventSystem<GlimmerMobRuleComponent>
                 i++;
                 continue;
             }
+
+            return;
         }
     }
 }
