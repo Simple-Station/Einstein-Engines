@@ -320,3 +320,31 @@ trait-description-ValyrianStandard =
     A language descended from eastern european languages of old earth - Valyrian Standard is the commonly spoken tongue of Harpies brought up on their homeworld of Valyrian 4b
     It is rarely spoken outside of the worlds of its native speakers, and has in modern times been supplanted by the 'Conlangs of the Sol Alliance.
     Its speakers are those who wish to uphold the traditions and beliefs of ancient peoples from before the colonial era.
+
+trait-name-LowPotential = Low Psi-Potential
+trait-description-LowPotential =
+    When attempting to roll for new psionic powers, you gain 25% less Potentia during the roll. This effectively makes it harder to obtain new powers.
+
+trait-name-HighPotential = High Psi-Potential
+trait-description-HighPotential =
+    When attempting to roll for new psionic powers, you game 25% more Potentia during the roll. This effectively makes it easier to obtain new powers.
+
+trait-name-LowAmplification = Low Psi-Amplification
+trait-description-LowAmplifiction =
+    The positive effects of all psionic powers cast by you are decreased.
+
+trait-name-HighAmplification = High Psi-Amplification
+trait-description-HighAmplification =
+    The positive effects of all psionic powers cast by you are increased.
+
+trait-name-PowerOverwhelming = Power Overwhelming
+trait-description-PowerOverwhelming =
+    WITNESS MY HATE MORTALS, COWER BEFORE MY PSIONIC MIGHT! REALITY IS AS I DEEM IT.
+
+trait-name-LowDampening = Low Psi-Dampening
+trait-description-LowDampening =
+    Guh low dampening make this a fancier description
+
+trait-name-HighDampening = High Psi-Dampening
+trait-description-HighDampening =
+    Guh high dampening make this a fancier vague description
