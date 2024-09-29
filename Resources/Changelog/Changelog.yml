@@ -6760,3 +6760,17 @@ Entries:
   id: 6398
   time: '2024-09-29T01:43:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/970
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Removed the Psionics Guidebook. It was straight up wrong about most
+        things, and is not ever going to be updated to match new Psionics
+        Content. You are fully intended to "FIND OUT IN GAME" how things work
+        through guessing, trial and error, and just pure happenstance.
+        Experiment with shit. The popups are intentionally vague. You're
+        supposed to think about what they mean. Stop asking admins in Ahelps
+        what the vague text means.
+  id: 6399
+  time: '2024-09-29T01:43:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/972
