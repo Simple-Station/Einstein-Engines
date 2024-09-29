@@ -6,6 +6,10 @@
     - !type:CharacterTraitRequirement
       traits:
         - LatentPsychic
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
   components:
     - type: PotentiaModifier
       potentiaMultiplier: 1.25
@@ -18,6 +22,10 @@
     - !type:CharacterTraitRequirement
       traits:
         - LatentPsychic
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
   components:
     - type: PotentiaModifier
       potentiaMultiplier: 0.75
