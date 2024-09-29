@@ -461,7 +461,7 @@
     - id: MobCarpMagic
       prob: 0.01
     - id: MobCarpHolo
-      prob: 0.008
+      prob: 0.002
     - id: MobCarpRainbow
       prob: 0.01
     - id: MobShark
