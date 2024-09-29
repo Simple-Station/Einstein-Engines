@@ -107,13 +107,14 @@ public sealed class RevivifyPowerSystem : EntitySystem
     private void OnDoAfter(EntityUid uid, PsionicComponent component, PsionicHealOtherDoAfterEvent args)
     {
         // It's entirely possible for the caster to stop being Psionic(due to mindbreaking) mid cast
-        if (component is null
-            || args.Cancelled)
+        if (component is null)
             return;
         component.DoAfter = null;
 
         // The target can also cease existing mid-cast
-        if (args.Target is null)
+        // Or the DoAfter is cancelled(such as if the caster moves).
+        if (args.Target is null
+            || args.Cancelled)
             return;
 
         if (args.RotReduction is not null)

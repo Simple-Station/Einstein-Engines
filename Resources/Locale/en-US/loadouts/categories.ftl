@@ -2,6 +2,7 @@
 
 loadout-category-Uncategorized = Uncategorized
 loadout-category-Accessories = Accessories
+loadout-category-Backpacks = Backpacks
 loadout-category-Eyes = Eyes
 loadout-category-Hands = Hands
 loadout-category-Head = Head
