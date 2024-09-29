@@ -55,6 +55,14 @@ namespace Content.Server.Administration.Systems
 
         private ISawmill _sawmill = default!;
         private readonly HttpClient _httpClient = new();
+        private string _webhookUrl = string.Empty;
+        private WebhookData? _webhookData;
+
+        private string _onCallUrl = string.Empty;
+        private WebhookData? _onCallData;
+
+        private ISawmill _sawmill = default!;
+        private readonly HttpClient _httpClient = new();
 
         private string _footerIconUrl = string.Empty;
         private string _avatarUrl = string.Empty;
