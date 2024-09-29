@@ -42,10 +42,10 @@ public sealed partial class PsionicHealOtherDoAfterEvent : DoAfterEvent
     public TimeSpan StartedAt;
 
     [DataField]
-    public DamageSpecifier HealingAmount = default!;
+    public DamageSpecifier? HealingAmount = default!;
 
     [DataField]
-    public float RotReduction;
+    public float? RotReduction;
 
     [DataField]
     public bool DoRevive;

@@ -75,3 +75,11 @@
   components:
   - type: Implanter
     implant: MofficTranslatorImplant
+
+- type: entity
+  id: ValyrianStandardTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: valyrian standard translator implant
+  components:
+  - type: Implanter
+    implant: ValyrianStandardTranslatorImplant

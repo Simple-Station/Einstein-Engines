@@ -117,10 +117,10 @@
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
-    - Tradeband
+    - ValyrianStandard
     understands:
     - TauCetiBasic
-    - Tradeband
+    - ValyrianStandard
   - type: StepTriggerImmune
     whitelist:
       types:
