@@ -65,10 +65,8 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
         }
 
         if (spawns == null)
-        {
-            //WTF THE STATION DOESN'T EXIST! WE MUST BE IN A TEST! QUICK, PUT A MIMIC AT 0,0!!!
+            //WTF: THE STATION DOESN'T EXIST! WE MUST BE IN A TEST! QUICK, PUT A MIMIC AT 0,0!!!
             Spawn(component.Proto, new EntityCoordinates(uid, new Vector2(0, 0)));
-        }
         else
         {
             // This is intentionally not clamped. If a server host wants to replace every vending machine in the entire station with a mimic, who am I to stop them?
@@ -103,7 +101,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
     {
         var metaData = MetaData(uid);
         var vendorPrototype = metaData.EntityPrototype;
-        var mimicProto = _prototype.Index<EntityPrototype>(component.Proto);
+        var mimicProto = _prototype.Index(component.Proto);
 
         var vendorComponents = vendorPrototype?.Components.Keys
             .Where(n => n != "Transform" && n != "MetaData")
@@ -131,11 +129,8 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
             && component.VendorModify)
             SetupMimicVendor(uid, component, vendor);
     }
-    /// <summary>
-    /// 	This handles getting the entity ready to be a hostile NPC
-    /// </summary>
-    /// <param name="uid"></param>
-    /// <param name="component"></param>
+
+    /// This handles getting the entity ready to be a hostile NPC
     private void SetupMimicNPC(EntityUid uid, MobReplacementRuleComponent component)
     {
         _physics.SetBodyType(uid, BodyType.KinematicController);
@@ -161,12 +156,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
         _npc.WakeNPC(uid, htn);
     }
 
-    /// <summary>
     /// Handling specific interactions with vending machines
-    /// </summary>
-    /// <param name="uid"></param>
-    /// <param name="mimicComponent"></param>
-    /// <param name="vendorComponent"></param>
     private void SetupMimicVendor(EntityUid uid, MobReplacementRuleComponent mimicComponent, AdvertiseComponent vendorComponent)
     {
         vendorComponent.MinimumWait = 5;
