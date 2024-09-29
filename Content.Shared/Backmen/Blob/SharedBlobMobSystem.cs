@@ -28,16 +28,13 @@ public abstract class SharedBlobMobSystem : EntitySystem
 
 
     [ValidatePrototypeId<EntityPrototype>]
-    private const string HealEffect = "EffectHearts";
-
-    private readonly SoundSpecifier _healAudio = new SoundPathSpecifier("/Audio/Backmen/Ambience/blob_heal.ogg");
+    private const string HealEffect = "EffectHealPlusTripleYellow";
 
     private void OnPulse(BlobMobGetPulseEvent ev)
     {
         if(!TryGetEntity(ev.BlobEntity, out var blobEntity))
             return;
 
-        _audioSystem.PlayPredicted(_healAudio, blobEntity.Value, null, AudioParams.Default.WithMaxDistance(4).WithVolume(0.5f));
         SpawnAttachedTo(HealEffect, new EntityCoordinates(blobEntity.Value, Vector2.Zero));
     }
 
