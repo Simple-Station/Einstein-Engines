@@ -233,8 +233,6 @@
     duration: 60
   - type: VentCrittersRule
     entries:
-    - id: ReagentSlime
-      prob: 0.002
     - id: ReagentSlimeBeer
       prob: 0.003
     - id: ReagentSlimePax
