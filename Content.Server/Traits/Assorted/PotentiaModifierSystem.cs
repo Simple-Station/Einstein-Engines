@@ -15,6 +15,6 @@ public sealed class PotentiaModifierSystem : EntitySystem
         if (uid != args.Roller)
             return;
 
-        args.BaselineChance += component.PotentiaMultiplier + component.PotentiaFlatModifier;
+        args.BaselineChance = args.BaselineChance * component.PotentiaMultiplier + component.PotentiaFlatModifier;
     }
 }
