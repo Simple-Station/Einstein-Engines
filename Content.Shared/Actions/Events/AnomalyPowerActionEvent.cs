@@ -59,6 +59,12 @@ public sealed partial class AnomalyPowerActionEvent : InstantActionEvent
     public float SupercriticalThreshold = 500f;
 
     /// <summary>
+    ///     The maximum amount Dampening can increase the Supercritical threshold to.
+    /// </summary>
+    [DataField]
+    public float MaxSupercriticalThreshold = 800f;
+
+    /// <summary>
     ///     What entities will be spawned by this action, using the same arguments as an EntitySpawnAnomalyComponent?
     /// </summary>
     [DataField]

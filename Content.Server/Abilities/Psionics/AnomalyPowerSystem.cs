@@ -36,7 +36,8 @@ public sealed class AnomalyPowerSystem : EntitySystem
             || HasComp<MindbrokenComponent>(uid))
             return;
 
-        var overcharged = _glimmerSystem.Glimmer * component.CurrentAmplification > args.SupercriticalThreshold * component.CurrentDampening;
+        var overcharged = _glimmerSystem.Glimmer * component.CurrentAmplification
+            > Math.Min(args.SupercriticalThreshold * component.CurrentDampening, args.MaxSupercriticalThreshold);
 
         // I already hate this, so much.
         //DoBluespaceAnomalyEffects(uid, component, args, overcharged);
