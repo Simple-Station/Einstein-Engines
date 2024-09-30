@@ -7,6 +7,9 @@ using Content.Shared.Anomaly.Effects.Components;
 using Robust.Shared.Map.Components;
 using Content.Shared.Anomaly;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Actions;
+using Content.Shared.Damage;
+using Content.Server.Popups;
 
 namespace Content.Server.Abilities.Psionics;
 
@@ -18,7 +21,9 @@ public sealed class AnomalyPowerSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
-
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -31,7 +36,7 @@ public sealed class AnomalyPowerSystem : EntitySystem
             || HasComp<MindbrokenComponent>(uid))
             return;
 
-        var overcharged = _glimmerSystem.Glimmer > args.SupercriticalThreshold * component.CurrentAmplification / component.CurrentDampening;
+        var overcharged = _glimmerSystem.Glimmer * component.CurrentAmplification > args.SupercriticalThreshold * component.CurrentDampening;
 
         // I already hate this, so much.
         //DoBluespaceAnomalyEffects(uid, component, args, overcharged);
@@ -47,6 +52,9 @@ public sealed class AnomalyPowerSystem : EntitySystem
 
         DoAnomalySounds(uid, component, args, overcharged);
         DoGlimmerEffects(uid, component, args, overcharged);
+
+        if (overcharged)
+            DoOverchargedEffects(uid, component, args);
 
         args.Handled = true;
     }
@@ -120,5 +128,21 @@ public sealed class AnomalyPowerSystem : EntitySystem
             * component.CurrentAmplification - component.CurrentDampening);
 
         _psionics.LogPowerUsed(uid, args.PowerName, minGlimmer, maxGlimmer);
+    }
+
+    public void DoOverchargedEffects(EntityUid uid, PsionicComponent component, AnomalyPowerActionEvent args)
+    {
+        if (args.OverchargeFeedback is not null
+            && Loc.TryGetString(args.OverchargeFeedback, out var popup))
+            _popup.PopupEntity(popup, uid, uid);
+
+        if (args.OverchargeRecoil is not null)
+            _damageable.TryChangeDamage(uid, args.OverchargeRecoil / component.CurrentDampening, true);
+
+        if (args.OverchargeCooldown > 0)
+            foreach (var action in component.Actions)
+            {
+                _actions.SetCooldown(action.Value, TimeSpan.FromSeconds(args.OverchargeCooldown));
+            }
     }
 }

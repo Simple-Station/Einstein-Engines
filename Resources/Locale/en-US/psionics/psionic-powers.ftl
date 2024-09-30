@@ -120,6 +120,7 @@ shadeskip-power-initialization-feedback =
     My soul begins to wither under its gaze, and I find myself begging for it to look away. The eye laughs, it demands that I serve it or die.
     Knowing I have no choice, I pledge myself to it, and suddenly I am back in the material realm. The eye stares behind me still.
 shadeskip-power-metapsionic-feedback = {CAPITALIZE($entity)} has been claimed by the Lords of the End of Time.
+shadeskip-overcharge-feedback = My body reels from shock as it is overwhelmed by the sheer force flowing through me.
 
 # Psionic System Messages
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience

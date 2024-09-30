@@ -234,6 +234,11 @@
     checkCanInteract: false
     event: !type:AnomalyPowerActionEvent
             powerName: "Shadeskip"
+            overchargeFeedback: "shadeskip-overcharge-feedback"
+            overchargeCooldown: 120
+            overchargeRecoil:
+              groups:
+                Burn: -100 #This will be divided by the caster's Dampening.
             minGlimmer: 6
             maxGlimmer: 8
             supercriticalGlimmerMultiplier: 3
@@ -250,8 +255,8 @@
                 - ShadowKudzuWeak
               - settings:
                   spawnOnSuperCritical: true
-                  minAmount: 15
-                  maxAmount: 25
+                  minAmount: 30
+                  maxAmount: 50
                   maxRange: 50
                 spawns:
                 - ShadowKudzu
