@@ -73,7 +73,7 @@ namespace Content.Client.Lobby
             };
 
             LayoutContainer.SetAnchorPreset(_lobby, LayoutContainer.LayoutPreset.Wide);
-            var serverName = baseClient.GameInfo?.ServerName;
+            var serverName = _baseClient.GameInfo?.ServerName;
             var shortName = _configurationManager.GetCVar(CCVars.ShortHostName);
             _lobby.ServerName.Text = shortName?.Length > 0 ? shortName : serverName?.Length > 16 ? serverName[..16] : serverName;
             UpdateLobbyUi();
