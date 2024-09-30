@@ -543,3 +543,6 @@ binds:
 - function: Hotbar9
   type: State
   key: Num9
+- function: LookUp
+  type: State
+  key: Space

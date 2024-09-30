@@ -25,10 +25,10 @@
     speechVerb: Moth
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - Moffic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Moffic
   - type: TypingIndicator
     proto: moth

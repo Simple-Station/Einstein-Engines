@@ -42,6 +42,7 @@
     visMask:
       - Normal
       - TelegnosticProjection
+      - PsionicInvisibility
   - type: Input
     context: "ghost"
   - type: Examiner

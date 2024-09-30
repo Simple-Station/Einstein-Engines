@@ -5,6 +5,7 @@ using Content.Server.IdentityManagement;
 using Content.Server.Mind.Commands;
 using Content.Server.PDA;
 using Content.Server.Shuttles.Systems;
+using Content.Server.Silicon.IPC;
 using Content.Server.Spawners.EntitySystems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
@@ -46,7 +47,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly SharedAccessSystem _accessSystem = default!;
     [Dependency] private readonly IdentitySystem _identity = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
-
+    [Dependency] private readonly InternalEncryptionKeySpawner _internalEncryption = default!;
     [Dependency] private readonly ArrivalsSystem _arrivalsSystem = default!;
     [Dependency] private readonly ContainerSpawnPointSystem _containerSpawnPointSystem = default!;
 
@@ -84,7 +85,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (station != null && !Resolve(station.Value, ref stationSpawning))
             throw new ArgumentException("Tried to use a non-station entity as a station!", nameof(station));
 
-        // Delta-V: Set desired spawn point type.
         var ev = new PlayerSpawningEvent(job, profile, station, spawnPointType);
 
         if (station != null && profile != null)
@@ -173,9 +173,10 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (prototype?.StartingGear != null)
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
-            EquipStartingGear(entity.Value, startingGear, profile);
+            EquipStartingGear(entity.Value, startingGear);
             if (profile != null)
                 EquipIdCard(entity.Value, profile.Name, prototype, station);
+            _internalEncryption.TryInsertEncryptionKey(entity.Value, startingGear, EntityManager);
         }
 
         if (profile != null)
@@ -274,7 +275,7 @@ public sealed class PlayerSpawningEvent : EntityEventArgs
     /// </summary>
     public readonly EntityUid? Station;
     /// <summary>
-    /// Delta-V: Desired SpawnPointType, if any.
+    /// Desired SpawnPointType, if any.
     /// </summary>
     public readonly SpawnPointType DesiredSpawnPointType;
 

@@ -1,0 +1,100 @@
+- type: characterItemGroup
+  id: LoadoutUniformsService
+  items:
+    - type: loadout
+      id: LoadoutServiceClownOutfitJester
+    - type: loadout
+      id: LoadoutServiceClownOutfitJesterAlt
+    - type: loadout
+      id: LoadoutServiceBartenderUniformPurple
+    - type: loadout
+      id: LoadoutServiceBotanistUniformOveralls
+    - type: loadout
+      id: LoadoutServiceLawyerUniformBlueSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformBlueSkirt
+    - type: loadout
+      id: LoadoutServiceLawyerUniformRedSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformRedSkirt
+    - type: loadout
+      id: LoadoutServiceLawyerUniformPurpleSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformPurpleSkirt
+    - type: loadout
+      id: LoadoutServiceLawyerUniformGoodSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformGoodSkirt
+    - type: loadout
+      id: LoadoutServiceReporterUniformJournalist
+    - type: loadout
+      id: LoadoutServiceReporterUniformDetectivesuit
+    - type: loadout
+      id: LoadoutServiceReporterUniformDetectiveskirt
+
+- type: characterItemGroup
+  id: LoadoutOuterService
+  items:
+    - type: loadout
+      id: LoadoutServiceClownOuterWinter
+    - type: loadout
+      id: LoadoutServiceClownOuterClownPriest
+    - type: loadout
+      id: LoadoutServiceMimeOuterWinter
+
+- type: characterItemGroup
+  id: LoadoutNeckService
+  items:
+    - type: loadout
+      id: LoadoutServiceClownBedsheetClown
+    - type: loadout
+      id: LoadoutServiceMimeBedsheetMime
+
+- type: characterItemGroup
+  id: LoadoutMaskService
+  items:
+    - type: loadout
+      id: LoadoutServiceClownMaskSexy
+    - type: loadout
+      id: LoadoutServiceMimeMaskSad
+    - type: loadout
+      id: LoadoutServiceMimeMaskScared
+    - type: loadout
+      id: LoadoutServiceMimeMaskSexy
+
+- type: characterItemGroup
+  id: LoadoutShoesService
+  items:
+    - type: loadout
+      id: LoadoutServiceClownBootsWinter
+    - type: loadout
+      id: LoadoutServiceMimeShoesBootsWinter
+
+- type: characterItemGroup
+  id: LoadoutEquipmentService
+  items:
+    - type: loadout
+      id: LoadoutServiceClownCowToolboxFilled
+
+# Bartender
+- type: characterItemGroup
+  id: LoadoutBartenderOuterwear
+  items:
+    - type: loadout
+      id: LoadoutServiceBartenderArmorDuraVest
+
+- type: characterItemGroup
+  id: LoadoutBartenderAmmo
+  items:
+    - type: loadout
+      id: LoadoutServiceBartenderBoxBeanbags
+    - type: loadout
+      id: LoadoutServiceBartenderBoxLightRifleRubber
+
+- type: characterItemGroup
+  id: LoadoutBartenderWeapon
+  items:
+    - type: loadout
+      id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
+    - type: loadout
+      id: LoadoutServiceBartenderMosinRubber

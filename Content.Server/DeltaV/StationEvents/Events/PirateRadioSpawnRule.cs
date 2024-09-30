@@ -1,9 +1,3 @@
-/*
-* Delta-V - This file is licensed under AGPLv3
-* Copyright (c) 2024 Delta-V Contributors
-* See AGPLv3.txt for details.
-*/
-
 using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Shared.Configuration;
@@ -19,6 +13,7 @@ using Content.Server.Station.Components;
 using Content.Shared.Salvage;
 using Content.Shared.Random.Helpers;
 using System.Linq;
+using Content.Server.GameTicking.Components;
 using Content.Shared.CCVar;
 
 namespace Content.Server.StationEvents.Events;

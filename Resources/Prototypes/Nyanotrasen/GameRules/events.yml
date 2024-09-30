@@ -8,6 +8,7 @@
       startAnnouncement: true
       weight: 5
       earliestStart: 15
+      reoccurrenceDelay: 5
     - type: NoosphericStormRule
 
 # Mid round antag spawns
@@ -23,13 +24,13 @@
     earliestStart: 25
   - type: MidRoundAntagRule
 
-#- type: entity
-#  noSpawn: true
-#  parent: BaseMidRoundAntag
-#  id: RatKingSpawn
-#  components:
-#  - type: MidRoundAntagRule
-#    spawner: SpawnPointGhostRatKing
+- type: entity
+  noSpawn: true
+  parent: BaseMidRoundAntag
+  id: RatKingSpawn
+  components:
+  - type: MidRoundAntagRule
+    spawner: SpawnPointGhostRatKing
 
 - type: entity
   noSpawn: true
@@ -51,11 +52,14 @@
     - type: GlimmerEvent
 
 ## Glimmer events
+# Blank discharge
 - type: entity
   id: MundaneDischarge
   parent: BaseGlimmerEvent
   noSpawn: true
   components:
+    - type: StationEvent
+      reoccurrenceDelay: 15
     - type: GlimmerEvent
       maximumGlimmer: 300
       glimmerBurnLower: 18
@@ -67,17 +71,21 @@
   parent: BaseGlimmerEvent
   noSpawn: true
   components:
+    - type: StationEvent
+      weight: 25 # Guaranteed to happen every once in a while, but with intervals between incidents
+      reoccurrenceDelay: 15
     - type: GlimmerEvent
     - type: NoosphericZapRule
 
+# Fry tinfoil hats and shoot lightnings from probers
 - type: entity
   id: NoosphericFry
   parent: BaseGlimmerEvent
   noSpawn: true
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 300
-      maximumGlimmer: 900
+      minimumGlimmer: 550
+      maximumGlimmer: 1000
     - type: NoosphericFryRule
 
 - type: entity
@@ -86,8 +94,8 @@
   noSpawn: true
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 200
-      maximumGlimmer: 500
+      minimumGlimmer: 400
+      maximumGlimmer: 1000
       glimmerBurnLower: 18
       glimmerBurnUpper: 40
     - type: PsionicCatGotYourTongueRule
@@ -99,9 +107,10 @@
   components:
     - type: GlimmerEvent
       minimumGlimmer: 900
-      glimmerBurnLower: 50
-      glimmerBurnUpper: 110
+      glimmerBurnLower: 350
+      glimmerBurnUpper: 450 # Unless epistemics badly f-d up, this will restore the glimmer balance for a while.
     - type: MassMindSwapRule
+      isTemporary: true # Permanent mindswap is hell.
 
 #- type: entity
 #  id: GlimmerWispSpawn
@@ -131,9 +140,15 @@
   parent: BaseGlimmerEvent
   noSpawn: true
   components:
+    - type: StationEvent
+      weight: 7
+      duration: 1
+      earliestStart: 15
+      reoccurrenceDelay: 15
+      minimumPlayers: 10
     - type: GlimmerEvent
-      minimumGlimmer: 300
-      maximumGlimmer: 600
+      minimumGlimmer: 250
+      maximumGlimmer: 900
       report: glimmer-event-report-signatures
     - type: GlimmerRandomSentienceRule
 
@@ -143,8 +158,10 @@
   noSpawn: true
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 500
+      minimumGlimmer: 450
       maximumGlimmer: 900
+      glimmerBurnLower: 50
+      glimmerBurnUpper: 100 # Gives epi a chance to recover
       report: glimmer-event-report-signatures
     - type: GlimmerRevenantRule
 
@@ -154,7 +171,7 @@
   noSpawn: true
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 50
+      minimumGlimmer: 250
       maximumGlimmer: 900
       report: glimmer-event-report-signatures
     - type: GlimmerMobRule

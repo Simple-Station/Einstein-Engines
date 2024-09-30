@@ -5,30 +5,12 @@
   id: MobHarpyBase
   abstract: true
   components:
-  - type: HarpySinger
-  - type: Instrument
-    allowPercussion: false
-    program: 52
-  - type: SwappableInstrument
-    instrumentList:
-      "Voice": {52: 0}
-      "Trumpet": {56: 0}
-      "Electric": {27: 0}
-      "Bass": {33: 0}
-      "Rock": {29: 0}
-      "Acoustic": {24: 0}
-      "Flute": {73: 0}
-      "Sax": {66: 0}
-  - type: UserInterface
-    interfaces:
-      - key: enum.InstrumentUiKey.Key
-        type: InstrumentBoundUserInterface
-      - key: enum.VoiceMaskUIKey.Key
-        type: VoiceMaskBoundUserInterface
-      - key: enum.HumanoidMarkingModifierKey.Key
-        type: HumanoidMarkingModifierBoundUserInterface
-      - key: enum.StrippingUiKey.Key
-        type: StrippableBoundUserInterface
+  - type: Flight
+    isLayerAnimated: true
+    layer: "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi"
+    animationKey: "Flap"
+  - type: Singer
+    proto: HarpySinger
   - type: Sprite
     scale: 0.9, 0.9
     layers:
@@ -119,8 +101,8 @@
           False:  {visible: false}
           True:  {visible: true}
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 5.0
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5.5
     weightlessAcceleration: 2.5
   - type: Inventory
     speciesId: harpy
@@ -135,11 +117,17 @@
     - ShoesRequiredStepTriggerImmune
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
-    - SolCommon
+    - TauCetiBasic
+    - ValyrianStandard
     understands:
-    - GalacticCommon
-    - SolCommon
+    - TauCetiBasic
+    - ValyrianStandard
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+      - Shard
+      - Landmine
+      - Mousetrap
 
 - type: entity
   save: false
@@ -218,3 +206,15 @@
     icon: DeltaV/Interface/Actions/harpy_syrinx.png
     itemIconStyle: BigAction
     event: !type:VoiceMaskSetNameEvent
+
+- type: entity
+  id: ActionToggleFlight
+  name: Fly
+  description: Make use of your wings to fly. Beat the flightless bird allegations.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    icon: { sprite: Interface/Actions/flight.rsi, state: flight_off }
+    iconOn: { sprite : Interface/Actions/flight.rsi, state: flight_on }
+    event: !type:ToggleFlightEvent

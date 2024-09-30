@@ -64,6 +64,9 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - Shard
     intersectRatio: 0.2
   - type: ShoesRequiredStepTrigger
   - type: Slippery
@@ -89,7 +92,7 @@
     color: "#bbeeff"
   - type: WelderRefinable
     refineResult:
-    - SheetGlass1
+    - id: SheetGlass1
   - type: DamageUserOnTrigger
     damage:
       types:
@@ -120,8 +123,8 @@
     color: "#96cdef"
   - type: WelderRefinable
     refineResult:
-    - SheetGlass1
-    - PartRodMetal1
+    - id: SheetGlass1
+    - id: PartRodMetal1
   - type: DamageUserOnTrigger
     damage:
       types:
@@ -152,8 +155,8 @@
     color: "#FF72E7"
   - type: WelderRefinable
     refineResult:
-    - SheetGlass1
-    - SheetPlasma1
+    - id: SheetGlass1
+    - id: SheetPlasma1
   - type: DamageUserOnTrigger
     damage:
       types:
@@ -186,8 +189,8 @@
     color: "#8eff7a"
   - type: WelderRefinable
     refineResult:
-    - SheetGlass1
-    - SheetUranium1
+    - id: SheetGlass1
+    - id: SheetUranium1
   - type: DamageUserOnTrigger
     damage:
       types:
@@ -221,8 +224,8 @@
     color: "#e0aa36"
   - type: WelderRefinable
     refineResult:
-    - SheetGlass1
-    - SheetBrass1
+    - id: SheetGlass1
+    - id: SheetBrass1
   - type: DamageUserOnTrigger
     damage:
       types:

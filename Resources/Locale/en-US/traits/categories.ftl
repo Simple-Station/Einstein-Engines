@@ -5,4 +5,7 @@ trait-category-Auditory = Auditory
 trait-category-Mental = Mental
 trait-category-Physical = Physical
 trait-category-Speech = Speech
+trait-category-TraitsSpeechUncategorized = Uncategorized
+trait-category-TraitsSpeechAccents = Accents
+trait-category-TraitsSpeechLanguages = Languages
 trait-category-Visual = Visual

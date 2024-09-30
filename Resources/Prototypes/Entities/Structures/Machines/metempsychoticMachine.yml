@@ -1,0 +1,26 @@
+- type: entity
+  parent: CloningPod
+  id: MetempsychoticMachine
+  name: metempsychotic machine
+  description: Speeds along the transmigration of a soul to its next vessel.
+  components:
+    - type: CloningPod
+      doMetempsychosis: true
+      biomassCostMultiplier: 0.5
+    - type: Machine
+      board: MetempsychoticMachineCircuitboard
+    - type: Sprite
+      sprite: Structures/Machines/metempsychotic.rsi
+      snapCardinals: true
+      layers:
+        - state: cloning_idle
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.CloningPodVisuals.Status:
+          base:
+            Cloning: { state: cloning_active }
+            NoMind: { state: cloning_active }
+            Gore: { state: cloning_failed }
+            Idle: { state: cloning_idle }
+    - type: Psionic

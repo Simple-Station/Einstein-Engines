@@ -70,3 +70,6 @@ guide-entry-space-ninja = Space Ninja
 
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary
+
+guide-entry-altars-golemancy = Altars and Golemancy
+guide-entry-reverse-engineering = Reverse Engineering

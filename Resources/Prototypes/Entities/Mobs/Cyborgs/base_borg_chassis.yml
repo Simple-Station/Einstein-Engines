@@ -218,12 +218,12 @@
       - Normal
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - RobotTalk
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - RobotTalk
-  - type: CanWalk
+  - type: PsionicInsulation
 
 - type: entity
   id: BaseBorgChassisNT

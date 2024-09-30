@@ -1,4 +1,5 @@
 using System.Text;
+using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Preferences;
@@ -17,27 +18,40 @@ namespace Content.Client.Preferences.UI;
 public sealed class TraitPreferenceSelector : Control
 {
     public TraitPrototype Trait { get; }
-    private readonly Button _button;
 
+    public bool Valid;
+    private bool _showUnusable;
+    public bool ShowUnusable
+    {
+        get => _showUnusable;
+        set
+        {
+            _showUnusable = value;
+            Visible = Valid || _showUnusable;
+            PreferenceButton.RemoveStyleClass(StyleBase.ButtonDanger);
+            PreferenceButton.AddStyleClass(Valid ? "" : StyleBase.ButtonDanger);
+        }
+    }
+
+    public Button PreferenceButton;
     public bool Preference
     {
-        get => _button.Pressed;
-        set => _button.Pressed = value;
+        get => PreferenceButton.Pressed;
+        set => PreferenceButton.Pressed = value;
     }
 
     public event Action<bool>? PreferenceChanged;
 
-    public TraitPreferenceSelector(TraitPrototype trait, JobPrototype highJob,
-        HumanoidCharacterProfile profile, string style, IEntityManager entityManager,
-        IPrototypeManager prototypeManager,
-        IConfigurationManager configManager, CharacterRequirementsSystem characterRequirementsSystem)
+    public TraitPreferenceSelector(TraitPrototype trait, JobPrototype highJob, HumanoidCharacterProfile profile,
+        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+        CharacterRequirementsSystem characterRequirementsSystem, JobRequirementsManager jobRequirementsManager)
     {
         Trait = trait;
 
         // Create a checkbox to get the loadout
-        _button = new Button
+        PreferenceButton = new Button
         {
-            VerticalAlignment = Control.VAlignment.Center,
+            VerticalAlignment = VAlignment.Center,
             ToggleMode = true,
             StyleClasses = { StyleBase.ButtonOpenLeft },
             Children =
@@ -60,8 +74,7 @@ public sealed class TraitPreferenceSelector : Control
                 },
             },
         };
-        _button.OnToggled += OnButtonToggled;
-        _button.AddStyleClass(style);
+        PreferenceButton.OnToggled += OnPreferenceButtonToggled;
 
         var tooltip = new StringBuilder();
         // Add the loadout description to the tooltip if there is one
@@ -71,8 +84,9 @@ public sealed class TraitPreferenceSelector : Control
 
 
         // Get requirement reasons
-        characterRequirementsSystem.CheckRequirementsValid(trait, trait.Requirements, highJob, profile,
-            new Dictionary<string, TimeSpan>(),
+        characterRequirementsSystem.CheckRequirementsValid(
+            trait.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
+            jobRequirementsManager.IsWhitelisted(), trait,
             entityManager, prototypeManager, configManager,
             out var reasons);
 
@@ -85,7 +99,7 @@ public sealed class TraitPreferenceSelector : Control
         {
             var formattedTooltip = new Tooltip();
             formattedTooltip.SetMessage(FormattedMessage.FromMarkupPermissive(tooltip.ToString()));
-            _button.TooltipSupplier = _ => formattedTooltip;
+            PreferenceButton.TooltipSupplier = _ => formattedTooltip;
         }
 
 
@@ -93,11 +107,11 @@ public sealed class TraitPreferenceSelector : Control
         AddChild(new BoxContainer
         {
             Orientation = BoxContainer.LayoutOrientation.Horizontal,
-            Children = { _button },
+            Children = { PreferenceButton },
         });
     }
 
-    private void OnButtonToggled(BaseButton.ButtonToggledEventArgs args)
+    private void OnPreferenceButtonToggled(BaseButton.ButtonToggledEventArgs args)
     {
         PreferenceChanged?.Invoke(Preference);
     }
