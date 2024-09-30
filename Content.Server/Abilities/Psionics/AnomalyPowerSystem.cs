@@ -135,8 +135,9 @@ public sealed class AnomalyPowerSystem : EntitySystem
             && Loc.TryGetString(args.OverchargeFeedback, out var popup))
             _popup.PopupEntity(popup, uid, uid);
 
-        if (args.OverchargeRecoil is not null)
-            _damageable.TryChangeDamage(uid, args.OverchargeRecoil / component.CurrentDampening, true);
+        if (args.OverchargeRecoil is not null
+            && TryComp<DamageableComponent>(uid, out var damageable))
+            _damageable.TryChangeDamage(uid, args.OverchargeRecoil / component.CurrentDampening, true, true, damageable, uid);
 
         if (args.OverchargeCooldown > 0)
             foreach (var action in component.Actions)
