@@ -93,10 +93,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
         }
     }
 
-    /// <summary>
-    /// 	It's like Build a Bear, but MURDER
-    /// </summary>
-    /// <param name="uid"></param>
+    /// It's like Build a Bear, but MURDER
     public void BuildAMimicWorkshop(EntityUid uid, MobReplacementRuleComponent component)
     {
         var metaData = MetaData(uid);
