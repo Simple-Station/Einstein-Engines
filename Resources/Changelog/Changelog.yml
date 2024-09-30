@@ -6793,3 +6793,28 @@ Entries:
   id: 6401
   time: '2024-09-29T17:42:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/977
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Fixed multiple minor issues with interaction verbs. Most importantly,
+        interaction popups will now always be shown correctly.
+  id: 6402
+  time: '2024-09-30T16:27:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/965
+- author: Spatison
+  changes:
+    - type: Fix
+      message: >-
+        The size of the Lobby cannot be changed now / Размер лобби теперь нельзя
+        изменить
+  id: 6403
+  time: '2024-09-30T16:29:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/962
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Shadeskip as a new psionic power.
+  id: 6404
+  time: '2024-09-30T18:04:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/987
