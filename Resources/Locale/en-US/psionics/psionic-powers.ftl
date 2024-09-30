@@ -128,3 +128,4 @@ examine-mindbroken-message =
     Eyes unblinking, staring deep into the horizon. {CAPITALIZE($entity)} is a sack of meat pretending it has a soul.
     There is nothing behind its gaze, no evidence there can be found of the divine light of creation.
 psionic-roll-failed = For a moment, my consciousness expands, yet I feel that it is not enough.
+entity-anomaly-no-grid = There is nowhere for me to conjure beings.

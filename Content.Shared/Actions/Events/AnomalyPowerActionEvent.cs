@@ -1,12 +1,78 @@
 using Content.Shared.Anomaly.Effects.Components;
+using Content.Shared.Atmos;
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Content.Shared.Explosion;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Actions.Events;
 
 public sealed partial class AnomalyPowerActionEvent : InstantActionEvent
 {
+    /// <summary>
+    ///     Contains settings common to all "Anomalist" Powers.
+    /// </summary>
+    [DataField]
+    public AnomalyPowerSettings Settings = default!;
 
+    /// <summary>
+    ///     Contains settings specific to "Bluespace Anomaly" powers.
+    /// </summary>
+    [DataField]
+    public BluespaceAnomalySettings? Bluespace = default!;
+
+    /// <summary>
+    ///     Contains settings specific to "Electrical Anomaly" powers.
+    /// </summary>
+    [DataField]
+    public ElectricalAnomalySettings? Electricity = default!;
+
+    /// <summary>
+    ///     What entities will be spawned by this action, using the same arguments as an EntitySpawnAnomalyComponent.
+    /// </summary>
+    [DataField]
+    public List<EntitySpawnSettingsEntry>? EntitySpawnEntries;
+
+    /// <summary>
+    ///     Contains settings specific to "Explosion Anomaly" powers.
+    /// </summary>
+    [DataField]
+    public ExplosionAnomalySettings? Explosion = default!;
+
+    /// <summary>
+    ///     Contains settings specific to "Gas Producer Anomaly" powers.
+    /// </summary>
+    [DataField]
+    public GasProducerAnomalySettings? Gas = default!;
+
+    /// <summary>
+    ///     Contains settings specific to "Gravity Anomaly" powers.
+    /// </summary>
+    [DataField]
+    public GravityAnomalySettings? Gravity = default!;
+
+    /// <summary>
+    ///     Contains settings specific to "Injection Anomaly" powers.
+    /// </summary>
+    [DataField]
+    public InjectionAnomalySettings? Injection = default!;
+
+    /// <summary>
+    ///     Contains settings specific to "Puddle Create Anomaly" powers.
+    /// </summary>
+    [DataField]
+    public PuddleAnomalySettings? Puddle = default!;
+
+    /// <summary>
+    ///     Contains settings specific to "Pyroclastic Anomaly" powers.
+    /// </summary>
+    [DataField]
+    public PyroclasticAnomalySettings? Pyroclastic = default!;
+}
+
+public partial record struct AnomalyPowerSettings()
+{
     [DataField]
     public string PowerName;
 
@@ -65,12 +131,6 @@ public sealed partial class AnomalyPowerActionEvent : InstantActionEvent
     public float MaxSupercriticalThreshold = 800f;
 
     /// <summary>
-    ///     What entities will be spawned by this action, using the same arguments as an EntitySpawnAnomalyComponent?
-    /// </summary>
-    [DataField]
-    public List<EntitySpawnSettingsEntry>? EntitySpawnEntries;
-
-    /// <summary>
     ///     The sound to be played upon activating this power(and not Supercritically)
     /// </summary>
     [DataField]
@@ -81,4 +141,280 @@ public sealed partial class AnomalyPowerActionEvent : InstantActionEvent
     /// </summary>
     [DataField]
     public SoundSpecifier? SupercriticalSound = new SoundCollectionSpecifier("Explosion");
+}
+
+public partial record struct BluespaceAnomalySettings()
+{
+    /// <summary>
+    ///     The maximum radius that the shuffle effect will extend for
+    ///     scales with stability
+    /// </summary>
+    [DataField]
+    public float MaxShuffleRadius = 10;
+
+    /// <summary>
+    ///     Whether or not a standard pulse teleports the caster.
+    /// </summary>
+    [DataField]
+    public bool PulseTeleportsCaster;
+
+    /// <summary>
+    ///     Whether or not a supercrit teleports the caster.
+    /// </summary>
+    [DataField]
+    public bool SupercritTeleportsCaster;
+
+    /// <summary>
+    ///     How far the supercritical event can teleport you
+    /// </summary>
+    [DataField]
+    public float SupercriticalTeleportRadius = 50f;
+
+    /// <summary>
+    ///     The sound played after players are shuffled/teleported around
+    /// </summary>
+    [DataField]
+    public SoundSpecifier TeleportSound = new SoundPathSpecifier("/Audio/Effects/teleport_arrival.ogg");
+}
+
+public partial record struct ElectricalAnomalySettings()
+{
+    /// <summary>
+    ///     the minimum number of lightning strikes
+    /// </summary>
+    [DataField]
+    public int MinBoltCount = 2;
+
+    /// <summary>
+    ///     The number of lightning strikes, at the maximum severity of the anomaly
+    /// </summary>
+    [DataField]
+    public int MaxBoltCount = 5;
+
+    /// <summary>
+    ///     The maximum radius of the passive electrocution effect
+    ///     scales with stability
+    /// </summary>
+    [DataField]
+    public float MaxElectrocuteRange = 7f;
+
+    /// <summary>
+    ///     Energy consumed from devices by the emp pulse upon going supercritical.
+    /// <summary>
+    [DataField]
+    public float EmpEnergyConsumption = 100000f;
+
+    /// <summary>
+    ///     Duration of devices being disabled by the emp pulse upon going supercritical.
+    /// <summary>
+    [DataField]
+    public float EmpDisabledDuration = 60f;
+}
+
+public partial record struct ExplosionAnomalySettings()
+{
+    /// <summary>
+    ///     The explosion prototype to spawn
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<ExplosionPrototype>))]
+    public string? ExplosionPrototype = default!;
+
+    /// <summary>
+    /// The total amount of intensity an explosion can achieve
+    /// </summary>
+    [DataField]
+    public float TotalIntensity = 100f;
+
+    /// <summary>
+    /// How quickly does the explosion's power slope? Higher = smaller area and more concentrated damage, lower = larger area and more spread out damage
+    /// </summary>
+    [DataField]
+    public float Dropoff = 10f;
+
+    /// <summary>
+    /// How much intensity can be applied per tile?
+    /// </summary>
+    [DataField]
+    public float MaxTileIntensity = 10f;
+
+    /// <summary>
+    ///     The explosion prototype to spawn on Supercrit
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<ExplosionPrototype>))]
+    public string? SupercritExplosionPrototype = default!;
+
+    /// <summary>
+    /// The total amount of intensity an explosion can achieve
+    /// </summary>
+    [DataField]
+    public float SupercritTotalIntensity = 100f;
+
+    /// <summary>
+    /// How quickly does the explosion's power slope? Higher = smaller area and more concentrated damage, lower = larger area and more spread out damage
+    /// </summary>
+    [DataField]
+    public float SupercritDropoff = 10f;
+
+    /// <summary>
+    /// How much intensity can be applied per tile?
+    /// </summary>
+    [DataField]
+    public float SupercritMaxTileIntensity = 10f;
+}
+
+public partial record struct GasProducerAnomalySettings()
+{
+    /// <summary>
+    ///     The gas to release
+    /// </summary>
+    [DataField]
+    public Gas ReleasedGas = Gas.WaterVapor;
+
+    /// <summary>
+    ///     The gas to release
+    /// </summary>
+    [DataField]
+    public Gas SupercritReleasedGas = Gas.WaterVapor;
+
+    /// <summary>
+    ///     The amount of gas released passively
+    /// </summary>
+    [DataField]
+    public float MoleAmount = 1f;
+
+    /// <summary>
+    ///     The radius of random gas spawns.
+    /// </summary>
+    [DataField]
+    public float SpawnRadius = 3;
+
+    /// <summary>
+    ///     The number of tiles which will be modified.
+    /// </summary>
+    [DataField]
+    public int TileCount = 1;
+
+    /// <summary>
+    ///     The the amount the temperature should be modified by (negative for decreasing temp)
+    /// </summary>
+    [DataField]
+    public float TempChange = 0;
+
+    /// <summary>
+    ///     The amount of gas released when the anomaly reaches max severity
+    /// </summary>
+    [DataField]
+    public float SupercritMoleAmount = 150f;
+
+    /// <summary>
+    ///     The radius of random gas spawns.
+    /// </summary>
+    [DataField]
+    public float SupercritSpawnRadius = 10;
+
+    /// <summary>
+    ///     The number of tiles which will be modified.
+    /// </summary>
+    [DataField]
+    public int SupercritTileCount = 10;
+
+    /// <summary>
+    ///     The the amount the temperature should be modified by (negative for decreasing temp)
+    /// </summary>
+    [DataField]
+    public float SupercritTempChange = 0;
+}
+
+public partial record struct GravityAnomalySettings()
+{
+    /// <summary>
+    ///     The maximum distance from which the anomaly
+    ///     can throw you via a pulse.
+    /// </summary>
+    [DataField]
+    public float MaxThrowRange = 5f;
+
+    /// <summary>
+    ///     The maximum strength the anomaly
+    ///     can throw you via a pulse
+    /// </summary>
+    [DataField]
+    public float MaxThrowStrength = 10;
+
+    /// <summary>
+    ///     The range around the anomaly that will be spaced on supercritical.
+    /// </summary>
+    [DataField]
+    public float SpaceRange = 3f;
+}
+
+public partial record struct InjectionAnomalySettings()
+{
+    /// <summary>
+    ///     the maximum amount of injection of a substance into an entity per pulsation
+    ///     scales with Severity
+    /// </summary>
+    [DataField]
+    public float MaxSolutionInjection = 15;
+
+    /// <summary>
+    ///     The maximum amount of injection of a substance into an entity in the supercritical phase
+    /// </summary>
+    [DataField]
+    public float SuperCriticalSolutionInjection = 50;
+
+    /// <summary>
+    ///     The maximum radius in which the anomaly injects reagents into the surrounding containers.
+    /// </summary>
+    [DataField]
+    public float InjectRadius = 3;
+
+    /// <summary>
+    ///     The maximum radius in which the anomaly injects reagents into the surrounding containers.
+    /// </summary>
+    [DataField]
+    public float SuperCriticalInjectRadius = 15;
+
+    /// <summary>
+    ///     The name of the prototype of the special effect that appears above the entities into which the injection was carried out
+    /// </summary>
+    [DataField]
+    public EntProtoId VisualEffectPrototype = "PuddleSparkle";
+
+    /// <summary>
+    ///     Solution name that can be drained.
+    /// </summary>
+    [DataField]
+    public string Solution { get; set; } = "default";
+}
+
+public partial record struct PuddleAnomalySettings()
+{
+    /// <summary>
+    ///     The maximum amount of solution that an anomaly can splash out of the storage on the floor during pulsation.
+    ///     Scales with Amplification.
+    /// </summary>
+    [DataField]
+    public float MaxPuddleSize = 100;
+
+    /// <summary>
+    ///     Solution name that can be drained.
+    /// </summary>
+    [DataField]
+    public string Solution { get; set; } = "default";
+}
+
+public partial record struct PyroclasticAnomalySettings()
+{
+    /// <summary>
+    ///     The maximum distance from which entities will be ignited.
+    /// </summary>
+    [DataField]
+    public float MaximumIgnitionRadius = 5f;
+
+    /// <summary>
+    ///     The maximum distance from which entities will be ignited on a Supercrit cast.
+    /// </summary>
+    [DataField]
+    public float SupercritMaximumIgnitionRadius = 20f;
 }
