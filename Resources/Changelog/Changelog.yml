@@ -6818,3 +6818,35 @@ Entries:
   id: 6404
   time: '2024-09-30T18:04:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/987
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Mood System now has some interactions with Psionics. '
+  id: 6405
+  time: '2024-09-30T18:28:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/988
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        7 new Psionic-related Traits have been added to the game: High
+        Psi-Potential, Low Psi-Potential, Power Overwhelming, kα Abundance, kα
+        Deficiency, kδ Proficient, and kδ Defect
+    - type: Add
+      message: >-
+        Oni now have a built-in negative trait that acts as a more severe
+        version of Low Psi-Potential. Oni now have significant penalties to
+        generating new Psionic Powers. 
+  id: 6406
+  time: '2024-09-30T18:28:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/983
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Narcolepsy has been reworked. You can now know when you're about to fall
+        asleep, and can choose to go to sleep willingly to reset the narcolepsy
+        timer and avoid an incident.
+  id: 6407
+  time: '2024-09-30T19:04:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/967
