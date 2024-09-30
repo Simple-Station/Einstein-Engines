@@ -113,7 +113,7 @@ telepathy-power-initialization-feedback =
 action-name-shadeskip = Shadeskip
 action-description-shadeskip =
     Call upon the Lords of the End of Time, and beseech them for a fragment of true entropy.
-shadeskip-power-description = Call upon the Lords of the End of Time, and beseech them for a fragment of true entropy.
+shadeskip-power-description = { action-description-shadeskip }
 shadeskip-power-initialization-feedback =
     I find myself standing in a frigid land, under a sky lacking in all starlight. Cold is the void at the End of Time.
     I look to the pale blue within blue horizon, and find a great eye standing at the center of it all, black and emptier than the deepest reaches of space.
