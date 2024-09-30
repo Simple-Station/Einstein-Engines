@@ -50,6 +50,16 @@ public sealed partial class PsionicHealOtherDoAfterEvent : DoAfterEvent
     [DataField]
     public bool DoRevive;
 
+    /// <summary>
+    ///     Caster's Amplification that has been modified by the results of a MoodContest.
+    /// </summary>
+    public float ModifiedAmplification = default!;
+
+    /// <summary>
+    ///     Caster's Dampening that has been modified by the results of a MoodContest.
+    /// </summary>
+    public float ModifiedDampening = default!;
+
     public PsionicHealOtherDoAfterEvent(TimeSpan startedAt)
     {
         StartedAt = startedAt;
