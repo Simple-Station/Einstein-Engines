@@ -195,6 +195,7 @@
     checkCanAccess: false
     range: 2
     itemIconStyle: BigAction
+    canTargetSelf: false
     blacklist:
       components:
         - PsionicInsulation
