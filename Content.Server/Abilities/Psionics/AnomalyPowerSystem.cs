@@ -142,8 +142,6 @@ public sealed class AnomalyPowerSystem : EntitySystem
 
         if (args.OverchargeCooldown > 0)
             foreach (var action in component.Actions)
-            {
                 _actions.SetCooldown(action.Value, TimeSpan.FromSeconds(args.OverchargeCooldown));
-            }
     }
 }
