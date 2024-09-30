@@ -99,9 +99,7 @@ public sealed class AnomalyPowerSystem : EntitySystem
             return;
 
         foreach (var tileref in tiles)
-        {
             Spawn(_random.Pick(entry.Spawns), _mapSystem.ToCenterCoordinates(tileref, grid));
-        }
     }
 
     public void DoAnomalySounds(EntityUid uid, PsionicComponent component, AnomalyPowerActionEvent args, bool overcharged = false)
