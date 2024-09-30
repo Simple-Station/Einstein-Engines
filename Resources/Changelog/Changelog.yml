@@ -6818,3 +6818,10 @@ Entries:
   id: 6404
   time: '2024-09-30T18:04:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/987
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Mood System now has some interactions with Psionics. '
+  id: 6405
+  time: '2024-09-30T18:28:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/988
