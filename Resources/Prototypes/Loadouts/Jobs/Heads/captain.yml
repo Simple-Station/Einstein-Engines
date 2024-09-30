@@ -1,6 +1,6 @@
 - type: loadout
   id: LoadoutCommandCapNeckMantle
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -12,7 +12,7 @@
 
 - type: loadout
   id: LoadoutCommandCapNeckCloak
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -24,7 +24,7 @@
 
 - type: loadout
   id: LoadoutCommandCapNeckCloakFormal
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -36,7 +36,7 @@
 
 - type: loadout
   id: LoadoutCommandCapJumpsuitFormal
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -48,7 +48,7 @@
 
 - type: loadout
   id: LoadoutCommandCapJumpskirtFormal
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -60,7 +60,7 @@
 
 - type: loadout
   id: LoadoutCommandCapOuterWinter
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -71,7 +71,7 @@
 
 - type: loadout
   id: LoadoutCommandCapGloves
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -82,7 +82,7 @@
 
 - type: loadout
   id: LoadoutCommandCapHat
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -93,7 +93,7 @@
 
 - type: loadout
   id: LoadoutCommandCapHatCapcap
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -104,7 +104,7 @@
 
 - type: loadout
   id: LoadoutCommandCapHatBeret
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -115,7 +115,7 @@
 
 - type: loadout
   id: LoadoutCommandCapMaskGas
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -126,7 +126,7 @@
 
 - type: loadout
   id: LoadoutCommandCapShoesBootsWinter
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -138,7 +138,7 @@
 
 - type: loadout
   id: LoadoutCommandCapItemDrinkFlask
-  category: JobsCommandCaptain
+  category: JobsCommand
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
