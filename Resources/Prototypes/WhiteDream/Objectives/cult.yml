@@ -5,7 +5,7 @@
   description: This fool person should be sacrificed in the glory of our Goddess.
   components:
   - type: Objective
-    issuer: cult
+    issuer: The Geometer of Blood
     unique: true
     difficulty: 3
     icon:
@@ -15,8 +15,5 @@
     roles:
       components:
       - BloodCultistRole
-  - type: TargetObjective
-    title: objective-condition-kill-person-title
   - type: KillTargetCult
-  - type: KillPersonCondition
-    requireDead: true
+    title: objective-condition-kill-person-title

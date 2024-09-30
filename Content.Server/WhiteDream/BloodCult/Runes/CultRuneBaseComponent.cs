@@ -1,6 +1,5 @@
 ﻿using Content.Shared.Chat;
 using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Robust.Shared.Prototypes;
 
@@ -9,8 +8,6 @@ namespace Content.Server.WhiteDream.BloodCult.Runes;
 [RegisterComponent]
 public sealed partial class CultRuneBaseComponent : Component
 {
-    public EntProtoId HolyWaterPrototype = "HolyWater";
-
     [DataField(required: true)]
     public string InvokePhrase = "";
 
@@ -28,6 +25,8 @@ public sealed partial class CultRuneBaseComponent : Component
     /// </summary>
     [DataField]
     public DamageSpecifier? ActivationDamage;
+
+    public EntProtoId HolyWaterPrototype = "HolyWater";
 }
 
 public sealed class TryInvokeCultRuneEvent(EntityUid user, HashSet<Entity<HumanoidAppearanceComponent>> invokers)
@@ -35,4 +34,9 @@ public sealed class TryInvokeCultRuneEvent(EntityUid user, HashSet<Entity<Humano
 {
     public EntityUid User = user;
     public HashSet<Entity<HumanoidAppearanceComponent>> Invokers = invokers;
+}
+
+public sealed class AfterRunePlaced(EntityUid user)
+{
+    public EntityUid User = user;
 }

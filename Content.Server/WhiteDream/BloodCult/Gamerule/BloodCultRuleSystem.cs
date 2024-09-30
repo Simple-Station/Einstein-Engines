@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Content.Server.Actions;
 using Content.Server.Antag;
 using Content.Server.Antag.Components;
@@ -56,7 +57,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
         SubscribeLocalEvent<BloodCultRuleComponent, AfterAntagEntitySelectedEvent>(AfterEntitySelected);
 
-        SubscribeLocalEvent<CultNarsieSummoned>(OnNarsieSummon);
+        SubscribeLocalEvent<BloodCultNarsieSummoned>(OnNarsieSummon);
 
         SubscribeLocalEvent<BloodCultistComponent, ComponentInit>(OnCultistComponentInit);
         SubscribeLocalEvent<BloodCultistComponent, ComponentRemove>(OnCultistComponentRemoved);
@@ -71,7 +72,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
     {
         base.Started(uid, component, gameRule, args);
 
-        component.OfferingTarget = FindTarget()?.Mind ?? null;
+        component.OfferingTarget = FindTarget();
     }
 
     protected override void AppendRoundEndText(EntityUid uid, BloodCultRuleComponent component,
@@ -97,7 +98,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         MakeCultist(args.EntityUid, ent);
     }
 
-    private void OnNarsieSummon(CultNarsieSummoned ev)
+    private void OnNarsieSummon(BloodCultNarsieSummoned ev)
     {
         var rulesQuery = QueryActiveRules();
         while (rulesQuery.MoveNext(out _, out var cult, out _))
@@ -114,8 +115,8 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
                     continue;
 
                 var transform = Transform(ent.Owner);
-                var reaper = Spawn(cult.ReaperPrototype, transform.Coordinates);
-                _mindSystem.TransferTo(mindContainer.Mind.Value, reaper);
+                // var reaper = Spawn(cult.ReaperPrototype, transform.Coordinates);
+                // _mindSystem.TransferTo(mindContainer.Mind.Value, reaper);
 
                 _bodySystem.GibBody(ent);
             }
@@ -207,12 +208,32 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         }
     }
 
-    public bool IsTarget(EntityUid mindId)
+    public bool TryGetTarget([NotNullWhen(true)] out EntityUid? target)
+    {
+        target = GetTarget();
+        return target is not null;
+    }
+
+    public EntityUid? GetTarget()
     {
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out var bloodCultRule, out _))
         {
-            return mindId == bloodCultRule.OfferingTarget;
+            if (bloodCultRule.OfferingTarget.HasValue)
+            {
+                return bloodCultRule.OfferingTarget.Value;
+            }
+        }
+
+        return null;
+    }
+
+    public bool IsTarget(EntityUid entityUid)
+    {
+        var query = QueryActiveRules();
+        while (query.MoveNext(out _, out var bloodCultRule, out _))
+        {
+            return entityUid == bloodCultRule.OfferingTarget;
         }
 
         return false;
@@ -261,26 +282,20 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         _mindSystem.TryAddObjective(mindId, mind, "KillTargetCultObjective");
     }
 
-    private MindContainerComponent? FindTarget(ICollection<EntityUid> exclude = null!)
+    private EntityUid? FindTarget(ICollection<EntityUid> exclude = null!)
     {
         var querry = EntityManager
             .EntityQueryEnumerator<MindContainerComponent, HumanoidAppearanceComponent, ActorComponent>();
 
-        var potentialTargets = new List<MindContainerComponent>();
+        var potentialTargets = new List<EntityUid>();
 
         while (querry.MoveNext(out var uid, out var mind, out _, out _))
         {
             var entity = mind.Mind;
-
-            if (entity == default)
+            if (entity == default || exclude?.Contains(uid) is true || HasComp<BloodCultistComponent>(uid))
                 continue;
 
-            if (exclude?.Contains(uid) is true)
-            {
-                continue;
-            }
-
-            potentialTargets.Add(mind);
+            potentialTargets.Add(uid);
         }
 
         return potentialTargets.Count > 0 ? _random.Pick(potentialTargets) : null;

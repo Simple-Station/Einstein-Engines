@@ -35,6 +35,7 @@
     invokePhrase: "Mah'weyh pleggh at e'ntrath!"
   - type: CultRuneOffering
 
+# TODO: remove it. Make it so empower rune allows you to create more spells via verbs.
 - type: entity
   parent: CultRuneBase
   id: CultRuneSpells
@@ -44,7 +45,14 @@
     state: empower
   - type: CultRuneBase
     invokePhrase: "H'drak v'loso, mir'kanas verbot!"
-    invokeAction: "RunePowers"
+  - type: CultRuneSpells
+  - type: RadialSelector
+    prototypes:
+    - ActionSpawnMagicarpSpell # TODO: Actual cult spells.
+  - type: UserInterface
+    interfaces:
+    - key: enum.RadialSelectorUiKey.Key
+      type: RadialSelectorMenuBUI
 
 - type: entity
   parent: CultRuneBase
@@ -66,7 +74,13 @@
     state: teleport
   - type: CultRuneBase
     invokePhrase: "Sas'so c'arta forbici!"
-    invokeAction: "RuneTeleport"
+  - type: CultRuneTeleport
+  - type: UserInterface
+    interfaces:
+    - key: enum.ListViewSelectorUiKey.Key
+      type: ListViewSelectorBUI
+    - key: enum.NameSelectorUiKey.Key
+      type: NameSelectorBUI
 
 - type: entity
   parent: CultRuneBase
@@ -89,7 +103,6 @@
   - type: CultRuneBase
     invokePhrase: "Khari'd! Eske'te tannin!"
     runeActivationRange: 1.5
-    bloodCost: 10
     activationDamage:
       types:
         Slash: 5
@@ -103,8 +116,13 @@
   - type: Sprite
     state: summon
   - type: CultRuneBase
+    requiredInvokers: 3
     invokePhrase: "N'ath reth sh'yro eth d'rekkathnor!"
-    invokeAction: "RuneSummon"
+  - type: CultRuneSummon
+  - type: UserInterface
+    interfaces:
+    - key: enum.ListViewSelectorUiKey.Key
+      type: ListViewSelectorBUI
 
 - type: entity
   parent: CultRuneBase
@@ -128,13 +146,21 @@
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Runes/apocalypse.rsi
-    state: icon
+    layers:
+      - state: icon
+        map: [ "enum.ApocalypseRuneVisuals.Layer" ]
   - type: CultRuneBase
+    requiredInvokers: 3
     invokePhrase: "Ta'gh fara'qha fel d'amar det!"
     activationDamage:
       types:
         Slash: 35
-    invokeAction: "RuneApocalypse"
+  - type: CultRuneApocalypse
+  - type: GenericVisualizer
+    visuals:
+      enum.ApocalypseRuneVisuals.Used:
+        enum.ApocalypseRuneVisuals.Layer:
+          True: { color: "#696969" }
 
 - type: entity
   parent: CultRuneBase
@@ -143,7 +169,17 @@
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Runes/dimensional_rending.rsi
-    state: rune_animated
+    layers:
+    - state: rune
+      map: [ "enum.RendingRuneVisuals.Layer" ]
   - type: CultRuneBase
+    requiredInvokers: 10
+    invokeChatType: Speak
     invokePhrase: "TOK-LYR RQA-NAP G'OLT-ULOFT!!!"
-    invokeAction: "RuneDimensionTear"
+  - type: CultRuneRending
+  - type: GenericVisualizer
+    visuals:
+      enum.RendingRuneVisuals.Active:
+        enum.RendingRuneVisuals.Layer:
+          True: { state: "rune_animated" }
+          False: { state: "rune"}

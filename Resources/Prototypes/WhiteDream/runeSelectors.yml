@@ -33,8 +33,15 @@
 - type: runeSelector
   id: CultRuneApocalypse
   prototype: CultRuneApocalypse
+  drawTime: 40
+  drawDamage:
+    types:
+      Slash: 20
 
 - type: runeSelector
   id: CultRuneDimensionalRending
   prototype: CultRuneDimensionalRending
-
+  drawTime: 40
+  drawDamage:
+    types:
+      Slash: 50

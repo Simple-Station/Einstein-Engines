@@ -12,7 +12,7 @@ blood-cult-role-briefing-short = Use '^' to contact other members of your brethr
 
 blood-cult-condition-win = The Geometer of Blood has successfully summoned their Eldritch Goddess!
 blood-cult-condition-draw = Both parties were destroyed.
-blood-cult-condition-failure = The crew have managed to stop the tear of reality!
+blood-cult-condition-failure = The crew have managed to stop the rending of reality!
 
 blood-cultists-list-start = Members of Geometer of Blood were:
 blood-cultists-list-name = [color=White]{ $name }[/color] ([color=gray]{ $user }[/color])

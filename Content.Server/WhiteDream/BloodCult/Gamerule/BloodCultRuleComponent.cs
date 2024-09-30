@@ -31,6 +31,9 @@ public sealed partial class BloodCultRuleComponent : Component
     [DataField]
     public int PentagramThreshold = 8;
 
+    /// <summary>
+    ///     The entityUid of body which should be sacrificed.
+    /// </summary>
     public EntityUid? OfferingTarget;
 
     // public List<ConstructComponent> Constructs = new();
@@ -54,4 +57,4 @@ public enum CultStage : byte
     Pentagram,
 }
 
-public sealed class CultNarsieSummoned : EntityEventArgs;
+public sealed class BloodCultNarsieSummoned : EntityEventArgs;

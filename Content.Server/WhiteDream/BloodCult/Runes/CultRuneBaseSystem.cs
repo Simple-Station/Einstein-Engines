@@ -89,7 +89,10 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         DealDamage(args.User, runeSelector.DrawDamage);
 
         _audio.PlayPvs(args.EndDrawingSound, args.User, AudioParams.Default.WithMaxDistance(2f));
-        SpawnRune(args.User, runeSelector.Prototype);
+        var rune = SpawnRune(args.User, runeSelector.Prototype);
+
+        var ev = new AfterRunePlaced(args.User);
+        RaiseLocalEvent(rune, ev);
     }
 
     private void EraseOnInteractUsing(Entity<CultRuneBaseComponent> ent, ref InteractUsingEvent args)
@@ -97,7 +100,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         // Logic for bible erasing
         if (TryComp<BibleComponent>(args.Used, out var bible) && HasComp<BibleUserComponent>(args.User))
         {
-            _popup.PopupEntity(Loc.GetString("cult-erased-rune"), args.User, args.User);
+            _popup.PopupEntity(Loc.GetString("cult-rune-erased"), ent, args.User);
             _audio.PlayPvs(bible.HealSoundPath, args.User);
             EntityManager.DeleteEntity(args.Target);
             return;
@@ -115,7 +118,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
             };
 
         if (_doAfter.TryStartDoAfter(argsDoAfterEvent))
-            _popup.PopupEntity(Loc.GetString("cult-started-erasing-rune"), args.User, args.User);
+            _popup.PopupEntity(Loc.GetString("cult-rune-started-erasing"), ent, args.User);
     }
 
     private void OnRuneErase(Entity<CultRuneBaseComponent> ent, ref RuneEraseDoAfterEvent args)
@@ -123,7 +126,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        _popup.PopupEntity(Loc.GetString("cult-erased-rune"), ent, args.User);
+        _popup.PopupEntity(Loc.GetString("cult-rune-erased"), ent, args.User);
         EntityManager.DeleteEntity(ent);
     }
 
@@ -160,7 +163,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         if (cultists.Count < ent.Comp.RequiredInvokers)
         {
-            _popup.PopupEntity(Loc.GetString("cult-rune-not-enough-cultists"), args.User, args.User);
+            _popup.PopupEntity(Loc.GetString("cult-rune-not-enough-cultists"), ent, args.User);
             return;
         }
 
@@ -178,7 +181,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         }
     }
 
-    private void SpawnRune(EntityUid user, EntProtoId rune)
+    private EntityUid SpawnRune(EntityUid user, EntProtoId rune)
     {
         var transform = Transform(user);
         var snappedLocalPosition = new Vector2(MathF.Floor(transform.LocalPosition.X) + 0.5f,
@@ -186,6 +189,8 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         var spawnPosition = _transform.GetMapCoordinates(user);
         var runeEntity = EntityManager.Spawn(rune, spawnPosition);
         _transform.SetLocalPosition(runeEntity, snappedLocalPosition);
+
+        return runeEntity;
     }
 
     private bool CanDrawRune(EntityUid uid)
@@ -194,7 +199,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         var gridUid = transform.GridUid;
         if (!gridUid.HasValue)
         {
-            _popup.PopupEntity(Loc.GetString("cult-cant-draw-rune"), uid, uid);
+            _popup.PopupEntity(Loc.GetString("cult-rune-cant-draw"), uid, uid);
             return false;
         }
 

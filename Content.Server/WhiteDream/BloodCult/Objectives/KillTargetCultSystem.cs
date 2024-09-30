@@ -1,39 +1,57 @@
 ﻿using System.Linq;
-using Content.Server.Objectives.Components;
-using Content.Server.Objectives.Systems;
+using Content.Server.Roles.Jobs;
 using Content.Server.WhiteDream.BloodCult.Gamerule;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Objectives.Components;
 
 namespace Content.Server.WhiteDream.BloodCult.Objectives;
 
 public sealed class KillTargetCultSystem : EntitySystem
 {
-    [Dependency] private readonly TargetObjectiveSystem _target = default!;
+    [Dependency] private readonly JobSystem _job = default!;
+    [Dependency] private readonly MetaDataSystem _metaData = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<KillTargetCultComponent, ObjectiveAssignedEvent>(OnCultTargetAssigned);
+        SubscribeLocalEvent<KillTargetCultComponent, ObjectiveAssignedEvent>(OnObjectiveAssigned);
+        SubscribeLocalEvent<KillTargetCultComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);
+        SubscribeLocalEvent<KillTargetCultComponent, ObjectiveGetProgressEvent>(OnGetProgress);
     }
 
-    private void OnCultTargetAssigned(Entity<KillTargetCultComponent> ent, ref ObjectiveAssignedEvent args)
+    private void OnObjectiveAssigned(Entity<KillTargetCultComponent> ent, ref ObjectiveAssignedEvent args)
     {
-        // invalid prototype
-        if (!TryComp<TargetObjectiveComponent>(ent.Owner, out var target))
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        // target already assigned
-        if (target.Target != null)
-            return;
-
         var cultistRule = EntityManager.EntityQuery<BloodCultRuleComponent>().FirstOrDefault();
-        if (cultistRule?.OfferingTarget is null)
+        if (cultistRule?.OfferingTarget == null)
         {
             return;
         }
 
-        _target.SetTarget(ent.Owner, cultistRule.OfferingTarget.Value);
+        ent.Comp.Target = cultistRule.OfferingTarget.Value;
+    }
+
+    private void OnAfterAssign(Entity<KillTargetCultComponent> ent, ref ObjectiveAfterAssignEvent args)
+    {
+        _metaData.SetEntityName(ent, GetTitle(ent.Comp.Target, ent.Comp.Title), args.Meta);
+    }
+
+    private void OnGetProgress(Entity<KillTargetCultComponent> ent, ref ObjectiveGetProgressEvent args)
+    {
+        var target = ent.Comp.Target;
+
+        if (!HasComp<MobStateComponent>(target) || _mobState.IsAlive(target))
+        {
+            return;
+        }
+
+        args.Progress = 1f;
+    }
+
+    private string GetTitle(EntityUid target, string title)
+    {
+        var targetName = MetaData(target).EntityName;
+        var jobName = _job.MindTryGetJobName(target);
+        return Loc.GetString(title, ("targetName", targetName), ("job", jobName));
     }
 }

@@ -55,8 +55,8 @@ public sealed class CultRuneOfferingSystem : EntitySystem
             return;
         }
 
-        if (!_mind.TryGetMind(target, out var mindId, out _) ||
-            _bloodCultRule.IsTarget(mindId) ||
+        if (!_mind.TryGetMind(target, out _, out _) ||
+            _bloodCultRule.IsTarget(target) ||
             HasComp<BibleUserComponent>(target) ||
             HasComp<MindShieldComponent>(target))
         {

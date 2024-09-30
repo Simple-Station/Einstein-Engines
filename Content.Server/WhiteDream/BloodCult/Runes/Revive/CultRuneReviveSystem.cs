@@ -35,10 +35,13 @@ public sealed class CultRuneReviveSystem : EntitySystem
         var possibleTargets = _cultRune.GetTargetsNearRune(ent, ent.Comp.ReviveRange, entity =>
             !HasComp<DamageableComponent>(entity) ||
             !HasComp<MobThresholdsComponent>(entity) ||
-            !HasComp<MobStateComponent>(entity));
+            !HasComp<MobStateComponent>(entity) ||
+            _mobState.IsAlive(entity)
+        );
 
         if (possibleTargets.Count == 0)
         {
+            _popup.PopupEntity(Loc.GetString("cult-rune-no-targets"), args.User, args.User);
             args.Cancel();
             return;
         }
@@ -47,15 +50,8 @@ public sealed class CultRuneReviveSystem : EntitySystem
 
         if (chargesProvider.Charges == 0)
         {
-            args.Cancel();
             _popup.PopupEntity(Loc.GetString("cult-revive-rune-no-charges"), args.User, args.User);
-            return;
-        }
-
-        if (_mobState.IsAlive(victim))
-        {
             args.Cancel();
-            _popup.PopupEntity(Loc.GetString("cult-revive-rune-already-alive"), args.User, args.User);
             return;
         }
 

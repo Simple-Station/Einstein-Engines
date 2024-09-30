@@ -13,7 +13,6 @@ public sealed class RuneSelectorPrototype : IPrototype
     [DataField(required: true)]
     public EntProtoId Prototype { get; }
 
-
     [DataField]
     public float DrawTime { get; } = 4f;
 

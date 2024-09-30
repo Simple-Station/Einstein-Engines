@@ -16,35 +16,13 @@ public sealed partial class BloodCultistComponent : Component, IAntagStatusIconC
     [AutoNetworkedField]
     public List<NetEntity?> SelectedEmpowers = new();
 
+    [DataField]
+    public int MaximumAllowedEmpowers = 4;
+
     [ViewVariables(VVAccess.ReadWrite)]
     public FixedPoint2 RitesBloodAmount = FixedPoint2.Zero;
 
     public Color OriginalEyeColor = Color.White;
-
-    // TODO: Do we really need all of it hardcoded here?
-    public static string SummonCultDaggerAction = "InstantActionSummonCultDagger";
-
-    public static string BloodRitesAction = "InstantActionBloodRites";
-
-    public static string EmpPulseAction = "InstantActionEmpPulse";
-
-    public static string ConcealPresenceAction = "InstantActionConcealPresence";
-
-    public static string CultTwistedConstructionAction = "ActionCultTwistedConstruction";
-
-    public static string CultTeleportAction = "ActionCultTeleport";
-
-    public static string CultSummonCombatEquipmentAction = "ActionCultSummonCombatEquipment";
-
-    public static string CultStunAction = "InstantActionCultStun";
-
-    public static string CultShadowShacklesAction = "ActionCultShadowShackles";
-
-    public static List<string> CultistActions = new()
-    {
-        SummonCultDaggerAction, BloodRitesAction, CultTwistedConstructionAction, CultTeleportAction,
-        CultSummonCombatEquipmentAction, CultStunAction, EmpPulseAction, ConcealPresenceAction, CultShadowShacklesAction
-    };
 
     // [ViewVariables, NonSerialized]
     // public Entity<BloodSpearComponent>? BloodSpear;

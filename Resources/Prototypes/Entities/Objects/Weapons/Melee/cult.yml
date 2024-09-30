@@ -14,7 +14,7 @@
     range: 1.4
     damage:
       types:
-        Slash: 8
+        Pierce: 15 # It should be piercing weapon since you know... daggers in general used to stab people.
     heavyRateModifier: 0.9
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 5
