@@ -1,5 +1,5 @@
 generic-power-initialization-feedback = I Awaken.
-arleady-casting = I cannot channel more than one power at a time.
+already-casting = I cannot channel more than one power at a time.
 
 # Dispel
 dispel-power-description = Dispel summoned entities such as familiars or forcewalls.
@@ -128,3 +128,4 @@ examine-mindbroken-message =
     Eyes unblinking, staring deep into the horizon. {CAPITALIZE($entity)} is a sack of meat pretending it has a soul.
     There is nothing behind its gaze, no evidence there can be found of the divine light of creation.
 psionic-roll-failed = For a moment, my consciousness expands, yet I feel that it is not enough.
+power-overwhelming-power-feedback = {CAPITALIZE($entity)} wields a vast connection to the noösphere
