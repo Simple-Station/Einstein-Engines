@@ -6793,3 +6793,12 @@ Entries:
   id: 6401
   time: '2024-09-29T17:42:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/977
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Fixed multiple minor issues with interaction verbs. Most importantly,
+        interaction popups will now always be shown correctly.
+  id: 6402
+  time: '2024-09-30T16:27:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/965
