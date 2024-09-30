@@ -46,7 +46,6 @@
   - type: CultRuneBase
     invokePhrase: "H'drak v'loso, mir'kanas verbot!"
   - type: CultRuneSpells
-  - type: RadialSelector
     prototypes:
     - ActionSpawnMagicarpSpell # TODO: Actual cult spells.
   - type: UserInterface

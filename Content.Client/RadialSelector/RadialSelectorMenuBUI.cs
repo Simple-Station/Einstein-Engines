@@ -25,19 +25,33 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
 
     private readonly SpriteSystem _spriteSystem;
 
-    private RadialMenu _menu;
+    private readonly RadialMenu _menu = new()
+    {
+        HorizontalExpand = true,
+        VerticalExpand = true,
+        BackButtonStyleClass = "RadialMenuBackButton",
+        CloseButtonStyleClass = "RadialMenuCloseButton"
+    };
 
     public RadialSelectorMenuBUI(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         _spriteSystem = _entManager.System<SpriteSystem>();
-        _menu = new RadialMenu();
     }
 
     protected override void Open()
     {
-        _menu = FormMenu();
         _menu.OnClose += Close;
         _menu.OpenCenteredAt(_inputManager.MouseScreenPosition.Position / _displayManager.ScreenSize);
+    }
+
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+
+        if (state is RadialSelectorState radialSelectorState)
+        {
+            PopulateMenu(radialSelectorState.Items);
+        }
     }
 
     protected override void Dispose(bool disposing)
@@ -47,27 +61,17 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
             _menu.Dispose();
     }
 
-    private RadialMenu FormMenu()
-    {
-        var menu = new RadialMenu
-        {
-            HorizontalExpand = true,
-            VerticalExpand = true,
-            BackButtonStyleClass = "RadialMenuBackButton",
-            CloseButtonStyleClass = "RadialMenuCloseButton"
-        };
 
-        if (!_entManager.TryGetComponent<RadialSelectorComponent>(Owner, out var selector))
-            return menu;
+    private void PopulateMenu(List<EntProtoId> items)
+    {
+        _menu.Children.Clear();
 
         var mainContainer = new RadialContainer
         {
-            Radius = 36f / (selector.Prototypes.Count == 1
-                ? 1
-                : MathF.Sin(MathF.PI / selector.Prototypes.Count))
+            Radius = 36f / (items.Count == 1 ? 1 : MathF.Sin(MathF.PI / items.Count))
         };
 
-        foreach (var protoId in selector.Prototypes)
+        foreach (var protoId in items)
         {
             if (!_protoManager.TryIndex(protoId, out var proto))
                 continue;
@@ -102,7 +106,6 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
             mainContainer.AddChild(button);
         }
 
-        menu.AddChild(mainContainer);
-        return menu;
+        _menu.AddChild(mainContainer);
     }
 }

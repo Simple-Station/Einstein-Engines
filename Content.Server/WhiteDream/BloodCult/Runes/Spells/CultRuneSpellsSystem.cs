@@ -12,7 +12,7 @@ public sealed class CultRuneSpellsSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
     [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
+    [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
     public override void Initialize()
     {
@@ -22,14 +22,16 @@ public sealed class CultRuneSpellsSystem : EntitySystem
 
     private void OnSpellsRuneInvoked(Entity<CultRuneSpellsComponent> ent, ref TryInvokeCultRuneEvent args)
     {
-        if (!_userInterface.TryGetUi(ent, RadialSelectorUiKey.Key, out var bui) ||
-            !TryComp(args.User, out ActorComponent? actor))
+        if (!TryComp(args.User, out ActorComponent? actor) ||
+            !_ui.TryGetUi(ent, RadialSelectorUiKey.Key, out var ui) ||
+            _ui.IsUiOpen(ent, RadialSelectorUiKey.Key))
         {
             args.Cancel();
             return;
         }
 
-        _userInterface.ToggleUi(bui, actor.PlayerSession);
+        _ui.SetUiState(ui, new RadialSelectorState(ent.Comp.Prototypes));
+        _ui.ToggleUi(ui, actor.PlayerSession);
     }
 
     private void OnSpellSelected(Entity<CultRuneSpellsComponent> ent, ref RadialSelectorSelectedMessage args)
