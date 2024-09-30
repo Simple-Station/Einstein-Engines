@@ -53,14 +53,14 @@ public sealed class RevivifyPowerSystem : EntitySystem
         else ActivatePower(uid, component, args);
 
         if (args.PopupText is not null
-            && _glimmer.Glimmer > args.GlimmerObviousPopupThreshold * component.CurrentDampening)
+            && _glimmer.Glimmer > args.GlimmerPopupThreshold * component.CurrentDampening)
             _popupSystem.PopupEntity(Loc.GetString(args.PopupText, ("entity", uid)), uid,
                 Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !_examine.InRangeUnOccluded(uid, entity, ExamineRange, null)),
                 true,
                 args.PopupType);
 
         if (args.PlaySound
-            && _glimmer.Glimmer > args.GlimmerObviousSoundThreshold * component.CurrentDampening)
+            && _glimmer.Glimmer > args.GlimmerSoundThreshold * component.CurrentDampening)
             _audioSystem.PlayPvs(args.SoundUse, uid, args.AudioParams);
 
         // Sanitize the Glimmer inputs because otherwise the game will crash if someone makes MaxGlimmer lower than MinGlimmer.
@@ -76,13 +76,16 @@ public sealed class RevivifyPowerSystem : EntitySystem
     private void AttemptDoAfter(EntityUid uid, PsionicComponent component, PsionicHealOtherPowerActionEvent args)
     {
         var ev = new PsionicHealOtherDoAfterEvent(_gameTiming.CurTime);
-        ev.HealingAmount = args.HealingAmount;
-        ev.RotReduction = args.RotReduction;
+        if (args.HealingAmount is not null)
+            ev.HealingAmount = args.HealingAmount;
+        if (args.RotReduction is not null)
+            ev.RotReduction = args.RotReduction.Value;
         ev.DoRevive = args.DoRevive;
         var doAfterArgs = new DoAfterArgs(EntityManager, uid, args.UseDelay, ev, uid, target: args.Target)
         {
             BreakOnUserMove = args.BreakOnUserMove,
             BreakOnTargetMove = args.BreakOnTargetMove,
+            Hidden = _glimmer.Glimmer > args.GlimmerDoAfterVisibilityThreshold * component.CurrentDampening,
         };
 
         if (!_doAfterSystem.TryStartDoAfter(doAfterArgs, out var doAfterId))
@@ -109,18 +112,24 @@ public sealed class RevivifyPowerSystem : EntitySystem
         component.DoAfter = null;
 
         // The target can also cease existing mid-cast
-        if (args.Target is null)
+        // Or the DoAfter is cancelled(such as if the caster moves).
+        if (args.Target is null
+            || args.Cancelled)
             return;
 
-        _rotting.ReduceAccumulator(args.Target.Value, TimeSpan.FromSeconds(args.RotReduction * component.CurrentAmplification));
+        if (args.RotReduction is not null)
+            _rotting.ReduceAccumulator(args.Target.Value, TimeSpan.FromSeconds(args.RotReduction.Value * component.CurrentAmplification));
 
         if (!TryComp<DamageableComponent>(args.Target.Value, out var damageableComponent))
             return;
 
-        _damageable.TryChangeDamage(args.Target.Value, args.HealingAmount * component.CurrentAmplification, true, false, damageableComponent, uid);
+        if (args.HealingAmount is not null)
+            _damageable.TryChangeDamage(args.Target.Value, args.HealingAmount * component.CurrentAmplification, true, false, damageableComponent, uid);
 
         if (!args.DoRevive
-            || !TryComp<MobStateComponent>(args.Target, out var mob)
+            || _rotting.IsRotten(args.Target.Value)
+            || !TryComp<MobStateComponent>(args.Target.Value, out var mob)
+            || !_mobState.IsDead(args.Target.Value, mob)
             || !_mobThreshold.TryGetThresholdForState(args.Target.Value, MobState.Dead, out var threshold)
             || damageableComponent.TotalDamage > threshold)
             return;
@@ -134,15 +143,19 @@ public sealed class RevivifyPowerSystem : EntitySystem
         if (component is null)
             return;
 
-        _rotting.ReduceAccumulator(args.Target, TimeSpan.FromSeconds(args.RotReduction * component.CurrentAmplification));
+        if (args.RotReduction is not null)
+            _rotting.ReduceAccumulator(args.Target, TimeSpan.FromSeconds(args.RotReduction.Value * component.CurrentAmplification));
 
         if (!TryComp<DamageableComponent>(args.Target, out var damageableComponent))
             return;
 
-        _damageable.TryChangeDamage(args.Target, args.HealingAmount * component.CurrentAmplification, true, false, damageableComponent, uid);
+        if (args.HealingAmount is not null)
+            _damageable.TryChangeDamage(args.Target, args.HealingAmount * component.CurrentAmplification, true, false, damageableComponent, uid);
 
         if (!args.DoRevive
+            || _rotting.IsRotten(args.Target)
             || !TryComp<MobStateComponent>(args.Target, out var mob)
+            || !_mobState.IsDead(args.Target, mob)
             || !_mobThreshold.TryGetThresholdForState(args.Target, MobState.Dead, out var threshold)
             || damageableComponent.TotalDamage > threshold)
             return;

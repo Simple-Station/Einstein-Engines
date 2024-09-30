@@ -318,3 +318,9 @@ trait-description-AddictionNicotine =
 trait-name-AnimalFriend = Animal Friend
 trait-description-AnimalFriend =
     You have a way with animals. You will never be attacked by animals, unless you attack them first.
+    
+trait-name-ValyrianStandard = Valyrian Standard
+trait-description-ValyrianStandard =
+    A language descended from eastern european languages of old earth - Valyrian Standard is the commonly spoken tongue of Harpies brought up on their homeworld of Valyrian 4b
+    It is rarely spoken outside of the worlds of its native speakers, and has in modern times been supplanted by the 'Conlangs of the Sol Alliance.
+    Its speakers are those who wish to uphold the traditions and beliefs of ancient peoples from before the colonial era.

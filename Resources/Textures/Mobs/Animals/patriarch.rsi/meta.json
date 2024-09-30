@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://gitlab.com/cmdevs/colonial-warfare/-/blob/dev/icons/mob/xenonids/praetorian.dmi edited by Fenndragon",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "patriarch",
+      "directions": 4
+    },
+    {
+      "name": "patriarch_sleeping"
+    },
+    {
+      "name": "patriarch_crit"
+    },
+    {
+      "name": "patriarch_dead"
+    }
+  ]
+}

@@ -95,7 +95,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosRHand
   bodyPart: RHand
-  markingCategory: RightArm
+  markingCategory: RightHand
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
@@ -107,7 +107,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosRLeg
   bodyPart: RLeg
-  markingCategory: RightHand
+  markingCategory: RightLeg
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
