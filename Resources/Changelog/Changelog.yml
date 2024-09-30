@@ -6802,3 +6802,12 @@ Entries:
   id: 6402
   time: '2024-09-30T16:27:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/965
+- author: Spatison
+  changes:
+    - type: Fix
+      message: >-
+        The size of the Lobby cannot be changed now / Размер лобби теперь нельзя
+        изменить
+  id: 6403
+  time: '2024-09-30T16:29:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/962
