@@ -130,7 +130,7 @@ namespace Content.Shared.CCVar
         ///     Short representation of the server name
         /// </summary>
         public static readonly CVarDef<string>
-            ShortHostName = CVarDef.Create("game.short_host_name", "", CVar.SERVERONLY);
+            ShortHostName = CVarDef.Create("game.short_host_name", "", CVar.SERVER);
 
         /// <summary>
         ///     Disables most functionality in the GameTicker.
