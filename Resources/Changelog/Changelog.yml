@@ -6850,3 +6850,31 @@ Entries:
   id: 6407
   time: '2024-09-30T19:04:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/967
+- author: zelezniciar
+  changes:
+    - type: Fix
+      message: >-
+        Space dragons that get butchered or gibbed will now drop devoured
+        corpses.
+  id: 6408
+  time: '2024-10-01T21:34:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/992
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Rampant Brand Intelligence has been unreverted. It was reverted by
+        complete accident a few weeks ago. I apologize to anyone who missed the
+        thrill of killing murderous vending machines.
+  id: 6409
+  time: '2024-10-01T21:39:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/947
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the Markings menu by adding a scroll container to it. Markings
+        with greater than 2 color selections can now be used.
+  id: 6410
+  time: '2024-10-01T21:43:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/997
