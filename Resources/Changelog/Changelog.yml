@@ -6859,3 +6859,13 @@ Entries:
   id: 6408
   time: '2024-10-01T21:34:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/992
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Rampant Brand Intelligence has been unreverted. It was reverted by
+        complete accident a few weeks ago. I apologize to anyone who missed the
+        thrill of killing murderous vending machines.
+  id: 6409
+  time: '2024-10-01T21:39:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/947
