@@ -6850,3 +6850,12 @@ Entries:
   id: 6407
   time: '2024-09-30T19:04:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/967
+- author: zelezniciar
+  changes:
+    - type: Fix
+      message: >-
+        Space dragons that get butchered or gibbed will now drop devoured
+        corpses.
+  id: 6408
+  time: '2024-10-01T21:34:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/992
