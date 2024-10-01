@@ -1,5 +1,3 @@
-using System.Drawing.Printing;
-using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
 using Content.Shared.Abilities.Psionics;
 
@@ -7,32 +5,17 @@ namespace Content.Server.Abilities.Kitsune;
 
 public sealed class KitsuneSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<KitsuneComponent, ComponentStartup>(OnStartup);
-
-        SubscribeLocalEvent<KitsuneComponent, CreateFoxfireActionEvent>(OnCreateFoxfire);
-
-        SubscribeLocalEvent<FoxFireComponent, ComponentShutdown>(OnFoxFireShutdown);
-
-        SubscribeLocalEvent<KitsuneComponent, FoxFireDestroyedEvent>(OnFoxFireDestroyed);
+        SubscribeLocalEvent<PsionicComponent, CreateFoxfireActionEvent>(OnCreateFoxfire);
     }
 
-    private void OnStartup(EntityUid uid, KitsuneComponent component, ComponentStartup args)
-    {
-        Log.Error("Kitsune broke");
-
-        component.FoxfireAction = _actions.AddAction(uid, component.FoxfireActionId);
-    }
-
+    // TODO: Make Foxfire work on a TimedDespawnComponent rather than Charges. Which will apparently require I refactor Timed Despawn so it isn't FUCKING FRAMES.
     private void OnCreateFoxfire(EntityUid uid, PsionicComponent component, CreateFoxfireActionEvent args)
     {
-        Log.Error("Fire still broke");
-        if (_actions.GetCharges(args.FoxfireAction) is not int charges || charges < 1)
+        if (HasComp<PsionicInsulationComponent>(uid))
             return;
 
         var fireEnt = Spawn(args.FoxfirePrototype, Transform(uid).Coordinates);
@@ -40,23 +23,5 @@ public sealed class KitsuneSystem : EntitySystem
         fireComp.Owner = uid;
 
         args.Handled = true;
-
-
-    }
-
-    private void OnFoxFireShutdown(EntityUid uid, FoxFireComponent component, ComponentShutdown args)
-    {
-        Log.Error("Fire won't break");
-        if (component.Owner is null)
-            return;
-        RaiseLocalEvent<FoxFireDestroyedEvent>(component.Owner.Value, new());
-    }
-
-    private void OnFoxFireDestroyed(EntityUid uid, PsionicComponent component, FoxFireDestroyedEvent args)
-    {
-        Log.Error("Fire didn't break");
-        _actions.AddCharges(component.FoxfireAction, 1);
-        _actions.SetEnabled(component.FoxfireAction, true);
-
     }
 }
