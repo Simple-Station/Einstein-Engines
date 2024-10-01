@@ -65,6 +65,17 @@
     - GalacticCommon
     - Kitsune
     - SolCommon
+  - type: Psionic # Yes, Roundstart Psionic. As a Species.
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - FoxfirePower # Kitsune start with Foxfire as a bonus Psionic Power.
+  - type: PotentiaModifier # Kitsune gain 50% more Potentia when rolling for new Psionic Powers.
+    potentiaMultiplier: 1.5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      75: Crit
+      175: Dead
 
 
 

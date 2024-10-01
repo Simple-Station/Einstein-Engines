@@ -1,7 +1,7 @@
 using System.Drawing.Printing;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
-using YamlDotNet.Core.Tokens;
+using Content.Shared.Abilities.Psionics;
 
 namespace Content.Server.Abilities.Kitsune;
 
@@ -29,13 +29,13 @@ public sealed class KitsuneSystem : EntitySystem
         component.FoxfireAction = _actions.AddAction(uid, component.FoxfireActionId);
     }
 
-    private void OnCreateFoxfire(EntityUid uid, KitsuneComponent component, CreateFoxfireActionEvent args)
+    private void OnCreateFoxfire(EntityUid uid, PsionicComponent component, CreateFoxfireActionEvent args)
     {
         Log.Error("Fire still broke");
-        if (_actions.GetCharges(component.FoxfireAction) is not int charges || charges < 1)
+        if (_actions.GetCharges(args.FoxfireAction) is not int charges || charges < 1)
             return;
 
-        var fireEnt = Spawn(component.FoxfirePrototype, Transform(uid).Coordinates);
+        var fireEnt = Spawn(args.FoxfirePrototype, Transform(uid).Coordinates);
         var fireComp = EnsureComp<FoxFireComponent>(fireEnt);
         fireComp.Owner = uid;
 
@@ -52,7 +52,7 @@ public sealed class KitsuneSystem : EntitySystem
         RaiseLocalEvent<FoxFireDestroyedEvent>(component.Owner.Value, new());
     }
 
-    private void OnFoxFireDestroyed(EntityUid uid, KitsuneComponent component, FoxFireDestroyedEvent args)
+    private void OnFoxFireDestroyed(EntityUid uid, PsionicComponent component, FoxFireDestroyedEvent args)
     {
         Log.Error("Fire didn't break");
         _actions.AddCharges(component.FoxfireAction, 1);

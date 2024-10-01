@@ -208,3 +208,13 @@
   initializationFeedback: shadeskip-power-initialization-feedback
   metapsionicFeedback: shadeskip-power-metapsionic-feedback
   amplificationModifier: 1
+
+- type: psionicPower
+  id: FoxfirePower
+  name: Foxfire
+  description: foxfire-power-description
+  actions:
+  - ActionFoxfire
+  amplificationModifier: 0.15
+  dampeningModifier: 0.15
+  powerSlotCost: 0
