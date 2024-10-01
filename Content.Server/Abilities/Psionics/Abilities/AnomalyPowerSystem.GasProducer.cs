@@ -20,16 +20,15 @@ public sealed partial class AnomalyPowerSystem
 
     private void GasProducerSupercrit(EntityUid uid, PsionicComponent component, AnomalyPowerActionEvent args)
     {
+        var xform = Transform(uid);
+        if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
+            return;
+
         var gas = args.Gas!.Value.SupercritReleasedGas;
         var mols = args.Gas!.Value.SupercritMoleAmount * component.CurrentAmplification;
         var radius = args.Gas!.Value.SupercritSpawnRadius * component.CurrentAmplification;
         var count = args.Gas!.Value.SupercritTileCount * component.CurrentDampening;
         var temp = args.Gas!.Value.SupercritTempChange * component.CurrentDampening;
-        var xform = Transform(uid);
-
-        if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
-            return;
-
         var localpos = xform.Coordinates.Position;
         var tilerefs = grid.GetLocalTilesIntersecting(
             new Box2(localpos + new Vector2(-radius, -radius), localpos + new Vector2(radius, radius))).ToArray();
@@ -66,16 +65,15 @@ public sealed partial class AnomalyPowerSystem
 
     private void GasProducerPulse(EntityUid uid, PsionicComponent component, AnomalyPowerActionEvent args)
     {
+        var xform = Transform(uid);
+        if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
+            return;
+
         var gas = args.Gas!.Value.ReleasedGas;
         var mols = args.Gas!.Value.MoleAmount * component.CurrentAmplification;
         var radius = args.Gas!.Value.SpawnRadius * component.CurrentAmplification;
         var count = args.Gas!.Value.TileCount * component.CurrentDampening;
         var temp = args.Gas!.Value.TempChange * component.CurrentDampening;
-        var xform = Transform(uid);
-
-        if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
-            return;
-
         var localpos = xform.Coordinates.Position;
         var tilerefs = grid.GetLocalTilesIntersecting(
             new Box2(localpos + new Vector2(-radius, -radius), localpos + new Vector2(radius, radius))).ToArray();

@@ -62,11 +62,11 @@ public sealed partial class AnomalyPowerSystem
         var coords = new ValueList<Vector2>();
         foreach (var ent in allEnts)
         {
-            if (args.Bluespace!.Value.PulseTeleportsCaster && ent == uid)
+            if (args.Bluespace!.Value.PulseTeleportsCaster && ent == uid
+                || !xformQuery.TryGetComponent(ent, out var allXform))
                 continue;
 
-            if (xformQuery.TryGetComponent(ent, out var allXform))
-                coords.Add(_xform.GetWorldPosition(allXform));
+            coords.Add(_xform.GetWorldPosition(allXform));
         }
 
         _random.Shuffle(coords);

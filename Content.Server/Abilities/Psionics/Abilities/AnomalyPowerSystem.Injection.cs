@@ -36,16 +36,14 @@ public sealed partial class AnomalyPowerSystem
         //for each matching entity found
         foreach (var ent in allEnts)
         {
-            if (!_solutionContainer.TryGetInjectableSolution(ent, out var injectable, out _))
+            if (!_solutionContainer.TryGetInjectableSolution(ent, out var injectable, out _)
+                || !_injectableQuery.TryGetComponent(ent, out var injEnt)
+                || !_solutionContainer.TryTransferSolution(injectable.Value, sol, maxInject))
                 continue;
 
-            if (_injectableQuery.TryGetComponent(ent, out var injEnt))
-            {
-                _solutionContainer.TryTransferSolution(injectable.Value, sol, maxInject);
-                //Spawn Effect
-                var uidXform = Transform(ent);
-                Spawn(injection.VisualEffectPrototype, uidXform.Coordinates);
-            }
+            //Spawn Effect
+            var uidXform = Transform(ent);
+            Spawn(injection.VisualEffectPrototype, uidXform.Coordinates);
         }
     }
 
@@ -67,16 +65,14 @@ public sealed partial class AnomalyPowerSystem
         //for each matching entity found
         foreach (var ent in allEnts)
         {
-            if (!_solutionContainer.TryGetInjectableSolution(ent, out var injectable, out _))
+            if (!_solutionContainer.TryGetInjectableSolution(ent, out var injectable, out _)
+                || !_injectableQuery.TryGetComponent(ent, out var injEnt)
+                || !_solutionContainer.TryTransferSolution(injectable.Value, sol, maxInject))
                 continue;
 
-            if (_injectableQuery.TryGetComponent(ent, out var injEnt))
-            {
-                _solutionContainer.TryTransferSolution(injectable.Value, sol, maxInject);
-                //Spawn Effect
-                var uidXform = Transform(ent);
-                Spawn(injection.VisualEffectPrototype, uidXform.Coordinates);
-            }
+            //Spawn Effect
+            var uidXform = Transform(ent);
+            Spawn(injection.VisualEffectPrototype, uidXform.Coordinates);
         }
     }
 }
