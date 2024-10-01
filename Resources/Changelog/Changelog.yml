@@ -6840,3 +6840,13 @@ Entries:
   id: 6406
   time: '2024-09-30T18:28:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/983
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Narcolepsy has been reworked. You can now know when you're about to fall
+        asleep, and can choose to go to sleep willingly to reset the narcolepsy
+        timer and avoid an incident.
+  id: 6407
+  time: '2024-09-30T19:04:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/967

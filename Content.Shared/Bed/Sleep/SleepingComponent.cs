@@ -28,4 +28,10 @@ public sealed partial class SleepingComponent : Component
     public TimeSpan CoolDownEnd;
 
     [DataField("wakeAction")] public EntityUid? WakeAction;
+
+    /// <summary>
+    ///     The moment this entity went to sleep. Initialized on MapInit.
+    /// </summary>
+    [DataField]
+    public TimeSpan SleepingSince;
 }
