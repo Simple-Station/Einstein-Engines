@@ -241,6 +241,7 @@ namespace Content.Shared.Preferences
         [DataField("species")]
         public string Species { get; private set; }
 
+        [DataField]
         public string Customspeciename { get; private set; }
 
         [DataField("height")]
@@ -533,9 +534,9 @@ namespace Content.Shared.Preferences
                 name = GetName(Species, gender);
             }
 
-            var customspeciesname = speciesPrototype.CustomName
+            var customspeciename = speciesPrototype.CustomName
                 ? FormattedMessage.RemoveMarkup(Customspeciename ?? "")[..MaxNameLength]
-                : null;
+                : "";
 
             string flavortext;
             if (FlavorText.Length > MaxDescLength)
