@@ -149,8 +149,6 @@ namespace Content.Shared.Ghost
         }
     }
 
-    // WD EDIT START
     [Serializable, NetSerializable]
     public sealed class GhostReturnToRoundRequest : EntityEventArgs;
-    // WD EDIT END
 }

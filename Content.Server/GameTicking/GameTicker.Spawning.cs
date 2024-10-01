@@ -156,7 +156,6 @@ namespace Content.Server.GameTicking
                 return;
             }
 
-            //WD EDIT START
             //Ghost system return to round, check for whether the character isn't the same.
             if (lateJoin && !_adminManager.IsAdmin(player) && !CheckGhostReturnToRound(player, character, out var checkAvoid))
             {
@@ -170,7 +169,6 @@ namespace Content.Server.GameTicking
 
                 return;
             }
-            //WD EDIT END
 
             // We raise this event to allow other systems to handle spawning this player themselves. (e.g. late-join wizard, etc)
             var bev = new PlayerBeforeSpawnEvent(player, character, jobId, lateJoin, station);
@@ -363,7 +361,6 @@ namespace Content.Server.GameTicking
             _adminLogger.Add(LogType.LateJoin, LogImpact.Low, $"{player.Name} late joined the round as an Observer with {ToPrettyString(ghost):entity}.");
         }
 
-        //WD EDIT START
         private bool CheckGhostReturnToRound(ICommonSession player, HumanoidCharacterProfile character, out bool checkAvoid)
         {
             checkAvoid = false;
@@ -383,22 +380,18 @@ namespace Content.Server.GameTicking
                 switch (similarity)
                 {
                     case >= 85f:
-                    {
                         _chatManager.SendAdminAlert(Loc.GetString("ghost-respawn-log-character-almost-same",
                             ("player", player.Name), ("try", false), ("oldName", mind.CharacterName),
                             ("newName", character.Name)));
                         checkAvoid = true;
 
                         return false;
-                    }
                     case >= 50f:
-                    {
                         _chatManager.SendAdminAlert(Loc.GetString("ghost-respawn-log-character-almost-same",
                             ("player", player.Name), ("try", true), ("oldName", mind.CharacterName),
                             ("newName", character.Name)));
 
                         break;
-                    }
                 }
             }
 
@@ -421,7 +414,6 @@ namespace Content.Server.GameTicking
 
             return similarityPercentage;
         }
-        //WD EDIT END
 
         #region Mob Spawning Helpers
         private EntityUid SpawnObserverMob()
