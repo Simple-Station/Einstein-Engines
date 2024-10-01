@@ -164,3 +164,13 @@
     revertOnDeath: true
     revertOnCrit: true
     duration: 20
+
+- type: polymorph
+  id: KitsuneFoxForm
+  configuration:
+    entity: MobKitsuneFox
+    transferName: true
+    transferHumanoidAppearance: true
+    inventory: Transfer
+    revertOnDeath: true
+    reverOnCrit: true

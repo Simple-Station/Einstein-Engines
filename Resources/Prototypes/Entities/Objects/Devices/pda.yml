@@ -52,7 +52,7 @@
       program-container: !type:Container
   - type: ItemSlots
   - type: Clothing
-    quickEquip: false
+    quickEquip: true
     slots:
     - idcard
     - Belt
