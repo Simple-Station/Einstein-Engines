@@ -6869,3 +6869,12 @@ Entries:
   id: 6409
   time: '2024-10-01T21:39:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/947
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the Markings menu by adding a scroll container to it. Markings
+        with greater than 2 color selections can now be used.
+  id: 6410
+  time: '2024-10-01T21:43:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/997
