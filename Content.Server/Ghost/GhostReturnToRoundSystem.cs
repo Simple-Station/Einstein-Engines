@@ -1,16 +1,15 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
-using Content.Shared._White;
 using Content.Shared.Database;
-using Content.Shared.GameTicking;
+using Content.Shared.CCVar;
 using Content.Shared.Ghost;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
-namespace Content.Server._White.Ghost;
+namespace Content.Server.Ghost;
 
 public sealed class GhostReturnToRoundSystem : EntitySystem
 {
@@ -19,6 +18,7 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly GameTicker _ticker = default!;
 
     public override void Initialize()
     {
@@ -32,7 +32,7 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
         if (uid == null)
             return;
 
-        var connectedClient = args.SenderSession.ConnectedClient;
+        var connectedClient = args.SenderSession.Channel;
         var userId = args.SenderSession.UserId;
 
         TryGhostReturnToRound(uid.Value, connectedClient, userId, out var message, out var wrappedMessage);
@@ -48,7 +48,7 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
 
     private void TryGhostReturnToRound(EntityUid uid, INetChannel connectedClient, NetUserId userId, out string message, out string wrappedMessage)
     {
-        var maxPlayers = _cfg.GetCVar(WhiteCVars.GhostRespawnMaxPlayers);
+        var maxPlayers = _cfg.GetCVar(CCVars.GhostRespawnMaxPlayers);
         if (_playerManager.PlayerCount >= maxPlayers)
         {
             message = Loc.GetString("ghost-respawn-max-players", ("players", maxPlayers));
@@ -57,15 +57,14 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
         }
 
         var deathTime = EnsureComp<GhostComponent>(uid).TimeOfDeath;
-        var timeUntilRespawn = _cfg.GetCVar(WhiteCVars.GhostRespawnTime);
+        var timeUntilRespawn = _cfg.GetCVar(CCVars.GhostRespawnTime);
         var timePast = (_gameTiming.CurTime - deathTime).TotalMinutes;
         if (timePast >= timeUntilRespawn)
         {
-            var ticker = Get<GameTicker>();
             _playerManager.TryGetSessionById(userId, out var targetPlayer);
 
             if (targetPlayer != null)
-                ticker.Respawn(targetPlayer);
+                _ticker.Respawn(targetPlayer);
 
             _adminLogger.Add(LogType.Mind, LogImpact.Medium, $"{Loc.GetString("ghost-respawn-log-return-to-lobby", ("userName", connectedClient.UserName))}");
 
