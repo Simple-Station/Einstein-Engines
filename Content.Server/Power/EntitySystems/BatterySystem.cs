@@ -1,5 +1,6 @@
 using Content.Server.Cargo.Systems;
 using Content.Server.Emp;
+using Content.Shared.Emp;
 using Content.Server.Power.Components;
 using Content.Shared.Examine;
 using Content.Shared.Rejuvenate;
@@ -85,7 +86,7 @@ namespace Content.Server.Power.EntitySystems
             {
                 if (!comp.AutoRecharge) continue;
                 if (batt.IsFullyCharged) continue;
-                SetCharge(uid, batt.CurrentCharge + comp.AutoRechargeRate * frameTime, batt);
+                TrySetCharge(uid, batt.CurrentCharge + comp.AutoRechargeRate * frameTime, batt);
             }
         }
 
@@ -100,6 +101,7 @@ namespace Content.Server.Power.EntitySystems
         private void OnEmpPulse(EntityUid uid, BatteryComponent component, ref EmpPulseEvent args)
         {
             args.Affected = true;
+            args.Disabled = true;
             UseCharge(uid, args.EnergyConsumption, component);
         }
 
@@ -154,6 +156,18 @@ namespace Content.Server.Power.EntitySystems
                 return false;
 
             UseCharge(uid, value, battery);
+            return true;
+        }
+
+        /// <summary>
+        ///     Like SetCharge, but checks for conditions like EmpDisabled before executing
+        /// </summary>
+        public bool TrySetCharge(EntityUid uid, float value, BatteryComponent? battery = null)
+        {
+            if (!Resolve(uid, ref battery, false) || TryComp<EmpDisabledComponent>(uid, out var emp))
+                return false;
+
+            SetCharge(uid, value, battery);
             return true;
         }
 

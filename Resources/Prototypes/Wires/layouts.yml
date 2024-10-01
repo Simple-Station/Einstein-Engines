@@ -1,6 +1,7 @@
 - type: wireLayout
   id: Airlock
   wires:
+  - !type:AccessWireAction
   - !type:PowerWireAction
   - !type:PowerWireAction
     pulseTimeout: 15
@@ -44,6 +45,7 @@
 - type: wireLayout
   id: HighSec
   wires:
+  - !type:AccessWireAction
   - !type:PowerWireAction
     pulseTimeout: 10
   - !type:DoorBoltWireAction

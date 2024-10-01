@@ -1,10 +1,16 @@
 using System.Linq;
 using Content.Client.Eui;
 using Content.Client.Players.PlayTimeTracking;
+using Content.Client.Preferences;
+using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Customization.Systems;
 using Content.Shared.Eui;
 using Content.Shared.Ghost.Roles;
+using Content.Shared.Preferences;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
+using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
@@ -71,6 +77,10 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             var sysManager = entityManager.EntitySysManager;
             var spriteSystem = sysManager.GetEntitySystem<SpriteSystem>();
             var requirementsManager = IoCManager.Resolve<JobRequirementsManager>();
+            var characterReqs = entityManager.System<CharacterRequirementsSystem>();
+            var prefs = IoCManager.Resolve<IClientPreferencesManager>();
+            var protoMan = IoCManager.Resolve<IPrototypeManager>();
+            var configManager = IoCManager.Resolve<IConfigurationManager>();
 
             var groupedRoles = ghostState.GhostRoles.GroupBy(
                 role => (role.Name, role.Description, role.Requirements));
@@ -78,15 +88,23 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             {
                 var name = group.Key.Name;
                 var description = group.Key.Description;
-                bool hasAccess = true;
-                FormattedMessage? reason;
+                // ReSharper disable once ReplaceWithSingleAssignment.True
+                var hasAccess = true;
 
-                if (!requirementsManager.CheckRoleTime(group.Key.Requirements, out reason))
-                {
+                if (!characterReqs.CheckRequirementsValid(
+                    group.Key.Requirements ?? new(),
+                    new(),
+                    (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                    requirementsManager.GetRawPlayTimeTrackers(),
+                    requirementsManager.IsWhitelisted(),
+                    new LoadoutPrototype(), // idk
+                    entityManager,
+                    protoMan,
+                    configManager,
+                    out var reasons))
                     hasAccess = false;
-                }
 
-                _window.AddEntry(name, description, hasAccess, reason, group, spriteSystem);
+                _window.AddEntry(name, description, hasAccess, characterReqs.GetRequirementsText(reasons), group, spriteSystem);
             }
 
             var closeRulesWindow = ghostState.GhostRoles.All(role => role.Identifier != _windowRulesId);

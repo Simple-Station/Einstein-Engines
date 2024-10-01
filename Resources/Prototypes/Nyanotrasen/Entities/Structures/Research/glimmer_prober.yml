@@ -5,6 +5,10 @@
   description: Probes the noösphere to generate research points. Might be worth turning off if glimmer is a problem.
   components:
   - type: Psionic
+    removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
   - type: GlimmerSource
   - type: Construction
     graph: GlimmerDevices
@@ -61,28 +65,25 @@
     damageContainer: Inorganic
     damageModifierSet: ShockAbsorber
   - type: CargoSellBlacklist
-  - type: GuideHelp
-    guides:
-    - Psionics
   - type: AmbientSound
     range: 6
     volume: -6
-    sound: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_low.ogg
+    sound: /Audio/Ambience/Objects/prober_hum_low.ogg
   - type: AmbientOnPowered
   - type: GlimmerSound
     glimmerTier:
       Minimal:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_low.ogg
+        path: /Audio/Ambience/Objects/prober_hum_low.ogg
       Low:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_low.ogg
+        path: /Audio/Ambience/Objects/prober_hum_low.ogg
       Moderate:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_moderate.ogg
+        path: /Audio/Ambience/Objects/prober_hum_moderate.ogg
       High:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_high.ogg
+        path: /Audio/Ambience/Objects/prober_hum_high.ogg
       Dangerous:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_dangerous.ogg
+        path: /Audio/Ambience/Objects/prober_hum_dangerous.ogg
       Critical:
-        path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_dangerous.ogg
+        path: /Audio/Ambience/Objects/prober_hum_dangerous.ogg
 
 - type: entity
   parent: BaseMachinePowered
@@ -91,6 +92,7 @@
   description: Uses electricity to try and sort out the noösphere, reducing its level of entropy.
   components:
   - type: Psionic
+    removable: false
   - type: GlimmerSource
     addToGlimmer: false
   - type: Construction
@@ -114,9 +116,6 @@
           False: {visible: false}
   - type: PowerSwitch
   - type: CargoSellBlacklist
-  - type: GuideHelp
-    guides:
-    - Psionics
   - type: NpcFactionMember
     factions:
     - PsionicInterloper # :^)

@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
+using Content.Shared.Roles;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Prototypes;
@@ -11,14 +12,16 @@ namespace Content.Client.Preferences.UI;
 public abstract class RequirementsSelector<T> : BoxContainer where T : IPrototype
 {
     public T Proto { get; }
+    public JobPrototype HighJob { get; }
     public bool Disabled => _lockStripe.Visible;
 
     protected readonly RadioOptions<int> Options;
     private readonly StripeBack _lockStripe;
 
-    protected RequirementsSelector(T proto)
+    protected RequirementsSelector(T proto, JobPrototype highJob)
     {
         Proto = proto;
+        HighJob = highJob;
 
         Options = new RadioOptions<int>(RadioOptionsLayout.Horizontal)
         {

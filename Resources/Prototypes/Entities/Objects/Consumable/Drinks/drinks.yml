@@ -34,11 +34,45 @@
     - key: enum.TransferAmountUiKey.Key
       type: TransferAmountBoundUserInterface
   - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      params:
+        volume: -2
   - type: EmitSoundOnLand
-    sound: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      params:
+        volume: -2
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 30
+        mask:
+        - ItemMask
+        layer:
+        - BulletImpassable # Ever seen a John Woo movie?
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: DrinkBase

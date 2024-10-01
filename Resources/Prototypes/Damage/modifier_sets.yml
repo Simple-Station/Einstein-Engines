@@ -336,3 +336,26 @@
   flatReductions:
     # can't punch the endoskeleton to death
     Blunt: 5
+
+- type: damageModifierSet
+  id: HalfSpirit
+  coefficients:
+    Cold: 0.5
+    Shock: 0.75
+    Blunt: 0.75
+    Slash: 0.75
+    Piercing: 0.75
+    Heat: 1.25
+    Holy: 1.5
+  flatReductions:
+    Cold: 3
+
+- type: damageModifierSet
+  id: FireSpirit
+  coefficients:
+    Heat: 0
+    Cold: 1.2
+    Blunt: 0.6
+    Slash: 0.6
+    Piercing: 0.6
+    Holy: 1.5

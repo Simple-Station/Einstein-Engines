@@ -40,7 +40,7 @@
     speaks:
     - Dog
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Dog
 
 - type: entity
@@ -131,7 +131,7 @@
     speaks:
     - Cat
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Cat
 
 - type: entity
@@ -155,7 +155,7 @@
     speaks:
     - Cat
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Cat
 
 - type: entity
@@ -310,7 +310,7 @@
     speaks:
     - Dog
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Dog
   - type: InteractionPopup
     successChance: 0.5
@@ -415,7 +415,7 @@
     speaks:
     - Dog
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Dog
   - type: InteractionPopup
     successChance: 0.7
@@ -580,7 +580,7 @@
     speaks:
     - Fox
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Fox
 
 - type: entity
@@ -633,7 +633,7 @@
     speaks:
     - Mouse
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Mouse
 
 - type: entity
@@ -811,7 +811,7 @@
     speaks:
     - Bubblish
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Bubblish
 
 - type: entity
@@ -851,7 +851,7 @@
     speaks:
     - Monkey
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Monkey
     - Kobold
 
@@ -885,5 +885,5 @@
     speaks:
     - Crab
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Crab

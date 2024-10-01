@@ -212,6 +212,11 @@
   plantMetabolism:
   - !type:PlantAdjustHealth
     amount: -5
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:ChemAddMoodlet
+        moodPrototype: NicotineBenefit
 
 # TODO: Replace these nonstandardized effects with generic brain damage
 - type: reagent
@@ -260,7 +265,7 @@
         type: Add
         time: 5
         refresh: false
-      - !type:ChemRerollPsionic #Nyano - Summary: lets the imbiber become psionic. 
+      - !type:ChemRerollPsionic #Nyano - Summary: lets the imbiber become psionic.
         conditions:
         - !type:ReagentThreshold
           reagent: SpaceDrugs

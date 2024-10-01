@@ -740,7 +740,7 @@
 - type: marking
   id: MothLArmClassicDeathshead
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -755,7 +755,7 @@
 - type: marking
   id: MothRArmClassicDeathshead
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -770,7 +770,7 @@
 - type: marking
   id: MothLLegClassicDeathshead
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -785,7 +785,7 @@
 - type: marking
   id: MothRLegClassicDeathshead
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -832,7 +832,7 @@
 - type: marking
   id: MothLArmClassicFirewatch
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -847,7 +847,7 @@
 - type: marking
   id: MothRArmClassicFirewatch
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -862,7 +862,7 @@
 - type: marking
   id: MothLLegClassicFirewatch
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -877,7 +877,7 @@
 - type: marking
   id: MothRLegClassicFirewatch
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -923,7 +923,7 @@
 - type: marking
   id: MothLArmClassicGothic
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -938,7 +938,7 @@
 - type: marking
   id: MothRArmClassicGothic
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -953,7 +953,7 @@
 - type: marking
   id: MothLLegClassicGothicL
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -968,7 +968,7 @@
 - type: marking
   id: MothRLegClassicGothic
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1014,7 +1014,7 @@
 - type: marking
   id: MothLArmClassicJungle
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1029,7 +1029,7 @@
 - type: marking
   id: MothRArmClassicJungle
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1044,7 +1044,7 @@
 - type: marking
   id: MothLLegClassicJungle
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1059,7 +1059,7 @@
 - type: marking
   id: MothRLegClassicJungle
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1105,7 +1105,7 @@
 - type: marking
   id: MothLArmClassicLovers
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1120,7 +1120,7 @@
 - type: marking
   id: MothRArmClassicLovers
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1135,7 +1135,7 @@
 - type: marking
   id: MothLLegClassicLovers
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1150,7 +1150,7 @@
 - type: marking
   id: MothRLegClassicLovers
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1196,7 +1196,7 @@
 - type: marking
   id: MothLArmClassicMoonfly
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1211,7 +1211,7 @@
 - type: marking
   id: MothRArmClassicMoonfly
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1226,7 +1226,7 @@
 - type: marking
   id: MothLLegClassicMoonfly
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1241,7 +1241,7 @@
 - type: marking
   id: MothRLegClassicMoonfly
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1287,7 +1287,7 @@
 - type: marking
   id: MothLArmClassicOakworm
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1302,7 +1302,7 @@
 - type: marking
   id: MothRArmClassicOakworm
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1317,7 +1317,7 @@
 - type: marking
   id: MothLLegClassicOakworm
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1332,7 +1332,7 @@
 - type: marking
   id: MothRLegClassicOakworm
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1378,7 +1378,7 @@
 - type: marking
   id: MothLArmClassicPoison
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1393,7 +1393,7 @@
 - type: marking
   id: MothRArmClassicPoison
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1408,7 +1408,7 @@
 - type: marking
   id: MothLLegClassicPoison
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1423,7 +1423,7 @@
 - type: marking
   id: MothRLegClassicPoison
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1469,7 +1469,7 @@
 - type: marking
   id: MothLArmClassicRagged
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1484,7 +1484,7 @@
 - type: marking
   id: MothRArmClassicRagged
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1499,7 +1499,7 @@
 - type: marking
   id: MothLLegClassicRagged
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1514,7 +1514,7 @@
 - type: marking
   id: MothRLegClassicRagged
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1560,7 +1560,7 @@
 - type: marking
   id: MothLArmClassicReddish
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1575,7 +1575,7 @@
 - type: marking
   id: MothRArmClassicReddish
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1590,7 +1590,7 @@
 - type: marking
   id: MothLLegClassicReddish
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1605,7 +1605,7 @@
 - type: marking
   id: MothRLegClassicReddish
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1651,7 +1651,7 @@
 - type: marking
   id: MothLArmClassicRoyal
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1666,7 +1666,7 @@
 - type: marking
   id: MothRArmClassicRoyal
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1681,7 +1681,7 @@
 - type: marking
   id: MothLLegClassicRoyal
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1696,7 +1696,7 @@
 - type: marking
   id: MothRLegClassicRoyal
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1742,7 +1742,7 @@
 - type: marking
   id: MothLArmClassicWhitefly
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1757,7 +1757,7 @@
 - type: marking
   id: MothRArmClassicWhitefly
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1772,7 +1772,7 @@
 - type: marking
   id: MothLLegClassicWhitefly
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1787,7 +1787,7 @@
 - type: marking
   id: MothRLegClassicWhitefly
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1833,7 +1833,7 @@
 - type: marking
   id: MothLArmClassicWitchking
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1848,7 +1848,7 @@
 - type: marking
   id: MothRArmClassicWitchking
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1863,7 +1863,7 @@
 - type: marking
   id: MothLLegClassicWitchking
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:
@@ -1878,7 +1878,7 @@
 - type: marking
   id: MothRLegClassicWitchking
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   forcedColoring: true
   speciesRestriction: [Moth]
   coloring:

@@ -8,6 +8,7 @@
   rules:
     - RampingStationEventScheduler
     - BasicRoundstartVariation
+    - SubGamemodesRule
 
 - type: gamePreset
   id: SurvivalHellshift
@@ -18,6 +19,27 @@
   description: hellshift-description
   rules:
     - HellshiftStationEventScheduler
+    - BasicRoundstartVariation
+    - SubGamemodesRule
+
+- type: gamePreset
+  id: SurvivalIrregular
+  alias: [irregular]
+  showInVote: true
+  name: irregular-title
+  description: irregular-description
+  rules:
+    - IrregularStationEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SurvivalIrregularExtended
+  alias: [irregular-extended]
+  showInVote: true
+  name: irregular-extended-title
+  description: irregular-extended-description
+  rules:
+    - IrregularExtendedStationEventScheduler
     - BasicRoundstartVariation
 
 - type: gamePreset
@@ -43,6 +65,7 @@
   rules:
   - BasicStationEventScheduler
   - BasicRoundstartVariation
+  - SubGamemodesRule
 
 - type: gamePreset
   id: Greenshift
@@ -164,15 +187,3 @@
   - Zombie
   - BasicStationEventScheduler
   - BasicRoundstartVariation
-
-- type: gamePreset
-  id: Pirates
-  alias:
-    - pirates
-  name: pirates-title
-  description: pirates-description
-  showInVote: false
-  rules:
-    - Pirates
-    - BasicStationEventScheduler
-    - BasicRoundstartVariation

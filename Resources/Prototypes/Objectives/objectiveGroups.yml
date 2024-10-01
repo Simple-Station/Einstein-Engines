@@ -26,6 +26,7 @@
     LOLuckyBillStealObjective: 0.5 # DeltaV - LO steal objective, see Resources/Prototypes/DeltaV/Objectives/traitor.yml
     HoPBookIanDossierStealObjective: 1 # DeltaV - HoP steal objective, see Resources/Prototypes/DeltaV/Objectives/traitor.yml
     HoSGunStealObjective: 0.5
+    StealSupermatterSliverObjective: 0.5
 
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
@@ -39,8 +40,6 @@
     EscapeShuttleObjective: 1
     # DieObjective: 0.05 # DeltaV - Disable the lrp objective aka murderbone justification
     #HijackShuttleObjective: 0.02
-    BecomePsionicObjective: 1 # Nyanotrasen - Become Psionic objective, see Resources/Prototypes/Nyanotrasen/Objectives/traitor.yml
-    #BecomeGolemObjective: 0.5 # Nyanotrasen - Become a golem objective, see Resources/Prototypes/Nyanotrasen/Objectives/traitor.yml
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSocial

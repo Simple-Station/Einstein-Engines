@@ -1,6 +1,13 @@
 # Traitor single items
 
 - type: stealTargetGroup
+  id: SupermatterSliver
+  name: supermatter sliver
+  sprite:
+    sprite: Supermatter/supermatter_sliver.rsi
+    state: icon
+
+- type: stealTargetGroup
   id: Hypospray
   name: hypospray
   sprite:
@@ -183,7 +190,7 @@
 
 - type: stealTargetGroup
   id: ClothingOuterHardsuitVoidParamed
-  name: paramedic void suit
+  name: paramedic hardsuit
   sprite:
     sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
     state: icon

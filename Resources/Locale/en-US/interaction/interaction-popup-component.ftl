@@ -50,6 +50,7 @@ petting-failure-sloth = You reach out to pet {THE($target)}, but {SUBJECT($targe
 petting-failure-holo = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} spikes almost impale your hand!
 petting-failure-dragon = You raise your hand, but as {THE($target)} roars, you decide you'd rather not be toasty carp food.
 petting-failure-hamster = You reach out to pet {THE($target)}, but {SUBJECT($target)} attempts to bite your finger and only your quick reflexes save you from an almost fatal injury.
+petting-failure-pibble = You reach out to pet {THE($target)}, and {SUBJECT($target)} lunges at you!
 petting-failure-bear = You reach out to pet {THE($target)}, but {SUBJECT($target)} growls, making you think twice.
 petting-failure-monkey = You reach out to pet {THE($target)}, but {SUBJECT($target)} almost bites your fingers!
 petting-failure-nymph = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} moves their branches away.

@@ -13,6 +13,7 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
+using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
@@ -216,7 +217,11 @@ public sealed partial class ClimbSystem : VirtualController
         if (ev.Cancelled)
             return false;
 
-        var args = new DoAfterArgs(EntityManager, user, comp.ClimbDelay, new ClimbDoAfterEvent(),
+        var climbDelay = comp.ClimbDelay;
+        if (user == entityToMove && TryComp<ClimbDelayModifierComponent>(user, out var delayModifier))
+            climbDelay *= delayModifier.ClimbDelayMultiplier;
+
+        var args = new DoAfterArgs(EntityManager, user, climbDelay, new ClimbDoAfterEvent(),
             entityToMove,
             target: climbable,
             used: entityToMove)

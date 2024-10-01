@@ -763,15 +763,9 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("hair_name");
 
-                    // Parkstation-HeightSlider Start
                     b.Property<float>("Height")
                         .HasColumnType("REAL")
                         .HasColumnName("height");
-
-                    b.Property<float>("Width")
-                        .HasColumnType("REAL")
-                        .HasColumnName("width");
-                    // Parkstation-HeightSlider End
 
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
@@ -807,6 +801,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
+
+                    b.Property<float>("Width")
+                        .HasColumnType("REAL")
+                        .HasColumnName("width");
 
                     b.HasKey("Id")
                         .HasName("PK_profile");

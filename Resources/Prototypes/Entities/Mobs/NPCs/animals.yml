@@ -1313,7 +1313,6 @@
     tags:
     - VimPilot
     - DoorBumpOpener
-  - type: CanWalk
 
 - type: entity
   name: monkey
@@ -1371,7 +1370,7 @@
     understands:
     - Monkey
     - Kobold
-    - GalacticCommon
+    - TauCetiBasic
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -1690,6 +1689,10 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+      - Landmine
 
 - type: entity
   parent: MobMouse
@@ -1999,9 +2002,9 @@
     bloodMaxVolume: 50
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   name: penguin
@@ -2442,6 +2445,12 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
+
 
 - type: entity
   name: possum
@@ -2519,6 +2528,11 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
 
 - type: entity
   name: fox
@@ -2886,10 +2900,10 @@
     - Syndicate
   - type: LanguageKnowledge
     speaks:
-    - Xeno
+    - Cat
     understands:
-    - Xeno
-    - GalacticCommon
+    - Cat
+    - TauCetiBasic
 
 - type: entity
   name: space cat
@@ -3060,6 +3074,11 @@
     barkMultiplier: 10
     barks:
       - Sloth
+  - type: LanguageKnowledge # WHAT DOES THE SLOTH SAY???????
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
 
 - type: entity
   name: ferret
@@ -3119,6 +3138,11 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
 
 - type: entity
   name: hamster
@@ -3426,7 +3450,7 @@
     speaks:
     - RootSpeak
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - RootSpeak
 
 - type: entity

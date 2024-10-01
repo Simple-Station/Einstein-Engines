@@ -4,9 +4,11 @@
   cost: 0
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: SlimePerson
-    - !type:CharacterSpeciesRequirement
-      species: Vox
+      species:
+        - SlimePerson
+        - Vox
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
   items:
     - EmergencyNitrogenTankFilled
 
@@ -16,20 +18,24 @@
   cost: 1
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: SlimePerson
-    - !type:CharacterSpeciesRequirement
-      species: Vox
+      species:
+        - SlimePerson
+        - Vox
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
   items:
     - ExtendedEmergencyNitrogenTankFilled
 
 - type: loadout
   id: LoadoutSpeciesDoubleEmergencyNitrogenTank
   category: Species
-  cost: 3
+  cost: 2
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: SlimePerson
-    - !type:CharacterSpeciesRequirement
-      species: Vox
+      species:
+        - SlimePerson
+        - Vox
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
   items:
     - DoubleEmergencyNitrogenTankFilled

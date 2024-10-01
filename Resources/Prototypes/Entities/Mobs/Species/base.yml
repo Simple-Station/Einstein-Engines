@@ -104,6 +104,7 @@
         layer:
         - MobLayer
   - type: FloorOcclusion
+  - type: Mood
   - type: RangedDamageSound
     soundGroups:
       Brute:
@@ -178,13 +179,9 @@
   - type: StandingState
   - type: Fingerprint
   - type: Dna
+  - type: Scent
   - type: MindContainer
     showExamineInfo: true
-  - type: InteractionPopup
-    successChance: 1
-    interactSuccessString: hugging-success-generic
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
   - type: CanHostGuardian
   - type: NpcFactionMember
     factions:
@@ -221,15 +218,14 @@
   - type: CanEscapeInventory # Carrying system from nyanotrasen.
   - type: LanguageKnowledge # This is here so even if species doesn't have a defined language, they at least speak GC
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
   - type: Tag
     tags:
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
-  - type: CanWalk
 
 - type: entity
   save: false
@@ -312,6 +308,9 @@
     alternateState: Standing
   - type: OfferItem
   - type: LayingDown
+  - type: Shoving
+  - type: BloodstreamAffectedByMass
+    power: 0.6 # A minimum size felinid will have 30% blood, a minimum size vulp will have 60%, a maximum size oni will have ~200%
 
 - type: entity
   save: false

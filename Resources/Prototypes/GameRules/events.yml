@@ -243,6 +243,8 @@
       prob: 0.02
     - id: MobMouse2
       prob: 0.02
+    - id: MobPibbleVent
+      prob: 0.005
 
 - type: entity
   id: PowerGridCheck
@@ -414,6 +416,22 @@
 #      prob: 0.05
 
 - type: entity
+  id: OneirophageSpawn
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    id: VentCritters
+    earliestStart: 15
+    minimumPlayers: 15
+    weight: 4
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobGiantSpiderVampireAngry
+      prob: 0.01
+
+- type: entity
   id: ZombieOutbreak
   parent: BaseGameRule
   noSpawn: true
@@ -425,11 +443,28 @@
     weight: 2
     duration: 1
   - type: ZombieRule
-    minStartDelay: 0 #let them know immediately
-    maxStartDelay: 10
-    maxInitialInfected: 2
-    minInitialInfectedGrace: 300
-    maxInitialInfectedGrace: 450
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ InitialInfected ]
+      max: 3
+      playerRatio: 10
+      blacklist:
+        components:
+        - ZombieImmune
+        - InitialInfectedExempt
+      briefing:
+        text: zombie-patientzero-role-greeting
+        color: Plum
+        sound: "/Audio/Ambience/Antag/zombie_start.ogg"
+      components:
+      - type: PendingZombie #less time to prepare than normal
+        minInitialInfectedGrace: 300
+        maxInitialInfectedGrace: 450
+      - type: ZombifyOnDeath
+      - type: IncurableZombie
+      mindComponents:
+      - type: InitialInfectedRole
+        prototype: InitialInfected
 
 - type: entity
   id: LoneOpsSpawn
@@ -442,7 +477,29 @@
     minimumPlayers: 15
     reoccurrenceDelay: 45
     duration: 1
-  - type: LoneOpsSpawnRule
+  - type: LoadMapRule
+    mapPath: /Maps/Shuttles/striker.yml
+  - type: NukeopsRule
+    roundEndBehavior: Nothing
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointLoneNukeOperative
+      min: 1
+      max: 1
+      pickPlayer: false
+      startingGear: SyndicateLoneOperativeGearFull
+      components:
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - SyndicateNamesPrefix
+        - SyndicateNamesNormal
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindComponents:
+      - type: NukeopsRole
+        prototype: Nukeops
 
 - type: entity
   id: MassHallucinations

@@ -1,12 +1,15 @@
 - type: trait
   id: PirateAccent
-  category: Speech
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
   components:
     - type: PirateAccent
 
 - type: trait
   id: Accentless
-  category: Speech
+  category: TraitsSpeechAccents
   points: -1
   requirements:
     - !type:CharacterJobRequirement
@@ -14,6 +17,8 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
   components:
     - type: Accentless
       removes:
@@ -24,26 +29,72 @@
 
 - type: trait
   id: Southern
-  category: Speech
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
   components:
     - type: SouthernAccent
 
 - type: trait
-  id: NormalVisionHarpy
+  id: NormalVision
   category: Visual
-  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: Harpy
-  components:
-    - type: NormalVision
+      species:
+        - Harpy
+        - Vulpkanin
+  componentRemovals:
+    - UltraVision
+    - DogVision
 
 - type: trait
-  id: NormalVisionVulpkanin
-  category: Visual
-  points: -1
+  id: Saturnine
+  category: Mental
+  points: 6
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sanguine
+  moodEffects:
+    - TraitSaturnine
+
+- type: trait
+  id: Sanguine
+  category: Mental
+  points: -6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Saturnine
+  moodEffects:
+    - TraitSanguine
+
+- type: trait
+  id: AddictionNicotine
+  category: Mental
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
-      species: Vulpkanin
-  components:
-    - type: NormalVision
+      inverted: true
+      species:
+        - IPC
+  moodEffects:
+    - NicotineWithdrawal

@@ -118,15 +118,13 @@
   - type: Grammar
     attributes:
       gender: male
-  - type: PotentialPsionic # Nyano
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - Mouse
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Mouse
-  - type: CanWalk
 
 - type: entity
   id: MobRatKingBuff
@@ -303,7 +301,7 @@
     speaks:
     - Mouse
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Mouse
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
