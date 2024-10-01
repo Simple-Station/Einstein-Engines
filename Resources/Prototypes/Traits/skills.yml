@@ -183,6 +183,7 @@
           inverted: true
           species:
             - IPC
+            - Kitsune
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
@@ -243,6 +244,9 @@
           jobs:
             - Chaplain
             - Librarian
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Kitsune
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
