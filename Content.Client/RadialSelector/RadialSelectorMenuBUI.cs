@@ -33,6 +33,8 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
         CloseButtonStyleClass = "RadialMenuCloseButton"
     };
 
+    private bool _openCentered;
+
     public RadialSelectorMenuBUI(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         _spriteSystem = _entManager.System<SpriteSystem>();
@@ -41,7 +43,15 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
     protected override void Open()
     {
         _menu.OnClose += Close;
-        _menu.OpenCenteredAt(_inputManager.MouseScreenPosition.Position / _displayManager.ScreenSize);
+
+        if (_openCentered)
+        {
+            _menu.OpenCentered();
+        }
+        else
+        {
+            _menu.OpenCenteredAt(_inputManager.MouseScreenPosition.Position / _displayManager.ScreenSize);
+        }
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -51,6 +61,7 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
         if (state is RadialSelectorState radialSelectorState)
         {
             PopulateMenu(radialSelectorState.Items);
+            _openCentered = radialSelectorState.OpenCentered;
         }
     }
 

@@ -66,7 +66,7 @@ public sealed class CultRuneApocalypseSystem : EntitySystem
         }
 
         var requiredCultistsThreshold = MathF.Floor(_playerManager.PlayerCount * ent.Comp.CultistsThreshold);
-        var totalCultists = cultRule.CultistMinds.Count; // TODO: Add constructs
+        var totalCultists = cultRule.Cultists.Count + cultRule.Constructs.Count;
         if (totalCultists >= requiredCultistsThreshold)
         {
             return;

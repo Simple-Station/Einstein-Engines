@@ -63,7 +63,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         var timeToDraw = runeSelector.DrawTime;
         if (TryComp(user, out BloodCultEmpoweredComponent? empowered))
-            timeToDraw *= empowered.TimeMultiplier;
+            timeToDraw *= empowered.RuneTimeMultiplier;
 
         var ev = new DrawRuneDoAfter
         {
@@ -222,7 +222,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         {
             foreach (var (key, value) in damage.DamageDict)
             {
-                damage.DamageDict[key] = value * empowered.DamageMultiplier;
+                damage.DamageDict[key] = value * empowered.RuneDamageMultiplier;
             }
         }
 

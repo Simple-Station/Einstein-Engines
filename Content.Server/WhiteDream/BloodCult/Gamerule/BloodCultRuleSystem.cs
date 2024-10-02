@@ -25,7 +25,7 @@ using Content.Shared.Mood;
 using Content.Shared.Roles;
 using Content.Shared.WhiteDream.BloodCult.Components;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
-using Content.Shared.WhiteDream.BloodCult.CultItem;
+using Content.Shared.WhiteDream.BloodCult.Items;
 using Robust.Server.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
@@ -106,7 +106,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             cult.WinCondition = CultWinCondition.Win;
             _roundEndSystem.EndRound();
 
-            foreach (var ent in cult.CultistMinds)
+            foreach (var ent in cult.Cultists)
             {
                 if (Deleted(ent.Owner))
                     continue;
@@ -133,7 +133,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out var cult, out _))
         {
-            cult.CultistMinds.Add(ent);
+            cult.Cultists.Add(ent);
             UpdateCultStage(cult);
         }
     }
@@ -143,7 +143,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out var cult, out _))
         {
-            cult.CultistMinds.Remove(ent);
+            cult.Cultists.Remove(ent);
         }
 
         if (!TerminatingOrDeleted(ent.Owner))
@@ -259,7 +259,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out var cult, out _))
         {
-            var aliveCultists = cult.CultistMinds.Count(cultist => !_mobStateSystem.IsDead(cultist));
+            var aliveCultists = cult.Cultists.Count(cultist => !_mobStateSystem.IsDead(cultist));
             if (aliveCultists != 0)
                 return;
 
@@ -338,7 +338,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
     private void UpdateCultStage(BloodCultRuleComponent cultRuleComponent)
     {
-        var cultistsCount = cultRuleComponent.CultistMinds.Count;
+        var cultistsCount = cultRuleComponent.Cultists.Count;
         var prevStage = cultRuleComponent.Stage;
 
         if (cultistsCount >= cultRuleComponent.PentagramThreshold)
@@ -365,14 +365,14 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         switch (cultRuleComponent.Stage)
         {
             case CultStage.Start when prevStage == CultStage.RedEyes:
-                foreach (var cultist in cultRuleComponent.CultistMinds)
+                foreach (var cultist in cultRuleComponent.Cultists)
                 {
                     RemoveCultistAppearance(cultist);
                 }
 
                 break;
             case CultStage.RedEyes when prevStage == CultStage.Start:
-                foreach (var cultist in cultRuleComponent.CultistMinds)
+                foreach (var cultist in cultRuleComponent.Cultists)
                 {
                     if (!TryComp<HumanoidAppearanceComponent>(cultist, out var appearanceComponent))
                         continue;
@@ -383,7 +383,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
                 break;
             case CultStage.Pentagram:
-                foreach (var cultist in cultRuleComponent.CultistMinds)
+                foreach (var cultist in cultRuleComponent.Cultists)
                 {
                     EnsureComp<PentagramComponent>(cultist);
                 }

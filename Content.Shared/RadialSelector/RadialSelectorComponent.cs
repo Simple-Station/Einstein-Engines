@@ -10,9 +10,10 @@ public enum RadialSelectorUiKey : byte
 }
 
 [Serializable, NetSerializable]
-public sealed class RadialSelectorState(List<EntProtoId> items) : BoundUserInterfaceState
+public sealed class RadialSelectorState(List<EntProtoId> items, bool openCentered = false) : BoundUserInterfaceState
 {
     public List<EntProtoId> Items { get; } = items;
+    public bool OpenCentered { get; } = openCentered;
 }
 
 [Serializable, NetSerializable]

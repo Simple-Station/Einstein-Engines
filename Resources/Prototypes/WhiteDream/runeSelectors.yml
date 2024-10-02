@@ -3,10 +3,6 @@
   prototype: CultRuneOffering
 
 - type: runeSelector
-  id: CultRuneSpells
-  prototype: CultRuneSpells
-
-- type: runeSelector
   id: CultRuneEmpower
   prototype: CultRuneEmpower
 

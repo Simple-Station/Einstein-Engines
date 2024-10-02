@@ -4,6 +4,7 @@ using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Components;
+using Content.Shared.WhiteDream.BloodCult.Constructs;
 using Content.Shared.Zombies;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
@@ -26,8 +27,9 @@ public sealed class AntagStatusIconSystem : SharedStatusIconSystem
         SubscribeLocalEvent<HeadRevolutionaryComponent, GetStatusIconsEvent>(GetIcon);
         SubscribeLocalEvent<InitialInfectedComponent, GetStatusIconsEvent>(GetIcon);
 
-        SubscribeLocalEvent<BloodCultistComponent, GetStatusIconsEvent>(GetBloodCultIcon); // White Dream
-        SubscribeLocalEvent<BloodCultLeaderComponent, GetStatusIconsEvent>(GetIcon); // White Dream
+        SubscribeLocalEvent<ConstructComponent, GetStatusIconsEvent>(GetIcon);
+        SubscribeLocalEvent<BloodCultistComponent, GetStatusIconsEvent>(GetBloodCultIcon);
+        SubscribeLocalEvent<BloodCultLeaderComponent, GetStatusIconsEvent>(GetIcon);
     }
 
     /// <summary>

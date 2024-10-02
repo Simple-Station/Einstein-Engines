@@ -90,14 +90,14 @@ public sealed class CultRuneOfferingSystem : EntitySystem
     private void Sacrifice(EntityUid target)
     {
         var transform = Transform(target);
-        // var shard = Spawn("SoulShard", transform.Coordinates);
+        var shard = Spawn("SoulShard", transform.Coordinates);
         _body.GibBody(target);
 
         if (!_mind.TryGetMind(target, out var mindId, out _))
             return;
 
-        // _mind.TransferTo(mindId, shard);
-        // _mind.UnVisit(mindId);
+        _mind.TransferTo(mindId, shard);
+        _mind.UnVisit(mindId);
     }
 
     private bool TryConvert(EntityUid target, Entity<CultRuneOfferingComponent> rune, EntityUid user,

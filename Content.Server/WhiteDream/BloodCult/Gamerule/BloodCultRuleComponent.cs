@@ -1,6 +1,7 @@
 ﻿using Content.Server.NPC.Components;
 using Content.Shared.Roles;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
+using Content.Shared.WhiteDream.BloodCult.Constructs;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.WhiteDream.BloodCult.Gamerule;
@@ -8,8 +9,6 @@ namespace Content.Server.WhiteDream.BloodCult.Gamerule;
 [RegisterComponent]
 public sealed partial class BloodCultRuleComponent : Component
 {
-    public List<Entity<BloodCultistComponent>> CultistMinds = new();
-
     [DataField]
     public ProtoId<AntagPrototype> CultistRolePrototype = "Cultist";
 
@@ -34,13 +33,17 @@ public sealed partial class BloodCultRuleComponent : Component
     /// <summary>
     ///     The entityUid of body which should be sacrificed.
     /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
     public EntityUid? OfferingTarget;
 
-    // public List<ConstructComponent> Constructs = new();
+    [ViewVariables(VVAccess.ReadOnly)]
+    public CultStage Stage = CultStage.Start;
 
     public CultWinCondition WinCondition = CultWinCondition.Draw;
 
-    public CultStage Stage = CultStage.Start;
+    public List<Entity<BloodCultistComponent>> Cultists = new();
+
+    public List<Entity<ConstructComponent>> Constructs = new();
 }
 
 public enum CultWinCondition : byte

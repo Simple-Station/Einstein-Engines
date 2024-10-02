@@ -2,8 +2,10 @@
 using Content.Shared.Antag;
 using Content.Shared.Ghost;
 using Content.Shared.StatusIcon.Components;
+using Content.Shared.WhiteDream.BloodCult;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Components;
+using Content.Shared.WhiteDream.BloodCult.Constructs;
 using Robust.Client.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -21,6 +23,7 @@ public sealed class BloodCultistSystem : EntitySystem
         SubscribeLocalEvent<PentagramComponent, ComponentStartup>(OnPentagramAdded);
         SubscribeLocalEvent<PentagramComponent, ComponentShutdown>(OnPentagramRemoved);
 
+        SubscribeLocalEvent<ConstructComponent, CanDisplayStatusIconsEvent>(OnCanShowCultIcon);
         SubscribeLocalEvent<BloodCultistComponent, CanDisplayStatusIconsEvent>(OnCanShowCultIcon);
         SubscribeLocalEvent<BloodCultLeaderComponent, CanDisplayStatusIconsEvent>(OnCanShowCultIcon);
     }
@@ -70,14 +73,13 @@ public sealed class BloodCultistSystem : EntitySystem
     /// </summary>
     private bool CanDisplayIcon(EntityUid? uid, bool visibleToGhost)
     {
-        if (HasComp<BloodCultistComponent>(uid) || HasComp<BloodCultLeaderComponent>(uid))
+        if (HasComp<BloodCultistComponent>(uid) ||
+            HasComp<BloodCultLeaderComponent>(uid) ||
+            HasComp<ConstructComponent>(uid))
+        {
             return true;
+        }
 
         return visibleToGhost && HasComp<GhostComponent>(uid);
     }
-}
-
-public enum PentagramKey
-{
-    Key
 }

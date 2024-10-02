@@ -1,6 +1,6 @@
 ﻿- type: entity
   noSpawn: true
-  parent: BaseTargetObjective
+  parent: BaseObjective
   id: KillTargetCultObjective
   description: This fool person should be sacrificed in the glory of our Goddess.
   components:
