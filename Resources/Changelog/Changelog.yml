@@ -6907,3 +6907,10 @@ Entries:
   id: 6413
   time: '2024-10-02T01:32:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/981
+- author: fenndragon
+  changes:
+    - type: Tweak
+      message: 'Tweaked the spawnrate of certain mobs within the ventcritters rule. '
+  id: 6414
+  time: '2024-10-02T01:34:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/982
