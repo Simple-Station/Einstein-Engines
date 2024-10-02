@@ -6914,3 +6914,10 @@ Entries:
   id: 6414
   time: '2024-10-02T01:34:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/982
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Grapple & Tether Guns have been re-added.
+  id: 6415
+  time: '2024-10-02T02:19:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1000
