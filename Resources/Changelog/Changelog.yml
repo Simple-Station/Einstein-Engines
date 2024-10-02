@@ -6890,3 +6890,13 @@ Entries:
   id: 6411
   time: '2024-10-02T01:31:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/973
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a full Guidebook entry for Harpies. Unlike previous species
+        guidebooks, this document contains extensive lore and background
+        information for Harpies, in addition to notes on their game mechanics.
+  id: 6412
+  time: '2024-10-02T01:32:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/993
