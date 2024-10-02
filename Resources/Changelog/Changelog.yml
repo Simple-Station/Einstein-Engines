@@ -6878,3 +6878,15 @@ Entries:
   id: 6410
   time: '2024-10-01T21:43:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/997
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Immovable Rod Event has returned
+    - type: Add
+      message: >-
+        Immovable Rod Event has been made more fair. It won't automatically gib
+        people, just crit them with a ton of blunt damage(That you can survive
+        by wearing good armor), or just being an Oni funnily enough.
+  id: 6411
+  time: '2024-10-02T01:31:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/973
