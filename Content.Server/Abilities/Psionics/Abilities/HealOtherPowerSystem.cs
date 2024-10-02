@@ -32,7 +32,6 @@ public sealed class RevivifyPowerSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly GlimmerSystem _glimmer = default!;
 
-
     public override void Initialize()
     {
         base.Initialize();
@@ -48,26 +47,29 @@ public sealed class RevivifyPowerSystem : EntitySystem
         if (component.DoAfter is not null)
             return;
 
+        args.ModifiedAmplification = _psionics.ModifiedAmplification(uid, component);
+        args.ModifiedDampening = _psionics.ModifiedDampening(uid, component);
+
         if (!args.Immediate)
             AttemptDoAfter(uid, component, args);
         else ActivatePower(uid, component, args);
 
         if (args.PopupText is not null
-            && _glimmer.Glimmer > args.GlimmerPopupThreshold * component.CurrentDampening)
+            && _glimmer.Glimmer > args.GlimmerPopupThreshold * args.ModifiedDampening)
             _popupSystem.PopupEntity(Loc.GetString(args.PopupText, ("entity", uid)), uid,
                 Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !_examine.InRangeUnOccluded(uid, entity, ExamineRange, null)),
                 true,
                 args.PopupType);
 
         if (args.PlaySound
-            && _glimmer.Glimmer > args.GlimmerSoundThreshold * component.CurrentDampening)
+            && _glimmer.Glimmer > args.GlimmerSoundThreshold * args.ModifiedDampening)
             _audioSystem.PlayPvs(args.SoundUse, uid, args.AudioParams);
 
         // Sanitize the Glimmer inputs because otherwise the game will crash if someone makes MaxGlimmer lower than MinGlimmer.
         var minGlimmer = (int) Math.Round(MathF.MinMagnitude(args.MinGlimmer, args.MaxGlimmer)
-            + component.CurrentAmplification - component.CurrentDampening);
+            * args.ModifiedAmplification - args.ModifiedDampening);
         var maxGlimmer = (int) Math.Round(MathF.MaxMagnitude(args.MinGlimmer, args.MaxGlimmer)
-            + component.CurrentAmplification - component.CurrentDampening);
+            * args.ModifiedAmplification - args.ModifiedDampening);
 
         _psionics.LogPowerUsed(uid, args.PowerName, minGlimmer, maxGlimmer);
         args.Handled = true;
@@ -80,12 +82,15 @@ public sealed class RevivifyPowerSystem : EntitySystem
             ev.HealingAmount = args.HealingAmount;
         if (args.RotReduction is not null)
             ev.RotReduction = args.RotReduction.Value;
+
+        ev.ModifiedAmplification = args.ModifiedAmplification;
+        ev.ModifiedDampening = args.ModifiedDampening;
         ev.DoRevive = args.DoRevive;
         var doAfterArgs = new DoAfterArgs(EntityManager, uid, args.UseDelay, ev, uid, target: args.Target)
         {
             BreakOnUserMove = args.BreakOnUserMove,
             BreakOnTargetMove = args.BreakOnTargetMove,
-            Hidden = _glimmer.Glimmer > args.GlimmerDoAfterVisibilityThreshold * component.CurrentDampening,
+            Hidden = _glimmer.Glimmer > args.GlimmerDoAfterVisibilityThreshold * args.ModifiedDampening,
         };
 
         if (!_doAfterSystem.TryStartDoAfter(doAfterArgs, out var doAfterId))
@@ -107,23 +112,24 @@ public sealed class RevivifyPowerSystem : EntitySystem
     private void OnDoAfter(EntityUid uid, PsionicComponent component, PsionicHealOtherDoAfterEvent args)
     {
         // It's entirely possible for the caster to stop being Psionic(due to mindbreaking) mid cast
-        if (component is null
-            || args.Cancelled)
+        if (component is null)
             return;
         component.DoAfter = null;
 
         // The target can also cease existing mid-cast
-        if (args.Target is null)
+        // Or the DoAfter is cancelled(such as if the caster moves).
+        if (args.Target is null
+            || args.Cancelled)
             return;
 
         if (args.RotReduction is not null)
-            _rotting.ReduceAccumulator(args.Target.Value, TimeSpan.FromSeconds(args.RotReduction.Value * component.CurrentAmplification));
+            _rotting.ReduceAccumulator(args.Target.Value, TimeSpan.FromSeconds(args.RotReduction.Value * args.ModifiedAmplification));
 
         if (!TryComp<DamageableComponent>(args.Target.Value, out var damageableComponent))
             return;
 
         if (args.HealingAmount is not null)
-            _damageable.TryChangeDamage(args.Target.Value, args.HealingAmount * component.CurrentAmplification, true, false, damageableComponent, uid);
+            _damageable.TryChangeDamage(args.Target.Value, args.HealingAmount * args.ModifiedAmplification, true, false, damageableComponent, uid);
 
         if (!args.DoRevive
             || _rotting.IsRotten(args.Target.Value)
@@ -143,13 +149,13 @@ public sealed class RevivifyPowerSystem : EntitySystem
             return;
 
         if (args.RotReduction is not null)
-            _rotting.ReduceAccumulator(args.Target, TimeSpan.FromSeconds(args.RotReduction.Value * component.CurrentAmplification));
+            _rotting.ReduceAccumulator(args.Target, TimeSpan.FromSeconds(args.RotReduction.Value * args.ModifiedAmplification));
 
         if (!TryComp<DamageableComponent>(args.Target, out var damageableComponent))
             return;
 
         if (args.HealingAmount is not null)
-            _damageable.TryChangeDamage(args.Target, args.HealingAmount * component.CurrentAmplification, true, false, damageableComponent, uid);
+            _damageable.TryChangeDamage(args.Target, args.HealingAmount * args.ModifiedAmplification, true, false, damageableComponent, uid);
 
         if (!args.DoRevive
             || _rotting.IsRotten(args.Target)
