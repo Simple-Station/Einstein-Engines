@@ -6921,3 +6921,10 @@ Entries:
   id: 6415
   time: '2024-10-02T02:19:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1000
+- author: Fansana
+  changes:
+    - type: Fix
+      message: Fixes door access for mail doors
+  id: 6416
+  time: '2024-10-02T23:14:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/986
