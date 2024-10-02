@@ -19,10 +19,10 @@ using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.MedicalScanner;
 using Content.Shared.Mobs.Components;
 using Content.Shared.PowerCell;
+using Content.Shared.Popups;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
-using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Linq;
 
@@ -121,7 +121,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         if (args.Handled || args.Cancelled || args.Target == null || !_cell.HasDrawCharge(uid, user: args.User))
             return;
 
-        _audio.PlayPvs(uid.Comp.ScanningEndSound, uid);
+        if (!uid.Comp.Silent)
+            _audio.PlayPvs(uid.Comp.ScanningEndSound, uid);
 
         OpenUserInterface(args.User, uid);
         BeginAnalyzingEntity(uid, args.Target.Value);
