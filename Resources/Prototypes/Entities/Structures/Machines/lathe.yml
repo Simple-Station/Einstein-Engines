@@ -325,11 +325,11 @@
       - HolofanProjector
       - BluespaceBeaker
       - SyringeBluespace
-      #- WeaponForceGun
+      - WeaponForceGun
       - WeaponLaserSvalinn
       - WeaponProtoKineticAccelerator
-      #- WeaponTetherGun
-      #- WeaponGrapplingGun
+      - WeaponTetherGun
+      - WeaponGrapplingGun
       - ClothingBackpackHolding
       - ClothingBackpackSatchelHolding
       - ClothingBackpackDuffelHolding
