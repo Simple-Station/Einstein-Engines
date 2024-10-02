@@ -1,0 +1,117 @@
+﻿- type: entity
+  id: CultFactoryBase
+  parent: BaseStructure
+  name: base cult factory
+  description: You can make things here.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Structures/altar.rsi
+    layers:
+    - state: icon
+      map: [ "enum.TimedFactoryVisuals.Layer" ]
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.3,0.1,0.3"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Appearance
+  - type: TimedFactory
+  - type: UserInterface
+    interfaces:
+    - key: enum.RadialSelectorUiKey.Key
+      type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    userWhitelist:
+      components:
+        BloodCultist
+  - type: GenericVisualizer
+    visuals:
+      enum.TimedFactoryVisuals.Ready:
+        enum.TimedFactoryVisuals.Layer:
+          True: { state: "icon" }
+          False: { state: "icon_off" }
+
+- type: entity
+  id: CultFactoryAltar
+  parent: CultFactoryBase
+  name: altar
+  description: A bloodstained altar dedicated to Nar'Sie.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Structures/altar.rsi
+    layers:
+    - state: icon
+      map: [ "enum.TimedFactoryVisuals.Layer" ]
+  - type: TimedFactory
+    prototypes:
+      - GasPipeBend
+  # TODO: Add prototypes
+  #    - Eldritch Whetstone
+  #    - Construct Shell
+  #    - Flask of Unholy Water
+#  - type: Construction
+#    graph: AltarTome
+#    node: tome
+
+- type: entity
+  id: CultFactoryForge
+  parent: CultFactoryBase
+  name: daemon forge
+  description: A forge used in crafting the unholy weapons used by the armies of Nar'Sie.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Structures/forge.rsi
+  - type: TimedFactory
+    prototypes:
+    - GasPipeBend
+  # TODO: Add prototypes
+  #    - True Nar'sian Hardened Armor
+  #    - Flagellant's Robe
+  #    - Eldritch Longsword
+#  - type: Construction
+#    graph: AltarTome
+#    node: tome
+
+- type: entity
+  id: CultFactoryArchives
+  parent: CultFactoryBase
+  name: archives
+  description: A desk covered in arcane manuscripts and tomes in unknown languages. Looking at the text makes your skin crawl.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Structures/archives.rsi
+  - type: TimedFactory
+    prototypes:
+    - GasPipeBend
+  # TODO: Add prototypes
+  #    - Zealot's Blindfold
+  #    - Shuttle Curse
+  #    - Veil Walker Set
+#  - type: Construction
+#    graph: AltarTome
+#    node: tome

@@ -20,6 +20,20 @@ public enum ConstructVisualsState : byte
 }
 
 [Serializable, NetSerializable]
+public enum TimedFactoryVisuals : byte
+{
+    Ready,
+    Layer
+}
+
+[Serializable, NetSerializable]
+public enum PylonVisuals : byte
+{
+    Activated,
+    Layer
+}
+
+[Serializable, NetSerializable]
 public enum PentagramKey
 {
     Key

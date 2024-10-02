@@ -8,7 +8,7 @@
   },
   "states": [
     {
-      "name": "pylon",
+      "name": "icon",
       "delays": [
         [
           0.2,
@@ -27,7 +27,7 @@
       ]
     },
     {
-      "name": "pylon_off"
+      "name": "icon_off"
     }
   ]
 }

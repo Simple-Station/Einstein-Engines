@@ -1,0 +1,21 @@
+﻿- type: entity
+  id: CultTileSpawnEffect
+  name: cult tile effect
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: TimedDespawn
+    lifetime: 0.5
+  - type: Transform
+    noRot: true
+    anchored: true
+  - type: Sprite
+    layers:
+    - sprite: WhiteDream/BloodCult/Effects/tiles_spawn.rsi
+      state: floorglow
+      shader: unshaded
+    netsync: false
+    drawdepth: FloorObjects
+  - type: PointLight
+    color: "#FF0000"
+
