@@ -6900,3 +6900,10 @@ Entries:
   id: 6412
   time: '2024-10-02T01:32:07.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/993
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 13 new Kemonomimi-Style markings. 4 Ears, and 9 new tails!
+  id: 6413
+  time: '2024-10-02T01:32:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/981
