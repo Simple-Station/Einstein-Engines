@@ -228,19 +228,17 @@
     startAnnouncement: true
     earliestStart: 20
     reoccurrenceDelay: 12
-    minimumPlayers: 1
+    minimumPlayers: 30
     weight: 6 # Really weak compared to other critters
     duration: 60
   - type: VentCrittersRule
     entries:
-    - id: ReagentSlime
-      prob: 0.002
     - id: ReagentSlimeBeer
-      prob: 0.002
+      prob: 0.003
     - id: ReagentSlimePax
-      prob: 0.002
+      prob: 0.001
     - id: ReagentSlimeNocturine
-      prob: 0.002
+      prob: 0.001
     - id: ReagentSlimeTHC
       prob: 0.002
     - id: ReagentSlimeBicaridine
@@ -250,7 +248,7 @@
     - id: ReagentSlimeNapalm
       prob: 0.002
     - id: ReagentSlimeOmnizine
-      prob: 0.002
+      prob: 0.003
     - id: ReagentSlimeMuteToxin
       prob: 0.002
     - id: ReagentSlimeNorepinephricAcid
@@ -258,7 +256,7 @@
     - id: ReagentSlimeEphedrine
       prob: 0.002
     - id: ReagentSlimeRobustHarvest
-      prob: 0.002
+      prob: 0.003
     - id: ReagentSlimeIchor
       prob: 0.002
     - id: ReagentSlimeBleach
@@ -270,20 +268,20 @@
     - id: ReagentSlimeBuzzachloricbees
       prob: 0.002
     - id: ReagentSlimeWehjuice
-      prob: 0.002
+      prob: 0.003
     - id: ReagentCognizine
-      prob: 0.002
+      prob: 0.003
     - id: ReagentSlimeNecrosol
       prob: 0.002
     - id: ReagentSlimeSpaceDrugs
-      prob: 0.002
+      prob: 0.003
     - id: ReagentSlimeUnstableMutagen
-      prob: 0.002
+      prob: 0.001
     - id: ReagentSlimeLead
-      prob: 0.002
+      prob: 0.001
     - id: ReagentSlimechlorinetriflouride
       prob: 0.002
     - id: ReagentSlimePotassium
       prob: 0.002
     - id: ReagentSlimeLotophagoiOil
-      prob: 0.002
+      prob: 0.001
