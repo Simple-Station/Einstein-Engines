@@ -41,7 +41,7 @@ public sealed class RandomBarkSystem : EntitySystem
                 continue;
 
             barker.BarkAccumulator = _random.NextFloat(barker.MinTime, barker.MaxTime) * barker.BarkMultiplier;
-            if (_entity.TryGetComponent<MindContainerComponent>(uid, out var actComp) && actComp.HasMind
+            if (TryComp<MindContainerComponent>(uid, out var actComp) && actComp.HasMind
                 || GetNextBark((uid, barker)) is not { } bark)
                 continue;
 
