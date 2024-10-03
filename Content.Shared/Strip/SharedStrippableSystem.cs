@@ -120,6 +120,9 @@ public abstract class SharedStrippableSystem : EntitySystem
             !Resolve(target, ref targetStrippable))
             return;
 
+        if (!target.Comp.CanBeStripped)
+            return;
+
         if (!_handsSystem.TryGetHand(target.Owner, handId, out var handSlot))
             return;
 
@@ -353,6 +356,9 @@ public abstract class SharedStrippableSystem : EntitySystem
             !Resolve(target, ref target.Comp))
             return false;
 
+        if (!target.Comp.CanBeStripped)
+            return false;
+
         if (user.Comp.ActiveHand == null)
             return false;
 
@@ -452,6 +458,9 @@ public abstract class SharedStrippableSystem : EntitySystem
         string handName)
     {
         if (!Resolve(target, ref target.Comp))
+            return false;
+
+        if (!target.Comp.CanBeStripped)
             return false;
 
         if (!_handsSystem.TryGetHand(target, handName, out var handSlot, target.Comp))
