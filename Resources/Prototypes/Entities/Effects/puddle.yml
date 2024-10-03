@@ -149,6 +149,9 @@
   - type: EdgeSpreader
     id: Puddle
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - SlipTile
   - type: Drink
     delay: 3
     transferAmount: 1

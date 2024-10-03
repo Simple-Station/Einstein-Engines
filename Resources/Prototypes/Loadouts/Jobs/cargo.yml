@@ -1,10 +1,12 @@
 # Cargo technician
 - type: loadout
   id: LoadoutCargoOuterWinterCargo
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsCargo
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterCargo
     - !type:CharacterJobRequirement
       jobs:
         - CargoTechnician
@@ -13,10 +15,12 @@
 
 - type: loadout
   id: LoadoutCargoShoesBootsWinterCargo
-  category: JobsAUncategorized
-  cost: 1
+  category: JobsCargo
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoesCargo
     - !type:CharacterJobRequirement
       jobs:
         - CargoTechnician
@@ -27,10 +31,12 @@
 
 - type: loadout
   id: LoadoutCargoOuterWinterMiner
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsCargo
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterCargo
     - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist
@@ -39,10 +45,12 @@
 
 - type: loadout
   id: LoadoutCargoNeckGoliathCloak
-  category: JobsAUncategorized
-  cost: 2
+  category: JobsCargo
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckCargo
     - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist

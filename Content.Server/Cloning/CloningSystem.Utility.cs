@@ -68,9 +68,10 @@ public sealed partial class CloningSystem
 
         if (ev.Cancelled && ev.CloningFailMessage is not null)
         {
-            _chatSystem.TrySendInGameICMessage(uid,
-                Loc.GetString(ev.CloningFailMessage),
-                InGameICChatType.Speak, false);
+            if (clonePod.ConnectedConsole is not null)
+                _chatSystem.TrySendInGameICMessage(clonePod.ConnectedConsole.Value,
+                    Loc.GetString(ev.CloningFailMessage),
+                    InGameICChatType.Speak, false);
             return false;
         }
 

@@ -5,6 +5,10 @@
   id: MobHarpyBase
   abstract: true
   components:
+  - type: Flight
+    isLayerAnimated: true
+    layer: "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi"
+    animationKey: "Flap"
   - type: Singer
     proto: HarpySinger
   - type: Sprite
@@ -113,19 +117,23 @@
     - ShoesRequiredStepTriggerImmune
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
-    - SolCommon
+    - TauCetiBasic
+    - ValyrianStandard
     understands:
-    - GalacticCommon
-    - SolCommon
+    - TauCetiBasic
+    - ValyrianStandard
   - type: StepTriggerImmune
+    whitelist:
+      types:
+      - Shard
+      - Landmine
+      - Mousetrap
 
 - type: entity
   save: false
-  name: Urist McHands
+  name: Urist McBirb
   parent: MobHumanDummy
   id: MobHarpyDummy
-  noSpawn: true
   description: A dummy Harpy meant to be used in character setup.
   components:
   - type: HumanoidAppearance
@@ -174,6 +182,9 @@
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "mask" ]
       - map: [ "head" ]
+      - map: [ "singingLayer" ]
+        sprite: Effects/harpysinger.rsi
+        state: singing_music_notes
 
 - type: entity
   id: ActionHarpyPlayMidi
@@ -197,3 +208,15 @@
     icon: DeltaV/Interface/Actions/harpy_syrinx.png
     itemIconStyle: BigAction
     event: !type:VoiceMaskSetNameEvent
+
+- type: entity
+  id: ActionToggleFlight
+  name: Fly
+  description: Make use of your wings to fly. Beat the flightless bird allegations.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    icon: { sprite: Interface/Actions/flight.rsi, state: flight_off }
+    iconOn: { sprite : Interface/Actions/flight.rsi, state: flight_on }
+    event: !type:ToggleFlightEvent

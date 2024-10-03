@@ -45,6 +45,10 @@
       gender: female
       proper: true
   - type: SpriteFade
-  - type: GuideHelp
-    guides:
-    - Psionics
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic

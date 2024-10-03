@@ -593,6 +593,21 @@ public sealed class AirAlarmSystem : EntitySystem
             : 0f;
     }
 
+    public float CalculateGasMolarConcentrationAverage(AirAlarmComponent alarm, Gas gas, out float percentage)
+    {
+        percentage = 0f;
+
+        var data = alarm.SensorData.Values.SelectMany(v => v.Gases.Where(g => g.Key == gas));
+
+        if (data.Count() == 0)
+            return 0f;
+
+        var averageMol = data.Select(kvp => kvp.Value).Average();
+        percentage = data.Select(kvp => kvp.Value).Sum() / alarm.SensorData.Values.Select(v => v.TotalMoles).Sum();
+
+        return averageMol;
+    }
+
     public void UpdateUI(EntityUid uid, AirAlarmComponent? alarm = null, DeviceNetworkComponent? devNet = null, AtmosAlarmableComponent? alarmable = null)
     {
         if (!Resolve(uid, ref alarm, ref devNet, ref alarmable))

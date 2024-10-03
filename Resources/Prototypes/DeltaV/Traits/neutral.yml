@@ -1,6 +1,9 @@
 - type: trait
   id: ScottishAccent
-  category: Speech
+  category: TraitsSpeechAccents
   points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
   components:
     - type: ScottishAccent

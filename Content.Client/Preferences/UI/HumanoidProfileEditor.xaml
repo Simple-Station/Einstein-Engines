@@ -91,18 +91,6 @@
                                 <Control HorizontalExpand="True"/>
                                 <Button Name="ShowLoadouts" Pressed="True" ToggleMode="True" Text="{Loc 'Show'}" HorizontalAlignment="Right" />
                             </BoxContainer>
-                            <!-- Clothing -->
-                            <BoxContainer HorizontalExpand="True">
-                                <Label Text="{Loc 'humanoid-profile-editor-clothing-label'}" />
-                                <Control HorizontalExpand="True"/>
-                                <OptionButton Name="CClothingButton" HorizontalAlignment="Right" />
-                            </BoxContainer>
-                            <!-- Backpack -->
-                            <BoxContainer HorizontalExpand="True">
-                                <Label Text="{Loc 'humanoid-profile-editor-backpack-label'}" />
-                                <Control HorizontalExpand="True"/>
-                                <OptionButton Name="CBackpackButton" HorizontalAlignment="Right" />
-                            </BoxContainer>
                             <!-- Spawn Priority -->
                             <BoxContainer HorizontalExpand="True">
                                 <Label Text="{Loc 'humanoid-profile-editor-spawn-priority-label'}" />
@@ -211,8 +199,10 @@
                 <ui:NeoTabContainer Name="CLoadoutsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
             <BoxContainer Name="CMarkingsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
-                <!-- Markings -->
-                <humanoid:MarkingPicker Name="CMarkings" IgnoreCategories="Hair,FacialHair" />
+                <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
+                    <!-- Markings -->
+                    <humanoid:MarkingPicker Name="CMarkings" IgnoreCategories="Hair,FacialHair" />
+                </ScrollContainer>
             </BoxContainer>
         </ui:NeoTabContainer>
     </BoxContainer>
