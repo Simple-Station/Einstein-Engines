@@ -1678,6 +1678,7 @@
   - type: PreventSpiller
   - type: RandomBark
     barkMultiplier: 0.3
+    barkType: mouse
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning

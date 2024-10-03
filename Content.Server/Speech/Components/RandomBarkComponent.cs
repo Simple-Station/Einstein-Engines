@@ -40,7 +40,7 @@ public sealed partial class RandomBarkComponent : Component
     ///     Bark type, for use in locales. Locale keys follow the format "bark-{type}-{index between 1 and BarkLocaleCount}".
     /// </summary>
     [DataField]
-    public string BarkType = default!;
+    public string BarkType = "default";
 
     /// <summary>
     ///     Number of bark locales. If not specified, then it will be figured out by fetching the locale string
