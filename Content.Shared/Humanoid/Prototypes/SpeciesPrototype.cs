@@ -76,10 +76,10 @@ public sealed partial class SpeciesPrototype : IPrototype
     public EntProtoId DollPrototype { get; private set; }
 
     /// <summary>
-    /// Allow Custom Specie Name for this Specie.
+    ///     Allow Custom Specie Name for this Specie.
     /// </summary>
     [DataField]
-    public Boolean CustomName { get; private set; } = false;
+    public bool CustomName { get; private set; }
 
     /// <summary>
     /// Method of skin coloration used by the species.
