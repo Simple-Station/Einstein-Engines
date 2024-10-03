@@ -233,17 +233,18 @@
     useDelay: 45
     checkCanInteract: false
     event: !type:AnomalyPowerActionEvent
-            powerName: "Shadeskip"
-            overchargeFeedback: "shadeskip-overcharge-feedback"
-            overchargeCooldown: 120
-            overchargeRecoil:
-              groups:
-                Burn: -100 #This will be divided by the caster's Dampening.
-            minGlimmer: 6
-            maxGlimmer: 8
-            supercriticalGlimmerMultiplier: 3
-            glimmerSoundThreshold: 50
-            supercriticalThreshold: 500
+            settings:
+              powerName: "Shadeskip"
+              overchargeFeedback: "shadeskip-overcharge-feedback"
+              overchargeCooldown: 120
+              overchargeRecoil:
+                groups:
+                  Burn: -100 #This will be divided by the caster's Dampening.
+              minGlimmer: 6
+              maxGlimmer: 8
+              supercriticalGlimmerMultiplier: 3
+              glimmerSoundThreshold: 50
+              supercriticalThreshold: 500
             entitySpawnEntries:
               - settings:
                   spawnOnPulse: true
