@@ -11,6 +11,7 @@
     - Reptilian
     - SlimePerson
     - IPCs
+    - Harpy
 
 - type: guideEntry
   id: Arachnid
@@ -51,3 +52,8 @@
   id: IPCs
   name: species-name-ipc
   text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
+
+- type: guideEntry
+  id: Harpy
+  name: species-name-harpy
+  text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"

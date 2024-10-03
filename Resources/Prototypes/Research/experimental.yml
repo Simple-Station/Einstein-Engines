@@ -56,6 +56,7 @@
   cost: 5000
   recipeUnlocks:
   - TechDiskComputerCircuitboard
+  - ReverseEngineeringMachineCircuitboard #DeltaV
 
 - type: technology
   id: MagnetsTech
@@ -82,6 +83,20 @@
   - WeaponGauntletGorilla
 
 # Tier 2
+
+- type: technology
+  id: AdvancedParts
+  name: research-technology-advanced-parts
+  icon:
+    sprite: Objects/Misc/stock_parts.rsi
+    state: advanced_matter_bin
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - AdvancedCapacitorStockPart
+  - AdvancedMatterBinStockPart
+  - NanoManipulatorStockPart
 
 - type: technology
   id: AbnormalArtifactManipulation
@@ -154,18 +169,32 @@
 
 # Tier 3
 
-#- type: technology # DeltaV - LRP
-#  id: GravityManipulation
-#  name: research-technology-gravity-manipulation
-#  icon:
-#    sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
-#    state: base
-#  discipline: Experimental
-#  tier: 3
-#  cost: 10000
-#  recipeUnlocks:
-#    - WeaponForceGun
-#    - WeaponTetherGun
+- type: technology
+  id: SuperParts
+  name: research-technology-super-parts
+  icon:
+    sprite: Objects/Misc/stock_parts.rsi
+    state: super_matter_bin
+  discipline: Experimental
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - SuperCapacitorStockPart
+  - SuperMatterBinStockPart
+  - PicoManipulatorStockPart
+
+- type: technology
+  id: GravityManipulation
+  name: research-technology-gravity-manipulation
+  icon:
+    sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
+    state: base
+  discipline: Experimental
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+    - WeaponForceGun
+    - WeaponTetherGun
 
 - type: technology
   id: QuantumLeaping

@@ -12,9 +12,8 @@
         MatterBin: 1
         Manipulator: 1
       materialRequirements:
-        Glass: 1
         Cable: 1
-        Diamond: 10
+        PlasmaGlass: 5
       tagRequirements:
         BorgArm:
           Amount: 3

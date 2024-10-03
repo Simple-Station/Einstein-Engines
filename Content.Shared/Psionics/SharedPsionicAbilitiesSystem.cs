@@ -1,4 +1,5 @@
 using Content.Shared.Administration.Logs;
+using Content.Shared.Contests;
 using Content.Shared.Popups;
 using Content.Shared.Psionics.Glimmer;
 using Robust.Shared.Random;
@@ -13,6 +14,7 @@ namespace Content.Shared.Abilities.Psionics
         [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly IRobustRandom _robustRandom = default!;
+        [Dependency] private readonly ContestsSystem _contests = default!;
 
         public override void Initialize()
         {
@@ -40,6 +42,48 @@ namespace Content.Shared.Abilities.Psionics
             RaiseLocalEvent(uid, ev, false);
 
             _glimmerSystem.Glimmer += _robustRandom.Next(minGlimmer, maxGlimmer);
+        }
+
+        /// <summary>
+        ///     Returns the CurrentAmplification of a given Entity, multiplied by the result of that Entity's MoodContest.
+        ///     Higher mood means more Amplification, Lower mood means less Amplification.
+        /// </summary>
+        public float ModifiedAmplification(EntityUid uid)
+        {
+            if (!TryComp<PsionicComponent>(uid, out var psionicComponent))
+                return 1;
+
+            return ModifiedAmplification(uid, psionicComponent);
+        }
+
+        /// <summary>
+        ///     Returns the CurrentAmplification of a given Entity, multiplied by the result of that Entity's MoodContest.
+        ///     Higher mood means more Amplification, Lower mood means less Amplification.
+        /// </summary>
+        public float ModifiedAmplification(EntityUid uid, PsionicComponent component)
+        {
+            return component.CurrentAmplification * _contests.MoodContest(uid, true);
+        }
+
+        /// <summary>
+        ///     Returns the CurrentDampening of a given Entity, multiplied by the result of that Entity's MoodContest.
+        ///     Lower mood means more Dampening, higher mood means less Dampening.
+        /// </summary>
+        public float ModifiedDampening(EntityUid uid)
+        {
+            if (!TryComp<PsionicComponent>(uid, out var psionicComponent))
+                return 1;
+
+            return ModifiedDampening(uid, psionicComponent);
+        }
+
+        /// <summary>
+        ///     Returns the CurrentDampening of a given Entity, multiplied by the result of that Entity's MoodContest.
+        ///     Lower mood means more Dampening, higher mood means less Dampening.
+        /// </summary>
+        public float ModifiedDampening(EntityUid uid, PsionicComponent component)
+        {
+            return component.CurrentDampening / _contests.MoodContest(uid, true);
         }
     }
 

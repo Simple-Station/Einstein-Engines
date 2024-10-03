@@ -26,6 +26,7 @@
         - TabletopMachineMask
         layer:
         - MidImpassable
+        - BulletImpassable
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Metallic
@@ -33,7 +34,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 50
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -45,7 +46,8 @@
     node: plasticFlaps
   - type: StaticPrice
     price: 83
-
+  - type: RequireProjectileTarget
+  
 - type: entity
   id: PlasticFlapsOpaque
   parent: PlasticFlapsClear
@@ -65,6 +67,7 @@
         layer:
         - Opaque
         - MidImpassable
+        - BulletImpassable
   - type: Occluder
   - type: Construction
     graph: PlasticFlapsGraph
@@ -81,7 +84,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 75
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -103,7 +106,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 75
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]

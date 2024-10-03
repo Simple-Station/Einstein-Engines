@@ -53,8 +53,6 @@ public sealed class MoodSystem : EntitySystem
         SubscribeLocalEvent<MoodComponent, DamageChangedEvent>(OnDamageChange);
         SubscribeLocalEvent<MoodComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMoveSpeed);
         SubscribeLocalEvent<MoodComponent, MoodRemoveEffectEvent>(OnRemoveEffect);
-
-        SubscribeLocalEvent<MoodModifyTraitComponent, ComponentStartup>(OnTraitStartup);
     }
 
     private void OnShutdown(EntityUid uid, MoodComponent component, ComponentShutdown args)
@@ -101,15 +99,6 @@ public sealed class MoodSystem : EntitySystem
         args.ModifySpeed(1, modifier);
     }
 
-    private void OnTraitStartup(EntityUid uid, MoodModifyTraitComponent component, ComponentStartup args)
-    {
-        if (_debugMode
-            || component.MoodId is null)
-            return;
-
-        RaiseLocalEvent(uid, new MoodEffectEvent($"{component.MoodId}"));
-    }
-
     private void OnMoodEffect(EntityUid uid, MoodComponent component, MoodEffectEvent args)
     {
         if (_debugMode
@@ -133,16 +122,15 @@ public sealed class MoodSystem : EntitySystem
                 if (!_prototypeManager.TryIndex<MoodEffectPrototype>(oldPrototypeId, out var oldPrototype))
                     return;
 
-                if (prototype.ID != oldPrototype.ID)
-                {
+                // Don't send the moodlet popup if we already have the moodlet.
+                if (!component.CategorisedEffects.ContainsValue(prototype.ID))
                     SendEffectText(uid, prototype);
+
+                if (prototype.ID != oldPrototype.ID)
                     component.CategorisedEffects[prototype.Category] = prototype.ID;
-                }
             }
             else
-            {
                 component.CategorisedEffects.Add(prototype.Category, prototype.ID);
-            }
 
             if (prototype.Timeout != 0)
                 Timer.Spawn(TimeSpan.FromSeconds(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
@@ -157,7 +145,10 @@ public sealed class MoodSystem : EntitySystem
             if (moodChange == 0)
                 return;
 
-            SendEffectText(uid, prototype);
+            // Don't send the moodlet popup if we already have the moodlet.
+            if (!component.UncategorisedEffects.ContainsKey(prototype.ID))
+                SendEffectText(uid, prototype);
+
             component.UncategorisedEffects.Add(prototype.ID, moodChange);
 
             if (prototype.Timeout != 0)
@@ -195,7 +186,26 @@ public sealed class MoodSystem : EntitySystem
             comp.CategorisedEffects.Remove(category);
         }
 
+        ReplaceMood(uid, prototypeId);
         RefreshMood(uid, comp);
+    }
+
+    /// <summary>
+    ///     Some moods specifically create a moodlet upon expiration. This is normally used for "Addiction" type moodlets,
+    ///     such as a positive moodlet from an addictive substance that becomes a negative moodlet when a timer ends.
+    /// </summary>
+    /// <remarks>
+    ///     Moodlets that use this should probably also share a category with each other, but this isn't necessarily required.
+    ///     Only if you intend that "Re-using the drug" should also remove the negative moodlet.
+    /// </remarks>
+    private void ReplaceMood(EntityUid uid, string prototypeId)
+    {
+        if (!_prototypeManager.TryIndex<MoodEffectPrototype>(prototypeId, out var proto)
+            || proto.MoodletOnEnd is null)
+            return;
+
+        var ev = new MoodEffectEvent(proto.MoodletOnEnd);
+        EntityManager.EventBus.RaiseLocalEvent(uid, ev);
     }
 
     private void OnMobStateChanged(EntityUid uid, MoodComponent component, MobStateChangedEvent args)

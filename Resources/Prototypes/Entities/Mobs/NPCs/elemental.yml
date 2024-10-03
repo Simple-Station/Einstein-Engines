@@ -257,13 +257,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      150: Dead
+      50: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      50: 0.4
+      20: 0.4
   - type: Bloodstream
     bloodReagent: Water
-    chemicalMaxVolume: 100
+    chemicalMaxVolume: 50
   - type: StatusEffects
     allowed:
     - SlowedDown
@@ -274,10 +274,10 @@
     animation: WeaponArcBite
     damage:
       types:
-        Slash: 8
+        Slash: 3
   - type: MeleeChemicalInjector
     solution: bloodstream
-    transferAmount: 5
+    transferAmount: 2
   - type: DamageStateVisuals
     rotate: true
     states:
@@ -329,6 +329,19 @@
         - ReagentSlimeNorepinephricAcid
         - ReagentSlimeEphedrine
         - ReagentSlimeRobustHarvest
+        - ReagentSlimeIchor
+        - ReagentSlimeBleach
+        - ReagentSlimeSoap
+        - ReagentSlimeSpacelube
+        - ReagentSlimeBuzzachloricbees
+        - ReagentSlimeWehjuice
+        - ReagentCognizine
+        - ReagentSlimeNecrosol
+        - ReagentSlimeSpaceDrugs
+        - ReagentSlimeUnstableMutagen
+        - ReagentSlimeLead
+        - ReagentSlimechlorinetriflouride
+        - ReagentSlimePotassium
         - ReagentSlimeLotophagoiOil
       chance: 1
 

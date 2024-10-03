@@ -13,6 +13,8 @@ using Robust.Shared.Console;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Server.Silicon.IPC;
+using Content.Shared.Radio.Components;
+using Content.Shared.Cluwne;
 
 namespace Content.Server.Administration.Commands
 {
@@ -127,7 +129,14 @@ namespace Content.Server.Administration.Commands
                     handsSystem.TryPickup(target, inhandEntity, checkActionBlocker: false, handsComp: handsComponent);
                 }
             }
-            InternalEncryptionKeySpawner.TryInsertEncryptionKey(target, startingGear, entityManager, profile);
+
+            if (entityManager.HasComponent<CluwneComponent>(target))
+                return true; //Fuck it, nuclear option for not Cluwning an IPC because that causes a crash that SOMEHOW ignores null checks.
+            if (entityManager.HasComponent<EncryptionKeyHolderComponent>(target))
+            {
+                var encryption = new InternalEncryptionKeySpawner();
+                encryption.TryInsertEncryptionKey(target, startingGear, entityManager);
+            }
             return true;
         }
     }

@@ -218,9 +218,9 @@
   - type: CanEscapeInventory # Carrying system from nyanotrasen.
   - type: LanguageKnowledge # This is here so even if species doesn't have a defined language, they at least speak GC
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
   - type: Tag
     tags:
     - CanPilot

@@ -294,6 +294,12 @@
       - Implanter
       - PillCanister
       - ChemistryEmptyBottle01
+      - AdvancedCapacitorStockPart
+      - AdvancedMatterBinStockPart
+      - NanoManipulatorStockPart
+      - SuperCapacitorStockPart
+      - SuperMatterBinStockPart
+      - PicoManipulatorStockPart
       - AdvMopItem
       - WeaponSprayNozzle
       - ClothingBackpackWaterTank
@@ -319,11 +325,11 @@
       - HolofanProjector
       - BluespaceBeaker
       - SyringeBluespace
-      #- WeaponForceGun
+      - WeaponForceGun
       - WeaponLaserSvalinn
       - WeaponProtoKineticAccelerator
-      #- WeaponTetherGun
-      #- WeaponGrapplingGun
+      - WeaponTetherGun
+      - WeaponGrapplingGun
       - ClothingBackpackHolding
       - ClothingBackpackSatchelHolding
       - ClothingBackpackDuffelHolding
@@ -355,6 +361,8 @@
       - AnimalTranslator
       - MofficTranslatorImplanter
       - MofficTranslator
+      - RCDAmmo #DeltaV
+      - RCD #EE
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ExplosivePayload
@@ -591,7 +599,7 @@
     - BorgModuleLightReplacer
     - BorgModuleAdvancedCleaning
     - BorgModuleMining
-    #- BorgModuleGrapplingGun
+    - BorgModuleGrapplingGun
     - BorgModuleAdvancedTool
     - BorgModuleGPS
     - BorgModuleRCD
@@ -626,8 +634,6 @@
     - HamtrRLeg
     - VimHarness
   # Begin Nyano additions
-    - ClothingOuterHardsuitJuggernautReverseEngineered
-    - ClothingOuterHardsuitSyndieReverseEngineered
     - JetpackBlue
     - JetpackMini
   # End Nyano additions

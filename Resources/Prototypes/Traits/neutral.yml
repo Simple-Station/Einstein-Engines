@@ -1,19 +1,24 @@
 - type: trait
   id: PirateAccent
-  category: Speech
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
   components:
     - type: PirateAccent
 
 - type: trait
   id: Accentless
-  category: Speech
-  points: -2
+  category: TraitsSpeechAccents
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
   components:
     - type: Accentless
       removes:
@@ -24,7 +29,10 @@
 
 - type: trait
   id: Southern
-  category: Speech
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
   components:
     - type: SouthernAccent
 
@@ -54,9 +62,8 @@
       inverted: true
       traits:
         - Sanguine
-  components:
-    - type: MoodModifyTrait
-      moodId: TraitSaturnine
+  moodEffects:
+    - TraitSaturnine
 
 - type: trait
   id: Sanguine
@@ -72,6 +79,22 @@
       inverted: true
       traits:
         - Saturnine
-  components:
-    - type: MoodModifyTrait
-      moodId: TraitSanguine
+  moodEffects:
+    - TraitSanguine
+
+- type: trait
+  id: AddictionNicotine
+  category: Mental
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  moodEffects:
+    - NicotineWithdrawal

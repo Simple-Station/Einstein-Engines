@@ -108,10 +108,10 @@
   - type: ZombieImmune
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - RobotTalk
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - RobotTalk
   - type: PsionicInsulation
 
@@ -137,6 +137,9 @@
   - type: Speech
     speechVerb: Cluwne
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - SlipEntity
     intersectRatio: 0.2
   - type: Fixtures
     fixtures:

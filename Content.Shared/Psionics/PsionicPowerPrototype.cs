@@ -72,7 +72,7 @@ public sealed partial class PsionicPowerPrototype : IPrototype
     /// <summary>
     ///     What message will this power generate when scanned by a Metempsionic Focused Pulse.
     /// </summary>
-    [DataField(required: true)]
+    [DataField]
     public string MetapsionicFeedback = "psionic-metapsionic-feedback-default";
 
     /// <summary>
@@ -86,4 +86,10 @@ public sealed partial class PsionicPowerPrototype : IPrototype
     /// </summary>
     [DataField]
     public float DampeningModifier = 0;
+
+    /// <summary>
+    ///     How many "Power Slots" this power occupies.
+    /// </summary>
+    [DataField]
+    public int PowerSlotCost = 1;
 }
