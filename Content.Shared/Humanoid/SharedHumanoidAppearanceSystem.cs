@@ -488,9 +488,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     public string GetSpeciesRepresentation(string speciesId, string? customespeciename)
     {
         if (!string.IsNullOrEmpty(customespeciename))
-        {
             return Loc.GetString(customespeciename);
-        }
 
         if (_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
         {
