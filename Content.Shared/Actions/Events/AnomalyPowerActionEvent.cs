@@ -14,19 +14,19 @@ public sealed partial class AnomalyPowerActionEvent : InstantActionEvent
     ///     Contains settings common to all "Anomalist" Powers.
     /// </summary>
     [DataField]
-    public AnomalyPowerSettings Settings = default!;
+    public AnomalyPowerSettings Settings;
 
     /// <summary>
     ///     Contains settings specific to "Bluespace Anomaly" powers.
     /// </summary>
     [DataField]
-    public BluespaceAnomalySettings? Bluespace = default!;
+    public BluespaceAnomalySettings? Bluespace;
 
     /// <summary>
     ///     Contains settings specific to "Electrical Anomaly" powers.
     /// </summary>
     [DataField]
-    public ElectricalAnomalySettings? Electricity = default!;
+    public ElectricalAnomalySettings? Electricity;
 
     /// <summary>
     ///     What entities will be spawned by this action, using the same arguments as an EntitySpawnAnomalyComponent.
@@ -38,37 +38,37 @@ public sealed partial class AnomalyPowerActionEvent : InstantActionEvent
     ///     Contains settings specific to "Explosion Anomaly" powers.
     /// </summary>
     [DataField]
-    public ExplosionAnomalySettings? Explosion = default!;
+    public ExplosionAnomalySettings? Explosion;
 
     /// <summary>
     ///     Contains settings specific to "Gas Producer Anomaly" powers.
     /// </summary>
     [DataField]
-    public GasProducerAnomalySettings? Gas = default!;
+    public GasProducerAnomalySettings? Gas;
 
     /// <summary>
     ///     Contains settings specific to "Gravity Anomaly" powers.
     /// </summary>
     [DataField]
-    public GravityAnomalySettings? Gravity = default!;
+    public GravityAnomalySettings? Gravity;
 
     /// <summary>
     ///     Contains settings specific to "Injection Anomaly" powers.
     /// </summary>
     [DataField]
-    public InjectionAnomalySettings? Injection = default!;
+    public InjectionAnomalySettings? Injection;
 
     /// <summary>
     ///     Contains settings specific to "Puddle Create Anomaly" powers.
     /// </summary>
     [DataField]
-    public PuddleAnomalySettings? Puddle = default!;
+    public PuddleAnomalySettings? Puddle;
 
     /// <summary>
     ///     Contains settings specific to "Pyroclastic Anomaly" powers.
     /// </summary>
     [DataField]
-    public PyroclasticAnomalySettings? Pyroclastic = default!;
+    public PyroclasticAnomalySettings? Pyroclastic;
 }
 
 [DataRecord]
@@ -130,6 +130,8 @@ public partial record struct AnomalyPowerSettings()
     ///     The sound plays when this power is activated above a Supercritical glimmer threshold
     /// </summary>
     public SoundSpecifier? SupercriticalSound = new SoundCollectionSpecifier("Explosion");
+
+    public bool DoSupercritical = true;
 }
 
 [DataRecord]

@@ -53,8 +53,9 @@ public sealed partial class AnomalyPowerSystem : EntitySystem
             || HasComp<MindbrokenComponent>(uid))
             return;
 
-        var overcharged = _glimmerSystem.Glimmer * component.CurrentAmplification
-            > Math.Min(args.Settings.SupercriticalThreshold * component.CurrentDampening, args.Settings.MaxSupercriticalThreshold);
+        var overcharged = args.Settings.DoSupercritical ? _glimmerSystem.Glimmer * component.CurrentAmplification
+            > Math.Min(args.Settings.SupercriticalThreshold * component.CurrentDampening, args.Settings.MaxSupercriticalThreshold)
+            : false;
 
         // Behold the wall of nullable logic gates.
         DoBluespaceAnomalyEffects(uid, component, args, overcharged);

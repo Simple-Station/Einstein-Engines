@@ -122,6 +122,15 @@ shadeskip-power-initialization-feedback =
 shadeskip-power-metapsionic-feedback = {CAPITALIZE($entity)} has been claimed by the Lords of the End of Time.
 shadeskip-overcharge-feedback = My body reels from shock as it is overwhelmed by the sheer force flowing through me.
 
+# Telekinetic Pulse
+action-name-telekinetic-pulse = Telekinetic Pulse
+action-description-telekinetic-pulse =
+    Force everyone around you away.
+telekinetic-pulse-power-description = { action-description-shadeskip }
+telekinetic-pulse-power-initialization-feedback =
+    Guh, Fill This In.
+telekinetic-pulse-power-metapsionic-feedback = {CAPITALIZE($entity)} has SOMETHING..
+
 # Psionic System Messages
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
 examine-mindbroken-message =

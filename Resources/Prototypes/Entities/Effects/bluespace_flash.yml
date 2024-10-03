@@ -9,5 +9,33 @@
   - type: TimedDespawn
     lifetime: 1
   - type: EmitSoundOnSpawn
-    sound: 
+    sound:
+      path: /Audio/Effects/Lightning/lightningbolt.ogg
+
+- type: entity
+  id: EffectFlashTelekineticPulse
+  noSpawn: true
+  components:
+  - type: PointLight
+    radius: 10
+    energy: 3.5
+    color: "#18abf5"
+  - type: TimedDespawn
+    lifetime: 1
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Lightning/lightningbolt.ogg
+
+- type: entity
+  id: EffectFlashShadeskip
+  noSpawn: true
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 3.5
+    color: "#7100bd"
+  - type: TimedDespawn
+    lifetime: 1
+  - type: EmitSoundOnSpawn
+    sound:
       path: /Audio/Effects/Lightning/lightningbolt.ogg
