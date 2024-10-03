@@ -41,7 +41,7 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
-          CultRunicMetal:
+          CultRunedMetal:
             min: 5
             max: 5
       - !type:PlaySoundBehavior
@@ -56,3 +56,16 @@
   - type: BloodCultBarrier
   - type: Airtight
     noAirWhenFullyAirBlocked: false
+
+- type: entity
+  id: WallForceCult
+  parent: WallForce
+  name: glowing wall
+  description: An unholy shield that blocks all attacks.
+  components:
+  - type: Sprite
+    sprite: White/Cult/Structures/cult_shield.rsi
+    state: icon
+  - type: Icon
+    sprite: White/Cult/Structures/cult_shield.rsi
+    state: icon

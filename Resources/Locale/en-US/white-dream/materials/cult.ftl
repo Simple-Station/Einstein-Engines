@@ -1,1 +1,1 @@
-﻿materials-runic-metal = runic metal
+﻿materials-runed-metal = runed metal

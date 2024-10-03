@@ -1,6 +1,6 @@
 ﻿- type: entity
   parent: SheetOtherBase
-  id: RunicMetal
+  id: RunedMetal
   name: runic metal
   description: An unusual sheet of metal with a pulsating rune.
   suffix: Full
@@ -16,9 +16,9 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RunicMetal: 100
+      RunedMetal: 100
   - type: Stack
-    stackType: RunicMetalSheets
+    stackType: RunedMetalSheets
     baseLayer: base
     layerStates:
     - runic
@@ -40,11 +40,16 @@
         BloodCultist
   - type: ShortConstruction
     prototypes:
-    - Window
+    - CultPylon
+    - CultFactoryArchives
+    - CultFactoryForge
+    - CultFactoryAltar
+    - CultGirder
+    - CultDoor
 
 - type: entity
-  parent: RunicMetal
-  id: RunicMetal1
+  parent: RunedMetal
+  id: RunedMetal1
   suffix: Single
   components:
   - type: Sprite
@@ -53,8 +58,8 @@
     count: 1
 
 - type: entity
-  parent: RunicMetal
-  id: RunicMetal4
+  parent: RunedMetal
+  id: RunedMetal4
   suffix: 4
   components:
   - type: Sprite
@@ -63,8 +68,8 @@
     count: 4
 
 - type: entity
-  parent: RunicMetal
-  id: RunicMetal20
+  parent: RunedMetal
+  id: RunedMetal20
   suffix: 20
   components:
   - type: Sprite

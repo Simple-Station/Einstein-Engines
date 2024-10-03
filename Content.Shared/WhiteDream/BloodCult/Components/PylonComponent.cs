@@ -1,11 +1,11 @@
 ﻿using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.WhiteDream.BloodCult.Pylon;
+namespace Content.Shared.WhiteDream.BloodCult.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class PylonComponent : Component
 {
     [DataField]

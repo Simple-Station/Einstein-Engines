@@ -8,6 +8,7 @@ using Content.Shared.Maps;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.WhiteDream.BloodCult;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
+using Content.Shared.WhiteDream.BloodCult.Components;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
