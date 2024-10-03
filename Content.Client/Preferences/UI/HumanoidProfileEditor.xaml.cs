@@ -1009,17 +1009,7 @@ namespace Content.Client.Preferences.UI
 
             _customspecienameEdit.Text = Profile.Customspeciename ?? "";
 
-            if (_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var speciesProto))
-            {
-                if (speciesProto.CustomName)
-                {
-                    _ccustomspecienamecontainerEdit.Visible = true;
-                }
-                else
-                {
-                    _ccustomspecienamecontainerEdit.Visible = false;
-                }
-            }
+            _ccustomspecienamecontainerEdit.Visible = _prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var speciesProto)) && speciesProto.CustomName);
         }
 
         private void UpdateFlavorTextEdit()
