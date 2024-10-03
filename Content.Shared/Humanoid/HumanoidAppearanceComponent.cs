@@ -33,7 +33,7 @@ public sealed partial class HumanoidAppearanceComponent : Component
     public int Age = 18;
 
     [DataField, AutoNetworkedField]
-    public string CustomSpecieName;
+    public string CustomSpecieName = "";
 
     /// <summary>
     ///     Any custom base layers this humanoid might have. See:
