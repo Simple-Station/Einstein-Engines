@@ -20,6 +20,7 @@ using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.Explosion.Components;
 using Content.Shared.FixedPoint;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Popups;
 using Content.Shared.Store;
@@ -259,11 +260,11 @@ public sealed class BlobCoreSystem : EntitySystem
             return false;
 
         var blobRule = EntityQuery<BlobRuleComponent>().FirstOrDefault();
-
         if (blobRule == null)
         {
             _gameTicker.StartGameRule("Blob", out _);
         }
+
         var ev = new CreateBlobObserverEvent(userId);
         RaiseLocalEvent(blobCoreUid, ev, true);
 
@@ -529,12 +530,9 @@ public sealed class BlobCoreSystem : EntitySystem
 
     private void DestroyBlobCore(Entity<BlobCoreComponent> core, EntityUid? stationUid)
     {
-        var uid = core.Owner;
-        var component = core.Comp;
+        QueueDel(core.Comp.Observer);
 
-        QueueDel(component.Observer);
-
-        foreach (var blobTile in component.BlobTiles)
+        foreach (var blobTile in core.Comp.BlobTiles.AsParallel())
         {
             if (!_tile.TryGetComponent(blobTile, out var blobTileComponent))
                 continue;
@@ -544,34 +542,34 @@ public sealed class BlobCoreSystem : EntitySystem
             Dirty(blobTile, blobTileComponent);
         }
 
-        var blobCoreQuery = EntityQueryEnumerator<BlobCoreComponent>();
-        var isAllDie = 0;
-        while (blobCoreQuery.MoveNext(out var ent, out _))
+        var blobCoreQuery = EntityQueryEnumerator<BlobCoreComponent, MetaDataComponent>();
+        var aliveBlobs = 0;
+        while (blobCoreQuery.MoveNext(out var ent, out _, out var md))
         {
-            if (TerminatingOrDeleted(ent))
+            if (TerminatingOrDeleted(ent, md))
             {
                 continue;
             }
-            isAllDie++;
+            aliveBlobs++;
         }
 
-        if (isAllDie <= 1)
+        if (aliveBlobs == 0)
         {
-            var blobRuleQuery = EntityQueryEnumerator<BlobRuleComponent>();
-            while (blobRuleQuery.MoveNext(out _, out var blobRuleComp))
+            var blobRuleQuery = EntityQueryEnumerator<BlobRuleComponent, ActiveGameRuleComponent>();
+            while (blobRuleQuery.MoveNext(out _, out var blobRuleComp, out _))
             {
-                if (blobRuleComp.Stage == BlobStage.TheEnd ||
-                    blobRuleComp.Stage == BlobStage.Default ||
-                    stationUid == null)
+                if (blobRuleComp.Stage is BlobStage.TheEnd or BlobStage.Default)
                     continue;
 
-                _alertLevelSystem.SetLevel(stationUid.Value, "green", true, true, true);
+                if(stationUid != null)
+                    _alertLevelSystem.SetLevel(stationUid.Value, "green", true, true, true);
+
                 _roundEndSystem.CancelRoundEndCountdown(null, false);
                 blobRuleComp.Stage = BlobStage.Default;
             }
         }
 
-        QueueDel(uid);
+        QueueDel(core);
     }
 
     private void CreateKillBlobCoreJob(Entity<BlobCoreComponent> core)

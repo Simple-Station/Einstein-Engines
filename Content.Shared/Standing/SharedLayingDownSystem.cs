@@ -1,8 +1,17 @@
+<<<<<<< HEAD:Content.Shared/Standing/SharedLayingDownSystem.cs
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
+||||||| parent of b0a9653c83 ([Fix] Fix laydown fix blob  (#815)):Content.Shared/Backmen/Standing/SharedLayingDownSystem.cs
+=======
+using Content.Shared.Backmen.CCVar;
+using Content.Shared.Buckle;
+using Content.Shared.Buckle.Components;
+>>>>>>> b0a9653c83 ([Fix] Fix laydown fix blob  (#815)):Content.Shared/Backmen/Standing/SharedLayingDownSystem.cs
 using Content.Shared.DoAfter;
 using Content.Shared.Gravity;
 using Content.Shared.Input;
+using Content.Shared.Interaction;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Body.Components;
@@ -10,8 +19,17 @@ using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Standing;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
+<<<<<<< HEAD:Content.Shared/Standing/SharedLayingDownSystem.cs
 using Robust.Shared.Configuration;
+||||||| parent of b0a9653c83 ([Fix] Fix laydown fix blob  (#815)):Content.Shared/Backmen/Standing/SharedLayingDownSystem.cs
+using Robust.Shared.Containers;
+=======
+using Content.Shared.UserInterface;
+using Robust.Shared.Configuration;
+using Robust.Shared.Containers;
+>>>>>>> b0a9653c83 ([Fix] Fix laydown fix blob  (#815)):Content.Shared/Backmen/Standing/SharedLayingDownSystem.cs
 using Robust.Shared.Input.Binding;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 using Content.Shared.Movement.Components;
@@ -24,10 +42,24 @@ public abstract class SharedLayingDownSystem : EntitySystem
     [Dependency] private readonly StandingStateSystem _standing = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedGravitySystem _gravity = default!;
+<<<<<<< HEAD:Content.Shared/Standing/SharedLayingDownSystem.cs
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _speed = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+||||||| parent of b0a9653c83 ([Fix] Fix laydown fix blob  (#815)):Content.Shared/Backmen/Standing/SharedLayingDownSystem.cs
+    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+=======
+    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedBuckleSystem _buckle = default!;
+    [Dependency] private readonly INetManager _net = default!;
+
+    [Dependency] private readonly IConfigurationManager _config = default!;
+
+    protected bool CrawlUnderTables = false;
+>>>>>>> b0a9653c83 ([Fix] Fix laydown fix blob  (#815)):Content.Shared/Backmen/Standing/SharedLayingDownSystem.cs
 
     public override void Initialize()
     {
@@ -41,6 +73,83 @@ public abstract class SharedLayingDownSystem : EntitySystem
         SubscribeLocalEvent<StandingStateComponent, StandingUpDoAfterEvent>(OnStandingUpDoAfter);
         SubscribeLocalEvent<LayingDownComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
         SubscribeLocalEvent<LayingDownComponent, EntParentChangedMessage>(OnParentChanged);
+        SubscribeLocalEvent<LayingDownComponent, MobStateChangedEvent>(OnChangeMobState);
+
+        SubscribeLocalEvent<LayingDownComponent, BuckledEvent>(OnBuckled);
+        SubscribeLocalEvent<LayingDownComponent, UnbuckledEvent>(OnUnBuckled);
+        SubscribeLocalEvent<BoundUserInterfaceMessageAttempt>(OnBoundUserInterface, after: [typeof(SharedInteractionSystem)]);
+
+        Subs.CVar(_config, CCVars.CrawlUnderTables, b => CrawlUnderTables = b, true);
+    }
+
+    private void OnBoundUserInterface(BoundUserInterfaceMessageAttempt args)
+    {
+        if(
+            args.Cancelled ||
+            !TryComp<ActivatableUIComponent>(args.Target, out var uiComp) ||
+            !TryComp<StandingStateComponent>(args.Actor, out var standingStateComponent) ||
+            standingStateComponent.CurrentState != StandingState.Lying)
+            return;
+
+        if(uiComp.RequiresComplex)
+            args.Cancel();
+    }
+
+    private void OnChangeMobState(Entity<LayingDownComponent> ent, ref MobStateChangedEvent args)
+    {
+        if(
+            !TryComp<StandingStateComponent>(ent, out var standingStateComponent) ||
+            standingStateComponent.CurrentState != StandingState.Lying)
+            return;
+
+        if (args.NewMobState == MobState.Alive)
+        {
+            AutoGetUp(ent);
+            TryStandUp(ent, ent, standingStateComponent);
+            return;
+        }
+
+        if (CrawlUnderTables)
+        {
+            if(_net.IsServer)
+                RaiseNetworkEvent(new DrawUpEvent(GetNetEntity(ent)), Filter.PvsExcept(ent));
+            else
+                RaiseLocalEvent(new DrawUpEvent(GetNetEntity(ent)));
+        }
+    }
+
+
+
+    private void OnUnBuckled(Entity<LayingDownComponent> ent, ref UnbuckledEvent args)
+    {
+        if(
+            !TryComp<StandingStateComponent>(ent, out var standingStateComponent) ||
+            standingStateComponent.CurrentState != StandingState.Lying)
+            return;
+
+        if (CrawlUnderTables)
+        {
+            if(_net.IsServer)
+                RaiseNetworkEvent(new DrawDownedEvent(GetNetEntity(ent)), Filter.PvsExcept(ent));
+            else
+                RaiseLocalEvent(new DrawDownedEvent(GetNetEntity(ent)));
+        }
+    }
+
+    private void OnBuckled(Entity<LayingDownComponent> ent, ref BuckledEvent args)
+    {
+        if(
+            !TryComp<StandingStateComponent>(ent, out var standingStateComponent) ||
+            standingStateComponent.CurrentState != StandingState.Lying)
+            return;
+
+        if (CrawlUnderTables)
+        {
+            if(_net.IsServer)
+                RaiseNetworkEvent(new DrawUpEvent(GetNetEntity(ent)), Filter.Pvs(ent));
+            else
+                RaiseLocalEvent(new DrawUpEvent(GetNetEntity(ent)));
+        }
     }
 
     public override void Shutdown()
@@ -58,7 +167,15 @@ public abstract class SharedLayingDownSystem : EntitySystem
             || _gravity.IsWeightless(session.AttachedEntity.Value))
             return;
 
-        RaiseNetworkEvent(new ChangeLayingDownEvent());
+        if (_net.IsServer)
+        {
+            RaiseNetworkEvent(new ChangeLayingDownEvent(), Filter.Pvs(session.AttachedEntity.Value));
+        }
+        else
+        {
+            RaiseNetworkEvent(new ChangeLayingDownEvent());
+        }
+
     }
 
     private void HandleCrawlUnderRequest(ICommonSession? session)
@@ -141,6 +258,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     public bool TryStandUp(EntityUid uid, LayingDownComponent? layingDown = null, StandingStateComponent? standingState = null)
     {
+<<<<<<< HEAD:Content.Shared/Standing/SharedLayingDownSystem.cs
         if (!Resolve(uid, ref standingState, false)
             || !Resolve(uid, ref layingDown, false)
             || standingState.CurrentState is not StandingState.Lying
@@ -150,6 +268,22 @@ public abstract class SharedLayingDownSystem : EntitySystem
             || body.LegEntities.Count < body.RequiredLegs
             || HasComp<DebrainedComponent>(uid)
             || TryComp<MovementSpeedModifierComponent>(uid, out var movement) && movement.CurrentWalkSpeed == 0)
+||||||| parent of b0a9653c83 ([Fix] Fix laydown fix blob  (#815)):Content.Shared/Backmen/Standing/SharedLayingDownSystem.cs
+        if (!Resolve(uid, ref standingState, false) ||
+            !Resolve(uid, ref layingDown, false) ||
+            standingState.CurrentState is not StandingState.Lying ||
+            !_mobState.IsAlive(uid) ||
+            TerminatingOrDeleted(uid))
+        {
+=======
+        if (!Resolve(uid, ref standingState, false) ||
+            !Resolve(uid, ref layingDown, false) ||
+            standingState.CurrentState is not StandingState.Lying ||
+            !_mobState.IsAlive(uid) ||
+            _buckle.IsBuckled(uid) ||
+            TerminatingOrDeleted(uid))
+        {
+>>>>>>> b0a9653c83 ([Fix] Fix laydown fix blob  (#815)):Content.Shared/Backmen/Standing/SharedLayingDownSystem.cs
             return false;
 
         var args = new DoAfterArgs(EntityManager, uid, layingDown.StandingUpTime, new StandingUpDoAfterEvent(), uid)
@@ -168,9 +302,20 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     public bool TryLieDown(EntityUid uid, LayingDownComponent? layingDown = null, StandingStateComponent? standingState = null, DropHeldItemsBehavior behavior = DropHeldItemsBehavior.NoDrop)
     {
+<<<<<<< HEAD:Content.Shared/Standing/SharedLayingDownSystem.cs
         if (!Resolve(uid, ref standingState, false)
             || !Resolve(uid, ref layingDown, false)
             || standingState.CurrentState is not StandingState.Standing)
+||||||| parent of b0a9653c83 ([Fix] Fix laydown fix blob  (#815)):Content.Shared/Backmen/Standing/SharedLayingDownSystem.cs
+        if (!Resolve(uid, ref standingState, false) ||
+            !Resolve(uid, ref layingDown, false) ||
+            standingState.CurrentState is not StandingState.Standing)
+=======
+        if (!Resolve(uid, ref standingState, false) ||
+            !Resolve(uid, ref layingDown, false) ||
+            standingState.CurrentState is not StandingState.Standing ||
+            _buckle.IsBuckled(uid))
+>>>>>>> b0a9653c83 ([Fix] Fix laydown fix blob  (#815)):Content.Shared/Backmen/Standing/SharedLayingDownSystem.cs
         {
             if (behavior == DropHeldItemsBehavior.AlwaysDrop)
                 RaiseLocalEvent(uid, new DropHandItemsEvent());

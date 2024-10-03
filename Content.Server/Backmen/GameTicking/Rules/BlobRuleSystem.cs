@@ -58,28 +58,30 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
 
         component.Accumulator = 0;
 
-        var blobCoreQuery = EntityQueryEnumerator<BlobCoreComponent, MetaDataComponent>();
-        while (blobCoreQuery.MoveNext(out var ent, out var comp, out _))
+        var check = new Dictionary<EntityUid, long>();
+        var blobCoreQuery = EntityQueryEnumerator<BlobCoreComponent, MetaDataComponent, TransformComponent>();
+        while (blobCoreQuery.MoveNext(out var ent, out var comp, out var md, out var xform))
         {
-            if (TerminatingOrDeleted(ent) ||
-                !CheckBlobInStation(ent, out var stationUid) ||
-                component.StationCores.ContainsKey(stationUid.Value))
+            if (TerminatingOrDeleted(ent, md) ||
+                !CheckBlobInStation(ent, xform, out var stationUid))
             {
                 continue;
             }
 
-            if(!component.StationCores.TryAdd(stationUid.Value, [(ent, comp)]))
-                component.StationCores[stationUid.Value].Add((ent, comp));
+            check.TryAdd(stationUid.Value, 0);
+
+            check[stationUid.Value] += comp.BlobTiles.Count;
         }
-        foreach (var (station, cores) in component.StationCores)
+
+        foreach (var (station, length) in check.AsParallel())
         {
-            CheckChangeStage(station, component, cores);
+            CheckChangeStage(station, component, length);
         }
     }
 
-    private bool CheckBlobInStation(EntityUid blobCore, [NotNullWhen(true)] out EntityUid? stationUid)
+    private bool CheckBlobInStation(EntityUid blobCore, TransformComponent? xform, [NotNullWhen(true)] out EntityUid? stationUid)
     {
-        var station = _stationSystem.GetOwningStation(blobCore);
+        var station = _stationSystem.GetOwningStation(blobCore, xform);
         if (station == null || !HasComp<StationEventEligibleComponent>(station.Value))
         {
             _chatManager.SendAdminAlert(blobCore, Loc.GetString("blob-alert-out-off-station"));
@@ -98,12 +100,11 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
     private void CheckChangeStage(
         Entity<StationBlobConfigComponent?> stationUid,
         BlobRuleComponent blobRuleComp,
-        HashSet<Entity<BlobCoreComponent>> blobCores)
+        long blobTilesCount)
     {
         Resolve(stationUid, ref stationUid.Comp, false);
 
         var stationName = Name(stationUid);
-        var blobTilesCount = blobCores.Sum(blobCore => blobCore.Comp.BlobTiles.Count);
 
         if (blobTilesCount >= (stationUid.Comp?.StageBegin ?? StationBlobConfigComponent.DefaultStageBegin)
             && _roundEndSystem.ExpectedCountdownEnd != null)
@@ -134,7 +135,6 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                 RaiseLocalEvent(stationUid,
                     new BlobChangeLevelEvent
                 {
-                    BlobCore = blobCores,
                     Station = stationUid,
                     Level = blobRuleComp.Stage
                 },
@@ -156,7 +156,6 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                 RaiseLocalEvent(stationUid,
                     new BlobChangeLevelEvent
                 {
-                    BlobCore = blobCores,
                     Station = stationUid,
                     Level = blobRuleComp.Stage
                 },
@@ -171,7 +170,6 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                 RaiseLocalEvent(stationUid,
                     new BlobChangeLevelEvent
                 {
-                    BlobCore = blobCores,
                     Station = stationUid,
                     Level = blobRuleComp.Stage
                 },
