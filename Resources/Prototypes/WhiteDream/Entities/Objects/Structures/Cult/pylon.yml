@@ -66,6 +66,6 @@
         enum.PylonVisuals.Layer:
           True: { state: "icon" }
           False: { state: "icon_off" }
-#  - type: Construction
-#    graph: CultPylon
-#    node: pylon
+  - type: Construction
+    graph: CultPylon
+    node: pylon

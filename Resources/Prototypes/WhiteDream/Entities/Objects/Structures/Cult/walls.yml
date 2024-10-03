@@ -4,9 +4,9 @@
   name: runed girder
   description: Framework made of a strange and shockingly cold metal. It doesn't seem to have any bolts
   components:
-#  - type: Construction
-#    graph: Girder
-#    node: girder
+  - type: Construction
+    graph: CultGirder
+    node: girder
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Structures/cult_girder.rsi
     state: icon

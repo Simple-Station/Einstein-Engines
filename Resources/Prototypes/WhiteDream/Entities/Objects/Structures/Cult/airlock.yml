@@ -9,9 +9,6 @@
   - type: Airtight
     fixVacuum: true
     noAirWhenFullyAirBlocked: false
-  - type: Construction
-    graph: AirlockGlassCult
-    node: airlock
   - type: Destructible
     thresholds:
     - trigger:
@@ -52,3 +49,6 @@
   - type: RepulseOnTouch
   - type: PlacementReplacement
     key: walls
+  - type: Construction
+    graph: CultDoor
+    node: door

@@ -40,12 +40,13 @@ public sealed class KillTargetCultSystem : EntitySystem
     {
         var target = ent.Comp.Target;
 
-        if (!HasComp<MobStateComponent>(target) || _mobState.IsAlive(target))
+        if (!HasComp<MobStateComponent>(target) || _mobState.IsDead(target))
         {
+            args.Progress = 1f;
             return;
         }
 
-        args.Progress = 1f;
+        args.Progress = 0f;
     }
 
     private string GetTitle(EntityUid target, string title)

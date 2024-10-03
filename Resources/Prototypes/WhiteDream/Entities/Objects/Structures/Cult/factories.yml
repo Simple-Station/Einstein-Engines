@@ -70,13 +70,13 @@
   - type: TimedFactory
     prototypes:
       - GasPipeBend
+      - ConstructShell
   # TODO: Add prototypes
   #    - Eldritch Whetstone
-  #    - Construct Shell
   #    - Flask of Unholy Water
-#  - type: Construction
-#    graph: AltarTome
-#    node: tome
+  - type: Construction
+    graph: CultFactoryAltar
+    node: altar
 
 - type: entity
   id: CultFactoryForge
@@ -93,9 +93,9 @@
   #    - True Nar'sian Hardened Armor
   #    - Flagellant's Robe
   #    - Eldritch Longsword
-#  - type: Construction
-#    graph: AltarTome
-#    node: tome
+  - type: Construction
+    graph: CultFactoryForge
+    node: forge
 
 - type: entity
   id: CultFactoryArchives
@@ -112,6 +112,6 @@
   #    - Zealot's Blindfold
   #    - Shuttle Curse
   #    - Veil Walker Set
-#  - type: Construction
-#    graph: AltarTome
-#    node: tome
+  - type: Construction
+    graph: CultFactoryArchives
+    node: archives

@@ -21,23 +21,30 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
     [Dependency] private readonly EntityManager _entManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
-    public Action<string, int>? ItemSelected;
-
     private readonly SpriteSystem _spriteSystem;
 
-    private readonly RadialMenu _menu = new()
-    {
-        HorizontalExpand = true,
-        VerticalExpand = true,
-        BackButtonStyleClass = "RadialMenuBackButton",
-        CloseButtonStyleClass = "RadialMenuCloseButton"
-    };
+    private readonly RadialMenu _menu;
+    private readonly RadialContainer _mainContainer;
 
     private bool _openCentered;
 
     public RadialSelectorMenuBUI(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         _spriteSystem = _entManager.System<SpriteSystem>();
+        _menu = new RadialMenu
+        {
+            HorizontalExpand = true,
+            VerticalExpand = true,
+            BackButtonStyleClass = "RadialMenuBackButton",
+            CloseButtonStyleClass = "RadialMenuCloseButton"
+        };
+
+        _mainContainer = new RadialContainer
+        {
+            Radius = 64f
+        };
+
+        _menu.AddChild(_mainContainer);
     }
 
     protected override void Open()
@@ -72,37 +79,32 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
             _menu.Dispose();
     }
 
-
     private void PopulateMenu(List<EntProtoId> items)
     {
-        _menu.Children.Clear();
-
-        var mainContainer = new RadialContainer
-        {
-            Radius = 36f / (items.Count == 1 ? 1 : MathF.Sin(MathF.PI / items.Count))
-        };
+        _mainContainer.Children.Clear();
+        _mainContainer.Radius = 48f + 24f * MathF.Log(items.Count);
 
         foreach (var protoId in items)
         {
             if (!_protoManager.TryIndex(protoId, out var proto))
                 continue;
 
-            var itemSize = new Vector2(64f, 64f);
+            var itemSize = new Vector2(48f, 48f);
             var button = new RadialMenuTextureButton
             {
                 ToolTip = Loc.GetString(proto.Name),
                 StyleClasses = { "RadialMenuButton" },
                 SetSize = itemSize
             };
-            var runeIcon = _spriteSystem.Frame0(proto);
-            var runeScale = itemSize / runeIcon.Size;
+            var icon = _spriteSystem.Frame0(proto);
+            var iconScale = itemSize / icon.Size;
 
             var texture = new TextureRect
             {
                 VerticalAlignment = Control.VAlignment.Center,
                 HorizontalAlignment = Control.HAlignment.Center,
-                Texture = runeIcon,
-                TextureScale = runeScale
+                Texture = icon,
+                TextureScale = iconScale
             };
 
             button.AddChild(texture);
@@ -114,9 +116,7 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
                 Close();
             };
 
-            mainContainer.AddChild(button);
+            _mainContainer.AddChild(button);
         }
-
-        _menu.AddChild(mainContainer);
     }
 }

@@ -39,13 +39,13 @@
       components:
         BloodCultist
   - type: ShortConstruction
-    prototypes:
-    - CultPylon
-    - CultFactoryArchives
-    - CultFactoryForge
-    - CultFactoryAltar
-    - CultGirder
-    - CultDoor
+    entries:
+    - prototype: CultPylon
+    - prototype: CultFactoryArchives
+    - prototype: CultFactoryForge
+    - prototype: CultFactoryAltar
+    - prototype: CultGirder
+    - prototype: CultDoor
 
 - type: entity
   parent: RunedMetal
