@@ -6928,3 +6928,12 @@ Entries:
   id: 6416
   time: '2024-10-02T23:14:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/986
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Telekinetic Pulse power.
+    - type: Fix
+      message: Fixed a crash related to Shadeskip
+  id: 6417
+  time: '2024-10-04T00:14:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1002
