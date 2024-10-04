@@ -144,6 +144,9 @@
   - type: Psionic
     mindbreakingFeedback: shadowkin-blackeye
     removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - ShadeskipPower
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic

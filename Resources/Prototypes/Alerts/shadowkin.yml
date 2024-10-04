@@ -1,6 +1,5 @@
 - type: alert
   id: ShadowkinPower
-  category: Stamina
   icons:
   - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
     state: power0

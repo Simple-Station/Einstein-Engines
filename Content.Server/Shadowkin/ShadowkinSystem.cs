@@ -136,11 +136,8 @@ public sealed class ShadowkinSystem : EntitySystem
         }
 
         EnsureComp<PsionicComponent>(uid, out var magic);
-        EnsureComp<InnatePsionicPowersComponent>(uid, out var innatemagic);
 
         magic.Removable = false;
         magic.MindbreakingFeedback = "shadowkin-blackeye";
-
-        // TODO Set InnatePsionicPowersComponent Default Shadowkin Powers.
     }
 }
