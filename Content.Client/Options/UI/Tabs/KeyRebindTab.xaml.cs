@@ -151,7 +151,6 @@ namespace Content.Client.Options.UI.Tabs
             KeybindsContainer.RemoveAllChildren();
             _keyControls.Clear();
             var first = true;
-            var activeCategory = "general";
 
             void AddHeader(string headerContents)
             {
