@@ -6946,3 +6946,13 @@ Entries:
   id: 6418
   time: '2024-10-04T00:25:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/958
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Ported a Respawn System. This system allows players to return themselves
+        to the lobby, while also requiring that if they re-enter the round, that
+        they must do so on a different character.
+  id: 6419
+  time: '2024-10-04T00:43:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/998
