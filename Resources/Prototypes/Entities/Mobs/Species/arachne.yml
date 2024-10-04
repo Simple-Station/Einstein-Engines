@@ -108,7 +108,7 @@
     - DoorBumpOpener
   - type: Bloodstream
     bloodReagent: DemonsBlood
-    bloodRegenerationThirst: 5 # 1 unit of demon's blood satiates 4 thirst
+    bloodRegenerationThirst: 4 # 1 unit of demon's blood satiates 4 thirst
   - type: BloodSucker
     webRequired: true
   - type: Arachne
