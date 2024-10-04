@@ -300,6 +300,6 @@
                 spawns:
                 - EffectFlashTelekineticPulse
             gravity:
-              maxThrowRange: 5
-              maxThrowStrength: 10
+              maxThrowRange: 3
+              maxThrowStrength: 5
               spaceRange: 3
