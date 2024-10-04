@@ -2,10 +2,17 @@ using Content.Shared.Examine;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Humanoid;
 using Content.Shared.Psionics;
+using Content.Shared.Bed.Sleep;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
 
 namespace Content.Shared.Shadowkin;
 public sealed class ShadowkinSystem : EntitySystem
 {
+    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -62,6 +69,20 @@ public sealed class ShadowkinSystem : EntitySystem
         {
             component.OldEyeColor = humanoid.EyeColor;
             humanoid.EyeColor = component.BlackEyeColor;
+            Dirty(humanoid);
+        }
+
+        if (component.BlackeyeSpawn)
+            return;
+
+        if (TryComp<StaminaComponent>(uid, out var stamina))
+            _stamina.TakeStaminaDamage(uid, stamina.CritThreshold, stamina, uid);
+
+        if (!TryComp<DamageableComponent>(uid, out var damageable))
+        {
+            DamageSpecifier damage = new();
+            damage.DamageDict.Add("Cellular", FixedPoint2.New(5));
+            _damageable.TryChangeDamage(uid, damage);
         }
     }
 }
