@@ -1,12 +1,25 @@
 ﻿using Content.Shared.Humanoid;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist;
+using Content.Shared.WhiteDream.BloodCult.Constructs;
 
 namespace Content.Server.WhiteDream.BloodCult.Runes;
 
 public sealed partial class CultRuneBaseSystem
 {
     [Dependency] private readonly PullingSystem _pulling = default!;
+
+    /// <summary>
+    ///     Gets all cultists/constructs near rune.
+    /// </summary>
+    public HashSet<EntityUid> GatherCultists(EntityUid rune, float range)
+    {
+        var runeTransform = Transform(rune);
+        var entities = _lookup.GetEntitiesInRange(runeTransform.Coordinates, range);
+        entities.RemoveWhere(entity => !HasComp<BloodCultistComponent>(entity) && !HasComp<ConstructComponent>(entity));
+        return entities;
+    }
 
     /// <summary>
     ///     Gets all the humanoids near rune.

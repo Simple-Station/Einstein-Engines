@@ -29,11 +29,10 @@ public sealed partial class CultRuneBaseComponent : Component
     public EntProtoId HolyWaterPrototype = "HolyWater";
 }
 
-public sealed class TryInvokeCultRuneEvent(EntityUid user, HashSet<Entity<HumanoidAppearanceComponent>> invokers)
-    : CancellableEntityEventArgs
+public sealed class TryInvokeCultRuneEvent(EntityUid user, HashSet<EntityUid> invokers) : CancellableEntityEventArgs
 {
     public EntityUid User = user;
-    public HashSet<Entity<HumanoidAppearanceComponent>> Invokers = invokers;
+    public HashSet<EntityUid> Invokers = invokers;
 }
 
 public sealed class AfterRunePlaced(EntityUid user)

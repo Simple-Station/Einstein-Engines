@@ -38,7 +38,7 @@ public sealed class CultRuneSummonSystem : EntitySystem
 
         var cultistsQuery = EntityQueryEnumerator<BloodCultistComponent>();
         var cultist = new List<ListViewSelectorEntry>();
-        var invokers = args.Invokers.Select(x => x.Owner).ToArray();
+        var invokers = args.Invokers.ToArray();
         while (cultistsQuery.MoveNext(out var cultistUid, out _))
         {
             if (invokers.Contains(cultistUid))

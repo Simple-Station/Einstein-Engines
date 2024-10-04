@@ -52,7 +52,7 @@ public sealed class ConstructShellSystem : EntitySystem
             Act = () =>
             {
                 _ui.SetUiState(bui,
-                    new RadialSelectorState(soulShard.IsBlessed ? soulShard.BlessedConstructs : soulShard.Constructs,
+                    new RadialSelectorState(soulShard.IsBlessed ? soulShard.PurifiedConstructs : soulShard.Constructs,
                         true));
                 _ui.TryOpen(shell, RadialSelectorUiKey.Key, actor.PlayerSession);
             }
@@ -84,7 +84,7 @@ public sealed class ConstructShellSystem : EntitySystem
 
         _slots.SetLock(shell, shell.Comp.ShardSlotId, true);
         _ui.SetUiState(bui,
-            new RadialSelectorState(soulShard.IsBlessed ? soulShard.BlessedConstructs : soulShard.Constructs, true));
+            new RadialSelectorState(soulShard.IsBlessed ? soulShard.PurifiedConstructs : soulShard.Constructs, true));
 
         _ui.TryOpen(shell, RadialSelectorUiKey.Key, actor.PlayerSession);
     }

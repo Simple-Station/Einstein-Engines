@@ -158,9 +158,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         args.Handled = true;
 
-        var cultists = GetTargetsNearRune(ent, ent.Comp.RuneActivationRange,
-            entity => !HasComp<BloodCultistComponent>(entity));
-
+        var cultists = GatherCultists(ent, ent.Comp.RuneActivationRange);
         if (cultists.Count < ent.Comp.RequiredInvokers)
         {
             _popup.PopupEntity(Loc.GetString("cult-rune-not-enough-cultists"), ent, args.User);
@@ -169,7 +167,6 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         var tryInvokeEv = new TryInvokeCultRuneEvent(args.User, cultists);
         RaiseLocalEvent(ent, tryInvokeEv);
-
         if (tryInvokeEv.Cancelled)
             return;
 

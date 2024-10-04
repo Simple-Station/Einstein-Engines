@@ -110,7 +110,7 @@
   id: ConstructJuggernaut
   parent: ConstructBase
   name: juggernaut
-  description: One of the Narsian spirits.
+  description: A massive, armored construct built to spearhead attacks and soak up enemy fire.
   components:
   - type: Sprite
     layers:
@@ -149,7 +149,7 @@
   parent: ConstructBase
   id: ConstructArtificer
   name: artificer
-  description: One of the Narsian spirits.
+  description: A bulbous construct dedicated to building and maintaining the Cult of Nar'Sie's armies.
   components:
   - type: Sprite
     layers:
@@ -183,7 +183,7 @@
   parent: ConstructBase
   id: ConstructWraith
   name: wraith
-  description: One of the Narsian spirits.
+  description: A wicked, clawed shell constructed to assassinate enemies and sow chaos behind enemy lines.
   components:
   - type: Sprite
     layers:
@@ -223,7 +223,7 @@
   id: ConstructHarvester
   parent: ConstructBase
   name: harvester
-  description: One of the Narsian spirits.
+  description: A long, thin construct built to herald Nar'Sie's rise. It'll be all over soon.
   components:
   - type: Sprite
     layers:
@@ -251,9 +251,34 @@
         Blunt: 50
 
 - type: entity
+  id: ShadeCult
+  parent: ConstructBase # It's not technically a construct but it code wise? it is.
+  name: shade
+  description: A bound spirit.
+  components:
+  - type: Sprite
+    state: shade_cult
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Dead
+  - type: MeleeWeapon
+    canHeavyAttack: false
+    hidden: true
+    angle: 30
+    animation: WeaponArcSmash
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 10
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5.5
+    baseSprintSpeed: 5.5
+
+- type: entity
   id: ConstructJuggernautHoly
   parent: ConstructJuggernaut
-  name: holy juggernaut
+  name: purified juggernaut
   description: One of the holy spirits.
   components:
   - type: Sprite
@@ -275,8 +300,8 @@
 - type: entity
   id: ConstructArtificerHoly
   parent: ConstructArtificer
-  name: holy artificer
-  description: One of the holy spirits.
+  name: purified artificer
+  description: A bulbous construct dedicated to building and maintaining the holy armies.
   components:
   - type: Sprite
     layers:
@@ -297,7 +322,7 @@
 - type: entity
   id: ConstructWraithHoly
   parent: ConstructWraith
-  name: holy wraith
+  name: purified wraith
   description: One of the holy spirits.
   components:
   - type: Sprite
@@ -315,3 +340,11 @@
         enum.ConstructVisualsState.Glow:
           True: { visible: false }
           False: { visible: true }
+
+- type: entity
+  id: ShadeHoly
+  parent: ShadeCult
+  name: purified shade
+  components:
+  - type: Sprite
+    state: shade_holy

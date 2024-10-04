@@ -9,10 +9,13 @@ public sealed partial class SoulShardComponent : Component
     public bool IsBlessed;
 
     [DataField]
-    public Color LightColor = Color.DarkRed;
+    public Color BlessedLightColor = Color.LightCyan;
 
     [DataField]
-    public Color BlessedLightColor = Color.LightCyan;
+    public EntProtoId ShadeProto = "ShadeCult";
+
+    [DataField]
+    public EntProtoId PurifiedShadeProto = "ShadeHoly";
 
     [DataField]
     public List<EntProtoId> Constructs = new()
@@ -23,10 +26,12 @@ public sealed partial class SoulShardComponent : Component
     };
 
     [DataField]
-    public List<EntProtoId> BlessedConstructs = new()
+    public List<EntProtoId> PurifiedConstructs = new()
     {
         "ConstructJuggernautHoly",
         "ConstructArtificerHoly",
         "ConstructWraithHoly"
     };
+
+    public EntityUid? ShadeUid;
 }
