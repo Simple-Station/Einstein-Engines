@@ -7,18 +7,23 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
+using Content.Shared.Shadowkin;
+using Content.Shared.Rejuvenate;
+using Content.Server.Abilities.Psionics;
 
-namespace Content.Shared.Shadowkin;
+namespace Content.Server.Shadowkin;
 public sealed class ShadowkinSystem : EntitySystem
 {
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilitiesSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<ShadowkinComponent, MapInitEvent>(OnInit);
         SubscribeLocalEvent<ShadowkinComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<ShadowkinComponent, OnMindbreakEvent>(OnMindbreak);
+        SubscribeLocalEvent<ShadowkinComponent, RejuvenateEvent>(OnRejuvenate);
     }
 
     private void OnInit(EntityUid uid, ShadowkinComponent component, MapInitEvent args)
@@ -27,7 +32,7 @@ public sealed class ShadowkinSystem : EntitySystem
         && TryComp<PsionicComponent>(uid, out var magic))
         {
             magic.Removable = true;
-            RaiseLocalEvent(uid, new MindbreakEvent(uid), false);
+            _psionicAbilitiesSystem.MindBreak(uid);
         }
     }
 
@@ -84,5 +89,28 @@ public sealed class ShadowkinSystem : EntitySystem
             damage.DamageDict.Add("Cellular", FixedPoint2.New(5));
             _damageable.TryChangeDamage(uid, damage);
         }
+    }
+
+    private void OnRejuvenate(EntityUid uid, ShadowkinComponent component, RejuvenateEvent args)
+    {
+        if (component.BlackeyeSpawn
+        || !HasComp<MindbrokenComponent>(uid))
+            return;
+
+        RemComp<MindbrokenComponent>(uid);
+
+        if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
+        {
+            humanoid.EyeColor = component.OldEyeColor;
+            Dirty(humanoid);
+        }
+
+        EnsureComp<PsionicComponent>(uid, out var magic);
+        EnsureComp<InnatePsionicPowersComponent>(uid, out var innatemagic);
+
+        magic.Removable = false;
+        magic.MindbreakingFeedback = "shadowkin-blackeye";
+
+        // TODO Set InnatePsionicPowersComponent Default Shadowkin Powers.
     }
 }

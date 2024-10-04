@@ -38,7 +38,6 @@ namespace Content.Server.Abilities.Psionics
             base.Initialize();
             SubscribeLocalEvent<InnatePsionicPowersComponent, MapInitEvent>(InnatePowerStartup);
             SubscribeLocalEvent<PsionicComponent, ComponentShutdown>(OnPsionicShutdown);
-            SubscribeLocalEvent<PsionicComponent, MindbreakEvent>(OnMindbreak);
         }
 
         /// <summary>
@@ -179,11 +178,6 @@ namespace Content.Server.Abilities.Psionics
         public void MindBreak(EntityUid uid)
         {
             RemoveAllPsionicPowers(uid, true);
-        }
-
-        private void OnMindbreak(EntityUid uid, PsionicComponent component, MindbreakEvent args)
-        {
-            MindBreak(uid);
         }
 
         /// <summary>

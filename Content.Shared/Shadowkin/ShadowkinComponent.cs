@@ -16,6 +16,7 @@ namespace Content.Shared.Shadowkin
         /// </summary>
         [DataField]
         public Color BlackEyeColor = Color.Black;
+
         public Color OldEyeColor = Color.LimeGreen;
     }
 }
