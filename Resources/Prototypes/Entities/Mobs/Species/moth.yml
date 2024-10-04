@@ -39,6 +39,8 @@
       amount: 5
   - type: Bloodstream
     bloodReagent: InsectBlood
+    bloodRegenerationHunger: 1.5
+    bloodRegenerationThirst: 1.5 # insect blood does not regenerate thirst or hunger, so keeping it quite low
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
