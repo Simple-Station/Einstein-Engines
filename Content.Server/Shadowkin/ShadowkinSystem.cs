@@ -9,6 +9,8 @@ using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.Shadowkin;
 using Content.Shared.Rejuvenate;
+using Content.Shared.Alert;
+using Content.Shared.Rounding;
 using Content.Server.Abilities.Psionics;
 
 namespace Content.Server.Shadowkin;
@@ -17,6 +19,7 @@ public sealed class ShadowkinSystem : EntitySystem
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilitiesSystem = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -34,6 +37,8 @@ public sealed class ShadowkinSystem : EntitySystem
             magic.Removable = true;
             _psionicAbilitiesSystem.MindBreak(uid);
         }
+
+        UpdateShadowkinAlert(uid, component);
     }
 
     private void OnExamined(EntityUid uid, ShadowkinComponent component, ExaminedEvent args)
@@ -62,6 +67,31 @@ public sealed class ShadowkinSystem : EntitySystem
                 ("target", uid),
                 ("powerType", powerType)
             ));
+        }
+    }
+
+    /// <summary>
+    /// Update the Shadowkin Alert, if Blackeye will remove the Alert, if not will update to its current power status.
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    public void UpdateShadowkinAlert(EntityUid uid, ShadowkinComponent component)
+    {
+        if (HasComp<MindbrokenComponent>(uid))
+        {
+            _alerts.ClearAlert(uid, AlertType.ShadowkinPower);
+            return;
+        }
+
+        if (TryComp<PsionicComponent>(uid, out var magic))
+        {
+            // TODO: Set Mana Power Values to severity and apply severity to alert.
+            // var severity = ContentHelpers.RoundToLevels(MathF.Max(0f, magic.power), magic.maxpower, 8);
+            _alerts.ShowAlert(uid, AlertType.ShadowkinPower, 0);
+        }
+        else
+        {
+            _alerts.ClearAlert(uid, AlertType.ShadowkinPower);
         }
     }
 

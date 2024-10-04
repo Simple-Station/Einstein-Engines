@@ -1,22 +1,22 @@
 - type: alert
   id: ShadowkinPower
-  category: ShadowkinPower
+  category: Stamina
   icons:
-  - sprite: /Textures/SimpleStation14/Interface/Alerts/shadowkin_power.rsi
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
     state: power0
-  - sprite: /Textures/SimpleStation14/Interface/Alerts/shadowkin_power.rsi
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
     state: power1
-  - sprite: /Textures/SimpleStation14/Interface/Alerts/shadowkin_power.rsi
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
     state: power2
-  - sprite: /Textures/SimpleStation14/Interface/Alerts/shadowkin_power.rsi
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
     state: power3
-  - sprite: /Textures/SimpleStation14/Interface/Alerts/shadowkin_power.rsi
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
     state: power4
-  - sprite: /Textures/SimpleStation14/Interface/Alerts/shadowkin_power.rsi
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
     state: power5
-  - sprite: /Textures/SimpleStation14/Interface/Alerts/shadowkin_power.rsi
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
     state: power6
-  - sprite: /Textures/SimpleStation14/Interface/Alerts/shadowkin_power.rsi
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
     state: power7
   name: alerts-shadowkin-power-name
   description: alerts-shadowkin-power-desc
