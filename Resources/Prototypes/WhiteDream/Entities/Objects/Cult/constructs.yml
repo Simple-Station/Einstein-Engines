@@ -279,7 +279,6 @@
   id: ConstructJuggernautHoly
   parent: ConstructJuggernaut
   name: purified juggernaut
-  description: One of the holy spirits.
   components:
   - type: Sprite
     layers:
@@ -323,7 +322,6 @@
   id: ConstructWraithHoly
   parent: ConstructWraith
   name: purified wraith
-  description: One of the holy spirits.
   components:
   - type: Sprite
     layers:

@@ -89,7 +89,7 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
             if (!_protoManager.TryIndex(protoId, out var proto))
                 continue;
 
-            var itemSize = new Vector2(48f, 48f);
+            var itemSize = new Vector2(64f, 64f);
             var button = new RadialMenuTextureButton
             {
                 ToolTip = Loc.GetString(proto.Name),

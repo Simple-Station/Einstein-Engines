@@ -69,7 +69,6 @@
       map: [ "enum.TimedFactoryVisuals.Layer" ]
   - type: TimedFactory
     prototypes:
-      - GasPipeBend
       - ConstructShell
   # TODO: Add prototypes
   #    - Eldritch Whetstone
@@ -88,11 +87,9 @@
     sprite: WhiteDream/BloodCult/Entities/Structures/forge.rsi
   - type: TimedFactory
     prototypes:
-    - GasPipeBend
-  # TODO: Add prototypes
-  #    - True Nar'sian Hardened Armor
-  #    - Flagellant's Robe
-  #    - Eldritch Longsword
+    - EldritchLongsword
+    - ClothingOuterCultArmor
+    - ClothingOuterRobesCultTrue
   - type: Construction
     graph: CultFactoryForge
     node: forge

@@ -8,9 +8,9 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/cult_dagger.rsi
     state: icon
-  - type: MeleeWeapon
+  - type: MeleeWeapon # TODO: It should have armor piercing effect (around 50%?) but we have no such system yet. Sucks.
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: 1
     range: 1.5
     damage:
       types:
@@ -40,10 +40,10 @@
       type: RuneDrawerBUI
 
 - type: entity
-  name: eldritch blade
+  name: eldritch longsword
   parent: BaseItem
-  id: EldritchBlade
-  description: A sword humming with unholy energy.
+  id: EldritchLongsword
+  description: A sword humming with unholy energy. It glows with a dim red light.
   components:
   - type: Sharp
   - type: Sprite
@@ -55,10 +55,10 @@
     range: 1.65
     damage:
       types:
-        Slash: 12
+        Slash: 24
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7.5
-    maxTargets: 6
+    heavyStaminaCost: 10
+    maxTargets: 3
     angle: 90
   - type: Item
     size: Normal
@@ -67,6 +67,11 @@
     slots:
     - back
   - type: DisarmMalus
+  - type: CultItem
+  - type: PointLight
+    color: Red
+    radius: 2
+    softness: 1
 
 - type: entity
   name: unholy halberd
