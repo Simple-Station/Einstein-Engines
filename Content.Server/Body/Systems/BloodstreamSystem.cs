@@ -513,8 +513,8 @@ public sealed class BloodstreamSystem : EntitySystem
         // First, check if the entity has enough hunger/thirst
         var hungerComp = CompOrNull<HungerComponent>(ent);
         var thirstComp = CompOrNull<ThirstComponent>(ent);
-        if (usedHunger > 0 && hungerComp is not null && hungerComp.CurrentHunger < usedHunger
-            ||  usedThirst > 0 && thirstComp is not null && thirstComp.CurrentThirst < usedThirst)
+        if (usedHunger > 0 && hungerComp is not null && (hungerComp.CurrentHunger < usedHunger || hungerComp.CurrentThreshold <= HungerThreshold.Starving)
+            ||  usedThirst > 0 && thirstComp is not null && (thirstComp.CurrentThirst < usedThirst || thirstComp.CurrentThirstThreshold <= ThirstThreshold.Parched))
             return false;
 
         // Then actually expend hunger and thirst (if necessary) and regenerate blood.
