@@ -183,10 +183,15 @@
           inverted: true
           species:
             - IPC
-            - Shadowkin
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -215,7 +220,6 @@
           inverted: true
           species:
             - IPC
-            - Shadowkin
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
@@ -223,6 +227,12 @@
       inverted: true
       traits:
         - LatentPsychic
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
 
 - type: trait
   id: NaturalTelepath
@@ -251,10 +261,15 @@
           inverted: true
           species:
             - IPC
-            - Shadowkin
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
 
 - type: trait
   id: TrapAvoider
@@ -279,8 +294,6 @@
   id: AnomalousPositronics
   category: Mental
   points: -4
-  components:
-    - type: ShadowkinBlackeye
   componentRemovals:
     - PsionicInsulation
   requirements:
@@ -289,11 +302,4 @@
         - !type:CharacterSpeciesRequirement
           species:
             - IPC
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          species:
             - Shadowkin
-        - !type:CharacterTraitRequirement
-          traits:
-            - ShadowkinBlackeye

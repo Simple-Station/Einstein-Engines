@@ -16,10 +16,15 @@
           inverted: true
           species:
             - IPC
-            - Shadowkin
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
