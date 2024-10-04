@@ -3,13 +3,13 @@ using Robust.Shared.Utility;
 using Content.Server.Chat.Managers;
 using Content.Server.Language;
 using Content.Server.Chat.Systems;
-using Content.Server.Shadowkin;
 using Content.Server.Administration.Managers;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Content.Shared.Chat;
 using Content.Shared.Language;
 using Robust.Shared.Prototypes;
+using Content.Shared.Abilities.Psionics;
 
 namespace Content.Server.Chat;
 
@@ -30,7 +30,7 @@ public sealed partial class EmpathyChatSystem : EntitySystem
     {
         if (args.Source != uid
             || !args.Language.SpeechOverride.EmpathySpeech
-            || HasComp<ShadowkinBlackeyeComponent>(args.Source))
+            || HasComp<MindbrokenComponent>(args.Source))
             return;
 
         SendEmpathyChat(args.Source, args.Message, false);
@@ -58,14 +58,14 @@ public sealed partial class EmpathyChatSystem : EntitySystem
     {
         return Filter.Empty()
             .AddWhereAttachedEntity(entity =>
-            CanHearEmpathy(entity) && !HasComp<ShadowkinBlackeyeComponent>(entity))
+            CanHearEmpathy(entity) && !HasComp<MindbrokenComponent>(entity))
             .Recipients
             .Union(_adminManager.ActiveAdmins)
             .Select(p => p.Channel);
     }
 
     /// <summary>
-    /// Check if an entity can hear Empathy, this function ingores ShadowkinBlackeyeComponent.
+    /// Check if an entity can hear Empathy.
     /// (Admins will always be able to hear Empathy)
     /// </summary>
     /// <param name="entity">The entity to check</param>

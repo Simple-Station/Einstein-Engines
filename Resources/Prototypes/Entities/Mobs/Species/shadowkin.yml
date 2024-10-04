@@ -140,7 +140,10 @@
     eyeDamageChance: 0.3
     eyeDamage: 1
     durationMultiplier: 1.5
-  - type: PsionicInsulation
+  - type: Shadowkin
+  - type: Psionic
+    mindbreakingFeedback: shadowkin-blackeye
+    removable: false
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic

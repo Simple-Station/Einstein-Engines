@@ -65,8 +65,11 @@
   id: ShadowkinBlackeye
   category: Mental
   points: 4
+  componentRemovals:
+    - Shadowkin
   components:
-    - type: ShadowkinBlackeye
+    - type: Shadowkin
+      blackeyeSpawn: true
   requirements:
     - !type:CharacterSpeciesRequirement
       species:

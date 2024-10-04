@@ -6,6 +6,9 @@ shadowkin-power-great = great
 shadowkin-power-good = good
 shadowkin-power-okay = okay
 shadowkin-power-tired = exhausted
-shadowkin-power-min = a blackeye
+
+examine-mindbroken-shadowkin-message = {CAPITALIZE($entity)} seems to be a blackeye.
+
+identity-eye-shadowkin = {$color}-eye
 
 shadowkin-blackeye = You feel your power draining away, you are exhausted!

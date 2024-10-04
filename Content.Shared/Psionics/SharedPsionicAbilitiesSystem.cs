@@ -99,6 +99,16 @@ namespace Content.Shared.Abilities.Psionics
         }
     }
 
+    public sealed class MindbreakEvent : HandledEntityEventArgs
+    {
+        public EntityUid User { get; }
+
+        public MindbreakEvent(EntityUid user)
+        {
+            User = user;
+        }
+    }
+
     [Serializable]
     [NetSerializable]
     public sealed class PsionicsChangedEvent : EntityEventArgs

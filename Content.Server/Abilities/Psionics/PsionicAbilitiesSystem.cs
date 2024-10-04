@@ -38,6 +38,7 @@ namespace Content.Server.Abilities.Psionics
             base.Initialize();
             SubscribeLocalEvent<InnatePsionicPowersComponent, MapInitEvent>(InnatePowerStartup);
             SubscribeLocalEvent<PsionicComponent, ComponentShutdown>(OnPsionicShutdown);
+            SubscribeLocalEvent<PsionicComponent, MindbreakEvent>(OnMindbreak);
         }
 
         /// <summary>
@@ -180,6 +181,11 @@ namespace Content.Server.Abilities.Psionics
             RemoveAllPsionicPowers(uid, true);
         }
 
+        private void OnMindbreak(EntityUid uid, PsionicComponent component, MindbreakEvent args)
+        {
+            MindBreak(uid);
+        }
+
         /// <summary>
         ///     Remove all Psionic powers, with accompanying actions, components, and casting stat sources, from a given Psion.
         ///     Optionally, the Psion can also be rendered permanently non-Psionic.
@@ -217,6 +223,10 @@ namespace Content.Server.Abilities.Psionics
 
                 RemComp<PsionicComponent>(uid);
                 RemComp<InnatePsionicPowersComponent>(uid);
+
+                var ev = new OnMindbreakEvent();
+                RaiseLocalEvent(uid, ref ev);
+
                 return;
             }
             RefreshPsionicModifiers(uid, psionic);

@@ -15,7 +15,6 @@ hud-chatbox-select-channel-OOC = OOC
 hud-chatbox-select-channel-Damage = Damage
 hud-chatbox-select-channel-Visual = Actions
 hud-chatbox-select-channel-Radio = Radio
-hud-chatbox-select-channel-Empathy = Empathy
 
 hud-chatbox-channel-Admin = Admin Misc
 hud-chatbox-channel-AdminAlert = Admin Alert
@@ -32,4 +31,3 @@ hud-chatbox-channel-Server = Server
 hud-chatbox-channel-Visual = Actions
 hud-chatbox-channel-Damage = Damage
 hud-chatbox-channel-Unspecified = Unspecified
-hud-chatbox-channel-Empathy = Empathy

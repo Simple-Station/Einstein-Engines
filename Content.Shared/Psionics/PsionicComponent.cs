@@ -45,6 +45,10 @@ namespace Content.Shared.Abilities.Psionics
 
         public string MindbreakingStutterAccent = "StutteringAccent";
 
+        /// <summary>
+        ///     The message feedback given on mindbreak.
+        /// </summary>
+        [DataField]
         public string MindbreakingFeedback = "mindbreaking-feedback";
 
         /// <summary>

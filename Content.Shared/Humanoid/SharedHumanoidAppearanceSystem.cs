@@ -10,6 +10,7 @@ using Content.Shared.HeightAdjust;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Content.Shared.Shadowkin;
 
 namespace Content.Shared.Humanoid;
 
@@ -68,6 +69,8 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         var identity = Identity.Entity(uid, EntityManager);
         var species = GetSpeciesRepresentation(component.Species).ToLower();
         var age = GetAgeRepresentation(component.Species, component.Age);
+        if (HasComp<ShadowkinComponent>(uid))
+            age = Loc.GetString("identity-eye-shadowkin", ("color", component.EyeColor.Name() ?? "Unknown"));
 
         args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
     }
