@@ -70,7 +70,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         var species = GetSpeciesRepresentation(component.Species).ToLower();
         var age = GetAgeRepresentation(component.Species, component.Age);
         if (HasComp<ShadowkinComponent>(uid))
-            age = Loc.GetString("identity-eye-shadowkin", ("color", component.EyeColor.Name() ?? "black"));
+        {
+            var color = component.EyeColor.Name();
+            if (color != null)
+                age = Loc.GetString("identity-eye-shadowkin", ("color", color));
+        }
 
         args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
     }

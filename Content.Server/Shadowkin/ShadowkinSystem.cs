@@ -11,7 +11,9 @@ using Content.Shared.Shadowkin;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Alert;
 using Content.Shared.Rounding;
+using Content.Shared.Actions;
 using Content.Server.Abilities.Psionics;
+using Content.Server.Bed.Sleep;
 
 namespace Content.Server.Shadowkin;
 public sealed class ShadowkinSystem : EntitySystem
@@ -20,6 +22,9 @@ public sealed class ShadowkinSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilitiesSystem = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+
+    public const string ShadowkinSleepActionId = "ShadowkinActionSleep";
     public override void Initialize()
     {
         base.Initialize();
@@ -38,6 +43,8 @@ public sealed class ShadowkinSystem : EntitySystem
             _psionicAbilitiesSystem.MindBreak(uid);
         }
 
+        _actionsSystem.AddAction(uid, ref component.ShadowkinSleepAction, ShadowkinSleepActionId, uid);
+
         UpdateShadowkinAlert(uid, component);
     }
 
@@ -48,8 +55,10 @@ public sealed class ShadowkinSystem : EntitySystem
         || HasComp<MindbrokenComponent>(uid))
             return;
 
-        // TODO Fetch PowerType.
-        var powerType = "";
+        // TODO: Set Mana Power Values to severity and apply severity.
+        // var severity = "shadowkin-power-" + ContentHelpers.RoundToLevels(MathF.Max(0f, magic.power), magic.maxpower, 5);
+        // var powerType = Loc.GetString(severity)
+        var powerType = Loc.GetString("shadowkin-power-3");
 
         if (args.Examined == args.Examiner)
         {
@@ -73,20 +82,12 @@ public sealed class ShadowkinSystem : EntitySystem
     /// <summary>
     /// Update the Shadowkin Alert, if Blackeye will remove the Alert, if not will update to its current power status.
     /// </summary>
-    /// <param name="uid"></param>
-    /// <param name="component"></param>
     public void UpdateShadowkinAlert(EntityUid uid, ShadowkinComponent component)
     {
-        if (HasComp<MindbrokenComponent>(uid))
-        {
-            _alerts.ClearAlert(uid, AlertType.ShadowkinPower);
-            return;
-        }
-
         if (TryComp<PsionicComponent>(uid, out var magic))
         {
             // TODO: Set Mana Power Values to severity and apply severity to alert.
-            // var severity = ContentHelpers.RoundToLevels(MathF.Max(0f, magic.power), magic.maxpower, 8);
+            // _alerts.ShowAlert(uid, AlertType.ShadowkinPower, ContentHelpers.RoundToLevels(MathF.Max(0f, magic.power), magic.maxpower, 8));
             _alerts.ShowAlert(uid, AlertType.ShadowkinPower, 0);
         }
         else

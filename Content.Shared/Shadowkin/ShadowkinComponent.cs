@@ -18,5 +18,8 @@ namespace Content.Shared.Shadowkin
         public Color BlackEyeColor = Color.Black;
 
         public Color OldEyeColor = Color.LimeGreen;
+
+        [DataField]
+        public EntityUid? ShadowkinSleepAction;
     }
 }

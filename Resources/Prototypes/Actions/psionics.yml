@@ -303,3 +303,14 @@
               maxThrowRange: 3
               maxThrowStrength: 5
               spaceRange: 3
+
+- type: entity
+  id: ShadowkinDarkSwap
+  name: action-name-shadowkin-darkswap
+  description: action-description-shadowkin-darkswap
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: { sprite : Interface/Actions/shadowkin_icons.rsi, state: darkswap }
+    useDelay: 3
+    event: !type:TelegnosisPowerActionEvent
