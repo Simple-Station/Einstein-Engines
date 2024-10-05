@@ -1,13 +1,17 @@
-using Robust.Shared.GameStates;
-
 namespace Content.Shared.Shadowkin
 {
     [RegisterComponent]
     public sealed partial class ShadowkinComponent : Component
     {
+        /// <summary>
+        /// Apply the SleepManaRegenMultiplier on SleepComponent if true.
+        /// </summary>
         [DataField]
         public bool SleepManaRegen = true;
 
+        /// <summary>
+        /// What do edit the ManaRegenMultiplier when on Sleep.
+        /// </summary>
         [DataField]
         public float SleepManaRegenMultiplier = 2;
 

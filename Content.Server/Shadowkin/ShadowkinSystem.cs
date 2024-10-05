@@ -12,8 +12,8 @@ using Content.Shared.Rejuvenate;
 using Content.Shared.Alert;
 using Content.Shared.Rounding;
 using Content.Shared.Actions;
+using Robust.Shared.Prototypes;
 using Content.Server.Abilities.Psionics;
-using Content.Server.Bed.Sleep;
 
 namespace Content.Server.Shadowkin;
 public sealed class ShadowkinSystem : EntitySystem
@@ -23,6 +23,7 @@ public sealed class ShadowkinSystem : EntitySystem
     [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilitiesSystem = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     public const string ShadowkinSleepActionId = "ShadowkinActionSleep";
     public override void Initialize()
@@ -173,6 +174,9 @@ public sealed class ShadowkinSystem : EntitySystem
         magic.BypassManaCheck = true;
         magic.Removable = false;
         magic.MindbreakingFeedback = "shadowkin-blackeye";
+
+        if (_prototypeManager.TryIndex<PsionicPowerPrototype>("ShadowkinPowers", out var shadowkinPowers))
+            _psionicAbilitiesSystem.InitializePsionicPower(uid, shadowkinPowers);
 
         UpdateShadowkinAlert(uid, component);
     }
