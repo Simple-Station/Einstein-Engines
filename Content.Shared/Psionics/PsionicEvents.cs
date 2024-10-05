@@ -12,3 +12,6 @@ public record struct OnSetPsionicStatsEvent(float AmplificationChangedAmount, fl
 
 [ByRefEvent]
 public record struct OnMindbreakEvent();
+
+[ByRefEvent]
+public record struct OnManaUpdateEvent();

@@ -31,13 +31,16 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(EntityUid uid, PsionicInvisibilityPowerComponent component, PsionicInvisibilityPowerActionEvent args)
         {
+            if (!_psionics.OnAttemptPowerUse(args.Performer))
+                return;
+
             if (HasComp<PsionicInvisibilityUsedComponent>(uid))
                 return;
 
             ToggleInvisibility(args.Performer);
             var action = Spawn(PsionicInvisibilityUsedComponent.PsionicInvisibilityUsedActionPrototype);
             _actions.AddAction(uid, action, action);
-            _actions.TryGetActionData( action, out var actionData );
+            _actions.TryGetActionData(action, out var actionData);
             if (actionData is { UseDelay: not null })
                 _actions.StartUseDelay(action);
 
@@ -93,7 +96,8 @@ namespace Content.Server.Abilities.Psionics
             if (!HasComp<PsionicInvisibilityUsedComponent>(uid))
             {
                 EnsureComp<PsionicInvisibilityUsedComponent>(uid);
-            } else
+            }
+            else
             {
                 RemComp<PsionicInvisibilityUsedComponent>(uid);
             }

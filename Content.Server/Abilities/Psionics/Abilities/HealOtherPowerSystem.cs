@@ -44,7 +44,7 @@ public sealed class RevivifyPowerSystem : EntitySystem
 
     private void OnPowerUsed(EntityUid uid, PsionicComponent component, PsionicHealOtherPowerActionEvent args)
     {
-        if (component.DoAfter is not null)
+        if (!_psionics.OnAttemptPowerUse(args.Performer))
             return;
 
         args.ModifiedAmplification = _psionics.ModifiedAmplification(uid, component);

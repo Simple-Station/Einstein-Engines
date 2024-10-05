@@ -1,9 +1,12 @@
 using Content.Shared.Administration.Logs;
 using Content.Shared.Contests;
 using Content.Shared.Popups;
+using Content.Shared.Psionics;
 using Content.Shared.Psionics.Glimmer;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.FixedPoint;
 
 namespace Content.Shared.Abilities.Psionics
 {
@@ -15,11 +18,43 @@ namespace Content.Shared.Abilities.Psionics
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly IRobustRandom _robustRandom = default!;
         [Dependency] private readonly ContestsSystem _contests = default!;
+        [Dependency] private readonly MobStateSystem _mobState = default!;
 
         public override void Initialize()
         {
             base.Initialize();
             SubscribeLocalEvent<PsionicComponent, PsionicPowerUsedEvent>(OnPowerUsed);
+        }
+
+        public bool OnAttemptPowerUse(EntityUid uid, float? manacost = null)
+        {
+            if (!TryComp<PsionicComponent>(uid, out var component))
+                return false;
+
+            if (component.DoAfter is not null)
+            {
+                _popups.PopupEntity(Loc.GetString(component.AlreadyCasting), uid, uid, PopupType.LargeCaution);
+                return false;
+            }
+
+            if (manacost is not null)
+            {
+                if (component.Mana >= manacost)
+                {
+                    var newmana = component.Mana - manacost;
+                    component.Mana = newmana ?? component.Mana;
+
+                    var ev = new OnManaUpdateEvent();
+                    RaiseLocalEvent(uid, ref ev);
+                }
+                else
+                {
+                    _popups.PopupEntity(Loc.GetString(component.NoMana), uid, uid, PopupType.LargeCaution);
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private void OnPowerUsed(EntityUid uid, PsionicComponent component, PsionicPowerUsedEvent args)
@@ -84,6 +119,34 @@ namespace Content.Shared.Abilities.Psionics
         public float ModifiedDampening(EntityUid uid, PsionicComponent component)
         {
             return component.CurrentDampening / _contests.MoodContest(uid, true);
+        }
+
+        public override void Update(float frameTime)
+        {
+            base.Update(frameTime);
+
+            var query = EntityQueryEnumerator<PsionicComponent>();
+            while (query.MoveNext(out var uid, out var component))
+            {
+                if (_mobState.IsDead(uid))
+                    continue;
+
+                component.ManaAccumulator += frameTime;
+
+                if (component.ManaAccumulator <= 1)
+                    continue;
+
+                component.ManaAccumulator -= 1;
+
+                if (component.Mana < component.MaxMana)
+                {
+                    var gainedmana = component.ManaGain * component.ManaGainMultiplier;
+                    component.Mana += gainedmana;
+                    FixedPoint2.Min(component.Mana, component.MaxMana);
+                    var ev = new OnManaUpdateEvent();
+                    RaiseLocalEvent(uid, ref ev);
+                }
+            }
         }
     }
 
