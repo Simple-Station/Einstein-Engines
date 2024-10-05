@@ -1,0 +1,32 @@
+﻿{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/tgstation/tgstation/blob/master/icons/hud/screen_midnight.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "doll"
+    },
+    {
+      "name": "doll-torso"
+    },
+    {
+      "name": "doll-head"
+    },
+    {
+      "name": "doll-leftarm"
+    },
+    {
+      "name": "doll-leftleg"
+    },
+    {
+      "name": "doll-rightarm"
+    },
+    {
+      "name": "doll-rightleg"
+    }
+  ]
+}

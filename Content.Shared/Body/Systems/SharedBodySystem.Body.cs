@@ -4,6 +4,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Prototypes;
+using Content.Shared.Damage;
 using Content.Shared.DragDrop;
 using Content.Shared.Gibbing.Components;
 using Content.Shared.Gibbing.Events;
@@ -14,6 +15,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Body.Systems;
 
@@ -29,7 +31,7 @@ public partial class SharedBodySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly GibbingSystem _gibbingSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
     private const float GibletLaunchImpulse = 8;
     private const float GibletLaunchImpulseVariance = 3;
 
@@ -42,6 +44,7 @@ public partial class SharedBodySystem
         SubscribeLocalEvent<BodyComponent, ComponentInit>(OnBodyInit);
         SubscribeLocalEvent<BodyComponent, MapInitEvent>(OnBodyMapInit);
         SubscribeLocalEvent<BodyComponent, CanDragEvent>(OnBodyCanDrag);
+        SubscribeLocalEvent<BodyComponent, DamageChangedEvent>(OnDamageChanged);
     }
 
     private void OnBodyInserted(Entity<BodyComponent> ent, ref EntInsertedIntoContainerMessage args)
@@ -127,6 +130,23 @@ public partial class SharedBodySystem
         args.Handled = true;
     }
 
+    private void OnDamageChanged(Entity<BodyComponent> ent, ref DamageChangedEvent args)
+    {
+        if (ent.Comp is null
+            || args.TargetPart is null
+            || args.DamageDelta is null
+            || !args.DamageIncreased)
+            return;
+
+        var (targetType, targetSymmetry) = ConvertTargetBodyPart(args.TargetPart.Value);
+        var targetPart = GetBodyChildrenOfType(ent, targetType, ent.Comp)
+            .FirstOrDefault(part => part.Component.Symmetry == targetSymmetry);
+        if (targetPart.Id != default && _gameTiming.IsFirstTimePredicted)
+        {
+            ApplyPartDamage(targetPart, args.DamageDelta, targetType);
+        }
+    }
+
     /// <summary>
     /// Sets up all of the relevant body parts for a particular body entity and root part.
     /// </summary>
@@ -168,6 +188,7 @@ public partial class SharedBodySystem
 
                 var childPartComponent = Comp<BodyPartComponent>(childPart);
                 var partSlot = CreatePartSlot(parentEntity, connection, childPartComponent.PartType, parentPartComponent);
+                childPartComponent.ParentSlot = partSlot;
                 var cont = Containers.GetContainer(parentEntity, GetPartSlotContainerId(connection));
 
                 if (partSlot is null || !Containers.Insert(childPart, cont))

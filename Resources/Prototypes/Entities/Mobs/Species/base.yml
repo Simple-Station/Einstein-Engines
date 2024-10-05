@@ -238,6 +238,7 @@
   id: BaseMobSpeciesOrganic
   abstract: true
   components:
+  - type: Targeting
   - type: Flashable
   - type: Barotrauma
     damage:

@@ -18,6 +18,12 @@ public sealed partial class BodyPartComponent : Component
     public EntityUid? Body;
 
     [DataField, AutoNetworkedField]
+    public EntityUid? OriginalBody;
+
+    [DataField, AutoNetworkedField]
+    public BodyPartSlot? ParentSlot;
+
+    [DataField, AutoNetworkedField]
     public BodyPartType PartType = BodyPartType.Other;
 
     // TODO BODY Replace with a simulation of organs
@@ -42,6 +48,12 @@ public sealed partial class BodyPartComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public Dictionary<string, OrganSlot> Organs = new();
+
+    /// <summary>
+    /// How much health the body part has until it pops out.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float Integrity = 100f;
 
     /// <summary>
     /// These are only for VV/Debug do not use these for gameplay/systems
@@ -90,11 +102,15 @@ public partial struct BodyPartSlot
 {
     public string Id;
     public BodyPartType Type;
+    public NetEntity? Child;
+    public NetEntity? Parent;
 
-    public BodyPartSlot(string id, BodyPartType type)
+    public BodyPartSlot(string id, BodyPartType type, NetEntity? child = null, NetEntity? parent = null)
     {
         Id = id;
         Type = type;
+        Child = child;
+        Parent = parent;
     }
 };
 

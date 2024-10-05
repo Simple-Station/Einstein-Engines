@@ -1,0 +1,17 @@
+<widgets:TargetingControl
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Targeting.Widgets"
+    Name="TargetingButton"
+    VerticalAlignment="Bottom"
+    HorizontalAlignment="Right"
+    >
+    <Control>
+        <TextureButton
+            Name="TargetImage"
+            TexturePath="/Textures/Interface/Targeting/bodydoll.rsi/doll.png"
+            MouseFilter="Stop"
+            Scale="2.5 2.5"
+        />
+    </Control>
+</widgets:TargetingControl>

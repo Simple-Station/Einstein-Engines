@@ -4,6 +4,7 @@ using Content.Server.Humanoid;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
+using Content.Shared.Damage;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Systems;
@@ -22,6 +23,7 @@ public sealed class BodySystem : SharedBodySystem
     [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
@@ -98,6 +100,7 @@ public sealed class BodySystem : SharedBodySystem
         var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
         _humanoidSystem.SetLayersVisibility(
             bodyEnt, layers, visible: false, permanent: true, humanoid);
+        _appearance.SetData(bodyEnt, layer, true);
     }
 
     public override HashSet<EntityUid> GibBody(
