@@ -35,6 +35,8 @@
         color: "#2cf274"
   - type: Bloodstream
     bloodReagent: Slime # TODO Color slime blood based on their slime color or smth
+    bloodRegenerationHunger: 2
+    bloodRegenerationThirst: 2 # 1 of slime satiates 2 hunger
   - type: Barotrauma
     damage:
       types:

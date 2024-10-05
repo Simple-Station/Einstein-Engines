@@ -33,6 +33,8 @@
         amount: 5
   - type: Bloodstream
     bloodReagent: Sap
+    bloodRegenerationHunger: 1
+    bloodRegenerationThirst: 1 # 1 unit of sap satiates 1 hunger and thirst
   - type: Reactive
     groups:
       Flammable: [ Touch ]
