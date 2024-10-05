@@ -225,4 +225,5 @@
   description: shadowkin-powers-description
   actions:
   - ActionShadowkinShadeskip
+  - ActionDarkSwap
   powerSlotCost: 1

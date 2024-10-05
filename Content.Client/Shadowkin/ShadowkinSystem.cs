@@ -5,8 +5,9 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Content.Shared.Humanoid;
 using Content.Shared.Abilities.Psionics;
+using Content.Client.Overlays;
 
-namespace Content.Client.Overlays;
+namespace Content.Client.Shadowkin;
 
 public sealed partial class ShadowkinSystem : EntitySystem
 {

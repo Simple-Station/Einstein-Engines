@@ -1,0 +1,110 @@
+using Content.Shared.Physics;
+using Robust.Shared.Physics;
+using System.Linq;
+using Robust.Shared.Physics.Systems;
+using Content.Shared.Interaction.Events;
+using Robust.Shared.Timing;
+using Content.Shared.Popups;
+using Content.Shared.Throwing;
+using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.CombatMode.Pacification;
+using Content.Shared.Psionics;
+using Content.Shared.Mobs;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
+using Content.Shared.Abilities.Psionics;
+
+namespace Content.Shared.Shadowkin;
+public abstract class SharedEtherealSystem : EntitySystem
+{
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<EtherealComponent, MapInitEvent>(OnStartup);
+        SubscribeLocalEvent<EtherealComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<EtherealComponent, InteractionAttemptEvent>(OnInteractionAttempt);
+        SubscribeLocalEvent<EtherealComponent, BeforeThrowEvent>(OnBeforeThrow);
+        SubscribeLocalEvent<EtherealComponent, AttackAttemptEvent>(OnAttackAttempt);
+        SubscribeLocalEvent<EtherealComponent, ShotAttemptedEvent>(OnShootAttempt);
+        SubscribeLocalEvent<EtherealComponent, OnMindbreakEvent>(OnMindbreak);
+        SubscribeLocalEvent<EtherealComponent, MobStateChangedEvent>(OnMobStateChanged);
+    }
+
+    public virtual void OnStartup(EntityUid uid, EtherealComponent component, MapInitEvent args)
+    {
+        if (_cfg.GetCVar(CCVars.ShadowkinPassThrough) && TryComp<FixturesComponent>(uid, out var fixtures) && fixtures.FixtureCount >= 1)
+        {
+            var fixture = fixtures.Fixtures.First();
+
+            _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.GhostImpassable, fixtures);
+            _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, 0, fixtures);
+        }
+    }
+
+    public virtual void OnShutdown(EntityUid uid, EtherealComponent component, ComponentShutdown args)
+    {
+        // TODO: Store MobMask and MobLayer and reapply them. (What if we apply Ethernal to a Mouse huh?)
+        if (_cfg.GetCVar(CCVars.ShadowkinPassThrough) && TryComp<FixturesComponent>(uid, out var fixtures) && fixtures.FixtureCount >= 1)
+        {
+            var fixture = fixtures.Fixtures.First();
+
+            _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.MobMask, fixtures);
+            _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, (int) CollisionGroup.MobLayer, fixtures);
+        }
+    }
+
+    private void OnMindbreak(EntityUid uid, EtherealComponent component, ref OnMindbreakEvent args)
+    {
+        RemComp(uid, component);
+    }
+
+    private void OnMobStateChanged(EntityUid uid, EtherealComponent component, MobStateChangedEvent args)
+    {
+        if (args.NewMobState == MobState.Dead)
+            RemComp(uid, component);
+    }
+
+    private void OnShootAttempt(Entity<EtherealComponent> ent, ref ShotAttemptedEvent args)
+    {
+        args.Cancel();
+    }
+
+    private void OnAttackAttempt(EntityUid uid, EtherealComponent component, AttackAttemptEvent args)
+    {
+        args.Cancel();
+    }
+
+    private void OnBeforeThrow(Entity<EtherealComponent> ent, ref BeforeThrowEvent args)
+    {
+        var thrownItem = args.ItemUid;
+
+        // Raise an AttemptPacifiedThrow event and rely on other systems to check
+        // whether the candidate item is OK to throw:
+        var ev = new AttemptPacifiedThrowEvent(thrownItem, ent);
+        RaiseLocalEvent(thrownItem, ref ev);
+        if (!ev.Cancelled)
+            return;
+
+        args.Cancelled = true;
+    }
+
+    private void OnInteractionAttempt(EntityUid uid, EtherealComponent component, InteractionAttemptEvent args)
+    {
+        if (args.Target == null
+        || !HasComp<TransformComponent>(args.Target)
+        || HasComp<EtherealComponent>(args.Target))
+            return;
+
+        args.Cancel();
+        if (_gameTiming.InPrediction)
+            return;
+
+        _popup.PopupEntity(Loc.GetString("ethereal-pickup-fail"), args.Target.Value, uid);
+    }
+}

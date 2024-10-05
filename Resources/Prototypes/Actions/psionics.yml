@@ -307,7 +307,7 @@
 - type: entity
   id: ActionShadowkinShadeskip
   name: action-name-shadeskip
-  description: action-description-shadowkin-shadeskip
+  description:
   noSpawn: true
   components:
     - type: InstantAction
@@ -317,7 +317,7 @@
       event: !type:AnomalyPowerActionEvent
         settings:
           powerName: "Shadowkin-Shadeskip"
-          manaCost: 50
+          manaCost: 25
           minGlimmer: 0
           maxGlimmer: 0
           doSupercritical: false
@@ -336,3 +336,16 @@
               maxRange: 0.5
             spawns:
               - EffectFlashShadowkinShadeskip
+
+- type: entity
+  id: ActionDarkSwap
+  name: action-name-darkswap
+  description: action-description-darkswap
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: { sprite: Interface/Actions/shadowkin_icons.rsi, state: darkswap }
+      useDelay: 10
+      checkCanInteract: false
+      event: !type:DarkSwapActionEvent
+        manaCost: 100

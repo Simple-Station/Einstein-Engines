@@ -1,6 +1,8 @@
+using Robust.Shared.GameStates;
+
 namespace Content.Shared.Shadowkin
 {
-    [RegisterComponent]
+    [RegisterComponent, NetworkedComponent]
     public sealed partial class ShadowkinComponent : Component
     {
         /// <summary>
@@ -13,7 +15,7 @@ namespace Content.Shared.Shadowkin
         /// What do edit the ManaRegenMultiplier when on Sleep.
         /// </summary>
         [DataField]
-        public float SleepManaRegenMultiplier = 2;
+        public float SleepManaRegenMultiplier = 4;
 
         /// <summary>
         /// On MapInitEvent, will Blackeye the Shadowkin.
