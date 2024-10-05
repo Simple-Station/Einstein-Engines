@@ -49,7 +49,7 @@ public sealed partial class AnomalyPowerSystem : EntitySystem
 
     private void OnPowerUsed(EntityUid uid, PsionicComponent component, AnomalyPowerActionEvent args)
     {
-        if (!_psionics.OnAttemptPowerUse(args.Performer))
+        if (!_psionics.OnAttemptPowerUse(args.Performer, args.Settings.ManaCost))
             return;
 
         if (HasComp<PsionicInsulationComponent>(uid)

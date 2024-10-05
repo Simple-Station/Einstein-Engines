@@ -150,7 +150,7 @@
     removable: false
   - type: InnatePsionicPowers
     powersToAdd:
-      - ShadeskipPower
+      - ShadowkinPowers
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic

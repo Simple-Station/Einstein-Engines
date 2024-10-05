@@ -39,3 +39,17 @@
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/Effects/Lightning/lightningbolt.ogg
+
+- type: entity
+  id: EffectFlashShadowkinShadeskip
+  noSpawn: true
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 3.5
+    color: "#793a80dd"
+  - type: TimedDespawn
+    lifetime: 1
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/shadowkin/shadeskip.ogg

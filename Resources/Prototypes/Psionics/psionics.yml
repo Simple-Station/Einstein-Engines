@@ -218,3 +218,11 @@
   initializationFeedback: telekinetic-pulse-power-initialization-feedback
   metapsionicFeedback: telekinetic-pulse-power-metapsionic-feedback
   amplificationModifier: 1
+
+- type: psionicPower
+  id: ShadowkinPowers
+  name: Shadowkin Powers
+  description: shadowkin-powers-description
+  actions:
+  - ActionShadowkinShadeskip
+  powerSlotCost: 1
