@@ -270,6 +270,12 @@
         - !type:ReagentThreshold
           reagent: SpaceDrugs
           min: 15
+      - !type:ChemAddMoodlet
+        moodPrototype: SpaceDrugsBenefit
+        conditions:
+        - !type:ReagentThreshold
+          reagent: SpaceDrugs
+          min: 5
 
 - type: reagent
   id: Bananadine
