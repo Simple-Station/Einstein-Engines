@@ -7,6 +7,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.FixedPoint;
+using Content.Shared.Rejuvenate;
 
 namespace Content.Shared.Abilities.Psionics
 {
@@ -24,6 +25,7 @@ namespace Content.Shared.Abilities.Psionics
         {
             base.Initialize();
             SubscribeLocalEvent<PsionicComponent, PsionicPowerUsedEvent>(OnPowerUsed);
+            SubscribeLocalEvent<PsionicComponent, RejuvenateEvent>(OnRejuvenate);
         }
 
         public bool OnAttemptPowerUse(EntityUid uid, float? manacost = null)
@@ -39,7 +41,8 @@ namespace Content.Shared.Abilities.Psionics
 
             if (manacost is not null)
             {
-                if (component.Mana >= manacost)
+                if (component.Mana >= manacost
+                || component.BypassManaCheck)
                 {
                     var newmana = component.Mana - manacost;
                     component.Mana = newmana ?? component.Mana;
@@ -121,6 +124,13 @@ namespace Content.Shared.Abilities.Psionics
             return component.CurrentDampening / _contests.MoodContest(uid, true);
         }
 
+        public void OnRejuvenate(EntityUid uid, PsionicComponent component, RejuvenateEvent args)
+        {
+            component.Mana = component.MaxMana;
+            var ev = new OnManaUpdateEvent();
+            RaiseLocalEvent(uid, ref ev);
+        }
+
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
@@ -138,11 +148,15 @@ namespace Content.Shared.Abilities.Psionics
 
                 component.ManaAccumulator -= 1;
 
+                if (component.Mana > component.MaxMana)
+                    component.Mana = component.MaxMana;
+
                 if (component.Mana < component.MaxMana)
                 {
                     var gainedmana = component.ManaGain * component.ManaGainMultiplier;
                     component.Mana += gainedmana;
                     FixedPoint2.Min(component.Mana, component.MaxMana);
+
                     var ev = new OnManaUpdateEvent();
                     RaiseLocalEvent(uid, ref ev);
                 }

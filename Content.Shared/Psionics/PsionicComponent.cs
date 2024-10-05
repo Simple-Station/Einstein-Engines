@@ -5,19 +5,19 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Abilities.Psionics
 {
-    [RegisterComponent, NetworkedComponent]
+    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
     public sealed partial class PsionicComponent : Component
     {
         /// <summary>
         /// Current Mana.
         /// </summary>
-        [DataField]
+        [DataField, AutoNetworkedField]
         public float Mana;
 
         /// <summary>
         /// Max Mana Possible.
         /// </summary>
-        [DataField]
+        [DataField, AutoNetworkedField]
         public float MaxMana = 100;
 
         /// <summary>
@@ -33,6 +33,9 @@ namespace Content.Shared.Abilities.Psionics
         public float ManaGainMultiplier = 1;
 
         public float ManaAccumulator = 0;
+
+        [DataField]
+        public bool BypassManaCheck = false;
 
         /// <summary>
         ///     How close a Psion is to generating a new power. When Potentia reaches the NextPowerCost, it is "Spent" in order to "Buy" a random new power.

@@ -31,17 +31,14 @@ public sealed class ShadowkinSystem : EntitySystem
         SubscribeLocalEvent<ShadowkinComponent, MapInitEvent>(OnInit);
         SubscribeLocalEvent<ShadowkinComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<ShadowkinComponent, OnMindbreakEvent>(OnMindbreak);
+        SubscribeLocalEvent<ShadowkinComponent, OnManaUpdateEvent>(OnManaUpdate);
         SubscribeLocalEvent<ShadowkinComponent, RejuvenateEvent>(OnRejuvenate);
     }
 
     private void OnInit(EntityUid uid, ShadowkinComponent component, MapInitEvent args)
     {
-        if (component.BlackeyeSpawn
-        && TryComp<PsionicComponent>(uid, out var magic))
-        {
-            magic.Removable = true;
-            _psionicAbilitiesSystem.MindBreak(uid);
-        }
+        if (component.BlackeyeSpawn)
+            ApplyBlackEye(uid);
 
         _actionsSystem.AddAction(uid, ref component.ShadowkinSleepAction, ShadowkinSleepActionId, uid);
 
@@ -55,23 +52,19 @@ public sealed class ShadowkinSystem : EntitySystem
         || HasComp<MindbrokenComponent>(uid))
             return;
 
-        // TODO: Set Mana Power Values to severity and apply severity.
-        // var severity = "shadowkin-power-" + ContentHelpers.RoundToLevels(MathF.Max(0f, magic.power), magic.maxpower, 5);
-        // var powerType = Loc.GetString(severity)
-        var powerType = Loc.GetString("shadowkin-power-3");
+        var severity = "shadowkin-power-" + ContentHelpers.RoundToLevels(magic.Mana, magic.MaxMana, 6);
+        var powerType = Loc.GetString(severity);
 
         if (args.Examined == args.Examiner)
         {
-            // TODO power, powerMax need to be the value of Psionic Mana
             args.PushMarkup(Loc.GetString("shadowkin-power-examined-self",
-                ("power", "0"),
-                ("powerMax", "100"),
+                ("power", Math.Floor(magic.Mana)),
+                ("powerMax", Math.Floor(magic.MaxMana)),
                 ("powerType", powerType)
             ));
         }
         else
         {
-            // TODO power, powerMax need to be the value of Psionic Mana
             args.PushMarkup(Loc.GetString("shadowkin-power-examined-other",
                 ("target", uid),
                 ("powerType", powerType)
@@ -86,13 +79,50 @@ public sealed class ShadowkinSystem : EntitySystem
     {
         if (TryComp<PsionicComponent>(uid, out var magic))
         {
-            // TODO: Set Mana Power Values to severity and apply severity to alert.
-            // _alerts.ShowAlert(uid, AlertType.ShadowkinPower, ContentHelpers.RoundToLevels(MathF.Max(0f, magic.power), magic.maxpower, 8));
-            _alerts.ShowAlert(uid, AlertType.ShadowkinPower, 0);
+            var severity = (short) ContentHelpers.RoundToLevels(magic.Mana, magic.MaxMana, 8);
+            _alerts.ShowAlert(uid, AlertType.ShadowkinPower, severity);
         }
         else
         {
             _alerts.ClearAlert(uid, AlertType.ShadowkinPower);
+        }
+    }
+
+    private void OnManaUpdate(EntityUid uid, ShadowkinComponent component, ref OnManaUpdateEvent args)
+    {
+        if (TryComp<PsionicComponent>(uid, out var magic))
+        {
+            if (component.SleepManaRegen)
+            {
+                if (TryComp<SleepingComponent>(uid, out var sleep))
+                {
+                    magic.ManaGainMultiplier = component.SleepManaRegenMultiplier;
+                }
+                else
+                {
+                    magic.ManaGainMultiplier = 1;
+                }
+            }
+
+            if (magic.Mana <= component.BlackEyeMana)
+                ApplyBlackEye(uid);
+
+            Dirty(magic); // Update Shadowkin Overlay.
+        }
+
+        UpdateShadowkinAlert(uid, component);
+    }
+
+    /// <summary>
+    /// Blackeye the Shadowkin, its just a function to mindbreak the shadowkin but making sure "Removable" is checked true during it.
+    /// </summary>
+    /// <param name="uid"></param>
+    public void ApplyBlackEye(EntityUid uid)
+    {
+        if (TryComp<PsionicComponent>(uid, out var magic))
+        {
+            magic.Removable = true;
+            _psionicAbilitiesSystem.MindBreak(uid);
         }
     }
 
@@ -137,8 +167,13 @@ public sealed class ShadowkinSystem : EntitySystem
         }
 
         EnsureComp<PsionicComponent>(uid, out var magic);
-
+        magic.Mana = 250;
+        magic.MaxMana = 250;
+        magic.ManaGain = 0.33333333333f;
+        magic.BypassManaCheck = true;
         magic.Removable = false;
         magic.MindbreakingFeedback = "shadowkin-blackeye";
+
+        UpdateShadowkinAlert(uid, component);
     }
 }

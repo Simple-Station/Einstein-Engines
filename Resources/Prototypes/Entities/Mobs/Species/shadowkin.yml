@@ -143,8 +143,10 @@
   - type: Shadowkin
   - type: Psionic
     mindbreakingFeedback: shadowkin-blackeye
+    manaGain: 0.33333333333
     mana: 150
     maxMana: 250
+    bypassManaCheck: true
     removable: false
   - type: InnatePsionicPowers
     powersToAdd:

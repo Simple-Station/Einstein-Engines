@@ -6,7 +6,7 @@ shadowkin-power-4 = great
 shadowkin-power-3 = good
 shadowkin-power-2 = okay
 shadowkin-power-1 = exhausted
-shadowkin-power-0 = a blackeye
+shadowkin-power-0 = drained
 
 examine-mindbroken-shadowkin-message = {CAPITALIZE($entity)} seems to be a blackeye.
 

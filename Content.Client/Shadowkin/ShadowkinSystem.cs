@@ -84,13 +84,12 @@ public sealed partial class ShadowkinSystem : EntitySystem
         // intensity = intensity / 0.333
         // intensity = clamp intensity min, max
 
-        const float tintIntensity = 0.65f;
+        var tintIntensity = 0.65f;
         if (TryComp<PsionicComponent>(uid, out var magic))
         {
-            // TODO Set PowerLevls
-            // const float min = 0.45f;
-            // const float max = 0.75f;
-            // tintIntensity = Math.Clamp(min + (powerlevel / powermaxlevel) * 0.333f, min, max);
+            var min = 0.45f;
+            var max = 0.75f;
+            tintIntensity = Math.Clamp(min + (magic.Mana / magic.MaxMana) * 0.333f, min, max);
         }
 
         UpdateShader(new Vector3(humanoid.EyeColor.R, humanoid.EyeColor.G, humanoid.EyeColor.B), tintIntensity);
