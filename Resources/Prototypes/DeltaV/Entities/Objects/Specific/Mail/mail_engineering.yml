@@ -96,9 +96,9 @@
     - id: HotplateMachineCircuitboard
       orGroup: Board
       prob: 0.5
-    - id: CircuitImprinterHyperConvectionMachineCircuitboard
-      orGroup: Board
-      prob: 0.25
+#    - id: CircuitImprinterHyperConvectionMachineCircuitboard
+#      orGroup: Board
+#      prob: 0.25
     - id: SheetifierMachineCircuitboard
       orGroup: Board
       prob: 0.25

@@ -90,6 +90,6 @@
   components:
   - type: Mail
     contents:
-    - id: BookSpaceLaw
+    - id: BookSecurity
 #    - id: BookSOP #This is where I'd put my Delta SOP book... IF I HAD ONE!!!
     - id: PaperMailNFSpaceLaw # Uses the NF space law paper, which is edited to mention the Delta Sector

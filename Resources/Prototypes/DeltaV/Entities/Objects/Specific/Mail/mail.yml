@@ -238,8 +238,8 @@
   components:
   - type: Mail
     contents:
-    - id: BoxEnvelope
-      orGroup: Box
+#    - id: BoxEnvelope # TODO: we do not have this on EE?
+#      orGroup: Box
     - id: BoxCardboard
       orGroup: Box
     - id: BoxMRE
@@ -632,9 +632,9 @@
     - id: Claymore
       orGroup: Sword
       prob: 0.5
-    - id: CaneSheathFilled
-      orGroup: Sword
-      prob: 0.3
+#    - id: CaneSheathFilled # TODO: don't have this yet
+#      orGroup: Sword
+#      prob: 0.3
     - id: Cutlass
       orGroup: Sword
       prob: 0.1
@@ -1041,6 +1041,7 @@
     - id: DrinkSpaceUpBottleFull
     - id: PaperMailNFSpaceUpAd
 
+#TODO: we don't have rainbow joints or blunts (yet?). Uncomment when (if?) they are added.
 - type: entity
   noSpawn: true
   parent: BaseMail
@@ -1053,41 +1054,41 @@
     - id: Joint
       orGroup: Smokeable1
       prob: 0.35
-    - id: JointRainbow
-      orGroup: Smokeable1
-      prob: 0.15
-    - id: Blunt
-      orGroup: Smokeable1
-      prob: 0.35
-    - id: BluntRainbow
-      orGroup: Smokeable1
-      prob: 0.15
+#    - id: JointRainbow
+#      orGroup: Smokeable1
+#      prob: 0.15
+#    - id: Blunt
+#      orGroup: Smokeable1
+#      prob: 0.35
+#    - id: BluntRainbow
+#      orGroup: Smokeable1
+#      prob: 0.15
     # Smokeable 2
     - id: Joint
       orGroup: Smokeable2
       prob: 0.35
-    - id: JointRainbow
-      orGroup: Smokeable2
-      prob: 0.15
-    - id: Blunt
-      orGroup: Smokeable2
-      prob: 0.35
-    - id: BluntRainbow
-      orGroup: Smokeable2
-      prob: 0.15
+#    - id: JointRainbow
+#      orGroup: Smokeable2
+#      prob: 0.15
+#    - id: Blunt
+#      orGroup: Smokeable2
+#      prob: 0.35
+#    - id: BluntRainbow
+#      orGroup: Smokeable2
+#      prob: 0.15
     # Smokeable 3
     - id: Joint
       orGroup: Smokeable3
       prob: 0.35
-    - id: JointRainbow
-      orGroup: Smokeable3
-      prob: 0.15
-    - id: Blunt
-      orGroup: Smokeable3
-      prob: 0.35
-    - id: BluntRainbow
-      orGroup: Smokeable3
-      prob: 0.15
+#    - id: JointRainbow
+#      orGroup: Smokeable3
+#      prob: 0.15
+#    - id: Blunt
+#      orGroup: Smokeable3
+#      prob: 0.35
+#    - id: BluntRainbow
+#      orGroup: Smokeable3
+#      prob: 0.15
 
 # Catchalls for food that only exist in random spawners
 # Mmm, mail food
@@ -1213,9 +1214,9 @@
     - id: FoodDonutChocolate
       amount: 2
       orGroup: Food
-    - id: FoodDonutBluePumpkin
-      amount: 2
-      orGroup: Food
+#    - id: FoodDonutBluePumpkin # Don't have that yet
+#      amount: 2
+#      orGroup: Food
     - id: FoodDonutBungo
       amount: 2
       orGroup: Food
@@ -1243,9 +1244,9 @@
     - id: FoodDonutJellyChocolate
       amount: 2
       orGroup: Food
-    - id: FoodDonutJellyBluePumpkin
-      amount: 2
-      orGroup: Food
+#    - id: FoodDonutJellyBluePumpkin # Don't have that yet
+#      amount: 2
+#      orGroup: Food
     - id: FoodDonutJellyBungo
       amount: 2
       orGroup: Food
@@ -1333,15 +1334,16 @@
     - id: FoodKoibean
       orGroup: Produce
       amount: 5
-    - id: FoodGhostPepper #DeltaV
-      orGroup: Produce
-      amount: 5
-    - id: FoodCosmicRevenant #DeltaV
-      orGroup: Produce
-      amount: 5
-    - id: FoodCrystalThistle #DeltaV
-      orGroup: Produce
-      amount: 5
+#     EE does not have those yet. Uncomment if any of those get ported.
+#    - id: FoodGhostPepper #DeltaV
+#      orGroup: Produce
+#      amount: 5
+#    - id: FoodCosmicRevenant #DeltaV
+#      orGroup: Produce
+#      amount: 5
+#    - id: FoodCrystalThistle #DeltaV
+#      orGroup: Produce
+#      amount: 5
     - id: FoodLily
       orGroup: Produce
       amount: 5
@@ -1432,7 +1434,7 @@
   components:
   - type: Mail
     contents:
-    - id: PlushieThrongler #DeltaV: ThronglerToy -> PlushieThrongler
+    - id: ThronglerToy
 
 - type: entity
   noSpawn: true
