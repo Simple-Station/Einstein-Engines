@@ -15,7 +15,7 @@ public sealed partial class ResetNarcolepsy : ReagentEffect
     /// The # of seconds the effect resets the narcolepsy timer to
     /// </summary>
     [DataField("TimerReset")]
-    public int TimerReset = 600;
+    public float TimerReset = 600;
 
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => Loc.GetString("reagent-effect-guidebook-reset-narcolepsy", ("chance", Probability));

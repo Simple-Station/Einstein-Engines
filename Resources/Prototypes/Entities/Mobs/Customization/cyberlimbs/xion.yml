@@ -68,7 +68,7 @@
 - type: marking
   id: CyberLimbsMarkingXionLFoot
   bodyPart: LFoot
-  markingCategory: RightFoot
+  markingCategory: LeftFoot
   speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/xion/xion_main.rsi

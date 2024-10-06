@@ -314,3 +314,42 @@ trait-description-Spinarette =
 trait-name-AddictionNicotine = Nicotine Addiction
 trait-description-AddictionNicotine =
     You have an addiction to Nicotine, and will require frequent smoke breaks to keep your mood in check.
+
+trait-name-ValyrianStandard = Valyrian Standard
+trait-description-ValyrianStandard =
+    A language descended from eastern european languages of old earth - Valyrian Standard is the commonly spoken tongue of Harpies brought up on their homeworld of Valyrian 4b
+    It is rarely spoken outside of the worlds of its native speakers, and has in modern times been supplanted by the 'Conlangs of the Sol Alliance.
+    Its speakers are those who wish to uphold the traditions and beliefs of ancient peoples from before the colonial era.
+
+trait-name-LowPotential = Low Psi-Potential
+trait-description-LowPotential =
+    You possess an unusually weak connection to the noösphere, which makes it more difficult to obtain new psionic powers.
+
+trait-name-HighPotential = High Psi-Potential
+trait-description-HighPotential =
+    Your connection to the noösphere is greater than average, making it easier to obtain new psionic powers.
+
+trait-name-LowAmplification = kα Deficiency
+trait-description-LowAmplifiction =
+    Your psionic abilities are noticeably weaker than ones used by other psions.
+
+trait-name-HighAmplification = kα Abundance
+trait-description-HighAmplification =
+    Your psionic abilities are stronger than those of other psions.
+
+trait-name-PowerOverwhelming = Power Overwhelming
+trait-description-PowerOverwhelming =
+    WITNESS MY HATE MORTALS, COWER BEFORE MY PSIONIC MIGHT! REALITY IS AS I DEEM IT.
+
+trait-name-LowDampening = kδ Defect
+trait-description-LowDampening =
+    Your skill in manipulating the noösphere is weaker than others. You may experience unintended effects from using your abilities.
+
+trait-name-HighDampening = kδ Proficient
+trait-description-HighDampening =
+    You are skilled in the art of subtly manipulating the noösphere. Your powers are less likely to show unintended effects.
+
+trait-name-Azaziba = Sinta'Azaziba
+trait-description-Azaziba =
+    A language of Moghes consisting of a combination of spoken word and gesticulation.
+    While waning since Moghes entered the galactic stage - it enjoys popular use by Unathi that never fell to the Hegemony's cultural dominance.

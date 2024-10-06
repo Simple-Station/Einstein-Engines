@@ -162,3 +162,59 @@
   metapsionicFeedback: revivify-power-feedback
   amplificationModifier: 2.5 # An extremely rare and dangerous power
   powerSlotCost: 2
+
+- type: psionicPower
+  id: LowAmplification
+  name: LowAmplification
+  description: low-amplification-power-description
+  amplificationModifier: -0.25
+  powerSlotCost: 0
+
+- type: psionicPower
+  id: HighAmplification
+  name: HighAmplification
+  description: high-amplification-power-description
+  amplificationModifier: 0.25
+  powerSlotCost: 0
+
+- type: psionicPower
+  id: PowerOverwhelming
+  name: PowerOverwhelming
+  description: power-overwhelming-power-description
+  metapsionicFeedback: power-overwhelming-power-feedback
+  amplificationModifier: 2
+  powerSlotCost: 2
+
+- type: psionicPower
+  id: LowDampening
+  name: LowDampening
+  description: low-dampening-power-description
+  dampeningModifier: -0.25
+  powerSlotCost: 0
+
+- type: psionicPower
+  id: HighDampening
+  name: HighDampening
+  description: high-dampening-power-description
+  dampeningModifier: 0.25
+  powerSlotCost: 0
+
+- type: psionicPower
+  id: ShadeskipPower
+  name: Shadeskip
+  description: shadeskip-power-description
+  actions:
+  - ActionShadeskip
+  initializationFeedback: shadeskip-power-initialization-feedback
+  metapsionicFeedback: shadeskip-power-metapsionic-feedback
+  amplificationModifier: 1
+
+- type: psionicPower
+  id: TelekineticPulsePower
+  name: Telekinetic Pulse
+  description: telekinetic-pulse-power-description
+  actions:
+  - ActionTelekineticPulse
+  initializationFeedback: telekinetic-pulse-power-initialization-feedback
+  metapsionicFeedback: telekinetic-pulse-power-metapsionic-feedback
+  amplificationModifier: 1
