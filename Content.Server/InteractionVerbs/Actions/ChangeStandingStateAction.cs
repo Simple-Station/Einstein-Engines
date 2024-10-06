@@ -32,7 +32,7 @@ public sealed partial class ChangeStandingStateAction : InteractionAction
         if (isDown && MakeStanding)
             return stateSystem.Stand(args.Target);
         else if (!isDown && MakeLaying)
-            return stateSystem.Down(args.Target);
+            return stateSystem.Down(args.Target, setDrawDepth: true);
 
         return false;
     }
