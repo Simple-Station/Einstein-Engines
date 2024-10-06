@@ -402,3 +402,6 @@
     equipDelay: 0.5
     unequipDelay: 10
   - type: ShadowkinCuff
+  - type: GuideHelp
+    guides:
+    - Shadowkin

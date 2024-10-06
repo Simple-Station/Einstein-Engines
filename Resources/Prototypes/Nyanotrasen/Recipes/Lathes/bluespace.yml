@@ -20,3 +20,14 @@
   completetime: 4
   materials:
     Bluespace: 100
+
+- type: latheRecipe
+  id: ArtificialBluespaceCrystal
+  icon:
+    sprite: Nyanotrasen/Objects/Materials/materials.rsi
+    state: bluespace
+  result: MaterialBluespace1
+  completetime: 10
+  materials:
+    Gold: 1500
+    Plasma: 1500

@@ -274,6 +274,8 @@
     - Dropper
     - ClothingEyesGlassesChemical
     dynamicRecipes:
+      - ShadowkinRestraints
+      - ArtificialBluespaceCrystal
       - PowerDrill
       - MiningDrill
       - AnomalyScanner
@@ -757,6 +759,7 @@
       - MagazinePistolSpecial
       # End of modified code
     dynamicRecipes:
+      - ShadowkinRestraints
       - EncryptionKeySyndie # Nyano
       - CartridgeLightRifleIncendiary
       - CartridgeMagnumIncendiary
