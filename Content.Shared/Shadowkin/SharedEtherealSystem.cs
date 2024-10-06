@@ -12,7 +12,6 @@ using Content.Shared.Psionics;
 using Content.Shared.Mobs;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
-using Content.Shared.Abilities.Psionics;
 
 namespace Content.Shared.Shadowkin;
 public abstract class SharedEtherealSystem : EntitySystem
@@ -38,24 +37,34 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     public virtual void OnStartup(EntityUid uid, EtherealComponent component, MapInitEvent args)
     {
-        if (_cfg.GetCVar(CCVars.ShadowkinPassThrough) && TryComp<FixturesComponent>(uid, out var fixtures) && fixtures.FixtureCount >= 1)
+        if (TryComp<FixturesComponent>(uid, out var fixtures) && fixtures.FixtureCount >= 1)
         {
             var fixture = fixtures.Fixtures.First();
 
-            _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.GhostImpassable, fixtures);
-            _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, 0, fixtures);
+            component.OldMobMask = fixture.Value.CollisionMask;
+            component.OldMobLayer = fixture.Value.CollisionLayer;
+
+            if (_cfg.GetCVar(CCVars.ShadowkinPassThrough))
+            {
+                _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.GhostImpassable, fixtures);
+                _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, 0, fixtures);
+            }
+            else
+            {
+                _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.FlyingMobMask, fixtures);
+                _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, (int) CollisionGroup.FlyingMobLayer, fixtures);
+            }
         }
     }
 
     public virtual void OnShutdown(EntityUid uid, EtherealComponent component, ComponentShutdown args)
     {
-        // TODO: Store MobMask and MobLayer and reapply them. (What if we apply Ethernal to a Mouse huh?)
-        if (_cfg.GetCVar(CCVars.ShadowkinPassThrough) && TryComp<FixturesComponent>(uid, out var fixtures) && fixtures.FixtureCount >= 1)
+        if (TryComp<FixturesComponent>(uid, out var fixtures) && fixtures.FixtureCount >= 1)
         {
             var fixture = fixtures.Fixtures.First();
 
-            _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.MobMask, fixtures);
-            _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, (int) CollisionGroup.MobLayer, fixtures);
+            _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, component.OldMobMask, fixtures);
+            _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, component.OldMobLayer, fixtures);
         }
     }
 
@@ -66,7 +75,8 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     private void OnMobStateChanged(EntityUid uid, EtherealComponent component, MobStateChangedEvent args)
     {
-        if (args.NewMobState == MobState.Dead)
+        if (args.NewMobState == MobState.Critical
+        || args.NewMobState == MobState.Dead)
             RemComp(uid, component);
     }
 
@@ -77,6 +87,10 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     private void OnAttackAttempt(EntityUid uid, EtherealComponent component, AttackAttemptEvent args)
     {
+        if (args.Target is not null
+        && HasComp<EtherealComponent>(args.Target))
+            return;
+
         args.Cancel();
     }
 
@@ -96,7 +110,7 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     private void OnInteractionAttempt(EntityUid uid, EtherealComponent component, InteractionAttemptEvent args)
     {
-        if (args.Target == null
+        if (args.Target is null
         || !HasComp<TransformComponent>(args.Target)
         || HasComp<EtherealComponent>(args.Target))
             return;

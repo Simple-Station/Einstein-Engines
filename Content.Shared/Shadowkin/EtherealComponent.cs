@@ -27,6 +27,10 @@ namespace Content.Shared.Shadowkin
 
         public float DarkenAccumulator;
 
+        public int OldMobMask;
+
+        public int OldMobLayer;
+
         public List<string> SuppressedFactions = new();
     }
 }

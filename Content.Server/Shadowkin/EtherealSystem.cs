@@ -25,14 +25,15 @@ public sealed class EtherealSystem : SharedEtherealSystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedPointLightSystem _light = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void OnStartup(EntityUid uid, EtherealComponent component, MapInitEvent args)
     {
         base.OnStartup(uid, component, args);
 
         var visibility = EnsureComp<VisibilityComponent>(uid);
-        _visibilitySystem.RemoveLayer(uid, visibility, (int) VisibilityFlags.Normal, false);
-        _visibilitySystem.AddLayer(uid, visibility, (int) VisibilityFlags.Ethereal, false);
+        _visibilitySystem.RemoveLayer((uid, visibility), (int) VisibilityFlags.Normal, false);
+        _visibilitySystem.AddLayer((uid, visibility), (int) VisibilityFlags.Ethereal, false);
         _visibilitySystem.RefreshVisibility(uid, visibility);
 
         if (TryComp<EyeComponent>(uid, out var eye))
@@ -60,8 +61,8 @@ public sealed class EtherealSystem : SharedEtherealSystem
 
         if (TryComp<VisibilityComponent>(uid, out var visibility))
         {
-            _visibilitySystem.AddLayer(uid, visibility, (int) VisibilityFlags.Normal, false);
-            _visibilitySystem.RemoveLayer(uid, visibility, (int) VisibilityFlags.Ethereal, false);
+            _visibilitySystem.AddLayer((uid, visibility), (int) VisibilityFlags.Normal, false);
+            _visibilitySystem.RemoveLayer((uid, visibility), (int) VisibilityFlags.Ethereal, false);
             _visibilitySystem.RefreshVisibility(uid, visibility);
         }
 
@@ -125,7 +126,6 @@ public sealed class EtherealSystem : SharedEtherealSystem
         etherealLight.OldEnergyEdited = false;
     }
 
-    // TODO: Remove Obselete Code.
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -136,8 +136,6 @@ public sealed class EtherealSystem : SharedEtherealSystem
             if (!component.Darken)
                 continue;
 
-            var transform = Transform(uid);
-
             component.DarkenAccumulator += frameTime;
 
             if (component.DarkenAccumulator <= 1)
@@ -146,7 +144,7 @@ public sealed class EtherealSystem : SharedEtherealSystem
             component.DarkenAccumulator -= component.DarkenRate;
 
             var darkened = new List<EntityUid>();
-            var lightQuery = _lookup.GetEntitiesInRange(transform.MapID, transform.WorldPosition, component.DarkenRange, flags: LookupFlags.StaticSundries)
+            var lightQuery = _lookup.GetEntitiesInRange(uid, component.DarkenRange, flags: LookupFlags.StaticSundries)
                 .Where(x => HasComp<EtherealLightComponent>(x) && HasComp<PointLightComponent>(x));
 
             foreach (var entity in lightQuery)
@@ -158,11 +156,11 @@ public sealed class EtherealSystem : SharedEtherealSystem
             _random.Shuffle(darkened);
             component.DarkenedLights = darkened;
 
-            var playerPos = Transform(uid).WorldPosition;
+            var playerPos = _transform.GetWorldPosition(uid);
 
             foreach (var light in component.DarkenedLights.ToArray())
             {
-                var lightPos = Transform(light).WorldPosition;
+                var lightPos = _transform.GetWorldPosition(light);
                 if (!TryComp<PointLightComponent>(light, out var pointLight))
                     continue;
 
