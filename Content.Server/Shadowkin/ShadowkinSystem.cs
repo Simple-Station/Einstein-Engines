@@ -177,7 +177,7 @@ public sealed class ShadowkinSystem : EntitySystem
         EnsureComp<PsionicComponent>(uid, out var magic);
         magic.Mana = 250;
         magic.MaxMana = 250;
-        magic.ManaGain = 0.33333333333f;
+        magic.ManaGain = 0.25f;
         magic.BypassManaCheck = true;
         magic.Removable = false;
         magic.MindbreakingFeedback = "shadowkin-blackeye";
