@@ -6963,3 +6963,12 @@ Entries:
   id: 6420
   time: '2024-10-04T00:52:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1004
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug with CloningSystem. It now correctly spills blood upon
+        cloning fail.
+  id: 6421
+  time: '2024-10-05T14:28:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1009

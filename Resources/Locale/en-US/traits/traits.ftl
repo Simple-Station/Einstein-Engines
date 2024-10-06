@@ -348,3 +348,8 @@ trait-description-LowDampening =
 trait-name-HighDampening = kδ Proficient
 trait-description-HighDampening =
     You are skilled in the art of subtly manipulating the noösphere. Your powers are less likely to show unintended effects.
+
+trait-name-Azaziba = Sinta'Azaziba
+trait-description-Azaziba =
+    A language of Moghes consisting of a combination of spoken word and gesticulation.
+    While waning since Moghes entered the galactic stage - it enjoys popular use by Unathi that never fell to the Hegemony's cultural dominance.

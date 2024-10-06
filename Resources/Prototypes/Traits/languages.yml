@@ -77,3 +77,18 @@
     - ValyrianStandard
   languagesUnderstood:
     - ValyrianStandard
+
+- type: trait
+  id: Azaziba
+  category: TraitsSpeechLanguages
+  points: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Reptilian
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+  languagesSpoken:
+    - Azaziba
+  languagesUnderstood:
+    - Azaziba
