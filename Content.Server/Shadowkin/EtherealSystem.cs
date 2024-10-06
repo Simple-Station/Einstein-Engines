@@ -125,6 +125,7 @@ public sealed class EtherealSystem : SharedEtherealSystem
         etherealLight.OldEnergyEdited = false;
     }
 
+    // TODO: Remove Obselete Code.
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
