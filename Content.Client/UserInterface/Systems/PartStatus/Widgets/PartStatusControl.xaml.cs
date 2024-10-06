@@ -5,27 +5,27 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client.UserInterface.Systems.Targeting.Widgets;
+namespace Content.Client.UserInterface.Systems.PartStatus.Widgets;
 
 [GenerateTypedNameReferences]
-public sealed partial class TargetingControl : UIWidget
+public sealed partial class PartStatusControl : UIWidget
 {
-    private readonly TargetingUIController _controller;
-    private readonly Dictionary<TargetBodyPart, (TextureButton Button, PanelContainer Panel)> _bodyPartControls;
+    private readonly PartStatusUIController _controller;
+    private readonly Dictionary<TargetBodyPart, TextureRect> _partStatusControls;
 
-    public TargetingControl()
+    public PartStatusControl()
     {
         RobustXamlLoader.Load(this);
-        _controller = UserInterfaceManager.GetUIController<TargetingUIController>();
+        _controller = UserInterfaceManager.GetUIController<PartStatusUIController>();
 
         _bodyPartControls = new Dictionary<TargetBodyPart, (TextureButton, PanelContainer)>
         {
-            { TargetBodyPart.Head, (HeadButton, (PanelContainer)HeadButton.Children.First()) },
-            { TargetBodyPart.Torso, (TorsoButton, (PanelContainer)TorsoButton.Children.First()) },
-            { TargetBodyPart.LeftArm, (LeftArmButton, (PanelContainer)LeftArmButton.Children.First()) },
-            { TargetBodyPart.RightArm, (RightArmButton, (PanelContainer)RightArmButton.Children.First()) },
-            { TargetBodyPart.LeftLeg, (LeftLegButton, (PanelContainer)LeftLegButton.Children.First()) },
-            { TargetBodyPart.RightLeg, (RightLegButton, (PanelContainer)RightLegButton.Children.First()) }
+            { TargetBodyPart.Head, DollHead },
+            { TargetBodyPart.Torso, DollTorso },
+            { TargetBodyPart.LeftArm, DollLeftArm },
+            { TargetBodyPart.RightArm, DollRightArm },
+            { TargetBodyPart.LeftLeg, DollLeftLeg },
+            { TargetBodyPart.RightLeg, DollRightLeg }
         };
 
         foreach (var buttonPair in _bodyPartControls)

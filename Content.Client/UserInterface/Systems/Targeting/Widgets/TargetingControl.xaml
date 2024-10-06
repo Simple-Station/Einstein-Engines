@@ -1,27 +1,66 @@
 <widgets:TargetingControl
     xmlns="https://spacestation14.io"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Targeting.Widgets"
     Name="TargetingButton"
     VerticalAlignment="Bottom"
-    HorizontalAlignment="Right"
-    >
+    HorizontalAlignment="Right">
     <Control>
-        <GridContainer Rows="3" Columns="1">
-            <Label Text="Head" HorizontalAlignment="Center"/>
-            <GridContainer Rows="1" Columns="5" HorizontalExpand="True">
-                <Label Text="Filler" HorizontalExpand="True"/>
-                <Label Text="LeftArm"/>
-                <Label Text="Body"/>
-                <Label Text="RightArm"/>
-                <Label Text="Filler" HorizontalExpand="True"/>
+        <PanelContainer>
+            <TextureRect
+                Name="BackgroundDoll"
+                TexturePath="/Textures/Interface/Targeting/doll.png"
+                Stretch="KeepAspectCentered"
+                SetSize="80 80"/>
+             <GridContainer Rows="3" Columns="1" SetSize="80 80" Margin="0 10 1 0" HSeparationOverride="0" VSeparationOverride="0">
+                <TextureButton Name="HeadButton" MinSize="22 22" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <PanelContainer Name="HeadPanel">
+                        <PanelContainer.PanelOverride>
+                            <gfx:StyleBoxFlat BorderColor="#FFFFFF00" BorderThickness="1"/>
+                        </PanelContainer.PanelOverride>
+                    </PanelContainer>
+                </TextureButton>
+                <GridContainer Rows="1" Columns="3" HorizontalAlignment="Center" HorizontalExpand="True" HSeparationOverride="0" VSeparationOverride="0">
+                    <TextureButton Name="LeftArmButton" MinSize="12 28" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <PanelContainer Name="LeftArmPanel">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BorderColor="#FFFFFF00" BorderThickness="1"/>
+                            </PanelContainer.PanelOverride>
+                        </PanelContainer>
+                    </TextureButton>
+                    <TextureButton Name="TorsoButton" MinSize="22 28" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <PanelContainer Name="TorsoPanel">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BorderColor="#FFFFFF00" BorderThickness="1"/>
+                            </PanelContainer.PanelOverride>
+                        </PanelContainer>
+                    </TextureButton>
+                    <TextureButton Name="RightArmButton" MinSize="12 28" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <PanelContainer Name="RightArmPanel">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BorderColor="#FFFFFF00" BorderThickness="1"/>
+                            </PanelContainer.PanelOverride>
+                        </PanelContainer>
+                    </TextureButton>
+                </GridContainer>
+                <GridContainer Rows="1" Columns="2" HorizontalAlignment="Center" HorizontalExpand="True" HSeparationOverride="0" VSeparationOverride="0">
+                    <TextureButton Name="LeftLegButton" MinSize="17 25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <PanelContainer Name="LeftLegPanel">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BorderColor="#FFFFFF00" BorderThickness="1"/>
+                            </PanelContainer.PanelOverride>
+                        </PanelContainer>
+                    </TextureButton>
+                    <TextureButton Name="RightLegButton" MinSize="17 25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <PanelContainer Name="RightLegPanel">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BorderColor="#FFFFFF00" BorderThickness="1"/>
+                            </PanelContainer.PanelOverride>
+                        </PanelContainer>
+                    </TextureButton>
+                </GridContainer>
             </GridContainer>
-            <GridContainer Rows="1" Columns="4" HorizontalExpand="True">
-                <Label Text="Filler" HorizontalExpand="True"/>
-                <Label Text="LeftLeg" HorizontalAlignment="Center"/>
-                <Label Text="RightLeg" HorizontalAlignment="Center"/>
-                <Label Text="Filler" HorizontalExpand="True"/>
-            </GridContainer>
-        </GridContainer>
+        </PanelContainer>
     </Control>
 </widgets:TargetingControl>

@@ -1,0 +1,37 @@
+<widgets:PartStatusControl
+    xmlns="https://spacestation14.io"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.PartStatus.Widgets"
+    Name="PartStatusIndicator"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center">
+    <Control>
+        <PanelContainer>
+            <TextureRect
+                Name="DollHead"
+                Stretch="KeepAspectCentered"
+                SetSize="32 32"/>
+            <TextureRect
+                Name="DollLeftArm"
+                Stretch="KeepAspectCentered"
+                SetSize="32 32"/>
+            <TextureRect
+                Name="DollTorso"
+                Stretch="KeepAspectCentered"
+                SetSize="32 32"/>
+            <TextureRect
+                Name="DollRightArm"
+                Stretch="KeepAspectCentered"
+                SetSize="32 32"/>
+            <TextureRect
+                Name="DollLeftLeg"
+                Stretch="KeepAspectCentered"
+                SetSize="32 32"/>
+            <TextureRect
+                Name="DollRightLeg"
+                Stretch="KeepAspectCentered"
+                SetSize="32 32"/>
+        </PanelContainer>
+    </Control>
+</widgets:PartStatusControl>

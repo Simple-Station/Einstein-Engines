@@ -1,0 +1,38 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c7e14784b35b1a136351c396d3a546f461ee2451",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+        "name": "rarm_0"
+        },
+        {
+        "name": "rarm_1"
+        },
+        {
+        "name": "rarm_2"
+        },
+        {
+        "name": "rarm_3"
+        },
+        {
+        "name": "rarm_4"
+        },
+        {
+        "name": "rarm_5"
+        },
+        {
+        "name": "rarm_6"
+        },
+        {
+        "name": "rarm_7"
+        },
+        {
+        "name": "rarm_8"
+        }
+    ]
+}

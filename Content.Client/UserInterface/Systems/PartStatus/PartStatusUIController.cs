@@ -8,25 +8,25 @@ using Robust.Client.Player;
 
 namespace Content.Client.UserInterface.Systems.Targeting;
 
-public sealed class TargetingUIController : UIController, IOnStateEntered<GameplayState>, IOnSystemChanged<TargetingSystem>
+public sealed class PartStatusUIController : UIController, IOnStateEntered<GameplayState>, IOnSystemChanged<PartStatusSystem>
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IEntityNetworkManager _net = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private TargetingComponent? _targetingComponent;
-    private TargetingControl? TargetingControl => UIManager.GetActiveUIWidgetOrNull<TargetingControl>();
+    private PartStatusControl? PartStatusControl => UIManager.GetActiveUIWidgetOrNull<PartStatusControl>();
 
-    public void OnSystemLoaded(TargetingSystem system)
+    public void OnSystemLoaded(PartStatusSystem system)
     {
-        system.TargetingStartup += AddTargetingControl;
-        system.TargetingShutdown += RemoveTargetingControl;
+        system.PartStatusStartup += AddPartStatusControl;
+        system.PartStatusShutdown += RemovePartStatusControl;
     }
 
-    public void OnSystemUnloaded(TargetingSystem system)
+    public void OnSystemUnloaded(PartStatusSystem system)
     {
-        system.TargetingStartup -= AddTargetingControl;
-        system.TargetingShutdown -= RemoveTargetingControl;
+        system.PartStatusStartup -= AddPartStatusControl;
+        system.PartStatusShutdown -= RemovePartStatusControl;
     }
 
     public void OnStateEntered(GameplayState state)
