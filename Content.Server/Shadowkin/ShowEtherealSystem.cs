@@ -5,6 +5,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Interaction.Events;
 using Robust.Shared.Timing;
 using Content.Shared.Popups;
+using Content.Shared.Clothing.Components;
 
 namespace Content.Server.Shadowkin;
 public sealed class ShowEtherealSystem : EntitySystem
@@ -17,8 +18,8 @@ public sealed class ShowEtherealSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<ShowEtherealComponent, MapInitEvent>(OnInit);
         SubscribeLocalEvent<ShowEtherealComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<ShowEtherealComponent, GotEquippedEvent>(OnGlassesEquipped);
-        SubscribeLocalEvent<ShowEtherealComponent, GotUnequippedEvent>(OnGlassesUnequipped);
+        SubscribeLocalEvent<ShowEtherealComponent, GotEquippedEvent>(OnEquipped);
+        SubscribeLocalEvent<ShowEtherealComponent, GotUnequippedEvent>(OnUnequipped);
         SubscribeLocalEvent<ShowEtherealComponent, InteractionAttemptEvent>(OnInteractionAttempt);
         SubscribeLocalEvent<ShowEtherealComponent, AttackAttemptEvent>(OnAttackAttempt);
     }
@@ -33,16 +34,20 @@ public sealed class ShowEtherealSystem : EntitySystem
         Toggle(uid, false);
     }
 
-    private void OnGlassesEquipped(EntityUid uid, ShowEtherealComponent component, GotEquippedEvent args)
+    private void OnEquipped(EntityUid uid, ShowEtherealComponent component, GotEquippedEvent args)
     {
-        if (args.Slot == "eyes")
-            EnsureComp<ShowEtherealComponent>(args.Equipee);
+        if (!TryComp<ClothingComponent>(uid, out var clothing))
+            return;
+
+        if (!clothing.Slots.HasFlag(args.SlotFlags))
+            return;
+
+        EnsureComp<ShowEtherealComponent>(args.Equipee);
     }
 
-    private void OnGlassesUnequipped(EntityUid uid, ShowEtherealComponent component, GotUnequippedEvent args)
+    private void OnUnequipped(EntityUid uid, ShowEtherealComponent component, GotUnequippedEvent args)
     {
-        if (args.Slot == "eyes")
-            RemComp<ShowEtherealComponent>(args.Equipee);
+        RemComp<ShowEtherealComponent>(args.Equipee);
     }
 
     private void Toggle(EntityUid uid, bool toggle)
@@ -67,8 +72,7 @@ public sealed class ShowEtherealSystem : EntitySystem
         if (HasComp<EtherealComponent>(uid))
             return;
 
-        if (args.Target is null
-        || !HasComp<TransformComponent>(args.Target)
+        if (!HasComp<TransformComponent>(args.Target)
         || !HasComp<EtherealComponent>(args.Target))
             return;
 
@@ -84,8 +88,7 @@ public sealed class ShowEtherealSystem : EntitySystem
         if (HasComp<EtherealComponent>(uid))
             return;
 
-        if (args.Target is not null
-        && !HasComp<EtherealComponent>(args.Target))
+        if (!HasComp<EtherealComponent>(args.Target))
             return;
 
         args.Cancel();

@@ -18,7 +18,7 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(EntityUid uid, TelegnosisPowerComponent component, TelegnosisPowerActionEvent args)
         {
-            if (!_psionics.OnAttemptPowerUse(args.Performer))
+            if (!_psionics.OnAttemptPowerUse(args.Performer, "telegnosis"))
                 return;
 
             var projection = Spawn(component.Prototype, Transform(uid).Coordinates);

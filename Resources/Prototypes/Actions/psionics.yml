@@ -318,6 +318,7 @@
         settings:
           powerName: "Shadowkin-Shadeskip"
           manaCost: 25
+          checkInsulation: false
           minGlimmer: 0
           maxGlimmer: 0
           doSupercritical: false
@@ -349,3 +350,4 @@
       checkCanInteract: false
       event: !type:DarkSwapActionEvent
         manaCost: 100
+        checkInsulation: false

@@ -28,9 +28,20 @@ namespace Content.Shared.Abilities.Psionics
             SubscribeLocalEvent<PsionicComponent, RejuvenateEvent>(OnRejuvenate);
         }
 
-        public bool OnAttemptPowerUse(EntityUid uid, float? manacost = null)
+        public bool OnAttemptPowerUse(EntityUid uid, string power, float? manacost = null, bool? checkInsulation = true)
         {
             if (!TryComp<PsionicComponent>(uid, out var component))
+                return false;
+
+            if (checkInsulation ?? true)
+                if (HasComp<PsionicInsulationComponent>(uid)
+                || HasComp<MindbrokenComponent>(uid))
+                    return false;
+
+            var tev = new OnAttemptPowerUseEvent(uid, power);
+            RaiseLocalEvent(uid, tev);
+
+            if (tev.Cancelled)
                 return false;
 
             if (component.DoAfter is not null)
@@ -170,6 +181,18 @@ namespace Content.Shared.Abilities.Psionics
         public string Power = string.Empty;
 
         public PsionicPowerUsedEvent(EntityUid user, string power)
+        {
+            User = user;
+            Power = power;
+        }
+    }
+
+    public sealed class OnAttemptPowerUseEvent : CancellableEntityEventArgs
+    {
+        public EntityUid User { get; }
+        public string Power = string.Empty;
+
+        public OnAttemptPowerUseEvent(EntityUid user, string power)
         {
             User = user;
             Power = power;

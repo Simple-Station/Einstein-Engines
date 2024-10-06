@@ -12,6 +12,7 @@ using Content.Shared.Psionics;
 using Content.Shared.Mobs;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
+using Content.Shared.Abilities.Psionics;
 
 namespace Content.Shared.Shadowkin;
 public abstract class SharedEtherealSystem : EntitySystem
@@ -29,6 +30,7 @@ public abstract class SharedEtherealSystem : EntitySystem
         SubscribeLocalEvent<EtherealComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<EtherealComponent, InteractionAttemptEvent>(OnInteractionAttempt);
         SubscribeLocalEvent<EtherealComponent, BeforeThrowEvent>(OnBeforeThrow);
+        SubscribeLocalEvent<EtherealComponent, OnAttemptPowerUseEvent>(OnAttemptPowerUse);
         SubscribeLocalEvent<EtherealComponent, AttackAttemptEvent>(OnAttackAttempt);
         SubscribeLocalEvent<EtherealComponent, ShotAttemptedEvent>(OnShootAttempt);
         SubscribeLocalEvent<EtherealComponent, OnMindbreakEvent>(OnMindbreak);
@@ -87,8 +89,7 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     private void OnAttackAttempt(EntityUid uid, EtherealComponent component, AttackAttemptEvent args)
     {
-        if (args.Target is not null
-        && HasComp<EtherealComponent>(args.Target))
+        if (HasComp<EtherealComponent>(args.Target))
             return;
 
         args.Cancel();
@@ -110,8 +111,7 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     private void OnInteractionAttempt(EntityUid uid, EtherealComponent component, InteractionAttemptEvent args)
     {
-        if (args.Target is null
-        || !HasComp<TransformComponent>(args.Target)
+        if (!HasComp<TransformComponent>(args.Target)
         || HasComp<EtherealComponent>(args.Target))
             return;
 
@@ -120,5 +120,11 @@ public abstract class SharedEtherealSystem : EntitySystem
             return;
 
         _popup.PopupEntity(Loc.GetString("ethereal-pickup-fail"), args.Target.Value, uid);
+    }
+
+    private void OnAttemptPowerUse(EntityUid uid, EtherealComponent component, OnAttemptPowerUseEvent args)
+    {
+        if (args.Power != "DarkSwap")
+            args.Cancel();
     }
 }

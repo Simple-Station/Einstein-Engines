@@ -34,7 +34,7 @@ namespace Content.Server.Abilities.Psionics
                     }
                 }
 
-                if (_psionics.OnAttemptPowerUse(args.Performer, args.manaCost / 2))
+                if (_psionics.OnAttemptPowerUse(args.Performer, "DarkSwap", args.ManaCost / 2, args.CheckInsulation))
                 {
                     RemComp(args.Performer, ethereal);
                     args.Handled = true;
@@ -42,7 +42,7 @@ namespace Content.Server.Abilities.Psionics
             }
             else
             {
-                if (_psionics.OnAttemptPowerUse(args.Performer, args.manaCost))
+                if (_psionics.OnAttemptPowerUse(args.Performer, "DarkSwap", args.ManaCost, args.CheckInsulation))
                 {
                     var newethereal = EnsureComp<EtherealComponent>(args.Performer);
                     newethereal.Darken = true;

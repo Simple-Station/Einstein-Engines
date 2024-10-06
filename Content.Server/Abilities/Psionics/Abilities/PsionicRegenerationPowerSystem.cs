@@ -40,7 +40,7 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(EntityUid uid, PsionicRegenerationPowerComponent component, PsionicRegenerationPowerActionEvent args)
         {
-            if (!_psionics.OnAttemptPowerUse(args.Performer))
+            if (!_psionics.OnAttemptPowerUse(args.Performer, "psionic regeneration"))
                 return;
 
             var ev = new PsionicRegenerationDoAfterEvent(_gameTiming.CurTime);
