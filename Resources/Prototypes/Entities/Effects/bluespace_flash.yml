@@ -49,7 +49,7 @@
     energy: 3.5
     color: "#7100bd"
   - type: TimedDespawn
-    lifetime: 1
+    lifetime: 3
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/Effects/shadowkin/shadeskip.ogg
