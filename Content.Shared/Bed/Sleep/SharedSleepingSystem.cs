@@ -31,6 +31,8 @@ namespace Content.Server.Bed.Sleep
 
         private void OnMapInit(EntityUid uid, SleepingComponent component, MapInitEvent args)
         {
+            component.SleepingSince = _gameTiming.CurTime;
+
             var ev = new SleepStateChangedEvent(true);
             RaiseLocalEvent(uid, ev);
             _blindableSystem.UpdateIsBlind(uid);
@@ -43,7 +45,10 @@ namespace Content.Server.Bed.Sleep
         private void OnShutdown(EntityUid uid, SleepingComponent component, ComponentShutdown args)
         {
             _actionsSystem.RemoveAction(uid, component.WakeAction);
-            var ev = new SleepStateChangedEvent(false);
+            var ev = new SleepStateChangedEvent(false)
+            {
+                TimeSlept = _gameTiming.CurTime - component.SleepingSince
+            };
             RaiseLocalEvent(uid, ev);
             _blindableSystem.UpdateIsBlind(uid);
         }
@@ -84,6 +89,11 @@ public sealed partial class WakeActionEvent : InstantActionEvent {}
 public sealed class SleepStateChangedEvent : EntityEventArgs
 {
     public bool FellAsleep = false;
+
+    /// <summary>
+    ///     The amount of time this entity slept for. Null if <see cref="FellAsleep"/> is true.
+    /// </summary>
+    public TimeSpan? TimeSlept;
 
     public SleepStateChangedEvent(bool fellAsleep)
     {

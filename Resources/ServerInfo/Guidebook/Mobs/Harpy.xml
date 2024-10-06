@@ -1,0 +1,122 @@
+<Document>
+  # Harpy (Homo-Aves sapiens)
+  All Information included in this document is licensed under CC BY-SA 4.0, and is written by VMSolidus(Github), also known as raistlin_jag(Discord)
+
+  <Box>
+    <GuideEntityEmbed Entity="MobHarpyDummy" Caption=""/>
+  </Box>
+
+  Harpies were created during the first 100 years of the colonial period of human civilization, back when the corporations still answered to the Sol Government.
+  Their creators were a company called GenetiCorp, now long defunct.
+  During it's heyday, GenetiCorp developed processes for converting colonists into forms suitable for the lesser colonized planets with some extreme conditions.
+  For the Harpy subtype, these adaptations were created to colonize the moon of a Hycean world, Valyrian 4b(4a referring to the Hycean world itself).
+  It is a planet with an incredibly dense atmosphere, measuring just slightly over 150kpa at sea level, with a high oxygen concentration.
+  Its host star is extraordinarily rich in the UV spectrum of light, but gives off incredibly dim amounts of red light.
+  The planet's terrain features a vast ocean surrounding a single volcanically active continent, as well as extensive archipelagos.
+  Valyrian 4b is well known for its flora sporting leaves that fluoresce orange in the nearby star's UV intense light.
+
+  Due to persistent financial troubles, GenetiCorp was bought out by its largest competitor Interdyne long before its first colony ship arrived at the intended destination.
+  Shortly after arrival, the original Harpy colonists were repossesed by Interdyne- who had gotten to the planet first in faster ships made after the fact.
+  Some Harpy colonists remained on "the Homeworld", while others were kept by the company and gradually spread across the realms of human space.
+  Due to the costs of their radical genemodding, most Harpies today are indebted to corporations, owing vast sums of money inherited from their parents.
+  These debts are often traded between corporations like stocks, resulting in a wide Diaspora of Harpies around the galaxy, and in turn gives them their extremely diverse coloration.
+
+  ## Biology
+
+  Harpies are biologically classed as a different species than Homo-Sapiens, due to the extreme nature of their original designer genetic modifications rendering them incapable of breeding true with Sol-Standard Humans.
+  They are however not true mutants, owing to the stability of their modifications such that they breed naturally as a species.
+  However, a "GenetiCorp-Standard Harpy" is readily recognisable as being related to humans thanks in part to retaining many body parts and organs present in the standard human.
+  A typical Harpy possesses a human brain, heart, stomach, kidneys, and reproductive organs, with skin not unlike a human- though it may be partially feathered, and can have a rough texture to the touch.
+
+  Their most extreme internal modifications are the possession of a second trachea, leading to a quartet of Avian lung organs.
+  A Harpy's breathing is several times more efficient than a Human's at taking in oxygen, and like a bird, they have no separation of "Inhale and Exhale".
+  Air enters a Harpy's lungs in a continuous loop via a circular motion through their four lung chambers. Listening to a Harpy breathing via a stethoscope is something like listening to the rhythm of a heartbeat, it is fast and continuous.
+
+  This continuous-flow breathing also permits the use of a highly advanced vocal organ called a Syrinx, which is what enables Harpies to perform iconic ability to imitate nearly any sound.
+  This of course comes with a significant trade-off, one that makes for a difficult life for Harpies to live in space.
+  They require double the volume of air a human requires, burning through tanks of oxygen twice as fast as any other species.
+  They are also substantially vulnerable to air impurities of any kind, and will be readily injured by simple things such as cigarette smoke, or someone hyperventilating in their face.
+
+  ## Unique Languages
+- [color=#008ecc]Valyrian Standard[/color]:
+  A language descended from eastern european languages of old earth - Valyrian Standard is the commonly spoken tongue of Harpies brought up on their homeworld of Valyrian 4b.
+  It is rarely spoken outside of the worlds of its native speakers, and has in modern times been supplanted by the 'Conlangs of the Sol Alliance.
+  Its speakers are those who wish to uphold the traditions and beliefs of ancient peoples from before the colonial era.
+
+  ## Other Notes
+
+  - No, Harpies don't lay eggs.
+  - In a combination of low-gravity and high atmospheric density, a Harpy is capable of flight. They are however flightless in Terran-Standard Atmospheric conditions.
+  - Adult Harpies can be anywhere from 135cm to 190cm tall, with an average height of around 155cm(Human average being roughly 175cm, depending on ethnicity).
+  - An average adult male Harpy weighs only 24kg, while an average adult female weighs 18kg. For reference, the average weight of an adult male human is 71kg.
+  - Curiously, Harpies do not follow the pattern of sexual dimorphism present in Terran birds. Female Harpies are usually just as colorful(or lack thereof) as their male counterparts.
+  - Spacer Harpies(Those not born on the Homeworld), are typically far more colorfully diverse than those native to the Homeworld.
+
+  # Species Traits
+
+  ## Positive Traits
+  - [color=#1e90ff]Mimicry[/color]:
+  Harpies can mimic almost any sound in the game using emotes, barring only a few exceptions. This includes the voice emotes of every other species.
+  The Harpy sound library contains nearly 700 possible sounds. This trait is unique only to Harpies.
+
+  - [color=#1e90ff]Runner[/color]:
+  Thanks to their incredibly light build, a Harpy's base running speed is 10% faster than that of a standard Human.
+
+  - [color=#1e90ff]Singer(Advanced)[/color]:
+  Harpies have a significantly more advanced variant of the [color=#1e90ff]Singer[/color] trait. This trait gives a Harpy access to an innate Midi Player, as well as a menu for swapping instruments.
+  Right click on yourself to open the Swappable Instrument menu, and select from a list of available instruments to mimic. Any of the following conditions both stop and prevent a Harpy from singing:
+
+      * Being Mute
+
+      * Being Zombified
+
+      * Being Dead or Crit
+
+      * Taking more than 5 damage in a single instance
+
+      * Being shoved to the ground
+
+
+  - [color=#1e90ff]Zero Gravity Flight[/color]:
+  Harpies have significantly enhanced acceleration in zero gravity. This trait is shared with Nians.
+
+  - [color=#1e90ff](Limited) True Flight[/color]:
+  Harpies have an activatable ability to attempt to fly. In order to fly, a Harpy must have both of their wings unencumbered, either by carrying something in hand, or by being restrained.
+  When activated, Flight significantly increases the maximum speed and acceleration of a Harpy, while allowing them to fly over obstacles.
+  Using flight costs a significant amount of stamina.
+
+  - [color=#1e90ff]Talons[/color]:
+  Functions as per the [color=#1e90ff]Talons[/color] trait. A Harpy's unarmed attacks deal 5 points of Piercing damage.
+
+  ## Negative Traits
+  - [color=#ffa500]Asthmatic[/color]:
+  Using their powerful Avian Lungs, a Harpy breathes twice as deeply, and twice as often as a standard Human. This results in two key conditions. The first is that all oxygen tanks last half as long for a Harpy.
+  The second condition, is that Harpies are uniquely vulnerable to poisonous fumes. When exposed to even a small amount of Carbon Dioxide and or Ammonia, a Harpy will shortly thereafter being to choke.
+  Choking can be ended either by moving away from the sources of poisonous fumes(such as rotting bodies, open gas tanks, or several people in an enclosed space with no scrubbers).
+  A choking Harpy can also stop themselves from choking by breathing from a tank of Pure Oxygen for at least 6 seconds.
+
+  - [color=#ffa500]Extreme Low Density[/color]:
+  The average weight of a Harpy is only 24kg, and can be as low as 10kg, with a maximum of 31kg. Because of this, Harpies suffer from any form of Mass Contests.
+  This results in weaknesses such as- but are not limited to:
+    - Experiencing more recoil with firearms
+    - Being easier to shove down
+    - Being easy to pick up by other people
+    - Being easy to throw
+    - Having a harder time pushing or dragging heavy objects
+    - Having weaker melee damage with certain weapons
+    - Being thrown extremely easily by Space Wind
+
+  - [color=#ffa500]Hollow Bones[/color]:
+  Harpies take 15% greater damage from any source of Brute damage.
+
+  - [color=#ffa500]Ultraviolet Vision[/color]:
+  Harpies have a unique kind of eye lens that lets them see in Ultraviolet-Blue-Green, but that they cannot see the color Red. This functions as per the Ultraviolet Vision trait.
+  "Ultravision" can also be "Bought off" in character creation by taking the [color=#1e90ff]Trichromat Modification[/color] trait.
+
+  # Unique Traitor Items
+
+  - [color=#1e90ff]Bionic Syrinx[/color]:
+  Traitor Harpies can optionally purchase a Bionic Syrinx. This takes the form of an Implant which- when implanted in a Harpy, acts as an internal Voice Changer.
+  The Bionic Syrinx will only work on Harpies.
+
+</Document>

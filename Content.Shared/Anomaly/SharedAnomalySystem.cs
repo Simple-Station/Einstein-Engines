@@ -368,14 +368,14 @@ public abstract class SharedAnomalySystem : EntitySystem
     /// <summary>
     /// Gets random points around the anomaly based on the given parameters.
     /// </summary>
-    public List<TileRef>? GetSpawningPoints(EntityUid uid, float stability, float severity, AnomalySpawnSettings settings, float powerModifier = 1f)
+    public List<TileRef>? GetSpawningPoints(EntityUid uid, float stability, float severity, AnomalySpawnSettings settings, float powerModifier = 1f, float minAmountOffset = 0, float maxAmountOffset = 0)
     {
         var xform = Transform(uid);
 
         if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
             return null;
 
-        var amount = (int) (MathHelper.Lerp(settings.MinAmount, settings.MaxAmount, severity * stability * powerModifier) + 0.5f);
+        var amount = (int) MathF.Round(MathHelper.Lerp(settings.MinAmount + minAmountOffset, settings.MaxAmount + maxAmountOffset, severity * stability * powerModifier) + 0.5f);
 
         var localpos = xform.Coordinates.Position;
         var tilerefs = grid.GetLocalTilesIntersecting(

@@ -199,8 +199,10 @@
                 <ui:NeoTabContainer Name="CLoadoutsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
             <BoxContainer Name="CMarkingsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
-                <!-- Markings -->
-                <humanoid:MarkingPicker Name="CMarkings" IgnoreCategories="Hair,FacialHair" />
+                <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
+                    <!-- Markings -->
+                    <humanoid:MarkingPicker Name="CMarkings" IgnoreCategories="Hair,FacialHair" />
+                </ScrollContainer>
             </BoxContainer>
         </ui:NeoTabContainer>
     </BoxContainer>

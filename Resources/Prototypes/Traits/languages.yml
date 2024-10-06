@@ -65,3 +65,30 @@
     - Elyran
   languagesUnderstood:
     - Elyran
+
+- type: trait
+  id: ValyrianStandard
+  category: TraitsSpeechLanguages
+  points: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+  languagesSpoken:
+    - ValyrianStandard
+  languagesUnderstood:
+    - ValyrianStandard
+
+- type: trait
+  id: Azaziba
+  category: TraitsSpeechLanguages
+  points: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Reptilian
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+  languagesSpoken:
+    - Azaziba
+  languagesUnderstood:
+    - Azaziba
