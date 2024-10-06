@@ -227,3 +227,11 @@
   - ActionShadowkinShadeskip
   - ActionDarkSwap
   powerSlotCost: 1
+
+- type: psionicPower
+  id: EtherealVision
+  name: Ethereal Vision
+  description: ethereal-vision-powers-description
+  components:
+    - type: ShowEthereal
+  powerSlotCost: 0
