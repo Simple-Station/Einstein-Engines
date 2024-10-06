@@ -7,11 +7,21 @@
     HorizontalAlignment="Right"
     >
     <Control>
-        <TextureButton
-            Name="TargetImage"
-            TexturePath="/Textures/Interface/Targeting/bodydoll.rsi/doll.png"
-            MouseFilter="Stop"
-            Scale="2.5 2.5"
-        />
+        <GridContainer Rows="3" Columns="1">
+            <Label Text="Head" HorizontalAlignment="Center"/>
+            <GridContainer Rows="1" Columns="5" HorizontalExpand="True">
+                <Label Text="Filler" HorizontalExpand="True"/>
+                <Label Text="LeftArm"/>
+                <Label Text="Body"/>
+                <Label Text="RightArm"/>
+                <Label Text="Filler" HorizontalExpand="True"/>
+            </GridContainer>
+            <GridContainer Rows="1" Columns="4" HorizontalExpand="True">
+                <Label Text="Filler" HorizontalExpand="True"/>
+                <Label Text="LeftLeg" HorizontalAlignment="Center"/>
+                <Label Text="RightLeg" HorizontalAlignment="Center"/>
+                <Label Text="Filler" HorizontalExpand="True"/>
+            </GridContainer>
+        </GridContainer>
     </Control>
 </widgets:TargetingControl>

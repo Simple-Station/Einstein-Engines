@@ -1,4 +1,4 @@
-using Content.Client.UserInterface.Systems.Gameplay;
+/*using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Targeting.Widgets;
 using Content.Shared.Targeting;
 using Content.Shared.Targeting.Events;
@@ -50,4 +50,4 @@ public sealed class TargetingUIController : UIController
     }
 
 
-}
+}*/

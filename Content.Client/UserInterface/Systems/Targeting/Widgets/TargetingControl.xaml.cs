@@ -8,15 +8,15 @@ namespace Content.Client.UserInterface.Systems.Targeting.Widgets;
 [GenerateTypedNameReferences]
 public sealed partial class TargetingControl : UIWidget
 {
-    private readonly TargetingUIController _controller;
+    //private readonly TargetingUIController _controller;
 
     public TargetingControl()
     {
         RobustXamlLoader.Load(this);
-        _controller = UserInterfaceManager.GetUIController<TargetingUIController>();
-        TargetImage.OnPressed += OnTargetImagePressed;
+        //_controller = UserInterfaceManager.GetUIController<TargetingUIController>();
+        //TargetImage.OnPressed += OnTargetImagePressed;
     }
-    private void OnTargetImagePressed(BaseButton.ButtonEventArgs args)
+    /*private void OnTargetImagePressed(BaseButton.ButtonEventArgs args)
     {
         _controller.CycleTarget(this);
     }
@@ -24,6 +24,6 @@ public sealed partial class TargetingControl : UIWidget
     public void SetTargetImage(Texture texture)
     {
         TargetImage.TextureNormal = texture;
-    }
+    }*/
 
 }
