@@ -43,8 +43,8 @@ namespace Content.Server.Abilities.Psionics
                 var newethereal = EnsureComp<EtherealComponent>(args.Performer);
                 newethereal.Darken = true;
 
-                Spawn("ShadowkinShadow", Transform(args.Performer).Coordinates);
-                Spawn("EffectFlashShadowkinDarkSwapOn", Transform(args.Performer).Coordinates);
+                SpawnAtPosition("ShadowkinShadow", Transform(args.Performer).Coordinates);
+                SpawnAtPosition("EffectFlashShadowkinDarkSwapOn", Transform(args.Performer).Coordinates);
 
                 args.Handled = true;
             }
