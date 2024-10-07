@@ -6928,3 +6928,75 @@ Entries:
   id: 6416
   time: '2024-10-02T23:14:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/986
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Telekinetic Pulse power.
+    - type: Fix
+      message: Fixed a crash related to Shadeskip
+  id: 6417
+  time: '2024-10-04T00:14:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1002
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Directional Windows and Tables has gotten new sprites!
+    - type: Fix
+      message: AirAlarm Inverted Alert States has been fixed!
+  id: 6418
+  time: '2024-10-04T00:25:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/958
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Ported a Respawn System. This system allows players to return themselves
+        to the lobby, while also requiring that if they re-enter the round, that
+        they must do so on a different character.
+  id: 6419
+  time: '2024-10-04T00:43:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/998
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Winter boots are no longer able to protect you from insane temperatures.
+  id: 6420
+  time: '2024-10-04T00:52:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1004
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug with CloningSystem. It now correctly spills blood upon
+        cloning fail.
+  id: 6421
+  time: '2024-10-05T14:28:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1009
+- author: Mocho
+  changes:
+    - type: Fix
+      message: >-
+        Fixed downed entities having their draw depth set incorrectly after
+        being picked up, or laying on a bed.
+  id: 6422
+  time: '2024-10-07T15:28:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1017
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Nerfed Lotophagoi Moodlets so that both the positive and negative
+        moodlets only last for 10 minutes. The total mood modification has been
+        left untouched. 
+  id: 6423
+  time: '2024-10-07T15:29:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1013
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Shadeskip no longer creates Stationwide Shadow Kudzu when casting at
+        high glimmer.
+  id: 6424
+  time: '2024-10-07T15:29:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1012

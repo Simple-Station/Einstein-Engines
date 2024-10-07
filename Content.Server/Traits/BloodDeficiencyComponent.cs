@@ -11,4 +11,10 @@ public sealed partial class BloodDeficiencyComponent : Component
     // </summary>
     [DataField(required: true)]
     public float BloodLossPercentage;
+
+    /// <summary>
+    ///     Whether the effects of this trait should be active.
+    /// </summary>
+    [DataField]
+    public bool Active = true;
 }

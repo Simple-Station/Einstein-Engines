@@ -233,3 +233,5 @@
     bloodlossHealDamage:
       types:
         Bloodloss: -1
+    bloodRegenerationHunger: 1
+    bloodRegenerationThirst: 1.5 # 1 unit of normal blood satiates 1t, 0.3t for vampires, 0.75h, and restores 0.25 blood for non-humans...

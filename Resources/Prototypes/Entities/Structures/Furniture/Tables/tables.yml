@@ -443,7 +443,7 @@
   - type: Construction
     graph: Table
     node: TableBrass
-    
+
 - type: entity
   id: TableWood
   parent: TableBase
@@ -604,7 +604,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 25 
+        damage: 25
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -677,7 +677,7 @@
   - type: Construction
     graph: Table
     node: TableFancyRed
-    
+
 - type: entity
   id: TableFancyPurple
   parent: TableFancyBase
@@ -690,7 +690,7 @@
   - type: Construction
     graph: Table
     node: TableFancyPurple
-    
+
 - type: entity
   id: TableFancyPink
   parent: TableFancyBase
@@ -703,7 +703,7 @@
   - type: Construction
     graph: Table
     node: TableFancyPink
-    
+
 - type: entity
   id: TableFancyGreen
   parent: TableFancyBase
@@ -712,11 +712,11 @@
   - type: Sprite
     sprite: Structures/Furniture/Tables/Fancy/green.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/Fancy/green.rsi  
+    sprite: Structures/Furniture/Tables/Fancy/green.rsi
   - type: Construction
     graph: Table
     node: TableFancyGreen
-    
+
 - type: entity
   id: TableFancyOrange
   parent: TableFancyBase
@@ -729,7 +729,7 @@
   - type: Construction
     graph: Table
     node: TableFancyOrange
-    
+
 - type: entity
   id: TableFancyWhite
   parent: TableFancyBase
