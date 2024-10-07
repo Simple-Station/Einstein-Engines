@@ -6972,3 +6972,31 @@ Entries:
   id: 6421
   time: '2024-10-05T14:28:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1009
+- author: Mocho
+  changes:
+    - type: Fix
+      message: >-
+        Fixed downed entities having their draw depth set incorrectly after
+        being picked up, or laying on a bed.
+  id: 6422
+  time: '2024-10-07T15:28:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1017
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Nerfed Lotophagoi Moodlets so that both the positive and negative
+        moodlets only last for 10 minutes. The total mood modification has been
+        left untouched. 
+  id: 6423
+  time: '2024-10-07T15:29:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1013
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Shadeskip no longer creates Stationwide Shadow Kudzu when casting at
+        high glimmer.
+  id: 6424
+  time: '2024-10-07T15:29:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1012
