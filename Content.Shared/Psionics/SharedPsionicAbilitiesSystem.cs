@@ -33,7 +33,7 @@ namespace Content.Shared.Abilities.Psionics
             if (!TryComp<PsionicComponent>(uid, out var component)
                 || HasComp<MindbrokenComponent>(uid)
                 || checkInsulation ?? true
-                && (HasComp<PsionicInsulationComponent>(uid))
+                && HasComp<PsionicInsulationComponent>(uid))
                 return false;
 
             var tev = new OnAttemptPowerUseEvent(uid, power);
