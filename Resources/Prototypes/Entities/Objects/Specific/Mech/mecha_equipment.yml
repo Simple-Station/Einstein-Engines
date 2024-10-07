@@ -90,9 +90,6 @@
     maxContents: 4
     grabDelay: 3
     grabEnergyDelta: -20
-  - type: Tag
-    tags:
-    - SmallMech
   - type: UIFragment
     ui: !type:MechGrabberUi
   - type: ContainerContainer
