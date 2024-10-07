@@ -311,5 +311,5 @@
       chance: 0.45
       prototypes:
         - ShadowBasaltRandom
-    # - type: TimedDespawn
-    #   lifetime: 30
+    - type: TimedDespawn
+      lifetime: 30
