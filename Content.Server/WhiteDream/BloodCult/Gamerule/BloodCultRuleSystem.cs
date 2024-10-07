@@ -150,6 +150,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         {
             RemoveAllCultItems(ent);
             RemoveCultistAppearance(ent);
+            RemoveObjectiveAndRole(ent.Owner);
             RaiseLocalEvent(ent.Owner, new MoodRemoveEffectEvent("CultFocused"));
             _alertsSystem.ClearAlert(ent.Owner, AlertType.BloodSpells);
         }

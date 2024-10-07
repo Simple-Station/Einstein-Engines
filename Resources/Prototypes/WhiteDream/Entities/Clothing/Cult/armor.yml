@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterCultArmor
-  name: True Nar'sien Hardened Armor
+  name: true nar'sien Hardened Armor
   description: heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum.
   components:
   - type: Sprite
@@ -35,7 +35,7 @@
   parent: ClothingHeadHardsuitBase
   id: ClothingHeadHelmetCultArmor
   noSpawn: true
-  name: True Nar'Sien hardened helmet
+  name: true nar'sien hardened helmet
   description: A heavily-armored helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum.
   components:
   - type: BreathMask

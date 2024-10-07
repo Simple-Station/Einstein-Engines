@@ -1,4 +1,5 @@
-﻿using Content.Shared.Antag;
+﻿using System.Threading;
+using Content.Shared.Antag;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mind;
 using Content.Shared.StatusIcon;
@@ -38,4 +39,6 @@ public sealed partial class BloodCultistComponent : Component, IAntagStatusIconC
 
     [DataField]
     public bool IconVisibleToGhost { get; set; } = true;
+
+    public CancellationTokenSource? DeconvertToken { get; set; }
 }

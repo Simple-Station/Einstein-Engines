@@ -59,6 +59,7 @@
   - type: SolutionContainerManager
     solutions:
       tank:
+        canMix: true
         maxVol: 1500
   - type: DrainableSolution
     solution: tank

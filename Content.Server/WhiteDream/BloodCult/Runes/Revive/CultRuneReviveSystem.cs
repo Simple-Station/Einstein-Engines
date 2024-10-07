@@ -85,7 +85,7 @@ public sealed class CultRuneReviveSystem : EntitySystem
         var deadThreshold = _threshold.GetThresholdForState(target, MobState.Dead);
         _damageable.TryChangeDamage(target, rune.Comp.Healing);
 
-        if (!TryComp<DamageableComponent>(target, out var damageable) || damageable.TotalDamage < deadThreshold)
+        if (!TryComp<DamageableComponent>(target, out var damageable) || damageable.TotalDamage > deadThreshold)
             return;
 
         _mobState.ChangeMobState(target, MobState.Critical, origin: user);
