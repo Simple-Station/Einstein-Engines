@@ -52,7 +52,7 @@
     lifetime: 3
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/Effects/shadowkin/shadeskip.ogg
+      path: /Audio/Effects/Shadowkin/shadeskip.ogg
 
 - type: entity
   id: EffectFlashShadowkinDarkSwapOn
@@ -66,7 +66,7 @@
     lifetime: 3
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/Effects/shadowkin/darkswapon.ogg
+      path: /Audio/Effects/Shadowkin/darkswapon.ogg
 
 - type: entity
   id: EffectFlashShadowkinDarkSwapOff
@@ -80,4 +80,4 @@
     lifetime: 3
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/Effects/shadowkin/darkswapoff.ogg
+      path: /Audio/Effects/Shadowkin/darkswapoff.ogg
