@@ -11519,8 +11519,6 @@ entities:
       pos: -4.5,15.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 80
   - uid: 381
@@ -11915,8 +11913,6 @@ entities:
       pos: 76.5,26.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
       - 5
@@ -12300,8 +12296,6 @@ entities:
       pos: 29.5,-11.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -12312,8 +12306,6 @@ entities:
       pos: 34.5,-11.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -12323,8 +12315,6 @@ entities:
       pos: 70.5,26.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 18626
       - 18627
@@ -56372,8 +56362,6 @@ entities:
       pos: 84.5,35.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 18620
@@ -56597,8 +56585,6 @@ entities:
       pos: 84.5,34.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 18620
@@ -56609,8 +56595,6 @@ entities:
       pos: 84.5,33.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 18620
@@ -56621,8 +56605,6 @@ entities:
       pos: 72.5,31.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 18626
       - 18627
@@ -56633,8 +56615,6 @@ entities:
       pos: 72.5,29.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 18626
       - 18627
@@ -56645,8 +56625,6 @@ entities:
       pos: 72.5,28.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 18626
       - 18627
@@ -56658,8 +56636,6 @@ entities:
       pos: 2.5,29.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 76
       - 37
@@ -56670,8 +56646,6 @@ entities:
       pos: -3.5,18.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 80
   - uid: 8548
@@ -56680,8 +56654,6 @@ entities:
       pos: -1.5,35.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 37
       - 80
@@ -56825,8 +56797,6 @@ entities:
       pos: 74.5,34.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8465
       - 5
@@ -56837,8 +56807,6 @@ entities:
       pos: 78.5,34.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8465
       - 5
@@ -56975,8 +56943,6 @@ entities:
       pos: 81.5,28.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 18620
@@ -56987,8 +56953,6 @@ entities:
       pos: 81.5,20.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 18620
@@ -56998,8 +56962,6 @@ entities:
       pos: 77.5,27.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 18626
@@ -57010,8 +56972,6 @@ entities:
       pos: 67.5,27.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8
       - 18626
@@ -57022,8 +56982,6 @@ entities:
       pos: 83.5,32.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 18620
@@ -57033,8 +56991,6 @@ entities:
       pos: 83.5,31.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 18620
@@ -57044,8 +57000,6 @@ entities:
       pos: 83.5,37.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 18620
@@ -57055,8 +57009,6 @@ entities:
       pos: 83.5,36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 18620
@@ -57066,8 +57018,6 @@ entities:
       pos: 79.5,38.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 8461
@@ -57089,8 +57039,6 @@ entities:
       pos: 81.5,41.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 5
       - 8463
@@ -57102,8 +57050,6 @@ entities:
       pos: 79.5,30.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
       - 5
@@ -57126,8 +57072,6 @@ entities:
       pos: 75.5,25.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
       - 18626
@@ -59300,8 +59244,6 @@ entities:
       pos: -4.5,12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 80
       - 8499
@@ -59650,8 +59592,6 @@ entities:
       pos: 35.5,2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 66
       - 8474
@@ -60305,8 +60245,6 @@ entities:
       pos: -1.5,30.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 37
       - 80
@@ -60317,8 +60255,6 @@ entities:
       pos: -7.5,16.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 80
   - uid: 8930
@@ -60382,8 +60318,6 @@ entities:
       pos: 30.5,-10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -60394,8 +60328,6 @@ entities:
       pos: 31.5,-10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -60406,8 +60338,6 @@ entities:
       pos: 31.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -60418,8 +60348,6 @@ entities:
       pos: 30.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -60430,8 +60358,6 @@ entities:
       pos: 33.5,-8.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -60442,8 +60368,6 @@ entities:
       pos: 33.5,-7.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -82205,8 +82129,6 @@ entities:
       pos: 36.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -82240,8 +82162,6 @@ entities:
       pos: 70.5,28.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 18626
       - 18627
@@ -82322,8 +82242,6 @@ entities:
       pos: 75.5,31.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
       - 5
@@ -82338,8 +82256,6 @@ entities:
       pos: 76.5,25.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
       - 18626
@@ -82500,8 +82416,6 @@ entities:
       pos: 35.5,-10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -82514,8 +82428,6 @@ entities:
       pos: 29.5,-10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -82540,8 +82452,6 @@ entities:
       pos: 50.5,-7.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -82553,8 +82463,6 @@ entities:
       pos: 47.5,-3.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -82566,8 +82474,6 @@ entities:
       pos: 47.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -82579,8 +82485,6 @@ entities:
       pos: 47.5,2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -82592,8 +82496,6 @@ entities:
       pos: 55.5,2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -82605,8 +82507,6 @@ entities:
       pos: 55.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -82618,8 +82518,6 @@ entities:
       pos: 55.5,-3.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -82631,8 +82529,6 @@ entities:
       pos: 50.5,3.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -83791,8 +83687,6 @@ entities:
       pos: 35.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -83895,8 +83789,6 @@ entities:
       pos: 77.5,29.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
       - 5
@@ -83911,8 +83803,6 @@ entities:
       pos: 78.5,25.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
       - 18626
@@ -83946,8 +83836,6 @@ entities:
       pos: 70.5,24.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 18626
       - 18627
@@ -84120,8 +84008,6 @@ entities:
       pos: 35.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -84134,8 +84020,6 @@ entities:
       pos: 29.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 83
       - 8517
@@ -84148,8 +84032,6 @@ entities:
       pos: 47.5,4.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -84161,8 +84043,6 @@ entities:
       pos: 47.5,1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -84174,8 +84054,6 @@ entities:
       pos: 47.5,-1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -84187,8 +84065,6 @@ entities:
       pos: 55.5,-1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -84200,8 +84076,6 @@ entities:
       pos: 55.5,1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -84213,8 +84087,6 @@ entities:
       pos: 55.5,4.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -84226,8 +84098,6 @@ entities:
       pos: 52.5,3.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -84239,8 +84109,6 @@ entities:
       pos: 52.5,-7.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
