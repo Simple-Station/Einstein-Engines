@@ -220,7 +220,6 @@
   cost: 15000
   recipeUnlocks:
   - WeaponAdvancedLaser
-  - PortableRecharger
   - WeaponMechCombatImmolationGun
 
 - type: technology

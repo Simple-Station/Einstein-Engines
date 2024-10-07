@@ -12,7 +12,6 @@
   recipeUnlocks:
   - MiningDrill
   - MechEquipmentDrill
-  - MineralScannerEmpty
   - BorgModuleMining
   - OreProcessorIndustrialMachineCircuitboard
   - OreBagOfHolding
@@ -194,8 +193,6 @@
     - BorgModulePka
     - BorgModuleJetpack
     - OreBagOfHolding
-    - MiningDrillDiamond
-    - AdvancedMineralScannerEmpty
     - MechEquipmentDrillDiamond
 
 - type: technology

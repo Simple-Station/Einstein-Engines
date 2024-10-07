@@ -102,7 +102,6 @@
     state: mecha_wholegen
   - type: Gun
     projectileSpeed: 1
-    projectileSpeedModified: 5
     fireRate: 0.4
     selectedMode: SemiAuto
     availableModes:
