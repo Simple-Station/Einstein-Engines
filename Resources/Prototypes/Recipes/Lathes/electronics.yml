@@ -736,6 +736,23 @@
 
 - type: latheRecipe
   abstract: true
+  id: BaseElectronicsRecipe
+  category: Circuitry
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 300
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseElectronicsRecipe
+  id: BaseCheapElectronicsRecipe
+  materials:
+    Steel: 50
+    Plastic: 50
+
+- type: latheRecipe
+  abstract: true
   parent: BaseElectronicsRecipe
   id: BaseCircuitboardRecipe
   completetime: 4
