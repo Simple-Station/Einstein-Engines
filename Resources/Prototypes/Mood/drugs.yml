@@ -32,3 +32,14 @@
 
 - type: moodCategory
   id: NicotineAddiction
+
+# Non-Addictive Drugs
+- type: moodEffect
+  id: EthanolBenefit
+  moodChange: 7
+  timeout: 300 #5 minutes
+
+- type: moodEffect
+  id: SpaceDrugsBenefit
+  moodChange: 7
+  timeout: 300 #5 minutes
