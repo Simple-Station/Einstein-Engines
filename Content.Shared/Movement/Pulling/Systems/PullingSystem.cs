@@ -4,6 +4,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Database;
+using Content.Shared.Gravity;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Input;
@@ -40,6 +41,7 @@ public sealed class PullingSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly ActionBlockerSystem _blocker = default!;
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
+    [Dependency] private readonly SharedGravitySystem _gravity = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _modifierSystem = default!;
     [Dependency] private readonly SharedJointSystem _joints = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
@@ -142,7 +144,9 @@ public sealed class PullingSystem : EntitySystem
             // We cannot use ApplyForce here because it will be cleared on the next physics substep which will render it ultimately useless
             // The alternative is to run this function on every physics substep, but that is way too expensive for such a minor system
             _physics.ApplyLinearImpulse(pulled, actualImpulse);
-            _physics.ApplyLinearImpulse(puller, -actualImpulse);
+            if (_gravity.IsWeightless(puller, pullerPhysics, pullerXForm))
+                _physics.ApplyLinearImpulse(puller, -actualImpulse);
+
             pulledComp.BeingActivelyPushed = true;
         }
         query.Dispose();
@@ -172,7 +176,7 @@ public sealed class PullingSystem : EntitySystem
 
     private void OnPullableCollide(Entity<PullableComponent> ent, ref StartCollideEvent args)
     {
-        if (!ent.Comp.BeingActivelyPushed || args.OtherEntity == ent.Comp.Puller)
+        if (!ent.Comp.BeingActivelyPushed || ent.Comp.Puller == null || args.OtherEntity == ent.Comp.Puller)
             return;
 
         // This component isn't actually needed anywhere besides the thrownitemsyste`m itself, so we just fake it
@@ -301,6 +305,7 @@ public sealed class PullingSystem : EntitySystem
         var oldPuller = pullableComp.Puller;
         pullableComp.PullJointId = null;
         pullableComp.Puller = null;
+        pullableComp.BeingActivelyPushed = false;
         Dirty(pullableUid, pullableComp);
 
         // No more joints with puller -> force stop pull.

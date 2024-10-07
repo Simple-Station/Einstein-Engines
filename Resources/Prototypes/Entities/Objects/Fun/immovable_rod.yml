@@ -92,3 +92,6 @@
   components:
   - type: ImmovableRod
     randomizeVelocity: false
+    damage:
+      types:
+        Blunt: 120

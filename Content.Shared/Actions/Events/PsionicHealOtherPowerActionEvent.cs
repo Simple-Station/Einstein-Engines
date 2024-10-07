@@ -5,11 +5,21 @@ using Content.Shared.Popups;
 namespace Content.Shared.Actions.Events;
 public sealed partial class PsionicHealOtherPowerActionEvent : EntityTargetActionEvent
 {
-    [DataField]
-    public DamageSpecifier HealingAmount = default!;
+    /// <summary>
+    ///     Caster's Amplification that has been modified by the results of a MoodContest.
+    /// </summary>
+    public float ModifiedAmplification = default!;
+
+    /// <summary>
+    ///     Caster's Dampening that has been modified by the results of a MoodContest.
+    /// </summary>
+    public float ModifiedDampening = default!;
 
     [DataField]
-    public string PowerName;
+    public DamageSpecifier? HealingAmount = default!;
+
+    [DataField]
+    public string PowerName = default!;
 
     /// Controls whether or not a power fires immediately and with no DoAfter
     [DataField]
@@ -19,7 +29,7 @@ public sealed partial class PsionicHealOtherPowerActionEvent : EntityTargetActio
     public string? PopupText;
 
     [DataField]
-    public float RotReduction;
+    public float? RotReduction;
 
     [DataField]
     public bool DoRevive;
@@ -40,10 +50,13 @@ public sealed partial class PsionicHealOtherPowerActionEvent : EntityTargetActio
     public int MaxGlimmer = 12;
 
     [DataField]
-    public int GlimmerObviousSoundThreshold;
+    public int GlimmerSoundThreshold;
 
     [DataField]
-    public int GlimmerObviousPopupThreshold;
+    public int GlimmerPopupThreshold;
+
+    [DataField]
+    public int GlimmerDoAfterVisibilityThreshold;
 
     [DataField]
     public PopupType PopupType = PopupType.Medium;

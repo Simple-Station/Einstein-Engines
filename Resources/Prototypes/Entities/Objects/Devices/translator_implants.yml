@@ -126,3 +126,33 @@
     - Moffic
     requires:
     - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: ValyrianStandardTranslatorImplant
+  name: valyrian standard translator implant
+  description: An implant giving the ability to understand and speak Valyrian Standard. Chirp!
+  noSpawn: true
+  components:
+  - type: TranslatorImplant
+    understood:
+    - ValyrianStandard
+    spoken:
+    - ValyrianStandard
+    requires:
+    - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: AzazibaTranslatorImplant
+  name: azaziba translator implant
+  description: An implant giving the ability to understand and speak Azaziba. # Intended for Admins Only, this item is for lore reasons not obtainable.
+  noSpawn: true
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Azaziba
+    spoken:
+    - Azaziba
+    requires:
+    - Draconic

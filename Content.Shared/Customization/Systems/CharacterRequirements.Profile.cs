@@ -42,50 +42,6 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
 }
 
 /// <summary>
-///   Requires the profile to use either a Backpack, Satchel, or Duffelbag
-/// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
-public sealed partial class CharacterBackpackTypeRequirement : CharacterRequirement
-{
-    [DataField(required: true)]
-    public BackpackPreference Preference;
-
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
-    {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-backpack-type-requirement",
-            ("inverted", Inverted),
-            ("type", Loc.GetString($"humanoid-profile-editor-preference-{Preference.ToString().ToLower()}"))));
-        return profile.Backpack == Preference;
-    }
-}
-
-/// <summary>
-///     Requires the profile to use either Jumpsuits or Jumpskirts
-/// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
-public sealed partial class CharacterClothingPreferenceRequirement : CharacterRequirement
-{
-    [DataField(required: true)]
-    public ClothingPreference Preference;
-
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
-    {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-clothing-preference-requirement",
-            ("inverted", Inverted),
-            ("preference", Loc.GetString($"humanoid-profile-editor-preference-{Preference.ToString().ToLower()}"))));
-        return profile.Clothing == Preference;
-    }
-}
-
-/// <summary>
 ///     Requires the profile to be a certain gender
 /// </summary>
 [UsedImplicitly]

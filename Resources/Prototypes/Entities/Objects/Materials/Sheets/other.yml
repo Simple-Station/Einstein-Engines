@@ -110,6 +110,17 @@
   - type: Tag
     tags:
     - Sheet
+  - type: UserInterface
+    interfaces:
+    - key: enum.ShortConstructionUiKey.Key
+      type: ShortConstructionMenuBUI
+  - type: ActivatableUI
+    key: enum.ShortConstructionUiKey.Key
+  - type: ShortConstruction
+    entries:
+    - prototype: SheetPGlass
+    - prototype: SheetRPGlass
+    - prototype: SheetRPGlass1
 
 - type: entity
   parent: SheetPlasma
@@ -162,6 +173,15 @@
         - ReagentId: Phosphorus
           Quantity: 5
         canReact: false
+  - type: UserInterface
+    interfaces:
+    - key: enum.ShortConstructionUiKey.Key
+      type: ShortConstructionMenuBUI
+  - type: ActivatableUI
+    key: enum.ShortConstructionUiKey.Key
+  - type: ShortConstruction
+    entries:
+    - prototype: CratePlastic
 
 - type: entity
   parent: SheetPlastic
@@ -224,6 +244,17 @@
         - ReagentId: Radium
           Quantity: 2
         canReact: false
+  - type: UserInterface
+    interfaces:
+    - key: enum.ShortConstructionUiKey.Key
+      type: ShortConstructionMenuBUI
+  - type: ActivatableUI
+    key: enum.ShortConstructionUiKey.Key
+  - type: ShortConstruction
+    entries:
+    - prototype: SheetUGlass
+    - prototype: SheetRUGlass
+    - prototype: SheetRUGlass1
 
 - type: entity
   parent: SheetUranium

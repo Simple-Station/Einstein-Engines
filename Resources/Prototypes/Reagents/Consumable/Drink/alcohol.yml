@@ -255,6 +255,12 @@
             Cold: -1.60
       - !type:Drunk
         boozePower: 2
+      - !type:ChemAddMoodlet
+        moodPrototype: EthanolBenefit
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 5
 
 - type: reagent
   id: Gin

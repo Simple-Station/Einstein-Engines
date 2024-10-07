@@ -1,5 +1,6 @@
 # This list is sorted Mixed Alphabetically with Generic always being placed first, Departments alphabetically, Items Groups Alphabetically, and Jobs Alphabetically after all Department items
 # Generic - Clothing
+character-item-group-LoadoutBackpacks = Civilian Backpacks
 character-item-group-LoadoutEyes = Civilian Eyewear
 character-item-group-LoadoutGloves = Civilian Gloves
 character-item-group-LoadoutHead = Civilian Headgear

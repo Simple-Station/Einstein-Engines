@@ -517,18 +517,18 @@
     sounds:
       collection: Paracusia
 
-#- type: entity # DeltaV - Why does this exist??
-#  id: ImmovableRodSpawn
-#  parent: BaseGameRule
-#  noSpawn: true
-#  components:
-#  - type: StationEvent
-#    startAnnouncement: true
-#    weight: 5
-#    duration: 1
-#    earliestStart: 45
-#    minimumPlayers: 20
-#  - type: ImmovableRodRule
+- type: entity
+  id: ImmovableRodSpawn
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: false
+    weight: 2
+    duration: 1
+    earliestStart: 45
+    minimumPlayers: 20
+  - type: ImmovableRodRule
 
 - type: entity
   noSpawn: true

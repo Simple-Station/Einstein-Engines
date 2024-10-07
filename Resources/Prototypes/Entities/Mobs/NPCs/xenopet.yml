@@ -1,0 +1,534 @@
+- type: entity
+  name: Neutral Rouny
+  id: MobXenoNeutralRouny
+  parent: MobXenoRounyNPC
+  description: They mostly come at night. Mostly.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: PointLight
+    radius: 2
+    energy: 1
+    color: "#B85E5E"
+  - type: MovementAlwaysTouching
+  - type: GhostRole
+    name: ghost-role-information-friendlyxeno-name
+    description: ghost-role-information-friendlyxeno-description
+    rules: ghost-role-information-friendlyxeno-rules
+  - type: GhostTakeoverAvailable
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - TauCetiBasic
+
+- type: entity
+  name: Neutral Praetorian
+  id: MobXenoNeutralPraetorian
+  parent: MobXenoPraetorianNPC
+  description: They mostly come at night. Mostly.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: PointLight
+    radius: 2
+    energy: 1
+    color: "#62B85E"
+  - type: GhostRole
+    name: ghost-role-information-friendlyxeno-name
+    description: ghost-role-information-friendlyxeno-description
+    rules: ghost-role-information-friendlyxeno-rules
+  - type: GhostTakeoverAvailable
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - TauCetiBasic
+
+- type: entity
+  name: Neutral Drone
+  id: MobXenoNeutralDrone
+  parent: MobXenoDroneNPC
+  description: They mostly come at night. Mostly.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: PointLight
+    radius: 2
+    energy: 1
+    color: "#8B5EB8"
+  - type: GhostRole
+    name: ghost-role-information-friendlyxeno-name
+    description: ghost-role-information-friendlyxeno-description
+    rules: ghost-role-information-friendlyxeno-rules
+  - type: GhostTakeoverAvailable
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - TauCetiBasic
+
+- type: entity
+  name: Neutral Ravager
+  id: MobXenoNeutralRavager
+  parent: MobXenoRavagerNPC
+  description: They mostly come at night. Mostly.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: PointLight
+    radius: 2
+    energy: 1
+    color: "#E3954D"
+  - type: GhostRole
+    name: ghost-role-information-friendlyxeno-name
+    description: ghost-role-information-friendlyxeno-description
+    rules: ghost-role-information-friendlyxeno-rules
+  - type: GhostTakeoverAvailable
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - TauCetiBasic
+
+- type: inventoryTemplate
+  id: friendxeno
+  slots:
+  - name: id
+    slotTexture: id
+    slotFlags: IDCARD
+    slotGroup: SecondHotbar
+    stripTime: 6
+    uiWindowPos: 2,1
+    strippingWindowPos: 2,4
+    displayName: ID
+  - name: head
+    slotTexture: head
+    slotFlags: HEAD
+    uiWindowPos: 1,2
+    strippingWindowPos: 0,0
+    displayName: Head
+  - name: mask
+    slotTexture: mask
+    slotFlags: MASK
+    uiWindowPos: 0,1
+    strippingWindowPos: 1,1
+    displayName: Mask
+
+- type: entity
+  name: Friend-Shaped
+  parent: MobXenoNeutralRouny
+  id: MobXenoFriendShaped
+  description: A very clearly friend-shaped Xeno.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - PetsNT
+  - type: Tool
+    speed: 3
+    qualities:
+      - Prying
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/Xenos/rouny.rsi
+    scale: 0.5, 0.5
+  - type: GhostRole
+  - type: GhostTakeoverAvailable
+  - type: Inventory
+    templateId: friendxeno
+  - type: IdExaminable
+  - type: InventorySlots
+  - type: Stripping
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: Body
+    prototype: Friendshaped
+    requiredLegs: 1 # TODO: More than 1 leg
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-reptile
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/lizard_happy.ogg
+
+- type: entity
+  name: Patriach
+  parent: MobXenoNeutralPraetorian
+  id: MobXenoPatriarch
+  description: A not entirely clearly friend-shaped Xeno.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - PetsNT
+  - type: Tool
+    speed: 3
+    qualities:
+      - Prying
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Animals/patriarch.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: patriarch
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: patriarch
+      Critical:
+        Base: patriarch_crit
+      Dead:
+        Base: patriarch_dead
+  - type: Inventory
+    templateId: friendxeno
+  - type: IdExaminable
+  - type: InventorySlots
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-reptile
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/lizard_happy.ogg
+
+- type: entity
+  name: FXES
+  parent: MobXenoNeutralDrone
+  id: MobXenoFXES
+  description: A very clearly friend-shaped Xeno.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - PetsNT
+  - type: Tool
+    speed: 3
+    qualities:
+      - Prying
+  - type: Inventory
+    templateId: friendxeno
+  - type: IdExaminable
+  - type: InventorySlots
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-reptile
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/lizard_happy.ogg
+
+- type: entity
+  name: Hell-Shaped
+  parent: MobXenoNeutralRavager
+  id: MobXenoHellShaped
+  description: A very clearly friend-shaped Xeno.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - PetsNT
+  - type: Tool
+    speed: 3
+    qualities:
+      - Prying
+  - type: Inventory
+    templateId: friendxeno
+  - type: IdExaminable
+  - type: InventorySlots
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-reptile
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/lizard_happy.ogg
+
+- type: entity
+  name: FXE Subject 7355
+  parent: MobXenoNeutralRavager
+  id: MobXenoSubjectTess
+  description: An extremely oddly coloured xeno, with glowing stripes. An odd mutation.
+  components:
+  - type: NpcFactionMember
+    factions:
+     - PetsNT
+  - type: Tool
+    speed: 3
+    qualities:
+      - Prying
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Animals/subject7355.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: subject7355
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: glow
+      shader: unshaded
+  - type: PointLight
+    radius: 2
+    energy: 1
+    color: "#639fff"
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: subject7355
+      Critical:
+        Base: subject7355_crit
+      Dead:
+        Base: subject7355_dead
+  - type: Inventory
+    templateId: friendxeno
+  - type: IdExaminable
+  - type: InventorySlots
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-reptile
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/lizard_happy.ogg
+
+- type: entity
+  id: neutralXenoVents
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 1
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobXenoNeutralRouny
+      prob: 0.0075
+    - id: MobXenoNeutralDrone
+      prob: 0.0075
+    - id: MobXenoNeutralPraetorian
+      prob: 0.0075
+    - id: MobXenoNeutralRavager
+      prob: 0.0075
+      
+- type: entity
+  id: ArgocyteVents
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 30
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobArgocyteSlurva
+      prob: 0.003
+    - id: MobArgocyteBarrier
+      prob: 0.003
+    - id: MobArgocyteSkitter
+      prob: 0.003
+    - id: MobArgocyteSwiper
+      prob: 0.003
+    - id: MobArgocyteMolder
+      prob: 0.003
+    - id: MobArgocytePouncer
+      prob: 0.003
+    - id: MobArgocyteGlider
+      prob: 0.003
+    - id: MobArgocyteHarvester
+      prob: 0.003
+    - id: MobArgocyteCrawler
+      prob: 0.003
+    - id: MobArgocyteEnforcer
+      prob: 0.003
+    - id: MobArgocyteFounder
+      prob: 0.003
+    - id: MobArgocyteLeviathing
+      prob: 0.0001
+
+- type: entity
+  id: MeatVents
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 20
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobFleshJared
+      prob: 0.005
+    - id: MobFleshGolem
+      prob: 0.005
+    - id: MobFleshClamp
+      prob: 0.005
+    - id: MobFleshLover
+      prob: 0.005
+    - id: MobAbomination
+      prob: 0.005
+      
+- type: entity
+  id: TickVents
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 1
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobTick
+      prob: 0.01
+
+- type: entity
+  id: CarpVents
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 20
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobCarp
+      prob: 0.01
+    - id: MobCarpMagic
+      prob: 0.01
+    - id: MobCarpHolo
+      prob: 0.002
+    - id: MobCarpRainbow
+      prob: 0.01
+    - id: MobShark
+      prob: 0.002
+    - id: MobCarpDragon
+      prob: 0.01
+
+- type: entity
+  id: SpaceVents
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 20
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobBearSpace
+      prob: 0.01
+    - id: MobKangarooSpace
+      prob: 0.01
+    - id: MobSpiderSpace
+      prob: 0.01
+    - id: MobCobraSpace
+      prob: 0.01
+
+- type: entity
+  id: LightVents
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 20
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobLivingLight
+      prob: 0.01
+    - id: MobLuminousPerson
+      prob: 0.01
+    - id: MobLuminousObject
+      prob: 0.01
+    - id: MobLuminousEntity
+      prob: 0.01
+      
+- type: entity
+  name: Friendly Xeno spawner
+  id: friendlyxenoSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+        - sprite: Mobs/Aliens/Xenos/drone.rsi
+          state: sleeping
+    - type: RandomSpawner
+      prototypes:
+        - MobXenoNeutralRouny
+        - MobXenoNeutralPraetorian
+        - MobXenoNeutralDrone
+        - MobXenoNeutralRavager
+      chance: 1

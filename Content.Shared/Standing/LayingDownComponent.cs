@@ -1,5 +1,6 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Content.Shared.DrawDepth;
 
 namespace Content.Shared.Standing;
 
@@ -16,7 +17,10 @@ public sealed partial class LayingDownComponent : Component
     public bool AutoGetUp;
 
     [DataField, AutoNetworkedField]
-    public int? OriginalDrawDepth { get; set; }
+    public int NormalDrawDepth = (int) DrawDepth.DrawDepth.Mobs;
+
+    [DataField, AutoNetworkedField]
+    public int CrawlingDrawDepth = (int) DrawDepth.DrawDepth.SmallMobs;
 }
 
 [Serializable, NetSerializable]
@@ -30,6 +34,12 @@ public sealed class CheckAutoGetUpEvent(NetEntity user) : CancellableEntityEvent
 
 [Serializable, NetSerializable]
 public sealed class DrawDownedEvent(NetEntity uid) : EntityEventArgs
+{
+    public NetEntity Uid = uid;
+}
+
+[Serializable, NetSerializable]
+public sealed class DrawStoodEvent(NetEntity uid) : EntityEventArgs
 {
     public NetEntity Uid = uid;
 }

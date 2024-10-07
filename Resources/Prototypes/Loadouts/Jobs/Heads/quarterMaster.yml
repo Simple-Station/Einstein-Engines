@@ -1,7 +1,7 @@
 # What? This isn't a thing?? :(
 # - type: loadout
 #   id: LoadoutCommandQMNeckMantle
-#   category: JobsCommandQM
+#   category: JobsCommand
 #   cost: 2
 #   exclusive: true
 #   requirements:
@@ -13,7 +13,7 @@
 
 - type: loadout
   id: LoadoutCommandQMNeckCloak
-  category: JobsCommandQM
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -25,7 +25,7 @@
 
 - type: loadout
   id: LoadoutCommandQMUniformTurtleneck
-  category: JobsCommandQM
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -37,7 +37,7 @@
 
 - type: loadout
   id: LoadoutCommandQMUniformTurtleneckSkirt
-  category: JobsCommandQM
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -49,7 +49,7 @@
 
 - type: loadout
   id: LoadoutCommandQMHeadSoft
-  category: JobsCommandQM
+  category: JobsCommand
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -60,7 +60,7 @@
 
 - type: loadout
   id: LoadoutCommandQMShoesBootsWinter
-  category: JobsCommandQM
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
