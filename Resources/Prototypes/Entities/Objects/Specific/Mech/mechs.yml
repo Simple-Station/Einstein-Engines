@@ -557,7 +557,7 @@
 # Marauder
 - type: entity
   id: MechMarauder
-  parent: [ BaseMech, CombatMech, BaseCentcommContraband ]
+  parent: [ BaseMech, CombatMech ]
   name: Marauder
   description: Looks like we're all saved. # ERT mech
   components:
@@ -625,7 +625,7 @@
 # Seraph
 - type: entity
   id: MechSeraph
-  parent: [ BaseMech, CombatMech, BaseCentcommContraband ]
+  parent: [ BaseMech, CombatMech ]
   name: Seraph
   description: That's the last thing you'll see. # Death Squad mech
   components:
