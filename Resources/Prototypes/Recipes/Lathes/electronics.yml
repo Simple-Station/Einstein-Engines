@@ -540,6 +540,8 @@
 - type: latheRecipe
   id: ClarkeCentralElectronics
   result: ClarkeCentralElectronics
+  category: Circuitry
+  completetime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -548,6 +550,8 @@
 - type: latheRecipe
   id: ClarkePeripheralsElectronics
   result: ClarkePeripheralsElectronics
+  category: Circuitry
+  completetime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -556,6 +560,8 @@
 - type: latheRecipe
   id: GygaxCentralElectronics
   result: GygaxCentralElectronics
+  category: Circuitry
+  completetime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -564,6 +570,8 @@
 - type: latheRecipe
   id: GygaxPeripheralsElectronics
   result: GygaxPeripheralsElectronics
+  category: Circuitry
+  completetime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -572,33 +580,38 @@
 - type: latheRecipe
   id: GygaxTargetingElectronics
   result: GygaxTargetingElectronics
+  category: Circuitry
+  completetime: 4
   materials:
     Steel: 100
     Glass: 500
     Gold: 100
 
 - type: latheRecipe
-  parent: BaseSilverCircuitboardRecipe
   id: DurandCentralElectronics
   result: DurandCentralElectronics
+  category: Circuitry
+  completetime: 4
   materials:
     Steel: 100
     Glass: 500
     Gold: 100
 
 - type: latheRecipe
-  parent: BaseSilverCircuitboardRecipe
   id: DurandPeripheralsElectronics
   result: DurandPeripheralsElectronics
+  category: Circuitry
+  completetime: 4
   materials:
     Steel: 100
     Glass: 500
     Gold: 100
 
 - type: latheRecipe
-  parent: BaseSilverCircuitboardRecipe
   id: DurandTargetingElectronics
   result: DurandTargetingElectronics
+  category: Circuitry
+  completetime: 4
   materials:
     Steel: 100
     Glass: 500
