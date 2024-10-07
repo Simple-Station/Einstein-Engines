@@ -54,9 +54,12 @@ public sealed class ShowEtherealSystem : EntitySystem
             return;
 
         if (toggle)
-                _eye.SetVisibilityMask(uid, eye.VisibilityMask | (int) (VisibilityFlags.Ethereal), eye);
-        else if (HasComp<EtherealComponent>(uid))            
-                return;
+        {
+            _eye.SetVisibilityMask(uid, eye.VisibilityMask | (int) (VisibilityFlags.Ethereal), eye);
+            return;
+        }
+        else if (HasComp<EtherealComponent>(uid))
+            return;
 
         _eye.SetVisibilityMask(uid, (int) VisibilityFlags.Normal, eye);
     }

@@ -28,12 +28,12 @@ namespace Content.Shared.Abilities.Psionics
             SubscribeLocalEvent<PsionicComponent, RejuvenateEvent>(OnRejuvenate);
         }
 
-        public bool OnAttemptPowerUse(EntityUid uid, string power, float? manacost = null, bool? checkInsulation = true)
+        public bool OnAttemptPowerUse(EntityUid uid, string power, float? manacost = null, bool checkInsulation = true)
         {
             if (!TryComp<PsionicComponent>(uid, out var component)
                 || HasComp<MindbrokenComponent>(uid)
-                || (checkInsulation ?? true
-                && HasComp<PsionicInsulationComponent>(uid)))
+                || checkInsulation
+                && HasComp<PsionicInsulationComponent>(uid))
                 return false;
 
             var tev = new OnAttemptPowerUseEvent(uid, power);
@@ -53,16 +53,20 @@ namespace Content.Shared.Abilities.Psionics
 
             if (component.Mana >= manacost
                 || component.BypassManaCheck)
-                {
-                    var newmana = component.Mana - manacost;
-                    component.Mana = newmana ?? component.Mana;
+            {
+                var newmana = component.Mana - manacost;
+                component.Mana = newmana ?? component.Mana;
 
-                    var ev = new OnManaUpdateEvent();
-                    RaiseLocalEvent(uid, ref ev);
-                }
+                var ev = new OnManaUpdateEvent();
+                RaiseLocalEvent(uid, ref ev);
+            }
+            else
+            {
+                _popups.PopupEntity(Loc.GetString(component.NoMana), uid, uid, PopupType.LargeCaution);
+                return false;
+            }
 
-            _popups.PopupEntity(Loc.GetString(component.NoMana), uid, uid, PopupType.LargeCaution);
-            return false;
+            return true;
         }
 
         private void OnPowerUsed(EntityUid uid, PsionicComponent component, PsionicPowerUsedEvent args)
