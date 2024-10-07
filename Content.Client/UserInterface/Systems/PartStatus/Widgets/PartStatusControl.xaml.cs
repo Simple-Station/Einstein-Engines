@@ -18,7 +18,7 @@ public sealed partial class PartStatusControl : UIWidget
         RobustXamlLoader.Load(this);
         _controller = UserInterfaceManager.GetUIController<PartStatusUIController>();
 
-        _bodyPartControls = new Dictionary<TargetBodyPart, (TextureButton, PanelContainer)>
+        _partStatusControls = new Dictionary<TargetBodyPart, TextureRect>
         {
             { TargetBodyPart.Head, DollHead },
             { TargetBodyPart.Torso, DollTorso },
@@ -27,26 +27,11 @@ public sealed partial class PartStatusControl : UIWidget
             { TargetBodyPart.LeftLeg, DollLeftLeg },
             { TargetBodyPart.RightLeg, DollRightLeg }
         };
-
-        foreach (var buttonPair in _bodyPartControls)
-        {
-            buttonPair.Value.Button.MouseFilter = MouseFilterMode.Stop;
-            buttonPair.Value.Button.OnPressed += args => SetActiveBodyPart(buttonPair.Key);
-        }
-    }
-    private void SetActiveBodyPart(TargetBodyPart bodyPart)
-    {
-        _controller.CycleTarget(bodyPart, this);
     }
 
-    public void SetColors(TargetBodyPart bodyPart)
+    public void SetIntegrity(TargetBodyPart bodyPart, float integrity)
     {
-        foreach (var buttonPair in _bodyPartControls)
-        {
-            var styleBox = (StyleBoxFlat) buttonPair.Value.Panel.PanelOverride!;
-            styleBox.BackgroundColor = buttonPair.Key == bodyPart ? new Color(243, 10, 12, 51) : new Color(0, 0, 0, 0);
-            styleBox.BorderColor = buttonPair.Key == bodyPart ? new Color(243, 10, 12, 255) : new Color(0, 0, 0, 0);
-        }
+        _partStatusControls[bodyPart].Texture = _controller.GetPartStatusTexture(bodyPart, integrity);
     }
 
     public void SetVisible(bool visible)
