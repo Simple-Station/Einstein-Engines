@@ -6991,3 +6991,12 @@ Entries:
   id: 6423
   time: '2024-10-07T15:29:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1013
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Shadeskip no longer creates Stationwide Shadow Kudzu when casting at
+        high glimmer.
+  id: 6424
+  time: '2024-10-07T15:29:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1012
