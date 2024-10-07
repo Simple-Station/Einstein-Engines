@@ -6972,3 +6972,12 @@ Entries:
   id: 6421
   time: '2024-10-05T14:28:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1009
+- author: Mocho
+  changes:
+    - type: Fix
+      message: >-
+        Fixed downed entities having their draw depth set incorrectly after
+        being picked up, or laying on a bed.
+  id: 6422
+  time: '2024-10-07T15:28:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1017
