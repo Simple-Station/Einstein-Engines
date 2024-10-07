@@ -823,7 +823,6 @@
     Gold: 100
 
 - type: latheRecipe
-  parent: BaseCircuitboardRecipe
   id: SheetifierMachineCircuitboard
   result: SheetifierMachineCircuitboard
   category: Circuitry
