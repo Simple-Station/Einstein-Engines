@@ -736,6 +736,15 @@
 
 - type: latheRecipe
   abstract: true
+  parent: BaseElectronicsRecipe
+  id: BaseCircuitboardRecipe
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 500
+
+- type: latheRecipe
+  abstract: true
   parent: BaseCircuitboardRecipe
   id: BaseSilverCircuitboardRecipe
   materials:
