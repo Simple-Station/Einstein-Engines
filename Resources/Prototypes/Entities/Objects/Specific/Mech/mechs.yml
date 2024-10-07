@@ -696,7 +696,7 @@
 # Dark Gygax
 - type: entity
   id: MechGygaxSyndie
-  parent: [ BaseMech, CombatMech, BaseSyndicateContraband ]
+  parent: [ BaseMech, CombatMech ]
   name: Dark Gygax
   description: A modified Gygax used for nefarious purposes. On the back of the armor plate there is an inscription "Cybersun Inc."
   components:
@@ -764,7 +764,7 @@
 # Mauler
 - type: entity
   id: MechMaulerSyndie
-  parent: [ BaseMech, CombatMech, BaseSyndicateContraband ]
+  parent: [ BaseMech, CombatMech ]
   name: Mauler
   description: A modified Marauder used by the Syndicate that's not as maneuverable as the Dark Gygax, but it makes up for that in armor and sheer firepower. On the back of the armor plate there is an inscription "Cybersun Inc."
   components:
