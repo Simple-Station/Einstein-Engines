@@ -294,7 +294,7 @@
 - type: entity
   id: ActionShadowkinShadeskip
   name: action-name-shadeskip
-  description:
+  description: action-description-shadowkin-shadeskip
   noSpawn: true
   components:
     - type: InstantAction
