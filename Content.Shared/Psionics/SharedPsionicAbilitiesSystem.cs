@@ -32,7 +32,7 @@ namespace Content.Shared.Abilities.Psionics
         {
             if (!TryComp<PsionicComponent>(uid, out var component)
                 || HasComp<MindbrokenComponent>(uid)
-                || checkInsulation ?? true)
+                || checkInsulation ?? true
                 && (HasComp<PsionicInsulationComponent>(uid))
                 return false;
 
