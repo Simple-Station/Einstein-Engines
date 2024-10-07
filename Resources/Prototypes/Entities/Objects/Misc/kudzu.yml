@@ -302,8 +302,25 @@
 - type: entity
   name: Shadowkin Haze
   id: ShadowkinShadow
-  parent: ShadowKudzuWeak
+  parent: BaseShadow
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
   components:
+    - type: Sprite
+      drawdepth: Effects
+      sprite: Effects/spookysmoke.rsi
+      layers:
+        - state: spookysmoke
+          color: "#793a80dd"
+          map: [base]
+    - type: Physics
+      canCollide: false
+    - type: Occluder
+    - type: Appearance
+    - type: Transform
+      anchored: true
     - type: RandomSpawner
       deleteSpawnerAfterSpawn: false
       rareChance: 0
@@ -311,5 +328,16 @@
       chance: 0.45
       prototypes:
         - ShadowBasaltRandom
+    - type: OptionsVisualizer
+      visuals:
+        base:
+          - options: Default
+            data: { state: spookysmoke }
+          - options: ReducedMotion
+            data: { state: spookysmoke_static }
     - type: TimedDespawn
       lifetime: 30
+    - type: Tag
+      tags:
+        - HideContextMenu
+        - SpookyFog

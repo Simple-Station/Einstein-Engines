@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobShadowkin
   sprites: MobShadowkinSprites
-  defaultSkinTone: "#FFFFFF"
+  defaultSkinTone: "#323232"
   markingLimits: MobShadowkinMarkingLimits
   dollPrototype: MobShadowkinDummy
   skinColoration: Hues
