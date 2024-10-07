@@ -630,7 +630,7 @@
   cost:
     Telecrystal: 5
   categories:
-  - UplinkDisruption
+  - UplinkWeapons
 
 - type: listing
   id: UplinkDarkGygax
@@ -641,7 +641,7 @@
   cost:
     Telecrystal: 100
   categories:
-  - UplinkAllies
+  - UplinkUtility
   conditions:
   - !type:StoreWhitelistCondition
     whitelist:
@@ -657,7 +657,7 @@
   cost:
     Telecrystal: 150
   categories:
-  - UplinkAllies
+  - UplinkUtility
   conditions:
   - !type:StoreWhitelistCondition
     whitelist:

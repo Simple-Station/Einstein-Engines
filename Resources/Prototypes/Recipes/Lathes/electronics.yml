@@ -735,102 +735,151 @@
     Gold: 100
 
 - type: latheRecipe
-  abstract: true
-  id: BaseElectronicsRecipe
+  id: RipleyPeripheralsElectronics
+  result: RipleyPeripheralsElectronics
   category: Circuitry
-  completetime: 2
+  completetime: 4
   materials:
     Steel: 100
-    Plastic: 300
+    Glass: 900
+    Gold: 100
 
 - type: latheRecipe
-  abstract: true
-  parent: BaseElectronicsRecipe
-  id: BaseCheapElectronicsRecipe
-  materials:
-    Steel: 50
-    Plastic: 50
-
-- type: latheRecipe
-  abstract: true
-  parent: BaseElectronicsRecipe
-  id: BaseCircuitboardRecipe
+  id: RipleyCentralElectronics
+  result: RipleyCentralElectronics
+  category: Circuitry
   completetime: 4
   materials:
     Steel: 100
     Glass: 500
+    Gold: 100
 
 - type: latheRecipe
-  abstract: true
-  parent: BaseCircuitboardRecipe
-  id: BaseSilverCircuitboardRecipe
+  id: RipleyPeripheralsElectronics
+  result: RipleyPeripheralsElectronics
+  category: Circuitry
+  completetime: 4
   materials:
     Steel: 100
-    Glass: 500
-    Silver: 100
-
-- type: latheRecipe
-  abstract: true
-  parent: BaseCircuitboardRecipe
-  id: BaseBananiumCircuitboardRecipe
-  materials:
-    Steel: 100
-    Glass: 500
-    Bananium: 100
-
-- type: latheRecipe
-  abstract: true
-  parent: BaseCircuitboardRecipe
-  id: BaseGoldCircuitboardRecipe
-  materials:
-    steel: 100
     Glass: 500
     Gold: 100
 
 - type: latheRecipe
-  parent: BaseGoldCircuitboardRecipe
-  id: RipleyPeripheralsElectronics
-  result: RipleyPeripheralsElectronics
-
-- type: latheRecipe
-  parent: BaseGoldCircuitboardRecipe
   id: ClarkeCentralElectronics
   result: ClarkeCentralElectronics
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
 
 - type: latheRecipe
-  parent: BaseGoldCircuitboardRecipe
   id: ClarkePeripheralsElectronics
   result: ClarkePeripheralsElectronics
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
 
 - type: latheRecipe
-  parent: BaseGoldCircuitboardRecipe
   id: GygaxCentralElectronics
   result: GygaxCentralElectronics
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
 
 - type: latheRecipe
-  parent: BaseGoldCircuitboardRecipe
   id: GygaxPeripheralsElectronics
   result: GygaxPeripheralsElectronics
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
 
 - type: latheRecipe
-  parent: BaseGoldCircuitboardRecipe
   id: GygaxTargetingElectronics
   result: GygaxTargetingElectronics
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
 
 - type: latheRecipe
   parent: BaseSilverCircuitboardRecipe
   id: DurandCentralElectronics
   result: DurandCentralElectronics
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
 
 - type: latheRecipe
   parent: BaseSilverCircuitboardRecipe
   id: DurandPeripheralsElectronics
   result: DurandPeripheralsElectronics
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
 
 - type: latheRecipe
   parent: BaseSilverCircuitboardRecipe
   id: DurandTargetingElectronics
   result: DurandTargetingElectronics
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+- type: latheRecipe
+  id: HonkerCentralElectronics
+  result: HonkerCentralElectronics
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 900
+    Bananium: 100
+
+- type: latheRecipe
+  id: HonkerPeripheralsElectronics
+  result: HonkerPeripheralsElectronics
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 900
+    Bananium: 100
+
+- type: latheRecipe
+  id: HonkerTargetingElectronics
+  result: HonkerTargetingElectronics
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 900
+    Bananium: 100
+
+- type: latheRecipe
+  id: HamtrCentralElectronics
+  result: HamtrCentralElectronics
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 900
+    Gold: 100
+
+- type: latheRecipe
+  id: HamtrPeripheralsElectronics
+  result: HamtrPeripheralsElectronics
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 900
+    Gold: 100
 
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
