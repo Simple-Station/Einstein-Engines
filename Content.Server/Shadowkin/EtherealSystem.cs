@@ -80,7 +80,7 @@ public sealed class EtherealSystem : SharedEtherealSystem
         RemComp<MovementIgnoreGravityComponent>(uid);
 
         // Spawn("ShadowkinShadow", Transform(uid).Coordinates);
-        Spawn("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
+        // Spawn("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
 
         foreach (var light in component.DarkenedLights.ToArray())
         {
