@@ -89,7 +89,7 @@
     - type: HumanoidAppearance
       species: Shadowkin
     - type: Icon
-      sprite: Mobs/Species/shadowkin/parts.rsi
+      sprite: Mobs/Species/Shadowkin/parts.rsi
       state: full
     - type: Body
       prototype: Shadowkin
