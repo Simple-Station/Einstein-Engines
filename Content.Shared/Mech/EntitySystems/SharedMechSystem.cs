@@ -456,6 +456,7 @@ public abstract class SharedMechSystem : EntitySystem
     {
         if (!component.BreakOnEmag)
             return;
+
         args.Handled = true;
         component.EquipmentWhitelist = null;
         Dirty(uid, component);

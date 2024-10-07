@@ -157,10 +157,8 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (TryComp<MechPilotComponent>(user.Value, out var mechPilot))
             user = mechPilot.Mech;
 
-        if (!TryGetGun(user.Value, out var ent, out var gun))
-            return;
-
-        if (ent != gunUid)
+        if (!TryGetGun(user.Value, out var ent, out var gun)
+            || ent != gunUid)
             return;
 
         StopShooting(gunUid, gun);
@@ -179,9 +177,9 @@ public abstract partial class SharedGunSystem : EntitySystem
         gunEntity = default;
         gunComp = null;
 
-        if (TryComp<MechComponent>(entity, out var mech) &&
-            mech.CurrentSelectedEquipment.HasValue &&
-            TryComp<GunComponent>(mech.CurrentSelectedEquipment.Value, out var mechGun))
+        if (TryComp<MechComponent>(entity, out var mech)
+            && mech.CurrentSelectedEquipment.HasValue
+            && TryComp<GunComponent>(mech.CurrentSelectedEquipment.Value, out var mechGun))
         {
             gunEntity = mech.CurrentSelectedEquipment.Value;
             gunComp = mechGun;
