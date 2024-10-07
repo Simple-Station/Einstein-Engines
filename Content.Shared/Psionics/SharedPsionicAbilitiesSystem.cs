@@ -32,8 +32,8 @@ namespace Content.Shared.Abilities.Psionics
         {
             if (!TryComp<PsionicComponent>(uid, out var component)
                 || HasComp<MindbrokenComponent>(uid)
-                || checkInsulation ?? true
-                && HasComp<PsionicInsulationComponent>(uid))
+                || (checkInsulation ?? true
+                && HasComp<PsionicInsulationComponent>(uid)))
                 return false;
 
             var tev = new OnAttemptPowerUseEvent(uid, power);
@@ -56,7 +56,7 @@ namespace Content.Shared.Abilities.Psionics
                 {
                     var newmana = component.Mana - manacost;
                     component.Mana = newmana ?? component.Mana;
-    
+
                     var ev = new OnManaUpdateEvent();
                     RaiseLocalEvent(uid, ref ev);
                 }
