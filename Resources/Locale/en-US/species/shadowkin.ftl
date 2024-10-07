@@ -1,5 +1,5 @@
 shadowkin-power-examined-other = {CAPITALIZE(SUBJECT($target))} seems to be {$powerType}.
-shadowkin-power-examined-self = You have {$power}/{$powerMax} energy, you are {$powerType}.
+shadowkin-power-examined-self = I have {$power}/{$powerMax} energy, I am {$powerType}.
 
 shadowkin-power-5 = energetic
 shadowkin-power-4 = great
@@ -12,4 +12,4 @@ examine-mindbroken-shadowkin-message = {CAPITALIZE($entity)} seems to be a black
 
 identity-eye-shadowkin = {$color}-eye
 
-shadowkin-blackeye = You feel your power draining away, you are exhausted!
+shadowkin-blackeye = I feel my power draining away...

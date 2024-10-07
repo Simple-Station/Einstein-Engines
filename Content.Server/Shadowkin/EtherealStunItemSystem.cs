@@ -6,6 +6,7 @@ using Content.Shared.Abilities.Psionics;
 using Content.Shared.Stacks;
 
 namespace Content.Server.Shadowkin;
+
 public sealed class EtherealStunItemSystem : EntitySystem
 {
     [Dependency] private readonly StaminaSystem _stamina = default!;
@@ -36,12 +37,8 @@ public sealed class EtherealStunItemSystem : EntitySystem
             return;
 
         if (TryComp<StackComponent>(uid, out var stack))
-        {
             _sharedStackSystem.Use(uid, 1, stack);
-        }
         else
-        {
             QueueDel(uid);
-        }
     }
 }

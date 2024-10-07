@@ -9,33 +9,33 @@ namespace Content.Shared.Abilities.Psionics
     public sealed partial class PsionicComponent : Component
     {
         /// <summary>
-        /// Current Mana.
+        ///     Current Mana.
         /// </summary>
         [DataField, AutoNetworkedField]
         public float Mana;
 
         /// <summary>
-        /// Max Mana Possible.
+        ///     Max Mana Possible.
         /// </summary>
         [DataField, AutoNetworkedField]
         public float MaxMana = 100;
 
         /// <summary>
-        /// How much energy is gained per second.
+        ///     How much energy is gained per second.
         /// </summary>
         [DataField]
         public float ManaGain = 1;
 
         /// <summary>
-        /// ManaGain Multiplier
+        ///     ManaGain Multiplier
         /// </summary>
         [DataField]
         public float ManaGainMultiplier = 1;
 
-        public float ManaAccumulator = 0;
+        public float ManaAccumulator;
 
         [DataField]
-        public bool BypassManaCheck = false;
+        public bool BypassManaCheck;
 
         /// <summary>
         ///     How close a Psion is to generating a new power. When Potentia reaches the NextPowerCost, it is "Spent" in order to "Buy" a random new power.

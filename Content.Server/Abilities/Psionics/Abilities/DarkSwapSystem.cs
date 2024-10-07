@@ -25,13 +25,11 @@ namespace Content.Server.Abilities.Psionics
             if (TryComp<EtherealComponent>(args.Performer, out var ethereal))
             {
                 var tileref = Transform(args.Performer).Coordinates.GetTileRef();
-                if (tileref != null)
+                if (tileref != null
+                && _physics.GetEntitiesIntersectingBody(args.Performer, (int) CollisionGroup.Impassable).Count > 0)
                 {
-                    if (_physics.GetEntitiesIntersectingBody(args.Performer, (int) CollisionGroup.Impassable).Count > 0)
-                    {
-                        _popup.PopupEntity(Loc.GetString("revenant-in-solid"), args.Performer, args.Performer);
-                        return;
-                    }
+                    _popup.PopupEntity(Loc.GetString("revenant-in-solid"), args.Performer, args.Performer);
+                    return;
                 }
 
                 if (_psionics.OnAttemptPowerUse(args.Performer, "DarkSwap", args.ManaCost / 2, args.CheckInsulation))
@@ -40,18 +38,15 @@ namespace Content.Server.Abilities.Psionics
                     args.Handled = true;
                 }
             }
-            else
+            else if (_psionics.OnAttemptPowerUse(args.Performer, "DarkSwap", args.ManaCost, args.CheckInsulation))
             {
-                if (_psionics.OnAttemptPowerUse(args.Performer, "DarkSwap", args.ManaCost, args.CheckInsulation))
-                {
-                    var newethereal = EnsureComp<EtherealComponent>(args.Performer);
-                    newethereal.Darken = true;
+                var newethereal = EnsureComp<EtherealComponent>(args.Performer);
+                newethereal.Darken = true;
 
-                    Spawn("ShadowkinShadow", Transform(args.Performer).Coordinates);
-                    Spawn("EffectFlashShadowkinDarkSwapOn", Transform(args.Performer).Coordinates);
+                Spawn("ShadowkinShadow", Transform(args.Performer).Coordinates);
+                Spawn("EffectFlashShadowkinDarkSwapOn", Transform(args.Performer).Coordinates);
 
-                    args.Handled = true;
-                }
+                args.Handled = true;
             }
 
             if (args.Handled)

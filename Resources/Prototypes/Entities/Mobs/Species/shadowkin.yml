@@ -101,7 +101,7 @@
       thresholds: # Weak
         0: Alive
         80: Critical
-        160: Dead
+        180: Dead
     - type: SlowOnDamage
       speedModifierThresholds:
         48: 0.85

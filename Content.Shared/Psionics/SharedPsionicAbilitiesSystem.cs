@@ -30,13 +30,11 @@ namespace Content.Shared.Abilities.Psionics
 
         public bool OnAttemptPowerUse(EntityUid uid, string power, float? manacost = null, bool? checkInsulation = true)
         {
-            if (!TryComp<PsionicComponent>(uid, out var component))
+            if (!TryComp<PsionicComponent>(uid, out var component)
+                || HasComp<MindbrokenComponent>(uid)
+                || checkInsulation ?? true)
+                && (HasComp<PsionicInsulationComponent>(uid))
                 return false;
-
-            if (checkInsulation ?? true)
-                if (HasComp<PsionicInsulationComponent>(uid)
-                || HasComp<MindbrokenComponent>(uid))
-                    return false;
 
             var tev = new OnAttemptPowerUseEvent(uid, power);
             RaiseLocalEvent(uid, tev);
@@ -50,25 +48,21 @@ namespace Content.Shared.Abilities.Psionics
                 return false;
             }
 
-            if (manacost is not null)
-            {
-                if (component.Mana >= manacost
+            if (manacost is null)
+                return true;
+
+            if (component.Mana >= manacost
                 || component.BypassManaCheck)
                 {
                     var newmana = component.Mana - manacost;
                     component.Mana = newmana ?? component.Mana;
-
+    
                     var ev = new OnManaUpdateEvent();
                     RaiseLocalEvent(uid, ref ev);
                 }
-                else
-                {
-                    _popups.PopupEntity(Loc.GetString(component.NoMana), uid, uid, PopupType.LargeCaution);
-                    return false;
-                }
-            }
 
-            return true;
+            _popups.PopupEntity(Loc.GetString(component.NoMana), uid, uid, PopupType.LargeCaution);
+            return false;
         }
 
         private void OnPowerUsed(EntityUid uid, PsionicComponent component, PsionicPowerUsedEvent args)

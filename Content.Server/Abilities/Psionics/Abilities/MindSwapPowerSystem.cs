@@ -38,10 +38,8 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(MindSwapPowerActionEvent args)
         {
-            if (!_psionics.OnAttemptPowerUse(args.Performer, "mind swap"))
-                return;
-
-            if (!(TryComp<DamageableComponent>(args.Target, out var damageable) && damageable.DamageContainerID == "Biological"))
+            if (!_psionics.OnAttemptPowerUse(args.Performer, "mind swap")
+                || !(TryComp<DamageableComponent>(args.Target, out var damageable) && damageable.DamageContainerID == "Biological"))
                 return;
 
             Swap(args.Performer, args.Target);

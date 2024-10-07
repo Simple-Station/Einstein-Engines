@@ -148,10 +148,8 @@ public sealed class EtherealSystem : SharedEtherealSystem
                 .Where(x => HasComp<EtherealLightComponent>(x) && HasComp<PointLightComponent>(x));
 
             foreach (var entity in lightQuery)
-            {
                 if (!darkened.Contains(entity))
                     darkened.Add(entity);
-            }
 
             _random.Shuffle(darkened);
             component.DarkenedLights = darkened;
@@ -161,10 +159,8 @@ public sealed class EtherealSystem : SharedEtherealSystem
             foreach (var light in component.DarkenedLights.ToArray())
             {
                 var lightPos = _transform.GetWorldPosition(light);
-                if (!TryComp<PointLightComponent>(light, out var pointLight))
-                    continue;
-
-                if (!TryComp<EtherealLightComponent>(light, out var etherealLight))
+                if (!TryComp<PointLightComponent>(light, out var pointLight)
+                    || !TryComp<EtherealLightComponent>(light, out var etherealLight))
                     continue;
 
                 if (TryComp<PoweredLightComponent>(light, out var powered) && !powered.On)
@@ -183,8 +179,8 @@ public sealed class EtherealSystem : SharedEtherealSystem
                     continue;
                 }
 
-                if (etherealLight.AttachedEntity == uid)
-                    if (_random.Prob(0.03f))
+                if (etherealLight.AttachedEntity == uid
+                    && _random.Prob(0.03f))
                         etherealLight.AttachedEntity = EntityUid.Invalid;
 
                 if (!etherealLight.OldRadiusEdited)

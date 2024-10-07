@@ -15,6 +15,7 @@ using Robust.Shared.Configuration;
 using Content.Shared.Abilities.Psionics;
 
 namespace Content.Shared.Shadowkin;
+
 public abstract class SharedEtherealSystem : EntitySystem
 {
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
@@ -39,35 +40,34 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     public virtual void OnStartup(EntityUid uid, EtherealComponent component, MapInitEvent args)
     {
-        if (TryComp<FixturesComponent>(uid, out var fixtures) && fixtures.FixtureCount >= 1)
+        if (!TryComp<FixturesComponent>(uid, out var fixtures))
+            return;
+
+        var fixture = fixtures.Fixtures.First();
+
+        component.OldMobMask = fixture.Value.CollisionMask;
+        component.OldMobLayer = fixture.Value.CollisionLayer;
+
+        if (_cfg.GetCVar(CCVars.ShadowkinPassThrough))
         {
-            var fixture = fixtures.Fixtures.First();
-
-            component.OldMobMask = fixture.Value.CollisionMask;
-            component.OldMobLayer = fixture.Value.CollisionLayer;
-
-            if (_cfg.GetCVar(CCVars.ShadowkinPassThrough))
-            {
-                _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.GhostImpassable, fixtures);
-                _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, 0, fixtures);
-            }
-            else
-            {
-                _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.FlyingMobMask, fixtures);
-                _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, (int) CollisionGroup.FlyingMobLayer, fixtures);
-            }
+            _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.GhostImpassable, fixtures);
+            _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, 0, fixtures);
+            return;
         }
+
+        _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.FlyingMobMask, fixtures);
+        _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, (int) CollisionGroup.FlyingMobLayer, fixtures);
     }
 
     public virtual void OnShutdown(EntityUid uid, EtherealComponent component, ComponentShutdown args)
     {
-        if (TryComp<FixturesComponent>(uid, out var fixtures) && fixtures.FixtureCount >= 1)
-        {
-            var fixture = fixtures.Fixtures.First();
+        if (!TryComp<FixturesComponent>(uid, out var fixtures))
+            return;
 
-            _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, component.OldMobMask, fixtures);
-            _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, component.OldMobLayer, fixtures);
-        }
+        var fixture = fixtures.Fixtures.First();
+
+        _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, component.OldMobMask, fixtures);
+        _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, component.OldMobLayer, fixtures);
     }
 
     private void OnMindbreak(EntityUid uid, EtherealComponent component, ref OnMindbreakEvent args)
@@ -78,7 +78,7 @@ public abstract class SharedEtherealSystem : EntitySystem
     private void OnMobStateChanged(EntityUid uid, EtherealComponent component, MobStateChangedEvent args)
     {
         if (args.NewMobState == MobState.Critical
-        || args.NewMobState == MobState.Dead)
+            || args.NewMobState == MobState.Dead)
             RemComp(uid, component);
     }
 
@@ -112,7 +112,7 @@ public abstract class SharedEtherealSystem : EntitySystem
     private void OnInteractionAttempt(EntityUid uid, EtherealComponent component, InteractionAttemptEvent args)
     {
         if (!HasComp<TransformComponent>(args.Target)
-        || HasComp<EtherealComponent>(args.Target))
+            || HasComp<EtherealComponent>(args.Target))
             return;
 
         args.Cancel();
@@ -124,7 +124,9 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     private void OnAttemptPowerUse(EntityUid uid, EtherealComponent component, OnAttemptPowerUseEvent args)
     {
-        if (args.Power != "DarkSwap")
-            args.Cancel();
+        if (args.Power == "DarkSwap")
+            return;
+            
+        args.Cancel();
     }
 }

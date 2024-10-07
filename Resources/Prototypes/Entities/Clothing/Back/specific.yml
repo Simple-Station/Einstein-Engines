@@ -64,7 +64,7 @@
 
 - type: entity
   parent: Clothing
-  id: ClothingBackpackEtherealTelerpoter
+  id: ClothingBackpackEtherealTeleporter
   name: ethereal teleporter
   description: Originally created while several research facilities were experimenting on Shadowkin, this backpack allows the wearer to jump the gap between the "normal" dimension and The Dark.
   components:
@@ -75,9 +75,9 @@
       sprite: Clothing/Back/etherealteleporter.rsi
       state: icon
     - type: Item
-      size: Huge
+      size: Ginormous
     - type: Clothing
-      slots: Ginormous
+      slots: BACK
       sprite: Clothing/Back/etherealteleporter.rsi
     # TODO: Uncomment this when ClothingGrantPsionicPower is fixed and back working.
     # - type: ClothingGrantPsionicPower

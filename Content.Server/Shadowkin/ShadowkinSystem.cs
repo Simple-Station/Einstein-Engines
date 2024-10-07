@@ -16,6 +16,7 @@ using Robust.Shared.Prototypes;
 using Content.Server.Abilities.Psionics;
 
 namespace Content.Server.Shadowkin;
+
 public sealed class ShadowkinSystem : EntitySystem
 {
     [Dependency] private readonly StaminaSystem _stamina = default!;
@@ -50,28 +51,24 @@ public sealed class ShadowkinSystem : EntitySystem
     private void OnExamined(EntityUid uid, ShadowkinComponent component, ExaminedEvent args)
     {
         if (!args.IsInDetailsRange
-        || !TryComp<PsionicComponent>(uid, out var magic)
-        || HasComp<MindbrokenComponent>(uid))
+            || !TryComp<PsionicComponent>(uid, out var magic)
+            || HasComp<MindbrokenComponent>(uid))
             return;
 
         var severity = "shadowkin-power-" + ContentHelpers.RoundToLevels(magic.Mana, magic.MaxMana, 6);
         var powerType = Loc.GetString(severity);
 
         if (args.Examined == args.Examiner)
-        {
             args.PushMarkup(Loc.GetString("shadowkin-power-examined-self",
                 ("power", Math.Floor(magic.Mana)),
                 ("powerMax", Math.Floor(magic.MaxMana)),
                 ("powerType", powerType)
             ));
-        }
         else
-        {
             args.PushMarkup(Loc.GetString("shadowkin-power-examined-other",
                 ("target", uid),
                 ("powerType", powerType)
             ));
-        }
     }
 
     /// <summary>
@@ -85,9 +82,7 @@ public sealed class ShadowkinSystem : EntitySystem
             _alerts.ShowAlert(uid, AlertType.ShadowkinPower, severity);
         }
         else
-        {
             _alerts.ClearAlert(uid, AlertType.ShadowkinPower);
-        }
     }
 
     private void OnAttemptPowerUse(EntityUid uid, ShadowkinComponent component, OnAttemptPowerUseEvent args)
@@ -98,26 +93,19 @@ public sealed class ShadowkinSystem : EntitySystem
 
     private void OnManaUpdate(EntityUid uid, ShadowkinComponent component, ref OnManaUpdateEvent args)
     {
-        if (TryComp<PsionicComponent>(uid, out var magic))
-        {
-            if (component.SleepManaRegen)
-            {
-                if (TryComp<SleepingComponent>(uid, out var sleep))
-                {
-                    magic.ManaGainMultiplier = component.SleepManaRegenMultiplier;
-                }
-                else
-                {
-                    magic.ManaGainMultiplier = 1;
-                }
-            }
+        if (!TryComp<PsionicComponent>(uid, out var magic))
+            return;
 
-            if (magic.Mana <= component.BlackEyeMana)
-                ApplyBlackEye(uid);
+        if (component.SleepManaRegen
+            && TryComp<SleepingComponent>(uid, out var sleep))
+            magic.ManaGainMultiplier = component.SleepManaRegenMultiplier;
+        else
+            magic.ManaGainMultiplier = 1;
 
-            Dirty(magic); // Update Shadowkin Overlay.
-        }
+        if (magic.Mana <= component.BlackEyeMana)
+            ApplyBlackEye(uid);
 
+        Dirty(magic); // Update Shadowkin Overlay.
         UpdateShadowkinAlert(uid, component);
     }
 
@@ -127,11 +115,11 @@ public sealed class ShadowkinSystem : EntitySystem
     /// <param name="uid"></param>
     public void ApplyBlackEye(EntityUid uid)
     {
-        if (TryComp<PsionicComponent>(uid, out var magic))
-        {
-            magic.Removable = true;
-            _psionicAbilitiesSystem.MindBreak(uid);
-        }
+        if (!TryComp<PsionicComponent>(uid, out var magic))
+            return;
+
+        magic.Removable = true;
+        _psionicAbilitiesSystem.MindBreak(uid);
     }
 
     private void OnMindbreak(EntityUid uid, ShadowkinComponent component, ref OnMindbreakEvent args)
@@ -163,7 +151,7 @@ public sealed class ShadowkinSystem : EntitySystem
     private void OnRejuvenate(EntityUid uid, ShadowkinComponent component, RejuvenateEvent args)
     {
         if (component.BlackeyeSpawn
-        || !HasComp<MindbrokenComponent>(uid))
+            || !HasComp<MindbrokenComponent>(uid))
             return;
 
         RemComp<MindbrokenComponent>(uid);

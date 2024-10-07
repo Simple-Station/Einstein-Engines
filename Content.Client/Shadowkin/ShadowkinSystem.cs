@@ -99,9 +99,7 @@ public sealed partial class ShadowkinSystem : EntitySystem
     private void UpdateShader(Vector3? color, float? intensity)
     {
         while (_overlayMan.HasOverlay<ColorTintOverlay>())
-        {
             _overlayMan.RemoveOverlay(_overlay);
-        }
 
         if (color != null)
             _overlay.TintColor = color;

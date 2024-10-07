@@ -36,10 +36,8 @@ public sealed class ShowEtherealSystem : EntitySystem
 
     private void OnEquipped(EntityUid uid, ShowEtherealComponent component, GotEquippedEvent args)
     {
-        if (!TryComp<ClothingComponent>(uid, out var clothing))
-            return;
-
-        if (!clothing.Slots.HasFlag(args.SlotFlags))
+        if (!TryComp<ClothingComponent>(uid, out var clothing)
+            || !clothing.Slots.HasFlag(args.SlotFlags))
             return;
 
         EnsureComp<ShowEtherealComponent>(args.Equipee);
@@ -52,28 +50,21 @@ public sealed class ShowEtherealSystem : EntitySystem
 
     private void Toggle(EntityUid uid, bool toggle)
     {
+        if (!TryComp<EyeComponent>(uid, out var eye))
+            return;
+
         if (toggle)
-        {
-            if (TryComp<EyeComponent>(uid, out var eye))
                 _eye.SetVisibilityMask(uid, eye.VisibilityMask | (int) (VisibilityFlags.Ethereal), eye);
-        }
-        else
-        {
-            if (HasComp<EtherealComponent>(uid))
+        else if (HasComp<EtherealComponent>(uid))            
                 return;
 
-            if (TryComp<EyeComponent>(uid, out var eye))
-                _eye.SetVisibilityMask(uid, (int) VisibilityFlags.Normal, eye);
-        }
+        _eye.SetVisibilityMask(uid, (int) VisibilityFlags.Normal, eye);
     }
 
     private void OnInteractionAttempt(EntityUid uid, ShowEtherealComponent component, InteractionAttemptEvent args)
     {
-        if (HasComp<EtherealComponent>(uid))
-            return;
-
-        if (!HasComp<TransformComponent>(args.Target)
-        || !HasComp<EtherealComponent>(args.Target))
+        if (HasComp<EtherealComponent>(uid)
+            || !HasComp<EtherealComponent>(args.Target))
             return;
 
         args.Cancel();
@@ -85,10 +76,8 @@ public sealed class ShowEtherealSystem : EntitySystem
 
     private void OnAttackAttempt(EntityUid uid, ShowEtherealComponent component, AttackAttemptEvent args)
     {
-        if (HasComp<EtherealComponent>(uid))
-            return;
-
-        if (!HasComp<EtherealComponent>(args.Target))
+        if (HasComp<EtherealComponent>(uid)
+            || !HasComp<EtherealComponent>(args.Target))
             return;
 
         args.Cancel();
