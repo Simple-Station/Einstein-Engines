@@ -6981,3 +6981,13 @@ Entries:
   id: 6422
   time: '2024-10-07T15:28:36.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1017
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Nerfed Lotophagoi Moodlets so that both the positive and negative
+        moodlets only last for 10 minutes. The total mood modification has been
+        left untouched. 
+  id: 6423
+  time: '2024-10-07T15:29:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1013
