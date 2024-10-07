@@ -64,8 +64,8 @@
   description: An unholy shield that blocks all attacks.
   components:
   - type: Sprite
-    sprite: White/Cult/Structures/cult_shield.rsi
+    sprite: WhiteDream/BloodCult/Entities/Structures/cult_shield.rsi
     state: icon
   - type: Icon
-    sprite: White/Cult/Structures/cult_shield.rsi
+    sprite: WhiteDream/BloodCult/Entities/Structures/cult_shield.rsi
     state: icon

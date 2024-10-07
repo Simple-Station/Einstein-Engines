@@ -34,6 +34,13 @@ public enum PylonVisuals : byte
 }
 
 [Serializable, NetSerializable]
+public enum WhetstoneVisuals : byte
+{
+    Used,
+    Layer
+}
+
+[Serializable, NetSerializable]
 public enum PentagramKey
 {
     Key

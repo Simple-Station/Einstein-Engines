@@ -70,8 +70,8 @@
   - type: TimedFactory
     prototypes:
       - ConstructShell
+      - WhetstoneCult
   # TODO: Add prototypes
-  #    - Eldritch Whetstone
   #    - Flask of Unholy Water
   - type: Construction
     graph: CultFactoryAltar
@@ -104,10 +104,9 @@
     sprite: WhiteDream/BloodCult/Entities/Structures/archives.rsi
   - type: TimedFactory
     prototypes:
-    - GasPipeBend
+    - ShuttleCurse
   # TODO: Add prototypes
   #    - Zealot's Blindfold
-  #    - Shuttle Curse
   #    - Veil Walker Set
   - type: Construction
     graph: CultFactoryArchives

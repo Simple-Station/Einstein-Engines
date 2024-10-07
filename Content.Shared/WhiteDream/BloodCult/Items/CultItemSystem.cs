@@ -1,5 +1,6 @@
 ﻿using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
@@ -19,9 +20,19 @@ public sealed class CultItemSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CultItemComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<CultItemComponent, BeforeThrowEvent>(OnBeforeThrow);
         SubscribeLocalEvent<CultItemComponent, BeingEquippedAttemptEvent>(OnEquipAttempt);
         SubscribeLocalEvent<CultItemComponent, AttemptMeleeEvent>(OnMeleeAttempt);
+    }
+
+    private void OnActivate(Entity<CultItemComponent> item, ref ActivateInWorldEvent args)
+    {
+        if (CanUse(args.User))
+            return;
+
+        args.Handled = true;
+        KnockdownAndDropItem(item, args.User, Loc.GetString("cult-item-component-generic"));
     }
 
     private void OnEquipAttempt(Entity<CultItemComponent> item, ref BeingEquippedAttemptEvent args)

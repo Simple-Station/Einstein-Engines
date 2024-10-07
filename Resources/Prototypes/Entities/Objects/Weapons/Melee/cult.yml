@@ -1,25 +1,20 @@
 - type: entity
   name: ritual dagger
-  parent: BaseItem
+  parent: BaseKnife
   id: RitualDagger
   description: A strange dagger used by sinister groups for rituals and sacrifices.
   components:
-  - type: Sharp
   - type: Sprite
     sprite: Objects/Weapons/Melee/cult_dagger.rsi
     state: icon
   - type: MeleeWeapon # TODO: It should have armor piercing effect (around 50%?) but we have no such system yet. Sucks.
     wideAnimationRotation: -135
-    attackRate: 1
-    range: 1.5
+    maxTargets: 1
+    heavyRateModifier: 0.95
+    heavyStaminaCost: 5
     damage:
       types:
-        Pierce: 15 # It should be piercing weapon since you know... daggers in general used to stab people.
-    heavyRateModifier: 0.9
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
-  - type: Item
-    size: Normal
+        Piercing: 15
   - type: Clothing
     sprite: Objects/Weapons/Melee/cult_dagger.rsi
     slots:
@@ -60,6 +55,8 @@
     heavyStaminaCost: 10
     maxTargets: 3
     angle: 90
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Normal
   - type: Clothing

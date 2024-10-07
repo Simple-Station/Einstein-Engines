@@ -32,6 +32,13 @@ public sealed class CultRuneReviveSystem : EntitySystem
     private void OnReviveRuneInvoked(Entity<CultRuneReviveComponent> ent, ref TryInvokeCultRuneEvent args)
     {
         var chargesProvider = EnsureReviveRuneChargesProvider(ent);
+        if (chargesProvider is null)
+        {
+            _popup.PopupEntity(Loc.GetString("cult-revive-rune-no-charges"), args.User, args.User);
+            args.Cancel();
+            return;
+        }
+
         var possibleTargets = _cultRune.GetTargetsNearRune(ent, ent.Comp.ReviveRange, entity =>
             !HasComp<DamageableComponent>(entity) ||
             !HasComp<MobThresholdsComponent>(entity) ||
@@ -61,24 +68,25 @@ public sealed class CultRuneReviveSystem : EntitySystem
     public void AddCharges(EntityUid ent, int charges)
     {
         var chargesProvider = EnsureReviveRuneChargesProvider(ent);
+        if (chargesProvider is null)
+            return;
+
         chargesProvider.Charges += charges;
     }
 
     private void Revive(EntityUid target, EntityUid user, Entity<CultRuneReviveComponent> rune)
     {
         var chargesProvider = EnsureReviveRuneChargesProvider(rune);
+        if (chargesProvider is null)
+            return;
+
         chargesProvider.Charges--;
 
         var deadThreshold = _threshold.GetThresholdForState(target, MobState.Dead);
         _damageable.TryChangeDamage(target, rune.Comp.Healing);
 
-        if (!TryComp<DamageableComponent>(target, out var damageable))
+        if (!TryComp<DamageableComponent>(target, out var damageable) || damageable.TotalDamage < deadThreshold)
             return;
-
-        if (damageable.TotalDamage >= deadThreshold)
-        {
-            return;
-        }
 
         _mobState.ChangeMobState(target, MobState.Critical, origin: user);
         if (!_mind.TryGetMind(target, out _, out var mind))
@@ -95,9 +103,9 @@ public sealed class CultRuneReviveSystem : EntitySystem
         _eui.OpenEui(new ReturnToBodyEui(mind, _mind), playerSession);
     }
 
-    private ReviveRuneChargesProviderComponent EnsureReviveRuneChargesProvider(EntityUid ent)
+    private ReviveRuneChargesProviderComponent? EnsureReviveRuneChargesProvider(EntityUid ent)
     {
         var mapUid = Transform(ent).MapUid;
-        return EnsureComp<ReviveRuneChargesProviderComponent>(mapUid!.Value);
+        return !mapUid.HasValue ? null : EnsureComp<ReviveRuneChargesProviderComponent>(mapUid.Value);
     }
 }
