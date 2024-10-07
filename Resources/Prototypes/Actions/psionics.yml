@@ -228,47 +228,34 @@
   description: action-description-shadeskip
   noSpawn: true
   components:
-    - type: InstantAction
-      icon: { sprite: Interface/Actions/psionics.rsi, state: shadeskip }
-      useDelay: 45
-      checkCanInteract: false
-      event: !type:AnomalyPowerActionEvent
-        settings:
-          powerName: "Shadeskip"
-          overchargeFeedback: "shadeskip-overcharge-feedback"
-          overchargeCooldown: 120
-          overchargeRecoil:
-            groups:
-              Burn: -100 #This will be divided by the caster's Dampening.
-          minGlimmer: 6
-          maxGlimmer: 8
-          supercriticalGlimmerMultiplier: 3
-          glimmerSoundThreshold: 50
-          supercriticalThreshold: 500
-        entitySpawnEntries:
-          - settings:
-              spawnOnPulse: true
-              spawnOnSuperCritical: true
-              minAmount: 5
-              maxAmount: 8
-              maxRange: 1.5
-            spawns:
-              - ShadowKudzuWeak
-          - settings:
-              spawnOnSuperCritical: true
-              minAmount: 30
-              maxAmount: 50
-              maxRange: 50
-            spawns:
-              - ShadowKudzu
-          - settings:
-              spawnOnPulse: true
-              spawnOnSuperCritical: true
-              minAmount: 1
-              maxAmount: 1
-              maxRange: 0.5
-            spawns:
-              - EffectFlashShadeskip
+  - type: InstantAction
+    icon: { sprite : Interface/Actions/psionics.rsi, state: shadeskip }
+    useDelay: 45
+    checkCanInteract: false
+    event: !type:AnomalyPowerActionEvent
+            settings:
+              powerName: "Shadeskip"
+              minGlimmer: 6
+              maxGlimmer: 8
+              glimmerSoundThreshold: 50
+              doSupercritical: false
+            entitySpawnEntries:
+              - settings:
+                  spawnOnPulse: true
+                  spawnOnSuperCritical: true
+                  minAmount: 5
+                  maxAmount: 8
+                  maxRange: 1.5
+                spawns:
+                - ShadowKudzuWeak
+              - settings:
+                  spawnOnPulse: true
+                  spawnOnSuperCritical: true
+                  minAmount: 1
+                  maxAmount: 1
+                  maxRange: 0.5
+                spawns:
+                - EffectFlashShadeskip
 
 - type: entity
   id: ActionTelekineticPulse
