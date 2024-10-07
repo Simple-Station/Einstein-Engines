@@ -1212,7 +1212,7 @@
       idleState: icon
       runningState: building
       staticRecipes:
-        - BluespaceCrystal #Nyano - Summary: Bluespace Crystals can be created here.
+        # - BluespaceCrystal #Nyano - Summary: Bluespace Crystals can be created here.
         - SheetSteel30
         - SheetGlass30
         - SheetRGlass30
