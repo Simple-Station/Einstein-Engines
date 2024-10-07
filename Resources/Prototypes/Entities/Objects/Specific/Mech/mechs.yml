@@ -289,7 +289,7 @@
 
 # H.O.N.K.
 - type: entity
-  parent: [ BaseMech, SpecialMech, BaseCivilianContraband ]
+  parent: [ BaseMech, SpecialMech ]
   id: MechHonker
   name: H.O.N.K.
   description: "Produced by \"Tyranny of Honk, INC\", this exosuit is designed as heavy clown-support. Used to spread the fun and joy of life. HONK!"
