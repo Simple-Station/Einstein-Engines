@@ -322,7 +322,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: false
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 20
@@ -411,7 +411,7 @@
     weight: 8
     minimumPlayers: 15
     reoccurrenceDelay: 30
-    startAnnouncement: true
+    startAnnouncement: false
   - type: AlertLevelInterceptionRule
   - type: TraitorRule
   - type: AntagSelection
