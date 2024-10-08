@@ -8,7 +8,7 @@ loadout-name-LoadoutSpeedLoaderMagnumSpare = speed loader (.45 magnum, spare)
 loadout-name-LoadoutSpeedLoaderMagnumRubberSpare = speed loader (.45 magnum rubber, spare)
 
 # Duty Weapons
-loadout-name-LoadoutSecurity = Mk58 (lethal)
+loadout-name-LoadoutSecurityMk58 = Mk58 (lethal)
 loadout-name-LoadoutSecurityMk58NonLethal = Mk58 (non-lethal)
 loadout-name-LoadoutSecurityRevolver = Inspector (lethal)
 loadout-name-LoadoutSecurityRevolverNonLethal = Inspector (non-lethal)
