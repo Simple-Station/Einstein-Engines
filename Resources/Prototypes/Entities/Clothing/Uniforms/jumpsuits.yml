@@ -412,15 +412,52 @@
     sprite: Clothing/Uniforms/Jumpsuit/hydro.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformBaseFlippable
   id: ClothingUniformJumpsuitJanitor
-  name: janitor jumpsuit
+  name: nanotrasen janitor jumpsuit
   description: The jumpsuit for the poor sop with a mop.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/janitor.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/janitor.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitor ]
+  id: ClothingUniformJumpsuitJanitorFlipped
+  name: nanotrasen janitor jumpsuit
+
+- type: entity
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitJanitorIdris
+  name: idris incorporated janitor jumpsuit
+  description: The jumpsuit for the poor sop with a mop.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/janitor_idris.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/janitor_idris.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitor ]
+  id: ClothingUniformJumpsuitJanitorIdrisFlipped
+  name: idris incorporated janitor jumpsuit
+
+- type: entity
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitJanitorOrion
+  name: orion express janitor jumpsuit
+  description: The jumpsuit for the poor sop with a mop.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/janitor_orion.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/janitor_orion.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitor ]
+  id: ClothingUniformJumpsuitJanitorOrionFlipped
+  name: orion express janitor jumpsuit
 
 - type: entity
   parent: ClothingUniformBase
