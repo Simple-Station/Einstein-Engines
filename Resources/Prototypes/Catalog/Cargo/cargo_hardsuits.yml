@@ -36,7 +36,7 @@
     sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
     state: icon
   product: CrateLogisticsLavrionHardsuit
-  cost: 2250
+  cost: 3500
   category: cargoproduct-category-name-hardsuits
   group: market
 
@@ -67,7 +67,7 @@
     sprite: DeltaV/Clothing/OuterClothing/Hardsuits/Combat/standard.rsi
     state: icon
   product: CrateSecurityBaghaturTacsuit
-  cost: 3000
+  cost: 5000
   category: cargoproduct-category-name-hardsuits
   group: market
 
@@ -77,7 +77,7 @@
     sprite: DeltaV/Clothing/OuterClothing/Hardsuits/Combat/riot.rsi
     state: icon
   product: CrateSecuritySuldeTacsuit
-  cost: 4000
+  cost: 7500
   category: cargoproduct-category-name-hardsuits
   group: market
 
@@ -87,6 +87,6 @@
     sprite: DeltaV/Clothing/OuterClothing/Hardsuits/Combat/medical.rsi
     state: icon
   product: CrateSecurityTsagaanTacsuit
-  cost: 3250
+  cost: 5500
   category: cargoproduct-category-name-hardsuits
   group: market
