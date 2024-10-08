@@ -283,8 +283,8 @@
         canReact: false
   - type: UserInterface
     interfaces:
-    - key: enum.ShortConstructionUiKey.Key
-      type: ShortConstructionMenuBUI
+      enum.ShortConstructionUiKey.Key:
+        type: ShortConstructionMenuBUI
   - type: ActivatableUI
     key: enum.ShortConstructionUiKey.Key
   - type: ShortConstruction
