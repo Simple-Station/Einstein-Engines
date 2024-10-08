@@ -205,7 +205,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/chef.rsi
 
 - type: entity
-  parent: ClothingUniformFlippable
+  parent: ClothingUniformBaseFlippable
   id: ClothingUniformJumpsuitChefNt
   name: nanotrasen chef uniform
   description: Can't cook without this.
