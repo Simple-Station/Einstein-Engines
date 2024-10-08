@@ -484,7 +484,7 @@
 
 - type: entity
   parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponicsNt ]
-  id: ClothingUniformJumpsuitHydroponicsFlipped
+  id: ClothingUniformJumpsuitHydroponicsNtFlipped
   name: nanotrasen hydroponics jumpsuit
 
 - type: entity
@@ -500,7 +500,7 @@
 
 - type: entity
   parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponicsIdris ]
-  id: ClothingUniformJumpsuitHydroponicsFlipped
+  id: ClothingUniformJumpsuitHydroponicsIdrisFlipped
   name: idris incorporated hydroponics jumpsuit
 
 - type: entity
@@ -516,7 +516,7 @@
 
 - type: entity
   parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponicsOrion ]
-  id: ClothingUniformJumpsuitHydroponicsFlipped
+  id: ClothingUniformJumpsuitHydroponicsOrionFlipped
   name: orion express hydroponics jumpsuit
 
 - type: entity
