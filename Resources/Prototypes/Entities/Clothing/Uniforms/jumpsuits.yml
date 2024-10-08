@@ -21,7 +21,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/ancient.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformBaseFlippable
   id: ClothingUniformJumpsuitBartender
   name: bartender's uniform
   description: A nice and tidy uniform. Shame about the bar though.
@@ -30,6 +30,11 @@
     sprite: Clothing/Uniforms/Jumpsuit/bartender.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/bartender.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBartender ]
+  id: ClothingUniformJumpsuitBartenderFlipped
+  name: bartender's uniform
 
 - type: entity
   parent: ClothingUniformBase
