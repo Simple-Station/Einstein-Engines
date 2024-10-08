@@ -1,15 +1,18 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c838ba21dae97db345e0113f99596decd1d66039, monkey made by brainfood1183 (github), monkey made by brainfood1183 (github) for ss14, default suit edit by Skarletto (github)",
+  "copyright": "Taken from A at commit https://github.com/Aurorastation/Aurora.3/commit/a8759f3c77b61315df50ee86969799f5a0afe894, monkey made by brainfood1183 (github) from https://github.com/tgstation/tgstation/commit/c838ba21dae97db345e0113f99596decd1d66039",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "icon"
+	  "name": "icon"
     },
+	{
+	  "name": "icon_flipped"
+	},
     {
       "name": "equipped-INNERCLOTHING",
       "directions": 4
@@ -25,6 +28,10 @@
     {
       "name": "inhand-right",
       "directions": 4
-    }
+    },
+	{
+	  "name": "flipped-equipped-INNERCLOTHING",
+	  "directions": 4
+	}
   ]
 }
