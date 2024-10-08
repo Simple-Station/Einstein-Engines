@@ -447,10 +447,10 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
-    weight: 3.5
+    startAnnouncement: false
+    weight: 2
     duration: 1
-    earliestStart: 30
+    earliestStart: 45
     minimumPlayers: 20
   - type: ImmovableRodRule
 
