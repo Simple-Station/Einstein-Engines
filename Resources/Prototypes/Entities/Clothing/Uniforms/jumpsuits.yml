@@ -216,7 +216,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/chef_nt.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitchefNt ]
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitChefNt ]
   id: ClothingUniformChefNtFlipped
   name: nanotrasen chef uniform
 
