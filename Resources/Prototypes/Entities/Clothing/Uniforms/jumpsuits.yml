@@ -21,8 +21,19 @@
     sprite: Clothing/Uniforms/Jumpsuit/ancient.rsi
 
 - type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBartender
+  name: bartender's uniform
+  description: A nice and tidy uniform. Shame about the bar though.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/bartender.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/bartender.rsi
+
+- type: entity
   parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitBartender # NT assumed default
+  id: ClothingUniformJumpsuitBartenderNt
   name: bartender's nanotrasen uniform
   description: A nice and tidy uniform. Shame about the bar though.
   components:
@@ -32,8 +43,8 @@
     sprite: Clothing/Uniforms/Jumpsuit/bartender_nt.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBartender ]
-  id: ClothingUniformJumpsuitBartenderFlipped
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBartenderNt ]
+  id: ClothingUniformJumpsuitBartenderNtFlipped
   name: bartender's nanotrasen uniform
 
 - type: entity
@@ -192,6 +203,55 @@
     sprite: Clothing/Uniforms/Jumpsuit/chef.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/chef.rsi
+
+- type: entity
+  parent: ClothingUniformFlippable
+  id: ClothingUniformJumpsuitChefNt
+  name: nanotrasen chef uniform
+  description: Can't cook without this.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/chef_nt.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/chef_nt.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitchefNt ]
+  id: ClothingUniformChefNtFlipped
+  name: nanotrasen chef uniform
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitChefIdris
+  name: idris incorporated chef uniform
+  description: Can't cook without this.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/chef_idris.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/chef_idris.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitchefIdris ]
+  id: ClothingUniformChefIdrisFlipped
+  name: nidris incorporated notrasen chef uniform
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitChefOrion
+  name: orion express chef uniform
+  description: Can't cook without this.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/chef_orion.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/chef_orion.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitchefOrion ]
+  id: ClothingUniformChefOrionFlipped
+  name: orion express chef uniform
+
 
 - type: entity
   parent: ClothingUniformBase
@@ -403,7 +463,7 @@
 - type: entity
   parent: ClothingUniformBaseFlippable
   id: ClothingUniformJumpsuitHydroponics
-  name: nanotrasen hydroponics jumpsuit
+  name: hydroponics jumpsuit
   description: Has a strong earthy smell to it. Hopefully it's merely dirty as opposed to soiled.
   components:
   - type: Sprite
@@ -412,13 +472,24 @@
     sprite: Clothing/Uniforms/Jumpsuit/hydro.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponics ]
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitHydroponicsNt
+  name: nanotrasen hydroponics jumpsuit
+  description: Has a strong earthy smell to it. Hopefully it's merely dirty as opposed to soiled.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/hydro_nt.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/hydro_nt.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponicsNt ]
   id: ClothingUniformJumpsuitHydroponicsFlipped
   name: nanotrasen hydroponics jumpsuit
 
 - type: entity
   parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitHydroponics
+  id: ClothingUniformJumpsuitHydroponicsIdris
   name: idris incorporated hydroponics jumpsuit
   description: Has a strong earthy smell to it. Hopefully it's merely dirty as opposed to soiled.
   components:
@@ -428,13 +499,13 @@
     sprite: Clothing/Uniforms/Jumpsuit/hydro_idris.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponics ]
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponicsIdris ]
   id: ClothingUniformJumpsuitHydroponicsFlipped
   name: idris incorporated hydroponics jumpsuit
 
 - type: entity
   parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitHydroponics
+  id: ClothingUniformJumpsuitHydroponicsOrion
   name: orion express hydroponics jumpsuit
   description: Has a strong earthy smell to it. Hopefully it's merely dirty as opposed to soiled.
   components:
@@ -444,14 +515,14 @@
     sprite: Clothing/Uniforms/Jumpsuit/hydro_orion.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponics ]
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitHydroponicsOrion ]
   id: ClothingUniformJumpsuitHydroponicsFlipped
   name: orion express hydroponics jumpsuit
 
 - type: entity
   parent: ClothingUniformBaseFlippable
   id: ClothingUniformJumpsuitJanitor
-  name: nanotrasen janitor jumpsuit
+  name: janitor jumpsuit
   description: The jumpsuit for the poor sop with a mop.
   components:
   - type: Sprite
@@ -460,8 +531,19 @@
     sprite: Clothing/Uniforms/Jumpsuit/janitor.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitor ]
-  id: ClothingUniformJumpsuitJanitorFlipped
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitJanitorNt
+  name: nanotrasen janitor jumpsuit
+  description: The jumpsuit for the poor sop with a mop.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/janitor_nt.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/janitor_nt.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitorNt ]
+  id: ClothingUniformJumpsuitJanitorNtFlipped
   name: nanotrasen janitor jumpsuit
 
 - type: entity
@@ -716,7 +798,7 @@
 - type: entity
   parent: ClothingUniformBaseFlippable
   id: ClothingUniformJumpsuitLibrarian
-  name: nanotrasen librarian jumpsuit
+  name: librarian jumpsuit
   description: A cosy green jumper fit for a curator of books.
   components:
   - type: Sprite
@@ -725,7 +807,18 @@
     sprite: Clothing/Uniforms/Jumpsuit/librarian.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarian ]
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitLibrarianNt
+  name: nanotrasen librarian jumpsuit
+  description: A cosy blue jumper fit for a curator of books.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/librarian_nt.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/librarian_nt.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianNt ]
   id: ClothingUniformJumpsuitLibrarianFlipped
   name: nanotrasen librarian jumpsuit
 

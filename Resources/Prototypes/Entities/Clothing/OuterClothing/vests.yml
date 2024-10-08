@@ -80,13 +80,24 @@
 - type: entity
   parent: ClothingOuterBase
   id: ClothingOuterVest
-  name: nanotrasen vest
-  description: A thick vest with a rubbery, water-resistant shell coloured in blue.
+  name: vest
+  description: A thick vest with a rubbery, water-resistant shell.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Vests/vest.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Vests/vest.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterVestNt
+  name: nanotrasen vest
+  description: A thick vest with a rubbery, water-resistant shell coloured in blue.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/vest_nt.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/vest_nt.rsi
 
 - type: entity
   parent: ClothingOuterBase
