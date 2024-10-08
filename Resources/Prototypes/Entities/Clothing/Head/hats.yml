@@ -235,7 +235,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatChef
-  name: chef's hat
+  name: nanotrasen chef's hat
   description: "It's a hat used by chefs to keep hair out of your food. Judging by the food in the mess, they don't work."
   components:
   - type: Sprite
@@ -257,6 +257,26 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadHatChef
+  id: ClothingHeadHatChefIdris
+  name: idris incorporated chef's hat
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/chefhat_idris.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/chefhat_idris.rsi
+
+- type: entity
+  parent: ClothingHeadHatChef
+  id: ClothingHeadHatChefOrion
+  name: orion express' chef hat
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/chefhat_orion.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/chefhat_orion.rsi
 
 - type: entity
   parent: ClothingHeadBase
