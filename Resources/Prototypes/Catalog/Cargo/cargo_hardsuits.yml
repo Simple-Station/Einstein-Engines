@@ -5,7 +5,7 @@
     sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
     state: icon
   product: CrateEngineeringFotiaHardsuit
-  cost: 1500
+  cost: 2250
   category: cargoproduct-category-name-hardsuits
   group: market
 
@@ -15,7 +15,7 @@
     sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
     state: icon
   product: CrateEngineeringLampsiHardsuit
-  cost: 1500
+  cost: 2250
   category: cargoproduct-category-name-hardsuits
   group: market
 
