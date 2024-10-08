@@ -55,7 +55,7 @@
 - type: entity
   id: CrateSecurityGuanYuTacsuit
   parent: CrateSecgear
-  name: shanlin tacsuit crate
+  name: guan-yu tacsuit crate
   description: Contains a single CSA-80UA Guan-Yu tacsuit. Requires Security access to open.
   components:
   - type: StorageFill
