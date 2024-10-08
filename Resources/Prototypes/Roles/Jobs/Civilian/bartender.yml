@@ -21,7 +21,7 @@
 - type: startingGear
   id: BartenderGear
   equipment:
-    head: ClothingHeadHatTophat
+    head: ClothingHeadHatFlatcapBartenderNanotrasen # This assumes Nanotrasen is default Company.
     jumpsuit: ClothingUniformJumpsuitBartender
     outerClothing: ClothingOuterVest
     back: ClothingBackpackFilled

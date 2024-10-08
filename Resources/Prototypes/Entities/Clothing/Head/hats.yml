@@ -1098,3 +1098,13 @@
     sprite: Clothing/Head/Hats/beret_medic.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beret_medic.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFlatcapBartenderNanotrasen
+  name: bartender's flatcap
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hat/nt_flatcap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hat/nt_flatcap.rsi
