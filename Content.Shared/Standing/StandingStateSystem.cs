@@ -36,7 +36,8 @@ public sealed class StandingStateSystem : EntitySystem
     public bool Down(EntityUid uid, bool playSound = true, bool dropHeldItems = true,
         StandingStateComponent? standingState = null,
         AppearanceComponent? appearance = null,
-        HandsComponent? hands = null)
+        HandsComponent? hands = null,
+        bool setDrawDepth = false)
     {
         // TODO: This should actually log missing comps...
         if (!Resolve(uid, ref standingState, false))
@@ -69,7 +70,7 @@ public sealed class StandingStateSystem : EntitySystem
         RaiseLocalEvent(uid, new DownedEvent(), false);
 
         // Raising this event will lower the entity's draw depth to the same as a small mob.
-        if (_config.GetCVar(CCVars.CrawlUnderTables))
+        if (_config.GetCVar(CCVars.CrawlUnderTables) && setDrawDepth)
             RaiseNetworkEvent(new DrawDownedEvent(GetNetEntity(uid)));
 
         // Seemed like the best place to put it
@@ -127,6 +128,10 @@ public sealed class StandingStateSystem : EntitySystem
         standingState.CurrentState = StandingState.Standing;
         Dirty(uid, standingState);
         RaiseLocalEvent(uid, new StoodEvent(), false);
+
+        // Raising this event will increase the entity's draw depth to a normal mob's.
+        if (_config.GetCVar(CCVars.CrawlUnderTables))
+            RaiseNetworkEvent(new DrawStoodEvent(GetNetEntity(uid)));
 
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Vertical, appearance);
 
