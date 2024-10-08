@@ -248,7 +248,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/chef_orion.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitchefOrion ]
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitChefOrion ]
   id: ClothingUniformChefOrionFlipped
   name: orion express chef uniform
 
