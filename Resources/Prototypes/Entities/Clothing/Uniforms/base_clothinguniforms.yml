@@ -81,8 +81,8 @@
   - type: Appearance
   - type: Foldable
     canFoldInsideContainer: true
-    unfoldVerbText: fold-rollsleeves-verb
-    foldVerbText: fold-unrollsleeves-verb
+    unfoldVerbText: fold-unrollsleeves-verb
+    foldVerbText: fold-rollsleeves-verb
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
     foldedHeldPrefix: flipped
@@ -130,6 +130,7 @@
 - type: entity # For clothes that don't need suit sensors.
   parent: ClothingUniformBaseFlippable
   id: ClothingUniformBaseFlipped
+  suffix: flipped
   components: # I *think* I can just disregard the components;
               # and inherit from ClothingUniformBaseFlippable
               # and ClothingUniformBaseUnsensoredFlipped but I don't want to
