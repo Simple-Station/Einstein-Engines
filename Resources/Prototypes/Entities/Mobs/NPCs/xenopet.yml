@@ -150,8 +150,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -201,8 +201,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -235,7 +235,7 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
+     enum.StrippingUiKey.Key:
       type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
@@ -324,7 +324,7 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
+    enum.StrippingUiKey.Key
       type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
@@ -360,7 +360,7 @@
       prob: 0.0075
     - id: MobXenoNeutralRavager
       prob: 0.0075
-      
+
 - type: entity
   id: ArgocyteVents
   parent: BaseGameRule
@@ -424,7 +424,7 @@
       prob: 0.005
     - id: MobAbomination
       prob: 0.005
-      
+
 - type: entity
   id: TickVents
   parent: BaseGameRule
@@ -514,7 +514,7 @@
       prob: 0.01
     - id: MobLuminousEntity
       prob: 0.01
-      
+
 - type: entity
   name: Friendly Xeno spawner
   id: friendlyxenoSpawner
