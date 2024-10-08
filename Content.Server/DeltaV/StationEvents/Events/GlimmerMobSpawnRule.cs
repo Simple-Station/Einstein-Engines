@@ -28,7 +28,7 @@ public sealed class GlimmerMobRule : StationEventSystem<GlimmerMobRuleComponent>
         var glimmerSources = new List<(GlimmerSourceComponent, TransformComponent)>();
         foreach (var source in EntityQuery<GlimmerSourceComponent, TransformComponent>().ToList())
         {
-            if (source.Item2.GridUid != Transform(station[0]).GridUid)
+            if (!station.Contains(source.Item2.Owner))
                 continue;
 
             glimmerSources.Add(source);
@@ -38,7 +38,7 @@ public sealed class GlimmerMobRule : StationEventSystem<GlimmerMobRuleComponent>
         var normalSpawnLocations = new List<(VentCritterSpawnLocationComponent, TransformComponent)>();
         foreach (var source in EntityQuery<VentCritterSpawnLocationComponent, TransformComponent>().ToList())
         {
-            if (source.Item2.GridUid != Transform(station[0]).GridUid)
+            if (!station.Contains(source.Item2.Owner))
                 continue;
 
             normalSpawnLocations.Add(source);
@@ -47,7 +47,7 @@ public sealed class GlimmerMobRule : StationEventSystem<GlimmerMobRuleComponent>
         var hiddenSpawnLocations = new List<(MidRoundAntagSpawnLocationComponent, TransformComponent)>();
         foreach (var source in EntityQuery<MidRoundAntagSpawnLocationComponent, TransformComponent>().ToList())
         {
-            if (source.Item2.GridUid != Transform(station[0]).GridUid)
+            if (!station.Contains(source.Item2.Owner))
                 continue;
 
             hiddenSpawnLocations.Add(source);
