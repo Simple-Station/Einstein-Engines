@@ -22,19 +22,51 @@
 
 - type: entity
   parent: ClothingUniformBaseFlippable
-  id: ClothingUniformJumpsuitBartender
-  name: bartender's uniform
+  id: ClothingUniformJumpsuitBartender # NT assumed default
+  name: bartender's nanotrasen uniform
   description: A nice and tidy uniform. Shame about the bar though.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/bartender.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/bartender_nt.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/bartender.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/bartender_nt.rsi
 
 - type: entity
   parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBartender ]
   id: ClothingUniformJumpsuitBartenderFlipped
-  name: bartender's uniform
+  name: bartender's nanotrasen uniform
+
+- type: entity
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitBartenderIdris
+  name: bartender's idris incorporated uniform
+  description: A nice and tidy uniform. Shame about the bar though.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/bartender_idris.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/bartender_idris.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBartenderIdris ]
+  id: ClothingUniformJumpsuitBartenderIdrisFlipped
+  name: bartender's idris incorporated uniform
+
+- type: entity
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitBartenderOrion
+  name: bartender's orion express uniform
+  description: A nice and tidy uniform. Shame about the bar though.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/bartender_orion.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/bartender_orion.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBartenderOrion ]
+  id: ClothingUniformJumpsuitBartenderOrionFlipped
+  name: bartender's orion express uniform
 
 - type: entity
   parent: ClothingUniformBase
