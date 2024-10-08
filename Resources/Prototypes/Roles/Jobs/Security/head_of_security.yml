@@ -45,7 +45,7 @@
   id: HoSGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoS
-    back: ClothingBackpackHOS
+    back: ClothingBackpackHOSFilled
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesSunglasses
     id: HoSPDA
@@ -53,5 +53,5 @@
     ears: ClothingHeadsetAltSecurity
     belt: ClothingBeltSecurityFilled
   innerClothingSkirt: ClothingUniformJumpskirtHoS
-  satchel: ClothingBackpackSatchelHOS
-  duffelbag: ClothingBackpackDuffelHOS
+  satchel: ClothingBackpackSatchelHOSFilled
+  duffelbag: ClothingBackpackDuffelHOSFilled
