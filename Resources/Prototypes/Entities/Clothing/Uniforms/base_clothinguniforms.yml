@@ -118,6 +118,7 @@
 - type: entity # For clothes that don't need suit sensors.
   parent: ClothingUniformBaseUnsensoredFlippable
   id: ClothingUniformBaseFlippable
+  abstract: true
   components:
   - type: SuitSensor
   - type: DeviceNetwork
@@ -131,6 +132,7 @@
   parent: ClothingUniformBaseFlippable
   id: ClothingUniformBaseFlipped
   suffix: flipped
+  abstract: true
   components: # I *think* I can just disregard the components;
               # and inherit from ClothingUniformBaseFlippable
               # and ClothingUniformBaseUnsensoredFlipped but I don't want to
