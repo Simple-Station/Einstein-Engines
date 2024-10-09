@@ -7018,3 +7018,10 @@ Entries:
   id: 6426
   time: '2024-10-09T01:17:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1026
+- author: Ichaie
+  changes:
+    - type: Add
+      message: A new map called NCS Gax has been added to rotation.
+  id: 6427
+  time: '2024-10-09T01:37:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1019
