@@ -2467,6 +2467,9 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> MoodDecreasesSpeed =
             CVarDef.Create("mood.decreases_speed", true, CVar.SERVER);
 
+        public static readonly CVarDef<bool> MoodModifiesThresholds =
+            CVarDef.Create("mood.modify_thresholds", false, CVar.SERVER);
+
         #endregion
 
         #region Lying Down System
@@ -2478,8 +2481,8 @@ namespace Content.Shared.CCVar
             CVarDef.Create("rest.hold_look_up", false, CVar.CLIENT | CVar.ARCHIVE);
 
         /// <summary>
-        ///     When true, entities that fall to the ground will be able to crawl under tables and 
-        ///     plastic flaps, allowing them to take cover from gunshots. 
+        ///     When true, entities that fall to the ground will be able to crawl under tables and
+        ///     plastic flaps, allowing them to take cover from gunshots.
         /// </summary>
         public static readonly CVarDef<bool> CrawlUnderTables =
             CVarDef.Create("rest.crawlundertables", false, CVar.REPLICATED);
@@ -2512,5 +2515,17 @@ namespace Content.Shared.CCVar
 
         #endregion
 
+        #region GhostRespawn
+
+        public static readonly CVarDef<double> GhostRespawnTime =
+            CVarDef.Create("ghost.respawn_time", 15d, CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> GhostRespawnMaxPlayers =
+            CVarDef.Create("ghost.respawn_max_players", 40, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> GhostAllowSameCharacter =
+            CVarDef.Create("ghost.allow_same_character", false, CVar.SERVERONLY);
+
+        #endregion
     }
 }

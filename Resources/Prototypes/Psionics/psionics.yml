@@ -208,3 +208,13 @@
   initializationFeedback: shadeskip-power-initialization-feedback
   metapsionicFeedback: shadeskip-power-metapsionic-feedback
   amplificationModifier: 1
+
+- type: psionicPower
+  id: TelekineticPulsePower
+  name: Telekinetic Pulse
+  description: telekinetic-pulse-power-description
+  actions:
+  - ActionTelekineticPulse
+  initializationFeedback: telekinetic-pulse-power-initialization-feedback
+  metapsionicFeedback: telekinetic-pulse-power-metapsionic-feedback
+  amplificationModifier: 1

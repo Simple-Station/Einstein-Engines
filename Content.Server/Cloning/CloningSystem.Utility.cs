@@ -253,7 +253,7 @@ public sealed partial class CloningSystem
                 ? physics.Mass
                 : 71));
 
-        bloodSolution.AddReagent("blood", 0.8f
+        bloodSolution.AddReagent("Blood", 0.8f
             * ((blood is not null)
                 ? blood.BloodMaxVolume
                 : 300));

@@ -58,4 +58,4 @@
   description: Fluffy boots to help survive even the coldest of winters.
   components:
   - type: TemperatureProtection
-    coefficient: 0.2
+    coefficient: 0.8
