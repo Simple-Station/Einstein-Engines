@@ -16,7 +16,7 @@
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
-        Slash: 17 #cmon, it has to be at least BETTER than the rest.
+        Slash: 15
     heavyRateModifier: 0.8
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1
@@ -25,7 +25,12 @@
     angle: 80
   - type: Reflect
     enabled: true
-    reflectProb: .5
+    # Design intent: a robust captain or tot can sacrifice movement to make the most of this weapon, but they have to
+    # really restrict themselves to walking speed or less.
+    reflectProb: 0.5
+    velocityBeforeNotMaxProb: 1.0
+    velocityBeforeMinProb: 3.0
+    minReflectProb: 0.1
     spread: 90
   - type: Item
     size: Normal
@@ -97,6 +102,9 @@
     - Back
     - Belt
   - type: Reflect
+    reflectProb: 0.3
+    velocityBeforeNotMaxProb: 6.0 # don't punish ninjas for being ninjas
+    velocityBeforeMinProb: 10.0
 
 - type: entity
   name: machete
@@ -200,7 +208,7 @@
   name: The Throngler
   parent: BaseItem
   id: Throngler
-  description: Why would you make this?
+  description: Why would someone make this?
   components:
     - type: Sharp
     - type: Sprite
@@ -221,7 +229,10 @@
         path: /Audio/Effects/explosion_small1.ogg
     - type: Reflect
       enabled: true
-      reflectProb: .25
+      reflectProb: 0.5 # In robust hands, deflects as well as an e-sword
+      velocityBeforeNotMaxProb: 1.0
+      velocityBeforeMinProb: 3.0
+      minReflectProb: 0.1
       spread: 90
     - type: Item
       size: Ginormous

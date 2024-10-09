@@ -16,6 +16,7 @@ using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Projectiles;
 using Content.Shared.Pulling.Events;
+using Content.Shared.Standing;
 using Content.Shared.Throwing;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
@@ -70,6 +71,7 @@ public sealed class PullingSystem : EntitySystem
         SubscribeLocalEvent<PullerComponent, EntityUnpausedEvent>(OnPullerUnpaused);
         SubscribeLocalEvent<PullerComponent, VirtualItemDeletedEvent>(OnVirtualItemDeleted);
         SubscribeLocalEvent<PullerComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
+        SubscribeLocalEvent<PullerComponent, DropHandItemsEvent>(OnDropHandItems);
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.MovePulledObject, new PointerInputCmdHandler(OnRequestMovePulledObject))
@@ -157,6 +159,17 @@ public sealed class PullingSystem : EntitySystem
         // Stop pushing
         component.PushingTowards = null;
         component.NextPushStop = TimeSpan.Zero;
+    }
+
+    private void OnDropHandItems(EntityUid uid, PullerComponent pullerComp, DropHandItemsEvent args)
+    {
+        if (pullerComp.Pulling == null || pullerComp.NeedsHands)
+            return;
+
+        if (!TryComp(pullerComp.Pulling, out PullableComponent? pullableComp))
+            return;
+
+        TryStopPull(pullerComp.Pulling.Value, pullableComp, uid);
     }
 
     private void OnPullerContainerInsert(Entity<PullerComponent> ent, ref EntGotInsertedIntoContainerMessage args)

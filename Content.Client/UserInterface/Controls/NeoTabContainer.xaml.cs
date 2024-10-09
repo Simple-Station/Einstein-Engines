@@ -134,7 +134,7 @@ public sealed partial class NeoTabContainer : BoxContainer
     }
 
     /// <summary>
-    ///     Removes the tab associated with the given index
+    ///     Removes/Disposes the tab associated with the given index
     /// </summary>
     /// <param name="index">The index of the tab to remove</param>
     /// <param name="updateTabMerging">Whether the tabs should fix their styling automatically. Useful if you're doing tons of updates at once</param>
@@ -150,7 +150,7 @@ public sealed partial class NeoTabContainer : BoxContainer
     }
 
     /// <summary>
-    ///     Removes the tab associated with the given control
+    ///     Removes/Disposes the tab associated with the given control
     /// </summary>
     /// <param name="control">The control to remove</param>
     /// <param name="updateTabMerging">Whether the tabs should fix their styling automatically. Useful if you're doing tons of updates at once</param>

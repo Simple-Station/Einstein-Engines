@@ -38,7 +38,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PendingZombieComponent, ZombifySelfActionEvent>(OnZombifySelf);
+        SubscribeLocalEvent<IncurableZombieComponent, ZombifySelfActionEvent>(OnZombifySelf);
     }
 
     protected override void AppendRoundEndText(EntityUid uid, ZombieRuleComponent component, GameRuleComponent gameRule,
@@ -133,7 +133,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
         component.NextRoundEndCheck = _timing.CurTime + component.EndCheckDelay;
     }
 
-    private void OnZombifySelf(EntityUid uid, PendingZombieComponent component, ZombifySelfActionEvent args)
+    private void OnZombifySelf(EntityUid uid, IncurableZombieComponent component, ZombifySelfActionEvent args)
     {
         _zombie.ZombifyEntity(uid);
         if (component.Action != null)

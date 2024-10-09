@@ -10,12 +10,12 @@ namespace Content.Server.Radio;
 /// </summary>
 [ByRefEvent]
 public readonly record struct RadioReceiveEvent(
-    // Einstein-Engines - languages mechanic
     EntityUid MessageSource,
     RadioChannelPrototype Channel,
     ChatMessage OriginalChatMsg,
     ChatMessage LanguageObfuscatedChatMsg,
-    LanguagePrototype Language
+    LanguagePrototype Language,
+    EntityUid RadioSource
 );
 
 /// <summary>

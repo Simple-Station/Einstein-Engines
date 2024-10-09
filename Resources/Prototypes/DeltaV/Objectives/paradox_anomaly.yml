@@ -1,9 +1,9 @@
 - type: entity
   abstract: true
-  parent: BaseTerminatorObjective # mrp terminator real
   id: BaseParadoxAnomalyObjective
   components:
   - type: Objective
+    difficulty: 1
     issuer: self
 
 # not using base kill/keep alive objectives since these intentionally conflict with eachother
@@ -19,7 +19,6 @@
       state: icon
   - type: TargetObjective
     title: objective-paradox-anomaly-kill-title
-  - type: TerminatorTargetOverride
   - type: KillPersonCondition
     requireDead: true
 
@@ -35,7 +34,6 @@
       state: folder-white
   - type: TargetObjective
     title: objective-paradox-anomaly-friend-title
-  - type: TerminatorTargetOverride
   - type: KeepAliveCondition
 
 - type: entity

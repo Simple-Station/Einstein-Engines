@@ -7,7 +7,7 @@ namespace Content.Shared.Announcements.Prototypes;
 ///     Defines an announcer and their announcement file paths
 /// </summary>
 [Prototype("announcer")]
-public sealed class AnnouncerPrototype : IPrototype
+public sealed partial class AnnouncerPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; } = default!;

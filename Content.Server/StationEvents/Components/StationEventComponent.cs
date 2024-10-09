@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Audio;
+using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.StationEvents.Components;
@@ -15,43 +15,43 @@ public sealed partial class StationEventComponent : Component
     public const float WeightHigh = 15.0f;
     public const float WeightVeryHigh = 20.0f;
 
-    [DataField("weight")]
+    [DataField]
     public float Weight = WeightNormal;
 
-    [DataField("startAnnouncement")]
+    [DataField]
     public bool StartAnnouncement;
 
-    [DataField("endAnnouncement")]
+    [DataField]
     public bool EndAnnouncement;
 
     /// <summary>
     ///     In minutes, when is the first round time this event can start
     /// </summary>
-    [DataField("earliestStart")]
+    [DataField]
     public int EarliestStart = 5;
 
     /// <summary>
     ///     In minutes, the amount of time before the same event can occur again
     /// </summary>
-    [DataField("reoccurrenceDelay")]
+    [DataField]
     public int ReoccurrenceDelay = 30;
 
     /// <summary>
     ///     How long after being added does the event start
     /// </summary>
-    [DataField("startDelay")]
+    [DataField]
     public TimeSpan StartDelay = TimeSpan.Zero;
 
     /// <summary>
     ///     How long the event lasts.
     /// </summary>
-    [DataField("duration")]
+    [DataField]
     public TimeSpan? Duration = TimeSpan.FromSeconds(1);
 
     /// <summary>
     ///     The max amount of time the event lasts.
     /// </summary>
-    [DataField("maxDuration")]
+    [DataField]
     public TimeSpan? MaxDuration;
 
     /// <summary>
@@ -60,13 +60,13 @@ public sealed partial class StationEventComponent : Component
     /// <remarks>
     ///     To avoid running deadly events with low-pop
     /// </remarks>
-    [DataField("minimumPlayers")]
+    [DataField]
     public int MinimumPlayers;
 
     /// <summary>
     ///     How many times this even can occur in a single round
     /// </summary>
-    [DataField("maxOccurrences")]
+    [DataField]
     public int? MaxOccurrences;
 
     /// <summary>

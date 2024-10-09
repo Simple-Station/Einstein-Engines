@@ -24,11 +24,11 @@
       canCollide: false
     - type: InteractionOutline
     - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
     - type: Construction
       graph: Shower
       node: shower
-      damageContainer: Inorganic
-      damageModifierSet: Metallic
     - type: Destructible
       thresholds:
       - trigger:

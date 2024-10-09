@@ -33,7 +33,6 @@
       fountain:
         maxVol: 200
   - type: Drink
-    isOpen: true
     solution: fountain
   - type: DrawableSolution
     solution: fountain
@@ -59,14 +58,6 @@
     rewardEntities:
     - OracleRewardDisks
     - OracleRewardCrystals
-    demandBlacklist:
-      tags:
-      - Bluespace
-      components:
-      - MobState
-    demandWhitelist:
-      components:
-      - Item
   - type: LanguageSpeaker
     currentLanguage: TauCetiBasic
   - type: LanguageKnowledge

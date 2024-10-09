@@ -126,7 +126,7 @@ public sealed class RadioSystem : EntitySystem
         var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, language);
         var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, NetEntity.Invalid, null);
 
-        var ev = new RadioReceiveEvent(messageSource, channel, msg, notUdsMsg, language);
+        var ev = new RadioReceiveEvent(messageSource, channel, msg, notUdsMsg, language, radioSource);
 
         var sendAttemptEv = new RadioSendAttemptEvent(channel, radioSource);
         RaiseLocalEvent(ref sendAttemptEv);

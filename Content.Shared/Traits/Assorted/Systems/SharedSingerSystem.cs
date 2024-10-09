@@ -40,8 +40,10 @@ public abstract class SharedSingerSystem : EntitySystem
         _instrument.SetInstrumentProgram(instrumentComp, defaultData.Item1, defaultData.Item2);
         SetUpSwappableInstrument(ent, singer);
 
-        if (singer.MidiUi is {} uiData && !_ui.TryGetUi(ent, uiData.UiKey, out _))
-            _ui.AddUi(ent.Owner, uiData);
+        EntityManager.TryGetComponent<UserInterfaceComponent>(ent.Owner, out var comp);
+        var entui = new Entity<UserInterfaceComponent?>(ent.Owner, comp);
+        if (singer.MidiUi is { } uiKey && !_ui.IsUiOpen(entui, uiKey))
+            _ui.OpenUi(entui, uiKey, entui);
     }
 
     private void OnShutdown(Entity<SingerComponent> ent, ref ComponentShutdown args)

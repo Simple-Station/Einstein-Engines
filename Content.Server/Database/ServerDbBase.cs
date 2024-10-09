@@ -31,9 +31,11 @@ namespace Content.Server.Database
         }
 
         #region Preferences
-        public async Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId)
+        public async Task<PlayerPreferences?> GetPlayerPreferencesAsync(
+            NetUserId userId,
+            CancellationToken cancel = default)
         {
-            await using var db = await GetDb();
+            await using var db = await GetDb(cancel);
 
             var prefs = await db.DbContext
                 .Preference
@@ -42,7 +44,7 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
                 .Include(p => p.Profiles).ThenInclude(h => h.Loadouts)
                 .AsSingleQuery()
-                .SingleOrDefaultAsync(p => p.UserId == userId.UserId);
+                .SingleOrDefaultAsync(p => p.UserId == userId.UserId, cancel);
 
             if (prefs is null)
                 return null;
@@ -221,8 +223,7 @@ namespace Content.Server.Database
                 profile.Age,
                 sex,
                 gender,
-                new HumanoidCharacterAppearance
-                (
+                new HumanoidCharacterAppearance(
                     profile.HairName,
                     Color.FromHex(profile.HairColor),
                     profile.FacialHairName,
@@ -231,14 +232,14 @@ namespace Content.Server.Database
                     Color.FromHex(profile.SkinColor),
                     markings
                 ),
-                clothing,
-                backpack,
                 spawnPriority,
                 jobs,
+                clothing,
+                backpack,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
-                antags.ToList(),
-                traits.ToList(),
-                loadouts.ToList()
+                antags.ToHashSet(),
+                traits.ToHashSet(),
+                loadouts.ToHashSet()
             );
         }
 
@@ -480,13 +481,13 @@ namespace Content.Server.Database
         #endregion
 
         #region Playtime
-        public async Task<List<PlayTime>> GetPlayTimes(Guid player)
+        public async Task<List<PlayTime>> GetPlayTimes(Guid player, CancellationToken cancel)
         {
-            await using var db = await GetDb();
+            await using var db = await GetDb(cancel);
 
             return await db.DbContext.PlayTime
                 .Where(p => p.PlayerId == player)
-                .ToListAsync();
+                .ToListAsync(cancel);
         }
 
         public async Task UpdatePlayTimes(IReadOnlyCollection<PlayTimeUpdate> updates)
@@ -638,7 +639,7 @@ namespace Content.Server.Database
          */
         public async Task<Admin?> GetAdminDataForAsync(NetUserId userId, CancellationToken cancel)
         {
-            await using var db = await GetDb();
+            await using var db = await GetDb(cancel);
 
             return await db.DbContext.Admin
                 .Include(p => p.Flags)
@@ -653,7 +654,7 @@ namespace Content.Server.Database
 
         public async Task<AdminRank?> GetAdminRankDataForAsync(int id, CancellationToken cancel = default)
         {
-            await using var db = await GetDb();
+            await using var db = await GetDb(cancel);
 
             return await db.DbContext.AdminRank
                 .Include(r => r.Flags)
@@ -662,7 +663,7 @@ namespace Content.Server.Database
 
         public async Task RemoveAdminAsync(NetUserId userId, CancellationToken cancel)
         {
-            await using var db = await GetDb();
+            await using var db = await GetDb(cancel);
 
             var admin = await db.DbContext.Admin.SingleAsync(a => a.UserId == userId.UserId, cancel);
             db.DbContext.Admin.Remove(admin);
@@ -672,7 +673,7 @@ namespace Content.Server.Database
 
         public async Task AddAdminAsync(Admin admin, CancellationToken cancel)
         {
-            await using var db = await GetDb();
+            await using var db = await GetDb(cancel);
 
             db.DbContext.Admin.Add(admin);
 
@@ -681,7 +682,7 @@ namespace Content.Server.Database
 
         public async Task UpdateAdminAsync(Admin admin, CancellationToken cancel)
         {
-            await using var db = await GetDb();
+            await using var db = await GetDb(cancel);
 
             var existing = await db.DbContext.Admin.Include(a => a.Flags).SingleAsync(a => a.UserId == admin.UserId, cancel);
             existing.Flags = admin.Flags;
@@ -693,7 +694,7 @@ namespace Content.Server.Database
 
         public async Task RemoveAdminRankAsync(int rankId, CancellationToken cancel)
         {
-            await using var db = await GetDb();
+            await using var db = await GetDb(cancel);
 
             var admin = await db.DbContext.AdminRank.SingleAsync(a => a.Id == rankId, cancel);
             db.DbContext.AdminRank.Remove(admin);
@@ -703,7 +704,7 @@ namespace Content.Server.Database
 
         public async Task AddAdminRankAsync(AdminRank rank, CancellationToken cancel)
         {
-            await using var db = await GetDb();
+            await using var db = await GetDb(cancel);
 
             db.DbContext.AdminRank.Add(rank);
 
@@ -776,7 +777,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         public async Task UpdateAdminRankAsync(AdminRank rank, CancellationToken cancel)
         {
-            await using var db = await GetDb();
+            await using var db = await GetDb(cancel);
 
             var existing = await db.DbContext.AdminRank
                 .Include(r => r.Flags)
@@ -1559,7 +1560,9 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return db.DbContext.Database.HasPendingModelChanges();
         }
 
-        protected abstract Task<DbGuard> GetDb([CallerMemberName] string? name = null);
+        protected abstract Task<DbGuard> GetDb(
+            CancellationToken cancel = default,
+            [CallerMemberName] string? name = null);
 
         protected void LogDbOp(string? name)
         {

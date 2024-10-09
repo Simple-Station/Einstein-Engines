@@ -43,7 +43,7 @@
       map: ["enum.SolutionHeaterVisuals.IsOn"]
       shader: unshaded
   - type: SolutionHeater
-    heatPerSecond: 160
+    baseHeatPerSecond: 160
   - type: ItemPlacer
     whitelist:
       components:

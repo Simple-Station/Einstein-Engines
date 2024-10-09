@@ -152,7 +152,7 @@
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsFreezer ]
+      board: [ DoorElectronicsKitchenHydroponics ]
 
 - type: entity
   parent: AirlockFreezer
@@ -244,6 +244,16 @@
       board: [ DoorElectronicsChemistry ]
 
 - type: entity
+  parent: AirlockMedical
+  id: AirlockMedicalMorgueLocked
+  suffix: Morgue, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMorgue ]
+
+
+- type: entity
   parent: AirlockScience
   id: AirlockScienceLocked
   suffix: Epistemics, Locked # DeltaV - Epistemics Department replacing Science
@@ -259,7 +269,7 @@
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsScience ]
+      board: [ DoorElectronicsMedicalResearch ]
 
 - type: entity
   parent: AirlockCentralCommand
@@ -633,7 +643,7 @@
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsScience ]
+      board: [ DoorElectronicsMedicalResearch ]
 
 - type: entity
   parent: AirlockCentralCommandGlass
@@ -982,7 +992,7 @@
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsRnDMed ]
+      board: [ DoorElectronicsMedicalResearch ]
 
 - type: entity
   parent: AirlockMaint

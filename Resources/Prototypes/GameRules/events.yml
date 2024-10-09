@@ -4,9 +4,8 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 12
+    weight: 8
     startDelay: 30
-    reoccurrenceDelay: 8
     duration: 35
   - type: AnomalySpawnRule
 
@@ -16,9 +15,8 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 5
+    weight: 8
     startDelay: 30
-    reoccurrenceDelay: 5
     duration: 35
   - type: BluespaceArtifactRule
 
@@ -28,10 +26,9 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 1
-    maxOccurrences: 4 # Very annoying, makes containers unusable
+    weight: 2
+    reoccurrenceDelay: 5
     earliestStart: 1
-    reoccurrenceDelay: 15
     duration: 1
   - type: BluespaceLockerRule
 
@@ -41,10 +38,9 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 10
+    weight: 7
     duration: 1
-    minimumPlayers: 7
-    reoccurrenceDelay: 5
+    minimumPlayers: 15
   - type: BreakerFlipRule
 
 - type: entity
@@ -55,9 +51,8 @@
   - type: StationEvent
     startAnnouncement: true
     minimumPlayers: 25
-    weight: 5
+    weight: 3
     duration: 1
-    reoccurrenceDelay: 5
   - type: BureaucraticErrorRule
 
 - type: entity
@@ -70,7 +65,6 @@
     minimumPlayers: 15
     weight: 5
     duration: 1
-    reoccurrenceDelay: 5
   - type: ClericalErrorRule
 
 - type: entity
@@ -79,10 +73,9 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 10
+    weight: 5
     duration: 1
-    minimumPlayers: 15
-    reoccurrenceDelay: 25
+    minimumPlayers: 10
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
 
@@ -92,10 +85,10 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 2
+    weight: 6.5
     duration: 1
-    earliestStart: 45
-    reoccurrenceDelay: 60
+    earliestStart: 40
+    reoccurrenceDelay: 20
     minimumPlayers: 20
   - type: RandomSpawnRule
     prototype: SpawnPointGhostDragon
@@ -106,14 +99,13 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 3
+    weight: 6
     duration: 1
-    earliestStart: 45
-    reoccurrenceDelay: 45
-    minimumPlayers: 20
+    earliestStart: 30
+    reoccurrenceDelay: 20
+    minimumPlayers: 30
   - type: NinjaSpawnRule
 
-# TODO there's already a glimmer revenant rule. One of them might be broken.
 - type: entity
   parent: BaseGameRule
   id: RevenantSpawn
@@ -127,16 +119,16 @@
   - type: RandomSpawnRule
     prototype: MobRevenant
 
-- type: entity
-  id: FalseAlarm
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: StationEvent
-    weight: 10
-    duration: 1
-    reoccurrenceDelay: 4 # Please no 10 false alarms in a row.
-  - type: FalseAlarmRule
+# disabled until event is rewritten to be more interesting
+#- type: entity
+#  id: FalseAlarm
+#  parent: BaseGameRule
+#  noSpawn: true
+#  components:
+#  - type: StationEvent
+#    weight: 15
+#    duration: 1
+#  - type: FalseAlarmRule
 
 - type: entity
   id: GasLeak
@@ -146,10 +138,7 @@
   - type: StationEvent
     startAnnouncement: true
     endAnnouncement: true
-    earliestStart: 10
-    reoccurrenceDelay: 7
-    minimumPlayers: 5
-    weight: 10
+    weight: 8
     startDelay: 20
   - type: GasLeakRule
 
@@ -160,9 +149,8 @@
   components:
   - type: StationEvent
     earliestStart: 15
-    reoccurrenceDelay: 10
     minimumPlayers: 15
-    weight: 5
+    weight: 7
     startDelay: 50
     duration: 240
   - type: KudzuGrowthRule
@@ -174,9 +162,8 @@
   components:
   - type: StationEvent
     earliestStart: 30
-    reoccurrenceDelay: 5
     weight: 7.5
-    minimumPlayers: 7 #Enough to hopefully have at least one engineering guy
+    minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
     startAnnouncement: true
     endAnnouncement: true
     duration: null #ending is handled by MeteorSwarmRule
@@ -192,8 +179,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    reoccurrenceDelay: 3
-    weight: 5
+    weight: 6
     duration: 50
   - type: VentCrittersRule
     entries:
@@ -203,6 +189,11 @@
       prob: 0.02
     - id: MobMouse2
       prob: 0.02
+    - id: MobMouseCancer
+      prob: 0.001
+    specialEntries:
+    - id: SpawnPointGhostRatKing
+      prob: 0.001
 
 - type: entity
   id: CockroachMigration
@@ -212,9 +203,8 @@
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
-    weight: 5
+    weight: 6
     duration: 50
-    reoccurrenceDelay: 15 # Cockroaches en masse are utmost annoying to deal with.
   - type: VentCrittersRule
     entries:
     - id: MobCockroach
@@ -222,43 +212,18 @@
     - id: MobMothroach
       prob: 0.008
 
-# TODO this is the same as mouse migration, but with different announcer.
-- type: entity
-  id: VentCritters
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    startDelay: 10
-    earliestStart: 15
-    reoccurrenceDelay: 3
-    weight: 5
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobMouse
-      prob: 0.02
-    - id: MobMouse1
-      prob: 0.02
-    - id: MobMouse2
-      prob: 0.02
-    - id: MobPibbleVent
-      prob: 0.005
-
 - type: entity
   id: PowerGridCheck
   parent: BaseGameRule
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 10
+    weight: 5
     startAnnouncement: true
     endAnnouncement: true
     startDelay: 24
     duration: 60
     maxDuration: 120
-    reoccurrenceDelay: 2 # Gives a chance for multiple checks in a row, but not in parallel
   - type: PowerGridCheckRule
 
 - type: entity
@@ -267,10 +232,9 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 5
+    weight: 6
     duration: 1
-    reoccurrenceDelay: 10
-    maxOccurrences: 3 # Annoying and rarely if ever interesting
+    maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
   - type: RandomSentienceRule
 
 - type: entity
@@ -279,12 +243,11 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 10
+    weight: 8
     startAnnouncement: true
     endAnnouncement: true
     duration: 120
     maxDuration: 240
-    reoccurrenceDelay: 5
   - type: SolarFlareRule
     onlyJamHeadsets: true
     affectedChannels:
@@ -301,19 +264,6 @@
     lightBreakChancePerSecond: 0.0003
     doorToggleChancePerSecond: 0.001
 
-# - type: entity # DeltaV - replaced terminator with paradox anomaly in midroundantag rule
-#   parent: BaseGameRule
-#   id: TerminatorSpawn
-#   noSpawn: true
-#   components:
-#   - type: StationEvent
-#     weight: 8
-#     duration: 1
-#     earliestStart: 30
-#     minimumPlayers: 20
-#   - type: RandomSpawnRule
-#    prototype: SpawnPointGhostTerminator
-
 - type: entity
   id: VentClog
   parent: BaseGameRule
@@ -322,7 +272,6 @@
   - type: StationEvent
     startAnnouncement: true
     earliestStart: 15
-    reoccurrenceDelay: 5
     minimumPlayers: 15
     weight: 5
     startDelay: 50
@@ -338,7 +287,6 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 20
-    reoccurrenceDelay: 12
     minimumPlayers: 15
     weight: 5
     duration: 60
@@ -360,7 +308,6 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 20
-    reoccurrenceDelay: 15
     minimumPlayers: 15
     weight: 5
     duration: 60
@@ -369,67 +316,22 @@
     - id: MobGiantSpiderAngry
       prob: 0.05
 
-# Weaker versions of the above
 - type: entity
-  id: SlimesSpawnWeak
-  parent: SlimesSpawn
-  noSpawn: true
-  components:
-  - type: StationEvent
-    minimumPlayers: 1
-  - type: VentCrittersRule
-    entries:
-    - id: MobAdultSlimesBlueAngry
-      prob: 0.005
-    - id: MobAdultSlimesGreenAngry
-      prob: 0.005
-    - id: MobAdultSlimesYellowAngry
-      prob: 0.005
-
-- type: entity
-  id: SpiderSpawnWeak
-  parent: SpiderSpawn
-  noSpawn: true
-  components:
-  - type: StationEvent
-    minimumPlayers: 1
-  - type: VentCrittersRule
-    entries:
-    - id: MobGiantSpiderAngry
-      prob: 0.01
-
-# - type: entity # DeltaV - Prevent normal spawning of MobClownSpider
-#  id: SpiderClownSpawn
-#  parent: BaseGameRule
-#  noSpawn: true
-#  components:
-#  - type: StationEvent
-#    startAnnouncement: true
-#    startDelay: 10
-#    earliestStart: 20
-#    minimumPlayers: 15
-#    weight: 1
-#    duration: 60
-#  - type: VentCrittersRule
-#    entries:
-#    - id: MobClownSpider
-#      prob: 0.05
-
-- type: entity
-  id: OneirophageSpawn
+  id: SpiderClownSpawn
   parent: BaseGameRule
   noSpawn: true
   components:
   - type: StationEvent
-    id: VentCritters
-    earliestStart: 15
-    minimumPlayers: 15
-    weight: 4
+    startAnnouncement: false
+    startDelay: 10
+    earliestStart: 20
+    minimumPlayers: 20
+    weight: 1.5
     duration: 60
   - type: VentCrittersRule
     entries:
-    - id: MobGiantSpiderVampireAngry
-      prob: 0.01
+    - id: MobClownSpider
+      prob: 0.05
 
 - type: entity
   id: ZombieOutbreak
@@ -437,9 +339,8 @@
   noSpawn: true
   components:
   - type: StationEvent
-    earliestStart: 60
-    reoccurrenceDelay: 60
-    minimumPlayers: 15
+    earliestStart: 50
+    minimumPlayers: 30
     weight: 2
     duration: 1
   - type: ZombieRule
@@ -472,13 +373,12 @@
   noSpawn: true
   components:
   - type: StationEvent
-    earliestStart: 60
-    weight: 3
-    minimumPlayers: 15
-    reoccurrenceDelay: 45
+    earliestStart: 35
+    weight: 5.5
+    minimumPlayers: 20
     duration: 1
   - type: LoadMapRule
-    mapPath: /Maps/Shuttles/striker.yml
+    preloadedGrid: ShuttleStriker
   - type: NukeopsRule
     roundEndBehavior: Nothing
   - type: AntagSelection
@@ -502,14 +402,38 @@
         prototype: Nukeops
 
 - type: entity
+  id: SleeperAgentsRule
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: StationEvent
+    earliestStart: 25
+    weight: 8
+    minimumPlayers: 15
+    reoccurrenceDelay: 30
+    startAnnouncement: false
+  - type: AlertLevelInterceptionRule
+  - type: TraitorRule
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Traitor ]
+      min: 1
+      max: 2
+      playerRatio: 10
+      mindComponents:
+      - type: TraitorRole
+        prototype: Traitor
+
+- type: entity
   id: MassHallucinations
   parent: BaseGameRule
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 10
+    weight: 7
     duration: 150
     maxDuration: 300
+    reoccurrenceDelay: 30
   - type: MassHallucinationsRule
     minTimeBetweenIncidents: 0.1
     maxTimeBetweenIncidents: 300
@@ -536,7 +460,7 @@
   id: IonStorm
   components:
   - type: StationEvent
-    weight: 10
+    weight: 8
     reoccurrenceDelay: 20
     duration: 1
   - type: IonStormRule
@@ -548,8 +472,7 @@
   components:
     - type: StationEvent
       earliestStart: 0
-      reoccurrenceDelay: 5
       minimumPlayers: 20
+      maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
       weight: 5
     - type: MobReplacementRule
-      numberToReplace: 1
