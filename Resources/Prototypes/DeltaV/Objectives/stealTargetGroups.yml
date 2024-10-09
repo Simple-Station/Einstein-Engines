@@ -55,6 +55,13 @@
     state: e_sword
 
 - type: stealTargetGroup
+  id: ClothingBeltKatanaSheathFilledHoS
+  name: antique katana sheaths
+  sprite:
+    sprite: Nyanotrasen/Clothing/Belt/katanasheath.rsi
+    state: e_sword
+
+- type: stealTargetGroup
   id: RubberStampNotary
   name: notary stamp
   sprite:

@@ -98,6 +98,19 @@
     stealGroup: EnergySwordHoS
     owner: job-name-hos
 
+- type: entity # Head of Security steal objective.
+  noSpawn: true
+  parent: BaseTraitorStealObjective
+  id: HoSKatanaSheathStealObjective
+  components:
+  - type: Objective
+    difficulty: 3 # HoS will mostly be using the gun to stop you from stealing it
+  - type: NotJobRequirement
+    job: HeadOfSecurity
+  - type: StealCondition
+    stealGroup: ClothingBeltKatanaSheathFilledHoS
+    owner: job-name-hos
+
 - type: entity # Clerk steal objective.
   noSpawn: true
   parent: BaseTraitorStealObjective

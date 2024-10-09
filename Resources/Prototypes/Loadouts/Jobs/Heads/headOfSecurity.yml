@@ -214,7 +214,7 @@
       jobs:
         - HeadOfSecurity
   items:
-    - ClothingBeltKatanaSheathFilled
+    - ClothingBeltKatanaSheathFilledHoS
 
 - type: loadout
   id: LoadoutCommandHoSC20r
