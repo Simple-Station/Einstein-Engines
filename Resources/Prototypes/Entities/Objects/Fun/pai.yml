@@ -74,6 +74,10 @@
           Searching: { state: pai-searching-overlay }
           On: { state: pai-on-overlay }
   - type: StationMap
+  - type: ChangeVoiceInContainer
+    whitelist:
+      components:
+      - SecretStash
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
