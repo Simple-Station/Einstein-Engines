@@ -303,5 +303,8 @@
       rareChance: 0.4
       prototypes:
         - CrateSalvageAssortedGoodies
+        - WeaponCrusher
+        - WeaponCrusherDagger
+        - WeaponCrusherGlaive
       chance: 0.9
       offset: 0.2
