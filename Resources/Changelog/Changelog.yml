@@ -7000,3 +7000,12 @@ Entries:
   id: 6424
   time: '2024-10-07T15:29:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1012
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Salvage Shittle has been replaced with the Pathfinder Expedition
+        Vessel from Frontier. 
+  id: 6425
+  time: '2024-10-09T01:17:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1027
