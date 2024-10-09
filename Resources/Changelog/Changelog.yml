@@ -7072,3 +7072,12 @@ Entries:
   id: 6430
   time: '2024-10-09T15:39:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1020
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Animals now have more unique things to say when not controlled by a
+        player.
+  id: 6431
+  time: '2024-10-09T15:48:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1003
