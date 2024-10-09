@@ -1168,11 +1168,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -5.5,-7.5
       parent: 1
-  - uid: 169
-    components:
-    - type: Transform
-      pos: -7.5,-2.5
-      parent: 1
   - uid: 336
     components:
     - type: Transform
@@ -2305,6 +2300,13 @@ entities:
       parent: 1
     - type: Physics
       bodyType: Static
+- proto: OreProcessor
+  entities:
+  - uid: 365
+    components:
+    - type: Transform
+      pos: -6.5,-2.5
+      parent: 1
 - proto: OxygenCanister
   entities:
   - uid: 12
@@ -2534,6 +2536,14 @@ entities:
     - type: Transform
       pos: -3.5,2.5
       parent: 1
+- proto: SalvageMagnet
+  entities:
+  - uid: 169
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,2.5
+      parent: 1
 - proto: ShuttersNormalOpen
   entities:
   - uid: 520
@@ -2643,11 +2653,6 @@ entities:
       parent: 1
 - proto: TableReinforced
   entities:
-  - uid: 365
-    components:
-    - type: Transform
-      pos: -0.5,2.5
-      parent: 1
   - uid: 367
     components:
     - type: Transform
@@ -2709,16 +2714,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 8.5,-2.5
       parent: 1
-- proto: ToyFigurineCaptain
-  entities:
-  - uid: 377
-    components:
-    - type: Transform
-      pos: -0.5602703,2.6456194
-      parent: 1
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
 - proto: VendingMachineTankDispenserEVA
   entities:
   - uid: 335
