@@ -1135,9 +1135,9 @@
   name: bartender's nanotrasen flatcap
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hat/flatcap_nt.rsi
+    sprite: Clothing/Head/Hats/flatcap_nt.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hat/flatcap_nt.rsi
+    sprite: Clothing/Head/Hats/flatcap_nt.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -1145,9 +1145,9 @@
   name: bartender's idris incorporated flatcap
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hat/flatcap_idris.rsi
+    sprite: Clothing/Head/Hats/flatcap_idris.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hat/flatcap_idris.rsi
+    sprite: Clothing/Head/Hats/flatcap_idris.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -1155,6 +1155,6 @@
   name: bartender's orion express flatcap
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hat/flatcap_orion.rsi
+    sprite: Clothing/Head/Hats/flatcap_orion.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hat/flatcap_orion.rsi
+    sprite: Clothing/Head/Hats/flatcap_orion.rsi
