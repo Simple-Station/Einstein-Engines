@@ -7088,3 +7088,10 @@ Entries:
   id: 6432
   time: '2024-10-09T16:12:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/976
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Custom Species Names.
+  id: 6433
+  time: '2024-10-09T16:12:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/994
