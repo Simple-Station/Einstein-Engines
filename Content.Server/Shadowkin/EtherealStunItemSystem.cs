@@ -30,7 +30,7 @@ public sealed class EtherealStunItemSystem : EntitySystem
                 _stamina.TakeStaminaDamage(ent, stamina.CritThreshold, stamina, ent);
 
             if (TryComp<PsionicComponent>(ent, out var magic))
-                magic.Mana -= component.ManaDamage;
+                magic.Mana = 0;
         }
 
         if (!component.DeleteOnUse)

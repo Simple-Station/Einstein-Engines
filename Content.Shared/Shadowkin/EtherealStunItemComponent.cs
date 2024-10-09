@@ -7,8 +7,5 @@ public sealed partial class EtherealStunItemComponent : Component
     public float Radius = 10;
 
     [DataField]
-    public float ManaDamage = 50;
-
-    [DataField]
     public bool DeleteOnUse = true;
 }

@@ -21,6 +21,8 @@
 - type: randomHumanoidSettings
   id: DeathSquad
   randomizeName: false
+  speciesBlacklist:
+    - Shadowkin
   components:
     - type: MindShield
     - type: GhostRole
@@ -57,6 +59,8 @@
 - type: randomHumanoidSettings
   id: ERTLeader
   randomizeName: false
+  speciesBlacklist:
+    - Shadowkin
   components:
     - type: MindShield
     - type: GhostRole
@@ -456,6 +460,8 @@
 
 - type: randomHumanoidSettings
   id: CBURNAgent
+  speciesBlacklist:
+    - Shadowkin
   components:
     - type: MindShield
     - type: Loadout
@@ -484,6 +490,8 @@
 
 - type: randomHumanoidSettings
   id: CentcomOfficial
+  speciesBlacklist:
+    - Shadowkin
   components:
     - type: MindShield
     - type: GhostRole
@@ -510,6 +518,8 @@
 
 - type: randomHumanoidSettings
   id: SyndicateAgent
+  speciesBlacklist:
+    - Shadowkin
   components:
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
@@ -526,6 +536,8 @@
 
 - type: randomHumanoidSettings
   id: NukeOp
+  speciesBlacklist:
+    - Shadowkin
   components:
     - type: NukeOperative
     - type: Psionic
@@ -548,6 +560,8 @@
 
 - type: randomHumanoidSettings
   id: Cluwne
+  speciesBlacklist:
+    - Shadowkin
   randomizeName: false
   components:
     - type: GhostRole

@@ -13,6 +13,7 @@ using Content.Shared.Mobs;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Content.Shared.Abilities.Psionics;
+using Content.Shared.Tag;
 
 namespace Content.Shared.Shadowkin;
 
@@ -22,6 +23,7 @@ public abstract class SharedEtherealSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
 
     public override void Initialize()
     {
@@ -52,6 +54,10 @@ public abstract class SharedEtherealSystem : EntitySystem
         {
             _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.GhostImpassable, fixtures);
             _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, 0, fixtures);
+
+            if (_tag.RemoveTag(uid, "DoorBumpOpener"))
+                component.HasDoorBumpTag = true;
+
             return;
         }
 
@@ -68,6 +74,9 @@ public abstract class SharedEtherealSystem : EntitySystem
 
         _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, component.OldMobMask, fixtures);
         _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, component.OldMobLayer, fixtures);
+
+        if (component.HasDoorBumpTag)
+            _tag.AddTag(uid, "DoorBumpOpener");
     }
 
     private void OnMindbreak(EntityUid uid, EtherealComponent component, ref OnMindbreakEvent args)
@@ -126,7 +135,7 @@ public abstract class SharedEtherealSystem : EntitySystem
     {
         if (args.Power == "DarkSwap")
             return;
-            
+
         args.Cancel();
     }
 }

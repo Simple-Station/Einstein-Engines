@@ -32,4 +32,5 @@ public sealed partial class EtherealComponent : Component
     public int OldMobLayer;
 
     public List<string> SuppressedFactions = new();
+    public bool HasDoorBumpTag;
 }
