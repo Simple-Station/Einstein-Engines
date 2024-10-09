@@ -3,6 +3,7 @@ using Content.Shared.Administration;
 using Content.Shared.Language;
 using Content.Shared.Language.Components;
 using Content.Shared.Language.Systems;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Toolshed.Syntax;
 using Robust.Shared.Toolshed.TypeParsers;
@@ -62,13 +63,13 @@ public sealed class AdminLanguageCommand : ToolshedCommand
     }
 
     [CommandImplementation("lsspoken")]
-    public IEnumerable<string> ListSpoken([PipedArgument] EntityUid input)
+    public IEnumerable<ProtoId<LanguagePrototype>> ListSpoken([PipedArgument] EntityUid input)
     {
         return Languages.GetSpokenLanguages(input);
     }
 
     [CommandImplementation("lsunderstood")]
-    public IEnumerable<string> ListUnderstood([PipedArgument] EntityUid input)
+    public IEnumerable<ProtoId<LanguagePrototype>> ListUnderstood([PipedArgument] EntityUid input)
     {
         return Languages.GetUnderstoodLanguages(input);
     }
