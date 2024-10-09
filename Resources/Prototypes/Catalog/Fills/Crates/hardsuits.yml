@@ -1,4 +1,3 @@
-# Hardsuits
 # Engineering
 - type: entity
   id: CrateEngineeringFotiaHardsuit
@@ -46,7 +45,7 @@
   id: CrateSecurityShanlinTacsuit
   parent: CrateSecgear
   name: shanlin tacsuit crate
-  description: Contains a single CSA-51a Shanlin tacsuit. Requires Security access to open.
+  description: Contains a single CSA-51a "Shanlin" tacsuit. Requires Security access to open.
   components:
   - type: StorageFill
     contents:
@@ -56,7 +55,7 @@
   id: CrateSecurityGuanYuTacsuit
   parent: CrateSecgear
   name: guan-yu tacsuit crate
-  description: Contains a single CSA-80UA Guan-Yu tacsuit. Requires Security access to open.
+  description: Contains a single CSA-80UA "Guan-Yu" tacsuit. Requires Security access to open.
   components:
   - type: StorageFill
     contents:
