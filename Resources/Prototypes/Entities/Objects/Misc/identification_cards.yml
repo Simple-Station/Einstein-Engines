@@ -1038,7 +1038,7 @@
     - state: clown
       color: "#7C0A0A"
   - type: IdCard
-    jobTitle: Cluwne
+    jobTitle: job-title-cluwne
   - type: Unremoveable
 
 - type: entity
