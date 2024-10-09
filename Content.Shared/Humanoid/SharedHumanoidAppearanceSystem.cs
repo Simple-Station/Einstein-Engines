@@ -345,9 +345,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             return;
         }
 
-        humanoid.EyeColor = profile.Appearance.EyeColor;
         SetSpecies(uid, profile.Species, false, humanoid);
         SetSex(uid, profile.Sex, false, humanoid);
+        humanoid.EyeColor = profile.Appearance.EyeColor;
+        var ev = new EyeColorInitEvent();
+        RaiseLocalEvent(uid, ref ev);
 
         SetSkinColor(uid, profile.Appearance.SkinColor, false);
 

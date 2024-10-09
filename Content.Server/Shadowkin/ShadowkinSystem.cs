@@ -33,6 +33,7 @@ public sealed class ShadowkinSystem : EntitySystem
         SubscribeLocalEvent<ShadowkinComponent, OnAttemptPowerUseEvent>(OnAttemptPowerUse);
         SubscribeLocalEvent<ShadowkinComponent, OnManaUpdateEvent>(OnManaUpdate);
         SubscribeLocalEvent<ShadowkinComponent, RejuvenateEvent>(OnRejuvenate);
+        SubscribeLocalEvent<ShadowkinComponent, EyeColorInitEvent>(OnEyeColorChange);
     }
 
     private void OnInit(EntityUid uid, ShadowkinComponent component, ComponentStartup args)
@@ -43,6 +44,18 @@ public sealed class ShadowkinSystem : EntitySystem
         _actionsSystem.AddAction(uid, ref component.ShadowkinSleepAction, ShadowkinSleepActionId, uid);
 
         UpdateShadowkinAlert(uid, component);
+    }
+
+    private void OnEyeColorChange(EntityUid uid, ShadowkinComponent component, EyeColorInitEvent args)
+    {
+        if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid)
+            || !component.BlackeyeSpawn
+            || humanoid.EyeColor == component.OldEyeColor)
+            return;
+
+        component.OldEyeColor = humanoid.EyeColor;
+        humanoid.EyeColor = component.BlackEyeColor;
+        Dirty(humanoid);
     }
 
     private void OnExamined(EntityUid uid, ShadowkinComponent component, ExaminedEvent args)
