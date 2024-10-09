@@ -7009,3 +7009,12 @@ Entries:
   id: 6425
   time: '2024-10-09T01:17:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1027
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Salvage techs can now buy a Crusher Dagger in their loadout.
+    - type: Fix
+      message: Re-Added the Crusher weapons to salvage spawners.
+  id: 6426
+  time: '2024-10-09T01:17:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1026
