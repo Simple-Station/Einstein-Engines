@@ -66,6 +66,9 @@
     tags:
     - VimPilot
   - type: RandomBark
+    barkType: mouse
+    minTime: 10 # Mice like to squeak, I think. You can always put your pet mouse to sleep if it gets annoying
+    maxTime: 160
 
 - type: entity
   name: bee
@@ -135,11 +138,7 @@
           Quantity: 5
   - type: ZombieImmune
   - type: RandomBark
-    barks:
-      - Bzzzzz
-      - Bzzz bzzz
-      - Bzzzzzzzzzzzz
-      - Bzz
+    barkType: bee
     barkMultiplier: 1.5
 
 - type: entity
@@ -254,6 +253,7 @@
     factions:
     - Passive
   - type: RandomBark
+    barkType: chicken
 
 - type: entity
   parent: MobChicken
@@ -641,6 +641,7 @@
     factions:
     - Passive
   - type: RandomBark
+    barkType: chicken # Duh
     barkMultiplier: 0.7
 
 - type: entity
@@ -821,13 +822,7 @@
     guides:
     - Chef
   - type: RandomBark
-    barks:
-      - Mooooooo
-      - Moo
-      - Huff
-      - Mooooooooooo
-      - Moooooo
-      - Moooo
+    barkType: cow
     barkMultiplier: 3
 
 
@@ -901,11 +896,7 @@
   - type: Body
     prototype: AnimalHemocyanin
   - type: RandomBark
-    barks:
-      - click clack
-      - clack
-      - clickity clack
-      - clack clack
+    barkType: crab
 
 - type: entity
   name: goat
@@ -1522,6 +1513,7 @@
     description: ghost-role-information-kobold-description
   - type: RandomBark
     barkMultiplier: 0.65
+    barkType: kobold
 
 - type: entity
   name: guidebook monkey
@@ -1686,6 +1678,7 @@
   - type: PreventSpiller
   - type: RandomBark
     barkMultiplier: 0.3
+    barkType: mouse
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
@@ -2066,8 +2059,7 @@
       types:
         Heat : 0.2 #per second, scales with temperature & other constants
   - type: RandomBark
-    barks:
-      - Wank
+    barkType: penguin
     barkMultiplier: 0.6
 
 - type: entity
@@ -2186,13 +2178,9 @@
     damageContainer: Biological
     damageModifierSet: Scale
   - type: RandomBark
-    barkMultiplier: 1.5
-    barks:
-      - Hsssssss
-      - Hss
-      - Hsssss
-      - Hisss
-      - Hshsss
+    minTime: 10
+    maxTime: 50 # It's a sssnake...
+    barkType: hissing
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -2322,6 +2310,8 @@
         Brute: -0.07
         Burn: -0.07
   - type: RandomBark
+    barkType: hissing
+    barkMultiplied: 0.3
 
 - type: entity
   name: tarantula
@@ -2450,7 +2440,8 @@
     - Hissing
     understands:
     - Hissing
-
+  - type: RandomBark
+    barkType: possum
 
 - type: entity
   name: possum
@@ -2533,6 +2524,8 @@
     - Hissing
     understands:
     - Hissing
+  - type: RandomBark
+    barkType: raccoon
 
 - type: entity
   name: fox
@@ -2621,6 +2614,9 @@
     - Fox
     understands:
     - Fox
+  - type: RandomBark
+    barkType: fox
+    barkMultiplier: 0.5 # Talkative <3
 
 - type: entity
   name: corgi
@@ -2690,6 +2686,7 @@
     tags:
     - VimPilot
   - type: RandomBark
+    barkType: dog
 
 - type: entity
   name: corrupted corgi
@@ -2851,6 +2848,7 @@
     tags:
     - VimPilot
   - type: RandomBark
+    barkType: cat
 
 - type: entity
   name: calico cat
@@ -3070,10 +3068,6 @@
   - type: Tag
     tags:
     - VimPilot
-  - type: RandomBark
-    barkMultiplier: 10
-    barks:
-      - Sloth
   - type: LanguageKnowledge # WHAT DOES THE SLOTH SAY???????
     speaks:
     - Hissing
@@ -3286,6 +3280,7 @@
   - type: NonSpreaderZombie
   - type: RandomBark
     barkMultiplier: 0.45
+    barkType: mouse # duh
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
@@ -3460,4 +3455,4 @@
   components:
   - type: ReplacementAccent
     accent: nymph
-  - type: RandomBark
+  - type: RandomBark # Using the default barks since they aren't going to talk anyway

@@ -1,4 +1,4 @@
-namespace Content.Shared.Language.Components;
+namespace Content.Server.Language;
 
 // <summary>
 //     Signifies that this entity can speak and understand any language.
@@ -7,5 +7,6 @@ namespace Content.Shared.Language.Components;
 [RegisterComponent]
 public sealed partial class UniversalLanguageSpeakerComponent : Component
 {
-
+    [DataField]
+    public bool Enabled = true;
 }
