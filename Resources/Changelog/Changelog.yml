@@ -7095,3 +7095,12 @@ Entries:
   id: 6433
   time: '2024-10-09T16:12:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/994
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Logistics can now directly order a variety of hardsuits. "NT In-Network"
+        hardsuits being substantially cheaper thanks to backroom deals.
+  id: 6434
+  time: '2024-10-09T23:01:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1024
