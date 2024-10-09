@@ -85,7 +85,7 @@
 - type: entity
   id: CrateSecurityTsagaanTacsuit
   parent: CrateSecgear
-  name: baghatur tacsuit crate
+  name: tsagaan tacsuit crate
   description: Contains a single FPA-86 - "Tsagaan Mk.II" tacsuit. Requires Security access to open.
   components:
   - type: StorageFill
