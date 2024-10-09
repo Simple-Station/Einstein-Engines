@@ -143,7 +143,7 @@ public partial class SharedBodySystem
             .FirstOrDefault(part => part.Component.Symmetry == targetSymmetry);
         if (targetPart.Id != default && _gameTiming.IsFirstTimePredicted)
         {
-            ApplyPartDamage(targetPart, args.DamageDelta, targetType);
+            ApplyPartDamage(targetPart, args.DamageDelta, targetType, args.TargetPart.Value);
         }
     }
 

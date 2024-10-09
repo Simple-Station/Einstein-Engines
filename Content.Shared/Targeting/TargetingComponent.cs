@@ -13,6 +13,9 @@ public sealed partial class TargetingComponent : Component
     [ViewVariables, AutoNetworkedField]
     public TargetBodyPart Target = TargetBodyPart.Torso;
 
+    /// <summary>
+    /// What odds does the entity have of targeting each body part?
+    /// </summary>
     [DataField]
     public Dictionary<TargetBodyPart, float> TargetOdds = new()
     {
@@ -23,6 +26,21 @@ public sealed partial class TargetingComponent : Component
         { TargetBodyPart.LeftLeg, 0.125f },
         { TargetBodyPart.RightLeg, 0.125f }
     };
+
+    /// <summary>
+    /// What is the current integrity of each body part?
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
+    public Dictionary<TargetBodyPart, TargetIntegrity> BodyStatus = new()
+    {
+        { TargetBodyPart.Head, TargetIntegrity.Healthy },
+        { TargetBodyPart.Torso, TargetIntegrity.Healthy },
+        { TargetBodyPart.LeftArm, TargetIntegrity.Healthy },
+        { TargetBodyPart.RightArm, TargetIntegrity.Healthy },
+        { TargetBodyPart.LeftLeg, TargetIntegrity.Healthy },
+        { TargetBodyPart.RightLeg, TargetIntegrity.Healthy }
+    };
+
     /// <summary>
     /// What noise does the entity play when swapping targets?
     /// </summary>

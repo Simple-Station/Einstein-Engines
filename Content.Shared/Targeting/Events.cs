@@ -14,3 +14,15 @@ public sealed class TargetChangeEvent : EntityEventArgs
         BodyPart = bodyPart;
     }
 }
+
+[Serializable, NetSerializable]
+public sealed class TargetIntegrityChangeEvent : EntityEventArgs
+{
+    public NetEntity Uid { get; }
+    public bool RefreshUi { get; }
+    public TargetIntegrityChangeEvent(NetEntity uid, bool refreshUi = true)
+    {
+        Uid = uid;
+        RefreshUi = refreshUi;
+    }
+}

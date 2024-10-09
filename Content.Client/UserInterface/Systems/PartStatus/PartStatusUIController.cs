@@ -1,81 +1,82 @@
 using Content.Client.Gameplay;
-using Content.Client.UserInterface.Systems.Targeting.Widgets;
+using Content.Client.UserInterface.Systems.PartStatus.Widgets;
 using Content.Shared.Targeting;
 using Content.Client.Targeting;
-using Content.Shared.Targeting.Events;
+using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.Player;
+using Robust.Shared.Utility;
+using Robust.Client.Graphics;
 
-namespace Content.Client.UserInterface.Systems.Targeting;
 
-public sealed class PartStatusUIController : UIController, IOnStateEntered<GameplayState>, IOnSystemChanged<PartStatusSystem>
+namespace Content.Client.UserInterface.Systems.PartStatus;
+
+public sealed class PartStatusUIController : UIController, IOnStateEntered<GameplayState>, IOnSystemChanged<TargetingSystem>
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IEntityNetworkManager _net = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-
+    private SpriteSystem _spriteSystem = default!;
     private TargetingComponent? _targetingComponent;
     private PartStatusControl? PartStatusControl => UIManager.GetActiveUIWidgetOrNull<PartStatusControl>();
 
-    public void OnSystemLoaded(PartStatusSystem system)
+    public void OnSystemLoaded(TargetingSystem system)
     {
         system.PartStatusStartup += AddPartStatusControl;
         system.PartStatusShutdown += RemovePartStatusControl;
+        system.PartStatusUpdate += UpdatePartStatusControl;
     }
 
-    public void OnSystemUnloaded(PartStatusSystem system)
+    public void OnSystemUnloaded(TargetingSystem system)
     {
         system.PartStatusStartup -= AddPartStatusControl;
         system.PartStatusShutdown -= RemovePartStatusControl;
+        system.PartStatusUpdate -= UpdatePartStatusControl;
     }
 
     public void OnStateEntered(GameplayState state)
     {
-        if (TargetingControl != null)
+        if (PartStatusControl != null)
         {
-            TargetingControl.SetVisible(_targetingComponent != null);
+            PartStatusControl.SetVisible(_targetingComponent != null);
 
             if (_targetingComponent != null)
-                TargetingControl.SetColors(_targetingComponent.Target);
+                PartStatusControl.SetTextures(_targetingComponent.BodyStatus);
         }
     }
 
-    public void AddTargetingControl(TargetingComponent component)
+    public void AddPartStatusControl(TargetingComponent component)
     {
         _targetingComponent = component;
 
-        if (TargetingControl != null)
+        if (PartStatusControl != null)
         {
-            TargetingControl.SetVisible(_targetingComponent != null);
+            PartStatusControl.SetVisible(_targetingComponent != null);
 
             if (_targetingComponent != null)
-                TargetingControl.SetColors(_targetingComponent.Target);
+                PartStatusControl.SetTextures(_targetingComponent.BodyStatus);
         }
 
     }
 
-    public void RemoveTargetingControl()
+    public void RemovePartStatusControl()
     {
-        if (TargetingControl != null)
-            TargetingControl.SetVisible(false);
+        if (PartStatusControl != null)
+            PartStatusControl.SetVisible(false);
 
         _targetingComponent = null;
     }
 
-    public void CycleTarget(TargetBodyPart bodyPart, TargetingControl control)
+    public void UpdatePartStatusControl(TargetingComponent component)
     {
-        if (_playerManager.LocalEntity is not { } user
-        || _entManager.GetComponent<TargetingComponent>(user) is not { } targetingComponent)
-            return;
-
-        var player = _entManager.GetNetEntity(user);
-        if (bodyPart != targetingComponent.Target)
-        {
-            var msg = new TargetChangeEvent(player, bodyPart);
-            _net.SendSystemNetworkMessage(msg);
-            control.SetColors(bodyPart);
-        }
+        if (PartStatusControl != null && _targetingComponent != null)
+            PartStatusControl.SetTextures(_targetingComponent.BodyStatus);
     }
 
+    public Texture GetTexture(SpriteSpecifier specifier)
+    {
+        if (_spriteSystem == null)
+            _spriteSystem = _entManager.System<SpriteSystem>();
 
+        return _spriteSystem.Frame0(specifier);
+    }
 }

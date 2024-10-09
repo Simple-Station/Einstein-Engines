@@ -22,8 +22,8 @@
                     </PanelContainer>
                 </TextureButton>
                 <GridContainer Rows="1" Columns="3" HorizontalAlignment="Center" HorizontalExpand="True" HSeparationOverride="0" VSeparationOverride="0">
-                    <TextureButton Name="LeftArmButton" MinSize="12 28" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <PanelContainer Name="LeftArmPanel">
+                    <TextureButton Name="RightArmButton" MinSize="12 28" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <PanelContainer Name="RightArmPanel">
                             <PanelContainer.PanelOverride>
                                 <gfx:StyleBoxFlat BorderColor="#FFFFFF00" BorderThickness="1"/>
                             </PanelContainer.PanelOverride>
@@ -36,8 +36,8 @@
                             </PanelContainer.PanelOverride>
                         </PanelContainer>
                     </TextureButton>
-                    <TextureButton Name="RightArmButton" MinSize="12 28" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <PanelContainer Name="RightArmPanel">
+                    <TextureButton Name="LeftArmButton" MinSize="12 28" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <PanelContainer Name="LeftArmPanel">
                             <PanelContainer.PanelOverride>
                                 <gfx:StyleBoxFlat BorderColor="#FFFFFF00" BorderThickness="1"/>
                             </PanelContainer.PanelOverride>
@@ -45,15 +45,15 @@
                     </TextureButton>
                 </GridContainer>
                 <GridContainer Rows="1" Columns="2" HorizontalAlignment="Center" HorizontalExpand="True" HSeparationOverride="0" VSeparationOverride="0">
-                    <TextureButton Name="LeftLegButton" MinSize="17 25" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <PanelContainer Name="LeftLegPanel">
+                    <TextureButton Name="RightLegButton" MinSize="17 25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <PanelContainer Name="RightLegPanel">
                             <PanelContainer.PanelOverride>
                                 <gfx:StyleBoxFlat BorderColor="#FFFFFF00" BorderThickness="1"/>
                             </PanelContainer.PanelOverride>
                         </PanelContainer>
                     </TextureButton>
-                    <TextureButton Name="RightLegButton" MinSize="17 25" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <PanelContainer Name="RightLegPanel">
+                    <TextureButton Name="LeftLegButton" MinSize="17 25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <PanelContainer Name="LeftLegPanel">
                             <PanelContainer.PanelOverride>
                                 <gfx:StyleBoxFlat BorderColor="#FFFFFF00" BorderThickness="1"/>
                             </PanelContainer.PanelOverride>

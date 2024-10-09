@@ -189,19 +189,15 @@ public partial class SharedBodySystem
             }
         }
 
-        if (partEnt.Comp.PartType == BodyPartType.Arm && TryComp(bodyEnt.Owner, out HandsComponent? hands))
+        if (partEnt.Comp.Children.Any())
         {
             foreach (var slotId in partEnt.Comp.Children.Keys)
             {
-                // We have to do this because some hands are labeled as "right_hand", and others as "right hand".
-                // Which smells but I'd rather not break more code with unnecessary cleanup.
                 if (Containers.TryGetContainer(partEnt, GetPartSlotContainerId(slotId), out var container) &&
                     container is ContainerSlot slot &&
                     slot.ContainedEntity is { } childEntity &&
-                    TryComp(childEntity, out BodyPartComponent? childPart) &&
-                    childPart.PartType == BodyPartType.Hand)
+                    TryComp(childEntity, out BodyPartComponent? childPart))
                 {
-                    _handsSystem.RemoveHand(bodyEnt.Owner, $"{PartSlotContainerIdPrefix}{slotId}", hands);
                     DropPart((childEntity, childPart));
                 }
             };

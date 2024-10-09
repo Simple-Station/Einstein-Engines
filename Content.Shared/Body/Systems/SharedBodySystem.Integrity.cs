@@ -1,35 +1,62 @@
+using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Damage;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Targeting;
+using Content.Shared.Targeting.Events;
+using Robust.Shared.Network;
 using System.Linq;
 
 namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
 {
-
+    [Dependency] private readonly INetManager _net = default!;
     /// <summary>
     /// Propagates damage to the specified parts of the entity.
     /// </summary>
-    private void ApplyPartDamage(Entity<BodyPartComponent> partEnt, DamageSpecifier damage, BodyPartType targetType)
+    private void ApplyPartDamage(Entity<BodyPartComponent> partEnt, DamageSpecifier damage, BodyPartType targetType, TargetBodyPart targetPart)
     {
         var severingDamageTypes = new[] { "Slash", "Pierce", "Blunt" };
         var severed = false;
         var partIdSlot = GetParentPartAndSlotOrNull(partEnt)?.Slot;
+        var originalIntegrity = partEnt.Comp.Integrity;
         foreach (var (damageType, damageValue) in damage.DamageDict)
         {
+            if (damageValue.Float() == 0)
+                continue;
+
             float modifier = GetDamageModifier(damageType);
             float partModifier = GetPartDamageModifier(targetType);
-            partEnt.Comp.Integrity -= damageValue.Float() * modifier;
-            if (severingDamageTypes.Contains(damageType) && partIdSlot is not null && partEnt.Comp.Integrity <= 0)
+            partEnt.Comp.Integrity -= damageValue.Float() * modifier * partModifier;
+            if (severingDamageTypes.Contains(damageType)
+                && partIdSlot is not null && partEnt.Comp.Integrity <= 0)
             {
                 severed = true;
                 break;
             }
         }
 
+        if (partEnt.Comp.Integrity != originalIntegrity
+            && TryComp<TargetingComponent>(partEnt.Comp.Body, out var targeting)
+            && TryComp<MobStateComponent>(partEnt.Comp.Body, out var state))
+        {
+            var newIntegrity = GetIntegrityThreshold(partEnt.Comp.Integrity, severed);
+
+            // We need to check if the part is dead to prevent the UI from showing dead parts as alive.
+            if (targeting.BodyStatus[targetPart] != TargetIntegrity.Dead)
+                targeting.BodyStatus[targetPart] = newIntegrity;
+
+            // Revival events are handled by the server, so ends up being locked to a network event.
+            if (_net.IsServer)
+                RaiseNetworkEvent(new TargetIntegrityChangeEvent(GetNetEntity(partEnt.Comp.Body.Value)), partEnt.Comp.Body.Value);
+        }
+
         // This will also prevent the torso from being removed.
-        if (severed && partIdSlot is not null && partEnt.Comp.Body is not null)
+        if (severed
+            && partIdSlot is not null
+            && partEnt.Comp.Body is not null)
         {
             DropPart(partEnt);
         }
@@ -38,27 +65,66 @@ public partial class SharedBodySystem
     }
 
     /// <summary>
+    /// Gets the integrity of all body parts in the entity.
+    /// </summary>
+    public Dictionary<TargetBodyPart, TargetIntegrity> GetBodyPartStatus(EntityUid entityUid)
+    {
+        var result = new Dictionary<TargetBodyPart, TargetIntegrity>();
+
+        if (!TryComp<BodyComponent>(entityUid, out var body))
+            return result;
+
+        foreach (TargetBodyPart part in Enum.GetValues(typeof(TargetBodyPart)))
+        {
+            result[part] = TargetIntegrity.Severed;
+        }
+
+        foreach (var partComponent in GetBodyChildren(entityUid, body))
+        {
+            var targetBodyPart = GetTargetBodyPart(partComponent.Component.PartType, partComponent.Component.Symmetry);
+
+            if (targetBodyPart != null)
+            {
+                result[targetBodyPart.Value] = GetIntegrityThreshold(partComponent.Component.Integrity, false);
+            }
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Converts Enums from BodyPartType to their Targeting system equivalent.
+    /// </summary>
+    private TargetBodyPart? GetTargetBodyPart(BodyPartType type, BodyPartSymmetry symmetry)
+    {
+        return (type, symmetry) switch
+        {
+            (BodyPartType.Head, _) => TargetBodyPart.Head,
+            (BodyPartType.Torso, _) => TargetBodyPart.Torso,
+            (BodyPartType.Arm, BodyPartSymmetry.Left) => TargetBodyPart.LeftArm,
+            (BodyPartType.Arm, BodyPartSymmetry.Right) => TargetBodyPart.RightArm,
+            (BodyPartType.Leg, BodyPartSymmetry.Left) => TargetBodyPart.LeftLeg,
+            (BodyPartType.Leg, BodyPartSymmetry.Right) => TargetBodyPart.RightLeg,
+            _ => null
+        };
+    }
+
+    /// <summary>
     /// Converts Enums from Targeting system to their BodyPartType equivalent.
     /// </summary>
     public (BodyPartType Type, BodyPartSymmetry Symmetry) ConvertTargetBodyPart(TargetBodyPart targetPart)
     {
-        switch (targetPart)
+        return targetPart switch
         {
-            case TargetBodyPart.Head:
-                return (BodyPartType.Head, BodyPartSymmetry.None);
-            case TargetBodyPart.Torso:
-                return (BodyPartType.Torso, BodyPartSymmetry.None);
-            case TargetBodyPart.LeftArm:
-                return (BodyPartType.Arm, BodyPartSymmetry.Left);
-            case TargetBodyPart.RightArm:
-                return (BodyPartType.Arm, BodyPartSymmetry.Right);
-            case TargetBodyPart.LeftLeg:
-                return (BodyPartType.Leg, BodyPartSymmetry.Left);
-            case TargetBodyPart.RightLeg:
-                return (BodyPartType.Leg, BodyPartSymmetry.Right);
-            default:
-                return (BodyPartType.Torso, BodyPartSymmetry.None);
-        }
+            TargetBodyPart.Head => (BodyPartType.Head, BodyPartSymmetry.None),
+            TargetBodyPart.Torso => (BodyPartType.Torso, BodyPartSymmetry.None),
+            TargetBodyPart.LeftArm => (BodyPartType.Arm, BodyPartSymmetry.Left),
+            TargetBodyPart.RightArm => (BodyPartType.Arm, BodyPartSymmetry.Right),
+            TargetBodyPart.LeftLeg => (BodyPartType.Leg, BodyPartSymmetry.Left),
+            TargetBodyPart.RightLeg => (BodyPartType.Leg, BodyPartSymmetry.Right),
+            _ => (BodyPartType.Torso, BodyPartSymmetry.None)
+        };
+
     }
 
     /// <summary>
@@ -66,29 +132,19 @@ public partial class SharedBodySystem
     /// </summary>
     private float GetDamageModifier(string damageType)
     {
-        switch (damageType)
+        return damageType switch
         {
-            case "Blunt":
-                return 1.3f;
-            case "Slash":
-                return 1.3f;
-            case "Pierce":
-                return 1.3f;
-            case "Heat":
-                return 1.0f;
-            case "Cold":
-                return 1.0f;
-            case "Shock":
-                return 0.8f;
-            case "Poison":
-                return 0.8f;
-            case "Radiation":
-                return 0.8f;
-            case "Cellular":
-                return 0.8f;
-            default:
-                return 0.5f;
-        }
+            "Blunt" => 1.3f,
+            "Slash" => 1.3f,
+            "Pierce" => 1.3f,
+            "Heat" => 1.0f,
+            "Cold" => 1.0f,
+            "Shock" => 0.8f,
+            "Poison" => 0.8f,
+            "Radiation" => 0.8f,
+            "Cellular" => 0.8f,
+            _ => 0.5f
+        };
     }
 
     /// <summary>
@@ -96,19 +152,34 @@ public partial class SharedBodySystem
     /// </summary>
     private float GetPartDamageModifier(BodyPartType partType)
     {
-        switch (partType)
+        return partType switch
         {
-            case BodyPartType.Head:
-                return 1.0f;
-            case BodyPartType.Torso:
-                return 1.0f;
-            case BodyPartType.Arm:
-                return 1.0f;
-            case BodyPartType.Leg:
-                return 1.0f;
-            default:
-                return 0.5f;
-        }
+            BodyPartType.Head => 1.0f,
+            BodyPartType.Torso => 1.0f,
+            BodyPartType.Arm => 1.0f,
+            BodyPartType.Leg => 1.0f,
+            _ => 0.5f
+        };
     }
+
+    /// <summary>
+    /// Fetches the TargetIntegrity equivalent of the current integrity value for the body part.
+    /// </summary>
+    private TargetIntegrity GetIntegrityThreshold(float integrity, bool severed)
+    {
+        if (severed)
+            return TargetIntegrity.Severed;
+        else
+            return integrity switch
+            {
+                <= 10.0f => TargetIntegrity.CriticallyWounded,
+                <= 25.0f => TargetIntegrity.HeavilyWounded,
+                <= 40.0f => TargetIntegrity.ModeratelyWounded,
+                <= 60.0f => TargetIntegrity.SomewhatWounded,
+                <= 80.0f => TargetIntegrity.LightlyWounded,
+                _ => TargetIntegrity.Healthy
+            };
+    }
+
 
 }
