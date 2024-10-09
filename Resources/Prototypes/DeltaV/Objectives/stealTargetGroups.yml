@@ -59,7 +59,7 @@
   name: antique katana sheaths
   sprite:
     sprite: Nyanotrasen/Clothing/Belt/katanasheath.rsi
-    state: e_sword
+    state: sheath
 
 - type: stealTargetGroup
   id: RubberStampNotary
