@@ -33,11 +33,11 @@ public sealed partial class ShadowkinSystem : EntitySystem
 
     private void OnInit(EntityUid uid, ShadowkinComponent component, ComponentInit args)
     {
-        if (uid != _playerMan.LocalEntity)
+        if (uid != _playerMan.LocalEntity
+            || _cfg.GetCVar(CCVars.NoVisionFilters))
             return;
 
-        if (!_cfg.GetCVar(CCVars.NoVisionFilters))
-            _overlayMan.AddOverlay(_overlay);
+        _overlayMan.AddOverlay(_overlay);
     }
 
     private void Onhutdown(EntityUid uid, ShadowkinComponent component, ComponentShutdown args)
