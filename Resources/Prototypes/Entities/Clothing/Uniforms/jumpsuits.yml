@@ -558,7 +558,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/janitor_idris.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitor ]
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitorIdris ]
   id: ClothingUniformJumpsuitJanitorIdrisFlipped
   name: idris incorporated janitor jumpsuit
 
@@ -574,7 +574,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/janitor_orion.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitor ]
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitJanitorOrion ]
   id: ClothingUniformJumpsuitJanitorOrionFlipped
   name: orion express janitor jumpsuit
 
