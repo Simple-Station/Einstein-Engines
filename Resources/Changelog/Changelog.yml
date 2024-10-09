@@ -7025,3 +7025,33 @@ Entries:
   id: 6427
   time: '2024-10-09T01:37:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1019
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Almost all security loadout gear is now free.
+    - type: Remove
+      message: >-
+        All Security roles no longer spawn with a pistol by default. This has
+        been moved to Loadouts.
+    - type: Add
+      message: >-
+        Security characters can now choose from a selection of different
+        firearms to use as their Duty Weapon. Disablers, Mk58, and Inspector
+        revolvers are free, fancier weapons such as an N1984 can be bought with
+        loadout points.
+    - type: Add
+      message: Oni can opt to take a Truncheon in lieu of a handgun.
+    - type: Add
+      message: >-
+        Security characters can now take handgun magazines and spare magazines
+        in their loadouts.
+    - type: Add
+      message: Security Backpacks to loadouts.
+    - type: Fix
+      message: >-
+        Fixed issues with the security belt options(webbing, belt, holster) not
+        correctly replacing the original item, and also not containing items
+        either.
+  id: 6428
+  time: '2024-10-09T15:37:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1025
