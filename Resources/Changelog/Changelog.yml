@@ -7065,3 +7065,10 @@ Entries:
   id: 6429
   time: '2024-10-09T15:37:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1022
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed localizations for the Sinta'Azaziba language.
+  id: 6430
+  time: '2024-10-09T15:39:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1020
