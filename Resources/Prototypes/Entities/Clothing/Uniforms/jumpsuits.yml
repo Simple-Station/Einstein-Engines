@@ -232,7 +232,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/chef_idris.rsi
 
 - type: entity
-  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitchefIdris ]
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitChefIdris ]
   id: ClothingUniformChefIdrisFlipped
   name: nidris incorporated notrasen chef uniform
 
