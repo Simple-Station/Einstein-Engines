@@ -28,6 +28,10 @@
       species:
         - Oni
         - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowPotential
   components:
     - type: PotentiaModifier
       potentiaMultiplier: 1.25
@@ -62,6 +66,10 @@
       species:
         - Oni
         - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighPotential
   components:
     - type: PotentiaModifier
       potentiaMultiplier: 0.75

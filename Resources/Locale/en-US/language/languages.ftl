@@ -14,8 +14,8 @@ language-Draconic-name = Sinta'Unathi
 language-Draconic-description =
     The common language of Moghes - composed of sibilant hisses and rattles. Spoken natively by Unathi.
 
-language-Draconic-name = Sinta'Azaziba
-language-Draconic-description =
+language-Azaziba-name = Sinta'Azaziba
+language-Azaziba-description =
     A language of Moghes consisting of a combination of spoken word and gesticulation.
     While waning since Moghes entered the galactic stage - it enjoys popular use by Unathi that never fell to the Hegemony's cultural dominance.
 
