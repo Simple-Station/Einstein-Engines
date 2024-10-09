@@ -74072,13 +74072,6 @@ entities:
     - type: Transform
       pos: -13.373716,18.332554
       parent: 31
-- proto: WeaponSubMachineGunWt550
-  entities:
-  - uid: 1423
-    components:
-    - type: Transform
-      pos: -8.457573,20.768534
-      parent: 31
 - proto: WeaponWaterBlaster
   entities:
   - uid: 8127

@@ -51,6 +51,7 @@ character-item-group-LoadoutOuterSecurity = Security Outerwear
 character-item-group-LoadoutShoesSecurity = Security Shoes
 character-item-group-LoadoutUniformsSecurity = Security Uniforms
 character-item-group-LoadoutWeaponSecurity = Security Duty Weapon
+character-item-group-LoadoutHoSWeapon = Head of Security's Antique Weapon Collection
 
 # Service
 character-item-group-LoadoutEquipmentService = Service Equipment
