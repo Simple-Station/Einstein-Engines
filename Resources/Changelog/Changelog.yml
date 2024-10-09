@@ -7055,3 +7055,13 @@ Entries:
   id: 6428
   time: '2024-10-09T15:37:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1025
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed High & Low Psi-Potential traits lacking a requirement that you
+        don't have the opposite trait. The two were mutually exclusive, so
+        taking both caused issues.
+  id: 6429
+  time: '2024-10-09T15:37:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1022
