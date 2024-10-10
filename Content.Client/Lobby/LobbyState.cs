@@ -7,6 +7,7 @@ using Content.Client.Preferences;
 using Content.Client.Preferences.UI;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Voting;
+using Content.Shared.CCVar;
 using Robust.Client;
 using Robust.Client.Console;
 using Robust.Client.ResourceManagement;
@@ -72,7 +73,9 @@ namespace Content.Client.Lobby
             };
 
             LayoutContainer.SetAnchorPreset(_lobby, LayoutContainer.LayoutPreset.Wide);
-            _lobby.ServerName.Text = _baseClient.GameInfo?.ServerName; //The eye of refactor gazes upon you...
+            var serverName = _baseClient.GameInfo?.ServerName;
+            var shortName = _configurationManager.GetCVar(CCVars.ShortHostName);
+            _lobby.ServerName.Text = shortName?.Length > 0 ? shortName : serverName?.Length > 16 ? serverName[..16] : serverName;
             UpdateLobbyUi();
 
             _lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
