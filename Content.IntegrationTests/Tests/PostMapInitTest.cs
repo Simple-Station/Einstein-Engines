@@ -62,7 +62,8 @@ namespace Content.IntegrationTests.Tests
             "Hammurabi", //DeltaV
             "Lighthouse", //DeltaV
             "Submarine", //DeltaV
-            "Gax"
+            "Gax",
+            "Rad"
         };
 
         /// <summary>
