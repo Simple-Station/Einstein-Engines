@@ -203,7 +203,13 @@ public sealed partial class GunSystem : SharedGunSystem
                             if (!rayCastResults.Any())
                                 break;
 
-                            var result = rayCastResults[0];
+                            var raycastEvent = new HitScanAfterRayCastEvent(rayCastResults);
+                            RaiseLocalEvent(lastUser, ref raycastEvent);
+
+                            if (raycastEvent.RayCastResults == null)
+                                break;
+
+                            var result = raycastEvent.RayCastResults[0];
                             var hit = result.HitEntity;
                             lastHit = hit;
 
