@@ -415,7 +415,7 @@
 - type: trait
   id: PlateletFactories
   category: Physical
-  points: -11
+  points: -10
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
