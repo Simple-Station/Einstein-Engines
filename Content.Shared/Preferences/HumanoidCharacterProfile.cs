@@ -536,22 +536,14 @@ namespace Content.Shared.Preferences
 
             string customspeciename;
             if (string.IsNullOrEmpty(Customspeciename))
-            {
                 customspeciename = "";
-            }
             else if (Customspeciename.Length > MaxNameLength)
-            {
                 customspeciename = FormattedMessage.RemoveMarkup(Customspeciename)[..MaxNameLength];
-            }
             else
-            {
                 customspeciename = FormattedMessage.RemoveMarkup(Customspeciename);
-            }
 
             if (!speciesPrototype.CustomName)
-            {
                 customspeciename = "";
-            }
 
             string flavortext;
             if (FlavorText.Length > MaxDescLength)
