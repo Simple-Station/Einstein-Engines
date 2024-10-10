@@ -17,6 +17,6 @@ public sealed class LayingDownModifierSystem : EntitySystem
             return;
 
         layingDown.StandingUpTime *= component.LayingDownCooldownMultiplier;
-        layingDown.SpeedModify *= component.DownedSpeedMultiplierMultiplier;
+        layingDown.LyingSpeedModifier *= component.DownedSpeedMultiplierMultiplier;
     }
 }
