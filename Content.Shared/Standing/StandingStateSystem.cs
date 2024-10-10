@@ -63,7 +63,7 @@ public sealed class StandingStateSystem : EntitySystem
 
         standingState.CurrentState = StandingState.Lying;
         Dirty(standingState);
-        RaiseLocalEvent(uid, new DownedEvent { UpdateDrawDepth = setDrawDepth }, false);
+        RaiseLocalEvent(uid, new DownedEvent(), false);
 
         // Seemed like the best place to put it
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal, appearance);
@@ -119,7 +119,7 @@ public sealed class StandingStateSystem : EntitySystem
 
         standingState.CurrentState = StandingState.Standing;
         Dirty(uid, standingState);
-        RaiseLocalEvent(uid, new StoodEvent { UpdateDrawDepth = true }, false);
+        RaiseLocalEvent(uid, new StoodEvent(), false);
 
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Vertical, appearance);
 
