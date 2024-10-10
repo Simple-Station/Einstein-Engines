@@ -1,3 +1,4 @@
+using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
 using Content.Shared.DoAfter;
 using Content.Shared.Gravity;
@@ -22,6 +23,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _speed = default!;
+    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
 
     public override void Initialize()
     {
@@ -58,11 +60,12 @@ public abstract class SharedLayingDownSystem : EntitySystem
     private void HandleCrawlUnderRequest(ICommonSession? session)
     {
         if (session == null
-            || !TryComp<StandingStateComponent>(session.AttachedEntity, out var standingState)
-            || !TryComp<LayingDownComponent>(session.AttachedEntity, out var layingDown))
+            || session.AttachedEntity is not {} uid
+            || !TryComp<StandingStateComponent>(uid, out var standingState)
+            || !TryComp<LayingDownComponent>(uid, out var layingDown)
+            || !_actionBlocker.CanInteract(uid, null))
             return;
 
-        var uid = session.AttachedEntity.Value;
         var newState = !layingDown.IsCrawlingUnder;
         if (standingState.CurrentState is StandingState.Standing)
             newState = false; // If the entity is already standing, this function only serves a fallback method to fix its draw depth
