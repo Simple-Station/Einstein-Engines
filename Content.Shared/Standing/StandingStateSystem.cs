@@ -153,15 +153,9 @@ public sealed class StandAttemptEvent : CancellableEntityEventArgs { }
 /// <summary>
 ///     Raised when an entity becomes standing
 /// </summary>
-public sealed class StoodEvent : EntityEventArgs
-{
-    public bool UpdateDrawDepth = false;
-}
+public sealed class StoodEvent : EntityEventArgs { }
 
 /// <summary>
 ///     Raised when an entity is not standing
 /// </summary>
-public sealed class DownedEvent  : EntityEventArgs
-{
-    public bool UpdateDrawDepth = false;
-}
+public sealed class DownedEvent  : EntityEventArgs { }
