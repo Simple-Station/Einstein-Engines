@@ -8,13 +8,19 @@ namespace Content.Shared.Standing;
 public sealed partial class LayingDownComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public float StandingUpTime { get; set; } = 1f;
+    public float StandingUpTime = 1f;
 
     [DataField, AutoNetworkedField]
-    public float SpeedModify { get; set; } = 0.4f;
+    public float SpeedModify = 0.4f, CrawlingUnderSpeedModifier = 0.4f;
 
     [DataField, AutoNetworkedField]
     public bool AutoGetUp;
+
+    /// <summary>
+    ///     If true, the entity is choosing to crawl under furniture. This is purely visual and has no effect on physics.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool IsCrawlingUnder = false;
 
     [DataField, AutoNetworkedField]
     public int NormalDrawDepth = (int) DrawDepth.DrawDepth.Mobs;
@@ -30,16 +36,4 @@ public sealed class ChangeLayingDownEvent : CancellableEntityEventArgs;
 public sealed class CheckAutoGetUpEvent(NetEntity user) : CancellableEntityEventArgs
 {
     public NetEntity User = user;
-}
-
-[Serializable, NetSerializable]
-public sealed class DrawDownedEvent(NetEntity uid) : EntityEventArgs
-{
-    public NetEntity Uid = uid;
-}
-
-[Serializable, NetSerializable]
-public sealed class DrawStoodEvent(NetEntity uid) : EntityEventArgs
-{
-    public NetEntity Uid = uid;
 }

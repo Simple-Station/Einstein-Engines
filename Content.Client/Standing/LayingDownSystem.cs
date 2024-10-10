@@ -3,8 +3,8 @@ using Content.Shared.Rotation;
 using Content.Shared.Standing;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
-using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
 
 namespace Content.Client.Standing;
 
@@ -21,10 +21,24 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
         base.Initialize();
 
         SubscribeLocalEvent<LayingDownComponent, MoveEvent>(OnMovementInput);
-        SubscribeNetworkEvent<DrawDownedEvent>(OnDowned);
-        SubscribeNetworkEvent<DrawStoodEvent>(OnStood);
-
         SubscribeNetworkEvent<CheckAutoGetUpEvent>(OnCheckAutoGetUp);
+    }
+
+    public override void Update(float frameTime)
+    {
+        // Update draw depth of laying down entities as necessary
+        var query = EntityQueryEnumerator<LayingDownComponent, StandingStateComponent, SpriteComponent>();
+        while (query.MoveNext(out var uid, out var layingDown, out var standing, out var sprite))
+        {
+            var desiredDrawDepth = standing.CurrentState is StandingState.Lying && layingDown.IsCrawlingUnder
+                ? layingDown.CrawlingDrawDepth
+                : layingDown.NormalDrawDepth;
+
+            if (sprite.DrawDepth != desiredDrawDepth)
+                sprite.DrawDepth = desiredDrawDepth;
+        }
+
+        query.Dispose();
     }
 
     private void OnMovementInput(EntityUid uid, LayingDownComponent component, MoveEvent args)
@@ -49,26 +63,6 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
 
         rotationVisuals.HorizontalRotation = Angle.FromDegrees(90);
         sprite.Rotation = Angle.FromDegrees(90);
-    }
-
-    private void OnDowned(DrawDownedEvent args)
-    {
-        var uid = GetEntity(args.Uid);
-        if (!TryComp<SpriteComponent>(uid, out var sprite)
-            || !TryComp<LayingDownComponent>(uid, out var component))
-            return;
-
-        sprite.DrawDepth = component.CrawlingDrawDepth;
-    }
-
-    private void OnStood(DrawStoodEvent args)
-    {
-        var uid = GetEntity(args.Uid);
-        if (!TryComp<SpriteComponent>(uid, out var sprite)
-            || !TryComp<LayingDownComponent>(uid, out var component))
-            return;
-
-        sprite.DrawDepth = component.NormalDrawDepth;
     }
 
     private void OnCheckAutoGetUp(CheckAutoGetUpEvent ev, EntitySessionEventArgs args)
