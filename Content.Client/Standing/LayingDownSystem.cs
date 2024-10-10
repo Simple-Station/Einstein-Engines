@@ -30,12 +30,13 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
         var query = EntityQueryEnumerator<LayingDownComponent, StandingStateComponent, SpriteComponent>();
         while (query.MoveNext(out var uid, out var layingDown, out var standing, out var sprite))
         {
-            var desiredDrawDepth = standing.CurrentState is StandingState.Lying && layingDown.IsCrawlingUnder
+            // Do not modify the entities draw depth if it's modified externally
+            if (sprite.DrawDepth != layingDown.NormalDrawDepth && sprite.DrawDepth != layingDown.CrawlingUnderDrawDepth)
+                continue;
+
+            sprite.DrawDepth = standing.CurrentState is StandingState.Lying && layingDown.IsCrawlingUnder
                 ? layingDown.CrawlingUnderDrawDepth
                 : layingDown.NormalDrawDepth;
-
-            if (sprite.DrawDepth != desiredDrawDepth)
-                sprite.DrawDepth = desiredDrawDepth;
         }
 
         query.Dispose();
