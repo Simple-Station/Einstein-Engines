@@ -5817,13 +5817,6 @@ entities:
     - pos: 1.5,4.5
       parent: 1
       type: Transform
-- proto: VendingMachineBrazuca
-  entities:
-  - uid: 840
-    components:
-    - pos: 5.5,9.5
-      parent: 1
-      type: Transform
 - proto: VendingMachineCigs
   entities:
   - uid: 841
