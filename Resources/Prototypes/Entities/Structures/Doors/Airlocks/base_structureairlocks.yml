@@ -142,7 +142,7 @@
   - type: StaticPrice
     price: 150
   - type: LightningTarget
-    priority: 1
+    weighting: 10
   - type: Tag
     tags:
       - Airlock

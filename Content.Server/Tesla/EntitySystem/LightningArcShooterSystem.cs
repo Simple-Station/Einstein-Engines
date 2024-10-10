@@ -1,4 +1,6 @@
+using Content.Server.Administration.Commands;
 using Content.Server.Lightning;
+using Content.Shared.Lightning;
 using Content.Server.Tesla.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -43,7 +45,42 @@ public sealed class LightningArcShooterSystem : EntitySystem
 
     private void ArcShoot(EntityUid uid, LightningArcShooterComponent component)
     {
-        var arcs = _random.Next(1, component.MaxLightningArc);
-        _lightning.ShootRandomLightnings(uid, component.ShootRange, arcs, component.LightningPrototype, component.ArcDepth);
+        int lightningBolts = _random.Next(1, component.MaxBolts);
+        int boltIterator = lightningBolts;
+        int lightningArcs = _random.Next(lightningBolts, component.MaxArcs);
+
+        int DynamicArcs(LightningContext context)
+        {
+            boltIterator -= 1;
+
+            if (boltIterator > 0)
+            {
+                int diff = _random.Next(1, lightningArcs - boltIterator);
+                lightningArcs -= diff;
+                return diff;
+            };
+
+            return lightningArcs;
+        }
+
+        float DynamicCharge(LightningContext context)
+        {
+            return _random.Next(context.MaxArcs, (int) Math.Round((decimal) component.MaxArcs / lightningBolts, 0)) * 10000f;
+        }
+
+        LightningContext lightningContext = new LightningContext
+        {
+            ArcRange = (context) => component.ArcRadius,
+            ArcForks = (context) =>
+            {
+                if (_random.NextFloat(0f, 1f) > component.ForkChance)
+                    return 1;
+
+                return _random.Next(2, Math.Max(2, component.MaxForks));
+            },
+            LightningPrototype = (discharge, context) => component.LightningPrototype.ToString(),
+        };
+
+        _lightning.ShootRandomLightnings(uid, component.BoltRadius, lightningBolts, lightningContext, dynamicArcs: DynamicArcs, dynamicCharge: DynamicCharge);
     }
 }

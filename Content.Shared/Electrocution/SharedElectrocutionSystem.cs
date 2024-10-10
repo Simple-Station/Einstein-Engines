@@ -1,3 +1,4 @@
+using Content.Shared.Damage;
 using Content.Shared.Inventory;
 using Content.Shared.StatusEffect;
 
@@ -33,7 +34,7 @@ namespace Content.Shared.Electrocution
         /// <param name="ignoreInsulation">Should the electrocution bypass the Insulated component?</param>
         /// <returns>Whether the entity <see cref="uid"/> was stunned by the shock.</returns>
         public virtual bool TryDoElectrocution(
-            EntityUid uid, EntityUid? sourceUid, int shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
+            EntityUid uid, EntityUid? sourceUid, DamageSpecifier damageSpecifier, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
             StatusEffectsComponent? statusEffects = null, bool ignoreInsulation = false)
         {
             // only done serverside

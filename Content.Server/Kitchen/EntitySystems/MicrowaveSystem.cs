@@ -416,7 +416,11 @@ namespace Content.Server.Kitchen.EntitySystems
             }
 
             if (_random.Prob(ent.Comp2.LightningChance))
-                _lightning.ShootRandomLightnings(ent, 1.0f, 2, MalfunctionSpark, triggerLightningEvents: false);
+                _lightning.ShootRandomLightnings(ent, 1.0f, 2, 5000f,
+                    lightningPrototype: MalfunctionSpark,
+                    electrocute: false,
+                    explode: false
+                );
         }
 
         /// <summary>

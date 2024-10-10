@@ -17,10 +17,10 @@ public sealed class LightningSparkingSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<LightningSparkingComponent, HitByLightningEvent>(OnHitByLightning);
+        SubscribeLocalEvent<LightningSparkingComponent, LightningEffectEvent>(OnLightningEffect);
     }
 
-    private void OnHitByLightning(Entity<LightningSparkingComponent> uid, ref HitByLightningEvent args)
+    private void OnLightningEffect(Entity<LightningSparkingComponent> uid, ref LightningEffectEvent args)
     {
         _appearance.SetData(uid.Owner, TeslaCoilVisuals.Lightning, true);
         uid.Comp.LightningEndTime = _gameTiming.CurTime + TimeSpan.FromSeconds(uid.Comp.LightningTime);

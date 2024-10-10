@@ -70,6 +70,8 @@
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
+  - type: LightningTarget
+    weighting: 2
   placement:
     mode: SnapgridCenter
     snap:

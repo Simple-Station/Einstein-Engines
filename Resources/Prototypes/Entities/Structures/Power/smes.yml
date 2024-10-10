@@ -94,6 +94,13 @@
       sendBroadcastAttemptEvent: true
       examinableAddress: true
     - type: WiredNetworkConnection
+    - type: LightningTarget
+      weighting: 75
+    - type: Explosive
+      explosionType: Default
+      maxIntensity: 5
+      intensitySlope: 5
+      totalIntensity: 25
 
 # SMES' in use
 

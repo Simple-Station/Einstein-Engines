@@ -12,6 +12,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Electrocution;
+using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
@@ -203,6 +204,20 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         TryDoElectrifiedAct(uid, args.User, siemens, electrified);
     }
 
+    /* 
+        im pretty sure this was removed in a cherry-pick, but id like to keep it around for future overvoltage stuff
+        -WarMechanic
+    */ 
+    public float CalculateElectrifiedDamageScale(float power)
+    {
+        // A logarithm allows a curve of damage that grows quickly, but slows down dramatically past a value. This keeps the damage to a reasonable range.
+        const float DamageShift = 1.67f; // Shifts the curve for an overall higher or lower damage baseline
+        const float CeilingCoefficent = 1.35f; // Adjusts the approach to maximum damage, higher = Higher top damage
+        const float LogGrowth = 0.00001f; // Adjusts the growth speed of the curve
+
+        return DamageShift + MathF.Log(power * LogGrowth) * CeilingCoefficent;
+    }
+
     public bool TryDoElectrifiedAct(EntityUid uid, EntityUid targetUid,
         float siemens = 1,
         ElectrifiedComponent? electrified = null,
@@ -290,13 +305,26 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         }
     }
 
+    public bool TryDoElectrocution(
+        EntityUid uid, EntityUid? sourceUid, FixedPoint2 shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
+        StatusEffectsComponent? statusEffects = null, bool ignoreInsulation = false)
+    {
+        var damage = new DamageSpecifier();
+        damage.DamageDict.Add("Shock", shockDamage.Value);
+
+        return TryDoElectrocution(
+            uid, sourceUid, damage, time, refresh, siemensCoefficient,
+            statusEffects, ignoreInsulation
+        );
+    }
+
     /// <inheritdoc/>
     public override bool TryDoElectrocution(
-        EntityUid uid, EntityUid? sourceUid, int shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
+        EntityUid uid, EntityUid? sourceUid, DamageSpecifier damageSpecifier, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
         StatusEffectsComponent? statusEffects = null, bool ignoreInsulation = false)
     {
         if (!DoCommonElectrocutionAttempt(uid, sourceUid, ref siemensCoefficient, ignoreInsulation)
-            || !DoCommonElectrocution(uid, sourceUid, shockDamage, time, refresh, siemensCoefficient, statusEffects))
+            || !DoCommonElectrocution(uid, sourceUid, damageSpecifier, time, refresh, siemensCoefficient, statusEffects))
             return false;
 
         RaiseLocalEvent(uid, new ElectrocutedEvent(uid, sourceUid, siemensCoefficient, shockDamage), true);
@@ -370,47 +398,53 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
     }
 
     private bool DoCommonElectrocution(EntityUid uid, EntityUid? sourceUid,
-        int? shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
+        FixedPoint2? shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
+        StatusEffectsComponent? statusEffects = null)
+    {
+        var damage = new DamageSpecifier();
+        if (shockDamage.HasValue)
+            damage.DamageDict.Add("Shock", shockDamage.Value);
+
+        return DoCommonElectrocution(uid, sourceUid, damage, time, refresh, siemensCoefficient, statusEffects);
+    }
+
+    private bool DoCommonElectrocution(EntityUid uid, EntityUid? sourceUid,
+        DamageSpecifier? damageSpecifier, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
         StatusEffectsComponent? statusEffects = null)
     {
         if (siemensCoefficient <= 0)
             return false;
 
-        if (shockDamage != null)
+        var checkDamage = false;
+        if (damageSpecifier != null)
         {
-            shockDamage = (int) (shockDamage * siemensCoefficient);
+            damageSpecifier *= siemensCoefficient;
+            var actual = _damageable.TryChangeDamage(uid, damageSpecifier, origin: sourceUid);
 
-            if (shockDamage.Value <= 0)
-                return false;
-        }
-
-        if (!Resolve(uid, ref statusEffects, false) ||
-            !_statusEffects.CanApplyEffect(uid, StatusEffectKey, statusEffects))
-        {
-            return false;
-        }
-
-        if (!_statusEffects.TryAddStatusEffect<ElectrocutedComponent>(uid, StatusEffectKey, time, refresh, statusEffects))
-            return false;
-
-        var shouldStun = siemensCoefficient > 0.5f;
-
-        if (shouldStun)
-            _stun.TryParalyze(uid, time * ParalyzeTimeMultiplier, refresh, statusEffects);
-
-        // TODO: Sparks here.
-
-        if (shockDamage is { } dmg)
-        {
-            var actual = _damageable.TryChangeDamage(uid,
-                new DamageSpecifier(_prototypeManager.Index<DamageTypePrototype>(DamageType), dmg), origin: sourceUid);
-
-            if (actual != null)
+            if (actual != null && actual.DamageDict.Values.Sum() > FixedPoint2.Zero)
             {
                 _adminLogger.Add(LogType.Electrocution,
                     $"{ToPrettyString(uid):entity} received {actual.GetTotal():damage} powered electrocution damage{(sourceUid != null ? " from " + ToPrettyString(sourceUid.Value) : ""):source}");
+
+                checkDamage = true;
             }
         }
+
+        var checkStun = false;
+        if (siemensCoefficient > 0.5f
+            && Resolve(uid, ref statusEffects, false)
+            && _statusEffects.CanApplyEffect(uid, StatusEffectKey, statusEffects)
+            && _statusEffects.TryAddStatusEffect<ElectrocutedComponent>(uid, StatusEffectKey, time, refresh, statusEffects))
+        {
+            _stun.TryParalyze(uid, time * ParalyzeTimeMultiplier, refresh, statusEffects);
+
+            checkStun = true;
+        }
+
+        if (!checkDamage && !checkStun)
+            return false;
+
+        // TODO: Sparks here.
 
         _stuttering.DoStutter(uid, time * StutteringTimeMultiplier, refresh, statusEffects);
         _jittering.DoJitter(uid, time * JitterTimeMultiplier, refresh, JitterAmplitude, JitterFrequency, true, statusEffects);

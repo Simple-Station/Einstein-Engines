@@ -16,15 +16,15 @@ public sealed class TeslaCoilSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<TeslaCoilComponent, HitByLightningEvent>(OnHitByLightning);
+        SubscribeLocalEvent<TeslaCoilComponent, LightningEffectEvent>(OnLightningEffect);
     }
 
     //When struck by lightning, charge the internal battery
-    private void OnHitByLightning(Entity<TeslaCoilComponent> coil, ref HitByLightningEvent args)
+    private void OnLightningEffect(Entity<TeslaCoilComponent> coil, ref LightningEffectEvent args)
     {
         if (TryComp<BatteryComponent>(coil, out var batteryComponent))
         {
-            _battery.SetCharge(coil, batteryComponent.CurrentCharge + coil.Comp.ChargeFromLightning);
+            _battery.SetCharge(coil, batteryComponent.CurrentCharge + args.Discharge * coil.Comp.LightningChargeEfficiency);
         }
     }
 }

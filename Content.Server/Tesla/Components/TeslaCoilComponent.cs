@@ -13,5 +13,5 @@ public sealed partial class TeslaCoilComponent : Component
     /// </summary>
     // To Do: Different lightning bolts have different powers and generate different amounts of energy
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float ChargeFromLightning = 50000f;
+    public float LightningChargeEfficiency = 0.9f;
 }

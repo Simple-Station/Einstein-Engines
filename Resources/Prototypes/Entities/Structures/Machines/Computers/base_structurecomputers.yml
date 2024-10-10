@@ -59,7 +59,12 @@
       board: !type:Container
         ents: []
   - type: LightningTarget
-    priority: 1
+    weighting: 10
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 1
+    intensitySlope: 5
+    totalIntensity: 5
   - type: RequireProjectileTarget
   - type: LanguageSpeaker
     currentLanguage: TauCetiBasic

@@ -61,12 +61,8 @@
     startingCharge: 0
   - type: BatteryDischarger
   - type: TeslaCoil
-    chargeFromLightning: 500000
   - type: LightningTarget
-    priority: 4
-    hitProbability: 0.5
-    lightningResistance: 10
-    lightningExplode: false
+    weighting: 200
   - type: PowerNetworkBattery
     maxSupply: 1000000
     supplyRampTolerance: 1000000
@@ -77,6 +73,7 @@
   - type: InteractionOutline
   - type: Damageable
     damageContainer: StructuralInorganic
+    damageModifierSet: ShockAbsorber
   - type: ExaminableDamage
     messages: WindowMessages
   - type: Repairable
@@ -150,10 +147,9 @@
           False: { state: grounding_rod_open }
   - type: LightningSparking
   - type: LightningTarget
-    priority: 3
-    lightningResistance: 10
-    lightningExplode: false
-    damageFromLightning: 0
+    weighting: 400
+    lightningArcReduction: 1
+    lightningChargeMultiplier: 0.5 # consume charge when struck
   - type: Anchorable
   - type: Rotatable
   - type: Pullable
@@ -164,6 +160,7 @@
   - type: Repairable
   - type: Damageable
     damageContainer: StructuralInorganic
+    damageModifierSet: ShockAbsorber
   - type: DamageVisuals
     thresholds: [8, 16, 25]
     damageDivisor: 3.333

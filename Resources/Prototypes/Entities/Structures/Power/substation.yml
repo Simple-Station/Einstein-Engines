@@ -113,6 +113,8 @@
     requirePower: true
     highVoltageNode: input
     mediumVoltageNode: output
+  - type: LightningTarget
+    weighting: 50
 
 # Compact Wall Substation Base
 - type: entity
@@ -218,6 +220,8 @@
     totalIntensity: 100
   - type: StationInfiniteBatteryTarget
   - type: WallMount
+  - type: LightningTarget
+    weighting: 50
 
 # Substations in use
 

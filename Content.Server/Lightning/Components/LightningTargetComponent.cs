@@ -13,60 +13,31 @@ namespace Content.Server.Lightning.Components;
 public sealed partial class LightningTargetComponent : Component
 {
     /// <summary>
-    /// The probability that this target will not be ignored by a lightning strike. This is necessary for Tesla's balance.
+    /// The probability weighting of being stuck by lightning, compared against other nearby lightning targets.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float HitProbability = 1f;
-
-    /// <summary>
-    /// Priority level for selecting a lightning target. 
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public int Priority;
+    [DataField]
+    public float Weighting = 1f;
 
     /// <summary>
     /// Lightning has a number of bounces into neighboring targets.
     /// This number controls how many bounces the lightning bolt has left after hitting that target.
     /// At high values, the lightning will not travel farther than that entity.
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public int LightningResistance = 1; //by default, reduces the number of bounces from this target by 1
-
-    // BOOM PART
-
-    /// <summary>
-    /// Will the entity explode after being struck by lightning?
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool LightningExplode = true;
-
-    /// <summary>
-    /// The explosion prototype to spawn
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<ExplosionPrototype> ExplosionPrototype = "Default";
-
-    /// <summary>
-    /// The total amount of intensity an explosion can achieve
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float TotalIntensity = 25f;
-
-    /// <summary>
-    /// How quickly does the explosion's power slope? Higher = smaller area and more concentrated damage, lower = larger area and more spread out damage
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float Dropoff = 2f;
-
-    /// <summary>
-    /// How much intensity can be applied per tile?
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MaxTileIntensity = 5f;
-
-    /// <summary>
-    /// how much structural damage the object takes from a lightning strike
+    /// For the love of god, do not make this number negative.
     /// </summary>
     [DataField]
-    public FixedPoint2 DamageFromLightning = 1;
+    public int LightningArcReduction = 0;
+
+    /// <summary>
+    /// Lightning has a charge that gauges its energy.
+    /// This number subtracts residual charge after absorption.
+    /// </summary>
+    [DataField]
+    public float LightningChargeReduction = 0f;
+
+    /// <summary>
+    /// Lightning has a charge that gauges its energy.
+    /// This number multiplies residual charge after absorption.
+    /// </summary>
+    [DataField]
+    public float LightningChargeMultiplier = 1f;
 }

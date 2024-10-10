@@ -1,9 +1,17 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Content.Server.Beam;
 using Content.Server.Beam.Components;
 using Content.Server.Lightning.Components;
+using Content.Shared.Damage;
 using Content.Shared.Lightning;
+using Content.Shared.Random.Helpers;
+using FastAccessors;
+using Robust.Server.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Lightning;
 
@@ -20,6 +28,17 @@ public sealed class LightningSystem : SharedLightningSystem
     [Dependency] private readonly BeamSystem _beam = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly IEntityManager _entMan = default!;
+
+    // a priority queue is required to iterate through Arcs of various depth
+    private PriorityQueue<LightningArc, int> _lightningQueue = new PriorityQueue<LightningArc, int>();
+
+    // a dictionary allows insertation / removal of new lightning bolt data 'infinitely' without throwing errors
+    // don't worry, the data gets deleted afterwards
+    private Dictionary<int, LightningContext> _lightningDict = new Dictionary<int, LightningContext>();
+    private int _lightningId = -1;
+    private int NextId() { return _lightningId++; }
 
     public override void Initialize()
     {
@@ -39,71 +58,276 @@ public sealed class LightningSystem : SharedLightningSystem
     }
 
     /// <summary>
-    /// Fires lightning from user to target
+    /// Fires a lightning bolt from one entity to another
     /// </summary>
-    /// <param name="user">Where the lightning fires from</param>
-    /// <param name="target">Where the lightning fires to</param>
-    /// <param name="lightningPrototype">The prototype for the lightning to be created</param>
-    /// <param name="triggerLightningEvents">if the lightnings being fired should trigger lightning events.</param>
-    public void ShootLightning(EntityUid user, EntityUid target, string lightningPrototype = "Lightning", bool triggerLightningEvents = true)
+    public void ShootLightning(EntityUid user, EntityUid target, float totalCharge,
+        int maxArcs = 1,
+        float arcRange = 5f,
+        int arcForks = 1,
+        bool arcStacking = false,
+        string lightningPrototype = "Lightning",
+        float damage = 15,
+        bool electrocute = true,
+        bool explode = true
+    )
     {
-        var spriteState = LightningRandomizer();
-        _beam.TryCreateBeam(user, target, lightningPrototype, spriteState);
-
-        if (triggerLightningEvents) // we don't want certain prototypes to trigger lightning level events
+        LightningContext context = new LightningContext()
         {
-            var ev = new HitByLightningEvent(user, target);
-            RaiseLocalEvent(target, ref ev);
+            Charge = totalCharge,
+            MaxArcs = maxArcs,
+            ArcRange = (LightningContext context) => arcRange,
+            ArcForks = (LightningContext context) => arcForks,
+            ArcStacking = (LightningContext context) => arcStacking,
+            LightningPrototype = (float discharge, LightningContext context) => lightningPrototype,
+            Electrocute = (float discharge, LightningContext context) => electrocute,
+            Explode = (float discharge, LightningContext context) => explode,
+        };
+
+        ShootLightning(user, target, context);
+    }
+
+    /// <summary>
+    /// Fires a lightning bolt from one entity to another
+    /// </summary>
+    public void ShootLightning(EntityUid user, EntityUid target, LightningContext context)
+    {
+        if (context.MaxArcs <= 0)
+            return;
+
+        int id = NextId();
+        context.Id = id;
+        context.Invoker = user;
+        _lightningDict[context.Id] = context;
+
+        LightningArc lightningArc = new LightningArc
+        {
+            User = user,
+            Target = target,
+            ContextId = context.Id,
+        };
+        StageLightningArc(lightningArc);
+    }
+
+    /// <summary>
+    /// Looks for objects with a LightningTarget component in the radius, and fire lightning at (weighted) random targets
+    /// </summary>
+    public void ShootRandomLightnings(EntityUid user, float lightningRadius, int lightningCount, float lightningChargePer, EntityCoordinates? queryPosition = null, bool lightningStacking = true,
+        int maxArcs = 1,
+        float arcRange = 5f,
+        int arcForks = 1,
+        bool arcStacking = false,
+        string lightningPrototype = "Lightning",
+        bool electrocute = true,
+        bool explode = true
+    )
+    {
+        LightningContext context = new LightningContext()
+        {
+            Charge = lightningChargePer,
+            MaxArcs = maxArcs,
+            ArcRange = (LightningContext context) => arcRange,
+            ArcForks = (LightningContext context) => arcForks,
+            ArcStacking = (LightningContext context) => arcStacking,
+            LightningPrototype = (float discharge, LightningContext context) => lightningPrototype,
+            Electrocute = (float discharge, LightningContext context) => electrocute,
+            Explode = (float discharge, LightningContext context) => explode,
+        };
+
+        ShootRandomLightnings(user, lightningRadius, lightningCount, context, queryPosition, lightningStacking);
+    }
+
+    /// <summary>
+    /// Looks for objects with a LightningTarget component in the radius, and fire lightning at (weighted) random targets
+    /// </summary>
+    public void ShootRandomLightnings(EntityUid user, float lightningRadius, int lightningCount, LightningContext context, EntityCoordinates? queryPosition = null, bool lightningStacking = true,
+        Func<LightningContext, float>? dynamicCharge = null,
+        Func<LightningContext, int>? dynamicArcs = null
+    )
+    {
+        // default the query location to the user's position
+        if (!queryPosition.HasValue)
+            queryPosition = Transform(user).Coordinates;
+
+        if (!TryGetLightningTargets(queryPosition.Value, lightningRadius, out var weights))
+            return;
+
+        // remove the user to prevent lightning striking self
+        weights.Remove(user.ToString());
+
+        for (int i = 0; i < lightningCount; i++)
+        {
+            if (weights.Count <= 0)
+                break;
+
+            string stringTarget = _random.Pick(weights);
+            EntityUid target = EntityUid.Parse(stringTarget);
+
+            LightningContext clone = context.Clone();
+            if (dynamicCharge != null) clone.Charge = dynamicCharge(context);
+            if (dynamicArcs != null) clone.MaxArcs = dynamicArcs(context);
+
+            ShootLightning(user, target, clone);
+
+            if (!lightningStacking)
+                weights.Remove(stringTarget);
         }
     }
 
+    /// <summary>
+    /// Helper function that gets entities with LightningTarget component in a radius
+    /// </summary>
+    private bool TryGetLightningTargets(EntityCoordinates queryPosition, float radius, [NotNullWhen(true)] out Dictionary<string, float>? weights)
+    {
+        weights = null;
+
+        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(
+            queryPosition.ToMap(_entMan, _transform),
+            radius
+        ).ToList(); // TODO - use collision groups?
+
+        if (targets.Count == 0)
+            return false;
+
+        weights = targets.ToDictionary(x => x.Owner.Id.ToString() ?? "", x => x.Weighting);
+        return true;
+    }
 
     /// <summary>
-    /// Looks for objects with a LightningTarget component in the radius, prioritizes them, and hits the highest priority targets with lightning.
+    /// Loads a LightningArc to be fired, and then checks for chain targets
     /// </summary>
-    /// <param name="user">Where the lightning fires from</param>
-    /// <param name="range">Targets selection radius</param>
-    /// <param name="boltCount">Number of lightning bolts</param>
-    /// <param name="lightningPrototype">The prototype for the lightning to be created</param>
-    /// <param name="arcDepth">how many times to recursively fire lightning bolts from the target points of the first shot.</param>
-    /// <param name="triggerLightningEvents">if the lightnings being fired should trigger lightning events.</param>
-    public void ShootRandomLightnings(EntityUid user, float range, int boltCount, string lightningPrototype = "Lightning", int arcDepth = 0, bool triggerLightningEvents = true)
+    private void StageLightningArc(LightningArc lightningArc, int arcDepth = 0)
     {
-        //To Do: add support to different priority target tablem for different lightning types
-        //To Do: Remove Hardcode LightningTargetComponent (this should be a parameter of the SharedLightningComponent)
-        //To Do: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
-        // several hashsets every time
+        var user = lightningArc.User;
+        var target = lightningArc.Target;
+        var contextId = lightningArc.ContextId;
 
-        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(Transform(user).MapPosition, range).ToList();
-        _random.Shuffle(targets);
-        targets.Sort((x, y) => y.Priority.CompareTo(x.Priority));
-
-        int shootedCount = 0;
-        int count = -1;
-        while(shootedCount < boltCount)
+        // get the context and check to see if there are any arcs remaining
+        if (!_lightningDict.TryGetValue(contextId, out LightningContext context)
+            || context.Arcs.Count >= context.MaxArcs)
         {
-            count++;
+            NextLightningArc();
+            return;
+        }
 
-            if (count >= targets.Count) { break; }
+        // add this arc to the pool of arcs
+        context.Arcs.Add(lightningArc);
 
-            var curTarget = targets[count];
-            if (!_random.Prob(curTarget.HitProbability)) //Chance to ignore target
-                continue;
+        if (!context.History.Contains(user))
+            context.History.Add(user);
 
-            ShootLightning(user, targets[count].Owner, lightningPrototype, triggerLightningEvents);
-            if (arcDepth - targets[count].LightningResistance > 0)
+        // send an event to the staged target to be influenced by resistance
+        var ev = new LightningStageEvent(lightningArc.Target, context);
+        RaiseLocalEvent(lightningArc.Target, ref ev);
+        context = ev.Context;
+
+        // check for any more targets
+        if (!TryGetLightningTargets(Transform(target).Coordinates, context.ArcRange(context), out var weights))
+        {
+            _lightningDict[context.Id] = context;
+            NextLightningArc();
+            return;
+        }
+
+        // depending on ArcStacking, remove previously visited entities from the targeting list
+        if (!context.ArcStacking(context))
+        {
+            Dictionary<string, float> exception = context.History.ToDictionary(x => x.ToString(), x => 0f);
+            weights.Except(exception);
+        }
+        else
+            // remove the user regardless to prevent lightning striking self
+            weights.Remove(user.ToString());
+
+        // do the bounce
+        for (int i = 0; i < context.ArcForks(context); i++)
+        {
+            if (weights.Count <= 0)
+                break;
+
+            string stringTarget = _random.Pick(weights);
+            EntityUid nextTarget = EntityUid.Parse(stringTarget);
+            LightningArc nextArc = new LightningArc { User = target, Target = nextTarget, ContextId = context.Id, ArcDepth = arcDepth + 1 };
+            _lightningQueue.Enqueue(nextArc, arcDepth + 1);
+
+            if (!context.ArcStacking(context))
+                weights.Remove(stringTarget);
+        }
+
+        // update the context and select the next lightning arc
+        _lightningDict[context.Id] = context;
+        NextLightningArc();
+    }
+
+    /// <summary>
+    /// Dequeues a LightningArc from the priority queue and stages it
+    /// If the priority queue is empty, fire lightning effects instead
+    /// </summary>
+    private void NextLightningArc()
+    {
+        if (_lightningQueue.Count <= 0)
+        {
+            foreach (KeyValuePair<int, LightningContext> entry in _lightningDict)
             {
-                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].LightningResistance, triggerLightningEvents);
+                DoLightning(entry.Value);
             }
-            shootedCount++;
+            _lightningDict.Clear();
+            return;
+        }
+
+        LightningArc lightningArc = _lightningQueue.Dequeue();
+        StageLightningArc(lightningArc, lightningArc.ArcDepth);
+    }
+
+    /// <summary>
+    /// Fires all loaded LightningArcs
+    /// </summary>
+    private void DoLightning(LightningContext context)
+    {
+        for (int i = 0; i < context.Arcs.Count; i++)
+        {
+            LightningArc lightningArc = context.Arcs[i];
+
+            // use up charge from the total pool
+            float discharge = context.Charge * (1f / (context.Arcs.Count - i));
+            context.Charge -= discharge;
+
+            // zap
+            var spriteState = LightningRandomizer();
+            _beam.TryCreateBeam(lightningArc.User, lightningArc.Target, context.LightningPrototype(discharge, context), spriteState);
+
+            // send an event to the target to be affected by lightning, also inherit information
+            var ev = new LightningEffectEvent(discharge, lightningArc.Target, context);
+            RaiseLocalEvent(lightningArc.Target, ref ev);
+            context = ev.Context;
+
+            if (context.Charge <= 0f)
+                break;
         }
     }
 }
 
 /// <summary>
-/// Raised directed on the target when an entity becomes the target of a lightning strike (not when touched)
+/// Raised on an entity when it becomes the target of a lightning strike
 /// </summary>
-/// <param name="Source">The entity that created the lightning</param>
-/// <param name="Target">The entity that was struck by lightning.</param>
+/// <param name="Target"> The potential target of the lightning strike.</param>
+/// <param name="Context">The field that encapsulates the data used to make the lightning bolt.</param>
 [ByRefEvent]
-public readonly record struct HitByLightningEvent(EntityUid Source, EntityUid Target);
+public struct LightningStageEvent(EntityUid target, LightningContext context)
+{
+    public EntityUid Target = target;
+    public LightningContext Context = context;
+}
+
+/// <summary>
+/// Raised on a target when it is affected by the lightning strike
+/// </summary>
+/// <param name="Discharge">The energy (J) that was discharged by the lightning bolt.</param>
+/// <param name="Target"> The target of the lightning strike.</param>
+/// <param name="Context">The field that encapsulates the data used to make the lightning bolt.</param>
+[ByRefEvent]
+public struct LightningEffectEvent(float discharge, EntityUid target, LightningContext context)
+{
+    public float Discharge = discharge;
+    public EntityUid Target = target;
+    public LightningContext Context = context;
+}
