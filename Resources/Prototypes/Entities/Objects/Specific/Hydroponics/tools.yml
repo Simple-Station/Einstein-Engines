@@ -43,7 +43,7 @@
     attackRate: 0.8
     damage:
       types:
-        Pierce: 7
+        Piercing: 7
     heavyRateModifier: 0.9
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2

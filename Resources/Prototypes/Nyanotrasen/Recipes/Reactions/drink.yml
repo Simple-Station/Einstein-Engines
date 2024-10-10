@@ -143,15 +143,3 @@
       amount: 1
   products:
     GrapeSoda: 3
-
-- type: reaction
-  id: HolyWater
-  reactants:
-    Water:
-      amount: 1
-    Wine:
-      amount: 1
-    Mercury:
-      amount: 1
-  products:
-    HolyWater: 3

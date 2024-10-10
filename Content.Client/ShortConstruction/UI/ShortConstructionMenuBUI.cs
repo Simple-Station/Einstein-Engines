@@ -1,6 +1,7 @@
 ﻿using System.Numerics;
 using Content.Client.Construction;
 using Content.Client.UserInterface.Controls;
+using Content.Client.WhiteDream.BloodCult.UI;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.ShortConstruction;
 using JetBrains.Annotations;
@@ -31,6 +32,7 @@ public sealed class ShortConstructionMenuBUI : BoundUserInterface
     private readonly SpriteSystem _spriteSystem;
 
     private RadialMenu? _menu;
+
     public ShortConstructionMenuBUI(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         _construction = _entManager.System<ConstructionSystem>();
@@ -83,14 +85,13 @@ public sealed class ShortConstructionMenuBUI : BoundUserInterface
                 container.AddChild(button);
             }
             else if (entry.Prototype != null
-                && _protoManager.TryIndex(entry.Prototype, out var proto))
+                     && _protoManager.TryIndex(entry.Prototype, out var proto))
             {
                 var button = CreateButton(proto.Name, proto.Icon);
                 button.OnButtonUp += _ => ConstructItem(proto);
                 container.AddChild(button);
             }
         }
-
     }
 
     private RadialMenuTextureButton CreateButton(string name, SpriteSpecifier icon)
@@ -125,11 +126,18 @@ public sealed class ShortConstructionMenuBUI : BoundUserInterface
             return;
         }
 
+        // I really hate it but there's no other way around.
+        PlacementHijack hijack;
+        if (prototype.ID == "CultPylon")
+            hijack = new PylonConstructionHijack(prototype, _entManager, Owner);
+        else
+            hijack = new ConstructionPlacementHijack(_construction, prototype);
+
         _placementManager.BeginPlacing(new PlacementInformation
         {
             IsTile = false,
             PlacementOption = prototype.PlacementMode
-        }, new ConstructionPlacementHijack(_construction, prototype));
+        }, hijack);
 
         // Should only close the menu if we're placing a construction hijack.
         // Theres not much point to closing it though. _menu!.Close();
