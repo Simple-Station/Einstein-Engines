@@ -372,7 +372,7 @@ trait-description-DermalArmor =
 
 trait-name-CyberEyes = Cyber-Eyes Basic System
 trait-description-CyberEyes =
-    Your one or more of your eyes have been replaced with a highly modular mechanical ocular implant.
+    One or more of your eyes have been replaced with a highly modular mechanical ocular implant.
     Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes,
     but additionally these implants provide protection from bright flashes of light.
 
