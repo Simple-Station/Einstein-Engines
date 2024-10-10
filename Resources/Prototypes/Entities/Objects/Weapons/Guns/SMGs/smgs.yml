@@ -20,7 +20,7 @@
     maxAngle: 16
     fireRate: 8
     angleIncrease: 3
-    angleDecay: 16  
+    angleDecay: 16
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -83,7 +83,7 @@
   name: C-20r sub machine gun
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunC20r
-  description: A firearm that is often used by the infamous nuclear operatives. Uses .35 auto ammo.
+  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
@@ -110,6 +110,15 @@
     steps: 6
     zeroVisible: true
   - type: Appearance
+
+- type: entity
+  name: antique C-20r submachine gun
+  parent: WeaponSubMachineGunC20r
+  id: WeaponSubMachineGunC20rHoS
+  description: This heavily worn submachine gun is engraved with the words, "Remember Mars".
+  components:
+    - type: StealTarget
+      stealGroup: WeaponSubMachineGunC20rHoS
 
 - type: entity
   name: Drozd
@@ -234,7 +243,7 @@
     minAngle: 1
     maxAngle: 6
     angleIncrease: 1.5
-    angleDecay: 6  
+    angleDecay: 6
     selectedMode: FullAuto
     shotsPerBurst: 5
     availableModes:
@@ -265,6 +274,15 @@
     steps: 6
     zeroVisible: true
   - type: Appearance
+
+- type: entity
+  name: antique Wt550
+  id: WeaponSubMachineGunWt550HoS
+  parent: WeaponSubMachineGunWt550
+  description: A prized possession of the station's Head of Security. The smell of dried blood lingers on this weapon's muzzle. A small torch with 24 stars surrounding it has been engraved on the grip.
+  components:
+    - type: StealTarget
+      stealGroup: WeaponSubMachineGunWt550HoS
 
 # Rubber
 - type: entity

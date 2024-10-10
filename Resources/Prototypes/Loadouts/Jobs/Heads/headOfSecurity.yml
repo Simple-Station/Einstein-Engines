@@ -173,3 +173,97 @@
         - HeadOfSecurity
   items:
     - ClothingShoesBootsWinterHeadOfSecurity
+
+# Head of Security Weapon Selection
+# Most of these mirror the unique weapons that were previously map-specific items placed in the HoS Office.
+# Or are weapons that fit a similar theme of "Rare weapons not normally seen by Security"
+- type: loadout
+  id: LoadoutCommandHoSPulsePistol
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponPulsePistolHoS
+
+- type: loadout
+  id: LoadoutCommandHoSWt550
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponSubMachineGunWt550HoS
+
+- type: loadout
+  id: LoadoutCommandHoSKatanaSheath
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingBeltKatanaSheathFilledHoS
+
+- type: loadout
+  id: LoadoutCommandHoSC20r
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponSubMachineGunC20rHoS
+
+- type: loadout
+  id: LoadoutCommandHoSBulldog
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponShotgunBulldogHoS
+
+- type: loadout
+  id: LoadoutCommandHoSEnergySword
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - EnergySwordHoS
+
+- type: loadout
+  id: LoadoutCommandHoSEnergyGun
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponEnergyGunMultiphase

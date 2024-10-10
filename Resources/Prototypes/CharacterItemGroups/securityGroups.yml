@@ -194,3 +194,22 @@
       id: LoadoutClothingBackSecuritySatchel
     - type: loadout
       id: LoadoutClothingBackSecurityDuffel
+
+- type: characterItemGroup
+  maxItems: 1
+  id: LoadoutHoSWeapon
+  items:
+    - type: loadout
+      id: LoadoutCommandHoSPulsePistol
+    - type: loadout
+      id: LoadoutCommandHoSWt550
+    - type: loadout
+      id: LoadoutCommandHoSKatanaSheath
+    - type: loadout
+      id: LoadoutCommandHoSC20r
+    - type: loadout
+      id: LoadoutCommandHoSBulldog
+    - type: loadout
+      id: LoadoutCommandHoSEnergySword
+    - type: loadout
+      id: LoadoutCommandHoSEnergyGun

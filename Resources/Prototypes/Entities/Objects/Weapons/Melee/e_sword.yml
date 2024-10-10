@@ -82,6 +82,19 @@
     temperature: 700
 
 - type: entity
+  name: antique energy sword
+  parent: EnergySword
+  id: EnergySwordHoS
+  description: An elegant weapon fit for a prince, this otherwise plain silver hilt is engraved with, "My Love".
+  components:
+    - type: EnergySword
+      activatedColor: "#00CCFF"
+      colorOptions:
+       - "#00CCFF"
+    - type: StealTarget
+      stealGroup: EnergySwordHoS
+
+- type: entity
   name: pen
   parent: EnergySword
   id: EnergyDagger

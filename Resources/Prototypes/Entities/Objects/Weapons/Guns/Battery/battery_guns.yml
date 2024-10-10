@@ -269,6 +269,15 @@
     startingCharge: 2000
 
 - type: entity
+  name: antique pulse pistol
+  parent: WeaponPulsePistol
+  id: WeaponPulsePistolHoS
+  description: One of the many weapons belonging to the Head of Security's private collection. This pistol is engraved with the words, "Forgive Us, Mother Sol'"
+  components:
+  - type: StealTarget
+    stealGroup: WeaponPulsePistolHoS
+
+- type: entity
   name: pulse carbine
   parent: BaseWeaponBattery
   id: WeaponPulseCarbine

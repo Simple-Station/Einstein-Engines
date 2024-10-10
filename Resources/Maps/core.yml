@@ -146814,13 +146814,6 @@ entities:
     - type: Transform
       pos: 2.553135,33.488186
       parent: 2
-- proto: WeaponSubMachineGunWt550
-  entities:
-  - uid: 5081
-    components:
-    - type: Transform
-      pos: -11.600864,32.694817
-      parent: 2
 - proto: WeaponTurretSyndicateBroken
   entities:
   - uid: 853
