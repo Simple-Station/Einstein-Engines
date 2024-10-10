@@ -31,7 +31,7 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
         while (query.MoveNext(out var uid, out var layingDown, out var standing, out var sprite))
         {
             var desiredDrawDepth = standing.CurrentState is StandingState.Lying && layingDown.IsCrawlingUnder
-                ? layingDown.CrawlingDrawDepth
+                ? layingDown.CrawlingUnderDrawDepth
                 : layingDown.NormalDrawDepth;
 
             if (sprite.DrawDepth != desiredDrawDepth)

@@ -85,11 +85,6 @@ public abstract class SharedLayingDownSystem : EntitySystem
             return;
 
         var uid = args.SenderSession.AttachedEntity.Value;
-
-        // TODO: Wizard
-        //if (HasComp<FrozenComponent>(uid))
-        //   return;
-
         if (!TryComp(uid, out StandingStateComponent? standing)
             || !TryComp(uid, out LayingDownComponent? layingDown))
             return;
@@ -122,10 +117,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
         if (!_standing.IsDown(uid))
             return;
 
-        var modifier = component.IsCrawlingUnder
-            ? component.CrawlingUnderSpeedModifier
-            : component.SpeedModify;
-
+        var modifier = component.LyingSpeedModifier * (component.IsCrawlingUnder ? component.CrawlingUnderSpeedModifier : 1);
         args.ModifySpeed(modifier, modifier);
     }
 
@@ -159,6 +151,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
             return false;
 
         standingState.CurrentState = StandingState.GettingUp;
+        layingDown.IsCrawlingUnder = false;
         return true;
     }
 

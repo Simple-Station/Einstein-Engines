@@ -1,6 +1,5 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-using Content.Shared.DrawDepth;
 
 namespace Content.Shared.Standing;
 
@@ -8,10 +7,11 @@ namespace Content.Shared.Standing;
 public sealed partial class LayingDownComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public float StandingUpTime = 1f;
+    public TimeSpan StandingUpTime = TimeSpan.FromSeconds(1);
 
     [DataField, AutoNetworkedField]
-    public float SpeedModify = 0.4f, CrawlingUnderSpeedModifier = 0.4f;
+    public float LyingSpeedModifier = 0.35f,
+                 CrawlingUnderSpeedModifier = 0.5f;
 
     [DataField, AutoNetworkedField]
     public bool AutoGetUp;
@@ -23,10 +23,8 @@ public sealed partial class LayingDownComponent : Component
     public bool IsCrawlingUnder = false;
 
     [DataField, AutoNetworkedField]
-    public int NormalDrawDepth = (int) DrawDepth.DrawDepth.Mobs;
-
-    [DataField, AutoNetworkedField]
-    public int CrawlingDrawDepth = (int) DrawDepth.DrawDepth.SmallMobs;
+    public int NormalDrawDepth = (int) DrawDepth.DrawDepth.Mobs,
+               CrawlingUnderDrawDepth = (int) DrawDepth.DrawDepth.SmallMobs;
 }
 
 [Serializable, NetSerializable]
