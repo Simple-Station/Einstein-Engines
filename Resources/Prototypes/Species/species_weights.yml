@@ -4,8 +4,9 @@
   weights:
     Human: 5
     Reptilian: 4
-    SlimePerson: 4
+    SlimePerson: 3
     Oni: 3 #Nyanotrasen Oni, see Prototypes/Nyanotrasen/Entities/Mobs/Species/Oni.yml
     Felinid: 4 # Nyanotrasen - Felinid, see Prototypes/Nyanotrasen/Entities/Mobs/Species/felinid.yml
-    Vulpkanin: 3 # DeltaV - Vulpkanin, see Prototypes/DeltaV/Entities/Mobs/Species/vulpkanin.yml
+    Vulpkanin: 4 # DeltaV - Vulpkanin, see Prototypes/DeltaV/Entities/Mobs/Species/vulpkanin.yml
     Diona: 2
+    Shadowkin: 0

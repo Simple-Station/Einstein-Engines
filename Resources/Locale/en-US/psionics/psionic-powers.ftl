@@ -1,5 +1,6 @@
 generic-power-initialization-feedback = I Awaken.
 already-casting = I cannot channel more than one power at a time.
+no-mana = I cannot channel enough power.
 
 # Dispel
 dispel-power-description = Dispel summoned entities such as familiars or forcewalls.
@@ -139,3 +140,12 @@ examine-mindbroken-message =
 psionic-roll-failed = For a moment, my consciousness expands, yet I feel that it is not enough.
 entity-anomaly-no-grid = There is nowhere for me to conjure beings.
 power-overwhelming-power-feedback = {CAPITALIZE($entity)} wields a vast connection to the noösphere
+
+# Shadowkin ShadeSkip
+action-description-shadowkin-shadeskip = Aaramrra!
+
+# DarkSwap
+action-name-darkswap = DarkSwap
+action-description-darkswap = Mmra Mamm!
+
+ethereal-pickup-fail = My hand sizzles as it passes through...

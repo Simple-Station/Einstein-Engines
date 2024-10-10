@@ -274,6 +274,8 @@
     - Dropper
     - ClothingEyesGlassesChemical
     dynamicRecipes:
+      - ShadowkinRestraints
+      - ArtificialBluespaceCrystal
       - PowerDrill
       - MiningDrill
       - AnomalyScanner
@@ -757,6 +759,7 @@
       - MagazinePistolSpecial
       # End of modified code
     dynamicRecipes:
+      - ShadowkinRestraints
       - EncryptionKeySyndie # Nyano
       - CartridgeLightRifleIncendiary
       - CartridgeMagnumIncendiary
@@ -1209,7 +1212,7 @@
       idleState: icon
       runningState: building
       staticRecipes:
-        - BluespaceCrystal #Nyano - Summary: Bluespace Crystals can be created here.
+        # - BluespaceCrystal #Nyano - Summary: Bluespace Crystals can be created here.
         - SheetSteel30
         - SheetGlass30
         - SheetRGlass30
@@ -1325,6 +1328,7 @@
     staticRecipes:
       - PrizeBall
       - PlushieMothRandom
+      - PlushieShadowkin
       - PlushieMothMusician
       - PlushieMothBartender
       - PlushieBee

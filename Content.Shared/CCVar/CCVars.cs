@@ -1897,6 +1897,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> ICShowSSDIndicator =
             CVarDef.Create("ic.show_ssd_indicator", true, CVar.CLIENTONLY);
 
+        /// <summary>
+        /// Allow Shadowkin to PassThrough Walls/Objects while in Ethereal.
+        /// </summary>
+        public static readonly CVarDef<bool> ShadowkinPassThrough =
+            CVarDef.Create("ic.ShadowkinPassThrough", true, CVar.SERVER);
+
         /*
          * Salvage
          */

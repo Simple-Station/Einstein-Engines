@@ -19,6 +19,15 @@
       min: 43200 #DeltaV 12 hours
     - !type:CharacterOverallTimeRequirement
       min: 144000 #40 hrs
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

@@ -1,0 +1,23 @@
+- type: alert
+  id: ShadowkinPower
+  icons:
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
+    state: power0
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
+    state: power1
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
+    state: power2
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
+    state: power3
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
+    state: power4
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
+    state: power5
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
+    state: power6
+  - sprite: /Textures/Interface/Alerts/shadowkin_power.rsi
+    state: power7
+  name: alerts-shadowkin-power-name
+  description: alerts-shadowkin-power-desc
+  minSeverity: 0
+  maxSeverity: 7

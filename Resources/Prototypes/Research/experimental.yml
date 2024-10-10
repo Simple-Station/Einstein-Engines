@@ -85,6 +85,19 @@
 # Tier 2
 
 - type: technology
+  id: AdvancedBluespace
+  name: research-technology-advanced-bluespace
+  icon:
+    sprite: Nyanotrasen/Objects/Materials/materials.rsi
+    state: bluespace_3
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ArtificialBluespaceCrystal
+  - ShadowkinRestraints
+
+- type: technology
   id: AdvancedParts
   name: research-technology-advanced-parts
   icon:

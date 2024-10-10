@@ -9,3 +9,9 @@ namespace Content.Shared.Psionics;
 /// <param name="dampeningChangedAmount"></param>
 [ByRefEvent]
 public record struct OnSetPsionicStatsEvent(float AmplificationChangedAmount, float DampeningChangedAmount);
+
+[ByRefEvent]
+public record struct OnMindbreakEvent();
+
+[ByRefEvent]
+public record struct OnManaUpdateEvent();

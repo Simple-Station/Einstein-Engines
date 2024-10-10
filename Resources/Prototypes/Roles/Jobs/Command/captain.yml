@@ -25,6 +25,15 @@
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
       min: 108000 # 30 hours
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

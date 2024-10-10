@@ -50,6 +50,8 @@ chat-manager-admin-channel-name = ADMIN
 chat-manager-rate-limited = You are sending messages too quickly!
 chat-manager-rate-limit-admin-announcement = Player { $player } breached chat rate limits. Watch them if this is a regular occurence.
 
+chat-manager-send-empathy-chat-wrap-message = {$source}: {$message}
+
 ## Speech verbs for chat
 
 chat-speech-verb-suffix-exclamation = !
@@ -156,3 +158,5 @@ chat-speech-verb-name-electricity = Electricity
 chat-speech-verb-electricity-1 = crackles
 chat-speech-verb-electricity-2 = buzzes
 chat-speech-verb-electricity-3 = screeches
+
+chat-speech-verb-marish = Mars

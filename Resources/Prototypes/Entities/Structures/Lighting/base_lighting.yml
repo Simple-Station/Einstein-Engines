@@ -31,6 +31,7 @@
       state: glow
       shader: unshaded
     state: base
+  - type: EtherealLight
   - type: PointLight
     color: "#FFE4CE" # 5000K color temp
     energy: 0.8
@@ -43,7 +44,7 @@
   - type: RCDDeconstructable
     cost: 4
     delay: 2
-    fx: EffectRCDDeconstruct2  
+    fx: EffectRCDDeconstruct2
   - type: Destructible
     thresholds:
     - trigger:
@@ -74,7 +75,7 @@
     mode: SnapgridCenter
     snap:
     - Wallmount
-    
+
 - type: entity
   name: light
   description: "A light fixture. Draws power and produces light when equipped with a light tube."

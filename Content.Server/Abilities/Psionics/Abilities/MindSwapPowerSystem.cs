@@ -38,7 +38,8 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(MindSwapPowerActionEvent args)
         {
-            if (!(TryComp<DamageableComponent>(args.Target, out var damageable) && damageable.DamageContainerID == "Biological"))
+            if (!_psionics.OnAttemptPowerUse(args.Performer, "mind swap")
+                || !(TryComp<DamageableComponent>(args.Target, out var damageable) && damageable.DamageContainerID == "Biological"))
                 return;
 
             Swap(args.Performer, args.Target);
@@ -116,8 +117,8 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnSwapInit(EntityUid uid, MindSwappedComponent component, ComponentInit args)
         {
-            _actions.AddAction(uid, ref component.MindSwapReturnActionEntity, component.MindSwapReturnActionId );
-            _actions.TryGetActionData( component.MindSwapReturnActionEntity, out var actionData );
+            _actions.AddAction(uid, ref component.MindSwapReturnActionEntity, component.MindSwapReturnActionId);
+            _actions.TryGetActionData(component.MindSwapReturnActionEntity, out var actionData);
             if (actionData is { UseDelay: not null })
                 _actions.StartUseDelay(component.MindSwapReturnActionEntity);
         }
@@ -132,11 +133,13 @@ namespace Content.Server.Abilities.Psionics
             MindComponent? targetMind = null;
 
             // This is here to prevent missing MindContainerComponent Resolve errors.
-            if(!_mindSystem.TryGetMind(performer, out var performerMindId, out performerMind)){
+            if (!_mindSystem.TryGetMind(performer, out var performerMindId, out performerMind))
+            {
                 performerMind = null;
             };
 
-            if(!_mindSystem.TryGetMind(target, out var targetMindId, out targetMind)){
+            if (!_mindSystem.TryGetMind(target, out var targetMindId, out targetMind))
+            {
                 targetMind = null;
             };
             //This is a terrible way to 'unattach' minds. I wanted to use UnVisit but in TransferTo's code they say

@@ -11,6 +11,15 @@
       tracker: JobDetective
       min: 14400 # DeltaV - 4 hours
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

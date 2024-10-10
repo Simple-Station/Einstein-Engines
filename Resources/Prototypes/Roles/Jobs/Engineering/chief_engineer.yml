@@ -13,6 +13,15 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
       min: 90000 # DeltaV - 25 hours
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
 #    - !type:OverallPlaytimeRequirement
 #      time: 72000 # DeltaV - 20 hours
   weight: 10
