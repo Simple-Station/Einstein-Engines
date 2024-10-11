@@ -174553,13 +174553,6 @@ entities:
     - type: Transform
       pos: -31.493519,10.543685
       parent: 6747
-- proto: WeaponRifleM90GrenadeLauncher
-  entities:
-  - uid: 8311
-    components:
-    - type: Transform
-      pos: -14.458499,-2.5063553
-      parent: 6747
 - proto: WeaponShotgunKammerer
   entities:
   - uid: 1624
