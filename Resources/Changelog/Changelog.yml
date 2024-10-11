@@ -7135,3 +7135,21 @@ Entries:
   id: 6436
   time: '2024-10-11T01:43:36.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1031
+- author: Ichaie
+  changes:
+    - type: Add
+      message: A map called "RadStation" has been added to rotation.
+    - type: Add
+      message: A new Evac shuttle called "emergency_neol" has been added to RadStation
+  id: 6437
+  time: '2024-10-11T16:05:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1034
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Sleeping and muzzled entities can no longer use vocal emotes (scream,
+        meow, etc).
+  id: 6438
+  time: '2024-10-11T16:08:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1037
