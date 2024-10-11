@@ -35,6 +35,8 @@ materials-raw-plasma = raw plasma
 materials-raw-uranium = raw uranium
 materials-raw-bananium = raw bananium
 materials-raw-salt = raw salt
+materials-raw-bluespace = raw bluespace
+materials-raw-normality = raw normality
 
 # Material Reclaimer
 material-reclaimer-upgrade-process-rate = process rate
