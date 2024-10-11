@@ -20,3 +20,14 @@
   completetime: 4
   materials:
     Bluespace: 100
+
+- type: latheRecipe
+  id: NormalityCrystal
+  icon:
+    sprite: Nyanotrasen/Objects/Materials/materials.rsi
+    state: bluespace
+  result: MaterialNormality1
+  applyMaterialDiscount: false
+  completetime: 4
+  materials:
+    Normality: 100

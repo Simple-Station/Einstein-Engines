@@ -296,6 +296,50 @@
         - state: rock_artifact_fragment
 
 - type: entity
+  id: AsteroidRockBluespace
+  parent: AsteroidRock
+  description: A rock wall. What's that sticking out of it?
+  suffix: Bluespace
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreBluespace
+    - type: Sprite
+      layers:
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_bluespace
+
+- type: entity
+  id: AsteroidRockNormality
+  parent: AsteroidRock
+  description: A rock wall. What's that sticking out of it?
+  suffix: Normality
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreNormality
+    - type: Sprite
+      layers:
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_bluespace
+
+- type: entity
   id: AsteroidRockMining
   parent: AsteroidRock
   name: asteroid rock
@@ -632,6 +676,50 @@
           state: rock_west
         - state: rock_salt
 
+- type: entity
+  id: WallRockBluespace
+  parent: WallRock
+  description: A rock wall. What's that sticking out of it?
+  suffix: Bluespace
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreBluespace
+    - type: Sprite
+      layers:
+        - state: rock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_west
+        - state: rock_bluespace
+
+- type: entity
+  id: WallRockNormality
+  parent: WallRock
+  description: A rock wall. What's that sticking out of it?
+  suffix: Normality
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreNormality
+    - type: Sprite
+      layers:
+        - state: rock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_west
+        - state: rock_bluespace
+
 # Basalt variants
 - type: entity
   id: WallRockBasalt
@@ -874,6 +962,50 @@
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_wall_west
         - state: rock_salt
+
+- type: entity
+  id: WallRockBasaltBluespace
+  parent: WallRockBluespace
+  description: A rock wall. What's that sticking out of it?
+  suffix: Bluespace
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreBluespace
+    - type: Sprite
+      layers:
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_bluespace
+
+- type: entity
+  id: WallRockBasaltNormality
+  parent: WallRockNormality
+  description: A rock wall. What's that sticking out of it?
+  suffix: Normality
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreNormality
+    - type: Sprite
+      layers:
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_bluespace
 
 # Snow variants
 - type: entity
@@ -1118,6 +1250,50 @@
           state: rock_snow_west
         - state: rock_salt
 
+- type: entity
+  id: WallRockSnowBluespace
+  parent: WallRockSnow
+  description: A rock wall. What's that sticking out of it?
+  suffix: Bluespace
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreBluespace
+    - type: Sprite
+      layers:
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_bluespace
+
+- type: entity
+  id: WallRockSnowNormality
+  parent: WallRockSnow
+  description: A rock wall. What's that sticking out of it?
+  suffix: Normality
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreNormality
+    - type: Sprite
+      layers:
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_bluespace
+
 # Sand variants
 - type: entity
   id: WallRockSand
@@ -1360,6 +1536,50 @@
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_sand_west
         - state: rock_salt
+
+- type: entity
+  id: WallRockSandBluespace
+  parent: WallRockSand
+  description: A rock wall. What's that sticking out of it?
+  suffix: Bluespace
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreBluespace
+    - type: Sprite
+      layers:
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_bluespace
+
+- type: entity
+  id: WallRockSandNormality
+  parent: WallRockSand
+  description: A rock wall. What's that sticking out of it?
+  suffix: Normality
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreNormality
+    - type: Sprite
+      layers:
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_bluespace
 
 # Chromite variants
 - type: entity
@@ -1604,6 +1824,50 @@
           state: rock_chromite_west
         - state: rock_salt
 
+- type: entity
+  id: WallRockChromiteBluespace
+  parent: WallRockChromite
+  description: A rock wall. What's that sticking out of it?
+  suffix: Bluespace
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreBluespace
+    - type: Sprite
+      layers:
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_bluespace
+
+- type: entity
+  id: WallRockChromiteNormality
+  parent: WallRockChromite
+  description: A rock wall. What's that sticking out of it?
+  suffix: Normality
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreNormality
+    - type: Sprite
+      layers:
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_bluespace
+
 # Andesite variants
 - type: entity
   id: WallRockAndesite
@@ -1846,3 +2110,47 @@
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_andesite_west
         - state: rock_salt
+
+- type: entity
+  id: WallRockAndesiteBluespace
+  parent: WallRockAndesite
+  description: A rock wall. What's that sticking out of it?
+  suffix: Bluespace
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreBluespace
+    - type: Sprite
+      layers:
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_bluespace
+
+- type: entity
+  id: WallRockAndesiteNormality
+  parent: WallRockAndesite
+  description: A rock wall. What's that sticking out of it?
+  suffix: Normality
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreNormality
+    - type: Sprite
+      layers:
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_bluespace

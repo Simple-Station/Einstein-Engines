@@ -30,36 +30,9 @@
           conditions:
             - !type:EntityAnchored {}
           steps:
-            - tag: NormalityCrystal
-              icon:
-                sprite: Nyanotrasen/Objects/Materials/materials.rsi
-                state: bluespace
-              name: a normality crystal
-              doAfter: 1
-            - tag: NormalityCrystal
-              icon:
-                sprite: Nyanotrasen/Objects/Materials/materials.rsi
-                state: bluespace
-              name: a normality crystal
-              doAfter: 1
-            - tag: NormalityCrystal
-              icon:
-                sprite: Nyanotrasen/Objects/Materials/materials.rsi
-                state: bluespace
-              name: a normality crystal
-              doAfter: 1
-            - tag: NormalityCrystal
-              icon:
-                sprite: Nyanotrasen/Objects/Materials/materials.rsi
-                state: bluespace
-              name: a normality crystal
-              doAfter: 1
-            - tag: NormalityCrystal
-              icon:
-                sprite: Nyanotrasen/Objects/Materials/materials.rsi
-                state: bluespace
-              name: a normality crystal
-              doAfter: 1
+            - material: Normality
+              amount: 5
+              doAfter: 10
             - tool: Welding
               doAfter: 5
 
