@@ -242,6 +242,37 @@ public abstract class SharedRoleSystem : EntitySystem
     public bool IsAntagonistRole(Type component)
     {
         return _antagTypes.Contains(component);
+        }
+
+        return CheckAntagonistStatus(mindId.Value).Item2;
+    }
+
+   private (bool, bool) CheckAntagonistStatus(EntityUid mindId)
+   {
+       if (!TryComp<MindComponent>(mindId, out var mind))
+       {
+           Log.Warning($"Antagonist status of mind entity {mindId} could not be determined - mind component not found");
+           return (false, false);
+       }
+
+        var antagonist = false;
+        var exclusiveAntag = false;
+        foreach (var role in mind.MindRoles)
+        {
+            if (!TryComp<MindRoleComponent>(role, out var roleComp))
+            {
+                //If this ever shows up outside of an integration test, then we need to look into this further.
+                Log.Warning($"Mind Role Entity {role} does not have MindRoleComponent!");
+                continue;
+            }
+
+            if (roleComp.Antag || exclusiveAntag)
+                antagonist = true;
+            if (roleComp.ExclusiveAntag)
+                exclusiveAntag = true;
+        }
+
+        return (antagonist, exclusiveAntag);
     }
 
     /// <summary>
