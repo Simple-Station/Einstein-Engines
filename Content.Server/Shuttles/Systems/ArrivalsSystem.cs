@@ -169,7 +169,6 @@ public sealed class ArrivalsSystem : EntitySystem
                     RemCompDeferred<PendingClockInComponent>(uid);
                     shell.WriteLine(Loc.GetString("cmd-arrivals-forced", ("uid", ToPrettyString(uid))));
                 }
-
                 break;
             default:
                 shell.WriteError(Loc.GetString($"cmd-arrivals-invalid"));
@@ -254,8 +253,7 @@ public sealed class ArrivalsSystem : EntitySystem
 
     private void OnArrivalsDocked(EntityUid uid, ArrivalsShuttleComponent component, ref FTLCompletedEvent args)
     {
-        TimeSpan dockTime = component.NextTransfer - _timing.CurTime +
-                            TimeSpan.FromSeconds(ShuttleSystem.DefaultStartupTime);
+        TimeSpan dockTime = component.NextTransfer - _timing.CurTime + TimeSpan.FromSeconds(ShuttleSystem.DefaultStartupTime);
 
         if (TryComp<DeviceNetworkComponent>(uid, out var netComp))
         {
@@ -558,8 +556,7 @@ public sealed class ArrivalsSystem : EntitySystem
             arrivalsComp.Station = uid;
             EnsureComp<ProtectedGridComponent>(uid);
             _shuttles.FTLToDock(component.Shuttle, shuttleComp, arrivals, hyperspaceTime: RoundStartFTLDuration);
-            arrivalsComp.NextTransfer =
-                _timing.CurTime + TimeSpan.FromSeconds(_cfgManager.GetCVar(CCVars.ArrivalsCooldown));
+            arrivalsComp.NextTransfer = _timing.CurTime + TimeSpan.FromSeconds(_cfgManager.GetCVar(CCVars.ArrivalsCooldown));
         }
 
         // Don't start the arrivals shuttle immediately docked so power has a time to stabilise?
