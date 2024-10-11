@@ -280,7 +280,7 @@
 - type: loadout
   id: LoadoutServiceBartenderBoxLightRifleRubber
   category: JobsServiceBartender
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -308,7 +308,7 @@
 - type: loadout
   id: LoadoutServiceBartenderMosinRubber
   category: JobsServiceBartender
-  cost: 3
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -382,7 +382,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadService
+      group: LoadoutBartenderHead
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
@@ -396,7 +396,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadService
+      group: LoadoutBartenderHead
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
@@ -448,7 +448,7 @@
 # Botanist
 - type: loadout
   id: LoadoutServiceBotanistUniformOveralls
-  category: JobsServiceUncategorized
+  category: JobsServiceBotanist
   cost: 0
   exclusive: true
   requirements:
@@ -462,7 +462,7 @@
 
 - type: loadout
   id: LoadoutServiceJumpsuitHydroponicsNt
-  category: JobsServiceUncategorized
+  category: JobsServiceBotanist
   cost: 0
   exclusive: true
   requirements:
@@ -476,7 +476,7 @@
 
 - type: loadout
   id: LoadoutServiceJumpsuitHydroponicsIdris
-  category: JobsServiceUncategorized
+  category: JobsServiceBotanist
   cost: 0
   exclusive: true
   requirements:
@@ -490,7 +490,7 @@
 
 - type: loadout
   id: LoadoutServiceJumpsuitHydroponicsOrion
-  category: JobsServiceUncategorized
+  category: JobsServiceBotanist
   cost: 0
   exclusive: true
   requirements:
@@ -831,7 +831,7 @@
 # Chef
 - type: loadout
   id: LoadoutServiceJumpsuitChefNt
-  category: JobsServiceUncategorized
+  category: JobsServiceChef
   cost: 0
   exclusive: true
   requirements:
@@ -845,7 +845,7 @@
 
 - type: loadout
   id: LoadoutServiceJumpsuitChefIdris
-  category: JobsServiceUncategorized
+  category: JobsServiceChef
   cost: 0
   exclusive: true
   requirements:
@@ -855,11 +855,11 @@
       jobs:
         - Chef
   items:
-    - ClothingUniformJumpsuitChefOrion
+    - ClothingUniformJumpsuitChefIdris
 
 - type: loadout
   id: LoadoutServiceJumpsuitChefOrion
-  category: JobsServiceUncategorized
+  category: JobsServiceChef
   cost: 0
   exclusive: true
   requirements:
@@ -873,7 +873,7 @@
 
 - type: loadout
   id: LoadoutServiceHeadChefNt
-  category: JobsServiceUncategorized
+  category: JobsServiceChef
   cost: 0
   exclusive: true
   requirements:
@@ -887,7 +887,7 @@
 
 - type: loadout
   id: LoadoutServiceHeadChefIdris
-  category: JobsServiceUncategorized
+  category: JobsServiceChef
   cost: 0
   exclusive: true
   requirements:
@@ -901,7 +901,7 @@
 
 - type: loadout
   id: LoadoutServiceHeadChefOrion
-  category: JobsServiceUncategorized
+  category: JobsServiceChef
   cost: 0
   exclusive: true
   requirements:
@@ -915,7 +915,7 @@
 
 - type: loadout
   id: LoadoutServiceOuterChefNt
-  category: JobsServiceUncategorized
+  category: JobsServiceChef
   cost: 0
   exclusive: true
   requirements:
@@ -929,7 +929,7 @@
 
 - type: loadout
   id: LoadoutServiceOuterChefIdris
-  category: JobsServiceUncategorized
+  category: JobsServiceChef
   cost: 0
   exclusive: true
   requirements:
@@ -943,7 +943,7 @@
 
 - type: loadout
   id: LoadoutServiceOuterChefOrion
-  category: JobsServiceUncategorized
+  category: JobsServiceChef
   cost: 0
   exclusive: true
   requirements:
@@ -958,7 +958,7 @@
 # Janitor
 - type: loadout
   id: LoadoutServiceJumpsuitJanitorNt
-  category: JobsServiceUncategorized
+  category: JobsServiceJanitor
   cost: 0
   exclusive: true
   requirements:
@@ -972,7 +972,7 @@
 
 - type: loadout
   id: LoadoutServiceJumpsuitJanitorIdris
-  category: JobsServiceUncategorized
+  category: JobsServiceJanitor
   cost: 0
   exclusive: true
   requirements:
@@ -986,7 +986,7 @@
 
 - type: loadout
   id: LoadoutServiceJumpsuitJanitorOrion
-  category: JobsServiceUncategorized
+  category: JobsServiceJanitor
   cost: 0
   exclusive: true
   requirements:
