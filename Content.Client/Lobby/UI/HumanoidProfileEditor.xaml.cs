@@ -50,8 +50,9 @@ namespace Content.Client.Lobby.UI
         private readonly JobRequirementsManager _requirements;
         private readonly CharacterRequirementsSystem _characterRequirementsSystem;
         private readonly LobbyUIController _controller;
-
         private FlavorText.FlavorText? _flavorText;
+        private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
+        private LineEdit _customspecienameEdit => CCustomSpecieNameEdit;
         private TextEdit? _flavorTextEdit;
 
         /// If we're attempting to save
@@ -127,6 +128,12 @@ namespace Content.Client.Lobby.UI
 
             #endregion Name
 
+            #region Custom Specie Name
+
+            _customspecienameEdit.OnTextChanged += args => { SetCustomSpecieName(args.Text); };
+
+            #endregion CustomSpecieName
+
             #region Appearance
 
             Appearance.Orphan();
@@ -179,6 +186,7 @@ namespace Content.Client.Lobby.UI
                 SetSpecies(_species[args.Id].ID);
                 UpdateHairPickers();
                 OnSkinColorOnValueChanged();
+                UpdateCustomSpecieNameEdit();
             };
 
             #endregion Species
@@ -1199,6 +1207,12 @@ namespace Content.Client.Lobby.UI
             IsDirty = true;
         }
 
+        private void SetCustomSpecieName(string customname)
+        {
+            Profile = Profile?.WithCustomSpeciesName(customname);
+            IsDirty = true;
+        }
+
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
         {
             Profile = Profile?.WithSpawnPriorityPreference(newSpawnPriority);
@@ -1235,6 +1249,19 @@ namespace Content.Client.Lobby.UI
         private void UpdateNameEdit()
         {
             NameEdit.Text = Profile?.Name ?? "";
+        }
+
+        private void UpdateCustomSpecieNameEdit()
+        {
+            if (Profile == null)
+                return;
+
+            _customspecienameEdit.Text = Profile.Customspeciename ?? "";
+
+            if (!_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var speciesProto))
+                return;
+
+            _ccustomspecienamecontainerEdit.Visible = speciesProto.CustomName;
         }
 
         private void UpdateFlavorTextEdit()

@@ -113,8 +113,8 @@
 - type: entity
   id: DraconicTranslator
   parent: [ TranslatorPoweredBase ]
-  name: Draconic translator
-  description: Translates speech between Draconic and Galactic Common, making it easier to understand your local Uniathi.
+  name: Sinta'Unathi translator
+  description: Translates speech between Sinta'Unathi and Tau-Ceti Basic, making it easier to understand your local Unathi.
   components:
   - type: HandheldTranslator
     spoken:

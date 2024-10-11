@@ -39,6 +39,7 @@ character-item-group-LoadoutShoesMedical = Medical Shoes
 character-item-group-LoadoutUniformsMedical = Medical Uniforms
 
 # Security
+character-item-group-LoadoutBackSecurity = Security Backpacks
 character-item-group-LoadoutBeltSecurity = Security Belts
 character-item-group-LoadoutEquipmentSecurity = Security Equipment
 character-item-group-LoadoutEyesSecurity = Security Eyewear
@@ -49,6 +50,8 @@ character-item-group-LoadoutNeckSecurity = Security Neckwear
 character-item-group-LoadoutOuterSecurity = Security Outerwear
 character-item-group-LoadoutShoesSecurity = Security Shoes
 character-item-group-LoadoutUniformsSecurity = Security Uniforms
+character-item-group-LoadoutWeaponSecurity = Security Duty Weapon
+character-item-group-LoadoutHoSWeapon = Head of Security's Antique Weapon Collection
 
 # Service
 character-item-group-LoadoutEquipmentService = Service Equipment

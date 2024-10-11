@@ -3,7 +3,7 @@ using Content.Server.Language;
 using Content.Shared.Administration;
 using Content.Shared.Emoting;
 using Content.Shared.Examine;
-using Content.Shared.Language;
+using Content.Shared.Language.Components;
 using Content.Shared.Language.Systems;
 using Content.Shared.Mind.Components;
 using Content.Shared.Movement.Components;

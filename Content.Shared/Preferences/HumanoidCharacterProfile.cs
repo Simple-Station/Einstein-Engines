@@ -63,6 +63,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public string Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
     [DataField]
+    public string Customspeciename { get; set; } = "";
+
+    [DataField]
     public float Height { get; private set; }
 
     [DataField]
@@ -111,6 +114,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string name,
         string flavortext,
         string species,
+        string customspeciename,
         float height,
         float width,
         int age,
@@ -129,6 +133,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Name = name;
         FlavorText = flavortext;
         Species = species;
+        Customspeciename = customspeciename;
         Height = height;
         Width = width;
         Age = age;
@@ -151,6 +156,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Name,
             other.FlavorText,
             other.Species,
+            other.Customspeciename,
             other.Height,
             other.Width,
             other.Age,
@@ -249,6 +255,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
     public HumanoidCharacterProfile WithSpecies(string species) => new(this) { Species = species };
+    public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename};
     public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
     public HumanoidCharacterProfile WithWidth(float width) => new(this) { Width = width };
 
@@ -392,6 +399,14 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             name = ICNameCaseRegex.Replace(name, m => m.Groups["word"].Value.ToUpper());
         }
 
+        var customspeciename =
+            !speciesPrototype.CustomName
+            || string.IsNullOrEmpty(Customspeciename)
+                ? ""
+                : Customspeciename.Length > MaxNameLength
+                    ? FormattedMessage.RemoveMarkup(Customspeciename)[..MaxNameLength]
+                    : FormattedMessage.RemoveMarkup(Customspeciename);
+
         if (string.IsNullOrEmpty(name))
             name = GetName(Species, gender);
 
@@ -441,6 +456,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             .ToList();
 
         Name = name;
+        Customspeciename = customspeciename;
         FlavorText = flavortext;
         Age = age;
         Sex = sex;
@@ -501,6 +517,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Appearance);
         hashCode.Add((int)SpawnPriority);
         hashCode.Add((int)PreferenceUnavailable);
+        hashCode.Add(Customspeciename);
         return hashCode.ToHashCode();
     }
 

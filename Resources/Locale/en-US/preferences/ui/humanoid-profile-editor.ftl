@@ -15,6 +15,7 @@ humanoid-profile-editor-height-label = Height: {$height}cm
 humanoid-profile-editor-width-label = Width: {$width}cm
 humanoid-profile-editor-weight-label = Weight: {$weight}kg
 humanoid-profile-editor-species-label = Species:
+humanoid-profile-editor-customspeciename-label = Custom Specie Name:
 humanoid-profile-editor-pronouns-label = Pronouns:
 humanoid-profile-editor-pronouns-male-text = He / Him
 humanoid-profile-editor-pronouns-female-text = She / Her

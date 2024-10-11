@@ -109949,16 +109949,6 @@ entities:
     - type: Transform
       pos: -15.497394,9.727219
       parent: 2
-- proto: WeaponPulsePistol
-  entities:
-  - uid: 16290
-    components:
-    - type: MetaData
-      desc: A state of the art energy pistol bought by the HoS for a year's worth of pay.
-      name: head of security's prized pulse pistol
-    - type: Transform
-      pos: -12.584102,35.560688
-      parent: 2
 - proto: WeaponTurretSyndicateBroken
   entities:
   - uid: 16291

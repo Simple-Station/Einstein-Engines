@@ -57,6 +57,39 @@
     sprite: Clothing/OuterClothing/Misc/chef.rsi
 
 - type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketChefNt
+  name: nanotrasen chef jacket
+  description: An apron-jacket used by a high class Nanotrasen Corporation chef.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/chef_nt.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/chef_nt.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketChefIdris
+  name: idris chef jacket
+  description: An apron-jacket used by a high class Idris Incorporated chef.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/chef_idris.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/chef_idris.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketChefOrion
+  name: orion chef jacket
+  description: An apron-jacket used by a high class Orion Expresschef.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/chef_orion.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/chef_orion.rsi
+
+- type: entity
   parent: ClothingOuterBase
   id: ClothingOuterHoodieBlack
   name: black hoodie

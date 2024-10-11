@@ -330,6 +330,7 @@
   - type: StealTarget
     stealGroup: AnimalMcGriff
   - type: RandomBark
+    barkType: dog
     barkMultiplier: 1.3
 
 - type: entity
@@ -435,6 +436,7 @@
   - type: StealTarget
     stealGroup: AnimalWalter
   - type: RandomBark
+    barkType: dog
     barkMultiplier: 1.1
 
 - type: entity
