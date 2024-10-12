@@ -9,7 +9,7 @@
     size: Ginormous
   - type: Sprite
     scale: 0.8, 0.8
-    sprite: _NF/Objects/Specific/Mail/mail_large.rsi
+    sprite: Objects/Specific/Mail/mail_large.rsi
     layers:
     - state: icon
       map: ["enum.MailVisualLayers.Icon"]

@@ -8,24 +8,24 @@
   components:
   - type: StorageFill
     contents:
-      - id: SoapNT
-        amount: 1
-      - id: Soap
-        amount: 1
-      - id: SoapHomemade
-        amount: 1
-      - id: SoapDeluxe
-        amount: 1
+    - id: SoapNT
+      amount: 1
+    - id: Soap
+      amount: 1
+    - id: SoapHomemade
+      amount: 1
+    - id: SoapDeluxe
+      amount: 1
   - type: Storage
     maxItemSize: Normal
     grid:
-      - 0,0,3,1
+    - 0,0,3,1
     whitelist:
       tags:
-        - Soap
+      - Soap
   - type: Sprite
     layers:
-      - state: box
+    - state: box
 
 - type: entity
   name: scented soap sampler pack
@@ -35,24 +35,24 @@
   components:
   - type: StorageFill
     contents:
-      - id: SoapNT
-        amount: 1
-      - id: Soap
-        amount: 1
-      - id: SoapOmega
-        amount: 1
-      - id: SoapDeluxe
-        amount: 1
+    - id: SoapNT
+      amount: 1
+    - id: Soap
+      amount: 1
+    - id: SoapOmega
+      amount: 1
+    - id: SoapDeluxe
+      amount: 1
   - type: Storage
     maxItemSize: Normal
     grid:
-      - 0,0,3,1
+    - 0,0,3,1
     whitelist:
       tags:
-        - Soap
+      - Soap
   - type: Sprite
     layers:
-      - state: box
+    - state: box
 
 - type: entity
   name: Build-a-Buddy kit
@@ -63,32 +63,32 @@
   components:
   - type: StorageFill
     contents:
-      - id: HeadHuman
-        amount: 1
-      - id: TorsoHuman
-        amount: 1
-      - id: LeftArmHuman
-        amount: 1
-      - id: RightArmHuman
-        amount: 1
-      - id: LeftHandHuman
-        amount: 1
-      - id: RightHandHuman
-        amount: 1
-      - id: LeftLegHuman
-        amount: 1
-      - id: RightLegHuman
-        amount: 1
-      - id: LeftFootHuman
-        amount: 1
-      - id: RightFootHuman
-        amount: 1
+    - id: HeadHuman
+      amount: 1
+    - id: TorsoHuman
+      amount: 1
+    - id: LeftArmHuman
+      amount: 1
+    - id: RightArmHuman
+      amount: 1
+    - id: LeftHandHuman
+      amount: 1
+    - id: RightHandHuman
+      amount: 1
+    - id: LeftLegHuman
+      amount: 1
+    - id: RightLegHuman
+      amount: 1
+    - id: LeftFootHuman
+      amount: 1
+    - id: RightFootHuman
+      amount: 1
   - type: Storage
     grid:
     - 0,0,4,3
     whitelist:
       components:
-        - BodyPart
+      - BodyPart
 
 # DeltaV - Goblins Aren't Real
 #- type: entity
@@ -130,26 +130,26 @@
   components:
   - type: StorageFill
     contents:
-      - id: HeadReptilian
-        amount: 1
-      - id: TorsoReptilian
-        amount: 1
-      - id: LeftArmReptilian
-        amount: 1
-      - id: RightArmReptilian
-        amount: 1
-      - id: LeftHandReptilian
-        amount: 1
-      - id: RightHandReptilian
-        amount: 1
-      - id: LeftLegReptilian
-        amount: 1
-      - id: RightLegReptilian
-        amount: 1
-      - id: LeftFootReptilian
-        amount: 1
-      - id: RightFootReptilian
-        amount: 1
+    - id: HeadReptilian
+      amount: 1
+    - id: TorsoReptilian
+      amount: 1
+    - id: LeftArmReptilian
+      amount: 1
+    - id: RightArmReptilian
+      amount: 1
+    - id: LeftHandReptilian
+      amount: 1
+    - id: RightHandReptilian
+      amount: 1
+    - id: LeftLegReptilian
+      amount: 1
+    - id: RightLegReptilian
+      amount: 1
+    - id: LeftFootReptilian
+      amount: 1
+    - id: RightFootReptilian
+      amount: 1
 
 - type: entity
   name: Build-a-Buddy kit
@@ -160,26 +160,26 @@
   components:
   - type: StorageFill
     contents:
-      - id: HeadSlime
-        amount: 1
-      - id: TorsoSlime
-        amount: 1
-      - id: LeftArmSlime
-        amount: 1
-      - id: RightArmSlime
-        amount: 1
-      - id: LeftHandSlime
-        amount: 1
-      - id: RightHandSlime
-        amount: 1
-      - id: LeftLegSlime
-        amount: 1
-      - id: RightLegSlime
-        amount: 1
-      - id: LeftFootSlime
-        amount: 1
-      - id: RightFootSlime
-        amount: 1
+    - id: HeadSlime
+      amount: 1
+    - id: TorsoSlime
+      amount: 1
+    - id: LeftArmSlime
+      amount: 1
+    - id: RightArmSlime
+      amount: 1
+    - id: LeftHandSlime
+      amount: 1
+    - id: RightHandSlime
+      amount: 1
+    - id: LeftLegSlime
+      amount: 1
+    - id: RightLegSlime
+      amount: 1
+    - id: LeftFootSlime
+      amount: 1
+    - id: RightFootSlime
+      amount: 1
 
 - type: entity
   name: Build-a-Buddy kit
@@ -190,23 +190,23 @@
   components:
   - type: StorageFill
     contents:
-      - id: HeadVulpkanin
-        amount: 1
-      - id: TorsoVulpkanin
-        amount: 1
-      - id: LeftArmVulpkanin
-        amount: 1
-      - id: RightArmVulpkanin
-        amount: 1
-      - id: LeftHandVulpkanin
-        amount: 1
-      - id: RightHandVulpkanin
-        amount: 1
-      - id: LeftLegVulpkanin
-        amount: 1
-      - id: RightLegVulpkanin
-        amount: 1
-      - id: LeftFootVulpkanin
-        amount: 1
-      - id: RightFootVulpkanin
-        amount: 1
+    - id: HeadVulpkanin
+      amount: 1
+    - id: TorsoVulpkanin
+      amount: 1
+    - id: LeftArmVulpkanin
+      amount: 1
+    - id: RightArmVulpkanin
+      amount: 1
+    - id: LeftHandVulpkanin
+      amount: 1
+    - id: RightHandVulpkanin
+      amount: 1
+    - id: LeftLegVulpkanin
+      amount: 1
+    - id: RightLegVulpkanin
+      amount: 1
+    - id: LeftFootVulpkanin
+      amount: 1
+    - id: RightFootVulpkanin
+      amount: 1

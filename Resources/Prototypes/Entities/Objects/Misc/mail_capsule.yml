@@ -14,7 +14,7 @@
     - MailCapsule
     - Trash
   - type: Sprite
-    sprite: _NF/Objects/Misc/mail_capsule.rsi
+    sprite: Objects/Misc/mail_capsule.rsi
     layers:
       - state: icon-empty
   - type: ItemSlots
@@ -94,7 +94,7 @@
           - Mail
           - Paper
           - HyperlinkBook
-    sprite: _NF/Objects/Misc/mail_capsule.rsi
+    sprite: Objects/Misc/mail_capsule.rsi
   - type: Dumpable
   - type: Damageable
     damageContainer: Inorganic
