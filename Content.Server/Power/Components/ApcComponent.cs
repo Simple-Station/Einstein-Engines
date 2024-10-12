@@ -29,9 +29,6 @@ public sealed partial class ApcComponent : BaseApcNetComponent
 
     [DataField("enabled")]
     public bool MainBreakerEnabled = true;
-    // TODO: remove this since it probably breaks when 2 people use it
-    [DataField("hasAccess")]
-    public bool HasAccess = false;
 
     public const float HighPowerThreshold = 0.9f;
     public static TimeSpan VisualsChangeDelay = TimeSpan.FromSeconds(1);
