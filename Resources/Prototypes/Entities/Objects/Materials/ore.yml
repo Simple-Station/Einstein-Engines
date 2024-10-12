@@ -353,7 +353,7 @@
   suffix: Full
   components:
   - type: Stack
-    stackType: Bluespace
+    stackType: BluespaceOre
   - type: Sprite
     state: bluespace
   - type: Item
@@ -377,7 +377,7 @@
   suffix: Full
   components:
   - type: Stack
-    stackType: Normality
+    stackType: NormalityOre
   - type: Sprite
     state: bluespace
   - type: Item
