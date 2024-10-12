@@ -6,8 +6,10 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Random;
+using Content.Shared.Inventory;
 using Content.Shared.Movement.Components;
+using Content.Shared.Random;
+using Content.Shared.Targeting.Events;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
@@ -20,6 +22,7 @@ public partial class SharedBodySystem
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!;
     private void InitializeParts()
     {
         // TODO: This doesn't handle comp removal on child ents.
@@ -152,11 +155,28 @@ public partial class SharedBodySystem
 
     protected virtual void DropPart(Entity<BodyPartComponent> partEnt)
     {
+
+        // We check for whether or not the arm, leg or head is being dropped, in which case
+        // If theres just one, that means we'll remove the container slots.
+        if (partEnt.Comp.Body is not null
+            && TryGetPartSlotContainerName(partEnt.Comp.PartType, out var containerNames)
+            && GetBodyPartCount(partEnt.Comp.Body.Value, partEnt.Comp.PartType) == 1)
+        {
+            foreach (var containerName in containerNames)
+            {
+                _inventorySystem.SetSlotStatus(partEnt.Comp.Body.Value, containerName, true);
+                var ev = new RefreshInventorySlotsEvent(containerName);
+                RaiseLocalEvent(partEnt.Comp.Body.Value, ev);
+            }
+        }
+
+        // We then detach the part, which will kickstart EntRemovedFromContainer events.
         if (TryComp(partEnt, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
         {
             SharedTransform.AttachToGridOrMap(partEnt, transform);
             _randomHelper.RandomOffset(partEnt, 0.5f);
         }
+
     }
 
     private void AddLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
@@ -825,6 +845,32 @@ public partial class SharedBodySystem
 
         comps = null;
         return false;
+    }
+
+    private bool TryGetPartSlotContainerName(BodyPartType partType, out HashSet<string> containerNames)
+    {
+        containerNames = partType switch
+        {
+            BodyPartType.Arm => new() { "gloves" },
+            BodyPartType.Leg => new() { "shoes" },
+            BodyPartType.Head => new() { "eyes", "ears", "head", "neck" },
+            _ => new()
+        };
+        return containerNames.Count > 0;
+    }
+
+    public int GetBodyPartCount(EntityUid bodyId, BodyPartType partType, BodyComponent? body = null)
+    {
+        if (!Resolve(bodyId, ref body, logMissing: false))
+            return 0;
+
+        int count = 0;
+        foreach (var part in GetBodyChildren(bodyId, body))
+        {
+            if (part.Component.PartType == partType)
+                count++;
+        }
+        return count;
     }
 
     #endregion

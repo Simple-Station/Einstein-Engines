@@ -21,12 +21,14 @@ public sealed class TargetingUIController : UIController, IOnStateEntered<Gamepl
     {
         system.TargetingStartup += AddTargetingControl;
         system.TargetingShutdown += RemoveTargetingControl;
+        system.TargetChange += CycleTarget;
     }
 
     public void OnSystemUnloaded(TargetingSystem system)
     {
         system.TargetingStartup -= AddTargetingControl;
         system.TargetingShutdown -= RemoveTargetingControl;
+        system.TargetChange -= CycleTarget;
     }
 
     public void OnStateEntered(GameplayState state)
@@ -62,10 +64,11 @@ public sealed class TargetingUIController : UIController, IOnStateEntered<Gamepl
         _targetingComponent = null;
     }
 
-    public void CycleTarget(TargetBodyPart bodyPart, TargetingControl control)
+    public void CycleTarget(TargetBodyPart bodyPart)
     {
         if (_playerManager.LocalEntity is not { } user
-        || _entManager.GetComponent<TargetingComponent>(user) is not { } targetingComponent)
+        || _entManager.GetComponent<TargetingComponent>(user) is not { } targetingComponent
+        || TargetingControl == null)
             return;
 
         var player = _entManager.GetNetEntity(user);
@@ -73,7 +76,7 @@ public sealed class TargetingUIController : UIController, IOnStateEntered<Gamepl
         {
             var msg = new TargetChangeEvent(player, bodyPart);
             _net.SendSystemNetworkMessage(msg);
-            control.SetColors(bodyPart);
+            TargetingControl?.SetColors(bodyPart);
         }
     }
 

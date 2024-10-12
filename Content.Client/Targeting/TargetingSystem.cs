@@ -1,8 +1,8 @@
+using Content.Shared.Input;
 using Content.Shared.Targeting;
 using Content.Shared.Targeting.Events;
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
 using Robust.Client.Player;
+using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 
 namespace Content.Client.Targeting;
@@ -12,6 +12,7 @@ public sealed class TargetingSystem : SharedTargetingSystem
 
     public event Action<TargetingComponent>? TargetingStartup;
     public event Action? TargetingShutdown;
+    public event Action<TargetBodyPart>? TargetChange;
     public event Action<TargetingComponent>? PartStatusStartup;
     public event Action<TargetingComponent>? PartStatusUpdate;
     public event Action? PartStatusShutdown;
@@ -23,6 +24,21 @@ public sealed class TargetingSystem : SharedTargetingSystem
         SubscribeLocalEvent<TargetingComponent, ComponentStartup>(OnTargetingStartup);
         SubscribeLocalEvent<TargetingComponent, ComponentShutdown>(OnTargetingShutdown);
         SubscribeNetworkEvent<TargetIntegrityChangeEvent>(OnTargetIntegrityChange);
+
+        CommandBinds.Builder
+        .Bind(ContentKeyFunctions.TargetHead,
+            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.Head)))
+        .Bind(ContentKeyFunctions.TargetTorso,
+            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.Torso)))
+        .Bind(ContentKeyFunctions.TargetLeftArm,
+            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.LeftArm)))
+        .Bind(ContentKeyFunctions.TargetRightArm,
+            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.RightArm)))
+        .Bind(ContentKeyFunctions.TargetLeftLeg,
+            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.LeftLeg)))
+        .Bind(ContentKeyFunctions.TargetRightLeg,
+            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.RightLeg)))
+        .Register<SharedTargetingSystem>();
     }
 
     private void HandlePlayerAttached(EntityUid uid, TargetingComponent component, LocalPlayerAttachedEvent args)
@@ -64,5 +80,15 @@ public sealed class TargetingSystem : SharedTargetingSystem
             return;
 
         PartStatusUpdate?.Invoke(component);
+    }
+
+    private void HandleTargetChange(ICommonSession? session, TargetBodyPart target)
+    {
+        if (session == null
+            || session.AttachedEntity is not { } uid
+            || !TryComp<TargetingComponent>(uid, out var targeting))
+            return;
+
+        TargetChange?.Invoke(target);
     }
 }

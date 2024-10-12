@@ -102,7 +102,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.HoldLookUp, args.Pressed);
             _cfg.SaveToFile();
         }
-        
+
         private void HandleDefaultWalk(BaseButton.ButtonToggledEventArgs args)
         {
             _cfg.SetCVar(CCVars.DefaultWalk, args.Pressed);
@@ -249,6 +249,14 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.WindowCloseRecent);
             AddButton(EngineKeyFunctions.EscapeMenu);
             AddButton(ContentKeyFunctions.EscapeContext);
+
+            AddHeader("ui-options-header-targeting");
+            AddButton(ContentKeyFunctions.TargetHead);
+            AddButton(ContentKeyFunctions.TargetTorso);
+            AddButton(ContentKeyFunctions.TargetLeftArm);
+            AddButton(ContentKeyFunctions.TargetRightArm);
+            AddButton(ContentKeyFunctions.TargetLeftLeg);
+            AddButton(ContentKeyFunctions.TargetRightLeg);
 
             AddHeader("ui-options-header-misc");
             AddButton(ContentKeyFunctions.TakeScreenshot);

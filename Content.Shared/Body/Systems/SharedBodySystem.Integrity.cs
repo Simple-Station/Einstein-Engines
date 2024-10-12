@@ -1,7 +1,7 @@
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Damage;
-using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Targeting;
 using Content.Shared.Targeting.Events;
@@ -13,10 +13,39 @@ namespace Content.Shared.Body.Systems;
 public partial class SharedBodySystem
 {
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        foreach (var part in EntityManager.EntityQuery<BodyPartComponent>(false))
+        {
+            part.HealingTimer += frameTime;
+
+            if (part.HealingTimer >= part.HealingTime)
+            {
+                part.HealingTimer = 0;
+                if (part.Integrity < 100
+                    && part.Integrity > 50
+                    && part.ParentSlot is not null
+                    && part.Body is not null
+                    && !_mobState.IsDead(part.Body.Value))
+                {
+                    if (part.Integrity + part.SelfHealingAmount > 100)
+                        part.Integrity = 100;
+                    else
+                        part.Integrity += part.SelfHealingAmount;
+                }
+            }
+
+        }
+    }
+
     /// <summary>
     /// Propagates damage to the specified parts of the entity.
     /// </summary>
-    private void ApplyPartDamage(Entity<BodyPartComponent> partEnt, DamageSpecifier damage, BodyPartType targetType, TargetBodyPart targetPart)
+    private void ApplyPartDamage(Entity<BodyPartComponent> partEnt, DamageSpecifier damage, BodyPartType targetType, TargetBodyPart targetPart, bool canSever)
     {
         var severingDamageTypes = new[] { "Slash", "Pierce", "Blunt" };
         var severed = false;
@@ -30,8 +59,10 @@ public partial class SharedBodySystem
             float modifier = GetDamageModifier(damageType);
             float partModifier = GetPartDamageModifier(targetType);
             partEnt.Comp.Integrity -= damageValue.Float() * modifier * partModifier;
-            if (severingDamageTypes.Contains(damageType)
-                && partIdSlot is not null && partEnt.Comp.Integrity <= 0)
+            if (canSever
+                && severingDamageTypes.Contains(damageType)
+                && partIdSlot is not null
+                && partEnt.Comp.Integrity <= 0)
             {
                 severed = true;
                 break;
@@ -40,13 +71,16 @@ public partial class SharedBodySystem
 
         if (partEnt.Comp.Integrity != originalIntegrity
             && TryComp<TargetingComponent>(partEnt.Comp.Body, out var targeting)
-            && TryComp<MobStateComponent>(partEnt.Comp.Body, out var state))
+            && TryComp<MobStateComponent>(partEnt.Comp.Body, out var _) && partEnt.Comp.Body is not null)
         {
             var newIntegrity = GetIntegrityThreshold(partEnt.Comp.Integrity, severed);
 
             // We need to check if the part is dead to prevent the UI from showing dead parts as alive.
             if (targeting.BodyStatus[targetPart] != TargetIntegrity.Dead)
+            {
                 targeting.BodyStatus[targetPart] = newIntegrity;
+                Dirty(partEnt.Comp.Body.Value, targeting);
+            }
 
             // Revival events are handled by the server, so ends up being locked to a network event.
             if (_net.IsServer)

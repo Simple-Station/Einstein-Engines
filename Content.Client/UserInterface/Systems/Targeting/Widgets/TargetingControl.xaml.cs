@@ -36,7 +36,7 @@ public sealed partial class TargetingControl : UIWidget
     }
     private void SetActiveBodyPart(TargetBodyPart bodyPart)
     {
-        _controller.CycleTarget(bodyPart, this);
+        _controller.CycleTarget(bodyPart);
     }
 
     public void SetColors(TargetBodyPart bodyPart)

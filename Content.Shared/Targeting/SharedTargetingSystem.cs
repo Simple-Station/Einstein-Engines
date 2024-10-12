@@ -1,5 +1,3 @@
-using Content.Shared.Targeting.Events;
-
 namespace Content.Shared.Targeting;
 public abstract class SharedTargetingSystem : EntitySystem
 {
@@ -7,5 +5,6 @@ public abstract class SharedTargetingSystem : EntitySystem
     {
         base.Initialize();
     }
+
 
 }

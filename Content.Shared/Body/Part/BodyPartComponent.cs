@@ -56,6 +56,23 @@ public sealed partial class BodyPartComponent : Component
     public float Integrity = 100f;
 
     /// <summary>
+    /// How long it takes to run another self heal tick on the body part.
+    /// </summary>
+    [DataField("healingTime")]
+    public float HealingTime = 30;
+
+    /// <summary>
+    /// How long it has been since the last self heal tick on the body part.
+    /// </summary>
+    public float HealingTimer = 0;
+
+    /// <summary>
+    /// How much health to heal on the body part per tick.
+    /// </summary>
+    [DataField("selfHealingAmount")]
+    public float SelfHealingAmount = 5;
+
+    /// <summary>
     /// These are only for VV/Debug do not use these for gameplay/systems
     /// </summary>
     [ViewVariables]

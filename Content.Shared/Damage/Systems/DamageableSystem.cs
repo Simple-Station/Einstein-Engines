@@ -100,12 +100,11 @@ namespace Content.Shared.Damage
         ///     The damage changed event is used by other systems, such as damage thresholds.
         /// </remarks>
         public void DamageChanged(EntityUid uid, DamageableComponent component, DamageSpecifier? damageDelta = null,
-            bool interruptsDoAfters = true, EntityUid? origin = null)
+            bool interruptsDoAfters = true, EntityUid? origin = null, bool canTarget = true, bool canSever = true)
         {
             TargetBodyPart? targetPart = null;
             component.Damage.GetDamagePerGroup(_prototypeManager, component.DamagePerGroup);
             component.TotalDamage = component.Damage.GetTotal();
-
             // If our target has a TargetingComponent, that means they will take limb damage
             // And if their attacker also has one, then we use that part.
             if (TryComp<TargetingComponent>(uid, out var target))
@@ -128,7 +127,7 @@ namespace Content.Shared.Damage
                 var data = new DamageVisualizerGroupData(component.DamagePerGroup.Keys.ToList());
                 _appearance.SetData(uid, DamageVisualizerKeys.DamageUpdateGroups, data, appearance);
             }
-            RaiseLocalEvent(uid, new DamageChangedEvent(component, damageDelta, interruptsDoAfters, origin, targetPart));
+            RaiseLocalEvent(uid, new DamageChangedEvent(component, damageDelta, interruptsDoAfters, origin, targetPart, canTarget, canSever));
         }
 
         /// <summary>
@@ -144,7 +143,8 @@ namespace Content.Shared.Damage
         ///     null if the user had no applicable components that can take damage.
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
-            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null)
+            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null,
+            bool? canTarget = true, bool? canSever = true)
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -173,7 +173,6 @@ namespace Content.Shared.Damage
                     // use a local private field instead of creating a new dictionary here..
                     damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
                 }
-
                 var ev = new DamageModifyEvent(damage, origin);
                 RaiseLocalEvent(uid.Value, ev);
                 damage = ev.Damage;
@@ -206,7 +205,7 @@ namespace Content.Shared.Damage
             }
 
             if (delta.DamageDict.Count > 0)
-                DamageChanged(uid.Value, damageable, delta, interruptsDoAfters, origin);
+                DamageChanged(uid.Value, damageable, delta, interruptsDoAfters, origin, canTarget ?? true, canSever ?? true);
 
             return delta;
         }
@@ -368,9 +367,14 @@ namespace Content.Shared.Damage
         public readonly DamageSpecifier? DamageDelta;
 
         /// <summary>
-        ///     Was any of the damage change dealing damage, or was it all healing?
+        ///     Was any of the change dealing damage?
         /// </summary>
         public readonly bool DamageIncreased;
+
+        /// <summary>
+        ///     Was any of the change healing?
+        /// </summary>
+        public readonly bool DamageDecreased;
 
         /// <summary>
         ///     Does this event interrupt DoAfters?
@@ -385,17 +389,29 @@ namespace Content.Shared.Damage
         public readonly EntityUid? Origin;
 
         /// <summary>
+        ///     Can this damage event target parts?
+        /// </summary>
+        public readonly bool CanTarget;
+
+        /// <summary>
+        ///     Can this damage event sever parts?
+        /// </summary>
+        public readonly bool CanSever;
+
+        /// <summary>
         ///     What part of this entity is going to take damage?
         /// </summary>
         public readonly TargetBodyPart? TargetPart;
 
-        public DamageChangedEvent(DamageableComponent damageable, DamageSpecifier? damageDelta, bool interruptsDoAfters, EntityUid? origin, TargetBodyPart? targetPart = null)
+        public DamageChangedEvent(DamageableComponent damageable, DamageSpecifier? damageDelta, bool interruptsDoAfters,
+            EntityUid? origin, TargetBodyPart? targetPart = null, bool canSever = true, bool canTarget = true)
         {
             Damageable = damageable;
             DamageDelta = damageDelta;
             Origin = origin;
             TargetPart = targetPart;
-
+            CanSever = canSever;
+            CanTarget = canTarget;
             if (DamageDelta == null)
                 return;
 
@@ -404,6 +420,11 @@ namespace Content.Shared.Damage
                 if (damageChange > 0)
                 {
                     DamageIncreased = true;
+                    break;
+                }
+                else if (damageChange < 0)
+                {
+                    DamageDecreased = true;
                     break;
                 }
             }

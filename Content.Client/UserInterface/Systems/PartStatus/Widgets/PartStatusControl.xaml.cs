@@ -31,7 +31,6 @@ public sealed partial class PartStatusControl : UIWidget
 
     public void SetTextures(Dictionary<TargetBodyPart, TargetIntegrity> state)
     {
-        Logger.Debug("Setting textures.");
         foreach (var (bodyPart, integrity) in state)
         {
             string enumName = Enum.GetName(typeof(TargetBodyPart), bodyPart) ?? "Unknown";
