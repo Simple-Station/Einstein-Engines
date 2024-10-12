@@ -10,7 +10,7 @@
   id: BluespaceOre
   name: rough bluespace
   icon: { sprite: Objects/Materials/ore.rsi, state: bluespace }
-  spawn: MaterialBluespace
+  spawn: BluespaceOre1
   maxCount: 30
 
 - type: stack
@@ -25,5 +25,5 @@
   id: NormalityOre
   name: rough normality
   icon: { sprite: Objects/Materials/ore.rsi, state: bluespace }
-  spawn: MaterialNormality
+  spawn: NormalityOre1
   maxCount: 30
