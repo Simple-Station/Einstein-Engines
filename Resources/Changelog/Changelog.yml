@@ -7153,3 +7153,15 @@ Entries:
   id: 6438
   time: '2024-10-11T16:08:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1037
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Bluespace and Normality ore as very rare ore types. Salvage can
+        occasionally find these ores on Asteroids or on Expedition planets.
+        Bluespace and Normality Ore can be smelted in an Ore Processor into
+        Bluespace and Normality Crystals. Make sure to bring these to Epistemics
+        so that they can do their job.
+  id: 6439
+  time: '2024-10-12T20:49:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1042
