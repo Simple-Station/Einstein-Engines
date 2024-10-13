@@ -98,10 +98,9 @@ public sealed class MailSystem : EntitySystem
         foreach (var mailTeleporter in EntityQuery<MailTeleporterComponent>())
         {
             if (TryComp<ApcPowerReceiverComponent>(mailTeleporter.Owner, out var power) && !power.Powered)
-                return;
+                continue;
 
             mailTeleporter.Accumulator += frameTime;
-
             if (mailTeleporter.Accumulator < mailTeleporter.TeleportInterval.TotalSeconds)
                 continue;
 
