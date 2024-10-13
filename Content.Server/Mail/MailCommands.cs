@@ -94,7 +94,7 @@ public sealed class MailToCommand : IConsoleCommand
             return;
         }
 
-        var mailUid = _entityManager.SpawnEntity(mailPrototype, _entityManager.GetComponent<TransformComponent>(containerUid).Coordinates);x
+        var mailUid = _entityManager.SpawnEntity(mailPrototype, _entityManager.GetComponent<TransformComponent>(containerUid).Coordinates);
         var mailContents = containerSystem.EnsureContainer<Container>(mailUid, _mailContainer);
 
         if (!_entityManager.TryGetComponent(mailUid, out MailComponent? mailComponent))
