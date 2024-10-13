@@ -2487,11 +2487,10 @@ namespace Content.Shared.CCVar
             CVarDef.Create("rest.hold_look_up", false, CVar.CLIENT | CVar.ARCHIVE);
 
         /// <summary>
-        ///     When true, entities that fall to the ground will be able to crawl under tables and
-        ///     plastic flaps, allowing them to take cover from gunshots.
+        ///     When true, players can choose to crawl under tables while laying down, using the designated keybind.
         /// </summary>
         public static readonly CVarDef<bool> CrawlUnderTables =
-            CVarDef.Create("rest.crawlundertables", false, CVar.REPLICATED);
+            CVarDef.Create("rest.crawlundertables", true, CVar.SERVER | CVar.ARCHIVE);
 
         #endregion
 
