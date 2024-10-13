@@ -7212,3 +7212,15 @@ Entries:
   id: 6445
   time: '2024-10-13T19:25:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1035
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        NT has started hiring contractors from other corporations to fill out
+        station staff. New loadout items for corporate contractors are now
+        available for Bartender, Botanist, Cataloguer, Chef, and Janitor.
+        Currently there are no jumpskirt versions of these uniforms. We are
+        looking for people willing to make skirt variations of each of these. 
+  id: 6446
+  time: '2024-10-13T19:26:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1041
