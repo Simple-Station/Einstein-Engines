@@ -362,12 +362,12 @@ trait-description-BionicArm =
 trait-name-PlateletFactories = Platelet Factories
 trait-description-PlateletFactories =
     Your body has been augmented with a series of biotailored organs that enhance the owner's long term survivability. These organs will attempt
-    to keep the user alive, even in the face of advanced trauma, all the way up until- but not including, death.
+    to keep the user alive, even in the face of advanced trauma, all the way up until - but not including - death.
     Your natural healing is no longer capped, and will now slowly heal any damage type. This includes more exotic injuries like radiation exposure, or cancer.
 
 trait-name-DermalArmor = Dermal Armor
 trait-description-DermalArmor =
-    Your skin has been replaced with a flexible- yet sturdy, hard-polymer shell wrapped in a layer of synthetic flesh.
+    Your skin has been replaced with a flexible, yet sturdy, hard-polymer shell wrapped in a layer of synthetic flesh.
     This augmentation provides an innate 10% resistance to physical damage.
 
 trait-name-CyberEyes = Cyber-Eyes Basic System
