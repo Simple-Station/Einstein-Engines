@@ -492,6 +492,7 @@
   components:
     - type: FlashImmunity
     - type: EyeProtection
+    - type: CyberEyes
 
 - type: trait
   id: CyberEyesSecurity
