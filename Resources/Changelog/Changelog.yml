@@ -7224,3 +7224,21 @@ Entries:
   id: 6446
   time: '2024-10-13T19:26:23.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1041
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        The Courier and Logistics Officer now have a new program in their PDA
+        for tracking mail delivery performance, including earnings and percent
+        of packages opened, damaged, or expired.
+    - type: Add
+      message: >-
+        The list of possible mail packages has been greately expanded, and now
+        includes large parcels.
+    - type: Add
+      message: >-
+        The CourierDrobe now offers a rapid mail delivery device, along with
+        capsules for it.
+  id: 6447
+  time: '2024-10-13T19:38:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1011
