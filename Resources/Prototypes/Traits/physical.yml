@@ -356,6 +356,10 @@
   category: Physical
   points: -4
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       species:
         - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
@@ -390,6 +394,10 @@
   category: Physical
   points: -4
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -406,6 +414,11 @@
   id: BionicArm
   category: Physical
   points: -9
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
   components:
     - type: Prying
       speedModifier: 1
@@ -417,6 +430,10 @@
   category: Physical
   points: -10
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -442,6 +459,10 @@
   category: Physical
   points: -9
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       species:
         - Human
@@ -456,6 +477,10 @@
   category: Physical
   points: -8
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -473,6 +498,10 @@
   category: Physical
   points: -1
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -491,6 +520,10 @@
   category: Physical
   points: -1
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
@@ -509,6 +542,10 @@
   category: Physical
   points: -1
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
@@ -528,6 +565,10 @@
   category: Physical
   points: -3
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
