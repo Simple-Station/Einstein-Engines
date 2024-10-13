@@ -7202,3 +7202,13 @@ Entries:
   id: 6444
   time: '2024-10-13T18:51:26.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1044
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added 8 new Physical Traits. These are, Cyber-Eyes Basic System(Plus 4
+        different modular options), Bionic Arm, Dermal Armor, and Platelet
+        Factories. 
+  id: 6445
+  time: '2024-10-13T19:25:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1035
