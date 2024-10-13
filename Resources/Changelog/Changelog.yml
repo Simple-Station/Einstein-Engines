@@ -7172,3 +7172,10 @@ Entries:
   id: 6440
   time: '2024-10-13T16:38:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1040
+- author: FoxxoTrystan
+  changes:
+    - type: Fix
+      message: Oneirophage is once more psionic invisible in webs.
+  id: 6441
+  time: '2024-10-13T18:33:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1033
