@@ -106,6 +106,8 @@
   - type: OfferItem
   - type: LayingDown
   - type: Carriable
+  - type: StatusIcon
+    bounds: -0.5,-0.5,0.5,0.5
   - type: StepTriggerImmune
     whitelist:
       types:

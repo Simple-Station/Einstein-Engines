@@ -1,0 +1,38 @@
+- type: entity
+  parent: BaseItem
+  id: ShuttleCurse
+  name: cursed orb
+  description: You peer within this smokey orb and glimpse terrible fates befalling the emergency escape shuttle.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/shuttle_curse.rsi
+    state: icon
+  - type: CultItem
+  - type: ShuttleCurse
+
+- type: entity
+  parent: BaseItem
+  id: WhetstoneCult
+  name: eldritch whetstone
+  description: A block, empowered by dark magic. Sharp weapons will be enhanced when used on the stone.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/whetstone_cult.rsi
+    layers:
+    - state: icon
+      map: [ "enum.WhetstoneVisuals.Layer" ]
+  - type: CultItem
+  - type: Whetstone
+    whitelist:
+      components:
+      - Sharp
+    blacklist:
+      components:
+      - EnergySword
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.WhetstoneVisuals.Used:
+        enum.WhetstoneVisuals.Layer:
+          True: { state: icon_off }
+          False: { state: icon }
