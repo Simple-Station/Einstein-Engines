@@ -7095,3 +7095,150 @@ Entries:
   id: 6433
   time: '2024-10-09T16:12:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/994
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Logistics can now directly order a variety of hardsuits. "NT In-Network"
+        hardsuits being substantially cheaper thanks to backroom deals.
+  id: 6434
+  time: '2024-10-09T23:01:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1024
+- author: DangerRevolution
+  changes:
+    - type: Add
+      message: Resprited basic Service Staff uniforms
+    - type: Add
+      message: Add rolled sleeve variants for Service Staff uniforms.
+  id: 6435
+  time: '2024-10-10T16:21:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1021
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: The X-01 multiphase energy gun has been removed from the HoS locker.
+    - type: Add
+      message: >-
+        A new Loadout Item Group, "Head of Security's Antique Weapon Collection"
+        has been added. Rather than being given a unique weapon by whatever map
+        creators put in the HoS Office, each Head of Security is entitled to a
+        single item selected from this new loadout category, free of charge. But
+        beware, whatever item chosen from this list may potentially be used as a
+        Steal Objective for traitors. You may have a fancy new submachine gun,
+        but it also makes you a target.
+    - type: Add
+      message: >-
+        antique Bulldog, antique C-20r submachine gun, x-01 multiphase energy
+        gun, antique energy sword, antique pulse pistol, antique Wt550, and a
+        pair of Katana Sheaths have all been added as loadout options for the
+        Head of Security.
+  id: 6436
+  time: '2024-10-11T01:43:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1031
+- author: Ichaie
+  changes:
+    - type: Add
+      message: A map called "RadStation" has been added to rotation.
+    - type: Add
+      message: A new Evac shuttle called "emergency_neol" has been added to RadStation
+  id: 6437
+  time: '2024-10-11T16:05:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1034
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Sleeping and muzzled entities can no longer use vocal emotes (scream,
+        meow, etc).
+  id: 6438
+  time: '2024-10-11T16:08:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1037
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Bluespace and Normality ore as very rare ore types. Salvage can
+        occasionally find these ores on Asteroids or on Expedition planets.
+        Bluespace and Normality Ore can be smelted in an Ore Processor into
+        Bluespace and Normality Crystals. Make sure to bring these to Epistemics
+        so that they can do their job.
+  id: 6439
+  time: '2024-10-12T20:49:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1042
+- author: Fansana
+  changes:
+    - type: Fix
+      message: Fixes the arrivals shuttle choosing to correct docking port.
+  id: 6440
+  time: '2024-10-13T16:38:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1040
+- author: FoxxoTrystan
+  changes:
+    - type: Fix
+      message: Oneirophage is once more psionic invisible in webs.
+  id: 6441
+  time: '2024-10-13T18:33:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1033
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now toggle crawling under furniture! The default keybind is
+        Shift-R, you can change it in settings.
+  id: 6442
+  time: '2024-10-13T18:34:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1036
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Made the show clothing/loadouts button labels more clear
+  id: 6443
+  time: '2024-10-13T18:41:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1030
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Brains now can no longer be eaten.
+  id: 6444
+  time: '2024-10-13T18:51:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1044
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added 8 new Physical Traits. These are, Cyber-Eyes Basic System(Plus 4
+        different modular options), Bionic Arm, Dermal Armor, and Platelet
+        Factories. 
+  id: 6445
+  time: '2024-10-13T19:25:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1035
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        NT has started hiring contractors from other corporations to fill out
+        station staff. New loadout items for corporate contractors are now
+        available for Bartender, Botanist, Cataloguer, Chef, and Janitor.
+        Currently there are no jumpskirt versions of these uniforms. We are
+        looking for people willing to make skirt variations of each of these. 
+  id: 6446
+  time: '2024-10-13T19:26:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1041
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        The Courier and Logistics Officer now have a new program in their PDA
+        for tracking mail delivery performance, including earnings and percent
+        of packages opened, damaged, or expired.
+    - type: Add
+      message: >-
+        The list of possible mail packages has been greately expanded, and now
+        includes large parcels.
+    - type: Add
+      message: >-
+        The CourierDrobe now offers a rapid mail delivery device, along with
+        capsules for it.
+  id: 6447
+  time: '2024-10-13T19:38:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1011

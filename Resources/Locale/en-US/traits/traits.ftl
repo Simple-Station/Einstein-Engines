@@ -353,3 +353,44 @@ trait-name-Azaziba = Sinta'Azaziba
 trait-description-Azaziba =
     A language of Moghes consisting of a combination of spoken word and gesticulation.
     While waning since Moghes entered the galactic stage - it enjoys popular use by Unathi that never fell to the Hegemony's cultural dominance.
+
+trait-name-BionicArm = Bionic Arm
+trait-description-BionicArm =
+    One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
+    or a more obvious metal limb. This limb provides enhanced strength to its user, allowing one to pry open barriers with their bare hands.
+
+trait-name-PlateletFactories = Platelet Factories
+trait-description-PlateletFactories =
+    Your body has been augmented with a series of biotailored organs that enhance the owner's long term survivability. These organs will attempt
+    to keep the user alive, even in the face of advanced trauma, all the way up until - but not including - death.
+    Your natural healing is no longer capped, and will now slowly heal any damage type. This includes more exotic injuries like radiation exposure, or cancer.
+
+trait-name-DermalArmor = Dermal Armor
+trait-description-DermalArmor =
+    Your skin has been replaced with a flexible, yet sturdy, hard-polymer shell wrapped in a layer of synthetic flesh.
+    This augmentation provides an innate 10% resistance to physical damage.
+
+trait-name-CyberEyes = Cyber-Eyes Basic System
+trait-description-CyberEyes =
+    One or more of your eyes have been replaced with a highly modular mechanical ocular implant.
+    Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes,
+    but additionally these implants provide protection from bright flashes of light.
+
+trait-name-CyberEyesSecurity = Cyber-Eyes SecHud
+trait-description-CyberEyesSecurity =
+    Your Cyber-Eyes have been upgraded to include a built-in Security Hud. Note that this augmentation is considered Contraband
+    for anyone not under the employ of station Security personel, and may be disabled by your employer before dispatch to the station.
+
+trait-name-CyberEyesMedical = Cyber-Eyes MedHud
+trait-description-CyberEyesMedical =
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, allowing you to track the relative health condition of biological organisms.
+
+trait-name-CyberEyesDiagnostic = Cyber-Eyes DiagHud
+trait-description-CyberEyesDiagnostic =
+    Your Cyber-Eyes have been upgraded to include a built-in Diagnostic Hud, allowing you to track the condition of synthetic entities.
+
+trait-name-CyberEyesOmni = Cyber-Eyes HudSuite
+trait-description-CyberEyesOmni =
+    This expensive implant provides the combined benefits of a SecHud, MedHud, and a DiagHud.
+    Note that this augmentation is considered Contraband for anyone not under the employ of station Security personel,
+    and may be disabled by your employer before dispatch to the station.

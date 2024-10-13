@@ -1520,6 +1520,18 @@ namespace Content.Shared.CCVar
             CVarDef.Create("shuttle.arrivals_cooldown", 50f, CVar.SERVERONLY);
 
         /// <summary>
+        /// Time it takes the shuttle to spin up it's hyper drive and jump
+        /// </summary>
+        public static readonly CVarDef<float> ArrivalsStartupTime=
+            CVarDef.Create("shuttle.arrivals_startup_time", 5.5f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Time spent in hyperspace
+        /// </summary>
+        public static readonly CVarDef<float> ArrivalsHyperspaceTime =
+            CVarDef.Create("shuttle.arrivals_hyperspace_time", 20f, CVar.SERVERONLY);
+
+        /// <summary>
         /// Are players allowed to return on the arrivals shuttle.
         /// </summary>
         public static readonly CVarDef<bool> ArrivalsReturns =
@@ -2481,11 +2493,10 @@ namespace Content.Shared.CCVar
             CVarDef.Create("rest.hold_look_up", false, CVar.CLIENT | CVar.ARCHIVE);
 
         /// <summary>
-        ///     When true, entities that fall to the ground will be able to crawl under tables and
-        ///     plastic flaps, allowing them to take cover from gunshots.
+        ///     When true, players can choose to crawl under tables while laying down, using the designated keybind.
         /// </summary>
         public static readonly CVarDef<bool> CrawlUnderTables =
-            CVarDef.Create("rest.crawlundertables", false, CVar.REPLICATED);
+            CVarDef.Create("rest.crawlundertables", true, CVar.SERVER | CVar.ARCHIVE);
 
         #endregion
 

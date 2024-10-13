@@ -358,6 +358,12 @@
     accentVColor: "#a23e3e"
   - type: Icon
     state: pda-qm
+  - type: CartridgeLoader # Adds the MailMetrics courier tracker
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - MailMetricsCartridge
 
 - type: entity
   parent: BasePDA

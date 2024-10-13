@@ -6,6 +6,7 @@ cargoproduct-category-name-emergency = Emergency
 cargoproduct-category-name-engineering = Engineering
 cargoproduct-category-name-food = Food
 cargoproduct-category-name-fun = Fun
+cargoproduct-category-name-hardsuits = Hardsuits
 cargoproduct-category-name-hydroponics = Hydroponics
 cargoproduct-category-name-livestock = Livestock
 cargoproduct-category-name-materials = Materials
