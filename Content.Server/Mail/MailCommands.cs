@@ -46,31 +46,23 @@ public sealed class MailToCommand : IConsoleCommand
             return;
         }
 
-        if (!Boolean.TryParse(args[2], out var isFragile))
+        if (!bool.TryParse(args[2], out var isFragile) || !bool.TryParse(args[3], out var isPriority))
         {
             shell.WriteError(Loc.GetString("shell-invalid-bool"));
             return;
         }
 
-        if (!Boolean.TryParse(args[3], out var isPriority))
-        {
-            shell.WriteError(Loc.GetString("shell-invalid-bool"));
-            return;
-        }
-
-        // Frontier: Large Mail
-        bool isLarge = false;
-        if (args.Length > 4 && !Boolean.TryParse(args[4], out isLarge))
+        var isLarge = false;
+        if (args.Length > 4 && !bool.TryParse(args[4], out isLarge))
         {
             shell.WriteError(Loc.GetString("shell-invalid-bool"));
             return;
         }
         var mailPrototype = isLarge ? _blankLargeMailPrototype : _blankMailPrototype;
-        // End Frontier
 
 
-        var _mailSystem = _entitySystemManager.GetEntitySystem<MailSystem>();
-        var _containerSystem = _entitySystemManager.GetEntitySystem<SharedContainerSystem>();
+        var mailSystem = _entitySystemManager.GetEntitySystem<MailSystem>();
+        var containerSystem = _entitySystemManager.GetEntitySystem<SharedContainerSystem>();
 
         if (!_entityManager.TryGetComponent(recipientUid, out MailReceiverComponent? mailReceiver))
         {
@@ -78,50 +70,50 @@ public sealed class MailToCommand : IConsoleCommand
             return;
         }
 
-        if (!_prototypeManager.HasIndex<EntityPrototype>(mailPrototype)) // Frontier: _blankMailPrototype<mailPrototype
+        if (!_prototypeManager.HasIndex<EntityPrototype>(mailPrototype))
         {
-        shell.WriteLine(Loc.GetString("command-mailto-no-blankmail", ("blankMail", mailPrototype))); // Frontier: _blankMailPrototype<mailPrototype
+            shell.WriteLine(Loc.GetString("command-mailto-no-blankmail", ("blankMail", mailPrototype)));
             return;
         }
 
-        if (!_containerSystem.TryGetContainer(containerUid, _container, out var targetContainer))
+        if (!containerSystem.TryGetContainer(containerUid, _container, out var targetContainer))
         {
             shell.WriteLine(Loc.GetString("command-mailto-invalid-container", ("requiredContainer", _container)));
             return;
         }
 
-        if (!_mailSystem.TryGetMailRecipientForReceiver(mailReceiver, out MailRecipient? recipient))
+        if (!mailSystem.TryGetMailRecipientForReceiver(mailReceiver, out MailRecipient? recipient))
         {
             shell.WriteLine(Loc.GetString("command-mailto-unable-to-receive"));
             return;
         }
 
-        if (!_mailSystem.TryGetMailTeleporterForReceiver(mailReceiver, out MailTeleporterComponent? teleporterComponent))
+        if (!mailSystem.TryGetMailTeleporterForReceiver(mailReceiver, out MailTeleporterComponent? teleporterComponent))
         {
             shell.WriteLine(Loc.GetString("command-mailto-no-teleporter-found"));
             return;
         }
 
-        var mailUid = _entityManager.SpawnEntity(mailPrototype, _entityManager.GetComponent<TransformComponent>(containerUid).Coordinates); // Frontier: _blankMailPrototype<mailPrototype
-        var mailContents = _containerSystem.EnsureContainer<Container>(mailUid, _mailContainer);
+        var mailUid = _entityManager.SpawnEntity(mailPrototype, _entityManager.GetComponent<TransformComponent>(containerUid).Coordinates);x
+        var mailContents = containerSystem.EnsureContainer<Container>(mailUid, _mailContainer);
 
         if (!_entityManager.TryGetComponent(mailUid, out MailComponent? mailComponent))
         {
-            shell.WriteLine(Loc.GetString("command-mailto-bogus-mail", ("blankMail", mailPrototype), ("requiredMailComponent", nameof(MailComponent)))); // Frontier: _blankMailPrototype<mailPrototype
+            shell.WriteLine(Loc.GetString("command-mailto-bogus-mail", ("blankMail", mailPrototype), ("requiredMailComponent", nameof(MailComponent))));
             return;
         }
 
         foreach (var entity in targetContainer.ContainedEntities.ToArray())
-            _containerSystem.Insert(entity, mailContents);
+            containerSystem.Insert(entity, mailContents);
 
         mailComponent.IsFragile = isFragile;
         mailComponent.IsPriority = isPriority;
         mailComponent.IsLarge = isLarge; //Frontier Mail
 
-        _mailSystem.SetupMail(mailUid, teleporterComponent, recipient.Value);
+        mailSystem.SetupMail(mailUid, teleporterComponent, recipient.Value);
 
-        var teleporterQueue = _containerSystem.EnsureContainer<Container>(teleporterComponent.Owner, "queued");
-        _containerSystem.Insert(mailUid, teleporterQueue);
+        var teleporterQueue = containerSystem.EnsureContainer<Container>(teleporterComponent.Owner, "queued");
+        containerSystem.Insert(mailUid, teleporterQueue);
         shell.WriteLine(Loc.GetString("command-mailto-success", ("timeToTeleport", teleporterComponent.TeleportInterval.TotalSeconds - teleporterComponent.Accumulator)));
     }
 }
@@ -138,7 +130,7 @@ public sealed class MailNowCommand : IConsoleCommand
 
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        var _mailSystem = _entitySystemManager.GetEntitySystem<MailSystem>();
+        var entitySystem = _entitySystemManager.GetEntitySystem<MailSystem>();
 
         foreach (var mailTeleporter in _entityManager.EntityQuery<MailTeleporterComponent>())
         {

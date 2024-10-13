@@ -5,8 +5,8 @@ using Robust.Shared.Containers;
 namespace Content.Server.Mail.Systems;
 
 /// <summary>
-/// A placeholder for another entity, spawned when taken out of a container, with the placeholder deleted shortly after.
-/// Useful for storing instant effect entities, e.g. smoke, in the mail.
+///     A placeholder for another entity, spawned when taken out of a container, with the placeholder deleted shortly after.
+///     Useful for storing instant effect entities, e.g. smoke, in the mail.
 /// </summary>
 public sealed class DelayedItemSystem : EntitySystem
 {
@@ -20,33 +20,21 @@ public sealed class DelayedItemSystem : EntitySystem
         SubscribeLocalEvent<Components.DelayedItemComponent, EntGotRemovedFromContainerMessage>(OnRemovedFromContainer);
     }
 
-    /// <summary>
-    /// EntGotRemovedFromContainerMessage handler - spawn the intended entity after removed from a container.
-    /// </summary>
     private void OnRemovedFromContainer(EntityUid uid, Components.DelayedItemComponent component, ContainerModifiedMessage args)
     {
         Spawn(component.Item, Transform(uid).Coordinates);
     }
 
-    /// <summary>
-    /// GotEquippedHandEvent handler - destroy the placeholder.
-    /// </summary>
     private void OnHandEquipped(EntityUid uid, Components.DelayedItemComponent component, EquippedHandEvent args)
     {
         EntityManager.DeleteEntity(uid);
     }
 
-    /// <summary>
-    /// OnDropAttempt handler - destroy the placeholder.
-    /// </summary>
     private void OnDropAttempt(EntityUid uid, Components.DelayedItemComponent component, DropAttemptEvent args)
     {
         EntityManager.DeleteEntity(uid);
     }
 
-    /// <summary>
-    /// OnDamageChanged handler - item has taken damage (e.g. inside the envelope), spawn the intended entity outside of any container and delete the placeholder.
-    /// </summary>
     private void OnDamageChanged(EntityUid uid, Components.DelayedItemComponent component, DamageChangedEvent args)
     {
         Spawn(component.Item, Transform(uid).Coordinates);
