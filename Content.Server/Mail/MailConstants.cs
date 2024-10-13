@@ -13,7 +13,7 @@ public struct MailEntityStrings
 /// <summary>
 /// Constants related to mail.
 /// </summary>
-public sealed class MailConstants : EntitySystem
+public static class MailConstants
 {
     /// <summary>
     /// Locale strings related to small parcels.
