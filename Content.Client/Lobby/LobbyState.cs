@@ -75,7 +75,9 @@ namespace Content.Client.Lobby
             LayoutContainer.SetAnchorPreset(_lobby, LayoutContainer.LayoutPreset.Wide);
             var serverName = _baseClient.GameInfo?.ServerName;
             var shortName = _configurationManager.GetCVar(CCVars.ShortHostName);
-            _lobby.ServerName.Text = shortName?.Length > 0 ? shortName : serverName?.Length > 16 ? serverName[..16] : serverName;
+            _lobby.ServerName.Text = !string.IsNullOrEmpty(shortName)
+                ? shortName
+                : serverName?.Length > 16 ? serverName[..16] : serverName;
             UpdateLobbyUi();
 
             _lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
