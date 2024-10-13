@@ -45,7 +45,8 @@ public partial class SharedBodySystem
     /// <summary>
     /// Propagates damage to the specified parts of the entity.
     /// </summary>
-    private void ApplyPartDamage(Entity<BodyPartComponent> partEnt, DamageSpecifier damage, BodyPartType targetType, TargetBodyPart targetPart, bool canSever)
+    private void ApplyPartDamage(Entity<BodyPartComponent> partEnt, DamageSpecifier damage,
+        BodyPartType targetType, TargetBodyPart targetPart, bool canSever, float partMultiplier)
     {
         var severingDamageTypes = new[] { "Slash", "Pierce", "Blunt" };
         var severed = false;
@@ -58,7 +59,7 @@ public partial class SharedBodySystem
 
             float modifier = GetDamageModifier(damageType);
             float partModifier = GetPartDamageModifier(targetType);
-            partEnt.Comp.Integrity -= damageValue.Float() * modifier * partModifier;
+            partEnt.Comp.Integrity -= damageValue.Float() * modifier * partModifier * partMultiplier;
             if (canSever
                 && severingDamageTypes.Contains(damageType)
                 && partIdSlot is not null

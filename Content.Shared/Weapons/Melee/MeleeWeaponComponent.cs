@@ -87,6 +87,12 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public FixedPoint2 ClickDamageModifier = FixedPoint2.New(1);
 
+    /// <summary>
+    ///     Part damage is multiplied by this amount for single-target attacks
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float ClickPartDamageMultiplier = 1.00f;
+
     // TODO: Temporarily 1.5 until interactionoutline is adjusted to use melee, then probably drop to 1.2
     /// <summary>
     /// Nearest edge range to hit an entity.
@@ -105,6 +111,12 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float HeavyDamageBaseModifier = 1.2f;
+
+    /// <summary>
+    ///     Part damage is multiplied by this amount for heavy swings
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float HeavyPartDamageMultiplier = 0.5f;
 
     /// <summary>
     /// Total width of the angle for wide attacks.

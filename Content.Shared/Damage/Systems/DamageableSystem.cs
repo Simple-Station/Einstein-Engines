@@ -100,7 +100,7 @@ namespace Content.Shared.Damage
         ///     The damage changed event is used by other systems, such as damage thresholds.
         /// </remarks>
         public void DamageChanged(EntityUid uid, DamageableComponent component, DamageSpecifier? damageDelta = null,
-            bool interruptsDoAfters = true, EntityUid? origin = null, bool canTarget = true, bool canSever = true)
+            bool interruptsDoAfters = true, EntityUid? origin = null, bool canSever = true, float partMultiplier = 1.00f)
         {
             TargetBodyPart? targetPart = null;
             component.Damage.GetDamagePerGroup(_prototypeManager, component.DamagePerGroup);
@@ -109,7 +109,7 @@ namespace Content.Shared.Damage
             // And if their attacker also has one, then we use that part.
             if (TryComp<TargetingComponent>(uid, out var target))
             {
-                if (origin.HasValue && TryComp<TargetingComponent>(origin, out var targeter))
+                if (origin.HasValue && TryComp<TargetingComponent>(origin.Value, out var targeter))
                 {
                     targetPart = targeter.Target;
                 }
@@ -127,7 +127,7 @@ namespace Content.Shared.Damage
                 var data = new DamageVisualizerGroupData(component.DamagePerGroup.Keys.ToList());
                 _appearance.SetData(uid, DamageVisualizerKeys.DamageUpdateGroups, data, appearance);
             }
-            RaiseLocalEvent(uid, new DamageChangedEvent(component, damageDelta, interruptsDoAfters, origin, targetPart, canTarget, canSever));
+            RaiseLocalEvent(uid, new DamageChangedEvent(component, damageDelta, interruptsDoAfters, origin, targetPart, canSever, partMultiplier));
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Content.Shared.Damage
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
             bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null,
-            bool? canTarget = true, bool? canSever = true)
+            bool? canSever = true, float? partMultiplier = 1.00f)
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -205,7 +205,7 @@ namespace Content.Shared.Damage
             }
 
             if (delta.DamageDict.Count > 0)
-                DamageChanged(uid.Value, damageable, delta, interruptsDoAfters, origin, canTarget ?? true, canSever ?? true);
+                DamageChanged(uid.Value, damageable, delta, interruptsDoAfters, origin, canSever ?? true, partMultiplier ?? 1.00f);
 
             return delta;
         }
@@ -389,9 +389,9 @@ namespace Content.Shared.Damage
         public readonly EntityUid? Origin;
 
         /// <summary>
-        ///     Can this damage event target parts?
+        ///     How much do we multiply this damage by for part damage?
         /// </summary>
-        public readonly bool CanTarget;
+        public readonly float PartMultiplier;
 
         /// <summary>
         ///     Can this damage event sever parts?
@@ -404,14 +404,14 @@ namespace Content.Shared.Damage
         public readonly TargetBodyPart? TargetPart;
 
         public DamageChangedEvent(DamageableComponent damageable, DamageSpecifier? damageDelta, bool interruptsDoAfters,
-            EntityUid? origin, TargetBodyPart? targetPart = null, bool canSever = true, bool canTarget = true)
+            EntityUid? origin, TargetBodyPart? targetPart = null, bool canSever = true, float partMultiplier = 1.00f)
         {
             Damageable = damageable;
             DamageDelta = damageDelta;
             Origin = origin;
             TargetPart = targetPart;
             CanSever = canSever;
-            CanTarget = canTarget;
+            PartMultiplier = partMultiplier;
             if (DamageDelta == null)
                 return;
 

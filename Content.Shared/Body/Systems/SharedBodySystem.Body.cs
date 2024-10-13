@@ -132,7 +132,7 @@ public partial class SharedBodySystem
 
     private void OnDamageChanged(Entity<BodyComponent> ent, ref DamageChangedEvent args)
     {
-        if (!args.CanTarget
+        if (args.PartMultiplier == 0
             || ent.Comp is null
             || args.TargetPart is null
             || args.DamageDelta is null
@@ -145,7 +145,7 @@ public partial class SharedBodySystem
             .FirstOrDefault(part => part.Component.Symmetry == targetSymmetry);
         if (targetPart.Id != default && _gameTiming.IsFirstTimePredicted)
         {
-            ApplyPartDamage(targetPart, args.DamageDelta, targetType, args.TargetPart.Value, args.CanSever);
+            ApplyPartDamage(targetPart, args.DamageDelta, targetType, args.TargetPart.Value, args.CanSever, args.PartMultiplier);
         }
     }
 
