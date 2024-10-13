@@ -534,9 +534,13 @@ namespace Content.Shared.Preferences
                 name = GetName(Species, gender);
             }
 
-            var customspeciename = speciesPrototype.CustomName
-                ? FormattedMessage.RemoveMarkup(Customspeciename ?? "")[..MaxNameLength]
-                : "";
+            var customspeciename =
+                !speciesPrototype.CustomName
+                || string.IsNullOrEmpty(Customspeciename)
+                    ? ""
+                    : Customspeciename.Length > MaxNameLength
+                        ? FormattedMessage.RemoveMarkup(Customspeciename)[..MaxNameLength]
+                        : FormattedMessage.RemoveMarkup(Customspeciename);
 
             string flavortext;
             if (FlavorText.Length > MaxDescLength)
