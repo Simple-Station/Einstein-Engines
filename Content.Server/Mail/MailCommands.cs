@@ -5,6 +5,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Administration;
 using Content.Server.Administration;
 using Content.Server.Mail.Components;
+using Content.Server.Mail.Systems;
 
 namespace Content.Server.Mail;
 

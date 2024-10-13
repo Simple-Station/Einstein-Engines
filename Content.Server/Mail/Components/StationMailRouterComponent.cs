@@ -1,4 +1,4 @@
-namespace Content.Server.Mail;
+namespace Content.Server.Mail.Components;
 
 /// <summary>
 /// Designates a station as a place for sending and receiving mail.

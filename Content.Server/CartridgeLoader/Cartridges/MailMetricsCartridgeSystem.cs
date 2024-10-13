@@ -1,12 +1,11 @@
-using Content.Server.DeltaV.Cargo.Components;
-using Content.Server.DeltaV.Cargo.Systems;
+using Content.Server.Cargo.Components;
+using Content.Server.Cargo.Systems;
+using Content.Server.Mail.Components;
 using Content.Server.Station.Systems;
-using Content.Server.CartridgeLoader;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
-using Content.Server.Mail.Components;
 
-namespace Content.Server.DeltaV.CartridgeLoader.Cartridges;
+namespace Content.Server.CartridgeLoader.Cartridges;
 
 public sealed class MailMetricsCartridgeSystem : EntitySystem
 {

@@ -1,4 +1,4 @@
-namespace Content.Server.DeltaV.CartridgeLoader.Cartridges;
+namespace Content.Server.CartridgeLoader.Cartridges;
 
 [RegisterComponent, Access(typeof(MailMetricsCartridgeSystem))]
 public sealed partial class MailMetricsCartridgeComponent : Component

@@ -1,7 +1,7 @@
 using Content.Shared.Cargo;
 using Content.Shared.CartridgeLoader.Cartridges;
 
-namespace Content.Server.DeltaV.Cargo.Components;
+namespace Content.Server.Cargo.Components;
 
 /// <summary>
 /// Added to the abstract representation of a station to track stats related to mail delivery and income

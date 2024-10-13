@@ -1,16 +1,11 @@
-using Content.Server.DeltaV.Cargo.Components;
 using Content.Shared.Cargo;
+using Content.Server.Cargo.Components;
 using JetBrains.Annotations;
 
-namespace Content.Server.DeltaV.Cargo.Systems;
+namespace Content.Server.Cargo.Systems;
 
 public sealed partial class LogisticStatsSystem : SharedCargoSystem
 {
-    public override void Initialize()
-    {
-        base.Initialize();
-    }
-
     [PublicAPI]
     public void AddOpenedMailEarnings(EntityUid uid, StationLogisticStatsComponent component, int earnedMoney)
     {

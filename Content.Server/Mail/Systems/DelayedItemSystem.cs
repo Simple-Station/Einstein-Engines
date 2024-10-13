@@ -2,7 +2,7 @@ using Content.Shared.Damage;
 using Content.Shared.Hands;
 using Robust.Shared.Containers;
 
-namespace Content.Server.Mail;
+namespace Content.Server.Mail.Systems;
 
 /// <summary>
 /// A placeholder for another entity, spawned when taken out of a container, with the placeholder deleted shortly after.
@@ -14,16 +14,16 @@ public sealed class DelayedItemSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<DelayedItemComponent, DropAttemptEvent>(OnDropAttempt);
-        SubscribeLocalEvent<DelayedItemComponent, GotEquippedHandEvent>(OnHandEquipped);
-        SubscribeLocalEvent<DelayedItemComponent, DamageChangedEvent>(OnDamageChanged);
-        SubscribeLocalEvent<DelayedItemComponent, EntGotRemovedFromContainerMessage>(OnRemovedFromContainer);
+        SubscribeLocalEvent<Components.DelayedItemComponent, DropAttemptEvent>(OnDropAttempt);
+        SubscribeLocalEvent<Components.DelayedItemComponent, GotEquippedHandEvent>(OnHandEquipped);
+        SubscribeLocalEvent<Components.DelayedItemComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<Components.DelayedItemComponent, EntGotRemovedFromContainerMessage>(OnRemovedFromContainer);
     }
 
     /// <summary>
     /// EntGotRemovedFromContainerMessage handler - spawn the intended entity after removed from a container.
     /// </summary>
-    private void OnRemovedFromContainer(EntityUid uid, DelayedItemComponent component, ContainerModifiedMessage args)
+    private void OnRemovedFromContainer(EntityUid uid, Components.DelayedItemComponent component, ContainerModifiedMessage args)
     {
         Spawn(component.Item, Transform(uid).Coordinates);
     }
@@ -31,7 +31,7 @@ public sealed class DelayedItemSystem : EntitySystem
     /// <summary>
     /// GotEquippedHandEvent handler - destroy the placeholder.
     /// </summary>
-    private void OnHandEquipped(EntityUid uid, DelayedItemComponent component, EquippedHandEvent args)
+    private void OnHandEquipped(EntityUid uid, Components.DelayedItemComponent component, EquippedHandEvent args)
     {
         EntityManager.DeleteEntity(uid);
     }
@@ -39,7 +39,7 @@ public sealed class DelayedItemSystem : EntitySystem
     /// <summary>
     /// OnDropAttempt handler - destroy the placeholder.
     /// </summary>
-    private void OnDropAttempt(EntityUid uid, DelayedItemComponent component, DropAttemptEvent args)
+    private void OnDropAttempt(EntityUid uid, Components.DelayedItemComponent component, DropAttemptEvent args)
     {
         EntityManager.DeleteEntity(uid);
     }
@@ -47,7 +47,7 @@ public sealed class DelayedItemSystem : EntitySystem
     /// <summary>
     /// OnDamageChanged handler - item has taken damage (e.g. inside the envelope), spawn the intended entity outside of any container and delete the placeholder.
     /// </summary>
-    private void OnDamageChanged(EntityUid uid, DelayedItemComponent component, DamageChangedEvent args)
+    private void OnDamageChanged(EntityUid uid, Components.DelayedItemComponent component, DamageChangedEvent args)
     {
         Spawn(component.Item, Transform(uid).Coordinates);
         EntityManager.DeleteEntity(uid);
