@@ -359,3 +359,10 @@
     Slash: 0.6
     Piercing: 0.6
     Holy: 1.5
+
+- type: damageModifierSet
+  id: DermalArmor
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.9
+    Piercing: 0.9
