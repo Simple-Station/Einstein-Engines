@@ -7179,3 +7179,12 @@ Entries:
   id: 6441
   time: '2024-10-13T18:33:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1033
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now toggle crawling under furniture! The default keybind is
+        Shift-R, you can change it in settings.
+  id: 6442
+  time: '2024-10-13T18:34:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1036
