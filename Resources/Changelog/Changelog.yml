@@ -7195,3 +7195,10 @@ Entries:
   id: 6443
   time: '2024-10-13T18:41:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1030
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Brains now can no longer be eaten.
+  id: 6444
+  time: '2024-10-13T18:51:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1044
