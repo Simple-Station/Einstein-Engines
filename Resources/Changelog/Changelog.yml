@@ -7188,3 +7188,10 @@ Entries:
   id: 6442
   time: '2024-10-13T18:34:58.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1036
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Made the show clothing/loadouts button labels more clear
+  id: 6443
+  time: '2024-10-13T18:41:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1030
