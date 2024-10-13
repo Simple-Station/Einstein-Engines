@@ -108,7 +108,7 @@ public sealed class MailToCommand : IConsoleCommand
 
         mailComponent.IsFragile = isFragile;
         mailComponent.IsPriority = isPriority;
-        mailComponent.IsLarge = isLarge; //Frontier Mail
+        mailComponent.IsLarge = isLarge;
 
         mailSystem.SetupMail(mailUid, teleporterComponent, recipient.Value);
 
