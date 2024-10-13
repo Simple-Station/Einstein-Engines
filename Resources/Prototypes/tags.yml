@@ -26,6 +26,9 @@
   id: Arrow
 
 - type: Tag
+  id: Ash
+
+- type: Tag
   id: ATVKeys
 
 - type: Tag
@@ -351,6 +354,9 @@
 
 - type: Tag
   id: CartridgeRocket
+
+- type: Tag
+  id: CaveFactory
 
 # Allows you to walk over tile entities such as lava without steptrigger
 - type: Tag
@@ -804,6 +810,12 @@
   id: MacroBomb
 
 - type: Tag
+  id: Mail
+
+- type: Tag
+  id: MailCapsule
+
+- type: Tag
   id: MimeBelt
 
 - type: Tag
@@ -915,6 +927,12 @@
 
 - type: Tag
   id: Multitool
+
+- type: Tag
+  id: Mustard
+
+- type: Tag
+  id: MysteryFigureBox
 
 - type: Tag
   id: NoBlockAnchoring
@@ -1294,6 +1312,9 @@
 
 - type: Tag
   id: WhitelistChameleon
+
+- type: Tag
+  id: WhoopieCushion
 
 - type: Tag
   id: Window
