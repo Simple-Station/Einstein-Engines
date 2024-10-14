@@ -9,7 +9,7 @@ using Robust.Shared.Player;
 using Content.Shared.Chat;
 using Content.Shared.Language;
 using Robust.Shared.Prototypes;
-using Content.Shared.Abilities.Psionics;
+using Content.Shared.Language.Components;
 
 namespace Content.Server.Chat;
 
@@ -30,7 +30,7 @@ public sealed partial class EmpathyChatSystem : EntitySystem
     {
         if (args.Source != uid
             || !args.Language.SpeechOverride.EmpathySpeech
-            || HasComp<MindbrokenComponent>(args.Source))
+            || args.IsWhisper)
             return;
 
         SendEmpathyChat(args.Source, args.Message, false);
@@ -58,7 +58,7 @@ public sealed partial class EmpathyChatSystem : EntitySystem
     {
         return Filter.Empty()
             .AddWhereAttachedEntity(entity =>
-            CanHearEmpathy(entity) && !HasComp<MindbrokenComponent>(entity))
+            CanHearEmpathy(entity))
             .Recipients
             .Union(_adminManager.ActiveAdmins)
             .Select(p => p.Channel);
