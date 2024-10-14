@@ -38,9 +38,9 @@ public sealed class PenLightSystem : EntitySystem
     {
         if (args.Handled
             || args.Target is not {} target
-            || target == null 
-            || !args.CanReach 
-            || !HasComp<MobStateComponent>(target) 
+            || target == null
+            || !args.CanReach
+            || !HasComp<MobStateComponent>(target)
             || !_powerCell.HasDrawCharge(uid, user: args.User))
             return;
         args.Handled = TryStartExam(uid, target, args.User, component);
@@ -100,10 +100,10 @@ public sealed class PenLightSystem : EntitySystem
     private void OpenUserInterface(EntityUid user, EntityUid penlight)
     {
         if (!TryComp<ActorComponent>(user, out var actor)
-            || !_uiSystem.TryGetUi(penlight, PenLightUiKey.Key, out var ui))
+            || !_uiSystem.TryGetOpenUi(penlight, PenLightUiKey.Key, out var ui))
             return;
 
-        _uiSystem.OpenUi(ui, actor.PlayerSession);
+        _uiSystem.OpenUi(ui.Owner, ui.UiKey, actor.PlayerSession);
     }
 
     /// <summary>
@@ -111,7 +111,7 @@ public sealed class PenLightSystem : EntitySystem
     /// </summary>
     private void Diagnose(EntityUid penlight, EntityUid target)
     {
-        if (!_uiSystem.TryGetUi(penlight, PenLightUiKey.Key, out var ui)
+        if (!_uiSystem.TryGetOpenUi(penlight, PenLightUiKey.Key, out var ui)
             || !HasComp<EyeComponent>(target)
             || !HasComp<DamageableComponent>(target))
             return;
@@ -135,12 +135,16 @@ public sealed class PenLightSystem : EntitySystem
         // Healthy
         var healthy = !(blind || drunk || eyeDamage || seeingRainbows);
 
-        _uiSystem.SendUiMessage(ui, new PenLightUserMessage(GetNetEntity(target),
-        blind,
-        drunk,
-        eyeDamage,
-        healthy,
-        seeingRainbows
-        ));
+        _uiSystem.ServerSendUiMessage(
+            ui.Owner,
+            ui.UiKey,
+            new PenLightUserMessage(GetNetEntity(target),
+                blind,
+                drunk,
+                eyeDamage,
+                healthy,
+                seeingRainbows
+            )
+        );
     }
 }

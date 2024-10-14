@@ -403,6 +403,7 @@
       species:
         - Arachnid
         - Arachne
+        - IPC
   components:
     - type: Sericulture
       action: ActionSericulture
@@ -413,7 +414,7 @@
 - type: trait
   id: BionicArm
   category: Physical
-  points: -9
+  points: -8
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -423,7 +424,6 @@
     - type: Prying
       speedModifier: 1
       pryPowered: true
-      force: true
 
 - type: trait
   id: PlateletFactories
@@ -514,7 +514,9 @@
       traits:
         - CyberEyesOmni
   components:
-  - type: ShowSecurityIcons
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
 
 - type: trait
   id: CyberEyesMedical
@@ -534,9 +536,12 @@
         - CyberEyesDiagnostic
         - CyberEyesOmni
   components:
-  - type: ShowHealthBars
-    damageContainers:
-    - Biological
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
 
 - type: trait
   id: CyberEyesDiagnostic
@@ -583,7 +588,12 @@
         - CyberEyesDiagnostic
         - CyberEyesSecurity
   components:
-    - type: ShowSecurityIcons
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
     - type: ShowHealthBars
       damageContainers:
       - Biological

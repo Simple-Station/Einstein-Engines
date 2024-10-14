@@ -94,7 +94,7 @@
                     <Label Name="StationTime" Access="Public" FontColorOverride="{x:Static maths:Color.LightGray}"
                            Margin="3 3 3 3" HorizontalAlignment="Left" />
                     <controls:HSpacer Spacing="5" />
-                    <lobbyUi:LobbyCharacterPanel Name="CharacterPreview" Access="Public" />
+                    <lobbyUi:LobbyCharacterPreviewPanel Name="CharacterPreview" Access="Public" />
                     <controls:HSpacer Spacing="5" />
                     <BoxContainer MinHeight="10" />
                     <!-- Gold line -->

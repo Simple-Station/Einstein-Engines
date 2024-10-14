@@ -179,6 +179,14 @@
     Bluespace: 200 #DeltaV: Bluespace Exists
 
 - type: latheRecipe
+  id: ClothingMaskWeldingGas
+  result: ClothingMaskWeldingGas
+  completetime: 3
+  materials:
+    Steel: 600
+    Glass: 200
+
+- type: latheRecipe
   id: WeaponForceGun
   result: WeaponForceGun
   category: Tools
