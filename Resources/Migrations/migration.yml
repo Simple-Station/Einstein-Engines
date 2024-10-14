@@ -160,7 +160,7 @@ ActionVehicleHorn: null
 CrateFunATV: null
 CrateFunSyndicateSegway: null
 MobTaxiBot: null
-MobSupplyBot: null
+# MobSupplyBot: null
 SpawnVehicleMotobike: null
 SpawnVehicleATV: null
 SpawnVehicleSecway: null
@@ -212,6 +212,8 @@ AirlockShuttleEasyPryLocked: AirlockExternalShuttleLocked
 ClothingBackpackFilledDetective: ClothingBackpackSecurityFilledDetective
 ClothingBackpackDuffelFilledDetective: ClothingBackpackDuffelSecurityFilledDetective
 ClothingBackpackSatchelFilledDetective: ClothingBackpackSatchelSecurityFilledDetective
+FoodChili: FoodChiliPepper
+FoodChilly: FoodChillyPepper
 
 # 2024-03-16
 ClothingHeadHatHairflower: FoodPoppy
@@ -220,6 +222,8 @@ ClothingHeadHatHairflower: FoodPoppy
 RPED: null
 
 # 2024-03-30
+TraversalDistorterMachineCircuitboard: null
+MachineTraversalDistorter: null
 # These are technically not equivalent, but it probably makes more sense to replace any existing SCAF stuff with SOME kind of armor, instead of just deleting it outright.
 ClothingHeadHelmetScaf: ClothingHeadHelmetBasic
 ClothingOuterArmorScaf: ClothingOuterArmorBasic
@@ -232,3 +236,11 @@ BriefcaseSyndieBase: null
 # 2024-04-08
 BodyBag_Container: BodyBag
 BodyBag_Folded: BodyBagFolded
+
+# 2024-04-26
+GlassBoxLaserBroken: GlassBoxBroken
+ReinforcementRadioSyndicateMonkey: ReinforcementRadioSyndicateAncestor
+ReinforcementRadioSyndicateMonkeyNukeops: ReinforcementRadioSyndicateAncestorNukeops
+
+# 2024-05-01
+DrinkBottleGoldschlager: DrinkBottleGildlager

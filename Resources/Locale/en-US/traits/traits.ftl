@@ -62,6 +62,9 @@ trait-name-CPRTraining = CPR Training
 trait-description-CPRTraining = At some point in your life, you have received training in how to perform CPR.
                                 This trait is automatically given for free to medical doctors, and is intended for non-medical characters
 
+trait-name-Nearsighted = Nearsighted
+trait-description-Nearsighted = Your eyes are not what they once were, you have difficulty seeing things far away without corrective glasses.
+
 trait-name-NormalVisionHarpy = Trichromat Modification
 trait-description-NormalVisionHarpy = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
 
@@ -314,6 +317,9 @@ trait-description-Spinarette =
 trait-name-AddictionNicotine = Nicotine Addiction
 trait-description-AddictionNicotine =
     You have an addiction to Nicotine, and will require frequent smoke breaks to keep your mood in check.
+
+trait-name-Liar = Pathological liar
+trait-description-Liar = You can hardly bring yourself to tell the truth. Sometimes you lie anyway.
 
 trait-name-ValyrianStandard = Valyrian Standard
 trait-description-ValyrianStandard =
