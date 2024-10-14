@@ -403,6 +403,7 @@
       species:
         - Arachnid
         - Arachne
+        - IPC
   components:
     - type: Sericulture
       action: ActionSericulture
@@ -514,7 +515,9 @@
       traits:
         - CyberEyesOmni
   components:
-  - type: ShowSecurityIcons
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
 
 - type: trait
   id: CyberEyesMedical
@@ -534,9 +537,12 @@
         - CyberEyesDiagnostic
         - CyberEyesOmni
   components:
-  - type: ShowHealthBars
-    damageContainers:
-    - Biological
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
 
 - type: trait
   id: CyberEyesDiagnostic
@@ -583,7 +589,12 @@
         - CyberEyesDiagnostic
         - CyberEyesSecurity
   components:
-    - type: ShowSecurityIcons
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
     - type: ShowHealthBars
       damageContainers:
       - Biological
