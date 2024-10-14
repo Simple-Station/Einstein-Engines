@@ -259,6 +259,36 @@
     - WhitelistChameleon
 
 - type: entity
+  parent: ClothingHeadHatChef
+  id: ClothingHeadHatChefNt
+  name: nanotrasen chef's hat
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/chefhat_nt.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/chefhat_nt.rsi
+
+- type: entity
+  parent: ClothingHeadHatChef
+  id: ClothingHeadHatChefIdris
+  name: idris incorporated chef's hat
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/chefhat_idris.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/chefhat_idris.rsi
+
+- type: entity
+  parent: ClothingHeadHatChef
+  id: ClothingHeadHatChefOrion
+  name: orion express' chef hat
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/chefhat_orion.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/chefhat_orion.rsi
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatFedoraBrown
   name: brown fedora
@@ -1098,3 +1128,33 @@
     sprite: Clothing/Head/Hats/beret_medic.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beret_medic.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFlatcapBartenderNanotrasen
+  name: bartender's nanotrasen flatcap
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/flatcap_nt.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/flatcap_nt.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFlatcapBartenderIdris
+  name: bartender's idris incorporated flatcap
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/flatcap_idris.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/flatcap_idris.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFlatcapBartenderOrion
+  name: bartender's orion express flatcap
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/flatcap_orion.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/flatcap_orion.rsi

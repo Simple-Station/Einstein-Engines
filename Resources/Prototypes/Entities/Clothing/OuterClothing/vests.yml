@@ -87,3 +87,36 @@
     sprite: Clothing/OuterClothing/Vests/vest.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Vests/vest.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterVestNt
+  name: nanotrasen vest
+  description: A thick vest with a rubbery, water-resistant shell coloured in blue.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/vest_nt.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/vest_nt.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterVestIdris
+  name: idris incorporated vest
+  description: A thick vest with a rubbery, water-resistant shell coloured in teal.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/vest_idris.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/vest_idris.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterVestOrion
+  name: orion express vest
+  description: A thick vest with a rubbery, water-resistant shell coloured in brown.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/vest_orion.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/vest_orion.rsi

@@ -2,6 +2,28 @@
   id: Bluespace
   name: bluespace
   icon: { sprite: Nyanotrasen/Objects/Materials/materials.rsi, state: bluespace }
-  spawn: MaterialBluespace
+  spawn: MaterialBluespace1
   maxCount: 5
   itemSize: 1
+
+- type: stack
+  id: BluespaceOre
+  name: rough bluespace
+  icon: { sprite: Objects/Materials/ore.rsi, state: bluespace }
+  spawn: BluespaceOre1
+  maxCount: 30
+
+- type: stack
+  id: Normality
+  name: normality
+  icon: { sprite: Nyanotrasen/Objects/Materials/materials.rsi, state: bluespace }
+  spawn: MaterialNormality1
+  maxCount: 5
+  itemSize: 1
+
+- type: stack
+  id: NormalityOre
+  name: rough normality
+  icon: { sprite: Objects/Materials/ore.rsi, state: bluespace }
+  spawn: NormalityOre1
+  maxCount: 30
