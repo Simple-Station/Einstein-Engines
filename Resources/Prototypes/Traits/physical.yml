@@ -414,7 +414,7 @@
 - type: trait
   id: BionicArm
   category: Physical
-  points: -9
+  points: -8
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -424,7 +424,6 @@
     - type: Prying
       speedModifier: 1
       pryPowered: true
-      force: true
 
 - type: trait
   id: PlateletFactories
