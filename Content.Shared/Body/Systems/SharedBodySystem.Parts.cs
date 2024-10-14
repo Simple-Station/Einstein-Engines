@@ -853,7 +853,7 @@ public partial class SharedBodySystem
         {
             BodyPartType.Arm => new() { "gloves" },
             BodyPartType.Leg => new() { "shoes" },
-            BodyPartType.Head => new() { "eyes", "ears", "head", "neck" },
+            BodyPartType.Head => new() { "eyes", "ears", "head", "mask" },
             _ => new()
         };
         return containerNames.Count > 0;
