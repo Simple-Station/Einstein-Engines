@@ -66,6 +66,12 @@ namespace Content.Client.Preferences.UI
         private EyeColorPicker _eyesPicker => CEyeColorPicker;
         private Slider _heightSlider => CHeightSlider;
         private Slider _widthSlider => CWidthSlider;
+        private enum SliderUpdate
+        {
+            Height,
+            Width,
+            Both
+        }
 
         private NeoTabContainer _tabContainer => CTabContainer;
         private BoxContainer _jobList => CJobList;
@@ -211,57 +217,70 @@ namespace Content.Client.Preferences.UI
             _heightSlider.MinValue = prototype.MinHeight;
             _heightSlider.MaxValue = prototype.MaxHeight;
             _heightSlider.Value = Profile?.Height ?? prototype.DefaultHeight;
-            var height = MathF.Round(prototype.AverageHeight * _heightSlider.Value);
-            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
-
-            _heightSlider.OnValueChanged += args =>
-            {
-                if (Profile is null)
-                    return;
-
-                prototype = _speciesList.Find(x => x.ID == Profile.Species) ?? _speciesList.First(); // Just in case
-
-                var value = Math.Clamp(args.Value, prototype.MinHeight, prototype.MaxHeight);
-                var height = MathF.Round(prototype.AverageHeight * value);
-                CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
-                SetProfileHeight(value);
-                UpdateWeight();
-            };
-
-            CHeightReset.OnPressed += _ =>
-            {
-                _heightSlider.Value = prototype.DefaultHeight;
-                SetProfileHeight(prototype.DefaultHeight);
-                UpdateWeight();
-            };
-
 
             _widthSlider.MinValue = prototype.MinWidth;
             _widthSlider.MaxValue = prototype.MaxWidth;
             _widthSlider.Value = Profile?.Width ?? prototype.DefaultWidth;
-            var width = MathF.Round(prototype.AverageWidth * _widthSlider.Value);
-            CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width));
 
-            _widthSlider.OnValueChanged += args =>
+            UpdateDimensions(SliderUpdate.Both);
+
+            _heightSlider.OnValueChanged += _ => UpdateDimensions(SliderUpdate.Height);
+            _widthSlider.OnValueChanged += _ => UpdateDimensions(SliderUpdate.Width);
+
+            CHeightReset.OnPressed += _ =>
             {
-                if (Profile is null)
-                    return;
-
-                prototype = _speciesList.Find(x => x.ID == Profile.Species) ?? _speciesList.First(); // Just in case
-
-                var value = Math.Clamp(args.Value, prototype.MinWidth, prototype.MaxWidth);
-                var width = MathF.Round(prototype.AverageWidth * value);
-                CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width));
-                SetProfileWidth(value);
-                UpdateWeight();
+                _heightSlider.Value = prototype.DefaultHeight;
+                UpdateDimensions(SliderUpdate.Height);
             };
 
             CWidthReset.OnPressed += _ =>
             {
                 _widthSlider.Value = prototype.DefaultWidth;
-                SetProfileWidth(prototype.DefaultWidth);
-                UpdateWeight();
+                UpdateDimensions(SliderUpdate.Width);
             };
+
+            void UpdateDimensions(SliderUpdate updateType)
+            {
+                if (Profile == null) return;
+
+                var heightValue = Math.Clamp(_heightSlider.Value, prototype.MinHeight, prototype.MaxHeight);
+                var widthValue = Math.Clamp(_widthSlider.Value, prototype.MinWidth, prototype.MaxWidth);
+                var sizeRatio = prototype.SizeRatio;
+                var ratio = heightValue / widthValue;
+
+                if (updateType == SliderUpdate.Height || updateType == SliderUpdate.Both)
+                {
+                    if (ratio < 1 / sizeRatio || ratio > sizeRatio)
+                    {
+                        widthValue = heightValue / (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
+                    }
+                }
+
+                if (updateType == SliderUpdate.Width || updateType == SliderUpdate.Both)
+                {
+                    if (ratio < 1 / sizeRatio || ratio > sizeRatio)
+                    {
+                        heightValue = widthValue * (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
+                    }
+                }
+
+                heightValue = Math.Clamp(heightValue, prototype.MinHeight, prototype.MaxHeight);
+                widthValue = Math.Clamp(widthValue, prototype.MinWidth, prototype.MaxWidth);
+
+                _heightSlider.Value = heightValue;
+                _widthSlider.Value = widthValue;
+
+                SetProfileHeight(heightValue);
+                SetProfileWidth(widthValue);
+
+                var height = MathF.Round(prototype.AverageHeight * _heightSlider.Value);
+                CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
+
+                var width = MathF.Round(prototype.AverageWidth * _widthSlider.Value);
+                CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
+
+                UpdateWeight();
+            }
 
             prototypeManager.Index(prototype.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
             if (fixture != null)
@@ -366,7 +385,7 @@ namespace Content.Client.Preferences.UI
                 UpdatePreview();
             };
 
-            _hairPicker.OnSlotAdd += delegate()
+            _hairPicker.OnSlotAdd += delegate ()
             {
                 if (Profile is null)
                     return;
@@ -387,7 +406,7 @@ namespace Content.Client.Preferences.UI
                 UpdatePreview();
             };
 
-            _facialHairPicker.OnSlotAdd += delegate()
+            _facialHairPicker.OnSlotAdd += delegate ()
             {
                 if (Profile is null)
                     return;
@@ -600,7 +619,7 @@ namespace Content.Client.Preferences.UI
             {
                 var dict = new Dictionary<string, GuideEntry> { { DefaultSpeciesGuidebook, guideRoot } };
                 //TODO: Don't close the guidebook if its already open, just go to the correct page
-                guidebookController.ToggleGuidebook(dict, includeChildren:true, selected: page);
+                guidebookController.ToggleGuidebook(dict, includeChildren: true, selected: page);
             }
         }
 
@@ -634,7 +653,7 @@ namespace Content.Client.Preferences.UI
                 var selector = new AntagPreferenceSelector(antag,
                         _jobPriorities.FirstOrDefault(j => j.Priority == JobPriority.High)?.HighJob
                             ?? new())
-                    { Margin = new Thickness(3f, 3f, 3f, 0f) };
+                { Margin = new Thickness(3f, 3f, 3f, 0f) };
                 _antagList.AddChild(selector);
                 _antagPreferences.Add(selector);
                 if (selector.Disabled)
@@ -689,7 +708,7 @@ namespace Content.Client.Preferences.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
+                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
                         Children =
                         {
                             new Label
@@ -818,51 +837,51 @@ namespace Content.Client.Preferences.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
-                {
-                    if (!_skinColor.Visible)
                     {
-                        _skinColor.Visible = true;
-                        _rgbSkinColorContainer.Visible = false;
+                        if (!_skinColor.Visible)
+                        {
+                            _skinColor.Visible = true;
+                            _rgbSkinColorContainer.Visible = false;
+                        }
+
+                        var color = SkinColor.HumanSkinTone((int) _skinColor.Value);
+
+                        CMarkings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
+                        break;
                     }
-
-                    var color = SkinColor.HumanSkinTone((int) _skinColor.Value);
-
-                    CMarkings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
-                    break;
-                }
                 case HumanoidSkinColor.Hues:
-                {
-                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        _skinColor.Visible = false;
-                        _rgbSkinColorContainer.Visible = true;
-                    }
+                        if (!_rgbSkinColorContainer.Visible)
+                        {
+                            _skinColor.Visible = false;
+                            _rgbSkinColorContainer.Visible = true;
+                        }
 
-                    CMarkings.CurrentSkinColor = _rgbSkinColorSelector.Color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
-                    break;
-                }
+                        CMarkings.CurrentSkinColor = _rgbSkinColorSelector.Color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
+                        break;
+                    }
                 case HumanoidSkinColor.TintedHues:
                 case HumanoidSkinColor.TintedHuesSkin: // DeltaV - Tone blending
-                {
-                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        _skinColor.Visible = false;
-                        _rgbSkinColorContainer.Visible = true;
+                        if (!_rgbSkinColorContainer.Visible)
+                        {
+                            _skinColor.Visible = false;
+                            _rgbSkinColorContainer.Visible = true;
+                        }
+
+                        var color = skin switch // DeltaV - Tone blending
+                        {
+                            HumanoidSkinColor.TintedHues => SkinColor.TintedHues(_rgbSkinColorSelector.Color),
+                            HumanoidSkinColor.TintedHuesSkin => SkinColor.TintedHuesSkin(_rgbSkinColorSelector.Color, skinColor),
+                            _ => Color.White
+                        };
+
+                        CMarkings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        break;
                     }
-
-                    var color = skin switch // DeltaV - Tone blending
-                    {
-                        HumanoidSkinColor.TintedHues => SkinColor.TintedHues(_rgbSkinColorSelector.Color),
-                        HumanoidSkinColor.TintedHuesSkin => SkinColor.TintedHuesSkin(_rgbSkinColorSelector.Color, skinColor),
-                        _ => Color.White
-                    };
-
-                    CMarkings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-                    break;
-                }
             }
 
             IsDirty = true;
@@ -1017,7 +1036,7 @@ namespace Content.Client.Preferences.UI
 
         private void UpdateFlavorTextEdit()
         {
-            if(_flavorTextEdit != null)
+            if (_flavorTextEdit != null)
                 _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
         }
 
@@ -1062,40 +1081,40 @@ namespace Content.Client.Preferences.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
-                {
-                    if (!_skinColor.Visible)
                     {
-                        _skinColor.Visible = true;
-                        _rgbSkinColorContainer.Visible = false;
-                    }
+                        if (!_skinColor.Visible)
+                        {
+                            _skinColor.Visible = true;
+                            _rgbSkinColorContainer.Visible = false;
+                        }
 
-                    _skinColor.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
-                    break;
-                }
+                        _skinColor.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
+                        break;
+                    }
                 case HumanoidSkinColor.Hues:
-                {
-                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        _skinColor.Visible = false;
-                        _rgbSkinColorContainer.Visible = true;
-                    }
+                        if (!_rgbSkinColorContainer.Visible)
+                        {
+                            _skinColor.Visible = false;
+                            _rgbSkinColorContainer.Visible = true;
+                        }
 
-                    // Set the RGB values to the direct values otherwise
-                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                    break;
-                }
+                        // Set the RGB values to the direct values otherwise
+                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                        break;
+                    }
                 case HumanoidSkinColor.TintedHues:
-                {
-                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        _skinColor.Visible = false;
-                        _rgbSkinColorContainer.Visible = true;
-                    }
+                        if (!_rgbSkinColorContainer.Visible)
+                        {
+                            _skinColor.Visible = false;
+                            _rgbSkinColorContainer.Visible = true;
+                        }
 
-                    // Set the RGB values to the direct values otherwise
-                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                    break;
-                }
+                        // Set the RGB values to the direct values otherwise
+                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                        break;
+                    }
             }
         }
 
@@ -1230,7 +1249,7 @@ namespace Content.Client.Preferences.UI
 
             // hair color
             Color? hairColor = null;
-            if ( Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
+            if (Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.HairStyleId, out var hairProto))
                 if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, hairProto, _prototypeManager))
                     hairColor = _markingManager.MustMatchSkin(Profile.Species, HumanoidVisualLayers.Hair, out _, _prototypeManager)
@@ -1250,7 +1269,7 @@ namespace Content.Client.Preferences.UI
 
             // facial hair color
             Color? facialHairColor = null;
-            if ( Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
+            if (Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.FacialHairStyleId, out var facialHairProto))
                 if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, facialHairProto, _prototypeManager))
                     facialHairColor = _markingManager.MustMatchSkin(Profile.Species, HumanoidVisualLayers.Hair, out _, _prototypeManager)
