@@ -50,7 +50,7 @@ public abstract class SharedEtherealSystem : EntitySystem
         component.OldMobMask = fixture.Value.CollisionMask;
         component.OldMobLayer = fixture.Value.CollisionLayer;
 
-        if (_cfg.GetCVar(CCVars.ShadowkinPassThrough))
+        if (_cfg.GetCVar(CCVars.EtherealPassThrough))
         {
             _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, (int) CollisionGroup.GhostImpassable, fixtures);
             _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, 0, fixtures);
