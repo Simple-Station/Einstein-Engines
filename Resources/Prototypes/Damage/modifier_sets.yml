@@ -296,3 +296,71 @@
     Cellular: 0.0
     Heat: 2.5
     Caustic: 0.0
+
+# terminator's flesh damage set
+- type: damageModifierSet
+  id: CyberneticFlesh
+  coefficients:
+    Blunt: 0.2
+    Slash: 0.2
+    Piercing: 0.1
+    # fire and lasers burn it good
+    Heat: 1.0
+    # zap
+    Shock: 1.5
+    Cold: 0.25
+    Caustic: 0.25
+    # doesnt have organs to poison
+    Poison: 0.0
+    Cellular: 0.0
+
+# terminator's endoskeleton damage set
+- type: damageModifierSet
+  id: Cybernetic
+  coefficients:
+    # bonk
+    Blunt: 1.0
+    # alloy too hard to cut or shoot
+    Slash: 0.0
+    Piercing: 0.0
+    # no burning anymore
+    Heat: 0.0
+    # zap zap
+    Shock: 2.5
+    Cold: 0.0
+    Caustic: 0.0
+    Poison: 0.0
+    Cellular: 0.0
+  flatReductions:
+    # can't punch the endoskeleton to death
+    Blunt: 5
+
+- type: damageModifierSet
+  id: HalfSpirit
+  coefficients:
+    Cold: 0.5
+    Shock: 0.75
+    Blunt: 0.75
+    Slash: 0.75
+    Piercing: 0.75
+    Heat: 1.25
+    Holy: 1.5
+  flatReductions:
+    Cold: 3
+
+- type: damageModifierSet
+  id: FireSpirit
+  coefficients:
+    Heat: 0
+    Cold: 1.2
+    Blunt: 0.6
+    Slash: 0.6
+    Piercing: 0.6
+    Holy: 1.5
+
+- type: damageModifierSet
+  id: DermalArmor
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.9
+    Piercing: 0.9

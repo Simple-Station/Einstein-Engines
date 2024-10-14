@@ -29,6 +29,19 @@ character-item-group-LoadoutHeadEngineering = Engineering Headgear
 character-item-group-LoadoutOuterEngineering = Engineering Outerwear
 character-item-group-LoadoutUniformsEngineering = Engineering Uniforms
 
+# Epistemics
+character-item-group-LoadoutEyesScience = Epistemics Eyewear
+character-item-group-LoadoutGlovesScience = Epistemics Gloves
+character-item-group-LoadoutHeadScience = Epistemics Headgear
+character-item-group-LoadoutMaskScience = Epistemics Masks
+character-item-group-LoadoutNeckScience = Epistemics Neckwear
+character-item-group-LoadoutOuterScience = Epistemics Outerwear
+character-item-group-LoadoutShoesScience = Epistemics Shoes
+character-item-group-LoadoutUniformsScience = Epistemics Uniforms
+
+# Epistemics - Cataloguer
+character-item-group-LoadoutCataloguerUniforms = Cataloguer Uniforms
+
 # Medical
 character-item-group-LoadoutEyesMedical = Medical Eyewear
 character-item-group-LoadoutGlovesMedical = Medical Gloves
@@ -55,6 +68,7 @@ character-item-group-LoadoutHoSWeapon = Head of Security's Antique Weapon Collec
 
 # Service
 character-item-group-LoadoutEquipmentService = Service Equipment
+character-item-group-LoadoutHeadService = Service Headgear
 character-item-group-LoadoutMaskService = Service Masks
 character-item-group-LoadoutNeckService = Service Neckwear
 character-item-group-LoadoutOuterService = Service Outerwear
@@ -63,8 +77,21 @@ character-item-group-LoadoutUniformsService = Service Uniforms
 
 # Service - Bartender
 character-item-group-LoadoutBartenderAmmo = Bartender Ammo
+character-item-group-LoadoutBartenderHead = Bartender Headgear
 character-item-group-LoadoutBartenderOuterwear = Bartender Outerwear
+character-item-group-LoadoutBartenderUniforms = Bartender Uniforms
 character-item-group-LoadoutBartenderWeapon = Bartender Weapon
+
+# Service - Botanist
+character-item-group-LoadoutBotanistUniforms = Botanist Uniforms
+
+# Service - Chef
+character-item-group-LoadoutChefHead = Chef Headgear
+character-item-group-LoadoutChefOuter = Chef Outerwear
+character-item-group-LoadoutChefUniforms = Chef Uniforms
+
+# Service - Janitor
+character-item-group-LoadoutJanitorUniforms = Janitor Uniforms
 
 # Service - Musician
 character-item-group-LoadoutMusicianInstruments = Musician Instruments

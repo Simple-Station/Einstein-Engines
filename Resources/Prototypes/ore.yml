@@ -84,6 +84,18 @@
   minOreYield: 2
   maxOreYield: 4
 
+- type: ore
+  id: OreBluespace
+  oreEntity: BluespaceOre1
+  minOreYield: 1
+  maxOreYield: 1
+
+- type: ore
+  id: OreNormality
+  oreEntity: NormalityOre1
+  minOreYield: 1
+  maxOreYield: 1
+
 - type: weightedRandomOre
   id: RandomOreDistributionStandard
   weights:
@@ -96,6 +108,8 @@
     OreUranium: 1
     OreBananium: 0.5
     OreArtifactFragment: 0.5
+    OreBluespace: 0.5
+    OreNormality: 0.3
 
 - type: weightedRandomOre
   id: OreCrab
