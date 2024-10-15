@@ -207,14 +207,6 @@ namespace Content.Server.Arachne
             if (!TryComp<ItemSlotsComponent>(cocoon, out var slots))
                 return;
 
-            /*
-
-            {
-                var scale = Math.Clamp(1 / (35 / physics.FixturesMass), 0.35, 2.5);
-                _host.ExecuteCommand(null, "scale " + cocoon + " " + scale);
-            }
-            */
-
             _itemSlots.SetLock(cocoon, BodySlot, false, slots);
             _itemSlots.TryInsert(cocoon, BodySlot, args.Args.Target.Value, args.Args.User);
             _itemSlots.SetLock(cocoon, BodySlot, true, slots);
