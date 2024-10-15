@@ -37,9 +37,9 @@
     implant: NekomimeticTranslatorImplant
 
 - type: entity
-  id: DraconicTranslatorImplanter
+  id: DraconicTranslatorImplanter # Intended for Admins Only, this item is for lore reasons not obtainable.
   parent: [ BaseTranslatorImplanter ]
-  name: draconic translator implant
+  name: unathi translator implant
   components:
   - type: Implanter
     implant: DraconicTranslatorImplant
@@ -83,3 +83,11 @@
   components:
   - type: Implanter
     implant: ValyrianStandardTranslatorImplant
+
+- type: entity
+  id: AzazibaTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: azaziba translator implant
+  components:
+  - type: Implanter
+    implant: AzazibaTranslatorImplant

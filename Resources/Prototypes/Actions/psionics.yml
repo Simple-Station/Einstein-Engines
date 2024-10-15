@@ -233,17 +233,12 @@
     useDelay: 45
     checkCanInteract: false
     event: !type:AnomalyPowerActionEvent
-            powerName: "Shadeskip"
-            overchargeFeedback: "shadeskip-overcharge-feedback"
-            overchargeCooldown: 120
-            overchargeRecoil:
-              groups:
-                Burn: -100 #This will be divided by the caster's Dampening.
-            minGlimmer: 6
-            maxGlimmer: 8
-            supercriticalGlimmerMultiplier: 3
-            glimmerSoundThreshold: 50
-            supercriticalThreshold: 500
+            settings:
+              powerName: "Shadeskip"
+              minGlimmer: 6
+              maxGlimmer: 8
+              glimmerSoundThreshold: 50
+              doSupercritical: false
             entitySpawnEntries:
               - settings:
                   spawnOnPulse: true
@@ -254,9 +249,44 @@
                 spawns:
                 - ShadowKudzuWeak
               - settings:
+                  spawnOnPulse: true
                   spawnOnSuperCritical: true
-                  minAmount: 30
-                  maxAmount: 50
-                  maxRange: 50
+                  minAmount: 1
+                  maxAmount: 1
+                  maxRange: 0.5
                 spawns:
-                - ShadowKudzu
+                - EffectFlashShadeskip
+
+- type: entity
+  id: ActionTelekineticPulse
+  name: action-name-telekinetic-pulse
+  description: action-description-telekinetic-pulse
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: { sprite : Interface/Actions/psionics.rsi, state: telekinetic_pulse }
+    useDelay: 45
+    checkCanInteract: false
+    event: !type:AnomalyPowerActionEvent
+            settings:
+              powerName: "Telekinetic Pulse"
+              overchargeFeedback: "shadeskip-overcharge-feedback" # The text behind this is fine.
+              overchargeCooldown: 120
+              overchargeRecoil:
+                groups:
+                  Burn: -100 #This will be divided by the caster's Dampening.
+              minGlimmer: 6
+              maxGlimmer: 8
+              doSupercritical: false
+            entitySpawnEntries:
+              - settings:
+                  spawnOnPulse: true
+                  minAmount: 1
+                  maxAmount: 1
+                  maxRange: 0.5
+                spawns:
+                - EffectFlashTelekineticPulse
+            gravity:
+              maxThrowRange: 3
+              maxThrowStrength: 5
+              spaceRange: 3

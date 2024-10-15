@@ -17,6 +17,8 @@ salvage-magnet-resources = {$resource ->
     [OrePlasma] Plasma
     [OreUranium] Uranium
     [OreArtifactFragment] Artifact fragments
+    [OreBluespace] Bluespace crystals
+    [OreNormality] Normality crystals
     *[other] {$resource}
 }
 

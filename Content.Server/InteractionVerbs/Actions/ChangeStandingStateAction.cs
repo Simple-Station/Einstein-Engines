@@ -33,7 +33,7 @@ public sealed partial class ChangeStandingStateAction : InteractionAction
         if (state.CurrentState == StandingState.Lying && MakeStanding)
             return stateSystem.Stand(args.Target);
         else if (state.CurrentState == StandingState.Standing && MakeLaying)
-            return stateSystem.Down(args.Target);
+            return stateSystem.Down(args.Target, setDrawDepth: true);
 
         return false;
     }

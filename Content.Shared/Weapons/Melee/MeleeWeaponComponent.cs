@@ -171,6 +171,14 @@ public sealed partial class MeleeWeaponComponent : Component
         DoHealthInteraction = true,
         HealthRangeModifier = 1.5f,
     };
+
+    /// <summary>
+    ///     If true, the weapon must be equipped for it to be used.
+    ///     E.g boxing gloves must be equipped to your gloves,
+    ///     not just held in your hand to be used.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool MustBeEquippedToUse = false;
 }
 
 /// <summary>

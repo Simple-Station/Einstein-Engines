@@ -51,6 +51,10 @@
       id: LoadoutClothingOuterCoatHoSTrench
     - type: loadout
       id: LoadoutClothingOuterWinterHoS
+    - type: loadout
+      id: LoadoutClothingOuterArmorBasic
+    - type: loadout
+      id: LoadoutClothingOuterArmorSlim
 
 - type: characterItemGroup
   id: LoadoutGlovesSecurity
@@ -101,6 +105,8 @@
       id: LoadoutClothingBeltCorpsmanWebbing
     - type: loadout
       id: LoadoutClothingBeltSecurity
+    - type: loadout
+      id: LoadoutClothingBeltHolster
 
 - type: characterItemGroup
   id: LoadoutEyesSecurity
@@ -125,7 +131,7 @@
       id: LoadoutClothingShoesBootsCombat
 
 - type: characterItemGroup
-  maxItems: 5 # No clue what the actual number should be.
+  maxItems: 5
   id: LoadoutEquipmentSecurity
   items:
     - type: loadout
@@ -133,10 +139,77 @@
     - type: loadout
       id: LoadoutSecurityFlash
     - type: loadout
-      id: LoadoutSecurityDisabler
+      id: LoadoutMagazinePistol
+    - type: loadout
+      id: LoadoutMagazinePistolSpare
     - type: loadout
       id: LoadoutMagazinePistolRubber
     - type: loadout
+      id: LoadoutMagazinePistolRubberSpare
+    - type: loadout
+      id: LoadoutSpeedLoaderMagnum
+    - type: loadout
+      id: LoadoutSpeedLoaderMagnumSpare
+    - type: loadout
       id: LoadoutSpeedLoaderMagnumRubber
+    - type: loadout
+      id: LoadoutSpeedLoaderMagnumRubberSpare
 
+- type: characterItemGroup
+  maxItems: 1
+  id: LoadoutWeaponSecurity
+  items:
+    - type: loadout
+      id: LoadoutSecurityDisabler
+    - type: loadout
+      id: LoadoutSecurityMk58
+    - type: loadout
+      id: LoadoutSecurityMk58NonLethal
+    - type: loadout
+      id: LoadoutSecurityRevolver
+    - type: loadout
+      id: LoadoutSecurityRevolverNonLethal
+    - type: loadout
+      id: LoadoutSecurityRevolverDeckard
+    - type: loadout
+      id: LoadoutSecurityRevolverDeckardNonLethal
+    - type: loadout
+      id: LoadoutSecurityPistolN1984
+    - type: loadout
+      id: LoadoutSecurityPistolN1984NonLethal
+    - type: loadout
+      id: LoadoutSecurityPistolViper
+    - type: loadout
+      id: LoadoutSecurityPistolViperNonLethal
+    - type: loadout
+      id: LoadoutSecurityEquipmentTruncheon
 
+- type: characterItemGroup
+  maxItems: 1
+  id: LoadoutBackSecurity
+  items:
+    - type: loadout
+      id: LoadoutClothingBackSecurity
+    - type: loadout
+      id: LoadoutClothingBackSecuritySatchel
+    - type: loadout
+      id: LoadoutClothingBackSecurityDuffel
+
+- type: characterItemGroup
+  maxItems: 1
+  id: LoadoutHoSWeapon
+  items:
+    - type: loadout
+      id: LoadoutCommandHoSPulsePistol
+    - type: loadout
+      id: LoadoutCommandHoSWt550
+    - type: loadout
+      id: LoadoutCommandHoSKatanaSheath
+    - type: loadout
+      id: LoadoutCommandHoSC20r
+    - type: loadout
+      id: LoadoutCommandHoSBulldog
+    - type: loadout
+      id: LoadoutCommandHoSEnergySword
+    - type: loadout
+      id: LoadoutCommandHoSEnergyGun
