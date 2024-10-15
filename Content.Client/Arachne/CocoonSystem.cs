@@ -2,7 +2,6 @@ using Content.Shared.Arachne;
 using Content.Shared.Humanoid;
 using Robust.Client.GameObjects;
 using Robust.Shared.Containers;
-using System.Diagnostics;
 using System.Numerics;
 
 namespace Content.Client.Cocoon

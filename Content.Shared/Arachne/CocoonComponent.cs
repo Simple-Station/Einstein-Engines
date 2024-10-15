@@ -1,5 +1,3 @@
-using Content.Shared.Humanoid;
-
 namespace Content.Shared.Arachne
 {
     [RegisterComponent]
