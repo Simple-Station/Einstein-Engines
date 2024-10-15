@@ -193,6 +193,7 @@ namespace Content.Client.Lobby.UI
                 UpdateHairPickers();
                 OnSkinColorOnValueChanged();
                 UpdateCustomSpecieNameEdit();
+                SetHeightWidthValues();
             };
 
             #endregion Species
@@ -201,14 +202,7 @@ namespace Content.Client.Lobby.UI
 
             var prototype = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
 
-            HeightSlider.MinValue = prototype.MinHeight;
-            HeightSlider.MaxValue = prototype.MaxHeight;
-            HeightSlider.Value = Profile?.Height ?? prototype.DefaultHeight;
-
-            WidthSlider.MinValue = prototype.MinWidth;
-            WidthSlider.MaxValue = prototype.MaxWidth;
-            WidthSlider.Value = Profile?.Width ?? prototype.DefaultWidth;
-
+            SetHeightWidthValues();
             UpdateDimensions(SliderUpdate.Both);
 
             HeightSlider.OnValueChanged += _ => UpdateDimensions(SliderUpdate.Height);
@@ -267,6 +261,18 @@ namespace Content.Client.Lobby.UI
                 WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
 
                 UpdateWeight();
+            }
+
+            void SetHeightWidthValues() {
+                prototype = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
+
+                HeightSlider.MinValue = prototype.MinHeight;
+                HeightSlider.MaxValue = prototype.MaxHeight;
+                HeightSlider.Value = Profile?.Height ?? prototype.DefaultHeight;
+
+                WidthSlider.MinValue = prototype.MinWidth;
+                WidthSlider.MaxValue = prototype.MaxWidth;
+                WidthSlider.Value = Profile?.Width ?? prototype.DefaultWidth;
             }
 
             prototypeManager.Index(prototype.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
