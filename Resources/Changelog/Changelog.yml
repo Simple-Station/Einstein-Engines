@@ -7272,3 +7272,12 @@ Entries:
   id: 6451
   time: '2024-10-15T23:07:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1055
+- author: Ichaie
+  changes:
+    - type: Fix
+      message: >-
+        Gax station: fixed arrivals being unable to dock due to meteor shielding
+        and translated security camera names to English.
+  id: 6452
+  time: '2024-10-15T23:12:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1048
