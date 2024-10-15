@@ -1307,6 +1307,8 @@
     materialUseMultiplier: 0.75
     timeMultiplier: 0.5
     staticRecipes:
+      - BluespaceCrystal
+      - NormalityCrystal
       - SheetSteel30
       - SheetGlass30
       - SheetRGlass30

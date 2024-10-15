@@ -19,15 +19,15 @@
   applyMaterialDiscount: false
   completetime: 4
   materials:
-    Bluespace: 100
+    RawBluespace: 100
 
 - type: latheRecipe
   id: NormalityCrystal
   icon:
     sprite: Nyanotrasen/Objects/Materials/materials.rsi
-    state: bluespace
+    state: normality
   result: MaterialNormality1
   applyMaterialDiscount: false
   completetime: 4
   materials:
-    Normality: 100
+    RawNormality: 100
