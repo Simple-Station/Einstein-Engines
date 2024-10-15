@@ -13,7 +13,7 @@
 - type: latheRecipe
   id: BluespaceCrystal
   icon:
-    sprite: Nyanotrasen/Objects/Materials/materials.rsi
+    sprite: Objects/Materials/materials.rsi
     state: bluespace
   result: MaterialBluespace1
   applyMaterialDiscount: false
@@ -24,7 +24,7 @@
 - type: latheRecipe
   id: NormalityCrystal
   icon:
-    sprite: Nyanotrasen/Objects/Materials/materials.rsi
+    sprite: Objects/Materials/materials.rsi
     state: normality
   result: MaterialNormality1
   applyMaterialDiscount: false

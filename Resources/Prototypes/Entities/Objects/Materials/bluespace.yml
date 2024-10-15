@@ -5,7 +5,7 @@
   name: bluespace crystal
   components:
   - type: Sprite
-    sprite: Nyanotrasen/Objects/Materials/materials.rsi
+    sprite: Objects/Materials/materials.rsi
     layers:
     - state: bluespace_3
       map: ["base"]
@@ -62,7 +62,7 @@
   name: normality crystal
   components:
   - type: Sprite
-    sprite: Nyanotrasen/Objects/Materials/materials.rsi
+    sprite: Objects/Materials/materials.rsi
     layers:
     - state: normality_3
       map: ["base"]

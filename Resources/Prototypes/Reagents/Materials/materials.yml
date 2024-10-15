@@ -122,7 +122,7 @@
   stackEntity: MaterialBluespace1
   name: materials-bluespace
   unit: materials-unit-piece
-  icon: { sprite: Nyanotrasen/Objects/Materials/materials.rsi, state: bluespace }
+  icon: { sprite: Objects/Materials/materials.rsi, state: bluespace }
   color: "#53a9ff"
   price: 7.5
 
@@ -131,6 +131,6 @@
   stackEntity: MaterialNormality1
   name: materials-normality
   unit: materials-unit-piece
-  icon: { sprite: Nyanotrasen/Objects/Materials/materials.rsi, state: normality }
+  icon: { sprite: Objects/Materials/materials.rsi, state: normality }
   color: "#53a9ff"
   price: 7.5

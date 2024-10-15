@@ -8,7 +8,7 @@
 - type: stack
   id: Bluespace
   name: bluespace
-  icon: { sprite: Nyanotrasen/Objects/Materials/materials.rsi, state: bluespace }
+  icon: { sprite: Objects/Materials/materials.rsi, state: bluespace }
   spawn: MaterialBluespace1
   maxCount: 5
   itemSize: 1
@@ -16,7 +16,7 @@
 - type: stack
   id: Normality
   name: normality
-  icon: { sprite: Nyanotrasen/Objects/Materials/materials.rsi, state: normality }
+  icon: { sprite: Objects/Materials/materials.rsi, state: normality }
   spawn: MaterialNormality1
   maxCount: 5
   itemSize: 1
