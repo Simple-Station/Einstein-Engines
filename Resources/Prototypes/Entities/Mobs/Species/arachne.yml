@@ -113,7 +113,6 @@
     webRequired: true
   - type: Arachne
   - type: DamageVisuals
-    thresholds: [ 20, 40, 100 ]
     targetLayers:
       - "enum.HumanoidVisualLayers.Chest"
       - "enum.HumanoidVisualLayers.Head"
