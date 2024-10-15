@@ -275,21 +275,6 @@ namespace Content.Client.Lobby.UI
                 WidthSlider.Value = Profile?.Width ?? prototype.DefaultWidth;
             }
 
-            prototypeManager.Index(prototype.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
-            if (fixture != null)
-            {
-                var radius = fixture.Fixtures["fix1"].Shape.Radius;
-                var density = fixture.Fixtures["fix1"].Density;
-                var avg = (WidthSlider.Value + HeightSlider.Value) / 2;
-                var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
-                WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
-            }
-            else
-            {
-                // Whelp, the fixture doesn't exist, guesstimate it instead
-                WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
-            }
-
             #endregion Height
 
             #region Skin
@@ -1481,6 +1466,10 @@ namespace Content.Client.Lobby.UI
                 var avg = (Profile.Width + Profile.Height) / 2;
                 var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
+            } else
+            {
+                // Whelp, the fixture doesn't exist, guesstimate it instead
+                WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
             }
 
             SpriteView.InvalidateMeasure();
