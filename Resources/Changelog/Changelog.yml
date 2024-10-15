@@ -7263,3 +7263,12 @@ Entries:
   id: 6450
   time: '2024-10-15T23:05:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1054
+- author: Aidenkrz
+  changes:
+    - type: Tweak
+      message: >-
+        Cocoon sizing has been changed to reflect the size of the entity inside
+        better.
+  id: 6451
+  time: '2024-10-15T23:07:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1055
