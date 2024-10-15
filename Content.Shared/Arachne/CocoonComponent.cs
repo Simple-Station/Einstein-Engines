@@ -1,4 +1,6 @@
-namespace Content.Server.Arachne
+using Content.Shared.Humanoid;
+
+namespace Content.Shared.Arachne
 {
     [RegisterComponent]
     public sealed partial class CocoonComponent : Component

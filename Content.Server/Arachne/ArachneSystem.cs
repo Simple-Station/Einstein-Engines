@@ -207,17 +207,14 @@ namespace Content.Server.Arachne
             if (!TryComp<ItemSlotsComponent>(cocoon, out var slots))
                 return;
 
-            // todo: our species should use scale visuals probably...
-            // TODO: We need a client-accessible notion of scale influence here.
-            /* if (spawnProto == "CocoonedHumanoid" && TryComp<SpriteComponent>(args.Args.Target.Value, out var sprite)) */
-            /* { */
-            /*     // why the fuck is this only available as a console command. */
-            /*     _host.ExecuteCommand(null, "scale " + cocoon + " " + sprite.Scale.Y); */
-            if (TryComp<PhysicsComponent>(args.Args.Target.Value, out var physics))
+            /*
+
             {
                 var scale = Math.Clamp(1 / (35 / physics.FixturesMass), 0.35, 2.5);
                 _host.ExecuteCommand(null, "scale " + cocoon + " " + scale);
             }
+            */
+
             _itemSlots.SetLock(cocoon, BodySlot, false, slots);
             _itemSlots.TryInsert(cocoon, BodySlot, args.Args.Target.Value, args.Args.User);
             _itemSlots.SetLock(cocoon, BodySlot, true, slots);
