@@ -54,12 +54,6 @@ namespace Content.Client.Lobby.UI
         private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
         private LineEdit _customspecienameEdit => CCustomSpecieNameEdit;
         private TextEdit? _flavorTextEdit;
-        private enum SliderUpdate
-        {
-            Height,
-            Width,
-            Both
-        }
 
         /// If we're attempting to save
         public event Action? Save;
@@ -193,7 +187,7 @@ namespace Content.Client.Lobby.UI
                 UpdateHairPickers();
                 OnSkinColorOnValueChanged();
                 UpdateCustomSpecieNameEdit();
-                SetHeightWidthValues();
+                UpdateHeightWidthSliders();
             };
 
             #endregion Species
@@ -202,7 +196,7 @@ namespace Content.Client.Lobby.UI
 
             var prototype = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
 
-            SetHeightWidthValues();
+            UpdateHeightWidthSliders();
             UpdateDimensions(SliderUpdate.Both);
 
             HeightSlider.OnValueChanged += _ => UpdateDimensions(SliderUpdate.Height);
@@ -219,61 +213,6 @@ namespace Content.Client.Lobby.UI
                 WidthSlider.Value = prototype.DefaultWidth;
                 UpdateDimensions(SliderUpdate.Width);
             };
-
-            void UpdateDimensions(SliderUpdate updateType)
-            {
-                if (Profile == null) return;
-
-                var heightValue = Math.Clamp(HeightSlider.Value, prototype.MinHeight, prototype.MaxHeight);
-                var widthValue = Math.Clamp(WidthSlider.Value, prototype.MinWidth, prototype.MaxWidth);
-                var sizeRatio = prototype.SizeRatio;
-                var ratio = heightValue / widthValue;
-
-                if (updateType == SliderUpdate.Height || updateType == SliderUpdate.Both)
-                {
-                    if (ratio < 1 / sizeRatio || ratio > sizeRatio)
-                    {
-                        widthValue = heightValue / (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
-                    }
-                }
-
-                if (updateType == SliderUpdate.Width || updateType == SliderUpdate.Both)
-                {
-                    if (ratio < 1 / sizeRatio || ratio > sizeRatio)
-                    {
-                        heightValue = widthValue * (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
-                    }
-                }
-
-                heightValue = Math.Clamp(heightValue, prototype.MinHeight, prototype.MaxHeight);
-                widthValue = Math.Clamp(widthValue, prototype.MinWidth, prototype.MaxWidth);
-
-                HeightSlider.Value = heightValue;
-                WidthSlider.Value = widthValue;
-
-                SetProfileHeight(heightValue);
-                SetProfileWidth(widthValue);
-
-                var height = MathF.Round(prototype.AverageHeight * HeightSlider.Value);
-                HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
-
-                var width = MathF.Round(prototype.AverageWidth * WidthSlider.Value);
-                WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
-
-                UpdateWeight();
-            }
-
-            void SetHeightWidthValues() {
-                prototype = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
-
-                HeightSlider.MinValue = prototype.MinHeight;
-                HeightSlider.MaxValue = prototype.MaxHeight;
-                HeightSlider.Value = Profile?.Height ?? prototype.DefaultHeight;
-
-                WidthSlider.MinValue = prototype.MinWidth;
-                WidthSlider.MaxValue = prototype.MaxWidth;
-                WidthSlider.Value = Profile?.Width ?? prototype.DefaultWidth;
-            }
 
             #endregion Height
 
@@ -707,8 +646,7 @@ namespace Content.Client.Lobby.UI
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
-            UpdateHeightControls();
-            UpdateWidthControls();
+            UpdateHeightWidthSliders();
             UpdateWeight();
             UpdateCharacterRequired();
 
@@ -1203,8 +1141,7 @@ namespace Content.Client.Lobby.UI
             UpdateSexControls(); // Update sex for new species
             UpdateCharacterRequired();
             // Changing species provides inaccurate sliders without these
-            UpdateHeightControls();
-            UpdateWidthControls();
+            UpdateHeightWidthSliders();
             UpdateWeight();
             UpdateSpeciesGuidebookIcon();
             IsDirty = true;
@@ -1421,34 +1358,68 @@ namespace Content.Client.Lobby.UI
             SpawnPriorityButton.SelectId((int) Profile.SpawnPriority);
         }
 
-        private void UpdateHeightControls()
+        private void UpdateHeightWidthSliders()
         {
-            if (Profile == null)
-                return;
-
-            var species = _species.Find(x => x.ID == Profile.Species) ?? _species.First();
+            var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
 
             HeightSlider.MinValue = species.MinHeight;
-            HeightSlider.Value = Profile.Height;
             HeightSlider.MaxValue = species.MaxHeight;
+            HeightSlider.Value = Profile?.Height ?? species.DefaultHeight;
+
+            WidthSlider.MinValue = species.MinWidth;
+            WidthSlider.MaxValue = species.MaxWidth;
+            WidthSlider.Value = Profile?.Width ?? species.DefaultWidth;
 
             var height = MathF.Round(species.AverageHeight * HeightSlider.Value);
             HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
-        }
-
-        private void UpdateWidthControls()
-        {
-            if (Profile == null)
-                return;
-
-            var species = _species.Find(x => x.ID == Profile.Species) ?? _species.First();
-
-            WidthSlider.MinValue = species.MinWidth;
-            WidthSlider.Value = Profile.Width;
-            WidthSlider.MaxValue = species.MaxWidth;
 
             var width = MathF.Round(species.AverageWidth * WidthSlider.Value);
             WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
+        }
+
+        private enum SliderUpdate
+        {
+            Height,
+            Width,
+            Both
+        }
+
+        private void UpdateDimensions(SliderUpdate updateType)
+        {
+            var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
+
+            if (Profile == null) return;
+
+            var heightValue = Math.Clamp(HeightSlider.Value, species.MinHeight, species.MaxHeight);
+            var widthValue = Math.Clamp(WidthSlider.Value, species.MinWidth, species.MaxWidth);
+            var sizeRatio = species.SizeRatio;
+            var ratio = heightValue / widthValue;
+
+            if (updateType == SliderUpdate.Height || updateType == SliderUpdate.Both)
+                if (ratio < 1 / sizeRatio || ratio > sizeRatio)
+                    widthValue = heightValue / (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
+
+            if (updateType == SliderUpdate.Width || updateType == SliderUpdate.Both)
+                if (ratio < 1 / sizeRatio || ratio > sizeRatio)
+                    heightValue = widthValue * (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
+
+
+            heightValue = Math.Clamp(heightValue, species.MinHeight, species.MaxHeight);
+            widthValue = Math.Clamp(widthValue, species.MinWidth, species.MaxWidth);
+
+            HeightSlider.Value = heightValue;
+            WidthSlider.Value = widthValue;
+
+            SetProfileHeight(heightValue);
+            SetProfileWidth(widthValue);
+
+            var height = MathF.Round(species.AverageHeight * HeightSlider.Value);
+            HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
+
+            var width = MathF.Round(species.AverageWidth * WidthSlider.Value);
+            WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
+
+            UpdateWeight();
         }
 
         private void UpdateWeight()
