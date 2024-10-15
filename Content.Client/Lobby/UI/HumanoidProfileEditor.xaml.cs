@@ -1437,11 +1437,9 @@ namespace Content.Client.Lobby.UI
                 var avg = (Profile.Width + Profile.Height) / 2;
                 var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
-            } else
-            {
-                // Whelp, the fixture doesn't exist, guesstimate it instead
+            } 
+            else // Whelp, the fixture doesn't exist, guesstimate it instead
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
-            }
 
             SpriteView.InvalidateMeasure();
         }
