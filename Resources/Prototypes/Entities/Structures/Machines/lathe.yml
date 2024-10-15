@@ -294,6 +294,9 @@
       - SuperCapacitorStockPart
       - SuperMatterBinStockPart
       - PicoManipulatorStockPart
+      - BluespaceCapacitorStockPart
+      - BluespaceManipulatorStockPart
+      - BluespaceMatterBinStockPart
       - AdvMopItem
       - WeaponSprayNozzle
       - ClothingBackpackWaterTank

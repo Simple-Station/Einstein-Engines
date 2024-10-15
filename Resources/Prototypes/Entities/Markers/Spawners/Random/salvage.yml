@@ -90,8 +90,8 @@
       state: super_matter_bin
   - type: RandomSpawner
     rarePrototypes:
-    - QuadraticCapacitorStockPart
-    - FemtoManipulatorStockPart
+    - BluespaceCapacitorStockPart
+    - BluespaceManipulatorStockPart
     - BluespaceMatterBinStockPart
     rareChance: 0.05
     prototypes:
@@ -130,7 +130,7 @@
       state: bluespace_matter_bin
   - type: RandomSpawner
     prototypes:
-    - QuadraticCapacitorStockPart
+    - BluespaceCapacitorStockPart
     - PicoManipulatorStockPart
     - BluespaceMatterBinStockPart
     offset: 0.0

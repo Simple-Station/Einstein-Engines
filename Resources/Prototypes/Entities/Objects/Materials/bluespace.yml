@@ -70,7 +70,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      Noramlity: 100
+      Normality: 100
   - type: Tag
     tags:
     - NormalityCrystal
