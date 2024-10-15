@@ -72,6 +72,7 @@ namespace Content.Shared.Alert
         BorgDead,
         Offer,
         ShadowkinPower,
+        Deflecting,
     }
 
 }
