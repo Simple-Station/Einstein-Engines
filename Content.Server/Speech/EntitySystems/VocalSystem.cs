@@ -1,9 +1,11 @@
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Server.Speech.Components;
+using Content.Shared.ActionBlocker;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Speech;
+using Content.Shared.Speech.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
@@ -18,6 +20,10 @@ public sealed class VocalSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+
+    [ValidatePrototypeId<ReplacementAccentPrototype>]
+    private const string MuzzleAccent = "mumble";
 
     public override void Initialize()
     {
@@ -53,7 +59,10 @@ public sealed class VocalSystem : EntitySystem
 
     private void OnEmote(EntityUid uid, VocalComponent component, ref EmoteEvent args)
     {
-        if (args.Handled || !args.Emote.Category.HasFlag(EmoteCategory.Vocal))
+        if (args.Handled
+            || !args.Emote.Category.HasFlag(EmoteCategory.Vocal)
+            || !_actionBlocker.CanSpeak(uid)
+            || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent) // This is not ideal, but it works.
             return;
 
         // snowflake case for wilhelm scream easter egg

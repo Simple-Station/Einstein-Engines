@@ -7,6 +7,10 @@
   root: true
 
 - type: loadoutCategory
+  id: Backpacks
+  root: true
+
+- type: loadoutCategory
   id: Eyes
   root: true
 
@@ -39,43 +43,10 @@
   id: JobsAUncategorized
 
 - type: loadoutCategory
-  id: JobsCommand
-  subCategories:
-    - JobsCommandAUncategorized
-    - JobsCommandCaptain
-    - JobsCommandCE
-    - JobsCommandCMO
-    - JobsCommandHOP
-    - JobsCommandHOS
-    - JobsCommandQM
-    - JobsCommandRD
-
-- type: loadoutCategory
-  id: JobsCommandAUncategorized
-
-- type: loadoutCategory
-  id: JobsCommandCaptain
-
-- type: loadoutCategory
-  id: JobsCommandCE
-
-- type: loadoutCategory
-  id: JobsCommandCMO
-
-- type: loadoutCategory
-  id: JobsCommandHOP
-
-- type: loadoutCategory
-  id: JobsCommandHOS
-
-- type: loadoutCategory
-  id: JobsCommandQM
-
-- type: loadoutCategory
-  id: JobsCommandRD
-
-- type: loadoutCategory
   id: JobsCargo
+
+- type: loadoutCategory
+  id: JobsCommand
 
 - type: loadoutCategory
   id: JobsEngineering
@@ -85,7 +56,7 @@
 
 - type: loadoutCategory
   id: JobsScience
-  
+
 - type: loadoutCategory
   id: JobsSecurity
 
@@ -94,12 +65,24 @@
   subCategories:
     - JobsServiceUncategorized
     - JobsServiceBartender
+    - JobsServiceBotanist
+    - JobsServiceChef
+    - JobsServiceJanitor
 
 - type: loadoutCategory
   id: JobsServiceUncategorized
 
 - type: loadoutCategory
   id: JobsServiceBartender
+
+- type: loadoutCategory
+  id: JobsServiceBotanist
+
+- type: loadoutCategory
+  id: JobsServiceChef
+
+- type: loadoutCategory
+  id: JobsServiceJanitor
 
 - type: loadoutCategory
   id: Mask

@@ -1,6 +1,6 @@
 - type: loadout
   id: LoadoutCommandHOPNeckMantle
-  category: JobsCommandHOP
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -12,7 +12,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPNeckCloak
-  category: JobsCommandHOP
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -24,7 +24,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpsuitTurtleneckBoatswain
-  category: JobsCommandHOP
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -36,7 +36,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpsuitMess
-  category: JobsCommandHOP
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -48,7 +48,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpskirtMess
-  category: JobsCommandHOP
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -60,7 +60,7 @@
 
 - type: loadout
   id: LoadoutcommandHOPOuterCoatFormal
-  category: JobsCommandHOP
+  category: JobsCommand
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -71,7 +71,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPBackIan
-  category: JobsCommandHOP
+  category: JobsCommand
   cost: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -82,7 +82,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPHatCap
-  category: JobsCommandHOP
+  category: JobsCommand
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -93,7 +93,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPShoesBootsWinter
-  category: JobsCommandHOP
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -105,7 +105,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPBedsheetIan
-  category: JobsCommandHOP
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:

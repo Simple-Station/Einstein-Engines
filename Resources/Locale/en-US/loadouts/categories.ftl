@@ -2,6 +2,7 @@
 
 loadout-category-Uncategorized = Uncategorized
 loadout-category-Accessories = Accessories
+loadout-category-Backpacks = Backpacks
 loadout-category-Eyes = Eyes
 loadout-category-Hands = Hands
 loadout-category-Head = Head
@@ -25,6 +26,9 @@ loadout-category-JobsSecurity = Security
 loadout-category-JobsService = Service
 loadout-category-JobsServiceUncategorized = Uncategorized
 loadout-category-JobsServiceBartender = Bartender
+loadout-category-JobsServiceBotanist = Botanist
+loadout-category-JobsServiceChef = Chef
+loadout-category-JobsServiceJanitor = Janitor
 loadout-category-Mask = Mask
 loadout-category-Neck = Neck
 loadout-category-Outer = Outer

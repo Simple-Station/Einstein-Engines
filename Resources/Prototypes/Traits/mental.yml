@@ -1,0 +1,236 @@
+- type: trait
+  id: HighPotential
+  category: Mental
+  points: -5
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowPotential
+  components:
+    - type: PotentiaModifier
+      potentiaMultiplier: 1.25
+
+- type: trait
+  id: LowPotential
+  category: Mental
+  points: 4
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighPotential
+  components:
+    - type: PotentiaModifier
+      potentiaMultiplier: 0.75
+
+- type: trait
+  id: LowAmplification
+  category: Mental
+  points: 3
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighAmplification
+        - PowerOverwhelming
+  psionicPowers:
+    - LowAmplification
+
+- type: trait
+  id: HighAmplification
+  category: Mental
+  points: -3
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowAmplification
+        - PowerOverwhelming
+  psionicPowers:
+    - LowAmplification
+
+- type: trait
+  id: PowerOverwhelming
+  category: Mental
+  points: -10
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowAmplification
+        - HighAmplification
+  psionicPowers:
+    - PowerOverwhelming
+
+- type: trait
+  id: LowDampening
+  category: Mental
+  points: 3
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighDampening
+  psionicPowers:
+    - LowDampening
+
+- type: trait
+  id: HighDampening
+  category: Mental
+  points: -3
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowDampening
+  psionicPowers:
+    - HighDampening

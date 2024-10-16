@@ -122,16 +122,15 @@ public sealed class MoodSystem : EntitySystem
                 if (!_prototypeManager.TryIndex<MoodEffectPrototype>(oldPrototypeId, out var oldPrototype))
                     return;
 
-                if (prototype.ID != oldPrototype.ID)
-                {
+                // Don't send the moodlet popup if we already have the moodlet.
+                if (!component.CategorisedEffects.ContainsValue(prototype.ID))
                     SendEffectText(uid, prototype);
+
+                if (prototype.ID != oldPrototype.ID)
                     component.CategorisedEffects[prototype.Category] = prototype.ID;
-                }
             }
             else
-            {
                 component.CategorisedEffects.Add(prototype.Category, prototype.ID);
-            }
 
             if (prototype.Timeout != 0)
                 Timer.Spawn(TimeSpan.FromSeconds(prototype.Timeout), () => RemoveTimedOutEffect(uid, prototype.ID, prototype.Category));
@@ -146,7 +145,10 @@ public sealed class MoodSystem : EntitySystem
             if (moodChange == 0)
                 return;
 
-            SendEffectText(uid, prototype);
+            // Don't send the moodlet popup if we already have the moodlet.
+            if (!component.UncategorisedEffects.ContainsKey(prototype.ID))
+                SendEffectText(uid, prototype);
+
             component.UncategorisedEffects.Add(prototype.ID, moodChange);
 
             if (prototype.Timeout != 0)
@@ -250,7 +252,8 @@ public sealed class MoodSystem : EntitySystem
         if (_debugMode)
             return;
 
-        if (TryComp<MobThresholdsComponent>(uid, out var mobThresholdsComponent)
+        if (_config.GetCVar(CCVars.MoodModifiesThresholds)
+            && TryComp<MobThresholdsComponent>(uid, out var mobThresholdsComponent)
             && _mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var critThreshold, mobThresholdsComponent))
             component.CritThresholdBeforeModify = critThreshold.Value;
 
@@ -343,7 +346,8 @@ public sealed class MoodSystem : EntitySystem
 
     private void SetCritThreshold(EntityUid uid, MoodComponent component, int modifier)
     {
-        if (!TryComp<MobThresholdsComponent>(uid, out var mobThresholds)
+        if (!_config.GetCVar(CCVars.MoodModifiesThresholds)
+            || !TryComp<MobThresholdsComponent>(uid, out var mobThresholds)
             || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var key))
             return;
 

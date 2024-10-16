@@ -22,7 +22,7 @@
 
 - type: entity
   name: china lake
-  parent: BaseWeaponLauncher
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherChinaLake
   description: PLOOP
   components:
@@ -375,3 +375,29 @@
       tags:
         - CartridgeRocket
     proto: ImmovableRodSlow
+
+# Frontier mail RPDS
+- type: entity
+  name: mail RPDS
+  parent: WeaponLauncherChinaLake
+  id: WeaponMailLake
+  description: Rap(b?)id Parcel Delivery System
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Launchers/mail.rsi
+    layers:
+    - state: icon
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Launchers/mail.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - Belt
+    - suitStorage
+  - type: BallisticAmmoProvider
+    proto: null
+    whitelist:
+      tags:
+      - MailCapsule
+    capacity: 4
