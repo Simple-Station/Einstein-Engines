@@ -1,7 +1,6 @@
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Botany.Components;
 using Content.Server.Fluids.Components;
-using Content.Shared.Kitchen.Components;
 using Content.Server.Popups;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Atmos;
@@ -14,6 +13,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
+using Content.Shared.Kitchen.Components;
 using Content.Shared.Popups;
 using Content.Shared.Random;
 using Content.Shared.Tag;
@@ -228,39 +228,8 @@ public sealed class PlantHolderSystem : EntitySystem
             return;
         }
 
-        if (_solutionContainerSystem.TryGetDrainableSolution(args.Used, out var solution, out _)
-            && _solutionContainerSystem.ResolveSolution(uid, component.SoilSolutionName, ref component.SoilSolution)
-            && TryComp(args.Used, out SprayComponent? spray))
-        {
-            var amount = FixedPoint2.New(1);
-
-            var targetEntity = uid;
-            var solutionEntity = args.Used;
-
-            _audio.PlayPvs(spray.SpraySound, args.Used, AudioParams.Default.WithVariation(0.125f));
-
-            var split = _solutionContainerSystem.Drain(solutionEntity, solution.Value, amount);
-
-            if (split.Volume == 0)
-            {
-                _popup.PopupCursor(Loc.GetString("plant-holder-component-no-plant-message",
-                    ("owner", args.Used)), args.User);
-                return;
-            }
-
-            _popup.PopupCursor(Loc.GetString("plant-holder-component-spray-message",
-                ("owner", uid),
-                ("amount", split.Volume)), args.User, PopupType.Medium);
-
-            _solutionContainerSystem.TryAddSolution(component.SoilSolution.Value, split);
-
-            ForceUpdateByExternalCause(uid, component);
-
-            return;
-        }
-
         var highQualitySampleTaker = _tagSystem.HasTag(args.Used, "PlantSampleTakerHighQuality");
-        if (_tagSystem.HasTag(args.Used, "PlantSampleTaker") || highQualitySampleTaker)
+        if (_tagSystem.HasTag(args.Used, "PlantSampleTaker"))
         {
             if (component.Seed == null)
             {
