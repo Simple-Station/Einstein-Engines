@@ -5,6 +5,7 @@ using System.Text.Json;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using NpgsqlTypes;
@@ -14,9 +15,11 @@ using NpgsqlTypes;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    partial class PostgresServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240623005113_BanTemplate")]
+    partial class BanTemplate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -183,10 +186,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("uuid")
                         .HasColumnName("deleted_by_id");
 
-                    b.Property<bool>("Dismissed")
-                        .HasColumnType("boolean")
-                        .HasColumnName("dismissed");
-
                     b.Property<DateTime?>("ExpirationTime")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("expiration_time");
@@ -236,10 +235,7 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.HasIndex("RoundId")
                         .HasDatabaseName("IX_admin_messages_round_id");
 
-                    b.ToTable("admin_messages", null, t =>
-                        {
-                            t.HasCheckConstraint("NotDismissedAndSeen", "NOT dismissed OR seen");
-                        });
+                    b.ToTable("admin_messages", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.AdminNote", b =>
@@ -513,49 +509,49 @@ namespace Content.Server.Database.Migrations.Postgres
                 });
 
             modelBuilder.Entity("Content.Server.Database.BanTemplate", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("ban_template_id");
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("integer")
+                    .HasColumnName("ban_template_id");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("AutoDelete")
-                        .HasColumnType("boolean")
-                        .HasColumnName("auto_delete");
+                b.Property<bool>("AutoDelete")
+                    .HasColumnType("boolean")
+                    .HasColumnName("auto_delete");
 
-                    b.Property<int>("ExemptFlags")
-                        .HasColumnType("integer")
-                        .HasColumnName("exempt_flags");
+                b.Property<int>("ExemptFlags")
+                    .HasColumnType("integer")
+                    .HasColumnName("exempt_flags");
 
-                    b.Property<bool>("Hidden")
-                        .HasColumnType("boolean")
-                        .HasColumnName("hidden");
+                b.Property<bool>("Hidden")
+                    .HasColumnType("boolean")
+                    .HasColumnName("hidden");
 
-                    b.Property<TimeSpan>("Length")
-                        .HasColumnType("interval")
-                        .HasColumnName("length");
+                b.Property<TimeSpan>("Length")
+                    .HasColumnType("interval")
+                    .HasColumnName("length");
 
-                    b.Property<string>("Reason")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("reason");
+                b.Property<string>("Reason")
+                    .IsRequired()
+                    .HasColumnType("text")
+                    .HasColumnName("reason");
 
-                    b.Property<int>("Severity")
-                        .HasColumnType("integer")
-                        .HasColumnName("severity");
+                b.Property<int>("Severity")
+                    .HasColumnType("integer")
+                    .HasColumnName("severity");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("title");
+                b.Property<string>("Title")
+                    .IsRequired()
+                    .HasColumnType("text")
+                    .HasColumnName("title");
 
-                    b.HasKey("Id")
-                        .HasName("PK_ban_template");
+                b.HasKey("Id")
+                    .HasName("PK_ban_template");
 
-                    b.ToTable("ban_template", (string)null);
-                });
+                b.ToTable("ban_template", (string)null);
+            });
 
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
@@ -822,11 +818,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("clothing");
 
-                    b.Property<string>("CustomSpecieName")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("custom_specie_name");
-
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("text")
@@ -861,10 +852,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("hair_name");
-
-                    b.Property<float>("Height")
-                        .HasColumnType("real")
-                        .HasColumnName("height");
 
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")
@@ -901,10 +888,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("species");
 
-                    b.Property<float>("Width")
-                        .HasColumnType("real")
-                        .HasColumnName("width");
-
                     b.HasKey("Id")
                         .HasName("PK_profile");
 
@@ -930,8 +913,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("integer")
                         .HasColumnName("server_id");
 
-                    b.Property<DateTime?>("StartDate")
+                    b.Property<DateTime>("StartDate")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
+                        .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("start_date");
 
                     b.HasKey("Id")
