@@ -7297,3 +7297,12 @@ Entries:
   id: 6454
   time: '2024-10-16T03:08:07.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1057
+- author: Aidenkrz
+  changes:
+    - type: Tweak
+      message: Height and width are now constrained by each other.
+    - type: Fix
+      message: Humanoids can no longer phase through walls.
+  id: 6455
+  time: '2024-10-16T12:54:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1049
