@@ -7290,3 +7290,28 @@ Entries:
   id: 6453
   time: '2024-10-15T23:13:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1047
+- author: Aidenkrz
+  changes:
+    - type: Fix
+      message: You can properly lay down and stand up on tables now.
+  id: 6454
+  time: '2024-10-16T03:08:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1057
+- author: Aidenkrz
+  changes:
+    - type: Tweak
+      message: Height and width are now constrained by each other.
+    - type: Fix
+      message: Humanoids can no longer phase through walls.
+  id: 6455
+  time: '2024-10-16T12:54:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1049
+- author: Aidenkrz
+  changes:
+    - type: Fix
+      message: Bluespace crystals now properly eject from lathes.
+    - type: Fix
+      message: Bluespace parts can be reverse engineered.
+  id: 6456
+  time: '2024-10-16T12:55:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1052

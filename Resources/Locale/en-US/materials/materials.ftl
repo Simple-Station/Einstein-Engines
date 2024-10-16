@@ -25,6 +25,8 @@ materials-meat = meat
 materials-web = silk
 materials-bones = bone
 materials-coal = coal
+materials-bluespace = bluespace
+materials-normality = normality
 
 # Ores
 materials-raw-iron = raw iron

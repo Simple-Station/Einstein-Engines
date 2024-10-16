@@ -294,6 +294,9 @@
       - SuperCapacitorStockPart
       - SuperMatterBinStockPart
       - PicoManipulatorStockPart
+      - BluespaceCapacitorStockPart
+      - BluespaceManipulatorStockPart
+      - BluespaceMatterBinStockPart
       - AdvMopItem
       - WeaponSprayNozzle
       - ClothingBackpackWaterTank
@@ -1307,6 +1310,8 @@
     materialUseMultiplier: 0.75
     timeMultiplier: 0.5
     staticRecipes:
+      - BluespaceCrystal
+      - NormalityCrystal
       - SheetSteel30
       - SheetGlass30
       - SheetRGlass30
