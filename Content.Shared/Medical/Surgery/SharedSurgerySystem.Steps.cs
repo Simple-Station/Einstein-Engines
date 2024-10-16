@@ -213,6 +213,7 @@ public abstract partial class SharedSurgerySystem
             _rotateToFace.TryFaceCoordinates(user, _transform.GetMapCoordinates(body, xform).Position);
 
         var ev = new SurgeryDoAfterEvent(args.Surgery, args.Step);
+        // TODO: Make this serialized on a per surgery step basis, and also add penalties based on ghetto tools.
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(2), ev, body, part)
         {
             BreakOnUserMove = true,
@@ -278,7 +279,9 @@ public abstract partial class SharedSurgerySystem
         return true;
     }
 
-    public bool CanPerformStep(EntityUid user, EntityUid body, BodyPartType part, EntityUid step, bool doPopup, out string? popup, out StepInvalidReason reason, out HashSet<EntityUid>? validTools)
+    public bool CanPerformStep(EntityUid user, EntityUid body, BodyPartType part,
+        EntityUid step, bool doPopup, out string? popup, out StepInvalidReason reason,
+        out HashSet<EntityUid>? validTools)
     {
         var slot = part switch
         {

@@ -146,7 +146,7 @@ public sealed class SurgeryBui : BoundUserInterface
                     BodyPartType.Hand => 4,
                     BodyPartType.Leg => 5,
                     BodyPartType.Foot => 6,
-                    BodyPartType.Tail => 7,
+                    // BodyPartType.Tail => 7, No tails yet!
                     BodyPartType.Other => 8,
                     _ => 0
                 };
@@ -217,6 +217,7 @@ public sealed class SurgeryBui : BoundUserInterface
 
         _window.Steps.DisposeAllChildren();
 
+        // This apparently does not consider if theres multiple surgery requirements in one surgery. Maybe thats fine.
         if (surgery.Comp.Requirement is { } requirementId && _system.GetSingleton(requirementId) is { } requirement)
         {
             var label = new XenoChoiceControl();

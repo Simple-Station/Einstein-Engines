@@ -80,36 +80,36 @@
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: retractor
 
-- type: entity
-  parent: SurgeryStepBase
-  id: SurgeryStepCutLarvaRoots
-  name: Cut larva roots
-  components:
-  - type: SurgeryStep
-    skill: 2
-    tool:
-    - type: Scalpel
-  - type: SurgeryCutLarvaRootsStep
-  - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
-    state: scalpel
-  - type: SurgeryOperatingTableCondition
+#- type: entity
+#  parent: SurgeryStepBase
+#  id: SurgeryStepCutLarvaRoots
+#  name: Cut larva roots
+#  components:
+#  - type: SurgeryStep
+#    skill: 2
+#    tool:
+#    - type: Scalpel
+#  - type: SurgeryCutLarvaRootsStep
+#  - type: Sprite
+#    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+#    state: scalpel
+#  - type: SurgeryOperatingTableCondition
 
-- type: entity
-  parent: SurgeryStepBase
-  id: SurgeryStepRemoveLarva
-  name: Remove larva
-  components:
-  - type: SurgeryStep
-    skill: 2
-    tool:
-    - type: Hemostat
-    bodyRemove:
+#- type: entity
+#  parent: SurgeryStepBase
+#  id: SurgeryStepRemoveLarva
+#  name: Remove larva
+#  components:
+#  - type: SurgeryStep
+#    skill: 2
+#    tool:
+#    - type: Hemostat
+#    bodyRemove:
 #    - type: VictimInfected
-  - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
-    state: hemostat
-  - type: SurgeryOperatingTableCondition
+#  - type: Sprite
+#    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+#    state: hemostat
+#  - type: SurgeryOperatingTableCondition
 #  - type: SurgeryStepSpawnEffect
 #    entity: XenoEmbryo
 
@@ -157,3 +157,30 @@
     sprite: Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
   - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepInsertFeature
+  name: Insert part
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Scalpel
+    add:
+    - type: IncisionOpen
+  - type: Sprite
+    sprite: Interface/Default/Slots/hand_m.png
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepRemoveFeature
+  name: Remove part
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Scalpel
+    add:
+    - type: PartRemoved
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/saw.rsi
+    state: saw
