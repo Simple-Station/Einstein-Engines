@@ -7322,3 +7322,10 @@ Entries:
   id: 6457
   time: '2024-10-16T22:51:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1056
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Soap once again can be used to clean evidence off.
+  id: 6458
+  time: '2024-10-16T22:54:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1061
