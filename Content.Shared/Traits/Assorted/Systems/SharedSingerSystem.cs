@@ -33,17 +33,12 @@ public abstract class SharedSingerSystem : EntitySystem
         if (!ProtoMan.TryIndex(ent.Comp.Proto, out var singer))
             return;
 
-        _actionsSystem.AddAction(ent, ref ent.Comp.MidiAction, singer.MidiActionId);
+        _actionsSystem.AddAction(ent, ref ent.Comp.MidiAction, ent.Comp.MidiActionId);
 
         var instrumentComp = EnsureInstrumentComp(ent);
         var defaultData = singer.InstrumentList[singer.DefaultInstrument];
         _instrument.SetInstrumentProgram(instrumentComp, defaultData.Item1, defaultData.Item2);
         SetUpSwappableInstrument(ent, singer);
-
-        EntityManager.TryGetComponent<UserInterfaceComponent>(ent.Owner, out var comp);
-        var entui = new Entity<UserInterfaceComponent?>(ent.Owner, comp);
-        if (singer.MidiUi is { } uiKey && !_ui.IsUiOpen(entui, uiKey))
-            _ui.OpenUi(entui, uiKey, entui);
     }
 
     private void OnShutdown(Entity<SingerComponent> ent, ref ComponentShutdown args)
