@@ -592,10 +592,10 @@
   - type: SpawnArtifact
     maxSpawns: 10
     spawns:
-    - id: QuadraticCapacitorStockPart
+    - id: BluespaceCapacitorStockPart
       prob: 0.5
       maxAmount: 3
-    - id: FemtoManipulatorStockPart
+    - id: BluespaceManipulatorStockPart
       prob: 0.5
       maxAmount: 3
     - id: BluespaceMatterBinStockPart
