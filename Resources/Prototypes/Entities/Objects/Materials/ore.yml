@@ -360,7 +360,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      Bluespace: 100
+      RawBluespace: 100
 
 - type: entity
   parent: BluespaceOre
@@ -379,12 +379,12 @@
   - type: Stack
     stackType: NormalityOre
   - type: Sprite
-    state: bluespace
+    state: normality
   - type: Item
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      Normality: 100
+      RawNormality: 100
 
 - type: entity
   parent: NormalityOre
