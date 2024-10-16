@@ -7306,3 +7306,12 @@ Entries:
   id: 6455
   time: '2024-10-16T12:54:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1049
+- author: Aidenkrz
+  changes:
+    - type: Fix
+      message: Bluespace crystals now properly eject from lathes.
+    - type: Fix
+      message: Bluespace parts can be reverse engineered.
+  id: 6456
+  time: '2024-10-16T12:55:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1052
