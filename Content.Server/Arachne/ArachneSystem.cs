@@ -65,7 +65,7 @@ namespace Content.Server.Arachne
             if (!TryComp<BloodstreamComponent>(args.Target, out var bloodstream))
                 return;
 
-            if (bloodstream.BloodReagent != component.WebBloodReagent)
+            if (bloodstream.BloodReagent != component.WebBloodReagent || !HasComp<HumanoidAppearanceComponent>(args.Target))
                 return;
 
             InnateVerb verb = new()
