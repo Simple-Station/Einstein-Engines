@@ -343,7 +343,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && _antagPreferences.SequenceEqual(other._antagPreferences)
             && _traitPreferences.SequenceEqual(other._traitPreferences)
             && LoadoutPreferences.SequenceEqual(other.LoadoutPreferences)
-            && Appearance.MemberwiseEquals(other.Appearance);
+            && Appearance.MemberwiseEquals(other.Appearance)
+            && FlavorText == other.FlavorText;
     }
 
     public void EnsureValid(ICommonSession session, IDependencyCollection collection)
