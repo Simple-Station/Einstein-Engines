@@ -7249,3 +7249,44 @@ Entries:
   id: 6448
   time: '2024-10-14T16:10:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/944
+- author: Aidenkrz
+  changes:
+    - type: Fix
+      message: Reverse engineering machine UI works again.
+  id: 6449
+  time: '2024-10-15T23:05:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1053
+- author: Aidenkrz
+  changes:
+    - type: Fix
+      message: Arachne no longer turn into errors when they take damage
+  id: 6450
+  time: '2024-10-15T23:05:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1054
+- author: Aidenkrz
+  changes:
+    - type: Tweak
+      message: >-
+        Cocoon sizing has been changed to reflect the size of the entity inside
+        better.
+  id: 6451
+  time: '2024-10-15T23:07:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1055
+- author: Ichaie
+  changes:
+    - type: Fix
+      message: >-
+        Gax station: fixed arrivals being unable to dock due to meteor shielding
+        and translated security camera names to English.
+  id: 6452
+  time: '2024-10-15T23:12:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1048
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Psionic Rolls should now generate larger, random amounts of Potentia.
+        This should make it a lot easier to obtain powers. 
+  id: 6453
+  time: '2024-10-15T23:13:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1047
