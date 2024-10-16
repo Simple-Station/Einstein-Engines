@@ -7315,3 +7315,10 @@ Entries:
   id: 6456
   time: '2024-10-16T12:55:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1052
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: 'Fixed Harpy singing not opening the Midi Player. '
+  id: 6457
+  time: '2024-10-16T22:51:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1056
