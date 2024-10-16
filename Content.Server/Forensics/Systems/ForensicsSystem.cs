@@ -181,7 +181,8 @@ namespace Content.Server.Forensics
             if (TryComp<ResidueComponent>(args.Used, out var residue))
                 targetComp.Residues.Add(string.IsNullOrEmpty(residue.ResidueColor) ? Loc.GetString("forensic-residue", ("adjective", residue.ResidueAdjective)) : Loc.GetString("forensic-residue-colored", ("color", residue.ResidueColor), ("adjective", residue.ResidueAdjective)));
 
-            // If the ent has a Scent Component, we compleatly generate a new one and apply the new scent to all currently weared items.
+            // If the ent has a Scent Component, we completely generate a new one and apply the new scent to all currently worn items.
+            // TODO this is never gonna work unless you like, wash yourself with the soap???
             if (TryComp<ScentComponent>(args.Target, out var scentComp))
             {
                 var generatedscent = GenerateFingerprint(length: 5);
