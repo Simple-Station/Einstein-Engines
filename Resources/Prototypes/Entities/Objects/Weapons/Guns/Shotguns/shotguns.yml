@@ -185,7 +185,7 @@
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/pump.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: BallisticAmmoProvider
     capacity: 4
