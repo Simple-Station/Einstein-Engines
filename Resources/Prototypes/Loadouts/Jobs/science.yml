@@ -3,14 +3,14 @@
 - type: loadout
   id: LoadoutScienceUniformJumpskirtSenior
   category: JobsScience
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
       min: 216000 # 60 hours
@@ -20,14 +20,14 @@
 - type: loadout
   id: LoadoutScienceUniformJumpsuitSenior
   category: JobsScience
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
       min: 216000 # 60 hours
@@ -37,28 +37,28 @@
 - type: loadout
   id: LoadoutScienceUniformJumpskirtRoboticist
   category: JobsScience
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingUniformJumpskirtRoboticist
 
 - type: loadout
   id: LoadoutScienceUniformJumpsuitRoboticist
   category: JobsScience
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingUniformJumpsuitRoboticist
 
@@ -100,11 +100,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchAssistant
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingOuterCoatRnd
 
@@ -116,11 +114,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchAssistant
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingOuterCoatLab
 
@@ -132,37 +128,37 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingOuterCoatRobo
 
 - type: loadout
   id: LoadoutScienceOuterWinterSci
   category: JobsScience
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingOuterWinterSci
 
 - type: loadout
   id: LoadoutScienceOuterLabcoatSeniorResearcher
   category: JobsScience
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
       min: 216000 # 60 hours
@@ -177,11 +173,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchAssistant
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingOuterExplorerCoat
 
@@ -265,10 +259,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGlovesScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingHandsGlovesColorPurple
 
@@ -280,10 +273,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGlovesScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingHandsGlovesLatex
 
@@ -295,10 +287,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGlovesScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingHandsGlovesRobohands
 
@@ -312,10 +303,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeckScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingNeckTieSci
 
@@ -327,10 +317,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeckScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingNeckScarfStripedPurple
 
@@ -356,9 +345,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeckScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingNeckScarfStripedBlack
 
@@ -388,11 +377,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchAssistant
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingHeadHatBeretRND
 
@@ -404,9 +391,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingHeadHatFez
 
@@ -476,11 +463,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyesScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchAssistant
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingEyesHudDiagnostic
 
@@ -492,11 +477,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyesScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchAssistant
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingEyesEyepatchHudDiag
 
@@ -510,11 +493,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoesScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchAssistant
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
   items:
     - ClothingShoesBootsWinterSci
 
@@ -529,11 +510,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Scientist
-        - ResearchAssistant
-        - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
 
 - type: loadout
   id: LoadoutHeadHoodTechPriest
@@ -545,8 +524,105 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+
+# Cataloguer
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianNt
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - Scientist
-        - ResearchAssistant
-        - ResearchDirector
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianNt
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianIdris
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianIdris
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianOrion
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianOrion
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianHeph
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianHeph
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianPMCG
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianPMCG
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianZav
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianZav
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianZeng
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianZeng

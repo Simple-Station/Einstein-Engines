@@ -14,7 +14,7 @@
                  Stretch="KeepAspectCovered" />
     <BoxContainer Name="MainContainer" VerticalExpand="True" HorizontalExpand="True" Orientation="Horizontal"
                   Margin="10 10 10 10" SeparationOverride="2">
-        <SplitContainer State="Auto" HorizontalExpand="True">
+        <SplitContainer State="Auto" ResizeMode="NotResizable" HorizontalExpand="True">
             <!-- LHS Controls -->
             <BoxContainer Name="LeftSide" Orientation="Vertical" SeparationOverride="4" HorizontalExpand="True">
                 <Control Name="DefaultState" VerticalExpand="True">
@@ -94,7 +94,7 @@
                     <Label Name="StationTime" Access="Public" FontColorOverride="{x:Static maths:Color.LightGray}"
                            Margin="3 3 3 3" HorizontalAlignment="Left" />
                     <controls:HSpacer Spacing="5" />
-                    <lobbyUi:LobbyCharacterPanel Name="CharacterPreview" Access="Public" />
+                    <lobbyUi:LobbyCharacterPreviewPanel Name="CharacterPreview" Access="Public" />
                     <controls:HSpacer Spacing="5" />
                     <BoxContainer MinHeight="10" />
                     <!-- Gold line -->

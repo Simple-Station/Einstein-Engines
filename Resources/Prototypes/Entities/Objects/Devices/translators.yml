@@ -113,8 +113,8 @@
 - type: entity
   id: DraconicTranslator
   parent: [ TranslatorPoweredBase ]
-  name: Draconic translator
-  description: Translates speech between Draconic and Galactic Common, making it easier to understand your local Uniathi.
+  name: Sinta'Unathi translator
+  description: Translates speech between Sinta'Unathi and Tau-Ceti Basic, making it easier to understand your local Unathi.
   components:
   - type: HandheldTranslator
     spoken:
@@ -219,3 +219,37 @@
     requires:
     - TauCetiBasic
     setLanguageOnInteract: false
+
+- type: entity
+  id: ValyrianStandardTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Valyrian Standard translator
+  description: Translates speech between Valyrian Standard and Tau-Ceti Basic. For talking to Harpies!
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - ValyrianStandard
+    understood:
+    - TauCetiBasic
+    - ValyrianStandard
+    requires:
+    - TauCetiBasic
+    - ValyrianStandard
+
+- type: entity
+  id: AzazibaTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Azaziba translator
+  description: Translates speech between Unathi and Azaziba. For Unathi to speak the Archaic form of their native tongue! # Intended for Admins Only, this item is for lore reasons not obtainable.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - Draconic
+    - Azaziba
+    understood:
+    - Draconic
+    - Azaziba
+    requires:
+    - Draconic
+    - Azaziba

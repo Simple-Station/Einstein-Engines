@@ -1,4 +1,7 @@
-﻿namespace Content.Server.Xenoarchaeology.Equipment.Components;
+﻿using Content.Shared.Construction.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+
+namespace Content.Server.Xenoarchaeology.Equipment.Components;
 
 /// <summary>
 /// This is used for a machine that biases
@@ -8,7 +11,19 @@
 public sealed partial class TraversalDistorterComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite)]
-    public BiasDirection BiasDirection = BiasDirection.In;
+    public float BiasChance;
+
+    [DataField]
+    public float BaseBiasChance = 0.7f;
+
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+    public string MachinePartBiasChance = "Manipulator";
+
+    [DataField]
+    public float PartRatingBiasChance = 1.1f;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    public BiasDirection BiasDirection = BiasDirection.Up;
 
     public TimeSpan NextActivation = default!;
     public TimeSpan ActivationDelay = TimeSpan.FromSeconds(1);
@@ -16,6 +31,6 @@ public sealed partial class TraversalDistorterComponent : Component
 
 public enum BiasDirection : byte
 {
-    In, //down the tree, towards depth 0
-    Out //up the tree, away from depth 0
+    Up, //Towards depth 0
+    Down, //Away from depth 0
 }

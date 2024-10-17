@@ -5,8 +5,8 @@
   playTimeTracker: JobChaplain
   requirements:
     - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics # DeltaV - Epistemics Department replacing Science
-      min: 14400 #DeltaV 4 hours
+      department: Epistemics # Chaplain is now one of the station's "Crew-Aligned Wizards"
+      min: 14400 # 4 hours
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -21,7 +21,7 @@
   supervisors: job-supervisors-rd
   access:
   - Chapel
-  - Research # DeltaV - Move Chaplain into Epistemics
+  - Research
   - Maintenance
   special:
   - !type:AddComponentSpecial
@@ -32,6 +32,7 @@
     - type: InnatePsionicPowers
       powersToAdd:
         - TelepathyPower
+        - HealingWordPower
 
 - type: startingGear
   id: ChaplainGear
@@ -40,7 +41,7 @@
     back: ClothingBackpackChaplainFilled
     shoes: ClothingShoesColorBlack
     id: ChaplainPDA
-    ears: ClothingHeadsetScience # DeltaV - Move Chaplain into Epistemics
+    ears: ClothingHeadsetScience
   innerClothingSkirt: ClothingUniformJumpskirtChaplain
   satchel: ClothingBackpackSatchelChaplainFilled
   duffelbag: ClothingBackpackDuffelChaplainFilled

@@ -1,6 +1,6 @@
 - type: loadout
   id: LoadoutCommandHOSNeckMantle
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -12,7 +12,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSNeckCloak
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -24,7 +24,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpsuitAlt
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -36,7 +36,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpsuitBlue
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -48,7 +48,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpsuitGrey
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -60,7 +60,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpsuitParade
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -72,7 +72,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpsuitFormal
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -84,7 +84,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpskirtAlt
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -96,7 +96,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpskirtParade
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -108,7 +108,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSJumpskirtFormal
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -120,7 +120,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSOuterWinter
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -131,7 +131,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSOuterTrench
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -142,7 +142,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSHatBeret
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -153,7 +153,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSHatHoshat
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -164,7 +164,7 @@
 
 - type: loadout
   id: LoadoutCommandHOSShoesBootsWinter
-  category: JobsCommandHOS
+  category: JobsCommand
   cost: 0
   exclusive: true
   requirements:
@@ -173,3 +173,97 @@
         - HeadOfSecurity
   items:
     - ClothingShoesBootsWinterHeadOfSecurity
+
+# Head of Security Weapon Selection
+# Most of these mirror the unique weapons that were previously map-specific items placed in the HoS Office.
+# Or are weapons that fit a similar theme of "Rare weapons not normally seen by Security"
+- type: loadout
+  id: LoadoutCommandHoSPulsePistol
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponPulsePistolHoS
+
+- type: loadout
+  id: LoadoutCommandHoSWt550
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponSubMachineGunWt550HoS
+
+- type: loadout
+  id: LoadoutCommandHoSKatanaSheath
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingBeltKatanaSheathFilledHoS
+
+- type: loadout
+  id: LoadoutCommandHoSC20r
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponSubMachineGunC20rHoS
+
+- type: loadout
+  id: LoadoutCommandHoSBulldog
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponShotgunBulldogHoS
+
+- type: loadout
+  id: LoadoutCommandHoSEnergySword
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - EnergySwordHoS
+
+- type: loadout
+  id: LoadoutCommandHoSEnergyGun
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHoSWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponEnergyGunMultiphase

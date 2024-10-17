@@ -10,8 +10,14 @@ language-RootSpeak-description = The strange whistling-style language spoken by 
 language-Nekomimetic-name = Nekomimetic
 language-Nekomimetic-description = To the casual observer, this language is an incomprehensible mess of broken Japanese. To the Felinids and Oni, it's somehow comprehensible.
 
-language-Draconic-name = Draconic
-language-Draconic-description = The common language of lizard-people, composed of sibilant hisses and rattles.
+language-Draconic-name = Sinta'Unathi
+language-Draconic-description =
+    The common language of Moghes - composed of sibilant hisses and rattles. Spoken natively by Unathi.
+
+language-Azaziba-name = Sinta'Azaziba
+language-Azaziba-description =
+    A language of Moghes consisting of a combination of spoken word and gesticulation.
+    While waning since Moghes entered the galactic stage - it enjoys popular use by Unathi that never fell to the Hegemony's cultural dominance.
 
 language-SolCommon-name = Sol common
 language-SolCommon-description =
@@ -54,6 +60,12 @@ language-RobotTalk-description = A language consisting of harsh binary chirps, w
 
 language-Sign-name = Tau-Ceti Basic Sign Language
 language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
+
+language-ValyrianStandard-name = Valyrian Standard
+language-ValyrianStandard-description =
+    A language descended from eastern european languages of old earth - Valyrian Standard is the commonly spoken tongue of Harpies brought up on their homeworld of Valyrian 4b
+    It is rarely spoken outside of the worlds of its native speakers, and has in modern times been supplanted by the 'Conlangs of the Sol Alliance.
+    Its speakers are those who wish to uphold the traditions and beliefs of ancient peoples from before the colonial era.
 
 language-Cat-name = Cat
 language-Cat-description = Meow

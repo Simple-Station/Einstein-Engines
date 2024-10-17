@@ -31,6 +31,9 @@
         !type:DamageTrigger
         damage: 5
       behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
       - !type:SpillBehavior { }
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -39,6 +42,9 @@
   - type: PhysicalComposition
     materialComposition:
       Plastic: 100
+  - type: PressurizedSolution
+    solution: drink
+  - type: Shakeable
 
 - type: entity
   parent: DrinkBottlePlasticBaseFull
@@ -368,6 +374,7 @@
   - type: Tag
     tags:
     - Wine
+    - DrinkBottle
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
@@ -517,6 +524,7 @@
   - type: Tag
     tags:
     - Wine
+    - DrinkBottle
 
 # Small Bottles
 
@@ -542,6 +550,7 @@
   - type: Tag
     tags:
     - Beer
+    - DrinkBottle
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
@@ -565,7 +574,7 @@
   - type: Tag
     tags:
     - Beer
-
+    - DrinkBottle
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseFull]

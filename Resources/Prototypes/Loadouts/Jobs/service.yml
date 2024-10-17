@@ -280,7 +280,7 @@
 - type: loadout
   id: LoadoutServiceBartenderBoxLightRifleRubber
   category: JobsServiceBartender
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -308,7 +308,7 @@
 - type: loadout
   id: LoadoutServiceBartenderMosinRubber
   category: JobsServiceBartender
-  cost: 3
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -319,10 +319,136 @@
   items:
     - WeaponSniperMosinRubber
 
+- type: loadout
+  id: LoadoutServiceJumpsuitBartenderNt
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingUniformJumpsuitBartenderNt
+
+- type: loadout
+  id: LoadoutServiceJumpsuitBartenderIdris
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingUniformJumpsuitBartenderIdris
+
+- type: loadout
+  id: LoadoutServiceJumpsuitBartenderOrion
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingUniformJumpsuitBartenderOrion
+
+- type: loadout
+  id: LoadoutServiceHeadBartenderNt
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingHeadHatFlatcapBartenderNanotrasen
+
+- type: loadout
+  id: LoadoutServiceHeadBartenderIdris
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingHeadHatFlatcapBartenderIdris
+
+- type: loadout
+  id: LoadoutServiceHeadBartenderOrion
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingHeadHatFlatcapBartenderOrion
+
+- type: loadout
+  id: LoadoutServiceOuterBartenderNt
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderOuterwear
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingOuterVestNt
+
+- type: loadout
+  id: LoadoutServiceOuterBartenderIdris
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderOuterwear
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingOuterVestIdris
+
+- type: loadout
+  id: LoadoutServiceOuterBartenderOrion
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderOuterwear
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingOuterVestOrion
+
 # Botanist
 - type: loadout
   id: LoadoutServiceBotanistUniformOveralls
-  category: JobsServiceUncategorized
+  category: JobsServiceBotanist
   cost: 0
   exclusive: true
   requirements:
@@ -333,6 +459,48 @@
         - Botanist
   items:
     - ClothingUniformOveralls
+
+- type: loadout
+  id: LoadoutServiceJumpsuitHydroponicsNt
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
+  items:
+    - ClothingUniformJumpsuitHydroponicsNt
+
+- type: loadout
+  id: LoadoutServiceJumpsuitHydroponicsIdris
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
+  items:
+    - ClothingUniformJumpsuitHydroponicsIdris
+
+- type: loadout
+  id: LoadoutServiceJumpsuitHydroponicsOrion
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
+  items:
+    - ClothingUniformJumpsuitHydroponicsOrion
 
 # Lawyer
 - type: loadout
@@ -659,3 +827,173 @@
         - Musician
   items:
     - OcarinaInstrument
+
+# Chef
+- type: loadout
+  id: LoadoutServiceJumpsuitChefNt
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingUniformJumpsuitChefNt
+
+- type: loadout
+  id: LoadoutServiceJumpsuitChefIdris
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingUniformJumpsuitChefIdris
+
+- type: loadout
+  id: LoadoutServiceJumpsuitChefOrion
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingUniformJumpsuitChefOrion
+
+- type: loadout
+  id: LoadoutServiceHeadChefNt
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingHeadHatChefNt
+
+- type: loadout
+  id: LoadoutServiceHeadChefIdris
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingHeadHatChefIdris
+
+- type: loadout
+  id: LoadoutServiceHeadChefOrion
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingHeadHatChefOrion
+
+- type: loadout
+  id: LoadoutServiceOuterChefNt
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingOuterJacketChefNt
+
+- type: loadout
+  id: LoadoutServiceOuterChefIdris
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingOuterJacketChefIdris
+
+- type: loadout
+  id: LoadoutServiceOuterChefOrion
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingOuterJacketChefOrion
+
+# Janitor
+- type: loadout
+  id: LoadoutServiceJumpsuitJanitorNt
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingUniformJumpsuitJanitorNt
+
+- type: loadout
+  id: LoadoutServiceJumpsuitJanitorIdris
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingUniformJumpsuitJanitorIdris
+
+- type: loadout
+  id: LoadoutServiceJumpsuitJanitorOrion
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingUniformJumpsuitJanitorOrion
