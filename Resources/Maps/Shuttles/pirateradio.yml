@@ -25,7 +25,6 @@ entities:
     - type: MetaData
       name: unknown
     - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -5674,9 +5673,6 @@ entities:
         19:
         - On: On
         - Off: Off
-        invalid:
-        - On: Off
-        - Off: On
 - proto: SinkStemlessWater
   entities:
   - uid: 808
