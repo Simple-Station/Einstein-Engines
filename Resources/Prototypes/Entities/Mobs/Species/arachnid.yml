@@ -44,6 +44,9 @@
       methods: [Touch]
       effects:
       - !type:WashCreamPieReaction
+  - type: BloodSucker
+    webRequired: true
+  - type: Cocooner
   # Damage (Self)
   - type: Bloodstream
     bloodReagent: CopperBlood

@@ -1,13 +1,14 @@
-namespace Content.Shared.Arachne
+namespace Content.Shared.Cocoon
 {
     [RegisterComponent]
     public sealed partial class CocoonComponent : Component
     {
-        public bool WasReplacementAccent = false;
+        public string? OldAccent;
 
-        public string OldAccent = "";
+        public EntityUid? Victim;
 
         [DataField("damagePassthrough")]
         public float DamagePassthrough = 0.5f;
+
     }
 }

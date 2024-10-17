@@ -6,6 +6,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Vampiric;
+using Content.Shared.Cocoon;
 using Content.Server.Atmos.Components;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
@@ -45,23 +46,28 @@ namespace Content.Server.Vampiric
 
         private void AddSuccVerb(EntityUid uid, BloodSuckerComponent component, GetVerbsEvent<InnateVerb> args)
         {
-            if (args.User == args.Target)
+
+            var victim = args.Target;
+            var ignoreClothes = false;
+
+            if (TryComp<CocoonComponent>(args.Target, out var cocoon))
+            {
+                victim = cocoon.Victim ?? args.Target;
+                ignoreClothes = cocoon.Victim != null;
+            } else if (component.WebRequired)
                 return;
-            if (component.WebRequired)
-                return; // handled elsewhere
-            if (!TryComp<BloodstreamComponent>(args.Target, out var bloodstream))
-                return;
-            if (!args.CanAccess)
+
+            if (!TryComp<BloodstreamComponent>(victim, out var bloodstream) || args.User == victim || !args.CanAccess)
                 return;
 
             InnateVerb verb = new()
             {
                 Act = () =>
                 {
-                    StartSuccDoAfter(uid, args.Target, component, bloodstream); // start doafter
+                    StartSuccDoAfter(uid, victim, component, bloodstream, !ignoreClothes); // start doafter
                 },
                 Text = Loc.GetString("action-name-suck-blood"),
-                Icon = new SpriteSpecifier.Texture(new ("/Textures/Nyanotrasen/Icons/verbiconfangs.png")),
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Nyanotrasen/Icons/verbiconfangs.png")),
                 Priority = 2
             };
             args.Verbs.Add(verb);
@@ -80,10 +86,8 @@ namespace Content.Server.Vampiric
 
             if (_prototypeManager.TryIndex<DamageGroupPrototype>("Brute", out var brute) && args.Damageable.Damage.TryGetDamageInGroup(brute, out var bruteTotal)
                 && _prototypeManager.TryIndex<DamageGroupPrototype>("Airloss", out var airloss) && args.Damageable.Damage.TryGetDamageInGroup(airloss, out var airlossTotal))
-            {
                 if (bruteTotal == 0 && airlossTotal == 0)
                     RemComp<BloodSuckedComponent>(uid);
-            }
         }
 
         private void OnDoAfter(EntityUid uid, BloodSuckerComponent component, BloodSuckDoAfterEvent args)
@@ -96,18 +100,13 @@ namespace Content.Server.Vampiric
 
         public void StartSuccDoAfter(EntityUid bloodsucker, EntityUid victim, BloodSuckerComponent? bloodSuckerComponent = null, BloodstreamComponent? stream = null, bool doChecks = true)
         {
-            if (!Resolve(bloodsucker, ref bloodSuckerComponent))
-                return;
-
-            if (!Resolve(victim, ref stream))
+            if (!Resolve(bloodsucker, ref bloodSuckerComponent) || !Resolve(victim, ref stream))
                 return;
 
             if (doChecks)
             {
                 if (!_interactionSystem.InRangeUnobstructed(bloodsucker, victim))
-                {
                     return;
-                }
 
                 if (_inventorySystem.TryGetSlotEntity(victim, "head", out var headUid) && HasComp<PressureProtectionComponent>(headUid))
                 {
@@ -125,19 +124,15 @@ namespace Content.Server.Vampiric
             }
 
             if (stream.BloodReagent != "Blood")
-            {
-                _popups.PopupEntity(Loc.GetString("bloodsucker-fail-not-blood", ("target", victim)), victim, bloodsucker, Shared.Popups.PopupType.Medium);
-                return;
-            }
-
-            if (_solutionSystem.PercentFull(stream.Owner) != 0)
+                _popups.PopupEntity(Loc.GetString("bloodsucker-not-blood", ("target", victim)), victim, bloodsucker, Shared.Popups.PopupType.Medium);
+            else if (_solutionSystem.PercentFull(victim) != 0)
                 _popups.PopupEntity(Loc.GetString("bloodsucker-fail-no-blood", ("target", victim)), victim, bloodsucker, Shared.Popups.PopupType.Medium);
+            else
+                _popups.PopupEntity(Loc.GetString("bloodsucker-doafter-start", ("target", victim)), victim, bloodsucker, Shared.Popups.PopupType.Medium);
 
             _popups.PopupEntity(Loc.GetString("bloodsucker-doafter-start-victim", ("sucker", bloodsucker)), victim, victim, Shared.Popups.PopupType.LargeCaution);
-            _popups.PopupEntity(Loc.GetString("bloodsucker-doafter-start", ("target", victim)), victim, bloodsucker, Shared.Popups.PopupType.Medium);
 
-            var ev = new BloodSuckDoAfterEvent();
-            var args = new DoAfterArgs(EntityManager, bloodsucker, bloodSuckerComponent.Delay, ev, bloodsucker, target: victim)
+            var args = new DoAfterArgs(EntityManager, bloodsucker, bloodSuckerComponent.Delay, new BloodSuckDoAfterEvent(), bloodsucker, target: victim)
             {
                 BreakOnTargetMove = true,
                 BreakOnUserMove = false,
@@ -206,8 +201,5 @@ namespace Content.Server.Vampiric
             //}
             return true;
         }
-
-        private record struct BloodSuckData()
-        {}
     }
 }

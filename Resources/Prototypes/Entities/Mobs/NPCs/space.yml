@@ -277,6 +277,9 @@
       Unsexed: UnisexArachnid
   - type: TypingIndicator
     proto: spider
+  - type: BloodSucker
+    webRequired: true
+  - type: Cocooner
 
 - type: entity
   id: MobSpiderSpaceSalvage
