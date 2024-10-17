@@ -275,7 +275,7 @@
   description: One of the many weapons belonging to the Head of Security's private collection. This pistol is engraved with the words, "Forgive Us, Mother Sol'"
   components:
   - type: StealTarget
-    stealGroup: WeaponPulsePistolHoS
+    stealGroup: HoSAntiqueWeapon
 
 - type: entity
   name: pulse carbine
