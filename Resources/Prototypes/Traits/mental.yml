@@ -27,6 +27,7 @@
       inverted: true
       species:
         - Oni
+        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -64,6 +65,7 @@
       inverted: true
       species:
         - Oni
+        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -97,6 +99,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -130,6 +138,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -163,6 +177,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -196,6 +216,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -228,6 +254,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

@@ -38,6 +38,9 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(DispelPowerActionEvent args)
         {
+            if (!_psionics.OnAttemptPowerUse(args.Performer, "dispel"))
+                return;
+
             var ev = new DispelledEvent();
             RaiseLocalEvent(args.Target, ev, false);
 

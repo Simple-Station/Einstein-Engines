@@ -39,3 +39,45 @@
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/Effects/Lightning/lightningbolt.ogg
+
+- type: entity
+  id: EffectFlashShadowkinShadeskip
+  noSpawn: true
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 3.5
+    color: "#7100bd"
+  - type: TimedDespawn
+    lifetime: 3
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Shadowkin/shadeskip.ogg
+
+- type: entity
+  id: EffectFlashShadowkinDarkSwapOn
+  noSpawn: true
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 3.5
+    color: "#7100bd"
+  - type: TimedDespawn
+    lifetime: 3
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Shadowkin/darkswapon.ogg
+
+- type: entity
+  id: EffectFlashShadowkinDarkSwapOff
+  noSpawn: true
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 3.5
+    color: "#7100bd"
+  - type: TimedDespawn
+    lifetime: 3
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Shadowkin/darkswapoff.ogg

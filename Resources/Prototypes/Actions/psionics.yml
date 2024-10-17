@@ -4,18 +4,18 @@
   description: action-description-dispel
   noSpawn: true
   components:
-  - type: EntityTargetAction
-    icon: Interface/VerbIcons/dispel.png
-    useDelay: 45
-    checkCanAccess: false
-    range: 6
-    itemIconStyle: BigAction
-    canTargetSelf: false
-    blacklist:
-      components:
-        - PsionicInsulation
-        - Mindbroken
-    event: !type:DispelPowerActionEvent
+    - type: EntityTargetAction
+      icon: Interface/VerbIcons/dispel.png
+      useDelay: 45
+      checkCanAccess: false
+      range: 6
+      itemIconStyle: BigAction
+      canTargetSelf: false
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:DispelPowerActionEvent
 
 - type: entity
   id: ActionMassSleep
@@ -23,13 +23,13 @@
   description: action-description-mass-sleep
   noSpawn: true
   components:
-  - type: WorldTargetAction
-    icon: Interface/VerbIcons/mass_sleep.png
-    useDelay: 60
-    checkCanAccess: false
-    range: 8
-    itemIconStyle: BigAction
-    event: !type:MassSleepPowerActionEvent
+    - type: WorldTargetAction
+      icon: Interface/VerbIcons/mass_sleep.png
+      useDelay: 60
+      checkCanAccess: false
+      range: 8
+      itemIconStyle: BigAction
+      event: !type:MassSleepPowerActionEvent
 
 - type: entity
   id: ActionMindSwap
@@ -37,17 +37,17 @@
   description: action-description-mind-swap
   noSpawn: true
   components:
-  - type: EntityTargetAction
-    icon: Interface/VerbIcons/mind_swap.png
-    useDelay: 240
-    checkCanAccess: false
-    range: 8
-    itemIconStyle: BigAction
-    blacklist:
-      components:
-        - PsionicInsulation
-        - Mindbroken
-    event: !type:MindSwapPowerActionEvent
+    - type: EntityTargetAction
+      icon: Interface/VerbIcons/mind_swap.png
+      useDelay: 240
+      checkCanAccess: false
+      range: 8
+      itemIconStyle: BigAction
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:MindSwapPowerActionEvent
 
 - type: entity
   id: ActionMindSwapReturn
@@ -55,11 +55,11 @@
   description: action-description-mind-swap-return
   noSpawn: true
   components:
-  - type: InstantAction
-    icon: Interface/VerbIcons/mind_swap_return.png
-    useDelay: 20
-    checkCanInteract: false
-    event: !type:MindSwapPowerReturnActionEvent
+    - type: InstantAction
+      icon: Interface/VerbIcons/mind_swap_return.png
+      useDelay: 20
+      checkCanInteract: false
+      event: !type:MindSwapPowerReturnActionEvent
 
 - type: entity
   id: ActionNoosphericZap
@@ -67,16 +67,16 @@
   description: action-description-noospheric-zap
   noSpawn: true
   components:
-  - type: EntityTargetAction
-    icon: Interface/VerbIcons/noospheric_zap.png
-    useDelay: 100
-    range: 5
-    itemIconStyle: BigAction
-    blacklist:
-      components:
-        - PsionicInsulation
-        - Mindbroken
-    event: !type:NoosphericZapPowerActionEvent
+    - type: EntityTargetAction
+      icon: Interface/VerbIcons/noospheric_zap.png
+      useDelay: 100
+      range: 5
+      itemIconStyle: BigAction
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:NoosphericZapPowerActionEvent
 
 - type: entity
   id: ActionPyrokinesis
@@ -84,13 +84,13 @@
   description: action-description-pyrokinesis
   noSpawn: true
   components:
-  - type: EntityTargetAction
-    icon: Interface/VerbIcons/pyrokinesis.png
-    useDelay: 50
-    range: 6
-    checkCanAccess: false
-    itemIconStyle: BigAction
-    event: !type:PyrokinesisPowerActionEvent
+    - type: EntityTargetAction
+      icon: Interface/VerbIcons/pyrokinesis.png
+      useDelay: 50
+      range: 6
+      checkCanAccess: false
+      itemIconStyle: BigAction
+      event: !type:PyrokinesisPowerActionEvent
 
 - type: entity
   id: ActionMetapsionic
@@ -98,10 +98,10 @@
   description: action-description-metapsionic
   noSpawn: true
   components:
-  - type: InstantAction
-    icon: Interface/VerbIcons/metapsionic.png
-    useDelay: 45
-    event: !type:MetapsionicPowerActionEvent
+    - type: InstantAction
+      icon: Interface/VerbIcons/metapsionic.png
+      useDelay: 45
+      event: !type:MetapsionicPowerActionEvent
 
 - type: entity
   id: ActionPsionicRegeneration
@@ -109,10 +109,10 @@
   description: action-description-psionic-regeneration
   noSpawn: true
   components:
-  - type: InstantAction
-    icon: Interface/VerbIcons/psionic_regeneration.png
-    useDelay: 120
-    event: !type:PsionicRegenerationPowerActionEvent
+    - type: InstantAction
+      icon: Interface/VerbIcons/psionic_regeneration.png
+      useDelay: 120
+      event: !type:PsionicRegenerationPowerActionEvent
 
 - type: entity
   id: ActionTelegnosis
@@ -120,10 +120,10 @@
   description: action-description-telegnosis
   noSpawn: true
   components:
-  - type: InstantAction
-    icon: Interface/VerbIcons/telegnosis.png
-    useDelay: 150
-    event: !type:TelegnosisPowerActionEvent
+    - type: InstantAction
+      icon: Interface/VerbIcons/telegnosis.png
+      useDelay: 150
+      event: !type:TelegnosisPowerActionEvent
 
 - type: entity
   id: ActionPsionicInvisibility
@@ -131,10 +131,10 @@
   description: action-description-psionic-invisibility
   noSpawn: true
   components:
-  - type: InstantAction
-    icon: Interface/VerbIcons/psionic_invisibility.png
-    useDelay: 120
-    event: !type:PsionicInvisibilityPowerActionEvent
+    - type: InstantAction
+      icon: Interface/VerbIcons/psionic_invisibility.png
+      useDelay: 120
+      event: !type:PsionicInvisibilityPowerActionEvent
 
 - type: entity
   id: ActionPsionicInvisibilityUsed
@@ -142,9 +142,9 @@
   description: action-description-psionic-invisibility-off
   noSpawn: true
   components:
-  - type: InstantAction
-    icon: Interface/VerbIcons/psionic_invisibility_off.png
-    event: !type:RemovePsionicInvisibilityOffPowerActionEvent
+    - type: InstantAction
+      icon: Interface/VerbIcons/psionic_invisibility_off.png
+      event: !type:RemovePsionicInvisibilityOffPowerActionEvent
 
 - type: entity
   id: ActionHealingWord
@@ -152,36 +152,36 @@
   description: action-description-healing-word
   noSpawn: true
   components:
-  - type: EntityTargetAction
-    icon: { sprite : Interface/Actions/psionics.rsi, state: healing_word }
-    useDelay: 10
-    checkCanAccess: false
-    range: 6
-    itemIconStyle: BigAction
-    canTargetSelf: true
-    blacklist:
-      components:
-        - PsionicInsulation
-        - Mindbroken
-    event: !type:PsionicHealOtherPowerActionEvent
-            healingAmount:
-              groups: # These all get divided by the number of damage types in the group. So they're all -2.5.
-                Genetic: -2.5
-                Toxin: -5
-                Airloss: -5
-                Brute: -7.5
-                Burn: -10
-            rotReduction: 10
-            useDelay: 1
-            doRevive: true
-            powerName: Healing Word
-            popupText: healing-word-begin
-            playSound: true
-            minGlimmer: 2
-            maxGlimmer: 4
-            glimmerSoundThreshold: 100
-            glimmerPopupThreshold: 200
-            glimmerDoAfterVisibilityThreshold: 70
+    - type: EntityTargetAction
+      icon: { sprite: Interface/Actions/psionics.rsi, state: healing_word }
+      useDelay: 10
+      checkCanAccess: false
+      range: 6
+      itemIconStyle: BigAction
+      canTargetSelf: true
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:PsionicHealOtherPowerActionEvent
+        healingAmount:
+          groups: # These all get divided by the number of damage types in the group. So they're all -2.5.
+            Genetic: -2.5
+            Toxin: -5
+            Airloss: -5
+            Brute: -7.5
+            Burn: -10
+        rotReduction: 10
+        useDelay: 1
+        doRevive: true
+        powerName: Healing Word
+        popupText: healing-word-begin
+        playSound: true
+        minGlimmer: 2
+        maxGlimmer: 4
+        glimmerSoundThreshold: 100
+        glimmerPopupThreshold: 200
+        glimmerDoAfterVisibilityThreshold: 70
 
 - type: entity
   id: ActionRevivify
@@ -189,38 +189,38 @@
   description: action-description-revivify
   noSpawn: true
   components:
-  - type: EntityTargetAction
-    icon: { sprite : Interface/Actions/psionics.rsi, state: revivify }
-    useDelay: 120
-    checkCanAccess: false
-    range: 2
-    itemIconStyle: BigAction
-    canTargetSelf: false
-    blacklist:
-      components:
-        - PsionicInsulation
-        - Mindbroken
-    event: !type:PsionicHealOtherPowerActionEvent
-            healingAmount:
-              # These all get divided by the number of damage types in the group. So they're all -15
-              # Additionally, they're multiplied by the caster's Amplification, which,
-              #   assuming this is the only power they have, the multiplier is between 2.9-3.9
-              groups:
-                Genetic: -15
-                Toxin: -30
-                Airloss: -60 # Except airloss, which heals 30 per type
-                Brute: -45
-                Burn: -60
-            rotReduction: 60
-            doRevive: true
-            powerName: Revivify
-            popupText: revivify-begin
-            playSound: true
-            minGlimmer: 10 # These also get multiplied by caster stats. So,
-            maxGlimmer: 15 # keeping in mind the ~3.5x multiplier, this spikes glimmer by as much as 60 points.
-            glimmerSoundThreshold: 50
-            glimmerPopupThreshold: 100
-            glimmerDoAfterVisibilityThreshold: 35
+    - type: EntityTargetAction
+      icon: { sprite: Interface/Actions/psionics.rsi, state: revivify }
+      useDelay: 120
+      checkCanAccess: false
+      range: 2
+      itemIconStyle: BigAction
+      canTargetSelf: false
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:PsionicHealOtherPowerActionEvent
+        healingAmount:
+          # These all get divided by the number of damage types in the group. So they're all -15
+          # Additionally, they're multiplied by the caster's Amplification, which,
+          #   assuming this is the only power they have, the multiplier is between 2.9-3.9
+          groups:
+            Genetic: -15
+            Toxin: -30
+            Airloss: -60 # Except airloss, which heals 30 per type
+            Brute: -45
+            Burn: -60
+        rotReduction: 60
+        doRevive: true
+        powerName: Revivify
+        popupText: revivify-begin
+        playSound: true
+        minGlimmer: 10 # These also get multiplied by caster stats. So,
+        maxGlimmer: 15 # keeping in mind the ~3.5x multiplier, this spikes glimmer by as much as 60 points.
+        glimmerSoundThreshold: 50
+        glimmerPopupThreshold: 100
+        glimmerDoAfterVisibilityThreshold: 35
 
 - type: entity
   id: ActionShadeskip
@@ -263,30 +263,78 @@
   description: action-description-telekinetic-pulse
   noSpawn: true
   components:
-  - type: InstantAction
-    icon: { sprite : Interface/Actions/psionics.rsi, state: telekinetic_pulse }
-    useDelay: 45
-    checkCanInteract: false
-    event: !type:AnomalyPowerActionEvent
-            settings:
-              powerName: "Telekinetic Pulse"
-              overchargeFeedback: "shadeskip-overcharge-feedback" # The text behind this is fine.
-              overchargeCooldown: 120
-              overchargeRecoil:
-                groups:
-                  Burn: -100 #This will be divided by the caster's Dampening.
-              minGlimmer: 6
-              maxGlimmer: 8
-              doSupercritical: false
-            entitySpawnEntries:
-              - settings:
-                  spawnOnPulse: true
-                  minAmount: 1
-                  maxAmount: 1
-                  maxRange: 0.5
-                spawns:
-                - EffectFlashTelekineticPulse
-            gravity:
-              maxThrowRange: 3
-              maxThrowStrength: 5
-              spaceRange: 3
+    - type: InstantAction
+      icon: { sprite: Interface/Actions/psionics.rsi, state: telekinetic_pulse }
+      useDelay: 45
+      checkCanInteract: false
+      event: !type:AnomalyPowerActionEvent
+        settings:
+          powerName: "Telekinetic Pulse"
+          overchargeFeedback: "shadeskip-overcharge-feedback" # The text behind this is fine.
+          overchargeCooldown: 120
+          overchargeRecoil:
+            groups:
+              Burn: -100 #This will be divided by the caster's Dampening.
+          minGlimmer: 6
+          maxGlimmer: 8
+          doSupercritical: false
+        entitySpawnEntries:
+          - settings:
+              spawnOnPulse: true
+              minAmount: 1
+              maxAmount: 1
+              maxRange: 0.5
+            spawns:
+              - EffectFlashTelekineticPulse
+        gravity:
+          maxThrowRange: 3
+          maxThrowStrength: 5
+          spaceRange: 3
+
+- type: entity
+  id: ActionShadowkinShadeskip
+  name: action-name-shadeskip
+  description: action-description-shadowkin-shadeskip
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: { sprite: Interface/Actions/shadowkin_icons.rsi, state: shadeskip }
+      useDelay: 10
+      checkCanInteract: false
+      event: !type:AnomalyPowerActionEvent
+        settings:
+          powerName: "Shadowkin-Shadeskip"
+          manaCost: 25
+          checkInsulation: false
+          minGlimmer: 0
+          maxGlimmer: 0
+          doSupercritical: false
+        entitySpawnEntries:
+          - settings:
+              spawnOnPulse: true
+              minAmount: 5
+              maxAmount: 10
+              maxRange: 2.5
+            spawns:
+              - ShadowkinShadow
+          - settings:
+              spawnOnPulse: true
+              minAmount: 1
+              maxAmount: 1
+              maxRange: 0.5
+            spawns:
+              - EffectFlashShadowkinShadeskip
+
+- type: entity
+  id: ActionDarkSwap
+  name: action-name-darkswap
+  description: action-description-darkswap
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: { sprite: Interface/Actions/shadowkin_icons.rsi, state: darkswap }
+      useDelay: 10
+      checkCanInteract: false
+      event: !type:DarkSwapActionEvent
+        manaCost: 100
+        checkInsulation: false

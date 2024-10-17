@@ -7,6 +7,14 @@
     PrizeTicket: 30
 
 - type: latheRecipe
+  id: PlushieShadowkin
+  result: PlushieShadowkin
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 50
+
+- type: latheRecipe
   id: PlushieMothRandom
   result: PlushieMothRandom
   applyMaterialDiscount: false
