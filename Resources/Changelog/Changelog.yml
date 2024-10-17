@@ -7329,3 +7329,12 @@ Entries:
   id: 6458
   time: '2024-10-16T22:54:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1061
+- author: Aidenkrz
+  changes:
+    - type: Tweak
+      message: >-
+        All spiders, arachne, and arachnids can cocoon mobs, and drink their
+        blood.
+  id: 6459
+  time: '2024-10-17T19:21:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1058
