@@ -1,14 +1,13 @@
-namespace Content.Shared.Cocoon
+namespace Content.Shared.Cocoon;
+
+[RegisterComponent]
+public sealed partial class CocoonComponent : Component
 {
-    [RegisterComponent]
-    public sealed partial class CocoonComponent : Component
-    {
-        public string? OldAccent;
+    public string? OldAccent;
 
-        public EntityUid? Victim;
+    public EntityUid? Victim;
 
-        [DataField("damagePassthrough")]
-        public float DamagePassthrough = 0.5f;
+    [DataField]
+    public float DamagePassthrough = 0.5f;
 
-    }
 }

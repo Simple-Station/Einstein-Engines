@@ -1,14 +1,13 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Cocoon
-{
-    [RegisterComponent, NetworkedComponent]
-    public sealed partial class CocoonerComponent : Component
-    {
-        [DataField("cocoonDelay")]
-        public float CocoonDelay = 12f;
+namespace Content.Shared.Cocoon;
 
-        [DataField("cocoonKnockdownMultiplier")]
-        public float CocoonKnockdownMultiplier = 0.5f;
-    }
+[RegisterComponent, NetworkedComponent]
+public sealed partial class CocoonerComponent : Component
+{
+    [DataField]
+    public float CocoonDelay = 12f;
+
+    [DataField]
+    public float CocoonKnockdownMultiplier = 0.5f;
 }
