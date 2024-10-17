@@ -111,7 +111,7 @@
     bloodRegenerationThirst: 4 # 1 unit of demon's blood satiates 4 thirst
   - type: BloodSucker
     webRequired: true
-  - type: Arachne
+  - type: Cocooner
   - type: DamageVisuals
     targetLayers:
       - "enum.HumanoidVisualLayers.Chest"

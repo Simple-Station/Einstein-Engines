@@ -2357,6 +2357,9 @@
   - type: RandomBark
     barkType: hissing
     barkMultiplier: 0.3
+  - type: BloodSucker
+    webRequired: true
+  - type: Cocooner
 
 - type: entity
   name: tarantula

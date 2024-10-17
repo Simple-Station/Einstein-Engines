@@ -109,7 +109,7 @@
 #      path: /Audio/Animals/snake_hiss.ogg
 #  - type: Puller
 #    needsHands: false
-#  - type: Arachne
+#  - type: Cocooner
 #    cocoonDelay: 8
 #  - type: SolutionContainerManager
 #    solutions:
