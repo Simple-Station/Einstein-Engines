@@ -92,7 +92,8 @@ namespace Content.Shared.VendingMachines
         {
             Params = new AudioParams
             {
-                Volume = -2f
+                Volume = -4f,
+                Variation = 0.15f
             }
         };
 
