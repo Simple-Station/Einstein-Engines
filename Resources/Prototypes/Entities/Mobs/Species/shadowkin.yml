@@ -218,6 +218,8 @@
       eyeDamageChance: 0.3
       eyeDamage: 1
       durationMultiplier: 1.5
+    - type: Speech
+      allowedEmotes: ['Mars', 'Wurble']
     - type: Shadowkin
     - type: Psionic
       mindbreakingFeedback: shadowkin-blackeye
