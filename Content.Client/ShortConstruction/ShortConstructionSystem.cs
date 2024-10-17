@@ -1,0 +1,43 @@
+﻿using Content.Client.Construction;
+using Content.Shared.Construction.Prototypes;
+using Content.Shared.RadialSelector;
+using Content.Shared.ShortConstruction;
+using Robust.Client.Placement;
+using Robust.Shared.Enums;
+using Robust.Shared.Prototypes;
+
+namespace Content.Client.ShortConstruction;
+
+public sealed class ShortConstructionSystem : EntitySystem
+{
+    [Dependency] private readonly IPlacementManager _placement = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+
+    [Dependency] private readonly ConstructionSystem _construction = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<ShortConstructionComponent, RadialSelectorSelectedMessage>(OnItemRecieved);
+    }
+
+    private void OnItemRecieved(Entity<ShortConstructionComponent> ent, ref RadialSelectorSelectedMessage args)
+    {
+        if (!_proto.TryIndex(args.SelectedItem, out ConstructionPrototype? prototype))
+            return;
+
+        if (prototype.Type == ConstructionType.Item)
+        {
+            _construction.TryStartItemConstruction(prototype.ID);
+            return;
+        }
+
+        _placement.BeginPlacing(new PlacementInformation
+            {
+                IsTile = false,
+                PlacementOption = prototype.PlacementMode
+            },
+            new ConstructionPlacementHijack(_construction, prototype));
+    }
+}

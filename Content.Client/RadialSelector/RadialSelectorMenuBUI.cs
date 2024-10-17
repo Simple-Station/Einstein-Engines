@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using Content.Client.UserInterface.Controls;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.RadialSelector;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
@@ -47,25 +48,21 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
         _menu.OnClose += Close;
 
         if (_openCentered)
-        {
             _menu.OpenCentered();
-        }
         else
-        {
             _menu.OpenCenteredAt(_inputManager.MouseScreenPosition.Position / _displayManager.ScreenSize);
-        }
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
 
-        if (state is RadialSelectorState radialSelectorState)
-        {
-            ClearExistingContainers();
-            CreateMenu(radialSelectorState.Entries);
-            _openCentered = radialSelectorState.OpenCentered;
-        }
+        if (state is not RadialSelectorState radialSelectorState)
+            return;
+
+        ClearExistingContainers();
+        CreateMenu(radialSelectorState.Entries);
+        _openCentered = radialSelectorState.OpenCentered;
     }
 
     protected override void Dispose(bool disposing)
@@ -95,19 +92,47 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
                 CreateMenu(entry.Category.Entries, entry.Category.Name);
                 container.AddChild(button);
             }
-            else if (entry.Prototype != null && _protoManager.TryIndex(entry.Prototype, out var proto))
+            else if (entry.Prototype != null)
             {
-                var button = CreateButton(proto.Name, _spriteSystem.Frame0(proto));
+                var name = GetName(entry.Prototype);
+                var icon = GetIcon(entry);
+                if (icon is null)
+                    return;
+
+                var button = CreateButton(name, icon);
                 button.OnButtonUp += _ =>
                 {
                     var msg = new RadialSelectorSelectedMessage(entry.Prototype);
-                    SendMessage(msg);
-                    Close();
+                    SendPredictedMessage(msg);
                 };
 
                 container.AddChild(button);
             }
         }
+    }
+
+    private string GetName(string proto)
+    {
+        if (_protoManager.TryIndex(proto, out var prototype))
+            return prototype.Name;
+        if (_protoManager.TryIndex(proto, out ConstructionPrototype? constructionPrototype))
+            return constructionPrototype.Name;
+        return proto;
+    }
+
+    private Texture? GetIcon(RadialSelectorEntry entry)
+    {
+        if (_protoManager.TryIndex(entry.Prototype!, out var prototype))
+            return _spriteSystem.Frame0(prototype);
+
+        if (_protoManager.TryIndex(entry.Prototype!, out ConstructionPrototype? constructionProto))
+            return _spriteSystem.Frame0(constructionProto.Icon);
+
+        if (entry.Icon is not null)
+            return _spriteSystem.Frame0(entry.Icon);
+
+        // No icons provided and no icons found in prototypes. There's nothing we can do.
+        return null;
     }
 
     private RadialMenuTextureButton CreateButton(string name, Texture icon)

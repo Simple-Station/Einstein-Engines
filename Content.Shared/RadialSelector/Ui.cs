@@ -25,25 +25,28 @@ public sealed class RadialSelectorSelectedMessage(string selectedItem) : BoundUs
     public string SelectedItem { get; private set; } = selectedItem;
 }
 
-[DataDefinition]
+[DataDefinition, Serializable, NetSerializable]
 public sealed partial class RadialSelectorEntry
 {
     [DataField]
     public string? Prototype { get; set; }
 
     [DataField]
+    public SpriteSpecifier? Icon { get; set; }
+
+    [DataField]
     public RadialSelectorCategory? Category { get; set; }
 }
 
-[DataDefinition]
+[DataDefinition, Serializable, NetSerializable]
 public sealed partial class RadialSelectorCategory
 {
-    [DataField]
+    [DataField(required: true)]
     public string Name { get; set; } = string.Empty;
 
-    [DataField]
+    [DataField(required: true)]
     public SpriteSpecifier Icon { get; set; } = default!;
 
-    [DataField]
+    [DataField(required: true)]
     public List<RadialSelectorEntry> Entries { get; set; } = new();
 }
