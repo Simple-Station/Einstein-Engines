@@ -11,16 +11,20 @@
       metabolismRate: 0.1
       effects:
       - !type:GenericStatusEffect
-        key: PsionicallyInsulated #Nyano - Summary: makes the user psionically insulated from effects.
-        component: PsionicInsulation #Nyano - Summary: see above.
+        key: PsionicallyInsulated
+        component: PsionicInsulation
         type: Add
+        time: 900
       - !type:GenericStatusEffect
         key: Stutter
         component: ScrambledAccent
-      - !type:GenericStatusEffect
-        key: PsionicsDisabled #Nyano - Summary: disables psinoics from being used by the wearer.
-        component: PsionicsDisabled #Nyano - Summary: see above.
         type: Add
+        time: 900
+      - !type:GenericStatusEffect
+        key: PsionicsDisabled
+        component: PsionicsDisabled
+        type: Add
+        time: 900
       - !type:Drunk
         slurSpeech: false
         boozePower: 20
@@ -1120,7 +1124,7 @@
         conditions:
         - !type:ReagentThreshold
           min: 12
-          
+
 - type: reagent
   id: Opporozidone #Name based of an altered version of the startreck chem "Opporozine"
   name: reagent-name-opporozidone
