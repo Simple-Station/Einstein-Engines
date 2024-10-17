@@ -626,3 +626,88 @@
         - Librarian
   items:
     - ClothingUniformJumpsuitLibrarianZeng
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarian
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarian
+
+- type: loadout
+  id: LoadoutScienceJumpskirtLibrarian
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpskirtLibrarian
+
+# Chaplain
+- type: loadout
+  id: LoadoutChaplainJumpsuit
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingUniformJumpsuitChaplain
+
+- type: loadout
+  id: LoadoutChaplainJumpskirt
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingUniformJumpskirtChaplain
+
+- type: loadout
+  id: LoadoutChaplainBible
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - Bible
+
+- type: loadout
+  id: LoadoutChaplainStamp
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - RubberStampChaplain
