@@ -1,5 +1,7 @@
 ﻿using Content.Server.NPC.Components;
 using Content.Shared.Dataset;
+using Content.Shared.FixedPoint;
+﻿using Content.Shared.NPC.Prototypes;
 using Content.Shared.Random;
 using Content.Shared.Roles;
 using Robust.Shared.Audio;
@@ -30,6 +32,24 @@ public sealed partial class TraitorRuleComponent : Component
 
     [DataField]
     public ProtoId<DatasetPrototype> ObjectiveIssuers = "TraitorCorporations";
+
+    /// <summary>
+    /// Give this traitor an Uplink on spawn.
+    /// </summary>
+    [DataField]
+    public bool GiveUplink = true;
+
+    /// <summary>
+    /// Give this traitor the codewords.
+    /// </summary>
+    [DataField]
+    public bool GiveCodewords = true;
+
+    /// <summary>
+    /// Give this traitor a briefing in chat.
+    /// </summary>
+    [DataField]
+    public bool GiveBriefing = true;
 
     public int TotalTraitors => TraitorMinds.Count;
     public string[] Codewords = new string[3];
@@ -68,5 +88,5 @@ public sealed partial class TraitorRuleComponent : Component
     /// The amount of TC traitors start with.
     /// </summary>
     [DataField]
-    public int StartingBalance = 20;
+    public FixedPoint2 StartingBalance = 20;
 }

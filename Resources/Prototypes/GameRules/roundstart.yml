@@ -177,6 +177,15 @@
         prototype: Traitor
 
 - type: entity
+  id: TraitorReinforcement
+  parent: Traitor
+  components:
+  - type: TraitorRule
+    giveUplink: false
+    giveCodewords: false # It would actually give them a different set of codewords than the regular traitors, anyway
+    giveBriefing: false
+
+- type: entity
   id: Revolutionary
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
