@@ -208,7 +208,6 @@
     - WetFloorSign
     - ClothingHeadHatCone
     - FreezerElectronics
-    - Flare
     - ProgramDiskUnburnt # Arcadis - Modular Computer System
     - FauxTileAstroGrass
     - FauxTileMowedAstroGrass
@@ -230,7 +229,6 @@
     emagStaticRecipes:
     - BoxLethalshot
     - BoxShotgunLumen
-    - BoxShotgunFlare
     - BoxShotgunSlug
     - CombatKnife
     - MagazineBoxLightRifle
@@ -901,7 +899,6 @@
     staticRecipes:
     - BoxLethalshot
     - BoxShotgunLumen
-    - BoxShotgunFlare
     - BoxShotgunPractice
     - BoxShotgunSlug
     - ClothingEyesHudSecurity
@@ -1165,7 +1162,6 @@
     staticRecipes:
     - BoxLethalshot
     - BoxShotgunLumen
-    - BoxShotgunFlare
     - BoxShotgunSlug
     - MagazineBoxLightRifle
     - MagazineBoxMagnum
