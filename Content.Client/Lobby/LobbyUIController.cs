@@ -63,12 +63,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         _requirements.Updated += OnRequirementsUpdated;
 
         _configurationManager.OnValueChanged(CCVars.FlavorText, _ => _profileEditor?.RefreshFlavorText());
-        _configurationManager.OnValueChanged(CCVars.GameRoleTimers,
-            _ =>
-            {
-                _profileEditor?.RefreshAntags();
-                _profileEditor?.RefreshJobs();
-            });
+        _configurationManager.OnValueChanged(CCVars.GameRoleTimers, _ => RefreshProfileEditor());
+        _configurationManager.OnValueChanged(CCVars.GameRoleWhitelist, _ => RefreshProfileEditor());
 
         _preferencesManager.OnServerDataLoaded += PreferencesDataLoaded;
     }
@@ -166,6 +162,12 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         var dummy = LoadProfileEntity(humanoid, true);
         PreviewPanel.SetSprite(dummy);
         PreviewPanel.SetSummaryText(humanoid.Summary);
+    }
+
+    private void RefreshProfileEditor()
+    {
+        _profileEditor?.RefreshAntags();
+        _profileEditor?.RefreshJobs();
     }
 
     private void SaveProfile()

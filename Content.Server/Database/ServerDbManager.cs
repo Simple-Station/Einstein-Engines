@@ -19,6 +19,8 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Network;
 using LogLevel = Robust.Shared.Log.LogLevel;
 using MSLogLevel = Microsoft.Extensions.Logging.LogLevel;
+using Content.Shared.Roles;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Database
 {
@@ -87,7 +89,7 @@ namespace Content.Server.Database
             IPAddress? address,
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
-            bool includeUnbanned=true);
+            bool includeUnbanned = true);
 
         Task AddServerBanAsync(ServerBanDef serverBan);
         Task AddServerUnbanAsync(ServerUnbanDef serverBan);
@@ -290,6 +292,18 @@ namespace Content.Server.Database
         Task MarkMessageAsSeen(int id, bool dismissedToo);
 
         #endregion
+
+        #region Job Whitelists
+
+        Task AddJobWhitelist(Guid player, ProtoId<JobPrototype> job);
+
+
+        Task<List<string>> GetJobWhitelists(Guid player, CancellationToken cancel = default);
+        Task<bool> IsJobWhitelisted(Guid player, ProtoId<JobPrototype> job);
+
+        Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job);
+
+        #endregion
     }
 
     public sealed class ServerDbManager : IServerDbManager
@@ -421,7 +435,7 @@ namespace Content.Server.Database
             IPAddress? address,
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
-            bool includeUnbanned=true)
+            bool includeUnbanned = true)
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetServerBansAsync(address, userId, hwId, includeUnbanned));
@@ -792,7 +806,7 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.GetServerRoleBanAsNoteAsync(id));
         }
 
-    public Task<List<IAdminRemarksRecord>> GetAllAdminRemarks(Guid player)
+        public Task<List<IAdminRemarksRecord>> GetAllAdminRemarks(Guid player)
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetAllAdminRemarks(player));
@@ -867,6 +881,30 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.MarkMessageAsSeen(id, dismissedToo));
+        }
+
+        public Task AddJobWhitelist(Guid player, ProtoId<JobPrototype> job)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddJobWhitelist(player, job));
+        }
+
+        public Task<List<string>> GetJobWhitelists(Guid player, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetJobWhitelists(player, cancel));
+        }
+
+        public Task<bool> IsJobWhitelisted(Guid player, ProtoId<JobPrototype> job)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.IsJobWhitelisted(player, job));
+        }
+
+        public Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.RemoveJobWhitelist(player, job));
         }
 
         // Wrapper functions to run DB commands from the thread pool.
