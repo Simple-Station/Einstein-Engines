@@ -225,6 +225,13 @@ namespace Content.Shared.CCVar
             GameMap = CVarDef.Create("game.map", string.Empty, CVar.SERVERONLY);
 
         /// <summary>
+        /// If roles should be restricted based on whether or not they are whitelisted.
+        /// </summary>
+        public static readonly CVarDef<bool>
+            GameRoleWhitelist = CVarDef.Create("game.role_whitelist", true, CVar.SERVER | CVar.REPLICATED);
+
+
+        /// <summary>
         ///     Controls whether to use world persistence or not.
         /// </summary>
         public static readonly CVarDef<bool>

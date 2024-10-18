@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using Content.Server.Administration.Managers;
+using Content.Server.GameTicking.Events;
 using Content.Server.Ghost;
 using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
@@ -138,8 +139,14 @@ namespace Content.Server.GameTicking
             if (jobBans == null || jobId != null && jobBans.Contains(jobId))
                 return;
 
-            if (jobId != null && !_playTimeTrackings.IsAllowed(player, jobId))
-                return;
+            if (jobId != null)
+            {
+                var ev = new IsJobAllowedEvent(player, new ProtoId<JobPrototype>(jobId));
+                RaiseLocalEvent(ref ev);
+                if (ev.Cancelled)
+                    return;
+            }
+
             SpawnPlayer(player, character, station, jobId, lateJoin, silent);
         }
 
@@ -196,10 +203,9 @@ namespace Content.Server.GameTicking
             }
 
             // Figure out job restrictions
-            var restrictedRoles = new HashSet<string>();
-
-            var getDisallowed = _playTimeTrackings.GetDisallowedJobs(player);
-            restrictedRoles.UnionWith(getDisallowed);
+            var restrictedRoles = new HashSet<ProtoId<JobPrototype>>();
+            var ev = new GetDisallowedJobsEvent(player, restrictedRoles);
+            RaiseLocalEvent(ref ev);
 
             var jobBans = _banManager.GetJobBans(player.UserId);
             if (jobBans != null)
@@ -233,7 +239,7 @@ namespace Content.Server.GameTicking
             _mind.SetUserId(newMind, data.UserId);
 
             var jobPrototype = _prototypeManager.Index<JobPrototype>(jobId);
-            var job = new JobComponent {Prototype = jobId};
+            var job = new JobComponent { Prototype = jobId };
             _roles.MindAddRole(newMind, job, silent: silent);
             var jobName = _jobs.MindTryGetJobName(newMind);
 
