@@ -7345,3 +7345,13 @@ Entries:
   id: 6460
   time: '2024-10-19T08:25:27.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/996
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed issues with Contests System that allowed mobs such as Space Carps
+        to smash through barriers that were not intended to be breakable by said
+        mobs.
+  id: 6461
+  time: '2024-10-19T08:26:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1069
