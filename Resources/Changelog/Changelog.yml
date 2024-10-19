@@ -7406,3 +7406,10 @@ Entries:
   id: 6467
   time: '2024-10-19T21:28:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1062
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Job Whitelist!
+  id: 6468
+  time: '2024-10-19T22:10:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1093
