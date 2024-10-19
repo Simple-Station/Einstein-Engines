@@ -7338,3 +7338,10 @@ Entries:
   id: 6459
   time: '2024-10-17T19:21:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1058
+- author: zelezniciar
+  changes:
+    - type: Fix
+      message: Fixes Air Alarms not entering danger/warning state when pressure is low
+  id: 6460
+  time: '2024-10-19T08:25:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/996
