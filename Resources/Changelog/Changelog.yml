@@ -7399,3 +7399,10 @@ Entries:
   id: 6466
   time: '2024-10-19T21:28:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1084
+- author: Mocho
+  changes:
+    - type: Add
+      message: Added an uplink with 20TC for all Listening Post Operatives
+  id: 6467
+  time: '2024-10-19T21:28:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1062
