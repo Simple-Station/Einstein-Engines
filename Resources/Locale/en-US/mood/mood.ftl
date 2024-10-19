@@ -5,7 +5,7 @@ mood-effect-HungerOkay = I am feeling full.
 mood-effect-HungerPeckish = I could go for a snack right about now.
 mood-effect-HungerStarving = I NEED FOOD!
 
-mood-effect-ThirstOverHydrated = I feel dizzy after drinking too much.
+mood-effect-ThirstOverHydrated = I've had my fill of water.
 mood-effect-ThirstOkay = I'm feeling refreshed.
 mood-effect-ThirstThirsty = My lips are a little dry.
 mood-effect-ThirstParched = I NEED WATER!
