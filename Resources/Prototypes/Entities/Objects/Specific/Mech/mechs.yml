@@ -72,7 +72,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.45
-        density: 1000
+        density: 21390 # 15 Tonnes
         mask:
         - MobMask
         layer:
