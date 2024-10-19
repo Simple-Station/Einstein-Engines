@@ -26,14 +26,14 @@
     sprite: Tiles/Planet/liquid_plasmarock.rsi
     drawdepth: BelowFloor
     layers:
-    - state: plasma
-      shader: unshaded
+      - state: plasmarock
+        shader: unshaded
   - type: Icon
     sprite: Tiles/Planet/liquid_plasmarock.rsi
     state: full
   - type: IconSmooth
     key: floor
-    base: plasma
+    base: plasmarock
   - type: Physics
     bodyType: Static
   - type: Fixtures
