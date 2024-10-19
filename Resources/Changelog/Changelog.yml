@@ -7364,3 +7364,10 @@ Entries:
   id: 6462
   time: '2024-10-19T08:28:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1081
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Arena now has a properly functional Arrivals Dock.
+  id: 6463
+  time: '2024-10-19T08:30:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1086
