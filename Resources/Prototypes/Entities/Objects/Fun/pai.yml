@@ -72,6 +72,22 @@
           Searching: { state: pai-searching-overlay }
           On: { state: pai-on-overlay }
   - type: StationMap
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    - Tradeband
+    - Freespeak
+    - Elyran
+    - RobotTalk
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    - Tradeband
+    - Freespeak
+    - Elyran
+    - RobotTalk
+    - Sign # It's intentional that they don't "Speak" sign language.
 
 - type: entity
   parent: PersonalAI
