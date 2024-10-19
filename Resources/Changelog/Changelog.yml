@@ -7388,3 +7388,14 @@ Entries:
   id: 6465
   time: '2024-10-19T08:45:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1065
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the "Steal The Head of Security's Weapon" so that it is now a
+        single objective that counts for any anique weapon chosen by the Head of
+        Security. The objective will also once again correctly not generate if
+        there are no valid items for it on the station.
+  id: 6466
+  time: '2024-10-19T21:28:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1084
