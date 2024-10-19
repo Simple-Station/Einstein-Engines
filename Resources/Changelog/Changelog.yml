@@ -7378,3 +7378,13 @@ Entries:
   id: 6464
   time: '2024-10-19T08:34:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1095
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Syndicate has significantly expanded their Listening Outpost
+        operations, featuring larger, better defended outposts. These new
+        outposts also serve as supply depots for Syndicate agents in the field. 
+  id: 6465
+  time: '2024-10-19T08:45:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1065
