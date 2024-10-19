@@ -7355,3 +7355,12 @@ Entries:
   id: 6461
   time: '2024-10-19T08:26:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1069
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Cryptobiolin not providing temporary Psionic Insulation. It now
+        provides protection from psionic abilities and events for 15 minutes.
+  id: 6462
+  time: '2024-10-19T08:28:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1081
