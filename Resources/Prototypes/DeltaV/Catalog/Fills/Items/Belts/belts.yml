@@ -16,7 +16,7 @@
   description: An ornate belt, wrapped in gold filigree, with a ribbon made from a stasis-field preserved swatch of linen. The history of this sheath has been lost to time.
   components:
     - type: StealTarget
-      stealGroup: ClothingBeltKatanaSheathFilledHoS
+      stealGroup: HoSAntiqueWeapon
 
 - type: entity
   id: ClothingBeltCorpsmanWebbingFilled
