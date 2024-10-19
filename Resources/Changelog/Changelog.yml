@@ -7371,3 +7371,10 @@ Entries:
   id: 6463
   time: '2024-10-19T08:30:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1086
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: 'addpsionicpower command now works. '
+  id: 6464
+  time: '2024-10-19T08:34:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1095
