@@ -7467,3 +7467,10 @@ Entries:
   id: 6474
   time: '2024-10-20T16:32:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1108
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added localizations for all Epistemics jobs. '
+  id: 6475
+  time: '2024-10-20T16:35:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1094
