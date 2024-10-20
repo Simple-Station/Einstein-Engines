@@ -8,7 +8,7 @@
   },
   "states": [
     {
-      "name": "cultout",
+      "name": "cult_out",
       "directions": 4,
       "delays": [
         [
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "name": "cultin",
+      "name": "cult_in",
       "directions": 4,
       "delays": [
         [

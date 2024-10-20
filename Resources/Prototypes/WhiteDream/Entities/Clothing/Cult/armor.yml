@@ -86,3 +86,25 @@
         Slash: 1.4
         Piercing: 1.4
         Heat: 1.4
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyeCultBlindfold
+  name: zealot's blindfold
+  description: May Nar'Sie guide you through the darkness and shield you from the light
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: FlashImmunity
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - Inorganic
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  # TODO: ADD NIGHT VISION
+

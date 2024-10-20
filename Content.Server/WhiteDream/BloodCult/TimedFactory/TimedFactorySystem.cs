@@ -32,7 +32,7 @@ public sealed class TimedFactorySystem : EntitySystem
             if (factory.CooldownRemaining > 0)
                 factory.CooldownRemaining -= frameTime;
             else
-                _appearance.SetData(uid, TimedFactoryVisuals.Ready, true);
+                _appearance.SetData(uid, GenericCultVisuals.State, true);
         }
     }
 
@@ -56,6 +56,6 @@ public sealed class TimedFactorySystem : EntitySystem
         var product = Spawn(args.SelectedItem, Transform(args.Actor).Coordinates);
         _hands.TryPickupAnyHand(args.Actor, product);
         factory.Comp.CooldownRemaining = factory.Comp.Cooldown;
-        _appearance.SetData(factory, TimedFactoryVisuals.Ready, false);
+        _appearance.SetData(factory, GenericCultVisuals.State, false);
     }
 }

@@ -20,7 +20,7 @@
     sprite: WhiteDream/BloodCult/Entities/Items/whetstone_cult.rsi
     layers:
     - state: icon
-      map: [ "enum.WhetstoneVisuals.Layer" ]
+      map: [ "enum.GenericCultVisuals.Layer" ]
   - type: CultItem
   - type: Whetstone
     whitelist:
@@ -32,7 +32,95 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.WhetstoneVisuals.Used:
-        enum.WhetstoneVisuals.Layer:
-          True: { state: icon_off }
-          False: { state: icon }
+      enum.GenericCultVisuals.State:
+        enum.GenericCultVisuals.Layer:
+          True: { state: icon }
+          False: { state: icon_off }
+
+- type: entity
+  parent: BaseItem
+  id: VeilShifter
+  name: veil shifter
+  description: This relic instantly teleports you, and anything you're pulling, forward by a moderate distance.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/veil_shifter.rsi
+    layers:
+    - state: icon
+      map: [ "enum.GenericCultVisuals.Layer" ]
+  - type: CultItem
+  - type: VeilShifter
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.GenericCultVisuals.State:
+        enum.GenericCultVisuals.Layer:
+          True: { state: icon }
+          False: { state: icon_off }
+
+- type: entity
+  parent: BaseItem
+  id: VoidTorch
+  name: void torch
+  description: Used by veteran cultists to instantly transport items to their needful brethren
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/void_torch.rsi
+    layers:
+    - state: icon
+      map: [ "enum.GenericCultVisuals.Layer" ]
+  - type: CultItem
+  - type: VoidTorch
+  - type: IgnitionSource
+    temperature: 400
+    ignited: false
+  - type: PointLight
+    enabled: false
+    color: "#e33119"
+    radius: 1.0
+    energy: 5.0
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+    - !type:RandomizeBehaviour # immediately make it bright and flickery
+      id: turn_on
+      interpolate: Nearest
+      minDuration: 0.02
+      maxDuration: 0.06
+      startValue: 6.0
+      endValue: 9.0
+      property: Energy
+      isLooped: true
+    - !type:FadeBehaviour # have the radius start small and get larger as it starts to burn
+      id: turn_on
+      maxDuration: 8.0
+      startValue: 1.0
+      endValue: 6.0
+    - !type:RandomizeBehaviour # weaker flicker as it fades out
+      id: fade_out
+      interpolate: Nearest
+      minDuration: 0.02
+      maxDuration: 0.06
+      startValue: 4.0
+      endValue: 8.0
+      property: Energy
+      isLooped: true
+    - !type:FadeBehaviour # fade out radius as it burns out
+      id: fade_out
+      maxDuration: 4.0
+      startValue: 6.0
+      endValue: 1.0
+  - type: UserInterface
+    interfaces:
+      enum.ListViewSelectorUiKey.Key:
+        type: ListViewSelectorBUI
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.GenericCultVisuals.State:
+        enum.GenericCultVisuals.Layer:
+          True: { state: icon }
+          False: { state: icon_off }
+  - type: Tag
+    tags:
+    - Torch

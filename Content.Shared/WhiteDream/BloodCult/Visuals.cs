@@ -20,9 +20,9 @@ public enum ConstructVisualsState : byte
 }
 
 [Serializable, NetSerializable]
-public enum TimedFactoryVisuals : byte
+public enum GenericCultVisuals : byte
 {
-    Ready,
+    State, // True or False
     Layer
 }
 
@@ -30,13 +30,6 @@ public enum TimedFactoryVisuals : byte
 public enum PylonVisuals : byte
 {
     Activated,
-    Layer
-}
-
-[Serializable, NetSerializable]
-public enum WhetstoneVisuals : byte
-{
-    Used,
     Layer
 }
 

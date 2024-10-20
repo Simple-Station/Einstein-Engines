@@ -9,7 +9,7 @@
     sprite: WhiteDream/BloodCult/Entities/Structures/altar.rsi
     layers:
     - state: icon
-      map: [ "enum.TimedFactoryVisuals.Layer" ]
+      map: [ "enum.GenericCultVisuals.Layer" ]
   - type: Transform
     noRot: true
   - type: Fixtures
@@ -51,8 +51,8 @@
         BloodCultist
   - type: GenericVisualizer
     visuals:
-      enum.TimedFactoryVisuals.Ready:
-        enum.TimedFactoryVisuals.Layer:
+      enum.GenericCultVisuals.State:
+        enum.GenericCultVisuals.Layer:
           True: { state: "icon" }
           False: { state: "icon_off" }
 
@@ -64,9 +64,6 @@
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Structures/altar.rsi
-    layers:
-    - state: icon
-      map: [ "enum.TimedFactoryVisuals.Layer" ]
   - type: TimedFactory
     prototypes:
       - ConstructShell

@@ -64,9 +64,7 @@ public sealed class CultRuneSummonSystem : EntitySystem
     private void OnCultistSelected(Entity<CultRuneSummonComponent> ent, ref ListViewItemSelectedMessage args)
     {
         if (!EntityUid.TryParse(args.SelectedItem.Id, out var target))
-        {
             return;
-        }
 
         if (TryComp(target, out PullableComponent? pullable) && pullable.BeingPulled)
         {
