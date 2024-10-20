@@ -7483,3 +7483,12 @@ Entries:
   id: 6476
   time: '2024-10-20T18:18:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1112
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed prisoner not spawning in the Prison if the Arrivals station is
+        enabled.
+  id: 6477
+  time: '2024-10-20T19:28:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1113
