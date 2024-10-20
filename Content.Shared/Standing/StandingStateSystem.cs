@@ -1,15 +1,15 @@
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
-using Content.Shared.CCVar;
+using Content.Shared.Climbing.Systems;
+using Content.Shared.Climbing.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Physics;
 using Content.Shared.Rotation;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Configuration;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
-using Robust.Shared.Serialization;
+using System.Linq;
 
 namespace Content.Shared.Standing;
 
@@ -20,10 +20,11 @@ public sealed class StandingStateSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly ClimbSystem _climb = default!;
 
     // If StandingCollisionLayer value is ever changed to more than one layer, the logic needs to be edited.
-    private const int StandingCollisionLayer = (int) CollisionGroup.MidImpassable;
+    private const int StandingCollisionLayer = (int)CollisionGroup.MidImpassable;
 
     public bool IsDown(EntityUid uid, StandingStateComponent? standingState = null)
     {
@@ -69,10 +70,6 @@ public sealed class StandingStateSystem : EntitySystem
         Dirty(standingState);
         RaiseLocalEvent(uid, new DownedEvent(), false);
 
-        // Raising this event will lower the entity's draw depth to the same as a small mob.
-        if (_config.GetCVar(CCVars.CrawlUnderTables) && setDrawDepth)
-            RaiseNetworkEvent(new DrawDownedEvent(GetNetEntity(uid)));
-
         // Seemed like the best place to put it
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal, appearance);
 
@@ -96,6 +93,9 @@ public sealed class StandingStateSystem : EntitySystem
             _audio.PlayPredicted(standingState.DownSound, uid, null);
 
         _movement.RefreshMovementSpeedModifiers(uid);
+
+        Climb(uid);
+
         return true;
     }
 
@@ -126,12 +126,9 @@ public sealed class StandingStateSystem : EntitySystem
         }
 
         standingState.CurrentState = StandingState.Standing;
+
         Dirty(uid, standingState);
         RaiseLocalEvent(uid, new StoodEvent(), false);
-
-        // Raising this event will increase the entity's draw depth to a normal mob's.
-        if (_config.GetCVar(CCVars.CrawlUnderTables))
-            RaiseNetworkEvent(new DrawStoodEvent(GetNetEntity(uid)));
 
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Vertical, appearance);
 
@@ -146,9 +143,26 @@ public sealed class StandingStateSystem : EntitySystem
         standingState.ChangedFixtures.Clear();
         _movement.RefreshMovementSpeedModifiers(uid);
 
+        Climb(uid);
+
         return true;
     }
+
+    private void Climb(EntityUid uid)
+    {
+        _climb.ForciblyStopClimbing(uid);
+
+        var entityDistances = new Dictionary<EntityUid, float>();
+
+        foreach (var entity in _lookup.GetEntitiesInRange(uid, 0.3f))
+            if (HasComp<ClimbableComponent>(entity))
+                entityDistances[entity] = (Transform(uid).Coordinates.Position - Transform(entity).Coordinates.Position).LengthSquared();
+
+        if (entityDistances.Count > 0)
+            _climb.ForciblySetClimbing(uid, entityDistances.OrderBy(e => e.Value).First().Key);
+    }
 }
+
 
 public sealed class DropHandItemsEvent : EventArgs { }
 

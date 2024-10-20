@@ -131,7 +131,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitChiefEngineer
   name: chief engineer's jumpsuit
-  description: It's a high visibility jumpsuit given to those engineers insane enough to achieve the rank of Chief Engineer. It has minor radiation shielding.
+  description: It's a high visibility jumpsuit given to those engineers insane enough to achieve the rank of Chief Engineer.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ce.rsi
@@ -711,7 +711,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitScientist
   name: scientist jumpsuit
-  description: It's made of a special fiber that provides minor protection against explosives. It has markings that denote the wearer as a scientist.
+  description: It's made of a special fiber that increases perceived intelligence and decreases personal ethics. It has markings that denote the wearer as a scientist.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/scientist.rsi
@@ -854,72 +854,69 @@
   id: ClothingUniformJumpsuitLibrarianOrionFlipped
   name: orion express librarian jumpsuit
 
-################################
-#  Unused Librarian Jumpsuits  #
-################################
-# - type: entity
-#   parent: ClothingUniformBaseFlippable
-#   id: ClothingUniformJumpsuitLibrarianHeph
-#   name: hephaestus industries librarian jumpsuit
-#   description: A cosy green jumper fit for a curator of books.
-#   components:
-#   - type: Sprite
-#     sprite: Clothing/Uniforms/Jumpsuit/librarian_heph.rsi
-#   - type: Clothing
-#     sprite: Clothing/Uniforms/Jumpsuit/librarian_heph.rsi
+- type: entity
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitLibrarianHeph
+  name: hephaestus industries librarian jumpsuit
+  description: A cosy green jumper fit for a curator of books.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/librarian_heph.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/librarian_heph.rsi
 
-# - type: entity
-#   parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianHeph ]
-#   id: ClothingUniformJumpsuitLibrarianHephFlipped
-#   name: hephaestus industries librarian jumpsuit
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianHeph ]
+  id: ClothingUniformJumpsuitLibrarianHephFlipped
+  name: hephaestus industries librarian jumpsuit
 
-# - type: entity
-#   parent: ClothingUniformBaseFlippable
-#   id: ClothingUniformJumpsuitLibrarianPMCG
-#   name: private military contracting group librarian jumpsuit
-#   description: A cosy white jumper fit for a curator of books.
-#   components:
-#   - type: Sprite
-#     sprite: Clothing/Uniforms/Jumpsuit/librarian_pmcg.rsi
-#   - type: Clothing
-#     sprite: Clothing/Uniforms/Jumpsuit/librarian_pmcg.rsi
+- type: entity
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitLibrarianPMCG
+  name: private military contracting group librarian jumpsuit
+  description: A cosy white jumper fit for a curator of books.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/librarian_pmcg.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/librarian_pmcg.rsi
 
-# - type: entity
-#   parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianPMCG ]
-#   id: ClothingUniformJumpsuitLibrarianPMCGFlipped
-#   name: private military contracting group librarian jumpsuit
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianPMCG ]
+  id: ClothingUniformJumpsuitLibrarianPMCGFlipped
+  name: private military contracting group librarian jumpsuit
 
-# - type: entity
-#   parent: ClothingUniformBaseFlippable
-#   id: ClothingUniformJumpsuitLibrarianZav
-#   name: zavodskoi interstellar librarian jumpsuit
-#   description: A blood brown jumper fit for a curator of books.
-#   components:
-#   - type: Sprite
-#     sprite: Clothing/Uniforms/Jumpsuit/librarian_zav.rsi
-#   - type: Clothing
-#     sprite: Clothing/Uniforms/Jumpsuit/librarian_zav.rsi
+- type: entity
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitLibrarianZav
+  name: zavodskoi interstellar librarian jumpsuit
+  description: A blood brown jumper fit for a curator of books.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/librarian_zav.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/librarian_zav.rsi
 
-# - type: entity
-#   parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianZav ]
-#   id: ClothingUniformJumpsuitLibrarianZavFlipped
-#   name: zavodskoi interstellar librarian jumpsuit
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianZav ]
+  id: ClothingUniformJumpsuitLibrarianZavFlipped
+  name: zavodskoi interstellar librarian jumpsuit
 
-# - type: entity
-#   parent: ClothingUniformBaseFlippable
-#   id: ClothingUniformJumpsuitLibrarianZeng
-#   name: zeng-hu pharmaceuticals librarian jumpsuit
-#   description: A blood brown jumper fit for a curator of books.
-#   components:
-#   - type: Sprite
-#     sprite: Clothing/Uniforms/Jumpsuit/librarian_zeng.rsi
-#   - type: Clothing
-#     sprite: Clothing/Uniforms/Jumpsuit/librarian_zeng.rsi
+- type: entity
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitLibrarianZeng
+  name: zeng-hu pharmaceuticals librarian jumpsuit
+  description: A blood brown jumper fit for a curator of books.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/librarian_zeng.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/librarian_zeng.rsi
 
-# - type: entity
-#   parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianZeng ]
-#   id: ClothingUniformJumpsuitLibrarianZengFlipped
-#   name: zeng-hu pharmaceuticals librarian jumpsuit
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitLibrarianZeng ]
+  id: ClothingUniformJumpsuitLibrarianZengFlipped
+  name: zeng-hu pharmaceuticals librarian jumpsuit
 
 - type: entity
   parent: ClothingUniformBase

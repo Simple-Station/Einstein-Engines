@@ -128,6 +128,12 @@ public sealed partial class SpeciesPrototype : IPrototype
     public int MaxAge = 120;
 
     /// <summary>
+    ///     The minimum height and width ratio for this species
+    /// </summary>
+    [DataField]
+    public float SizeRatio = 1.2f;
+
+    /// <summary>
     ///     The minimum height for this species
     /// </summary>
     [DataField]

@@ -15,7 +15,10 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    hideOnToggle: true
 
 - type: entity
   parent: ClothingMaskGas
@@ -197,8 +200,10 @@
     tags:
     - ClownMask
     - WhitelistChameleon
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskClownBase
@@ -209,7 +214,9 @@
     - ClownMask
     - HamsterWearable
     - WhitelistChameleon
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskClown
@@ -238,8 +245,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -257,8 +266,10 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -272,9 +283,12 @@
     sprite: Clothing/Mask/sterile.rsi
   - type: IngestionBlocker
   - type: Item
-    storedRotation: -90
+    size: Tiny
   - type: IdentityBlocker
     coverage: MOUTH
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
 
 - type: entity
   parent: ClothingMaskBase
@@ -309,9 +323,10 @@
   - type: BreathMask
   - type: IngestionBlocker
   - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    hideOnToggle: true
 
 - type: entity
   parent: ClothingMaskClownBase
@@ -341,8 +356,11 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - HidesHair
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    hideOnToggle: true
 
 - type: entity
   parent: ClothingMaskGasExplorer
@@ -368,8 +386,11 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - HidesHair
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    hideOnToggle: true
 
 - type: entity
   parent: ClothingMaskGasERT
@@ -405,7 +426,9 @@
     - IPCMaskWearable # Estacao Pirata - IPCs
     - HamsterWearable
     - WhitelistChameleon
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Snout
   - type: IdentityBlocker
 
 - type: entity
@@ -422,8 +445,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -439,8 +464,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -456,8 +483,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -473,8 +502,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -490,8 +521,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -507,8 +540,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase

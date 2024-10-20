@@ -38,7 +38,7 @@ public sealed class AddPsionicPowerCommand : IConsoleCommand
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         var entMan = IoCManager.Resolve<IEntityManager>();
-        var psionicPowers = IoCManager.Resolve<PsionicAbilitiesSystem>();
+        var psionicPowers = entMan.System<PsionicAbilitiesSystem>();
         var protoMan = IoCManager.Resolve<IPrototypeManager>();
 
         if (args.Length != 2)
