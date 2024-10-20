@@ -18,6 +18,7 @@ using Content.Shared.DeviceNetwork;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Parallax.Biomes;
+using Content.Shared.Roles;
 using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Tiles;
@@ -310,6 +311,12 @@ public sealed class ArrivalsSystem : EntitySystem
         // Only works on latejoin even if enabled.
         if (!Enabled || _ticker.RunLevel != GameRunLevel.InRound)
             return;
+
+        if (ev.Job is not null
+            && ev.Job.Prototype is not null
+            && _protoManager.Index<JobPrototype>(ev.Job.Prototype.Value.Id).AlwaysUseSpawner)
+            return;
+
 
         if (!HasComp<StationArrivalsComponent>(ev.Station))
             return;
