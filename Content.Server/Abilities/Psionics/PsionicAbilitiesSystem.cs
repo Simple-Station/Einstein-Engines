@@ -217,6 +217,10 @@ namespace Content.Server.Abilities.Psionics
 
                 RemComp<PsionicComponent>(uid);
                 RemComp<InnatePsionicPowersComponent>(uid);
+
+                var ev = new OnMindbreakEvent();
+                RaiseLocalEvent(uid, ref ev);
+
                 return;
             }
             RefreshPsionicModifiers(uid, psionic);

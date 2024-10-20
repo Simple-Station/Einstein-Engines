@@ -61,3 +61,25 @@
     solution: tank
   - type: ExaminableSolution
     solution: tank
+
+- type: entity
+  parent: Clothing
+  id: ClothingBackpackEtherealTeleporter
+  name: ethereal teleporter
+  description: Originally created while several research facilities were experimenting on Shadowkin, this backpack allows the wearer to jump the gap between the "normal" dimension and The Dark.
+  components:
+    - type: Tag
+      tags:
+        - WhitelistChameleon
+    - type: Sprite
+      sprite: Clothing/Back/etherealteleporter.rsi
+      state: icon
+    - type: Item
+      size: Ginormous
+    - type: Clothing
+      slots: BACK
+      sprite: Clothing/Back/etherealteleporter.rsi
+    # TODO: Uncomment this when ClothingGrantPsionicPower is fixed and back working.
+    # - type: ClothingGrantPsionicPower
+    #   power: DarkSwapPower
+    # - type: Psionic

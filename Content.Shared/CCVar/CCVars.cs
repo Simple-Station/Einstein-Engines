@@ -2001,6 +2001,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> ICShowSSDIndicator =
             CVarDef.Create("ic.show_ssd_indicator", true, CVar.CLIENTONLY);
 
+        /// <summary>
+        /// Allow Ethereal Ent to PassThrough Walls/Objects while in Ethereal.
+        /// </summary>
+        public static readonly CVarDef<bool> EtherealPassThrough =
+            CVarDef.Create("ic.EtherealPassThrough", false, CVar.SERVER);
+
         /*
          * Salvage
          */

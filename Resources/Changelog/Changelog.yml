@@ -7438,3 +7438,39 @@ Entries:
   id: 6471
   time: '2024-10-20T16:03:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1109
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Added a new species, Shadowkin!
+  id: 6472
+  time: '2024-10-20T16:31:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/960
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Removed latejoin spawners from the Salvage Pathfinder.
+  id: 6473
+  time: '2024-10-20T16:32:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1105
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Musicians can now select for free, any 3 instruments in the game with
+        their loadout. This now includes things like Piano flatpacks. The only
+        instruments not included are the Sypersynth, DAW, and "Admeme
+        Instruments".
+    - type: Remove
+      message: >-
+        Musicians no longer spawn with a Saxophone and Acoustic guitar by
+        default. You pick which instruments you spawn with in your loadouts now.
+  id: 6474
+  time: '2024-10-20T16:32:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1108
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added localizations for all Epistemics jobs. '
+  id: 6475
+  time: '2024-10-20T16:35:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1094
