@@ -428,3 +428,20 @@
     sprite: Clothing/OuterClothing/Misc/unathirobe.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/unathirobe.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterShadowkinRestraints
+  name: shadowkin restraints
+  description: One of the first creations after finding Shadowkin, these were used to contain the Shadowkin during research so they didn't teleport away.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/shadowkinrestraints.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/shadowkinrestraints.rsi
+    equipDelay: 0.5
+    unequipDelay: 10
+  - type: ShadowkinCuff
+  - type: GuideHelp
+    guides:
+    - Shadowkin
