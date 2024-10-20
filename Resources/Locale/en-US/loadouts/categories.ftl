@@ -29,6 +29,7 @@ loadout-category-JobsServiceBartender = Bartender
 loadout-category-JobsServiceBotanist = Botanist
 loadout-category-JobsServiceChef = Chef
 loadout-category-JobsServiceJanitor = Janitor
+loadout-category-JobsServiceMusician = Musician
 loadout-category-Mask = Mask
 loadout-category-Neck = Neck
 loadout-category-Outer = Outer
