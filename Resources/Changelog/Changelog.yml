@@ -7474,3 +7474,12 @@ Entries:
   id: 6475
   time: '2024-10-20T16:35:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1094
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the Captain's Office on Gax Station missing an LV cable that would
+        power its doors.
+  id: 6476
+  time: '2024-10-20T18:18:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1112
