@@ -121,7 +121,7 @@ public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
             BreakOnDamage = true,
             BreakOnUserMove = true,
             BreakOnTargetMove = true,
-            BreakOnWeightlessMove = true
+            BreakOnWeightlessMove = true,
             NeedHand = true
         };
         DoAfter.TryStartDoAfter(args, out ent.Comp.DoAfter);
