@@ -7429,3 +7429,12 @@ Entries:
   id: 6470
   time: '2024-10-20T05:40:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1089
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Breath of Life now correctly displays its esoteric text popup if the
+        right conditions are met.
+  id: 6471
+  time: '2024-10-20T16:03:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1109
