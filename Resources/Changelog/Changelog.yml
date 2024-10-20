@@ -7413,3 +7413,10 @@ Entries:
   id: 6468
   time: '2024-10-19T22:10:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1093
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Ported literally all of Wizden's Wielding Quality Of Life improvements.
+  id: 6469
+  time: '2024-10-20T01:45:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1078
