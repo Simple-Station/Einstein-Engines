@@ -281,7 +281,7 @@ public sealed class ExecutionSystem : EntitySystem
         var prevention = new ShotAttemptedEvent
         {
             User = attacker,
-            Used = weapon
+            Used = new Entity<GunComponent>(uid, component)
         };
 
         RaiseLocalEvent(weapon, ref prevention);
