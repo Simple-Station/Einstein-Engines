@@ -21,6 +21,7 @@ entities:
       name: Pathfinder
     - type: Transform
       pos: -0.515625,-0.515625
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
