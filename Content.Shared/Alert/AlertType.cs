@@ -39,7 +39,7 @@ namespace Content.Shared.Alert
         Exceptional,
         Perfect,
         MoodDead,
-        CultBuffed,
+        CultEmpowered,
 
         PilotingShuttle,
         Peckish,
@@ -72,6 +72,7 @@ namespace Content.Shared.Alert
         BorgDead,
         Offer,
         Deflecting,
+        BloodSpells
     }
 
 }
