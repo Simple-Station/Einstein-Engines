@@ -26,7 +26,7 @@ public sealed partial class SacrificialAltarComponent : Component
     public TimeSpan SacrificeTime = TimeSpan.FromSeconds(8.35);
 
     [DataField]
-    public SoundSpecifier SacrificeSound = new SoundPathSpecifier("/Audio/DeltaV/Effects/clang2.ogg");
+    public SoundSpecifier SacrificeSound = new SoundPathSpecifier("/Audio/Psionics/heartbeat_fast.ogg");
 
     [DataField]
     public EntityUid? SacrificeStream;
