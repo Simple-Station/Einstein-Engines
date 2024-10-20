@@ -46,7 +46,6 @@
   maxCount: 30
   itemSize: 2
 
-
 - type: stack
   id: BananiumOre
   name: bananium ore
@@ -68,5 +67,21 @@
   name: salt
   icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: salt }
   spawn: Salt1
+  maxCount: 30
+  itemSize: 2
+
+- type: stack
+  id: BluespaceOre
+  name: raw bluespace
+  icon: { sprite: Objects/Materials/ore.rsi, state: bluespace }
+  spawn: BluespaceOre1
+  maxCount: 30
+  itemSize: 2
+
+- type: stack
+  id: NormalityOre
+  name: raw normality
+  icon: { sprite: Objects/Materials/ore.rsi, state: normality }
+  spawn: NormalityOre1
   maxCount: 30
   itemSize: 2

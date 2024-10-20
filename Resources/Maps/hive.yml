@@ -171025,17 +171025,6 @@ entities:
     - type: Transform
       pos: 82.52527,10.611163
       parent: 1
-- proto: WeaponShotgunBulldog
-  entities:
-  - uid: 22088
-    components:
-    - type: MetaData
-      desc: NanoTrasen's attempt at recreating the Syndicate's infamous bulldog, an automatic drum-fed shotgun. The design was rejected for full distribution because it was "More of a rip-off then a remake." Uses .50 shotgun shells.
-      name: HoS's Prototype Pitbull
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 78.53835,14.484081
-      parent: 1
 - proto: WeaponTurretSyndicateBroken
   entities:
   - uid: 9783

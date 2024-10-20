@@ -31,8 +31,8 @@
         BloodCultist
   - type: UserInterface
     interfaces:
-    - key: enum.RuneDrawerBuiKey.Key
-      type: RuneDrawerBUI
+      enum.RuneDrawerBuiKey.Key:
+        type: RuneDrawerBUI
 
 - type: entity
   name: eldritch longsword

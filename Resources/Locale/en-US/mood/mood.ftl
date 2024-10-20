@@ -5,7 +5,7 @@ mood-effect-HungerOkay = I am feeling full.
 mood-effect-HungerPeckish = I could go for a snack right about now.
 mood-effect-HungerStarving = I NEED FOOD!
 
-mood-effect-ThirstOverHydrated = I feel dizzy after drinking too much.
+mood-effect-ThirstOverHydrated = I've had my fill of water.
 mood-effect-ThirstOkay = I'm feeling refreshed.
 mood-effect-ThirstThirsty = My lips are a little dry.
 mood-effect-ThirstParched = I NEED WATER!
@@ -67,3 +67,9 @@ mood-effect-NicotineBenefit =
     I feel as if I have been standing my entire life and I just sat down.
 mood-effect-NicotineWithdrawal =
     I could really go for a smoke right now.
+
+# Drugs
+mood-effect-EthanolBenefit =
+    I feel so relaxed from drinking.
+mood-effect-SpaceDrugsBenefit =
+    Woaaaah, such pretty colors maaaaan. It's like I can hear color and taste sound maaan.

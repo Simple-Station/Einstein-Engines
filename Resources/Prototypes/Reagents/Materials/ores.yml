@@ -68,3 +68,21 @@
   icon: { sprite: Objects/Materials/ore.rsi, state: salt }
   color: "#f5e7d7"
   price: 0.075
+
+- type: material
+  id: RawBluespace
+  stackEntity: BluespaceOre1
+  name: materials-raw-bluespace
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Materials/ore.rsi, state: bluespace }
+  color: "#53a9ff"
+  price: 7.5
+
+- type: material
+  id: RawNormality
+  stackEntity: NormalityOre1
+  name: materials-raw-normality
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Materials/ore.rsi, state: normality }
+  color: "#53a9ff"
+  price: 7.5

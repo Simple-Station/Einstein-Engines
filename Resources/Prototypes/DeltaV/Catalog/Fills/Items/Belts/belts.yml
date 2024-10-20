@@ -9,6 +9,16 @@
       - id: Katana
 
 - type: entity
+  id: ClothingBeltKatanaSheathFilledHoS
+  parent: ClothingBeltKatanaSheathFilled
+  suffix: Filled
+  name: antique katana sheaths
+  description: An ornate belt, wrapped in gold filigree, with a ribbon made from a stasis-field preserved swatch of linen. The history of this sheath has been lost to time.
+  components:
+    - type: StealTarget
+      stealGroup: HoSAntiqueWeapon
+
+- type: entity
   id: ClothingBeltCorpsmanWebbingFilled
   parent: ClothingBeltCorpsmanWebbing
   suffix: Filled

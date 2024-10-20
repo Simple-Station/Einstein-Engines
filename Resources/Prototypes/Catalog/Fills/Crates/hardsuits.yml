@@ -1,0 +1,92 @@
+# Engineering
+- type: entity
+  id: CrateEngineeringFotiaHardsuit
+  parent: CrateEngineering
+  name: fotia hardsuit crate
+  description: Contains a single HpI-19t "Fotia" hardsuit. Requires Engineering access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitAtmos
+
+- type: entity
+  id: CrateEngineeringLampsiHardsuit
+  parent: CrateEngineering
+  name: lampsi hardsuit crate
+  description: Contains a single HpI-19r "Lampsi" hardsuit. Requires Engineering access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitAtmos
+
+# Logistics
+- type: entity
+  id: CrateLogisticsKritiHardsuit
+  parent: CrateGenericSteel
+  name: kriti hardsuit crate
+  description: Contains a single HpI-20s "Kriti" hardsuit.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitSpatio
+
+- type: entity
+  id: CrateLogisticsLavrionHardsuit
+  parent: CrateGenericSteel
+  name: lavrion hardsuit crate
+  description: Contains a single HpI-20a "Lavrion" hardsuit.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitSalvage
+
+# Security
+- type: entity
+  id: CrateSecurityShanlinTacsuit
+  parent: CrateSecgear
+  name: shanlin tacsuit crate
+  description: Contains a single CSA-51a "Shanlin" tacsuit. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitSyndieReverseEngineered
+
+- type: entity
+  id: CrateSecurityGuanYuTacsuit
+  parent: CrateSecgear
+  name: guan-yu tacsuit crate
+  description: Contains a single CSA-80UA "Guan-Yu" tacsuit. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitJuggernautReverseEngineered
+
+- type: entity
+  id: CrateSecurityBaghaturTacsuit
+  parent: CrateSecgear
+  name: baghatur tacsuit crate
+  description: Contains a single FPA-83s "Baghatur" tacsuit. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitCombatStandard
+
+- type: entity
+  id: CrateSecuritySuldeTacsuit
+  parent: CrateSecgear
+  name: sulde tacsuit crate
+  description: Contains a single FPA-93 - "Sulde Mk.II" tacsuit. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitCombatRiot
+
+- type: entity
+  id: CrateSecurityTsagaanTacsuit
+  parent: CrateSecgear
+  name: tsagaan tacsuit crate
+  description: Contains a single FPA-86 - "Tsagaan Mk.II" tacsuit. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitCombatMedical

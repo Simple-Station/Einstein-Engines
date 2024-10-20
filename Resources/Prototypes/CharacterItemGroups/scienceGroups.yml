@@ -101,3 +101,44 @@
   items:
     - type: loadout
       id: LoadoutScienceShoesBootsWinterSci
+
+# Cataloguer
+- type: characterItemGroup
+  id: LoadoutCataloguerUniforms
+  items:
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianNt
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianIdris
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianOrion
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianHeph
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianPMCG
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianZav
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianZeng
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarian
+    - type: loadout
+      id: LoadoutScienceJumpskirtLibrarian
+
+# Chaplain
+- type: characterItemGroup
+  id: LoadoutChaplainUniforms
+  items:
+    - type: loadout
+      id: LoadoutChaplainJumpsuit
+    - type: loadout
+      id: LoadoutChaplainJumpskirt
+
+- type: characterItemGroup
+  id: LoadoutChaplainEquipment
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutChaplainBible
+    - type: loadout
+      id: LoadoutChaplainStamp

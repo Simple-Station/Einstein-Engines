@@ -76,10 +76,10 @@
   - type: CultRuneTeleport
   - type: UserInterface
     interfaces:
-    - key: enum.ListViewSelectorUiKey.Key
-      type: ListViewSelectorBUI
-    - key: enum.NameSelectorUiKey.Key
-      type: NameSelectorBUI
+      enum.ListViewSelectorUiKey.Key:
+        type: ListViewSelectorBUI
+      enum.NameSelectorUiKey.Key:
+        type: NameSelectorBUI
 
 - type: entity
   parent: CultRuneBase
@@ -120,8 +120,8 @@
   - type: CultRuneSummon
   - type: UserInterface
     interfaces:
-    - key: enum.ListViewSelectorUiKey.Key
-      type: ListViewSelectorBUI
+      enum.ListViewSelectorUiKey.Key:
+        type: ListViewSelectorBUI
 
 - type: entity
   parent: CultRuneBase

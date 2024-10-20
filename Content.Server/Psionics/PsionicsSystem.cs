@@ -55,7 +55,7 @@ public sealed class PsionicsSystem : EntitySystem
     {
         base.Update(frameTime);
         foreach (var roller in _rollers)
-            RollPsionics(roller.uid, roller.component, false);
+            RollPsionics(roller.uid, roller.component, true);
         _rollers.Clear();
     }
     public override void Initialize()
@@ -214,7 +214,8 @@ public sealed class PsionicsSystem : EntitySystem
         // Calculate the initial odds based on the innate potential
         var baselineChance = component.Chance
             * component.PowerRollMultiplier
-            + component.PowerRollFlatBonus;
+            + component.PowerRollFlatBonus
+            + _random.NextFloat(0, 100);
 
         // Increase the initial odds based on Glimmer.
         // TODO: Change this equation when I do my Glimmer Refactor

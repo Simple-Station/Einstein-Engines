@@ -7,7 +7,6 @@ using Content.Shared.RadialSelector;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
-using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 namespace Content.Server.WhiteDream.BloodCult.Constructs.Shell;
@@ -33,15 +32,10 @@ public sealed class ConstructShellSystem : EntitySystem
 
     private void OnGetVerbs(Entity<ConstructShellComponent> shell, ref GetVerbsEvent<ExamineVerb> args)
     {
-        if (_slots.GetItemOrNull(shell, shell.Comp.ShardSlotId) is not { } shard ||
-            args.User != shard ||
-            !TryComp(args.User, out ActorComponent? actor) ||
-            !TryComp(shard, out SoulShardComponent? soulShard) ||
-            !_ui.TryGetUi(shell, RadialSelectorUiKey.Key, out var bui) ||
-            _ui.IsUiOpen(shell, RadialSelectorUiKey.Key))
-        {
+        var shellUid = shell.Owner;
+        if (_slots.GetItemOrNull(shell, shell.Comp.ShardSlotId) is not { } shard || args.User != shard ||
+            !TryComp(shard, out SoulShardComponent? soulShard) || _ui.IsUiOpen(shellUid, RadialSelectorUiKey.Key))
             return;
-        }
 
         args.Verbs.Add(new ExamineVerb
         {
@@ -51,10 +45,11 @@ public sealed class ConstructShellSystem : EntitySystem
                 new ResPath("/Textures/WhiteDream/BloodCult/Entities/Items/construct_shell.rsi")),
             Act = () =>
             {
-                _ui.SetUiState(bui,
+                _ui.SetUiState(shellUid,
+                    RadialSelectorUiKey.Key,
                     new RadialSelectorState(soulShard.IsBlessed ? soulShard.PurifiedConstructs : soulShard.Constructs,
                         true));
-                _ui.TryOpen(shell, RadialSelectorUiKey.Key, actor.PlayerSession);
+                _ui.TryToggleUi(shellUid, RadialSelectorUiKey.Key, shard);
             }
         });
     }
@@ -66,16 +61,12 @@ public sealed class ConstructShellSystem : EntitySystem
 
     private void OnInteractUsing(Entity<ConstructShellComponent> shell, ref ContainerIsInsertingAttemptEvent args)
     {
+        var shellUid = shell.Owner;
         if (!TryComp(args.EntityUid, out SoulShardComponent? soulShard) ||
-            !_ui.TryGetUi(shell, RadialSelectorUiKey.Key, out var bui) ||
-            _ui.IsUiOpen(shell, RadialSelectorUiKey.Key))
-        {
+            _ui.IsUiOpen(shellUid, RadialSelectorUiKey.Key))
             return;
-        }
 
-        if (!TryComp<MindContainerComponent>(args.EntityUid, out var mindContainer) ||
-            !mindContainer.HasMind ||
-            !TryComp<ActorComponent>(args.EntityUid, out var actor))
+        if (!TryComp<MindContainerComponent>(args.EntityUid, out var mindContainer) || !mindContainer.HasMind )
         {
             _popup.PopupEntity(Loc.GetString("soul-shard-try-insert-no-soul"), shell);
             args.Cancel();
@@ -83,15 +74,16 @@ public sealed class ConstructShellSystem : EntitySystem
         }
 
         _slots.SetLock(shell, shell.Comp.ShardSlotId, true);
-        _ui.SetUiState(bui,
+        _ui.SetUiState(shellUid,
+            RadialSelectorUiKey.Key,
             new RadialSelectorState(soulShard.IsBlessed ? soulShard.PurifiedConstructs : soulShard.Constructs, true));
 
-        _ui.TryOpen(shell, RadialSelectorUiKey.Key, actor.PlayerSession);
+        _ui.TryToggleUi(shellUid, RadialSelectorUiKey.Key, args.EntityUid);
     }
 
     private void OnConstructSelected(Entity<ConstructShellComponent> ent, ref RadialSelectorSelectedMessage args)
     {
-        if (args.Session.AttachedEntity is not { } user || !_mind.TryGetMind(user, out var mindId, out _))
+        if (!_mind.TryGetMind(args.Actor, out var mindId, out _))
             return;
 
         var construct = Spawn(args.SelectedItem, _transform.GetMapCoordinates(ent));

@@ -553,8 +553,6 @@
         node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
-    destroySound:
-      collection: MetalBreak
   - type: IconSmooth
     key: walls
     base: reinf_over
@@ -810,8 +808,6 @@
         node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
-    destroySound:
-      collection: MetalBreak
   - type: Construction
     graph: Girder
     node: diagonalshuttleWall
@@ -1216,7 +1212,7 @@
   name: force wall
   components:
     - type: TimedDespawn
-      lifetime: 20
+      lifetime: 12
     - type: Tag
       tags:
         - Wall

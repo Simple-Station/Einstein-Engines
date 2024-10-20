@@ -3,8 +3,6 @@ using Content.Shared.ListViewSelector;
 using Content.Shared.WhiteDream.BloodCult.UI;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
-using Robust.Shared.Player;
-
 namespace Content.Server.WhiteDream.BloodCult.Runes.Teleport;
 
 public sealed class CultRuneTeleportSystem : EntitySystem
@@ -27,13 +25,7 @@ public sealed class CultRuneTeleportSystem : EntitySystem
 
     private void OnAfterRunePlaced(Entity<CultRuneTeleportComponent> rune, ref AfterRunePlaced args)
     {
-        if (!TryComp(args.User, out ActorComponent? actorComponent) ||
-            !_ui.TryGetUi(rune, NameSelectorUiKey.Key, out var ui))
-        {
-            return;
-        }
-
-        _ui.OpenUi(ui, actorComponent.PlayerSession);
+        _ui.OpenUi(rune.Owner, NameSelectorUiKey.Key, args.User);
     }
 
     private void OnNameSelected(Entity<CultRuneTeleportComponent> rune, ref NameSelectedMessage args)
@@ -43,9 +35,8 @@ public sealed class CultRuneTeleportSystem : EntitySystem
 
     private void OnTeleportRuneInvoked(Entity<CultRuneTeleportComponent> rune, ref TryInvokeCultRuneEvent args)
     {
-        if (!TryComp(args.User, out ActorComponent? actorComponent) ||
-            !_ui.TryGetUi(rune, ListViewSelectorUiKey.Key, out var ui) ||
-            _ui.IsUiOpen(rune, ListViewSelectorUiKey.Key))
+        var runeUid = rune.Owner;
+        if (_ui.IsUiOpen(runeUid, ListViewSelectorUiKey.Key))
         {
             args.Cancel();
             return;
@@ -55,7 +46,7 @@ public sealed class CultRuneTeleportSystem : EntitySystem
         var runes = new List<ListViewSelectorEntry>();
         while (runeQuery.MoveNext(out var targetRune, out var teleportRune))
         {
-            if (targetRune == rune.Owner)
+            if (targetRune == runeUid)
                 continue;
 
             var entry = new ListViewSelectorEntry(targetRune.ToString(), teleportRune.Name);
@@ -69,13 +60,13 @@ public sealed class CultRuneTeleportSystem : EntitySystem
             return;
         }
 
-        _ui.SetUiState(ui, new ListViewSelectorState(runes));
-        _ui.ToggleUi(ui, actorComponent.PlayerSession);
+        _ui.SetUiState(runeUid, ListViewSelectorUiKey.Key, new ListViewSelectorState(runes));
+        _ui.TryToggleUi(runeUid, ListViewSelectorUiKey.Key, args.User);
     }
 
     private void OnTeleportRuneSelected(Entity<CultRuneTeleportComponent> origin, ref ListViewItemSelectedMessage args)
     {
-        if (!EntityUid.TryParse(args.SelectedItem.Id, out var destination) || args.Session.AttachedEntity is null)
+        if (!EntityUid.TryParse(args.SelectedItem.Id, out var destination))
             return;
 
         var teleportTargets = _cultRune.GetTargetsNearRune(origin, origin.Comp.TeleportGatherRange);

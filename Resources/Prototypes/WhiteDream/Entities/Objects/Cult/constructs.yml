@@ -16,8 +16,8 @@
         - SoulShard
   - type: UserInterface
     interfaces:
-    - key: enum.RadialSelectorUiKey.Key
-      type: RadialSelectorMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ContainerContainer
     containers:
       Shard: !type:ContainerSlot

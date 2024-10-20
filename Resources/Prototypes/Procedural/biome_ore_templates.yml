@@ -144,3 +144,32 @@
   minGroupSize: 1
   maxGroupSize: 2
   radius: 4
+
+# Bluespace
+- type: biomeMarkerLayer
+  id: OreBluespace
+  entityMask:
+    AsteroidRock: AsteroidRockBluespace
+    WallRock: WallRockBluespace
+    WallRockBasalt: WallRockBasaltBluespace
+    WallRockChromite: WallRockChromiteBluespace
+    WallRockSand: WallRockSandBluespace
+    WallRockSnow: WallRockSnowBluespace
+  maxCount: 6
+  minGroupSize: 1
+  maxGroupSize: 2
+  radius: 4
+
+- type: biomeMarkerLayer
+  id: OreNormality
+  entityMask:
+    AsteroidRock: AsteroidRockNormality
+    WallRock: WallRockNormality
+    WallRockBasalt: WallRockBasaltNormality
+    WallRockChromite: WallRockChromiteNormality
+    WallRockSand: WallRockSandNormality
+    WallRockSnow: WallRockSnowNormality
+  maxCount: 6
+  minGroupSize: 1
+  maxGroupSize: 2
+  radius: 4

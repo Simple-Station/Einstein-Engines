@@ -113,24 +113,4 @@
       - id: TrackingImplanter
         amount: 4
 
-- type: entity
-  id: CrateSecurityShanlinTacsuit
-  parent: CrateSecgear
-  name: shanlin tacsuit crate
-  description: Contains a single CSA-51a Shanlin tacsuit. Requires Security access to open.
-  components:
-  - type: StorageFill
-    contents:
-    - id: ClothingOuterHardsuitSyndieReverseEngineered
-
-- type: entity
-  id: CrateSecurityGuanYuTacsuit
-  parent: CrateSecgear
-  name: shanlin tacsuit crate
-  description: Contains a single CSA-80UA Guan-Yu tacsuit. Requires Security access to open.
-  components:
-  - type: StorageFill
-    contents:
-    - id: ClothingOuterHardsuitJuggernautReverseEngineered
-
 # Cosmetic Crates

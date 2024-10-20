@@ -43,8 +43,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -65,7 +65,6 @@
     interactFailureString: petting-failure-pibble
     interactSuccessSound:
       path: /Audio/Animals/small_dog_bark_happy.ogg
-    hostileOnFail: true
   - type: DogVision
   - type: NpcFactionMember
     factions:

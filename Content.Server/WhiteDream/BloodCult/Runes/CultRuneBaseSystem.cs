@@ -3,12 +3,12 @@ using System.Numerics;
 using Content.Server.Bible.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Components;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.DoAfter;
 using Content.Server.Fluids.Components;
 using Content.Server.Popups;
 using Content.Server.WhiteDream.BloodCult.Empower;
 using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
@@ -32,7 +32,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
 
     public override void Initialize()
@@ -54,15 +54,11 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
     private void OnRuneSelected(Entity<RuneDrawerComponent> ent, ref RuneDrawerSelectedMessage args)
     {
-        if (args.Session.AttachedEntity is not { } user ||
-            !_protoManager.TryIndex(args.SelectedRune, out var runeSelector) ||
-            !CanDrawRune(user))
-        {
+        if (!_protoManager.TryIndex(args.SelectedRune, out var runeSelector) || !CanDrawRune(args.Actor))
             return;
-        }
 
         var timeToDraw = runeSelector.DrawTime;
-        if (TryComp(user, out BloodCultEmpoweredComponent? empowered))
+        if (TryComp(args.Actor, out BloodCultEmpoweredComponent? empowered))
             timeToDraw *= empowered.RuneTimeMultiplier;
 
         var ev = new DrawRuneDoAfter
@@ -71,14 +67,14 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
             EndDrawingSound = ent.Comp.EndDrawingSound
         };
 
-        var argsDoAfterEvent = new DoAfterArgs(EntityManager, user, timeToDraw, ev, user)
+        var argsDoAfterEvent = new DoAfterArgs(EntityManager, args.Actor, timeToDraw, ev, args.Actor)
         {
             BreakOnUserMove = true,
             NeedHand = true
         };
 
         if (_doAfter.TryStartDoAfter(argsDoAfterEvent))
-            _audio.PlayPvs(ent.Comp.StartDrawingSound, user, AudioParams.Default.WithMaxDistance(2f));
+            _audio.PlayPvs(ent.Comp.StartDrawingSound, args.Actor, AudioParams.Default.WithMaxDistance(2f));
     }
 
     private void OnDrawRune(Entity<BloodCultistComponent> ent, ref DrawRuneDoAfter args)
@@ -134,15 +130,11 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
     {
         if (!TryComp<SolutionContainerManagerComponent>(args.OtherEntity, out var solutionContainer) ||
             !HasComp<VaporComponent>(args.OtherEntity) && !HasComp<SprayComponent>(args.OtherEntity))
-        {
             return;
-        }
 
-        if (_solutionContainer.EnumerateSolutions((args.OtherEntity, solutionContainer)).Any(solution =>
-                solution.Solution.Comp.Solution.ContainsPrototype(ent.Comp.HolyWaterPrototype)))
-        {
+        if (_solutionContainer.EnumerateSolutions((args.OtherEntity, solutionContainer))
+            .Any(solution => solution.Solution.Comp.Solution.ContainsPrototype(ent.Comp.HolyWaterPrototype)))
             EntityManager.DeleteEntity(ent);
-        }
     }
 
     private void OnRuneActivate(Entity<CultRuneBaseComponent> ent, ref ActivateInWorldEvent args)
@@ -152,9 +144,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         if (args.Handled || !HasComp<BloodCultistComponent>(args.User) ||
             !userCoordinates.TryDistance(EntityManager, runeCoordinates, out var distance) ||
             distance > ent.Comp.RuneActivationRange)
-        {
             return;
-        }
 
         args.Handled = true;
 
@@ -173,7 +163,10 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         foreach (var cultist in cultists)
         {
             DealDamage(cultist, ent.Comp.ActivationDamage);
-            _chat.TrySendInGameICMessage(cultist, ent.Comp.InvokePhrase, ent.Comp.InvokeChatType, false,
+            _chat.TrySendInGameICMessage(cultist,
+                ent.Comp.InvokePhrase,
+                ent.Comp.InvokeChatType,
+                false,
                 checkRadioPrefix: false);
         }
     }

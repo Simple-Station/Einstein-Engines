@@ -356,6 +356,10 @@
   category: Physical
   points: -4
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       species:
         - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
@@ -390,14 +394,208 @@
   category: Physical
   points: -4
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Arachnid
         - Arachne
+        - IPC
   components:
     - type: Sericulture
       action: ActionSericulture
       productionLength: 2
       entityProduced: MaterialWebSilk1
       hungerCost: 4
+
+- type: trait
+  id: BionicArm
+  category: Physical
+  points: -8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+  components:
+    - type: Prying
+      speedModifier: 1
+      pryPowered: true
+
+- type: trait
+  id: PlateletFactories
+  category: Physical
+  points: -10
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  componentRemovals:
+    - PassiveDamage
+  components:
+    - type: PassiveDamage
+      allowedStates:
+      - Alive
+      - Critical
+      damageCap: 200
+      damage:
+        groups:
+          Brute: -0.07
+          Burn: -0.07
+          Airloss: -0.07
+          Toxin: -0.07
+          Genetic: -0.07
+
+- type: trait
+  id: DermalArmor
+  category: Physical
+  points: -9
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+  componentRemovals:
+    - Damageable
+  components:
+    - type: Damageable
+      damageModifierSet: DermalArmor
+
+- type: trait
+  id: CyberEyes
+  category: Physical
+  points: -8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
+  componentRemovals:
+    - Flashable
+  components:
+    - type: FlashImmunity
+    - type: EyeProtection
+    - type: CyberEyes
+
+- type: trait
+  id: CyberEyesSecurity
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - CyberEyesOmni
+  components:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+
+- type: trait
+  id: CyberEyesMedical
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - CyberEyesDiagnostic
+        - CyberEyesOmni
+  components:
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+
+- type: trait
+  id: CyberEyesDiagnostic
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - CyberEyesMedical
+        - CyberEyesOmni
+  components:
+    - type: ShowHealthBars
+      damageContainers:
+      - Inorganic
+      - Silicon
+
+- type: trait
+  id: CyberEyesOmni
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - CyberEyesMedical
+        - CyberEyesDiagnostic
+        - CyberEyesSecurity
+  components:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - Inorganic
+      - Silicon

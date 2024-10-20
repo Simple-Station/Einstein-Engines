@@ -6,7 +6,6 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
-using Robust.Shared.Player;
 
 namespace Content.Server.WhiteDream.BloodCult.Runes.Summon;
 
@@ -26,11 +25,10 @@ public sealed class CultRuneSummonSystem : EntitySystem
         SubscribeLocalEvent<CultRuneSummonComponent, ListViewItemSelectedMessage>(OnCultistSelected);
     }
 
-    private void OnSummonRuneInvoked(Entity<CultRuneSummonComponent> ent, ref TryInvokeCultRuneEvent args)
+    private void OnSummonRuneInvoked(Entity<CultRuneSummonComponent> rune, ref TryInvokeCultRuneEvent args)
     {
-        if (!TryComp(args.User, out ActorComponent? actorComponent) ||
-            !_ui.TryGetUi(ent, ListViewSelectorUiKey.Key, out var ui) ||
-            _ui.IsUiOpen(ent, ListViewSelectorUiKey.Key))
+        var runeUid = rune.Owner;
+        if (_ui.IsUiOpen(runeUid, ListViewSelectorUiKey.Key))
         {
             args.Cancel();
             return;
@@ -45,7 +43,8 @@ public sealed class CultRuneSummonSystem : EntitySystem
                 continue;
 
             var metaData = MetaData(cultistUid);
-            var entry = new ListViewSelectorEntry(cultistUid.ToString(), metaData.EntityName,
+            var entry = new ListViewSelectorEntry(cultistUid.ToString(),
+                metaData.EntityName,
                 metaData.EntityDescription);
 
             cultist.Add(entry);
@@ -58,27 +57,26 @@ public sealed class CultRuneSummonSystem : EntitySystem
             return;
         }
 
-        _ui.SetUiState(ui, new ListViewSelectorState(cultist));
-        _ui.ToggleUi(ui, actorComponent.PlayerSession);
+        _ui.SetUiState(runeUid, ListViewSelectorUiKey.Key, new ListViewSelectorState(cultist));
+        _ui.TryToggleUi(runeUid, ListViewSelectorUiKey.Key, args.User);
     }
 
     private void OnCultistSelected(Entity<CultRuneSummonComponent> ent, ref ListViewItemSelectedMessage args)
     {
-        if (!EntityUid.TryParse(args.SelectedItem.Id, out var target) ||
-            args.Session.AttachedEntity is not { } user)
+        if (!EntityUid.TryParse(args.SelectedItem.Id, out var target))
         {
             return;
         }
 
         if (TryComp(target, out PullableComponent? pullable) && pullable.BeingPulled)
         {
-            _popup.PopupEntity(Loc.GetString("blood-cult-summon-being-pulled"), ent, user);
+            _popup.PopupEntity(Loc.GetString("blood-cult-summon-being-pulled"), ent, args.Actor);
             return;
         }
 
         if (TryComp(target, out CuffableComponent? cuffable) && cuffable.CuffedHandCount > 0)
         {
-            _popup.PopupEntity(Loc.GetString("blood-cult-summon-cuffed"), ent, user);
+            _popup.PopupEntity(Loc.GetString("blood-cult-summon-cuffed"), ent, args.Actor);
             return;
         }
 

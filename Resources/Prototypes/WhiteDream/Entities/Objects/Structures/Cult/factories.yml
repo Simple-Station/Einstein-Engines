@@ -42,8 +42,8 @@
   - type: TimedFactory
   - type: UserInterface
     interfaces:
-    - key: enum.RadialSelectorUiKey.Key
-      type: RadialSelectorMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
     key: enum.RadialSelectorUiKey.Key
     userWhitelist:

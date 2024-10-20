@@ -45,22 +45,16 @@ public sealed class TimedFactorySystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("timed-factory-cooldown", ("cooldown", cooldown)), factory, args.User);
         }
 
-        if (!_ui.TryGetUi(factory, RadialSelectorUiKey.Key, out var bui) ||
-            _ui.IsUiOpen(factory, RadialSelectorUiKey.Key))
-        {
+        if (_ui.IsUiOpen(factory.Owner, RadialSelectorUiKey.Key))
             return;
-        }
 
-        _ui.SetUiState(bui, new RadialSelectorState(factory.Comp.Prototypes));
+        _ui.SetUiState(factory.Owner, RadialSelectorUiKey.Key, new RadialSelectorState(factory.Comp.Prototypes));
     }
 
     private void OnPrototypeSelected(Entity<TimedFactoryComponent> factory, ref RadialSelectorSelectedMessage args)
     {
-        if (args.Session.AttachedEntity is not { } user)
-            return;
-
-        var product = Spawn(args.SelectedItem, Transform(user).Coordinates);
-        _hands.TryPickupAnyHand(user, product);
+        var product = Spawn(args.SelectedItem, Transform(args.Actor).Coordinates);
+        _hands.TryPickupAnyHand(args.Actor, product);
         factory.Comp.CooldownRemaining = factory.Comp.Cooldown;
         _appearance.SetData(factory, TimedFactoryVisuals.Ready, false);
     }
