@@ -5,11 +5,13 @@ using Content.Shared.ShortConstruction;
 using Robust.Client.Placement;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Client.ShortConstruction;
 
 public sealed class ShortConstructionSystem : EntitySystem
 {
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IPlacementManager _placement = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
@@ -24,7 +26,8 @@ public sealed class ShortConstructionSystem : EntitySystem
 
     private void OnItemRecieved(Entity<ShortConstructionComponent> ent, ref RadialSelectorSelectedMessage args)
     {
-        if (!_proto.TryIndex(args.SelectedItem, out ConstructionPrototype? prototype))
+        if (!_proto.TryIndex(args.SelectedItem, out ConstructionPrototype? prototype) ||
+            !_gameTiming.IsFirstTimePredicted)
             return;
 
         if (prototype.Type == ConstructionType.Item)

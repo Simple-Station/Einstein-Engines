@@ -19,7 +19,7 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
 {
     [Dependency] private readonly IClyde _displayManager = default!;
     [Dependency] private readonly IInputManager _inputManager = default!;
-    [Dependency] private readonly EntityManager _entManager = default!;
+    [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     private readonly SpriteSystem _spriteSystem;
@@ -161,9 +161,7 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
     private void ClearExistingContainers()
     {
         foreach (var container in _cachedContainers)
-        {
             _menu.RemoveChild(container);
-        }
 
         _cachedContainers.Clear();
     }
