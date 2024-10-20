@@ -76,9 +76,6 @@ entities:
     - type: Gravity
       enabled: true
       inherent: true
-    - type: PassiveDampening
-      linearDampening: 1
-      angularDampening: 1
     - type: MapAtmosphere
       space: False
       mixture:
@@ -106,6 +103,9 @@ entities:
     - type: MetaData
     - type: Transform
       parent: 1
+    - type: PassiveDampening
+      linearDampening: 1
+      angularDampening: 1
     - type: MapGrid
       chunks:
         -1,-1:
