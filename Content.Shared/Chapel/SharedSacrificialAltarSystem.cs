@@ -1,14 +1,13 @@
-using Content.Shared.Buckle;
+using System.Linq;
 using Content.Shared.Buckle.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Verbs;
 
-namespace Content.Shared.DeltaV.Chapel;
+namespace Content.Shared.Chapel;
 
 public abstract class SharedSacrificialAltarSystem : EntitySystem
 {
-    [Dependency] private readonly SharedBuckleSystem _buckle = default!;
     [Dependency] protected readonly SharedDoAfterSystem DoAfter = default!;
 
     public override void Initialize()
@@ -16,7 +15,7 @@ public abstract class SharedSacrificialAltarSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<SacrificialAltarComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<SacrificialAltarComponent, UnstrappedEvent>(OnUnstrapped);
+        SubscribeLocalEvent<SacrificialAltarComponent, BuckleChangeEvent>(OnUnstrapped);
         SubscribeLocalEvent<SacrificialAltarComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
     }
 
@@ -25,24 +24,20 @@ public abstract class SharedSacrificialAltarSystem : EntitySystem
         args.PushMarkup(Loc.GetString("altar-examine"));
     }
 
-    private void OnUnstrapped(Entity<SacrificialAltarComponent> ent, ref UnstrappedEvent args)
+    private void OnUnstrapped(Entity<SacrificialAltarComponent> ent, ref BuckleChangeEvent args)
     {
-        if (ent.Comp.DoAfter is {} id)
-        {
-            DoAfter.Cancel(id);
-            ent.Comp.DoAfter = null;
-        }
+        if (ent.Comp.DoAfter is not { } id)
+            return;
+
+        DoAfter.Cancel(id);
+        ent.Comp.DoAfter = null;
     }
 
     private void OnGetVerbs(Entity<SacrificialAltarComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!args.CanAccess || !args.CanInteract || ent.Comp.DoAfter != null)
-            return;
-
-        if (!TryComp<StrapComponent>(ent, out var strap))
-            return;
-
-        if (GetFirstBuckled(strap) is not {} target)
+        if (!args.CanAccess || !args.CanInteract || ent.Comp.DoAfter != null
+            || !TryComp<StrapComponent>(ent, out var strap)
+            || GetFirstBuckled(strap) is not {} target)
             return;
 
         var user = args.User;
@@ -56,15 +51,11 @@ public abstract class SharedSacrificialAltarSystem : EntitySystem
 
     private EntityUid? GetFirstBuckled(StrapComponent strap)
     {
-        foreach (var entity in strap.BuckledEntities)
-        {
-            return entity;
-        }
+        if (strap.BuckledEntities.Count <= 0)
+            return null;
 
-        return null;
+        return strap.BuckledEntities.First();
     }
 
-    protected virtual void AttemptSacrifice(Entity<SacrificialAltarComponent> ent, EntityUid user, EntityUid target)
-    {
-    }
+    protected virtual void AttemptSacrifice(Entity<SacrificialAltarComponent> ent, EntityUid user, EntityUid target) { }
 }

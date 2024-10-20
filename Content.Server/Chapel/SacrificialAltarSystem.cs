@@ -1,13 +1,11 @@
 using Content.Server.Bible.Components;
-using Content.Server.Nyanotrasen.Cloning;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Database;
-using Content.Shared.DeltaV.Chapel;
+using Content.Shared.Chapel;
 using Content.Shared.DoAfter;
-using Content.Shared.EntityTable;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Popups;
@@ -17,11 +15,10 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server.DeltaV.Chapel;
+namespace Content.Server.Chapel;
 
 public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
 {
-    [Dependency] private readonly EntityTableSystem _entityTable = default!;
     [Dependency] private readonly GlimmerSystem _glimmer = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -43,31 +40,21 @@ public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
         ent.Comp.SacrificeStream = _audio.Stop(ent.Comp.SacrificeStream);
         ent.Comp.DoAfter = null;
 
-        var user = args.Args.User;
-
-        if (args.Cancelled || args.Handled || args.Args.Target is not {} target)
+        if (args.Cancelled || args.Handled || args.Args.Target is not { } target
+            || !TryComp<PsionicComponent>(target, out var psionic)
+            || !_mind.TryGetMind(target, out var _, out var _))
             return;
 
-        if (!_mind.TryGetMind(target, out var mindId, out var mind))
-            return;
-
-        // prevent starting the doafter then mindbreaking to double dip
-        if (!HasComp<PsionicComponent>(target))
-            return;
-
-        _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(user):player} sacrificed {ToPrettyString(target):target} on {ToPrettyString(ent):altar}");
+        _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(args.Args.User):player} sacrificed {ToPrettyString(target):target} on {ToPrettyString(ent):altar}");
 
         // lower glimmer by a random amount
-        _glimmer.Glimmer -= ent.Comp.GlimmerReduction.Next(_random);
+        _glimmer.Glimmer -= (int) (ent.Comp.GlimmerReduction * psionic.CurrentAmplification);
 
-        // spawn all the loot
-        var proto = _proto.Index(ent.Comp.RewardPool);
-        var coords = Transform(ent).Coordinates;
-        foreach (var id in _entityTable.GetSpawns(proto.Table))
+        if (ent.Comp.RewardPool is not null && _random.Prob(ent.Comp.BaseItemChance * psionic.CurrentDampening))
         {
-            Spawn(id, coords);
+            var proto = _proto.Index(_random.Pick(ent.Comp.RewardPool));
+            Spawn(proto.ToString(), Transform(ent).Coordinates);
         }
-
         // TODO GOLEMS: create a soul crystal and transfer mind into it
 
         // finally gib the targets old body
@@ -118,7 +105,7 @@ public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
             return;
         }
 
-        if (!HasComp<HumanoidAppearanceComponent>(target) && !HasComp<MetempsychosisKarmaComponent>(target))
+        if (!HasComp<HumanoidAppearanceComponent>(target))
         {
             _popup.PopupEntity(Loc.GetString("altar-failure-reason-target-humanoid", ("target", target)), ent, user, PopupType.SmallCaution);
             return;
@@ -132,6 +119,9 @@ public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
         var args = new DoAfterArgs(EntityManager, user, ent.Comp.SacrificeTime, ev, target: target, eventTarget: ent)
         {
             BreakOnDamage = true,
+            BreakOnUserMove = true,
+            BreakOnTargetMove = true,
+            BreakOnWeightlessMove = true
             NeedHand = true
         };
         DoAfter.TryStartDoAfter(args, out ent.Comp.DoAfter);

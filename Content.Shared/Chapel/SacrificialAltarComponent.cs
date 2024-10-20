@@ -1,28 +1,26 @@
-using Content.Shared.Destructible.Thresholds;
+using Content.Shared.Random;
 using Content.Shared.DoAfter;
-using Content.Shared.EntityTable;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
 
-namespace Content.Shared.DeltaV.Chapel;
+namespace Content.Shared.Chapel;
 
 /// <summary>
-/// Altar that lets you sacrifice psionics to lower glimmer by a large amount.
+///     Altar that lets you sacrifice psionics to lower glimmer by a large amount.
 /// </summary>
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSacrificialAltarSystem))]
 public sealed partial class SacrificialAltarComponent : Component
 {
     /// <summary>
-    /// DoAfter for an active sacrifice.
+    ///     DoAfter for an active sacrifice.
     /// </summary>
     [DataField]
     public DoAfterId? DoAfter;
 
     /// <summary>
-    /// How long it takes to sacrifice someone once they die.
-    /// This is the window to interrupt a sacrifice if you want glimmer to stay high, or need the psionic to be revived.
+    ///     How long it takes to sacrifice someone once they die.
+    ///     This is the window to interrupt a sacrifice if you want glimmer to stay high, or need the psionic to be revived.
     /// </summary>
     [DataField]
     public TimeSpan SacrificeTime = TimeSpan.FromSeconds(8.35);
@@ -34,14 +32,19 @@ public sealed partial class SacrificialAltarComponent : Component
     public EntityUid? SacrificeStream;
 
     /// <summary>
-    /// Random amount to reduce glimmer by.
+    ///     Base amount to reduce glimmer by, multiplied by the victim's Amplification stat.
     /// </summary>
     [DataField]
-    public MinMax GlimmerReduction = new(30, 60);
+    public float GlimmerReduction = 25;
 
     [DataField]
-    public ProtoId<EntityTablePrototype> RewardPool = "PsionicSacrificeRewards";
+    public List<ProtoId<WeightedRandomEntityPrototype>>? RewardPool;
+
+    /// <summary>
+    ///     The base chance to generate an item of power, multiplied by the victim's Dampening stat.
+    /// </summary>
+    [DataField]
+    public float BaseItemChance = 0.1f;
 }
 
-[Serializable, NetSerializable]
 public sealed partial class SacrificeDoAfterEvent : SimpleDoAfterEvent;
