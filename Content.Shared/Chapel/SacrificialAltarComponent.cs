@@ -46,5 +46,3 @@ public sealed partial class SacrificialAltarComponent : Component
     [DataField]
     public float BaseItemChance = 0.1f;
 }
-
-public sealed partial class SacrificeDoAfterEvent : SimpleDoAfterEvent;

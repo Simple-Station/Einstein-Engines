@@ -6,7 +6,7 @@ using Content.Shared.Verbs;
 
 namespace Content.Shared.Chapel;
 
-public abstract class SharedSacrificialAltarSystem : EntitySystem
+public abstract partial class SharedSacrificialAltarSystem : EntitySystem
 {
     [Dependency] protected readonly SharedDoAfterSystem DoAfter = default!;
 
@@ -37,7 +37,7 @@ public abstract class SharedSacrificialAltarSystem : EntitySystem
     {
         if (!args.CanAccess || !args.CanInteract || ent.Comp.DoAfter != null
             || !TryComp<StrapComponent>(ent, out var strap)
-            || GetFirstBuckled(strap) is not {} target)
+            || GetFirstBuckled(strap) is not { } target)
             return;
 
         var user = args.User;
