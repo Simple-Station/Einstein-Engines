@@ -39,6 +39,7 @@ using Robust.Shared.Utility;
 using Content.Server.Shuttles.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics.Joints;
+using Content.Shared.Atmos.Components;
 
 namespace Content.Server.Chat.Systems;
 
@@ -506,7 +507,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
 
-            if (Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
+            if (!HasComp<SharedMapAtmosphereComponent>(Transform(session.AttachedEntity.Value).MapUid)
+                && Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
                 && !CheckAttachedGrids(source, session.AttachedEntity.Value))
                 continue;
 
@@ -712,7 +714,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         var language = languageOverride ?? _language.GetLanguage(source);
         foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? 0.3f : VoiceRange))
         {
-            if (session.AttachedEntity != null
+            if (session.AttachedEntity is not { Valid: true } playerEntity)
+                continue;
+
+            if (!HasComp<SharedMapAtmosphereComponent>(Transform(session.AttachedEntity.Value).MapUid)
                 && Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
                 && !CheckAttachedGrids(source, session.AttachedEntity.Value))
                 continue;
@@ -721,10 +726,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
             var entHideChat = entRange == MessageRangeCheckResult.HideChat;
-            if (session.AttachedEntity is not { Valid: true } playerEntity)
-                continue;
             EntityUid listener = session.AttachedEntity.Value;
-
 
             // If the channel does not support languages, or the entity can understand the message, send the original message, otherwise send the obfuscated version
             if (channel == ChatChannel.LOOC || channel == ChatChannel.Emotes || _language.CanUnderstand(listener, language.ID))
