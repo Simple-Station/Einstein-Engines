@@ -25,9 +25,7 @@
         - TableLayer
   - type: Sprite
     snapCardinals: true
-  #- type: Climbable # DeltaV: remove climbable since it conflicts with strap
   - type: Clickable
-  # Begin DeltaV additions: Sacrificing psionics
   - type: SacrificialAltar
   - type: Strap
     position: Down
@@ -35,7 +33,6 @@
   - type: GuideHelp
     guides:
     - AltarsGolemancy
-  # End DeltaV additions
 
 - type: entity
   id: AltarNanotrasen
