@@ -49,8 +49,6 @@
     - type: loadout
       id: LoadoutItemCelloInstrumentMusician
   # Structure
-  # Yes this does in-fact mean dragging a Piano to the station
-  # TODO: Replace these with Flatpacks
     - type: loadout
       id: LoadoutItemPianoInstrumentMusician
     - type: loadout
