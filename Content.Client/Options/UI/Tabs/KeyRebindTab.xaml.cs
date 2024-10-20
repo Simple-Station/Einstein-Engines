@@ -174,21 +174,25 @@ namespace Content.Client.Options.UI.Tabs
                     return true;
 
                 var optionText = Loc.GetString($"ui-options-function-{CaseConversion.PascalToKebab(function.FunctionName)}");
-                return optionText.StartsWith(_searchText, StringComparison.OrdinalIgnoreCase) || _searchText.Contains(optionText, StringComparison.OrdinalIgnoreCase);
+                return optionText.StartsWith(_searchText, StringComparison.OrdinalIgnoreCase)
+                    || _searchText.Contains(optionText, StringComparison.OrdinalIgnoreCase);
             }
 
             bool ShouldDisplayCheckBox(string checkBoxName)
             {
                 if (_searchText == string.Empty)
                     return true;
+
                 var optionText = Loc.GetString(checkBoxName);
-                return optionText.StartsWith(_searchText, StringComparison.OrdinalIgnoreCase) || _searchText.Contains(optionText, StringComparison.OrdinalIgnoreCase);
+                return optionText.StartsWith(_searchText, StringComparison.OrdinalIgnoreCase)
+                    || _searchText.Contains(optionText, StringComparison.OrdinalIgnoreCase);
             }
 
             void AddButton(BoundKeyFunction function)
             {
                 if (!ShouldDisplayButton(function))
                     return;
+
                 var control = new KeyControl(this, function);
                 KeybindsContainer.AddChild(control);
                 _keyControls.Add(function, control);
@@ -198,6 +202,7 @@ namespace Content.Client.Options.UI.Tabs
             {
                 if (!ShouldDisplayCheckBox(checkBoxName))
                     return;
+
                 CheckBox newCheckBox = new CheckBox() { Text = Loc.GetString(checkBoxName) };
                 newCheckBox.Pressed = currentState;
                 newCheckBox.OnToggled += callBackOnClick;

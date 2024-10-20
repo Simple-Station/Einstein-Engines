@@ -5,6 +5,7 @@
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc 'ui-options-binds-search'}"
+                   Margin="5 0 5 0"
                    FontColorOverride="{xNamespace:Static s:StyleNano.NanoGold}"
                    />
             <LineEdit Name="SearchInput"  HorizontalExpand="True" SizeFlagsStretchRatio="2"/>
