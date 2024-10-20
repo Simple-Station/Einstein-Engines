@@ -9,6 +9,7 @@ namespace Content.Shared.Medical;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
 public sealed partial class PenLightComponent : Component
 {
+
     /// <summary>
     ///     Cooldown Time, exams take a bit
     /// </summary>

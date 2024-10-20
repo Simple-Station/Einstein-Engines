@@ -11,4 +11,10 @@ public sealed partial class TraitCategoryPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; } = default!;
+
+    [DataField]
+    public bool Root;
+
+    [DataField]
+    public List<ProtoId<TraitCategoryPrototype>> SubCategories = new();
 }

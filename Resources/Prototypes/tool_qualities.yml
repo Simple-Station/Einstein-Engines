@@ -67,3 +67,10 @@
   toolName: tool-quality-rolling-tool-name
   spawn: RollingPin
   icon: { sprite: Objects/Tools/rolling_pin.rsi, state: icon }
+
+- type: tool
+  id: Axing
+  name: tool-quality-axing-name
+  toolName: tool-quality-axing-tool-name
+  spawn: FireAxe
+  icon: { sprite: Objects/Weapons/Melee/fireaxe.rsi, state: icon }

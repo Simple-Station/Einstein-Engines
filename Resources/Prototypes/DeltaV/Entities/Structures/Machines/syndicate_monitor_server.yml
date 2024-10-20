@@ -1,7 +1,3 @@
-#Delta-V - This file is licensed under AGPLv3
-# Copyright (c) 2024 Delta-V Contributors
-# See AGPLv3.txt for details.
-
 - type: entity
   id: SyndicateMonitoringServer
   parent: BaseMachinePowered
@@ -27,7 +23,6 @@
         machine_parts: !type:Container
     - type: CrewMonitoringServer
     - type: SingletonDeviceNetServer
-      ServerType: CrewMonitoringServer
     - type: DeviceNetwork
       deviceNetId: Wireless
       transmitFrequencyId: CrewMonitor
@@ -37,7 +32,6 @@
       range: 10000 # Mega range for Listening Post
     - type: ApcPowerReceiver
       powerLoad: 200
-      priority: Low
     - type: ExtensionCableReceiver
     - type: Destructible
       thresholds:

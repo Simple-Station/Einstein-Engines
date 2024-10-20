@@ -43,6 +43,7 @@
   - type: Tool
     qualities:
       - Prying
+      - Axing
   - type: ToolTileCompatible
   - type: Prying
   - type: UseDelay

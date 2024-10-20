@@ -126,28 +126,6 @@ DrinkGoldschlagerGlass: DrinkGildlagerGlass
 ClosetBase: ClosetSteelBase
 MonkeyCubeBox: VariantCubeBox
 
-# 2024-01-08
-SalvagePartsT4Spawner: SalvageLootSpawner
-SalvagePartsT3Spawner: SalvageLootSpawner
-SalvagePartsT3T4Spawner: SalvageLootSpawner
-SalvagePartsT2Spawner: SalvageLootSpawner
-AdvancedCapacitorStockPart: CapacitorStockPart
-SuperCapacitorStockPart: CapacitorStockPart
-QuadraticCapacitorStockPart: CapacitorStockPart
-NanoManipulatorStockPart: MicroManipulatorStockPart
-PicoManipulatorStockPart: MicroManipulatorStockPart
-FemtoManipulatorStockPart: MicroManipulatorStockPart
-AdvancedMatterBinStockPart: MatterBinStockPart
-SuperMatterBinStockPart: MatterBinStockPart
-BluespaceMatterBinStockPart: MatterBinStockPart
-AnsibleSubspaceStockPart: null
-FilterSubspaceStockPart: null
-AmplifierSubspaceStockPart: null
-TreatmentSubspaceStockPart: null
-AnalyzerSubspaceStockPart: null
-CrystalSubspaceStockPart: null
-TransmitterSubspaceStockPart: null
-
 # 2024-01-10
 ClothingHeadHatHoodRad: null
 
@@ -182,7 +160,7 @@ ActionVehicleHorn: null
 CrateFunATV: null
 CrateFunSyndicateSegway: null
 MobTaxiBot: null
-MobSupplyBot: null
+# MobSupplyBot: null
 SpawnVehicleMotobike: null
 SpawnVehicleATV: null
 SpawnVehicleSecway: null
@@ -234,6 +212,8 @@ AirlockShuttleEasyPryLocked: AirlockExternalShuttleLocked
 ClothingBackpackFilledDetective: ClothingBackpackSecurityFilledDetective
 ClothingBackpackDuffelFilledDetective: ClothingBackpackDuffelSecurityFilledDetective
 ClothingBackpackSatchelFilledDetective: ClothingBackpackSatchelSecurityFilledDetective
+FoodChili: FoodChiliPepper
+FoodChilly: FoodChillyPepper
 
 # 2024-03-16
 ClothingHeadHatHairflower: FoodPoppy
@@ -242,6 +222,8 @@ ClothingHeadHatHairflower: FoodPoppy
 RPED: null
 
 # 2024-03-30
+TraversalDistorterMachineCircuitboard: null
+MachineTraversalDistorter: null
 # These are technically not equivalent, but it probably makes more sense to replace any existing SCAF stuff with SOME kind of armor, instead of just deleting it outright.
 ClothingHeadHelmetScaf: ClothingHeadHelmetBasic
 ClothingOuterArmorScaf: ClothingOuterArmorBasic
@@ -254,3 +236,11 @@ BriefcaseSyndieBase: null
 # 2024-04-08
 BodyBag_Container: BodyBag
 BodyBag_Folded: BodyBagFolded
+
+# 2024-04-26
+GlassBoxLaserBroken: GlassBoxBroken
+ReinforcementRadioSyndicateMonkey: ReinforcementRadioSyndicateAncestor
+ReinforcementRadioSyndicateMonkeyNukeops: ReinforcementRadioSyndicateAncestorNukeops
+
+# 2024-05-01
+DrinkBottleGoldschlager: DrinkBottleGildlager

@@ -66,7 +66,7 @@
     damageContainer: Inorganic
     damageModifierSet: Glass
   - type: ExaminableDamage
-    messages: WindowMessages   
+    messages: WindowMessages
   - type: RCDDeconstructable
     cost: 8
     delay: 8
@@ -93,10 +93,11 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: AccessReader
   - type: ContainerFill
     containers:
       board: [ DoorElectronics ]
+  - type: AccessReader
+    containerAccessProvider: board
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -129,8 +130,8 @@
     layoutId: Airlock
   - type: UserInterface
     interfaces:
-    - key: enum.WiresUiKey.Key
-      type: WiresBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Appearance
   - type: WiresVisuals
   - type: Airtight
@@ -145,6 +146,9 @@
   - type: StaticPrice
     price: 100
   - type: PryUnpowered
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
 
 - type: entity
   id: BaseSecureWindoor
@@ -252,7 +256,7 @@
   - type: StaticPrice
     price: 170
   - type: RadiationBlocker
-    resistance: 2
+    resistance: 4
 
 - type: entity
   id: BaseSecurePlasmaWindoor
@@ -307,7 +311,7 @@
   - type: StaticPrice
     price: 312
   - type: RadiationBlocker
-    resistance: 4
+    resistance: 6
 
 #Uranium Windoors
 - type: entity
@@ -362,7 +366,7 @@
   - type: StaticPrice
     price: 180
   - type: RadiationBlocker
-    resistance: 3
+    resistance: 5
 
 - type: entity
   id: BaseSecureUraniumWindoor
@@ -417,4 +421,4 @@
   - type: StaticPrice
     price: 462
   - type: RadiationBlocker
-    resistance: 5
+    resistance: 8

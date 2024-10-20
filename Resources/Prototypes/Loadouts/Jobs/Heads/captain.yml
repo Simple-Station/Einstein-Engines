@@ -1,7 +1,7 @@
 - type: loadout
   id: LoadoutCommandCapNeckMantle
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -12,8 +12,8 @@
 
 - type: loadout
   id: LoadoutCommandCapNeckCloak
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -24,8 +24,8 @@
 
 - type: loadout
   id: LoadoutCommandCapNeckCloakFormal
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -36,8 +36,8 @@
 
 - type: loadout
   id: LoadoutCommandCapJumpsuitFormal
-  category: Jobs
-  cost: 3
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -48,8 +48,8 @@
 
 - type: loadout
   id: LoadoutCommandCapJumpskirtFormal
-  category: Jobs
-  cost: 3
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -60,8 +60,8 @@
 
 - type: loadout
   id: LoadoutCommandCapOuterWinter
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 1
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -71,8 +71,8 @@
 
 - type: loadout
   id: LoadoutCommandCapGloves
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -82,8 +82,8 @@
 
 - type: loadout
   id: LoadoutCommandCapHat
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -93,8 +93,8 @@
 
 - type: loadout
   id: LoadoutCommandCapHatCapcap
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -104,8 +104,8 @@
 
 - type: loadout
   id: LoadoutCommandCapHatBeret
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -115,8 +115,8 @@
 
 - type: loadout
   id: LoadoutCommandCapMaskGas
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -126,15 +126,10 @@
 
 - type: loadout
   id: LoadoutCommandCapShoesBootsWinter
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Captain
@@ -143,7 +138,7 @@
 
 - type: loadout
   id: LoadoutCommandCapItemDrinkFlask
-  category: Jobs
+  category: JobsCommand
   cost: 1
   requirements:
     - !type:CharacterJobRequirement

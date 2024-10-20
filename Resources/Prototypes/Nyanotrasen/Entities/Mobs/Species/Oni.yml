@@ -40,11 +40,13 @@
     proto: oni
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - Nekomimetic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Nekomimetic
+  - type: PotentiaModifier
+    potentiaMultiplier: 0.5
 
 - type: entity
   save: false

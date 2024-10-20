@@ -1,7 +1,6 @@
 using System.Linq;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Language;
-using Content.Server.Language.Events;
 using Content.Server.Speech.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Language;
@@ -41,7 +40,7 @@ public sealed partial class MakeSentient : ReagentEffect
         if (!knowledge.SpokenLanguages.Contains(fallback))
             knowledge.SpokenLanguages.Add(fallback);
 
-        IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>().UpdateEntityLanguages(uid, speaker);
+        IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>().UpdateEntityLanguages(uid);
 
         // Stops from adding a ghost role to things like people who already have a mind
         if (entityManager.TryGetComponent<MindContainerComponent>(uid, out var mindContainer) && mindContainer.HasMind)

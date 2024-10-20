@@ -512,6 +512,51 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("assigned_user_id", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.BanTemplate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("ban_template_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("AutoDelete")
+                        .HasColumnType("boolean")
+                        .HasColumnName("auto_delete");
+
+                    b.Property<int>("ExemptFlags")
+                        .HasColumnType("integer")
+                        .HasColumnName("exempt_flags");
+
+                    b.Property<bool>("Hidden")
+                        .HasColumnType("boolean")
+                        .HasColumnName("hidden");
+
+                    b.Property<TimeSpan>("Length")
+                        .HasColumnType("interval")
+                        .HasColumnName("length");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("reason");
+
+                    b.Property<int>("Severity")
+                        .HasColumnType("integer")
+                        .HasColumnName("severity");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("title");
+
+                    b.HasKey("Id")
+                        .HasName("PK_ban_template");
+
+                    b.ToTable("ban_template", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
                     b.Property<int>("Id")
@@ -777,6 +822,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("clothing");
 
+                    b.Property<string>("CustomSpecieName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("custom_specie_name");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("text")
@@ -812,15 +862,9 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("hair_name");
 
-					// Parkstation-HeightSlider Start
                     b.Property<float>("Height")
                         .HasColumnType("real")
                         .HasColumnName("height");
-
-                    b.Property<float>("Width")
-                        .HasColumnType("real")
-                        .HasColumnName("width");
-                    // Parkstation-HeightSlider End
 
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")
@@ -857,6 +901,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("species");
 
+                    b.Property<float>("Width")
+                        .HasColumnType("real")
+                        .HasColumnName("width");
+
                     b.HasKey("Id")
                         .HasName("PK_profile");
 
@@ -867,6 +915,22 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsUnique();
 
                     b.ToTable("profile", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.RoleWhitelist", b =>
+                {
+                    b.Property<Guid>("PlayerUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("player_user_id");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("text")
+                        .HasColumnName("role_id");
+
+                    b.HasKey("PlayerUserId", "RoleId")
+                        .HasName("PK_role_whitelists");
+
+                    b.ToTable("role_whitelists", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.Round", b =>
@@ -1568,6 +1632,19 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Preference");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.RoleWhitelist", b =>
+                {
+                    b.HasOne("Content.Server.Database.Player", "Player")
+                        .WithMany("JobWhitelists")
+                        .HasForeignKey("PlayerUserId")
+                        .HasPrincipalKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_role_whitelists_player_player_user_id");
+
+                    b.Navigation("Player");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Round", b =>
                 {
                     b.HasOne("Content.Server.Database.Server", "Server")
@@ -1767,6 +1844,8 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("AdminWatchlistsLastEdited");
 
                     b.Navigation("AdminWatchlistsReceived");
+
+                    b.Navigation("JobWhitelists");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Preference", b =>

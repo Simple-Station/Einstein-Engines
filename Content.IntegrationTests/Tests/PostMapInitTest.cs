@@ -49,16 +49,21 @@ namespace Content.IntegrationTests.Tests
             "CentComm",
             "MeteorArena",
             "NukieOutpost",
+            "Core",
             "Pebble", //DeltaV
             "Edge", //DeltaV
+            "Saltern",
             "Shoukou", //DeltaV
             "Tortuga", //DeltaV
             "Arena", //DeltaV
             "Asterisk", //DeltaV
+            "Glacier", //DeltaV
             "TheHive", //DeltaV
             "Hammurabi", //DeltaV
             "Lighthouse", //DeltaV
-			"Submarine" //DeltaV
+            "Submarine", //DeltaV
+            "Gax",
+            "Rad"
         };
 
         /// <summary>
@@ -150,7 +155,10 @@ namespace Content.IntegrationTests.Tests
         [Test, TestCaseSource(nameof(GameMaps))]
         public async Task GameMapsLoadableTest(string mapProto)
         {
-            await using var pair = await PoolManager.GetServerClient();
+            await using var pair = await PoolManager.GetServerClient(new PoolSettings
+            {
+                Dirty = true // Stations spawn a bunch of nullspace entities and maps like centcomm.
+            });
             var server = pair.Server;
 
             var mapManager = server.ResolveDependency<IMapManager>();

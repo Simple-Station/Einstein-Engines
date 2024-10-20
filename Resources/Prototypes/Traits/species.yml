@@ -1,7 +1,7 @@
 - type: trait
   id: Swashbuckler
   category: Physical
-  points: -1
+  points: -2
   components:
   - type: OniDamageModifier
     modifiers:
@@ -22,7 +22,7 @@
 - type: trait
   id: Spearmaster
   category: Physical
-  points: -1
+  points: -2
   components:
   - type: OniDamageModifier
     modifiers:
@@ -43,7 +43,7 @@
 - type: trait
   id: WeaponsGeneralist
   category: Physical
-  points: -1
+  points: -2
   components:
   - type: OniDamageModifier
     modifiers:

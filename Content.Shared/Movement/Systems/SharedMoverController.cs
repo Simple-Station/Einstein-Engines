@@ -64,11 +64,6 @@ namespace Content.Shared.Movement.Systems
         protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery;
         protected EntityQuery<NoRotateOnMoveComponent> NoRotateQuery;
 
-        private const float StepSoundMoveDistanceRunning = 2;
-        private const float StepSoundMoveDistanceWalking = 1.5f;
-
-        private const float FootstepVariation = 0f;
-
         /// <summary>
         /// <see cref="CCVars.StopSpeed"/>
         /// </summary>
@@ -98,6 +93,7 @@ namespace Content.Shared.Movement.Systems
 
             InitializeInput();
             InitializeRelay();
+            InitializeCVars();
             Subs.CVar(_configManager, CCVars.RelativeMovement, value => _relativeMovement = value, true);
             Subs.CVar(_configManager, CCVars.StopSpeed, value => _stopSpeed = value, true);
             UpdatesBefore.Add(typeof(TileFrictionController));
@@ -273,7 +269,7 @@ namespace Content.Shared.Movement.Systems
 
                     var audioParams = sound.Params
                         .WithVolume(volume)
-                        .WithVariation(sound.Params.Variation ?? FootstepVariation);
+                        .WithVariation(sound.Params.Variation ?? mobMover.FootstepVariation);
 
                     // If we're a relay target then predict the sound for all relays.
                     if (relayTarget != null)
@@ -298,10 +294,9 @@ namespace Content.Shared.Movement.Systems
             PhysicsSystem.SetAngularVelocity(physicsUid, 0, body: physicsComponent);
         }
 
-        private void WalkingAlert(EntityUid player, bool walking)
+        private void WalkingAlert(EntityUid player, InputMoverComponent component)
         {
-            walking = _configManager.GetCVar(CCVars.GamePressToSprint) ? !walking : walking;
-            _alerts.ShowAlert(player, AlertType.Walking, walking ? (short) 0 : (short) 1);
+            _alerts.ShowAlert(player, AlertType.Walking, component.Sprinting ? (short) 1 : (short) 0);
         }
 
         public void LerpRotation(EntityUid uid, InputMoverComponent mover, float frameTime)
@@ -425,7 +420,9 @@ namespace Content.Shared.Movement.Systems
                 return false;
 
             var coordinates = xform.Coordinates;
-            var distanceNeeded = mover.Sprinting ? StepSoundMoveDistanceRunning : StepSoundMoveDistanceWalking;
+            var distanceNeeded = mover.Sprinting
+                ? mobMover.StepSoundMoveDistanceRunning
+                : mobMover.StepSoundMoveDistanceWalking;
 
             // Handle footsteps.
             if (!weightless)

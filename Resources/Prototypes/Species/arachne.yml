@@ -26,7 +26,16 @@
     Chest:
       points: 1
       required: false
-    Arms:
+    RightArm:
+      points: 2
+      required: false
+    RightHand:
+      points: 2
+      required: false
+    LeftArm:
+      points: 2
+      required: false
+    LeftHand:
       points: 2
       required: false
 

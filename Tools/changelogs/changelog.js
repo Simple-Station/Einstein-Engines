@@ -57,6 +57,7 @@ async function main() {
         changes: entries,
         id: getHighestCLNumber() + 1,
         time: time,
+        url: `https://github.com/${process.env.GITHUB_REPOSITORY}/pull/${process.env.PR_NUMBER}`
     };
 
     // Write changelogs

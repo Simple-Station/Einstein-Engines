@@ -76,10 +76,12 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<MicrowaveComponent, PowerChangedEvent>(OnPowerChanged);
             SubscribeLocalEvent<MicrowaveComponent, AnchorStateChangedEvent>(OnAnchorChanged);
             SubscribeLocalEvent<MicrowaveComponent, SuicideEvent>(OnSuicide);
+            SubscribeLocalEvent<MicrowaveComponent, RefreshPartsEvent>(OnRefreshParts);
+            SubscribeLocalEvent<MicrowaveComponent, UpgradeExamineEvent>(OnUpgradeExamine);
 
             SubscribeLocalEvent<MicrowaveComponent, SignalReceivedEvent>(OnSignalReceived);
 
-            SubscribeLocalEvent<MicrowaveComponent, MicrowaveStartCookMessage>((u, c, m) => Wzhzhzh(u, c, m.Session.AttachedEntity));
+            SubscribeLocalEvent<MicrowaveComponent, MicrowaveStartCookMessage>((u, c, m) => Wzhzhzh(u, c, m.Actor));
             SubscribeLocalEvent<MicrowaveComponent, MicrowaveEjectMessage>(OnEjectMessage);
             SubscribeLocalEvent<MicrowaveComponent, MicrowaveEjectSolidIndexedMessage>(OnEjectIndex);
             SubscribeLocalEvent<MicrowaveComponent, MicrowaveSelectCookTimeMessage>(OnSelectTime);
@@ -271,6 +273,9 @@ namespace Content.Server.Kitchen.EntitySystems
 
         private void OnContentUpdate(EntityUid uid, MicrowaveComponent component, ContainerModifiedMessage args) // For some reason ContainerModifiedMessage just can't be used at all with Entity<T>. TODO: replace with Entity<T> syntax once that's possible
         {
+            if (component.Storage != args.Container)
+                return;
+
             UpdateUserInterfaceState(uid, component);
         }
 
@@ -342,6 +347,17 @@ namespace Content.Server.Kitchen.EntitySystems
                 _container.EmptyContainer(component.Storage);
         }
 
+        private void OnRefreshParts(Entity<MicrowaveComponent> ent, ref RefreshPartsEvent args)
+        {
+            var cookRating = args.PartRatings[ent.Comp.MachinePartCookTimeMultiplier];
+            ent.Comp.CookTimeMultiplier = MathF.Pow(ent.Comp.CookTimeScalingConstant, cookRating - 1);
+        }
+
+        private void OnUpgradeExamine(Entity<MicrowaveComponent> ent, ref UpgradeExamineEvent args)
+        {
+            args.AddPercentageUpgrade("microwave-component-upgrade-cook-time", ent.Comp.CookTimeMultiplier);
+        }
+
         private void OnSignalReceived(Entity<MicrowaveComponent> ent, ref SignalReceivedEvent args)
         {
             if (args.Port != ent.Comp.OnPort)
@@ -355,11 +371,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
         public void UpdateUserInterfaceState(EntityUid uid, MicrowaveComponent component)
         {
-            var ui = _userInterface.GetUiOrNull(uid, MicrowaveUiKey.Key);
-            if (ui == null)
-                return;
-
-            _userInterface.SetUiState(ui, new MicrowaveUpdateUserInterfaceState(
+            _userInterface.SetUiState(uid, MicrowaveUiKey.Key, new MicrowaveUpdateUserInterfaceState(
                 GetNetEntityArray(component.Storage.ContainedEntities.ToArray()),
                 HasComp<ActiveMicrowaveComponent>(uid),
                 component.CurrentCookTimeButtonIndex,

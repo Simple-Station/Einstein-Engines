@@ -23,8 +23,8 @@
         ents: []
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   # to prevent bag open/honk spam
   - type: UseDelay
     delay: 0.5
@@ -145,6 +145,15 @@
   components:
   - type: Sprite
     sprite: Clothing/Back/Backpacks/science.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackRobotics
+  name: robotics backpack
+  description: A sturdy backpack to store all the tools and parts.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/robotics.rsi
 
 - type: entity
   parent: ClothingBackpack

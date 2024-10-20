@@ -228,7 +228,8 @@ public sealed partial class ClimbSystem : VirtualController
         {
             BreakOnTargetMove = true,
             BreakOnUserMove = true,
-            BreakOnDamage = true
+            BreakOnDamage = true,
+            DuplicateCondition = DuplicateConditions.SameTool | DuplicateConditions.SameTarget
         };
 
         _audio.PlayPredicted(comp.StartClimbSound, climbable, user);
@@ -471,6 +472,11 @@ public sealed partial class ClimbSystem : VirtualController
     public void ForciblySetClimbing(EntityUid uid, EntityUid climbable, ClimbingComponent? component = null)
     {
         Climb(uid, uid, climbable, true, component);
+    }
+
+    public void ForciblyStopClimbing(EntityUid uid, ClimbingComponent? climbing = null, FixturesComponent? fixtures = null)
+    {
+        StopClimb(uid, climbing, fixtures);
     }
 
     private void OnBuckleChange(EntityUid uid, ClimbingComponent component, ref BuckleChangeEvent args)

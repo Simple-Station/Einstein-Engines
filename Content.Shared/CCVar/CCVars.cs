@@ -1,6 +1,8 @@
+using Content.Shared.Maps;
 using Content.Shared.Supermatter.Components;
 using Robust.Shared;
 using Robust.Shared.Configuration;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Shared.CCVar
 {
@@ -178,40 +180,56 @@ namespace Content.Shared.CCVar
         ///     Minimum time between Basic station events in seconds
         /// </summary>
         public static readonly CVarDef<int> // 5 Minutes
-            GameEventsBasicMinimumTime = CVarDef.Create("game.events_basic_minimum_time", 300, CVar.SERVERONLY);
+            GameEventsBasicMinimumTime = CVarDef.Create("game.events_basic_minimum_time", 300, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
         ///     Maximum time between Basic station events in seconds
         /// </summary>
         public static readonly CVarDef<int> // 25 Minutes
-            GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 1500, CVar.SERVERONLY);
+            GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 1500, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
         ///     Minimum time between Ramping station events in seconds
         /// </summary>
         public static readonly CVarDef<int> // 4 Minutes
-            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 240, CVar.SERVERONLY);
+            GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 240, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
         ///     Maximum time between Ramping station events in seconds
         /// </summary>
         public static readonly CVarDef<int> // 12 Minutes
-            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 720, CVar.SERVERONLY);
+            GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 720, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
-        ///
+        ///     Minimum time between Oscillating station events in seconds. This is the bare minimum which will never be violated, unlike with ramping events.
+        /// </summary>
+        public static readonly CVarDef<int> // 40 seconds
+            GameEventsOscillatingMinimumTime = CVarDef.Create("game.events_oscillating_minimum_time", 40, CVar.SERVERONLY | CVar.ARCHIVE);
+
+        /// <summary>
+        ///     Time between Oscillating station events in seconds at 1x chaos level. Events may occur at larger intervals if current chaos is lower than that.
+        /// </summary>
+        public static readonly CVarDef<int> // 20 Minutes - which constitutes a minimum of 120 seconds between events in Irregular and 280 seconds in Extended Irregular
+            GameEventsOscillatingAverageTime = CVarDef.Create("game.events_oscillating_average_time", 1200, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
         ///     Controls the maximum number of character slots a player is allowed to have.
         /// </summary>
         public static readonly CVarDef<int>
-            GameMaxCharacterSlots = CVarDef.Create("game.maxcharacterslots", 10, CVar.ARCHIVE | CVar.SERVERONLY);
+            GameMaxCharacterSlots = CVarDef.Create("game.maxcharacterslots", 30, CVar.ARCHIVE | CVar.SERVERONLY);
 
         /// <summary>
         ///     Controls the game map prototype to load. SS14 stores these prototypes in Prototypes/Maps.
         /// </summary>
         public static readonly CVarDef<string>
             GameMap = CVarDef.Create("game.map", string.Empty, CVar.SERVERONLY);
+
+        /// <summary>
+        /// If roles should be restricted based on whether or not they are whitelisted.
+        /// </summary>
+        public static readonly CVarDef<bool>
+            GameRoleWhitelist = CVarDef.Create("game.role_whitelist", true, CVar.SERVER | CVar.REPLICATED);
+
 
         /// <summary>
         ///     Controls whether to use world persistence or not.
@@ -367,7 +385,7 @@ namespace Content.Shared.CCVar
         ///     How many points a character should start with.
         /// </summary>
         public static readonly CVarDef<int> GameTraitsDefaultPoints =
-            CVarDef.Create("game.traits_default_points", 5, CVar.REPLICATED);
+            CVarDef.Create("game.traits_default_points", 10, CVar.REPLICATED);
 
 
         /// <summary>
@@ -395,12 +413,11 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> GameAutoEatDrinks =
             CVarDef.Create("game.auto_eat_drinks", false, CVar.REPLICATED);
 
-
         /// <summary>
-        ///     When true, you have to press the change speed button to sprint.
+        ///     Whether item slots, such as power cell slots or AME fuel cell slots, should support quick swap if it is not otherwise specified in their YAML prototype.
         /// </summary>
-        public static readonly CVarDef<bool> GamePressToSprint =
-            CVarDef.Create("game.press_to_sprint", true, CVar.REPLICATED);
+        public static readonly CVarDef<bool> AllowSlotQuickSwap =
+            CVarDef.Create("game.slot_quick_swap", false, CVar.REPLICATED);
 
 #if EXCEPTION_TOLERANCE
         /// <summary>
@@ -465,6 +482,12 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> AnnouncerVolume =
             CVarDef.Create("announcer.volume", 0.5f, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+        /// <summary>
+        ///     Disables multiple announcement sounds from playing at once
+        /// </summary>
+        public static readonly CVarDef<bool> AnnouncerDisableMultipleSounds =
+            CVarDef.Create("announcer.disable_multiple_sounds", false, CVar.ARCHIVE | CVar.CLIENTONLY);
 
 
         /*
@@ -537,91 +560,6 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<string> DiscordAuthApiKey =
             CVarDef.Create("discord.auth_api_key", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
-
-        /*
-         * Suspicion
-         */
-
-        public static readonly CVarDef<int> SuspicionMinPlayers =
-            CVarDef.Create("suspicion.min_players", 5);
-
-        public static readonly CVarDef<int> SuspicionMinTraitors =
-            CVarDef.Create("suspicion.min_traitors", 2);
-
-        public static readonly CVarDef<int> SuspicionPlayersPerTraitor =
-            CVarDef.Create("suspicion.players_per_traitor", 6);
-
-        public static readonly CVarDef<int> SuspicionStartingBalance =
-            CVarDef.Create("suspicion.starting_balance", 20);
-
-        public static readonly CVarDef<int> SuspicionMaxTimeSeconds =
-            CVarDef.Create("suspicion.max_time_seconds", 300);
-
-        /*
-         * Traitor
-         */
-
-        public static readonly CVarDef<int> TraitorMinPlayers =
-            CVarDef.Create("traitor.min_players", 5);
-
-        public static readonly CVarDef<int> TraitorMaxTraitors =
-            CVarDef.Create("traitor.max_traitors", 12); // Assuming average server maxes somewhere from like 50-80 people
-
-        public static readonly CVarDef<int> TraitorPlayersPerTraitor =
-            CVarDef.Create("traitor.players_per_traitor", 10);
-
-        public static readonly CVarDef<int> TraitorCodewordCount =
-            CVarDef.Create("traitor.codeword_count", 4);
-
-        public static readonly CVarDef<int> TraitorStartingBalance =
-            CVarDef.Create("traitor.starting_balance", 20);
-
-        public static readonly CVarDef<int> TraitorMaxDifficulty =
-            CVarDef.Create("traitor.max_difficulty", 5);
-
-        public static readonly CVarDef<int> TraitorMaxPicks =
-            CVarDef.Create("traitor.max_picks", 20);
-
-        public static readonly CVarDef<float> TraitorStartDelay =
-            CVarDef.Create("traitor.start_delay", 4f * 60f);
-
-        public static readonly CVarDef<float> TraitorStartDelayVariance =
-            CVarDef.Create("traitor.start_delay_variance", 3f * 60f);
-
-        /*
-         * TraitorDeathMatch
-         */
-
-        public static readonly CVarDef<int> TraitorDeathMatchStartingBalance =
-            CVarDef.Create("traitordm.starting_balance", 20);
-
-        /*
-         * Zombie
-         */
-
-        public static readonly CVarDef<int> ZombieMinPlayers =
-            CVarDef.Create("zombie.min_players", 20);
-
-        /*
-         * Pirates
-         */
-
-        public static readonly CVarDef<int> PiratesMinPlayers =
-            CVarDef.Create("pirates.min_players", 25);
-
-        public static readonly CVarDef<int> PiratesMaxOps =
-            CVarDef.Create("pirates.max_pirates", 6);
-
-        public static readonly CVarDef<int> PiratesPlayersPerOp =
-            CVarDef.Create("pirates.players_per_pirate", 5);
-
-        /*
-         * Nukeops
-         */
-
-        public static readonly CVarDef<bool> NukeopsSpawnGhostRoles =
-            CVarDef.Create("nukeops.spawn_ghost_roles", false);
-
         /*
          * Tips
          */
@@ -653,6 +591,12 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<string> LoginTipsDataset =
             CVarDef.Create("tips.login_dataset", "Tips");
+
+        /// <summary>
+        ///     The chance for Tippy to replace a normal tip message.
+        /// </summary>
+        public static readonly CVarDef<float> TipsTippyChance =
+            CVarDef.Create("tips.tippy_chance", 0.01f);
 
         /*
          * Console
@@ -842,7 +786,6 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
             CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
-
         public static readonly CVarDef<bool> LoocAboveHeadShow =
             CVarDef.Create("hud.show_looc_above_head", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 
@@ -931,19 +874,43 @@ namespace Content.Shared.CCVar
         /// Default severity for role bans
         /// </summary>
         public static readonly CVarDef<string> RoleBanDefaultSeverity =
-            CVarDef.Create("admin.role_ban_default_severity", "medium", CVar.ARCHIVE | CVar.SERVER);
+            CVarDef.Create("admin.role_ban_default_severity", "medium", CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         /// Default severity for department bans
         /// </summary>
         public static readonly CVarDef<string> DepartmentBanDefaultSeverity =
-            CVarDef.Create("admin.department_ban_default_severity", "medium", CVar.ARCHIVE | CVar.SERVER);
+            CVarDef.Create("admin.department_ban_default_severity", "medium", CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         /// Default severity for server bans
         /// </summary>
         public static readonly CVarDef<string> ServerBanDefaultSeverity =
-            CVarDef.Create("admin.server_ban_default_severity", "High", CVar.ARCHIVE | CVar.SERVER);
+            CVarDef.Create("admin.server_ban_default_severity", "High", CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
+        /// Whether a server ban will ban the player's ip by default.
+        /// </summary>
+        public static readonly CVarDef<bool> ServerBanIpBanDefault =
+            CVarDef.Create("admin.server_ban_ip_ban_default", true, CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
+        /// Whether a server ban will ban the player's hardware id by default.
+        /// </summary>
+        public static readonly CVarDef<bool> ServerBanHwidBanDefault =
+            CVarDef.Create("admin.server_ban_hwid_ban_default", true, CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
+        /// Whether to use details from last connection for ip/hwid in the BanPanel.
+        /// </summary>
+        public static readonly CVarDef<bool> ServerBanUseLastDetails =
+            CVarDef.Create("admin.server_ban_use_last_details", true, CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
+        /// Whether to erase a player's chat messages and their entity from the game when banned.
+        /// </summary>
+        public static readonly CVarDef<bool> ServerBanErasePlayer =
+            CVarDef.Create("admin.server_ban_erase_player", false, CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         ///     Minimum explosion intensity to create an admin alert message. -1 to disable the alert.
@@ -1087,6 +1054,13 @@ namespace Content.Shared.CCVar
         /// </remarks>
         public static readonly CVarDef<int> ExplosionSingleTickAreaLimit =
             CVarDef.Create("explosion.single_tick_area_limit", 400, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Whether or not explosions are allowed to create tiles that have
+        ///     <see cref="ContentTileDefinition.MapAtmosphere"/> set to true.
+        /// </summary>
+        public static readonly CVarDef<bool> ExplosionCanCreateVacuum =
+            CVarDef.Create("explosion.can_create_vacuum", true, CVar.SERVERONLY);
 
         /*
          * Radiation
@@ -1570,7 +1544,7 @@ namespace Content.Shared.CCVar
         /// Whether the arrivals shuttle is enabled.
         /// </summary>
         public static readonly CVarDef<bool> ArrivalsShuttles =
-            CVarDef.Create("shuttle.arrivals", false, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.arrivals", true, CVar.SERVERONLY);
 
         /// <summary>
         /// The map to use for the arrivals station.
@@ -1585,6 +1559,18 @@ namespace Content.Shared.CCVar
             CVarDef.Create("shuttle.arrivals_cooldown", 50f, CVar.SERVERONLY);
 
         /// <summary>
+        /// Time it takes the shuttle to spin up it's hyper drive and jump
+        /// </summary>
+        public static readonly CVarDef<float> ArrivalsStartupTime=
+            CVarDef.Create("shuttle.arrivals_startup_time", 5.5f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Time spent in hyperspace
+        /// </summary>
+        public static readonly CVarDef<float> ArrivalsHyperspaceTime =
+            CVarDef.Create("shuttle.arrivals_hyperspace_time", 20f, CVar.SERVERONLY);
+
+        /// <summary>
         /// Are players allowed to return on the arrivals shuttle.
         /// </summary>
         public static readonly CVarDef<bool> ArrivalsReturns =
@@ -1595,6 +1581,49 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> GridFill =
             CVarDef.Create("shuttle.grid_fill", true, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Whether to automatically preloading grids by GridPreloaderSystem
+        /// </summary>
+        public static readonly CVarDef<bool> PreloadGrids =
+            CVarDef.Create("shuttle.preload_grids", true, CVar.SERVERONLY);
+
+        /// <summary>
+        /// How long the warmup time before FTL start should be.
+        /// </summary>
+        public static readonly CVarDef<float> FTLStartupTime =
+            CVarDef.Create("shuttle.startup_time", 5.5f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// How long a shuttle spends in FTL.
+        /// </summary>
+        public static readonly CVarDef<float> FTLTravelTime =
+            CVarDef.Create("shuttle.travel_time", 20f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// How long the final stage of FTL before arrival should be.
+        /// </summary>
+        public static readonly CVarDef<float> FTLArrivalTime =
+            CVarDef.Create("shuttle.arrival_time", 5f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// How much time needs to pass before a shuttle can FTL again.
+        /// </summary>
+        public static readonly CVarDef<float> FTLCooldown =
+            CVarDef.Create("shuttle.cooldown", 10f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// The maximum <see cref="PhysicsComponent.Mass"/> a grid can have before it becomes unable to FTL.
+        /// Any value equal to or less than zero will disable this check.
+        /// </summary>
+        public static readonly CVarDef<float> FTLMassLimit =
+            CVarDef.Create("shuttle.mass_limit", 300f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// How long to knock down entities for if they aren't buckled when FTL starts and stops.
+        /// </summary>
+        public static readonly CVarDef<float> HyperspaceKnockdownTime =
+            CVarDef.Create("shuttle.hyperspace_knockdown_time", 5f, CVar.SERVERONLY);
 
         /*
          * Emergency
@@ -1620,6 +1649,7 @@ namespace Content.Shared.CCVar
 
         /// <summary>
         /// The minimum time for the emergency shuttle to arrive at centcomm.
+        /// Actual minimum travel time cannot be less than <see cref="ShuttleSystem.DefaultArrivalTime"/>
         /// </summary>
         public static readonly CVarDef<float> EmergencyShuttleMinTransitTime =
             CVarDef.Create("shuttle.emergency_transit_time_min", 90f, CVar.SERVERONLY);
@@ -1678,16 +1708,63 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> CrewManifestUnsecure =
             CVarDef.Create("crewmanifest.unsecure", true, CVar.REPLICATED);
 
-        /*
-         * Biomass
-         */
+        #region Cloning
 
         /// <summary>
-        ///     Enabled: Cloning has 70% cost and reclaimer will refuse to reclaim corpses with souls. (For LRP).
-        ///     Disabled: Cloning has full biomass cost and reclaimer can reclaim corpses with souls. (Playtested and balanced for MRP+).
+        ///     How much should the cost to clone an entity be multiplied by.
         /// </summary>
-        public static readonly CVarDef<bool> BiomassEasyMode =
-            CVarDef.Create("biomass.easy_mode", false, CVar.SERVERONLY);
+        public static readonly CVarDef<float> CloningBiomassCostMultiplier =
+            CVarDef.Create("cloning.biomass_cost_multiplier", 1f, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Whether or not the Biomass Reclaimer is allowed to roundremove bodies with a soul.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningReclaimSouledBodies =
+            CVarDef.Create("cloning.reclaim_souled_bodies", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis will potentially give people a sex change.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveSex =
+            CVarDef.Create("cloning.preserve_sex", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves Pronouns when reincarnating people.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveGender =
+            CVarDef.Create("cloning.preserve_gender", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves Age.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveAge =
+            CVarDef.Create("cloning.preserve_age", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves height.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveHeight =
+            CVarDef.Create("cloning.preserve_height", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves width.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveWidth =
+            CVarDef.Create("cloning.preserve_width", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves Names. EG: Are you actually a new person?
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveName =
+            CVarDef.Create("cloning.preserve_name", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Controls whether or not Metempsychosis preserves Flavor Text.
+        /// </summary>
+        public static readonly CVarDef<bool> CloningPreserveFlavorText =
+            CVarDef.Create("cloning.preserve_flavor_text", true, CVar.SERVERONLY);
+
+        #endregion
 
         /*
          * Anomaly
@@ -1727,6 +1804,9 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<int> ViewportWidth =
             CVarDef.Create("viewport.width", 21, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+        public static readonly CVarDef<bool> ViewportVerticalFit =
+            CVarDef.Create("viewport.vertical_fit", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 
         /*
          * FOV
@@ -1794,6 +1874,12 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> AccessibilityColorblindFriendly =
             CVarDef.Create("accessibility.colorblind_friendly", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+        /// <summary>
+        /// Disables all vision filters for species like Vulpkanin or Harpies. There are good reasons someone might want to disable these.
+        /// </summary>
+        public static readonly CVarDef<bool> NoVisionFilters =
+            CVarDef.Create("accessibility.no_vision_filters", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
         /*
          * CHAT
@@ -2023,6 +2109,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> ToggleWalk =
             CVarDef.Create("control.toggle_walk", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+        /// <summary>
+        /// Whether the player mob is walking by default instead of running.
+        /// </summary>
+        public static readonly CVarDef<bool> DefaultWalk =
+            CVarDef.Create("control.default_walk", true, CVar.CLIENT | CVar.REPLICATED | CVar.ARCHIVE);
+
         /*
          * STORAGE
          */
@@ -2241,6 +2333,10 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> GatewayGeneratorEnabled =
             CVarDef.Create("gateway.generator_enabled", true);
 
+        // Clippy!
+        public static readonly CVarDef<string> TippyEntity =
+            CVarDef.Create("tippy.entity", "Tippy", CVar.SERVER | CVar.REPLICATED);
+
         /*
          * DEBUG
          */
@@ -2289,6 +2385,15 @@ namespace Content.Shared.CCVar
             CVarDef.Create("heightadjust.modifies_zoom", false, CVar.SERVERONLY);
 
         /// <summary>
+        ///     Whether height & width sliders adjust a player's bloodstream volume.
+        /// </summary>
+        /// <remarks>
+        ///     This can be configured more precisely by modifying BloodstreamAffectedByMassComponent.
+        /// </remarks>
+        public static readonly CVarDef<bool> HeightAdjustModifiesBloodstream =
+            CVarDef.Create("heightadjust.modifies_bloodstream", true, CVar.SERVERONLY);
+
+        /// <summary>
         ///     Enables station goals
         /// </summary>
         public static readonly CVarDef<bool> StationGoalsEnabled =
@@ -2299,7 +2404,7 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> StationGoalsChance =
             CVarDef.Create("game.station_goals_chance", 0.1f, CVar.SERVERONLY);
-            
+
 
         #region CPR System
         /// <summary>
@@ -2346,7 +2451,7 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> CPRAirlossReductionMultiplier =
             CVarDef.Create("cpr.airloss_reduction_multiplier", 1f, CVar.REPLICATED | CVar.SERVER);
-            
+
         #endregion
 
         #region Contests System
@@ -2463,6 +2568,64 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<bool> MoodDecreasesSpeed =
             CVarDef.Create("mood.decreases_speed", true, CVar.SERVER);
+
+        public static readonly CVarDef<bool> MoodModifiesThresholds =
+            CVarDef.Create("mood.modify_thresholds", false, CVar.SERVER);
+
+        #endregion
+
+        #region Lying Down System
+
+        public static readonly CVarDef<bool> AutoGetUp =
+            CVarDef.Create("rest.auto_get_up", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
+
+        public static readonly CVarDef<bool> HoldLookUp =
+            CVarDef.Create("rest.hold_look_up", false, CVar.CLIENT | CVar.ARCHIVE);
+
+        /// <summary>
+        ///     When true, players can choose to crawl under tables while laying down, using the designated keybind.
+        /// </summary>
+        public static readonly CVarDef<bool> CrawlUnderTables =
+            CVarDef.Create("rest.crawlundertables", true, CVar.SERVER | CVar.ARCHIVE);
+
+        #endregion
+
+        #region Material Reclaimer
+
+        /// <summary>
+        ///     Whether or not a Material Reclaimer is allowed to eat people when emagged.
+        /// </summary>
+        public static readonly CVarDef<bool> ReclaimerAllowGibbing =
+            CVarDef.Create("reclaimer.allow_gibbing", true, CVar.SERVER);
+
+        #endregion
+
+        #region Jetpack System
+
+        /// <summary>
+        ///     When true, Jetpacks can be enabled anywhere, even in gravity.
+        /// </summary>
+        public static readonly CVarDef<bool> JetpackEnableAnywhere =
+            CVarDef.Create("jetpack.enable_anywhere", false, CVar.REPLICATED);
+
+        /// <summary>
+        ///     When true, jetpacks can be enabled on grids that have zero gravity.
+        /// </summary>
+        public static readonly CVarDef<bool> JetpackEnableInNoGravity =
+            CVarDef.Create("jetpack.enable_in_no_gravity", true, CVar.REPLICATED);
+
+        #endregion
+
+        #region GhostRespawn
+
+        public static readonly CVarDef<double> GhostRespawnTime =
+            CVarDef.Create("ghost.respawn_time", 15d, CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> GhostRespawnMaxPlayers =
+            CVarDef.Create("ghost.respawn_max_players", 40, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> GhostAllowSameCharacter =
+            CVarDef.Create("ghost.allow_same_character", false, CVar.SERVERONLY);
 
         #endregion
     }

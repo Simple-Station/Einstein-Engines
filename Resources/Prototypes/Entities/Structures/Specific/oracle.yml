@@ -2,7 +2,7 @@
   parent: BaseStructure
   id: Oracle
   name: Oracle
-  description: It asks for items in exchange for knowledge. No one knows how it works.
+  description: She asks for items in exchange for knowledge. No one knows how she works.
   components:
   - type: Sprite
     noRot: true
@@ -15,13 +15,24 @@
         state: oracle-0
   - type: Speech
     speechSounds: Tenor
+  - type: Actions
   - type: Psionic
+    removable: false
+    psychognomicDescriptors:
+      - p-descriptor-old
+      - p-descriptor-demiurgic
+      - p-descriptor-mysterious
+      - p-descriptor-emanative
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+      - NoosphericZapPower
   - type: SolutionContainerManager
     solutions:
       fountain:
         maxVol: 200
   - type: Drink
-    isOpen: true
     solution: fountain
   - type: DrawableSolution
     solution: fountain
@@ -47,14 +58,13 @@
     rewardEntities:
     - OracleRewardDisks
     - OracleRewardCrystals
-    demandBlacklist:
-      tags:
-      - Bluespace
-      components:
-      - MobState
-    demandWhitelist:
-      components:
-      - Item
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
 
 
 - type: weightedRandomEntity

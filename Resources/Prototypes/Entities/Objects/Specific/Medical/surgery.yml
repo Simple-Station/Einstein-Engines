@@ -51,7 +51,7 @@
     - 1,1,1,1
   - type: MeleeWeapon
     attackRate: 0.75
-    range: 1.3
+    range: 1.4
     damage:
       types:
         Piercing: 8
@@ -87,7 +87,7 @@
     wideAnimationRotation: 90
     swingLeft: true
     attackRate: 1.25
-    range: 1.25
+    range: 1.4
     damage:
       types:
         Slash: 7.5
@@ -208,7 +208,8 @@
     heavyStaminaCost: 20
     maxTargets: 8
     angle: 20
-# ~~No melee for regular saw because have you ever seen someone use a band saw as a weapon? It's dumb.~~ No, I'm going to saw through your bones.
+# --No melee for regular saw because have you ever seen someone use a band saw as a weapon? It's dumb.--
+# No, I'm going to saw through your bones.
 
 - type: entity
   name: choppa
@@ -252,7 +253,7 @@
     storedRotation: 90
   - type: MeleeWeapon
     attackRate: 1.15
-    range: 1.4
+    range: 1.5
     bluntStaminaDamageFactor: 3.0
     damage:
       types:
@@ -260,7 +261,7 @@
         Slash: 5.5
     heavyRateModifier: 0.5
     heavyDamageBaseModifier: 1
-    heavyStaminaCost: 15
+    heavyStaminaCost: 10
     maxTargets: 8
     angle: 360
     soundHit:
@@ -282,8 +283,8 @@
     heldPrefix: advanced
     storedRotation: 90
   - type: MeleeWeapon
-    attackRate: 1.25
-    range: 1.4
+    attackRate: 1.15
+    range: 1.5
     bluntStaminaDamageFactor: 5.0
     damage:
       types:
@@ -291,7 +292,7 @@
         Slash: 7.5
     heavyRateModifier: 0.5
     heavyDamageBaseModifier: 1
-    heavyStaminaCost: 15
+    heavyStaminaCost: 10
     maxTargets: 8
     angle: 360
     soundHit:

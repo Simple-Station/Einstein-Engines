@@ -23,13 +23,15 @@
 
 - type: trait
   id: Stutter
-  category: Mental
+  category: TraitsSpeechAccents
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
   components:
     - type: StutteringAccent
       matchRandomProb: 0.1
@@ -39,8 +41,8 @@
 
 - type: trait
   id: ForeignerLight
-  category: Mental
-  points: 1
+  category: TraitsSpeechLanguages
+  points: 2
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -53,8 +55,8 @@
 
 - type: trait
   id: Foreigner
-  category: Mental
-  points: 2
+  category: TraitsSpeechLanguages
+  points: 4
   requirements: # TODO: Add a requirement to know at least 1 non-gc language
     - !type:CharacterTraitRequirement
       inverted: true

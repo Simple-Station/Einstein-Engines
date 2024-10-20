@@ -62,11 +62,11 @@
     priority: 1
   - type: RequireProjectileTarget
   - type: LanguageSpeaker
-    currentLanguage: GalacticCommon
+    currentLanguage: TauCetiBasic
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - RobotTalk
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - RobotTalk

@@ -2,6 +2,13 @@
   id: BeingHugged
   moodChange: 3
   timeout: 120
+  category: PositiveInteraction
+
+- type: moodEffect
+  id: BeingPet
+  moodChange: 3
+  timeout: 120
+  category: PositiveInteraction
 
 - type: moodEffect
   id: ArcadePlay

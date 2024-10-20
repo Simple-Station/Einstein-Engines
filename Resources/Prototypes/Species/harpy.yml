@@ -57,13 +57,31 @@
       points: 1
       required: true
       defaultMarkings: [ HarpyChestDefault ]
-    Legs:
+    RightLeg:
       points: 2
       required: false
-    Arms:
+    RightFoot:
+      points: 2
+      required: false
+    LeftLeg:
+      points: 2
+      required: false
+    LeftFoot:
+      points: 2
+      required: false
+    RightArm:
       points: 1
       required: false
       defaultMarkings: [ HarpyWingDefaultHuescale ]
+    RightHand:
+      points: 2
+      required: false
+    LeftArm:
+      points: 2
+      required: false
+    LeftHand:
+      points: 2
+      required: false
 
 - type: humanoidBaseSprite
   id: MobHarpyHead

@@ -1,9 +1,10 @@
+using Content.Shared.Instruments;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Traits.Assorted.Prototypes;
 
 [Prototype("SingerInstrument")]
-public sealed class SingerInstrumentPrototype : IPrototype
+public sealed partial class SingerInstrumentPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
@@ -27,7 +28,7 @@ public sealed class SingerInstrumentPrototype : IPrototype
     ///     The BUI configuration for the instrument.
     /// </summary>
     [DataField]
-    public PrototypeData? MidiUi;
+    public InstrumentUiKey? MidiUi;
 
     // The below is server only, as it uses a server-BUI event !type
     [DataField(serverOnly: true, required: true)]

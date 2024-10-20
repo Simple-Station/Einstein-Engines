@@ -34,7 +34,7 @@ public sealed class SlippingTest : MovementTest
     public async Task BananaSlipTest()
     {
         var sys = SEntMan.System<SlipTestSystem>();
-        var sprintWalks = sys.Config.GetCVar(CCVars.GamePressToSprint);
+        var sprintWalks = sys.Config.GetCVar(CCVars.DefaultWalk);
         await SpawnTarget("TrashBananaPeel");
 
         // var modifier = Comp<MovementSpeedModifierComponent>(Player).SprintSpeedModifier;

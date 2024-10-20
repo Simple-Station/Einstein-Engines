@@ -1,8 +1,8 @@
 ---
-name: Request a Feature
-about: "Template for noting future planned features. Please ask for approval in the Discord if you aren't an organization Member before posting a feature request"
+name: Request a feature
+about: "Please outline your request in Discord first if you aren't a maintainer."
 title: ''
-labels: ''
+labels: ["Type: Feature"]
 assignees: ''
 
 ---

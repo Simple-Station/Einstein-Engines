@@ -721,6 +721,14 @@
     PrizeTicket: 200
 
 - type: latheRecipe
+  id: BwoinkHammer
+  result: BwoinkHammer
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 200
+
+- type: latheRecipe
   id: ThronglerToy
   result: ThronglerToy
   applyMaterialDiscount: false

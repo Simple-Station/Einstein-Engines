@@ -5,6 +5,7 @@ using Content.Shared.Follower.Components;
 using Content.Shared.Input;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
+using Robust.Shared.Configuration;
 using Robust.Shared.GameStates;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
@@ -108,6 +109,7 @@ namespace Content.Shared.Movement.Systems
             component.TargetRelativeRotation = state.TargetRelativeRotation;
             component.CanMove = state.CanMove;
             component.RelativeEntity = EnsureEntity<InputMoverComponent>(state.RelativeEntity, uid);
+            component.DefaultSprinting = state.DefaultSprinting;
 
             // Reset
             component.LastInputTick = GameTick.Zero;
@@ -131,6 +133,7 @@ namespace Content.Shared.Movement.Systems
                 HeldMoveButtons = component.HeldMoveButtons,
                 RelativeRotation = component.RelativeRotation,
                 TargetRelativeRotation = component.TargetRelativeRotation,
+                DefaultSprinting = component.DefaultSprinting
             };
         }
 
@@ -260,7 +263,7 @@ namespace Content.Shared.Movement.Systems
             }
 
             var oldMapId = args.OldMapId;
-            var mapId = args.Transform.MapID;
+            var mapId = args.Transform.MapUid;
 
             // If we change maps then reset eye rotation entirely.
             if (oldMapId != mapId)
@@ -334,7 +337,7 @@ namespace Content.Shared.Movement.Systems
 
             component.RelativeEntity = xform.GridUid ?? xform.MapUid;
             component.TargetRelativeRotation = Angle.Zero;
-            WalkingAlert(uid, !component.Sprinting);
+            WalkingAlert(uid, component);
         }
 
         private void HandleRunChange(EntityUid uid, ushort subTick, bool walking)
@@ -346,8 +349,8 @@ namespace Content.Shared.Movement.Systems
                 // if we swap to relay then stop our existing input if we ever change back.
                 if (moverComp != null)
                 {
-                    WalkingAlert(uid, walking);
                     SetMoveInput(moverComp, MoveButtons.None);
+                    WalkingAlert(uid, moverComp);
                 }
 
                 HandleRunChange(relayMover.RelayEntity, subTick, walking);
@@ -467,8 +470,8 @@ namespace Content.Shared.Movement.Systems
         public void SetSprinting(EntityUid entity, InputMoverComponent component, ushort subTick, bool walking)
         {
             // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
-            WalkingAlert(entity, walking);
             SetMoveInput(entity, component, subTick, walking, MoveButtons.Walk);
+            WalkingAlert(entity, component);
         }
 
         /// <summary>
@@ -620,7 +623,7 @@ namespace Content.Shared.Movement.Systems
         Down = 2,
         Left = 4,
         Right = 8,
-        Walk = 16, // This may be either a sprint button or a walk button, depending on server config
+        Walk = 16, // This may be either a sprint button or a walk button, depending on mover config
         AnyDirection = Up | Down | Left | Right,
     }
 

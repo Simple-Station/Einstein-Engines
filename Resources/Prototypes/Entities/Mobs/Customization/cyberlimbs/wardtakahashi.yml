@@ -2,7 +2,7 @@
   id: CyberLimbsMarkingWardtakahashiHead
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [IPC] 
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_monitor.rsi
     state: head
@@ -11,7 +11,7 @@
   id: CyberLimbsMarkingWardtakahashiHeadAlt
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [IPC] 
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: head
@@ -20,7 +20,7 @@
   id: CyberLimbsMarkingWardtakahashiHeadAlt1
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [IPC] 
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_alt1.rsi
     state: head
@@ -29,7 +29,7 @@
   id: CyberLimbsMarkingWardtakahashiChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [IPC] 
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: torso
@@ -37,8 +37,8 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiLArm
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [IPC] 
+  markingCategory: LeftArm
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_arm
@@ -46,8 +46,8 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiLHand
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [IPC] 
+  markingCategory: LeftHand
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_hand
@@ -55,8 +55,8 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiLLeg
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [IPC] 
+  markingCategory: LeftLeg
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_leg
@@ -65,8 +65,8 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiLFoot
   bodyPart: LFoot
-  markingCategory: Legs
-  speciesRestriction: [IPC] 
+  markingCategory: LeftFoot
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_foot
@@ -76,8 +76,8 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiRArm
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [IPC] 
+  markingCategory: RightArm
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_arm
@@ -86,8 +86,8 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiRHand
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [IPC] 
+  markingCategory: RightHand
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_hand
@@ -95,8 +95,8 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiRLeg
   bodyPart: RLeg
-  markingCategory: Legs
-  speciesRestriction: [IPC] 
+  markingCategory: RightLeg
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_leg
@@ -105,8 +105,8 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiRFoot
   bodyPart: RFoot
-  markingCategory: Legs
-  speciesRestriction: [IPC] 
+  markingCategory: RightFoot
+  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_foot

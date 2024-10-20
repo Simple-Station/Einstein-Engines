@@ -74,6 +74,9 @@ ent-ClothingOuterHardsuitLuxury = HpI-20c - "Minos" hardsuit
 ent-ClothingOuterHardsuitSyndie = CSA-51a - "Shanlin" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
     This one has been painted blood red. It feels incredibly light.
+ent-ClothingOuterHardsuitSyndieReverseEngineered = CSA-51a - "Shanlin" tacsuit
+    .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
+        This one has been painted blue. It feels incredibly light.
 ent-ClothingOuterHardsuitSyndieMedic = CSA-51m - "Zhongyao" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
     Half of the suit is painted blood red, the rest bears galactic-standard medical markings. It feels incredibly light.
@@ -87,6 +90,9 @@ ent-ClothingOuterHardsuitSyndieCommander = CSA-54c - "Tianming" tacsuit
 ent-ClothingOuterHardsuitJuggernaut = CSA-80UA - "Guan Yu" tacsuit
     .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
     Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
+end-ClothingOuterHardsuitJuggernautReverseEngineered = CSA-80UA - "Guan Yu" tacsuit
+    .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
+        Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
 ent-ClothingOuterHardsuitWizard = WZD-84 - "Mana" tacsuit
     .desc = A bizarre gem-encrusted hardsuit. Famously used by members of the Wizard Federation in their operations.
     Contrary to it's appearance, it can protect its wearer from space and considerable amounts of physical trauma, it feels somewhat light.
@@ -98,11 +104,6 @@ ent-ClothingOuterHardsuitPirateEVA = pirate vacsuit
 ent-ClothingOuterHardsuitPirateCap = pirate captain's tacsuit
     .desc = An ancient armored tactical combat hardsuit of unknown origin, provides basic protections from the cold harsh realities of deep space and physical trauma.
     It doesn't seem to have any weight either. Perfect for defending against space scurvy and toolbox-wielding scallywags.
-ent-ClothingOuterHardsuitSyndieReverseEngineered = NTSA-122 tacsuit
-    .desc = A suit made by the special adquisitions department of Nanotrasen, the suit's tags indicate it provides moderate protection against most forms of damage.
-ent-ClothingOuterHardsuitJuggernautReverseEngineered = NTSA-126 tacsuit
-    .desc = A suit made by the special acquisitions department of Nanotrasen based on the "Juggernaut" design.
-    Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
 ent-ClothingOuterHardsuitERTCentcomm = NT-444c - "Ophanim" tacsuit
     .desc = A highly advanced, tactical combat hardsuit used by Central Command Officers, it seems to be branded with the Nanotrasen logo and a strange looking series number.
     The armor appears to be lined with a very sturdy alloy, it doesn't seem to have any weight either.

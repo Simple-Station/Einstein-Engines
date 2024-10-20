@@ -198,12 +198,10 @@
 - type: damageModifierSet
   id: Zombie #Blunt resistant and immune to biological threats, but can be hacked apart and burned
   coefficients:
-    Blunt: 0.7
-    Slash: 1.1
-    Piercing: 0.9
-    Shock: 1.25
+    Blunt: 0.6
+    Piercing: 0.8
     Cold: 0.3
-    Heat: 1.5
+    Heat: 1.25
     Poison: 0.0
     Radiation: 0.0
 
@@ -244,7 +242,7 @@
     Piercing: 0.2
     Shock: 0.0
     Cold: 0.0
-    Heat: -1 # heat damage cauterizes wounds, but will still hurt obviously.
+    Heat: -0.5 # heat damage cauterizes wounds, but will still hurt obviously.
     Poison: 0.0
     Radiation: 0.0
     Asphyxiation: 0.0
@@ -359,3 +357,10 @@
     Slash: 0.6
     Piercing: 0.6
     Holy: 1.5
+
+- type: damageModifierSet
+  id: DermalArmor
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.9
+    Piercing: 0.9

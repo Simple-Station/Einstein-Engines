@@ -1,7 +1,7 @@
 # What? This isn't a thing?? :(
 # - type: loadout
 #   id: LoadoutCommandQMNeckMantle
-#   category: Jobs
+#   category: JobsCommand
 #   cost: 2
 #   exclusive: true
 #   requirements:
@@ -13,8 +13,8 @@
 
 - type: loadout
   id: LoadoutCommandQMNeckCloak
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -25,8 +25,8 @@
 
 - type: loadout
   id: LoadoutCommandQMUniformTurtleneck
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -37,8 +37,8 @@
 
 - type: loadout
   id: LoadoutCommandQMUniformTurtleneckSkirt
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -49,8 +49,8 @@
 
 - type: loadout
   id: LoadoutCommandQMHeadSoft
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -60,15 +60,10 @@
 
 - type: loadout
   id: LoadoutCommandQMShoesBootsWinter
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - Quartermaster

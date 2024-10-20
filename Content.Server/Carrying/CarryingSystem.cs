@@ -146,7 +146,7 @@ namespace Content.Server.Carrying
         private void OnParentChanged(EntityUid uid, CarryingComponent component, ref EntParentChangedMessage args)
         {
             var xform = Transform(uid);
-            if (xform.MapID != args.OldMapId || xform.ParentUid == xform.GridUid)
+            if (xform.MapUid != args.OldMapId || xform.ParentUid == xform.GridUid)
                 return;
 
             DropCarried(uid, component.Carried);
@@ -183,7 +183,10 @@ namespace Content.Server.Carrying
             // Check if the victim is in any way incapacitated, and if not make an escape attempt.
             // Escape time scales with the inverse of a mass contest. Being lighter makes escape harder.
             if (_actionBlockerSystem.CanInteract(uid, component.Carrier))
-                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, _contests.MassContest(uid, component.Carrier, false, 2f));
+            {
+                var disadvantage = _contests.MassContest(component.Carrier, uid, false, 2f);
+                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, disadvantage);
+            }
         }
 
         private void OnMoveAttempt(EntityUid uid, BeingCarriedComponent component, UpdateCanMoveEvent args)

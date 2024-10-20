@@ -152,6 +152,11 @@
 
 - type: entity
   noSpawn: true
+  parent: ClothingBackpackRobotics
+  id: ClothingBackpackRoboticsFilled
+
+- type: entity
+  noSpawn: true
   parent: ClothingBackpackHydroponics
   id: ClothingBackpackHydroponicsFilled
 
@@ -173,11 +178,6 @@
   noSpawn: true
   parent: ClothingBackpack
   id: ClothingBackpackChaplainFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: Bible
-      - id: RubberStampChaplain
 
 - type: entity
   noSpawn: true

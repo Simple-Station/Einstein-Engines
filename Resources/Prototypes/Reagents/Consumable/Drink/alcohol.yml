@@ -22,7 +22,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.3
+        amount: 0.7
 
 - type: reagent
   id: Ale
@@ -39,6 +39,7 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  fizziness: 0.6
 
 - type: reagent
   id: Beer
@@ -55,6 +56,7 @@
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  fizziness: 0.6
 
 - type: reagent
   id: BlueCuracao
@@ -77,7 +79,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1
+        amount: 0.25
 
 - type: reagent
   id: BlueHawaiian
@@ -97,7 +99,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.154
 
 - type: reagent
   id: Cognac
@@ -121,7 +123,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.4
 
 - type: reagent
   id: DeadRum
@@ -144,7 +146,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.6
 
 - type: reagent
   id: Ethanol
@@ -163,7 +165,7 @@
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 15
+          min: 45
         damage:
           types:
             Poison: 1
@@ -255,6 +257,12 @@
             Cold: -1.60
       - !type:Drunk
         boozePower: 2
+      - !type:ChemAddMoodlet
+        moodPrototype: EthanolBenefit
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 5
 
 - type: reagent
   id: Gin
@@ -278,7 +286,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.45
 
 - type: reagent
   id: CoffeeLiqueur
@@ -294,6 +302,13 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.20
+
 
 - type: reagent
   id: MelonLiquor
@@ -309,6 +324,12 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.20
 
 - type: reagent
   id: NTCahors
@@ -324,6 +345,12 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.17
 
 - type: reagent
   id: PoisonWine
@@ -346,7 +373,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.05
+        amount: 0.11
     Poison:
       effects:
       - !type:HealthChange
@@ -376,7 +403,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.40
 
 ##Commented out in favor of Nyano sake/soju
 #- type: reagent
@@ -399,7 +426,7 @@
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/tequillaglass.rsi
     state: icon_empty
-  metamorphicMaxFillLevels: 4
+  metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
@@ -409,7 +436,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.40
 
 - type: reagent
   id: Vermouth
@@ -425,6 +452,12 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.16
 
 - type: reagent
   id: Vodka
@@ -448,7 +481,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.40
 
 - type: reagent
   id: Whiskey
@@ -472,7 +505,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.40
 
 - type: reagent
   id: Wine
@@ -489,6 +522,14 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.11
 
 - type: reagent
   id: Champagne
@@ -512,7 +553,8 @@
         factor: 3
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.3
+        amount: 0.12
+  fizziness: 0.8
 
 # Mixed Alcohol
 
@@ -530,6 +572,14 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.073
 
 - type: reagent
   id: AlliesCocktail
@@ -545,6 +595,14 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.37
 
 - type: reagent
   id: Aloe
@@ -575,6 +633,14 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.204
 
 - type: reagent
   id: Andalusia
@@ -590,6 +656,14 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.27
 
 - type: reagent
   id: Antifreeze
@@ -612,7 +686,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.2
 
 - type: reagent
   id: AtomicBomb
@@ -635,7 +709,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.254
       - !type:AdjustReagent
         reagent: Uranium
         amount: 0.05
@@ -661,7 +735,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.28
 
 - type: reagent
   id: BahamaMama
@@ -677,6 +751,14 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.11
 
 - type: reagent
   id: BananaHonk
@@ -707,6 +789,14 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.05
 
 - type: reagent
   id: BeepskySmash
@@ -729,7 +819,8 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.13
+  fizziness: 0.3
 
 - type: reagent
   id: BlackRussian
@@ -752,7 +843,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.33
 
 - type: reagent
   id: BloodyMary
@@ -768,6 +859,14 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.13
 
 - type: reagent
   id:  Booger
@@ -783,6 +882,14 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.08
 
 - type: reagent
   id: BraveBull
@@ -805,7 +912,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.33
 
 - type: reagent
   id: CoconutRum
@@ -825,7 +932,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.26
 
 - type: reagent
   id: Cosmopolitan
@@ -845,7 +952,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.13
 
 - type: reagent
   id: CubaLibre
@@ -868,7 +975,8 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.13
+  fizziness: 0.2
 
 - type: reagent
   id: DemonsBlood
@@ -884,6 +992,15 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.10
+  fizziness: 0.3
 
 - type: reagent
   id: DevilsKiss
@@ -899,6 +1016,14 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.20
 
 - type: reagent
   id: DoctorsDelight
@@ -921,9 +1046,6 @@
         factor: 2
       - !type:SatiateHunger
         factor: -2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.05
     Medicine:
       effects:
       - !type:HealthChange
@@ -955,7 +1077,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.225
 
 - type: reagent
   id: ErikaSurprise
@@ -971,6 +1093,15 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.02
+  fizziness: 0.15
 
 - type: reagent
   id: GargleBlaster
@@ -993,7 +1124,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.32
 
 - type: reagent
   id: GinFizz
@@ -1016,7 +1147,8 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.15
+  fizziness: 0.4
 
 - type: reagent
   id: GinTonic
@@ -1039,7 +1171,8 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.15
+  fizziness: 0.4
 
 - type: reagent
   id: Gildlager
@@ -1062,7 +1195,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.363
 
 - type: reagent
   id: Grog
@@ -1078,6 +1211,14 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.10
 
 - type: reagent
   id: HippiesDelight
@@ -1093,6 +1234,14 @@
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.16
 
 - type: reagent
   id: Hooch
@@ -1102,6 +1251,14 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: alcohol
   color: "#664e00"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.50
 
 - type: reagent
   id: IcedBeer
@@ -1117,6 +1274,7 @@
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  fizziness: 0.6
 
 - type: reagent
   id: IrishCarBomb
@@ -1139,7 +1297,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.16
 
 - type: reagent
   id: IrishCream
@@ -1162,7 +1320,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.266
 
 - type: reagent
   id: IrishCoffee
@@ -1185,7 +1343,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.133
 
 - type: reagent
   id: LongIslandIcedTea
@@ -1208,7 +1366,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.273
 
 - type: reagent
   id: Manhattan
@@ -1224,6 +1382,14 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.32
 
 - type: reagent
   id: ManhattanProject
@@ -1239,6 +1405,14 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.363
 
 - type: reagent
   id: ManlyDorf
@@ -1254,6 +1428,7 @@
   metamorphicMaxFillLevels: 2
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  fizziness: 0.7
 
 - type: reagent
   id: Margarita
@@ -1291,7 +1466,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.353
 
 - type: reagent
   id: Mead
@@ -1307,6 +1482,7 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  fizziness: 0.4
 
 - type: reagent
   id: Mojito
@@ -1322,6 +1498,15 @@
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.10
+  fizziness: 0.3
 
 - type: reagent
   id: Moonshine
@@ -1331,6 +1516,12 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: moonshine
   color: "#d1d7d155"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/moonshineglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -1338,7 +1529,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.25
+        amount: 0.40
 
 - type: reagent
   id: Neurotoxin
@@ -1361,7 +1552,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.25
+        amount: 0.16
     Poison:
       effects:
       - !type:HealthChange
@@ -1387,7 +1578,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.04
 
 - type: reagent
   id: Patron
@@ -1410,7 +1601,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.50
 
 - type: reagent
   id: RedMead
@@ -1426,6 +1617,7 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  fizziness: 0.4
 
 - type: reagent
   id: PinaColada
@@ -1438,6 +1630,14 @@
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/pinacolada.rsi
     state: icon
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.06
 
 - type: reagent
   id: Sbiten
@@ -1453,6 +1653,14 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.2
 
 - type: reagent
   id: ScrewdriverCocktail
@@ -1475,7 +1683,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.13
 
 - type: reagent
   id: CogChamp
@@ -1501,7 +1709,7 @@
           factor: 2
         - !type:AdjustReagent
           reagent: Ethanol
-          amount: 0.15
+          amount: 0.176
 
 - type: reagent
   id: Silencer
@@ -1540,6 +1748,14 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.23
 
 - type: reagent
   id: SnowWhite
@@ -1555,6 +1771,15 @@
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.03
+  fizziness: 0.3
 
 - type: reagent
   id: SuiDream
@@ -1570,6 +1795,15 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.13
+  fizziness: 0.2
 
 - type: reagent
   id: SyndicateBomb
@@ -1585,6 +1819,15 @@
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.095
+  fizziness: 0.6
 
 - type: reagent
   id: TequilaSunrise
@@ -1607,7 +1850,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.26
 
 - type: reagent
   id: TheMartinez
@@ -1623,6 +1866,15 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.13
+  fizziness: 0.2
 
 - type: reagent
   id: ThreeMileIsland
@@ -1645,7 +1897,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.273
       - !type:AdjustReagent
         reagent: Uranium
         amount: 0.05
@@ -1664,6 +1916,14 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.112
 
 - type: reagent
   id: VodkaMartini
@@ -1686,7 +1946,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.32
 
 - type: reagent
   id: VodkaTonic
@@ -1709,7 +1969,8 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.13
+  fizziness: 0.4
 
 - type: reagent
   id: WhiskeyCola
@@ -1732,7 +1993,8 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.013
+  fizziness: 0.3
 
 - type: reagent
   id: WhiskeySoda
@@ -1755,7 +2017,8 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.13
+  fizziness: 0.4
 
 - type: reagent
   id: WhiteGilgamesh
@@ -1772,7 +2035,8 @@
           factor: 1
         - !type:AdjustReagent
           reagent: Ethanol
-          amount: 0.15
+          amount: 0.04
+  fizziness: 0.5
 
 - type: reagent
   id: WhiteRussian
@@ -1795,4 +2059,166 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.33
+
+- type: reagent
+  id: VodkaRedBool
+  name: reagent-name-vodka-red-bool
+  parent: BaseAlcohol
+  desc: reagent-desc-vodka-red-bool
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: vodkaredbool
+  color: "#c4c27655"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/ginvodkaglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 1
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.10
+        - !type:AdjustReagent
+          reagent: Theobromine
+          amount: 0.05
+  fizziness: 0.25
+
+- type: reagent
+  id: XenoBasher
+  name: reagent-name-xeno-basher
+  parent: BaseAlcohol
+  desc: reagent-desc-xeno-basher
+  physicalDesc: reagent-physical-desc-fizzy-and-creamy
+  flavor: xenobasher
+  color: "#4d6600"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/xenobasher.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 2
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 1
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.15
+        - !type:AdjustReagent
+          reagent: Theobromine
+          amount: 0.05
+  fizziness: 0.15
+
+- type: reagent
+  id: IrishBool
+  name: reagent-name-irish-bool
+  parent: BaseAlcohol
+  desc: reagent-desc-irish-bool
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: irishbool
+  color: "#71672e99"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/beerglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 1
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.10
+        - !type:AdjustReagent
+          reagent: Theobromine
+          amount: 0.05
+  fizziness: 0.15
+
+- type: reagent
+  id: BudgetInsulsDrink
+  name: reagent-name-budget-insuls
+  parent: BaseAlcohol
+  desc: reagent-desc-budget-insuls
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: budgetinsulsdrink
+  color: "#dede73"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/budgetinsulsdrink.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 1
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.15
+        - !type:AdjustReagent
+          reagent: Theobromine
+          amount: 0.05
+  fizziness: 0.25
+
+- type: reagent
+  id: WatermelonWakeup
+  name: reagent-name-watermelon-wakeup
+  parent: BaseAlcohol
+  desc: reagent-desc-watermelon-wakeup
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: watermelonwakeup
+  color: "#d49dca"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/champagneglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 1
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.07
+        - !type:AdjustReagent
+          reagent: Theobromine
+          amount: 0.05
+  fizziness: 0.15
+
+- type: reagent
+  id: Rubberneck
+  name: reagent-name-rubberneck
+  parent: BaseAlcohol
+  desc: reagent-desc-rubberneck
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: rubberneck
+  color: "#f0d74a"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/rubberneck.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 1
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.15
+        - !type:AdjustReagent
+          reagent: Theobromine
+          amount: 0.05
+  fizziness: 0.25

@@ -1,7 +1,7 @@
 - type: loadout
   id: LoadoutCommandHOPNeckMantle
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -12,8 +12,8 @@
 
 - type: loadout
   id: LoadoutCommandHOPNeckCloak
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -24,8 +24,8 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpsuitTurtleneckBoatswain
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -36,8 +36,8 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpsuitMess
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -48,8 +48,8 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpskirtMess
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -60,8 +60,8 @@
 
 - type: loadout
   id: LoadoutcommandHOPOuterCoatFormal
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -71,8 +71,8 @@
 
 - type: loadout
   id: LoadoutCommandHOPBackIan
-  category: Jobs
-  cost: 4
+  category: JobsCommand
+  cost: 2
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -82,8 +82,8 @@
 
 - type: loadout
   id: LoadoutCommandHOPHatCap
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -93,15 +93,10 @@
 
 - type: loadout
   id: LoadoutCommandHOPShoesBootsWinter
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
@@ -110,8 +105,8 @@
 
 - type: loadout
   id: LoadoutCommandHOPBedsheetIan
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement

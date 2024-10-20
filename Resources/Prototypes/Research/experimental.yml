@@ -56,6 +56,7 @@
   cost: 5000
   recipeUnlocks:
   - TechDiskComputerCircuitboard
+  - ReverseEngineeringMachineCircuitboard #DeltaV
 
 - type: technology
   id: MagnetsTech
@@ -84,16 +85,29 @@
 # Tier 2
 
 - type: technology
+  id: AdvancedParts
+  name: research-technology-advanced-parts
+  icon:
+    sprite: Objects/Misc/stock_parts.rsi
+    state: advanced_matter_bin
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - AdvancedCapacitorStockPart
+  - AdvancedMatterBinStockPart
+  - NanoManipulatorStockPart
+
+- type: technology
   id: AbnormalArtifactManipulation
   name: research-technology-abnormal-artifact-manipulation
   icon:
-    sprite: Structures/Machines/traversal_distorter.rsi
-    state: display
+    sprite: Structures/Machines/artifact_crusher.rsi
+    state: icon
   discipline: Experimental
   tier: 2
   cost: 5000
   recipeUnlocks:
-  - TraversalDistorterMachineCircuitboard
   - ArtifactCrusherMachineCircuitboard
 
 - type: technology
@@ -137,20 +151,49 @@
   - WeaponParticleDecelerator
   - HoloprojectorField
 
+- type: technology
+  id: Metempsychosis
+  name: research-technology-metempsychosis
+  icon:
+    sprite: Structures/Machines/metempsychotic.rsi
+    state: cloning_idle
+  discipline: Experimental
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+    - BiomassReclaimerMachineCircuitboard
+    - CloningConsoleComputerCircuitboard
+    - MedicalScannerMachineCircuitboard
+    - MetempsychoticMachineCircuitboard
+
 # Tier 3
 
-#- type: technology # DeltaV - LRP
-#  id: GravityManipulation
-#  name: research-technology-gravity-manipulation
-#  icon:
-#    sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
-#    state: base
-#  discipline: Experimental
-#  tier: 3
-#  cost: 10000
-#  recipeUnlocks:
-#    - WeaponForceGun
-#    - WeaponTetherGun
+- type: technology
+  id: SuperParts
+  name: research-technology-super-parts
+  icon:
+    sprite: Objects/Misc/stock_parts.rsi
+    state: super_matter_bin
+  discipline: Experimental
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - SuperCapacitorStockPart
+  - SuperMatterBinStockPart
+  - PicoManipulatorStockPart
+
+- type: technology
+  id: GravityManipulation
+  name: research-technology-gravity-manipulation
+  icon:
+    sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
+    state: base
+  discipline: Experimental
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+    - WeaponForceGun
+    - WeaponTetherGun
 
 - type: technology
   id: QuantumLeaping

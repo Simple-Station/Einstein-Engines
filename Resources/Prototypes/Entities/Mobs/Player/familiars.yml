@@ -34,8 +34,14 @@
     - PsionicInterloper #Nyano - Summary: makes a part of the psionic faction.
   - type: Alerts
   - type: Familiar
-  - type: Psionic #Nyano - Summary: Makes psionic on creation.
+  - type: Psionic
     removable: false
+    psychognomicDescriptors:
+      - p-descriptor-bound
+      - p-descriptor-cyclic
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
 
 - type: entity
   name: Cerberus
@@ -50,6 +56,8 @@
     name: ghost-role-information-cerberus-name
     description: ghost-role-information-cerberus-description
     rules: ghost-role-information-cerberus-rules
+    raffle:
+      settings: default
   - type: GhostTakeoverAvailable
   - type: MeleeWeapon
     altDisarm: false
@@ -93,6 +101,9 @@
   - type: Dispellable
   - type: Psionic #Nyano - Summary: makes psionic on creation.
     removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
   - type: Vocal
     sounds:
       Male: Cerberus

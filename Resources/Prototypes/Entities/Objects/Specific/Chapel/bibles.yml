@@ -40,8 +40,8 @@
     - 0,0,0,1
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: MeleeWeapon # Nyanotrasen - Bibles do Holy damage
     damage:
       types:
@@ -50,7 +50,7 @@
     heavyRateModifier: 0.8
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 5
-    maxTargets: 3
+    maxTargets: 4
   - type: Tag
     tags:
     - Book

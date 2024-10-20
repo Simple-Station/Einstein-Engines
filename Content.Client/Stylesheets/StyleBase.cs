@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Client.Resources;
+using Content.Client.UserInterface.Controls;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
@@ -25,6 +26,7 @@ namespace Content.Client.Stylesheets
         public const string ButtonSquare = "ButtonSquare";
 
         public const string ButtonCaution = "Caution";
+        public const string ButtonDanger = "Danger";
 
         public const int DefaultGrabberSize = 10;
 

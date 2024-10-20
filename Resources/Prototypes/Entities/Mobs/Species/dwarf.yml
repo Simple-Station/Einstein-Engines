@@ -51,12 +51,17 @@
     accent: dwarf
   - type: Speech
     speechSounds: Bass
+  - type: HumanoidAppearance
+    species: Human
+    hideLayersOnEquip:
+    - Hair
+    - Snout
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - SolCommon
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - SolCommon
   - type: LightweightDrunk
     boozeStrengthMultiplier: 0.5

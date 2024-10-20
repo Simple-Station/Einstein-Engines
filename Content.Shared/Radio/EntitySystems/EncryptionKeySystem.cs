@@ -6,10 +6,8 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Radio.Components;
-using Content.Shared.Tools;
 using Content.Shared.Tools.Components;
 using Content.Shared.Wires;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
@@ -175,13 +173,9 @@ public sealed partial class EncryptionKeySystem : EntitySystem
 
     private void OnHolderExamined(EntityUid uid, EncryptionKeyHolderComponent component, ExaminedEvent args)
     {
-        if (!args.IsInDetailsRange)
-            return;
-
-        if (!component.ExamineWhileLocked && !component.KeysUnlocked)
-            return;
-
-        if (!component.ExamineWhileLocked && TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open)
+        if (!args.IsInDetailsRange
+            || !component.ExamineWhileLocked && !component.KeysUnlocked
+            || !component.ExamineWhileLocked && TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open)
             return;
 
         if (component.KeyContainer.ContainedEntities.Count == 0)

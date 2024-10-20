@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponRifle
-  parent: BaseItem
+  parent: [BaseItem, BaseGunWieldable]
   id: BaseWeaponRifle
   description: A rooty tooty point and shooty.
   abstract: true
@@ -14,6 +14,8 @@
     slots:
     - Back
     - suitStorage
+  - type: Wieldable
+  - type: GunRequiresWield
   - type: AmmoCounter
   - type: Gun
     fireRate: 5

@@ -4,16 +4,19 @@
   id: AirlockMantisLocked
   suffix: Mantis, Locked
   components:
-  - type: AccessReader
-    access: [["Mantis"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+
 
 - type: entity
   parent: AirlockScienceGlass
   id: AirlockMantisGlassLocked
   suffix: Mantis, Locked
   components:
-  - type: AccessReader
-    access: [["Mantis"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
 
 - type: entity
   parent: AirlockCommand
@@ -102,16 +105,18 @@
   id: AirlockCorpsmanLocked
   suffix: Corpsman, Locked
   components:
-  - type: AccessReader
-    access: [["Corpsman"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCorpsman ]
 
 - type: entity
   parent: AirlockSecurityGlass
   id: AirlockCorpsmanGlassLocked
   suffix: Corpsman, Locked
   components:
-  - type: AccessReader
-    access: [["Corpsman"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCorpsman ]
 
 - type: entity
   parent: AirlockGlassShuttle
@@ -126,72 +131,81 @@
   id: AirlockBoxerLocked
   suffix: Boxer, Locked
   components:
-  - type: AccessReader
-    access: [["Boxer"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBoxer ]
 
 - type: entity
   parent: Airlock
   id: AirlockClownLocked
   suffix: Clown, Locked
   components:
-  - type: AccessReader
-    access: [["Clown"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsClown ]
 
 - type: entity
   parent: Airlock
   id: AirlockMimeLocked
   suffix: Mime, Locked
   components:
-  - type: AccessReader
-    access: [["Mime"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMime ]
 
 - type: entity
   parent: Airlock
   id: AirlockMusicianLocked
   suffix: Musician, Locked
   components:
-  - type: AccessReader
-    access: [["Musician"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMusician ]
 
 - type: entity
   parent: Airlock
   id: AirlockReporterLocked
   suffix: Reporter, Locked
   components:
-  - type: AccessReader
-    access: [["Reporter"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsReporter ]
 
 - type: entity
   parent: Airlock
   id: AirlockLibraryLocked
   suffix: Library, Locked
   components:
-  - type: AccessReader
-    access: [["Library"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLibrary ]
 
 - type: entity
   parent: Airlock
   id: AirlockZookeeperLocked
   suffix: Zookeeper, Locked
   components:
-  - type: AccessReader
-    access: [["Zookeeper"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsZookeeper ]
 
 - type: entity
   parent: AirlockExternal
   id: AirlockExternalSalvageLocked
   suffix: External, Salvage, Locked
   components:
-  - type: AccessReader
-    access: [["Salvage"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvage ]
 
 - type: entity
   parent: AirlockMedical
   id: AirlockPsychologistLocked
   suffix: Psychologist, Locked
   components:
-  - type: AccessReader
-    access: [["Psychologist"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPsychologist ]
 
 # Glass Airlocks
 - type: entity
@@ -199,72 +213,81 @@
   id: AirlockBoxerGlassLocked
   suffix: Boxer, Locked
   components:
-  - type: AccessReader
-    access: [["Boxer"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBoxer ]
 
 - type: entity
   parent: AirlockGlass
   id: AirlockClownGlassLocked
   suffix: Clown, Locked
   components:
-  - type: AccessReader
-    access: [["Clown"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsClown ]
 
 - type: entity
   parent: AirlockGlass
   id: AirlockMimeGlassLocked
   suffix: Mime, Locked
   components:
-  - type: AccessReader
-    access: [["Mime"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMime ]
 
 - type: entity
   parent: AirlockGlass
   id: AirlockMusicianGlassLocked
   suffix: Musician, Locked
   components:
-  - type: AccessReader
-    access: [["Musician"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMusician ]
 
 - type: entity
   parent: AirlockGlass
   id: AirlockReporterGlassLocked
   suffix: Reporter, Locked
   components:
-  - type: AccessReader
-    access: [["Reporter"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsReporter ]
 
 - type: entity
   parent: AirlockGlass
   id: AirlockLibraryGlassLocked
   suffix: Library, Locked
   components:
-  - type: AccessReader
-    access: [["Library"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLibrary ]
 
 - type: entity
   parent: AirlockGlass
   id: AirlockZookeeperGlassLocked
   suffix: Zookeeper, Locked
   components:
-  - type: AccessReader
-    access: [["Zookeeper"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsZookeeper ]
 
 - type: entity
   parent: AirlockExternalGlass
   id: AirlockExternalGlassSalvageLocked
   suffix: External, Glass, Salvage, Locked
   components:
-  - type: AccessReader
-    access: [["Salvage"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvage ]
 
 - type: entity
   parent: AirlockMedicalGlass
   id: AirlockPsychologistGlassLocked
   suffix: Psychologist, Locked
   components:
-  - type: AccessReader
-    access: [["Psychologist"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPsychologist ]
 
 # Maintenance Hatches
 - type: entity
@@ -272,69 +295,78 @@
   id: AirlockMaintBoxerLocked
   suffix: Boxer, Locked
   components:
-  - type: AccessReader
-    access: [["Boxer"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBoxer ]
 
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintClownLocked
   suffix: Clown, Locked
   components:
-  - type: AccessReader
-    access: [["Clown"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsClown ]
 
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintMimeLocked
   suffix: Mime, Locked
   components:
-  - type: AccessReader
-    access: [["Mime"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMime ]
 
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintMusicianLocked
   suffix: Musician, Locked
   components:
-  - type: AccessReader
-    access: [["Musician"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMusician ]
 
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintReporterLocked
   suffix: Reporter, Locked
   components:
-  - type: AccessReader
-    access: [["Reporter"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsReporter ]
 
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintLibraryLocked
   suffix: Library, Locked
   components:
-  - type: AccessReader
-    access: [["Library"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLibrary ]
 
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintZookeeperLocked
   suffix: Zookeeper, Locked
   components:
-  - type: AccessReader
-    access: [["Zookeeper"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsZookeeper ]
 
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintPsychologistLocked
   suffix: Psychologist, Locked
   components:
-  - type: AccessReader
-    access: [["Psychologist"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPsychologist ]
 
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintSecurityLawyerLocked
   suffix: Security/Lawyer, Locked
   components:
-  - type: AccessReader
-    access: [["Security"], ["Lawyer"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurityLawyer ]

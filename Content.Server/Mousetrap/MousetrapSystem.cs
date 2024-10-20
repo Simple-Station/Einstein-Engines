@@ -2,13 +2,9 @@ using Content.Server.Damage.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Popups;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Inventory;
 using Content.Shared.Mousetrap;
-using Content.Shared.StepTrigger;
 using Content.Shared.StepTrigger.Systems;
-using Robust.Server.GameObjects;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Player;
 
 namespace Content.Server.Mousetrap;
 
@@ -44,15 +40,16 @@ public sealed class MousetrapSystem : EntitySystem
 
     private void BeforeDamageOnTrigger(EntityUid uid, MousetrapComponent component, BeforeDamageUserOnTriggerEvent args)
     {
-        if (TryComp(args.Tripper, out PhysicsComponent? physics) && physics.Mass != 0)
-        {
-            // The idea here is inverse,
-            // Small - big damage,
-            // Large - small damage
-            // yes i punched numbers into a calculator until the graph looked right
-            var scaledDamage = -50 * Math.Atan(physics.Mass - component.MassBalance) + (25 * Math.PI);
-            args.Damage *= scaledDamage;
-        }
+        if (!TryComp<PhysicsComponent>(args.Tripper, out var physics)
+            || physics.Mass is 0)
+            return;
+
+        // The idea here is inverse,
+        // Small - big damage,
+        // Large - small damage
+        // Yes, I punched numbers into a calculator until the graph looked right
+        var scaledDamage = -50 * MathF.Atan(physics.Mass - component.MassBalance) + 25 * MathF.PI;
+        args.Damage *= scaledDamage;
     }
 
     private void OnTrigger(EntityUid uid, MousetrapComponent component, TriggerEvent args)
@@ -64,9 +61,7 @@ public sealed class MousetrapSystem : EntitySystem
     private void UpdateVisuals(EntityUid uid, MousetrapComponent? mousetrap = null, AppearanceComponent? appearance = null)
     {
         if (!Resolve(uid, ref mousetrap, ref appearance, false))
-        {
             return;
-        }
 
         _appearance.SetData(uid, MousetrapVisuals.Visual,
             mousetrap.IsActive ? MousetrapVisuals.Armed : MousetrapVisuals.Unarmed, appearance);

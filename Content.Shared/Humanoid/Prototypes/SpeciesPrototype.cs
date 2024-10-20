@@ -76,6 +76,12 @@ public sealed partial class SpeciesPrototype : IPrototype
     public EntProtoId DollPrototype { get; private set; }
 
     /// <summary>
+    /// Allow Custom Specie Name for this Specie.
+    /// </summary>
+    [DataField]
+    public Boolean CustomName { get; private set; } = false;
+
+    /// <summary>
     /// Method of skin coloration used by the species.
     /// </summary>
     [DataField(required: true)]
@@ -120,6 +126,12 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField]
     public int MaxAge = 120;
+
+    /// <summary>
+    ///     The minimum height and width ratio for this species
+    /// </summary>
+    [DataField]
+    public float SizeRatio = 1.2f;
 
     /// <summary>
     ///     The minimum height for this species

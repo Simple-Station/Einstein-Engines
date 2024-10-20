@@ -3,6 +3,16 @@
   name: job-name-mantis
   description: job-description-mantis
   playTimeTracker: JobForensicMantis
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
@@ -17,12 +27,14 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
+      powerSlots: 2
   - !type:AddComponentSpecial
     components:
     - type: InnatePsionicPowers
       powersToAdd:
         - MetapsionicPower
         - PotentiometryPower
+        - TelepathyPower
 
 - type: startingGear
   id: ForensicMantisGear

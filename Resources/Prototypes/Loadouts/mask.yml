@@ -1,18 +1,24 @@
 - type: loadout
   id: LoadoutMaskSterile
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingMaskSterile
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskMuzzle
   category: Mask
-  cost: 2
+  cost: 1
   exclusive: true
   items:
     - ClothingMaskMuzzle
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskGas
@@ -21,20 +27,26 @@
   exclusive: true
   items:
     - ClothingMaskGas
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 # Maskbands
 - type: loadout
   id: LoadoutMaskBandBlack
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingMaskBandBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskBandBlue
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingMaskBandBlue
@@ -43,11 +55,13 @@
        inverted: true
        departments:
          - Security
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskBandGold
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingMaskBandGold
@@ -56,11 +70,13 @@
        inverted: true
        departments:
          - Security
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskBandGreen
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingMaskBandGreen
@@ -69,11 +85,13 @@
        inverted: true
        departments:
          - Security
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskBandGrey
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingMaskBandGrey
@@ -82,27 +100,35 @@
        inverted: true
        departments:
          - Security
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskBandRed
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingMaskBandRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskBandSkull
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingMaskBandSkull
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskBandMerc
   category: Mask
-  cost: 2
+  cost: 1
   exclusive: true
   items:
     - ClothingMaskBandMerc
@@ -111,11 +137,13 @@
        inverted: true
        departments:
          - Security
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskBandBrown
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingMaskBandBrown
@@ -124,20 +152,28 @@
        inverted: true
        departments:
          - Security
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 # Gaiters
 - type: loadout
   id: LoadoutMaskNeckGaiter
   category: Mask
-  cost: 2
+  cost: 1
   exclusive: true
   items:
     - ClothingMaskNeckGaiter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 - type: loadout
   id: LoadoutMaskNeckGaiterRed
   category: Mask
-  cost: 2
+  cost: 1
   exclusive: true
   items:
     - ClothingMaskNeckGaiterRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks

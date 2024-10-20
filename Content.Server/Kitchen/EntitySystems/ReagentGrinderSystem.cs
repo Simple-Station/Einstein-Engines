@@ -1,4 +1,5 @@
 using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server.Construction;
 using Content.Server.Kitchen.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -48,6 +49,8 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<ReagentGrinderComponent, ComponentStartup>((uid, _, _) => UpdateUiState(uid));
             SubscribeLocalEvent((EntityUid uid, ReagentGrinderComponent _, ref PowerChangedEvent _) => UpdateUiState(uid));
             SubscribeLocalEvent<ReagentGrinderComponent, InteractUsingEvent>(OnInteractUsing);
+            SubscribeLocalEvent<ReagentGrinderComponent, RefreshPartsEvent>(OnRefreshParts);
+            SubscribeLocalEvent<ReagentGrinderComponent, UpgradeExamineEvent>(OnUpgradeExamine);
 
             SubscribeLocalEvent<ReagentGrinderComponent, EntInsertedIntoContainerMessage>(OnContainerModified);
             SubscribeLocalEvent<ReagentGrinderComponent, EntRemovedFromContainerMessage>(OnContainerModified);
@@ -127,7 +130,7 @@ namespace Content.Server.Kitchen.EntitySystems
                     _solutionContainersSystem.TryAddSolution(containerSoln.Value, solution);
                 }
 
-                _userInterfaceSystem.TrySendUiMessage(uid, ReagentGrinderUiKey.Key,
+                _userInterfaceSystem.ServerSendUiMessage(uid, ReagentGrinderUiKey.Key,
                     new ReagentGrinderWorkCompleteMessage());
 
                 UpdateUiState(uid);
@@ -197,6 +200,24 @@ namespace Content.Server.Kitchen.EntitySystems
             args.Handled = true;
         }
 
+        /// <remarks>
+        /// Gotta be efficient, you know? you're saving a whole extra second here and everything.
+        /// </remarks>
+        private void OnRefreshParts(Entity<ReagentGrinderComponent> entity, ref RefreshPartsEvent args)
+        {
+            var ratingWorkTime = args.PartRatings[entity.Comp.MachinePartWorkTime];
+            var ratingStorage = args.PartRatings[entity.Comp.MachinePartStorageMax];
+
+            entity.Comp.WorkTimeMultiplier = MathF.Pow(entity.Comp.PartRatingWorkTimerMulitplier, ratingWorkTime - 1);
+            entity.Comp.StorageMaxEntities = entity.Comp.BaseStorageMaxEntities + (int) (entity.Comp.StoragePerPartRating * (ratingStorage - 1));
+        }
+
+        private void OnUpgradeExamine(Entity<ReagentGrinderComponent> entity, ref UpgradeExamineEvent args)
+        {
+            args.AddPercentageUpgrade("reagent-grinder-component-upgrade-work-time", entity.Comp.WorkTimeMultiplier);
+            args.AddNumberUpgrade("reagent-grinder-component-upgrade-storage", entity.Comp.StorageMaxEntities - entity.Comp.BaseStorageMaxEntities);
+        }
+
         private void UpdateUiState(EntityUid uid)
         {
             ReagentGrinderComponent? grinderComp = null;
@@ -228,7 +249,7 @@ namespace Content.Server.Kitchen.EntitySystems
                 GetNetEntityArray(inputContainer.ContainedEntities.ToArray()),
                 containerSolution?.Contents.ToArray()
             );
-            _userInterfaceSystem.TrySetUiState(uid, ReagentGrinderUiKey.Key, state);
+            _userInterfaceSystem.SetUiState(uid, ReagentGrinderUiKey.Key, state);
         }
 
         private void OnStartMessage(Entity<ReagentGrinderComponent> entity, ref ReagentGrinderStartMessage message)
@@ -305,7 +326,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
             reagentGrinder.AudioStream = _audioSystem.PlayPvs(sound, uid,
                 AudioParams.Default.WithPitchScale(1 / reagentGrinder.WorkTimeMultiplier)).Value.Entity; //slightly higher pitched
-            _userInterfaceSystem.TrySendUiMessage(uid, ReagentGrinderUiKey.Key,
+            _userInterfaceSystem.ServerSendUiMessage(uid, ReagentGrinderUiKey.Key,
                 new ReagentGrinderWorkStartedMessage(program));
         }
 

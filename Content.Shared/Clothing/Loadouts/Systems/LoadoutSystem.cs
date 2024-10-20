@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
@@ -30,11 +31,12 @@ public sealed class LoadoutSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, LoadoutComponent component, MapInitEvent args)
     {
-        if (component.Prototypes == null)
+        if (component.StartingGear is null
+            || component.StartingGear.Count <= 0)
             return;
 
-        var proto = _prototype.Index<StartingGearPrototype>(_random.Pick(component.Prototypes));
-        _station.EquipStartingGear(uid, proto, null);
+        var proto = _prototype.Index(_random.Pick(component.StartingGear));
+        _station.EquipStartingGear(uid, proto);
     }
 
 
@@ -69,7 +71,7 @@ public sealed class LoadoutSystem : EntitySystem
 
 
             if (!_characterRequirements.CheckRequirementsValid(
-                loadoutProto.Requirements, job, profile, playTimes, whitelisted,
+                loadoutProto.Requirements, job, profile, playTimes, whitelisted, loadoutProto,
                 EntityManager, _prototype, _configuration,
                 out _))
                 continue;
@@ -78,12 +80,13 @@ public sealed class LoadoutSystem : EntitySystem
             // Spawn the loadout items
             var spawned = EntityManager.SpawnEntities(
                 EntityManager.GetComponent<TransformComponent>(uid).Coordinates.ToMap(EntityManager),
-                loadoutProto.Items!);
+                loadoutProto.Items.Select(p => (string?) p.ToString()).ToList()); // Dumb cast
 
             foreach (var item in spawned)
             {
-                if (EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp) &&
-                    _inventory.TryGetSlots(uid, out var slotDefinitions))
+                if (EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp)
+                    && _characterRequirements.CanEntityWearItem(uid, item)
+                    && _inventory.TryGetSlots(uid, out var slotDefinitions))
                 {
                     var deleted = false;
                     foreach (var curSlot in slotDefinitions)

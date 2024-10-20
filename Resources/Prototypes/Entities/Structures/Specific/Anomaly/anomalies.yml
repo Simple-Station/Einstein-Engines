@@ -48,8 +48,12 @@
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/Effects/teleport_arrival.ogg
-  - type: Psionic #Nyano - Summary: makes psionic on creation.
-  - type: GlimmerSource #Nyano - Summary: makes this a potential source of Glimmer.
+  - type: Psionic
+    removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
+  - type: GlimmerSource
     active: false
   - type: SecretDataAnomaly
     randomStartSecretMin: 0
@@ -778,7 +782,6 @@
     - Desoxyephedrine
     - Ephedrine
     - THC
-    - THCOil
     - SpaceDrugs
     - Nocturine
     - MuteToxin

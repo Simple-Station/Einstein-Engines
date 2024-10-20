@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Audio;
 using Content.Shared.Body.Components;
+using Content.Shared.CCVar;
 using Content.Shared.Coordinates;
 using Content.Shared.Database;
 using Content.Shared.Emag.Components;
@@ -11,6 +12,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Stacks;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Events;
@@ -29,6 +31,7 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
     [Dependency] protected readonly SharedAmbientSoundSystem AmbientSound = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] protected readonly SharedContainerSystem Container = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     public const string ActiveReclaimerContainerId = "active-material-reclaimer-container";
 
@@ -193,16 +196,16 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
     }
 
     /// <summary>
-    /// Whether or not the reclaimer satisfies the conditions
-    /// allowing it to gib/reclaim a living creature.
+    ///     Whether or not the reclaimer satisfies the conditions
+    ///     allowing it to gib/reclaim a living creature.
     /// </summary>
     public bool CanGib(EntityUid uid, EntityUid victim, MaterialReclaimerComponent component)
     {
-        return false; // DeltaV - Kinda LRP
-        // return component.Powered &&
-        //       component.Enabled &&
-        //       HasComp<BodyComponent>(victim) &&
-        //       HasComp<EmaggedComponent>(uid);
+        return _config.GetCVar(CCVars.ReclaimerAllowGibbing)
+               && component.Powered
+               && component.Enabled
+               && HasComp<BodyComponent>(victim)
+               && HasComp<EmaggedComponent>(uid);
     }
 
     /// <summary>

@@ -9,6 +9,19 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/bartender.rsi
 
+# This has been placed here, as it visually resembles a skirt.
+# Likewise, the sprite file location has been moved to jumpskirts and the parent has been changed to ClothingUniformSkirtBase.
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitBartenderPurple
+  name: purple bartender's uniform
+  description: A special purple outfit to serve drinks.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/bartender_purple.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/bartender_purple.rsi
+
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCaptain
@@ -35,7 +48,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtChiefEngineer
   name: chief engineer's jumpskirt
-  description: It's a high visibility jumpskirt given to those engineers insane enough to achieve the rank of Chief Engineer. It has minor radiation shielding.
+  description: It's a high visibility jumpskirt given to those engineers insane enough to achieve the rank of Chief Engineer.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/ce.rsi
@@ -167,7 +180,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtHoS
   name: head of security's jumpskirt
-  description: A standard Station Security uniform, adorned with gold emblems and commander's epaulettes. # DeltaV - improved description
+  description: A standard Station Security uniform, adorned with gold emblems and commander's epaulettes.
   components:
   - type: Sprite
     sprite: DeltaV/Clothing/Uniforms/Jumpskirt/hos.rsi # DeltaV - resprite
@@ -178,7 +191,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtHoSAlt
   name: head of security's turtleneck
-  description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security. Its sturdy fabric provides minor protection from slash and pierce damage.
+  description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/hos_alt.rsi
@@ -217,6 +230,19 @@
     sprite: Clothing/Uniforms/Jumpskirt/janitor.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/janitor.rsi
+
+# This has been moved here, as it visually resembles a skirt.
+# Likewise, the sprite file location has been moved to jumpskirts and the parent has been changed to ClothingUniformSkirtBase.
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitKimono
+  name: kimono
+  description: traditional chinese clothing
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/kimono.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/kimono.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -339,7 +365,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtScientist
   name: scientist jumpskirt
-  description: It's made of a special fiber that provides minor protection against explosives. It has markings that denote the wearer as a scientist.
+  description: It's made of a special fiber that increases perceived intelligence and decreases personal ethics. It has markings that denote the wearer as a scientist.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/scientist.rsi
@@ -592,6 +618,30 @@
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpskirt/skirtoflife.rsi
 
+# Both the light and dark monastic robes have been moved here.
+# They have also had their parent changed to ClothingUniformSkirtBase, and their sprite has likewise been moved to the jumpskirts directory.
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitMonasticRobeDark
+  name: dark monastic robe
+  description: It's a dark robe, often worn by religious folk.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_dark.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_dark.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitMonasticRobeLight
+  name: light monastic robe
+  description: It's a light robe, often worn by religious folk.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_light.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpskirt/monastic_robe_light.rsi
+
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtSeniorEngineer
@@ -677,6 +727,17 @@
   - type: Construction
     graph: WebObjects
     node: jumpskirt
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitGladiator
+  name: gladiator uniform
+  description: Made for true gladiators (or Ash Walkers).
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/gladiator.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/gladiator.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -767,3 +828,14 @@
       - state: equipped-INNERCLOTHING-jumpskirt
       - state: equipped-INNERCLOTHING-shirt
         color: "#b30000"
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtOldDress
+  name: old dress
+  description: A worn-looking dress from a very long time ago.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/olddress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/olddress.rsi

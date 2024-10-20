@@ -109,7 +109,7 @@
   components:
   - type: PointLight
     radius: 8
-    energy: 25
+    energy: 10
     color: "#daa3fd"
   - type: TriggerArtifact
   - type: FlashOnTrigger
@@ -583,6 +583,24 @@
     range: 7.5
     messages:
     - shuffle-artifact-popup
+
+- type: artifactEffect
+  id: EffectT4PartsSpawn
+  targetDepth: 3
+  effectHint: artifact-effect-hint-creation
+  components:
+  - type: SpawnArtifact
+    maxSpawns: 10
+    spawns:
+    - id: BluespaceCapacitorStockPart
+      prob: 0.5
+      maxAmount: 3
+    - id: BluespaceManipulatorStockPart
+      prob: 0.5
+      maxAmount: 3
+    - id: BluespaceMatterBinStockPart
+      prob: 0.5
+      maxAmount: 3
 
 - type: artifactEffect
   id: EffectFoamDangerous

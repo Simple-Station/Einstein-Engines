@@ -21,7 +21,6 @@
     heavyRateModifier: 1
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
     maxTargets: 5
     angle: 100
   - type: Item
@@ -48,7 +47,6 @@
     heavyRateModifier: 0.9
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
   - type: Item
@@ -103,7 +101,7 @@
     wideAnimationRotation: 135
     swingLeft: true
     attackRate: 1.25
-    range: 1.25
+    range: 1.4
     damage:
       types:
         Slash: 10

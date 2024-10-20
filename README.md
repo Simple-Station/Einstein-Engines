@@ -8,7 +8,7 @@ Einstein Engines is a hard fork of [Space Station 14](https://github.com/space-w
 Our founding organization is based on a democratic system whereby our mutual contributors and downstreams have a say in what code goes into their own upstream.
 If you are a representative of a former downstream of Delta-V, we would like to invite you to contact us for an opportunity to represent your fork in this new upstream.
 
-Space Station 14 is inspired heavily by Space Station 13 and runs on [Robust Toolbox](https://github.com/space-wizards/Robust-Toolbox), a homegrown engine written in C#.
+Space Station 14 is inspired heavily by Space Station 13 and runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), a homegrown engine written in C#.
 
 As a hard fork, any code sourced from a different upstream cannot ever be merged directly here, and must instead be ported.
 All code present in this repository is subject to change as desired by the council of maintainers.
@@ -66,13 +66,4 @@ We provide some scripts shown below to make the job easier.
 
 ## License
 
-Content contributed to this repository after commit 87c70a89a67d0521a56388e6b1c3f2cb947943e4 (`17 February 2024 23:00:00 UTC`) is licensed under the GNU Affero General Public License version 3.0 unless otherwise stated.
-See [LICENSE-AGPLv3](./LICENSE-AGPLv3.txt).
-
-Content contributed to this repository before commit 87c70a89a67d0521a56388e6b1c3f2cb947943e4 (`17 February 2024 23:00:00 UTC`) is licensed under the MIT license unless otherwise stated.
-See [LICENSE-MIT](./LICENSE-MIT.txt).
-
-Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file.
-[Example](./Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
-
-Note that some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
+Please read the [LEGAL.md](./LEGAL.md) file for information on the licenses of the code and assets in this repository.

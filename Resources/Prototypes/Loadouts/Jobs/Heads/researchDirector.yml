@@ -1,7 +1,59 @@
+# Outer
+
+- type: loadout
+  id: LoadoutCommandRDOuterWinter
+  category: JobsCommand
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingOuterWinterRD
+
+- type: loadout
+  id: LoadoutCommandRDOuterMysta
+  category: JobsCommand
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingOuterCoatRndMysta
+
+# Head
+
+- type: loadout
+  id: LoadoutCommandRDHeadHatBeretMysta
+  category: JobsCommand
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingHeadHatBeretMysta
+
+- type: loadout
+  id: LoadoutCommandRDHeadHoodMysta
+  category: JobsCommand
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingHeadHoodMysta
+
+# Neck
+
 - type: loadout
   id: LoadoutCommandRDNeckMantle
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -12,8 +64,8 @@
 
 - type: loadout
   id: LoadoutCommandRDNeckCloak
-  category: Jobs
-  cost: 2
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -23,38 +75,25 @@
     - ClothingNeckCloakRd
 
 - type: loadout
-  id: LoadoutCommandRDOuterWinter
-  category: Jobs
-  cost: 2
+  id: LoadoutCommandRDNeckCloakMystagogue
+  category: JobsCommand
+  cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector
   items:
-    - ClothingOuterWinterRD
+    - ClothingNeckCloakMystagogue
 
-- type: loadout
-  id: LoadoutCommandRDOuterMysta
-  category: Jobs
-  cost: 2
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - ResearchDirector
-  items:
-    - ClothingOuterCoatRndMysta
+# Shoes
 
 - type: loadout
   id: LoadoutCommandRDShoesBootsWinter
-  category: Jobs
-  cost: 1
+  category: JobsCommand
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector

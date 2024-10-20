@@ -1,10 +1,12 @@
 # Cargo technician
 - type: loadout
   id: LoadoutCargoOuterWinterCargo
-  category: Jobs
-  cost: 2
+  category: JobsCargo
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterCargo
     - !type:CharacterJobRequirement
       jobs:
         - CargoTechnician
@@ -13,18 +15,15 @@
 
 - type: loadout
   id: LoadoutCargoShoesBootsWinterCargo
-  category: Jobs
-  cost: 1
+  category: JobsCargo
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoesCargo
     - !type:CharacterJobRequirement
       jobs:
         - CargoTechnician
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsWinterCargo
 
@@ -32,10 +31,12 @@
 
 - type: loadout
   id: LoadoutCargoOuterWinterMiner
-  category: Jobs
-  cost: 2
+  category: JobsCargo
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterCargo
     - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist
@@ -44,10 +45,12 @@
 
 - type: loadout
   id: LoadoutCargoNeckGoliathCloak
-  category: Jobs
-  cost: 2
+  category: JobsCargo
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckCargo
     - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist
@@ -56,3 +59,14 @@
       min: 36000 # 10 hours
   items:
     - ClothingNeckCloakGoliathCloak
+
+- type: loadout
+  id: LoadoutCargoWeaponsCrusherDagger
+  category: JobsCargo
+  cost: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - WeaponCrusherDagger

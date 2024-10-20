@@ -26,6 +26,9 @@
   id: Arrow
 
 - type: Tag
+  id: Ash
+
+- type: Tag
   id: ATVKeys
 
 - type: Tag
@@ -260,6 +263,9 @@
   id: CableCoil
 
 - type: Tag
+  id: CaneBlade
+
+- type: Tag
   id: CapacitorStockPart
 
 - type: Tag
@@ -352,6 +358,9 @@
 - type: Tag
   id: CartridgeRocket
 
+- type: Tag
+  id: CaveFactory
+
 # Allows you to walk over tile entities such as lava without steptrigger
 - type: Tag
   id: Catwalk
@@ -400,6 +409,9 @@
 
 - type: Tag
   id: ClownSuit
+
+- type: Tag
+  id: CluwneHappyHonk
 
 - type: Tag
   id: CluwneHorn
@@ -804,6 +816,12 @@
   id: MacroBomb
 
 - type: Tag
+  id: Mail
+
+- type: Tag
+  id: MailCapsule
+
+- type: Tag
   id: MimeBelt
 
 - type: Tag
@@ -878,6 +896,9 @@
   id: Meat
 
 - type: Tag
+  id: Medal
+
+- type: Tag
   id: Medkit
 
 - type: Tag
@@ -915,6 +936,12 @@
 
 - type: Tag
   id: Multitool
+
+- type: Tag
+  id: Mustard
+
+- type: Tag
+  id: MysteryFigureBox
 
 - type: Tag
   id: NoBlockAnchoring
@@ -1113,13 +1140,13 @@
   id: Shiv
 
 - type: Tag
-  id: ShoesRequiredStepTriggerImmune
-
-- type: Tag
   id: Shovel
 
 - type: Tag
   id: Sidearm
+
+- type: Tag
+  id: SignalTrigger
 
 - type: Tag
   id: SkeletonMotorcycleKeys
@@ -1135,9 +1162,6 @@
 
 - type: Tag
   id: Smokable
-
-- type: Tag
-  id: SnapPop
 
 - type: Tag
   id: SnowyLabs
@@ -1248,6 +1272,9 @@
   id: TrashBag
 
 - type: Tag
+  id: Truncheon
+
+- type: Tag
   id: Unimplantable
 
 - type: Tag
@@ -1287,6 +1314,9 @@
   id: WeaponShotgunKammerer
 
 - type: Tag
+  id: WeldingMask
+
+- type: Tag
   id: WetFloorSign
 
 - type: Tag
@@ -1294,6 +1324,9 @@
 
 - type: Tag
   id: WhitelistChameleon
+
+- type: Tag
+  id: WhoopieCushion
 
 - type: Tag
   id: Window
@@ -1327,5 +1360,3 @@
 
 - type: Tag
   id: WriteIgnoreStamps
-
-# PUT YOUR TAGS IN ALPHABETICAL ORDER

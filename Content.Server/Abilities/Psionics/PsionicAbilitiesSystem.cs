@@ -10,6 +10,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Content.Shared.Psionics;
 using System.Linq;
+using Robust.Server.Player;
+using Content.Server.Chat.Managers;
+using Content.Server.Psionics.Glimmer;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -24,6 +27,8 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly SharedPopupSystem _popups = default!;
         [Dependency] private readonly ISerializationManager _serialization = default!;
+        [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IChatManager _chatManager = default!;
 
         private ProtoId<WeightedRandomPrototype> _pool = "RandomPsionicPowerPool";
         private const string GenericInitializationMessage = "generic-power-initialization-feedback";
@@ -31,17 +36,14 @@ namespace Content.Server.Abilities.Psionics
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<InnatePsionicPowersComponent, ComponentStartup>(InnatePowerStartup);
+            SubscribeLocalEvent<InnatePsionicPowersComponent, MapInitEvent>(InnatePowerStartup);
             SubscribeLocalEvent<PsionicComponent, ComponentShutdown>(OnPsionicShutdown);
         }
 
         /// <summary>
         ///     Special use-case for a InnatePsionicPowers, which allows an entity to start with any number of Psionic Powers.
         /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="comp"></param>
-        /// <param name="args"></param>
-        private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, ComponentStartup args)
+        private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, MapInitEvent args)
         {
             // Any entity with InnatePowers should also be psionic, but in case they aren't already...
             EnsureComp<PsionicComponent>(uid, out var psionic);
@@ -64,7 +66,6 @@ namespace Content.Server.Abilities.Psionics
         ///     The most shorthand route to creating a Psion. If an entity is not already psionic, it becomes one. This also adds a random new PsionicPower.
         ///     To create a "Latent Psychic"(Psion with no powers) just add or ensure the PsionicComponent normally.
         /// </summary>
-        /// <param name="uid"></param>
         public void AddPsionics(EntityUid uid)
         {
             if (Deleted(uid))
@@ -77,7 +78,6 @@ namespace Content.Server.Abilities.Psionics
         ///     Pretty straightforward, adds a random psionic power to a given Entity. If that Entity is not already Psychic, it will be made one.
         ///     If an entity already has all possible powers, this will not add any new ones.
         /// </summary>
-        /// <param name="uid"></param>
         public void AddRandomPsionicPower(EntityUid uid)
         {
             // We need to EnsureComp here to make sure that we aren't iterating over a component that:
@@ -95,7 +95,7 @@ namespace Content.Server.Abilities.Psionics
                 _prototypeManager.TryIndex<PsionicPowerPrototype>(s, out var p) &&
                 psionic.ActivePowers.Contains(p));
 
-            if (newPool is null)
+            if (newPool.Count == 0)
                 return;
 
             var newProto = _random.Pick(newPool);
@@ -110,11 +110,7 @@ namespace Content.Server.Abilities.Psionics
         /// <summary>
         ///     Initializes a new Psionic Power on a given entity, assuming the entity does not already have said power initialized.
         /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="proto"></param>
-        /// <param name="psionic"></param>
-        /// <param name="playPopup"></param>
-        public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic, bool playPopup = true)
+        public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic, bool playFeedback = true)
         {
             if (!_prototypeManager.HasIndex<PsionicPowerPrototype>(proto.ID)
                 || psionic.ActivePowers.Contains(proto))
@@ -126,31 +122,25 @@ namespace Content.Server.Abilities.Psionics
             AddPsionicPowerComponents(uid, proto);
             AddPsionicStatSources(proto, psionic);
             RefreshPsionicModifiers(uid, psionic);
-
-            if (playPopup)
-                _popups.PopupEntity(Loc.GetString(GenericInitializationMessage), uid, uid, PopupType.MediumCaution);
-            // TODO: Replace this with chat message: _popups.PopupEntity(proto.InitializationFeedback, uid, uid, PopupType.MediumCaution);
+            SendFeedbackMessage(uid, proto, playFeedback);
+            UpdatePowerSlots(psionic);
+            //UpdatePsionicDanger(uid, psionic); // TODO: After Glimmer Refactor
+            //SendFeedbackAudio(uid, proto, playPopup); // TODO: This one is coming next!
         }
 
         /// <summary>
         ///     Initializes a new Psionic Power on a given entity, assuming the entity does not already have said power initialized.
         /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="proto"></param>
-        /// <param name="psionic"></param>
-        /// <param name="playPopup"></param>
-        public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, bool playPopup = true)
+        public void InitializePsionicPower(EntityUid uid, PsionicPowerPrototype proto, bool playFeedback = true)
         {
             EnsureComp<PsionicComponent>(uid, out var psionic);
 
-            InitializePsionicPower(uid, proto, psionic, playPopup);
+            InitializePsionicPower(uid, proto, psionic, playFeedback);
         }
 
         /// <summary>
         ///     Updates a Psion's casting stats, call this anytime a system adds a new source of Amp or Damp.
         /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="comp"></param>
         public void RefreshPsionicModifiers(EntityUid uid, PsionicComponent comp)
         {
             var ampModifier = 0f;
@@ -173,7 +163,6 @@ namespace Content.Server.Abilities.Psionics
         ///     Updates a Psion's casting stats, call this anytime a system adds a new source of Amp or Damp.
         ///     Variant function for systems that didn't already have the PsionicComponent.
         /// </summary>
-        /// <param name="uid"></param>
         public void RefreshPsionicModifiers(EntityUid uid)
         {
             if (!TryComp<PsionicComponent>(uid, out var comp))
@@ -186,7 +175,6 @@ namespace Content.Server.Abilities.Psionics
         ///     A more advanced form of removing powers. Mindbreaking not only removes all psionic powers,
         ///     it also disables the possibility of obtaining new ones.
         /// </summary>
-        /// <param name="uid"></param>
         public void MindBreak(EntityUid uid)
         {
             RemoveAllPsionicPowers(uid, true);
@@ -196,8 +184,6 @@ namespace Content.Server.Abilities.Psionics
         ///     Remove all Psionic powers, with accompanying actions, components, and casting stat sources, from a given Psion.
         ///     Optionally, the Psion can also be rendered permanently non-Psionic.
         /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="mindbreak"></param>
         public void RemoveAllPsionicPowers(EntityUid uid, bool mindbreak = false)
         {
             if (!TryComp<PsionicComponent>(uid, out var psionic)
@@ -239,9 +225,6 @@ namespace Content.Server.Abilities.Psionics
         /// <summary>
         ///     Add all actions associated with a specific Psionic Power
         /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="proto"></param>
-        /// <param name="psionic"></param>
         private void AddPsionicActions(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic)
         {
             foreach (var id in proto.Actions)
@@ -258,8 +241,6 @@ namespace Content.Server.Abilities.Psionics
         /// <summary>
         ///     Add all components associated with a specific Psionic power.
         /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="proto"></param>
         private void AddPsionicPowerComponents(EntityUid uid, PsionicPowerPrototype proto)
         {
             if (proto.Components is null)
@@ -279,8 +260,6 @@ namespace Content.Server.Abilities.Psionics
         /// <summary>
         ///     Update the Amplification and Dampening sources of a Psion to include a new Power.
         /// </summary>
-        /// <param name="proto"></param>
-        /// <param name="psionic"></param>
         private void AddPsionicStatSources(PsionicPowerPrototype proto, PsionicComponent psionic)
         {
             if (proto.AmplificationModifier != 0)
@@ -291,10 +270,60 @@ namespace Content.Server.Abilities.Psionics
         }
 
         /// <summary>
+        ///     Displays a message to alert the player when they have obtained a new psionic power. These generally will not play for Innate powers.
+        ///     Chat messages of this nature should be written in the first-person.
+        ///     Popup feedback should be no more than a sentence, while the full Initialization Feedback can be as much as a paragraph of text.
+        /// </summary>
+        private void SendFeedbackMessage(EntityUid uid, PsionicPowerPrototype proto, bool playFeedback = true)
+        {
+            if (!playFeedback
+                || !_playerManager.TryGetSessionByEntity(uid, out var session)
+                || session is null)
+                return;
+
+            if (proto.InitializationPopup is null)
+                _popups.PopupEntity(Loc.GetString(GenericInitializationMessage), uid, uid, PopupType.MediumCaution);
+            else _popups.PopupEntity(Loc.GetString(proto.InitializationPopup), uid, uid, PopupType.MediumCaution);
+
+            if (proto.InitializationFeedback is null)
+                return;
+
+            if (!Loc.TryGetString(proto.InitializationFeedback, out var feedback))
+                return;
+            var feedbackMessage = $"[font size={proto.InitializationFeedbackFontSize}][color={proto.InitializationFeedbackColor}]{feedback}[/color][/font]";
+            _chatManager.ChatMessageToOne(
+                proto.InitializationFeedbackChannel,
+                feedbackMessage,
+                feedbackMessage,
+                EntityUid.Invalid,
+                false,
+                session.Channel);
+        }
+
+        private void UpdatePowerSlots(PsionicComponent psionic)
+        {
+            var slotsUsed = 0;
+            foreach (var power in psionic.ActivePowers)
+                slotsUsed += power.PowerSlotCost;
+
+            psionic.PowerSlotsTaken = slotsUsed;
+        }
+
+        /// <summary>
+        ///     Psions over a certain power threshold become a glimmer source. This cannot be fully implemented until after I rework Glimmer
+        /// </summary>
+        //private void UpdatePsionicDanger(EntityUid uid, PsionicComponent psionic)
+        //{
+        //   if (psionic.PowerSlotsTaken <= psionic.PowerSlots)
+        //        return;
+        //
+        //    EnsureComp<GlimmerSourceComponent>(uid, out var glimmerSource);
+        //    glimmerSource.SecondsPerGlimmer = 10 / (psionic.PowerSlotsTaken - psionic.PowerSlots);
+        //}
+
+        /// <summary>
         ///     Remove all Psychic Actions listed in an entity's Psionic Component. Unfortunately, removing actions associated with a specific Power Prototype is not supported.
         /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="psionic"></param>
         private void RemovePsionicActions(EntityUid uid, PsionicComponent psionic)
         {
             if (psionic.Actions is null)
@@ -307,8 +336,6 @@ namespace Content.Server.Abilities.Psionics
         /// <summary>
         ///     Remove all Components associated with a specific Psionic Power.
         /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="proto"></param>
         private void RemovePsionicPowerComponents(EntityUid uid, PsionicPowerPrototype proto)
         {
             if (proto.Components is null)
@@ -327,8 +354,6 @@ namespace Content.Server.Abilities.Psionics
         /// <summary>
         ///     Remove all stat sources associated with a specific Psionic Power.
         /// </summary>
-        /// <param name="proto"></param>
-        /// <param name="psionic"></param>
         private void RemovePsionicStatSources(EntityUid uid, PsionicPowerPrototype proto, PsionicComponent psionic)
         {
             if (proto.AmplificationModifier != 0)

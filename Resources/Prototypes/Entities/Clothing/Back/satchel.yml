@@ -107,6 +107,15 @@
 
 - type: entity
   parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelRobotics
+  name: robotics satchel
+  description: A sturdy satchel to store the various tools and duct tape.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/robotics.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelSecurity
   name: security satchel
   description: A robust satchel for security related needs.

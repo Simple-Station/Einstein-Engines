@@ -1,13 +1,11 @@
 - type: loadout
   id: LoadoutEngineeringUniformHazard
-  category: Jobs
-  cost: 2
+  category: JobsEngineering
+  cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -16,10 +14,12 @@
 
 - type: loadout
   id: LoadoutEngineeringOuterHazard
-  category: Jobs
-  cost: 2
+  category: JobsEngineering
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -28,10 +28,12 @@
 
 - type: loadout
   id: LoadoutEngineeringUniformJumpskirtSenior
-  category: Jobs
-  cost: 2
+  category: JobsEngineering
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -49,14 +51,12 @@
 
 - type: loadout
   id: LoadoutEngineeringUniformJumpsuitSenior
-  category: Jobs
-  cost: 2
+  category: JobsEngineering
+  cost: 1
   exclusive: true
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -74,10 +74,12 @@
 
 - type: loadout
   id: LoadoutEngineeringChickenSuit # :)
-  category: Jobs
-  cost: 3
+  category: JobsEngineering
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterEngineering
     - !type:CharacterJobRequirement
       jobs:
         - AtmosphericTechnician
@@ -87,10 +89,12 @@
 
 - type: loadout
   id: LoadoutEngineeringEyesMeson
-  category: Jobs
-  cost: 2
+  category: JobsEngineering
+  cost: 1
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -100,10 +104,12 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadBeret
-  category: Jobs
-  cost: 1
+  category: JobsEngineering
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -114,10 +120,12 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadHardhatBlue
-  category: Jobs
-  cost: 2
+  category: JobsEngineering
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -127,10 +135,12 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadHardhatOrange
-  category: Jobs
-  cost: 2
+  category: JobsEngineering
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -140,10 +150,12 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadHardhatYellow
-  category: Jobs
-  cost: 2
+  category: JobsEngineering
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -153,10 +165,12 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadHardhatWhite
-  category: Jobs
-  cost: 2
+  category: JobsEngineering
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
@@ -166,10 +180,12 @@
 
 - type: loadout
   id: LoadoutEngineeringHeadHardhatRed
-  category: Jobs
-  cost: 2
+  category: JobsEngineering
+  cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer

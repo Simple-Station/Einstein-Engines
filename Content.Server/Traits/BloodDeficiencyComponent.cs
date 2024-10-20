@@ -7,8 +7,14 @@ namespace Content.Server.Traits.Assorted;
 public sealed partial class BloodDeficiencyComponent : Component
 {
     // <summary>
-    //     How much reagent of blood should be removed in each update interval?
+    ///     How much percentage of max blood volume should be removed in each update interval?
     // </summary>
     [DataField(required: true)]
-    public float BloodLossAmount;
+    public float BloodLossPercentage;
+
+    /// <summary>
+    ///     Whether the effects of this trait should be active.
+    /// </summary>
+    [DataField]
+    public bool Active = true;
 }
