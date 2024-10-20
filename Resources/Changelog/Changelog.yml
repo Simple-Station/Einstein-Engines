@@ -7445,3 +7445,10 @@ Entries:
   id: 6472
   time: '2024-10-20T16:31:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/960
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Removed latejoin spawners from the Salvage Pathfinder.
+  id: 6473
+  time: '2024-10-20T16:32:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1105
