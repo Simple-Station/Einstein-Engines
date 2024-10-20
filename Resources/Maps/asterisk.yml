@@ -63,7 +63,10 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
-      parallax: AngleStation
+      parallax: Snow
+    - type: Gravity
+      enabled: true
+      inherent: true
     - type: LoadedMap
   - uid: 2
     components:
@@ -71,6 +74,9 @@ entities:
     - type: Transform
       pos: -0.5104167,-0.4739367
       parent: 1
+    - type: PassiveDampening
+      linearDampening: 1
+      angularDampening: 1
     - type: MapGrid
       chunks:
         0,0:
