@@ -7492,3 +7492,13 @@ Entries:
   id: 6477
   time: '2024-10-20T19:28:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1113
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Sacrificing Psions has been added. Psions can be sacrificed by
+        Epistemics upon an altar in order to dramatically reduce glimmer. The
+        more powerful the Psion to be sacrificed, the more glimmer is reduced.
+  id: 6478
+  time: '2024-10-20T21:34:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1110
