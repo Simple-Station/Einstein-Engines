@@ -112,10 +112,12 @@
     - Sheet
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: SheetPGlass
@@ -175,10 +177,12 @@
         canReact: false
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: CratePlastic
@@ -246,10 +250,12 @@
         canReact: false
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: SheetUGlass

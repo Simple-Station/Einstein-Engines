@@ -93,10 +93,12 @@
           Quantity: 10
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: Window
@@ -193,10 +195,12 @@
         acts: [ "Destruction" ]
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: SheetRPGlass1
@@ -283,10 +287,12 @@
         acts: [ "Destruction" ]
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: SheetRPGlass0
@@ -361,10 +367,12 @@
         canReact: false
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: ReinforcedPlasmaWindow
@@ -447,10 +455,12 @@
         canReact: false
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: SheetRUGlass0
@@ -513,10 +523,12 @@
         canReact: false
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: ReinforcedUraniumWindow
