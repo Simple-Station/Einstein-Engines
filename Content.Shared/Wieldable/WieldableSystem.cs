@@ -223,9 +223,7 @@ public sealed class WieldableSystem : EntitySystem
             }
 
             foreach (var existingVirtual in virtuals)
-            {
                 QueueDel(existingVirtual);
-            }
 
             return false;
         }

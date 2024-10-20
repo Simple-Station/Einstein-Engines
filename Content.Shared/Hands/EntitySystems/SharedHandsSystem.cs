@@ -303,10 +303,8 @@ public abstract partial class SharedHandsSystem
     {
         var freeable = 0;
         foreach (var hand in hands.Comp.Hands.Values)
-        {
             if (hand.IsEmpty || CanDropHeld(hands, hand))
                 freeable++;
-        }
 
         return freeable;
     }

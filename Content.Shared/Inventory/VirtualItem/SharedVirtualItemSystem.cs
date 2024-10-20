@@ -96,13 +96,10 @@ public abstract class SharedVirtualItemSystem : EntitySystem
 
             foreach (var hand in _handsSystem.EnumerateHands(user))
             {
-                if (hand.HeldEntity is not { } held)
-                    continue;
-
-                if (held == blockingEnt || HasComp<VirtualItemComponent>(held))
-                    continue;
-
-                if (!_handsSystem.TryDrop(user, hand))
+                if (hand.HeldEntity is not { } held
+                    || held == blockingEnt
+                    || HasComp<VirtualItemComponent>(held))
+                    || !_handsSystem.TryDrop(user, hand))
                     continue;
 
                 if (!TerminatingOrDeleted(held))
@@ -113,10 +110,8 @@ public abstract class SharedVirtualItemSystem : EntitySystem
             }
         }
 
-        if (empty == null)
-            return false;
-
-        if (!TrySpawnVirtualItem(blockingEnt, user, out virtualItem))
+        if (empty == null
+            || !TrySpawnVirtualItem(blockingEnt, user, out virtualItem))
             return false;
 
         _handsSystem.DoPickup(user, empty, virtualItem.Value);
