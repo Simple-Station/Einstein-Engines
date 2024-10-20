@@ -68,6 +68,7 @@
     - JobsServiceBotanist
     - JobsServiceChef
     - JobsServiceJanitor
+    - JobsServiceMusician
 
 - type: loadoutCategory
   id: JobsServiceUncategorized
@@ -83,6 +84,9 @@
 
 - type: loadoutCategory
   id: JobsServiceJanitor
+
+- type: loadoutCategory
+  id: JobsServiceMusician
 
 - type: loadoutCategory
   id: Mask
