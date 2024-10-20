@@ -7438,3 +7438,10 @@ Entries:
   id: 6471
   time: '2024-10-20T16:03:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1109
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Added a new species, Shadowkin!
+  id: 6472
+  time: '2024-10-20T16:31:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/960
