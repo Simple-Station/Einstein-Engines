@@ -73,10 +73,11 @@
   - type: MovementIgnoreGravity
   - type: Speech
   # powers
-  - type: PotentialPsionic
   - type: Psionic
     removable: false
-  - type: NoosphericZapPower
+  - type: InnatePsionicPowers
+    powersToAdd:
+    - NoosphericZapPower
   - type: LifeDrainer
     damage:
       types:

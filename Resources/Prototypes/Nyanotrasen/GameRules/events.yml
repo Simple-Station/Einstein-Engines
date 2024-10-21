@@ -139,8 +139,6 @@
 - type: entity
   parent: BaseGlimmerSignaturesEvent
   id: GlimmerRandomSentience
-  parent: BaseGlimmerEvent
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 7
