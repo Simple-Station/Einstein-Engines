@@ -8,10 +8,10 @@ public static class RichTextLabelExt
 
 
      /// <summary>
-     /// Sets the labels markup.
+     ///    Sets the labels markup.
      /// </summary>
      /// <remarks>
-     /// Invalid markup will cause exceptions to be thrown. Don't use this for user input!
+     ///    Invalid markup will cause exceptions to be thrown. Don't use this for user input!
      /// </remarks>
     public static RichTextLabel SetMarkup(this RichTextLabel label, string markup)
     {
@@ -20,8 +20,8 @@ public static class RichTextLabelExt
     }
 
      /// <summary>
-     /// Sets the labels markup.<br/>
-     /// Uses <c>FormatedMessage.FromMarkupPermissive</c> which treats invalid markup as text.
+     ///    Sets the labels markup.<br/>
+     ///    Uses <c>FormatedMessage.FromMarkupPermissive</c> which treats invalid markup as text.
      /// </summary>
     public static RichTextLabel SetMarkupPermissive(this RichTextLabel label, string markup)
     {
