@@ -7516,3 +7516,12 @@ Entries:
   id: 6480
   time: '2024-10-21T00:41:02.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1115
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Asterisk Station no longer spawns entombed in snow, and is now on top of
+        an ice sheet.
+  id: 6481
+  time: '2024-10-21T00:41:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1118
