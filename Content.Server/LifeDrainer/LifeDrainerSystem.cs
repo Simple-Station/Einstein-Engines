@@ -69,7 +69,7 @@ public sealed class LifeDrainerSystem : EntitySystem
                 _faction.AggroEntity(uid, puller);
 
             // someone pulled me away
-            if (TryComp<PullableComponent>(ent, out pullable) && pullable.Puller is {} selfPuller)
+            if (TryComp(ent, out pullable) && pullable.Puller is {} selfPuller)
                 _faction.AggroEntity(uid, selfPuller);
 
             // someone carried the psionic away
@@ -119,7 +119,7 @@ public sealed class LifeDrainerSystem : EntitySystem
         var ev = new LifeDrainDoAfterEvent();
         var args = new DoAfterArgs(EntityManager, uid, comp.Delay, ev, target: target, eventTarget: uid)
         {
-            BreakOnTargetMove = false, // If someone drags the target away, we still give the wisp a chance to consume it. This should still respect the distance threshold.
+            BreakOnTargetMove = true,
             BreakOnUserMove = true,
             MovementThreshold = 2f,
             NeedHand = false
