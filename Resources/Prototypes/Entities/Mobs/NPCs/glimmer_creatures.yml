@@ -160,3 +160,4 @@
     - GlimmerMonster
   - type: NPCRetaliation
     attackMemoryLength: 10
+  - type: NPCRangedCombat

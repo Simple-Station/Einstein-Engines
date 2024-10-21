@@ -10,6 +10,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Psionics.NPC;
 
+// TODO this is nyanotrasen shitcode. It works, but it needs to be refactored to be more generic.
 public sealed class PsionicNpcCombatSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -37,7 +38,6 @@ public sealed class PsionicNpcCombatSystem : EntitySystem
             || action is null)
             return;
 
-        // TODO: when action refactor is merged and cherry picked update this to get ActionComponent
         var actionTarget = Comp<EntityTargetActionComponent>(action.Value);
         if (actionTarget.Cooldown is {} cooldown && cooldown.End > _timing.CurTime
             || !TryComp<NPCRangedCombatComponent>(ent, out var combat)
