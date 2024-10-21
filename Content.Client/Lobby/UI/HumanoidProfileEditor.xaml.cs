@@ -639,6 +639,7 @@ namespace Content.Client.Lobby.UI
             UpdateGenderControls();
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
+            UpdateFlavorTextEdit();
             UpdateAgeEdit();
             UpdateEyePickers();
             UpdateSaveButton();

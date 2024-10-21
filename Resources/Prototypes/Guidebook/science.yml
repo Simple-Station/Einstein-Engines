@@ -8,9 +8,9 @@
   - Xenoarchaeology
   - Robotics
   - MachineUpgrading
-  # - AltarsGolemancy # When it's added # Nyanotrasen - Golemancy guidebook
-  - ReverseEngineering # Nyanotrasen - Reverse Engineering guidebook
-  - GlimmerCreatures # DeltaV
+  - AltarsGolemancy
+  - ReverseEngineering
+  - GlimmerCreatures
 
 - type: guideEntry
   id: Technologies

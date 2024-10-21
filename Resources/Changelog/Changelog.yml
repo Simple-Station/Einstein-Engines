@@ -7474,3 +7474,54 @@ Entries:
   id: 6475
   time: '2024-10-20T16:35:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1094
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the Captain's Office on Gax Station missing an LV cable that would
+        power its doors.
+  id: 6476
+  time: '2024-10-20T18:18:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1112
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed prisoner not spawning in the Prison if the Arrivals station is
+        enabled.
+  id: 6477
+  time: '2024-10-20T19:28:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1113
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Sacrificing Psions has been added. Psions can be sacrificed by
+        Epistemics upon an altar in order to dramatically reduce glimmer. The
+        more powerful the Psion to be sacrificed, the more glimmer is reduced.
+  id: 6478
+  time: '2024-10-20T21:34:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1110
+- author: Aidenkrz
+  changes:
+    - type: Fix
+      message: Flavor text can be updated again.
+  id: 6479
+  time: '2024-10-21T00:24:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1119
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Glacier is now on a planetary surface
+  id: 6480
+  time: '2024-10-21T00:41:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1115
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Asterisk Station no longer spawns entombed in snow, and is now on top of
+        an ice sheet.
+  id: 6481
+  time: '2024-10-21T00:41:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1118
