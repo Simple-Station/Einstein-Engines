@@ -42,7 +42,7 @@
   # appearance
   - type: Sprite
     drawDepth: Ghosts
-    sprite: Nyanotrasen/Mobs/Monster/glimmer_wisp.rsi
+    sprite: /Mobs/Demons/glimmer_wisp.rsi
     layers:
     - state: willowisp
       shader: unshaded
