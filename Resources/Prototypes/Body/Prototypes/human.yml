@@ -26,7 +26,7 @@
     right arm:
       part: RightArmHuman
       connections:
-      - right_hand
+      - right hand
     left arm:
       part: LeftArmHuman
       connections:

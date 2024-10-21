@@ -1,9 +1,11 @@
 using System.Linq;
 using Content.Shared.Medical.Surgery.Conditions;
 using Content.Shared.Medical.Surgery.Effects.Complete;
+using Content.Shared.Body.Systems;
 using Content.Shared.Medical.Surgery.Steps.Parts;
 //using Content.Shared._RMC14.Xenonids.Parasite;
 using Content.Shared.Body.Part;
+using Content.Shared.Body.Components;
 using Content.Shared.Buckle.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.GameTicking;
@@ -25,12 +27,13 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly RotateToFaceSystem _rotateToFace = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private readonly Dictionary<EntProtoId, EntityUid> _surgeries = new();
@@ -46,6 +49,8 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         SubscribeLocalEvent<SurgeryCloseIncisionConditionComponent, SurgeryValidEvent>(OnCloseIncisionValid);
         //SubscribeLocalEvent<SurgeryLarvaConditionComponent, SurgeryValidEvent>(OnLarvaValid);
         SubscribeLocalEvent<SurgeryPartConditionComponent, SurgeryValidEvent>(OnPartConditionValid);
+        SubscribeLocalEvent<SurgeryPartRemovedConditionComponent, SurgeryValidEvent>(OnPartRemovedConditionValid);
+        SubscribeLocalEvent<SurgeryPartPresentConditionComponent, SurgeryValidEvent>(OnPartPresentConditionValid);
 
         //SubscribeLocalEvent<SurgeryRemoveLarvaComponent, SurgeryCompletedEvent>(OnRemoveLarva);
 
@@ -64,13 +69,13 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             args.Target is not { } target ||
             !IsSurgeryValid(ent, target, args.Surgery, args.Step, out var surgery, out var part, out var step) ||
             !PreviousStepsComplete(ent, part, surgery, args.Step) ||
-            !CanPerformStep(args.User, ent, part.Comp.PartType, step, false))
+            !CanPerformStep(args.User, ent, part, step, false))
         {
             Log.Warning($"{ToPrettyString(args.User)} tried to start invalid surgery.");
             return;
         }
 
-        var ev = new SurgeryStepEvent(args.User, ent, part, GetTools(args.User));
+        var ev = new SurgeryStepEvent(args.User, ent, part, GetTools(args.User), surgery);
         RaiseLocalEvent(step, ref ev);
 
         RefreshUI(ent);
@@ -80,7 +85,9 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     {
         if (!HasComp<IncisionOpenComponent>(args.Part) ||
             !HasComp<BleedersClampedComponent>(args.Part) ||
-            !HasComp<SkinRetractedComponent>(args.Part))
+            !HasComp<SkinRetractedComponent>(args.Part) ||
+            !HasComp<BodyPartReattachedComponent>(args.Part) ||
+            !HasComp<InternalBleedersClampedComponent>(args.Part))
         {
             args.Cancelled = true;
         }
@@ -95,10 +102,37 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         if (infected != null && infected.SpawnedLarva != null)
             args.Cancelled = true;
     }*/
-
     private void OnPartConditionValid(Entity<SurgeryPartConditionComponent> ent, ref SurgeryValidEvent args)
     {
-        if (CompOrNull<BodyPartComponent>(args.Part)?.PartType != ent.Comp.Part)
+        if (!TryComp<BodyPartComponent>(args.Part, out var part))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
+        var typeMatch = part.PartType == ent.Comp.Part;
+        var symmetryMatch = ent.Comp.Symmetry == null || part.Symmetry == ent.Comp.Symmetry;
+        var valid = typeMatch && symmetryMatch;
+
+        if (ent.Comp.Inverse ? valid : !valid)
+            args.Cancelled = true;
+    }
+
+    private void OnPartRemovedConditionValid(Entity<SurgeryPartRemovedConditionComponent> ent, ref SurgeryValidEvent args)
+    {
+        if (!TryComp<BodyPartComponent>(args.Part, out _)
+            || _body.GetBodyChildrenOfType(args.Body, ent.Comp.Part, symmetry: ent.Comp.Symmetry).Any()
+            && !HasComp<BodyPartReattachedComponent>(args.Part))
+        {
+            args.Cancelled = true;
+        }
+
+    }
+
+    private void OnPartPresentConditionValid(Entity<SurgeryPartPresentConditionComponent> ent, ref SurgeryValidEvent args)
+    {
+        if (args.Part == EntityUid.Invalid
+            || !HasComp<BodyPartComponent>(args.Part))
             args.Cancelled = true;
     }
 
@@ -108,15 +142,13 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     }*/
 
     protected bool IsSurgeryValid(EntityUid body, EntityUid targetPart, EntProtoId surgery, EntProtoId stepId,
-        out Entity<SurgeryComponent> surgeryEnt, out Entity<BodyPartComponent> part, out EntityUid step)
+        out Entity<SurgeryComponent> surgeryEnt, out EntityUid part, out EntityUid step)
     {
         surgeryEnt = default;
         part = default;
         step = default;
-
         if (!HasComp<SurgeryTargetComponent>(body) ||
             !IsLyingDown(body) ||
-            !TryComp(targetPart, out BodyPartComponent? partComp) ||
             GetSingleton(surgery) is not { } surgeryEntId ||
             !TryComp(surgeryEntId, out SurgeryComponent? surgeryComp) ||
             !surgeryComp.Steps.Contains(stepId) ||
@@ -124,16 +156,22 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         {
             return false;
         }
-
+        if (!HasComp<BodyPartComponent>(targetPart) && !HasComp<BodyComponent>(targetPart))
+        {
+            return false;
+        }
         var ev = new SurgeryValidEvent(body, targetPart);
-        RaiseLocalEvent(stepEnt, ref ev);
-        RaiseLocalEvent(surgeryEntId, ref ev);
+        if (_timing.IsFirstTimePredicted)
+        {
+            RaiseLocalEvent(stepEnt, ref ev);
+            RaiseLocalEvent(surgeryEntId, ref ev);
+        }
 
         if (ev.Cancelled)
             return false;
 
         surgeryEnt = (surgeryEntId, surgeryComp);
-        part = (targetPart, partComp);
+        part = targetPart;
         step = stepEnt;
         return true;
     }

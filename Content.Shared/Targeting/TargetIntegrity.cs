@@ -9,5 +9,5 @@ public enum TargetIntegrity
     CriticallyWounded = 5,
     Severed = 6,
     Dead = 7,
-    Unknown = 8,
+    Disabled = 8,
 }

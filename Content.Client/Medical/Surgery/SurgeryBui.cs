@@ -1,6 +1,7 @@
 using Content.Client.Xenonids.UI;
 using Content.Client.Administration.UI.CustomControls;
 using Content.Shared.Medical.Surgery;
+using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Rotation;
 using Content.Shared.Standing;
@@ -9,6 +10,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Robust.Shared.Timing;
 using static Robust.Client.UserInterface.Control;
 
 namespace Content.Client.Medical.Surgery;
@@ -19,12 +21,15 @@ public sealed class SurgeryBui : BoundUserInterface
     [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
 
+    [Dependency] private readonly IGameTiming _timing = default!;
+
     private readonly SurgerySystem _system;
 
     [ViewVariables]
     private SurgeryWindow? _window;
 
     private EntityUid? _part;
+    private bool _isBody = false;
     private (EntityUid Ent, EntProtoId Proto)? _surgery;
     private readonly List<EntProtoId> _previousSurgeries = new();
 
@@ -72,6 +77,7 @@ public sealed class SurgeryBui : BoundUserInterface
             _window.PartsButton.OnPressed += _ =>
             {
                 _part = null;
+                _isBody = false;
                 _surgery = null;
                 _previousSurgeries.Clear();
                 View(ViewType.Parts);
@@ -124,21 +130,23 @@ public sealed class SurgeryBui : BoundUserInterface
         _part = null;
         _surgery = null;
 
-        var parts = new List<Entity<BodyPartComponent>>(state.Choices.Keys.Count);
+        var options = new List<(NetEntity netEntity, EntityUid entity, string Name, BodyPartType? PartType)>();
         foreach (var choice in state.Choices.Keys)
         {
-            if (_entities.TryGetEntity(choice, out var ent) &&
-                _entities.TryGetComponent(ent, out BodyPartComponent? part))
+            if (_entities.TryGetEntity(choice, out var ent))
             {
-                parts.Add((ent.Value, part));
+                if (_entities.TryGetComponent(ent, out BodyPartComponent? part))
+                    options.Add((choice, ent.Value, _entities.GetComponent<MetaDataComponent>(ent.Value).EntityName, part.PartType));
+                else if (_entities.TryGetComponent(ent, out BodyComponent? body))
+                    options.Add((choice, ent.Value, _entities.GetComponent<MetaDataComponent>(ent.Value).EntityName, null));
             }
         }
 
-        parts.Sort((a, b) =>
+        options.Sort((a, b) =>
         {
-            int GetScore(Entity<BodyPartComponent> part)
+            int GetScore(BodyPartType? partType)
             {
-                return part.Comp.PartType switch
+                return partType switch
                 {
                     BodyPartType.Head => 1,
                     BodyPartType.Torso => 2,
@@ -148,22 +156,21 @@ public sealed class SurgeryBui : BoundUserInterface
                     BodyPartType.Foot => 6,
                     // BodyPartType.Tail => 7, No tails yet!
                     BodyPartType.Other => 8,
-                    _ => 0
+                    _ => 9
                 };
             }
 
-            return GetScore(a) - GetScore(b);
+            return GetScore(a.PartType) - GetScore(b.PartType);
         });
 
-        foreach (var part in parts)
+        foreach (var (netEntity, entity, partName, _) in options)
         {
-            var netPart = _entities.GetNetEntity(part.Owner);
-            var surgeries = state.Choices[netPart];
-            var partName = _entities.GetComponent<MetaDataComponent>(part).EntityName;
+            //var netPart = _entities.GetNetEntity(part.Owner);
+            var surgeries = state.Choices[netEntity];
             var partButton = new XenoChoiceControl();
 
             partButton.Set(partName, null);
-            partButton.Button.OnPressed += _ => OnPartPressed(netPart, surgeries);
+            partButton.Button.OnPressed += _ => OnPartPressed(netEntity, surgeries);
 
             _window.Parts.AddChild(partButton);
 
@@ -171,20 +178,21 @@ public sealed class SurgeryBui : BoundUserInterface
             {
                 if (_system.GetSingleton(surgeryId) is not { } surgery ||
                     !_entities.TryGetComponent(surgery, out SurgeryComponent? surgeryComp))
-                {
                     continue;
-                }
 
-                if (oldPart == part && oldSurgery?.Proto == surgeryId)
-                    OnSurgeryPressed((surgery, surgeryComp), netPart, surgeryId);
+                if (oldPart == entity && oldSurgery?.Proto == surgeryId)
+                    OnSurgeryPressed((surgery, surgeryComp), netEntity, surgeryId);
             }
 
-            if (oldPart == part && oldSurgery == null)
-                OnPartPressed(netPart, surgeries);
+            if (oldPart == entity && oldSurgery == null)
+                OnPartPressed(netEntity, surgeries);
         }
 
-        RefreshUI();
-        UpdateDisabledPanel();
+        if (_timing.IsFirstTimePredicted)
+        {
+            RefreshUI();
+            UpdateDisabledPanel();
+        }
 
         if (!_window.IsOpen)
             _window.OpenCentered();
@@ -197,12 +205,10 @@ public sealed class SurgeryBui : BoundUserInterface
         {
             return;
         }
-
         var stepName = new FormattedMessage();
         stepName.AddText(_entities.GetComponent<MetaDataComponent>(step).EntityName);
-
         var stepButton = new SurgeryStepButton { Step = step };
-        stepButton.Button.OnPressed += _ => SendMessage(new SurgeryStepChosenBuiMsg(netPart, surgeryId, stepId));
+        stepButton.Button.OnPressed += _ => SendMessage(new SurgeryStepChosenBuiMsg(netPart, surgeryId, stepId, _isBody));
 
         _window.Steps.AddChild(stepButton);
     }
@@ -213,6 +219,7 @@ public sealed class SurgeryBui : BoundUserInterface
             return;
 
         _part = _entities.GetEntity(netPart);
+        _isBody = _entities.HasComponent<BodyComponent>(_part);
         _surgery = (surgery, surgeryId);
 
         _window.Steps.DisposeAllChildren();
@@ -237,7 +244,6 @@ public sealed class SurgeryBui : BoundUserInterface
             _window.Steps.AddChild(label);
             _window.Steps.AddChild(new HSeparator { Margin = new Thickness(0, 0, 0, 1) });
         }
-
         foreach (var stepId in surgery.Comp.Steps)
         {
             AddStep(stepId, netPart, surgeryId);
@@ -253,7 +259,7 @@ public sealed class SurgeryBui : BoundUserInterface
             return;
 
         _part = _entities.GetEntity(netPart);
-
+        _isBody = _entities.HasComponent<BodyComponent>(_part);
         _window.Surgeries.DisposeAllChildren();
 
         var surgeries = new List<(Entity<SurgeryComponent> Ent, EntProtoId Id, string Name)>();
@@ -293,9 +299,9 @@ public sealed class SurgeryBui : BoundUserInterface
 
     private void RefreshUI()
     {
-        if (_window == null ||
-            !_entities.HasComponent<SurgeryComponent>(_surgery?.Ent) ||
-            !_entities.TryGetComponent(_part, out BodyPartComponent? part))
+        if (_window == null
+            || _part == null
+            || !_entities.HasComponent<SurgeryComponent>(_surgery?.Ent))
         {
             return;
         }
@@ -337,8 +343,12 @@ public sealed class SurgeryBui : BoundUserInterface
             else
             {
                 stepButton.Button.Modulate = Color.White;
-                if (_player.LocalEntity is { } player &&
-                    !_system.CanPerformStep(player, Owner, part.PartType, stepButton.Step, false, out var popup, out var reason, out _))
+                // GOD THIS NEEDS A REWRITE SO BADLY, IT UPDATES ON EVERY SINGLE TICK
+                // THEN RUNS CANPERFORMSTEP WHICH CALLS A SHITLOAD OF EVENTS
+                // DID THEY NOT FUCKING PLAYTEST THIS???
+                if (_player.LocalEntity is { } player
+                    && status == StepStatus.Next
+                    && !_system.CanPerformStep(player, Owner, _part.Value, stepButton.Step, false, out var popup, out var reason, out _))
                 {
                     stepButton.ToolTip = popup;
                     stepButton.Button.Disabled = true;

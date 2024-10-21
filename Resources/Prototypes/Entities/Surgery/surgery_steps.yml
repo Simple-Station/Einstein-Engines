@@ -150,9 +150,13 @@
     tool:
     - type: Cautery
     remove:
+    # This surgery removes a bunch of components that might be leftover from other surgeries in unintended cases.
+    # Essentially a bit of a fallback for endusers :)
     - type: SkinRetracted
     - type: BleedersClamped
     - type: IncisionOpen
+    - type: BodyPartReattached
+    - type: InternalBleedersClamped
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
@@ -165,22 +169,80 @@
   components:
   - type: SurgeryStep
     tool:
-    - type: Scalpel
+    - type: BodyPart
     add:
-    - type: IncisionOpen
+    - type: BodyPartReattached
   - type: Sprite
-    sprite: Interface/Default/Slots/hand_m.png
+    sprite: Objects/Specific/Medical/Surgery/manipulation.rsi
+    state: insertion
+  - type: SurgeryAddPartStep
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepSealWounds
+  name: Seal wounds
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Cautery
+    remove:
+    - type: SkinRetracted
+    - type: BleedersClamped
+    - type: IncisionOpen
+    - type: BodyPartReattached
+    - type: InternalBleedersClamped
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/cautery.rsi
+    state: cautery
+  - type: SurgeryStepEmoteEffect
+  - type: SurgeryStepAffixPartEffect
+  #- type: SurgeryStepIncisionHealEffect
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepSawFeature
+  name: Saw through bones
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: BoneSaw
+    add:
+    - type: BodyPartSawed
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/saw.rsi
+    state: saw
+  - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepClampInternalBleeders
+  name: Clamp internal bleeders
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Hemostat
+    add:
+    - type: InternalBleedersClamped
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+    state: hemostat
+  - type: SurgeryClampBleedEffect
 
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepRemoveFeature
-  name: Remove part
+  name: Amputate part
   components:
   - type: SurgeryStep
     tool:
-    - type: Scalpel
-    add:
-    - type: PartRemoved
+    - type: BoneSaw
+    remove:
+    - type: SkinRetracted
+    - type: BleedersClamped
+    - type: InternalBleedersClamped
+    - type: IncisionOpen
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/saw.rsi
     state: saw
+  - type: SurgeryRemovePartStep
+  - type: SurgeryStepEmoteEffect

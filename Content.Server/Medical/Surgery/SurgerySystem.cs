@@ -27,19 +27,6 @@ public sealed class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     //[Dependency] private readonly WoundsSystem _wounds = default!;
 
-    private readonly Dictionary<string, (BodyPartType Type, BodyPartSymmetry? Symmetry)> _bodyPartMap = new()
-    {
-        { "head", (BodyPartType.Head, null) },
-        { "torso", (BodyPartType.Torso, null) },
-        { "left arm", (BodyPartType.Arm, BodyPartSymmetry.Left) },
-        { "right arm", (BodyPartType.Arm, BodyPartSymmetry.Right) },
-        { "left hand", (BodyPartType.Hand, BodyPartSymmetry.Left) },
-        { "right hand", (BodyPartType.Hand, BodyPartSymmetry.Right) },
-        { "left leg", (BodyPartType.Leg, BodyPartSymmetry.Left) },
-        { "right leg", (BodyPartType.Leg, BodyPartSymmetry.Right) },
-        { "left foot", (BodyPartType.Foot, BodyPartSymmetry.Left) },
-        { "right foot", (BodyPartType.Foot, BodyPartSymmetry.Right) }
-    };
     private readonly List<EntProtoId> _surgeries = new();
 
     public override void Initialize()
@@ -50,6 +37,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
         SubscribeLocalEvent<SurgeryStepBleedEffectComponent, SurgeryStepEvent>(OnStepBleedComplete);
         SubscribeLocalEvent<SurgeryClampBleedEffectComponent, SurgeryStepEvent>(OnStepClampBleedComplete);
+        SubscribeLocalEvent<SurgeryStepAffixPartEffectComponent, SurgeryStepEvent>(OnStepAffixPartComplete);
         SubscribeLocalEvent<SurgeryStepEmoteEffectComponent, SurgeryStepEvent>(OnStepScreamComplete);
         SubscribeLocalEvent<SurgeryStepSpawnEffectComponent, SurgeryStepEvent>(OnStepSpawnComplete);
 
@@ -60,42 +48,29 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
     protected override void RefreshUI(EntityUid body)
     {
-        if (!HasComp<SurgeryTargetComponent>(body)
-            || !TryComp<BodyComponent>(body, out var bodyComp)
-            || bodyComp.Prototype == null)
+        if (!HasComp<SurgeryTargetComponent>(body))
             return;
 
-        var prototype = _prototypes.Index(bodyComp.Prototype.Value);
         var surgeries = new Dictionary<NetEntity, List<EntProtoId>>();
         foreach (var surgery in _surgeries)
         {
             if (GetSingleton(surgery) is not { } surgeryEnt)
                 continue;
 
-            foreach (var (slotId, slot) in prototype.Slots)
+            foreach (var part in _body.GetBodyChildren(body))
             {
-                // We need to translate each slot's prototype into its corresponding enum.
-                // Then replace the switch statement with this:
-                if (_bodyPartMap.TryGetValue(slotId, out var partInfo))
-                {
-                    var (partType, symmetry) = partInfo;
-                    var bodyPart = _body.GetBodyChildrenOfType(body, partType, symmetry: symmetry).FirstOrDefault();
-                    if (bodyPart != default)
-                        Logger.Debug($"{slotId}, {slot.Part}, {bodyPart.Id}, {bodyPart.Component}");
-                    else
-                        Logger.Debug($"No body part found for {slotId} with {slot.Part}");
-                }
-                /*var ev = new SurgeryValidEvent(body, part.Id);
+                var ev = new SurgeryValidEvent(body, part.Id);
                 RaiseLocalEvent(surgeryEnt, ref ev);
 
                 if (ev.Cancelled)
                     continue;
 
-                surgeries.GetOrNew(GetNetEntity(part.Id)).Add(surgery);*/
+                surgeries.GetOrNew(GetNetEntity(part.Id)).Add(surgery);
             }
+
         }
 
-       // _ui.TrySetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState(surgeries));
+        _ui.TrySetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState(surgeries));
     }
 
     private void OnToolAfterInteract(Entity<SurgeryToolComponent> ent, ref AfterInteractEvent args)
@@ -132,11 +107,31 @@ public sealed class SurgerySystem : SharedSurgerySystem
         //_wounds.RemoveWounds(ent.Owner, WoundType.Surgery);
     }
 
+    private void OnStepAffixPartComplete(Entity<SurgeryStepAffixPartEffectComponent> ent, ref SurgeryStepEvent args)
+    {
+        if (!TryComp(args.Surgery, out SurgeryPartRemovedConditionComponent? removedComp))
+            return;
+
+        var targetPart = _body.GetBodyChildrenOfType(args.Body, removedComp.Part, symmetry: removedComp.Symmetry).FirstOrDefault();
+
+        if (targetPart != default)
+        {
+            var ev = new BodyPartEnableChangedEvent(true);
+            RaiseLocalEvent(targetPart.Id, ref ev);
+            var healingValue = 20f;
+            if (targetPart.Component.Integrity + healingValue > 100)
+                healingValue = 100 - targetPart.Component.Integrity;
+
+            _body.TryChangeIntegrity(targetPart, -healingValue, false,
+                _body.GetTargetBodyPart(targetPart.Component.PartType, targetPart.Component.Symmetry), out _);
+        }
+
+    }
+
     private void OnStepScreamComplete(Entity<SurgeryStepEmoteEffectComponent> ent, ref SurgeryStepEvent args)
     {
         _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);
     }
-
     private void OnStepSpawnComplete(Entity<SurgeryStepSpawnEffectComponent> ent, ref SurgeryStepEvent args)
     {
         if (TryComp(args.Body, out TransformComponent? xform))

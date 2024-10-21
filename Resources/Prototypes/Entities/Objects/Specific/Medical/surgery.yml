@@ -177,21 +177,25 @@
     startSound:
       path: /Audio/Medical/Surgery/retractor1.ogg
     endSound:
-      path: /Audio//Medical/Surgery/retractor2.ogg
+      path: /Audio/Medical/Surgery/retractor2.ogg
   - type: Retractor
 
 - type: entity
   name: hemostat
   id: Hemostat
-  parent: Retractor
+  parent: BaseToolSurgery
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
   - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: hemostat
   - type: Item
     heldPrefix: hemostat
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     storedRotation: 90
   - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/retractor1.ogg
     endSound:
       path: /Audio/Medical/Surgery/hemostat1.ogg
   - type: Hemostat
@@ -256,6 +260,7 @@
     heavyStaminaCost: 20
     maxTargets: 8
     angle: 20
+  - type: BoneSaw
 # --No melee for regular saw because have you ever seen someone use a band saw as a weapon? It's dumb.--
 # No, I'm going to saw through your bones.
 
@@ -287,6 +292,7 @@
     qualities:
       - Sawing
     speed: 0.5
+  - type: BoneSaw
 
 - type: entity
   name: circular saw
@@ -353,3 +359,4 @@
     qualities:
       - Sawing
     speed: 2.0
+  - type: BoneSaw

@@ -6,4 +6,9 @@ namespace Content.Shared.Medical.Surgery.Conditions;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class SurgeryPartRemovedConditionComponent : Component
 {
+    [DataField]
+    public BodyPartType Part;
+
+    [DataField]
+    public BodyPartSymmetry? Symmetry;
 }

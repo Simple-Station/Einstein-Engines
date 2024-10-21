@@ -30,6 +30,8 @@ public partial class SharedBodySystem
         // If you modify this also see the Body partial for root parts.
         SubscribeLocalEvent<BodyPartComponent, EntInsertedIntoContainerMessage>(OnBodyPartInserted);
         SubscribeLocalEvent<BodyPartComponent, EntRemovedFromContainerMessage>(OnBodyPartRemoved);
+        SubscribeLocalEvent<BodyPartComponent, AmputateAttemptEvent>(OnAmputateAttempt);
+        SubscribeLocalEvent<BodyPartComponent, BodyPartEnableChangedEvent>(OnPartEnableChanged);
     }
 
     private void OnBodyPartInserted(Entity<BodyPartComponent> ent, ref EntInsertedIntoContainerMessage args)
@@ -136,15 +138,6 @@ public partial class SharedBodySystem
         Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false);
         Dirty(partEnt, partEnt.Comp);
 
-        if (partEnt.Comp.ParentSlot is { } parentSlot && GetEntity(parentSlot.Parent) is { } parent)
-        {
-            if (TryComp(parent, out BodyPartComponent? parentPart))
-            {
-                parentPart.Children.Remove(parentSlot.Id);
-                Dirty(parent, parentPart);
-            }
-        }
-
         partEnt.Comp.ParentSlot = null;
         partEnt.Comp.OriginalBody = partEnt.Comp.Body;
         var ev = new BodyPartRemovedEvent(slotId, partEnt);
@@ -155,7 +148,6 @@ public partial class SharedBodySystem
 
     protected virtual void DropPart(Entity<BodyPartComponent> partEnt)
     {
-
         // We check for whether or not the arm, leg or head is being dropped, in which case
         // If theres just one, that means we'll remove the container slots.
         if (partEnt.Comp.Body is not null
@@ -173,10 +165,17 @@ public partial class SharedBodySystem
         // We then detach the part, which will kickstart EntRemovedFromContainer events.
         if (TryComp(partEnt, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
         {
+            var ev = new BodyPartEnableChangedEvent(false);
+            RaiseLocalEvent(partEnt, ref ev);
             SharedTransform.AttachToGridOrMap(partEnt, transform);
             _randomHelper.RandomOffset(partEnt, 0.5f);
         }
 
+    }
+
+    private void OnAmputateAttempt(Entity<BodyPartComponent> partEnt, ref AmputateAttemptEvent args)
+    {
+        DropPart(partEnt);
     }
 
     private void AddLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
@@ -192,22 +191,25 @@ public partial class SharedBodySystem
         }
     }
 
-    private void RemovePartEffect(Entity<BodyPartComponent> partEnt, Entity<BodyComponent?> bodyEnt)
+    private void RemoveLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
     {
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
             return;
 
-        if (partEnt.Comp.PartType == BodyPartType.Leg)
+        if (legEnt.Comp.PartType == BodyPartType.Leg)
         {
-            bodyEnt.Comp.LegEntities.Remove(partEnt);
+            bodyEnt.Comp.LegEntities.Remove(legEnt);
             UpdateMovementSpeed(bodyEnt);
             Dirty(bodyEnt, bodyEnt.Comp);
-
-            if (!bodyEnt.Comp.LegEntities.Any())
-            {
-                Standing.Down(bodyEnt);
-            }
+            Standing.Down(bodyEnt);
         }
+    }
+
+    // TODO: Refactor this crap.
+    private void RemovePartEffect(Entity<BodyPartComponent> partEnt, Entity<BodyComponent?> bodyEnt)
+    {
+        if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
+            return;
 
         if (partEnt.Comp.Children.Any())
         {
@@ -218,6 +220,8 @@ public partial class SharedBodySystem
                     slot.ContainedEntity is { } childEntity &&
                     TryComp(childEntity, out BodyPartComponent? childPart))
                 {
+                    var ev = new BodyPartEnableChangedEvent(false);
+                    RaiseLocalEvent(childEntity, ref ev);
                     DropPart((childEntity, childPart));
                 }
             };
@@ -237,6 +241,81 @@ public partial class SharedBodySystem
         {
             var damage = new DamageSpecifier(Prototypes.Index<DamageTypePrototype>("Bloodloss"), 300);
             Damageable.TryChangeDamage(bodyEnt, damage);
+        }
+    }
+
+    private void OnPartEnableChanged(Entity<BodyPartComponent> partEnt, ref BodyPartEnableChangedEvent args)
+    {
+        Logger.Debug($"Part enable changed for entity {ToPrettyString(partEnt)}: {args.Enabled}");
+        partEnt.Comp.Enabled = args.Enabled;
+        Dirty(partEnt, partEnt.Comp);
+
+        if (args.Enabled)
+            EnablePart(partEnt);
+        else
+            DisablePart(partEnt);
+    }
+
+    private void EnablePart(Entity<BodyPartComponent> partEnt)
+    {
+        if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))
+            return;
+
+        // I hate having to hardcode these checks so much.
+        Logger.Debug("Enabling part.");
+        if (partEnt.Comp.PartType == BodyPartType.Leg)
+        {
+            Logger.Debug("Enabling leg.");
+            AddLeg(partEnt, (partEnt.Comp.Body.Value, body));
+        }
+
+        if (partEnt.Comp.PartType == BodyPartType.Arm)
+        {
+            var hand = GetBodyChildrenOfType(partEnt.Comp.Body.Value, BodyPartType.Hand, symmetry: partEnt.Comp.Symmetry).FirstOrDefault();
+            if (hand != default)
+            {
+                Logger.Debug("Enabling arm.");
+                var ev = new BodyPartEnabledEvent(hand);
+                RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
+            }
+        }
+
+        if (partEnt.Comp.PartType == BodyPartType.Hand)
+        {
+            Logger.Debug("Enabling hand.");
+            var ev = new BodyPartEnabledEvent(partEnt);
+            RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
+        }
+    }
+
+    private void DisablePart(Entity<BodyPartComponent> partEnt)
+    {
+        if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))
+            return;
+
+        Logger.Debug("Disabling part.");
+        if (partEnt.Comp.PartType == BodyPartType.Leg)
+        {
+            Logger.Debug("Disabling leg.");
+            RemoveLeg(partEnt, (partEnt.Comp.Body.Value, body));
+        }
+
+        if (partEnt.Comp.PartType == BodyPartType.Arm)
+        {
+            var hand = GetBodyChildrenOfType(partEnt.Comp.Body.Value, BodyPartType.Hand, symmetry: partEnt.Comp.Symmetry).FirstOrDefault();
+            if (hand != default)
+            {
+                Logger.Debug("Disabling arm.");
+                var ev = new BodyPartDisabledEvent(hand);
+                RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
+            }
+        }
+
+        if (partEnt.Comp.PartType == BodyPartType.Hand)
+        {
+            Logger.Debug("Disabling hand.");
+            var ev = new BodyPartDisabledEvent(partEnt);
+            RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
         }
     }
 
@@ -495,11 +574,13 @@ public partial class SharedBodySystem
             return false;
         }
 
+
         if (!Containers.TryGetContainer(parentPartId, GetPartSlotContainerId(slot.Id), out var container))
         {
             DebugTools.Assert($"Unable to find body slot {slot.Id} for {ToPrettyString(parentPartId)}");
             return false;
         }
+
 
         return Containers.Insert(partId, container);
     }

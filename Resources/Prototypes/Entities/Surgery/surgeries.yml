@@ -11,8 +11,9 @@
   - type: Surgery
     steps:
     - SurgeryStepOpenIncisionScalpel
-    - SurgeryStepClampBleeders
     - SurgeryStepRetractSkin
+    - SurgeryStepClampBleeders
+  - type: SurgeryPartPresentCondition
 
 - type: entity
   parent: SurgeryBase
@@ -25,6 +26,7 @@
     - SurgeryStepCloseBones
     - SurgeryStepMendRibcage
     - SurgeryStepCloseIncision
+  - type: SurgeryPartPresentCondition
 
 - type: entity
   parent: SurgeryBase
@@ -38,6 +40,171 @@
     - SurgeryStepPriseOpenBones
   - type: SurgeryPartCondition
     part: Torso
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemovePart
+  name: Remove Part
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawFeature
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveFeature
+  - type: SurgeryPartCondition
+    part: Torso
+    inverse: true
+
+# I fucking hate hardcoding all of this shit to accomodate for surgery BUI.
+# If anyone can give me pointers on how to make it better I'd be incredibly grateful.
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachHead
+  name: Attach Head
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryPartRemovedCondition
+    part: Head
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachLeftArm
+  name: Attach Left Arm
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryPartRemovedCondition
+    part: Arm
+    symmetry: Left
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachRightArm
+  name: Attach Right Arm
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryPartRemovedCondition
+    part: Arm
+    symmetry: Right
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachLeftLeg
+  name: Attach Left Leg
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryPartRemovedCondition
+    part: Leg
+    symmetry: Left
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachRightLeg
+  name: Attach Right Leg
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryPartRemovedCondition
+    part: Leg
+    symmetry: Right
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachLeftHand
+  name: Attach Left Hand
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Arm
+    symmetry: Left
+  - type: SurgeryPartRemovedCondition
+    part: Hand
+    symmetry: Left
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachRightHand
+  name: Attach Right Hand
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Arm
+    symmetry: Right
+  - type: SurgeryPartRemovedCondition
+    part: Hand
+    symmetry: Right
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachLeftFoot
+  name: Attach Left Foot
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Leg
+    symmetry: Left
+  - type: SurgeryPartRemovedCondition
+    part: Foot
+    symmetry: Left
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachRightFoot
+  name: Attach Right Foot
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Leg
+    symmetry: Right
+  - type: SurgeryPartRemovedCondition
+    part: Foot
+    symmetry: Right
 
 #- type: entity
 #  parent: SurgeryBase

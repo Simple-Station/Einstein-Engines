@@ -16,9 +16,12 @@ public sealed class SurgeryBuiState(Dictionary<NetEntity, List<EntProtoId>> choi
 }
 
 [Serializable, NetSerializable]
-public sealed class SurgeryStepChosenBuiMsg(NetEntity part, EntProtoId surgery, EntProtoId step) : BoundUserInterfaceMessage
+public sealed class SurgeryStepChosenBuiMsg(NetEntity part, EntProtoId surgery, EntProtoId step, bool isBody) : BoundUserInterfaceMessage
 {
     public readonly NetEntity Part = part;
     public readonly EntProtoId Surgery = surgery;
     public readonly EntProtoId Step = step;
+
+    // Used as a marker for whether or not we're hijacking surgery by applying it on the body itself.
+    public readonly bool IsBody = isBody;
 }

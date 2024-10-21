@@ -3,11 +3,13 @@ using Content.Shared.Medical.Surgery.Steps;
 using Content.Shared.Medical.Surgery.Tools;
 //using Content.Shared._RMC14.Xenonids.Parasite;
 using Content.Shared.Body.Part;
+using Content.Shared.Body.Events;
 using Content.Shared.Buckle.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
+using System.Linq;
 
 namespace Content.Shared.Medical.Surgery;
 
@@ -20,7 +22,8 @@ public abstract partial class SharedSurgerySystem
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryCanPerformStepEvent>(OnToolCanPerform);
 
         //SubSurgery<SurgeryCutLarvaRootsStepComponent>(OnCutLarvaRootsStep, OnCutLarvaRootsCheck);
-
+        SubSurgery<SurgeryAddPartStepComponent>(OnAddPartStep, OnAddPartCheck);
+        SubSurgery<SurgeryRemovePartStepComponent>(OnRemovePartStep, OnRemovePartCheck);
         Subs.BuiEvents<SurgeryTargetComponent>(SurgeryUIKey.Key, subs =>
         {
             subs.Event<SurgeryStepChosenBuiMsg>(OnSurgeryTargetStepChosen);
@@ -179,22 +182,62 @@ public abstract partial class SharedSurgerySystem
             args.Cancelled = true;
     }*/
 
+    private void OnAddPartStep(Entity<SurgeryAddPartStepComponent> ent, ref SurgeryStepEvent args)
+    {
+        if (!TryComp(args.Surgery, out SurgeryPartRemovedConditionComponent? removedComp))
+            return;
+
+        foreach (var tool in args.Tools)
+        {
+            if (TryComp(tool, out BodyPartComponent? partComp)
+                && partComp.PartType == removedComp.Part
+                && (removedComp.Symmetry == null || partComp.Symmetry == removedComp.Symmetry))
+            {
+                var slotName = removedComp.Symmetry != null
+                    ? $"{removedComp.Symmetry?.ToString().ToLower()} {removedComp.Part.ToString().ToLower()}"
+                    : removedComp.Part.ToString().ToLower();
+                _body.AttachPart(args.Part, slotName, tool);
+            }
+        }
+    }
+
+    private void OnAddPartCheck(Entity<SurgeryAddPartStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    {
+        if (!TryComp(args.Surgery, out SurgeryPartRemovedConditionComponent? removedComp)
+            || !_body.GetBodyChildrenOfType(args.Body, removedComp.Part, symmetry: removedComp.Symmetry).Any())
+            args.Cancelled = true;
+    }
+
+    private void OnRemovePartStep(Entity<SurgeryRemovePartStepComponent> ent, ref SurgeryStepEvent args)
+    {
+        if (!TryComp(args.Part, out BodyPartComponent? partComp)
+            || partComp.Body != args.Body)
+            return;
+
+        var ev = new AmputateAttemptEvent(args.Part);
+        RaiseLocalEvent(args.Part, ref ev);
+        _hands.TryPickupAnyHand(args.User, args.Part);
+    }
+
+    private void OnRemovePartCheck(Entity<SurgeryRemovePartStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    {
+        if (!TryComp(args.Part, out BodyPartComponent? partComp)
+            || partComp.Body == args.Body)
+            args.Cancelled = true;
+    }
+
     private void OnSurgeryTargetStepChosen(Entity<SurgeryTargetComponent> ent, ref SurgeryStepChosenBuiMsg args)
     {
         if (args.Session.AttachedEntity is not { } user ||
             GetEntity(args.Entity) is not { Valid: true } body ||
             !IsSurgeryValid(body, GetEntity(args.Part), args.Surgery, args.Step, out var surgery, out var part, out var step))
-        {
             return;
-        }
 
         if (!PreviousStepsComplete(body, part, surgery, args.Step) ||
-            IsStepComplete(body, part, args.Step))
-        {
+            IsStepComplete(body, part, args.Step, surgery))
             return;
-        }
 
-        if (!CanPerformStep(user, body, part.Comp.PartType, step, true, out _, out _, out var validTools))
+        if (!CanPerformStep(user, body, part, step, true, out _, out _, out var validTools))
             return;
 
         if (_net.IsServer && validTools?.Count > 0)
@@ -242,7 +285,7 @@ public abstract partial class SharedSurgerySystem
         for (var i = 0; i < surgery.Comp.Steps.Count; i++)
         {
             var surgeryStep = surgery.Comp.Steps[i];
-            if (!IsStepComplete(body, part, surgeryStep))
+            if (!IsStepComplete(body, part, surgeryStep, surgery))
                 return ((surgery, surgery.Comp), i);
         }
 
@@ -272,18 +315,24 @@ public abstract partial class SharedSurgerySystem
             if (surgeryStep == step)
                 break;
 
-            if (!IsStepComplete(body, part, surgeryStep))
+            if (!IsStepComplete(body, part, surgeryStep, surgery))
                 return false;
         }
 
         return true;
     }
 
-    public bool CanPerformStep(EntityUid user, EntityUid body, BodyPartType part,
+    public bool CanPerformStep(EntityUid user, EntityUid body, EntityUid part,
         EntityUid step, bool doPopup, out string? popup, out StepInvalidReason reason,
         out HashSet<EntityUid>? validTools)
     {
-        var slot = part switch
+        var type = BodyPartType.Other;
+        if (TryComp(part, out BodyPartComponent? partComp))
+        {
+            type = partComp.PartType;
+        }
+
+        var slot = type switch
         {
             BodyPartType.Head => SlotFlags.HEAD,
             BodyPartType.Torso => SlotFlags.OUTERCLOTHING | SlotFlags.INNERCLOTHING,
@@ -314,17 +363,17 @@ public abstract partial class SharedSurgerySystem
         return true;
     }
 
-    public bool CanPerformStep(EntityUid user, EntityUid body, BodyPartType part, EntityUid step, bool doPopup)
+    public bool CanPerformStep(EntityUid user, EntityUid body, EntityUid part, EntityUid step, bool doPopup)
     {
         return CanPerformStep(user, body, part, step, doPopup, out _, out _, out _);
     }
 
-    public bool IsStepComplete(EntityUid body, EntityUid part, EntProtoId step)
+    public bool IsStepComplete(EntityUid body, EntityUid part, EntProtoId step, EntityUid surgery)
     {
         if (GetSingleton(step) is not { } stepEnt)
             return false;
 
-        var ev = new SurgeryStepCompleteCheckEvent(body, part);
+        var ev = new SurgeryStepCompleteCheckEvent(body, part, surgery);
         RaiseLocalEvent(stepEnt, ref ev);
 
         return !ev.Cancelled;

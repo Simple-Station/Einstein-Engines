@@ -10,6 +10,7 @@ using Content.Shared.Gibbing.Components;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Gibbing.Systems;
 using Content.Shared.Inventory;
+using Content.Shared.Standing;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -45,6 +46,7 @@ public partial class SharedBodySystem
         SubscribeLocalEvent<BodyComponent, MapInitEvent>(OnBodyMapInit);
         SubscribeLocalEvent<BodyComponent, CanDragEvent>(OnBodyCanDrag);
         SubscribeLocalEvent<BodyComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<BodyComponent, StandAttemptEvent>(OnStandAttempt);
     }
 
     private void OnBodyInserted(Entity<BodyComponent> ent, ref EntInsertedIntoContainerMessage args)
@@ -128,6 +130,12 @@ public partial class SharedBodySystem
     private void OnBodyCanDrag(Entity<BodyComponent> ent, ref CanDragEvent args)
     {
         args.Handled = true;
+    }
+
+    private void OnStandAttempt(Entity<BodyComponent> ent, ref StandAttemptEvent args)
+    {
+        if (ent.Comp.LegEntities.Count == 0)
+            args.Cancel();
     }
 
     private void OnDamageChanged(Entity<BodyComponent> ent, ref DamageChangedEvent args)
