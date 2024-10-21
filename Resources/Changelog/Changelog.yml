@@ -7502,3 +7502,10 @@ Entries:
   id: 6478
   time: '2024-10-20T21:34:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1110
+- author: Aidenkrz
+  changes:
+    - type: Fix
+      message: Flavor text can be updated again.
+  id: 6479
+  time: '2024-10-21T00:24:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1119
