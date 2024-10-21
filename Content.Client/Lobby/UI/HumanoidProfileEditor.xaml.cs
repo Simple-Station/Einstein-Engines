@@ -640,6 +640,7 @@ namespace Content.Client.Lobby.UI
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
             UpdateFlavorTextEdit();
+            UpdateCustomSpecieNameEdit();
             UpdateAgeEdit();
             UpdateEyePickers();
             UpdateSaveButton();
@@ -1206,15 +1207,8 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateCustomSpecieNameEdit()
         {
-            if (Profile == null)
-                return;
-
-            _customspecienameEdit.Text = Profile.Customspeciename ?? "";
-
-            if (!_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var speciesProto))
-                return;
-
-            _ccustomspecienamecontainerEdit.Visible = speciesProto.CustomName;
+            var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
+            _ccustomspecienamecontainerEdit.Visible = species.CustomName;
         }
 
         private void UpdateFlavorTextEdit()
