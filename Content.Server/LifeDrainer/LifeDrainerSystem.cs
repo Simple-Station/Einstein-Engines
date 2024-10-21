@@ -39,8 +39,7 @@ public sealed class LifeDrainerSystem : EntitySystem
     private void OnGetVerbs(Entity<LifeDrainerComponent> ent, ref GetVerbsEvent<InnateVerb> args)
     {
         var target = args.Target;
-        if (!args.CanAccess ||
-            !CanDrain(ent, target))
+        if (!args.CanAccess || !args.CanInteract || !CanDrain(ent, target))
             return;
 
         args.Verbs.Add(new InnateVerb()
@@ -97,8 +96,7 @@ public sealed class LifeDrainerSystem : EntitySystem
         return !IsDraining(comp)
             && uid != target
             && (comp.Whitelist is null || _whitelist.IsValid(comp.Whitelist, target))
-            && _mob.IsCritical(target)
-            && _interaction.InRangeUnobstructed(uid, target);
+            && _mob.IsCritical(target);
     }
 
     public bool IsDraining(LifeDrainerComponent comp)
@@ -109,7 +107,7 @@ public sealed class LifeDrainerSystem : EntitySystem
     public bool TryDrain(Entity<LifeDrainerComponent> ent, EntityUid target)
     {
         var (uid, comp) = ent;
-        if (!CanDrain(ent, target) || !_actionBlocker.CanInteract(uid, target))
+        if (!CanDrain(ent, target) || !_actionBlocker.CanInteract(uid, target) || !_interaction.InRangeUnobstructed(ent, target, popup: true))
             return false;
 
         _popup.PopupEntity(Loc.GetString("life-drain-second-start", ("drainer", uid)), target, target, PopupType.LargeCaution);

@@ -46,17 +46,13 @@ public sealed partial class PickDrainTargetOperator : HTNOperator
             return (false, null);
 
         var ent = (owner, drainer);
-
         if (!blackboard.TryGetValue<float>(RangeKey, out var range, _entMan))
             return (false, null);
 
         // find crit psionics nearby
         foreach (var target in _faction.GetNearbyHostiles(owner, range))
         {
-            if (!_drainer.CanDrain(ent, target))
-                continue;
-
-            if (!_xformQuery.TryComp(target, out var xform))
+            if (!_drainer.CanDrain(ent, target) || !_xformQuery.TryComp(target, out var xform))
                 continue;
 
             // pathfind to the first crit psionic in range to start draining
