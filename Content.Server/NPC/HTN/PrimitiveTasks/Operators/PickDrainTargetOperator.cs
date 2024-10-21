@@ -1,16 +1,15 @@
-using Content.Server.DeltaV.GlimmerWisp;
-using Content.Server.NPC.Pathfinding;
-using Content.Shared.NPC.Systems;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server.LifeDrainer;
+using Content.Server.NPC.Pathfinding;
+using Content.Server.NPC.Systems;
 
-namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
+namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators;
 
 public sealed partial class PickDrainTargetOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
 
-    private EntityLookupSystem _lookup = default!;
     private LifeDrainerSystem _drainer = default!;
     private NpcFactionSystem _faction = default!;
     private PathfindingSystem _pathfinding = default!;
@@ -18,14 +17,10 @@ public sealed partial class PickDrainTargetOperator : HTNOperator
     private EntityQuery<LifeDrainerComponent> _drainerQuery;
     private EntityQuery<TransformComponent> _xformQuery;
 
-    [DataField(required: true)]
-    public string RangeKey = string.Empty;
-
-    [DataField(required: true)]
-    public string TargetKey = string.Empty;
-
-    [DataField(required: true)]
-    public string DrainKey = string.Empty;
+    [DataField(required: true)] public string
+        RangeKey = string.Empty,
+        TargetKey = string.Empty,
+        DrainKey = string.Empty;
 
     /// <summary>
     /// Where the pathfinding result will be stored (if applicable). This gets removed after execution.
@@ -37,7 +32,6 @@ public sealed partial class PickDrainTargetOperator : HTNOperator
     {
         base.Initialize(sysMan);
 
-        _lookup = sysMan.GetEntitySystem<EntityLookupSystem>();
         _drainer = sysMan.GetEntitySystem<LifeDrainerSystem>();
         _faction = sysMan.GetEntitySystem<NpcFactionSystem>();
         _pathfinding = sysMan.GetEntitySystem<PathfindingSystem>();
@@ -46,9 +40,7 @@ public sealed partial class PickDrainTargetOperator : HTNOperator
         _xformQuery = _entMan.GetEntityQuery<TransformComponent>();
     }
 
-    public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
-        CancellationToken cancelToken)
-    {
+    public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard, CancellationToken cancelToken) {
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
         if (!_drainerQuery.TryComp(owner, out var drainer))
             return (false, null);
@@ -77,7 +69,7 @@ public sealed partial class PickDrainTargetOperator : HTNOperator
             {
                 { TargetKey, targetCoords },
                 { DrainKey, target },
-                { PathfindKey, path}
+                { PathfindKey, path }
             });
         }
 

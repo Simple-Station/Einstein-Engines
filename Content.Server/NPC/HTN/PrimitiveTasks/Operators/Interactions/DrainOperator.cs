@@ -1,14 +1,13 @@
-using Content.Server.DeltaV.GlimmerWisp;
+using Content.Server.LifeDrainer;
 
-namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
+namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Interactions;
 
 public sealed partial class DrainOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
 
     private LifeDrainerSystem _drainer = default!;
-
-    private EntityQuery<LifeDrainerComponent> _drainerQuery = default!;
+    private EntityQuery<LifeDrainerComponent> _drainerQuery;
 
     [DataField(required: true)]
     public string DrainKey = string.Empty;
@@ -18,7 +17,6 @@ public sealed partial class DrainOperator : HTNOperator
         base.Initialize(sysManager);
 
         _drainer = sysManager.GetEntitySystem<LifeDrainerSystem>();
-
         _drainerQuery = _entMan.GetEntityQuery<LifeDrainerComponent>();
     }
 

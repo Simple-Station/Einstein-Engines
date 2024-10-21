@@ -1,22 +1,20 @@
+using Content.Server.Carrying;
+using Content.Server.NPC.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Components;
-using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Psionics.Events;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
-using Content.Server.NPC.Components;
-using Content.Server.Carrying;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
-namespace Content.Server.DeltaV.GlimmerWisp;
+namespace Content.Server.LifeDrainer;
 
 public sealed class LifeDrainerSystem : EntitySystem
 {

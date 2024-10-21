@@ -3,7 +3,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 
-namespace Content.Server.DeltaV.GlimmerWisp;
+namespace Content.Server.LifeDrainer;
 
 /// <summary>
 /// Adds a verb to drain life from a crit mob that matches a whitelist.
