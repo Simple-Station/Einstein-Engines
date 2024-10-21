@@ -443,6 +443,7 @@
     tags:
     - HideContextMenu
     - StationAi
+    - NoConsoleSound
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic

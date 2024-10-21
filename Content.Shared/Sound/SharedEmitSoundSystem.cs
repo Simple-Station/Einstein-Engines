@@ -54,6 +54,14 @@ public abstract class SharedEmitSoundSystem : EntitySystem
         SubscribeLocalEvent<SoundWhileAliveComponent, MobStateChangedEvent>(OnMobState);
     }
 
+    private void HandleEmitSoundOnUIOpen(EntityUid uid, EmitSoundOnUIOpenComponent component, AfterActivatableUIOpenEvent args)
+    {
+        if (_whitelistSystem.IsBlacklistFail(component.Blacklist, args.User))
+        {
+            TryEmitSound(uid, component, args.User);
+        }
+    }
+
     private void OnMobState(Entity<SoundWhileAliveComponent> entity, ref MobStateChangedEvent args)
     {
         // Disable this component rather than removing it because it can be brought back to life.
