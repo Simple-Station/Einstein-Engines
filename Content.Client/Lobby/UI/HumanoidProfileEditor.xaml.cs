@@ -1208,6 +1208,7 @@ namespace Content.Client.Lobby.UI
         private void UpdateCustomSpecieNameEdit()
         {
             var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
+            _customspecienameEdit.Text = string.IsNullOrEmpty(Profile?.Customspeciename) ? Loc.GetString(species.Name) : Profile.Customspeciename;
             _ccustomspecienamecontainerEdit.Visible = species.CustomName;
         }
 
