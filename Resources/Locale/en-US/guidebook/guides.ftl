@@ -72,4 +72,5 @@ guide-entry-writing = Writing
 guide-entry-glossary = Glossary
 
 guide-entry-altars-golemancy = Altars and Golemancy
+guide-entry-glimmer-creatures = Glimmer Creatures
 guide-entry-reverse-engineering = Reverse Engineering
