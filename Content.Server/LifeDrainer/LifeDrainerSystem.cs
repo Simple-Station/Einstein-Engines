@@ -94,11 +94,11 @@ public sealed class LifeDrainerSystem : EntitySystem
     public bool CanDrain(Entity<LifeDrainerComponent> ent, EntityUid target)
     {
         var (uid, comp) = ent;
-        return !IsDraining(comp) &&
-            uid != target &&
-            _whitelist.IsWhitelistPass(comp.Whitelist, target) &&
-            _mob.IsCritical(target) &&
-            _interaction.InRangeAndAccessible(uid, target);
+        return !IsDraining(comp)
+            && uid != target
+            && (comp.Whitelist is null || _whitelist.IsValid(comp.Whitelist, target))
+            && _mob.IsCritical(target)
+            && _interaction.InRangeUnobstructed(uid, target);
     }
 
     public bool IsDraining(LifeDrainerComponent comp)
@@ -121,7 +121,8 @@ public sealed class LifeDrainerSystem : EntitySystem
         var ev = new LifeDrainDoAfterEvent();
         var args = new DoAfterArgs(EntityManager, uid, comp.Delay, ev, target: target, eventTarget: uid)
         {
-            BreakOnMove = true,
+            BreakOnTargetMove = false, // If someone drags the target away, we still give the wisp a chance to consume it. This should still respect the distance threshold.
+            BreakOnUserMove = true,
             MovementThreshold = 2f,
             NeedHand = false
         };

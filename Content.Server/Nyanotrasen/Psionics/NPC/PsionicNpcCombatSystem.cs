@@ -3,44 +3,49 @@ using Content.Shared.Actions;
 using Content.Server.NPC.Events;
 using Content.Server.NPC.Components;
 using Content.Server.Abilities.Psionics;
+using Content.Shared.Psionics;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Psionics.NPC;
 
 public sealed class PsionicNpcCombatSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+
+    private static readonly ProtoId<PsionicPowerPrototype> NoosphericZapProto = "NoosphericZapPower";
+    private PsionicPowerPrototype NoosphericZap = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<NoosphericZapPowerComponent, NPCSteeringEvent>(ZapCombat);
+
+        NoosphericZap = _protoMan.Index(NoosphericZapProto);
+        DebugTools.Assert(NoosphericZap.Actions.Count == 1, "I can't account for this, so it's your problem now");
     }
 
-    // TODO: would be useful if this can be reused for other powers like pyrokinesis wyci
     private void ZapCombat(Entity<NoosphericZapPowerComponent> ent, ref NPCSteeringEvent args)
     {
-        var (uid, comp) = ent;
-        if (comp.NoosphericZapActionEntity is not {} action)
+        PsionicComponent? psionics = null;
+        if (!Resolve(ent, ref psionics, logMissing: true)
+            || !psionics.Actions.TryGetValue(NoosphericZap.Actions[0], out var action)
+            || action is null)
             return;
 
         // TODO: when action refactor is merged and cherry picked update this to get ActionComponent
-        var target = Comp<EntityTargetActionComponent>(action);
-        if (target.Cooldown is {} cooldown && cooldown.End > _timing.CurTime)
-            return;
-
-        if (!TryComp<NPCRangedCombatComponent>(uid, out var combat))
-            return;
-
-        if (!_actions.ValidateEntityTarget(uid, combat.Target, (action, target)))
-            return;
-
-        if (target.Event is not {} ev)
+        var actionTarget = Comp<EntityTargetActionComponent>(action.Value);
+        if (actionTarget.Cooldown is {} cooldown && cooldown.End > _timing.CurTime
+            || !TryComp<NPCRangedCombatComponent>(ent, out var combat)
+            || !_actions.ValidateEntityTarget(ent, combat.Target, (action.Value, actionTarget))
+            || actionTarget.Event is not {} ev)
             return;
 
         ev.Target = combat.Target;
-        _actions.PerformAction(uid, null, action, target, ev, _timing.CurTime, predicted: false);
+        _actions.PerformAction(ent, null, action.Value, actionTarget, ev, _timing.CurTime, predicted: false);
     }
 }
