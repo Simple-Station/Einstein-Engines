@@ -42,7 +42,7 @@
   # appearance
   - type: Sprite
     drawDepth: Ghosts
-    sprite: /Mobs/Demons/glimmer_wisp.rsi
+    sprite: Mobs/Demons/glimmer_wisp.rsi
     layers:
     - state: willowisp
       shader: unshaded
@@ -54,7 +54,7 @@
     volume: -8
     range: 5
     sound:
-      path: /Audio/Nyanotrasen/Mobs/GlimmerWisp/wisp_ambience.ogg
+      path: /Audio/Ambience/wisp_ambience.ogg
   # physical
   - type: Fixtures
     fixtures:
@@ -105,7 +105,7 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/Nyanotrasen/Mobs/GlimmerWisp/wail.ogg
+          path: /Audio/Effects/wail.ogg
       - !type:SpawnEntitiesBehavior
         spawn:
           Ectoplasm:
