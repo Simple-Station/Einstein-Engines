@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._LostParadise.Clothing;
+namespace Content.Shared.Clothing;
 
 /// <summary>
 /// Made by BL02DL from _LostParadise
@@ -12,13 +12,13 @@ namespace Content.Shared._LostParadise.Clothing;
 public sealed partial class NightVisionComponent : Component
 {
     [DataField]
-    public EntProtoId ToggleAction = "LPPActionToggleNightVision";
+    public EntProtoId ToggleAction = "ActionToggleNightVision";
 
     [DataField, AutoNetworkedField]
     public EntityUid? ToggleActionEntity;
 
-    [DataField("on"), AutoNetworkedField]
-    public bool On;
+    [DataField("enabled"), AutoNetworkedField]
+    public bool Enabled;
 
     [DataField("tint1"), ViewVariables(VVAccess.ReadWrite)]
     public float Tint1 { get; set; } = 0.3f;
@@ -29,7 +29,6 @@ public sealed partial class NightVisionComponent : Component
     [DataField("tint3"), ViewVariables(VVAccess.ReadWrite)]
     public float Tint3 { get; set; } = 0.3f;
 
-    [DataField("tint"), ViewVariables(VVAccess.ReadWrite)]
     public Vector3 Tint
     {
         get => new(Tint1, Tint2, Tint3);

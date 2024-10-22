@@ -1,4 +1,4 @@
 - type: shader
-  id: LPPNightVision
+  id: NightVision
   kind: source
   path: "/Textures/_LostParadise/Shaders/nightvision.swsl"

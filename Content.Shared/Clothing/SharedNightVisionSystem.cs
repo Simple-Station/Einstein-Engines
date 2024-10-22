@@ -6,7 +6,7 @@ using Content.Shared.Toggleable;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 
-namespace Content.Shared._LostParadise.Clothing;
+namespace Content.Shared.Clothing;
 
 /// <summary>
 /// Made by BL02DL from _LostParadise
@@ -50,7 +50,7 @@ public abstract class SharedNightVisionSystem : EntitySystem
 
     private void ToggleNightVision(EntityUid uid, NightVisionComponent nightvision)
     {
-        nightvision.On = !nightvision.On;
+        nightvision.Enabled = !nightvision.Enabled;
 
         if (_sharedContainer.TryGetContainingContainer(uid, out var container) &&
             _inventory.TryGetSlotEntity(container.Owner, "eyes", out var entityUid) && entityUid == uid)
@@ -58,11 +58,11 @@ public abstract class SharedNightVisionSystem : EntitySystem
 
         if (TryComp<ItemComponent>(uid, out var item))
         {
-            _item.SetHeldPrefix(uid, nightvision.On ? "on" : null, component: item);
-            _clothing.SetEquippedPrefix(uid, nightvision.On ? "on" : null);
+            _item.SetHeldPrefix(uid, nightvision.Enabled ? "on" : null, component: item);
+            _clothing.SetEquippedPrefix(uid, nightvision.Enabled ? "on" : null);
         }
 
-        _appearance.SetData(uid, ToggleVisuals.Toggled, nightvision.On);
+        _appearance.SetData(uid, ToggleVisuals.Toggled, nightvision.Enabled);
         OnChanged(uid, nightvision);
         Dirty(uid, nightvision);
     }
@@ -71,7 +71,7 @@ public abstract class SharedNightVisionSystem : EntitySystem
 
     protected void OnChanged(EntityUid uid, NightVisionComponent component)
     {
-        _sharedActions.SetToggled(component.ToggleActionEntity, component.On);
+        _sharedActions.SetToggled(component.ToggleActionEntity, component.Enabled);
     }
 
     private void AddToggleVerb(EntityUid uid, NightVisionComponent component, GetVerbsEvent<ActivationVerb> args)
@@ -80,7 +80,7 @@ public abstract class SharedNightVisionSystem : EntitySystem
             return;
 
         ActivationVerb verb = new();
-        verb.Text = Loc.GetString("lpp-toggle-nightvision-verb-get-data-text");
+        verb.Text = Loc.GetString("toggle-nightvision-verb-get-data-text");
         verb.Act = () => ToggleNightVision(uid, component);
         args.Verbs.Add(verb);
     }

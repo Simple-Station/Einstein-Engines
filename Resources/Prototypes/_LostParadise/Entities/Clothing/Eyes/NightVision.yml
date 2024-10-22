@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingEyesBase
-  id: LPPClothingEyesNVG
+  id: ClothingEyesNVG
   name: NVG
   description: Now you can see in the dark! It has the label "BL CORP technology".
   components:
@@ -31,22 +31,21 @@
       - WhitelistChameleon
 
 - type: entity
-  id: LPPClothingEyesMesonNVG
-  parent: LPPClothingEyesNVG
+  id: ClothingEyesMesonNVG
+  parent: ClothingEyesNVG
   name: meson NVG
   components:
   - type: EyeProtection
 
 - type: entity
-  id: LPPClothingEyesSecNVG
-  parent: [LPPClothingEyesNVG, ShowSecurityIcons]
+  id: ClothingEyesSecNVG
+  parent: [ClothingEyesNVG, ShowSecurityIcons]
   name: sec NVG
   components:
   - type: Tag
     tags:
     - HudSecurity
   - type: NightVision
-    toggleAction: LPPActionToggleSecNightVision
     tint1: 1.0
     tint2: 0.3
     tint3: 0.3
@@ -57,8 +56,8 @@
   - type: FlashImmunity
 
 - type: entity
-  id: LPPClothingEyesMedNVG
-  parent: LPPClothingEyesNVG
+  id: ClothingEyesMedNVG
+  parent: ClothingEyesNVG
   name: medical NVG
   components:
   - type: ShowHealthBars
@@ -71,7 +70,6 @@
     tags:
     - HudMedical
   - type: NightVision
-    toggleAction: LPPActionToggleMedNightVision
     tint1: 0.3
     tint2: 0.3
     tint3: 0.7
@@ -81,12 +79,11 @@
     sprite: _LostParadise/Clothing/Eyes/NVG/mednightvision.rsi
 
 - type: entity
-  id: LPPClothingEyesDiagnosticNVG
-  parent: LPPClothingEyesNVG
+  id: ClothingEyesDiagnosticNVG
+  parent: ClothingEyesNVG
   name: diagnostic NVG
   components:
   - type: NightVision
-    toggleAction: LPPActionToggleDiagnosticNightVision
     tint1: 1.0
     tint2: 1.0
     tint3: 0.3
@@ -101,7 +98,7 @@
     - Silicon
 
 - type: entity
-  id: LPPActionBaseToggleNightVision
+  id: ActionBaseToggleNightVision
   name: Toggle NVG
   description: Toggles the NVG on and off.
   noSpawn: true
@@ -111,37 +108,10 @@
     event: !type:ToggleNightVisionEvent
 
 - type: entity
-  id: LPPActionToggleNightVision
-  parent: LPPActionBaseToggleNightVision
+  id: ActionToggleNightVision
+  parent: ActionBaseToggleNightVision
   noSpawn: true
   components:
   - type: InstantAction
-    icon: { sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi, state: icon }
-    iconOn: { sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi, state: icon-on }
-
-- type: entity
-  id: LPPActionToggleMedNightVision
-  parent: LPPActionBaseToggleNightVision
-  noSpawn: true
-  components:
-  - type: InstantAction
-    icon: { sprite: _LostParadise/Clothing/Eyes/NVG/mednightvision.rsi, state: icon }
-    iconOn: { sprite: _LostParadise/Clothing/Eyes/NVG/mednightvision.rsi, state: icon-on }
-
-- type: entity
-  id: LPPActionToggleSecNightVision
-  parent: LPPActionBaseToggleNightVision
-  noSpawn: true
-  components:
-  - type: InstantAction
-    icon: { sprite: _LostParadise/Clothing/Eyes/NVG/secnightvision.rsi, state: icon }
-    iconOn: { sprite: _LostParadise/Clothing/Eyes/NVG/secnightvision.rsi, state: icon-on }
-
-- type: entity
-  id: LPPActionToggleDiagnosticNightVision
-  parent: LPPActionBaseToggleNightVision
-  noSpawn: true
-  components:
-  - type: InstantAction
-    icon: { sprite: _LostParadise/Clothing/Eyes/NVG/diagnosticnightvision.rsi, state: icon }
-    iconOn: { sprite: _LostParadise/Clothing/Eyes/NVG/diagnosticnightvision.rsi, state: icon-on }
+    icon: { sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi, state: toggle-on }
+    iconOn: { sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi, state: toggle-off }

@@ -1,9 +1,8 @@
 using Robust.Client.Graphics;
-using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._LostParadise.Clothing;
+namespace Content.Client.Clothing;
 
 /// <summary>
 /// Made by BL02DL from _LostParadise
@@ -12,19 +11,19 @@ namespace Content.Client._LostParadise.Clothing;
 public sealed class NightVisionOverlay : Overlay
 {
     private readonly IPrototypeManager _prototypeManager;
-    private readonly NightVisionEntitySystem _nightVisionEntitySystem;
+    private readonly NightVisionSystem _nightVisionSystem;
 
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
     private readonly ShaderInstance _shader;
 
-    public NightVisionOverlay()
+    public NightVisionOverlay(NightVisionSystem nightVisionSystem)
     {
         IoCManager.InjectDependencies(this);
-        _nightVisionEntitySystem = IoCManager.Resolve<NightVisionEntitySystem>();
+        _nightVisionSystem = nightVisionSystem;
         _prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-        _shader = _prototypeManager.Index<ShaderPrototype>("LPPNightVision").InstanceUnique();
+        _shader = _prototypeManager.Index<ShaderPrototype>("NightVision").InstanceUnique();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -33,9 +32,8 @@ public sealed class NightVisionOverlay : Overlay
             return;
 
         var handle = args.WorldHandle;
-        var nightcomp = _nightVisionEntitySystem.GetNightComp();
+        var nightcomp = _nightVisionSystem.GetNightComp();
 
-        // Получение данных об оверлее Ночного Видения
         if (nightcomp == null)
         {
             Logger.Error("Failed to get night vision component from eyes.");
