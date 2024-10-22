@@ -7525,3 +7525,10 @@ Entries:
   id: 6481
   time: '2024-10-21T00:41:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1118
+- author: Aidenkrz
+  changes:
+    - type: Fix
+      message: Custom specie name doesn't disappear in the editor anymore.
+  id: 6482
+  time: '2024-10-22T01:42:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1120
