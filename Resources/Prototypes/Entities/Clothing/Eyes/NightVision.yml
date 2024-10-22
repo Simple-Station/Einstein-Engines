@@ -1,16 +1,16 @@
 - type: entity
   parent: ClothingEyesBase
   id: ClothingEyesNVG
-  name: NVG
+  name: night vision goggles
   description: Now you can see in the dark! It has the label "BL CORP technology".
   components:
     - type: Sprite
-      sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi
+      sprite: Clothing/Eyes/NVG/nightvision.rsi
       layers:
       - state: icon
         map: [ "enum.ToggleVisuals.Layer" ]
     - type: Clothing
-      sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi
+      sprite: Clothing/Eyes/NVG/nightvision.rsi
     - type: NightVision # MUST HAVE ALL TINT!
       tint1: 0.3 # Red
       tint2: 1.0 # Green
@@ -33,14 +33,14 @@
 - type: entity
   id: ClothingEyesMesonNVG
   parent: ClothingEyesNVG
-  name: meson NVG
+  name: engineering night vision goggles
   components:
   - type: EyeProtection
 
 - type: entity
   id: ClothingEyesSecNVG
   parent: [ClothingEyesNVG, ShowSecurityIcons]
-  name: sec NVG
+  name: security night vision goggles
   components:
   - type: Tag
     tags:
@@ -50,15 +50,15 @@
     tint2: 0.3
     tint3: 0.3
   - type: Sprite
-    sprite: _LostParadise/Clothing/Eyes/NVG/secnightvision.rsi
+    sprite: Clothing/Eyes/NVG/secnightvision.rsi
   - type: Clothing
-    sprite: _LostParadise/Clothing/Eyes/NVG/secnightvision.rsi
+    sprite: Clothing/Eyes/NVG/secnightvision.rsi
   - type: FlashImmunity
 
 - type: entity
   id: ClothingEyesMedNVG
   parent: ClothingEyesNVG
-  name: medical NVG
+  name: medical night vision goggles
   components:
   - type: ShowHealthBars
     damageContainers:
@@ -74,23 +74,23 @@
     tint2: 0.3
     tint3: 0.7
   - type: Sprite
-    sprite: _LostParadise/Clothing/Eyes/NVG/mednightvision.rsi
+    sprite: Clothing/Eyes/NVG/mednightvision.rsi
   - type: Clothing
-    sprite: _LostParadise/Clothing/Eyes/NVG/mednightvision.rsi
+    sprite: Clothing/Eyes/NVG/mednightvision.rsi
 
 - type: entity
   id: ClothingEyesDiagnosticNVG
   parent: ClothingEyesNVG
-  name: diagnostic NVG
+  name: diagnostic night vision goggles
   components:
   - type: NightVision
     tint1: 1.0
     tint2: 1.0
     tint3: 0.3
   - type: Sprite
-    sprite: _LostParadise/Clothing/Eyes/NVG/diagnosticnightvision.rsi
+    sprite: Clothing/Eyes/NVG/diagnosticnightvision.rsi
   - type: Clothing
-    sprite: _LostParadise/Clothing/Eyes/NVG/diagnosticnightvision.rsi
+    sprite: Clothing/Eyes/NVG/diagnosticnightvision.rsi
   - type: EyeProtection
   - type: ShowHealthBars
     damageContainers:
@@ -113,5 +113,5 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: { sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi, state: toggle-on }
-    iconOn: { sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi, state: toggle-off }
+    icon: { sprite: Clothing/Eyes/NVG/nightvision.rsi, state: toggle-on }
+    iconOn: { sprite: Clothing/Eyes/NVG/nightvision.rsi, state: toggle-off }
