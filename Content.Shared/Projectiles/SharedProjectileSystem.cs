@@ -66,7 +66,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             if (comp.AutoRemoveTime == null || comp.AutoRemoveTime > curTime)
                 continue;
 
-            if (comp.Target is { } targetUid)
+            if (comp.EmbeddedIntoUid is { } targetUid)
                 _popup.PopupClient(Loc.GetString("throwing-embed-falloff", ("item", uid)), targetUid, targetUid);
 
             RemoveEmbed(uid, comp);
@@ -82,7 +82,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
         args.Handled = true;
 
-        if (component.Target is { } targetUid)
+        if (component.EmbeddedIntoUid is { } targetUid)
             _popup.PopupClient(Loc.GetString("throwing-embed-remove-alert-owner", ("item", uid), ("other", args.User)),
                 args.User, targetUid);
 
@@ -106,7 +106,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     public void RemoveEmbed(EntityUid uid, EmbeddableProjectileComponent component, EntityUid? remover = null)
     {
         component.AutoRemoveTime = null;
-        component.Target = null;
+        component.EmbeddedIntoUid = null;
         component.TargetBodyPart = null;
         RemCompDeferred<ActiveEmbeddableProjectileComponent>(uid);
 
@@ -192,13 +192,12 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         _audio.PlayPredicted(component.Sound, uid, null);
 
         component.TargetBodyPart = targetPart;
+        component.EmbeddedIntoUid = target;
         var ev = new EmbedEvent(user, target, targetPart);
         RaiseLocalEvent(uid, ref ev);
 
         if (component.AutoRemoveDuration != 0)
             component.AutoRemoveTime = _timing.CurTime + TimeSpan.FromSeconds(component.AutoRemoveDuration);
-
-        component.Target = target;
 
         Dirty(uid, component);
         return true;
@@ -221,12 +220,12 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, EmbeddableProjectileComponent component, ExaminedEvent args)
     {
-        if (!(component.Target is { } target))
+        if (!(component.EmbeddedIntoUid is { } target))
             return;
 
         var targetIdentity = Identity.Entity(target, EntityManager);
 
-        var loc = component.TargetBodyPart == null
+        var loc = component.EmbeddedIntoUid == null
             ? Loc.GetString("throwing-examine-embedded",
             ("embedded", uid),
             ("target", targetIdentity))
