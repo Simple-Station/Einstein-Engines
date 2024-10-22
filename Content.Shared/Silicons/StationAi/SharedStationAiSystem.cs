@@ -288,6 +288,8 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
     private bool SetupEye(Entity<StationAiCoreComponent> ent)
     {
+        if (_net.IsClient)
+            return false;
         if (ent.Comp.RemoteEntity != null)
             return false;
 
@@ -302,8 +304,11 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
     private void ClearEye(Entity<StationAiCoreComponent> ent)
     {
+        if (_net.IsClient)
+            return;
         QueueDel(ent.Comp.RemoteEntity);
         ent.Comp.RemoteEntity = null;
+        Dirty(ent);
     }
 
     private void AttachEye(Entity<StationAiCoreComponent> ent)
@@ -333,6 +338,8 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         if (_timing.ApplyingState)
             return;
 
+        SetupEye(ent);
+
         // Just so text and the likes works properly
         _metadata.SetEntityName(ent.Owner, MetaData(args.Entity).EntityName);
 
@@ -354,6 +361,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         {
             _eye.SetTarget(args.Entity, null, eyeComp);
         }
+        ClearEye(ent);
     }
 
     private void UpdateAppearance(Entity<StationAiHolderComponent?> entity)
