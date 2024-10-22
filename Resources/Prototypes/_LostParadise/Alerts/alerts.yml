@@ -1,0 +1,7 @@
+- type: alert
+  id: LPPNightVision
+  icons:
+  - sprite: /Textures/_LostParadise/Clothing/Eyes/NVG/nightvision.rsi
+    state: alert
+  name: lpp-alerts-nightvision-name
+  description: lpp-alerts-nightvision-desc

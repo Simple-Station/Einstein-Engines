@@ -21,6 +21,7 @@ using Content.Client.Lobby;
 using Content.Client.Replay;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Players.PlayTimeTracking;
+using Content.Client._LostParadise.Clothing; // _LostParadise
 
 
 namespace Content.Client.IoC
@@ -54,6 +55,7 @@ namespace Content.Client.IoC
             collection.Register<ISharedPlaytimeManager, JobRequirementsManager>();
             IoCManager.Register<JoinQueueManager>();
             IoCManager.Register<DiscordAuthManager>();
+            IoCManager.Register<NightVisionEntitySystem>(); // _LostParadise
         }
     }
 }

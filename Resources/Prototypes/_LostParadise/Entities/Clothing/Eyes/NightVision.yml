@@ -1,0 +1,147 @@
+- type: entity
+  parent: ClothingEyesBase
+  id: LPPClothingEyesNVG
+  name: NVG
+  description: Now you can see in the dark! It has the label "BL CORP technology".
+  components:
+    - type: Sprite
+      sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi
+      layers:
+      - state: icon
+        map: [ "enum.ToggleVisuals.Layer" ]
+    - type: Clothing
+      sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi
+    - type: NightVision # MUST HAVE ALL TINT!
+      tint1: 0.3 # Red
+      tint2: 1.0 # Green
+      tint3: 0.3 # Blue
+      # strength: 2 # Add if you need
+      # noise: 0.5 # Add if you need
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.ToggleVisuals.Toggled:
+          enum.ToggleVisuals.Layer:
+            True: {state: icon-on}
+            False: {state: icon}
+    - type: StaticPrice
+      price: 200
+    - type: Tag
+      tags:
+      - WhitelistChameleon
+
+- type: entity
+  id: LPPClothingEyesMesonNVG
+  parent: LPPClothingEyesNVG
+  name: meson NVG
+  components:
+  - type: EyeProtection
+
+- type: entity
+  id: LPPClothingEyesSecNVG
+  parent: [LPPClothingEyesNVG, ShowSecurityIcons]
+  name: sec NVG
+  components:
+  - type: Tag
+    tags:
+    - HudSecurity
+  - type: NightVision
+    toggleAction: LPPActionToggleSecNightVision
+    tint1: 1.0
+    tint2: 0.3
+    tint3: 0.3
+  - type: Sprite
+    sprite: _LostParadise/Clothing/Eyes/NVG/secnightvision.rsi
+  - type: Clothing
+    sprite: _LostParadise/Clothing/Eyes/NVG/secnightvision.rsi
+  - type: FlashImmunity
+
+- type: entity
+  id: LPPClothingEyesMedNVG
+  parent: LPPClothingEyesNVG
+  name: medical NVG
+  components:
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  - type: Tag
+    tags:
+    - HudMedical
+  - type: NightVision
+    toggleAction: LPPActionToggleMedNightVision
+    tint1: 0.3
+    tint2: 0.3
+    tint3: 0.7
+  - type: Sprite
+    sprite: _LostParadise/Clothing/Eyes/NVG/mednightvision.rsi
+  - type: Clothing
+    sprite: _LostParadise/Clothing/Eyes/NVG/mednightvision.rsi
+
+- type: entity
+  id: LPPClothingEyesDiagnosticNVG
+  parent: LPPClothingEyesNVG
+  name: diagnostic NVG
+  components:
+  - type: NightVision
+    toggleAction: LPPActionToggleDiagnosticNightVision
+    tint1: 1.0
+    tint2: 1.0
+    tint3: 0.3
+  - type: Sprite
+    sprite: _LostParadise/Clothing/Eyes/NVG/diagnosticnightvision.rsi
+  - type: Clothing
+    sprite: _LostParadise/Clothing/Eyes/NVG/diagnosticnightvision.rsi
+  - type: EyeProtection
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+
+- type: entity
+  id: LPPActionBaseToggleNightVision
+  name: Toggle NVG
+  description: Toggles the NVG on and off.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    event: !type:ToggleNightVisionEvent
+
+- type: entity
+  id: LPPActionToggleNightVision
+  parent: LPPActionBaseToggleNightVision
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: { sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi, state: icon }
+    iconOn: { sprite: _LostParadise/Clothing/Eyes/NVG/nightvision.rsi, state: icon-on }
+
+- type: entity
+  id: LPPActionToggleMedNightVision
+  parent: LPPActionBaseToggleNightVision
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: { sprite: _LostParadise/Clothing/Eyes/NVG/mednightvision.rsi, state: icon }
+    iconOn: { sprite: _LostParadise/Clothing/Eyes/NVG/mednightvision.rsi, state: icon-on }
+
+- type: entity
+  id: LPPActionToggleSecNightVision
+  parent: LPPActionBaseToggleNightVision
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: { sprite: _LostParadise/Clothing/Eyes/NVG/secnightvision.rsi, state: icon }
+    iconOn: { sprite: _LostParadise/Clothing/Eyes/NVG/secnightvision.rsi, state: icon-on }
+
+- type: entity
+  id: LPPActionToggleDiagnosticNightVision
+  parent: LPPActionBaseToggleNightVision
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: { sprite: _LostParadise/Clothing/Eyes/NVG/diagnosticnightvision.rsi, state: icon }
+    iconOn: { sprite: _LostParadise/Clothing/Eyes/NVG/diagnosticnightvision.rsi, state: icon-on }

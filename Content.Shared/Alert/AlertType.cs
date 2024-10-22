@@ -50,6 +50,13 @@ namespace Content.Shared.Alert
         Pulled,
         Pulling,
         Magboots,
+
+        // Start _LostParadise
+
+        LPPNightVision,
+
+        // End _LostParadise
+
         Internals,
         Toxins,
         Muted,
