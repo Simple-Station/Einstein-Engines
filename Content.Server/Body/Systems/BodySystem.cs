@@ -111,8 +111,7 @@ public sealed class BodySystem : SharedBodySystem
         Vector2? splatDirection = null,
         float splatModifier = 1,
         Angle splatCone = default,
-        SoundSpecifier? gibSoundOverride = null
-    )
+        SoundSpecifier? gibSoundOverride = null)
     {
         if (!Resolve(bodyId, ref body, logMissing: false)
             || TerminatingOrDeleted(bodyId)
@@ -126,12 +125,43 @@ public sealed class BodySystem : SharedBodySystem
             return new HashSet<EntityUid>();
 
         var gibs = base.GibBody(bodyId, gibOrgans, body, launchGibs: launchGibs,
-            splatDirection: splatDirection, splatModifier: splatModifier, splatCone:splatCone);
+            splatDirection: splatDirection, splatModifier: splatModifier, splatCone: splatCone);
 
         var ev = new BeingGibbedEvent(gibs);
         RaiseLocalEvent(bodyId, ref ev);
 
         QueueDel(bodyId);
+
+        return gibs;
+    }
+
+    public override HashSet<EntityUid> GibPart(
+        EntityUid partId,
+        BodyPartComponent? part = null,
+        bool launchGibs = true,
+        Vector2? splatDirection = null,
+        float splatModifier = 1,
+        Angle splatCone = default,
+        SoundSpecifier? gibSoundOverride = null)
+    {
+        if (!Resolve(partId, ref part, logMissing: false)
+            || TerminatingOrDeleted(partId)
+            || EntityManager.IsQueuedForDeletion(partId))
+        {
+            return new HashSet<EntityUid>();
+        }
+
+        var xform = Transform(partId);
+        if (xform.MapUid is null)
+            return new HashSet<EntityUid>();
+
+        var gibs = base.GibPart(partId, part, launchGibs: launchGibs,
+            splatDirection: splatDirection, splatModifier: splatModifier, splatCone: splatCone);
+
+        var ev = new BeingGibbedEvent(gibs);
+        RaiseLocalEvent(partId, ref ev);
+
+        QueueDel(partId);
 
         return gibs;
     }

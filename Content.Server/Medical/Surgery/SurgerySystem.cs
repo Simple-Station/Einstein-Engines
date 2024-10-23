@@ -1,14 +1,20 @@
 using Content.Server.Body.Systems;
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.Interaction;
+using Content.Shared.Inventory;
 using Content.Shared.Medical.Surgery;
+using Content.Shared.Medical.Surgery.Steps;
 using Content.Shared.Medical.Surgery.Conditions;
 using Content.Shared.Medical.Surgery.Effects.Step;
 using Content.Shared.Medical.Surgery.Tools;
+using Content.Shared.Mood;
 //using Content.Shared.Medical.Wounds;
-using Content.Shared.Interaction;
 using Content.Shared.Prototypes;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
@@ -22,6 +28,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
 {
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
+
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
@@ -34,8 +42,9 @@ public sealed class SurgerySystem : SharedSurgerySystem
         base.Initialize();
 
         SubscribeLocalEvent<SurgeryToolComponent, AfterInteractEvent>(OnToolAfterInteract);
-
+        SubscribeLocalEvent<SurgeryTargetComponent, SurgeryStepDamageEvent>(OnSurgeryStepDamage);
         SubscribeLocalEvent<SurgeryStepBleedEffectComponent, SurgeryStepEvent>(OnStepBleedComplete);
+        SubscribeLocalEvent<SurgeryStepCauterizeEffectComponent, SurgeryStepEvent>(OnStepCauterizeComplete);
         SubscribeLocalEvent<SurgeryClampBleedEffectComponent, SurgeryStepEvent>(OnStepClampBleedComplete);
         SubscribeLocalEvent<SurgeryStepAffixPartEffectComponent, SurgeryStepEvent>(OnStepAffixPartComplete);
         SubscribeLocalEvent<SurgeryStepEmoteEffectComponent, SurgeryStepEvent>(OnStepScreamComplete);
@@ -73,6 +82,12 @@ public sealed class SurgerySystem : SharedSurgerySystem
         _ui.TrySetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState(surgeries));
     }
 
+    private void SetDamage(EntityUid body, string prototype, int value, float partMultiplier, EntityUid user)
+    {
+        var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>(prototype), value);
+        _damageableSystem.TryChangeDamage(body, damage, true, origin: user, canSever: false, partMultiplier: partMultiplier);
+    }
+
     private void OnToolAfterInteract(Entity<SurgeryToolComponent> ent, ref AfterInteractEvent args)
     {
         var user = args.User;
@@ -97,14 +112,37 @@ public sealed class SurgerySystem : SharedSurgerySystem
         RefreshUI(args.Target.Value);
     }
 
+    private void OnSurgeryStepDamage(Entity<SurgeryTargetComponent> ent, ref SurgeryStepDamageEvent args)
+    {
+        Logger.Debug($"Applying damage to entity {args.Body} with damage {args.Damage} and part multiplier {args.PartMultiplier}");
+        _damageableSystem.TryChangeDamage(args.Body, args.Damage, true, origin: args.User, canSever: false, partMultiplier: args.PartMultiplier);
+    }
+
     private void OnStepBleedComplete(Entity<SurgeryStepBleedEffectComponent> ent, ref SurgeryStepEvent args)
     {
-        //_wounds.AddWound(args.Body, ent.Comp.Damage, WoundType.Surgery, TimeSpan.MaxValue);
+        var bleedValue = 10;
+        if (HasComp<ForcedSleepingComponent>(args.Body))
+            bleedValue = 5;
+
+        SetDamage(args.Body, "Bloodloss", bleedValue, 0.5f, args.User);
     }
 
     private void OnStepClampBleedComplete(Entity<SurgeryClampBleedEffectComponent> ent, ref SurgeryStepEvent args)
     {
-        //_wounds.RemoveWounds(ent.Owner, WoundType.Surgery);
+        var bleedValue = -5;
+        if (HasComp<ForcedSleepingComponent>(args.Body))
+            bleedValue = -10;
+
+        SetDamage(args.Body, "Bloodloss", bleedValue, 0.5f, args.User);
+    }
+
+    private void OnStepCauterizeComplete(Entity<SurgeryStepCauterizeEffectComponent> ent, ref SurgeryStepEvent args)
+    {
+        var cauterizeValue = 10;
+        if (HasComp<ForcedSleepingComponent>(args.Body))
+            cauterizeValue = -5;
+
+        SetDamage(args.Body, "Burn", cauterizeValue, 0.5f, args.User);
     }
 
     private void OnStepAffixPartComplete(Entity<SurgeryStepAffixPartEffectComponent> ent, ref SurgeryStepEvent args)
@@ -118,11 +156,9 @@ public sealed class SurgerySystem : SharedSurgerySystem
         {
             var ev = new BodyPartEnableChangedEvent(true);
             RaiseLocalEvent(targetPart.Id, ref ev);
-            var healingValue = 20f;
-            if (targetPart.Component.Integrity + healingValue > 100)
-                healingValue = 100 - targetPart.Component.Integrity;
-
-            _body.TryChangeIntegrity(targetPart, -healingValue, false,
+            // This is basically an equalizer, severing a part will badly damage it.
+            // and affixing it will heal it a bit if its not too badly damaged.
+            _body.TryChangeIntegrity(targetPart, targetPart.Component.Integrity - 20, false,
                 _body.GetTargetBodyPart(targetPart.Component.PartType, targetPart.Component.Symmetry), out _);
         }
 
@@ -130,7 +166,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
     private void OnStepScreamComplete(Entity<SurgeryStepEmoteEffectComponent> ent, ref SurgeryStepEvent args)
     {
-        _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);
+        if (!HasComp<ForcedSleepingComponent>(args.Body))
+            _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);
     }
     private void OnStepSpawnComplete(Entity<SurgeryStepSpawnEffectComponent> ent, ref SurgeryStepEvent args)
     {

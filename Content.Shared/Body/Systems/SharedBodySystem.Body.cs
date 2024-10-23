@@ -340,8 +340,8 @@ public partial class SharedBodySystem
         {
 
             _gibbingSystem.TryGibEntityWithRef(bodyId, part.Id, GibType.Gib, GibContentsOption.Skip, ref gibs,
-                playAudio: false, launchGibs:true, launchDirection:splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
-                launchImpulseVariance:GibletLaunchImpulseVariance, launchCone: splatCone);
+                playAudio: false, launchGibs: true, launchDirection: splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
+                launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
 
             if (!gibOrgans)
                 continue;
@@ -350,7 +350,7 @@ public partial class SharedBodySystem
             {
                 _gibbingSystem.TryGibEntityWithRef(bodyId, organ.Id, GibType.Drop, GibContentsOption.Skip,
                     ref gibs, playAudio: false, launchImpulse: GibletLaunchImpulse * splatModifier,
-                    launchImpulseVariance:GibletLaunchImpulseVariance, launchCone: splatCone);
+                    launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
             }
         }
         if (TryComp<InventoryComponent>(bodyId, out var inventory))
@@ -362,6 +362,33 @@ public partial class SharedBodySystem
             }
         }
         _audioSystem.PlayPredicted(gibSoundOverride, Transform(bodyId).Coordinates, null);
+        return gibs;
+    }
+
+    public virtual HashSet<EntityUid> GibPart(
+        EntityUid partId,
+        BodyPartComponent? part = null,
+        bool launchGibs = true,
+        Vector2? splatDirection = null,
+        float splatModifier = 1,
+        Angle splatCone = default,
+        SoundSpecifier? gibSoundOverride = null)
+    {
+        var gibs = new HashSet<EntityUid>();
+
+        _gibbingSystem.TryGibEntityWithRef(partId, partId, GibType.Gib, GibContentsOption.Drop, ref gibs,
+                playAudio: true, launchGibs: true, launchDirection: splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
+                launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
+
+        if (TryComp<InventoryComponent>(partId, out var inventory))
+        {
+            foreach (var item in _inventory.GetHandOrInventoryEntities(partId))
+            {
+                SharedTransform.AttachToGridOrMap(item);
+                gibs.Add(item);
+            }
+        }
+        _audioSystem.PlayPredicted(gibSoundOverride, Transform(partId).Coordinates, null);
         return gibs;
     }
 }

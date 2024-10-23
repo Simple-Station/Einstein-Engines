@@ -5,12 +5,15 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Medical.Surgery.Steps.Parts;
 //using Content.Shared._RMC14.Xenonids.Parasite;
 using Content.Shared.Body.Part;
+using Content.Shared.Damage;
 using Content.Shared.Body.Components;
 using Content.Shared.Buckle.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Standing;
 using Robust.Shared.Audio.Systems;
@@ -30,6 +33,9 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+
+    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly RotateToFaceSystem _rotateToFace = default!;
@@ -49,6 +55,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         SubscribeLocalEvent<SurgeryCloseIncisionConditionComponent, SurgeryValidEvent>(OnCloseIncisionValid);
         //SubscribeLocalEvent<SurgeryLarvaConditionComponent, SurgeryValidEvent>(OnLarvaValid);
         SubscribeLocalEvent<SurgeryPartConditionComponent, SurgeryValidEvent>(OnPartConditionValid);
+        SubscribeLocalEvent<SurgeryWoundedConditionComponent, SurgeryValidEvent>(OnWoundedValid);
         SubscribeLocalEvent<SurgeryPartRemovedConditionComponent, SurgeryValidEvent>(OnPartRemovedConditionValid);
         SubscribeLocalEvent<SurgeryPartPresentConditionComponent, SurgeryValidEvent>(OnPartPresentConditionValid);
 
@@ -91,6 +98,16 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         {
             args.Cancelled = true;
         }
+    }
+
+    private void OnWoundedValid(Entity<SurgeryWoundedConditionComponent> ent, ref SurgeryValidEvent args)
+    {
+        if (!TryComp(args.Body, out DamageableComponent? damageable)
+            || !TryComp(args.Part, out BodyPartComponent? bodyPart)
+            || damageable.TotalDamage <= 0
+            && bodyPart.Integrity == 100
+            && !HasComp<IncisionOpenComponent>(args.Part))
+            args.Cancelled = true;
     }
 
     /*private void OnLarvaValid(Entity<SurgeryLarvaConditionComponent> ent, ref SurgeryValidEvent args)

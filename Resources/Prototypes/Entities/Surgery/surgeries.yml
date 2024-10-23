@@ -221,3 +221,27 @@
 #  - type: SurgeryLarvaCondition
 #  - type: SurgeryPartCondition
 #    part: Torso
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryTendWoundsBrute
+  name: Tend Bruise Wounds
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepCarefulIncisionScalpel
+    - SurgeryStepRepairBruteTissue
+    - SurgeryStepSealTendWound
+  - type: SurgeryWoundedCondition
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryTendWoundsBurn
+  name: Tend Burn Wounds
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepCarefulIncisionScalpel
+    - SurgeryStepRepairBurnTissue
+    - SurgeryStepSealTendWound
+  - type: SurgeryWoundedCondition

@@ -581,7 +581,7 @@ public partial class SharedBodySystem
             return false;
         }
 
-
+        part.ParentSlot = slot;
         return Containers.Insert(partId, container);
     }
 

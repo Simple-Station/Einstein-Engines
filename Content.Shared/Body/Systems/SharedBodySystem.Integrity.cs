@@ -26,7 +26,8 @@ public partial class SharedBodySystem
         var query = EntityQueryEnumerator<BodyPartComponent>();
         while (query.MoveNext(out var ent, out var part))
         {
-            if (!_timing.IsFirstTimePredicted)
+            if (!_timing.IsFirstTimePredicted
+                || !HasComp<TargetingComponent>(ent))
                 continue;
 
             part.HealingTimer += frameTime;
@@ -81,8 +82,10 @@ public partial class SharedBodySystem
     public void TryChangeIntegrity(Entity<BodyPartComponent> partEnt, float integrity, bool canSever,
         TargetBodyPart? targetPart, out bool severed)
     {
-        Logger.Debug($"Trying to change integrity for entity {ToPrettyString(partEnt)}: {integrity}");
         severed = false;
+        if (!HasComp<TargetingComponent>(partEnt.Comp.Body) && !_timing.IsFirstTimePredicted)
+            return;
+
         var partIdSlot = GetParentPartAndSlotOrNull(partEnt)?.Slot;
         var originalIntegrity = partEnt.Comp.Integrity;
         partEnt.Comp.Integrity -= integrity;
@@ -94,13 +97,15 @@ public partial class SharedBodySystem
             severed = true;
 
         // This will also prevent the torso from being removed.
-        if (partEnt.Comp.Enabled && partEnt.Comp.Integrity <= 15.0f)
+        if (partEnt.Comp.Enabled
+            && partEnt.Comp.Integrity <= 15.0f)
         {
             Logger.Debug($"Disabling part {ToPrettyString(partEnt)} because it's critically wounded.");
             var ev = new BodyPartEnableChangedEvent(false);
             RaiseLocalEvent(partEnt, ref ev);
         }
-        else if (!partEnt.Comp.Enabled && partEnt.Comp.Integrity >= 80.0f)
+        else if (!partEnt.Comp.Enabled
+            && partEnt.Comp.Integrity >= 80.0f)
         {
             Logger.Debug($"Enabling part {ToPrettyString(partEnt)} because it's healed.");
             var ev = new BodyPartEnableChangedEvent(true);
@@ -112,7 +117,6 @@ public partial class SharedBodySystem
             && TryComp<MobStateComponent>(partEnt.Comp.Body, out var _))
         {
             var newIntegrity = GetIntegrityThreshold(partEnt.Comp.Integrity, severed, partEnt.Comp.Enabled);
-            Logger.Debug($"New integrity for part {ToPrettyString(partEnt)}: {newIntegrity}");
             // We need to check if the part is dead to prevent the UI from showing dead parts as alive.
             if (targetPart is not null && targeting.BodyStatus[targetPart.Value] != TargetIntegrity.Dead)
             {
@@ -155,7 +159,6 @@ public partial class SharedBodySystem
             if (targetBodyPart != null)
             {
                 result[targetBodyPart.Value] = GetIntegrityThreshold(partComponent.Component.Integrity, false, partComponent.Component.Enabled);
-                Logger.Debug($"Integrity for part {ToPrettyString(partComponent.Component.Owner)}: {result[targetBodyPart.Value]}");
             }
         }
 

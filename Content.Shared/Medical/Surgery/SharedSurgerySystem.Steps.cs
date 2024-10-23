@@ -1,12 +1,17 @@
 using Content.Shared.Medical.Surgery.Conditions;
+using Content.Shared.Medical.Surgery.Effects.Step;
 using Content.Shared.Medical.Surgery.Steps;
 using Content.Shared.Medical.Surgery.Tools;
 //using Content.Shared._RMC14.Xenonids.Parasite;
 using Content.Shared.Body.Part;
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Body.Events;
 using Content.Shared.Buckle.Components;
-using Content.Shared.DoAfter;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.Mood;
 using Content.Shared.Inventory;
+using Content.Shared.DoAfter;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using System.Linq;
@@ -15,6 +20,8 @@ namespace Content.Shared.Medical.Surgery;
 
 public abstract partial class SharedSurgerySystem
 {
+    private static readonly string[] BruteDamageTypes = { "Slash", "Blunt", "Piercing" };
+    private static readonly string[] BurnDamageTypes = { "Heat", "Shock", "Cold", "Caustic" };
     private void InitializeSteps()
     {
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryStepEvent>(OnToolStep);
@@ -22,6 +29,7 @@ public abstract partial class SharedSurgerySystem
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryCanPerformStepEvent>(OnToolCanPerform);
 
         //SubSurgery<SurgeryCutLarvaRootsStepComponent>(OnCutLarvaRootsStep, OnCutLarvaRootsCheck);
+        SubSurgery<SurgeryTendWoundsEffectComponent>(OnTendWoundsStep, OnTendWoundsCheck);
         SubSurgery<SurgeryAddPartStepComponent>(OnAddPartStep, OnAddPartCheck);
         SubSurgery<SurgeryRemovePartStepComponent>(OnRemovePartStep, OnRemovePartCheck);
         Subs.BuiEvents<SurgeryTargetComponent>(SurgeryUIKey.Key, subs =>
@@ -81,6 +89,17 @@ public abstract partial class SharedSurgerySystem
             {
                 RemComp(args.Body, reg.Component.GetType());
             }
+        }
+
+        if (!HasComp<ForcedSleepingComponent>(args.Body))
+            RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
+
+        if (!_inventory.TryGetSlotEntity(args.User, "gloves", out var gloves)
+        || !_inventory.TryGetSlotEntity(args.User, "mask", out var mask))
+        {
+            var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
+            var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);
+            RaiseLocalEvent(args.Body, ref ev);
         }
     }
 
@@ -161,6 +180,61 @@ public abstract partial class SharedSurgerySystem
         }
     }
 
+    private EntProtoId? GetProtoId(EntityUid entityUid)
+    {
+        if (!TryComp<MetaDataComponent>(entityUid, out var metaData))
+            return null;
+
+        return metaData.EntityPrototype?.ID;
+    }
+
+    private void OnTendWoundsStep(Entity<SurgeryTendWoundsEffectComponent> ent, ref SurgeryStepEvent args)
+    {
+        var group = ent.Comp.MainGroup == "Brute" ? BruteDamageTypes : BurnDamageTypes;
+
+        if (!TryComp(args.Body, out DamageableComponent? damageable)
+            || (damageable.TotalDamage <= 0
+            || !group.Intersect(damageable.Damage.DamageDict.Keys).Any())
+            && (!TryComp(args.Part, out BodyPartComponent? bodyPart)
+            || bodyPart.Integrity == 100))
+            return;
+
+        var bonus = ent.Comp.HealMultiplier * damageable.DamagePerGroup[ent.Comp.MainGroup];
+        if (_mobState.IsDead(args.Body))
+            bonus *= 0.2;
+
+        var adjustedDamage = new DamageSpecifier(ent.Comp.Damage);
+        var bonusPerType = bonus / group.Length;
+
+        foreach (var type in group)
+        {
+            adjustedDamage.DamageDict[type] -= bonusPerType;
+        }
+
+        var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, adjustedDamage, 0.5f);
+        RaiseLocalEvent(args.Body, ref ev);
+
+        if (ent.Comp.IsAutoRepeatable)
+        {
+            var stepProto = GetProtoId(ent);
+            var surgeryProto = GetProtoId(args.Surgery);
+            if (stepProto != null && surgeryProto != null)
+                CheckAndStartStep(args.User, args.Body, args.Part, ent, args.Surgery, stepProto.Value, surgeryProto.Value);
+        }
+    }
+
+    private void OnTendWoundsCheck(Entity<SurgeryTendWoundsEffectComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    {
+        var group = ent.Comp.MainGroup == "Brute" ? BruteDamageTypes : BurnDamageTypes;
+
+        if (!TryComp(args.Body, out DamageableComponent? damageable)
+            || damageable.TotalDamage > 0
+            || group.Intersect(damageable.Damage.DamageDict.Keys).Any()
+            || !TryComp(args.Part, out BodyPartComponent? bodyPart)
+            || bodyPart.Integrity < 100)
+            args.Cancelled = true;
+    }
+
     /*private void OnCutLarvaRootsStep(Entity<SurgeryCutLarvaRootsStepComponent> ent, ref SurgeryStepEvent args)
     {
         if (TryComp(args.Body, out VictimInfectedComponent? infected) &&
@@ -224,6 +298,38 @@ public abstract partial class SharedSurgerySystem
         if (!TryComp(args.Part, out BodyPartComponent? partComp)
             || partComp.Body == args.Body)
             args.Cancelled = true;
+    }
+
+    // Small duplicate for OnSurgeryTargetStepChosen, allows for continuously looping a given step.
+    private void CheckAndStartStep(EntityUid user, EntityUid body, EntityUid part, EntityUid step, EntityUid surgery,
+        EntProtoId stepProto, EntProtoId surgeryProto)
+    {
+        if (!CanPerformStep(user, body, part, step, true, out _, out _, out var validTools))
+            return;
+
+        if (_net.IsServer && validTools?.Count > 0)
+        {
+            foreach (var tool in validTools)
+            {
+                if (TryComp(tool, out SurgeryToolComponent? toolComp) &&
+                    toolComp.EndSound != null)
+                {
+                    _audio.PlayEntity(toolComp.StartSound, user, tool);
+                }
+            }
+        }
+
+        if (TryComp(body, out TransformComponent? xform))
+            _rotateToFace.TryFaceCoordinates(user, _transform.GetMapCoordinates(body, xform).Position);
+
+        var ev = new SurgeryDoAfterEvent(surgeryProto, stepProto);
+        // TODO: Make this serialized on a per surgery step basis, and also add penalties based on ghetto tools.
+        var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(2), ev, body, part)
+        {
+            BreakOnUserMove = true,
+            BreakOnTargetMove = true,
+        };
+        _doAfter.TryStartDoAfter(doAfter);
     }
 
     private void OnSurgeryTargetStepChosen(Entity<SurgeryTargetComponent> ent, ref SurgeryStepChosenBuiMsg args)
