@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Clothing;
 
 /// <summary>
-/// Made by BL02DL from _LostParadise
+///     Made by BL02DL from _LostParadise
 /// </summary>
 
 [RegisterComponent, NetworkedComponent(), AutoGenerateComponentState]
@@ -17,16 +17,16 @@ public sealed partial class NightVisionComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? ToggleActionEntity;
 
-    [DataField("enabled"), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public bool Enabled;
 
-    [DataField("tint1"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float Tint1 { get; set; } = 0.3f;
 
-    [DataField("tint2"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float Tint2 { get; set; } = 0.3f;
 
-    [DataField("tint3"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float Tint3 { get; set; } = 0.3f;
 
     public Vector3 Tint
@@ -40,9 +40,12 @@ public sealed partial class NightVisionComponent : Component
         }
     }
 
-    [DataField("strength"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float Strength = 2f;
 
-    [DataField("noise"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float Noise = 0.5f;
+
+    [DataField]
+    public string Slot = "eyes";
 }

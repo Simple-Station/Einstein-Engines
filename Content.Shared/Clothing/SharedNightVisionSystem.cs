@@ -9,7 +9,7 @@ using Robust.Shared.Containers;
 namespace Content.Shared.Clothing;
 
 /// <summary>
-/// Made by BL02DL from _LostParadise
+///     Made by BL02DL from _LostParadise
 /// </summary>
 
 public abstract class SharedNightVisionSystem : EntitySystem

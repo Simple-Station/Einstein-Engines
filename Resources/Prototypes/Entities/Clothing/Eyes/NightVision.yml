@@ -11,7 +11,7 @@
         map: [ "enum.ToggleVisuals.Layer" ]
     - type: Clothing
       sprite: Clothing/Eyes/NVG/nightvision.rsi
-    - type: NightVision # MUST HAVE ALL TINT!
+    - type: NightVision
       tint1: 0.3 # Red
       tint2: 1.0 # Green
       tint3: 0.3 # Blue

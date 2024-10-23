@@ -1,11 +1,10 @@
 using Content.Shared.Clothing;
-using Content.Shared.Alert;
 using Content.Shared.Inventory.Events;
 
 namespace Content.Server.Clothing;
 
 /// <summary>
-/// Made by BL02DL from _LostParadise
+///     Made by BL02DL from _LostParadise
 /// </summary>
 
 public sealed class NightVisionSystem : SharedNightVisionSystem
@@ -20,17 +19,13 @@ public sealed class NightVisionSystem : SharedNightVisionSystem
 
     private void OnGotUnequipped(EntityUid uid, NightVisionComponent component, GotUnequippedEvent args)
     {
-        if (args.Slot == "eyes")
-        {
+        if (args.Slot == component.Slot)
             UpdateNightVisionEffects(args.Equipee, uid, false, component);
-        }
     }
 
     private void OnGotEquipped(EntityUid uid, NightVisionComponent component, GotEquippedEvent args)
     {
-        if (args.Slot == "eyes")
-        {
+        if (args.Slot == component.Slot)
             UpdateNightVisionEffects(args.Equipee, uid, true, component);
-        }
     }
 }

@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client.Clothing;
 
 /// <summary>
-/// Made by BL02DL from _LostParadise
+///     Made by BL02DL from _LostParadise
 /// </summary>
 
 public sealed class NightVisionOverlay : Overlay

@@ -8,7 +8,7 @@ using Content.Shared.Inventory.Events;
 namespace Content.Client.Clothing;
 
 /// <summary>
-/// Made by BL02DL from _LostParadise
+///     Made by BL02DL from _LostParadise
 /// </summary>
 
 public sealed class NightVisionSystem : SharedNightVisionSystem
@@ -58,17 +58,14 @@ public sealed class NightVisionSystem : SharedNightVisionSystem
     }
     private void OnGotUnequipped(EntityUid uid, NightVisionComponent component, GotUnequippedEvent args)
     {
-        if (args.Slot == "eyes")
+        if (args.Slot == component.Slot)
         {
-            UpdateNightVisionEffects(args.Equipee, uid, false, component);
             _overlayMan.RemoveOverlay(_overlay);
             _lightManager.DrawLighting = true;
         }
     }
     private void OnRestart(RoundRestartCleanupEvent ev)
     {
-        /// Удаляем оверлей и врубаем свет на всякий по окончанию раунда
-        /// We remove the overlay and turn on the light just in case at the end of the round.
         _overlayMan.RemoveOverlay(_overlay);
         _lightManager.DrawLighting = true;
     }
