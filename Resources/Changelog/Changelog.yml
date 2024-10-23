@@ -7532,3 +7532,19 @@ Entries:
   id: 6482
   time: '2024-10-22T01:42:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1120
+- author: Remuchi
+  changes:
+    - type: Fix
+      message: Cybereyes examine message no longer reveals person's identity.
+  id: 6483
+  time: '2024-10-23T04:16:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1127
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Raising glimmer too high can now cause glimmer wisps to start haunting
+        the station.
+  id: 6484
+  time: '2024-10-23T04:19:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1125
