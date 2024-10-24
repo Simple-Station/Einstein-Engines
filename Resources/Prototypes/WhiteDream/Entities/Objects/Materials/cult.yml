@@ -30,11 +30,11 @@
   - type: CultItem
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
     inHandsOnly: true
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
     userWhitelist:
       components:
         BloodCultist

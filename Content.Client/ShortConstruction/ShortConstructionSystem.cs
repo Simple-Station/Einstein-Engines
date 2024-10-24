@@ -1,5 +1,5 @@
 ﻿using Content.Client.Construction;
-using Content.Client.WhiteDream.BloodCult.UI;
+// using Content.Client.WhiteDream.BloodCult.UI;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.RadialSelector;
 using Content.Shared.ShortConstruction;
@@ -37,11 +37,7 @@ public sealed class ShortConstructionSystem : EntitySystem
             return;
         }
 
-        PlacementHijack hijack;
-        if (prototype.ID == "CultPylon")
-            hijack = new PylonConstructionHijack(prototype, EntityManager, args.Actor);
-        else
-            hijack = new ConstructionPlacementHijack(_construction, prototype);
+        var hijack = new ConstructionPlacementHijack(_construction, prototype);
 
         _placement.BeginPlacing(new PlacementInformation
             {

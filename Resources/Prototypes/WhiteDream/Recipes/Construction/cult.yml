@@ -11,7 +11,7 @@
     sprite: WhiteDream/BloodCult/Entities/Structures/pylon.rsi
     state: icon_off
   objectType: Structure
-  placementMode: SnapgridCenter
+  placementMode: AlignPylonConstruction
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
