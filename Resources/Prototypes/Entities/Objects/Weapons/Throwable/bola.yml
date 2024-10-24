@@ -26,7 +26,6 @@
     staminaDamage: 55
     canThrowTrigger: true
     canMoveBreakout: true
-  - type: LandAtCursor
 
 - type: entity
   name: bola
