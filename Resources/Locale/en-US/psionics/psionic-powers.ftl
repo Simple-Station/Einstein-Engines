@@ -132,6 +132,17 @@ telekinetic-pulse-power-initialization-feedback =
     As I reach through the veil with my psyche, I discover a wellspring of pure kinetic energy. It courses through me, but I seem to lack fine control over it.
 telekinetic-pulse-power-metapsionic-feedback = {CAPITALIZE($entity)} has the essence of pure kinesis flowing through him.
 
+# Pyrokinetic Flare
+action-name-pyrokinetic-flare = Pyrokinetic Flare
+action-description-pyrokinetic-flare =
+    Generate a flash of firelight from Gehenna to blind your adversaries.
+pyrokinetic-flare-power-description = { action-description-pyrokinetic-flare }
+pyrokinetic-flare-power-initialization-feedback =
+    My gaze is briefly filled with a flash of immense light and head, and for a single moment I can see a glimpse of a realm
+    of fire and pain, of hunger and suffering. Just as soon as I glimpse it, the vision fades. But the memory of that flash lingers within my mind.
+    I can recall it still, a glimpse of the fires of Gehenna.
+pyrokinetic-flare-power-metapsionic-feedback = Guh these don't even matter because nobody can read this line in-game and I don't know when I'm ever bringing back Narrow Pulse
+
 # Psionic System Messages
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
 examine-mindbroken-message =
