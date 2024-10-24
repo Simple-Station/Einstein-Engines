@@ -1,0 +1,46 @@
+# TODO: Pending a rewrite of Mob Replacement System, this entire list should just be moved into a ComponentRegistry on the event.
+- type: entity
+  name: Mimic
+  id: MobMimic
+  description: Surprise. # When this gets a proper write this should use the object's actual description >:)
+  components:
+  - type: Tag
+    tags:
+    - FootstepSound
+  - type: Clickable
+  - type: CombatMode
+  - type: InteractionOutline
+  - type: InputMover
+  - type: Input
+    context: "human"
+  - type: MobMover
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: Hands
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Structures/Machines/VendingMachines/cola.rsi
+    state: normal
+  - type: Icon
+    sprite: Structures/Machines/VendingMachines/cola.rsi
+    state: normal
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        density: 1000
+        mask:
+        - MobMask
+        layer:
+        - MachineLayer
+  - type: AnimationPlayer
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcFist
+    damage:
+      types:
+        Blunt: 20

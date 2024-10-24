@@ -1,0 +1,22 @@
+- type: SingerInstrument
+  id: HarpySinger
+  instrumentList:
+    "Voice": {52: 0}
+    "Trumpet": {56: 0}
+    "Electric": {27: 0}
+    "Bass": {33: 0}
+    "Rock": {29: 0}
+    "Acoustic": {24: 0}
+    "Flute": {73: 0}
+    "Sax": {66: 0}
+  defaultInstrument: "Voice"
+  midiUi: Key
+  midiActionId: ActionHarpyPlayMidi
+
+- type: SingerInstrument
+  id: NormalSinger
+  instrumentList:
+    "Voice": {52: 0}
+  defaultInstrument: "Voice"
+  midiUi: Key
+  midiActionId: ActionHarpyPlayMidi # TODO: custom action maybe?

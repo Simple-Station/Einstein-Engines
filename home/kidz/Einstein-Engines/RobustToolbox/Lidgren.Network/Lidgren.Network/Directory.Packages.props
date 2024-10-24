@@ -1,0 +1,20 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0"/>
+        <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0"/>
+        <PackageVersion Include="nunit" Version="4.0.1"/>
+        <PackageVersion Include="NUnit.Analyzers" Version="3.10.0"/>
+        <PackageVersion Include="NUnit3TestAdapter" Version="4.5.0"/>
+        <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0"/>
+        <PackageVersion Include="PolySharp" Version="1.14.1"/>
+        <PackageVersion Include="Avalonia" Version="11.0.10" />
+        <PackageVersion Include="ReactiveUI" Version="20.0.1" />
+        <PackageVersion Include="Avalonia.Desktop" Version="11.0.10" />
+        <PackageVersion Include="Avalonia.ReactiveUI" Version="11.0.10" />
+        <PackageVersion Include="ReactiveUI.Fody" Version="19.5.41" />
+        <PackageVersion Include="Avalonia.Themes.Simple" Version="11.0.10" />
+    </ItemGroup>
+</Project>

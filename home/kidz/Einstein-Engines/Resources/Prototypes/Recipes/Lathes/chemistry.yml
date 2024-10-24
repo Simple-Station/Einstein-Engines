@@ -1,0 +1,102 @@
+- type: latheRecipe
+  id: Beaker
+  result: Beaker
+  completetime: 2
+  materials:
+    Glass: 100
+
+- type: latheRecipe
+  id: LargeBeaker
+  result: LargeBeaker
+  completetime: 2
+  materials:
+    Glass: 200
+
+- type: latheRecipe
+  id: CryostasisBeaker
+  result: CryostasisBeaker
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 50
+
+- type: latheRecipe
+  id: SyringeCryostasis
+  result: SyringeCryostasis
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 50
+
+- type: latheRecipe
+  id: Dropper
+  result: Dropper
+  completetime: 2
+  materials:
+    Glass: 200
+    Plastic: 100
+
+- type: latheRecipe
+  id: Syringe
+  result: Syringe
+  completetime: 2
+  materials:
+    Plastic: 100
+    Steel: 25
+
+- type: latheRecipe
+  id: BluespaceBeaker
+  result: BluespaceBeaker
+  completetime: 2
+  materials:
+    Steel: 200  #Cheaper Due to Needing Bluespace
+    Plastic: 200
+    Plasma: 50
+    Silver: 50
+    Bluespace: 100 #DeltaV: Bluespace
+
+- type: latheRecipe
+  id: SyringeBluespace
+  result: SyringeBluespace
+  completetime: 2
+  materials:
+    Steel: 100  #Cheaper Due to Needing Bluespace
+    Plastic: 100
+    Glass: 200
+    Plasma: 50
+    Bluespace: 100 #DeltaV: Bluespace
+   #Silver: 50
+
+- type: latheRecipe
+  id: PillCanister
+  result: PillCanister
+  completetime: 2
+  materials:
+    Plastic: 100
+
+- type: latheRecipe
+  id: ChemistryEmptyBottle01
+  result: ChemistryEmptyBottle01
+  completetime: 2
+  materials:
+    Glass: 50
+
+# - type: latheRecipe # DeltaV - Disable the Vape
+#   id: Vape
+#   icon:
+#     sprite: Objects/Consumable/Smokeables/Vapes/vape-standard.rsi
+#     state: icon
+#   result: Vape
+#   completetime: 2
+#   materials:
+#     Plastic: 100
+#     Steel: 250
+
+- type: latheRecipe
+  id: ClothingEyesGlassesChemical
+  result: ClothingEyesGlassesChemical
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 300
+    Glass: 500

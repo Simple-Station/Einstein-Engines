@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:ChatServer.ViewModels;assembly=ChatServer"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        mc:Ignorable="d" d:DesignWidth="594" d:DesignHeight="358"
+        x:Class="ChatServer.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="ChatServer"
+        Width="594" Height="358">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" Margin="4">
+            <Button DockPanel.Dock="Left" Content="{Binding StartText}" Command="{Binding StartServer}" />
+            <Button DockPanel.Dock="Right" Content="Settings" Name="SettingsButton" />
+        </DockPanel>
+        <Grid RowDefinitions="*,Auto,*">
+            <ScrollViewer Grid.Row="0">
+                <ItemsControl ItemsSource="{Binding Clients}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="vm:ConnectedClient">
+                            <Panel
+                                MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}}">
+                                <TextBlock Margin="4 0" TextWrapping="Wrap" Text="{Binding EntryText}" />
+                            </Panel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+            <GridSplitter Grid.Row="1" />
+
+            <ScrollViewer Grid.Row="2">
+                <ItemsControl ItemsSource="{Binding Messages}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="sys:String">
+                            <Panel
+                                MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}}">
+                                <TextBlock Margin="4 0" TextWrapping="Wrap" Text="{Binding}" />
+                            </Panel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </DockPanel>
+
+</Window>

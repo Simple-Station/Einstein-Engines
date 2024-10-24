@@ -1,0 +1,35 @@
+- type: job
+  id: MedicalDoctor
+  name: job-name-doctor
+  description: job-description-doctor
+  playTimeTracker: JobMedicalDoctor
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Medical
+      min: 14400 #4 hrs
+  startingGear: DoctorGear
+  icon: "JobIconMedicalDoctor"
+  supervisors: job-supervisors-cmo
+  access:
+  - Medical
+  - Maintenance
+  extendedAccess:
+  - Chemistry
+  - Paramedic # DeltaV - Add Paramedic access
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CPRTraining
+
+- type: startingGear
+  id: DoctorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    back: ClothingBackpackMedicalFilled
+    shoes: ClothingShoesColorWhite
+    id: MedicalPDA
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalFilled
+  innerClothingSkirt: ClothingUniformJumpskirtMedicalDoctor
+  satchel: ClothingBackpackSatchelMedicalFilled
+  duffelbag: ClothingBackpackDuffelMedicalFilled

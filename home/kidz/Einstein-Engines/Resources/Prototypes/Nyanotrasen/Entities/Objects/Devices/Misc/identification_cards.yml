@@ -1,0 +1,96 @@
+- type: entity
+  parent: IDCardStandard
+  id: PrisonerIDCard
+  name: prisoner ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: prisoner
+    - state: department
+      color: "#292929"
+    - state: subdepartment
+      color: "#A54900"
+    - state: warden
+  - type: PresetIdCard
+    job: Prisoner
+
+- type: entity
+  parent: IDCardStandard
+  id: GladiatorIDCard
+  name: gladiator ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#878787"
+    - state: gladiator
+  - type: PresetIdCard
+    job: Gladiator
+
+- type: entity
+  parent: IDCardStandard
+  id: PrisonGuardIDCard
+  name: prison guard ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#CB0000"
+    - state: subdepartment
+      color: "#CB0000"
+    - state: prisonguard
+  - type: PresetIdCard
+    job: PrisonGuard
+
+- type: entity
+  parent: IDCardStandard
+  id: MailCarrierIDCard
+  name: courier ID card # DeltaV - Mail Carrier to Courier replacement
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#B18644"
+    - state: subdepartment
+      color: "#B18644"
+    - state: mailcarrier
+  - type: PresetIdCard
+    job: MailCarrier
+
+
+- type: entity
+  parent: IDCardStandard
+  id: MartialArtistIDCard
+  name: martial artist ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#878787"
+    - state: martialartist
+  - type: PresetIdCard
+    job: MartialArtist
+
+- type: entity
+  parent: IDCardStandard
+  id: ForensicMantisIDCard
+  name: mantis ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#C96DBF"
+    - state: subdepartment
+      color: "#C96DBF"
+    - state: detective
+  - type: PresetIdCard
+    job: ForensicMantis

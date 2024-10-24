@@ -1,0 +1,88 @@
+- type: entity
+  parent: BaseItem
+  id: AccessConfigurator
+  name: access configurator
+  description: Used to modify the access level requirements for airlocks and other lockable devices.
+  components:
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Items/multitool_drop.ogg
+    - type: Sprite
+      sprite: Objects/Tools/access_configurator.rsi
+      state: icon
+    - type: Item
+      size: Small
+    - type: Clothing
+      sprite: Objects/Tools/access_configurator.rsi
+      quickEquip: false
+      slots:
+        - Belt
+    - type: AccessOverrider
+      accessLevels:
+      - Armory
+      - Atmospherics
+      - Bar
+      #- Brig #Delta V: Removed Brig Access
+      - Boxer #Delta V: Add Boxer Access
+      - Detective
+      - Captain
+      - Cargo
+      - Chapel
+      - Chemistry
+      - ChiefEngineer
+      - ChiefMedicalOfficer
+      - Clown #Delta V: Add Clown Access
+      - Corpsman # DeltaV: Add Corpsman access
+      - Command
+      - Engineering
+      - External
+      - HeadOfPersonnel
+      - HeadOfSecurity
+      - Hydroponics
+      - Janitor
+      - Kitchen
+      - Lawyer
+      - Library #Delta V: Add Library Access
+      - Maintenance
+      - Medical
+      - Mime #Delta V: Add Mime Access
+      - Musician #Delta V: Add Musician Access
+      - Paramedic # Delta V - adds Paramedic access
+      - Psychologist #Delta V: Add Psychologist Access
+      - Quartermaster
+      - Reporter #Delta V: Add Reporter Access
+      - Research
+      - ResearchDirector
+      - Salvage
+      - Security
+      - Service
+      - Theatre
+      - Zookeeper #Delta V: Add Zookeeper Access
+      - ChiefJustice  #Delta V: Add Chief Justice Access
+      - Prosecutor  #Delta V: Add Prosecutor Access
+      - Justice  #Delta V: Add Justice Access
+      privilegedIdSlot:
+        name: id-card-console-privileged-id
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+          - IdCard
+      denialSound:
+        path: /Audio/Machines/custom_deny.ogg
+      doAfter: 0.5
+    - type: UserInterface
+      interfaces:
+        enum.AccessOverriderUiKey.Key:
+          type: AccessOverriderBoundUserInterface
+    - type: ActivatableUI
+      key: enum.AccessOverriderUiKey.Key
+      requireHands: true
+      requireActiveHand: false
+      singleUser: true
+    - type: ItemSlots
+    - type: ContainerContainer
+      containers:
+        AccessOverrider-privilegedId: !type:ContainerSlot

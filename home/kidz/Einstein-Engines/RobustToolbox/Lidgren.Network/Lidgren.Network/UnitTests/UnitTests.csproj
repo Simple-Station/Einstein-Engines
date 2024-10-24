@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+        <IsPackable>false</IsPackable>
+        <Nullable>enable</Nullable>
+        <LangVersion>12.0</LangVersion>
+
+        <!-- Mute warnings about EOL .NET versions -->
+        <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="nunit" />
+        <PackageReference Include="NUnit.Analyzers" />
+        <PackageReference Include="NUnit3TestAdapter" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lidgren.Network\Lidgren.Network.csproj" />
+    </ItemGroup>
+
+</Project>

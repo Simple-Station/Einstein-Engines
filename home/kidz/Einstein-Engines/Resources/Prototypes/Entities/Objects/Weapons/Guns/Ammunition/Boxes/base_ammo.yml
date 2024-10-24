@@ -1,0 +1,11 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseMagazineBox
+  components:
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/ammobox_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/ammobox_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/ammobox_drop.ogg

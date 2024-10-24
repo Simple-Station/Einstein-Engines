@@ -1,0 +1,6 @@
+- type: messagePack
+  id: ViroDrobeAds
+  messages:
+    - advertisement-virodrobe-1
+    - advertisement-virodrobe-2
+    - advertisement-virodrobe-3

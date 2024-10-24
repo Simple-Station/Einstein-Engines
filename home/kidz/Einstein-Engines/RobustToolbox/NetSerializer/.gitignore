@@ -1,0 +1,13 @@
+*.suo
+bin
+obj
+*.csproj.user
+save
+packages
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# VS
+.vs/

@@ -1,0 +1,43 @@
+# vocal emotes
+- type: emote
+  id: Hiss
+  name: chat-emote-name-cathisses
+  category: Vocal
+  chatMessages: [ hisses ]
+  chatTriggers:
+    - hisses
+
+- type: emote
+  id: Meow
+  name: chat-emote-name-catmeow
+  category: Vocal
+  chatMessages: [ meows ]
+  chatTriggers:
+    - meows
+    - miaus
+    - nyas
+    - mraows
+
+- type: emote
+  id: Mew
+  name: chat-emote-name-catmew
+  category: Vocal
+  chatMessages: [ mews ]
+  chatTriggers:
+    - mews
+
+- type: emote
+  id: Growl
+  name: chat-emote-name-catgrowl
+  category: Vocal
+  chatMessages: [ growls ]
+  chatTriggers:
+    - growls
+
+- type: emote
+  id: Purr
+  name: chat-emote-name-catpurr
+  category: Vocal
+  chatMessages: [ purrs ]
+  chatTriggers:
+    - purrs

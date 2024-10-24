@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.1;net6.0;net7.0;net8.0</TargetFrameworks>
+        <Version>0.3.1</Version>
+        <AssemblyName>SpaceWizards.Lidgren.Network</AssemblyName>
+        <IncludeSymbols>true</IncludeSymbols>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Nullable>enable</Nullable>
+        <LangVersion>12.0</LangVersion>
+
+        <!-- Uncomment the following line to not get statistics in RELEASE mode -->
+        <DefineConstants>$(DefineConstants);USE_RELEASE_STATISTICS</DefineConstants>
+        <PackageReleaseNotes>https://github.com/space-wizards/SpaceWizards.Lidgren.Network/blob/wizards/RELEASE-NOTES.md</PackageReleaseNotes>
+
+        <!-- NuGet stuff. -->
+        <PackageId>SpaceWizards.Lidgren.Network</PackageId>
+        <Authors>Michael Lidgren, Space Wizards</Authors>
+        <RepositoryType>Git</RepositoryType>
+        <RepositoryUrl>https://github.com/space-wizards/SpaceWizards.Lidgren.Network</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/space-wizards/SpaceWizards.Lidgren.Network</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>lidgren,udp,networking,network</PackageTags>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>SpaceWizards.Lidgren.Network is a maintained fork of Lidgren.Network with various improvements and fixes.</Description>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+
+        <!-- SourceLink -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="PolySharp">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Condition="'$(TargetFramework)' == 'netstandard2.1'" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+</Project>

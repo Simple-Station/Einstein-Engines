@@ -1,0 +1,10 @@
+﻿<Project>
+    <!-- Engine-specific properties. Content should not use this file. -->
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <LangVersion>12</LangVersion>
+        <Nullable>enable</Nullable>
+        <WarningsAsErrors>nullable</WarningsAsErrors>
+    </PropertyGroup>
+    <Import Project="Robust.Engine.Version.props" />
+</Project>

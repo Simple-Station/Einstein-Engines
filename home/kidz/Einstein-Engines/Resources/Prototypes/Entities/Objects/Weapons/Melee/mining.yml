@@ -1,0 +1,119 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseWeaponCrusher # Crusher? But I...
+  name: crusher
+  description: An early design of the proto-kinetic accelerator.
+  components:
+  - type: Sharp
+  - type: UnpoweredFlashlight
+  - type: PointLight
+    color: "#ffeead"
+    enabled: false
+    radius: 4
+
+- type: entity
+  parent: BaseWeaponCrusher
+  id: WeaponCrusher
+  components:
+  - type: Tag
+    tags:
+      - Pickaxe
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/crusher.rsi
+    state: icon
+  - type: AmmoCounter
+  - type: UseDelayOnShoot
+  - type: UseDelay
+    delay: 0.9
+  - type: LeechOnMarker
+    leech:
+      groups:
+        Brute: -10
+  - type: Gun
+    soundGunshot: /Audio/Weapons/plasma_cutter.ogg
+    fireRate: 1
+    useKey: false
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.5
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+  - type: BasicEntityAmmoProvider
+    proto: BulletCharge
+    capacity: 1
+    count: 1
+  - type: MeleeWeapon
+    attackRate: 0.85
+    range: 1.65
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 8
+        Slash: 4
+    bluntStaminaDamageFactor: 2.0
+    heavyRateModifier: 0.75
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 7.5
+    angle: 120
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+        Slash: 2.5
+        Structural: 30
+  - type: GunRequiresWield
+  - type: Item
+    size: Ginormous
+  - type: DisarmMalus
+  - type: Tool
+    qualities:
+      - Prying
+  - type: Prying
+
+- type: entity
+  parent: BaseWeaponCrusher
+  id: WeaponCrusherDagger
+  name: crusher dagger
+  description: A scaled down version of a proto-kinetic crusher. Uses kinetic energy to vibrate the blade at high speeds.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/crusher_dagger.rsi
+    state: icon
+  - type: MeleeWeapon
+    autoAttack: true
+    wideAnimationRotation: -135
+    attackRate: 1.25
+    range: 1.4
+    damage:
+      types:
+        Slash: 9
+    heavyRateModifier: 0.9
+    heavyDamageBaseModifier: 1.2
+    maxTargets: 2
+    angle: 20
+  - type: Tag
+    tags:
+    - Knife
+
+# Like a crusher... but better
+- type: entity
+  parent: WeaponCrusher
+  id: WeaponCrusherGlaive
+  name: crusher glaive
+  description: An early design of the proto-kinetic accelerator, in glaive form.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/crusher_glaive.rsi
+  - type: UseDelay
+    delay: 1.9
+  - type: LeechOnMarker
+    leech:
+      groups:
+        Brute: -21
+  - type: MeleeWeapon
+  - type: Tag
+    tags:
+      - Pickaxe

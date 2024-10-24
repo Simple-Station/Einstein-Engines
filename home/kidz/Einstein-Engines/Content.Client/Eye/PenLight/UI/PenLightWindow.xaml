@@ -1,0 +1,11 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc 'pen-light-exam-title'}"
+    SetSize="0 -300">
+    <ScrollContainer VerticalExpand="True">
+        <BoxContainer Name="RootContainer" Orientation="Vertical" HorizontalExpand="True">
+            <Label Name="NoPatientDataText" Text="{Loc 'pen-light-window-no-patient-data-text'}" Visible="False"/>
+            <Label Name="ExamDataLabel"/>
+        </BoxContainer>
+    </ScrollContainer>
+</controls:FancyWindow>

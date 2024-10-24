@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+
+    <AssemblyName>Xilium.CefGlue.WindowsForms</AssemblyName>
+    <RootNamespace>Xilium.CefGlue.WindowsForms</RootNamespace>
+
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="AddressChangedEventArgs.cs" />
+    <Compile Include="BeforePopupEventArgs.cs" />
+    <Compile Include="CefWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CefWebClient.cs" />
+    <Compile Include="CefWebLifeSpanHandler.cs" />
+    <Compile Include="CefWebDisplayHandler.cs" />
+    <Compile Include="CefWebLoadHandler.cs" />
+    <Compile Include="ConsoleMessageEventArgs.cs" />
+    <Compile Include="CefWebRequestHandler.cs" />
+    <Compile Include="LoadEndEventArgs.cs" />
+    <Compile Include="LoadErrorEventArgs.cs" />
+    <Compile Include="LoadingStateChangeEventArgs.cs" />
+    <Compile Include="LoadStartEventArgs.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="PluginCrashedEventArgs.cs" />
+    <Compile Include="RenderProcessTerminatedEventArgs.cs" />
+    <Compile Include="SetWindowPosFlags.cs" />
+    <Compile Include="StatusMessageEventArgs.cs" />
+    <Compile Include="TitleChangedEventArgs.cs" />
+    <Compile Include="TooltipEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CefWebBrowser.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CefGlue\CefGlue.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+- type: vendingMachineInventory
+  id: ClothesMateInventory
+  startingInventory:
+  # STOP! ADD NOTHING TO THIS! GO PUT YOUR CLOTHES IN LOADOUTS INSTEAD!
+    ClothingBackpack: 2
+    ClothingBackpackDuffel: 2
+    ClothingBackpackSatchel: 2
+    ClothingBackpackSatchelLeather: 2
+    ClothingRandomSpawner: 6
+    ClothingHeadBandBlack: 2
+    ClothingHeadHatGreyFlatcap: 2
+    ClothingUniformJumpsuitColorGrey: 2
+    ClothingUniformJumpskirtColorGrey: 2
+    ClothingShoesColorBlack: 4
+    ClothingHeadHatGreysoft: 2
+    ClothingHeadHatCorpsoft: 2
+    ClothingOuterWinterCoat: 2
+    ClothingOuterCorporateJacket: 2
+    ClothingBeltStorageWaistbag: 3
+    ClothingEyesGlasses: 6
+    ClothingHandsGlovesColorBlack: 4
+    ClothingEyesGlassesCheapSunglasses: 2
+    ClothingClothWrap: 4
+  contrabandInventory:
+    ClothingMaskNeckGaiter: 2
+    ClothingUniformJumpsuitTacticool: 1
+    ClothingUniformJumpskirtTacticool: 1

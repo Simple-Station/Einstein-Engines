@@ -1,0 +1,57 @@
+- type: job
+  id: HeadOfSecurity
+  name: job-name-hos
+  description: job-description-hos
+  playTimeTracker: JobHeadOfSecurity
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobWarden
+      min: 14400 #DeltaV 4 hrs
+  #  - !type:RoleTimeRequirement # DeltaV - No Security Officer time requirement - REIMPLEMENT WHEN MORE PEOPLE HAVE IT
+  #    role: JobDetective
+  #    time: 14400 #DeltaV 4 hrs
+    - !type:CharacterDepartmentTimeRequirement # DeltaV - Command dept time requirement
+      department: Command
+      min: 36000 # 10 hours
+    - !type:CharacterOverallTimeRequirement
+      min: 90000 # DeltaV - 25 hours
+    - !type:CharacterWhitelistRequirement
+  weight: 10
+  startingGear: HoSGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+  - HeadOfSecurity
+  - Command
+  #- Brig  # Delta V: Removed
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  - Detective
+  - Corpsman # DeltaV - added Corpsman access
+  - Cryogenics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: HoSGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoS
+    back: ClothingBackpackHOSFilled
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSunglasses
+    id: HoSPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetAltSecurity
+    belt: ClothingBeltSecurityFilled
+  innerClothingSkirt: ClothingUniformJumpskirtHoS
+  satchel: ClothingBackpackSatchelHOSFilled
+  duffelbag: ClothingBackpackDuffelHOSFilled

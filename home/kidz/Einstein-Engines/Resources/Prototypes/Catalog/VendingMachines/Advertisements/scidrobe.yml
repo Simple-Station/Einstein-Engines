@@ -1,0 +1,6 @@
+- type: messagePack
+  id: SciDrobeAds
+  messages:
+    - advertisement-scidrobe-1
+    - advertisement-scidrobe-2
+    - advertisement-scidrobe-3

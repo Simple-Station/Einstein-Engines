@@ -1,0 +1,89 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="633" d:DesignHeight="453"
+        x:Class="SamplesCommon.Core.NetPeerSettingsWindow"
+        Title="NetPeer settings"
+        ShowInTaskbar="False"
+        Width="633" Height="453">
+
+    <Window.Styles>
+        <Styles>
+            <Style Selector="TextBlock.TextBoxLineLabel">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Margin" Value="4 0" />
+            </Style>
+            <Style Selector="TextBox">
+                <Setter Property="MinWidth" Value="60" />
+            </Style>
+            <Style Selector="Button">
+                <Setter Property="MinWidth" Value="75" />
+                <Setter Property="MinHeight" Value="40" />
+            </Style>
+            <Style Selector="Border">
+                <Setter Property="BorderBrush">
+                    <SolidColorBrush Color="Gray" />
+                </Setter>
+            </Style>
+        </Styles>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="Auto,*" Margin="4">
+        <Border BorderThickness="1" Grid.Column="0" Grid.Row="0">
+            <StackPanel Margin="2">
+                <TextBlock FontSize="16" Text="Settings" />
+                <CheckBox Name="ErrorCheckBox" Content="Display Error messages" />
+                <CheckBox Name="WarningCheckBox" Content="Display Warning messages" />
+                <CheckBox Name="DebugCheckBox" Content="Display Debug messages" />
+                <CheckBox Name="VerboseCheckBox" Content="Display Verbose messages" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Classes="TextBoxLineLabel" Text="Ping frequency" />
+                    <TextBox Name="PingBox" Text="4000" />
+                    <TextBlock Classes="TextBoxLineLabel" Text="ms" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Border BorderThickness="0 1 1 1" Grid.Column="1" Grid.Row="0">
+            <StackPanel Margin="2">
+                <TextBlock FontSize="16" Text="Simulation" />
+                <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,Auto,Auto">
+                    <TextBlock Classes="TextBoxLineLabel" Text="One way latency" Grid.Row="0" />
+                    <TextBlock Classes="TextBoxLineLabel" Text="Loss" Grid.Row="1" />
+                    <TextBlock Classes="TextBoxLineLabel" Text="Duplicates" Grid.Row="2" />
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                        <TextBox Name="MinLag" Text="0" />
+                        <TextBlock Classes="TextBoxLineLabel" Text="-" />
+                        <TextBox Name="MaxLag" Text="0" />
+                        <TextBlock Name="DelayDisplay" Classes="TextBoxLineLabel" Text="0 to 0 ms" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                        <TextBox Name="LossBox" Text="0" />
+                        <TextBlock Name="LossPercent" Classes="TextBoxLineLabel" Text="0 %" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+                        <TextBox Name="DuplicatesBox" Text="0" />
+                        <TextBlock Name="DuplicatesPercent" Classes="TextBoxLineLabel" Text="0 %" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+        </Border>
+        <Border BorderThickness="1 0 1 1" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel Margin="4">
+                <TextBlock FontSize="16" Text="Statistics" />
+                <TextBlock Name="Statistics" TextWrapping="Wrap" />
+            </StackPanel>
+        </Border>
+
+
+        <DockPanel LastChildFill="False" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="4">
+            <Button Name="SaveButton" Content="Save" DockPanel.Dock="Right" />
+            <Button Name="CloseButton" Content="Close" DockPanel.Dock="Right" />
+        </DockPanel>
+    </Grid>
+</Window>

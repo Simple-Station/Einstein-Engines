@@ -1,0 +1,223 @@
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelClown
+  id: ClothingBackpackDuffelClownFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: RubberStampClown
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelBrigmedic
+  id: ClothingBackpackDuffelBrigmedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyRollerBedSpawnFolded
+      - id: BodyBagFolded
+      - id: Portafib
+    #  - id: Flash
+      - id: BruteAutoInjector
+        amount: 2
+      - id: BurnAutoInjector
+        amount: 2
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelSecurity
+  id: ClothingBackpackDuffelSecurityFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistol
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelSecurity
+  id: ClothingBackpackDuffelSecurityFilledDetective
+  components:
+  - type: StorageFill
+    contents:
+      - id: ForensicPad
+      - id: ForensicScanner
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelMedical
+  id: ClothingBackpackDuffelMedicalFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelMedical
+  id: ClothingBackpackDuffelParamedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyRollerBedSpawnFolded
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelCaptain
+  id: ClothingBackpackDuffelCaptainFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- name: StationCharter
+      #- name: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelEngineering
+  id: ClothingBackpackDuffelChiefEngineerFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- id: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelScience
+  id: ClothingBackpackDuffelResearchDirectorFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- id: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelHOPFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- id: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelMedical
+  id: ClothingBackpackDuffelCMOFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- id: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelCargo
+  id: ClothingBackpackDuffelQuartermasterFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- id: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelSecurity
+  id: ClothingBackpackDuffelHOSFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      - id: MagazinePistol
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelEngineering
+  id: ClothingBackpackDuffelEngineeringFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelAtmospherics
+  id: ClothingBackpackDuffelAtmosphericsFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelScience
+  id: ClothingBackpackDuffelScienceFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelRobotics
+  id: ClothingBackpackDuffelRoboticsFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelHydroponics
+  id: ClothingBackpackDuffelHydroponicsFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelMime
+  id: ClothingBackpackDuffelMimeFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: RubberStampMime
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelChemistry
+  id: ClothingBackpackDuffelChemistryFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelChaplainFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Bible
+      - id: RubberStampChaplain
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelMusicianFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: AcousticGuitarInstrument
+        - id: SaxophoneInstrument
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelLibrarianFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: BookRandom
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelDetectiveFilled
+  components:
+    - type: StorageFill
+      contents:
+      - id: Lighter
+      - id: CigPackBlack
+      - id: BoxForensicPad
+      - id: HandLabeler
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelCargo
+  id: ClothingBackpackDuffelCargoFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelSalvage
+  id: ClothingBackpackDuffelSalvageFilled

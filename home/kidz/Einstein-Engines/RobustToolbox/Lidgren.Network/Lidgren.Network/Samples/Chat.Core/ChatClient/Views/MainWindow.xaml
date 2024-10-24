@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:ChatClient.ViewModels;assembly=ChatClient"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="526" d:DesignHeight="326"
+        x:Class="ChatClient.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="ChatClient"
+        Width="526" Height="326">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <DockPanel Margin="6">
+        <DockPanel DockPanel.Dock="Top">
+            <Button Content="Settings" DockPanel.Dock="Right" Name="SettingsButton" />
+            <Button Content="{Binding ConnectText}" DockPanel.Dock="Right" Command="{Binding ConnectPressed}" />
+            <TextBox Text="{Binding ConnectPort, Mode=TwoWay}" IsEnabled="{Binding !Connected}" MinWidth="50" Watermark="Port" DockPanel.Dock="Right" />
+            <TextBox Text="{Binding ConnectAddress, Mode=TwoWay}" IsEnabled="{Binding !Connected}" Watermark="Address" />
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom">
+            <Button Content="Send" DockPanel.Dock="Right" IsEnabled="{Binding Connected}" Command="{Binding SendPressed}" />
+            <TextBox Name="MessageBox" Text="{Binding TextBox,Mode=TwoWay}" IsEnabled="{Binding Connected}" Watermark="Message" />
+        </DockPanel>
+        <ScrollViewer Margin="0 4" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Messages}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" TextWrapping="Wrap"
+                                   MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

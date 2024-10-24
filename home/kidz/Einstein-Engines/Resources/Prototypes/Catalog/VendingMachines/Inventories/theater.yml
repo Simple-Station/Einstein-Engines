@@ -1,0 +1,99 @@
+- type: vendingMachineInventory
+  id: AutoDrobeInventory
+  startingInventory:
+    ClothingHeadHatJester: 1
+    ClothingUniformJumpsuitJester: 1
+    ClothingHeadHatJesterAlt: 1
+    ClothingUniformJumpsuitJesterAlt: 1
+    ClothingShoesJester: 2
+    ClothingOuterWinterClown: 1
+    ClothingOuterWinterMime: 1
+    ClothingOuterWinterMusician: 1
+    ClothingMaskJoy: 2
+    ClothingHeadHatCardborg: 2
+    ClothingOuterCardborg: 2
+    ClothingHeadHatSombrero: 2
+    ClothingOuterPonchoClassic: 2
+    ClothingUniformJumpsuitKilt: 3 # DeltaV - SCOTTTTLANDDDDD FURREVERRRRR!!
+    ClothingEyesEyepatch: 2 # Delta-V Yarrr
+    ClothingHeadHatPwig: 2
+    ClothingOuterRobesJudge: 2
+    ClothingOuterPoncho: 2
+    ClothingHeadHatSantahat: 2
+    ClothingOuterSanta: 2
+    ClothingHeadHatSkub: 2
+    ClothingOuterSkub: 2
+    ClothingHeadHatBeretFrench: 2
+    ClothingOuterSuitChicken: 2
+    ClothingHeadHatChickenhead: 2
+    ClothingOuterSuitMonkey: 2
+    ClothingHeadHatPumpkin: 2
+    ClothingHeadHatShrineMaidenWig: 2
+    ClothingOuterSuitShrineMaiden: 2
+    Gohei: 2
+    ClothingHeadHatRedRacoon: 2
+    ClothingOuterRedRacoon: 2
+    ClothingHeadPaperSack: 2
+    ClothingHeadPaperSackSmile: 2
+    ClothingEyesBlindfold: 1
+    ClothingHeadRastaHat: 2
+    ClothingUniformJumpsuitDameDane: 2
+    ClothingShoesDameDane: 2
+    ClothingOuterDameDane: 2
+    ClothingOuterClownPriest: 1
+    ClothingMaskSadMime: 1
+    ClothingMaskScaredMime: 1
+    ClothingUniformJumpsuitKimono: 1
+    ClothingHeadHatCasa: 1
+    FoodPoppy: 1
+    ClothingHeadHatGladiator: 1
+    ClothingUniformJumpsuitGladiator: 1
+    ClothingUniformSkirtTurtle: 2 # Nyano - Clothing addition
+    ClothingUniformSwimsuitBlue: 2 # Nyano - Clothing addition
+    ClothingCostumeBunnySuit: 2 # Nyano - Clothing addition
+    ClothingHeadHatBunny: 2 # Nyano - Clothing addition
+    ClothingUniformDressRed: 1 # Nyano - Clothing addition
+    ClothingHeadHatCake: 2 # Nyano - Clothing addition
+    ClothingUniformSchoolGakuranBlack: 2 # Nyano - Clothing addition
+    UniformSchoolgirlBlack: 1 # Nyano - Clothing addition
+    UniformSchoolgirlBlue: 1 # Nyano - Clothing addition
+    UniformSchoolgirlCyan: 1 # Nyano - Clothing addition
+    UniformSchoolgirlGreen: 1 # Nyano - Clothing addition
+    UniformSchoolgirlOrange: 1 # Nyano - Clothing addition
+    UniformSchoolgirlPink: 1 # Nyano - Clothing addition
+    UniformSchoolgirlPurple: 1 # Nyano - Clothing addition
+    UniformSchoolgirlRed: 1 # Nyano - Clothing addition
+    UniformSchoolgirlDusk: 1 # Nyano - Clothing addition
+    UniformSchoolgirlBlazerTan: 1 # Nyano - Clothing addition
+    UniformGeisha: 1 # Nyano - Clothing addition
+    ClothingKimonoBlue: 2 # Nyano - Clothing addition
+    ClothingKimonoPink: 2 # Nyano - Clothing addition
+    ClothingKimonoPurple: 2 # Nyano - Clothing addition
+    ClothingKimonoSky: 2 # Nyano - Clothing addition
+    ClothingKimonoGreen: 2 # Nyano - Clothing addition
+    ClothingMaskOniBlue: 1 # Nyano - Clothing addition
+    ClothingMaskOniRed: 1 # Nyano - Clothing addition
+    ClothingCostumeArcDress: 1 # Nyano - Clothing addition
+    ClothingCostumeMioSkirt: 1 # Nyano - Clothing addition
+    ClothingCostumeNaota: 1 # Nyano - Clothing addition
+    ClothingUniformJumpsuitSober: 1 # DeltaV - Clothing addition
+    ClothingOuterSuitCarp: 2 # DeltaV - Move carp suit out of syndicate uplink into the AutoDrobe
+    ClothingShoesBootsWinterClown: 2  #Delta V: Add departmental winter boots
+    ClothingShoesBootsWinterMime: 2  #Delta V: Add departmental winter boots
+    ClothingHeadHatCowboyBrown: 1
+    ClothingHeadHatCowboyBlack: 1
+    ClothingHeadHatCowboyWhite: 1
+    ClothingHeadHatCowboyGrey: 1
+    ClothingShoesBootsCowboyBrown: 1
+    ClothingShoesBootsCowboyBlack: 1
+    ClothingShoesBootsCowboyWhite: 1
+    ClothingMaskNeckGaiterRed: 2
+    ClothingNeckBellCollar: 2
+    ClothingOuterUnathiRobe: 1
+  emaggedInventory:
+    ClothingShoesBling: 1
+    ClothingShoesBootsCowboyFancy: 1
+    ClothingOuterDogi: 1
+    ClothingMaskSexyClown: 1
+    ClothingMaskSexyMime: 1
+    ClothingHeadHatCowboyBountyHunter: 1

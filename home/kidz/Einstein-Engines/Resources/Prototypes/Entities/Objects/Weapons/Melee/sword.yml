@@ -1,0 +1,240 @@
+- type: entity
+  name: captain's sabre
+  parent: BaseItem
+  id: CaptainSabre
+  description: A ceremonial weapon belonging to the captain of the station.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/captain_sabre.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.25
+    range: 1.75
+    soundHit:
+      path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
+    damage:
+      types:
+        Slash: 15
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 5
+    maxTargets: 7
+    angle: 80
+  - type: Reflect
+    enabled: true
+    # Design intent: a robust captain or tot can sacrifice movement to make the most of this weapon, but they have to
+    # really restrict themselves to walking speed or less.
+    reflectProb: 0.5
+    velocityBeforeNotMaxProb: 1.0
+    velocityBeforeMinProb: 3.0
+    minReflectProb: 0.1
+    spread: 90
+  - type: Item
+    size: Normal
+    sprite: Objects/Weapons/Melee/captain_sabre.rsi
+  - type: Tag
+    tags:
+    - CaptainSabre
+  - type: DisarmMalus
+
+- type: entity
+  name: katana
+  parent: BaseItem
+  id: Katana
+  description: Ancient craftwork made with not so ancient plasteel.
+  components:
+  - type: Sharp
+  - type: Tag
+    tags:
+    - Katana
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.5
+    soundHit:
+      path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
+    damage:
+      types:
+        Slash: 12
+    heavyRateModifier: 0.5
+    heavyRangeModifier: 2.75 #Superior Japanese folded steel
+    heavyDamageBaseModifier: 1.25
+    heavyStaminaCost: 15
+    maxTargets: 1
+    angle: 20
+  - type: Item
+    size: Normal
+    sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
+  - type: DisarmMalus
+
+- type: entity
+  name: energy katana
+  parent: Katana
+  id: EnergyKatana
+  description: A katana infused with strong energy.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/energykatana.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -60
+    damage:
+      types:
+        Slash: 25
+  - type: Item
+    size: Normal
+    sprite: Objects/Weapons/Melee/energykatana.rsi
+  - type: EnergyKatana
+  - type: DashAbility
+  - type: LimitedCharges
+    maxCharges: 3
+    charges: 3
+  - type: AutoRecharge
+    rechargeDuration: 20
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/energykatana.rsi
+    slots:
+    - Back
+    - Belt
+  - type: Reflect
+    reflectProb: 0.3
+    velocityBeforeNotMaxProb: 6.0 # don't punish ninjas for being ninjas
+    velocityBeforeMinProb: 10.0
+
+- type: entity
+  name: machete
+  parent: BaseItem
+  id: Machete
+  description: A large, vicious looking blade.
+  components:
+  - type: Sharp
+  - type: Tag
+    tags:
+    - Machete
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/machete.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 0.8
+    damage:
+      types:
+        Slash: 15
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 7.5
+    angle: 80
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Normal
+    sprite: Objects/Weapons/Melee/machete.rsi
+  - type: DisarmMalus
+
+- type: entity
+  name: claymore
+  parent: BaseItem
+  id: Claymore
+  description: An ancient war blade.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/claymore.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 0.65
+    range: 1.85
+    damage:
+      types:
+        Slash: 19
+        Blunt: 1
+    bluntStaminaDamageFactor: 25.0
+    heavyRateModifier: 0.5
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 15
+    maxTargets: 10
+    angle: 200
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Normal
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/claymore.rsi
+    slots:
+    - back
+  - type: DisarmMalus
+
+- type: entity
+  name: cutlass
+  parent: BaseItem
+  id: Cutlass
+  description: A wickedly curved blade, often seen in the hands of space pirates.
+  components:
+  - type: Sharp
+  - type: Tag
+    tags:
+    - Machete
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/cutlass.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.25
+    damage:
+      types:
+        Slash: 12
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1.2
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 7.5
+    maxTargets: 3
+    angle: 40
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Normal
+    sprite: Objects/Weapons/Melee/cutlass.rsi
+  - type: DisarmMalus
+
+- type: entity
+  name: The Throngler
+  parent: BaseItem
+  id: Throngler
+  description: Why would someone make this?
+  components:
+    - type: Sharp
+    - type: Sprite
+      sprite: Objects/Weapons/Melee/Throngler2.rsi
+      state: icon
+    - type: MeleeWeapon
+      wideAnimationRotation: -135
+      attackRate: 10
+      damage:
+        types:
+          Structural: 150
+          Slash: 20 #Horror
+          Blunt: 20
+          Heat: 20
+          Piercing: 20
+          Radiation: 10
+      soundHit:
+        path: /Audio/Effects/explosion_small1.ogg
+    - type: Reflect
+      enabled: true
+      reflectProb: 0.5 # In robust hands, deflects as well as an e-sword
+      velocityBeforeNotMaxProb: 1.0
+      velocityBeforeMinProb: 3.0
+      minReflectProb: 0.1
+      spread: 90
+    - type: Item
+      size: Ginormous
+      sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
+    - type: DisarmMalus

@@ -1,0 +1,34 @@
+- type: job
+  id: Chemist
+  name: job-name-chemist
+  description: job-description-chemist
+  playTimeTracker: JobChemist
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Medical
+      min: 28800 # DeltaV - 8 hours
+  startingGear: ChemistGear
+  icon: "JobIconChemist"
+  supervisors: job-supervisors-cmo
+  access:
+  - Medical
+  - Chemistry
+  - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CPRTraining
+
+- type: startingGear
+  id: ChemistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChemistry
+    back: ClothingBackpackChemistryFilled
+    shoes: ClothingShoesColorWhite
+    id: ChemistryPDA
+    ears: ClothingHeadsetMedical
+    belt: ChemBag
+    # the purple glasses?
+  innerClothingSkirt: ClothingUniformJumpskirtChemistry
+  satchel: ClothingBackpackSatchelChemistryFilled
+  duffelbag: ClothingBackpackDuffelChemistryFilled

@@ -1,0 +1,94 @@
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomServiceCorpse
+  suffix: Dead, Service
+  components:
+  - type: Loadout
+    prototypes:
+      - HoPGear
+      - ClownGear
+      - MimeGear
+      - JanitorGear
+      - ServiceWorkerGear
+      - MusicianGear
+      - BotanistGear
+      - ChefGear
+      # - ChaplainGear # DeltaV - Move Chaplain into Epistemics
+      - PassengerGear
+      - MartialArtistGear # Nyanotrasen - MartialArtist, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/martialartist.yml
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomEngineerCorpse
+  suffix: Dead, Engineer
+  components:
+  - type: Loadout
+    prototypes:
+    - TechnicalAssistantGear
+    - AtmosphericTechnicianGear
+    - StationEngineerGear
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomCargoCorpse
+  suffix: Dead, Logistics # DeltaV - Logistics Department replacing Cargo
+  components:
+  - type: Loadout
+    prototypes:
+    - CargoTechGear
+    - SalvageSpecialistGear
+    - MailCarrierGear # Nyanotrasen - Old Mail Carrier gear, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail_carrier.yml
+    - CourierGear # DeltaV - Courier, see Resources/Prototypes/DeltaV/Roles/Jobs/Cargo/courier.yml
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomMedicCorpse
+  suffix: Dead, Medic
+  components:
+  - type: Loadout
+    prototypes:
+    - MedicalInternGear
+    - PsychologistGear
+    - ChemistGear
+    - DoctorGear
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomScienceCorpse
+  suffix: Dead, Epistemics # DeltaV - Epistemics Department replacing Science
+  components:
+  - type: Loadout
+    prototypes:
+    - ResearchAssistantGear
+    - ScientistGear
+    - ChaplainGear # DeltaV - Move Chaplain into Epistemics
+    - ForensicMantisGear # Nyanotrasen - Forensic Mantis
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomSecurityCorpse
+  suffix: Dead, Security
+  noSpawn: true # DeltaV - Prevent security corpses from being mapped in
+  components:
+  - type: Loadout
+    prototypes:
+    - SecurityCadetGear
+    - SecurityOfficerGear
+    - DetectiveGear
+    - WardenGear
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomCommandCorpse
+  suffix: Dead, Command
+  components:
+  - type: Loadout
+    prototypes:
+    - HoPGear
+    - CentcomGear
+    - CaptainGear
+    - HoSGear
+    - ResearchDirectorGear
+    - CMOGear
+    - ChiefEngineerGear
+    - QuartermasterGear

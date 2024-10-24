@@ -1,0 +1,42 @@
+- type: job
+  id: SeniorPhysician
+  name: job-name-senior-physician
+  description: job-description-senior-physician
+  playTimeTracker: JobSeniorPhysician
+  setPreference: false # DeltaV - Disable Senior Roles round start selection
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobChemist
+      min: 21600 #6 hrs
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobMedicalDoctor
+      min: 21600 #6 hrs
+    - !type:CharacterDepartmentTimeRequirement
+      department: Medical
+      min: 216000 # 60 hrs
+  startingGear: SeniorPhysicianGear
+  icon: "JobIconSeniorPhysician"
+  supervisors: job-supervisors-cmo
+  access:
+  - Medical
+  - Maintenance
+  - Chemistry
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CPRTraining
+
+- type: startingGear
+  id: SeniorPhysicianGear
+  equipment:
+    head: ClothingHeadHatBeretSeniorPhysician
+    jumpsuit: ClothingUniformJumpsuitSeniorPhysician
+    back: ClothingBackpackMedicalFilled
+    shoes: ClothingShoesColorBlack
+    outerClothing: ClothingOuterCoatLabSeniorPhysician
+    id: SeniorPhysicianPDA
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalFilled
+  innerClothingSkirt: ClothingUniformJumpskirtSeniorPhysician
+  satchel: ClothingBackpackSatchelMedicalFilled
+  duffelbag: ClothingBackpackDuffelMedicalFilled

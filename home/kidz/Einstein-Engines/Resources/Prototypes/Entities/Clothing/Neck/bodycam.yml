@@ -1,0 +1,35 @@
+- type: entity
+  parent: ClothingNeckMedalBase
+  id: Bodycam
+  name: Бодикамера
+  description: Большой брат следит за вами.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Medals/bodycam.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Medals/bodycam.rsi
+  - type: Tag
+    tags:
+      - Medal
+  - type: InteractionOutline
+  - type: Eye
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: SurveillanceCameraMicrophone
+    blacklist:
+      components:
+        - SurveillanceCamera
+        - SurveillanceCameraMonitor
+        - RadioSpeaker
+  - type: ActiveListener
+    range: 10
+  - type: UserInterface
+    interfaces:
+      enum.SurveillanceCameraSetupUiKey.Camera:
+        type: SurveillanceCameraSetupBoundUi
+  - type: DeviceNetwork
+    deviceNetId: Wired
+    receiveFrequencyId: SurveillanceCameraSecurity
+    transmitFrequencyId: SurveillanceCameraSecurity
+  - type: SurveillanceCamera
+    networkSet: true

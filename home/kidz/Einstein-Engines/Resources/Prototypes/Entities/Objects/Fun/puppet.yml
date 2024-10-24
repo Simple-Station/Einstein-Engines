@@ -1,0 +1,131 @@
+- type: entity
+  parent: [ BaseItem, MobCombat ]
+  id: MrChips
+  name: mr chips
+  suffix: Dummy
+  description: It's a dummy, dummy!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/mrchips.rsi
+    layers:
+    - state: icon
+  - type: Input
+    context: "human"
+  - type: DoAfter
+  - type: VentriloquistPuppet
+  - type: Item
+    size: Normal
+  - type: Muted
+  - type: TypingIndicator
+    proto: robot
+  - type: Actions
+  - type: MobState
+    allowedStates:
+      - Alive
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/boxingpunch1.ogg
+    angle: 30
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 2
+
+- type: entity
+  parent: MrChips
+  id: MrDips
+  name: mr dips
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/mrdips.rsi
+    layers:
+    - state: icon
+
+## PET ROCK!
+
+- type: entity
+  id: PetRockCarrier
+  parent: HappyHonk
+  name: pet rock carrier
+  description: Your new and only best friend home!
+  components:
+  - type: Sprite
+    sprite: Objects/Storage/Happyhonk/rock_carrier.rsi
+    state: box
+  - type: Item
+    sprite: Objects/Storage/Happyhonk/rock_carrier.rsi
+    heldPrefix: box
+  - type: StorageFill
+    contents:
+      - id: PetRock
+        prob: 0.8
+        orGroup: Rock
+      - id: PetRockFred
+        prob: 0.1
+        orGroup: Rock
+      - id: PetRockRoxie
+        prob: 0.1
+        orGroup: Rock
+
+- type: entity
+  parent: [BaseItem, MrChips]
+  id: BasePetRock
+  name: pet rock
+  description: Your new and only best friend!
+  abstract: true
+  components:
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 1
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Ash:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: BasePetRock
+  id: PetRock
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/petrock.rsi
+    layers:
+    - state: rock
+
+- type: entity
+  parent: BasePetRock
+  id: PetRockFred
+  name: fred
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/petrock.rsi
+    layers:
+    - state: fred
+
+- type: entity
+  parent: BasePetRock
+  id: PetRockRoxie
+  name: roxie
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/petrock.rsi
+    layers:
+    - state: roxie

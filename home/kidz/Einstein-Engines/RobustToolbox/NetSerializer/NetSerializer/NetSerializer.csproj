@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Description>A very fast and minimal serializer</Description>
+    <Company>Tomi Valkeinen</Company>
+    <Copyright>Copyright © 2012-2019 Tomi Valkeinen</Copyright>
+    <Version>4.1.1</Version>
+    <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
+    <Authors>$(Company)</Authors>
+    <PackageTags>Serializer</PackageTags>
+    <RepositoryUrl>https://github.com/tomba/netserializer</RepositoryUrl>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>Robust.NetSerializer</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <DefineConstants Condition="'$(TargetFramework)' == 'net45'">GENERATE_DEBUGGING_ASSEMBLY</DefineConstants>
+  </PropertyGroup>
+</Project>

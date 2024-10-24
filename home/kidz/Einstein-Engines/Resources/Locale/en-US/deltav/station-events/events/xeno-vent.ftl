@@ -1,0 +1,2 @@
+station-event-xeno-vents-announcement = Confirmed sightings of hostile alien wildlife on the station. Personnel are advised to arm themselves, barricade doors, and defend themselves if necessary. Security is advised to eradicate the threat as soon as possible.
+station-event-xeno-vents-weak-announcement = Suspected signatures of hostile alien wildlife detected on the station. Personnel are advised to arm themselves, barricade doors, and defend themselves if necessary. Security is advised to eradicate the threat as soon as possible.

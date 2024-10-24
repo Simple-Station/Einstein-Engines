@@ -1,0 +1,90 @@
+- type: entity
+  name: Pen Light
+  parent: Pen
+  id: PenLightBase
+  description: A pen-sized light, used by medical staff.
+  components:
+    - type: HandheldLight
+      addPrefix: false
+    - type: Sprite
+      sprite: Objects/Tools/penlight.rsi
+      layers:
+        - state: world
+        - state: world-on
+          shader: unshaded
+          visible: false
+          map: [ "light" ]
+    - type: Item
+      sprite: Objects/Tools/penlight.rsi
+      heldPrefix: off
+    - type: PointLight
+      enabled: false
+      mask: /Textures/Effects/LightMasks/cone.png
+      autoRot: true
+      radius: 2
+      netsync: false
+    - type: PenLight
+      examSpeed: 3 #time in seconds
+    - type: Appearance
+    - type: UserInterface
+      interfaces:
+        enum.PenLightUiKey.Key:
+          type: PenLightBoundUserInterface
+    - type: ToggleableLightVisuals
+    - type: ContainerContainer
+      containers:
+        cell_slot: !type:ContainerSlot {}
+    - type: PowerCellSlot
+      cellSlotId: cell_slot
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellSmall
+    - type: Tag
+      tags:
+      - Flashlight
+      - Write
+      - Pen
+
+- type: entity
+  name: Chief Medical Officer's Pen Light
+  parent: PenLightBase
+  id: CMOPenLight
+  description: A pen-sized light, this one belonging to the Chief Medical Officer. When you get promoted you get a better pen.
+  components:
+    - type: HandheldLight
+      addPrefix: false
+    - type: Sprite
+      sprite: Objects/Tools/cmopenlight.rsi
+      layers:
+        - state: world
+        - state: world-on
+          shader: unshaded
+          visible: false
+          map: [ "light" ]
+    - type: Item
+      sprite: Objects/Tools/cmopenlight.rsi
+      heldPrefix: off
+    - type: PointLight
+      enabled: false
+      mask: /Textures/Effects/LightMasks/cone.png
+      autoRot: true
+      radius: 2
+      netsync: false
+    - type: PenLight
+      examSpeed: 1.5 #time in seconds
+    - type: Appearance
+    - type: ToggleableLightVisuals
+    - type: PowerCellSlot
+      cellSlotId: cell_slot
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellSmall
+    - type: Tag
+      tags:
+      - Flashlight
+      - Write
+      - Pen

@@ -1,0 +1,14 @@
+- type: accessLevel
+  id: ResearchDirector
+  name: id-card-access-level-research-director
+
+- type: accessLevel
+  id: Research
+  name: id-card-access-level-research
+
+- type: accessGroup
+  id: Research
+  tags:
+  - ResearchDirector
+  - Research
+  - Mantis # DeltaV - Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml

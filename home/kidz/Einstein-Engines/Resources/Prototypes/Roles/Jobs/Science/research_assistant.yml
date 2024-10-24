@@ -1,0 +1,30 @@
+﻿- type: job
+  id: ResearchAssistant
+  name: job-name-research-assistant
+  description: job-description-research-assistant
+  playTimeTracker: JobResearchAssistant
+  requirements:
+    # - !type:DepartmentTimeRequirement # DeltaV - Removes time limit
+    #   department: Science
+    #   time: 54000 #15 hrs
+    #   inverted: true # stop playing intern if you're good at science!
+  startingGear: ResearchAssistantGear
+  icon: "JobIconResearchAssistant"
+  supervisors: job-supervisors-science
+  canBeAntag: true # DeltaV - Can be antagonist
+  access:
+  - Research
+  - Maintenance
+
+- type: startingGear
+  id: ResearchAssistantGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorWhite
+    back: ClothingBackpackScienceFilled
+    shoes: ClothingShoesColorWhite
+    id: ResearchAssistantPDA
+    ears: ClothingHeadsetScience
+    pocket2: BookScientistsGuidebook
+  innerClothingSkirt: ClothingUniformJumpskirtColorWhite
+  satchel: ClothingBackpackSatchelScienceFilled
+  duffelbag: ClothingBackpackDuffelScienceFilled

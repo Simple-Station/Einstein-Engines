@@ -1,0 +1,28 @@
+- type: job
+  id: Zookeeper
+  name: job-name-zookeeper
+  description: job-description-zookeeper
+  playTimeTracker: JobZookeeper
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 7200 #DeltaV 2 hours
+  startingGear: ZookeeperGear
+  icon: "JobIconZookeeper"
+  supervisors: job-supervisors-hop
+  access:
+  - Service
+  - Maintenance
+  - Zookeeper # DeltaV - Add Zookeeper access
+
+- type: startingGear
+  id: ZookeeperGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSafari
+    back: ClothingBackpackFilled
+    head: ClothingHeadSafari
+    shoes: ClothingShoesColorWhite
+    id: ZookeeperPDA
+    ears: ClothingHeadsetService
+  innerClothingSkirt: ClothingUniformJumpsuitSafari
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

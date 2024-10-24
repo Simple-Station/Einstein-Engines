@@ -1,0 +1,18 @@
+- type: gameMapPool
+  id: DefaultMapPool
+  maps:
+  - Arena
+  - Asterisk
+  - Core
+  - Edge
+  - Glacier
+  - Hammurabi
+  - Lighthouse
+  - Pebble
+  - Saltern
+  - Shoukou
+  - Submarine
+  - Tortuga
+  - TheHive
+  - Gax
+  - Rad

@@ -1,0 +1,189 @@
+- type: gamePreset
+  id: Survival
+  alias:
+    - survival
+  name: survival-title
+  showInVote: true # secret # DeltaV - Me when the survival. Used for periapsis.
+  description: survival-description
+  rules:
+    - RampingStationEventScheduler
+    - BasicRoundstartVariation
+    - SubGamemodesRule
+
+- type: gamePreset
+  id: SurvivalHellshift
+  alias:
+    - hellshift
+  showInVote: true
+  name: hellshift-title
+  description: hellshift-description
+  rules:
+    - HellshiftStationEventScheduler
+    - BasicRoundstartVariation
+    - SubGamemodesRule
+
+- type: gamePreset
+  id: SurvivalIrregular
+  alias: [irregular]
+  showInVote: true
+  name: irregular-title
+  description: irregular-description
+  rules:
+    - IrregularStationEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SurvivalIrregularExtended
+  alias: [irregular-extended]
+  showInVote: true
+  name: irregular-extended-title
+  description: irregular-extended-description
+  rules:
+    - IrregularExtendedStationEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: AllAtOnce
+  name: all-at-once-title
+  description: all-at-once-description
+  showInVote: false
+  rules:
+    - Nukeops
+    - Traitor
+    - Revolutionary
+    - Zombie
+    - RampingStationEventScheduler
+
+- type: gamePreset
+  id: Extended
+  alias:
+  - extended
+  - shittersafari
+  name: extended-title
+  showInVote: true #2boring2vote # DeltaV - I'd like to disagree, used for periapsis.
+  description: extended-description
+  rules:
+  - BasicStationEventScheduler
+  - BasicRoundstartVariation
+  - SubGamemodesRule
+
+- type: gamePreset
+  id: Greenshift
+  alias:
+  - greenshift
+  - shittersafarideluxeedition
+  name: greenshift-title
+  showInVote: false #4boring4vote
+  description: greenshift-description
+  rules:
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Secret
+  alias:
+    - secret
+    - sekrit
+  name: secret-title
+  showInVote: true
+  description: secret-description
+  rules:
+    - Secret
+
+- type: gamePreset
+  id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
+  alias:
+    - secretextended
+  name: secret-title
+  showInVote: false #Admin Use
+  description: secret-description
+  rules:
+    - BasicStationEventScheduler
+
+- type: gamePreset
+  id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
+  alias:
+  - secretgreenshift
+  name: secret-title
+  showInVote: false #Admin Use
+  description: secret-description
+
+- type: gamePreset
+  id: Sandbox
+  alias:
+    - sandbox
+  name: sandbox-title
+  description: sandbox-description
+  showInVote: false # Not suitable for use without admin intervention, since entity spamming can quickly crash a server
+  maxPlayers: 5
+  rules:
+    - Sandbox
+
+- type: gamePreset
+  id: Traitor
+  alias:
+    - traitor
+  name: traitor-title
+  description: traitor-description
+  showInVote: true
+  rules:
+    - Traitor
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Deathmatch
+  alias:
+    - deathmatch
+    - dm
+  name: death-match-title
+  description: death-match-description
+  #maxPlayers: 15
+  showInVote: false # DeltaV - No.
+  supportedMaps: DeathMatchMapPool
+  rules:
+    - DeathMatch31
+
+- type: gamePreset
+  id: Nukeops
+  alias:
+    - nukeops
+  name: nukeops-title
+  description: nukeops-description
+  showInVote: false
+  rules:
+    - Nukeops
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Revolutionary
+  alias:
+    - rev
+    - revs
+    - revolutionaries
+  name: rev-title
+  description: rev-description
+  showInVote: false
+  rules:
+    - Revolutionary
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Zombie
+  alias:
+  - zombie
+  - zombies
+  - Zombies
+  - zz14
+  - zomber
+  name: zombie-title
+  description: zombie-description
+  showInVote: false
+  rules:
+  - Zombie
+  - BasicStationEventScheduler
+  - BasicRoundstartVariation

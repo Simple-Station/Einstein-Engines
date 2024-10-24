@@ -1,0 +1,26 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [ wizards ]
+  pull_request:
+    branches: [ wizards ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test .NET 6
+      # macOS images don't have .NET 6.
+      if: matrix.os != 'macos-latest'
+      run: dotnet test --configuration Release --framework net6.0 -v n
+    - name: Test .NET 7
+      run: dotnet test --configuration Release --framework net7.0 -v n
+    - name: Test .NET 8
+      run: dotnet test --configuration Release --framework net8.0 -v n

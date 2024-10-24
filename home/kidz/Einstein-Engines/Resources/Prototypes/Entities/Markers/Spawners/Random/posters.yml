@@ -1,0 +1,172 @@
+- type: entity
+  parent: MarkerBase
+  id: RandomPosterAny
+  name: random poster spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Wallmounts/posters.rsi
+        state: random_anything
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - RandomPosterContraband
+      - RandomPosterLegit
+    chance: 0.95
+    rarePrototypes:
+      - PosterBroken
+    rareChance: 0.05
+
+- type: entity
+  parent: MarkerBase
+  id: RandomPosterContraband
+  name: random contraband poster spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Wallmounts/posters.rsi
+        state: random_contraband
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - PosterContrabandFreeTonto
+      - PosterContrabandAtmosiaDeclarationIndependence
+      - PosterContrabandFunPolice
+      - PosterContrabandLustyExomorph
+      - PosterContrabandSyndicateRecruitment
+      - PosterContrabandClown
+      - PosterContrabandSmoke
+      - PosterContrabandGreyTide
+      - PosterContrabandMissingGloves
+      - PosterContrabandHackingGuide
+      - PosterContrabandRIPBadger
+      - PosterContrabandAmbrosiaVulgaris
+      - PosterContrabandDonutCorp
+      - PosterContrabandEAT
+      - PosterContrabandTools
+      - PosterContrabandPower
+      - PosterContrabandSpaceCube
+      - PosterContrabandCommunistState
+      - PosterContrabandLamarr
+      - PosterContrabandBorgFancy
+      - PosterContrabandBorgFancyv2
+      - PosterContrabandKosmicheskayaStantsiya
+      - PosterContrabandRebelsUnite
+      - PosterContrabandC20r
+      - PosterContrabandHaveaPuff
+      - PosterContrabandRevolver
+      - PosterContrabandDDayPromo
+      - PosterContrabandSyndicatePistol
+      - PosterContrabandEnergySwords
+      - PosterContrabandRedRum
+      - PosterContrabandCC64KAd
+      - PosterContrabandPunchShit
+      - PosterContrabandTheGriffin
+      - PosterContrabandFreeDrone
+      - PosterContrabandBustyBackdoorExoBabes6
+      - PosterContrabandRobustSoftdrinks
+      - PosterContrabandShamblersJuice
+      - PosterContrabandPwrGame
+      - PosterContrabandSunkist
+      - PosterContrabandSpaceCola
+      - PosterContrabandSpaceUp
+      - PosterContrabandKudzu
+      - PosterContrabandMaskedMen
+      - PosterContrabandUnreadableAnnouncement
+      - PosterContrabandFreeSyndicateEncryptionKey
+      - PosterContrabandBountyHunters
+      - PosterContrabandTheBigGasTruth
+      - PosterContrabandWehWatches
+      - PosterContrabandVoteWeh
+      - PosterContrabandBeachStarYamamoto
+      - PosterContrabandHighEffectEngineering
+      - PosterContrabandNuclearDeviceInformational
+      - PosterContrabandRevolt
+      - PosterContrabandRise
+      - PosterContrabandMoth
+      - PosterContrabandCybersun600
+      - PosterContrabandDonk
+      - PosterContrabandEnlistGorlex
+      - PosterContrabandInterdyne
+      - PosterContrabandWaffleCorp
+      - PosterContrabandSaucerNumberOne # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterContrabandBreadLies # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterContrabandGotWood # DeltaV Poster, see Resources/Prototypes/DeltaV/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterContrabandAyaya # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterContrabandMissingSpacepen
+    chance: 1
+
+- type: entity
+  parent: MarkerBase
+  id: RandomPosterLegit
+  name: random legit poster spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Wallmounts/posters.rsi
+        state: random_legit
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - PosterLegitHereForYourSafety
+      - PosterLegitNanotrasenLogo
+      - PosterLegitCleanliness
+      - PosterLegitHelpOthers
+      - PosterLegitBuild
+      - PosterLegitBlessThisSpess
+      - PosterLegitScience
+      - PosterLegitIan
+      - PosterLegitObey
+      - PosterLegitWalk
+      - PosterLegitStateLaws
+      - PosterLegitLoveIan
+      - PosterLegitSpaceCops
+      - PosterLegitUeNo
+      - PosterLegitGetYourLEGS
+      - PosterLegitDoNotQuestion
+      - PosterLegitWorkForAFuture
+      - PosterLegitSoftCapPopArt
+      - PosterLegitSafetyInternals
+      - PosterLegitSafetyEyeProtection
+      - PosterLegitSafetyReport
+      - PosterLegitReportCrimes
+      - PosterLegitIonRifle
+      - PosterLegitFoamForceAd
+      - PosterLegitCohibaRobustoAd
+      - PosterLegit50thAnniversaryVintageReprint
+      - PosterLegitFruitBowl
+      - PosterLegitPDAAd
+      - PosterLegitEnlist
+      - PosterLegitNanomichiAd
+      - PosterLegit12Gauge
+      - PosterLegitHighClassMartini
+      - PosterLegitTheOwl
+      - PosterLegitNoERP
+      - PosterLegitCarbonDioxide
+      - PosterLegitDickGumshue
+      - PosterLegitThereIsNoGasGiant
+      - PosterLegitJustAWeekAway
+      - PosterLegitSecWatch
+      - PosterLegitVacation
+      - PosterLegitPeriodicTable
+      - PosterLegitRenault
+      - PosterLegitNTTGC
+      - PosterLegitDejaVu # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitDontPanic # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitBarDrinks # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitBotanyFood # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitHotDonkExplosion # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitEatMeat # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitMoreBread # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitPieSlice # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitPizzaHope # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitMedicate # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitNoTouching # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitChknDnnr # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitShoukou # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitCornzza # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
+      - PosterLegitFuckAround # DeltaV Poster, see Resources/Prototypes/DeltaV/Entities/Structures/Wallmount/Signs/posters.yml
+    chance: 1

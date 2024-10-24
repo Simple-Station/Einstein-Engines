@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Walking/Running icons modified by Mocho, original taken from /tg/station https://github.com/tgstation/tgstation/pull/52691/commits/6a1261187c108c8f151c99ebfa567bd1ec34044c",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "walking0"
+        },
+        {
+            "name": "walking1"
+        }
+    ]
+}

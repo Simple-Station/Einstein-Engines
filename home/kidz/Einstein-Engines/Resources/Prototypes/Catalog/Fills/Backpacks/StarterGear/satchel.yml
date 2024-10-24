@@ -1,0 +1,247 @@
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelTools
+  components:
+  - type: StorageFill
+    contents:
+      - id: Crowbar
+      - id: Wrench
+      - id: Screwdriver
+      - id: Wirecutter
+      - id: Welder
+      - id: Multitool
+
+- type: entity
+  parent: ClothingBackpackSatchelClown
+  id: ClothingBackpackSatchelClownFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxHug
+      - id: RubberStampClown
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelBrigmedic
+  id: ClothingBackpackSatchelBrigmedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyRollerBedSpawnFolded
+      - id: BodyBagFolded
+      - id: Portafib
+      - id: BruteAutoInjector
+        amount: 2
+      - id: BurnAutoInjector
+        amount: 2
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelSecurity
+  id: ClothingBackpackSatchelSecurityFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistol
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelSecurity
+  id: ClothingBackpackSatchelSecurityFilledDetective
+  components:
+  - type: StorageFill
+    contents:
+      - id: ForensicPad
+      - id: ForensicScanner
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelMedical
+  id: ClothingBackpackSatchelMedicalFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelMedical
+  id: ClothingBackpackSatchelParamedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyRollerBedSpawnFolded
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelCaptain
+  id: ClothingBackpackSatchelCaptainFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- name: StationCharter
+      #- name: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelEngineering
+  id: ClothingBackpackSatchelChiefEngineerFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- id: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelScience
+  id: ClothingBackpackSatchelResearchDirectorFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- id: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelHOPFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- id: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelMedical
+  id: ClothingBackpackSatchelCMOFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- id: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelCargo
+  id: ClothingBackpackSatchelQuartermasterFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      #- id: TelescopicBaton
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelSecurity
+  id: ClothingBackpackSatchelHOSFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      - id: MagazinePistol
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelEngineering
+  id: ClothingBackpackSatchelEngineeringFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelAtmospherics
+  id: ClothingBackpackSatchelAtmosphericsFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelScience
+  id: ClothingBackpackSatchelScienceFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelRobotics
+  id: ClothingBackpackSatchelRoboticsFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelHydroponics
+  id: ClothingBackpackSatchelHydroponicsFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelChemistry
+  id: ClothingBackpackSatchelChemistryFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelChaplainFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Bible
+      - id: RubberStampChaplain
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelMusicianFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: AcousticGuitarInstrument
+        - id: SaxophoneInstrument
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelLibrarianFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: BookRandom
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelDetectiveFilled
+  components:
+    - type: StorageFill
+      contents:
+      - id: BoxForensicPad
+      - id: Lighter
+      - id: CigPackBlack
+      - id: HandLabeler
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelCargo
+  id: ClothingBackpackSatchelCargoFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelSalvage
+  id: ClothingBackpackSatchelSalvageFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelMime
+  id: ClothingBackpackSatchelMimeFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: RubberStampMime
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelHolding
+  id: ClothingBackpackSatchelHoldingAdmin
+  components:
+  - type: StorageFill
+    contents:
+    - id: GasAnalyzer
+    - id: trayScanner
+  - type: Unremoveable

@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+
+    <RootNamespace>Xilium.CefGlue.Demo</RootNamespace>
+    <AssemblyName>Xilium.CefGlue.Demo</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Browser\WebKeyboardHandler.cs" />
+    <Compile Include="Browser\WebFrameHandler.cs" />
+    <Compile Include="Browser\WebLoadHandler.cs" />
+    <Compile Include="Browser\EventArgs\AddressChangedEventArgs.cs" />
+    <Compile Include="Browser\EventArgs\LoadingStateChangedEventArgs.cs" />
+    <Compile Include="Browser\EventArgs\TargetUrlChangedEventArgs.cs" />
+    <Compile Include="Browser\EventArgs\TitleChangedEventArgs.cs" />
+    <Compile Include="Browser\StatusMessageEventArgs.cs" />
+    <Compile Include="Browser\WebClient.cs" />
+    <Compile Include="Browser\WebDisplayHandler.cs" />
+    <Compile Include="Browser\WebLifeSpanHandler.cs" />
+    <Compile Include="Browser\WebBrowser.cs" />
+    <Compile Include="Browser\WebRequestHandler.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="Renderer\DemoRenderProcessHandler.cs" />
+    <Compile Include="SchemeHandler\DumpRequestResourceHandler.cs" />
+    <Compile Include="SchemeHandler\DemoAppSchemeHandlerFactory.cs" />
+    <Compile Include="Common\DemoBrowserProcessHandler.cs" />
+    <Compile Include="Common\DemoCefApp.cs" />
+    <Compile Include="DemoApp.cs" />
+    <Compile Include="IMainView.cs" />
+    <Compile Include="IWebNavigationBox.cs" />
+    <Compile Include="MenuItem.cs" />
+    <Compile Include="WebBrowserState.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CefGlue\CefGlue.csproj" />
+  </ItemGroup>
+
+</Project>

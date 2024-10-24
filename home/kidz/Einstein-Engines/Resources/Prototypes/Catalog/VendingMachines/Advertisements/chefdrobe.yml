@@ -1,0 +1,6 @@
+- type: messagePack
+  id: ChefDrobeAds
+  messages:
+    - advertisement-chefdrobe-1
+    - advertisement-chefdrobe-2
+    - advertisement-chefdrobe-3

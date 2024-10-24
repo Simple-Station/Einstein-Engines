@@ -1,0 +1,53 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: Clothing
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+  - type: Tag
+    tags:
+      - WhitelistChameleon
+  - type: StaticPrice
+    price: 10
+  - type: Clothing
+    equipDelay: 0.5
+    unequipDelay: 0.5
+
+- type: entity
+  abstract: true
+  id: GeigerCounterClothing
+  components:
+    - type: Geiger
+      attachedToSuit: true
+
+- type: entity
+  abstract: true
+  id: AllowSuitStorageClothing
+  components:
+  - type: AllowSuitStorage
+
+# for clothing that has a single item slot to insert and alt click out.
+# inheritors add a whitelisted slot named item
+- type: entity
+  abstract: true
+  id: ClothingSlotBase
+  components:
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      item: !type:ContainerSlot
+
+# a piece of clothing that has explosion resistance *for its contents*, not the wearer
+- type: entity
+  abstract: true
+  id: ContentsExplosionResistanceBase
+  components:
+  - type: ExplosionResistance
+    worn: false # only apply to the clothing itself and items inside, not the wearer
+    examine: explosion-resistance-contents-coefficient-value
+  # to show explosion resistance examine
+  - type: GroupExamine
+  - type: Armor
+    modifiers: {}

@@ -1,0 +1,10 @@
+- type: weightedRandom
+  id: MetempsychoticNonhumanoidPool # Entity prototypes
+  weights:
+    MobMonkey: 1
+    MobGorilla: 1
+    MobKangaroo: 0.5
+    MobXenoQueen: 0.01
+    MobCrab: 0.01
+    MobPenguin: 1
+    MobSpaceShrimp: 1

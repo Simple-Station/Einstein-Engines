@@ -1,0 +1,178 @@
+## Regular station events
+- type: entity
+  id: NoosphericStorm
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+    - type: StationEvent
+      startAnnouncement: true
+      weight: 5
+      earliestStart: 15
+      reoccurrenceDelay: 5
+    - type: NoosphericStormRule
+
+# Mid round antag spawns
+- type: entity
+  abstract: true
+  parent: BaseGameRule
+  id: BaseMidRoundAntag
+  components:
+  - type: StationEvent
+    weight: 7
+    reoccurrenceDelay: 5
+    minimumPlayers: 15
+    earliestStart: 25
+  - type: MidRoundAntagRule
+
+- type: entity
+  noSpawn: true
+  parent: BaseMidRoundAntag
+  id: RatKingSpawn
+  components:
+  - type: MidRoundAntagRule
+    spawner: SpawnPointGhostRatKing
+
+- type: entity
+  noSpawn: true
+  parent: BaseMidRoundAntag
+  id: ParadoxAnomalySpawn
+  components:
+  - type: MidRoundAntagRule
+    spawner: SpawnPointGhostParadoxAnomaly
+
+# Base glimmer event
+- type: entity
+  id: BaseGlimmerEvent
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+    - type: StationEvent
+      # Favor glimmer events just a little more than regular events.
+      weight: 12
+    - type: GlimmerEvent
+
+## Glimmer events
+# Blank discharge
+- type: entity
+  id: MundaneDischarge
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: StationEvent
+      reoccurrenceDelay: 15
+    - type: GlimmerEvent
+      maximumGlimmer: 300
+      glimmerBurnLower: 18
+      glimmerBurnUpper: 40
+    - type: MundaneDischargeRule
+
+- type: entity
+  id: NoosphericZap
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: StationEvent
+      weight: 25 # Guaranteed to happen every once in a while, but with intervals between incidents
+      reoccurrenceDelay: 15
+    - type: GlimmerEvent
+    - type: NoosphericZapRule
+
+# Fry tinfoil hats and shoot lightnings from probers
+- type: entity
+  id: NoosphericFry
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 550
+      maximumGlimmer: 1000
+    - type: NoosphericFryRule
+
+- type: entity
+  id: PsionicCatGotYourTongue
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 400
+      maximumGlimmer: 1000
+      glimmerBurnLower: 18
+      glimmerBurnUpper: 40
+    - type: PsionicCatGotYourTongueRule
+
+- type: entity
+  id: MassMindSwap
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 900
+      glimmerBurnLower: 350
+      glimmerBurnUpper: 450 # Unless epistemics badly f-d up, this will restore the glimmer balance for a while.
+    - type: MassMindSwapRule
+      isTemporary: true # Permanent mindswap is hell.
+
+#- type: entity
+#  id: GlimmerWispSpawn
+#  parent: BaseGlimmerEvent
+#  noSpawn: true
+#  components:
+#    - type: GlimmerEvent
+#      minimumGlimmer: 300
+#      maximumGlimmer: 1000
+#      report: glimmer-event-report-signatures
+#    - type: GlimmerWispRule
+
+- type: entity
+  id: FreeProber
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 300
+      maximumGlimmer: 1000
+      report: glimmer-event-report-signatures
+    - type: FreeProberRule
+
+## converted upstream events
+- type: entity
+  id: GlimmerRandomSentience
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: StationEvent
+      weight: 7
+      duration: 1
+      earliestStart: 15
+      reoccurrenceDelay: 15
+      minimumPlayers: 10
+    - type: GlimmerEvent
+      minimumGlimmer: 250
+      maximumGlimmer: 900
+      report: glimmer-event-report-signatures
+    - type: GlimmerRandomSentienceRule
+
+- type: entity
+  id: GlimmerRevenantSpawn
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 450
+      maximumGlimmer: 900
+      glimmerBurnLower: 50
+      glimmerBurnUpper: 100 # Gives epi a chance to recover
+      report: glimmer-event-report-signatures
+    - type: GlimmerRevenantRule
+
+- type: entity
+  id: GlimmerMiteSpawn
+  parent: BaseGlimmerEvent
+  noSpawn: true
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 250
+      maximumGlimmer: 900
+      report: glimmer-event-report-signatures
+    - type: GlimmerMobRule
+      mobPrototype: MobGlimmerMite

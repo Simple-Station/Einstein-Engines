@@ -1,0 +1,1 @@
+station-event-rampant-intelligence-announcement = Rampant brand intelligence has been detected board your station. Please inspect any vendors for aggressive marketing tactics, and reboot them if necessary.

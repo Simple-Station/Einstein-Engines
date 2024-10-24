@@ -1,0 +1,67 @@
+- type: trait
+  id: LightweightDrunk
+  category: Physical
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HeavyweightDrunk
+        - LiquorLifeline
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Dwarf
+        - IPC
+  components:
+    - type: LightweightDrunk
+      boozeStrengthMultiplier: 2
+
+- type: trait
+  id: Stutter
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  components:
+    - type: StutteringAccent
+      matchRandomProb: 0.1
+      fourRandomProb: 0
+      threeRandomProb: 0
+      cutRandomProb: 0
+
+- type: trait
+  id: ForeignerLight
+  category: TraitsSpeechLanguages
+  points: 2
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+  components:
+    - type: ForeignerTrait
+      cantUnderstand: false # Allows to understand
+      baseTranslator: TranslatorForeigner
+
+- type: trait
+  id: Foreigner
+  category: TraitsSpeechLanguages
+  points: 4
+  requirements: # TODO: Add a requirement to know at least 1 non-gc language
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ForeignerLight
+  components:
+    - type: ForeignerTrait
+      baseTranslator: TranslatorForeigner

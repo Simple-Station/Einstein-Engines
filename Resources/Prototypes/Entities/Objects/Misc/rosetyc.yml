@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseItem
+  id: RoseTyc
+  name: Роза
+  description: Кто ее тут оставил? Да кто его знает...
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/respectfulrose.rsi
+    state: icon

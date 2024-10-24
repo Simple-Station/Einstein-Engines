@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Xilium.CefGlue.Client</RootNamespace>
+    <AssemblyName>Xilium.CefGlue.Client</AssemblyName>
+
+    <UseWindowsForms>true</UseWindowsForms>
+
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="DemoApp.cs" />
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="SetWindowPosFlags.cs" />
+    <Compile Include="ToolStripSpringTextBox.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CefGlue.WindowsForms\CefGlue.WindowsForms.csproj" />
+    <ProjectReference Include="..\CefGlue\CefGlue.csproj" />
+  </ItemGroup>
+
+</Project>

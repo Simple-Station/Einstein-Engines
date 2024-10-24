@@ -1,0 +1,9 @@
+- type: entity
+  id: OrganVoxLungs
+  parent: OrganHumanLungs
+  suffix: "vox"
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Vox ]
+  - type: Lung
+    alert: LowNitrogen
