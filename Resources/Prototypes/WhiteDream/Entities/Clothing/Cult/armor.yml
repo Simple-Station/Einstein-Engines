@@ -1,13 +1,13 @@
 ﻿- type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterCultArmor
-  name: true nar'sien Hardened Armor
+  name: true nar'sien hardened armor
   description: heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Armor/cult_armour.rsi
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_armor.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Armor/cult_armour.rsi
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_armor.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -40,9 +40,9 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Helmets/cult.rsi
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_helmet.rsi
   - type: Clothing
-    sprite: Clothing/Head/Helmets/cult.rsi
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_helmet.rsi
     equipSound: /Audio/Effects/rustle1.ogg
     unequipSound: /Audio/Effects/rustle2.ogg
   - type: PressureProtection
@@ -55,6 +55,10 @@
   name: flagellant's robe
   description: Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage.
   components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_robe.rsi
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_robe.rsi
   - type: CultItem
   - type: ClothingSpeedModifier
     walkModifier: 1.25
@@ -76,6 +80,12 @@
   description: A blood-soaked hood infused with dark magic.
   noSpawn: true
   components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_hood.rsi
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_hood.rsi
+    equipSound: /Audio/Effects/rustle1.ogg
+    unequipSound: /Audio/Effects/rustle2.ogg
   - type: ClothingSpeedModifier
     walkModifier: 1.25
     sprintModifier: 1.25
