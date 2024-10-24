@@ -14,7 +14,7 @@
     sound: /Audio/Weapons/bolathrow.ogg
   - type: EmitSoundOnLand
     sound: /Audio/Effects/snap.ogg
-      - type: DamageOnLand
+  - type: DamageOnLand
     damage:
       types:
         Blunt: 5
@@ -30,7 +30,7 @@
 
 - type: entity
   name: bola
-  parent: [BaseBola, BaseRestrictedContraband]
+  parent: [BaseBola]
   id: Bola
   description: Linked together with some spare cuffs and metal.
   components:
@@ -60,7 +60,7 @@
   - type: entity
     name: energy bola
     id: BolaEnergy
-    parent: [BaseBola, BaseRestrictedContraband]
+    parent: [BaseBola]
     description: An advanced hardlight criminal entangling tool. Otherwise known as an expensive piece of string.
     components:
     - type: Sprite
@@ -69,3 +69,5 @@
       damage:
         types:
         Heat: 5
+    - type: Ensnaring
+      destroyOnRemove: true

@@ -17,7 +17,8 @@
   result: BolaEnergy
   completetime: 2
   materials:
-    Plastic: 300
+    Plastic: 150
+    Plasma: 150
 
 - type: latheRecipe
   id: Stunbaton
