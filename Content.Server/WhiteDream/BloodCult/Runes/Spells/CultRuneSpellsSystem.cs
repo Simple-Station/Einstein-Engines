@@ -33,12 +33,12 @@ public sealed class CultRuneSpellsSystem : EntitySystem
 
     private void OnSpellSelected(Entity<CultRuneSpellsComponent> rune, ref RadialSelectorSelectedMessage args)
     {
-        if (!_proto.TryIndex(args.SelectedItem, out _) ||
+        if (!_proto.TryIndex(args.SelectedItem, out var proto) ||
             !TryComp<BloodCultistComponent>(args.Actor, out var cultist) ||
             cultist.SelectedEmpowers.Count > cultist.MaximumAllowedEmpowers)
             return;
 
-        var actionUid = _actions.AddAction(args.Actor, args.SelectedItem.Id);
+        var actionUid = _actions.AddAction(args.Actor, proto.ID);
         cultist.SelectedEmpowers.Add(GetNetEntity(actionUid));
     }
 }

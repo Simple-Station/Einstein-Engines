@@ -48,7 +48,7 @@ public sealed class TimedFactorySystem : EntitySystem
         if (_ui.IsUiOpen(factory.Owner, RadialSelectorUiKey.Key))
             return;
 
-        _ui.SetUiState(factory.Owner, RadialSelectorUiKey.Key, new RadialSelectorState(factory.Comp.Prototypes));
+        _ui.SetUiState(factory.Owner, RadialSelectorUiKey.Key, new RadialSelectorState(factory.Comp.Entries));
     }
 
     private void OnPrototypeSelected(Entity<TimedFactoryComponent> factory, ref RadialSelectorSelectedMessage args)

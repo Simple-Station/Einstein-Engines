@@ -265,3 +265,15 @@
     sprite: Clothing/Eyes/Glasses/meson.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/meson.rsi
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesEthereal
+  name: ethereal goggles
+  description: An unusual pair of goggles developed during a time of inhumane experimentation involving Shadowkin. They are designed to allow the wearer to peer into The Dark.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/etherealgoogles.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/etherealgoogles.rsi
+  - type: ShowEthereal

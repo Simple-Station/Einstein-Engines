@@ -400,3 +400,6 @@ trait-description-CyberEyesOmni =
     This expensive implant provides the combined benefits of a SecHud, MedHud, and a DiagHud.
     Note that this augmentation is considered Contraband for anyone not under the employ of station Security personel,
     and may be disabled by your employer before dispatch to the station.
+
+trait-name-ShadowkinBlackeye = Blackeye
+trait-description-ShadowkinBlackeye = You lose your special Shadowkin powers, in return for some points.

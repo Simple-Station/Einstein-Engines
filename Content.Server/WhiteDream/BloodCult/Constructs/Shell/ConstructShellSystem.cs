@@ -66,7 +66,7 @@ public sealed class ConstructShellSystem : EntitySystem
             _ui.IsUiOpen(shellUid, RadialSelectorUiKey.Key))
             return;
 
-        if (!TryComp<MindContainerComponent>(args.EntityUid, out var mindContainer) || !mindContainer.HasMind )
+        if (!TryComp<MindContainerComponent>(args.EntityUid, out var mindContainer) || !mindContainer.HasMind)
         {
             _popup.PopupEntity(Loc.GetString("soul-shard-try-insert-no-soul"), shell);
             args.Cancel();
@@ -81,14 +81,15 @@ public sealed class ConstructShellSystem : EntitySystem
         _ui.TryToggleUi(shellUid, RadialSelectorUiKey.Key, args.EntityUid);
     }
 
-    private void OnConstructSelected(Entity<ConstructShellComponent> ent, ref RadialSelectorSelectedMessage args)
+    private void OnConstructSelected(Entity<ConstructShellComponent> shell, ref RadialSelectorSelectedMessage args)
     {
         if (!_mind.TryGetMind(args.Actor, out var mindId, out _))
             return;
 
-        var construct = Spawn(args.SelectedItem, _transform.GetMapCoordinates(ent));
+        _ui.CloseUi(shell.Owner, RadialSelectorUiKey.Key);
+        var construct = Spawn(args.SelectedItem, _transform.GetMapCoordinates(shell));
         _mind.TransferTo(mindId, construct);
-        Del(ent);
+        Del(shell);
     }
 
     private void OnShellRemove(Entity<ConstructShellComponent> shell, ref ComponentRemove args)

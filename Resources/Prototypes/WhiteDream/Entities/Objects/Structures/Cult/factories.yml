@@ -65,9 +65,9 @@
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Structures/altar.rsi
   - type: TimedFactory
-    prototypes:
-      - ConstructShell
-      - WhetstoneCult
+    entries:
+      - prototype: ConstructShell
+      - prototype: WhetstoneCult
   # TODO: Add prototypes
   #    - Flask of Unholy Water
   - type: Construction
@@ -83,10 +83,10 @@
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Structures/forge.rsi
   - type: TimedFactory
-    prototypes:
-    - EldritchLongsword
-    - ClothingOuterCultArmor
-    - ClothingOuterRobesCultTrue
+    entries:
+    - prototype: EldritchLongsword
+    - prototype: ClothingOuterCultArmor
+    - prototype: ClothingOuterRobesCultTrue
   - type: Construction
     graph: CultFactoryForge
     node: forge
@@ -100,11 +100,11 @@
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Structures/archives.rsi
   - type: TimedFactory
-    prototypes:
-    - ShuttleCurse
-  # TODO: Add prototypes
-  #    - Zealot's Blindfold
-  #    - Veil Walker Set
+    entries:
+    - prototype: ShuttleCurse
+    - prototype: ClothingEyeCultBlindfold
+    - prototype: VeilShifter
+    - prototype: VoidTorch
   - type: Construction
     graph: CultFactoryArchives
     node: archives

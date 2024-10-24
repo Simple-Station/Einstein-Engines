@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Prototypes;
+﻿using Content.Shared.RadialSelector;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.WhiteDream.BloodCult.Constructs.SoulShard;
 
@@ -18,19 +19,37 @@ public sealed partial class SoulShardComponent : Component
     public EntProtoId PurifiedShadeProto = "ShadeHoly";
 
     [DataField]
-    public List<EntProtoId> Constructs = new()
+    public List<RadialSelectorEntry> Constructs = new()
     {
-        "ConstructJuggernaut",
-        "ConstructArtificer",
-        "ConstructWraith"
+        new RadialSelectorEntry
+        {
+            Prototype = "ConstructJuggernaut"
+        },
+        new RadialSelectorEntry
+        {
+            Prototype = "ConstructArtificer"
+        },
+        new RadialSelectorEntry
+        {
+            Prototype = "ConstructWraith"
+        }
     };
 
     [DataField]
-    public List<EntProtoId> PurifiedConstructs = new()
+    public List<RadialSelectorEntry> PurifiedConstructs = new()
     {
-        "ConstructJuggernautHoly",
-        "ConstructArtificerHoly",
-        "ConstructWraithHoly"
+        new RadialSelectorEntry
+        {
+            Prototype = "ConstructJuggernautHoly"
+        },
+        new RadialSelectorEntry
+        {
+            Prototype = "ConstructArtificerHoly"
+        },
+        new RadialSelectorEntry
+        {
+            Prototype = "ConstructWraithHoly"
+        }
     };
 
     public EntityUid? ShadeUid;

@@ -7420,3 +7420,131 @@ Entries:
   id: 6469
   time: '2024-10-20T01:45:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1078
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Being in an Atmosphere(such as Planets like Glacier & Nukieworld)
+        bypasses the limitation of "NO TALKING IN SPACE"
+  id: 6470
+  time: '2024-10-20T05:40:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1089
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Breath of Life now correctly displays its esoteric text popup if the
+        right conditions are met.
+  id: 6471
+  time: '2024-10-20T16:03:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1109
+- author: FoxxoTrystan
+  changes:
+    - type: Add
+      message: Added a new species, Shadowkin!
+  id: 6472
+  time: '2024-10-20T16:31:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/960
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Removed latejoin spawners from the Salvage Pathfinder.
+  id: 6473
+  time: '2024-10-20T16:32:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1105
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Musicians can now select for free, any 3 instruments in the game with
+        their loadout. This now includes things like Piano flatpacks. The only
+        instruments not included are the Sypersynth, DAW, and "Admeme
+        Instruments".
+    - type: Remove
+      message: >-
+        Musicians no longer spawn with a Saxophone and Acoustic guitar by
+        default. You pick which instruments you spawn with in your loadouts now.
+  id: 6474
+  time: '2024-10-20T16:32:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1108
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added localizations for all Epistemics jobs. '
+  id: 6475
+  time: '2024-10-20T16:35:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1094
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the Captain's Office on Gax Station missing an LV cable that would
+        power its doors.
+  id: 6476
+  time: '2024-10-20T18:18:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1112
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed prisoner not spawning in the Prison if the Arrivals station is
+        enabled.
+  id: 6477
+  time: '2024-10-20T19:28:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1113
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Sacrificing Psions has been added. Psions can be sacrificed by
+        Epistemics upon an altar in order to dramatically reduce glimmer. The
+        more powerful the Psion to be sacrificed, the more glimmer is reduced.
+  id: 6478
+  time: '2024-10-20T21:34:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1110
+- author: Aidenkrz
+  changes:
+    - type: Fix
+      message: Flavor text can be updated again.
+  id: 6479
+  time: '2024-10-21T00:24:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1119
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Glacier is now on a planetary surface
+  id: 6480
+  time: '2024-10-21T00:41:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1115
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Asterisk Station no longer spawns entombed in snow, and is now on top of
+        an ice sheet.
+  id: 6481
+  time: '2024-10-21T00:41:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1118
+- author: Aidenkrz
+  changes:
+    - type: Fix
+      message: Custom specie name doesn't disappear in the editor anymore.
+  id: 6482
+  time: '2024-10-22T01:42:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1120
+- author: Remuchi
+  changes:
+    - type: Fix
+      message: Cybereyes examine message no longer reveals person's identity.
+  id: 6483
+  time: '2024-10-23T04:16:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1127
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Raising glimmer too high can now cause glimmer wisps to start haunting
+        the station.
+  id: 6484
+  time: '2024-10-23T04:19:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1125

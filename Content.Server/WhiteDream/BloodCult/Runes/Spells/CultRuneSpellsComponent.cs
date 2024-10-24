@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Prototypes;
+﻿using Content.Shared.RadialSelector;
 
 namespace Content.Server.WhiteDream.BloodCult.Runes.Spells;
 
@@ -6,5 +6,5 @@ namespace Content.Server.WhiteDream.BloodCult.Runes.Spells;
 public sealed partial class CultRuneSpellsComponent : Component
 {
     [DataField(required: true)]
-    public List<EntProtoId> Prototypes = new();
+    public List<RadialSelectorEntry> Prototypes = new();
 }

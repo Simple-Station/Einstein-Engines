@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Prototypes;
+﻿using Content.Shared.RadialSelector;
 
 namespace Content.Server.WhiteDream.BloodCult.TimedFactory;
 
@@ -6,7 +6,7 @@ namespace Content.Server.WhiteDream.BloodCult.TimedFactory;
 public sealed partial class TimedFactoryComponent : Component
 {
     [DataField(required: true)]
-    public List<EntProtoId> Prototypes = new();
+    public List<RadialSelectorEntry> Entries = new();
 
     [DataField]
     public float Cooldown = 240;
