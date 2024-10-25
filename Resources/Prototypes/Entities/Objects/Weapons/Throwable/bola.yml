@@ -56,17 +56,17 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
-  - type: entity
-    name: energy bola
-    id: BolaEnergy
-    parent: [BaseBola]
-    description: An advanced hardlight criminal entangling tool. Otherwise known as an expensive piece of string.
-    components:
-    - type: Sprite
-      sprite: Objects/Weapons/Throwable/energy_bola.rsi
-    - type: DamageOnLand
-      damage:
-        types:
-        Heat: 5
-    - type: Ensnaring
-      destroyOnRemove: true
+- type: entity
+  name: energy bola
+  id: BolaEnergy
+  parent: BaseBola
+  description: An advanced hardlight criminal entangling tool. Otherwise known as an expensive piece of string.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Throwable/energy_bola.rsi
+  - type: DamageOnLand
+    damage:
+      types:
+      Heat: 5
+  - type: Ensnaring
+    destroyOnRemove: true
