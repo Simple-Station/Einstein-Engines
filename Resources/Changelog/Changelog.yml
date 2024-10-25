@@ -7548,3 +7548,12 @@ Entries:
   id: 6484
   time: '2024-10-23T04:19:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1125
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the "high amplification" trait lowering your amplification instead
+        of increasing it.
+  id: 6485
+  time: '2024-10-25T16:22:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1137
