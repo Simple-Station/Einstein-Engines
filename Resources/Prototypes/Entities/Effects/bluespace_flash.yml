@@ -84,6 +84,7 @@
 
 - type: entity
   id: EffectPyrokineticFlare
+  noSpawn: true
   components:
     - type: Sprite
       sprite: /Textures/Interface/Actions/psionics.rsi
