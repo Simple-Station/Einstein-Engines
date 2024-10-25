@@ -150,7 +150,7 @@
         - LowAmplification
         - PowerOverwhelming
   psionicPowers:
-    - LowAmplification
+    - HighAmplification
 
 - type: trait
   id: PowerOverwhelming
