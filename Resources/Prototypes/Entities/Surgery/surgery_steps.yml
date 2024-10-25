@@ -316,3 +316,29 @@
     state: cautery
   - type: SurgeryStepCauterizeEffect
   - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepInsertItem
+  name: Insert item into cavity
+  components:
+  - type: SurgeryStep
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/manipulation.rsi
+    state: insertion
+  - type: SurgeryStepCavityEffect
+    action: Insert
+  - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepRemoveItem
+  name: Remove item from cavity
+  components:
+  - type: SurgeryStep
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/manipulation.rsi
+    state: insertion
+  - type: SurgeryStepCavityEffect
+    action: Remove
+  - type: SurgeryStepEmoteEffect

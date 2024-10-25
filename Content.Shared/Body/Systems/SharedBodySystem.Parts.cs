@@ -28,12 +28,29 @@ public partial class SharedBodySystem
         // TODO: This doesn't handle comp removal on child ents.
 
         // If you modify this also see the Body partial for root parts.
+        SubscribeLocalEvent<BodyPartComponent, ComponentInit>(OnBodyPartInit);
+        SubscribeLocalEvent<BodyPartComponent, ComponentRemove>(OnBodyPartRemove);
         SubscribeLocalEvent<BodyPartComponent, EntInsertedIntoContainerMessage>(OnBodyPartInserted);
         SubscribeLocalEvent<BodyPartComponent, EntRemovedFromContainerMessage>(OnBodyPartRemoved);
         SubscribeLocalEvent<BodyPartComponent, AmputateAttemptEvent>(OnAmputateAttempt);
         SubscribeLocalEvent<BodyPartComponent, BodyPartEnableChangedEvent>(OnPartEnableChanged);
     }
 
+    private void OnBodyPartInit(Entity<BodyPartComponent> ent, ref ComponentInit args)
+    {
+        if (ent.Comp.PartType == BodyPartType.Torso)
+        {
+            _slots.AddItemSlot(ent, ent.Comp.ContainerName, ent.Comp.ItemInsertionSlot);
+        }
+    }
+
+    private void OnBodyPartRemove(Entity<BodyPartComponent> ent, ref ComponentRemove args)
+    {
+        if (ent.Comp.PartType == BodyPartType.Torso)
+        {
+            _slots.RemoveItemSlot(ent, ent.Comp.ItemInsertionSlot);
+        }
+    }
     private void OnBodyPartInserted(Entity<BodyPartComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
         // Body part inserted into another body part.

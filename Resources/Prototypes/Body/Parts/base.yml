@@ -63,6 +63,10 @@
   - type: BodyPart
     partType: Torso
     toolName: "a torso"
+    containerName: "torso_slot"
+  - type: ContainerContainer
+    containers:
+      torso_slot: !type:ContainerSlot {}
 
 - type: entity
   id: BaseHead

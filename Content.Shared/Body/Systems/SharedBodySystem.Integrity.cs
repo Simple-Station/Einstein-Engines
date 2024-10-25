@@ -83,7 +83,7 @@ public partial class SharedBodySystem
         TargetBodyPart? targetPart, out bool severed)
     {
         severed = false;
-        if (!HasComp<TargetingComponent>(partEnt.Comp.Body) && !_timing.IsFirstTimePredicted)
+        if (!HasComp<TargetingComponent>(partEnt.Comp.Body) || !_timing.IsFirstTimePredicted)
             return;
 
         var partIdSlot = GetParentPartAndSlotOrNull(partEnt)?.Slot;

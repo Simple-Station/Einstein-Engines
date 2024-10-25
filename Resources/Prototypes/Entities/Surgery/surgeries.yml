@@ -245,3 +245,16 @@
     - SurgeryStepRepairBurnTissue
     - SurgeryStepSealTendWound
   - type: SurgeryWoundedCondition
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertItem
+  name: Cavity Implant
+  components:
+  - type: Surgery
+    #requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepInsertItem
+    - SurgeryStepRemoveItem
+  - type: SurgeryPartCondition
+    part: Torso

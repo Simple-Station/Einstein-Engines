@@ -4,6 +4,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Prototypes;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
 using Content.Shared.DragDrop;
 using Content.Shared.Gibbing.Components;
@@ -30,6 +31,7 @@ public partial class SharedBodySystem
      */
 
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly ItemSlotsSystem _slots = default!;
     [Dependency] private readonly GibbingSystem _gibbingSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -121,7 +123,6 @@ public partial class SharedBodySystem
         var rootPart = Comp<BodyPartComponent>(rootPartUid);
         rootPart.Body = bodyEntity;
         Dirty(rootPartUid, rootPart);
-
         // Setup the rest of the body entities.
         SetupOrgans((rootPartUid, rootPart), protoRoot.Organs);
         MapInitParts(rootPartUid, prototype);

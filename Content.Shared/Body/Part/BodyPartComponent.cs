@@ -1,4 +1,5 @@
-﻿using Content.Shared.Medical.Surgery.Tools;
+﻿using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Medical.Surgery.Tools;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Robust.Shared.Containers;
@@ -81,6 +82,12 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     /// </summary>
     [DataField("selfHealingAmount")]
     public float SelfHealingAmount = 5;
+
+    [DataField]
+    public string ContainerName { get; set; } = "part_slot";
+
+    [DataField]
+    public ItemSlot ItemInsertionSlot = new();
 
     /// <summary>
     /// These are only for VV/Debug do not use these for gameplay/systems
