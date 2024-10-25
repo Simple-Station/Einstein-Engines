@@ -7571,3 +7571,10 @@ Entries:
   id: 6487
   time: '2024-10-25T19:03:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1138
+- author: SleepyScarecrow
+  changes:
+    - type: Fix
+      message: Fixed penlights
+  id: 6488
+  time: '2024-10-25T19:04:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1142
