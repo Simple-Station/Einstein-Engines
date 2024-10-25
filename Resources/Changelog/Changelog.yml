@@ -7564,3 +7564,10 @@ Entries:
   id: 6486
   time: '2024-10-25T16:23:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1140
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Pyrokinetic Flare as a new Psi ability.
+  id: 6487
+  time: '2024-10-25T19:03:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1138
