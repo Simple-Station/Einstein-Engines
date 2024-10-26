@@ -159,8 +159,8 @@ public partial class SharedBodySystem
         partEnt.Comp.OriginalBody = partEnt.Comp.Body;
         var ev = new BodyPartRemovedEvent(slotId, partEnt);
         RaiseLocalEvent(bodyEnt, ref ev);
-        RemoveLeg(partEnt, bodyEnt);
-        //RemovePartEffect(partEnt, bodyEnt); Uncomment before PR
+        //RemoveLeg(partEnt, bodyEnt);
+        RemovePartEffect(partEnt, bodyEnt);
         PartRemoveDamage(bodyEnt, partEnt);
     }
 
@@ -229,7 +229,7 @@ public partial class SharedBodySystem
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
             return;
 
-        /*if (partEnt.Comp.Children.Any()) Uncomment before PR
+        if (partEnt.Comp.Children.Any())
         {
             foreach (var slotId in partEnt.Comp.Children.Keys)
             {
@@ -244,7 +244,7 @@ public partial class SharedBodySystem
                 }
             };
             Dirty(bodyEnt, bodyEnt.Comp);
-        }*/
+        }
     }
 
     private void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)
