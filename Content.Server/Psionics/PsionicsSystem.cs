@@ -18,6 +18,7 @@ using Content.Server.Chat.Managers;
 using Robust.Shared.Prototypes;
 using Content.Shared.Mobs;
 using Content.Shared.Damage;
+using Content.Shared.Interaction.Events;
 
 namespace Content.Server.Psionics;
 
@@ -69,6 +70,7 @@ public sealed class PsionicsSystem : EntitySystem
         SubscribeLocalEvent<AntiPsionicWeaponComponent, TakeStaminaDamageEvent>(OnStamHit);
         SubscribeLocalEvent<PsionicComponent, MobStateChangedEvent>(OnMobstateChanged);
         SubscribeLocalEvent<PsionicComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<PsionicComponent, AttackAttemptEvent>(OnAttackAttempt);
 
         SubscribeLocalEvent<PsionicComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
@@ -286,6 +288,23 @@ public sealed class PsionicsSystem : EntitySystem
                 continue;
 
             _retaliationSystem.TryRetaliate(familiar, origin, retaliationComponent);
+        }
+    }
+
+    private void OnAttackAttempt(EntityUid uid, PsionicComponent component, AttackAttemptEvent args)
+    {
+        if (component.Familiars.Count <= 0
+            || args.Target == uid
+            || args.Target is not { } target
+            || component.Familiars.Contains(target))
+            return;
+
+        foreach (var familiar in component.Familiars)
+        {
+            if (!TryComp<NPCRetaliationComponent>(familiar, out var retaliationComponent))
+                continue;
+
+            _retaliationSystem.TryRetaliate(familiar, target, retaliationComponent);
         }
     }
 }
