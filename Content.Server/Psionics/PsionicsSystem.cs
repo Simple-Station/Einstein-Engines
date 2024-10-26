@@ -274,6 +274,9 @@ public sealed class PsionicsSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    ///     When a caster with active summons is attacked, aggro their familiars to the attacker.
+    /// </summary>
     private void OnDamageChanged(EntityUid uid, PsionicComponent component, DamageChangedEvent args)
     {
         if (component.Familiars.Count <= 0
@@ -282,15 +285,12 @@ public sealed class PsionicsSystem : EntitySystem
             || args.Origin is not { } origin)
             return;
 
-        foreach (var familiar in component.Familiars)
-        {
-            if (!TryComp<NPCRetaliationComponent>(familiar, out var retaliationComponent))
-                continue;
-
-            _retaliationSystem.TryRetaliate(familiar, origin, retaliationComponent);
-        }
+        SetFamiliarTarget(origin, component);
     }
 
+    /// <summary>
+    ///     When a caster with active summons attempts to attack something, aggro their familiars to the target.
+    /// </summary>
     private void OnAttackAttempt(EntityUid uid, PsionicComponent component, AttackAttemptEvent args)
     {
         if (component.Familiars.Count <= 0
@@ -299,6 +299,11 @@ public sealed class PsionicsSystem : EntitySystem
             || component.Familiars.Contains(target))
             return;
 
+        SetFamiliarTarget(target, component);
+    }
+
+    private void SetFamiliarTarget(EntityUid target, PsionicComponent component)
+    {
         foreach (var familiar in component.Familiars)
         {
             if (!TryComp<NPCRetaliationComponent>(familiar, out var retaliationComponent))
