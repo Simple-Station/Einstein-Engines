@@ -4,7 +4,6 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Server.NPC.Components
 {
     [RegisterComponent]
-    [Access(typeof(NpcFactionSystem))]
     public sealed partial class NpcFactionMemberComponent : Component
     {
         /// <summary>

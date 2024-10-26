@@ -16,7 +16,7 @@ using Content.Shared.Chat;
 using Robust.Server.Player;
 using Content.Server.Chat.Managers;
 using Robust.Shared.Prototypes;
-using Content.Shared.Psionics;
+using Content.Shared.Mobs;
 
 namespace Content.Server.Psionics;
 
@@ -35,6 +35,7 @@ public sealed class PsionicsSystem : EntitySystem
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly PsionicFamiliarSystem _psionicFamiliar = default!;
 
     private const string BaselineAmplification = "Baseline Amplification";
     private const string BaselineDampening = "Baseline Dampening";
@@ -64,6 +65,7 @@ public sealed class PsionicsSystem : EntitySystem
         SubscribeLocalEvent<PsionicComponent, MapInitEvent>(OnStartup);
         SubscribeLocalEvent<AntiPsionicWeaponComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<AntiPsionicWeaponComponent, TakeStaminaDamageEvent>(OnStamHit);
+        SubscribeLocalEvent<PsionicComponent, MobStateChangedEvent>(OnMobstateChanged);
 
         SubscribeLocalEvent<PsionicComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
@@ -249,5 +251,21 @@ public sealed class PsionicsSystem : EntitySystem
 
         RollPsionics(uid, psionic, true, bonusMuliplier);
         psionic.CanReroll = false;
+    }
+
+    private void OnMobstateChanged(EntityUid uid, PsionicComponent component, MobStateChangedEvent args)
+    {
+        if (component.Familiars.Count <= 0
+            || args.NewMobState != MobState.Dead)
+            return;
+
+        foreach (var familiar in component.Familiars)
+        {
+            if (!TryComp<PsionicFamiliarComponent>(familiar, out var familiarComponent)
+                || !familiarComponent.DespawnOnMasterDeath)
+                continue;
+
+            _psionicFamiliar.DespawnFamiliar(familiar, familiarComponent);
+        }
     }
 }

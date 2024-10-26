@@ -213,5 +213,17 @@ namespace Content.Shared.Abilities.Psionics
 
         /// Popup to play if there no Mana left for a power to execute.
         public string NoMana = "no-mana";
+
+        /// <summary>
+        ///     The list of Familiars currently bound to this Psion.
+        /// </summary>
+        [DataField]
+        public List<EntityUid> Familiars = new();
+
+        /// <summary>
+        ///     The maximum number of Familiars a Psion may bind.
+        /// </summary>
+        [DataField]
+        public int FamiliarLimit = 1;
     }
 }

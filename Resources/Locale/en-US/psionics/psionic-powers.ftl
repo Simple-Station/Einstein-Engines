@@ -70,7 +70,7 @@ revivify-power-initialization-feedback =
     The Secret of Life in its fullness. I feel my entire existence burning out from within, merely by knowing it.
     Power flows through me as a mighty river, begging to be released with a simple spoken word.
 revivify-power-metapsionic-feedback = {CAPITALIZE($entity)} bears the Greater Secret of Life.
-revivify-start = {CAPITALIZE($entity)} enunciates a word of such divine power, that those who hear it weep from joy.
+revivify-begin = {CAPITALIZE($entity)} enunciates a word of such divine power, that those who hear it weep from joy.
 
 # Telegnosis
 telegnosis-power-description = Create a telegnostic projection to remotely observe things.
@@ -160,3 +160,12 @@ action-name-darkswap = DarkSwap
 action-description-darkswap = Mmra Mamm!
 
 ethereal-pickup-fail = My hand sizzles as it passes through...
+
+# Psionic Familiar System
+psionic-familiar-cant-attack-master = I am bound by my Master, I cannot harm them.
+psionic-familiar-despawn-text = {CAPITALIZE($entity)} returns from whence it came!
+ghost-role-information-familiar-name = Psionic Familiar
+ghost-role-information-familiar-description = An interdimensional creature bound to the will of a Psion.
+ghost-role-information-familiar-rules =
+    Obey the one who summoned you. Do not act against the interests of your Master. You will die for your Master if it is necessary.
+

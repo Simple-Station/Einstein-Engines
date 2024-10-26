@@ -1,4 +1,67 @@
 - type: entity
+  parent:
+    - BaseMob
+    - MobCombat
+    - MobDamageable
+  id: BaseMobPsionicFamiliar
+  noSpawn: true
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: bat
+      sprite: Mobs/Animals/bat.rsi
+  - type: GhostRole
+    makeSentient: true
+    allowMovement: true
+    allowSpeech: true
+    name: ghost-role-information-familiar-name
+    description: ghost-role-information-familiar-description
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - VimPilot
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Damageable
+    damageContainer: CorporealSpirit
+    damageModifierSet: CorporealSpirit
+  - type: MindContainer
+    showExamineInfo: true
+  - type: NpcFactionMember
+    factions:
+    - PsionicInterloper
+  - type: Alerts
+  - type: Familiar
+  - type: Psionic
+    removable: false
+    psychognomicDescriptors:
+      - p-descriptor-bound
+      - p-descriptor-cyclic
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
+  - type: HTN
+    rootTask:
+      task: MeleePsionicFamiliarCompound
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  - type: PsionicFamiliar
+  - type: DamageOnDispel
+    damage:
+      types:
+        Heat: 100
+  - type: RandomMetadata
+    nameSegments: [names_golem]
+
+- type: entity
   name: Remilia
   parent: MobBat
   id: MobBatRemilia
@@ -31,7 +94,7 @@
   - type: NpcFactionMember
     factions:
     - PetsNT
-    - PsionicInterloper #Nyano - Summary: makes a part of the psionic faction.
+    - PsionicInterloper
   - type: Alerts
   - type: Familiar
   - type: Psionic
@@ -74,7 +137,7 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
-    - PsionicInterloper #Nyano - Summary: makes part of the psionoic faction.
+    - PsionicInterloper
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-corrupted-corgi
@@ -99,7 +162,7 @@
     showExamineInfo: true
   - type: Familiar
   - type: Dispellable
-  - type: Psionic #Nyano - Summary: makes psionic on creation.
+  - type: Psionic
     removable: false
   - type: InnatePsionicPowers
     powersToAdd:
