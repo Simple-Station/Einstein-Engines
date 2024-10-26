@@ -338,3 +338,29 @@
       event: !type:DarkSwapActionEvent
         manaCost: 100
         checkInsulation: false
+
+- type: entity
+  id: ActionPyrokineticFlare
+  name: action-name-pyrokinetic-flare
+  description: action-description-pyrokinetic-flare
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: { sprite: Interface/Actions/psionics.rsi, state: pyrokinetic_flare }
+      useDelay: 25
+      checkCanInteract: false
+      event: !type:AnomalyPowerActionEvent
+        settings:
+          powerName: "Pyrokinetic Flare"
+          minGlimmer: 3
+          maxGlimmer: 5
+          doSupercritical: false
+        entitySpawnEntries:
+          - settings:
+              spawnOnPulse: true
+              spawnOnSuperCritical: true
+              minAmount: 1
+              maxAmount: 3
+              maxRange: 1
+            spawns:
+              - EffectPyrokineticFlare

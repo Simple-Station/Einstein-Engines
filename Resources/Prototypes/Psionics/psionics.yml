@@ -243,3 +243,14 @@
   actions:
     - ActionDarkSwap
   powerSlotCost: 1
+
+- type: psionicPower
+  id: PyrokineticFlare
+  name: Pyrokinetic Flare
+  description: pyrokinetic-flare-power-description
+  actions:
+    - ActionPyrokineticFlare
+  powerSlotCost: 1
+  initializationFeedback: pyrokinetic-flare-power-initialization-feedback
+  metapsionicFeedback: pyrokinetic-flare-power-metapsionic-feedback
+  amplificationModifier: 0.25
