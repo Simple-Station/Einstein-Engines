@@ -51,10 +51,9 @@ public sealed class HealthExaminableSystem : EntitySystem
         Entity<HealthExaminableComponent> examinable,
         DamageableComponent damageable)
     {
-        if (examiner == examinable.Owner && TryComp<SelfAwareComponent>(examinable, out var selfAware))
-            return CreateMarkupSelfAware(examinable, selfAware, examinable.Comp, damageable);
-
-        return CreateMarkup(examinable, examinable.Comp, damageable);
+        return examiner == examinable.Owner && TryComp<SelfAwareComponent>(examinable, out var selfAware)
+            ? CreateMarkupSelfAware(examinable, selfAware, examinable.Comp, damageable)
+            : CreateMarkup(examinable, examinable.Comp, damageable);
     }
 
     private FormattedMessage CreateMarkup(EntityUid uid, HealthExaminableComponent component, DamageableComponent damage)
