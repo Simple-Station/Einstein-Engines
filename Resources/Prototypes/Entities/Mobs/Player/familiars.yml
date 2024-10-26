@@ -205,3 +205,14 @@
     radius: 2
     energy: 30
     color: "#ff4500"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 13
+        mask:
+        - Opaque
+        layer:
+        - MobLayer
