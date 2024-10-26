@@ -618,22 +618,63 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("loadout_id");
 
-                    b.Property<string>("LoadoutName")
+                    b.Property<string>("CustomName")
                         .IsRequired()
                         .HasColumnType("TEXT")
-                        .HasColumnName("loadout_name");
+                        .HasColumnName("custom_name");
 
-                    b.Property<int>("ProfileId")
+                    b.Property<string>("Items")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("items");
+
+                    b.Property<Guid>("PlayerUserId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("player_user_id");
+
+                    b.Property<int?>("ProfileId")
                         .HasColumnType("INTEGER")
                         .HasColumnName("profile_id");
 
                     b.HasKey("Id")
                         .HasName("PK_loadout");
 
-                    b.HasIndex("ProfileId", "LoadoutName")
-                        .IsUnique();
+                    b.HasIndex("ProfileId")
+                        .HasDatabaseName("IX_loadout_profile_id");
 
                     b.ToTable("loadout", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.LoadoutJobPreference", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("loadout_job_preference_id");
+
+                    b.Property<string>("JobName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("job_name");
+
+                    b.Property<int>("LoadoutIdx")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("loadout_idx");
+
+                    b.Property<int?>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_loadout_job_preference");
+
+                    b.HasIndex("ProfileId")
+                        .HasDatabaseName("IX_loadout_job_preference_profile_id");
+
+                    b.HasIndex(new[] { "LoadoutIdx", "JobName" }, "IX_one_loadout_per_job")
+                        .IsUnique();
+
+                    b.ToTable("loadout_job_preference", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.PlayTime", b =>
@@ -770,6 +811,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("clothing");
+
+                    b.Property<int>("CurrentLoadout")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("current_loadout");
 
                     b.Property<string>("CustomSpecieName")
                         .IsRequired()
@@ -1537,14 +1582,18 @@ namespace Content.Server.Database.Migrations.Sqlite
 
             modelBuilder.Entity("Content.Server.Database.Loadout", b =>
                 {
-                    b.HasOne("Content.Server.Database.Profile", "Profile")
-                        .WithMany("Loadouts")
+                    b.HasOne("Content.Server.Database.Profile", null)
+                        .WithMany("AllLoadouts")
                         .HasForeignKey("ProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
                         .HasConstraintName("FK_loadout_profile_profile_id");
+                });
 
-                    b.Navigation("Profile");
+            modelBuilder.Entity("Content.Server.Database.LoadoutJobPreference", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", null)
+                        .WithMany("LoadoutJobPreferences")
+                        .HasForeignKey("ProfileId")
+                        .HasConstraintName("FK_loadout_job_preference_profile_profile_id");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Profile", b =>
@@ -1782,11 +1831,13 @@ namespace Content.Server.Database.Migrations.Sqlite
 
             modelBuilder.Entity("Content.Server.Database.Profile", b =>
                 {
+                    b.Navigation("AllLoadouts");
+
                     b.Navigation("Antags");
 
                     b.Navigation("Jobs");
 
-                    b.Navigation("Loadouts");
+                    b.Navigation("LoadoutJobPreferences");
 
                     b.Navigation("Traits");
                 });

@@ -37,13 +37,13 @@ public sealed class LoadoutSystem : EntitySystem
 
         // Try to find back-mounted storage apparatus
         if (!_inventory.TryGetSlotEntity(ev.Mob, "back", out var item) ||
-            !EntityManager.TryGetComponent<StorageComponent>(item, out var inventory))
+            !TryComp<StorageComponent>(item, out var inventory))
             return;
 
         // Try inserting the entity into the storage, if it can't, it leaves the loadout item on the ground
         foreach (var loadout in failedLoadouts)
         {
-            if (EntityManager.TryGetComponent<ItemComponent>(loadout, out var itemComp) &&
+            if (TryComp<ItemComponent>(loadout, out var itemComp) &&
                 _storage.CanInsert(item.Value, loadout, out _, inventory, itemComp))
                 _storage.Insert(item.Value, loadout, out _, playSound: false);
         }

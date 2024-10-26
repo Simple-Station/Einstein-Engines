@@ -135,6 +135,7 @@
                     </BoxContainer>
                 </ScrollContainer>
             </BoxContainer>
+
             <BoxContainer Name="Jobs" HorizontalExpand="True">
                 <!-- Jobs -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
@@ -143,15 +144,17 @@
                         <BoxContainer Name="JobList" Orientation="Vertical" />
                     </BoxContainer>
                 </ScrollContainer>
-                </BoxContainer>
+            </BoxContainer>
+
+            <!-- Antags -->
             <BoxContainer Name="Antags" HorizontalExpand="True" Orientation="Vertical" Margin="10">
-                <!-- Antags -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <BoxContainer Name="AntagList" Orientation="Vertical" />
                 </ScrollContainer>
             </BoxContainer>
+
+            <!-- Traits -->
             <BoxContainer Name="TraitsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
-                <!-- Traits -->
                 <Label Name="TraitPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
                 <ProgressBar Name="TraitPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
@@ -175,11 +178,34 @@
 
                 <ui:NeoTabContainer Name="TraitsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
+
+            <!-- Loadouts -->
             <BoxContainer Name="LoadoutsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
-                <!-- Loadouts -->
+                <!-- Top bar - loadout profile selector -->
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <Label Name="LoadoutLabelContainer" Text="grrr placeholder value" HorizontalExpand="True" />
+                    <Button
+                        Name="LoadoutsNewProfileButton"
+                        Text="{Loc 'humanoid-profile-editor-loadouts-new-profile-button'}"
+                        MinWidth="20"
+                        StyleClasses="OpenRight" />
+                    <Button
+                        Name="LoadoutsShowJobPreferencesButton"
+                        Text="{Loc 'humanoid-profile-editor-loadouts-show-job-preferences-button'}"
+                        MinWidth="20"
+                        StyleClasses="OpenBoth" />
+                    <Button
+                        Name="LoadoutsRemoveProfileButton"
+                        Text="{Loc 'humanoid-profile-editor-loadouts-remove-profile-button'}"
+                        MinWidth="20"
+                        StyleClasses="OpenRight" />
+                </BoxContainer>
+
+                <!-- Loadout points indictor/label -->
                 <Label Name="LoadoutPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
                 <ProgressBar Name="LoadoutPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
+                <!-- Loadout menu controls -->
                 <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
                     <Button
                         Name="LoadoutsShowUnusableButton"
@@ -198,11 +224,13 @@
                         StyleClasses="OpenLeft" />
                 </BoxContainer>
 
+                <!-- The actual loadouts container -->
                 <ui:NeoTabContainer Name="LoadoutsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
+
+            <!-- Markings -->
             <BoxContainer Name="MarkingsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
-                    <!-- Markings -->
                     <humanoid:MarkingPicker Name="Markings" IgnoreCategories="Hair,FacialHair" />
                 </ScrollContainer>
             </BoxContainer>

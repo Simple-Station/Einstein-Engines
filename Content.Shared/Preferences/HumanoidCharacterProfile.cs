@@ -5,6 +5,7 @@ using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
 using Robust.Shared.Configuration;
@@ -45,11 +46,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     private HashSet<string> _traitPreferences = new();
 
-    /// <see cref="_loadoutPreferences"/>
-    public HashSet<string> LoadoutPreferences => _loadoutPreferences;
-
     [DataField]
-    private HashSet<string> _loadoutPreferences = new();
+    public LoadoutPreferences LoadoutPreferences { get; private set; } = new();
 
     [DataField]
     public string Name { get; set; } = "John Doe";
@@ -128,7 +126,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PreferenceUnavailableMode preferenceUnavailable,
         HashSet<string> antagPreferences,
         HashSet<string> traitPreferences,
-        HashSet<string> loadoutPreferences)
+        LoadoutPreferences loadoutPreferences)
     {
         Name = name;
         FlavorText = flavortext;
@@ -147,7 +145,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PreferenceUnavailable = preferenceUnavailable;
         _antagPreferences = antagPreferences;
         _traitPreferences = traitPreferences;
-        _loadoutPreferences = loadoutPreferences;
+        LoadoutPreferences = loadoutPreferences;
     }
 
     /// <summary>Copy constructor</summary>
@@ -170,7 +168,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.PreferenceUnavailable,
             new HashSet<string>(other.AntagPreferences),
             new HashSet<string>(other.TraitPreferences),
-            new HashSet<string>(other.LoadoutPreferences))
+            other.LoadoutPreferences.Clone()
+        )
     {
     }
 
@@ -309,16 +308,18 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return new(this) { _traitPreferences = list };
     }
 
-    public HumanoidCharacterProfile WithLoadoutPreference(string loadoutId, bool pref)
+    public HumanoidCharacterProfile WithLoadoutPreference(string loadoutId, bool added)
     {
-        var list = new HashSet<string>(_loadoutPreferences);
+        var copy = LoadoutPreferences.Clone();
+        if (!copy.TryGetLoadout(out var loadout))
+            return new(this);
 
-        if (pref)
-            list.Add(loadoutId);
+        if (added)
+            loadout.Items.Add(loadoutId);
         else
-            list.Remove(loadoutId);
+            loadout.Items.Remove(loadoutId);
 
-        return new HumanoidCharacterProfile(this) { _loadoutPreferences = list };
+        return new HumanoidCharacterProfile(this) { LoadoutPreferences = copy };
     }
 
     public string Summary =>
@@ -342,7 +343,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && _jobPriorities.SequenceEqual(other._jobPriorities)
             && _antagPreferences.SequenceEqual(other._antagPreferences)
             && _traitPreferences.SequenceEqual(other._traitPreferences)
-            && LoadoutPreferences.SequenceEqual(other.LoadoutPreferences)
+            && LoadoutPreferences.Equals(other.LoadoutPreferences)
             && Appearance.MemberwiseEquals(other.Appearance)
             && FlavorText == other.FlavorText;
     }
@@ -452,10 +453,6 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             .Where(prototypeManager.HasIndex<TraitPrototype>)
             .ToList();
 
-        var loadouts = LoadoutPreferences
-            .Where(prototypeManager.HasIndex<LoadoutPrototype>)
-            .ToList();
-
         Name = name;
         Customspeciename = customspeciename;
         FlavorText = flavortext;
@@ -478,8 +475,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         _traitPreferences.Clear();
         _traitPreferences.UnionWith(traits);
 
-        _loadoutPreferences.Clear();
-        _loadoutPreferences.UnionWith(loadouts);
+         LoadoutPreferences = LoadoutPreferences.EnsureValid(prototypeManager);
     }
 
     public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection)
@@ -508,7 +504,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(_jobPriorities);
         hashCode.Add(_antagPreferences);
         hashCode.Add(_traitPreferences);
-        hashCode.Add(_loadoutPreferences);
+        hashCode.Add(LoadoutPreferences);
         hashCode.Add(Name);
         hashCode.Add(FlavorText);
         hashCode.Add(Species);

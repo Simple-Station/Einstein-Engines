@@ -21,6 +21,7 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
 
     public override void Initialize()
     {
@@ -56,19 +57,16 @@ public sealed class LoadoutSystem : EntitySystem
     /// <param name="playTimes">Playtime for the player for use with playtime requirements</param>
     /// <param name="whitelisted">If the player is whitelisted</param>
     /// <returns>A list of loadout items that couldn't be equipped but passed checks</returns>
-    public List<EntityUid> ApplyCharacterLoadout(EntityUid uid, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted)
+    public List<EntityUid> ApplyCharacterLoadout(EntityUid uid, JobPrototype job, HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted)
     {
         var failedLoadouts = new List<EntityUid>();
+        if (!profile.LoadoutPreferences.TryGetLoadout(out var loadoutList))
+            return failedLoadouts;
 
-        foreach (var loadout in profile.LoadoutPreferences)
+        foreach (var loadout in loadoutList.Items)
         {
-            var slot = "";
-
-            // Ignore loadouts that don't exist
             if (!_prototype.TryIndex<LoadoutPrototype>(loadout, out var loadoutProto))
                 continue;
-
 
             if (!_characterRequirements.CheckRequirementsValid(
                 loadoutProto.Requirements, job, profile, playTimes, whitelisted, loadoutProto,
@@ -76,40 +74,37 @@ public sealed class LoadoutSystem : EntitySystem
                 out _))
                 continue;
 
-
             // Spawn the loadout items
             var spawned = EntityManager.SpawnEntities(
-                EntityManager.GetComponent<TransformComponent>(uid).Coordinates.ToMap(EntityManager),
+                EntityManager.GetComponent<TransformComponent>(uid).Coordinates.ToMap(EntityManager, _xform),
                 loadoutProto.Items.Select(p => (string?) p.ToString()).ToList()); // Dumb cast
 
             foreach (var item in spawned)
             {
+                var slot = "";
+                // Find a slot where the entity can equip the item
                 if (EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp)
                     && _characterRequirements.CanEntityWearItem(uid, item)
                     && _inventory.TryGetSlots(uid, out var slotDefinitions))
                 {
-                    var deleted = false;
                     foreach (var curSlot in slotDefinitions)
                     {
-                        // If the loadout can't equip here or we've already deleted an item from this slot, skip it
-                        if (!clothingComp.Slots.HasFlag(curSlot.SlotFlags) || deleted)
+                        if (!clothingComp.Slots.HasFlag(curSlot.SlotFlags))
                             continue;
 
-                        slot = curSlot.Name;
-
-                        // If the loadout is exclusive delete the equipped item
-                        if (loadoutProto.Exclusive)
+                        // If the loadout is exclusive and there's an item equipped in the compatible slot, delete it. Otherwise skip the slot.
+                        if (_inventory.TryGetSlotEntity(uid, curSlot.Name, out var slotItem))
                         {
-                            // Get the item in the slot
-                            if (!_inventory.TryGetSlotEntity(uid, curSlot.Name, out var slotItem))
+                            if (loadoutProto.Exclusive)
+                                EntityManager.DeleteEntity(slotItem.Value);
+                            else
                                 continue;
-
-                            EntityManager.DeleteEntity(slotItem.Value);
-                            deleted = true;
                         }
+
+                        slot = curSlot.Name;
+                        break;
                     }
                 }
-
 
                 // Equip the loadout
                 if (!_inventory.TryEquip(uid, item, slot, true, !string.IsNullOrEmpty(slot), true))

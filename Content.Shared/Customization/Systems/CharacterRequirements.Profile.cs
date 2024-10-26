@@ -274,7 +274,8 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
             ("loadouts", $"[color={color}]{string.Join($"[/color], [color={color}]",
                 Loadouts.Select(l => Loc.GetString($"loadout-name-{l}")))}[/color]")));
 
-        return Loadouts.Any(l => profile.LoadoutPreferences.Contains(l.ToString()));
+        return profile.LoadoutPreferences.TryGetLoadout(out var loadout)
+               && Loadouts.Any(proto => loadout.Items.Contains(proto));
     }
 }
 
@@ -296,13 +297,7 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
         var group = prototypeManager.Index(Group);
 
         // Get the count of items in the group that are in the profile
-        var items = group.Items.Select(item => item.TryGetValue(profile, prototypeManager, out _) ? item.ID : null).Where(id => id != null).ToList();
-        var count = items.Count;
-
-        // If prototype is selected, remove one from the count
-        if (items.ToList().Contains(prototype.ID))
-            count--;
-
+        var count = group.Items.Count(item => item.ID != prototype.ID && item.TryGetValue(profile, prototypeManager, out _));
         reason = FormattedMessage.FromMarkup(Loc.GetString("character-item-group-requirement",
             ("inverted", Inverted),
             ("group", Loc.GetString($"character-item-group-{Group}")),

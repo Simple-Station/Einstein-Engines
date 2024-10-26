@@ -39,14 +39,21 @@ public sealed partial class CharacterItemGroupItem
         value = null;
 
         // This sucks
+        // TODO what the fuck is this method supposed to do? The output value is always equal to the ID property, AND IS IGNORED IN ALL EXECUTION PATHS
+        // god save me
         switch (Type)
         {
             case "trait":
+                // TODO why the hell is this done? The ID of the prototype is always equal to its own ID, why even index it?
                 return profile.TraitPreferences.TryFirstOrDefault(
-                    p => protoMan.Index<TraitPrototype>((string) p).ID == ID, out value);
+                    p => protoMan.Index<TraitPrototype>((string) p).ID == ID,
+                    out value);
             case "loadout":
-                return profile.LoadoutPreferences.TryFirstOrDefault(
-                    p => protoMan.Index<LoadoutPrototype>((string) p).ID == ID, out value);
+                if (!profile.LoadoutPreferences.TryGetLoadout(out var loadout) || !loadout.Items.Contains(ID))
+                    return false;
+
+                value = ID;
+                return true;
             default:
                 DebugTools.Assert($"Invalid CharacterItemGroupItem Type: {Type}");
                 return false;

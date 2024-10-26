@@ -51,8 +51,6 @@ namespace Content.Client.Lobby.UI
         private readonly CharacterRequirementsSystem _characterRequirementsSystem;
         private readonly LobbyUIController _controller;
         private FlavorText.FlavorText? _flavorText;
-        private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
-        private LineEdit _customspecienameEdit => CCustomSpecieNameEdit;
         private TextEdit? _flavorTextEdit;
 
         /// If we're attempting to save
@@ -130,7 +128,7 @@ namespace Content.Client.Lobby.UI
 
             #region Custom Specie Name
 
-            _customspecienameEdit.OnTextChanged += args => { SetCustomSpecieName(args.Text); };
+            CCustomSpecieNameEdit.OnTextChanged += args => { SetCustomSpecieName(args.Text); };
 
             #endregion CustomSpecieName
 
@@ -1209,12 +1207,8 @@ namespace Content.Client.Lobby.UI
             if (Profile == null)
                 return;
 
-            _customspecienameEdit.Text = Profile.Customspeciename ?? "";
-
-            if (!_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var speciesProto))
-                return;
-
-            _ccustomspecienamecontainerEdit.Visible = speciesProto.CustomName;
+            CCustomSpecieNameEdit.Text = Profile.Customspeciename ?? "";
+            CCustomSpecieNameEdit.Visible = _prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var speciesProto) && speciesProto.CustomName;
         }
 
         private void UpdateFlavorTextEdit()
@@ -1974,7 +1968,7 @@ namespace Content.Client.Lobby.UI
             foreach (var preferenceSelector in _loadoutPreferences)
             {
                 var loadoutId = preferenceSelector.Loadout.ID;
-                var preference = Profile?.LoadoutPreferences.Contains(loadoutId) ?? false;
+                var preference = Profile?.LoadoutPreferences.CurrentLoadoutContains(loadoutId) ?? false;
 
                 preferenceSelector.Preference = preference;
 

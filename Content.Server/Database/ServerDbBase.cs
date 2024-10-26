@@ -13,11 +13,11 @@ using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Preferences;
+using Content.Shared.Roles;
 using Microsoft.EntityFrameworkCore;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
-using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Database
@@ -44,7 +44,8 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
-                .Include(p => p.Profiles).ThenInclude(h => h.Loadouts)
+                .Include(p => p.Profiles).ThenInclude(h => h.AllLoadouts)
+                .Include(p => p.Profiles).ThenInclude(h => h.LoadoutJobPreferences)
                 .AsSingleQuery()
                 .SingleOrDefaultAsync(p => p.UserId == userId.UserId, cancel);
 
@@ -93,7 +94,8 @@ namespace Content.Server.Database
                 .Include(p => p.Jobs)
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
-                .Include(p => p.Loadouts)
+                .Include(p => p.LoadoutJobPreferences)
+                .Include(p => p.AllLoadouts)
                 .AsSplitQuery()
                 .SingleOrDefault(h => h.Slot == slot);
 
@@ -180,7 +182,11 @@ namespace Content.Server.Database
             var jobs = profile.Jobs.ToDictionary(j => j.JobName, j => (JobPriority) j.Priority);
             var antags = profile.Antags.Select(a => a.AntagName);
             var traits = profile.Traits.Select(t => t.TraitName);
-            var loadouts = profile.Loadouts.Select(t => t.LoadoutName);
+
+            var loadoutPrefs = new LoadoutPreferences(
+                profile.AllLoadouts.Select(it => new CharacterLoadout(it.CustomName, it.Items)).ToList(),
+                profile.CurrentLoadout,
+                profile.LoadoutJobPreferences.Select(it => (it.JobName, it.LoadoutIdx)).ToDictionary());
 
             var sex = Sex.Male;
             if (Enum.TryParse<Sex>(profile.Sex, true, out var sexVal))
@@ -242,7 +248,7 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts.ToHashSet()
+                loadoutPrefs
             );
         }
 
@@ -298,11 +304,17 @@ namespace Content.Server.Database
                         .Select(t => new Trait { TraitName = t })
             );
 
-            profile.Loadouts.Clear();
-            profile.Loadouts.AddRange(
-                humanoid.LoadoutPreferences
-                    .Select(t => new Loadout { LoadoutName = t })
+            profile.AllLoadouts.Clear();
+            profile.LoadoutJobPreferences.Clear();
+            profile.AllLoadouts.AddRange(
+                humanoid.LoadoutPreferences.Loadouts
+                    .Select(it => new Loadout { CustomName = it.Name, Items = it.Items })
             );
+            profile.LoadoutJobPreferences.AddRange(
+                humanoid.LoadoutPreferences.JobPreferences
+                    .Select(it => new LoadoutJobPreference { JobName = it.Key, LoadoutIdx = it.Value })
+            );
+            profile.CurrentLoadout = humanoid.LoadoutPreferences.SelectedLoadout;
 
             return profile;
         }

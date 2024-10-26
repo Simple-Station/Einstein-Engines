@@ -61,9 +61,12 @@ namespace Content.Server.Database
                 .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.TraitName })
                 .IsUnique();
 
-            modelBuilder.Entity<Loadout>()
-                .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.LoadoutName })
+            modelBuilder.Entity<Loadout>();
+
+            modelBuilder.Entity<LoadoutJobPreference>()
+                .HasIndex(p => new { Loadout = p.LoadoutIdx, p.JobName }, "IX_one_loadout_per_job")
                 .IsUnique();
+
 
             modelBuilder.Entity<Job>()
                 .HasIndex(j => j.ProfileId);
@@ -356,10 +359,14 @@ namespace Content.Server.Database
         public string Clothing { get; set; } = null!;
         public string Backpack { get; set; } = null!;
         public int SpawnPriority { get; set; } = 0;
+
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
-        public List<Loadout> Loadouts { get; } = new();
+
+        public List<Loadout> AllLoadouts { get; } = new();
+        public int CurrentLoadout { get; set; } = -1;
+        public List<LoadoutJobPreference> LoadoutJobPreferences { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
 
@@ -404,13 +411,27 @@ namespace Content.Server.Database
         public string TraitName { get; set; } = null!;
     }
 
+    /// <summary>
+    ///     A single loadout (a collection of multiple items chosen by the player).
+    /// </summary>
     public class Loadout
     {
         public int Id { get; set; }
-        public Profile Profile { get; set; } = null!;
-        public int ProfileId { get; set; }
+        public Guid PlayerUserId { get; set; }
 
-        public string LoadoutName { get; set; } = null!;
+        public string CustomName { get; set; } = null!;
+        public List<string> Items { get; set; } = null!;
+    }
+
+    /// <summary>
+    ///     A job-loadout preference mapping.
+    /// </summary>
+    public class LoadoutJobPreference
+    {
+        public int Id { get; set; }
+
+        public int LoadoutIdx { get; set; } = -1;
+        public string JobName { get; set; } = null!;
     }
 
     public enum DbPreferenceUnavailableMode
