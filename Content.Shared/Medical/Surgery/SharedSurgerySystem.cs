@@ -56,6 +56,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         SubscribeLocalEvent<SurgeryCloseIncisionConditionComponent, SurgeryValidEvent>(OnCloseIncisionValid);
         //SubscribeLocalEvent<SurgeryLarvaConditionComponent, SurgeryValidEvent>(OnLarvaValid);
         SubscribeLocalEvent<SurgeryPartConditionComponent, SurgeryValidEvent>(OnPartConditionValid);
+        SubscribeLocalEvent<SurgeryOrganConditionComponent, SurgeryValidEvent>(OnOrganConditionValid);
         SubscribeLocalEvent<SurgeryWoundedConditionComponent, SurgeryValidEvent>(OnWoundedValid);
         SubscribeLocalEvent<SurgeryPartRemovedConditionComponent, SurgeryValidEvent>(OnPartRemovedConditionValid);
         SubscribeLocalEvent<SurgeryPartPresentConditionComponent, SurgeryValidEvent>(OnPartPresentConditionValid);
@@ -136,15 +137,39 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             args.Cancelled = true;
     }
 
+    private void OnOrganConditionValid(Entity<SurgeryOrganConditionComponent> ent, ref SurgeryValidEvent args)
+    {
+        if (!TryComp<BodyPartComponent>(args.Part, out var partComp)
+            || partComp.Body != args.Body
+            || ent.Comp.Organ == null)
+        {
+            args.Cancelled = true;
+            return;
+        }
+
+        foreach (var reg in ent.Comp.Organ.Values)
+        {
+            if (_body.TryGetBodyPartOrgans(args.Part, reg.Component.GetType(), out var organs)
+                && organs != null
+                && organs.Count > 0)
+            {
+                if (ent.Comp.Inverse
+                    && (!ent.Comp.Reattaching
+                    || ent.Comp.Reattaching
+                    && !HasComp<OrganReattachedComponent>(args.Part)))
+                    args.Cancelled = true;
+            }
+            else if (!ent.Comp.Inverse)
+                args.Cancelled = true;
+        }
+    }
+
     private void OnPartRemovedConditionValid(Entity<SurgeryPartRemovedConditionComponent> ent, ref SurgeryValidEvent args)
     {
         if (!TryComp<BodyPartComponent>(args.Part, out _)
             || _body.GetBodyChildrenOfType(args.Body, ent.Comp.Part, symmetry: ent.Comp.Symmetry).Any()
             && !HasComp<BodyPartReattachedComponent>(args.Part))
-        {
             args.Cancelled = true;
-        }
-
     }
 
     private void OnPartPresentConditionValid(Entity<SurgeryPartPresentConditionComponent> ent, ref SurgeryValidEvent args)

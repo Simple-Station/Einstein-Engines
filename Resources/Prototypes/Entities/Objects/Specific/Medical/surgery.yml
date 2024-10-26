@@ -360,3 +360,53 @@
       - Sawing
     speed: 2.0
   - type: BoneSaw
+
+# ORGANS
+
+- type: entity
+  parent: LeftArmHuman
+  id: BioSynthLeftArm
+  name: bio-synthetic left arm
+  description: This left arm can be transplanted into any living organism and it will adapt to its recipient.
+
+- type: entity
+  parent: RightArmHuman
+  id: BioSynthRightArm
+  name: bio-synthetic right arm
+  description: This right arm can be transplanted into any living organism and it will adapt to its recipient.
+
+- type: entity
+  parent: LeftHandHuman
+  id: BioSynthLeftHand
+  name: bio-synthetic left hand
+  description: This left hand can be transplanted into any living organism and it will adapt to its recipient.
+
+- type: entity
+  parent: RightHandHuman
+  id: BioSynthRightHand
+  name: bio-synthetic right hand
+  description: This right hand can be transplanted into any living organism and it will adapt to its recipient.
+
+- type: entity
+  parent: LeftLegHuman
+  id: BioSynthLeftLeg
+  name: bio-synthetic left leg
+  description: This left leg can be transplanted into any living organism and it will adapt to its recipient.
+
+- type: entity
+  parent: RightLegHuman
+  id: BioSynthRightLeg
+  name: bio-synthetic right leg
+  description: This right leg can be transplanted into any living organism and it will adapt to its recipient.
+
+- type: entity
+  parent: LeftFootHuman
+  id: BioSynthLeftFoot
+  name: bio-synthetic left foot
+  description: This left foot can be transplanted into any living organism and it will adapt to its recipient.
+
+- type: entity
+  parent: RightFootHuman
+  id: BioSynthRightFoot
+  name: bio-synthetic right foot
+  description: This right foot can be transplanted into any living organism and it will adapt to its recipient.

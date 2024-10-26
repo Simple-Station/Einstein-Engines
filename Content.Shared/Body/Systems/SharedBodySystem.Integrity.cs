@@ -88,7 +88,7 @@ public partial class SharedBodySystem
 
         var partIdSlot = GetParentPartAndSlotOrNull(partEnt)?.Slot;
         var originalIntegrity = partEnt.Comp.Integrity;
-        partEnt.Comp.Integrity -= integrity;
+        partEnt.Comp.Integrity = Math.Min(100, partEnt.Comp.Integrity - integrity);
         if (canSever
             && !HasComp<BodyPartReattachedComponent>(partEnt)
             && !partEnt.Comp.Enabled
@@ -100,14 +100,12 @@ public partial class SharedBodySystem
         if (partEnt.Comp.Enabled
             && partEnt.Comp.Integrity <= 15.0f)
         {
-            Logger.Debug($"Disabling part {ToPrettyString(partEnt)} because it's critically wounded.");
             var ev = new BodyPartEnableChangedEvent(false);
             RaiseLocalEvent(partEnt, ref ev);
         }
         else if (!partEnt.Comp.Enabled
             && partEnt.Comp.Integrity >= 80.0f)
         {
-            Logger.Debug($"Enabling part {ToPrettyString(partEnt)} because it's healed.");
             var ev = new BodyPartEnableChangedEvent(true);
             RaiseLocalEvent(partEnt, ref ev);
         }
@@ -130,10 +128,8 @@ public partial class SharedBodySystem
         }
 
         if (severed && partIdSlot is not null)
-        {
-            Logger.Debug($"Dropping part {ToPrettyString(partEnt)} because it was severed.");
             DropPart(partEnt);
-        }
+
         Dirty(partEnt, partEnt.Comp);
     }
 

@@ -67,3 +67,6 @@ mood-effect-NicotineBenefit =
     I feel as if I have been standing my entire life and I just sat down.
 mood-effect-NicotineWithdrawal =
     I could really go for a smoke right now.
+
+# Surgery
+mood-effect-SurgeryPain = The surgery hurts.

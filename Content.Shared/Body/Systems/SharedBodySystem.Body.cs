@@ -150,11 +150,11 @@ public partial class SharedBodySystem
             return;
 
         var (targetType, targetSymmetry) = ConvertTargetBodyPart(args.TargetPart.Value);
-        var targetPart = GetBodyChildrenOfType(ent, targetType, ent.Comp)
-            .FirstOrDefault(part => part.Component.Symmetry == targetSymmetry);
-        if (targetPart.Id != default && _gameTiming.IsFirstTimePredicted)
+        foreach (var part in GetBodyChildrenOfType(ent, targetType, ent.Comp)
+            .Where(part => part.Component.Symmetry == targetSymmetry))
         {
-            ApplyPartDamage(targetPart, args.DamageDelta, targetType, args.TargetPart.Value, args.CanSever, args.PartMultiplier);
+            if (_gameTiming.IsFirstTimePredicted)
+                ApplyPartDamage(part, args.DamageDelta, targetType, args.TargetPart.Value, args.CanSever, args.PartMultiplier);
         }
     }
 

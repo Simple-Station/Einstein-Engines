@@ -102,11 +102,8 @@ namespace Content.Server.Hands.Systems
 
         private void TryAddHand(EntityUid uid, HandsComponent component, Entity<BodyPartComponent> part, string slot)
         {
-            Logger.Debug($"Trying to add hand {ToPrettyString(part)} to entity {ToPrettyString(uid)}.");
             if (part.Comp.PartType != BodyPartType.Hand)
                 return;
-
-            Logger.Debug($"Fetching hand symmetry");
 
             // If this annoys you, which it should.
             // Ping Smugleaf.
@@ -118,20 +115,12 @@ namespace Content.Server.Hands.Systems
                 _ => throw new ArgumentOutOfRangeException(nameof(part.Comp.Symmetry))
             };
 
-            Logger.Debug($"Checking if part is enabled, has a parent, is valid, and all that jazz. " +
-                $" A: {part.Comp.Enabled} " +
-                $" B: {part.Comp.ParentSlot} " +
-                $" C: {GetEntity(part.Comp.ParentSlot?.Parent)} " +
-                $" D: {TryComp(GetEntity(part.Comp.ParentSlot?.Parent), out BodyPartComponent? parentPart2) && parentPart2.Enabled}");
             if (part.Comp.Enabled
                 && part.Comp.ParentSlot is { } parentSlot
                 && GetEntity(parentSlot.Parent) is { } parent
                 && TryComp(parent, out BodyPartComponent? parentPart)
                 && parentPart.Enabled)
-            {
-                Logger.Debug($"Adding hand to slot {slot} with location {location}");
                 AddHand(uid, slot, location);
-            }
         }
 
         private void HandleBodyPartAdded(EntityUid uid, HandsComponent component, ref BodyPartAddedEvent args)
@@ -148,16 +137,13 @@ namespace Content.Server.Hands.Systems
 
         private void HandleBodyPartEnabled(EntityUid uid, HandsComponent component, ref BodyPartEnabledEvent args)
         {
-            Logger.Debug($"Adding hand {ToPrettyString(args.Part)} with value {SharedBodySystem.GetPartSlotContainerId(args.Part.Comp.ParentSlot?.Id ?? string.Empty)} to entity {ToPrettyString(uid)}.");
             TryAddHand(uid, component, args.Part, SharedBodySystem.GetPartSlotContainerId(args.Part.Comp.ParentSlot?.Id ?? string.Empty));
         }
 
         private void HandleBodyPartDisabled(EntityUid uid, HandsComponent component, ref BodyPartDisabledEvent args)
         {
-            Logger.Debug($"Removing hand {ToPrettyString(args.Part)} from entity {ToPrettyString(uid)}.");
             if (args.Part.Comp.PartType != BodyPartType.Hand)
                 return;
-            Logger.Debug("Passed checks, removing hand.");
 
             RemoveHand(uid, SharedBodySystem.GetPartSlotContainerId(args.Part.Comp.ParentSlot?.Id ?? string.Empty));
         }

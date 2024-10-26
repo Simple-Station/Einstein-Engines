@@ -317,6 +317,8 @@
   - type: SurgeryStepCauterizeEffect
   - type: SurgeryStepEmoteEffect
 
+# Cavity Implanting
+
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepInsertItem
@@ -341,4 +343,36 @@
     state: insertion
   - type: SurgeryStepCavityEffect
     action: Remove
+  - type: SurgeryStepEmoteEffect
+
+# Organ Manipulation
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepRemoveOrgan
+  name: Remove organ
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Hemostat
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+    state: hemostat
+  - type: SurgeryRemoveOrganStep
+  - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepInsertOrgan
+  name: Add organ
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Organ
+    add:
+    - type: OrganReattached
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/manipulation.rsi
+    state: insertion
+  - type: SurgeryAddOrganStep
   - type: SurgeryStepEmoteEffect

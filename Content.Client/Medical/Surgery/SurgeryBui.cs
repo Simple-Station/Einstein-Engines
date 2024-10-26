@@ -68,6 +68,11 @@ public sealed class SurgeryBui : BoundUserInterface
 
     private void Update(SurgeryBuiState state)
     {
+        if (!_entities.TryGetComponent<SurgeryTargetComponent>(_player.LocalEntity, out var surgeryTargetComp)
+            || !surgeryTargetComp.CanOperate
+            || !_timing.IsFirstTimePredicted)
+            return;
+
         if (_window == null)
         {
             _window = new SurgeryWindow();
@@ -188,14 +193,14 @@ public sealed class SurgeryBui : BoundUserInterface
                 OnPartPressed(netEntity, surgeries);
         }
 
-        if (_timing.IsFirstTimePredicted)
+
+        if (!_window.IsOpen)
+            _window.OpenCentered();
+        else
         {
             RefreshUI();
             UpdateDisabledPanel();
         }
-
-        if (!_window.IsOpen)
-            _window.OpenCentered();
     }
 
     private void AddStep(EntProtoId stepId, NetEntity netPart, EntProtoId surgeryId)
@@ -300,8 +305,12 @@ public sealed class SurgeryBui : BoundUserInterface
     private void RefreshUI()
     {
         if (_window == null
+            || !_timing.IsFirstTimePredicted
+            || !_window.IsOpen
             || _part == null
-            || !_entities.HasComponent<SurgeryComponent>(_surgery?.Ent))
+            || !_entities.HasComponent<SurgeryComponent>(_surgery?.Ent)
+            || !_entities.TryGetComponent<SurgeryTargetComponent>(_player.LocalEntity ?? EntityUid.Invalid, out var surgeryComp)
+            || !surgeryComp.CanOperate)
         {
             return;
         }

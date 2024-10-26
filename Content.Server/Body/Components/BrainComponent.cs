@@ -1,4 +1,5 @@
 ﻿using Content.Server.Body.Systems;
+using Robust.Shared.GameStates;
 
 namespace Content.Server.Body.Components
 {

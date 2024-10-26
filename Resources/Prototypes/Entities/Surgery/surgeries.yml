@@ -252,9 +252,49 @@
   name: Cavity Implant
   components:
   - type: Surgery
-    #requirement: SurgeryOpenRibcage
+    requirement: SurgeryOpenRibcage
     steps:
     - SurgeryStepInsertItem
     - SurgeryStepRemoveItem
   - type: SurgeryPartCondition
     part: Torso
+
+# Note for any Organ manipulation surgeries. Most of the organs are only defined on the server.
+# I added some of them to the client too, but we should probably move them to a shared
+# prototype at some point.
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveBrain
+  name: Remove Brain
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Brain
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertBrain
+  name: Insert Brain
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertOrgan
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Brain
+    inverse: true
+    reattaching: true

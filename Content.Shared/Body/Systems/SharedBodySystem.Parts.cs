@@ -28,7 +28,7 @@ public partial class SharedBodySystem
         // TODO: This doesn't handle comp removal on child ents.
 
         // If you modify this also see the Body partial for root parts.
-        SubscribeLocalEvent<BodyPartComponent, ComponentInit>(OnBodyPartInit);
+        SubscribeLocalEvent<BodyPartComponent, ComponentStartup>(OnBodyPartInit);
         SubscribeLocalEvent<BodyPartComponent, ComponentRemove>(OnBodyPartRemove);
         SubscribeLocalEvent<BodyPartComponent, EntInsertedIntoContainerMessage>(OnBodyPartInserted);
         SubscribeLocalEvent<BodyPartComponent, EntRemovedFromContainerMessage>(OnBodyPartRemoved);
@@ -36,7 +36,7 @@ public partial class SharedBodySystem
         SubscribeLocalEvent<BodyPartComponent, BodyPartEnableChangedEvent>(OnPartEnableChanged);
     }
 
-    private void OnBodyPartInit(Entity<BodyPartComponent> ent, ref ComponentInit args)
+    private void OnBodyPartInit(Entity<BodyPartComponent> ent, ref ComponentStartup args)
     {
         if (ent.Comp.PartType == BodyPartType.Torso)
         {
@@ -159,7 +159,8 @@ public partial class SharedBodySystem
         partEnt.Comp.OriginalBody = partEnt.Comp.Body;
         var ev = new BodyPartRemovedEvent(slotId, partEnt);
         RaiseLocalEvent(bodyEnt, ref ev);
-        RemovePartEffect(partEnt, bodyEnt);
+        RemoveLeg(partEnt, bodyEnt);
+        //RemovePartEffect(partEnt, bodyEnt); Uncomment before PR
         PartRemoveDamage(bodyEnt, partEnt);
     }
 
@@ -228,7 +229,7 @@ public partial class SharedBodySystem
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
             return;
 
-        if (partEnt.Comp.Children.Any())
+        /*if (partEnt.Comp.Children.Any()) Uncomment before PR
         {
             foreach (var slotId in partEnt.Comp.Children.Keys)
             {
@@ -243,7 +244,7 @@ public partial class SharedBodySystem
                 }
             };
             Dirty(bodyEnt, bodyEnt.Comp);
-        }
+        }*/
     }
 
     private void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)
@@ -263,7 +264,6 @@ public partial class SharedBodySystem
 
     private void OnPartEnableChanged(Entity<BodyPartComponent> partEnt, ref BodyPartEnableChangedEvent args)
     {
-        Logger.Debug($"Part enable changed for entity {ToPrettyString(partEnt)}: {args.Enabled}");
         partEnt.Comp.Enabled = args.Enabled;
         Dirty(partEnt, partEnt.Comp);
 
@@ -279,10 +279,8 @@ public partial class SharedBodySystem
             return;
 
         // I hate having to hardcode these checks so much.
-        Logger.Debug("Enabling part.");
         if (partEnt.Comp.PartType == BodyPartType.Leg)
         {
-            Logger.Debug("Enabling leg.");
             AddLeg(partEnt, (partEnt.Comp.Body.Value, body));
         }
 
@@ -291,7 +289,6 @@ public partial class SharedBodySystem
             var hand = GetBodyChildrenOfType(partEnt.Comp.Body.Value, BodyPartType.Hand, symmetry: partEnt.Comp.Symmetry).FirstOrDefault();
             if (hand != default)
             {
-                Logger.Debug("Enabling arm.");
                 var ev = new BodyPartEnabledEvent(hand);
                 RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
             }
@@ -299,7 +296,6 @@ public partial class SharedBodySystem
 
         if (partEnt.Comp.PartType == BodyPartType.Hand)
         {
-            Logger.Debug("Enabling hand.");
             var ev = new BodyPartEnabledEvent(partEnt);
             RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
         }
@@ -310,10 +306,8 @@ public partial class SharedBodySystem
         if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))
             return;
 
-        Logger.Debug("Disabling part.");
         if (partEnt.Comp.PartType == BodyPartType.Leg)
         {
-            Logger.Debug("Disabling leg.");
             RemoveLeg(partEnt, (partEnt.Comp.Body.Value, body));
         }
 
@@ -322,7 +316,6 @@ public partial class SharedBodySystem
             var hand = GetBodyChildrenOfType(partEnt.Comp.Body.Value, BodyPartType.Hand, symmetry: partEnt.Comp.Symmetry).FirstOrDefault();
             if (hand != default)
             {
-                Logger.Debug("Disabling arm.");
                 var ev = new BodyPartDisabledEvent(hand);
                 RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
             }
@@ -330,7 +323,6 @@ public partial class SharedBodySystem
 
         if (partEnt.Comp.PartType == BodyPartType.Hand)
         {
-            Logger.Debug("Disabling hand.");
             var ev = new BodyPartDisabledEvent(partEnt);
             RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
         }
@@ -439,7 +431,7 @@ public partial class SharedBodySystem
         }
 
         Containers.EnsureContainer<ContainerSlot>(partId.Value, GetPartSlotContainerId(slotId));
-        slot = new BodyPartSlot(slotId, partType);
+        slot = new BodyPartSlot(slotId, partType, parent: GetNetEntity(partId.Value));
 
         if (!part.Children.TryAdd(slotId, slot.Value))
             return false;
@@ -875,6 +867,48 @@ public partial class SharedBodySystem
             return true;
 
         comps = null;
+        return false;
+    }
+
+    /// <summary>
+    ///     Tries to get a list of ValueTuples of EntityUid and OrganComponent on each organ
+    ///     in the given part.
+    /// </summary>
+    /// <param name="uid">The part entity id to check on.</param>
+    /// <param name="type">The type of component to check for.</param>
+    /// <param name="part">The part to check for organs on.</param>
+    /// <returns>Whether any were found.</returns>
+    /// <remarks>
+    ///     This method is somewhat of a copout to the fact that we can't use reflection to generically
+    ///     get the type of a component on runtime due to sandboxing. So we simply do a HasComp check for each organ.
+    /// </remarks>
+    public bool TryGetBodyPartOrgans(
+        EntityUid uid,
+        Type type,
+        [NotNullWhen(true)] out List<(EntityUid Id, OrganComponent Organ)>? organs,
+        BodyPartComponent? part = null)
+    {
+        if (!Resolve(uid, ref part))
+        {
+            organs = null;
+            return false;
+        }
+
+        var list = new List<(EntityUid Id, OrganComponent Organ)>();
+
+        foreach (var organ in GetPartOrgans(uid, part))
+        {
+            if (HasComp(organ.Id, type))
+                list.Add((organ.Id, organ.Component));
+        }
+
+        if (list.Count != 0)
+        {
+            organs = list;
+            return true;
+        }
+
+        organs = null;
         return false;
     }
 

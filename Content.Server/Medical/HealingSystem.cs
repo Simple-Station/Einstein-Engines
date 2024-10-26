@@ -9,8 +9,8 @@ using Content.Shared.Audio;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
+using Content.Shared.Targeting;
 using Content.Shared.Body.Components;
-using Content.Shared.Body.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -21,6 +21,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Stacks;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
+using System.Linq;
 
 namespace Content.Server.Medical;
 
@@ -29,6 +30,8 @@ public sealed class HealingSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+
+    [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -36,8 +39,6 @@ public sealed class HealingSystem : EntitySystem
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
-
-    [Dependency] private readonly SharedBodySystem _bodySystem = default!;
     [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
 
     public override void Initialize()
@@ -87,6 +88,25 @@ public sealed class HealingSystem : EntitySystem
 
         if (healed == null && healing.BloodlossModifier != 0)
             return;
+
+        /* This is rather shitcodey. Problem is that right now damage is coupled to integrity.
+           If the body is fully healed, all of the checks on TryChangeDamage stop us from actually healing.
+           So in this case we add a special check to heal anyway if TryChangeDamage returns null.
+        */
+        if (healed != null && healed.GetTotal() == 0)
+        {
+            if (TryComp<TargetingComponent>(args.User, out var user)
+                && TryComp<TargetingComponent>(args.Target, out var target)
+                && healing.Damage.GetTotal() < 0)
+            {
+                // If they are valid, we check for body part presence,
+                // and integrity, then apply a direct integrity change.
+                var (type, symmetry) = _bodySystem.ConvertTargetBodyPart(user.Target);
+                if (_bodySystem.GetBodyChildrenOfType(args.Target.Value, type, symmetry: symmetry).FirstOrDefault() is { } bodyPart
+                    && bodyPart.Component.Integrity < 100)
+                    _bodySystem.TryChangeIntegrity(bodyPart, healing.Damage.GetTotal().Float(), false, target.Target, out var _);
+            }
+        }
 
         var total = healed?.GetTotal() ?? FixedPoint2.Zero;
 

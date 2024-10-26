@@ -57,9 +57,6 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
     protected override void RefreshUI(EntityUid body)
     {
-        if (!HasComp<SurgeryTargetComponent>(body))
-            return;
-
         var surgeries = new Dictionary<NetEntity, List<EntProtoId>>();
         foreach (var surgery in _surgeries)
         {
@@ -82,20 +79,29 @@ public sealed class SurgerySystem : SharedSurgerySystem
         _ui.TrySetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState(surgeries));
     }
 
-    private void SetDamage(EntityUid body, string prototype, int value, float partMultiplier, EntityUid user)
+    private void SetDamage(EntityUid body, DamageSpecifier damage, float partMultiplier,
+        EntityUid user, EntityUid part)
     {
-        var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>(prototype), value);
-        _damageableSystem.TryChangeDamage(body, damage, true, origin: user, canSever: false, partMultiplier: partMultiplier);
+        var changed = _damageableSystem.TryChangeDamage(body, damage, true, origin: user, canSever: false, partMultiplier: partMultiplier);
+        if (changed != null
+            && changed.GetTotal() == 0
+            && damage.GetTotal() < 0
+            && TryComp<BodyPartComponent>(part, out var partComp))
+        {
+            var targetPart = _body.GetTargetBodyPart(partComp.PartType, partComp.Symmetry);
+            _body.TryChangeIntegrity((part, partComp), damage.GetTotal().Float(), false, targetPart, out var _);
+        }
     }
 
     private void OnToolAfterInteract(Entity<SurgeryToolComponent> ent, ref AfterInteractEvent args)
     {
         var user = args.User;
-        if (args.Handled ||
-            !args.CanReach ||
-            args.Target == null ||
-            !HasComp<SurgeryTargetComponent>(args.Target) ||
-            !TryComp(args.User, out ActorComponent? actor))
+        if (args.Handled
+            || !args.CanReach
+            || args.Target == null
+            || !TryComp<SurgeryTargetComponent>(args.User, out var surgery)
+            || !surgery.CanOperate
+            || !TryComp(args.User, out ActorComponent? actor))
         {
             return;
         }
@@ -114,8 +120,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
     private void OnSurgeryStepDamage(Entity<SurgeryTargetComponent> ent, ref SurgeryStepDamageEvent args)
     {
-        Logger.Debug($"Applying damage to entity {args.Body} with damage {args.Damage} and part multiplier {args.PartMultiplier}");
-        _damageableSystem.TryChangeDamage(args.Body, args.Damage, true, origin: args.User, canSever: false, partMultiplier: args.PartMultiplier);
+        SetDamage(args.Body, args.Damage, args.PartMultiplier, args.User, args.Part);
     }
 
     private void OnStepBleedComplete(Entity<SurgeryStepBleedEffectComponent> ent, ref SurgeryStepEvent args)
@@ -124,7 +129,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
         if (HasComp<ForcedSleepingComponent>(args.Body))
             bleedValue = 5;
 
-        SetDamage(args.Body, "Bloodloss", bleedValue, 0.5f, args.User);
+        var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Bloodloss"), bleedValue);
+        SetDamage(args.Body, damage, 0.5f, args.User, args.Part);
     }
 
     private void OnStepClampBleedComplete(Entity<SurgeryClampBleedEffectComponent> ent, ref SurgeryStepEvent args)
@@ -133,7 +139,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
         if (HasComp<ForcedSleepingComponent>(args.Body))
             bleedValue = -10;
 
-        SetDamage(args.Body, "Bloodloss", bleedValue, 0.5f, args.User);
+        var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Bloodloss"), bleedValue);
+        SetDamage(args.Body, damage, 0.5f, args.User, args.Part);
     }
 
     private void OnStepCauterizeComplete(Entity<SurgeryStepCauterizeEffectComponent> ent, ref SurgeryStepEvent args)
@@ -142,7 +149,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
         if (HasComp<ForcedSleepingComponent>(args.Body))
             cauterizeValue = -5;
 
-        SetDamage(args.Body, "Burn", cauterizeValue, 0.5f, args.User);
+        var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Heat"), cauterizeValue);
+        SetDamage(args.Body, damage, 0.5f, args.User, args.Part);
     }
 
     private void OnStepAffixPartComplete(Entity<SurgeryStepAffixPartEffectComponent> ent, ref SurgeryStepEvent args)
