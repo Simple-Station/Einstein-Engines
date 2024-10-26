@@ -744,6 +744,12 @@
         Heat: 0.80
         Radiation: 0.80
         Caustic: 0.95
+  # WD EDIT START
+  - type: ClothingGrantComponent
+    component:
+    - type: ThermalVision
+    - type: NightVision
+  # WD EDIT END
 
 #MISC. HARDSUITS
 #Clown Hardsuit
