@@ -3,8 +3,6 @@ using Content.Server.Chat.Systems;
 using Content.Server.Language;
 using Content.Server.Power.Components;
 using Content.Server.Radio.Components;
-using Content.Server.Speech;
-using Content.Server.VoiceMask;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Language;
@@ -92,28 +90,13 @@ public sealed class RadioSystem : EntitySystem
         if (!_messages.Add(message))
             return;
 
-        var name = TryComp(messageSource, out VoiceMaskComponent? mask) && mask.Enabled
-            ? mask.VoiceName
-            : MetaData(messageSource).EntityName;
-
-        // Delta-V: Support syrinx voice mask on radio.
-        if (TryComp(messageSource, out SyrinxVoiceMaskComponent? syrinx) && syrinx.Enabled)
-            name = syrinx.VoiceName;
+        var evt = new TransformSpeakerSpeechEvent(messageSource, Name(messageSource));
+        RaiseLocalEvent(messageSource, evt);
+        var name = evt.VoiceName ?? Name(messageSource);
 
         name = FormattedMessage.EscapeText(name);
 
         // most radios are relayed to chat, so lets parse the chat message beforehand
-        SpeechVerbPrototype speech;
-        if (mask != null
-            && mask.Enabled
-            && mask.SpeechVerb != null
-            && _prototype.TryIndex<SpeechVerbPrototype>(mask.SpeechVerb, out var proto))
-        {
-            speech = proto;
-        }
-        else
-            speech = _chat.GetSpeechVerb(messageSource, message);
-
         var content = escapeMarkup
             ? FormattedMessage.EscapeText(message)
             : message;
