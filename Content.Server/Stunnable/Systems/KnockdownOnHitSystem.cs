@@ -17,7 +17,7 @@ public sealed class KnockdownOnHitSystem : EntitySystem
 
     private void OnMeleeHit(Entity<KnockdownOnHitComponent> entity, ref MeleeHitEvent args)
     {
-        if (!args.IsHit || !args.HitEntities.Any() || entity.Comp.Duration <= TimeSpan.Zero)
+        if (args.Direction.HasValue || !args.IsHit || !args.HitEntities.Any() || entity.Comp.Duration <= TimeSpan.Zero)
             return;
 
         var ev = new KnockdownOnHitAttemptEvent();
