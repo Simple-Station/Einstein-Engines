@@ -17,6 +17,7 @@ using Robust.Server.Player;
 using Content.Server.Chat.Managers;
 using Robust.Shared.Prototypes;
 using Content.Shared.Mobs;
+using Content.Shared.Damage;
 
 namespace Content.Server.Psionics;
 
@@ -36,6 +37,7 @@ public sealed class PsionicsSystem : EntitySystem
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly PsionicFamiliarSystem _psionicFamiliar = default!;
+    [Dependency] private readonly NPCRetaliationSystem _retaliationSystem = default!;
 
     private const string BaselineAmplification = "Baseline Amplification";
     private const string BaselineDampening = "Baseline Dampening";
@@ -66,6 +68,7 @@ public sealed class PsionicsSystem : EntitySystem
         SubscribeLocalEvent<AntiPsionicWeaponComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<AntiPsionicWeaponComponent, TakeStaminaDamageEvent>(OnStamHit);
         SubscribeLocalEvent<PsionicComponent, MobStateChangedEvent>(OnMobstateChanged);
+        SubscribeLocalEvent<PsionicComponent, DamageChangedEvent>(OnDamageChanged);
 
         SubscribeLocalEvent<PsionicComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
@@ -266,6 +269,23 @@ public sealed class PsionicsSystem : EntitySystem
                 continue;
 
             _psionicFamiliar.DespawnFamiliar(familiar, familiarComponent);
+        }
+    }
+
+    private void OnDamageChanged(EntityUid uid, PsionicComponent component, DamageChangedEvent args)
+    {
+        if (component.Familiars.Count <= 0
+            || !args.DamageIncreased
+            || args.Origin == uid
+            || args.Origin is not { } origin)
+            return;
+
+        foreach (var familiar in component.Familiars)
+        {
+            if (!TryComp<NPCRetaliationComponent>(familiar, out var retaliationComponent))
+                continue;
+
+            _retaliationSystem.TryRetaliate(familiar, origin, retaliationComponent);
         }
     }
 }

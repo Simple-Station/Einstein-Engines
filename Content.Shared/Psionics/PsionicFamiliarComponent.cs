@@ -1,14 +1,15 @@
 using Content.Shared.Popups;
+using Robust.Shared.GameStates;
 
 namespace Content.Shared.Abilities.Psionics;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 public sealed partial class PsionicFamiliarComponent : Component
 {
     /// <summary>
     ///     The entity that summoned this Familiar.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public EntityUid? Master;
 
     /// <summary>

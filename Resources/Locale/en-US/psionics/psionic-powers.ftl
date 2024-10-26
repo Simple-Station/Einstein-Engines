@@ -143,6 +143,15 @@ pyrokinetic-flare-power-initialization-feedback =
     I can recall it still, a glimpse of the fires of Gehenna.
 pyrokinetic-flare-power-metapsionic-feedback = Guh these don't even matter because nobody can read this line in-game and I don't know when I'm ever bringing back Narrow Pulse
 
+# Summon Imp
+action-name-summon-imp = Summon Imp
+action-description-summon-imp =
+    Summon and bind an Imp from Gehenna to serve as your Familiar.
+summon-imp-power-description = { action-description-summon-imp }
+summon-imp-power-initialization-feedback =
+    For a brief time, I find myself wandering the blackened fields of Gehenna. I sift between the ashes, finding a smoldering coal in the shape of an eye.
+    I breathe upon it, and it bursts alight with flame. Before I return, the creature thanks me and tells me its name.
+
 # Psionic System Messages
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
 examine-mindbroken-message =

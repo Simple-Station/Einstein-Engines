@@ -1,10 +1,10 @@
 - type: entity
   parent:
-    - BaseMob
-    - MobCombat
-    - MobDamageable
+  - BaseMob
+  - MobCombat
+  - MobDamageable
   id: BaseMobPsionicFamiliar
-  noSpawn: true
+  abstract: true
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -34,7 +34,7 @@
     damageContainer: CorporealSpirit
     damageModifierSet: CorporealSpirit
   - type: MindContainer
-    showExamineInfo: true
+    showExamineInfo: false
   - type: NpcFactionMember
     factions:
     - PsionicInterloper
@@ -53,6 +53,7 @@
       task: MeleePsionicFamiliarCompound
   - type: NPCRetaliation
     attackMemoryLength: 10
+    retaliateFriendlies: true
   - type: PsionicFamiliar
   - type: DamageOnDispel
     damage:
@@ -90,7 +91,7 @@
     damageContainer: CorporealSpirit
     damageModifierSet: CorporealSpirit
   - type: MindContainer
-    showExamineInfo: true
+    showExamineInfo: false
   - type: NpcFactionMember
     factions:
     - PetsNT
@@ -105,6 +106,7 @@
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
+      - XenoglossyPower
 
 - type: entity
   name: Cerberus
@@ -172,3 +174,34 @@
       Male: Cerberus
       Female: Cerberus
       Unsexed: Cerberus
+
+- type: entity
+  name: imp familiar
+  parent: BaseMobPsionicFamiliar
+  id: MobPsionicFamiliarImp
+  description: A living mote of flame summoned from Gehenna.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: imp
+      sprite: Mobs/Demons/imp.rsi
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
+      - PyrokineticFlare
+      - XenoglossyPower
+  - type: MeleeWeapon
+    damage:
+      types:
+        Heat: 9
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -10
+  - type: PointLight
+    radius: 2
+    energy: 30
+    color: "#ff4500"

@@ -364,3 +364,23 @@
               maxRange: 1
             spawns:
               - EffectPyrokineticFlare
+
+- type: entity
+  id: ActionSummonImp
+  name: action-name-summon-imp
+  description: action-description-summon-imp
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: { sprite: Interface/Actions/psionics.rsi, state: summon_imp }
+      useDelay: 120
+      checkCanInteract: false
+      event: !type:SummonPsionicFamiliarActionEvent
+        familiarProto: MobPsionicFamiliarImp
+        powerName: "Summon Imp"
+        checkInsulation: true
+        doGlimmerEffects: true
+        followMaster: true
+        minGlimmer: 10
+        maxGlimmer: 20
+

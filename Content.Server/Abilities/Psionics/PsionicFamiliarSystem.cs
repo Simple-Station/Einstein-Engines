@@ -7,6 +7,8 @@ using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions.Events;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs;
+using Robust.Shared.Map;
+using System.Numerics;
 
 namespace Content.Server.Abilities.Psionics;
 
@@ -35,6 +37,7 @@ public sealed partial class PsionicFamiliarSystem : EntitySystem
             || args.Handled || args.FamiliarProto is null)
             return;
 
+        args.Handled = true;
         var familiar = Spawn(args.FamiliarProto, Transform(uid).Coordinates);
         EnsureComp<PsionicFamiliarComponent>(familiar, out var familiarComponent);
         familiarComponent.Master = uid;
@@ -60,10 +63,8 @@ public sealed partial class PsionicFamiliarSystem : EntitySystem
             if (familiarFactions.Factions.Contains(faction))
                 continue;
 
-            _factions.AddFaction(familiar, faction, false);
+            _factions.AddFaction(familiar, faction, true);
         }
-        // Only Dirty() the factions once, after all are added.
-        Dirty(familiar, familiarFactions);
     }
 
     private void HandleBlackboards(EntityUid master, EntityUid familiar, SummonPsionicFamiliarActionEvent args)
@@ -72,7 +73,7 @@ public sealed partial class PsionicFamiliarSystem : EntitySystem
             || !TryComp<HTNComponent>(familiar, out var htnComponent))
             return;
 
-        _npc.SetBlackboard(familiar, NPCBlackboard.FollowTarget, master, htnComponent);
+        _npc.SetBlackboard(familiar, NPCBlackboard.FollowTarget, new EntityCoordinates(master, Vector2.Zero), htnComponent);
         _htn.Replan(htnComponent);
     }
 
@@ -102,7 +103,7 @@ public sealed partial class PsionicFamiliarSystem : EntitySystem
 
     private void OnFamiliarAttack(EntityUid uid, PsionicFamiliarComponent component, AttackAttemptEvent args)
     {
-        if (component.CanAttackMaster
+        if (component.CanAttackMaster || args.Target is null
             || args.Target != component.Master)
             return;
 
