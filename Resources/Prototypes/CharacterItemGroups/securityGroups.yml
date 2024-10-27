@@ -154,6 +154,14 @@
       id: LoadoutSpeedLoaderMagnumRubber
     - type: loadout
       id: LoadoutSpeedLoaderMagnumRubberSpare
+    - type: loadout
+      id: LoadoutMagazineMagnum
+    - type: loadout
+      id: LoadoutMagazineMagnumRubber
+    - type: loadout
+      id: LoadoutMagazineMagnumSpare
+    - type: loadout
+      id: LoadoutMagazineMagnumRubberSpare
 
 - type: characterItemGroup
   maxItems: 1
@@ -183,6 +191,8 @@
       id: LoadoutSecurityPistolViperNonLethal
     - type: loadout
       id: LoadoutSecurityEquipmentTruncheon
+    - type: loadout
+      id: LoadoutSecurityPistolSvalin
 
 - type: characterItemGroup
   maxItems: 1
