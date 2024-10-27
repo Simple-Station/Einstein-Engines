@@ -7602,3 +7602,12 @@ Entries:
   id: 6491
   time: '2024-10-27T15:34:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1150
+- author: Remuchi
+  changes:
+    - type: Add
+      message: >-
+        Clicking on health alert now will print message in chat, displaying your
+        health state.
+  id: 6492
+  time: '2024-10-27T15:36:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1139
