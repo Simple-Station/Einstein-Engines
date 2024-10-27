@@ -7627,3 +7627,31 @@ Entries:
   id: 6494
   time: '2024-10-27T16:45:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1144
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        A new class of Psionic powers has been added, "Summon Familiar".
+        Familiars are a new kind of Psionic creature that can be summoned by
+        Psions with the right power. Familiars will automatically follow their
+        Master, attack anyone who attacks their Master, fight back when
+        attacked, and attack anyone their Master attacks. Additionally,
+        Familiars are also ghostroles, so that they can be taken over by a
+        player, but otherwise do not require player control to function.
+        Familiars disappear when they die, and will also disappear if their
+        Master is either killed, or mindbroken. Psions can have a maximum of
+        one(1) familiar at a time.
+    - type: Add
+      message: >-
+        New psi-power "Summon Imp", as the first new Psi Familiar. Imps are
+        small motes of living flame that follow and protect their summoner. Imps
+        also emit an incredibly bright light, and can natively cast Pyrokinetic
+        Flare. 
+    - type: Add
+      message: >-
+        Remilia has been updated to be a Psi Familiar, and no longer requires
+        the Bible to summon. Chaplains now start with a Power that lets them
+        summon Remilia once every 2 minutes. 
+  id: 6495
+  time: '2024-10-27T16:51:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1146
