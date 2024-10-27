@@ -297,8 +297,13 @@
   componentRemovals:
     - PsionicInsulation
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          species:
-            - IPC
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+
+- type: trait
+  id: AnimalFriend
+  category: Mental
+  points: -4
+  addFactions:
+    - AnimalFriend
