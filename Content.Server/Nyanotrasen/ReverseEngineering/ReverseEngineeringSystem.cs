@@ -187,22 +187,18 @@ public sealed class ReverseEngineeringSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        if (!_ui.TryGetUi(uid, ReverseEngineeringMachineUiKey.Key, out var bui))
-            return;
-
         EntityUid? item = component.CurrentItem;
         if (component.CachedMessage == null)
             component.CachedMessage = GetReverseEngineeringScanMessage(component);
 
-        var totalTime = TimeSpan.Zero;
         var scanning = TryComp<ActiveReverseEngineeringMachineComponent>(uid, out var active);
-        var canScan = (item != null && !scanning);
+        var canScan = item != null && !scanning;
         var remaining = active != null ? _timing.CurTime - active.StartTime : TimeSpan.Zero;
         EntityManager.TryGetNetEntity(item, out var netItem);
 
         var state = new ReverseEngineeringMachineScanUpdateState(netItem, canScan, component.CachedMessage, scanning, component.SafetyOn, component.AutoScan, component.Progress, remaining, component.AnalysisDuration);
 
-        _ui.SetUiState(bui, state);
+        _ui.SetUiState(uid, ReverseEngineeringMachineUiKey.Key, state);
     }
 
     private ReverseEngineeringTickResult Roll(ReverseEngineeringMachineComponent component, out int actualRoll)

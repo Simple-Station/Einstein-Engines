@@ -14,6 +14,8 @@
       id: Elyran
     - type: trait
       id: ValyrianStandard
+    - type: trait
+      id: Azaziba
 
 - type: characterItemGroup
   id: TraitsAccents

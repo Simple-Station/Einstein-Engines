@@ -12,6 +12,20 @@
     - type: PermanentBlindness
 
 - type: trait
+  id: Nearsighted
+  category: Visual
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  components:
+    - type: PermanentBlindness
+      blindness: 4
+
+- type: trait
   id: Narcolepsy
   category: Mental
   points: 2
@@ -203,6 +217,7 @@
       inverted: true
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
+        - Shadowkin
   components:
     - type: Flashable
       eyeDamageChance: 0.3

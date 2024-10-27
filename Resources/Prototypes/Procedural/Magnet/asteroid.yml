@@ -10,6 +10,8 @@
     OrePlasma: 0.15
     OreUranium: 0.15
     OreArtifactFragment: 0.15
+    OreBluespace: 0.1
+    OreNormality: 0.1
 
 # Large asteroids, typically 1
 - type: dungeonConfig

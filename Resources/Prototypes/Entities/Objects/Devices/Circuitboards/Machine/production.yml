@@ -165,6 +165,28 @@
         ExamineName: Glass Beaker
 
 - type: entity
+  parent: BaseMachineCircuitboard
+  id: CircuitImprinterHyperConvectionMachineCircuitboard
+  name: hyper convection circuit imprinter machine board
+  description: A machine printed circuit board for a hyper convection circuit imprinter.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: CircuitImprinterHyperConvection
+    requirements:
+      MatterBin: 2
+    tagRequirements:
+      GlassBeaker:
+        Amount: 2
+        DefaultPrototype: Beaker
+        ExamineName: Glass Beaker
+      Igniter:
+        Amount: 1
+        DefaultPrototype: Igniter
+        ExamineName: Igniter
+
+- type: entity
   id: ExosuitFabricatorMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: exosuit fabricator machine board
@@ -280,27 +302,6 @@
       difficulty: 2
       recipes:
         - ArtifactAnalyzerMachineCircuitboard
-
-- type: entity
-  id: TraversalDistorterMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: traversal distorter machine board
-  description: A machine printed circuit board for a traversal distorter.
-  components:
-    - type: Sprite
-      state: science
-    - type: MachineBoard
-      prototype: MachineTraversalDistorter
-      requirements:
-        Manipulator: 1
-        Capacitor: 2
-      materialRequirements:
-        Steel: 5
-        Cable: 1
-    - type: ReverseEngineering # Nyano
-      difficulty: 2
-      recipes:
-      - TraversalDistorterMachineCircuitboard
 
 - type: entity
   id: ArtifactCrusherMachineCircuitboard
@@ -1624,3 +1625,23 @@
     recipes:
       -  JukeboxCircuitBoard
 
+- type: entity
+  id: TraversalDistorterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: traversal distorter machine board
+  description: A machine printed circuit board for a traversal distorter.
+  components:
+    - type: Sprite
+      state: science
+    - type: MachineBoard
+      prototype: MachineTraversalDistorter
+      requirements:
+        Manipulator: 1
+        Capacitor: 2
+      materialRequirements:
+        Steel: 5
+        Cable: 1
+    - type: ReverseEngineering # Nyano
+      difficulty: 2
+      recipes:
+      - TraversalDistorterMachineCircuitboard

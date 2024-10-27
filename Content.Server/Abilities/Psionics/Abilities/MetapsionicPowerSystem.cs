@@ -19,6 +19,9 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(EntityUid uid, MetapsionicPowerComponent component, MetapsionicPowerActionEvent args)
         {
+            if (!_psionics.OnAttemptPowerUse(args.Performer, "metapsionic pulse"))
+                return;
+
             foreach (var entity in _lookup.GetEntitiesInRange(uid, component.Range))
             {
                 if (HasComp<PsionicComponent>(entity) && entity != uid && !HasComp<PsionicInsulationComponent>(entity) &&

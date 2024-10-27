@@ -62,6 +62,7 @@
     gloves: ClothingHandsGlovesCombat
     shoes: ClothingShoesSlippers
     id: SyndiListeningPostPDA
+    pocket1: BaseUplinkRadio20TC
   innerClothingSkirt: ClothingUniformJumpsuitPyjamaSyndicatePink
 
 # Mobsters

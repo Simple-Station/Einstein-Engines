@@ -6,6 +6,13 @@
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
   - type: Organ
+
+- type: entity
+  id: BaseHumanOrgan
+  parent: BaseHumanOrganUnGibbable
+  abstract: true
+  components:
+  - type: Gibbable
   - type: Food
   - type: Extractable
     grindableSolutionName: organ
@@ -26,13 +33,6 @@
   - type: Tag
     tags:
       - Meat
-
-- type: entity
-  id: BaseHumanOrgan
-  parent: BaseHumanOrganUnGibbable
-  abstract: true
-  components:
-  - type: Gibbable
 
 - type: entity
   id: OrganHumanBrain
@@ -67,7 +67,7 @@
   - type: FlavorProfile
     flavors:
       - people
-  
+
 - type: entity
   id: OrganHumanEyes
   parent: BaseHumanOrgan

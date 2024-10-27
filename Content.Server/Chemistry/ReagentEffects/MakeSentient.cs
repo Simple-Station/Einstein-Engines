@@ -1,7 +1,6 @@
 using System.Linq;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Language;
-using Content.Server.Language.Events;
 using Content.Server.Speech.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Language;
