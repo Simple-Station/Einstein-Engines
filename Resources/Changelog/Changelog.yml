@@ -7611,3 +7611,12 @@ Entries:
   id: 6492
   time: '2024-10-27T15:36:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1139
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        The Animal Friend trait has been added to the game. Characters with this
+        trait are not attacked by animals.
+  id: 6493
+  time: '2024-10-27T16:44:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/955
