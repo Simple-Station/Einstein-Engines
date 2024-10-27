@@ -136,10 +136,8 @@ namespace Content.Shared.StatusEffect
         public bool TryAddStatusEffect(EntityUid uid, string key, TimeSpan time, bool refresh, Component component,
             StatusEffectsComponent? status = null)
         {
-            if (!Resolve(uid, ref status, false))
-                return false;
-
-            if (!TryAddStatusEffect(uid, key, time, refresh, status))
+            if (!Resolve(uid, ref status, false)
+                || !TryAddStatusEffect(uid, key, time, refresh, status))
                 return false;
 
             // If they already have the comp, we just won't bother updating anything.
