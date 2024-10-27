@@ -25,7 +25,6 @@
   - type: Tag
     tags:
     - DoorBumpOpener
-    - VimPilot
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -64,7 +63,7 @@
 
 - type: entity
   name: Remilia
-  parent: MobBat
+  parent: BaseMobPsionicFamiliar
   id: MobBatRemilia
   description: The chaplain's familiar. Likes fruit.
   components:
@@ -87,35 +86,43 @@
   - type: Access
     tags:
     - Chapel
-  - type: Damageable
-    damageContainer: CorporealSpirit
-    damageModifierSet: CorporealSpirit
-  - type: MindContainer
-    showExamineInfo: false
-  - type: NpcFactionMember
-    factions:
-    - PsionicInterloper
-  - type: Alerts
-  - type: Psionic
-    removable: false
-    psychognomicDescriptors:
-      - p-descriptor-bound
-      - p-descriptor-cyclic
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
       - XenoglossyPower
-  - type: HTN
-    rootTask:
-      task: MeleePsionicFamiliarCompound
-  - type: NPCRetaliation
-    attackMemoryLength: 10
-    retaliateFriendlies: true
-  - type: PsionicFamiliar
-  - type: DamageOnDispel
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 6
+  - type: Speech
+    speechSounds: Squeak
+    speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 0.8
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: InteractionPopup
+    successChance: 0.2
+    interactSuccessString: petting-success-soft-floofy
+    interactFailureString: petting-failure-bat
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/fox_squeak.ogg
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
     damage:
       types:
-        Heat: 100
+        Piercing: 5
 
 - type: entity
   name: Cerberus
