@@ -7578,3 +7578,10 @@ Entries:
   id: 6488
   time: '2024-10-25T19:04:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1142
+- author: Ichaie
+  changes:
+    - type: Fix
+      message: '#1126 '
+  id: 6489
+  time: '2024-10-27T15:30:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1129
