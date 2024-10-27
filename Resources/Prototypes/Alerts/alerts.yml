@@ -192,6 +192,7 @@
 - type: alert
   id: HumanHealth
   category: Health
+  onClick: !type:CheckHealth { }
   icons:
   - sprite: /Textures/Interface/Alerts/human_alive.rsi
     state: health0
