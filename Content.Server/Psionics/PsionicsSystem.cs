@@ -281,8 +281,8 @@ public sealed class PsionicsSystem : EntitySystem
     {
         if (component.Familiars.Count <= 0
             || !args.DamageIncreased
-            || args.Origin == uid
-            || args.Origin is not { } origin)
+            || args.Origin is not { } origin
+            || origin == uid)
             return;
 
         SetFamiliarTarget(origin, component);
