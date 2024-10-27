@@ -152,6 +152,12 @@ summon-imp-power-initialization-feedback =
     For a brief time, I find myself wandering the blackened fields of Gehenna. I sift between the ashes, finding a smoldering coal in the shape of an eye.
     I breathe upon it, and it bursts alight with flame. Before I return, the creature thanks me and tells me its name.
 
+# Summon Remilia
+action-name-summon-remilia = Summon Remilia
+action-description-summon-remilia =
+    Call forth your ever-loyal familiar Remilia.
+summon-remilia-power-description = { action-description-summon-remilia }
+
 # Psionic System Messages
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
 examine-mindbroken-message =

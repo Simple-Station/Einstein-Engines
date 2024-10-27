@@ -265,3 +265,11 @@
   initializationFeedback: summon-imp-power-initialization-feedback
   amplificationModifier: 0.5
   dampeningModifier: 0.5
+
+- type: psionicPower
+  id: SummonRemiliaPower
+  name: Summon Remilia
+  description: summon-imp-power-description
+  actions:
+    - ActionSummonRemilia
+  powerSlotCost: 0

@@ -87,17 +87,15 @@
   - type: Access
     tags:
     - Chapel
-  - type: Damageable # Nyanotrasen - Corporeal Spirit allows Holy water to do damage
+  - type: Damageable
     damageContainer: CorporealSpirit
     damageModifierSet: CorporealSpirit
   - type: MindContainer
     showExamineInfo: false
   - type: NpcFactionMember
     factions:
-    - PetsNT
     - PsionicInterloper
   - type: Alerts
-  - type: Familiar
   - type: Psionic
     removable: false
     psychognomicDescriptors:
@@ -107,6 +105,17 @@
     powersToAdd:
       - TelepathyPower
       - XenoglossyPower
+  - type: HTN
+    rootTask:
+      task: MeleePsionicFamiliarCompound
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+    retaliateFriendlies: true
+  - type: PsionicFamiliar
+  - type: DamageOnDispel
+    damage:
+      types:
+        Heat: 100
 
 - type: entity
   name: Cerberus
