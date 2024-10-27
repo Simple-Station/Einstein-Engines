@@ -7595,3 +7595,10 @@ Entries:
   id: 6490
   time: '2024-10-27T15:31:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1143
+- author: Remuchi
+  changes:
+    - type: Fix
+      message: Layered icons are now properly displayed in radial menus.
+  id: 6491
+  time: '2024-10-27T15:34:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1150
