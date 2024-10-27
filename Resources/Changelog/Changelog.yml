@@ -7620,3 +7620,10 @@ Entries:
   id: 6493
   time: '2024-10-27T16:44:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/955
+- author: Remuchi
+  changes:
+    - type: Add
+      message: Added telescopic baton - a self-defense weapon for Command staff.
+  id: 6494
+  time: '2024-10-27T16:45:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1144
