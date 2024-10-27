@@ -5775,6 +5775,10 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 8.5,3.5
       parent: 1
+    - type: CommunicationsConsole
+      color: gold
+      title: "Pirate Broadcast"
+      canShuttle: false
 - proto: SyndicateMonitoringServer
   entities:
   - uid: 338
