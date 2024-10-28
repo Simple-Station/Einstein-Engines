@@ -69,11 +69,9 @@ public sealed class SurgeryBui : BoundUserInterface
 
     private void Update(SurgeryBuiState state)
     {
-        Logger.Debug($"Attempting to update surgerybuistate with {state}, {_player.LocalEntity}, first predicted? {_timing.IsFirstTimePredicted}, surgeryTargetComp? {_entities.TryGetComponent<SurgeryTargetComponent>(_player.LocalEntity, out var surgeryTargetComp2)} {surgeryTargetComp2?.CanOperate}");
         if (!_entities.TryGetComponent<SurgeryTargetComponent>(_player.LocalEntity, out var surgeryTargetComp)
             || !surgeryTargetComp.CanOperate)
             return;
-        Logger.Debug("Passed check");
         if (_window == null)
         {
             _window = new SurgeryWindow();
