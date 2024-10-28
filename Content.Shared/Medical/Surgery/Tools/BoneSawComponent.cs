@@ -6,4 +6,5 @@ namespace Content.Shared.Medical.Surgery.Tools;
 public sealed partial class BoneSawComponent : Component, ISurgeryToolComponent
 {
     public string ToolName => "a bone saw";
+    public bool? Used { get; set; } = null;
 }

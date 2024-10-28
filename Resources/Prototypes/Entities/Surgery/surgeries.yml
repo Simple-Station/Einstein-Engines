@@ -298,3 +298,148 @@
     - type: Brain
     inverse: true
     reattaching: true
+
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveHeart
+  name: Remove Heart
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Heart
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertHeart
+  name: Insert Heart
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertHeart
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Heart
+    inverse: true
+    reattaching: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveLiver
+  name: Remove Liver
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Liver
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertLiver
+  name: Insert Liver
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertLiver
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Liver
+    inverse: true
+    reattaching: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveLungs
+  name: Remove Lungs
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Lung
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertLungs
+  name: Insert Lungs
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertLungs
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Lung
+    inverse: true
+    reattaching: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveEyes
+  name: Remove Eyes
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Eyes
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertEyes
+  name: Insert Eyes
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertEyes
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Eyes
+    inverse: true
+    reattaching: true

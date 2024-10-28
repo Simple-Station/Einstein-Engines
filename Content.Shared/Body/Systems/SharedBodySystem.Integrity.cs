@@ -223,10 +223,10 @@ public partial class SharedBodySystem
     {
         return partType switch
         {
-            BodyPartType.Head => 1.0f,
-            BodyPartType.Torso => 1.0f,
-            BodyPartType.Arm => 1.0f,
-            BodyPartType.Leg => 1.0f,
+            BodyPartType.Head => 0.5f, // 50% damage, necks are hard to cut
+            BodyPartType.Torso => 1.0f, // 100% damage
+            BodyPartType.Arm => 0.7f, // 70% damage
+            BodyPartType.Leg => 0.7f, // 70% damage
             _ => 0.5f
         };
     }
@@ -254,14 +254,15 @@ public partial class SharedBodySystem
 
     /// <summary>
     /// Fetches the chance to evade integrity damage for a body part.
+    /// Used when the entity is not dead, laying down, or incapacitated.
     /// </summary>
     public float GetEvadeChance(BodyPartType partType)
     {
         return partType switch
         {
-            BodyPartType.Head => 0.50f,  // 50% chance to evade
-            BodyPartType.Arm => 0.10f,   // 10% chance to evade
-            BodyPartType.Leg => 0.10f,   // 10% chance to evade
+            BodyPartType.Head => 0.70f,  // 70% chance to evade
+            BodyPartType.Arm => 0.20f,   // 20% chance to evade
+            BodyPartType.Leg => 0.20f,   // 20% chance to evade
             BodyPartType.Torso => 0f, // 0% chance to evade
             _ => 0f
         };

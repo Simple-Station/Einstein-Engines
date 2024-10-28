@@ -1,9 +1,10 @@
-using Content.Server.Body.Systems;
-using Content.Server.Chat.Systems;
-using Content.Server.Popups;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Body.Components;
+using Content.Server.Body.Systems;
+using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
+using Content.Server.Chat.Systems;
+using Content.Server.Popups;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Interaction;
@@ -14,6 +15,9 @@ using Content.Shared.Medical.Surgery.Conditions;
 using Content.Shared.Medical.Surgery.Effects.Step;
 using Content.Shared.Medical.Surgery.Tools;
 using Content.Shared.Mood;
+using Content.Server.Atmos.Rotting;
+using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Eye.Blinding.Systems;
 //using Content.Shared.Medical.Wounds;
 using Content.Shared.Prototypes;
 using Robust.Server.GameObjects;
@@ -33,6 +37,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly RottingSystem _rot = default!;
+    [Dependency] private readonly BlindableSystem _blindableSystem = default!;
     //[Dependency] private readonly WoundsSystem _wounds = default!;
 
     private readonly List<EntProtoId> _surgeries = new();
@@ -43,9 +49,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
         SubscribeLocalEvent<SurgeryToolComponent, AfterInteractEvent>(OnToolAfterInteract);
         SubscribeLocalEvent<SurgeryTargetComponent, SurgeryStepDamageEvent>(OnSurgeryStepDamage);
-        SubscribeLocalEvent<SurgeryStepBleedEffectComponent, SurgeryStepEvent>(OnStepBleedComplete);
-        SubscribeLocalEvent<SurgeryStepCauterizeEffectComponent, SurgeryStepEvent>(OnStepCauterizeComplete);
-        SubscribeLocalEvent<SurgeryClampBleedEffectComponent, SurgeryStepEvent>(OnStepClampBleedComplete);
+        SubscribeLocalEvent<SurgeryDamageChangeEffectComponent, SurgeryStepEvent>(OnSurgeryDamageChange);
+        SubscribeLocalEvent<SurgerySpecialDamageChangeEffectComponent, SurgeryStepEvent>(OnSurgerySpecialDamageChange);
         SubscribeLocalEvent<SurgeryStepAffixPartEffectComponent, SurgeryStepEvent>(OnStepAffixPartComplete);
         SubscribeLocalEvent<SurgeryStepEmoteEffectComponent, SurgeryStepEvent>(OnStepScreamComplete);
         SubscribeLocalEvent<SurgeryStepSpawnEffectComponent, SurgeryStepEvent>(OnStepSpawnComplete);
@@ -123,34 +128,43 @@ public sealed class SurgerySystem : SharedSurgerySystem
         SetDamage(args.Body, args.Damage, args.PartMultiplier, args.User, args.Part);
     }
 
-    private void OnStepBleedComplete(Entity<SurgeryStepBleedEffectComponent> ent, ref SurgeryStepEvent args)
+    private void OnSurgeryDamageChange(Entity<SurgeryDamageChangeEffectComponent> ent, ref SurgeryStepEvent args)
     {
-        var bleedValue = 10;
-        if (HasComp<ForcedSleepingComponent>(args.Body))
-            bleedValue = 5;
+        // This unintentionally punishes the user if they have an organ in another hand that is already used.
+        // Imo surgery shouldnt let you automatically pick tools on both hands anyway, it should only use the one you've got in your selected hand.
+        if (ent.Comp.IsConsumable)
+        {
+            if (args.Tools.Where(tool => TryComp<OrganComponent>(tool, out var organComp)
+                && !_body.TrySetOrganUsed(tool, true, organComp)).Any())
+                return;
+        }
 
-        var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Bloodloss"), bleedValue);
-        SetDamage(args.Body, damage, 0.5f, args.User, args.Part);
+        var damageChange = ent.Comp.Damage;
+        if (HasComp<ForcedSleepingComponent>(args.Body))
+            damageChange = damageChange * ent.Comp.SleepModifier;
+
+        SetDamage(args.Body, damageChange, 0.5f, args.User, args.Part);
     }
 
-    private void OnStepClampBleedComplete(Entity<SurgeryClampBleedEffectComponent> ent, ref SurgeryStepEvent args)
+    private void OnSurgerySpecialDamageChange(Entity<SurgerySpecialDamageChangeEffectComponent> ent, ref SurgeryStepEvent args)
     {
-        var bleedValue = -5;
-        if (HasComp<ForcedSleepingComponent>(args.Body))
-            bleedValue = -10;
+        if (ent.Comp.IsConsumable)
+        {
+            if (args.Tools.Where(tool => TryComp<OrganComponent>(tool, out var organComp)
+                && !_body.TrySetOrganUsed(tool, true, organComp)).Any())
+                return;
+        }
 
-        var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Bloodloss"), bleedValue);
-        SetDamage(args.Body, damage, 0.5f, args.User, args.Part);
-    }
-
-    private void OnStepCauterizeComplete(Entity<SurgeryStepCauterizeEffectComponent> ent, ref SurgeryStepEvent args)
-    {
-        var cauterizeValue = 10;
-        if (HasComp<ForcedSleepingComponent>(args.Body))
-            cauterizeValue = -5;
-
-        var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Heat"), cauterizeValue);
-        SetDamage(args.Body, damage, 0.5f, args.User, args.Part);
+        if (ent.Comp.DamageType == "Rot")
+        {
+            _rot.ReduceAccumulator(args.Body, TimeSpan.FromSeconds(2147483648));
+        }
+        else if (ent.Comp.DamageType == "Eye")
+        {
+            if (TryComp(args.Body, out BlindableComponent? blindComp)
+                && blindComp.EyeDamage > 0)
+                _blindableSystem.AdjustEyeDamage((args.Body, blindComp), -blindComp!.EyeDamage);
+        }
     }
 
     private void OnStepAffixPartComplete(Entity<SurgeryStepAffixPartEffectComponent> ent, ref SurgeryStepEvent args)

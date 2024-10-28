@@ -42,6 +42,9 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField]
     public string ToolName { get; set; } = "A body part";
 
+    [DataField, AutoNetworkedField]
+    public bool? Used { get; set; } = null;
+
     /// <summary>
     /// Child body parts attached to this body part.
     /// </summary>
@@ -86,7 +89,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField]
     public string ContainerName { get; set; } = "part_slot";
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public ItemSlot ItemInsertionSlot = new();
 
     /// <summary>
@@ -136,15 +139,11 @@ public partial struct BodyPartSlot
 {
     public string Id;
     public BodyPartType Type;
-    public NetEntity? Child;
-    public NetEntity? Parent;
 
-    public BodyPartSlot(string id, BodyPartType type, NetEntity? child = null, NetEntity? parent = null)
+    public BodyPartSlot(string id, BodyPartType type)
     {
         Id = id;
         Type = type;
-        Child = child;
-        Parent = parent;
     }
 };
 

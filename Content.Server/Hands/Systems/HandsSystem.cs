@@ -102,7 +102,8 @@ namespace Content.Server.Hands.Systems
 
         private void TryAddHand(EntityUid uid, HandsComponent component, Entity<BodyPartComponent> part, string slot)
         {
-            if (part.Comp.PartType != BodyPartType.Hand)
+            if (part.Comp is null
+                || part.Comp.PartType != BodyPartType.Hand)
                 return;
 
             // If this annoys you, which it should.
@@ -116,10 +117,8 @@ namespace Content.Server.Hands.Systems
             };
 
             if (part.Comp.Enabled
-                && part.Comp.ParentSlot is { } parentSlot
-                && GetEntity(parentSlot.Parent) is { } parent
-                && TryComp(parent, out BodyPartComponent? parentPart)
-                && parentPart.Enabled)
+                && _bodySystem.TryGetParentBodyPart(part, out var _, out var parentPartComp)
+                && parentPartComp.Enabled)
                 AddHand(uid, slot, location);
         }
 
@@ -130,7 +129,8 @@ namespace Content.Server.Hands.Systems
 
         private void HandleBodyPartRemoved(EntityUid uid, HandsComponent component, ref BodyPartRemovedEvent args)
         {
-            if (args.Part.Comp.PartType != BodyPartType.Hand)
+            if (args.Part.Comp is null
+                || args.Part.Comp.PartType != BodyPartType.Hand)
                 return;
             RemoveHand(uid, args.Slot);
         }
@@ -142,7 +142,8 @@ namespace Content.Server.Hands.Systems
 
         private void HandleBodyPartDisabled(EntityUid uid, HandsComponent component, ref BodyPartDisabledEvent args)
         {
-            if (args.Part.Comp.PartType != BodyPartType.Hand)
+            if (args.Part.Comp is null
+                || args.Part.Comp.PartType != BodyPartType.Hand)
                 return;
 
             RemoveHand(uid, SharedBodySystem.GetPartSlotContainerId(args.Part.Comp.ParentSlot?.Id ?? string.Empty));

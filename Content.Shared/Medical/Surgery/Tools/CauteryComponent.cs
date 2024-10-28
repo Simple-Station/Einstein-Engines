@@ -6,4 +6,5 @@ namespace Content.Shared.Medical.Surgery.Tools;
 public sealed partial class CauteryComponent : Component, ISurgeryToolComponent
 {
     public string ToolName => "a cautery";
+    public bool? Used { get; set; } = null;
 }

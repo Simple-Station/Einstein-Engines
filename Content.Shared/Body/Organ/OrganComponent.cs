@@ -15,6 +15,20 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent
     [DataField, AutoNetworkedField]
     public EntityUid? Body;
 
+    /// <summary>
+    /// Shitcodey solution to not being able to know what name corresponds to each organ's slot ID
+    /// without referencing the prototype or hardcoding.
+    /// </summary>
+
+    [DataField]
+    public string SlotId = "";
+
     [DataField]
     public string ToolName { get; set; } = "An organ";
+
+    /// <summary>
+    ///  If true, the organ will not heal an entity when transplanted into them.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool? Used { get; set; } = false;
 }

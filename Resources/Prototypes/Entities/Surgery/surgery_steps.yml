@@ -18,7 +18,11 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
-  - type: SurgeryStepBleedEffect
+  - type: SurgeryDamageChangeEffect
+    damage:
+      types:
+        Bloodloss: 10
+    sleepModifier: 0.5
   - type: SurgeryStepEmoteEffect
 
 - type: entity
@@ -34,7 +38,11 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: hemostat
-  - type: SurgeryClampBleedEffect
+  - type: SurgeryDamageChangeEffect
+    damage:
+      types:
+        Bloodloss: -5
+    sleepModifier: 2
 
 - type: entity
   parent: SurgeryStepBase
@@ -159,7 +167,11 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
-  - type: SurgeryStepCauterizeEffect
+  - type: SurgeryDamageChangeEffect
+    damage:
+      types:
+        Heat: -5
+    sleepModifier: 2
   - type: SurgeryStepEmoteEffect
 
 # Feature Insertion
@@ -198,7 +210,11 @@
     state: cautery
   - type: SurgeryStepEmoteEffect
   - type: SurgeryStepAffixPartEffect
-  - type: SurgeryStepCauterizeEffect
+  - type: SurgeryDamageChangeEffect
+    damage:
+      types:
+        Heat: -5
+    sleepModifier: 2
 
 # Feature Removal
 
@@ -230,7 +246,11 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: hemostat
-  - type: SurgeryClampBleedEffect
+  - type: SurgeryDamageChangeEffect
+    damage:
+      types:
+        Bloodloss: -5
+    sleepModifier: 2
 
 - type: entity
   parent: SurgeryStepBase
@@ -314,7 +334,11 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
-  - type: SurgeryStepCauterizeEffect
+  - type: SurgeryDamageChangeEffect
+    damage:
+      types:
+        Heat: -5
+    sleepModifier: 2
   - type: SurgeryStepEmoteEffect
 
 # Cavity Implanting
@@ -376,3 +400,45 @@
     state: insertion
   - type: SurgeryAddOrganStep
   - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertLungs
+  name: Add lungs
+  components:
+  - type: SurgeryDamageChangeEffect
+    damage:
+      types:
+        Asphyxiation: -2147483648 # Literally the max 32 bit value, if your patient has gone higher than this, maybe it's time to restart the round.
+    sleepModifier: 1
+    isConsumable: true
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertLiver
+  name: Add liver
+  components:
+  - type: SurgeryDamageChangeEffect
+    damage:
+      types:
+        Poison: -2147483648 # Literally the max 32 bit value, if your patient has gone higher than this, maybe it's time to restart the round.
+    sleepModifier: 1
+    isConsumable: true
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertEyes
+  name: Add eyes
+  components:
+  - type: SurgerySpecialDamageChangeEffect
+    damageType: Eye
+    isConsumable: true
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertHeart
+  name: Add heart
+  components:
+  - type: SurgerySpecialDamageChangeEffect
+    damageType: Rot
+    isConsumable: true

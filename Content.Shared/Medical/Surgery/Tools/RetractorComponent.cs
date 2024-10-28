@@ -6,4 +6,5 @@ namespace Content.Shared.Medical.Surgery.Tools;
 public sealed partial class RetractorComponent : Component, ISurgeryToolComponent
 {
     public string ToolName => "a retractor";
+    public bool? Used { get; set; } = null;
 }

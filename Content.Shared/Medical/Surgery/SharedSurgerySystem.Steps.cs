@@ -304,6 +304,7 @@ public abstract partial class SharedSurgerySystem
                 var slotName = removedComp.Symmetry != null
                     ? $"{removedComp.Symmetry?.ToString().ToLower()} {removedComp.Part.ToString().ToLower()}"
                     : removedComp.Part.ToString().ToLower();
+                _body.TryCreatePartSlot(args.Part, slotName, partComp.PartType, out var _);
                 _body.AttachPart(args.Part, slotName, tool);
             }
         }
@@ -349,10 +350,10 @@ public abstract partial class SharedSurgerySystem
 
         foreach (var tool in args.Tools)
         {
-            if (HasComp(tool, firstOrgan.Component.GetType()))
-            {
-                _body.AddOrganToFirstValidSlot(args.Part, tool, partComp);
-            }
+            if (HasComp(tool, firstOrgan.Component.GetType())
+                && TryComp<OrganComponent>(tool, out var insertedOrgan)
+                && _body.InsertOrgan(args.Part, tool, insertedOrgan.SlotId, partComp, insertedOrgan))
+                break;
         }
     }
 
