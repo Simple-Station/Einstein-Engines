@@ -40,6 +40,7 @@ public sealed class SurgeryBui : BoundUserInterface
 
     protected override void Open()
     {
+        Logger.Debug("Attempting to open");
         _system.OnRefresh += () =>
         {
             UpdateDisabledPanel();
@@ -68,11 +69,11 @@ public sealed class SurgeryBui : BoundUserInterface
 
     private void Update(SurgeryBuiState state)
     {
+        Logger.Debug($"Attempting to update surgerybuistate with {state}, {_player.LocalEntity}, first predicted? {_timing.IsFirstTimePredicted}, surgeryTargetComp? {_entities.TryGetComponent<SurgeryTargetComponent>(_player.LocalEntity, out var surgeryTargetComp2)} {surgeryTargetComp2?.CanOperate}");
         if (!_entities.TryGetComponent<SurgeryTargetComponent>(_player.LocalEntity, out var surgeryTargetComp)
-            || !surgeryTargetComp.CanOperate
-            || !_timing.IsFirstTimePredicted)
+            || !surgeryTargetComp.CanOperate)
             return;
-
+        Logger.Debug("Passed check");
         if (_window == null)
         {
             _window = new SurgeryWindow();
@@ -195,9 +196,13 @@ public sealed class SurgeryBui : BoundUserInterface
 
 
         if (!_window.IsOpen)
+        {
+            Logger.Debug("Attempting to open");
             _window.OpenCentered();
+        }
         else
         {
+            Logger.Debug("Attempting to refresh");
             RefreshUI();
             UpdateDisabledPanel();
         }

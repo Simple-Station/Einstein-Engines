@@ -80,8 +80,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
             }
 
         }
-
-        _ui.TrySetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState(surgeries));
+        Logger.Debug($"Setting UI state with {surgeries}, {body} and {SurgeryUIKey.Key}");
+        _ui.SetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState(surgeries));
     }
 
     private void SetDamage(EntityUid body, DamageSpecifier damage, float partMultiplier,
@@ -105,8 +105,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
             || !args.CanReach
             || args.Target == null
             || !TryComp<SurgeryTargetComponent>(args.User, out var surgery)
-            || !surgery.CanOperate
-            || !TryComp(args.User, out ActorComponent? actor))
+            || !surgery.CanOperate)
         {
             return;
         }
@@ -116,10 +115,10 @@ public sealed class SurgerySystem : SharedSurgerySystem
             _popup.PopupEntity("You can't perform surgery on yourself!", user, user);
             return;
         }*/
-
+        Logger.Debug("OnToolAfterInteract passed, opening UI");
         args.Handled = true;
-        _ui.TryOpen(args.Target.Value, SurgeryUIKey.Key, actor.PlayerSession);
-
+        _ui.OpenUi(args.Target.Value, SurgeryUIKey.Key, user);
+        Logger.Debug("UI opened");
         RefreshUI(args.Target.Value);
     }
 

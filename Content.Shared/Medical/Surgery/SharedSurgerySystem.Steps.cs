@@ -452,10 +452,13 @@ public abstract partial class SharedSurgerySystem
 
     private void OnSurgeryTargetStepChosen(Entity<SurgeryTargetComponent> ent, ref SurgeryStepChosenBuiMsg args)
     {
-        if (args.Session.AttachedEntity is not { } user ||
-            GetEntity(args.Entity) is not { Valid: true } body ||
-            !IsSurgeryValid(body, GetEntity(args.Part), args.Surgery, args.Step, out var surgery, out var part, out var step))
+        var user = args.Actor;
+        if (GetEntity(args.Entity) is not { Valid: true } body ||
+            GetEntity(args.Part) is not { Valid: true } targetPart ||
+            !IsSurgeryValid(body, targetPart, args.Surgery, args.Step, out var surgery, out var part, out var step))
+        {
             return;
+        }
 
         if (!PreviousStepsComplete(body, part, surgery, args.Step) ||
             IsStepComplete(body, part, args.Step, surgery))
@@ -482,7 +485,8 @@ public abstract partial class SharedSurgerySystem
         var ev = new SurgeryDoAfterEvent(args.Surgery, args.Step);
         // TODO: Make this serialized on a per surgery step basis, and also add penalties based on ghetto tools.
         var duration = 2f;
-        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
+        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod)
+            && surgerySpeedMod is not null)
             duration = duration / surgerySpeedMod.SpeedModifier;
 
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)

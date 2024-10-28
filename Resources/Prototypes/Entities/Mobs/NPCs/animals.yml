@@ -1238,8 +1238,8 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      enum.SurgeryUiKey.Key:
-        type: SurgeryBui
+      #enum.SurgeryUIKey.Key:
+      #  type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
     layers:
