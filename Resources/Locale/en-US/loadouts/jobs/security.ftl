@@ -6,6 +6,8 @@ loadout-name-LoadoutMagazinePistolSpare = pistol magazine (.35 auto, spare)
 loadout-name-LoadoutMagazinePistolNonLethalSpare = pistol magazine (.35 auto rubber, spare)
 loadout-name-LoadoutSpeedLoaderMagnumSpare = speed loader (.45 magnum, spare)
 loadout-name-LoadoutSpeedLoaderMagnumRubberSpare = speed loader (.45 magnum rubber, spare)
+loadout-name-LoadoutMagazineMagnumSpare = pistol magazine (.45 magnum, spare)
+loadout-name-LoadoutMagazineMagnumRubberSpare = pistol magazine (.45 magnum rubber, spare)
 
 # Duty Weapons
 loadout-name-LoadoutSecurityMk58 = Mk58 (lethal)
