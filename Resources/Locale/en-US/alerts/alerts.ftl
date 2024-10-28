@@ -57,9 +57,6 @@ alerts-no-battery-desc = You don't have a battery, rendering you unable to charg
 alerts-internals-name = Toggle internals
 alerts-internals-desc = Toggles your gas tank internals on or off.
 
-alerts-internals-name = Toggle internals
-alerts-internals-desc = Toggles your gas tank internals on or off.
-
 alerts-piloting-name = Piloting Shuttle
 alerts-piloting-desc = You are piloting a shuttle. Click the alert to stop.
 
@@ -116,3 +113,6 @@ alerts-walking-desc = Indicates how fast you're moving.
 
 alerts-offer-name = Offer
 alerts-offer-desc = Someone offers you an item.
+
+alerts-deflecting-name = Deflecting
+alerts-deflecting-desc = You have a chance to deflect incoming projectiles. Standing still or moving slowly will increase this chance.

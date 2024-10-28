@@ -14,8 +14,8 @@ language-Draconic-name = Sinta'Unathi
 language-Draconic-description =
     The common language of Moghes - composed of sibilant hisses and rattles. Spoken natively by Unathi.
 
-language-Draconic-name = Sinta'Azaziba
-language-Draconic-description =
+language-Azaziba-name = Sinta'Azaziba
+language-Azaziba-description =
     A language of Moghes consisting of a combination of spoken word and gesticulation.
     While waning since Moghes entered the galactic stage - it enjoys popular use by Unathi that never fell to the Hegemony's cultural dominance.
 
@@ -60,6 +60,9 @@ language-RobotTalk-description = A language consisting of harsh binary chirps, w
 
 language-Sign-name = Tau-Ceti Basic Sign Language
 language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
+
+language-Marish-name = Marish
+language-Marish-description = An Language that can be used to speak in Empathy, Sharing eachother emotions with only one word, Shadowkins speaks this language with ease, tho its is nearly impossible to replicate it or learn it.
 
 language-ValyrianStandard-name = Valyrian Standard
 language-ValyrianStandard-description =

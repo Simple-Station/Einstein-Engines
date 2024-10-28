@@ -80,6 +80,19 @@
     price: 1500
 
 - type: entity
+  name: Deckard
+  parent: WeaponRevolverDeckard
+  id: WeaponRevolverDeckardNonLethal
+  description: A rare, custom-built revolver. Use when you need to spare the Replicants. Comes with .45 magnum rubber.
+  components:
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumRubber
+
+- type: entity
   name: Inspector
   parent: BaseWeaponRevolver
   id: WeaponRevolverInspector
@@ -93,6 +106,19 @@
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
+
+- type: entity
+  name: Inspector
+  parent: WeaponRevolverInspector
+  id: WeaponRevolverInspectorNonLethal
+  description: A detective's best friend. Comes loaded with .45 magnum rubber.
+  components:
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumRubber
 
 - type: entity
   name: Mateba

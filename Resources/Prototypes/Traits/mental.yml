@@ -27,6 +27,11 @@
       inverted: true
       species:
         - Oni
+        - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowPotential
   components:
     - type: PotentiaModifier
       potentiaMultiplier: 1.25
@@ -60,6 +65,11 @@
       inverted: true
       species:
         - Oni
+        - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighPotential
   components:
     - type: PotentiaModifier
       potentiaMultiplier: 0.75
@@ -89,6 +99,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -122,13 +138,19 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - LowAmplification
         - PowerOverwhelming
   psionicPowers:
-    - LowAmplification
+    - HighAmplification
 
 - type: trait
   id: PowerOverwhelming
@@ -155,6 +177,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -188,6 +216,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -220,6 +254,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

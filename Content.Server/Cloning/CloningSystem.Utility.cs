@@ -21,9 +21,9 @@ using Content.Shared.SSDIndicator;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Chat;
 using Content.Server.Body.Components;
+using Content.Server.Language;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Language.Components;
-using Content.Shared.Language;
 using Content.Shared.Nutrition.Components;
 using Robust.Shared.Enums;
 

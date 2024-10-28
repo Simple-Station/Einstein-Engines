@@ -20,7 +20,7 @@
     maxAngle: 16
     fireRate: 8
     angleIncrease: 3
-    angleDecay: 16  
+    angleDecay: 16
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -81,9 +81,9 @@
 
 - type: entity
   name: C-20r sub machine gun
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunC20r
-  description: A firearm that is often used by the infamous nuclear operatives. Uses .35 auto ammo.
+  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
@@ -94,7 +94,13 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+  - type: Wieldable
+  - type: GunWieldBonus
+    minAngle: -19
+    maxAngle: -16
   - type: Gun
+    minAngle: 21
+    maxAngle: 32
     shotsPerBurst: 5
     availableModes:
     - SemiAuto
@@ -112,8 +118,17 @@
   - type: Appearance
 
 - type: entity
+  name: antique C-20r submachine gun
+  parent: WeaponSubMachineGunC20r
+  id: WeaponSubMachineGunC20rHoS
+  description: This heavily worn submachine gun is engraved with the words, "Remember Mars".
+  components:
+    - type: StealTarget
+      stealGroup: HoSAntiqueWeapon
+
+- type: entity
   name: Drozd
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunDrozd
   description: An excellent fully automatic Heavy SMG.
   components:
@@ -126,7 +141,13 @@
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
       sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+    - type: Wieldable
+    - type: GunWieldBonus
+      minAngle: -19
+      maxAngle: -16
     - type: Gun
+      minAngle: 21
+      maxAngle: 32
       fireRate: 6
       selectedMode: FullAuto
       soundGunshot:
@@ -234,7 +255,7 @@
     minAngle: 1
     maxAngle: 6
     angleIncrease: 1.5
-    angleDecay: 6  
+    angleDecay: 6
     selectedMode: FullAuto
     shotsPerBurst: 5
     availableModes:
@@ -265,6 +286,15 @@
     steps: 6
     zeroVisible: true
   - type: Appearance
+
+- type: entity
+  name: antique Wt550
+  id: WeaponSubMachineGunWt550HoS
+  parent: WeaponSubMachineGunWt550
+  description: A prized possession of the station's Head of Security. The smell of dried blood lingers on this weapon's muzzle. A small torch with 24 stars surrounding it has been engraved on the grip.
+  components:
+    - type: StealTarget
+      stealGroup: HoSAntiqueWeapon
 
 # Rubber
 - type: entity

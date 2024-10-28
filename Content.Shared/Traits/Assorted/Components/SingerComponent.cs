@@ -12,5 +12,8 @@ public sealed partial class SingerComponent : Component
     public ProtoId<SingerInstrumentPrototype> Proto = string.Empty;
 
     [DataField(serverOnly: true)]
+    public EntProtoId? MidiActionId = "ActionHarpyPlayMidi";
+
+    [DataField(serverOnly: true)]
     public EntityUid? MidiAction;
 }
