@@ -13,26 +13,8 @@ public sealed class PunpunSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly ServerMetaDataSystem _meta = default!;
 
-    private (int, string, string) _punpunData = (0, string.Empty, string.Empty);
+    private (int, string, string) _punpunData = (1, string.Empty, string.Empty);
 
-    // All the roman numerals we'll need to display
-    private readonly Dictionary<int, string> _numerals = new()
-    {
-        { 0, "I" },
-        { 1, "II" },
-        { 2, "III" },
-        { 3, "IV" },
-        { 4, "V" },
-        { 5, "VI" },
-        { 6, "VII" },
-        { 7, "VIII" },
-        { 8, "IX" },
-        { 9, "X" },
-        { 10, "XI" },
-        { 11, "XII" },
-        { 12, "XIII" },
-        { 13, "XIV" }
-    };
 
     public override void Initialize()
     {
@@ -42,20 +24,21 @@ public sealed class PunpunSystem : EntitySystem
         SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEnd);
     }
 
+
     // Checks if the Punpun data has any items to equip, and names the Punpun upon initialization
     private void OnRoundStart(EntityUid uid, PunpunComponent component, ComponentStartup args)
     {
-        if (_punpunData.Item1 > 13)
+        if (_punpunData.Item1 > component.Lifetime)
         {
             EntityManager.SpawnEntity("PaperWrittenPunpunNote", Transform(uid).Coordinates);
             EntityManager.QueueDeleteEntity(uid);
-            _punpunData = (0, string.Empty, string.Empty);
+            _punpunData = (1, string.Empty, string.Empty);
 
             return;
         }
 
         var meta = MetaData(uid);
-        _meta.SetEntityName(uid, $"{meta.EntityName} {_numerals[_punpunData.Item1]}", meta);
+        _meta.SetEntityName(uid, $"{meta.EntityName} {ToRomanNumeral(_punpunData.Item1)}", meta);
 
         if (!EntityManager.TryGetComponent<InventoryComponent>(uid, out _))
             return;
@@ -67,7 +50,7 @@ public sealed class PunpunSystem : EntitySystem
     // If so, stores the items and increments the Punpun count
     private void OnRoundEnd(RoundEndTextAppendEvent ev)
     {
-        // I couldn't find a method to get a single entity, so this just enumerated over the first and disposes it
+        // I couldn't find a method to get a single entity, so this just enumerates over the first and disposes it
         var punpunComponents = EntityManager.EntityQueryEnumerator<PunpunComponent>();
         punpunComponents.MoveNext(out var punpun, out _);
 
@@ -105,5 +88,25 @@ public sealed class PunpunSystem : EntitySystem
         return _inventory.TryGetSlotEntity(uid, slot, out var item)
             ? EntityManager.GetComponent<MetaDataComponent>(item.Value).EntityPrototype!.ID
             : string.Empty;
+    }
+
+
+    // Punpun, the lord of Roman Numerals
+    public static List<string> RomanNumerals = new() { "M",  "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+    public static List<int> Numerals = new()         { 1000, 900,  500, 400,  100, 90,   50,  40,   10,  9,    5,   4,    1   };
+
+    public static string ToRomanNumeral(int number)
+    {
+        var romanNumeral = string.Empty;
+        while (number > 0)
+        {
+            // Find the biggest numeral that is less than equal to number
+            var index = Numerals.FindIndex(x => x <= number);
+            // Subtract its value from your number
+            number -= Numerals[index];
+            // Add it onto the end of your roman numeral
+            romanNumeral += RomanNumerals[index];
+        }
+        return romanNumeral;
     }
 }
