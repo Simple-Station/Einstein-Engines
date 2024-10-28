@@ -13,7 +13,7 @@ public sealed class PunpunSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly ServerMetaDataSystem _meta = default!;
 
-    private (int, string, string) _punpunData = (1, string.Empty, string.Empty);
+    private (int, string, string, string) _punpunData = (1, string.Empty, string.Empty, string.Empty);
 
 
     public override void Initialize()
@@ -32,7 +32,7 @@ public sealed class PunpunSystem : EntitySystem
         {
             EntityManager.SpawnEntity("PaperWrittenPunpunNote", Transform(uid).Coordinates);
             EntityManager.QueueDeleteEntity(uid);
-            _punpunData = (1, string.Empty, string.Empty);
+            _punpunData = (1, string.Empty, string.Empty, string.Empty);
 
             return;
         }
@@ -44,6 +44,7 @@ public sealed class PunpunSystem : EntitySystem
             return;
         EquipItem(uid, "head", _punpunData.Item2);
         EquipItem(uid, "mask", _punpunData.Item3);
+        EquipItem(uid, "jumpsuit", _punpunData.Item4);
     }
 
     // Checks if Punpun exists, and is alive at round end
@@ -56,7 +57,7 @@ public sealed class PunpunSystem : EntitySystem
 
         if (!EntityManager.TryGetComponent<MobStateComponent>(punpun, out var mobState)
             || mobState.CurrentState == MobState.Dead)
-            _punpunData = (0, string.Empty, string.Empty);
+            _punpunData = (1, string.Empty, string.Empty, string.Empty);
 
         _punpunData.Item1++;
 
@@ -64,6 +65,7 @@ public sealed class PunpunSystem : EntitySystem
         {
             _punpunData.Item2 = CheckSlot(punpun, "head");
             _punpunData.Item3 = CheckSlot(punpun, "mask");
+            _punpunData.Item4 = CheckSlot(punpun, "jumpsuit");
         }
 
         punpunComponents.Dispose();
