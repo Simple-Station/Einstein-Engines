@@ -404,13 +404,11 @@ namespace Content.Server.Database
         public string TraitName { get; set; } = null!;
     }
 
-    public class Loadout
+    public class Loadout : Shared.Clothing.Loadouts.Systems.Loadout
     {
         public int Id { get; set; }
         public Profile Profile { get; set; } = null!;
         public int ProfileId { get; set; }
-
-        public string LoadoutName { get; set; } = null!;
     }
 
     public enum DbPreferenceUnavailableMode

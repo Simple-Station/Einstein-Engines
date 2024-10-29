@@ -65,7 +65,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
             var slot = "";
 
             // Ignore loadouts that don't exist
-            if (!_prototype.TryIndex<LoadoutPrototype>(loadout, out var loadoutProto))
+            if (!_prototype.TryIndex<LoadoutPrototype>(loadout.LoadoutName, out var loadoutProto))
                 continue;
 
 
@@ -120,4 +120,26 @@ public sealed class SharedLoadoutSystem : EntitySystem
         // The server has more information about the inventory system than the client does and the client doesn't need to put loadouts in backpacks
         return failedLoadouts;
     }
+}
+
+
+public class Loadout(
+    string loadoutName = null!,
+    string? customName = null,
+    string? customDescription = null,
+    string? customColorTint = null)
+{
+    public string LoadoutName { get; set; } = loadoutName;
+    public string? CustomName { get; set; } = customName;
+    public string? CustomDescription { get; set; } = customDescription;
+    public string? CustomColorTint { get; set; } = customColorTint;
+}
+
+public sealed class LoadoutPreference(
+    string loadoutName = null!,
+    string? customName = null,
+    string? customDescription = null,
+    string? customColorTint = null) : Loadout
+{
+    public bool Selected;
 }

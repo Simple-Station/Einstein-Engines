@@ -6,6 +6,7 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -57,13 +58,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
         }
     }
 
-    public bool Preference
-    {
-        get => PreferenceButton.Pressed;
-        set => PreferenceButton.Pressed = value;
-    }
+    public LoadoutPreference Preference = new();
 
-    public event Action<bool>? PreferenceChanged;
+    public event Action<LoadoutPreference>? PreferenceChanged;
 
     public LoadoutPreferenceSelector(LoadoutPrototype loadout, JobPrototype highJob,
         HumanoidCharacterProfile profile, ref Dictionary<string, EntityUid> entities,

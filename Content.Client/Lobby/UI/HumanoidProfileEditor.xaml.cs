@@ -11,6 +11,7 @@ using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -1969,11 +1970,12 @@ namespace Content.Client.Lobby.UI
             foreach (var preferenceSelector in _loadoutPreferences)
             {
                 var loadoutId = preferenceSelector.Loadout.ID;
-                var preference = Profile?.LoadoutPreferences.Contains(loadoutId) ?? false;
+                var d = Profile?.LoadoutPreferences.First(l => l.LoadoutName == loadoutId) ?? new();
+                var preference = new LoadoutPreference(d.LoadoutName, d.CustomName, d.CustomDescription, d.CustomColorTint) { Selected = true };
 
                 preferenceSelector.Preference = preference;
 
-                if (preference)
+                if (preference.Selected)
                 {
                     points -= preferenceSelector.Loadout.Cost;
                     LoadoutPointsBar.Value = points;
@@ -1985,7 +1987,7 @@ namespace Content.Client.Lobby.UI
             LoadoutsRemoveUnusableButton.Text = Loc.GetString("humanoid-profile-editor-loadouts-remove-unusable-button",
                 ("count", _loadouts
                     .Where(l => _loadoutPreferences
-                        .Where(lps => lps.Preference).Select(lps => lps.Loadout).Contains(l.Key))
+                        .Where(lps => lps.Preference.Selected).Select(lps => lps.Loadout).Contains(l.Key))
                     .Count(l => !l.Value
                         || !_loadoutPreferences.Find(lps => lps.Loadout == l.Key)!.Wearable)));
             AdminUIHelpers.RemoveConfirm(LoadoutsRemoveUnusableButton, _confirmationData);
@@ -2226,10 +2228,10 @@ namespace Content.Client.Lobby.UI
                 selector.PreferenceChanged += preference =>
                 {
                     // Make sure they have enough loadout points
-                    preference = preference ? CheckPoints(-selector.Loadout.Cost, preference) : CheckPoints(selector.Loadout.Cost, preference);
+                    var selected = preference.Selected ? CheckPoints(-selector.Loadout.Cost, preference.Selected) : CheckPoints(selector.Loadout.Cost, preference.Selected);
 
                     // Update Preferences
-                    Profile = Profile?.WithLoadoutPreference(selector.Loadout.ID, preference);
+                    Profile = Profile?.WithLoadoutPreference(selector.Loadout.ID, selected);
                     IsDirty = true;
                     UpdateLoadoutPreferences();
                     UpdateCharacterRequired();

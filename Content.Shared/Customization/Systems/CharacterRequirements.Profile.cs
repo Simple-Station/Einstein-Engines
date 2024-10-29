@@ -274,7 +274,7 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
             ("loadouts", $"[color={color}]{string.Join($"[/color], [color={color}]",
                 Loadouts.Select(l => Loc.GetString($"loadout-name-{l}")))}[/color]")));
 
-        return Loadouts.Any(l => profile.LoadoutPreferences.Contains(l.ToString()));
+        return Loadouts.Any(l => profile.LoadoutPreferences.Select(l => l.LoadoutName).Contains(l.ToString()));
     }
 }
 
