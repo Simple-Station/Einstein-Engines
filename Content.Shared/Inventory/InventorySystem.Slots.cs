@@ -184,14 +184,12 @@ public partial class InventorySystem : EntitySystem
         {
             if (slot.Name != slotName)
                 continue;
-            Logger.Debug($"Found slot {slotName}, setting disabled to {isDisabled}");
 
             if (isDisabled)
             {
                 if (!TryGetSlotContainer(uid, slotName, out var container, out _, inventory))
                     break;
 
-                Logger.Debug($"Dropping contents.");
                 if (container.ContainedEntity is { } entityUid && TryComp(entityUid, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
                 {
                     _transform.AttachToGridOrMap(entityUid, transform);
@@ -201,9 +199,7 @@ public partial class InventorySystem : EntitySystem
             }
             //else
                 //_containerSystem.EnsureContainer<ContainerSlot>(uid, slotName);
-            Logger.Debug($"Slot state before {slot.Disabled}");
             slot.Disabled = isDisabled;
-            Logger.Debug($"Slot state after {slot.Disabled}");
             break;
         }
 

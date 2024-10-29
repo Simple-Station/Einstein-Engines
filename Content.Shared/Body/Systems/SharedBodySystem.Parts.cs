@@ -147,7 +147,6 @@ public partial class SharedBodySystem
 
         var ev = new BodyPartAddedEvent(slotId, partEnt);
         RaiseLocalEvent(bodyEnt, ref ev);
-        Logger.Debug($"Attempting to readd slot to {bodyEnt}");
         AddLeg(partEnt, bodyEnt);
     }
 
@@ -221,7 +220,7 @@ public partial class SharedBodySystem
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
             return;
 
-         if (partEnt.Comp.Children.Any())
+        if (partEnt.Comp.Children.Any())
         {
             foreach (var slotId in partEnt.Comp.Children.Keys)
             {
@@ -301,16 +300,12 @@ public partial class SharedBodySystem
     /// </summary>
     public void ChangeSlotState(Entity<BodyPartComponent> partEnt, bool disable)
     {
-        if (partEnt.Comp.Body is not null)
-            Logger.Debug($"Attempting to change slot state to {disable} for {partEnt.Comp.PartType}. Number of parts: {GetBodyPartCount(partEnt.Comp.Body.Value, partEnt.Comp.PartType)}");
         if (partEnt.Comp.Body is not null
             && GetBodyPartCount(partEnt.Comp.Body.Value, partEnt.Comp.PartType) == 1
             && TryGetPartSlotContainerName(partEnt.Comp.PartType, out var containerNames))
         {
-            Logger.Debug($"Found container names {containerNames}, with a number of {containerNames.Count}");
             foreach (var containerName in containerNames)
             {
-                Logger.Debug($"Setting slot state to {disable} for {containerName}");
                 _inventorySystem.SetSlotStatus(partEnt.Comp.Body.Value, containerName, disable);
                 var ev = new RefreshInventorySlotsEvent(containerName);
                 RaiseLocalEvent(partEnt.Comp.Body.Value, ev);

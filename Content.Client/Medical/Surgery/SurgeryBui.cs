@@ -40,7 +40,6 @@ public sealed class SurgeryBui : BoundUserInterface
 
     protected override void Open()
     {
-        Logger.Debug("Attempting to open");
         _system.OnRefresh += () =>
         {
             UpdateDisabledPanel();
@@ -194,13 +193,9 @@ public sealed class SurgeryBui : BoundUserInterface
 
 
         if (!_window.IsOpen)
-        {
-            Logger.Debug("Attempting to open");
             _window.OpenCentered();
-        }
         else
         {
-            Logger.Debug("Attempting to refresh");
             RefreshUI();
             UpdateDisabledPanel();
         }

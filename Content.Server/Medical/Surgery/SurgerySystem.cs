@@ -80,7 +80,6 @@ public sealed class SurgerySystem : SharedSurgerySystem
             }
 
         }
-        Logger.Debug($"Setting UI state with {surgeries}, {body} and {SurgeryUIKey.Key}");
         _ui.SetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState(surgeries));
     }
 
@@ -115,10 +114,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
             _popup.PopupEntity("You can't perform surgery on yourself!", user, user);
             return;
         }*/
-        Logger.Debug("OnToolAfterInteract passed, opening UI");
         args.Handled = true;
         _ui.OpenUi(args.Target.Value, SurgeryUIKey.Key, user);
-        Logger.Debug("UI opened");
         RefreshUI(args.Target.Value);
     }
 

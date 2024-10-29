@@ -150,7 +150,6 @@ public partial class SharedBodySystem
             return;
 
         var (targetType, targetSymmetry) = ConvertTargetBodyPart(args.TargetPart.Value);
-        Logger.Debug($"Applying damage to {ToPrettyString(ent)} with {ent.Comp} and {args} {targetType} {targetSymmetry}");
         foreach (var part in GetBodyChildrenOfType(ent, targetType, ent.Comp)
             .Where(part => part.Component.Symmetry == targetSymmetry))
         {
