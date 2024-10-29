@@ -50,6 +50,13 @@
   - type: HTN
     rootTask:
       task: MeleePsionicFamiliarCompound
+    blackboard:
+      IdleRange: !type:Single
+        3.5
+      FollowCloseRange: !type:Single
+        2.0
+      FollowRange: !type:Single
+        3.0
   - type: NPCRetaliation
     attackMemoryLength: 10
     retaliateFriendlies: true
