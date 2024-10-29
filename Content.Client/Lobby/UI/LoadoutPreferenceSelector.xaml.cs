@@ -1,8 +1,10 @@
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using Content.Client.Guidebook;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
+using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Preferences;
@@ -24,6 +26,8 @@ namespace Content.Client.Lobby.UI;
 [GenerateTypedNameReferences]
 public sealed partial class LoadoutPreferenceSelector : Control
 {
+    public const string DefaultLoadoutInfoGuidebook = "LoadoutInfo";
+
     public LoadoutPrototype Loadout { get; }
 
     public bool Valid;
@@ -99,6 +103,38 @@ public sealed partial class LoadoutPreferenceSelector : Control
             previewLoadout.SetEntity(dummyLoadoutItem);
         }
 
+        var loadoutName =
+            Loc.GetString($"loadout-name-{loadout.ID}") == $"loadout-name-{loadout.ID}"
+                ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName
+                : Loc.GetString($"loadout-name-{loadout.ID}");
+        var loadoutDesc =
+            !Loc.TryGetString($"loadout-description-{loadout.ID}", out var description)
+                ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityDescription
+                : description;
+
+
+        // Manage the info button
+        void updateGuidebook()
+        {
+            GuidebookButton.Visible = prototypeManager.HasIndex<GuideEntryPrototype>(DefaultLoadoutInfoGuidebook + Loadout.ID);
+            PreferenceButton.RemoveStyleClass("OpenRight");
+            if (GuidebookButton.Visible)
+                PreferenceButton.AddStyleClass("OpenRight");
+        }
+        updateGuidebook();
+        prototypeManager.PrototypesReloaded += _ => updateGuidebook();
+
+        GuidebookButton.OnPressed += _ =>
+        {
+            var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
+
+            if (!prototypeManager.TryIndex<GuideEntryPrototype>(DefaultLoadoutInfoGuidebook + Loadout.ID, out var guideRoot))
+                return;
+
+            var dict = new Dictionary<string, GuideEntry> { { DefaultLoadoutInfoGuidebook, guideRoot } };
+            //TODO: Don't close the guidebook if its already open, just go to the correct page
+            guidebookController.ToggleGuidebook(dict, selected: DefaultLoadoutInfoGuidebook + Loadout.ID);
+        };
 
         // Create a checkbox to get the loadout
         PreferenceButton.AddChild(new BoxContainer
@@ -124,22 +160,20 @@ public sealed partial class LoadoutPreferenceSelector : Control
                 },
                 new Label
                 {
-                    Text = Loc.GetString($"loadout-name-{loadout.ID}") == $"loadout-name-{loadout.ID}"
-                        ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName
-                        : Loc.GetString($"loadout-name-{loadout.ID}"),
+                    Text = loadoutName,
                     Margin = new Thickness(8, 0, 0, 0),
                 },
             },
         });
-        PreferenceButton.OnToggled += OnPreferenceButtonToggled;
+        PreferenceButton.OnToggled += _ => PreferenceChanged?.Invoke(Preference);
+
+        NameEdit.PlaceHolder = loadoutName;
+        DescriptionEdit.Placeholder = new Rope.Leaf(Loc.GetString(loadoutDesc));
 
         var tooltip = new StringBuilder();
         // Add the loadout description to the tooltip if there is one
-        var desc = !Loc.TryGetString($"loadout-description-{loadout.ID}", out var description)
-            ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityDescription
-            : description;
-        if (!string.IsNullOrEmpty(desc))
-            tooltip.Append($"{Loc.GetString(desc)}");
+        if (!string.IsNullOrEmpty(loadoutDesc))
+            tooltip.Append($"{Loc.GetString(loadoutDesc)}");
 
 
         // Get requirement reasons
@@ -160,10 +194,5 @@ public sealed partial class LoadoutPreferenceSelector : Control
             formattedTooltip.SetMessage(FormattedMessage.FromMarkupPermissive(tooltip.ToString()));
             PreferenceButton.TooltipSupplier = _ => formattedTooltip;
         }
-    }
-
-    private void OnPreferenceButtonToggled(BaseButton.ButtonToggledEventArgs args)
-    {
-        PreferenceChanged?.Invoke(Preference);
     }
 }

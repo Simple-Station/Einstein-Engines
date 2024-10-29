@@ -9,11 +9,10 @@ using Content.Shared.Station;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Clothing.Loadouts.Systems;
 
-public sealed class LoadoutSystem : EntitySystem
+public sealed class SharedLoadoutSystem : EntitySystem
 {
     [Dependency] private readonly SharedStationSpawningSystem _station = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;

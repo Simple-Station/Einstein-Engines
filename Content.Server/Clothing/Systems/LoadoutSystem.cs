@@ -1,6 +1,7 @@
 using Content.Server.GameTicking;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
+using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Players;
@@ -13,7 +14,7 @@ namespace Content.Server.Clothing.Systems;
 public sealed class LoadoutSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-    [Dependency] private readonly Shared.Clothing.Loadouts.Systems.LoadoutSystem _loadout = default!;
+    [Dependency] private readonly SharedLoadoutSystem _loadout = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;

@@ -1,10 +1,62 @@
 <Control xmlns="https://spacestation14.io"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <BoxContainer Name="Container" Orientation="Horizontal">
-        <Button
-            Name="PreferenceButton"
-            ToggleMode="True"
-            VerticalAlignment="Center"
-            StyleClasses="OpenLeft" />
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+    <BoxContainer Name="Container" Orientation="Vertical" HorizontalExpand="True">
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Button
+                Name="PreferenceButton"
+                ToggleMode="True"
+                VerticalAlignment="Center" />
+
+            <!-- Yes I know I can use a TextureButton, but I'm doing this for style -->
+            <Button
+                Name="GuidebookButton"
+                ToolTip="{Loc 'humanoid-profile-editor-loadouts-guidebook-button-tooltip'}"
+                VerticalAlignment="Center"
+                SetHeight="38"
+                StyleClasses="OpenLeft">
+                <TextureRect
+                    Name="GuidebookButtonIcon"
+                    TextureScale="0.4 0.4"
+                    VerticalAlignment="Center"
+                    TexturePath="/Textures/Interface/VerbIcons/information.svg.192dpi.png"/>
+            </Button>
+        </BoxContainer>
+
+        <Collapsible Name="ExtrasMenu" HorizontalExpand="True">
+            <CollapsibleHeading>
+                <Label Text="Heading" />
+            </CollapsibleHeading>
+            <CollapsibleBody HorizontalExpand="True" Margin="0 0 0 5">
+                <PanelContainer HorizontalExpand="True">
+                    <PanelContainer.PanelOverride>
+                        <graphics:StyleBoxFlat BackgroundColor="#2f2f2f" BorderColor="#2f2f2faf" BorderThickness="1" />
+                    </PanelContainer.PanelOverride>
+
+                    <BoxContainer Orientation="Vertical" Margin="3" HorizontalExpand="True">
+                        <Label Text="Name" />
+                        <LineEdit Name="NameEdit" HorizontalExpand="True" />
+
+                        <Label Text="Description" />
+                        <PanelContainer HorizontalExpand="True">
+                            <PanelContainer.PanelOverride>
+                                <graphics:StyleBoxFlat BackgroundColor="#222222" />
+                            </PanelContainer.PanelOverride>
+
+                            <controls:ResizableControl
+                                AllowedResizeDirection="Vertical"
+                                HorizontalExpand="True"
+                                MinSize="128 64">
+                                <TextEdit Name="DescriptionEdit" HorizontalExpand="True" VerticalExpand="True" Margin="3" />
+                            </controls:ResizableControl>
+                        </PanelContainer>
+
+                        <Label Text="Color" />
+                        <ColorSelectorSliders Name="ColorEdit" Color="#fff" HorizontalExpand="True" />
+                    </BoxContainer>
+                </PanelContainer>
+            </CollapsibleBody>
+        </Collapsible>
     </BoxContainer>
 </Control>
