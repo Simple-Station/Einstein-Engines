@@ -7655,3 +7655,13 @@ Entries:
   id: 6495
   time: '2024-10-27T16:51:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1146
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the default "Following distance" of Psionic Familiars from 10
+        meters to 3 meters, so that they don't have an ungodly hard time keeping
+        up with their Master.
+  id: 6496
+  time: '2024-10-29T02:24:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1162
