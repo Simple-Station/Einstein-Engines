@@ -77,7 +77,7 @@ namespace Content.Client.Lobby.UI
         private Dictionary<Button, ConfirmationData> _confirmationData = new();
         private List<TraitPreferenceSelector> _traitPreferences = new();
         private int _traitCount;
-        private List<LoadoutPreferenceSelector> _loadoutPreferences = new();
+        private HashSet<LoadoutPreferenceSelector> _loadoutPreferences = new();
 
         private Direction _previewRotation = Direction.North;
         private ColorSelectorSliders _rgbSkinColorSelector;
@@ -428,7 +428,7 @@ namespace Content.Client.Lobby.UI
             // Set up the loadouts tab
             LoadoutsTab.Orphan();
             CTabContainer.AddTab(LoadoutsTab, Loc.GetString("humanoid-profile-editor-loadouts-tab"));
-            _loadoutPreferences = new List<LoadoutPreferenceSelector>();
+            _loadoutPreferences = new();
 
             // Show/Hide the loadouts tab if they ever get enabled/disabled
             var loadoutsEnabled = cfgManager.GetCVar(CCVars.GameLoadoutsEnabled);
@@ -1970,8 +1970,8 @@ namespace Content.Client.Lobby.UI
             foreach (var preferenceSelector in _loadoutPreferences)
             {
                 var loadoutId = preferenceSelector.Loadout.ID;
-                var d = Profile?.LoadoutPreferences.First(l => l.LoadoutName == loadoutId) ?? new();
-                var preference = new LoadoutPreference(d.LoadoutName, d.CustomName, d.CustomDescription, d.CustomColorTint) { Selected = true };
+                var d = Profile?.LoadoutPreferences.FirstOrDefault(l => l.LoadoutName == loadoutId) ?? preferenceSelector.Preference;
+                var preference = new LoadoutPreference(d.LoadoutName, d.CustomName, d.CustomDescription, d.CustomColorTint) { Selected = d.Selected };
 
                 preferenceSelector.Preference = preference;
 
@@ -1989,7 +1989,7 @@ namespace Content.Client.Lobby.UI
                     .Where(l => _loadoutPreferences
                         .Where(lps => lps.Preference.Selected).Select(lps => lps.Loadout).Contains(l.Key))
                     .Count(l => !l.Value
-                        || !_loadoutPreferences.Find(lps => lps.Loadout == l.Key)!.Wearable)));
+                        || !_loadoutPreferences.First(lps => lps.Loadout == l.Key).Wearable)));
             AdminUIHelpers.RemoveConfirm(LoadoutsRemoveUnusableButton, _confirmationData);
 
             IsDirty = true;
@@ -2041,10 +2041,11 @@ namespace Content.Client.Lobby.UI
                 );
                 _loadouts.Add(loadout, usable);
 
-                if (_loadoutPreferences.FindIndex(lps => lps.Loadout.ID == loadout.ID) is not (not -1 and var i))
+                var list = _loadoutPreferences.ToList();
+                if (list.FindIndex(lps => lps.Loadout.ID == loadout.ID) is not (not -1 and var i))
                     continue;
 
-                var selector = _loadoutPreferences[i];
+                var selector = list[i];
                 UpdateSelector(selector, usable);
             }
 
@@ -2118,6 +2119,7 @@ namespace Content.Client.Lobby.UI
                     loadout, highJob ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), ref _dummyLoadouts,
                     _entManager, _prototypeManager, _cfgManager, _characterRequirementsSystem, _requirements);
+                selector.Preference = new(loadout.ID);
                 UpdateSelector(selector, usable);
                 AddSelector(selector);
 
@@ -2228,10 +2230,17 @@ namespace Content.Client.Lobby.UI
                 selector.PreferenceChanged += preference =>
                 {
                     // Make sure they have enough loadout points
-                    var selected = preference.Selected ? CheckPoints(-selector.Loadout.Cost, preference.Selected) : CheckPoints(selector.Loadout.Cost, preference.Selected);
+                    var selected = preference.Selected
+                        ? CheckPoints(-selector.Loadout.Cost, preference.Selected)
+                        : CheckPoints(selector.Loadout.Cost, preference.Selected);
 
                     // Update Preferences
-                    Profile = Profile?.WithLoadoutPreference(selector.Loadout.ID, selected);
+                    Profile = Profile?.WithLoadoutPreference(
+                        selector.Loadout.ID,
+                        selected,
+                        preference.CustomName,
+                        preference.CustomDescription,
+                        preference.CustomColorTint);
                     IsDirty = true;
                     UpdateLoadoutPreferences();
                     UpdateCharacterRequired();
@@ -2322,7 +2331,7 @@ namespace Content.Client.Lobby.UI
             // Remove unusable and unwearable loadouts
             foreach (var (loadout, _) in
                 _loadouts.Where(l =>
-                    !l.Value || !_loadoutPreferences.Find(lps => lps.Loadout.ID == l.Key.ID)!.Wearable).ToList())
+                    !l.Value || !_loadoutPreferences.First(lps => lps.Loadout.ID == l.Key.ID).Wearable).ToList())
                 Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
             UpdateCharacterRequired();
         }

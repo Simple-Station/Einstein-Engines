@@ -31,6 +31,26 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
     public LoadoutPrototype Loadout { get; }
 
+    private LoadoutPreference _preference = null!;
+    public LoadoutPreference Preference
+    {
+        get => _preference = new(Loadout.ID)
+        {
+            CustomName = string.IsNullOrEmpty(NameEdit.Text) ? null : NameEdit.Text,
+            CustomDescription = string.IsNullOrEmpty(Rope.Collapse(DescriptionEdit.TextRope)) ? null : Rope.Collapse(DescriptionEdit.TextRope),
+            CustomColorTint = ColorEdit.Color == Color.White ? null : ColorEdit.Color.ToHex(),
+            Selected = PreferenceButton.Pressed,
+        };
+        set
+        {
+            _preference = value;
+            NameEdit.Text = _preference.CustomName ?? "";
+            DescriptionEdit.TextRope = new Rope.Leaf(_preference.CustomDescription ?? "");
+            ColorEdit.Color = Color.FromHex(_preference.CustomColorTint, Color.White);
+            PreferenceButton.Pressed = _preference.Selected;
+        }
+    }
+
     public bool Valid;
     private bool _showUnusable;
     public bool ShowUnusable
@@ -57,8 +77,6 @@ public sealed partial class LoadoutPreferenceSelector : Control
             PreferenceButton.AddStyleClass(_wearable ? "" : StyleBase.ButtonCaution);
         }
     }
-
-    public LoadoutPreference Preference = new();
 
     public event Action<LoadoutPreference>? PreferenceChanged;
 
@@ -163,6 +181,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
             },
         });
         PreferenceButton.OnToggled += _ => PreferenceChanged?.Invoke(Preference);
+        SaveButton.OnPressed += _ => PreferenceChanged?.Invoke(Preference);
 
         NameEdit.PlaceHolder = loadoutName;
         DescriptionEdit.Placeholder = new Rope.Leaf(Loc.GetString(loadoutDesc));

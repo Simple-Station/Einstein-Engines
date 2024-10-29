@@ -6,6 +6,7 @@
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
             <Button
                 Name="PreferenceButton"
+                Access="Public"
                 ToggleMode="True"
                 VerticalAlignment="Center" />
 
@@ -18,9 +19,10 @@
                 StyleClasses="OpenLeft">
                 <TextureRect
                     Name="GuidebookButtonIcon"
+                    TexturePath="/Textures/Interface/VerbIcons/information.svg.192dpi.png"
                     TextureScale="0.4 0.4"
                     VerticalAlignment="Center"
-                    TexturePath="/Textures/Interface/VerbIcons/information.svg.192dpi.png"/>
+                    Margin="5" />
             </Button>
         </BoxContainer>
 
@@ -54,6 +56,9 @@
 
                         <Label Text="Color" />
                         <ColorSelectorSliders Name="ColorEdit" Color="#fff" HorizontalExpand="True" />
+                        <BoxContainer HorizontalExpand="True">
+                            <Button Name="SaveButton" Text="Save" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
+                        </BoxContainer>
                     </BoxContainer>
                 </PanelContainer>
             </CollapsibleBody>

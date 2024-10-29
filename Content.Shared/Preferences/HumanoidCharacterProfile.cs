@@ -310,7 +310,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return new(this) { _traitPreferences = list };
     }
 
-    public HumanoidCharacterProfile WithLoadoutPreference(string loadoutId,
+    public HumanoidCharacterProfile WithLoadoutPreference(
+        string loadoutId,
         bool pref,
         string? customName = null,
         string? customDescription = null,
@@ -318,10 +319,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
         var list = new HashSet<LoadoutPreference>(_loadoutPreferences);
 
+        list.RemoveWhere(l => l.LoadoutName == loadoutId);
         if (pref)
-            list.Add(new(loadoutId, customName, customDescription, customColor) { Selected = pref});
-        else
-            list.RemoveWhere(l => l.LoadoutName == loadoutId);
+            list.Add(new(loadoutId, customName, customDescription, customColor) { Selected = pref });
 
         return new HumanoidCharacterProfile(this) { _loadoutPreferences = list };
     }

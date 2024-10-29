@@ -658,6 +658,18 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CustomColorTint")
+                        .HasColumnType("text")
+                        .HasColumnName("custom_color_tint");
+
+                    b.Property<string>("CustomDescription")
+                        .HasColumnType("text")
+                        .HasColumnName("custom_description");
+
+                    b.Property<string>("CustomName")
+                        .HasColumnType("text")
+                        .HasColumnName("custom_name");
+
                     b.Property<string>("LoadoutName")
                         .IsRequired()
                         .HasColumnType("text")

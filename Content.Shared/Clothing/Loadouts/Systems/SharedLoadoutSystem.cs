@@ -123,8 +123,9 @@ public sealed class SharedLoadoutSystem : EntitySystem
 }
 
 
+[Serializable]
 public class Loadout(
-    string loadoutName = null!,
+    string loadoutName,
     string? customName = null,
     string? customDescription = null,
     string? customColorTint = null)
@@ -135,11 +136,12 @@ public class Loadout(
     public string? CustomColorTint { get; set; } = customColorTint;
 }
 
+[Serializable]
 public sealed class LoadoutPreference(
-    string loadoutName = null!,
+    string loadoutName,
     string? customName = null,
     string? customDescription = null,
-    string? customColorTint = null) : Loadout
+    string? customColorTint = null) : Loadout(loadoutName, customName, customDescription, customColorTint)
 {
     public bool Selected;
 }

@@ -243,11 +243,10 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts.Select(l =>
+                loadouts.Select(l => new LoadoutPreference(l.LoadoutName)
                 {
-                    var nl = (LoadoutPreference) l;
-                    nl.Selected = true;
-                    return nl;
+                    CustomName = l.CustomName, CustomDescription = l.CustomDescription,
+                    CustomColorTint = l.CustomColorTint, Selected = true,
                 }).ToHashSet()
             );
         }
@@ -306,7 +305,7 @@ namespace Content.Server.Database
 
             profile.Loadouts.Clear();
             profile.Loadouts.AddRange(humanoid.LoadoutPreferences
-                .Select(t => (Loadout) (Shared.Clothing.Loadouts.Systems.Loadout) t));
+                .Select(l => new Loadout(l.LoadoutName, l.CustomName, l.CustomDescription, l.CustomColorTint)));
 
             return profile;
         }

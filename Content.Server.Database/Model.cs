@@ -404,7 +404,12 @@ namespace Content.Server.Database
         public string TraitName { get; set; } = null!;
     }
 
-    public class Loadout : Shared.Clothing.Loadouts.Systems.Loadout
+    [Serializable]
+    public class Loadout(
+        string loadoutName,
+        string? customName = null,
+        string? customDescription = null,
+        string? customColorTint = null) : Shared.Clothing.Loadouts.Systems.Loadout(loadoutName, customName, customDescription, customColorTint)
     {
         public int Id { get; set; }
         public Profile Profile { get; set; } = null!;
