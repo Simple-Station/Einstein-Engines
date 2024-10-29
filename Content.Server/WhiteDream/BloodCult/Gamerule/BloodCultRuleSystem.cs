@@ -16,6 +16,7 @@ using Content.Server.WhiteDream.BloodCult.Objectives;
 using Content.Shared.Alert;
 using Content.Shared.Body.Systems;
 using Content.Shared.Cloning;
+using Content.Shared.Cuffs.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mind;
@@ -23,6 +24,7 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mood;
+using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Roles;
 using Content.Shared.WhiteDream.BloodCult.Components;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
@@ -326,51 +328,76 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         RemComp<PentagramComponent>(cultist);
     }
 
-    private void UpdateCultStage(BloodCultRuleComponent cultRuleComponent)
+    private void UpdateCultStage(BloodCultRuleComponent cultRule)
     {
-        var cultistsCount = cultRuleComponent.Cultists.Count;
-        var prevStage = cultRuleComponent.Stage;
+        var cultistsCount = cultRule.Cultists.Count;
+        var prevStage = cultRule.Stage;
 
-        if (cultistsCount >= cultRuleComponent.PentagramThreshold)
-            cultRuleComponent.Stage = CultStage.Pentagram;
-        else if (cultistsCount >= cultRuleComponent.ReadEyeThreshold)
-            cultRuleComponent.Stage = CultStage.RedEyes;
+        if (cultistsCount >= cultRule.PentagramThreshold)
+        {
+            cultRule.Stage = CultStage.Pentagram;
+            SelectRandomLeader(cultRule);
+        }
+        else if (cultistsCount >= cultRule.ReadEyeThreshold)
+            cultRule.Stage = CultStage.RedEyes;
         else
-            cultRuleComponent.Stage = CultStage.Start;
+            cultRule.Stage = CultStage.Start;
 
-        if (cultRuleComponent.Stage != prevStage)
-            UpdateCultistsAppearance(cultRuleComponent, prevStage);
+        if (cultRule.Stage != prevStage)
+            UpdateCultistsAppearance(cultRule, prevStage);
     }
 
-    private void UpdateCultistsAppearance(BloodCultRuleComponent cultRuleComponent, CultStage prevStage)
+    private void UpdateCultistsAppearance(BloodCultRuleComponent cultRule, CultStage prevStage)
     {
-        switch (cultRuleComponent.Stage)
+        switch (cultRule.Stage)
         {
             case CultStage.Start when prevStage == CultStage.RedEyes:
-                foreach (var cultist in cultRuleComponent.Cultists)
+                foreach (var cultist in cultRule.Cultists)
                 {
                     RemoveCultistAppearance(cultist);
                 }
 
                 break;
             case CultStage.RedEyes when prevStage == CultStage.Start:
-                foreach (var cultist in cultRuleComponent.Cultists)
+                foreach (var cultist in cultRule.Cultists)
                 {
                     if (!TryComp<HumanoidAppearanceComponent>(cultist, out var appearanceComponent))
                         continue;
                     cultist.Comp.OriginalEyeColor = appearanceComponent.EyeColor;
-                    appearanceComponent.EyeColor = cultRuleComponent.EyeColor;
+                    appearanceComponent.EyeColor = cultRule.EyeColor;
                     Dirty(cultist, appearanceComponent);
                 }
 
                 break;
             case CultStage.Pentagram:
-                foreach (var cultist in cultRuleComponent.Cultists)
+                foreach (var cultist in cultRule.Cultists)
                 {
                     EnsureComp<PentagramComponent>(cultist);
                 }
 
                 break;
         }
+    }
+
+    /// <summary>
+    ///     A crutch while we have no NORMAL voting system. The DarkRP one fucking sucks.
+    /// </summary>
+    private void SelectRandomLeader(BloodCultRuleComponent cultRule)
+    {
+        if (cultRule.LeaderSelected)
+            return;
+
+        var candidats = cultRule.Cultists;
+        candidats.RemoveAll(entity =>
+            TryComp(entity, out PullableComponent? pullable) && pullable.BeingPulled ||
+            TryComp(entity, out CuffableComponent? cuffable) && cuffable.CuffedHandCount > 0);
+
+        if (candidats.Count == 0)
+            return;
+
+        var leader = _random.Pick(candidats);
+        AddComp<BloodCultLeaderComponent>(leader);
+        cultRule.LeaderSelected = true;
+        cultRule.CultLeader = leader;
     }
 }

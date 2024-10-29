@@ -30,11 +30,17 @@ public sealed partial class BloodCultRuleComponent : Component
     [DataField]
     public int PentagramThreshold = 8;
 
+    [ViewVariables(VVAccess.ReadOnly)]
+    public bool LeaderSelected;
+
     /// <summary>
     ///     The entityUid of body which should be sacrificed.
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     public EntityUid? OfferingTarget;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? CultLeader;
 
     [ViewVariables(VVAccess.ReadOnly)]
     public CultStage Stage = CultStage.Start;
