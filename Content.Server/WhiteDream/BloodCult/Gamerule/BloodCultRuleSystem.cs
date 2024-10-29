@@ -7,6 +7,7 @@ using Content.Server.GameTicking;
 using Content.Server.GameTicking.Components;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Hands.Systems;
+using Content.Server.Language;
 using Content.Server.NPC.Systems;
 using Content.Server.Roles;
 using Content.Server.RoundEnd;
@@ -35,15 +36,16 @@ namespace Content.Server.WhiteDream.BloodCult.Gamerule;
 public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 {
     [Dependency] private readonly IRobustRandom _random = default!;
+
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-
     [Dependency] private readonly AntagSelectionSystem _antagSelection = default!;
 
     // [Dependency] private readonly BloodSpearSystem _bloodSpear = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
+    [Dependency] private readonly LanguageSystem _languageSystem = default!;
     [Dependency] private readonly NpcFactionSystem _factionSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
@@ -67,7 +69,9 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         SubscribeLocalEvent<BloodCultistRoleComponent, GetBriefingEvent>(OnGetBriefing);
     }
 
-    protected override void Started(EntityUid uid, BloodCultRuleComponent component, GameRuleComponent gameRule,
+    protected override void Started(EntityUid uid,
+        BloodCultRuleComponent component,
+        GameRuleComponent gameRule,
         GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
@@ -75,7 +79,8 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         component.OfferingTarget = FindTarget();
     }
 
-    protected override void AppendRoundEndText(EntityUid uid, BloodCultRuleComponent component,
+    protected override void AppendRoundEndText(EntityUid uid,
+        BloodCultRuleComponent component,
         GameRuleComponent gameRule,
         ref RoundEndTextAppendEvent args)
     {
@@ -108,16 +113,12 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
             foreach (var ent in cult.Cultists)
             {
-                if (Deleted(ent.Owner))
+                if (Deleted(ent.Owner) || !TryComp(ent.Owner, out MindContainerComponent? mindContainer) ||
+                    !mindContainer.Mind.HasValue)
                     continue;
 
-                if (!TryComp(ent.Owner, out MindContainerComponent? mindContainer) || !mindContainer.Mind.HasValue)
-                    continue;
-
-                var transform = Transform(ent.Owner);
-                // var reaper = Spawn(cult.ReaperPrototype, transform.Coordinates);
-                // _mindSystem.TransferTo(mindContainer.Mind.Value, reaper);
-
+                var harvester = Spawn(cult.HarvesterPrototype, Transform(ent.Owner).Coordinates);
+                _mindSystem.TransferTo(mindContainer.Mind.Value, harvester);
                 _bodySystem.GibBody(ent);
             }
 
@@ -125,53 +126,53 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         }
     }
 
-    private void OnCultistComponentInit(Entity<BloodCultistComponent> ent, ref ComponentInit args)
+    private void OnCultistComponentInit(Entity<BloodCultistComponent> cultist, ref ComponentInit args)
     {
-        RaiseLocalEvent(ent, new MoodEffectEvent("CultFocused"));
-        _alertsSystem.ShowAlert(ent.Owner, AlertType.BloodSpells);
+        RaiseLocalEvent(cultist, new MoodEffectEvent("CultFocused"));
+        _alertsSystem.ShowAlert(cultist.Owner, AlertType.BloodSpells);
+        _languageSystem.AddLanguage(cultist, cultist.Comp.CultLanguageId);
 
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out var cult, out _))
         {
-            cult.Cultists.Add(ent);
+            cult.Cultists.Add(cultist);
             UpdateCultStage(cult);
         }
     }
 
-    private void OnCultistComponentRemoved(Entity<BloodCultistComponent> ent, ref ComponentRemove args)
+    private void OnCultistComponentRemoved(Entity<BloodCultistComponent> cultist, ref ComponentRemove args)
     {
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out var cult, out _))
         {
-            cult.Cultists.Remove(ent);
+            cult.Cultists.Remove(cultist);
         }
 
-        if (!TerminatingOrDeleted(ent.Owner))
-        {
-            RemoveAllCultItems(ent);
-            RemoveCultistAppearance(ent);
-            RemoveObjectiveAndRole(ent.Owner);
-            RaiseLocalEvent(ent.Owner, new MoodRemoveEffectEvent("CultFocused"));
-            _alertsSystem.ClearAlert(ent.Owner, AlertType.BloodSpells);
-        }
+        CheckRoundShouldEnd();
+
+        if (TerminatingOrDeleted(cultist.Owner))
+            return;
+
+        RemoveAllCultItems(cultist);
+        RemoveCultistAppearance(cultist);
+        RemoveObjectiveAndRole(cultist.Owner);
+        RaiseLocalEvent(cultist.Owner, new MoodRemoveEffectEvent("CultFocused"));
+        _alertsSystem.ClearAlert(cultist.Owner, AlertType.BloodSpells);
+        _languageSystem.RemoveLanguage(cultist.Owner, cultist.Comp.CultLanguageId);
 
         // TODO: Blood spear system
         // _bloodSpear.DetachSpearFromUser((uid, component));
 
-        foreach (var empower in ent.Comp.SelectedEmpowers)
+        foreach (var empower in cultist.Comp.SelectedEmpowers)
         {
-            _actions.RemoveAction(ent.Owner, GetEntity(empower));
+            _actions.RemoveAction(cultist.Owner, GetEntity(empower));
         }
-
-        CheckRoundShouldEnd();
     }
 
     private void OnCultistsStateChanged(Entity<BloodCultistComponent> ent, ref MobStateChangedEvent args)
     {
         if (args.NewMobState == MobState.Dead)
-        {
             CheckRoundShouldEnd();
-        }
     }
 
     private void OnClone(Entity<BloodCultistComponent> ent, ref CloningEvent args)
@@ -187,23 +188,17 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
     public void Convert(EntityUid target)
     {
         if (!TryComp(target, out ActorComponent? actor))
-        {
             return;
-        }
 
         var query = QueryActiveRules();
         while (query.MoveNext(out var ruleUid, out _, out _, out _))
         {
             if (!TryComp(ruleUid, out AntagSelectionComponent? antagSelection))
-            {
                 continue;
-            }
 
             var antagSelectionEnt = (ruleUid, antagSelection);
             if (!_antagSelection.TryGetNextAvailableDefinition(antagSelectionEnt, out var def))
-            {
                 continue;
-            }
 
             _antagSelection.MakeAntag(antagSelectionEnt, actor.PlayerSession, def.Value);
         }
@@ -221,9 +216,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         while (query.MoveNext(out _, out var bloodCultRule, out _))
         {
             if (bloodCultRule.OfferingTarget.HasValue)
-            {
                 return bloodCultRule.OfferingTarget.Value;
-            }
         }
 
         return null;
@@ -310,9 +303,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         while (enumerator.MoveNext(out var container))
         {
             if (container.ContainedEntity != null && HasComp<CultItemComponent>(container.ContainedEntity.Value))
-            {
                 _container.Remove(container.ContainedEntity.Value, container, true, true);
-            }
         }
 
         foreach (var item in _hands.EnumerateHeld(ent))
@@ -320,9 +311,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             if (TryComp(item, out CultItemComponent? cultItem) &&
                 !cultItem.AllowUseToEveryone &&
                 !_hands.TryDrop(ent, item, null, false, false))
-            {
                 QueueDel(item);
-            }
         }
     }
 
@@ -343,22 +332,14 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         var prevStage = cultRuleComponent.Stage;
 
         if (cultistsCount >= cultRuleComponent.PentagramThreshold)
-        {
             cultRuleComponent.Stage = CultStage.Pentagram;
-        }
         else if (cultistsCount >= cultRuleComponent.ReadEyeThreshold)
-        {
             cultRuleComponent.Stage = CultStage.RedEyes;
-        }
         else
-        {
             cultRuleComponent.Stage = CultStage.Start;
-        }
 
         if (cultRuleComponent.Stage != prevStage)
-        {
             UpdateCultistsAppearance(cultRuleComponent, prevStage);
-        }
     }
 
     private void UpdateCultistsAppearance(BloodCultRuleComponent cultRuleComponent, CultStage prevStage)
