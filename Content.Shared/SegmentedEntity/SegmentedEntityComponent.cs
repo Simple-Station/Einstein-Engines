@@ -4,43 +4,25 @@
 * See AGPLv3.txt for details.
 */
 
-using Robust.Shared.GameStates;
-using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
-
 namespace Content.Shared.SegmentedEntity
 {
     /// <summary>
     /// Controls initialization of any Multi-segmented entity
     /// </summary>
-    [RegisterComponent, NetworkedComponent]
-    [AutoGenerateComponentState]
+    [RegisterComponent]
     public sealed partial class SegmentedEntityComponent : Component
     {
         /// <summary>
         /// A list of each UID attached to the Lamia, in order of spawn
         /// </summary>
         [DataField("segments")]
-        [AutoNetworkedField]
-        public List<NetEntity> Segments = new();
+        public List<EntityUid> Segments = new();
 
         /// <summary>
         /// A clamped variable that represents the number of segments to be spawned
         /// </summary>
         [DataField("numberOfSegments")]
         public int NumberOfSegments = 18;
-
-        /// <summary>
-        /// How wide the initial segment should be.
-        /// </summary>
-        [DataField("initialRadius")]
-        public float InitialRadius = 0.3f;
-
-        /// <summary>
-        /// Texture of the segment.
-        /// </summary>
-        [DataField("texturePath", required: true)]
-        public string TexturePath;
 
         /// <summary>
         /// If UseTaperSystem is true, this constant represents the rate at which a segmented entity will taper towards the tip. Tapering is on a logarithmic scale, and will asymptotically approach 0.
@@ -57,17 +39,11 @@ namespace Content.Shared.SegmentedEntity
         /// <summary>
         /// Represents the segment prototype to be spawned
         /// </summary>
-        [DataField("segmentId")]
+        [DataField("SegmentId")]
         public string SegmentId = "LamiaSegment";
 
         /// <summary>
-        /// How much to slim each successive segment.
-        /// </summary>
-        [DataField("slimFactor")]
-        public float SlimFactor = 0.93f;
-
-        /// <summary>
-        /// Set to 1f for constant width
+        /// Toggles the tapering system on and off. When false, segmented entities will have a constant width.
         /// </summary>
         [DataField("useTaperSystem")]
         public bool UseTaperSystem = true;
