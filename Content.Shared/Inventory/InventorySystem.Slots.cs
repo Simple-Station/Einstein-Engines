@@ -184,24 +184,26 @@ public partial class InventorySystem : EntitySystem
         {
             if (slot.Name != slotName)
                 continue;
-
-
-            if (!TryGetSlotContainer(uid, slotName, out var container, out _, inventory))
-                break;
+            Logger.Debug($"Found slot {slotName}, setting disabled to {isDisabled}");
 
             if (isDisabled)
             {
+                if (!TryGetSlotContainer(uid, slotName, out var container, out _, inventory))
+                    break;
+
+                Logger.Debug($"Dropping contents.");
                 if (container.ContainedEntity is { } entityUid && TryComp(entityUid, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
                 {
                     _transform.AttachToGridOrMap(entityUid, transform);
                     _randomHelper.RandomOffset(entityUid, 0.5f);
                 }
-                _containerSystem.ShutdownContainer(container);
+                //_containerSystem.ShutdownContainer(container);
             }
-            else
-                _containerSystem.EnsureContainer<ContainerSlot>(uid, slotName);
-
+            //else
+                //_containerSystem.EnsureContainer<ContainerSlot>(uid, slotName);
+            Logger.Debug($"Slot state before {slot.Disabled}");
             slot.Disabled = isDisabled;
+            Logger.Debug($"Slot state after {slot.Disabled}");
             break;
         }
 
@@ -220,12 +222,12 @@ public partial class InventorySystem : EntitySystem
         private int _nextIdx = 0;
         public static InventorySlotEnumerator Empty = new(Array.Empty<SlotDefinition>(), Array.Empty<ContainerSlot>());
 
-        public InventorySlotEnumerator(InventoryComponent inventory,  SlotFlags flags = SlotFlags.All)
+        public InventorySlotEnumerator(InventoryComponent inventory, SlotFlags flags = SlotFlags.All)
             : this(inventory.Slots, inventory.Containers, flags)
         {
         }
 
-        public InventorySlotEnumerator(SlotDefinition[] slots, ContainerSlot[] containers,  SlotFlags flags = SlotFlags.All)
+        public InventorySlotEnumerator(SlotDefinition[] slots, ContainerSlot[] containers, SlotFlags flags = SlotFlags.All)
         {
             DebugTools.Assert(flags != SlotFlags.NONE);
             DebugTools.AssertEqual(slots.Length, containers.Length);

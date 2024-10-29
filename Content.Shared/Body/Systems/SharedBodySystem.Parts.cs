@@ -19,8 +19,6 @@ namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
 {
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     private void InitializeParts()
@@ -40,6 +38,9 @@ public partial class SharedBodySystem
     {
         if (ent.Comp.PartType == BodyPartType.Torso)
         {
+            // For whatever reason this slot is initialized properly on the server, but not on the client.
+            // This seems to be an issue due to wiz-merge, on my old branch it was properly instantiating
+            // ItemInsertionSlot's container on both ends. It does show up properly on ItemSlotsComponent though.
             _slots.AddItemSlot(ent, ent.Comp.ContainerName, ent.Comp.ItemInsertionSlot);
             Dirty(ent, ent.Comp);
         }
@@ -146,7 +147,7 @@ public partial class SharedBodySystem
 
         var ev = new BodyPartAddedEvent(slotId, partEnt);
         RaiseLocalEvent(bodyEnt, ref ev);
-
+        Logger.Debug($"Attempting to readd slot to {bodyEnt}");
         AddLeg(partEnt, bodyEnt);
     }
 
@@ -169,19 +170,7 @@ public partial class SharedBodySystem
 
     protected virtual void DropPart(Entity<BodyPartComponent> partEnt)
     {
-        // We check for whether or not the arm, leg or head is being dropped, in which case
-        // If theres just one, that means we'll remove the container slots.
-        if (partEnt.Comp.Body is not null
-            && TryGetPartSlotContainerName(partEnt.Comp.PartType, out var containerNames)
-            && GetBodyPartCount(partEnt.Comp.Body.Value, partEnt.Comp.PartType) == 1)
-        {
-            foreach (var containerName in containerNames)
-            {
-                _inventorySystem.SetSlotStatus(partEnt.Comp.Body.Value, containerName, true);
-                var ev = new RefreshInventorySlotsEvent(containerName);
-                RaiseLocalEvent(partEnt.Comp.Body.Value, ev);
-            }
-        }
+        ChangeSlotState(partEnt, true);
 
         // We then detach the part, which will kickstart EntRemovedFromContainer events.
         if (TryComp(partEnt, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
@@ -232,7 +221,7 @@ public partial class SharedBodySystem
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
             return;
 
-        if (partEnt.Comp.Children.Any())
+         if (partEnt.Comp.Children.Any())
         {
             foreach (var slotId in partEnt.Comp.Children.Keys)
             {
@@ -303,6 +292,31 @@ public partial class SharedBodySystem
             var ev = new BodyPartEnabledEvent(partEnt);
             RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
         }
+    }
+
+    /// <summary>
+    /// This function handles disabling or enabling equipment slots when an entity is
+    /// missing all of a given part type, or they get one added to them.
+    /// It is called right before dropping a part, or right after adding one.
+    /// </summary>
+    public void ChangeSlotState(Entity<BodyPartComponent> partEnt, bool disable)
+    {
+        if (partEnt.Comp.Body is not null)
+            Logger.Debug($"Attempting to change slot state to {disable} for {partEnt.Comp.PartType}. Number of parts: {GetBodyPartCount(partEnt.Comp.Body.Value, partEnt.Comp.PartType)}");
+        if (partEnt.Comp.Body is not null
+            && GetBodyPartCount(partEnt.Comp.Body.Value, partEnt.Comp.PartType) == 1
+            && TryGetPartSlotContainerName(partEnt.Comp.PartType, out var containerNames))
+        {
+            Logger.Debug($"Found container names {containerNames}, with a number of {containerNames.Count}");
+            foreach (var containerName in containerNames)
+            {
+                Logger.Debug($"Setting slot state to {disable} for {containerName}");
+                _inventorySystem.SetSlotStatus(partEnt.Comp.Body.Value, containerName, disable);
+                var ev = new RefreshInventorySlotsEvent(containerName);
+                RaiseLocalEvent(partEnt.Comp.Body.Value, ev);
+            }
+        }
+
     }
 
     private void DisablePart(Entity<BodyPartComponent> partEnt)
@@ -881,10 +895,11 @@ public partial class SharedBodySystem
     /// <param name="uid">The part entity id to check on.</param>
     /// <param name="type">The type of component to check for.</param>
     /// <param name="part">The part to check for organs on.</param>
+    /// <param name="organs">The organs found on the body part.</param>
     /// <returns>Whether any were found.</returns>
     /// <remarks>
     ///     This method is somewhat of a copout to the fact that we can't use reflection to generically
-    ///     get the type of a component on runtime due to sandboxing. So we simply do a HasComp check for each organ.
+    ///     get the type of component on runtime due to sandboxing. So we simply do a HasComp check for each organ.
     /// </remarks>
     public bool TryGetBodyPartOrgans(
         EntityUid uid,
