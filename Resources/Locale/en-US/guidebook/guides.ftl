@@ -11,7 +11,7 @@ guide-entry-access-configurator = Access Configurator
 guide-entry-power = Power
 guide-entry-portable-generator = Portable Generators
 guide-entry-ame = Antimatter Engine (AME)
-guide-entry-singularity = Singularity
+guide-entry-singularity = Singularity / Tesla
 guide-entry-teg = Thermo-electric Generator (TEG)
 guide-entry-rtg = RTG
 guide-entry-controls = Controls
@@ -72,4 +72,5 @@ guide-entry-writing = Writing
 guide-entry-glossary = Glossary
 
 guide-entry-altars-golemancy = Altars and Golemancy
+guide-entry-glimmer-creatures = Glimmer Creatures
 guide-entry-reverse-engineering = Reverse Engineering

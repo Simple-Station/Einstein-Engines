@@ -150,8 +150,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -201,8 +201,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -235,8 +235,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -269,8 +269,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -324,8 +324,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -352,17 +352,15 @@
     duration: 60
   - type: VentCrittersRule
     entries:
-    - id: MobXeno
-      prob: 0.01
     - id: MobXenoNeutralRouny
-      prob: 0.005
+      prob: 0.0075
     - id: MobXenoNeutralDrone
-      prob: 0.005
+      prob: 0.0075
     - id: MobXenoNeutralPraetorian
-      prob: 0.005
+      prob: 0.0075
     - id: MobXenoNeutralRavager
-      prob: 0.005
-      
+      prob: 0.0075
+
 - type: entity
   id: ArgocyteVents
   parent: BaseGameRule
@@ -372,37 +370,35 @@
     startAnnouncement: true
     earliestStart: 20
     reoccurrenceDelay: 12
-    minimumPlayers: 12
+    minimumPlayers: 30
     weight: 6 # Really weak compared to other critters
     duration: 60
   - type: VentCrittersRule
     entries:
-    - id: BaseMobArgocyte
-      prob: 0.01
     - id: MobArgocyteSlurva
-      prob: 0.005
+      prob: 0.003
     - id: MobArgocyteBarrier
-      prob: 0.005
+      prob: 0.003
     - id: MobArgocyteSkitter
-      prob: 0.005
+      prob: 0.003
     - id: MobArgocyteSwiper
-      prob: 0.005
+      prob: 0.003
     - id: MobArgocyteMolder
-      prob: 0.01
+      prob: 0.003
     - id: MobArgocytePouncer
-      prob: 0.005
+      prob: 0.003
     - id: MobArgocyteGlider
-      prob: 0.005
+      prob: 0.003
     - id: MobArgocyteHarvester
-      prob: 0.005
+      prob: 0.003
     - id: MobArgocyteCrawler
-      prob: 0.005
+      prob: 0.003
     - id: MobArgocyteEnforcer
-      prob: 0.005
+      prob: 0.003
     - id: MobArgocyteFounder
-      prob: 0.005
+      prob: 0.003
     - id: MobArgocyteLeviathing
-      prob: 0.005
+      prob: 0.0001
 
 - type: entity
   id: MeatVents
@@ -413,13 +409,11 @@
     startAnnouncement: true
     earliestStart: 20
     reoccurrenceDelay: 12
-    minimumPlayers: 12
+    minimumPlayers: 20
     weight: 6 # Really weak compared to other critters
     duration: 60
   - type: VentCrittersRule
     entries:
-    - id: BaseMobFlesh
-      prob: 0.01
     - id: MobFleshJared
       prob: 0.005
     - id: MobFleshGolem
@@ -430,7 +424,7 @@
       prob: 0.005
     - id: MobAbomination
       prob: 0.005
-      
+
 - type: entity
   id: TickVents
   parent: BaseGameRule
@@ -457,7 +451,7 @@
     startAnnouncement: true
     earliestStart: 20
     reoccurrenceDelay: 12
-    minimumPlayers: 12
+    minimumPlayers: 20
     weight: 6 # Really weak compared to other critters
     duration: 60
   - type: VentCrittersRule
@@ -467,11 +461,11 @@
     - id: MobCarpMagic
       prob: 0.01
     - id: MobCarpHolo
-      prob: 0.01
+      prob: 0.002
     - id: MobCarpRainbow
       prob: 0.01
     - id: MobShark
-      prob: 0.01
+      prob: 0.002
     - id: MobCarpDragon
       prob: 0.01
 
@@ -484,7 +478,7 @@
     startAnnouncement: true
     earliestStart: 20
     reoccurrenceDelay: 12
-    minimumPlayers: 12
+    minimumPlayers: 20
     weight: 6 # Really weak compared to other critters
     duration: 60
   - type: VentCrittersRule
@@ -507,7 +501,7 @@
     startAnnouncement: true
     earliestStart: 20
     reoccurrenceDelay: 12
-    minimumPlayers: 12
+    minimumPlayers: 20
     weight: 6 # Really weak compared to other critters
     duration: 60
   - type: VentCrittersRule
@@ -520,7 +514,7 @@
       prob: 0.01
     - id: MobLuminousEntity
       prob: 0.01
-      
+
 - type: entity
   name: Friendly Xeno spawner
   id: friendlyxenoSpawner

@@ -65,6 +65,7 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: AmmoCounter
 
 - type: entity
   name: viper
@@ -108,6 +109,31 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
     fireOnDropChance: 0.3
+
+- type: entity
+  id: WeaponPistolViperNonLethal
+  parent: WeaponPistolViper
+  suffix: Non-lethal
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistolRubber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
 
 - type: entity
   name: cobra
@@ -253,7 +279,7 @@
 - type: entity
   name: N1984
   parent: WeaponPistolN1984
-  id: WeaponPistolN1984Nonlethal
+  id: WeaponPistolN1984NonLethal
   suffix: Non-lethal
   components:
   - type: ItemSlots

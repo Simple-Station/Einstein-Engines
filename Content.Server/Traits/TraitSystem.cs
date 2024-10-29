@@ -14,6 +14,7 @@ using Content.Server.Abilities.Psionics;
 using Content.Shared.Psionics;
 using Content.Server.Language;
 using Content.Shared.Mood;
+using Content.Server.NPC.Systems;
 
 namespace Content.Server.Traits;
 
@@ -28,6 +29,7 @@ public sealed class TraitSystem : EntitySystem
     [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilities = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly LanguageSystem _languageSystem = default!;
+    [Dependency] private readonly NpcFactionSystem _factionSystem = default!;
 
     public override void Initialize()
     {
@@ -71,6 +73,8 @@ public sealed class TraitSystem : EntitySystem
         AddTraitLanguage(uid, traitPrototype);
         RemoveTraitLanguage(uid, traitPrototype);
         AddTraitMoodlets(uid, traitPrototype);
+        RemoveTraitFactions(uid, traitPrototype);
+        AddTraitFactions(uid, traitPrototype);
     }
 
     /// <summary>
@@ -224,5 +228,29 @@ public sealed class TraitSystem : EntitySystem
         foreach (var moodProto in traitPrototype.MoodEffects)
             if (_prototype.TryIndex(moodProto, out var moodlet))
                 RaiseLocalEvent(uid, new MoodEffectEvent(moodlet.ID));
+    }
+
+    /// <summary>
+    ///     If a trait includes any faction removals, this removes the faction from the receiving entity.
+    /// </summary>
+    public void RemoveTraitFactions(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.RemoveFactions is null)
+            return;
+
+        foreach (var faction in traitPrototype.RemoveFactions)
+            _factionSystem.RemoveFaction(uid, faction);
+    }
+
+    /// <summary>
+    ///     If a trait includes any factions to add, this adds the factions to the receiving entity.
+    /// </summary>
+    public void AddTraitFactions(EntityUid uid, TraitPrototype traitPrototype)
+    {
+        if (traitPrototype.AddFactions is null)
+            return;
+
+        foreach (var faction in traitPrototype.AddFactions)
+            _factionSystem.AddFaction(uid, faction);
     }
 }

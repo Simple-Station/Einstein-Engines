@@ -29615,13 +29615,6 @@ entities:
     - type: Transform
       pos: 37.28408,-33.635246
       parent: 34
-- proto: ClothingBeltKatanaSheathFilled
-  entities:
-  - uid: 11721
-    components:
-    - type: Transform
-      pos: 39.44033,-33.510246
-      parent: 34
 - proto: ClothingBeltMartialBlack
   entities:
   - uid: 143

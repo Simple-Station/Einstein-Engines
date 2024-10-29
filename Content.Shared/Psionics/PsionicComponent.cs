@@ -5,9 +5,38 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Abilities.Psionics
 {
-    [RegisterComponent, NetworkedComponent]
+    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
     public sealed partial class PsionicComponent : Component
     {
+        /// <summary>
+        ///     Current Mana.
+        /// </summary>
+        [DataField, AutoNetworkedField]
+        public float Mana;
+
+        /// <summary>
+        ///     Max Mana Possible.
+        /// </summary>
+        [DataField, AutoNetworkedField]
+        public float MaxMana = 100;
+
+        /// <summary>
+        ///     How much energy is gained per second.
+        /// </summary>
+        [DataField]
+        public float ManaGain = 1;
+
+        /// <summary>
+        ///     ManaGain Multiplier
+        /// </summary>
+        [DataField]
+        public float ManaGainMultiplier = 1;
+
+        public float ManaAccumulator;
+
+        [DataField]
+        public bool BypassManaCheck;
+
         /// <summary>
         ///     How close a Psion is to generating a new power. When Potentia reaches the NextPowerCost, it is "Spent" in order to "Buy" a random new power.
         ///     TODO: Psi-Potentiometry should be able to read how much Potentia a person has.
@@ -45,6 +74,10 @@ namespace Content.Shared.Abilities.Psionics
 
         public string MindbreakingStutterAccent = "StutteringAccent";
 
+        /// <summary>
+        ///     The message feedback given on mindbreak.
+        /// </summary>
+        [DataField]
         public string MindbreakingFeedback = "mindbreaking-feedback";
 
         /// <summary>
@@ -163,6 +196,7 @@ namespace Content.Shared.Abilities.Psionics
         [ViewVariables(VVAccess.ReadWrite)]
         public int PowerSlotsTaken;
 
+        /// <summary>
         ///     List of descriptors this entity will bring up for psychognomy. Used to remove
         ///     unneccesary subs for unique psionic entities like e.g. Oracle.
         /// </summary>
@@ -176,5 +210,20 @@ namespace Content.Shared.Abilities.Psionics
         /// Popup to play if a Psion attempts to start casting a power while already casting one
         [DataField]
         public string AlreadyCasting = "already-casting";
+
+        /// Popup to play if there no Mana left for a power to execute.
+        public string NoMana = "no-mana";
+
+        /// <summary>
+        ///     The list of Familiars currently bound to this Psion.
+        /// </summary>
+        [DataField]
+        public List<EntityUid> Familiars = new();
+
+        /// <summary>
+        ///     The maximum number of Familiars a Psion may bind.
+        /// </summary>
+        [DataField]
+        public int FamiliarLimit = 1;
     }
 }

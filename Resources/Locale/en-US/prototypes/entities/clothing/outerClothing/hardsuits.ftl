@@ -104,11 +104,6 @@ ent-ClothingOuterHardsuitPirateEVA = pirate vacsuit
 ent-ClothingOuterHardsuitPirateCap = pirate captain's tacsuit
     .desc = An ancient armored tactical combat hardsuit of unknown origin, provides basic protections from the cold harsh realities of deep space and physical trauma.
     It doesn't seem to have any weight either. Perfect for defending against space scurvy and toolbox-wielding scallywags.
-ent-ClothingOuterHardsuitSyndieReverseEngineered = NTSA-122 tacsuit
-    .desc = A suit made by the special adquisitions department of Nanotrasen, the suit's tags indicate it provides moderate protection against most forms of damage.
-ent-ClothingOuterHardsuitJuggernautReverseEngineered = NTSA-126 tacsuit
-    .desc = A suit made by the special acquisitions department of Nanotrasen based on the "Juggernaut" design.
-    Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
 ent-ClothingOuterHardsuitERTCentcomm = NT-444c - "Ophanim" tacsuit
     .desc = A highly advanced, tactical combat hardsuit used by Central Command Officers, it seems to be branded with the Nanotrasen logo and a strange looking series number.
     The armor appears to be lined with a very sturdy alloy, it doesn't seem to have any weight either.

@@ -1,5 +1,4 @@
-# Spoken by the Lizard race.
-# TODO: Replace this with a much better language.
+# Spoken by Unathi.
 - type: language
   id: Draconic
   speech:
@@ -93,3 +92,26 @@
     - u
     - s
     - s
+
+# Reptilian-Specific "Rare" Language
+# !Do Not Make A Translator For This Language.
+- type: language
+  id: Azaziba
+  speech:
+    color: "#2aca2add"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
+    replacement:
+    - azs
+    - zis
+    - zau
+    - azua
+    - skiu
+    - zuakz
+    - izo
+    - aei
+    - ki
+    - kut
+    - zo

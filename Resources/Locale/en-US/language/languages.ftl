@@ -10,8 +10,14 @@ language-RootSpeak-description = The strange whistling-style language spoken by 
 language-Nekomimetic-name = Nekomimetic
 language-Nekomimetic-description = To the casual observer, this language is an incomprehensible mess of broken Japanese. To the Felinids and Oni, it's somehow comprehensible.
 
-language-Draconic-name = Draconic
-language-Draconic-description = The common language of lizard-people, composed of sibilant hisses and rattles.
+language-Draconic-name = Sinta'Unathi
+language-Draconic-description =
+    The common language of Moghes - composed of sibilant hisses and rattles. Spoken natively by Unathi.
+
+language-Azaziba-name = Sinta'Azaziba
+language-Azaziba-description =
+    A language of Moghes consisting of a combination of spoken word and gesticulation.
+    While waning since Moghes entered the galactic stage - it enjoys popular use by Unathi that never fell to the Hegemony's cultural dominance.
 
 language-SolCommon-name = Sol common
 language-SolCommon-description =
@@ -54,6 +60,9 @@ language-RobotTalk-description = A language consisting of harsh binary chirps, w
 
 language-Sign-name = Tau-Ceti Basic Sign Language
 language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
+
+language-Marish-name = Marish
+language-Marish-description =  An inherently empathetic language, conveying emotions with a single word; spoken effortlessly by Shadowkins, though nearly impossible to learn or replicate.
 
 language-ValyrianStandard-name = Valyrian Standard
 language-ValyrianStandard-description =

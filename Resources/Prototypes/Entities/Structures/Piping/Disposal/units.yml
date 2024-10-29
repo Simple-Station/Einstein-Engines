@@ -56,8 +56,8 @@
   - type: Appearance
   - type: UserInterface
     interfaces:
-    - key: enum.DisposalUnitUiKey.Key
-      type: DisposalUnitBoundUserInterface
+      enum.DisposalUnitUiKey.Key:
+        type: DisposalUnitBoundUserInterface
   - type: ContainerContainer
     containers:
       disposals: !type:Container
@@ -80,10 +80,12 @@
     blacklist:
       components:
       - SegmentedEntity
+  - type: ThrowInsertContainer
+    containerId: disposals
   - type: UserInterface
     interfaces:
-    - key: enum.DisposalUnitUiKey.Key
-      type: DisposalUnitBoundUserInterface
+      enum.DisposalUnitUiKey.Key:
+        type: DisposalUnitBoundUserInterface
   - type: RatKingRummageable
   - type: RequireProjectileTarget
 
@@ -133,7 +135,7 @@
   - type: Appearance
   - type: UserInterface
     interfaces:
-    - key: enum.MailingUnitUiKey.Key
-      type: DisposalUnitBoundUserInterface
-    - key: enum.ConfigurationUiKey.Key
-      type: ConfigurationBoundUserInterface
+      enum.MailingUnitUiKey.Key:
+        type: DisposalUnitBoundUserInterface
+      enum.ConfigurationUiKey.Key:
+        type: ConfigurationBoundUserInterface

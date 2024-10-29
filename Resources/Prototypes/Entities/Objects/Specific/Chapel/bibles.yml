@@ -20,8 +20,6 @@
         Burn: 10
   - type: Prayable
     bibleUserOnly: true
-  - type: Summonable
-    specialItem: SpawnPointGhostRemilia
   - type: ReactionMixer
     mixMessage: "bible-mixing-success"
     reactionTypes:
@@ -40,8 +38,8 @@
     - 0,0,0,1
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: MeleeWeapon # Nyanotrasen - Bibles do Holy damage
     damage:
       types:

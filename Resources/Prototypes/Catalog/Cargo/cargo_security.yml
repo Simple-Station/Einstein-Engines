@@ -34,7 +34,7 @@
     sprite: DeltaV/Clothing/OuterClothing/Armor/riot.rsi # DeltaV - resprite
     state: icon
   product: CrateSecurityRiot
-  cost: 5500
+  cost: 7500
   category: cargoproduct-category-name-security
   group: market
 
@@ -75,25 +75,5 @@
     state: idle
   product: DeployableBarrier
   cost: 1000
-  category: cargoproduct-category-name-security
-  group: market
-
-- type: cargoProduct
-  id: SecurityShanlinTacsuit
-  icon:
-    sprite: Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/syndicate.rsi
-    state: icon
-  product: CrateSecurityShanlinTacsuit
-  cost: 17500
-  category: cargoproduct-category-name-security
-  group: market
-
-- type: cargoProduct
-  id: SecurityGuanYuTacsuit
-  icon:
-    sprite: Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/juggernaut.rsi
-    state: icon
-  product: CrateSecurityGuanYuTacsuit
-  cost: 30000
   category: cargoproduct-category-name-security
   group: market

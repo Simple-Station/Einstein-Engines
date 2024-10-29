@@ -166,7 +166,6 @@
     #   damage:
     #     types:
     #       Blunt: 0.28 #per second, scales with pressure and other constants.
-      atmosTemperatureTransferEfficiency: 0.4
     - type: Identity
     #  soundHit:
     #    path: /Audio/Effects/metalbreak.ogg
@@ -202,11 +201,11 @@
     - type: Strippable
     - type: UserInterface
       interfaces:
-        - key: enum.VoiceMaskUIKey.Key
+        enum.VoiceMaskUIKey.Key:
           type: VoiceMaskBoundUserInterface
-        - key: enum.HumanoidMarkingModifierKey.Key
+        enum.HumanoidMarkingModifierKey.Key:
           type: HumanoidMarkingModifierBoundUserInterface
-        - key: enum.StrippingUiKey.Key
+        enum.StrippingUiKey.Key:
           type: StrippableBoundUserInterface
     - type: Emoting
     - type: Grammar
