@@ -194,11 +194,11 @@ public sealed partial class LoadoutPreferenceSelector : Control
         NameEdit.PlaceHolder = loadoutName;
         DescriptionEdit.Placeholder = new Rope.Leaf(Loc.GetString(loadoutDesc));
 
+
         var tooltip = new StringBuilder();
         // Add the loadout description to the tooltip if there is one
         if (!string.IsNullOrEmpty(loadoutDesc))
             tooltip.Append($"{Loc.GetString(loadoutDesc)}");
-
 
         // Get requirement reasons
         characterRequirementsSystem.CheckRequirementsValid(
@@ -220,7 +220,6 @@ public sealed partial class LoadoutPreferenceSelector : Control
         }
     }
 
-    // I don't wanna make an engine PR when we're so far behind so once more I shall do stupid workarounds
     private bool _initialized;
     protected override void Draw(DrawingHandleScreen handle)
     {
@@ -231,6 +230,10 @@ public sealed partial class LoadoutPreferenceSelector : Control
         var body = SpecialMenu.Body;
         body.Orphan();
         Container.AddChild(body);
+
+        // This guy's here too for reasons
+        HeadingButton.SetHeight = GuidebookButton.SetHeight = PreferenceButton.Size.Y;
+
         _initialized = true;
     }
 }
