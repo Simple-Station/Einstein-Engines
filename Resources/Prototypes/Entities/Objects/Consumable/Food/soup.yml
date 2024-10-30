@@ -1225,3 +1225,126 @@
     - Fruit
     - Soup
 # Tastes like bungo, hot curry.
+
+
+- type: entity
+  name: poached pears
+  parent: FoodBowlBase
+  id: FoodMealPoachedPears
+  description: The classiest use for a can of wine.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - fruity
+      - alcohol
+      - pear
+  - type: Sprite
+    sprite: Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: poachedpear
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: pears belle helene
+  parent: FoodBowlBase
+  id: FoodMealPearsBelleHelene
+  description: The delicate flavor of the immaculate pear drenched in chocolate.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chocolate
+      - pear
+      - creamy
+  - type: Sprite
+    sprite: Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: bellepear
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 35
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 8
+        - ReagentId: Theobromine
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: greek salad
+  parent: FoodBowlBase
+  id: FoodSaladGreek
+  description: This is the salad everyone is eating in those commercials.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - cucumber
+  - type: Sprite
+    sprite: Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: greek
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 6
+        - ReagentId: CucumberWater
+          Quantity: 10
+  - type: Tag
+    tags:
+    - Vegetable
+    - Fruit
+
+- type: entity
+  name: avocado salad
+  parent: FoodBowlBase
+  id: FoodSaladAvocado
+  description: You were so close to making guacamole. So close.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - avocado
+      - cucumber
+  - type: Sprite
+    sprite: Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: avocado
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 6
+        - ReagentId: CucumberWater
+          Quantity: 10
+  - type: Tag
+    tags:
+    - Vegetable
+    - Fruit

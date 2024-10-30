@@ -1,0 +1,133 @@
+# When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_baked_whole.yml & food_baked_single.yml
+# Base
+
+- type: entity
+  id: FoodBagelBase
+  parent: FoodInjectableBase
+  abstract: true
+  description: A delicious bagel.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bagel.rsi
+    state: bagel
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+
+- type: entity
+  id: FoodBagel
+  name: bagel
+  parent: FoodBagelBase
+
+- type: entity
+  id: FoodBagelPoppy
+  parent: FoodBagelBase
+  name: poppy seed bagel
+  description: A delicious bagel topped with bicaridine-infused poppy seeds.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+      - medicine
+  - type: Sprite
+    state: bagel-poppy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
+
+- type: entity
+  name: breakfast bagel
+  parent: FoodBagelBase
+  id: FoodMealBreakfastBagel
+  description: For when your morning egg sandwich needs a touch of green and quadruple the asking price.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - avocado
+      - bread
+      - egg
+      - cheese
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: breakfastbagel
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Vitamin
+          Quantity: 5
+
+- type: entity
+  name: poppyseed breakfast bagel
+  parent: FoodBagelPoppy
+  id: FoodMealBreakfastBagelPoppy
+  description: The miners breakfast. Take a bite everytime you get punched in the face.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - avocado
+      - bread
+      - egg
+      - cheese
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: breakfastbagelpoppy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 7
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: cucumber sandwich
+  parent: FoodBagelBase
+  id: FoodMealCucumberSandwich
+  description: They forgot to cut the crusts off AGAIN.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cucumber
+      - bread
+      - mayonnaise
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: cucumbersandwich
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: CucumberWater
+          Quantity: 10
+  - type: Tag
+    tags:
+    - Meat

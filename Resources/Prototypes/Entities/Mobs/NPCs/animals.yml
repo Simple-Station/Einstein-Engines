@@ -3548,3 +3548,19 @@
   - type: ReplacementAccent
     accent: nymph
   - type: RandomBark # Using the default barks since they aren't going to talk anyway
+
+- type: entity
+  name: bee
+  suffix: Angry, Timed
+  parent: [ MobAngryBee ]
+  id: MobAngryBeeTimed
+  components:
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 0.5
+  - type: TimedDespawn
+    lifetime: 15
+

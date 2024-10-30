@@ -1117,3 +1117,23 @@
       amount: 1
   products:
     Cola: 4
+
+- type: reaction
+  id: HoneyIcedTea
+  reactants:
+    Honey:
+      amount: 1
+    IcedTea:
+      amount: 1
+  products:
+    HoneyIcedTea: 2
+
+- type: reaction
+  id: Tea
+  reactants:
+    TeaPowder:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    Tea: 6

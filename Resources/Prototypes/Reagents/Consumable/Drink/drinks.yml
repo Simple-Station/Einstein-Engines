@@ -550,3 +550,40 @@
       effects:
       - !type:SatiateThirst
         factor: 0.6
+
+- type: reagent
+  id: HoneyIcedTea
+  name: reagent-name-honey-iced-tea
+  parent: BaseDrink
+  desc: reagent-desc-honey-iced-tea
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: honey
+  color: "#E79A3F"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.6
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/honeyicedtea.rsi
+    state: icon
+
+- type: reagent
+  id: CucumberWater
+  name: reagent-name-cucumber-water
+  parent: BaseDrink
+  desc: reagent-desc-cucumber-water
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: cucumber
+  color: "#b1ceb0"
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 6
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/cucumberwater.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation and modified by potato1234x at https://github.com/tgstation/tgstation/commit/0631fe5bde73a68b4c12bdfa633c30b2cee442d5. Crostini created by Github user deathride58",
+  "copyright": "Taken from tgstation and modified by potato1234x at https://github.com/tgstation/tgstation/commit/0631fe5bde73a68b4c12bdfa633c30b2cee442d5. Crostini created by Github user deathride58, cotton made by mlexf (discord 1143460554963427380), Avocado toast by gentlebutter (Discord). Bagel and BagelPoppy were created by DrEnzyme, edited by Dusty Lens",
   "size": {
     "x": 32,
     "y": 32
@@ -117,6 +117,50 @@
     },
     {
       "name": "xenomeat-slice"
+    },
+    {
+        "name": "challah"
+    },
+    {
+        "name": "challahslice"
+    },
+    {
+        "name": "apple_strudel_1"
+    },
+    {
+        "name": "apple_strudel_2"
+    },
+    {
+        "name": "apple_strudel_3"
+    },
+    {
+        "name": "pearmuffin"
+    },
+    {
+        "name": "cotton"
+    },
+    {
+        "name": "cotton-slice"
+    },
+    {
+        "name": "avocadotoast"
+    },
+    {
+        "name": "breakfastbagel"
+    },
+    {
+        "name": "breakfastbagelpoppy"
+    },
+    {
+        "name": "cucumbersandwich"
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
     }
   ]
 }

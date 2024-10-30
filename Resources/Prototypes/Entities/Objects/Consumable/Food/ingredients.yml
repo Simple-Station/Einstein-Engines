@@ -302,6 +302,24 @@
       - dough
   - type: Sprite
     state: dough-slice
+  - type: Construction
+    graph: DoughRope
+    node: start
+
+- type: entity
+  name: dough rope
+  parent: FoodBakingBase
+  id: FoodDoughRope
+  description: A thin noodle of dough. Can be cooked into a bagel.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - dough
+  - type: Sprite
+    state: dough-rope
+  - type: Construction
+    graph: DoughRope
+    node: rolled
 
 - type: entity
   name: cornmeal dough
@@ -418,6 +436,9 @@
   - type: Construction
     graph: Pizza
     node: flat
+  - type: SliceableFood
+    count: 3
+    slice: FoodCroissantRaw
 
 - type: entity
   name: pizza bread
@@ -668,3 +689,110 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: packet-solid-
+
+# Honey
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerHoney
+  name: honey bottle
+  description: A big squeeze bottle of honey. Great for sweetening up your day!
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/ingredients.rsi
+    state: honeybottle
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Honey
+          Quantity: 30
+  - type: Drink
+    solution: food
+    useSound:
+      path: /Audio/Items/eating_1.ogg
+
+- type: reagent
+  id: OilVegetable
+  name: reagent-name-oil-vegetable
+  group: Foods
+  desc: reagent-desc-oil-vegetable
+  physicalDesc: reagent-physical-desc-oily
+  flavor: oily
+  flavorMinimum: 0.05
+  color: "#ffff77"
+  meltingPoint: -6.0 #Taken from OilOlive
+  boilingPoint: 299.0
+  recognizable: true
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Nutriment
+          min: 0.1
+        factor: 1
+
+- type: entity
+  name: raw croissant
+  parent: FoodBakingBase
+  id: FoodCroissantRaw
+  description: Buttery, flaky goodness waiting to happen.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - dough
+  - type: Sprite
+    state: croissant-raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+
+- type: entity
+  name: cotton dough
+  parent: FoodBakingBase
+  id: FoodDoughCotton
+  description: A piece of fabric dough.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - dough
+    - cotton
+  - type: Sprite
+    state: cotton-dough
+  # - type: SliceableFood # TODO add it
+  #   count: 3
+  #   slice: FoodDoughCottonSlice
+  - type: Construction
+    graph: CottonPizza
+    node: start
+  - type: Tag
+    tags:
+    - Ingredient
+    - ClothMade
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
+  name: flat cotton dough
+  parent: FoodBakingBase
+  id: FoodDoughCottonFlat
+  description: A flattened cotton dough.
+  components:
+  - type: Sprite
+    state: cotton-dough-flat
+  - type: Construction
+    graph: CottonPizza
+    node: flat

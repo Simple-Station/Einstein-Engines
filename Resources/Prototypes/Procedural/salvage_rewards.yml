@@ -50,6 +50,8 @@
     SpaceCash500: 1.0
     SpaceCash1000: 0.75
     SpaceCash2500: 0.5
+    # cool seeds
+    MoneyTreeSeeds: 0.5
 
 - type: weightedRandomEntity
   id: SalvageRewardEpic

@@ -4,12 +4,15 @@
     AloeSeeds: 3
     AmbrosiaVulgarisSeeds: 3
     AppleSeeds: 5
+    AvocadoSeeds: 5
     BananaSeeds: 5
     CarrotSeeds: 5
     CabbageSeeds: 5
     ChanterelleSeeds: 5
+    CherrySeeds: 5
     ChiliSeeds: 5
     CornSeeds: 5
+    CucumberSeeds: 5
     EggplantSeeds: 5
     EggySeeds: 5
     GalaxythistleSeeds: 3
@@ -22,6 +25,7 @@
     OnionSeeds: 5
     OnionRedSeeds: 5
     OrangeSeeds: 5
+    PearSeeds: 3
     PoppySeeds: 3
     PotatoSeeds: 5
     PumpkinSeeds: 5
@@ -36,5 +40,7 @@
     BerrySeeds: 5
     PeaSeeds: 5
     CottonSeeds: 5
+    BeeSeeds: 3
+    PapercaneSeeds: 3
   emaggedInventory:
     FlyAmanitaSeeds: 1

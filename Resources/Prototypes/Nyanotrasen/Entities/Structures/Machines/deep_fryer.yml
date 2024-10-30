@@ -105,6 +105,7 @@
       - Cornoil
       - OilGhee
       - OilOlive
+      - OilVegetable
     #unsafeOilVolumeEffects: #Can't pass UninitializedSaveTest. Modifies itself on spawn. Very weird.
     #- !type:AreaReactionEffect
     #  duration: 10
