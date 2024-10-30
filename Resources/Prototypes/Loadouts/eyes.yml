@@ -12,6 +12,9 @@
   id: LoadoutEyesGlasses
   category: Eyes
   cost: 0
+  customName: false
+  customDescription: true
+  customColorTint: true
   items:
     - ClothingEyesGlasses
   requirements:
@@ -22,6 +25,9 @@
   id: LoadoutEyesGlassesJamjar
   category: Eyes
   cost: 1
+  customName: true
+  customDescription: false
+  customColorTint: true
   exclusive: true
   items:
     - ClothingEyesGlassesJamjar
@@ -33,6 +39,9 @@
   id: LoadoutEyesGlassesJensen
   category: Eyes
   cost: 1
+  customName: true
+  customDescription: true
+  customColorTint: false
   exclusive: true
   items:
     - ClothingEyesGlassesJensen
@@ -44,6 +53,9 @@
   id: LoadoutEyesBlindfold
   category: Eyes
   cost: 0
+  customName: false
+  customDescription: false
+  customColorTint: false
   items:
     - ClothingEyesBlindfold
   requirements:

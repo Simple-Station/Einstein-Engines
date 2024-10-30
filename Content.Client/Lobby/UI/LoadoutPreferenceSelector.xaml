@@ -10,6 +10,51 @@
                 ToggleMode="True"
                 VerticalAlignment="Center" />
 
+            <Collapsible Name="SpecialMenu" HorizontalExpand="True">
+                <CollapsibleHeading>
+                    <Label Text="Heading" />
+                </CollapsibleHeading>
+
+                <CollapsibleBody HorizontalExpand="True" Margin="0 0 0 5">
+                    <PanelContainer HorizontalExpand="True">
+                        <PanelContainer.PanelOverride>
+                            <graphics:StyleBoxFlat BackgroundColor="#2f2f2f" BorderColor="#2f2f2faf" BorderThickness="1" />
+                        </PanelContainer.PanelOverride>
+
+                        <BoxContainer Orientation="Vertical" Margin="3" HorizontalExpand="True">
+                            <BoxContainer Name="SpecialName" Orientation="Vertical" HorizontalExpand="True">
+                                <Label Text="Name" />
+                                <LineEdit Name="NameEdit" HorizontalExpand="True" />
+                            </BoxContainer>
+
+                            <BoxContainer Name="SpecialDescription" Orientation="Vertical" HorizontalExpand="True">
+                                <Label Text="Description" />
+                                <PanelContainer HorizontalExpand="True">
+                                    <PanelContainer.PanelOverride>
+                                        <graphics:StyleBoxFlat BackgroundColor="#222222" />
+                                    </PanelContainer.PanelOverride>
+
+                                    <controls:ResizableControl
+                                        AllowedResizeDirection="Vertical"
+                                        HorizontalExpand="True"
+                                        MinSize="128 64">
+                                        <TextEdit Name="DescriptionEdit" HorizontalExpand="True" VerticalExpand="True" Margin="3" />
+                                    </controls:ResizableControl>
+                                </PanelContainer>
+                            </BoxContainer>
+
+                            <BoxContainer Name="SpecialColorTint" Orientation="Vertical" HorizontalExpand="True">
+                                <Label Text="Color" />
+                                <ColorSelectorSliders Name="ColorEdit" Color="#fff" HorizontalExpand="True" />
+                                <BoxContainer HorizontalExpand="True">
+                                    <Button Name="SaveButton" Text="Save" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
+                                </BoxContainer>
+                            </BoxContainer>
+                        </BoxContainer>
+                    </PanelContainer>
+                </CollapsibleBody>
+            </Collapsible>
+
             <!-- Yes I know I can use a TextureButton, but I'm doing this for style -->
             <Button
                 Name="GuidebookButton"
@@ -26,42 +71,6 @@
             </Button>
         </BoxContainer>
 
-        <Collapsible Name="ExtrasMenu" HorizontalExpand="True">
-            <CollapsibleHeading>
-                <Label Text="Heading" />
-            </CollapsibleHeading>
-            <CollapsibleBody HorizontalExpand="True" Margin="0 0 0 5">
-                <PanelContainer HorizontalExpand="True">
-                    <PanelContainer.PanelOverride>
-                        <graphics:StyleBoxFlat BackgroundColor="#2f2f2f" BorderColor="#2f2f2faf" BorderThickness="1" />
-                    </PanelContainer.PanelOverride>
-
-                    <BoxContainer Orientation="Vertical" Margin="3" HorizontalExpand="True">
-                        <Label Text="Name" />
-                        <LineEdit Name="NameEdit" HorizontalExpand="True" />
-
-                        <Label Text="Description" />
-                        <PanelContainer HorizontalExpand="True">
-                            <PanelContainer.PanelOverride>
-                                <graphics:StyleBoxFlat BackgroundColor="#222222" />
-                            </PanelContainer.PanelOverride>
-
-                            <controls:ResizableControl
-                                AllowedResizeDirection="Vertical"
-                                HorizontalExpand="True"
-                                MinSize="128 64">
-                                <TextEdit Name="DescriptionEdit" HorizontalExpand="True" VerticalExpand="True" Margin="3" />
-                            </controls:ResizableControl>
-                        </PanelContainer>
-
-                        <Label Text="Color" />
-                        <ColorSelectorSliders Name="ColorEdit" Color="#fff" HorizontalExpand="True" />
-                        <BoxContainer HorizontalExpand="True">
-                            <Button Name="SaveButton" Text="Save" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
-                        </BoxContainer>
-                    </BoxContainer>
-                </PanelContainer>
-            </CollapsibleBody>
-        </Collapsible>
+        <!-- SpecialMenu's body will go here -->
     </BoxContainer>
 </Control>

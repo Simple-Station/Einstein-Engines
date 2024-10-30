@@ -83,7 +83,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 EntityManager.GetComponent<TransformComponent>(uid).Coordinates.ToMap(EntityManager),
                 loadoutProto.Items.Select(p => (string?) p.ToString()).ToList()); // Dumb cast
 
-            var i = 0;
+            var i = 0; // If someone wants to add multi-item support to the editor
             foreach (var item in spawned)
             {
                 allLoadouts.Add((item, loadout, i));

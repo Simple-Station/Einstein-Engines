@@ -3,6 +3,7 @@ using Content.Server.GameTicking;
 using Content.Server.Paint;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
+using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
@@ -26,6 +27,7 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
     [Dependency] private readonly PaintSystem _paint = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
     public override void Initialize()
     {
@@ -77,11 +79,13 @@ public sealed class LoadoutSystem : EntitySystem
 
         foreach (var loadout in allLoadouts)
         {
-            if (loadout.Item2.CustomName != null)
+            var loadoutProto = _protoMan.Index<LoadoutPrototype>(loadout.Item2.LoadoutName);
+            if (loadoutProto.CustomName && loadout.Item2.CustomName != null)
                 _meta.SetEntityName(loadout.Item1, loadout.Item2.CustomName);
-            if (loadout.Item2.CustomDescription != null)
+            if (loadoutProto.CustomDescription && loadout.Item2.CustomDescription != null)
                 _meta.SetEntityDescription(loadout.Item1, loadout.Item2.CustomDescription);
-            _paint.Paint(new EntityWhitelist(), loadout.Item1, Color.FromHex(loadout.Item2.CustomColorTint));
+            if (loadoutProto.CustomColorTint)
+                _paint.Paint(new EntityWhitelist(), loadout.Item1, Color.FromHex(loadout.Item2.CustomColorTint));
         }
     }
 }

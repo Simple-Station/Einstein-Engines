@@ -32,5 +32,14 @@ public sealed partial class LoadoutPrototype : IPrototype
     public bool Exclusive;
 
     [DataField]
+    public bool CustomName = true;
+
+    [DataField]
+    public bool CustomDescription = true;
+
+    [DataField]
+    public bool CustomColorTint = true;
+
+    [DataField]
     public List<CharacterRequirement> Requirements = new();
 }

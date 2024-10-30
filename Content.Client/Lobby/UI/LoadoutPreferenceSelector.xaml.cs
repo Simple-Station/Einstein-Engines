@@ -89,6 +89,13 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
         Loadout = loadout;
 
+        // Show/hide the special menu and items depending on what's allowed
+        SpecialMenu.Visible = Loadout.CustomName || Loadout.CustomDescription || loadout.CustomColorTint;
+        SpecialName.Visible = Loadout.CustomName;
+        SpecialDescription.Visible = Loadout.CustomDescription;
+        SpecialColorTint.Visible = Loadout.CustomColorTint;
+
+
         SpriteView previewLoadout;
         if (!entities.TryGetValue(loadout.ID + 0, out var dummyLoadoutItem))
         {
@@ -211,5 +218,19 @@ public sealed partial class LoadoutPreferenceSelector : Control
             formattedTooltip.SetMessage(FormattedMessage.FromMarkupPermissive(tooltip.ToString()));
             PreferenceButton.TooltipSupplier = _ => formattedTooltip;
         }
+    }
+
+    // I don't wanna make an engine PR when we're so far behind so once more I shall do stupid workarounds
+    private bool _initialized;
+    protected override void Draw(DrawingHandleScreen handle)
+    {
+        if (_initialized || SpecialMenu.Body == null)
+            return;
+
+        // Move the special editor below the primary buttons
+        var body = SpecialMenu.Body;
+        body.Orphan();
+        Container.AddChild(body);
+        _initialized = true;
     }
 }
