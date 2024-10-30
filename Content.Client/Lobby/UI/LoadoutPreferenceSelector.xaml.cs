@@ -141,14 +141,15 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
         GuidebookButton.OnPressed += _ =>
         {
-            var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
-
-            if (!prototypeManager.TryIndex<GuideEntryPrototype>(DefaultLoadoutInfoGuidebook + Loadout.ID, out var guideRoot))
+            if (!prototypeManager.TryIndex<GuideEntryPrototype>(DefaultLoadoutInfoGuidebook, out var guideRoot))
                 return;
 
-            var dict = new Dictionary<string, GuideEntry> { { DefaultLoadoutInfoGuidebook, guideRoot } };
+            var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
             //TODO: Don't close the guidebook if its already open, just go to the correct page
-            guidebookController.ToggleGuidebook(dict, selected: DefaultLoadoutInfoGuidebook + Loadout.ID);
+            guidebookController.ToggleGuidebook(
+                new Dictionary<string, GuideEntry> { { DefaultLoadoutInfoGuidebook, guideRoot } },
+                includeChildren: true,
+                selected: DefaultLoadoutInfoGuidebook + Loadout.ID);
         };
 
         // Create a checkbox to get the loadout
