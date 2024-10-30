@@ -59448,8 +59448,6 @@ entities:
       pos: -31.5,28.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 45
       - 8506
@@ -63706,8 +63704,6 @@ entities:
       pos: 33.5,-28.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 20127
       - 20124
