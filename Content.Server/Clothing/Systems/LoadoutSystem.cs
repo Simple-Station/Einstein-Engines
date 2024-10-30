@@ -1,4 +1,6 @@
+using System.Linq;
 using Content.Server.GameTicking;
+using Content.Server.Paint;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Systems;
@@ -9,6 +11,7 @@ using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Whitelist;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 
@@ -21,7 +24,8 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
-
+    [Dependency] private readonly PaintSystem _paint = default!;
+    [Dependency] private readonly MetaDataSystem _meta = default!;
 
     public override void Initialize()
     {
@@ -54,7 +58,7 @@ public sealed class LoadoutSystem : EntitySystem
         bool deleteFailed = false)
     {
         // Spawn the loadout, get a list of items that failed to equip
-        var failedLoadouts = _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted);
+        var (failedLoadouts, allLoadouts) = _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted);
 
         // Try to find back-mounted storage apparatus
         if (!_inventory.TryGetSlotEntity(uid, "back", out var item) ||
@@ -69,6 +73,15 @@ public sealed class LoadoutSystem : EntitySystem
                     || !_storage.Insert(item.Value, loadout, out _, playSound: false))
                 && deleteFailed)
                 EntityManager.QueueDeleteEntity(loadout);
+        }
+
+        foreach (var loadout in allLoadouts)
+        {
+            if (loadout.Item2.CustomName != null)
+                _meta.SetEntityName(loadout.Item1, loadout.Item2.CustomName);
+            if (loadout.Item2.CustomDescription != null)
+                _meta.SetEntityDescription(loadout.Item1, loadout.Item2.CustomDescription);
+            _paint.Paint(new EntityWhitelist(), loadout.Item1, Color.FromHex(loadout.Item2.CustomColorTint));
         }
     }
 }

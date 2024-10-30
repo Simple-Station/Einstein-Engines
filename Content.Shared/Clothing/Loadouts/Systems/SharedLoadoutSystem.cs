@@ -3,6 +3,7 @@ using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Inventory;
+using Content.Shared.Paint;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Station;
@@ -39,8 +40,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
     }
 
 
-    public List<EntityUid> ApplyCharacterLoadout(EntityUid uid, ProtoId<JobPrototype> job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted)
+    public (List<EntityUid>, List<(EntityUid, LoadoutPreference, int)>) ApplyCharacterLoadout(EntityUid uid, ProtoId<JobPrototype> job,
+        HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted)
     {
         var jobPrototype = _prototype.Index(job);
         return ApplyCharacterLoadout(uid, jobPrototype, profile, playTimes, whitelisted);
@@ -55,10 +56,11 @@ public sealed class SharedLoadoutSystem : EntitySystem
     /// <param name="playTimes">Playtime for the player for use with playtime requirements</param>
     /// <param name="whitelisted">If the player is whitelisted</param>
     /// <returns>A list of loadout items that couldn't be equipped but passed checks</returns>
-    public List<EntityUid> ApplyCharacterLoadout(EntityUid uid, JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted)
+    public (List<EntityUid>, List<(EntityUid, LoadoutPreference, int)>) ApplyCharacterLoadout(EntityUid uid, JobPrototype job,
+        HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted)
     {
         var failedLoadouts = new List<EntityUid>();
+        var allLoadouts = new List<(EntityUid, LoadoutPreference, int)>();
 
         foreach (var loadout in profile.LoadoutPreferences)
         {
@@ -81,8 +83,11 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 EntityManager.GetComponent<TransformComponent>(uid).Coordinates.ToMap(EntityManager),
                 loadoutProto.Items.Select(p => (string?) p.ToString()).ToList()); // Dumb cast
 
+            var i = 0;
             foreach (var item in spawned)
             {
+                allLoadouts.Add((item, loadout, i));
+
                 if (EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp)
                     && _characterRequirements.CanEntityWearItem(uid, item)
                     && _inventory.TryGetSlots(uid, out var slotDefinitions))
@@ -113,12 +118,14 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 // Equip the loadout
                 if (!_inventory.TryEquip(uid, item, slot, true, !string.IsNullOrEmpty(slot), true))
                     failedLoadouts.Add(item);
+
+                i++;
             }
         }
 
         // Return a list of items that couldn't be equipped so the server can handle it if it wants
         // The server has more information about the inventory system than the client does and the client doesn't need to put loadouts in backpacks
-        return failedLoadouts;
+        return (failedLoadouts, allLoadouts);
     }
 }
 

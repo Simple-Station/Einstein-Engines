@@ -12,6 +12,9 @@ using Content.Shared.SubFloor;
 using Content.Server.Nutrition.Components;
 using Content.Shared.Inventory;
 using Content.Server.Nutrition.EntitySystems;
+using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Whitelist;
+using Robust.Shared.Audio;
 
 namespace Content.Server.Paint;
 
@@ -28,6 +31,7 @@ public sealed class PaintSystem : SharedPaintSystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly OpenableSystem _openable = default!;
 
+
     public override void Initialize()
     {
         base.Initialize();
@@ -36,6 +40,7 @@ public sealed class PaintSystem : SharedPaintSystem
         SubscribeLocalEvent<PaintComponent, PaintDoAfterEvent>(OnPaint);
         SubscribeLocalEvent<PaintComponent, GetVerbsEvent<UtilityVerb>>(OnPaintVerb);
     }
+
 
     private void OnInteract(EntityUid uid, PaintComponent component, AfterInteractEvent args)
     {
@@ -67,14 +72,16 @@ public sealed class PaintSystem : SharedPaintSystem
         };
         args.Verbs.Add(verb);
     }
+
     private void PrepPaint(EntityUid uid, PaintComponent component, EntityUid target, EntityUid user)
     {
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, user, component.Delay, new PaintDoAfterEvent(), uid, target: target, used: uid)
         {
-            BreakOnMove = true,
+            BreakOnUserMove = true,
+            BreakOnTargetMove = true,
             NeedHand = true,
-            BreakOnHandChange = true
+            BreakOnHandChange = true,
         };
 
         _doAfterSystem.TryStartDoAfter(doAfterEventArgs);
@@ -82,39 +89,39 @@ public sealed class PaintSystem : SharedPaintSystem
 
     private void OnPaint(Entity<PaintComponent> entity, ref PaintDoAfterEvent args)
     {
-        if (args.Target == null || args.Used == null)
+        if (args.Target == null || args.Used == null || args.Handled || args.Cancelled || args.Target is not { Valid: true } target)
             return;
 
-        if (args.Handled || args.Cancelled)
-            return;
+        Paint(entity, target, args.User);
+        args.Handled = true;
+    }
 
-        if (args.Target is not { Valid: true } target)
-            return;
-
+    public void Paint(Entity<PaintComponent> entity, EntityUid target, EntityUid user)
+    {
         if (!_openable.IsOpen(entity))
         {
-            _popup.PopupEntity(Loc.GetString("paint-closed", ("used", args.Used)), args.User, args.User, PopupType.Medium);
+            _popup.PopupEntity(Loc.GetString("paint-closed", ("used", entity)), user, user, PopupType.Medium);
             return;
         }
 
         if (HasComp<PaintedComponent>(target) || HasComp<RandomSpriteComponent>(target))
         {
-            _popup.PopupEntity(Loc.GetString("paint-failure-painted", ("target", args.Target)), args.User, args.User, PopupType.Medium);
+            _popup.PopupEntity(Loc.GetString("paint-failure-painted", ("target", target)), user, user, PopupType.Medium);
             return;
         }
 
         if (!entity.Comp.Blacklist?.IsValid(target, EntityManager) != true || HasComp<HumanoidAppearanceComponent>(target) || HasComp<SubFloorHideComponent>(target))
         {
-            _popup.PopupEntity(Loc.GetString("paint-failure", ("target", args.Target)), args.User, args.User, PopupType.Medium);
+            _popup.PopupEntity(Loc.GetString("paint-failure", ("target", target)), user, user, PopupType.Medium);
             return;
         }
 
-        if (TryPaint(entity, target))
+        if (CanPaint(entity, target))
         {
-            EnsureComp<PaintedComponent>(target, out PaintedComponent? paint);
+            EnsureComp<PaintedComponent>(target, out var paint);
             EnsureComp<AppearanceComponent>(target);
 
-            paint.Color = entity.Comp.Color; // set the target color to the color specified in the spray paint yml.
+            paint.Color = entity.Comp.Color; // Set the target color to the color specified in the spray paint yml
             _audio.PlayPvs(entity.Comp.Spray, entity);
             paint.Enabled = true;
 
@@ -127,39 +134,66 @@ public sealed class PaintSystem : SharedPaintSystem
                         if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt))
                             continue;
 
-                        if (HasComp<PaintedComponent>(slotEnt.Value) || !entity.Comp.Blacklist?.IsValid(slotEnt.Value,
-                                                                         EntityManager) != true
-                                                                     || HasComp<RandomSpriteComponent>(slotEnt.Value) ||
-                                                                     HasComp<HumanoidAppearanceComponent>(
-                                                                         slotEnt.Value))
-                        {
+                        if (HasComp<PaintedComponent>(slotEnt.Value)
+                            || !entity.Comp.Blacklist?.IsValid(slotEnt.Value, EntityManager) != true
+                            || HasComp<RandomSpriteComponent>(slotEnt.Value)
+                            || HasComp<HumanoidAppearanceComponent>(slotEnt.Value))
                             continue;
-                        }
 
-                        EnsureComp<PaintedComponent>(slotEnt.Value, out PaintedComponent? slotpaint);
+                        EnsureComp<PaintedComponent>(slotEnt.Value, out var slotToPaint);
                         EnsureComp<AppearanceComponent>(slotEnt.Value);
-                        slotpaint.Color = entity.Comp.Color;
+                        slotToPaint.Color = entity.Comp.Color;
                         _appearanceSystem.SetData(slotEnt.Value, PaintVisuals.Painted, true);
-                        Dirty(slotEnt.Value, slotpaint);
+                        Dirty(slotEnt.Value, slotToPaint);
                     }
                 }
             }
 
-            _popup.PopupEntity(Loc.GetString("paint-success", ("target", args.Target)), args.User, args.User, PopupType.Medium);
+            _popup.PopupEntity(Loc.GetString("paint-success", ("target", target)), user, user, PopupType.Medium);
             _appearanceSystem.SetData(target, PaintVisuals.Painted, true);
             Dirty(target, paint);
-            args.Handled = true;
             return;
         }
 
-        if (!TryPaint(entity, target))
-        {
-            _popup.PopupEntity(Loc.GetString("paint-empty", ("used", args.Used)), args.User, args.User, PopupType.Medium);
-            return;
-        }
+        if (!CanPaint(entity, target))
+            _popup.PopupEntity(Loc.GetString("paint-empty", ("used", entity)), user, user, PopupType.Medium);
     }
 
-    private bool TryPaint(Entity<PaintComponent> reagent, EntityUid target)
+    public void Paint(EntityWhitelist blacklist, EntityUid target, Color color)
+    {
+        if (blacklist.IsValid(target, EntityManager))
+            return;
+
+        EnsureComp<PaintedComponent>(target, out var paint);
+        EnsureComp<AppearanceComponent>(target);
+
+        paint.Color = color;
+        paint.Enabled = true;
+
+        if (HasComp<InventoryComponent>(target))
+        {
+            if (_inventory.TryGetSlots(target, out var slotDefinitions))
+            {
+                foreach (var slot in slotDefinitions)
+                {
+                    if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt)
+                        || blacklist.IsValid(slotEnt.Value, EntityManager))
+                        continue;
+
+                    EnsureComp<PaintedComponent>(slotEnt.Value, out var slotToPaint);
+                    EnsureComp<AppearanceComponent>(slotEnt.Value);
+                    slotToPaint.Color = color;
+                    _appearanceSystem.SetData(slotEnt.Value, PaintVisuals.Painted, true);
+                    Dirty(slotEnt.Value, slotToPaint);
+                }
+            }
+        }
+
+        _appearanceSystem.SetData(target, PaintVisuals.Painted, true);
+        Dirty(target, paint);
+    }
+
+    private bool CanPaint(Entity<PaintComponent> reagent, EntityUid target)
     {
         if (HasComp<HumanoidAppearanceComponent>(target) || HasComp<SubFloorHideComponent>(target))
             return false;
