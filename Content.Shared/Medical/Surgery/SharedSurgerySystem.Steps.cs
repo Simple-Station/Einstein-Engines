@@ -204,7 +204,7 @@ public abstract partial class SharedSurgerySystem
             || !group.Any(damageType => damageable.Damage.DamageDict.TryGetValue(damageType, out var value)
                 && value > 0)
             && (!TryComp(args.Part, out BodyPartComponent? bodyPart)
-            || bodyPart.Integrity == 100))
+            || bodyPart.Integrity == bodyPart.MaxIntegrity))
             return;
 
         var bonus = ent.Comp.HealMultiplier * damageable.DamagePerGroup[ent.Comp.MainGroup];
@@ -239,7 +239,7 @@ public abstract partial class SharedSurgerySystem
             || group.Any(damageType => damageable.Damage.DamageDict.TryGetValue(damageType, out var value)
                 && value > 0)
             || !TryComp(args.Part, out BodyPartComponent? bodyPart)
-            || bodyPart.Integrity < 100)
+            || bodyPart.Integrity < bodyPart.MaxIntegrity)
             args.Cancelled = true;
     }
 

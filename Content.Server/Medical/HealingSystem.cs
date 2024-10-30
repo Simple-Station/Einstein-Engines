@@ -103,7 +103,7 @@ public sealed class HealingSystem : EntitySystem
                 // and integrity, then apply a direct integrity change.
                 var (type, symmetry) = _bodySystem.ConvertTargetBodyPart(user.Target);
                 if (_bodySystem.GetBodyChildrenOfType(args.Target.Value, type, symmetry: symmetry).FirstOrDefault() is { } bodyPart
-                    && bodyPart.Component.Integrity < 100)
+                    && bodyPart.Component.Integrity < bodyPart.Component.MaxIntegrity)
                     _bodySystem.TryChangeIntegrity(bodyPart, healing.Damage.GetTotal().Float(), false, target.Target, out var _);
             }
         }
@@ -166,7 +166,7 @@ public sealed class HealingSystem : EntitySystem
 
         foreach (var part in _bodySystem.GetBodyChildren(target, body))
         {
-            if (part.Component.Integrity < 100)
+            if (part.Component.Integrity < part.Component.MaxIntegrity)
                 return true;
         }
         return false;

@@ -37,12 +37,12 @@ public partial class SharedBodySystem
                 part.HealingTimer = 0;
                 if (part.Body is not null
                     && part.Integrity > 50
-                    && part.Integrity < 100
+                    && part.Integrity < part.MaxIntegrity
                     && !_mobState.IsDead(part.Body.Value))
                 {
                     var healing = part.SelfHealingAmount;
-                    if (healing + part.Integrity > 100)
-                        healing = part.Integrity - 100;
+                    if (healing + part.Integrity > part.MaxIntegrity)
+                        healing = part.Integrity - part.MaxIntegrity;
 
                     TryChangeIntegrity((ent, part), healing,
                         false, GetTargetBodyPart(part.PartType, part.Symmetry), out _);
@@ -88,7 +88,7 @@ public partial class SharedBodySystem
 
         var partIdSlot = GetParentPartAndSlotOrNull(partEnt)?.Slot;
         var originalIntegrity = partEnt.Comp.Integrity;
-        partEnt.Comp.Integrity = Math.Min(100, partEnt.Comp.Integrity - integrity);
+        partEnt.Comp.Integrity = Math.Min(partEnt.Comp.MaxIntegrity, partEnt.Comp.Integrity - integrity);
         if (canSever
             && !HasComp<BodyPartReattachedComponent>(partEnt)
             && !partEnt.Comp.Enabled

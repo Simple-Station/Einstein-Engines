@@ -1,0 +1,10 @@
+surgery-ui-window-title = Surgery
+surgery-ui-window-require = Requires
+surgery-ui-window-parts = &lt; Parts
+surgery-ui-window-surgeries = &lt; Surgeries
+surgery-ui-window-steps = &lt; Steps
+surgery-ui-window-steps-error-skills = You have no surgical skills.
+surgery-ui-window-steps-error-table = You need an operating table for this.
+surgery-ui-window-steps-error-armor = You need to remove their armor!
+surgery-ui-window-steps-error-tools = You're missing tools for this surgery.
+surgery-ui-window-steps-error-laying = They need to be laying down!

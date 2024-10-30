@@ -64,6 +64,12 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     public float Integrity = 100f;
 
     /// <summary>
+    /// What's the max health this body part can have?
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float MaxIntegrity = 100f;
+
+    /// <summary>
     /// Whether this body part is enabled or not.
     /// </summary>
     [DataField, AutoNetworkedField]

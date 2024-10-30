@@ -1,7 +1,6 @@
 - type: entity
   id: SurgeryStepBase
-  categories:
-  - HideSpawnMenu
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
 
@@ -9,6 +8,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepOpenIncisionScalpel
   name: Cut with a scalpel
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -29,6 +29,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepClampBleeders
   name: Clamp the bleeders
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -48,6 +49,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepRetractSkin
   name: Retract the skin
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -62,6 +64,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepSawBones
   name: Saw through bones
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -77,6 +80,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepPriseOpenBones
   name: Prise the bones open
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -91,6 +95,7 @@
 #  parent: SurgeryStepBase
 #  id: SurgeryStepCutLarvaRoots
 #  name: Cut larva roots
+#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: SurgeryStep
 #    skill: 2
@@ -106,6 +111,7 @@
 #  parent: SurgeryStepBase
 #  id: SurgeryStepRemoveLarva
 #  name: Remove larva
+#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: SurgeryStep
 #    skill: 2
@@ -124,6 +130,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepCloseBones
   name: Close bones
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -138,6 +145,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepMendRibcage
   name: Mend ribcage
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -152,6 +160,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepCloseIncision
   name: Close incision
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -180,6 +189,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepInsertFeature
   name: Insert part
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -195,6 +205,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepSealWounds
   name: Seal wounds
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -222,6 +233,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepSawFeature
   name: Saw through bones
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -237,6 +249,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepClampInternalBleeders
   name: Clamp internal bleeders
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -256,6 +269,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepRemoveFeature
   name: Amputate part
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -277,6 +291,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepCarefulIncisionScalpel
   name: Make a careful incision
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -292,6 +307,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepRepairBruteTissue
   name: Repair damaged tissue
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -308,6 +324,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepRepairBurnTissue
   name: Repair burnt tissue
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -325,6 +342,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepSealTendWound
   name: Seal the wound
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -347,6 +365,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepInsertItem
   name: Insert item into cavity
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
   - type: Sprite
@@ -360,6 +379,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepRemoveItem
   name: Remove item from cavity
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
   - type: Sprite
@@ -375,6 +395,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepRemoveOrgan
   name: Remove organ
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -389,6 +410,7 @@
   parent: SurgeryStepBase
   id: SurgeryStepInsertOrgan
   name: Add organ
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryStep
     tool:
@@ -405,6 +427,7 @@
   parent: SurgeryStepInsertOrgan
   id: SurgeryStepInsertLungs
   name: Add lungs
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryDamageChangeEffect
     damage:
@@ -417,6 +440,7 @@
   parent: SurgeryStepInsertOrgan
   id: SurgeryStepInsertLiver
   name: Add liver
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgeryDamageChangeEffect
     damage:
@@ -429,6 +453,7 @@
   parent: SurgeryStepInsertOrgan
   id: SurgeryStepInsertEyes
   name: Add eyes
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgerySpecialDamageChangeEffect
     damageType: Eye
@@ -438,6 +463,7 @@
   parent: SurgeryStepInsertOrgan
   id: SurgeryStepInsertHeart
   name: Add heart
+  categories: [ HideSpawnMenu ]
   components:
   - type: SurgerySpecialDamageChangeEffect
     damageType: Rot
