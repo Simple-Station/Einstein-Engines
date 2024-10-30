@@ -136,15 +136,10 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
 
         // Manage the info button
-        void updateGuidebook()
-        {
-            GuidebookButton.Visible = prototypeManager.HasIndex<GuideEntryPrototype>(DefaultLoadoutInfoGuidebook + Loadout.ID);
-            PreferenceButton.RemoveStyleClass("OpenRight");
-            if (GuidebookButton.Visible)
-                PreferenceButton.AddStyleClass("OpenRight");
-        }
-        updateGuidebook();
-        prototypeManager.PrototypesReloaded += _ => updateGuidebook();
+        void UpdateGuidebook() => GuidebookButton.Visible =
+            prototypeManager.HasIndex<GuideEntryPrototype>(DefaultLoadoutInfoGuidebook + Loadout.ID);
+        UpdateGuidebook();
+        prototypeManager.PrototypesReloaded += _ => UpdateGuidebook();
 
         GuidebookButton.OnPressed += _ =>
         {
@@ -223,13 +218,15 @@ public sealed partial class LoadoutPreferenceSelector : Control
     private bool _initialized;
     protected override void Draw(DrawingHandleScreen handle)
     {
-        if (_initialized || SpecialMenu.Body == null)
+        if (_initialized || SpecialMenu.Heading == null)
             return;
 
-        // Move the special editor below the primary buttons
-        var body = SpecialMenu.Body;
-        body.Orphan();
-        Container.AddChild(body);
+        // Move the special editor
+        var heading = SpecialMenu.Heading;
+        heading.Orphan();
+        ButtonGroup.AddChild(heading);
+        GuidebookButton.Orphan();
+        ButtonGroup.AddChild(GuidebookButton);
 
         // This guy's here too for reasons
         HeadingButton.SetHeight = GuidebookButton.SetHeight = PreferenceButton.Size.Y;
