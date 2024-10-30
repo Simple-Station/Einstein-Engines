@@ -5,9 +5,12 @@ using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Players;
+using Content.Shared.Preferences;
+using Content.Shared.Roles;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Clothing.Systems;
 
@@ -32,21 +35,40 @@ public sealed class LoadoutSystem : EntitySystem
             !_configurationManager.GetCVar(CCVars.GameLoadoutsEnabled))
             return;
 
+        ApplyCharacterLoadout(
+            ev.Mob,
+            ev.JobId,
+            ev.Profile,
+            _playTimeTracking.GetTrackerTimes(ev.Player),
+            ev.Player.ContentData()?.Whitelisted ?? false);
+    }
+
+
+    /// Equips every loadout, then puts whatever extras it can in inventories
+    public void ApplyCharacterLoadout(
+        EntityUid uid,
+        ProtoId<JobPrototype> job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        bool deleteFailed = false)
+    {
         // Spawn the loadout, get a list of items that failed to equip
-        var failedLoadouts = _loadout.ApplyCharacterLoadout(ev.Mob, ev.JobId, ev.Profile,
-            _playTimeTracking.GetTrackerTimes(ev.Player), ev.Player.ContentData()?.Whitelisted ?? false);
+        var failedLoadouts = _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted);
 
         // Try to find back-mounted storage apparatus
-        if (!_inventory.TryGetSlotEntity(ev.Mob, "back", out var item) ||
+        if (!_inventory.TryGetSlotEntity(uid, "back", out var item) ||
             !EntityManager.TryGetComponent<StorageComponent>(item, out var inventory))
             return;
 
         // Try inserting the entity into the storage, if it can't, it leaves the loadout item on the ground
         foreach (var loadout in failedLoadouts)
         {
-            if (EntityManager.TryGetComponent<ItemComponent>(loadout, out var itemComp) &&
-                _storage.CanInsert(item.Value, loadout, out _, inventory, itemComp))
-                _storage.Insert(item.Value, loadout, out _, playSound: false);
+            if ((!EntityManager.TryGetComponent<ItemComponent>(loadout, out var itemComp)
+                    || !_storage.CanInsert(item.Value, loadout, out _, inventory, itemComp)
+                    || !_storage.Insert(item.Value, loadout, out _, playSound: false))
+                && deleteFailed)
+                EntityManager.QueueDeleteEntity(loadout);
         }
     }
 }
