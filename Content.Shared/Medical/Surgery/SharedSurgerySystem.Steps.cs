@@ -204,7 +204,7 @@ public abstract partial class SharedSurgerySystem
             || !group.Any(damageType => damageable.Damage.DamageDict.TryGetValue(damageType, out var value)
                 && value > 0)
             && (!TryComp(args.Part, out BodyPartComponent? bodyPart)
-            || bodyPart.Integrity == bodyPart.MaxIntegrity))
+            || bodyPart.Integrity == BodyPartComponent.MaxIntegrity))
             return;
 
         var bonus = ent.Comp.HealMultiplier * damageable.DamagePerGroup[ent.Comp.MainGroup];
@@ -221,14 +221,6 @@ public abstract partial class SharedSurgerySystem
 
         var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, adjustedDamage, 0.5f);
         RaiseLocalEvent(args.Body, ref ev);
-
-        if (ent.Comp.IsAutoRepeatable)
-        {
-            var stepProto = GetProtoId(ent);
-            var surgeryProto = GetProtoId(args.Surgery);
-            if (stepProto != null && surgeryProto != null)
-                CheckAndStartStep(args.User, args.Body, args.Part, ent, args.Surgery, stepProto.Value, surgeryProto.Value);
-        }
     }
 
     private void OnTendWoundsCheck(Entity<SurgeryTendWoundsEffectComponent> ent, ref SurgeryStepCompleteCheckEvent args)
@@ -239,7 +231,7 @@ public abstract partial class SharedSurgerySystem
             || group.Any(damageType => damageable.Damage.DamageDict.TryGetValue(damageType, out var value)
                 && value > 0)
             || !TryComp(args.Part, out BodyPartComponent? bodyPart)
-            || bodyPart.Integrity < bodyPart.MaxIntegrity)
+            || bodyPart.Integrity < BodyPartComponent.MaxIntegrity)
             args.Cancelled = true;
     }
 
@@ -417,43 +409,6 @@ public abstract partial class SharedSurgerySystem
             }
         }
     }
-
-    // Small duplicate for OnSurgeryTargetStepChosen, allows for continuously looping a given step.
-    private void CheckAndStartStep(EntityUid user, EntityUid body, EntityUid part, EntityUid step, EntityUid surgery,
-        EntProtoId stepProto, EntProtoId surgeryProto)
-    {
-        if (!CanPerformStep(user, body, part, step, true, out _, out _, out var validTools))
-            return;
-
-        if (_net.IsServer && validTools?.Count > 0)
-        {
-            foreach (var tool in validTools)
-            {
-                if (TryComp(tool, out SurgeryToolComponent? toolComp) &&
-                    toolComp.EndSound != null)
-                {
-                    _audio.PlayEntity(toolComp.StartSound, user, tool);
-                }
-            }
-        }
-
-        if (TryComp(body, out TransformComponent? xform))
-            _rotateToFace.TryFaceCoordinates(user, _transform.GetMapCoordinates(body, xform).Position);
-
-        var ev = new SurgeryDoAfterEvent(surgeryProto, stepProto);
-        // TODO: Make this serialized on a per surgery step basis, and also add penalties based on ghetto tools.
-        var duration = 2f;
-        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
-            duration = duration / surgerySpeedMod.SpeedModifier;
-
-        var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
-        {
-            BreakOnUserMove = true,
-            BreakOnTargetMove = true,
-        };
-        _doAfter.TryStartDoAfter(doAfter);
-    }
-
     private void OnSurgeryTargetStepChosen(Entity<SurgeryTargetComponent> ent, ref SurgeryStepChosenBuiMsg args)
     {
         var user = args.Actor;
@@ -497,7 +452,12 @@ public abstract partial class SharedSurgerySystem
         {
             BreakOnUserMove = true,
             BreakOnTargetMove = true,
+            CancelDuplicate = true,
+            DuplicateCondition = DuplicateConditions.SameEvent,
+            NeedHand = true,
+            BreakOnHandChange = true,
         };
+
         _doAfter.TryStartDoAfter(doAfter);
     }
 

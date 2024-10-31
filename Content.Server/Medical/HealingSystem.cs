@@ -1,6 +1,7 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Shared.Body.Part;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Medical.Components;
 using Content.Server.Popups;
@@ -95,17 +96,13 @@ public sealed class HealingSystem : EntitySystem
         */
         if (healed != null && healed.GetTotal() == 0)
         {
-            if (TryComp<TargetingComponent>(args.User, out var user)
-                && TryComp<TargetingComponent>(args.Target, out var target)
-                && healing.Damage.GetTotal() < 0)
-            {
-                // If they are valid, we check for body part presence,
-                // and integrity, then apply a direct integrity change.
-                var (type, symmetry) = _bodySystem.ConvertTargetBodyPart(user.Target);
-                if (_bodySystem.GetBodyChildrenOfType(args.Target.Value, type, symmetry: symmetry).FirstOrDefault() is { } bodyPart
-                    && bodyPart.Component.Integrity < bodyPart.Component.MaxIntegrity)
-                    _bodySystem.TryChangeIntegrity(bodyPart, healing.Damage.GetTotal().Float(), false, target.Target, out var _);
-            }
+            var parts = _bodySystem.GetBodyChildren(args.Target).ToList();
+            // We fetch the most damaged body part
+            var mostDamaged = parts.MinBy(x => x.Component.Integrity);
+            var targetBodyPart = _bodySystem.GetTargetBodyPart(mostDamaged);
+
+            if (targetBodyPart != null)
+                _bodySystem.TryChangeIntegrity(mostDamaged, healing.Damage.GetTotal().Float(), false, targetBodyPart.Value, out _);
         }
 
         var total = healed?.GetTotal() ?? FixedPoint2.Zero;
@@ -166,7 +163,7 @@ public sealed class HealingSystem : EntitySystem
 
         foreach (var part in _bodySystem.GetBodyChildren(target, body))
         {
-            if (part.Component.Integrity < part.Component.MaxIntegrity)
+            if (part.Component.Integrity < BodyPartComponent.MaxIntegrity)
                 return true;
         }
         return false;

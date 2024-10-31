@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.Medical.Surgery.Conditions;
 using Content.Shared.Medical.Surgery.Effects.Complete;
 using Content.Shared.Body.Systems;
+using Content.Shared.Medical.Surgery.Steps;
 using Content.Shared.Medical.Surgery.Steps.Parts;
 //using Content.Shared._RMC14.Xenonids.Parasite;
 using Content.Shared.Body.Part;
@@ -52,7 +53,6 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
 
         SubscribeLocalEvent<SurgeryTargetComponent, SurgeryDoAfterEvent>(OnTargetDoAfter);
-
         SubscribeLocalEvent<SurgeryCloseIncisionConditionComponent, SurgeryValidEvent>(OnCloseIncisionValid);
         //SubscribeLocalEvent<SurgeryLarvaConditionComponent, SurgeryValidEvent>(OnLarvaValid);
         SubscribeLocalEvent<SurgeryPartConditionComponent, SurgeryValidEvent>(OnPartConditionValid);
@@ -83,10 +83,9 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             Log.Warning($"{ToPrettyString(args.User)} tried to start invalid surgery.");
             return;
         }
-
+        args.Repeat = HasComp<SurgeryRepeatableStepComponent>(step);
         var ev = new SurgeryStepEvent(args.User, ent, part, GetTools(args.User), surgery);
         RaiseLocalEvent(step, ref ev);
-
         RefreshUI(ent);
     }
 
@@ -107,7 +106,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         if (!TryComp(args.Body, out DamageableComponent? damageable)
             || !TryComp(args.Part, out BodyPartComponent? bodyPart)
             || damageable.TotalDamage <= 0
-            && bodyPart.Integrity == bodyPart.MaxIntegrity
+            && bodyPart.Integrity == BodyPartComponent.MaxIntegrity
             && !HasComp<IncisionOpenComponent>(args.Part))
             args.Cancelled = true;
     }
@@ -196,13 +195,11 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             !TryComp(surgeryEntId, out SurgeryComponent? surgeryComp) ||
             !surgeryComp.Steps.Contains(stepId) ||
             GetSingleton(stepId) is not { } stepEnt)
-        {
             return false;
-        }
+
         if (!HasComp<BodyPartComponent>(targetPart) && !HasComp<BodyComponent>(targetPart))
-        {
             return false;
-        }
+
         var ev = new SurgeryValidEvent(body, targetPart);
         if (_timing.IsFirstTimePredicted)
         {

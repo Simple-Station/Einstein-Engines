@@ -5,6 +5,7 @@ using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
+using Content.Shared.CCVar;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Interaction;
@@ -18,9 +19,9 @@ using Content.Shared.Mood;
 using Content.Server.Atmos.Rotting;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
-//using Content.Shared.Medical.Wounds;
 using Content.Shared.Prototypes;
 using Robust.Server.GameObjects;
+using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -32,14 +33,13 @@ public sealed class SurgerySystem : SharedSurgerySystem
 {
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
-
+    [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly RottingSystem _rot = default!;
     [Dependency] private readonly BlindableSystem _blindableSystem = default!;
-    //[Dependency] private readonly WoundsSystem _wounds = default!;
 
     private readonly List<EntProtoId> _surgeries = new();
 
@@ -108,12 +108,13 @@ public sealed class SurgerySystem : SharedSurgerySystem
         {
             return;
         }
-        /* lmao bet
-        if (user == args.Target)
+
+        if (user == args.Target && !_config.GetCVar(CCVars.CanOperateOnSelf))
         {
-            _popup.PopupEntity("You can't perform surgery on yourself!", user, user);
+            _popup.PopupEntity(Loc.GetString("surgery-error-self-surgery"), user, user);
             return;
-        }*/
+        }
+
         args.Handled = true;
         _ui.OpenUi(args.Target.Value, SurgeryUIKey.Key, user);
         RefreshUI(args.Target.Value);

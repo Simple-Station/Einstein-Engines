@@ -319,6 +319,7 @@
     damage:
       groups:
         Brute: -5
+  - type: SurgeryRepeatableStep
 
 - type: entity
   parent: SurgeryStepBase
@@ -337,6 +338,7 @@
     damage:
       groups:
         Burn: -5
+  - type: SurgeryRepeatableStep
 
 - type: entity
   parent: SurgeryStepBase
