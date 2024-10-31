@@ -947,6 +947,15 @@
     accentHColor: "#447987"
   - type: Icon
     state: pda-hos
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - CrimeAssistCartridge # DeltaV
+    - SecWatchCartridge # DeltaV
+    - NanoChatCartridge # DeltaV
+    - LogProbeCartridge
 
 - type: entity
   parent: BaseSecurityPDA
@@ -1010,6 +1019,19 @@
     borderColor: "#00842e"
   - type: Icon
     state: pda-centcom
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    diskSpace: 10 # DeltaV
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - MedTekCartridge
+    - LogProbeCartridge
+    - AstroNavCartridge
+    - CrimeAssistCartridge # DeltaV
+    - SecWatchCartridge # DeltaV
+    - NanoChatCartridge # DeltaV
 
 - type: entity
   parent: CentcomPDA
@@ -1026,16 +1048,18 @@
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     notificationsEnabled: false
-    diskSpace: 10 # DeltaV
+    diskSpace: 11 # DeltaV
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
     - NewsReaderCartridge
     - LogProbeCartridge
+    - MedTekCartridge
+    - AstroNavCartridge
+    - PsiWatchCartridge
     - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
     - StockTradingCartridge # Delta-V
     - NanoChatCartridge # DeltaV
-    - PsiWatchCartridge
 
 - type: entity
   parent: CentcomPDA
@@ -1128,14 +1152,6 @@
     preinstalled:
     - NotekeeperCartridge
     - NanoChatCartridge # DeltaV
-    cartridgeSlot:
-      priority: -1
-      name: Cartridge
-      ejectSound: /Audio/Machines/id_swipe.ogg
-      insertSound: /Audio/Machines/id_insert.ogg
-      whitelist:
-        components:
-        - Cartridge
   - type: ClothingAddFaction
     faction: Syndicate
 
@@ -1157,14 +1173,16 @@
     state: pda-ert
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
+    diskSpace: 9 # DeltaV
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
     - NewsReaderCartridge
-    - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
-    - LogProbeCartridge
-    - NanoChatCartridge # DeltaV
     - MedTekCartridge
+    - LogProbeCartridge
+    - AstroNavCartridge
+    - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
+    - NanoChatCartridge # DeltaV
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1205,15 +1223,6 @@
   components:
   - type: Pda
     id: ERTMedicIDCard
-  - type: CartridgeLoader
-    uiKey: enum.PdaUiKey.Key
-    preinstalled:
-    - CrewManifestCartridge
-    - NotekeeperCartridge
-    - NewsReaderCartridge
-    - MedTekCartridge
-    - CrimeAssistCartridge
-    - SecWatchCartridge
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1328,6 +1337,15 @@
     borderColor: "#774705"
   - type: Icon
     state: pda-detective
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - LogProbeCartridge
+    - CrimeAssistCartridge # DeltaV
+    - SecWatchCartridge # DeltaV
+    - NanoChatCartridge # DeltaV
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1350,11 +1368,12 @@
     accentVColor: "#d7d7d0"
   - type: Icon
     state: pda-brigmedic
-  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
+  - type: CartridgeLoader
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
     - NewsReaderCartridge
+    - MedTekCartridge
     - CrimeAssistCartridge # DeltaV
     - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
     - NanoChatCartridge # DeltaV
@@ -1487,13 +1506,5 @@
     - NotekeeperCartridge
     - MedTekCartridge
     - NanoChatCartridge
-    cartridgeSlot:
-      priority: -1
-      name: Cartridge
-      ejectSound: /Audio/Machines/id_swipe.ogg
-      insertSound: /Audio/Machines/id_insert.ogg
-      whitelist:
-        components:
-        - Cartridge
   - type: ClothingAddFaction
     faction: Syndicate
