@@ -122,6 +122,7 @@
         sprite: "Effects/creampie.rsi"
         state: "creampie_moth"
         visible: false
+  - type: FootPrints # WD EDIT
 
 - type: entity
   parent: BaseSpeciesDummy
