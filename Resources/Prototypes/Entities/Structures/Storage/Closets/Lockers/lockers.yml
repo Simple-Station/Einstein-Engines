@@ -18,6 +18,20 @@
     openSound:
       path: /Audio/Effects/woodenclosetopen.ogg
 
+# Bartender
+- type: entity
+  id: LockerBartender
+  parent: LockerBase
+  name: bartender's locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: bartender
+    stateDoorOpen: bartender_open
+    stateDoorClosed: bartender_door
+  - type: AccessReader
+    access: [ [ "bar" ] ]
+
 # Basic
 - type: entity
   id: LockerSteel
@@ -194,7 +208,7 @@
   - type: AccessReader
     access: [ [ "Hydroponics" ] ]
 
-#Janitor
+# Janitor
 - type: entity
   id: LockerJanitor
   parent: LockerBase
