@@ -34,20 +34,14 @@ public sealed partial class LoadoutPreferenceSelector : Control
     private LoadoutPreference _preference = null!;
     public LoadoutPreference Preference
     {
-        get => _preference = new(Loadout.ID)
-        {
-            CustomName = string.IsNullOrEmpty(NameEdit.Text) ? null : NameEdit.Text,
-            CustomDescription = string.IsNullOrEmpty(Rope.Collapse(DescriptionEdit.TextRope)) ? null : Rope.Collapse(DescriptionEdit.TextRope),
-            CustomColorTint = ColorEdit.Color == Color.White ? null : ColorEdit.Color.ToHex(),
-            Selected = PreferenceButton.Pressed,
-        };
+        get => _preference;
         set
         {
             _preference = value;
-            NameEdit.Text = _preference.CustomName ?? "";
-            DescriptionEdit.TextRope = new Rope.Leaf(_preference.CustomDescription ?? "");
-            ColorEdit.Color = Color.FromHex(_preference.CustomColorTint, Color.White);
-            PreferenceButton.Pressed = _preference.Selected;
+            NameEdit.Text = value.CustomName ?? "";
+            DescriptionEdit.TextRope = new Rope.Leaf(value.CustomDescription ?? "");
+            ColorEdit.Color = Color.FromHex(value.CustomColorTint, Color.White);
+            PreferenceButton.Pressed = value.Selected;
         }
     }
 
@@ -183,8 +177,24 @@ public sealed partial class LoadoutPreferenceSelector : Control
                 },
             },
         });
-        PreferenceButton.OnToggled += _ => PreferenceChanged?.Invoke(Preference);
-        SaveButton.OnPressed += _ => PreferenceChanged?.Invoke(Preference);
+        PreferenceButton.OnToggled += _ =>
+        {
+            _preference.Selected = PreferenceButton.Pressed;
+            PreferenceChanged?.Invoke(Preference);
+        };
+        SaveButton.OnPressed += _ =>
+        {
+            _preference.Selected = PreferenceButton.Pressed;
+            PreferenceChanged?.Invoke(Preference);
+        };
+
+        // Update prefs cache when something changes
+        NameEdit.OnTextChanged += _ =>
+            _preference.CustomName = string.IsNullOrEmpty(NameEdit.Text) ? null : NameEdit.Text;
+        DescriptionEdit.OnTextChanged += _ =>
+            _preference.CustomDescription = string.IsNullOrEmpty(Rope.Collapse(DescriptionEdit.TextRope))? null : Rope.Collapse(DescriptionEdit.TextRope);
+        ColorEdit.OnColorChanged += _ =>
+            _preference.CustomColorTint = ColorEdit.Color == Color.White ? null : ColorEdit.Color.ToHex();
 
         NameEdit.PlaceHolder = loadoutName;
         DescriptionEdit.Placeholder = new Rope.Leaf(Loc.GetString(loadoutDesc));
