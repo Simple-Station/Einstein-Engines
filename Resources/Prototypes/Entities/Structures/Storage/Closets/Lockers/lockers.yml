@@ -194,6 +194,20 @@
   - type: AccessReader
     access: [ [ "Hydroponics" ] ]
 
+#Janitor
+- type: entity
+  id: LockerJanitor
+  parent: LockerBase
+  name: janitor locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: jan
+    stateDoorOpen: jan_open
+    stateDoorClosed: jan_door
+  - type: AccessReader
+    access: [ [ "Janitor" ] ]
+
 # Medicine
 - type: entity
   id: LockerMedicine
@@ -393,6 +407,20 @@
     stateBaseClosed: syndicate
     stateDoorOpen: syndicate_open
     stateDoorClosed: syndicate_door
+
+- type: entity
+  id: LockerSyndicateAgentLocker
+  name: syndicate agent locker
+  parent: LockerBase
+  description: It's a personal storage unit for agent gear.
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: syndicate1
+    stateDoorOpen: syndicate1_open
+    stateDoorClosed: syndicate1_door
+  - type: AccessReader
+    access: [ [ "SyndicateAgent" ] ]
 
 # Bluespace
 - type: entity
