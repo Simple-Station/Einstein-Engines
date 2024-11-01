@@ -40,29 +40,13 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
                 return;
             }
 
-            // If output is higher than input, flip input/output to enable bidirectional flow.
-            if (outletNode.Air.Pressure > inletNode.Air.Pressure)
-            {
-                PipeNode temp = outletNode;
-                outletNode = inletNode;
-                inletNode = temp;
-            }
+            // If inlet pressure is greater than reference pressure, transfer air from inlet to outlet.
+            if (controlNode.Air.Pressure > inletNode.Air.Pressure)
+                return;
 
             float control = (controlNode.Air.Pressure - outletNode.Air.Pressure) - comp.Threshold;
-            float transferRate;
-            if (control < 0)
-            {
-                comp.Enabled = false;
-                transferRate = 0;
-            }
-            else
-            {
-                comp.Enabled = true;
-                transferRate = Math.Min(control * comp.Gain, comp.MaxTransferRate * _atmosphereSystem.PumpSpeedup());
-            }
             UpdateAppearance(uid, comp);
-
-            // We multiply the transfer rate in L/s by the seconds passed since the last process to get the liters.
+            var transferRate = Math.Min(control * comp.Gain, comp.MaxTransferRate * _atmosphereSystem.PumpSpeedup());
             var transferVolume = transferRate * args.dt;
             if (transferVolume <= 0)
             {
