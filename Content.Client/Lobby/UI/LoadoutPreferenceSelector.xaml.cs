@@ -84,7 +84,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         Loadout = loadout;
 
         // Show/hide the special menu and items depending on what's allowed
-        SpecialMenu.Visible = Loadout.CustomName || Loadout.CustomDescription || loadout.CustomColorTint;
+        SpecialMenu.Visible = Loadout.CustomName || Loadout.CustomDescription || Loadout.CustomColorTint;
         SpecialName.Visible = Loadout.CustomName;
         SpecialDescription.Visible = Loadout.CustomDescription;
         SpecialColorTint.Visible = Loadout.CustomColorTint;
@@ -95,6 +95,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         {
             // Get the first item in the loadout to be the preview
             dummyLoadoutItem = entityManager.SpawnEntity(loadout.Items.First(), MapCoordinates.Nullspace);
+            entities.Add(loadout.ID + 0, dummyLoadoutItem);
 
             // Create a sprite preview of the loadout item
             previewLoadout = new SpriteView
@@ -214,7 +215,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
         // Add requirement reasons to the tooltip
         foreach (var reason in reasons)
-            tooltip.Append($"\n{reason.ToMarkup()}");
+            tooltip.Append($"\n{reason}");
 
         // Combine the tooltip and format it in the checkbox supplier
         if (tooltip.Length > 0)
