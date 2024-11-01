@@ -102,3 +102,21 @@
   name: Amie Waters - Superposition
   path:
     path: /Audio/DeltaV/Jukebox/superposition-MONO.ogg
+
+- type: jukebox
+  id: MVMUpgradeMachine
+  name: TF2 Fight Songs - MVM Upgrade Machine
+  path:
+    path: /Audio/DeltaV/Jukebox/tf_music_upgrade_machine.ogg
+
+- type: jukebox
+  id: CuteCircus
+  name: Tsundere Twintails - Cute Circus
+  path:
+    path: /Audio/DeltaV/Jukebox/Cute_Circus.ogg
+
+- type: jukebox
+  id: Incomprehensible
+  name: Clown Core - Infinite Realm of Incomprehensible Suffering
+  path:
+    path: /Audio/DeltaV/Jukebox/Infinite_Realm_of_Incomprehensible_Suffering.ogg
