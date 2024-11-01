@@ -23,6 +23,18 @@
     stateDoorClosed: emergency_door
 
 - type: entity
+  id: ClosetWallRadiation
+  name: radiation wall closet
+  parent: BaseWallCloset
+  description: It's a storage unit for radiation equipment
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: rad
+    stateDoorOpen: rad_open
+    stateDoorClosed: rad_door
+
+- type: entity
   id: ClosetWallFire
   name: fire-safety wall closet
   parent: BaseWallCloset
