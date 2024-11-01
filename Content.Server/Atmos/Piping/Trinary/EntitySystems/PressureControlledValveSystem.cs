@@ -38,23 +38,22 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             }
 
             // If the pressure in either inlet or outlet exceeds the side pressure, act as an open pipe.
-            if (controlNode.Air.Pressure > inletNode.Air.Pressure
-                || controlNode.Air.Pressure > outletNode.Air.Pressure)
+            if (controlNode.Air.Pressure < inletNode.Air.Pressure
+                || controlNode.Air.Pressure < outletNode.Air.Pressure)
             {
-                inletNode.RemoveAlwaysReachable(outletNode);
-                outletNode.RemoveAlwaysReachable(inletNode);
-                comp.Enabled = false;
+                inletNode.AddAlwaysReachable(outletNode);
+                outletNode.AddAlwaysReachable(inletNode);
+                comp.Enabled = true;
                 UpdateAppearance(uid, comp);
-                _ambientSoundSystem.SetAmbience(uid, false);
+                _ambientSoundSystem.SetAmbience(uid, true);
                 return;
             }
 
-            inletNode.AddAlwaysReachable(outletNode);
-            outletNode.AddAlwaysReachable(inletNode);
-
-            comp.Enabled = true;
+            inletNode.RemoveAlwaysReachable(outletNode);
+            outletNode.RemoveAlwaysReachable(inletNode);
+            comp.Enabled = false;
             UpdateAppearance(uid, comp);
-            _ambientSoundSystem.SetAmbience(uid, true);
+            _ambientSoundSystem.SetAmbience(uid, false);
         }
 
         private void OnFilterLeaveAtmosphere(EntityUid uid, PressureControlledValveComponent comp, ref AtmosDeviceDisabledEvent args)
