@@ -15,6 +15,7 @@ using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Whitelist;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager;
 
 namespace Content.Server.Clothing.Systems;
 
@@ -28,6 +29,8 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly PaintSystem _paint = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly ISerializationManager _serialization = default!;
+
 
     public override void Initialize()
     {
@@ -84,8 +87,18 @@ public sealed class LoadoutSystem : EntitySystem
                 _meta.SetEntityName(loadout.Item1, loadout.Item2.CustomName);
             if (loadoutProto.CustomDescription && loadout.Item2.CustomDescription != null)
                 _meta.SetEntityDescription(loadout.Item1, loadout.Item2.CustomDescription);
-            if (loadoutProto.CustomColorTint)
+            if (loadoutProto.CustomColorTint && !string.IsNullOrEmpty(loadout.Item2.CustomColorTint))
                 _paint.Paint(new EntityWhitelist(), loadout.Item1, Color.FromHex(loadout.Item2.CustomColorTint));
+
+            foreach (var component in loadoutProto.Components.Values)
+            {
+                if (HasComp(loadout.Item1, component.Component.GetType()))
+                    continue;
+
+                var comp = (Component) _serialization.CreateCopy(component.Component, notNullableOverride: true);
+                comp.Owner = loadout.Item1;
+                EntityManager.AddComponent(loadout.Item1, comp);
+            }
         }
     }
 }

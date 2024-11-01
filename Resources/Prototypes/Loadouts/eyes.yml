@@ -17,6 +17,8 @@
   customColorTint: true
   items:
     - ClothingEyesGlasses
+  components:
+    - type: Paper
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyes

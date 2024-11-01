@@ -10,24 +10,24 @@ namespace Content.Shared.Clothing.Loadouts.Prototypes;
 [Prototype]
 public sealed partial class LoadoutPrototype : IPrototype
 {
-    /// <summary>
-    ///     Formatted like "Loadout[Department/ShortHeadName][CommonClothingSlot][SimplifiedClothingId]", example: "LoadoutScienceOuterLabcoatSeniorResearcher"
-    /// </summary>
+    /// Formatted like "Loadout[Department/ShortHeadName][CommonClothingSlot][SimplifiedClothingId]", example: "LoadoutScienceOuterLabcoatSeniorResearcher"
     [IdDataField]
     public string ID { get; } = default!;
 
-    [DataField, ValidatePrototypeId<LoadoutCategoryPrototype>]
+    [DataField]
     public ProtoId<LoadoutCategoryPrototype> Category = "Uncategorized";
 
     [DataField(required: true)]
     public List<ProtoId<EntityPrototype>> Items = new();
 
+    /// Components to give each item on spawn
+    [DataField]
+    public ComponentRegistry Components = new();
+
     [DataField]
     public int Cost = 1;
 
-    /// <summary>
-    ///     Should this item override other items in the same slot?
-    /// </summary>
+    /// Should this item override other items in the same slot
     [DataField]
     public bool Exclusive;
 
