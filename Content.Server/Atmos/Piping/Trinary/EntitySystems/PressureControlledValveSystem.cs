@@ -38,8 +38,8 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             }
 
             // If the pressure in either inlet or outlet exceeds the side pressure, act as an open pipe.
-            if (controlNode.Air.Pressure < inletNode.Air.Pressure
-                || controlNode.Air.Pressure < outletNode.Air.Pressure)
+            if (!comp.Enabled && (controlNode.Air.Pressure < inletNode.Air.Pressure
+                || controlNode.Air.Pressure < outletNode.Air.Pressure))
             {
                 inletNode.AddAlwaysReachable(outletNode);
                 outletNode.AddAlwaysReachable(inletNode);
@@ -48,6 +48,9 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
                 _ambientSoundSystem.SetAmbience(uid, true);
                 return;
             }
+
+            if (!comp.Enabled)
+                return;
 
             inletNode.RemoveAlwaysReachable(outletNode);
             outletNode.RemoveAlwaysReachable(inletNode);
