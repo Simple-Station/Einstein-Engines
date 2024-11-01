@@ -40,23 +40,24 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
                 return;
             }
 
-            // If inlet pressure is greater than reference pressure, transfer air from inlet to outlet.
-            if (controlNode.Air.Pressure > inletNode.Air.Pressure)
-                return;
-
-            float control = (controlNode.Air.Pressure - outletNode.Air.Pressure) - comp.Threshold;
-            UpdateAppearance(uid, comp);
-            var transferRate = Math.Min(control * comp.Gain, comp.MaxTransferRate * _atmosphereSystem.PumpSpeedup());
-            var transferVolume = transferRate * args.dt;
-            if (transferVolume <= 0)
+            // If the pressure in either inlet or outlet exceeds the side pressure, act as an open pipe.
+            if (controlNode.Air.Pressure > inletNode.Air.Pressure
+                || controlNode.Air.Pressure > outletNode.Air.Pressure)
             {
+                inletNode.RemoveAlwaysReachable(outletNode);
+                outletNode.RemoveAlwaysReachable(inletNode);
+                comp.Enabled = false;
+                UpdateAppearance(uid, comp);
                 _ambientSoundSystem.SetAmbience(uid, false);
                 return;
             }
 
+            inletNode.AddAlwaysReachable(outletNode);
+            outletNode.AddAlwaysReachable(inletNode);
+
+            comp.Enabled = true;
+            UpdateAppearance(uid, comp);
             _ambientSoundSystem.SetAmbience(uid, true);
-            var removed = inletNode.Air.RemoveVolume(transferVolume);
-            _atmosphereSystem.Merge(outletNode.Air, removed);
         }
 
         private void OnFilterLeaveAtmosphere(EntityUid uid, PressureControlledValveComponent comp, ref AtmosDeviceDisabledEvent args)
