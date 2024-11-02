@@ -34,7 +34,8 @@ public sealed partial class CharacterJobRequirement : CharacterRequirement
         out string? reason,
         int depth = 0)
     {
-        var jobs = new List<FormattedMessage>();
+        var jobs = new List<string>();
+        var depts = prototypeManager.EnumeratePrototypes<DepartmentPrototype>();
 
         // Get the job names and department colors
         foreach (var j in Jobs)
@@ -42,8 +43,7 @@ public sealed partial class CharacterJobRequirement : CharacterRequirement
             var jobProto = prototypeManager.Index(j);
             var color = Color.LightBlue;
 
-            foreach (var dept in prototypeManager.EnumeratePrototypes<DepartmentPrototype>()
-                .OrderBy(d => Loc.GetString($"department-{d.ID}")))
+            foreach (var dept in depts.ToList().OrderBy(d => Loc.GetString($"department-{d.ID}")))
             {
                 if (!dept.Roles.Contains(j))
                     continue;
@@ -52,13 +52,12 @@ public sealed partial class CharacterJobRequirement : CharacterRequirement
                 break;
             }
 
-            jobs.Add(FormattedMessage.FromMarkup($"[color={color.ToHex()}]{Loc.GetString(jobProto.Name)}[/color]"));
+            jobs.Add($"[color={color.ToHex()}]{Loc.GetString(jobProto.Name)}[/color]");
         }
 
         // Join the job names
-        var jobsList = string.Join(", ", jobs.Select(j => j.ToMarkup()));
         var jobsString = Loc.GetString("character-job-requirement",
-            ("inverted", Inverted), ("jobs", jobsList));
+            ("inverted", Inverted), ("jobs", string.Join(", ", jobs)));
 
         reason = jobsString;
         return Jobs.Contains(job.ID);
@@ -86,7 +85,7 @@ public sealed partial class CharacterDepartmentRequirement : CharacterRequiremen
         out string? reason,
         int depth = 0)
     {
-        var departments = new List<FormattedMessage>();
+        var departments = new List<string>();
 
         // Get the department names and colors
         foreach (var d in Departments)
@@ -94,13 +93,12 @@ public sealed partial class CharacterDepartmentRequirement : CharacterRequiremen
             var deptProto = prototypeManager.Index(d);
             var color = deptProto.Color;
 
-            departments.Add(FormattedMessage.FromMarkup($"[color={color.ToHex()}]{Loc.GetString($"department-{deptProto.ID}")}[/color]"));
+            departments.Add($"[color={color.ToHex()}]{Loc.GetString($"department-{deptProto.ID}")}[/color]");
         }
 
         // Join the department names
-        var departmentsList = string.Join(", ", departments.Select(d => d.ToMarkup()));
         var departmentsString = Loc.GetString("character-department-requirement",
-            ("inverted", Inverted), ("departments", departmentsList));
+            ("inverted", Inverted), ("departments", string.Join(", ", departments)));
 
         reason = departmentsString;
         return Departments.Any(d => prototypeManager.Index(d).Roles.Contains(job.ID));
