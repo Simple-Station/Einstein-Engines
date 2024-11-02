@@ -19,6 +19,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Lobby.UI;
@@ -227,7 +228,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
     }
 
     private bool _initialized;
-    protected override void Draw(DrawingHandleScreen handle)
+    protected override void FrameUpdate(FrameEventArgs args)
     {
         if (_initialized || SpecialMenu.Heading == null)
             return;
