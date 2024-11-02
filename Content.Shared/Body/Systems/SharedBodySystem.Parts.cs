@@ -4,6 +4,7 @@ using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Components;
 using Content.Shared.Random;
@@ -29,6 +30,7 @@ public partial class SharedBodySystem
         SubscribeLocalEvent<BodyPartComponent, EntInsertedIntoContainerMessage>(OnBodyPartInserted);
         SubscribeLocalEvent<BodyPartComponent, EntRemovedFromContainerMessage>(OnBodyPartRemoved);
         SubscribeLocalEvent<BodyPartComponent, AmputateAttemptEvent>(OnAmputateAttempt);
+        SubscribeLocalEvent<BodyPartComponent, BodyPartEnableChangedEvent>(OnPartEnableChanged);
     }
 
     private void OnMapInit(Entity<BodyPartComponent> ent, ref MapInitEvent args)
@@ -601,6 +603,16 @@ public partial class SharedBodySystem
         }
 
         part.ParentSlot = slot;
+
+        if (TryComp(part.Body, out HumanoidAppearanceComponent? bodyAppearance)
+            && !HasComp<BodyPartAppearanceComponent>(partId))
+        {
+            var appearance = AddComp<BodyPartAppearanceComponent>(partId);
+            appearance.OriginalBody = part.Body;
+            appearance.Color = bodyAppearance.SkinColor;
+            UpdateAppearance(partId, appearance);
+        }
+
         return Containers.Insert(partId, container);
     }
 

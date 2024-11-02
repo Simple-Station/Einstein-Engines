@@ -10,6 +10,7 @@ using Content.Shared.DragDrop;
 using Content.Shared.Gibbing.Components;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Gibbing.Systems;
+using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Standing;
@@ -19,7 +20,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
 using Robust.Shared.Timing;
-
 namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
@@ -217,6 +217,20 @@ public partial class SharedBodySystem
                     Log.Error($"Could not create slot for connection {connection} in body {prototype.ID}");
                     QueueDel(childPart);
                     continue;
+                }
+
+                if (TryComp(parentPartComponent.Body, out HumanoidAppearanceComponent? bodyAppearance))
+                {
+                    var appearance = AddComp<BodyPartAppearanceComponent>(childPart);
+                    appearance.OriginalBody = childPartComponent.OriginalBody;
+                    appearance.Color = bodyAppearance.SkinColor;
+
+                    var symmetry = ((BodyPartSymmetry) childPartComponent.Symmetry).ToString();
+                    if (symmetry == "None")
+                        symmetry = "";
+                    appearance.ID = "removed" + symmetry + ((BodyPartType) childPartComponent.PartType).ToString();
+
+                    Dirty(childPart, appearance);
                 }
 
                 // Add organs

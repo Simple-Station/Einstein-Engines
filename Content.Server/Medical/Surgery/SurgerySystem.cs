@@ -81,6 +81,18 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
         }
         _ui.SetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState(surgeries));
+        /*
+            Reason we do this is because when applying a BUI State, it rolls back the state on the entity temporarily,
+            which just so happens to occur right as we're checking for step completion, so we end up with the UI
+            not updating at all until you change tools or reopen the window.
+        */
+
+        var actors = _ui.GetActors(body, SurgeryUIKey.Key).ToArray();
+        if (actors.Length == 0)
+            return;
+
+        var filter = Filter.Entities(actors);
+        RaiseNetworkEvent(new SurgeryUiRefreshEvent(GetNetEntity(body)), filter);
     }
 
     private void SetDamage(EntityUid body, DamageSpecifier damage, float partMultiplier,
@@ -104,7 +116,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
             || !args.CanReach
             || args.Target == null
             || !TryComp<SurgeryTargetComponent>(args.User, out var surgery)
-            || !surgery.CanOperate)
+            || !surgery.CanOperate
+            || !IsLyingDown(args.Target.Value, args.User))
         {
             return;
         }
@@ -176,7 +189,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
             var ev = new BodyPartEnableChangedEvent(true);
             RaiseLocalEvent(targetPart.Id, ref ev);
             // This is basically an equalizer, severing a part will badly damage it.
-            // and affixing it will heal it a bit if its not too badly damaged.
+            // and affixing it will heal it a bit if it's not too badly damaged.
             _body.TryChangeIntegrity(targetPart, targetPart.Component.Integrity - 20, false,
                 _body.GetTargetBodyPart(targetPart.Component.PartType, targetPart.Component.Symmetry), out _);
         }

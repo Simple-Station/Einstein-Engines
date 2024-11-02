@@ -4,10 +4,17 @@ namespace Content.Client.Medical.Surgery;
 
 public sealed class SurgerySystem : SharedSurgerySystem
 {
-    public event Action? OnRefresh;
+    public event Action? OnStep;
 
-    public override void Update(float frameTime)
+    public override void Initialize()
     {
-        OnRefresh?.Invoke();
+        base.Initialize();
+
+        SubscribeNetworkEvent<SurgeryUiRefreshEvent>(OnRefresh);
+    }
+
+    private void OnRefresh(SurgeryUiRefreshEvent ev)
+    {
+        OnStep?.Invoke();
     }
 }

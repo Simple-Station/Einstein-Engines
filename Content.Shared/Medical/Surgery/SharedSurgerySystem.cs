@@ -73,16 +73,20 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
     private void OnTargetDoAfter(Entity<SurgeryTargetComponent> ent, ref SurgeryDoAfterEvent args)
     {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         if (args.Cancelled ||
             args.Handled ||
             args.Target is not { } target ||
-            !IsSurgeryValid(ent, target, args.Surgery, args.Step, out var surgery, out var part, out var step) ||
+            !IsSurgeryValid(ent, target, args.Surgery, args.Step, args.User, out var surgery, out var part, out var step) ||
             !PreviousStepsComplete(ent, part, surgery, args.Step) ||
             !CanPerformStep(args.User, ent, part, step, false))
         {
             Log.Warning($"{ToPrettyString(args.User)} tried to start invalid surgery.");
             return;
         }
+
         args.Repeat = HasComp<SurgeryRepeatableStepComponent>(step);
         var ev = new SurgeryStepEvent(args.User, ent, part, GetTools(args.User), surgery);
         RaiseLocalEvent(step, ref ev);
@@ -184,21 +188,22 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     }*/
 
     protected bool IsSurgeryValid(EntityUid body, EntityUid targetPart, EntProtoId surgery, EntProtoId stepId,
-        out Entity<SurgeryComponent> surgeryEnt, out EntityUid part, out EntityUid step)
+        EntityUid user, out Entity<SurgeryComponent> surgeryEnt, out EntityUid part, out EntityUid step)
     {
         surgeryEnt = default;
         part = default;
         step = default;
+
         if (!HasComp<SurgeryTargetComponent>(body) ||
-            !IsLyingDown(body) ||
+            !IsLyingDown(body, user) ||
             GetSingleton(surgery) is not { } surgeryEntId ||
             !TryComp(surgeryEntId, out SurgeryComponent? surgeryComp) ||
             !surgeryComp.Steps.Contains(stepId) ||
-            GetSingleton(stepId) is not { } stepEnt)
+            GetSingleton(stepId) is not { } stepEnt
+            || !HasComp<BodyPartComponent>(targetPart)
+            && !HasComp<BodyComponent>(targetPart))
             return false;
 
-        if (!HasComp<BodyPartComponent>(targetPart) && !HasComp<BodyComponent>(targetPart))
-            return false;
 
         var ev = new SurgeryValidEvent(body, targetPart);
         if (_timing.IsFirstTimePredicted)
@@ -238,7 +243,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         return _hands.EnumerateHeld(surgeon).ToList();
     }
 
-    public bool IsLyingDown(EntityUid entity)
+    public bool IsLyingDown(EntityUid entity, EntityUid user)
     {
         if (_standing.IsDown(entity))
             return true;
@@ -250,6 +255,8 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             if (rotation.GetCardinalDir() is Direction.West or Direction.East)
                 return true;
         }
+
+        _popup.PopupEntity(Loc.GetString("surgery-error-laying"), user, user);
 
         return false;
     }

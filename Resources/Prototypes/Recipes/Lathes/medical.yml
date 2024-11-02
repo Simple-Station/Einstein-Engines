@@ -73,7 +73,7 @@
 - type: latheRecipe
   id: BoneGel
   result: BoneGel
-  completetime: 10
+  completetime: 2
   materials:
     Plastic: 200
     Plasma: 200

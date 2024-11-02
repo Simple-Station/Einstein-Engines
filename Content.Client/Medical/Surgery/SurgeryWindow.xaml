@@ -20,11 +20,4 @@
             <BoxContainer Name="Steps" Access="Public" Orientation="Vertical" Visible="False" />
         </ScrollContainer>
     </BoxContainer>
-    <PanelContainer Name="DisabledPanel" Access="Public" HorizontalExpand="True"
-                    VerticalExpand="True" Visible="False">
-        <PanelContainer.PanelOverride>
-            <graphics:StyleBoxFlat BackgroundColor="#000000BF" />
-        </PanelContainer.PanelOverride>
-        <RichTextLabel Name="DisabledLabel" Access="Public" HorizontalAlignment="Center" />
-    </PanelContainer>
 </controls:SurgeryWindow>
