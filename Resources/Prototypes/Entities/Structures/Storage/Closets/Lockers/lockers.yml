@@ -30,7 +30,7 @@
     stateDoorOpen: bartender_open
     stateDoorClosed: bartender_door
   - type: AccessReader
-    access: [ [ "bar" ] ]
+    access: [ [ "Bar" ] ]
 
 # Basic
 - type: entity
