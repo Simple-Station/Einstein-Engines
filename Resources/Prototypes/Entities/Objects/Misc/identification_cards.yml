@@ -906,6 +906,8 @@
         type: AgentIDCardBoundUserInterface
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
+  - type: ClothingAddFaction
+    faction: Syndicate
 
 - type: entity
   name: passenger ID card

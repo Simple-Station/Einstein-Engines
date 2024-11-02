@@ -883,6 +883,8 @@
       whitelist:
         components:
           - Cartridge
+  - type: ClothingAddFaction
+    faction: Syndicate
 
 - type: entity
   parent: BasePDA
@@ -1229,3 +1231,5 @@
       whitelist:
         components:
           - Cartridge
+  - type: ClothingAddFaction
+    faction: Syndicate
