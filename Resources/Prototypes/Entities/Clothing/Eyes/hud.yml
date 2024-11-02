@@ -13,11 +13,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShowHealthBars
-    damageContainers:
-    - Biological
   - type: ShowHealthIcons
-    damageContainers:
-    - Biological
 
 - type: entity
   id: ShowPsionicsIcons
@@ -244,8 +240,6 @@
     sprite: Clothing/Eyes/Hud/syndagent.rsi
   - type: ShowSyndicateIcons
   - type: ShowHealthBars
-    damageContainers:
-    - Biological
 
 - type: entity
   parent: [ClothingEyesGlassesSunglasses, ShowSecurityIcons]
