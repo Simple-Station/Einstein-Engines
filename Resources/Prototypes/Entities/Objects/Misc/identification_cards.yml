@@ -920,6 +920,8 @@
     - Maintenance
     - SyndicateAgent
     - NuclearOperative
+  - type: ClothingAddFaction
+    faction: Syndicate
 
 - type: entity
   parent: IDCardStandard
@@ -954,6 +956,8 @@
     tags:
     - NuclearOperative
     - SyndicateAgent
+  - type: ClothingAddFaction
+    faction: Syndicate
 
 - type: entity
   parent: IDCardStandard
@@ -972,6 +976,8 @@
     tags:
     - NuclearOperative
     - SyndicateAgent
+  - type: ClothingAddFaction
+    faction: Syndicate
 
 - type: entity
   parent: IDCardStandard
