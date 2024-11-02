@@ -7705,3 +7705,10 @@ Entries:
   id: 6499
   time: '2024-11-02T01:03:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1171
+- author: Beck Thompson
+  changes:
+    - type: Fix
+      message: Fixed various bugs related to voice masks and voice mask implants.
+  id: 6500
+  time: '2024-11-02T01:11:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1147
