@@ -615,7 +615,7 @@ namespace Content.Client.Lobby.UI
             if (Profile == null || !_prototypeManager.HasIndex<SpeciesPrototype>(Profile.Species))
                 return;
 
-            PreviewDummy = _controller.LoadProfileEntity(Profile, ShowClothes.Pressed);
+            PreviewDummy = _controller.LoadProfileEntity(Profile, ShowClothes.Pressed, ShowLoadouts.Pressed);
             SpriteView.SetEntity(PreviewDummy);
         }
 
@@ -822,20 +822,6 @@ namespace Content.Client.Lobby.UI
             }
 
             UpdateJobPriorities();
-        }
-
-        private void ToggleClothes(BaseButton.ButtonEventArgs _)
-        {
-            //TODO: Optimization
-            // _controller.ShowClothes = ShowClothes.Pressed;
-            // _controller.UpdateCharacterUI();
-        }
-
-        private void ToggleLoadouts(BaseButton.ButtonEventArgs _)
-        {
-            //TODO: Optimization
-            // _controller.ShowLoadouts = ShowLoadouts.Pressed;
-            // _controller.UpdateCharacterUI();
         }
 
         private void UpdateRoleRequirements()
@@ -1970,8 +1956,13 @@ namespace Content.Client.Lobby.UI
             foreach (var preferenceSelector in _loadoutPreferences)
             {
                 var loadoutId = preferenceSelector.Loadout.ID;
-                var d = Profile?.LoadoutPreferences.FirstOrDefault(l => l.LoadoutName == loadoutId) ?? preferenceSelector.Preference;
-                var preference = new LoadoutPreference(d.LoadoutName, d.CustomName, d.CustomDescription, d.CustomColorTint) { Selected = d.Selected };
+                var loadoutPreference = Profile?.LoadoutPreferences.FirstOrDefault(l => l.LoadoutName == loadoutId) ?? preferenceSelector.Preference;
+                var preference = new LoadoutPreference(
+                    loadoutPreference.LoadoutName,
+                    loadoutPreference.CustomName,
+                    loadoutPreference.CustomDescription,
+                    loadoutPreference.CustomColorTint)
+                    { Selected = loadoutPreference.Selected };
 
                 preferenceSelector.Preference = preference;
 
@@ -1993,8 +1984,6 @@ namespace Content.Client.Lobby.UI
             AdminUIHelpers.RemoveConfirm(LoadoutsRemoveUnusableButton, _confirmationData);
 
             IsDirty = true;
-            //TODO: Optimization
-            // _controller.UpdateClothes = true;
             ReloadProfilePreview();
         }
 
