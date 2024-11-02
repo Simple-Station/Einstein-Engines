@@ -157023,17 +157023,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -18.562584,39.473816
       parent: 2
-- proto: WeaponShotgunDoubleBarreledRubber
-  entities:
-  - uid: 23932
-    components:
-    - type: Transform
-      parent: 23915
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: WeaponShotgunEnforcer
   entities:
   - uid: 23301

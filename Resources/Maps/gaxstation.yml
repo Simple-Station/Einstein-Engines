@@ -129717,17 +129717,6 @@ entities:
     - type: Transform
       pos: -15.405928,70.28039
       parent: 2
-- proto: WeaponShotgunDoubleBarreledRubber
-  entities:
-  - uid: 20352
-    components:
-    - type: Transform
-      parent: 20345
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: WeaponSubMachineGunDrozd
   entities:
   - uid: 18038
