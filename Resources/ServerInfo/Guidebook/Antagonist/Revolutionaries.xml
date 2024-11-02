@@ -13,7 +13,7 @@
   ## Objectives
   You must cuff, kill, or exile all of the [textlink="Command staff" link="Command"] on station in no particular order.
 
-  Your objective is not to destroy the station, but [italic]take it over[/italic], so try to minimize damage where possible.
+  Your objective is [bold]not to destroy the station[/bold], but [italic]to take it over[/italic], so try to minimize damage where possible.
 
   [bold]The revolution will fail[/bold] if all of the [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] die, and all [color=red]Revolutionaries[/color] will de-convert if this happens.
 
@@ -24,12 +24,13 @@
     <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Revolutionary Manifesto"/>
   </Box>
 
+
   You can convert crew members by using a [color=#a4885c]Revolutionary Manifesto[/color] clicking someone with it.
 
-  Another hurdle in your way are pesky [color=cyan]mindshield implanters[/color]. These will:
+  Another obstacle in your way are those pesky [color=cyan]mindshield implanters[/color]. These will:
   - Prevent the implanted person from being converted into a [color=red]Revolutionary[/color]
   - De-convert Revolutionaries, and will make them no longer loyal to your cause
-  - Visibly be destroyed upon being implanted into a [bold][color=#5e9cff]Head Revolutionary[/color][/bold], giving away your cover
+  - [bold]Visibly be destroyed upon being implanted into a [color=#5e9cff]Head Revolutionary[/color][/bold], giving you away
 
   Assume all of [color=#cb0000]Security[/color] and [color=#1b67a5]Command[/color] are implanted with mindshields already.
 
@@ -38,7 +39,7 @@
   </Box>
 
   ## Revolutionary
-  A [bold][color=red]Revolutionary[/color][/bold] is a crew member that has been converted by a [bold][color=#5e9cff]Head Revolutionary[/color][/bold].
+  A [color=red]Revolutionary[/color] is a crew member that has been converted by a [bold][color=#5e9cff]Head Revolutionary[/color][/bold].
 
   [bold][color=red]Revolutionaries[/color] can't convert people themselves,[/bold] but they're more than capable of doing dirty work and carrying out orders.
 </Document>
