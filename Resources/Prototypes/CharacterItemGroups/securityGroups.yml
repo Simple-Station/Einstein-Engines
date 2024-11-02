@@ -154,6 +154,14 @@
       id: LoadoutSpeedLoaderMagnumRubber
     - type: loadout
       id: LoadoutSpeedLoaderMagnumRubberSpare
+    - type: loadout
+      id: LoadoutMagazineMagnum
+    - type: loadout
+      id: LoadoutMagazineMagnumRubber
+    - type: loadout
+      id: LoadoutMagazineMagnumSpare
+    - type: loadout
+      id: LoadoutMagazineMagnumRubberSpare
 
 - type: characterItemGroup
   maxItems: 1
@@ -182,7 +190,35 @@
     - type: loadout
       id: LoadoutSecurityPistolViperNonLethal
     - type: loadout
+      id: LoadoutSecurityPistolViperWood
+    - type: loadout
       id: LoadoutSecurityEquipmentTruncheon
+    - type: loadout
+      id: LoadoutSecurityPistolSvalin
+    - type: loadout
+      id: LoadoutSecurityEnergyGunMini
+    - type: loadout
+      id: LoadoutSecurityEnergyGunPistol
+    - type: loadout
+      id: LoadoutSecurityPistolPollock
+    - type: loadout
+      id: LoadoutSecurityPistolPollockNonlethal
+    - type: loadout
+      id: LoadoutSecurityRevolverSnub
+    - type: loadout
+      id: LoadoutSecurityRevolverSnubNonlethal
+    - type: loadout
+      id: LoadoutSecurityRevolverK38Master
+    - type: loadout
+      id: LoadoutSecurityRevolverK38MasterNonlethal
+    - type: loadout
+      id: LoadoutSecurityRevolverFitz
+    - type: loadout
+      id: LoadoutSecurityRevolverFitzNonlethal
+    - type: loadout
+      id: LoadoutSecurityRevolverPython
+    - type: loadout
+      id: LoadoutSecurityRevolverPythonNonlethal
 
 - type: characterItemGroup
   maxItems: 1

@@ -7665,3 +7665,66 @@ Entries:
   id: 6496
   time: '2024-10-29T02:24:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1162
+- author: Ichaie
+  changes:
+    - type: Add
+      message: >-
+        Fixed several issues with the Gax Station. It also now has a newly
+        redesigned AI Satellite.
+  id: 6497
+  time: '2024-11-01T23:01:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1163
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Several new updates to Saltern, particularly around Service, Logistics,
+        and Engineering.
+    - type: Tweak
+      message: >-
+        Pressure Controlled Valves now actually function like their real-world
+        counterpart. If the pressure in the control-side exceeds the pressure in
+        either input or output sides, the valve opens, allowing air to flow
+        bidirectionally between input and output(Basically, an open valve). Air
+        can never pass through the Control-side.
+    - type: Tweak
+      message: >-
+        Literally doubled the power output of solar panels, to make them
+        actually worthwhile to setup. 
+  id: 6498
+  time: '2024-11-02T00:40:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1170
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Cargo can now order crates of Uranium, Gold, and Silver. This is still
+        far more expensive than getting the materials from Salvage, but serves
+        as an incredibly useful failsafe in the event Salvage is
+        Unwilling/Dead/Incompetent/Shitters.
+  id: 6499
+  time: '2024-11-02T01:03:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1171
+- author: Beck Thompson
+  changes:
+    - type: Fix
+      message: Fixed various bugs related to voice masks and voice mask implants.
+  id: 6500
+  time: '2024-11-02T01:11:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1147
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Python, Pollock, Webley, K38, Fitz, Wood Furniture Viper, Energy
+        Pistol, PDW-9, and Svalinn to security loadouts as new Duty Weapon
+        options.
+    - type: Tweak
+      message: >-
+        Modified the descriptions of all handguns obtained via Security Officer
+        Loadouts to explicitly state that they actually belong to the security
+        officer. Apparently people were being stupid and confiscating weapons
+        from their own Secoffs that they were entirely intended to have.
+  id: 6501
+  time: '2024-11-02T01:11:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1158
