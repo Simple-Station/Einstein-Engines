@@ -7728,3 +7728,14 @@ Entries:
   id: 6501
   time: '2024-11-02T01:11:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1158
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: >-
+        Cocooners can now freely uncocoon any cocoons without the need of a
+        sharp object.
+    - type: Fix
+      message: Cocoon making you stuck in muffle accent.
+  id: 6502
+  time: '2024-11-02T02:21:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1169
