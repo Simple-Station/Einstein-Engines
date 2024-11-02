@@ -7739,3 +7739,16 @@ Entries:
   id: 6502
   time: '2024-11-02T02:21:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1169
+- author: Ichaie
+  changes:
+    - type: Add
+      message: >-
+        lockers for Syndicate Agent (for mapping), Janitor and Bartender have
+        been added. 
+    - type: Add
+      message: a new wall variant has been added for the radiation closet
+    - type: Add
+      message: Uranium Crate added
+  id: 6503
+  time: '2024-11-02T15:05:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1174
