@@ -7752,3 +7752,17 @@ Entries:
   id: 6503
   time: '2024-11-02T15:05:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1174
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Syndicate Agents no longer have the Syndicate faction. Instead, the
+        Syndicate faction comes from your SYNDICATE ID/PDA. This means that if
+        you steal a Syndicate PDA from nukies, and wear it, you won't be shot by
+        their turrets. This also means that syndicate turrets will fire at
+        syndicate agents not wearing an agent ID.
+    - type: Fix
+      message: Fixed Familiars spawned by traitors attacking crew constantly.
+  id: 6504
+  time: '2024-11-02T16:24:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1176
