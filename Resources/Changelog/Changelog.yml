@@ -7766,3 +7766,12 @@ Entries:
   id: 6504
   time: '2024-11-02T16:24:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1176
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Cargo Technicians and Salvage Techs can now process cargo orders. You
+        don't need to smash the fucking LO Locker with a pickaxe anymore.
+  id: 6505
+  time: '2024-11-02T19:58:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1177
