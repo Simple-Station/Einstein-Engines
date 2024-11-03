@@ -10,3 +10,15 @@
         - Captain
   items:
     - ClothingHandsGlovesInspection
+
+- type: loadout
+  id: LoadoutCommandTelescopicBaton
+  category: JobsCommand
+  cost: 3
+  exclusive: true
+  requirements:
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Command
+  items:
+  - TelescopicBaton

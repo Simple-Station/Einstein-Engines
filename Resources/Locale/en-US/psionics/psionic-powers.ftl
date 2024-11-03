@@ -70,7 +70,7 @@ revivify-power-initialization-feedback =
     The Secret of Life in its fullness. I feel my entire existence burning out from within, merely by knowing it.
     Power flows through me as a mighty river, begging to be released with a simple spoken word.
 revivify-power-metapsionic-feedback = {CAPITALIZE($entity)} bears the Greater Secret of Life.
-revivify-start = {CAPITALIZE($entity)} enunciates a word of such divine power, that those who hear it weep from joy.
+revivify-begin = {CAPITALIZE($entity)} enunciates a word of such divine power, that those who hear it weep from joy.
 
 # Telegnosis
 telegnosis-power-description = Create a telegnostic projection to remotely observe things.
@@ -143,6 +143,21 @@ pyrokinetic-flare-power-initialization-feedback =
     I can recall it still, a glimpse of the fires of Gehenna.
 pyrokinetic-flare-power-metapsionic-feedback = Guh these don't even matter because nobody can read this line in-game and I don't know when I'm ever bringing back Narrow Pulse
 
+# Summon Imp
+action-name-summon-imp = Summon Imp
+action-description-summon-imp =
+    Summon and bind an Imp from Gehenna to serve as your Familiar.
+summon-imp-power-description = { action-description-summon-imp }
+summon-imp-power-initialization-feedback =
+    For a brief time, I find myself wandering the blackened fields of Gehenna. I sift between the ashes, finding a smoldering coal in the shape of an eye.
+    I breathe upon it, and it bursts alight with flame. Before I return, the creature thanks me and tells me its name.
+
+# Summon Remilia
+action-name-summon-remilia = Summon Remilia
+action-description-summon-remilia =
+    Call forth your ever-loyal familiar Remilia.
+summon-remilia-power-description = { action-description-summon-remilia }
+
 # Psionic System Messages
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
 examine-mindbroken-message =
@@ -160,3 +175,12 @@ action-name-darkswap = DarkSwap
 action-description-darkswap = Mmra Mamm!
 
 ethereal-pickup-fail = My hand sizzles as it passes through...
+
+# Psionic Familiar System
+psionic-familiar-cant-attack-master = I am bound by my Master, I cannot harm them.
+psionic-familiar-despawn-text = {CAPITALIZE($entity)} returns from whence it came!
+ghost-role-information-familiar-name = Psionic Familiar
+ghost-role-information-familiar-description = An interdimensional creature bound to the will of a Psion.
+ghost-role-information-familiar-rules =
+    Obey the one who summoned you. Do not act against the interests of your Master. You will die for your Master if it is necessary.
+
