@@ -21,6 +21,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed;
+using Robust.Shared.Audio;
+using Robust.Shared.GameObjects;
 
 namespace Content.Server.Silicons.Laws;
 
@@ -150,7 +152,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             return;
 
         base.OnGotEmagged(uid, component, ref args);
-        NotifyLawsChanged(uid);
+        NotifyLawsChanged(uid, component.EmaggedSound);
         EnsureEmaggedRole(uid, component);
 
         _stunSystem.TryParalyze(uid, component.StunTime, true);
@@ -235,7 +237,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         return ev.Laws;
     }
 
-    public void NotifyLawsChanged(EntityUid uid)
+    public void NotifyLawsChanged(EntityUid uid, SoundSpecifier? cue = null)
     {
         if (!TryComp<ActorComponent>(uid, out var actor))
             return;
@@ -243,6 +245,9 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         var msg = Loc.GetString("laws-update-notify");
         var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
         _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Red);
+
+        if (cue != null && _mind.TryGetMind(uid, out var mindId, out _))
+            _roles.MindPlaySound(mindId, cue);
     }
 
     /// <summary>
@@ -267,7 +272,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     /// <summary>
     /// Set the laws of a silicon entity while notifying the player.
     /// </summary>
-    public bool SetLaws(List<SiliconLaw> newLaws, EntityUid target, bool unRemovable = false)
+    public bool SetLaws(List<SiliconLaw> newLaws, EntityUid target, SoundSpecifier? cue = null, bool unRemovable = false)
     {
         if (!TryComp<SiliconLawProviderComponent>(target, out var component)
             || component.UnRemovable)
@@ -278,7 +283,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
 
         component.UnRemovable = unRemovable;
         component.Lawset.Laws = newLaws;
-        NotifyLawsChanged(target);
+        NotifyLawsChanged(target, cue);
         return true;
     }
 
@@ -293,11 +298,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
 
         while (query.MoveNext(out var update))
         {
-            if (!SetLaws(lawset, update, provider.UnRemovable))
-                continue;
-
-            if (provider.LawUploadSound != null && _mind.TryGetMind(update, out var mindId, out _))
-                _roles.MindPlaySound(mindId, provider.LawUploadSound);
+            SetLaws(lawset, update, provider.LawUploadSound, provider.UnRemovable);
         }
     }
 }
