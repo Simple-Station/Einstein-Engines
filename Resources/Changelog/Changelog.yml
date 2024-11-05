@@ -7775,3 +7775,13 @@ Entries:
   id: 6505
   time: '2024-11-02T19:58:26.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1177
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Communications Consoles that are marked as "Can't Recall The Shuttle"
+        now can't recall the shuttle. Previously they were still able to recall
+        it. 
+  id: 6506
+  time: '2024-11-05T04:12:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1180
