@@ -107,7 +107,7 @@ public sealed class LifeDrainerSystem : EntitySystem
     public bool TryDrain(Entity<LifeDrainerComponent> ent, EntityUid target)
     {
         var (uid, comp) = ent;
-        if (!CanDrain(ent, target) || !_actionBlocker.CanInteract(uid, target) || !_interaction.InRangeUnobstructed(ent, target, popup: true))
+        if (!CanDrain(ent, target) || !_actionBlocker.CanInteract(uid, target) || !_interaction.InRangeUnobstructed(ent.Owner, target, popup: true))
             return false;
 
         _popup.PopupEntity(Loc.GetString("life-drain-second-start", ("drainer", uid)), target, target, PopupType.LargeCaution);
