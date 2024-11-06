@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Interaction;
+using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
@@ -34,7 +35,8 @@ public sealed class RepulseSystem : EntitySystem
 
     public void Repulse(Entity<RepulseComponent> repulsor, EntityUid user)
     {
-        var ev = new BeforeRepulseEvent(repulsor, user);
+        var ev = new BeforeRepulseEvent(user);
+        RaiseLocalEvent(repulsor, ev);
         if (ev.Cancelled)
             return;
 
@@ -43,6 +45,6 @@ public sealed class RepulseSystem : EntitySystem
 
         _physics.ApplyLinearImpulse(user, impulse);
         _stunSystem.TryStun(user, repulsor.Comp.StunDuration, true);
-        _stunSystem.TryKnockdown(user, repulsor.Comp.KnockdownDuration, true);
+        _stunSystem.TryKnockdown(user, repulsor.Comp.KnockdownDuration, true, DropHeldItemsBehavior.DropIfStanding);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Content.Shared.Doors;
 using Content.Shared.Prying.Components;
+using Content.Shared.Repulsor;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Constructs;
 
@@ -14,6 +15,7 @@ public sealed class RunedDoorSystem : EntitySystem
         SubscribeLocalEvent<RunedDoorComponent, BeforeDoorOpenedEvent>(OnBeforeDoorOpened);
         SubscribeLocalEvent<RunedDoorComponent, BeforeDoorClosedEvent>(OnBeforeDoorClosed);
         SubscribeLocalEvent<RunedDoorComponent, BeforePryEvent>(OnBeforePry);
+        SubscribeLocalEvent<RunedDoorComponent, BeforeRepulseEvent>(BefoRepulse);
     }
 
     private void OnBeforeDoorOpened(Entity<RunedDoorComponent> door, ref BeforeDoorOpenedEvent args)
@@ -22,9 +24,7 @@ public sealed class RunedDoorSystem : EntitySystem
             return;
 
         if (!CanInteract(user))
-        {
             args.Cancel();
-        }
     }
 
     private void OnBeforeDoorClosed(Entity<RunedDoorComponent> door, ref BeforeDoorClosedEvent args)
@@ -33,14 +33,18 @@ public sealed class RunedDoorSystem : EntitySystem
             return;
 
         if (!CanInteract(user))
-        {
             args.Cancel();
-        }
     }
 
-    private void OnBeforePry(Entity<RunedDoorComponent> ent, ref BeforePryEvent args)
+    private void OnBeforePry(Entity<RunedDoorComponent> door, ref BeforePryEvent args)
     {
         args.Cancelled = true;
+    }
+
+    private void BefoRepulse(Entity<RunedDoorComponent> door, ref BeforeRepulseEvent args)
+    {
+        if (HasComp<BloodCultistComponent>(args.Target) || HasComp<ConstructComponent>(args.Target))
+            args.Cancel();
     }
 
     private bool CanInteract(EntityUid user)

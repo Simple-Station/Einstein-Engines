@@ -13,8 +13,7 @@ public sealed partial class RepulseComponent : Component
     public TimeSpan StunDuration = TimeSpan.FromSeconds(3);
 }
 
-public sealed class BeforeRepulseEvent(EntityUid origin, EntityUid target) : CancellableEntityEventArgs
+public sealed class BeforeRepulseEvent(EntityUid target) : CancellableEntityEventArgs
 {
-    public EntityUid Origin = origin;
     public EntityUid Target = target;
 }
