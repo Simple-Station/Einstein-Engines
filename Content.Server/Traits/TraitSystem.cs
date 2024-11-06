@@ -67,7 +67,7 @@ public sealed class TraitSystem : EntitySystem
     public void AddTrait(EntityUid uid, TraitPrototype traitPrototype)
     {
         foreach (var function in traitPrototype.Functions)
-            function.OnPlayerSpawn(uid);
+            function.OnPlayerSpawn(uid, _componentFactory, EntityManager, _serialization);
     }
 
     /// <summary>

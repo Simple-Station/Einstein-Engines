@@ -16,12 +16,11 @@ public sealed partial class TraitAddComponent : TraitFunction
     [AlwaysPushInheritance]
     public ComponentRegistry Components { get; private set; } = new();
 
-    public override void OnPlayerSpawn(EntityUid mob)
+    public override void OnPlayerSpawn(EntityUid mob,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
     {
-        var factory = IoCManager.Resolve<IComponentFactory>();
-        var entityManager = IoCManager.Resolve<IEntityManager>();
-        var serializationManager = IoCManager.Resolve<ISerializationManager>();
-
         foreach (var (name, data) in Components)
         {
             var component = (Component) factory.GetComponent(name);
@@ -44,10 +43,12 @@ public sealed partial class TraitAddImplant : TraitFunction
     [DataField(customTypeSerializer: typeof(PrototypeIdHashSetSerializer<EntityPrototype>))]
     public HashSet<string> Implants { get; private set; } = new();
 
-    public override void OnPlayerSpawn(EntityUid mob)
+    public override void OnPlayerSpawn(EntityUid mob,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
     {
-        var entMan = IoCManager.Resolve<IEntityManager>();
-        var implantSystem = entMan.System<SharedSubdermalImplantSystem>();
+        var implantSystem = entityManager.System<SharedSubdermalImplantSystem>();
         implantSystem.AddImplants(mob, Implants);
     }
 }

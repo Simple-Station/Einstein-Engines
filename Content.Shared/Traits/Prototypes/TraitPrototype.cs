@@ -2,6 +2,7 @@ using Content.Shared.Customization.Systems;
 using Content.Shared.Mood;
 using Content.Shared.Psionics;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Traits;
@@ -43,5 +44,8 @@ public sealed partial class TraitPrototype : IPrototype
 [ImplicitDataDefinitionForInheritors]
 public abstract partial class TraitFunction
 {
-    public abstract void OnPlayerSpawn(EntityUid mob);
+    public abstract void OnPlayerSpawn(EntityUid mob,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager);
 }
