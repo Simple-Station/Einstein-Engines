@@ -21,6 +21,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+
 
     public override void Initialize()
     {
@@ -88,6 +90,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
             {
                 allLoadouts.Add((item, loadout, i));
 
+                // Equip it
                 if (EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp)
                     && _characterRequirements.CanEntityWearItem(uid, item)
                     && _inventory.TryGetSlots(uid, out var slotDefinitions))
@@ -112,6 +115,17 @@ public sealed class SharedLoadoutSystem : EntitySystem
                             deleted = true;
                         }
                     }
+                }
+
+                // Color it
+                if (loadout.CustomColorTint != null)
+                {
+                    EnsureComp<AppearanceComponent>(item);
+                    EnsureComp<PaintedComponent>(item, out var paint);
+                    paint.Color = Color.FromHex(loadout.CustomColorTint);
+                    paint.Enabled = true;
+                    _appearance.TryGetData(item, PaintVisuals.Painted, out bool data);
+                    _appearance.SetData(item, PaintVisuals.Painted, !data);
                 }
 
 

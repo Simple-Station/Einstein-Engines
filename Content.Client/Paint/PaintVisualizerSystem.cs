@@ -45,7 +45,7 @@ public sealed class PaintedVisualizerSystem : VisualizerSystem<PaintedComponent>
             if (spriteLayer is not Layer layer)
                 continue;
 
-            if (layer.Shader == null) // If shader isn't null we dont want to replace the original shader.
+            if (layer.Shader == null || layer.Shader == shader) // If shader isn't null we dont want to replace the original shader.
             {
                 layer.Shader = shader;
                 layer.Color = component.Color;
