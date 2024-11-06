@@ -66,8 +66,10 @@ public sealed class TraitSystem : EntitySystem
     /// </summary>
     public void AddTrait(EntityUid uid, TraitPrototype traitPrototype)
     {
+        foreach (var function in traitPrototype.Functions)
+            function.OnPlayerSpawn(uid);
+
         RemoveTraitComponents(uid, traitPrototype);
-        AddTraitComponents(uid, traitPrototype);
         AddTraitActions(uid, traitPrototype);
         AddTraitPsionics(uid, traitPrototype);
         AddTraitLanguage(uid, traitPrototype);
@@ -96,25 +98,6 @@ public sealed class TraitSystem : EntitySystem
                 continue;
 
             EntityManager.RemoveComponent(uid, comp.Type);
-        }
-    }
-
-    /// <summary>
-    ///     Adds all Components included with a Trait.
-    /// </summary>
-    public void AddTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.Components is null)
-            return;
-
-        foreach (var entry in traitPrototype.Components.Values)
-        {
-            if (HasComp(uid, entry.Component.GetType()))
-                continue;
-
-            var comp = (Component) _serialization.CreateCopy(entry.Component, notNullableOverride: true);
-            comp.Owner = uid;
-            EntityManager.AddComponent(uid, comp);
         }
     }
 

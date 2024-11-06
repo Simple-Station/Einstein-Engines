@@ -34,12 +34,6 @@ public sealed partial class TraitPrototype : IPrototype
     public List<CharacterRequirement> Requirements = new();
 
     /// <summary>
-    ///     The components that get added to the player when they pick this trait.
-    /// </summary>
-    [DataField]
-    public ComponentRegistry? Components { get; private set; } = default!;
-
-    /// <summary>
     ///     The components that will be removed from a player when they pick this trait.
     ///     Primarily used to remove species innate traits.
     /// </summary>
@@ -105,4 +99,16 @@ public sealed partial class TraitPrototype : IPrototype
     /// </remarks>
     [DataField]
     public List<string>? AddFactions { get; private set; } = default!;
+
+    [DataField]
+    public TraitFunction[] Functions { get; private set; } = Array.Empty<TraitFunction>();
+}
+
+/// <summary>
+///     This serves as a hook for trait functions to modify a player character upon spawning in.
+/// </summary>
+[ImplicitDataDefinitionForInheritors]
+public abstract partial class TraitFunction
+{
+    public abstract void OnPlayerSpawn(EntityUid mob);
 }
