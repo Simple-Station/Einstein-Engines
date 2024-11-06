@@ -5,6 +5,11 @@ using Robust.Shared.Serialization.Manager;
 using Content.Shared.Implants;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 using Content.Shared.Actions;
+using Content.Server.Abilities.Psionics;
+using Content.Shared.Psionics;
+using Content.Server.Language;
+using Content.Shared.Mood;
+using Content.Server.NPC.Systems;
 
 namespace Content.Server.Traits;
 
@@ -123,5 +128,156 @@ public sealed partial class TraitAddImplant : TraitFunction
     {
         var implantSystem = entityManager.System<SharedSubdermalImplantSystem>();
         implantSystem.AddImplants(uid, Implants);
+    }
+}
+
+/// <summary>
+///     If a trait includes any Psionic Powers, this enters the powers into PsionicSystem to be initialized.
+///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitAddPsionics : TraitFunction
+{
+    [DataField]
+    public List<string>? PsionicPowers { get; private set; } = default!;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var prototype = IoCManager.Resolve<IPrototypeManager>();
+        var psionic = entityManager.System<PsionicAbilitiesSystem>();
+        if (PsionicPowers is null)
+            return;
+
+        foreach (var powerProto in PsionicPowers)
+            if (prototype.TryIndex<PsionicPowerPrototype>(powerProto, out var psionicPower))
+                psionic.InitializePsionicPower(uid, psionicPower, false);
+    }
+}
+
+/// <summary>
+///     Handles all modification of Known Languages. Removes languages before adding them.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitModifyLanguages : TraitFunction
+{
+    /// <summary>
+    ///     The list of all Spoken Languages that this trait adds.
+    /// </summary>
+    [DataField]
+    public List<string>? LanguagesSpoken { get; private set; } = default!;
+
+    /// <summary>
+    ///     The list of all Understood Languages that this trait adds.
+    /// </summary>
+    [DataField]
+    public List<string>? LanguagesUnderstood { get; private set; } = default!;
+
+    /// <summary>
+    ///     The list of all Spoken Languages that this trait removes.
+    /// </summary>
+    [DataField]
+    public List<string>? RemoveLanguagesSpoken { get; private set; } = default!;
+
+    /// <summary>
+    ///     The list of all Understood Languages that this trait removes.
+    /// </summary>
+    [DataField]
+    public List<string>? RemoveLanguagesUnderstood { get; private set; } = default!;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var language = entityManager.System<LanguageSystem>();
+
+        if (RemoveLanguagesSpoken is not null)
+            foreach (var lang in RemoveLanguagesSpoken)
+                language.RemoveLanguage(uid, lang, true, false);
+
+        if (RemoveLanguagesUnderstood is not null)
+            foreach (var lang in RemoveLanguagesUnderstood)
+                language.RemoveLanguage(uid, lang, false, true);
+
+        if (LanguagesSpoken is not null)
+            foreach (var lang in LanguagesSpoken)
+                language.AddLanguage(uid, lang, true, false);
+
+        if (LanguagesUnderstood is not null)
+            foreach (var lang in LanguagesUnderstood)
+                language.AddLanguage(uid, lang, false, true);
+    }
+}
+
+/// <summary>
+///     If a trait includes any Psionic Powers, this enters the powers into PsionicSystem to be initialized.
+///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitAddMoodlets : TraitFunction
+{
+    /// <summary>
+    ///     The list of all Moodlets that this trait adds.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<MoodEffectPrototype>>? MoodEffects { get; private set; } = default!;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var prototype = IoCManager.Resolve<IPrototypeManager>();
+        if (MoodEffects is null)
+            return;
+
+        foreach (var moodProto in MoodEffects)
+            if (prototype.TryIndex(moodProto, out var moodlet))
+                entityManager.EventBus.RaiseLocalEvent(uid, new MoodEffectEvent(moodlet.ID));
+    }
+}
+
+/// <summary>
+///     If a trait includes any Psionic Powers, this enters the powers into PsionicSystem to be initialized.
+///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitModifyFactions : TraitFunction
+{
+    /// <summary>
+    ///     The list of all Factions that this trait removes.
+    /// </summary>
+    /// <remarks>
+    ///     I can't actually Validate these because the proto lives in Shared.
+    /// </remarks>
+    [DataField]
+    public List<string>? RemoveFactions { get; private set; } = default!;
+
+    /// <summary>
+    ///     The list of all Factions that this trait adds.
+    /// </summary>
+    /// <remarks>
+    ///     I can't actually Validate these because the proto lives in Shared.
+    /// </remarks>
+    [DataField]
+    public List<string>? AddFactions { get; private set; } = default!;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var factionSystem = entityManager.System<NpcFactionSystem>();
+
+        if (RemoveFactions is not null)
+            foreach (var faction in RemoveFactions)
+                factionSystem.RemoveFaction(uid, faction);
+
+        if (AddFactions is not null)
+            foreach (var faction in AddFactions)
+                factionSystem.AddFaction(uid, faction);
     }
 }
