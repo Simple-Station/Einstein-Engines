@@ -1,9 +1,6 @@
 using Content.Shared.Customization.Systems;
-using Content.Shared.Mood;
-using Content.Shared.Psionics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Traits;
 
