@@ -1,11 +1,14 @@
-﻿using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Medical.Surgery.Tools;
-using Content.Shared.Body.Components;
+﻿using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Medical.Surgery.Tools;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Content.Shared.Humanoid;
 
 namespace Content.Shared.Body.Part;
 
@@ -106,6 +109,19 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
 
     [DataField, AutoNetworkedField]
     public ItemSlot ItemInsertionSlot = new();
+
+
+    /// <summary>
+    ///     Current species. Dictates things like body part sprites.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public string Species { get; set; } = "";
+
+    /// <summary>
+    ///     Do not make a stupid joke do not make a stupid joke do not make a stupid joke.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Sex Sex { get; set; } = Sex.Male;
 
     /// <summary>
     /// These are only for VV/Debug do not use these for gameplay/systems

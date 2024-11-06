@@ -79,7 +79,7 @@
         - trigger: !type:DamageTrigger
             damage: 500
           behaviors:
-            - !type:GibBehavior {}
+            - !type:GibBehavior { }
     - type: Icon
       sprite: Mobs/Species/IPC/parts.rsi
       state: full

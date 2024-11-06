@@ -5,6 +5,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
+using Content.Shared.Gibbing.Events;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Systems;
@@ -25,7 +26,6 @@ public sealed class BodySystem : SharedBodySystem
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
 
     public override void Initialize()
@@ -111,7 +111,9 @@ public sealed class BodySystem : SharedBodySystem
         Vector2? splatDirection = null,
         float splatModifier = 1,
         Angle splatCone = default,
-        SoundSpecifier? gibSoundOverride = null)
+        SoundSpecifier? gibSoundOverride = null,
+        GibType gib = GibType.Gib,
+        GibContentsOption contents = GibContentsOption.Drop)
     {
         if (!Resolve(bodyId, ref body, logMissing: false)
             || TerminatingOrDeleted(bodyId)
@@ -125,7 +127,8 @@ public sealed class BodySystem : SharedBodySystem
             return new HashSet<EntityUid>();
 
         var gibs = base.GibBody(bodyId, gibOrgans, body, launchGibs: launchGibs,
-            splatDirection: splatDirection, splatModifier: splatModifier, splatCone: splatCone);
+            splatDirection: splatDirection, splatModifier: splatModifier, splatCone: splatCone,
+            gib: gib, contents: contents);
 
         var ev = new BeingGibbedEvent(gibs);
         RaiseLocalEvent(bodyId, ref ev);
@@ -166,8 +169,21 @@ public sealed class BodySystem : SharedBodySystem
         return gibs;
     }
 
-    protected override void UpdateAppearance(EntityUid uid, BodyPartAppearanceComponent component)
+    protected override void ApplyPartMarkings(EntityUid target, BodyPartAppearanceComponent component)
     {
         return;
+    }
+
+    protected override void RemovePartMarkings(EntityUid target, BodyPartAppearanceComponent partAppearance, HumanoidAppearanceComponent bodyAppearance)
+    {
+        foreach (var (visualLayer, markingList) in partAppearance.Markings)
+        {
+            foreach (var marking in markingList)
+            {
+                _humanoidSystem.RemoveMarking(target, marking.MarkingId, sync: false, humanoid: bodyAppearance);
+            }
+        }
+
+        Dirty(target, bodyAppearance);
     }
 }

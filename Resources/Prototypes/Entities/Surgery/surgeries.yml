@@ -69,7 +69,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Surgery
-    requirement: SurgeryOpenIncision
+    #requirement: SurgeryOpenIncision
     steps:
     - SurgeryStepInsertFeature
     - SurgeryStepSealWounds
@@ -149,7 +149,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryAttachLeftHand
-  name: Attach Left Han
+  name: Attach Left Hand
   categories: [ HideSpawnMenu ]
   components:
   - type: Surgery

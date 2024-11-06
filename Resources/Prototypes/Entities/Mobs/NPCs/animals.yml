@@ -397,7 +397,8 @@
         damageType: Blunt
         damage: 10
       behaviors:
-      - !type:GibBehavior { }
+      - !type:GibBehavior
+        gibContents: Skip
   - type: NonSpreaderZombie
 
 - type: entity

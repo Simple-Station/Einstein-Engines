@@ -54,9 +54,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
         SubscribeLocalEvent<SurgeryStepAffixPartEffectComponent, SurgeryStepEvent>(OnStepAffixPartComplete);
         SubscribeLocalEvent<SurgeryStepEmoteEffectComponent, SurgeryStepEvent>(OnStepScreamComplete);
         SubscribeLocalEvent<SurgeryStepSpawnEffectComponent, SurgeryStepEvent>(OnStepSpawnComplete);
-
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
-
         LoadPrototypes();
     }
 
@@ -84,17 +82,10 @@ public sealed class SurgerySystem : SharedSurgerySystem
         /*
             Reason we do this is because when applying a BUI State, it rolls back the state on the entity temporarily,
             which just so happens to occur right as we're checking for step completion, so we end up with the UI
-            not updating at all until you change tools or reopen the window.
+            not updating at all until you change tools or reopen the window. I love shitcode.
         */
-
-        var actors = _ui.GetActors(body, SurgeryUIKey.Key).ToArray();
-        if (actors.Length == 0)
-            return;
-
-        var filter = Filter.Entities(actors);
-        RaiseNetworkEvent(new SurgeryUiRefreshEvent(GetNetEntity(body)), filter);
+        _ui.ServerSendUiMessage(body, SurgeryUIKey.Key, new SurgeryBuiRefreshMessage());
     }
-
     private void SetDamage(EntityUid body, DamageSpecifier damage, float partMultiplier,
         EntityUid user, EntityUid part)
     {
@@ -115,6 +106,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
         if (args.Handled
             || !args.CanReach
             || args.Target == null
+            || !HasComp<SurgeryTargetComponent>(args.Target)
             || !TryComp<SurgeryTargetComponent>(args.User, out var surgery)
             || !surgery.CanOperate
             || !IsLyingDown(args.Target.Value, args.User))
@@ -122,7 +114,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
             return;
         }
 
-        if (user == args.Target && !_config.GetCVar(CCVars.CanOperateOnSelf))
+        if (user == args.Target && _config.GetCVar(CCVars.CanOperateOnSelf))
         {
             _popup.PopupEntity(Loc.GetString("surgery-error-self-surgery"), user, user);
             return;
