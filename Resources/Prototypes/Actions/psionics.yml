@@ -338,3 +338,67 @@
       event: !type:DarkSwapActionEvent
         manaCost: 100
         checkInsulation: false
+
+- type: entity
+  id: ActionPyrokineticFlare
+  name: action-name-pyrokinetic-flare
+  description: action-description-pyrokinetic-flare
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: { sprite: Interface/Actions/psionics.rsi, state: pyrokinetic_flare }
+      useDelay: 25
+      checkCanInteract: false
+      event: !type:AnomalyPowerActionEvent
+        settings:
+          powerName: "Pyrokinetic Flare"
+          minGlimmer: 3
+          maxGlimmer: 5
+          doSupercritical: false
+        entitySpawnEntries:
+          - settings:
+              spawnOnPulse: true
+              spawnOnSuperCritical: true
+              minAmount: 1
+              maxAmount: 3
+              maxRange: 1
+            spawns:
+              - EffectPyrokineticFlare
+
+- type: entity
+  id: ActionSummonImp
+  name: action-name-summon-imp
+  description: action-description-summon-imp
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: { sprite: Interface/Actions/psionics.rsi, state: summon_imp }
+      useDelay: 120
+      checkCanInteract: false
+      event: !type:SummonPsionicFamiliarActionEvent
+        familiarProto: MobPsionicFamiliarImp
+        powerName: "Summon Imp"
+        checkInsulation: true
+        doGlimmerEffects: true
+        followMaster: true
+        minGlimmer: 10
+        maxGlimmer: 20
+
+- type: entity
+  id: ActionSummonRemilia
+  name: action-name-summon-remilia
+  description: action-description-summon-remilia
+  noSpawn: true
+  components:
+    - type: InstantAction
+      icon: { sprite: Interface/Actions/psionics.rsi, state: summon_remilia }
+      useDelay: 120
+      checkCanInteract: false
+      event: !type:SummonPsionicFamiliarActionEvent
+        familiarProto: MobBatRemilia
+        powerName: "Summon Remilia"
+        checkInsulation: true
+        doGlimmerEffects: true
+        followMaster: true
+        minGlimmer: 5
+        maxGlimmer: 10
