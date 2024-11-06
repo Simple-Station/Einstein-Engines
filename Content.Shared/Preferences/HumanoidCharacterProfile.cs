@@ -315,13 +315,14 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         bool pref,
         string? customName = null,
         string? customDescription = null,
-        string? customColor = null)
+        string? customColor = null,
+        bool? customHeirloom = null)
     {
         var list = new HashSet<LoadoutPreference>(_loadoutPreferences);
 
         list.RemoveWhere(l => l.LoadoutName == loadoutId);
         if (pref)
-            list.Add(new(loadoutId, customName, customDescription, customColor) { Selected = pref });
+            list.Add(new(loadoutId, customName, customDescription, customColor, customHeirloom) { Selected = pref });
 
         return new HumanoidCharacterProfile(this) { _loadoutPreferences = list };
     }

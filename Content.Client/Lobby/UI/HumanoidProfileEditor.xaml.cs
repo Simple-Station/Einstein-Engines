@@ -1961,7 +1961,8 @@ namespace Content.Client.Lobby.UI
                     loadoutPreference.LoadoutName,
                     loadoutPreference.CustomName,
                     loadoutPreference.CustomDescription,
-                    loadoutPreference.CustomColorTint)
+                    loadoutPreference.CustomColorTint,
+                    loadoutPreference.CustomHeirloom)
                     { Selected = loadoutPreference.Selected };
 
                 preferenceSelector.Preference = preference;
@@ -2101,7 +2102,7 @@ namespace Content.Client.Lobby.UI
                 {
                     var first = _loadoutPreferences.First(lps => lps.Loadout.ID == loadout.ID);
                     var prof = Profile?.LoadoutPreferences.FirstOrDefault(lp => lp.LoadoutName == loadout.ID);
-                    first.Preference = new(loadout.ID, prof?.CustomName, prof?.CustomDescription, prof?.CustomColorTint);
+                    first.Preference = new(loadout.ID, prof?.CustomName, prof?.CustomDescription, prof?.CustomColorTint, prof?.CustomHeirloom);
                     UpdateSelector(first, usable);
                     continue;
                 }
@@ -2231,7 +2232,8 @@ namespace Content.Client.Lobby.UI
                         selected,
                         preference.CustomName,
                         preference.CustomDescription,
-                        preference.CustomColorTint);
+                        preference.CustomColorTint,
+                        preference.CustomHeirloom);
                     IsDirty = true;
                     UpdateLoadoutPreferences();
                     UpdateCharacterRequired();

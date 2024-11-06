@@ -49,6 +49,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
             ColorEdit.Color = Color.FromHex(value.CustomColorTint, Color.White);
             if (value.CustomColorTint != null)
                 UpdatePaint(new(DummyEntityUid, _entityManager.GetComponent<PaintedComponent>(DummyEntityUid)), _entityManager);
+            HeirloomButton.Pressed = value.CustomHeirloom ?? false;
             PreferenceButton.Pressed = value.Selected;
         }
     }
@@ -94,6 +95,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         Loadout = loadout;
 
         // Show/hide the special menu and items depending on what's allowed
+        HeirloomButton.Visible = loadout.CanBeHeirloom;
         SpecialMenu.Visible = Loadout.CustomName || Loadout.CustomDescription || Loadout.CustomColorTint;
         SpecialName.Visible = Loadout.CustomName;
         SpecialDescription.Visible = Loadout.CustomDescription;
@@ -192,9 +194,14 @@ public sealed partial class LoadoutPreferenceSelector : Control
                 },
             },
         });
-        PreferenceButton.OnToggled += _ =>
+        PreferenceButton.OnToggled += args =>
         {
-            _preference.Selected = PreferenceButton.Pressed;
+            _preference.Selected = args.Pressed;
+            PreferenceChanged?.Invoke(Preference);
+        };
+        HeirloomButton.OnToggled += args =>
+        {
+            _preference.CustomHeirloom = args.Pressed ? true : null;
             PreferenceChanged?.Invoke(Preference);
         };
         SaveButton.OnPressed += _ =>

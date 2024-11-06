@@ -149,12 +149,14 @@ public class Loadout(
     string loadoutName,
     string? customName = null,
     string? customDescription = null,
-    string? customColorTint = null)
+    string? customColorTint = null,
+    bool? customHeirloom = null)
 {
     public string LoadoutName { get; set; } = loadoutName;
     public string? CustomName { get; set; } = customName;
     public string? CustomDescription { get; set; } = customDescription;
     public string? CustomColorTint { get; set; } = customColorTint;
+    public bool? CustomHeirloom { get; set; } = customHeirloom;
 }
 
 [Serializable]
@@ -162,7 +164,9 @@ public sealed class LoadoutPreference(
     string loadoutName,
     string? customName = null,
     string? customDescription = null,
-    string? customColorTint = null) : Loadout(loadoutName, customName, customDescription, customColorTint)
+    string? customColorTint = null,
+    bool? customHeirloom = null)
+    : Loadout(loadoutName, customName, customDescription, customColorTint, customHeirloom)
 {
     public bool Selected;
 }

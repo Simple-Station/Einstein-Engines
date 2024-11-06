@@ -28,8 +28,8 @@ public sealed partial class StyledButtonGroup : BoxContainer
             var child = children[i];
             var button = (child as Button)!;
 
-            button.RemoveStyleClass(ButtonOpenLeft);
             button.RemoveStyleClass(ButtonOpenRight);
+            button.RemoveStyleClass(ButtonOpenLeft);
             button.RemoveStyleClass(ButtonOpenBoth);
 
             if (i == 0)

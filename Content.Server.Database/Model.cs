@@ -409,7 +409,9 @@ namespace Content.Server.Database
         string loadoutName,
         string? customName = null,
         string? customDescription = null,
-        string? customColorTint = null) : Shared.Clothing.Loadouts.Systems.Loadout(loadoutName, customName, customDescription, customColorTint)
+        string? customColorTint = null,
+        bool? customHeirloom = null)
+        : Shared.Clothing.Loadouts.Systems.Loadout(loadoutName, customName, customDescription, customColorTint, customHeirloom)
     {
         public int Id { get; set; }
         public Profile Profile { get; set; } = null!;

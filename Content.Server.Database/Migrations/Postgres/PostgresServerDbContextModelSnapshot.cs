@@ -666,6 +666,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("custom_description");
 
+                    b.Property<bool?>("CustomHeirloom")
+                        .HasColumnType("boolean")
+                        .HasColumnName("custom_heirloom");
+
                     b.Property<string>("CustomName")
                         .HasColumnType("text")
                         .HasColumnName("custom_name");

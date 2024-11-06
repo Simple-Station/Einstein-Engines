@@ -38,7 +38,10 @@ public sealed partial class LoadoutPrototype : IPrototype
     public bool CustomDescription = true;
 
     [DataField]
-    public bool CustomColorTint = true;
+    public bool CustomColorTint = true; //TODO: Make this false, it's true now for testing and funnies
+
+    [DataField]
+    public bool CanBeHeirloom = true; //TODO: Make this false, it's true now for testing and funnies
 
     [DataField]
     public List<CharacterRequirement> Requirements = new();

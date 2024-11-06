@@ -10,6 +10,14 @@
                 ToggleMode="True"
                 VerticalAlignment="Center" />
 
+            <Button
+                Name="HeirloomButton"
+                Access="Public"
+                Text="{Loc 'humanoid-profile-editor-loadouts-heirloom'}"
+                ToolTip="{Loc 'humanoid-profile-editor-loadouts-heirloom-tooltip'}"
+                ToggleMode="True"
+                VerticalAlignment="Center" />
+
             <!-- Yes I know I can use a TextureButton, but I'm doing this for style -->
             <Button
                 Name="GuidebookButton"
@@ -57,7 +65,7 @@
                             </PanelContainer>
                         </BoxContainer>
 
-                        <Button Name="SpecialColorTintToggle" Text="{Loc 'humanoid-profile-editor-loadouts-customize-color'}" ToggleMode="True" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
+                        <Button Name="SpecialColorTintToggle" Text="{Loc 'humanoid-profile-editor-loadouts-customize-color'}" ToggleMode="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
                         <ColorSelectorSliders Name="ColorEdit" Color="#fff" HorizontalExpand="True" />
 
                         <Button Name="SaveButton" Text="{Loc 'humanoid-profile-editor-loadouts-customize-save'}" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />

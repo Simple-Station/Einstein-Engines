@@ -95,12 +95,14 @@ humanoid-profile-editor-loadouts-remove-unusable-button-tooltip =
     If you click this button, all loadouts that your current character setup cannot use will be removed.
     You will be asked for confirmation before the loadouts are removed.
 humanoid-profile-editor-loadouts-no-loadouts = No loadouts found.
-humanoid-profile-editor-loadouts-guidebook-button-tooltip = Click for more info
 humanoid-profile-editor-loadouts-customize = Customize
 humanoid-profile-editor-loadouts-customize-name = Name
 humanoid-profile-editor-loadouts-customize-description = Description
 humanoid-profile-editor-loadouts-customize-color = Color tint
 humanoid-profile-editor-loadouts-customize-save = Save
+humanoid-profile-editor-loadouts-guidebook-button-tooltip = Click for more info
+humanoid-profile-editor-loadouts-heirloom = Heirloom
+humanoid-profile-editor-loadouts-heirloom-tooltip = Whichever loadouts you pick to be your heirloom will be randomly picked from on spawn if you have the Heirloom trait.
 
 humanoid-profile-editor-markings-tab = Markings
 humanoid-profile-editor-flavortext-tab = Description
