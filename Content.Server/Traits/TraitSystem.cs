@@ -71,46 +71,6 @@ public sealed class TraitSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Removes all components defined by a Trait. It's not possible to validate component removals,
-    ///     so if an incorrect string is given, it's basically a skill issue.
-    /// </summary>
-    /// <remarks>
-    ///     This comes before AddTraitComponents for a good reason.
-    ///     It allows for a component to optionally be fully wiped and replaced with a new component.
-    /// </remarks>
-    public void RemoveTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.ComponentRemovals is null)
-            return;
-
-        foreach (var entry in traitPrototype.ComponentRemovals)
-        {
-            if (!_componentFactory.TryGetRegistration(entry, out var comp))
-                continue;
-
-            EntityManager.RemoveComponent(uid, comp.Type);
-        }
-    }
-
-    /// <summary>
-    ///     Add all actions associated with a specific Trait
-    /// </summary>
-    public void AddTraitActions(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.Actions is null)
-            return;
-
-        foreach (var id in traitPrototype.Actions)
-        {
-            EntityUid? actionId = null;
-            if (_actions.AddAction(uid, ref actionId, id))
-            {
-                _actions.StartUseDelay(actionId);
-            }
-        }
-    }
-
-    /// <summary>
     ///     If a trait includes any Psionic Powers, this enters the powers into PsionicSystem to be initialized.
     ///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
     /// </summary>
