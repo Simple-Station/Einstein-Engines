@@ -27,7 +27,7 @@
 
 
         <Collapsible Name="SpecialMenu" HorizontalExpand="True">
-            <Button Name="HeadingButton" Text="Customize" ToggleMode="True" />
+            <Button Name="HeadingButton" Text="{Loc 'humanoid-profile-editor-loadouts-customize'}" ToggleMode="True" />
 
             <CollapsibleBody HorizontalExpand="True" Margin="0 0 0 5">
                 <PanelContainer HorizontalExpand="True">
@@ -37,12 +37,12 @@
 
                     <BoxContainer Orientation="Vertical" Margin="3" HorizontalExpand="True">
                         <BoxContainer Name="SpecialName" Orientation="Vertical" HorizontalExpand="True">
-                            <Label Text="Name" />
+                            <Label Text="{Loc 'humanoid-profile-editor-loadouts-customize-name'}" />
                             <LineEdit Name="NameEdit" HorizontalExpand="True" />
                         </BoxContainer>
 
                         <BoxContainer Name="SpecialDescription" Orientation="Vertical" HorizontalExpand="True">
-                            <Label Text="Description" />
+                            <Label Text="{Loc 'humanoid-profile-editor-loadouts-customize-description'}" />
                             <PanelContainer HorizontalExpand="True">
                                 <PanelContainer.PanelOverride>
                                     <graphics:StyleBoxFlat BackgroundColor="#222222" />
@@ -57,13 +57,10 @@
                             </PanelContainer>
                         </BoxContainer>
 
-                        <Button Name="SpecialColorTintToggle" Text="Toggle color tint" ToggleMode="True" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
-                        <BoxContainer Name="SpecialColorTint" Visible="False" Orientation="Vertical" HorizontalExpand="True">
-                            <Label Text="Color" />
-                            <ColorSelectorSliders Name="ColorEdit" Color="#fff" HorizontalExpand="True" />
-                        </BoxContainer>
+                        <Button Name="SpecialColorTintToggle" Text="{Loc 'humanoid-profile-editor-loadouts-customize-color'}" ToggleMode="True" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
+                        <ColorSelectorSliders Name="ColorEdit" Color="#fff" HorizontalExpand="True" />
 
-                        <Button Name="SaveButton" Text="Save" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
+                        <Button Name="SaveButton" Text="{Loc 'humanoid-profile-editor-loadouts-customize-save'}" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
                     </BoxContainer>
                 </PanelContainer>
             </CollapsibleBody>

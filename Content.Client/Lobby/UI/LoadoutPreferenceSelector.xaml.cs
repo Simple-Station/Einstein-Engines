@@ -210,7 +210,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         DescriptionEdit.OnTextChanged += _ =>
             _preference.CustomDescription = string.IsNullOrEmpty(Rope.Collapse(DescriptionEdit.TextRope))? null : Rope.Collapse(DescriptionEdit.TextRope);
         SpecialColorTintToggle.OnToggled += args =>
-            SpecialColorTint.Visible = args.Pressed;
+            ColorEdit.Visible = args.Pressed;
         ColorEdit.OnColorChanged += _ =>
         {
             _preference.CustomColorTint = SpecialColorTintToggle.Pressed ? ColorEdit.Color.ToHex() : null;
@@ -261,7 +261,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
         // These guys are here too for reasons
         HeadingButton.SetHeight = GuidebookButton.SetHeight = PreferenceButton.Size.Y;
-        SpecialColorTintToggle.Pressed = SpecialColorTint.Visible = _preference.CustomColorTint != null;
+        SpecialColorTintToggle.Pressed = ColorEdit.Visible = _preference.CustomColorTint != null;
 
         _initialized = true;
     }
