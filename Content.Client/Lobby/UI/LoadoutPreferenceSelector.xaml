@@ -57,13 +57,13 @@
                             </PanelContainer>
                         </BoxContainer>
 
-                        <BoxContainer Name="SpecialColorTint" Orientation="Vertical" HorizontalExpand="True">
+                        <Button Name="SpecialColorTintToggle" Text="Toggle color tint" ToggleMode="True" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
+                        <BoxContainer Name="SpecialColorTint" Visible="False" Orientation="Vertical" HorizontalExpand="True">
                             <Label Text="Color" />
                             <ColorSelectorSliders Name="ColorEdit" Color="#fff" HorizontalExpand="True" />
-                            <BoxContainer HorizontalExpand="True">
-                                <Button Name="SaveButton" Text="Save" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
-                            </BoxContainer>
                         </BoxContainer>
+
+                        <Button Name="SaveButton" Text="Save" HorizontalExpand="True" Margin="0 3 0 0" StyleClasses="OpenBoth" />
                     </BoxContainer>
                 </PanelContainer>
             </CollapsibleBody>

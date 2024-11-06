@@ -97,7 +97,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         SpecialMenu.Visible = Loadout.CustomName || Loadout.CustomDescription || Loadout.CustomColorTint;
         SpecialName.Visible = Loadout.CustomName;
         SpecialDescription.Visible = Loadout.CustomDescription;
-        SpecialColorTint.Visible = Loadout.CustomColorTint;
+        SpecialColorTintToggle.Visible = Loadout.CustomColorTint;
 
 
         SpriteView previewLoadout;
@@ -199,6 +199,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         };
         SaveButton.OnPressed += _ =>
         {
+            _preference.CustomColorTint = SpecialColorTintToggle.Pressed ? ColorEdit.Color.ToHex() : null;
             _preference.Selected = PreferenceButton.Pressed;
             PreferenceChanged?.Invoke(Preference);
         };
@@ -208,9 +209,11 @@ public sealed partial class LoadoutPreferenceSelector : Control
             _preference.CustomName = string.IsNullOrEmpty(NameEdit.Text) ? null : NameEdit.Text;
         DescriptionEdit.OnTextChanged += _ =>
             _preference.CustomDescription = string.IsNullOrEmpty(Rope.Collapse(DescriptionEdit.TextRope))? null : Rope.Collapse(DescriptionEdit.TextRope);
+        SpecialColorTintToggle.OnToggled += args =>
+            SpecialColorTint.Visible = args.Pressed;
         ColorEdit.OnColorChanged += _ =>
         {
-            _preference.CustomColorTint = ColorEdit.Color.ToHex();
+            _preference.CustomColorTint = SpecialColorTintToggle.Pressed ? ColorEdit.Color.ToHex() : null;
             UpdatePaint(new Entity<PaintedComponent>(dummyLoadoutItem, paint), entityManager);
         };
 
@@ -256,8 +259,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
         GuidebookButton.Orphan();
         ButtonGroup.AddChild(GuidebookButton);
 
-        // This guy's here too for reasons
+        // These guys are here too for reasons
         HeadingButton.SetHeight = GuidebookButton.SetHeight = PreferenceButton.Size.Y;
+        SpecialColorTintToggle.Pressed = SpecialColorTint.Visible = _preference.CustomColorTint != null;
 
         _initialized = true;
     }

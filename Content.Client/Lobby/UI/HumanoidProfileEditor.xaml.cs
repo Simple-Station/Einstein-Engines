@@ -2109,8 +2109,8 @@ namespace Content.Client.Lobby.UI
                 var selector = new LoadoutPreferenceSelector(
                     loadout, highJob ?? new JobPrototype(),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), ref _dummyLoadouts,
-                    _entManager, _prototypeManager, _cfgManager, _characterRequirementsSystem, _requirements);
-                selector.Preference = new(loadout.ID);
+                    _entManager, _prototypeManager, _cfgManager, _characterRequirementsSystem, _requirements)
+                    { Preference = new(loadout.ID) };
                 UpdateSelector(selector, usable);
                 AddSelector(selector);
 
