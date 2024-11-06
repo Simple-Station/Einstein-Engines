@@ -68,15 +68,6 @@ public sealed class TraitSystem : EntitySystem
     {
         foreach (var function in traitPrototype.Functions)
             function.OnPlayerSpawn(uid);
-
-        RemoveTraitComponents(uid, traitPrototype);
-        AddTraitActions(uid, traitPrototype);
-        AddTraitPsionics(uid, traitPrototype);
-        AddTraitLanguage(uid, traitPrototype);
-        RemoveTraitLanguage(uid, traitPrototype);
-        AddTraitMoodlets(uid, traitPrototype);
-        RemoveTraitFactions(uid, traitPrototype);
-        AddTraitFactions(uid, traitPrototype);
     }
 
     /// <summary>
