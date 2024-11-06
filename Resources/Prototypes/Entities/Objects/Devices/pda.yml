@@ -375,6 +375,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - MailMetricsCartridge
+      - StockTradingCartridge # DeltaV - StockTrading
 
 - type: entity
   name: LO special PDA unit # DeltaV - Logistics Department replacing Cargo
@@ -395,7 +396,8 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - MailMetricsCartridge
+      - MailMetricsCartridge # DeltaV - MailMetrics courier tracker
+      - StockTradingCartridge # DeltaV - StockTrading
 
 - type: entity
   parent: BasePDA
@@ -410,6 +412,12 @@
     borderColor: "#e39751"
   - type: Icon
     state: pda-cargo
+  - type: CartridgeLoader # DeltaV
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - StockTradingCartridge # DeltaV - StockTrading
 
 - type: entity
   parent: BasePDA
@@ -954,6 +962,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - LogProbeCartridge
+      - StockTradingCartridge # DeltaV - StockTrading
 
 - type: entity
   parent: CentcomPDA
@@ -1171,6 +1180,12 @@
     borderColor: "#3f3f74"
   - type: Icon
     state: pda-reporter
+  - type: CartridgeLoader # DeltaV
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - StockTradingCartridge # DeltaV - StockTrading
 
 - type: entity
   parent: BasePDA
