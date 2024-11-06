@@ -351,9 +351,9 @@
     Silver: 100
 
 - type: latheRecipe
+  parent: BaseWeaponRecipe
   id: WeaponFlareGunSecurity
   result: WeaponFlareGunSecurity
-  category: Weapons
   completetime: 6
   materials:
     Plastic: 100
