@@ -124,3 +124,22 @@
   - type: Tag
     tags:
     - Torch
+
+- type: entity
+  parent: BaseItem
+  id: ShadowShackles
+  name: Shadow Shackles
+  description: Shackles that bind the wrists with sinister magic.
+  components:
+  - type: Item
+    size: Small
+    storedRotation: 90
+  - type: Handcuff
+    breakoutTime: 5
+    breakOnRemove: true
+    cuffedRSI: Objects/Misc/cablecuffs.rsi
+    bodyIconState: body-overlay
+    color: black
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/actions.rsi
+    state: cuff

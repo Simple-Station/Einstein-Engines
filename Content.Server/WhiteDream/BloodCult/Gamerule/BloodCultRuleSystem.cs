@@ -13,7 +13,7 @@ using Content.Server.Roles;
 using Content.Server.RoundEnd;
 using Content.Server.StationEvents.Components;
 using Content.Server.WhiteDream.BloodCult.Objectives;
-using Content.Shared.Alert;
+using Content.Server.WhiteDream.BloodCult.Spells;
 using Content.Shared.Body.Systems;
 using Content.Shared.Cloning;
 using Content.Shared.Cuffs.Components;
@@ -40,7 +40,6 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
     [Dependency] private readonly IRobustRandom _random = default!;
 
     [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly AlertsSystem _alertsSystem = default!;
     [Dependency] private readonly AntagSelectionSystem _antagSelection = default!;
 
     // [Dependency] private readonly BloodSpearSystem _bloodSpear = default!;
@@ -131,7 +130,6 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
     private void OnCultistComponentInit(Entity<BloodCultistComponent> cultist, ref ComponentInit args)
     {
         RaiseLocalEvent(cultist, new MoodEffectEvent("CultFocused"));
-        _alertsSystem.ShowAlert(cultist.Owner, AlertType.BloodSpells);
         _languageSystem.AddLanguage(cultist, cultist.Comp.CultLanguageId);
 
         var query = QueryActiveRules();
@@ -159,15 +157,14 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         RemoveCultistAppearance(cultist);
         RemoveObjectiveAndRole(cultist.Owner);
         RaiseLocalEvent(cultist.Owner, new MoodRemoveEffectEvent("CultFocused"));
-        _alertsSystem.ClearAlert(cultist.Owner, AlertType.BloodSpells);
         _languageSystem.RemoveLanguage(cultist.Owner, cultist.Comp.CultLanguageId);
 
-        // TODO: Blood spear system
-        // _bloodSpear.DetachSpearFromUser((uid, component));
+        if (!TryComp(cultist, out BloodCultSpellsHolderComponent? powersHolder))
+            return;
 
-        foreach (var empower in cultist.Comp.SelectedEmpowers)
+        foreach (var power in powersHolder.SelectedSpells)
         {
-            _actions.RemoveAction(cultist.Owner, GetEntity(empower));
+            _actions.RemoveAction(cultist.Owner, power);
         }
     }
 
@@ -272,6 +269,8 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         if (!_mindSystem.TryGetMind(cultist, out var mindId, out var mind))
             return;
 
+        EnsureComp<BloodCultSpellsHolderComponent>(cultist);
+
         _factionSystem.RemoveFaction(cultist, rule.Comp.NanoTrasenFaction);
         _factionSystem.AddFaction(cultist, rule.Comp.BloodCultFaction);
 
@@ -301,6 +300,9 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
     {
         if (!_inventorySystem.TryGetContainerSlotEnumerator(ent.Owner, out var enumerator))
             return;
+
+        // TODO: Blood spear system
+        // _bloodSpear.DetachSpearFromUser((uid, component));
 
         while (enumerator.MoveNext(out var container))
         {

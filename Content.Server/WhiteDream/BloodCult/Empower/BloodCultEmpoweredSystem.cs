@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Numerics;
+using Content.Server.WhiteDream.BloodCult.Spells;
 using Content.Shared.Alert;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Robust.Server.GameObjects;
@@ -29,14 +30,18 @@ public sealed class BloodCultEmpoweredSystem : EntitySystem
         UpdateTimers(frameTime);
     }
 
-    private void OnEmpowerStartup(Entity<BloodCultEmpoweredComponent> ent, ref ComponentStartup args)
+    private void OnEmpowerStartup(Entity<BloodCultEmpoweredComponent> cultist, ref ComponentStartup args)
     {
-        _alerts.ShowAlert(ent, AlertType.CultEmpowered);
+        _alerts.ShowAlert(cultist, AlertType.CultEmpowered);
+        if (TryComp(cultist, out BloodCultSpellsHolderComponent? spellsHolder))
+            spellsHolder.MaxSpells += cultist.Comp.ExtraSpells;
     }
 
-    private void OnEmpowerShutdown(Entity<BloodCultEmpoweredComponent> ent, ref ComponentShutdown args)
+    private void OnEmpowerShutdown(Entity<BloodCultEmpoweredComponent> cultist, ref ComponentShutdown args)
     {
-        _alerts.ClearAlert(ent, AlertType.CultEmpowered);
+        _alerts.ClearAlert(cultist, AlertType.CultEmpowered);
+        if (TryComp(cultist, out BloodCultSpellsHolderComponent? spellsHolder))
+            spellsHolder.MaxSpells -= cultist.Comp.ExtraSpells;
     }
 
     private void UpdateTimers(float frameTime)
@@ -58,9 +63,7 @@ public sealed class BloodCultEmpoweredSystem : EntitySystem
 
             empowered.TimeRemaining -= TimeSpan.FromSeconds(frameTime);
             if (empowered.TimeRemaining <= TimeSpan.Zero)
-            {
                 RemComp(uid, empowered);
-            }
         }
     }
 
@@ -75,9 +78,9 @@ public sealed class BloodCultEmpoweredSystem : EntitySystem
         var cultTile = _tileDefinition[ent.Comp.CultTile];
 
         var radius = ent.Comp.NearbyCultTileRadius;
-        var tilesRefs = _map.GetLocalTilesIntersecting(gridUid.Value, grid, new Box2(
-            localpos + new Vector2(-radius, -radius),
-            localpos + new Vector2(radius, radius)));
+        var tilesRefs = _map.GetLocalTilesIntersecting(gridUid.Value,
+            grid,
+            new Box2(localpos + new Vector2(-radius, -radius), localpos + new Vector2(radius, radius)));
 
         return tilesRefs.Any(tileRef => tileRef.Tile.TypeId == cultTile.TileId);
     }

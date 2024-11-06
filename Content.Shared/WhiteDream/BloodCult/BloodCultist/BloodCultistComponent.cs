@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.WhiteDream.BloodCult.BloodCultist;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class BloodCultistComponent : Component, IAntagStatusIconComponent
 {
     [DataField]
@@ -38,9 +38,6 @@ public sealed partial class BloodCultistComponent : Component, IAntagStatusIconC
 
     [ViewVariables(VVAccess.ReadWrite)]
     public FixedPoint2 RitesBloodAmount = FixedPoint2.Zero;
-
-    [AutoNetworkedField]
-    public List<NetEntity?> SelectedEmpowers = new();
 
     public Color OriginalEyeColor = Color.White;
 

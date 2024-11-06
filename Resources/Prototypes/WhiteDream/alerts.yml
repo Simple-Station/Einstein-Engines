@@ -1,13 +1,4 @@
 ﻿- type: alert
-  id: BloodSpells
-#  onClick: !type:OpenBloodSpellsUi {}
-  icons:
-  - sprite: /Textures/WhiteDream/BloodCult/actions_cult.rsi
-    state: blood_spells
-  name: alerts-blood-spells-name
-  description: alerts-blood-spells-desc
-
-- type: alert
   id: CultEmpowered
   icons: [ /Textures/WhiteDream/BloodCult/Alerts/empowered.png ]
   name: alerts-blood-cult-empowered-name

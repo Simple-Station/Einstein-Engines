@@ -3,6 +3,7 @@ using Content.Shared.ListViewSelector;
 using Content.Shared.WhiteDream.BloodCult.UI;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+
 namespace Content.Server.WhiteDream.BloodCult.Runes.Teleport;
 
 public sealed class CultRuneTeleportSystem : EntitySystem
@@ -42,20 +43,8 @@ public sealed class CultRuneTeleportSystem : EntitySystem
             return;
         }
 
-        var runeQuery = EntityQueryEnumerator<CultRuneTeleportComponent>();
-        var runes = new List<ListViewSelectorEntry>();
-        while (runeQuery.MoveNext(out var targetRune, out var teleportRune))
+        if (!TryGetTeleportRunes(runeUid, out var runes, args.User))
         {
-            if (targetRune == runeUid)
-                continue;
-
-            var entry = new ListViewSelectorEntry(targetRune.ToString(), teleportRune.Name);
-            runes.Add(entry);
-        }
-
-        if (runes.Count == 0)
-        {
-            _popup.PopupEntity(Loc.GetString("cult-teleport-not-found"), args.User, args.User);
             args.Cancel();
             return;
         }
@@ -80,5 +69,25 @@ public sealed class CultRuneTeleportSystem : EntitySystem
 
         _audio.PlayPvs(origin.Comp.TeleportOutSound, origin);
         _audio.PlayPvs(origin.Comp.TeleportInSound, destination);
+    }
+
+    public bool TryGetTeleportRunes(EntityUid user, out List<ListViewSelectorEntry> runes, EntityUid? runeUid = null)
+    {
+        var runeQuery = EntityQueryEnumerator<CultRuneTeleportComponent>();
+        runes = new List<ListViewSelectorEntry>();
+        while (runeQuery.MoveNext(out var targetRune, out var teleportRune))
+        {
+            if (targetRune == runeUid)
+                continue;
+
+            var entry = new ListViewSelectorEntry(targetRune.ToString(), teleportRune.Name);
+            runes.Add(entry);
+        }
+
+        if (runes.Count != 0)
+            return true;
+
+        _popup.PopupEntity(Loc.GetString("cult-teleport-not-found"), user, user);
+        return false;
     }
 }

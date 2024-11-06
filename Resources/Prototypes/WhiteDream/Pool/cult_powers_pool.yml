@@ -1,0 +1,8 @@
+﻿- type: psionicPowerPool
+  id: BloodCultPowers
+  powers:
+  - ActionBloodCultStun
+  - ActionBloodCultTeleport
+  - ActionBloodCultEmp
+  - ActionBloodCultShadowShackles
+  - ActionBloodCultTwistedConstruction

@@ -16,6 +16,7 @@ public sealed class ListViewSelectorBUI(EntityUid owner, Enum uiKey) : BoundUser
 
     private FancyWindow _window = new();
     private BoxContainer? _itemsContainer;
+    private Dictionary<string, object> _metaData = new();
 
     protected override void Open()
     {
@@ -27,11 +28,11 @@ public sealed class ListViewSelectorBUI(EntityUid owner, Enum uiKey) : BoundUser
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
+        if (state is not ListViewSelectorState listViewSelectorState)
+            return;
 
-        if (state is ListViewSelectorState listViewSelectorState)
-        {
-            PopulateWindow(listViewSelectorState.Items);
-        }
+        PopulateWindow(listViewSelectorState.Items);
+        _metaData = listViewSelectorState.MetaData;
     }
 
     protected override void Dispose(bool disposing)
@@ -75,9 +76,7 @@ public sealed class ListViewSelectorBUI(EntityUid owner, Enum uiKey) : BoundUser
     private void PopulateWindow(List<ListViewSelectorEntry> items)
     {
         if (_itemsContainer is null)
-        {
             return;
-        }
 
         _itemsContainer.Children.Clear();
 
@@ -97,13 +96,11 @@ public sealed class ListViewSelectorBUI(EntityUid owner, Enum uiKey) : BoundUser
             };
 
             if (!string.IsNullOrEmpty(itemDesc))
-            {
                 button.TooltipSupplier = _ => new RecipeTooltip(itemDesc);
-            }
 
             button.OnButtonUp += _ =>
             {
-                var msg = new ListViewItemSelectedMessage(item, items.IndexOf(item));
+                var msg = new ListViewItemSelectedMessage(item, items.IndexOf(item), _metaData);
                 SendMessage(msg);
                 Close();
             };

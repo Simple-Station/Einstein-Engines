@@ -73,7 +73,6 @@ namespace Content.Shared.Alert
         Offer,
         ShadowkinPower,
         Deflecting,
-        BloodSpells
     }
 
 }

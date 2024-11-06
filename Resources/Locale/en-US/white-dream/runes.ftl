@@ -4,7 +4,7 @@ cult-rune-erased = Rune has been erased.
 cult-rune-not-enough-cultists = Not enough cultists to perform the ritual!
 cult-rune-no-targets = No targets have been found!
 
-cult-teleport-not-found = No other runes found.
+cult-teleport-not-found = No runes found.
 
 cult-revive-rune-no-charges = Can not perform the revive ritual: no charges left.
 cult-revive-rune-already-alive = The target is already alive.

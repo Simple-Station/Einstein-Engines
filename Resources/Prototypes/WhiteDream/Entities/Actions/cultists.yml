@@ -1,0 +1,121 @@
+﻿- type: entity
+  id: ActionBloodCultStun
+  name: Stun
+  description: Empowers your hand to stun and mute a victim on contact.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/actions.rsi
+    state: stun
+  - type: EntityTargetAction
+    checkCanAccess: false
+    range: 3
+    itemIconStyle: BigAction
+    charges: 1
+    temporary: true
+    canTargetSelf: false
+    interactOnMiss: false
+    whitelist:
+      components:
+      - Body
+    icon:
+      sprite: WhiteDream/BloodCult/actions.rsi
+      state: stun
+    event: !type:BloodCultStunEvent
+      speech: "Fuu ma'jin!"
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBloodCultTeleport
+  name: Teleport
+  description: Empowers your hand to teleport yourself or another cultist to a teleport rune on contact.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/actions.rsi
+    state: teleport
+  - type: EntityTargetAction
+    checkCanAccess: false
+    range: 3
+    itemIconStyle: BigAction
+    charges: 1
+    temporary: true
+    interactOnMiss: false
+    whitelist:
+      components:
+      - BloodCultist
+    icon:
+      sprite: WhiteDream/BloodCult/actions.rsi
+      state: teleport
+    event: !type:BloodCultTeleportEvent
+      speech: "Sas'so c'arta forbici"
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBloodCultEmp
+  name: Electromagnetic Pulse
+  description: Emits a large electromagnetic pulse.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/actions.rsi
+    state: create_emp
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1
+    temporary: true
+    icon:
+      sprite: WhiteDream/BloodCult/actions.rsi
+      state: teleport
+    event: !type:BloodCultEmpEvent
+      speech: "Ta'gh fara'qha fel d'amar det!"
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBloodCultShadowShackles
+  name: shadow shackles
+  description: Empowers your hand to handcuff a victim on contact, and mute them if successful.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/actions.rsi
+    state: shackles
+  - type: EntityTargetAction
+    checkCanAccess: false
+    range: 3
+    itemIconStyle: BigAction
+    charges: 4
+    temporary: true
+    canTargetSelf: false
+    interactOnMiss: false
+    whitelist:
+      components:
+      - Body
+    icon:
+      sprite: WhiteDream/BloodCult/actions.rsi
+      state: shackles
+    event: !type:BloodCultShacklesEvent
+      speech: "In'totum Lig'abis!"
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBloodCultTwistedConstruction
+  name: twisted construction
+  description: EEmpowers your hand to corrupt certain metalic objects.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/actions.rsi
+    state: transmute
+  - type: EntityTargetAction
+    checkCanAccess: false
+    range: 3
+    itemIconStyle: BigAction
+    charges: 1
+    temporary: true
+    canTargetSelf: false
+    interactOnMiss: false
+    icon:
+      sprite: WhiteDream/BloodCult/actions.rsi
+      state: transmute
+    event: !type:BloodCultTwistedConstructionEvent
+      speech: "Ethra p'ni dedol!"
+  - type: BaseCultSpell

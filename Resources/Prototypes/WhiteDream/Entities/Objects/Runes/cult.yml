@@ -35,24 +35,6 @@
     invokePhrase: "Mah'weyh pleggh at e'ntrath!"
   - type: CultRuneOffering
 
-# TODO: remove it. Make it so empower rune allows you to create more spells via verbs.
-#- type: entity
-#  parent: CultRuneBase
-#  id: CultRuneSpells
-#  name: rune of spells
-#  components:
-#  - type: Sprite
-#    state: empower
-#  - type: CultRuneBase
-#    invokePhrase: "H'drak v'loso, mir'kanas verbot!"
-#  - type: CultRuneSpells
-#    prototypes:
-#    - ActionSpawnMagicarpSpell # TODO: Actual cult spells.
-#  - type: UserInterface
-#    interfaces:
-#    - key: enum.RadialSelectorUiKey.Key
-#      type: RadialSelectorMenuBUI
-
 - type: entity
   parent: CultRuneBase
   id: CultRuneEmpower

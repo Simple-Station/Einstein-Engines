@@ -33,8 +33,9 @@ public sealed class ConstructShellSystem : EntitySystem
     private void OnGetVerbs(Entity<ConstructShellComponent> shell, ref GetVerbsEvent<ExamineVerb> args)
     {
         var shellUid = shell.Owner;
-        if (_slots.GetItemOrNull(shell, shell.Comp.ShardSlotId) is not { } shard || args.User != shard ||
-            !TryComp(shard, out SoulShardComponent? soulShard) || _ui.IsUiOpen(shellUid, RadialSelectorUiKey.Key))
+        if (args.User != shellUid || _slots.GetItemOrNull(shell, shell.Comp.ShardSlotId) is not { } shard ||
+            args.User != shard || !TryComp(shard, out SoulShardComponent? soulShard) ||
+            _ui.IsUiOpen(shellUid, RadialSelectorUiKey.Key))
             return;
 
         args.Verbs.Add(new ExamineVerb

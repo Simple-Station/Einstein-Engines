@@ -37,7 +37,8 @@ public sealed class CultRuneOfferingSystem : EntitySystem
 
     private void OnOfferingRuneInvoked(Entity<CultRuneOfferingComponent> ent, ref TryInvokeCultRuneEvent args)
     {
-        var possibleTargets = _cultRune.GetTargetsNearRune(ent, ent.Comp.OfferingRange,
+        var possibleTargets = _cultRune.GetTargetsNearRune(ent,
+            ent.Comp.OfferingRange,
             entity => HasComp<BloodCultistComponent>(entity));
 
         if (possibleTargets.Count == 0)
@@ -61,26 +62,21 @@ public sealed class CultRuneOfferingSystem : EntitySystem
             HasComp<MindShieldComponent>(target))
         {
             if (!TrySacrifice(target, ent, args.Invokers.Count))
-            {
                 args.Cancel();
-            }
 
             return;
         }
 
         if (!TryConvert(target, ent, args.User, args.Invokers.Count))
-        {
             args.Cancel();
-        }
     }
 
-    private bool TrySacrifice(Entity<HumanoidAppearanceComponent> target, Entity<CultRuneOfferingComponent> rune,
+    private bool TrySacrifice(Entity<HumanoidAppearanceComponent> target,
+        Entity<CultRuneOfferingComponent> rune,
         int invokersAmount)
     {
         if (invokersAmount < rune.Comp.AliveSacrificeInvokersAmount)
-        {
             return false;
-        }
 
         _cultRuneRevive.AddCharges(rune, rune.Comp.ReviveChargesPerOffering);
         Sacrifice(target);
@@ -100,13 +96,13 @@ public sealed class CultRuneOfferingSystem : EntitySystem
         _mind.UnVisit(mindId);
     }
 
-    private bool TryConvert(EntityUid target, Entity<CultRuneOfferingComponent> rune, EntityUid user,
+    private bool TryConvert(EntityUid target,
+        Entity<CultRuneOfferingComponent> rune,
+        EntityUid user,
         int invokersAmount)
     {
         if (invokersAmount < rune.Comp.ConvertInvokersAmount)
-        {
             return false;
-        }
 
         _cultRuneRevive.AddCharges(rune, rune.Comp.ReviveChargesPerOffering);
         Convert(rune, target, user);
@@ -125,7 +121,5 @@ public sealed class CultRuneOfferingSystem : EntitySystem
 
         _statusEffects.TryRemoveStatusEffect(target, "Muted");
         _damageable.TryChangeDamage(target, rune.Comp.ConvertHealing);
-
-        // RemCompDeferred<BlightComponent>(target); // TODO: Blight component whatever it is
     }
 }
