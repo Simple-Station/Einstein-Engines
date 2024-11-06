@@ -2100,6 +2100,8 @@ namespace Content.Client.Lobby.UI
                 if (_loadoutPreferences.Select(lps => lps.Loadout.ID).Contains(loadout.ID))
                 {
                     var first = _loadoutPreferences.First(lps => lps.Loadout.ID == loadout.ID);
+                    var prof = Profile?.LoadoutPreferences.FirstOrDefault(lp => lp.LoadoutName == loadout.ID);
+                    first.Preference = new(loadout.ID, prof?.CustomName, prof?.CustomDescription, prof?.CustomColorTint);
                     UpdateSelector(first, usable);
                     continue;
                 }

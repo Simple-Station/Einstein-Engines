@@ -46,7 +46,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
             _preference = value;
             NameEdit.Text = value.CustomName ?? "";
             DescriptionEdit.TextRope = new Rope.Leaf(value.CustomDescription ?? "");
-            ColorEdit.Color = Color.FromHex(value.CustomColorTint, Color.Gray);
+            ColorEdit.Color = Color.FromHex(value.CustomColorTint, Color.White);
             if (value.CustomColorTint != null)
                 UpdatePaint(new(DummyEntityUid, _entityManager.GetComponent<PaintedComponent>(DummyEntityUid)), _entityManager);
             PreferenceButton.Pressed = value.Selected;
