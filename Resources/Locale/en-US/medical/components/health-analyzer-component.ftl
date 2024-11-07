@@ -40,8 +40,8 @@ health-analyzer-window-damage-type-Cellular = Cellular
 
 health-analyzer-window-malnutrition = Severely malnourished
 
-health-analyzer-window-entity-unrevivable-text = [color=red]Unique body composition detected! Patient can not be resuscitated by normal means![/color]
-health-analyzer-window-entity-bleeding-text = [color=red]Patient is bleeding![/color]
+health-analyzer-window-entity-unrevivable-text = Unique body composition detected! Patient can not be resuscitated by normal means!
+health-analyzer-window-entity-bleeding-text = Patient is bleeding!
 
 health-analyzer-window-scan-mode-text = Scan Mode:
 health-analyzer-window-scan-mode-active = Active

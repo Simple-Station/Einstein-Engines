@@ -125,7 +125,7 @@ namespace Content.Client.HealthAnalyzer.UI
                     Margin = new Thickness(0, 4),
                     MaxWidth = 300
                 };
-                unrevivableLabel.SetMessage(Loc.GetString("health-analyzer-window-entity-unrevivable-text"));
+                unrevivableLabel.SetMessage(Loc.GetString("health-analyzer-window-entity-unrevivable-text"), defaultColor: Color.Red);
                 AlertsContainer.AddChild(unrevivableLabel);
             }
 
@@ -136,7 +136,7 @@ namespace Content.Client.HealthAnalyzer.UI
                     Margin = new Thickness(0, 4),
                     MaxWidth = 300
                 };
-                bleedingLabel.SetMessage(Loc.GetString("health-analyzer-window-entity-bleeding-text"));
+                bleedingLabel.SetMessage(Loc.GetString("health-analyzer-window-entity-bleeding-text"), defaultColor: Color.Red);
                 AlertsContainer.AddChild(bleedingLabel);
             }
 
