@@ -75,8 +75,6 @@
     canShuttle: false
     title: comms-console-announcement-title-station-ai
     color: "#5ed7aa"
-  - type: Speech
-    speechVerb: Robotic
   - type: HolographicAvatar
     layerData:
     - sprite: Mobs/Silicon/station_ai.rsi
