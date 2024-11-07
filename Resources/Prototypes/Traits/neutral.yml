@@ -53,8 +53,8 @@
   functions:
     - !type:TraitRemoveComponent
       components:
-        - UltraVision
-        - DogVision
+        - type: UltraVision
+        - type: DogVision
 
 - type: trait
   id: Saturnine

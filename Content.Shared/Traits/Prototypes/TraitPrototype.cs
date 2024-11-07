@@ -40,7 +40,6 @@ public sealed partial class TraitPrototype : IPrototype
 ///     This serves as a hook for trait functions to modify a player character upon spawning in.
 /// </summary>
 [ImplicitDataDefinitionForInheritors]
-[Serializable, NetSerializable]
 public abstract partial class TraitFunction
 {
     public abstract void OnPlayerSpawn(EntityUid mob,

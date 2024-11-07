@@ -464,7 +464,7 @@
   functions:
     - !type:TraitRemoveComponent
       components:
-        - Flashable
+        - type: Flashable
     - !type:TraitAddComponent
       components:
         - type: FlashImmunity

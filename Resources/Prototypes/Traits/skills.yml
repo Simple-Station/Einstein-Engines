@@ -308,7 +308,7 @@
   functions:
     - !type:TraitRemoveComponent
       componentRemovals:
-        - PsionicInsulation
+        - type: PsionicInsulation
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
