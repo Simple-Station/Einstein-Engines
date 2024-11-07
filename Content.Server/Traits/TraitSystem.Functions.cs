@@ -19,7 +19,7 @@ namespace Content.Server.Traits;
 [UsedImplicitly]
 public sealed partial class TraitReplaceComponent : TraitFunction
 {
-    [AlwaysPushInheritance]
+    [DataField, AlwaysPushInheritance]
     public ComponentRegistry Components { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -47,7 +47,7 @@ public sealed partial class TraitReplaceComponent : TraitFunction
 [UsedImplicitly]
 public sealed partial class TraitAddComponent : TraitFunction
 {
-    [AlwaysPushInheritance]
+    [DataField, AlwaysPushInheritance]
     public ComponentRegistry Components { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -71,7 +71,7 @@ public sealed partial class TraitAddComponent : TraitFunction
 [UsedImplicitly]
 public sealed partial class TraitRemoveComponent : TraitFunction
 {
-    [AlwaysPushInheritance]
+    [DataField, AlwaysPushInheritance]
     public ComponentRegistry Components { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -90,7 +90,7 @@ public sealed partial class TraitRemoveComponent : TraitFunction
 [UsedImplicitly]
 public sealed partial class TraitAddActions : TraitFunction
 {
-    [AlwaysPushInheritance]
+    [DataField, AlwaysPushInheritance]
     public List<EntProtoId>? Actions { get; private set; } = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -119,6 +119,7 @@ public sealed partial class TraitAddActions : TraitFunction
 public sealed partial class TraitAddImplant : TraitFunction
 {
     [DataField(customTypeSerializer: typeof(PrototypeIdHashSetSerializer<EntityPrototype>))]
+    [AlwaysPushInheritance]
     public HashSet<string> Implants { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -138,7 +139,7 @@ public sealed partial class TraitAddImplant : TraitFunction
 [UsedImplicitly]
 public sealed partial class TraitAddPsionics : TraitFunction
 {
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public List<string>? PsionicPowers { get; private set; } = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -166,25 +167,25 @@ public sealed partial class TraitModifyLanguages : TraitFunction
     /// <summary>
     ///     The list of all Spoken Languages that this trait adds.
     /// </summary>
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public List<string>? LanguagesSpoken { get; private set; } = default!;
 
     /// <summary>
     ///     The list of all Understood Languages that this trait adds.
     /// </summary>
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public List<string>? LanguagesUnderstood { get; private set; } = default!;
 
     /// <summary>
     ///     The list of all Spoken Languages that this trait removes.
     /// </summary>
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public List<string>? RemoveLanguagesSpoken { get; private set; } = default!;
 
     /// <summary>
     ///     The list of all Understood Languages that this trait removes.
     /// </summary>
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public List<string>? RemoveLanguagesUnderstood { get; private set; } = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -222,7 +223,7 @@ public sealed partial class TraitAddMoodlets : TraitFunction
     /// <summary>
     ///     The list of all Moodlets that this trait adds.
     /// </summary>
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public List<ProtoId<MoodEffectPrototype>>? MoodEffects { get; private set; } = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -253,7 +254,7 @@ public sealed partial class TraitModifyFactions : TraitFunction
     /// <remarks>
     ///     I can't actually Validate these because the proto lives in Shared.
     /// </remarks>
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public List<string>? RemoveFactions { get; private set; } = default!;
 
     /// <summary>
@@ -262,7 +263,7 @@ public sealed partial class TraitModifyFactions : TraitFunction
     /// <remarks>
     ///     I can't actually Validate these because the proto lives in Shared.
     /// </remarks>
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public List<string>? AddFactions { get; private set; } = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
