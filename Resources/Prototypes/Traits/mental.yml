@@ -102,7 +102,7 @@
           species:
             - Shadowkin
   functions:
-    - !type:TraitReplaceComponent
+    - !type:TraitAddPsionics
       psionicPowers:
         - LowAmplification
 

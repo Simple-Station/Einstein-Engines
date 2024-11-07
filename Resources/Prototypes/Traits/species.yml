@@ -2,7 +2,6 @@
   id: Swashbuckler
   category: Physical
   points: -2
-  components:
   functions:
     - !type:TraitReplaceComponent
       components:

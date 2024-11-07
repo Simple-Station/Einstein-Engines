@@ -307,7 +307,7 @@
   points: -4
   functions:
     - !type:TraitRemoveComponent
-      componentRemovals:
+      components:
         - type: PsionicInsulation
   requirements:
     - !type:CharacterSpeciesRequirement
