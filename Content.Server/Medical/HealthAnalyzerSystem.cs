@@ -198,9 +198,9 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             bleeding = bloodstream.BleedAmount > 0;
         }
 
-        if (HasComp<UnrevivableComponent>(target))
+        /*if (HasComp<UnrevivableComponent>(target)) Somehow we dont have unrevivable???
             unrevivable = true;
-
+        */
         _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
             GetNetEntity(target),
             bodyTemperature,

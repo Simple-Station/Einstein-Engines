@@ -118,21 +118,27 @@ namespace Content.Client.HealthAnalyzer.UI
             if (showAlerts)
                 AlertsContainer.DisposeAllChildren();
 
-            if (msg.Unrevivable == true)
-                AlertsContainer.AddChild(new RichTextLabel
+            if (msg.Unrevivable == true) // Right now this does nothing, but we have it just for parity :)
+            {
+                var unrevivableLabel = new RichTextLabel
                 {
-                    Text = Loc.GetString("health-analyzer-window-entity-unrevivable-text"),
                     Margin = new Thickness(0, 4),
                     MaxWidth = 300
-                });
+                };
+                unrevivableLabel.SetMessage(Loc.GetString("health-analyzer-window-entity-unrevivable-text"));
+                AlertsContainer.AddChild(unrevivableLabel);
+            }
 
             if (msg.Bleeding == true)
-                AlertsContainer.AddChild(new RichTextLabel
+            {
+                var bleedingLabel = new RichTextLabel
                 {
-                    Text = Loc.GetString("health-analyzer-window-entity-bleeding-text"),
                     Margin = new Thickness(0, 4),
                     MaxWidth = 300
-                });
+                };
+                bleedingLabel.SetMessage(Loc.GetString("health-analyzer-window-entity-bleeding-text"));
+                AlertsContainer.AddChild(bleedingLabel);
+            }
 
             // Damage Groups
 
