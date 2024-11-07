@@ -5,6 +5,7 @@ using Content.Server.PowerCell;
 using Content.Server.Temperature.Components;
 using Content.Server.Traits.Assorted;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Targeting;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
@@ -201,13 +202,21 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         /*if (HasComp<UnrevivableComponent>(target)) Somehow we dont have unrevivable???
             unrevivable = true;
         */
+
+        // Start-Shitmed
+        Dictionary<TargetBodyPart, TargetIntegrity>? body = null;
+        if (TryComp<TargetingComponent>(target, out var targetingComponent))
+            body = targetingComponent.BodyStatus;
+        // End-Shitmed
+
         _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
             GetNetEntity(target),
             bodyTemperature,
             bloodAmount,
             scanMode,
             bleeding,
-            unrevivable
+            unrevivable,
+            body // Shitmed
         ));
     }
 }

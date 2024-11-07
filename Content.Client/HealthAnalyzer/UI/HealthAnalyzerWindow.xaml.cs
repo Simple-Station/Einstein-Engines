@@ -6,6 +6,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Targeting;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
@@ -36,6 +37,12 @@ namespace Content.Client.HealthAnalyzer.UI
         private readonly IPrototypeManager _prototypes;
         private readonly IResourceCache _cache;
 
+        // Start-Shitmed
+        private EntityUid _spriteViewEntity;
+
+        [ValidatePrototypeId<EntityPrototype>]
+        private readonly EntProtoId _bodyView = "AlertSpriteView";
+        // End-Shitmed
         public HealthAnalyzerWindow()
         {
             RobustXamlLoader.Load(this);
@@ -72,7 +79,7 @@ namespace Content.Client.HealthAnalyzer.UI
 
             // Patient Information
 
-            SpriteView.SetEntity(target.Value);
+            SpriteView.SetEntity(SetupIcon(msg.Body) ?? target.Value); // Shitmed
             SpriteView.Visible = msg.ScanMode.HasValue && msg.ScanMode.Value;
             NoDataTex.Visible = !SpriteView.Visible;
 
@@ -249,5 +256,36 @@ namespace Content.Client.HealthAnalyzer.UI
 
             return rootContainer;
         }
+
+        // Start-Shitmed
+        /// <summary>
+        /// Sets up the Body Doll using Alert Entity to use in Health Analyzer.
+        /// </summary>
+        private EntityUid? SetupIcon(Dictionary<TargetBodyPart, TargetIntegrity>? body)
+        {
+            if (body is null)
+                return null;
+            if (!_entityManager.Deleted(_spriteViewEntity))
+                _entityManager.QueueDeleteEntity(_spriteViewEntity);
+            _spriteViewEntity = _entityManager.Spawn(_bodyView);
+            if (!_entityManager.TryGetComponent<SpriteComponent>(_spriteViewEntity, out var sprite))
+                return null;
+            int layer = 0;
+            foreach (var (bodyPart, integrity) in body)
+            {
+                // TODO: Fix this way PartStatusUIController and make it use layers instead of TextureRects
+                string enumName = Enum.GetName(typeof(TargetBodyPart), bodyPart) ?? "Unknown";
+                int enumValue = (int) integrity;
+                var rsi = new SpriteSpecifier.Rsi(new ResPath($"/Textures/Interface/Targeting/Status/{enumName.ToLowerInvariant()}.rsi"), $"{enumName.ToLowerInvariant()}_{enumValue}");
+                // It's probably shitcode but im lazy to get into sprite stuff - It is shitcode :)
+                if (!sprite.TryGetLayer(layer, out _))
+                    sprite.AddLayer(_spriteSystem.Frame0(rsi));
+                else
+                    sprite.LayerSetTexture(layer, _spriteSystem.Frame0(rsi));
+                layer++;
+            }
+            return _spriteViewEntity;
+        }
+        // End-Shitmed
     }
 }
