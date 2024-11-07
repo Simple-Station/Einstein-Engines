@@ -281,3 +281,26 @@ public sealed partial class TraitModifyFactions : TraitFunction
                 factionSystem.AddFaction(uid, faction);
     }
 }
+
+/// <summary>
+///     Only use this if you know what you're doing. This function directly writes to arbitrarily any component.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitVVEdit : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public Dictionary<string, string>? VVEdit { get; private set; }
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        if (VVEdit is null)
+            return;
+
+        var vvm = IoCManager.Resolve<IViewVariablesManager>();
+        foreach (var (path, value) in VVEdit)
+            vvm.WritePath(path, value);
+    }
+}
