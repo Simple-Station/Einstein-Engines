@@ -1,3 +1,6 @@
+crawling-under-tables-disabled-popup = Crawling under tables is disabled on this server.
+
+# TODO either remove those, or make use of them
 laying-comp-lay-success-self = You lay down.
 laying-comp-lay-success-other = {THE($entity)} lays down.
 laying-comp-lay-fail-self = You can't lay down right now.

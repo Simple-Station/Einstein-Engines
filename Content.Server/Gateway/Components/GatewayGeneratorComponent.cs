@@ -64,6 +64,8 @@ public sealed partial class GatewayGeneratorComponent : Component
         "OreUranium",
         "OreBananium",
         "OreArtifactFragment",
+        "OreBluespace",
+        "OreNormality",
     };
 }
 

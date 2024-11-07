@@ -128,6 +128,12 @@ namespace Content.Shared.Ghost
     }
 
     /// <summary>
+    /// A client to server request for their ghost to be warped to the most followed entity.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostnadoRequestEvent : EntityEventArgs;
+
+    /// <summary>
     /// A client to server request for their ghost to return to body
     /// </summary>
     [Serializable, NetSerializable]
@@ -148,4 +154,7 @@ namespace Content.Shared.Ghost
             AvailableGhostRoles = availableGhostRoleCount;
         }
     }
+
+    [Serializable, NetSerializable]
+    public sealed class GhostReturnToRoundRequest : EntityEventArgs;
 }

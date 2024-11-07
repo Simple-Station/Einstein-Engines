@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c6e3401f2e7e1e55c57060cdf956a98ef1fefc24 , bear pelt remade by Alekshhh, wood sprite modified by MisterMecky, wood_2 and wood_3 made by MisterMecky based on wood sprite, cardboard sprites made by MisterMecky, bananium, bananium_1 and peel made by brainfood1183 (github) for ss14",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c6e3401f2e7e1e55c57060cdf956a98ef1fefc24 , bear pelt remade by Alekshhh, wood sprite modified by MisterMecky, wood_2 and wood_3 made by MisterMecky based on wood sprite, cardboard sprites made by MisterMecky, bananium, bananium_1 and peel made by brainfood1183 (github) for ss14. Pyrotton sprites are drawn by Ubaser, using the cotton material sprites as a base. Bluespace and Normality taken from tgstation at https://github.com/tgstation/tgstation/commit/f8f4aeda930fcd0805ca4cc76d9bc9412a5b3428, reshaded by Aidenkrz",
   "size": {
     "x": 32,
     "y": 32
@@ -65,6 +65,15 @@
     },
     {
       "name": "cotton_3"
+    },
+    {
+      "name": "pyrotton"
+    },
+    {
+      "name": "pyrotton_2"
+    },
+    {
+      "name": "pyrotton_3"
     },
     {
       "name": "diamond"
@@ -150,6 +159,24 @@
     },
     {
       "name": "bones_3"
+    },
+    {
+      "name": "bluespace"
+    },
+    {
+      "name": "bluespace_2"
+    },
+    {
+      "name": "bluespace_3"
+    },
+    {
+      "name": "normality"
+    },
+    {
+      "name": "normality_2"
+    },
+    {
+      "name": "normality_3"
     }
   ]
 }

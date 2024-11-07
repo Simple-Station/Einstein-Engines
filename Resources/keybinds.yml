@@ -187,6 +187,9 @@ binds:
 - function: OpenCharacterMenu
   type: State
   key: C
+- function: OpenEmotesMenu
+  type: State
+  key: Y
 - function: OpenLanguageMenu
   type: State
   key: L
@@ -263,6 +266,10 @@ binds:
   key: F
 - function: ToggleStanding
   type: State
+  key: R
+- function: ToggleCrawlingUnder
+  type: State
+  mod1: Shift
   key: R
 - function: ShowDebugConsole
   type: State
@@ -461,6 +468,9 @@ binds:
 - function: OpenDecalSpawnWindow
   type: State
   key: F8
+- function: OpenScoreboardWindow
+  type: State
+  key: F9
 - function: OpenSandboxWindow
   type: State
   key: B

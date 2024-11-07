@@ -49,12 +49,12 @@ public sealed partial class AnomalyPowerSystem : EntitySystem
 
     private void OnPowerUsed(EntityUid uid, PsionicComponent component, AnomalyPowerActionEvent args)
     {
-        if (HasComp<PsionicInsulationComponent>(uid)
-            || HasComp<MindbrokenComponent>(uid))
+        if (!_psionics.OnAttemptPowerUse(args.Performer, args.Settings.PowerName, args.Settings.ManaCost, args.Settings.CheckInsulation))
             return;
 
-        var overcharged = _glimmerSystem.Glimmer * component.CurrentAmplification
-            > Math.Min(args.Settings.SupercriticalThreshold * component.CurrentDampening, args.Settings.MaxSupercriticalThreshold);
+        var overcharged = args.Settings.DoSupercritical ? _glimmerSystem.Glimmer * component.CurrentAmplification
+            > Math.Min(args.Settings.SupercriticalThreshold * component.CurrentDampening, args.Settings.MaxSupercriticalThreshold)
+            : false;
 
         // Behold the wall of nullable logic gates.
         DoBluespaceAnomalyEffects(uid, component, args, overcharged);

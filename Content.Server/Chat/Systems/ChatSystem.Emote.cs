@@ -2,6 +2,7 @@ using System.Collections.Frozen;
 using System.Linq;
 using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
+using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -50,7 +51,7 @@ public partial class ChatSystem
     /// <param name="emoteId">The id of emote prototype. Should has valid <see cref="EmotePrototype.ChatMessages"/></param>
     /// <param name="hideLog">Whether or not this message should appear in the adminlog window</param>
     /// <param name="range">Conceptual range of transmission, if it shows in the chat window, if it shows to far-away ghosts or ghosts at all...</param>
-    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerNameEvent"/>. If this is set, the event will not get raised.</param>
+    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerSpeechEvent"/>. If this is set, the event will not get raised.</param>
     public void TryEmoteWithChat(
         EntityUid source,
         string emoteId,
@@ -73,7 +74,7 @@ public partial class ChatSystem
     /// <param name="hideLog">Whether or not this message should appear in the adminlog window</param>
     /// <param name="hideChat">Whether or not this message should appear in the chat window</param>
     /// <param name="range">Conceptual range of transmission, if it shows in the chat window, if it shows to far-away ghosts or ghosts at all...</param>
-    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerNameEvent"/>. If this is set, the event will not get raised.</param>
+    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerSpeechEvent"/>. If this is set, the event will not get raised.</param>
     public void TryEmoteWithChat(
         EntityUid source,
         EmotePrototype emote,
@@ -83,6 +84,16 @@ public partial class ChatSystem
         bool ignoreActionBlocker = false
         )
     {
+        if (!(emote.Whitelist?.IsValid(source, EntityManager) ?? true))
+            return;
+        if (emote.Blacklist?.IsValid(source, EntityManager) ?? false)
+            return;
+
+        if (!emote.Available &&
+            TryComp<SpeechComponent>(source, out var speech) &&
+            !speech.AllowedEmotes.Contains(emote.ID))
+            return;
+
         // check if proto has valid message for chat
         if (emote.ChatMessages.Count != 0)
         {

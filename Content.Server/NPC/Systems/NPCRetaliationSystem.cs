@@ -47,7 +47,8 @@ public sealed class NPCRetaliationSystem : EntitySystem
         if (!HasComp<MobStateComponent>(target))
             return false;
 
-        if (_npcFaction.IsEntityFriendly(uid, target))
+        if (!component.RetaliateFriendlies
+            && _npcFaction.IsEntityFriendly(uid, target))
             return false;
 
         _npcFaction.AggroEntity(uid, target);

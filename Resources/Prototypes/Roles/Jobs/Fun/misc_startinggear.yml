@@ -79,6 +79,15 @@
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
+# Syndicate Operative Outfit - Civilian
+- type: startingGear
+  id: SyndicateOperativeGearCivilian
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndieFormal
+    back: ClothingBackpackDuffelSyndicate
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesColorBlack
+
 #Syndicate Operative Outfit - Basic
 - type: startingGear
   id: SyndicateOperativeGearBasic
@@ -144,7 +153,7 @@
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperativeMedic
     mask: ClothingMaskGasSyndicate
-    eyes: ClothingEyesHudSyndicateMed # - Delta-V
+    eyes: ClothingEyesHudSyndicateAgent
     ears: ClothingHeadsetAltSyndicate
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitSyndieMedic

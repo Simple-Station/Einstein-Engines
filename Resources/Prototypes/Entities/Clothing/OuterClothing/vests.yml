@@ -1,6 +1,6 @@
 #Web vest
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
   id: ClothingOuterVestWeb
   name: web vest
   description: A synthetic armor vest. This one has added webbing and ballistic plates.
@@ -21,7 +21,7 @@
 
 #Mercenary web vest
 - type: entity
-  parent: ClothingOuterStorageBase #web vest so it should have some pockets for ammo
+  parent: ClothingOuterVestWeb #web vest so it should have some pockets for ammo
   id: ClothingOuterVestWebMerc
   name: merc web vest
   description: A high-quality armored vest made from a hard synthetic material. It's surprisingly flexible and light, despite formidable armor plating.
@@ -87,3 +87,36 @@
     sprite: Clothing/OuterClothing/Vests/vest.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Vests/vest.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterVestNt
+  name: nanotrasen vest
+  description: A thick vest with a rubbery, water-resistant shell coloured in blue.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/vest_nt.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/vest_nt.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterVestIdris
+  name: idris incorporated vest
+  description: A thick vest with a rubbery, water-resistant shell coloured in teal.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/vest_idris.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/vest_idris.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterVestOrion
+  name: orion express vest
+  description: A thick vest with a rubbery, water-resistant shell coloured in brown.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/vest_orion.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/vest_orion.rsi

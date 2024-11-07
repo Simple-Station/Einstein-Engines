@@ -114,7 +114,7 @@
   - type: StaticPrice
     price: 750
   - type: StealTarget
-    stealGroup: WeaponEnergyGunMultiphase
+    stealGroup: HoSAntiqueWeapon
 
 - type: entity
   name: miniature energy gun
@@ -165,6 +165,13 @@
           Disabler: { state: mode-disabler }
           Lethal: { state: mode-lethal }
           Special: { state: mode-stun } # Unused
+
+- type: entity
+  name: miniature energy gun
+  parent: WeaponEnergyGunMini
+  id: WeaponEnergyGunMiniSecurity
+  description: A light version of the Energy gun with a smaller capacity.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
 
 - type: entity
   name: PDW-9 Energy Pistol
@@ -222,6 +229,13 @@
     - Sidearm
   - type: StaticPrice
     price: 750
+
+- type: entity
+  name: PDW-9 Energy Pistol
+  parent: WeaponEnergyGunPistol
+  id: WeaponEnergyGunPistolSecurity
+  description: A military grade sidearm, used by many militia forces throughout the local sector.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
 
 - type: entity
   name: IK-60 laser carbine

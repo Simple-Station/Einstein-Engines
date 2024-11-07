@@ -65,12 +65,28 @@
   subCategories:
     - JobsServiceUncategorized
     - JobsServiceBartender
+    - JobsServiceBotanist
+    - JobsServiceChef
+    - JobsServiceJanitor
+    - JobsServiceMusician
 
 - type: loadoutCategory
   id: JobsServiceUncategorized
 
 - type: loadoutCategory
   id: JobsServiceBartender
+
+- type: loadoutCategory
+  id: JobsServiceBotanist
+
+- type: loadoutCategory
+  id: JobsServiceChef
+
+- type: loadoutCategory
+  id: JobsServiceJanitor
+
+- type: loadoutCategory
+  id: JobsServiceMusician
 
 - type: loadoutCategory
   id: Mask

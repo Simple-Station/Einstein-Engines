@@ -1,4 +1,4 @@
-﻿health-examinable-silicon-none = There is no obvious damage to be seen.
+﻿health-examinable-silicon-none = [color=green]There is no obvious damage to be seen.[/color]
 
 health-examinable-silicon-Blunt-25 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } minor dents on { POSS-ADJ($target) } chassis.[/color]
 health-examinable-silicon-Blunt-50 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } chassis is severely dented![/color]

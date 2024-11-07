@@ -12,7 +12,6 @@ using Content.Shared.Psionics;
 using System.Linq;
 using Robust.Server.Player;
 using Content.Server.Chat.Managers;
-using Content.Server.Psionics.Glimmer;
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -29,6 +28,7 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly ISerializationManager _serialization = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
+        [Dependency] private readonly PsionicFamiliarSystem _psionicFamiliar = default!;
 
         private ProtoId<WeightedRandomPrototype> _pool = "RandomPsionicPowerPool";
         private const string GenericInitializationMessage = "generic-power-initialization-feedback";
@@ -59,6 +59,7 @@ namespace Content.Server.Abilities.Psionics
                 || HasComp<MindbrokenComponent>(uid))
                 return;
 
+            KillFamiliars(component);
             RemoveAllPsionicPowers(uid);
         }
 
@@ -215,8 +216,13 @@ namespace Content.Server.Abilities.Psionics
 
                 _popups.PopupEntity(Loc.GetString(psionic.MindbreakingFeedback, ("entity", MetaData(uid).EntityName)), uid, uid, PopupType.MediumCaution);
 
+                KillFamiliars(psionic);
                 RemComp<PsionicComponent>(uid);
                 RemComp<InnatePsionicPowersComponent>(uid);
+
+                var ev = new OnMindbreakEvent();
+                RaiseLocalEvent(uid, ref ev);
+
                 return;
             }
             RefreshPsionicModifiers(uid, psionic);
@@ -363,6 +369,21 @@ namespace Content.Server.Abilities.Psionics
                 psionic.DampeningSources.Remove(proto.Name);
 
             RefreshPsionicModifiers(uid, psionic);
+        }
+
+        private void KillFamiliars(PsionicComponent component)
+        {
+            if (component.Familiars.Count <= 0)
+                return;
+
+            foreach (var familiar in component.Familiars)
+            {
+                if (!TryComp<PsionicFamiliarComponent>(familiar, out var familiarComponent)
+                    || !familiarComponent.DespawnOnMasterDeath)
+                    continue;
+
+                _psionicFamiliar.DespawnFamiliar(familiar, familiarComponent);
+            }
         }
     }
 }

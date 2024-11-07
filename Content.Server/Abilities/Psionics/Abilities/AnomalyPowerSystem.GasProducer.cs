@@ -10,7 +10,7 @@ public sealed partial class AnomalyPowerSystem
 {
     private void DoGasProducerAnomalyEffects(EntityUid uid, PsionicComponent component, AnomalyPowerActionEvent args, bool overcharged = false)
     {
-        if (args.Gas is not null)
+        if (args.Gas is null)
             return;
 
         if (overcharged)

@@ -62,7 +62,6 @@
   noSpawn: true
   components:
   - type: StationEvent
-    id: VentCritters
     earliestStart: 15
     minimumPlayers: 1
     weight: 4
@@ -84,5 +83,3 @@
     duration: 1
   - type: PirateRadioSpawnRule
     debrisCount: 6
-    distanceModifier: 13
-    debrisDistanceModifier: 3

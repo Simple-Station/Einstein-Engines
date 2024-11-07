@@ -1,5 +1,6 @@
 - type: emote
   id: HarpyRing
+  name: chat-emote-name-harpyring
   category: Vocal
   chatMessages: [ rings ]
   chatTriggers:
@@ -7,6 +8,7 @@
 
 - type: emote
   id: HarpyPew
+  name: chat-emote-name-harpypew
   category: Vocal
   chatMessages: [ pews ]
   chatTriggers:
@@ -15,6 +17,7 @@
 
 - type: emote
   id: HarpyBang
+  name: chat-emote-name-harpybang
   category: Vocal
   chatMessages: [ bangs ]
   chatTriggers:
@@ -22,6 +25,7 @@
 
 - type: emote
   id: HarpyRev
+  name: chat-emote-name-harpyrev
   category: Vocal
   chatMessages: [ revs ]
   chatTriggers:
@@ -29,6 +33,7 @@
 
 - type: emote
   id: HarpyCaw
+  name: chat-emote-name-harpycaw
   category: Vocal
   chatMessages: [ caws ]
   chatTriggers:
@@ -37,6 +42,7 @@
 #Vulpkanin
 - type: emote
   id: Bark
+  name: chat-emote-name-vulpbark
   category: Vocal
   chatMessages: [ barks ]
   chatTriggers:
@@ -44,6 +50,7 @@
 
 - type: emote
   id: Snarl
+  name: chat-emote-name-vulpsnarl
   category: Vocal
   chatMessages: [ snarls ]
   chatTriggers:
@@ -51,6 +58,7 @@
 
 - type: emote
   id: Whine
+  name: chat-emote-name-vulpwhine
   category: Vocal
   chatMessages: [ whines ]
   chatTriggers:
@@ -58,6 +66,7 @@
 
 - type: emote
   id: Howl
+  name: chat-emote-name-vulphowl
   category: Vocal
   chatMessages: [ howls ]
   chatTriggers:
