@@ -5,6 +5,7 @@
   components:
   functions:
     - !type:TraitReplaceComponent
+      components:
       - type: OniDamageModifier
         modifiers:
           coefficients:
