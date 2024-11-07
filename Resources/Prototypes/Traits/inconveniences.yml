@@ -56,7 +56,7 @@
     - !type:TraitAddComponent
       components:
         - type: ForeignerTrait
-          cantUnderstand: false # Allows to understand
+          cantUnderstand: false
           baseTranslator: TranslatorForeigner
 
 - type: trait

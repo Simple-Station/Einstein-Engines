@@ -14,9 +14,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Server.Traits;
 
-/// <summary>
-///     Used for traits that add a Component upon spawning in, overwriting the pre-existing component if it already exists.
-/// </summary>
+/// Used for traits that add a Component upon spawning in, overwriting the pre-existing component if it already exists.
 [UsedImplicitly]
 public sealed partial class TraitReplaceComponent : TraitFunction
 {
@@ -66,9 +64,7 @@ public sealed partial class TraitAddComponent : TraitFunction
     }
 }
 
-/// <summary>
-///     Used for traits that remove a component upon a player spawning in.
-/// </summary>
+/// Used for traits that remove a component upon a player spawning in.
 [UsedImplicitly]
 public sealed partial class TraitRemoveComponent : TraitFunction
 {
@@ -85,9 +81,7 @@ public sealed partial class TraitRemoveComponent : TraitFunction
     }
 }
 
-/// <summary>
-///     Used for traits that add an action upon a player spawning in.
-/// </summary>
+/// Used for traits that add an action upon a player spawning in.
 [UsedImplicitly]
 public sealed partial class TraitAddActions : TraitFunction
 {
@@ -113,9 +107,7 @@ public sealed partial class TraitAddActions : TraitFunction
     }
 }
 
-/// <summary>
-///     Used for traits that add an Implant upon spawning in.
-/// </summary>
+/// Used for traits that add an Implant upon spawning in.
 [UsedImplicitly]
 public sealed partial class TraitAddImplant : TraitFunction
 {
@@ -159,33 +151,23 @@ public sealed partial class TraitAddPsionics : TraitFunction
     }
 }
 
-/// <summary>
-///     Handles all modification of Known Languages. Removes languages before adding them.
-/// </summary>
+/// Handles all modification of Known Languages. Removes languages before adding them.
 [UsedImplicitly]
 public sealed partial class TraitModifyLanguages : TraitFunction
 {
-    /// <summary>
-    ///     The list of all Spoken Languages that this trait adds.
-    /// </summary>
+    /// The list of all Spoken Languages that this trait adds.
     [DataField, AlwaysPushInheritance]
     public List<string>? LanguagesSpoken { get; private set; } = default!;
 
-    /// <summary>
-    ///     The list of all Understood Languages that this trait adds.
-    /// </summary>
+    /// The list of all Understood Languages that this trait adds.
     [DataField, AlwaysPushInheritance]
     public List<string>? LanguagesUnderstood { get; private set; } = default!;
 
-    /// <summary>
-    ///     The list of all Spoken Languages that this trait removes.
-    /// </summary>
+    /// The list of all Spoken Languages that this trait removes.
     [DataField, AlwaysPushInheritance]
     public List<string>? RemoveLanguagesSpoken { get; private set; } = default!;
 
-    /// <summary>
-    ///     The list of all Understood Languages that this trait removes.
-    /// </summary>
+    /// The list of all Understood Languages that this trait removes.
     [DataField, AlwaysPushInheritance]
     public List<string>? RemoveLanguagesUnderstood { get; private set; } = default!;
 
@@ -214,15 +196,11 @@ public sealed partial class TraitModifyLanguages : TraitFunction
     }
 }
 
-/// <summary>
-///     Handles adding Moodlets to a player character upon spawning in. Typically used for permanent moodlets or drug addictions.
-/// </summary>
+/// Handles adding Moodlets to a player character upon spawning in. Typically used for permanent moodlets or drug addictions.
 [UsedImplicitly]
 public sealed partial class TraitAddMoodlets : TraitFunction
 {
-    /// <summary>
-    ///     The list of all Moodlets that this trait adds.
-    /// </summary>
+    /// The list of all Moodlets that this trait adds.
     [DataField, AlwaysPushInheritance]
     public List<ProtoId<MoodEffectPrototype>>? MoodEffects { get; private set; } = default!;
 
@@ -241,9 +219,7 @@ public sealed partial class TraitAddMoodlets : TraitFunction
     }
 }
 
-/// <summary>
-///     Add or remove Factions from a player upon spawning in.
-/// </summary>
+/// Add or remove Factions from a player upon spawning in.
 [UsedImplicitly]
 public sealed partial class TraitModifyFactions : TraitFunction
 {
@@ -282,9 +258,7 @@ public sealed partial class TraitModifyFactions : TraitFunction
     }
 }
 
-/// <summary>
-///     Only use this if you know what you're doing. This function directly writes to arbitrarily any component.
-/// </summary>
+/// Only use this if you know what you're doing. This function directly writes to any arbitrary component.
 [UsedImplicitly]
 public sealed partial class TraitVVEdit : TraitFunction
 {

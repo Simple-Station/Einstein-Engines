@@ -36,13 +36,12 @@ public sealed partial class TraitPrototype : IPrototype
     public TraitFunction[] Functions { get; private set; } = Array.Empty<TraitFunction>();
 }
 
-/// <summary>
-///     This serves as a hook for trait functions to modify a player character upon spawning in.
-/// </summary>
+/// This serves as a hook for trait functions to modify a player character upon spawning in.
 [ImplicitDataDefinitionForInheritors]
 public abstract partial class TraitFunction
 {
-    public abstract void OnPlayerSpawn(EntityUid mob,
+    public abstract void OnPlayerSpawn(
+        EntityUid mob,
         IComponentFactory factory,
         IEntityManager entityManager,
         ISerializationManager serializationManager);

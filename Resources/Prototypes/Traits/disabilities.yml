@@ -208,7 +208,7 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: BloodDeficiency              # by default, start taking bloodloss damage at around ~21.4 minutes,
+        - type: BloodDeficiency # By default, start taking bloodloss damage at around ~21.4 minutes,
           bloodLossPercentage: 0.0002333333  # then become crit ~10 minutes
 
 - type: trait
