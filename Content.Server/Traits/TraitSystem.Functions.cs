@@ -215,8 +215,7 @@ public sealed partial class TraitModifyLanguages : TraitFunction
 }
 
 /// <summary>
-///     If a trait includes any Psionic Powers, this enters the powers into PsionicSystem to be initialized.
-///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
+///     Handles adding Moodlets to a player character upon spawning in. Typically used for permanent moodlets or drug addictions.
 /// </summary>
 [UsedImplicitly]
 public sealed partial class TraitAddMoodlets : TraitFunction
@@ -243,8 +242,7 @@ public sealed partial class TraitAddMoodlets : TraitFunction
 }
 
 /// <summary>
-///     If a trait includes any Psionic Powers, this enters the powers into PsionicSystem to be initialized.
-///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
+///     Add or remove Factions from a player upon spawning in.
 /// </summary>
 [UsedImplicitly]
 public sealed partial class TraitModifyFactions : TraitFunction
