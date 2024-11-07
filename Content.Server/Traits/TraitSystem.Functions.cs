@@ -85,7 +85,7 @@ public sealed partial class TraitRemoveComponent : TraitFunction
 }
 
 /// <summary>
-///     Used for traits that remove a component upon a player spawning in.
+///     Used for traits that add an action upon a player spawning in.
 /// </summary>
 [UsedImplicitly]
 public sealed partial class TraitAddActions : TraitFunction
