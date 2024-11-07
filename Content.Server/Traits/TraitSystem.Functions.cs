@@ -10,6 +10,7 @@ using Content.Shared.Psionics;
 using Content.Server.Language;
 using Content.Shared.Mood;
 using Content.Server.NPC.Systems;
+using Robust.Shared.Serialization;
 
 namespace Content.Server.Traits;
 
@@ -17,6 +18,7 @@ namespace Content.Server.Traits;
 ///     Used for traits that add a Component upon spawning in, overwriting the pre-existing component if it already exists.
 /// </summary>
 [UsedImplicitly]
+[Serializable, NetSerializable]
 public sealed partial class TraitReplaceComponent : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
@@ -45,6 +47,7 @@ public sealed partial class TraitReplaceComponent : TraitFunction
 ///     This will do nothing if the Component already exists.
 /// </summary>
 [UsedImplicitly]
+[Serializable, NetSerializable]
 public sealed partial class TraitAddComponent : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
@@ -69,6 +72,7 @@ public sealed partial class TraitAddComponent : TraitFunction
 ///     Used for traits that remove a component upon a player spawning in.
 /// </summary>
 [UsedImplicitly]
+[Serializable, NetSerializable]
 public sealed partial class TraitRemoveComponent : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
@@ -88,6 +92,7 @@ public sealed partial class TraitRemoveComponent : TraitFunction
 ///     Used for traits that add an action upon a player spawning in.
 /// </summary>
 [UsedImplicitly]
+[Serializable, NetSerializable]
 public sealed partial class TraitAddActions : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
@@ -116,6 +121,7 @@ public sealed partial class TraitAddActions : TraitFunction
 ///     Used for traits that add an Implant upon spawning in.
 /// </summary>
 [UsedImplicitly]
+[Serializable, NetSerializable]
 public sealed partial class TraitAddImplant : TraitFunction
 {
     [DataField(customTypeSerializer: typeof(PrototypeIdHashSetSerializer<EntityPrototype>))]
@@ -137,6 +143,7 @@ public sealed partial class TraitAddImplant : TraitFunction
 ///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
 /// </summary>
 [UsedImplicitly]
+[Serializable, NetSerializable]
 public sealed partial class TraitAddPsionics : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
@@ -162,6 +169,7 @@ public sealed partial class TraitAddPsionics : TraitFunction
 ///     Handles all modification of Known Languages. Removes languages before adding them.
 /// </summary>
 [UsedImplicitly]
+[Serializable, NetSerializable]
 public sealed partial class TraitModifyLanguages : TraitFunction
 {
     /// <summary>
@@ -218,6 +226,7 @@ public sealed partial class TraitModifyLanguages : TraitFunction
 ///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
 /// </summary>
 [UsedImplicitly]
+[Serializable, NetSerializable]
 public sealed partial class TraitAddMoodlets : TraitFunction
 {
     /// <summary>
@@ -246,6 +255,7 @@ public sealed partial class TraitAddMoodlets : TraitFunction
 ///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
 /// </summary>
 [UsedImplicitly]
+[Serializable, NetSerializable]
 public sealed partial class TraitModifyFactions : TraitFunction
 {
     /// <summary>
