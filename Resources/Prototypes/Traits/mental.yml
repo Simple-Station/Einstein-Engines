@@ -28,13 +28,11 @@
       species:
         - Oni
         - Shadowkin
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - LowPotential
-  components:
-    - type: PotentiaModifier
-      potentiaMultiplier: 1.25
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PotentiaModifier
+          potentiaMultiplier: 1.25
 
 - type: trait
   id: LowPotential
@@ -66,13 +64,11 @@
       species:
         - Oni
         - Shadowkin
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - HighPotential
-  components:
-    - type: PotentiaModifier
-      potentiaMultiplier: 0.75
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PotentiaModifier
+          potentiaMultiplier: 0.75
 
 - type: trait
   id: LowAmplification
@@ -105,13 +101,10 @@
           inverted: true
           species:
             - Shadowkin
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - HighAmplification
-        - PowerOverwhelming
-  psionicPowers:
-    - LowAmplification
+  functions:
+    - !type:TraitReplaceComponent
+      psionicPowers:
+        - LowAmplification
 
 - type: trait
   id: HighAmplification
@@ -144,13 +137,10 @@
           inverted: true
           species:
             - Shadowkin
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - LowAmplification
-        - PowerOverwhelming
-  psionicPowers:
-    - HighAmplification
+  functions:
+    - !type:TraitReplaceComponent
+      psionicPowers:
+        - HighAmplification
 
 - type: trait
   id: PowerOverwhelming
@@ -183,13 +173,10 @@
           inverted: true
           species:
             - Shadowkin
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - LowAmplification
-        - HighAmplification
-  psionicPowers:
-    - PowerOverwhelming
+  functions:
+    - !type:TraitReplaceComponent
+      psionicPowers:
+        - PowerOverwhelming
 
 - type: trait
   id: LowDampening
@@ -222,12 +209,10 @@
           inverted: true
           species:
             - Shadowkin
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - HighDampening
-  psionicPowers:
-    - LowDampening
+  functions:
+    - !type:TraitReplaceComponent
+      psionicPowers:
+        - LowDampening
 
 - type: trait
   id: HighDampening
@@ -260,9 +245,7 @@
           inverted: true
           species:
             - Shadowkin
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - LowDampening
-  psionicPowers:
-    - HighDampening
+  functions:
+    - !type:TraitReplaceComponent
+      psionicPowers:
+        - HighDampening
