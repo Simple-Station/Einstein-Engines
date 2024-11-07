@@ -1,6 +1,7 @@
 using Content.Shared.Customization.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Traits;
 
@@ -39,6 +40,7 @@ public sealed partial class TraitPrototype : IPrototype
 ///     This serves as a hook for trait functions to modify a player character upon spawning in.
 /// </summary>
 [ImplicitDataDefinitionForInheritors]
+[Serializable, NetSerializable]
 public abstract partial class TraitFunction
 {
     public abstract void OnPlayerSpawn(EntityUid mob,
