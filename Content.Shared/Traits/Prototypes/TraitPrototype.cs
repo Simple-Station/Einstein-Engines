@@ -32,7 +32,7 @@ public sealed partial class TraitPrototype : IPrototype
     [DataField]
     public List<CharacterRequirement> Requirements = new();
 
-    [DataField]
+    [DataField(serverOnly: true)]
     public TraitFunction[] Functions { get; private set; } = Array.Empty<TraitFunction>();
 }
 
