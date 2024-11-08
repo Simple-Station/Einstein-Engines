@@ -503,6 +503,16 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> TTSEnabled =
             CVarDef.Create("tts.enabled", false, CVar.SERVERONLY);
 
+        /// Can be "file" to store in the cache_path, or "memory" to store it in memory.
+        public static readonly CVarDef<string> TTSCacheType =
+            CVarDef.Create("tts.cache_type", "memory", CVar.SERVERONLY);
+
+        public static readonly CVarDef<string> TTSCachePath =
+            CVarDef.Create("tts.cache_path", "data/tts/cache", CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> TTSMaxCached =
+            CVarDef.Create("tts.max_cached", 256, CVar.SERVERONLY);
+
         public static readonly CVarDef<string> TTSModelPath =
             CVarDef.Create("tts.model_path", "data/tts/models", CVar.SERVERONLY);
 
