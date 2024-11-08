@@ -14,14 +14,12 @@ namespace Content.Client.Options.UI.Tabs
     public sealed partial class AudioTab : Control
     {
         [Dependency] private readonly IConfigurationManager _cfg = default!;
-        private readonly IAudioManager _audio;
 
         public AudioTab()
         {
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
 
-            _audio = IoCManager.Resolve<IAudioManager>();
             LobbyMusicCheckBox.Pressed = _cfg.GetCVar(CCVars.LobbyMusicEnabled);
             RestartSoundsCheckBox.Pressed = _cfg.GetCVar(CCVars.RestartSoundsEnabled);
             EventMusicCheckBox.Pressed = _cfg.GetCVar(CCVars.EventMusicEnabled);
@@ -40,6 +38,7 @@ namespace Content.Client.Options.UI.Tabs
                 InterfaceVolumeSlider,
                 AnnouncerVolumeSlider,
                 TtsVolumeSlider,
+                TtsUnknownVolumeSlider,
 
                 LobbyMusicCheckBox,
                 RestartSoundsCheckBox,
@@ -86,6 +85,7 @@ namespace Content.Client.Options.UI.Tabs
                 InterfaceVolumeSlider,
                 AnnouncerVolumeSlider,
                 TtsVolumeSlider,
+                TtsUnknownVolumeSlider,
 
                 LobbyMusicCheckBox,
                 RestartSoundsCheckBox,
@@ -127,6 +127,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.InterfaceVolume, InterfaceVolumeSlider.Value / 100f * ContentAudioSystem.InterfaceMultiplier);
             _cfg.SetCVar(CCVars.AnnouncerVolume, AnnouncerVolumeSlider.Value / 100f * ContentAudioSystem.AnnouncerMultiplier);
             _cfg.SetCVar(CCVars.TTSVolume, TtsVolumeSlider.Value / 100f * ContentAudioSystem.TtsMultiplier);
+            _cfg.SetCVar(CCVars.TTSUnknownVolume, TtsUnknownVolumeSlider.Value / 100f * ContentAudioSystem.TtsMultiplier);
 
             _cfg.SetCVar(CCVars.MaxAmbientSources, (int)AmbienceSoundsSlider.Value);
 
@@ -154,6 +155,7 @@ namespace Content.Client.Options.UI.Tabs
             InterfaceVolumeSlider.Value = _cfg.GetCVar(CCVars.InterfaceVolume) * 100f / ContentAudioSystem.InterfaceMultiplier;
             AnnouncerVolumeSlider.Value = _cfg.GetCVar(CCVars.AnnouncerVolume) * 100f / ContentAudioSystem.AnnouncerMultiplier;
             TtsVolumeSlider.Value = _cfg.GetCVar(CCVars.TTSVolume) * 100f / ContentAudioSystem.TtsMultiplier;
+            TtsUnknownVolumeSlider.Value = _cfg.GetCVar(CCVars.TTSUnknownVolume) * 100f / ContentAudioSystem.TtsMultiplier;
 
             AmbienceSoundsSlider.Value = _cfg.GetCVar(CCVars.MaxAmbientSources);
 
@@ -184,6 +186,8 @@ namespace Content.Client.Options.UI.Tabs
                 Math.Abs(AnnouncerVolumeSlider.Value - _cfg.GetCVar(CCVars.AnnouncerVolume) * 100f / ContentAudioSystem.AnnouncerMultiplier) < 0.01f;
             var isTtsVolumeSame =
                 Math.Abs(TtsVolumeSlider.Value - _cfg.GetCVar(CCVars.TTSVolume) * 100f / ContentAudioSystem.TtsMultiplier) < 0.01f;
+            var isTtsUnknownVolumeSame =
+                Math.Abs(TtsUnknownVolumeSlider.Value - _cfg.GetCVar(CCVars.TTSUnknownVolume) * 100f / ContentAudioSystem.TtsMultiplier) < 0.01f;
 
             var isAmbientSoundsSame = (int)AmbienceSoundsSlider.Value == _cfg.GetCVar(CCVars.MaxAmbientSources);
             var isLobbySame = LobbyMusicCheckBox.Pressed == _cfg.GetCVar(CCVars.LobbyMusicEnabled);
@@ -194,7 +198,7 @@ namespace Content.Client.Options.UI.Tabs
             var isEverythingSame = isMasterVolumeSame && isMidiVolumeSame && isAmbientVolumeSame
                 && isAmbientMusicVolumeSame && isAmbientSoundsSame && isLobbySame && isRestartSoundsSame && isEventSame
                 && isAnnouncerDisableMultipleSoundsSame && isAdminSoundsSame && isLobbyVolumeSame
-                && isInterfaceVolumeSame && isAnnouncerVolumeSame && isTtsVolumeSame;
+                && isInterfaceVolumeSame && isAnnouncerVolumeSame && isTtsVolumeSame && isTtsUnknownVolumeSame;
             ApplyButton.Disabled = isEverythingSame;
             ResetButton.Disabled = isEverythingSame;
             MasterVolumeLabel.Text =
@@ -213,6 +217,8 @@ namespace Content.Client.Options.UI.Tabs
                 Loc.GetString("ui-options-volume-percent", ("volume", AnnouncerVolumeSlider.Value / 100));
             TtsVolumeLabel.Text =
                 Loc.GetString("ui-options-volume-percent", ("volume", TtsVolumeSlider.Value / 100));
+            TtsUnknownVolumeLabel.Text =
+                Loc.GetString("ui-options-volume-percent", ("volume", TtsUnknownVolumeSlider.Value / 100));
             AmbienceSoundsLabel.Text = ((int)AmbienceSoundsSlider.Value).ToString();
         }
     }

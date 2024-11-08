@@ -36,7 +36,10 @@ public sealed class TTSSystem : EntitySystem
     {
         _sawmill = Logger.GetSawmill("tts");
         _res.AddRoot(Prefix, _contentRoot);
+        OnTtsVolumeChanged(_cfg.GetCVar(CCVars.TTSVolume));
         _cfg.OnValueChanged(CCVars.TTSVolume, OnTtsVolumeChanged, true);
+        OnTtsUnknownVolumeChanged(_cfg.GetCVar(CCVars.TTSUnknownVolume));
+        _cfg.OnValueChanged(CCVars.TTSUnknownVolume, OnTtsUnknownVolumeChanged, true);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
     }
 
@@ -44,6 +47,7 @@ public sealed class TTSSystem : EntitySystem
     {
         base.Shutdown();
         _cfg.UnsubValueChanged(CCVars.TTSVolume, OnTtsVolumeChanged);
+        _cfg.UnsubValueChanged(CCVars.TTSUnknownVolume, OnTtsUnknownVolumeChanged);
         _contentRoot.Dispose();
     }
 
@@ -54,7 +58,12 @@ public sealed class TTSSystem : EntitySystem
 
     private void OnTtsVolumeChanged(float volume)
     {
-        _volume = volume * 100f / ContentAudioSystem.TtsMultiplier;
+        _volume = volume;
+    }
+
+    private void OnTtsUnknownVolumeChanged(float volume)
+    {
+        _volume = volume;
     }
 
     private void OnPlayTTS(PlayTTSEvent ev)
