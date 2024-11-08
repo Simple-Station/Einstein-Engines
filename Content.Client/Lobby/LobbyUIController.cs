@@ -309,7 +309,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             if (jobClothes)
                 GiveDummyJobClothes(dummyEnt, job, humanoid);
             if (loadouts)
-                _loadouts.ApplyCharacterLoadout(dummyEnt, job, humanoid, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted());
+                _loadouts.ApplyCharacterLoadout(dummyEnt, job, humanoid, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
         }
 
         return dummyEnt;

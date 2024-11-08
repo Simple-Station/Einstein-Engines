@@ -267,7 +267,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         ButtonGroup.AddChild(GuidebookButton);
 
         // These guys are here too for reasons
-        HeadingButton.SetHeight = GuidebookButton.SetHeight = PreferenceButton.Size.Y;
+        HeadingButton.SetHeight = HeirloomButton.SetHeight = GuidebookButton.SetHeight = PreferenceButton.Size.Y;
         SpecialColorTintToggle.Pressed = ColorEdit.Visible = _preference.CustomColorTint != null;
 
         _initialized = true;

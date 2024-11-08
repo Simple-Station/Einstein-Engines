@@ -43,3 +43,8 @@
 - type: moodEffect
   id: Dead
   moodChange: -1000
+
+- type: moodEffect
+  id: HeirloomLost
+  moodChange: -7
+  category: Heirloom

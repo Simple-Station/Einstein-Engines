@@ -12,9 +12,11 @@ using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 
 namespace Content.Server.Clothing.Systems;
@@ -30,6 +32,7 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly ISerializationManager _serialization = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
 
     public override void Initialize()
@@ -63,7 +66,8 @@ public sealed class LoadoutSystem : EntitySystem
         bool deleteFailed = false)
     {
         // Spawn the loadout, get a list of items that failed to equip
-        var (failedLoadouts, allLoadouts) = _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted);
+        var (failedLoadouts, allLoadouts) =
+            _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted, out var heirlooms);
 
         // Try to find back-mounted storage apparatus
         if (!_inventory.TryGetSlotEntity(uid, "back", out var item) ||
@@ -99,6 +103,19 @@ public sealed class LoadoutSystem : EntitySystem
                 comp.Owner = loadout.Item1;
                 EntityManager.AddComponent(loadout.Item1, comp);
             }
+        }
+
+
+        // Pick the heirloom
+        if (heirlooms.Any())
+        {
+            var heirloom = _random.Pick(heirlooms);
+            EnsureComp<HeirloomHaverComponent>(uid, out var haver);
+            EnsureComp<HeirloomComponent>(heirloom.Item1, out var comp);
+            haver.Heirloom = heirloom.Item1;
+            comp.HOwner = uid;
+            Dirty(uid, haver);
+            Dirty(heirloom.Item1, comp);
         }
     }
 }

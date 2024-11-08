@@ -102,7 +102,7 @@ humanoid-profile-editor-loadouts-customize-color = Color tint
 humanoid-profile-editor-loadouts-customize-save = Save
 humanoid-profile-editor-loadouts-guidebook-button-tooltip = Click for more info
 humanoid-profile-editor-loadouts-heirloom = Heirloom
-humanoid-profile-editor-loadouts-heirloom-tooltip = Whichever loadouts you pick to be your heirloom will be randomly picked from on spawn if you have the Heirloom trait.
+humanoid-profile-editor-loadouts-heirloom-tooltip = Whichever loadouts you choose to be your potential heirloom will be randomly picked from on spawn.
 
 humanoid-profile-editor-markings-tab = Markings
 humanoid-profile-editor-flavortext-tab = Description
