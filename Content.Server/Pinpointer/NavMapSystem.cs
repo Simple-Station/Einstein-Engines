@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
@@ -7,8 +8,12 @@ using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Localizations;
 using Content.Shared.Maps;
+using Content.Shared.Localizations;
 using Content.Shared.Pinpointer;
+using Content.Shared.Tag;
 using JetBrains.Annotations;
+using Robust.Server.GameObjects;
+using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
@@ -23,18 +28,16 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 {
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    [Dependency] private readonly TagSystem _tags = default!;
+    [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+
+    private EntityQuery<PhysicsComponent> _physicsQuery;
+    private EntityQuery<TagComponent> _tagQuery;
 
     public const float CloseDistance = 15f;
     public const float FarDistance = 30f;
-
-    private EntityQuery<AirtightComponent> _airtightQuery;
-    private EntityQuery<MapGridComponent> _gridQuery;
-    private EntityQuery<NavMapComponent> _navQuery;
 
     public override void Initialize()
     {
@@ -57,8 +60,8 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 
         SubscribeLocalEvent<AirtightChanged>(OnAirtightChange);
 
-        // Beacon events
         SubscribeLocalEvent<NavMapBeaconComponent, MapInitEvent>(OnNavMapBeaconMapInit);
+        SubscribeLocalEvent<NavMapBeaconComponent, ComponentStartup>(OnNavMapBeaconStartup);
         SubscribeLocalEvent<NavMapBeaconComponent, AnchorStateChangedEvent>(OnNavMapBeaconAnchor);
         SubscribeLocalEvent<ConfigurableNavMapBeaconComponent, NavMapBeaconConfigureBuiMessage>(OnConfigureMessage);
         SubscribeLocalEvent<ConfigurableNavMapBeaconComponent, MapInitEvent>(OnConfigurableMapInit);
@@ -85,6 +88,17 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         }
 
         RefreshGrid(comp, _gridQuery.GetComponent(args.Grid));
+    }
+
+    private void OnNavMapBeaconStartup(EntityUid uid, NavMapBeaconComponent component, ComponentStartup args)
+    {
+        if (component.DefaultText == null || component.Text != null)
+            return;
+
+        component.Text = Loc.GetString(component.DefaultText);
+        Dirty(uid, component);
+
+        UpdateNavMapBeaconData(uid, component);
     }
 
     private NavMapChunk EnsureChunk(NavMapComponent component, Vector2i origin)
@@ -377,7 +391,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         if (!Resolve(ent, ref ent.Comp))
             return false;
 
-        return TryGetNearestBeacon(_transformSystem.GetMapCoordinates(ent, ent.Comp), out beacon, out beaconCoords);
+        return TryGetNearestBeacon(_transform.GetMapCoordinates(ent, ent.Comp), out beacon, out beaconCoords);
     }
 
     /// <summary>
@@ -404,7 +418,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
             if (coordinates.MapId != xform.MapID)
                 continue;
 
-            var coords = _transformSystem.GetWorldPosition(xform);
+            var coords = _transform.GetWorldPosition(xform);
             var distanceSquared = (coordinates.Position - coords).LengthSquared();
             if (!float.IsInfinity(minDistance) && distanceSquared >= minDistance)
                 continue;
@@ -423,7 +437,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         if (!Resolve(ent, ref ent.Comp))
             return Loc.GetString("nav-beacon-pos-no-beacons");
 
-        return GetNearestBeaconString(_transformSystem.GetMapCoordinates(ent, ent.Comp));
+        return GetNearestBeaconString(_transform.GetMapCoordinates(ent, ent.Comp));
     }
 
     public string GetNearestBeaconString(MapCoordinates coordinates)
@@ -452,13 +466,13 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
             ? Loc.GetString("nav-beacon-pos-format-direction-mod-far")
             : string.Empty;
 
-        // we can null suppress the text being null because TryGetNearestVisibleStationBeacon always gives us a beacon with not-null text.
+        // we can null suppress the text being null because TRyGetNearestVisibleStationBeacon always gives us a beacon with not-null text.
         return Loc.GetString("nav-beacon-pos-format-direction",
             ("modifier", modifier),
             ("direction", ContentLocalizationManager.FormatDirection(adjustedDir).ToLowerInvariant()),
             ("color", beacon.Value.Comp.Color),
             ("marker", beacon.Value.Comp.Text!));
     }
-
-    #endregion
 }
+
+#endregion

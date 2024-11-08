@@ -131,7 +131,7 @@
 - type: entity
   id: CrateMaterialUranium
   name: uranium crate
-  parent: CrateGenericSteel
+  parent: CrateUranium
   components:
   - type: StorageFill
     contents:

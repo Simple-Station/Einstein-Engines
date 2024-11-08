@@ -2,8 +2,10 @@
   id: CPRTraining
   category: Mental
   points: -4
-  components:
-    - type: CPRTraining
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: CPRTraining
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -19,19 +21,21 @@
   id: SelfAware
   category: Mental
   points: -4
-  components:
-    - type: SelfAware
-      analyzableTypes:
-        - Blunt
-        - Slash
-        - Piercing
-        - Heat
-        - Shock
-        - Cold
-        - Caustic
-      detectableGroups:
-        - Airloss
-        - Toxin
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SelfAware
+          analyzableTypes:
+            - Blunt
+            - Slash
+            - Piercing
+            - Heat
+            - Shock
+            - Cold
+            - Caustic
+          detectableGroups:
+            - Airloss
+            - Toxin
 
 - type: trait
   id: HeavyweightDrunk
@@ -53,9 +57,11 @@
       species:
         - Dwarf
         - IPC
-  components:
-    - type: LightweightDrunk
-      boozeStrengthMultiplier: 0.5
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 0.5
 
 - type: trait
   id: LiquorLifeline
@@ -77,21 +83,25 @@
       species:
         - Dwarf
         - IPC
-  components:
-    - type: LiquorLifeline
-    - type: LightweightDrunk
-      boozeStrengthMultiplier: 0.5
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: LiquorLifeline
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 0.5
 
 - type: trait
   id: Thieving
   category: Physical
   points: -8
-  components:
-    - type: Thieving
-      ignoreStripHidden: true
-      stealth: Subtle
-      stripTimeReduction: 0
-      stripTimeMultiplier: 0.667
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Thieving
+          ignoreStripHidden: true
+          stealth: Subtle
+          stripTimeReduction: 0
+          stripTimeMultiplier: 0.667
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -102,10 +112,12 @@
   id: Voracious
   category: Physical
   points: -2
-  components:
-    - type: ConsumeDelayModifier
-      foodDelayMultiplier: 0.5
-      drinkDelayMultiplier: 0.5
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: ConsumeDelayModifier
+          foodDelayMultiplier: 0.5
+          drinkDelayMultiplier: 0.5
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -127,21 +139,25 @@
       inverted: true
       species:
         - Diona
-  components:
-    - type: ClimbDelayModifier
-      climbDelayMultiplier: 0.35
-    - type: LayingDownModifier
-      layingDownCooldownMultiplier: 0.5
-      downedSpeedMultiplierMultiplier: 1.65
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: ClimbDelayModifier
+          climbDelayMultiplier: 0.35
+        - type: LayingDownModifier
+          layingDownCooldownMultiplier: 0.5
+          downedSpeedMultiplierMultiplier: 1.65
 
 - type: trait
   id: LightStep
   category: Auditory
   points: -2
-  components:
-    - type: FootstepVolumeModifier
-      sprintVolumeModifier: -10
-      walkVolumeModifier: -10
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: FootstepVolumeModifier
+          sprintVolumeModifier: -10
+          walkVolumeModifier: -10
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -157,16 +173,20 @@
       inverted: true
       species:
         - Harpy
-  components:
-    - type: Singer
-      proto: NormalSinger
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Singer
+          proto: NormalSinger
 
 - type: trait
   id: LatentPsychic
   category: Mental
   points: -4
-  components:
-    - type: Psionic
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Psionic
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -201,9 +221,11 @@
   id: PsionicInsulation
   category: Mental
   points: -10 #Buy a significant disability to get this.
-  components:
-    - type: PsionicInsulation
-    - type: Mindbroken
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: PsionicInsulation
+        - type: Mindbroken
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -238,8 +260,10 @@
   id: NaturalTelepath
   category: Mental
   points: -2
-  psionicPowers:
-    - TelepathyPower
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - TelepathyPower
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -275,14 +299,16 @@
   id: TrapAvoider
   category: Physical
   points: -3
-  components:
-    - type: StepTriggerImmune
-      whitelist:
-        types:
-          - Shard
-          - Landmine
-          - Mousetrap
-          - SlipEntity
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: StepTriggerImmune
+          whitelist:
+            types:
+              - Shard
+              - Landmine
+              - Mousetrap
+              - SlipEntity
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -294,8 +320,10 @@
   id: AnomalousPositronics
   category: Mental
   points: -4
-  componentRemovals:
-    - PsionicInsulation
+  functions:
+    - !type:TraitRemoveComponent
+      components:
+        - type: PsionicInsulation
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -305,5 +333,7 @@
   id: AnimalFriend
   category: Mental
   points: -4
-  addFactions:
-    - AnimalFriend
+  functions:
+    - !type:TraitModifyFactions
+      addFactions:
+        - AnimalFriend
