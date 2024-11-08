@@ -66,11 +66,9 @@
     understands:
     - TauCetiBasic
     - Draconic
-  # WD EDIT START
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-lizard"
     rightBarePrint: "footprint-right-bare-lizard"
-  # WD EDIT END
 
 - type: entity
   parent: BaseSpeciesDummy

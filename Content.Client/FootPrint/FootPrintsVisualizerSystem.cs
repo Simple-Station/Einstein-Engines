@@ -1,9 +1,9 @@
-﻿using Content.Shared._White.FootPrint;
+﻿using Content.Shared.FootPrint;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Random;
 
-namespace Content.Client._White.FootPrint;
+namespace Content.Client.FootPrint;
 
 public sealed class FootPrintsVisualizerSystem : VisualizerSystem<FootPrintComponent>
 {
@@ -29,21 +29,17 @@ public sealed class FootPrintsVisualizerSystem : VisualizerSystem<FootPrintCompo
 
     private void OnShutdown(EntityUid uid, FootPrintComponent comp, ComponentShutdown args)
     {
-        if (TryComp<SpriteComponent>(uid, out var sprite) &&
-            sprite.LayerMapTryGet(FootPrintVisualLayers.Print, out var layer))
-        {
+        if (TryComp<SpriteComponent>(uid, out var sprite)
+            && sprite.LayerMapTryGet(FootPrintVisualLayers.Print, out var layer))
             sprite.RemoveLayer(layer);
-        }
     }
 
     private void UpdateAppearance(EntityUid uid, FootPrintComponent component, SpriteComponent sprite)
     {
         if (!sprite.LayerMapTryGet(FootPrintVisualLayers.Print, out var layer)
             || !TryComp<FootPrintsComponent>(component.PrintOwner, out var printsComponent)
-            || !TryComp<AppearanceComponent>(uid, out var appearance))
-            return;
-
-        if (!_appearance.TryGetData<FootPrintVisuals>(uid, FootPrintVisualState.State, out var printVisuals, appearance))
+            || !TryComp<AppearanceComponent>(uid, out var appearance)
+            || !_appearance.TryGetData<FootPrintVisuals>(uid, FootPrintVisualState.State, out var printVisuals, appearance))
             return;
 
         sprite.LayerSetState(layer, new RSI.StateId(printVisuals switch

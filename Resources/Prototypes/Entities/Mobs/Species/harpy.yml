@@ -127,11 +127,9 @@
       - Shard
       - Landmine
       - Mousetrap
-  # WD EDIT START
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-lizard"
-    rightBarePrint: "footprint-right-bare-lizard"
-  # WD EDIT END
+    rightBarePrint: "footprint-right-bare-lizard" # I was about to complain about this, then I remembered birbs have dinosaur feet. So this is valid.
 
 - type: entity
   save: false

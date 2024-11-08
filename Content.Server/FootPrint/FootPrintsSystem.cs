@@ -2,14 +2,14 @@ using Content.Server.Atmos.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Content.Shared._White.FootPrint;
+using Content.Shared.FootPrint;
 using Content.Shared.Standing;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
-namespace Content.Server._White.FootPrint;
+namespace Content.Server.FootPrint;
 
 public sealed class FootPrintsSystem : EntitySystem
 {
@@ -26,18 +26,18 @@ public sealed class FootPrintsSystem : EntitySystem
     private EntityQuery<AppearanceComponent> _appearanceQuery;
     private EntityQuery<LayingDownComponent> _layingQuery;
 
-   public override void Initialize()
-   {
-       base.Initialize();
+    public override void Initialize()
+    {
+        base.Initialize();
 
-       _transformQuery = GetEntityQuery<TransformComponent>();
-       _mobThresholdQuery = GetEntityQuery<MobThresholdsComponent>();
-       _appearanceQuery = GetEntityQuery<AppearanceComponent>();
-       _layingQuery = GetEntityQuery<LayingDownComponent>();
+        _transformQuery = GetEntityQuery<TransformComponent>();
+        _mobThresholdQuery = GetEntityQuery<MobThresholdsComponent>();
+        _appearanceQuery = GetEntityQuery<AppearanceComponent>();
+        _layingQuery = GetEntityQuery<LayingDownComponent>();
 
-       SubscribeLocalEvent<FootPrintsComponent, ComponentStartup>(OnStartupComponent);
-       SubscribeLocalEvent<FootPrintsComponent, MoveEvent>(OnMove);
-   }
+        SubscribeLocalEvent<FootPrintsComponent, ComponentStartup>(OnStartupComponent);
+        SubscribeLocalEvent<FootPrintsComponent, MoveEvent>(OnMove);
+    }
 
     private void OnStartupComponent(EntityUid uid, FootPrintsComponent component, ComponentStartup args)
     {
