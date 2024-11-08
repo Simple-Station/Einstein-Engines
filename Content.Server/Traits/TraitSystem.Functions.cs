@@ -10,7 +10,6 @@ using Content.Shared.Psionics;
 using Content.Server.Language;
 using Content.Shared.Mood;
 using Content.Server.NPC.Systems;
-using Robust.Shared.Serialization;
 
 namespace Content.Server.Traits;
 
@@ -29,12 +28,11 @@ public sealed partial class TraitReplaceComponent : TraitFunction
         foreach (var (name, data) in Components)
         {
             var component = (Component) factory.GetComponent(name);
-            component.Owner = uid;
 
             var temp = (object) component;
             serializationManager.CopyTo(data.Component, ref temp);
             entityManager.RemoveComponent(uid, temp!.GetType());
-            entityManager.AddComponent(uid, (Component) temp);
+            entityManager.AddComponent(uid, (Component) temp, true);
         }
     }
 }
@@ -57,9 +55,8 @@ public sealed partial class TraitAddComponent : TraitFunction
         foreach (var (name, _) in Components)
         {
             var component = (Component) factory.GetComponent(name);
-            component.Owner = uid;
 
-            entityManager.AddComponent(uid, component);
+            entityManager.AddComponent(uid, component, true);
         }
     }
 }
@@ -86,16 +83,13 @@ public sealed partial class TraitRemoveComponent : TraitFunction
 public sealed partial class TraitAddActions : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public List<EntProtoId>? Actions { get; private set; } = default!;
+    public List<EntProtoId> Actions { get; private set; } = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        if (Actions is null)
-            return;
-
         var actionSystem = entityManager.System<SharedActionsSystem>();
 
         foreach (var id in Actions)
@@ -133,7 +127,7 @@ public sealed partial class TraitAddImplant : TraitFunction
 public sealed partial class TraitAddPsionics : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public List<string>? PsionicPowers { get; private set; } = default!;
+    public List<ProtoId<PsionicPowerPrototype>> PsionicPowers { get; private set; } = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -142,11 +136,9 @@ public sealed partial class TraitAddPsionics : TraitFunction
     {
         var prototype = IoCManager.Resolve<IPrototypeManager>();
         var psionic = entityManager.System<PsionicAbilitiesSystem>();
-        if (PsionicPowers is null)
-            return;
 
         foreach (var powerProto in PsionicPowers)
-            if (prototype.TryIndex<PsionicPowerPrototype>(powerProto, out var psionicPower))
+            if (prototype.TryIndex(powerProto, out var psionicPower))
                 psionic.InitializePsionicPower(uid, psionicPower, false);
     }
 }
@@ -202,7 +194,7 @@ public sealed partial class TraitAddMoodlets : TraitFunction
 {
     /// The list of all Moodlets that this trait adds.
     [DataField, AlwaysPushInheritance]
-    public List<ProtoId<MoodEffectPrototype>>? MoodEffects { get; private set; } = default!;
+    public List<ProtoId<MoodEffectPrototype>> MoodEffects { get; private set; } = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -210,8 +202,6 @@ public sealed partial class TraitAddMoodlets : TraitFunction
         ISerializationManager serializationManager)
     {
         var prototype = IoCManager.Resolve<IPrototypeManager>();
-        if (MoodEffects is null)
-            return;
 
         foreach (var moodProto in MoodEffects)
             if (prototype.TryIndex(moodProto, out var moodlet))
@@ -230,7 +220,7 @@ public sealed partial class TraitModifyFactions : TraitFunction
     ///     I can't actually Validate these because the proto lives in Shared.
     /// </remarks>
     [DataField, AlwaysPushInheritance]
-    public List<string>? RemoveFactions { get; private set; } = default!;
+    public List<string> RemoveFactions { get; private set; } = default!;
 
     /// <summary>
     ///     The list of all Factions that this trait adds.
@@ -239,7 +229,7 @@ public sealed partial class TraitModifyFactions : TraitFunction
     ///     I can't actually Validate these because the proto lives in Shared.
     /// </remarks>
     [DataField, AlwaysPushInheritance]
-    public List<string>? AddFactions { get; private set; } = default!;
+    public List<string> AddFactions { get; private set; } = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -248,13 +238,11 @@ public sealed partial class TraitModifyFactions : TraitFunction
     {
         var factionSystem = entityManager.System<NpcFactionSystem>();
 
-        if (RemoveFactions is not null)
-            foreach (var faction in RemoveFactions)
-                factionSystem.RemoveFaction(uid, faction);
+        foreach (var faction in RemoveFactions)
+            factionSystem.RemoveFaction(uid, faction);
 
-        if (AddFactions is not null)
-            foreach (var faction in AddFactions)
-                factionSystem.AddFaction(uid, faction);
+        foreach (var faction in AddFactions)
+            factionSystem.AddFaction(uid, faction);
     }
 }
 
@@ -263,16 +251,13 @@ public sealed partial class TraitModifyFactions : TraitFunction
 public sealed partial class TraitVVEdit : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public Dictionary<string, string>? VVEdit { get; private set; }
+    public Dictionary<string, string> VVEdit { get; private set; }
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        if (VVEdit is null)
-            return;
-
         var vvm = IoCManager.Resolve<IViewVariablesManager>();
         foreach (var (path, value) in VVEdit)
             vvm.WritePath(path, value);

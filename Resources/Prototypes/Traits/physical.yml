@@ -12,6 +12,10 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - WillToDie
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -32,6 +36,10 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - WillToLive
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -52,6 +60,10 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - GlassJaw
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -72,6 +84,10 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Tenacity
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -88,6 +104,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Lethargy
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -109,6 +129,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Vigor
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -133,6 +157,10 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - AdrenalDysfunction
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -154,6 +182,10 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighAdrenaline
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -170,6 +202,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowPainTolerance
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -187,6 +223,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Masochism
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -265,6 +305,10 @@
       species:
         - Harpy # Harpies already have talons
         - Arachnid # Apparently they have a "piercing" bite
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Claws
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -289,6 +333,10 @@
         - Reptilian # Reptilians also have cat claws.
         - Shadowkin # Shadowkins also have claws.
         # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Talons
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -313,6 +361,11 @@
         - Human
         - Oni
         - SlimePerson
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Talons
+        - Claws
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -338,6 +391,11 @@
       species:
         - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
                 # When we get the Character Records system in, I also want to make this require certain Backgrounds.
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Claws
+        - Talons
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterTraitRequirement
@@ -412,7 +470,7 @@
       inverted: true
       species:
         - IPC
-  functions:
+  functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
     - !type:TraitReplaceComponent
       components:
         - type: PassiveDamage

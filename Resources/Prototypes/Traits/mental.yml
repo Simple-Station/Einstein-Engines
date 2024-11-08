@@ -28,6 +28,10 @@
       species:
         - Oni
         - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowPotential
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -64,6 +68,10 @@
       species:
         - Oni
         - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighPotential
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -101,6 +109,11 @@
           inverted: true
           species:
             - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighAmplification
+        - PowerOverwhelming
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -137,6 +150,11 @@
           inverted: true
           species:
             - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowAmplification
+        - PowerOverwhelming
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -173,6 +191,11 @@
           inverted: true
           species:
             - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowAmplification
+        - HighAmplification
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -209,6 +232,10 @@
           inverted: true
           species:
             - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighDampening
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -245,6 +272,10 @@
           inverted: true
           species:
             - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowDampening
   functions:
     - !type:TraitAddPsionics
       psionicPowers:

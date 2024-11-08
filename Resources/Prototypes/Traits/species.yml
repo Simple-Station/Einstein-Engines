@@ -15,6 +15,11 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Spearmaster
+        - WeaponsGeneralist
 
 - type: trait
   id: Spearmaster
@@ -33,6 +38,11 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Swashbuckler
+        - WeaponsGeneralist
 
 - type: trait
   id: WeaponsGeneralist
@@ -51,6 +61,11 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Swashbuckler
+        - Spearmaster
 
 - type: trait
   id: ShadowkinBlackeye

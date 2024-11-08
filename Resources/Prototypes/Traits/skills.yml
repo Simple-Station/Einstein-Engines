@@ -47,6 +47,11 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LightweightDrunk
+        - LiquorLifeline
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -68,6 +73,11 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LightweightDrunk
+        - HeavyweightDrunk
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -120,6 +130,11 @@
   category: Physical
   points: -5
   requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sluggish
+        - SnailPaced
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
