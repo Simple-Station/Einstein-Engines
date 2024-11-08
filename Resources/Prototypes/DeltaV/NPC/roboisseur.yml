@@ -28,7 +28,6 @@
     attributes:
       gender: male
       proper: true
-  # WD EDIT START
   - type: Fixtures
     fixtures:
       fix1:
@@ -41,4 +40,3 @@
         layer:
         - MidImpassable
         - LowImpassable
-  # WD EDIT END
