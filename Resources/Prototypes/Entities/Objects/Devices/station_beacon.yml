@@ -322,7 +322,7 @@
   suffix: MG's Room
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-mystagogue  #Delta V - Renamed
+    defaultText: station-beacon-mystagogue #Delta V - Renamed
 
 - type: entity
   parent: DefaultStationBeaconScience
@@ -354,7 +354,7 @@
   suffix: Logistics #Delta V - Renamed
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-logistics #Delta V - Renamed
+    defaultText: station-beacon-supply
     color: "#A46106"
 
 - type: entity
@@ -363,7 +363,7 @@
   suffix: Logistics Reception #Delta V - Renamed
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-logistics-reception #Delta V - Renamed
+    defaultText: station-beacon-cargo
 
 - type: entity
   parent: DefaultStationBeaconSupply
@@ -379,7 +379,7 @@
   suffix: LO #Delta V - Renamed
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-lo #Delta V - Renamed
+    defaultText: station-beacon-qm
 
 - type: entity
   parent: DefaultStationBeaconSupply
@@ -517,7 +517,7 @@
   suffix: Janitor's Closet
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-janitor-closet #Delta V - Add for closet/outpost
+    defaultText: station-beacon-janitor
 
 - type: entity
   parent: DefaultStationBeacon
