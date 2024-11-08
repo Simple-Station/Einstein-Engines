@@ -64,8 +64,13 @@ public sealed class TTSManager
         {
             StartInfo = new ProcessStartInfo
             {
+                #if WINDOWS
+                FileName = "cmd.exe",
+                Arguments = $"/C \"mkdir {_cachePath} {_modelPath}\"",
+                #else
                 FileName = "/bin/sh",
                 Arguments = $"-c \"mkdir -p {_cachePath} {_modelPath}\"",
+                #endif
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 CreateNoWindow = true,
@@ -113,8 +118,13 @@ public sealed class TTSManager
         {
             StartInfo = new ProcessStartInfo
             {
+                #if WINDOWS
+                FileName = "cmd.exe",
+                Arguments = $"/C \"{strCmdText}\"",
+                #else
                 FileName = "/bin/sh",
                 Arguments = $"-c \"{strCmdText}\"",
+                #endif
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 CreateNoWindow = true,
@@ -171,8 +181,13 @@ public sealed class TTSManager
         {
             StartInfo = new ProcessStartInfo
             {
+                #if WINDOWS
+                FileName = "cmd.exe",
+                Arguments = $"/C \"del /q {_cachePath}\*.wav\"",
+                #else
                 FileName = "/bin/sh",
                 Arguments = $"-c \"rm {_cachePath}/*.wav\"",
+                #endif
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 CreateNoWindow = true,
