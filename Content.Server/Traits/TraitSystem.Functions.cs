@@ -27,8 +27,8 @@ public sealed partial class TraitReplaceComponent : TraitFunction
     {
         foreach (var (_, data) in Components)
         {
-
             var comp = (Component) serializationManager.CreateCopy(data.Component, notNullableOverride: true);
+            comp.Owner = uid;
             entityManager.AddComponent(uid, comp, true);
         }
     }
@@ -55,7 +55,8 @@ public sealed partial class TraitAddComponent : TraitFunction
                 continue;
 
             var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
-            entityManager.AddComponent(uid, comp, false);
+            comp.Owner = uid;
+            entityManager.AddComponent(uid, comp);
         }
     }
 }
