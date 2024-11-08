@@ -2145,6 +2145,36 @@
       departments:
         - Command
 
+- type: loadout
+  id: LoadoutUniformJumpsuitBlackTurtleneck
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitBlackTurtleneck
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitBlackTurtleneckFlipped
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitBlackTurtleneckFlipped
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
 # Nuclear 14 suits
 - type: loadout
   id: LoadoutUniformJumpsuitSuitRolledSleeves
