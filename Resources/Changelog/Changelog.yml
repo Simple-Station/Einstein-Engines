@@ -7824,3 +7824,12 @@ Entries:
   id: 6511
   time: '2024-11-08T18:58:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1182
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Shadowkin have been temporarily disabled pending significant reworks and
+        balance updates. 
+  id: 6512
+  time: '2024-11-08T19:33:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1187
