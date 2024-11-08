@@ -17,7 +17,7 @@ marking-FoxThreeTails-foxthreetailstone1 = Inner
 marking-FoxThreeTails-foxthreetailstone2 = Outer
 
 marking-HorseTailCulty = Culty Horse Tail
-marking-HorseTailCulty = Tail
+marking-HorseTailCulty-horsetailculty = Tail
 
 marking-HorseTailLong = Long Horse Tail
 marking-HorseTailLong-horsetaillong = Tail

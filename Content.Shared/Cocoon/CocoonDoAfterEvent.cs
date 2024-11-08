@@ -7,4 +7,9 @@ namespace Content.Shared.Cocoon
     public sealed partial class CocoonDoAfterEvent : SimpleDoAfterEvent
     {
     }
+
+    [Serializable, NetSerializable]
+    public sealed partial class UnCocoonDoAfterEvent : SimpleDoAfterEvent
+    {
+    }
 }

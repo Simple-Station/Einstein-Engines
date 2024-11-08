@@ -5,10 +5,12 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
-  languagesSpoken:
-    - Sign
-  languagesUnderstood:
-    - Sign
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Sign
+      languagesUnderstood:
+        - Sign
 
 - type: trait
   id: SolCommon
@@ -21,10 +23,12 @@
       inverted: true
       species:
         - Human
-  languagesSpoken:
-    - SolCommon
-  languagesUnderstood:
-    - SolCommon
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SolCommon
+      languagesUnderstood:
+        - SolCommon
 
 - type: trait
   id: Tradeband
@@ -37,10 +41,12 @@
       inverted: true
       species:
         - Harpy
-  languagesSpoken:
-    - Tradeband
-  languagesUnderstood:
-    - Tradeband
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Tradeband
+      languagesUnderstood:
+        - Tradeband
 
 - type: trait
   id: Freespeak
@@ -49,10 +55,12 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
-  languagesSpoken:
-    - Freespeak
-  languagesUnderstood:
-    - Freespeak
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Freespeak
+      languagesUnderstood:
+        - Freespeak
 
 - type: trait
   id: Elyran
@@ -61,10 +69,12 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
-  languagesSpoken:
-    - Elyran
-  languagesUnderstood:
-    - Elyran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Elyran
+      languagesUnderstood:
+        - Elyran
 
 - type: trait
   id: ValyrianStandard
@@ -73,10 +83,12 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
-  languagesSpoken:
-    - ValyrianStandard
-  languagesUnderstood:
-    - ValyrianStandard
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - ValyrianStandard
+      languagesUnderstood:
+        - ValyrianStandard
 
 - type: trait
   id: Azaziba
@@ -88,7 +100,9 @@
         - Reptilian
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
-  languagesSpoken:
-    - Azaziba
-  languagesUnderstood:
-    - Azaziba
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Azaziba
+      languagesUnderstood:
+        - Azaziba
