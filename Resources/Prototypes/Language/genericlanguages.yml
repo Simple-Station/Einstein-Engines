@@ -3,7 +3,6 @@
 # with the Xenoglossy psionic power, as well as Ghosts, and AGhosts.
 - type: language
   id: Universal
-  isVisibleLanguage: true
   obfuscation:
     !type:ReplacementObfuscation
     replacement:

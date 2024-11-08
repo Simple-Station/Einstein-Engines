@@ -1,7 +1,6 @@
 # The "Default Language" other than Universal.
 - type: language
   id: TauCetiBasic
-  isVisibleLanguage: true
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

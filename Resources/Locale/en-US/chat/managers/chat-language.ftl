@@ -1,6 +1,6 @@
 chat-language-Universal-name = Universal
 chat-language-Bubblish-name = Bubblish
-chat-language-RootSpeak-name = RootSpeak
+chat-language-RootSpeak-name = Rootspeak
 chat-language-Nekomimetic-name = Neko
 chat-language-Draconic-name = Sinta'Unathi
 chat-language-Azaziba-name = Sinta'Azaziba
