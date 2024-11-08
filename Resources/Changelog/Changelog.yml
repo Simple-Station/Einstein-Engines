@@ -7792,3 +7792,14 @@ Entries:
   id: 6507
   time: '2024-11-07T04:50:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1183
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Familiars can now be Dispelled.
+    - type: Tweak
+      message: Nerfed Remilia to have 30 HP.
+    - type: Tweak
+      message: Nerfed Base Familiar to have 50 HP.
+  id: 6508
+  time: '2024-11-08T15:17:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1184
