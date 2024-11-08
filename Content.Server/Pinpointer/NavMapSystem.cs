@@ -484,3 +484,5 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
             ("marker", beacon.Value.Comp.Text!));
     }
 }
+
+#endregion
