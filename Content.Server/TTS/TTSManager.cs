@@ -41,7 +41,7 @@ public sealed class TTSManager
     private readonly HttpClient _httpClient = new();
     private ISawmill _sawmill = default!;
 
-    private string _modelPath = "";
+    private ResPath _modelPath = new();
     private readonly Dictionary<string, byte[]> _cache = new();
     private readonly List<string> _cacheKeysSeq = new();
     private int _maxCachedCount = 256;
@@ -58,39 +58,33 @@ public sealed class TTSManager
         IoCManager.InjectDependencies(this);
         _sawmill = Logger.GetSawmill("tts");
 
-        _sawmill.Log(LogLevel.Info, _modelPath);
         UpdateModelPath(_cfg.GetCVar(CCVars.TTSModelPath));
         _cfg.OnValueChanged(CCVars.TTSModelPath, UpdateModelPath);
 
-        // _cfg.OnValueChanged(CCCVars.TTSMaxCache, val =>
+        // _cfg.OnValueChanged(CCVars.TTSMaxCache, val =>
         // {
         //     _maxCachedCount = val;
         //     ResetCache();
         // }, true);
-        // _cfg.OnValueChanged(CCCVars.TTSApiUrl, v => _apiUrl = v, true);
-        // _cfg.OnValueChanged(CCCVars.TTSApiToken, v => _apiToken = v, true);
+        // _cfg.OnValueChanged(CCVars.TTSApiUrl, v => _apiUrl = v, true);
+        // _cfg.OnValueChanged(CCVars.TTSApiToken, v => _apiToken = v, true);
 
         return;
 
         void UpdateModelPath(string path)
         {
-            if (string.IsNullOrEmpty(path) && _cfg.GetCVar(CCVars.TTSEnabled))
-            {
-                DebugTools.Assert(false, "CVar TTSModelPath is unset but TTS is enabled.");
-                return;
-            }
+            DebugTools.Assert(!(string.IsNullOrEmpty(path) && _cfg.GetCVar(CCVars.TTSEnabled)),
+                "CVar TTSModelPath is unset but TTS is enabled.");
 
             if (path.StartsWith("data/"))
-                _modelPath = _resource.UserData.RootDir + path.Remove(0, 5);
+                _modelPath = new(_resource.UserData.RootDir + path.Remove(0, 5));
             else
-                _modelPath = path; // Hope it's valid
-
-            _sawmill.Log(LogLevel.Info, _modelPath);
+                _modelPath = new(path); // Hope it's valid
         }
     }
 
     /// <summary>
-    /// Generates audio with passed text by API
+    ///     Generates audio with passed text by API
     /// </summary>
     /// <param name="speaker">Identifier of speaker</param>
     /// <param name="text">SSML formatted text</param>
@@ -98,7 +92,7 @@ public sealed class TTSManager
     public async Task<byte[]?> ConvertTextToSpeech(string model, string speaker, string text)
     {
         var fileName = text.GetHashCode() + ".wav";
-        var strCmdText = $"echo '{text}' | piper --model {_modelPath}/{model}.onnx --output_file {fileName} --speaker {speaker}";
+        var strCmdText = $"echo '{text}' | piper --model {(_modelPath + ResPath.SystemSeparatorStr + model)}.onnx --output_file {fileName} --speaker {speaker}";
 
         var proc = new Process
         {
