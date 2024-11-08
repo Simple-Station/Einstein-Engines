@@ -7810,3 +7810,10 @@ Entries:
   id: 6509
   time: '2024-11-08T16:14:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1165
+- author: Ichaie
+  changes:
+    - type: Fix
+      message: minor fixes on the maps Rad and Gax, fix te uranium crarte to filled
+  id: 6510
+  time: '2024-11-08T18:54:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1178
