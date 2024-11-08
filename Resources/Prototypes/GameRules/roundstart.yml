@@ -22,8 +22,8 @@
     rules:
     - id: Thief
       prob: 0.5
-#    - id: Heretic # goob edit
-#      prob: 0.2
+    #    - id: Heretic # goob edit
+    #      prob: 0.2
     - id: Devil # Goob
       prob: 0.3
 
@@ -90,7 +90,7 @@
     #Species that do not work with nukies should be included in this list.
     #Once the issues are fixed the species should be removed from this list to be enabled.
     #Balance concerns are not a valid reason to disable a species, except for high-impact Nukie-specific exploits.
-    - Vox
+    #- Vox
 
 - type: entity
   parent: BaseNukeopsRule
@@ -189,7 +189,7 @@
 
 - type: entity
   id: TraitorReinforcement
-  parent: Traitor
+  parent: BaseTraitorRule
   components:
   - type: TraitorRule
     giveUplink: false
@@ -283,7 +283,6 @@
         tableId: CalmPestEventsTable
       - !type:NestedSelector
         tableId: SpicyPestEventsTable
-        
 
 - type: entityTable
   id: SpaceTrafficControlTable
