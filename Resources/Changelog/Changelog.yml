@@ -7817,3 +7817,10 @@ Entries:
   id: 6510
   time: '2024-11-08T18:54:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1178
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Traits can now add Implants directly. '
+  id: 6511
+  time: '2024-11-08T18:58:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1182
