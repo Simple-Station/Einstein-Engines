@@ -83,7 +83,7 @@ public sealed partial class TraitRemoveComponent : TraitFunction
 public sealed partial class TraitAddActions : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public List<EntProtoId> Actions { get; private set; } = default!;
+    public List<EntProtoId> Actions { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -127,7 +127,7 @@ public sealed partial class TraitAddImplant : TraitFunction
 public sealed partial class TraitAddPsionics : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public List<ProtoId<PsionicPowerPrototype>> PsionicPowers { get; private set; } = default!;
+    public List<ProtoId<PsionicPowerPrototype>> PsionicPowers { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -194,7 +194,7 @@ public sealed partial class TraitAddMoodlets : TraitFunction
 {
     /// The list of all Moodlets that this trait adds.
     [DataField, AlwaysPushInheritance]
-    public List<ProtoId<MoodEffectPrototype>> MoodEffects { get; private set; } = default!;
+    public List<ProtoId<MoodEffectPrototype>> MoodEffects { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -220,7 +220,7 @@ public sealed partial class TraitModifyFactions : TraitFunction
     ///     I can't actually Validate these because the proto lives in Shared.
     /// </remarks>
     [DataField, AlwaysPushInheritance]
-    public List<string> RemoveFactions { get; private set; } = default!;
+    public List<string> RemoveFactions { get; private set; } = new();
 
     /// <summary>
     ///     The list of all Factions that this trait adds.
@@ -229,7 +229,7 @@ public sealed partial class TraitModifyFactions : TraitFunction
     ///     I can't actually Validate these because the proto lives in Shared.
     /// </remarks>
     [DataField, AlwaysPushInheritance]
-    public List<string> AddFactions { get; private set; } = default!;
+    public List<string> AddFactions { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -251,7 +251,7 @@ public sealed partial class TraitModifyFactions : TraitFunction
 public sealed partial class TraitVVEdit : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public Dictionary<string, string> VVEdit { get; private set; }
+    public Dictionary<string, string> VVEdit { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
