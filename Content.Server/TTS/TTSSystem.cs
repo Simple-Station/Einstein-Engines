@@ -1,7 +1,10 @@
 using System.Threading.Tasks;
 using Content.Server.Chat.Systems;
+using Content.Server.Language;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
+using Content.Shared.Language;
+using Content.Shared.Language.Components;
 using Content.Shared.TTS;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -19,6 +22,8 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private readonly TTSManager _ttsManager = default!;
     [Dependency] private readonly SharedTransformSystem _xforms = default!;
     [Dependency] private readonly IRobustRandom _rng = default!;
+    [Dependency] private readonly LanguageSystem _language = default!;
+
 
     private readonly List<string> _sampleText = new()
     {
@@ -38,6 +43,7 @@ public sealed partial class TTSSystem : EntitySystem
     private const int MaxMessageChars = 100 * 2; // Same as SingleBubbleCharLimit * 2
     private bool _isEnabled = true;
 
+
     public override void Initialize()
     {
         _cfg.OnValueChanged(CCVars.TTSEnabled, v => _isEnabled = v, true);
@@ -48,6 +54,7 @@ public sealed partial class TTSSystem : EntitySystem
 
         SubscribeNetworkEvent<RequestPreviewTTSEvent>(OnRequestPreviewTTS);
     }
+
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
@@ -71,9 +78,9 @@ public sealed partial class TTSSystem : EntitySystem
     private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
     {
         var voiceId = component.VoicePrototypeId;
-        if (!_isEnabled ||
-            args.Message.Length > MaxMessageChars ||
-            voiceId == null)
+        if (!_isEnabled
+            || args.Message.Length > MaxMessageChars
+            || voiceId == null)
             return;
 
         var voiceEv = new TransformSpeakerVoiceEvent(uid, voiceId);
@@ -85,34 +92,55 @@ public sealed partial class TTSSystem : EntitySystem
 
         if (args.IsWhisper)
         {
-            HandleWhisper(uid, args.Message, protoVoice.Model, protoVoice.Speaker);
+            HandleWhisper(uid, args.Message, args.Language, protoVoice.Model, protoVoice.Speaker);
             return;
         }
 
-        HandleSay(uid, args.Message, protoVoice.Model, protoVoice.Speaker);
+        HandleSay(uid, args.Message, args.Language, protoVoice.Model, protoVoice.Speaker);
     }
 
-    private async void HandleSay(EntityUid uid, string message, string model, string speaker)
+    private async void HandleSay(EntityUid uid, string message, LanguagePrototype language, string model, string speaker)
     {
-        var soundData = await GenerateTTS(message, model, speaker);
-        if (soundData is null)
+        var normal = await GenerateTTS(message, model, speaker);
+        if (normal is null)
             return;
-        RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)), Filter.Pvs(uid));
+        var obfuscated = await GenerateTTS(_language.ObfuscateSpeech(message, language), model, speaker);
+        if (obfuscated is null)
+            return;
+
+        var nilter = Filter.Empty();
+        var lilter = Filter.Empty();
+        foreach (var session in Filter.Pvs(uid).Recipients)
+        {
+            if (!session.AttachedEntity.HasValue)
+                continue;
+
+            EntityManager.TryGetComponent(session.AttachedEntity.Value, out LanguageSpeakerComponent? lang);
+            if (_language.CanUnderstand(new(session.AttachedEntity.Value, lang), language.ID))
+                nilter.AddPlayer(session);
+            else
+                lilter.AddPlayer(session);
+        }
+
+        RaiseNetworkEvent(new PlayTTSEvent(normal, GetNetEntity(uid)), nilter);
+        RaiseNetworkEvent(new PlayTTSEvent(obfuscated, GetNetEntity(uid)), lilter, false);
     }
 
-    private async void HandleWhisper(EntityUid uid, string message, string model, string speaker)
+    private async void HandleWhisper(EntityUid uid, string message, LanguagePrototype language, string model, string speaker)
     {
-        var fullSoundData = await GenerateTTS(message, model, speaker, true);
-        if (fullSoundData is null)
+        var normal = await GenerateTTS(message, model, speaker, true);
+        if (normal is null)
             return;
-
-        var fullTtsEvent = new PlayTTSEvent(fullSoundData, GetNetEntity(uid), true);
+        var obfuscated = await GenerateTTS(_language.ObfuscateSpeech(message, language), model, speaker, true);
+        if (obfuscated is null)
+            return;
 
         // TODO: Check obstacles
         var xformQuery = GetEntityQuery<TransformComponent>();
         var sourcePos = _xforms.GetWorldPosition(xformQuery.GetComponent(uid), xformQuery);
-        var receptions = Filter.Pvs(uid).Recipients;
-        foreach (var session in receptions)
+        var nilter = Filter.Empty();
+        var lilter = Filter.Empty();
+        foreach (var session in Filter.Pvs(uid).Recipients)
         {
             if (!session.AttachedEntity.HasValue)
                 continue;
@@ -121,8 +149,15 @@ public sealed partial class TTSSystem : EntitySystem
             if (distance > 10 * 10)
                 continue;
 
-            RaiseNetworkEvent(fullTtsEvent, session);
+            EntityManager.TryGetComponent(session.AttachedEntity.Value, out LanguageSpeakerComponent? lang);
+            if (_language.CanUnderstand(new(session.AttachedEntity.Value, lang), language.ID))
+                nilter.AddPlayer(session);
+            else
+                lilter.AddPlayer(session);
         }
+
+        RaiseNetworkEvent(new PlayTTSEvent(normal, GetNetEntity(uid), true), nilter);
+        RaiseNetworkEvent(new PlayTTSEvent(obfuscated, GetNetEntity(uid), true), lilter, false);
     }
 
     // ReSharper disable once InconsistentNaming
@@ -139,19 +174,13 @@ public sealed partial class TTSSystem : EntitySystem
             ssmlTraits = SoundTraits.PitchVerylow;
         var textSsml = ToSsmlText(textSanitized, ssmlTraits);
 
-        // return await _ttsManager.ConvertTextToSpeech(speaker, textSsml); //TODO: What is this ssml?
+        // return await _ttsManager.ConvertTextToSpeech(model, speaker, textSsml); //TODO: What is SSML and how do we use it?
         return await _ttsManager.ConvertTextToSpeech(model, speaker, textSanitized);
     }
 }
 
-public sealed class TransformSpeakerVoiceEvent : EntityEventArgs
+public sealed class TransformSpeakerVoiceEvent(EntityUid sender, string voiceId) : EntityEventArgs
 {
-    public EntityUid Sender;
-    public string VoiceId;
-
-    public TransformSpeakerVoiceEvent(EntityUid sender, string voiceId)
-    {
-        Sender = sender;
-        VoiceId = voiceId;
-    }
+    public EntityUid Sender = sender;
+    public string VoiceId = voiceId;
 }

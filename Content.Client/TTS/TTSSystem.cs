@@ -1,3 +1,4 @@
+using Content.Client.Audio;
 using Content.Shared.CCVar;
 using Content.Shared.TTS;
 using Robust.Client.Audio;
@@ -10,9 +11,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.TTS;
 
-/// <summary>
-/// Plays TTS audio in world
-/// </summary>
+/// Plays TTS audio in-world
 // ReSharper disable once InconsistentNaming
 public sealed class TTSSystem : EntitySystem
 {
@@ -22,19 +21,15 @@ public sealed class TTSSystem : EntitySystem
 
     private ISawmill _sawmill = default!;
     private readonly MemoryContentRoot _contentRoot = new();
-    private static readonly ResPath Prefix = ResPath.Root ;/// "";
+    private static readonly ResPath Prefix = ResPath.Root ;
 
-    /// <summary>
     /// Reducing the volume of the TTS when whispering. Will be converted to logarithm.
-    /// </summary>
     private const float WhisperFade = 4f;
 
-    /// <summary>
     /// The volume at which the TTS sound will not be heard.
-    /// </summary>
     private const float MinimalVolume = -10f;
 
-    private float _volume = 0.5f;
+    private float _volume = CCVars.TTSVolume.DefaultValue;
     private int _fileIdx = 0;
 
     public override void Initialize()
@@ -59,12 +54,12 @@ public sealed class TTSSystem : EntitySystem
 
     private void OnTtsVolumeChanged(float volume)
     {
-        _volume = volume;
+        _volume = volume * 100f / ContentAudioSystem.TtsMultiplier;
     }
 
     private void OnPlayTTS(PlayTTSEvent ev)
     {
-        _sawmill.Verbose($"Play TTS audio {ev.Data.Length} bytes from {ev.SourceUid} entity");
+        _sawmill.Verbose($"Playing TTS audio {ev.Data.Length} bytes from {ev.SourceUid} entity");
 
         var filePath = new ResPath($"{_fileIdx++}.wav");
         _contentRoot.AddOrUpdateFile(filePath, ev.Data);
@@ -77,14 +72,9 @@ public sealed class TTSSystem : EntitySystem
             .WithMaxDistance(AdjustDistance(ev.IsWhisper));
 
         if (ev.SourceUid != null)
-        {
-            var sourceUid = GetEntity(ev.SourceUid.Value);
-            _audio.PlayEntity(audioResource.AudioStream, sourceUid, audioParams);
-        }
+            _audio.PlayEntity(audioResource.AudioStream, GetEntity(ev.SourceUid.Value), audioParams);
         else
-        {
             _audio.PlayGlobal(audioResource.AudioStream, audioParams);
-        }
 
         _contentRoot.RemoveFile(filePath);
     }
@@ -94,9 +84,7 @@ public sealed class TTSSystem : EntitySystem
         var volume = MinimalVolume + SharedAudioSystem.GainToVolume(_volume);
 
         if (isWhisper)
-        {
             volume -= SharedAudioSystem.GainToVolume(WhisperFade);
-        }
 
         return volume;
     }
