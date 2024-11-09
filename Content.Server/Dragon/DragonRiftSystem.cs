@@ -73,7 +73,7 @@ public sealed class DragonRiftSystem : EntitySystem
                 Dirty(comp);
 
                 _announcer.SendAnnouncement(_announcer.GetAnnouncementId("CarpRift"), Filter.Broadcast(),
-                    "carp-rift-warning", colorOverride: Color.Red, localeArgs: ("location", FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((uid, xform)))));
+                    "carp-rift-warning", colorOverride: Color.Red, localeArgs: ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((uid, xform)))));
                 _navMap.SetBeaconEnabled(uid, true);
             }
 
