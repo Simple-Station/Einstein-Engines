@@ -119,3 +119,4 @@ alerts-deflecting-desc = You have a chance to deflect incoming projectiles. Stan
 
 alerts-mana-name = Mana Level
 alerts-mana-desc = How much mana is available to spend on your powers.
+mana-alert = [font size=12][color=green]Mana:{$mana}/{$manaMax}[/color][/font]

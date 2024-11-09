@@ -622,6 +622,7 @@
 
 - type: alert
   id: Mana
+  onClick: !type:CheckMana { }
   icons:
   - sprite: /Textures/Interface/Alerts/mana.rsi
     state: power0

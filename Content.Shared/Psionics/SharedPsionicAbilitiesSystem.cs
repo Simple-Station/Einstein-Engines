@@ -136,15 +136,6 @@ namespace Content.Shared.Abilities.Psionics
             return component.CurrentDampening / _contests.MoodContest(uid, true);
         }
 
-        /// <summary>
-        /// Update the Mana Alert, will update to its current mana status.
-        /// </summary>
-        public void UpdateManaAlert(EntityUid uid, PsionicComponent component)
-        {
-            var severity = (short) ContentHelpers.RoundToLevels(component.Mana, component.MaxMana, 8);
-            _alerts.ShowAlert(uid, AlertType.Mana, severity);
-        }
-
         public void OnRejuvenate(EntityUid uid, PsionicComponent component, RejuvenateEvent args)
         {
             component.Mana = component.MaxMana;
@@ -178,7 +169,8 @@ namespace Content.Shared.Abilities.Psionics
                     component.Mana += gainedmana;
                     FixedPoint2.Min(component.Mana, component.MaxMana);
 
-                    UpdateManaAlert(uid, component);
+                    var severity = (short) ContentHelpers.RoundToLevels(component.Mana, component.MaxMana, 8);
+                    _alerts.ShowAlert(uid, AlertType.Mana, severity);
 
                     var ev = new OnManaUpdateEvent();
                     RaiseLocalEvent(uid, ref ev);
