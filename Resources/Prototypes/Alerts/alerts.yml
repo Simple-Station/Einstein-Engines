@@ -15,6 +15,7 @@
   - alertType: Ensnared
   - category: Buckled
   - alertType: Pulling
+  - alertType: Walking
   - category: Piloting
   - alertType: Corporeal
   - alertType: Stun
@@ -148,6 +149,18 @@
   icons: [ /Textures/Interface/Alerts/Weightless/weightless.png ]
   name: alerts-weightless-name
   description: alerts-weightless-desc
+
+- type: alert
+  id: Walking
+  icons:
+  - sprite: /Textures/Interface/Alerts/walking.rsi
+    state: walking
+  - sprite: /Textures/Interface/Alerts/walking.rsi
+    state: running
+  name: alerts-walking-name
+  description: alerts-walking-desc
+  minSeverity: 0
+  maxSeverity: 1
 
 - type: alert
   id: Stun
@@ -481,18 +494,6 @@
     state: heart-on
   name: alerts-adrenaline-name
   description: alerts-adrenaline-desc
-
-- type: alert
-  id: Walking
-  icons:
-  - sprite: /Textures/Interface/Alerts/walking.rsi
-    state: walking0
-  - sprite: /Textures/Interface/Alerts/walking.rsi
-    state: walking1
-  name: alerts-walking-name
-  description: alerts-walking-desc
-  minSeverity: 0
-  maxSeverity: 1
 
 - type: alert
   id: Debug1

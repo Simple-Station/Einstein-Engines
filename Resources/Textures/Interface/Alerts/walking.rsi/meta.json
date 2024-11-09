@@ -8,10 +8,10 @@
     },
     "states": [
         {
-            "name": "walking0"
+            "name": "walking"
         },
         {
-            "name": "walking1"
+            "name": "running"
         }
     ]
 }
