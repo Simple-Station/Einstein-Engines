@@ -12,7 +12,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     Current Mana.
         /// </summary>
         [DataField, AutoNetworkedField]
-        public float Mana;
+        public float Mana = 50;
 
         /// <summary>
         ///     Max Mana Possible.

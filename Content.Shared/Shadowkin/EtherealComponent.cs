@@ -23,6 +23,9 @@ public sealed partial class EtherealComponent : Component
     [DataField]
     public float DarkenRate = 0.084f;
 
+    [DataField]
+    public bool CanBeStunned = true;
+
     public List<EntityUid> DarkenedLights = new();
 
     public float DarkenAccumulator;

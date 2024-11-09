@@ -224,7 +224,7 @@
   name: Shadowkin Powers
   description: shadowkin-powers-description
   actions:
-    - ActionShadowkinShadeskip
+    - ActionShadeskip
     - ActionDarkSwap
   powerSlotCost: 1
 
