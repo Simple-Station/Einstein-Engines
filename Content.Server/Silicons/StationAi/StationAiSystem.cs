@@ -1,12 +1,11 @@
 using System.Linq;
 using Content.Server.Chat.Managers;
-using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Mind;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.StationAi;
-using Robust.Shared.Audio.Systems;
+using Robust.Shared.Audio;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using static Content.Server.Chat.Systems.ChatSystem;
@@ -85,6 +84,19 @@ public sealed class StationAiSystem : SharedStationAiSystem
         }
 
         return true;
+    }
+
+    public override void AnnounceIntellicardUsage(EntityUid uid, SoundSpecifier? cue = null)
+    {
+        if (!TryComp<ActorComponent>(uid, out var actor))
+            return;
+
+        var msg = Loc.GetString("ai-consciousness-download-warning");
+        var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
+        _chats.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Red);
+
+        if (cue != null && _mind.TryGetMind(uid, out var mindId, out _))
+            _roles.MindPlaySound(mindId, cue);
     }
 
     private void AnnounceSnip(EntityUid entity)
