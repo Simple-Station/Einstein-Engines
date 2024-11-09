@@ -74,20 +74,6 @@ public sealed class ShadowkinSystem : EntitySystem
             ));
     }
 
-    /// <summary>
-    /// Update the Shadowkin Alert, if Blackeye will remove the Alert, if not will update to its current power status.
-    /// </summary>
-    public void UpdateShadowkinAlert(EntityUid uid, ShadowkinComponent component)
-    {
-        if (TryComp<PsionicComponent>(uid, out var magic))
-        {
-            var severity = (short) ContentHelpers.RoundToLevels(magic.Mana, magic.MaxMana, 8);
-            _alerts.ShowAlert(uid, AlertType.ShadowkinPower, severity);
-        }
-        else
-            _alerts.ClearAlert(uid, AlertType.ShadowkinPower);
-    }
-
     private void OnManaUpdate(EntityUid uid, ShadowkinComponent component, ref OnManaUpdateEvent args)
     {
         if (!TryComp<PsionicComponent>(uid, out var magic))
@@ -98,9 +84,6 @@ public sealed class ShadowkinSystem : EntitySystem
             magic.ManaGainMultiplier = component.SleepManaRegenMultiplier;
         else
             magic.ManaGainMultiplier = 1;
-
-        Dirty(magic); // Update Shadowkin Overlay.
-        UpdateShadowkinAlert(uid, component);
     }
 
     private void OnMindbreak(EntityUid uid, ShadowkinComponent component, ref OnMindbreakEvent args)
@@ -141,7 +124,5 @@ public sealed class ShadowkinSystem : EntitySystem
 
         if (_prototypeManager.TryIndex<PsionicPowerPrototype>("ShadowkinPowers", out var shadowkinPowers))
             _psionicAbilitiesSystem.InitializePsionicPower(uid, shadowkinPowers);
-
-        UpdateShadowkinAlert(uid, component);
     }
 }

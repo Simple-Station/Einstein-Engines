@@ -19,6 +19,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Mobs;
 using Content.Shared.Damage;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Alert;
 
 namespace Content.Server.Psionics;
 
@@ -39,6 +40,7 @@ public sealed class PsionicsSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly PsionicFamiliarSystem _psionicFamiliar = default!;
     [Dependency] private readonly NPCRetaliationSystem _retaliationSystem = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
 
     private const string BaselineAmplification = "Baseline Amplification";
     private const string BaselineDampening = "Baseline Dampening";
@@ -135,6 +137,8 @@ public sealed class PsionicsSystem : EntitySystem
 
     private void OnInit(EntityUid uid, PsionicComponent component, ComponentStartup args)
     {
+        _alerts.ShowAlert(uid, AlertType.Mana, 0);
+
         component.AmplificationSources.Add(BaselineAmplification, _random.NextFloat(component.BaselineAmplification.Item1, component.BaselineAmplification.Item2));
         component.DampeningSources.Add(BaselineDampening, _random.NextFloat(component.BaselineDampening.Item1, component.BaselineDampening.Item2));
 
@@ -148,6 +152,8 @@ public sealed class PsionicsSystem : EntitySystem
 
     private void OnRemove(EntityUid uid, PsionicComponent component, ComponentRemove args)
     {
+        _alerts.ClearAlert(uid, AlertType.Mana);
+
         if (!HasComp<NpcFactionMemberComponent>(uid))
             return;
 
