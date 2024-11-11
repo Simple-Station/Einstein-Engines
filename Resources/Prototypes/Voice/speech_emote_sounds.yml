@@ -88,6 +88,12 @@
       collection: MaleCry
     Weh:
       collection: Weh
+    # Floof
+    Yip:
+      collection: Yip
+    Hiss:
+      collection: ReptilianHiss
+    # Floof end
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -106,6 +112,12 @@
       collection: FemaleCry
     Weh:
       collection: Weh
+    # Floof
+    Yip:
+      collection: Yip
+    Hiss:
+      collection: ReptilianHiss
+    # Floof end
 
 - type: emoteSounds
   id: MaleSlime
@@ -464,6 +476,22 @@
       path: /Audio/Voice/Diona/diona_salute.ogg
       params:
        volume: -5
+       
+- type: emoteSounds
+  id: ReptilianBodyEmotes
+  sounds:
+    Thump:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
+      params:
+        variation: 0.125
+    Clap:
+      collection: Claps
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
 
 # mobs
 - type: emoteSounds
