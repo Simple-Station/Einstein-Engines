@@ -14,8 +14,17 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  accessGroups:
-  - AllAccess
+  access:
+  - CentralCommand
+  - Brig
+  - External
+  - Cryogenics
+  - Maintenance
+  - Engineering
+  - Medical
+  - Research  
+  - Command
+  - NanotrasenRepresentative
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
