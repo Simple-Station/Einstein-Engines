@@ -72,6 +72,17 @@
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_neckfull
 
+# Floof
+- type: marking
+  id: LizardFloofNeckfull
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: floof_neckfull
+# end Floof
+
 - type: marking
   id: LizardHornsAngler
   bodyPart: HeadTop
@@ -130,7 +141,7 @@
   id: LizardTailSmooth
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, IPC] # Floof
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_smooth_primary
@@ -141,7 +152,7 @@
   id: LizardTailLarge
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, IPC] # Floof
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_large
@@ -150,7 +161,7 @@
   id: LizardTailSpikes
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, IPC] # Floof
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_spikes
@@ -159,7 +170,7 @@
   id: LizardTailLTiger
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, IPC] # Floof
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_ltiger
@@ -168,7 +179,7 @@
   id: LizardTailDTiger
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, IPC] # Floof
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_dtiger
