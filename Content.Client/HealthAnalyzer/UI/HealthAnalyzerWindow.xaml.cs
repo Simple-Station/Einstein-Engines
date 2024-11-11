@@ -43,6 +43,7 @@ namespace Content.Client.HealthAnalyzer.UI
         [ValidatePrototypeId<EntityPrototype>]
         private readonly EntProtoId _bodyView = "AlertSpriteView";
         // End-Shitmed
+
         public HealthAnalyzerWindow()
         {
             RobustXamlLoader.Load(this);

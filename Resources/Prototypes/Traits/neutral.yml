@@ -4,8 +4,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsAccents
-  components:
-    - type: PirateAccent
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: PirateAccent
 
 - type: trait
   id: Accentless
@@ -19,13 +21,15 @@
         - MedicalBorg
     - !type:CharacterItemGroupRequirement
       group: TraitsAccents
-  components:
-    - type: Accentless
-      removes:
-      - type: LizardAccent
-      - type: MothAccent
-      - type: ReplacementAccent
-        accent: dwarf
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Accentless
+          removes:
+          - type: LizardAccent
+          - type: MothAccent
+          - type: ReplacementAccent
+            accent: dwarf
 
 - type: trait
   id: Southern
@@ -33,8 +37,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsAccents
-  components:
-    - type: SouthernAccent
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SouthernAccent
 
 - type: trait
   id: NormalVision
@@ -44,9 +50,11 @@
       species:
         - Harpy
         - Vulpkanin
-  componentRemovals:
-    - UltraVision
-    - DogVision
+  functions:
+    - !type:TraitRemoveComponent
+      components:
+        - type: UltraVision
+        - type: DogVision
 
 - type: trait
   id: Saturnine
@@ -62,8 +70,10 @@
       inverted: true
       traits:
         - Sanguine
-  moodEffects:
-    - TraitSaturnine
+  functions:
+    - !type:TraitAddMoodlets
+      moodEffects:
+        - TraitSaturnine
 
 - type: trait
   id: Sanguine
@@ -79,8 +89,10 @@
       inverted: true
       traits:
         - Saturnine
-  moodEffects:
-    - TraitSanguine
+  functions:
+    - !type:TraitAddMoodlets
+      moodEffects:
+        - TraitSanguine
 
 - type: trait
   id: AddictionNicotine
@@ -96,13 +108,17 @@
       inverted: true
       species:
         - IPC
-  moodEffects:
-    - NicotineWithdrawal
+  functions:
+    - !type:TraitAddMoodlets
+      moodEffects:
+        - NicotineWithdrawal
 
 - type: trait
   id: Liar
   category: Mental
-  components:
-    - type: ReplacementAccent
-      replacementChance: 0.15
-      accent: liar
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ReplacementAccent
+          replacementChance: 0.15
+          accent: liar
