@@ -51,5 +51,7 @@ in pkgs.mkShell {
     export ROBUST_SOUNDFONT_OVERRIDE=${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2
     export XDG_DATA_DIRS=$GSETTINGS_SCHEMAS_PATH
     export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath dependencies}
+    export DOTNET_ROOT=${pkgs.dotnetCorePackages.sdk_8_0_1xx}
+    export PATH="$PATH:/home/$(whoami)/.dotnet/tools"
   '';
 }
