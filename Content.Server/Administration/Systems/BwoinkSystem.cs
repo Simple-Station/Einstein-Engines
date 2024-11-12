@@ -89,6 +89,45 @@ namespace Content.Server.Administration.Systems
 
         private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
         {
+            if (e.NewStatus == SessionStatus.Disconnected)
+            {
+                if (_activeConversations.TryGetValue(e.Session.UserId, out var lastMessageTime))
+                {
+                    var timeSinceLastMessage = DateTime.Now - lastMessageTime;
+                    if (timeSinceLastMessage > TimeSpan.FromMinutes(5))
+                    {
+                        _activeConversations.Remove(e.Session.UserId);
+                        return; // Do not send disconnect message if timeout exceeded
+                    }
+                }
+
+                // Check if the user has been banned
+                var ban = await _dbManager.GetServerBanAsync(null, e.Session.UserId, null, null);
+                if (ban != null)
+                {
+                    var banMessage = Loc.GetString("bwoink-system-player-banned", ("banReason", ban.Reason));
+                    NotifyAdmins(e.Session, banMessage, PlayerStatusType.Banned);
+                    _activeConversations.Remove(e.Session.UserId);
+                    return;
+                }
+            }
+
+            // Notify all admins if a player disconnects or reconnects
+            var message = e.NewStatus switch
+            {
+                SessionStatus.Connected => Loc.GetString("bwoink-system-player-reconnecting"),
+                SessionStatus.Disconnected => Loc.GetString("bwoink-system-player-disconnecting"),
+                _ => null
+            };
+
+            if (message != null)
+            {
+                var statusType = e.NewStatus == SessionStatus.Connected
+                    ? PlayerStatusType.Connected
+                    : PlayerStatusType.Disconnected;
+                NotifyAdmins(e.Session, message, statusType);
+            }
+
             if (e.NewStatus != SessionStatus.InGame)
                 return;
 
