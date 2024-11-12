@@ -29,7 +29,11 @@
   id: ClothingMaskGasVoiceChameleon
   suffix: Voice Mask, Chameleon
   components:
-    - type: VoiceMasker
+    - type: VoiceMask
+    - type: UserInterface
+      interfaces:
+        enum.VoiceMaskUIKey.Key:
+          type: VoiceMaskBoundUserInterface
     - type: Tag
       tags:
       - IPCMaskWearable

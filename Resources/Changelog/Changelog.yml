@@ -7655,3 +7655,201 @@ Entries:
   id: 6495
   time: '2024-10-27T16:51:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1146
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the default "Following distance" of Psionic Familiars from 10
+        meters to 3 meters, so that they don't have an ungodly hard time keeping
+        up with their Master.
+  id: 6496
+  time: '2024-10-29T02:24:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1162
+- author: Ichaie
+  changes:
+    - type: Add
+      message: >-
+        Fixed several issues with the Gax Station. It also now has a newly
+        redesigned AI Satellite.
+  id: 6497
+  time: '2024-11-01T23:01:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1163
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Several new updates to Saltern, particularly around Service, Logistics,
+        and Engineering.
+    - type: Tweak
+      message: >-
+        Pressure Controlled Valves now actually function like their real-world
+        counterpart. If the pressure in the control-side exceeds the pressure in
+        either input or output sides, the valve opens, allowing air to flow
+        bidirectionally between input and output(Basically, an open valve). Air
+        can never pass through the Control-side.
+    - type: Tweak
+      message: >-
+        Literally doubled the power output of solar panels, to make them
+        actually worthwhile to setup. 
+  id: 6498
+  time: '2024-11-02T00:40:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1170
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Cargo can now order crates of Uranium, Gold, and Silver. This is still
+        far more expensive than getting the materials from Salvage, but serves
+        as an incredibly useful failsafe in the event Salvage is
+        Unwilling/Dead/Incompetent/Shitters.
+  id: 6499
+  time: '2024-11-02T01:03:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1171
+- author: Beck Thompson
+  changes:
+    - type: Fix
+      message: Fixed various bugs related to voice masks and voice mask implants.
+  id: 6500
+  time: '2024-11-02T01:11:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1147
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Python, Pollock, Webley, K38, Fitz, Wood Furniture Viper, Energy
+        Pistol, PDW-9, and Svalinn to security loadouts as new Duty Weapon
+        options.
+    - type: Tweak
+      message: >-
+        Modified the descriptions of all handguns obtained via Security Officer
+        Loadouts to explicitly state that they actually belong to the security
+        officer. Apparently people were being stupid and confiscating weapons
+        from their own Secoffs that they were entirely intended to have.
+  id: 6501
+  time: '2024-11-02T01:11:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1158
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: >-
+        Cocooners can now freely uncocoon any cocoons without the need of a
+        sharp object.
+    - type: Fix
+      message: Cocoon making you stuck in muffle accent.
+  id: 6502
+  time: '2024-11-02T02:21:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1169
+- author: Ichaie
+  changes:
+    - type: Add
+      message: >-
+        lockers for Syndicate Agent (for mapping), Janitor and Bartender have
+        been added. 
+    - type: Add
+      message: a new wall variant has been added for the radiation closet
+    - type: Add
+      message: Uranium Crate added
+  id: 6503
+  time: '2024-11-02T15:05:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1174
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Syndicate Agents no longer have the Syndicate faction. Instead, the
+        Syndicate faction comes from your SYNDICATE ID/PDA. This means that if
+        you steal a Syndicate PDA from nukies, and wear it, you won't be shot by
+        their turrets. This also means that syndicate turrets will fire at
+        syndicate agents not wearing an agent ID.
+    - type: Fix
+      message: Fixed Familiars spawned by traitors attacking crew constantly.
+  id: 6504
+  time: '2024-11-02T16:24:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1176
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Cargo Technicians and Salvage Techs can now process cargo orders. You
+        don't need to smash the fucking LO Locker with a pickaxe anymore.
+  id: 6505
+  time: '2024-11-02T19:58:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1177
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Communications Consoles that are marked as "Can't Recall The Shuttle"
+        now can't recall the shuttle. Previously they were still able to recall
+        it. 
+  id: 6506
+  time: '2024-11-05T04:12:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1180
+- author: Mocho
+  changes:
+    - type: Tweak
+      message: Ported over Wizden's updated Health Analyzer UI.
+  id: 6507
+  time: '2024-11-07T04:50:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1183
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Familiars can now be Dispelled.
+    - type: Tweak
+      message: Nerfed Remilia to have 30 HP.
+    - type: Tweak
+      message: Nerfed Base Familiar to have 50 HP.
+  id: 6508
+  time: '2024-11-08T15:17:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1184
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Languages are now shown in chat alongside character names. '
+  id: 6509
+  time: '2024-11-08T16:14:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1165
+- author: Ichaie
+  changes:
+    - type: Fix
+      message: minor fixes on the maps Rad and Gax, fix te uranium crarte to filled
+  id: 6510
+  time: '2024-11-08T18:54:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1178
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Traits can now add Implants directly. '
+  id: 6511
+  time: '2024-11-08T18:58:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1182
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Shadowkin have been temporarily disabled pending significant reworks and
+        balance updates. 
+  id: 6512
+  time: '2024-11-08T19:33:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1187
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Bloodstains, Body Dragging Marks, and Bloody Footprints to the
+        game. Characters that walk through puddles of blood will now leave
+        behind bloody footprints. Dragging a corpse leaves a trail of blood
+        wherever the corpse was moved.
+  id: 6513
+  time: '2024-11-09T02:05:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1190
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed AddTrait and ReplaceTrait functions giving players an unmodified,
+        completely default component. 
+  id: 6514
+  time: '2024-11-10T15:22:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1195

@@ -60,7 +60,7 @@
     butcheringType: Knife
     butcherDelay: 12
     spawned:
-    - id: MaterialCloth1
+    - id: MaterialWebSilk1
       amount: 1
       prob: 0.5 #This doesn't cost hunger so should at least make it not worth it time-wise
   - type: Appearance

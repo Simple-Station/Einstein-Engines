@@ -48,3 +48,4 @@
 - type: moodEffect
   id: SurgeryPain
   moodChange: -10
+  timeout: 360

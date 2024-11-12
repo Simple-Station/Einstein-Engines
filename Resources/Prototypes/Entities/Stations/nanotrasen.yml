@@ -51,3 +51,28 @@
   noSpawn: true
   components:
     - type: Transform
+
+- type: entity
+  id: StandardNanotrasenStationNoATS
+  parent:
+    - BaseStation
+    - BaseStationNews
+    - BaseStationCargo
+    - BaseStationJobsSpawning
+    - BaseStationRecords
+    - BaseStationArrivals
+    - BaseStationGateway
+    - BaseStationShuttlesSalvageOnly
+    - BaseStationCentcomm
+    - BaseStationEvacuation
+    - BaseStationAlertLevels
+    - BaseStationMagnet
+    - BaseStationExpeditions
+    - BaseStationSiliconLawCrewsimov
+    - BaseStationAllEventsEligible
+    - BaseStationNanotrasen
+    - BaseRandomStation
+    - BaseStationMail
+  noSpawn: true
+  components:
+    - type: Transform

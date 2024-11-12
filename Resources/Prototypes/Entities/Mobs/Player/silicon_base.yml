@@ -203,8 +203,6 @@
     - type: Targeting
     - type: UserInterface
       interfaces:
-        enum.VoiceMaskUIKey.Key:
-          type: VoiceMaskBoundUserInterface
         enum.HumanoidMarkingModifierKey.Key:
           type: HumanoidMarkingModifierBoundUserInterface
         enum.StrippingUiKey.Key:
