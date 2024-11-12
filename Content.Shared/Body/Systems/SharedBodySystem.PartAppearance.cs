@@ -1,13 +1,19 @@
+using System.Diagnostics;
 using System.Linq;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
+using Content.Shared.Humanoid.Prototypes;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Body.Systems;
 public partial class SharedBodySystem
 {
     [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoid = default!;
+    [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     private void InitializePartAppearances()
     {
         base.Initialize();
@@ -20,27 +26,19 @@ public partial class SharedBodySystem
 
     private void OnPartAppearanceStartup(EntityUid uid, BodyPartAppearanceComponent component, ComponentStartup args)
     {
-
-        // God this function reeks, it needs some cleanup BADLY. Help is appreciated as always.
-
         if (!TryComp(uid, out BodyPartComponent? part)
             || part.OriginalBody == null
             || TerminatingOrDeleted(part.OriginalBody.Value)
             || !TryComp(part.OriginalBody.Value, out HumanoidAppearanceComponent? bodyAppearance)
-            || HumanoidVisualLayersExtension.ToHumanoidLayers(part) is not { } relevantLayer)
+            || part.ToHumanoidLayers() is not { } relevantLayer)
             return;
 
         var customLayers = bodyAppearance.CustomBaseLayers;
         var spriteLayers = bodyAppearance.BaseLayers;
         component.Type = relevantLayer;
         component.OriginalBody = part.OriginalBody.Value;
-        part.Sex = bodyAppearance.Sex;
 
-        // Thanks Rane for the human reskin :)
-        if (bodyAppearance.Species.ToString() == "Felinid")
-            part.Species = "Human";
-        else
-            part.Species = bodyAppearance.Species;
+        part.Species = bodyAppearance.Species;
 
         if (customLayers.ContainsKey(component.Type))
         {
@@ -54,20 +52,8 @@ public partial class SharedBodySystem
         }
         else
         {
+            component.ID = CreateIdFromPart(bodyAppearance, relevantLayer);
             component.Color = bodyAppearance.SkinColor;
-            var symmetryPrefix = part.Symmetry switch
-            {
-                BodyPartSymmetry.Left => "L",
-                BodyPartSymmetry.Right => "R",
-                _ => ""
-            };
-
-            var genderSuffix = "";
-
-            if (part.PartType == BodyPartType.Torso || part.PartType == BodyPartType.Head)
-                genderSuffix = part.Sex.ToString();
-
-            component.ID = $"Mob{part.Species}{symmetryPrefix}{part.PartType}{genderSuffix}";
         }
 
         // I HATE HARDCODED CHECKS I HATE HARDCODED CHECKS I HATE HARDCODED CHECKS
@@ -85,6 +71,54 @@ public partial class SharedBodySystem
 
         component.Markings = markingsByLayer;
     }
+
+    private string CreateIdFromPart(HumanoidAppearanceComponent bodyAppearance, HumanoidVisualLayers part)
+    {
+        var speciesProto = _prototypeManager.Index(bodyAppearance.Species);
+        var baseSprites = _prototypeManager.Index<HumanoidSpeciesBaseSpritesPrototype>(speciesProto.SpriteSet);
+
+        DebugTools.Assert(baseSprites.Sprites.ContainsKey(part));
+
+        return HumanoidVisualLayersExtension.GetSexMorph(part, bodyAppearance.Sex, baseSprites.Sprites[part]);
+    }
+
+    public void ModifyMarkings(EntityUid uid,
+        Entity<BodyPartAppearanceComponent?> partAppearance,
+        HumanoidAppearanceComponent bodyAppearance,
+        HumanoidVisualLayers targetLayer,
+        string markingId,
+        bool remove = false)
+    {
+
+        if (!Resolve(partAppearance, ref partAppearance.Comp))
+            return;
+
+        if (!remove)
+        {
+
+            if (!_markingManager.Markings.TryGetValue(markingId, out var prototype))
+                return;
+
+            var markingColors = MarkingColoring.GetMarkingLayerColors(
+                    prototype,
+                    bodyAppearance.SkinColor,
+                    bodyAppearance.EyeColor,
+                    bodyAppearance.MarkingSet
+                );
+
+            var marking = new Marking(markingId, markingColors);
+
+            _humanoid.SetLayerVisibility(uid, targetLayer, true, true, bodyAppearance);
+            _humanoid.AddMarking(uid, markingId, markingColors, true, true, bodyAppearance);
+            if (!partAppearance.Comp.Markings.ContainsKey(targetLayer))
+                partAppearance.Comp.Markings[targetLayer] = new List<Marking>();
+
+            partAppearance.Comp.Markings[targetLayer].Add(marking);
+        }
+        //else
+            //RemovePartMarkings(uid, component, bodyAppearance);
+    }
+
     private void HandleState(EntityUid uid, BodyPartAppearanceComponent component, ref AfterAutoHandleStateEvent args)
     {
         ApplyPartMarkings(uid, component);
@@ -141,10 +175,10 @@ public partial class SharedBodySystem
         {
             _humanoid.SetLayerVisibility(entity, visualLayer, false, true, bodyAppearance);
         }
-        RemovePartMarkings(entity, component, bodyAppearance);
+        RemoveBodyMarkings(entity, component, bodyAppearance);
     }
 
     protected abstract void ApplyPartMarkings(EntityUid target, BodyPartAppearanceComponent component);
 
-    protected abstract void RemovePartMarkings(EntityUid target, BodyPartAppearanceComponent partAppearance, HumanoidAppearanceComponent bodyAppearance);
+    protected abstract void RemoveBodyMarkings(EntityUid target, BodyPartAppearanceComponent partAppearance, HumanoidAppearanceComponent bodyAppearance);
 }

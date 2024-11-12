@@ -1,24 +1,23 @@
-using Content.Shared.Bed.Sleep;
-using Content.Shared.Body.Components;
+using Content.Server.Atmos.Rotting;
 using Content.Server.Body.Systems;
+using Content.Server.Chat.Systems;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
-using Content.Server.Chat.Systems;
 using Content.Server.Popups;
+using Content.Shared.Bed.Sleep;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Prototypes;
+using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Medical.Surgery;
-using Content.Shared.Medical.Surgery.Steps;
 using Content.Shared.Medical.Surgery.Conditions;
 using Content.Shared.Medical.Surgery.Effects.Step;
+using Content.Shared.Medical.Surgery.Steps;
+using Content.Shared.Medical.Surgery.Steps.Parts;
 using Content.Shared.Medical.Surgery.Tools;
 using Content.Shared.Mood;
-using Content.Server.Atmos.Rotting;
-using Content.Shared.Eye.Blinding.Components;
-using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Prototypes;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
@@ -51,7 +50,6 @@ public sealed class SurgerySystem : SharedSurgerySystem
         SubscribeLocalEvent<SurgeryTargetComponent, SurgeryStepDamageEvent>(OnSurgeryStepDamage);
         SubscribeLocalEvent<SurgeryDamageChangeEffectComponent, SurgeryStepEvent>(OnSurgeryDamageChange);
         SubscribeLocalEvent<SurgerySpecialDamageChangeEffectComponent, SurgeryStepEvent>(OnSurgerySpecialDamageChange);
-        SubscribeLocalEvent<SurgeryStepAffixPartEffectComponent, SurgeryStepEvent>(OnStepAffixPartComplete);
         SubscribeLocalEvent<SurgeryStepEmoteEffectComponent, SurgeryStepEvent>(OnStepScreamComplete);
         SubscribeLocalEvent<SurgeryStepSpawnEffectComponent, SurgeryStepEvent>(OnStepSpawnComplete);
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
@@ -86,8 +84,11 @@ public sealed class SurgerySystem : SharedSurgerySystem
         */
         _ui.ServerSendUiMessage(body, SurgeryUIKey.Key, new SurgeryBuiRefreshMessage());
     }
-    private void SetDamage(EntityUid body, DamageSpecifier damage, float partMultiplier,
-        EntityUid user, EntityUid part)
+    private void SetDamage(EntityUid body,
+        DamageSpecifier damage,
+        float partMultiplier,
+        EntityUid user,
+        EntityUid part)
     {
         var changed = _damageableSystem.TryChangeDamage(body, damage, true, origin: user, canSever: false, partMultiplier: partMultiplier);
         if (changed != null
@@ -96,7 +97,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
             && TryComp<BodyPartComponent>(part, out var partComp))
         {
             var targetPart = _body.GetTargetBodyPart(partComp.PartType, partComp.Symmetry);
-            _body.TryChangeIntegrity((part, partComp), damage.GetTotal().Float(), false, targetPart, out var _);
+            _body.TryChangeIntegrity((part, partComp), damage, false, targetPart, out var _);
         }
     }
 
@@ -114,7 +115,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
             return;
         }
 
-        if (user == args.Target && _config.GetCVar(CCVars.CanOperateOnSelf))
+        if (user == args.Target && !_config.GetCVar(CCVars.CanOperateOnSelf))
         {
             _popup.PopupEntity(Loc.GetString("surgery-error-self-surgery"), user, user);
             return;
@@ -133,7 +134,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
     private void OnSurgeryDamageChange(Entity<SurgeryDamageChangeEffectComponent> ent, ref SurgeryStepEvent args)
     {
         // This unintentionally punishes the user if they have an organ in another hand that is already used.
-        // Imo surgery shouldnt let you automatically pick tools on both hands anyway, it should only use the one you've got in your selected hand.
+        // Imo surgery shouldn't let you automatically pick tools on both hands anyway, it should only use the one you've got in your selected hand.
         if (ent.Comp.IsConsumable)
         {
             if (args.Tools.Where(tool => TryComp<OrganComponent>(tool, out var organComp)
@@ -167,25 +168,6 @@ public sealed class SurgerySystem : SharedSurgerySystem
                 && blindComp.EyeDamage > 0)
                 _blindableSystem.AdjustEyeDamage((args.Body, blindComp), -blindComp!.EyeDamage);
         }
-    }
-
-    private void OnStepAffixPartComplete(Entity<SurgeryStepAffixPartEffectComponent> ent, ref SurgeryStepEvent args)
-    {
-        if (!TryComp(args.Surgery, out SurgeryPartRemovedConditionComponent? removedComp))
-            return;
-
-        var targetPart = _body.GetBodyChildrenOfType(args.Body, removedComp.Part, symmetry: removedComp.Symmetry).FirstOrDefault();
-
-        if (targetPart != default)
-        {
-            var ev = new BodyPartEnableChangedEvent(true);
-            RaiseLocalEvent(targetPart.Id, ref ev);
-            // This is basically an equalizer, severing a part will badly damage it.
-            // and affixing it will heal it a bit if it's not too badly damaged.
-            _body.TryChangeIntegrity(targetPart, targetPart.Component.Integrity - 20, false,
-                _body.GetTargetBodyPart(targetPart.Component.PartType, targetPart.Component.Symmetry), out _);
-        }
-
     }
 
     private void OnStepScreamComplete(Entity<SurgeryStepEmoteEffectComponent> ent, ref SurgeryStepEvent args)

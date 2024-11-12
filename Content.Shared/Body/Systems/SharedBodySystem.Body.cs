@@ -7,15 +7,16 @@ using Content.Shared.Body.Prototypes;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
 using Content.Shared.DragDrop;
+using Content.Shared.FixedPoint;
 using Content.Shared.Gibbing.Components;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Gibbing.Systems;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Events;
-using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Inventory;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Standing;
+using Content.Shared.Targeting;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -155,12 +156,19 @@ public partial class SharedBodySystem
             && !args.DamageDecreased)
             return;
 
-        var (targetType, targetSymmetry) = ConvertTargetBodyPart(args.TargetPart.Value);
-        foreach (var part in GetBodyChildrenOfType(ent, targetType, ent.Comp)
-            .Where(part => part.Component.Symmetry == targetSymmetry))
+        // Go through every flag and apply damage to them.
+        var targets = SharedTargetingSystem.GetValidParts();
+        foreach (var target in targets)
         {
-            if (_gameTiming.IsFirstTimePredicted)
-                ApplyPartDamage(part, args.DamageDelta, targetType, args.TargetPart.Value, args.CanSever, args.PartMultiplier);
+            if (!args.TargetPart.Value.HasFlag(target))
+                continue;
+
+            var (targetType, targetSymmetry) = ConvertTargetBodyPart(target);
+            foreach (var part in GetBodyChildrenOfType(ent, targetType, ent.Comp)
+                         .Where(part => part.Component.Symmetry == targetSymmetry))
+            {
+                ApplyPartDamage(part, args.DamageDelta, targetType, target, args.CanSever, args.Evade, args.PartMultiplier);
+            }
         }
     }
 
@@ -168,7 +176,7 @@ public partial class SharedBodySystem
     {
         foreach (var part in GetBodyChildren(ent, ent.Comp))
         {
-            TryChangeIntegrity(part, part.Component.Integrity - BodyPartComponent.MaxIntegrity, false, GetTargetBodyPart(part), out _);
+            TrySetIntegrity(part, GetHealingSpecifier(part.Component), false, GetTargetBodyPart(part), out _);
         }
     }
 

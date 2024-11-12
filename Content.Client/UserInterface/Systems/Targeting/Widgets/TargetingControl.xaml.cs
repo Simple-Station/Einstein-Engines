@@ -11,27 +11,35 @@ namespace Content.Client.UserInterface.Systems.Targeting.Widgets;
 public sealed partial class TargetingControl : UIWidget
 {
     private readonly TargetingUIController _controller;
-    private readonly Dictionary<TargetBodyPart, (TextureButton Button, PanelContainer Panel)> _bodyPartControls;
+    private readonly Dictionary<TargetBodyPart, TextureButton> _bodyPartControls;
 
     public TargetingControl()
     {
         RobustXamlLoader.Load(this);
         _controller = UserInterfaceManager.GetUIController<TargetingUIController>();
 
-        _bodyPartControls = new Dictionary<TargetBodyPart, (TextureButton, PanelContainer)>
+        _bodyPartControls = new Dictionary<TargetBodyPart, TextureButton>
         {
-            { TargetBodyPart.Head, (HeadButton, (PanelContainer)HeadButton.Children.First()) },
-            { TargetBodyPart.Torso, (TorsoButton, (PanelContainer)TorsoButton.Children.First()) },
-            { TargetBodyPart.LeftArm, (LeftArmButton, (PanelContainer)LeftArmButton.Children.First()) },
-            { TargetBodyPart.RightArm, (RightArmButton, (PanelContainer)RightArmButton.Children.First()) },
-            { TargetBodyPart.LeftLeg, (LeftLegButton, (PanelContainer)LeftLegButton.Children.First()) },
-            { TargetBodyPart.RightLeg, (RightLegButton, (PanelContainer)RightLegButton.Children.First()) }
+            // TODO: ADD EYE AND MOUTH TARGETING
+            { TargetBodyPart.Head, HeadButton },
+            { TargetBodyPart.Torso, ChestButton },
+            { TargetBodyPart.Groin, GroinButton },
+            { TargetBodyPart.LeftArm, LeftArmButton },
+            { TargetBodyPart.LeftHand, LeftHandButton },
+            { TargetBodyPart.RightArm, RightArmButton },
+            { TargetBodyPart.RightHand, RightHandButton },
+            { TargetBodyPart.LeftLeg, LeftLegButton },
+            { TargetBodyPart.LeftFoot, LeftFootButton },
+            { TargetBodyPart.RightLeg, RightLegButton },
+            { TargetBodyPart.RightFoot, RightFootButton },
         };
 
-        foreach (var buttonPair in _bodyPartControls)
+        foreach (var bodyPartButton in _bodyPartControls)
         {
-            buttonPair.Value.Button.MouseFilter = MouseFilterMode.Stop;
-            buttonPair.Value.Button.OnPressed += args => SetActiveBodyPart(buttonPair.Key);
+            bodyPartButton.Value.MouseFilter = MouseFilterMode.Stop;
+            bodyPartButton.Value.OnPressed += _ => SetActiveBodyPart(bodyPartButton.Key);
+
+            TargetDoll.Texture = Theme.ResolveTexture("target_doll");
         }
     }
     private void SetActiveBodyPart(TargetBodyPart bodyPart)
@@ -39,18 +47,16 @@ public sealed partial class TargetingControl : UIWidget
         _controller.CycleTarget(bodyPart);
     }
 
-    public void SetColors(TargetBodyPart bodyPart)
+    public void SetBodyPartsVisible(TargetBodyPart bodyPart)
     {
-        foreach (var buttonPair in _bodyPartControls)
+        foreach (var bodyPartButton in _bodyPartControls)
         {
-            var styleBox = (StyleBoxFlat) buttonPair.Value.Panel.PanelOverride!;
-            styleBox.BackgroundColor = buttonPair.Key == bodyPart ? new Color(243, 10, 12, 51) : new Color(0, 0, 0, 0);
-            styleBox.BorderColor = buttonPair.Key == bodyPart ? new Color(243, 10, 12, 255) : new Color(0, 0, 0, 0);
+            bodyPartButton.Value.Children.First().Visible = bodyPartButton.Key == bodyPart;
         }
     }
 
-    public void SetVisible(bool visible)
+    public void SetTargetDollVisible(bool visible)
     {
-        this.Visible = visible;
+        Visible = visible;
     }
 }

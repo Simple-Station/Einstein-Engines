@@ -111,6 +111,7 @@
   components:
   - type: Sprite
     state: ears
+  - type: Ears
 
 - type: entity
   id: OrganHumanLungs

@@ -308,7 +308,7 @@
     steps:
     - SurgeryStepSawBones
     - SurgeryStepInsertOrgan
-    - SurgeryStepSealWounds
+    - SurgeryStepSealOrganWound
   - type: SurgeryPartCondition
     part: Head
   - type: SurgeryOrganCondition
@@ -347,7 +347,7 @@
     steps:
     - SurgeryStepSawBones
     - SurgeryStepInsertHeart
-    - SurgeryStepSealWounds
+    - SurgeryStepSealOrganWound
   - type: SurgeryPartCondition
     part: Torso
   - type: SurgeryOrganCondition
@@ -385,7 +385,7 @@
     steps:
     - SurgeryStepSawBones
     - SurgeryStepInsertLiver
-    - SurgeryStepSealWounds
+    - SurgeryStepSealOrganWound
   - type: SurgeryPartCondition
     part: Torso
   - type: SurgeryOrganCondition
@@ -423,7 +423,7 @@
     steps:
     - SurgeryStepSawBones
     - SurgeryStepInsertLungs
-    - SurgeryStepSealWounds
+    - SurgeryStepSealOrganWound
   - type: SurgeryPartCondition
     part: Torso
   - type: SurgeryOrganCondition
@@ -461,7 +461,7 @@
     steps:
     - SurgeryStepSawBones
     - SurgeryStepInsertEyes
-    - SurgeryStepSealWounds
+    - SurgeryStepSealOrganWound
   - type: SurgeryPartCondition
     part: Head
   - type: SurgeryOrganCondition
@@ -469,3 +469,71 @@
     - type: Eyes
     inverse: true
     reattaching: true
+
+# Fluff/Joke Surgeries
+
+#- type: entity
+#  parent: SurgeryBase
+#  id: SurgeryAddFelinidEars
+#  name: Add cat ears
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Surgery
+#    #requirement: SurgeryOpenIncision
+#    steps:
+#    - SurgeryStepAddFelinidEars
+#  - type: SurgeryPartCondition
+#    part: Head
+#  - type: SurgeryMarkingCondition
+#    markingCategory: HeadTop
+#    matchString: FelinidEars
+#    inverse: true
+
+#- type: entity
+#  parent: SurgeryBase
+#  id: SurgeryRemoveFelinidEars
+#  name: Remove cat ears
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Surgery
+#    requirement: SurgeryOpenIncision
+#    steps:
+#    - SurgeryStepRemoveFelinidEars
+#  - type: SurgeryPartCondition
+#    part: Head
+#  - type: SurgeryMarkingCondition
+#    markingCategory: HeadTop
+#    matchString: FelinidEars
+
+#- type: entity
+#  parent: SurgeryBase
+#  id: SurgeryAddFelinidTail
+#  name: Add cat tail
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Surgery
+#    requirement: SurgeryOpenIncision
+#    steps:
+#    - SurgeryStepAddFelinidTail
+#  - type: SurgeryPartCondition
+#    part: Torso
+#  - type: SurgeryMarkingCondition
+#    markingCategory: Tail
+#    matchString: FelinidTail
+#    inverse: true
+
+#- type: entity
+#  parent: SurgeryBase
+#  id: SurgeryRemoveFelinidTail
+#  name: Remove cat tail
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Surgery
+#    requirement: SurgeryOpenIncision
+#    steps:
+#    - SurgeryStepRemoveFelinidTail
+#  - type: SurgeryPartCondition
+#    part: Torso
+#  - type: SurgeryMarkingCondition
+#    markingCategory: Tail
+#    matchString: FelinidTail

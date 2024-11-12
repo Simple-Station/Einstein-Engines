@@ -199,6 +199,8 @@
     - type: CreamPied
     - type: Stripping
     - type: Strippable
+    - type: SurgeryTarget
+    - type: Targeting
     - type: UserInterface
       interfaces:
         enum.VoiceMaskUIKey.Key:
@@ -207,6 +209,8 @@
           type: HumanoidMarkingModifierBoundUserInterface
         enum.StrippingUiKey.Key:
           type: StrippableBoundUserInterface
+        enum.SurgeryUIKey.Key:
+          type: SurgeryBui
     - type: Emoting
     - type: Grammar
       attributes:

@@ -76,7 +76,7 @@ public sealed class BodySystem : SharedBodySystem
         }
     }
 
-    protected override void RemovePartMarkings(EntityUid target, BodyPartAppearanceComponent partAppearance, HumanoidAppearanceComponent bodyAppearance)
+    protected override void RemoveBodyMarkings(EntityUid target, BodyPartAppearanceComponent partAppearance, HumanoidAppearanceComponent bodyAppearance)
     {
         return;
     }

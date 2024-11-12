@@ -41,6 +41,4 @@ public sealed partial class BodyPartAppearanceComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? OriginalBody { get; set; }
-
-    //TODO add other custom variables such as species and markings - in case someone decides to attach a lizard arm to a human for example
 }

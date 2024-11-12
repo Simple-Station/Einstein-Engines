@@ -31,7 +31,7 @@ public sealed class TargetingSystem : SharedTargetingSystem
 
         if (args.NewMobState == MobState.Dead)
         {
-            foreach (TargetBodyPart part in Enum.GetValues(typeof(TargetBodyPart)))
+            foreach (var part in GetValidParts())
             {
                 component.BodyStatus[part] = TargetIntegrity.Dead;
                 changed = true;

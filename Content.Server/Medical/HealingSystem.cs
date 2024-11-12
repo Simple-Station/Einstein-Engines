@@ -90,22 +90,23 @@ public sealed class HealingSystem : EntitySystem
         if (healed == null && healing.BloodlossModifier != 0)
             return;
 
-        /* This is rather shitcodey. Problem is that right now damage is coupled to integrity.
+        var total = healed?.GetTotal() ?? FixedPoint2.Zero;
+
+        /*
+           This is rather shitcodey. Problem is that right now damage is coupled to integrity.
            If the body is fully healed, all of the checks on TryChangeDamage stop us from actually healing.
            So in this case we add a special check to heal anyway if TryChangeDamage returns null.
         */
-        if (healed != null && healed.GetTotal() == 0)
+        if (total == 0)
         {
             var parts = _bodySystem.GetBodyChildren(args.Target).ToList();
             // We fetch the most damaged body part
-            var mostDamaged = parts.MinBy(x => x.Component.Integrity);
+            var mostDamaged = parts.MinBy(x => x.Component.TotalDamage);
             var targetBodyPart = _bodySystem.GetTargetBodyPart(mostDamaged);
 
             if (targetBodyPart != null)
-                _bodySystem.TryChangeIntegrity(mostDamaged, healing.Damage.GetTotal().Float(), false, targetBodyPart.Value, out _);
+                _bodySystem.TryChangeIntegrity(mostDamaged, healing.Damage, false, targetBodyPart.Value, out _);
         }
-
-        var total = healed?.GetTotal() ?? FixedPoint2.Zero;
 
         // Re-verify that we can heal the damage.
 
@@ -134,7 +135,7 @@ public sealed class HealingSystem : EntitySystem
 
         _audio.PlayPvs(healing.HealingEndSound, entity.Owner, AudioHelpers.WithVariation(0.125f, _random).WithVolume(-5f));
 
-        // Logic to determine the whether or not to repeat the healing action
+        // Logic to determine whether or not to repeat the healing action
         args.Repeat = HasDamage(entity.Comp, healing) && !dontRepeat || ArePartsDamaged(entity);
         if (!args.Repeat && !dontRepeat)
             _popupSystem.PopupEntity(Loc.GetString("medical-item-finished-using", ("item", args.Used)), entity.Owner, args.User);
@@ -163,7 +164,7 @@ public sealed class HealingSystem : EntitySystem
 
         foreach (var part in _bodySystem.GetBodyChildren(target, body))
         {
-            if (part.Component.Integrity < BodyPartComponent.MaxIntegrity)
+            if (part.Component.TotalDamage > part.Component.MinIntegrity)
                 return true;
         }
         return false;
