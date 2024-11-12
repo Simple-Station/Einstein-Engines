@@ -84,6 +84,8 @@ public sealed class ShadowkinSystem : EntitySystem
             magic.ManaGainMultiplier = component.SleepManaRegenMultiplier;
         else
             magic.ManaGainMultiplier = 1;
+
+        Dirty(magic); // Update Shadowkin Overlay.
     }
 
     private void OnMindbreak(EntityUid uid, ShadowkinComponent component, ref OnMindbreakEvent args)

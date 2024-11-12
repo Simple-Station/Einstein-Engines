@@ -23,8 +23,17 @@ public sealed partial class EtherealComponent : Component
     [DataField]
     public float DarkenRate = 0.084f;
 
+    /// <summary>
+    ///     Can be stunned by ethereal stun objects?
+    /// </summary>
     [DataField]
     public bool CanBeStunned = true;
+
+    /// <summary>
+    ///     Drain Mana is ent is psionic?
+    /// </summary>
+    [DataField]
+    public bool DrainMana = true;
 
     public List<EntityUid> DarkenedLights = new();
 

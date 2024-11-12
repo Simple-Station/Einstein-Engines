@@ -43,7 +43,8 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     public virtual void OnStartup(EntityUid uid, EtherealComponent component, MapInitEvent args)
     {
-        if (TryComp<PsionicComponent>(uid, out var magic))
+        if (TryComp<PsionicComponent>(uid, out var magic)
+            && component.DrainMana)
         {
             component.OldManaGain = magic.ManaGain;
             magic.ManaGain = -1;
@@ -74,7 +75,8 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     public virtual void OnShutdown(EntityUid uid, EtherealComponent component, ComponentShutdown args)
     {
-        if (TryComp<PsionicComponent>(uid, out var magic))
+        if (TryComp<PsionicComponent>(uid, out var magic)
+            && component.DrainMana)
             magic.ManaGain = component.OldManaGain;
 
         if (component.HasDoorBumpTag)

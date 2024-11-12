@@ -8,8 +8,6 @@ using Robust.Shared.Serialization;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Rejuvenate;
-using Content.Shared.Alert;
-using Content.Shared.Rounding;
 
 namespace Content.Shared.Abilities.Psionics
 {
@@ -22,7 +20,6 @@ namespace Content.Shared.Abilities.Psionics
         [Dependency] private readonly IRobustRandom _robustRandom = default!;
         [Dependency] private readonly ContestsSystem _contests = default!;
         [Dependency] private readonly MobStateSystem _mobState = default!;
-        [Dependency] private readonly AlertsSystem _alerts = default!;
 
         public override void Initialize()
         {
@@ -150,7 +147,8 @@ namespace Content.Shared.Abilities.Psionics
             var query = EntityQueryEnumerator<PsionicComponent>();
             while (query.MoveNext(out var uid, out var component))
             {
-                if (_mobState.IsDead(uid))
+                if (_mobState.IsDead(uid)
+                    || HasComp<PsionicInsulationComponent>(uid))
                     continue;
 
                 component.ManaAccumulator += frameTime;
@@ -171,9 +169,6 @@ namespace Content.Shared.Abilities.Psionics
                     var gainedmana = component.ManaGain * component.ManaGainMultiplier;
                     component.Mana += gainedmana;
                     FixedPoint2.Min(component.Mana, component.MaxMana);
-
-                    var severity = (short) ContentHelpers.RoundToLevels(component.Mana, component.MaxMana, 8);
-                    _alerts.ShowAlert(uid, AlertType.Mana, severity);
 
                     var ev = new OnManaUpdateEvent();
                     RaiseLocalEvent(uid, ref ev);
