@@ -25,14 +25,11 @@ public sealed partial class TraitReplaceComponent : TraitFunction
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        foreach (var (name, data) in Components)
+        foreach (var (_, data) in Components)
         {
-            var component = (Component) factory.GetComponent(name);
-
-            var temp = (object) component;
-            serializationManager.CopyTo(data.Component, ref temp);
-            entityManager.RemoveComponent(uid, temp!.GetType());
-            entityManager.AddComponent(uid, (Component) temp, true);
+            var comp = (Component) serializationManager.CreateCopy(data.Component, notNullableOverride: true);
+            comp.Owner = uid;
+            entityManager.AddComponent(uid, comp, true);
         }
     }
 }
@@ -52,11 +49,14 @@ public sealed partial class TraitAddComponent : TraitFunction
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        foreach (var (name, _) in Components)
+        foreach (var entry in Components.Values)
         {
-            var component = (Component) factory.GetComponent(name);
+            if (entityManager.HasComponent(uid, entry.Component.GetType()))
+                continue;
 
-            entityManager.AddComponent(uid, component, true);
+            var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
+            comp.Owner = uid;
+            entityManager.AddComponent(uid, comp);
         }
     }
 }

@@ -7844,3 +7844,12 @@ Entries:
   id: 6513
   time: '2024-11-09T02:05:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1190
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed AddTrait and ReplaceTrait functions giving players an unmodified,
+        completely default component. 
+  id: 6514
+  time: '2024-11-10T15:22:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1195
