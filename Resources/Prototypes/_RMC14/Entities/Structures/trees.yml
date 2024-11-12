@@ -1,5 +1,6 @@
 - type: entity
   id: RMCBaseTree
+  suffix: RMCBaseTree
   description: Yep, it's a tree.
   components:
   - type: SpriteFade
@@ -53,6 +54,7 @@
 - type: entity
   parent: RMCBaseTree
   id: RMCBaseTreeSnow
+  suffix: RMCBaseTreeSnow
   components:
   - type: Sprite
     sprite: Objects/Decoration/Flora/flora_treessnow.rsi
@@ -66,10 +68,37 @@
         density: 4000
         layer:
         - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          RMCStump1:
+            min: 1
+            max: 1
+        offset: 0
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: RMCBaseTree
   id: RMCBaseTreeLarge
+  suffix: RMCBaseTreeLarge
   components:
   - type: Sprite
     sprite: Objects/Decoration/Flora/flora_treeslarge.rsi
@@ -87,6 +116,7 @@
 - type: entity
   parent: RMCBaseTree
   id: RMCBaseTreeConifer
+  suffix: RMCBaseTreeConifer
   components:
   - type: Sprite
     sprite: Objects/Decoration/Flora/flora_treesconifer.rsi
@@ -100,10 +130,37 @@
         density: 3500
         layer:
         - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          RMCStump2:
+            min: 1
+            max: 1
+        offset: 0
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: RMCBaseTree
   id: RMCBaseTreeAlien
+  suffix: RMCBaseTreeAlien
   abstract: true
   name: strange tree
   description: Some kind of bizarre alien tree. It oozes with a sickly yellow sap.
@@ -120,10 +177,55 @@
         density: 4000
         layer:
         - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          RMCStump3:
+            min: 1
+            max: 1
+        offset: 0
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: RMCBaseTreeSnow
+  id: RMCFloraTreeStump
+  suffix: RMCFloraTreeStump
+  name: tree stump
+  components:
+  - type: Sprite
+    state: treestump
+
+- type: entity
+  parent: RMCBaseTreeConifer
+  id: RMCFloraTreeStumpConifer
+  suffix: RMCFloraTreeStumpConifer
+  name: tree stump
+  components:
+  - type: Sprite
+    state: treestumpconifer
 
 - type: entity
   parent: RMCBaseTreeAlien
   id: RMCAlienTree01
+  suffix: RMCAlienTree01
   components:
   - type: Sprite
     state: treealien01
