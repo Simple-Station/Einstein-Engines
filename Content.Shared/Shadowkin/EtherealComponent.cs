@@ -28,6 +28,8 @@ public sealed partial class EtherealComponent : Component
 
     public List<EntityUid> DarkenedLights = new();
 
+    public float OldManaGain;
+
     public float DarkenAccumulator;
 
     public int OldMobMask;

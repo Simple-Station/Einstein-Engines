@@ -163,6 +163,9 @@ namespace Content.Shared.Abilities.Psionics
                 if (component.Mana > component.MaxMana)
                     component.Mana = component.MaxMana;
 
+                if (component.Mana < 0)
+                    component.Mana = 0;
+
                 if (component.Mana < component.MaxMana)
                 {
                     var gainedmana = component.ManaGain * component.ManaGainMultiplier;
