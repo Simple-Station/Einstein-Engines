@@ -79,9 +79,6 @@ public abstract class SharedEtherealSystem : EntitySystem
             && component.DrainMana)
             magic.ManaGain = component.OldManaGain;
 
-        if (component.HasDoorBumpTag)
-            _tag.AddTag(uid, "DoorBumpOpener");
-
         if (!TryComp<FixturesComponent>(uid, out var fixtures))
             return;
 
@@ -89,6 +86,10 @@ public abstract class SharedEtherealSystem : EntitySystem
 
         _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, component.OldMobMask, fixtures);
         _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, component.OldMobLayer, fixtures);
+
+        if (_cfg.GetCVar(CCVars.EtherealPassThrough))
+            if (component.HasDoorBumpTag)
+                _tag.AddTag(uid, "DoorBumpOpener");
     }
 
     private void OnManaUpdate(EntityUid uid, EtherealComponent component, ref OnManaUpdateEvent args)
