@@ -1502,6 +1502,7 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int>
             VoteTimerAlone = CVarDef.Create("vote.timeralone", 10, CVar.SERVERONLY);
 
+
         /*
          * BAN
          */
