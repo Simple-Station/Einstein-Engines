@@ -14,6 +14,8 @@ using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Tag;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Shared.Shadowkin;
 
@@ -24,6 +26,7 @@ public abstract class SharedEtherealSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly StaminaSystem _stamina = default!;
 
     public override void Initialize()
     {
@@ -99,6 +102,9 @@ public abstract class SharedEtherealSystem : EntitySystem
 
         if (magic.Mana <= 0)
         {
+            if (TryComp<StaminaComponent>(uid, out var stamina))
+                _stamina.TakeStaminaDamage(uid, stamina.CritThreshold, stamina, uid);
+
             SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
             SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
             RemComp(uid, component);
