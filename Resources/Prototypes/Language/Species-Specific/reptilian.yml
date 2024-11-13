@@ -1,6 +1,7 @@
 # Spoken by Unathi.
 - type: language
   id: Draconic
+  isVisibleLanguage: true
   speech:
     color: "#2aca2add"
   obfuscation:

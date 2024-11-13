@@ -366,6 +366,27 @@
       - MailMetricsCartridge
 
 - type: entity
+  name: LO special PDA unit # DeltaV - Logistics Department replacing Cargo
+  parent: BasePDA
+  id: QuartermasterNTPDA
+  description: PDA for the guy that directs logistics.it says in gold "special unit unique to the best logistics officer in the sector". # DeltaV - Logistics Department replacing Cargo
+  components:
+  - type: Pda
+    id: QuartermasterIDCard
+    state: pda-qmnano
+  - type: PdaBorderColor
+    borderColor: "#e39751"
+    accentVColor: "#a23e3e"
+  - type: Icon
+    state: pda-qmnano
+  - type: CartridgeLoader # Adds the MailMetrics courier tracker
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - MailMetricsCartridge
+
+- type: entity
   parent: BasePDA
   id: CargoPDA
   name: logistics PDA # DeltaV - Logistics Department replacing Cargo
@@ -497,6 +518,26 @@
 
 - type: entity
   parent: BasePDA
+  id: CaptainNTPDA
+  name: CAP special PDA unit
+  description: incredibly shining with embossed details.it says in gold "special unit unique to the best captain in the sector".
+  components:
+  - type: Pda
+    id: CaptainIDCard
+    state: pda-captainnano
+    penSlot:
+      startingItem: PenCap
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#7C5D00"
+  - type: Icon
+    state: pda-captainnano
+
+- type: entity
+  parent: BasePDA
   id: HoPPDA
   name: head of personnel PDA
   description: Looks like it's been chewed on.
@@ -518,6 +559,27 @@
 
 - type: entity
   parent: BasePDA
+  id: HoPNTPDA
+  name: HOP special PDA unit
+  description: Looks like it's been chewed on.it says in gold "special unit unique to the best head of personnel in the sector".
+  components:
+  - type: Pda
+    id: HoPIDCard
+    state: pda-hopnano
+    penSlot:
+      startingItem: PenHop
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#789876"
+    accentHColor: "#447987"
+  - type: Icon
+    state: pda-hopnano
+
+- type: entity
+  parent: BasePDA
   id: CEPDA
   name: chief engineer PDA
   description: Looks like it's barely been used.
@@ -530,6 +592,21 @@
     accentHColor: "#447987"
   - type: Icon
     state: pda-ce
+
+- type: entity
+  parent: BasePDA
+  id: CENTPDA
+  name: CE special PDA unit
+  description: Looks like it's barely been used.it says in gold "special unit unique to the best chief engineer in the sector".
+  components:
+  - type: Pda
+    id: CEIDCard
+    state: pda-cenano
+  - type: PdaBorderColor
+    borderColor: "#949137"
+    accentHColor: "#447987"
+  - type: Icon
+    state: pda-cenano
 
 - type: entity
   parent: BasePDA
@@ -567,6 +644,28 @@
     accentVColor: "#447987"
   - type: Icon
     state: pda-cmo
+
+- type: entity
+  parent: BaseMedicalPDA
+  id: CMONTPDA
+  name: CMO special pda unit
+  description: Extraordinarily shiny and sterile.it says in gold "special unit unique to the best chief medical officer in the sector". Has a built-in health analyzer.
+  components:
+  - type: Pda
+    id: CMOIDCard
+    state: pda-cmonano
+    penSlot: # Fancy Pen Light
+      startingItem: CMOPenLight
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentHColor: "#447987"
+    accentVColor: "#447987"
+  - type: Icon
+    state: pda-cmonano
 
 - type: entity
   parent: BaseMedicalPDA
@@ -658,6 +757,28 @@
 
 - type: entity
   parent: BasePDA
+  id: RnDNTPDA
+  name: MY special PDA unit # DeltaV - Epistemics Department replacing Science
+  description: It appears surprisingly ordinary.it says in gold "special unit unique to the best Mystagogue in the sector".
+  components:
+  - type: Pda
+    id: RDIDCard
+    state: pda-rdnano
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentHColor: "#447987"
+    accentVColor: "#8900c9"
+  - type: Icon
+    state: pda-rdnano
+  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - GlimmerMonitorCartridge
+
+- type: entity
+  parent: BasePDA
   id: SciencePDA
   name: epistemics PDA # DeltaV - Epistemics Department replacing Science
   description: It's covered with an unknown gooey substance.
@@ -706,6 +827,28 @@
     accentHColor: "#447987"
   - type: Icon
     state: pda-hos
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - CrimeAssistCartridge
+      - SecWatchCartridge
+
+- type: entity
+  parent: BasePDA
+  id: HoSNTPDA
+  name: HOS special PDA unit
+  description: Whosoever bears this PDA is the law.it says in gold "special unit unique to the best head of security in the sector".
+  components:
+  - type: Pda
+    id: HoSIDCard
+    state: pda-hosnano
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentHColor: "#447987"
+  - type: Icon
+    state: pda-hosnano
   - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
@@ -883,6 +1026,8 @@
       whitelist:
         components:
           - Cartridge
+  - type: ClothingAddFaction
+    faction: Syndicate
 
 - type: entity
   parent: BasePDA
@@ -1229,3 +1374,5 @@
       whitelist:
         components:
           - Cartridge
+  - type: ClothingAddFaction
+    faction: Syndicate

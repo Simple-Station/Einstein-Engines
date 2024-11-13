@@ -307,3 +307,15 @@
         - id: WeaponSniperMosin
           prob: 0.0010
           orGroup: syndiemaintloot
+
+- type: entity
+  id: ClosetWallRadiationFilled
+  suffix: Filled
+  parent: ClosetWallRadiation
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterSuitRad
+        amount: 2
+      - id: GeigerCounter
+        amount: 2
