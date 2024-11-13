@@ -340,7 +340,7 @@ namespace Content.Shared.SegmentedEntity
         private void OnParentChanged(EntityUid uid, SegmentedEntityComponent component, ref EntParentChangedMessage args)
         {
             //If the change was NOT to a different map
-            if (args.OldMapId == args.Transform.MapID)
+            if (args.OldMapId == args.Transform.MapUid)
                 RespawnSegments(uid, component);
         }
     }
