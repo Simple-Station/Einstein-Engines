@@ -206,11 +206,11 @@ public sealed class RadioDeviceSystem : EntitySystem
         if (uid == args.RadioSource)
             return;
 
-        var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));
+        var nameEv = new TransformSpeakerSpeechEvent(args.MessageSource, Name(args.MessageSource));
         RaiseLocalEvent(args.MessageSource, nameEv);
 
         var name = Loc.GetString("speech-name-relay", ("speaker", Name(uid)),
-            ("originalName", nameEv.Name));
+            ("originalName", nameEv.VoiceName ?? Name(args.MessageSource)));
 
         // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
         var message = args.OriginalChatMsg.Message; // The chat system will handle the rest and re-obfuscate if needed.

@@ -116,9 +116,9 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             Briefing = briefing
         }, mind, true);
 
-        // Change the faction
-        _npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
-        _npcFaction.AddFaction(traitor, component.SyndicateFaction);
+        // Don't Change the faction, this was stupid.
+        //_npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
+        //_npcFaction.AddFaction(traitor, component.SyndicateFaction);
 
         RaiseLocalEvent(traitor, new MoodEffectEvent("TraitorFocused"));
 
