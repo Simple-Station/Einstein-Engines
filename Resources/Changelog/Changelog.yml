@@ -7860,3 +7860,10 @@ Entries:
   id: 6515
   time: '2024-11-13T23:08:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1192
+- author: Ichaie
+  changes:
+    - type: Tweak
+      message: 'The Hive (map): add an SM engine to the eng, replacing the singularity.'
+  id: 6516
+  time: '2024-11-13T23:12:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1201
