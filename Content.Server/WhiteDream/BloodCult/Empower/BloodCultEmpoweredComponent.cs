@@ -19,7 +19,7 @@ public sealed partial class BloodCultEmpoweredComponent : Component
     ///     Increases the amount of spells cultists can create at once.
     /// </summary>
     [DataField]
-    public int ExtraSpells = 2;
+    public int ExtraSpells = 3;
 
     /// <summary>
     ///     The default duration of the empowering.

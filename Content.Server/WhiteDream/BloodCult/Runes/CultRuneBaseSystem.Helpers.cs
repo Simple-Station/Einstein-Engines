@@ -27,15 +27,14 @@ public sealed partial class CultRuneBaseSystem
     /// <param name="rune">The rune itself.</param>
     /// <param name="range">Radius for a lookup.</param>
     /// <param name="exlude">Filter to exlude from return.</param>
-    public HashSet<Entity<HumanoidAppearanceComponent>> GetTargetsNearRune(EntityUid rune, float range,
+    public HashSet<Entity<HumanoidAppearanceComponent>> GetTargetsNearRune(EntityUid rune,
+        float range,
         Predicate<Entity<HumanoidAppearanceComponent>>? exlude = null)
     {
         var runeTransform = Transform(rune);
         var possibleTargets = _lookup.GetEntitiesInRange<HumanoidAppearanceComponent>(runeTransform.Coordinates, range);
         if (exlude != null)
-        {
             possibleTargets.RemoveWhere(exlude);
-        }
 
         return possibleTargets;
     }
@@ -46,16 +45,10 @@ public sealed partial class CultRuneBaseSystem
     public void StopPulling(EntityUid target)
     {
         if (TryComp(target, out PullableComponent? pullable) && pullable.BeingPulled)
-        {
             _pulling.TryStopPull(target, pullable);
-        }
 
         // I wish there was a better way to do it
-        if (TryComp(target, out PullerComponent? puller) &&
-            puller.Pulling is { } pulledEntity &&
-            TryComp(pulledEntity, out PullableComponent? pulledEntityComponent))
-        {
-            _pulling.TryStopPull(pulledEntity, pulledEntityComponent);
-        }
+        if (_pulling.TryGetPulledEntity(target, out var pulling))
+            _pulling.TryStopPull(pulling.Value);
     }
 }

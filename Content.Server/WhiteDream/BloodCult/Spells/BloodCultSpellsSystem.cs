@@ -2,12 +2,15 @@
 using Content.Server.Cuffs;
 using Content.Server.DoAfter;
 using Content.Server.Emp;
+using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Server.Stunnable;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
+using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Inventory;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
 using Content.Shared.RadialSelector;
@@ -29,6 +32,8 @@ public sealed class BloodCultSpellsSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly CuffableSystem _cuffable = default!;
     [Dependency] private readonly EmpSystem _empSystem = default!;
+    [Dependency] private readonly HandsSystem _hands = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
@@ -50,6 +55,7 @@ public sealed class BloodCultSpellsSystem : EntitySystem
         SubscribeLocalEvent<BloodCultStunEvent>(OnStun);
         SubscribeLocalEvent<BloodCultEmpEvent>(OnEmp);
         SubscribeLocalEvent<BloodCultShacklesEvent>(OnShackles);
+        SubscribeLocalEvent<SummonEquipmentEvent>(OnSummonEquipment);
     }
 
     #region BaseHandlers
@@ -84,16 +90,21 @@ public sealed class BloodCultSpellsSystem : EntitySystem
 
     private void OnGetVerbs(Entity<BloodCultSpellsHolderComponent> cultist, ref GetVerbsEvent<ExamineVerb> args)
     {
+        if (args.User != args.Target)
+            return;
+
         var addVerb = new ExamineVerb
         {
             Category = VerbCategory.BloodSpells,
             Text = Loc.GetString("blood-cult-select-spells-verb"),
+            Priority = 1,
             Act = () => SelectBloodSpells(cultist)
         };
         var removeVerb = new ExamineVerb
         {
             Category = VerbCategory.BloodSpells,
             Text = Loc.GetString("blood-cult-remove-spells-verb"),
+            Priority = 0,
             Act = () => RemoveBloodSpells(cultist)
         };
 
@@ -129,7 +140,10 @@ public sealed class BloodCultSpellsSystem : EntitySystem
             cultist.Owner,
             cultist.Comp.SpellCreationTime,
             createSpellEvent,
-            cultist.Owner);
+            cultist.Owner)
+        {
+            BreakOnUserMove = true
+        };
 
         if (_doAfter.TryStartDoAfter(doAfter, out var doAfterId))
             cultist.Comp.DoAfterId = doAfterId;
@@ -180,6 +194,25 @@ public sealed class BloodCultSpellsSystem : EntitySystem
 
         _stun.TryKnockdown(ev.Target, ev.KnockdownDuration, true);
         _statusEffects.TryAddStatusEffect<MutedComponent>(ev.Target, "Muted", ev.MuteDuration, true);
+        ev.Handled = true;
+    }
+
+    private void OnSummonEquipment(SummonEquipmentEvent ev)
+    {
+        if (ev.Handled)
+            return;
+
+        foreach (var (slot, protoId) in ev.Prototypes)
+        {
+            var entity = Spawn(protoId, _transform.GetMapCoordinates(ev.Performer));
+            _hands.TryPickupAnyHand(ev.Performer, entity);
+            if (!TryComp(entity, out ClothingComponent? _))
+                continue;
+
+            _inventory.TryUnequip(ev.Performer, slot);
+            _inventory.TryEquip(ev.Performer, entity, slot, force: true);
+        }
+
         ev.Handled = true;
     }
 

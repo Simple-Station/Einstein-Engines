@@ -19,7 +19,7 @@
       startingGear: BloodCultistGear
       components:
       - type: BloodCultist
-      - type: BloodCultPowersHolder
+      - type: BloodCultSpellsHolder
       mindComponents:
       - type: BloodCultistRole
         prototype: BloodCultist

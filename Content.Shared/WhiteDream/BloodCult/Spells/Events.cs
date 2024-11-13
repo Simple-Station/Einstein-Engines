@@ -8,17 +8,6 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.WhiteDream.BloodCult.Spells;
 
-public sealed partial class SummonEquipmentEvent : InstantActionEvent, ISpeakSpell
-{
-    [DataField]
-    public List<EntProtoId> Prototypes = new();
-
-    [DataField]
-    public string? Speech { get; set; }
-
-    public InGameICChatType ChatType => InGameICChatType.Whisper;
-}
-
 public sealed partial class BloodCultStunEvent : EntityTargetActionEvent, ISpeakSpell
 {
     [DataField]
@@ -80,6 +69,20 @@ public sealed partial class BloodCultShacklesEvent : EntityTargetActionEvent, IS
 
 public sealed partial class BloodCultTwistedConstructionEvent : EntityTargetActionEvent, ISpeakSpell
 {
+    [DataField]
+    public string? Speech { get; set; }
+
+    public InGameICChatType ChatType => InGameICChatType.Whisper;
+}
+
+public sealed partial class SummonEquipmentEvent : InstantActionEvent, ISpeakSpell
+{
+    /// <summary>
+    /// Slot - EntProtoId
+    /// </summary>
+    [DataField]
+    public Dictionary<string, EntProtoId> Prototypes = new();
+
     [DataField]
     public string? Speech { get; set; }
 

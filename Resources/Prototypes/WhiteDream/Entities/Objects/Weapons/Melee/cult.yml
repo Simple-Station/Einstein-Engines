@@ -131,3 +131,23 @@
   - type: CultItem
 #  - type: BloodSpear
 #    action: InstantActionRecallBloodSpear
+
+- type: entity
+  parent: BaseItem
+  id: BloodRitesAura
+  name: blood rite aura
+  description: Absorbs blood from anything you touch. Touching cultists and constructs can heal them. Use in-hand to cast an advanced rite.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/rites.rsi
+    state: icon
+  - type: Unremoveable
+  - type: BloodRitesAura
+  - type: UserInterface
+    interfaces:
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false

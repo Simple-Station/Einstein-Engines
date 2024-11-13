@@ -11,6 +11,7 @@ using Content.Shared.Ensnaring.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Throwing;
+using Content.Shared.Whitelist;
 
 namespace Content.Server.Ensnaring;
 
@@ -20,6 +21,7 @@ public sealed partial class EnsnareableSystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
 
     public void InitializeEnsnaring()
     {
@@ -70,8 +72,9 @@ public sealed partial class EnsnareableSystem
     /// <param name="component">The ensnaring component</param>
     public void TryEnsnare(EntityUid target, EntityUid ensnare, EnsnaringComponent component)
     {
-        //Don't do anything if they don't have the ensnareable component.
-        if (!TryComp<EnsnareableComponent>(target, out var ensnareable))
+        //Don't do anything if they don't have the ensnareable component or should be ignored.
+        if (!TryComp<EnsnareableComponent>(target, out var ensnareable) ||
+            component.IgnoredTargets is not null && _entityWhitelist.IsValid(component.IgnoredTargets, target))
             return;
 
         var legs = _body.GetBodyChildrenOfType(target, BodyPartType.Leg).Count();
