@@ -7853,3 +7853,24 @@ Entries:
   id: 6514
   time: '2024-11-10T15:22:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1195
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Butlertron is no longer as wide as a barn.
+  id: 6515
+  time: '2024-11-13T23:08:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1192
+- author: Ichaie
+  changes:
+    - type: Tweak
+      message: 'The Hive (map): add an SM engine to the eng, replacing the singularity.'
+  id: 6516
+  time: '2024-11-13T23:12:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1201
+- author: DocNITE
+  changes:
+    - type: Add
+      message: Return  'Monument' and 'Atomic Amnesia MMX' as a lobby music.
+  id: 6517
+  time: '2024-11-13T23:17:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1204
