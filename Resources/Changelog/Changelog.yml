@@ -7874,3 +7874,14 @@ Entries:
   id: 6517
   time: '2024-11-13T23:17:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1204
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Syndicate Listening Posts can no longer spawn on a planet surface. This
+        isn't for balance reasons, I would love for planetside listening posts.
+        This is actually to address a server crashing bug whereby listening
+        posts on planets cause 7 billion entities to spawn.
+  id: 6518
+  time: '2024-11-13T23:27:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1188
