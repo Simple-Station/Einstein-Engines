@@ -7853,3 +7853,10 @@ Entries:
   id: 6514
   time: '2024-11-10T15:22:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1195
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Butlertron is no longer as wide as a barn.
+  id: 6515
+  time: '2024-11-13T23:08:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1192
