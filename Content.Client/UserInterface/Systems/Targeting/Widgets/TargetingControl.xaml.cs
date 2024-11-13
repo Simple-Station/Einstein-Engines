@@ -55,6 +55,11 @@ public sealed partial class TargetingControl : UIWidget
         }
     }
 
+    protected override void OnThemeUpdated()
+    {
+        TargetDoll.Texture = Theme.ResolveTexture("target_doll");
+    }
+
     public void SetTargetDollVisible(bool visible)
     {
         Visible = visible;

@@ -219,17 +219,31 @@ public abstract partial class SharedSurgerySystem
         return metaData.EntityPrototype?.ID;
     }
 
+    // I wonder if theres not a function that can do this already.
+    private bool HasDamageGroup(EntityUid entity, string[] group, out DamageableComponent? damageable)
+    {
+        if (!TryComp<DamageableComponent>(entity, out var damageableComp))
+        {
+            damageable = null;
+            return false;
+        }
+
+        damageable = damageableComp;
+        return group.Any(damageType => damageableComp.Damage.DamageDict.TryGetValue(damageType, out var value) && value > 0);
+
+    }
+
     private void OnTendWoundsStep(Entity<SurgeryTendWoundsEffectComponent> ent, ref SurgeryStepEvent args)
     {
         var group = ent.Comp.MainGroup == "Brute" ? BruteDamageTypes : BurnDamageTypes;
 
-        if (!TryComp(args.Body, out DamageableComponent? damageable)
-            || !group.Any(damageType => damageable.Damage.DamageDict.TryGetValue(damageType, out var value)
-                && value > 0)
-            && (!TryComp(args.Part, out BodyPartComponent? bodyPart)
-            || bodyPart.TotalDamage <= bodyPart.MinIntegrity))
+        if (!HasDamageGroup(args.Body, group, out var damageable)
+            || !HasDamageGroup(args.Part, group, out var _)
+            || damageable == null) // This shouldnt be possible but the compiler doesn't shut up.
             return;
 
+
+        // Right now the bonus is based off the body's total damage, maybe we could make it based off each part in the future.
         var bonus = ent.Comp.HealMultiplier * damageable.DamagePerGroup[ent.Comp.MainGroup];
         if (_mobState.IsDead(args.Body))
             bonus *= 0.2;
@@ -250,11 +264,8 @@ public abstract partial class SharedSurgerySystem
     {
         var group = ent.Comp.MainGroup == "Brute" ? BruteDamageTypes : BurnDamageTypes;
 
-        if (!TryComp(args.Body, out DamageableComponent? damageable)
-            || group.Any(damageType => damageable.Damage.DamageDict.TryGetValue(damageType, out var value)
-                && value > 0)
-            || !TryComp(args.Part, out BodyPartComponent? bodyPart)
-            || bodyPart.TotalDamage > bodyPart.MinIntegrity)
+        if (!HasDamageGroup(args.Body, group, out var _)
+            || !HasDamageGroup(args.Part, group, out var _))
             args.Cancelled = true;
     }
 
@@ -344,11 +355,10 @@ public abstract partial class SharedSurgerySystem
             // We reward players for properly affixing the parts by healing a little bit of damage, and enabling the part temporarily.
             var ev = new BodyPartEnableChangedEvent(true);
             RaiseLocalEvent(targetPart.Id, ref ev);
-            _body.TryChangeIntegrity(targetPart,
+            _damageable.TryChangeDamage(args.Body,
                 _body.GetHealingSpecifier(targetPart.Component) * 2,
-                false,
-                _body.GetTargetBodyPart(targetPart.Component.PartType, targetPart.Component.Symmetry),
-                out _);
+                canSever: false, // Just in case we heal a brute damage specifier and the logic gets fucky lol
+                targetPart: _body.GetTargetBodyPart(targetPart.Component.PartType, targetPart.Component.Symmetry));
             RemComp<BodyPartReattachedComponent>(targetPart.Id);
         }
     }

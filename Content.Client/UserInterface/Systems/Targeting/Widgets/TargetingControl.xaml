@@ -8,7 +8,6 @@
     <Control HorizontalAlignment="Right">
         <TextureRect
             Name="TargetDoll"
-            TexturePath="target_doll"
             Stretch="KeepAspectCentered"
             SetSize="96 96">
             <PanelContainer
@@ -26,7 +25,7 @@
                         StyleClasses="TargetDollButtonRightArm"
                         VerticalAlignment="Top">
                         <TextureRect
-                            TexturePath="/Textures/Interface/Targeting/Doll/r_arm.png"
+                            TexturePath="/Textures/Interface/Targeting/Doll/rightarm.png"
                             Stretch="KeepAspectCentered"
                             SetSize="12 24"
                             VerticalAlignment="Center"
@@ -38,7 +37,7 @@
                         VerticalAlignment="Bottom"
                         StyleClasses="TargetDollButtonRightHand">
                         <TextureRect
-                            TexturePath="/Textures/Interface/Targeting/Doll/r_hand.png"
+                            TexturePath="/Textures/Interface/Targeting/Doll/righthand.png"
                             Stretch="KeepAspectCentered"
                             SetSize="12 12"
                             VerticalAlignment="Center"
@@ -96,7 +95,7 @@
                         HorizontalAlignment="Center"
                         StyleClasses="TargetDollButtonChest">
                         <TextureRect
-                            TexturePath="/Textures/Interface/Targeting/Doll/chest.png"
+                            TexturePath="/Textures/Interface/Targeting/Doll/torso.png"
                             Stretch="KeepAspectCentered"
                             SetSize="27 30"
                             VerticalAlignment="Center"
@@ -130,7 +129,7 @@
                                 HorizontalAlignment="Left"
                                 StyleClasses="TargetDollButtonLeftLeg">
                                 <TextureRect
-                                    TexturePath="/Textures/Interface/Targeting/Doll/l_leg.png"
+                                    TexturePath="/Textures/Interface/Targeting/Doll/leftleg.png"
                                     Stretch="KeepAspectCentered"
                                     SetSize="12 27"
                                     VerticalAlignment="Center"
@@ -142,7 +141,7 @@
                                 VerticalAlignment="Bottom"
                                 StyleClasses="TargetDollButtonLeftFoot">
                                     <TextureRect
-                                        TexturePath="/Textures/Interface/Targeting/Doll/l_foot.png"
+                                        TexturePath="/Textures/Interface/Targeting/Doll/leftfoot.png"
                                         Stretch="KeepAspectCentered"
                                         SetSize="18 9"
                                         VerticalAlignment="Center"
@@ -160,7 +159,7 @@
                                 HorizontalAlignment="Right"
                                 StyleClasses="TargetDollButtonRightLeg">
                                 <TextureRect
-                                    TexturePath="/Textures/Interface/Targeting/Doll/r_leg.png"
+                                    TexturePath="/Textures/Interface/Targeting/Doll/rightleg.png"
                                     Stretch="KeepAspectCentered"
                                     SetSize="12 27"
                                     VerticalAlignment="Center"
@@ -173,7 +172,7 @@
                                 HorizontalAlignment="Center"
                                 StyleClasses="TargetDollButtonRightFoot">
                                 <TextureRect
-                                    TexturePath="/Textures/Interface/Targeting/Doll/r_foot.png"
+                                    TexturePath="/Textures/Interface/Targeting/Doll/rightfoot.png"
                                     Stretch="KeepAspectCentered"
                                     SetSize="18 9"
                                     VerticalAlignment="Center"
@@ -192,7 +191,7 @@
                         StyleClasses="TargetDollButtonLeftArm"
                         VerticalAlignment="Top">
                         <TextureRect
-                            TexturePath="/Textures/Interface/Targeting/Doll/l_arm.png"
+                            TexturePath="/Textures/Interface/Targeting/Doll/leftarm.png"
                             Stretch="KeepAspectCentered"
                             SetSize="12 24"
                             VerticalAlignment="Center"
@@ -204,7 +203,7 @@
                         VerticalAlignment="Bottom"
                         StyleClasses="TargetDollButtonLeftHand">
                         <TextureRect
-                            TexturePath="/Textures/Interface/Targeting/Doll/l_hand.png"
+                            TexturePath="/Textures/Interface/Targeting/Doll/lefthand.png"
                             Stretch="KeepAspectCentered"
                             SetSize="12 12"
                             VerticalAlignment="Center"

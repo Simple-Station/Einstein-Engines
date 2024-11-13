@@ -36,6 +36,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
@@ -110,9 +111,9 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     private void OnWoundedValid(Entity<SurgeryWoundedConditionComponent> ent, ref SurgeryValidEvent args)
     {
         if (!TryComp(args.Body, out DamageableComponent? damageable)
-            || !TryComp(args.Part, out BodyPartComponent? bodyPart)
+            || !TryComp(args.Part, out DamageableComponent? partDamageable)
             || damageable.TotalDamage <= 0
-            && bodyPart.TotalDamage <= bodyPart.MinIntegrity
+            && partDamageable.TotalDamage <= 0
             && !HasComp<IncisionOpenComponent>(args.Part))
             args.Cancelled = true;
     }

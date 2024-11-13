@@ -33,7 +33,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
@@ -90,15 +90,16 @@ public sealed class SurgerySystem : SharedSurgerySystem
         EntityUid user,
         EntityUid part)
     {
-        var changed = _damageableSystem.TryChangeDamage(body, damage, true, origin: user, canSever: false, partMultiplier: partMultiplier);
-        if (changed != null
-            && changed.GetTotal() == 0
-            && damage.GetTotal() < 0
-            && TryComp<BodyPartComponent>(part, out var partComp))
-        {
-            var targetPart = _body.GetTargetBodyPart(partComp.PartType, partComp.Symmetry);
-            _body.TryChangeIntegrity((part, partComp), damage, false, targetPart, out var _);
-        }
+        if (!TryComp<BodyPartComponent>(part, out var partComp))
+            return;
+
+        _damageable.TryChangeDamage(body,
+            damage,
+            true,
+            origin: user,
+            canSever: false,
+            partMultiplier: partMultiplier,
+            targetPart: _body.GetTargetBodyPart(partComp));
     }
 
     private void OnToolAfterInteract(Entity<SurgeryToolComponent> ent, ref AfterInteractEvent args)

@@ -85,28 +85,12 @@ public sealed class HealingSystem : EntitySystem
         if (healing.ModifyBloodLevel != 0)
             _bloodstreamSystem.TryModifyBloodLevel(entity.Owner, healing.ModifyBloodLevel);
 
-        var healed = _damageable.TryChangeDamage(entity.Owner, healing.Damage, true, origin: args.Args.User);
+        var healed = _damageable.TryChangeDamage(entity.Owner, healing.Damage, true, origin: args.Args.User, canSever: false);
 
         if (healed == null && healing.BloodlossModifier != 0)
             return;
 
         var total = healed?.GetTotal() ?? FixedPoint2.Zero;
-
-        /*
-           This is rather shitcodey. Problem is that right now damage is coupled to integrity.
-           If the body is fully healed, all of the checks on TryChangeDamage stop us from actually healing.
-           So in this case we add a special check to heal anyway if TryChangeDamage returns null.
-        */
-        if (total == 0)
-        {
-            var parts = _bodySystem.GetBodyChildren(args.Target).ToList();
-            // We fetch the most damaged body part
-            var mostDamaged = parts.MinBy(x => x.Component.TotalDamage);
-            var targetBodyPart = _bodySystem.GetTargetBodyPart(mostDamaged);
-
-            if (targetBodyPart != null)
-                _bodySystem.TryChangeIntegrity(mostDamaged, healing.Damage, false, targetBodyPart.Value, out _);
-        }
 
         // Re-verify that we can heal the damage.
 
@@ -164,7 +148,8 @@ public sealed class HealingSystem : EntitySystem
 
         foreach (var part in _bodySystem.GetBodyChildren(target, body))
         {
-            if (part.Component.TotalDamage > part.Component.MinIntegrity)
+            if (TryComp<DamageableComponent>(part.Id, out var damageable)
+                && damageable.TotalDamage > part.Component.MinIntegrity)
                 return true;
         }
         return false;

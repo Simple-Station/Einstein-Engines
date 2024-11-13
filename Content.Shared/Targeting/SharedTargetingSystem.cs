@@ -10,7 +10,7 @@ public abstract class SharedTargetingSystem : EntitySystem
         {
             TargetBodyPart.Head,
             TargetBodyPart.Torso,
-            TargetBodyPart.Groin,
+            //TargetBodyPart.Groin,
             TargetBodyPart.LeftArm,
             TargetBodyPart.LeftHand,
             TargetBodyPart.LeftLeg,

@@ -1628,7 +1628,7 @@ namespace Content.Client.Stylesheets
 
                 Element<TextureButton>().Class("TargetDollButtonChest")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/chest_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/torso_hover.png")),
 
                 Element<TextureButton>().Class("TargetDollButtonGroin")
                     .Pseudo(TextureButton.StylePseudoClassHover)
@@ -1636,35 +1636,35 @@ namespace Content.Client.Stylesheets
 
                 Element<TextureButton>().Class("TargetDollButtonLeftArm")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/l_arm_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/leftarm_hover.png")),
 
                 Element<TextureButton>().Class("TargetDollButtonLeftHand")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/l_hand_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/lefthand_hover.png")),
 
                 Element<TextureButton>().Class("TargetDollButtonRightArm")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/r_arm_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/rightarm_hover.png")),
 
                 Element<TextureButton>().Class("TargetDollButtonRightHand")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/r_hand_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/righthand_hover.png")),
 
                 Element<TextureButton>().Class("TargetDollButtonLeftLeg")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/l_leg_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/leftleg_hover.png")),
 
                 Element<TextureButton>().Class("TargetDollButtonLeftFoot")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/l_foot_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/leftfoot_hover.png")),
 
                 Element<TextureButton>().Class("TargetDollButtonRightLeg")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/r_leg_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/rightleg_hover.png")),
 
                 Element<TextureButton>().Class("TargetDollButtonRightFoot")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/r_foot_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Targeting/Doll/rightfoot_hover.png")),
 
                 Element<TextureButton>().Class("TargetDollButtonEyes")
                     .Pseudo(TextureButton.StylePseudoClassHover)

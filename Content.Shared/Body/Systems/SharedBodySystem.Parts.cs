@@ -81,6 +81,7 @@ public partial class SharedBodySystem
 
         if (TryComp(removedUid, out BodyPartComponent? part) && part.Body is not null)
         {
+            CheckBodyPart((removedUid, part), GetTargetBodyPart(part), true);
             RemovePart(part.Body.Value, (removedUid, part), slotId);
             RecursiveBodyUpdate((removedUid, part), null);
         }
@@ -229,6 +230,14 @@ public partial class SharedBodySystem
             || !Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
             return;
 
+        RemovePartChildren(partEnt, bodyEnt, bodyEnt.Comp);
+    }
+
+    protected void RemovePartChildren(Entity<BodyPartComponent> partEnt, EntityUid bodyEnt, BodyComponent? body = null)
+    {
+        if (!Resolve(bodyEnt, ref body, logMissing: false))
+            return;
+
         if (partEnt.Comp.Children.Any())
         {
             foreach (var slotId in partEnt.Comp.Children.Keys)
@@ -243,9 +252,9 @@ public partial class SharedBodySystem
                     DropPart((childEntity, childPart));
                 }
             }
-            Dirty(bodyEnt, bodyEnt.Comp);
-        }
 
+            Dirty(bodyEnt, body);
+        }
     }
 
     private void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)

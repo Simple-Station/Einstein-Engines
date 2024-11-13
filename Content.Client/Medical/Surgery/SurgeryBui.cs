@@ -33,8 +33,6 @@ public sealed class SurgeryBui : BoundUserInterface
     private bool _isBody = false;
     private (EntityUid Ent, EntProtoId Proto)? _surgery;
     private readonly List<EntProtoId> _previousSurgeries = new();
-    private DateTime _lastRefresh = DateTime.UtcNow;
-    private (string handName, EntityUid item) _throttling = ("", new EntityUid());
     public SurgeryBui(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         _system = _entities.System<SurgerySystem>();

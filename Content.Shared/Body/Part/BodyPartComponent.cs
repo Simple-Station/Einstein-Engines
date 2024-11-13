@@ -69,31 +69,6 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     public Dictionary<string, OrganSlot> Organs = new();
 
     /// <summary>
-    /// How much health the body part has until it pops out.
-    /// </summary>
-    [ViewVariables]
-    public float TotalDamage => Damage.GetTotal().Float();
-
-    /// <summary>
-    /// The DamageSpecifier that contains all types of damage that the BodyPart can take.
-    /// TODO: Rework this with DamageableComponent
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public DamageSpecifier Damage = new()
-    {
-        DamageDict = new Dictionary<string, FixedPoint2>
-        {
-            { "Blunt", 0 },
-            { "Slash", 0 },
-            { "Piercing", 0 },
-            { "Heat", 0 },
-            { "Cold", 0 },
-            { "Shock", 0 },
-            { "Caustic", 0 },
-        }
-    };
-
-    /// <summary>
     /// What's the max health this body part can have?
     /// </summary>
     [DataField]
@@ -156,7 +131,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
         { TargetIntegrity.ModeratelyWounded, 60 },
         { TargetIntegrity.SomewhatWounded, 40},
         { TargetIntegrity.LightlyWounded, 20 },
-        { TargetIntegrity.Healthy, 0 },
+        { TargetIntegrity.Healthy, 10 },
     };
 
     /// <summary>
