@@ -3,9 +3,9 @@
                   xmlns:partStatus="clr-namespace:Content.Client.UserInterface.Systems.PartStatus.Widgets"
                   MinSize="64 64">
     <GridContainer Columns="1" HorizontalAlignment="Right" VerticalAlignment="Top">
-        <partStatus:PartStatusControl Name="PartStatus" Access="Protected"/>
         <PanelContainer >
             <BoxContainer Name="AlertContainer" Access="Public" Orientation="Vertical" />
         </PanelContainer>
+        <partStatus:PartStatusControl Name="PartStatus" Access="Protected"/>
     </GridContainer>
 </widgets:AlertsUI>
