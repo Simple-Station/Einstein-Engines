@@ -9,8 +9,12 @@
       implantAction: ActionSyrinxChangeVoiceMask
       whitelist:
         components:
-        - HarpySinger
-    - type: VoiceMasker
+        - Flight # If someone else has the flight component, or you can obtain it in some way, this needs to be changed. To be a harpy only thing.
+    - type: VoiceMask
+    - type: UserInterface
+      interfaces:
+        enum.VoiceMaskUIKey.Key:
+          type: VoiceMaskBoundUserInterface
     - type: Tag
       tags:
         - SubdermalImplant

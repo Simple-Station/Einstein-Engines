@@ -825,13 +825,6 @@
   id: MobMonkeyPunpun
   description: A prominent representative of monkeys with unlimited access to alcohol.
   components:
-  - type: GhostRole
-    prob: 1
-    makeSentient: true
-    allowSpeech: true
-    allowMovement: true
-    name: ghost-role-information-punpun-name
-    description: ghost-role-information-punpun-description
   - type: GhostTakeoverAvailable
   - type: Butcherable
     butcheringType: Spike
@@ -859,6 +852,7 @@
     - TauCetiBasic
     - Monkey
     - Kobold
+  - type: Punpun
 
 - type: entity
   name: Tropico
