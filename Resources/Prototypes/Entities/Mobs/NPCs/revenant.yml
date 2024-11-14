@@ -107,3 +107,5 @@
     powersToAdd:
       - XenoglossyPower
       - TelepathyPower
+  - type: LanguageSpeaker
+  - type: UniversalLanguageSpeaker
