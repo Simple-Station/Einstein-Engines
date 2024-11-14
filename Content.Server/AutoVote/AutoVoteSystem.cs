@@ -50,8 +50,8 @@ public sealed class AutoVoteSystem : EntitySystem
         }
 
         if (_cfg.GetCVar(CCVars.MapAutoVoteEnabled))
-            _voteManager.CreateStandardVote(null, StandardVoteType.Preset);
-        if (_cfg.GetCVar(CCVars.PresetAutoVoteEnabled))
             _voteManager.CreateStandardVote(null, StandardVoteType.Map);
+        if (_cfg.GetCVar(CCVars.PresetAutoVoteEnabled))
+            _voteManager.CreateStandardVote(null, StandardVoteType.Preset);
     }
 }
