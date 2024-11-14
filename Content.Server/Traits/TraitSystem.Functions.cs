@@ -74,7 +74,7 @@ public sealed partial class TraitRemoveComponent : TraitFunction
         ISerializationManager serializationManager)
     {
         foreach (var (name, _) in Components)
-            entityManager.RemoveComponent(uid, (Component) factory.GetComponent(name));
+            entityManager.RemoveComponentDeferred(uid, factory.GetComponent(name).GetType());
     }
 }
 
