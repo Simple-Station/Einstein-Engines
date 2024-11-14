@@ -474,7 +474,8 @@ namespace Content.Client.Lobby.UI
 
             #endregion Left
 
-            ShowClothes.OnToggled += args => { ReloadProfilePreview(); };
+            ShowClothes.OnToggled += _ => { SetProfile(Profile, CharacterSlot); };
+            ShowLoadouts.OnToggled += _ => { SetProfile(Profile, CharacterSlot); };
 
             SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
             UpdateSpeciesGuidebookIcon();
@@ -946,7 +947,7 @@ namespace Content.Client.Lobby.UI
                         Profile = Profile?.WithJobPriority(job.ID, (JobPriority) priority);
                         ReloadPreview();
                         SetDirty();
-                        UpdateCharacterRequired();
+                        SetProfile(Profile, CharacterSlot);
                     };
 
                     _jobPriorities.Add((job.ID, selector));
@@ -1869,7 +1870,7 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile?.WithTraitPreference(selector.Trait.ID, preference);
                     IsDirty = true;
                     UpdateTraitPreferences();
-                    UpdateCharacterRequired();
+                    SetProfile(Profile, CharacterSlot);
                 };
             }
 
@@ -2236,7 +2237,7 @@ namespace Content.Client.Lobby.UI
                         preference.CustomHeirloom);
                     IsDirty = true;
                     UpdateLoadoutPreferences();
-                    UpdateCharacterRequired();
+                    SetProfile(Profile, CharacterSlot);
                 };
             }
 
