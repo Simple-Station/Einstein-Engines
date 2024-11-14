@@ -23,6 +23,7 @@ namespace Content.Shared.SegmentedEntity
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly SharedJointSystem _jointSystem = default!;
         [Dependency] private readonly INetManager _net = default!;
+        [Dependency] private readonly SharedTransformSystem _transform = default!;
 
         Queue<(SegmentedEntitySegmentComponent segment, EntityUid lamia)> _segments = new();
 
@@ -75,14 +76,14 @@ namespace Content.Shared.SegmentedEntity
 
                 if (segment.segment.SegmentNumber == 1)
                 {
-                    Transform(segmentUid).Coordinates = Transform(attachedUid).Coordinates;
+                    _transform.SetCoordinates(segmentUid, Transform(attachedUid).Coordinates);
                     var revoluteJoint = _jointSystem.CreateWeldJoint(attachedUid, segmentUid, id: "Segment" + segment.segment.SegmentNumber + segment.segment.Lamia);
                     revoluteJoint.CollideConnected = false;
                 }
                 if (segment.segment.SegmentNumber <= segment.segment.MaxSegments)
-                    Transform(segmentUid).Coordinates = Transform(attachedUid).Coordinates.Offset(new Vector2(0, segment.segment.OffsetSwitching * humanoidFactor));
+                    _transform.SetCoordinates(segmentUid, Transform(attachedUid).Coordinates.Offset(new Vector2(0, segment.segment.OffsetSwitching * humanoidFactor)));
                 else
-                    Transform(segmentUid).Coordinates = Transform(attachedUid).Coordinates.Offset(new Vector2(0, segment.segment.OffsetSwitching * humanoidFactor));
+                    _transform.SetCoordinates(segmentUid, Transform(attachedUid).Coordinates.Offset(new Vector2(0, segment.segment.OffsetSwitching * humanoidFactor)));
 
                 var joint = _jointSystem.CreateDistanceJoint(attachedUid, segmentUid, id: ("Segment" + segment.segment.SegmentNumber + segment.segment.Lamia));
                 joint.CollideConnected = false;
@@ -298,8 +299,8 @@ namespace Content.Shared.SegmentedEntity
         private void OnParentChanged(EntityUid uid, SegmentedEntityComponent component, ref EntParentChangedMessage args)
         {
             //If the change was NOT to a different map
-            if (args.OldMapId == args.Transform.MapUid)
-                RespawnSegments(uid, component);
+            //if (args.OldMapId == args.Transform.MapUid)
+            //    RespawnSegments(uid, component);
         }
     }
 }
