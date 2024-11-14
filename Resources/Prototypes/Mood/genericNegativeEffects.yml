@@ -47,5 +47,5 @@
 # Surgery
 - type: moodEffect
   id: SurgeryPain
-  moodChange: -10
+  moodChange: -30 # lol too lazy to make a category of ramping surgery moods, wonder how bad this will be.
   timeout: 360

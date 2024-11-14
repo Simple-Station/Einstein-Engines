@@ -156,3 +156,17 @@
   completetime: 30
   materials:
     Biomass: 10
+
+- type: latheRecipe
+  id: PizzaLeftArm
+  result: PizzaLeftArm
+  completetime: 30
+  materials:
+    Biomass: 5
+
+- type: latheRecipe
+  id: PizzaRightArm
+  result: PizzaRightArm
+  completetime: 30
+  materials:
+    Biomass: 5

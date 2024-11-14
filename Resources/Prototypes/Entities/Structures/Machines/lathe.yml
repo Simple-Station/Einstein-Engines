@@ -1542,3 +1542,7 @@
     - SynthRightArm
     - SynthLeftHand
     - SynthRightHand
+  - type: EmagLatheRecipes
+    emagStaticRecipes:
+      - PizzaLeftArm
+      - PizzaRightArm

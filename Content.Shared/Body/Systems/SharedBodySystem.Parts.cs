@@ -177,17 +177,10 @@ public partial class SharedBodySystem
         {
             var enableEvent = new BodyPartEnableChangedEvent(false);
             RaiseLocalEvent(partEnt, ref enableEvent);
-
-            if (TryComp(body, out HumanoidAppearanceComponent? bodyAppearance)
-                && !HasComp<BodyPartAppearanceComponent>(partEnt)
-                && !TerminatingOrDeleted(body)
-                && !TerminatingOrDeleted(partEnt))
-                EnsureComp<BodyPartAppearanceComponent>(partEnt);
-
-            SharedTransform.AttachToGridOrMap(partEnt, transform);
-            _randomHelper.RandomOffset(partEnt, 0.5f);
             var droppedEvent = new BodyPartDroppedEvent(partEnt);
             RaiseLocalEvent(body, ref droppedEvent);
+            SharedTransform.AttachToGridOrMap(partEnt, transform);
+            _randomHelper.RandomOffset(partEnt, 0.5f);
         }
 
     }
@@ -274,6 +267,9 @@ public partial class SharedBodySystem
 
     private void OnPartEnableChanged(Entity<BodyPartComponent> partEnt, ref BodyPartEnableChangedEvent args)
     {
+        if (!partEnt.Comp.CanEnable && args.Enabled)
+            return;
+
         partEnt.Comp.Enabled = args.Enabled;
         Dirty(partEnt, partEnt.Comp);
 
@@ -623,7 +619,7 @@ public partial class SharedBodySystem
 
         part.ParentSlot = slot;
 
-        if (TryComp(part.Body, out HumanoidAppearanceComponent? bodyAppearance)
+        if (TryComp(parentPart.Body, out HumanoidAppearanceComponent? bodyAppearance)
             && !HasComp<BodyPartAppearanceComponent>(partId)
             && !TerminatingOrDeleted(parentPartId)
             && !TerminatingOrDeleted(partId)) // Saw some exceptions involving these due to the spawn menu.

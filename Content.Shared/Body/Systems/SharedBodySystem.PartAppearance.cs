@@ -26,12 +26,17 @@ public partial class SharedBodySystem
 
     private void OnPartAppearanceStartup(EntityUid uid, BodyPartAppearanceComponent component, ComponentStartup args)
     {
-        if (!TryComp(uid, out BodyPartComponent? part)
-            || part.OriginalBody == null
+        if (!TryComp(uid, out BodyPartComponent? part))
+            return;
+
+        if (part.OriginalBody == null
             || TerminatingOrDeleted(part.OriginalBody.Value)
             || !TryComp(part.OriginalBody.Value, out HumanoidAppearanceComponent? bodyAppearance)
             || part.ToHumanoidLayers() is not { } relevantLayer)
+        {
+            component.ID = part.BaseLayerId;
             return;
+        }
 
         var customLayers = bodyAppearance.CustomBaseLayers;
         var spriteLayers = bodyAppearance.BaseLayers;
@@ -136,10 +141,17 @@ public partial class SharedBodySystem
     private void OnPartDroppedFromBody(EntityUid uid, BodyComponent component, ref BodyPartDroppedEvent args)
     {
         if (TerminatingOrDeleted(uid)
-            || !TryComp(args.Part, out BodyPartAppearanceComponent? appearance))
+            || TerminatingOrDeleted(args.Part)
+            || !TryComp(uid, out HumanoidAppearanceComponent? bodyAppearance))
             return;
 
-        RemoveAppearance(uid, appearance, args.Part);
+        // We check for this conditional here since some entities may not have a profile... If they dont
+        // have one, and their part is gibbed, the markings will not be removed or applied properly.
+        if (!HasComp<BodyPartAppearanceComponent>(args.Part))
+            EnsureComp<BodyPartAppearanceComponent>(args.Part);
+
+        if (TryComp<BodyPartAppearanceComponent>(args.Part, out var partAppearance))
+            RemoveAppearance(uid, partAppearance, args.Part);
     }
 
     protected void UpdateAppearance(EntityUid target,

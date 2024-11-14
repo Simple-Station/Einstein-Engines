@@ -371,11 +371,22 @@ public partial class SharedBodySystem
             return gibs;
 
         if (part.Body is { } bodyEnt)
+        {
             RemovePartChildren((partId, part), bodyEnt);
+            foreach (var organ in GetPartOrgans(partId, part))
+            {
+                _gibbingSystem.TryGibEntityWithRef(bodyEnt, organ.Id, GibType.Drop, GibContentsOption.Skip,
+                    ref gibs, playAudio: false, launchImpulse: GibletLaunchImpulse * splatModifier,
+                    launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
+            }
+            var ev = new BodyPartDroppedEvent((partId, part));
+            RaiseLocalEvent(bodyEnt, ref ev);
+        }
 
         _gibbingSystem.TryGibEntityWithRef(partId, partId, GibType.Gib, GibContentsOption.Drop, ref gibs,
                 playAudio: true, launchGibs: true, launchDirection: splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
                 launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
+
 
         if (TryComp<InventoryComponent>(partId, out var inventory))
         {

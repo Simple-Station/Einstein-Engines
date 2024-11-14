@@ -81,6 +81,12 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     public bool Enabled = true;
 
     /// <summary>
+    /// Whether this body part can be enabled or not. Used for non-functional prosthetics.
+    /// </summary>
+    [DataField]
+    public bool CanEnable = true;
+
+    /// <summary>
     /// How long it takes to run another self heal tick on the body part.
     /// </summary>
     [DataField("healingTime")]
@@ -97,9 +103,15 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField("selfHealingAmount")]
     public float SelfHealingAmount = 5;
 
+    /// <summary>
+    /// The name of the container for this body part. Used in insertion surgeries.
+    /// </summary>
     [DataField]
     public string ContainerName { get; set; } = "part_slot";
 
+    /// <summary>
+    /// The slot for item insertion.
+    /// </summary>
     [DataField, AutoNetworkedField]
     public ItemSlot ItemInsertionSlot = new();
 
@@ -116,6 +128,12 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     /// </summary>
     [DataField, AutoNetworkedField]
     public float SeverIntegrity = 90;
+
+    /// <summary>
+    /// The ID of the base layer for this body part.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public string? BaseLayerId;
 
     /// <summary>
     /// On what TargetIntegrity we should re-enable the part.

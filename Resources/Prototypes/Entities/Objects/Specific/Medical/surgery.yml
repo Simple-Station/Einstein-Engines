@@ -437,3 +437,35 @@
   id: BioSynthRightFoot
   name: bio-synthetic right foot
   description: This right foot can be transplanted into any living organism and it will adapt to its recipient.
+
+# JOKE ITEMS
+
+- type: entity
+  parent: LeftArmHuman
+  id: PizzaLeftArm
+  name: pizza left arm
+  description: For when you want to turn someone into a Space John's.
+  components:
+  - type: BodyPart
+    partType: Arm
+    symmetry: Left
+    toolName: "a left arm"
+    baseLayerId: MobPizzaLArm
+  - type: Sprite
+    sprite: Mobs/Species/Misc/Pizza/parts.rsi
+    state: "l_arm"
+
+- type: entity
+  parent: RightArmHuman
+  id: PizzaRightArm
+  name: pizza right arm
+  description: For when you want to turn someone into a Space John's.
+  components:
+  - type: BodyPart
+    partType: Arm
+    symmetry: Right
+    toolName: "a right arm"
+    baseLayerId: MobPizzaRArm
+  - type: Sprite
+    sprite: Mobs/Species/Misc/Pizza/parts.rsi
+    state: "r_arm"

@@ -150,7 +150,9 @@ public partial class SharedBodySystem
             if (!TryChangePartDamage(ent, args.Damage, args.CanSever, args.CanEvade, args.PartMultiplier, targetPart.Value)
                 && args.CanEvade)
             {
-                _popup.PopupEntity(Loc.GetString("surgery-part-damage-evaded", ("user", Identity.Entity(ent, EntityManager))), ent);
+                if (_net.IsServer)
+                    _popup.PopupEntity(Loc.GetString("surgery-part-damage-evaded", ("user", Identity.Entity(ent, EntityManager))), ent);
+
                 args.Evaded = true;
             }
         }
@@ -197,7 +199,7 @@ public partial class SharedBodySystem
             var (targetType, targetSymmetry) = ConvertTargetBodyPart(target);
             if (GetBodyChildrenOfType(entity, targetType, symmetry: targetSymmetry) is { } part)
             {
-                if (canEvade && TryEvadeDamage(part.FirstOrDefault().Id, GetEvadeChance(targetType)))
+                if (canEvade && TryEvadeDamage(entity, GetEvadeChance(targetType)))
                     continue;
 
                 var damageResult = _damageable.TryChangeDamage(part.FirstOrDefault().Id, damage * partMultiplier, canSever: canSever);
