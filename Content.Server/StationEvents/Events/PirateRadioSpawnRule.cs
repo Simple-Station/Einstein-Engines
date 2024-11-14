@@ -31,10 +31,6 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
     {
         base.Started(uid, component, gameRule, args);
 
-        /// SHUT UP HEISENTESTS. DIE. 
-        if (!_mapManager.MapExists(GameTicker.DefaultMap))
-            return;
-
         var stations = _gameTicker.GetSpawnableStations();
         if (stations is null)
             return;
@@ -52,6 +48,9 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
             return;
 
         var targetStation = _random.Pick(stations);
+        if (!_mapManager.MapExists(Transform(targetStation).MapID))
+            return; /// SHUT UP HEISENTESTS. DIE.
+
         var randomOffset = _random.NextVector2(component.MinimumDistance, component.MaximumDistance);
 
         var outpostOptions = new MapLoadOptions
@@ -60,7 +59,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
             LoadMap = false,
         };
 
-        if (!_map.TryLoad(GameTicker.DefaultMap, _random.Pick(component.PirateRadioShuttlePath), out var outpostids, outpostOptions))
+        if (!_map.TryLoad(Transform(targetStation).MapID, _random.Pick(component.PirateRadioShuttlePath), out var outpostids, outpostOptions))
             return;
 
         SpawnDebris(component, outpostids);
