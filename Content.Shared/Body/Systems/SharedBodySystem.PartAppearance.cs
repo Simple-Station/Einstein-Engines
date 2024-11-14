@@ -77,12 +77,13 @@ public partial class SharedBodySystem
         component.Markings = markingsByLayer;
     }
 
-    private string CreateIdFromPart(HumanoidAppearanceComponent bodyAppearance, HumanoidVisualLayers part)
+    private string? CreateIdFromPart(HumanoidAppearanceComponent bodyAppearance, HumanoidVisualLayers part)
     {
         var speciesProto = _prototypeManager.Index(bodyAppearance.Species);
         var baseSprites = _prototypeManager.Index<HumanoidSpeciesBaseSpritesPrototype>(speciesProto.SpriteSet);
 
-        DebugTools.Assert(baseSprites.Sprites.ContainsKey(part));
+        if (!baseSprites.Sprites.ContainsKey(part))
+            return null;
 
         return HumanoidVisualLayersExtension.GetSexMorph(part, bodyAppearance.Sex, baseSprites.Sprites[part]);
     }
@@ -134,7 +135,9 @@ public partial class SharedBodySystem
             || !TryComp(uid, out HumanoidAppearanceComponent? bodyAppearance))
             return;
 
-        _humanoid.SetBaseLayerId(uid, partAppearance.Type, partAppearance.ID, sync: true, bodyAppearance);
+        if (partAppearance.ID != null)
+            _humanoid.SetBaseLayerId(uid, partAppearance.Type, partAppearance.ID, sync: true, bodyAppearance);
+
         UpdateAppearance(uid, partAppearance);
     }
 
