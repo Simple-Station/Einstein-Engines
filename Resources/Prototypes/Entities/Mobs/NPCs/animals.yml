@@ -399,6 +399,9 @@
       behaviors:
       - !type:GibBehavior { }
   - type: NonSpreaderZombie
+  - type: LanguageKnowledge
+    speaks: [Hissing]
+    understands: [Hissing]
 
 - type: entity
   name: glockroach
@@ -2104,6 +2107,9 @@
   - type: RandomBark
     barkType: penguin
     barkMultiplier: 0.6
+  - type: LanguageKnowledge
+    speaks: [Penguin]
+    understands: [Penguin]
 
 - type: entity
   name: grenade penguin
@@ -2224,6 +2230,9 @@
     minTime: 10
     maxTime: 50 # It's a sssnake...
     barkType: hissing
+  - type: LanguageKnowledge
+    speaks: [Hissing]
+    understands: [Hissing]
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
