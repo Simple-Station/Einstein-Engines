@@ -7885,3 +7885,10 @@ Entries:
   id: 6518
   time: '2024-11-13T23:27:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1188
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added the automatic voting system.
+  id: 6519
+  time: '2024-11-14T02:05:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1213
