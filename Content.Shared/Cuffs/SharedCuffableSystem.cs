@@ -75,7 +75,6 @@ namespace Content.Shared.Cuffs
             SubscribeLocalEvent<CuffableComponent, IsUnequippingAttemptEvent>(OnUnequipAttempt);
             SubscribeLocalEvent<CuffableComponent, BeingPulledAttemptEvent>(OnBeingPulledAttempt);
             SubscribeLocalEvent<CuffableComponent, BuckleAttemptEvent>(OnBuckleAttemptEvent);
-            SubscribeLocalEvent<CuffableComponent, UnbuckleAttemptEvent>(OnUnbuckleAttemptEvent);
             SubscribeLocalEvent<CuffableComponent, GetVerbsEvent<Verb>>(AddUncuffVerb);
             SubscribeLocalEvent<CuffableComponent, UnCuffDoAfterEvent>(OnCuffableDoAfter);
             SubscribeLocalEvent<CuffableComponent, PullStartedMessage>(OnPull);
@@ -200,33 +199,21 @@ namespace Content.Shared.Cuffs
                 args.Cancel();
         }
 
-        private void OnBuckleAttempt(Entity<CuffableComponent> ent, EntityUid? user, ref bool cancelled, bool buckling, bool popup)
+        private void OnBuckleAttemptEvent(EntityUid uid, CuffableComponent component, ref BuckleAttemptEvent args)
         {
-            if (cancelled || user != ent.Owner)
+            // if someone else is doing it, let it pass.
+            if (args.UserEntity != uid)
                 return;
 
-            if (!TryComp<HandsComponent>(ent, out var hands) || ent.Comp.CuffedHandCount != hands.Count)
+            if (!TryComp<HandsComponent>(uid, out var hands) || component.CuffedHandCount != hands.Count)
                 return;
 
-            cancelled = true;
-            if (!popup)
-                return;
-
-            var message = buckling
+            args.Cancelled = true;
+            var message = args.Buckling
                 ? Loc.GetString("handcuff-component-cuff-interrupt-buckled-message")
                 : Loc.GetString("handcuff-component-cuff-interrupt-unbuckled-message");
 
-            _popup.PopupClient(message, ent, user);
-        }
-
-        private void OnBuckleAttemptEvent(Entity<CuffableComponent> ent, ref BuckleAttemptEvent args)
-        {
-            OnBuckleAttempt(ent, args.User, ref args.Cancelled, true, args.Popup);
-        }
-
-        private void OnUnbuckleAttemptEvent(Entity<CuffableComponent> ent, ref UnbuckleAttemptEvent args)
-        {
-            OnBuckleAttempt(ent, args.User, ref args.Cancelled, false, args.Popup);
+            _popup.PopupClient(message, uid, args.UserEntity);
         }
 
         private void OnPull(EntityUid uid, CuffableComponent component, PullMessage args)

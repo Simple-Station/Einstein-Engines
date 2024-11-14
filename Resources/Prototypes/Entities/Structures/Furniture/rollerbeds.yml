@@ -79,8 +79,6 @@
   components:
   - type: Foldable
     folded: true
-  - type: Strap
-    enabled: False
 
 - type: entity
   id: CheapRollerBed
@@ -107,8 +105,6 @@
   components:
   - type: Foldable
     folded: true
-  - type: Strap
-    enabled: False
 
 - type: entity
   id: EmergencyRollerBed
@@ -135,5 +131,3 @@
   components:
   - type: Foldable
     folded: true
-  - type: Strap
-    enabled: False

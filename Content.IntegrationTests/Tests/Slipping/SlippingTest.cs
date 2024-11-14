@@ -11,7 +11,7 @@ using Robust.Shared.Input;
 using Robust.Shared.IoC;
 using Robust.Shared.Maths;
 
-namespace Content.IntegrationTests.Tests.Movement;
+namespace Content.IntegrationTests.Tests.Slipping;
 
 public sealed class SlippingTest : MovementTest
 {
@@ -41,14 +41,18 @@ public sealed class SlippingTest : MovementTest
         // Assert.That(modifier, Is.EqualTo(1), "Player is not moving at full speed."); // Yeeting this pointless Assert because it's not actually important.
 
         // Player is to the left of the banana peel and has not slipped.
+#pragma warning disable NUnit2045
         Assert.That(Delta(), Is.GreaterThan(0.5f));
         Assert.That(sys.Slipped, Does.Not.Contain(SEntMan.GetEntity(Player)));
+#pragma warning restore NUnit2045
 
         // Walking over the banana slowly does not trigger a slip.
         await SetKey(EngineKeyFunctions.Walk, sprintWalks ? BoundKeyState.Up : BoundKeyState.Down);
         await Move(DirectionFlag.East, 1f);
+#pragma warning disable NUnit2045
         Assert.That(Delta(), Is.LessThan(0.5f));
         Assert.That(sys.Slipped, Does.Not.Contain(SEntMan.GetEntity(Player)));
+#pragma warning restore NUnit2045
         AssertComp<KnockedDownComponent>(false, Player);
 
         // Moving at normal speeds does trigger a slip.

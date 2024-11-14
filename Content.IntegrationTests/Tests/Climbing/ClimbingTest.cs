@@ -1,6 +1,5 @@
 #nullable enable
 using Content.IntegrationTests.Tests.Interaction;
-using Content.IntegrationTests.Tests.Movement;
 using Robust.Shared.Maths;
 using ClimbingComponent = Content.Shared.Climbing.Components.ClimbingComponent;
 using ClimbSystem = Content.Shared.Climbing.Systems.ClimbSystem;

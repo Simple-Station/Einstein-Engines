@@ -358,8 +358,6 @@
   components:
   - type: Foldable
     folded: true
-  - type: Strap
-    enabled: False
 
 - type: entity
   name: steel bench

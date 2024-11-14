@@ -84,7 +84,6 @@ public abstract partial class InteractionTest
     protected NetEntity? Target;
 
     protected EntityUid? STarget => ToServer(Target);
-
     protected EntityUid? CTarget => ToClient(Target);
 
     /// <summary>
@@ -127,6 +126,7 @@ public abstract partial class InteractionTest
 
     public float TickPeriod => (float) STiming.TickPeriod.TotalSeconds;
 
+
     // Simple mob that has one hand and can perform misc interactions.
     [TestPrototypes]
     private const string TestPrototypes = @"
@@ -139,8 +139,6 @@ public abstract partial class InteractionTest
   - type: Hands
   - type: MindContainer
   - type: Stripping
-  - type: Puller
-  - type: Physics
   - type: Tag
     tags:
     - CanPilot
@@ -204,11 +202,11 @@ public abstract partial class InteractionTest
             SEntMan.System<SharedMindSystem>().WipeMind(ServerSession.ContentData()?.Mind);
 
             old = cPlayerMan.LocalEntity;
-            SPlayer = SEntMan.SpawnEntity(PlayerPrototype, SEntMan.GetCoordinates(PlayerCoords));
-            Player = SEntMan.GetNetEntity(SPlayer);
-            Server.PlayerMan.SetAttachedEntity(ServerSession, SPlayer);
-            Hands = SEntMan.GetComponent<HandsComponent>(SPlayer);
-            DoAfters = SEntMan.GetComponent<DoAfterComponent>(SPlayer);
+            Player = SEntMan.GetNetEntity(SEntMan.SpawnEntity(PlayerPrototype, SEntMan.GetCoordinates(PlayerCoords)));
+            var serverPlayerEnt = SEntMan.GetEntity(Player);
+            Server.PlayerMan.SetAttachedEntity(ServerSession, serverPlayerEnt);
+            Hands = SEntMan.GetComponent<HandsComponent>(serverPlayerEnt);
+            DoAfters = SEntMan.GetComponent<DoAfterComponent>(serverPlayerEnt);
         });
 
         // Check player got attached.

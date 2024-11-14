@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Rotatable;
 using JetBrains.Annotations;
 
@@ -82,21 +83,24 @@ namespace Content.Shared.Interaction
             if (!_actionBlockerSystem.CanChangeDirection(user))
                 return false;
 
-            if (TryComp(user, out BuckleComponent? buckle) && buckle.BuckledTo is {} strap)
+            if (EntityManager.TryGetComponent(user, out BuckleComponent? buckle) && buckle.Buckled)
             {
-                // What if a person is strapped to a borg?
-                // I'm pretty sure this would allow them to be partially ratatouille'd
+                var suid = buckle.LastEntityBuckledTo;
+                if (suid != null)
+                {
+                    // We're buckled to another object. Is that object rotatable?
+                    if (TryComp<RotatableComponent>(suid.Value, out var rotatable) && rotatable.RotateWhileAnchored)
+                    {
+                        // Note the assumption that even if unanchored, user can only do spinnychair with an "independent wheel".
+                        // (Since the user being buckled to it holds it down with their weight.)
+                        // This is logically equivalent to RotateWhileAnchored.
+                        // Barstools and office chairs have independent wheels, while regular chairs don't.
+                        _transform.SetWorldRotation(Transform(suid.Value), diffAngle);
+                        return true;
+                    }
+                }
 
-                // We're buckled to another object. Is that object rotatable?
-                if (!TryComp<RotatableComponent>(strap, out var rotatable) || !rotatable.RotateWhileAnchored)
-                    return false;
-
-                // Note the assumption that even if unanchored, user can only do spinnychair with an "independent wheel".
-                // (Since the user being buckled to it holds it down with their weight.)
-                // This is logically equivalent to RotateWhileAnchored.
-                // Barstools and office chairs have independent wheels, while regular chairs don't.
-                _transform.SetWorldRotation(Transform(strap), diffAngle);
-                return true;
+                return false;
             }
 
             // user is not buckled in; apply to their transform

@@ -90,6 +90,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 {
                     Assert.That(strap, Is.Not.Null);
                     Assert.That(strap.BuckledEntities, Is.Empty);
+                    Assert.That(strap.OccupiedSize, Is.Zero);
                 });
 
                 // Side effects of buckling
@@ -109,6 +110,8 @@ namespace Content.IntegrationTests.Tests.Buckle
 
                     // Side effects of buckling for the strap
                     Assert.That(strap.BuckledEntities, Does.Contain(human));
+                    Assert.That(strap.OccupiedSize, Is.EqualTo(buckle.Size));
+                    Assert.That(strap.OccupiedSize, Is.Positive);
                 });
 
 #pragma warning disable NUnit2045 // Interdependent asserts.
@@ -118,7 +121,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 // Trying to unbuckle too quickly fails
                 Assert.That(buckleSystem.TryUnbuckle(human, human, buckleComp: buckle), Is.False);
                 Assert.That(buckle.Buckled);
-                Assert.That(buckleSystem.TryUnbuckle(human, human), Is.False);
+                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle: buckle), Is.False);
                 Assert.That(buckle.Buckled);
 #pragma warning restore NUnit2045
             });
@@ -145,6 +148,7 @@ namespace Content.IntegrationTests.Tests.Buckle
 
                     // Unbuckle, strap
                     Assert.That(strap.BuckledEntities, Is.Empty);
+                    Assert.That(strap.OccupiedSize, Is.Zero);
                 });
 
 #pragma warning disable NUnit2045 // Interdependent asserts.
@@ -155,9 +159,9 @@ namespace Content.IntegrationTests.Tests.Buckle
                 // On cooldown
                 Assert.That(buckleSystem.TryUnbuckle(human, human, buckleComp: buckle), Is.False);
                 Assert.That(buckle.Buckled);
-                Assert.That(buckleSystem.TryUnbuckle(human, human), Is.False);
+                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle: buckle), Is.False);
                 Assert.That(buckle.Buckled);
-                Assert.That(buckleSystem.TryUnbuckle(human, human), Is.False);
+                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle: buckle), Is.False);
                 Assert.That(buckle.Buckled);
 #pragma warning restore NUnit2045
             });
@@ -184,6 +188,7 @@ namespace Content.IntegrationTests.Tests.Buckle
 #pragma warning disable NUnit2045 // Interdependent asserts.
                 Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle), Is.False);
                 Assert.That(buckleSystem.TryUnbuckle(human, human, buckleComp: buckle), Is.False);
+                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle: buckle), Is.False);
 #pragma warning restore NUnit2045
 
                 // Move near the chair
@@ -196,10 +201,12 @@ namespace Content.IntegrationTests.Tests.Buckle
                 Assert.That(buckle.Buckled);
                 Assert.That(buckleSystem.TryUnbuckle(human, human, buckleComp: buckle), Is.False);
                 Assert.That(buckle.Buckled);
+                Assert.That(buckleSystem.ToggleBuckle(human, human, chair, buckle: buckle), Is.False);
+                Assert.That(buckle.Buckled);
 #pragma warning restore NUnit2045
 
                 // Force unbuckle
-                buckleSystem.Unbuckle(human, human);
+                Assert.That(buckleSystem.TryUnbuckle(human, human, true, buckleComp: buckle));
                 Assert.Multiple(() =>
                 {
                     Assert.That(buckle.Buckled, Is.False);
@@ -303,7 +310,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 // Break our guy's kneecaps
                 foreach (var leg in legs)
                 {
-                    entityManager.DeleteEntity(leg.Id);
+                    xformSystem.DetachParentToNull(leg.Id, entityManager.GetComponent<TransformComponent>(leg.Id));
                 }
             });
 
@@ -320,8 +327,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                     Assert.That(hand.HeldEntity, Is.Null);
                 }
 
-                buckleSystem.Unbuckle(human, human);
-                Assert.That(buckle.Buckled, Is.False);
+                buckleSystem.TryUnbuckle(human, human, true, buckleComp: buckle);
             });
 
             await pair.CleanReturnAsync();
