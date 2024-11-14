@@ -31,11 +31,11 @@ public sealed class AutoVoteSystem : EntitySystem
 
     public void OnPlayerJoinedLobby(PlayerJoinedLobbyEvent ev)
     {
-        if (_shouldVoteNextJoin)
-        {
-            CallAutovote();
-            _shouldVoteNextJoin = false;
-        }
+        if (!_shouldVoteNextJoin)
+            return;
+
+        CallAutovote();
+        _shouldVoteNextJoin = false;
     }
 
     private void CallAutovote()
