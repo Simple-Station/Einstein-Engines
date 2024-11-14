@@ -134,4 +134,26 @@ public sealed class InteractionPopupSystem : EntitySystem
 
         component.LastInteractTime = curTime;
     }
+
+    /// <summary>
+    /// Sets <see cref="InteractionPopupComponent.InteractSuccessString"/>.
+    /// </summary>
+    /// <para>
+    /// This field is not networked automatically, so this method must be called on both sides of the network.
+    /// </para>
+    public void SetInteractSuccessString(Entity<InteractionPopupComponent> ent, string str)
+    {
+        ent.Comp.InteractSuccessString = str;
+    }
+
+    /// <summary>
+    /// Sets <see cref="InteractionPopupComponent.InteractFailureString"/>.
+    /// </summary>
+    /// <para>
+    /// This field is not networked automatically, so this method must be called on both sides of the network.
+    /// </para>
+    public void SetInteractFailureString(Entity<InteractionPopupComponent> ent, string str)
+    {
+        ent.Comp.InteractFailureString = str;
+    }
 }
