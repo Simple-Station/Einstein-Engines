@@ -129,6 +129,6 @@ bounty-description-hi-viz-vest  = The clown stole the AME controller and won't b
 bounty-description-torch = The chef made all the monkeys and kobolds at once, and they rebelled and took over the cargo shuttle. They're demanding supplies and free passage to a jungle planet, and we're giving in to their demands. All they need now is a few torches.
 bounty-description-medkit-box = CentComm is putting on a play set in a hospital, and needs some props. Just send us some empty medkit boxes, and the show will go on!
 bounty-description-cardobard-box = "The Cardborgs Cometh" is a new play premiering tomorrow, and the costuming team is woefully unprepared. Send us some boxes to work with.
-bounty-description-wine = The new librarian and the Logistics Officer are falling head over heels for each other after she caught him disassembling the bookshelves for wood. Send a couple bottles of wine (Or cans, if you must) to help make the date go well.
+bounty-description-wine = The new cataloger and the Logistics Officer are falling head over heels for each other after she caught him disassembling the bookshelves for wood. Send a couple bottles of wine (Or cans, if you must) to help make the date go well.
 bounty-description-cotton-boll = A massive swarm of mothroaches ate all the paper and cloth on the station. Send us some cotton to help keep our winged crewmembers fed.
 bounty-description-microwave-machine-board = Mr. Giggles thought it'd be funny to stick forks in all the kitchen microwaves. Help us replace them before the chefs start making clown burgers.
