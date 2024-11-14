@@ -124,9 +124,7 @@ public sealed partial record PolymorphConfiguration
     {
         "LanguageKnowledge",
         "LanguageSpeaker",
-        "Muted",
-        "Grammar",
-        "Vocal"
+        "Grammar"
     };
 }
 
