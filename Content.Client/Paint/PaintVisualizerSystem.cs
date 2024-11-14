@@ -1,4 +1,3 @@
-using System.Linq;
 using Robust.Client.GameObjects;
 using static Robust.Client.GameObjects.SpriteComponent;
 using Content.Shared.Clothing;
@@ -11,12 +10,9 @@ namespace Content.Client.Paint;
 
 public sealed class PaintedVisualizerSystem : VisualizerSystem<PaintedComponent>
 {
-    /// <summary>
-    /// Visualizer for Paint which applies a shader and colors the entity.
-    /// </summary>
-
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
+
 
     public override void Initialize()
     {
@@ -26,6 +22,7 @@ public sealed class PaintedVisualizerSystem : VisualizerSystem<PaintedComponent>
         SubscribeLocalEvent<PaintedComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<PaintedComponent, EquipmentVisualsUpdatedEvent>(OnEquipmentVisualsUpdated);
     }
+
 
     protected override void OnAppearanceChange(EntityUid uid, PaintedComponent component, ref AppearanceChangeEvent args)
     {
@@ -45,7 +42,7 @@ public sealed class PaintedVisualizerSystem : VisualizerSystem<PaintedComponent>
             if (spriteLayer is not Layer layer)
                 continue;
 
-            if (layer.Shader == null || layer.Shader == shader) // If shader isn't null we dont want to replace the original shader.
+            if (layer.Shader == null || layer.Shader == shader)
             {
                 layer.Shader = shader;
                 layer.Color = component.Color;
@@ -53,64 +50,45 @@ public sealed class PaintedVisualizerSystem : VisualizerSystem<PaintedComponent>
         }
     }
 
-    private void OnHeldVisualsUpdated(EntityUid uid, PaintedComponent component, HeldVisualsUpdatedEvent args)
-    {
-        if (args.RevealedLayers.Count == 0)
-            return;
-
-        if (!TryComp(args.User, out SpriteComponent? sprite))
-            return;
-
-        foreach (var revealed in args.RevealedLayers)
-        {
-            if (!sprite.LayerMapTryGet(revealed, out var layer))
-                continue;
-
-            sprite.LayerSetShader(layer, component.ShaderName);
-            sprite.LayerSetColor(layer, component.Color);
-        }
-    }
-
-    private void OnEquipmentVisualsUpdated(EntityUid uid, PaintedComponent component, EquipmentVisualsUpdatedEvent args)
-    {
-        if (args.RevealedLayers.Count == 0)
-            return;
-
-        if (!TryComp(args.Equipee, out SpriteComponent? sprite))
-            return;
-
-        foreach (var revealed in args.RevealedLayers)
-        {
-            if (!sprite.LayerMapTryGet(revealed, out var layer))
-                continue;
-
-            sprite.LayerSetShader(layer, component.ShaderName);
-            sprite.LayerSetColor(layer, component.Color);
-        }
-    }
-
     private void OnShutdown(EntityUid uid, PaintedComponent component, ref ComponentShutdown args)
     {
         if (!TryComp(uid, out SpriteComponent? sprite))
             return;
-
         component.BeforeColor = sprite.Color;
-        var shader = _protoMan.Index<ShaderPrototype>(component.ShaderName).Instance();
 
-        if (!Terminating(uid))
+        if (Terminating(uid))
+            return;
+
+        foreach (var spriteLayer in sprite.AllLayers)
         {
-            foreach (var spriteLayer in sprite.AllLayers)
-            {
-                if (spriteLayer is not Layer layer)
-                    continue;
+            if (spriteLayer is not Layer layer
+                || layer.Shader != _protoMan.Index<ShaderPrototype>(component.ShaderName).Instance())
+                continue;
 
-                if (layer.Shader == shader) // If shader isn't same as one in component we need to ignore it.
-                {
-                    layer.Shader = null;
-                    if (layer.Color == component.Color) // If color isn't the same as one in component we don't want to change it.
-                        layer.Color = component.BeforeColor;
-                }
-            }
+            layer.Shader = null;
+            if (layer.Color == component.Color)
+                layer.Color = component.BeforeColor;
+        }
+    }
+
+    private void OnHeldVisualsUpdated(EntityUid uid, PaintedComponent component, HeldVisualsUpdatedEvent args) =>
+        UpdateVisuals(uid, component, args);
+    private void OnEquipmentVisualsUpdated(EntityUid uid, PaintedComponent component, EquipmentVisualsUpdatedEvent args) =>
+        UpdateVisuals(uid, component, args);
+    private void UpdateVisuals(EntityUid uid, PaintedComponent component, EntityEventArgs args)
+    {
+        if (args is not EquipmentVisualsUpdatedEvent ags
+            || ags.RevealedLayers.Count == 0
+            || !TryComp(ags.Equipee, out SpriteComponent? sprite))
+            return;
+
+        foreach (var revealed in ags.RevealedLayers)
+        {
+            if (!sprite.LayerMapTryGet(revealed, out var layer))
+                continue;
+
+            sprite.LayerSetShader(layer, component.ShaderName);
+            sprite.LayerSetColor(layer, component.Color);
         }
     }
 }
