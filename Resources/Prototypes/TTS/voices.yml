@@ -3,16 +3,124 @@
   id: Vasco
   sex: Male
   model: Vasco
+  canSelect: false
 
 # https://huggingface.co/DavesArmoury/GLaDOS_TTS/tree/main
 - type: ttsVoice
   id: GLaDOS
   sex: Female
   model: GLaDOS
+  canSelect: false
 
-# Couldn't find a good unisex voice so you get this nerd
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/amy/medium
+- type: ttsVoice
+  id: Amy
+  name: Amy
+  model: Amy
+  sex: Female
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/bryce/medium
+- type: ttsVoice
+  id: Bryce
+  name: Bryce
+  model: Bryce
+  sex: Male
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/arctic/medium
+- type: ttsVoice
+  id: Arctic
+  name: Arctic
+  model: Arctic
+  sex: Male
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/danny/low
+- type: ttsVoice
+  id: Danny
+  name: Danny
+  model: Danny
+  sex: Male
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/hfc_male/medium
+- type: ttsVoice
+  id: Jeff
+  name: Jeff
+  model: hfc_male
+  sex: Male
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/joe/medium
+- type: ttsVoice
+  id: Joe
+  name: Joe
+  model: Joe
+  sex: Male
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/john/medium
+- type: ttsVoice
+  id: John
+  name: John
+  model: John
+  sex: Male
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/norman/medium
+- type: ttsVoice
+  id: Norman
+  name: Norman
+  model: Norman
+  sex: Male
+
 # https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ryan/high
 - type: ttsVoice
   id: Ryan
-  sex: Unsexed
+  name: Ryan
   model: Ryan
+  sex: Male
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/hfc_female/medium
+- type: ttsVoice
+  id: Fiona
+  name: Fiona
+  model: hfc_female
+  sex: Female
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/kathleen/low
+- type: ttsVoice
+  id: Kathleen
+  name: Kathleen
+  model: Kathleen
+  sex: Female
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/kristin/medium
+- type: ttsVoice
+  id: Kristin
+  name: Kristin
+  model: Kristin
+  sex: Female
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/kusal/medium
+- type: ttsVoice
+  id: Kusal
+  name: Kusal
+  model: Kusal
+  sex: Male
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/libritts/high
+- type: ttsVoice
+  id: Brit
+  name: Brit
+  model: Libritts
+  sex: Female
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high
+- type: ttsVoice
+  id: Kait
+  name: Kait
+  model: Ljspeech
+  sex: Female
+
+# https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/high
+- type: ttsVoice
+  id: Lessac
+  name: Lessac
+  model: Lessac
+  sex: Female
