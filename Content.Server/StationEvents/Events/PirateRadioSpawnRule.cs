@@ -10,6 +10,8 @@ using Content.Shared.Random.Helpers;
 using System.Linq;
 using Content.Server.GameTicking.Components;
 using Content.Shared.CCVar;
+using Robust.Shared.Serialization.Manager;
+using Content.Shared.Parallax.Biomes;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -21,13 +23,26 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
     [Dependency] private readonly IConfigurationManager _confMan = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
+    [Dependency] private readonly ISerializationManager _serializationManager = default!;
 
     protected override void Started(EntityUid uid, PirateRadioSpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
 
         var stations = _gameTicker.GetSpawnableStations();
-        if (stations is null || stations.Count <= 0)
+        if (stations is null)
+            return;
+
+        // Remove any station from the list that is on a Planet's surface.
+        // We have to do this because if we spawn the listening post 1.5 kilometers from the station on a planet
+        // The server will then attempt to generate 7 billion entities, immediately exceeding the 32bit signed integer limit for EntityUids.
+        var stationsCopy = _serializationManager.CreateCopy(stations, notNullableOverride: true);
+        foreach (var station in stationsCopy)
+            if (HasComp<BiomeComponent>(Transform(station).MapUid))
+                stations.Remove(station);
+
+        // _random forces Test Fails if given an empty list. which is guaranteed to happen during Tests.
+        if (stations.Count <= 0)
             return;
 
         var targetStation = _random.Pick(stations);

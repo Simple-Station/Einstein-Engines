@@ -28,7 +28,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      50: Dead
   - type: Damageable
     damageContainer: CorporealSpirit
     damageModifierSet: CorporealSpirit
@@ -50,16 +50,22 @@
   - type: HTN
     rootTask:
       task: MeleePsionicFamiliarCompound
+    blackboard:
+      IdleRange: !type:Single
+        3.5
+      FollowCloseRange: !type:Single
+        2.0
+      FollowRange: !type:Single
+        3.0
   - type: NPCRetaliation
     attackMemoryLength: 10
     retaliateFriendlies: true
   - type: PsionicFamiliar
+  - type: Dispellable
   - type: DamageOnDispel
     damage:
       types:
         Heat: 100
-  - type: RandomMetadata
-    nameSegments: [names_golem]
 
 - type: entity
   name: Remilia
@@ -123,6 +129,10 @@
     damage:
       types:
         Piercing: 5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
 
 - type: entity
   name: Cerberus
@@ -232,3 +242,5 @@
         - Opaque
         layer:
         - MobLayer
+  - type: RandomMetadata
+    nameSegments: [names_golem]

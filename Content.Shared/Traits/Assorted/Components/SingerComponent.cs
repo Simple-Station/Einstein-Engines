@@ -9,7 +9,7 @@ public sealed partial class SingerComponent : Component
 {
     // Traits are server-only, and is this is added via traits, it must be replicated to the client.
     [DataField(required: true), AutoNetworkedField]
-    public ProtoId<SingerInstrumentPrototype> Proto = string.Empty;
+    public ProtoId<SingerInstrumentPrototype>? Proto;
 
     [DataField(serverOnly: true)]
     public EntProtoId? MidiActionId = "ActionHarpyPlayMidi";
