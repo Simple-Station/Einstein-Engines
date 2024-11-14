@@ -11,7 +11,7 @@ public sealed partial class HeirloomHaverComponent : Component
     public EntityUid Heirloom;
 
     [AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<MoodEffectPrototype> Moodlet = "HeirloomSafe";
+    public ProtoId<MoodEffectPrototype> Moodlet = "HeirloomSecure";
 }
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
