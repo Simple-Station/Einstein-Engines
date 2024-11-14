@@ -278,7 +278,7 @@ namespace Content.Shared.SegmentedEntity
         {
             if (args.Slot == "outerClothing" && _tagSystem.HasTag(args.Equipment, LamiaHardsuitTag))
             {
-                    // TODO: Revert to default segment sprite
+                // TODO: Revert to default segment sprite
             }
         }
 
