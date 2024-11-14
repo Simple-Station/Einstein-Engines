@@ -12,6 +12,7 @@ using Content.Server.GameTicking.Components;
 using Content.Shared.CCVar;
 using Robust.Shared.Serialization.Manager;
 using Content.Shared.Parallax.Biomes;
+using Robust.Shared.Map;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -24,10 +25,15 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
 
     protected override void Started(EntityUid uid, PirateRadioSpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
+
+        /// SHUT UP HEISENTESTS. DIE. 
+        if (!_mapManager.MapExists(GameTicker.DefaultMap))
+            return;
 
         var stations = _gameTicker.GetSpawnableStations();
         if (stations is null)
