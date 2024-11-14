@@ -24,10 +24,7 @@ public sealed class AutoVoteSystem : EntitySystem
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
     }
 
-    public void OnReturnedToLobby(RoundRestartCleanupEvent ev)
-    {
-        CallAutovote();
-    }
+    public void OnReturnedToLobby(RoundRestartCleanupEvent ev) => CallAutovote();
 
     public void OnPlayerJoinedLobby(PlayerJoinedLobbyEvent ev)
     {
