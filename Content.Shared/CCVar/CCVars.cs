@@ -512,7 +512,7 @@ namespace Content.Shared.CCVar
             CVarDef.Create("tts.cache_path", "data/tts/cache", CVar.SERVERONLY);
 
         public static readonly CVarDef<int> TTSMaxCached =
-            CVarDef.Create("tts.max_cached", 256, CVar.SERVERONLY);
+            CVarDef.Create("tts.max_cached", 2048, CVar.SERVERONLY);
 
         public static readonly CVarDef<string> TTSModelPath =
             CVarDef.Create("tts.model_path", "data/tts/models", CVar.SERVERONLY);
