@@ -61,6 +61,7 @@
     noRot: true
     drawdepth: Mobs
     scale: 1, 1
+    offset: 0, 0.4
     layers: #TODO: manually fix these layers
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
         color: "#e8b59b"
@@ -196,6 +197,7 @@
         - MobLayer
   - type: SegmentedEntity
     numberOfSegments: 18
+    texturePath: /Textures/Nyanotrasen/Mobs/Species/lamia.rsi/segment.png
   - type: Speech
     speechSounds: Alto
   - type: Vocal
