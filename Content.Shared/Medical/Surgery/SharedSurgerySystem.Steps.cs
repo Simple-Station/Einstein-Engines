@@ -238,7 +238,7 @@ public abstract partial class SharedSurgerySystem
         var group = ent.Comp.MainGroup == "Brute" ? BruteDamageTypes : BurnDamageTypes;
 
         if (!HasDamageGroup(args.Body, group, out var damageable)
-            || !HasDamageGroup(args.Part, group, out var _)
+            && !HasDamageGroup(args.Part, group, out var _)
             || damageable == null) // This shouldnt be possible but the compiler doesn't shut up.
             return;
 
@@ -264,8 +264,8 @@ public abstract partial class SharedSurgerySystem
     {
         var group = ent.Comp.MainGroup == "Brute" ? BruteDamageTypes : BurnDamageTypes;
 
-        if (!HasDamageGroup(args.Body, group, out var _)
-            || !HasDamageGroup(args.Part, group, out var _))
+        if (HasDamageGroup(args.Body, group, out var _)
+            || HasDamageGroup(args.Part, group, out var _))
             args.Cancelled = true;
     }
 

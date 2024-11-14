@@ -170,7 +170,6 @@ public sealed class BodySystem : SharedBodySystem
 
         return gibs;
     }
-
     protected override void ApplyPartMarkings(EntityUid target, BodyPartAppearanceComponent component)
     {
         return;

@@ -3,16 +3,18 @@ using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Medical.Surgery.Steps.Parts;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Robust.Shared.Prototypes;
+using Content.Shared.Popups;
 using Content.Shared.Standing;
 using Content.Shared.Targeting;
 using Content.Shared.Targeting.Events;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Linq;
@@ -27,6 +29,8 @@ public partial class SharedBodySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     private readonly string[] _severingDamageTypes = { "Slash", "Pierce", "Blunt" };
     private const double IntegrityJobTime = 0.005;
     private readonly JobQueue _integrityJobQueue = new(IntegrityJobTime);
@@ -59,6 +63,8 @@ public partial class SharedBodySystem
     {
         _queryTargeting = GetEntityQuery<TargetingComponent>();
         SubscribeLocalEvent<BodyComponent, BeforeDamageChangedEvent>(OnBeforeDamageChanged);
+        SubscribeLocalEvent<BodyComponent, DamageModifyEvent>(OnBodyDamageModify);
+        SubscribeLocalEvent<BodyPartComponent, DamageModifyEvent>(OnPartDamageModify);
         SubscribeLocalEvent<BodyPartComponent, DamageChangedEvent>(OnDamageChanged);
     }
 
@@ -141,14 +147,43 @@ public partial class SharedBodySystem
             if (targetPart == null)
                 return;
 
-            if (!TryChangePartDamage(ent, args.Damage, args.CanSever, args.PartMultiplier, targetPart.Value))
-                args.Cancelled = true;
+            if (!TryChangePartDamage(ent, args.Damage, args.CanSever, args.CanEvade, args.PartMultiplier, targetPart.Value)
+                && args.CanEvade)
+            {
+                _popup.PopupEntity(Loc.GetString("surgery-part-damage-evaded", ("user", Identity.Entity(ent, EntityManager))), ent);
+                args.Evaded = true;
+            }
         }
+    }
+
+    private void OnBodyDamageModify(Entity<BodyComponent> bodyEnt, ref DamageModifyEvent args)
+    {
+        if (args.TargetPart != null)
+        {
+            var (targetType, _) = ConvertTargetBodyPart(args.TargetPart.Value);
+            args.Damage = args.Damage * GetPartDamageModifier(targetType);
+        }
+    }
+
+    private void OnPartDamageModify(Entity<BodyPartComponent> partEnt, ref DamageModifyEvent args)
+    {
+        if (partEnt.Comp.Body != null
+            && TryComp(partEnt.Comp.Body.Value, out DamageableComponent? damageable)
+            && damageable.DamageModifierSetId != null
+            && _prototypeManager.TryIndex<DamageModifierSetPrototype>(damageable.DamageModifierSetId, out var modifierSet))
+            // TODO: We need to add a check to see if the given armor covers this part to cancel or not.
+            args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modifierSet);
+
+        if (_prototypeManager.TryIndex<DamageModifierSetPrototype>("PartDamage", out var partModifierSet))
+            args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, partModifierSet);
+
+        args.Damage = args.Damage * GetPartDamageModifier(partEnt.Comp.PartType);
     }
 
     private bool TryChangePartDamage(EntityUid entity,
         DamageSpecifier damage,
         bool canSever,
+        bool canEvade,
         float partMultiplier,
         TargetBodyPart targetParts)
     {
@@ -162,6 +197,9 @@ public partial class SharedBodySystem
             var (targetType, targetSymmetry) = ConvertTargetBodyPart(target);
             if (GetBodyChildrenOfType(entity, targetType, symmetry: targetSymmetry) is { } part)
             {
+                if (canEvade && TryEvadeDamage(part.FirstOrDefault().Id, GetEvadeChance(targetType)))
+                    continue;
+
                 var damageResult = _damageable.TryChangeDamage(part.FirstOrDefault().Id, damage * partMultiplier, canSever: canSever);
                 if (damageResult != null && damageResult.GetTotal() != 0)
                     landed = true;
@@ -238,105 +276,6 @@ public partial class SharedBodySystem
 
         return TargetBodyPart.Torso; // Default to torso if something goes wrong
     }
-
-    /// <summary>
-    /// Propagates damage to the specified part of the entity.
-    /// </summary>
-    /*private void ApplyPartDamage(Entity<BodyPartComponent> partEnt,
-        DamageSpecifier damage,
-        BodyPartType targetType,
-        TargetBodyPart targetPart,
-        bool canSever,
-        bool evade,
-        float partMultiplier)
-    {
-        if (partEnt.Comp.Body is not { } body)
-            return;
-
-        _prototypeManager.TryIndex<DamageGroupPrototype>("Brute", out var proto);
-
-        if (!TryEvadeDamage(partEnt.Comp.Body.Value, GetEvadeChance(targetType)) || evade)
-            TryChangeIntegrity(partEnt,
-                damage * partMultiplier * GetPartDamageModifier(targetType),
-                // This is true when damage contains at least one of the brute damage types
-                canSever && damage.TryGetDamageInGroup(proto!, out var dmg) && dmg > FixedPoint2.Zero,
-                targetPart,
-                out _);
-    }
-
-    /// <summary>
-    /// Adds damage to the body part and updates things about Integrity levels.
-    /// </summary>
-    public void TryChangeIntegrity(
-        Entity<BodyPartComponent> partEnt,
-        DamageSpecifier damage,
-        bool canSever,
-        TargetBodyPart? targetPart,
-        out bool severed)
-    {
-        severed = false;
-        if (!_timing.IsFirstTimePredicted || !_queryTargeting.HasComp(partEnt.Comp.Body))
-            return;
-
-        var partIdSlot = GetParentPartAndSlotOrNull(partEnt)?.Slot;
-        var integrity = partEnt.Comp.TotalDamage;
-
-        // TODO: Move this shit out to the proper DamageableComponent so we dont have to do this system.
-        if (_prototypeManager.TryIndex<DamageModifierSetPrototype>("PartDamage", out var modifierSet))
-            damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
-
-        partEnt.Comp.Damage.ExclusiveAdd(damage);
-        partEnt.Comp.Damage.ClampMin(partEnt.Comp.MinIntegrity); // No over-healing!
-
-        if (canSever
-            && !HasComp<BodyPartReattachedComponent>(partEnt)
-            && !partEnt.Comp.Enabled
-            && integrity >= partEnt.Comp.SeverIntegrity
-            && partIdSlot is not null)
-            severed = true;
-
-        CheckBodyPart(partEnt, targetPart, severed);
-
-        if (severed && partIdSlot is not null)
-            DropPart(partEnt);
-
-        Dirty(partEnt, partEnt.Comp);
-    }
-
-    /// <summary>
-    /// Same as TryChangeIntegrity, except this one
-    /// sets a given value rather than adding or subtracting.
-    /// </summary>
-    public void TrySetIntegrity(
-        Entity<BodyPartComponent> partEnt,
-        DamageSpecifier damage,
-        bool canSever,
-        TargetBodyPart? targetPart,
-        out bool severed)
-    {
-        severed = false;
-        if (!_timing.IsFirstTimePredicted || !_queryTargeting.HasComp(partEnt.Comp.Body))
-            return;
-
-        var partIdSlot = GetParentPartAndSlotOrNull(partEnt)?.Slot;
-        var integrity = partEnt.Comp.TotalDamage;
-        partEnt.Comp.Damage = damage;
-        partEnt.Comp.Damage.ClampMin(partEnt.Comp.MinIntegrity);
-
-        if (canSever
-            && !HasComp<BodyPartReattachedComponent>(partEnt)
-            && !partEnt.Comp.Enabled
-            && integrity >= partEnt.Comp.SeverIntegrity
-            && partIdSlot is not null)
-            severed = true;
-
-        CheckBodyPart(partEnt, targetPart, severed);
-
-        if (severed && partIdSlot is not null)
-            DropPart(partEnt);
-
-        Dirty(partEnt, partEnt.Comp);
-    }*/
 
     /// <summary>
     /// This should be called after body part damage was changed.
@@ -486,6 +425,7 @@ public partial class SharedBodySystem
     /// <summary>
     /// Fetches the damage multiplier for part integrity based on part types.
     /// </summary>
+    /// TODO: Serialize this per body part.
     public static float GetPartDamageModifier(BodyPartType partType)
     {
         return partType switch
@@ -493,7 +433,9 @@ public partial class SharedBodySystem
             BodyPartType.Head => 0.5f, // 50% damage, necks are hard to cut
             BodyPartType.Torso => 1.0f, // 100% damage
             BodyPartType.Arm => 0.7f, // 70% damage
+            BodyPartType.Hand => 0.7f, // 70% damage
             BodyPartType.Leg => 0.7f, // 70% damage
+            BodyPartType.Foot => 0.7f, // 70% damage
             _ => 0.5f
         };
     }
@@ -528,7 +470,9 @@ public partial class SharedBodySystem
         {
             BodyPartType.Head => 0.70f,  // 70% chance to evade
             BodyPartType.Arm => 0.20f,   // 20% chance to evade
+            BodyPartType.Hand => 0.20f, // 20% chance to evade
             BodyPartType.Leg => 0.20f,   // 20% chance to evade
+            BodyPartType.Foot => 0.20f, // 20% chance to evade
             BodyPartType.Torso => 0f, // 0% chance to evade
             _ => 0f
         };

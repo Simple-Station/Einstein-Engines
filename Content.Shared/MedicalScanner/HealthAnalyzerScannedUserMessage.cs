@@ -33,10 +33,10 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
 }
 
 [Serializable, NetSerializable]
-public sealed class HealthAnalyzerPartMessage(NetEntity? owner, TargetBodyPart bodyPart) : BoundUserInterfaceMessage
+public sealed class HealthAnalyzerPartMessage(NetEntity? owner, TargetBodyPart? bodyPart) : BoundUserInterfaceMessage
 {
     public readonly NetEntity? Owner = owner;
-    public readonly TargetBodyPart BodyPart = bodyPart;
+    public readonly TargetBodyPart? BodyPart = bodyPart;
 
 }
 

@@ -1,5 +1,4 @@
-# TODO: Add descriptions (many)
-# TODO BODY: Part damage
+ # Shitmed Change Start
 - type: entity
   id: BasePart
   parent: BaseItem
@@ -7,7 +6,7 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: OrganicPart
   - type: BodyPart
   - type: SurgeryTool
     startSound:
@@ -174,3 +173,4 @@
     symmetry: Right
     toolName: "a right foot"
 
+ # Shitmed Change End

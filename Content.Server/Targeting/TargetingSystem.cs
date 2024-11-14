@@ -36,6 +36,8 @@ public sealed class TargetingSystem : SharedTargetingSystem
                 component.BodyStatus[part] = TargetIntegrity.Dead;
                 changed = true;
             }
+            // I love groin shitcode.
+            component.BodyStatus[TargetBodyPart.Groin] = TargetIntegrity.Dead;
         }
         else if (args.OldMobState == MobState.Dead && (args.NewMobState == MobState.Alive || args.NewMobState == MobState.Critical))
         {

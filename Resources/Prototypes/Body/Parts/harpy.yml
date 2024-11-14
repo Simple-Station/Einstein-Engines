@@ -1,3 +1,4 @@
+# Shitmed Change Start - WHY DIDNT YOU INHERIT FROM BASE PART SOLIDUS???
 - type: entity
   id: PartHarpy
   parent: BaseItem
@@ -5,7 +6,7 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: OrganicPart
   - type: Gibbable
   - type: SurgeryTool
   - type: BodyPart
@@ -231,3 +232,4 @@
     symmetry: Right
     toolName: "a right foot"
 
+# Shitmed Change End

@@ -133,7 +133,7 @@ namespace Content.Shared.Damage
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
             bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null,
-            bool? canSever = true, bool? evade = false, float? partMultiplier = 1.00f, TargetBodyPart? targetPart = null)
+            bool? canSever = true, bool? canEvade = false, float? partMultiplier = 1.00f, TargetBodyPart? targetPart = null)
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -146,10 +146,10 @@ namespace Content.Shared.Damage
                 return damage;
             }
 
-            var before = new BeforeDamageChangedEvent(damage, origin, targetPart, canSever ?? true, evade ?? false, partMultiplier ?? 1.00f);
+            var before = new BeforeDamageChangedEvent(damage, origin, targetPart, canSever ?? true, canEvade ?? false, partMultiplier ?? 1.00f);
             RaiseLocalEvent(uid.Value, ref before);
 
-            if (before.Cancelled)
+            if (before.Cancelled || before.Evaded)
                 return null;
 
             // Apply resistances
@@ -160,6 +160,7 @@ namespace Content.Shared.Damage
                 {
                     // TODO DAMAGE PERFORMANCE
                     // use a local private field instead of creating a new dictionary here..
+                    // TODO: We need to add a check to see if the given armor covers the targeted part (if any) to modify or not.
                     damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
                 }
                 var ev = new DamageModifyEvent(damage, origin, targetPart);
@@ -303,8 +304,9 @@ namespace Content.Shared.Damage
         EntityUid? Origin = null,
         TargetBodyPart? TargetPart = null,
         bool CanSever = true,
-        bool Evade = false,
+        bool CanEvade = false,
         float PartMultiplier = 1.00f,
+        bool Evaded = false,
         bool Cancelled = false);
 
     /// <summary>

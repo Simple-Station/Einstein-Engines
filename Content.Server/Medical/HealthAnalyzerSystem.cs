@@ -6,6 +6,7 @@ using Content.Server.Temperature.Components;
 using Content.Server.Traits.Assorted;
 using Content.Shared.Chemistry.EntitySystems;
 // Shitmed Start
+using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
 using Content.Shared.Targeting;
 // Shitmed End
@@ -68,6 +69,17 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                 StopAnalyzingEntity((uid, component), patient);
                 continue;
             }
+
+            // Shitmed Change Start
+            if (component.CurrentBodyPart != null
+                && (Deleted(component.CurrentBodyPart)
+                || TryComp(component.CurrentBodyPart, out BodyPartComponent? bodyPartComponent)
+                && bodyPartComponent.Body is null))
+            {
+                BeginAnalyzingEntity((uid, component), patient, null);
+                continue;
+            }
+            // Shitmed Change End
 
             component.NextUpdate = _timing.CurTime + component.UpdateInterval;
 
@@ -188,11 +200,18 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// <param name="args">The message containing the selected part</param>
     private void OnHealthAnalyzerPartSelected(Entity<HealthAnalyzerComponent> healthAnalyzer, ref HealthAnalyzerPartMessage args)
     {
-        var (targetType, targetSymmetry) = _bodySystem.ConvertTargetBodyPart(args.BodyPart);
-        if (TryGetEntity(args.Owner, out var owner)
-            && _bodySystem.GetBodyChildrenOfType(owner.Value, targetType, symmetry: targetSymmetry) is { } part)
+        if (!TryGetEntity(args.Owner, out var owner))
+            return;
+
+        if (args.BodyPart == null)
         {
-            BeginAnalyzingEntity(healthAnalyzer, owner.Value, part.FirstOrDefault().Id);
+            BeginAnalyzingEntity(healthAnalyzer, owner.Value, null);
+        }
+        else
+        {
+            var (targetType, targetSymmetry) = _bodySystem.ConvertTargetBodyPart(args.BodyPart.Value);
+            if (_bodySystem.GetBodyChildrenOfType(owner.Value, targetType, symmetry: targetSymmetry) is { } part)
+                BeginAnalyzingEntity(healthAnalyzer, owner.Value, part.FirstOrDefault().Id);
         }
     }
 // End-Shitmed
@@ -233,8 +252,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
         // Start-Shitmed
         Dictionary<TargetBodyPart, TargetIntegrity>? body = null;
-        if (TryComp<TargetingComponent>(target, out var targetingComponent))
-            body = targetingComponent.BodyStatus;
+        if (HasComp<TargetingComponent>(target))
+            body = _bodySystem.GetBodyPartStatus(target);
         // End-Shitmed
 
         _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(

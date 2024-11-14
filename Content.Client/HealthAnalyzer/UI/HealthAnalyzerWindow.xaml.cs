@@ -39,14 +39,13 @@ namespace Content.Client.HealthAnalyzer.UI
         private readonly IResourceCache _cache;
 
         // Start-Shitmed
-        public event Action<TargetBodyPart, EntityUid>? OnBodyPartSelected;
+        public event Action<TargetBodyPart?, EntityUid>? OnBodyPartSelected;
         private EntityUid _spriteViewEntity;
 
         [ValidatePrototypeId<EntityPrototype>]
         private readonly EntProtoId _bodyView = "AlertSpriteView";
 
         private readonly Dictionary<TargetBodyPart, TextureButton> _bodyPartControls;
-        private TextureButton? _activePart;
         private EntityUid? _target;
 
         // End-Shitmed
@@ -81,46 +80,59 @@ namespace Content.Client.HealthAnalyzer.UI
                 bodyPartButton.Value.MouseFilter = MouseFilterMode.Stop;
                 bodyPartButton.Value.OnPressed += _ => SetActiveBodyPart(bodyPartButton.Key, bodyPartButton.Value);
             }
+            ReturnButton.OnPressed += _ => ResetBodyPart();
             // End-Shitmed
         }
 
-        public void SetActiveBodyPart(TargetBodyPart? part, TextureButton button)
+        public void SetActiveBodyPart(TargetBodyPart part, TextureButton button)
         {
             if (_target == null)
                 return;
 
-            if (part != null)
-            {
-                _activePart = button;
-
-                // Bit of the ole shitcode until we have Groins in the prototypes.
-                if (part == TargetBodyPart.Groin)
-                    OnBodyPartSelected?.Invoke(TargetBodyPart.Torso, _target.Value);
-                else
-                    OnBodyPartSelected?.Invoke(part.Value, _target.Value);
-            }
+            // Bit of the ole shitcode until we have Groins in the prototypes.
+            if (part == TargetBodyPart.Groin)
+                OnBodyPartSelected?.Invoke(TargetBodyPart.Torso, _target.Value);
             else
-            {
-                _activePart = null;
-            }
+                OnBodyPartSelected?.Invoke(part, _target.Value);
         }
 
+        public void ResetBodyPart()
+        {
+            if (_target == null)
+                return;
+
+            OnBodyPartSelected?.Invoke(null, _target.Value);
+        }
+
+        public void SetActiveButtons(bool isHumanoid)
+        {
+            foreach (var button in _bodyPartControls)
+                button.Value.Visible = isHumanoid;
+        }
 
         public void Populate(HealthAnalyzerScannedUserMessage msg)
         {
             // Start-Shitmed
             _target = _entityManager.GetEntity(msg.TargetEntity);
+            EntityUid? part = msg.Part != null ? _entityManager.GetEntity(msg.Part.Value) : null;
+            var isPart = part != null;
 
-            // TODO: Rewrite the BodyPartComponent so the Damage is not referenced in there, but from DamageableComponent.
             if (_target == null
-                || !_entityManager.TryGetComponent<DamageableComponent>(msg.Part != null
-                    ? _entityManager.GetEntity(msg.Part.Value)
-                    : _target, out var damageable))
+                || !_entityManager.TryGetComponent<DamageableComponent>(isPart ? part : _target, out var damageable))
             {
                 NoPatientDataText.Visible = true;
                 return;
             }
 
+            SetActiveButtons(_entityManager.HasComponent<TargetingComponent>(_target.Value));
+
+            ReturnButton.Visible = isPart;
+            PartNameLabel.Visible = isPart;
+
+            if (part != null)
+                PartNameLabel.Text = _entityManager.HasComponent<MetaDataComponent>(part)
+                    ? Identity.Name(part.Value, _entityManager)
+                    : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
             NoPatientDataText.Visible = false;
 
@@ -325,11 +337,15 @@ namespace Content.Client.HealthAnalyzer.UI
         {
             if (body is null)
                 return null;
+
             if (!_entityManager.Deleted(_spriteViewEntity))
                 _entityManager.QueueDeleteEntity(_spriteViewEntity);
+
             _spriteViewEntity = _entityManager.Spawn(_bodyView);
+
             if (!_entityManager.TryGetComponent<SpriteComponent>(_spriteViewEntity, out var sprite))
                 return null;
+
             int layer = 0;
             foreach (var (bodyPart, integrity) in body)
             {
