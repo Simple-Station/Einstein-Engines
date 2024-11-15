@@ -2,6 +2,7 @@ using Content.Shared.DragDrop;
 using Content.Shared.Hands.Components;
 using Content.Shared.Popups;
 using Content.Shared.Strip.Components;
+using Content.Shared.Interaction;
 
 namespace Content.Shared.Strip;
 
