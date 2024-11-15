@@ -70,7 +70,6 @@ namespace Content.Shared.Cuffs
             SubscribeLocalEvent<CuffableComponent, RejuvenateEvent>(OnRejuvenate);
             SubscribeLocalEvent<CuffableComponent, ComponentInit>(OnStartup);
             SubscribeLocalEvent<CuffableComponent, AttemptStopPullingEvent>(HandleStopPull);
-            SubscribeLocalEvent<CuffableComponent, RemoveCuffsAlertEvent>(OnRemoveCuffsAlert);
             SubscribeLocalEvent<CuffableComponent, UpdateCanMoveEvent>(HandleMoveAttempt);
             SubscribeLocalEvent<CuffableComponent, IsEquippingAttemptEvent>(OnEquipAttempt);
             SubscribeLocalEvent<CuffableComponent, IsUnequippingAttemptEvent>(OnUnequipAttempt);
@@ -252,14 +251,6 @@ namespace Content.Shared.Cuffs
 
             if (args.User.Value == uid && !component.CanStillInteract)
                 args.Cancelled = true;
-        }
-
-        private void OnRemoveCuffsAlert(Entity<CuffableComponent> ent, ref RemoveCuffsAlertEvent args)
-        {
-            if (args.Handled)
-                return;
-            TryUncuff(ent, ent, cuffable: ent.Comp);
-            args.Handled = true;
         }
 
         private void AddUncuffVerb(EntityUid uid, CuffableComponent component, GetVerbsEvent<Verb> args)

@@ -48,5 +48,3 @@ public sealed partial class PullableComponent : Component
     [DataField]
     public ProtoId<AlertPrototype> PulledAlert = "Pulled";
 }
-
-public sealed partial class StopBeingPulledAlertEvent : BaseAlertEvent;
