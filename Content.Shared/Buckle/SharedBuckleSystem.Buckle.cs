@@ -57,6 +57,13 @@ public abstract partial class SharedBuckleSystem
         {
             BuckleDoafterEarly((uid, comp), ev.Event, ev);
         });
+
+        SubscribeLocalEvent<BuckleComponent, ComponentGetState>(OnGetState);
+    }
+
+    private void OnGetState(Entity<BuckleComponent> ent, ref ComponentGetState args)
+    {
+        args.State = new BuckleState(GetNetEntity(ent.Comp.BuckledTo), ent.Comp.DontCollide, ent.Comp.BuckleTime);
     }
 
     private void OnBuckleComponentShutdown(Entity<BuckleComponent> ent, ref ComponentShutdown args)
