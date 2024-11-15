@@ -34,11 +34,13 @@ public sealed class StandingStateSystem : EntitySystem
         return standingState.CurrentState is StandingState.Lying or StandingState.GettingUp;
     }
 
-    public bool Down(EntityUid uid, bool playSound = true, bool dropHeldItems = true,
+    public bool Down(EntityUid uid,
+        bool playSound = true,
+        bool dropHeldItems = true,
+        bool force = false,
         StandingStateComponent? standingState = null,
         AppearanceComponent? appearance = null,
-        HandsComponent? hands = null,
-        bool setDrawDepth = false)
+        HandsComponent? hands = null)
     {
         // TODO: This should actually log missing comps...
         if (!Resolve(uid, ref standingState, false))
@@ -47,22 +49,8 @@ public sealed class StandingStateSystem : EntitySystem
         // Optional component.
         Resolve(uid, ref appearance, ref hands, false);
 
-<<<<<<< HEAD
-        if (standingState.CurrentState is StandingState.Lying or StandingState.GettingUp)
+        if (!standingState.Standing)
             return true;
-=======
-        public bool Down(EntityUid uid,
-            bool playSound = true,
-            bool dropHeldItems = true,
-            bool force = false,
-            StandingStateComponent? standingState = null,
-            AppearanceComponent? appearance = null,
-            HandsComponent? hands = null)
-        {
-            // TODO: This should actually log missing comps...
-            if (!Resolve(uid, ref standingState, false))
-                return false;
->>>>>>> 23887d5bd9 (Improve buckling's interactions with standing state (#29741))
 
         // This is just to avoid most callers doing this manually saving boilerplate
         // 99% of the time you'll want to drop items but in some scenarios (e.g. buckling) you don't want to.
@@ -74,14 +62,17 @@ public sealed class StandingStateSystem : EntitySystem
         if (TryComp(uid, out BuckleComponent? buckle) && buckle.Buckled && !_buckle.TryUnbuckle(uid, uid, buckleComp: buckle))
             return false;
 
-        var msg = new DownAttemptEvent();
-        RaiseLocalEvent(uid, msg, false);
+        if (!force)
+        {
+            var msg = new DownAttemptEvent();
+            RaiseLocalEvent(uid, msg, false);
 
-        if (msg.Cancelled)
-            return false;
+            if (msg.Cancelled)
+                return false;
+        }
 
-        standingState.CurrentState = StandingState.Lying;
-        Dirty(standingState);
+        standingState.Standing = false;
+        Dirty(uid, standingState);
         RaiseLocalEvent(uid, new DownedEvent(), false);
 
         // Seemed like the best place to put it
@@ -98,7 +89,6 @@ public sealed class StandingStateSystem : EntitySystem
                 _physics.SetCollisionMask(uid, key, fixture, fixture.CollisionMask & ~StandingCollisionLayer, manager: fixtureComponent);
             }
 
-<<<<<<< HEAD
         // check if component was just added or streamed to client
         // if true, no need to play sound - mob was down before player could seen that
         if (standingState.LifeStage <= ComponentLifeStage.Starting)
@@ -138,48 +128,6 @@ public sealed class StandingStateSystem : EntitySystem
 
             if (msg.Cancelled)
                 return false;
-=======
-            if (!force)
-            {
-                var msg = new DownAttemptEvent();
-                RaiseLocalEvent(uid, msg, false);
-
-                if (msg.Cancelled)
-                    return false;
-            }
-
-            standingState.Standing = false;
-            Dirty(uid, standingState);
-            RaiseLocalEvent(uid, new DownedEvent(), false);
-
-            // Seemed like the best place to put it
-            _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal, appearance);
-
-            // Change collision masks to allow going under certain entities like flaps and tables
-            if (TryComp(uid, out FixturesComponent? fixtureComponent))
-            {
-                foreach (var (key, fixture) in fixtureComponent.Fixtures)
-                {
-                    if ((fixture.CollisionMask & StandingCollisionLayer) == 0)
-                        continue;
-
-                    standingState.ChangedFixtures.Add(key);
-                    _physics.SetCollisionMask(uid, key, fixture, fixture.CollisionMask & ~StandingCollisionLayer, manager: fixtureComponent);
-                }
-            }
-
-            // check if component was just added or streamed to client
-            // if true, no need to play sound - mob was down before player could seen that
-            if (standingState.LifeStage <= ComponentLifeStage.Starting)
-                return true;
-
-            if (playSound)
-            {
-                _audio.PlayPredicted(standingState.DownSound, uid, uid);
-            }
-
-            return true;
->>>>>>> 23887d5bd9 (Improve buckling's interactions with standing state (#29741))
         }
 
         standingState.CurrentState = StandingState.Standing;
