@@ -4,15 +4,11 @@ using Content.Shared.Clothing.Components;
 
 namespace Content.Shared.Clothing;
 
-public abstract class GetVisualsEvent(EntityUid equipee, string slot) : EntityEventArgs
+/// Raised directed at a piece of clothing to get the set of layers to show on the wearer's sprite
+public sealed class GetEquipmentVisualsEvent(EntityUid equipee, string slot) : EntityEventArgs
 {
     public readonly EntityUid Equipee = equipee;
     public readonly string Slot = slot;
-}
-
-/// Raised directed at a piece of clothing to get the set of layers to show on the wearer's sprite
-public sealed class GetEquipmentVisualsEvent(EntityUid equipee, string slot) : GetVisualsEvent(equipee, slot)
-{
     /// <summary>
     ///     The layers that will be added to the entity that is wearing this item.
     /// </summary>
@@ -28,8 +24,10 @@ public sealed class GetEquipmentVisualsEvent(EntityUid equipee, string slot) : G
 /// <remarks>
 ///     Useful for systems/components that modify the visual layers that an item adds to a player. (e.g. RGB memes)
 /// </remarks>
-public sealed class EquipmentVisualsUpdatedEvent(EntityUid equipee, string slot, HashSet<string> revealedLayers) : GetVisualsEvent(equipee, slot)
+public sealed class EquipmentVisualsUpdatedEvent(EntityUid equipee, string slot, HashSet<string> revealedLayers) : EntityEventArgs
 {
+    public readonly EntityUid Equipee = equipee;
+    public readonly string Slot = slot;
     /// The layers that this item is now revealing.
     public HashSet<string> RevealedLayers = revealedLayers;
 }

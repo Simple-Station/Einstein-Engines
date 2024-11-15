@@ -17,6 +17,7 @@ public sealed partial class PaintedComponent : Component
     [DataField, AutoNetworkedField]
     public bool Enabled;
 
+    // Not using ProtoId because ShaderPrototype is in Robust.Client
     [DataField, AutoNetworkedField]
     public string ShaderName = "Greyscale";
 }

@@ -26,18 +26,12 @@ public sealed class PaintedVisualizerSystem : VisualizerSystem<PaintedComponent>
 
     protected override void OnAppearanceChange(EntityUid uid, PaintedComponent component, ref AppearanceChangeEvent args)
     {
+        if (args.Sprite == null
+            || !_appearance.TryGetData(uid, PaintVisuals.Painted, out bool isPainted))
+            return;
+
         var shader = _protoMan.Index<ShaderPrototype>(component.ShaderName).Instance();
-
-        if (args.Sprite == null)
-            return;
-
-        // What is this even doing? It's not even checking what the value is.
-        if (!_appearance.TryGetData(uid, PaintVisuals.Painted, out bool isPainted))
-            return;
-
-        var sprite = args.Sprite;
-
-        foreach (var spriteLayer in sprite.AllLayers)
+        foreach (var spriteLayer in args.Sprite.AllLayers)
         {
             if (spriteLayer is not Layer layer)
                 continue;
@@ -72,17 +66,30 @@ public sealed class PaintedVisualizerSystem : VisualizerSystem<PaintedComponent>
     }
 
     private void OnHeldVisualsUpdated(EntityUid uid, PaintedComponent component, HeldVisualsUpdatedEvent args) =>
-        UpdateVisuals(uid, component, args);
+        UpdateVisuals(component, args);
     private void OnEquipmentVisualsUpdated(EntityUid uid, PaintedComponent component, EquipmentVisualsUpdatedEvent args) =>
-        UpdateVisuals(uid, component, args);
-    private void UpdateVisuals(EntityUid uid, PaintedComponent component, EntityEventArgs args)
+        UpdateVisuals(component, args);
+    private void UpdateVisuals(PaintedComponent component, EntityEventArgs args)
     {
-        if (args is not EquipmentVisualsUpdatedEvent ags
-            || ags.RevealedLayers.Count == 0
-            || !TryComp(ags.Equipee, out SpriteComponent? sprite))
+        var layers = new HashSet<string>();
+        var entity = EntityUid.Invalid;
+
+        switch (args)
+        {
+            case HeldVisualsUpdatedEvent hgs:
+                layers = hgs.RevealedLayers;
+                entity = hgs.User;
+                break;
+            case EquipmentVisualsUpdatedEvent eqs:
+                layers = eqs.RevealedLayers;
+                entity = eqs.Equipee;
+                break;
+        }
+
+        if (layers.Count == 0 || !TryComp(entity, out SpriteComponent? sprite))
             return;
 
-        foreach (var revealed in ags.RevealedLayers)
+        foreach (var revealed in layers)
         {
             if (!sprite.LayerMapTryGet(revealed, out var layer))
                 continue;
