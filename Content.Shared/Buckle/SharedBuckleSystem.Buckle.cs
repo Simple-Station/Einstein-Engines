@@ -198,13 +198,13 @@ public abstract partial class SharedBuckleSystem
         }
 
         _sawmill.Info("Trying to set BuckledTo...");
-        _sawmill.Info($"BuckledTo: {buckle.Comp.BuckledTo}");
+        _sawmill.Info($"BuckledTo: {ToPrettyString(buckle.Comp.BuckledTo)}");
         _sawmill.Info($"Buckled: {buckle.Comp.Buckled}");
 
         buckle.Comp.BuckledTo = strap;
         buckle.Comp.BuckleTime = _gameTiming.CurTime;
 
-        _sawmill.Info($"BuckledTo: {buckle.Comp.BuckledTo}");
+        _sawmill.Info($"BuckledTo: {ToPrettyString(buckle.Comp.BuckledTo)}");
         _sawmill.Info($"Buckled: {buckle.Comp.Buckled}");
         ActionBlocker.UpdateCanMove(buckle);
         Appearance.SetData(buckle, StrapVisuals.State, buckle.Comp.Buckled);
