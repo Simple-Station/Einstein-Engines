@@ -12,6 +12,7 @@
   - type: Tag
     tags:
     - Sheet
+    - NoPaint
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -110,6 +111,7 @@
   - type: Tag
     tags:
     - Sheet
+    - NoPaint
   - type: UserInterface
     interfaces:
       enum.RadialSelectorUiKey.Key:
@@ -145,6 +147,7 @@
     tags:
     - Plastic
     - Sheet
+    - NoPaint
   - type: Material
   - type: PhysicalComposition
     materialComposition:
