@@ -30,9 +30,14 @@ public abstract partial class SharedBuckleSystem
     public static ProtoId<AlertCategoryPrototype> BuckledAlertCategory = "Buckled";
 
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
+
+    private ISawmill _sawmill = default!;
 
     private void InitializeBuckle()
     {
+        _sawmill = _logManager.GetSawmill("sharedBuckleSystem");
+
         SubscribeLocalEvent<BuckleComponent, ComponentShutdown>(OnBuckleComponentShutdown);
         SubscribeLocalEvent<BuckleComponent, MoveEvent>(OnBuckleMove);
         SubscribeLocalEvent<BuckleComponent, EntParentChangedMessage>(OnParentChanged);
@@ -192,6 +197,7 @@ public abstract partial class SharedBuckleSystem
             _alerts.ClearAlertCategory(buckle, BuckledAlertCategory);
         }
 
+        _sawmill.Info($"Strap null: {(strap == null).ToString()}");
         buckle.Comp.BuckledTo = strap;
         buckle.Comp.BuckleTime = _gameTiming.CurTime;
         ActionBlocker.UpdateCanMove(buckle);
