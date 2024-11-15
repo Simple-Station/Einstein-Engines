@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Shared.Buckle.Components;
-using Content.Shared.Cuffs.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
 using Content.Shared.IdentityManagement;
@@ -34,24 +33,7 @@ public abstract partial class SharedBuckleSystem
         if (!StrapCanDragDropOn(uid, args.User, uid, args.Dragged, component))
             return;
 
-        if (args.Dragged == args.User)
-        {
-            if (!TryComp(args.User, out BuckleComponent? buckle))
-                return;
-
-            args.Handled = TryBuckle(args.User, args.User, uid, buckle);
-        }
-        else
-        {
-            var doAfterArgs = new DoAfterArgs(EntityManager, args.User, component.BuckleDoafterTime, new BuckleDoAfterEvent(), args.User, args.Dragged, uid)
-            {
-                BreakOnMove = true,
-                BreakOnDamage = true,
-                AttemptFrequency = AttemptFrequency.EveryTick
-            };
-
-            _doAfter.TryStartDoAfter(doAfterArgs);
-        }
+        args.Handled = TryBuckle(args.Dragged, args.User, uid, popup: false);
     }
 
     private bool StrapCanDragDropOn(
