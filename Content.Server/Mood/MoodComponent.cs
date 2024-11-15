@@ -1,5 +1,6 @@
 ﻿using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 
 namespace Content.Server.Mood;
@@ -65,20 +66,20 @@ public sealed partial class MoodComponent : Component
         { MoodThreshold.Dead, 0f }
     };
 
-    [DataField(customTypeSerializer: typeof(DictionarySerializer<MoodThreshold, AlertType>))]
-    public Dictionary<MoodThreshold, AlertType> MoodThresholdsAlerts = new()
+    [DataField(customTypeSerializer: typeof(DictionarySerializer<MoodThreshold, ProtoId<AlertPrototype>>))]
+    public Dictionary<MoodThreshold, ProtoId<AlertPrototype>> MoodThresholdsAlerts = new()
     {
-        { MoodThreshold.Dead, AlertType.MoodDead },
-        { MoodThreshold.Horrible, AlertType.Horrible },
-        { MoodThreshold.Terrible, AlertType.Terrible },
-        { MoodThreshold.Bad, AlertType.Bad },
-        { MoodThreshold.Meh, AlertType.Meh },
-        { MoodThreshold.Neutral, AlertType.Neutral },
-        { MoodThreshold.Good, AlertType.Good },
-        { MoodThreshold.Great, AlertType.Great },
-        { MoodThreshold.Exceptional, AlertType.Exceptional },
-        { MoodThreshold.Perfect, AlertType.Perfect },
-        { MoodThreshold.Insane, AlertType.Insane }
+        { MoodThreshold.Dead, "Dead" },
+        { MoodThreshold.Horrible, "Horrible" },
+        { MoodThreshold.Terrible, "Terrible" },
+        { MoodThreshold.Bad, "Bad" },
+        { MoodThreshold.Meh, "Meh" },
+        { MoodThreshold.Neutral, "Neutral" },
+        { MoodThreshold.Good, "Good" },
+        { MoodThreshold.Great, "Great" },
+        { MoodThreshold.Exceptional, "Exception" },
+        { MoodThreshold.Perfect, "Perfect" },
+        { MoodThreshold.Insane, "Insane" }
     };
 
     /// <summary>

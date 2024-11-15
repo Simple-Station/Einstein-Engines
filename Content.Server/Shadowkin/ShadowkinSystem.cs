@@ -89,10 +89,10 @@ public sealed class ShadowkinSystem : EntitySystem
         if (TryComp<PsionicComponent>(uid, out var magic))
         {
             var severity = (short) ContentHelpers.RoundToLevels(magic.Mana, magic.MaxMana, 8);
-            _alerts.ShowAlert(uid, AlertType.ShadowkinPower, severity);
+            _alerts.ShowAlert(uid, component.ShadowkinPowerAlert, severity);
         }
         else
-            _alerts.ClearAlert(uid, AlertType.ShadowkinPower);
+            _alerts.ClearAlert(uid, component.ShadowkinPowerAlert);
     }
 
     private void OnAttemptPowerUse(EntityUid uid, ShadowkinComponent component, OnAttemptPowerUseEvent args)
