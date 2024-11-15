@@ -17,6 +17,9 @@ public sealed partial class PaintComponent : Component
     public SoundSpecifier Spray = new SoundPathSpecifier("/Audio/Effects/spray2.ogg");
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public EntityWhitelist? Whitelist;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public EntityWhitelist? Blacklist;
 
     /// How long the doafter will take
