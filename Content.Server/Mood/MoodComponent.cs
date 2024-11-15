@@ -72,7 +72,7 @@ public sealed partial class MoodComponent : Component
     [DataField(customTypeSerializer: typeof(DictionarySerializer<MoodThreshold, ProtoId<AlertPrototype>>))]
     public Dictionary<MoodThreshold, ProtoId<AlertPrototype>> MoodThresholdsAlerts = new()
     {
-        { MoodThreshold.Dead, "Dead" },
+        { MoodThreshold.Dead, "MoodDead" },
         { MoodThreshold.Horrible, "Horrible" },
         { MoodThreshold.Terrible, "Terrible" },
         { MoodThreshold.Bad, "Bad" },
@@ -80,7 +80,7 @@ public sealed partial class MoodComponent : Component
         { MoodThreshold.Neutral, "Neutral" },
         { MoodThreshold.Good, "Good" },
         { MoodThreshold.Great, "Great" },
-        { MoodThreshold.Exceptional, "Exception" },
+        { MoodThreshold.Exceptional, "Exceptional" },
         { MoodThreshold.Perfect, "Perfect" },
         { MoodThreshold.Insane, "Insane" }
     };
