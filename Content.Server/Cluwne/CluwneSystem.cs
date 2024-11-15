@@ -17,6 +17,8 @@ using Content.Shared.Cluwne;
 using Content.Shared.Interaction.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.NameModifier.EntitySystems;
+using Content.Shared.Clumsy;
 
 namespace Content.Server.Cluwne;
 
