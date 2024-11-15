@@ -29,7 +29,6 @@ namespace Content.IntegrationTests.Tests.Buckle
   components:
   - type: Buckle
   - type: Hands
-  - type: ComplexInteraction
   - type: InputMover
   - type: Body
     prototype: Human

@@ -79,7 +79,7 @@ namespace Content.Shared.Toilet.Systems
 
         private void OnActivateInWorld(EntityUid uid, ToiletComponent comp, ActivateInWorldEvent args)
         {
-            if (args.Handled || !args.Complex)
+            if (args.Handled)
                 return;
 
             args.Handled = true;

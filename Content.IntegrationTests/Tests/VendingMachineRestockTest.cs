@@ -27,7 +27,6 @@ namespace Content.IntegrationTests.Tests
   id: HumanVendingDummy
   components:
   - type: Hands
-  - type: ComplexInteraction
   - type: Body
     prototype: Human
 

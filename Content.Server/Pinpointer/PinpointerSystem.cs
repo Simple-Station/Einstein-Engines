@@ -45,15 +45,10 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
 
     private void OnActivate(EntityUid uid, PinpointerComponent component, ActivateInWorldEvent args)
     {
-        if (args.Handled || !args.Complex)
-            return;
-
         TogglePinpointer(uid, component);
 
         if (!component.CanRetarget)
             LocateTarget(uid, component);
-
-        args.Handled = true;
     }
 
     private void OnLocateTarget(ref FTLCompletedEvent ev)

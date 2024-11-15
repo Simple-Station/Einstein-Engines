@@ -211,9 +211,6 @@ public sealed class GasCanisterSystem : EntitySystem
 
     private void OnCanisterActivate(EntityUid uid, GasCanisterComponent component, ActivateInWorldEvent args)
     {
-        if (!args.Complex)
-            return;
-
         if (!TryComp<ActorComponent>(args.User, out var actor))
             return;
 

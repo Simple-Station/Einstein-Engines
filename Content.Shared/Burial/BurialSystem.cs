@@ -84,11 +84,10 @@ public sealed class BurialSystem : EntitySystem
 
     private void OnActivate(EntityUid uid, GraveComponent component, ActivateInWorldEvent args)
     {
-        if (args.Handled || !args.Complex)
+        if (args.Handled)
             return;
 
         _popupSystem.PopupClient(Loc.GetString("grave-digging-requires-tool", ("grave", args.Target)), uid, args.User);
-        args.Handled = true;
     }
 
     private void OnGraveDigging(EntityUid uid, GraveComponent component, GraveDiggingDoAfterEvent args)

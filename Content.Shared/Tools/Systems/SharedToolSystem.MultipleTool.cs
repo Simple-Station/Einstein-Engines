@@ -28,7 +28,7 @@ public abstract partial class SharedToolSystem
 
     private void OnMultipleToolActivated(EntityUid uid, MultipleToolComponent multiple, ActivateInWorldEvent args)
     {
-        if (args.Handled || !args.Complex)
+        if (args.Handled)
             return;
 
         args.Handled = CycleMultipleTool(uid, multiple, args.User);

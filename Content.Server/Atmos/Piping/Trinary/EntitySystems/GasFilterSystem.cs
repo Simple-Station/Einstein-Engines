@@ -99,9 +99,6 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
 
         private void OnFilterActivate(EntityUid uid, GasFilterComponent filter, ActivateInWorldEvent args)
         {
-            if (args.Handled || !args.Complex)
-                return;
-
             if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))
                 return;
 

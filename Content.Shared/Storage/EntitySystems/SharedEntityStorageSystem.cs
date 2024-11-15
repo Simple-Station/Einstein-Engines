@@ -89,7 +89,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
 
     protected void OnInteract(EntityUid uid, SharedEntityStorageComponent component, ActivateInWorldEvent args)
     {
-        if (args.Handled || !args.Complex)
+        if (args.Handled)
             return;
 
         args.Handled = true;

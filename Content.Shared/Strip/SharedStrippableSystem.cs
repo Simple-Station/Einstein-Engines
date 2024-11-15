@@ -15,19 +15,9 @@ public abstract class SharedStrippableSystem : EntitySystem
         SubscribeLocalEvent<StrippingComponent, CanDropTargetEvent>(OnCanDropOn);
         SubscribeLocalEvent<StrippableComponent, CanDropDraggedEvent>(OnCanDrop);
         SubscribeLocalEvent<StrippableComponent, DragDropDraggedEvent>(OnDragDrop);
-        SubscribeLocalEvent<StrippableComponent, ActivateInWorldEvent>(OnActivateInWorld);
     }
 
-    private void OnActivateInWorld(EntityUid uid, StrippableComponent component, ActivateInWorldEvent args)
-    {
-        if (args.Handled || !args.Complex || args.Target == args.User)
-            return;
-
-        if (TryOpenStrippingUi(args.User, (uid, component)))
-            args.Handled = true;
-    }
-
-    public (TimeSpan Time, bool Stealth) GetStripTimeModifiers(EntityUid user, EntityUid target, TimeSpan initialTime)
+    public (TimeSpan Time, ThievingStealth Stealth) GetStripTimeModifiers(EntityUid user, EntityUid target, TimeSpan initialTime)
     {
         var userEv = new BeforeStripEvent(initialTime);
         RaiseLocalEvent(user, ref userEv);

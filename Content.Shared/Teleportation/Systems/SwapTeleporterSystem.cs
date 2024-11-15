@@ -101,9 +101,6 @@ public sealed class SwapTeleporterSystem : EntitySystem
 
     private void OnActivateInWorld(Entity<SwapTeleporterComponent> ent, ref ActivateInWorldEvent args)
     {
-        if (args.Handled || !args.Complex)
-            return;
-
         var (uid, comp) = ent;
         var user = args.User;
         if (comp.TeleportTime != null)
@@ -133,7 +130,6 @@ public sealed class SwapTeleporterSystem : EntitySystem
         comp.NextTeleportUse = _timing.CurTime + comp.Cooldown;
         comp.TeleportTime = _timing.CurTime + comp.TeleportDelay;
         Dirty(uid, comp);
-        args.Handled = true;
     }
 
     public void DoTeleport(Entity<SwapTeleporterComponent, TransformComponent> ent)

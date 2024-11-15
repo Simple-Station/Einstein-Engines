@@ -14,9 +14,6 @@ public abstract partial class SharedTetherGunSystem
 
     private void OnForceActivate(EntityUid uid, ForceGunComponent component, ActivateInWorldEvent args)
     {
-        if (!args.Complex)
-            return;
-
         StopTether(uid, component);
     }
 

@@ -126,7 +126,7 @@ namespace Content.Server.Light.EntitySystems
 
         private void OnActivate(Entity<HandheldLightComponent> ent, ref ActivateInWorldEvent args)
         {
-            if (args.Handled || !args.Complex || !ent.Comp.ToggleOnInteract)
+            if (args.Handled || !ent.Comp.ToggleOnInteract)
                 return;
 
             if (ToggleStatus(args.User, ent))

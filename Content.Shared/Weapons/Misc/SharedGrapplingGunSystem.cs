@@ -116,7 +116,7 @@ public abstract class SharedGrapplingGunSystem : EntitySystem
 
     private void OnGunActivate(EntityUid uid, GrapplingGunComponent component, ActivateInWorldEvent args)
     {
-        if (!Timing.IsFirstTimePredicted || args.Handled || !args.Complex)
+        if (!Timing.IsFirstTimePredicted || args.Handled)
             return;
 
         if (Deleted(component.Projectile))

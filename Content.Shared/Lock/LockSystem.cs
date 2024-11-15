@@ -54,7 +54,7 @@ public sealed class LockSystem : EntitySystem
 
     private void OnActivated(EntityUid uid, LockComponent lockComp, ActivateInWorldEvent args)
     {
-        if (args.Handled || !args.Complex)
+        if (args.Handled)
             return;
 
         // Only attempt an unlock by default on Activate

@@ -17,6 +17,7 @@
   - type: NpcFactionMember
     factions:
     - SimpleHostile
+  - type: Hands
   - type: Sprite
     drawdepth: Mobs
     sprite: Structures/Machines/VendingMachines/cola.rsi
