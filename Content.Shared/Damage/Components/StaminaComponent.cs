@@ -72,7 +72,7 @@ public sealed partial class StaminaComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float SlowdownMultiplier = 0.75f;
-}
+
     [DataField]
     public ProtoId<AlertPrototype> StaminaAlert = "Stamina";
 }
