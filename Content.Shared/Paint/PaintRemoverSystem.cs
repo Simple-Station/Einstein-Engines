@@ -8,15 +8,13 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Paint;
 
-/// <summary>
-/// Removes paint from an entity.
-/// </summary>
 public sealed class PaintRemoverSystem : SharedPaintSystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
+
 
     public override void Initialize()
     {
@@ -27,13 +25,13 @@ public sealed class PaintRemoverSystem : SharedPaintSystem
         SubscribeLocalEvent<PaintRemoverComponent, GetVerbsEvent<UtilityVerb>>(OnPaintRemoveVerb);
     }
 
-    // When entity is painted, remove paint from that entity.
+
     private void OnInteract(EntityUid uid, PaintRemoverComponent component, AfterInteractEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!args.CanReach || args.Target is not { Valid: true } target || !HasComp<PaintedComponent>(target))
+        if (args.Handled
+            || !args.CanReach
+            || args.Target is not { Valid: true } target
+            || !HasComp<PaintedComponent>(target))
             return;
 
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.CleanDelay, new PaintRemoverDoAfterEvent(), uid, args.Target, uid)
@@ -48,13 +46,11 @@ public sealed class PaintRemoverSystem : SharedPaintSystem
 
     private void OnDoAfter(EntityUid uid, PaintRemoverComponent component, DoAfterEvent args)
     {
-        if (args.Cancelled || args.Handled || args.Args.Target == null)
-            return;
-
-        if (args.Target is not { Valid: true } target)
-            return;
-
-        if (!TryComp(target, out PaintedComponent? paint))
+        if (args.Cancelled
+            || args.Handled
+            || args.Args.Target == null
+            || args.Target is not { Valid: true } target
+            || !TryComp(target, out PaintedComponent? paint))
             return;
 
         paint.Enabled = false;
@@ -72,23 +68,27 @@ public sealed class PaintRemoverSystem : SharedPaintSystem
         if (!args.CanInteract || !args.CanAccess)
             return;
 
-        var paintremovalText = Loc.GetString("paint-remove-verb");
-
         var verb = new UtilityVerb()
         {
+            Text = Loc.GetString("paint-remove-verb"),
             Act = () =>
             {
-
-                _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.CleanDelay, new PaintRemoverDoAfterEvent(), uid, args.Target, uid)
-                {
-                    BreakOnUserMove = true,
-                    BreakOnTargetMove = true,
-                    BreakOnDamage = true,
-                    MovementThreshold = 1.0f,
-                });
+                _doAfter.TryStartDoAfter(
+                    new DoAfterArgs(
+                        EntityManager,
+                        args.User,
+                        component.CleanDelay,
+                        new PaintRemoverDoAfterEvent(),
+                        uid,
+                        args.Target,
+                        uid)
+                    {
+                        BreakOnUserMove = true,
+                        BreakOnTargetMove = true,
+                        BreakOnDamage = true,
+                        MovementThreshold = 1.0f,
+                    });
             },
-
-            Text = paintremovalText
         };
 
         args.Verbs.Add(verb);

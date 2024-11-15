@@ -92,7 +92,7 @@ public sealed class LoadoutSystem : EntitySystem
             if (loadoutProto.CustomDescription && loadout.Item2.CustomDescription != null)
                 _meta.SetEntityDescription(loadout.Item1, loadout.Item2.CustomDescription);
             if (loadoutProto.CustomColorTint && !string.IsNullOrEmpty(loadout.Item2.CustomColorTint))
-                _paint.Paint(new EntityWhitelist(), loadout.Item1, Color.FromHex(loadout.Item2.CustomColorTint));
+                _paint.Paint(null, null, loadout.Item1, Color.FromHex(loadout.Item2.CustomColorTint));
 
             foreach (var component in loadoutProto.Components.Values)
             {

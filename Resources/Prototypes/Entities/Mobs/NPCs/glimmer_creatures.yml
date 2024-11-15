@@ -161,3 +161,6 @@
   - type: NPCRetaliation
     attackMemoryLength: 10
   - type: NPCRangedCombat
+  # other
+  - type: LanguageSpeaker
+  - type: UniversalLanguageSpeaker # Should it speak unversal or some other language?
