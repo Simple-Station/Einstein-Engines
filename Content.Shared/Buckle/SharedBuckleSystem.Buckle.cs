@@ -193,7 +193,6 @@ public abstract partial class SharedBuckleSystem
         }
 
         _sawmill.Info($"Strap null: {(strap == null).ToString()}");
-        _sawmill.Info($"Buckled: {(buckle.Comp.Buckled).ToString()}");
         buckle.Comp.BuckledTo = strap;
         buckle.Comp.BuckleTime = _gameTiming.CurTime;
         ActionBlocker.UpdateCanMove(buckle);
