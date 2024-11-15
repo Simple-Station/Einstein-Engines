@@ -15,6 +15,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<BuckleComponent, ComponentHandleState>(OnHandleState);
         SubscribeLocalEvent<BuckleComponent, AppearanceChangeEvent>(OnAppearanceChange);
         SubscribeLocalEvent<StrapComponent, MoveEvent>(OnStrapMoveEvent);
     }
@@ -54,6 +55,21 @@ internal sealed class BuckleSystem : SharedBuckleSystem
                 buckle.OriginalDrawDepth = null;
             }
         }
+    }
+
+    private void OnHandleState(Entity<BuckleComponent> ent, ref ComponentHandleState args)
+    {
+        if (args.Current is not BuckleState state)
+            return;
+
+        ent.Comp.DontCollide = state.DontCollide;
+        ent.Comp.BuckleTime = state.BuckleTime;
+        var strapUid = EnsureEntity<BuckleComponent>(state.BuckledTo, ent);
+
+        SetBuckledTo(ent, strapUid == null ? null : new (strapUid.Value, null));
+
+        var (uid, component) = ent;
+
     }
 
     private void OnAppearanceChange(EntityUid uid, BuckleComponent component, ref AppearanceChangeEvent args)
