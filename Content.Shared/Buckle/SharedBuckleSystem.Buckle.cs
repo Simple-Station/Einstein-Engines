@@ -192,6 +192,8 @@ public abstract partial class SharedBuckleSystem
             _alerts.ClearAlertCategory(buckle, BuckledAlertCategory);
         }
 
+        throw new Exception("Where are you.");
+
         buckle.Comp.BuckledTo = strap;
         buckle.Comp.BuckleTime = _gameTiming.CurTime;
         ActionBlocker.UpdateCanMove(buckle);
