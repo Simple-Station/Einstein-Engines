@@ -20,6 +20,33 @@
 # Eyes
 
 # Gloves
+- type: loadout
+  id: LoadoutHeadOfPersonnelGlovesHoP
+  category: JobsCommandHeadOfPersonnel
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingHandsGlovesHop
+
+- type: loadout
+  id: LoadoutHeadOfPersonnelGlovesInspection
+  category: JobsCommandHeadOfPersonnel
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingHandsGlovesInspection
 
 # Head
 - type: loadout

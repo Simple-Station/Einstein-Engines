@@ -12,27 +12,31 @@
   cost: 3
   exclusive: true
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Command
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCommandSelfDefense
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Command
   items:
   - TelescopicBaton
 
-# Eyes
-
-# Gloves
 - type: loadout
-  id: LoadoutCommandGlovesInspection
+  id: LoadoutCommandDisabler
   category: JobsCommandAUncategorized
   cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-        - Captain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCommandSelfDefense
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Command
   items:
-    - ClothingHandsGlovesInspection
+  - WeaponDisabler
+
+# Eyes
+
+# Gloves
 
 # Head
 
