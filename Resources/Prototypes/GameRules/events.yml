@@ -456,7 +456,6 @@
     weight: 8
     minimumPlayers: 15
     reoccurrenceDelay: 30
-    startAnnouncement: false
   - type: AlertLevelInterceptionRule
   - type: TraitorRule
   - type: AntagSelection
@@ -492,7 +491,6 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: false
     weight: 2
     duration: 1
     earliestStart: 45
