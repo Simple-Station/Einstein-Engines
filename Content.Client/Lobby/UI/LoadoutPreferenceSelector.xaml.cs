@@ -215,7 +215,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         NameEdit.OnTextChanged += _ =>
             _preference.CustomName = string.IsNullOrEmpty(NameEdit.Text) ? null : NameEdit.Text;
         DescriptionEdit.OnTextChanged += _ =>
-            _preference.CustomDescription = string.IsNullOrEmpty(Rope.Collapse(DescriptionEdit.TextRope))? null : Rope.Collapse(DescriptionEdit.TextRope);
+            _preference.CustomDescription = string.IsNullOrEmpty(Rope.Collapse(DescriptionEdit.TextRope)) ? null : Rope.Collapse(DescriptionEdit.TextRope);
         SpecialColorTintToggle.OnToggled += args =>
             ColorEdit.Visible = args.Pressed;
         ColorEdit.OnColorChanged += _ =>
