@@ -1,5 +1,5 @@
 - type: characterItemGroup
-  id: LoadoutSeniorEngineerEquipment
+  id: LoadoutStationEngineerEquipment
   maxItems: 2
   items:
     - type: loadout
