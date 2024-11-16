@@ -405,7 +405,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
         // The original message
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkup(originalMessage), language);
+        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
 
         if (message.Length == 0)
             return;
@@ -478,7 +478,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
 
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkup(originalMessage), language);
+        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
         if (message.Length == 0)
             return;
 
@@ -588,7 +588,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
             ("entityName", name),
             ("entity", ent),
-            ("message", FormattedMessage.RemoveMarkup(action)));
+            ("message", FormattedMessage.RemoveMarkupPermissive(action)));
 
         if (checkEmote)
             TryEmoteChatInput(source, action);
