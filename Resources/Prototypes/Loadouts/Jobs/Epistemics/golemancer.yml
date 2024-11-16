@@ -26,12 +26,12 @@
 # Uniforms
 - type: loadout
   id: LoadoutScienceUniformJumpskirtRoboticist
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsGolemancer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsScience
+      group: LoadoutGolemancerUniforms
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -40,12 +40,12 @@
 
 - type: loadout
   id: LoadoutScienceUniformJumpsuitRoboticist
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsGolemancer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsScience
+      group: LoadoutGolemancerUniforms
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics

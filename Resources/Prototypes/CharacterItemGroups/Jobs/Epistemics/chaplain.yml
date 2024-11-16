@@ -1,0 +1,18 @@
+# Chaplain
+- type: characterItemGroup
+  id: LoadoutChaplainUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChaplainJumpsuit
+    - type: loadout
+      id: LoadoutChaplainJumpskirt
+
+- type: characterItemGroup
+  id: LoadoutChaplainEquipment
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutChaplainBible
+    - type: loadout
+      id: LoadoutChaplainStamp

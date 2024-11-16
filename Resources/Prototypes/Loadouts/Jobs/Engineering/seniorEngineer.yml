@@ -1,46 +1,5 @@
 # Senior Engineer
 # Backpacks
-- type: loadout
-  id: LoadoutEngineeringSeniorEngineerBackpackBackpack
-  category: JobsEngineeringStationEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSeniorEngineerBackpack
-    - !type:CharacterJobRequirement
-      jobs:
-        - SeniorEngineer
-  items:
-    - ClothingBackpackEngineeringFilled
-
-- type: loadout
-  id: LoadoutEngineeringSeniorEngineerBackpackSatchel
-  category: JobsEngineeringStationEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSeniorEngineerBackpack
-    - !type:CharacterJobRequirement
-      jobs:
-        - SeniorEngineer
-  items:
-    - ClothingBackpackSatchelEngineeringFilled
-
-- type: loadout
-  id: LoadoutEngineeringSeniorEngineerBackpackDuffel
-  category: JobsEngineeringStationEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSeniorEngineerBackpack
-    - !type:CharacterJobRequirement
-      jobs:
-        - SeniorEngineer
-  items:
-    - ClothingBackpackDuffelEngineeringFilled
 
 # Belt
 - type: loadout

@@ -1,0 +1,15 @@
+- type: characterItemGroup
+  id: LoadoutMysticUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceUniformJumpskirtSenior
+    - type: loadout
+      id: LoadoutScienceUniformJumpsuitSenior
+
+- type: characterItemGroup
+  id: LoadoutMysticOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceOuterLabcoatSeniorResearcher

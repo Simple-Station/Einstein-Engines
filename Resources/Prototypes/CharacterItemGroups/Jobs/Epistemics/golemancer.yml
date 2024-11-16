@@ -1,0 +1,8 @@
+- type: characterItemGroup
+  id: LoadoutGolemancerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceUniformJumpskirtRoboticist
+    - type: loadout
+      id: LoadoutScienceUniformJumpsuitRoboticist

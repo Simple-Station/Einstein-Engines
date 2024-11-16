@@ -1,5 +1,46 @@
 # Mystagogue
 # Backpacks
+- type: loadout
+  id: LoadoutMystagogueBackpacksBackpack
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingBackpackResearchDirectorFilled
+
+- type: loadout
+  id: LoadoutMystagogueBackpacksSatchel
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingBackpackSatchelResearchDirectorFilled
+
+- type: loadout
+  id: LoadoutMystagogueBackpacksDuffel
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingBackpackDuffelResearchDirectorFilled
 
 # Belt
 
@@ -12,49 +53,14 @@
 # Gloves
 
 # Head
-
-# Id
-
-# Neck
-
-# Mask
-
-# Outer
-
-# Shoes
-
-# Uniforms
-
-# Outer
-- type: loadout
-  id: LoadoutCommandRDOuterWinter
-  category: JobsEpistemicsMystagogue
-  cost: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - ResearchDirector
-  items:
-    - ClothingOuterWinterRD
-
-- type: loadout
-  id: LoadoutCommandRDOuterMysta
-  category: JobsEpistemicsMystagogue
-  cost: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - ResearchDirector
-  items:
-    - ClothingOuterCoatRndMysta
-
-# Head
 - type: loadout
   id: LoadoutCommandRDHeadHatBeretMysta
   category: JobsEpistemicsMystagogue
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueHead
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector
@@ -67,11 +73,15 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueHead
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector
   items:
     - ClothingHeadHoodMysta
+
+# Id
 
 # Neck
 - type: loadout
@@ -80,6 +90,8 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueNeck
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector
@@ -92,6 +104,8 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueNeck
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector
@@ -104,11 +118,42 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueNeck
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector
   items:
     - ClothingNeckCloakMystagogue
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutCommandRDOuterWinter
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingOuterWinterRD
+
+- type: loadout
+  id: LoadoutCommandRDOuterMysta
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingOuterCoatRndMysta
 
 # Shoes
 - type: loadout
@@ -117,8 +162,39 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueShoes
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector
   items:
     - ClothingShoesBootsWinterMystagogue
+
+# Uniforms
+- type: loadout
+  id: LoadoutMystagogueUniformJumpsuit
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingUniformJumpsuitResearchDirector
+
+- type: loadout
+  id: LoadoutMystagogueUniformJumpskirt
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingUniformJumpskirtResearchDirector

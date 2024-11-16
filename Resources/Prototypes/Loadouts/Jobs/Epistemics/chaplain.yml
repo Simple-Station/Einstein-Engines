@@ -26,7 +26,7 @@
 # Uniforms
 - type: loadout
   id: LoadoutChaplainJumpsuit
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -40,7 +40,7 @@
 
 - type: loadout
   id: LoadoutChaplainJumpskirt
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -54,7 +54,7 @@
 
 - type: loadout
   id: LoadoutScienceUniformJumpsuitMonasticRobeDark
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -68,7 +68,7 @@
 
 - type: loadout
   id: LoadoutScienceUniformJumpsuitMonasticRobeLight
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -83,7 +83,7 @@
 # Outer
 - type: loadout
   id: LoadoutScienceOuterPlagueSuit
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -97,7 +97,7 @@
 
 - type: loadout
   id: LoadoutScienceOuterNunRobe
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -111,7 +111,7 @@
 
 - type: loadout
   id: LoadoutScienceOuterHoodieBlack
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -125,7 +125,7 @@
 
 - type: loadout
   id: LoadoutScienceOuterHoodieChaplain
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -140,7 +140,7 @@
 # Neck
 - type: loadout
   id: LoadoutScienceNeckStoleChaplain
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -155,7 +155,7 @@
 # Head
 - type: loadout
   id: LoadoutScienceHeadHatHoodNunHood
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -169,7 +169,7 @@
 
 - type: loadout
   id: LoadoutScienceHeadHatPlaguedoctor
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -183,7 +183,7 @@
 
 - type: loadout
   id: LoadoutScienceHeadHatWitch
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -197,7 +197,7 @@
 
 - type: loadout
   id: LoadoutScienceHeadHatWitch1
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -212,7 +212,7 @@
 # Mask
 - type: loadout
   id: LoadoutScienceMaskPlague
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -227,7 +227,7 @@
 # Equipment
 - type: loadout
   id: LoadoutChaplainBible
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:
@@ -241,7 +241,7 @@
 
 - type: loadout
   id: LoadoutChaplainStamp
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsChaplain
   cost: 0
   exclusive: true
   requirements:

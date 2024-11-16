@@ -1,15 +1,4 @@
 - type: characterItemGroup
-  id: LoadoutSeniorEngineerBackpack
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutEngineeringSeniorEngineerBackpackBackpack
-    - type: loadout
-      id: LoadoutEngineeringSeniorEngineerBackpackSatchel
-    - type: loadout
-      id: LoadoutEngineeringSeniorEngineerBackpackDuffel
-
-- type: characterItemGroup
   id: LoadoutSeniorEngineerBelt
   maxItems: 1
   items:

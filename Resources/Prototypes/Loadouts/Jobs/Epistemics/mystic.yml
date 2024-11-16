@@ -26,29 +26,29 @@
 # Uniforms
 - type: loadout
   id: LoadoutScienceUniformJumpskirtSenior
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsMystic
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsScience
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
+      group: LoadoutMysticUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
   items:
     - ClothingUniformJumpskirtSeniorResearcher
 
 - type: loadout
   id: LoadoutScienceUniformJumpsuitSenior
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsMystic
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsScience
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
+      group: LoadoutMysticUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
   items:
     - ClothingUniformJumpsuitSeniorResearcher
 
@@ -60,12 +60,9 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
-    - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics
-      min: 216000 # 60 hours
+      group: LoadoutMysticOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
   items:
     - ClothingOuterCoatLabSeniorResearcher
