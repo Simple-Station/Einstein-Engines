@@ -296,7 +296,7 @@ namespace Content.Shared.Movement.Systems
 
         private void WalkingAlert(EntityUid player, InputMoverComponent component)
         {
-            _alerts.ShowAlert(player, AlertType.Walking, component.Sprinting ? (short) 1 : (short) 0);
+            _alerts.ShowAlert(player, component.WalkingAlert, component.Sprinting ? (short) 1 : (short) 0);
         }
 
         public void LerpRotation(EntityUid uid, InputMoverComponent mover, float frameTime)

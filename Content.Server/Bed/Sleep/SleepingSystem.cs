@@ -95,7 +95,7 @@ namespace Content.Server.Bed.Sleep
                 return;
 
             if (args.DamageDelta.GetTotal() >= component.WakeThreshold)
-                TryWaking(uid, component);
+                TryWaking(uid, component, true);
         }
 
         private void OnSleepAction(EntityUid uid, MobStateComponent component, SleepActionEvent args)
