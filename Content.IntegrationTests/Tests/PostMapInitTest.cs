@@ -247,12 +247,16 @@ namespace Content.IntegrationTests.Tests
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
                     var jobList = entManager.GetComponent<StationJobsComponent>(station).RoundStartJobList
                         .Where(x => x.Value != 0)
-                        .Select(x => x.Key);
+                        .Select(x => x.Key)
+                        .ToList();
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(x => x.SpawnType == SpawnPointType.Job)
                         .Select(x => x.Job!.ID);
 
-                    jobList.Except(spawnPoints);
+                    foreach (var job in jobList)
+                        if (spawnPoints.Contains(job))
+                            jobList.Remove(job);
+
                     Assert.That(jobList, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobList)} on {mapProto}.");
                 }
 
