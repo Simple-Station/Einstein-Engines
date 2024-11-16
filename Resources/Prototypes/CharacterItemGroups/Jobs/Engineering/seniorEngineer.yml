@@ -1,0 +1,41 @@
+- type: characterItemGroup
+  id: LoadoutSeniorEngineerBackpack
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutEngineeringSeniorEngineerBackpackBackpack
+    - type: loadout
+      id: LoadoutEngineeringSeniorEngineerBackpackSatchel
+    - type: loadout
+      id: LoadoutEngineeringSeniorEngineerBackpackDuffel
+
+- type: characterItemGroup
+  id: LoadoutSeniorEngineerBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSeniorEngineerBeltUtility
+    - type: loadout
+      id: LoadoutSeniorEngineerBeltUtilityEngineering
+    - type: loadout
+      id: LoadoutSeniorEngineerBeltUtilityAtmos
+
+- type: characterItemGroup
+  id: LoadoutSeniorEngineerEquipment
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentBoxInflatable
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentMedkitOxygen
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentRCD
+
+- type: characterItemGroup
+  id: LoadoutSeniorEngineerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutEngineeringUniformJumpskirtSenior
+    - type: loadout
+      id: LoadoutEngineeringUniformJumpsuitSenior

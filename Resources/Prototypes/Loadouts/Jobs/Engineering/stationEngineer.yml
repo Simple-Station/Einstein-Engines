@@ -1,53 +1,37 @@
 # Station Engineer
 # Backpack
-- type: loadout
-  id: LoadoutEngineeringStationEngineerBackpackBackpack
-  category: JobsEngineeringStationEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutStationEngineerBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
-  items:
-    - ClothingBackpackEngineeringFilled
-
-- type: loadout
-  id: LoadoutEngineeringStationEngineerBackpackSatchel
-  category: JobsEngineeringStationEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutStationEngineerBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
-  items:
-    - ClothingBackpackSatchelEngineeringFilled
-
-- type: loadout
-  id: LoadoutEngineeringStationEngineerBackpackDuffel
-  category: JobsEngineeringStationEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutStationEngineerBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
-  items:
-    - ClothingBackpackDuffelEngineeringFilled
 
 # Belt
-
 
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutStationEngineerEquipmentBoxInflatable
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - BoxInflatable
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentRCD
+  category: JobsEngineeringStationEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - RCD
+    - RCDAmmo
 
 # Eyes
 
@@ -66,46 +50,3 @@
 # Shoes
 
 # Uniforms
-- type: loadout
-  id: LoadoutEngineeringUniformSuit
-  category: JobsEngineeringStationEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsEngineering
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
-  items:
-    - ClothingUniformJumpsuitEngineering
-
-- type: loadout
-  id: LoadoutEngineeringUniformSkirt
-  category: JobsEngineeringStationEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsEngineering
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
-  items:
-    - ClothingUniformJumpskirtEngineering
-
-- type: loadout
-  id: LoadoutEngineeringUniformHazard
-  category: JobsEngineeringStationEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsEngineering
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
-  items:
-    - ClothingUniformJumpsuitEngineeringHazard
-
-# Equipment

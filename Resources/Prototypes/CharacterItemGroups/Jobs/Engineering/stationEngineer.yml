@@ -1,0 +1,8 @@
+- type: characterItemGroup
+  id: LoadoutSeniorEngineerEquipment
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentBoxInflatable
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentRCD

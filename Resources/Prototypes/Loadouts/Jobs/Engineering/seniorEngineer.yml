@@ -7,7 +7,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSeniorEngineerBackpacks
+      group: LoadoutSeniorEngineerBackpack
     - !type:CharacterJobRequirement
       jobs:
         - SeniorEngineer
@@ -21,7 +21,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSeniorEngineerBackpacks
+      group: LoadoutSeniorEngineerBackpack
     - !type:CharacterJobRequirement
       jobs:
         - SeniorEngineer
@@ -35,7 +35,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSeniorEngineerBackpacks
+      group: LoadoutSeniorEngineerBackpack
     - !type:CharacterJobRequirement
       jobs:
         - SeniorEngineer
@@ -59,7 +59,7 @@
 
 - type: loadout
   id: LoadoutSeniorEngineerBeltUtilityEngineering
-  category: JobsEngineeringAtmosphericTechnician
+  category: JobsEngineeringSeniorEngineer
   cost: 0
   exclusive: true
   requirements:
@@ -71,9 +71,62 @@
   items:
     - ClothingBeltUtilityEngineering
 
+- type: loadout
+  id: LoadoutSeniorEngineerBeltUtilityAtmos
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingBeltUtilityAtmos
+
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentBoxInflatable
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - BoxInflatable
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentMedkitOxygen
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - MedkitOxygenFilled
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentRCD
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - RCD
+    - RCDAmmo
 
 # Eyes
 

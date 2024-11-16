@@ -64,44 +64,44 @@
 
 # Gloves
 - type: loadout
-  id: LoadoutAtmosphericTechnicianGlovesInsulated
-  category: JobsEngineeringAtmosphericTechnician
+  id: LoadoutEngineeringGlovesInsulated
+  category: JobsEngineeringAAUncategorized
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEngineeringGloves
-    - !type:CharacterJobRequirement
-      jobs:
-        - AtmosphericTechnician
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
   items:
     - ClothingHandsGlovesColorYellow
 
 - type: loadout
-  id: LoadoutAtmosphericTechnicianGlovesCombat
-  category: JobsEngineeringAtmosphericTechnician
+  id: LoadoutEngineeringGlovesCombat
+  category: JobsEngineeringAAUncategorized
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEngineeringGloves
-    - !type:CharacterJobRequirement
-      jobs:
-        - AtmosphericTechnician
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
   items:
     - ClothingHandsGlovesCombat
 
 - type: loadout
-  id: LoadoutAtmosphericTechnicianGlovesMerc
-  category: JobsEngineeringAtmosphericTechnician
+  id: LoadoutEngineeringGlovesMerc
+  category: JobsEngineeringAAUncategorized
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEngineeringGloves
-    - !type:CharacterJobRequirement
-      jobs:
-        - AtmosphericTechnician
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
   items:
     - ClothingHandsMercGlovesCombat
 
@@ -214,5 +214,44 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutEngineeringUniformSuit
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - ClothingUniformJumpsuitEngineering
 
-# Equipment
+- type: loadout
+  id: LoadoutEngineeringUniformSkirt
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - ClothingUniformJumpskirtEngineering
+
+- type: loadout
+  id: LoadoutEngineeringUniformHazard
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - ClothingUniformJumpsuitEngineeringHazard
