@@ -27,7 +27,7 @@
 - type: loadout
   id: LoadoutSecurityUniformJumpskirtSenior
   category: JobsSecuritySeniorOfficer
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -35,25 +35,13 @@
     - !type:CharacterJobRequirement
       jobs:
         - SeniorOfficer
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobWarden
-      min: 21600 # 6 hours
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobDetective
-      min: 7200 # 2 hours
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobSecurityOfficer
-      min: 21600 # 6 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 216000 # 60 hours
   items:
     - ClothingUniformJumpskirtSeniorOfficer
 
 - type: loadout
   id: LoadoutSecurityUniformJumpsuitSenior
   category: JobsSecuritySeniorOfficer
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -61,17 +49,5 @@
     - !type:CharacterJobRequirement
       jobs:
         - SeniorOfficer
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobWarden
-      min: 21600 # 6 hours
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobDetective
-      min: 7200 # 2 hours
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobSecurityOfficer
-      min: 21600 # 6 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 216000 # 60 hours
   items:
     - ClothingUniformJumpsuitSeniorOfficer

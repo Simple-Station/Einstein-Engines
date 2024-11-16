@@ -37,8 +37,8 @@ character-item-group-LoadoutOuterScience = Epistemics Outerwear
 character-item-group-LoadoutShoesScience = Epistemics Shoes
 character-item-group-LoadoutUniformsScience = Epistemics Uniforms
 
-# Epistemics - Cataloguer
-character-item-group-LoadoutCataloguerUniforms = Cataloguer Uniforms
+# Epistemics - Cataloger
+character-item-group-LoadoutCataloguerUniforms = Cataloger Uniforms
 
 # Epistemics - Chaplain
 character-item-group-LoadoutChaplainUniforms = Chaplain Uniforms

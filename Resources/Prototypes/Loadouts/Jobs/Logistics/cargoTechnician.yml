@@ -27,7 +27,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: JobsLogisticsAUncategorized
+      group: LoadoutCargoTechnicianOuter
     - !type:CharacterJobRequirement
       jobs:
         - CargoTechnician
@@ -42,7 +42,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: JobsLogisticsAUncategorized
+      group: LoadoutCargoTechnicianShoes
     - !type:CharacterJobRequirement
       jobs:
         - CargoTechnician

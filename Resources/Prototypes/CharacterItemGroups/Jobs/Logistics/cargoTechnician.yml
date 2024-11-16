@@ -1,0 +1,13 @@
+- type: characterItemGroup
+  id: LoadoutCargoTechnicianOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoOuterWinterCargo
+
+- type: characterItemGroup
+  id: LoadoutCargoTechnicianShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoShoesBootsWinterCargo

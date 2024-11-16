@@ -35,9 +35,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
-    - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics
-      min: 216000 # 60 hours
   items:
     - ClothingUniformJumpskirtSeniorResearcher
 
@@ -52,9 +49,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
-    - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics
-      min: 216000 # 60 hours
   items:
     - ClothingUniformJumpsuitSeniorResearcher
 

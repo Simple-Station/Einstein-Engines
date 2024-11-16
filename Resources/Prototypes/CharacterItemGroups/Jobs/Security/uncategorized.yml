@@ -10,26 +10,6 @@
     - type: loadout
       id: LoadoutSecurityUniformJumpskirtGrey
     - type: loadout
-      id: LoadoutSecurityUniformJumpsuitSenior
-    - type: loadout
-      id: LoadoutSecurityUniformJumpskirtSenior
-    - type: loadout
-      id: LoadoutSecurityUniformJumpsuitWardenBlue
-    - type: loadout
-      id: LoadoutSecurityUniformJumpskirtWardenBlue
-    - type: loadout
-      id: LoadoutSecurityUniformJumpsuitWardenGrey
-    - type: loadout
-      id: LoadoutSecurityUniformJumpskirtWardenGrey
-    - type: loadout
-      id: LoadoutSecurityUniformJumpsuitHoSBlue
-    - type: loadout
-      id: LoadoutSecurityUniformJumpskirtHoSBlue
-    - type: loadout
-      id: LoadoutSecurityUniformJumpsuitHoSGrey
-    - type: loadout
-      id: LoadoutSecurityUniformJumpskirtHoSGrey
-    - type: loadout
       id: LoadoutUniformJumpsuitSecFormal
     - type: loadout
       id: LoadoutUniformJumpsuitSecSummer
@@ -45,12 +25,6 @@
       id: LoadoutClothingOuterCoatDetective
     - type: loadout
       id: LoadoutOuterVestDetective
-    - type: loadout
-      id: LoadoutClothingOuterCoatWarden
-    - type: loadout
-      id: LoadoutClothingOuterCoatHoSTrench
-    - type: loadout
-      id: LoadoutClothingOuterWinterHoS
     - type: loadout
       id: LoadoutClothingOuterArmorBasic
     - type: loadout

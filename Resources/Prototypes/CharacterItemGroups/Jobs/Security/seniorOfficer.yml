@@ -1,0 +1,7 @@
+- type: characterItemGroup
+  id: LoadoutSeniorOfficerUniforms
+  items:
+    - type: loadout
+      id: LoadoutSecurityUniformJumpskirtSenior
+    - type: loadout
+      id: LoadoutSecurityUniformJumpsuitSenior

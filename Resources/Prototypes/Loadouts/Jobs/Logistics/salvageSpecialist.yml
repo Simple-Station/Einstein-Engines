@@ -9,7 +9,7 @@
     - ClothingBackpackSalvage
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
+      group: LoadoutSalvageSpecialistBackpacks
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
@@ -24,6 +24,8 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 2
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist
@@ -46,7 +48,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: JobsLogisticsAUncategorized
+      group: LoadoutSalvageSpecialistNeck
     - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist

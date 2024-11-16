@@ -1,0 +1,27 @@
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackSalvage
+
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistWeapons
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoWeaponsCrusherDagger
+
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoNeckGoliathCloak
+
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoOuterWinterMiner

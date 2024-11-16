@@ -1,0 +1,11 @@
+- type: characterItemGroup
+  id: LoadoutWardenUniforms
+  items:
+    - type: loadout
+      id: LoadoutUniformJumpsuitWardenBlue
+    - type: loadout
+      id: LoadoutUniformJumpsuitWardenGrey
+    - type: loadout
+      id: LoadoutUniformJumpskirtWardenBlue
+    - type: loadout
+      id: LoadoutUniformJumpskirtWardenGrey
