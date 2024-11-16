@@ -8,7 +8,6 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
-using Content.Shared.Roles;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
@@ -146,7 +145,7 @@ namespace Content.IntegrationTests.Tests
 
                 var root = yamlStream.Documents[0].RootNode;
                 var meta = root["meta"];
-                var postMapInit = meta["postmapinit"].AsBool();
+                var postMapInit = meta["postmapinit"];
 
                 Assert.That(postMapInit, Is.False, $"Map {map.Filename} was saved postmapinit");
             }
@@ -251,10 +250,10 @@ namespace Content.IntegrationTests.Tests
                         .Select(x => x.Key);
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(x => x.SpawnType == SpawnPointType.Job)
-                        .Select(x => x.Job!.Value);
+                        .Select(x => x.Job!.ID);
 
-                    jobs.ExceptWith(spawnPoints);
-                    Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
+                    jobList.Except(spawnPoints);
+                    Assert.That(jobList, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobList)} on {mapProto}.");
                 }
 
                 try
