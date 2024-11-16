@@ -24,20 +24,6 @@
         - Clown
 
 - type: loadout
-  id: LoadoutBackpackIan
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackIan
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-
-- type: loadout
   id: LoadoutBackpackMime
   category: Backpacks
   cost: 0

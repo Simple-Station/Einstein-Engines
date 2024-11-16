@@ -7,3 +7,7 @@
       id: LoadoutBackpackDuffel
     - type: loadout
       id: LoadoutBackpackSatchel
+    - type: loadout
+      id: LoadoutItemBackpackSatchelLeather
+    - type: loadout
+      id: LoadoutBackpackMerc

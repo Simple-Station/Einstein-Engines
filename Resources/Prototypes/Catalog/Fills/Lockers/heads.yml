@@ -99,22 +99,13 @@
       - id: BoxID
       - id: BoxHeadset
       - id: IDComputerCircuitboard
-      - id: ClothingOuterCoatHoPArmored # DeltaV
-      - id: ClothingOuterArmorDuraVest # DeltaV - replaced HoP's armoured coat with a standard stabproof, pending HoPcoat resprite
-      - id: CigarGoldCase
-        prob: 0.25
-        # Fuck the HoP they don't deserve fucking cigars.
-        # Yes they do fuck you.
       - id: DoorRemoteService
-      - id: ClothingNeckGoldmedal
       - id: RubberStampHop
       - id: RubberStampDenied
       - id: RubberStampApproved
       - id: BoxEncryptionKeyPassenger
       - id: BoxEncryptionKeyService
       - id: AccessConfigurator
-      - id: BookIanDossier # DeltaV - HoP steal objective, see Resources/Prototypes/DeltaV/Entities/Objects/Misc/ian_dossier.yml
-      - id: ClothingHandsGlovesInspection # DeltaV - Add inspection gloves for HoP.
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
 

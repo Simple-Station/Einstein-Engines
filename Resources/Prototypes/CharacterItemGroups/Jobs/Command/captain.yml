@@ -24,7 +24,7 @@
 
 - type: characterItemGroup
   id: LoadoutCaptainTrinkets
-  maxItems: 4
+  maxItems: 3
   items:
     - type: loadout
       id: LoadoutCaptainDrinkFlask

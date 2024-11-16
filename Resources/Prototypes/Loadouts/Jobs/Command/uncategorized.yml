@@ -23,7 +23,7 @@
 - type: loadout
   id: LoadoutCommandDisabler
   category: JobsCommandAUncategorized
-  cost: 0
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -33,6 +33,48 @@
       - Command
   items:
   - WeaponDisabler
+
+- type: loadout
+  id: LoadoutCommandStunBaton
+  category: JobsCommandAUncategorized
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCommandSelfDefense
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Command
+  items:
+  - Stunbaton
+
+- type: loadout
+  id: LoadoutCommandPepperspray
+  category: JobsCommandAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCommandSelfDefense
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Command
+  items:
+  - Pepperspray
+
+- type: loadout
+  id: LoadoutCommandFlash
+  category: JobsCommandAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCommandSelfDefense
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Command
+  items:
+  - Flash
 
 # Eyes
 
