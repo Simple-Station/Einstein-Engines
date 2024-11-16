@@ -1,0 +1,19 @@
+tts-voice-Vasco-name = Vasco
+tts-voice-GLaDOS-name = GLaDOS
+
+tts-voice-Amy-name = Amy
+tts-voice-Bryce-name = Bryce
+tts-voice-Arctic-name = Arctic
+tts-voice-Danny-name = Danny
+tts-voice-Jeff-name = Jeff
+tts-voice-Joe-name = Joe
+tts-voice-John-name = John
+tts-voice-Norman-name = Norman
+tts-voice-Ryan-name = Ryan
+tts-voice-Fiona-name = Fiona
+tts-voice-Kathleen-name = Kathleen
+tts-voice-Kristin-name = Kristin
+tts-voice-Kusal-name = Kusal
+tts-voice-Brit-name = Bree
+tts-voice-Kait-name = Kait
+tts-voice-Lessac-name = Lessac

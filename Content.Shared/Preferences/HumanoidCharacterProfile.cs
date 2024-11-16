@@ -7,6 +7,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
+using Content.Shared.TTS;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
@@ -66,6 +67,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public string Customspeciename { get; set; } = "";
 
     [DataField]
+    public string Voice { get; set; } = "TEST";
+
+    [DataField]
     public float Height { get; private set; }
 
     [DataField]
@@ -115,6 +119,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string flavortext,
         string species,
         string customspeciename,
+        string voice,
         float height,
         float width,
         int age,
@@ -134,6 +139,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         FlavorText = flavortext;
         Species = species;
         Customspeciename = customspeciename;
+        Voice = voice;
         Height = height;
         Width = width;
         Age = age;
@@ -157,6 +163,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.FlavorText,
             other.Species,
             other.Customspeciename,
+            other.Voice,
             other.Height,
             other.Width,
             other.Age,
@@ -224,6 +231,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
         }
 
+        var voiceId = random.Pick(prototypeManager
+                .EnumeratePrototypes<TTSVoicePrototype>()
+                .Where(o => CanHaveVoice(o, sex)).ToArray()
+            ).ID;
+
         var gender = Gender.Epicene;
 
         switch (sex)
@@ -245,6 +257,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             Age = age,
             Gender = gender,
             Species = species,
+            Voice = voiceId,
             Appearance = HumanoidCharacterAppearance.Random(species, sex),
         };
     }
@@ -256,6 +269,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
     public HumanoidCharacterProfile WithSpecies(string species) => new(this) { Species = species };
     public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename};
+    public HumanoidCharacterProfile WithVoice(string voice) => new(this) { Voice = voice };
     public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
     public HumanoidCharacterProfile WithWidth(float width) => new(this) { Width = width };
 
@@ -478,11 +492,18 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         _traitPreferences.Clear();
         _traitPreferences.UnionWith(traits);
 
-        _loadoutPreferences.Clear();
+        prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
+            if (voice is null || !CanHaveVoice(voice, Sex))
+                Voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];_loadoutPreferences.Clear();
         _loadoutPreferences.UnionWith(loadouts);
     }
 
-    public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection)
+    public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)
+    {
+        return voice.CanSelect && sex == Sex.Unsexed || (voice.Sex == sex || voice.Sex == Sex.Unsexed);
+    }
+
+        public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection)
     {
         var profile = new HumanoidCharacterProfile(this);
         profile.EnsureValid(session, collection);
@@ -512,13 +533,14 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Name);
         hashCode.Add(FlavorText);
         hashCode.Add(Species);
+        hashCode.Add(Customspeciename);
+        hashCode.Add(Voice);
         hashCode.Add(Age);
         hashCode.Add((int)Sex);
         hashCode.Add((int)Gender);
         hashCode.Add(Appearance);
         hashCode.Add((int)SpawnPriority);
         hashCode.Add((int)PreferenceUnavailable);
-        hashCode.Add(Customspeciename);
         return hashCode.ToHashCode();
     }
 
