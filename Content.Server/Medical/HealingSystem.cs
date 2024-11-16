@@ -19,6 +19,7 @@ using Content.Shared.Medical;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Targeting;
 using Content.Shared.Stacks;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
@@ -85,7 +86,7 @@ public sealed class HealingSystem : EntitySystem
         if (healing.ModifyBloodLevel != 0)
             _bloodstreamSystem.TryModifyBloodLevel(entity.Owner, healing.ModifyBloodLevel);
 
-        var healed = _damageable.TryChangeDamage(entity.Owner, healing.Damage, true, origin: args.Args.User, canSever: false);
+        var healed = _damageable.TryChangeDamage(entity.Owner, healing.Damage, true, origin: args.User, canSever: false);
 
         if (healed == null && healing.BloodlossModifier != 0)
             return;
@@ -120,7 +121,7 @@ public sealed class HealingSystem : EntitySystem
         _audio.PlayPvs(healing.HealingEndSound, entity.Owner, AudioHelpers.WithVariation(0.125f, _random).WithVolume(-5f));
 
         // Logic to determine whether or not to repeat the healing action
-        args.Repeat = HasDamage(entity.Comp, healing) && !dontRepeat || ArePartsDamaged(entity);
+        args.Repeat = HasDamage(entity.Comp, healing) && !dontRepeat || IsPartDamaged(args.User, entity);
         if (!args.Repeat && !dontRepeat)
             _popupSystem.PopupEntity(Loc.GetString("medical-item-finished-using", ("item", args.Used)), entity.Owner, args.User);
         args.Handled = true;
@@ -141,17 +142,17 @@ public sealed class HealingSystem : EntitySystem
         return false;
     }
 
-    private bool ArePartsDamaged(EntityUid target)
+    private bool IsPartDamaged(EntityUid user, EntityUid target)
     {
-        if (!TryComp<BodyComponent>(target, out var body))
+        if (!TryComp(user, out TargetingComponent? targeting))
             return false;
 
-        foreach (var part in _bodySystem.GetBodyChildren(target, body))
-        {
+        var (targetType, targetSymmetry) = _bodySystem.ConvertTargetBodyPart(targeting.Target);
+        foreach (var part in _bodySystem.GetBodyChildrenOfType(target, targetType, symmetry: targetSymmetry))
             if (TryComp<DamageableComponent>(part.Id, out var damageable)
                 && damageable.TotalDamage > part.Component.MinIntegrity)
                 return true;
-        }
+
         return false;
     }
 
@@ -193,7 +194,7 @@ public sealed class HealingSystem : EntitySystem
 
         var anythingToDo =
             HasDamage(targetDamage, component) ||
-            ArePartsDamaged(target) ||
+            IsPartDamaged(user, target) ||
             component.ModifyBloodLevel > 0 // Special case if healing item can restore lost blood...
                 && TryComp<BloodstreamComponent>(target, out var bloodstream)
                 && _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var bloodSolution)

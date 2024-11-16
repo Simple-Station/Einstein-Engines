@@ -30,5 +30,5 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent
     ///  If true, the organ will not heal an entity when transplanted into them.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool? Used { get; set; } = false;
+    public bool? Used { get; set; }
 }

@@ -152,12 +152,9 @@ public sealed class BodySystem : SharedBodySystem
         if (!Resolve(partId, ref part, logMissing: false)
             || TerminatingOrDeleted(partId)
             || EntityManager.IsQueuedForDeletion(partId))
-        {
             return new HashSet<EntityUid>();
-        }
 
-        var xform = Transform(partId);
-        if (xform.MapUid is null)
+        if (Transform(partId).MapUid is null)
             return new HashSet<EntityUid>();
 
         var gibs = base.GibPart(partId, part, launchGibs: launchGibs,
@@ -170,6 +167,7 @@ public sealed class BodySystem : SharedBodySystem
 
         return gibs;
     }
+
     protected override void ApplyPartMarkings(EntityUid target, BodyPartAppearanceComponent component)
     {
         return;
@@ -178,12 +176,8 @@ public sealed class BodySystem : SharedBodySystem
     protected override void RemoveBodyMarkings(EntityUid target, BodyPartAppearanceComponent partAppearance, HumanoidAppearanceComponent bodyAppearance)
     {
         foreach (var (visualLayer, markingList) in partAppearance.Markings)
-        {
             foreach (var marking in markingList)
-            {
                 _humanoidSystem.RemoveMarking(target, marking.MarkingId, sync: false, humanoid: bodyAppearance);
-            }
-        }
 
         Dirty(target, bodyAppearance);
     }

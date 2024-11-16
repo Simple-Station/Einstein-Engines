@@ -38,13 +38,7 @@ namespace Content.Client.HealthAnalyzer.UI
             _window.Populate(cast);
         }
 
-        private void SendBodyPartMessage(TargetBodyPart? part, EntityUid target)
-        {
-            if (part == null)
-                SendMessage(new HealthAnalyzerPartMessage(EntMan.GetNetEntity(target), null));
-            else
-                SendMessage(new HealthAnalyzerPartMessage(EntMan.GetNetEntity(target), part.Value));
-        }
+        private void SendBodyPartMessage(TargetBodyPart? part, EntityUid target) => SendMessage(new HealthAnalyzerPartMessage(EntMan.GetNetEntity(target), part ?? null));
 
         protected override void Dispose(bool disposing)
         {

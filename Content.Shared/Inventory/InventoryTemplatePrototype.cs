@@ -59,5 +59,5 @@ public sealed partial class SlotDefinition
     /// <summary>
     ///     Is this slot disabled? Could be due to severing or other reasons.
     /// </summary>
-    [DataField("disabled")] public bool Disabled = false;
+    [DataField] public bool Disabled;
 }

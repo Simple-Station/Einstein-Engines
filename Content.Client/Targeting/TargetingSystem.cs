@@ -63,28 +63,28 @@ public sealed class TargetingSystem : SharedTargetingSystem
 
     private void OnTargetingStartup(EntityUid uid, TargetingComponent component, ComponentStartup args)
     {
-        if (_playerManager.LocalEntity == uid)
-        {
-            TargetingStartup?.Invoke(component);
-            PartStatusStartup?.Invoke(component);
-        }
+        if (_playerManager.LocalEntity != uid)
+            return;
+
+        TargetingStartup?.Invoke(component);
+        PartStatusStartup?.Invoke(component);
     }
 
     private void OnTargetingShutdown(EntityUid uid, TargetingComponent component, ComponentShutdown args)
     {
-        if (_playerManager.LocalEntity == uid)
-        {
-            TargetingShutdown?.Invoke();
-            PartStatusShutdown?.Invoke();
-        }
+        if (_playerManager.LocalEntity != uid)
+            return;
+
+        TargetingShutdown?.Invoke();
+        PartStatusShutdown?.Invoke();
     }
 
     private void OnTargetIntegrityChange(TargetIntegrityChangeEvent args)
     {
         if (!TryGetEntity(args.Uid, out var uid)
-        || !_playerManager.LocalEntity.Equals(uid)
-        || !TryComp(uid, out TargetingComponent? component)
-        || !args.RefreshUi)
+            || !_playerManager.LocalEntity.Equals(uid)
+            || !TryComp(uid, out TargetingComponent? component)
+            || !args.RefreshUi)
             return;
 
         PartStatusUpdate?.Invoke(component);

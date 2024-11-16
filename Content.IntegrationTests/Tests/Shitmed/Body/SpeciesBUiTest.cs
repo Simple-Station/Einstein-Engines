@@ -18,12 +18,10 @@ public sealed class SpeciesBUiTest
   parent: BaseMobSpecies
 ";
 
-    private Dictionary<Enum, InterfaceData> GetInterfaces(UserInterfaceComponent comp)
-    {
-        return (Dictionary<Enum, InterfaceData>)
+    private Dictionary<Enum, InterfaceData> GetInterfaces(UserInterfaceComponent comp) =>
+        (Dictionary<Enum, InterfaceData>)
             typeof(UserInterfaceComponent).GetField("Interfaces", BindingFlags.NonPublic | BindingFlags.Instance)!
             .GetValue(comp);
-    }
 
     [Test]
     public async Task AllSpeciesHaveBaseBUiTest()

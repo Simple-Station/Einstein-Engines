@@ -11,8 +11,8 @@ public sealed partial class SurgeryOrganConditionComponent : Component
     public ComponentRegistry? Organ;
 
     [DataField]
-    public bool Inverse = false;
+    public bool Inverse;
 
     [DataField]
-    public bool Reattaching = false;
+    public bool Reattaching;
 }

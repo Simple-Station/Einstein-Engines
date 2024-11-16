@@ -184,9 +184,11 @@ namespace Content.Client.Inventory
 
         public void OnRefreshInventorySlots(EntityUid owner, InventorySlotsComponent component, RefreshInventorySlotsEvent args)
         {
-            if (component.SlotData.TryGetValue(args.SlotName, out var slotData)
-                && _playerManager.LocalEntity == owner)
-                OnSlotRemoved?.Invoke(slotData);
+            if (!component.SlotData.TryGetValue(args.SlotName, out var slotData)
+                || _playerManager.LocalEntity != owner)
+                return;
+
+            OnSlotRemoved?.Invoke(slotData);
         }
 
         public bool TryAddSlotDef(EntityUid owner, InventorySlotsComponent component, SlotDefinition newSlotDef)

@@ -72,7 +72,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     /// What's the max health this body part can have?
     /// </summary>
     [DataField]
-    public float MinIntegrity = 0;
+    public float MinIntegrity;
 
     /// <summary>
     /// Whether this body part is enabled or not.
@@ -89,18 +89,18 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     /// <summary>
     /// How long it takes to run another self heal tick on the body part.
     /// </summary>
-    [DataField("healingTime")]
+    [DataField]
     public float HealingTime = 30;
 
     /// <summary>
     /// How long it has been since the last self heal tick on the body part.
     /// </summary>
-    public float HealingTimer = 0;
+    public float HealingTimer;
 
     /// <summary>
     /// How much health to heal on the body part per tick.
     /// </summary>
-    [DataField("selfHealingAmount")]
+    [DataField]
     public float SelfHealingAmount = 5;
 
     /// <summary>

@@ -22,9 +22,7 @@ public sealed class BodySystem : SharedBodySystem
             var markingSprite = markingPrototype.Sprites[j];
 
             if (markingSprite is not SpriteSpecifier.Rsi rsi)
-            {
                 continue;
-            }
 
             var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
 
@@ -38,21 +36,14 @@ public sealed class BodySystem : SharedBodySystem
             sprite.LayerSetVisible(layerId, visible);
 
             if (!visible)
-            {
                 continue;
-            }
 
             // Okay so if the marking prototype is modified but we load old marking data this may no longer be valid
-            // and we need to check the index is correct.
-            // So if that happens just default to white?
+            // and we need to check the index is correct. So if that happens just default to white?
             if (colors != null && j < colors.Count)
-            {
                 sprite.LayerSetColor(layerId, colors[j]);
-            }
             else
-            {
                 sprite.LayerSetColor(layerId, Color.White);
-            }
         }
     }
 
@@ -65,7 +56,6 @@ public sealed class BodySystem : SharedBodySystem
             sprite.Color = component.Color.Value;
 
         foreach (var (visualLayer, markingList) in component.Markings)
-        {
             foreach (var marking in markingList)
             {
                 if (!_markingManager.TryGetMarking(marking, out var markingPrototype))
@@ -73,7 +63,6 @@ public sealed class BodySystem : SharedBodySystem
 
                 ApplyMarkingToPart(markingPrototype, marking.MarkingColors, marking.Visible, sprite);
             }
-        }
     }
 
     protected override void RemoveBodyMarkings(EntityUid target, BodyPartAppearanceComponent partAppearance, HumanoidAppearanceComponent bodyAppearance)

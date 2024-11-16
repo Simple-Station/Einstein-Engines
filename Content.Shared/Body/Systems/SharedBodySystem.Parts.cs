@@ -48,9 +48,7 @@ public partial class SharedBodySystem
     private void OnBodyPartRemove(Entity<BodyPartComponent> ent, ref ComponentRemove args)
     {
         if (ent.Comp.PartType == BodyPartType.Torso)
-        {
             _slots.RemoveItemSlot(ent, ent.Comp.ItemInsertionSlot);
-        }
     }
     private void OnBodyPartInserted(Entity<BodyPartComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
@@ -185,10 +183,9 @@ public partial class SharedBodySystem
 
     }
 
-    private void OnAmputateAttempt(Entity<BodyPartComponent> partEnt, ref AmputateAttemptEvent args)
-    {
+    private void OnAmputateAttempt(Entity<BodyPartComponent> partEnt, ref AmputateAttemptEvent args) =>
         DropPart(partEnt);
-    }
+
     private void AddLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
     {
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
@@ -286,9 +283,7 @@ public partial class SharedBodySystem
 
         // I hate having to hardcode these checks so much.
         if (partEnt.Comp.PartType == BodyPartType.Leg)
-        {
             AddLeg(partEnt, (partEnt.Comp.Body.Value, body));
-        }
 
         if (partEnt.Comp.PartType == BodyPartType.Arm)
         {
@@ -334,9 +329,7 @@ public partial class SharedBodySystem
             return;
 
         if (partEnt.Comp.PartType == BodyPartType.Leg)
-        {
             RemoveLeg(partEnt, (partEnt.Comp.Body.Value, body));
-        }
 
         if (partEnt.Comp.PartType == BodyPartType.Arm)
         {

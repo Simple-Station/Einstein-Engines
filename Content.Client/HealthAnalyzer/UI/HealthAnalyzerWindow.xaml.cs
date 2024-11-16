@@ -2,7 +2,6 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.Message;
 using Content.Shared.Atmos;
-using Content.Shared.Body.Part; // Shitmed
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Alert;
 using Content.Shared.Damage;
@@ -90,10 +89,7 @@ namespace Content.Client.HealthAnalyzer.UI
                 return;
 
             // Bit of the ole shitcode until we have Groins in the prototypes.
-            if (part == TargetBodyPart.Groin)
-                OnBodyPartSelected?.Invoke(TargetBodyPart.Torso, _target.Value);
-            else
-                OnBodyPartSelected?.Invoke(part, _target.Value);
+            OnBodyPartSelected?.Invoke(part == TargetBodyPart.Groin ? TargetBodyPart.Torso : part, _target.Value);
         }
 
         public void ResetBodyPart()
@@ -182,7 +178,6 @@ namespace Content.Client.HealthAnalyzer.UI
                     : Loc.GetString("health-analyzer-window-entity-unknown-text");
 
             // Total Damage
-
 
             DamageLabel.Text = damageable.TotalDamage.ToString();
 

@@ -13,5 +13,5 @@ public sealed partial class SurgeryDamageChangeEffectComponent : Component
     public float SleepModifier = 0.5f;
 
     [DataField]
-    public bool IsConsumable = false;
+    public bool IsConsumable;
 }

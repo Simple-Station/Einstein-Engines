@@ -260,23 +260,15 @@ namespace Content.Client.Hands.Systems
             if (component.RevealedLayers.TryGetValue(location, out var revealedLayers))
             {
                 foreach (var key in revealedLayers)
-                {
                     sprite.RemoveLayer(key);
-                }
 
                 revealedLayers.Clear();
             }
         }
 
-        private void HandleBodyPartRemoved(EntityUid uid, HandsComponent component, ref BodyPartRemovedEvent args)
-        {
-            HideLayers(uid, component, args.Part);
-        }
+        private void HandleBodyPartRemoved(EntityUid uid, HandsComponent component, ref BodyPartRemovedEvent args) => HideLayers(uid, component, args.Part);
 
-        private void HandleBodyPartDisabled(EntityUid uid, HandsComponent component, ref BodyPartDisabledEvent args)
-        {
-            HideLayers(uid, component, args.Part);
-        }
+        private void HandleBodyPartDisabled(EntityUid uid, HandsComponent component, ref BodyPartDisabledEvent args) => HideLayers(uid, component, args.Part);
 
         protected override void HandleEntityInserted(EntityUid uid, HandsComponent hands, EntInsertedIntoContainerMessage args)
         {

@@ -10,7 +10,7 @@ public sealed partial class SurgeryMarkingConditionComponent : Component
 {
 
     [DataField]
-    public bool Inverse = false;
+    public bool Inverse;
 
     /// <summary>
     ///     The marking category to check for.

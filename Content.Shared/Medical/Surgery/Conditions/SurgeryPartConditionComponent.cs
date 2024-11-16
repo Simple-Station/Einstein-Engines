@@ -13,5 +13,5 @@ public sealed partial class SurgeryPartConditionComponent : Component
     public BodyPartSymmetry? Symmetry;
 
     [DataField]
-    public bool Inverse = false;
+    public bool Inverse;
 }

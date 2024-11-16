@@ -10,10 +10,7 @@ namespace Content.Client.Xenonids.UI;
 [Virtual]
 public partial class XenoChoiceControl : Control
 {
-    public XenoChoiceControl()
-    {
-        RobustXamlLoader.Load(this);
-    }
+    public XenoChoiceControl() => RobustXamlLoader.Load(this);
 
     public void Set(string name, Texture? texture)
     {
