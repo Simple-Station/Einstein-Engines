@@ -1,0 +1,11 @@
+- type: timeCyclePalette
+  id: DefaultTimeCycle
+  timeEntries:
+    0:  "#000000"   # Night
+    2:  "#000000"   # Late night
+    6:  "#11122c"   # Sunrise
+    12: "#d8b059"   # Noon
+    18: "#73586b"   # Sunset
+    20: "#11122c"   # Dusk
+    21: "#000000"   # Early night
+    24: "#000000"   # Night
