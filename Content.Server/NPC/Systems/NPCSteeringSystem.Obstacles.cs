@@ -36,6 +36,7 @@ public sealed partial class NPCSteeringSystem
      * Also need to make sure it picks nearest obstacle path so it starts smashing in front of it.
      */
 
+    [Dependency] private readonly SharedMapSystem _sharedMapSystem = default!;
 
     private SteeringObstacleStatus TryHandleFlags(EntityUid uid, NPCSteeringComponent component, PathPoly poly)
     {
@@ -207,7 +208,7 @@ public sealed partial class NPCSteeringSystem
             return;
         }
 
-        foreach (var ent in grid.GetLocalAnchoredEntities(poly.Box))
+        foreach (var ent in _sharedMapSystem.GetLocalAnchoredEntities(poly.GraphUid, grid, poly.Box))
         {
             if (!_physicsQuery.TryGetComponent(ent, out var body) ||
                 !body.Hard ||

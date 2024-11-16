@@ -26,7 +26,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Prying.Systems;
-using Microsoft.Extensions.ObjectPool;
 
 namespace Content.Server.NPC.Systems;
 

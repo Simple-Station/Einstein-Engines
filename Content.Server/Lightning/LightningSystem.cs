@@ -20,20 +20,24 @@ public sealed class LightningSystem : SharedLightningSystem
     [Dependency] private readonly BeamSystem _beam = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+
+    private List<LightningTargetComponent> _targets = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<LightningComponent, ComponentRemove>(OnRemove);
+
+        _targets = new();
     }
 
     private void OnRemove(EntityUid uid, LightningComponent component, ComponentRemove args)
     {
         if (!TryComp<BeamComponent>(uid, out var lightningBeam) || !TryComp<BeamComponent>(lightningBeam.VirtualBeamController, out var beamController))
-        {
             return;
-        }
+
 
         beamController.CreatedBeams.Remove(uid);
     }
@@ -74,29 +78,42 @@ public sealed class LightningSystem : SharedLightningSystem
         //To Do: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
         // several hashsets every time
 
-        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(Transform(user).MapPosition, range).ToList();
-        _random.Shuffle(targets);
-        targets.Sort((x, y) => y.Priority.CompareTo(x.Priority));
+        var userCoordinates = _transformSystem.GetMapCoordinates(user);
+        var targetEnts = _lookup.GetEntitiesInRange<LightningTargetComponent>(userCoordinates, range);
+
+        foreach (var entity in targetEnts)
+        {
+            var hasComp = TryComp(entity, out LightningTargetComponent? component);
+
+            if (hasComp)
+                _targets.Add(component!);
+        }
+
+        _random.Shuffle(_targets);
+        _targets.Sort((x, y) => y.Priority.CompareTo(x.Priority));
 
         int shootedCount = 0;
         int count = -1;
-        while(shootedCount < boltCount)
+
+        while (shootedCount < boltCount)
         {
             count++;
 
-            if (count >= targets.Count) { break; }
+            if (count >= _targets.Count) { break; }
 
-            var curTarget = targets[count];
+            var curTarget = _targets[count];
             if (!_random.Prob(curTarget.HitProbability)) //Chance to ignore target
                 continue;
 
-            ShootLightning(user, targets[count].Owner, lightningPrototype, triggerLightningEvents);
-            if (arcDepth - targets[count].LightningResistance > 0)
+            ShootLightning(user, _targets[count].Owner, lightningPrototype, triggerLightningEvents);
+            if (arcDepth - _targets[count].LightningResistance > 0)
             {
-                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].LightningResistance, triggerLightningEvents);
+                ShootRandomLightnings(_targets[count].Owner, range, 1, lightningPrototype, arcDepth - _targets[count].LightningResistance, triggerLightningEvents);
             }
             shootedCount++;
         }
+
+        _targets.Clear();
     }
 }
 

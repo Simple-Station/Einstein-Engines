@@ -52,7 +52,7 @@ public sealed partial class TelepathicChatSystem : EntitySystem
     private IEnumerable<INetChannel> GetAdminClients()
     {
         return _adminManager.ActiveAdmins
-            .Select(p => p.ConnectedClient);
+            .Select(p => p.Channel);
     }
 
     private List<INetChannel> GetDreamers(IEnumerable<INetChannel> removeList)
@@ -63,7 +63,7 @@ public sealed partial class TelepathicChatSystem : EntitySystem
                 || HasComp<SleepingComponent>(entity)
                 || HasComp<SeeingRainbowsComponent>(entity) && !HasComp<PsionicsDisabledComponent>(entity) && !HasComp<PsionicInsulationComponent>(entity))
             .Recipients
-            .Select(p => p.ConnectedClient);
+            .Select(p => p.Channel);
 
         var filteredList = filtered.ToList();
 
