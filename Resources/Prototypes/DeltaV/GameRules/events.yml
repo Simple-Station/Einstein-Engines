@@ -4,7 +4,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-xeno-vents-start-announcement
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 15
@@ -36,7 +36,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-xeno-vents-weak-start-announcement
     reoccurrenceDelay: 12
     minimumPlayers: 1
   - type: VentCrittersRule

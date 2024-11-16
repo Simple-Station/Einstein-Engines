@@ -1,19 +1,17 @@
-using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
-using Content.Server.GameTicking.Components;
 using Content.Server.GameTicking.Rules;
-using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Database;
+using Content.Shared.GameTicking.Components;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Server.Announcements.Systems;
 using Robust.Shared.Player;
 using Content.Server.Station.Components;
+using Content.Server.GameTicking;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -23,12 +21,12 @@ namespace Content.Server.StationEvents.Events;
 public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : IComponent
 {
     [Dependency] protected readonly IAdminLogManager AdminLogManager = default!;
-    [Dependency] protected readonly IMapManager MapManager = default!;
     [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
     [Dependency] protected readonly ChatSystem ChatSystem = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
     [Dependency] protected readonly StationSystem StationSystem = default!;
     [Dependency] private readonly AnnouncerSystem _announcer = default!;
+    [Dependency] protected readonly GameTicker GameTicker = default!;
 
     protected ISawmill Sawmill = default!;
 
@@ -47,10 +45,15 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         if (!TryComp<StationEventComponent>(uid, out var stationEvent))
             return;
 
-
         AdminLogManager.Add(LogType.EventAnnounced, $"Event added / announced: {ToPrettyString(uid)}");
 
-        stationEvent.StartTime = Timing.CurTime + stationEvent.StartDelay;
+        // we don't want to send to players who aren't in game (i.e. in the lobby)
+        Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
+
+        if (stationEvent.StartAnnouncement != null)
+            ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: stationEvent.StartAnnouncementColor);
+
+        Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
     }
 
     /// <inheritdoc/>
@@ -62,16 +65,10 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
             return;
 
         AdminLogManager.Add(LogType.EventStarted, LogImpact.High, $"Event started: {ToPrettyString(uid)}");
+        Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
 
-        if (stationEvent.StartAnnouncement)
-        {
-            _announcer.SendAnnouncement(
-                _announcer.GetAnnouncementId(args.RuleId),
-                Filter.Broadcast(),
-                _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId)),
-                colorOverride: Color.Gold
-            );
-        }
+        if (stationEvent.StartAnnouncement != null)
+            ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: stationEvent.StartAnnouncementColor);
 
         if (stationEvent.Duration != null)
         {
@@ -93,14 +90,13 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
 
         AdminLogManager.Add(LogType.EventStopped, $"Event ended: {ToPrettyString(uid)}");
 
-        if (stationEvent.EndAnnouncement)
-        {
-            _announcer.SendAnnouncement(
-                _announcer.GetAnnouncementId(args.RuleId, true),
-                Filter.Broadcast(),
-                _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId, true)),
-                colorOverride: Color.Gold);
-        }
+        // we don't want to send to players who aren't in game (i.e. in the lobby)
+        Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
+
+        if (stationEvent.EndAnnouncement != null)
+            ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.EndAnnouncement), playSound: false, colorOverride: stationEvent.EndAnnouncementColor);
+
+        Audio.PlayGlobal(stationEvent.EndAudio, allPlayersInGame, true);
     }
 
     /// <summary>
@@ -118,11 +114,7 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
             if (!GameTicker.IsGameRuleAdded(uid, ruleData))
                 continue;
 
-            if (!GameTicker.IsGameRuleActive(uid, ruleData) && Timing.CurTime >= stationEvent.StartTime)
-            {
-                GameTicker.StartGameRule(uid, ruleData);
-            }
-            else if (stationEvent.EndTime != null && Timing.CurTime >= stationEvent.EndTime && GameTicker.IsGameRuleActive(uid, ruleData))
+            if (stationEvent.EndTime != null && Timing.CurTime >= stationEvent.EndTime && GameTicker.IsGameRuleActive(uid, ruleData))
             {
                 GameTicker.EndGameRule(uid, ruleData);
             }

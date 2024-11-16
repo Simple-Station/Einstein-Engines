@@ -344,7 +344,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-neutral-xeno-vents-announcement
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 1
@@ -367,7 +367,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-argocyte-vents-announcement
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 30
@@ -406,7 +406,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-meat-vents-announcement
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 20
@@ -431,7 +431,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-tick-vents-announcement
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 1
@@ -448,7 +448,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-carp-vents-announcement
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 20
@@ -475,7 +475,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-space-vents-announcement
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 20
@@ -498,7 +498,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-light-vents-announcement
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 20

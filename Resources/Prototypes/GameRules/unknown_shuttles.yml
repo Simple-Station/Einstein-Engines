@@ -4,7 +4,6 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: false
     weight: 5
     reoccurrenceDelay: 30
     duration: 1
@@ -17,7 +16,6 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: false
     weight: 5
     reoccurrenceDelay: 30
     duration: 1
@@ -30,7 +28,6 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: false
     weight: 5
     reoccurrenceDelay: 30
     duration: 1
@@ -43,7 +40,6 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: false
     weight: 2
     reoccurrenceDelay: 30
     duration: 1
@@ -56,7 +52,6 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: false
     weight: 2
     reoccurrenceDelay: 30
     duration: 1

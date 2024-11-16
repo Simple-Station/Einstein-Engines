@@ -2,9 +2,11 @@ using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Maps;
 using Content.Shared.Tag;
+using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Maths;
 using Robust.Shared.Player;
 
@@ -53,8 +55,7 @@ namespace Content.Server.Construction.Commands
                     return;
             }
 
-            var mapManager = IoCManager.Resolve<IMapManager>();
-            if (!mapManager.TryGetGrid(gridId, out var grid))
+            if (!entityManager.TryGetComponent<MapGridComponent>(gridId, out var grid))
             {
                 shell.WriteLine($"No grid exists with id {gridId}");
                 return;
@@ -68,10 +69,14 @@ namespace Content.Server.Construction.Commands
 
             var tileDefinitionManager = IoCManager.Resolve<ITileDefinitionManager>();
             var tagSystem = entityManager.EntitySysManager.GetEntitySystem<TagSystem>();
+            var entityLookupSystem = IoCManager.Resolve<EntityLookupSystem>();
             var underplating = tileDefinitionManager[TilePrototypeId];
             var underplatingTile = new Tile(underplating.TileId);
+            var childEntities = new HashSet<Entity<TransformComponent>>();
+            entityLookupSystem.GetChildEntities(grid.Owner, childEntities);
+
             var changed = 0;
-            foreach (var child in entityManager.GetComponent<TransformComponent>(grid.Owner).ChildEntities)
+            foreach (var child in childEntities)
             {
                 if (!entityManager.EntityExists(child))
                 {

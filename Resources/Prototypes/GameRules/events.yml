@@ -1,22 +1,63 @@
 - type: entity
-  id: AnomalySpawn
+  id: BaseStationEvent
   parent: BaseGameRule
+  abstract: true
+  noSpawn: true
+  components:
+    - type: GameRule
+      delay:
+        min:  10
+        max:  20
+
+- type: entity
+  id: BaseStationEventShortDelay
+  parent: BaseGameRule
+  abstract: true
+  noSpawn: true
+  components:
+    - type: GameRule
+      delay:
+        min:  10
+        max:  20
+
+- type: entity
+  id: BaseStationEventLongDelay
+  parent: BaseGameRule
+  abstract: true
+  noSpawn: true
+  components:
+    - type: GameRule
+      delay:
+        min:  40
+        max:  60
+
+- type: entity
+  id: AnomalySpawn
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
+    startAnnouncementColor: "#18abf5"
+    startAudio:
+      path: /Audio/Announcements/announce.ogg
     weight: 8
-    startDelay: 30
     duration: 35
   - type: AnomalySpawnRule
 
 - type: entity
   id: BluespaceArtifact
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
+  - type: GameRule
+    delay:
+      min:  30
+      max:  30
   - type: StationEvent
+    startAnnouncementColor: "#18abf5"
+    startAudio:
+      path: /Audio/Announcements/announce.ogg
     weight: 8
-    startDelay: 30
     duration: 35
   - type: BluespaceArtifactRule
 
@@ -49,7 +90,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-bureaucratic-error-announcement
     minimumPlayers: 25
     weight: 3
     duration: 1
@@ -61,7 +102,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-clerical-error-announcement
     minimumPlayers: 15
     weight: 5
     duration: 1
@@ -132,52 +173,50 @@
 
 - type: entity
   id: GasLeak
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
-    endAnnouncement: true
+    startAnnouncement: station-event-gas-leak-announcement
+    endAnnouncement: station-event-gas-leak-complete-announcement
     weight: 8
-    startDelay: 20
   - type: GasLeakRule
 
 - type: entity
   id: KudzuGrowth
-  parent: BaseGameRule
+  parent: BaseStationEventLongDelay
   noSpawn: true
   components:
   - type: StationEvent
     earliestStart: 15
     minimumPlayers: 15
     weight: 7
-    startDelay: 50
     duration: 240
   - type: KudzuGrowthRule
 
 - type: entity
   id: MeteorSwarm
-  parent: BaseGameRule
+  parent: BaseStationEventLongDelay
   noSpawn: true
   components:
   - type: StationEvent
     earliestStart: 30
     weight: 7.5
     minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
-    startAnnouncement: true
-    endAnnouncement: true
+    startAnnouncement: station-event-meteor-swarm-announcement
+    endAnnouncement: station-event-meteor-swarm-complete-announcement
     duration: null #ending is handled by MeteorSwarmRule
-    startDelay: 30
   - type: MeteorSwarmRule
 
 - type: entity
   id: MouseMigration
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
-    startDelay: 10
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
     duration: 50
@@ -197,12 +236,13 @@
 
 - type: entity
   id: CockroachMigration
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
-    startDelay: 10
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
     weight: 6
     duration: 50
   - type: VentCrittersRule
@@ -214,14 +254,17 @@
 
 - type: entity
   id: PowerGridCheck
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
     weight: 5
-    startAnnouncement: true
-    endAnnouncement: true
-    startDelay: 24
+    startAnnouncement: station-event-power-grid-check-start-announcement
+    endAnnouncement: station-event-power-grid-check-end-announcement
+    startAudio:
+      path: /Audio/Announcements/power_off.ogg
+      params:
+       volume: -4
     duration: 60
     maxDuration: 120
   - type: PowerGridCheckRule
@@ -244,8 +287,8 @@
   components:
   - type: StationEvent
     weight: 8
-    startAnnouncement: true
-    endAnnouncement: true
+    startAnnouncement: station-event-solar-flare-announcement
+    endAnnouncement: station-event-solar-flare-complete-announcement
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
@@ -266,26 +309,26 @@
 
 - type: entity
   id: VentClog
-  parent: BaseGameRule
+  parent: BaseStationEventLongDelay
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-vent-clog-announcement
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
-    startDelay: 50
     duration: 60
   - type: VentClogRule
 
 - type: entity
   id: SlimesSpawn
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
-    startDelay: 10
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -301,12 +344,13 @@
 
 - type: entity
   id: SpiderSpawn
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
-    startDelay: 10
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -318,12 +362,13 @@
 
 - type: entity
   id: SpiderClownSpawn
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: false
-    startDelay: 10
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
@@ -411,7 +456,6 @@
     weight: 8
     minimumPlayers: 15
     reoccurrenceDelay: 30
-    startAnnouncement: false
   - type: AlertLevelInterceptionRule
   - type: TraitorRule
   - type: AntagSelection
@@ -447,7 +491,6 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: false
     weight: 2
     duration: 1
     earliestStart: 45

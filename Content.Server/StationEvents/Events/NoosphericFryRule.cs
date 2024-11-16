@@ -3,9 +3,8 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.GameTicking.Components;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Construction.EntitySystems;
-using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -18,6 +17,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Psionics.Glimmer;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -38,6 +38,7 @@ internal sealed class NoosphericFryRule : StationEventSystem<NoosphericFryRuleCo
     [Dependency] private readonly AnchorableSystem _anchorableSystem = default!;
     [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    [Dependency] private readonly SharedMapSystem _sharedMapSystem = default!;
 
     protected override void Started(EntityUid uid, NoosphericFryRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -111,10 +112,11 @@ internal sealed class NoosphericFryRule : StationEventSystem<NoosphericFryRuleCo
             {
                 var coordinates = xform.Coordinates;
                 var gridUid = xform.GridUid;
-                if (!_mapManager.TryGetGrid(gridUid, out var grid))
+
+                if (!TryComp<MapGridComponent>(gridUid, out var grid))
                     continue;
 
-                var tileIndices = grid.TileIndicesFor(coordinates);
+                var tileIndices = _sharedMapSystem.TileIndicesFor((EntityUid) gridUid, grid, coordinates);
 
                 if (_anchorableSystem.TileFree(grid, tileIndices, physics.CollisionLayer, physics.CollisionMask))
                     _transformSystem.AnchorEntity(reactive, xform);

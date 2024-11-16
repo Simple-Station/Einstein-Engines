@@ -420,7 +420,7 @@ public sealed partial class CargoSystem
             var shuttleComponent = EnsureComp<ShuttleComponent>(grid);
             shuttleComponent.AngularDamping = 10000;
             shuttleComponent.LinearDamping = 10000;
-            Dirty(shuttleComponent);
+            Dirty(grid, shuttleComponent);
         }
 
         var mapUid = _mapManager.GetMapEntityId(CargoMap.Value);

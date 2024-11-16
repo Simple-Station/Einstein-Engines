@@ -5,7 +5,7 @@
   noSpawn: true
   components:
     - type: StationEvent
-      startAnnouncement: true
+      startAnnouncement: station-event-noospheric-storm-announcement
       weight: 5
       earliestStart: 15
       reoccurrenceDelay: 5
