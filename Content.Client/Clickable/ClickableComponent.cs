@@ -12,6 +12,7 @@ namespace Content.Client.Clickable
     public sealed partial class ClickableComponent : Component
     {
         [Dependency] private readonly IClickMapManager _clickMapManager = default!;
+        [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
         [DataField("bounds")] public DirBoundData? Bounds;
 
@@ -36,7 +37,7 @@ namespace Content.Client.Clickable
 
             drawDepth = sprite.DrawDepth;
             renderOrder = sprite.RenderOrder;
-            var (spritePos, spriteRot) = transform.GetWorldPositionRotation(xformQuery);
+            var (spritePos, spriteRot) = _transformSystem.GetWorldPositionRotation(transform.Owner);
             var spriteBB = sprite.CalculateRotatedBoundingBox(spritePos, spriteRot, eye.Rotation);
             bottom = Matrix3Helpers.CreateRotation(eye.Rotation).TransformBox(spriteBB).Bottom;
 
@@ -48,7 +49,7 @@ namespace Content.Client.Clickable
             Angle cardinalSnapping = sprite.SnapCardinals ? relativeRotation.GetCardinalDir().ToAngle() : Angle.Zero;
 
             // First we get `localPos`, the clicked location in the sprite-coordinate frame.
-            var entityXform = Matrix3Helpers.CreateInverseTransform(transform.WorldPosition, sprite.NoRotation ? -eye.Rotation : spriteRot - cardinalSnapping);
+            var entityXform = Matrix3Helpers.CreateInverseTransform(_transformSystem.GetWorldPosition(transform), sprite.NoRotation ? -eye.Rotation : spriteRot - cardinalSnapping);
             var localPos = Vector2.Transform(Vector2.Transform(worldPos, entityXform), invSpriteMatrix);
 
             // Check explicitly defined click-able bounds
