@@ -25,16 +25,6 @@ public sealed class BreakerFlipRule : StationEventSystem<BreakerFlipRuleComponen
         stationEvent.StartAnnouncement = str;
 
         base.Added(uid, component, gameRule, args);
-
-        _announcer.SendAnnouncement(
-            _announcer.GetAnnouncementId(args.RuleId),
-            Filter.Broadcast(),
-            "station-event-breaker-flip-announcement",
-            null,
-            Color.Gold,
-            null, null,
-            ("data", Loc.GetString($"random-sentience-event-data-{RobustRandom.Next(1, 6)}"))
-        );
     }
 
     protected override void Started(EntityUid uid, BreakerFlipRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)

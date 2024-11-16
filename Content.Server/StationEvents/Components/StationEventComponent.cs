@@ -19,7 +19,7 @@ public sealed partial class StationEventComponent : Component
     public float Weight = WeightNormal;
 
     [DataField]
-    public bool StartAnnouncement;
+    public string? StartAnnouncement;
 
     [DataField]
     public string? EndAnnouncement;

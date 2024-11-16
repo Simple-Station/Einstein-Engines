@@ -29,15 +29,5 @@ public sealed class FalseAlarmRule : StationEventSystem<FalseAlarmRuleComponent>
         stationEvent.StartAnnouncementColor = picked.StartAnnouncementColor;
 
         base.Started(uid, component, gameRule, args);
-        _announcer.SendAnnouncement(
-            _announcer.GetAnnouncementId(picked.ID),
-            Filter.Broadcast(),
-            _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(picked.ID)),
-            null,
-            Color.Gold,
-            null, null,
-            //TODO This isn't a good solution, but I can't think of something better
-            ("data", Loc.GetString($"random-sentience-event-data-{RobustRandom.Next(1, 6)}"))
-        );
     }
 }
