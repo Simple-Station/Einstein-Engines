@@ -7912,3 +7912,10 @@ Entries:
   id: 6521
   time: '2024-11-15T14:08:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1222
+- author: zelezniciar
+  changes:
+    - type: Fix
+      message: Fixed pengiun cold resistance
+  id: 6522
+  time: '2024-11-16T22:41:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1229
