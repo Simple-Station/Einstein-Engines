@@ -175,9 +175,9 @@ namespace Content.Shared.Examine
                 length = MaxRaycastRange;
             }
 
-            var occluderSystem = Get<OccluderSystem>();
             IoCManager.Resolve(ref entMan);
 
+            var occluderSystem = EntityManager.System<OccluderSystem>();
             var ray = new Ray(origin.Position, dir.Normalized());
             var rayResults = occluderSystem
                 .IntersectRayWithPredicate(origin.MapId, ray, length, state, predicate, false).ToList();
@@ -194,7 +194,7 @@ namespace Content.Shared.Examine
                 }
 
                 var bBox = o.BoundingBox;
-                bBox = bBox.Translated(entMan.GetComponent<TransformComponent>(result.HitEntity).WorldPosition);
+                bBox = bBox.Translated(_transform.GetWorldPosition(result.HitEntity));
 
                 if (bBox.Contains(origin.Position) || bBox.Contains(other.Position))
                 {
@@ -210,8 +210,8 @@ namespace Content.Shared.Examine
         public bool InRangeUnOccluded(EntityUid origin, EntityUid other, float range = ExamineRange, Ignored? predicate = null, bool ignoreInsideBlocker = true)
         {
             var entMan = IoCManager.Resolve<IEntityManager>();
-            var originPos = entMan.GetComponent<TransformComponent>(origin).MapPosition;
-            var otherPos = entMan.GetComponent<TransformComponent>(other).MapPosition;
+            var originPos = _transform.GetMapCoordinates(origin);
+            var otherPos = _transform.GetMapCoordinates(other);
 
             return InRangeUnOccluded(originPos, otherPos, range, predicate, ignoreInsideBlocker);
         }
@@ -219,8 +219,8 @@ namespace Content.Shared.Examine
         public bool InRangeUnOccluded(EntityUid origin, EntityCoordinates other, float range = ExamineRange, Ignored? predicate = null, bool ignoreInsideBlocker = true)
         {
             var entMan = IoCManager.Resolve<IEntityManager>();
-            var originPos = entMan.GetComponent<TransformComponent>(origin).MapPosition;
-            var otherPos = other.ToMap(entMan);
+            var originPos = _transform.GetMapCoordinates(origin);
+            var otherPos = _transform.ToMapCoordinates(other);
 
             return InRangeUnOccluded(originPos, otherPos, range, predicate, ignoreInsideBlocker);
         }
@@ -228,7 +228,7 @@ namespace Content.Shared.Examine
         public bool InRangeUnOccluded(EntityUid origin, MapCoordinates other, float range = ExamineRange, Ignored? predicate = null, bool ignoreInsideBlocker = true)
         {
             var entMan = IoCManager.Resolve<IEntityManager>();
-            var originPos = entMan.GetComponent<TransformComponent>(origin).MapPosition;
+            var originPos = _transform.GetMapCoordinates(origin);
 
             return InRangeUnOccluded(originPos, other, range, predicate, ignoreInsideBlocker);
         }
@@ -370,7 +370,7 @@ namespace Content.Shared.Examine
         ///     sort messages the same as well as grouped together properly, even if subscriptions are different.
         ///     You should wrap it in a using() block so popping automatically occurs.
         /// </summary>
-        public ExamineGroupDisposable PushGroup(string groupName, int priority=0)
+        public ExamineGroupDisposable PushGroup(string groupName, int priority = 0)
         {
             // Ensure that other examine events correctly ended their groups.
             DebugTools.Assert(_currentGroupPart == null);
@@ -398,7 +398,7 @@ namespace Content.Shared.Examine
         /// </summary>
         /// <seealso cref="PushMarkup"/>
         /// <seealso cref="PushText"/>
-        public void PushMessage(FormattedMessage message, int priority=0)
+        public void PushMessage(FormattedMessage message, int priority = 0)
         {
             if (message.Nodes.Count == 0)
                 return;
@@ -421,9 +421,9 @@ namespace Content.Shared.Examine
         /// </summary>
         /// <seealso cref="PushText"/>
         /// <seealso cref="PushMessage"/>
-        public void PushMarkup(string markup, int priority=0)
+        public void PushMarkup(string markup, int priority = 0)
         {
-            PushMessage(FormattedMessage.FromMarkup(markup), priority);
+            PushMessage(FormattedMessage.FromMarkupPermissive(markup), priority);
         }
 
         /// <summary>
@@ -433,7 +433,7 @@ namespace Content.Shared.Examine
         /// </summary>
         /// <seealso cref="PushMarkup"/>
         /// <seealso cref="PushMessage"/>
-        public void PushText(string text, int priority=0)
+        public void PushText(string text, int priority = 0)
         {
             var msg = new FormattedMessage();
             msg.AddText(text);
@@ -469,9 +469,9 @@ namespace Content.Shared.Examine
         /// </summary>
         /// <seealso cref="AddText"/>
         /// <seealso cref="AddMessage"/>
-        public void AddMarkup(string markup, int priority=0)
+        public void AddMarkup(string markup, int priority = 0)
         {
-            AddMessage(FormattedMessage.FromMarkup(markup), priority);
+            AddMessage(FormattedMessage.FromMarkupPermissive(markup), priority);
         }
 
         /// <summary>
@@ -481,7 +481,7 @@ namespace Content.Shared.Examine
         /// </summary>
         /// <seealso cref="AddMarkup"/>
         /// <seealso cref="AddMessage"/>
-        public void AddText(string text, int priority=0)
+        public void AddText(string text, int priority = 0)
         {
             var msg = new FormattedMessage();
             msg.AddText(text);
