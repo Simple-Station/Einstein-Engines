@@ -18,8 +18,33 @@ character-item-group-LoadoutSmokes = Smokeables
 character-item-group-LoadoutBoxKits = Survival Kits
 character-item-group-LoadoutWritables = Writing Tools
 
-# Logistics
+# Command
+# Command - Captain
+character-item-group-LoadoutCaptainBackpacks = Captain Backpacks
+character-item-group-LoadoutCaptainBelt = Captain's Belt
+character-item-group-LoadoutCaptainTrinkets = Captain's Trinkets
+character-item-group-LoadoutCaptainWeapon = Captain's Personal Weapon
+character-item-group-LoadoutCaptainEyes = Captain's Eyewear
+character-item-group-LoadoutCaptainGloves = Captain's Gloves
+character-item-group-LoadoutCaptainHead = Captain's Headgear
+character-item-group-LoadoutCaptainNeck = Captain's Neckwear
+character-item-group-LoadoutCaptainMask = Captain's Masks
+character-item-group-LoadoutCaptainOuter = Captain's Outerwear
+character-item-group-LoadoutCaptainShoes = Captain's Shoes
+character-item-group-LoadoutCaptainUniform = Captain's Uniforms
 
+# Command - Head Of Personnel
+character-item-group-LoadoutHeadOfPersonnelBackpacks = HoP's Backpacks
+character-item-group-LoadoutHeadOfPersonnelBelt = HoP's Belt
+character-item-group-LoadoutHeadOfPersonnelTrinkets = HoP's Trinkets
+character-item-group-LoadoutHeadOfPersonnelGloves = HoP's Gloves
+character-item-group-LoadoutHeadOfPersonnelHead = HoP's Headgear
+character-item-group-LoadoutHeadOfPersonnelNeck = HoP's Neckwear
+character-item-group-LoadoutHeadOfPersonnelOuter = HoP's Outerwear
+character-item-group-LoadoutHeadOfPersonnelShoes = HoP's Shoes
+character-item-group-LoadoutHeadOfPersonnelUniform = HoP's Uniforms
+
+# Logistics
 
 # Engineering
 character-item-group-LoadoutEyesEngineering = Engineering Eyewear

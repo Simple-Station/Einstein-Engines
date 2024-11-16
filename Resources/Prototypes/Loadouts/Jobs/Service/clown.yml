@@ -26,7 +26,7 @@
 # Uniforms
 - type: loadout
   id: LoadoutServiceClownOutfitJester
-  category: JobsServiceAUncategorized
+  category: JobsServiceClown
   cost: 0
   exclusive: true
   requirements:
@@ -42,7 +42,7 @@
 
 - type: loadout
   id: LoadoutServiceClownOutfitJesterAlt
-  category: JobsServiceAUncategorized
+  category: JobsServiceClown
   cost: 0
   exclusive: true
   requirements:
@@ -58,7 +58,7 @@
 
 - type: loadout
   id: LoadoutServiceClownOuterWinter
-  category: JobsServiceAUncategorized
+  category: JobsServiceClown
   cost: 1
   exclusive: true
   requirements:
@@ -72,7 +72,7 @@
 
 - type: loadout
   id: LoadoutServiceClownOuterClownPriest
-  category: JobsServiceAUncategorized
+  category: JobsServiceClown
   cost: 0
   exclusive: true
   requirements:
@@ -86,7 +86,7 @@
 
 - type: loadout
   id: LoadoutServiceClownBootsWinter
-  category: JobsServiceAUncategorized
+  category: JobsServiceClown
   cost: 0
   exclusive: true
   requirements:
@@ -100,7 +100,7 @@
 
 - type: loadout
   id: LoadoutServiceClownMaskSexy
-  category: JobsServiceAUncategorized
+  category: JobsServiceClown
   cost: 0
   exclusive: true
   requirements:
@@ -114,7 +114,7 @@
 
 - type: loadout
   id: LoadoutServiceClownBedsheetClown
-  category: JobsServiceAUncategorized
+  category: JobsServiceClown
   cost: 0
   exclusive: true
   requirements:

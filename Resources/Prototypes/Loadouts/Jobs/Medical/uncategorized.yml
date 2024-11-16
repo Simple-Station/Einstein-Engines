@@ -67,7 +67,7 @@
 # Gloves
 - type: loadout
   id: LoadoutMedicalGlovesNitrile
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -86,7 +86,7 @@
 # Neck
 - type: loadout
   id: LoadoutMedicalNeckStethoscope
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -105,7 +105,7 @@
 # Outer
 - type: loadout
   id: LoadoutMedicalOuterLabcoat
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -120,7 +120,7 @@
 
 - type: loadout
   id: LoadoutMedicalOuterCybersunWindbreaker
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 3
   exclusive: true
   requirements:
@@ -139,7 +139,7 @@
 # Uniforms
 - type: loadout
   id: LoadoutMedicalUniformScrubsBlue
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -156,7 +156,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsGreen
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -173,7 +173,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsPurple
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -190,7 +190,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsCyan
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -207,7 +207,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsBlack
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -224,7 +224,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsPink
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -241,7 +241,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformScrubsCybersun
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -257,7 +257,7 @@
 
 - type: loadout
   id: LoadoutMedicalOuterLabcoatChem
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -271,7 +271,7 @@
 
 - type: loadout
   id: LoadoutMedicalItemHandLabeler
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
@@ -282,7 +282,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformParamedicJumpsuit
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -296,7 +296,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformParamedicJumpskirt
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -310,7 +310,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadNurse
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -324,7 +324,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadBeretSeniorPhysician
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -350,7 +350,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapBlue
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -367,7 +367,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapPurple
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -384,7 +384,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapGreen
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -401,7 +401,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapCyan
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -418,7 +418,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapBlack
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -435,7 +435,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapPink
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -452,7 +452,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapWhite
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -469,7 +469,7 @@
 
 - type: loadout
   id: LoadoutMedicalHeadSurgcapCybersun
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -485,7 +485,7 @@
 
 - type: loadout
   id: LoadoutMedicalEyesHudMedical
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -503,7 +503,7 @@
 
 - type: loadout
   id: LoadoutMedicalEyesEyepatchHudMedical
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -521,7 +521,7 @@
 
 - type: loadout
   id: LoadoutMedicalEyesHudMedicalPrescription
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -542,7 +542,7 @@
 
 - type: loadout
   id: LoadoutMedicalEyesGlassesChemical
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -556,7 +556,7 @@
 
 - type: loadout
   id: LoadoutMedicalBedsheetMedical
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -571,7 +571,7 @@
 # Chemist PPE gear
 - type: loadout
   id: LoadoutMedicalUniformJumpsuitChemShirt
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -585,7 +585,7 @@
 
 - type: loadout
   id: LoadoutMedicalNeckTieChem
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -599,7 +599,7 @@
 
 - type: loadout
   id: LoadoutMedicalShoesEnclosedChem
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -613,7 +613,7 @@
 
 - type: loadout
   id: LoadoutMedicalOuterApronChemist
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -627,7 +627,7 @@
 
 - type: loadout
   id: LoadoutMedicalEyesGlassesChemist
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -641,7 +641,7 @@
 
 - type: loadout
   id: LoadoutMedicalHandsGlovesChemist
-  category: JobsMedical
+  category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
   requirements:

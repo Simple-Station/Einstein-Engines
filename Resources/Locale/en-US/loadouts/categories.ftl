@@ -53,6 +53,7 @@ loadout-category-JobsMedicalAUncategorized = All Medical
 loadout-category-JobsMedicalChemist = Chemist
 loadout-category-JobsMedicalChiefMedicalOfficer = Chief Medical Officer
 loadout-category-JobsMedicalMedicalDoctor = Medical Doctor
+loadout-category-JobsMedicalMedicalIntern = Medical Intern
 loadout-category-JobsMedicalParamedic = Paramedic
 loadout-category-JobsMedicalSeniorPhysician = Senior Physician
 
