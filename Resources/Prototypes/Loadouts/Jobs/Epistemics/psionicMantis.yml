@@ -1,0 +1,17 @@
+# Psionic Mantis
+# Uniforms
+
+# Outer
+- type: loadout
+  id: LoadoutScienceOuterWinterCoatMantis
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingOuterWinterCoatMantis

@@ -1,0 +1,140 @@
+# Chief Engineer
+# Backpacks
+- type: loadout
+  id: LoadoutEngineeringChiefEngineerBackpackBackpack
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingBackpackChiefEngineerFilled
+
+- type: loadout
+  id: LoadoutEngineeringChiefEngineerBackpackSatchel
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingBackpackSatchelChiefEngineerFilled
+
+- type: loadout
+  id: LoadoutEngineeringChiefEngineerBackpackDuffel
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingBackpackDuffelChiefEngineerFilled
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Head
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutEngineeringChiefEngineerNeckMantle
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingNeckMantleCE
+
+- type: loadout
+  id: LoadoutEngineeringChiefEngineerNeckCloak
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingNeckCloakCe
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutCommandCEOuterWinter
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingOuterWinterCE
+
+# Shoes
+- type: loadout
+  id: LoadoutChiefEngineerShoesBootsWinter
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingShoesBootsWinterChiefEngineer
+
+# Uniforms
+- type: loadout
+  id: LoadoutChiefEngineerUniformSuit
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingUniformJumpsuitChiefEngineer
+
+- type: loadout
+  id: LoadoutEngineeringChiefEngineerUniformSkirt
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingUniformJumpskirtChiefEngineer

@@ -1,7 +1,7 @@
 - type: loadout
   id: LoadoutCommandGlovesInspection
   category: JobsCommand
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement

@@ -1,0 +1,126 @@
+# Cataloger
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianNt
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianNt
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianIdris
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianIdris
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianOrion
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianOrion
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianHeph
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianHeph
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianPMCG
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianPMCG
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianZav
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianZav
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianZeng
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianZeng
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarian
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarian
+
+- type: loadout
+  id: LoadoutScienceJumpskirtLibrarian
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCataloguerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpskirtLibrarian

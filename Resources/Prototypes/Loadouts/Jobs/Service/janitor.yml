@@ -1,0 +1,42 @@
+# Janitor
+- type: loadout
+  id: LoadoutServiceJumpsuitJanitorNt
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingUniformJumpsuitJanitorNt
+
+- type: loadout
+  id: LoadoutServiceJumpsuitJanitorIdris
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingUniformJumpsuitJanitorIdris
+
+- type: loadout
+  id: LoadoutServiceJumpsuitJanitorOrion
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingUniformJumpsuitJanitorOrion

@@ -1,0 +1,109 @@
+# Senior Engineer
+# Backpacks
+- type: loadout
+  id: LoadoutEngineeringSeniorEngineerBackpackBackpack
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingBackpackEngineeringFilled
+
+- type: loadout
+  id: LoadoutEngineeringSeniorEngineerBackpackSatchel
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingBackpackSatchelEngineeringFilled
+
+- type: loadout
+  id: LoadoutEngineeringSeniorEngineerBackpackDuffel
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingBackpackDuffelEngineeringFilled
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Head
+
+# Id
+
+# Mask
+
+# Neck
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutEngineeringUniformJumpskirtSenior
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobAtmosphericTechnician
+      min: 21600 # 6 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobStationEngineer
+      min: 21600 # 6 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Engineering
+      min: 216000 # 60 hours
+  items:
+    - ClothingUniformJumpskirtSeniorEngineer
+
+- type: loadout
+  id: LoadoutEngineeringUniformJumpsuitSenior
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobAtmosphericTechnician
+      min: 21600 # 6 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobStationEngineer
+      min: 21600 # 6 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Engineering
+      min: 216000 # 60 hours
+  items:
+    - ClothingUniformJumpsuitSeniorEngineer

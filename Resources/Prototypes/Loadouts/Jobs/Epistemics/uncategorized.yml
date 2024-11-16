@@ -1,0 +1,258 @@
+# Uniforms
+# Outer
+- type: loadout
+  id: LoadoutScienceOuterCoat
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingOuterCoatRnd
+
+- type: loadout
+  id: LoadoutScienceOuterLabcoat
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingOuterCoatLab
+
+- type: loadout
+  id: LoadoutSciencegOuterCoatRobo
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingOuterCoatRobo
+
+- type: loadout
+  id: LoadoutScienceOuterWinterSci
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingOuterWinterSci
+
+- type: loadout
+  id: LoadoutScienceOuterExplorerLabcoat
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingOuterExplorerCoat
+
+# Gloves
+- type: loadout
+  id: LoadoutScienceHandsGlovesColorPurple
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGlovesScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingHandsGlovesColorPurple
+
+- type: loadout
+  id: LoadoutScienceHandsGlovesLatex
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGlovesScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingHandsGlovesLatex
+
+- type: loadout
+  id: LoadoutScienceHandsGlovesRobohands
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGlovesScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingHandsGlovesRobohands
+
+# Neck
+- type: loadout
+  id: LoadoutScienceNeckTieSci
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingNeckTieSci
+
+- type: loadout
+  id: LoadoutScienceNeckScarfStripedPurple
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingNeckScarfStripedPurple
+
+- type: loadout
+  id: LoadoutScienceNeckScarfStripedBlack
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingNeckScarfStripedBlack
+
+# Head
+- type: loadout
+  id: LoadoutScienceHeadHatBeret
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingHeadHatBeretRND
+
+- type: loadout
+  id: LoadoutScienceHeadHatFez
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingHeadHatFez
+
+# Eyes
+- type: loadout
+  id: LoadoutScienceEyesHudDiagnostic
+  category: JobsScience
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingEyesHudDiagnostic
+
+- type: loadout
+  id: LoadoutScienceEyesEyepatchHudDiag
+  category: JobsScience
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingEyesEyepatchHudDiag
+
+# Shoes
+- type: loadout
+  id: LoadoutScienceShoesBootsWinterSci
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoesScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingShoesBootsWinterSci
+
+# Robes
+- type: loadout
+  id: LoadoutOuterRobeTechPriest
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterRobeTechPriest
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+
+- type: loadout
+  id: LoadoutHeadHoodTechPriest
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadTechPriest
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics

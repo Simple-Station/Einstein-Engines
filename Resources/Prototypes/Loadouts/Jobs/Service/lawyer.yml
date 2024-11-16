@@ -1,0 +1,112 @@
+# Lawyer
+- type: loadout
+  id: LoadoutServiceLawyerUniformBlueSuit
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingUniformJumpsuitLawyerBlue
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformBlueSkirt
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingUniformJumpskirtLawyerBlue
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformRedSuit
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingUniformJumpsuitLawyerRed
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformRedSkirt
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingUniformJumpskirtLawyerRed
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformPurpleSuit
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingUniformJumpsuitLawyerPurple
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformPurpleSkirt
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingUniformJumpskirtLawyerPurple
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformGoodSuit
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingUniformJumpsuitLawyerGood
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformGoodSkirt
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingUniformJumpskirtLawyerGood

@@ -1,0 +1,29 @@
+# Golemancer
+# Uniforms
+- type: loadout
+  id: LoadoutScienceUniformJumpskirtRoboticist
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingUniformJumpskirtRoboticist
+
+- type: loadout
+  id: LoadoutScienceUniformJumpsuitRoboticist
+  category: JobsScience
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsScience
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingUniformJumpsuitRoboticist

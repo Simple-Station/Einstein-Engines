@@ -1,34 +1,7 @@
-# Cargo technician
-- type: loadout
-  id: LoadoutCargoOuterWinterCargo
-  category: JobsCargo
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterCargo
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
-  items:
-    - ClothingOuterWinterCargo
+# Salvage Specialist
+# Uniforms
 
-- type: loadout
-  id: LoadoutCargoShoesBootsWinterCargo
-  category: JobsCargo
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoesCargo
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
-  items:
-    - ClothingShoesBootsWinterCargo
-
-# Salvage specialist
-
+# Outer
 - type: loadout
   id: LoadoutCargoOuterWinterMiner
   category: JobsCargo
@@ -43,6 +16,7 @@
   items:
     - ClothingOuterWinterMiner
 
+# Neck
 - type: loadout
   id: LoadoutCargoNeckGoliathCloak
   category: JobsCargo
@@ -60,6 +34,7 @@
   items:
     - ClothingNeckCloakGoliathCloak
 
+# Weapons
 - type: loadout
   id: LoadoutCargoWeaponsCrusherDagger
   category: JobsCargo

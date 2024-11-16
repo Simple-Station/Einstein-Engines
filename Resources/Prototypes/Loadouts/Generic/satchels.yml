@@ -65,34 +65,6 @@
         - Brigmedic
 
 - type: loadout
-  id: LoadoutBackpackSatchelEngineering
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelEngineering
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Engineering
-
-- type: loadout
-  id: LoadoutBackpackSatchelAtmospherics
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelAtmospherics
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Engineering
-
-- type: loadout
   id: LoadoutBackpackSatchelMedical
   category: Backpacks
   cost: 0

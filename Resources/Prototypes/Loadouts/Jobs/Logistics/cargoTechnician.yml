@@ -1,0 +1,32 @@
+# Cargo technician
+# Uniforms
+
+# Outer
+- type: loadout
+  id: LoadoutCargoOuterWinterCargo
+  category: JobsCargo
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterCargo
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingOuterWinterCargo
+
+# Shoes
+- type: loadout
+  id: LoadoutCargoShoesBootsWinterCargo
+  category: JobsCargo
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoesCargo
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingShoesBootsWinterCargo

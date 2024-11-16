@@ -1,0 +1,43 @@
+# Reporter
+# Uniforms
+- type: loadout
+  id: LoadoutServiceReporterUniformDetectivesuit
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Reporter
+  items:
+    - ClothingUniformJumpsuitDetective
+
+- type: loadout
+  id: LoadoutServiceReporterUniformDetectiveskirt
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Reporter
+  items:
+    - ClothingUniformJumpskirtDetective
+
+- type: loadout
+  id: LoadoutServiceReporterUniformJournalist
+  category: JobsServiceUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsService
+    - !type:CharacterJobRequirement
+      jobs:
+        - Reporter
+  items:
+    - ClothingUniformJumpsuitJournalist

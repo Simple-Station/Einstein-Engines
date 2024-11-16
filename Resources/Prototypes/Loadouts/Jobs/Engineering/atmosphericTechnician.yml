@@ -1,0 +1,107 @@
+# Atmospheric Technician
+# Backpacks
+- type: loadout
+  id: LoadingEngineeringAtmosBackpackBackpack
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingBackpackAtmospherics
+
+- type: loadout
+  id: LoadingEngineeringAtmosBackpackSatchel
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingBackpackSatchelAtmospherics
+
+- type: loadout
+  id: LoadingEngineeringAtmosBackpackDuffel
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingBackpackDuffelAtmospherics
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutEngineeringChickenSuit # :)
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingOuterSuitChicken
+    - ClothingHeadHatChickenhead
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadingEngineeringAtmosUniformSuit
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingUniformJumpsuitAtmos
+
+- type: loadout
+  id: LoadingEngineeringAtmosUniformSkirt
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingUniformJumpskirtAtmos
+

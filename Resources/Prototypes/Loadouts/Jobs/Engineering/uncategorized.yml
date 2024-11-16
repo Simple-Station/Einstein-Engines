@@ -1,0 +1,175 @@
+# All Engineering Department Jobs
+# Backpacks
+- type: loadout
+  id: LoadoutBackpackEngineering
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackEngineering
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacksEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+
+- type: loadout
+  id: LoadoutBackpackSatchelEngineering
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelEngineering
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacksEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+
+- type: loadout
+  id: LoadoutBackpackDuffelEngineering
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelEngineering
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacksEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+- type: loadout
+  id: LoadoutEngineeringEyesMeson
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingEyesGlassesMeson
+
+# Head
+- type: loadout
+  id: LoadoutEngineeringHeadBeret
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingHeadHatBeretEngineering
+
+- type: loadout
+  id: LoadoutEngineeringHeadHardhatBlue
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingHeadHatHardhatBlue
+
+- type: loadout
+  id: LoadoutEngineeringHeadHardhatOrange
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingHeadHatHardhatOrange
+
+- type: loadout
+  id: LoadoutEngineeringHeadHardhatYellow
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingHeadHatHardhatYellow
+
+- type: loadout
+  id: LoadoutEngineeringHeadHardhatWhite
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingHeadHatHardhatWhite
+
+- type: loadout
+  id: LoadoutEngineeringHeadHardhatRed
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingHeadHatHardhatRed
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutEngineeringOuterHazard
+  category: JobsEngineeringAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterEngineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingOuterVestHazard
+
+# Shoes
+
+# Uniforms
+
+# Equipment

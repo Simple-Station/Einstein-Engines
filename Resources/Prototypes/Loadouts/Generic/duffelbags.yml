@@ -1,21 +1,21 @@
 - type: loadout
-  id: LoadoutBackpack
+  id: LoadoutBackpackDuffel
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpack
+    - ClothingBackpackDuffel
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
 
 - type: loadout
-  id: LoadoutBackpackClown
+  id: LoadoutBackpackDuffelClown
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackClown
+    - ClothingBackpackDuffelClown
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -24,26 +24,12 @@
         - Clown
 
 - type: loadout
-  id: LoadoutBackpackIan
+  id: LoadoutBackpackDuffelSecurity
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackIan
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-
-- type: loadout
-  id: LoadoutBackpackSecurity
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSecurity
+    - ClothingBackpackDuffelSecurity
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -52,12 +38,12 @@
         - Security
 
 - type: loadout
-  id: LoadoutBackpackBrigmedic
+  id: LoadoutBackpackDuffelBrigmedic
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackBrigmedic
+    - ClothingBackpackDuffelBrigmedic
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -66,40 +52,12 @@
         - Brigmedic
 
 - type: loadout
-  id: LoadoutBackpackEngineering
+  id: LoadoutBackpackDuffelMedical
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackEngineering
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Engineering
-
-- type: loadout
-  id: LoadoutBackpackAtmospherics
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackAtmospherics
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Engineering
-
-- type: loadout
-  id: LoadoutBackpackMedical
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackMedical
+    - ClothingBackpackDuffelMedical
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -108,12 +66,12 @@
         - Medical
 
 - type: loadout
-  id: LoadoutBackpackCaptain
+  id: LoadoutBackpackDuffelCaptain
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackCaptain
+    - ClothingBackpackDuffelCaptain
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -122,12 +80,12 @@
         - Captain
 
 - type: loadout
-  id: LoadoutBackpackMime
+  id: LoadoutBackpackDuffelMime
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackMime
+    - ClothingBackpackDuffelMime
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -136,12 +94,12 @@
         - Mime
 
 - type: loadout
-  id: LoadoutBackpackChemistry
+  id: LoadoutBackpackDuffelChemistry
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackChemistry
+    - ClothingBackpackDuffelChemistry
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -150,12 +108,12 @@
         - Medical
 
 - type: loadout
-  id: LoadoutBackpackHydroponics
+  id: LoadoutBackpackDuffelHydroponics
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackHydroponics
+    - ClothingBackpackDuffelHydroponics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -164,12 +122,12 @@
         - Civilian
 
 - type: loadout
-  id: LoadoutBackpackScience
+  id: LoadoutBackpackDuffelScience
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackScience
+    - ClothingBackpackDuffelScience
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -178,12 +136,12 @@
         - Epistemics
 
 - type: loadout
-  id: LoadoutBackpackRobotics
+  id: LoadoutBackpackDuffelRobotics
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackRobotics
+    - ClothingBackpackDuffelRobotics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -192,12 +150,12 @@
         - Epistemics
 
 - type: loadout
-  id: LoadoutBackpackVirology
+  id: LoadoutBackpackDuffelVirology
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackVirology
+    - ClothingBackpackDuffelVirology
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -206,12 +164,12 @@
         - Medical
 
 - type: loadout
-  id: LoadoutBackpackGenetics
+  id: LoadoutBackpackDuffelGenetics
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackGenetics
+    - ClothingBackpackDuffelGenetics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -220,12 +178,12 @@
         - Medical
 
 - type: loadout
-  id: LoadoutBackpackCargo
+  id: LoadoutBackpackDuffelCargo
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackCargo
+    - ClothingBackpackDuffelCargo
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
@@ -234,35 +192,15 @@
         - Logistics
 
 - type: loadout
-  id: LoadoutBackpackSalvage
+  id: LoadoutBackpackDuffelSalvage
   category: Backpacks
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackSalvage
+    - ClothingBackpackDuffelSalvage
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
-
-- type: loadout
-  id: LoadoutBackpackMerc
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackMerc
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Security
-            - Civilian
-        - !type:CharacterJobRequirement
-          jobs:
-            - SalvageSpecialist
