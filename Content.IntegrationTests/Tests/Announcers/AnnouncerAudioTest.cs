@@ -42,7 +42,7 @@ public sealed class AnnouncerAudioTest
             {
                 foreach (var ev in events.AllEvents())
                 {
-                    if (ev.Value.StartAnnouncement)
+                    if (ev.Value.StartAnnouncement != null)
                     {
                         var announcementId = announcer.GetAnnouncementId(ev.Key.ID);
                         var path = announcer.GetAnnouncementPath(announcementId, announcerProto);
@@ -54,7 +54,7 @@ public sealed class AnnouncerAudioTest
                         }
                     }
 
-                    if (ev.Value.EndAnnouncement)
+                    if (ev.Value.EndAnnouncement != null)
                     {
                         var announcementId = announcer.GetAnnouncementId(ev.Key.ID, true);
                         var path = announcer.GetAnnouncementPath(announcementId, announcerProto);
