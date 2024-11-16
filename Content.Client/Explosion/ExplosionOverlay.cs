@@ -17,8 +17,6 @@ public sealed class ExplosionOverlay : Overlay
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
-    private SharedAppearanceSystem _appearanceSystem = default!;
-
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
     private ShaderInstance _shader;
@@ -26,12 +24,12 @@ public sealed class ExplosionOverlay : Overlay
     public ExplosionOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _appearanceSystem = _entMan.System<SharedAppearanceSystem>();
         _shader = _proto.Index<ShaderPrototype>("unshaded").Instance();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
     {
+        var appearanceSystem = _entMan.System<SharedAppearanceSystem>();
         var drawHandle = args.WorldHandle;
         drawHandle.UseShader(_shader);
 
@@ -44,7 +42,7 @@ public sealed class ExplosionOverlay : Overlay
             if (visuals.Epicenter.MapId != args.MapId)
                 continue;
 
-            if (!_appearanceSystem.TryGetData(appearance.Owner, ExplosionAppearanceData.Progress, out int index))
+            if (!appearanceSystem.TryGetData(appearance.Owner, ExplosionAppearanceData.Progress, out int index))
                 continue;
 
             index = Math.Min(index, visuals.Intensity.Count - 1);
