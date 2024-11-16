@@ -49,7 +49,7 @@ public sealed class StandingStateSystem : EntitySystem
         // Optional component.
         Resolve(uid, ref appearance, ref hands, false);
 
-        if (!standingState.Standing)
+        if (standingState.CurrentState is StandingState.Lying or StandingState.GettingUp)
             return true;
 
         // This is just to avoid most callers doing this manually saving boilerplate
@@ -118,7 +118,7 @@ public sealed class StandingStateSystem : EntitySystem
 
         if (standingState.CurrentState is StandingState.Standing
             || TryComp(uid, out BuckleComponent? buckle)
-            && buckle.Buckled)
+            && buckle.Buckled && !_buckle.TryUnbuckle(uid, uid, buckleComp: buckle))
             return true;
 
         if (!force)
