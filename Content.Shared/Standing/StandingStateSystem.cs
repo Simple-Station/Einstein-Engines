@@ -118,7 +118,7 @@ public sealed class StandingStateSystem : EntitySystem
 
         if (standingState.CurrentState is StandingState.Standing
             || TryComp(uid, out BuckleComponent? buckle)
-            && buckle.Buckled && !_buckle.TryUnbuckle(uid, uid, buckleComp: buckle))
+            && buckle.Buckled)
             return true;
 
         if (!force)
