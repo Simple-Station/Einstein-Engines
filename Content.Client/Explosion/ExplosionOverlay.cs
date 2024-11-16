@@ -16,6 +16,7 @@ public sealed class ExplosionOverlay : Overlay
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
@@ -41,7 +42,7 @@ public sealed class ExplosionOverlay : Overlay
             if (visuals.Epicenter.MapId != args.MapId)
                 continue;
 
-            if (!appearance.TryGetData(ExplosionAppearanceData.Progress, out int index))
+            if (!_appearanceSystem.TryGetData(appearance.Owner, ExplosionAppearanceData.Progress, out int index))
                 continue;
 
             index = Math.Min(index, visuals.Intensity.Count - 1);
