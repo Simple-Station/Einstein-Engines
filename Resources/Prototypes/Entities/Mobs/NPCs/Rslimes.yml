@@ -225,7 +225,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    startAnnouncement: true
+    startAnnouncement: station-event-reagentslime-vents-announcement
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 30
