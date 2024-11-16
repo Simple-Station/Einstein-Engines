@@ -84,7 +84,7 @@ namespace Content.Shared.Medical.CPR
             {
                 _popupSystem.PopupEntity(Loc.GetString("cpr-start-second-person", ("target", target)), target, performer, PopupType.Medium);
                 _popupSystem.PopupEntity(Loc.GetString("cpr-start-second-person-patient", ("user", performer)), target, target, PopupType.Medium);
-                cprComponent.CPRPlayingStream = _audio.PlayPvs(cprComponent.CPRSound, performer).Value.Entity;
+                cprComponent.CPRPlayingStream = _audio.PlayPvs(cprComponent.CPRSound, performer)!.Value.Entity;
             }
 
             _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, performer, cprComponent.DoAfterDuration, new CPRDoAfterEvent(), performer, target, performer)
