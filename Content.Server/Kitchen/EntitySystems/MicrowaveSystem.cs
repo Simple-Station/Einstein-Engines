@@ -99,9 +99,13 @@ namespace Content.Server.Kitchen.EntitySystems
             if (!TryComp<MicrowaveComponent>(ent, out var microwaveComponent))
                 return;
             SetAppearance(ent.Owner, MicrowaveVisualState.Cooking, microwaveComponent);
+            
+            var audio = _audio.PlayPvs(microwaveComponent.LoopingSound, ent, AudioParams.Default.WithLoop(true).WithMaxDistance(5));
 
-            microwaveComponent.PlayingStream =
-                _audio.PlayPvs(microwaveComponent.LoopingSound, ent, AudioParams.Default.WithLoop(true).WithMaxDistance(5)).Value.Entity;
+            if (audio == null)
+                return;
+
+            microwaveComponent.PlayingStream = audio!.Value.Entity;
         }
 
         private void OnCookStop(Entity<ActiveMicrowaveComponent> ent, ref ComponentShutdown args)
