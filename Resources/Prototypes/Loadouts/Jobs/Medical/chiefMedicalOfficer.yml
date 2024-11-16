@@ -27,7 +27,7 @@
 
 - type: loadout
   id: LoadoutCommandCMONeckMantle
-  category: JobsCommand
+  category: JobsMedicalChiefMedicalOfficer
   cost: 0
   exclusive: true
   requirements:
@@ -39,7 +39,7 @@
 
 - type: loadout
   id: LoadoutCommandCMONeckCloak
-  category: JobsCommand
+  category: JobsMedicalChiefMedicalOfficer
   cost: 0
   exclusive: true
   requirements:
@@ -51,7 +51,7 @@
 
 - type: loadout
   id: LoadoutCommandCMOOuterWinter
-  category: JobsCommand
+  category: JobsMedicalChiefMedicalOfficer
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -62,7 +62,7 @@
 
 - type: loadout
   id: LoadoutCommandCMOOuterLab
-  category: JobsCommand
+  category: JobsMedicalChiefMedicalOfficer
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -73,7 +73,7 @@
 
 - type: loadout
   id: LoadoutCommandCMOHatBeret
-  category: JobsCommand
+  category: JobsMedicalChiefMedicalOfficer
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -84,7 +84,7 @@
 
 - type: loadout
   id: LoadoutCommandCMOShoesBootsWinter
-  category: JobsCommand
+  category: JobsMedicalChiefMedicalOfficer
   cost: 0
   exclusive: true
   requirements:

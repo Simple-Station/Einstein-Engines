@@ -280,7 +280,7 @@
 
 - type: loadout
   id: LoadoutCommandCapNeckCloak
-  category: JobsCommand
+  category: JobsCommandCaptain
   cost: 0
   exclusive: true
   requirements:

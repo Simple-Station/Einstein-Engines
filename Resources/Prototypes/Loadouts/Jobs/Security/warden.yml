@@ -14,7 +14,7 @@
 # Head
 - type: loadout
   id: LoadoutClothingHeadHatBeretWarden
-  category: JobsSecurity
+  category: JobsSecurityWarden
   cost: 0
   exclusive: true
   requirements:
@@ -35,7 +35,7 @@
 # Outer
 - type: loadout
   id: LoadoutClothingOuterCoatWarden
-  category: JobsSecurity
+  category: JobsSecurityWarden
   cost: 0
   exclusive: true
   requirements:

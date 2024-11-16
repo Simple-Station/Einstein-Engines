@@ -68,7 +68,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: JobsLogisticsAUncategorized
+      group: LoadoutSalvageSpecialistOuter
     - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist

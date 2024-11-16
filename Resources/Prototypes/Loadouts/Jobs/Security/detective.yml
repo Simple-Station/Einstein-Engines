@@ -22,7 +22,7 @@
 # Outer
 - type: loadout
   id: LoadoutClothingOuterCoatDetective
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -36,7 +36,7 @@
 
 - type: loadout
   id: LoadoutOuterVestDetective
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:

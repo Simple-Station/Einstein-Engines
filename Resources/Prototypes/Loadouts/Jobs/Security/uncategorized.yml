@@ -2,7 +2,7 @@
 # Backpack
 - type: loadout
   id: LoadoutClothingBackSecurity
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -16,7 +16,7 @@
 
 - type: loadout
   id: LoadoutClothingBackSecuritySatchel
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -30,7 +30,7 @@
 
 - type: loadout
   id: LoadoutClothingBackSecurityDuffel
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -45,7 +45,7 @@
 # Belt
 - type: loadout
   id: LoadoutSecurityBeltWebbing
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -59,7 +59,7 @@
 
 - type: loadout
   id: LoadoutClothingBeltSecurity
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -73,7 +73,7 @@
 
 - type: loadout
   id: LoadoutClothingBeltHolster
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -93,7 +93,7 @@
 # I knew a lot of people in my time working IRL Armed security that did this.
 - type: loadout
   id: LoadoutSecurityCombatKnife
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -106,7 +106,7 @@
 
 - type: loadout
   id: LoadoutSecurityFlash
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -117,7 +117,7 @@
 
 - type: loadout
   id: LoadoutMagazinePistol
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -133,7 +133,7 @@
 
 - type: loadout
   id: LoadoutMagazinePistolSpare
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -149,7 +149,7 @@
 
 - type: loadout
   id: LoadoutMagazinePistolRubber
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -162,7 +162,7 @@
 
 - type: loadout
   id: LoadoutMagazinePistolRubberSpare
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -175,7 +175,7 @@
 
 - type: loadout
   id: LoadoutSpeedLoaderMagnum
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -192,7 +192,7 @@
 
 - type: loadout
   id: LoadoutSpeedLoaderMagnumSpare
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -209,7 +209,7 @@
 
 - type: loadout
   id: LoadoutSpeedLoaderMagnumRubber
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -223,7 +223,7 @@
 
 - type: loadout
   id: LoadoutSpeedLoaderMagnumRubberSpare
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -237,7 +237,7 @@
 
 - type: loadout
   id: LoadoutMagazineMagnum
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -254,7 +254,7 @@
 
 - type: loadout
   id: LoadoutMagazineMagnumRubber
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -271,7 +271,7 @@
 
 - type: loadout
   id: LoadoutMagazineMagnumSpare
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -288,7 +288,7 @@
 
 - type: loadout
   id: LoadoutMagazineMagnumRubberSpare
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -309,7 +309,7 @@
 # All lethal options come with a 1 hour security department playtime, as a basic shitter protection.
 - type: loadout
   id: LoadoutSecurityDisabler
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -322,7 +322,7 @@
 
 - type: loadout
   id: LoadoutSecurityMk58
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -338,7 +338,7 @@
 
 - type: loadout
   id: LoadoutSecurityMk58NonLethal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -351,7 +351,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolver
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -367,7 +367,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverNonLethal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -380,7 +380,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverDeckard
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 1
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -396,7 +396,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverDeckardNonLethal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 1
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -409,7 +409,7 @@
 
 - type: loadout
   id: LoadoutSecurityPistolN1984
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -425,7 +425,7 @@
 
 - type: loadout
   id: LoadoutSecurityPistolN1984NonLethal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -438,7 +438,7 @@
 
 - type: loadout
   id: LoadoutSecurityPistolViper
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -454,7 +454,7 @@
 
 - type: loadout
   id: LoadoutSecurityPistolViperNonLethal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -467,7 +467,7 @@
 
 - type: loadout
   id: LoadoutSecurityPistolViperWood
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -483,7 +483,7 @@
 
 - type: loadout
   id: LoadoutSecurityEquipmentTruncheon
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 3
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -502,7 +502,7 @@
 
 - type: loadout
   id: LoadoutSecurityPistolSvalin
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 1
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -518,7 +518,7 @@
 
 - type: loadout
   id: LoadoutSecurityEnergyGunMini
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -534,7 +534,7 @@
 
 - type: loadout
   id: LoadoutSecurityEnergyGunPistol
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -550,7 +550,7 @@
 
 - type: loadout
   id: LoadoutSecurityPistolPollock
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 1
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -566,7 +566,7 @@
 
 - type: loadout
   id: LoadoutSecurityPistolPollockNonlethal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 1
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -579,7 +579,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverSnub
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -595,7 +595,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverSnubNonlethal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -608,7 +608,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverK38Master
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 1
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -624,7 +624,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverK38MasterNonlethal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 1
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -637,7 +637,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverFitz
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 1
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -653,7 +653,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverFitzNonlethal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 1
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -666,7 +666,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverPython
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 3
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -682,7 +682,7 @@
 
 - type: loadout
   id: LoadoutSecurityRevolverPythonNonlethal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 3
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -696,7 +696,7 @@
 # Eyes
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -710,7 +710,7 @@
 
 - type: loadout
   id: ClothingEyesGlassesSunglasses
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -724,7 +724,7 @@
 
 - type: loadout
   id: LoadoutSecurityEyesEyepatchHudSecurity
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -738,7 +738,7 @@
 
 - type: loadout
   id: LoadoutSecurityEyesHudSecurityPrescription
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -755,7 +755,7 @@
 
 - type: loadout
   id: LoadoutClothingEyesGlassesSecurity
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 2
   exclusive: true
   requirements:
@@ -772,7 +772,7 @@
 # Head
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -786,7 +786,7 @@
 
 - type: loadout
   id: LoadoutClothingHeadHelmetBasic
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -800,7 +800,7 @@
 
 - type: loadout
   id: LoadoutSecurityHeadHelmetInsulated
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 1
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -818,7 +818,7 @@
 # Mask
 - type: loadout
   id: LoadoutSecurityMaskGasSwat
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -834,7 +834,7 @@
 # Outer
 - type: loadout
   id: LoadoutClothingOuterArmorPlateCarrier
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -848,7 +848,7 @@
 
 - type: loadout
   id: LoadoutClothingOuterArmorDuraVest
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -862,7 +862,7 @@
 
 - type: loadout
   id: LoadoutClothingOuterArmorBasic
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -876,7 +876,7 @@
 
 - type: loadout
   id: LoadoutClothingOuterArmorSlim
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -891,7 +891,7 @@
 # Shoes
 - type: loadout
   id: LoadoutSecurityShoesJackboots
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -905,7 +905,7 @@
 
 - type: loadout
   id: LoadoutClothingShoesBootsCombat
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -920,7 +920,7 @@
 # Uniforms
 - type: loadout
   id: LoadoutSecurityUniformJumpsuitBlue
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -934,7 +934,7 @@
 
 - type: loadout
   id: LoadoutSecurityUniformJumpsuitGrey
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -948,7 +948,7 @@
 
 - type: loadout
   id: LoadoutSecurityUniformJumpskirtGrey
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -962,7 +962,7 @@
 
 - type: loadout
   id: LoadoutSecurityUniformJumpskirtBlue
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -976,7 +976,7 @@
 
 - type: loadout
   id: LoadoutUniformJumpsuitSecFormal
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -990,7 +990,7 @@
 
 - type: loadout
   id: LoadoutUniformJumpsuitSecSummer
-  category: JobsSecurity
+  category: JobsSecurityAUncategorized
   cost: 0
   exclusive: true
   requirements:

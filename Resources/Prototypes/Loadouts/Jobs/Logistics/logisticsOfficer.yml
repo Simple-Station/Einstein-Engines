@@ -27,7 +27,7 @@
 
 - type: loadout
   id: LoadoutCommandQMNeckCloak
-  category: JobsCommand
+  category: JobsLogisticsLogisticsOfficer
   cost: 0
   exclusive: true
   requirements:
@@ -39,7 +39,7 @@
 
 - type: loadout
   id: LoadoutCommandQMUniformTurtleneck
-  category: JobsCommand
+  category: JobsLogisticsLogisticsOfficer
   cost: 0
   exclusive: true
   requirements:
@@ -51,7 +51,7 @@
 
 - type: loadout
   id: LoadoutCommandQMUniformTurtleneckSkirt
-  category: JobsCommand
+  category: JobsLogisticsLogisticsOfficer
   cost: 0
   exclusive: true
   requirements:
@@ -63,7 +63,7 @@
 
 - type: loadout
   id: LoadoutCommandQMHeadSoft
-  category: JobsCommand
+  category: JobsLogisticsLogisticsOfficer
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -74,7 +74,7 @@
 
 - type: loadout
   id: LoadoutCommandQMShoesBootsWinter
-  category: JobsCommand
+  category: JobsLogisticsLogisticsOfficer
   cost: 0
   exclusive: true
   requirements:

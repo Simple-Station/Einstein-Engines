@@ -28,7 +28,7 @@
 # Outer
 - type: loadout
   id: LoadoutCommandRDOuterWinter
-  category: JobsCommand
+  category: JobsEpistemicsMystagogue
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -39,7 +39,7 @@
 
 - type: loadout
   id: LoadoutCommandRDOuterMysta
-  category: JobsCommand
+  category: JobsEpistemicsMystagogue
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -51,7 +51,7 @@
 # Head
 - type: loadout
   id: LoadoutCommandRDHeadHatBeretMysta
-  category: JobsCommand
+  category: JobsEpistemicsMystagogue
   cost: 0
   exclusive: true
   requirements:
@@ -63,7 +63,7 @@
 
 - type: loadout
   id: LoadoutCommandRDHeadHoodMysta
-  category: JobsCommand
+  category: JobsEpistemicsMystagogue
   cost: 0
   exclusive: true
   requirements:
@@ -76,7 +76,7 @@
 # Neck
 - type: loadout
   id: LoadoutCommandRDNeckMantle
-  category: JobsCommand
+  category: JobsEpistemicsMystagogue
   cost: 0
   exclusive: true
   requirements:
@@ -88,7 +88,7 @@
 
 - type: loadout
   id: LoadoutCommandRDNeckCloak
-  category: JobsCommand
+  category: JobsEpistemicsMystagogue
   cost: 0
   exclusive: true
   requirements:
@@ -100,7 +100,7 @@
 
 - type: loadout
   id: LoadoutCommandRDNeckCloakMystagogue
-  category: JobsCommand
+  category: JobsEpistemicsMystagogue
   cost: 0
   exclusive: true
   requirements:
@@ -113,7 +113,7 @@
 # Shoes
 - type: loadout
   id: LoadoutCommandRDShoesBootsWinter
-  category: JobsCommand
+  category: JobsEpistemicsMystagogue
   cost: 0
   exclusive: true
   requirements:

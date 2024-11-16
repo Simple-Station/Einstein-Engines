@@ -16,7 +16,7 @@ loadout-category-JobsAUncategorized = Uncategorized
 loadout-category-JobsCommand = Command
 loadout-category-JobsCommandAUncategorized = All Command
 loadout-category-JobsCommandCaptain = Captain
-loadout-category-JobsCommandHeadOfOPersonnel = Head of Personnel
+loadout-category-JobsCommandHeadOfPersonnel = Head of Personnel
 
 # Engineering
 loadout-category-JobsEngineering = Engineering
@@ -44,7 +44,7 @@ loadout-category-JobsLogistics = Logistics
 loadout-category-JobsLogisticsAUncategorized = All Logistics
 loadout-category-JobsLogisticsCargoTechnician = Cargo Technician
 loadout-category-JobsLogisticsCourier = Courier
-loadout-category-JobsLogisticsLogisicsOfficer = Logistics Officer
+loadout-category-JobsLogisticsLogisticsOfficer = Logistics Officer
 loadout-category-JobsLogisticsSalvageSpecialist = Salvage Specialist
 
 # Medical

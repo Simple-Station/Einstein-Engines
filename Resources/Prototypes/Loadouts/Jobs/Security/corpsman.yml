@@ -17,7 +17,7 @@
 # Belt
 - type: loadout
   id: LoadoutClothingBeltCorpsmanWebbing
-  category: JobsSecurity
+  category: JobsSecurityCorpsman
   cost: 0
   exclusive: true
   requirements:
@@ -84,7 +84,7 @@
 # Neck
 - type: loadout
   id: LoadoutBedsheetBrigmedic
-  category: JobsSecurity
+  category: JobsSecurityCorpsman
   cost: 0
   exclusive: true
   requirements:
