@@ -26,7 +26,7 @@
 # Uniforms
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSuit
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -40,7 +40,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSkirt
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -54,7 +54,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformRedSuit
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -68,7 +68,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformRedSkirt
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -82,7 +82,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformPurpleSuit
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -96,7 +96,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformPurpleSkirt
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -110,7 +110,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformGoodSuit
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -124,7 +124,7 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformGoodSkirt
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:

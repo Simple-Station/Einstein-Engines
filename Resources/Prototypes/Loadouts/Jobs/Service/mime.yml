@@ -26,7 +26,7 @@
 # Uniforms
 - type: loadout
   id: LoadoutServiceMimeOuterWinter
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -40,7 +40,7 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskSad
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -54,7 +54,7 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskScared
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -68,7 +68,7 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskSexy
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -82,7 +82,7 @@
 
 - type: loadout
   id: LoadoutServiceMimeShoesBootsWinter
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -96,7 +96,7 @@
 
 - type: loadout
   id: LoadoutServiceMimeBedsheetMime
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:

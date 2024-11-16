@@ -9,7 +9,7 @@
     - ClothingBackpackEngineering
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacksEngineering
+      group: LoadoutEngineeringBackpacks
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
@@ -23,7 +23,7 @@
     - ClothingBackpackSatchelEngineering
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacksEngineering
+      group: LoadoutEngineeringBackpacks
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
@@ -37,7 +37,7 @@
     - ClothingBackpackDuffelEngineering
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacksEngineering
+      group: LoadoutEngineeringBackpacks
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering

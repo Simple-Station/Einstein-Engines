@@ -49,20 +49,6 @@
   - Stunbaton
 
 - type: loadout
-  id: LoadoutCommandPepperspray
-  category: JobsCommandAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCommandSelfDefense
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Command
-  items:
-  - Pepperspray
-
-- type: loadout
   id: LoadoutCommandFlash
   category: JobsCommandAUncategorized
   cost: 0

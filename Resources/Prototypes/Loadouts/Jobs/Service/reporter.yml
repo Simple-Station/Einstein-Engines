@@ -26,7 +26,7 @@
 # Uniforms
 - type: loadout
   id: LoadoutServiceReporterUniformDetectivesuit
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -40,7 +40,7 @@
 
 - type: loadout
   id: LoadoutServiceReporterUniformDetectiveskirt
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -54,7 +54,7 @@
 
 - type: loadout
   id: LoadoutServiceReporterUniformJournalist
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 0
   exclusive: true
   requirements:

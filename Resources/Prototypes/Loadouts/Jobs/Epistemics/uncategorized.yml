@@ -10,7 +10,7 @@
 # Eyes
 - type: loadout
   id: LoadoutScienceEyesHudDiagnostic
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -24,7 +24,7 @@
 
 - type: loadout
   id: LoadoutScienceEyesEyepatchHudDiag
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 1
   exclusive: true
   requirements:
@@ -39,7 +39,7 @@
 # Gloves
 - type: loadout
   id: LoadoutScienceHandsGlovesColorPurple
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -53,7 +53,7 @@
 
 - type: loadout
   id: LoadoutScienceHandsGlovesLatex
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -67,7 +67,7 @@
 
 - type: loadout
   id: LoadoutScienceHandsGlovesRobohands
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -82,7 +82,7 @@
 # Head
 - type: loadout
   id: LoadoutScienceHeadHatBeret
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -96,7 +96,7 @@
 
 - type: loadout
   id: LoadoutScienceHeadHatFez
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -128,7 +128,7 @@
 # Neck
 - type: loadout
   id: LoadoutScienceNeckTieSci
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -142,7 +142,7 @@
 
 - type: loadout
   id: LoadoutScienceNeckScarfStripedPurple
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -156,7 +156,7 @@
 
 - type: loadout
   id: LoadoutScienceNeckScarfStripedBlack
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -173,7 +173,7 @@
 # Outer
 - type: loadout
   id: LoadoutScienceOuterCoat
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -187,7 +187,7 @@
 
 - type: loadout
   id: LoadoutScienceOuterLabcoat
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -201,7 +201,7 @@
 
 - type: loadout
   id: LoadoutSciencegOuterCoatRobo
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -215,7 +215,7 @@
 
 - type: loadout
   id: LoadoutScienceOuterWinterSci
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -229,7 +229,7 @@
 
 - type: loadout
   id: LoadoutScienceOuterExplorerLabcoat
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -257,7 +257,7 @@
 # Shoes
 - type: loadout
   id: LoadoutScienceShoesBootsWinterSci
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:

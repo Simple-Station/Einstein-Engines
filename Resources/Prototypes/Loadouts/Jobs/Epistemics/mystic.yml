@@ -26,7 +26,7 @@
 # Uniforms
 - type: loadout
   id: LoadoutScienceUniformJumpskirtSenior
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -43,7 +43,7 @@
 
 - type: loadout
   id: LoadoutScienceUniformJumpsuitSenior
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -61,7 +61,7 @@
 # Outer
 - type: loadout
   id: LoadoutScienceOuterLabcoatSeniorResearcher
-  category: JobsScience
+  category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:

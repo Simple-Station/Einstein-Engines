@@ -3,12 +3,6 @@
   maxItems: 1
   items:
     - type: loadout
-      id: LoadoutHeadOfPersonnelBackpacksBackpack
-    - type: loadout
-      id: LoadoutHeadOfPersonnelBackpacksSatchel
-    - type: loadout
-      id: LoadoutHeadOfPersonnelBackpacksDuffel
-    - type: loadout
       id: LoadoutHeadOfPersonnelBackpacksBackpackFilled
     - type: loadout
       id: LoadoutHeadOfPersonnelBackpacksSatchelFilled

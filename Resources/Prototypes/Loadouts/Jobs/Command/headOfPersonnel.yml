@@ -1,48 +1,6 @@
 # Head Of Personnel
 # Backpacks
 - type: loadout
-  id: LoadoutHeadOfPersonnelBackpacksBackpack
-  category: JobsCommandHeadOfPersonnel
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfPersonnelBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-  items:
-    - ClothingBackpackHOP
-
-- type: loadout
-  id: LoadoutHeadOfPersonnelBackpacksSatchel
-  category: JobsCommandHeadOfPersonnel
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfPersonnelBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-  items:
-    - ClothingBackpackSatchelHOP
-
-- type: loadout
-  id: LoadoutHeadOfPersonnelBackpacksDuffel
-  category: JobsCommandHeadOfPersonnel
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfPersonnelBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-  items:
-    - ClothingBackpackDuffelHOP
-
-- type: loadout
   id: LoadoutHeadOfPersonnelBackpacksBackpackFilled
   category: JobsCommandHeadOfPersonnel
   cost: 0

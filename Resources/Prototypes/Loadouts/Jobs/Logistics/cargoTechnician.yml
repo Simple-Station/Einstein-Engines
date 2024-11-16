@@ -22,12 +22,12 @@
 # Outer
 - type: loadout
   id: LoadoutCargoOuterWinterCargo
-  category: JobsCargo
+  category: JobsLogisticsAUncategorized
   cost: 1
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterCargo
+      group: JobsLogisticsAUncategorized
     - !type:CharacterJobRequirement
       jobs:
         - CargoTechnician
@@ -37,12 +37,12 @@
 # Shoes
 - type: loadout
   id: LoadoutCargoShoesBootsWinterCargo
-  category: JobsCargo
+  category: JobsLogisticsAUncategorized
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoesCargo
+      group: JobsLogisticsAUncategorized
     - !type:CharacterJobRequirement
       jobs:
         - CargoTechnician
