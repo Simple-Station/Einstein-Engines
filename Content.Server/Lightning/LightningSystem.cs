@@ -82,10 +82,10 @@ public sealed class LightningSystem : SharedLightningSystem
         _random.Shuffle(targets);
         targets.Sort((x, y) => y.Priority.CompareTo(x.Priority));
 
-        int shootedCount = 0;
+        int shotCount = 0;
         int count = -1;
 
-        while (shootedCount < boltCount)
+        while (shotCount < boltCount)
         {
             count++;
 
@@ -103,7 +103,7 @@ public sealed class LightningSystem : SharedLightningSystem
                 ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].LightningResistance, triggerLightningEvents);
             }
 
-            shootedCount++;
+            shotCount++;
         }
     }
 }
