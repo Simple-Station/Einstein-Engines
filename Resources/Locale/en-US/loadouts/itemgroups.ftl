@@ -18,10 +18,8 @@ character-item-group-LoadoutSmokes = Smokeables
 character-item-group-LoadoutBoxKits = Survival Kits
 character-item-group-LoadoutWritables = Writing Tools
 
-# Cargo
-character-item-group-JobsLogisticsAUncategorized = Logistics Neckwear
-character-item-group-JobsLogisticsAUncategorized = Logistics Outerwear
-character-item-group-JobsLogisticsAUncategorized = Logistics Shoes
+# Logistics
+
 
 # Engineering
 character-item-group-LoadoutEyesEngineering = Engineering Eyewear

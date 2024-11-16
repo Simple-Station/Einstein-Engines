@@ -196,6 +196,7 @@
     - JobsSecurityAUncategorized
     - JobsSecurityCadet
     - JobsSecurityCorpsman
+    - JobsSecurityDetective
     - JobsSecurityHeadOfSecurity
     - JobsSecuritySecurityOfficer
     - JobsSecuritySeniorOfficer
@@ -209,6 +210,9 @@
 
 - type: loadoutCategory
   id: JobsSecurityCorpsman
+
+- type: loadoutCategory
+  id: JobsSecurityDetective
 
 - type: loadoutCategory
   id: JobsSecurityHeadOfSecurity
