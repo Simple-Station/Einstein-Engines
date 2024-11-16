@@ -1,7 +1,32 @@
 # Cataloger
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
 - type: loadout
   id: LoadoutScienceJumpsuitLibrarianNt
-  category: JobsScience
+  category: JobsEpistemicsCataloger
   cost: 0
   exclusive: true
   requirements:
@@ -15,7 +40,7 @@
 
 - type: loadout
   id: LoadoutScienceJumpsuitLibrarianIdris
-  category: JobsScience
+  category: JobsEpistemicsCataloger
   cost: 0
   exclusive: true
   requirements:
@@ -29,7 +54,7 @@
 
 - type: loadout
   id: LoadoutScienceJumpsuitLibrarianOrion
-  category: JobsScience
+  category: JobsEpistemicsCataloger
   cost: 0
   exclusive: true
   requirements:
@@ -43,7 +68,7 @@
 
 - type: loadout
   id: LoadoutScienceJumpsuitLibrarianHeph
-  category: JobsScience
+  category: JobsEpistemicsCataloger
   cost: 0
   exclusive: true
   requirements:
@@ -57,7 +82,7 @@
 
 - type: loadout
   id: LoadoutScienceJumpsuitLibrarianPMCG
-  category: JobsScience
+  category: JobsEpistemicsCataloger
   cost: 0
   exclusive: true
   requirements:
@@ -71,7 +96,7 @@
 
 - type: loadout
   id: LoadoutScienceJumpsuitLibrarianZav
-  category: JobsScience
+  category: JobsEpistemicsCataloger
   cost: 0
   exclusive: true
   requirements:
@@ -85,7 +110,7 @@
 
 - type: loadout
   id: LoadoutScienceJumpsuitLibrarianZeng
-  category: JobsScience
+  category: JobsEpistemicsCataloger
   cost: 0
   exclusive: true
   requirements:
@@ -99,7 +124,7 @@
 
 - type: loadout
   id: LoadoutScienceJumpsuitLibrarian
-  category: JobsScience
+  category: JobsEpistemicsCataloger
   cost: 0
   exclusive: true
   requirements:
@@ -113,7 +138,7 @@
 
 - type: loadout
   id: LoadoutScienceJumpskirtLibrarian
-  category: JobsScience
+  category: JobsEpistemicsCataloger
   cost: 0
   exclusive: true
   requirements:

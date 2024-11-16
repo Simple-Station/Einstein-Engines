@@ -65,34 +65,6 @@
         - Brigmedic
 
 - type: loadout
-  id: LoadoutBackpackSatchelMedical
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelMedical
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-
-- type: loadout
-  id: LoadoutBackpackSatchelCaptain
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelCaptain
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-
-- type: loadout
   id: LoadoutBackpackSatchelMime
   category: Backpacks
   cost: 0

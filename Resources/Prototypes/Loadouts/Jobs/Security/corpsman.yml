@@ -1,0 +1,105 @@
+# Corpsman
+# Backpacks
+- type: loadout
+  id: LoadoutBackpackCorpsman
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackBrigmedic
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+
+# Belt
+- type: loadout
+  id: LoadoutClothingBeltCorpsmanWebbing
+  category: JobsSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBeltSecurity
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingBeltCorpsmanWebbingFilled
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+- type: loadout
+  id: LoadoutClothingHandsGlovesNitrile
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGlovesSecurity
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHandsGlovesNitrile
+
+# Head
+- type: loadout
+  id: LoadoutClothingHeadHatBeretBrigmedic
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadSecurity
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHeadHatBeretBrigmedic
+
+- type: loadout
+  id: LoadoutClothingHeadHatBeretCorpsman
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadSecurity
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHeadHatBeretCorpsman
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutBedsheetBrigmedic
+  category: JobsSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckSecurity
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - BedsheetBrigmedic
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

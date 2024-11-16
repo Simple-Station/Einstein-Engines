@@ -1,0 +1,71 @@
+# Senior Physician
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutMedicalUniformJumpskirtSenior
+  category: JobsMedicalSeniorPhysician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorPhysician
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobChemist
+      min: 21600 # 6 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobMedicalDoctor
+      min: 21600 # 6 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Medical
+      min: 216000 # 60 hours
+  items:
+    - ClothingUniformJumpskirtSeniorPhysician
+
+- type: loadout
+  id: LoadoutMedicalUniformJumpsuitSenior
+  category: JobsMedicalSeniorPhysician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsMedical
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorPhysician
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobChemist
+      min: 21600 # 6 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobMedicalDoctor
+      min: 21600 # 6 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Medical
+      min: 216000 # 60 hours
+  items:
+    - ClothingUniformJumpsuitSeniorPhysician

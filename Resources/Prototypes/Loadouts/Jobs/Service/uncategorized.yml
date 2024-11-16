@@ -1,9 +1,16 @@
+# Uncategorized
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
 # For the most part we dont want people to take this item, so its used as an example of all the things
 # you can do with requirements. Point someone to this thing if they ask "how tf do loadout requirements work?"
-
 - type: loadout
   id: LoadoutServiceClownCowToolboxFilled
-  category: JobsServiceUncategorized
+  category: JobsServiceAUncategorized
   cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -45,3 +52,21 @@
             - Clown
   items:
     - CowToolboxFilled
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

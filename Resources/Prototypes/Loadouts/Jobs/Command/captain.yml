@@ -1,6 +1,117 @@
+# Captain
+# Backpacks
+- type: loadout
+  id: LoadoutBackpackCaptain
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackCaptain
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
+  id: LoadoutBackpackSatchelCaptain
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelCaptain
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
+  id: LoadoutBackpackDuffelCaptain
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelCaptain
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+# Belt
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutCommandCapItemDrinkFlask
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - DrinkFlask
+
+# Eyes
+
+# Gloves
+- type: loadout
+  id: LoadoutCommandCapGloves
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHandsGlovesCaptain
+
+# Head
+- type: loadout
+  id: LoadoutCommandCapHat
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHeadHatCaptain
+
+- type: loadout
+  id: LoadoutCommandCapHatCapcap
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHeadHatCapcap
+
+- type: loadout
+  id: LoadoutCommandCapHatBeret
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHeadHatBeretCap
+
+# Id
+
+# Neck
 - type: loadout
   id: LoadoutCommandCapNeckMantle
-  category: JobsCommand
+  category: JobsCommandCaptain
   cost: 0
   exclusive: true
   requirements:
@@ -24,7 +135,7 @@
 
 - type: loadout
   id: LoadoutCommandCapNeckCloakFormal
-  category: JobsCommand
+  category: JobsCommandCaptain
   cost: 0
   exclusive: true
   requirements:
@@ -34,9 +145,47 @@
   items:
     - ClothingNeckCloakCapFormal
 
+# Mask
+- type: loadout
+  id: LoadoutCommandCapMaskGas
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingMaskGasCaptain
+
+# Outer
+- type: loadout
+  id: LoadoutCommandCapOuterWinter
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingOuterWinterCap
+
+# Shoes
+- type: loadout
+  id: LoadoutCommandCapShoesBootsWinter
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingShoesBootsWinterCap
+
+# Uniforms
 - type: loadout
   id: LoadoutCommandCapJumpsuitFormal
-  category: JobsCommand
+  category: JobsCommandCaptain
   cost: 0
   exclusive: true
   requirements:
@@ -48,7 +197,7 @@
 
 - type: loadout
   id: LoadoutCommandCapJumpskirtFormal
-  category: JobsCommand
+  category: JobsCommandCaptain
   cost: 0
   exclusive: true
   requirements:
@@ -57,92 +206,3 @@
         - Captain
   items:
     - ClothingUniformJumpskirtCapFormalDress
-
-- type: loadout
-  id: LoadoutCommandCapOuterWinter
-  category: JobsCommand
-  cost: 1
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingOuterWinterCap
-
-- type: loadout
-  id: LoadoutCommandCapGloves
-  category: JobsCommand
-  cost: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingHandsGlovesCaptain
-
-- type: loadout
-  id: LoadoutCommandCapHat
-  category: JobsCommand
-  cost: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingHeadHatCaptain
-
-- type: loadout
-  id: LoadoutCommandCapHatCapcap
-  category: JobsCommand
-  cost: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingHeadHatCapcap
-
-- type: loadout
-  id: LoadoutCommandCapHatBeret
-  category: JobsCommand
-  cost: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingHeadHatBeretCap
-
-- type: loadout
-  id: LoadoutCommandCapMaskGas
-  category: JobsCommand
-  cost: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingMaskGasCaptain
-
-- type: loadout
-  id: LoadoutCommandCapShoesBootsWinter
-  category: JobsCommand
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingShoesBootsWinterCap
-
-- type: loadout
-  id: LoadoutCommandCapItemDrinkFlask
-  category: JobsCommand
-  cost: 1
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - DrinkFlask

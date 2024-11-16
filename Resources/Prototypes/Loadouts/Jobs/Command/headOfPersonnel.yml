@@ -1,6 +1,44 @@
+# Head Of Personnel
+# Backpacks
+- type: loadout
+  id: LoadoutCommandHOPBackIan
+  category: JobsCommandHeadOfPersonnel
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingBackpackIan
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutCommandHOPHatCap
+  category: JobsCommandHeadOfPersonnel
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingHeadHatHopcap
+
+# Id
+
+# Neck
 - type: loadout
   id: LoadoutCommandHOPNeckMantle
-  category: JobsCommand
+  category: JobsCommandHeadOfPersonnel
   cost: 0
   exclusive: true
   requirements:
@@ -12,7 +50,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPNeckCloak
-  category: JobsCommand
+  category: JobsCommandHeadOfPersonnel
   cost: 0
   exclusive: true
   requirements:
@@ -23,8 +61,48 @@
     - ClothingNeckCloakHop
 
 - type: loadout
+  id: LoadoutCommandHOPBedsheetIan
+  category: JobsCommandHeadOfPersonnel
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - BedsheetIan
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutcommandHOPOuterCoatFormal
+  category: JobsCommandHeadOfPersonnel
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingOuterCoatHoPFormal
+
+# Shoes
+- type: loadout
+  id: LoadoutCommandHOPShoesBootsWinter
+  category: JobsCommandHeadOfPersonnel
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingShoesBootsWinterHeadOfPersonel
+
+# Uniforms
+- type: loadout
   id: LoadoutCommandHOPJumpsuitTurtleneckBoatswain
-  category: JobsCommand
+  category: JobsCommandHeadOfPersonnel
   cost: 0
   exclusive: true
   requirements:
@@ -36,7 +114,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpsuitMess
-  category: JobsCommand
+  category: JobsCommandHeadOfPersonnel
   cost: 0
   exclusive: true
   requirements:
@@ -48,7 +126,7 @@
 
 - type: loadout
   id: LoadoutCommandHOPJumpskirtMess
-  category: JobsCommand
+  category: JobsCommandHeadOfPersonnel
   cost: 0
   exclusive: true
   requirements:
@@ -57,60 +135,3 @@
         - HeadOfPersonnel
   items:
     - ClothingUniformJumpskirtHoPMess
-
-- type: loadout
-  id: LoadoutcommandHOPOuterCoatFormal
-  category: JobsCommand
-  cost: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-  items:
-    - ClothingOuterCoatHoPFormal
-
-- type: loadout
-  id: LoadoutCommandHOPBackIan
-  category: JobsCommand
-  cost: 2
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-  items:
-    - ClothingBackpackIan
-
-- type: loadout
-  id: LoadoutCommandHOPHatCap
-  category: JobsCommand
-  cost: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-  items:
-    - ClothingHeadHatHopcap
-
-- type: loadout
-  id: LoadoutCommandHOPShoesBootsWinter
-  category: JobsCommand
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-  items:
-    - ClothingShoesBootsWinterHeadOfPersonel
-
-- type: loadout
-  id: LoadoutCommandHOPBedsheetIan
-  category: JobsCommand
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfPersonnel
-  items:
-    - BedsheetIan

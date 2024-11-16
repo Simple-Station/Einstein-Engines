@@ -1,60 +1,119 @@
 # Bartender
-# Uniforms
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
 - type: loadout
-  id: LoadoutServiceBartenderUniformPurple
+  id: LoadoutServiceBartenderBoxBeanbags
   category: JobsServiceBartender
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutBartenderAmmo
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
   items:
-    - ClothingUniformJumpsuitBartenderPurple
+    - BoxBeanbag
 
 - type: loadout
-  id: LoadoutServiceJumpsuitBartenderNt
+  id: LoadoutServiceBartenderBoxLightRifleRubber
   category: JobsServiceBartender
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderUniforms
+      group: LoadoutBartenderAmmo
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
   items:
-    - ClothingUniformJumpsuitBartenderNt
+    - MagazineBoxLightRifleRubber
 
 - type: loadout
-  id: LoadoutServiceJumpsuitBartenderIdris
+  id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
   category: JobsServiceBartender
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderUniforms
+      group: LoadoutBartenderWeapon
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
   items:
-    - ClothingUniformJumpsuitBartenderIdris
+    - WeaponShotgunDoubleBarreledRubber
 
 - type: loadout
-  id: LoadoutServiceJumpsuitBartenderOrion
+  id: LoadoutServiceBartenderMosinRubber
   category: JobsServiceBartender
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderUniforms
+      group: LoadoutBartenderWeapon
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
   items:
-    - ClothingUniformJumpsuitBartenderOrion
+    - WeaponSniperMosinRubber
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutServiceHeadBartenderNt
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingHeadHatFlatcapBartenderNanotrasen
+
+- type: loadout
+  id: LoadoutServiceHeadBartenderIdris
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingHeadHatFlatcapBartenderIdris
+
+- type: loadout
+  id: LoadoutServiceHeadBartenderOrion
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingHeadHatFlatcapBartenderOrion
+
+# Id
+
+# Neck
+
+# Mask
 
 # Outer
 - type: loadout
@@ -113,103 +172,61 @@
   items:
     - ClothingOuterVestOrion
 
-# Ammo
+# Shoes
+
+# Uniforms
 - type: loadout
-  id: LoadoutServiceBartenderBoxBeanbags
+  id: LoadoutServiceBartenderUniformPurple
   category: JobsServiceBartender
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderAmmo
+      group: LoadoutUniformsService
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
   items:
-    - BoxBeanbag
+    - ClothingUniformJumpsuitBartenderPurple
 
 - type: loadout
-  id: LoadoutServiceBartenderBoxLightRifleRubber
+  id: LoadoutServiceJumpsuitBartenderNt
   category: JobsServiceBartender
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderAmmo
+      group: LoadoutBartenderUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
   items:
-    - MagazineBoxLightRifleRubber
-
-# Weapons
-- type: loadout
-  id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
-  category: JobsServiceBartender
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Bartender
-  items:
-    - WeaponShotgunDoubleBarreledRubber
+    - ClothingUniformJumpsuitBartenderNt
 
 - type: loadout
-  id: LoadoutServiceBartenderMosinRubber
+  id: LoadoutServiceJumpsuitBartenderIdris
   category: JobsServiceBartender
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderWeapon
+      group: LoadoutBartenderUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
   items:
-    - WeaponSniperMosinRubber
-
-# Head
-- type: loadout
-  id: LoadoutServiceHeadBartenderNt
-  category: JobsServiceBartender
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - Bartender
-  items:
-    - ClothingHeadHatFlatcapBartenderNanotrasen
+    - ClothingUniformJumpsuitBartenderIdris
 
 - type: loadout
-  id: LoadoutServiceHeadBartenderIdris
+  id: LoadoutServiceJumpsuitBartenderOrion
   category: JobsServiceBartender
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderHead
+      group: LoadoutBartenderUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
   items:
-    - ClothingHeadHatFlatcapBartenderIdris
-
-- type: loadout
-  id: LoadoutServiceHeadBartenderOrion
-  category: JobsServiceBartender
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - Bartender
-  items:
-    - ClothingHeadHatFlatcapBartenderOrion
+    - ClothingUniformJumpsuitBartenderOrion

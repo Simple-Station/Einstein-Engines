@@ -1,6 +1,29 @@
+# Uncategorized
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutCommandTelescopicBaton
+  category: JobsCommandAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Command
+  items:
+  - TelescopicBaton
+
+# Eyes
+
+# Gloves
 - type: loadout
   id: LoadoutCommandGlovesInspection
-  category: JobsCommand
+  category: JobsCommandAUncategorized
   cost: 0
   exclusive: true
   requirements:
@@ -11,14 +34,16 @@
   items:
     - ClothingHandsGlovesInspection
 
-- type: loadout
-  id: LoadoutCommandTelescopicBaton
-  category: JobsCommand
-  cost: 3
-  exclusive: true
-  requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Command
-  items:
-  - TelescopicBaton
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

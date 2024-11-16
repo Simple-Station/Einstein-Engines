@@ -1,15 +1,29 @@
-# What? This isn't a thing?? :(
-# - type: loadout
-#   id: LoadoutCommandQMNeckMantle
-#   category: JobsCommand
-#   cost: 2
-#   exclusive: true
-#   requirements:
-#     - !type:CharacterJobRequirement
-#       jobs:
-#         - Quartermaster
-#   items:
-#     - ClothingNeckMantleQM
+# Logistics Officer
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
 
 - type: loadout
   id: LoadoutCommandQMNeckCloak

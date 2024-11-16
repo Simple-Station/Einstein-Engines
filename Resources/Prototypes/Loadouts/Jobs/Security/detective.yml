@@ -1,4 +1,4 @@
-# Cargo technician
+# Detective
 # Backpacks
 
 # Belt
@@ -21,32 +21,33 @@
 
 # Outer
 - type: loadout
-  id: LoadoutCargoOuterWinterCargo
-  category: JobsCargo
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterCargo
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
-  items:
-    - ClothingOuterWinterCargo
-
-# Shoes
-- type: loadout
-  id: LoadoutCargoShoesBootsWinterCargo
-  category: JobsCargo
+  id: LoadoutClothingOuterCoatDetective
+  category: JobsSecurity
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoesCargo
+      group: LoadoutOuterSecurity
     - !type:CharacterJobRequirement
       jobs:
-        - CargoTechnician
+        - Detective
   items:
-    - ClothingShoesBootsWinterCargo
+    - ClothingOuterCoatDetective
+
+- type: loadout
+  id: LoadoutOuterVestDetective
+  category: JobsSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterSecurity
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingOuterVestDetective
+
+# Shoes
 
 # Uniforms

@@ -66,20 +66,6 @@
         - Medical
 
 - type: loadout
-  id: LoadoutBackpackDuffelCaptain
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelCaptain
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-
-- type: loadout
   id: LoadoutBackpackDuffelMime
   category: Backpacks
   cost: 0

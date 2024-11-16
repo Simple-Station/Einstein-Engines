@@ -1,0 +1,39 @@
+# Uncategorized
+# Backpacks
+- type: loadout
+  id: LoadoutBackpackCargo
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackCargo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

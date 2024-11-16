@@ -1,25 +1,47 @@
 # Salvage Specialist
-# Uniforms
-
-# Outer
+# Backpacks
 - type: loadout
-  id: LoadoutCargoOuterWinterMiner
-  category: JobsCargo
-  cost: 1
+  id: LoadoutBackpackSalvage
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
   exclusive: true
+  items:
+    - ClothingBackpackSalvage
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterCargo
+      group: LoadoutBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+
+# Belt
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutCargoWeaponsCrusherDagger
+  category: JobsLogisticsSalvageSpecialist
+  cost: 2
+  requirements:
     - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist
   items:
-    - ClothingOuterWinterMiner
+    - WeaponCrusherDagger
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
 
 # Neck
 - type: loadout
   id: LoadoutCargoNeckGoliathCloak
-  category: JobsCargo
+  category: JobsLogisticsSalvageSpecialist
   cost: 0
   exclusive: true
   requirements:
@@ -34,14 +56,23 @@
   items:
     - ClothingNeckCloakGoliathCloak
 
-# Weapons
+# Mask
+
+# Outer
 - type: loadout
-  id: LoadoutCargoWeaponsCrusherDagger
-  category: JobsCargo
-  cost: 2
+  id: LoadoutCargoOuterWinterMiner
+  category: JobsLogisticsSalvageSpecialist
+  cost: 1
+  exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterCargo
     - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist
   items:
-    - WeaponCrusherDagger
+    - ClothingOuterWinterMiner
+
+# Shoes
+
+# Uniforms
