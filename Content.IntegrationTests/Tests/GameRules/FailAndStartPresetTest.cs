@@ -36,7 +36,7 @@
 // - type: entity
 //   id: TestRule
 //   parent: BaseGameRule
-//   noSpawn: true
+//   categories: [ HideSpawnMenu ]
 //   components:
 //   - type: GameRule
 //     minPlayers: 0
@@ -45,7 +45,7 @@
 // - type: entity
 //   id: TestRuleTenPlayers
 //   parent: BaseGameRule
-//   noSpawn: true
+//   categories: [ HideSpawnMenu ]
 //   components:
 //   - type: GameRule
 //     minPlayers: 10

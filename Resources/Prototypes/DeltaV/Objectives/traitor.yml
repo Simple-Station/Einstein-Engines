@@ -1,5 +1,5 @@
 - type: entity # Logistics Officer steal objective.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseTraitorStealObjective
   id: LOLuckyBillStealObjective
   components:
@@ -10,7 +10,7 @@
     # owner: job-name-qm
 
 - type: entity # Head of Personnel steal objective.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseTraitorStealObjective
   id: HoPBookIanDossierStealObjective
   components:
@@ -21,7 +21,7 @@
     # owner: job-name-hop
 
 - type: entity # Clerk steal objective.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseTraitorStealObjective
   id: ClerkNotaryStealObjective
   components:

@@ -2,7 +2,7 @@
 - type: entity
   id: NoosphericStorm
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       startAnnouncement: true
@@ -25,7 +25,7 @@
   - type: MidRoundAntagRule
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMidRoundAntag
   id: RatKingSpawn
   components:
@@ -33,7 +33,7 @@
     spawner: SpawnPointGhostRatKing
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMidRoundAntag
   id: ParadoxAnomalySpawn
   components:
@@ -44,7 +44,7 @@
 - type: entity
   id: BaseGlimmerEvent
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       # Favor glimmer events just a little more than regular events.
@@ -56,7 +56,7 @@
 - type: entity
   id: MundaneDischarge
   parent: BaseGlimmerEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       reoccurrenceDelay: 15
@@ -69,7 +69,7 @@
 - type: entity
   id: NoosphericZap
   parent: BaseGlimmerEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       weight: 25 # Guaranteed to happen every once in a while, but with intervals between incidents
@@ -81,7 +81,7 @@
 - type: entity
   id: NoosphericFry
   parent: BaseGlimmerEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
       minimumGlimmer: 550
@@ -91,7 +91,7 @@
 - type: entity
   id: PsionicCatGotYourTongue
   parent: BaseGlimmerEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
       minimumGlimmer: 400
@@ -103,7 +103,7 @@
 - type: entity
   id: MassMindSwap
   parent: BaseGlimmerEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
       minimumGlimmer: 900
@@ -116,7 +116,7 @@
   abstract: true
   parent: BaseGlimmerEvent
   id: BaseGlimmerSignaturesEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GlimmerEvent
     minimumGlimmer: 300
@@ -126,7 +126,7 @@
 - type: entity
   id: GlimmerWispSpawn
   parent: BaseGlimmerSignaturesEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GlimmerMobRule
     mobPrototype: MobGlimmerWisp
@@ -134,7 +134,7 @@
 - type: entity
   parent: BaseGlimmerSignaturesEvent
   id: FreeProber
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: FreeProberRule
 
@@ -142,7 +142,7 @@
 - type: entity
   parent: BaseGlimmerSignaturesEvent
   id: GlimmerRandomSentience
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 7
@@ -158,7 +158,7 @@
 - type: entity
   parent: BaseGlimmerSignaturesEvent
   id: GlimmerRevenantSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
       minimumGlimmer: 450
@@ -170,7 +170,7 @@
 - type: entity
   parent: BaseGlimmerSignaturesEvent
   id: GlimmerMiteSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GlimmerEvent
     minimumGlimmer: 250
