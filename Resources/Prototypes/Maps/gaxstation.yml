@@ -17,6 +17,8 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'YG'
         - type: StationJobs
+          overflowJobs:
+          - Passenger
           availableJobs:
             #service
             Captain: [ 1, 1 ]

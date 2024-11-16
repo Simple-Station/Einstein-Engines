@@ -325,7 +325,7 @@ namespace Content.Client.LateJoin
             }
         }
 
-        private void JobsAvailableUpdated(IReadOnlyDictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>> updatedJobs)
+        private void JobsAvailableUpdated(IReadOnlyDictionary<NetEntity, Dictionary<string, uint?>> updatedJobs)
         {
             foreach (var stationEntries in updatedJobs)
             {
@@ -372,10 +372,10 @@ namespace Content.Client.LateJoin
         public Label JobLabel { get; }
         public string JobId { get; }
         public string JobLocalisedName { get; }
-        public int? Amount { get; private set; }
+        public uint? Amount { get; private set; }
         private bool _initialised = false;
 
-        public JobButton(Label jobLabel, ProtoId<JobPrototype> jobId, string jobLocalisedName, int? amount)
+        public JobButton(Label jobLabel, string jobId, string jobLocalisedName, uint? amount)
         {
             JobLabel = jobLabel;
             JobId = jobId;
@@ -385,7 +385,7 @@ namespace Content.Client.LateJoin
             _initialised = true;
         }
 
-        public void RefreshLabel(int? amount)
+        public void RefreshLabel(uint? amount)
         {
             if (Amount == amount && _initialised)
             {

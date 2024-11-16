@@ -6,8 +6,11 @@ namespace Content.Server.Spawners.Components;
 [RegisterComponent]
 public sealed partial class SpawnPointComponent : Component, ISpawnPoint
 {
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+
+    [ViewVariables(VVAccess.ReadWrite)]
     [DataField("job_id")]
-    public ProtoId<JobPrototype>? Job;
+    private string? _jobId;
 
     /// <summary>
     /// The type of spawn point
@@ -15,9 +18,11 @@ public sealed partial class SpawnPointComponent : Component, ISpawnPoint
     [DataField("spawn_type"), ViewVariables(VVAccess.ReadWrite)]
     public SpawnPointType SpawnType { get; set; } = SpawnPointType.Unset;
 
+    public JobPrototype? Job => string.IsNullOrEmpty(_jobId) ? null : _prototypeManager.Index<JobPrototype>(_jobId);
+
     public override string ToString()
     {
-        return $"{Job} {SpawnType}";
+        return $"{_jobId} {SpawnType}";
     }
 }
 

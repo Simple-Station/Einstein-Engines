@@ -10,6 +10,8 @@
         - type: StationNameSetup
           mapNameTemplate: "Empty"
         - type: StationJobs
+          overflowJobs:
+            - Passenger
           availableJobs:
             Passenger: [ -1, -1 ]
 
@@ -25,6 +27,8 @@
         - type: StationNameSetup
           mapNameTemplate: "Dev"
         - type: StationJobs
+          overflowJobs:
+          - Captain
           availableJobs:
             Captain: [ -1, -1 ]
 
@@ -40,5 +44,7 @@
         - type: StationNameSetup
           mapNameTemplate: "TEG"
         - type: StationJobs
+          overflowJobs:
+            - ChiefEngineer
           availableJobs:
             ChiefEngineer: [ -1, -1 ]

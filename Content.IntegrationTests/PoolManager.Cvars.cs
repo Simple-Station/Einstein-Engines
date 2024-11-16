@@ -28,7 +28,6 @@ public static partial class PoolManager
         (CCVars.EmergencyShuttleEnabled.Name, "false"),
         (CCVars.ProcgenPreload.Name,          "false"),
         (CCVars.WorldgenEnabled.Name,         "false"),
-        (CCVars.GatewayGeneratorEnabled.Name, "false"),
         (CVars.ReplayClientRecordingEnabled.Name, "false"),
         (CVars.ReplayServerRecordingEnabled.Name, "false"),
         (CCVars.GameDummyTicker.Name, "true"),

@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Content.Server.Station.Systems;
+﻿using Content.Server.Station.Systems;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Shared.Network;
@@ -16,20 +15,24 @@ namespace Content.Server.Station.Components;
 public sealed partial class StationJobsComponent : Component
 {
     /// <summary>
-    /// Total *mid-round* jobs at station start.
-    /// This is inferred automatically from <see cref="SetupAvailableJobs"/>.
+    /// Total *round-start* jobs at station start.
     /// </summary>
-    [ViewVariables] public int MidRoundTotalJobs;
+    [DataField("roundStartTotalJobs")] public int RoundStartTotalJobs;
+
+    /// <summary>
+    /// Total *mid-round* jobs at station start.
+    /// </summary>
+    [DataField("midRoundTotalJobs")] public int MidRoundTotalJobs;
 
     /// <summary>
     /// Current total jobs.
     /// </summary>
-    [DataField] public int TotalJobs;
+    [DataField("totalJobs")] public int TotalJobs;
 
     /// <summary>
     /// Station is running on extended access.
     /// </summary>
-    [DataField] public bool ExtendedAccess;
+    [DataField("extendedAccess")] public bool ExtendedAccess;
 
     /// <summary>
     /// If there are less than or equal this amount of players in the game at round start,
@@ -38,7 +41,7 @@ public sealed partial class StationJobsComponent : Component
     /// <remarks>
     /// Set to -1 to disable extended access.
     /// </remarks>
-    [DataField]
+    [DataField("extendedAccessThreshold")]
     public int ExtendedAccessThreshold { get; set; } = 15;
 
     /// <summary>
@@ -51,20 +54,28 @@ public sealed partial class StationJobsComponent : Component
     public float? PercentJobsRemaining => MidRoundTotalJobs > 0 ? TotalJobs / (float) MidRoundTotalJobs : null;
 
     /// <summary>
-    /// The current list of jobs of available jobs. Null implies that is no limit.
+    /// The current list of jobs.
     /// </summary>
     /// <remarks>
     /// This should not be mutated or used directly unless you really know what you're doing, go through StationJobsSystem.
     /// </remarks>
-    [DataField]
-    public Dictionary<ProtoId<JobPrototype>, int?> JobList = new();
+    [DataField("jobList", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<uint?, JobPrototype>))]
+    public Dictionary<string, uint?> JobList = new();
+
+    /// <summary>
+    /// The round-start list of jobs.
+    /// </summary>
+    /// <remarks>
+    /// This should not be mutated, ever.
+    /// </remarks>
+    [DataField("roundStartJobList", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<uint?, JobPrototype>))]
+    public Dictionary<string, uint?> RoundStartJobList = new();
 
     /// <summary>
     /// Overflow jobs that round-start can spawn infinitely many of.
-    /// This is inferred automatically from <see cref="SetupAvailableJobs"/>.
     /// </summary>
-    [ViewVariables]
-    public IReadOnlySet<ProtoId<JobPrototype>> OverflowJobs = default!;
+    [DataField("overflowJobs", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<JobPrototype>))]
+    public HashSet<string> OverflowJobs = new();
 
     /// <summary>
     /// A dictionary relating a NetUserId to the jobs they have on station.
@@ -73,10 +84,7 @@ public sealed partial class StationJobsComponent : Component
     [DataField]
     public Dictionary<NetUserId, List<ProtoId<JobPrototype>>> PlayerJobs = new();
 
-    /// <summary>
-    /// Mapping of jobs to an int[2] array that specifies jobs available at round start, and midround.
-    /// Negative values implies that there is no limit.
-    /// </summary>
-    [DataField("availableJobs", required: true)]
-    public Dictionary<ProtoId<JobPrototype>, int[]> SetupAvailableJobs = default!;
+    [DataField("availableJobs", required: true,
+        customTypeSerializer: typeof(PrototypeIdDictionarySerializer<List<int?>, JobPrototype>))]
+    public Dictionary<string, List<int?>> SetupAvailableJobs = default!;
 }
