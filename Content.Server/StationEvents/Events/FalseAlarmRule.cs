@@ -19,9 +19,7 @@ public sealed class FalseAlarmRule : StationEventSystem<FalseAlarmRuleComponent>
         if (!TryComp<StationEventComponent>(uid, out var stationEvent))
             return;
 
-        var allEv = _event.AllEvents()
-            .Where(p => p.Value.StartAnnouncement)
-            .Select(p => p.Key).ToList();
+        var allEv = _event.AllEvents().Select(p => p.Value).ToList();
         var picked = RobustRandom.Pick(allEv);
 
         stationEvent.StartAnnouncement = picked.StartAnnouncement;
