@@ -44,7 +44,7 @@ public sealed class AnnouncerAudioTest
                 {
                     if (ev.Value.StartAnnouncement != null)
                     {
-                        var announcementId = announcer.GetAnnouncementId(ev.Key.ID);
+                        var announcementId = ev.Value.StartAnnouncement ?? announcer.GetAnnouncementId(ev.Key.ID);
                         var path = announcer.GetAnnouncementPath(announcementId, announcerProto);
 
                         if (!cache.ContentFileExists(path))
@@ -56,7 +56,7 @@ public sealed class AnnouncerAudioTest
 
                     if (ev.Value.EndAnnouncement != null)
                     {
-                        var announcementId = announcer.GetAnnouncementId(ev.Key.ID, true);
+                        var announcementId = ev.Value.StartAnnouncement ?? announcer.GetAnnouncementId(ev.Key.ID);
                         var path = announcer.GetAnnouncementPath(announcementId, announcerProto);
 
                         if (!cache.ContentFileExists(path))

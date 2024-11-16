@@ -42,7 +42,7 @@ public sealed class AnnouncerLocalizationTest
                 {
                     if (ev.Value.StartAnnouncement != null)
                     {
-                        var announcementId = announcer.GetAnnouncementId(ev.Key.ID);
+                        var announcementId = ev.Value.StartAnnouncement ?? announcer.GetAnnouncementId(ev.Key.ID);
                         var eventLocaleString = announcer.GetAnnouncementMessage(announcementId, announcerProto.ID)
                             ?? announcer.GetEventLocaleString(announcementId);
 
@@ -55,7 +55,7 @@ public sealed class AnnouncerLocalizationTest
 
                     if (ev.Value.EndAnnouncement != null)
                     {
-                        var announcementId = announcer.GetAnnouncementId(ev.Key.ID, true);
+                        var announcementId = ev.Value.StartAnnouncement ?? announcer.GetAnnouncementId(ev.Key.ID);
                         var eventLocaleString = announcer.GetAnnouncementMessage(announcementId, announcerProto.ID)
                             ?? announcer.GetEventLocaleString(announcementId);
 
