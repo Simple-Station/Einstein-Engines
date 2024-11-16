@@ -310,7 +310,6 @@
 # Death Squad
 
 - type: entity
-  noSpawn: false
   parent: ClothingBackpackERTSecurity
   id: ClothingBackpackDeathSquadFilled
   name: death squad backpack
