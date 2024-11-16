@@ -3,9 +3,8 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.GameTicking.Components;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Construction.EntitySystems;
-using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -18,7 +17,6 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Psionics.Glimmer;
 using Robust.Shared.Audio.Systems;
-using Content.Server.Maps;
 using Robust.Shared.Map.Components;
 
 namespace Content.Server.StationEvents.Events;

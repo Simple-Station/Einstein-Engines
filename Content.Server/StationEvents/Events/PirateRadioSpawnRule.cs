@@ -8,7 +8,7 @@ using Content.Server.StationEvents.Components;
 using Content.Shared.Salvage;
 using Content.Shared.Random.Helpers;
 using System.Linq;
-using Content.Server.GameTicking.Components;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.CCVar;
 using Robust.Shared.Serialization.Manager;
 using Content.Shared.Parallax.Biomes;

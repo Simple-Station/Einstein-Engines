@@ -1,3 +1,4 @@
+using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.GridPreloader;
 using Content.Shared.GameTicking.Components;

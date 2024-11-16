@@ -1,6 +1,4 @@
-using System.Linq;
-using Content.Server.GameTicking.Components;
-using Content.Server.GameTicking.Rules.Components;
+using Content.Shared.GameTicking.Components;
 using Content.Server.Ghost.Roles.Components;
 using Content.Shared.Abilities.Psionics;
 using Content.Server.Speech.Components;

@@ -27,7 +27,10 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Linq;
-using Content.Shared.Store.Components;
+using Content.Server.NPC.Systems;
+using Content.Server.NPC.Components;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
 
 namespace Content.Server.GameTicking.Rules;
 

@@ -14,6 +14,7 @@ using Robust.Shared.Prototypes;
 using Content.Server.Announcements.Systems;
 using Robust.Shared.Player;
 using Content.Server.Station.Components;
+using Content.Server.GameTicking;
 
 namespace Content.Server.StationEvents.Events;
 
