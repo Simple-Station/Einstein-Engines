@@ -3,18 +3,23 @@
   items:
     - type: loadout
       id: LoadoutEngineeringUniformHazard
+
+- type: characterItemGroup
+  id: LoadoutEngineeringGloves
+  maxItems: 1
+  items:
     - type: loadout
-      id: LoadoutEngineeringUniformJumpskirtSenior
+      id: LoadoutAtmosphericTechnicianGlovesInsulated
     - type: loadout
-      id: LoadoutEngineeringUniformJumpsuitSenior
+      id: LoadoutAtmosphericTechnicianGlovesCombat
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianGlovesMerc
 
 - type: characterItemGroup
   id: LoadoutOuterEngineering
   items:
     - type: loadout
       id: LoadoutEngineeringOuterHazard
-    - type: loadout
-      id: LoadoutEngineeringChickenSuit
 
 - type: characterItemGroup
   id: LoadoutHeadEngineering

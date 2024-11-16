@@ -63,6 +63,47 @@
     - ClothingEyesGlassesMeson
 
 # Gloves
+- type: loadout
+  id: LoadoutAtmosphericTechnicianGlovesInsulated
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingHandsGlovesColorYellow
+
+- type: loadout
+  id: LoadoutAtmosphericTechnicianGlovesCombat
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingHandsGlovesCombat
+
+- type: loadout
+  id: LoadoutAtmosphericTechnicianGlovesMerc
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingHandsMercGlovesCombat
 
 # Head
 - type: loadout

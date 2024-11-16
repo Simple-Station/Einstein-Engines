@@ -41,7 +41,35 @@
         - SeniorEngineer
   items:
     - ClothingBackpackDuffelEngineeringFilled
+
 # Belt
+- type: loadout
+  id: LoadoutSeniorEngineerBeltUtility
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingBeltUtility
+
+- type: loadout
+  id: LoadoutSeniorEngineerBeltUtilityEngineering
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingBeltUtilityEngineering
 
 # Ears
 

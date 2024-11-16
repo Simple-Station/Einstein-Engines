@@ -27,6 +27,22 @@
       - id: Multitool
 
 - type: entity
+  id: ClothingBeltUtilityAtmos
+  parent: ClothingBeltUtility
+  suffix: Engineering
+  components:
+  - type: StorageFill
+    contents:
+      - id: Crowbar
+      - id: Wrench
+      - id: Screwdriver
+      - id: Wirecutter
+      - id: Welder
+      - id: Multitool
+      - id: GasAnalyzer
+      - id: HolofanProjector
+
+- type: entity
   id: ClothingBeltChiefEngineerFilled
   parent: ClothingBeltChiefEngineer
   suffix: Filled

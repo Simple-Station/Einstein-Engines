@@ -7,7 +7,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpacks
+      group: LoadoutChiefEngineerBackpack
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
@@ -21,7 +21,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpacks
+      group: LoadoutChiefEngineerBackpack
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
@@ -35,7 +35,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpacks
+      group: LoadoutChiefEngineerBackpack
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
@@ -43,10 +43,90 @@
     - ClothingBackpackDuffelChiefEngineerFilled
 
 # Belt
+- type: loadout
+  id: LoadoutChiefEngineerBelt
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingBeltChiefEngineer
+
+- type: loadout
+  id: LoadoutChiefEngineerBeltFilled
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingBeltChiefEngineerFilled
 
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentBoxInflatable
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - BoxInflatable
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentMedkitOxygen
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - MedkitOxygenFilled
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentRCD
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - RCD
+    - RCDAmmo
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentRCDAmmoSpare
+  category: JobsEngineeringChiefEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - RCDAmmo
+    - RCDAmmo
 
 # Eyes
 
@@ -63,6 +143,8 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerNeck
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
@@ -75,11 +157,27 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerNeck
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
   items:
     - ClothingNeckCloakCe
+
+- type: loadout
+  id: LoadoutEngineeringChiefEngineerNeckEngineerMedal
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingNeckEngineermedal
 
 # Mask
 
@@ -120,7 +218,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerUniforms
+      group: LoadoutChiefEngineerUniform
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
@@ -134,7 +232,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerUniforms
+      group: LoadoutChiefEngineerUniform
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
