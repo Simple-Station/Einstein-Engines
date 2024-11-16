@@ -110,14 +110,14 @@
 //         player = pair.Player!.AttachedEntity!.Value;
 //         Assert.That(entMan.EntityExists(player));
 
-//         ticker.SetGamePreset((GamePresetPrototype?)null);
-//         server.CfgMan.SetCVar(CCVars.GridFill, false);
-//         server.CfgMan.SetCVar(CCVars.GameLobbyFallbackEnabled, true);
-//         server.CfgMan.SetCVar(CCVars.GameLobbyDefaultPreset, "secret");
-//         server.System<TestRuleSystem>().Run = false;
-//         await pair.CleanReturnAsync();
-//     }
-// }
+//        ticker.SetGamePreset((GamePresetPrototype?) null);
+//        server.CfgMan.SetCVar(CCVars.GridFill, false);
+//        server.CfgMan.SetCVar(CCVars.GameLobbyFallbackEnabled, true);
+//        server.CfgMan.SetCVar(CCVars.GameLobbyDefaultPreset, "secret");
+//        server.System<TestRuleSystem>().Run = false;
+//        await pair.CleanReturnAsync();
+//    }
+//}
 
 // public sealed class TestRuleSystem : EntitySystem
 // {
