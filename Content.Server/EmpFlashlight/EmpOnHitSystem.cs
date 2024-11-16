@@ -3,7 +3,7 @@ using Content.Server.Emp;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Charges.Components;
 
-namespace Content.Server._White.EmpFlashlight;
+namespace Content.Server.EmpFlashlight;
 
 public sealed class EmpOnHitSystem : EntitySystem
 {
@@ -21,19 +21,13 @@ public sealed class EmpOnHitSystem : EntitySystem
     public bool TryEmpHit(EntityUid uid, EmpOnHitComponent comp, MeleeHitEvent args)
     {
 
-        if (!TryComp<LimitedChargesComponent>(uid, out LimitedChargesComponent? charges))
+        if (!TryComp(uid, out LimitedChargesComponent? charges)
+            || _charges.IsEmpty(uid, charges)
+            || args.HitEntities.Count <= 0)
             return false;
 
-        if (_charges.IsEmpty(uid, charges))
-            return false;
-
-        if (args.HitEntities.Count > 0)
-        {
-            _charges.UseCharge(uid,charges);
-            return true;
-        }
-
-        return false;
+        _charges.UseCharge(uid, charges);
+        return true;
     }
 
     private void HandleEmpHit(EntityUid uid, EmpOnHitComponent comp, MeleeHitEvent args)
@@ -42,9 +36,7 @@ public sealed class EmpOnHitSystem : EntitySystem
             return;
 
         foreach (var affected in args.HitEntities)
-        {
             _emp.EmpPulse(_transform.GetMapCoordinates(affected), comp.Range, comp.EnergyConsumption, comp.DisableDuration);
-        }
 
         args.Handled = true;
     }
