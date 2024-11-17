@@ -275,7 +275,6 @@ public partial class SharedBodySystem
         else
             DisablePart(partEnt);
     }
-
     private void EnablePart(Entity<BodyPartComponent> partEnt)
     {
         if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))

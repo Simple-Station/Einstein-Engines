@@ -376,6 +376,7 @@ public partial class SharedBodySystem
                 return gibs;
 
             ChangeSlotState((partId, part), true);
+
             RemovePartChildren((partId, part), bodyEnt);
             foreach (var organ in GetPartOrgans(partId, part))
             {
@@ -383,8 +384,6 @@ public partial class SharedBodySystem
                     ref gibs, playAudio: false, launchImpulse: GibletLaunchImpulse * splatModifier,
                     launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
             }
-            var enableEvent = new BodyPartEnableChangedEvent(false);
-            RaiseLocalEvent(partId, ref enableEvent);
             var ev = new BodyPartDroppedEvent((partId, part));
             RaiseLocalEvent(bodyEnt, ref ev);
         }
