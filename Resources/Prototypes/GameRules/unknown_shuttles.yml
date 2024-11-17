@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: UnknownShuttleCargoLost
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: false
@@ -14,7 +14,7 @@
 - type: entity
   id: UnknownShuttleTravelingCuisine
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: false
@@ -27,7 +27,7 @@
 - type: entity
   id: UnknownShuttleDisasterEvacPod
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: false
@@ -40,7 +40,7 @@
 - type: entity
   id: UnknownShuttleHonki
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: false
@@ -53,7 +53,7 @@
 - type: entity
   id: UnknownShuttleSyndieEvacPod
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: false

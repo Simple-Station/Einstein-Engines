@@ -317,12 +317,12 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         component.SubscribedPilots.Add(entity);
 
-        _alertsSystem.ShowAlert(entity, AlertType.PilotingShuttle);
+        _alertsSystem.ShowAlert(entity, pilotComponent.PilotingAlert);
 
         pilotComponent.Console = uid;
         ActionBlockerSystem.UpdateCanMove(entity);
         pilotComponent.Position = EntityManager.GetComponent<TransformComponent>(entity).Coordinates;
-        Dirty(pilotComponent);
+        Dirty(entity, pilotComponent);
     }
 
     public void RemovePilot(EntityUid pilotUid, PilotComponent pilotComponent)
@@ -339,7 +339,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         if (!helm.SubscribedPilots.Remove(pilotUid))
             return;
 
-        _alertsSystem.ClearAlert(pilotUid, AlertType.PilotingShuttle);
+        _alertsSystem.ClearAlert(pilotUid, pilotComponent.PilotingAlert);
 
         _popup.PopupEntity(Loc.GetString("shuttle-pilot-end"), pilotUid, pilotUid);
 

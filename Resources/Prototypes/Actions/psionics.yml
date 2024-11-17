@@ -2,7 +2,7 @@
   id: ActionDispel
   name: action-name-dispel
   description: action-description-dispel
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/dispel.png
@@ -21,7 +21,7 @@
   id: ActionMassSleep
   name: action-name-mass-sleep
   description: action-description-mass-sleep
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: WorldTargetAction
       icon: Interface/VerbIcons/mass_sleep.png
@@ -35,7 +35,7 @@
   id: ActionMindSwap
   name: action-name-mind-swap
   description: action-description-mind-swap
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/mind_swap.png
@@ -53,7 +53,7 @@
   id: ActionMindSwapReturn
   name: action-name-mind-swap-return
   description: action-description-mind-swap-return
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: Interface/VerbIcons/mind_swap_return.png
@@ -65,7 +65,7 @@
   id: ActionNoosphericZap
   name: action-name-noospheric-zap
   description: action-description-noospheric-zap
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/noospheric_zap.png
@@ -82,7 +82,7 @@
   id: ActionPyrokinesis
   name: action-name-pyrokinesis
   description: action-description-pyrokinesis
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/pyrokinesis.png
@@ -96,7 +96,7 @@
   id: ActionMetapsionic
   name: action-name-metapsionic
   description: action-description-metapsionic
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: Interface/VerbIcons/metapsionic.png
@@ -107,7 +107,7 @@
   id: ActionPsionicRegeneration
   name: action-name-psionic-regeneration
   description: action-description-psionic-regeneration
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: Interface/VerbIcons/psionic_regeneration.png
@@ -118,7 +118,7 @@
   id: ActionTelegnosis
   name: action-name-telegnosis
   description: action-description-telegnosis
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: Interface/VerbIcons/telegnosis.png
@@ -129,7 +129,7 @@
   id: ActionPsionicInvisibility
   name: action-name-psionic-invisibility
   description: action-description-psionic-invisibility
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: Interface/VerbIcons/psionic_invisibility.png
@@ -140,7 +140,7 @@
   id: ActionPsionicInvisibilityUsed
   name: action-name-psionic-invisibility-off
   description: action-description-psionic-invisibility-off
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: Interface/VerbIcons/psionic_invisibility_off.png
@@ -150,7 +150,7 @@
   id: ActionHealingWord
   name: action-name-healing-word
   description: action-description-healing-word
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: healing_word }
@@ -187,7 +187,7 @@
   id: ActionRevivify
   name: action-name-revivify
   description: action-description-revivify
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: revivify }
@@ -226,7 +226,7 @@
   id: ActionShadeskip
   name: action-name-shadeskip
   description: action-description-shadeskip
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite : Interface/Actions/psionics.rsi, state: shadeskip }
@@ -261,7 +261,7 @@
   id: ActionTelekineticPulse
   name: action-name-telekinetic-pulse
   description: action-description-telekinetic-pulse
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: telekinetic_pulse }
@@ -295,7 +295,7 @@
   id: ActionShadowkinShadeskip
   name: action-name-shadeskip
   description: action-description-shadowkin-shadeskip
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: { sprite: Interface/Actions/shadowkin_icons.rsi, state: shadeskip }
@@ -329,7 +329,7 @@
   id: ActionDarkSwap
   name: action-name-darkswap
   description: action-description-darkswap
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: { sprite: Interface/Actions/shadowkin_icons.rsi, state: darkswap }
@@ -343,7 +343,7 @@
   id: ActionPyrokineticFlare
   name: action-name-pyrokinetic-flare
   description: action-description-pyrokinetic-flare
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: pyrokinetic_flare }
@@ -369,7 +369,7 @@
   id: ActionSummonImp
   name: action-name-summon-imp
   description: action-description-summon-imp
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: summon_imp }
@@ -388,7 +388,7 @@
   id: ActionSummonRemilia
   name: action-name-summon-remilia
   description: action-description-summon-remilia
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: summon_remilia }
