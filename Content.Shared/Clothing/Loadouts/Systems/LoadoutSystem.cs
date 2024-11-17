@@ -21,6 +21,7 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
+    [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
 
     public override void Initialize()
     {
@@ -79,7 +80,7 @@ public sealed class LoadoutSystem : EntitySystem
 
             // Spawn the loadout items
             var spawned = EntityManager.SpawnEntities(
-                EntityManager.GetComponent<TransformComponent>(uid).Coordinates.ToMap(EntityManager),
+                _sharedTransformSystem.GetMapCoordinates(uid),
                 loadoutProto.Items.Select(p => (string?) p.ToString()).ToList()); // Dumb cast
 
             foreach (var item in spawned)

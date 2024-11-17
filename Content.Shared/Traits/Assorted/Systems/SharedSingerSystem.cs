@@ -38,7 +38,7 @@ public abstract class SharedSingerSystem : EntitySystem
 
         var instrumentComp = EnsureInstrumentComp(ent);
         var defaultData = singer.InstrumentList[singer.DefaultInstrument];
-        _instrument.SetInstrumentProgram(instrumentComp, defaultData.Item1, defaultData.Item2);
+        _instrument.SetInstrumentProgram(ent.Owner, instrumentComp, defaultData.Item1, defaultData.Item2);
         SetUpSwappableInstrument(ent, singer);
     }
 
