@@ -372,6 +372,9 @@ public partial class SharedBodySystem
 
         if (part.Body is { } bodyEnt)
         {
+            if (IsPartRoot(bodyEnt, partId, part: part))
+                return gibs;
+
             RemovePartChildren((partId, part), bodyEnt);
             foreach (var organ in GetPartOrgans(partId, part))
             {

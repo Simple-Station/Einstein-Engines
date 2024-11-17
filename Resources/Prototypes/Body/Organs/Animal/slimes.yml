@@ -9,6 +9,8 @@
       state: brain-slime
     - type: Stomach
     - type: Metabolizer
+    - type: Organ
+      slotId: core
       maxReagents: 3
       metabolizerTypes: [ Slime ]
       removeEmpty: true
@@ -38,6 +40,8 @@
         - state: lung-r-slime
     - type: Lung
       alert: LowNitrogen
+    - type: Organ
+      slotId: lungs
     - type: Metabolizer
       removeEmpty: true
       solutionOnBody: false

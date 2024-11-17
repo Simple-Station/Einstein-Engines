@@ -69,7 +69,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Surgery
-    #requirement: SurgeryOpenIncision
+    requirement: SurgeryOpenIncision
     steps:
     - SurgeryStepInsertFeature
     - SurgeryStepSealWounds
@@ -429,6 +429,44 @@
   - type: SurgeryOrganCondition
     organ:
     - type: Lung
+    inverse: true
+    reattaching: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveStomach
+  name: Remove Stomach
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Stomach
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertStomach
+  name: Insert Stomach
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertStomach
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Stomach
     inverse: true
     reattaching: true
 
