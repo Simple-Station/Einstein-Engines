@@ -21,16 +21,10 @@ namespace Content.Shared.CCVar
             CVarDef.Create("server.id", "unknown_server_id", CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
-        ///     Name of the rules txt file in the "Resources/Server Info" dir. Include the extension.
+        ///     Guide Entry Prototype ID to be displayed as the server rules.
         /// </summary>
         public static readonly CVarDef<string> RulesFile =
-            CVarDef.Create("server.rules_file", "Rules.txt", CVar.REPLICATED | CVar.SERVER);
-
-        /// <summary>
-        ///     A loc string for what should be displayed as the title on the Rules window.
-        /// </summary>
-        public static readonly CVarDef<string> RulesHeader =
-            CVarDef.Create("server.rules_header", "ui-rules-header", CVar.REPLICATED | CVar.SERVER);
+            CVarDef.Create("server.rules_file", "DefaultRuleset", CVar.REPLICATED | CVar.SERVER);
 
         /*
          * Ambience
@@ -2071,7 +2065,13 @@ namespace Content.Shared.CCVar
         ///     Don't show rules to localhost/loopback interface.
         /// </summary>
         public static readonly CVarDef<bool> RulesExemptLocal =
-            CVarDef.Create("rules.exempt_local", true, CVar.SERVERONLY);
+            CVarDef.Create("rules.exempt_local", true, CVar.CLIENT);
+
+        /// <summary>
+        /// The next time the rules will popup for this client, expressed in minutes
+        /// </summary>
+        public static readonly CVarDef<string> RulesNextPopupTime =
+            CVarDef.Create("rules.next_popup_time", "Jan 1, 1997", CVar.CLIENTONLY | CVar.ARCHIVE);
 
 
         /*
@@ -2635,10 +2635,34 @@ namespace Content.Shared.CCVar
 
         #endregion
 
+        #region Surgery
+
+        public static readonly CVarDef<bool> CanOperateOnSelf =
+            CVarDef.Create("surgery.can_operate_on_self", false, CVar.SERVERONLY);
+
+        #endregion
         /// <summary>
         /// Set to true to disable parallel processing in the pow3r solver.
         /// </summary>
         public static readonly CVarDef<bool> DebugPow3rDisableParallel =
             CVarDef.Create("debug.pow3r_disable_parallel", true, CVar.SERVERONLY);
+
+        /*
+        * AUTOVOTE SYSTEM
+        */
+
+        /// Enables the automatic voting system.
+        public static readonly CVarDef<bool> AutoVoteEnabled =
+            CVarDef.Create("vote.autovote_enabled", false, CVar.SERVERONLY);
+
+        /// Automatically starts a map vote when returning to the lobby.
+        /// Requires auto voting to be enabled.  
+        public static readonly CVarDef<bool> MapAutoVoteEnabled =
+            CVarDef.Create("vote.map_autovote_enabled", true, CVar.SERVERONLY);
+
+        /// Automatically starts a gamemode vote when returning to the lobby.
+        /// Requires auto voting to be enabled.  
+        public static readonly CVarDef<bool> PresetAutoVoteEnabled =
+            CVarDef.Create("vote.preset_autovote_enabled", true, CVar.SERVERONLY);
     }
 }

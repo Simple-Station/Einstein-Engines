@@ -74,4 +74,4 @@
 - type: entity
   parent: BaseSpeciesDummy
   id: MobDwarfDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]

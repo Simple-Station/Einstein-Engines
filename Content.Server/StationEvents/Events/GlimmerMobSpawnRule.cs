@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Server.GameTicking.Components;
+using Content.Shared.GameTicking.Components;
 using Robust.Shared.Random;
 using Content.Server.GameTicking;
 using Content.Server.NPC.Components;

@@ -48,7 +48,7 @@ public sealed class ShadowkinSystem : EntitySystem
 
         component.OldEyeColor = humanoid.EyeColor;
         humanoid.EyeColor = component.BlackEyeColor;
-        Dirty(humanoid);
+        Dirty(uid, humanoid);
     }
 
     private void OnExamined(EntityUid uid, ShadowkinComponent component, ExaminedEvent args)
@@ -85,7 +85,7 @@ public sealed class ShadowkinSystem : EntitySystem
         else
             magic.ManaGainMultiplier = 1;
 
-        Dirty(magic); // Update Shadowkin Overlay.
+        Dirty(uid, magic); // Update Shadowkin Overlay.
     }
 
     private void OnMindbreak(EntityUid uid, ShadowkinComponent component, ref OnMindbreakEvent args)
@@ -97,7 +97,7 @@ public sealed class ShadowkinSystem : EntitySystem
         {
             component.OldEyeColor = humanoid.EyeColor;
             humanoid.EyeColor = component.BlackEyeColor;
-            Dirty(humanoid);
+            Dirty(uid, humanoid);
         }
 
         if (TryComp<StaminaComponent>(uid, out var stamina))
@@ -114,7 +114,7 @@ public sealed class ShadowkinSystem : EntitySystem
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
         {
             humanoid.EyeColor = component.OldEyeColor;
-            Dirty(humanoid);
+            Dirty(uid, humanoid);
         }
 
         EnsureComp<PsionicComponent>(uid, out var magic);

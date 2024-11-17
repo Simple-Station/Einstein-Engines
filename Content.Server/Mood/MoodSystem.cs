@@ -57,7 +57,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnShutdown(EntityUid uid, MoodComponent component, ComponentShutdown args)
     {
-        _alerts.ClearAlertCategory(uid, AlertCategory.Mood);
+        _alerts.ClearAlertCategory(uid, component.MoodCategory);
     }
 
     private void OnRemoveEffect(EntityUid uid, MoodComponent component, MoodRemoveEffectEvent args)
@@ -331,7 +331,7 @@ public sealed class MoodSystem : EntitySystem
         if (component.MoodThresholdsAlerts.TryGetValue(component.CurrentMoodThreshold, out var alertId))
             _alerts.ShowAlert(uid, alertId);
         else
-            _alerts.ClearAlertCategory(uid, AlertCategory.Mood);
+            _alerts.ClearAlertCategory(uid, component.MoodCategory);
 
         component.LastThreshold = component.CurrentMoodThreshold;
     }

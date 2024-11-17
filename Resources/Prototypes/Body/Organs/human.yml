@@ -43,6 +43,7 @@
   - type: Sprite
     state: brain
   - type: Organ
+    slotId: brain
   - type: Input
     context: "ghost"
   - type: Brain
@@ -74,6 +75,9 @@
   name: eyes
   description: "I see you!"
   components:
+  - type: Organ
+    slotId: eyes
+  - type: Eyes
   - type: Sprite
     layers:
       - state: eyeball-l
@@ -107,6 +111,7 @@
   components:
   - type: Sprite
     state: ears
+  - type: Ears
 
 - type: entity
   id: OrganHumanLungs
@@ -119,6 +124,8 @@
       - state: lung-l
       - state: lung-r
   - type: Lung
+  - type: Organ
+    slotId: lungs
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false
@@ -148,6 +155,9 @@
   name: heart
   description: "I feel bad for the heartless bastard who lost this."
   components:
+  - type: Heart
+  - type: Organ
+    slotId: heart
   - type: Sprite
     state: heart-on
   # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
@@ -179,6 +189,8 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: Stomach
+  - type: Organ
+    slotId: stomach
   # The stomach metabolizes stuff like foods and drinks.
   # TODO: Have it work off of the ent's solution container, and move this
   # to intestines instead.
@@ -196,6 +208,9 @@
   name: liver
   description: "Pairing suggestion: chianti and fava beans."
   components:
+  - type: Liver
+  - type: Organ
+    slotId: liver
   - type: Sprite
     state: liver
   - type: Metabolizer # The liver metabolizes certain chemicals only, like alcohol.

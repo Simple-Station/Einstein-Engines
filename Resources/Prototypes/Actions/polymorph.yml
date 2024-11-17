@@ -2,14 +2,14 @@
   id: ActionRevertPolymorph
   name: Revert
   description: Revert back into your original form.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     event: !type:RevertPolymorphActionEvent
 
 - type: entity
   id: ActionPolymorph
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     event: !type:PolymorphActionEvent
@@ -19,7 +19,7 @@
   id: ActionPolymorphWizardSpider
   name: Spider Polymorph
   description: Polymorphs you into a Spider.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 60
@@ -34,7 +34,7 @@
   id: ActionPolymorphWizardRod
   name: Rod Form
   description: CLANG!
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 60
