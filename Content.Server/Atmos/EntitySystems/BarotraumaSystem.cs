@@ -234,7 +234,7 @@ namespace Content.Server.Atmos.EntitySystems
                 if (pressure <= Atmospherics.HazardLowPressure)
                 {
                     // Deal damage and ignore resistances. Resistance to pressure damage should be done via pressure protection gear.
-                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * Atmospherics.LowPressureDamage, true, false);
+                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * Atmospherics.LowPressureDamage, true, false, canSever: false);
                     if (!barotrauma.TakingDamage)
                     {
                         barotrauma.TakingDamage = true;
@@ -247,7 +247,7 @@ namespace Content.Server.Atmos.EntitySystems
                 {
                     var damageScale = MathF.Min(((pressure / Atmospherics.HazardHighPressure) - 1) * Atmospherics.PressureDamageCoefficient, Atmospherics.MaxHighPressureDamage);
 
-                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * damageScale, true, false);
+                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * damageScale, true, false, canSever: false);
                     RaiseLocalEvent(uid, new MoodEffectEvent("MobHighPressure"));
 
                     if (!barotrauma.TakingDamage)

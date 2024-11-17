@@ -7,6 +7,7 @@ using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Organ;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Mobs.Systems;
@@ -71,7 +72,7 @@ public sealed class RespiratorSystem : EntitySystem
 
             UpdateSaturation(uid, -(float) respirator.UpdateInterval.TotalSeconds, respirator);
 
-            if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
+            if (!_mobState.IsIncapacitated(uid) || HasComp<DebrainedComponent>(uid)) // Shitmed: cannot breathe in crit or when no brain.
             {
                 switch (respirator.Status)
                 {
