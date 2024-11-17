@@ -4,6 +4,7 @@ using Content.Client.Chat.Managers;
 using Content.Client.DiscordAuth;
 using Content.Client.JoinQueue;
 using Content.Client.Eui;
+using Content.Client.Flash;
 using Content.Client.Fullscreen;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
