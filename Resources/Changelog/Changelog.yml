@@ -7919,3 +7919,10 @@ Entries:
   id: 6522
   time: '2024-11-16T22:41:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1229
+- author: Mocho
+  changes:
+    - type: Add
+      message: A week has passed. Surgery is here.
+  id: 6523
+  time: '2024-11-17T00:32:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1159
