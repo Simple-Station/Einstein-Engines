@@ -2,6 +2,8 @@ using Content.Server.Antag;
 using Content.Server.Communications;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Humanoid;
+using Content.Server.NPC.Components;
+using Content.Server.NPC.Systems;
 using Content.Server.Nuke;
 using Content.Server.NukeOps;
 using Content.Server.Popups;
@@ -14,6 +16,8 @@ using Content.Server.Station.Components;
 using Content.Server.Store.Components;
 using Content.Server.Store.Systems;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Nuke;
@@ -27,7 +31,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Linq;
-using Content.Shared.Store.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
