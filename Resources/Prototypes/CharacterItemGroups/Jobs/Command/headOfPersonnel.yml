@@ -21,6 +21,16 @@
       id: LoadoutHeadOfPersonnelBeltClipboard
 
 - type: characterItemGroup
+  id: LoadoutHeadOfPersonnelEars
+  maxItems: 1
+  items:
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelEquipment
+  maxItems: 1
+  items:
+
+- type: characterItemGroup
   id: LoadoutHeadOfPersonnelTrinkets
   maxItems: 3
   items:
@@ -28,6 +38,11 @@
       id: LoadoutHeadOfPersonnelCigarCase
     - type: loadout
       id: LoadoutHeadOfPersonnelBookIanDossier
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelEyes
+  maxItems: 1
+  items:
 
 - type: characterItemGroup
   id: LoadoutHeadOfPersonnelGloves
@@ -46,6 +61,11 @@
       id: LoadoutCommandHOPHatCap
 
 - type: characterItemGroup
+  id: LoadoutHeadOfPersonnelId
+  maxItems: 1
+  items:
+
+- type: characterItemGroup
   id: LoadoutHeadOfPersonnelNeck
   maxItems: 1
   items:
@@ -57,6 +77,11 @@
       id: LoadoutCommandHOPBedsheetIan
     - type: loadout
       id: LoadoutHeadOfPersonnelNeckGoldMedal
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelMask
+  maxItems: 1
+  items:
 
 - type: characterItemGroup
   id: LoadoutHeadOfPersonnelOuter
@@ -83,7 +108,7 @@
       id: LoadoutCommandHOPShoesBootsWinter
 
 - type: characterItemGroup
-  id: LoadoutHeadOfPersonnelUniform
+  id: LoadoutHeadOfPersonnelUniforms
   maxItems: 1
   items:
     - type: loadout

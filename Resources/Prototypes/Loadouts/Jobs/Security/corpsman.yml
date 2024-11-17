@@ -1,12 +1,40 @@
 # Corpsman
 # Backpacks
 - type: loadout
-  id: LoadoutBackpackCorpsman
+  id: LoadoutCorpsmanBackpackBackpack
   category: JobsSecurityCorpsman
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackBrigmedic
+    - ClothingBackpackBrigmedicFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutCorpsmanBackpackSatchel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelBrigmedicFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutCorpsmanBackpackDuffel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelBrigmedicFilled
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks

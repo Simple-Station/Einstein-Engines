@@ -1,12 +1,40 @@
 # Salvage Specialist
 # Backpacks
 - type: loadout
-  id: LoadoutBackpackSalvage
+  id: LoadoutSalvageBackpackBackpack
   category: JobsLogisticsSalvageSpecialist
   cost: 0
   exclusive: true
   items:
     - ClothingBackpackSalvage
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+
+- type: loadout
+  id: LoadoutSalvageBackpackSatchel
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelSalvage
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+
+- type: loadout
+  id: LoadoutSalvageBackpackDuffel
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelSalvage
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistBackpacks

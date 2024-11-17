@@ -23,6 +23,16 @@
       id: LoadoutCaptainSwordSheath
 
 - type: characterItemGroup
+  id: LoadoutCaptainEars
+  maxItems: 1
+  items:
+
+- type: characterItemGroup
+  id: LoadoutCaptainEquipment
+  maxItems: 1
+  items:
+
+- type: characterItemGroup
   id: LoadoutCaptainTrinkets
   maxItems: 3
   items:
@@ -72,6 +82,11 @@
       id: LoadoutCommandCapHatBeret
 
 - type: characterItemGroup
+  id: LoadoutCaptainId
+  maxItems: 1
+  items:
+
+- type: characterItemGroup
   id: LoadoutCaptainNeck
   maxItems: 1
   items:
@@ -114,7 +129,7 @@
       id: LoadoutCaptainShoesCombat
 
 - type: characterItemGroup
-  id: LoadoutCaptainUniform
+  id: LoadoutCaptainUniforms
   maxItems: 1
   items:
     - type: loadout

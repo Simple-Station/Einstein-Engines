@@ -10,20 +10,6 @@
       group: LoadoutBackpacks
 
 - type: loadout
-  id: LoadoutBackpackClown
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackClown
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Clown
-
-- type: loadout
   id: LoadoutBackpackMime
   category: Backpacks
   cost: 0

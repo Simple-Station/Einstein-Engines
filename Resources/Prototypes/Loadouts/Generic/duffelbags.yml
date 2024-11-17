@@ -10,20 +10,6 @@
       group: LoadoutBackpacks
 
 - type: loadout
-  id: LoadoutBackpackDuffelClown
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelClown
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Clown
-
-- type: loadout
   id: LoadoutBackpackDuffelSecurity
   category: Backpacks
   cost: 0
@@ -36,20 +22,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
-
-- type: loadout
-  id: LoadoutBackpackDuffelBrigmedic
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelBrigmedic
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Brigmedic
 
 - type: loadout
   id: LoadoutBackpackDuffelMime
@@ -114,20 +86,6 @@
   exclusive: true
   items:
     - ClothingBackpackDuffelCargo
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Logistics
-
-- type: loadout
-  id: LoadoutBackpackDuffelSalvage
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelSalvage
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks

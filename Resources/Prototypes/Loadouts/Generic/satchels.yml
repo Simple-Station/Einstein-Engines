@@ -23,20 +23,6 @@
          - Prisoner
 
 - type: loadout
-  id: LoadoutBackpackSatchelClown
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelClown
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Clown
-
-- type: loadout
   id: LoadoutBackpackSatchelSecurity
   category: Backpacks
   cost: 0
@@ -49,20 +35,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
-
-- type: loadout
-  id: LoadoutBackpackSatchelBrigmedic
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelBrigmedic
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Brigmedic
 
 - type: loadout
   id: LoadoutBackpackSatchelMime
@@ -127,20 +99,6 @@
   exclusive: true
   items:
     - ClothingBackpackSatchelCargo
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Logistics
-
-- type: loadout
-  id: LoadoutBackpackSatchelSalvage
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelSalvage
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks

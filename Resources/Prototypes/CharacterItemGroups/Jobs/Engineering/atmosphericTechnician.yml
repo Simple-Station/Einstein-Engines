@@ -19,6 +19,11 @@
       id: LoadoutAtmosphericTechnicianBeltUtilityAtmos
 
 - type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianEars
+  maxItems: 1
+  items:
+
+- type: characterItemGroup
   id: LoadoutAtmosphericTechnicianEquipment
   maxItems: 1
   items:
@@ -30,11 +35,31 @@
       id: LoadoutAtmosphericTechnicianEquipmentRCD
 
 - type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianEyes
+  maxItems: 1
+  items:
+
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianGloves
+  maxItems: 1
+  items:
+
+- type: characterItemGroup
   id: LoadoutAtmosphericTechnicianHead
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutAtmosphericTechnicianChickenhead
+
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianId
+  maxItems: 1
+  items:
+
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianNeck
+  maxItems: 1
+  items:
 
 - type: characterItemGroup
   id: LoadoutAtmosphericTechnicianMask
@@ -60,7 +85,7 @@
       id: LoadoutAtmosphericTechnicianShoesWork
 
 - type: characterItemGroup
-  id: LoadoutAtmosphericTechnicianUniform
+  id: LoadoutAtmosphericTechnicianUniforms
   maxItems: 1
   items:
     - type: loadout

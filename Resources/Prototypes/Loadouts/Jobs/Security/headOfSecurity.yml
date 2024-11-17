@@ -128,6 +128,22 @@
     - ClothingHeadHatHoshat
 
 # Id
+- type: loadout
+  id: LoadoutHeadOfSecurityNTPDA
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobHeadOfSecurity
+      min: 36000 # 10 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityId
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - HoSNTPDA
 
 # Neck
 - type: loadout
