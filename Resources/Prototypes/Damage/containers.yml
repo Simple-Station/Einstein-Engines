@@ -62,3 +62,11 @@
     - Immaterial
   supportedTypes:
     - Poison
+
+# Shitmed
+- type: damageContainer
+  id: OrganicPart
+  supportedGroups:
+    - Brute
+    - Burn
+
