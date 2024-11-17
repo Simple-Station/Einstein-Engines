@@ -225,9 +225,10 @@
   parent: ClosetWallRadiation
   components:
   table: !type:AllSelector
-    - !type:EntSelector
-      id: ClothingOuterSuitRad
-      amount: 2
-    - !type:EntSelector
-      id: GeigerCounter
-      amount: 2
+    children:
+      - !type:EntSelector
+        id: ClothingOuterSuitRad
+        amount: 2
+      - !type:EntSelector
+        id: GeigerCounter
+        amount: 2
