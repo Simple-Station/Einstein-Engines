@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Server.Objectives.Components;
 using Content.Server.Revolutionary.Components;
 using Content.Server.Shuttles.Systems;
@@ -54,7 +53,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
             return;
 
         // no other humans to kill
-        var allHumans = _mind.GetAliveHumans(args.MindId, comp.NeedsOrganic);
+        var allHumans = _mind.GetAliveHumans(args.MindId);
         if (allHumans.Count == 0)
         {
             args.Cancelled = true;
@@ -85,7 +84,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
             return;
         }
 
-        var allHeads = new List<EntityUid>();
+        var allHeads = new HashSet<Entity<MindComponent>>();
         foreach (var person in allHumans)
         {
             if (TryComp<MindComponent>(person, out var mind) && mind.OwnedEntity is { } ent && HasComp<CommandStaffComponent>(ent))
@@ -93,7 +92,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
         }
 
         if (allHeads.Count == 0)
-            allHeads = allHumans.Select(human => human.Owner).ToList(); // fallback to non-head target
+            allHeads = allHumans; // fallback to non-head target
 
         _target.SetTarget(uid, _random.Pick(allHeads), target);
     }
