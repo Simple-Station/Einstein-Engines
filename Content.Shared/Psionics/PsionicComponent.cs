@@ -1,3 +1,4 @@
+using Content.Shared.Alert;
 using Content.Shared.DoAfter;
 using Content.Shared.Psionics;
 using Robust.Shared.GameStates;
@@ -226,5 +227,8 @@ namespace Content.Shared.Abilities.Psionics
         /// </summary>
         [DataField]
         public int FamiliarLimit = 1;
+
+        [DataField]
+        public ProtoId<AlertPrototype> ManaAlert = "Mana";
     }
 }
