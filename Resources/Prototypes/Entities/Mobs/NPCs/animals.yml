@@ -397,8 +397,12 @@
         damageType: Blunt
         damage: 10
       behaviors:
-      - !type:GibBehavior { }
+      - !type:GibBehavior
+        gibContents: Skip
   - type: NonSpreaderZombie
+  - type: LanguageKnowledge
+    speaks: [Hissing]
+    understands: [Hissing]
 
 - type: entity
   name: glockroach
@@ -1208,6 +1212,9 @@
   abstract: true
   components:
   - type: CombatMode
+  #- type: SurgeryTarget
+  #  canOperate: false
+  #- type: Targeting
   - type: Inventory
     templateId: monkey
     speciesId: monkey
@@ -1235,6 +1242,8 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      #enum.SurgeryUIKey.Key:
+      #  type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -2091,6 +2100,7 @@
     factions:
     - Passive
   - type: Temperature
+    atmosTemperatureTransferEfficiency: 0.04
     heatDamageThreshold: 335
     coldDamageThreshold: 230
     currentTemperature: 310.15
@@ -2104,6 +2114,9 @@
   - type: RandomBark
     barkType: penguin
     barkMultiplier: 0.6
+  - type: LanguageKnowledge
+    speaks: [Penguin]
+    understands: [Penguin]
 
 - type: entity
   name: grenade penguin
@@ -2224,6 +2237,9 @@
     minTime: 10
     maxTime: 50 # It's a sssnake...
     barkType: hissing
+  - type: LanguageKnowledge
+    speaks: [Hissing]
+    understands: [Hissing]
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.

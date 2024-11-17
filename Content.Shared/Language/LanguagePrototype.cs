@@ -7,7 +7,13 @@ namespace Content.Shared.Language;
 public sealed partial class LanguagePrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; private set;  } = default!;
+    public string ID { get; private set; } = default!;
+
+    /// <summary>
+    ///     Whether this language will display its name in chat behind a player's name.
+    /// </summary>
+    [DataField]
+    public bool IsVisibleLanguage { get; set; }
 
     /// <summary>
     ///     Obfuscation method used by this language. By default, uses <see cref="ObfuscationMethod.Default"/>
@@ -26,6 +32,11 @@ public sealed partial class LanguagePrototype : IPrototype
     ///     The in-world name of this language, localized.
     /// </summary>
     public string Name => Loc.GetString($"language-{ID}-name");
+
+    /// <summary>
+    ///     The in-world chat abbreviation of this language, localized.
+    /// </summary>
+    public string ChatName => Loc.GetString($"chat-language-{ID}-name");
 
     /// <summary>
     ///     The in-world description of this language, localized.

@@ -13,7 +13,7 @@ public sealed class LightweightDrunkSystem : EntitySystem
 
     private void OnTryMetabolizeReagent(EntityUid uid, LightweightDrunkComponent comp, ref TryMetabolizeReagent args)
     {
-        Log.Debug(args.Prototype.ID);
+        //Log.Debug(args.Prototype.ID);
         if (args.Prototype.ID != "Ethanol")
             return;
 

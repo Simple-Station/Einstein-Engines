@@ -48,6 +48,10 @@
   - type: GuideHelp
     guides:
       - Cyborgs
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks: [TauCetiBasic, RobotTalk]
+    understands: [TauCetiBasic, RobotTalk]
 
 - type: entity
   parent: MMI
@@ -124,3 +128,7 @@
       guides:
       - Cyborgs
     - type: Organ # Estacao Pirata - IPCs
+    - type: LanguageSpeaker
+    - type: LanguageKnowledge
+      speaks: [RobotTalk]
+      understands: [RobotTalk]

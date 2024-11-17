@@ -104,6 +104,10 @@
     - DoorBumpOpener
   - type: Input
     context: "human"
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks: [TauCetiBasic, RobotTalk]
+    understands: [TauCetiBasic, RobotTalk]
 
 - type: entity
   parent: BasePDA
