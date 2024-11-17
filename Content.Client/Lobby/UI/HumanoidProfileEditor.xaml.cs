@@ -1598,7 +1598,7 @@ namespace Content.Client.Lobby.UI
             }
             catch (Exception exc)
             {
-                Logger.Error($"Error when exporting profile\n{exc.StackTrace}");
+                Logger.Error($"Error when exporting profile: {exc.Message}\n{exc.StackTrace}");
             }
             finally
             {

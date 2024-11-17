@@ -13,6 +13,8 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Serialization;
+
 
 namespace Content.Shared.Clothing.Loadouts.Systems;
 
@@ -162,29 +164,41 @@ public sealed class SharedLoadoutSystem : EntitySystem
 }
 
 
-[Serializable]
-public class Loadout(
-    string loadoutName,
-    string? customName = null,
-    string? customDescription = null,
-    string? customColorTint = null,
-    bool? customHeirloom = null)
+[Serializable, NetSerializable, ImplicitDataDefinitionForInheritors]
+public abstract partial class Loadout
 {
-    public string LoadoutName { get; set; } = loadoutName;
-    public string? CustomName { get; set; } = customName;
-    public string? CustomDescription { get; set; } = customDescription;
-    public string? CustomColorTint { get; set; } = customColorTint;
-    public bool? CustomHeirloom { get; set; } = customHeirloom;
+    [DataField] public string LoadoutName { get; set; }
+    [DataField] public string? CustomName { get; set; }
+    [DataField] public string? CustomDescription { get; set; }
+    [DataField] public string? CustomColorTint { get; set; }
+    [DataField] public bool? CustomHeirloom { get; set; }
+
+    protected Loadout(
+        string loadoutName,
+        string? customName = null,
+        string? customDescription = null,
+        string? customColorTint = null,
+        bool? customHeirloom = null
+    )
+    {
+        LoadoutName = loadoutName;
+        CustomName = customName;
+        CustomDescription = customDescription;
+        CustomColorTint = customColorTint;
+        CustomHeirloom = customHeirloom;
+    }
 }
 
-[Serializable]
-public sealed class LoadoutPreference(
-    string loadoutName,
-    string? customName = null,
-    string? customDescription = null,
-    string? customColorTint = null,
-    bool? customHeirloom = null)
-    : Loadout(loadoutName, customName, customDescription, customColorTint, customHeirloom)
+[Serializable, NetSerializable]
+public sealed partial class LoadoutPreference : Loadout
 {
-    public bool Selected;
+    [DataField] public bool Selected;
+
+    public LoadoutPreference(
+        string loadoutName,
+        string? customName = null,
+        string? customDescription = null,
+        string? customColorTint = null,
+        bool? customHeirloom = null
+        ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
 }
