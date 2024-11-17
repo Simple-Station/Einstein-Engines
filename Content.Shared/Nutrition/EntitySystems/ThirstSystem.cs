@@ -171,7 +171,7 @@ public sealed class ThirstSystem : EntitySystem
         }
         else
         {
-            _alerts.ClearAlertCategory(uid, AlertCategory.Thirst);
+            _alerts.ClearAlertCategory(uid, component.ThirstyCategory);
         }
 
         var ev = new MoodEffectEvent("Thirst" + component.CurrentThirstThreshold);

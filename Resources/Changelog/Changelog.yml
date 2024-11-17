@@ -7853,3 +7853,76 @@ Entries:
   id: 6514
   time: '2024-11-10T15:22:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1195
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Butlertron is no longer as wide as a barn.
+  id: 6515
+  time: '2024-11-13T23:08:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1192
+- author: Ichaie
+  changes:
+    - type: Tweak
+      message: 'The Hive (map): add an SM engine to the eng, replacing the singularity.'
+  id: 6516
+  time: '2024-11-13T23:12:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1201
+- author: DocNITE
+  changes:
+    - type: Add
+      message: Return  'Monument' and 'Atomic Amnesia MMX' as a lobby music.
+  id: 6517
+  time: '2024-11-13T23:17:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1204
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Syndicate Listening Posts can no longer spawn on a planet surface. This
+        isn't for balance reasons, I would love for planetside listening posts.
+        This is actually to address a server crashing bug whereby listening
+        posts on planets cause 7 billion entities to spawn.
+  id: 6518
+  time: '2024-11-13T23:27:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1188
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added the automatic voting system.
+  id: 6519
+  time: '2024-11-14T02:05:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1213
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Added languages to certain entities that lacked them, including MMIs and
+        positronic brains.
+    - type: Add
+      message: >-
+        Polymorphing into another entity now preserves your languages and
+        grammar.
+  id: 6520
+  time: '2024-11-14T20:03:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1223
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Added spray-painting back
+  id: 6521
+  time: '2024-11-15T14:08:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1222
+- author: zelezniciar
+  changes:
+    - type: Fix
+      message: Fixed pengiun cold resistance
+  id: 6522
+  time: '2024-11-16T22:41:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1229
+- author: Mocho
+  changes:
+    - type: Add
+      message: A week has passed. Surgery is here.
+  id: 6523
+  time: '2024-11-17T00:32:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1159

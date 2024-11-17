@@ -26,16 +26,27 @@ public partial class SharedBodySystem
 
     private void OnPartAppearanceStartup(EntityUid uid, BodyPartAppearanceComponent component, ComponentStartup args)
     {
+<<<<<<< HEAD
         if (!TryComp(uid, out BodyPartComponent? part)
             || part.ToHumanoidLayers() is not { } relevantLayer)
+=======
+        if (!TryComp(uid, out BodyPartComponent? part))
+>>>>>>> 2eea0f76c69afe876f48b2c9dd8dd8d4c516af84
             return;
 
         if (part.OriginalBody == null
             || TerminatingOrDeleted(part.OriginalBody.Value)
+<<<<<<< HEAD
             || !TryComp(part.OriginalBody.Value, out HumanoidAppearanceComponent? bodyAppearance))
         {
             component.ID = part.BaseLayerId;
             component.Type = relevantLayer;
+=======
+            || !TryComp(part.OriginalBody.Value, out HumanoidAppearanceComponent? bodyAppearance)
+            || part.ToHumanoidLayers() is not { } relevantLayer)
+        {
+            component.ID = part.BaseLayerId;
+>>>>>>> 2eea0f76c69afe876f48b2c9dd8dd8d4c516af84
             return;
         }
 

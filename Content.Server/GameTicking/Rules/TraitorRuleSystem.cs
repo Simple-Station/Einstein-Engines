@@ -5,8 +5,11 @@ using Content.Server.NPC.Systems;
 using Content.Server.Objectives;
 using Content.Server.PDA.Ringer;
 using Content.Server.Roles;
+using Content.Server.Traitor.Components;
 using Content.Server.Traitor.Uplink;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
+using Content.Shared.Mood;
 using Content.Shared.Objectives.Components;
 using Content.Shared.PDA;
 using Content.Shared.Roles;
@@ -15,9 +18,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
-using Content.Shared.Mood;
-using Content.Server.GameTicking.Components;
-using Content.Server.Traitor.Components;
 
 namespace Content.Server.GameTicking.Rules;
 

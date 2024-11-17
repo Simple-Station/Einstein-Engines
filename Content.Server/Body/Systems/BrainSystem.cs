@@ -15,7 +15,7 @@ namespace Content.Server.Body.Systems
     {
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
         [Dependency] private readonly SharedBodySystem _bodySystem = default!;
-        // Shitmed-Start
+
         public override void Initialize()
         {
             base.Initialize();
@@ -35,6 +35,7 @@ namespace Content.Server.Body.Systems
             EnsureComp<DelayedDeathComponent>(args.OldBody);
             HandleMind(uid, args.OldBody);
         }
+
         private void HandleAddition(EntityUid uid, BrainComponent _, ref OrganAddedToBodyEvent args)
         {
             if (TerminatingOrDeleted(uid) || TerminatingOrDeleted(args.Body))
@@ -45,7 +46,7 @@ namespace Content.Server.Body.Systems
                 RemComp<DelayedDeathComponent>(args.Body);
             HandleMind(args.Body, uid);
         }
-        // Shitmed-End
+
         private void HandleMind(EntityUid newEntity, EntityUid oldEntity)
         {
             if (TerminatingOrDeleted(newEntity) || TerminatingOrDeleted(oldEntity))

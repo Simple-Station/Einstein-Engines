@@ -41,6 +41,7 @@ namespace Content.Shared.Damage
             _appearanceQuery = GetEntityQuery<AppearanceComponent>();
             _damageableQuery = GetEntityQuery<DamageableComponent>();
             _mindContainerQuery = GetEntityQuery<MindContainerComponent>();
+            _targetingQuery = GetEntityQuery<TargetingComponent>();
         }
 
         /// <summary>

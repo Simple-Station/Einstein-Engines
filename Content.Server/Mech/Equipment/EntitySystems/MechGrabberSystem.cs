@@ -83,9 +83,10 @@ public sealed class MechGrabberSystem : EntitySystem
         var xform = Transform(toRemove);
         _transform.AttachToGridOrMap(toRemove, xform);
         var (mechPos, mechRot) = _transform.GetWorldPositionRotation(mechxform);
+        var toRemoveWorldPos = _transform.GetWorldPosition(xform);
 
         var offset = mechPos + mechRot.RotateVec(component.DepositOffset);
-        _transform.SetWorldPositionRotation(xform, offset, Angle.Zero);
+        _transform.SetWorldPositionRotation(toRemove, toRemoveWorldPos + offset, Angle.Zero);
         _mech.UpdateUserInterface(mech);
     }
 
@@ -154,7 +155,12 @@ public sealed class MechGrabberSystem : EntitySystem
             return;
 
         args.Handled = true;
-        component.AudioStream = _audio.PlayPvs(component.GrabSound, uid).Value.Entity;
+        var audio = _audio.PlayPvs(component.GrabSound, uid);
+        
+        if (audio == null)
+            return;
+
+        component.AudioStream = audio!.Value.Entity;
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, component.GrabDelay, new GrabberDoAfterEvent(), uid, target: target, used: uid)
         {
             BreakOnTargetMove = true,
