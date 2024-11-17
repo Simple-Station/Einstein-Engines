@@ -34,13 +34,11 @@ public sealed class StandingStateSystem : EntitySystem
         return standingState.CurrentState is StandingState.Lying or StandingState.GettingUp;
     }
 
-    public bool Down(EntityUid uid,
-        bool playSound = true,
-        bool dropHeldItems = true,
-        bool force = false,
+    public bool Down(EntityUid uid, bool playSound = true, bool dropHeldItems = true,
         StandingStateComponent? standingState = null,
         AppearanceComponent? appearance = null,
-        HandsComponent? hands = null)
+        HandsComponent? hands = null,
+        bool setDrawDepth = false)
     {
         // TODO: This should actually log missing comps...
         if (!Resolve(uid, ref standingState, false))
@@ -59,20 +57,17 @@ public sealed class StandingStateSystem : EntitySystem
         if (dropHeldItems && hands != null)
             RaiseLocalEvent(uid, new DropHandItemsEvent(), false);
 
-        if (TryComp(uid, out BuckleComponent? buckle) && buckle.Buckled)
+        if (TryComp(uid, out BuckleComponent? buckle) && buckle.Buckled && !_buckle.TryUnbuckle(uid, uid, buckleComp: buckle))
             return false;
 
-        if (!force)
-        {
-            var msg = new DownAttemptEvent();
-            RaiseLocalEvent(uid, msg, false);
+        var msg = new DownAttemptEvent();
+        RaiseLocalEvent(uid, msg, false);
 
-            if (msg.Cancelled)
-                return false;
-        }
+        if (msg.Cancelled)
+            return false;
 
-        standingState.Standing = false;
-        Dirty(uid, standingState);
+        standingState.CurrentState = StandingState.Lying;
+        Dirty(standingState);
         RaiseLocalEvent(uid, new DownedEvent(), false);
 
         // Seemed like the best place to put it
