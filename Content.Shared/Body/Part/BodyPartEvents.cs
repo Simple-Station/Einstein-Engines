@@ -1,5 +1,4 @@
 using Content.Shared.Humanoid;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared.Body.Part;
 
