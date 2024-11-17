@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Dataset;
 using Content.Shared.FixedPoint;
@@ -41,7 +42,7 @@ namespace Content.Shared.Random.Helpers
             var sum = picks.Values.Sum();
             var accumulated = 0f;
 
-            var rand = random.NextFloat() * sum;
+            var rand = random!.NextFloat() * sum;
 
             foreach (var (key, weight) in picks)
             {
@@ -128,7 +129,7 @@ namespace Content.Shared.Random.Helpers
             var sum = randomFill.Reagents.Count;
             var accumulated = 0f;
 
-            var rand = random.NextFloat() * sum;
+            var rand = random!.NextFloat() * sum;
 
             foreach (var reagent in randomFill.Reagents)
             {
@@ -159,7 +160,7 @@ namespace Content.Shared.Random.Helpers
             var sum = picks.Values.Sum();
             var accumulated = 0f;
 
-            var rand = random.NextFloat() * sum;
+            var rand = random!.NextFloat() * sum;
 
             foreach (var (randSolution, weight) in picks)
             {
