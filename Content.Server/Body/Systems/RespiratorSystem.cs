@@ -72,7 +72,7 @@ public sealed class RespiratorSystem : EntitySystem
 
             UpdateSaturation(uid, -(float) respirator.UpdateInterval.TotalSeconds, respirator);
 
-            if (!_mobState.IsIncapacitated(uid) || HasComp<DebrainedComponent>(uid)) // Shitmed: cannot breathe in crit or when no brain.
+            if (!_mobState.IsIncapacitated(uid) && !HasComp<DebrainedComponent>(uid)) // Shitmed: cannot breathe in crit or when no brain.
             {
                 switch (respirator.Status)
                 {
@@ -185,7 +185,7 @@ public sealed class RespiratorSystem : EntitySystem
             RaiseLocalEvent(ent, new MoodEffectEvent("Suffocating"));
         }
 
-        _damageableSys.TryChangeDamage(ent, ent.Comp.Damage, interruptsDoAfters: false);
+        _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, interruptsDoAfters: false);
     }
 
     private void StopSuffocation(Entity<RespiratorComponent> ent)

@@ -116,7 +116,7 @@
   - type: SurgeryTarget
   - type: UserInterface
     interfaces:
-      enum.SurgeryUIKey.key:
+      enum.SurgeryUIKey.Key:
         type: SurgeryBui
 
 - type: entity

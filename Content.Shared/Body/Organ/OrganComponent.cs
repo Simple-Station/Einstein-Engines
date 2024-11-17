@@ -16,6 +16,12 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent
     public EntityUid? Body;
 
     /// <summary>
+    /// Relevant body this organ originally belonged to.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntityUid? OriginalBody;
+
+    /// <summary>
     /// Shitcodey solution to not being able to know what name corresponds to each organ's slot ID
     /// without referencing the prototype or hardcoding.
     /// </summary>

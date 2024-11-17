@@ -3,6 +3,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
+using Content.Shared.Damage;
 using Robust.Shared.Containers;
 
 namespace Content.Shared.Body.Systems;
@@ -36,7 +37,12 @@ public partial class SharedBodySystem
         {
             var removedInBodyEv = new OrganRemovedFromBodyEvent(bodyUid, parentPartUid);
             RaiseLocalEvent(organEnt, ref removedInBodyEv);
+            organEnt.Comp.OriginalBody = bodyUid;
         }
+
+        if (TryComp(parentPartUid, out DamageableComponent? damageable)
+            && damageable.TotalDamage > 200)
+            TrySetOrganUsed(organEnt, true, organEnt.Comp);
 
         organEnt.Comp.Body = null;
         Dirty(organEnt, organEnt.Comp);
@@ -216,10 +222,10 @@ public partial class SharedBodySystem
     public bool TrySetOrganUsed(EntityUid organId, bool used, OrganComponent? organ = null)
     {
         if (!Resolve(organId, ref organ)
-            || organ.Used == true)
+            || organ.Used == used)
             return false;
 
-        organ.Used = true;
+        organ.Used = used;
         Dirty(organId, organ);
         return true;
     }

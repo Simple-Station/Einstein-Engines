@@ -64,8 +64,7 @@
       - state: eyeball-l
       - state: eyeball-r
   - type: Eyes
-  - type: Organ
-    slotId: eyes
+  
 
 - type: entity
   id: OrganDionaStomach
