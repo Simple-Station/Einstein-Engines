@@ -255,7 +255,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
     public HumanoidCharacterProfile WithSpecies(string species) => new(this) { Species = species };
-    public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename};
+    public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename };
     public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
     public HumanoidCharacterProfile WithWidth(float width) => new(this) { Width = width };
 
@@ -415,8 +415,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             || string.IsNullOrEmpty(Customspeciename)
                 ? ""
                 : Customspeciename.Length > MaxNameLength
-                    ? FormattedMessage.RemoveMarkup(Customspeciename)[..MaxNameLength]
-                    : FormattedMessage.RemoveMarkup(Customspeciename);
+                    ? FormattedMessage.RemoveMarkupPermissive(Customspeciename)[..MaxNameLength]
+                    : FormattedMessage.RemoveMarkupPermissive(Customspeciename);
 
         if (string.IsNullOrEmpty(name))
         {
@@ -426,11 +426,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string flavortext;
         if (FlavorText.Length > MaxDescLength)
         {
-            flavortext = FormattedMessage.RemoveMarkup(FlavorText)[..MaxDescLength];
+            flavortext = FormattedMessage.RemoveMarkupPermissive(FlavorText)[..MaxDescLength];
         }
         else
         {
-            flavortext = FormattedMessage.RemoveMarkup(FlavorText);
+            flavortext = FormattedMessage.RemoveMarkupPermissive(FlavorText);
         }
 
         var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
@@ -531,11 +531,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(FlavorText);
         hashCode.Add(Species);
         hashCode.Add(Age);
-        hashCode.Add((int)Sex);
-        hashCode.Add((int)Gender);
+        hashCode.Add((int) Sex);
+        hashCode.Add((int) Gender);
         hashCode.Add(Appearance);
-        hashCode.Add((int)SpawnPriority);
-        hashCode.Add((int)PreferenceUnavailable);
+        hashCode.Add((int) SpawnPriority);
+        hashCode.Add((int) PreferenceUnavailable);
         hashCode.Add(Customspeciename);
         return hashCode.ToHashCode();
     }
