@@ -30,9 +30,9 @@ public sealed partial class TimeCycleSystem : EntitySystem
             // Should be used for developing time palletes or for debuging
             // O-o-or... You can cosplay pucchi from JoJo 6 with his 'Made In Heaven'
             if (timeComp.SpeedUp)
-                timeComp.DelayTime = curTime + timeComp.SpeedUpMinuteLength;
+                timeComp.DelayTime = curTime + timeComp.SpeedUpMinuteDuration;
             else
-                timeComp.DelayTime = curTime + timeComp.MinuteLength;
+                timeComp.DelayTime = curTime + timeComp.MinuteDuration;
 
             // Pass minute of map time
             timeComp.CurrentTime += TimeSpan.FromMinutes(1);
@@ -46,7 +46,7 @@ public sealed partial class TimeCycleSystem : EntitySystem
 
     private void UpdateAmbientColor(EntityUid mapid, TimeCycleComponent timeComp, MapLightComponent mapLightComp)
     {
-        if (!_prototypeManager.TryIndex(timeComp.Palette, out TimeCyclePalettePrototype? timeEntries))
+        if (!_prototypeManager.TryIndex(timeComp.PalettePrototype, out TimeCyclePalettePrototype? timeEntries))
             return;
         if (timeEntries is null)
             return;
