@@ -22,17 +22,13 @@ public sealed partial class TimeCycleSystem : EntitySystem
 
         while (query.MoveNext(out var mapid, out var timeComp, out var mapLightComp))
         {
-            if (timeComp.Paused)
-                continue;
-            if (curTime < timeComp.DelayTime)
+            if (timeComp.Paused
+                || curTime < timeComp.DelayTime)
                 continue;
 
             // Should be used for developing time palletes or for debuging
             // O-o-or... You can cosplay pucchi from JoJo 6 with his 'Made In Heaven'
-            if (timeComp.SpeedUp)
-                timeComp.DelayTime = curTime + timeComp.SpeedUpMinuteDuration;
-            else
-                timeComp.DelayTime = curTime + timeComp.MinuteDuration;
+            timeComp.DelayTime = curTime + (timeComp.SpeedUp ? timeComp.SpeedUpMinuteDuration : timeComp.MinuteDuration);
 
             // Pass minute of map time
             timeComp.CurrentTime += TimeSpan.FromMinutes(1);
@@ -46,9 +42,8 @@ public sealed partial class TimeCycleSystem : EntitySystem
 
     private void UpdateAmbientColor(EntityUid mapid, TimeCycleComponent timeComp, MapLightComponent mapLightComp)
     {
-        if (!_prototypeManager.TryIndex(timeComp.PalettePrototype, out TimeCyclePalettePrototype? timeEntries))
-            return;
-        if (timeEntries is null)
+        if (!_prototypeManager.TryIndex(timeComp.PalettePrototype, out TimeCyclePalettePrototype? timeEntries)
+            || timeEntries is null)
             return;
 
         var timeInCycle = GetTimeInCycle(timeComp.CurrentTime);
@@ -57,14 +52,8 @@ public sealed partial class TimeCycleSystem : EntitySystem
     }
 
     // We should convert current 'TimeSpan' (with days) time into one day cycle time (in 24 hours)
-    private TimeSpan GetTimeInCycle(TimeSpan timeSpan)
-    {
-        double timeCycleMilliseconds = TimeSpan.FromHours(24).TotalMilliseconds;
-        double totalMilliseconds = timeSpan.TotalMilliseconds;
-        double timeInCycleMilliseconds = totalMilliseconds % timeCycleMilliseconds;
-
-        return TimeSpan.FromMilliseconds(timeInCycleMilliseconds);;
-    }
+    private TimeSpan GetTimeInCycle(TimeSpan timeSpan) =>
+        TimeSpan.FromMilliseconds(timeSpan.TotalMilliseconds % TimeSpan.FromHours(24).TotalMilliseconds);
 
     private Color GetInterpolatedColor(TimeCyclePalettePrototype proto, TimeSpan timeInCycle)
     {
