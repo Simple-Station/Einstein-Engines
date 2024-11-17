@@ -219,18 +219,6 @@
       entity_storage: !type:NestedSelector
         tableId: MaintenanceLockerLoot
 
-- type: entityTable
-  id: ClosetWallRadiationFilledTable
-  table: !type:AllSelector
-    children:
-    - !type:EntSelector
-      id: ClothingOuterSuitRad
-      amount: 2
-    - !type:EntSelector
-      id: GeigerCounter
-      amount: 2
-
-
 - type: entity
   id: ClosetWallRadiationFilled
   suffix: Filled
@@ -238,5 +226,11 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage: !type:NestedSelector
-        tableId: ClosetWallRadiationFilledTable
+      entity_storage: !type:AllSelector
+        children:
+        - !type:EntSelector
+          id: ClothingOuterSuitRad
+          amount: 2
+        - !type:EntSelector
+          id: GeigerCounter
+          amount: 2
