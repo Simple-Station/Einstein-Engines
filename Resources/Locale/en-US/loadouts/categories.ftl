@@ -55,6 +55,7 @@ loadout-category-JobsMedicalChiefMedicalOfficer = Chief Medical Officer
 loadout-category-JobsMedicalMedicalDoctor = Medical Doctor
 loadout-category-JobsMedicalMedicalIntern = Medical Intern
 loadout-category-JobsMedicalParamedic = Paramedic
+loadout-category-JobsMedicalPsychologist = Psychologist
 loadout-category-JobsMedicalSeniorPhysician = Senior Physician
 
 # Security

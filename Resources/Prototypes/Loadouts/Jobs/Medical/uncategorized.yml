@@ -169,47 +169,6 @@
         - Medical
 
 # Belt
-- type: loadout
-  id: LoadoutMedicalBeltMedical
-  category: JobsMedicalAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalBelt
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-  items:
-    - ClothingBeltMedical
-
-- type: loadout
-  id: LoadoutMedicalBeltMedicalFilled
-  category: JobsMedicalAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalBelt
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-  items:
-    - ClothingBeltMedicalFilled
-
-- type: loadout
-  id: LoadoutMedicalBeltMedicalAdvancedFilled
-  category: JobsMedicalAUncategorized
-  cost: 2
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalBelt
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-  items:
-    - ClothingBeltMedicalAdvancedFilled
 
 # Ears
 

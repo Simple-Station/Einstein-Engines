@@ -2,6 +2,47 @@
 # Backpacks
 
 # Belt
+- type: loadout
+  id: LoadoutMedicalDoctorBeltMedical
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorBelt
+    - !type:CharacterJobRequirement
+      Jobs:
+        - MedicalDoctor
+  items:
+    - ClothingBeltMedical
+
+- type: loadout
+  id: LoadoutMedicalBeltMedicalFilled
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorBelt
+    - !type:CharacterJobRequirement
+      Jobs:
+        - MedicalDoctor
+  items:
+    - ClothingBeltMedicalFilled
+
+- type: loadout
+  id: LoadoutMedicalBeltMedicalAdvancedFilled
+  category: JobsMedicalMedicalDoctor
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorBelt
+    - !type:CharacterJobRequirement
+      Jobs:
+        - MedicalDoctor
+  items:
+    - ClothingBeltMedicalAdvancedFilled
 
 # Ears
 
@@ -37,3 +78,28 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutMedicalDoctorJumpsuit
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingUniformJumpsuitMedicalDoctor
+
+- type: loadout
+  id: LoadoutMedicalDoctorJumpskirt
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingUniformJumpskirtMedicalDoctor

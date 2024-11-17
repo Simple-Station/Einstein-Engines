@@ -6,6 +6,47 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutSeniorPhysicianBeltMedical
+  category: JobsMedicalSeniorPhysician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorPhysicianBelt
+    - !type:CharacterJobRequirement
+      Jobs:
+        - MedicalDoctor
+  items:
+    - ClothingBeltMedical
+
+- type: loadout
+  id: LoadoutSeniorPhysicianBeltMedicalFilled
+  category: JobsMedicalSeniorPhysician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorBelt
+    - !type:CharacterJobRequirement
+      Jobs:
+        - SeniorPhysician
+  items:
+    - ClothingBeltMedicalFilled
+
+- type: loadout
+  id: LoadoutSeniorPhysicianBeltMedicalAdvancedFilled
+  category: JobsMedicalSeniorPhysician
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorPhysicianBelt
+    - !type:CharacterJobRequirement
+      Jobs:
+        - SeniorPhysician
+  items:
+    - ClothingBeltMedicalAdvancedFilled
 
 # Eyes
 

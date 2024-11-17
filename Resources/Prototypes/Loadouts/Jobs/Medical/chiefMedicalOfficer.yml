@@ -2,6 +2,33 @@
 # Backpacks
 
 # Belt
+- type: loadout
+  id: LoadoutChiefMedicalOfficerBeltMedical
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBelt
+    - !type:CharacterJobRequirement
+      Jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingBeltMedical
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerBeltMedicalAdvancedFilled
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBelt
+    - !type:CharacterJobRequirement
+      Jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingBeltMedicalAdvancedFilled
 
 # Ears
 

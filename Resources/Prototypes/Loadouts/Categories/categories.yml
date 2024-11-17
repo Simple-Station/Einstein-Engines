@@ -166,6 +166,7 @@
     - JobsMedicalMedicalDoctor
     - JobsMedicalMedicalIntern
     - JobsMedicalParamedic
+    - JobsMedicalPsychologist
     - JobsMedicalSeniorPhysician
 
 - type: loadoutCategory
@@ -185,6 +186,9 @@
 
 - type: loadoutCategory
   id: JobsMedicalParamedic
+
+- type: loadoutCategory
+  id: JobsMedicalPsychologist
 
 - type: loadoutCategory
   id: JobsMedicalSeniorPhysician
