@@ -545,13 +545,6 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         if (targetMap.MapId != userXform.MapID)
             return false;
 
-        var userPos = TransformSystem.GetWorldPosition(userXform);
-        var direction = targetMap.Position - userPos;
-        var distance = Math.Min(component.Range * component.HeavyRangeModifier, direction.Length());
-
-        var damage = GetDamage(meleeUid, user, component) * GetHeavyDamageModifier(meleeUid, user, component);
-        var entities = GetEntityList(ev.Entities);
-
         if (TryComp<StaminaComponent>(user, out var stamina))
         {
             if (stamina.CritThreshold - stamina.StaminaDamage <= component.HeavyStaminaCost)
@@ -562,6 +555,13 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
             _stamina.TakeStaminaDamage(user, component.HeavyStaminaCost, stamina, visual: false);
         }
+
+        var userPos = TransformSystem.GetWorldPosition(userXform);
+        var direction = targetMap.Position - userPos;
+        var distance = Math.Min(component.Range * component.HeavyRangeModifier, direction.Length());
+
+        var damage = GetDamage(meleeUid, user, component) * GetHeavyDamageModifier(meleeUid, user, component);
+        var entities = GetEntityList(ev.Entities);
 
         if (entities.Count == 0)
         {
