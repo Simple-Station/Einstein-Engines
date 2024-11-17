@@ -6,20 +6,183 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutChaplainBible
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - Bible
+
+- type: loadout
+  id: LoadoutChaplainStamp
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - RubberStampChaplain
 
 # Eyes
 
 # Gloves
 
 # Head
+- type: loadout
+  id: LoadoutScienceHeadHatHoodNunHood
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingHeadHatHoodNunHood
+
+- type: loadout
+  id: LoadoutScienceHeadHatPlaguedoctor
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingHeadHatPlaguedoctor
+
+- type: loadout
+  id: LoadoutScienceHeadHatWitch
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingHeadHatWitch
+
+- type: loadout
+  id: LoadoutScienceHeadHatWitch1
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingHeadHatWitch1
 
 # Id
 
 # Neck
+- type: loadout
+  id: LoadoutScienceNeckStoleChaplain
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeckScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingNeckStoleChaplain
 
 # Mask
+- type: loadout
+  id: LoadoutScienceMaskPlague
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMaskScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingMaskPlague
 
 # Outer
+- type: loadout
+  id: LoadoutScienceOuterPlagueSuit
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingOuterPlagueSuit
+
+- type: loadout
+  id: LoadoutScienceOuterNunRobe
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingOuterNunRobe
+
+- type: loadout
+  id: LoadoutScienceOuterHoodieBlack
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingOuterHoodieBlack
+
+- type: loadout
+  id: LoadoutScienceOuterHoodieChaplain
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuterScience
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingOuterHoodieChaplain
 
 # Shoes
 
@@ -79,176 +242,3 @@
         - Chaplain
   items:
     - ClothingUniformJumpsuitMonasticRobeLight
-
-# Outer
-- type: loadout
-  id: LoadoutScienceOuterPlagueSuit
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - ClothingOuterPlagueSuit
-
-- type: loadout
-  id: LoadoutScienceOuterNunRobe
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - ClothingOuterNunRobe
-
-- type: loadout
-  id: LoadoutScienceOuterHoodieBlack
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - ClothingOuterHoodieBlack
-
-- type: loadout
-  id: LoadoutScienceOuterHoodieChaplain
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - ClothingOuterHoodieChaplain
-
-# Neck
-- type: loadout
-  id: LoadoutScienceNeckStoleChaplain
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeckScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - ClothingNeckStoleChaplain
-
-# Head
-- type: loadout
-  id: LoadoutScienceHeadHatHoodNunHood
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - ClothingHeadHatHoodNunHood
-
-- type: loadout
-  id: LoadoutScienceHeadHatPlaguedoctor
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - ClothingHeadHatPlaguedoctor
-
-- type: loadout
-  id: LoadoutScienceHeadHatWitch
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - ClothingHeadHatWitch
-
-- type: loadout
-  id: LoadoutScienceHeadHatWitch1
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - ClothingHeadHatWitch1
-
-# Mask
-- type: loadout
-  id: LoadoutScienceMaskPlague
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMaskScience
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - ClothingMaskPlague
-
-# Equipment
-- type: loadout
-  id: LoadoutChaplainBible
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutChaplainEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - Bible
-
-- type: loadout
-  id: LoadoutChaplainStamp
-  category: JobsEpistemicsChaplain
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutChaplainEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chaplain
-  items:
-    - RubberStampChaplain

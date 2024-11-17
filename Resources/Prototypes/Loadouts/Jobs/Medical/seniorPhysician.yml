@@ -12,6 +12,19 @@
 # Gloves
 
 # Head
+- type: loadout
+  id: LoadoutMedicalHeadBeretSeniorPhysician
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorPhysicianHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorPhysician
+  items:
+    - ClothingHeadHatBeretSeniorPhysician
 
 # Id
 
@@ -31,19 +44,10 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsMedical
+      group: LoadoutSeniorPhysicianUniforms
     - !type:CharacterJobRequirement
       jobs:
         - SeniorPhysician
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobChemist
-      min: 21600 # 6 hours
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobMedicalDoctor
-      min: 21600 # 6 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Medical
-      min: 216000 # 60 hours
   items:
     - ClothingUniformJumpskirtSeniorPhysician
 
@@ -54,18 +58,9 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsMedical
+      group: LoadoutSeniorPhysicianUniforms
     - !type:CharacterJobRequirement
       jobs:
         - SeniorPhysician
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobChemist
-      min: 21600 # 6 hours
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobMedicalDoctor
-      min: 21600 # 6 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Medical
-      min: 216000 # 60 hours
   items:
     - ClothingUniformJumpsuitSeniorPhysician

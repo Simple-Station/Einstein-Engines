@@ -52,20 +52,6 @@
         - Brigmedic
 
 - type: loadout
-  id: LoadoutBackpackDuffelMedical
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelMedical
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-
-- type: loadout
   id: LoadoutBackpackDuffelMime
   category: Backpacks
   cost: 0
@@ -78,20 +64,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - Mime
-
-- type: loadout
-  id: LoadoutBackpackDuffelChemistry
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelChemistry
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
 
 - type: loadout
   id: LoadoutBackpackDuffelHydroponics
@@ -134,34 +106,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
-
-- type: loadout
-  id: LoadoutBackpackDuffelVirology
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelVirology
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-
-- type: loadout
-  id: LoadoutBackpackDuffelGenetics
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelGenetics
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
 
 - type: loadout
   id: LoadoutBackpackDuffelCargo

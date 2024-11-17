@@ -100,6 +100,24 @@
       - id: EmergencyMedipen #You never know what people are going to latejoin into
 
 - type: entity
+  id: ClothingBeltMedicalAdvancedFilled
+  parent: ClothingBeltMedical
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MedicatedSuture
+        amount: 2
+      - id: RegenerativeMesh
+        amount: 1
+      - id: Bloodpack
+        amount: 1
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: BruteAutoInjector
+      - id: BurnAutoInjector
+
+- type: entity
   id: ClothingBeltMedicalEMTFilled
   parent: ClothingBeltMedicalEMT
   suffix: Paramedic,Filled

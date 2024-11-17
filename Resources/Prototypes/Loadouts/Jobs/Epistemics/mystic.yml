@@ -20,6 +20,19 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutScienceOuterLabcoatSeniorResearcher
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - ClothingOuterCoatLabSeniorResearcher
 
 # Shoes
 
@@ -51,18 +64,3 @@
         - SeniorResearcher
   items:
     - ClothingUniformJumpsuitSeniorResearcher
-
-# Outer
-- type: loadout
-  id: LoadoutScienceOuterLabcoatSeniorResearcher
-  category: JobsEpistemicsAAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMysticOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - SeniorResearcher
-  items:
-    - ClothingOuterCoatLabSeniorResearcher

@@ -161,6 +161,22 @@
     - ClothingHeadHatHopcap
 
 # Id
+- type: loadout
+  id: LoadoutHeadOfPersonnelNTPDA
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobHeadOfPersonnel
+      min: 36000 # 10 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelHeadId
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - HoPNTPDA
 
 # Neck
 - type: loadout

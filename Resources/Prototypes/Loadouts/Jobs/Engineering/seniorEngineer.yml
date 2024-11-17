@@ -87,6 +87,32 @@
     - RCD
     - RCDAmmo
 
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentRCDAmmo1
+  category: JobsEngineeringSeniorEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - RCDAmmo
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentRCDAmmo2
+  category: JobsEngineeringSeniorEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - RCDAmmo
+
 # Eyes
 
 # Gloves

@@ -14,6 +14,22 @@
 # Head
 
 # Id
+- type: loadout
+  id: LoadoutLogisticsOfficerNTPDA
+  category: JobsLogisticsLogisticsOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobQuartermaster
+      min: 36000 # 10 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutQuartermasterId
+    - !type:CharacterJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - QuartermasterNTPDA
 
 # Neck
 

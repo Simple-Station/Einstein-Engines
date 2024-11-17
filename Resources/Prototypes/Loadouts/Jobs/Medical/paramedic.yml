@@ -24,3 +24,30 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutMedicalUniformParamedicJumpsuit
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingUniformJumpsuitParamedic
+
+- type: loadout
+  id: LoadoutMedicalUniformParamedicJumpskirt
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingUniformJumpskirtParamedic

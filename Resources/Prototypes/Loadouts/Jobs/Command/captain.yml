@@ -262,6 +262,22 @@
     - ClothingHeadHatBeretCap
 
 # Id
+- type: loadout
+  id: LoadoutCaptainNTPDA
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobCaptain
+      min: 36000 # 10 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainId
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - CaptainNTPDA
 
 # Neck
 - type: loadout

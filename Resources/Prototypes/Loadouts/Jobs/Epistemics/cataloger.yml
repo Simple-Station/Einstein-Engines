@@ -6,6 +6,18 @@
 # Ears
 
 # Equipment
+#- type: loadout
+#  id: LoadoutCatalogerEquipmentPotentiometer
+#  category: JobsEpistemicsCataloger
+#  cost: 0
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutCataloguerUniforms
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - Librarian
+#  items:
+#    - PsiPotentiometerHandheld
 
 # Eyes
 

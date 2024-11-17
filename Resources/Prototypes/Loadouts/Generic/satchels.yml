@@ -79,20 +79,6 @@
         - Mime
 
 - type: loadout
-  id: LoadoutBackpackSatchelChemistry
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelChemistry
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-
-- type: loadout
   id: LoadoutBackpackSatchelHydroponics
   category: Backpacks
   cost: 0
@@ -133,34 +119,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
-
-- type: loadout
-  id: LoadoutBackpackSatchelVirology
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelVirology
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-
-- type: loadout
-  id: LoadoutBackpackSatchelGenetics
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelGenetics
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
 
 - type: loadout
   id: LoadoutBackpackSatchelCargo

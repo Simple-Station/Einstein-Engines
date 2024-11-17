@@ -82,6 +82,22 @@
     - ClothingHeadHoodMysta
 
 # Id
+- type: loadout
+  id: LoadoutMystagogueNTPDA
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobResearchDirector
+      min: 36000 # 10 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerId
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - RnDNTPDA
 
 # Neck
 - type: loadout
