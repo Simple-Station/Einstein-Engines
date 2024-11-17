@@ -222,8 +222,8 @@ public abstract partial class SharedBuckleSystem
             return false;
 
         // Does it pass the Whitelist
-        if ((strapComp.Whitelist != null &&
-            !_whitelistSystem.IsValid(strapComp.Whitelist, buckleUid)) || (strapComp.Blacklist != null && _whitelistSystem.IsValid(strapComp.Blacklist, buckleUid)))
+        if (strapComp.Whitelist != null &&
+            !_whitelistSystem.IsValid(strapComp.Whitelist, buckleUid) || strapComp.Blacklist != null && _whitelistSystem.IsValid(strapComp.Blacklist, buckleUid))
         {
             if (popup)
                 _popup.PopupClient(Loc.GetString("buckle-component-cannot-fit-message"), user, PopupType.Medium);
@@ -251,7 +251,7 @@ public abstract partial class SharedBuckleSystem
             return false;
         }
 
-        if (buckleComp.Buckled && !TryUnbuckle(buckleUid, user, buckleComp))
+        if (buckleComp.Buckled)
         {
             if (popup)
             {
