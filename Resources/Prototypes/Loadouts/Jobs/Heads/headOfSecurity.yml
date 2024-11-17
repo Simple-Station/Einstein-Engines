@@ -181,6 +181,7 @@
   id: LoadoutCommandHoSPulsePistol
   category: JobsCommand
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHoSWeapon
@@ -194,6 +195,7 @@
   id: LoadoutCommandHoSWt550
   category: JobsCommand
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHoSWeapon
@@ -207,6 +209,7 @@
   id: LoadoutCommandHoSKatanaSheath
   category: JobsCommand
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHoSWeapon
@@ -220,6 +223,7 @@
   id: LoadoutCommandHoSC20r
   category: JobsCommand
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHoSWeapon
@@ -233,6 +237,7 @@
   id: LoadoutCommandHoSBulldog
   category: JobsCommand
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHoSWeapon
@@ -246,6 +251,7 @@
   id: LoadoutCommandHoSEnergySword
   category: JobsCommand
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHoSWeapon
@@ -259,6 +265,7 @@
   id: LoadoutCommandHoSEnergyGun
   category: JobsCommand
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHoSWeapon

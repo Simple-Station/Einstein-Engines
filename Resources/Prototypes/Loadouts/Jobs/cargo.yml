@@ -48,6 +48,7 @@
   category: JobsCargo
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeckCargo

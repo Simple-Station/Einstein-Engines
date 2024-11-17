@@ -117,6 +117,7 @@
   id: LoadoutCommandCapMaskGas
   category: JobsCommand
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -140,6 +141,8 @@
   id: LoadoutCommandCapItemDrinkFlask
   category: JobsCommand
   cost: 1
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:

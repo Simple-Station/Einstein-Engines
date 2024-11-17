@@ -21,6 +21,7 @@
   category: JobsMedical
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterMedical
@@ -186,6 +187,7 @@
   category: JobsMedical
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterMedical
@@ -199,6 +201,7 @@
   id: LoadoutMedicalItemHandLabeler
   category: JobsMedical
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -433,6 +436,7 @@
   category: JobsMedical
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadMedical

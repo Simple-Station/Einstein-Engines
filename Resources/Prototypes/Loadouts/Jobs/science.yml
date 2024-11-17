@@ -67,6 +67,7 @@
   category: JobsScience
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsScience
@@ -81,6 +82,8 @@
   category: JobsScience
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsScience
@@ -111,6 +114,7 @@
   category: JobsScience
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterScience
@@ -153,6 +157,7 @@
   category: JobsScience
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterScience
@@ -170,6 +175,7 @@
   category: JobsScience
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterScience
@@ -270,6 +276,7 @@
   category: JobsScience
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGlovesScience
@@ -474,6 +481,7 @@
   category: JobsScience
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyesScience

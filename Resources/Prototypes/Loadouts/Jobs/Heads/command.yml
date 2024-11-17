@@ -3,6 +3,7 @@
   category: JobsCommand
   cost: 1
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -16,6 +17,7 @@
   category: JobsCommand
   cost: 3
   exclusive: true
+  canBeHeirloom: true
   requirements:
   - !type:CharacterDepartmentRequirement
     departments:

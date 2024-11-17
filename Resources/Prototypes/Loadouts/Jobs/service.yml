@@ -4,6 +4,8 @@
   category: JobsServiceUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsService
@@ -20,6 +22,8 @@
   category: JobsServiceUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsService
@@ -36,6 +40,8 @@
   category: JobsServiceUncategorized
   cost: 1
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterService
@@ -50,6 +56,8 @@
   category: JobsServiceUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuterService
@@ -64,6 +72,8 @@
   category: JobsServiceUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoesService
@@ -78,6 +88,7 @@
   category: JobsServiceUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMaskService
@@ -92,6 +103,8 @@
   category: JobsServiceUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeckService
@@ -108,6 +121,8 @@
   id: LoadoutServiceClownCowToolboxFilled
   category: JobsServiceUncategorized
   cost: 2
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEquipmentService
@@ -169,6 +184,7 @@
   category: JobsServiceUncategorized
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMaskService
@@ -183,6 +199,7 @@
   category: JobsServiceUncategorized
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMaskService
@@ -197,6 +214,7 @@
   category: JobsServiceUncategorized
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMaskService
@@ -296,6 +314,7 @@
   category: JobsServiceBartender
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
@@ -310,6 +329,7 @@
   category: JobsServiceBartender
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
@@ -451,6 +471,7 @@
   category: JobsServiceBotanist
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsService
