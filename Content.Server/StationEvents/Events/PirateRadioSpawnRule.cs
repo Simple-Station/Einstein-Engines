@@ -8,10 +8,11 @@ using Content.Server.StationEvents.Components;
 using Content.Shared.Salvage;
 using Content.Shared.Random.Helpers;
 using System.Linq;
-using Content.Server.GameTicking.Components;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.CCVar;
 using Robust.Shared.Serialization.Manager;
 using Content.Shared.Parallax.Biomes;
+using Robust.Shared.Map;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -24,6 +25,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
 
     protected override void Started(EntityUid uid, PirateRadioSpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -46,6 +48,9 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
             return;
 
         var targetStation = _random.Pick(stations);
+        if (!_mapManager.MapExists(Transform(targetStation).MapID))
+            return; /// SHUT UP HEISENTESTS. DIE.
+
         var randomOffset = _random.NextVector2(component.MinimumDistance, component.MaximumDistance);
 
         var outpostOptions = new MapLoadOptions
@@ -54,7 +59,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
             LoadMap = false,
         };
 
-        if (!_map.TryLoad(GameTicker.DefaultMap, _random.Pick(component.PirateRadioShuttlePath), out var outpostids, outpostOptions))
+        if (!_map.TryLoad(Transform(targetStation).MapID, _random.Pick(component.PirateRadioShuttlePath), out var outpostids, outpostOptions))
             return;
 
         SpawnDebris(component, outpostids);
