@@ -15,6 +15,7 @@
       connections:
       - hands
       - legs
+      - head
       organs:
         lungs: OrganAnimalLungs
         stomach: OrganAnimalStomach

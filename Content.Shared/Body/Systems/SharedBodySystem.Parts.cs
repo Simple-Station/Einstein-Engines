@@ -566,6 +566,18 @@ public partial class SharedBodySystem
             && Containers.Insert(partId, body.RootContainer);
     }
 
+    /// <summary>
+    ///     Returns true if this parentId supports attaching a new part to the specified slot.
+    /// </summary>
+    public bool CanAttachToSlot(
+        EntityUid parentId,
+        string slotId,
+        BodyPartComponent? parentPart = null)
+    {
+        return Resolve(parentId, ref parentPart, logMissing: false)
+               && parentPart.Children.ContainsKey(slotId);
+    }
+
     #endregion
 
     #region Attach/Detach
