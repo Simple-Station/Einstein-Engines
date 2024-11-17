@@ -155,7 +155,7 @@ public sealed class PsionicsSystem : EntitySystem
 
     private void OnRemove(EntityUid uid, PsionicComponent component, ComponentRemove args)
     {
-        _alerts.ClearAlert(uid, AlertType.Mana);
+        _alerts.ClearAlert(uid, component.ManaAlert);
 
         if (!HasComp<NpcFactionMemberComponent>(uid))
             return;
@@ -166,7 +166,7 @@ public sealed class PsionicsSystem : EntitySystem
     public void UpdateManaAlert(EntityUid uid, PsionicComponent component)
     {
         var severity = (short) ContentHelpers.RoundToLevels(component.Mana, component.MaxMana, 8);
-        _alerts.ShowAlert(uid, AlertType.Mana, severity);
+        _alerts.ShowAlert(uid, component.ManaAlert, severity);
     }
 
     private void OnManaUpdate(EntityUid uid, PsionicComponent component, ref OnManaUpdateEvent args)
