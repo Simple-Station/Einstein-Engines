@@ -228,9 +228,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - !type:EntSelector
-          id: ClothingOuterSuitRad
+        - id: ClothingOuterSuitRad
           amount: 2
-        - !type:EntSelector
-          id: GeigerCounter
+        - id: GeigerCounter
           amount: 2
