@@ -31,6 +31,38 @@
   - type: Gibbable
 
 - type: entity
+  id: OrganAnimalBrain
+  parent: BaseAnimalOrgan
+  name: brain
+  noSpawn: true
+  components:
+  - type: Sprite
+    state: brain
+  - type: Organ
+    slotId: brain
+  - type: Input
+    context: "ghost"
+  - type: Brain
+  - type: InputMover
+  - type: Examiner
+  - type: BlockMovement
+  - type: BadFood
+  - type: Tag
+    tags:
+      - Meat
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: GreyMatter
+          Quantity: 5
+
+- type: entity
   id: OrganAnimalLungs
   parent: BaseAnimalOrgan
   name: lungs

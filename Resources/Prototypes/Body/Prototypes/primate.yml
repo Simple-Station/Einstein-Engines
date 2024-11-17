@@ -9,6 +9,7 @@
       - hands
       - legs
       organs:
+        brain: OrganAnimalBrain
         lungs: OrganAnimalLungs
         stomach: OrganAnimalStomach
         liver: OrganAnimalLiver

@@ -1298,6 +1298,8 @@
       types:
         Blunt: 3
         Piercing: 3
+  - type: MindContainer
+    showExamineInfo: true
   - type: Butcherable
     butcheringType: Spike
     spawned:
