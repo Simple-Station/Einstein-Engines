@@ -223,7 +223,6 @@
   id: ClosetWallRadiationFilled
   suffix: Filled
   parent: ClosetWallRadiation
-  components:
   table: !type:AllSelector
     children:
       - !type:EntSelector
