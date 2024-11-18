@@ -420,6 +420,12 @@ public abstract partial class SharedSurgerySystem
                 && _body.InsertOrgan(args.Part, tool, insertedOrgan.SlotId, partComp, insertedOrgan))
             {
                 EnsureComp<OrganReattachedComponent>(tool);
+                if (_body.TrySetOrganUsed(tool, true, insertedOrgan)
+                    && insertedOrgan.OriginalBody != args.Body)
+                {
+                    var ev = new SurgeryStepDamageChangeEvent(args.User, args.Body, args.Part, ent);
+                    RaiseLocalEvent(ent, ref ev);
+                }
                 break;
             }
         }
