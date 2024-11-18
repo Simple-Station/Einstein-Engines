@@ -7986,3 +7986,22 @@ Entries:
   id: 6528
   time: '2024-11-18T15:15:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1241
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The stamina cost of an object's power attack can now be revealed by
+        examining its damage values. 
+    - type: Tweak
+      message: >-
+        Power attacks can't be done if your stamina is too low, so you can't
+        accidentally stamcrit yourself with power attacks anymore.
+    - type: Tweak
+      message: Power attacks now cost stamina even without hitting anything.
+    - type: Tweak
+      message: >-
+        Prevent power attacks from showing a blue visual effect on the character
+        who attacked due to stamina damage.
+  id: 6529
+  time: '2024-11-18T15:19:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1238
