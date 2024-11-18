@@ -59,7 +59,23 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutLawyerUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutLawyerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceLawyerUniformBlueSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformBlueSkirt
+    - type: loadout
+      id: LoadoutServiceLawyerUniformRedSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformRedSkirt
+    - type: loadout
+      id: LoadoutServiceLawyerUniformPurpleSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformPurpleSkirt
+    - type: loadout
+      id: LoadoutServiceLawyerUniformGoodSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformGoodSkirt

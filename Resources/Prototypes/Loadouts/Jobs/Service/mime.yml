@@ -16,36 +16,30 @@
 # Id
 
 # Neck
-
-# Mask
-
-# Outer
-
-# Shoes
-
-# Uniforms
 - type: loadout
-  id: LoadoutServiceMimeOuterWinter
-  category: JobsServiceAUncategorized
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterService
-    - !type:CharacterJobRequirement
-      jobs:
-        - Mime
-  items:
-    - ClothingOuterWinterMime
-
-- type: loadout
-  id: LoadoutServiceMimeMaskSad
-  category: JobsServiceAUncategorized
+  id: LoadoutServiceMimeBedsheetMime
+  category: JobsServiceMime
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMaskService
+      group: LoadoutMimeNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - BedsheetMime
+
+
+# Mask
+- type: loadout
+  id: LoadoutServiceMimeMaskSad
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
     - !type:CharacterJobRequirement
       jobs:
         - Mime
@@ -54,12 +48,12 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskScared
-  category: JobsServiceAUncategorized
+  category: JobsServiceMime
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMaskService
+      group: LoadoutMimeMask
     - !type:CharacterJobRequirement
       jobs:
         - Mime
@@ -68,42 +62,45 @@
 
 - type: loadout
   id: LoadoutServiceMimeMaskSexy
-  category: JobsServiceAUncategorized
+  category: JobsServiceMime
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMaskService
+      group: LoadoutMimeMask
     - !type:CharacterJobRequirement
       jobs:
         - Mime
   items:
     - ClothingMaskSexyMime
 
+# Outer
+- type: loadout
+  id: LoadoutServiceMimeOuterWinter
+  category: JobsServiceMime
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingOuterWinterMime
+
+# Shoes
 - type: loadout
   id: LoadoutServiceMimeShoesBootsWinter
-  category: JobsServiceAUncategorized
+  category: JobsServiceMime
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoesService
+      group: LoadoutMimeShoes
     - !type:CharacterJobRequirement
       jobs:
         - Mime
   items:
     - ClothingShoesBootsWinterMime
-
-- type: loadout
-  id: LoadoutServiceMimeBedsheetMime
-  category: JobsServiceAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeckService
-    - !type:CharacterJobRequirement
-      jobs:
-        - Mime
-  items:
-    - BedsheetMime
+# Uniforms

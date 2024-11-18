@@ -1,5 +1,46 @@
 # Chemist
 # Backpacks
+- type: loadout
+  id: LoadoutChemistryBackpackBackpack
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelChemistry
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+
+- type: loadout
+  id: LoadoutBackpackSatchelChemistry
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelChemistry
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+
+- type: loadout
+  id: LoadoutBackpackDuffelChemistry
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelChemistry
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
 
 # Belt
 - type: loadout
@@ -136,7 +177,7 @@
 
 # Eyes
 - type: loadout
-  id: LoadoutMedicalEyesGlassesChemical
+  id: LoadoutMedicalEyesGlassesChemicalBudget
   category: JobsMedicalChemist
   cost: 0
   exclusive: true

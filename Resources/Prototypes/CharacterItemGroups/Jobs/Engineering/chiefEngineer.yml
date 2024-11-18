@@ -51,10 +51,12 @@
 #  maxItems: 1
 #  items:
 
-#- type: characterItemGroup
-#  id: LoadoutChiefEngineerId
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutChiefEngineerId
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerNTPDA
 
 - type: characterItemGroup
   id: LoadoutChiefEngineerNeck

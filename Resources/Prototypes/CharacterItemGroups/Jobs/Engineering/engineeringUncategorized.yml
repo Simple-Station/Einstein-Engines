@@ -43,7 +43,7 @@
       id: LoadoutEngineeringGlovesMerc
 
 - type: characterItemGroup
-  id: LoadoutHeadEngineering
+  id: LoadoutEngineeringHead
   items:
     - type: loadout
       id: LoadoutEngineeringHeadBeret
@@ -74,7 +74,7 @@
 #  items:
 #
 - type: characterItemGroup
-  id: LoadoutOuterEngineering
+  id: LoadoutEngineeringOuter
   items:
     - type: loadout
       id: LoadoutEngineeringOuterHazard

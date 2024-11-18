@@ -4,11 +4,15 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutMedicalInternBelt
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMedicalInternBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalInternBeltMedical
+    - type: loadout
+      id: LoadoutMedicalInternBeltMedicalFilled
+
 #- type: characterItemGroup
 #  id: LoadoutMedicalInternEars
 #  maxItems: 1

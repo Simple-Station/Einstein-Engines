@@ -21,23 +21,9 @@
     - ClothingBeltMedical
 
 - type: loadout
-  id: LoadoutSeniorPhysicianBeltMedicalFilled
-  category: JobsMedicalSeniorPhysician
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalDoctorBelt
-    - !type:CharacterJobRequirement
-      Jobs:
-        - SeniorPhysician
-  items:
-    - ClothingBeltMedicalFilled
-
-- type: loadout
   id: LoadoutSeniorPhysicianBeltMedicalAdvancedFilled
   category: JobsMedicalSeniorPhysician
-  cost: 1
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -55,7 +41,7 @@
 # Head
 - type: loadout
   id: LoadoutMedicalHeadBeretSeniorPhysician
-  category: JobsMedicalAUncategorized
+  category: JobsMedicalSeniorPhysician
   cost: 0
   exclusive: true
   requirements:

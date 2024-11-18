@@ -1,14 +1,26 @@
 # All Security
-#- type: characterItemGroup
-#  id: LoadoutSecurityBackpacks
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutSecurityBelt
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSecurityBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingBackSecurity
+    - type: loadout
+      id: LoadoutClothingBackSecuritySatchel
+    - type: loadout
+      id: LoadoutClothingBackSecurityDuffel
+
+- type: characterItemGroup
+  id: LoadoutSecurityBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityBeltWebbing
+    - type: loadout
+      id: LoadoutClothingBeltSecurity
+    - type: loadout
+      id: LoadoutClothingBeltHolster
+
 #- type: characterItemGroup
 #  id: LoadoutSecurityEars
 #  maxItems: 1
@@ -104,21 +116,37 @@
     - type: loadout
       id: LoadoutSecurityRevolverPythonNonlethal
 
-#- type: characterItemGroup
-#  id: LoadoutSecurityEyes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSecurityEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityEyesHudSecurity
+    - type: loadout
+      id: ClothingEyesGlassesSunglasses
+    - type: loadout
+      id: LoadoutSecurityEyesEyepatchHudSecurity
+    - type: loadout
+      id: LoadoutSecurityEyesHudSecurityPrescription
+    - type: loadout
+      id: LoadoutClothingEyesGlassesSecurity
+
 #- type: characterItemGroup
 #  id: LoadoutSecurityGloves
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutSecurityHead
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSecurityHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityHeadHatBeret
+    - type: loadout
+      id: LoadoutClothingHeadHelmetBasic
+    - type: loadout
+      id: LoadoutSecurityHeadHelmetInsulated
+
 #- type: characterItemGroup
 #  id: LoadoutSecurityId
 #  maxItems: 1
@@ -129,22 +157,48 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutSecurityMask
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutSecurityOuter
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutSecurityShoes
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutSecurityUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutSecurityMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityMaskGasSwat
+
+- type: characterItemGroup
+  id: LoadoutSecurityOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingOuterArmorPlateCarrier
+    - type: loadout
+      id: LoadoutClothingOuterArmorDuraVest
+    - type: loadout
+      id: LoadoutClothingOuterArmorBasic
+    - type: loadout
+      id: LoadoutClothingOuterArmorSlim
+
+- type: characterItemGroup
+  id: LoadoutSecurityShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityShoesJackboots
+    - type: loadout
+      id: LoadoutClothingShoesBootsCombat
+
+- type: characterItemGroup
+  id: LoadoutSecurityUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityUniformJumpsuitBlue
+    - type: loadout
+      id: LoadoutSecurityUniformJumpsuitGrey
+    - type: loadout
+      id: LoadoutSecurityUniformJumpskirtGrey
+    - type: loadout
+      id: LoadoutSecurityUniformJumpskirtBlue
+    - type: loadout
+      id: LoadoutUniformJumpsuitSecFormal
+    - type: loadout
+      id: LoadoutUniformJumpsuitSecSummer

@@ -87,6 +87,8 @@
   id: LoadoutBartenderUniforms
   items:
     - type: loadout
+      id: LoadoutServiceBartenderUniformPurple
+    - type: loadout
       id: LoadoutServiceJumpsuitBartenderNt
     - type: loadout
       id: LoadoutServiceJumpsuitBartenderIdris

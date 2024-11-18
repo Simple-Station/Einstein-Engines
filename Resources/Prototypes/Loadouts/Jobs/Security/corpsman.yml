@@ -9,35 +9,35 @@
     - ClothingBackpackBrigmedicFilled
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
+      group: LoadoutCorpsmanBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
 
 - type: loadout
   id: LoadoutCorpsmanBackpackSatchel
-  category: Backpacks
+  category: JobsSecurityCorpsman
   cost: 0
   exclusive: true
   items:
     - ClothingBackpackSatchelBrigmedicFilled
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
+      group: LoadoutCorpsmanBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
 
 - type: loadout
   id: LoadoutCorpsmanBackpackDuffel
-  category: Backpacks
+  category: JobsSecurityCorpsman
   cost: 0
   exclusive: true
   items:
     - ClothingBackpackDuffelBrigmedicFilled
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
+      group: LoadoutCorpsmanBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
@@ -50,7 +50,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBeltSecurity
+      group: LoadoutCorpsmanBelt
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
@@ -71,7 +71,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGlovesSecurity
+      group: LoadoutCorpsmanGloves
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
@@ -86,7 +86,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadSecurity
+      group: LoadoutCorpsmanHead
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
@@ -100,7 +100,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadSecurity
+      group: LoadoutCorpsmanHead
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
@@ -117,7 +117,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeckSecurity
+      group: LoadoutCorpsmanNeck
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic

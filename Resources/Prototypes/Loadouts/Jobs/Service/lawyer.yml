@@ -26,12 +26,12 @@
 # Uniforms
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSuit
-  category: JobsServiceAUncategorized
+  category: JobsServiceLawyer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutLawyerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -40,12 +40,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformBlueSkirt
-  category: JobsServiceAUncategorized
+  category: JobsServiceLawyer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutLawyerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -54,12 +54,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformRedSuit
-  category: JobsServiceAUncategorized
+  category: JobsServiceLawyer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutLawyerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -68,12 +68,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformRedSkirt
-  category: JobsServiceAUncategorized
+  category: JobsServiceLawyer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutLawyerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -82,12 +82,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformPurpleSuit
-  category: JobsServiceAUncategorized
+  category: JobsServiceLawyer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutLawyerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -96,12 +96,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformPurpleSkirt
-  category: JobsServiceAUncategorized
+  category: JobsServiceLawyer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutLawyerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -110,12 +110,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformGoodSuit
-  category: JobsServiceAUncategorized
+  category: JobsServiceLawyer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutLawyerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer
@@ -124,12 +124,12 @@
 
 - type: loadout
   id: LoadoutServiceLawyerUniformGoodSkirt
-  category: JobsServiceAUncategorized
+  category: JobsServiceLawyer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutLawyerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Lawyer

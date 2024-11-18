@@ -49,11 +49,15 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutDetectiveOuter
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutDetectiveOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingOuterCoatDetective
+    - type: loadout
+      id: LoadoutOuterVestDetective
+
 #- type: characterItemGroup
 #  id: LoadoutDetectiveShoes
 #  maxItems: 1

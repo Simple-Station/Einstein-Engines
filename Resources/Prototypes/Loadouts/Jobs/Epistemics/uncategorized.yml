@@ -15,7 +15,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyesScience
+      group: LoadoutEpistemicsEyes
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -29,7 +29,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyesScience
+      group: LoadoutEpistemicsEyes
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -44,7 +44,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGlovesScience
+      group: LoadoutEpistemicsGloves
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -58,7 +58,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGlovesScience
+      group: LoadoutEpistemicsGloves
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -72,7 +72,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGlovesScience
+      group: LoadoutEpistemicsGloves
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -87,7 +87,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
+      group: LoadoutEpistemicsHead
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -101,7 +101,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
+      group: LoadoutEpistemicsHead
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -117,7 +117,7 @@
     - ClothingHeadTechPriest
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
+      group: LoadoutEpistemicsHead
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -132,7 +132,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeckScience
+      group: LoadoutEpistemicsNeck
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -146,7 +146,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeckScience
+      group: LoadoutEpistemicsNeck
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -160,7 +160,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeckScience
+      group: LoadoutEpistemicsNeck
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -177,7 +177,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutEpistemicsOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -191,7 +191,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutEpistemicsOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -199,13 +199,13 @@
     - ClothingOuterCoatLab
 
 - type: loadout
-  id: LoadoutSciencegOuterCoatRobo
+  id: LoadoutScienceOuterCoatRobo
   category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutEpistemicsOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -219,7 +219,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutEpistemicsOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -233,7 +233,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutEpistemicsOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
@@ -248,7 +248,7 @@
     - ClothingOuterRobeTechPriest
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutEpistemicsOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics

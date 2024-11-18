@@ -4,11 +4,15 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutSeniorPhysicianBelt
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSeniorPhysicianBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSeniorPhysicianBeltMedical
+    - type: loadout
+      id: LoadoutSeniorPhysicianBeltMedicalAdvancedFilled
+
 #- type: characterItemGroup
 #  id: LoadoutSeniorPhysicianEars
 #  maxItems: 1
@@ -29,11 +33,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutSeniorPhysicianHead
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSeniorPhysicianHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalHeadBeretSeniorPhysician
+
 #- type: characterItemGroup
 #  id: LoadoutSeniorPhysicianId
 #  maxItems: 1
@@ -59,7 +65,11 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutSeniorPhysicianUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutSeniorPhysicianUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalUniformJumpskirtSenior
+    - type: loadout
+      id: LoadoutMedicalUniformJumpsuitSenior

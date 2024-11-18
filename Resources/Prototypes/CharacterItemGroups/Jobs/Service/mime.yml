@@ -39,26 +39,38 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutMimeNeck
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMimeMask
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMimeOuter
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMimeShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMimeNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceMimeBedsheetMime
+
+- type: characterItemGroup
+  id: LoadoutMimeMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceMimeMaskSad
+    - type: loadout
+      id: LoadoutServiceMimeMaskScared
+    - type: loadout
+      id: LoadoutServiceMimeMaskSexy
+
+- type: characterItemGroup
+  id: LoadoutMimeOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceMimeOuterWinter
+
+- type: characterItemGroup
+  id: LoadoutMimeShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceMimeShoesBootsWinter
+
 #- type: characterItemGroup
 #  id: LoadoutMimeUniforms
 #  maxItems: 1

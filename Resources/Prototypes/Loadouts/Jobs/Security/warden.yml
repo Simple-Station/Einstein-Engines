@@ -19,7 +19,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadSecurity
+      group: LoadoutWardenHead
     - !type:CharacterJobRequirement
       jobs:
         - Warden
@@ -40,7 +40,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterSecurity
+      group: LoadoutWardenOuter
     - !type:CharacterJobRequirement
       jobs:
         - Warden

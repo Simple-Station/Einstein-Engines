@@ -21,7 +21,7 @@
 
 - type: characterItemGroup
   maxItems: 1
-  id: LoadoutHoSWeapon
+  id: LoadoutHeadOfSecurityWeapon
   items:
     - type: loadout
       id: LoadoutCommandHoSPulsePistol
@@ -48,37 +48,73 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutHeadOfSecurityHead
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutHeadOfSecurityId
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutHeadOfSecurityNeck
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHOSHatBeret
+    - type: loadout
+      id: LoadoutCommandHOSHatHoshat
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityId
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutHeadOfSecurityNTPDA
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHOSNeckMantle
+    - type: loadout
+      id: LoadoutCommandHOSNeckCloak
+
 #- type: characterItemGroup
 #  id: LoadoutHeadOfSecurityMask
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutHeadOfSecurityOuter
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutHeadOfSecurityShoes
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutHeadOfSecurityUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHOSOuterWinter
+    - type: loadout
+      id: LoadoutCommandHOSOuterTrench
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHOSShoesBootsWinter
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutUniformJumpskirtHoSBlue
+    - type: loadout
+      id: LoadoutUniformJumpskirtHoSGrey
+    - type: loadout
+      id: LoadoutCommandHOSJumpsuitAlt
+    - type: loadout
+      id: LoadoutCommandHOSJumpsuitBlue
+    - type: loadout
+      id: LoadoutCommandHOSJumpsuitGrey
+    - type: loadout
+      id: LoadoutCommandHOSJumpsuitParade
+    - type: loadout
+      id: LoadoutCommandHOSJumpsuitFormal
+    - type: loadout
+      id: LoadoutCommandHOSJumpskirtAlt
+    - type: loadout
+      id: LoadoutCommandHOSJumpskirtParade
+    - type: loadout
+      id: LoadoutCommandHOSJumpskirtFormal

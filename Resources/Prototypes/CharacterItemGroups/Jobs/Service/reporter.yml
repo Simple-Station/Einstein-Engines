@@ -59,7 +59,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutReporterUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutReporterUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceReporterUniformDetectivesuit
+    - type: loadout
+      id: LoadoutServiceReporterUniformDetectiveskirt
+    - type: loadout
+      id: LoadoutServiceReporterUniformJournalist

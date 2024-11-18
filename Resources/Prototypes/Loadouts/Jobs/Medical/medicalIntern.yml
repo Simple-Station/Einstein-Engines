@@ -18,7 +18,7 @@
 
 - type: loadout
   id: LoadoutMedicalInternBeltMedicalFilled
-  category: JobsMedicalAUncategorized
+  category: JobsMedicalMedicalIntern
   cost: 0
   exclusive: true
   requirements:

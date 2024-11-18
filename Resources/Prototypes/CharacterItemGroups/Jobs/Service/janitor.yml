@@ -59,7 +59,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutJanitorUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutJanitorUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceJumpsuitJanitorNt
+    - type: loadout
+      id: LoadoutServiceJumpsuitJanitorIdris
+    - type: loadout
+      id: LoadoutServiceJumpsuitJanitorOrion

@@ -17,7 +17,7 @@
     - ClothingBeltMedical
 
 - type: loadout
-  id: LoadoutMedicalBeltMedicalFilled
+  id: LoadoutMedicalDoctorBeltMedicalFilled
   category: JobsMedicalMedicalDoctor
   cost: 0
   exclusive: true
@@ -31,7 +31,7 @@
     - ClothingBeltMedicalFilled
 
 - type: loadout
-  id: LoadoutMedicalBeltMedicalAdvancedFilled
+  id: LoadoutMedicalDoctorBeltMedicalAdvancedFilled
   category: JobsMedicalMedicalDoctor
   cost: 2
   exclusive: true

@@ -57,20 +57,6 @@
         - Medical
 
 - type: loadout
-  id: LoadoutBackpackSatchelChemistry
-  category: JobsMedicalAUncategorized
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelChemistry
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-
-- type: loadout
   id: LoadoutBackpackSatchelVirology
   category: JobsMedicalAUncategorized
   cost: 0
@@ -105,20 +91,6 @@
   exclusive: true
   items:
     - ClothingBackpackDuffelMedical
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-
-- type: loadout
-  id: LoadoutBackpackDuffelChemistry
-  category: JobsMedicalAUncategorized
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelChemistry
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalBackpacks

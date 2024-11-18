@@ -123,7 +123,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderOuterwear
+      group: LoadoutBartenderOuter
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
@@ -137,7 +137,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderOuterwear
+      group: LoadoutBartenderOuter
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
@@ -151,7 +151,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderOuterwear
+      group: LoadoutBartenderOuter
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
@@ -165,7 +165,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderOuterwear
+      group: LoadoutBartenderOuter
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
@@ -182,7 +182,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutBartenderUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Bartender

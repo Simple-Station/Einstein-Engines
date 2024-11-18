@@ -4,11 +4,17 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutMedicalDoctorBelt
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMedicalDoctorBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalDoctorBeltMedical
+    - type: loadout
+      id: LoadoutMedicalDoctorBeltMedicalFilled
+    - type: loadout
+      id: LoadoutMedicalDoctorBeltMedicalAdvancedFilled
+
 #- type: characterItemGroup
 #  id: LoadoutMedicalDoctorEars
 #  maxItems: 1
@@ -29,11 +35,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutMedicalDoctorHead
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMedicalDoctorHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalHeadNurse
+
 #- type: characterItemGroup
 #  id: LoadoutMedicalDoctorId
 #  maxItems: 1
@@ -59,7 +67,11 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutMedicalDoctorUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutMedicalDoctorUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalDoctorJumpsuit
+    - type: loadout
+      id: LoadoutMedicalDoctorJumpskirt

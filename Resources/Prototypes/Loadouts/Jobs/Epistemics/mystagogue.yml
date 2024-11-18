@@ -92,7 +92,7 @@
       tracker: JobResearchDirector
       min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerId
+      group: LoadoutMystagogueId
     - !type:CharacterJobRequirement
       jobs:
         - ResearchDirector
@@ -141,6 +141,20 @@
         - ResearchDirector
   items:
     - ClothingNeckCloakMystagogue
+
+- type: loadout
+  id: LoadoutMystagogueNeckSciencemedal
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingNeckSciencemedal
 
 # Mask
 

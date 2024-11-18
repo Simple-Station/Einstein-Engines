@@ -5,6 +5,10 @@
   items:
     - type: loadout
       id: LoadoutBackpackSalvage
+    - type: loadout
+      id: LoadoutSalvageBackpackSatchel
+    - type: loadout
+      id: LoadoutSalvageBackpackDuffel
 
 #- type: characterItemGroup
 #  id: LoadoutSalvageSpecialistBelt

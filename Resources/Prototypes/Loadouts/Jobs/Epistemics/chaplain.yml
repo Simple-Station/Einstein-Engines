@@ -46,7 +46,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
+      group: LoadoutChaplainHead
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
@@ -60,7 +60,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
+      group: LoadoutChaplainHead
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
@@ -74,7 +74,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
+      group: LoadoutChaplainHead
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
@@ -88,7 +88,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadScience
+      group: LoadoutChaplainHead
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
@@ -105,7 +105,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeckScience
+      group: LoadoutChaplainNeck
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
@@ -120,7 +120,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMaskScience
+      group: LoadoutChaplainMask
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
@@ -135,7 +135,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutChaplainOuter
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
@@ -149,7 +149,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutChaplainOuter
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
@@ -163,7 +163,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutChaplainOuter
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
@@ -177,7 +177,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutChaplainOuter
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain

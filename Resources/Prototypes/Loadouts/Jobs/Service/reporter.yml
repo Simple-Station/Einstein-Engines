@@ -26,12 +26,12 @@
 # Uniforms
 - type: loadout
   id: LoadoutServiceReporterUniformDetectivesuit
-  category: JobsServiceAUncategorized
+  category: JobsServiceReporter
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutReporterUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Reporter
@@ -40,12 +40,12 @@
 
 - type: loadout
   id: LoadoutServiceReporterUniformDetectiveskirt
-  category: JobsServiceAUncategorized
+  category: JobsServiceReporter
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutReporterUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Reporter
@@ -54,12 +54,12 @@
 
 - type: loadout
   id: LoadoutServiceReporterUniformJournalist
-  category: JobsServiceAUncategorized
+  category: JobsServiceReporter
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutReporterUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Reporter

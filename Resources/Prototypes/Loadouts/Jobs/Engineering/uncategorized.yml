@@ -113,7 +113,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadEngineering
+      group: LoadoutEngineeringHead
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
@@ -127,7 +127,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadEngineering
+      group: LoadoutEngineeringHead
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
@@ -141,7 +141,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadEngineering
+      group: LoadoutEngineeringHead
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
@@ -155,7 +155,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadEngineering
+      group: LoadoutEngineeringHead
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
@@ -169,7 +169,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadEngineering
+      group: LoadoutEngineeringHead
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
@@ -183,7 +183,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadEngineering
+      group: LoadoutEngineeringHead
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
@@ -204,7 +204,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterEngineering
+      group: LoadoutEngineeringOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering

@@ -43,7 +43,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCataloguerUniforms
+      group: LoadoutCatalogerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Librarian
@@ -57,7 +57,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCataloguerUniforms
+      group: LoadoutCatalogerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Librarian
@@ -71,7 +71,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCataloguerUniforms
+      group: LoadoutCatalogerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Librarian
@@ -85,7 +85,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCataloguerUniforms
+      group: LoadoutCatalogerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Librarian
@@ -99,7 +99,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCataloguerUniforms
+      group: LoadoutCatalogerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Librarian
@@ -113,7 +113,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCataloguerUniforms
+      group: LoadoutCatalogerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Librarian
@@ -127,7 +127,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCataloguerUniforms
+      group: LoadoutCatalogerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Librarian
@@ -141,7 +141,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCataloguerUniforms
+      group: LoadoutCatalogerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Librarian
@@ -155,7 +155,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCataloguerUniforms
+      group: LoadoutCatalogerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Librarian

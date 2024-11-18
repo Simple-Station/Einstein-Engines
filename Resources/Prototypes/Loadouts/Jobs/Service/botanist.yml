@@ -31,7 +31,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsService
+      group: LoadoutBotanistUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Botanist

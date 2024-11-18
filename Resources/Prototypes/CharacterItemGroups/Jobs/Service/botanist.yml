@@ -58,7 +58,15 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutBotanistUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutBotanistUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceBotanistUniformOveralls
+    - type: loadout
+      id: LoadoutServiceJumpsuitHydroponicsNt
+    - type: loadout
+      id: LoadoutServiceJumpsuitHydroponicsIdris
+    - type: loadout
+      id: LoadoutServiceJumpsuitHydroponicsOrion

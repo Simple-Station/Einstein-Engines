@@ -12,6 +12,18 @@
 # Gloves
 
 # Head
+- type: loadout
+  id: LoadoutCommandQMHeadSoft
+  category: JobsLogisticsLogisticsOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - ClothingHeadHatQMsoft
 
 # Id
 - type: loadout
@@ -24,7 +36,7 @@
       tracker: JobQuartermaster
       min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutQuartermasterId
+      group: LoadoutLogisticsOfficerId
     - !type:CharacterJobRequirement
       jobs:
         - Quartermaster
@@ -32,33 +44,48 @@
     - QuartermasterNTPDA
 
 # Neck
-
-# Mask
-
-# Outer
-
-# Shoes
-
-# Uniforms
-
 - type: loadout
   id: LoadoutCommandQMNeckCloak
   category: JobsLogisticsLogisticsOfficer
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerNeck
     - !type:CharacterJobRequirement
       jobs:
         - Quartermaster
   items:
     - ClothingNeckCloakQm
 
+# Mask
+
+# Outer
+
+# Shoes
+- type: loadout
+  id: LoadoutCommandQMShoesBootsWinter
+  category: JobsLogisticsLogisticsOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - ClothingShoesBootsWinterLogisticsOfficer
+
+# Uniforms
 - type: loadout
   id: LoadoutCommandQMUniformTurtleneck
   category: JobsLogisticsLogisticsOfficer
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Quartermaster
@@ -71,31 +98,10 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Quartermaster
   items:
     - ClothingUniformJumpskirtQMTurtleneck
-
-- type: loadout
-  id: LoadoutCommandQMHeadSoft
-  category: JobsLogisticsLogisticsOfficer
-  cost: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Quartermaster
-  items:
-    - ClothingHeadHatQMsoft
-
-- type: loadout
-  id: LoadoutCommandQMShoesBootsWinter
-  category: JobsLogisticsLogisticsOfficer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Quartermaster
-  items:
-    - ClothingShoesBootsWinterLogisticsOfficer
