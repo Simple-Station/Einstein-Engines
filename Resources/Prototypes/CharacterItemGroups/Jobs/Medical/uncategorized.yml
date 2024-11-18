@@ -24,10 +24,10 @@
     - type: loadout
       id: LoadoutBackpackMedicalDuffelSurgeryFilled
 
-- type: characterItemGroup
-  id: LoadoutMedicalBelt
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutMedicalBelt
+#  maxItems: 1
+#  items:
 
 #- type: characterItemGroup
 #  id: LoadoutMedicalEars
