@@ -15,7 +15,7 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutSeniorPhysicianBelt
     - !type:CharacterJobRequirement
-      Jobs:
+      jobs:
         - MedicalDoctor
   items:
     - ClothingBeltMedical
@@ -29,7 +29,7 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutSeniorPhysicianBelt
     - !type:CharacterJobRequirement
-      Jobs:
+      jobs:
         - SeniorPhysician
   items:
     - ClothingBeltMedicalAdvancedFilled
