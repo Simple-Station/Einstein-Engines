@@ -22,15 +22,15 @@
     - type: loadout
       id: LoadoutCaptainSwordSheath
 
-- type: characterItemGroup
-  id: LoadoutCaptainEars
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutCaptainEars
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutCaptainEquipment
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutCaptainEquipment
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutCaptainTrinkets
