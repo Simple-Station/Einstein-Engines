@@ -90,7 +90,7 @@ public sealed class LifeDrainerSystem : EntitySystem
         _audio.PlayPvs(comp.FinishSound, uid);
 
         _damageable.TryChangeDamage(target, comp.Damage, true, origin: uid);
-        _psionicAbilitiesSystem.MindBreak(uid);
+        _psionicAbilitiesSystem.MindBreak(target);
     }
 
     public bool CanDrain(Entity<LifeDrainerComponent> ent, EntityUid target)
