@@ -7926,3 +7926,17 @@ Entries:
   id: 6523
   time: '2024-11-17T00:32:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1159
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed stamina system
+  id: 6524
+  time: '2024-11-18T02:17:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1245
+- author: DocNITE
+  changes:
+    - type: Add
+      message: Added Day/Night time cycle for admins and mapers.
+  id: 6525
+  time: '2024-11-18T02:20:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1234
