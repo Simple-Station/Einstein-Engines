@@ -163,7 +163,7 @@
 # Id
 - type: loadout
   id: LoadoutHeadOfPersonnelNTPDA
-  category: JobsMedicalChiefMedicalOfficer
+  category: JobsCommandHeadOfPersonnel
   cost: 0
   exclusive: true
   requirements:
