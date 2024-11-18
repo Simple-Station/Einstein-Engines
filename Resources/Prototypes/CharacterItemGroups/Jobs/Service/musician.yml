@@ -1,5 +1,21 @@
+# Musician
+#- type: characterItemGroup
+#  id: LoadoutMusicianBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianEars
+#  maxItems: 1
+#  items:
+#
 - type: characterItemGroup
-  id: LoadoutMusicianInstruments
+  id: LoadoutMusicianEquipment
   maxItems: 3
   items:
   # Brass
@@ -92,3 +108,48 @@
       id: LoadoutItemOcarinaInstrumentMusician
     - type: loadout
       id: LoadoutItemBagpipeInstrumentMusician
+
+#- type: characterItemGroup
+#  id: LoadoutMusicianEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianShoes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianUniforms
+#  maxItems: 1
+#  items:

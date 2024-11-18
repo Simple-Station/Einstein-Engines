@@ -14,7 +14,7 @@
   cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEquipmentService
+      group: LoadoutServiceEquipment
     - !type:CharacterLogicXorRequirement
       requirements:
         - !type:CharacterLogicAndRequirement

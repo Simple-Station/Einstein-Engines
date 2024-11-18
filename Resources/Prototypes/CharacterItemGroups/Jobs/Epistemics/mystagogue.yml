@@ -10,15 +10,31 @@
     - type: loadout
       id: LoadoutMystagogueBackpacksDuffel
 
-- type: characterItemGroup
-  id: LoadoutMystagogueOuter
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutCommandRDOuterWinter
-    - type: loadout
-      id: LoadoutCommandRDOuterMysta
-
+#- type: characterItemGroup
+#  id: LoadoutMystagogueBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMystagogueEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMystagogueEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMystagogueEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMystagogueGloves
+#  maxItems: 1
+#  items:
+#
 - type: characterItemGroup
   id: LoadoutMystagogueHead
   maxItems: 1
@@ -28,6 +44,11 @@
     - type: loadout
       id: LoadoutCommandRDHeadHoodMysta
 
+#- type: characterItemGroup
+#  id: LoadoutMystagogueId
+#  maxItems: 1
+#  items:
+#
 - type: characterItemGroup
   id: LoadoutMystagogueNeck
   maxItems: 1
@@ -38,6 +59,20 @@
       id: LoadoutCommandRDNeckCloak
     - type: loadout
       id: LoadoutCommandRDNeckCloakMystagogue
+
+#- type: characterItemGroup
+#  id: LoadoutMystagogueMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMystagogueOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandRDOuterWinter
+    - type: loadout
+      id: LoadoutCommandRDOuterMysta
 
 - type: characterItemGroup
   id: LoadoutMystagogueShoes

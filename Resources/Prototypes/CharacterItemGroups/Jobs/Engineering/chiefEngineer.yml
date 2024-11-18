@@ -18,10 +18,10 @@
     - type: loadout
       id: LoadoutChiefEngineerBeltFilled
 
-- type: characterItemGroup
-  id: LoadoutChiefEngineerEars
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerEars
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutChiefEngineerEquipment
@@ -36,25 +36,25 @@
     - type: loadout
       id: LoadoutChiefEngineerEquipmentRCDAmmoSpare
 
-- type: characterItemGroup
-  id: LoadoutChiefEngineerEyes
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerEyes
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutChiefEngineerGloves
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerGloves
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutChiefEngineerHead
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerHead
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutChiefEngineerId
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerId
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutChiefEngineerNeck
@@ -67,10 +67,10 @@
     - type: loadout
       id: LoadoutEngineeringChiefEngineerNeckEngineerMedal
 
-- type: characterItemGroup
-  id: LoadoutChiefEngineerMask
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerMask
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutChiefEngineerOuter

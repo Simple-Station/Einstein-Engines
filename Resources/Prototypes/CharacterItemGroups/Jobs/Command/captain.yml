@@ -81,10 +81,10 @@
     - type: loadout
       id: LoadoutCommandCapHatBeret
 
-- type: characterItemGroup
-  id: LoadoutCaptainId
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutCaptainId
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutCaptainNeck

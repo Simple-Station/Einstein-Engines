@@ -1,7 +1,7 @@
-- type: characterItemGroup
-  id: LoadoutSeniorEngineerBackpacks
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerBackpacks
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutSeniorEngineerBelt
@@ -14,10 +14,10 @@
     - type: loadout
       id: LoadoutSeniorEngineerBeltUtilityAtmos
 
-- type: characterItemGroup
-  id: LoadoutSeniorEngineerEars
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerEars
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutSeniorEngineerEquipment
@@ -30,45 +30,45 @@
     - type: loadout
       id: LoadoutSeniorEngineerEquipmentRCD
 
-- type: characterItemGroup
-  id: LoadoutSeniorEngineerEyes
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerEyes
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutSeniorEngineerGloves
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerGloves
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutSeniorEngineerHead
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerHead
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutSeniorEngineerId
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerId
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutSeniorEngineerNeck
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerNeck
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutSeniorEngineerMask
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerMask
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutSeniorEngineerOuter
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerOuter
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutSeniorEngineerShoes
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerShoes
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutSeniorEngineerUniforms

@@ -20,15 +20,15 @@
     - type: loadout
       id: LoadoutHeadOfPersonnelBeltClipboard
 
-- type: characterItemGroup
-  id: LoadoutHeadOfPersonnelEars
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutHeadOfPersonnelEars
+#  maxItems: 1
+#  items:
 
-- type: characterItemGroup
-  id: LoadoutHeadOfPersonnelEquipment
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutHeadOfPersonnelEquipment
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutHeadOfPersonnelTrinkets
@@ -39,10 +39,10 @@
     - type: loadout
       id: LoadoutHeadOfPersonnelBookIanDossier
 
-- type: characterItemGroup
-  id: LoadoutHeadOfPersonnelEyes
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutHeadOfPersonnelEyes
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutHeadOfPersonnelGloves
@@ -60,10 +60,10 @@
     - type: loadout
       id: LoadoutCommandHOPHatCap
 
-- type: characterItemGroup
-  id: LoadoutHeadOfPersonnelId
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutHeadOfPersonnelId
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutHeadOfPersonnelNeck
@@ -78,10 +78,10 @@
     - type: loadout
       id: LoadoutHeadOfPersonnelNeckGoldMedal
 
-- type: characterItemGroup
-  id: LoadoutHeadOfPersonnelMask
-  maxItems: 1
-  items:
+#- type: characterItemGroup
+#  id: LoadoutHeadOfPersonnelMask
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutHeadOfPersonnelOuter

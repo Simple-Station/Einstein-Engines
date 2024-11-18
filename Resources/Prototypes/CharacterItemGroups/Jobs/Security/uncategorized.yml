@@ -1,112 +1,22 @@
-- type: characterItemGroup
-  id: LoadoutUniformsSecurity
-  items:
-    - type: loadout
-      id: LoadoutSecurityUniformJumpsuitBlue
-    - type: loadout
-      id: LoadoutSecurityUniformJumpskirtBlue
-    - type: loadout
-      id: LoadoutSecurityUniformJumpsuitGrey
-    - type: loadout
-      id: LoadoutSecurityUniformJumpskirtGrey
-    - type: loadout
-      id: LoadoutUniformJumpsuitSecFormal
-    - type: loadout
-      id: LoadoutUniformJumpsuitSecSummer
-
-- type: characterItemGroup
-  id: LoadoutOuterSecurity
-  items:
-    - type: loadout
-      id: LoadoutClothingOuterArmorPlateCarrier
-    - type: loadout
-      id: LoadoutClothingOuterArmorDuraVest
-    - type: loadout
-      id: LoadoutClothingOuterCoatDetective
-    - type: loadout
-      id: LoadoutOuterVestDetective
-    - type: loadout
-      id: LoadoutClothingOuterArmorBasic
-    - type: loadout
-      id: LoadoutClothingOuterArmorSlim
-
-- type: characterItemGroup
-  id: LoadoutGlovesSecurity
-  items:
-    - type: loadout
-      id: LoadoutClothingHandsGlovesNitrile
-
-- type: characterItemGroup
-  id: LoadoutNeckSecurity
-  items:
-    - type: loadout
-      id: LoadoutClothingNeckCloakHos
-    - type: loadout
-      id: LoadoutClothingNeckMantleHOS
-    - type: loadout
-      id: LoadoutBedsheetBrigmedic
-
-- type: characterItemGroup
-  id: LoadoutHeadSecurity
-  items:
-    - type: loadout
-      id: LoadoutSecurityHeadHatBeret
-    - type: loadout
-      id: LoadoutClothingHeadHelmetBasic
-    - type: loadout
-      id: LoadoutClothingHeadHatBeretBrigmedic
-    - type: loadout
-      id: LoadoutClothingHeadHatBeretCorpsman
-    - type: loadout
-      id: LoadoutClothingHeadHatBeretWarden
-    - type: loadout
-      id: LoadoutClothingHeadHatBeretHoS
-    - type: loadout
-      id: LoadoutClothingHeadHelmetInsulated
-
-- type: characterItemGroup
-  id: LoadoutMaskSecurity
-  items:
-    - type: loadout
-      id: LoadoutSecurityMaskGasSwat
-
-- type: characterItemGroup
-  id: LoadoutBeltSecurity
-  items:
-    - type: loadout
-      id: LoadoutSecurityBeltWebbing
-    - type: loadout
-      id: LoadoutClothingBeltCorpsmanWebbing
-    - type: loadout
-      id: LoadoutClothingBeltSecurity
-    - type: loadout
-      id: LoadoutClothingBeltHolster
-
-- type: characterItemGroup
-  id: LoadoutEyesSecurity
-  items:
-    - type: loadout
-      id: LoadoutSecurityEyesHudSecurity
-    - type: loadout
-      id: ClothingEyesGlassesSunglasses
-    - type: loadout
-      id: LoadoutSecurityEyesEyepatchHudSecurity
-    - type: loadout
-      id: LoadoutSecurityEyesHudSecurityPrescription
-    - type: loadout
-      id: LoadoutClothingEyesGlassesSecurity
-
-- type: characterItemGroup
-  id: LoadoutShoesSecurity
-  items:
-    - type: loadout
-      id: LoadoutSecurityShoesJackboots
-    - type: loadout
-      id: LoadoutClothingShoesBootsCombat
-
+# All Security
+#- type: characterItemGroup
+#  id: LoadoutSecurityBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSecurityBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSecurityEars
+#  maxItems: 1
+#  items:
+#
 - type: characterItemGroup
   maxItems: 5
-  id: LoadoutEquipmentSecurity
+  id: LoadoutSecurityEquipment
   items:
     - type: loadout
       id: LoadoutSecurityCombatKnife
@@ -139,7 +49,7 @@
 
 - type: characterItemGroup
   maxItems: 1
-  id: LoadoutWeaponSecurity
+  id: LoadoutSecurityWeapons
   items:
     - type: loadout
       id: LoadoutSecurityDisabler
@@ -194,32 +104,47 @@
     - type: loadout
       id: LoadoutSecurityRevolverPythonNonlethal
 
-- type: characterItemGroup
-  maxItems: 1
-  id: LoadoutBackSecurity
-  items:
-    - type: loadout
-      id: LoadoutClothingBackSecurity
-    - type: loadout
-      id: LoadoutClothingBackSecuritySatchel
-    - type: loadout
-      id: LoadoutClothingBackSecurityDuffel
-
-- type: characterItemGroup
-  maxItems: 1
-  id: LoadoutHoSWeapon
-  items:
-    - type: loadout
-      id: LoadoutCommandHoSPulsePistol
-    - type: loadout
-      id: LoadoutCommandHoSWt550
-    - type: loadout
-      id: LoadoutCommandHoSKatanaSheath
-    - type: loadout
-      id: LoadoutCommandHoSC20r
-    - type: loadout
-      id: LoadoutCommandHoSBulldog
-    - type: loadout
-      id: LoadoutCommandHoSEnergySword
-    - type: loadout
-      id: LoadoutCommandHoSEnergyGun
+#- type: characterItemGroup
+#  id: LoadoutSecurityEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSecurityGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSecurityHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSecurityId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSecurityNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSecurityMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSecurityOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSecurityShoes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSecurityUniforms
+#  maxItems: 1
+#  items:

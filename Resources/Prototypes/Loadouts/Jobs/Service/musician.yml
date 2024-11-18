@@ -14,7 +14,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -27,7 +27,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -40,7 +40,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -53,7 +53,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -67,7 +67,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -80,7 +80,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -95,7 +95,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -108,7 +108,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -121,7 +121,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -134,7 +134,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -147,7 +147,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -160,7 +160,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -173,7 +173,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -187,7 +187,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -200,7 +200,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -213,7 +213,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -226,7 +226,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -239,7 +239,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -252,7 +252,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -265,7 +265,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -278,7 +278,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -292,7 +292,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -305,7 +305,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -318,7 +318,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -331,7 +331,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -344,7 +344,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -357,7 +357,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -370,7 +370,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -383,7 +383,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -396,7 +396,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -409,7 +409,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -422,7 +422,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -435,7 +435,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -449,7 +449,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -462,7 +462,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -475,7 +475,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -488,7 +488,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -501,7 +501,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -514,7 +514,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -527,7 +527,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -540,7 +540,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -553,7 +553,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician

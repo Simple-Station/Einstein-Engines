@@ -1,3 +1,4 @@
+# All Engineering
 - type: characterItemGroup
   id: LoadoutEngineeringBackpacks
   maxItems: 1
@@ -9,15 +10,26 @@
     - type: loadout
       id: LoadoutBackpackDuffelEngineering
 
+#- type: characterItemGroup
+#  id: LoadoutEngineeringBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEngineeringEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEngineeringEquipment
+#  maxItems: 1
+#  items:
+#
 - type: characterItemGroup
-  id: LoadoutEngineeringUniforms
+  id: LoadoutEyesEngineering
   items:
     - type: loadout
-      id: LoadoutEngineeringUniformSuit
-    - type: loadout
-      id: LoadoutEngineeringUniformSkirt
-    - type: loadout
-      id: LoadoutEngineeringUniformHazard
+      id: LoadoutEngineeringEyesMeson
 
 - type: characterItemGroup
   id: LoadoutEngineeringGloves
@@ -29,12 +41,6 @@
       id: LoadoutEngineeringGlovesCombat
     - type: loadout
       id: LoadoutEngineeringGlovesMerc
-
-- type: characterItemGroup
-  id: LoadoutOuterEngineering
-  items:
-    - type: loadout
-      id: LoadoutEngineeringOuterHazard
 
 - type: characterItemGroup
   id: LoadoutHeadEngineering
@@ -52,8 +58,38 @@
     - type: loadout
       id: LoadoutEngineeringHeadHardhatYellow
 
+#- type: characterItemGroup
+#  id: LoadoutEngineeringId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEngineeringNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEngineeringMask
+#  maxItems: 1
+#  items:
+#
 - type: characterItemGroup
-  id: LoadoutEyesEngineering
+  id: LoadoutOuterEngineering
   items:
     - type: loadout
-      id: LoadoutEngineeringEyesMeson
+      id: LoadoutEngineeringOuterHazard
+
+#- type: characterItemGroup
+#  id: LoadoutEngineeringShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutEngineeringUniforms
+  items:
+    - type: loadout
+      id: LoadoutEngineeringUniformSuit
+    - type: loadout
+      id: LoadoutEngineeringUniformSkirt
+    - type: loadout
+      id: LoadoutEngineeringUniformHazard
