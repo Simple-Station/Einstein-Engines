@@ -26,7 +26,7 @@
 # Uniforms
 - type: loadout
   id: LoadoutMedicalUniformParamedicJumpsuit
-  category: JobsMedicalAUncategorized
+  category: JobsMedicalParamedic
   cost: 0
   exclusive: true
   requirements:
@@ -40,7 +40,7 @@
 
 - type: loadout
   id: LoadoutMedicalUniformParamedicJumpskirt
-  category: JobsMedicalAUncategorized
+  category: JobsMedicalParamedic
   cost: 0
   exclusive: true
   requirements:

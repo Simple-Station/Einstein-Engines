@@ -345,7 +345,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfPersonnelUniform
+      group: LoadoutHeadOfPersonnelUniforms
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
@@ -359,7 +359,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfPersonnelUniform
+      group: LoadoutHeadOfPersonnelUniforms
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
@@ -373,7 +373,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfPersonnelUniform
+      group: LoadoutHeadOfPersonnelUniforms
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
@@ -387,7 +387,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfPersonnelUniform
+      group: LoadoutHeadOfPersonnelUniforms
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
@@ -401,7 +401,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfPersonnelUniform
+      group: LoadoutHeadOfPersonnelUniforms
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel
