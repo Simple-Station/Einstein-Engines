@@ -25,3 +25,16 @@
         reagents:
         - ReagentId: Cryptobiolin
           Quantity: 20
+
+- type: entity
+  name: pill canister (Cryptobiolin 20u)
+  parent: PillCanister
+  id: PillCanisterCryptobiolin
+  suffix: Cryptobiolin, 5
+  components:
+  - type: Label
+    currentLabel: Cryptobiolin 20u
+  - type: StorageFill
+    contents:
+    - id: PillCryptobiolin
+      amount: 5

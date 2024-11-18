@@ -598,6 +598,33 @@
       amount: 5
 
 - type: entity
+  name: pax
+  parent: Pill
+  id: PillPax
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Pax
+          Quantity: 10
+
+- type: entity
+  name: pill canister (Pax 10u)
+  parent: PillCanister
+  id: PillCanisterPax
+  suffix: Pax, 5
+  components:
+  - type: Label
+    currentLabel: Pax 10u
+  - type: StorageFill
+    contents:
+    - id: PillPax
+      amount: 5
+
+
+- type: entity
   name: pill (tricordrazine 10u)
   parent: Pill
   id: PillTricordrazine
