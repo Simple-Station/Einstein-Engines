@@ -84,7 +84,8 @@ public sealed partial class StaminaSystem : EntitySystem
         {
             RemCompDeferred<ActiveStaminaComponent>(uid);
         }
-        _alerts.ClearAlert(uid, component.StaminaAlert);
+
+        SetStaminaAlert(uid);
     }
 
     private void OnStartup(EntityUid uid, StaminaComponent component, ComponentStartup args)
@@ -229,7 +230,10 @@ public sealed partial class StaminaSystem : EntitySystem
     private void SetStaminaAlert(EntityUid uid, StaminaComponent? component = null)
     {
         if (!Resolve(uid, ref component, false) || component.Deleted)
+        {
+            _alerts.ClearAlert(uid, "Stamina");
             return;
+        }
 
         var severity = ContentHelpers.RoundToLevels(MathF.Max(0f, component.CritThreshold - component.StaminaDamage), component.CritThreshold, 7);
         _alerts.ShowAlert(uid, component.StaminaAlert, (short) severity);
@@ -420,7 +424,6 @@ public sealed partial class StaminaSystem : EntitySystem
         component.NextUpdate = _timing.CurTime;
         _movementSpeed.RefreshMovementSpeedModifiers(uid);
         SetStaminaAlert(uid, component);
-        RemComp<ActiveStaminaComponent>(uid);
         Dirty(uid, component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered from stamina crit");
     }
