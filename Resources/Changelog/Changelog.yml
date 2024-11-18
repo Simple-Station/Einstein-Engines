@@ -7974,3 +7974,15 @@ Entries:
   id: 6527
   time: '2024-11-18T04:29:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1247
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Surgery step descriptions (like making an incision, removing/attaching
+        limbs and organs) are now shown as popups to everyone in range upon the
+        start of the step. This makes it clear which surgical procedure is being
+        done and to which body part. No more stealthy brain-stealing in front of
+        everyone!
+  id: 6528
+  time: '2024-11-18T15:15:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1241
