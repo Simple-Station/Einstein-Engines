@@ -203,7 +203,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutAtmosphericTechnicianUniform
+      group: LoadoutAtmosphericTechnicianUniforms
     - !type:CharacterJobRequirement
       jobs:
         - AtmosphericTechnician
@@ -217,7 +217,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutAtmosphericTechnicianUniform
+      group: LoadoutAtmosphericTechnicianUniforms
     - !type:CharacterJobRequirement
       jobs:
         - AtmosphericTechnician

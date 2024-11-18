@@ -171,7 +171,7 @@
       tracker: JobHeadOfPersonnel
       min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfPersonnelHeadId
+      group: LoadoutHeadOfPersonnelId
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfPersonnel

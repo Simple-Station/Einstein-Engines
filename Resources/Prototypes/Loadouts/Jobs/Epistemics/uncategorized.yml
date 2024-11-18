@@ -261,7 +261,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoesScience
+      group: LoadoutEpistemicsShoes
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics

@@ -234,7 +234,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerUniform
+      group: LoadoutChiefEngineerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
@@ -248,7 +248,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerUniform
+      group: LoadoutChiefEngineerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer

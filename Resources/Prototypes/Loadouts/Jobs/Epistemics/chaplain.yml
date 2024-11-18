@@ -222,7 +222,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsScience
+      group: LoadoutChaplainUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
@@ -236,7 +236,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsScience
+      group: LoadoutChaplainUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain

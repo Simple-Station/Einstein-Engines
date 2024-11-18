@@ -49,11 +49,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisOuter
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutPsionicMantisOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceOuterWinterCoatMantis
+
 #- type: characterItemGroup
 #  id: LoadoutPsionicMantisShoes
 #  maxItems: 1

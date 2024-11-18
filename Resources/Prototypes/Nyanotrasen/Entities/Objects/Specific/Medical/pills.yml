@@ -38,3 +38,30 @@
     contents:
     - id: PillCryptobiolin
       amount: 5
+
+- type: entity
+  name: chloral-hydrate
+  parent: Pill
+  id: PillChloralHydrate
+  description: A powerful sedative.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: ChloralHydrate
+          Quantity: 20
+
+- type: entity
+  name: pill canister (Chloral-Hydrate 20u)
+  parent: PillCanister
+  id: PillCanisterChloralHydrate
+  suffix: ChloralHydrate, 5
+  components:
+  - type: Label
+    currentLabel: ChloralHydrate 20u
+  - type: StorageFill
+    contents:
+    - id: PillChloralHydrate
+      amount: 5

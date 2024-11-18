@@ -442,7 +442,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainUniform
+      group: LoadoutCaptainUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Captain
@@ -456,7 +456,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainUniform
+      group: LoadoutCaptainUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Captain
@@ -470,7 +470,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainUniform
+      group: LoadoutCaptainUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Captain
@@ -484,7 +484,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainUniform
+      group: LoadoutCaptainUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Captain

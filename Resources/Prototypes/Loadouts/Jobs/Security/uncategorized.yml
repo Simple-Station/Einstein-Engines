@@ -315,7 +315,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -331,7 +331,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -344,7 +344,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -360,7 +360,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -373,7 +373,7 @@
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -389,7 +389,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -402,7 +402,7 @@
   cost: 1
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -418,7 +418,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -431,7 +431,7 @@
   cost: 5
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -447,7 +447,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -460,7 +460,7 @@
   cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -476,7 +476,7 @@
       department: Security
       min: 108000 # 30 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -492,7 +492,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -511,7 +511,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -527,7 +527,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -543,7 +543,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -559,7 +559,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -572,7 +572,7 @@
   cost: 1
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -588,7 +588,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -601,7 +601,7 @@
   cost: 3
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -617,7 +617,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -630,7 +630,7 @@
   cost: 1
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -646,7 +646,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -659,7 +659,7 @@
   cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -675,7 +675,7 @@
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -688,7 +688,7 @@
   cost: 5
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapon
+      group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security

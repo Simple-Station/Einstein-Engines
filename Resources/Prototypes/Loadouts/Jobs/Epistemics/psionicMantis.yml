@@ -27,7 +27,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterScience
+      group: LoadoutPsionicMantisOuter
     - !type:CharacterJobRequirement
       jobs:
         - ForensicMantis

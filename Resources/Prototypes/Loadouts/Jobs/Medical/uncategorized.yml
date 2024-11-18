@@ -377,7 +377,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterMedical
+      group: LoadoutMedicalOuter
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -392,7 +392,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuterMedical
+      group: LoadoutMedicalOuter
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
@@ -411,7 +411,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsMedical
+      group: LoadoutMedicalUniforms
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
@@ -425,7 +425,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsMedical
+      group: LoadoutMedicalUniforms
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
@@ -439,7 +439,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsMedical
+      group: LoadoutMedicalUniforms
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
@@ -453,7 +453,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsMedical
+      group: LoadoutMedicalUniforms
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
@@ -467,7 +467,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsMedical
+      group: LoadoutMedicalUniforms
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
@@ -481,7 +481,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsMedical
+      group: LoadoutMedicalUniforms
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
@@ -495,7 +495,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsMedical
+      group: LoadoutMedicalUniforms
     - !type:CharacterJobRequirement
       jobs:
         - MedicalDoctor
