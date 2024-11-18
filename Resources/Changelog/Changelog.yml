@@ -8014,3 +8014,18 @@ Entries:
   id: 6530
   time: '2024-11-18T22:07:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1248
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Reorganized Loadouts so that all Jobs now have their own job specific
+        tabs. The code for them has been thoroughly reorganized too, such that
+        figuring out which jobs are missing crap is way easier to do.
+    - type: Add
+      message: >-
+        Captain's Personal Weapon loadout category. Currently only contains a
+        choice between the antique laser pistol, or a pulse pistol. Whichever
+        choice is made will be used as a target for a traitor objective.
+  id: 6531
+  time: '2024-11-18T22:08:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1230
