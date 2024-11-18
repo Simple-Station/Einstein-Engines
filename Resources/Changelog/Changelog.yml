@@ -8005,3 +8005,12 @@ Entries:
   id: 6529
   time: '2024-11-18T15:19:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1238
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Glimmer Wisps now completely obliterate their victim's Personhood,
+        inflicting the Mindbroken condition on them.
+  id: 6530
+  time: '2024-11-18T22:07:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1248
