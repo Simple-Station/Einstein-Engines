@@ -7940,3 +7940,37 @@ Entries:
   id: 6525
   time: '2024-11-18T02:20:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1234
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: You can now perform surgery as a monke. Rejoice.
+    - type: Add
+      message: >-
+        You can perform surgery on a lot of animals now, I missed a lot of them
+        so just ask if you want any particular critter to get it.
+    - type: Tweak
+      message: Entities now perish after 60 seconds of losing their heart and/or brain.
+    - type: Fix
+      message: Entities properly take asphyxiation damage after losing their brain.
+    - type: Fix
+      message: Torsos being gibbable, which would break surgery or just about anything.
+    - type: Fix
+      message: >-
+        Items not being removed from their respective slots if the parts were
+        gibbed rather than dropped.
+    - type: Fix
+      message: Animal organs not being usable properly in surgeries
+    - type: Fix
+      message: Cyborg limbs are now usable as pseudo-peg arm/legs.
+  id: 6526
+  time: '2024-11-18T04:03:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1240
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Examining yourself with the Self-Aware trait will no longer crash your
+        game client.
+  id: 6527
+  time: '2024-11-18T04:29:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1247
