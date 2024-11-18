@@ -9,7 +9,35 @@
     - ClothingBackpackCargo
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
+      group: LoadoutLogisticsBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+
+- type: loadout
+  id: LoadoutBackpackSatchelCargo
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelCargo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+
+- type: loadout
+  id: LoadoutBackpackDuffelCargo
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelCargo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsBackpacks
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics

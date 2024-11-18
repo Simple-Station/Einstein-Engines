@@ -91,17 +91,3 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
-
-- type: loadout
-  id: LoadoutBackpackSatchelCargo
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelCargo
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Logistics
