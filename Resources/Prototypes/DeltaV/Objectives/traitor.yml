@@ -7,6 +7,7 @@
     job: Quartermaster
   - type: StealCondition
     stealGroup: SpaceCashLuckyBill
+    verifyMapExistence: true
     # owner: job-name-qm
 
 - type: entity # Head of Personnel steal objective.
@@ -18,6 +19,7 @@
     job: HeadOfPersonnel
   - type: StealCondition
     stealGroup: BookIanDossier
+    verifyMapExistence: true
     # owner: job-name-hop
 
 - type: entity # Clerk steal objective.
@@ -29,4 +31,5 @@
     job: Clerk
   - type: StealCondition
     stealGroup: RubberStampNotary
+    verifyMapExistence: true
     owner: job-name-clerk

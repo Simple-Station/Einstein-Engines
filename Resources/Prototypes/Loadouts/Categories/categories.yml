@@ -31,47 +31,222 @@
   root: true
   subCategories:
     - JobsAUncategorized
-    - JobsCargo
     - JobsCommand
     - JobsEngineering
+    - JobsEpistemics
+    - JobsLogistics
     - JobsMedical
-    - JobsScience
     - JobsSecurity
     - JobsService
 
 - type: loadoutCategory
   id: JobsAUncategorized
 
-- type: loadoutCategory
-  id: JobsCargo
-
+# Command
+# Only Captain and HoP, Department Specific roles are under their respective Departments.
+# If we ever added Centcomm or Blueshield, that would go here.
 - type: loadoutCategory
   id: JobsCommand
+  subCategories:
+    - JobsCommandAUncategorized
+    - JobsCommandCaptain
+    - JobsCommandHeadOfPersonnel
 
+- type: loadoutCategory
+  id: JobsCommandAUncategorized
+
+- type: loadoutCategory
+  id: JobsCommandCaptain
+
+- type: loadoutCategory
+  id: JobsCommandHeadOfPersonnel
+
+# Engineering
 - type: loadoutCategory
   id: JobsEngineering
+  subCategories:
+    - JobsEngineeringAAUncategorized
+    - JobsEngineeringAtmosphericTechnician
+    - JobsEngineeringChiefEngineer
+    - JobsEngineeringSeniorEngineer
+    - JobsEngineeringStationEngineer
+    - JobsEngineeringTechnicalAssistant
 
+- type: loadoutCategory
+  id: JobsEngineeringAAUncategorized
+
+- type: loadoutCategory
+  id: JobsEngineeringAtmosphericTechnician
+
+- type: loadoutCategory
+  id: JobsEngineeringChiefEngineer
+
+- type: loadoutCategory
+  id: JobsEngineeringSeniorEngineer
+
+- type: loadoutCategory
+  id: JobsEngineeringStationEngineer
+
+- type: loadoutCategory
+  id: JobsEngineeringTechnicalAssistant
+
+# Epistemics
+- type: loadoutCategory
+  id: JobsEpistemics
+  subCategories:
+    - JobsEpistemicsAAUncategorized
+    - JobsEpistemicsAcolyte
+    - JobsEpistemicsCataloger
+    - JobsEpistemicsChaplain
+    - JobsEpistemicsGolemancer
+    - JobsEpistemicsMystagogue
+    - JobsEpistemicsMystic
+    - JobsEpistemicsNoviciate
+    - JobsEpistemicsPsionicMantis
+
+- type: loadoutCategory
+  id: JobsEpistemicsAAUncategorized
+
+- type: loadoutCategory
+  id: JobsEpistemicsAcolyte
+
+- type: loadoutCategory
+  id: JobsEpistemicsCataloger
+
+- type: loadoutCategory
+  id: JobsEpistemicsChaplain
+
+- type: loadoutCategory
+  id: JobsEpistemicsGolemancer
+
+- type: loadoutCategory
+  id: JobsEpistemicsMystagogue
+
+- type: loadoutCategory
+  id: JobsEpistemicsMystic
+
+- type: loadoutCategory
+  id: JobsEpistemicsNoviciate
+
+- type: loadoutCategory
+  id: JobsEpistemicsPsionicMantis
+
+# Logistics
+- type: loadoutCategory
+  id: JobsLogistics
+  subCategories:
+    - JobsLogisticsAUncategorized
+    - JobsLogisticsCargoTechnician
+    - JobsLogisticsCourier
+    - JobsLogisticsLogisticsOfficer
+    - JobsLogisticsSalvageSpecialist
+
+- type: loadoutCategory
+  id: JobsLogisticsAUncategorized
+
+- type: loadoutCategory
+  id: JobsLogisticsCargoTechnician
+
+- type: loadoutCategory
+  id: JobsLogisticsCourier
+
+- type: loadoutCategory
+  id: JobsLogisticsLogisticsOfficer
+
+- type: loadoutCategory
+  id: JobsLogisticsSalvageSpecialist
+
+# Medical
 - type: loadoutCategory
   id: JobsMedical
+  subCategories:
+    - JobsMedicalAUncategorized
+    - JobsMedicalChemist
+    - JobsMedicalChiefMedicalOfficer
+    - JobsMedicalMedicalDoctor
+    - JobsMedicalMedicalIntern
+    - JobsMedicalParamedic
+    - JobsMedicalPsychologist
+    - JobsMedicalSeniorPhysician
 
 - type: loadoutCategory
-  id: JobsScience
+  id: JobsMedicalAUncategorized
 
+- type: loadoutCategory
+  id: JobsMedicalChemist
+
+- type: loadoutCategory
+  id: JobsMedicalChiefMedicalOfficer
+
+- type: loadoutCategory
+  id: JobsMedicalMedicalDoctor
+
+- type: loadoutCategory
+  id: JobsMedicalMedicalIntern
+
+- type: loadoutCategory
+  id: JobsMedicalParamedic
+
+- type: loadoutCategory
+  id: JobsMedicalPsychologist
+
+- type: loadoutCategory
+  id: JobsMedicalSeniorPhysician
+
+# Security
 - type: loadoutCategory
   id: JobsSecurity
+  subCategories:
+    - JobsSecurityAUncategorized
+    - JobsSecurityCadet
+    - JobsSecurityCorpsman
+    - JobsSecurityDetective
+    - JobsSecurityHeadOfSecurity
+    - JobsSecuritySecurityOfficer
+    - JobsSecuritySeniorOfficer
+    - JobsSecurityWarden
 
+- type: loadoutCategory
+  id: JobsSecurityAUncategorized
+
+- type: loadoutCategory
+  id: JobsSecurityCadet
+
+- type: loadoutCategory
+  id: JobsSecurityCorpsman
+
+- type: loadoutCategory
+  id: JobsSecurityDetective
+
+- type: loadoutCategory
+  id: JobsSecurityHeadOfSecurity
+
+- type: loadoutCategory
+  id: JobsSecuritySecurityOfficer
+
+- type: loadoutCategory
+  id: JobsSecuritySeniorOfficer
+
+- type: loadoutCategory
+  id: JobsSecurityWarden
+
+# Service
 - type: loadoutCategory
   id: JobsService
   subCategories:
-    - JobsServiceUncategorized
+    - JobsServiceAUncategorized
     - JobsServiceBartender
     - JobsServiceBotanist
     - JobsServiceChef
+    - JobsServiceClown
     - JobsServiceJanitor
+    - JobsServiceLawyer
+    - JobsServiceMime
     - JobsServiceMusician
+    - JobsServiceReporter
 
 - type: loadoutCategory
-  id: JobsServiceUncategorized
+  id: JobsServiceAUncategorized
 
 - type: loadoutCategory
   id: JobsServiceBartender
@@ -83,10 +258,24 @@
   id: JobsServiceChef
 
 - type: loadoutCategory
+  id: JobsServiceClown
+
+- type: loadoutCategory
   id: JobsServiceJanitor
 
 - type: loadoutCategory
+  id: JobsServiceLawyer
+
+- type: loadoutCategory
+  id: JobsServiceMime
+
+- type: loadoutCategory
   id: JobsServiceMusician
+
+- type: loadoutCategory
+  id: JobsServiceReporter
+
+# Now Leaving: Jobs Category
 
 - type: loadoutCategory
   id: Mask

@@ -1,0 +1,80 @@
+- type: loadout
+  id: LoadoutBackpackDuffel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+
+- type: loadout
+  id: LoadoutBackpackDuffelSecurity
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelSecurity
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+
+- type: loadout
+  id: LoadoutBackpackDuffelMime
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelMime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+
+- type: loadout
+  id: LoadoutBackpackDuffelHydroponics
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelHydroponics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+
+- type: loadout
+  id: LoadoutBackpackDuffelScience
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelScience
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+
+- type: loadout
+  id: LoadoutBackpackDuffelRobotics
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelRobotics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics

@@ -1,0 +1,107 @@
+# Warden
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutClothingHeadHatBeretWarden
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingHeadHatBeretWarden
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutClothingOuterCoatWarden
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingOuterCoatWarden
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutUniformJumpsuitWardenBlue
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpsuitWardenBlue
+
+- type: loadout
+  id: LoadoutUniformJumpsuitWardenGrey
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpsuitWardenGrey
+
+- type: loadout
+  id: LoadoutUniformJumpskirtWardenBlue
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpskirtWardenBlue
+
+- type: loadout
+  id: LoadoutUniformJumpskirtWardenGrey
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpskirtWardenGrey
