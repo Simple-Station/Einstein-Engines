@@ -202,7 +202,6 @@ namespace Content.Server.Abilities.Psionics
         /// </summary>
         public void ScarierMindbreak(EntityUid uid)
         {
-            // I'm not guard clausing this for a reason. Sending the message needs to happen first.
             if (!_playerManager.TryGetSessionByEntity(uid, out var session) || session is null)
                 return;
 
