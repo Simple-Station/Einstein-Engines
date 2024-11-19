@@ -48,9 +48,6 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
             return;
 
         var targetStation = _random.Pick(stations);
-        if (!_mapManager.MapExists(Transform(targetStation).MapID))
-            return; /// SHUT UP HEISENTESTS. DIE.
-
         var randomOffset = _random.NextVector2(component.MinimumDistance, component.MaximumDistance);
 
         var outpostOptions = new MapLoadOptions
