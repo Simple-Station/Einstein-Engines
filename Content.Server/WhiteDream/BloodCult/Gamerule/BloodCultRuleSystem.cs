@@ -12,6 +12,7 @@ using Content.Server.NPC.Systems;
 using Content.Server.Roles;
 using Content.Server.RoundEnd;
 using Content.Server.StationEvents.Components;
+using Content.Server.WhiteDream.BloodCult.Items.BloodSpear;
 using Content.Server.WhiteDream.BloodCult.Objectives;
 using Content.Server.WhiteDream.BloodCult.Spells;
 using Content.Shared.Body.Systems;
@@ -41,8 +42,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AntagSelectionSystem _antagSelection = default!;
-
-    // [Dependency] private readonly BloodSpearSystem _bloodSpear = default!;
+    [Dependency] private readonly BloodSpearSystem _bloodSpear = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
@@ -296,25 +296,22 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         return potentialTargets.Count > 0 ? _random.Pick(potentialTargets) : null;
     }
 
-    private void RemoveAllCultItems(Entity<BloodCultistComponent> ent)
+    private void RemoveAllCultItems(Entity<BloodCultistComponent> cultist)
     {
-        if (!_inventorySystem.TryGetContainerSlotEnumerator(ent.Owner, out var enumerator))
+        if (!_inventorySystem.TryGetContainerSlotEnumerator(cultist.Owner, out var enumerator))
             return;
 
-        // TODO: Blood spear system
-        // _bloodSpear.DetachSpearFromUser((uid, component));
-
+        _bloodSpear.DetachSpearFromMaster(cultist);
         while (enumerator.MoveNext(out var container))
         {
             if (container.ContainedEntity != null && HasComp<CultItemComponent>(container.ContainedEntity.Value))
                 _container.Remove(container.ContainedEntity.Value, container, true, true);
         }
 
-        foreach (var item in _hands.EnumerateHeld(ent))
+        foreach (var item in _hands.EnumerateHeld(cultist))
         {
-            if (TryComp(item, out CultItemComponent? cultItem) &&
-                !cultItem.AllowUseToEveryone &&
-                !_hands.TryDrop(ent, item, null, false, false))
+            if (TryComp(item, out CultItemComponent? cultItem) && !cultItem.AllowUseToEveryone &&
+                !_hands.TryDrop(cultist, item, null, false, false))
                 QueueDel(item);
         }
     }

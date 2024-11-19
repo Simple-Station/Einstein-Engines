@@ -28,10 +28,7 @@ public sealed partial class BloodCultistComponent : Component, IAntagStatusIconC
     public ProtoId<LanguagePrototype> CultLanguageId { get; set; } = "Eldritch";
 
     [ViewVariables, NonSerialized]
-    public EntityUid? BloodSpearActionEntity;
-
-    // [ViewVariables, NonSerialized]
-    // public Entity<BloodSpearComponent>? BloodSpear;
+    public EntityUid? BloodSpear;
 
     [ViewVariables, NonSerialized]
     public Entity<MindComponent>? OriginalMind;

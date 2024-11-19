@@ -107,6 +107,7 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
     range: 2
+    attackRate: 0.7
   - type: DamageOtherOnHit
     damage:
       types:
@@ -129,8 +130,7 @@
   - type: UseDelay
   - type: DisarmMalus
   - type: CultItem
-#  - type: BloodSpear
-#    action: InstantActionRecallBloodSpear
+  - type: BloodSpear
 
 - type: entity
   parent: BaseItem
@@ -141,13 +141,19 @@
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Items/rites.rsi
     state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+    heavyStaminaCost: 0
+    maxTargets: 1
   - type: Unremoveable
   - type: BloodRitesAura
   - type: UserInterface
     interfaces:
-      enum.RadialSelectorUiKey.Key:
-        type: RadialSelectorMenuBUI
+      enum.BloodRitesUiKey.Key:
+        type: BloodRitesUi
   - type: ActivatableUI
-    key: enum.RadialSelectorUiKey.Key
+    key: enum.BloodRitesUiKey.Key
     inHandsOnly: true
     requireActiveHand: false

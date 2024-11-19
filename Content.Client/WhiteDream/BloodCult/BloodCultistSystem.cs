@@ -18,8 +18,6 @@ public sealed class BloodCultistSystem : EntitySystem
 
     public override void Initialize()
     {
-        base.Initialize();
-
         SubscribeLocalEvent<PentagramComponent, ComponentStartup>(OnPentagramAdded);
         SubscribeLocalEvent<PentagramComponent, ComponentShutdown>(OnPentagramRemoved);
 
@@ -30,10 +28,7 @@ public sealed class BloodCultistSystem : EntitySystem
 
     private void OnPentagramAdded(EntityUid uid, PentagramComponent component, ComponentStartup args)
     {
-        if (!TryComp<SpriteComponent>(uid, out var sprite))
-            return;
-
-        if (sprite.LayerMapTryGet(PentagramKey.Key, out _))
+        if (!TryComp<SpriteComponent>(uid, out var sprite) || sprite.LayerMapTryGet(PentagramKey.Key, out _))
             return;
 
         var adj = sprite.Bounds.Height / 2 + 1.0f / 32 * 10.0f;
@@ -48,10 +43,7 @@ public sealed class BloodCultistSystem : EntitySystem
 
     private void OnPentagramRemoved(EntityUid uid, PentagramComponent component, ComponentShutdown args)
     {
-        if (!TryComp<SpriteComponent>(uid, out var sprite))
-            return;
-
-        if (!sprite.LayerMapTryGet(PentagramKey.Key, out var layer))
+        if (!TryComp<SpriteComponent>(uid, out var sprite) || !sprite.LayerMapTryGet(PentagramKey.Key, out var layer))
             return;
 
         sprite.RemoveLayer(layer);
@@ -73,12 +65,9 @@ public sealed class BloodCultistSystem : EntitySystem
     /// </summary>
     private bool CanDisplayIcon(EntityUid? uid, bool visibleToGhost)
     {
-        if (HasComp<BloodCultistComponent>(uid) ||
-            HasComp<BloodCultLeaderComponent>(uid) ||
+        if (HasComp<BloodCultistComponent>(uid) || HasComp<BloodCultLeaderComponent>(uid) ||
             HasComp<ConstructComponent>(uid))
-        {
             return true;
-        }
 
         return visibleToGhost && HasComp<GhostComponent>(uid);
     }

@@ -182,8 +182,8 @@
     state: blood_rites
   - type: InstantAction
     itemIconStyle: BigAction
-    charges: 3
-    cooldown: 3
+    charges: 1
+    useDelay: 3
     temporary: true
     icon:
       sprite: WhiteDream/BloodCult/actions.rsi

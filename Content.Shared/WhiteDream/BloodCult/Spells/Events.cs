@@ -89,6 +89,8 @@ public sealed partial class SummonEquipmentEvent : InstantActionEvent, ISpeakSpe
     public InGameICChatType ChatType => InGameICChatType.Whisper;
 }
 
+public sealed partial class BloodSpearRecalledEvent : InstantActionEvent;
+
 [Serializable, NetSerializable]
 public sealed partial class TwistedConstructionDoAfterEvent : SimpleDoAfterEvent;
 
@@ -105,3 +107,6 @@ public sealed partial class TeleportActionDoAfterEvent : SimpleDoAfterEvent
     public SoundPathSpecifier TeleportInSound = new("/Audio/WhiteDream/BloodCult/veilin.ogg");
     public SoundPathSpecifier TeleportOutSound = new("/Audio/WhiteDream/BloodCult/veilout.ogg");
 }
+
+[Serializable, NetSerializable]
+public sealed partial class BloodRitesExtractDoAfterEvent : SimpleDoAfterEvent;
