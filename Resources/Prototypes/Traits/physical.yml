@@ -507,7 +507,7 @@
 - type: trait
   id: CyberEyes
   category: Physical
-  points: -8
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -520,6 +520,26 @@
         - Blindness
         - Nearsighted
   functions:
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-cybereyes-message
+          fontSize: 12
+          requireDetailRange: true
+
+
+- type: trait
+  id: FlareShielding
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+  functions:
     - !type:TraitRemoveComponent
       components:
         - type: Flashable
@@ -527,7 +547,7 @@
       components:
         - type: FlashImmunity
         - type: EyeProtection
-        - type: CyberEyes
+
 
 - type: trait
   id: CyberEyesSecurity

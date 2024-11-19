@@ -245,7 +245,7 @@
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
         - Shadowkin
   functions:
-    - !type:TraitAddComponent
+    - !type:TraitReplaceComponent
       components:
         - type: Flashable
           eyeDamageChance: 0.3

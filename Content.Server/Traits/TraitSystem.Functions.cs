@@ -10,6 +10,7 @@ using Content.Shared.Psionics;
 using Content.Server.Language;
 using Content.Shared.Mood;
 using Content.Server.NPC.Systems;
+using Content.Shared.Traits.Assorted.Components;
 
 namespace Content.Server.Traits;
 
@@ -261,5 +262,23 @@ public sealed partial class TraitVVEdit : TraitFunction
         var vvm = IoCManager.Resolve<IViewVariablesManager>();
         foreach (var (path, value) in VVEdit)
             vvm.WritePath(path, value);
+    }
+}
+
+/// Used for writing to an entity's ExtendDescriptionComponent. If one is not present, it will be added!
+/// Use this to create traits that add special descriptions for when a character is shift-click examined.
+[UsedImplicitly]
+public sealed partial class TraitPushDescription : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<DescriptionExtension> DescriptionExtensions { get; private set; } = new();
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        entityManager.EnsureComponent<ExtendDescriptionComponent>(uid, out var descComp);
+        foreach (var descExtension in DescriptionExtensions)
+            descComp.DescriptionList.Add(descExtension);
     }
 }
