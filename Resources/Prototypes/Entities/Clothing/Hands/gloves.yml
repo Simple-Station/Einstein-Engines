@@ -229,6 +229,7 @@
     stripTimeReduction: 1
   - type: ToggleClothing
     action: ActionToggleNinjaGloves
+    disableOnUnequip: true
   - type: Unremoveable
   - type: NinjaGloves
     abilities:
