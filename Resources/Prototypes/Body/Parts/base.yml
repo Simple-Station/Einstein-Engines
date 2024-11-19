@@ -1,5 +1,4 @@
-# TODO: Add descriptions (many)
-# TODO BODY: Part damage
+ # Shitmed Change Start
 - type: entity
   id: BasePart
   parent: BaseItem
@@ -7,8 +6,13 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: OrganicPart
   - type: BodyPart
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/organ1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/organ2.ogg
   - type: Gibbable
   - type: ContainerContainer
     containers:
@@ -19,6 +23,35 @@
   - type: Tag
     tags:
       - Trash
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 100
+      behaviors:
+      - !type:GibPartBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Slash
+        damage: 150
+      behaviors:
+      - !type:GibPartBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          Ash:
+            min: 1
+            max: 1
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
 
 - type: entity
   id: BaseTorso
@@ -28,6 +61,11 @@
   components:
   - type: BodyPart
     partType: Torso
+    toolName: "a torso"
+    containerName: "torso_slot"
+  - type: ContainerContainer
+    containers:
+      torso_slot: !type:ContainerSlot {}
 
 - type: entity
   id: BaseHead
@@ -37,6 +75,7 @@
   components:
   - type: BodyPart
     partType: Head
+    toolName: "a head"
     vital: true
   - type: Input
     context: "ghost"
@@ -53,6 +92,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Left
+    toolName: "a left arm"
 
 - type: entity
   id: BaseRightArm
@@ -63,6 +103,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Right
+    toolName: "a right arm"
 
 - type: entity
   id: BaseLeftHand
@@ -73,6 +114,7 @@
   - type: BodyPart
     partType: Hand
     symmetry: Left
+    toolName: "a left hand"
 
 - type: entity
   id: BaseRightHand
@@ -83,6 +125,7 @@
   - type: BodyPart
     partType: Hand
     symmetry: Right
+    toolName: "a right hand"
 
 - type: entity
   id: BaseLeftLeg
@@ -93,6 +136,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Left
+    toolName: "a left leg"
   - type: MovementBodyPart
 
 - type: entity
@@ -104,6 +148,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Right
+    toolName: "a right leg"
   - type: MovementBodyPart
 
 - type: entity
@@ -115,6 +160,7 @@
   - type: BodyPart
     partType: Foot
     symmetry: Left
+    toolName: "a left foot"
 
 - type: entity
   id: BaseRightFoot
@@ -125,3 +171,6 @@
   - type: BodyPart
     partType: Foot
     symmetry: Right
+    toolName: "a right foot"
+
+ # Shitmed Change End

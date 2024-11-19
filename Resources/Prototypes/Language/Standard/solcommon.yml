@@ -1,5 +1,6 @@
 - type: language
   id: SolCommon
+  isVisibleLanguage: true
   speech:
     color: "#8282fbaa"
   obfuscation:

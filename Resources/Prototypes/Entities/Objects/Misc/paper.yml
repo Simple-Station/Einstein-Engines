@@ -160,6 +160,16 @@
     contentMargin: 32.0, 16.0, 32.0, 0.0
 
 - type: entity
+  name: note
+  description: A piece of white paper.
+  id: PaperWrittenPunpunNote
+  parent: PaperCaptainsThoughts
+  suffix: Punpun Note
+  components:
+    - type: Paper
+      content: I, Punpun, invoke my right to have all of my clones on the NT family vacation to the meat packaging plant one out of every 15 shifts.
+
+- type: entity
   name: cargo invoice
   parent: Paper
   id: PaperCargoInvoice
@@ -258,7 +268,7 @@
 - type: entity
   parent: Paper
   id: PaperWritten
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Paper
   - type: Sprite

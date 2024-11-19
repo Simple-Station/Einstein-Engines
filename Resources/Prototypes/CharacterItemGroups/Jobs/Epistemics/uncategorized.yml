@@ -1,0 +1,100 @@
+# All Epistemics
+#- type: characterItemGroup
+#  id: LoadoutEpistemicsBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEpistemicsBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEpistemicsEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEpistemicsEquipment
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutEpistemicsEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceEyesHudDiagnostic
+    - type: loadout
+      id: LoadoutScienceEyesEyepatchHudDiag
+
+- type: characterItemGroup
+  id: LoadoutEpistemicsGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceHandsGlovesColorPurple
+    - type: loadout
+      id: LoadoutScienceHandsGlovesLatex
+    - type: loadout
+      id: LoadoutScienceHandsGlovesRobohands
+
+- type: characterItemGroup
+  id: LoadoutEpistemicsHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceHeadHatBeret
+    - type: loadout
+      id: LoadoutScienceHeadHatFez
+    - type: loadout
+      id: LoadoutHeadHoodTechPriest
+
+#- type: characterItemGroup
+#  id: LoadoutEpistemicsId
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutEpistemicsNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceNeckTieSci
+    - type: loadout
+      id: LoadoutScienceNeckScarfStripedPurple
+    - type: loadout
+      id: LoadoutScienceNeckScarfStripedBlack
+
+#- type: characterItemGroup
+#  id: LoadoutEpistemicsMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutEpistemicsOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceOuterCoat
+    - type: loadout
+      id: LoadoutScienceOuterLabcoat
+    - type: loadout
+      id: LoadoutScienceOuterCoatRobo
+    - type: loadout
+      id: LoadoutScienceOuterWinterSci
+    - type: loadout
+      id: LoadoutScienceOuterExplorerLabcoat
+    - type: loadout
+      id: LoadoutOuterRobeTechPriest
+
+- type: characterItemGroup
+  id: LoadoutEpistemicsShoes
+  items:
+    - type: loadout
+      id: LoadoutScienceShoesBootsWinterSci
+
+#- type: characterItemGroup
+#  id: LoadoutEpistemicsUniforms
+#  maxItems: 1
+#  items:

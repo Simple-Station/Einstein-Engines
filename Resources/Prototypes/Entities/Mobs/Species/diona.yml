@@ -120,11 +120,14 @@
     whitelist:
       types:
       - Shard
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-diona"
+    rightBarePrint: "footprint-right-bare-diona"
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobDionaDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Inventory
     templateId: diona

@@ -1,0 +1,214 @@
+# Chief Medical Officer
+# Backpacks
+
+# Belt
+- type: loadout
+  id: LoadoutChiefMedicalOfficerBeltMedical
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingBeltMedical
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerBeltMedicalAdvancedFilled
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingBeltMedicalAdvancedFilled
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutCommandCMOHatBeret
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingHeadHatBeretCmo
+
+# Id
+- type: loadout
+  id: LoadoutChiefMedicalOfficerNTPDA
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobChiefMedicalOfficer
+      min: 36000 # 10 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerId
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - CMONTPDA
+
+# Neck
+- type: loadout
+  id: LoadoutCommandCMONeckMantle
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingNeckMantleCMO
+
+- type: loadout
+  id: LoadoutCommandCMONeckCloak
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingCloakCmo
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerNeckMedalMedical
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingNeckMedicalmedal
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutCommandCMOOuterWinter
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingOuterWinterCMO
+
+- type: loadout
+  id: LoadoutCommandCMOOuterLab
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingOuterCoatLabCmo
+
+# Shoes
+- type: loadout
+  id: LoadoutCommandCMOShoesBootsWinter
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingShoesBootsWinterChiefMedicalOfficer
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerShoesLaceup
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingShoesBootsLaceup
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerShoesLeather
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingShoesLeather
+
+# Uniforms
+- type: loadout
+  id: LoadoutChiefMedicalOfficerJumpsuit
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingUniformJumpsuitCMO
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerJumpskirt
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingUniformJumpskirtCMO

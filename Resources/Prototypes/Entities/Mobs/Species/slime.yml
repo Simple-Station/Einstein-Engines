@@ -33,6 +33,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   # to prevent bag open/honk spam
   - type: UseDelay
     delay: 0.5
@@ -117,11 +119,14 @@
     understands:
     - TauCetiBasic
     - Bubblish
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-slime"
+    rightBarePrint: "footprint-right-bare-slime"
 
 - type: entity
   parent: MobHumanDummy
   id: MobSlimePersonDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: HumanoidAppearance
       species: SlimePerson

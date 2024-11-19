@@ -206,6 +206,8 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
                 ? bloodSolution.FillFraction
                 : 0,
             null,
+            null,
+            null,
             null
         ));
     }

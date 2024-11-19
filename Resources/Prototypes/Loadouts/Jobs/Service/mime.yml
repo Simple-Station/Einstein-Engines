@@ -1,0 +1,106 @@
+# Mime
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutServiceMimeBedsheetMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - BedsheetMime
+
+
+# Mask
+- type: loadout
+  id: LoadoutServiceMimeMaskSad
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskSadMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskScared
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskScaredMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskSexy
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskSexyMime
+
+# Outer
+- type: loadout
+  id: LoadoutServiceMimeOuterWinter
+  category: JobsServiceMime
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingOuterWinterMime
+
+# Shoes
+- type: loadout
+  id: LoadoutServiceMimeShoesBootsWinter
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingShoesBootsWinterMime
+# Uniforms

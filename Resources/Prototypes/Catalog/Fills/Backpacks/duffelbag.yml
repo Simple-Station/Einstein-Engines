@@ -12,6 +12,7 @@
       - id: Cautery
       - id: Retractor
       - id: Scalpel
+      - id: BoneGel
 
 - type: entity
   id: ClothingBackpackDuffelCBURNFilled
@@ -46,6 +47,7 @@
       - id: ScalpelAdvanced
       - id: ClothingHandsGlovesNitrile
       - id: EmergencyRollerBedSpawnFolded
+      - id: BoneGel
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle

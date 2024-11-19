@@ -1,0 +1,68 @@
+# Senior Officer
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorOfficerShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutSeniorOfficerUniforms
+  items:
+    - type: loadout
+      id: LoadoutSecurityUniformJumpskirtSenior
+    - type: loadout
+      id: LoadoutSecurityUniformJumpsuitSenior

@@ -9,9 +9,11 @@ namespace Content.Client.Kitchen.Visualizers
 {
     public sealed class DeepFryerVisualizerSystem : VisualizerSystem<DeepFryerComponent>
     {
+        [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
+
         protected override void OnAppearanceChange(EntityUid uid, DeepFryerComponent component, ref AppearanceChangeEvent args)
         {
-            if (!args.Component.TryGetData(DeepFryerVisuals.Bubbling, out bool isBubbling) ||
+            if (!_appearanceSystem.TryGetData(uid, DeepFryerVisuals.Bubbling, out bool isBubbling) ||
                 !TryComp<SolutionContainerVisualsComponent>(uid, out var scvComponent))
             {
                 return;
