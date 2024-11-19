@@ -2656,13 +2656,24 @@ namespace Content.Shared.CCVar
             CVarDef.Create("vote.autovote_enabled", false, CVar.SERVERONLY);
 
         /// Automatically starts a map vote when returning to the lobby.
-        /// Requires auto voting to be enabled.  
+        /// Requires auto voting to be enabled.
         public static readonly CVarDef<bool> MapAutoVoteEnabled =
             CVarDef.Create("vote.map_autovote_enabled", true, CVar.SERVERONLY);
 
         /// Automatically starts a gamemode vote when returning to the lobby.
-        /// Requires auto voting to be enabled.  
+        /// Requires auto voting to be enabled.
         public static readonly CVarDef<bool> PresetAutoVoteEnabled =
             CVarDef.Create("vote.preset_autovote_enabled", true, CVar.SERVERONLY);
+
+        #region Psionics
+
+        /// <summary>
+        ///     When mindbroken, permanently eject the player from their own body, and turn their character into an NPC.
+        ///     Congratulations, now they *actually* aren't a person anymore.
+        ///     For people who complained that it wasn't obvious enough from the text that Mindbreaking is a form of Murder.
+        /// </summary>
+        public static readonly CVarDef<bool> ScarierMindbreaking =
+            CVarDef.Create("psionics.scarier_mindbreaking", true, CVar.SERVERONLY);
+        #endregion
     }
 }
