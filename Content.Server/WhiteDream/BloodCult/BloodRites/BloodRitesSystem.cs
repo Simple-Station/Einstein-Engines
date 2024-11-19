@@ -54,10 +54,8 @@ public sealed class BloodRitesSystem : EntitySystem
         SubscribeLocalEvent<BloodRitesAuraComponent, BloodRitesMessage>(OnRitesMessage);
     }
 
-    private void OnExamining(Entity<BloodRitesAuraComponent> rites, ref ExaminedEvent args)
-    {
+    private void OnExamining(Entity<BloodRitesAuraComponent> rites, ref ExaminedEvent args) =>
         args.PushMarkup(Loc.GetString("blood-rites-stored-blood", ("amount", rites.Comp.StoredBlood.ToString())));
-    }
 
     private void OnAfterInteract(Entity<BloodRitesAuraComponent> rites, ref AfterInteractEvent args)
     {
@@ -206,9 +204,11 @@ public sealed class BloodRitesSystem : EntitySystem
         return true;
     }
 
-    private bool RestoreBloodLevel(Entity<BloodRitesAuraComponent> rites,
+    private bool RestoreBloodLevel(
+        Entity<BloodRitesAuraComponent> rites,
         EntityUid user,
-        Entity<BloodstreamComponent> target)
+        Entity<BloodstreamComponent> target
+    )
     {
         if (target.Comp.BloodSolution is null)
             return false;

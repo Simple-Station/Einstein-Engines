@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: BloodCult
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
     minPlayers: 30

@@ -19,6 +19,7 @@ public sealed partial class BloodSpearComponent : Component
     public EntityUid? RecallAction;
 
     [DataField]
-    public SoundSpecifier BloodRitesAudio = new SoundPathSpecifier(new ResPath("/Audio/WhiteDream/BloodCult/rites.ogg"),
+    public SoundSpecifier RecallAudio = new SoundPathSpecifier(
+        new ResPath("/Audio/WhiteDream/BloodCult/rites.ogg"),
         AudioParams.Default.WithVolume(-3));
 }

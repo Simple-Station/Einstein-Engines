@@ -59,12 +59,12 @@ public sealed class BloodSpearSystem : EntitySystem
 
     private void OnSpearRecalled(Entity<BloodCultistComponent> cultist, ref BloodSpearRecalledEvent args)
     {
-        var spear = cultist.Comp.BloodSpear;
-        if (!spear.HasValue)
+        var spearUid = cultist.Comp.BloodSpear;
+        if (!spearUid.HasValue || !TryComp(spearUid, out BloodSpearComponent? spear))
             return;
 
-        _hands.TryForcePickupAnyHand(cultist, spear.Value);
-        _audio.PlayPvs()
+        _hands.TryForcePickupAnyHand(cultist, spearUid.Value);
+        _audio.PlayPvs(spear.RecallAudio, spearUid.Value);
     }
 
     public void DetachSpearFromMaster(Entity<BloodCultistComponent> cultist)

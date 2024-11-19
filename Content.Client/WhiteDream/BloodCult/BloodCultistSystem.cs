@@ -49,7 +49,6 @@ public sealed class BloodCultistSystem : EntitySystem
         sprite.RemoveLayer(layer);
     }
 
-
     /// <summary>
     /// Determine whether a client should display the cult icon.
     /// </summary>

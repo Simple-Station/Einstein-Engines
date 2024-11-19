@@ -2,7 +2,7 @@
   id: ActionBloodCultStun
   name: Stun
   description: Empowers your hand to stun and mute a victim on contact.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/actions.rsi
@@ -29,7 +29,7 @@
   id: ActionBloodCultTeleport
   name: Teleport
   description: Empowers your hand to teleport yourself or another cultist to a teleport rune on contact.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/actions.rsi
@@ -55,7 +55,7 @@
   id: ActionBloodCultEmp
   name: Electromagnetic Pulse
   description: Emits a large electromagnetic pulse.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/actions.rsi
@@ -75,7 +75,7 @@
   id: ActionBloodCultShadowShackles
   name: shadow shackles
   description: Empowers your hand to handcuff a victim on contact, and mute them if successful.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/actions.rsi
@@ -102,7 +102,7 @@
   id: ActionBloodCultTwistedConstruction
   name: twisted construction
   description: Empowers your hand to corrupt certain metallic objects.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/actions.rsi
@@ -129,7 +129,7 @@
   id: ActionBloodCultSummonCombatEquipment
   name: summon combat equipment
   description: Allows you to summon combat cult gear, including cult armor, a cult bola and a cult sword.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/actions.rsi
@@ -153,7 +153,7 @@
   id: ActionBloodCultSummonRitualDagger
   name: summon ritual dagger
   description: Allows you to summon a ritual dagger, in case you've lost the dagger that was given to you.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/actions.rsi
@@ -175,7 +175,7 @@
   id: ActionBloodCultBloodRites
   name: blood rites
   description: Empowers your hand to absorb blood to be used for advanced rites, or heal a cultist on contact. Use the spell in-hand to cast advanced rites
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/actions.rsi

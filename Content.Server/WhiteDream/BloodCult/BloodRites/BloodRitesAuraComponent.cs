@@ -52,13 +52,14 @@ public sealed partial class BloodRitesAuraComponent : Component
     public FixedPoint2 TotalHealing = 20;
 
     [DataField]
-    public SoundSpecifier BloodRitesAudio = new SoundPathSpecifier(new ResPath("/Audio/WhiteDream/BloodCult/rites.ogg"),
+    public SoundSpecifier BloodRitesAudio = new SoundPathSpecifier(
+        new ResPath("/Audio/WhiteDream/BloodCult/rites.ogg"),
         AudioParams.Default.WithVolume(-3));
 
     [DataField]
     public Dictionary<EntProtoId, float> Crafts = new()
     {
-        ["BloodSpear"] = 300,
+        ["BloodSpear"] = 300
     };
 
     public DoAfterId? ExtractDoAfterId;

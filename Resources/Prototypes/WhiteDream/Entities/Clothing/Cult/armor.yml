@@ -34,7 +34,7 @@
 - type: entity
   parent: ClothingHeadHardsuitBase
   id: ClothingHeadHelmetCultArmor
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: true nar'sien hardened helmet
   description: A heavily-armored helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum.
   components:
@@ -78,7 +78,7 @@
   id: ClothingHeadHatHoodCultHoodTrue
   name: flagellant's hood
   description: A blood-soaked hood infused with dark magic.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_hood.rsi

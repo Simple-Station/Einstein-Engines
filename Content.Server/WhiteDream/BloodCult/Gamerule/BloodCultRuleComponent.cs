@@ -56,14 +56,14 @@ public enum CultWinCondition : byte
 {
     Draw,
     Win,
-    Failure,
+    Failure
 }
 
 public enum CultStage : byte
 {
     Start,
     RedEyes,
-    Pentagram,
+    Pentagram
 }
 
 public sealed class BloodCultNarsieSummoned : EntityEventArgs;

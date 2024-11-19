@@ -2,7 +2,7 @@
   id: ActionBloodSpearRecall
   name: Recall spear
   description: Recalls your blood spear back to your hand.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/actions.rsi

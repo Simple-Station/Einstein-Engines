@@ -1,4 +1,7 @@
-﻿namespace Content.Server.WhiteDream.BloodCult.Empower;
+﻿using Content.Shared.Alert;
+using Robust.Shared.Prototypes;
+
+namespace Content.Server.WhiteDream.BloodCult.Empower;
 
 [RegisterComponent]
 public sealed partial class BloodCultEmpoweredComponent : Component
@@ -32,6 +35,9 @@ public sealed partial class BloodCultEmpoweredComponent : Component
 
     [DataField]
     public string CultTile = "CultFloor";
+
+    [DataField]
+    public ProtoId<AlertPrototype> EmpoweredAlert = "CultEmpowered";
 
     [ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan TimeRemaining = TimeSpan.Zero;
