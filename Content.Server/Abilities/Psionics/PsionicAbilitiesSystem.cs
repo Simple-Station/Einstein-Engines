@@ -188,6 +188,9 @@ namespace Content.Server.Abilities.Psionics
         /// </summary>
         public void MindBreak(EntityUid uid)
         {
+            if (!HasComp<PsionicComponent>(uid))
+                return;
+
             RemoveAllPsionicPowers(uid, true);
             if (_config.GetCVar(CCVars.ScarierMindbreaking))
                 ScarierMindbreak(uid);
