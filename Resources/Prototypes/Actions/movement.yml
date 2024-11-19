@@ -1,0 +1,13 @@
+- type: entity
+  id: ActionDashFlight
+  name: Dash
+  description: Dash in the target direction.
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 3
+    range: 64
+    itemIconStyle: BigAction
+    checkCanAccess: false
+    icon: Interface/Actions/dash_flight.png
+    event: !type:ActivateDashEvent
