@@ -279,6 +279,7 @@ public sealed partial class TraitPushDescription : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
     public List<DescriptionExtension> DescriptionExtensions { get; private set; } = new();
+
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -303,6 +304,7 @@ public sealed partial class TraitAddArmor : TraitFunction
     /// </remarks>
     [DataField, AlwaysPushInheritance]
     public List<string> DamageModifierSets { get; private set; } = new();
+
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -355,6 +357,7 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
     {
         if (!entityManager.TryGetComponent<MobThresholdsComponent>(uid, out var threshold))
             return;
+
         var thresholdSystem = entityManager.System<MobThresholdSystem>();
         if (CritThresholdModifier != 0)
         {
@@ -362,6 +365,7 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
             if (critThreshold != 0)
                 thresholdSystem.SetMobStateThreshold(uid, critThreshold + CritThresholdModifier, MobState.Critical);
         }
+
         if (DeadThresholdModifier != 0)
         {
             var deadThreshold = thresholdSystem.GetThresholdForState(uid, MobState.Dead, threshold);
