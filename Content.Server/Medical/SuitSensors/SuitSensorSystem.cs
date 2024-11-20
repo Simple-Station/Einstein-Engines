@@ -16,6 +16,7 @@ using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Content.Shared.Interaction;
 using Content.Shared.Medical.SuitSensor;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Verbs;
@@ -403,7 +404,7 @@ public sealed class SuitSensorSystem : EntitySystem
 
         // Get mob total damage crit threshold
         int? totalDamageThreshold = null;
-        if (_mobThresholdSystem.TryGetThresholdForState(sensor.User.Value, Shared.Mobs.MobState.Critical, out var critThreshold))
+        if (_mobThresholdSystem.TryGetThresholdForState(sensor.User.Value, MobState.Critical, out var critThreshold))
             totalDamageThreshold = critThreshold.Value.Int();
 
         // finally, form suit sensor status
