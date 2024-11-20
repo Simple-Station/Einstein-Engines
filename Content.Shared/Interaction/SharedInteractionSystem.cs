@@ -110,13 +110,17 @@ namespace Content.Shared.Interaction
             SubscribeLocalEvent<UnremoveableComponent, DroppedEvent>(OnDropped);
 
             CommandBinds.Builder
-                .Bind(ContentKeyFunctions.AltActivateItemInWorld,
+                .Bind(
+                    ContentKeyFunctions.AltActivateItemInWorld,
                     new PointerInputCmdHandler(HandleAltUseInteraction))
-                .Bind(EngineKeyFunctions.Use,
+                .Bind(
+                    EngineKeyFunctions.Use,
                     new PointerInputCmdHandler(HandleUseInteraction))
-                .Bind(ContentKeyFunctions.ActivateItemInWorld,
+                .Bind(
+                    ContentKeyFunctions.ActivateItemInWorld,
                     new PointerInputCmdHandler(HandleActivateItemInWorld))
-                .Bind(ContentKeyFunctions.TryPullObject,
+                .Bind(
+                    ContentKeyFunctions.TryPullObject,
                     new PointerInputCmdHandler(HandleTryPullObject))
                 .Register<SharedInteractionSystem>();
 
