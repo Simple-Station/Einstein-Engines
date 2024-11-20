@@ -1,5 +1,8 @@
+using Robust.Shared.Serialization;
+
 namespace Content.Shared.Traits.Assorted.Components;
 
+[Serializable, NetSerializable, DataDefinition]
 public sealed partial class DescriptionExtension
 {
     [DataField]
@@ -9,7 +12,7 @@ public sealed partial class DescriptionExtension
     public int FontSize = 12;
 
     [DataField]
-    public Color Color = Color.White;
+    public string Color = "#ffffff";
 
     [DataField]
     public bool RequireDetailRange = true;

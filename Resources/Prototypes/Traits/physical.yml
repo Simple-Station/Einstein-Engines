@@ -501,14 +501,10 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: Damageable
-          damageModifierSet: DermalArmor
+    - !type:TraitAddArmor
+      damageModifierSets:
+        - DermalArmor
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-dermal-armor-message
