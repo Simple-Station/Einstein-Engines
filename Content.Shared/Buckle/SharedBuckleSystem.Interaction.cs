@@ -20,6 +20,7 @@ public abstract partial class SharedBuckleSystem
         SubscribeLocalEvent<StrapComponent, CanDropTargetEvent>(OnCanDropTarget);
 
         SubscribeLocalEvent<BuckleComponent, GetVerbsEvent<InteractionVerb>>(AddUnbuckleVerb);
+        SubscribeLocalEvent<BuckleComponent, InteractHandEvent>(OnBuckleInteractHand);
     }
 
     private void OnCanDropTarget(EntityUid uid, StrapComponent component, ref CanDropTargetEvent args)
