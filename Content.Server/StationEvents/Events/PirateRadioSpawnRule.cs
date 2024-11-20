@@ -94,7 +94,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
                 var salvPrototypes = _prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList();
                 var salvageProto = _random.Pick(salvPrototypes);
 
-                if (!_mapSystem.MapExists(GameTicker))
+                if (!_mapSystem.MapExists(GameTicker.DefaultMap))
                     return;
 
                 if (GameTicker.DefaultMap == MapId.Nullspace)
