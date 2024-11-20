@@ -375,7 +375,13 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
 public sealed partial class TraitModifyStamina : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public int StaminaModifier;
+    public float StaminaModifier;
+
+    [DataField, AlwaysPushInheritance]
+    public float DecayModifier;
+
+    [DataField, AlwaysPushInheritance]
+    public float CooldownModifier;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -386,5 +392,7 @@ public sealed partial class TraitModifyStamina : TraitFunction
             return;
 
         staminaComponent.CritThreshold += StaminaModifier;
+        staminaComponent.Decay += DecayModifier;
+        staminaComponent.Cooldown += CooldownModifier;
     }
 }
