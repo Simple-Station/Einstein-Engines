@@ -43,7 +43,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
             if (HasComp<BiomeComponent>(Transform(station).MapUid))
                 stations.Remove(station);
 
-        stations.RemoveAll(x => Transform(x).MapID == MapId.Nullspace)
+        stations.RemoveAll(x => Transform(x).MapID == MapId.Nullspace);
 
         // _random forces Test Fails if given an empty list. which is guaranteed to happen during Tests.
         if (stations.Count <= 0)
