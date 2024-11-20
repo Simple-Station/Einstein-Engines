@@ -26,10 +26,15 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
     [Dependency] private readonly TransformSystem _xform = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
+
+    private ISawmill _sawmill = default!;
 
     protected override void Started(EntityUid uid, PirateRadioSpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
+
+        _sawmill = _logManager.GetSawmill("PirateRadioSpawnRule");
 
         var stations = _gameTicker.GetSpawnableStations();
         if (stations is null)
@@ -42,8 +47,6 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
         foreach (var station in stationsCopy)
             if (HasComp<BiomeComponent>(Transform(station).MapUid))
                 stations.Remove(station);
-
-        stations.RemoveAll(x => Transform(x).MapID == MapId.Nullspace);
 
         // _random forces Test Fails if given an empty list. which is guaranteed to happen during Tests.
         if (stations.Count <= 0)
@@ -88,7 +91,14 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
                     LoadMap = false,
                 };
 
-                var salvageProto = _random.Pick(_prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList());
+                var salvPrototypes = _prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList();
+                var salvageProto = _random.Pick(salvPrototypes);
+
+                if (!_mapSystem.MapExists(GameTicker))
+                    return;
+
+                if (GameTicker.DefaultMap == MapId.Nullspace)
+                    return;
 
                 if (!_map.TryLoad(GameTicker.DefaultMap, salvageProto.MapPath.ToString(), out _, debrisOptions))
                     return;
