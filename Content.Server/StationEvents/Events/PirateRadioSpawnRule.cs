@@ -26,15 +26,10 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
     [Dependency] private readonly TransformSystem _xform = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
-
-    private ISawmill _sawmill = default!;
 
     protected override void Started(EntityUid uid, PirateRadioSpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
-
-        _sawmill = _logManager.GetSawmill("PirateRadioSpawnRule");
 
         var stations = _gameTicker.GetSpawnableStations();
         if (stations is null)
@@ -98,6 +93,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
                 if (!_mapSystem.MapExists(GameTicker.DefaultMap))
                     return;
 
+                // Round didn't start before running this, leading to a null-space test fail.
                 if (GameTicker.DefaultMap == MapId.Nullspace)
                     return;
 
