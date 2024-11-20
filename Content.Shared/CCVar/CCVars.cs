@@ -2567,7 +2567,11 @@ namespace Content.Shared.CCVar
         #region Mood System
 
         public static readonly CVarDef<bool> MoodEnabled =
+        #if RELEASE
             CVarDef.Create("mood.enabled", true, CVar.SERVER);
+        #else
+            CVarDef.Create("mood.enabled", false, CVar.SERVER);
+        #endif
 
         public static readonly CVarDef<bool> MoodIncreasesSpeed =
             CVarDef.Create("mood.increases_speed", true, CVar.SERVER);
@@ -2656,12 +2660,12 @@ namespace Content.Shared.CCVar
             CVarDef.Create("vote.autovote_enabled", false, CVar.SERVERONLY);
 
         /// Automatically starts a map vote when returning to the lobby.
-        /// Requires auto voting to be enabled.  
+        /// Requires auto voting to be enabled.
         public static readonly CVarDef<bool> MapAutoVoteEnabled =
             CVarDef.Create("vote.map_autovote_enabled", true, CVar.SERVERONLY);
 
         /// Automatically starts a gamemode vote when returning to the lobby.
-        /// Requires auto voting to be enabled.  
+        /// Requires auto voting to be enabled.
         public static readonly CVarDef<bool> PresetAutoVoteEnabled =
             CVarDef.Create("vote.preset_autovote_enabled", true, CVar.SERVERONLY);
     }
