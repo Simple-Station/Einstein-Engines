@@ -8029,3 +8029,12 @@ Entries:
   id: 6531
   time: '2024-11-18T22:08:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1230
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Power Attacks now correctly apply a penalty on swing speed, and are no
+        longer faster than left clicking.
+  id: 6532
+  time: '2024-11-20T03:47:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1252
