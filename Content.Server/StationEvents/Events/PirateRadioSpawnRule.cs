@@ -81,6 +81,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
         {
             var outpostaabb = _xform.GetWorldPosition(id);
             var k = 0;
+
             while (k < component.DebrisCount)
             {
                 var debrisRandomOffset = _random.NextVector2(component.MinimumDebrisDistance, component.MaximumDebrisDistance);
