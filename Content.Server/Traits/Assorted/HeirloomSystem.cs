@@ -1,16 +1,32 @@
 using System.Linq;
 using Content.Shared.Mood;
 using Content.Shared.Traits.Assorted.Components;
+using Robust.Shared.Timing;
+
 
 namespace Content.Server.Traits.Assorted;
 
 public sealed class HeirloomSystem : EntitySystem
 {
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+
+    private TimeSpan _nextUpdate;
+
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _nextUpdate = _gameTiming.CurTime;
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        //TODO: This could probably use some optimization
+        if (_nextUpdate > _gameTiming.CurTime)
+            return;
+
         var query = EntityManager.EntityQueryEnumerator<HeirloomHaverComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
@@ -22,9 +38,10 @@ public sealed class HeirloomSystem : EntitySystem
         }
 
         query.Dispose();
+
+        _nextUpdate = _gameTiming.CurTime + TimeSpan.FromSeconds(10);
     }
 
-    /// A reasonable assumption
     private IEnumerable<EntityUid> RecursiveGetAllChildren(EntityUid uid)
     {
         var xform = Transform(uid);
