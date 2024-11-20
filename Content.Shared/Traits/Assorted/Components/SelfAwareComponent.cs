@@ -8,19 +8,19 @@ namespace Content.Shared.Traits.Assorted.Components;
 /// <summary>
 ///     This is used for the Self-Aware trait to enhance the information received from HealthExaminableSystem.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SelfAwareComponent : Component
 {
     // <summary>
     //     Damage types that an entity is able to precisely analyze like a health analyzer when they examine themselves.
     // </summary>
-    [DataField(required: true, customTypeSerializer:typeof(PrototypeIdHashSetSerializer<DamageTypePrototype>))]
+    [DataField(required: true, customTypeSerializer:typeof(PrototypeIdHashSetSerializer<DamageTypePrototype>)), AutoNetworkedField]
     public HashSet<string> AnalyzableTypes = default!;
 
     // <summary>
     //     Damage groups that an entity is able to detect the presence of when they examine themselves.
     // </summary>
-    [DataField(required: true, customTypeSerializer:typeof(PrototypeIdHashSetSerializer<DamageGroupPrototype>))]
+    [DataField(required: true, customTypeSerializer:typeof(PrototypeIdHashSetSerializer<DamageGroupPrototype>)), AutoNetworkedField]
     public HashSet<string> DetectableGroups = default!;
 
     // <summary>

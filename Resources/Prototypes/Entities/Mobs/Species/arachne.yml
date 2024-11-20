@@ -144,7 +144,7 @@
   name: Urist McHands
   parent: MobHumanDummy
   id: MobArachneDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy arachne meant to be used in character setup.
   components:
   - type: Sprite

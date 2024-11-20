@@ -255,7 +255,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
     public HumanoidCharacterProfile WithSpecies(string species) => new(this) { Species = species };
-    public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename};
+    public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename };
     public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
     public HumanoidCharacterProfile WithWidth(float width) => new(this) { Width = width };
 
@@ -368,7 +368,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         // ensure the species can be that sex and their age fits the founds
         if (!speciesPrototype.Sexes.Contains(sex))
+        {
             sex = speciesPrototype.Sexes[0];
+        }
 
         var age = Math.Clamp(Age, speciesPrototype.MinAge, speciesPrototype.MaxAge);
 
@@ -383,16 +385,24 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         string name;
         if (string.IsNullOrEmpty(Name))
+        {
             name = GetName(Species, gender);
+        }
         else if (Name.Length > MaxNameLength)
+        {
             name = Name[..MaxNameLength];
+        }
         else
+        {
             name = Name;
+        }
 
         name = name.Trim();
 
         if (configManager.GetCVar(CCVars.RestrictedNames))
+        {
             name = RestrictedNameRegex.Replace(name, string.Empty);
+        }
 
         if (configManager.GetCVar(CCVars.ICNameCase))
         {
@@ -405,17 +415,23 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             || string.IsNullOrEmpty(Customspeciename)
                 ? ""
                 : Customspeciename.Length > MaxNameLength
-                    ? FormattedMessage.RemoveMarkup(Customspeciename)[..MaxNameLength]
-                    : FormattedMessage.RemoveMarkup(Customspeciename);
+                    ? FormattedMessage.RemoveMarkupPermissive(Customspeciename)[..MaxNameLength]
+                    : FormattedMessage.RemoveMarkupPermissive(Customspeciename);
 
         if (string.IsNullOrEmpty(name))
+        {
             name = GetName(Species, gender);
+        }
 
         string flavortext;
         if (FlavorText.Length > MaxDescLength)
-            flavortext = FormattedMessage.RemoveMarkup(FlavorText)[..MaxDescLength];
+        {
+            flavortext = FormattedMessage.RemoveMarkupPermissive(FlavorText)[..MaxDescLength];
+        }
         else
-            flavortext = FormattedMessage.RemoveMarkup(FlavorText);
+        {
+            flavortext = FormattedMessage.RemoveMarkupPermissive(FlavorText);
+        }
 
         var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
@@ -468,7 +484,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         _jobPriorities.Clear();
 
         foreach (var (job, priority) in priorities)
+        {
             _jobPriorities.Add(job, priority);
+        }
 
         PreferenceUnavailable = prefsUnavailableMode;
 
@@ -513,11 +531,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(FlavorText);
         hashCode.Add(Species);
         hashCode.Add(Age);
-        hashCode.Add((int)Sex);
-        hashCode.Add((int)Gender);
+        hashCode.Add((int) Sex);
+        hashCode.Add((int) Gender);
         hashCode.Add(Appearance);
-        hashCode.Add((int)SpawnPriority);
-        hashCode.Add((int)PreferenceUnavailable);
+        hashCode.Add((int) SpawnPriority);
+        hashCode.Add((int) PreferenceUnavailable);
         hashCode.Add(Customspeciename);
         return hashCode.ToHashCode();
     }

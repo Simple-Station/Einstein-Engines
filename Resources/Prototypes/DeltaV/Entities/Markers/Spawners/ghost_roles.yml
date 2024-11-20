@@ -17,7 +17,7 @@
           state: full
 
 - type: entity # Part of PirateRadioSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: SpawnPointGhostSyndicateListener
   name: ghost role spawn point
   suffix: syndicate listener

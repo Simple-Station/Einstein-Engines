@@ -1,0 +1,52 @@
+# Station Engineer
+# Backpack
+
+# Belt
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutStationEngineerEquipmentBoxInflatable
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - BoxInflatable
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentRCD
+  category: JobsEngineeringStationEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - RCD
+    - RCDAmmo
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

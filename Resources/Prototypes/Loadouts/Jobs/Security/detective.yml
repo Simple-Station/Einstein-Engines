@@ -1,0 +1,53 @@
+# Detective
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutClothingOuterCoatDetective
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingOuterCoatDetective
+
+- type: loadout
+  id: LoadoutOuterVestDetective
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingOuterVestDetective
+
+# Shoes
+
+# Uniforms
