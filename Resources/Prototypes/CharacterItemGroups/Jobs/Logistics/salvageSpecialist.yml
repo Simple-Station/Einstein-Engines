@@ -1,0 +1,82 @@
+# Salvage Specialist
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackSalvage
+    - type: loadout
+      id: LoadoutSalvageBackpackSatchel
+    - type: loadout
+      id: LoadoutSalvageBackpackDuffel
+
+#- type: characterItemGroup
+#  id: LoadoutSalvageSpecialistBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSalvageSpecialistEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSalvageSpecialistEquipment
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistWeapons
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoWeaponsCrusherDagger
+
+#- type: characterItemGroup
+#  id: LoadoutSalvageSpecialistEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSalvageSpecialistGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSalvageSpecialistHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSalvageSpecialistId
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoNeckGoliathCloak
+
+#- type: characterItemGroup
+#  id: LoadoutSalvageSpecialistMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoOuterWinterMiner
+
+#- type: characterItemGroup
+#  id: LoadoutSalvageSpecialistShoes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSalvageSpecialistUniforms
+#  maxItems: 1
+#  items:

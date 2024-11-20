@@ -1,0 +1,342 @@
+# Chemist
+# Backpacks
+- type: loadout
+  id: LoadoutChemistryBackpackBackpack
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelChemistry
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+
+- type: loadout
+  id: LoadoutBackpackSatchelChemistry
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelChemistry
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+
+- type: loadout
+  id: LoadoutBackpackDuffelChemistry
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelChemistry
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+
+# Belt
+- type: loadout
+  id: LoadoutChemistBeltChemBag
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - ChemBag
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutMedicalItemHandLabeler
+  category: JobsMedicalChemist
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - HandLabeler
+
+- type: loadout
+  id: LoadoutChemistPillCanisterKelotane
+  category: JobsMedicalChemist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterKelotane
+
+- type: loadout
+  id: LoadoutChemistPillCanisterTricordrazine
+  category: JobsMedicalChemist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterTricordrazine
+
+- type: loadout
+  id: LoadoutChemistPillCanisterHyronalin
+  category: JobsMedicalChemist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterHyronalin
+
+- type: loadout
+  id: LoadoutChemistPillCanisterBicaridine
+  category: JobsMedicalChemist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterBicaridine
+
+- type: loadout
+  id: LoadoutChemistPillCanisterDermaline
+  category: JobsMedicalChemist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterDermaline
+
+- type: loadout
+  id: LoadoutChemistPillCanisterDylovene
+  category: JobsMedicalChemist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterDylovene
+
+- type: loadout
+  id: LoadoutChemistPillCanisterDexalin
+  category: JobsMedicalChemist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterDexalin
+
+- type: loadout
+  id: LoadoutChemistPillCanisterSpaceDrugs
+  category: JobsMedicalChemist
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterSpaceDrugs
+
+# Eyes
+- type: loadout
+  id: LoadoutMedicalEyesGlassesChemicalBudget
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEyes
+    - !type:CharacterJobRequirement
+      jobs:
+         - Chemist
+  items:
+    - ClothingEyesGlassesChemicalBudget
+
+- type: loadout
+  id: LoadoutMedicalEyesGlassesChemical
+  category: JobsMedicalChemist
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEyes
+    - !type:CharacterJobRequirement
+      jobs:
+         - Chemist
+  items:
+    - ClothingEyesGlassesChemical
+
+- type: loadout
+  id: LoadoutMedicalEyesGlassesChemist
+  category: JobsMedicalChemist
+  cost: 1 # These provide caustic armor, oddly enough.
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEyes
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingEyesGlassesChemist
+
+# Gloves
+- type: loadout
+  id: LoadoutMedicalHandsGlovesChemist
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistGloves
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingHandsGlovesChemist
+
+# Head
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutMedicalNeckTieChem
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistNeck
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingNeckTieChem
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutMedicalOuterLabcoatChem
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - ClothingOuterCoatLabChem
+
+- type: loadout
+  id: LoadoutMedicalOuterApronChemist
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistOuter
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingOuterApronChemist
+
+# Shoes
+- type: loadout
+  id: LoadoutMedicalShoesEnclosedChem
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistShoes
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingShoesEnclosedChem
+
+# Uniforms
+- type: loadout
+  id: LoadoutMedicalUniformJumpsuitChemShirt
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistUniforms
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingUniformJumpsuitChemShirt
+
+- type: loadout
+  id: LoadoutMedicalUniformJumpsuitChemistry
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistUniforms
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingUniformJumpsuitChemistry
+
+- type: loadout
+  id: LoadoutMedicalUniformJumpskirtChemistry
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistUniforms
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingUniformJumpskirtChemistry

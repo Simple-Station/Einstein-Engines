@@ -78,8 +78,8 @@
     state: icon
 
 - type: stealTargetGroup
-  id: WeaponAntiqueLaser
-  name: antique laser pistol
+  id: WeaponCaptain
+  name: captain's weapon
   sprite:
     sprite: Objects/Weapons/Guns/Battery/antiquelasergun.rsi
     state: base

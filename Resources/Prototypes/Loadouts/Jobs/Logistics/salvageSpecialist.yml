@@ -1,0 +1,108 @@
+# Salvage Specialist
+# Backpacks
+- type: loadout
+  id: LoadoutSalvageBackpackBackpack
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSalvage
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+
+- type: loadout
+  id: LoadoutSalvageBackpackSatchel
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelSalvage
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+
+- type: loadout
+  id: LoadoutSalvageBackpackDuffel
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelSalvage
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+
+# Belt
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutCargoWeaponsCrusherDagger
+  category: JobsLogisticsSalvageSpecialist
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - WeaponCrusherDagger
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutCargoNeckGoliathCloak
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobSalvageSpecialist
+      min: 36000 # 10 hours
+  items:
+    - ClothingNeckCloakGoliathCloak
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutCargoOuterWinterMiner
+  category: JobsLogisticsSalvageSpecialist
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingOuterWinterMiner
+
+# Shoes
+
+# Uniforms

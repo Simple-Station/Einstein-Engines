@@ -1,0 +1,68 @@
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerBackpacks
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerBelt
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerEars
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutStationEngineerEquipment
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentBoxInflatable
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentRCD
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerEyes
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerGloves
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerHead
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerId
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerNeck
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerMask
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerOuter
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerShoes
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerUniforms
+#  maxItems: 1
+#  items:
