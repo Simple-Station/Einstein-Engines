@@ -12,6 +12,8 @@ using Content.Shared.Mood;
 using Content.Server.NPC.Systems;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Damage;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
 
 namespace Content.Server.Traits;
 
@@ -305,5 +307,30 @@ public sealed partial class TraitAddArmor : TraitFunction
         entityManager.EnsureComponent<DamageableComponent>(uid, out var damageableComponent);
         foreach (var modifierSet in DamageModifierSets)
             damageableComponent.DamageModifierSets.Add(modifierSet);
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitAddSolutionContainer : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public Dictionary<string, SolutionComponent> Solutions { get; private set; } = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var solutionContainer = entityManager.System<SharedSolutionContainerSystem>();
+
+        foreach (var (containerKey, solution) in Solutions)
+        {
+            var hasSolution = solutionContainer.EnsureSolution(uid, containerKey, out Solution? newSolution);
+
+            if (!hasSolution)
+                return;
+
+            newSolution!.AddSolution(solution.Solution, null);
+        }
     }
 }
