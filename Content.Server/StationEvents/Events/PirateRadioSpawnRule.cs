@@ -48,7 +48,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
         // _random forces Test Fails if given an empty list. which is guaranteed to happen during Tests.
         if (stations.Count <= 0)
             return;
-        
+
         var targetStation = _random.Pick(stations);
         var targetMapId = Transform(targetStation).MapID;
 
@@ -90,7 +90,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
 
                 var salvageProto = _random.Pick(_prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList());
                 
-                if (!_map.TryLoad(100, salvageProto.MapPath.ToString(), out _, debrisOptions))
+                if (!_map.TryLoad(GameTicker.DefaultMap, salvageProto.MapPath.ToString(), out _, debrisOptions))
                     return;
 
                 k++;
