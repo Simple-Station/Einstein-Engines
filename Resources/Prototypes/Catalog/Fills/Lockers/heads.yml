@@ -32,55 +32,38 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterArmorCaptainCarapace
       - id: NukeDisk
       - id: PinpointerNuclear
-#     - id: CaptainIDCard # DeltaV - Replaced by the spare ID system
+      - id: CaptainIDCard
       - id: ClothingOuterHardsuitCap
-      - id: WeaponDisabler
       - id: CommsComputerCircuitboard
       - id: ClothingHeadsetAltCommand
-      - id: SpaceCash1000
       - id: PlushieNuke
         prob: 0.1
-      - id: CigarGoldCase
-        prob: 0.25
-      - id: ClothingBeltSheathFilled
       - id: DoorRemoteCommand
       - id: RubberStampCaptain
-#     - id: WeaponAntiqueLaser # DeltaV - Remove in favor of the glass box
       - id: JetpackCaptainFilled
-      - id: MedalCase
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
 
 - type: entity
   id: LockerCaptainFilled
-  suffix: Filled, AntiqueLaser
+  suffix: Filled, AntiqueLaser # Deprecated, Antique laser is now part of Captain's Loadouts.
   parent: LockerCaptain
   components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterArmorCaptainCarapace
       - id: NukeDisk
       - id: PinpointerNuclear
-#     - id: CaptainIDCard # DeltaV - Replaced by the spare ID system
-      - id: WeaponDisabler
+      - id: CaptainIDCard
       - id: CommsComputerCircuitboard
       - id: ClothingHeadsetAltCommand
-      - id: SpaceCash1000
       - id: PlushieNuke
         prob: 0.1
-      - id: CigarGoldCase
-        prob: 0.25
-      - id: ClothingBeltSheathFilled
       - id: DoorRemoteCommand
       - id: RubberStampCaptain
-      - id: WeaponAntiqueLaser
       - id: JetpackCaptainFilled
-      - id: MedalCase
-      - id: ClothingHeadHatBeretCap # Nyanotrasen - Captain's Beret
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxCommandFilledRandom
         prob: 0.3
 
 - type: entity
@@ -90,25 +73,17 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterArmorCaptainCarapace
       - id: NukeDisk
       - id: PinpointerNuclear
-#      - id: CaptainIDCard # Delta V - Replaced by spare ID system. The funny biscuit that I cant even eat.
-      - id: WeaponDisabler
+      - id: CaptainIDCard
       - id: CommsComputerCircuitboard
       - id: ClothingHeadsetAltCommand
-      - id: SpaceCash1000
       - id: PlushieNuke
         prob: 0.1
-      - id: CigarGoldCase
-        prob: 0.25
-      - id: ClothingBeltSheathFilled
       - id: DoorRemoteCommand
       - id: RubberStampCaptain
       - id: JetpackCaptainFilled
-      - id: MedalCase
-      - id: ClothingHeadHatBeretCap # Nyanotrasen - Captain's Beret
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxCommandFilledRandom
         prob: 0.3
 
 - type: entity
@@ -124,23 +99,13 @@
       - id: BoxID
       - id: BoxHeadset
       - id: IDComputerCircuitboard
-      - id: WeaponDisabler
-      - id: ClothingOuterCoatHoPArmored # DeltaV
-      - id: ClothingOuterArmorDuraVest # DeltaV - replaced HoP's armoured coat with a standard stabproof, pending HoPcoat resprite
-      - id: CigarGoldCase
-        prob: 0.25
-        # Fuck the HoP they don't deserve fucking cigars.
-        # Yes they do fuck you.
       - id: DoorRemoteService
-      - id: ClothingNeckGoldmedal
       - id: RubberStampHop
       - id: RubberStampDenied
       - id: RubberStampApproved
       - id: BoxEncryptionKeyPassenger
       - id: BoxEncryptionKeyService
       - id: AccessConfigurator
-      - id: BookIanDossier # DeltaV - HoP steal objective, see Resources/Prototypes/DeltaV/Entities/Objects/Misc/ian_dossier.yml
-      - id: ClothingHandsGlovesInspection # DeltaV - Add inspection gloves for HoP.
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
 
@@ -154,7 +119,6 @@
       - id: ClothingOuterHardsuitEngineeringWhite
       - id: ClothingMaskBreath
       - id: ClothingEyesGlassesMeson
-      - id: ClothingBeltChiefEngineerFilled
       - id: ClothingShoesBootsMagAdv
       - id: ClothingHandsGlovesColorYellow
       - id: CigarCase
@@ -217,6 +181,7 @@
       - id: RubberStampCMO
       - id: RubberStampPsychologist # DeltaV
       - id: MedicalTechFabCircuitboard
+      - id: MedicalBiofabMachineBoard
       - id: BoxEncryptionKeyMedical
       - id: BoxPDAMedical # Delta-V
       - id: ClothingBeltMilitaryWebbingCMO # DeltaV - add webbing for CMO. ON THIS STATION, IT'S DRIP OR [die], CAPTAIN!
@@ -242,6 +207,7 @@
       - id: RubberStampCMO
       - id: MedicalTechFabCircuitboard
       - id: BoxEncryptionKeyMedical
+      - id: MedicalBiofabMachineBoard
       - id: BoxPDAMedical # Delta-V
       - id: ClothingBeltMilitaryWebbingCMO # DeltaV - add webbing for CMO. ON THIS STATION, IT'S DRIP OR [die], CAPTAIN!
       - id: CMOIDCard # Delta-V

@@ -364,7 +364,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                     return false;
                 break;
             case HeavyAttackEvent:
-                fireRateSwingModifier *= weapon.HeavyRateModifier;
+                fireRateSwingModifier = weapon.HeavyRateModifier;
                 break;
             default:
                 if (!Blocker.CanAttack(user, weapon: (weaponUid, weapon)))
@@ -373,7 +373,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         }
 
         // Windup time checked elsewhere.
-        var fireRate = TimeSpan.FromSeconds(1f / GetAttackRate(weaponUid, user, weapon) * fireRateSwingModifier);
+        var fireRate = TimeSpan.FromSeconds(GetAttackRate(weaponUid, user, weapon) * fireRateSwingModifier);
         var swings = 0;
 
         // TODO: If we get autoattacks then probably need a shotcounter like guns so we can do timing properly.
@@ -501,7 +501,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         RaiseLocalEvent(target.Value, attackedEvent);
 
         var modifiedDamage = DamageSpecifier.ApplyModifierSets(damage + hitEvent.BonusDamage + attackedEvent.BonusDamage, hitEvent.ModifiersList);
-        var damageResult = Damageable.TryChangeDamage(target, modifiedDamage, origin:user);
+        var damageResult = Damageable.TryChangeDamage(target, modifiedDamage, origin: user, partMultiplier: component.ClickPartDamageMultiplier);
 
         if (damageResult != null && damageResult.Any())
         {
@@ -544,6 +544,17 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         if (targetMap.MapId != userXform.MapID)
             return false;
+
+        if (TryComp<StaminaComponent>(user, out var stamina))
+        {
+            if (stamina.CritThreshold - stamina.StaminaDamage <= component.HeavyStaminaCost)
+            {
+                PopupSystem.PopupClient(Loc.GetString("melee-heavy-no-stamina"), meleeUid, user);
+                return false;
+            }
+
+            _stamina.TakeStaminaDamage(user, component.HeavyStaminaCost, stamina, visual: false);
+        }
 
         var userPos = TransformSystem.GetWorldPosition(userXform);
         var direction = targetMap.Position - userPos;
@@ -640,7 +651,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             RaiseLocalEvent(entity, attackedEvent);
             var modifiedDamage = DamageSpecifier.ApplyModifierSets(damage + hitEvent.BonusDamage + attackedEvent.BonusDamage, hitEvent.ModifiersList);
 
-            var damageResult = Damageable.TryChangeDamage(entity, modifiedDamage, origin:user);
+            var damageResult = Damageable.TryChangeDamage(entity, modifiedDamage, origin: user, partMultiplier: component.HeavyPartDamageMultiplier);
 
             if (damageResult != null && damageResult.GetTotal() > FixedPoint2.Zero)
             {
@@ -669,10 +680,6 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         {
             DoDamageEffect(targets, user, Transform(targets[0]));
         }
-
-        if (TryComp<StaminaComponent>(user, out var stamina))
-            _stamina.TakeStaminaDamage(user, component.HeavyStaminaCost, stamina);
-
 
         return true;
     }

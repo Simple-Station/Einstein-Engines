@@ -113,6 +113,11 @@
     speechSounds: Slime
   - type: TypingIndicator
     proto: slime
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
 
 - type: entity
   name: basic slime
@@ -150,7 +155,7 @@
   description: A geras of a slime - the name is ironic, isn't it?
   id: MobSlimesGeras
   parent: BaseMobAdultSlimes
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   # they portable...
   - type: MovementSpeedModifier

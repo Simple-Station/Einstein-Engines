@@ -1,6 +1,6 @@
 # Frontier Mail
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMailLarge
   id: MailNFInstrumentLarge
   suffix: instrument, large
@@ -53,7 +53,7 @@
 # Base Nyano Mail
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailBotanistChemicalBottles
   suffix: botanist chemicals
@@ -68,7 +68,7 @@
       prob: 0.4
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailBotanistMutagen
   suffix: mutagen
@@ -80,7 +80,7 @@
     - id: UnstableMutagenChemistryBottle
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailBotanistSeeds
   suffix: seeds
@@ -129,7 +129,7 @@
       orGroup: Seeds
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailClownGildedBikeHorn
   suffix: honk
@@ -140,7 +140,7 @@
     - id: BikeHornInstrument
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailClownHonkSupplement
   suffix: honk
@@ -153,7 +153,7 @@
     - id: FoodBanana
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailHoPBureaucracy
   suffix: hop paper
@@ -164,7 +164,7 @@
       maxAmount: 3
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailHoPSupplement
   suffix: hop supplement
@@ -176,7 +176,7 @@
     - id: Paper
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailMimeArtsCrafts
   suffix: arts and crafts
@@ -188,7 +188,7 @@
       maxAmount: 3
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailMimeBlankBook
   suffix: blank book
@@ -198,7 +198,7 @@
       - id: BookRandom
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailMimeBottleOfNothing
   suffix: bottle of nothing
@@ -208,7 +208,7 @@
       - id: DrinkBottleOfNothingFull
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailPassengerMoney
   suffix: passenger money

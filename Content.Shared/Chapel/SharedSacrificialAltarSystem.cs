@@ -15,7 +15,7 @@ public abstract partial class SharedSacrificialAltarSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<SacrificialAltarComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<SacrificialAltarComponent, BuckleChangeEvent>(OnUnstrapped);
+        SubscribeLocalEvent<SacrificialAltarComponent, UnbuckledEvent>(OnUnstrapped);
         SubscribeLocalEvent<SacrificialAltarComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
     }
 
@@ -24,7 +24,7 @@ public abstract partial class SharedSacrificialAltarSystem : EntitySystem
         args.PushMarkup(Loc.GetString("altar-examine"));
     }
 
-    private void OnUnstrapped(Entity<SacrificialAltarComponent> ent, ref BuckleChangeEvent args)
+    private void OnUnstrapped(Entity<SacrificialAltarComponent> ent, ref UnbuckledEvent args)
     {
         if (ent.Comp.DoAfter is not { } id)
             return;

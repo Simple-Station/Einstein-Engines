@@ -39,7 +39,7 @@
 
 # Nuclear Operative
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Nuclear Operative
   parent: MobHuman
   id: MobHumanNukeOp
@@ -50,7 +50,7 @@
       powerRollMultiplier: 7
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: MobHuman
   id: MobHumanLoneNuclearOperative
   name: Lone Operative
@@ -72,7 +72,7 @@
 
 # Space Ninja
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Space Ninja
   parent: MobHuman
   id: MobHumanSpaceNinja

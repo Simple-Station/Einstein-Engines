@@ -234,7 +234,7 @@ namespace Content.Shared.StatusEffect
                 _alertsSystem.ShowAlert(uid, proto.Alert.Value, null, cooldown1);
             }
 
-            Dirty(status);
+            Dirty(uid, status);
             RaiseLocalEvent(uid, new StatusEffectAddedEvent(uid, key));
             return true;
         }
@@ -246,7 +246,7 @@ namespace Content.Shared.StatusEffect
         ///     This is mostly for stuns, since Stun and Knockdown share an alert key. Other times this pretty much
         ///     will not be useful.
         /// </remarks>
-        private (TimeSpan, TimeSpan)? GetAlertCooldown(EntityUid uid, AlertType alert, StatusEffectsComponent status)
+        private (TimeSpan, TimeSpan)? GetAlertCooldown(EntityUid uid, ProtoId<AlertPrototype> alert, StatusEffectsComponent status)
         {
             (TimeSpan, TimeSpan)? maxCooldown = null;
             foreach (var kvp in status.ActiveEffects)
@@ -310,7 +310,7 @@ namespace Content.Shared.StatusEffect
                 RemComp<ActiveStatusEffectsComponent>(uid);
             }
 
-            Dirty(status);
+            Dirty(uid, status);
             RaiseLocalEvent(uid, new StatusEffectEndedEvent(uid, key));
             return true;
         }
@@ -334,7 +334,7 @@ namespace Content.Shared.StatusEffect
                     failed = true;
             }
 
-            Dirty(status);
+            Dirty(uid, status);
             return failed;
         }
 
@@ -408,7 +408,7 @@ namespace Content.Shared.StatusEffect
                 _alertsSystem.ShowAlert(uid, proto.Alert.Value, null, cooldown);
             }
 
-            Dirty(status);
+            Dirty(uid, status);
             return true;
         }
 
@@ -444,7 +444,7 @@ namespace Content.Shared.StatusEffect
                 _alertsSystem.ShowAlert(uid, proto.Alert.Value, null, cooldown);
             }
 
-            Dirty(status);
+            Dirty(uid, status);
             return true;
         }
 
@@ -465,7 +465,7 @@ namespace Content.Shared.StatusEffect
 
             status.ActiveEffects[key].Cooldown = (_gameTiming.CurTime, _gameTiming.CurTime + time);
 
-            Dirty(status);
+            Dirty(uid, status);
             return true;
         }
 
