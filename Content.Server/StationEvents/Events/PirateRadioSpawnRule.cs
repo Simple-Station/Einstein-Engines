@@ -25,7 +25,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
 
     protected override void Started(EntityUid uid, PirateRadioSpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -43,16 +43,19 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
             if (HasComp<BiomeComponent>(Transform(station).MapUid))
                 stations.Remove(station);
 
+        stations.RemoveAll(x => Transform(x).MapID == MapId.Nullspace)
+
         // _random forces Test Fails if given an empty list. which is guaranteed to happen during Tests.
         if (stations.Count <= 0)
             return;
-
+        
         var targetStation = _random.Pick(stations);
-        if (!_mapManager.MapExists(Transform(targetStation).MapID))
-            return; /// SHUT UP HEISENTESTS. DIE.
+        var targetMapId = Transform(targetStation).MapID;
+
+        if (!_mapSystem.MapExists(targetMapId))
+            return;
 
         var randomOffset = _random.NextVector2(component.MinimumDistance, component.MaximumDistance);
-
         var outpostOptions = new MapLoadOptions
         {
             Offset = _xform.GetWorldPosition(targetStation) + randomOffset,
@@ -86,7 +89,8 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
                 };
 
                 var salvageProto = _random.Pick(_prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList());
-                if (!_map.TryLoad(GameTicker.DefaultMap, salvageProto.MapPath.ToString(), out _, debrisOptions))
+                
+                if (!_map.TryLoad(100, salvageProto.MapPath.ToString(), out _, debrisOptions))
                     return;
 
                 k++;
