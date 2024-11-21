@@ -155,7 +155,9 @@
     damage:
       types:
         Blunt: 15
-    staminaCost: 30.0
+    staminaCost: 40.0
+    soundHit:
+      collection: MetalThud
 
 - type: entity
   abstract: true

@@ -26,6 +26,8 @@
     angle: 100
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+  - type: EmbeddableProjectile
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:

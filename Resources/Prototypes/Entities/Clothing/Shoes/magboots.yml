@@ -32,6 +32,14 @@
       difficulty: 2
       recipes:
         - ClothingShoesBootsMag
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Blunt: 10
+      staminaCost: 8
+      soundHit:
+        collection: MetalThud
+
 
 - type: entity
   parent: ClothingShoesBootsMag

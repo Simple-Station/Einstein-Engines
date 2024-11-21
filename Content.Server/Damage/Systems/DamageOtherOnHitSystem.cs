@@ -7,12 +7,14 @@ using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Effects;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Projectiles;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -37,7 +39,10 @@ namespace Content.Server.Damage.Systems
         public override void Initialize()
         {
             SubscribeLocalEvent<DamageOtherOnHitComponent, ThrowDoHitEvent>(OnDoHit);
-            SubscribeLocalEvent<StaminaComponent, ThrowAttemptEvent>(OnThrowAttempt);
+
+            SubscribeLocalEvent<DamageOtherOnHitComponent, ComponentStartup>(OnStartup);
+            SubscribeLocalEvent<DamageOtherOnHitComponent, ItemToggledEvent>(OnItemToggle);
+
             SubscribeLocalEvent<StaminaComponent, BeforeThrowEvent>(OnBeforeThrow);
             SubscribeLocalEvent<DamageOtherOnHitComponent, ThrownEvent>(OnThrown);
             SubscribeLocalEvent<DamageOtherOnHitComponent, DamageExamineEvent>(OnDamageExamine);
@@ -48,21 +53,9 @@ namespace Content.Server.Damage.Systems
             if (component.HitQuantity >= component.MaxHitQuantity)
                 return;
 
-            var damage = component.Damage;
-            var soundHit = component.SoundHit;
-            var soundNoDamage = component.SoundNoDamage;
+            TryComp<MeleeWeaponComponent>(uid, out var melee);
 
-            if (component.InheritMeleeStats && TryComp<MeleeWeaponComponent>(uid, out var melee))
-            {
-                if (damage.Empty)
-                    damage = melee.Damage;
-                if (soundHit == null)
-                    soundHit = melee.SoundHit;
-                if (soundNoDamage == null)
-                    soundNoDamage = melee.SoundNoDamage;
-            }
-
-            var modifiedDamage = _damageable.TryChangeDamage(args.Target, damage, component.IgnoreResistances, origin: args.Component.Thrower);
+            var modifiedDamage = _damageable.TryChangeDamage(args.Target, component.Damage ?? new DamageSpecifier(), component.IgnoreResistances, origin: args.Component.Thrower);
 
             // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
             if (modifiedDamage != null)
@@ -71,7 +64,7 @@ namespace Content.Server.Damage.Systems
                     _adminLogger.Add(LogType.ThrowHit, $"{ToPrettyString(args.Target):target} received {modifiedDamage.GetTotal():damage} damage from collision");
 
                 _meleeSound.PlayHitSound(args.Target, null, SharedMeleeWeaponSystem.GetHighestDamageSound(modifiedDamage, _protoManager), null,
-                    soundHit, soundNoDamage);
+                    component.SoundHit, component.SoundNoDamage);
             }
 
             if (modifiedDamage is { Empty: false })
@@ -102,20 +95,72 @@ namespace Content.Server.Damage.Systems
             component.HitQuantity += 1;
         }
 
-        private void OnThrowAttempt(EntityUid uid, StaminaComponent component, ref ThrowAttemptEvent args)
+        /// <summary>
+        ///   Inherit stats from MeleeWeapon.
+        /// </summary>
+        private void OnStartup(EntityUid uid, DamageOtherOnHitComponent component, ComponentStartup args)
         {
-            if (TryComp<DamageOtherOnHitComponent>(args.ItemUid, out var damage) &&
-                component.CritThreshold - component.StaminaDamage <= damage.StaminaCost)
+            if (!component.InheritMeleeStats || !TryComp<MeleeWeaponComponent>(uid, out var melee))
+                return;
+
+            if (component.Damage == null)
+                component.Damage = melee.Damage;
+            if (component.SoundHit == null)
+                component.SoundHit = melee.SoundHit;
+            if (component.SoundNoDamage == null)
+                component.SoundNoDamage = melee.SoundNoDamage;
+        }
+
+        /// <summary>
+        ///   Used to update the DamageOtherOnHit component on item toggle.
+        /// </summary>
+        private void OnItemToggle(EntityUid uid, DamageOtherOnHitComponent component, ItemToggledEvent args)
+        {
+            if (!component.InheritMeleeStats || !TryComp<ItemToggleMeleeWeaponComponent>(uid, out var itemToggleMelee))
+                return;
+
+            if (args.Activated)
             {
-                args.Cancel();
-                _popup.PopupEntity(Loc.GetString("throw-no-stamina", ("item", args.ItemUid)), uid, uid);
+                if (itemToggleMelee.ActivatedDamage != null)
+                {
+                    component.DeactivatedDamage ??= component.Damage;
+                    component.Damage = itemToggleMelee.ActivatedDamage;
+                }
+
+                component.DeactivatedSoundHit = component.SoundHit;
+                component.SoundHit = itemToggleMelee.ActivatedSoundOnHit;
+
+                if (itemToggleMelee.ActivatedSoundOnHitNoDamage != null)
+                {
+                    component.DeactivatedSoundNoDamage ??= component.SoundNoDamage;
+                    component.SoundNoDamage = itemToggleMelee.ActivatedSoundOnHitNoDamage;
+                }
+            }
+            else
+            {
+                if (component.DeactivatedDamage != null)
+                    component.Damage = component.DeactivatedDamage;
+
+                component.SoundHit = component.DeactivatedSoundHit;
+
+                if (component.DeactivatedSoundNoDamage != null)
+                    component.SoundNoDamage = component.DeactivatedSoundNoDamage;
             }
         }
 
-        private void OnBeforeThrow(EntityUid uid, StaminaComponent component, BeforeThrowEvent args)
+        private void OnBeforeThrow(EntityUid uid, StaminaComponent component, ref BeforeThrowEvent args)
         {
-            if (TryComp<DamageOtherOnHitComponent>(args.ItemUid, out var damage))
-                _stamina.TakeStaminaDamage(uid, damage.StaminaCost, component, visual: false);
+            if (!TryComp<DamageOtherOnHitComponent>(args.ItemUid, out var damage))
+                return;
+
+            if (component.CritThreshold - component.StaminaDamage <= damage.StaminaCost)
+            {
+                args.Cancelled = true;
+                _popup.PopupEntity(Loc.GetString("throw-no-stamina", ("item", args.ItemUid)), uid, uid);
+                return;
+            }
+
+            _stamina.TakeStaminaDamage(uid, damage.StaminaCost, component, visual: false);
         }
 
         private void OnThrown(EntityUid uid, DamageOtherOnHitComponent component, ThrownEvent args)
@@ -125,13 +170,7 @@ namespace Content.Server.Damage.Systems
 
         private void OnDamageExamine(EntityUid uid, DamageOtherOnHitComponent component, ref DamageExamineEvent args)
         {
-            var damage = component.Damage;
-            if (component.InheritMeleeStats &&
-                damage.Empty &&
-                TryComp<MeleeWeaponComponent>(uid, out var melee))
-                damage = melee.Damage;
-
-            _damageExamine.AddDamageExamine(args.Message, damage, Loc.GetString("damage-throw"));
+            _damageExamine.AddDamageExamine(args.Message, component.Damage ?? new DamageSpecifier(), Loc.GetString("damage-throw"));
 
             if (component.StaminaCost == 0)
                 return;
