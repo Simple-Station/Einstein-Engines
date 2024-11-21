@@ -24,10 +24,6 @@
     maxTargets: 5
     angle: 100
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 3.5
-        Blunt: 3
   - type: Item
     sprite: Objects/Tools/Hydroponics/hoe.rsi
 
@@ -55,9 +51,6 @@
     maxTargets: 1
     angle: 20
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Pierce: 7
   - type: Item
     sprite: Objects/Tools/Hydroponics/clippers.rsi
     storedRotation: -90
@@ -85,9 +78,6 @@
     maxTargets: 1
     angle: 120
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 7
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: Item
@@ -123,9 +113,6 @@
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 5
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 10
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: Item
@@ -157,10 +144,6 @@
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 6
-        Slash: 2
   - type: Item
     sprite: Objects/Tools/Hydroponics/spade.rsi
   - type: Shovel

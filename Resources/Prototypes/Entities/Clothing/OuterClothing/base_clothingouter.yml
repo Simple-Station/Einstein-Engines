@@ -155,6 +155,7 @@
     damage:
       types:
         Blunt: 15
+    staminaCost: 30.0
 
 - type: entity
   abstract: true

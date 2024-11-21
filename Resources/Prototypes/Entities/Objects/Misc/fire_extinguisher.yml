@@ -51,9 +51,6 @@
     soundHit:
       path: /Audio/Weapons/smash.ogg
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 8
   - type: Tool
     qualities:
     - Rolling

@@ -57,6 +57,8 @@
     damage:
       types:
         Blunt: 3
+    soundHit:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
   - type: Tool
     qualities:
     - Rolling

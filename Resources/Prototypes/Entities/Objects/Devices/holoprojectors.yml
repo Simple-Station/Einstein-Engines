@@ -37,9 +37,6 @@
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 6.5
 
 - type: entity
   parent: Holoprojector

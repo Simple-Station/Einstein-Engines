@@ -27,10 +27,6 @@
     maxTargets: 5
     angle: 80
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 6
-        Piercing: 3
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:

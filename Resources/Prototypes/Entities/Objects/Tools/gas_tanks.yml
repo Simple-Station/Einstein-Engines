@@ -45,9 +45,6 @@
     maxTargets: 3
     angle: 100
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 8
   - type: PhysicalComposition
     materialComposition:
       Steel: 185
@@ -116,9 +113,6 @@
       types:
         Blunt: 5
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 5
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -188,9 +182,6 @@
       types:
         Blunt: 7.5
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 7.5
 
 - type: entity
   parent: DoubleEmergencyOxygenTank

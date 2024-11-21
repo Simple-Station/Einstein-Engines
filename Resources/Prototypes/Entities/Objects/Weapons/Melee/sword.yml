@@ -24,9 +24,6 @@
     maxTargets: 7
     angle: 80
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 15
   - type: EmbeddableProjectile
   - type: ThrowingAngle
     angle: 225
@@ -74,6 +71,8 @@
     heavyStaminaCost: 15
     maxTargets: 1
     angle: 20
+  - type: DamageOtherOnHit
+  - type: EmbeddableProjectile
   - type: Item
     size: Normal
     sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
@@ -139,6 +138,8 @@
     angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+  - type: EmbeddableProjectile
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/machete.rsi
@@ -171,6 +172,8 @@
     angle: 200
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+  - type: EmbeddableProjectile
   - type: Item
     size: Normal
   - type: Clothing
@@ -206,6 +209,8 @@
     angle: 40
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+  - type: EmbeddableProjectile
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cutlass.rsi
@@ -234,6 +239,7 @@
           Radiation: 10
       soundHit:
         path: /Audio/Effects/explosion_small1.ogg
+    - type: DamageOtherOnHit
     - type: Reflect
       enabled: true
       reflectProb: 0.5 # In robust hands, deflects as well as an e-sword

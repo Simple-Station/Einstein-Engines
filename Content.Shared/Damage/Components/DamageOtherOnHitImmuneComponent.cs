@@ -1,4 +1,4 @@
-namespace Content.Server.Damage.Components
+namespace Content.Shared.Damage.Components
 {
     /// <summary>
     /// This is used for entities that are immune to damage from DamageOtherOnHit.

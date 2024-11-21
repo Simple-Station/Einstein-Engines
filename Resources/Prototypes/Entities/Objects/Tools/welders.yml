@@ -79,9 +79,6 @@
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 6
   - type: RefillableSolution
     solution: Welder
   - type: SolutionContainerManager

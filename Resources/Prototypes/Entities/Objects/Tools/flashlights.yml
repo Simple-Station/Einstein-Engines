@@ -63,9 +63,6 @@
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 6
   - type: Item
     sprite: Objects/Tools/flashlight.rsi
     storedRotation: -90
@@ -131,10 +128,6 @@
     angle: 20
     soundHit:
       collection: MetalThud
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 6.5
   - type: Item
     sprite: Objects/Tools/seclite.rsi
   - type: PointLight

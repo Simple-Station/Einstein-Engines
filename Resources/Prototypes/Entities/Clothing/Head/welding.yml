@@ -27,6 +27,8 @@
     damage:
       types:
         Blunt: 7
+    soundHit:
+      collection: MetalThud
 
 - type: entity
   parent: WeldingMaskBase

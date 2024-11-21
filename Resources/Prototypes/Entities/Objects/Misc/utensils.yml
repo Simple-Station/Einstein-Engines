@@ -51,9 +51,6 @@
       types:
         Piercing: 5
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Piercing: 5
   - type: EmbeddableProjectile
     removalTime: 0.5
   - type: ThrowingAngle
@@ -94,9 +91,6 @@
       types:
         Blunt: 1
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 1
   - type: Shovel
     speedModifier: 0.1 # you can try
 
@@ -156,8 +150,5 @@
       types:
         Blunt: 2
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 2
   - type: Shovel
     speedModifier: 0.05 # nah

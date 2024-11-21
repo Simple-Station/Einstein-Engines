@@ -408,7 +408,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 6
+        Piercing: 8
 
 - type: entity
   name: CentCom pen

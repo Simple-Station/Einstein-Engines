@@ -1,9 +1,9 @@
 using Content.Shared.Damage.Systems;
 using Content.Shared.Damage;
+using Robust.Shared.Audio;
 
 namespace Content.Shared.Damage.Components
 {
-    [Access(typeof(DamageOtherOnHitSystem))]
     [RegisterComponent]
     public sealed partial class DamageOtherOnHitComponent : Component
     {
@@ -11,9 +11,9 @@ namespace Content.Shared.Damage.Components
         [ViewVariables(VVAccess.ReadWrite)]
         public bool IgnoreResistances = false;
 
-        [DataField(required: true)]
+        [DataField]
         [ViewVariables(VVAccess.ReadWrite)]
-        public DamageSpecifier Damage = default!;
+        public DamageSpecifier Damage = new DamageSpecifier();
 
         [DataField]
         [ViewVariables(VVAccess.ReadWrite)]
@@ -25,5 +25,20 @@ namespace Content.Shared.Damage.Components
 
         [ViewVariables(VVAccess.ReadWrite)]
         public int HitQuantity = 0;
+
+        [DataField]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public bool InheritMeleeStats = true;
+
+        [DataField]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public SoundSpecifier? SoundHit;
+
+        /// <summary>
+        /// Plays if no damage is done to the target entity.
+        /// </summary>
+        [DataField]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public SoundSpecifier SoundNoDamage { get; set; } = new SoundCollectionSpecifier("WeakHit");
     }
 }

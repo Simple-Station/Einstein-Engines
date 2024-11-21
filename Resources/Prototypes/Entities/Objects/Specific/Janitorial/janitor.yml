@@ -24,7 +24,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 6.5
+        Blunt: 6
   - type: Spillable
     solution: absorbed
   - type: Wieldable
@@ -79,7 +79,7 @@
     - type: DamageOtherOnHit
       damage:
         types:
-          Blunt: 6.5
+          Blunt: 6
     - type: Spillable
       solution: absorbed
     - type: Wieldable
