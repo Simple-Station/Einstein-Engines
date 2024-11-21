@@ -34,6 +34,9 @@
   - type: Sprite
     sprite: Mobs/Species/Diona/organs.rsi
     state: brain
+  - type: Brain
+  - type: Organ
+    slotId: brain
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -60,6 +63,8 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
+  - type: Eyes
+  
 
 - type: entity
   id: OrganDionaStomach
@@ -69,6 +74,8 @@
   components:
   - type: Sprite
     state: stomach
+  - type: Organ
+    slotId: stomach
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -104,6 +111,8 @@
       - state: lung-l
       - state: lung-r
   - type: Lung
+  - type: Organ
+    slotId: lungs
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false

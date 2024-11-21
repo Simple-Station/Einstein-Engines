@@ -1,0 +1,81 @@
+# Lawyer
+#- type: characterItemGroup
+#  id: LoadoutLawyerBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLawyerShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutLawyerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceLawyerUniformBlueSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformBlueSkirt
+    - type: loadout
+      id: LoadoutServiceLawyerUniformRedSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformRedSkirt
+    - type: loadout
+      id: LoadoutServiceLawyerUniformPurpleSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformPurpleSkirt
+    - type: loadout
+      id: LoadoutServiceLawyerUniformGoodSuit
+    - type: loadout
+      id: LoadoutServiceLawyerUniformGoodSkirt

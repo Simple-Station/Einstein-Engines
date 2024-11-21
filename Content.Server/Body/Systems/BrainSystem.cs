@@ -1,8 +1,10 @@
 using Content.Server.Body.Components;
 using Content.Server.Ghost.Components;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
+using Content.Server.DelayedDeath;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Pointing;
@@ -12,8 +14,8 @@ namespace Content.Server.Body.Systems
     public sealed class BrainSystem : EntitySystem
     {
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+        [Dependency] private readonly SharedBodySystem _bodySystem = default!;
 
-        // Shitmed-Start
         public override void Initialize()
         {
             base.Initialize();
@@ -30,17 +32,21 @@ namespace Content.Server.Body.Systems
 
             // Prevents revival, should kill the user within a given timespan too.
             EnsureComp<DebrainedComponent>(args.OldBody);
+            EnsureComp<DelayedDeathComponent>(args.OldBody);
             HandleMind(uid, args.OldBody);
         }
+
         private void HandleAddition(EntityUid uid, BrainComponent _, ref OrganAddedToBodyEvent args)
         {
             if (TerminatingOrDeleted(uid) || TerminatingOrDeleted(args.Body))
                 return;
 
             RemComp<DebrainedComponent>(args.Body);
+            if (_bodySystem.TryGetBodyOrganComponents<HeartComponent>(args.Body, out var _))
+                RemComp<DelayedDeathComponent>(args.Body);
             HandleMind(args.Body, uid);
         }
-        // Shitmed-End
+
         private void HandleMind(EntityUid newEntity, EntityUid oldEntity)
         {
             if (TerminatingOrDeleted(newEntity) || TerminatingOrDeleted(oldEntity))

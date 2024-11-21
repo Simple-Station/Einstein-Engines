@@ -89,7 +89,7 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
                 Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(2));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.ID).ToArray();
-                var expectedIDs = new[] { "HumanHealth", "Debug1", "Debug2" };
+                var expectedIDs = new[] { "Debug1", "Debug2" };
                 Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
             });
 
@@ -106,7 +106,7 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
                 Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(1));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.ID).ToArray();
-                var expectedIDs = new[] { "HumanHealth", "Debug2" };
+                var expectedIDs = new[] { "Debug2" };
                 Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
             });
 

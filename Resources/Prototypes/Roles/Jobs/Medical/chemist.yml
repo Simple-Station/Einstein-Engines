@@ -29,8 +29,6 @@
     shoes: ClothingShoesColorWhite
     id: ChemistryPDA
     ears: ClothingHeadsetMedical
-    belt: ChemBag
-    # the purple glasses?
   innerClothingSkirt: ClothingUniformJumpskirtChemistry
   satchel: ClothingBackpackSatchelChemistryFilled
   duffelbag: ClothingBackpackDuffelChemistryFilled

@@ -76,9 +76,8 @@ public sealed class BodySystem : SharedBodySystem
             var layer = partEnt.Comp.ToHumanoidLayers();
             if (layer != null)
             {
-                var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
                 _humanoidSystem.SetLayersVisibility(
-                    bodyEnt, layers, visible: true, permanent: true, humanoid);
+                    bodyEnt, new[] { layer.Value }, visible: true, permanent: true, humanoid);
             }
         }
     }
@@ -163,7 +162,8 @@ public sealed class BodySystem : SharedBodySystem
         var ev = new BeingGibbedEvent(gibs);
         RaiseLocalEvent(partId, ref ev);
 
-        QueueDel(partId);
+        if (gibs.Any())
+            QueueDel(partId);
 
         return gibs;
     }
