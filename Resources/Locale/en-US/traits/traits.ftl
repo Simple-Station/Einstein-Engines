@@ -66,7 +66,7 @@ trait-description-PirateAccent =
 trait-name-Accentless = Accentless
 trait-description-Accentless =
     You may have developed in isolation or separation from other repsentatives of your species,
-    which resulted in you not having the typical accent that the peers your species may possess.
+    which resulted in you not having the typical accent that your species peers may possess.
 
 trait-name-FrontalLisp = Frontal Lisp
 trait-description-FrontalLisp =
