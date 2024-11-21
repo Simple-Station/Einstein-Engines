@@ -12,4 +12,4 @@ damage-examine = It does the following damage:
 damage-examine-type = It does the following [color=cyan]{$type}[/color] damage:
 damage-value = - [color=red]{$amount}[/color] units of [color=yellow]{$type}[/color].
 
-damage-melee-heavy-stamina-cost = A [color=cyan]{$type}[/color] costs [color=orange]{$cost}[/color] [color=yellow]Stamina[/color].
+damage-stamina-cost = A [color=cyan]{$type}[/color] costs [color=orange]{$cost}[/color] [color=yellow]Stamina[/color].

@@ -44,6 +44,10 @@
     heavyStaminaCost: 10
     maxTargets: 3
     angle: 100
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 8
   - type: PhysicalComposition
     materialComposition:
       Steel: 185
@@ -108,6 +112,10 @@
     - Belt
     - suitStorage
   - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOtherOnHit
     damage:
       types:
         Blunt: 5
@@ -176,6 +184,10 @@
     sprite: Objects/Tanks/emergency_double.rsi
   - type: MeleeWeapon
     attackRate: 0.9
+    damage:
+      types:
+        Blunt: 7.5
+  - type: DamageOtherOnHit
     damage:
       types:
         Blunt: 7.5

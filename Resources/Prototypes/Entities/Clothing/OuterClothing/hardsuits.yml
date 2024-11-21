@@ -27,6 +27,10 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBasic
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 15
 
 #Atmospherics Hardsuit
 - type: entity

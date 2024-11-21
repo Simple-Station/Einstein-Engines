@@ -30,6 +30,10 @@
         Blunt: 2
     soundHit:
       path: "/Audio/Weapons/click.ogg"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 2
   - type: StaticPrice
     price: 10
 

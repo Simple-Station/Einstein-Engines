@@ -151,6 +151,10 @@
     coefficient: 0.75 # 25%
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 15
 
 - type: entity
   abstract: true

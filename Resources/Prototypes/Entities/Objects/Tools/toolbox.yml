@@ -32,6 +32,10 @@
     angle: 80.5
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 12
   - type: Tag
     tags:
     - Toolbox
@@ -141,6 +145,10 @@
     damage:
       types:
         Blunt: 11.5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 15
 
 - type: entity
   name: golden toolbox
@@ -157,6 +165,10 @@
     damage:
       types:
         Blunt: 12
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 16
 
 - type: entity
   id: ToolboxThief

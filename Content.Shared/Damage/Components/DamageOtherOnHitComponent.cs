@@ -1,7 +1,7 @@
-using Content.Server.Damage.Systems;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Damage;
 
-namespace Content.Server.Damage.Components
+namespace Content.Shared.Damage.Components
 {
     [Access(typeof(DamageOtherOnHitSystem))]
     [RegisterComponent]

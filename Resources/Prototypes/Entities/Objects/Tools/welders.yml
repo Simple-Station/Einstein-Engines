@@ -78,6 +78,10 @@
         Blunt: 6 #i mean... i GUESS you could use it like that
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 6
   - type: RefillableSolution
     solution: Welder
   - type: SolutionContainerManager

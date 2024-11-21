@@ -23,6 +23,13 @@
     heavyStaminaCost: 5
     maxTargets: 7
     angle: 80
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 15
+  - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
   - type: Reflect
     enabled: true
     # Design intent: a robust captain or tot can sacrifice movement to make the most of this weapon, but they have to

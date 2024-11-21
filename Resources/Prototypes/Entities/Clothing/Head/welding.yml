@@ -23,6 +23,10 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 7
 
 - type: entity
   parent: WeldingMaskBase
