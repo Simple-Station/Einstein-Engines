@@ -23,13 +23,13 @@ trait-name-LightweightDrunk = Lightweight Drunk
 trait-description-LightweightDrunk =
     Your body exhibits a significantly heightened susceptibility to alcohol intoxication.
     As a result, alcohol has a more significant effect on your cognitive functions.
-    [color=red]Note[/color]: This pertrains solely to the visual effects of intoxication, and does not affect the alchohol poisoning threshold.
+    Note: This pertrains solely to the [color=blue]visual effects[/color] of intoxication, and does not affect the alchohol poisoning threshold.
 
 trait-name-HeavyweightDrunk = Alcohol Tolerance
 trait-description-HeavyweightDrunk =
     Your body has developed an exceptionally high level of alcohol tolerance, leaving the very beverages you consume intimidated.
     As a result, the effects of alcohol on your cognitive functions are considerably less noticeable.
-    [color=red]Note[/color]: This pertrains solely to the visual effects of intoxication, and does not affect the alchohol poisoning threshold.
+    Note: This pertrains solely to the [color=blue]visual effects[/color] of intoxication, and does not affect the alchohol poisoning threshold.
 
 trait-name-LiquorLifeline = Liquor Lifeline
 trait-description-LiquorLifeline =
