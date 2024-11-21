@@ -18,6 +18,7 @@
     angle: 120
     soundHit:
       collection: ExplosionSmall
+  - type: DamageOtherOnHit
   - type: MeleeRequiresWield # You can't hit a home run with one hand, jimbo.
   - type: MeleeThrowOnHit
     speed: 30

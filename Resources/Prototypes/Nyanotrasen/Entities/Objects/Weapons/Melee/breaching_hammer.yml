@@ -23,6 +23,7 @@
 #  - type: MeleeStaminaCost
 #    swing: 10
 #    wieldCoefficient: 0.5 #if wielded you will only consume 5
+  - type: DamageOtherOnHit
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -46,5 +47,3 @@
     quickEquip: false
     slots:
     - back
-
-

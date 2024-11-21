@@ -35,10 +35,10 @@
     - type: DamageOtherOnHit
       damage:
         types:
-          Blunt: 10
-      staminaCost: 8
+          Blunt: 9
+      staminaCost: 11.5
       soundHit:
-        collection: MetalThud
+        path: /Audio/Weapons/smash.ogg
 
 
 - type: entity
@@ -67,6 +67,11 @@
     price: 750
   - type: StealTarget
     stealGroup: ClothingShoesBootsMagAdv
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 13
+    staminaCost: 15
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -139,6 +144,13 @@
   - type: Tag
     tags:
       - WhitelistChameleon
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 20
+    staminaCost: 25
+    soundHit:
+      collection: MetalThud
 
 - type: entity
   id: ActionBaseToggleMagboots

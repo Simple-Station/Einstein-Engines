@@ -20,6 +20,8 @@
       path: /Audio/Weapons/genhit2.ogg
     soundSwing:
       path: /Audio/Weapons/punchmiss.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 10
   - type: Item
     size: Normal
   - type: Damageable

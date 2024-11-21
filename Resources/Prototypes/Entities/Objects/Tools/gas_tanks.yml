@@ -44,7 +44,10 @@
     heavyStaminaCost: 10
     maxTargets: 3
     angle: 100
+    soundHit:
+      path: /Audio/Weapons/smash.ogg
   - type: DamageOtherOnHit
+    staminaCost: 8
   - type: PhysicalComposition
     materialComposition:
       Steel: 185
@@ -113,6 +116,7 @@
       types:
         Blunt: 5
   - type: DamageOtherOnHit
+    staminaCost: 3.5
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -182,6 +186,7 @@
       types:
         Blunt: 7.5
   - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   parent: DoubleEmergencyOxygenTank

@@ -78,6 +78,7 @@
     damage:
       types:
         Blunt: 0
+  - type: DamageOtherOnHit
   - type: Welder
     fuelConsumption: 0.01
     fuelLitCost: 0.1

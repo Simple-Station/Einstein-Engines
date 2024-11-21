@@ -24,6 +24,7 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: Sprite
@@ -74,6 +75,8 @@
       types:
         Slash: 8
         Blunt: 1
+  - type: DamageOtherOnHit
+    staminaCost: 6
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cleaver.rsi
@@ -157,6 +160,9 @@
     damage:
       types:
         Slash: 5
+  - type: DamageOtherOnHit
+    staminaCost: 6
+  - type: EmbeddableProjectile
   - type: Sprite
     sprite: Clothing/Head/Hats/greyflatcap.rsi
   - type: Clothing

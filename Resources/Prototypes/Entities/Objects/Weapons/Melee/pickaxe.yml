@@ -73,6 +73,9 @@
     heavyRangeModifier: 2
     heavyDamageBaseModifier: 1
     angle: 20
+  - type: DamageOtherOnHit
+  - type: ThrowingAngle
+    angle: 270
 
   - type: ReverseEngineering # Nyano
     difficulty: 2

@@ -58,6 +58,7 @@
     angle: 20
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
   - type: ReverseEngineering # Delta
     difficulty: 3
     recipes:
@@ -102,3 +103,4 @@
       types:
         Blunt: 12
         Slash: 2
+  - type: DamageOtherOnHit

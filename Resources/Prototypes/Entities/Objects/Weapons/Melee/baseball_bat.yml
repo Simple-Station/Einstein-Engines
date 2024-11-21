@@ -28,6 +28,7 @@
       types:
         Blunt: 4
         Structural: 10
+  - type: DamageOtherOnHit
   - type: Item
     size: Normal
   - type: Tool

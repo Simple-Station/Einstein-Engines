@@ -23,6 +23,7 @@
     angle: 120
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:

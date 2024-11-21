@@ -16,6 +16,7 @@
       types:
         Blunt: 5
         Slash: 1
+  - type: DamageOtherOnHit
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/katana.rsi
@@ -36,6 +37,7 @@
       types:
         Blunt: 6
         Slash: 1
+  - type: DamageOtherOnHit
   - type: Item
     size: Normal
   - type: Clothing
