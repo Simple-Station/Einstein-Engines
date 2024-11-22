@@ -70,7 +70,7 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
                 && inventoryContainer.Owner is var pdaHolder
                 && HasComp<MobStateComponent>(pdaHolder))
             {
-                name = Identity.Name(pdaHolder, EntityManager);
+                name = MetaData(pdaHolder).EntityName; // This is not perfect, but Identiy.Name is more scuffed
             }
             else if (pdaComp.ContainedId is { } idCard && TryComp<IdCardComponent>(idCard, out var idComp))
             {

@@ -18,6 +18,8 @@ public sealed partial class NanoMessageServerSystem : EntitySystem
         return server.Comp.Enabled && (!TryComp<ApcPowerReceiverComponent>(server, out var apc) || apc.Powered);
     }
 
+    #region Connections
+
     public bool IsConnected(Entity<NanoMessageServerComponent?> server, EntityUid client)
     {
         if (!Resolve(server, ref server.Comp))
@@ -62,6 +64,10 @@ public sealed partial class NanoMessageServerSystem : EntitySystem
         RaiseLocalEvent(server, new NanoMessageClientsChangedEvent());
     }
 
+    #endregion
+
+    #region Client Data
+
     public IEnumerable<NanoMessageRecipient> GetClientsData(Entity<NanoMessageServerComponent?> server)
     {
         if (!Resolve(server, ref server.Comp))
@@ -90,6 +96,8 @@ public sealed partial class NanoMessageServerSystem : EntitySystem
         };
     }
 
+    #endregion
+
     /// <summary>
     ///     Tries to find a client with the given id on the given server.
     /// </summary>
@@ -111,6 +119,8 @@ public sealed partial class NanoMessageServerSystem : EntitySystem
         result = (clientId.Value, clientComp);
         return true;
     }
+
+    #region Conversations
 
     /// <summary>
     ///     Tries to find or create a conversation between two users.
@@ -203,4 +213,6 @@ public sealed partial class NanoMessageServerSystem : EntitySystem
     {
         return server.Comp.NextConversationId++;
     }
+
+    #endregion
 }
