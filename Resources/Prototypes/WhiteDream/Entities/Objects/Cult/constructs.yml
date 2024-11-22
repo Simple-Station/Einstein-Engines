@@ -75,6 +75,7 @@
     - Alive
     - Dead
   - type: CombatMode
+    canDisarm: false
   - type: Internals
   - type: Examiner
   - type: Speech
@@ -87,7 +88,6 @@
   - type: ContainerContainer
     containers:
       actions: !type:Container
-    canDisarm: false
   - type: Visibility
   - type: ContentEye
   - type: Actions

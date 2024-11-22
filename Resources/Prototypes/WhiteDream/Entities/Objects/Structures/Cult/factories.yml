@@ -68,8 +68,6 @@
     entries:
     - prototype: ConstructShell
     - prototype: WhetstoneCult
-  # TODO: Add prototypes
-  #    - Flask of Unholy Water
   - type: Construction
     graph: CultFactoryAltar
     node: altar
@@ -84,6 +82,7 @@
     sprite: WhiteDream/BloodCult/Entities/Structures/forge.rsi
   - type: TimedFactory
     entries:
+    - prototype: MirrorShieldCult
     - prototype: EldritchLongsword
     - prototype: ClothingOuterCultArmor
     - prototype: ClothingOuterRobesCultTrue

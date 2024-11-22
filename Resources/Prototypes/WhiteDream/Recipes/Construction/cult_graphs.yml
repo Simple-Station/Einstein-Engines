@@ -35,9 +35,6 @@
 - type: constructionGraph
   id: CultFactoryForge
   start: start
-  icon:
-    sprite: WhiteDream/BloodCult/Entities/Structures/forge.rsi
-    state: icon_off
   graph:
   - node: start
     edges:
@@ -54,9 +51,6 @@
 
 - type: constructionGraph
   id: CultFactoryArchives
-  icon:
-    sprite: WhiteDream/BloodCult/Entities/Structures/archives.rsi
-    state: icon_off
   start: start
   graph:
   - node: start
@@ -74,9 +68,6 @@
 
 - type: constructionGraph
   id: CultDoor
-  icon:
-    sprite: WhiteDream/BloodCult/Entities/Structures/cult_airlock.rsi
-    state: closed
   start: start
   graph:
   - node: start
@@ -95,9 +86,6 @@
 - type: constructionGraph
   id: CultGirder
   start: start
-  icon:
-    sprite: WhiteDream/BloodCult/Entities/Structures/cult_girder.rsi
-    state: icon
   graph:
   - node: start
     edges:

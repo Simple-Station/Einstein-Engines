@@ -128,7 +128,7 @@
 - type: entity
   parent: BaseItem
   id: ShadowShackles
-  name: Shadow Shackles
+  name: shadow shackles
   description: Shackles that bind the wrists with sinister magic.
   components:
   - type: Item
@@ -143,3 +143,58 @@
   - type: Sprite
     sprite: WhiteDream/BloodCult/actions.rsi
     state: cuff
+
+- type: entity
+  parent: BaseItem
+  id: MirrorShieldCult
+  name: mirror shield
+  description: An infamous shield used by Nar'Sien sects to confuse and disorient their enemies. Its edges are weighted for use as a throwing weapon - capable of disabling multiple foes with preternatural accuracy.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Items/mirror_shield.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+  - type: CultItem
+  - type: StunOnCollide
+    blacklist:
+      components:
+      - BloodCultist
+  - type: Reflect
+    reflectProb: 0.75
+    innate: true
+    reflects:
+    - Energy
+  - type: Blocking
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+    activeBlockModifier:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+      flatReductions:
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
+        Heat: 1
+    blockSound: !type:SoundPathSpecifier
+      path: /Audio/Effects/glass_step.ogg
+  - type: Damageable
+    damageContainer: Shield
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak

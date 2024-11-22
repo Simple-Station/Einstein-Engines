@@ -1,4 +1,5 @@
-﻿using Content.Shared.Ghost;
+﻿using Content.Shared.Blocking;
+using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
@@ -18,12 +19,11 @@ public sealed class CultItemSystem : EntitySystem
 
     public override void Initialize()
     {
-        base.Initialize();
-
         SubscribeLocalEvent<CultItemComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<CultItemComponent, BeforeThrowEvent>(OnBeforeThrow);
         SubscribeLocalEvent<CultItemComponent, BeingEquippedAttemptEvent>(OnEquipAttempt);
         SubscribeLocalEvent<CultItemComponent, AttemptMeleeEvent>(OnMeleeAttempt);
+        SubscribeLocalEvent<CultItemComponent, BeforeBlockingEvent>(OnBeforeBlocking);
     }
 
     private void OnActivate(Entity<CultItemComponent> item, ref ActivateInWorldEvent args)
@@ -33,6 +33,15 @@ public sealed class CultItemSystem : EntitySystem
 
         args.Handled = true;
         KnockdownAndDropItem(item, args.User, Loc.GetString("cult-item-component-generic"));
+    }
+
+    private void OnBeforeThrow(Entity<CultItemComponent> item, ref BeforeThrowEvent args)
+    {
+        if (CanUse(args.PlayerUid))
+            return;
+
+        args.Cancelled = true;
+        KnockdownAndDropItem(item, args.PlayerUid, Loc.GetString("cult-item-component-throw-fail"));
     }
 
     private void OnEquipAttempt(Entity<CultItemComponent> item, ref BeingEquippedAttemptEvent args)
@@ -53,13 +62,13 @@ public sealed class CultItemSystem : EntitySystem
         KnockdownAndDropItem(item, args.PlayerUid, Loc.GetString("cult-item-component-attack-fail"));
     }
 
-    private void OnBeforeThrow(Entity<CultItemComponent> item, ref BeforeThrowEvent args)
+    private void OnBeforeBlocking(Entity<CultItemComponent> item, ref BeforeBlockingEvent args)
     {
-        if (CanUse(args.PlayerUid))
+        if (CanUse(args.User))
             return;
 
-        args.Cancelled = true;
-        KnockdownAndDropItem(item, args.PlayerUid, Loc.GetString("cult-item-component-throw-fail"));
+        args.Cancel();
+        KnockdownAndDropItem(item, args.User, Loc.GetString("cult-item-component-block-fail"));
     }
 
     private void KnockdownAndDropItem(Entity<CultItemComponent> item, EntityUid user, string message)
@@ -69,8 +78,5 @@ public sealed class CultItemSystem : EntitySystem
         _hands.TryDrop(user);
     }
 
-    private bool CanUse(EntityUid? uid)
-    {
-        return HasComp<BloodCultistComponent>(uid) || HasComp<GhostComponent>(uid);
-    }
+    private bool CanUse(EntityUid? uid) => HasComp<BloodCultistComponent>(uid) || HasComp<GhostComponent>(uid);
 }
