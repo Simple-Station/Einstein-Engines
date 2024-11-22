@@ -444,7 +444,7 @@
     damage:
       types:
         Blunt: 8
-    heavyStaminaCost: 7.5
+    staminaCost: 7.5
     soundHit:
       collection: MetalThud
   - type: ReverseEngineering # Nyano

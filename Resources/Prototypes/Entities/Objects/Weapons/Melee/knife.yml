@@ -49,6 +49,8 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/kitchen_knife.rsi
     state: icon
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/kitchen_knife.rsi
   - type: GuideHelp
@@ -77,6 +79,8 @@
         Blunt: 1
   - type: DamageOtherOnHit
     staminaCost: 7.5
+  - type: ThrowingAngle
+    angle: 245
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cleaver.rsi
@@ -103,6 +107,8 @@
     damage:
       types:
         Slash: 9
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/combat_knife.rsi
   - type: DisarmMalus
@@ -123,6 +129,8 @@
     damage:
       types:
         Slash: 8
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/survival_knife.rsi
 
@@ -141,6 +149,8 @@
     damage:
       types:
         Slash: 10
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
 
@@ -204,6 +214,8 @@
     damage:
       types:
         Slash: 5.5
+  - type: ThrowingAngle
+    angle: 200
   - type: Item
     sprite: Objects/Weapons/Melee/shiv.rsi
   - type: DisarmMalus
