@@ -37,6 +37,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
 
@@ -72,6 +73,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - NewsReaderCartridge
+    - NanoMessageCartridge
     - MailMetricsCartridge
 
 - type: entity
@@ -118,4 +120,5 @@
      - CrewManifestCartridge
      - NotekeeperCartridge
      - NewsReaderCartridge
+     - NanoMessageCartridge
      - GlimmerMonitorCartridge

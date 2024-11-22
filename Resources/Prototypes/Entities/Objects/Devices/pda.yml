@@ -76,6 +76,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
     cartridgeSlot:
       priority: -1
       name: device-pda-slot-component-slot-name-cartridge
@@ -189,6 +190,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
 
@@ -367,6 +369,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - MailMetricsCartridge
 
 - type: entity
@@ -388,6 +391,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - MailMetricsCartridge
 
 - type: entity
@@ -457,6 +461,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - GlimmerMonitorCartridge
 
 - type: entity
@@ -483,6 +488,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
 
@@ -757,6 +763,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - GlimmerMonitorCartridge
 
 - type: entity
@@ -779,6 +786,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - GlimmerMonitorCartridge
 
 - type: entity
@@ -800,6 +808,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - GlimmerMonitorCartridge
 
 - type: entity
@@ -836,6 +845,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
 
@@ -858,6 +868,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
 
@@ -880,6 +891,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
 
@@ -901,6 +913,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
 
@@ -939,6 +952,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - LogProbeCartridge
 
 - type: entity
@@ -1022,6 +1036,7 @@
     uiKey: enum.PdaUiKey.Key
     preinstalled:
       - NotekeeperCartridge
+      - NanoMessageCartridge # Syndies get to message people too I guess
     cartridgeSlot:
       priority: -1
       name: Cartridge
@@ -1205,6 +1220,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
 
@@ -1234,6 +1250,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
 
@@ -1332,6 +1349,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - NanoMessageCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
 
@@ -1370,6 +1388,7 @@
     uiKey: enum.PdaUiKey.Key
     preinstalled:
       - NotekeeperCartridge
+      - NanoMessageCartridge
     cartridgeSlot:
       priority: -1
       name: Cartridge

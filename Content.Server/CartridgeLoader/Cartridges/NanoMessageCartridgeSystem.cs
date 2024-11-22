@@ -2,11 +2,18 @@ using System.Linq;
 using Content.Server.NanoMessage;
 using Content.Server.NanoMessage.Events;
 using Content.Server.Popups;
+using Content.Shared.Access.Components;
+using Content.Shared.Access.Systems;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Content.Shared.IdentityManagement;
+using Content.Shared.IdentityManagement.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.NanoMessage.Data;
 using Content.Shared.NanoMessage.Events.Cartridge;
+using Content.Shared.PDA;
+using Robust.Shared.Containers;
+
 
 namespace Content.Server.CartridgeLoader.Cartridges;
 
@@ -16,11 +23,13 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
     [Dependency] private readonly NanoMessageClientSystem _clients = default!;
     [Dependency] private readonly NanoMessageServerSystem _servers = default!;
     [Dependency] private readonly PopupSystem _popups = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<NanoMessageServerComponent, NanoMessageClientsChangedEvent>(OnServerClientsChanged);
+        SubscribeLocalEvent<NanoMessageCartridgeComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<NanoMessageCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<NanoMessageCartridgeComponent, CartridgeMessageEvent>(OnUiMessage);
         SubscribeLocalEvent<NanoMessageCartridgeComponent, CartridgeAfterInteractEvent>(OnAfterInteract);
@@ -40,6 +49,30 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
             UpdateClientData((client.Ent, cartridge), recipients);
             UpdateUiState((client.Ent, cartridge));
         }
+    }
+
+    private void OnMapInit(Entity<NanoMessageCartridgeComponent> ent, ref MapInitEvent args)
+    {
+        // Update each cartridge's preferred name if the PDA is worn
+        if (!_container.TryGetContainingContainer((ent.Owner, null, null), out var pdaContainer)
+            || !TryComp<PdaComponent>(pdaContainer.Owner, out var pda)
+            || !TryComp<NanoMessageClientComponent>(ent, out var cartridgeClient))
+            return;
+
+        // Try to find the entity wearing this PDA and use its name. If there's no such entity, try to inherit it from the ID card.
+        string? name = null;
+        if (_container.TryGetOuterContainer(pdaContainer.Owner, Transform(pdaContainer.Owner), out var inventoryContainer)
+            && inventoryContainer.Owner is var pdaOwner
+            && HasComp<MobStateComponent>(pdaOwner)
+        )
+            name = Identity.Name(pdaOwner, EntityManager);
+        else if (pda.ContainedId is {} idCard && TryComp<IdCardComponent>(idCard, out var idComp))
+            name = idComp.FullName;
+
+        if (name is null)
+            return;
+
+        cartridgeClient.PreferredName = name;
     }
 
     private void OnUiReady(Entity<NanoMessageCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
@@ -199,7 +232,7 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
 
         if (loader == null)
         {
-            if (TryComp<CartridgeComponent>(loader, out var cartridgeComp))
+            if (TryComp<CartridgeComponent>(ent, out var cartridgeComp))
                 loader = cartridgeComp.LoaderUid;
             else
                 return;

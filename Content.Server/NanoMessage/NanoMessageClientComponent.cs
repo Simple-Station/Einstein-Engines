@@ -10,6 +10,9 @@ public sealed partial class NanoMessageClientComponent : Component
     public ulong Id;
 
     [DataField]
+    public string? PreferredName;
+
+    [DataField]
     public EntityUid ConnectedServer = EntityUid.Invalid;
 
     [DataField]

@@ -1,9 +1,8 @@
 using System.Linq;
-using Content.Server.Power.Components;
 using Content.Shared.NanoMessage.Data;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Robust.Shared.Toolshed.Commands.Values;
+
 
 namespace Content.Server.NanoMessage;
 
@@ -12,7 +11,6 @@ public sealed partial class NanoMessageClientSystem : EntitySystem
     [Dependency] private readonly NanoMessageServerSystem _servers = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
 
     public override void Initialize()
     {
