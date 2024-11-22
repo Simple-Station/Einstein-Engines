@@ -51,7 +51,7 @@
 
 - type: entity
   parent: ClothingOuterRobesCult
-  id: ClothingOuterRobeCultTrue
+  id: ClothingOuterRobesCultTrue
   name: flagellant's robe
   description: Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage.
   components:
