@@ -37,10 +37,13 @@ public sealed class CultRuneBloodBoilSystem : EntitySystem
 
     private void OnBloodBoilRuneInvoked(Entity<CultRuneBloodBoilComponent> ent, ref TryInvokeCultRuneEvent args)
     {
-        var targets = _cultRune.GetTargetsNearRune(ent, ent.Comp.TargetsLookupRange, entity =>
-            HasComp<BloodCultistComponent>(entity) ||
-            !HasComp<BloodstreamComponent>(entity) ||
-            !_examine.InRangeUnOccluded(ent, entity, ent.Comp.TargetsLookupRange)).ToList();
+        var targets = _cultRune.GetTargetsNearRune(ent,
+                ent.Comp.TargetsLookupRange,
+                entity =>
+                    HasComp<BloodCultistComponent>(entity) ||
+                    !HasComp<BloodstreamComponent>(entity) ||
+                    !_examine.InRangeUnOccluded(ent, entity, ent.Comp.TargetsLookupRange))
+            .ToList();
 
         if (targets.Count == 0)
         {

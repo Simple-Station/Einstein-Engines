@@ -16,7 +16,6 @@ public sealed partial class ConstructComponent : Component, IAntagStatusIconComp
     [DataField]
     public float TransformDelay = 1;
 
-
     [DataField]
     public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "BloodCultMember";
 

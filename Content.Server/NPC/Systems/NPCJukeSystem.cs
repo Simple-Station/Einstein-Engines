@@ -22,6 +22,7 @@ public sealed class NPCJukeSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MeleeWeaponSystem _melee = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
 
     private EntityQuery<NPCMeleeCombatComponent> _npcMeleeQuery;
     private EntityQuery<NPCRangedCombatComponent> _npcRangedQuery;
@@ -49,6 +50,9 @@ public sealed class NPCJukeSystem : EntitySystem
 
         if (component.JukeType == JukeType.AdjacentTile)
         {
+            if (args.Transform.GridUid == null)
+                return;
+
             if (_npcRangedQuery.TryGetComponent(uid, out var ranged)
                 && ranged.Status is CombatStatus.NotInSight
                 || !TryComp<MapGridComponent>(args.Transform.GridUid, out var grid))
@@ -57,7 +61,7 @@ public sealed class NPCJukeSystem : EntitySystem
                 return;
             }
 
-            var currentTile = grid.CoordinatesToTile(args.Transform.Coordinates);
+            var currentTile = _map.CoordinatesToTile((EntityUid) args.Transform.GridUid, grid, args.Transform.Coordinates);
 
             if (component.TargetTile == null)
             {
@@ -113,8 +117,8 @@ public sealed class NPCJukeSystem : EntitySystem
                 return;
             }
 
-            var targetCoords = grid.GridTileToWorld(component.TargetTile.Value);
-            var targetDir = (targetCoords.Position - args.WorldPosition);
+            var targetCoords = _map.GridTileToWorld((EntityUid) args.Transform.GridUid, grid, component.TargetTile.Value);
+            var targetDir = targetCoords.Position - args.WorldPosition;
             targetDir = args.OffsetRotation.RotateVec(targetDir);
             const float weight = 1f;
             var norm = targetDir.Normalized();

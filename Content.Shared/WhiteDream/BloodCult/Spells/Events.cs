@@ -8,17 +8,6 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.WhiteDream.BloodCult.Spells;
 
-public sealed partial class SummonEquipmentEvent : InstantActionEvent, ISpeakSpell
-{
-    [DataField]
-    public List<EntProtoId> Prototypes = new();
-
-    [DataField]
-    public string? Speech { get; set; }
-
-    public InGameICChatType ChatType => InGameICChatType.Whisper;
-}
-
 public sealed partial class BloodCultStunEvent : EntityTargetActionEvent, ISpeakSpell
 {
     [DataField]
@@ -86,6 +75,22 @@ public sealed partial class BloodCultTwistedConstructionEvent : EntityTargetActi
     public InGameICChatType ChatType => InGameICChatType.Whisper;
 }
 
+public sealed partial class SummonEquipmentEvent : InstantActionEvent, ISpeakSpell
+{
+    /// <summary>
+    /// Slot - EntProtoId
+    /// </summary>
+    [DataField]
+    public Dictionary<string, EntProtoId> Prototypes = new();
+
+    [DataField]
+    public string? Speech { get; set; }
+
+    public InGameICChatType ChatType => InGameICChatType.Whisper;
+}
+
+public sealed partial class BloodSpearRecalledEvent : InstantActionEvent;
+
 [Serializable, NetSerializable]
 public sealed partial class TwistedConstructionDoAfterEvent : SimpleDoAfterEvent;
 
@@ -102,3 +107,6 @@ public sealed partial class TeleportActionDoAfterEvent : SimpleDoAfterEvent
     public SoundPathSpecifier TeleportInSound = new("/Audio/WhiteDream/BloodCult/veilin.ogg");
     public SoundPathSpecifier TeleportOutSound = new("/Audio/WhiteDream/BloodCult/veilout.ogg");
 }
+
+[Serializable, NetSerializable]
+public sealed partial class BloodRitesExtractDoAfterEvent : SimpleDoAfterEvent;

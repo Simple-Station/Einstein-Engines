@@ -22,11 +22,13 @@
     containers:
       Shard: !type:ContainerSlot
   - type: CultItem
+  - type: Examiner
+    skipChecks: true
 
 - type: entity
   id: ConstructBase
   abstract: true
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: LagCompensation
   - type: Input

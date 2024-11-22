@@ -1,5 +1,5 @@
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailEpistemologyBluespace
   suffix: bluespace
@@ -9,7 +9,7 @@
     - id: MaterialBluespace1
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailEpistemologyIngotGold
   suffix: ingotgold
@@ -20,7 +20,7 @@
       maxAmount: 3
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailEpistemologyResearchDisk
   suffix: researchdisk
@@ -38,7 +38,7 @@
       prob: 0.1
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailEpistemologyTinfoilHat
   suffix: tinfoilhat

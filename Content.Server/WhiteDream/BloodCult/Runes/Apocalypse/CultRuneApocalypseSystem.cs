@@ -48,16 +48,15 @@ public sealed class CultRuneApocalypseSystem : EntitySystem
 
     private void OnDoAfter(Entity<CultRuneApocalypseComponent> ent, ref ApocalypseRuneDoAfter args)
     {
-        if (args.Cancelled ||
-            EntityManager.EntityQuery<BloodCultRuleComponent>().FirstOrDefault() is not { } cultRule)
-        {
+        if (args.Cancelled || EntityManager.EntityQuery<BloodCultRuleComponent>().FirstOrDefault() is not { } cultRule)
             return;
-        }
 
         ent.Comp.Used = true;
         _appearance.SetData(ent, ApocalypseRuneVisuals.Used, true);
 
-        _emp.EmpPulse(_transform.GetMapCoordinates(ent), ent.Comp.EmpRange, ent.Comp.EmpEnergyConsumption,
+        _emp.EmpPulse(_transform.GetMapCoordinates(ent),
+            ent.Comp.EmpRange,
+            ent.Comp.EmpEnergyConsumption,
             ent.Comp.EmpDuration);
 
         foreach (var guaranteedEvent in ent.Comp.GuaranteedEvents)
@@ -68,9 +67,7 @@ public sealed class CultRuneApocalypseSystem : EntitySystem
         var requiredCultistsThreshold = MathF.Floor(_playerManager.PlayerCount * ent.Comp.CultistsThreshold);
         var totalCultists = cultRule.Cultists.Count + cultRule.Constructs.Count;
         if (totalCultists >= requiredCultistsThreshold)
-        {
             return;
-        }
 
         var (randomEvent, repeatTimes) = _random.Pick(ent.Comp.PossibleEvents);
         for (var i = 0; i < repeatTimes; i++)

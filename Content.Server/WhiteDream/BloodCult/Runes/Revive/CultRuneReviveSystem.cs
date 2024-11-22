@@ -39,11 +39,13 @@ public sealed class CultRuneReviveSystem : EntitySystem
             return;
         }
 
-        var possibleTargets = _cultRune.GetTargetsNearRune(ent, ent.Comp.ReviveRange, entity =>
-            !HasComp<DamageableComponent>(entity) ||
-            !HasComp<MobThresholdsComponent>(entity) ||
-            !HasComp<MobStateComponent>(entity) ||
-            _mobState.IsAlive(entity)
+        var possibleTargets = _cultRune.GetTargetsNearRune(ent,
+            ent.Comp.ReviveRange,
+            entity =>
+                !HasComp<DamageableComponent>(entity) ||
+                !HasComp<MobThresholdsComponent>(entity) ||
+                !HasComp<MobStateComponent>(entity) ||
+                _mobState.IsAlive(entity)
         );
 
         if (possibleTargets.Count == 0)

@@ -3,6 +3,7 @@ using Content.Server.Mind;
 using Content.Server.Stack;
 using Content.Shared.DoAfter;
 using Content.Shared.Stacks;
+using Content.Shared.WhiteDream.BloodCult.Components;
 using Content.Shared.WhiteDream.BloodCult.Spells;
 using Robust.Server.GameObjects;
 

@@ -33,9 +33,32 @@ public sealed class ConstructShellSystem : EntitySystem
     private void OnGetVerbs(Entity<ConstructShellComponent> shell, ref GetVerbsEvent<ExamineVerb> args)
     {
         var shellUid = shell.Owner;
-        if (args.User != shellUid || _slots.GetItemOrNull(shell, shell.Comp.ShardSlotId) is not { } shard ||
-            args.User != shard || !TryComp(shard, out SoulShardComponent? soulShard) ||
-            _ui.IsUiOpen(shellUid, RadialSelectorUiKey.Key))
+        if (_ui.IsUiOpen(shellUid, RadialSelectorUiKey.Key))
+            return;
+
+        // Holy shitcode.
+        Action action;
+        if (args.User == shellUid)
+        {
+            action = () =>
+            {
+                _ui.SetUiState(shellUid, RadialSelectorUiKey.Key, new RadialSelectorState(shell.Comp.Constructs, true));
+                _ui.TryToggleUi(shellUid, RadialSelectorUiKey.Key, shell);
+            };
+        }
+        else if (_slots.GetItemOrNull(shell, shell.Comp.ShardSlotId) is { } shard && args.User == shard &&
+                 TryComp(shard, out SoulShardComponent? soulShard))
+        {
+            action = () =>
+            {
+                _ui.SetUiState(shellUid,
+                    RadialSelectorUiKey.Key,
+                    new RadialSelectorState(soulShard.IsBlessed ? shell.Comp.PurifiedConstructs : shell.Comp.Constructs,
+                        true));
+                _ui.TryToggleUi(shellUid, RadialSelectorUiKey.Key, shard);
+            };
+        }
+        else
             return;
 
         args.Verbs.Add(new ExamineVerb
@@ -44,14 +67,7 @@ public sealed class ConstructShellSystem : EntitySystem
             Text = Loc.GetString("soul-shard-selector-form"),
             Icon = new SpriteSpecifier.Texture(
                 new ResPath("/Textures/WhiteDream/BloodCult/Entities/Items/construct_shell.rsi")),
-            Act = () =>
-            {
-                _ui.SetUiState(shellUid,
-                    RadialSelectorUiKey.Key,
-                    new RadialSelectorState(soulShard.IsBlessed ? soulShard.PurifiedConstructs : soulShard.Constructs,
-                        true));
-                _ui.TryToggleUi(shellUid, RadialSelectorUiKey.Key, shard);
-            }
+            Act = action
         });
     }
 
@@ -77,7 +93,7 @@ public sealed class ConstructShellSystem : EntitySystem
         _slots.SetLock(shell, shell.Comp.ShardSlotId, true);
         _ui.SetUiState(shellUid,
             RadialSelectorUiKey.Key,
-            new RadialSelectorState(soulShard.IsBlessed ? soulShard.PurifiedConstructs : soulShard.Constructs, true));
+            new RadialSelectorState(soulShard.IsBlessed ? shell.Comp.PurifiedConstructs : shell.Comp.Constructs, true));
 
         _ui.TryToggleUi(shellUid, RadialSelectorUiKey.Key, args.EntityUid);
     }

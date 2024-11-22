@@ -32,14 +32,14 @@ public sealed class BloodCultEmpoweredSystem : EntitySystem
 
     private void OnEmpowerStartup(Entity<BloodCultEmpoweredComponent> cultist, ref ComponentStartup args)
     {
-        _alerts.ShowAlert(cultist, AlertType.CultEmpowered);
+        _alerts.ShowAlert(cultist, cultist.Comp.EmpoweredAlert);
         if (TryComp(cultist, out BloodCultSpellsHolderComponent? spellsHolder))
             spellsHolder.MaxSpells += cultist.Comp.ExtraSpells;
     }
 
     private void OnEmpowerShutdown(Entity<BloodCultEmpoweredComponent> cultist, ref ComponentShutdown args)
     {
-        _alerts.ClearAlert(cultist, AlertType.CultEmpowered);
+        _alerts.ClearAlert(cultist, cultist.Comp.EmpoweredAlert);
         if (TryComp(cultist, out BloodCultSpellsHolderComponent? spellsHolder))
             spellsHolder.MaxSpells -= cultist.Comp.ExtraSpells;
     }
@@ -78,7 +78,8 @@ public sealed class BloodCultEmpoweredSystem : EntitySystem
         var cultTile = _tileDefinition[ent.Comp.CultTile];
 
         var radius = ent.Comp.NearbyCultTileRadius;
-        var tilesRefs = _map.GetLocalTilesIntersecting(gridUid.Value,
+        var tilesRefs = _map.GetLocalTilesIntersecting(
+            gridUid.Value,
             grid,
             new Box2(localpos + new Vector2(-radius, -radius), localpos + new Vector2(radius, radius)));
 

@@ -39,10 +39,13 @@ public sealed class CultRuneRendingSystem : EntitySystem
     {
         var position = _transform.GetMapCoordinates(rune);
         var message = Loc.GetString("cult-rending-drawing-finished",
-            ("location", FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString(position))));
+            ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(position))));
 
-        _chat.DispatchGlobalAnnouncement(message, Loc.GetString("blood-cult-title"), true,
-            rune.Comp.FinishedDrawingAudio, Color.DarkRed);
+        _chat.DispatchGlobalAnnouncement(message,
+            Loc.GetString("blood-cult-title"),
+            true,
+            rune.Comp.FinishedDrawingAudio,
+            Color.DarkRed);
     }
 
     private void OnRendingRuneInvoked(Entity<CultRuneRendingComponent> rune, ref TryInvokeCultRuneEvent args)
@@ -75,8 +78,10 @@ public sealed class CultRuneRendingSystem : EntitySystem
             return;
         }
 
-        _chat.DispatchGlobalAnnouncement(Loc.GetString("cult-rending-started"), Loc.GetString("blood-cult-title"),
-            false, colorOverride: Color.DarkRed);
+        _chat.DispatchGlobalAnnouncement(Loc.GetString("cult-rending-started"),
+            Loc.GetString("blood-cult-title"),
+            false,
+            colorOverride: Color.DarkRed);
 
         _appearance.SetData(rune, RendingRuneVisuals.Active, true);
         rune.Comp.AudioEntity =
@@ -90,8 +95,10 @@ public sealed class CultRuneRendingSystem : EntitySystem
         _appearance.SetData(rune, RendingRuneVisuals.Active, false);
         if (args.Cancelled)
         {
-            _chat.DispatchGlobalAnnouncement(Loc.GetString("cult-rending-prevented"), Loc.GetString("blood-cult-title"),
-                false, colorOverride: Color.DarkRed);
+            _chat.DispatchGlobalAnnouncement(Loc.GetString("cult-rending-prevented"),
+                Loc.GetString("blood-cult-title"),
+                false,
+                colorOverride: Color.DarkRed);
             return;
         }
 

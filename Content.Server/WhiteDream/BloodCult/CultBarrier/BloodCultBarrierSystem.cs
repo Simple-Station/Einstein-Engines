@@ -17,9 +17,7 @@ public sealed class BloodCultBarrierSystem : EntitySystem
     private void OnInteract(Entity<BloodCultBarrierComponent> ent, ref InteractUsingEvent args)
     {
         if (!HasComp<RuneDrawerComponent>(args.Used) || !HasComp<BloodCultistComponent>(args.User))
-        {
             return;
-        }
 
         _popup.PopupEntity("cult-barrier-destroyed", args.User, args.User);
         Del(args.Target);

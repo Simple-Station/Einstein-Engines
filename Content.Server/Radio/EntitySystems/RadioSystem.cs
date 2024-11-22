@@ -166,6 +166,9 @@ public sealed class RadioSystem : EntitySystem
         var languageColor = channel.Color;
         if (language.SpeechOverride.Color is { } colorOverride)
             languageColor = Color.InterpolateBetween(languageColor, colorOverride, colorOverride.A);
+        var languageDisplay = language.IsVisibleLanguage
+            ? $"{language.ChatName} | "
+            : "";
 
         return Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("color", channel.Color),
@@ -175,7 +178,8 @@ public sealed class RadioSystem : EntitySystem
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
-            ("message", message));
+            ("message", message),
+            ("language", languageDisplay));
     }
 
     /// <inheritdoc cref="TelecomServerComponent"/>

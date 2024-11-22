@@ -23,12 +23,8 @@ public sealed class KillTargetCultSystem : EntitySystem
     private void OnObjectiveAssigned(Entity<KillTargetCultComponent> ent, ref ObjectiveAssignedEvent args)
     {
         var cultistRule = EntityManager.EntityQuery<BloodCultRuleComponent>().FirstOrDefault();
-        if (cultistRule?.OfferingTarget == null)
-        {
-            return;
-        }
-
-        ent.Comp.Target = cultistRule.OfferingTarget.Value;
+        if (cultistRule?.OfferingTarget is { } target)
+            ent.Comp.Target = target;
     }
 
     private void OnAfterAssign(Entity<KillTargetCultComponent> ent, ref ObjectiveAfterAssignEvent args)
@@ -40,13 +36,9 @@ public sealed class KillTargetCultSystem : EntitySystem
     {
         var target = ent.Comp.Target;
 
-        if (!HasComp<MobStateComponent>(target) || _mobState.IsDead(target))
-        {
-            args.Progress = 1f;
-            return;
-        }
-
-        args.Progress = 0f;
+        args.Progress = !HasComp<MobStateComponent>(target) || _mobState.IsDead(target)
+            ? args.Progress = 1f
+            : args.Progress = 0f;
     }
 
     private string GetTitle(EntityUid target, string title)

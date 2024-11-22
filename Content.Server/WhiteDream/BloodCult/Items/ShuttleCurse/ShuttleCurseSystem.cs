@@ -58,10 +58,12 @@ public sealed class ShuttleCurseSystem : EntitySystem
 
         _roundEnd.DelayShuttle(orb.Comp.DelayTime);
 
-        var cursedMessage = string.Concat(_random.Pick(orb.Comp.CurseMessages), " ",
+        var cursedMessage = string.Concat(Loc.GetString(_random.Pick(orb.Comp.CurseMessages)),
+            " ",
             Loc.GetString("shuttle-curse-success-global", ("time", orb.Comp.DelayTime.TotalMinutes)));
 
-        _chat.DispatchGlobalAnnouncement(cursedMessage, Loc.GetString("shuttle-curse-system-failure"),
+        _chat.DispatchGlobalAnnouncement(cursedMessage,
+            Loc.GetString("shuttle-curse-system-failure"),
             colorOverride: Color.Gold);
 
         _popup.PopupEntity(Loc.GetString("shuttle-curse-success"), args.User, args.User);

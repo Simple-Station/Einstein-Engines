@@ -1,3 +1,101 @@
+- type: entityTable
+  id: AllPlushiesTable
+  table: !type:GroupSelector
+    children:
+    - !type:EntSelector
+      id: PlushieBee
+    - !type:EntSelector
+      id: PlushieNar
+      weight: 0.5
+    - !type:EntSelector
+      id: PlushieRatvar
+      weight: 0.5
+    - !type:EntSelector
+      id: PlushieNuke
+    - !type:EntSelector
+      id: PlushieSlime
+    - !type:EntSelector
+      id: PlushieSnake
+    - !type:GroupSelector
+      children:
+      - !type:EntSelector
+        id: PlushieLizard
+        weight: 9
+      - !type:EntSelector
+        id: PlushieSpaceLizard
+        weight: 1
+    - !type:GroupSelector
+      children:
+      - !type:EntSelector
+        id: PlushieCarp
+      - !type:EntSelector
+        id: PlushieHolocarp
+        weight: 0.25
+      - !type:EntSelector
+        id: PlushieMagicarp
+        weight: 0.25
+      - !type:EntSelector
+        id: PlushieRainbowCarp
+        weight: 0.15
+    - !type:EntSelector
+      id: PlushieVox
+    - !type:EntSelector
+      id: PlushieRouny
+    - !type:GroupSelector
+      children:
+      - !type:EntSelector
+        id: PlushieSharkBlue
+      - !type:EntSelector
+        id: PlushieSharkGrey
+      - !type:EntSelector
+        id: PlushieSharkPink
+    - !type:EntSelector
+      id: PlushieAtmosian
+    - !type:EntSelector
+      id: PlushieDiona
+    - !type:EntSelector
+      id: PlushieXeno
+    - !type:EntSelector
+      id: PlushieHampter
+    - !type:EntSelector
+      id: PlushieMoth
+    - !type:EntSelector
+      id: PlushieArachind
+    - !type:EntSelector
+      id: PlushiePenguin
+
+- type: entity
+  id: CrateFunPlushie
+  parent: CrateGenericSteel
+  name: plushie crate
+  description: A buncha soft plushies. Throw them around and then wonder how you're gonna explain this purchase to NT.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: AllPlushiesTable
+        rolls: !type:ConstantNumberSelector
+          value: 10
+
+- type: entity
+  id: CrateFunLizardPlushieBulk
+  parent: CrateGenericSteel
+  name: bulk lizard plushie crate
+  description: A buncha soft lizard plushies. Throw them around and then wonder how you're gonna explain this purchase to NT.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:EntSelector
+          id: PlushieLizard
+          amount: !type:ConstantNumberSelector
+            value: 3
+        - !type:EntSelector
+          id: PlushieSpaceLizard
+          amount: !type:ConstantNumberSelector
+            value: 3
+
 - type: entity
   id: CrateFunInstrumentsVariety
   parent: CrateGenericSteel
@@ -248,14 +346,21 @@
     contents:
       - id: SnapPopBox
       - id: CrazyGlue
-        amount: 2
       - id: PlasticBanana
+      - id: FunnyPaint
+        orGroup: Paint
+        prob: 0.5
+      - id: FunnyPaintYellow
+        orGroup: Paint
+        prob: 0.5
       - id: WhoopieCushion
       - id: ToyHammer
       - id: MrChips
-        orGroup: GiftPool
+        prob: 0.5
+        orGroup: Dummy
       - id: MrDips
-        orGroup: Giftpool
+        prob: 0.5
+        orGroup: Dummy
       - id: RevolverCapGun
       - id: BalloonNT
       - id: ClothingShoesClownLarge
@@ -287,6 +392,41 @@
       - id: MysteryFigureBox
         amount: 15
         prob: 0.05
+
+- type: entity
+  id: CrateFunSprayPaints
+  name: spray paint crate
+  description: a crate filled with spray paint.
+  parent: CratePlastic
+  suffix: Spray Paint
+  components:
+  - type: StorageFill
+    contents:
+      - id: SprayPaintBlue
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintRed
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintOrange
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintBlack
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintGreen
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintPurple
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintWhite
+        amount: 2
+        prob: 0.33
+      - id: DeathPaint
+        amount: 2
+      - id: DeathPaintTwo
+        amount: 2
 
 - type: entity
   name: dartboard box set

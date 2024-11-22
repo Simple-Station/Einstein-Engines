@@ -14,8 +14,6 @@ public sealed class BloodBoilProjectileSystem : EntitySystem
     private void CheckCollision(Entity<BloodBoilProjectileComponent> ent, ref PreventCollideEvent args)
     {
         if (args.OtherEntity != ent.Comp.Target)
-        {
             args.Cancelled = true;
-        }
     }
 }

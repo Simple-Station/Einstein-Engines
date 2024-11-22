@@ -3,7 +3,7 @@
   parent: BaseBullet
   name: Concentrated Blood
   description: Oh no.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Effects/blood_boil.rsi

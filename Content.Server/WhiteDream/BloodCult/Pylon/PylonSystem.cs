@@ -94,18 +94,16 @@ public sealed class PylonSystem : EntitySystem
 
     private void CorruptTilesInRange(Entity<PylonComponent> pylon)
     {
-        var pylonTransform = Transform(pylon);
-        if (pylonTransform.GridUid is not { } gridUid ||
-            !TryComp(pylonTransform.GridUid, out MapGridComponent? mapGrid))
-        {
+        var pylonTrans = Transform(pylon);
+        if (pylonTrans.GridUid is not { } gridUid || !TryComp(pylonTrans.GridUid, out MapGridComponent? mapGrid))
             return;
-        }
 
         var radius = pylon.Comp.CorruptionRadius;
-        var tilesRefs = _map.GetLocalTilesIntersecting(gridUid, mapGrid, new Box2(
-            pylonTransform.Coordinates.Position + new Vector2(-radius, -radius),
-            pylonTransform.Coordinates.Position + new Vector2(radius, radius))
-        ).ToList();
+        var tilesRefs = _map.GetLocalTilesIntersecting(gridUid,
+                mapGrid,
+                new Box2(pylonTrans.Coordinates.Position + new Vector2(-radius, -radius),
+                    pylonTrans.Coordinates.Position + new Vector2(radius, radius)))
+            .ToList();
 
         _random.Shuffle(tilesRefs);
 
@@ -131,10 +129,8 @@ public sealed class PylonSystem : EntitySystem
 
         foreach (var target in targets)
         {
-            if (!HasComp<BloodCultistComponent>(target) || _mobState.IsDead(target))
-                continue;
-
-            _damageable.TryChangeDamage(target, pylon.Comp.Healing, true);
+            if (HasComp<BloodCultistComponent>(target) && !_mobState.IsDead(target))
+                _damageable.TryChangeDamage(target, pylon.Comp.Healing, true);
         }
     }
 }
