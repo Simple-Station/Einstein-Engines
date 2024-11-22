@@ -8109,3 +8109,16 @@ Entries:
   id: 6537
   time: '2024-11-22T20:08:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1267
+- author: Tmanzxd
+  changes:
+    - type: Tweak
+      message: Increased applicable medication heal values.
+    - type: Tweak
+      message: Increased stack size of applicable medications.
+    - type: Tweak
+      message: Slightly increased dylovene, burn, and brute chemicals heal values.
+    - type: Tweak
+      message: Decreased Medical item application time from 3s to 2s
+  id: 6538
+  time: '2024-11-22T20:09:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1259
