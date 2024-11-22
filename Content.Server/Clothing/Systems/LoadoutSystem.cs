@@ -3,6 +3,7 @@ using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
+using Content.Shared.Players;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Configuration;
@@ -31,7 +32,8 @@ public sealed class LoadoutSystem : EntitySystem
             return;
 
         // Spawn the loadout, get a list of items that failed to equip
-        var failedLoadouts = _loadout.ApplyCharacterLoadout(ev.Mob, ev.JobId, ev.Profile, _playTimeTracking.GetTrackerTimes(ev.Player));
+        var failedLoadouts = _loadout.ApplyCharacterLoadout(ev.Mob, ev.JobId, ev.Profile,
+            _playTimeTracking.GetTrackerTimes(ev.Player), ev.Player.ContentData()?.Whitelisted ?? false);
 
         // Try to find back-mounted storage apparatus
         if (!_inventory.TryGetSlotEntity(ev.Mob, "back", out var item) ||

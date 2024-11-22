@@ -4,15 +4,15 @@
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobAtmosphericTechnician
-      time: 36000 # DeltaV - 10 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobAtmosphericTechnician
+      min: 36000 # DeltaV - 10 hours
 #    - !type:RoleTimeRequirement # DeltaV - No Station Engineer time requirement
 #      role: JobStationEngineer
 #      time: 21600 #6 hrs
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Engineering
-      time: 90000 # DeltaV - 25 hours
+      min: 90000 # DeltaV - 25 hours
 #    - !type:OverallPlaytimeRequirement
 #      time: 72000 # DeltaV - 20 hours
   weight: 10
@@ -35,10 +35,6 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-  - !type:AddComponentSpecial
-    components:
-    - type: PsionicBonusChance #Nyano - Summary: makes it more likely to become psionic.
-      flatBonus: 0.025
 
 - type: startingGear
   id: ChiefEngineerGear
@@ -47,9 +43,7 @@
     back: ClothingBackpackChiefEngineerFilled
     shoes: ClothingShoesColorBrown
     id: CEPDA
-    eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetCE
-    belt: ClothingBeltUtilityEngineering
   innerClothingSkirt: ClothingUniformJumpskirtChiefEngineer
   satchel: ClothingBackpackSatchelChiefEngineerFilled
   duffelbag: ClothingBackpackDuffelChiefEngineerFilled

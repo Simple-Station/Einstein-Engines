@@ -34,8 +34,10 @@
     damage:
       types:
         Blunt: 7
-    bluntStaminaDamageFactor: 2.0
-    angle: 60
+    bluntStaminaDamageFactor: 2.5
+    heavyRateModifier: 0.75
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 1
     animation: WeaponArcSlash
   - type: StaminaDamageOnHit
     damage: 35
@@ -78,6 +80,10 @@
     explosionType: Default
     intensitySlope: 1.5
     maxIntensity: 200
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
+      Plastic: 100
   - type: GuideHelp
     guides:
     - Security
@@ -93,14 +99,21 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    attackRate: 0.8
     damage:
       types:
-        Blunt: 20
+        Blunt: 15
     soundHit:
       collection: MetalThud
-    bluntStaminaDamageFactor: 1.5
+    bluntStaminaDamageFactor: 2
+    heavyRateModifier: 1
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 7.5
   - type: Item
     size: Normal
+  - type: Tag
+    tags: 
+    - Truncheon
   - type: Clothing
     sprite: Objects/Weapons/Melee/truncheon.rsi
     quickEquip: false

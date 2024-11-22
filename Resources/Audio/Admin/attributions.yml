@@ -1,0 +1,9 @@
+- files: [ "ahelp_error" ]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "CM-SS13"
+  source: "https://github.com/cmss13-devs/cmss13/commit/497204fb1660977fb6bf1fe8de153c65c8299d7d"
+
+- files: [ "ahelp_receive", "ahelp_send" ]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "CM-SS13"
+  source: "https://github.com/cmss13-devs/cmss13/commit/21e6447cc08aea502f671c819fdbcecbb85e6028"

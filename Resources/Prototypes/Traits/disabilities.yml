@@ -1,66 +1,37 @@
 - type: trait
   id: Blindness
   category: Visual
-  points: 2
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - Borg
         - MedicalBorg
-  components:
-    - type: PermanentBlindness
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: PermanentBlindness
+
+- type: trait
+  id: Nearsighted
+  category: Visual
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: PermanentBlindness
+          blindness: 4
 
 - type: trait
   id: Narcolepsy
   category: Mental
-  points: 1
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-  components:
-    - type: Narcolepsy
-      timeBetweenIncidents: 300, 600
-      durationOfIncident: 10, 30
-
-- type: trait
-  id: Pacifist
-  category: Mental
-  points: 3
-  components:
-    - type: Pacified
-
-- type: trait
-  id: Paracusia
-  category: Auditory
-  points: 1
-  components:
-    - type: Paracusia
-      minTimeBetweenIncidents: 0.1
-      maxTimeBetweenIncidents: 300
-      maxSoundDistance: 7
-      sounds:
-        collection: Paracusia
-
-- type: trait
-  id: Muted
-  category: Speech
-  points: 1
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-  components:
-    - type: Muted
-
-- type: trait
-  id: Uncloneable
-  category: Physical
   points: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -68,20 +39,89 @@
       jobs:
         - Borg
         - MedicalBorg
-  components:
-    - type: Uncloneable
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+      - type: Narcolepsy
+        timeBetweenIncidents: 300, 600
+        durationOfIncident: 10, 30
 
 - type: trait
-  id: FrontalLisp
-  category: Speech
+  id: Pacifist
+  category: Mental
+  points: 6
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Pacified
+
+- type: trait
+  id: Paracusia
+  category: Auditory
+  points: 2
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Paracusia
+          minTimeBetweenIncidents: 0.1
+          maxTimeBetweenIncidents: 300
+          maxSoundDistance: 7
+          sounds:
+            collection: Paracusia
+
+- type: trait
+  id: Muted
+  category: Mental
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - Borg
         - MedicalBorg
-  components:
-    - type: FrontalLisp
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Muted
+
+- type: trait
+  id: Uncloneable
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Uncloneable
+
+- type: trait
+  id: FrontalLisp
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: FrontalLisp
 
 - type: trait
   id: Snoring
@@ -92,5 +132,147 @@
       jobs:
         - Borg
         - MedicalBorg
-  components:
-    - type: Snoring
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Snoring
+
+- type: trait
+  id: Sluggish
+  category: Physical
+  points: 3
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+        - SnailPaced
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: TraitSpeedModifier
+          sprintModifier: 0.85
+          walkModifier: 0.85
+        - type: ClimbDelayModifier
+          climbDelayMultiplier: 1.35
+        - type: LayingDownModifier
+          layingDownCooldownMultiplier: 1.2
+
+- type: trait
+  id: SnailPaced
+  category: Physical
+  points: 5
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+        - Sluggish
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: TraitSpeedModifier
+          sprintModifier: 0.7
+          walkModifier: 0.7
+        - type: ClimbDelayModifier
+          climbDelayMultiplier: 1.66
+        - type: LayingDownModifier
+          layingDownCooldownMultiplier: 1.6
+
+- type: trait
+  id: BloodDeficiency
+  category: Physical
+  points: 5
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: BloodDeficiency # By default, start taking bloodloss damage at around ~21.4 minutes,
+          bloodLossPercentage: 0.0002333333  # then become crit ~10 minutes
+
+- type: trait
+  id: Hemophilia
+  category: Physical
+  points: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Hemophilia
+          bleedReductionModifier: 0.5
+          damageModifiers:
+            coefficients:
+              Blunt: 1.1
+
+- type: trait
+  id: Photophobia
+  category: Visual
+  points: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
+        - Shadowkin
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Flashable
+          eyeDamageChance: 0.3
+          eyeDamage: 1
+          durationMultiplier: 1.5
+
+- type: trait
+  id: Clumsy
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Clown # This trait functions exactly as is for the Clown's trait.
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command # Because I know for a fact people will play Captain and grief with their inability to fight back.
+        - Security # Because I know for a fact people will play Security and grief with their inability to use guns.
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Clumsy
+          clumsyDamage:
+            types:
+              Blunt: 5
+              Piercing: 4
+            groups:
+              Burn: 3

@@ -3,6 +3,7 @@ using Content.Server.NPC.Components;
 using Content.Server.NPC.Events;
 using Content.Server.NPC.HTN.PrimitiveTasks.Operators.Combat;
 using Content.Server.Weapons.Melee;
+using Content.Shared.Coordinates.Helpers;
 using Content.Shared.NPC;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Collections;
@@ -21,6 +22,7 @@ public sealed class NPCJukeSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MeleeWeaponSystem _melee = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
 
     private EntityQuery<NPCMeleeCombatComponent> _npcMeleeQuery;
     private EntityQuery<NPCRangedCombatComponent> _npcRangedQuery;
@@ -38,28 +40,28 @@ public sealed class NPCJukeSystem : EntitySystem
 
     private void OnJukeSteering(EntityUid uid, NPCJukeComponent component, ref NPCSteeringEvent args)
     {
+        if (_timing.CurTime < component.NextJuke)
+        {
+            component.TargetTile = null;
+            return;
+        }
+
+        component.NextJuke = _timing.CurTime + TimeSpan.FromSeconds(component.JukeCooldown);
+
         if (component.JukeType == JukeType.AdjacentTile)
         {
-            if (_npcRangedQuery.TryGetComponent(uid, out var ranged) &&
-                ranged.Status == CombatStatus.NotInSight)
+            if (args.Transform.GridUid == null)
+                return;
+
+            if (_npcRangedQuery.TryGetComponent(uid, out var ranged)
+                && ranged.Status is CombatStatus.NotInSight
+                || !TryComp<MapGridComponent>(args.Transform.GridUid, out var grid))
             {
                 component.TargetTile = null;
                 return;
             }
 
-            if (_timing.CurTime < component.NextJuke)
-            {
-                component.TargetTile = null;
-                return;
-            }
-
-            if (!TryComp<MapGridComponent>(args.Transform.GridUid, out var grid))
-            {
-                component.TargetTile = null;
-                return;
-            }
-
-            var currentTile = grid.CoordinatesToTile(args.Transform.Coordinates);
+            var currentTile = _map.CoordinatesToTile((EntityUid) args.Transform.GridUid, grid, args.Transform.Coordinates);
 
             if (component.TargetTile == null)
             {
@@ -107,17 +109,16 @@ public sealed class NPCJukeSystem : EntitySystem
 
             var elapsed = _timing.CurTime - component.NextJuke;
 
-            // Finished juke, reset timer.
-            if (elapsed.TotalSeconds > component.JukeDuration ||
-                currentTile == component.TargetTile)
+            // Finished juke.
+            if (elapsed.TotalSeconds > component.JukeDuration
+                || currentTile == component.TargetTile)
             {
                 component.TargetTile = null;
-                component.NextJuke = _timing.CurTime + TimeSpan.FromSeconds(component.JukeDuration);
                 return;
             }
 
-            var targetCoords = grid.GridTileToWorld(component.TargetTile.Value);
-            var targetDir = (targetCoords.Position - args.WorldPosition);
+            var targetCoords = _map.GridTileToWorld((EntityUid) args.Transform.GridUid, grid, component.TargetTile.Value);
+            var targetDir = targetCoords.Position - args.WorldPosition;
             targetDir = args.OffsetRotation.RotateVec(targetDir);
             const float weight = 1f;
             var norm = targetDir.Normalized();
@@ -155,9 +156,7 @@ public sealed class NPCJukeSystem : EntitySystem
                 var obstacleDirection = _transform.GetWorldPosition(melee.Target) - args.WorldPosition;
 
                 if (obstacleDirection == Vector2.Zero)
-                {
                     obstacleDirection = _random.NextVector2();
-                }
 
                 // If they're moving away then pursue anyway.
                 // If just hit then always back up a bit.

@@ -1,4 +1,4 @@
-﻿- type: trait
+- type: trait
   id: LightweightDrunk
   category: Physical
   requirements:
@@ -11,45 +11,65 @@
       inverted: true
       traits:
         - HeavyweightDrunk
-  components:
-    - type: LightweightDrunk
-      boozeStrengthMultiplier: 2
+        - LiquorLifeline
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Dwarf
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 2
 
 - type: trait
-  id: SocialAnxiety
-  category: Mental
+  id: Stutter
+  category: TraitsSpeechAccents
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - Borg
         - MedicalBorg
-  components:
-    - type: StutteringAccent
-      matchRandomProb: 0.1
-      fourRandomProb: 0
-      threeRandomProb: 0
-      cutRandomProb: 0
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: StutteringAccent
+          matchRandomProb: 0.1
+          fourRandomProb: 0
+          threeRandomProb: 0
+          cutRandomProb: 0
 
 - type: trait
   id: ForeignerLight
-  category: Mental
-  points: 1
+  category: TraitsSpeechLanguages
+  points: 2
   requirements:
-    - !type:TraitGroupExclusionRequirement
-      prototypes: [ Foreigner ]
-  components:
-    - type: ForeignerTrait
-      cantUnderstand: false # Allows to understand
-      baseTranslator: TranslatorForeigner
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ForeignerTrait
+          cantUnderstand: false
+          baseTranslator: TranslatorForeigner
 
 - type: trait
   id: Foreigner
-  category: Mental
-  points: 2
+  category: TraitsSpeechLanguages
+  points: 4
   requirements: # TODO: Add a requirement to know at least 1 non-gc language
-    - !type:TraitGroupExclusionRequirement
-      prototypes: [ ForeignerLight ]
-  components:
-    - type: ForeignerTrait
-      baseTranslator: TranslatorForeigner
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ForeignerLight
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ForeignerTrait
+          baseTranslator: TranslatorForeigner

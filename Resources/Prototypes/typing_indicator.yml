@@ -48,3 +48,8 @@
   id: slime
   typingState: slime0
   offset: 0, 0.125
+
+- type: typingIndicator
+  id: oni
+  typingState: oni0
+  offset: 0, 0.0625

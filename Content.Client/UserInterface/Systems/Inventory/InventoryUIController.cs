@@ -134,10 +134,9 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
             _inventoryHotbar?.ClearButtons();
             return;
         }
-
         foreach (var (_, data) in clientInv.SlotData)
         {
-            if (!data.ShowInWindow || !_slotGroups.TryGetValue(data.SlotGroup, out var container))
+            if (!data.ShowInWindow || data.SlotDef.Disabled || !_slotGroups.TryGetValue(data.SlotGroup, out var container))
                 continue;
 
             if (!container.TryGetButton(data.SlotName, out var button))
@@ -210,7 +209,6 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         {
             if (!data.ShowInWindow)
                 continue;
-
             if (!_strippingWindow!.InventoryButtons.TryGetButton(data.SlotName, out var button))
             {
                 button = CreateSlotButton(data);
@@ -417,7 +415,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
 
         if (_strippingWindow?.InventoryButtons.GetButton(update.Name) is { } inventoryButton)
         {
-            inventoryButton.SpriteView.SetEntity(entity);
+            inventoryButton.SetEntity(entity);
             inventoryButton.StorageButton.Visible = showStorage;
         }
 
@@ -426,12 +424,12 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
 
         if (_entities.TryGetComponent(entity, out VirtualItemComponent? virtb))
         {
-            button.SpriteView.SetEntity(virtb.BlockingEntity);
+            button.SetEntity(virtb.BlockingEntity);
             button.Blocked = true;
         }
         else
         {
-            button.SpriteView.SetEntity(entity);
+            button.SetEntity(entity);
             button.Blocked = false;
             button.StorageButton.Visible = showStorage;
         }

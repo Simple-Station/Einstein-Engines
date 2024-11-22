@@ -132,6 +132,15 @@
 
 - type: entity
   parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelRobotics
+  name: robotics duffel bag
+  description: A large and sturdy duffel bag to fit everything needed to build a cyborg.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Duffels/robotics.rsi
+
+- type: entity
+  parent: ClothingBackpackDuffel
   id: ClothingBackpackDuffelHydroponics
   name: hydroponics duffel bag
   description: A large duffel bag for holding extra gardening tools.

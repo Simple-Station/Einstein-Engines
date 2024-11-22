@@ -1,11 +1,16 @@
 using System.Linq;
 using Content.Client.Eui;
+using Content.Client.Lobby;
 using Content.Client.Players.PlayTimeTracking;
+using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Customization.Systems;
 using Content.Shared.Eui;
 using Content.Shared.Ghost.Roles;
+using Content.Shared.Preferences;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
-using Robust.Shared.Utility;
+using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 {
@@ -20,13 +25,24 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
         {
             _window = new GhostRolesWindow();
 
-            _window.OnRoleRequested += info =>
+            _window.OnRoleRequestButtonClicked += info =>
             {
-                if (_windowRules != null)
-                    _windowRules.Close();
+                _windowRules?.Close();
+
+                if (info.Kind == GhostRoleKind.RaffleJoined)
+                {
+                    SendMessage(new LeaveGhostRoleRaffleMessage(info.Identifier));
+                    return;
+                }
+
                 _windowRules = new GhostRoleRulesWindow(info.Rules, _ =>
                 {
-                    SendMessage(new GhostRoleTakeoverRequestMessage(info.Identifier));
+                    SendMessage(new RequestGhostRoleMessage(info.Identifier));
+
+                    // if raffle role, close rules window on request, otherwise do
+                    // old behavior of waiting for the server to close it
+                    if (info.Kind != GhostRoleKind.FirstComeFirstServe)
+                        _windowRules?.Close();
                 });
                 _windowRulesId = info.Identifier;
                 _windowRules.OnClose += () =>
@@ -38,7 +54,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 
             _window.OnRoleFollow += info =>
             {
-                SendMessage(new GhostRoleFollowRequestMessage(info.Identifier));
+                SendMessage(new FollowGhostRoleMessage(info.Identifier));
             };
 
             _window.OnClose += () =>
@@ -64,13 +80,18 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
         {
             base.HandleState(state);
 
-            if (state is not GhostRolesEuiState ghostState) return;
+            if (state is not GhostRolesEuiState ghostState)
+                return;
             _window.ClearEntries();
 
             var entityManager = IoCManager.Resolve<IEntityManager>();
             var sysManager = entityManager.EntitySysManager;
             var spriteSystem = sysManager.GetEntitySystem<SpriteSystem>();
             var requirementsManager = IoCManager.Resolve<JobRequirementsManager>();
+            var characterReqs = entityManager.System<CharacterRequirementsSystem>();
+            var prefs = IoCManager.Resolve<IClientPreferencesManager>();
+            var protoMan = IoCManager.Resolve<IPrototypeManager>();
+            var configManager = IoCManager.Resolve<IConfigurationManager>();
 
             var groupedRoles = ghostState.GhostRoles.GroupBy(
                 role => (role.Name, role.Description, role.Requirements));
@@ -78,15 +99,23 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             {
                 var name = group.Key.Name;
                 var description = group.Key.Description;
-                bool hasAccess = true;
-                FormattedMessage? reason;
+                // ReSharper disable once ReplaceWithSingleAssignment.True
+                var hasAccess = true;
 
-                if (!requirementsManager.CheckRoleTime(group.Key.Requirements, out reason))
-                {
+                if (!characterReqs.CheckRequirementsValid(
+                    group.Key.Requirements ?? new(),
+                    new(),
+                    (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                    requirementsManager.GetRawPlayTimeTrackers(),
+                    requirementsManager.IsWhitelisted(),
+                    new LoadoutPrototype(), // idk
+                    entityManager,
+                    protoMan,
+                    configManager,
+                    out var reasons))
                     hasAccess = false;
-                }
 
-                _window.AddEntry(name, description, hasAccess, reason, group, spriteSystem);
+                _window.AddEntry(name, description, hasAccess, characterReqs.GetRequirementsText(reasons), group, spriteSystem);
             }
 
             var closeRulesWindow = ghostState.GhostRoles.All(role => role.Identifier != _windowRulesId);

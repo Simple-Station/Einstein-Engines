@@ -3,6 +3,7 @@ using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Rotation;
 using Robust.Client.GameObjects;
+using Robust.Shared.GameStates;
 
 namespace Content.Client.Buckle;
 
@@ -14,52 +15,86 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BuckleComponent, AfterAutoHandleStateEvent>(OnBuckleAfterAutoHandleState);
         SubscribeLocalEvent<BuckleComponent, AppearanceChangeEvent>(OnAppearanceChange);
+        SubscribeLocalEvent<StrapComponent, MoveEvent>(OnStrapMoveEvent);
+        SubscribeLocalEvent<BuckleComponent, BuckledEvent>(OnBuckledEvent);
+        SubscribeLocalEvent<BuckleComponent, UnbuckledEvent>(OnUnbuckledEvent);
     }
 
-    private void OnBuckleAfterAutoHandleState(EntityUid uid, BuckleComponent component, ref AfterAutoHandleStateEvent args)
+     /// <summary>
+    /// Is the strap entity already rotated north? Lower the draw depth of the buckled entity.
+    /// </summary>
+    private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
     {
-        ActionBlocker.UpdateCanMove(uid);
-
-        if (!TryComp<SpriteComponent>(uid, out var ownerSprite))
+        if (!TryComp<SpriteComponent>(args.Strap, out var strapSprite) ||
+            !TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
             return;
 
-        // Adjust draw depth when the chair faces north so that the seat back is drawn over the player.
-        // Reset the draw depth when rotated in any other direction.
-        // TODO when ECSing, make this a visualizer
-        // This code was written before rotatable viewports were introduced, so hard-coding Direction.North
-        // and comparing it against LocalRotation now breaks this in other rotations. This is a FIXME, but
-        // better to get it working for most people before we look at a more permanent solution.
-        if (component is { Buckled: true, LastEntityBuckledTo: { } } &&
-            Transform(component.LastEntityBuckledTo.Value).LocalRotation.GetCardinalDir() == Direction.North &&
-            TryComp<SpriteComponent>(component.LastEntityBuckledTo, out var buckledSprite))
+        if (Transform(args.Strap.Owner).LocalRotation.GetCardinalDir() == Direction.North)
         {
-            component.OriginalDrawDepth ??= ownerSprite.DrawDepth;
-            ownerSprite.DrawDepth = buckledSprite.DrawDepth - 1;
-            return;
+            ent.Comp.OriginalDrawDepth ??= buckledSprite.DrawDepth;
+            buckledSprite.DrawDepth = strapSprite.DrawDepth - 1;
         }
+    }
 
-        // If here, we're not turning north and should restore the saved draw depth.
-        if (component.OriginalDrawDepth.HasValue)
+    /// <summary>
+    /// Was the draw depth of the buckled entity lowered? Reset it upon unbuckling.
+    /// </summary>
+    private void OnUnbuckledEvent(Entity<BuckleComponent> ent, ref UnbuckledEvent args)
+    {
+        if (!TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
+            return;
+
+        if (ent.Comp.OriginalDrawDepth.HasValue)
         {
-            ownerSprite.DrawDepth = component.OriginalDrawDepth.Value;
-            component.OriginalDrawDepth = null;
+            buckledSprite.DrawDepth = ent.Comp.OriginalDrawDepth.Value;
+            ent.Comp.OriginalDrawDepth = null;
+        }
+    }
+
+    private void OnStrapMoveEvent(EntityUid uid, StrapComponent component, ref MoveEvent args)
+    {
+        // I'm moving this to the client-side system, but for the sake of posterity let's keep this comment:
+        // > This is mega cursed. Please somebody save me from Mr Buckle's wild ride
+
+        // The nice thing is its still true, this is quite cursed, though maybe not omega cursed anymore.
+        // This code is garbage, it doesn't work with rotated viewports. I need to finally get around to reworking
+        // sprite rendering for entity layers & direction dependent sorting.
+
+        if (args.NewRotation == args.OldRotation)
+            return;
+
+        if (!TryComp<SpriteComponent>(uid, out var strapSprite))
+            return;
+
+        var isNorth = Transform(uid).LocalRotation.GetCardinalDir() == Direction.North;
+        foreach (var buckledEntity in component.BuckledEntities)
+        {
+            if (!TryComp<BuckleComponent>(buckledEntity, out var buckle))
+                continue;
+
+            if (!TryComp<SpriteComponent>(buckledEntity, out var buckledSprite))
+                continue;
+
+            if (isNorth)
+            {
+                buckle.OriginalDrawDepth ??= buckledSprite.DrawDepth;
+                buckledSprite.DrawDepth = strapSprite.DrawDepth - 1;
+            }
+            else if (buckle.OriginalDrawDepth.HasValue)
+            {
+                buckledSprite.DrawDepth = buckle.OriginalDrawDepth.Value;
+                buckle.OriginalDrawDepth = null;
+            }
         }
     }
 
     private void OnAppearanceChange(EntityUid uid, BuckleComponent component, ref AppearanceChangeEvent args)
     {
-        if (!TryComp<RotationVisualsComponent>(uid, out var rotVisuals))
+        if (!TryComp<RotationVisualsComponent>(uid, out var rotVisuals)
+            || !Appearance.TryGetData<bool>(uid, BuckleVisuals.Buckled, out var buckled, args.Component)
+            || !buckled || args.Sprite == null)
             return;
-
-        if (!Appearance.TryGetData<bool>(uid, BuckleVisuals.Buckled, out var buckled, args.Component) ||
-            !buckled ||
-            args.Sprite == null)
-        {
-            _rotationVisualizerSystem.SetHorizontalAngle((uid, rotVisuals), rotVisuals.DefaultRotation);
-            return;
-        }
 
         // Animate strapping yourself to something at a given angle
         // TODO: Dump this when buckle is better

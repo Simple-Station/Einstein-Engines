@@ -1,5 +1,8 @@
 using System.Collections.Frozen;
+using System.Linq;
+using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
+using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -9,6 +12,7 @@ namespace Content.Server.Chat.Systems;
 public partial class ChatSystem
 {
     private FrozenDictionary<string, EmotePrototype> _wordEmoteDict = FrozenDictionary<string, EmotePrototype>.Empty;
+    private IReadOnlyList<string> Punctuation { get; } = new List<string> { ",", ".", "!", "?", "-", "~", "'", "\"", };
 
     protected override void OnPrototypeReload(PrototypesReloadedEventArgs obj)
     {
@@ -47,7 +51,7 @@ public partial class ChatSystem
     /// <param name="emoteId">The id of emote prototype. Should has valid <see cref="EmotePrototype.ChatMessages"/></param>
     /// <param name="hideLog">Whether or not this message should appear in the adminlog window</param>
     /// <param name="range">Conceptual range of transmission, if it shows in the chat window, if it shows to far-away ghosts or ghosts at all...</param>
-    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerNameEvent"/>. If this is set, the event will not get raised.</param>
+    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerSpeechEvent"/>. If this is set, the event will not get raised.</param>
     public void TryEmoteWithChat(
         EntityUid source,
         string emoteId,
@@ -70,7 +74,7 @@ public partial class ChatSystem
     /// <param name="hideLog">Whether or not this message should appear in the adminlog window</param>
     /// <param name="hideChat">Whether or not this message should appear in the chat window</param>
     /// <param name="range">Conceptual range of transmission, if it shows in the chat window, if it shows to far-away ghosts or ghosts at all...</param>
-    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerNameEvent"/>. If this is set, the event will not get raised.</param>
+    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerSpeechEvent"/>. If this is set, the event will not get raised.</param>
     public void TryEmoteWithChat(
         EntityUid source,
         EmotePrototype emote,
@@ -80,12 +84,23 @@ public partial class ChatSystem
         bool ignoreActionBlocker = false
         )
     {
+        if (!(emote.Whitelist?.IsValid(source, EntityManager) ?? true))
+            return;
+        if (emote.Blacklist?.IsValid(source, EntityManager) ?? false)
+            return;
+
+        if (!emote.Available &&
+            TryComp<SpeechComponent>(source, out var speech) &&
+            !speech.AllowedEmotes.Contains(emote.ID))
+            return;
+
         // check if proto has valid message for chat
         if (emote.ChatMessages.Count != 0)
         {
             // not all emotes are loc'd, but for the ones that are we pass in entity
             var action = Loc.GetString(_random.Pick(emote.ChatMessages), ("entity", source));
-            SendEntityEmote(source, action, range, nameOverride, hideLog: hideLog, checkEmote: false, ignoreActionBlocker: ignoreActionBlocker);
+            var language = _language.GetLanguage(source);
+            SendEntityEmote(source, action, range, nameOverride, language, hideLog: hideLog, checkEmote: false, ignoreActionBlocker: ignoreActionBlocker);
         }
 
         // do the rest of emote event logic here
@@ -150,6 +165,10 @@ public partial class ChatSystem
     private void TryEmoteChatInput(EntityUid uid, string textInput)
     {
         var actionLower = textInput.ToLower();
+        // Replace ending punctuation with nothing
+        if (Punctuation.Any(punctuation => actionLower.EndsWith(punctuation)))
+            actionLower = actionLower.Remove(actionLower.Length - 1);
+
         if (!_wordEmoteDict.TryGetValue(actionLower, out var emote))
             return;
 

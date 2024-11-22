@@ -1,12 +1,17 @@
 - type: trait
   id: PirateAccent
-  category: Speech
-  components:
-    - type: PirateAccent
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: PirateAccent
 
 - type: trait
   id: Accentless
-  category: Speech
+  category: TraitsSpeechAccents
   points: -1
   requirements:
     - !type:CharacterJobRequirement
@@ -14,36 +19,106 @@
       jobs:
         - Borg
         - MedicalBorg
-  components:
-    - type: Accentless
-      removes:
-      - type: LizardAccent
-      - type: MothAccent
-      - type: ReplacementAccent
-        accent: dwarf
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Accentless
+          removes:
+          - type: LizardAccent
+          - type: MothAccent
+          - type: ReplacementAccent
+            accent: dwarf
 
 - type: trait
   id: Southern
-  category: Speech
-  components:
-    - type: SouthernAccent
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SouthernAccent
 
 - type: trait
-  id: NormalVisionHarpy
+  id: NormalVision
   category: Visual
-  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
-      species: Harpy
-  components:
-    - type: NormalVision
+      species:
+        - Harpy
+        - Vulpkanin
+  functions:
+    - !type:TraitRemoveComponent
+      components:
+        - type: UltraVision
+        - type: DogVision
 
 - type: trait
-  id: NormalVisionVulpkanin
-  category: Visual
-  points: -1
+  id: Saturnine
+  category: Mental
+  points: 6
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sanguine
+  functions:
+    - !type:TraitAddMoodlets
+      moodEffects:
+        - TraitSaturnine
+
+- type: trait
+  id: Sanguine
+  category: Mental
+  points: -6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Saturnine
+  functions:
+    - !type:TraitAddMoodlets
+      moodEffects:
+        - TraitSanguine
+
+- type: trait
+  id: AddictionNicotine
+  category: Mental
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
-      species: Vulpkanin
-  components:
-    - type: NormalVision
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddMoodlets
+      moodEffects:
+        - NicotineWithdrawal
+
+- type: trait
+  id: Liar
+  category: Mental
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ReplacementAccent
+          replacementChance: 0.15
+          accent: liar

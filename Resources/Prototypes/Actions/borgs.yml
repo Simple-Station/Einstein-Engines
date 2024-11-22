@@ -2,7 +2,7 @@
   id: ActionViewLaws
   name: View Laws
   description: View the laws that you must follow.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: NoItem

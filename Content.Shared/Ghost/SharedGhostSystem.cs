@@ -1,6 +1,7 @@
 using Content.Shared.Emoting;
 using Content.Shared.Hands;
 using Content.Shared.Interaction.Events;
+using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Item;
 using Content.Shared.Popups;
 using Robust.Shared.Serialization;
@@ -23,6 +24,7 @@ namespace Content.Shared.Ghost
             SubscribeLocalEvent<GhostComponent, EmoteAttemptEvent>(OnAttempt);
             SubscribeLocalEvent<GhostComponent, DropAttemptEvent>(OnAttempt);
             SubscribeLocalEvent<GhostComponent, PickupAttemptEvent>(OnAttempt);
+            SubscribeLocalEvent<GhostComponent, InteractionVerbAttemptEvent>(OnAttempt);
         }
 
         private void OnAttempt(EntityUid uid, GhostComponent component, CancellableEntityEventArgs args)
@@ -126,6 +128,12 @@ namespace Content.Shared.Ghost
     }
 
     /// <summary>
+    /// A client to server request for their ghost to be warped to the most followed entity.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostnadoRequestEvent : EntityEventArgs;
+
+    /// <summary>
     /// A client to server request for their ghost to return to body
     /// </summary>
     [Serializable, NetSerializable]
@@ -146,4 +154,7 @@ namespace Content.Shared.Ghost
             AvailableGhostRoles = availableGhostRoleCount;
         }
     }
+
+    [Serializable, NetSerializable]
+    public sealed class GhostReturnToRoundRequest : EntityEventArgs;
 }

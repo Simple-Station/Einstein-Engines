@@ -71,6 +71,7 @@
       tags:
         - Carp
         - DoorBumpOpener
+        - NoPaint
     - type: ReplacementAccent
       accent: genericAggressive
     - type: Speech
@@ -164,6 +165,8 @@
       makeSentient: true
       name: ghost-role-information-sentient-carp-name
       description: ghost-role-information-sentient-carp-description
+      raffle:
+        settings: short
     - type: GhostTakeoverAvailable
     - type: HTN
       rootTask:
@@ -237,6 +240,11 @@
         types:
           Slash: 12
           Bloodloss: 5
+    - type: SurgeryTarget
+    - type: UserInterface
+      interfaces:
+        enum.SurgeryUIKey.Key:
+          type: SurgeryBui
 
 - type: entity
   id: MobSharkSalvage

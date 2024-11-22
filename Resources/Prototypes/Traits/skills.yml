@@ -1,7 +1,46 @@
 - type: trait
+  id: CPRTraining
+  category: Mental
+  points: -4
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: CPRTraining
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - MedicalIntern
+        - Paramedic
+        - ChiefMedicalOfficer
+        - Brigmedic
+
+- type: trait
+  id: SelfAware
+  category: Mental
+  points: -4
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SelfAware
+          analyzableTypes:
+            - Blunt
+            - Slash
+            - Piercing
+            - Heat
+            - Shock
+            - Cold
+            - Caustic
+          detectableGroups:
+            - Airloss
+            - Toxin
+
+- type: trait
   id: HeavyweightDrunk
   category: Physical
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -12,21 +51,289 @@
       inverted: true
       traits:
         - LightweightDrunk
-  components:
-    - type: LightweightDrunk
-      boozeStrengthMultiplier: 0.5
-  
+        - LiquorLifeline
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Dwarf
+        - IPC
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 0.5
+
+- type: trait
+  id: LiquorLifeline
+  category: Physical
+  points: -6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LightweightDrunk
+        - HeavyweightDrunk
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Dwarf
+        - IPC
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: LiquorLifeline
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 0.5
+
 - type: trait
   id: Thieving
   category: Physical
-  points: -4
-  components:
-    - type: Thieving
-      ignoreStripHidden: true
-      stealth: Subtle
-      stripTimeReduction: 0
-      stripTimeMultiplier: 0.667
+  points: -8
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Thieving
+          ignoreStripHidden: true
+          stealth: Subtle
+          stripTimeReduction: 0
+          stripTimeMultiplier: 0.667
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
-      species: Felinid
+      species:
+        - Felinid
+
+- type: trait
+  id: Voracious
+  category: Physical
+  points: -2
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: ConsumeDelayModifier
+          foodDelayMultiplier: 0.5
+          drinkDelayMultiplier: 0.5
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vulpkanin
+        - IPC
+
+- type: trait
+  id: ParkourTraining
+  category: Physical
+  points: -5
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sluggish
+        - SnailPaced
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: ClimbDelayModifier
+          climbDelayMultiplier: 0.35
+        - type: LayingDownModifier
+          layingDownCooldownMultiplier: 0.5
+          downedSpeedMultiplierMultiplier: 1.65
+
+- type: trait
+  id: LightStep
+  category: Auditory
+  points: -2
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: FootstepVolumeModifier
+          sprintVolumeModifier: -10
+          walkVolumeModifier: -10
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+
+- type: trait
+  id: Singer
+  category: Auditory
+  points: -2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Singer
+          proto: NormalSinger
+
+- type: trait
+  id: LatentPsychic
+  category: Mental
+  points: -4
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Psionic
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain
+        - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PsionicInsulation
+
+- type: trait
+  id: PsionicInsulation
+  category: Mental
+  points: -10 #Buy a significant disability to get this.
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: PsionicInsulation
+        - type: Mindbroken
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain
+        - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LatentPsychic
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+
+- type: trait
+  id: NaturalTelepath
+  category: Mental
+  points: -2
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - TelepathyPower
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector
+        - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+
+- type: trait
+  id: TrapAvoider
+  category: Physical
+  points: -3
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: StepTriggerImmune
+          whitelist:
+            types:
+              - Shard
+              - Landmine
+              - Mousetrap
+              - SlipEntity
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+        - Harpy
+
+- type: trait
+  id: AnomalousPositronics
+  category: Mental
+  points: -4
+  functions:
+    - !type:TraitRemoveComponent
+      components:
+        - type: PsionicInsulation
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+
+- type: trait
+  id: AnimalFriend
+  category: Mental
+  points: -4
+  functions:
+    - !type:TraitModifyFactions
+      addFactions:
+        - AnimalFriend

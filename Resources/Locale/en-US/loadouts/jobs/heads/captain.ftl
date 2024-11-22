@@ -7,6 +7,6 @@ loadout-description-LoadoutCommandCapOuterWinter = A warm coat for the cold of s
 loadout-description-LoadoutCommandCapGloves = The gloves of the captain. They are very nice gloves.
 loadout-description-LoadoutCommandCapHat = The hat of the captain. It is a very nice hat.
 loadout-description-LoadoutCommandCapHatCapcap = The Captain's cap, pretty nice.
-loadout-description-LoadoutCommandCapHat = The Captain's beret, very nice.
+loadout-description-LoadoutCommandCapHatBeret = The Captain's beret, very nice.
 loadout-description-LoadoutCommandCapMaskGas = Why would the captain need this? I don't know, but it looks cool.
 loadout-description-LoadoutCommandCapItemDrinkFlask = The finest of flasks, for the finest of drinks.

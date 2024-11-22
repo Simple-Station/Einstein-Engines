@@ -11,7 +11,7 @@ public sealed partial class ForensicScannerDoAfterEvent : SimpleDoAfterEvent
 [Serializable, NetSerializable]
 public sealed partial class ForensicPadDoAfterEvent : DoAfterEvent
 {
-    [DataField("sample", required: true)] public  string Sample = default!;
+    [DataField("sample", required: true)] public string Sample = default!;
 
     private ForensicPadDoAfterEvent()
     {
@@ -24,6 +24,9 @@ public sealed partial class ForensicPadDoAfterEvent : DoAfterEvent
 
     public override DoAfterEvent Clone() => this;
 }
+
+[Serializable, NetSerializable]
+public sealed partial class ScentTrackerDoAfterEvent : SimpleDoAfterEvent { }
 
 [Serializable, NetSerializable]
 public sealed partial class CleanForensicsDoAfterEvent : SimpleDoAfterEvent

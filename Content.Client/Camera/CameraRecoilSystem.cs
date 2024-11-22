@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared.Camera;
 using Content.Shared.CCVar;
+using Content.Shared.Contests;
 using Robust.Shared.Configuration;
 
 namespace Content.Client.Camera;
@@ -8,6 +9,7 @@ namespace Content.Client.Camera;
 public sealed class CameraRecoilSystem : SharedCameraRecoilSystem
 {
     [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly ContestsSystem _contests = default!;
 
     private float _intensity;
 
@@ -37,15 +39,15 @@ public sealed class CameraRecoilSystem : SharedCameraRecoilSystem
         if (!Resolve(uid, ref component, false))
             return;
 
-        recoil *= _intensity;
+        var massRatio = _contests.MassContest(uid);
+        var maxRecoil = KickMagnitudeMax / massRatio;
+        recoil *= _intensity / massRatio;
 
-        // Use really bad math to "dampen" kicks when we're already kicked.
         var existing = component.CurrentKick.Length();
-        var dampen = existing / KickMagnitudeMax;
-        component.CurrentKick += recoil * (1 - dampen);
+        component.CurrentKick += recoil * (1 - existing);
 
-        if (component.CurrentKick.Length() > KickMagnitudeMax)
-            component.CurrentKick = component.CurrentKick.Normalized() * KickMagnitudeMax;
+        if (component.CurrentKick.Length() > maxRecoil)
+            component.CurrentKick = component.CurrentKick.Normalized() * maxRecoil;
 
         component.LastKickTime = 0;
     }

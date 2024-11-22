@@ -31,6 +31,9 @@ namespace Content.Server.Disposal.Tube
         [Dependency] private readonly DisposableSystem _disposableSystem = default!;
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
         [Dependency] private readonly AtmosphereSystem _atmosSystem = default!;
+        [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+        [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+
         public override void Initialize()
         {
             base.Initialize();
@@ -101,8 +104,9 @@ namespace Content.Server.Disposal.Tube
         /// <param name="msg">A user interface message from the client.</param>
         private void OnUiAction(EntityUid uid, DisposalRouterComponent router, SharedDisposalRouterComponent.UiActionMessage msg)
         {
-            if (!EntityManager.EntityExists(msg.Session.AttachedEntity))
+            if (!EntityManager.EntityExists(msg.Actor))
                 return;
+
             if (TryComp<PhysicsComponent>(uid, out var physBody) && physBody.BodyType != BodyType.Static)
                 return;
 
@@ -279,9 +283,9 @@ namespace Content.Server.Disposal.Tube
 
         private void OnOpenTaggerUI(EntityUid uid, DisposalTaggerComponent tagger, BoundUIOpenedEvent args)
         {
-            if (_uiSystem.TryGetUi(uid, DisposalTaggerUiKey.Key, out var bui))
+            if (_uiSystem.HasUi(uid, DisposalTaggerUiKey.Key))
             {
-                _uiSystem.SetUiState(bui,
+                _uiSystem.SetUiState(uid, DisposalTaggerUiKey.Key,
                     new DisposalTaggerUserInterfaceState(tagger.Tag));
             }
         }
@@ -292,13 +296,9 @@ namespace Content.Server.Disposal.Tube
         /// <returns>Returns a <see cref="SharedDisposalRouterComponent.DisposalRouterUserInterfaceState"/></returns>
         private void UpdateRouterUserInterface(EntityUid uid, DisposalRouterComponent router)
         {
-            var bui = _uiSystem.GetUiOrNull(uid, DisposalRouterUiKey.Key);
-            if (bui == null)
-                return;
-
             if (router.Tags.Count <= 0)
             {
-                _uiSystem.SetUiState(bui, new DisposalRouterUserInterfaceState(""));
+                _uiSystem.SetUiState(uid, DisposalRouterUiKey.Key, new DisposalRouterUserInterfaceState(""));
                 return;
             }
 
@@ -312,7 +312,7 @@ namespace Content.Server.Disposal.Tube
 
             taglist.Remove(taglist.Length - 2, 2);
 
-            _uiSystem.SetUiState(bui, new DisposalRouterUserInterfaceState(taglist.ToString()));
+            _uiSystem.SetUiState(uid, DisposalRouterUiKey.Key, new DisposalRouterUserInterfaceState(taglist.ToString()));
         }
 
         private void OnAnchorChange(EntityUid uid, DisposalTubeComponent component, ref AnchorStateChangedEvent args)
@@ -340,6 +340,7 @@ namespace Content.Server.Disposal.Tube
         {
             if (!Resolve(target, ref targetTube))
                 return null;
+
             var oppositeDirection = nextDirection.GetOpposite();
 
             var xform = Transform(target);
@@ -347,22 +348,18 @@ namespace Content.Server.Disposal.Tube
                 return null;
 
             var position = xform.Coordinates;
-            foreach (var entity in grid.GetInDir(position, nextDirection))
+            var entities = _mapSystem.GetInDir((EntityUid) xform.GridUid, grid, position, nextDirection);
+
+            foreach (var entity in entities)
             {
                 if (!TryComp(entity, out DisposalTubeComponent? tube))
-                {
                     continue;
-                }
 
                 if (!CanConnect(entity, tube, oppositeDirection))
-                {
                     continue;
-                }
 
                 if (!CanConnect(target, targetTube, nextDirection))
-                {
                     continue;
-                }
 
                 return entity;
             }
@@ -425,7 +422,8 @@ namespace Content.Server.Disposal.Tube
                 return false;
 
             var xform = Transform(uid);
-            var holder = Spawn(DisposalEntryComponent.HolderPrototypeId, xform.MapPosition);
+            var mapCoords = _transformSystem.GetMapCoordinates(xform);
+            var holder = Spawn(DisposalEntryComponent.HolderPrototypeId, mapCoords);
             var holderComponent = Comp<DisposalHolderComponent>(holder);
 
             foreach (var entity in from.Container.ContainedEntities.ToArray())

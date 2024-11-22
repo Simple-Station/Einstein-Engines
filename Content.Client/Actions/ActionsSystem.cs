@@ -65,6 +65,7 @@ namespace Content.Client.Actions
                 return;
 
             component.Whitelist = state.Whitelist;
+            component.Blacklist = state.Blacklist;
             component.CanTargetSelf = state.CanTargetSelf;
             BaseHandleState<EntityTargetActionComponent>(uid, component, state);
         }
@@ -248,7 +249,10 @@ namespace Content.Client.Actions
             if (action.ClientExclusive)
             {
                 if (instantAction.Event != null)
+                {
                     instantAction.Event.Performer = user;
+                    instantAction.Event.Action = actionId;
+                }
 
                 PerformAction(user, actions, actionId, instantAction, instantAction.Event, GameTiming.CurTime);
             }

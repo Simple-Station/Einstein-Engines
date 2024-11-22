@@ -2,16 +2,16 @@ using Content.Server.Botany.Components;
 using Content.Server.Botany.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.Chemistry.Reagent;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 using Robust.Shared.Utility;
-using Robust.Shared.Audio;
 
 namespace Content.Server.Botany;
 
 [Prototype("seed")]
-public sealed class SeedPrototype : SeedData, IPrototype
+public sealed partial class SeedPrototype : SeedData, IPrototype
 {
     [IdDataField] public string ID { get; private init; } = default!;
 }
@@ -70,7 +70,7 @@ public partial struct SeedChemQuantity
     /// When chemicals are added to produce, the potency of the seed is divided with this value. Final chemical amount is the result plus the `Min` value.
     /// Example: PotencyDivisor of 20 with seed potency of 55 results in 2.75, 55/20 = 2.75. If minimum is 1 then final result will be 3.75 of that chemical, 55/20+1 = 3.75.
     /// </summary>
-    [DataField("PotencyDivisor")] public int PotencyDivisor;
+    [DataField] public int PotencyDivisor;
 
     /// <summary>
     /// Inherent chemical is one that is NOT result of mutation or crossbreeding. These chemicals are removed if species mutation is executed.
@@ -205,6 +205,11 @@ public partial class SeedData
     /// </summary>
     [DataField("ligneous")] public bool Ligneous;
 
+    /// <summary>
+    ///     If true, teleports both fruit and player if slippable.
+    /// </summary>
+    [DataField] public bool Teleporting;
+
     // No, I'm not removing these.
     // if you re-add these, make sure that they get cloned.
     //public PlantSpread Spread { get; set; }
@@ -215,7 +220,6 @@ public partial class SeedData
     //public bool Hematophage { get; set; }
     //public bool Thorny { get; set; }
     //public bool Stinging { get; set; }
-    // public bool Teleporting { get; set; }
     // public PlantJuicy Juicy { get; set; }
 
     #endregion
@@ -295,6 +299,7 @@ public partial class SeedData
             Slip = Slip,
             Sentient = Sentient,
             Ligneous = Ligneous,
+            Teleporting = Teleporting,
 
             PlantRsi = PlantRsi,
             PlantIconState = PlantIconState,
@@ -358,6 +363,7 @@ public partial class SeedData
             Slip = Slip,
             Sentient = Sentient,
             Ligneous = Ligneous,
+            Teleporting = Teleporting,
 
             PlantRsi = other.PlantRsi,
             PlantIconState = other.PlantIconState,

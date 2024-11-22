@@ -134,3 +134,28 @@
   components:
   - type: NavMapBeacon
     text: station-beacon-corpsman
+
+#Justice
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconJustice
+  suffix: Justice
+  components:
+  - type: NavMapBeacon
+    text: station-beacon-justice
+
+- type: entity
+  parent: DefaultStationBeaconJustice
+  id: DefaultStationBeaconChiefJustice
+  suffix: Chief Justice
+  components:
+  - type: NavMapBeacon
+    text: station-beacon-chiefjustice
+
+- type: entity
+  parent: DefaultStationBeaconJustice
+  id: DefaultStationBeaconProsecutor
+  suffix: Prosecutor
+  components:
+  - type: NavMapBeacon
+    text: station-beacon-prosecutor

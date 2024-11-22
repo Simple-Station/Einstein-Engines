@@ -1,10 +1,10 @@
 - type: entity
   id: GiftsPizzaPartySmall
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 10
+    weight: 5
     startDelay: 10
     duration: 120
     earliestStart: 20
@@ -21,14 +21,13 @@
 - type: entity
   id: GiftsPizzaPartyLarge
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      weight: 6
+      weight: 2
       startDelay: 10
       duration: 240
-      minimumPlayers: 50
-      earliestStart: 40
+      earliestStart: 20
     - type: CargoGiftsRule
       description: cargo-gift-pizza-large
       sender: cargo-gift-default-sender
@@ -41,10 +40,10 @@
 - type: entity
   id: GiftsEngineering
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      weight: 4
+      weight: 5
       startDelay: 10
       duration: 240
       earliestStart: 30
@@ -64,7 +63,7 @@
 - type: entity
   id: GiftsVendingRestock
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       weight: 4
@@ -87,10 +86,10 @@
 - type: entity
   id: GiftsJanitor
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      weight: 8
+      weight: 6
       startDelay: 10
       duration: 120
       minimumPlayers: 30
@@ -107,7 +106,7 @@
 - type: entity
   id: GiftsMedical
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       weight: 8
@@ -129,10 +128,10 @@
 - type: entity
   id: GiftsSpacingSupplies
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      weight: 6
+      weight: 4
       startDelay: 10
       duration: 120
       earliestStart: 10
@@ -151,10 +150,10 @@
 - type: entity
   id: GiftsFireProtection
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      weight: 3
+      weight: 4
       startDelay: 10
       duration: 120
       earliestStart: 20
@@ -171,10 +170,10 @@
 - type: entity
   id: GiftsSecurityGuns
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      weight: 2
+      weight: 3
       startDelay: 10
       duration: 120
       earliestStart: 20
@@ -192,7 +191,7 @@
 - type: entity
   id: GiftsSecurityRiot
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       weight: 4

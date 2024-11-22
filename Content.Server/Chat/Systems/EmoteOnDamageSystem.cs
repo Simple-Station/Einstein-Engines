@@ -1,3 +1,5 @@
+using Content.Shared.Chat;
+
 namespace Content.Server.Chat.Systems;
 
 using Content.Shared.Chat.Prototypes;

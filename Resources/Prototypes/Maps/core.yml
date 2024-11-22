@@ -1,0 +1,67 @@
+- type: gameMap
+  id: Core
+  mapName: 'Core'
+  mapPath: /Maps/core.yml
+  minPlayers: 35
+  maxPlayers: 70
+  stations:
+    Core:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Core {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_UCLB.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            # Service
+            Bartender: [ 2, 3 ]
+            Botanist: [ 2, 4]
+            Chef: [ 1, 3 ]
+            Janitor: [ 2, 4 ]
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            ServiceWorker: [ 3, 6 ]
+            # Engineering
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 4, 6 ]
+            AtmosphericTechnician: [ 2, 3 ]
+            TechnicalAssistant: [ 2, 6 ]
+            # Medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 3, 6 ]
+            Chemist: [ 2, 3 ]
+            MedicalIntern: [ 2, 6 ]
+            Paramedic: [ 1, 3 ]
+            # Epistemics
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 3, 6 ]
+            ResearchAssistant: [ 3, 6 ]
+            Borg: [ 1, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ForensicMantis: [ 1, 1 ]
+            # Security
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 4, 6 ]
+            Warden: [ 1, 1 ]
+            Lawyer: [ 1, 2 ]
+            SecurityCadet: [ 3, 6 ]
+            Detective: [ 1, 1 ]
+            Prisoner: [ 2, 3 ]
+            # Logistics
+            CargoTechnician: [ 3, 6 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 4 ]
+            # Civilian
+            Clown: [ 1, 2 ]
+            Mime: [ 1, 2 ]
+            Musician: [ 1, 3 ]
+            Boxer: [ 2, 4 ]
+            Reporter: [ 2, 4 ]
+            Passenger: [ -1, -1 ]

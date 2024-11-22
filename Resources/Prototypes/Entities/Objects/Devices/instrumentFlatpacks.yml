@@ -1,0 +1,120 @@
+- type: entity
+  parent: BaseFlatpack
+  id: InstrumentFlatpack
+  name: instrument flatpack
+  description: A flatpack used for constructing something.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    layers:
+    - state: service_music
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: PianoFlatpack
+  name: piano flatpack
+  description: A flatpack used for constructing a piano.
+  components:
+  - type: Flatpack
+    entity: PianoInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: UprightPianoFlatpack
+  name: upright piano flatpack
+  description: A flatpack used for constructing an upright piano.
+  components:
+  - type: Flatpack
+    entity: UprightPianoInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: VibraphoneFlatpack
+  name: vibraphone flatpack
+  description: A flatpack used for constructing a vibraphone.
+  components:
+  - type: Flatpack
+    entity: VibraphoneInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: MarimbaFlatpack
+  name: marimba flatpack
+  description: A flatpack used for constructing a marimba.
+  components:
+  - type: Flatpack
+    entity: MarimbaInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: ChurchOrganFlatpack
+  name: church organ flatpack
+  description: A flatpack used for constructing a church organ.
+  components:
+  - type: Flatpack
+    entity: ChurchOrganInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: TubaFlatpack
+  name: tuba flatpack
+  description: A flatpack used for constructing a tuba.
+  components:
+  - type: Flatpack
+    entity: TubaInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: HarpFlatpack
+  name: harp flatpack
+  description: A flatpack used for constructing a harp.
+  components:
+  - type: Flatpack
+    entity: HarpInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: TimpaniFlatpack
+  name: timpani flatpack
+  description: A flatpack used for constructing a timpani.
+  components:
+  - type: Flatpack
+    entity: TimpaniInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: TaikoFlatpack
+  name: taiko flatpack
+  description: A flatpack used for constructing a taiko.
+  components:
+  - type: Flatpack
+    entity: TaikoInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: ContrabassFlatpack
+  name: contrabass flatpack
+  description: A flatpack used for constructing a contrabass.
+  components:
+  - type: Flatpack
+    entity: ContrabassInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: MinimoogFlatpack
+  name: minimoog flatpack
+  description: A flatpack used for constructing a minimoog.
+  components:
+  - type: Flatpack
+    entity: MinimoogInstrument
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: TomDrumsFlatpack
+  name: tom drums flatpack
+  description: A flatpack used for constructing a tom drums set.
+  components:
+  - type: Flatpack
+    entity: TomDrumsInstrument

@@ -1,0 +1,35 @@
+- type: characterItemGroup
+  id: TraitsLanguagesBasic
+  maxItems: 1
+  items:
+    - type: trait
+      id: SignLanguage
+    - type: trait
+      id: SolCommon
+    - type: trait
+      id: Tradeband
+    - type: trait
+      id: Freespeak
+    - type: trait
+      id: Elyran
+    - type: trait
+      id: ValyrianStandard
+    - type: trait
+      id: Azaziba
+
+- type: characterItemGroup
+  id: TraitsAccents
+  maxItems: 1
+  items:
+    - type: trait
+      id: FrontalLisp
+    - type: trait
+      id: Stutter
+    - type: trait
+      id: PirateAccent
+    - type: trait
+      id: Accentless
+    - type: trait
+      id: Southern
+    - type: trait
+      id: ScottishAccent

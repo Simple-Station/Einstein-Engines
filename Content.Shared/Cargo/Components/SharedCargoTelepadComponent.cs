@@ -1,3 +1,4 @@
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.DeviceLinking;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -12,30 +13,51 @@ namespace Content.Shared.Cargo.Components;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedCargoSystem))]
 public sealed partial class CargoTelepadComponent : Component
 {
+    [DataField]
+    public List<CargoOrderData> CurrentOrders = new();
+
     /// <summary>
-    /// The actual amount of time it takes to teleport from the telepad
+    ///     The base amount of time it takes to teleport from the telepad
     /// </summary>
-    [DataField("delay"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
+    public float BaseDelay = 10f;
+
+    /// <summary>
+    ///     The actual amount of time it takes to teleport from the telepad
+    /// </summary>
+    [DataField]
     public float Delay = 10f;
 
     /// <summary>
-    /// How much time we've accumulated until next teleport.
+    ///     The machine part that affects <see cref="Delay"/>
     /// </summary>
-    [DataField("accumulator"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>)), ViewVariables(VVAccess.ReadWrite)]
+    public string MachinePartTeleportDelay = "Capacitor";
+
+    /// <summary>
+    ///     A multiplier applied to <see cref="Delay"/> for each level of <see cref="MachinePartTeleportDelay"/>
+    /// </summary>
+    [DataField]
+    public float PartRatingTeleportDelay = 0.8f;
+
+    /// <summary>
+    ///     How much time we've accumulated until next teleport.
+    /// </summary>
+    [DataField]
     public float Accumulator;
 
-    [DataField("currentState")]
+    [DataField]
     public CargoTelepadState CurrentState = CargoTelepadState.Unpowered;
 
-    [DataField("teleportSound")]
+    [DataField]
     public SoundSpecifier TeleportSound = new SoundPathSpecifier("/Audio/Machines/phasein.ogg");
 
     /// <summary>
     ///     The paper-type prototype to spawn with the order information.
     /// </summary>
-    [DataField("printerOutput", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)), ViewVariables(VVAccess.ReadWrite)]
     public string PrinterOutput = "PaperCargoInvoice";
 
-    [DataField("receiverPort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>)), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>)), ViewVariables(VVAccess.ReadWrite)]
     public string ReceiverPort = "OrderReceiver";
 }

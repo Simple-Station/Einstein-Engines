@@ -12,16 +12,23 @@
     sprite: Objects/Weapons/Melee/white_cane.rsi
   - type: MeleeWeapon
     wideAnimationRotation: 45
+    attackRate: 0.9
+    range: 1.6
     damage:
       types:
-        Blunt: 5
-  - type: StaminaDamageOnHit
-    damage: 5
+        Blunt: 6
+    bluntStaminaDamageFactor: 2.5
+    heavyRateModifier: 0.5
+    heavyRangeModifier: 1.75
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 0
+    maxTargets: 1
+    angle: 20
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 3
+        Blunt: 2
   - type: UseDelay
     delay: 1
 

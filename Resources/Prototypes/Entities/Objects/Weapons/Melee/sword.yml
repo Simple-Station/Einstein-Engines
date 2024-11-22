@@ -10,15 +10,27 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: 1.25
+    range: 1.75
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
-        Slash: 17 #cmon, it has to be at least BETTER than the rest.
+        Slash: 15
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 5
+    maxTargets: 7
+    angle: 80
   - type: Reflect
     enabled: true
-    reflectProb: .5
+    # Design intent: a robust captain or tot can sacrifice movement to make the most of this weapon, but they have to
+    # really restrict themselves to walking speed or less.
+    reflectProb: 0.5
+    velocityBeforeNotMaxProb: 1.0
+    velocityBeforeMinProb: 3.0
+    minReflectProb: 0.1
     spread: 90
   - type: Item
     size: Normal
@@ -43,11 +55,18 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    attackRate: 1.5
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
-        Slash: 15
+        Slash: 12
+    heavyRateModifier: 0.5
+    heavyRangeModifier: 2.75 #Superior Japanese folded steel
+    heavyDamageBaseModifier: 1.25
+    heavyStaminaCost: 15
+    maxTargets: 1
+    angle: 20
   - type: Item
     size: Normal
     sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
@@ -66,7 +85,7 @@
     wideAnimationRotation: -60
     damage:
       types:
-        Slash: 30
+        Slash: 25
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/energykatana.rsi
@@ -83,6 +102,9 @@
     - Back
     - Belt
   - type: Reflect
+    reflectProb: 0.3
+    velocityBeforeNotMaxProb: 6.0 # don't punish ninjas for being ninjas
+    velocityBeforeMinProb: 10.0
 
 - type: entity
   name: machete
@@ -99,9 +121,15 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    attackRate: 0.8
     damage:
       types:
         Slash: 15
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 7.5
+    angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -121,10 +149,19 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.75
+    attackRate: 0.65
+    range: 1.85
     damage:
       types:
-        Slash: 20
+        Slash: 19
+        Blunt: 1
+    bluntStaminaDamageFactor: 25.0
+    heavyRateModifier: 0.5
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 15
+    maxTargets: 10
+    angle: 200
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -150,9 +187,16 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    attackRate: 1.25
     damage:
       types:
-        Slash: 16
+        Slash: 12
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1.2
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 7.5
+    maxTargets: 3
+    angle: 40
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -164,7 +208,7 @@
   name: The Throngler
   parent: BaseItem
   id: Throngler
-  description: Why would you make this?
+  description: Why would someone make this?
   components:
     - type: Sharp
     - type: Sprite
@@ -185,7 +229,10 @@
         path: /Audio/Effects/explosion_small1.ogg
     - type: Reflect
       enabled: true
-      reflectProb: .25
+      reflectProb: 0.5 # In robust hands, deflects as well as an e-sword
+      velocityBeforeNotMaxProb: 1.0
+      velocityBeforeMinProb: 3.0
+      minReflectProb: 0.1
       spread: 90
     - type: Item
       size: Ginormous

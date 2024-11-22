@@ -7,17 +7,26 @@
   playTimeTracker: JobChiefMedicalOfficer
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobChemist
-      time: 14400 #DeltaV 4 hrs
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobChemist
+      min: 14400 #DeltaV 4 hrs
 #    - !type:RoleTimeRequirement # DeltaV - No Medical Doctor time requirement
 #      role: JobMedicalDoctor
 #      time: 21600 #6 hrs
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
-      time: 43200 # DeltaV - 12 hours
-    - !type:OverallPlaytimeRequirement
-      time: 72000 # DeltaV - 20 hours
+      min: 43200 # DeltaV - 12 hours
+    - !type:CharacterOverallTimeRequirement
+      min: 72000 # DeltaV - 20 hours
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
@@ -42,8 +51,9 @@
       - type: CommandStaff
   - !type:AddComponentSpecial
     components:
-    - type: PsionicBonusChance #Nyano - Summary: makes it more likely to become psionic.
-      flatBonus: 0.025
+    - type: CPRTraining
+    - type: SurgerySpeedModifier
+      SpeedModifier: 2.5
 
 - type: startingGear
   id: CMOGear
@@ -53,7 +63,6 @@
     shoes: ClothingShoesColorBrown
     id: CMOPDA
     ears: ClothingHeadsetCMO
-    belt: ClothingBeltMedicalFilled
   innerClothingSkirt: ClothingUniformJumpskirtCMO
   satchel: ClothingBackpackSatchelCMOFilled
   duffelbag: ClothingBackpackDuffelCMOFilled

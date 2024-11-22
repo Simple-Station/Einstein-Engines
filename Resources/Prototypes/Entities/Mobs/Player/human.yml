@@ -3,8 +3,6 @@
   name: Urist McHands
   parent: BaseMobHuman
   id: MobHuman
-  components:
-  - type: PotentialPsionic #Nyano - Summary: makes potentially psionic. 
 
 #Syndie
 - type: entity
@@ -41,19 +39,18 @@
 
 # Nuclear Operative
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Nuclear Operative
   parent: MobHuman
   id: MobHumanNukeOp
   components:
     - type: NukeOperative
     - type: RandomHumanoidAppearance
-    - type: PsionicBonusChance #Nyano - Summary: makes more likely to be psionic.
-      multiplier: 7
-      warn: false
+    - type: Psionic
+      powerRollMultiplier: 7
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: MobHuman
   id: MobHumanLoneNuclearOperative
   name: Lone Operative
@@ -70,13 +67,12 @@
     - type: NpcFactionMember
       factions:
       - Syndicate
-    - type: PsionicBonusChance #Nyano - Summary: makes more likely to be psionic.
-      multiplier: 7
-      warn: false
+    - type: Psionic
+      powerRollMultiplier: 7
 
 # Space Ninja
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Space Ninja
   parent: MobHuman
   id: MobHumanSpaceNinja

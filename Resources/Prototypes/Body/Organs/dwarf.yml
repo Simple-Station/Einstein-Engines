@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: OrganDwarfHeart
   parent: OrganHumanHeart
   name: dwarf heart
@@ -12,7 +12,7 @@
   name: dwarf liver
   components:
   - type: Metabolizer
-    metabolizerTypes: [Dwarf]
+    metabolizerTypes: [Dwarf, LiquorLifeline]
 
 - type: entity
   id: OrganDwarfStomach

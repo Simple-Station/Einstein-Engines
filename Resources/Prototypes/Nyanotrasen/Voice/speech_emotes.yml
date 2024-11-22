@@ -1,73 +1,43 @@
 # vocal emotes
 - type: emote
   id: Hiss
+  name: chat-emote-name-cathisses
   category: Vocal
-  chatMessages: [hisses.]
+  chatMessages: [ hisses ]
   chatTriggers:
-    - hiss.
-    - hisses.
-    - hisses!
-    - hissing.
-    - hissed.
+    - hisses
 
 - type: emote
   id: Meow
+  name: chat-emote-name-catmeow
   category: Vocal
-  chatMessages: [meows.]
+  chatMessages: [ meows ]
   chatTriggers:
-    - meow.
-    - meow!
-    - meows.
-    - meows~
-    - meows!
-    - meowing.
-    - meowed.
-    - miau.
-    - miaus.
-    - miaus!
-    - nya.
-    - nyas.
-    - nyas!
-    - mraow.
-    - mraow!
-    - mraow~
-    - mraows.
-    - mraows!
-    - mraows~
+    - meows
+    - miaus
+    - nyas
+    - mraows
 
 - type: emote
   id: Mew
+  name: chat-emote-name-catmew
   category: Vocal
-  chatMessages: [mews.]
+  chatMessages: [ mews ]
   chatTriggers:
-    - mew.
-    - mew!
-    - mew~
-    - mews.
-    - mews!
-    - mews~
-    - mewing.
-    - mewed.
+    - mews
 
 - type: emote
   id: Growl
+  name: chat-emote-name-catgrowl
   category: Vocal
-  chatMessages: [growls.]
+  chatMessages: [ growls ]
   chatTriggers:
-    - growl.
-    - growls.
-    - growls!
-    - growling.
-    - growled.
+    - growls
 
 - type: emote
   id: Purr
+  name: chat-emote-name-catpurr
   category: Vocal
-  chatMessages: [purrs.]
+  chatMessages: [ purrs ]
   chatTriggers:
-    - purr.
-    - purrs.
-    - purrs~
-    - purrs!
-    - purring.
-    - purred.
+    - purrs

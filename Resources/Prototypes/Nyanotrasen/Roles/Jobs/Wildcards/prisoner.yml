@@ -12,7 +12,16 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 21600
+      min: 21600
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
 
 - type: startingGear
   id: PrisonerGear

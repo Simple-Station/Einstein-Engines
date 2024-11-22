@@ -13,6 +13,7 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
+using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
@@ -58,7 +59,7 @@ public sealed partial class ClimbSystem : VirtualController
         SubscribeLocalEvent<ClimbingComponent, EntParentChangedMessage>(OnParentChange);
         SubscribeLocalEvent<ClimbingComponent, ClimbDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<ClimbingComponent, EndCollideEvent>(OnClimbEndCollide);
-        SubscribeLocalEvent<ClimbingComponent, BuckleChangeEvent>(OnBuckleChange);
+        SubscribeLocalEvent<ClimbingComponent, BuckledEvent>(OnBuckled);
 
         SubscribeLocalEvent<ClimbableComponent, CanDropTargetEvent>(OnCanDragDropOn);
         SubscribeLocalEvent<ClimbableComponent, GetVerbsEvent<AlternativeVerb>>(AddClimbableVerb);
@@ -216,14 +217,19 @@ public sealed partial class ClimbSystem : VirtualController
         if (ev.Cancelled)
             return false;
 
-        var args = new DoAfterArgs(EntityManager, user, comp.ClimbDelay, new ClimbDoAfterEvent(),
+        var climbDelay = comp.ClimbDelay;
+        if (user == entityToMove && TryComp<ClimbDelayModifierComponent>(user, out var delayModifier))
+            climbDelay *= delayModifier.ClimbDelayMultiplier;
+
+        var args = new DoAfterArgs(EntityManager, user, climbDelay, new ClimbDoAfterEvent(),
             entityToMove,
             target: climbable,
             used: entityToMove)
         {
             BreakOnTargetMove = true,
             BreakOnUserMove = true,
-            BreakOnDamage = true
+            BreakOnDamage = true,
+            DuplicateCondition = DuplicateConditions.SameTool | DuplicateConditions.SameTarget
         };
 
         _audio.PlayPredicted(comp.StartClimbSound, climbable, user);
@@ -468,10 +474,13 @@ public sealed partial class ClimbSystem : VirtualController
         Climb(uid, uid, climbable, true, component);
     }
 
-    private void OnBuckleChange(EntityUid uid, ClimbingComponent component, ref BuckleChangeEvent args)
+    public void ForciblyStopClimbing(EntityUid uid, ClimbingComponent? climbing = null, FixturesComponent? fixtures = null)
     {
-        if (!args.Buckling)
-            return;
+        StopClimb(uid, climbing, fixtures);
+    }
+
+    private void OnBuckled(EntityUid uid, ClimbingComponent component, ref BuckledEvent args)
+    {
         StopClimb(uid, component);
     }
 

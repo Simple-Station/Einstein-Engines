@@ -49,7 +49,6 @@ namespace Content.Server.VendingMachines
             SubscribeLocalEvent<VendingMachineComponent, GotEmaggedEvent>(OnEmagged);
             SubscribeLocalEvent<VendingMachineComponent, DamageChangedEvent>(OnDamage);
             SubscribeLocalEvent<VendingMachineComponent, PriceCalculationEvent>(OnVendingPrice);
-            SubscribeLocalEvent<VendingMachineComponent, EmpPulseEvent>(OnEmpPulse);
 
             SubscribeLocalEvent<VendingMachineComponent, ActivatableUIOpenAttemptEvent>(OnActivatableUIOpenAttempt);
 
@@ -115,7 +114,7 @@ namespace Content.Server.VendingMachines
         {
             var state = new VendingMachineInterfaceState(GetAllInventory(uid, component));
 
-            _userInterfaceSystem.TrySetUiState(uid, VendingMachineUiKey.Key, state);
+            _userInterfaceSystem.SetUiState(uid, VendingMachineUiKey.Key, state);
         }
 
         private void OnInventoryEjectMessage(EntityUid uid, VendingMachineComponent component, VendingMachineEjectMessage args)
@@ -123,7 +122,7 @@ namespace Content.Server.VendingMachines
             if (!this.IsPowered(uid, EntityManager))
                 return;
 
-            if (args.Session.AttachedEntity is not { Valid: true } entity || Deleted(entity))
+            if (args.Actor is not { Valid: true } entity || Deleted(entity))
                 return;
 
             AuthorizedVend(uid, entity, args.Type, args.ID, component);
@@ -495,16 +494,6 @@ namespace Content.Server.VendingMachines
             }
 
             args.Price += priceSets.Max();
-        }
-
-        private void OnEmpPulse(EntityUid uid, VendingMachineComponent component, ref EmpPulseEvent args)
-        {
-            if (!component.Broken && this.IsPowered(uid, EntityManager))
-            {
-                args.Affected = true;
-                args.Disabled = true;
-                component.NextEmpEject = _timing.CurTime;
-            }
         }
     }
 }

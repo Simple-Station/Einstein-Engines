@@ -21,6 +21,7 @@
     fireOnDropChance: 0.15
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+    doRecoil: false
   - type: Battery
     maxCharge: 1000
     startingCharge: 1000
@@ -48,6 +49,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+    doRecoil: false
   - type: MagazineAmmoProvider
   - type: ItemSlots
     slots:
@@ -201,7 +203,7 @@
 
 - type: entity
   name: laser rifle
-  parent: BaseWeaponBattery
+  parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponLaserCarbine
   description: Favoured by Nanotrasen Security for being cheap and easy to use.
   components:
@@ -267,8 +269,26 @@
     startingCharge: 2000
 
 - type: entity
+  name: antique pulse pistol
+  parent: WeaponPulsePistol
+  id: WeaponPulsePistolHoS
+  description: One of the many weapons belonging to the Head of Security's private collection. This pistol is engraved with the words, "Forgive Us, Mother Sol'"
+  components:
+  - type: StealTarget
+    stealGroup: HoSAntiqueWeapon
+
+- type: entity
+  name: captain's pulse pistol
+  parent: WeaponPulsePistol
+  id: WeaponPulsePistolCaptain
+  description: A rare and exotic handgun gifted to the station's Captain. Its ivory grip has been engraved with the words, "Glory to the Company, Glory to Mother Sol. Phoron will make us all rich."
+  components:
+  - type: StealTarget
+    stealGroup: WeaponCaptain
+
+- type: entity
   name: pulse carbine
-  parent: BaseWeaponBattery
+  parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponPulseCarbine
   description: A high tech energy carbine favoured by the NT-ERT operatives.
   components:
@@ -299,7 +319,7 @@
 
 - type: entity
   name: pulse rifle
-  parent: BaseWeaponBattery
+  parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponPulseRifle
   description: A weapon that is almost as infamous as its users.
   components:
@@ -326,7 +346,7 @@
 
 - type: entity
   name: laser cannon
-  parent: BaseWeaponBattery
+  parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponLaserCannon
   description: A heavy duty, high powered laser weapon.
   components:
@@ -381,7 +401,7 @@
 
 - type: entity
   name: x-ray cannon
-  parent: BaseWeaponBattery
+  parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponXrayCannon
   description: An experimental weapon that uses concentrated x-ray energy against its target.
   components:
@@ -584,7 +604,7 @@
   - type: StaticPrice
     price: 750
   - type: StealTarget
-    stealGroup: WeaponAntiqueLaser
+    stealGroup: WeaponCaptain
 
 - type: entity
   name: advanced laser pistol

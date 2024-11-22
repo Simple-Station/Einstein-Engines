@@ -40,6 +40,9 @@
         node: monitorBroken
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
 
 - type: entity
   id: ComputerFrame

@@ -21,7 +21,7 @@ namespace Content.Server.Chemistry.ReagentEffects
 
             var psySys = args.EntityManager.EntitySysManager.GetEntitySystem<PsionicAbilitiesSystem>();
 
-            psySys.RemovePsionics(args.SolutionEntity);
+            psySys.RemoveAllPsionicPowers(args.SolutionEntity, true);
         }
     }
 }

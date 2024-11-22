@@ -1,3 +1,4 @@
+# TODO: Pending a rewrite of Mob Replacement System, this entire list should just be moved into a ComponentRegistry on the event.
 - type: entity
   name: Mimic
   id: MobMimic

@@ -14,6 +14,7 @@ public sealed partial class GhostGui : UIWidget
     public event Action? RequestWarpsPressed;
     public event Action? ReturnToBodyPressed;
     public event Action? GhostRolesPressed;
+    public event Action? ReturnToRoundPressed;
 
     public GhostGui()
     {
@@ -26,6 +27,7 @@ public sealed partial class GhostGui : UIWidget
         GhostWarpButton.OnPressed += _ => RequestWarpsPressed?.Invoke();
         ReturnToBodyButton.OnPressed += _ => ReturnToBodyPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
+        ReturnToRound.OnPressed += _ => ReturnToRoundPressed?.Invoke();
     }
 
     public void Hide()
@@ -43,11 +45,11 @@ public sealed partial class GhostGui : UIWidget
             GhostRolesButton.Text = Loc.GetString("ghost-gui-ghost-roles-button", ("count", roles));
             if (roles > 0)
             {
-                GhostRolesButton.StyleClasses.Add(StyleBase.ButtonCaution);
+                GhostRolesButton.StyleClasses.Add(StyleBase.ButtonDanger);
             }
             else
             {
-                GhostRolesButton.StyleClasses.Remove(StyleBase.ButtonCaution);
+                GhostRolesButton.StyleClasses.Remove(StyleBase.ButtonDanger);
             }
         }
 

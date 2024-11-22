@@ -1,8 +1,8 @@
 ---
-name: Report an Issue
-about: "Any general issues you have during play or with the codebase"
+name: Report an issue
+about: "Any issues found in gameplay or the codebase"
 title: ''
-labels: ''
+labels: 'Type: Bug'
 assignees: ''
 
 ---

@@ -67,7 +67,9 @@
       - id: Drill
       - id: Saw
       - id: Hemostat
-      - id: ClothingMaskSterile
+      - id: BoneGel
+      - id: BoxLatexGloves
+      - id: BoxSterileMask
 
 - type: entity
   id: CrateMedicalScrubs

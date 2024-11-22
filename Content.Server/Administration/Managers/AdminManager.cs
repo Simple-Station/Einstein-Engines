@@ -7,6 +7,7 @@ using Content.Server.Database;
 using Content.Server.Players;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
+using Content.Shared.Info;
 using Content.Shared.Players;
 using Robust.Server.Console;
 using Robust.Server.Player;
@@ -233,6 +234,7 @@ namespace Content.Server.Administration.Managers
             _sawmill = _logManager.GetSawmill("admin");
 
             _netMgr.RegisterNetMessage<MsgUpdateAdminStatus>();
+            _netMgr.RegisterNetMessage<ShowRulesPopupMessage>();
 
             // Cache permissions for loaded console commands with the requisite attributes.
             foreach (var (cmdName, cmd) in _consoleHost.AvailableCommands)
@@ -279,7 +281,13 @@ namespace Content.Server.Administration.Managers
                 _commandPermissions.LoadPermissionsFromStream(efs);
             }
 
-            if (_res.TryContentFileRead(new ResPath("/toolshedEngineCommandPerms.yml"), out var toolshedPerms))
+            var toolshedPermsPath = new ResPath("/toolshedEngineCommandPerms.yml");
+            if (_res.TryContentFileRead(toolshedPermsPath, out var toolshedPerms))
+            {
+                _commandPermissions.LoadPermissionsFromStream(toolshedPerms);
+            }
+            // This may or may not be necessary. We read the same file again and load the same permissions into a different manager.
+            if (_res.TryContentFileRead(toolshedPermsPath, out toolshedPerms))
             {
                 _toolshedCommandPermissions.LoadPermissionsFromStream(toolshedPerms);
             }

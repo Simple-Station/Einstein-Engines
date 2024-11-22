@@ -60,6 +60,10 @@
       collection: VulpkaninHowls
     Weh:
       collection: Weh
+    Mars:
+      collection: Mars
+    Wurble:
+      collection: Wurble
 
 - type: emoteSounds
   id: MaleVulpkanin
@@ -67,7 +71,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: MaleScreams
+      collection: VulpkaninScreams
     Laugh:
       collection: MaleLaugh
     Sneeze:
@@ -105,7 +109,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: FemaleScreams
+      collection: VulpkaninScreams
     Laugh:
       collection: FemaleLaugh
     Sneeze:

@@ -13,8 +13,10 @@
     state: folder-hop-ian
 
 - type: stealTargetGroup
-  id: WeaponEnergyGunMultiphase
-  name: x-01 multiphase energy gun
+  id: RubberStampNotary
+  name: notary stamp
   sprite:
-    sprite: DeltaV/Objects/Weapons/Guns/Battery/multiphase_energygun.rsi
-    state: base
+    sprite: DeltaV/Objects/Misc/stamps.rsi
+    state: stamp-notary
+
+

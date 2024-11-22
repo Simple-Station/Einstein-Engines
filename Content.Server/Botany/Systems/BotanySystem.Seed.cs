@@ -207,6 +207,11 @@ public sealed partial class BotanySystem : EntitySystem
                 var collisionWake = EnsureComp<CollisionWakeComponent>(entity);
                 _colWakeSystem.SetEnabled(entity, false, collisionWake);
             }
+            if (proto.Teleporting)
+            {
+                var teleporting = EnsureComp<TeleportingTraitComponent>(entity);
+                TeleportingTraitSystem.SetPotencyRadius(proto.Potency, teleporting);
+            }
         }
 
         return products;

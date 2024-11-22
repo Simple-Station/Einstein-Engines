@@ -41,12 +41,19 @@
   id: BoxPDAScience
   description: A box of spare PDA microcomputers for the epistemics department.
   components:
+  - type: Item
+    shape:
+    - 0,0,4,3
+  - type: Storage
+    grid:
+    - 0,0,3,2 # Increased storage space for more PDA types
   - type: StorageFill
     contents:
       - id: SciencePDA
         amount: 2
       - id: ForensicMantisPDA
       - id: ChaplainPDA
+      - id: RoboticsPDA
 
 - type: entity
   name: engineering PDA box
@@ -74,3 +81,16 @@
         amount: 1
       - id: MailCarrierPDA
         amount: 1
+
+- type: entity
+  name: justice PDA box
+  parent: BoxPDA
+  id: BoxPDAJustice
+  description: A box of spare PDA microcomputers for the justice department.
+  components:
+  - type: StorageFill
+    contents:
+      - id: LawyerPDA
+        amount: 2
+      - id: ProsecutorPDA
+      - id: ClerkPDA

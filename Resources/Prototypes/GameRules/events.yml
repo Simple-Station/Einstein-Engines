@@ -1,10 +1,10 @@
 - type: entity
   id: AnomalySpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 12 # DeltaV - was 10
+    weight: 8
     startDelay: 30
     duration: 35
   - type: AnomalySpawnRule
@@ -12,10 +12,10 @@
 - type: entity
   id: BluespaceArtifact
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 5
+    weight: 8
     startDelay: 30
     duration: 35
   - type: BluespaceArtifactRule
@@ -23,10 +23,10 @@
 - type: entity
   id: BluespaceLocker
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 1
+    weight: 2
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
@@ -35,10 +35,10 @@
 - type: entity
   id: BreakerFlip
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 10
+    weight: 7
     duration: 1
     minimumPlayers: 15
   - type: BreakerFlipRule
@@ -46,19 +46,19 @@
 - type: entity
   id: BureaucraticError
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
     minimumPlayers: 25
-    weight: 5
+    weight: 3
     duration: 1
   - type: BureaucraticErrorRule
 
 - type: entity
   id: ClericalError
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -67,27 +67,28 @@
     duration: 1
   - type: ClericalErrorRule
 
-#- type: entity
-#  parent: BaseGameRule # DeltaV - this shit is busted most of the time
-#  id: ClosetSkeleton
-#  noSpawn: true
-#  components:
-#  - type: StationEvent
-#    weight: 10
-#    duration: 1
-#  - type: RandomEntityStorageSpawnRule
-#    prototype: MobSkeletonCloset
+- type: entity
+  parent: BaseGameRule
+  id: ClosetSkeleton
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 5
+    duration: 1
+    minimumPlayers: 10
+  - type: RandomEntityStorageSpawnRule
+    prototype: MobSkeletonCloset
 
 - type: entity
   parent: BaseGameRule
   id: DragonSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 1 # DeltaV - was 5
+    weight: 6.5
     duration: 1
-    earliestStart: 45
-    reoccurrenceDelay: 60
+    earliestStart: 40
+    reoccurrenceDelay: 20
     minimumPlayers: 20
   - type: RandomSpawnRule
     prototype: SpawnPointGhostDragon
@@ -95,20 +96,20 @@
 - type: entity
   parent: BaseGameRule
   id: NinjaSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 3 # DeltaV - was 10
+    weight: 6
     duration: 1
-    earliestStart: 45 # DeltaV - was 30
-    reoccurrenceDelay: 60
-    minimumPlayers: 40
+    earliestStart: 30
+    reoccurrenceDelay: 20
+    minimumPlayers: 30
   - type: NinjaSpawnRule
 
 - type: entity
   parent: BaseGameRule
   id: RevenantSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 7.5
@@ -118,39 +119,38 @@
   - type: RandomSpawnRule
     prototype: MobRevenant
 
-- type: entity
-  id: FalseAlarm
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: StationEvent
-    weight: 15
-    duration: 1
-  - type: FalseAlarmRule
+# disabled until event is rewritten to be more interesting
+#- type: entity
+#  id: FalseAlarm
+#  parent: BaseGameRule
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: StationEvent
+#    weight: 15
+#    duration: 1
+#  - type: FalseAlarmRule
 
 - type: entity
   id: GasLeak
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
     endAnnouncement: true
-    earliestStart: 10
-    minimumPlayers: 5
-    weight: 10
+    weight: 8
     startDelay: 20
   - type: GasLeakRule
 
 - type: entity
   id: KudzuGrowth
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     earliestStart: 15
     minimumPlayers: 15
-    weight: 5
+    weight: 7
     startDelay: 50
     duration: 240
   - type: KudzuGrowthRule
@@ -158,7 +158,7 @@
 - type: entity
   id: MeteorSwarm
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     earliestStart: 30
@@ -173,14 +173,13 @@
 - type: entity
   id: MouseMigration
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
-    earliestStart: 30
-    minimumPlayers: 35
-    weight: 5
+    earliestStart: 15
+    weight: 6
     duration: 50
   - type: VentCrittersRule
     entries:
@@ -190,21 +189,21 @@
       prob: 0.02
     - id: MobMouse2
       prob: 0.02
-    # DeltaV - Rat King spawns under MidRoundAntag - Comment out Rat King from spawning with MouseMigration gamerule
-    # specialEntries:
-    # - id: SpawnPointGhostRatKing
-    #   prob: 0.005
-    # End of modified code
+    - id: MobMouseCancer
+      prob: 0.001
+    specialEntries:
+    - id: SpawnPointGhostRatKing
+      prob: 0.001
 
 - type: entity
   id: CockroachMigration
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
-    weight: 5
+    weight: 6
     duration: 50
   - type: VentCrittersRule
     entries:
@@ -216,10 +215,10 @@
 - type: entity
   id: PowerGridCheck
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 10
+    weight: 5
     startAnnouncement: true
     endAnnouncement: true
     startDelay: 24
@@ -227,23 +226,24 @@
     maxDuration: 120
   - type: PowerGridCheckRule
 
-# - type: entity # DeltaV - Removes the random sentience.
-#   id: RandomSentience
-#   parent: BaseGameRule
-#   noSpawn: true
-#   components:
-#   - type: StationEvent
-#     weight: 10
-#     duration: 1
-#   - type: RandomSentienceRule
+- type: entity
+  id: RandomSentience
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 6
+    duration: 1
+    maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
+  - type: RandomSentienceRule
 
 - type: entity
   parent: BaseGameRule
   id: SolarFlare
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 10
+    weight: 8
     startAnnouncement: true
     endAnnouncement: true
     duration: 120
@@ -264,23 +264,10 @@
     lightBreakChancePerSecond: 0.0003
     doorToggleChancePerSecond: 0.001
 
-# - type: entity # DeltaV - replaced terminator with paradox anomaly in midroundantag rule
-#   parent: BaseGameRule
-#   id: TerminatorSpawn
-#   noSpawn: true
-#   components:
-#   - type: StationEvent
-#     weight: 8
-#     duration: 1
-#     earliestStart: 30
-#     minimumPlayers: 20
-#   - type: RandomSpawnRule
-#    prototype: SpawnPointGhostTerminator
-
 - type: entity
   id: VentClog
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -292,30 +279,9 @@
   - type: VentClogRule
 
 - type: entity
-  id: VentCritters
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    startDelay: 10
-    earliestStart: 15
-    minimumPlayers: 15
-    weight: 5
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobMouse
-      prob: 0.02
-    - id: MobMouse1
-      prob: 0.02
-    - id: MobMouse2
-      prob: 0.02
-
-- type: entity
   id: SlimesSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -336,7 +302,7 @@
 - type: entity
   id: SpiderSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -350,62 +316,124 @@
     - id: MobGiantSpiderAngry
       prob: 0.05
 
-# - type: entity # DeltaV - Prevent normal spawning of MobClownSpider
-#  id: SpiderClownSpawn
-#  parent: BaseGameRule
-#  noSpawn: true
-#  components:
-#  - type: StationEvent
-#    startAnnouncement: true
-#    startDelay: 10
-#    earliestStart: 20
-#    minimumPlayers: 15
-#    weight: 1
-#    duration: 60
-#  - type: VentCrittersRule
-#    entries:
-#    - id: MobClownSpider
-#      prob: 0.05
+- type: entity
+  id: SpiderClownSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: false
+    startDelay: 10
+    earliestStart: 20
+    minimumPlayers: 20
+    weight: 1.5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobClownSpider
+      prob: 0.05
 
 - type: entity
   id: ZombieOutbreak
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    earliestStart: 90 # DeltaV - was 50
-    minimumPlayers: 15
-    weight: 2.5 # DeltaV - was 5
+    earliestStart: 50
+    minimumPlayers: 30
+    weight: 2
     duration: 1
   - type: ZombieRule
-    minStartDelay: 0 #let them know immediately
-    maxStartDelay: 10
-    maxInitialInfected: 3 #fewer zombies
-    minInitialInfectedGrace: 300 #less time to prepare
-    maxInitialInfectedGrace: 450
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ InitialInfected ]
+      max: 3
+      playerRatio: 10
+      blacklist:
+        components:
+        - ZombieImmune
+        - InitialInfectedExempt
+      briefing:
+        text: zombie-patientzero-role-greeting
+        color: Plum
+        sound: "/Audio/Ambience/Antag/zombie_start.ogg"
+      components:
+      - type: PendingZombie #less time to prepare than normal
+        minInitialInfectedGrace: 300
+        maxInitialInfectedGrace: 450
+      - type: ZombifyOnDeath
+      - type: IncurableZombie
+      mindComponents:
+      - type: InitialInfectedRole
+        prototype: InitialInfected
 
 - type: entity
   id: LoneOpsSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    earliestStart: 60
-    weight: 3
+    earliestStart: 35
+    weight: 5.5
     minimumPlayers: 20
-    reoccurrenceDelay: 30
     duration: 1
-  - type: LoneOpsSpawnRule
+  - type: LoadMapRule
+    preloadedGrid: ShuttleStriker
+  - type: NukeopsRule
+    roundEndBehavior: Nothing
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointLoneNukeOperative
+      min: 1
+      max: 1
+      pickPlayer: false
+      startingGear: SyndicateLoneOperativeGearFull
+      components:
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - SyndicateNamesPrefix
+        - SyndicateNamesNormal
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindComponents:
+      - type: NukeopsRole
+        prototype: Nukeops
+
+- type: entity
+  id: SleeperAgentsRule
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    earliestStart: 25
+    weight: 8
+    minimumPlayers: 15
+    reoccurrenceDelay: 30
+    startAnnouncement: false
+  - type: AlertLevelInterceptionRule
+  - type: TraitorRule
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Traitor ]
+      min: 1
+      max: 2
+      playerRatio: 10
+      mindComponents:
+      - type: TraitorRole
+        prototype: Traitor
 
 - type: entity
   id: MassHallucinations
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 10
+    weight: 7
     duration: 150
     maxDuration: 300
+    reoccurrenceDelay: 30
   - type: MassHallucinationsRule
     minTimeBetweenIncidents: 0.1
     maxTimeBetweenIncidents: 300
@@ -413,26 +441,26 @@
     sounds:
       collection: Paracusia
 
-#- type: entity # DeltaV - Why does this exist??
-#  id: ImmovableRodSpawn
-#  parent: BaseGameRule
-#  noSpawn: true
-#  components:
-#  - type: StationEvent
-#    startAnnouncement: true
-#    weight: 5
-#    duration: 1
-#    earliestStart: 45
-#    minimumPlayers: 20
-#  - type: ImmovableRodRule
+- type: entity
+  id: ImmovableRodSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: false
+    weight: 2
+    duration: 1
+    earliestStart: 45
+    minimumPlayers: 20
+  - type: ImmovableRodRule
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseGameRule
   id: IonStorm
   components:
   - type: StationEvent
-    weight: 10
+    weight: 8
     reoccurrenceDelay: 20
     duration: 1
   - type: IonStormRule
@@ -440,11 +468,11 @@
 - type: entity
   id: MimicVendorRule
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       earliestStart: 0
       minimumPlayers: 20
+      maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
       weight: 5
     - type: MobReplacementRule
-      numberToReplace: 1

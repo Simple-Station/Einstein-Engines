@@ -35,6 +35,8 @@
 
 - type: npcFaction
   id: SimpleHostile
+  friendly:
+  - AnimalFriend
   hostile:
   - NanoTrasen
   - Syndicate
@@ -83,3 +85,24 @@
   - Zombie
   - SimpleHostile
   - Dragon
+
+- type: npcFaction
+  id: Pibble
+  friendly:
+  - AnimalFriend
+  hostile:
+  - Cat
+  - Birb
+  - Mailman
+
+- type: npcFaction
+  id: Mailman
+
+- type: npcFaction
+  id: Cat
+
+- type: npcFaction
+  id: Birb
+
+- type: npcFaction
+  id: AnimalFriend

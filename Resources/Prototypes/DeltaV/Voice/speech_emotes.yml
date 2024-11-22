@@ -1,198 +1,73 @@
 - type: emote
   id: HarpyRing
+  name: chat-emote-name-harpyring
   category: Vocal
-  chatMessages: [rings.]
+  chatMessages: [ rings ]
   chatTriggers:
-    - ring
-    - ring.
-    - ring!
-    - ring?
     - rings
-    - rings.
-    - rings!
-    - rings?
-    - ringing
-    - ringing.
-    - ringing!
-    - ringing?
-    - ringed
-    - ringed.
-    - ringed!
-    - ringed?
-    - rang
-    - rang.
-    - rang!
-    - rang?
 
 - type: emote
   id: HarpyPew
+  name: chat-emote-name-harpypew
   category: Vocal
-  chatMessages: [pews.]
+  chatMessages: [ pews ]
   chatTriggers:
-    - pew
-    - pew.
-    - pew!
-    - pew?
     - pews
-    - pews.
-    - pews!
-    - pews?
-    - pewpew
-    - pewpew.
-    - pewpew!
-    - pewpew?
+    - pewpews
 
 - type: emote
   id: HarpyBang
+  name: chat-emote-name-harpybang
   category: Vocal
-  chatMessages: [bangs.]
+  chatMessages: [ bangs ]
   chatTriggers:
-    - bang
-    - bang.
-    - bang!
-    - bang?
     - bangs
-    - bangs.
-    - bangs!
-    - bangs?
-    - banging
-    - banging.
-    - banging!
-    - banging?
-    - banged
-    - banged.
-    - banged!
-    - banged?
 
 - type: emote
   id: HarpyRev
+  name: chat-emote-name-harpyrev
   category: Vocal
-  chatMessages: [revs.]
+  chatMessages: [ revs ]
   chatTriggers:
-    - rev
-    - rev.
-    - rev!
-    - rev?
     - revs
-    - revs.
-    - revs!
-    - revs?
-    - revving
-    - revving.
-    - revving!
-    - revving?
-    - revved
-    - revved.
-    - revved!
-    - revved?
 
 - type: emote
   id: HarpyCaw
+  name: chat-emote-name-harpycaw
   category: Vocal
-  chatMessages: [caws.]
+  chatMessages: [ caws ]
   chatTriggers:
-    - caw
-    - caw.
-    - caw!
-    - caw?
     - caws
-    - caws.
-    - caws!
-    - caws?
-    - cawing
-    - cawing.
-    - cawing!
-    - cawing?
-    - cawed
-    - cawed.
-    - cawed!
-    - cawed?
 
 #Vulpkanin
 - type: emote
   id: Bark
+  name: chat-emote-name-vulpbark
   category: Vocal
-  chatMessages: [barks.]
+  chatMessages: [ barks ]
   chatTriggers:
-    - bark
-    - bark.
-    - bark!
-    - bark?
     - barks
-    - barks.
-    - barks!
-    - barks?
-    - barked
-    - barked.
-    - barked!
-    - barked?
-    - barking
-    - barking.
-    - barking!
-    - barking?
 
 - type: emote
   id: Snarl
+  name: chat-emote-name-vulpsnarl
   category: Vocal
-  chatMessages: [snarls.]
+  chatMessages: [ snarls ]
   chatTriggers:
-    - snarl
-    - snarl.
-    - snarl!
-    - snarl?
     - snarls
-    - snarls.
-    - snarls!
-    - snarls?
-    - snarled
-    - snarled.
-    - snarled!
-    - snarled?
-    - snarling
-    - snarling.
-    - snarling!
-    - snarling?
 
 - type: emote
   id: Whine
+  name: chat-emote-name-vulpwhine
   category: Vocal
-  chatMessages: [whines.]
+  chatMessages: [ whines ]
   chatTriggers:
-    - whine
-    - whine.
-    - whine!
-    - whine?
     - whines
-    - whines.
-    - whines!
-    - whines?
-    - whined
-    - whined.
-    - whined!
-    - whined?
-    - whining
-    - whining.
-    - whining!
-    - whining?
 
 - type: emote
   id: Howl
+  name: chat-emote-name-vulphowl
   category: Vocal
-  chatMessages: [howls.]
+  chatMessages: [ howls ]
   chatTriggers:
-    - howl
-    - howl.
-    - howl!
-    - howl?
     - howls
-    - howls.
-    - howls!
-    - howls?
-    - howling
-    - howling.
-    - howling!
-    - howling?
-    - howled
-    - howled.
-    - howling!
-    - howling?

@@ -80,6 +80,7 @@ namespace Content.Client.Options.UI.Tabs
             ScreenShakeIntensitySlider.OnValueChanged += OnScreenShakeIntensitySliderChanged;
             // ToggleWalk.OnToggled += OnCheckBoxToggled;
             StaticStorageUI.OnToggled += OnCheckBoxToggled;
+            DisableFiltersCheckBox.OnToggled += OnCheckBoxToggled;
 
             HudThemeOption.SelectId(_hudThemeIdToIndex.GetValueOrDefault(_cfg.GetCVar(CVars.InterfaceTheme), 0));
             DiscordRich.Pressed = _cfg.GetCVar(CVars.DiscordEnabled);
@@ -98,6 +99,7 @@ namespace Content.Client.Options.UI.Tabs
             ScreenShakeIntensitySlider.Value = _cfg.GetCVar(CCVars.ScreenShakeIntensity) * 100f;
             // ToggleWalk.Pressed = _cfg.GetCVar(CCVars.ToggleWalk);
             StaticStorageUI.Pressed = _cfg.GetCVar(CCVars.StaticStorageUI);
+            DisableFiltersCheckBox.Pressed = _cfg.GetCVar(CCVars.NoVisionFilters);
 
 
             ApplyButton.OnPressed += OnApplyButtonPressed;
@@ -154,6 +156,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.ScreenShakeIntensity, ScreenShakeIntensitySlider.Value / 100f);
             // _cfg.SetCVar(CCVars.ToggleWalk, ToggleWalk.Pressed);
             _cfg.SetCVar(CCVars.StaticStorageUI, StaticStorageUI.Pressed);
+            _cfg.SetCVar(CCVars.NoVisionFilters, DisableFiltersCheckBox.Pressed);
 
             if (HudLayoutOption.SelectedMetadata is string opt)
             {
@@ -184,6 +187,7 @@ namespace Content.Client.Options.UI.Tabs
             var isScreenShakeIntensitySame = Math.Abs(ScreenShakeIntensitySlider.Value / 100f - _cfg.GetCVar(CCVars.ScreenShakeIntensity)) < 0.01f;
             // var isToggleWalkSame = ToggleWalk.Pressed == _cfg.GetCVar(CCVars.ToggleWalk);
             var isStaticStorageUISame = StaticStorageUI.Pressed == _cfg.GetCVar(CCVars.StaticStorageUI);
+            var isNoVisionFiltersSame = DisableFiltersCheckBox.Pressed == _cfg.GetCVar(CCVars.NoVisionFilters);
 
             ApplyButton.Disabled = isHudThemeSame &&
                                    isLayoutSame &&
@@ -202,7 +206,8 @@ namespace Content.Client.Options.UI.Tabs
                                    isChatWindowOpacitySame &&
                                    isScreenShakeIntensitySame &&
                                    // isToggleWalkSame &&
-                                   isStaticStorageUISame;
+                                   isStaticStorageUISame &&
+                                   isNoVisionFiltersSame;
         }
 
     }

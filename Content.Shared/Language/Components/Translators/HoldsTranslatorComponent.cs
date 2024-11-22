@@ -1,11 +1,11 @@
 namespace Content.Shared.Language.Components.Translators;
 
 /// <summary>
-///   Applied internally to the holder of [HandheldTranslatorComponent].
-///   Do not use directly. Use [HandheldTranslatorComponent] instead.
+///     Applied internally to the holder of an entity with [HandheldTranslatorComponent].
 /// </summary>
 [RegisterComponent]
-public sealed partial class HoldsTranslatorComponent : IntrinsicTranslatorComponent
+public sealed partial class HoldsTranslatorComponent : Component
 {
-    public Component? Issuer = null;
+    [NonSerialized]
+    public HashSet<Entity<HandheldTranslatorComponent>> Translators = new();
 }

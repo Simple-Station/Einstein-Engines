@@ -7,9 +7,10 @@
   - AnomalousResearch
   - Xenoarchaeology
   - Robotics
-  - Psionics # Nyanotrasen - Psionics guidebook
-  # - AltarsGolemancy # When it's added # Nyanotrasen - Golemancy guidebook
-  - ReverseEngineering # Nyanotrasen - Reverse Engineering guidebook
+  - MachineUpgrading
+  - AltarsGolemancy
+  - ReverseEngineering
+  - GlimmerCreatures
 
 - type: guideEntry
   id: Technologies
@@ -41,7 +42,6 @@
   text: "/ServerInfo/Guidebook/Science/Xenoarchaeology.xml"
   children:
   - ArtifactReports
-  - TraversalDistorter
 
 - type: guideEntry
   id: Robotics
@@ -61,6 +61,16 @@
   text: "/ServerInfo/Guidebook/Science/TraversalDistorter.xml"
 
 - type: guideEntry
+  id: MachineUpgrading
+  name: guide-entry-machine-upgrading
+  text: "/ServerInfo/Guidebook/Science/MachineUpgrading.xml"
+
+- type: guideEntry
   id: Cyborgs
   name: guide-entry-cyborgs
   text: "/ServerInfo/Guidebook/Science/Cyborgs.xml"
+
+- type: guideEntry
+  id: GlimmerCreatures
+  name: guide-entry-glimmer-creatures
+  text: /ServerInfo/Guidebook/DeltaV/Epistemics/GlimmerCreatures.xml

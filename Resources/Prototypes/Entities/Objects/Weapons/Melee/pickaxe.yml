@@ -11,21 +11,26 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     state: pickaxe
   - type: MeleeWeapon
-    attackRate: 0.7
+    attackRate: 0.85
+    range: 1.5
     wideAnimationRotation: -135
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
       params:
         volume: -3
     damage:
-      groups:
-        Brute: 5
+      types:
+        Blunt: 6
+        Pierce: 3
+    bluntStaminaDamageFactor: 2.0
+    heavyDamageBaseModifier: 1.75
+    maxTargets: 5
+    angle: 80
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
-      groups:
-        Brute: 10
       types:
+        Blunt: 5
         Structural: 30
   - type: Item
     size: Normal
@@ -52,16 +57,22 @@
     state: handdrill
   - type: MeleeWeapon
     autoAttack: true
-    angle: 0
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 3.5
+    attackRate: 1.2
+    range: 1.5
     damage:
-      groups:
-        Brute: 3
       types:
+        Blunt: 6
+        Slash: 3
         Structural: 12
+    bluntStaminaDamageFactor: 4.0
+    heavyRateModifier: 1
+    heavyRangeModifier: 2
+    heavyDamageBaseModifier: 1
+    angle: 20
+
   - type: ReverseEngineering # Nyano
     difficulty: 2
     recipes:

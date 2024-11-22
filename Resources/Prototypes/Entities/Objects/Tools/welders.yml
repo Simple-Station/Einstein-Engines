@@ -55,7 +55,7 @@
       collection: MetalThud
     activatedDamage:
         types:
-            Heat: 8
+            Heat: 7
   - type: ItemToggleSize
     activatedSize: Large
   - type: ItemToggleHot
@@ -75,7 +75,7 @@
     wideAnimationRotation: -90
     damage:
       types:
-        Blunt: 5 #i mean... i GUESS you could use it like that
+        Blunt: 6 #i mean... i GUESS you could use it like that
     soundHit:
       collection: MetalThud
   - type: RefillableSolution
@@ -106,6 +106,14 @@
     price: 40
   - type: IgnitionSource
     temperature: 700
+  - type: WeldingHealing # Same as Brutepack - Estacao Pirata IPCs
+    damageContainers:
+      - Silicon
+    damage:
+      types:
+        Blunt: -15
+        Piercing: -15
+        Slash: -15
 
 - type: entity
   name: industrial welding tool

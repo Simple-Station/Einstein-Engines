@@ -312,6 +312,22 @@
 
 - type: entity
   parent: IDCardStandard
+  id: RoboticsIDCard
+  name: robotics ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#C96DBF"
+    - state: subdepartment
+      color: "#952004"
+    - state: scientist
+  - type: PresetIdCard
+    job: Roboticist
+
+- type: entity
+  parent: IDCardStandard
   id: ClownIDCard
   name: clown ID card
   components:
@@ -449,7 +465,7 @@
 - type: entity
   parent: IDCardStandard
   id: LawyerIDCard
-  name: lawyer ID card
+  name: attorney ID card # DeltaV - Changed Lawyer to Attorney
   components:
   - type: Sprite
     layers:
@@ -461,6 +477,55 @@
     - state: lawyer
   - type: PresetIdCard
     job: Lawyer
+
+- type: entity
+  parent: IDCardStandard
+  id: ChiefJusticeIDCard
+  name: chief justice ID card
+  components:
+    - type: PresetIdCard
+      job: ChiefJustice
+    - type: Sprite
+      layers:
+      - state: default
+      - state: department
+        color: "#878787"
+      - state: subdepartment
+        color: "#CB0000"
+      - state: lawyer
+
+
+- type: entity
+  parent: IDCardStandard
+  id: ClerkIDCard
+  name: clerk ID card
+  components:
+    - type: PresetIdCard
+      job: Clerk
+    - type: Sprite
+      layers:
+      - state: default
+      - state: department
+        color: "#878787"
+      - state: subdepartment
+        color: "#CB0000"
+      - state: lawyer
+
+- type: entity
+  parent: IDCardStandard
+  id: ProsecutorIDCard
+  name: presecutor ID card
+  components:
+    - type: PresetIdCard
+      job: Prosecutor
+    - type: Sprite
+      layers:
+      - state: default
+      - state: department
+        color: "#878787"
+      - state: subdepartment
+        color: "#CB0000"
+      - state: lawyer
 
 - type: entity
   parent: IDCardStandard
@@ -822,6 +887,9 @@
     - JobIconMartialArtist # Nyanotrasen - MartialArtist, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/martialartist.yml
     - JobIconGladiator # Nyanotrasen - Gladiator, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/gladiator.yml
     - JobIconForensicMantis  # Nyanotrasen - ForensicMantis, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Epistemics/forensicmantis.yml
+    - JobIconClerk # Delta V - Added justice dept
+    - JobIconChiefJustice # Delta V - Added justice dept
+    - JobIconProsecutor # Delta V - Added justice dept
     - JobIconVisitor
   - type: ActivatableUI
     key: enum.AgentIDCardUiKey.Key
@@ -834,10 +902,12 @@
     default: PassengerIDCard
   - type: UserInterface
     interfaces:
-      - key: enum.AgentIDCardUiKey.Key
+      enum.AgentIDCardUiKey.Key:
         type: AgentIDCardBoundUserInterface
-      - key: enum.ChameleonUiKey.Key
+      enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
+  - type: ClothingAddFaction
+    faction: Syndicate
 
 - type: entity
   name: passenger ID card
@@ -850,6 +920,8 @@
     - Maintenance
     - SyndicateAgent
     - NuclearOperative
+  - type: ClothingAddFaction
+    faction: Syndicate
 
 - type: entity
   parent: IDCardStandard
@@ -884,6 +956,8 @@
     tags:
     - NuclearOperative
     - SyndicateAgent
+  - type: ClothingAddFaction
+    faction: Syndicate
 
 - type: entity
   parent: IDCardStandard
@@ -902,6 +976,8 @@
     tags:
     - NuclearOperative
     - SyndicateAgent
+  - type: ClothingAddFaction
+    faction: Syndicate
 
 - type: entity
   parent: IDCardStandard
@@ -1084,3 +1160,4 @@
     - state: senior
   - type: PresetIdCard
     job: SeniorOfficer
+

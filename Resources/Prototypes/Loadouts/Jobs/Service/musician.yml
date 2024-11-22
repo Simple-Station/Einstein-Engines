@@ -1,0 +1,579 @@
+# Musician
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+# Musician Instruments
+# Brass Instruments
+- type: loadout
+  id: LoadoutItemTrumpetInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - TrumpetInstrument
+
+- type: loadout
+  id: LoadoutItemTromboneInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - TromboneInstrument
+
+- type: loadout
+  id: LoadoutItemFrenchHornInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - FrenchHornInstrument
+
+- type: loadout
+  id: LoadoutItemEuphoniumInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - EuphoniumInstrument
+
+# Misc Instruments
+- type: loadout
+  id: LoadoutItemSeashellInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - SeashellInstrument
+
+- type: loadout
+  id: LoadoutItemBirdToyInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - BirdToyInstrument
+  # After this are some instruments like "Phone, Helicopter, and Canned Aplause. I leave those to the Clown
+
+# Percussion
+- type: loadout
+  id: LoadoutItemGlockenspielInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - GlockenspielInstrument
+
+- type: loadout
+  id: LoadoutItemMusicBoxInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - MusicBoxInstrument
+
+- type: loadout
+  id: LoadoutItemXylophoneInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - XylophoneInstrument
+
+- type: loadout
+  id: LoadoutItemMicrophoneInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - MicrophoneInstrument
+
+- type: loadout
+  id: LoadoutItemSynthesizerInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - SynthesizerInstrument
+
+- type: loadout
+  id: LoadoutItemKalimbaInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - KalimbaInstrument
+
+- type: loadout
+  id: LoadoutItemWoodblockInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - WoodblockInstrument
+
+# Stringed Instruments
+- type: loadout
+  id: LoadoutItemElectricGuitarInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - ElectricGuitarInstrument
+
+- type: loadout
+  id: LoadoutItemBassGuitarInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - BassGuitarInstrument
+
+- type: loadout
+  id: LoadoutItemRockGuitarInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - RockGuitarInstrument
+
+- type: loadout
+  id: LoadoutItemAcousticGuitarInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - AcousticGuitarInstrument
+
+- type: loadout
+  id: LoadoutItemBanjoInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - BanjoInstrument
+
+- type: loadout
+  id: LoadoutItemViolinInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - ViolinInstrument
+
+- type: loadout
+  id: LoadoutItemViolaInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - ViolaInstrument
+
+- type: loadout
+  id: LoadoutItemCelloInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - CelloInstrument
+
+# Structure Instruments
+- type: loadout
+  id: LoadoutItemPianoInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - PianoFlatpack
+
+- type: loadout
+  id: LoadoutItemUprightPianoInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - UprightPianoFlatpack
+
+- type: loadout
+  id: LoadoutItemVibraphoneInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - VibraphoneFlatpack
+
+- type: loadout
+  id: LoadoutItemMarimbaInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - MarimbaFlatpack
+
+- type: loadout
+  id: LoadoutItemChurchOrganInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - ChurchOrganFlatpack
+
+- type: loadout
+  id: LoadoutItemTubaInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - TubaFlatpack
+
+- type: loadout
+  id: LoadoutItemHarpInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - HarpFlatpack
+
+- type: loadout
+  id: LoadoutItemTimpaniInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - TimpaniFlatpack
+
+- type: loadout
+  id: LoadoutItemTaikoInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - TaikoFlatpack
+
+- type: loadout
+  id: LoadoutItemContrabassInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - ContrabassFlatpack
+
+- type: loadout
+  id: LoadoutItemMinimoogInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - MinimoogFlatpack
+
+- type: loadout
+  id: LoadoutItemTomDrumsInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - TomDrumsFlatpack
+
+# Wind Instruments
+- type: loadout
+  id: LoadoutItemSaxophoneInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - SaxophoneInstrument
+
+- type: loadout
+  id: LoadoutItemAccordionInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - AccordionInstrument
+
+- type: loadout
+  id: LoadoutItemHarmonicaInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - HarmonicaInstrument
+
+- type: loadout
+  id: LoadoutItemClarinetInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - ClarinetInstrument
+
+- type: loadout
+  id: LoadoutItemFluteInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - FluteInstrument
+
+- type: loadout
+  id: LoadoutItemRecorderInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - RecorderInstrument
+
+- type: loadout
+  id: LoadoutItemPanFluteInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - PanFluteInstrument
+
+- type: loadout
+  id: LoadoutItemOcarinaInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - OcarinaInstrument
+
+- type: loadout
+  id: LoadoutItemBagpipeInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - BagpipeInstrument
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

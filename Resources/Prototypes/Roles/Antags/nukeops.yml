@@ -5,11 +5,11 @@
   setPreference: true
   objective: roles-antag-nuclear-operative-objective
   requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 108000 # DeltaV - 30 hours
-  - !type:DepartmentTimeRequirement # DeltaV - Security dept time requirement
+  - !type:CharacterOverallTimeRequirement
+    min: 108000 # DeltaV - 30 hours
+  - !type:CharacterDepartmentTimeRequirement # DeltaV - Security dept time requirement
     department: Security
-    time: 36000 # DeltaV - 10 hours
+    min: 36000 # DeltaV - 10 hours
 
 - type: antag
   id: NukeopsMedic
@@ -18,11 +18,11 @@
   setPreference: true
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 108000 # DeltaV - 30 hours
-  - !type:DepartmentTimeRequirement # DeltaV - Medical dept time requirement
+  - !type:CharacterOverallTimeRequirement
+    min: 108000 #  30 hours
+  - !type:CharacterDepartmentTimeRequirement
     department: Medical
-    time: 36000 # DeltaV - 10 hours
+    min: 36000 # 10 hours
 
 - type: antag
   id: NukeopsCommander
@@ -31,12 +31,32 @@
   setPreference: true
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 216000 # DeltaV - 60 hours
-  - !type:DepartmentTimeRequirement # DeltaV - Security dept time requirement
+  - !type:CharacterOverallTimeRequirement
+    min: 216000 # DeltaV - 60 hours
+  - !type:CharacterDepartmentTimeRequirement # DeltaV - Security dept time requirement
     department: Security
-    time: 36000 # DeltaV - 10 hours
-  - !type:DepartmentTimeRequirement # DeltaV - Command dept time requirement
+    min: 36000 # DeltaV - 10 hours
+  - !type:CharacterDepartmentTimeRequirement # DeltaV - Command dept time requirement
     department: Command
-    time: 36000 # DeltaV - 10 hours
-  - !type:WhitelistRequirement # DeltaV - Whitelist requirement
+    min: 36000 # DeltaV - 10 hours
+  - !type:CharacterWhitelistRequirement
+
+#Lone Operative Gear
+- type: startingGear
+  id: SyndicateLoneOperativeGearFull
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+    back: ClothingBackpackDuffelSyndicateOperative
+    mask: ClothingMaskGasSyndicate
+    eyes: ClothingEyesHudSyndicate
+    ears: ClothingHeadsetAltSyndicate
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitSyndie
+    shoes: ClothingShoesBootsCombatFilled
+    id: SyndiPDA
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: BaseUplinkRadio40TC
+    belt: ClothingBeltMilitaryWebbing
+  innerClothingSkirt: ClothingUniformJumpskirtOperative
+  satchel: ClothingBackpackDuffelSyndicateOperative
+  duffelbag: ClothingBackpackDuffelSyndicateOperative

@@ -1,0 +1,95 @@
+# Mystagogue
+- type: characterItemGroup
+  id: LoadoutMystagogueBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMystagogueBackpacksBackpack
+    - type: loadout
+      id: LoadoutMystagogueBackpacksSatchel
+    - type: loadout
+      id: LoadoutMystagogueBackpacksDuffel
+
+#- type: characterItemGroup
+#  id: LoadoutMystagogueBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMystagogueEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMystagogueEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMystagogueEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMystagogueGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMystagogueHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandRDHeadHatBeretMysta
+    - type: loadout
+      id: LoadoutCommandRDHeadHoodMysta
+
+- type: characterItemGroup
+  id: LoadoutMystagogueId
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMystagogueNTPDA
+
+- type: characterItemGroup
+  id: LoadoutMystagogueNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandRDNeckMantle
+    - type: loadout
+      id: LoadoutCommandRDNeckCloak
+    - type: loadout
+      id: LoadoutCommandRDNeckCloakMystagogue
+    - type: loadout
+      id: LoadoutMystagogueNeckSciencemedal
+
+#- type: characterItemGroup
+#  id: LoadoutMystagogueMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMystagogueOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandRDOuterWinter
+    - type: loadout
+      id: LoadoutCommandRDOuterMysta
+
+- type: characterItemGroup
+  id: LoadoutMystagogueShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandRDShoesBootsWinter
+
+- type: characterItemGroup
+  id: LoadoutMystagogueUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMystagogueUniformJumpsuit
+    - type: loadout
+      id: LoadoutMystagogueUniformJumpskirt

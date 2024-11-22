@@ -1,6 +1,13 @@
 # Traitor single items
 
 - type: stealTargetGroup
+  id: SupermatterSliver
+  name: supermatter sliver
+  sprite:
+    sprite: Supermatter/supermatter_sliver.rsi
+    state: icon
+
+- type: stealTargetGroup
   id: Hypospray
   name: hypospray
   sprite:
@@ -71,8 +78,8 @@
     state: icon
 
 - type: stealTargetGroup
-  id: WeaponAntiqueLaser
-  name: antique laser pistol
+  id: WeaponCaptain
+  name: captain's weapon
   sprite:
     sprite: Objects/Weapons/Guns/Battery/antiquelasergun.rsi
     state: base
@@ -83,6 +90,13 @@
   sprite:
     sprite: Objects/Misc/nukedisk.rsi
     state: icon
+
+- type: stealTargetGroup
+  id: HoSAntiqueWeapon
+  name: head of security's personal weapon
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+    state: base
 
 # Thief Collection
 
@@ -183,7 +197,7 @@
 
 - type: stealTargetGroup
   id: ClothingOuterHardsuitVoidParamed
-  name: paramedic void suit
+  name: paramedic hardsuit
   sprite:
     sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
     state: icon

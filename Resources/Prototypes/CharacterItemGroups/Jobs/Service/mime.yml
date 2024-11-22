@@ -1,0 +1,77 @@
+# Mime
+#- type: characterItemGroup
+#  id: LoadoutMimeBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMimeBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMimeEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMimeEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMimeEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMimeGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMimeHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMimeId
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMimeNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceMimeBedsheetMime
+
+- type: characterItemGroup
+  id: LoadoutMimeMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceMimeMaskSad
+    - type: loadout
+      id: LoadoutServiceMimeMaskScared
+    - type: loadout
+      id: LoadoutServiceMimeMaskSexy
+
+- type: characterItemGroup
+  id: LoadoutMimeOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceMimeOuterWinter
+
+- type: characterItemGroup
+  id: LoadoutMimeShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceMimeShoesBootsWinter
+
+#- type: characterItemGroup
+#  id: LoadoutMimeUniforms
+#  maxItems: 1
+#  items:

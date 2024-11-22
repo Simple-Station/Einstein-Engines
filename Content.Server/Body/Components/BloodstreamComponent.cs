@@ -1,5 +1,8 @@
 using Content.Server.Body.Systems;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Server.Traits;
+using Content.Server.Traits.Assorted;
+using Content.Shared.Alert;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
@@ -11,7 +14,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Body.Components
 {
-    [RegisterComponent, Access(typeof(BloodstreamSystem), typeof(ReactionMixerSystem))]
+    [RegisterComponent, Access(typeof(BloodstreamSystem), typeof(ReactionMixerSystem), typeof(BloodDeficiencySystem), typeof(HemophiliaSystem))]
     public sealed partial class BloodstreamComponent : Component
     {
         public static string DefaultChemicalsSolutionName = "chemicals";
@@ -81,6 +84,14 @@ namespace Content.Server.Body.Components
         /// </summary>
         [DataField]
         public FixedPoint2 BloodRefreshAmount = 1.0f;
+
+        /// <summary>
+        ///     How much hunger/thirst is used to regenerate one unit of blood. Set to zero to disable.
+        ///     The actual thirst/hunger rate will scale with <see cref="BloodRefreshAmount"/>.
+        /// </summary>
+        /// <remarks>Those will have no effect if the entity has no hunger/thirst components.</remarks>
+        [DataField]
+        public float BloodRegenerationHunger = 1f, BloodRegenerationThirst = 1f;
 
         /// <summary>
         ///     How much blood needs to be in the temporary solution in order to create a puddle?
@@ -171,5 +182,8 @@ namespace Content.Server.Body.Components
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
         public TimeSpan StatusTime;
+
+        [DataField]
+        public ProtoId<AlertPrototype> BleedingAlert = "Bleed";
     }
 }

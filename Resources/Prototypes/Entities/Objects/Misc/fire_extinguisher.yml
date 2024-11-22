@@ -38,9 +38,16 @@
     hasSafety: true
   - type: MeleeWeapon
     wideAnimationRotation: 180
+    attackRate: 0.8
+    bluntStaminaDamageFactor: 2.5
+    range: 1.75
     damage:
       types:
-        Blunt: 10
+        Blunt: 8
+    heavyRateModifier: 0.8
+    heavyDamageBaseModifier: 2
+    heavyStaminaCost: 7.5
+    maxTargets: 6
     soundHit:
       path: /Audio/Weapons/smash.ogg
   - type: Tool
@@ -54,12 +61,15 @@
         enabled:
           True: { state: fire_extinguisher_closed }
           False: { state: fire_extinguisher_open }
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
 
 - type: entity
   name: extinguisher spray
   id: ExtinguisherSpray
   parent: Vapor
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: Effects/extinguisherSpray.rsi

@@ -16,6 +16,10 @@
       sound: /Audio/SimpleStation14/Items/Handling/component_drop.ogg
     - type: EmitSoundOnLand
       sound: /Audio/SimpleStation14/Items/Handling/component_drop.ogg
+# Rating 1
+    - type: GuideHelp
+      guides:
+      - MachineUpgrading
 
 # Rating 1
 
@@ -69,3 +73,153 @@
     - type: ReverseEngineering # Nyano
       recipes:
         - MatterBinStockPart
+
+# Rating 2
+
+- type: entity
+  id: AdvancedCapacitorStockPart
+  name: advanced capacitor
+  parent: CapacitorStockPart
+  description: An advanced capacitor used in the construction of a variety of devices.
+  suffix: Rating 2
+  components:
+    - type: Sprite
+      state: adv_capacitor
+    - type: MachinePart
+      rating: 2
+    - type: ReverseEngineering # Nyano
+      difficulty: 2
+      recipes:
+        - AdvancedCapacitorStockPart
+
+- type: entity
+  id: NanoManipulatorStockPart
+  name: advanced manipulator
+  parent: MicroManipulatorStockPart
+  description: An advanced manipulator used in the construction of a variety of devices.
+  suffix: Rating 2
+  components:
+    - type: Sprite
+      state: nano_mani
+    - type: MachinePart
+      rating: 2
+    - type: ReverseEngineering # Nyano
+      difficulty: 2
+      recipes:
+        - NanoManipulatorStockPart
+
+- type: entity
+  id: AdvancedMatterBinStockPart
+  name: advanced matter bin
+  parent: MatterBinStockPart
+  description: An advanced matter bin used in the construction of a variety of devices.
+  suffix: Rating 2
+  components:
+    - type: Sprite
+      state: advanced_matter_bin
+    - type: MachinePart
+      rating: 2
+    - type: ReverseEngineering # Nyano
+      difficulty: 2
+      recipes:
+        - AdvancedMatterBinStockPart
+
+# Rating 3
+
+- type: entity
+  id: SuperCapacitorStockPart
+  name: super capacitor
+  parent: CapacitorStockPart
+  description: A super capacitor used in the construction of a variety of devices.
+  suffix: Rating 3
+  components:
+    - type: Sprite
+      state: super_capacitor
+    - type: MachinePart
+      rating: 3
+    - type: ReverseEngineering # Nyano
+      difficulty: 3
+      recipes:
+        - SuperCapacitorStockPart
+
+- type: entity
+  id: PicoManipulatorStockPart
+  name: super manipulator
+  parent: MicroManipulatorStockPart
+  description: A super manipulator used in the construction of a variety of devices.
+  suffix: Rating 3
+  components:
+    - type: Sprite
+      state: pico_mani
+    - type: MachinePart
+      rating: 3
+    - type: ReverseEngineering # Nyano
+      difficulty: 3
+      recipes:
+        - PicoManipulatorStockPart
+
+- type: entity
+  id: SuperMatterBinStockPart
+  name: super matter bin
+  parent: MatterBinStockPart
+  description: A super matter bin used in the construction of a variety of devices.
+  suffix: Rating 3
+  components:
+    - type: Sprite
+      state: super_matter_bin
+    - type: MachinePart
+      rating: 3
+    - type: ReverseEngineering # Nyano
+      difficulty: 3
+      recipes:
+        - SuperMatterBinStockPart
+
+# Rating 4
+
+- type: entity
+  id: BluespaceCapacitorStockPart
+  name: bluespace capacitor
+  parent: CapacitorStockPart
+  description: A bluespace capacitor used in the construction of a variety of devices.
+  suffix: Rating 4
+  components:
+    - type: Sprite
+      state: quadratic_capacitor
+    - type: MachinePart
+      rating: 4
+    - type: ReverseEngineering # Nyano
+      difficulty: 4
+      recipes:
+        - BluespaceCapacitorStockPart
+
+- type: entity
+  id: BluespaceManipulatorStockPart
+  name: bluespace manipulator
+  parent: MicroManipulatorStockPart
+  description: A bluespace manipulator used in the construction of a variety of devices.
+  suffix: Rating 4
+  components:
+    - type: Sprite
+      state: femto_mani
+    - type: MachinePart
+      rating: 4
+    - type: ReverseEngineering # Nyano
+      difficulty: 4
+      recipes:
+        - BluespaceManipulatorStockPart
+
+- type: entity
+  id: BluespaceMatterBinStockPart
+  name: bluespace matter bin
+  parent: MatterBinStockPart
+  description: A bluespace matter bin used in the construction of a variety of devices.
+  suffix: Rating 4
+  components:
+    - type: Sprite
+      state: bluespace_matter_bin
+    - type: MachinePart
+      rating: 4
+    - type: ReverseEngineering # Nyano
+      difficulty: 4
+      recipes:
+        -  BluespaceMatterBinStockPart

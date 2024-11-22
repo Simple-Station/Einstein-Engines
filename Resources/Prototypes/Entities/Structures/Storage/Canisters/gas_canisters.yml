@@ -36,7 +36,7 @@
             3: { state: can-o3, shader: "unshaded" }
     - type: UserInterface
       interfaces:
-        - key: enum.GasCanisterUiKey.Key
+        enum.GasCanisterUiKey.Key:
           type: GasCanisterBoundUserInterface
     - type: Destructible
       thresholds:
@@ -98,6 +98,7 @@
         whitelist:
           components:
             - GasTank
+            - BorgJetpack
     - type: StaticPrice
       price: 1000
     - type: AccessReader
@@ -697,7 +698,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: StorageCanisterBroken
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       state: yellow-1
@@ -705,7 +706,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: AirCanisterBroken
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: grey-1
@@ -713,7 +714,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: OxygenCanisterBroken
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: blue-1
@@ -721,7 +722,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: NitrogenCanisterBroken
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       state: red-1
@@ -729,7 +730,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: CarbonDioxideCanisterBroken
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       state: black-1
@@ -737,7 +738,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: PlasmaCanisterBroken
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       state: orange-1
@@ -745,7 +746,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: TritiumCanisterBroken
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       state: green-1
@@ -754,7 +755,7 @@
   parent: GasCanisterBrokenBase
   id: WaterVaporCanisterBroken
   name: broken water vapor canister
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       state: water_vapor-1
@@ -762,7 +763,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: AmmoniaCanisterBroken
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       state: greenys-1
@@ -770,7 +771,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: NitrousOxideCanisterBroken
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       state: redws-1
@@ -778,7 +779,7 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: FrezonCanisterBroken
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: frezon-1

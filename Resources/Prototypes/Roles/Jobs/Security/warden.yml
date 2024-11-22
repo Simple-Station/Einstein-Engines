@@ -4,13 +4,13 @@
   description: job-description-warden
   playTimeTracker: JobWarden
   requirements:
-    - !type:RoleTimeRequirement # DeltaV - JobSecurityOfficer time requirement. Make them experienced in proper officer work.
-      role: JobSecurityOfficer
-      time: 43200 # DeltaV - 12 hrs
-    - !type:RoleTimeRequirement # DeltaV - JobDetective time requirement. Give them an understanding of basic forensics.
-      role: JobDetective
-      time: 14400 # DeltaV - 4 hours
-    - !type:WhitelistRequirement # DeltaV - Whitelist requirement
+    - !type:CharacterPlaytimeRequirement # DeltaV - JobSecurityOfficer time requirement. Make them experienced in proper officer work.
+      tracker: JobSecurityOfficer
+      min: 43200 # DeltaV - 12 hrs
+    - !type:CharacterPlaytimeRequirement # DeltaV - JobDetective time requirement. Give them an understanding of basic forensics.
+      tracker: JobDetective
+      min: 14400 # DeltaV - 4 hours
+    - !type:CharacterWhitelistRequirement
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
@@ -33,14 +33,13 @@
   equipment:
     head: ClothingHeadHatWarden
     jumpsuit: ClothingUniformJumpsuitWarden
-    back: ClothingBackpackSecurityFilled
+    back: ClothingBackpackSecurity
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesSunglasses
     outerClothing: ClothingOuterCoatWarden
     id: WardenPDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58Nonlethal
   innerClothingSkirt: ClothingUniformJumpskirtWarden
-  satchel: ClothingBackpackSatchelSecurityFilled
-  duffelbag: ClothingBackpackDuffelSecurityFilled
+  satchel: ClothingBackpackSatchelSecurity
+  duffelbag: ClothingBackpackDuffelSecurity

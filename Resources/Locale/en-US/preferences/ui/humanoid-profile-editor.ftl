@@ -2,8 +2,8 @@ humanoid-profile-editor-randomize-everything-button = Randomize everything
 humanoid-profile-editor-name-label = Name:
 humanoid-profile-editor-name-random-button = Randomize
 humanoid-profile-editor-appearance-tab = Appearance
-humanoid-profile-editor-clothing = Show clothing
-humanoid-profile-editor-loadouts = Show loadout
+humanoid-profile-editor-clothing = Preview job equipment:
+humanoid-profile-editor-loadouts = Preview loadout items:
 humanoid-profile-editor-clothing-show = Show
 humanoid-profile-editor-sex-label = Sex:
 humanoid-profile-editor-sex-male-text = Male
@@ -15,6 +15,7 @@ humanoid-profile-editor-height-label = Height: {$height}cm
 humanoid-profile-editor-width-label = Width: {$width}cm
 humanoid-profile-editor-weight-label = Weight: {$weight}kg
 humanoid-profile-editor-species-label = Species:
+humanoid-profile-editor-customspeciename-label = Custom Specie Name:
 humanoid-profile-editor-pronouns-label = Pronouns:
 humanoid-profile-editor-pronouns-male-text = He / Him
 humanoid-profile-editor-pronouns-female-text = She / Her
@@ -23,6 +24,7 @@ humanoid-profile-editor-pronouns-neuter-text = It / It
 humanoid-profile-editor-import-button = Import
 humanoid-profile-editor-export-button = Export
 humanoid-profile-editor-save-button = Save
+humanoid-profile-editor-reset-button = Reset
 humanoid-profile-editor-clothing-label = Clothing:
 humanoid-profile-editor-backpack-label = Backpack:
 humanoid-profile-editor-spawn-priority-label = Spawn priority:
@@ -59,11 +61,15 @@ humanoid-profile-editor-traits-header = You have {$points ->
     }
     *[other] {$traits}/{$maxTraits} traits
 }
-humanoid-profile-editor-traits-show-unusable-button = Show Unusable
+humanoid-profile-editor-traits-show-unusable-button = Show Unusable Traits
 humanoid-profile-editor-traits-show-unusable-button-tooltip =
-    When enabled, traits that your current character setup cannot use will be shown highlighted in red.
+    When enabled, traits that your current character setup cannot use will be shown highlighted in red or orange if selected.
     You will still not be able to use the invalid traits unless your character setup changes to fit the requirements.
     This is most likely useful only if there's a bug hiding traits you actually can use or if you want to see other species' traits or something.
+humanoid-profile-editor-traits-remove-unusable-button = Remove {$count} Unusable Traits
+humanoid-profile-editor-traits-remove-unusable-button-tooltip =
+    If you click this button, all traits that your current character setup cannot use will be removed.
+    You will be asked for confirmation before the traits are removed.
 humanoid-profile-editor-traits-no-traits = No traits found
 
 humanoid-profile-editor-job-priority-high-button = High
@@ -75,11 +81,19 @@ humanoid-profile-editor-naming-rules-warning = Warning: Offensive or LRP IC name
 
 humanoid-profile-editor-loadouts-tab = Loadout
 humanoid-profile-editor-loadouts-points-label = You have {$points}/{$max} points
-humanoid-profile-editor-loadouts-show-unusable-button = Show Unusable
+humanoid-profile-editor-loadouts-show-unusable-button = Show Unusable Loadouts
 humanoid-profile-editor-loadouts-show-unusable-button-tooltip =
-    When enabled, loadouts that your current character setup cannot use will be shown highlighted in red.
+    When enabled, loadouts that your current character setup cannot use will be highlighted in red.
+    Loadouts that your character cannot wear (if clothing) will be highlighted in yellow.
     You will still not be able to use the invalid loadouts unless your character setup changes to fit the requirements.
-    This may be useful if you like switching between multiple jobs and don't want to have to reselect your loadout every
+    This may be useful if you like switching between multiple jobs and don't want to have to reselect your loadout every time you switch.
+humanoid-profile-editor-loadouts-remove-unusable-button = Remove {$count ->
+    [1] {$count} Unusable Loadout
+    *[other] {$count} Unusable Loadouts
+}
+humanoid-profile-editor-loadouts-remove-unusable-button-tooltip =
+    If you click this button, all loadouts that your current character setup cannot use will be removed.
+    You will be asked for confirmation before the loadouts are removed.
 humanoid-profile-editor-loadouts-no-loadouts = No loadouts foundtime.
 
 humanoid-profile-editor-markings-tab = Markings

@@ -70,7 +70,7 @@
 - type: entity
   id: ActionStethoscope
   name: Listen with stethoscope
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     icon:
@@ -79,3 +79,17 @@
     event: !type:StethoscopeActionEvent
     checkCanInteract: false
     priority: -1
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckBellCollar
+  name: bell collar
+  description: A way to inform others about your presence, or just to annoy everyone around you!
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/bellcollar.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/bellcollar.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepJester

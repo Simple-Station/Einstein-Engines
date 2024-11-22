@@ -5,20 +5,20 @@
   playTimeTracker: JobHeadOfPersonnel
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobChef
-      time: 14400 # DeltaV - 4 hours
-    - !type:RoleTimeRequirement
-      role: JobBartender
-      time: 14400 # DeltaV - 4 hours
-    - !type:RoleTimeRequirement
-      role: JobJanitor
-      time: 14400 # DeltaV - 4 hours
-    - !type:DepartmentTimeRequirement # DeltaV - Civilian dept time requirement
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobChef
+      min: 14400 # DeltaV - 4 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobBartender
+      min: 14400 # DeltaV - 4 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobJanitor
+      min: 14400 # DeltaV - 4 hours
+    - !type:CharacterDepartmentTimeRequirement # DeltaV - Civilian dept time requirement
       department: Civilian
-      time: 72000 # 20 hours
-    - !type:OverallPlaytimeRequirement # DeltaV - Playtime requirement
-      time: 90000 # 25 hours
+      min: 72000 # 20 hours
+    - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
+      min: 90000 # 25 hours
   weight: 10 # DeltaV - Changed HoP weight from 20 to 10 due to them not being more important than other Heads
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
@@ -50,7 +50,7 @@
 #  - Security # NoooOoOo!! My HoPcurity!1
 #  - Brig
   - Lawyer
-#  - Cargo
+  - Cargo
 #  - Atmospherics
 #  - Medical
   - Boxer # DeltaV - Add Boxer access
@@ -66,10 +66,6 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-  - !type:AddComponentSpecial
-    components:
-    - type: PsionicBonusChance #Nyano - Summary: makes it more likely to become psionic.
-      flatBonus: 0.025
 
 - type: startingGear
   id: HoPGear
@@ -77,11 +73,8 @@
     jumpsuit: ClothingUniformJumpsuitHoP
     back: ClothingBackpackHOPFilled
     shoes: ClothingShoesLeather # DeltaV - HoP needs something better than plebe shoes.
-    head: ClothingHeadHatHopcap
     id: HoPPDA
-    gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetHoP # DeltaV - HoP is now a service role, replaces their all channels headset.
-    belt: BoxFolderClipboard
   innerClothingSkirt: ClothingUniformJumpskirtHoP
   satchel: ClothingBackpackSatchelHOPFilled
   duffelbag: ClothingBackpackDuffelHOPFilled

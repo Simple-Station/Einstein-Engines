@@ -13,7 +13,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 21600
+      min: 21600
   special:
   - !type:AddComponentSpecial
     components:

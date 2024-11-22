@@ -3,10 +3,11 @@ using Content.Server.GameTicking.Rules;
 namespace Content.Server.Revolutionary.Components;
 
 /// <summary>
-/// Given to heads at round start for Revs. Used for tracking if heads died or not.
+///     Component for tracking if someone is a Head of Staff.
 /// </summary>
 [RegisterComponent, Access(typeof(RevolutionaryRuleSystem))]
 public sealed partial class CommandStaffComponent : Component
 {
-
+    public float PsionicBonusModifier = 1;
+    public float PsionicBonusOffset = 0.25f;
 }

@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Dataset;
 using Content.Shared.FixedPoint;
@@ -41,7 +42,7 @@ namespace Content.Shared.Random.Helpers
             var sum = picks.Values.Sum();
             var accumulated = 0f;
 
-            var rand = random.NextFloat() * sum;
+            var rand = random!.NextFloat() * sum;
 
             foreach (var (key, weight) in picks)
             {
@@ -57,7 +58,8 @@ namespace Content.Shared.Random.Helpers
             throw new InvalidOperationException($"Invalid weighted pick for {prototype.ID}!");
         }
 
-        public static string Pick(this IRobustRandom random, Dictionary<string, float> weights)
+        public static T Pick<T>(this IRobustRandom random, Dictionary<T, float> weights)
+            where T: notnull
         {
             var sum = weights.Values.Sum();
             var accumulated = 0f;
@@ -74,7 +76,48 @@ namespace Content.Shared.Random.Helpers
                 }
             }
 
-            throw new InvalidOperationException($"Invalid weighted pick");
+            throw new InvalidOperationException("Invalid weighted pick");
+        }
+
+        public static T PickAndTake<T>(this IRobustRandom random, Dictionary<T, float> weights)
+            where T : notnull
+        {
+            var pick = Pick(random, weights);
+            weights.Remove(pick);
+            return pick;
+        }
+
+        public static bool TryPickAndTake<T>(this IRobustRandom random, Dictionary<T, float> weights, [NotNullWhen(true)] out T? pick)
+            where T : notnull
+        {
+            if (weights.Count == 0)
+            {
+                pick = default;
+                return false;
+            }
+            pick = PickAndTake(random, weights);
+            return true;
+        }
+
+        public static T Pick<T>(Dictionary<T, float> weights, System.Random random)
+            where T : notnull
+        {
+            var sum = weights.Values.Sum();
+            var accumulated = 0f;
+
+            var rand = random.NextFloat() * sum;
+
+            foreach (var (key, weight) in weights)
+            {
+                accumulated += weight;
+
+                if (accumulated >= rand)
+                {
+                    return key;
+                }
+            }
+
+            throw new InvalidOperationException("Invalid weighted pick");
         }
 
         public static (string reagent, FixedPoint2 quantity) Pick(this WeightedRandomFillSolutionPrototype prototype, IRobustRandom? random = null)
@@ -86,7 +129,7 @@ namespace Content.Shared.Random.Helpers
             var sum = randomFill.Reagents.Count;
             var accumulated = 0f;
 
-            var rand = random.NextFloat() * sum;
+            var rand = random!.NextFloat() * sum;
 
             foreach (var reagent in randomFill.Reagents)
             {
@@ -117,7 +160,7 @@ namespace Content.Shared.Random.Helpers
             var sum = picks.Values.Sum();
             var accumulated = 0f;
 
-            var rand = random.NextFloat() * sum;
+            var rand = random!.NextFloat() * sum;
 
             foreach (var (randSolution, weight) in picks)
             {

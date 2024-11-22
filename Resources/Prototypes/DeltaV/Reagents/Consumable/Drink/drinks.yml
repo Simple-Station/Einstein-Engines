@@ -19,7 +19,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.3
+        amount: 0.336
       - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
@@ -55,7 +55,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.20
+        amount: 0.133
     Poison:
       effects:
       - !type:HealthChange
@@ -83,7 +83,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.16
 
 - type: reagent
   id: GreenGrass
@@ -105,7 +105,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.05
+        amount: 0.083
 
 - type: reagent
   id: Daiquiri
@@ -128,7 +128,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.25
+        amount: 0.3
 
 - type: reagent
   id: ArsonistsBrew
@@ -151,7 +151,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.30
+        amount: 0.08
     Poison:
       effects:
       - !type:HealthChange
@@ -179,6 +179,14 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.015
 
 - type: reagent
   id: Mothamphetamine
@@ -201,7 +209,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.25
+        amount: 0.126
     Poison:
       effects:
       - !type:Jitter

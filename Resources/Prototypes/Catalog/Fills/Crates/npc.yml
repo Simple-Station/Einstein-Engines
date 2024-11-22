@@ -82,6 +82,17 @@
         amount: 2
 
 - type: entity
+  id: CrateNPCPibble
+  parent: CrateLivestock
+  name: pitbull crate
+  description: "Note from the shelter: Lab mix. Looking for a home without cats, birds, or children. Anxious when pet."
+  components:
+  - type: StorageFill
+    contents:
+      - id: MobPibble
+        amount: 1
+
+- type: entity
   id: CrateNPCCorgi
   parent: CrateLivestock
   name: corgi crate

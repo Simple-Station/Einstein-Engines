@@ -12,6 +12,7 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.StepTrigger.Components;
 using Content.Shared.Tag;
+using Content.Shared.Traits.Assorted.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
@@ -63,11 +64,6 @@ namespace Content.Shared.Movement.Systems
         protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery;
         protected EntityQuery<NoRotateOnMoveComponent> NoRotateQuery;
 
-        private const float StepSoundMoveDistanceRunning = 2;
-        private const float StepSoundMoveDistanceWalking = 1.5f;
-
-        private const float FootstepVariation = 0f;
-
         /// <summary>
         /// <see cref="CCVars.StopSpeed"/>
         /// </summary>
@@ -97,6 +93,7 @@ namespace Content.Shared.Movement.Systems
 
             InitializeInput();
             InitializeRelay();
+            InitializeCVars();
             Subs.CVar(_configManager, CCVars.RelativeMovement, value => _relativeMovement = value, true);
             Subs.CVar(_configManager, CCVars.StopSpeed, value => _stopSpeed = value, true);
             UpdatesBefore.Add(typeof(TileFrictionController));
@@ -261,10 +258,18 @@ namespace Content.Shared.Movement.Systems
                     TryGetSound(weightless, uid, mover, mobMover, xform, out var sound, tileDef: tileDef))
                 {
                     var soundModifier = mover.Sprinting ? 3.5f : 1.5f;
+                    var volume = sound.Params.Volume + soundModifier;
+
+                    if (_entities.TryGetComponent(uid, out FootstepVolumeModifierComponent? volumeModifier))
+                    {
+                        volume += mover.Sprinting
+                            ? volumeModifier.SprintVolumeModifier
+                            : volumeModifier.WalkVolumeModifier;
+                    }
 
                     var audioParams = sound.Params
-                        .WithVolume(sound.Params.Volume + soundModifier)
-                        .WithVariation(sound.Params.Variation ?? FootstepVariation);
+                        .WithVolume(volume)
+                        .WithVariation(sound.Params.Variation ?? mobMover.FootstepVariation);
 
                     // If we're a relay target then predict the sound for all relays.
                     if (relayTarget != null)
@@ -289,12 +294,9 @@ namespace Content.Shared.Movement.Systems
             PhysicsSystem.SetAngularVelocity(physicsUid, 0, body: physicsComponent);
         }
 
-        public void WalkingAlert(EntityUid player, bool walking)
+        private void WalkingAlert(EntityUid player, InputMoverComponent component)
         {
-            if (HasComp<CanWalkComponent>(player))
-            {
-                _alerts.ShowAlert(player, AlertType.Walking, walking ? (short) 0 : (short) 1);
-            }
+            _alerts.ShowAlert(player, component.WalkingAlert, component.Sprinting ? (short) 1 : (short) 0);
         }
 
         public void LerpRotation(EntityUid uid, InputMoverComponent mover, float frameTime)
@@ -418,7 +420,9 @@ namespace Content.Shared.Movement.Systems
                 return false;
 
             var coordinates = xform.Coordinates;
-            var distanceNeeded = mover.Sprinting ? StepSoundMoveDistanceRunning : StepSoundMoveDistanceWalking;
+            var distanceNeeded = mover.Sprinting
+                ? mobMover.StepSoundMoveDistanceRunning
+                : mobMover.StepSoundMoveDistanceWalking;
 
             // Handle footsteps.
             if (!weightless)

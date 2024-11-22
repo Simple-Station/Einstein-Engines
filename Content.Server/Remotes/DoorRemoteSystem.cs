@@ -50,8 +50,10 @@ namespace Content.Shared.Remotes
                 return;
             }
 
+            // Holding the door remote grants you access to the relevant doors IN ADDITION to what ever access you had.
+            // This access is enforced in _doorSystem.HasAccess when it calls _accessReaderSystem.IsAllowed
             if (TryComp<AccessReaderComponent>(args.Target, out var accessComponent)
-                && !_doorSystem.HasAccess(args.Target.Value, args.Used, doorComp, accessComponent))
+                && !_doorSystem.HasAccess(args.Target.Value, args.User, doorComp, accessComponent))
             {
                 _doorSystem.Deny(args.Target.Value, doorComp, args.User);
                 Popup.PopupEntity(Loc.GetString("door-remote-denied"), args.User, args.User);
@@ -61,7 +63,10 @@ namespace Content.Shared.Remotes
             switch (entity.Comp.Mode)
             {
                 case OperatingMode.OpenClose:
-                    if (_doorSystem.TryToggleDoor(args.Target.Value, doorComp, args.Used))
+                    // Note we provide args.User here to TryToggleDoor as the "user"
+                    // This means that the door will look at all access items carried by the player for access, including
+                    //   this remote, but also including anything else they are carrying such as a PDA or ID card.
+                    if (_doorSystem.TryToggleDoor(args.Target.Value, doorComp, args.User))
                         _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)}: {doorComp.State}");
                     break;
                 case OperatingMode.ToggleBolts:
@@ -69,7 +74,7 @@ namespace Content.Shared.Remotes
                     {
                         if (!boltsComp.BoltWireCut)
                         {
-                            _doorSystem.SetBoltsDown((args.Target.Value, boltsComp), !boltsComp.BoltsDown, args.Used);
+                            _doorSystem.SetBoltsDown((args.Target.Value, boltsComp), !boltsComp.BoltsDown, args.User);
                             _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)} to {(boltsComp.BoltsDown ? "" : "un")}bolt it");
                         }
                     }

@@ -17,10 +17,16 @@
   id: AppraisalTool
 
 - type: Tag
+  id: ArachneWeb
+
+- type: Tag
   id: ArtifactFragment
 
 - type: Tag
   id: Arrow
+
+- type: Tag
+  id: Ash
 
 - type: Tag
   id: ATVKeys
@@ -257,6 +263,9 @@
   id: CableCoil
 
 - type: Tag
+  id: CaneBlade
+
+- type: Tag
   id: CapacitorStockPart
 
 - type: Tag
@@ -349,6 +358,9 @@
 - type: Tag
   id: CartridgeRocket
 
+- type: Tag
+  id: CaveFactory
+
 # Allows you to walk over tile entities such as lava without steptrigger
 - type: Tag
   id: Catwalk
@@ -397,6 +409,9 @@
 
 - type: Tag
   id: ClownSuit
+
+- type: Tag
+  id: CluwneHappyHonk
 
 - type: Tag
   id: CluwneHorn
@@ -603,6 +618,9 @@
   id: Fruit
 
 - type: Tag
+  id: FullBodyOuter
+
+- type: Tag
   id: Galaxythistle
 
 - type: Tag
@@ -697,6 +715,9 @@
 
 - type: Tag
   id: HidesNose # for non-standard noses.
+
+- type: Tag
+  id: HidesBeard # for full coverage helmet / masks where beard shouldn't show
 
 - type: Tag
   id: HighRiskItem
@@ -795,6 +816,12 @@
   id: MacroBomb
 
 - type: Tag
+  id: Mail
+
+- type: Tag
+  id: MailCapsule
+
+- type: Tag
   id: MimeBelt
 
 - type: Tag
@@ -869,6 +896,9 @@
   id: Meat
 
 - type: Tag
+  id: Medal
+
+- type: Tag
   id: Medkit
 
 - type: Tag
@@ -908,7 +938,16 @@
   id: Multitool
 
 - type: Tag
+  id: Mustard
+
+- type: Tag
+  id: MysteryFigureBox
+
+- type: Tag
   id: NoBlockAnchoring
+
+- type: Tag
+  id: NoPaint
 
 - type: Tag
   id: NozzleBackTank
@@ -918,6 +957,9 @@
 
 - type: Tag
   id: Ointment
+
+- type: Tag
+  id: Oneirophage
 
 - type: Tag
   id: Ore
@@ -1022,6 +1064,9 @@
   id: PrisonUniform
 
 - type: Tag
+  id: PrizeTicket
+
+- type: Tag
   id: ProximitySensor
 
 - type: Tag
@@ -1098,13 +1143,13 @@
   id: Shiv
 
 - type: Tag
-  id: ShoesRequiredStepTriggerImmune
-
-- type: Tag
   id: Shovel
 
 - type: Tag
   id: Sidearm
+
+- type: Tag
+  id: SignalTrigger
 
 - type: Tag
   id: SkeletonMotorcycleKeys
@@ -1117,9 +1162,6 @@
 
 - type: Tag
   id: SmallMech
-
-- type: Tag
-  id: SnapPop
 
 - type: Tag
   id: Smokable
@@ -1233,6 +1275,9 @@
   id: TrashBag
 
 - type: Tag
+  id: Truncheon
+
+- type: Tag
   id: Unimplantable
 
 - type: Tag
@@ -1272,6 +1317,9 @@
   id: WeaponShotgunKammerer
 
 - type: Tag
+  id: WeldingMask
+
+- type: Tag
   id: WetFloorSign
 
 - type: Tag
@@ -1279,6 +1327,9 @@
 
 - type: Tag
   id: WhitelistChameleon
+
+- type: Tag
+  id: WhoopieCushion
 
 - type: Tag
   id: Window
@@ -1312,5 +1363,3 @@
 
 - type: Tag
   id: WriteIgnoreStamps
-
-# PUT YOUR TAGS IN ALPHABETICAL ORDER

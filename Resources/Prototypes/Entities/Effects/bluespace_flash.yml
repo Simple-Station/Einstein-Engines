@@ -1,6 +1,6 @@
 - type: entity
   id: EffectFlashBluespace
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
     radius: 10.5
@@ -9,5 +9,98 @@
   - type: TimedDespawn
     lifetime: 1
   - type: EmitSoundOnSpawn
-    sound: 
+    sound:
       path: /Audio/Effects/Lightning/lightningbolt.ogg
+
+- type: entity
+  id: EffectFlashTelekineticPulse
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    radius: 10
+    energy: 3.5
+    color: "#18abf5"
+  - type: TimedDespawn
+    lifetime: 1
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Lightning/lightningbolt.ogg
+
+- type: entity
+  id: EffectFlashShadeskip
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 3.5
+    color: "#7100bd"
+  - type: TimedDespawn
+    lifetime: 1
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Lightning/lightningbolt.ogg
+
+- type: entity
+  id: EffectFlashShadowkinShadeskip
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 3.5
+    color: "#7100bd"
+  - type: TimedDespawn
+    lifetime: 3
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Shadowkin/shadeskip.ogg
+
+- type: entity
+  id: EffectFlashShadowkinDarkSwapOn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 3.5
+    color: "#7100bd"
+  - type: TimedDespawn
+    lifetime: 3
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Shadowkin/darkswapon.ogg
+
+- type: entity
+  id: EffectFlashShadowkinDarkSwapOff
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 3.5
+    color: "#7100bd"
+  - type: TimedDespawn
+    lifetime: 3
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Shadowkin/darkswapoff.ogg
+
+- type: entity
+  id: EffectPyrokineticFlare
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: /Textures/Interface/Actions/psionics.rsi
+      visible: false
+      state: pyrokinetic_flare
+    - type: TriggerOnSpawn
+    - type: PointLight
+      radius: 5
+      energy: 8
+      color: "#ff4500"
+    - type: LightFade
+      duration: 0.5
+    - type: TimedDespawn
+      lifetime: 0.5
+    - type: FlashOnTrigger
+      range: 7
+    - type: EmitSoundOnSpawn
+      sound:
+        path: "/Audio/Effects/flash_bang.ogg"

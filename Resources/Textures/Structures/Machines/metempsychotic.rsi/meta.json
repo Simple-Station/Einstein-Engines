@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "CC-BY-4.0",
+  "copyright": "Created by discord user Four Hydra Heads#2075 (971500282364178512), failed state edited by VMSolidus",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "cloning_idle"
+    },
+    {
+      "name": "cloning_active",
+      "delays": [ [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ] ]
+    },
+    {
+        "name": "cloning_failed",
+        "delays": [ [ 0.1, 0.1, 0.1, 0.1 ] ]
+    }
+  ]
+}

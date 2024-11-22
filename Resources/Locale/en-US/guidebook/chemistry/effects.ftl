@@ -43,7 +43,7 @@ reagent-effect-guidebook-foam-area-reaction-effect =
         *[other] create
     } large quantities of foam
 
-reagent-effect-guidebook-foam-area-reaction-effect =
+reagent-effect-guidebook-smoke-area-reaction-effect =
     { $chance ->
         [1] Creates
         *[other] create
@@ -339,8 +339,39 @@ reagent-effect-guidebook-innoculate-zombie-infection =
         *[other] cure
     } an ongoing zombie infection, and provides immunity to future infections
 
+reagent-effect-guidebook-reduce-rotting = 
+    { $chance ->
+        [1] Regenerates
+        *[other] regenerate
+    } {NATURALFIXED($time, 3)} {MANY("second", $time)} of rotting
+
 reagent-effect-guidebook-missing =
     { $chance ->
         [1] Causes
         *[other] cause
     } an unknown effect as nobody has written this effect yet
+
+reagent-effect-guidebook-change-glimmer-reaction-effect =
+    { $chance ->
+        [1] Modifies
+        *[other] modify
+    } the glimmer count by {$count} points
+
+reagent-effect-guidebook-chem-remove-psionic =
+    { $chance ->
+        [1] Removes
+        *[other] remove
+    } psionic powers
+
+reagent-effect-guidebook-chem-reroll-psionic =
+    { $chance ->
+        [1] Allows
+        *[other] allow
+    } a chance to get a different psionic power
+
+reagent-effect-guidebook-add-moodlet =
+    modifies mood by {$amount}
+    { $timeout ->
+        [0] indefinitely
+        *[other] for {$timeout} seconds
+    }

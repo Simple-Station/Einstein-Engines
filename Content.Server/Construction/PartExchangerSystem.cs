@@ -10,6 +10,7 @@ using Content.Shared.Storage;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
 using Content.Shared.Wires;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Collections;
 
@@ -42,7 +43,7 @@ public sealed class PartExchangerSystem : EntitySystem
         if (args.Handled || args.Args.Target == null)
             return;
 
-        if (!TryComp<StorageComponent>(uid, out var storage))
+        if (!TryComp<StorageComponent>(uid, out var storage) || storage.Container == null)
             return; //the parts are stored in here
 
         var machinePartQuery = GetEntityQuery<MachinePartComponent>();
@@ -169,7 +170,12 @@ public sealed class PartExchangerSystem : EntitySystem
             return;
         }
 
-        component.AudioStream = _audio.PlayPvs(component.ExchangeSound, uid).Value.Entity;
+        var audioStream = _audio.PlayPvs(component.ExchangeSound, uid);
+
+        if (audioStream == null)
+            return;
+
+        component.AudioStream = audioStream!.Value.Entity;
 
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.ExchangeDuration, new ExchangerDoAfterEvent(), uid, target: args.Target, used: uid)
         {

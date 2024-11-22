@@ -38,7 +38,7 @@
   parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterCoatToggleable
   name: winter coat with hood
-  noSpawn: True
+  categories: [ HideSpawnMenu ]
   components:
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterDefault
@@ -231,9 +231,23 @@
     clothingPrototype: ClothingHeadHatHoodWinterHOP
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: [ClothingOuterArmorHoS, ClothingOuterWinterCoatToggleable]
   id: ClothingOuterWinterHoS
+  name: head of security's armored winter coat
+  description: A sturdy, utilitarian winter coat designed to protect a head of security from any brig-bound threats and hypothermic events.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterHOS
+
+- type: entity
+  parent: ClothingOuterWinterCoatToggleable
+  id: ClothingOuterWinterHoSUnarmored
   name: head of security's winter coat
+  description: A sturdy coat, a warm coat, but not an armored coat.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coathos.rsi
@@ -248,6 +262,7 @@
         Slash: 0.75
         Piercing: 0.75
         Heat: 0.75
+        Caustic: 0.75 #not the full 90% from ss13 because of the head
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
@@ -417,12 +432,12 @@
     sprite: Clothing/OuterClothing/WinterCoats/coatsec.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSec
-  - type: Armor # DeltaV - adds resists to coat
+  - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.85
         Slash: 0.85
-        Piercing: 0.85 # DeltaV - not as resistant as pre-rebase, but still better than nothing
+        Piercing: 0.85 #Can save you, but bullets will still hurt. Will take about 10 shots from a Viper before critting, as opposed to 7 while unarmored and 16~ with a bulletproof vest.
         Heat: 0.75
 
 - type: entity
@@ -445,22 +460,28 @@
     clothingPrototype: ClothingHeadHatHoodWinterSci
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoatToggleable]
   id: ClothingOuterWinterWarden
   name: warden's armored winter coat
   description: A sturdy, utilitarian winter coat designed to protect a warden from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
+    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterWarden
+
+- type: entity
+  parent: ClothingOuterWinterCoatToggleable
+  id: ClothingOuterWinterWardenUnarmored
+  name: warden's winter coat
+  description: A sturdy coat, a warm coat, but not an armored coat.
+  components:
+  - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coatwarden.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coatwarden.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.70
-        Slash: 0.70
-        Piercing: 0.8 #slightly less bulletproof then warden's normal coat
-        Heat: 0.70
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterWarden
 

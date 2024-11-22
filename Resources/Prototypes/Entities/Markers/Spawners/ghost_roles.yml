@@ -8,6 +8,8 @@
     name: ghost-role-information-rat-king-name
     description: ghost-role-information-rat-king-description
     rules: ghost-role-information-rat-king-rules
+    raffle:
+      settings: default
   - type: GhostRoleMobSpawner
     prototype: MobRatKing
   - type: Sprite
@@ -27,6 +29,8 @@
     name: ghost-role-information-remilia-name
     description: ghost-role-information-remilia-description
     rules: ghost-role-information-remilia-rules
+    raffle:
+      settings: short
   - type: GhostRoleMobSpawner
     prototype: MobBatRemilia
   - type: Sprite
@@ -46,6 +50,8 @@
     name: ghost-role-information-cerberus-name
     description: ghost-role-information-cerberus-description
     rules: ghost-role-information-cerberus-rules
+    raffle:
+      settings: default
   - type: GhostRoleMobSpawner
     prototype: MobCorgiCerberus
   - type: Sprite
@@ -56,7 +62,7 @@
         state: narsian
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: SpawnPointGhostNukeOperative
   name: ghost role spawn point
   suffix: nukeops
@@ -64,6 +70,8 @@
   components:
   - type: GhostRole
     rules: ghost-role-information-nukeop-rules
+    raffle:
+      settings: default
   - type: GhostRoleMobSpawner
     prototype: MobHumanNukeOp
   - type: Sprite
@@ -74,7 +82,7 @@
         state: radiation
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: SpawnPointLoneNukeOperative
   name: ghost role spawn point
   suffix: loneops
@@ -84,14 +92,15 @@
     name: ghost-role-information-loneop-name
     description: ghost-role-information-loneop-description
     rules: ghost-role-information-loneop-rules
+    raffle:
+      settings: default
     requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 172800 # DeltaV - 48 hours
+    - !type:CharacterOverallTimeRequirement
+      min: 172800 # DeltaV - 48 hours
     - !type:DepartmentTimeRequirement # DeltaV - Security dept time requirement
       department: Security
       time: 36000 # DeltaV - 10 hours
-  - type: GhostRoleMobSpawner
-    prototype: MobHumanLoneNuclearOperative
+  - type: GhostRoleAntagSpawner
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -102,7 +111,7 @@
 - type: entity
   parent: MarkerBase
   id: SpawnPointGhostDragon
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: ghost role spawn point
   suffix: dragon
   components:
@@ -110,6 +119,8 @@
     name: ghost-role-information-space-dragon-name
     description: ghost-role-information-space-dragon-description
     rules: ghost-role-component-default-rules
+    raffle:
+      settings: default
   - type: GhostRoleMobSpawner
     prototype: MobDragon
   - type: Sprite
@@ -128,6 +139,8 @@
     name: ghost-role-information-space-ninja-name
     description: ghost-role-information-space-ninja-description
     rules: ghost-role-information-space-ninja-rules
+    raffle:
+      settings: default
   - type: GhostRoleMobSpawner
     prototype: MobHumanSpaceNinja
   - type: Sprite
@@ -136,20 +149,3 @@
     - state: green
     - sprite: Objects/Weapons/Melee/energykatana.rsi
       state: icon
-
-- type: entity
-  parent: MarkerBase
-  id: SpawnPointGhostTerminator
-  name: terminator spawn point
-  components:
-  - type: GhostRole
-    name: ghost-role-information-exterminator-name
-    description: ghost-role-information-exterminator-description
-    rules: ghost-role-information-exterminator-rules
-  - type: GhostRoleMobSpawner
-    prototype: MobHumanTerminator
-  - type: Sprite
-    layers:
-    - state: green
-    - sprite: Mobs/Species/Terminator/parts.rsi
-      state: full

@@ -1,5 +1,6 @@
 using System.Numerics;
 using Robust.Shared.Map;
+using Content.Shared.Flight.Events;
 
 namespace Content.Shared.Gravity;
 
@@ -17,6 +18,7 @@ public abstract class SharedFloatingVisualizerSystem : EntitySystem
         SubscribeLocalEvent<FloatingVisualsComponent, ComponentStartup>(OnComponentStartup);
         SubscribeLocalEvent<GravityChangedEvent>(OnGravityChanged);
         SubscribeLocalEvent<FloatingVisualsComponent, EntParentChangedMessage>(OnEntParentChanged);
+        SubscribeNetworkEvent<FlightEvent>(OnFlight);
     }
 
     /// <summary>
@@ -33,7 +35,7 @@ public abstract class SharedFloatingVisualizerSystem : EntitySystem
             return false;
 
         component.CanFloat = GravitySystem.IsWeightless(uid, xform: transform);
-        Dirty(component);
+        Dirty(uid, component);
         return component.CanFloat;
     }
 
@@ -60,6 +62,20 @@ public abstract class SharedFloatingVisualizerSystem : EntitySystem
             if (!args.HasGravity)
                 FloatAnimation(uid, floating.Offset, floating.AnimationKey, floating.AnimationTime);
         }
+    }
+
+    private void OnFlight(FlightEvent args)
+    {
+        var uid = GetEntity(args.Uid);
+        if (!TryComp<FloatingVisualsComponent>(uid, out var floating))
+            return;
+        floating.CanFloat = args.IsFlying;
+
+        if (!args.IsFlying
+            || !args.IsAnimated)
+            return;
+
+        FloatAnimation(uid, floating.Offset, floating.AnimationKey, floating.AnimationTime);
     }
 
     private void OnEntParentChanged(EntityUid uid, FloatingVisualsComponent component, ref EntParentChangedMessage args)

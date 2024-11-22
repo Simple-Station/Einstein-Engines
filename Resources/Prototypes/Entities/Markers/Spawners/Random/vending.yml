@@ -31,4 +31,8 @@
       - VendingMachineSoda
       - VendingMachineStarkist
       - VendingMachineSpaceUp
+      - VendingMachineFitness
+      - VendingMachineHotfood
+      - VendingMachineSolsnack
+      - VendingMachineWeeb
     chance: 1

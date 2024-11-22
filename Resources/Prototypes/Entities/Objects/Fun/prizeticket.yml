@@ -1,0 +1,400 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: PrizeTicketBase
+  description: A prize ticket, ready to be redeemed at a prize counter.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/prizeticket.rsi
+  - type: Item
+    sprite: Objects/Fun/prizeticket.rsi
+    size: Tiny
+  - type: StaticPrice
+    price: 0
+  - type: Tag
+    tags:
+    - Sheet
+    - PrizeTicket
+
+- type: entity
+  parent: PrizeTicketBase
+  id: PrizeTicket
+  name: prize ticket
+  suffix: Full
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      PrizeTicket: 1
+  - type: Stack
+    count: 100
+    stackType: PrizeTicket
+    baseLayer: base
+    layerStates:
+    - ticket
+    - ticket_2
+    - ticket_3
+    - ticket_4
+  - type: Sprite
+    state: ticket_4
+    layers:
+    - state: ticket_4
+      map: ["base"]
+  - type: Item
+    heldPrefix: prize ticket
+  - type: Appearance
+
+- type: entity
+  parent: PrizeTicket
+  id: PrizeTicket10
+  name: prize ticket
+  suffix: 10
+  components:
+  - type: Sprite
+    state: ticket
+  - type: Stack
+    stackType: PrizeTicket
+    count: 10
+
+- type: entity
+  parent: PrizeTicket
+  id: PrizeTicket30
+  name: prize ticket
+  suffix: 30
+  components:
+  - type: Sprite
+    state: ticket
+  - type: Stack
+    stackType: PrizeTicket
+    count: 30
+
+- type: entity
+  parent: PrizeTicket
+  id: PrizeTicket60
+  name: prize ticket
+  suffix: 60
+  components:
+  - type: Sprite
+    state: ticket
+  - type: Stack
+    stackType: PrizeTicket
+    count: 60
+
+- type: entity
+  parent: PrizeTicket
+  id: PrizeTicket1
+  name: prize ticket
+  suffix: Single
+  components:
+  - type: Sprite
+    state: ticket
+  - type: Stack
+    stackType: PrizeTicket
+    count: 1
+
+- type: entity
+  parent: PresentRandom
+  id: PrizeBall
+  name: prize ball
+  description: I wounder whats inside!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/prizeticket.rsi
+    layers:
+      - state: prizeball
+  - type: SpawnItemsOnUse
+    items:
+      - id: PresentTrash
+      - id: PrizeTicket10
+        orGroup: Prize
+      # Common
+      - id: PrizeTicket30
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieMothRandom
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieMothMusician
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieMothBartender
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieBee
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieHampter
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieRouny
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieLamp
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieArachind
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieLizard
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieLizardMirrored
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieSpaceLizard
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieDiona
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieSharkBlue
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieSharkPink
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieSharkGrey
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCarp
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieMagicarp
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieHolocarp
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieSlime
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieSnake
+        prob: 0.80
+        orGroup: Prize
+      - id: ToyMouse
+        prob: 0.80
+        orGroup: Prize
+      - id: ToyRubberDuck
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieVox
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieAtmosian
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushiePenguin
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieHuman
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieArachne
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieGnome
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieLoveable
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieDeer
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieIpc
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieGrey
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieRedFox
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushiePurpleFox
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushiePinkFox
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieOrangeFox
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieMarbleFox
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCrimsonFox
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCoffeeFox
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieBlueFox
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieBlackFox
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieVulp
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCorgi
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieGirlyCorgi
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieRobotCorgi
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCatBlack
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCatGrey
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCatOrange
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCatSiames
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCatTabby
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCatTuxedo
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieCatWhite
+        prob: 0.80
+        orGroup: Prize
+      - id: ToyAi
+        prob: 0.80
+        orGroup: Prize
+      - id: ToyIan
+        prob: 0.80
+        orGroup: Prize
+      - id: BalloonNT
+        prob: 0.80
+        orGroup: Prize
+      - id: BalloonCorgi
+        prob: 0.80
+        orGroup: Prize
+      - id: CrayonBox
+        prob: 0.80
+        orGroup: Prize
+      - id: PetRock
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieShadowkin
+        prob: 0.80
+        orGroup: Prize
+      # Uncommon
+      - id: PrizeTicket60
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieGhost
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieRGBee
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieRatvar
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieNar
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieRainbowCarp
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieXeno
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieJester
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieSlips
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieAbductor
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieTrystan
+        prob: 0.50
+        orGroup: Prize
+      - id: FoamCrossbow
+        prob: 0.50
+        orGroup: Prize
+      - id: RevolverCapGun
+        prob: 0.50
+        orGroup: Prize
+      - id: PonderingOrb
+        prob: 0.50
+        orGroup: Prize
+      - id: ToyAmongPequeno
+        prob: 0.50
+        orGroup: Prize
+      - id: FoamCutlass
+        prob: 0.50
+        orGroup: Prize
+      - id: ToyHammer
+        prob: 0.50
+        orGroup: Prize
+      - id: WhoopieCushion
+        prob: 0.50
+        orGroup: Prize
+      - id: PlasticBanana
+        prob: 0.50
+        orGroup: Prize
+      - id: WeaponWaterPistol
+        prob: 0.50
+        orGroup: Prize
+      - id: WeaponWaterBlaster
+        prob: 0.50
+        orGroup: Prize
+      - id: NewtonCradle
+        prob: 0.50
+        orGroup: Prize
+      - id: SnapPopBox
+        prob: 0.50
+        orGroup: Prize
+      - id: CrazyGlue
+        prob: 0.50
+        orGroup: Prize
+      - id: MrChips
+        prob: 0.50
+        orGroup: Prize
+      - id: MrDips
+        prob: 0.50
+        orGroup: Prize
+      # Rare
+      - id: PlushieAbductorAgent
+        prob: 0.30
+        orGroup: Prize
+      - id: PlushieNuke
+        prob: 0.30
+        orGroup: Prize
+      - id: ToyNuke
+        prob: 0.30
+        orGroup: Prize
+      - id: FoamBlade
+        prob: 0.30
+        orGroup: Prize
+      - id: BalloonSyn
+        prob: 0.30
+        orGroup: Prize
+      - id: SingularityToy
+        prob: 0.30
+        orGroup: Prize
+      - id: TeslaToy
+        prob: 0.30
+        orGroup: Prize
+      - id: ToySword
+        prob: 0.30
+        orGroup: Prize
+      - id: ThronglerToy
+        prob: 0.30
+        orGroup: Prize
+      - id: BwoinkHammer
+        prob: 0.30
+        orGroup: Prize

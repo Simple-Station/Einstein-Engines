@@ -1,6 +1,7 @@
 using Content.Shared.Customization.Systems;
-using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Traits;
 
@@ -18,8 +19,8 @@ public sealed partial class TraitPrototype : IPrototype
     /// <summary>
     ///     Which customization tab to place this entry in
     /// </summary>
-    [DataField(required: true), ValidatePrototypeId<TraitCategoryPrototype>]
-    public string Category = "Uncategorized";
+    [DataField(required: true)]
+    public ProtoId<TraitCategoryPrototype> Category = "Uncategorized";
 
     /// <summary>
     ///     How many points this will give the character
@@ -31,9 +32,17 @@ public sealed partial class TraitPrototype : IPrototype
     [DataField]
     public List<CharacterRequirement> Requirements = new();
 
-    /// <summary>
-    ///     The components that get added to the player when they pick this trait.
-    /// </summary>
-    [DataField(required: true)]
-    public ComponentRegistry Components { get; private set; } = default!;
+    [DataField(serverOnly: true)]
+    public TraitFunction[] Functions { get; private set; } = Array.Empty<TraitFunction>();
+}
+
+/// This serves as a hook for trait functions to modify a player character upon spawning in.
+[ImplicitDataDefinitionForInheritors]
+public abstract partial class TraitFunction
+{
+    public abstract void OnPlayerSpawn(
+        EntityUid mob,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager);
 }

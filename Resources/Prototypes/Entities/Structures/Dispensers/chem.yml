@@ -31,6 +31,9 @@
         acts: ["Destruction"]
   - type: Machine
     board: ChemDispenserMachineCircuitboard
+  - type: UpgradePowerDraw
+    powerDrawMultiplier: 0.75
+    scaling: Exponential
   - type: GuideHelp
     guides:
     - Chemicals

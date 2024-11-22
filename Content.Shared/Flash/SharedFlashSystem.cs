@@ -13,7 +13,7 @@ namespace Content.Shared.Flash
 
         private static void OnFlashableGetState(EntityUid uid, FlashableComponent component, ref ComponentGetState args)
         {
-            args.State = new FlashableComponentState(component.Duration, component.LastFlash);
+            args.State = new FlashableComponentState(component.Duration, component.LastFlash, component.EyeDamageChance, component.EyeDamage, component.DurationMultiplier);
         }
     }
 }

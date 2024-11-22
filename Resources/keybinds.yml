@@ -70,21 +70,27 @@ binds:
 - function: CameraRotateLeft
   type: State
   key: NumpadNum7
+  mod1: Control
 - function: CameraRotateRight
   type: State
   key: NumpadNum9
+  mod1: Control
 - function: CameraReset
   type: State
   key: NumpadNum8
+  mod1: Control
 - function: ZoomOut
   type: State
   key: NumpadNum4
+  mod1: Control
 - function: ZoomIn
   type: State
   key: NumpadNum6
+  mod1: Control
 - function: ResetZoom
   type: State
   key: NumpadNum5
+  mod1: Control
 # Misc
 - function: ShowEscapeMenu
   type: State
@@ -187,6 +193,9 @@ binds:
 - function: OpenCharacterMenu
   type: State
   key: C
+- function: OpenEmotesMenu
+  type: State
+  key: Y
 - function: OpenLanguageMenu
   type: State
   key: L
@@ -263,6 +272,10 @@ binds:
   key: F
 - function: ToggleStanding
   type: State
+  key: R
+- function: ToggleCrawlingUnder
+  type: State
+  mod1: Shift
   key: R
 - function: ShowDebugConsole
   type: State
@@ -461,6 +474,9 @@ binds:
 - function: OpenDecalSpawnWindow
   type: State
   key: F8
+- function: OpenScoreboardWindow
+  type: State
+  key: F9
 - function: OpenSandboxWindow
   type: State
   key: B
@@ -543,3 +559,25 @@ binds:
 - function: Hotbar9
   type: State
   key: Num9
+- function: LookUp
+  type: State
+  key: Space
+# Targeting
+- function: TargetHead
+  type: State
+  key: NumpadNum8
+- function: TargetTorso
+  type: State
+  key: NumpadNum5
+- function: TargetLeftArm
+  type: State
+  key: NumpadNum6
+- function: TargetRightArm
+  type: State
+  key: NumpadNum4
+- function: TargetLeftLeg
+  type: State
+  key: NumpadNum3
+- function: TargetRightLeg
+  type: State
+  key: NumpadNum1

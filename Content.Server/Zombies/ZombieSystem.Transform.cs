@@ -1,4 +1,3 @@
-using Content.Server.Actions;
 using Content.Server.Atmos.Components;
 using Content.Server.Body.Components;
 using Content.Server.Chat;
@@ -37,6 +36,7 @@ using Content.Shared.Zombies;
 using Content.Shared.Prying.Components;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Traits.Assorted.Components;
+using Content.Server.Abilities.Psionics;
 
 namespace Content.Server.Zombies
 {
@@ -60,7 +60,7 @@ namespace Content.Server.Zombies
         [Dependency] private readonly MindSystem _mind = default!;
         [Dependency] private readonly SharedRoleSystem _roles = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
-        [Dependency] private readonly ActionsSystem _actions = default!; // DeltaV - No psionic zombies
+        [Dependency] private readonly PsionicAbilitiesSystem _psionic = default!;
 
         /// <summary>
         /// Handles an entity turning into a zombie when they die or go into crit
@@ -80,7 +80,7 @@ namespace Content.Server.Zombies
         /// <param name="target">the entity being zombified</param>
         /// <param name="mobState"></param>
         /// <remarks>
-        ///     ALRIGHT BIG BOY. YOU'VE COME TO THE LAYER OF THE BEAST. THIS IS YOUR WARNING.
+        ///     ALRIGHT BIG BOYS, GIRLS AND ANYONE ELSE. YOU'VE COME TO THE LAYER OF THE BEAST. THIS IS YOUR WARNING.
         ///     This function is the god function for zombie stuff, and it is cursed. I have
         ///     attempted to label everything thouroughly for your sanity. I have attempted to
         ///     rewrite this, but this is how it shall lie eternal. Turn back now.
@@ -108,17 +108,9 @@ namespace Content.Server.Zombies
             RemComp<ReproductivePartnerComponent>(target);
             RemComp<LegsParalyzedComponent>(target);
 
-            if (TryComp<PsionicComponent>(target, out var psionic)) // DeltaV - Prevent psionic zombies
+            if (HasComp<PsionicComponent>(target)) // Prevent psionic zombies
             {
-                if (psionic.ActivePowers.Count > 0)
-                {
-                    foreach (var power in psionic.ActivePowers)
-                    {
-                        RemComp(target, power);
-                    }
-                    psionic.ActivePowers.Clear();
-                }
-                RemComp<PsionicComponent>(target);
+                _psionic.RemoveAllPsionicPowers(target, true);
             }
 
             //funny voice
@@ -143,7 +135,7 @@ namespace Content.Server.Zombies
             melee.AltDisarm = false;
             melee.Range = 1.2f;
             melee.Angle = 0.0f;
-            melee.HitSound = zombiecomp.BiteSound;
+            melee.SoundHit = zombiecomp.BiteSound;
 
             if (mobState.CurrentState == MobState.Alive)
             {
@@ -199,7 +191,7 @@ namespace Content.Server.Zombies
                 Dirty(target, pryComp);
             }
 
-            Dirty(melee);
+            Dirty(target, melee);
 
             //The zombie gets the assigned damage weaknesses and strengths
             _damageable.SetDamageModifierSetId(target, "Zombie");
@@ -244,6 +236,11 @@ namespace Content.Server.Zombies
 
             _identity.QueueIdentityUpdate(target);
 
+            var htn = EnsureComp<HTNComponent>(target);
+            htn.RootTask = new HTNCompoundTask() { Task = "SimpleHostileCompound" };
+            htn.Blackboard.SetValue(NPCBlackboard.Owner, target);
+            _npc.SleepNPC(target, htn);
+
             //He's gotta have a mind
             var hasMind = _mind.TryGetMind(target, out var mindId, out _);
             if (hasMind && _mind.TryGetSession(mindId, out var session))
@@ -259,9 +256,6 @@ namespace Content.Server.Zombies
             }
             else
             {
-                var htn = EnsureComp<HTNComponent>(target);
-                htn.RootTask = new HTNCompoundTask() { Task = "SimpleHostileCompound" };
-                htn.Blackboard.SetValue(NPCBlackboard.Owner, target);
                 _npc.WakeNPC(target, htn);
             }
 

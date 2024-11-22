@@ -33,8 +33,8 @@
       storagebase: !type:Container
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: InteractionOutline
   - type: Clickable
   - type: Tag
@@ -51,6 +51,8 @@
   parent: Dresser
   suffix: Filled
   components:
+  - type: StaticPrice
+    price: 15
   - type: StorageFill
     contents:
       - id: ClothingNeckLGBTPin

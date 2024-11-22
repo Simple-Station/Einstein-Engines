@@ -31,6 +31,9 @@
         !type:DamageTrigger
         damage: 5
       behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
       - !type:SpillBehavior { }
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -39,6 +42,9 @@
   - type: PhysicalComposition
     materialComposition:
       Plastic: 100
+  - type: PressurizedSolution
+    solution: drink
+  - type: Shakeable
 
 - type: entity
   parent: DrinkBottlePlasticBaseFull
@@ -47,6 +53,15 @@
   components:
   - type: Sprite
     state: icon
+  - type: MeleeWeapon
+    bluntStaminaDamageFactor: 2.0
+    damage:
+      types:
+        Blunt: 7.5
+    heavyRangeModifier: 1.5
+    heavyStaminaCost: 5
+    maxTargets: 1
+    angle: 25
   - type: DamageOnLand
     damage:
       types:
@@ -54,7 +69,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 4
+        Blunt: 5
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -359,6 +374,7 @@
   - type: Tag
     tags:
     - Wine
+    - DrinkBottle
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
@@ -508,6 +524,7 @@
   - type: Tag
     tags:
     - Wine
+    - DrinkBottle
 
 # Small Bottles
 
@@ -533,6 +550,7 @@
   - type: Tag
     tags:
     - Beer
+    - DrinkBottle
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
@@ -556,7 +574,7 @@
   - type: Tag
     tags:
     - Beer
-
+    - DrinkBottle
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseFull]

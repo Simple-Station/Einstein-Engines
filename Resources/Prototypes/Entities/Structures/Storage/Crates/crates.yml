@@ -254,6 +254,18 @@
 
 - type: entity
   parent: CrateBaseSecure
+  id: CrateUranium
+  name: uranium crate
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/uranium.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/uranium.rsi
+  - type: AccessReader
+    access: [["Engineering"], ["Research"]]
+
+- type: entity
+  parent: CrateBaseSecure
   id: CrateSecure
   name: secure crate
   components:
@@ -356,7 +368,7 @@
           bounds: "-0.4,-0.4,0.4,0.29"
         density: 135
         mask:
-        - SmallMobMask #this is so they can go under plastic flaps
+        - CrateMask #this is so they can go under plastic flaps
         layer:
         - LargeMobLayer
   - type: Construction
@@ -413,7 +425,7 @@
           bounds: "-0.4,-0.4,0.4,0.29"
         density: 80
         mask:
-        - LargeMobMask
+        - CrateMask
         layer:
         - LargeMobLayer
   - type: StaticPrice

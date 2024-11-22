@@ -33,7 +33,6 @@ namespace Content.Client.UserInterface.Systems.Bwoink;
 public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSystem>, IOnStateChanged<GameplayState>, IOnStateChanged<LobbyState>
 {
     [Dependency] private readonly IClientAdminManager _adminManager = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IClyde _clyde = default!;
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
@@ -43,9 +42,14 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
     private MenuButton? GameAHelpButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.AHelpButton;
     private Button? LobbyAHelpButton => (UIManager.ActiveScreen as LobbyGui)?.AHelpButton;
     public IAHelpUIHandler? UIHelper;
+
     private bool _discordRelayActive;
     private bool _hasUnreadAHelp;
-    private string? _aHelpSound;
+
+    public const string AHelpErrorSound = "/Audio/Admin/ahelp_error.ogg";
+    public const string AHelpReceiveSound = "/Audio/Admin/ahelp_receive.ogg";
+    public const string AHelpSendSound = "/Audio/Admin/ahelp_send.ogg";
+
 
     public override void Initialize()
     {
@@ -55,8 +59,8 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         SubscribeNetworkEvent<BwoinkPlayerTypingUpdated>(PeopleTypingUpdated);
 
         _adminManager.AdminStatusUpdated += OnAdminStatusUpdated;
-        _config.OnValueChanged(CCVars.AHelpSound, v => _aHelpSound = v, true);
     }
+
 
     public void UnloadButton()
     {
@@ -112,14 +116,10 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
     private void SetAHelpPressed(bool pressed)
     {
         if (GameAHelpButton != null)
-        {
             GameAHelpButton.Pressed = pressed;
-        }
 
         if (LobbyAHelpButton != null)
-        {
             LobbyAHelpButton.Pressed = pressed;
-        }
 
         UIManager.ClickSound();
         UnreadAHelpRead();
@@ -130,22 +130,18 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         Logger.InfoS("c.s.go.es.bwoink", $"@{message.UserId}: {message.Text}");
         var localPlayer = _playerManager.LocalSession;
         if (localPlayer == null)
-        {
             return;
-        }
-        if (message.PlaySound && localPlayer.UserId != message.TrueSender)
-        {
-            if (_aHelpSound != null)
-                _audio.PlayGlobal(_aHelpSound, Filter.Local(), false);
-            _clyde.RequestWindowAttention();
-        }
 
         EnsureUIHelper();
 
-        if (!UIHelper!.IsOpen)
+        if (message.PlaySound && localPlayer.UserId != message.TrueSender && !UIHelper!.IsOpen)
         {
-            UnreadAHelpReceived();
+            _audio.PlayGlobal(AHelpReceiveSound, Filter.Local(), false);
+            _clyde.RequestWindowAttention();
         }
+
+        if (!UIHelper!.IsOpen)
+            UnreadAHelpReceived();
 
         UIHelper!.Receive(message);
     }

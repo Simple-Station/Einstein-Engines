@@ -8,9 +8,17 @@
     sprite: Objects/Specific/Janitorial/mop.rsi
     state: mop
   - type: MeleeWeapon
+    range: 1.85
     damage:
       types:
-        Blunt: 10
+        Blunt: 2
+    bluntStaminaDamageFactor: 3
+    heavyRateModifier: 0.8
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 1.25
+    heavyStaminaCost: 7.5
+    maxTargets: 2
+    angle: 180
     soundHit:
       collection: MetalThud
   - type: Spillable
@@ -30,6 +38,9 @@
         maxVol: 100
   - type: UseDelay
     delay: 1
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
   - type: Tag
     tags:
       - Mop
@@ -48,9 +59,17 @@
       sprite: Objects/Specific/Janitorial/advmop.rsi
       state: advmop
     - type: MeleeWeapon
+      range: 1.85
       damage:
         types:
-          Blunt: 10
+          Blunt: 2
+      bluntStaminaDamageFactor: 3
+      heavyRateModifier: 0.8
+      heavyRangeModifier: 1.25
+      heavyDamageBaseModifier: 1.25
+      heavyStaminaCost: 7.5
+      maxTargets: 2
+      angle: 180
       soundHit:
          collection: MetalThud
     - type: Spillable
@@ -103,6 +122,9 @@
       coefficients:
         Blunt: 0.95
         Slash: 0.95
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
   - type: Tag
     tags:
       - WetFloorSign

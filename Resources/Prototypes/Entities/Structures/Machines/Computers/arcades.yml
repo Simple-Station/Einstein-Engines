@@ -72,65 +72,15 @@
     rewardMinAmount: 0
     rewardMaxAmount: 0
     possibleRewards:
-    - ToyMouse
-    - ToyAi
-    - ToyNuke
-    - ToyGriffin
-    - ToyHonk
-    - ToyIan
-    - ToyMarauder
-    - ToyMauler
-    - ToyGygax
-    - ToyOdysseus
-    - ToyOwlman
-    - ToyDeathRipley
-    - ToyPhazon
-    - ToyFireRipley
-    - ToyReticence
-    - ToyRipley
-    - ToySeraph
-    - ToyDurand
-    - ToySkeleton
-    - FoamCrossbow
-    - RevolverCapGun
-    - PlushieHampter
-    - PlushieLizard
-    - PlushieAtmosian
-    - PlushieSpaceLizard
-    - PlushieNuke
-    - PlushieCarp
-    - PlushieMagicarp
-    - PlushieHolocarp
-    - PlushieRainbowCarp
-    - PlushieRatvar
-    - PlushieNar
-    - PlushieSnake
-    - PlushieArachind
-    - Basketball
-    - Football
-    - PlushieRouny
-    - PlushieBee
-    - PlushieSlime
-    - BalloonNT
-    - BalloonCorgi
-    - ToySword
-    - CrayonBox
-    - BoxDonkSoftBox
-    - BoxCartridgeCap
-    - HarmonicaInstrument
-    - OcarinaInstrument
-    - RecorderInstrument
-    - GunpetInstrument
-    - BirdToyInstrument
-    - PlushieXeno
-    - BeachBall
-    - PlushieMoth
-    - PlushieHampter
-    - ToyRenault # DeltaV Toy, see Resources/Prototypes/DeltaV/Entities/Objects/Fun/toys.yml
-    - ToySiobhan # DeltaV Toy, see Resources/Prototypes/DeltaV/Entities/Objects/Fun/toys.yml
-    - PlushiePenguin
-    - PlushieHuman
-    - ClothingHeadHatCowboyRed
+    - PrizeBall
+    - PrizeTicket10
+    - PrizeTicket10
+    - PrizeTicket10
+    - PrizeTicket10
+    - PrizeTicket10
+    - PrizeTicket30
+    - PrizeTicket30
+    - PrizeTicket60
   - type: WiresPanel
   - type: Wires
     layoutId: Arcade
@@ -140,9 +90,9 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-      - key: enum.SpaceVillainArcadeUiKey.Key
+      enum.SpaceVillainArcadeUiKey.Key:
         type: SpaceVillainArcadeBoundUserInterface
-      - key: enum.WiresUiKey.Key
+      enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
   - type: Computer
     board: SpaceVillainArcadeComputerCircuitboard
@@ -184,9 +134,9 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-      - key: enum.BlockGameUiKey.Key
+      enum.BlockGameUiKey.Key:
         type: BlockGameBoundUserInterface
-      - key: enum.WiresUiKey.Key
+      enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
   - type: Computer
     board: BlockGameArcadeComputerCircuitboard

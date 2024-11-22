@@ -1,33 +1,33 @@
 - type: entity
   parent: BaseSubdermalImplant
-  id: BasicGalacticCommonTranslatorImplant
+  id: BasicTauCetiBasicTranslatorImplant
   name: basic common translator implant
   description: Provides your illiterate friends the ability to understand the common galactic tongue.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
-  id: GalacticCommonTranslatorImplant
+  id: TauCetiBasicTranslatorImplant
   name: advanced common translator implant
   description: A more advanced version of the translator implant, teaches your illiterate friends the ability to both speak and understand the galactic tongue!
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:
-    - GalacticCommon
+    - TauCetiBasic
     spoken:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
   id: BubblishTranslatorImplant
   name: bubblish translator implant
   description: An implant that helps you speak and understand the language of slimes! Special vocal chords not included.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:
@@ -35,14 +35,14 @@
     spoken:
     - Bubblish
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
   id: NekomimeticTranslatorImplant
   name: nekomimetic translator implant
   description: A translator implant intially designed to help domestic cat owners understand their pets, now granting the ability to understand and speak to Felinids!
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:
@@ -50,14 +50,14 @@
     spoken:
     - Nekomimetic
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
   id: DraconicTranslatorImplant
   name: draconic translator implant
   description: A translator implant giving the ability to speak to dragons! Subsequently, also allows to communicate with the Unathi.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:
@@ -65,14 +65,14 @@
     spoken:
     - Draconic
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
   id: CanilunztTranslatorImplant
   name: canilunzt translator implant
   description: A translator implant that helps you communicate with your local yeepers. Yeep!
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:
@@ -80,14 +80,14 @@
     spoken:
     - Canilunzt
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
   id: SolCommonTranslatorImplant
   name: sol-common translator implant
   description: An implant giving the ability to understand and speak SolCommon. Raaagh!
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:
@@ -95,14 +95,14 @@
     spoken:
     - SolCommon
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
   id: RootSpeakTranslatorImplant
   name: root-speak translator implant
   description: An implant that lets you speak for the trees. Or to the trees.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:
@@ -110,14 +110,14 @@
     spoken:
     - RootSpeak
     requires:
-    - GalacticCommon
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSubdermalImplant
   id: MofficTranslatorImplant
   name: Moffic translator implant
   description: An implant designed to help domesticate mothroaches. Subsequently, allows you to communicate with the moth people.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:
@@ -125,4 +125,34 @@
     spoken:
     - Moffic
     requires:
-    - GalacticCommon
+    - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: ValyrianStandardTranslatorImplant
+  name: valyrian standard translator implant
+  description: An implant giving the ability to understand and speak Valyrian Standard. Chirp!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - ValyrianStandard
+    spoken:
+    - ValyrianStandard
+    requires:
+    - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: AzazibaTranslatorImplant
+  name: azaziba translator implant
+  description: An implant giving the ability to understand and speak Azaziba. # Intended for Admins Only, this item is for lore reasons not obtainable.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Azaziba
+    spoken:
+    - Azaziba
+    requires:
+    - Draconic

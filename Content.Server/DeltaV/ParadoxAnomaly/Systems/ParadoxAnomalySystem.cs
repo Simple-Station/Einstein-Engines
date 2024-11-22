@@ -6,7 +6,7 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Psionics;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Systems;
-using Content.Server.Terminator.Systems;
+using Content.Shared.Abilities.Psionics;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Mind;
@@ -16,7 +16,6 @@ using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Server.DeltaV.ParadoxAnomaly.Systems;
@@ -38,7 +37,6 @@ public sealed class ParadoxAnomalySystem : EntitySystem
     [Dependency] private readonly SharedRoleSystem _role = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
-    [Dependency] private readonly TerminatorSystem _terminator = default!;
 
     public override void Initialize()
     {
@@ -123,7 +121,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
         var spawned = Spawn(species.Prototype, destination);
 
         // Set the kill target to the chosen player
-        _terminator.SetTarget(spawned, mindId);
+        // _terminator.SetTarget(spawned, mindId);
         _genericAntag.MakeAntag(spawned, rule);
 
         //////////////////////////
@@ -144,7 +142,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
 
         if (job.StartingGear != null && _proto.TryIndex<StartingGearPrototype>(job.StartingGear, out var gear))
         {
-            _stationSpawning.EquipStartingGear(spawned, gear, profile);
+            _stationSpawning.EquipStartingGear(spawned, gear);
             _stationSpawning.EquipIdCard(spawned,
                 profile.Name,
                 job,
@@ -156,8 +154,9 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             special.AfterEquip(spawned);
         }
 
-        var psi = EnsureComp<PotentialPsionicComponent>(spawned);
-        _psionics.RollPsionics(spawned, psi, false, 100);
+        // TODO: In a future PR, make it so that the Paradox Anomaly spawns with a completely 1:1 clone of the victim's entire PsionicComponent.
+        if (HasComp<PsionicComponent>(uid))
+            EnsureComp<PsionicComponent>(spawned);
 
         return spawned;
     }

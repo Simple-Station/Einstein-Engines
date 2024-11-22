@@ -5,15 +5,17 @@ using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.Announcers;
 
+/// <summary>
+///     Checks if every announcer has a fallback announcement
+/// </summary>
 [TestFixture]
 [TestOf(typeof(AnnouncerPrototype))]
-public sealed class AnnouncerPrototypeTests
+public sealed class AnnouncerPrototypeTest
 {
+    /// <inheritdoc cref="AnnouncerPrototypeTest"/>
     [Test]
     public async Task TestAnnouncerFallbacks()
     {
-        // Checks if every announcer has a fallback announcement
-
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
 
@@ -24,13 +26,13 @@ public sealed class AnnouncerPrototypeTests
             var success = true;
             var why = new List<string>();
 
-            foreach (var announcer in prototype.EnumeratePrototypes<AnnouncerPrototype>())
+            foreach (var announcer in prototype.EnumeratePrototypes<AnnouncerPrototype>().OrderBy(a => a.ID))
             {
-                if (announcer.Announcements.All(a => a.ID.ToLower() != "fallback"))
-                {
-                    success = false;
-                    why.Add(announcer.ID);
-                }
+                if (announcer.Announcements.Any(a => a.ID.ToLower() == "fallback"))
+                    continue;
+
+                success = false;
+                why.Add(announcer.ID);
             }
 
             Assert.That(success, Is.True, $"The following announcers do not have a fallback announcement:\n  {string.Join("\n  ", why)}");

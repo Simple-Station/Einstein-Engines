@@ -7,6 +7,7 @@ using Content.Shared.Access.Systems;
 using Content.Shared.APC;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
+using Content.Shared.Emp;
 using Content.Shared.Popups;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -37,6 +38,7 @@ public sealed class ApcSystem : EntitySystem
         SubscribeLocalEvent<ApcComponent, GotEmaggedEvent>(OnEmagged);
 
         SubscribeLocalEvent<ApcComponent, EmpPulseEvent>(OnEmpPulse);
+        SubscribeLocalEvent<ApcComponent, EmpDisabledRemoved>(OnEmpDisabledRemoved);
     }
 
     public override void Update(float deltaTime)
@@ -66,11 +68,8 @@ public sealed class ApcSystem : EntitySystem
     //Update the HasAccess var for UI to read
     private void OnBoundUiOpen(EntityUid uid, ApcComponent component, BoundUIOpenedEvent args)
     {
-        if (args.Session.AttachedEntity == null)
-            return;
-
         // TODO: this should be per-player not stored on the apc
-        component.HasAccess = _accessReader.IsAllowed(args.Session.AttachedEntity.Value, uid);
+        component.HasAccess = _accessReader.IsAllowed(args.Actor, uid);
         UpdateApcState(uid, component);
     }
 
@@ -81,21 +80,18 @@ public sealed class ApcSystem : EntitySystem
         if (attemptEv.Cancelled)
         {
             _popup.PopupCursor(Loc.GetString("apc-component-on-toggle-cancel"),
-                args.Session, PopupType.Medium);
+                args.Actor, PopupType.Medium);
             return;
         }
 
-        if (args.Session.AttachedEntity == null)
-            return;
-
-        if (_accessReader.IsAllowed(args.Session.AttachedEntity.Value, uid))
+        if (_accessReader.IsAllowed(args.Actor, uid))
         {
             ApcToggleBreaker(uid, component);
         }
         else
         {
             _popup.PopupCursor(Loc.GetString("apc-component-insufficient-access"),
-                args.Session, PopupType.Medium);
+                args.Actor, PopupType.Medium);
         }
     }
 
@@ -158,12 +154,12 @@ public sealed class ApcSystem : EntitySystem
             (int) MathF.Ceiling(battery.CurrentSupply), apc.LastExternalState,
             battery.CurrentStorage / battery.Capacity);
 
-        _ui.TrySetUiState(uid, ApcUiKey.Key, state, ui: ui);
+        _ui.SetUiState((uid, ui), ApcUiKey.Key, state);
     }
 
     private ApcChargeState CalcChargeState(EntityUid uid, PowerState.Battery battery)
     {
-        if (HasComp<EmaggedComponent>(uid))
+        if (HasComp<EmaggedComponent>(uid) || HasComp<EmpDisabledComponent>(uid))
             return ApcChargeState.Emag;
 
         if (battery.CurrentStorage / battery.Capacity > ApcComponent.HighPowerThreshold)
@@ -190,15 +186,16 @@ public sealed class ApcSystem : EntitySystem
 
         return ApcExternalPowerState.Good;
     }
-
+    
     private void OnEmpPulse(EntityUid uid, ApcComponent component, ref EmpPulseEvent args)
     {
-        if (component.MainBreakerEnabled)
-        {
-            args.Affected = true;
-            args.Disabled = true;
-            ApcToggleBreaker(uid, component);
-        }
+        EnsureComp<EmpDisabledComponent>(uid, out var emp); //event calls before EmpDisabledComponent is added, ensure it to force sprite update
+        UpdateApcState(uid);
+    }
+
+    private void OnEmpDisabledRemoved(EntityUid uid, ApcComponent component, ref EmpDisabledRemoved args)
+    {
+        UpdateApcState(uid);
     }
 }
 

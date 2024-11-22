@@ -1,0 +1,164 @@
+# Clown
+# Backpacks
+- type: loadout
+  id: LoadoutBackpackClown
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackClown
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+
+- type: loadout
+  id: LoadoutBackpackSatchelClown
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelClown
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+
+- type: loadout
+  id: LoadoutBackpackDuffelClown
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelClown
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutServiceClownBedsheetClown
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - BedsheetClown
+
+# Mask
+- type: loadout
+  id: LoadoutServiceClownMaskSexy
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingMaskSexyClown
+
+# Outer
+- type: loadout
+  id: LoadoutServiceClownOuterWinter
+  category: JobsServiceClown
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingOuterWinterClown
+
+- type: loadout
+  id: LoadoutServiceClownOuterClownPriest
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingOuterClownPriest
+
+# Shoes
+- type: loadout
+  id: LoadoutServiceClownBootsWinter
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingShoesBootsWinterClown
+
+# Uniforms
+- type: loadout
+  id: LoadoutServiceClownOutfitJester
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingUniformJumpsuitJester
+    - ClothingHeadHatJester
+    - ClothingShoesJester
+
+- type: loadout
+  id: LoadoutServiceClownOutfitJesterAlt
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingUniformJumpsuitJesterAlt
+    - ClothingHeadHatJesterAlt
+    - ClothingShoesJester

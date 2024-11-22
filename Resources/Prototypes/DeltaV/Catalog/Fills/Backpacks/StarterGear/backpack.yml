@@ -12,34 +12,31 @@
       - id: BaseBallBat
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: ClothingBackpackMedical
   id: ClothingBackpackParamedicFilledDV
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalMedical
       - id: EmergencyRollerBedSpawnFolded
       - id: BodyBagFolded
       - id: Portafib
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: ClothingBackpackMedical
   id: ClothingBackpackPsychologistFilled
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalMedical
       - id: RubberStampPsychologist
 
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: ClothingBackpack
   id: ClothingBackpackLawyerFilled
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
       - id: RubberStampLawyer

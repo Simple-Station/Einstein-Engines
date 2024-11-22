@@ -71,6 +71,14 @@
     Plastic: 25
 
 - type: latheRecipe
+  id: BoneGel
+  result: BoneGel
+  completetime: 2
+  materials:
+    Plastic: 200
+    Plasma: 200
+
+- type: latheRecipe
   id: Gauze
   result: Gauze1
   completetime: 1
@@ -116,7 +124,7 @@
   result: ClothingMaskSterile
   completetime: 2
   materials:
-    Plastic: 100
+    Plastic: 50
 
 - type: latheRecipe
   id: DiseaseSwab

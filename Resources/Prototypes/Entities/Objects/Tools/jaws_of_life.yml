@@ -44,11 +44,24 @@
         changeSound: /Audio/Items/change_jaws.ogg
   - type: MeleeWeapon
     wideAnimationRotation: 90
+    attackRate: 0.85
+    range: 1.65
     damage:
       types:
         Blunt: 10
+        Slash: 2
+    bluntStaminaDamageFactor: 2.0
+    heavyRateModifier: 0.8
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 5
+    maxTargets: 1
+    angle: 20
     soundHit:
       collection: MetalThud
+  - type: ReverseEngineering # Delta
+    difficulty: 3
+    recipes:
+      - JawsOfLife
 
 - type: entity
   name: syndicate jaws of life
@@ -87,4 +100,5 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 14
+        Blunt: 12
+        Slash: 2

@@ -16,11 +16,11 @@ public sealed class HarpyVisualsSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<HarpySingerComponent, DidEquipEvent>(OnDidEquipEvent);
-        SubscribeLocalEvent<HarpySingerComponent, DidUnequipEvent>(OnDidUnequipEvent);
+        SubscribeLocalEvent<Traits.Assorted.Components.SingerComponent, DidEquipEvent>(OnDidEquipEvent);
+        SubscribeLocalEvent<Traits.Assorted.Components.SingerComponent, DidUnequipEvent>(OnDidUnequipEvent);
     }
 
-    private void OnDidEquipEvent(EntityUid uid, HarpySingerComponent component, DidEquipEvent args)
+    private void OnDidEquipEvent(EntityUid uid, Traits.Assorted.Components.SingerComponent component, DidEquipEvent args)
     {
         if (args.Slot == "outerClothing" && _tagSystem.HasTag(args.Equipment, HarpyWingsTag))
         {
@@ -29,7 +29,7 @@ public sealed class HarpyVisualsSystem : EntitySystem
         }
     }
 
-    private void OnDidUnequipEvent(EntityUid uid, HarpySingerComponent component, DidUnequipEvent args)
+    private void OnDidUnequipEvent(EntityUid uid, Traits.Assorted.Components.SingerComponent component, DidUnequipEvent args)
     {
         if (args.Slot == "outerClothing" && _tagSystem.HasTag(args.Equipment, HarpyWingsTag))
         {

@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseStructure
   id: SophicScribe
-  name: sophie
+  name: Sophia
   description: Latest reports on the Noösphere!
   components:
   - type: Sprite
@@ -16,24 +16,33 @@
   - type: Speech
     speechSounds: Tenor
   - type: IntrinsicRadioReceiver
-    channels:
-    - Common
-    - Science
   - type: IntrinsicRadioTransmitter
-    channels:
-    - Common
-    - Science
   - type: ActiveRadio
     channels:
     - Common
     - Science
-  - type: PotentialPsionic #this makes her easier to access for glimmer events, dw about it
+  - type: Prayable
+  - type: Actions
   - type: Psionic
+    removable: false
+    psychognomicDescriptors:
+      - p-descriptor-old
+      - p-descriptor-demiurgic
+      - p-descriptor-mysterious
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+      - NoosphericZapPower
   - type: Grammar
     attributes:
       gender: female
       proper: true
   - type: SpriteFade
-  - type: GuideHelp
-    guides:
-    - Psionics
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic

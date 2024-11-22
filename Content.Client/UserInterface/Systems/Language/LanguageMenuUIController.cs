@@ -2,7 +2,6 @@ using Content.Client.Language;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Input;
-using Content.Shared.Language.Events;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input.Binding;
@@ -18,18 +17,23 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     public LanguageMenuWindow? LanguageWindow;
     private MenuButton? LanguageButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.LanguageButton;
 
-    public override void Initialize()
-    {
-        SubscribeNetworkEvent((LanguagesUpdatedMessage message, EntitySessionEventArgs _) =>
-            LanguageWindow?.UpdateState(message.CurrentLanguage, message.Spoken));
-    }
-
     public void OnStateEntered(GameplayState state)
     {
         DebugTools.Assert(LanguageWindow == null);
 
         LanguageWindow = UIManager.CreateWindow<LanguageMenuWindow>();
         LayoutContainer.SetAnchorPreset(LanguageWindow, LayoutContainer.LayoutPreset.CenterTop);
+
+        LanguageWindow.OnClose += () =>
+        {
+            if (LanguageButton != null)
+                LanguageButton.Pressed = false;
+        };
+        LanguageWindow.OnOpen += () =>
+        {
+            if (LanguageButton != null)
+                LanguageButton.Pressed = true;
+        };
 
         CommandBinds.Builder.Bind(ContentKeyFunctions.OpenLanguageMenu,
             InputCmdHandler.FromDelegate(_ => ToggleWindow())).Register<LanguageMenuUIController>();
@@ -60,12 +64,6 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
             return;
 
         LanguageButton.OnPressed += LanguageButtonPressed;
-
-        if (LanguageWindow == null)
-            return;
-
-        LanguageWindow.OnClose += () => LanguageButton.Pressed = false;
-        LanguageWindow.OnOpen += () => LanguageButton.Pressed = true;
     }
 
     private void LanguageButtonPressed(ButtonEventArgs args)

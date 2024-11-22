@@ -48,7 +48,7 @@
   - type: StaticPrice #was DynamicPrice
     price: 75
   - type: RadiationBlocker
-    resistance: 2
+    resistance: 1
   - type: BlockWeather
 
 - type: entity
@@ -399,7 +399,7 @@
     key: walls
     base: plasma
   - type: RadiationBlocker
-    resistance: 5
+    resistance: 7
 
 - type: entity
   parent: BaseWall
@@ -549,8 +549,6 @@
         node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
-    destroySound:
-      collection: MetalBreak
   - type: IconSmooth
     key: walls
     base: reinf_over
@@ -570,7 +568,7 @@
   - type: StaticPrice
     price: 150
   - type: RadiationBlocker
-    resistance: 5
+    resistance: 8
 
 - type: entity
   parent: WallReinforced
@@ -806,8 +804,6 @@
         node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
-    destroySound:
-      collection: MetalBreak
   - type: Construction
     graph: Girder
     node: diagonalshuttleWall
@@ -977,7 +973,7 @@
     key: walls
     base: uranium
   - type: RadiationBlocker
-    resistance: 6
+    resistance: 10
 
 - type: entity
   parent: BaseWall
@@ -1212,7 +1208,7 @@
   name: force wall
   components:
     - type: TimedDespawn
-      lifetime: 20
+      lifetime: 12
     - type: Tag
       tags:
         - Wall

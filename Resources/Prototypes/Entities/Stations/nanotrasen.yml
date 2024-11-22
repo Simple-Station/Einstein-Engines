@@ -27,7 +27,7 @@
     - BaseStationNanotrasen
     - BaseRandomStation
     - BaseStationMail # Nyano component, required for station mail to function
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Transform
 
@@ -37,7 +37,7 @@
     - BaseStation
     - BaseStationAlertLevels
     - BaseStationNanotrasen
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Transform
 
@@ -48,6 +48,31 @@
   - BaseStationJobsSpawning
   - BaseStationRecords
   - BaseStationNanotrasen
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Transform
+
+- type: entity
+  id: StandardNanotrasenStationNoATS
+  parent:
+    - BaseStation
+    - BaseStationNews
+    - BaseStationCargo
+    - BaseStationJobsSpawning
+    - BaseStationRecords
+    - BaseStationArrivals
+    - BaseStationGateway
+    - BaseStationShuttlesSalvageOnly
+    - BaseStationCentcomm
+    - BaseStationEvacuation
+    - BaseStationAlertLevels
+    - BaseStationMagnet
+    - BaseStationExpeditions
+    - BaseStationSiliconLawCrewsimov
+    - BaseStationAllEventsEligible
+    - BaseStationNanotrasen
+    - BaseRandomStation
+    - BaseStationMail
+  categories: [ HideSpawnMenu ]
   components:
     - type: Transform

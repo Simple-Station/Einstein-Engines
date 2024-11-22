@@ -3,8 +3,7 @@
   id: BaseFlatpack
   name: base flatpack
   description: A flatpack used for constructing something.
-  categories:
-  - hideSpawnMenu
+  categories: [ HideSpawnMenu ]
   components:
   - type: Item
     size: Large
@@ -107,6 +106,20 @@
   - type: Sprite
     layers:
     - state: containment-field-generator
+  - type: GuideHelp
+    guides: [ Singularity, Power ]
+
+- type: entity
+  parent: BaseFlatpack
+  id: EmitterFlatpack
+  name: emitter flatpack
+  description: A flatpack used for constructing an emitter.
+  components:
+  - type: Flatpack
+    entity: Emitter
+  - type: Sprite
+    layers:
+    - state: emitter
   - type: GuideHelp
     guides: [ Singularity, Power ]
 

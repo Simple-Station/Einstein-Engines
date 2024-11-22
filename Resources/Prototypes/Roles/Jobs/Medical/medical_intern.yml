@@ -15,6 +15,12 @@
   access:
   - Medical
   - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CPRTraining
+    - type: SurgerySpeedModifier
+      SpeedModifier: 1.5
 
 - type: startingGear
   id: MedicalInternGear
@@ -24,7 +30,6 @@
     shoes: ClothingShoesColorWhite
     id: MedicalInternPDA
     ears: ClothingHeadsetMedical
-    belt: ClothingBeltMedicalFilled
     pocket2: BookMedicalReferenceBook
   # innerClothingSkirt: ClothingUniformJumpskirtColorWhite # DeltaV
   satchel: ClothingBackpackSatchelMedicalFilled

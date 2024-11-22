@@ -59,8 +59,8 @@ public sealed partial class AnnouncerSystem
         sender ??= Loc.GetString($"announcer-{announcerOverride?.ID ?? Announcer.ID}-name");
 
         // If the announcement has a message override, use that instead of the message parameter
-        if (GetAnnouncementMessage(announcementId, announcerOverride?.ID ?? Announcer.ID, localeArgs) is { } announcementMessage)
-            locale = announcementMessage;
+        if (GetAnnouncementMessage(announcementId, announcerOverride?.ID ?? Announcer.ID) is { } announcementMessage)
+            locale = Loc.GetString(announcementMessage, localeArgs);
         else
             locale = Loc.GetString(locale, localeArgs);
 

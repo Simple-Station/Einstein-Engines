@@ -1,6 +1,6 @@
 - type: entity
   name: arctic fox
-  parent: SimpleMobBase
+  parent: MobFox
   id: MobArcticFox
   description: Wears a regal coat of snowy elegance, belying its cold and resourceful nature.
   components:
@@ -30,8 +30,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -40,10 +40,6 @@
         Base: arcticfox_crit
       Dead:
         Base: arcticfox_dead
-  - type: Butcherable
-    spawned:
-    - id: FoodMeat
-      amount: 3
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-soft-floofy
@@ -56,25 +52,10 @@
     coldDamage:
       types:
         Cold: 0.1
-  - type: Grammar
-    attributes:
-      gender: epicene
-  - type: Bloodstream
-    bloodMaxVolume: 100
-  - type: MobPrice
-    price: 400
-  - type: Tag
-    tags:
-    - VimPilot
-  - type: LanguageKnowledge
-    speaks:
-    - Fox
-    understands:
-    - Fox
 
 - type: entity
   name: security dog
-  parent: SimpleMobBase
+  parent: MobCorgi # There isn't a base dog mob, surprisingly.
   id: MobSecDog
   description: Funnily enough, this pig is actually a dog.
   components:
@@ -101,7 +82,6 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
-  - type: Physics
   - type: Speech
     speechVerb: Canine
     speechSounds: Vulpkanin
@@ -145,8 +125,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -184,4 +164,4 @@
     - Dog
     understands:
     - Dog
-    - GalacticCommon
+    - TauCetiBasic

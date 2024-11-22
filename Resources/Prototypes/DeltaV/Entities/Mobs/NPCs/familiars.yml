@@ -63,6 +63,15 @@
   - type: Damageable
     damageContainer: CorporealSpirit
     damageModifierSet: CorporealSpirit
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
+    allowedStates:
+    - Alive
+    damageCap: 120
+    damage:
+      types:
+        Cold: -0.07
+      groups:
+        Brute: -0.07
   - type: Speech
     speechSounds: Bass
   - type: Puller
@@ -81,10 +90,15 @@
   - type: ZombieImmune # No zombie servant
   - type: RandomMetadata
     nameSegments: [names_golem]
-  - type: PotentialPsionic
   - type: Psionic
     removable: false
-  # - type: PyrokinesisPower # Pending psionic rework
+    psychognomicDescriptors:
+      - p-descriptor-bound
+      - p-descriptor-cyclic
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - PyrokinesisPower
+      - TelepathyPower
   - type: Grammar
     attributes:
       proper: true
@@ -97,9 +111,9 @@
     - NanoTrasen
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true
@@ -108,7 +122,7 @@
     requirements:
     - !type:DepartmentTimeRequirement
       department: Epistemics
-      time: 14400 # DeltaV - 4 hours
+      time: 14400 # 4 hours
 
 - type: entity
   parent: WelderExperimental
@@ -130,10 +144,6 @@
   - type: Welder
     fuelReagent: Phlogiston
     tankSafe: true
-    litMeleeDamageBonus:
-      types: # When lit, negate standard melee damage and replace with heat
-        Heat: 10
-        Blunt: -10
 #    welderOnSounds:
 #      collection: WelderIfritHandOn
 #    welderOffSounds:

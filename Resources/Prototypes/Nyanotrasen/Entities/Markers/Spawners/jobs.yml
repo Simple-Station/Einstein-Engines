@@ -65,7 +65,7 @@
 - type: entity
   id: SpawnPointForensicMantis
   parent: SpawnPointJobBase
-  name: psionic mantis # DeltaV - Rename Forensic Mantis to Psionic Mantis
+  name: mantis
   components:
   - type: SpawnPoint
     job_id: ForensicMantis

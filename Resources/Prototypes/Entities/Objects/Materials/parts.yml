@@ -68,6 +68,39 @@
           Quantity: 4.5
         - ReagentId: Carbon
           Quantity: 0.5
+  - type: UserInterface
+    interfaces:
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: ShortConstruction
+    entries:
+    - prototype: Grille
+    - prototype: GrilleDiagonal
+    - category:
+        name: Railings
+        icon:
+          sprite: Structures/Walls/railing.rsi
+          state: side
+        entries:
+        - prototype: Railing
+        - prototype: RailingCorner
+        - prototype: RailingRound
+        - prototype: RailingCornerSmall
+    - category:
+        name: Glass
+        icon:
+          sprite: Objects/Materials/Sheets/glass.rsi
+          state: rglass_3
+        entries:
+        - prototype: SheetRPGlass
+        - prototype: SheetRPGlass0
+        - prototype: SheetRUGlass
+        - prototype: SheetRUGlass0
+        - prototype: SheetRGlass
 
 - type: entity
   parent: PartRodMetal

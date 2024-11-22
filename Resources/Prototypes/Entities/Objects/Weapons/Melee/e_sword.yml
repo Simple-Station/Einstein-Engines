@@ -35,8 +35,8 @@
         variation: 0.125
     activatedDamage:
         types:
-            Slash: 15
-            Heat: 15
+            Slash: 8
+            Heat: 10
             Structural: 20
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_sword.rsi
@@ -49,7 +49,7 @@
         map: [ "blade" ]
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1
+    attackRate: 1.25
     damage:
       types:
         Blunt: 4.5
@@ -78,8 +78,26 @@
     malus: 0
   - type: Reflect
     enabled: false
+    reflectProb: 0.5
+    minReflectProb: 0.25
+  - type: Tag
+    tags:
+      - NoPaint
   - type: IgnitionSource
     temperature: 700
+
+- type: entity
+  name: antique energy sword
+  parent: EnergySword
+  id: EnergySwordHoS
+  description: An elegant weapon fit for a prince, this otherwise plain silver hilt is engraved with, "My Love".
+  components:
+    - type: EnergySword
+      activatedColor: "#00CCFF"
+      colorOptions:
+       - "#00CCFF"
+    - type: StealTarget
+      stealGroup: HoSAntiqueWeapon
 
 - type: entity
   name: pen
@@ -106,8 +124,8 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 10
-            Heat: 10
+            Slash: 4
+            Heat: 8
     deactivatedSecret: true
   - type: ItemToggleActiveSound
     activeSound:
@@ -156,6 +174,7 @@
   - type: Tag
     tags:
     - Write
+    - NoPaint
   - type: DisarmMalus
     malus: 0
 
@@ -225,7 +244,7 @@
   name: double-bladed energy sword
   parent: EnergySword
   id: EnergySwordDouble
-  description: Syndicate Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.
+  description: Syndicate Command's intern thought that having only one blade on energy swords was not cool enough. This can be stored in pockets.
   components:
   - type: EnergySword
   - type: ItemToggle
@@ -245,8 +264,8 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 12
-            Heat: 12
+            Slash: 8
+            Heat: 13
             Structural: 15
   - type: ItemToggleActiveSound
     activeSound:
@@ -276,7 +295,8 @@
     size: Small
     sprite: Objects/Weapons/Melee/e_sword_double-inhands.rsi
   - type: Reflect
-    reflectProb: .80 #DeltaV: 80% Energy Reflection but no ballistics.
+    reflectProb: .80
+    minReflectProb: .65
     spread: 75
     reflects:
       - Energy #DeltaV: 80% Energy Reflection but no ballistics.

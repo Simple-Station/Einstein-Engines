@@ -51,7 +51,7 @@
   - type: StaticPrice
     price: 60
   - type: RadiationBlocker
-    resistance: 2
+    resistance: 4
 
 - type: entity
   id: PlasmaWindowDirectional
@@ -113,7 +113,7 @@
     state: state0
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls
     base: state
   - type: Icon
     sprite: Structures/Windows/plasma_diagonal.rsi
