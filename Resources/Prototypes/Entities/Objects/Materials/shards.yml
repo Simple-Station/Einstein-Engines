@@ -48,6 +48,10 @@
         Slash: 2
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/bladeslice.ogg
+  - type: EmbedPassiveDamage
+    damage:
+      types:
+        Slash: 0.1
   - type: Tag
     tags:
     - Trash

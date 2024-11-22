@@ -65,6 +65,11 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (args.Cancelled || _netManager.IsClient)
             return;
 
+        RemoveEmbed(uid, component, args.User)
+    }
+
+    private void RemoveEmbed(EntityUid uid, EmbeddableProjectileComponent component, EntityUid? remover = null)
+    {
         if (component.DeleteOnRemove)
         {
             QueueDel(uid);
@@ -85,12 +90,13 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         }
 
         // Land it just coz uhhh yeah
-        var landEv = new LandEvent(args.User, true);
+        var landEv = new LandEvent(remover, true);
         RaiseLocalEvent(uid, ref landEv);
         _physics.WakeBody(uid, body: physics);
 
         // try place it in the user's hand
-        _hands.TryPickupAnyHand(args.User, uid);
+        if (remover != null)
+            _hands.TryPickupAnyHand(remover, uid);
     }
 
     private void OnEmbedThrowDoHit(EntityUid uid, EmbeddableProjectileComponent component, ThrowDoHitEvent args)
@@ -149,12 +155,6 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         Dirty(id, component);
     }
 
-    [Serializable, NetSerializable]
-    private sealed partial class RemoveEmbeddedProjectileEvent : DoAfterEvent
-    {
-        public override DoAfterEvent Clone() => this;
-    }
-
     /// <summary>
     /// Prevent players with the Pacified status effect from throwing embeddable projectiles.
     /// </summary>
@@ -188,3 +188,12 @@ public record struct ProjectileReflectAttemptEvent(EntityUid ProjUid, Projectile
 /// </summary>
 [ByRefEvent]
 public record struct ProjectileHitEvent(DamageSpecifier Damage, EntityUid Target, EntityUid? Shooter = null);
+
+/// <summary>
+///   Raised when an embedded projectile is removed.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed partial class RemoveEmbeddedProjectileEvent : DoAfterEvent
+{
+    public override DoAfterEvent Clone() => this;
+}
