@@ -9,7 +9,7 @@ namespace Content.Shared.Flight;
 ///     Adds an action that allows the user to become temporarily
 ///     weightless at the cost of stamina and hand usage.
 /// </summary>
-[RegisterComponent, NetworkedComponent(), AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class FlightComponent : Component
 {
     [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
