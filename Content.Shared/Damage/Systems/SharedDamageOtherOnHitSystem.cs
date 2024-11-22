@@ -154,12 +154,13 @@ namespace Content.Shared.Damage.Systems
             if (!Resolve(uid, ref component, false))
                 return new DamageSpecifier();
 
-            var damage = component.Damage ?? new DamageSpecifier();
+            var ev = new GetThrowingDamageEvent(uid, new (component.Damage ?? new DamageSpecifier()), new(), user);
+            RaiseLocalEvent(uid, ref ev);
 
-            if (user is EntityUid userUid && component.ContestArgs != null)
-                return damage * _contests.ContestConstructor(userUid, component.ContestArgs);
-            else
-                return damage;
+            if (component.ContestArgs is not null && user is EntityUid userUid)
+                ev.Damage *= _contests.ContestConstructor(userUid, component.ContestArgs);
+
+            return DamageSpecifier.ApplyModifierSets(ev.Damage, ev.Modifiers);
         }
     }
 }
