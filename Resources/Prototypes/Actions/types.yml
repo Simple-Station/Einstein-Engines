@@ -404,6 +404,7 @@
       !type:FabricateActionEvent
       fabrication: FoodGumball
 
+- type: entity
   id: ActionToggleMesons
   name: Toggle Mesons
   description: Toggle your pair of mesons.
