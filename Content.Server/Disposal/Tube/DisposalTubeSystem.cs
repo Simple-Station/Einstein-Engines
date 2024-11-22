@@ -340,6 +340,7 @@ namespace Content.Server.Disposal.Tube
         {
             if (!Resolve(target, ref targetTube))
                 return null;
+
             var oppositeDirection = nextDirection.GetOpposite();
 
             var xform = Transform(target);
@@ -347,7 +348,7 @@ namespace Content.Server.Disposal.Tube
                 return null;
 
             var position = xform.Coordinates;
-            var entities = _mapSystem.GetInDir(target, grid, position, nextDirection);
+            var entities = _mapSystem.GetInDir((EntityUid) xform.GridUid, grid, position, nextDirection);
 
             foreach (var entity in entities)
             {

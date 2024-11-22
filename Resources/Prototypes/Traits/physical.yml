@@ -450,12 +450,18 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+        - Gladiator
   functions:
     - !type:TraitAddComponent
       components:
         - type: Prying
           speedModifier: 1
           pryPowered: true
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-arm-message
+          fontSize: 12
+          requireDetailRange: true
 
 - type: trait
   id: PlateletFactories
@@ -489,25 +495,26 @@
 - type: trait
   id: DermalArmor
   category: Physical
-  points: -9
+  points: -6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: Damageable
-          damageModifierSet: DermalArmor
+    - !type:TraitAddArmor
+      damageModifierSets:
+        - DermalArmor
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-dermal-armor-message
+          fontSize: 12
+          requireDetailRange: true
 
 - type: trait
   id: CyberEyes
   category: Physical
-  points: -8
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -520,14 +527,34 @@
         - Blindness
         - Nearsighted
   functions:
-    - !type:TraitRemoveComponent
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-cybereyes-message
+          fontSize: 12
+          requireDetailRange: true
+    - !type:TraitReplaceComponent
       components:
-        - type: Flashable
+        - type: Flashable # Effectively, removes any flash-vulnerability species traits.
+
+
+- type: trait
+  id: FlareShielding
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+  functions:
     - !type:TraitAddComponent
       components:
         - type: FlashImmunity
         - type: EyeProtection
-        - type: CyberEyes
+
 
 - type: trait
   id: CyberEyesSecurity
