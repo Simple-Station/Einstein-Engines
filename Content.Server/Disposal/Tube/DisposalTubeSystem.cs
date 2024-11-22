@@ -340,6 +340,7 @@ namespace Content.Server.Disposal.Tube
         {
             if (!Resolve(target, ref targetTube))
                 return null;
+
             var oppositeDirection = nextDirection.GetOpposite();
 
             var xform = Transform(target);

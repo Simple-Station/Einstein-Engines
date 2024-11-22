@@ -26,9 +26,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
         [Dependency] private readonly SharedMapSystem _maps = default!;
         [Dependency] private readonly SharedPhysicsSystem _physicsSystem = default!;
         [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
-        [Dependency] private readonly ILogManager _logManager = default!;
 
-        private ISawmill _sawmill = default!;
         private EntityQuery<DisposalTubeComponent> _disposalTubeQuery;
         private EntityQuery<DisposalUnitComponent> _disposalUnitQuery;
         private EntityQuery<MetaDataComponent> _metaQuery;
@@ -39,7 +37,6 @@ namespace Content.Server.Disposal.Unit.EntitySystems
         {
             base.Initialize();
 
-            _sawmill = _logManager.GetSawmill("DisposalSystem");
             _disposalTubeQuery = GetEntityQuery<DisposalTubeComponent>();
             _disposalUnitQuery = GetEntityQuery<DisposalUnitComponent>();
             _metaQuery = GetEntityQuery<MetaDataComponent>();
@@ -91,11 +88,13 @@ namespace Content.Server.Disposal.Unit.EntitySystems
 
             if (!Resolve(uid, ref holder, ref holderTransform))
                 return;
+
             if (holder.IsExitingDisposals)
             {
                 Log.Error("Tried exiting disposals twice. This should never happen.");
                 return;
             }
+
             holder.IsExitingDisposals = true;
 
             // Check for a disposal unit to throw them into and then eject them from it.
@@ -166,10 +165,8 @@ namespace Content.Server.Disposal.Unit.EntitySystems
         public bool EnterTube(EntityUid holderUid, EntityUid toUid, DisposalHolderComponent? holder = null, TransformComponent? holderTransform = null, DisposalTubeComponent? to = null, TransformComponent? toTransform = null)
         {
             if (!Resolve(holderUid, ref holder, ref holderTransform))
-            {
-                _sawmill.Info("Failed resolve for holderUid.");
                 return false;
-            }
+
             if (holder.IsExitingDisposals)
             {
                 Log.Error("Tried entering tube after exiting disposals. This should never happen.");
@@ -178,7 +175,6 @@ namespace Content.Server.Disposal.Unit.EntitySystems
 
             if (!Resolve(toUid, ref to, ref toTransform))
             {
-                _sawmill.Info("Failed to resolve toUid");
                 ExitDisposals(holderUid, holder, holderTransform);
                 return false;
             }
@@ -192,7 +188,6 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             // Insert into next tube
             if (!_containerSystem.Insert(holderUid, to.Contents))
             {
-                _sawmill.Info("Failed to insert into next tube.");
                 ExitDisposals(holderUid, holder, holderTransform);
                 return false;
             }
@@ -214,7 +209,6 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             // Invalid direction = exit now!
             if (holder.CurrentDirection == Direction.Invalid)
             {
-                _sawmill.Info("Direction is invalid.");
                 ExitDisposals(holderUid, holder, holderTransform);
                 return false;
             }
@@ -223,9 +217,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             if (holder.CurrentDirection != holder.PreviousDirection)
             {
                 foreach (var ent in holder.Container.ContainedEntities)
-                {
                     _damageable.TryChangeDamage(ent, to.DamageOnTurn);
-                }
                 _audio.PlayPvs(to.ClangSound, toUid);
             }
 
@@ -236,9 +228,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
         {
             var query = EntityQueryEnumerator<DisposalHolderComponent>();
             while (query.MoveNext(out var uid, out var holder))
-            {
                 UpdateComp(uid, holder, frameTime);
-            }
         }
 
         private void UpdateComp(EntityUid uid, DisposalHolderComponent holder, float frameTime)
@@ -247,9 +237,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             {
                 var time = frameTime;
                 if (time > holder.TimeLeft)
-                {
                     time = holder.TimeLeft;
-                }
 
                 holder.TimeLeft -= time;
                 frameTime -= time;
@@ -257,7 +245,6 @@ namespace Content.Server.Disposal.Unit.EntitySystems
                 if (!EntityManager.EntityExists(holder.CurrentTube))
                 {
                     ExitDisposals(uid, holder);
-                    _sawmill.Info("CurrentTube doesn't exist.");
                     break;
                 }
 
@@ -280,19 +267,15 @@ namespace Content.Server.Disposal.Unit.EntitySystems
 
                 // Find next tube
                 var nextTube = _disposalTubeSystem.NextTubeFor(currentTube, holder.CurrentDirection);
-                if (!EntityManager.EntityExists(nextTube))
+                if (!EntityManager.EntityExists(nextTube)) 
                 {
                     ExitDisposals(uid, holder);
-                    _sawmill.Info("Next tube doesn't exist.");
                     break;
                 }
 
                 // Perform remainder of entry process
                 if (!EnterTube(uid, nextTube!.Value, holder))
-                {
-                    _sawmill.Info("Failed to enter tube.");
                     break;
-                }
             }
         }
     }
