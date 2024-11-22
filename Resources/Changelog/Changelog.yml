@@ -8081,3 +8081,22 @@ Entries:
   id: 6535
   time: '2024-11-22T01:02:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1250
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed chair visuals drawing depth wrongly if you sat in a north-facing
+        chair.
+    - type: Fix
+      message: Fixed buckling doing several buckles each time you did one.
+    - type: Fix
+      message: Fixed the magic mirror.
+    - type: Fix
+      message: Fixed beds re-positioning you every few seconds.
+    - type: Fix
+      message: Fixed E not opening containers that are in another container.
+    - type: Fix
+      message: Fixed disposal systems not flushing or ejecting properly.
+  id: 6536
+  time: '2024-11-22T01:03:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1256
