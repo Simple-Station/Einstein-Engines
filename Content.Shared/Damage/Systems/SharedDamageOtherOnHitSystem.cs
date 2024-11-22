@@ -1,5 +1,6 @@
 using Content.Shared.Administration.Logs;
 using Content.Shared.Camera;
+using Content.Shared.Contests;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
@@ -31,6 +32,7 @@ namespace Content.Shared.Damage.Systems
         [Dependency] private readonly SharedPhysicsSystem _physics = default!;
         [Dependency] private readonly MeleeSoundSystem _meleeSound = default!;
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
+        [Dependency] private readonly ContestsSystem _contests = default!;
 
         public override void Initialize()
         {
@@ -62,9 +64,7 @@ namespace Content.Shared.Damage.Systems
             if (component.HitQuantity >= component.MaxHitQuantity)
                 return;
 
-            TryComp<MeleeWeaponComponent>(uid, out var melee);
-
-            var modifiedDamage = _damageable.TryChangeDamage(args.Target, component.Damage ?? new DamageSpecifier(), component.IgnoreResistances, origin: args.Component.Thrower);
+            var modifiedDamage = _damageable.TryChangeDamage(args.Target, GetDamage(uid, component, args.Component.Thrower), component.IgnoreResistances, origin: args.Component.Thrower);
 
             // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
             if (modifiedDamage != null)
@@ -144,6 +144,22 @@ namespace Content.Shared.Damage.Systems
         private void OnThrown(EntityUid uid, DamageOtherOnHitComponent component, ThrownEvent args)
         {
             component.HitQuantity = 0;
+        }
+
+        /// <summary>
+        ///   Gets the total damage a throwing weapon does.
+        /// </summary>
+        public DamageSpecifier GetDamage(EntityUid uid, DamageOtherOnHitComponent? component = null, EntityUid? user = null)
+        {
+            if (!Resolve(uid, ref component, false))
+                return new DamageSpecifier();
+
+            var damage = component.Damage ?? new DamageSpecifier();
+
+            if (user is EntityUid userUid && component.ContestArgs != null)
+                return damage * _contests.ContestConstructor(userUid, component.ContestArgs);
+            else
+                return damage;
         }
     }
 }

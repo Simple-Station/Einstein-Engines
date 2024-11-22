@@ -51,7 +51,7 @@ namespace Content.Server.Damage.Systems
 
         private void OnDamageExamine(EntityUid uid, DamageOtherOnHitComponent component, ref DamageExamineEvent args)
         {
-            _damageExamine.AddDamageExamine(args.Message, component.Damage ?? new DamageSpecifier(), Loc.GetString("damage-throw"));
+            _damageExamine.AddDamageExamine(args.Message, GetDamage(uid, component, args.User), Loc.GetString("damage-throw"));
 
             if (component.StaminaCost == 0)
                 return;

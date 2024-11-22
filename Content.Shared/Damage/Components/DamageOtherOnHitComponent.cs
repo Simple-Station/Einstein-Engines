@@ -1,3 +1,4 @@
+using Content.Shared.Contests;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
@@ -33,6 +34,18 @@ namespace Content.Shared.Damage.Components
 
         [DataField, AutoNetworkedField]
         public SoundSpecifier? SoundHit;
+
+        /// <summary>
+        ///   Arguments for modifying the throwing weapon damage with contests.
+        ///   These are the same ContestArgs in MeleeWeaponComponent.
+        /// </summary>
+        [DataField]
+        public ContestArgs ContestArgs = new ContestArgs
+        {
+            DoStaminaInteraction = true,
+            StaminaDisadvantage = true,
+            DoHealthInteraction = true,
+        };
 
         /// <summary>
         ///     Damage done by this item when deactivated.
