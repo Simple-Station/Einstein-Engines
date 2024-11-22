@@ -8072,3 +8072,12 @@ Entries:
   id: 6534
   time: '2024-11-22T01:01:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1253
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now touch one anomaly scanner with another to copy the anomaly
+        scan data from it.
+  id: 6535
+  time: '2024-11-22T01:02:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1250
