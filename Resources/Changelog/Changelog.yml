@@ -8047,3 +8047,28 @@ Entries:
   id: 6533
   time: '2024-11-22T01:01:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1260
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Five new functions for the Trait System, AddArmor, PushDescription,
+        ModifyMobThresholds, AddSolutionContainer,  and ModifyStamina.
+    - type: Tweak
+      message: >-
+        CyberEyes Basic System has been split, now Flash Protection is a
+        separate module. 
+    - type: Add
+      message: >-
+        Dermal Armor no longer replaces your original species damage
+        resistances. It now stacks multiplicatively with your original
+        resistances. 
+    - type: Tweak
+      message: Dermal Armor can now be taken by any species, not just Humans.
+    - type: Add
+      message: >-
+        Dermal Armor, and Bionic Arms can now be revealed by a close
+        examination. Shift click on someone within touching distance will reveal
+        if they have these "Obvious" cyberware.
+  id: 6534
+  time: '2024-11-22T01:01:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1253
