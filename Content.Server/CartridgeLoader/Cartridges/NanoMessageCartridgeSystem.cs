@@ -13,6 +13,7 @@ using Content.Shared.NanoMessage.Data;
 using Content.Shared.NanoMessage.Events.Cartridge;
 using Content.Shared.PDA;
 using Robust.Shared.Containers;
+using Robust.Shared.Timing;
 
 
 namespace Content.Server.CartridgeLoader.Cartridges;
@@ -29,7 +30,7 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<NanoMessageServerComponent, NanoMessageClientsChangedEvent>(OnServerClientsChanged);
-        SubscribeLocalEvent<NanoMessageCartridgeComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<NanoMessageCartridgeComponent, CartridgeAddedEvent>(OnInstall);
         SubscribeLocalEvent<NanoMessageCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<NanoMessageCartridgeComponent, CartridgeMessageEvent>(OnUiMessage);
         SubscribeLocalEvent<NanoMessageCartridgeComponent, CartridgeAfterInteractEvent>(OnAfterInteract);
@@ -51,28 +52,38 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
         }
     }
 
-    private void OnMapInit(Entity<NanoMessageCartridgeComponent> ent, ref MapInitEvent args)
+    private void OnInstall(Entity<NanoMessageCartridgeComponent> ent, ref CartridgeAddedEvent args)
     {
         // Update each cartridge's preferred name if the PDA is worn
-        if (!_container.TryGetContainingContainer((ent.Owner, null, null), out var pdaContainer)
-            || !TryComp<PdaComponent>(pdaContainer.Owner, out var pda)
-            || !TryComp<NanoMessageClientComponent>(ent, out var cartridgeClient))
+        var loader = args.Loader;
+        if (!TryComp<PdaComponent>(loader, out var pdaComp)
+            || !TryComp<NanoMessageClientComponent>(ent, out var cartridgeClient)
+            || TryComp<CartridgeComponent>(ent, out var cartridge) && cartridge.InstallationStatus == InstallationStatus.Cartridge)
             return;
 
-        // Try to find the entity wearing this PDA and use its name. If there's no such entity, try to inherit it from the ID card.
-        string? name = null;
-        if (_container.TryGetOuterContainer(pdaContainer.Owner, Transform(pdaContainer.Owner), out var inventoryContainer)
-            && inventoryContainer.Owner is var pdaOwner
-            && HasComp<MobStateComponent>(pdaOwner)
-        )
-            name = Identity.Name(pdaOwner, EntityManager);
-        else if (pda.ContainedId is {} idCard && TryComp<IdCardComponent>(idCard, out var idComp))
-            name = idComp.FullName;
+        // The task is delayed because the entity name may not be set at this point
+        Timer.Spawn(0, () =>
+        {
+            // Try to find the entity wearing this PDA and use its name. If there's no such entity, try to inherit it from the ID card.
+            string? name = null;
+            if (_container.TryGetOuterContainer(loader, Transform(loader), out var inventoryContainer)
+                && inventoryContainer.Owner is var pdaHolder
+                && HasComp<MobStateComponent>(pdaHolder))
+            {
+                name = Identity.Name(pdaHolder, EntityManager);
+            }
+            else if (pdaComp.ContainedId is { } idCard && TryComp<IdCardComponent>(idCard, out var idComp))
+            {
+                name = idComp.FullName
+                    ?? Loc.GetString("nano-message-cartridge-pda-default-job-name", ("job", idComp.JobTitle ?? "unknown"));
+            }
 
-        if (name is null)
-            return;
+            if (name is null)
+                return;
 
-        cartridgeClient.PreferredName = name;
+            cartridgeClient.PreferredName = name;
+            _servers.UpdateClientData(cartridgeClient.ConnectedServer, (ent, cartridgeClient));
+        });
     }
 
     private void OnUiReady(Entity<NanoMessageCartridgeComponent> ent, ref CartridgeUiReadyEvent args)

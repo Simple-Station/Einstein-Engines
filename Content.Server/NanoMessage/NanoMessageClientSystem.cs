@@ -38,6 +38,7 @@ public sealed partial class NanoMessageClientSystem : EntitySystem
             return;
 
         // 32 bits of entropy should be enough to never have collisions
+        // later well want a check to make sure there's no device with the same id however, and some kinda global id-entityuid map thing I guess?
         ent.Comp.Id = (ulong) _random.Next();
     }
 

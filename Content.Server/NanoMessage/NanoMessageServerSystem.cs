@@ -43,7 +43,7 @@ public sealed partial class NanoMessageServerSystem : EntitySystem
         server.Comp.ConnectedClients.Add((client.Owner, client.Comp.Id));
 
         if (!server.Comp.ClientData.ContainsKey(client.Comp.Id))
-            server.Comp.ClientData[client.Comp.Id] = new NanoMessageRecipient { Id = client.Comp.Id };
+            server.Comp.ClientData[client.Comp.Id] = ExtractData(client!, null);
 
         RaiseLocalEvent(server, new NanoMessageClientsChangedEvent());
 
@@ -70,6 +70,24 @@ public sealed partial class NanoMessageServerSystem : EntitySystem
         return server.Comp.ConnectedClients
             .Where(c => server.Comp.ClientData.ContainsKey(c.Id))
             .Select(c => server.Comp.ClientData[c.Id]);
+    }
+
+    public void UpdateClientData(Entity<NanoMessageServerComponent?> server, Entity<NanoMessageClientComponent?> client)
+    {
+        if (!Resolve(server, ref server.Comp) || !Resolve(client, ref client.Comp))
+            return;
+
+        NanoMessageRecipient? oldData = server.Comp.ClientData.TryGetValue(client.Comp.Id, out var old) ? old : null;
+        server.Comp.ClientData[client.Comp.Id] = ExtractData(client!, oldData);
+    }
+
+    private NanoMessageRecipient ExtractData(Entity<NanoMessageClientComponent> client, NanoMessageRecipient? oldData)
+    {
+        return new()
+        {
+            Id = client.Comp.Id,
+            Name = oldData?.CustomNameOverridden == true ? oldData?.Name : client.Comp.PreferredName
+        };
     }
 
     /// <summary>

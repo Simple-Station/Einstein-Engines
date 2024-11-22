@@ -27,7 +27,7 @@ glimmer-monitor-sync = Sync
 
 nano-message-program-name = NanoMessage
 nano-message-label-recipients = Recipients
-nano-message-no-recipients = No recipients yet! Try touching someone's PDA with your own PDA.
+nano-message-no-recipients = No recipients yet! Try touching another PDA with your own PDA while having this program open.
 nano-message-add-recipient = Add recipient
 nano-message-send = Send
 nano-message-server-header = NanoMessage: [color=green]{$server}[/color]
@@ -40,3 +40,4 @@ nano-message-timestamp-recent = {$minutes} minutes ago
 nano-message-timestamp-old = {$hours}:{$minutes} shift time
 nano-message-popup-paired = {THE($used)} pairs with {THE($target)}.
 nano-message-notification-message-header = New message from {$sender}!
+nano-message-cartridge-pda-default-job-name = Anonymous {$job}

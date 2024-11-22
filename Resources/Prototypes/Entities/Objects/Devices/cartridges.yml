@@ -114,3 +114,5 @@
       sprite: Nyanotrasen/Icons/psi.rsi # TODO CUSTOM ICON
       state: psi
   - type: NanoMessageCartridge
+  - type: NanoMessageClient
+    preferredName: new-pda-client
