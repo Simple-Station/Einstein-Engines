@@ -347,7 +347,7 @@ trait-description-AddictionNicotine =
 trait-name-AnimalFriend = Animal Friend
 trait-description-AnimalFriend =
     You have a way with animals. You will never be attacked by animals, unless you attack them first.
-    
+
 trait-name-Liar = Pathological liar
 trait-description-Liar = You can hardly bring yourself to tell the truth. Sometimes you lie anyway.
 
@@ -409,8 +409,13 @@ trait-description-DermalArmor =
 trait-name-CyberEyes = Cyber-Eyes Basic System
 trait-description-CyberEyes =
     One or more of your eyes have been replaced with a highly modular mechanical ocular implant.
-    Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes,
-    but additionally these implants provide protection from bright flashes of light.
+    Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes.
+    The functionality of these implants can be extended by a variety of commercially available modules.
+
+trait-name-FlareShielding = Cyber-Eyes Flare Shielding
+trait-description-FlareShielding =
+    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
+    This provides substantial protection from bright flashes of light, such as those from welding arcs.
 
 trait-name-CyberEyesSecurity = Cyber-Eyes SecHud
 trait-description-CyberEyesSecurity =

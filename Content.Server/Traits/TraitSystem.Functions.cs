@@ -10,6 +10,14 @@ using Content.Shared.Psionics;
 using Content.Server.Language;
 using Content.Shared.Mood;
 using Content.Server.NPC.Systems;
+using Content.Shared.Traits.Assorted.Components;
+using Content.Shared.Damage;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Mobs;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server.Traits;
 
@@ -261,5 +269,134 @@ public sealed partial class TraitVVEdit : TraitFunction
         var vvm = IoCManager.Resolve<IViewVariablesManager>();
         foreach (var (path, value) in VVEdit)
             vvm.WritePath(path, value);
+    }
+}
+
+/// Used for writing to an entity's ExtendDescriptionComponent. If one is not present, it will be added!
+/// Use this to create traits that add special descriptions for when a character is shift-click examined.
+[UsedImplicitly]
+public sealed partial class TraitPushDescription : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<DescriptionExtension> DescriptionExtensions { get; private set; } = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        entityManager.EnsureComponent<ExtendDescriptionComponent>(uid, out var descComp);
+        foreach (var descExtension in DescriptionExtensions)
+            descComp.DescriptionList.Add(descExtension);
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitAddArmor : TraitFunction
+{
+    /// <summary>
+    ///     The list of prototype ID's of DamageModifierSets to be added to the enumerable damage modifiers of an entity.
+    /// </summary>
+    /// <remarks>
+    ///     Dear Maintainer, I'm well aware that validating protoIds is a thing. Unfortunately, this is for a legacy system that doesn't have validated prototypes.
+    ///     And refactoring the entire DamageableSystem is way the hell outside of the scope of the PR adding this function.
+    ///     {FaridaIsCute.png} - Solidus
+    /// </remarks>
+    [DataField, AlwaysPushInheritance]
+    public List<string> DamageModifierSets { get; private set; } = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        entityManager.EnsureComponent<DamageableComponent>(uid, out var damageableComponent);
+        foreach (var modifierSet in DamageModifierSets)
+            damageableComponent.DamageModifierSets.Add(modifierSet);
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitAddSolutionContainer : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public Dictionary<string, SolutionComponent> Solutions { get; private set; } = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var solutionContainer = entityManager.System<SharedSolutionContainerSystem>();
+
+        foreach (var (containerKey, solution) in Solutions)
+        {
+            var hasSolution = solutionContainer.EnsureSolution(uid, containerKey, out Solution? newSolution);
+
+            if (!hasSolution)
+                return;
+
+            newSolution!.AddSolution(solution.Solution, null);
+        }
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitModifyMobThresholds : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public int CritThresholdModifier;
+
+    [DataField, AlwaysPushInheritance]
+    public int DeadThresholdModifier;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        if (!entityManager.TryGetComponent<MobThresholdsComponent>(uid, out var threshold))
+            return;
+
+        var thresholdSystem = entityManager.System<MobThresholdSystem>();
+        if (CritThresholdModifier != 0)
+        {
+            var critThreshold = thresholdSystem.GetThresholdForState(uid, MobState.Critical, threshold);
+            if (critThreshold != 0)
+                thresholdSystem.SetMobStateThreshold(uid, critThreshold + CritThresholdModifier, MobState.Critical);
+        }
+
+        if (DeadThresholdModifier != 0)
+        {
+            var deadThreshold = thresholdSystem.GetThresholdForState(uid, MobState.Dead, threshold);
+            if (deadThreshold != 0)
+                thresholdSystem.SetMobStateThreshold(uid, deadThreshold + DeadThresholdModifier, MobState.Dead);
+        }
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitModifyStamina : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public float StaminaModifier;
+
+    [DataField, AlwaysPushInheritance]
+    public float DecayModifier;
+
+    [DataField, AlwaysPushInheritance]
+    public float CooldownModifier;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        if (!entityManager.TryGetComponent<StaminaComponent>(uid, out var staminaComponent))
+            return;
+
+        staminaComponent.CritThreshold += StaminaModifier;
+        staminaComponent.Decay += DecayModifier;
+        staminaComponent.Cooldown += CooldownModifier;
     }
 }
