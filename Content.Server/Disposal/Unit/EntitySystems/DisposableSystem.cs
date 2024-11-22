@@ -88,11 +88,13 @@ namespace Content.Server.Disposal.Unit.EntitySystems
 
             if (!Resolve(uid, ref holder, ref holderTransform))
                 return;
+
             if (holder.IsExitingDisposals)
             {
                 Log.Error("Tried exiting disposals twice. This should never happen.");
                 return;
             }
+
             holder.IsExitingDisposals = true;
 
             // Check for a disposal unit to throw them into and then eject them from it.
@@ -164,11 +166,13 @@ namespace Content.Server.Disposal.Unit.EntitySystems
         {
             if (!Resolve(holderUid, ref holder, ref holderTransform))
                 return false;
+
             if (holder.IsExitingDisposals)
             {
                 Log.Error("Tried entering tube after exiting disposals. This should never happen.");
                 return false;
             }
+
             if (!Resolve(toUid, ref to, ref toTransform))
             {
                 ExitDisposals(holderUid, holder, holderTransform);
@@ -193,6 +197,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
                 holder.PreviousTube = holder.CurrentTube;
                 holder.PreviousDirection = holder.CurrentDirection;
             }
+
             holder.CurrentTube = toUid;
             var ev = new GetDisposalsNextDirectionEvent(holder);
             RaiseLocalEvent(toUid, ref ev);
@@ -212,9 +217,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             if (holder.CurrentDirection != holder.PreviousDirection)
             {
                 foreach (var ent in holder.Container.ContainedEntities)
-                {
                     _damageable.TryChangeDamage(ent, to.DamageOnTurn);
-                }
                 _audio.PlayPvs(to.ClangSound, toUid);
             }
 
@@ -225,9 +228,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
         {
             var query = EntityQueryEnumerator<DisposalHolderComponent>();
             while (query.MoveNext(out var uid, out var holder))
-            {
                 UpdateComp(uid, holder, frameTime);
-            }
         }
 
         private void UpdateComp(EntityUid uid, DisposalHolderComponent holder, float frameTime)
@@ -236,9 +237,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             {
                 var time = frameTime;
                 if (time > holder.TimeLeft)
-                {
                     time = holder.TimeLeft;
-                }
 
                 holder.TimeLeft -= time;
                 frameTime -= time;
@@ -268,7 +267,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
 
                 // Find next tube
                 var nextTube = _disposalTubeSystem.NextTubeFor(currentTube, holder.CurrentDirection);
-                if (!EntityManager.EntityExists(nextTube))
+                if (!EntityManager.EntityExists(nextTube)) 
                 {
                     ExitDisposals(uid, holder);
                     break;
@@ -276,9 +275,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
 
                 // Perform remainder of entry process
                 if (!EnterTube(uid, nextTube!.Value, holder))
-                {
                     break;
-                }
             }
         }
     }
