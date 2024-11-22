@@ -56,14 +56,17 @@ public sealed class NanoMessageCartridgeSystem : EntitySystem
     {
         // Update each cartridge's preferred name if the PDA is worn
         var loader = args.Loader;
-        if (!TryComp<PdaComponent>(loader, out var pdaComp)
-            || !TryComp<NanoMessageClientComponent>(ent, out var cartridgeClient)
-            || TryComp<CartridgeComponent>(ent, out var cartridge) && cartridge.InstallationStatus == InstallationStatus.Cartridge)
+        if (loader is not { Valid: true }) // huh???
             return;
 
         // The task is delayed because the entity name may not be set at this point
         Timer.Spawn(0, () =>
         {
+            if (!TryComp<PdaComponent>(loader, out var pdaComp)
+                || !TryComp<NanoMessageClientComponent>(ent, out var cartridgeClient)
+                || TryComp<CartridgeComponent>(ent, out var cartridge) && cartridge.InstallationStatus == InstallationStatus.Cartridge)
+                return;
+
             // Try to find the entity wearing this PDA and use its name. If there's no such entity, try to inherit it from the ID card.
             string? name = null;
             if (_container.TryGetOuterContainer(loader, Transform(loader), out var inventoryContainer)
