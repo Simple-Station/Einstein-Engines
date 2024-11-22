@@ -162,6 +162,8 @@
     removalTime: 0.0
   - type: ThrowingAngle
     angle: 315
+  - type: ItemToggleThrowingAngle
+    activatedAngle: 135
   - type: Item
     size: Tiny
     sprite: Objects/Weapons/Melee/e_dagger.rsi

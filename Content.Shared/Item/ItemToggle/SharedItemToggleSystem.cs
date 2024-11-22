@@ -2,6 +2,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Popups;
 using Content.Shared.Temperature;
+using Content.Shared.Throwing;
 using Content.Shared.Toggleable;
 using Content.Shared.Wieldable;
 using Robust.Shared.Audio;
@@ -35,6 +36,7 @@ public abstract class SharedItemToggleSystem : EntitySystem
         SubscribeLocalEvent<ItemToggleHotComponent, IsHotEvent>(OnIsHotEvent);
 
         SubscribeLocalEvent<ItemToggleActiveSoundComponent, ItemToggledEvent>(UpdateActiveSound);
+        SubscribeLocalEvent<ItemToggleThrowingAngleComponent, ItemToggledEvent>(UpdateThrowingAngle);
     }
 
     private void OnStartup(Entity<ItemToggleComponent> ent, ref ComponentStartup args)
@@ -266,6 +268,34 @@ public abstract class SharedItemToggleSystem : EntitySystem
         else
         {
             activeSound.PlayingStream = _audio.Stop(activeSound.PlayingStream);
+        }
+    }
+
+    /// <summary>
+    ///   Used to update the throwing angle on item toggle.
+    /// </summary>
+    private void UpdateThrowingAngle(EntityUid uid, ItemToggleThrowingAngleComponent component, ItemToggledEvent args)
+    {
+        if (!TryComp<ThrowingAngleComponent>(uid, out var throwingAngle))
+            return;
+
+        if (args.Activated)
+        {
+            component.DeactivatedAngle ??= throwingAngle.Angle;
+            if (component.ActivatedAngle is Angle activatedAngle)
+                throwingAngle.Angle = activatedAngle;
+
+            component.DeactivatedAngularVelocity ??= throwingAngle.AngularVelocity;
+            if (component.ActivatedAngularVelocity is bool activatedAngularVelocity)
+                throwingAngle.AngularVelocity = activatedAngularVelocity;
+        }
+        else
+        {
+            if (component.DeactivatedAngle is Angle deactivatedAngle)
+                throwingAngle.Angle = deactivatedAngle;
+
+            if (component.DeactivatedAngularVelocity is bool deactivatedAngularVelocity)
+                throwingAngle.AngularVelocity = deactivatedAngularVelocity;
         }
     }
 }
