@@ -508,7 +508,7 @@
   parent: BasePDA
   id: CaptainPDA
   name: captain PDA
-  description: This PDA is heavier to hold.
+  description: Surprisingly no different from your PDA... Wait, it's a fair bit heavy to hold.
   components:
   - type: Pda
     id: CaptainIDCard
@@ -527,6 +527,9 @@
     damage:
       types:
         Blunt: 8
+    staminaCost: 5
+    soundHit:
+      collection: MetalThud
 
 - type: entity
   parent: BasePDA

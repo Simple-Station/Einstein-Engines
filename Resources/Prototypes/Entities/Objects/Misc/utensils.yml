@@ -51,10 +51,11 @@
       types:
         Piercing: 5
   - type: DamageOtherOnHit
+    staminaCost: 2.5
   - type: EmbeddableProjectile
     removalTime: 0.5
   - type: ThrowingAngle
-    angle: 18
+    angle: 180
 
 - type: entity
   parent: UtensilBasePlastic
@@ -91,6 +92,8 @@
       types:
         Blunt: 1
   - type: DamageOtherOnHit
+  - type: ThrowingAngle
+    angle: 180
   - type: Shovel
     speedModifier: 0.1 # you can try
 
@@ -150,5 +153,7 @@
       types:
         Blunt: 2
   - type: DamageOtherOnHit
+  - type: ThrowingAngle
+    angle: 180
   - type: Shovel
     speedModifier: 0.05 # nah

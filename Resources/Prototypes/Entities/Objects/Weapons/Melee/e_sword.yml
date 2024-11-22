@@ -54,6 +54,7 @@
       types:
         Blunt: 4.5
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: Item
     size: Small
     sprite: DeltaV/Objects/Weapons/Melee/e_sword.rsi # Delta-V
@@ -155,6 +156,7 @@
     damage:
       types:
         Piercing: 3
+    staminaCost: 3.5
   - type: EmbeddableProjectile
     offset: 0.3,0.0
     removalTime: 0.0

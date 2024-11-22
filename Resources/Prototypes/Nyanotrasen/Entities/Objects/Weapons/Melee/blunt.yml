@@ -22,6 +22,7 @@
 #    swing: 10
 #    wieldCoefficient: 0.35 #if wielded you will only consume 3.5 stam its a weapon after all
   - type: DamageOtherOnHit
+    staminaCost: 10
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:

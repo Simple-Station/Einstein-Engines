@@ -36,7 +36,7 @@
     damage:
       types:
         Blunt: 12
-    staminaCost: 12
+    staminaCost: 12.5
   - type: Tag
     tags:
     - Toolbox

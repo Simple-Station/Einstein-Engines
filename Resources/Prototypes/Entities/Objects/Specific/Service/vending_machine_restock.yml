@@ -21,7 +21,10 @@
     soundSwing:
       path: /Audio/Weapons/punchmiss.ogg
   - type: DamageOtherOnHit
-    staminaCost: 10
+    damage:
+      types:
+        Blunt: 11
+    staminaCost: 15
   - type: Item
     size: Normal
   - type: Damageable

@@ -28,6 +28,7 @@
     heavyStaminaCost: 7.5
     angle: 75
   - type: DamageOtherOnHit
+    staminaCost: 8
   - type: Item
     size: Normal
     sprite: Objects/Fun/Instruments/eguitar.rsi
@@ -71,6 +72,7 @@
     heavyStaminaCost: 7.5
     angle: 75
   - type: DamageOtherOnHit
+    staminaCost: 8
   - type: Item
     size: Normal
     sprite: Objects/Fun/Instruments/bassguitar.rsi
@@ -115,6 +117,7 @@
     heavyStaminaCost: 10
     angle: 160
   - type: DamageOtherOnHit
+    staminaCost: 8
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -198,6 +201,7 @@
     heavyStaminaCost: 10
     angle: 75
   - type: DamageOtherOnHit
+    staminaCost: 7
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -245,6 +249,7 @@
     heavyStaminaCost: 7.5
     angle: 75
   - type: DamageOtherOnHit
+    staminaCost: 8
 
 - type: entity
   parent: BaseHandheldInstrument

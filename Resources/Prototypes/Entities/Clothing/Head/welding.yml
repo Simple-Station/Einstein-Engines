@@ -27,6 +27,7 @@
     damage:
       types:
         Blunt: 7
+    staminaCost: 5
     soundHit:
       collection: MetalThud
 

@@ -111,7 +111,7 @@
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
   - type: DamageOtherOnHit
-    staminaCost: 8.5
+    staminaCost: 9
   - type: Item
     size: Normal
   - type: Tag

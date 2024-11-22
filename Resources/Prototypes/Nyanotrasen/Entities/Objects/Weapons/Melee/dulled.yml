@@ -17,6 +17,9 @@
         Blunt: 5
         Slash: 1
   - type: DamageOtherOnHit
+    staminaCost: 10
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/katana.rsi
@@ -38,6 +41,9 @@
         Blunt: 6
         Slash: 1
   - type: DamageOtherOnHit
+    staminaCost: 18
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
   - type: Clothing

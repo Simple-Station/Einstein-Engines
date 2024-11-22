@@ -19,7 +19,10 @@
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 5
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
   - type: Clothing
@@ -50,7 +53,10 @@
     maxTargets: 6
     angle: 90
   - type: DamageOtherOnHit
+    staminaCost: 8
   - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
   - type: Clothing
@@ -88,7 +94,10 @@
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
+    staminaCost: 9
   - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:

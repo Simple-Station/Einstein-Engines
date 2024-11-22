@@ -25,6 +25,7 @@
     damage:
       types:
         Blunt: 6
+    staminaCost: 8
   - type: Spillable
     solution: absorbed
   - type: Wieldable
@@ -80,6 +81,7 @@
       damage:
         types:
           Blunt: 6
+      staminaCost: 8
     - type: Spillable
       solution: absorbed
     - type: Wieldable

@@ -24,6 +24,7 @@
     maxTargets: 5
     angle: 100
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: ThrowingAngle
     angle: 135
   - type: Item
@@ -53,6 +54,7 @@
     maxTargets: 1
     angle: 20
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: Item
     sprite: Objects/Tools/Hydroponics/clippers.rsi
     storedRotation: -90
@@ -80,6 +82,7 @@
     maxTargets: 1
     angle: 120
   - type: DamageOtherOnHit
+    staminaCost: 7
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: ThrowingAngle
@@ -117,7 +120,7 @@
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 5
   - type: DamageOtherOnHit
-    staminaCost: 6
+    staminaCost: 6.5
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: ThrowingAngle
@@ -151,11 +154,7 @@
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 5
-        Slash: 3
-    staminaCost: 6
+    staminaCost: 5
   - type: ThrowingAngle
     angle: 45
   - type: Item

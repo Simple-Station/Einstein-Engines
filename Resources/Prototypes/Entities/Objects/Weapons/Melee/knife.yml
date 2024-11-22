@@ -76,7 +76,7 @@
         Slash: 8
         Blunt: 1
   - type: DamageOtherOnHit
-    staminaCost: 6
+    staminaCost: 7.5
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cleaver.rsi
@@ -161,7 +161,7 @@
       types:
         Slash: 5
   - type: DamageOtherOnHit
-    staminaCost: 6
+    staminaCost: 5
   - type: EmbeddableProjectile
   - type: Sprite
     sprite: Clothing/Head/Hats/greyflatcap.rsi

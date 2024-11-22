@@ -24,6 +24,7 @@
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
+    staminaCost: 10
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:

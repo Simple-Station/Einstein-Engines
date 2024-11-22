@@ -69,8 +69,8 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 9
-    staminaCost: 10
+        Blunt: 11
+    staminaCost: 12
 
 - type: entity
   id: BaseHead
@@ -107,7 +107,7 @@
     damage:
       types:
         Blunt: 7
-    staminaCost: 8
+    staminaCost: 7
 
 - type: entity
   id: BaseRightArm
@@ -123,7 +123,7 @@
     damage:
       types:
         Blunt: 7
-    staminaCost: 8
+    staminaCost: 7
 
 - type: entity
   id: BaseLeftHand

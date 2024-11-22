@@ -121,6 +121,7 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: EmbeddableProjectile
   - type: ThrowingAngle
     angle: 90

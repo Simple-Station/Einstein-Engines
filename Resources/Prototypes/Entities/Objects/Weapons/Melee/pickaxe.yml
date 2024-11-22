@@ -27,6 +27,7 @@
     maxTargets: 5
     angle: 80
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -74,6 +75,7 @@
     heavyDamageBaseModifier: 1
     angle: 20
   - type: DamageOtherOnHit
+    staminaCost: 8
   - type: ThrowingAngle
     angle: 270
 

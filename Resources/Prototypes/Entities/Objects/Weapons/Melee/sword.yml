@@ -24,6 +24,7 @@
     maxTargets: 7
     angle: 80
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: EmbeddableProjectile
   - type: ThrowingAngle
     angle: 225
@@ -72,7 +73,10 @@
     maxTargets: 1
     angle: 20
   - type: DamageOtherOnHit
+    staminaCost: 10
   - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
@@ -92,6 +96,8 @@
     damage:
       types:
         Slash: 25
+  - type: ThrowingAngle
+    angle: 300
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/energykatana.rsi
@@ -139,7 +145,10 @@
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/machete.rsi
@@ -173,7 +182,10 @@
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
+    staminaCost: 18
   - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
   - type: Clothing
@@ -210,7 +222,10 @@
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cutlass.rsi
