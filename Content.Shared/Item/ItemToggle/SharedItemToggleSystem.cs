@@ -1,6 +1,7 @@
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Popups;
+using Content.Shared.Projectiles;
 using Content.Shared.Temperature;
 using Content.Shared.Throwing;
 using Content.Shared.Toggleable;
@@ -8,6 +9,7 @@ using Content.Shared.Wieldable;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
+using System.Numerics;
 
 namespace Content.Shared.Item.ItemToggle;
 /// <summary>
@@ -37,6 +39,7 @@ public abstract class SharedItemToggleSystem : EntitySystem
 
         SubscribeLocalEvent<ItemToggleActiveSoundComponent, ItemToggledEvent>(UpdateActiveSound);
         SubscribeLocalEvent<ItemToggleThrowingAngleComponent, ItemToggledEvent>(UpdateThrowingAngle);
+        SubscribeLocalEvent<ItemToggleEmbeddableProjectileComponent, ItemToggledEvent>(UpdateEmbeddableProjectile);
     }
 
     private void OnStartup(Entity<ItemToggleComponent> ent, ref ComponentStartup args)
@@ -296,6 +299,48 @@ public abstract class SharedItemToggleSystem : EntitySystem
 
             if (component.DeactivatedAngularVelocity is bool deactivatedAngularVelocity)
                 throwingAngle.AngularVelocity = deactivatedAngularVelocity;
+        }
+    }
+
+    /// <summary>
+    ///   Used to update the embeddable stats on item toggle.
+    /// </summary>
+    private void UpdateEmbeddableProjectile(EntityUid uid, ItemToggleEmbeddableProjectileComponent component, ItemToggledEvent args)
+    {
+        if (!TryComp<EmbeddableProjectileComponent>(uid, out var embeddable))
+            return;
+
+        if (args.Activated)
+        {
+            component.DeactivatedRemovalTime ??= embeddable.RemovalTime;
+            if (component.ActivatedRemovalTime is float activatedRemovalTime)
+                embeddable.RemovalTime = activatedRemovalTime;
+
+            component.DeactivatedOffset ??= embeddable.Offset;
+            if (component.ActivatedOffset is Vector2 activatedOffset)
+                embeddable.Offset = activatedOffset;
+
+            component.DeactivatedEmbedOnThrow ??= embeddable.EmbedOnThrow;
+            if (component.ActivatedEmbedOnThrow is bool activatedEmbedOnThrow)
+                embeddable.EmbedOnThrow = activatedEmbedOnThrow;
+
+            component.DeactivatedSound ??= embeddable.Sound;
+            if (component.ActivatedSound is SoundSpecifier activatedSound)
+                embeddable.Sound = activatedSound;
+        }
+        else
+        {
+            if (component.DeactivatedRemovalTime is float deactivatedRemovalTime)
+                embeddable.RemovalTime = deactivatedRemovalTime;
+
+            if (component.DeactivatedOffset is Vector2 deactivatedOffset)
+                embeddable.Offset = deactivatedOffset;
+
+            if (component.DeactivatedEmbedOnThrow is bool deactivatedEmbedOnThrow)
+                embeddable.EmbedOnThrow = deactivatedEmbedOnThrow;
+
+            if (component.DeactivatedSound is SoundSpecifier deactivatedSound)
+                embeddable.Sound = deactivatedSound;
         }
     }
 }

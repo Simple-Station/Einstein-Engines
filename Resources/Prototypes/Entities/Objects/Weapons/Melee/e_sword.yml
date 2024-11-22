@@ -38,6 +38,8 @@
             Slash: 8
             Heat: 10
             Structural: 20
+  - type: ItemToggleEmbeddableProjectile
+    activatedEmbedOnThrow: true
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_sword.rsi
     layers:
@@ -55,6 +57,10 @@
         Blunt: 4.5
   - type: DamageOtherOnHit
     staminaCost: 5
+  - type: EmbeddableProjectile
+    embedOnThrow: false
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Small
     sprite: DeltaV/Objects/Weapons/Melee/e_sword.rsi # Delta-V
@@ -136,6 +142,11 @@
         volume: -6
   - type: ItemToggleDisarmMalus
     activatedDisarmMalus: 0.4
+  - type: ItemToggleEmbeddableProjectile
+    activatedOffset: 0.0,0.0
+    activatedRemovalTime: 3
+  - type: ItemToggleThrowingAngle
+    activatedAngle: 135
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_dagger.rsi
     layers:
@@ -160,10 +171,9 @@
   - type: EmbeddableProjectile
     offset: 0.3,0.0
     removalTime: 0.0
+    embedOnThrow: true
   - type: ThrowingAngle
     angle: 315
-  - type: ItemToggleThrowingAngle
-    activatedAngle: 135
   - type: Item
     size: Tiny
     sprite: Objects/Weapons/Melee/e_dagger.rsi
