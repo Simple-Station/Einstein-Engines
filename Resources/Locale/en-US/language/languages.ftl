@@ -114,3 +114,8 @@ language-Kobold-description = Hiss!
 
 language-Hissing-name = Hissing
 language-Hissing-description = Hiss!
+
+language-Eldritch-name = Eldritch
+language-Eldritch-description =
+    A language that is considered to be long forgotten - now the only speakers of this profaned tongue of screeches and
+    mumbles are the followers of an ancient God of Blood.
