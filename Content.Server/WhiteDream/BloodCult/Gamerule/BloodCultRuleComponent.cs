@@ -1,5 +1,4 @@
 ﻿using Content.Server.NPC.Components;
-using Content.Shared.Roles;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Constructs;
 using Robust.Shared.Prototypes;
@@ -9,9 +8,6 @@ namespace Content.Server.WhiteDream.BloodCult.Gamerule;
 [RegisterComponent]
 public sealed partial class BloodCultRuleComponent : Component
 {
-    [DataField]
-    public ProtoId<AntagPrototype> CultistRolePrototype = "Cultist";
-
     [DataField]
     public ProtoId<NpcFactionPrototype> NanoTrasenFaction = "NanoTrasen";
 

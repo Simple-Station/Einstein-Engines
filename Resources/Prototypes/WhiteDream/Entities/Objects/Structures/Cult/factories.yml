@@ -48,7 +48,7 @@
     key: enum.RadialSelectorUiKey.Key
     userWhitelist:
       components:
-        BloodCultist
+      - BloodCultist
   - type: GenericVisualizer
     visuals:
       enum.GenericCultVisuals.State:
@@ -66,8 +66,8 @@
     sprite: WhiteDream/BloodCult/Entities/Structures/altar.rsi
   - type: TimedFactory
     entries:
-      - prototype: ConstructShell
-      - prototype: WhetstoneCult
+    - prototype: ConstructShell
+    - prototype: WhetstoneCult
   # TODO: Add prototypes
   #    - Flask of Unholy Water
   - type: Construction

@@ -72,6 +72,9 @@
         Heat: 1.4
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodCultHoodTrue
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
 
 - type: entity
   parent: ClothingHeadHatHoodCulthood

@@ -25,10 +25,9 @@
   - type: ActivatableUI
     key: enum.RuneDrawerBuiKey.Key
     inHandsOnly: true
-    closeOnHandDeselect: true
     userWhitelist:
       components:
-        BloodCultist
+      - BloodCultist
   - type: UserInterface
     interfaces:
       enum.RuneDrawerBuiKey.Key:

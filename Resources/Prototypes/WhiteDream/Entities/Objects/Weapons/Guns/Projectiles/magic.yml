@@ -13,7 +13,6 @@
       groups:
         Burn: 10
         Brute: 10
-    ignoreTarget: true
   - type: PointLight
     enabled: true
     color: "#ff4300"

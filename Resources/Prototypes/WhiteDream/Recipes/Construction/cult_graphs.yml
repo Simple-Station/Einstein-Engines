@@ -18,9 +18,6 @@
 - type: constructionGraph
   id: CultFactoryAltar
   start: start
-  icon:
-    sprite: WhiteDream/BloodCult/Entities/Structures/altar.rsi
-    state: icon_off
   graph:
   - node: start
     edges:

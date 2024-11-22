@@ -104,8 +104,6 @@
     tags:
     - CannotSuicide
     - DoorBumpOpener
-  - type: NameIdentifier
-    group: Construct
   - type: Appearance
 
 - type: entity
@@ -126,7 +124,6 @@
       100: Dead
   - type: Construct
   - type: MeleeWeapon
-    canHeavyAttack: false
     hidden: true
     angle: 30
     animation: WeaponArcSmash
@@ -162,7 +159,6 @@
   - type: Construct
   - type: MovementIgnoreGravity
   - type: MeleeWeapon
-    canHeavyAttack: false
     hidden: true
     angle: 30
     animation: WeaponArcPunch
@@ -202,7 +198,6 @@
     baseWalkSpeed: 4
     baseSprintSpeed: 4
   - type: MeleeWeapon
-    canHeavyAttack: false
     hidden: true
     angle: 30
     animation: WeaponArcSmash
@@ -242,7 +237,6 @@
     baseWalkSpeed: 5
     baseSprintSpeed: 5
   - type: MeleeWeapon
-    canHeavyAttack: false
     hidden: true
     angle: 30
     animation: WeaponArcSmash
@@ -265,7 +259,6 @@
       0: Alive
       40: Dead
   - type: MeleeWeapon
-    canHeavyAttack: false
     hidden: true
     angle: 30
     animation: WeaponArcSmash
