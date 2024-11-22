@@ -8100,3 +8100,12 @@ Entries:
   id: 6536
   time: '2024-11-22T01:03:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1256
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Piercing damage can now dismember body parts, just like Blunt and Slash
+        damage.
+  id: 6537
+  time: '2024-11-22T20:08:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1267
