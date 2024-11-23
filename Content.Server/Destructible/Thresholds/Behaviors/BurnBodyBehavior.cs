@@ -27,11 +27,11 @@ public sealed partial class BurnBodyBehavior : IThresholdBehavior
             }
         }
 
-        if (system.EntityManager.TryGetComponent<BodyPartComponent>(bodyId, out var bodyPart)
-            && bodyPart.CanSever
-            && system.BodySystem.BurnPart(bodyId, bodyPart))
+        if (system.EntityManager.TryGetComponent<BodyPartComponent>(bodyId, out var bodyPart))
         {
-            sharedPopupSystem.PopupCoordinates(Loc.GetString("bodyburn-text-others", ("name", bodyId)), transformSystem.GetMoverCoordinates(bodyId), PopupType.LargeCaution);
+            if (bodyPart.CanSever
+                && system.BodySystem.BurnPart(bodyId, bodyPart))
+                sharedPopupSystem.PopupCoordinates(Loc.GetString("bodyburn-text-others", ("name", bodyId)), transformSystem.GetMoverCoordinates(bodyId), PopupType.LargeCaution);
         }
         else
         {
