@@ -1676,6 +1676,12 @@ namespace Content.Shared.CCVar
             CVarDef.Create("shuttle.arrivals_returns", false, CVar.SERVERONLY);
 
         /// <summary>
+        ///     Delay for auto-orientation. Used for people arriving via arrivals.
+        /// </summary>
+        public static readonly CVarDef<double> AutoOrientDelay =
+            CVarDef.Create("shuttle.auto_orient_delay", 2.0, CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
         /// Whether to automatically spawn escape shuttles.
         /// </summary>
         public static readonly CVarDef<bool> GridFill =
