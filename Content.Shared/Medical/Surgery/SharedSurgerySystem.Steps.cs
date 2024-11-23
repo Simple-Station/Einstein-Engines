@@ -9,6 +9,7 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.DoAfter;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Medical.Surgery.Conditions;
 using Content.Shared.Medical.Surgery.Effects.Step;
 using Content.Shared.Medical.Surgery.Steps;
@@ -446,7 +447,6 @@ public abstract partial class SharedSurgerySystem
                     && insertedOrgan.OriginalBody != args.Body)
                 {
                     var ev = new SurgeryStepDamageChangeEvent(args.User, args.Body, args.Part, ent);
-                    Logger.Debug("Raising damage event.");
                     RaiseLocalEvent(ent, ref ev);
                 }
                 break;
@@ -664,7 +664,21 @@ public abstract partial class SharedSurgerySystem
             BreakOnHandChange = true,
         };
 
-        _doAfter.TryStartDoAfter(doAfter);
+        if (_doAfter.TryStartDoAfter(doAfter))
+        {
+            var userName = Identity.Entity(user, EntityManager);
+            var targetName = Identity.Entity(ent.Owner, EntityManager);
+
+            var locName = $"surgery-popup-procedure-{args.Surgery}-step-{args.Step}";
+            var locResult = Loc.GetString(locName,
+                ("user", userName), ("target", targetName), ("part", part));
+
+            if (locResult == locName)
+                locResult = Loc.GetString($"surgery-popup-step-{args.Step}",
+                    ("user", userName), ("target", targetName), ("part", part));
+
+            _popup.PopupEntity(locResult, user);
+        }
     }
 
     private float GetSurgeryDuration(EntityUid surgeryStep, EntityUid user, EntityUid target, float toolSpeed)

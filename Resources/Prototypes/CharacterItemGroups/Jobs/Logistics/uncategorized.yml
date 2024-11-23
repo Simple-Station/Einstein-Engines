@@ -1,0 +1,71 @@
+# All Logistics
+- type: characterItemGroup
+  id: LoadoutLogisticsBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackCargo
+    - type: loadout
+      id: LoadoutBackpackSatchelCargo
+    - type: loadout
+      id: LoadoutBackpackDuffelCargo
+
+#- type: characterItemGroup
+#  id: LoadoutLogisticsBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsShoes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsUniforms
+#  maxItems: 1
+#  items:

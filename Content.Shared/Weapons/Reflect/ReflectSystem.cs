@@ -15,6 +15,8 @@ using Content.Shared.Projectiles;
 using Content.Shared.Standing;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist;
+using Content.Shared.WhiteDream.BloodCult.Items;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
@@ -112,6 +114,10 @@ public sealed class ReflectSystem : EntitySystem
         )
             return false;
 
+        // Non cultists can't use cult items to reflect anything.
+        if (HasComp<CultItemComponent>(reflector) && !HasComp<BloodCultistComponent>(user))
+            return false;
+
         if (!_random.Prob(CalcReflectChance(reflector, reflect)))
             return false;
 
@@ -202,20 +208,19 @@ public sealed class ReflectSystem : EntitySystem
         Vector2 direction,
         [NotNullWhen(true)] out Vector2? newDirection)
     {
+        newDirection = null;
         if (!TryComp<ReflectComponent>(reflector, out var reflect) ||
             !reflect.Enabled ||
             TryComp<StaminaComponent>(reflector, out var staminaComponent) && staminaComponent.Critical ||
             _standing.IsDown(reflector))
-        {
-            newDirection = null;
             return false;
-        }
+
+        // Non cultists can't use cult items to reflect anything.
+        if (HasComp<CultItemComponent>(reflector) && !HasComp<BloodCultistComponent>(user))
+            return false;
 
         if (!_random.Prob(CalcReflectChance(reflector, reflect)))
-        {
-            newDirection = null;
             return false;
-        }
 
         if (_netManager.IsServer)
         {

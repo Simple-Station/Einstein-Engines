@@ -1,0 +1,95 @@
+# All Engineering
+- type: characterItemGroup
+  id: LoadoutEngineeringBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackEngineering
+    - type: loadout
+      id: LoadoutBackpackSatchelEngineering
+    - type: loadout
+      id: LoadoutBackpackDuffelEngineering
+
+#- type: characterItemGroup
+#  id: LoadoutEngineeringBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEngineeringEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEngineeringEquipment
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutEyesEngineering
+  items:
+    - type: loadout
+      id: LoadoutEngineeringEyesMeson
+
+- type: characterItemGroup
+  id: LoadoutEngineeringGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutEngineeringGlovesInsulated
+    - type: loadout
+      id: LoadoutEngineeringGlovesCombat
+    - type: loadout
+      id: LoadoutEngineeringGlovesMerc
+
+- type: characterItemGroup
+  id: LoadoutEngineeringHead
+  items:
+    - type: loadout
+      id: LoadoutEngineeringHeadBeret
+    - type: loadout
+      id: LoadoutEngineeringHeadHardhatBlue
+    - type: loadout
+      id: LoadoutEngineeringHeadHardhatOrange
+    - type: loadout
+      id: LoadoutEngineeringHeadHardhatRed
+    - type: loadout
+      id: LoadoutEngineeringHeadHardhatWhite
+    - type: loadout
+      id: LoadoutEngineeringHeadHardhatYellow
+
+#- type: characterItemGroup
+#  id: LoadoutEngineeringId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEngineeringNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutEngineeringMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutEngineeringOuter
+  items:
+    - type: loadout
+      id: LoadoutEngineeringOuterHazard
+
+#- type: characterItemGroup
+#  id: LoadoutEngineeringShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutEngineeringUniforms
+  items:
+    - type: loadout
+      id: LoadoutEngineeringUniformSuit
+    - type: loadout
+      id: LoadoutEngineeringUniformSkirt
+    - type: loadout
+      id: LoadoutEngineeringUniformHazard

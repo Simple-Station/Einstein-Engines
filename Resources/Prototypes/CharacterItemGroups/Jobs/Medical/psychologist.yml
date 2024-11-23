@@ -1,0 +1,83 @@
+# Psychologist
+- type: characterItemGroup
+  id: LoadoutPsychologistBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsychologistBackpackBackpack
+    - type: loadout
+      id: LoadoutPsychologistBackpackSatchel
+    - type: loadout
+      id: LoadoutPsychologistBackpackDuffel
+
+#- type: characterItemGroup
+#  id: LoadoutPsychologistBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsychologistEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutPsychologistEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutPsychologistPillCanisterSpaceDrugs
+    - type: loadout
+      id: LoadoutPsychologistPillCanisterPax
+    - type: loadout
+      id: LoadoutPsychologistPillCanisterCryptobiolin
+    - type: loadout
+      id: LoadoutPsychologistPillCanisterChloralHydrate
+
+#- type: characterItemGroup
+#  id: LoadoutPsychologistEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsychologistGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsychologistHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsychologistId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsychologistNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsychologistMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsychologistOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsychologistShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutPsychologistUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsychologistJumpsuit
+    - type: loadout
+      id: LoadoutPsychologistJumpskirt

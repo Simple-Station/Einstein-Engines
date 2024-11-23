@@ -2,8 +2,10 @@ using Content.Server.Body.Components;
 using Content.Server.Ghost.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
+using Content.Shared.Body.Systems;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
+using Content.Server.DelayedDeath;
 using Content.Server.DelayedDeath;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -14,6 +16,7 @@ namespace Content.Server.Body.Systems
     public sealed class BrainSystem : EntitySystem
     {
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+        [Dependency] private readonly SharedBodySystem _bodySystem = default!;
         [Dependency] private readonly SharedBodySystem _bodySystem = default!;
 
         public override void Initialize()

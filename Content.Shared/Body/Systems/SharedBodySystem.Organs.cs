@@ -34,6 +34,7 @@ public partial class SharedBodySystem
 
         if (organEnt.Comp.Body is not null)
         {
+            organEnt.Comp.OriginalBody = organEnt.Comp.Body;
             var addedInBodyEv = new OrganAddedToBodyEvent(bodyUid, parentPartUid);
             RaiseLocalEvent(organEnt, ref addedInBodyEv);
             var organEnabledEv = new OrganEnableChangedEvent(true);

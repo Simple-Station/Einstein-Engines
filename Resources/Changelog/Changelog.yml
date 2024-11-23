@@ -7926,3 +7926,206 @@ Entries:
   id: 6523
   time: '2024-11-17T00:32:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1159
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed stamina system
+  id: 6524
+  time: '2024-11-18T02:17:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1245
+- author: DocNITE
+  changes:
+    - type: Add
+      message: Added Day/Night time cycle for admins and mapers.
+  id: 6525
+  time: '2024-11-18T02:20:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1234
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: You can now perform surgery as a monke. Rejoice.
+    - type: Add
+      message: >-
+        You can perform surgery on a lot of animals now, I missed a lot of them
+        so just ask if you want any particular critter to get it.
+    - type: Tweak
+      message: Entities now perish after 60 seconds of losing their heart and/or brain.
+    - type: Fix
+      message: Entities properly take asphyxiation damage after losing their brain.
+    - type: Fix
+      message: Torsos being gibbable, which would break surgery or just about anything.
+    - type: Fix
+      message: >-
+        Items not being removed from their respective slots if the parts were
+        gibbed rather than dropped.
+    - type: Fix
+      message: Animal organs not being usable properly in surgeries
+    - type: Fix
+      message: Cyborg limbs are now usable as pseudo-peg arm/legs.
+  id: 6526
+  time: '2024-11-18T04:03:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1240
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Examining yourself with the Self-Aware trait will no longer crash your
+        game client.
+  id: 6527
+  time: '2024-11-18T04:29:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1247
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Surgery step descriptions (like making an incision, removing/attaching
+        limbs and organs) are now shown as popups to everyone in range upon the
+        start of the step. This makes it clear which surgical procedure is being
+        done and to which body part. No more stealthy brain-stealing in front of
+        everyone!
+  id: 6528
+  time: '2024-11-18T15:15:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1241
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The stamina cost of an object's power attack can now be revealed by
+        examining its damage values. 
+    - type: Tweak
+      message: >-
+        Power attacks can't be done if your stamina is too low, so you can't
+        accidentally stamcrit yourself with power attacks anymore.
+    - type: Tweak
+      message: Power attacks now cost stamina even without hitting anything.
+    - type: Tweak
+      message: >-
+        Prevent power attacks from showing a blue visual effect on the character
+        who attacked due to stamina damage.
+  id: 6529
+  time: '2024-11-18T15:19:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1238
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Glimmer Wisps now completely obliterate their victim's Personhood,
+        inflicting the Mindbroken condition on them.
+  id: 6530
+  time: '2024-11-18T22:07:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1248
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Reorganized Loadouts so that all Jobs now have their own job specific
+        tabs. The code for them has been thoroughly reorganized too, such that
+        figuring out which jobs are missing crap is way easier to do.
+    - type: Add
+      message: >-
+        Captain's Personal Weapon loadout category. Currently only contains a
+        choice between the antique laser pistol, or a pulse pistol. Whichever
+        choice is made will be used as a target for a traitor objective.
+  id: 6531
+  time: '2024-11-18T22:08:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1230
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Power Attacks now correctly apply a penalty on swing speed, and are no
+        longer faster than left clicking.
+  id: 6532
+  time: '2024-11-20T03:47:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1252
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the descriptions of most Wizden traits to be more vivid and
+        descriptive.
+  id: 6533
+  time: '2024-11-22T01:01:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1260
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Five new functions for the Trait System, AddArmor, PushDescription,
+        ModifyMobThresholds, AddSolutionContainer,  and ModifyStamina.
+    - type: Tweak
+      message: >-
+        CyberEyes Basic System has been split, now Flash Protection is a
+        separate module. 
+    - type: Add
+      message: >-
+        Dermal Armor no longer replaces your original species damage
+        resistances. It now stacks multiplicatively with your original
+        resistances. 
+    - type: Tweak
+      message: Dermal Armor can now be taken by any species, not just Humans.
+    - type: Add
+      message: >-
+        Dermal Armor, and Bionic Arms can now be revealed by a close
+        examination. Shift click on someone within touching distance will reveal
+        if they have these "Obvious" cyberware.
+  id: 6534
+  time: '2024-11-22T01:01:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1253
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now touch one anomaly scanner with another to copy the anomaly
+        scan data from it.
+  id: 6535
+  time: '2024-11-22T01:02:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1250
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed chair visuals drawing depth wrongly if you sat in a north-facing
+        chair.
+    - type: Fix
+      message: Fixed buckling doing several buckles each time you did one.
+    - type: Fix
+      message: Fixed the magic mirror.
+    - type: Fix
+      message: Fixed beds re-positioning you every few seconds.
+    - type: Fix
+      message: Fixed E not opening containers that are in another container.
+    - type: Fix
+      message: Fixed disposal systems not flushing or ejecting properly.
+  id: 6536
+  time: '2024-11-22T01:03:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1256
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Piercing damage can now dismember body parts, just like Blunt and Slash
+        damage.
+  id: 6537
+  time: '2024-11-22T20:08:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1267
+- author: Tmanzxd
+  changes:
+    - type: Tweak
+      message: Increased applicable medication heal values.
+    - type: Tweak
+      message: Increased stack size of applicable medications.
+    - type: Tweak
+      message: Slightly increased dylovene, burn, and brute chemicals heal values.
+    - type: Tweak
+      message: Decreased Medical item application time from 3s to 2s
+  id: 6538
+  time: '2024-11-22T20:09:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1259
+- author: Remuchi
+  changes:
+    - type: Add
+      message: Added Blood Cult Gamemode.
+  id: 6539
+  time: '2024-11-22T21:54:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1001
