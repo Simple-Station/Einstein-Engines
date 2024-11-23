@@ -39,3 +39,42 @@
       group: LoadoutAirTank
   items:
     - DoubleEmergencyNitrogenTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesEmergencyPlasmaTank
+  category: Species
+  cost: 0
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+  items:
+    - EmergencyPlasmaTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesExtendedEmergencyPlasmaTank
+  category: Species
+  cost: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+  items:
+    - ExtendedEmergencyPlasmaTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesDoubleEmergencyPlasmaTank
+  category: Species
+  cost: 2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+  items:
+    - DoubleEmergencyPlasmaTankFilled

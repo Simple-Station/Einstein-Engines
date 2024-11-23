@@ -103,6 +103,13 @@
           probability: 0.5
   - type: FireVisuals
     alternateState: Standing
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Calcic
+    understands:
+    - TauCetiBasic
+    - Calcic
   - type: FootPrints
 
 - type: entity

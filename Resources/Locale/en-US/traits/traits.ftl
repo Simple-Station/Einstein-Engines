@@ -71,6 +71,9 @@ trait-description-NormalVisionHarpy = Your eyes have been modified by means of a
 trait-name-Southern = Southern Drawl
 trait-description-Southern = You have a different way of speakin'.
 
+trait-name-SkeletonAccent = Skeleton Accent
+trait-description-SkeletonAccent = You have a humerus skeleton accent that will rattle others to the bone!
+
 trait-name-NormalVision = Trichromat Modification
 trait-description-NormalVision = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
 
@@ -321,7 +324,7 @@ trait-description-AddictionNicotine =
 trait-name-AnimalFriend = Animal Friend
 trait-description-AnimalFriend =
     You have a way with animals. You will never be attacked by animals, unless you attack them first.
-    
+
 trait-name-Liar = Pathological liar
 trait-description-Liar = You can hardly bring yourself to tell the truth. Sometimes you lie anyway.
 

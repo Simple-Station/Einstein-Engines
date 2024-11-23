@@ -130,6 +130,19 @@
 
 - type: entity
   parent: EmergencyOxygenTank
+  id: EmergencyPlasmaTank
+  name: emergency plasma tank
+  description: An easily portable tank for emergencies. Contains very little plasma, rated for survival use only.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/emergency_red.rsi
+  - type: Item
+    sprite: Objects/Tanks/emergency_red.rsi
+  - type: Clothing
+    sprite: Objects/Tanks/emergency_red.rsi
+
+- type: entity
+  parent: EmergencyOxygenTank
   id: ExtendedEmergencyOxygenTank
   name: extended-capacity emergency oxygen tank
   description: An emergency tank with extended capacity. Technically rated for prolonged use.
@@ -149,6 +162,19 @@
   parent: ExtendedEmergencyOxygenTank
   id: ExtendedEmergencyNitrogenTank
   name: extended-capacity emergency nitrogen tank
+  description: An emergency tank with extended capacity. Technically rated for prolonged use.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/emergency_extended_red.rsi
+  - type: Item
+    sprite: Objects/Tanks/emergency_extended_red.rsi
+  - type: Clothing
+    sprite: Objects/Tanks/emergency_extended_red.rsi
+
+- type: entity
+  parent: ExtendedEmergencyOxygenTank
+  id: ExtendedEmergencyPlasmaTank
+  name: extended-capacity emergency plasma tank
   description: An emergency tank with extended capacity. Technically rated for prolonged use.
   components:
   - type: Sprite
@@ -185,6 +211,19 @@
   id: DoubleEmergencyNitrogenTank
   name: double emergency nitrogen tank
   description: A high-grade dual-tank emergency life support container. It holds a decent amount of nitrogen for its small size.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/emergency_double_red.rsi
+  - type: Item
+    sprite: Objects/Tanks/emergency_double_red.rsi
+  - type: Clothing
+    sprite: Objects/Tanks/emergency_double_red.rsi
+
+- type: entity
+  parent: DoubleEmergencyOxygenTank
+  id: DoubleEmergencyPlasmaTank
+  name: double emergency plasma tank
+  description: A high-grade dual-tank emergency life support container. It holds a decent amount of plasma for its small size.
   components:
   - type: Sprite
     sprite: Objects/Tanks/emergency_double_red.rsi
@@ -235,7 +274,7 @@
   parent: GasTankBase
   id: PlasmaTank
   name: plasma tank
-  description: Contains dangerous plasma. Do not inhale. Extremely flammable.
+  description: Contains dangerous plasma. Do not inhale, unless you're a plasmaman. Extremely flammable.
   components:
   - type: Sprite
     sprite: Objects/Tanks/plasma.rsi

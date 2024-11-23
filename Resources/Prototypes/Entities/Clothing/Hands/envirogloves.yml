@@ -1,0 +1,25 @@
+- type: entity
+  parent: ClothingHandsGlovesSyntheticBase
+  id: ClothingHandsEnvirogloves
+  name: plasma envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite # TODO fix error sprite on worn sprite related to this
+    sprite: Clothing/Hands/Gloves/Envirogloves/plasma.rsi
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#913b00"
+      right:
+      - state: inhand-right
+        color: "#913b00"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#913b00"
+  - type: Fiber
+    fiberColor: fibers-orange

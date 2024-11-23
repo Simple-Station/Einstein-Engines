@@ -1,0 +1,66 @@
+- type: entity
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobPlasmaman
+  name: Urist McPlasma
+  abstract: true
+  components:
+  - type: Icon
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: full
+  - type: Carriable
+  - type: Body
+    prototype: Plasmaman
+    requiredLegs: 2
+  # - type: Bloodstream # Need to figure out having no blood
+  #   bloodMaxVolume: 0
+  #   bloodlossThreshold: 0
+  #   maxBleedAmount: 0
+  #   bloodRefreshAmount: 0
+  #   bloodRegenerationHunger: 0
+  - type: Damageable
+    damageModifierSet: Plasmaman
+  - type: TemperatureProtection
+    coefficient: 0.1 # Since plasmaman are immune to cold this just prevents the Too Cold alert from showing up
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#555555AA"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: Speech
+    speechVerb: Skeleton
+  - type: Vocal
+    sounds:
+      Male: Skeleton
+      Female: Skeleton
+      Unsexed: Skeleton
+  - type: IgniteFromGas
+    gas: Oxygen
+    fireStacks: 0.24 # 0.24 * 1.25 fire stack multiplier = 0.30
+    molesToIgnite: 0.5
+  - type: Flammable
+    fireStackIncreaseMultiplier: 1.25
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: SheetPlasma1
+      amount: 5
+  - type: HumanoidAppearance
+    species: Plasmaman
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Calcic
+    understands:
+    - TauCetiBasic
+    - Calcic
+  - type: FootPrints
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobPlasmamanDummy
+  categories: [ HideSpawnMenu ]

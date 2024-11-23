@@ -126,6 +126,7 @@
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.2
+  - type: IgniteFromGasImmunity
   - type: IngestionBlocker
   - type: Clothing
     #Copies ClothingHeadHardsuitBase behavior
@@ -165,6 +166,7 @@
     coefficient: 0.1
   - type: FireProtection
     reduction: 0.2
+  - type: IgniteFromGasImmunity
   - type: Armor
     modifiers:
       coefficients:
@@ -183,6 +185,70 @@
     slots:
     - Hair
     - Snout
+
+- type: entity
+  abstract: true
+  id: ClothingHeadEnvirohelmBase
+  name: base envirohelm
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: icon
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Clothing
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    quickEquip: false
+    slots: [ HEAD ]
+  - type: BreathMask
+  - type: IgniteFromGasImmunity
+  - type: EyeProtection
+  - type: GroupExamine
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: ToggleableLightVisuals
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 2
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    netsync: false
+  - type: Appearance
+  - type: HandheldLight
+    addPrefix: true
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        interpolate: Linear
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: Battery
+    maxCharge: 300 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 300 is 5 minutes of light.
+    startingCharge: 300
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2 #recharge of 2 makes total drain 1w / s so max charge is 1:1 with time. Time to fully charge should be 2.5 minutes. Having recharge gives light an extended flicker period which gives you some warning to return to light area.
 
 - type: entity
   abstract: true

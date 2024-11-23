@@ -1,0 +1,75 @@
+- type: entity
+  id: OrganPlasmamanLungs
+  parent: OrganHumanLungs
+  name: plasmaman lungs
+  description: "The lungs of a plasmaman, who breathe plasma. Any form of gaseous oxygen is lethally toxic if breathed in."
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+    state: lungs
+    layers: []
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+  - type: Lung
+    alert: LowPlasma
+  - type: Item
+    size: Small
+    heldPrefix: lungs
+
+- type: entity
+  id: OrganPlasmamanStomach
+  parent: OrganHumanStomach
+  name: plasmaman stomach
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+
+- type: entity
+  id: OrganPlasmamanLiver
+  parent: OrganHumanLiver
+  name: plasmaman liver
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+
+- type: entity
+  id: OrganPlasmamanTongue
+  parent: OrganHumanTongue
+  name: plasmaman tongue
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+
+- type: entity
+  id: OrganPlasmamanKidneys
+  parent: OrganHumanKidneys
+  name: plasmaman kidneys
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+    state: kidneys
+    layers: []
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+
+- type: entity
+  id: OrganPlasmamanHeart
+  parent: OrganHumanHeart
+  name: plasmaman heart
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+
+- type: entity
+  id: OrganPlasmamanBrain
+  parent: OrganHumanBrain
+  name: plasmaman brain
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi

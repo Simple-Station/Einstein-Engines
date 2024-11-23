@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelm
+  name: plasma envirosuit helmet
+  description: A special containment helmet that allows plasma-based lifeforms to exist safely in an oxygenated environment.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/plain.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/plain.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

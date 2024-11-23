@@ -12,4 +12,5 @@ chat-language-Elyran-name = Elyran
 chat-language-Canilunzt-name = Canilunzt
 chat-language-Moffic-name = Moffic
 chat-language-RobotTalk-name = Binary
+chat-language-Calcic-name = Calcic
 chat-language-ValyrianStandard-name = Valyrian
