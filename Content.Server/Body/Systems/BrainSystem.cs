@@ -17,7 +17,6 @@ namespace Content.Server.Body.Systems
     {
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
         [Dependency] private readonly SharedBodySystem _bodySystem = default!;
-        [Dependency] private readonly SharedBodySystem _bodySystem = default!;
 
         public override void Initialize()
         {

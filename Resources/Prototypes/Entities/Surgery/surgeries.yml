@@ -613,7 +613,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Surgery
-    #requirement: SurgeryOpenIncision
+    requirement: SurgeryOpenIncision
     steps:
     - SurgeryStepSawBones
     - SurgeryStepInsertEyes

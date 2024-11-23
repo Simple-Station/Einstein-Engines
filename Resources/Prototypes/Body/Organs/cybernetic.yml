@@ -18,7 +18,6 @@
     onAdd:
     - type: FlashImmunity
     - type: EyeProtection
-    - type: CyberEyes
 
 - type: entity
   parent: BaseCyberneticEyes
@@ -30,7 +29,6 @@
     onAdd:
     - type: FlashImmunity
     - type: EyeProtection
-    - type: CyberEyes
     - type: ShowJobIcons
     - type: ShowMindShieldIcons
     - type: ShowCriminalRecordIcons
@@ -45,7 +43,6 @@
     onAdd:
     - type: FlashImmunity
     - type: EyeProtection
-    - type: CyberEyes
     - type: ShowHealthBars
       damageContainers:
       - Biological
