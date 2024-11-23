@@ -5,8 +5,11 @@ using Content.Server.NPC.Systems;
 using Content.Server.Objectives;
 using Content.Server.PDA.Ringer;
 using Content.Server.Roles;
+using Content.Server.Traitor.Components;
 using Content.Server.Traitor.Uplink;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
+using Content.Shared.Mood;
 using Content.Shared.Objectives.Components;
 using Content.Shared.PDA;
 using Content.Shared.Roles;
@@ -15,9 +18,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
-using Content.Shared.Mood;
-using Content.Server.GameTicking.Components;
-using Content.Server.Traitor.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -116,9 +116,9 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             Briefing = briefing
         }, mind, true);
 
-        // Change the faction
-        _npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
-        _npcFaction.AddFaction(traitor, component.SyndicateFaction);
+        // Don't Change the faction, this was stupid.
+        //_npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
+        //_npcFaction.AddFaction(traitor, component.SyndicateFaction);
 
         RaiseLocalEvent(traitor, new MoodEffectEvent("TraitorFocused"));
 

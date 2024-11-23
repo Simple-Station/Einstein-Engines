@@ -46,6 +46,12 @@ namespace Content.Shared.UserInterface
         public EntityWhitelist? RequiredItems;
 
         /// <summary>
+        ///     Whitelist for the user who is trying to open this UI.
+        /// </summary>
+        [DataField]
+        public EntityWhitelist? UserWhitelist;
+
+        /// <summary>
         ///     If true, then this UI can only be opened via verbs. I.e., normal interactions/activations will not open
         ///     the UI.
         /// </summary>
@@ -57,7 +63,7 @@ namespace Content.Shared.UserInterface
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField]
-        public bool AllowSpectator = true;
+        public bool BlockSpectators;
 
         /// <summary>
         ///     Whether the item must be in the user's currently selected/active hand.

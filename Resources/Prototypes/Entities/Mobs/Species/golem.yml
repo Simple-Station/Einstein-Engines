@@ -191,8 +191,7 @@
 #   - type: Strippable
 #   - type: UserInterface
 #     interfaces:
-#       - key: enum.VoiceMaskUIKey.Key
-#         type: VoiceMaskBoundUserInterface
+
 #       - key: enum.HumanoidMarkingModifierKey.Key
 #         type: HumanoidMarkingModifierBoundUserInterface
 #       - key: enum.StrippingUiKey.Key

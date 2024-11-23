@@ -52,20 +52,22 @@ public sealed partial class TelepathicChatSystem : EntitySystem
     private IEnumerable<INetChannel> GetAdminClients()
     {
         return _adminManager.ActiveAdmins
-            .Select(p => p.ConnectedClient);
+            .Select(p => p.Channel);
     }
 
     private List<INetChannel> GetDreamers(IEnumerable<INetChannel> removeList)
     {
+        var filteredList = new List<INetChannel>();
         var filtered = Filter.Empty()
             .AddWhereAttachedEntity(entity =>
                 HasComp<PsionicComponent>(entity) && !HasComp<TelepathyComponent>(entity)
                 || HasComp<SleepingComponent>(entity)
                 || HasComp<SeeingRainbowsComponent>(entity) && !HasComp<PsionicsDisabledComponent>(entity) && !HasComp<PsionicInsulationComponent>(entity))
             .Recipients
-            .Select(p => p.ConnectedClient);
+            .Select(p => p.Channel);
 
-        var filteredList = filtered.ToList();
+        if (filtered.ToList() != null)
+            filteredList = filtered.ToList();
 
         foreach (var entity in removeList)
             filteredList.Remove(entity);
@@ -134,7 +136,7 @@ public sealed partial class TelepathicChatSystem : EntitySystem
 
         for (var i = 0; i < message.Length; i++)
         {
-            if (char.IsWhiteSpace((modifiedMessage[i])))
+            if (char.IsWhiteSpace(modifiedMessage[i]))
             {
                 continue;
             }

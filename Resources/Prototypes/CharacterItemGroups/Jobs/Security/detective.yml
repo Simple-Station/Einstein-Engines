@@ -1,0 +1,69 @@
+# Detective
+#- type: characterItemGroup
+#  id: LoadoutDetectiveBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutDetectiveBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutDetectiveEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutDetectiveEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutDetectiveEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutDetectiveGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutDetectiveHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutDetectiveId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutDetectiveNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutDetectiveMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutDetectiveOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingOuterCoatDetective
+    - type: loadout
+      id: LoadoutOuterVestDetective
+
+#- type: characterItemGroup
+#  id: LoadoutDetectiveShoes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutDetectiveUniforms
+#  maxItems: 1
+#  items:

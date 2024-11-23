@@ -1,0 +1,125 @@
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutHeadOfPersonnelBackpacksBackpackFilled
+    - type: loadout
+      id: LoadoutHeadOfPersonnelBackpacksSatchelFilled
+    - type: loadout
+      id: LoadoutHeadOfPersonnelBackpacksDuffelFilled
+    - type: loadout
+      id: LoadoutCommandHOPBackIan
+    - type: loadout
+      id: LoadoutCommandHOPBackIanFilled
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutHeadOfPersonnelBeltClipboard
+
+#- type: characterItemGroup
+#  id: LoadoutHeadOfPersonnelEars
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutHeadOfPersonnelEquipment
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelTrinkets
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutHeadOfPersonnelCigarCase
+    - type: loadout
+      id: LoadoutHeadOfPersonnelBookIanDossier
+
+#- type: characterItemGroup
+#  id: LoadoutHeadOfPersonnelEyes
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutHeadOfPersonnelGlovesHoP
+    - type: loadout
+      id: LoadoutHeadOfPersonnelGlovesInspection
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHOPHatCap
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelId
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutHeadOfPersonnelNTPDA
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHOPNeckMantle
+    - type: loadout
+      id: LoadoutCommandHOPNeckCloak
+    - type: loadout
+      id: LoadoutCommandHOPBedsheetIan
+    - type: loadout
+      id: LoadoutHeadOfPersonnelNeckGoldMedal
+
+#- type: characterItemGroup
+#  id: LoadoutHeadOfPersonnelMask
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutcommandHOPOuterCoatFormal
+    - type: loadout
+      id: LoadoutHeadOfPersonnelOuterWinter
+    - type: loadout
+      id: LoadoutHeadOfPersonnelOuterArmoredCoat
+    - type: loadout
+      id: LoadoutHeadOfPersonnelOuterDuraVest
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutHeadOfPersonnelShoesLaceup
+    - type: loadout
+      id: LoadoutHeadOfPersonnelShoesLeather
+    - type: loadout
+      id: LoadoutCommandHOPShoesBootsWinter
+
+- type: characterItemGroup
+  id: LoadoutHeadOfPersonnelUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutHeadOfPersonnelUniformJumpsuit
+    - type: loadout
+      id: LoadoutHeadOfPersonnelUniformJumpskirt
+    - type: loadout
+      id: LoadoutCommandHOPJumpsuitTurtleneckBoatswain
+    - type: loadout
+      id: LoadoutCommandHOPJumpsuitMess
+    - type: loadout
+      id: LoadoutCommandHOPJumpskirtMess

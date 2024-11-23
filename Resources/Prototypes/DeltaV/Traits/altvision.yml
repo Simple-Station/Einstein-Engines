@@ -12,8 +12,10 @@
       inverted: true
       traits:
         - DogVision
-  components:
-    - type: UltraVision
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: UltraVision
 
 - type: trait
   id: DogVision
@@ -29,5 +31,7 @@
       inverted: true
       traits:
         - UltraVision
-  components:
-    - type: DogVision
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: DogVision

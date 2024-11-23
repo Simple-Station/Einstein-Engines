@@ -243,3 +243,33 @@
   actions:
     - ActionDarkSwap
   powerSlotCost: 1
+
+- type: psionicPower
+  id: PyrokineticFlare
+  name: Pyrokinetic Flare
+  description: pyrokinetic-flare-power-description
+  actions:
+    - ActionPyrokineticFlare
+  powerSlotCost: 1
+  initializationFeedback: pyrokinetic-flare-power-initialization-feedback
+  metapsionicFeedback: pyrokinetic-flare-power-metapsionic-feedback
+  amplificationModifier: 0.25
+
+- type: psionicPower
+  id: SummonImpPower
+  name: Summon Imp
+  description: summon-imp-power-description
+  actions:
+    - ActionSummonImp
+  powerSlotCost: 1
+  initializationFeedback: summon-imp-power-initialization-feedback
+  amplificationModifier: 0.5
+  dampeningModifier: 0.5
+
+- type: psionicPower
+  id: SummonRemiliaPower
+  name: Summon Remilia
+  description: summon-imp-power-description
+  actions:
+    - ActionSummonRemilia
+  powerSlotCost: 0

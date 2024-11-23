@@ -127,6 +127,9 @@
       - Shard
       - Landmine
       - Mousetrap
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard" # I was about to complain about this, then I remembered birbs have dinosaur feet. So this is valid.
 
 - type: entity
   save: false
@@ -189,7 +192,7 @@
   id: ActionHarpyPlayMidi
   name: Play MIDI
   description: Sing your heart out! Right click yourself to set an instrument.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -201,7 +204,7 @@
   id: ActionSyrinxChangeVoiceMask
   name: Set name
   description: Change the name others hear to something else.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: DeltaV/Interface/Actions/harpy_syrinx.png
@@ -212,7 +215,7 @@
   id: ActionToggleFlight
   name: Fly
   description: Make use of your wings to fly. Beat the flightless bird allegations.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false

@@ -1,0 +1,94 @@
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadingEngineeringAtmosBackpackBackpack
+    - type: loadout
+      id: LoadingEngineeringAtmosBackpackSatchel
+    - type: loadout
+      id: LoadingEngineeringAtmosBackpackDuffel
+
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianBeltUtility
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianBeltUtilityAtmos
+
+#- type: characterItemGroup
+#  id: LoadoutAtmosphericTechnicianEars
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianEquipment
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentBoxInflatable
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentMedkitOxygen
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentRCD
+
+#- type: characterItemGroup
+#  id: LoadoutAtmosphericTechnicianEyes
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutAtmosphericTechnicianGloves
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianChickenhead
+
+#- type: characterItemGroup
+#  id: LoadoutAtmosphericTechnicianId
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutAtmosphericTechnicianNeck
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianMaskGasAtmos
+
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianChickenSuit
+
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianShoesWhite
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianShoesWork
+
+- type: characterItemGroup
+  id: LoadoutAtmosphericTechnicianUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadingEngineeringAtmosUniformSuit
+    - type: loadout
+      id: LoadingEngineeringAtmosUniformSkirt

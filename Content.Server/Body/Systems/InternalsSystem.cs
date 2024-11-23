@@ -145,12 +145,12 @@ public sealed class InternalsSystem : EntitySystem
 
     private void OnInternalsStartup(Entity<InternalsComponent> ent, ref ComponentStartup args)
     {
-        _alerts.ShowAlert(ent, AlertType.Internals, GetSeverity(ent));
+        _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
     }
 
     private void OnInternalsShutdown(Entity<InternalsComponent> ent, ref ComponentShutdown args)
     {
-        _alerts.ClearAlert(ent, AlertType.Internals);
+        _alerts.ClearAlert(ent, ent.Comp.InternalsAlert);
     }
 
     private void OnInhaleLocation(Entity<InternalsComponent> ent, ref InhaleLocationEvent args)
@@ -160,7 +160,7 @@ public sealed class InternalsSystem : EntitySystem
             var gasTank = Comp<GasTankComponent>(ent.Comp.GasTankEntity!.Value);
             args.Gas = _gasTank.RemoveAirVolume((ent.Comp.GasTankEntity.Value, gasTank), Atmospherics.BreathVolume);
             // TODO: Should listen to gas tank updates instead I guess?
-            _alerts.ShowAlert(ent, AlertType.Internals, GetSeverity(ent));
+            _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
         }
     }
     public void DisconnectBreathTool(Entity<InternalsComponent> ent)
@@ -174,7 +174,7 @@ public sealed class InternalsSystem : EntitySystem
             DisconnectTank(ent);
         }
 
-        _alerts.ShowAlert(ent, AlertType.Internals, GetSeverity(ent));
+        _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
     }
 
     public void ConnectBreathTool(Entity<InternalsComponent> ent, EntityUid toolEntity)
@@ -185,7 +185,7 @@ public sealed class InternalsSystem : EntitySystem
         }
 
         ent.Comp.BreathToolEntity = toolEntity;
-        _alerts.ShowAlert(ent, AlertType.Internals, GetSeverity(ent));
+        _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
     }
 
     public void DisconnectTank(InternalsComponent? component)
@@ -197,7 +197,7 @@ public sealed class InternalsSystem : EntitySystem
             _gasTank.DisconnectFromInternals((component.GasTankEntity.Value, tank));
 
         component.GasTankEntity = null;
-        _alerts.ShowAlert(component.Owner, AlertType.Internals, GetSeverity(component));
+        _alerts.ShowAlert(component.Owner, component.InternalsAlert, GetSeverity(component));
     }
 
     public bool TryConnectTank(Entity<InternalsComponent> ent, EntityUid tankEntity)
@@ -209,7 +209,7 @@ public sealed class InternalsSystem : EntitySystem
             _gasTank.DisconnectFromInternals((ent.Comp.GasTankEntity.Value, tank));
 
         ent.Comp.GasTankEntity = tankEntity;
-        _alerts.ShowAlert(ent, AlertType.Internals, GetSeverity(ent));
+        _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
         return true;
     }
 
