@@ -1,7 +1,7 @@
 - type: species
   id: Arachne
   name: species-name-arachne
-  roundStart: false # Sorry but surgery needs A LOT OF MODIFICATIONS FOR SPIDERS.
+  roundStart: true # I'll kill these issues somehow.
   prototype: MobArachne
   sprites: MobArachneSprites
   markingLimits: MobArachneMarkingLimits
