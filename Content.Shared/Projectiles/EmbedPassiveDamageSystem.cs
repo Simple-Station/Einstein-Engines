@@ -17,7 +17,7 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<EmbedPassiveDamageComponent, EmbedEvent>(OnEmbed);
-        SubscribeLocalEvent<EmbedPassiveDamageComponent, RemoveEmbeddedProjectileEvent>(OnEmbedRemove);
+        SubscribeLocalEvent<EmbedPassiveDamageComponent, RemoveEmbedEvent>(OnRemoveEmbed);
     }
 
     private void OnEmbed(EntityUid uid, EmbedPassiveDamageComponent component, EmbedEvent args)
@@ -30,7 +30,7 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         component.NextDamage = _timing.CurTime + TimeSpan.FromSeconds(1f);
     }
 
-    private void OnEmbedRemove(EntityUid uid, EmbedPassiveDamageComponent component, RemoveEmbeddedProjectileEvent args)
+    private void OnRemoveEmbed(EntityUid uid, EmbedPassiveDamageComponent component, RemoveEmbedEvent args)
     {
         component.Embedded = null;
         component.EmbeddedDamageable = null;

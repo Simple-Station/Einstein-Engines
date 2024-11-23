@@ -6,6 +6,7 @@
   components:
   - type: EmbeddableProjectile
     offset: 0.15,0.15
+    autoRemoveDuration: 10
   - type: ThrowingAngle
     angle: 225
   - type: Tag
