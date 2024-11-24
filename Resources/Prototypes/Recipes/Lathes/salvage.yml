@@ -1,7 +1,7 @@
 - type: latheRecipe
   id: Fulton
   result: Fulton1
-  completetime: 1
+  completeTime: 1
   materials:
     Steel: 200
     Cloth: 100
@@ -9,7 +9,7 @@
 - type: latheRecipe
   id: FultonBeacon
   result: FultonBeacon
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 1000
     Glass: 500

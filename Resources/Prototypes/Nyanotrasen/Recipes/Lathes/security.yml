@@ -4,7 +4,7 @@
     sprite: Nyanotrasen/Clothing/Head/Hats/cage.rsi
     state: icon
   result: ClothingHeadCage
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 400
     Bluespace: 20
@@ -12,7 +12,7 @@
 - type: latheRecipe
   id: ClothingHeadHelmetInsulated
   result: ClothingHeadHelmetInsulated
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 400
     Bluespace: 20
@@ -23,7 +23,7 @@
     sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
     state: icon
   result: ShockCollar
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 300
     Glass: 100
@@ -35,7 +35,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
     state: practice
   result: ShellSoulbreaker
-  completetime: 4
+  completeTime: 4
   materials:
     Plastic: 15
     Steel: 10

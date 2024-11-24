@@ -2,7 +2,7 @@
   id: LightTube
   result: LightTube
   category: Lights
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 50
     Glass: 50
@@ -11,7 +11,7 @@
   id: LedLightTube
   result: LedLightTube
   category: Lights
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 50
     Glass: 50
@@ -20,7 +20,7 @@
   id: SodiumLightTube
   result: SodiumLightTube
   category: Lights
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 50
     Glass: 50
@@ -29,7 +29,7 @@
   id: ExteriorLightTube
   result: ExteriorLightTube
   category: Lights
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 50
     Glass: 50
@@ -38,7 +38,7 @@
   id: LightBulb
   result: LightBulb
   category: Lights
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 50
     Glass: 50
@@ -47,7 +47,7 @@
   id: LedLightBulb
   result: LedLightBulb
   category: Lights
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 50
     Glass: 50
@@ -56,7 +56,7 @@
   id: GlowstickRed
   result: GlowstickRed
   category: Lights
-  completetime: 2
+  completeTime: 2
   materials:
     Plastic: 50
 
@@ -64,7 +64,7 @@
   id: Flare
   result: Flare
   category: Lights
-  completetime: 2
+  completeTime: 2
   materials:
     Plastic: 50
 
@@ -72,7 +72,7 @@
   id: FlashlightLantern
   result: EmptyFlashlightLantern
   category: Lights
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 100
     Glass: 100
@@ -82,21 +82,21 @@
   id: FireExtinguisher
   result: FireExtinguisher
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
 
 - type: latheRecipe
   id: Matchbox
   result: Matchbox
-  completetime: 1
+  completeTime: 1
   materials:
     Wood: 100
 
 - type: latheRecipe
   id: SynthesizerInstrument
   result: SynthesizerInstrument
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 300
     Plastic: 300
@@ -106,7 +106,7 @@
   id: NodeScanner
   result: NodeScanner
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 100
     Plastic: 50
@@ -114,14 +114,14 @@
 - type: latheRecipe
   id: AirTank
   result: AirTank
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 300
 
 - type: latheRecipe
   id: ClothingShoesBootsMagSci
   result: ClothingShoesBootsMagSci
-  completetime: 10
+  completeTime: 10
   materials:
     Steel: 1000
     Plastic: 500
@@ -129,7 +129,7 @@
 - type: latheRecipe
   id: ClothingShoesBootsSpeed
   result: ClothingShoesBootsSpeed
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 1500
     Plastic: 1000
@@ -138,7 +138,7 @@
 - type: latheRecipe
   id: ModularReceiver
   result: ModularReceiver
-  completetime: 12
+  completeTime: 12
   materials:
     Steel: 750
     Plastic: 100
@@ -146,56 +146,56 @@
 - type: latheRecipe
   id: FauxTileAstroGrass
   result: FloorTileItemAstroGrass
-  completetime: 1
+  completeTime: 1
   materials:
     Plastic: 100
 
 - type: latheRecipe
   id: FauxTileMowedAstroGrass
   result: FloorTileItemMowedAstroGrass
-  completetime: 1
+  completeTime: 1
   materials:
     Plastic: 100
 
 - type: latheRecipe
   id: FauxTileJungleAstroGrass
   result: FloorTileItemJungleAstroGrass
-  completetime: 1
+  completeTime: 1
   materials:
     Plastic: 100
 
 - type: latheRecipe
   id: FauxTileAstroIce
   result: FloorTileItemAstroIce
-  completetime: 1
+  completeTime: 1
   materials:
     Plastic: 100
 
 - type: latheRecipe
   id: FauxTileAstroSnow
   result: FloorTileItemAstroSnow
-  completetime: 1
+  completeTime: 1
   materials:
     Plastic: 100
 
 - type: latheRecipe
   id: FloorGreenCircuit
   result: FloorTileItemGCircuit4
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 100
 
 - type: latheRecipe
   id: FloorBlueCircuit
   result: FloorTileItemBCircuit4
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 100
 
 - type: latheRecipe
   id: HandheldStationMap
   result: HandheldStationMapEmpty
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 300
     Plastic: 100
@@ -203,7 +203,7 @@
 - type: latheRecipe
   id: ClothingHeadHatWelding
   result: ClothingHeadHatWelding
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 400
     Glass: 200
@@ -211,7 +211,7 @@
 - type: latheRecipe
   id: ClothingShoesBootsMagAdv
   result: ClothingShoesBootsMagAdv
-  completetime: 12
+  completeTime: 12
   materials:
     Silver: 1000
     Gold: 500
@@ -219,7 +219,7 @@
 - type: latheRecipe
   id: MailCapsule
   result: MailCapsulePrimed
-  completetime: 1
+  completeTime: 1
   materials:
     Glass: 100
     Plastic: 100

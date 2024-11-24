@@ -2,7 +2,7 @@
   id: PrizeBall
   result: PrizeBall
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 30
 
@@ -10,7 +10,7 @@
   id: PlushieShadowkin
   result: PlushieShadowkin
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -18,7 +18,7 @@
   id: PlushieMothRandom
   result: PlushieMothRandom
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -26,7 +26,7 @@
   id: PlushieMothMusician
   result: PlushieMothMusician
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -34,7 +34,7 @@
   id: PlushieMothBartender
   result: PlushieMothBartender
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -42,7 +42,7 @@
   id: PlushieBee
   result: PlushieBee
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -50,7 +50,7 @@
   id: PlushieHampter
   result: PlushieHampter
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -58,7 +58,7 @@
   id: PlushieRouny
   result: PlushieRouny
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -66,7 +66,7 @@
   id: PlushieLamp
   result: PlushieLamp
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -74,7 +74,7 @@
   id: PlushieArachind
   result: PlushieArachind
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -82,7 +82,7 @@
   id: PlushieLizard
   result: PlushieLizard
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -90,7 +90,7 @@
   id: PlushieSpaceLizard
   result: PlushieSpaceLizard
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -98,7 +98,7 @@
   id: PlushieSharkBlue
   result: PlushieSharkBlue
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -106,7 +106,7 @@
   id: PlushieSharkPink
   result: PlushieSharkPink
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -114,7 +114,7 @@
   id: PlushieSharkGrey
   result: PlushieSharkGrey
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -122,7 +122,7 @@
   id: PlushieCarp
   result: PlushieCarp
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -130,7 +130,7 @@
   id: PlushieMagicarp
   result: PlushieMagicarp
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -138,7 +138,7 @@
   id: PlushieHolocarp
   result: PlushieHolocarp
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -146,7 +146,7 @@
   id: PlushieSlime
   result: PlushieSlime
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -154,7 +154,7 @@
   id: PlushieSnake
   result: PlushieSnake
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -162,7 +162,7 @@
   id: ToyMouse
   result: ToyMouse
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -170,7 +170,7 @@
   id: ToyRubberDuck
   result: ToyRubberDuck
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -178,7 +178,7 @@
   id: PlushieVox
   result: PlushieVox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -186,7 +186,7 @@
   id: PlushieAtmosian
   result: PlushieAtmosian
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -194,7 +194,7 @@
   id: PlushiePenguin
   result: PlushiePenguin
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -202,7 +202,7 @@
   id: PlushieHuman
   result: PlushieHuman
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -210,7 +210,7 @@
   id: PlushieArachne
   result: PlushieArachne
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -218,7 +218,7 @@
   id: PlushieGnome
   result: PlushieGnome
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -226,7 +226,7 @@
   id: PlushieLoveable
   result: PlushieLoveable
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -234,7 +234,7 @@
   id: PlushieDeer
   result: PlushieDeer
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -242,7 +242,7 @@
   id: PlushieIpc
   result: PlushieIpc
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -250,7 +250,7 @@
   id: PlushieGrey
   result: PlushieGrey
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -258,7 +258,7 @@
   id: PlushieRedFox
   result: PlushieRedFox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -266,7 +266,7 @@
   id: PlushiePurpleFox
   result: PlushiePurpleFox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -274,7 +274,7 @@
   id: PlushiePinkFox
   result: PlushiePinkFox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -282,7 +282,7 @@
   id: PlushieOrangeFox
   result: PlushieOrangeFox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -290,7 +290,7 @@
   id: PlushieMarbleFox
   result: PlushieMarbleFox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -298,7 +298,7 @@
   id: PlushieCrimsonFox
   result: PlushieCrimsonFox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -306,7 +306,7 @@
   id: PlushieCoffeeFox
   result: PlushieCoffeeFox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -314,7 +314,7 @@
   id: PlushieBlueFox
   result: PlushieBlueFox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -322,7 +322,7 @@
   id: PlushieBlackFox
   result: PlushieBlackFox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -330,7 +330,7 @@
   id: PlushieVulp
   result: PlushieVulp
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -338,7 +338,7 @@
   id: PlushieCorgi
   result: PlushieCorgi
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -346,7 +346,7 @@
   id: PlushieGirlyCorgi
   result: PlushieGirlyCorgi
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -354,7 +354,7 @@
   id: PlushieRobotCorgi
   result: PlushieRobotCorgi
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -362,7 +362,7 @@
   id: PlushieCatBlack
   result: PlushieCatBlack
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -370,7 +370,7 @@
   id: PlushieCatGrey
   result: PlushieCatGrey
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -378,7 +378,7 @@
   id: PlushieCatOrange
   result: PlushieCatOrange
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -386,7 +386,7 @@
   id: PlushieCatSiames
   result: PlushieCatSiames
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -394,7 +394,7 @@
   id: PlushieCatTabby
   result: PlushieCatTabby
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -402,7 +402,7 @@
   id: PlushieCatTuxedo
   result: PlushieCatTuxedo
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -410,7 +410,7 @@
   id: PlushieCatWhite
   result: PlushieCatWhite
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -418,7 +418,7 @@
   id: ToyAi
   result: ToyAi
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 30
 
@@ -426,7 +426,7 @@
   id: ToyIan
   result: ToyIan
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 30
 
@@ -434,7 +434,7 @@
   id: BalloonNT
   result: BalloonNT
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 30
 
@@ -442,7 +442,7 @@
   id: BalloonCorgi
   result: BalloonCorgi
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 30
 
@@ -450,7 +450,7 @@
   id: CrayonBox
   result: CrayonBox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 20
 
@@ -458,7 +458,7 @@
   id: PetRockCarrier
   result: PetRockCarrier
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 50
 
@@ -466,7 +466,7 @@
   id: PlushieXeno
   result: PlushieXeno
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 80
 
@@ -474,7 +474,7 @@
   id: FoamCrossbow
   result: FoamCrossbow
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -482,7 +482,7 @@
   id: RevolverCapGun
   result: RevolverCapGun
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -490,7 +490,7 @@
   id: PonderingOrb
   result: PonderingOrb
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 80
 
@@ -498,7 +498,7 @@
   id: ToyAmongPequeno
   result: ToyAmongPequeno
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 80
 
@@ -506,7 +506,7 @@
   id: FoamCutlass
   result: FoamCutlass
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -514,7 +514,7 @@
   id: ToyHammer
   result: ToyHammer
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -522,7 +522,7 @@
   id: WhoopieCushion
   result: WhoopieCushion
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -530,7 +530,7 @@
   id: PlasticBanana
   result: PlasticBanana
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 80
 
@@ -538,7 +538,7 @@
   id: WeaponWaterPistol
   result: WeaponWaterPistol
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -546,7 +546,7 @@
   id: WeaponWaterBlaster
   result: WeaponWaterBlaster
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -554,7 +554,7 @@
   id: NewtonCradle
   result: NewtonCradle
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 80
 
@@ -562,7 +562,7 @@
   id: SnapPopBox
   result: SnapPopBox
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 80
 
@@ -570,7 +570,7 @@
   id: MrDips
   result: MrDips
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 80
 
@@ -578,7 +578,7 @@
   id: MrChips
   result: MrChips
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 80
 
@@ -586,7 +586,7 @@
   id: CrazyGlue
   result: CrazyGlue
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -594,7 +594,7 @@
   id: PlushieRatvar
   result: PlushieRatvar
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 80
 
@@ -602,7 +602,7 @@
   id: PlushieNar
   result: PlushieNar
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 80
 
@@ -612,7 +612,7 @@
   id: PlushieGhost
   result: PlushieGhost
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -620,7 +620,7 @@
   id: PlushieRGBee
   result: PlushieRGBee
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -628,7 +628,7 @@
   id: PlushieRainbowCarp
   result: PlushieRainbowCarp
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -636,7 +636,7 @@
   id: PlushieJester
   result: PlushieJester
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -644,7 +644,7 @@
   id: PlushieSlips
   result: PlushieSlips
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -652,7 +652,7 @@
   id: PlushieTrystan
   result: PlushieTrystan
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -660,7 +660,7 @@
   id: PlushieAbductor
   result: PlushieAbductor
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -668,7 +668,7 @@
   id: PlushieAbductorAgent
   result: PlushieAbductorAgent
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -676,7 +676,7 @@
   id: PlushieNuke
   result: PlushieNuke
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -684,7 +684,7 @@
   id: ToyNuke
   result: ToyNuke
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -692,7 +692,7 @@
   id: FoamBlade
   result: FoamBlade
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 150
 
@@ -700,7 +700,7 @@
   id: BalloonSyn
   result: BalloonSyn
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 100
 
@@ -708,7 +708,7 @@
   id: SingularityToy
   result: SingularityToy
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 150
 
@@ -716,7 +716,7 @@
   id: TeslaToy
   result: TeslaToy
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 150
 
@@ -724,7 +724,7 @@
   id: ToySword
   result: ToySword
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 200
 
@@ -732,7 +732,7 @@
   id: BwoinkHammer
   result: BwoinkHammer
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 200
 
@@ -740,6 +740,6 @@
   id: ThronglerToy
   result: ThronglerToy
   applyMaterialDiscount: false
-  completetime: 0.1
+  completeTime: 0.1
   materials:
     PrizeTicket: 500

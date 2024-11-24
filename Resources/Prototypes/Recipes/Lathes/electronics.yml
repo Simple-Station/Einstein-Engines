@@ -2,7 +2,7 @@
   id: FirelockElectronics
   result: FirelockElectronics
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
      Steel: 100
      Plastic: 300
@@ -11,7 +11,7 @@
   id: MailingUnitElectronics
   result: MailingUnitElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 50
     Plastic: 300
@@ -20,7 +20,7 @@
   id: CellRechargerCircuitboard
   result: CellRechargerCircuitboard
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 50
     Plastic: 50
@@ -29,7 +29,7 @@
   id: BorgChargerCircuitboard
   result: BorgChargerCircuitboard
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 50
     Plastic: 50
@@ -38,7 +38,7 @@
   id: WeaponCapacitorRechargerCircuitboard
   result: WeaponCapacitorRechargerCircuitboard
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 50
     Plastic: 50
@@ -47,7 +47,7 @@
   id: TurboItemRechargerCircuitboard
   result: TurboItemRechargerCircuitboard
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 500
     Plastic: 500
@@ -57,7 +57,7 @@
   id: DoorElectronics
   result: DoorElectronics
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
      Steel: 50
      Plastic: 300
@@ -66,7 +66,7 @@
   id: AirAlarmElectronics
   result: AirAlarmElectronics
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
      Steel: 100
      Plastic: 300
@@ -75,7 +75,7 @@
   id: StationMapElectronics
   result: StationMapCircuitboard
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
      Steel: 50
      Plastic: 50
@@ -84,7 +84,7 @@
   id: IntercomElectronics
   result: IntercomElectronics
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
      Steel: 50
      Plastic: 300
@@ -93,7 +93,7 @@
   id: FireAlarmElectronics
   result: FireAlarmElectronics
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
      Steel: 100
      Plastic: 300
@@ -102,7 +102,7 @@
   id: SignalTimerElectronics
   result: SignalTimerElectronics
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
      Steel: 50
      Plastic: 50
@@ -111,7 +111,7 @@
   id: CloningPodMachineCircuitboard
   result: CloningPodMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -120,7 +120,7 @@
 - type: latheRecipe
   id: MetempsychoticMachineCircuitboard
   result: MetempsychoticMachineCircuitboard
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 900
@@ -130,7 +130,7 @@
   id: ThermomachineFreezerMachineCircuitBoard
   result: ThermomachineFreezerMachineCircuitBoard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 150
     Glass: 500
@@ -140,7 +140,7 @@
   id: HellfireFreezerMachineCircuitBoard
   result: HellfireFreezerMachineCircuitBoard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 150
     Glass: 500
@@ -150,7 +150,7 @@
   id: CondenserMachineCircuitBoard
   result: CondenserMachineCircuitBoard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -159,7 +159,7 @@
   id: PortableScrubberMachineCircuitBoard
   result: PortableScrubberMachineCircuitBoard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 150
     Glass: 500
@@ -169,7 +169,7 @@
   id: SpaceHeaterMachineCircuitBoard
   result: SpaceHeaterMachineCircuitBoard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 150
     Glass: 500
@@ -179,7 +179,7 @@
   id: MedicalScannerMachineCircuitboard
   result: MedicalScannerMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -188,7 +188,7 @@
   id: CryoPodMachineCircuitboard
   result: CryoPodMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -198,7 +198,7 @@
   id: ChemMasterMachineCircuitboard
   result: ChemMasterMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -207,7 +207,7 @@
   id: ChemDispenserMachineCircuitboard
   result: ChemDispenserMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -217,7 +217,7 @@
   id: BiomassReclaimerMachineCircuitboard
   result: BiomassReclaimerMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -227,7 +227,7 @@
   id: BiofabricatorMachineCircuitboard
   result: BiofabricatorMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -237,7 +237,7 @@
   id: HydroponicsTrayMachineCircuitboard
   result: HydroponicsTrayMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -246,7 +246,7 @@
   id: AutolatheMachineCircuitboard
   result: AutolatheMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -255,7 +255,7 @@
   id: ProtolatheMachineCircuitboard
   result: ProtolatheMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -264,7 +264,7 @@
   id: AutolatheHyperConvectionMachineCircuitboard
   result: AutolatheHyperConvectionMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -274,7 +274,7 @@
   id: ProtolatheHyperConvectionMachineCircuitboard
   result: ProtolatheHyperConvectionMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -284,7 +284,7 @@
   id: CircuitImprinterMachineCircuitboard
   result: CircuitImprinterMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -293,7 +293,7 @@
   id: CircuitImprinterHyperConvectionMachineCircuitboard
   result: CircuitImprinterHyperConvectionMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 900
@@ -304,7 +304,7 @@
   id: ExosuitFabricatorMachineCircuitboard
   result: ExosuitFabricatorMachineCircuitboard
   category: Circuitry
-  completetime: 5
+  completeTime: 5
   materials:
      Steel: 100
      Glass: 500
@@ -313,7 +313,7 @@
   id: UniformPrinterMachineCircuitboard
   result: UniformPrinterMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -322,7 +322,7 @@
   id: VaccinatorMachineCircuitboard
   result: VaccinatorMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -332,7 +332,7 @@
   id: DiagnoserMachineCircuitboard
   result: DiagnoserMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -342,7 +342,7 @@
   id: ArtifactAnalyzerMachineCircuitboard
   result: ArtifactAnalyzerMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -352,7 +352,7 @@
   id: ArtifactCrusherMachineCircuitboard
   result: ArtifactCrusherMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -362,7 +362,7 @@
   id: AnomalyVesselCircuitboard
   result: AnomalyVesselCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -371,7 +371,7 @@
   id: AnomalyVesselExperimentalCircuitboard
   result: AnomalyVesselExperimentalCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -381,7 +381,7 @@
   id: AnomalySynchronizerCircuitboard
   result: AnomalySynchronizerCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 700
@@ -391,7 +391,7 @@
   id: APECircuitboard
   result: APECircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -400,7 +400,7 @@
   id: ReagentGrinderMachineCircuitboard
   result: ReagentGrinderMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -409,7 +409,7 @@
   id: HotplateMachineCircuitboard
   result: HotplateMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -418,7 +418,7 @@
   id: AnalysisComputerCircuitboard
   result: AnalysisComputerCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -428,7 +428,7 @@
   id: TechDiskComputerCircuitboard
   result: TechDiskComputerCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -438,7 +438,7 @@
   id: ShuttleConsoleCircuitboard
   result: ShuttleConsoleCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -448,7 +448,7 @@
   id: RadarConsoleCircuitboard
   result: RadarConsoleCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -457,7 +457,7 @@
   id: DawInstrumentMachineCircuitboard
   result: DawInstrumentMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -466,7 +466,7 @@
   id: StasisBedMachineCircuitboard
   result: StasisBedMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -476,7 +476,7 @@
   id: ElectrolysisUnitMachineCircuitboard
   result: ElectrolysisUnitMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -485,7 +485,7 @@
   id: CentrifugeMachineCircuitboard
   result: CentrifugeMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -494,7 +494,7 @@
   id: MaterialReclaimerMachineCircuitboard
   result: MaterialReclaimerMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -503,7 +503,7 @@
   id: OreProcessorMachineCircuitboard
   result: OreProcessorMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -512,7 +512,7 @@
   id: OreProcessorIndustrialMachineCircuitboard
   result: OreProcessorIndustrialMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -522,7 +522,7 @@
   id: RipleyCentralElectronics
   result: RipleyCentralElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -532,7 +532,7 @@
   id: RipleyPeripheralsElectronics
   result: RipleyPeripheralsElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -542,7 +542,7 @@
   id: HonkerCentralElectronics
   result: HonkerCentralElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -552,7 +552,7 @@
   id: HonkerPeripheralsElectronics
   result: HonkerPeripheralsElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -562,7 +562,7 @@
   id: HonkerTargetingElectronics
   result: HonkerTargetingElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -572,7 +572,7 @@
   id: HamtrCentralElectronics
   result: HamtrCentralElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -582,7 +582,7 @@
   id: HamtrPeripheralsElectronics
   result: HamtrPeripheralsElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -593,7 +593,7 @@
   id: APCElectronics
   result: APCElectronics
   category: Circuitry
-  completetime: 2
+  completeTime: 2
   materials:
      Steel: 50
      Glass: 250
@@ -602,7 +602,7 @@
   id: SubstationMachineCircuitboard
   result: SubstationMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 50
      Glass: 450
@@ -611,7 +611,7 @@
   id: WallmountSubstationElectronics
   result: WallmountSubstationElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 50
      Glass: 450
@@ -620,7 +620,7 @@
   id: SMESMachineCircuitboard
   result: SMESMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -629,7 +629,7 @@
   id: PortableGeneratorPacmanMachineCircuitboard
   result: PortableGeneratorPacmanMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 50
      Glass: 350
@@ -638,7 +638,7 @@
   id: PortableGeneratorSuperPacmanMachineCircuitboard
   result: PortableGeneratorSuperPacmanMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 50
      Glass: 350
@@ -647,7 +647,7 @@
   id: PortableGeneratorJrPacmanMachineCircuitboard
   result: PortableGeneratorJrPacmanMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 50
     Glass: 350
@@ -656,7 +656,7 @@
   id: WallmountGeneratorElectronics
   result: WallmountGeneratorElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 50
      Glass: 150
@@ -665,7 +665,7 @@
   id: WallmountGeneratorAPUElectronics
   result: WallmountGeneratorAPUElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 50
      Glass: 350
@@ -674,7 +674,7 @@
   id: SolarControlComputerCircuitboard
   result: SolarControlComputerCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -683,7 +683,7 @@
   id: SolarTrackerElectronics
   result: SolarTrackerElectronics
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 150
      Glass: 600
@@ -692,7 +692,7 @@
   id: PowerComputerCircuitboard
   result: PowerComputerCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -701,7 +701,7 @@
   id: CloningConsoleComputerCircuitboard
   result: CloningConsoleComputerCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -710,7 +710,7 @@
   id: MicrowaveMachineCircuitboard
   result: MicrowaveMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -719,7 +719,7 @@
   id: ElectricGrillMachineCircuitboard
   result: ElectricGrillMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -728,7 +728,7 @@
   id: FatExtractorMachineCircuitboard
   result: FatExtractorMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -737,7 +737,7 @@
   id: FlatpackerMachineCircuitboard
   result: FlatpackerMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -747,7 +747,7 @@
   id: SheetifierMachineCircuitboard
   result: SheetifierMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -756,7 +756,7 @@
   id: SurveillanceCameraRouterCircuitboard
   result: SurveillanceCameraRouterCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -765,7 +765,7 @@
   id: SurveillanceCameraWirelessRouterCircuitboard
   result: SurveillanceCameraWirelessRouterCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -774,7 +774,7 @@
   id: SurveillanceWirelessCameraAnchoredCircuitboard
   result: SurveillanceWirelessCameraAnchoredCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -783,7 +783,7 @@
   id: SurveillanceWirelessCameraMovableCircuitboard
   result: SurveillanceWirelessCameraMovableCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -792,7 +792,7 @@
   id: SurveillanceCameraMonitorCircuitboard
   result: SurveillanceCameraMonitorCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -801,7 +801,7 @@
   id: SurveillanceWirelessCameraMonitorCircuitboard
   result: SurveillanceWirelessCameraMonitorCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -810,7 +810,7 @@
   id: ComputerTelevisionCircuitboard
   result: ComputerTelevisionCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -819,7 +819,7 @@
   id: EmitterCircuitboard
   result: EmitterCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -828,7 +828,7 @@
   id: ThrusterMachineCircuitboard
   result: ThrusterMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -837,7 +837,7 @@
   id: GyroscopeMachineCircuitboard
   result: GyroscopeMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -846,7 +846,7 @@
   id: GasRecyclerMachineCircuitboard
   result: GasRecyclerMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -855,7 +855,7 @@
   id: SeedExtractorMachineCircuitboard
   result: SeedExtractorMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -864,7 +864,7 @@
   id: BoozeDispenserMachineCircuitboard
   result: BoozeDispenserMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -873,7 +873,7 @@
   id: CargoTelepadMachineCircuitboard
   result: CargoTelepadMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500
@@ -883,7 +883,7 @@
   id: SodaDispenserMachineCircuitboard
   result: SodaDispenserMachineCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -892,7 +892,7 @@
   id: TelecomServerCircuitboard
   result: TelecomServerCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -901,7 +901,7 @@
   id: MassMediaCircuitboard
   result: ComputerMassMediaCircuitboard
   category: Circuitry
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 500
@@ -910,7 +910,7 @@
   id: MiniGravityGeneratorCircuitboard
   result: MiniGravityGeneratorCircuitboard
   category: Circuitry
-  completetime: 6
+  completeTime: 6
   materials:
      Steel: 100
      Glass: 500
@@ -919,7 +919,7 @@
 - type: latheRecipe
   id: PowerCageRechargerCircuitboard
   result: PowerCageRechargerCircuitboard
-  completetime: 6
+  completeTime: 6
   materials:
      Steel: 100
      Glass: 500
@@ -927,7 +927,7 @@
 - type: latheRecipe
   id: ShuttleGunSvalinnMachineGunCircuitboard
   result: ShuttleGunSvalinnMachineGunCircuitboard
-  completetime: 6
+  completeTime: 6
   materials:
      Steel: 100
 
@@ -936,7 +936,7 @@
 - type: latheRecipe
   id: ShuttleGunPerforatorCircuitboard
   result: ShuttleGunPerforatorCircuitboard
-  completetime: 10
+  completeTime: 10
   materials:
      Steel: 100
      Glass: 500
@@ -945,7 +945,7 @@
 - type: latheRecipe
   id: ShuttleGunKineticCircuitboard
   result: ShuttleGunKineticCircuitboard
-  completetime: 6
+  completeTime: 6
   materials:
      Steel: 100
      Glass: 500
@@ -953,7 +953,7 @@
 - type: latheRecipe
   id: ShuttleGunFriendshipCircuitboard
   result: ShuttleGunFriendshipCircuitboard
-  completetime: 8
+  completeTime: 8
   materials:
      Steel: 100
      Glass: 500
@@ -962,7 +962,7 @@
 - type: latheRecipe
   id: ShuttleGunDusterCircuitboard
   result: ShuttleGunDusterCircuitboard
-  completetime: 12
+  completeTime: 12
   materials:
      Steel: 100
      Glass: 500
@@ -971,7 +971,7 @@
 - type: latheRecipe
   id: ReagentGrinderIndustrialMachineCircuitboard
   result: ReagentGrinderIndustrialMachineCircuitboard
-  completetime: 5
+  completeTime: 5
   materials:
      Steel: 100
      Glass: 500
@@ -980,7 +980,7 @@
 - type: latheRecipe
   id: JukeboxCircuitBoard
   result: JukeboxCircuitBoard
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Glass: 500

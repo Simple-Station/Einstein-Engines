@@ -3,7 +3,7 @@
   id: CapacitorStockPart
   result: CapacitorStockPart
   category: Parts
-  completetime: 1
+  completeTime: 1
   materials:
     Steel: 50
     Plastic: 50
@@ -12,7 +12,7 @@
   id: MatterBinStockPart
   result: MatterBinStockPart
   category: Parts
-  completetime: 1
+  completeTime: 1
   materials:
     Steel: 50
     Plastic: 50
@@ -21,7 +21,7 @@
   id: MicroManipulatorStockPart
   result: MicroManipulatorStockPart
   category: Parts
-  completetime: 1
+  completeTime: 1
   materials:
     Steel: 50
     Plastic: 50
@@ -30,7 +30,7 @@
 - type: latheRecipe
   id: AdvancedCapacitorStockPart
   result: AdvancedCapacitorStockPart
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 80
     Plastic: 80
@@ -39,7 +39,7 @@
 - type: latheRecipe
   id: AdvancedMatterBinStockPart
   result: AdvancedMatterBinStockPart
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 80
     Plastic: 80
@@ -48,7 +48,7 @@
 - type: latheRecipe
   id: NanoManipulatorStockPart
   result: NanoManipulatorStockPart
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 80
     Plastic: 80
@@ -58,7 +58,7 @@
 - type: latheRecipe
   id: SuperCapacitorStockPart
   result: SuperCapacitorStockPart
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 150
     Plastic: 150
@@ -68,7 +68,7 @@
 - type: latheRecipe
   id: SuperMatterBinStockPart
   result: SuperMatterBinStockPart
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 150
     Plastic: 150
@@ -78,7 +78,7 @@
 - type: latheRecipe
   id: PicoManipulatorStockPart
   result: PicoManipulatorStockPart
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 150
     Plastic: 150
@@ -89,7 +89,7 @@
 - type: latheRecipe
   id: BluespaceCapacitorStockPart
   result: BluespaceCapacitorStockPart
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 150
     Plastic: 150
@@ -99,7 +99,7 @@
 - type: latheRecipe
   id: BluespaceMatterBinStockPart
   result: BluespaceMatterBinStockPart
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 150
     Plastic: 150
@@ -109,7 +109,7 @@
 - type: latheRecipe
   id: BluespaceManipulatorStockPart
   result: BluespaceManipulatorStockPart
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 150
     Plastic: 150

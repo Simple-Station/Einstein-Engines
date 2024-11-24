@@ -2,7 +2,7 @@
   id: TimerTrigger
   result: TimerTrigger
   category: Parts
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 300
     Plastic: 200
@@ -11,7 +11,7 @@
   id: SignalTrigger
   result: SignalTrigger
   category: Parts
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 300
     Plastic: 200
@@ -20,7 +20,7 @@
   id: VoiceTrigger
   result: VoiceTrigger
   category: Parts
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 300
     Plastic: 200
@@ -29,7 +29,7 @@
   id: Igniter
   result: Igniter
   category: Parts
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 300
     Plastic: 100
@@ -39,7 +39,7 @@
   id: ChemicalPayload
   result: ChemicalPayload
   category: Weapons
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Plastic: 300
@@ -48,7 +48,7 @@
   id: FlashPayload
   result: FlashPayload
   category: Weapons
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 50
     Plastic: 100
@@ -59,7 +59,7 @@
   id: ExplosivePayload
   result: ExplosivePayload
   category: Weapons
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 100
     Plastic: 100
@@ -71,7 +71,7 @@
   id: Signaller
   result: RemoteSignaller
   category: Parts
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 100
     Plastic: 200
@@ -81,7 +81,7 @@
   id: SignallerAdvanced
   result: RemoteSignallerAdvanced
   category: Parts
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 100
     Plastic: 200
@@ -91,7 +91,7 @@
   id: AnomalyLocator
   result: AnomalyLocatorEmpty
   category: Tools
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 400
     Glass: 100
@@ -100,7 +100,7 @@
   id: AnomalyLocatorWide
   result: AnomalyLocatorWideEmpty
   category: Tools
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 400
     Glass: 100
@@ -109,7 +109,7 @@
   id: AnomalyScanner
   result: AnomalyScanner
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Plastic: 200
     Glass: 150
@@ -118,7 +118,7 @@
   id: WeaponPistolCHIMP
   result: WeaponPistolCHIMP
   category: Tools
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 500
     Glass: 400
@@ -127,7 +127,7 @@
   id: WeaponGauntletGorilla
   result: WeaponGauntletGorilla
   category: Tools
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 1500
     Plastic: 300
@@ -138,7 +138,7 @@
 - type: latheRecipe
   id: ClothingBackpackHolding
   result: ClothingBackpackHolding
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 2000
     Silver: 750
@@ -149,7 +149,7 @@
 - type: latheRecipe
   id: ClothingBackpackSatchelHolding
   result: ClothingBackpackSatchelHolding
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 2000
     Silver: 750
@@ -160,7 +160,7 @@
 - type: latheRecipe
   id: ClothingBackpackDuffelHolding
   result: ClothingBackpackDuffelHolding
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 2000
     Silver: 750
@@ -171,7 +171,7 @@
 - type: latheRecipe
   id: OreBagOfHolding
   result: OreBagOfHolding
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 2000
     Silver: 750
@@ -181,7 +181,7 @@
 - type: latheRecipe
   id: ClothingMaskWeldingGas
   result: ClothingMaskWeldingGas
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 600
     Glass: 200
@@ -190,7 +190,7 @@
   id: WeaponForceGun
   result: WeaponForceGun
   category: Tools
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 500
     Glass: 400
@@ -199,7 +199,7 @@
 - type: latheRecipe
   id: DeviceQuantumSpinInverter
   result: DeviceQuantumSpinInverter
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 700
     Glass: 100
@@ -209,7 +209,7 @@
   id: WeaponProtoKineticAccelerator
   result: WeaponProtoKineticAccelerator
   category: Weapons
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 1000
     Glass: 500
@@ -219,7 +219,7 @@
   id: WeaponTetherGun
   result: WeaponTetherGun
   category: Tools
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 500
     Glass: 400
@@ -229,7 +229,7 @@
   id: WeaponGrapplingGun
   result: WeaponGrapplingGun
   category: Tools
-  completetime: 5
+  completeTime: 5
   materials:
     Steel: 500
     Glass: 400

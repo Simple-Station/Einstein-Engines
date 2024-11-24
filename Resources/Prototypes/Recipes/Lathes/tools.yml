@@ -5,7 +5,7 @@
     state: cutters-map
   result: Wirecutter
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Plastic: 50
@@ -17,7 +17,7 @@
     state: screwdriver-map
   result: Screwdriver
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Plastic: 50
@@ -26,7 +26,7 @@
   id: Welder
   result: Welder
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 400
 
@@ -34,7 +34,7 @@
   id: Wrench
   result: Wrench
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
 
@@ -42,7 +42,7 @@
   id: CableStack
   result: CableApcStack1
   category: Parts
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 30
 
@@ -50,7 +50,7 @@
   id: CableMVStack
   result: CableMVStack1
   category: Parts
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 30
 
@@ -58,7 +58,7 @@
   id: CableHVStack
   result: CableHVStack1
   category: Parts
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 30
 
@@ -66,7 +66,7 @@
   id: Crowbar
   result: Crowbar
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
 
@@ -74,7 +74,7 @@
   id: Pickaxe
   result: Pickaxe
   category: Tools
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 1000
     Wood: 500
@@ -83,7 +83,7 @@
   id: Shovel
   result: Shovel
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Wood: 100
@@ -92,7 +92,7 @@
   id: Multitool
   result: Multitool
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Plastic: 200
@@ -101,7 +101,7 @@
   id: NetworkConfigurator
   result: NetworkConfigurator
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Plastic: 200
@@ -110,7 +110,7 @@
   id: PowerDrill
   result: PowerDrill
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 600
     Plastic: 200
@@ -119,7 +119,7 @@
   id: RCD
   result: RCDEmpty
   category: Tools
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 1000
     Plastic: 300
@@ -128,7 +128,7 @@
   id: RCDAmmo
   result: RCDAmmo
   category: Tools
-  completetime: 2.4
+  completeTime: 2.4
   materials:
     Steel: 500
     Plastic: 250
@@ -137,7 +137,7 @@
   id: HandHeldMassScanner
   result: HandHeldMassScannerEmpty
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 800
     Glass: 300
@@ -146,7 +146,7 @@
   id: HandheldGPSBasic
   result: HandheldGPSBasic
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 800
     Glass: 300
@@ -155,7 +155,7 @@
   id: TRayScanner
   result: trayScanner
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 800
     Glass: 300
@@ -164,7 +164,7 @@
   id: GasAnalyzer
   result: GasAnalyzer
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 800
     Glass: 300
@@ -173,7 +173,7 @@
   id: SprayPainter
   result: SprayPainter
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 300
     Plastic: 100
@@ -182,7 +182,7 @@
   id: UtilityBelt
   result: ClothingBeltUtility
   category: Tools
-  completetime: 2
+  completeTime: 2
   materials:
     Cloth: 100
     Steel: 50
@@ -191,7 +191,7 @@
   id: HolofanProjector
   result: HolofanProjectorEmpty
   category: Tools
-  completetime: 8
+  completeTime: 8
   materials:
     Steel: 300
     Glass: 50
@@ -201,7 +201,7 @@
   id: RPED
   result: RPED
   category: Tools
-  completetime: 10
+  completeTime: 10
   materials:
     Steel: 650
     Plastic: 150
@@ -211,7 +211,7 @@
   id: MiningDrill
   result: MiningDrill
   category: Tools
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 500
     Plastic: 100
@@ -220,7 +220,7 @@
   id: WelderExperimental
   result: WelderExperimental
   category: Tools
-  completetime: 6
+  completeTime: 6
   materials:
     Steel: 800
     Plasma: 200
@@ -229,7 +229,7 @@
   id: JawsOfLife
   result: JawsOfLife
   category: Tools
-  completetime: 6
+  completeTime: 6
   materials:
     Steel: 1000
     Glass: 500
@@ -240,7 +240,7 @@
   id: HoloprojectorField
   result: HoloprojectorFieldEmpty
   category: Tools
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 500
     Plasma: 300
@@ -250,7 +250,7 @@
   id: WeaponParticleDecelerator
   result: WeaponParticleDecelerator
   category: Tools
-  completetime: 6
+  completeTime: 6
   materials:
     Steel: 750
     Plasma: 150

@@ -1,7 +1,7 @@
 - type: latheRecipe
   id: MiniHoe
   result: HydroponicsToolMiniHoe
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Plastic: 100
@@ -9,7 +9,7 @@
 - type: latheRecipe
   id: HydroponicsToolScythe
   result: HydroponicsToolScythe
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 300
     Plastic: 200
@@ -17,7 +17,7 @@
 - type: latheRecipe
   id: HydroponicsToolHatchet
   result: HydroponicsToolHatchet
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Plastic: 100
@@ -25,7 +25,7 @@
 - type: latheRecipe
   id: Spade
   result: HydroponicsToolSpade
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Plastic: 100
@@ -33,7 +33,7 @@
 - type: latheRecipe
   id: Clippers
   result: HydroponicsToolClippers
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Plastic: 100

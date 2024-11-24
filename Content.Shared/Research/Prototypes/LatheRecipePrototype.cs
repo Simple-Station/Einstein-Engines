@@ -33,7 +33,7 @@ namespace Content.Shared.Research.Prototypes
         [DataField("icon")]
         public SpriteSpecifier? Icon;
 
-        [DataField("completetime")]
+        [DataField("completeTime")]
         private TimeSpan _completeTime = TimeSpan.FromSeconds(5);
 
         [DataField("materials", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<int, MaterialPrototype>))]

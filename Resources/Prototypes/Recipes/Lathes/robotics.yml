@@ -2,7 +2,7 @@
   id: ProximitySensor
   result: ProximitySensor
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 200
     Glass: 300
@@ -11,7 +11,7 @@
   id: SciFlash
   result: SciFlash
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Glass: 100
     Plastic: 200
@@ -21,7 +21,7 @@
   id: CyborgEndoskeleton
   result: CyborgEndoskeleton
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 1500
 
@@ -29,7 +29,7 @@
   id: LeftArmBorg
   result: LeftArmBorg
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -38,7 +38,7 @@
   id: RightArmBorg
   result: RightArmBorg
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -47,7 +47,7 @@
   id: LeftLegBorg
   result: LeftLegBorg
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -56,7 +56,7 @@
   id: RightLegBorg
   result: RightLegBorg
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -65,7 +65,7 @@
   id: LightHeadBorg
   result: LightHeadBorg
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -74,7 +74,7 @@
   id: TorsoBorg
   result: TorsoBorg
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -83,7 +83,7 @@
   id: LeftArmBorgEngineer
   result: LeftArmBorgEngineer
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -92,7 +92,7 @@
   id: RightArmBorgEngineer
   result: RightArmBorgEngineer
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -101,7 +101,7 @@
   id: LeftLegBorgEngineer
   result: LeftLegBorgEngineer
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -110,7 +110,7 @@
   id: RightLegBorgEngineer
   result: RightLegBorgEngineer
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -119,7 +119,7 @@
   id: HeadBorgEngineer
   result: HeadBorgEngineer
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -128,7 +128,7 @@
   id: TorsoBorgEngineer
   result: TorsoBorgEngineer
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -137,7 +137,7 @@
   id: LeftArmBorgMedical
   result: LeftArmBorgMedical
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -146,7 +146,7 @@
   id: RightArmBorgMedical
   result: RightArmBorgMedical
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -155,7 +155,7 @@
   id: LeftLegBorgMedical
   result: LeftLegBorgMedical
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -164,7 +164,7 @@
   id: RightLegBorgMedical
   result: RightLegBorgMedical
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -173,7 +173,7 @@
   id: HeadBorgMedical
   result: HeadBorgMedical
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -182,7 +182,7 @@
   id: TorsoBorgMedical
   result: TorsoBorgMedical
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -191,7 +191,7 @@
   id: LeftArmBorgMining
   result: LeftArmBorgMining
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -200,7 +200,7 @@
   id: RightArmBorgMining
   result: RightArmBorgMining
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -209,7 +209,7 @@
   id: LeftLegBorgMining
   result: LeftLegBorgMining
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -218,7 +218,7 @@
   id: RightLegBorgMining
   result: RightLegBorgMining
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -227,7 +227,7 @@
   id: HeadBorgMining
   result: HeadBorgMining
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -236,7 +236,7 @@
   id: TorsoBorgMining
   result: TorsoBorgMining
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -245,7 +245,7 @@
   id: LeftArmBorgService
   result: LeftArmBorgService
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -254,7 +254,7 @@
   id: RightArmBorgService
   result: RightArmBorgService
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -263,7 +263,7 @@
   id: LeftLegBorgService
   result: LeftLegBorgService
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -272,7 +272,7 @@
   id: RightLegBorgService
   result: RightLegBorgService
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -281,7 +281,7 @@
   id: HeadBorgService
   result: HeadBorgService
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -290,7 +290,7 @@
   id: TorsoBorgService
   result: TorsoBorgService
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -299,7 +299,7 @@
   id: LeftLegBorgJanitor
   result: LeftLegBorgJanitor
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -308,7 +308,7 @@
   id: RightLegBorgJanitor
   result: RightLegBorgJanitor
   category: Robotics
-  completetime: 2
+  completeTime: 2
   materials:
     Steel: 250
     Glass: 100
@@ -317,7 +317,7 @@
   id: HeadBorgJanitor
   result: HeadBorgJanitor
   category: Robotics
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 500
     Glass: 200
@@ -326,7 +326,7 @@
   id: TorsoBorgJanitor
   result: TorsoBorgJanitor
   category: Robotics
-  completetime: 4
+  completeTime: 4
   materials:
     Steel: 500
     Glass: 200
@@ -335,7 +335,7 @@
   id: MMI
   result: MMI
   category: Robotics
-  completetime: 3
+  completeTime: 3
   icon:
     sprite: Objects/Specific/Robotics/mmi.rsi
     state: mmi_off
@@ -349,7 +349,7 @@
   id: PositronicBrain
   result: PositronicBrain
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 500
     Plastic: 500
@@ -361,7 +361,7 @@
   id: BorgModuleCable
   result: BorgModuleCable
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -371,7 +371,7 @@
   id: BorgModuleFireExtinguisher
   result: BorgModuleFireExtinguisher
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -381,7 +381,7 @@
   id: BorgModuleGPS
   result: BorgModuleGPS
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -391,7 +391,7 @@
   id: BorgModuleRadiationDetection
   result: BorgModuleRadiationDetection
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -401,7 +401,7 @@
   id: BorgModuleTool
   result: BorgModuleTool
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -411,7 +411,7 @@
   id: BorgModuleAppraisal
   result: BorgModuleAppraisal
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -421,7 +421,7 @@
   id: BorgModuleMining
   result: BorgModuleMining
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -431,7 +431,7 @@
   id: BorgModuleGrapplingGun
   result: BorgModuleGrapplingGun
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 500
     Glass: 500
@@ -442,7 +442,7 @@
   id: BorgModuleAdvancedTool
   result: BorgModuleAdvancedTool
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 500
     Glass: 500
@@ -453,7 +453,7 @@
   id: BorgModuleConstruction
   result: BorgModuleConstruction
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 500
     Glass: 500
@@ -463,7 +463,7 @@
   id: BorgModuleRCD
   result: BorgModuleRCD
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 500
     Glass: 500
@@ -474,7 +474,7 @@
   id: BorgModuleLightReplacer
   result: BorgModuleLightReplacer
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -484,7 +484,7 @@
   id: BorgModuleCleaning
   result: BorgModuleCleaning
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -494,7 +494,7 @@
   id: BorgModuleAdvancedCleaning
   result: BorgModuleAdvancedCleaning
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -505,7 +505,7 @@
   id: BorgModuleDiagnosis
   result: BorgModuleDiagnosis
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -515,7 +515,7 @@
   id: BorgModuleTreatment
   result: BorgModuleTreatment
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -525,7 +525,7 @@
   id: BorgModuleAdvancedTreatment
   result: BorgModuleAdvancedTreatment
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 500
     Glass: 500
@@ -536,7 +536,7 @@
   id: BorgModuleDefibrillator
   result: BorgModuleDefibrillator
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 500
     Glass: 500
@@ -547,7 +547,7 @@
   id: BorgModuleArtifact
   result: BorgModuleArtifact
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -557,7 +557,7 @@
   id: BorgModuleAnomaly
   result: BorgModuleAnomaly
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -567,7 +567,7 @@
   id: BorgModuleService
   result: BorgModuleService
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -577,7 +577,7 @@
   id: BorgModuleMusique
   result: BorgModuleMusique
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -587,7 +587,7 @@
   id: BorgModuleGardening
   result: BorgModuleGardening
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -597,7 +597,7 @@
   id: BorgModuleHarvesting
   result: BorgModuleHarvesting
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -607,7 +607,7 @@
   id: BorgModuleClowning
   result: BorgModuleClowning
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250
@@ -617,7 +617,7 @@
   id: BorgModulePka
   result: BorgModulePka
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 1000
     Glass: 500
@@ -628,7 +628,7 @@
   id: BorgModuleJetpack
   result: BorgModuleJetpack
   category: Robotics
-  completetime: 3
+  completeTime: 3
   materials:
     Steel: 250
     Glass: 250

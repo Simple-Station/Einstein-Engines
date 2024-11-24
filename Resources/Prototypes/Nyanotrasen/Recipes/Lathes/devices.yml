@@ -1,7 +1,7 @@
 - type: latheRecipe
   id: EncryptionKeySyndie
   result: EncryptionKeySyndie
-  completetime: 4
+  completeTime: 4
   materials:
      Steel: 100
      Glass: 100
@@ -10,7 +10,7 @@
 - type: latheRecipe
   id: JetpackBlue
   result: JetpackBlue
-  completetime: 10
+  completeTime: 10
   materials:
     Steel: 8000
     Plastic: 8000
@@ -19,7 +19,7 @@
 - type: latheRecipe
   id: JetpackMini
   result: JetpackMini
-  completetime: 10
+  completeTime: 10
   materials:
     Steel: 4000
     Plastic: 4000
