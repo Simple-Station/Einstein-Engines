@@ -361,6 +361,7 @@
         - Human
         - Oni
         - SlimePerson
+        - Plasmaman
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

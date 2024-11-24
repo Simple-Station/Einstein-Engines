@@ -8,6 +8,9 @@
   markingLimits: MobPlasmamanMarkingLimits
   dollPrototype: MobPlasmamanDummy
   skinColoration: Hues
+  youngAge: 60
+  oldAge: 120
+  maxAge: 180
   maleFirstNames: names_plasmaman
   femaleFirstNames: names_plasmaman
   lastNames: names_plasmaman_last

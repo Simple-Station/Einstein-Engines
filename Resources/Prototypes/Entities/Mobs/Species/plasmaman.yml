@@ -11,8 +11,8 @@
   - type: Body
     prototype: Plasmaman
     requiredLegs: 2
-  - type: Bloodstream # Need to figure out having no blood
-    # bloodMaxVolume: 0
+  - type: Bloodstream
+    bloodMaxVolume: 0
     bloodlossThreshold: 0
     maxBleedAmount: 0
     bloodRefreshAmount: 0
