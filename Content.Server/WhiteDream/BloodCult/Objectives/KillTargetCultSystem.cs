@@ -29,6 +29,9 @@ public sealed class KillTargetCultSystem : EntitySystem
 
     private void OnAfterAssign(Entity<KillTargetCultComponent> ent, ref ObjectiveAfterAssignEvent args)
     {
+        if (!ent.Owner.IsValid() || !HasComp<MetaDataComponent>(ent))
+            return;
+
         _metaData.SetEntityName(ent, GetTitle(ent.Comp.Target, ent.Comp.Title), args.Meta);
     }
 

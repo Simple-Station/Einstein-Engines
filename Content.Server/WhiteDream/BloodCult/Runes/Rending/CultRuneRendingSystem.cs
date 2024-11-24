@@ -38,10 +38,12 @@ public sealed class CultRuneRendingSystem : EntitySystem
     private void OnRendingRunePlaced(Entity<CultRuneRendingComponent> rune, ref AfterRunePlaced args)
     {
         var position = _transform.GetMapCoordinates(rune);
-        var message = Loc.GetString("cult-rending-drawing-finished",
+        var message = Loc.GetString(
+            "cult-rending-drawing-finished",
             ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(position))));
 
-        _chat.DispatchGlobalAnnouncement(message,
+        _chat.DispatchGlobalAnnouncement(
+            message,
             Loc.GetString("blood-cult-title"),
             true,
             rune.Comp.FinishedDrawingAudio,
@@ -50,8 +52,7 @@ public sealed class CultRuneRendingSystem : EntitySystem
 
     private void OnRendingRuneInvoked(Entity<CultRuneRendingComponent> rune, ref TryInvokeCultRuneEvent args)
     {
-        if (!_cultRule.TryGetTarget(out var target) ||
-            !TryComp(target.Value, out MobStateComponent? _) ||
+        if (!_cultRule.TryGetTarget(out var target) || !TryComp(target.Value, out MobStateComponent? _) ||
             _mobState.IsAlive(target.Value))
         {
             _popup.PopupEntity(Loc.GetString("cult-rending-target-alive"), rune, args.User);
@@ -78,7 +79,8 @@ public sealed class CultRuneRendingSystem : EntitySystem
             return;
         }
 
-        _chat.DispatchGlobalAnnouncement(Loc.GetString("cult-rending-started"),
+        _chat.DispatchGlobalAnnouncement(
+            Loc.GetString("cult-rending-started"),
             Loc.GetString("blood-cult-title"),
             false,
             colorOverride: Color.DarkRed);
@@ -95,7 +97,8 @@ public sealed class CultRuneRendingSystem : EntitySystem
         _appearance.SetData(rune, RendingRuneVisuals.Active, false);
         if (args.Cancelled)
         {
-            _chat.DispatchGlobalAnnouncement(Loc.GetString("cult-rending-prevented"),
+            _chat.DispatchGlobalAnnouncement(
+                Loc.GetString("cult-rending-prevented"),
                 Loc.GetString("blood-cult-title"),
                 false,
                 colorOverride: Color.DarkRed);
