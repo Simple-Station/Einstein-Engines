@@ -91,6 +91,28 @@ public sealed partial class SummonEquipmentEvent : InstantActionEvent, ISpeakSpe
 
 public sealed partial class BloodSpearRecalledEvent : InstantActionEvent;
 
+public sealed partial class PlaceTileEntityEvent : WorldTargetActionEvent
+{
+    [DataField]
+    public EntProtoId? Entity;
+
+    [DataField]
+    public string? TileId;
+
+    [DataField]
+    public SoundSpecifier? Audio;
+
+}
+
+public sealed partial class PhaseShiftEvent : InstantActionEvent
+{
+    [DataField]
+    public TimeSpan Duration = TimeSpan.FromSeconds(5);
+
+    [DataField]
+    public string StatusEffectId = "PhaseShifted";
+}
+
 [Serializable, NetSerializable]
 public sealed partial class TwistedConstructionDoAfterEvent : SimpleDoAfterEvent;
 

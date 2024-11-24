@@ -1,4 +1,5 @@
-﻿using Content.Server.WhiteDream.BloodCult.Gamerule;
+﻿using Content.Server.Actions;
+using Content.Server.WhiteDream.BloodCult.Gamerule;
 using Content.Shared.WhiteDream.BloodCult;
 using Content.Shared.WhiteDream.BloodCult.Constructs;
 using Robust.Server.GameObjects;
@@ -7,6 +8,7 @@ namespace Content.Server.WhiteDream.BloodCult.Constructs;
 
 public sealed class ConstructSystem : EntitySystem
 {
+    [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
 
     public override void Initialize()
@@ -39,21 +41,28 @@ public sealed class ConstructSystem : EntitySystem
 
     private void OnComponentStartup(Entity<ConstructComponent> ent, ref ComponentStartup args)
     {
+        foreach (var actionId in ent.Comp.Actions)
+        {
+            var action = _actions.AddAction(ent, actionId);
+            ent.Comp.ActionEntities.Add(action);
+        }
+
         _appearanceSystem.SetData(ent, ConstructVisualsState.Transforming, true);
         ent.Comp.Transforming = true;
         var cultistRule = EntityManager.EntityQueryEnumerator<BloodCultRuleComponent>();
         while (cultistRule.MoveNext(out _, out var rule))
-        {
             rule.Constructs.Add(ent);
-        }
     }
 
     private void OnComponentShutdown(Entity<ConstructComponent> ent, ref ComponentShutdown args)
     {
+        foreach (var actionEntity in ent.Comp.ActionEntities)
+        {
+            _actions.RemoveAction(actionEntity);
+        }
+
         var cultistRule = EntityManager.EntityQueryEnumerator<BloodCultRuleComponent>();
         while (cultistRule.MoveNext(out _, out var rule))
-        {
             rule.Constructs.Remove(ent);
-        }
     }
 }
