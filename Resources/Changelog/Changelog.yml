@@ -8129,3 +8129,12 @@ Entries:
   id: 6539
   time: '2024-11-22T21:54:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1001
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        As an Oni, examining the damage values of weapons now takes into account
+        the melee damage bonus from your species or trait.
+  id: 6540
+  time: '2024-11-24T18:44:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1268
