@@ -7,12 +7,14 @@ using Content.Server.DoAfter;
 using Content.Server.Fluids.Components;
 using Content.Server.Popups;
 using Content.Server.WhiteDream.BloodCult.Empower;
+using Content.Server.WhiteDream.BloodCult.Gamerule;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
+using Content.Shared.UserInterface;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Runes;
 using Robust.Server.Audio;
@@ -28,18 +30,21 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly BloodCultRuleSystem _cultRule = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         // Drawing rune
+        SubscribeLocalEvent<RuneDrawerComponent, BeforeActivatableUIOpenEvent>(BeforeOpenUi);
         SubscribeLocalEvent<RuneDrawerComponent, RuneDrawerSelectedMessage>(OnRuneSelected);
         SubscribeLocalEvent<BloodCultistComponent, DrawRuneDoAfter>(OnDrawRune);
 
@@ -52,10 +57,32 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         SubscribeLocalEvent<CultRuneBaseComponent, ActivateInWorldEvent>(OnRuneActivate);
     }
 
+    private void BeforeOpenUi(Entity<RuneDrawerComponent> ent, ref BeforeActivatableUIOpenEvent args)
+    {
+        var availableRunes = new List<ProtoId<RuneSelectorPrototype>>();
+        var runeSelectorArray = _protoManager.EnumeratePrototypes<RuneSelectorPrototype>().OrderBy(r => r.ID).ToArray();
+        foreach (var runeSelector in runeSelectorArray)
+        {
+            if (runeSelector.RequireTargetDead && !_cultRule.IsObjectiveFinished() ||
+                runeSelector.RequiredTotalCultists < _cultRule.GetTotalCultists())
+                continue;
+
+            availableRunes.Add(runeSelector.ID);
+        }
+
+        _ui.SetUiState(ent.Owner, RuneDrawerBuiKey.Key, new RuneDrawerMenuState(availableRunes));
+    }
+
     private void OnRuneSelected(Entity<RuneDrawerComponent> ent, ref RuneDrawerSelectedMessage args)
     {
         if (!_protoManager.TryIndex(args.SelectedRune, out var runeSelector) || !CanDrawRune(args.Actor))
             return;
+
+        if (runeSelector.RequireTargetDead && !_cultRule.CanDrawRendingRune(args.Actor))
+        {
+            _popup.PopupEntity(Loc.GetString("cult-rune-cant-draw-rending"), args.Actor, args.Actor);
+            return;
+        }
 
         var timeToDraw = runeSelector.DrawTime;
         if (TryComp(args.Actor, out BloodCultEmpoweredComponent? empowered))
@@ -163,7 +190,8 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         foreach (var cultist in cultists)
         {
             DealDamage(cultist, ent.Comp.ActivationDamage);
-            _chat.TrySendInGameICMessage(cultist,
+            _chat.TrySendInGameICMessage(
+                cultist,
                 ent.Comp.InvokePhrase,
                 ent.Comp.InvokeChatType,
                 false,
@@ -174,7 +202,8 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
     private EntityUid SpawnRune(EntityUid user, EntProtoId rune)
     {
         var transform = Transform(user);
-        var snappedLocalPosition = new Vector2(MathF.Floor(transform.LocalPosition.X) + 0.5f,
+        var snappedLocalPosition = new Vector2(
+            MathF.Floor(transform.LocalPosition.X) + 0.5f,
             MathF.Floor(transform.LocalPosition.Y) + 0.5f);
         var spawnPosition = _transform.GetMapCoordinates(user);
         var runeEntity = EntityManager.Spawn(rune, spawnPosition);
@@ -211,9 +240,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         if (TryComp(user, out BloodCultEmpoweredComponent? empowered))
         {
             foreach (var (key, value) in damage.DamageDict)
-            {
                 damage.DamageDict[key] = value * empowered.RuneDamageMultiplier;
-            }
         }
 
         _damageable.TryChangeDamage(user, newDamage, true);

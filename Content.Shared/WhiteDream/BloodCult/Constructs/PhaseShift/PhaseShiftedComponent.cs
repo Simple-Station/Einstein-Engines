@@ -1,15 +1,16 @@
 ﻿using Content.Shared.Physics;
+using Content.Shared.StatusEffect;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Server.WhiteDream.BloodCult.Constructs.PhaseShift;
+namespace Content.Shared.WhiteDream.BloodCult.Constructs.PhaseShift;
 
 [RegisterComponent]
 public sealed partial class PhaseShiftedComponent : Component
 {
     [DataField]
-    public string StatusEffectId = "PhaseShifted";
+    public ProtoId<StatusEffectPrototype> StatusEffectId = "PhaseShifted";
 
     [DataField]
     public float MovementSpeedBuff = 1.5f;

@@ -1,4 +1,5 @@
 ﻿using Content.Server.NPC.Components;
+using Content.Server.WhiteDream.BloodCult.RendingRunePlacement;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Constructs;
 using Robust.Shared.Prototypes;
@@ -26,6 +27,9 @@ public sealed partial class BloodCultRuleComponent : Component
     [DataField]
     public int PentagramThreshold = 8;
 
+    [DataField]
+    public int RendingRunePlacementsAmount = 3;
+
     [ViewVariables(VVAccess.ReadOnly)]
     public bool LeaderSelected;
 
@@ -46,6 +50,8 @@ public sealed partial class BloodCultRuleComponent : Component
     public List<Entity<BloodCultistComponent>> Cultists = new();
 
     public List<Entity<ConstructComponent>> Constructs = new();
+
+    public List<Entity<RendingRunePlacementMarkerComponent>> SelectedRunePlacements = new();
 }
 
 public enum CultWinCondition : byte

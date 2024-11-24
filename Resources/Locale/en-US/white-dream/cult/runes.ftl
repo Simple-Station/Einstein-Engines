@@ -1,4 +1,5 @@
 ﻿cult-rune-cant-draw = You can not draw rune here!
+cult-rune-cant-draw-rending = You have to be near the area where the veil between our Worlds is the thinnest.
 cult-rune-started-erasing = Started erasing...
 cult-rune-erased = Rune has been erased.
 cult-rune-not-enough-cultists = Not enough cultists to perform the ritual!

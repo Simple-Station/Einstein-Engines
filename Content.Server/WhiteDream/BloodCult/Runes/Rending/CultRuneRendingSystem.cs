@@ -4,8 +4,6 @@ using Content.Server.Pinpointer;
 using Content.Server.Popups;
 using Content.Server.WhiteDream.BloodCult.Gamerule;
 using Content.Shared.DoAfter;
-using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.WhiteDream.BloodCult.Runes;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
@@ -22,7 +20,6 @@ public sealed class CultRuneRendingSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly BloodCultRuleSystem _cultRule = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly NavMapSystem _navMap = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
@@ -52,8 +49,7 @@ public sealed class CultRuneRendingSystem : EntitySystem
 
     private void OnRendingRuneInvoked(Entity<CultRuneRendingComponent> rune, ref TryInvokeCultRuneEvent args)
     {
-        if (!_cultRule.TryGetTarget(out var target) || !TryComp(target.Value, out MobStateComponent? _) ||
-            _mobState.IsAlive(target.Value))
+        if (!_cultRule.IsObjectiveFinished())
         {
             _popup.PopupEntity(Loc.GetString("cult-rending-target-alive"), rune, args.User);
             args.Cancel();
