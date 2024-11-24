@@ -9,16 +9,6 @@ namespace Content.Server.Atmos.Components;
 public sealed partial class IgniteFromGasComponent : Component
 {
     /// <summary>
-    ///   These are the inventory slot groups that are checked for ignition immunity.
-    ///   If no slot in a group has IgniteFromGasImmunityComponent, no immunity is applied.
-    /// </summary>
-    [DataField]
-    public List<List<String>> ImmunitySlotGroups = new() {
-        new () { "head" },
-        new () { "jumpsuit", "outerClothing" }
-    };
-
-    /// <summary>
     ///   What type of gas triggers ignition.
     /// </summary>
     [DataField(required: true)]

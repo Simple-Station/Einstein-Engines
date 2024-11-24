@@ -27,7 +27,7 @@ public sealed partial class SkeletonAccentSystem : EntitySystem
         { "killed", "skeletonized"},
         { "humorous", "humerus"},
         { "to be a", "tibia"},
-        { "under", "ulna"}
+        { "under", "ulna"},
         { "narrow", "marrow"},
     };
 

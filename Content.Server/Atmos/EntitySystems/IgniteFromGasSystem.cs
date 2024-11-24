@@ -25,6 +25,16 @@ namespace Content.Server.Atmos.EntitySystems
         private const float UpdateTimer = 1f;
         private float _timer;
 
+        /// <summary>
+        ///   These are the inventory slot groups that are checked for ignition immunity.
+        ///   If no slot in a group has IgniteFromGasImmunityComponent, no immunity is applied.
+        /// </summary>
+        [DataField]
+        private List<List<String>> ImmunitySlotGroups = new() {
+            new () { "head" },
+            new () { "jumpsuit", "outerClothing" }
+        };
+
         public override void Initialize()
         {
             SubscribeLocalEvent<IgniteFromGasImmunityComponent, GotEquippedEvent>(OnIgniteFromGasImmunityEquipped);
@@ -33,30 +43,26 @@ namespace Content.Server.Atmos.EntitySystems
 
         private void OnIgniteFromGasImmunityEquipped(EntityUid uid, IgniteFromGasImmunityComponent igniteImmunity, GotEquippedEvent args)
         {
-            if (TryComp<IgniteFromGasComponent>(args.Equipee, out var ignite) && ignite.ImmunitySlotGroups.Any(group => group.Contains(args.Slot)))
+            if (TryComp<IgniteFromGasComponent>(args.Equipee, out var ignite) && ImmunitySlotGroups.Any(group => group.Contains(args.Slot)))
             {
-                UpdateImmunity(args.Equipee, ignite);
+                ignite.HasImmunity = HasIgniteImmunity(args.Equipee);
             }
         }
 
         private void OnIgniteFromGasImmunityUnequipped(EntityUid uid, IgniteFromGasImmunityComponent igniteImmunity, GotUnequippedEvent args)
         {
-            if (TryComp<IgniteFromGasComponent>(args.Equipee, out var ignite) && ignite.ImmunitySlotGroups.Any(group => group.Contains(args.Slot)))
+            if (TryComp<IgniteFromGasComponent>(args.Equipee, out var ignite) && ImmunitySlotGroups.Any(group => group.Contains(args.Slot)))
             {
-                UpdateImmunity(args.Equipee, ignite);
+                ignite.HasImmunity = HasIgniteImmunity(args.Equipee);
             }
         }
 
-        private void UpdateImmunity(EntityUid uid, IgniteFromGasComponent ignite)
+        public bool HasIgniteImmunity(EntityUid uid, InventoryComponent? inv = null, ContainerManagerComponent? contMan = null)
         {
-            if (ignite.ImmunitySlotGroups.Count == 0 ||
-                !TryComp(uid, out InventoryComponent? inv) ||
-                !TryComp(uid, out ContainerManagerComponent? contMan))
-                return;
+            if (!Resolve(uid, ref inv, ref contMan))
+                return false;
 
-            ignite.HasImmunity = true;
-
-            foreach (var group in ignite.ImmunitySlotGroups)
+            foreach (var group in ImmunitySlotGroups)
             {
                 var groupHasImmunity = false;
 
@@ -72,10 +78,11 @@ namespace Content.Server.Atmos.EntitySystems
 
                 if (!groupHasImmunity)
                 {
-                    ignite.HasImmunity = false;
-                    return;
+                    return false;
                 }
             }
+
+            return true;
         }
 
         public override void Update(float frameTime)

@@ -171,3 +171,10 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+  - type: SelfExtinguisher
+    maxCharges: 5
+    charges: 5
+    cooldown: 8
+    requiresIgniteFromGasImmune: true
+    sound:
+      path: /Audio/Effects/extinguish.ogg
