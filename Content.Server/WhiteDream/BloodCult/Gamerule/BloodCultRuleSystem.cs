@@ -10,7 +10,6 @@ using Content.Server.Language;
 using Content.Server.NPC.Systems;
 using Content.Server.Roles;
 using Content.Server.RoundEnd;
-using Content.Server.StationEvents.Components;
 using Content.Server.WhiteDream.BloodCult.Items.BloodSpear;
 using Content.Server.WhiteDream.BloodCult.Objectives;
 using Content.Server.WhiteDream.BloodCult.Spells;
@@ -244,10 +243,6 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
                 return;
 
             cult.WinCondition = CultWinCondition.Failure;
-
-            // Check for all at once gamemode
-            if (!GameTicker.GetActiveGameRules().Where(HasComp<RampingStationEventSchedulerComponent>).Any())
-                _roundEndSystem.EndRound();
         }
     }
 
