@@ -32,9 +32,9 @@
     speechVerb: Skeleton
   - type: Vocal
     sounds:
-      Male: Skeleton
-      Female: Skeleton
-      Unsexed: Skeleton
+      Male: UnisexPlasmaman
+      Female: UnisexPlasmaman
+      Unsexed: UnisexPlasmaman
   - type: IgniteFromGas
     gas: Oxygen
     fireStacks: 0.24 # 0.24 * 1.25 fire stack multiplier = 0.30
