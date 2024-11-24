@@ -2,6 +2,7 @@
   id: Calcic
   isVisibleLanguage: true
   speech:
+    fontId: Papyrus
     color: "#bbbbbb"
   obfuscation:
     !type:SyllableObfuscation

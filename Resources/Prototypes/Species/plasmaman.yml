@@ -4,6 +4,7 @@
   roundStart: true
   prototype: MobPlasmaman
   sprites: MobPlasmamanSprites
+  defaultSkinTone: "#ffffff"
   markingLimits: MobPlasmamanMarkingLimits
   dollPrototype: MobPlasmamanDummy
   skinColoration: Hues
@@ -16,7 +17,7 @@
   sprites:
     Head: MobPlasmamanHead
     Chest: MobPlasmamanTorso
-    Eyes: MobHumanoidEyes
+    Eyes: MobPlasmamanEyes
     LArm: MobPlasmamanLArm
     RArm: MobPlasmamanRArm
     LHand: MobPlasmamanLHand
@@ -89,6 +90,12 @@
   baseSprite:
     sprite: Mobs/Species/Plasmaman/parts.rsi
     state: head_f
+
+- type: humanoidBaseSprite
+  id: MobPlasmamanEyes
+  baseSprite:
+    sprite: Mobs/Customization/plasmaman.rsi
+    state: eyes
 
 - type: humanoidBaseSprite
   id: MobPlasmamanTorso

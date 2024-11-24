@@ -11,12 +11,12 @@
   - type: Body
     prototype: Plasmaman
     requiredLegs: 2
-  # - type: Bloodstream # Need to figure out having no blood
-  #   bloodMaxVolume: 0
-  #   bloodlossThreshold: 0
-  #   maxBleedAmount: 0
-  #   bloodRefreshAmount: 0
-  #   bloodRegenerationHunger: 0
+  - type: Bloodstream # Need to figure out having no blood
+    # bloodMaxVolume: 0
+    bloodlossThreshold: 0
+    maxBleedAmount: 0
+    bloodRefreshAmount: 0
+    bloodRegenerationHunger: 0
   - type: Damageable
     damageModifierSet: Plasmaman
   - type: TemperatureProtection
@@ -51,6 +51,8 @@
     hideLayersOnEquip:
     - Hair
     - Snout
+  - type: TypingIndicator
+    proto: skeleton
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic

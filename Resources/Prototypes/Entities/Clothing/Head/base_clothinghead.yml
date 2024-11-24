@@ -189,7 +189,7 @@
 - type: entity
   abstract: true
   id: ClothingHeadEnvirohelmBase
-  name: base envirohelm
+  name: base envirosuit helmet
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -201,7 +201,6 @@
     unequipSound: /Audio/Mecha/mechmove03.ogg
     quickEquip: false
     slots: [ HEAD ]
-  - type: BreathMask
   - type: IgniteFromGasImmunity
   - type: EyeProtection
   - type: GroupExamine

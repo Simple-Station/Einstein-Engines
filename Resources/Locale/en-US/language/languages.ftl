@@ -59,7 +59,7 @@ language-RobotTalk-name = RobotTalk
 language-RobotTalk-description = A language consisting of harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
 
 language-Calcic-name = Calcic
-language-Calcic-description = The disjointed and staccato language of plasmamen. Also understood by skeletons.
+language-Calcic-description = The disjointed and staccato language of skeletons and plasmamen.
 
 language-Sign-name = Tau-Ceti Basic Sign Language
 language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
