@@ -45,14 +45,14 @@
     butcheringType: Spike
     spawned:
     - id: SheetPlasma1
-      amount: 5
+      amount: 4
   - type: HumanoidAppearance
     species: Plasmaman
     hideLayersOnEquip:
     - Hair
     - Snout
   - type: TypingIndicator
-    proto: skeleton
+    proto: plasmaman
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic

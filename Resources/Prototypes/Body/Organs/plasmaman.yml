@@ -2,7 +2,7 @@
   id: OrganPlasmamanLungs
   parent: OrganHumanLungs
   name: plasmaman lungs
-  description: "The lungs of a plasmaman, who breathe plasma. Any form of gaseous oxygen is lethally toxic if breathed in."
+  description: "The lungs yearn for the plasma. Only plasma gas can satiate these lungs, and oxygen is lethally toxic."
   components:
   - type: Sprite
     sprite: Mobs/Species/Plasmaman/organs.rsi
@@ -12,19 +12,29 @@
     metabolizerTypes: [ Plasmaman ]
   - type: Lung
     alert: LowPlasma
-  - type: Item
-    size: Small
-    heldPrefix: lungs
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
 
 - type: entity
   id: OrganPlasmamanStomach
   parent: OrganHumanStomach
   name: plasmaman stomach
+  description: "Why do plasmamen have stomachs if they don't need to eat?"
   components:
   - type: Sprite
     sprite: Mobs/Species/Plasmaman/organs.rsi
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
 
 - type: entity
   id: OrganPlasmamanLiver
@@ -35,6 +45,12 @@
     sprite: Mobs/Species/Plasmaman/organs.rsi
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
 
 - type: entity
   id: OrganPlasmamanTongue
@@ -43,6 +59,12 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Plasmaman/organs.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
 
 - type: entity
   id: OrganPlasmamanKidneys
@@ -55,16 +77,29 @@
     layers: []
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
 
 - type: entity
   id: OrganPlasmamanHeart
   parent: OrganHumanHeart
   name: plasmaman heart
+  description: "It pulses with plasma even outside the body."
   components:
   - type: Sprite
     sprite: Mobs/Species/Plasmaman/organs.rsi
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
 
 - type: entity
   id: OrganPlasmamanBrain
