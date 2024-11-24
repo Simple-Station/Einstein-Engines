@@ -30,7 +30,7 @@
   id: CultRuneApocalypse
   prototype: CultRuneApocalypse
   requireTargetDead: true
-#  requiredTotalCultists: 10
+  requiredTotalCultists: 10
   drawTime: 40
   drawDamage:
     types:
@@ -40,7 +40,7 @@
   id: CultRuneDimensionalRending
   prototype: CultRuneDimensionalRending
   requireTargetDead: true
-#  requiredTotalCultists: 10
+  requiredTotalCultists: 10
   drawTime: 40
   drawDamage:
     types:

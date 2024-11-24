@@ -35,9 +35,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 
-
 namespace Content.Server.WhiteDream.BloodCult.Gamerule;
-
 
 public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 {
@@ -84,7 +82,6 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         base.Started(uid, component, gameRule, args);
 
         GetRandomRunePlacements(component);
-        component.OfferingTarget = FindTarget();
     }
 
     protected override void AppendRoundEndText(
@@ -298,23 +295,18 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         _mind.TryAddObjective(mindId, mind, "KillTargetCultObjective");
     }
 
-    private EntityUid? FindTarget(ICollection<EntityUid> exclude = null!)
+    public void SetRandomCultTarget(BloodCultRuleComponent rule)
     {
         var querry = EntityManager
             .EntityQueryEnumerator<MindContainerComponent, HumanoidAppearanceComponent, ActorComponent>();
 
         var potentialTargets = new List<EntityUid>();
 
-        while (querry.MoveNext(out var uid, out var mind, out _, out _))
-        {
-            var entity = mind.Mind;
-            if (entity == default || exclude?.Contains(uid) is true || HasComp<BloodCultistComponent>(uid))
-                continue;
-
+        // Cultists not being excluded from target selection is fully intended.
+        while (querry.MoveNext(out var uid, out _, out _, out _))
             potentialTargets.Add(uid);
-        }
 
-        return potentialTargets.Count > 0 ? _random.Pick(potentialTargets) : null;
+        rule.OfferingTarget = potentialTargets.Count > 0 ? _random.Pick(potentialTargets) : null;
     }
 
     private void GetRandomRunePlacements(BloodCultRuleComponent component)
