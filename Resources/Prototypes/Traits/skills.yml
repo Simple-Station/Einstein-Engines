@@ -173,6 +173,7 @@
       inverted: true
       species:
         - Harpy
+        - IPC # because fuck IPCs I guess. TODO: Fix singer to allow IPCs to open the midi menu.
   functions:
     - !type:TraitAddComponent
       components:
