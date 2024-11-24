@@ -29,6 +29,9 @@ public sealed partial class BloodCultTeleportEvent : EntityTargetActionEvent, IS
     public float Range = 5;
 
     [DataField]
+    public TimeSpan DoAfterDuration = TimeSpan.FromSeconds(2);
+
+    [DataField]
     public string? Speech { get; set; }
 
     public InGameICChatType ChatType => InGameICChatType.Whisper;
