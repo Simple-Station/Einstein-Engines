@@ -30,6 +30,9 @@ public sealed class DebrainedSystem : EntitySystem
 
     private void OnComponentInit(EntityUid uid, DebrainedComponent _, ComponentInit args)
     {
+        if (TerminatingOrDeleted(uid))
+            return;
+
         EnsureComp<DelayedDeathComponent>(uid);
         EnsureComp<StunnedComponent>(uid);
         _standingSystem.Down(uid);
@@ -37,6 +40,9 @@ public sealed class DebrainedSystem : EntitySystem
 
     private void OnComponentRemove(EntityUid uid, DebrainedComponent _, ComponentRemove args)
     {
+        if (TerminatingOrDeleted(uid))
+            return;
+
         RemComp<DelayedDeathComponent>(uid);
         RemComp<StunnedComponent>(uid);
         if (_bodySystem.TryGetBodyOrganComponents<HeartComponent>(uid, out var _))
