@@ -661,7 +661,7 @@
   id: JawsOfLifeLeftArm
   result: JawsOfLifeLeftArm
   category: Robotics
-  completeTime: 5
+  completetime: 5
   materials:
     Steel: 1000
     Glass: 500
@@ -673,7 +673,7 @@
   id: JawsOfLifeRightArm
   result: JawsOfLifeRightArm
   category: Robotics
-  completeTime: 5
+  completetime: 5
   materials:
     Steel: 1000
     Glass: 500
@@ -685,7 +685,7 @@
   id: SpeedLeftLeg
   result: SpeedLeftLeg
   category: Robotics
-  completeTime: 5
+  completetime: 5
   materials:
     Steel: 1000
     Glass: 500
@@ -697,7 +697,7 @@
   id: SpeedRightLeg
   result: SpeedRightLeg
   category: Robotics
-  completeTime: 5
+  completetime: 5
   materials:
     Steel: 1000
     Glass: 500
@@ -709,7 +709,7 @@
   id: BasicCyberneticEyes
   result: BasicCyberneticEyes
   category: Robotics
-  completeTime: 5
+  completetime: 5
   materials:
     Steel: 1000
     Glass: 500
