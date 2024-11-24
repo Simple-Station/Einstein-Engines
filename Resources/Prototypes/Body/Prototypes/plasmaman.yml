@@ -9,7 +9,7 @@
       - torso
       organs:
         brain: OrganPlasmamanBrain
-        eyes: OrganHumanEyes
+        eyes: OrganPlasmamanEyes
     torso:
       part: TorsoPlasmaman
       connections:

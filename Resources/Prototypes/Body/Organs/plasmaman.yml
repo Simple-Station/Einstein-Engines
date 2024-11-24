@@ -37,6 +37,18 @@
       amount: 1
 
 - type: entity
+  id: OrganPlasmamanEyes
+  parent: OrganHumanEyes
+  name: plasmaman eyes
+  components: # TODO: add plasmaman eyes sprite
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
+
+- type: entity
   id: OrganPlasmamanLiver
   parent: OrganHumanLiver
   name: plasmaman liver
