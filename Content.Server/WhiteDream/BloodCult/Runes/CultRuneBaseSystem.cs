@@ -8,6 +8,7 @@ using Content.Server.Fluids.Components;
 using Content.Server.Popups;
 using Content.Server.WhiteDream.BloodCult.Empower;
 using Content.Server.WhiteDream.BloodCult.Gamerule;
+using Content.Server.WhiteDream.BloodCult.RendingRunePlacement;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
@@ -23,7 +24,9 @@ using Robust.Shared.Audio;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 
+
 namespace Content.Server.WhiteDream.BloodCult.Runes;
+
 
 public sealed partial class CultRuneBaseSystem : EntitySystem
 {
@@ -64,7 +67,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         foreach (var runeSelector in runeSelectorArray)
         {
             if (runeSelector.RequireTargetDead && !_cultRule.IsObjectiveFinished() ||
-                runeSelector.RequiredTotalCultists < _cultRule.GetTotalCultists())
+                runeSelector.RequiredTotalCultists > _cultRule.GetTotalCultists())
                 continue;
 
             availableRunes.Add(runeSelector.ID);
@@ -112,18 +115,38 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         DealDamage(args.User, runeSelector.DrawDamage);
 
         _audio.PlayPvs(args.EndDrawingSound, args.User, AudioParams.Default.WithMaxDistance(2f));
-        var rune = SpawnRune(args.User, runeSelector.Prototype);
+        var runeEnt = SpawnRune(args.User, runeSelector.Prototype);
+        if (TryComp(runeEnt, out CultRuneBaseComponent? rune) && rune.TriggerRendingMarkers)
+        {
+            var userLocation = Transform(args.User).Coordinates;
+            var query = EntityQueryEnumerator<RendingRunePlacementMarkerComponent>();
+            while (query.MoveNext(out var uid, out var marker))
+            {
+                if (!marker.IsActive)
+                    continue;
+
+                var placementCoordinates = Transform(uid).Coordinates;
+                if (!_transform.InRange(placementCoordinates, userLocation, marker.DrawingRange))
+                    continue;
+
+                marker.IsActive = false;
+                break;
+            }
+        }
 
         var ev = new AfterRunePlaced(args.User);
-        RaiseLocalEvent(rune, ev);
+        RaiseLocalEvent(runeEnt, ev);
     }
 
-    private void EraseOnInteractUsing(Entity<CultRuneBaseComponent> ent, ref InteractUsingEvent args)
+    private void EraseOnInteractUsing(Entity<CultRuneBaseComponent> rune, ref InteractUsingEvent args)
     {
+        if (!rune.Comp.CanBeErased)
+            return;
+
         // Logic for bible erasing
         if (TryComp<BibleComponent>(args.Used, out var bible) && HasComp<BibleUserComponent>(args.User))
         {
-            _popup.PopupEntity(Loc.GetString("cult-rune-erased"), ent, args.User);
+            _popup.PopupEntity(Loc.GetString("cult-rune-erased"), rune, args.User);
             _audio.PlayPvs(bible.HealSoundPath, args.User);
             EntityManager.DeleteEntity(args.Target);
             return;
@@ -133,7 +156,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
             return;
 
         var argsDoAfterEvent =
-            new DoAfterArgs(EntityManager, args.User, runeDrawer.EraseTime, new RuneEraseDoAfterEvent(), ent)
+            new DoAfterArgs(EntityManager, args.User, runeDrawer.EraseTime, new RuneEraseDoAfterEvent(), rune)
             {
                 BreakOnUserMove = true,
                 BreakOnDamage = true,
@@ -141,7 +164,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
             };
 
         if (_doAfter.TryStartDoAfter(argsDoAfterEvent))
-            _popup.PopupEntity(Loc.GetString("cult-rune-started-erasing"), ent, args.User);
+            _popup.PopupEntity(Loc.GetString("cult-rune-started-erasing"), rune, args.User);
     }
 
     private void OnRuneErase(Entity<CultRuneBaseComponent> ent, ref RuneEraseDoAfterEvent args)
@@ -153,47 +176,48 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         EntityManager.DeleteEntity(ent);
     }
 
-    private void EraseOnCollding(Entity<CultRuneBaseComponent> ent, ref StartCollideEvent args)
+    private void EraseOnCollding(Entity<CultRuneBaseComponent> rune, ref StartCollideEvent args)
     {
-        if (!TryComp<SolutionContainerManagerComponent>(args.OtherEntity, out var solutionContainer) ||
+        if (!rune.Comp.CanBeErased ||
+            !TryComp<SolutionContainerManagerComponent>(args.OtherEntity, out var solutionContainer) ||
             !HasComp<VaporComponent>(args.OtherEntity) && !HasComp<SprayComponent>(args.OtherEntity))
             return;
 
         if (_solutionContainer.EnumerateSolutions((args.OtherEntity, solutionContainer))
-            .Any(solution => solution.Solution.Comp.Solution.ContainsPrototype(ent.Comp.HolyWaterPrototype)))
-            EntityManager.DeleteEntity(ent);
+            .Any(solution => solution.Solution.Comp.Solution.ContainsPrototype(rune.Comp.HolyWaterPrototype)))
+            EntityManager.DeleteEntity(rune);
     }
 
-    private void OnRuneActivate(Entity<CultRuneBaseComponent> ent, ref ActivateInWorldEvent args)
+    private void OnRuneActivate(Entity<CultRuneBaseComponent> rune, ref ActivateInWorldEvent args)
     {
-        var runeCoordinates = Transform(ent).Coordinates;
+        var runeCoordinates = Transform(rune).Coordinates;
         var userCoordinates = Transform(args.User).Coordinates;
         if (args.Handled || !HasComp<BloodCultistComponent>(args.User) ||
             !userCoordinates.TryDistance(EntityManager, runeCoordinates, out var distance) ||
-            distance > ent.Comp.RuneActivationRange)
+            distance > rune.Comp.RuneActivationRange)
             return;
 
         args.Handled = true;
 
-        var cultists = GatherCultists(ent, ent.Comp.RuneActivationRange);
-        if (cultists.Count < ent.Comp.RequiredInvokers)
+        var cultists = GatherCultists(rune, rune.Comp.RuneActivationRange);
+        if (cultists.Count < rune.Comp.RequiredInvokers)
         {
-            _popup.PopupEntity(Loc.GetString("cult-rune-not-enough-cultists"), ent, args.User);
+            _popup.PopupEntity(Loc.GetString("cult-rune-not-enough-cultists"), rune, args.User);
             return;
         }
 
         var tryInvokeEv = new TryInvokeCultRuneEvent(args.User, cultists);
-        RaiseLocalEvent(ent, tryInvokeEv);
+        RaiseLocalEvent(rune, tryInvokeEv);
         if (tryInvokeEv.Cancelled)
             return;
 
         foreach (var cultist in cultists)
         {
-            DealDamage(cultist, ent.Comp.ActivationDamage);
+            DealDamage(cultist, rune.Comp.ActivationDamage);
             _chat.TrySendInGameICMessage(
                 cultist,
-                ent.Comp.InvokePhrase,
-                ent.Comp.InvokeChatType,
+                rune.Comp.InvokePhrase,
+                rune.Comp.InvokeChatType,
                 false,
                 checkRadioPrefix: false);
         }

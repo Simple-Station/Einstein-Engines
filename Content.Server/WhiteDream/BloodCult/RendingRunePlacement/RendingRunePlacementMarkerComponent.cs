@@ -1,10 +1,11 @@
-﻿using Robust.Shared.GameStates;
+﻿namespace Content.Server.WhiteDream.BloodCult.RendingRunePlacement;
 
-namespace Content.Server.WhiteDream.BloodCult.RendingRunePlacement;
-
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class RendingRunePlacementMarkerComponent : Component
 {
+    [DataField]
+    public bool IsActive;
+
     [DataField]
     public float DrawingRange = 10;
 }

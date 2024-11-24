@@ -35,7 +35,9 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 
+
 namespace Content.Server.WhiteDream.BloodCult.Gamerule;
+
 
 public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 {
@@ -255,16 +257,16 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
     public bool CanDrawRendingRune(EntityUid user)
     {
-        var query = QueryActiveRules();
-        while (query.MoveNext(out _, out var rule, out _))
+        var query = EntityQueryEnumerator<RendingRunePlacementMarkerComponent>();
+        while (query.MoveNext(out var uid, out var marker))
         {
+            if (!marker.IsActive)
+                continue;
+
             var userLocation = Transform(user).Coordinates;
-            foreach (var placement in rule.SelectedRunePlacements)
-            {
-                var placementCoordinates = Transform(placement).Coordinates;
-                if (_transform.InRange(placementCoordinates, userLocation, placement.Comp.DrawingRange))
-                    return true;
-            }
+            var placementCoordinates = Transform(uid).Coordinates;
+            if (_transform.InRange(placementCoordinates, userLocation, marker.DrawingRange))
+                return true;
         }
 
         return false;
@@ -317,21 +319,24 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
     private void GetRandomRunePlacements(BloodCultRuleComponent component)
     {
-        var query = EntityQueryEnumerator<RendingRunePlacementMarkerComponent>();
-        var allMarkers = new List<Entity<RendingRunePlacementMarkerComponent>>();
-        while (query.MoveNext(out var uid, out var marker))
-            allMarkers.Add((uid, marker));
+        var allMarkers = EntityQuery<RendingRunePlacementMarkerComponent>().ToList();
 
         if (allMarkers.Count == 0)
+        {
+            component.EmergencyMarkersMode = true;
+            component.EmergencyMarkersCount = component.RendingRunePlacementsAmount;
             return;
+        }
 
         var maxRunes = component.RendingRunePlacementsAmount;
         if (allMarkers.Count < component.RendingRunePlacementsAmount)
             maxRunes = allMarkers.Count;
 
-        var selectedMarkers = new List<Entity<RendingRunePlacementMarkerComponent>>();
         for (var i = maxRunes; i > 0; i--)
-            component.SelectedRunePlacements.Add(_random.PickAndTake(selectedMarkers));
+        {
+            var marker = _random.PickAndTake(allMarkers);
+            marker.IsActive = true;
+        }
     }
 
     private void RemoveAllCultItems(Entity<BloodCultistComponent> cultist)

@@ -34,6 +34,15 @@ public sealed partial class BloodCultRuleComponent : Component
     public bool LeaderSelected;
 
     /// <summary>
+    ///     If no rending rune markers were placed on the map, players will be able to place these runes anywhere on the map
+    ///     but no more than <see cref="RendingRunePlacementsAmount">total available</see>.
+    /// </summary>
+    [DataField]
+    public bool EmergencyMarkersMode;
+
+    public int EmergencyMarkersCount;
+
+    /// <summary>
     ///     The entityUid of body which should be sacrificed.
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
@@ -50,8 +59,6 @@ public sealed partial class BloodCultRuleComponent : Component
     public List<Entity<BloodCultistComponent>> Cultists = new();
 
     public List<Entity<ConstructComponent>> Constructs = new();
-
-    public List<Entity<RendingRunePlacementMarkerComponent>> SelectedRunePlacements = new();
 }
 
 public enum CultWinCondition : byte

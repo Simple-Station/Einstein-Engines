@@ -133,6 +133,8 @@
   - type: CultRuneBase
     requiredInvokers: 3
     invokePhrase: "Ta'gh fara'qha fel d'amar det!"
+    triggerRendingMarkers: true
+    canBeErased: false
     activationDamage:
       types:
         Slash: 35
@@ -157,6 +159,8 @@
     requiredInvokers: 10
     invokeChatType: Speak
     invokePhrase: "TOK-LYR RQA-NAP G'OLT-ULOFT!!!"
+    triggerRendingMarkers: true
+    canBeErased: false
   - type: CultRuneRending
   - type: GenericVisualizer
     visuals:

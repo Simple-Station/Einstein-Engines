@@ -26,6 +26,15 @@ public sealed partial class CultRuneBaseComponent : Component
     [DataField]
     public DamageSpecifier? ActivationDamage;
 
+    /// <summary>
+    ///     Will the rune upon activation set nearest Rending Rune Placement Marker to disabled.
+    /// </summary>
+    [DataField]
+    public bool TriggerRendingMarkers;
+
+    [DataField]
+    public bool CanBeErased = true;
+
     public EntProtoId HolyWaterPrototype = "HolyWater";
 }
 

@@ -42,6 +42,12 @@ public sealed class RuneDrawerBUI : BoundUserInterface
         _menu.OpenCenteredAt(_inputManager.MouseScreenPosition.Position / _displayManager.ScreenSize);
     }
 
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        _menu.Close();
+    }
+
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         if (state is RuneDrawerMenuState runeDrawerState)
