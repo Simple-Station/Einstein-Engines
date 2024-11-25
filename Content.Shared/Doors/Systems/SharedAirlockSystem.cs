@@ -21,6 +21,7 @@ public abstract class SharedAirlockSystem : EntitySystem
 
         SubscribeLocalEvent<AirlockComponent, BeforeDoorClosedEvent>(OnBeforeDoorClosed);
         SubscribeLocalEvent<AirlockComponent, DoorStateChangedEvent>(OnStateChanged);
+        SubscribeLocalEvent<AirlockComponent, DoorBoltsChangedEvent>(OnBoltsChanged);
         SubscribeLocalEvent<AirlockComponent, BeforeDoorOpenedEvent>(OnBeforeDoorOpened);
         SubscribeLocalEvent<AirlockComponent, BeforeDoorDeniedEvent>(OnBeforeDoorDenied);
         SubscribeLocalEvent<AirlockComponent, GetPryTimeModifierEvent>(OnGetPryMod);
@@ -67,6 +68,13 @@ public abstract class SharedAirlockSystem : EntitySystem
             component.AutoClose = true;
             Dirty(uid, component);
         }
+    }
+
+    private void OnBoltsChanged(EntityUid uid, AirlockComponent component, DoorBoltsChangedEvent args)
+    {
+        // If unbolted, reset the auto close timer
+        if (!args.BoltsDown)
+            UpdateAutoClose(uid, component);
     }
 
     private void OnBeforeDoorOpened(EntityUid uid, AirlockComponent component, BeforeDoorOpenedEvent args)
