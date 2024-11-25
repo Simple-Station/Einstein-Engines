@@ -17,6 +17,24 @@
       id: LoadoutChiefEngineerBelt
     - type: loadout
       id: LoadoutChiefEngineerBeltFilled
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerEars
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentBoxInflatable
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentMedkitOxygen
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentRCD
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentRCDAmmoSpare
     - type: loadout
       id: LoadoutChiefEngineerEquipmentSheetSteel
     - type: loadout
@@ -61,24 +79,6 @@
       id: LoadoutChiefEngineerEquipmentSheetPlastic
     - type: loadout
       id: LoadoutChiefEngineerEquipmentSheetPlastic10
-
-#- type: characterItemGroup
-#  id: LoadoutChiefEngineerEars
-#  maxItems: 1
-#  items:
-
-- type: characterItemGroup
-  id: LoadoutChiefEngineerEquipment
-  maxItems: 2
-  items:
-    - type: loadout
-      id: LoadoutChiefEngineerEquipmentBoxInflatable
-    - type: loadout
-      id: LoadoutChiefEngineerEquipmentMedkitOxygen
-    - type: loadout
-      id: LoadoutChiefEngineerEquipmentRCD
-    - type: loadout
-      id: LoadoutChiefEngineerEquipmentRCDAmmoSpare
 
 #- type: characterItemGroup
 #  id: LoadoutChiefEngineerEyes
