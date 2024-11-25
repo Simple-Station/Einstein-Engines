@@ -311,7 +311,6 @@
   category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
-  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalHead
@@ -376,7 +375,6 @@
   category: JobsMedicalAUncategorized
   cost: 0
   exclusive: true
-  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalOuter
@@ -505,18 +503,3 @@
         - Paramedic
   items:
     - UniformScrubsColorCybersun
-
-- type: loadout
-  id: LoadoutMedicalUniformScrubsWhite
-  category: JobsMedicalAUncategorized
-  cost: 0
-  exclusive: true
-  customColorTint: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalUniforms
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-  items:
-    - UniformScrubsColorWhite

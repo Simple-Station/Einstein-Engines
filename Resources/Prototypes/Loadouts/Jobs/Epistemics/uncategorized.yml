@@ -175,7 +175,6 @@
   category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
-  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEpistemicsOuter
@@ -190,7 +189,6 @@
   category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
-  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEpistemicsOuter
@@ -233,7 +231,6 @@
   category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
-  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEpistemicsOuter

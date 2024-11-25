@@ -5,8 +5,6 @@
   category: JobsServiceClown
   cost: 0
   exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
   items:
     - ClothingBackpackClown
   requirements:
@@ -21,8 +19,6 @@
   category: JobsServiceClown
   cost: 0
   exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
   items:
     - ClothingBackpackSatchelClown
   requirements:
@@ -37,8 +33,6 @@
   category: JobsServiceClown
   cost: 0
   exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
   items:
     - ClothingBackpackDuffelClown
   requirements:
@@ -68,8 +62,6 @@
   category: JobsServiceClown
   cost: 0
   exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutClownNeck
@@ -85,8 +77,6 @@
   category: JobsServiceClown
   cost: 0
   exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutClownMask
@@ -102,8 +92,6 @@
   category: JobsServiceClown
   cost: 1
   exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutClownOuter
@@ -118,8 +106,6 @@
   category: JobsServiceClown
   cost: 0
   exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutClownOuter
@@ -135,8 +121,6 @@
   category: JobsServiceClown
   cost: 0
   exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutClownShoes
@@ -152,8 +136,6 @@
   category: JobsServiceClown
   cost: 0
   exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutClownUniforms
@@ -170,8 +152,6 @@
   category: JobsServiceClown
   cost: 0
   exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutClownUniforms
