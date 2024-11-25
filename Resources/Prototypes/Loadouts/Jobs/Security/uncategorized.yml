@@ -500,7 +500,6 @@
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
-  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
