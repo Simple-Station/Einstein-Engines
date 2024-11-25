@@ -358,7 +358,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
                 _ => 10
             } * component.SolutionSizeCoefficient);
         } else {
-            oilToUse = TryComp<PhysicsComponent>(item, out var physicsComponent) ? physicsComponent.Mass : 10;
+            oilToUse = (int) (TryComp<PhysicsComponent>(item, out var physicsComponent) ? physicsComponent.Mass : 10);
         }
 
         // Determine how much solution to spend on this item.
