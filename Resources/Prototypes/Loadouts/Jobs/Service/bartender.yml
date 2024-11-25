@@ -39,6 +39,7 @@
   category: JobsServiceBartender
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
@@ -53,6 +54,7 @@
   category: JobsServiceBartender
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
