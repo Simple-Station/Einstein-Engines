@@ -8138,3 +8138,22 @@ Entries:
   id: 6540
   time: '2024-11-24T18:44:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1268
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: >-
+        Players can set custom names, descriptions, and color tints for their
+        loadout items
+    - type: Add
+      message: Certain loadouts may have Guidebook pages shown in the editor
+    - type: Add
+      message: >-
+        Players can pick a list of loadout items to have one randomly be their
+        family heirloom for a mood bonus or deficit if they are carrying it
+    - type: Fix
+      message: Loadouts have almost as little lag as possible (hopefully none)
+    - type: Fix
+      message: Everything properly updates your character editor's live preview
+  id: 6541
+  time: '2024-11-25T05:43:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1164
