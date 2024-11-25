@@ -52,6 +52,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Nyanotrasen.Kitchen.EntitySystems;
 
