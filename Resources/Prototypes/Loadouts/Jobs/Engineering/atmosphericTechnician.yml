@@ -157,6 +157,7 @@
   category: JobsEngineeringAtmosphericTechnician
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutAtmosphericTechnicianOuter

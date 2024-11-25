@@ -21,6 +21,8 @@
   category: JobsServiceMime
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMimeNeck
@@ -37,6 +39,8 @@
   category: JobsServiceMime
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMimeMask
@@ -51,6 +55,8 @@
   category: JobsServiceMime
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMimeMask
@@ -65,6 +71,8 @@
   category: JobsServiceMime
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMimeMask
@@ -80,6 +88,8 @@
   category: JobsServiceMime
   cost: 1
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMimeOuter
@@ -95,6 +105,8 @@
   category: JobsServiceMime
   cost: 0
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMimeShoes

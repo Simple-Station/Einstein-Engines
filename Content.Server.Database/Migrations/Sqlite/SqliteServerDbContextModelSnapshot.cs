@@ -618,6 +618,22 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("loadout_id");
 
+                    b.Property<string>("CustomColorTint")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_color_tint");
+
+                    b.Property<string>("CustomDescription")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_description");
+
+                    b.Property<bool?>("CustomHeirloom")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("custom_heirloom");
+
+                    b.Property<string>("CustomName")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_name");
+
                     b.Property<string>("LoadoutName")
                         .IsRequired()
                         .HasColumnType("TEXT")

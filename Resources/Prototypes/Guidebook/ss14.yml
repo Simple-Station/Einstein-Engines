@@ -12,6 +12,7 @@
   - Species
   - Writing
   - Glossary
+  - LoadoutInfo
 
 - type: guideEntry
   id: Writing
@@ -22,5 +23,3 @@
   id: Glossary
   name: guide-entry-glossary
   text: "/ServerInfo/Guidebook/Glossary.xml"
-
-
