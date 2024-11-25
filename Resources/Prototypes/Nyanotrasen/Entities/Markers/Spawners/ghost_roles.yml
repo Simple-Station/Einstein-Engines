@@ -3,7 +3,7 @@
   name: ghost role spawn point
   suffix: Ifrit
   parent: MarkerBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GhostRoleMobSpawner
     prototype: MobIfritFamiliar
@@ -22,7 +22,7 @@
   id: SpawnPointGhostFugitive
   name: ghost role spawn point
   parent: MarkerBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   # - type: GhostRoleMobSpawner
   #   prototype: MobHumanFugitive # Todo
@@ -56,7 +56,7 @@
 #  name: ghost role spawn point
 #  suffix: Vampire spider
 #  parent: MarkerBase
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: GhostRoleMobSpawner
 #    prototype: MobGiantSpiderVampireAngry

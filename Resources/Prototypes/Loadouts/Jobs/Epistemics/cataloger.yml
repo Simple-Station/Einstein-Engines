@@ -1,0 +1,163 @@
+# Cataloger
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+#- type: loadout
+#  id: LoadoutCatalogerEquipmentPotentiometer
+#  category: JobsEpistemicsCataloger
+#  cost: 0
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutCataloguerUniforms
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - Librarian
+#  items:
+#    - PsiPotentiometerHandheld
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianNt
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianNt
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianIdris
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianIdris
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianOrion
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianOrion
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianHeph
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianHeph
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianPMCG
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianPMCG
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianZav
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianZav
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianZeng
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarianZeng
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarian
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitLibrarian
+
+- type: loadout
+  id: LoadoutScienceJumpskirtLibrarian
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpskirtLibrarian

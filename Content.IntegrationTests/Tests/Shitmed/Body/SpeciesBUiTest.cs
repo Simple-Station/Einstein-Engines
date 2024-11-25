@@ -5,7 +5,7 @@ using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
-namespace Content.IntegrationTests.Tests.Backmen.Body;
+namespace Content.IntegrationTests.Tests.Shitmed.Body;
 
 [TestFixture]
 public sealed class SpeciesBUiTest

@@ -128,7 +128,7 @@
   id: ActionToggleSpeedBoots
   name: Toggle Speed Boots
   description: Toggles the speed boots on and off.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: NoItem

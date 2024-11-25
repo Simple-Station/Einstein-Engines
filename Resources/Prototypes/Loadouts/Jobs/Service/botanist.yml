@@ -1,0 +1,81 @@
+# Botanist
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutServiceBotanistUniformOveralls
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
+  items:
+    - ClothingUniformOveralls
+
+- type: loadout
+  id: LoadoutServiceJumpsuitHydroponicsNt
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
+  items:
+    - ClothingUniformJumpsuitHydroponicsNt
+
+- type: loadout
+  id: LoadoutServiceJumpsuitHydroponicsIdris
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
+  items:
+    - ClothingUniformJumpsuitHydroponicsIdris
+
+- type: loadout
+  id: LoadoutServiceJumpsuitHydroponicsOrion
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
+  items:
+    - ClothingUniformJumpsuitHydroponicsOrion

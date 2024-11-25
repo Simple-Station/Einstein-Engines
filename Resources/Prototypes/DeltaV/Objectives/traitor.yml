@@ -1,5 +1,5 @@
 - type: entity # Logistics Officer steal objective.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseTraitorStealObjective
   id: LOLuckyBillStealObjective
   components:
@@ -7,10 +7,11 @@
     job: Quartermaster
   - type: StealCondition
     stealGroup: SpaceCashLuckyBill
+    verifyMapExistence: true
     # owner: job-name-qm
 
 - type: entity # Head of Personnel steal objective.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseTraitorStealObjective
   id: HoPBookIanDossierStealObjective
   components:
@@ -18,10 +19,11 @@
     job: HeadOfPersonnel
   - type: StealCondition
     stealGroup: BookIanDossier
+    verifyMapExistence: true
     # owner: job-name-hop
 
 - type: entity # Clerk steal objective.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseTraitorStealObjective
   id: ClerkNotaryStealObjective
   components:
@@ -29,4 +31,5 @@
     job: Clerk
   - type: StealCondition
     stealGroup: RubberStampNotary
+    verifyMapExistence: true
     owner: job-name-clerk

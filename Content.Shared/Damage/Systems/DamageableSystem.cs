@@ -30,7 +30,7 @@ namespace Content.Shared.Damage
         private EntityQuery<AppearanceComponent> _appearanceQuery;
         private EntityQuery<DamageableComponent> _damageableQuery;
         private EntityQuery<MindContainerComponent> _mindContainerQuery;
-        private EntityQuery<TargetingComponent> _targetingQuery;
+
         public override void Initialize()
         {
             SubscribeLocalEvent<DamageableComponent, ComponentInit>(DamageableInit);
@@ -42,7 +42,6 @@ namespace Content.Shared.Damage
             _appearanceQuery = GetEntityQuery<AppearanceComponent>();
             _damageableQuery = GetEntityQuery<DamageableComponent>();
             _mindContainerQuery = GetEntityQuery<MindContainerComponent>();
-            _targetingQuery = GetEntityQuery<TargetingComponent>();
         }
 
         /// <summary>
@@ -163,6 +162,13 @@ namespace Content.Shared.Damage
                     // TODO: We need to add a check to see if the given armor covers the targeted part (if any) to modify or not.
                     damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
                 }
+
+                // From Solidus: If you are reading this, I owe you a more comprehensive refactor of this entire system.
+                if (damageable.DamageModifierSets.Count > 0)
+                    foreach (var enumerableModifierSet in damageable.DamageModifierSets)
+                        if (_prototypeManager.TryIndex<DamageModifierSetPrototype>(enumerableModifierSet, out var enumerableModifier))
+                            damage = DamageSpecifier.ApplyModifierSet(damage, enumerableModifier);
+
                 var ev = new DamageModifyEvent(damage, origin, targetPart);
                 RaiseLocalEvent(uid.Value, ev);
                 damage = ev.Damage;

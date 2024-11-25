@@ -12,6 +12,7 @@ anomaly-particles-omega = Omega particles
 anomaly-particles-sigma = Sigma particles
 
 anomaly-scanner-component-scan-complete = Scan complete!
+anomaly-scanner-scan-copied = Copied anomaly scan data!
 
 anomaly-scanner-ui-title = anomaly scanner
 anomaly-scanner-no-anomaly = No anomaly currently scanned.
@@ -79,7 +80,7 @@ anomaly-generator-flavor-right = v1.1
 anomaly-behavior-unknown = [color=red]ERROR. Cannot be read.[/color]
 
 anomaly-behavior-title = behavior deviation analysis:
-anomaly-behavior-point =[color=gold]Anomaly produces {$mod}% of the points[/color] 
+anomaly-behavior-point =[color=gold]Anomaly produces {$mod}% of the points[/color]
 
 anomaly-behavior-safe = [color=forestgreen]The anomaly is extremely stable. Extremely rare pulsations.[/color]
 anomaly-behavior-slow = [color=forestgreen]The frequency of pulsations is much less frequent.[/color]

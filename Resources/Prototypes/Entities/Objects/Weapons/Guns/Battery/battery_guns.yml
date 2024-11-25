@@ -278,6 +278,15 @@
     stealGroup: HoSAntiqueWeapon
 
 - type: entity
+  name: captain's pulse pistol
+  parent: WeaponPulsePistol
+  id: WeaponPulsePistolCaptain
+  description: A rare and exotic handgun gifted to the station's Captain. Its ivory grip has been engraved with the words, "Glory to the Company, Glory to Mother Sol. Phoron will make us all rich."
+  components:
+  - type: StealTarget
+    stealGroup: WeaponCaptain
+
+- type: entity
   name: pulse carbine
   parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponPulseCarbine
@@ -595,7 +604,7 @@
   - type: StaticPrice
     price: 750
   - type: StealTarget
-    stealGroup: WeaponAntiqueLaser
+    stealGroup: WeaponCaptain
 
 - type: entity
   name: advanced laser pistol

@@ -57,6 +57,16 @@
       collection: IanBark
 
 - type: entity
+  parent: ClothingBackpackIan
+  id: ClothingBackpackIanFilled
+  name: Ian's backpack
+  description: Sometimes he wears it.
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
+- type: entity
   parent: ClothingBackpack
   id: ClothingBackpackSecurity
   name: security backpack

@@ -2294,7 +2294,7 @@ namespace Content.Client.Lobby.UI
                 return match;
 
             foreach (var subcategory in parent.Contents.Where(c => c is NeoTabContainer).Cast<NeoTabContainer>())
-                match = FindCategory(id, subcategory);
+                match ??= FindCategory(id, subcategory);
 
             return match;
         }

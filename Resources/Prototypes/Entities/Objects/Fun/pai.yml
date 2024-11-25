@@ -152,7 +152,7 @@
   id: ActionPAIPlayMidi
   name: Play MIDI
   description: Open your portable MIDI interface to soothe your owner.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -165,7 +165,7 @@
   id: ActionPAIOpenMap
   name: Open Map
   description: Open your map interface and guide your owner.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       checkCanInteract: false

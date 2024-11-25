@@ -29,6 +29,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly INetManager _net = default!;
 
+    [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
 
     public override void Initialize()
     {
@@ -100,7 +101,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
 
             // Spawn the loadout items
             var spawned = EntityManager.SpawnEntities(
-                EntityManager.GetComponent<TransformComponent>(uid).Coordinates.ToMap(EntityManager),
+                _sharedTransformSystem.GetMapCoordinates(uid),
                 loadoutProto.Items.Select(p => (string?) p.ToString()).ToList()); // Dumb cast
 
             var i = 0; // If someone wants to add multi-item support to the editor

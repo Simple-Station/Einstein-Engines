@@ -110,13 +110,17 @@ namespace Content.Shared.Interaction
             SubscribeLocalEvent<UnremoveableComponent, DroppedEvent>(OnDropped);
 
             CommandBinds.Builder
-                .Bind(ContentKeyFunctions.AltActivateItemInWorld,
+                .Bind(
+                    ContentKeyFunctions.AltActivateItemInWorld,
                     new PointerInputCmdHandler(HandleAltUseInteraction))
-                .Bind(EngineKeyFunctions.Use,
+                .Bind(
+                    EngineKeyFunctions.Use,
                     new PointerInputCmdHandler(HandleUseInteraction))
-                .Bind(ContentKeyFunctions.ActivateItemInWorld,
+                .Bind(
+                    ContentKeyFunctions.ActivateItemInWorld,
                     new PointerInputCmdHandler(HandleActivateItemInWorld))
-                .Bind(ContentKeyFunctions.TryPullObject,
+                .Bind(
+                    ContentKeyFunctions.TryPullObject,
                     new PointerInputCmdHandler(HandleTryPullObject))
                 .Register<SharedInteractionSystem>();
 
@@ -1167,7 +1171,7 @@ namespace Content.Shared.Interaction
                 return false;
 
             // we don't check if the user can access the storage entity itself. This should be handed by the UI system.
-            return _ui.IsUiOpen(target, StorageComponent.StorageUiKey.Key, user);
+            return _ui.IsUiOpen(container.Owner, StorageComponent.StorageUiKey.Key, user);
         }
 
         /// <summary>
