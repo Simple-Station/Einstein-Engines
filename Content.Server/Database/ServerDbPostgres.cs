@@ -109,7 +109,7 @@ namespace Content.Server.Database
 
             var exempt = await GetBanExemptionCore(db, userId);
             var newPlayer = !await db.PgDbContext.Player.AnyAsync(p => p.UserId == userId);
-            var query = MakeBanLookupQuery(address, userId, hwId, db, includeUnbanned, exempt, newPlayer);
+            var query = MakeBanLookupQuery(address, userId, hwId, modernHWIds, db, includeUnbanned, exempt, newPlayer);
 
             var queryBans = await query.ToArrayAsync();
             var bans = new List<ServerBanDef>(queryBans.Length);
@@ -152,15 +152,6 @@ namespace Content.Server.Database
                     .Where(b => b.Address != null
                                 && EF.Functions.ContainsOrEqual(b.Address.Value, address)
                                 && !(b.ExemptFlags.HasFlag(ServerBanExemptFlags.BlacklistedRange) && !newPlayer));
-
-                query = query == null ? newQ : query.Union(newQ);
-            }
-
-            if (hwId != null && hwId.Value.Length > 0)
-            {
-                var newQ = db.PgDbContext.Ban
-                    .Include(p => p.Unban)
-                    .Where(b => b.HWId!.SequenceEqual(hwId.Value.ToArray()));
 
                 query = query == null ? newQ : query.Union(newQ);
             }
