@@ -8,15 +8,17 @@ using Content.Server.Fluids.Components;
 using Content.Server.Popups;
 using Content.Server.WhiteDream.BloodCult.Empower;
 using Content.Server.WhiteDream.BloodCult.Gamerule;
-using Content.Server.WhiteDream.BloodCult.RendingRunePlacement;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
+using Content.Shared.Examine;
+using Content.Shared.Ghost;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.UserInterface;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
+using Content.Shared.WhiteDream.BloodCult.Constructs;
 using Content.Shared.WhiteDream.BloodCult.Runes;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
@@ -24,9 +26,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 
-
 namespace Content.Server.WhiteDream.BloodCult.Runes;
-
 
 public sealed partial class CultRuneBaseSystem : EntitySystem
 {
@@ -44,8 +44,6 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
     public override void Initialize()
     {
-        base.Initialize();
-
         // Drawing rune
         SubscribeLocalEvent<RuneDrawerComponent, BeforeActivatableUIOpenEvent>(BeforeOpenUi);
         SubscribeLocalEvent<RuneDrawerComponent, RuneDrawerSelectedMessage>(OnRuneSelected);
@@ -58,7 +56,11 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         // Rune invoking
         SubscribeLocalEvent<CultRuneBaseComponent, ActivateInWorldEvent>(OnRuneActivate);
+
+        SubscribeLocalEvent<CultRuneBaseComponent, ExamineAttemptEvent>(OnRuneExaminaAttempt);
     }
+
+    #region EventHandlers
 
     private void BeforeOpenUi(Entity<RuneDrawerComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
@@ -118,20 +120,8 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         var runeEnt = SpawnRune(args.User, runeSelector.Prototype);
         if (TryComp(runeEnt, out CultRuneBaseComponent? rune) && rune.TriggerRendingMarkers)
         {
-            var userLocation = Transform(args.User).Coordinates;
-            var query = EntityQueryEnumerator<RendingRunePlacementMarkerComponent>();
-            while (query.MoveNext(out var uid, out var marker))
-            {
-                if (!marker.IsActive)
-                    continue;
-
-                var placementCoordinates = Transform(uid).Coordinates;
-                if (!_transform.InRange(placementCoordinates, userLocation, marker.DrawingRange))
-                    continue;
-
-                marker.IsActive = false;
-                break;
-            }
+           if (!_cultRule.TryConsumeNearestMarker(ent))
+               return;
         }
 
         var ev = new AfterRunePlaced(args.User);
@@ -222,6 +212,15 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
                 checkRadioPrefix: false);
         }
     }
+
+    private void OnRuneExaminaAttempt(Entity<CultRuneBaseComponent> rune, ref ExamineAttemptEvent args)
+    {
+        if (!HasComp<BloodCultistComponent>(args.Examiner) && !HasComp<ConstructComponent>(args.Examiner) &&
+            !HasComp<GhostComponent>(args.Examiner))
+            args.Cancel();
+    }
+
+    #endregion
 
     private EntityUid SpawnRune(EntityUid user, EntProtoId rune)
     {

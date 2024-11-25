@@ -37,7 +37,8 @@ public sealed class CultRuneOfferingSystem : EntitySystem
 
     private void OnOfferingRuneInvoked(Entity<CultRuneOfferingComponent> ent, ref TryInvokeCultRuneEvent args)
     {
-        var possibleTargets = _cultRune.GetTargetsNearRune(ent,
+        var possibleTargets = _cultRune.GetTargetsNearRune(
+            ent,
             ent.Comp.OfferingRange,
             entity => HasComp<BloodCultistComponent>(entity));
 
@@ -71,9 +72,11 @@ public sealed class CultRuneOfferingSystem : EntitySystem
             args.Cancel();
     }
 
-    private bool TrySacrifice(Entity<HumanoidAppearanceComponent> target,
+    private bool TrySacrifice(
+        Entity<HumanoidAppearanceComponent> target,
         Entity<CultRuneOfferingComponent> rune,
-        int invokersAmount)
+        int invokersAmount
+    )
     {
         if (invokersAmount < rune.Comp.AliveSacrificeInvokersAmount)
             return false;
@@ -96,10 +99,12 @@ public sealed class CultRuneOfferingSystem : EntitySystem
         _mind.UnVisit(mindId);
     }
 
-    private bool TryConvert(EntityUid target,
+    private bool TryConvert(
+        EntityUid target,
         Entity<CultRuneOfferingComponent> rune,
         EntityUid user,
-        int invokersAmount)
+        int invokersAmount
+    )
     {
         if (invokersAmount < rune.Comp.ConvertInvokersAmount)
             return false;

@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Chat;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Humanoid;
 using Robust.Shared.Prototypes;
@@ -35,7 +36,7 @@ public sealed partial class CultRuneBaseComponent : Component
     [DataField]
     public bool CanBeErased = true;
 
-    public EntProtoId HolyWaterPrototype = "HolyWater";
+    public ProtoId<ReagentPrototype> HolyWaterPrototype = "HolyWater";
 }
 
 public sealed class TryInvokeCultRuneEvent(EntityUid user, HashSet<EntityUid> invokers) : CancellableEntityEventArgs

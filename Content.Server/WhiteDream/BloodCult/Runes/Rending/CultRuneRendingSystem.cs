@@ -75,8 +75,11 @@ public sealed class CultRuneRendingSystem : EntitySystem
             return;
         }
 
+        var message = Loc.GetString(
+            "cult-rending-started",
+            ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(rune.Owner))));
         _chat.DispatchGlobalAnnouncement(
-            Loc.GetString("cult-rending-started"),
+            message,
             Loc.GetString("blood-cult-title"),
             false,
             colorOverride: Color.DarkRed);
