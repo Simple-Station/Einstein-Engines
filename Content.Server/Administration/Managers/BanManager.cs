@@ -65,7 +65,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         var netChannel = player.Channel;
         ImmutableArray<byte>? hwId = netChannel.UserData.HWId.Length == 0 ? null : netChannel.UserData.HWId;
-        var roleBans = await _db.GetServerRoleBansAsync(netChannel.RemoteEndPoint.Address, player.UserId, hwId, false);
+        var modernHwids = netChannel.UserData.ModernHWIds;
+        var roleBans = await _db.GetServerRoleBansAsync(netChannel.RemoteEndPoint.Address, player.UserId, hwId, modernHwids, false);
 
         var userRoleBans = new List<ServerRoleBanDef>();
         foreach (var ban in roleBans)
