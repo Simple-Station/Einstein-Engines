@@ -15,12 +15,34 @@
 
 - type: characterItemGroup
   id: LoadoutStationEngineerEquipment
-  maxItems: 2
+  maxItems: 3
   items:
     - type: loadout
       id: LoadoutStationEngineerEquipmentBoxInflatable
     - type: loadout
       id: LoadoutStationEngineerEquipmentRCD
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentPowerDrill
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetSteel
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetSteel10
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetPlasteel
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetPlasteel10
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetGlass
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetGlass10
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentMaterialWoodPlank
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentMaterialWoodPlank10
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetPlastic
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetPlastic10
 
 #- type: characterItemGroup
 #  id: LoadoutStationEngineerEyes
@@ -62,7 +84,11 @@
 #  maxItems: 1
 #  items:
 
-#- type: characterItemGroup
-#  id: LoadoutStationEngineerUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutStationEngineerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutStationEngineerUniformsSuit
+    - type: loadout
+      id: LoadoutStationEngineerUniformsSkirt
