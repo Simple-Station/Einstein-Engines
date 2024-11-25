@@ -92,7 +92,7 @@ public sealed partial class TraitPreferenceSelector : Control
 
         // Add requirement reasons to the tooltip
         foreach (var reason in reasons)
-            tooltip.Append($"\n{reason.ToMarkup()}");
+            tooltip.Append($"\n{reason}");
 
         // Combine the tooltip and format it in the checkbox supplier
         if (tooltip.Length > 0)

@@ -14,9 +14,6 @@
   timeout: 600 #10 minutes
   category: "LotophagoiAddiction"
 
-- type: moodCategory
-  id: LotophagoiAddiction
-
 # Nicotine
 - type: moodEffect
   id: NicotineBenefit
@@ -29,9 +26,6 @@
   id: NicotineWithdrawal
   moodChange: -7 #No timeout
   category: "NicotineAddiction"
-
-- type: moodCategory
-  id: NicotineAddiction
 
 # Non-Addictive Drugs
 - type: moodEffect
