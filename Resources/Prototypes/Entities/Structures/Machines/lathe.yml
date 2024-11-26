@@ -265,6 +265,7 @@
     - MagazineMagnum # Goobstation
     - MagazineMagnumLeverRifleEmpty # Goobstation
     - MagazineMagnumLeverRifle # Goobstation
+    - CartridgeEpinephrine
 
 - type: entity
   id: AutolatheHyperConvection
@@ -1013,6 +1014,7 @@
       - MagazineBoxPistolRubber # Frontier
       - MagazineBoxRifleRubber # Frontier
       - SpeedLoaderRifleHeavyRubber
+      - CartridgeEpinephrine
     dynamicRecipes:
       - Truncheon
       - Terminus

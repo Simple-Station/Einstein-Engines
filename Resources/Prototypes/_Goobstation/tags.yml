@@ -1,6 +1,12 @@
 - type: Tag
   id: MagazineMagnumLeverRifle
 
+- type: Tag
+  id: BolaEnergy
+
+- type: Tag
+  id: CartridgeEpinephrine
+
 # Mechs
 
 - type: Tag

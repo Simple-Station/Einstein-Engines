@@ -1,9 +1,11 @@
+# Goob edit - energy bola
+
 - type: entity
   name: bola
-  abstract: true
-  id: BaseBola
   parent: BaseItem
-  description: High velocity entanglement tool.
+  id: BaseBola
+  description: Linked together with some spare cuffs and metal.
+  abstract: true
   components:
   - type: Item
     size: Normal
