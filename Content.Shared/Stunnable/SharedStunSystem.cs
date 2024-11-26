@@ -41,6 +41,7 @@ public abstract class SharedStunSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedStutteringSystem _stutter = default!; // Stun meta
     [Dependency] private readonly SharedJitteringSystem _jitter = default!; // Stun meta
+    [Dependency] private readonly ClothingModifyStunTimeSystem _modify = default!; // goob edit
 
     /// <summary>
     /// Friction modifier for knocked down players.
@@ -192,6 +193,8 @@ public abstract class SharedStunSystem : EntitySystem
     public bool TryStun(EntityUid uid, TimeSpan time, bool refresh,
         StatusEffectsComponent? status = null)
     {
+        time *= _modify.GetModifier(uid); // Goobstation
+
         if (time <= TimeSpan.Zero
             || !Resolve(uid, ref status, false)
             || !_statusEffect.TryAddStatusEffect<StunnedComponent>(uid, "Stun", time, refresh))
@@ -215,6 +218,8 @@ public abstract class SharedStunSystem : EntitySystem
     public bool TryKnockdown(EntityUid uid, TimeSpan time, bool refresh, DropHeldItemsBehavior behavior,
         StatusEffectsComponent? status = null)
     {
+        time *= _modify.GetModifier(uid); // Goobstation
+
         if (time <= TimeSpan.Zero || !Resolve(uid, ref status, false))
             return false;
 
