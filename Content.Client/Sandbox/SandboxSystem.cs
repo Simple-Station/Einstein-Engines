@@ -92,7 +92,7 @@ namespace Content.Client.Sandbox
                 && EntityManager.TryGetComponent(uid, out MetaDataComponent? comp)
                 && !comp.EntityDeleted)
             {
-                if (comp.EntityPrototype == null || comp.EntityPrototype.NoSpawn || comp.EntityPrototype.Abstract)
+                if (comp.EntityPrototype == null || comp.EntityPrototype.HideSpawnMenu || comp.EntityPrototype.Abstract)
                     return false;
 
                 if (_placement.Eraser)

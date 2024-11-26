@@ -20,6 +20,8 @@
   - !type:AddComponentSpecial
     components:
     - type: CPRTraining
+    - type: SurgerySpeedModifier
+      SpeedModifier: 1.75
 
 - type: startingGear
   id: DoctorGear
@@ -29,7 +31,6 @@
     shoes: ClothingShoesColorWhite
     id: MedicalPDA
     ears: ClothingHeadsetMedical
-    belt: ClothingBeltMedicalFilled
   innerClothingSkirt: ClothingUniformJumpskirtMedicalDoctor
   satchel: ClothingBackpackSatchelMedicalFilled
   duffelbag: ClothingBackpackDuffelMedicalFilled

@@ -1,0 +1,98 @@
+- type: characterItemGroup
+  id: LoadoutChiefEngineerBackpack
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerBackpackBackpack
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerBackpackSatchel
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerBackpackDuffel
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerBelt
+    - type: loadout
+      id: LoadoutChiefEngineerBeltFilled
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerEars
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerEquipment
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentBoxInflatable
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentMedkitOxygen
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentRCD
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentRCDAmmoSpare
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerEyes
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerGloves
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerHead
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerId
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerNTPDA
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerNeckMantle
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerNeckCloak
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerNeckEngineerMedal
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerMask
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandCEOuterWinter
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerShoesBootsWinter
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerUniformSuit
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerUniformSkirt

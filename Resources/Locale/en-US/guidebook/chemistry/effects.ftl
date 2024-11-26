@@ -375,3 +375,5 @@ reagent-effect-guidebook-add-moodlet =
         [0] indefinitely
         *[other] for {$timeout} seconds
     }
+
+reagent-effect-guidebook-purify-evil = Purifies evil powers

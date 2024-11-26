@@ -8,7 +8,6 @@ using Content.Server.GameTicking;
 using Content.Server.Language;
 using Content.Server.Speech.Components;
 using Content.Server.Speech.EntitySystems;
-using Content.Server.Chat;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.ActionBlocker;
@@ -44,7 +43,7 @@ namespace Content.Server.Chat.Systems;
 
 // Dear contributor. When I was introducing changes to this system only god and I knew what I was doing.
 // Now only god knows. Please don't touch this code ever again. If you do have to, increment this counter as a warning for others:
-// TOTAL_HOURS_WASTED_HERE_EE = 17
+// TOTAL_HOURS_WASTED_HERE_EE = 19
 
 // TODO refactor whatever active warzone this class and chatmanager have become
 /// <summary>
@@ -147,7 +146,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="hideLog">Whether or not this message should appear in the adminlog window</param>
     /// <param name="shell"></param>
     /// <param name="player">The player doing the speaking</param>
-    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerNameEvent"/>. If this is set, the event will not get raised.</param>
+    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerSpeechEvent"/>. If this is set, the event will not get raised.</param>
     public void TrySendInGameICMessage(
         EntityUid source,
         string message,
@@ -170,7 +169,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="range">Conceptual range of transmission, if it shows in the chat window, if it shows to far-away ghosts or ghosts at all...</param>
     /// <param name="shell"></param>
     /// <param name="player">The player doing the speaking</param>
-    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerNameEvent"/>. If this is set, the event will not get raised.</param>
+    /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerSpeechEvent"/>. If this is set, the event will not get raised.</param>
     /// <param name="ignoreActionBlocker">If set to true, action blocker will not be considered for whether an entity can send this message.</param>
     public void TrySendInGameICMessage(
         EntityUid source,
@@ -344,7 +343,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
-            _audio.PlayGlobal(announcementSound?.GetSound() ?? DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            _audio.PlayGlobal(announcementSound != null ? announcementSound.ToString() : DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }
@@ -382,7 +381,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (playDefaultSound)
         {
-            _audio.PlayGlobal(announcementSound?.GetSound() ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
+            _audio.PlayGlobal(announcementSound != null ? announcementSound.ToString() : DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
         }
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");
@@ -421,11 +420,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
         else
         {
-            var nameEv = new TransformSpeakerNameEvent(source, Name(source));
+            var nameEv = new TransformSpeakerSpeechEvent(source, Name(source));
             RaiseLocalEvent(source, nameEv);
-            name = nameEv.Name;
+            name = nameEv.VoiceName ?? Name(source);
             // Check for a speech verb override
-            if (nameEv.SpeechVerb != null && _prototypeManager.TryIndex<SpeechVerbPrototype>(nameEv.SpeechVerb, out var proto))
+            if (nameEv.SpeechVerb != null && _prototypeManager.TryIndex(nameEv.SpeechVerb, out var proto))
                 speech = proto;
         }
 
@@ -493,9 +492,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
         else
         {
-            var nameEv = new TransformSpeakerNameEvent(source, Name(source));
+            var nameEv = new TransformSpeakerSpeechEvent(source, Name(source));
             RaiseLocalEvent(source, nameEv);
-            name = nameEv.Name;
+            name = nameEv.VoiceName ?? Name(source);
         }
         name = FormattedMessage.EscapeText(name);
 
@@ -880,6 +879,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         var color = DefaultSpeakColor;
         if (language.SpeechOverride.Color is { } colorOverride)
             color = Color.InterpolateBetween(color, colorOverride, colorOverride.A);
+        var languageDisplay = language.IsVisibleLanguage
+            ? $"{language.ChatName} | "
+            : "";
 
         return Loc.GetString(wrapId,
             ("color", color),
@@ -887,7 +889,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("verb", Loc.GetString(verbId)),
             ("fontType", language.SpeechOverride.FontId ?? speech.FontId),
             ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize),
-            ("message", message));
+            ("message", message),
+            ("language", languageDisplay));
     }
 
     /// <summary>
@@ -988,20 +991,6 @@ public sealed partial class ChatSystem : SharedChatSystem
 /// </summary>
 public record ExpandICChatRecipientstEvent(EntityUid Source, float VoiceRange, Dictionary<ICommonSession, ChatSystem.ICChatRecipientData> Recipients)
 {
-}
-
-public sealed class TransformSpeakerNameEvent : EntityEventArgs
-{
-    public EntityUid Sender;
-    public string Name;
-    public string? SpeechVerb;
-
-    public TransformSpeakerNameEvent(EntityUid sender, string name, string? speechVerb = null)
-    {
-        Sender = sender;
-        Name = name;
-        SpeechVerb = speechVerb;
-    }
 }
 
 /// <summary>

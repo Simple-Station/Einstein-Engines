@@ -268,8 +268,8 @@
         - PillCanister
         - Radio
         - DiscreteHealthAnalyzer
-        - SurgeryTool
       components:
+        - SurgeryTool
         - Hypospray
         - Injector
         - Pill

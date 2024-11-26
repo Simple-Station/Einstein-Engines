@@ -1,3 +1,4 @@
+using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
@@ -22,7 +23,7 @@ public sealed class ColorTintOverlay : Overlay
     /// <summary>
     ///     The color to tint the screen to as RGB on a scale of 0-1.
     /// </summary>
-    public Vector3? TintColor = null;
+    public Robust.Shared.Maths.Vector3? TintColor = null;
     /// <summary>
     ///     The percent to tint the screen by on a scale of 0-1.
     /// </summary>
@@ -49,13 +50,13 @@ public sealed class ColorTintOverlay : Overlay
 
         _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
         if (TintColor != null)
-            _shader.SetParameter("tint_color", (Vector3) TintColor);
+            _shader.SetParameter("tint_color", (Robust.Shared.Maths.Vector3) TintColor);
         if (TintAmount != null)
             _shader.SetParameter("tint_amount", (float) TintAmount);
 
         var worldHandle = args.WorldHandle;
         var viewport = args.WorldBounds;
-        worldHandle.SetTransform(Matrix3.Identity);
+        worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(_shader);
         worldHandle.DrawRect(viewport, Color.White);
         worldHandle.UseShader(null);

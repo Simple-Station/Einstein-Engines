@@ -1,0 +1,53 @@
+# Golemancer
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutScienceUniformJumpskirtRoboticist
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingUniformJumpskirtRoboticist
+
+- type: loadout
+  id: LoadoutScienceUniformJumpsuitRoboticist
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingUniformJumpsuitRoboticist

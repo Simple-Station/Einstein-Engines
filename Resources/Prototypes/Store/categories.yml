@@ -104,6 +104,11 @@
   name: store-category-disruption
   priority: 12
 
+- type: storeCategory
+  id: UplinkSales
+  name: Sales
+  priority: 10
+
 #revenant
 - type: storeCategory
   id: RevenantAbilities

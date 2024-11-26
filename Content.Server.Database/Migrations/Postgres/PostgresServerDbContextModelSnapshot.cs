@@ -658,6 +658,22 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CustomColorTint")
+                        .HasColumnType("text")
+                        .HasColumnName("custom_color_tint");
+
+                    b.Property<string>("CustomDescription")
+                        .HasColumnType("text")
+                        .HasColumnName("custom_description");
+
+                    b.Property<bool?>("CustomHeirloom")
+                        .HasColumnType("boolean")
+                        .HasColumnName("custom_heirloom");
+
+                    b.Property<string>("CustomName")
+                        .HasColumnType("text")
+                        .HasColumnName("custom_name");
+
                     b.Property<string>("LoadoutName")
                         .IsRequired()
                         .HasColumnType("text")
@@ -719,10 +735,6 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<DateTime>("FirstSeenTime")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("first_seen_time");
-
-                    b.Property<DateTime?>("LastReadRules")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("last_read_rules");
 
                     b.Property<IPAddress>("LastSeenAddress")
                         .IsRequired()

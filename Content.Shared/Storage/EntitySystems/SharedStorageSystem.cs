@@ -374,13 +374,9 @@ public abstract class SharedStorageSystem : EntitySystem
 
         // Toggle
         if (_ui.IsUiOpen(uid, StorageComponent.StorageUiKey.Key, args.User))
-        {
             _ui.CloseUi(uid, StorageComponent.StorageUiKey.Key, args.User);
-        }
         else
-        {
             OpenStorageUI(uid, args.User, storageComp);
-        }
 
         args.Handled = true;
     }
@@ -1091,7 +1087,7 @@ public abstract class SharedStorageSystem : EntitySystem
     /// <returns>true if inserted, false otherwise</returns>
     public bool PlayerInsertEntityInWorld(Entity<StorageComponent?> uid, EntityUid player, EntityUid toInsert)
     {
-        if (!Resolve(uid, ref uid.Comp) || !_interactionSystem.InRangeUnobstructed(player, uid))
+        if (!Resolve(uid, ref uid.Comp) || !_interactionSystem.InRangeUnobstructed(player, uid.Owner))
             return false;
 
         if (!Insert(uid, toInsert, out _, user: player, uid.Comp))

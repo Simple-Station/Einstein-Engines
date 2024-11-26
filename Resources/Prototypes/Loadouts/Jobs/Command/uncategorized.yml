@@ -1,0 +1,82 @@
+# Uncategorized
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutCommandTelescopicBaton
+  category: JobsCommandAUncategorized
+  cost: 3
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCommandSelfDefense
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Command
+  items:
+  - TelescopicBaton
+
+- type: loadout
+  id: LoadoutCommandDisabler
+  category: JobsCommandAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCommandSelfDefense
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Command
+  items:
+  - WeaponDisabler
+
+- type: loadout
+  id: LoadoutCommandStunBaton
+  category: JobsCommandAUncategorized
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCommandSelfDefense
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Command
+  items:
+  - Stunbaton
+
+- type: loadout
+  id: LoadoutCommandFlash
+  category: JobsCommandAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCommandSelfDefense
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Command
+  items:
+  - Flash
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

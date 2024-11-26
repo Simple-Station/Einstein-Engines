@@ -505,13 +505,7 @@ public abstract class SharedActionsSystem : EntitySystem
             return distance <= action.Range;
         }
 
-        if (_interactionSystem.InRangeUnobstructed(user, target, range: action.Range)
-            && _containerSystem.IsInSameOrParentContainer(user, target))
-        {
-            return true;
-        }
-
-        return _interactionSystem.CanAccessViaStorage(user, target);
+        return _interactionSystem.InRangeAndAccessible(user, target, range: action.Range);
     }
 
     public bool ValidateWorldTarget(EntityUid user, EntityCoordinates coords, Entity<WorldTargetActionComponent> action)
@@ -586,7 +580,11 @@ public abstract class SharedActionsSystem : EntitySystem
             dirty = true;
             action.Charges--;
             if (action is { Charges: 0, RenewCharges: false })
+            {
+                var disabledEv = new ActionGettingDisabledEvent(performer);
+                RaiseLocalEvent(actionId, ref disabledEv);
                 action.Enabled = false;
+            }
         }
 
         action.Cooldown = null;
