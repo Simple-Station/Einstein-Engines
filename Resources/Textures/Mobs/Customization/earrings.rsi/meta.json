@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Aurorastation at commit https://github.com/Aurorastation/Aurora.3/commit/7bc5666e9e12ef31dcfdc9bd4b68831b34811bc6, stud/dangle edited from Aurora & hoop/hoop_mini/cross/gem/drop/drop_long created by Skubman (github: angelofallars)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "stud",
+      "directions": 4
+    },
+    {
+      "name": "heavy",
+      "directions": 4
+    },
+    {
+      "name": "dangle",
+      "directions": 4
+    },
+    {
+      "name": "crescent",
+      "directions": 4
+    },
+    {
+      "name": "bangle",
+      "directions": 4
+    },
+    {
+      "name": "hoop",
+      "directions": 4
+    },
+    {
+      "name": "hoop_mini",
+      "directions": 4
+    },
+    {
+      "name": "cross",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_tone_1",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_tone_2",
+      "directions": 4
+    },
+    {
+      "name": "drop_tone_1",
+      "directions": 4
+    },
+    {
+      "name": "drop_tone_2",
+      "directions": 4
+    },
+    {
+      "name": "drop_long_tone_1",
+      "directions": 4
+    },
+    {
+      "name": "drop_long_tone_2",
+      "directions": 4
+    }
+  ]
+}

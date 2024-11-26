@@ -13,6 +13,7 @@
   id: MobSlimeSprites
   sprites:
     Head: MobSlimeHead
+    HeadSide: MobHumanoidAnyMarking
     Hair: MobSlimeMarkingFollowSkin
     FacialHair: MobSlimeMarkingFollowSkin
     Chest: MobSlimeTorso
@@ -30,6 +31,9 @@
   id: MobSlimeMarkingLimits
   points:
     Hair:
+      points: 1
+      required: false
+    HeadSide:
       points: 1
       required: false
     FacialHair:
