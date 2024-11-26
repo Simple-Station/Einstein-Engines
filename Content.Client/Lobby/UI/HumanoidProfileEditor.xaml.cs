@@ -1678,7 +1678,7 @@ namespace Content.Client.Lobby.UI
             // Reset the whole UI and delete caches
             if (reload)
             {
-                foreach (var tab in TraitsTabs.Tabs)
+                foreach (var tab in TraitsTabs.TabContainer.Children)
                     TraitsTabs.RemoveTab(tab);
                 _loadoutPreferences.Clear();
             }
@@ -2004,7 +2004,7 @@ namespace Content.Client.Lobby.UI
             // Reset the whole UI and delete caches
             if (reload)
             {
-                foreach (var tab in LoadoutsTabs.Tabs)
+                foreach (var tab in LoadoutsTabs.TabContainer.Children)
                     LoadoutsTabs.RemoveTab(tab);
                 foreach (var uid in _dummyLoadouts)
                     _entManager.QueueDeleteEntity(uid.Value);

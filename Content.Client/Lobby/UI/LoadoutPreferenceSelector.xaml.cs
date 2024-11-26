@@ -261,9 +261,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
         // Move the special editor
         var heading = SpecialMenu.Heading;
         heading.Orphan();
-        ButtonGroup.AddChild(heading);
+        ButtonGroup.AddButton(heading, false);
         GuidebookButton.Orphan();
-        ButtonGroup.AddChild(GuidebookButton);
+        ButtonGroup.AddButton(GuidebookButton);
 
         // These guys are here too for reasons
         HeadingButton.SetHeight = HeirloomButton.SetHeight = GuidebookButton.SetHeight = PreferenceButton.Size.Y;

@@ -4,45 +4,111 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using static Content.Client.Stylesheets.StyleBase;
+using static Robust.Shared.Maths.Direction;
+
 
 namespace Content.Client.UserInterface.Controls;
 
-/// Automatically styles a group of HORIZONTAL buttons based on visibility, count, and position
+/// Automatically styles a group of buttons based on visibility, count, and index
 [GenerateTypedNameReferences]
 public sealed partial class StyledButtonGroup : BoxContainer
 {
-    public StyledButtonGroup()
+    /// <summary>
+    ///     Where to place the tabs in relation to the contents.
+    ///     <br />
+    ///     If <see cref="Direction.North"/>, the tabs will be above the contents.
+    /// </summary>
+    private Direction _direction = North;
+    public Direction Direction
     {
-        RobustXamlLoader.Load(this);
+        get => _direction;
+        set
+        {
+            if (_direction == value)
+                return;
+            _direction = value;
+            UpdateStyles();
+        }
+    }
 
-        OnChildAdded += _ => UpdateStyles();
-        OnChildMoved += _ => UpdateStyles();
-        OnChildRemoved += _ => UpdateStyles();
+    private bool _firstTabOpenBoth;
+    public bool FirstTabOpenBoth
+    {
+        get => _firstTabOpenBoth;
+        set => TabStyleChanged(value, LastTabOpenBoth);
+    }
+
+    private bool _lastTabOpenBoth;
+    public bool LastTabOpenBoth
+    {
+        get => _lastTabOpenBoth;
+        set => TabStyleChanged(FirstTabOpenBoth, value);
+    }
+
+
+    public IEnumerable<BaseButton> Buttons => Children.OfType<BaseButton>();
+    public IEnumerable<BaseButton> VisibleButtons => Buttons.Where(c => c.Visible);
+
+
+    public void AddButton(BaseButton button, bool updateStyles = true)
+    {
+        AddChild(button);
+        if (updateStyles)
+            UpdateStyles();
     }
 
     public void UpdateStyles()
     {
-        var children = Children.Where(c => c.Visible && c is Button).ToArray();
-        var len = children.Length;
+        var children = VisibleButtons;
+        var enumerable = children as BaseButton[] ?? children.ToArray();
 
-        for (var i = 0; i < len; i++)
-        {
-            var child = children[i];
-            var button = (child as Button)!;
-
-            if (i == 0)
-                TryUpdateStyle(button, len == 1 ? "" : ButtonOpenRight);
-            else if (i == len - 1)
-                TryUpdateStyle(button, ButtonOpenLeft);
-            else
-                TryUpdateStyle(button, ButtonOpenBoth);
-        }
+        for (var i = 0; i < enumerable.Length; i++)
+            TryUpdateStyle(enumerable[i], GetDirectionStyle(Direction, i, enumerable.Length));
     }
 
-    private bool TryUpdateStyle(Control control, string style)
+    private void TabStyleChanged(bool firstTabOpenBoth, bool lastTabOpenBoth)
+    {
+        _firstTabOpenBoth = firstTabOpenBoth;
+        _lastTabOpenBoth = lastTabOpenBoth;
+
+        UpdateStyles();
+    }
+
+    private string GetDirectionStyle(Direction direction, int position, int length)
+    {
+        if (position == 0)
+        {
+            if (_firstTabOpenBoth)
+                return ButtonOpenBoth;
+
+            return direction switch
+            {
+                North or South => ButtonOpenRight,
+                East or West => ButtonOpenLeft,
+                _ => ButtonOpenRight,
+            };
+        }
+
+        if (position == length - 1)
+        {
+            if (_lastTabOpenBoth)
+                return ButtonOpenBoth;
+
+            return direction switch
+            {
+                North or South => ButtonOpenLeft,
+                East or West => ButtonOpenRight,
+                _ => ButtonOpenLeft,
+            };
+        }
+
+        return ButtonOpenBoth;
+    }
+
+    private void TryUpdateStyle(Control control, string style)
     {
         if (control.HasStyleClass(style))
-            return false;
+            return;
 
         control.RemoveStyleClass(ButtonOpenRight);
         control.RemoveStyleClass(ButtonOpenLeft);
@@ -50,8 +116,5 @@ public sealed partial class StyledButtonGroup : BoxContainer
 
         if (!string.IsNullOrEmpty(style))
             control.AddStyleClass(style);
-        else
-            return false;
-        return true;
     }
 }

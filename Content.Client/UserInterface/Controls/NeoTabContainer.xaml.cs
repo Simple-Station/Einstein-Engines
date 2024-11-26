@@ -10,11 +10,7 @@ using static Robust.Shared.Maths.Direction;
 
 namespace Content.Client.UserInterface.Controls;
 
-/// <summary>
-///     A simple yet good-looking tab container using normal UI elements with multiple styles
-///     <br />
-///     Because nobody else could do it better.
-/// </summary>
+/// A simple yet good-looking configurable tab container using normal UI elements
 [GenerateTypedNameReferences]
 public sealed partial class NeoTabContainer : BoxContainer
 {
@@ -24,20 +20,14 @@ public sealed partial class NeoTabContainer : BoxContainer
 
     /// All children within the <see cref="ContentContainer"/>
     public OrderedChildCollection Contents => ContentContainer.Children;
-    /// All children within the <see cref="ContentContainer"/> that are visible
-    public List<Control> VisibleContents => Contents.Where(c => c == CurrentControl).ToList();
-
-    /// All children within the <see cref="TabContainer"/>
-    public OrderedChildCollection Tabs => TabContainer.Children;
-    /// All children within the <see cref="TabContainer"/> that are visible
-    public List<Control> VisibleTabs => Tabs.Where(c => c.Visible).ToList();
 
     public Control? CurrentControl { get; private set; }
-    public int? CurrentTab => _controls.FirstOrDefault(control => control == CurrentControl) switch
-    {
-        { } control => _controls.IndexOf(control),
-        _ => null,
-    };
+    public int? CurrentTab =>
+        _controls.FirstOrDefault(control => control == CurrentControl) switch
+        {
+            { } control => _controls.IndexOf(control),
+            _ => null,
+        };
 
 
     /// <inheritdoc cref="NeoTabContainer"/>
@@ -116,7 +106,7 @@ public sealed partial class NeoTabContainer : BoxContainer
         if (!string.IsNullOrEmpty(title))
             button.Text = title;
 
-        TabContainer.AddChild(button);
+        TabContainer.AddButton(button);
         ContentContainer.AddChild(control);
         _controls.Add(control);
         _tabs.Add(control, button);
@@ -134,7 +124,7 @@ public sealed partial class NeoTabContainer : BoxContainer
     }
 
     /// <summary>
-    ///     Removes/Disposes the tab associated with the given index
+    ///     Disposes the tab associated with the given index
     /// </summary>
     /// <param name="index">The index of the tab to remove</param>
     /// <param name="updateTabMerging">Whether the tabs should fix their styling automatically. Useful if you're doing tons of updates at once</param>
@@ -150,7 +140,7 @@ public sealed partial class NeoTabContainer : BoxContainer
     }
 
     /// <summary>
-    ///     Removes/Disposes the tab associated with the given control
+    ///     Disposes the tab associated with the given control
     /// </summary>
     /// <param name="control">The control to remove</param>
     /// <param name="updateTabMerging">Whether the tabs should fix their styling automatically. Useful if you're doing tons of updates at once</param>
@@ -221,79 +211,5 @@ public sealed partial class NeoTabContainer : BoxContainer
     }
 
     /// Sets the style of every visible tab's Button to be Open to Right, Both, or Left depending on position
-    public void UpdateTabMerging()
-    {
-        var visibleTabs = VisibleTabs;
-
-        if (visibleTabs.Count == 0)
-            return;
-
-        if (visibleTabs.Count == 1)
-        {
-            var button = visibleTabs[0];
-            button.RemoveStyleClass(ButtonOpenRight);
-            button.RemoveStyleClass(ButtonOpenBoth);
-            button.RemoveStyleClass(ButtonOpenLeft);
-
-            if (FirstTabOpenBoth)
-                button.AddStyleClass(ButtonOpenBoth);
-
-            return;
-        }
-
-        string GetDirection(Direction direction, int position)
-        {
-            return position switch
-            {
-                // First
-                0 => direction switch
-                {
-                    North => ButtonOpenRight,
-                    South => ButtonOpenRight,
-                    East => ButtonOpenLeft,
-                    West => ButtonOpenLeft,
-                    _ => ButtonOpenRight,
-                },
-                // Middle
-                1 => ButtonOpenBoth,
-                // Last
-                2 => direction switch
-                {
-                    North => ButtonOpenLeft,
-                    South => ButtonOpenLeft,
-                    East => ButtonOpenRight,
-                    West => ButtonOpenRight,
-                    _ => ButtonOpenLeft,
-                },
-                _ => ButtonOpenBoth,
-            };
-        }
-
-        for (var i = 0; i < visibleTabs.Count; i++)
-        {
-            var button = visibleTabs[i];
-            button.RemoveStyleClass(ButtonOpenRight);
-            button.RemoveStyleClass(ButtonOpenBoth);
-            button.RemoveStyleClass(ButtonOpenLeft);
-
-            if (FirstTabOpenBoth && i == 0)
-            {
-                button.AddStyleClass(ButtonOpenBoth);
-                continue;
-            }
-            if (LastTabOpenBoth && i == visibleTabs.Count - 1)
-            {
-                button.AddStyleClass(ButtonOpenBoth);
-                continue;
-            }
-
-            var position = i switch
-            {
-                0 => 0,
-                _ when i == visibleTabs.Count - 1 => 2,
-                _ => 1,
-            };
-            button.AddStyleClass(GetDirection(TabLocation, position));
-        }
-    }
+    public void UpdateTabMerging() => TabContainer.UpdateStyles();
 }
