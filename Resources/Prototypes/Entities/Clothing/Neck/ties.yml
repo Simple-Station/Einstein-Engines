@@ -24,7 +24,7 @@
     sprite: Clothing/Neck/Ties/dettie.rsi
   - type: Clothing
     sprite: Clothing/Neck/Ties/dettie.rsi
-    
+
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckTieSci
@@ -40,3 +40,25 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieShort
+  name: short tie
+  description: A short tie, perfect for vests, blazers and suit jackets.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Ties/shorttie.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Ties/shorttie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieLong
+  name: long tie
+  description: A long tie that goes up to the belt of most uniforms, perfect for unbuttoned suits.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Ties/longtie.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Ties/longtie.rsi

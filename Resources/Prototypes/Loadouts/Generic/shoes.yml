@@ -248,6 +248,7 @@
   category: Shoes
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
@@ -299,3 +300,63 @@
       group: LoadoutShoes
   items:
     - ClothingClothWrap
+
+- type: loadout
+  id: LoadoutShoesHighHeels
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHighHeels
+
+- type: loadout
+  id: LoadoutShoesHighHeelsLong
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHighHeelsLong
+
+- type: loadout
+  id: LoadoutShoesFlats
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesFlats
+
+- type: loadout
+  id: LoadoutShoesSkater
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesSkater
+
+- type: loadout
+  id: LoadoutShoesSandals
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesSandals

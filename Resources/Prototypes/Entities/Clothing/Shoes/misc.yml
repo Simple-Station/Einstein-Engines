@@ -135,3 +135,58 @@
     event: !type:ToggleClothingSpeedEvent
     icon: { sprite: Clothing/Shoes/Boots/speedboots.rsi, state: icon }
     iconOn: { sprite: Clothing/Shoes/Boots/speedboots.rsi, state: icon-on }
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesHighHeels
+  name: high heels
+  description: These heels help you strut into work like it's a runway.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/high_heels.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/high_heels.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesHighHeelsLong
+  name: long high heels
+  description: Slay the house down boots!
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/long_high_heels.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/long_high_heels.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesFlats
+  name: flats
+  description: Fashionable and comfortable flats.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/flats.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/flats.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSkater
+  name: skater shoes
+  description: A pair of wide shoes with thick soles. Designed for skating.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/skater.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/skater.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSandals
+  name: sandals
+  description: A pair of simple but stylish sandals.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/sandals.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/sandals.rsi

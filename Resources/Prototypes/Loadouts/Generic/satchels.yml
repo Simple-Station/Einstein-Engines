@@ -91,3 +91,56 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+
+- type: loadout
+  id: LoadoutItemBackpackSatchelPurse
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingBackpackSatchelPurse
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+
+- type: loadout
+  id: LoadoutItemBackpackSatchelPurseLuxury
+  category: Backpacks
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelPurseLuxury
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+
+- type: loadout
+  id: LoadoutItemBackpackSatchelPurseRoyalLuxury
+  category: Backpacks
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelPurseRoyalLuxury
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+
+- type: loadout
+  id: LoadoutItemBackpackSatchelLuxury
+  category: Backpacks
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelLuxury
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
