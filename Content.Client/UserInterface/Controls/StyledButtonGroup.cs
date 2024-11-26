@@ -23,21 +23,35 @@ public sealed partial class StyledButtonGroup : BoxContainer
     public void UpdateStyles()
     {
         var children = Children.Where(c => c.Visible && c is Button).ToArray();
-        for (var i = 0; i < children.Length; i++)
+        var len = children.Length;
+
+        for (var i = 0; i < len; i++)
         {
             var child = children[i];
             var button = (child as Button)!;
 
-            button.RemoveStyleClass(ButtonOpenRight);
-            button.RemoveStyleClass(ButtonOpenLeft);
-            button.RemoveStyleClass(ButtonOpenBoth);
-
             if (i == 0)
-                button.AddStyleClass(children.Length == 1 ? "" : ButtonOpenRight);
-            else if (i == children.Length - 1)
-                button.AddStyleClass(ButtonOpenLeft);
+                TryUpdateStyle(button, len == 1 ? "" : ButtonOpenRight);
+            else if (i == len - 1)
+                TryUpdateStyle(button, ButtonOpenLeft);
             else
-                button.AddStyleClass(ButtonOpenBoth);
+                TryUpdateStyle(button, ButtonOpenBoth);
         }
+    }
+
+    private bool TryUpdateStyle(Control control, string style)
+    {
+        if (control.HasStyleClass(style))
+            return false;
+
+        control.RemoveStyleClass(ButtonOpenRight);
+        control.RemoveStyleClass(ButtonOpenLeft);
+        control.RemoveStyleClass(ButtonOpenBoth);
+
+        if (!string.IsNullOrEmpty(style))
+            control.AddStyleClass(style);
+        else
+            return false;
+        return true;
     }
 }
