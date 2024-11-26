@@ -2,7 +2,6 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using Content.Client.Guidebook;
-using Content.Client.Paint;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
@@ -110,9 +109,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
             entities.Add(loadout.ID + 0, dummyLoadoutItem);
 
             // Create a sprite preview of the loadout item
-            previewLoadout = new SpriteView
+            previewLoadout = new()
             {
-                Scale = new Vector2(1, 1),
+                Scale = new(1, 1),
                 OverrideDirection = Direction.South,
                 VerticalAlignment = VAlignment.Center,
                 SizeFlagsStretchRatio = 1,
@@ -122,9 +121,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
         else
         {
             // Create a sprite preview of the loadout item
-            previewLoadout = new SpriteView
+            previewLoadout = new()
             {
-                Scale = new Vector2(1, 1),
+                Scale = new(1, 1),
                 OverrideDirection = Direction.South,
                 VerticalAlignment = VAlignment.Center,
                 SizeFlagsStretchRatio = 1,
@@ -177,7 +176,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
                     MinWidth = 32,
                     MaxWidth = 32,
                     ClipText = true,
-                    Margin = new Thickness(0, 0, 8, 0),
+                    Margin = new(0, 0, 8, 0),
                 },
                 new PanelContainer
                 {
@@ -190,7 +189,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
                 new Label
                 {
                     Text = loadoutName,
-                    Margin = new Thickness(8, 0, 0, 0),
+                    Margin = new(8, 0, 0, 0),
                 },
             },
         });
@@ -221,7 +220,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
         ColorEdit.OnColorChanged += _ =>
         {
             _preference.CustomColorTint = SpecialColorTintToggle.Pressed ? ColorEdit.Color.ToHex() : null;
-            UpdatePaint(new Entity<PaintedComponent>(dummyLoadoutItem, paint), entityManager);
+            UpdatePaint(new(dummyLoadoutItem, paint), entityManager);
         };
 
         NameEdit.PlaceHolder = loadoutName;
@@ -235,7 +234,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
         // Get requirement reasons
         characterRequirementsSystem.CheckRequirementsValid(
-            loadout.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
+            loadout.Requirements, highJob, profile, new(),
             jobRequirementsManager.IsWhitelisted(), loadout,
             entityManager, prototypeManager, configManager,
             out var reasons);
