@@ -2,7 +2,6 @@
   id: BasicCalmEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - id: AirlockVirusRule
     - id: AnomalySpawn
     - id: BluespaceArtifact
     - id: BluespaceLocker
@@ -518,15 +517,24 @@
   - type: MobReplacementRule
 
 - type: entity
-  id: AirlockVirusRule
-  parent: BaseGameRule
+  id: GreytideVirus
+  parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    earliestStart: 15
-    minimumPlayers: 5
-    maxOccurrences: 1
-    weight: 3
-  - type: AirlockVirusRule
+    weight: 5
+    minimumPlayers: 25
+    reoccurrenceDelay: 20
+    startAnnouncement: false
+  - type: GreytideVirusRule
+    accessGroups:
+    - Cargo
+    - Command
+    - Engineering
+    - Research
+    - Security
+    - Service
+    blacklist:
+    - External # don't space everything
 
 - type: entity
   parent: BaseGameRule
