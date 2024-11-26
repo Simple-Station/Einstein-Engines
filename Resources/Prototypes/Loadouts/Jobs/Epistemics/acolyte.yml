@@ -34,9 +34,9 @@
       group: LoadoutAcolyteUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - ResearchAssistant
+        - Scientist
   items:
-    - ClothingUniformJumpsuitColorWhite
+    - ClothingUniformJumpsuitScientist
 
 - type: loadout
   id: LoadoutAcolyteUniformSkirt
@@ -48,6 +48,6 @@
       group: LoadoutAcolyteUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - ResearchAssistant
+        - Scientist
   items:
-    - ClothingUniformJumpskirtColorWhite
+    - ClothingUniformJumpskirtScientist

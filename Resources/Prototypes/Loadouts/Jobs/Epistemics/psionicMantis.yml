@@ -38,3 +38,30 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutPsionicMantisUniformSuit
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingUniformJumpsuitMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisUniformSkirt
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingUniformSkirtMantis

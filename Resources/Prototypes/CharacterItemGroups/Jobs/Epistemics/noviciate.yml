@@ -59,7 +59,11 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutNoviciateUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutNoviciateUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutNoviciateUniformSuit
+    - type: loadout
+      id: LoadoutNoviciateUniformSkirt

@@ -61,7 +61,11 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutPsionicMantisUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisUniformSuit
+    - type: loadout
+      id: LoadoutPsionicMantisUniformSkirt

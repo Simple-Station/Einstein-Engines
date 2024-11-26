@@ -24,3 +24,30 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutNoviciateUniformSuit
+  category: JobsEpistemicsNoviciate
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNoviciateUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchAssistant
+  items:
+    - ClothingUniformJumpsuitColorWhite
+
+- type: loadout
+  id: LoadoutNoviciateUniformSkirt
+  category: JobsEpistemicsNoviciate
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNoviciateUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchAssistant
+  items:
+    - ClothingUniformJumpskirtColorWhite
