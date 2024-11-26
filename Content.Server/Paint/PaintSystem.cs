@@ -158,10 +158,10 @@ public sealed class PaintSystem : SharedPaintSystem
             _popup.PopupEntity(Loc.GetString("paint-empty", ("used", entity)), user, user, PopupType.Medium);
     }
 
-    public void Paint(EntityWhitelist whitelist, EntityWhitelist blacklist, EntityUid target, Color color)
+    public void Paint(EntityWhitelist? whitelist, EntityWhitelist? blacklist, EntityUid target, Color color)
     {
-        if (!whitelist.IsValid(target, EntityManager)
-            || blacklist.IsValid(target, EntityManager))
+        if (!whitelist?.IsValid(target, EntityManager) != true
+            || !blacklist?.IsValid(target, EntityManager) != false)
             return;
 
         EnsureComp<PaintedComponent>(target, out var paint);
@@ -175,8 +175,8 @@ public sealed class PaintSystem : SharedPaintSystem
             foreach (var slot in slotDefinitions)
             {
                 if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt)
-                    || !whitelist.IsValid(slotEnt.Value, EntityManager)
-                    || blacklist.IsValid(slotEnt.Value, EntityManager))
+                    || !whitelist?.IsValid(slotEnt.Value, EntityManager) != true
+                    || !blacklist?.IsValid(slotEnt.Value, EntityManager) != false)
                     continue;
 
                 EnsureComp<PaintedComponent>(slotEnt.Value, out var slotToPaint);
