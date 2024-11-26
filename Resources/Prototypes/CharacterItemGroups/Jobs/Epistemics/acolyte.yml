@@ -58,7 +58,11 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutAcolyteUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutAcolyteUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAcolyteUniformSuit
+    - type: loadout
+      id: LoadoutAcolyteUniformSkirt
