@@ -48,7 +48,7 @@
     head: ClothingHeadHelmetBasic
     outerClothing: ClothingOuterArmorPlateCarrier # DeltaV - ClothingOuterArmorBasic replaced in favour of plate carrier
     id: SecurityPDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltSecurityFilled
   innerClothingSkirt: ClothingUniformJumpskirtSec
   satchel: ClothingBackpackSatchelSecurity
@@ -61,3 +61,4 @@
     jumpsuit: ClothingUniformEnvirosuitSec
     head: ClothingHeadEnvirohelmSec
     gloves: ClothingHandsGlovesEnviroglovesBlack
+    - SecHypo # Goobstation

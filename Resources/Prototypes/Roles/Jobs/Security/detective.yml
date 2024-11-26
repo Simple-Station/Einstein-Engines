@@ -50,7 +50,7 @@
     head: ClothingHeadHatFedoraBrown
     outerClothing: ClothingOuterVestDetective
     id: DetectivePDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltHolsterFilled
   innerClothingSkirt: ClothingUniformJumpskirtDetective
   satchel: ClothingBackpackSatchelSecurity
@@ -63,3 +63,4 @@
     jumpsuit: ClothingUniformEnvirosuitDetective
     head: ClothingHeadEnvirohelmDetective
     gloves: ClothingHandsGlovesEnviroglovesWhite
+    - SecHypo # Goobstation

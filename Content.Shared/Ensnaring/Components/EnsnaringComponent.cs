@@ -69,6 +69,13 @@ public sealed partial class EnsnaringComponent : Component
     /// </summary>
     [DataField]
     public EntityWhitelist? IgnoredTargets;
+
+    /// <summary>
+    /// Goobstation
+    /// Should the ensaring entity be deleted upon removal?
+    /// </summary>
+    [DataField]
+    public bool DestroyOnRemove;
 }
 
 /// <summary>

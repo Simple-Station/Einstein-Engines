@@ -93,8 +93,8 @@
       - id: ClothingBeltCorporateJudo # Goobstation - Martial Arts
       - id: Flash
         prob: 0.5
-      - id: ClothingEyesGlassesSunglasses
-      - id: ClothingHeadsetSecurity
+      - id: ClothingEyesGlassesSecurity
+      - id: ClothingHeadsetAltSecurityRegular # Goobstation
       - id: ClothingHandsGlovesColorBlack
       - id: ClothingShoesBootsJack
       - id: WeaponMeleeNeedle

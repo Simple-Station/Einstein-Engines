@@ -122,3 +122,10 @@
     Steel: 1500
     Glass: 750
     Silver: 150
+
+- type: latheRecipe
+  id: CartridgeEpinephrine
+  result: CartridgeEpinephrine
+  completetime: 1
+  materials:
+    Glass: 100
