@@ -12,6 +12,7 @@
   - sprite: Mobs/Customization/wrist.rsi
     state: bracelet_r
 
+# Dionae don't have left wrist markings because the markings are currently blocked by their body.
 - type: marking
   id: WristBraceletLeft
   bodyPart: LHand

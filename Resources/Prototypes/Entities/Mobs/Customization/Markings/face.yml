@@ -1,9 +1,8 @@
-
 - type: marking
   id: FaceBindi
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -17,7 +16,7 @@
   id: FaceFullblush
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin]
   coloring:
     default:
       type:
@@ -31,7 +30,7 @@
   id: FaceCheekspotRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -45,7 +44,7 @@
   id: FaceCheekspotLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -87,7 +86,7 @@
   id: FaceCrowRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -101,7 +100,7 @@
   id: FaceCrowLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -143,7 +142,7 @@
   id: FaceEyebrowRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -158,7 +157,7 @@
   id: FaceEyebrowLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -173,7 +172,7 @@
   id: FaceEyebrows
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -187,7 +186,7 @@
   id: FaceEyecornerRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -201,7 +200,7 @@
   id: FaceEyecornerLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -215,7 +214,7 @@
   id: FaceEyelashRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -229,7 +228,7 @@
   id: FaceEyelashLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -370,7 +369,7 @@
   id: FaceUnibrow
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:

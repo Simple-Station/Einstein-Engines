@@ -19,8 +19,8 @@ marking-FaceChesireLeft-chesire_l = Chesire Grin (Left)
 marking-FaceCrowRight = Crow's Feet (Right)
 marking-FaceCrowRight-crow_r = Crow's Feet (Right)
 
-marking-FaceCrowLeft = Crow's Feet (Right)
-marking-FaceCrowLeft-crow_l = Crow's Feet (Right)
+marking-FaceCrowLeft = Crow's Feet (Left)
+marking-FaceCrowLeft-crow_l = Crow's Feet (Left)
 
 marking-FaceEarRight = Ear Cover (Right)
 marking-FaceEarRight-ear_r = Ear Cover (Right)
