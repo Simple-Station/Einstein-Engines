@@ -55,14 +55,6 @@ namespace Content.Server.Administration.Systems
 
         private ISawmill _sawmill = default!;
         private readonly HttpClient _httpClient = new();
-        private string _webhookUrl = string.Empty;
-        private WebhookData? _webhookData;
-
-        private string _onCallUrl = string.Empty;
-        private WebhookData? _onCallData;
-
-        private ISawmill _sawmill = default!;
-        private readonly HttpClient _httpClient = new();
 
         private string _footerIconUrl = string.Empty;
         private string _avatarUrl = string.Empty;
@@ -109,7 +101,7 @@ namespace Content.Server.Administration.Systems
                 _gameTicker.RunLevel,
                 playedSound: false
             );
-            _maxAdditionalChars = GenerateAHelpMessage(defaultParams).Length;
+            _maxAdditionalChars = GenerateAHelpMessage(defaultParams).Message.Length;
             _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
 
             SubscribeLocalEvent<GameRunLevelChangedEvent>(OnGameRunLevelChanged);
@@ -118,7 +110,8 @@ namespace Content.Server.Administration.Systems
 
         	_rateLimit.Register(
                 RateLimitKey,
-                new RateLimitRegistration(CCVars.AhelpRateLimitPeriod,
+                new RateLimitRegistration(
+                    CCVars.AhelpRateLimitPeriod,
                     CCVars.AhelpRateLimitCount,
                     PlayerRateLimitedAction)
                 );
@@ -769,7 +762,7 @@ namespace Content.Server.Administration.Systems
                         overrideMsgText = $"{(message.PlaySound ? "" : "(S) ")}{overrideMsgText}: {escapedText}";
 
                         RaiseNetworkEvent(new BwoinkTextMessage(message.UserId,
-                                senderSession.UserId,
+                                senderId,
                                 overrideMsgText,
                                 playSound: playSound),
                             session.Channel);
